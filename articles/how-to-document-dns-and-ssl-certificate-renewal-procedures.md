@@ -46,7 +46,7 @@ STEP 5: Post-Renewal Tasks
 - Send completion notification
 ```
 
-### Pre-Planned Renewal Checklist
+Pre-Planned Renewal Checklist
 
 For scheduled renewals, use this checklist:
 
@@ -85,32 +85,32 @@ T-PLUS 1 DAY
 [ ] Close maintenance ticket
 ```
 
-### Step 4: Documentation Maintenance
+Step 4: Documentation Maintenance
 
 Documentation requires ongoing maintenance to remain useful.
 
-### Review Schedule
+Review Schedule
 
-- **Weekly**: Check monitoring alerts, verify auto-renewal status
-- **Monthly**: Review upcoming expirations (30-90 days out)
-- **Quarterly**: Full audit of all certificates and DNS records
-- **Annually**: review with penetration testing
+- Weekly: Check monitoring alerts, verify auto-renewal status
+- Monthly: Review upcoming expirations (30-90 days out)
+- Quarterly: Full audit of all certificates and DNS records
+- Annually: review with penetration testing
 
-### Change Management
+Change Management
 
 Every DNS or certificate change should follow your change management process:
 
-1. **Request**: Document the reason for the change
-2. **Approval**: Get sign-off from relevant stakeholders
-3. **Implementation**: Execute following documented procedures
-4. **Verification**: Confirm the change works as expected
-5. **Documentation**: Update all relevant documentation immediately
-6. **Review**: Post-implementation review for complex changes
+1. Request: Document the reason for the change
+2. Approval: Get sign-off from relevant stakeholders
+3. Implementation: Execute following documented procedures
+4. Verification: Confirm the change works as expected
+5. Documentation: Update all relevant documentation immediately
+6. Review: Post-implementation review for complex changes
 
 Use version control for your documentation:
 
 ```bash
-# Example git workflow for DNS documentation
+Example git workflow for DNS documentation
 git add dns/zones/example.com.zone
 git commit -m "Add new subdomain for api.example.com
 - Requested by: devops team
@@ -119,69 +119,69 @@ git commit -m "Add new subdomain for api.example.com
 git push origin main
 ```
 
-### Step 5: Tools and Automation
+Step 5: Tools and Automation
 
 Consider these tools to improve documentation and reduce manual effort:
 
-### Certificate Management Platforms
+Certificate Management Platforms
 
-- **Certbot**: Free, automated Let's Encrypt client with built-in renewal
-- **smallstep**: Automated certificate management with security-first design
-- **Venafi**: Enterprise certificate lifecycle management
-- **AWS Certificate Manager**: Managed certificates for AWS-hosted services
+- Certbot: Free, automated Let's Encrypt client with built-in renewal
+- smallstep: Automated certificate management with security-first design
+- Venafi: Enterprise certificate lifecycle management
+- AWS Certificate Manager: Managed certificates for AWS-hosted services
 
-### DNS Management Tools
+DNS Management Tools
 
-- **Cloudflare**: Integrated DNS with SSL, automatic renewal support
-- **Route 53**: AWS-native DNS with API access
-- **OctoDNS**: Infrastructure-as-code DNS management
-- **DNSControl**: Declarative DNS configuration
+- Cloudflare: Integrated DNS with SSL, automatic renewal support
+- Route 53: AWS-native DNS with API access
+- OctoDNS: Infrastructure-as-code DNS management
+- DNSControl: Declarative DNS configuration
 
-### Monitoring Services
+Monitoring Services
 
-- **SSL Labs**: Free SSL testing and monitoring
-- **Datadog**: infrastructure monitoring
-- **UptimeRobot**: Simple uptime monitoring with SSL checks
-- **Checkmk**: Open-source monitoring with SSL checks
+- SSL Labs: Free SSL testing and monitoring
+- Datadog: infrastructure monitoring
+- UptimeRobot: Simple uptime monitoring with SSL checks
+- Checkmk: Open-source monitoring with SSL checks
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to document dns and ssl certificate renewal procedures?**
+How long does it take to document dns and ssl certificate renewal procedures?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How To Tell If Your Dns Has Been Hijacked Symptoms](/how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/)
 - [How To Set Up Encrypted Dns To Bypass Dns Poisoning](/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
@@ -189,5 +189,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Verify Your VPN is Not Leaking DNS Requests in 2026](/how-to-verify-your-vpn-is-not-leaking-dns-requests/)
 - [Privacy-Focused DNS Providers Comparison 2026](/privacy-focused-dns-providers-comparison-2026/)
 - [AI Tools for Automated SSL Certificate Management](https://bestremotetools.com/ai-tools-for-automated-ssl-certificate-management-and-monito/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

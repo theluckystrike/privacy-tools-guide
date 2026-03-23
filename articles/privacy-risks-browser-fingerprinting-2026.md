@@ -14,11 +14,11 @@ tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}
-# Privacy Risks of Browser Fingerprinting in 2026
+Privacy Risks of Browser Fingerprinting in 2026
 
-Browser fingerprinting identifies users by combining dozens of browser and hardware attributes into a unique identifier — no cookies required. It survives private browsing, cookie clearing, and VPNs. This guide explains how each technique works, how to test your exposure, and which countermeasures are actually effective.
+Browser fingerprinting identifies users by combining dozens of browser and hardware attributes into a unique identifier. no cookies required. It survives private browsing, cookie clearing, and VPNs. This guide explains how each technique works, how to test your exposure, and which countermeasures are actually effective.
 
-## What Is Being Measured
+What Is Being Measured
 
 A fingerprint is built from attributes that vary across user agents:
 
@@ -53,7 +53,7 @@ Individually, these attributes are not unique. Combined, they create a fingerpri
 
 ---
 
-## Technique 1: Canvas Fingerprinting
+Technique 1: Canvas Fingerprinting
 
 The HTML5 Canvas API renders text and shapes. Rendering differences caused by GPU, OS fonts, anti-aliasing, and sub-pixel rendering produce pixel-level differences that are stable per device:
 
@@ -69,11 +69,11 @@ function getCanvasFingerprint() {
     ctx.fillStyle = '#f60';
     ctx.fillRect(125, 1, 62, 20);
     ctx.fillStyle = '#069';
-    ctx.fillText('Canvas fingerprint 🦊', 2, 15);
+    ctx.fillText('Canvas fingerprint ', 2, 15);
     ctx.fillStyle = 'rgba(102, 204, 0, 0.7)';
-    ctx.fillText('Canvas fingerprint 🦊', 4, 17);
+    ctx.fillText('Canvas fingerprint ', 4, 17);
 
-    // toDataURL() encodes the exact pixel values — same device = same hash
+    // toDataURL() encodes the exact pixel values. same device = same hash
     return canvas.toDataURL();
 }
 
@@ -84,11 +84,11 @@ fetch('/fingerprint', {
 });
 ```
 
-**Resistance**: Firefox randomizes canvas output (adds imperceptible noise per site). Brave blocks canvas by default. Chrome has no protection.
+Resistance: Firefox randomizes canvas output (adds imperceptible noise per site). Brave blocks canvas by default. Chrome has no protection.
 
 ---
 
-## Technique 2: WebGL Fingerprinting
+Technique 2: WebGL Fingerprinting
 
 WebGL exposes GPU vendor, renderer string, and shader capabilities:
 
@@ -103,11 +103,11 @@ const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
 // Combined with other attributes, this uniquely identifies most devices
 ```
 
-**Resistance**: Brave blocks `WEBGL_debug_renderer_info`. Firefox (with privacy.resistFingerprinting) returns a generic string.
+Resistance: Brave blocks `WEBGL_debug_renderer_info`. Firefox (with privacy.resistFingerprinting) returns a generic string.
 
 ---
 
-## Technique 3: Audio Context Fingerprinting
+Technique 3: Audio Context Fingerprinting
 
 The AudioContext API processes a generated tone. Hardware differences in the audio stack produce numerically different floating-point outputs:
 
@@ -137,13 +137,13 @@ function getAudioFingerprint() {
 }
 ```
 
-**Resistance**: Firefox with `privacy.resistFingerprinting` returns a constant value. Brave adds deterministic noise.
+Resistance: Firefox with `privacy.resistFingerprinting` returns a constant value. Brave adds deterministic noise.
 
 ---
 
-## Technique 4: Font Enumeration via CSS
+Technique 4: Font Enumeration via CSS
 
-Browsers can be probed for installed fonts by measuring text rendering width and height. If a font is not installed, the browser falls back to a default — a measurable difference:
+Browsers can be probed for installed fonts by measuring text rendering width and height. If a font is not installed, the browser falls back to a default. a measurable difference:
 
 ```javascript
 function detectFont(fontName, testString = 'mmmmmmmmmmlli') {
@@ -168,45 +168,45 @@ function detectFont(fontName, testString = 'mmmmmmmmmmlli') {
 const installedFonts = FONT_LIST.filter(detectFont);
 ```
 
-Font lists are OS-specific and reveal whether you're on Windows, macOS, or Linux — and often which OS version.
+Font lists are OS-specific and reveal whether you're on Windows, macOS, or Linux. and often which OS version.
 
 ---
 
-## Technique 5: TLS Fingerprinting (JA3)
+Technique 5: TLS Fingerprinting (JA3)
 
-JA3 fingerprints the TLS handshake from the network layer — not the browser. Your TLS client hello message includes cipher suites, extensions, and elliptic curves in a specific order. This order is determined by your browser and OS, not by any setting you can change.
+JA3 fingerprints the TLS handshake from the network layer. not the browser. Your TLS client hello message includes cipher suites, extensions, and elliptic curves in a specific order. This order is determined by your browser and OS, not by any setting you can change.
 
 ```bash
-# Check your JA3 fingerprint
+Check your JA3 fingerprint
 curl https://tls.browserleaks.com/json | python3 -m json.tool | grep ja3
 
-# JA3 is used to:
-# - Identify browser type and version (even with spoofed User-Agent)
-# - Detect bots and headless browsers (Selenium, Playwright have different JA3)
-# - Track users across Tor exit nodes and VPNs (same browser = same JA3)
+JA3 is used to:
+- Identify browser type and version (even with spoofed User-Agent)
+- Detect bots and headless browsers (Selenium, Playwright have different JA3)
+- Track users across Tor exit nodes and VPNs (same browser = same JA3)
 ```
 
-**Resistance**: No browser allows changing the cipher suite order through UI. The only mitigation is using a browser that varies TLS parameters (Tor Browser does this by design) or using a TLS termination proxy.
+Resistance: No browser allows changing the cipher suite order through UI. The only mitigation is using a browser that varies TLS parameters (Tor Browser does this by design) or using a TLS termination proxy.
 
 ---
 
-## Testing Your Fingerprint
+Testing Your Fingerprint
 
 ```bash
-# Open these in your current browser:
-# EFF Cover Your Tracks
+Open these in your current browser:
+EFF Cover Your Tracks
 open https://coveryourtracks.eff.org
 
-# Am I Unique (France) — large anonymity set database
+Am I Unique (France). large anonymity set database
 open https://www.amiunique.org/fp
 
-# BrowserLeaks — detailed breakdown of every API
+BrowserLeaks. detailed breakdown of every API
 open https://browserleaks.com
 ```
 
 ---
 
-## Browser Comparison
+Browser Comparison
 
 | Browser | Canvas | WebGL | Audio | Font | JA3 Resistance | Overall |
 |---|---|---|---|---|---|---|
@@ -216,7 +216,7 @@ open https://browserleaks.com
 | Safari | Some protection | Exposed | Exposed | Exposed | Standard | Medium |
 | Chrome | Exposed | Exposed | Exposed | Exposed | Standard | Weak |
 
-**Firefox `privacy.resistFingerprinting`**:
+Firefox `privacy.resistFingerprinting`:
 
 ```
 about:config → privacy.resistFingerprinting = true
@@ -226,7 +226,7 @@ This sets: uniform canvas, uniform timezone (UTC), uniform screen resolution (10
 
 ---
 
-## Effective Countermeasures
+Effective Countermeasures
 
 | Technique | Countermeasure | Practical? |
 |---|---|---|
@@ -238,13 +238,13 @@ This sets: uniform canvas, uniform timezone (UTC), uniform screen resolution (10
 | IP address correlation | Tor or trusted VPN | Yes |
 | User-agent uniformity | Tor Browser (all users same UA) | Yes |
 
-The most effective single step: **use Tor Browser for sensitive sessions** and a hardened Firefox with `privacy.resistFingerprinting` for daily browsing.
+The most effective single step: use Tor Browser for sensitive sessions and a hardened Firefox with `privacy.resistFingerprinting` for daily browsing.
 
-Adding extensions (uBlock Origin, Privacy Badger) helps with first-party tracking but does not help with fingerprinting — the extension list itself becomes part of your fingerprint.
+Adding extensions (uBlock Origin, Privacy Badger) helps with first-party tracking but does not help with fingerprinting. the extension list itself becomes part of your fingerprint.
 
 ---
 
-## Related Reading
+Related Reading
 
 - [Audit Chrome Extensions Privacy Guide](/audit-chrome-extensions-privacy-guide/)
 - [Privacy Risks of Location Tracking Explained](/privacy-risks-location-tracking-explained/)
@@ -252,5 +252,5 @@ Adding extensions (uBlock Origin, Privacy Badger) helps with first-party trackin
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

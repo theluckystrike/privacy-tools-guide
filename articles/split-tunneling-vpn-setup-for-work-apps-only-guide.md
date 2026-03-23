@@ -17,7 +17,7 @@ voice-checked: true
 
 Split tunneling routes only work applications through your corporate VPN while personal browsing, streaming, and video calls use your regular internet connection directly, improving bandwidth and reducing latency while maintaining secure access to corporate resources. Configure split tunneling at the application level using your VPN client's app list, or at the routing level using firewall rules and policy routing on Linux. This guide walks through setting up split tunneling for work-only applications on macOS, Windows, and Linux, plus discusses security implications and best practices for hybrid work environments.
 
-## Table of Contents
+Table of Contents
 
 - [Why Split Tunneling Matters](#why-split-tunneling-matters)
 - [Prerequisites](#prerequisites)
@@ -25,18 +25,18 @@ Split tunneling routes only work applications through your corporate VPN while p
 - [Security Considerations](#security-considerations)
 - [Best Practices](#best-practices)
 
-## Why Split Tunneling Matters
+Why Split Tunneling Matters
 
 When you use a full VPN tunnel, all your network traffic routes through the VPN server. This means your personal browsing, video calls with family, and streaming services all travel through the corporate VPN infrastructure. The consequences include:
 
-- **Reduced bandwidth** for personal activities
-- **Increased latency** on time-sensitive applications like video calls
-- **Unnecessary load** on company VPN servers
-- **Potential policy violations** if personal usage violates corporate policy
+- Reduced bandwidth for personal activities
+- Increased latency on time-sensitive applications like video calls
+- Unnecessary load on company VPN servers
+- Potential policy violations if personal usage violates corporate policy
 
 Split tunneling solves these problems by letting you choose which applications use the VPN tunnel and which connect directly to the internet.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -46,25 +46,25 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand Split Tunneling Basics
+Step 1: Understand Split Tunneling Basics
 
 Split tunneling operates at the application or routing level. You have several approaches:
 
-### Application-Based Split Tunneling
+Application-Based Split Tunneling
 
 Some VPN clients let you select which applications route through the VPN. This is the simplest approach for most users.
 
-### Route-Based Split Tunneling
+Route-Based Split Tunneling
 
 Advanced users can configure routing tables to direct specific IP ranges through the VPN while everything else uses the default gateway.
 
-### Domain-Based Split Tunneling
+Domain-Based Split Tunneling
 
 Corporate environments often use domain-based rules to route traffic based on domain names or internal hostnames.
 
-### Step 2: Set Up Split Tunneling
+Step 2: Set Up Split Tunneling
 
-### WireGuard Configuration
+WireGuard Configuration
 
 WireGuard uses a simple configuration file. To route only specific applications, you configure the `AllowedIPs` setting:
 
@@ -90,66 +90,66 @@ AllowedIPs = 0.0.0.0/0
 
 Then use routing policy database (RPDB) rules or iptables to exclude specific destinations.
 
-### OpenVPN Configuration
+OpenVPN Configuration
 
 OpenVPN supports split tunneling through the `route` and `iroute` directives. Add these to your client configuration:
 
 ```bash
-# Route only specific subnets through VPN
+Route only specific subnets through VPN
 route 10.0.0.0 255.255.255.0
 route 192.168.100.0 255.255.255.0
 
-# Prevent routing all traffic through VPN
+Prevent routing all traffic through VPN
 redirect-gateway def1 bypass-dhcp
 ```
 
 The `redirect-gateway def1 bypass-dhcp` option ensures your default gateway remains unchanged, giving you direct internet access while VPN routes handle corporate subnets.
 
-### Windows Built-in VPN Split Tunneling
+Windows Built-in VPN Split Tunneling
 
 Windows 10 and 11 support split tunneling through the Settings app or PowerShell:
 
 ```powershell
-# Create VPN connection with split tunneling
+Create VPN connection with split tunneling
 Add-VpnConnection -Name "Work VPN" `
     -ServerAddress "vpn.company.com" `
     -TunnelType "Automatic" `
     -AuthenticationMethod MSChapv2 `
     -RememberCredential -SplitTunneling $True
 
-# Configure routing for corporate network only
+Configure routing for corporate network only
 $route = New-NetRoute -DestinationPrefix "10.0.0.0/24" `
     -InterfaceAlias "Work VPN" `
     -NextHop "10.0.0.1"
 ```
 
-### Step 3: Configure Application-Specific Routing
+Step 3: Configure Application-Specific Routing
 
 For precise control over which applications use the VPN, you can use network namespaces on Linux or application-specific firewall rules.
 
-### Linux: VPN Exclusively for Specific Apps
+Linux: VPN Exclusively for Specific Apps
 
 Create a dedicated network namespace for work applications:
 
 ```bash
-# Create network namespace
+Create network namespace
 sudo ip netns add work-vpn
 
-# Set up VPN interface in namespace (WireGuard example)
+Set up VPN interface in namespace (WireGuard example)
 sudo wg show | sudo ip netns exec work-vpn wg setconf wg0 /etc/wireguard/wg0.conf
 
-# Run application in namespace
+Run application in namespace
 sudo ip netns exec work-vpn firefox -P work-profile
 ```
 
 This approach isolates work applications in their own network stack with the VPN, while all other applications use your regular connection.
 
-### macOS: Per-Application VPN with Third-Party Tools
+macOS: Per-Application VPN with Third-Party Tools
 
 macOS doesn't natively support application-based split tunneling. Tools like [ Surge](https://nssurge.com/) or [Outline Manager](https://getoutline.org/) provide application-level routing:
 
 ```
-# Example Surge configuration for split tunneling
+Example Surge configuration for split tunneling
 [Proxy]
 work = ss://your-server-config
 
@@ -163,31 +163,31 @@ GEOIP, CN, work
 FINAL, DIRECT
 ```
 
-### Windows: Force Application Through VPN
+Windows: Force Application Through VPN
 
 Use PowerShell to create a VPN interface and route specific application traffic:
 
 ```powershell
-# Create a persistent route for work network through VPN
+Create a persistent route for work network through VPN
 New-NetRoute -DestinationPrefix "10.0.0.0/24" `
     -InterfaceAlias "Work VPN" `
     -NextHop "10.0.0.1" `
     -RouteMetric 1
 
-# Use Windows Filtering Platform to direct app traffic
-# This requires creating a filter with specific application ID
+Use Windows Filtering Platform to direct app traffic
+This requires creating a filter with specific application ID
 ```
 
-### Step 4: Common Split Tunneling Scenarios
+Step 4: Common Split Tunneling Scenarios
 
-### Remote Work Setup
+Remote Work Setup
 
 A typical remote worker needs access to:
 - Internal corporate network (10.x.x.x, 192.168.x.x)
 - Cloud resources (AWS, Azure, GCP)
 - Third-party tools (Salesforce, Jira, Confluence)
 
-Everything else—personal email, streaming services, social media—should bypass the VPN.
+Everything else, personal email, streaming services, social media, should bypass the VPN.
 
 Example WireGuard configuration:
 
@@ -198,7 +198,7 @@ AllowedIPs = 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16
 PersistentKeepalive = 25
 ```
 
-### Developer Configuration
+Developer Configuration
 
 Developers often need access to:
 - Internal development servers
@@ -206,15 +206,15 @@ Developers often need access to:
 - Cloud provider APIs
 
 ```bash
-# Route only specific corporate ranges
+Route only specific corporate ranges
 route 10.0.0.0 255.255.0.0
 route 172.16.0.0 255.240.0.0
 
-# Exclude common cloud provider ranges from VPN
-# These typically go direct for better performance
+Exclude common cloud provider ranges from VPN
+These typically go direct for better performance
 ```
 
-### Accessing Specific Services Only
+Accessing Specific Services Only
 
 For users who only need access to particular resources:
 
@@ -226,57 +226,57 @@ AllowedIPs = vpn.company.com/32, gitlab.internal/32
 
 This routes only traffic to the specified hostname (via DNS resolution) and IP through the VPN.
 
-## Troubleshooting Split Tunneling
+Troubleshooting Split Tunneling
 
-### Traffic Not Routing Correctly
+Traffic Not Routing Correctly
 
 Verify your routing table:
 
 ```bash
-# Linux
+Linux
 ip route show
 
-# Windows
+Windows
 route print
 
-# macOS
+macOS
 netstat -rn
 ```
 
 Check that your corporate network routes use the VPN interface while default traffic uses your regular gateway.
 
-### DNS Leaks
+DNS Leaks
 
 When using split tunneling, DNS requests might leak to your ISP. Force DNS through the VPN tunnel:
 
 ```bash
-# Linux - force DNS through VPN
+Linux - force DNS through VPN
 sudo resolvectl dns wg0 10.0.0.1
 sudo resolvectl routing-domain wg0 private
 
-# Verify
+Verify
 resolvectl query vpn.company.com
 ```
 
-### Application Connectivity Issues
+Application Connectivity Issues
 
 Some applications hardcode server addresses. Use `tcpdump` or Wireshark to verify traffic flow:
 
 ```bash
-# Capture traffic on VPN interface
+Capture traffic on VPN interface
 sudo tcpdump -i wg0 -n
 
-# Capture traffic on regular interface
+Capture traffic on regular interface
 sudo tcpdump -i eth0 -n
 ```
 
 Compare the captured traffic to ensure corporate IP ranges go through the VPN interface.
 
-## Security Considerations
+Security Considerations
 
 Split tunneling introduces security considerations:
 
-### Data Exfiltration Risk
+Data Exfiltration Risk
 
 With split tunneling, malicious software on your machine could potentially access both corporate resources and the internet simultaneously. Mitigate this with:
 
@@ -284,7 +284,7 @@ With split tunneling, malicious software on your machine could potentially acces
 - Application allowlisting
 - Network segmentation
 
-### Split Tunnel Detection
+Split Tunnel Detection
 
 Some organizations detect split tunneling through:
 
@@ -294,64 +294,64 @@ Some organizations detect split tunneling through:
 
 Ensure your configuration aligns with corporate policy.
 
-### Always-On VPN Considerations
+Always-On VPN Considerations
 
 For high-security environments, consider combining split tunneling with always-on VPN:
 
 ```bash
-# Linux - kill switch using iptables
+Linux - kill switch using iptables
 sudo iptables -A OUTPUT ! -o wg0 -j DROP
 sudo ip6tables -A OUTPUT ! -o wg0 -j DROP
 ```
 
 This prevents any traffic when the VPN is down.
 
-### Step 5: Measuring Split Tunneling Effectiveness
+Step 5: Measuring Split Tunneling Effectiveness
 
 Test your configuration to ensure it's working as expected:
 
 ```bash
-# Check public IP (should show your ISP IP, not VPN)
+Check public IP (should show your ISP IP, not VPN)
 curl ifconfig.me
 
-# Check corporate network routing (should show VPN endpoint)
+Check corporate network routing (should show VPN endpoint)
 ip route get 10.0.0.1
 
-# Verify DNS resolution
+Verify DNS resolution
 nslookup gitlab.internal
 ```
 
-## Best Practices
+Best Practices
 
-1. **Start simple**: Use your VPN client's built-in split tunneling before custom configurations
-2. **Document your setup**: Note which apps and domains route through VPN
-3. **Test regularly**: Verify split tunneling after system updates
-4. **Monitor bandwidth**: Ensure personal activities don't consume corporate VPN resources
-5. **Coordinate with IT**: Ensure compliance with organizational security policies
+1. Start simple: Use your VPN client's built-in split tunneling before custom configurations
+2. Document your setup: Note which apps and domains route through VPN
+3. Test regularly: Verify split tunneling after system updates
+4. Monitor bandwidth: Ensure personal activities don't consume corporate VPN resources
+5. Coordinate with IT: Ensure compliance with organizational security policies
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to work apps only guide?**
+How long does it take to work apps only guide?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How To Configure Per App Vpn On Android](/how-to-configure-per-app-vpn-on-android-without-root/)
 - [How to Configure VPN Exempt List for Local Network](/how-to-configure-vpn-exempt-list-for-local-network-access/)
@@ -359,4 +359,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Verify Your VPN is Not Leaking DNS Requests in 2026](/how-to-verify-your-vpn-is-not-leaking-dns-requests/)
 - [VPN for Remote Desktop Connection from Hotel WiFi Safely](/vpn-for-remote-desktop-connection-from-hotel-wifi-safely/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

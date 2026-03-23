@@ -18,7 +18,7 @@ tags: [privacy-tools-guide, stalkerware, mobile-security, privacy, safety, cyber
 
 Stalkerware (also called spy apps, spyware, monitoring software) runs silently on phones, sending real-time location, text messages, call logs, and app usage to abusers. Detection requires checking for unusual battery drain, data usage spikes, suspicious apps, high temperatures, and slow performance. iOS offers better protection than Android due to stricter app controls. Removal means factory reset (nuclear option) or using dedicated removal tools (iMazing for iOS, AVG Cleaner for Android). Before removal, gather evidence, plan safe exit, and contact domestic violence resources. This guide covers technical detection, removal methods, safety planning, and resources.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding Stalkerware: What It Is and How It Works](#understanding-stalkerware-what-it-is-and-how-it-works)
 - [Detection Methods: How to Spot Stalkerware](#detection-methods-how-to-spot-stalkerware)
@@ -27,59 +27,59 @@ Stalkerware (also called spy apps, spyware, monitoring software) runs silently o
 - [Safety Planning Resources](#safety-planning-resources)
 - [Common Mistakes to Avoid](#common-mistakes-to-avoid)
 
-## Understanding Stalkerware: What It Is and How It Works
+Understanding Stalkerware: What It Is and How It Works
 
 Stalkerware is commercial spyware marketed as "parental monitoring" or "employee tracking" but used to spy on intimate partners. Unlike typical malware that steals money or data, stalkerware's purpose is control and harassment.
 
-### Common Stalkerware Apps (2026)
+Common Stalkerware Apps (2026)
 
-**Android (more vulnerable)**:
-- **mSpy**: $9.99-49.99/month. Hidden app, real-time location, text/call monitoring, photo access.
-- **FlexiSPY**: $24.95-199/month. Advanced: call recording, ambient recording (listens to surroundings even without active call), browser history.
-- **SpyBubble**: $9.99/month. Location tracking, message interception, app usage monitoring.
-- **PhoneSpector**: $19.95/month. Activity log, GPS tracking, photo/video download.
+Android (more vulnerable):
+- mSpy: $9.99-49.99/month. Hidden app, real-time location, text/call monitoring, photo access.
+- FlexiSPY: $24.95-199/month. Advanced: call recording, ambient recording (listens to surroundings even without active call), browser history.
+- SpyBubble: $9.99/month. Location tracking, message interception, app usage monitoring.
+- PhoneSpector: $19.95/month. Activity log, GPS tracking, photo/video download.
 
-**iOS (restricted)**:
+iOS (restricted):
 - Limited options due to Apple's strict app store rules
 - Most iOS stalkerware requires jailbreak
 - FaceTime exploitation, iCloud password access, or device-level access more common than installed apps
 
-### How Stalkerware Works
+How Stalkerware Works
 
-**Installation**:
+Installation:
 1. Physical access to phone (5-30 minutes required)
 2. App downloaded and hidden, or installed via enterprise certificate
 3. App disabled from showing in home screen
 4. Runs in background with minimal visibility
 
-**Data collection**:
+Data collection:
 ```
 Constant monitoring:
-├─ Location (GPS, cell tower triangulation)
-├─ Messages (SMS, WhatsApp, Signal, iMessage)
-├─ Calls (duration, phone numbers, times)
-├─ Photos and videos
-├─ Browser history and search queries
-├─ App usage times and patterns
-├─ Contacts and call logs
-└─ Keystroke logging (captures everything typed)
+ Location (GPS, cell tower triangulation)
+ Messages (SMS, WhatsApp, Signal, iMessage)
+ Calls (duration, phone numbers, times)
+ Photos and videos
+ Browser history and search queries
+ App usage times and patterns
+ Contacts and call logs
+ Keystroke logging (captures everything typed)
 
 Data transmission:
-└─ Encrypted upload to attacker's control server
+ Encrypted upload to attacker's control server
    (Usually triggered every 30 minutes to hourly)
 ```
 
-**Control methods**:
+Control methods:
 - Abuser logs into web dashboard to view collected data
 - Can delete messages from phone remotely
 - Can intercept location in real-time
 - Receives alerts on specific contacts or keywords
 
-## Detection Methods: How to Spot Stalkerware
+Detection Methods: How to Spot Stalkerware
 
-### Method 1: Physical and Behavioral Signs
+Method 1: Physical and Behavioral Signs
 
-**Battery drain analysis**:
+Battery drain analysis:
 
 Normal phone battery:
 - Loses 1-2% per hour idle
@@ -98,7 +98,7 @@ Test:
 4. Normal idle drain: 0-1% per hour
 ```
 
-**Data usage spikes**:
+Data usage spikes:
 
 ```
 Monthly data analysis:
@@ -109,22 +109,22 @@ Monthly data analysis:
 - Run again later in month to verify pattern
 ```
 
-**Call and messaging delays**:
+Call and messaging delays:
 
 - Calls delay 2-3 seconds before connecting (interception processing)
 - Text messages fail to send once, then retry automatically
 - Small delays imperceptible to user, but consistent pattern = spyware
 
-**Phone temperature**:
+Phone temperature:
 
 - Feel back of phone when not in active use
 - Phone should be cool (body temperature ~98.6°F)
 - Stalkerware processing causes warmth even when not in use
 - If warm when idle, background process running
 
-### Method 2: iOS-Specific Detection
+Method 2: iOS-Specific Detection
 
-**Check iOS restrictions**:
+Check iOS restrictions:
 
 ```
 Settings → General → iPhone Storage → Apps listed by size:
@@ -136,7 +136,7 @@ Settings → General → iPhone Storage → Apps listed by size:
   "Device Manager"
 ```
 
-**Monitor Bluetooth connections**:
+Monitor Bluetooth connections:
 
 ```
 Settings → Bluetooth:
@@ -145,7 +145,7 @@ Settings → Bluetooth:
 - Unknown AirPods or devices = suspicious
 ```
 
-**Check iCloud activity**:
+Check iCloud activity:
 
 ```
 Settings → [Your Name] → Password & Security:
@@ -154,7 +154,7 @@ Settings → [Your Name] → Password & Security:
 - Attacker may be using iCloud to access data
 ```
 
-**iOS 16+ Indicator Icons**:
+iOS 16+ Indicator Icons:
 
 ```
 Watch for these persistent icons in status bar:
@@ -164,9 +164,9 @@ Watch for these persistent icons in status bar:
 - Blue/green dots persisting without app usage = stalkerware
 ```
 
-**Network activity monitoring**:
+Network activity monitoring:
 
-Use iOS app like **Simulator** or **Network Analyzer**:
+Use iOS app like Simulator or Network Analyzer:
 ```
 Monitor outbound connections when phone is idle:
 - Legitimate Apple services (iCloud, Siri, etc.)
@@ -174,9 +174,9 @@ Monitor outbound connections when phone is idle:
 - Persistent connections when phone not in use = stalkerware
 ```
 
-### Method 3: Android-Specific Detection
+Method 3: Android-Specific Detection
 
-**Check installed apps**:
+Check installed apps:
 
 ```
 Settings → Apps:
@@ -190,7 +190,7 @@ Settings → Apps:
    - Hidden icon (won't appear in launcher)
 ```
 
-**Check app permissions**:
+Check app permissions:
 
 ```
 Settings → Apps → Permissions:
@@ -202,7 +202,7 @@ Settings → Apps → Permissions:
 - Unusual permission combinations = stalkerware
 ```
 
-**Monitor battery usage**:
+Monitor battery usage:
 
 ```
 Settings → Battery or Battery Usage:
@@ -213,7 +213,7 @@ Settings → Battery or Battery Usage:
 5. Look for background process not matching any visible app
 ```
 
-**Check device administration permissions**:
+Check device administration permissions:
 
 ```
 Settings → Security → Device Admin Apps (or Device Administrators):
@@ -223,7 +223,7 @@ Settings → Security → Device Admin Apps (or Device Administrators):
 - If unfamiliar app is admin: THIS IS STALKERWARE
 ```
 
-**Monitor data usage**:
+Monitor data usage:
 
 ```
 Settings → Network → Mobile Network Data:
@@ -233,15 +233,15 @@ Settings → Network → Mobile Network Data:
 4. If one app using 100MB+ unexpectedly = data exfiltration
 ```
 
-### Method 4: Browser-Based Detection
+Method 4: Browser-Based Detection
 
-**Check browser history and search**:
+Check browser history and search:
 
 If browser history seems missing or incomplete:
 - Stalkerware may be deleting history to hide presence
 - Or recording searches without showing in standard history
 
-**Look for network traffic**:
+Look for network traffic:
 
 On Android with developer options enabled:
 ```
@@ -253,11 +253,11 @@ Settings → Developer Options → Networking:
   - Generic hosting providers (Amazon AWS, Vultr, DigitalOcean)
 ```
 
-## Removal Methods: Step-by-Step
+Removal Methods: Step-by-Step
 
-### iOS Removal: Full Factory Reset (Most Reliable)
+iOS Removal: Full Factory Reset (Most Reliable)
 
-**Before resetting**:
+Before resetting:
 
 ```
 CRITICAL: Gather evidence if experiencing abuse:
@@ -280,7 +280,7 @@ CRITICAL: Gather evidence if experiencing abuse:
    - They can help safety plan before you remove phone
 ```
 
-**Factory reset procedure**:
+Factory reset procedure:
 
 ```
 Step 1: Create new Apple ID with recovery email you control
@@ -313,11 +313,11 @@ Step 5: Restore accounts from memory
 - Change passwords on all accounts from a safe device first
 ```
 
-**Time required**: 30-45 minutes
+Time required: 30-45 minutes
 
-**Success rate**: 99.9% (factory reset removes all software)
+Success rate: 99.9% (factory reset removes all software)
 
-### iOS Removal: Partial Method (If Factory Reset Not Possible)
+iOS Removal: Partial Method (If Factory Reset Not Possible)
 
 If you need to keep photos/data and factory reset isn't immediately possible:
 
@@ -349,9 +349,9 @@ Step 5: Reset network settings
 - Removes any covert Bluetooth connections
 ```
 
-**Important**: This method is not as thorough as factory reset. If possible, do full factory reset.
+This method is not as thorough as factory reset. If possible, do full factory reset.
 
-### Android Removal: Safe Mode Method
+Android Removal: Safe Mode Method
 
 Safest method that preserves some data:
 
@@ -384,9 +384,9 @@ Step 5: Restart normally
 - Restart phone (it will exit Safe Mode)
 ```
 
-**Limitation**: Malware may reinstall itself unless app source is removed.
+Limitation: Malware may reinstall itself unless app source is removed.
 
-### Android Removal: Factory Reset (Most Reliable)
+Android Removal: Factory Reset (Most Reliable)
 
 ```
 Step 1: Back up critical data (to external storage or cloud)
@@ -424,15 +424,15 @@ Step 6: Set strong passwords and two-factor auth
 - Change passwords from safe device first
 ```
 
-**Time required**: 45-60 minutes
+Time required: 45-60 minutes
 
-**Success rate**: 99.9% (equivalent to iOS factory reset)
+Success rate: 99.9% (equivalent to iOS factory reset)
 
-## Post-Removal: Securing Your Phone Going Forward
+Post-Removal: Securing Your Phone Going Forward
 
 After removal, implement these protections:
 
-### iOS Security
+iOS Security
 
 ```
 1. Strong authentication:
@@ -461,7 +461,7 @@ After removal, implement these protections:
    - Consider blocking abuser's phone number
 ```
 
-### Android Security
+Android Security
 
 ```
 1. Strong authentication:
@@ -494,23 +494,23 @@ After removal, implement these protections:
    - Remove anything unfamiliar
 ```
 
-## Safety Planning Resources
+Safety Planning Resources
 
 If stalkerware was found, this is domestic violence. Contact resources:
 
-**National Domestic Violence Hotline**:
+National Domestic Violence Hotline:
 - Phone: 1-800-799-7233
 - Text: "START" to 88788
 - Online chat: thehotline.org
 - 24/7, confidential, free
 
-**What they provide**:
+What they provide:
 - Safety planning assistance
 - Local resource referrals
 - Information about legal options
 - Emotional support
 
-**Safety planning considerations**:
+Safety planning considerations:
 
 Before removing stalkerware:
 ```
@@ -540,34 +540,34 @@ Before removing stalkerware:
    - File police report if crimes occurred
 ```
 
-## Common Mistakes to Avoid
+Common Mistakes to Avoid
 
-**Mistake 1: Removing phone without safety plan**
+Mistake 1: Removing phone without safety plan
 
 Don't: Remove stalkerware without telling anyone or making exit plan
 Do: Contact domestic violence hotline, create safety plan, then remove
 
-**Mistake 2: Using same backup/account after reset**
+Mistake 2: Using same backup/account after reset
 
 Don't: Factory reset, then sign back into iCloud or Google account with abuser's password
 Do: Create fresh accounts with passwords only you know
 
-**Mistake 3: Keeping old phone after removal**
+Mistake 3: Keeping old phone after removal
 
 Don't: Keep stalkerware phone and add it to family plan or shared accounts
 Do: Destroy old phone or give to law enforcement as evidence
 
-**Mistake 4: Not changing all passwords**
+Mistake 4: Not changing all passwords
 
 Don't: Remove stalkerware but keep using same email/social media passwords
 Do: Change passwords for all accounts from safe device
 
-**Mistake 4: Not enabling two-factor authentication**
+Mistake 4: Not enabling two-factor authentication
 
 Don't: Set up new phone without 2FA on accounts
 Do: Enable 2FA on email, phone carrier account, social media, banking
 
-## Related Articles
+Related Articles
 
 - [Domestic Violence Safety Planning for Digital Privacy](/domestic-violence-safety-planning-digital-privacy/)
 - [How to Detect Hidden Tracking Apps on Your Phone](/detect-hidden-tracking-apps-phone/)
@@ -578,4 +578,4 @@ Do: Enable 2FA on email, phone carrier account, social media, banking
 
 {% endraw %}
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

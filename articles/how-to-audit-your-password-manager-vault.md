@@ -18,7 +18,7 @@ tags: [privacy-tools-guide]
 
 Regularly auditing your password manager vault is essential for maintaining strong security hygiene. Over time, vaults accumulate stale credentials, weak passwords, and forgotten shared items that create attack vectors. This guide walks through practical methods to audit your vault using command-line tools and scripts, designed for developers and power users who want automation and control.
 
-## Why Vault Auditing Matters
+Why Vault Auditing Matters
 
 Password managers simplify credential management, but they can also become repositories of security debt. A vault with hundreds of entries likely contains:
 
@@ -30,7 +30,7 @@ Password managers simplify credential management, but they can also become repos
 
 An audit helps you identify and remediate these issues before they become problems. Rather than manually reviewing each entry, you can use CLI tools and scripting to automate much of this process.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -40,57 +40,57 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Exporting Your Vault Data
+Step 1: Exporting Your Vault Data
 
 The first step in any audit is getting your vault data into a format you can analyze. Most password managers support encrypted exports that maintain your data's security during the audit process.
 
-### Bitwarden CLI Export
+Bitwarden CLI Export
 
 Bitwarden provides a straightforward export command:
 
 ```bash
-# Install Bitwarden CLI first
+Install Bitwarden CLI first
 npm install -g @bitwarden/cli
 
-# Login and unlock
+Login and unlock
 bw login your-email@example.com
 bw unlock
 
-# Export to JSON (will prompt for encryption password)
+Export to JSON (will prompt for encryption password)
 bw export --output ~/vault-export.json --format json
 ```
 
-The exported JSON contains all your vault items including login credentials, secure notes, and payment cards. Keep this file secure—it's unencrypted unless you provide a password during export.
+The exported JSON contains all your vault items including login credentials, secure notes, and payment cards. Keep this file secure, it's unencrypted unless you provide a password during export.
 
-### 1Password CLI Export
+1Password CLI Export
 
 1Password requires using the CLI to export data:
 
 ```bash
-# Install 1Password CLI
+Install 1Password CLI
 brew install --cask 1password-cli
 
-# Sign in
+Sign in
 op signin
 
-# Export vault to JSON
+Export vault to JSON
 op list items | op get item - > ~/1password-export.json
 ```
 
-### KeePassXC Export
+KeePassXC Export
 
 For KeePass databases, you can export directly:
 
 ```bash
-# Using keepassxc-cli
+Using keepassxc-cli
 keepassxc-cli export --format csv database.kdbx -o vault-export.csv
 ```
 
-### Step 2: Analyzing Password Strength
+Step 2: Analyzing Password Strength
 
 Once you have your vault data exported, the next step is analyzing password strength. You can write custom scripts or use existing tools to identify weak passwords.
 
-### Python Script for Password Analysis
+Python Script for Password Analysis
 
 Here's a practical script that analyzes exported Bitwarden JSON:
 
@@ -186,11 +186,11 @@ Run this script against your exported vault:
 python3 audit_vault.py ~/vault-export.json
 ```
 
-### Step 3: Identifying Reused Passwords
+Step 3: Identifying Reused Passwords
 
 Password reuse is one of the most common security vulnerabilities. A data breach at one service exposes all accounts using the same password.
 
-### Finding Duplicates
+Finding Duplicates
 
 Add this function to your analysis script to detect password reuse:
 
@@ -225,11 +225,11 @@ def find_reused_passwords(vault_data: Dict) -> List[Dict]:
 
 This identifies which passwords appear multiple times in your vault, allowing you to prioritize updating these credentials.
 
-### Step 4: Checking for Compromised Passwords
+Step 4: Checking for Compromised Passwords
 
 Beyond analyzing password strength, you should check whether your passwords have appeared in known data breaches. The Have I Been Pwned API provides this functionality through a k-anonymity model that protects your actual passwords.
 
-### Integration with HIBP
+Integration with HIBP
 
 ```python
 import hashlib
@@ -280,31 +280,31 @@ def audit_compromised(vault_file: str):
         print("\nNo compromised passwords found.")
 ```
 
-Use this carefully—while the k-anonymity model protects your passwords, you're still sending partial hashes to an external service. For maximum security, consider running this check only on an offline machine.
+Use this carefully, while the k-anonymity model protects your passwords, you're still sending partial hashes to an external service. For maximum security, consider running this check only on an offline machine.
 
-### Step 5: Create an Audit Workflow
+Step 5: Create an Audit Workflow
 
 Rather than performing manual audits, establish a regular workflow using your password manager's built-in features combined with custom scripts.
 
-### Automated Weekly Audit
+Automated Weekly Audit
 
 ```bash
 #!/bin/bash
-# Weekly vault audit script
+Weekly vault audit script
 
 DATE=$(date +%Y-%m-%d)
 AUDIT_DIR=~/vault-audits
 mkdir -p "$AUDIT_DIR"
 
-# Export vault
+Export vault
 bw unlock --raw
 export BW_SESSION
 bw export --format json --output "$AUDIT_DIR/vault-$DATE.json"
 
-# Run analysis
+Run analysis
 python3 audit_vault.py "$AUDIT_DIR/vault-$DATE.json" > "$AUDIT_DIR/report-$DATE.txt"
 
-# Check for compromised passwords
+Check for compromised passwords
 python3 audit_compromised.py "$AUDIT_DIR/vault-$DATE.json" >> "$AUDIT_DIR/report-$DATE.txt"
 
 echo "Audit complete. Report saved to $AUDIT_DIR/report-$DATE.txt"
@@ -313,62 +313,62 @@ echo "Audit complete. Report saved to $AUDIT_DIR/report-$DATE.txt"
 Schedule this with cron to run weekly:
 
 ```bash
-# Add to crontab
+Add to crontab
 0 9 * * 0 /path/to/weekly-audit.sh
 ```
 
-## Additional Audit Areas
+Additional Audit Areas
 
 Beyond passwords, review these vault components:
 
-**Two-Factor Authentication**: Check which accounts still rely on less secure 2FA methods like SMS. Identify accounts without any two-factor enabled.
+Two-Factor Authentication: Check which accounts still rely on less secure 2FA methods like SMS. Identify accounts without any two-factor enabled.
 
-**Secure Notes**: Audit sensitive information stored in secure notes. Ensure nothing critical is stored without protection.
+Secure Notes: Audit sensitive information stored in secure notes. Ensure nothing critical is stored without protection.
 
-**Shared Items**: Review items shared with family or team members. Remove access for people who no longer need it.
+Shared Items: Review items shared with family or team members. Remove access for people who no longer need it.
 
-**Recovery Options**: Verify your recovery email and phone number are current. Check that backup codes are stored securely.
+Recovery Options: Verify your recovery email and phone number are current. Check that backup codes are stored securely.
 
-**Attachments**: Review large files stored in your vault. Consider moving these to dedicated encrypted storage solutions.
+Attachments: Review large files stored in your vault. Consider moving these to dedicated encrypted storage solutions.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to audit your password manager vault: a practical guide?**
+How long does it take to audit your password manager vault: a practical guide?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Audit Password Vault for Weak, Duplicate, and Reused](/how-to-audit-password-vault-for-weak-duplicates-reused-passw/)
 - [What to Do If Your Password Manager Vault Was Compromised](/what-to-do-if-your-password-manager-vault-was-compromised/)
@@ -376,5 +376,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Set Up Password Manager for New Employee Onboarding](/how-to-set-up-password-manager-for-new-employee-onboarding/)
 - [Best Password Manager CLI Tools: A Developer's Guide](/best-password-manager-cli-tools/)
 - [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

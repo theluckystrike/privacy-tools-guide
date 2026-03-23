@@ -15,12 +15,12 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-Smart bulbs, thermostats, cameras, and voice assistants are computers running outdated firmware with no security update guarantee. Putting them on the same network as your laptops means a compromised smart plug can sniff your banking traffic. VLANs are the standard way to isolate IoT devices — they get internet access but can't reach your main network.
+Smart bulbs, thermostats, cameras, and voice assistants are computers running outdated firmware with no security update guarantee. Putting them on the same network as your laptops means a compromised smart plug can sniff your banking traffic. VLANs are the standard way to isolate IoT devices. they get internet access but can't reach your main network.
 ---
 
-## Table of Contents
+Table of Contents
 
-- [Step 5**: mDNS/Bonjour Forwarding (Optional)](#step-5-mdnsbonjour-forwarding-optional)
+- [Step 5: mDNS/Bonjour Forwarding (Optional)](#step-5-mdnsbonjour-forwarding-optional)
 - [Why IoT Devices Are a Risk](#why-iot-devices-are-a-risk)
 - [Architecture: Three-Network Model](#architecture-three-network-model)
 - [Prerequisites](#prerequisites)
@@ -35,14 +35,14 @@ Smart bulbs, thermostats, cameras, and voice assistants are computers running ou
 - [Verify the Segmentation Works](#verify-the-segmentation-works)
 - [Related Reading](#related-reading)
 
-## Step 5**: mDNS/Bonjour Forwarding (Optional)
+Step 5: mDNS/Bonjour Forwarding (Optional)
 
 Some IoT ecosystems use mDNS for device discovery.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Smart bulbs**: thermostats, cameras, and voice assistants are computers running outdated firmware with no security update guarantee.
+- Mastering advanced features takes: 1-2 weeks of regular use.
+- Focus on the 20%: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- Smart bulbs: thermostats, cameras, and voice assistants are computers running outdated firmware with no security update guarantee.
 
-## Why IoT Devices Are a Risk
+Why IoT Devices Are a Risk
 
 - Most ship with default or weak credentials
 - Firmware updates stop within 1-3 years, leaving known vulnerabilities unpatched
@@ -52,7 +52,7 @@ Some IoT ecosystems use mDNS for device discovery.
 
 ---
 
-## Architecture: Three-Network Model
+Architecture: Three-Network Model
 
 ```
 Internet
@@ -66,7 +66,7 @@ Internet
   NAS       Thermostats
 ```
 
-**Rules:**
+Rules:
 - Main LAN → IoT VLAN: BLOCKED (prevent your PCs from being targeted from IoT, and vice versa)
 - IoT VLAN → Main LAN: BLOCKED
 - IoT VLAN → Internet: ALLOWED (for cloud functionality)
@@ -75,7 +75,7 @@ Internet
 
 ---
 
-## Prerequisites
+Prerequisites
 
 - OpenWrt router (most consumer routers with 16MB+ flash can run OpenWrt)
 - Router with managed switch (supports VLAN tagging)
@@ -83,46 +83,46 @@ Internet
 
 ---
 
-## Step 1: Create the IoT VLAN in OpenWrt
+Step 1: Create the IoT VLAN in OpenWrt
 
 ```bash
-# SSH into OpenWrt
+SSH into OpenWrt
 ssh root@192.168.1.1
 
-# Check existing switch configuration
+Check existing switch configuration
 uci show network | grep switch
 
-# Create VLAN 20 for IoT (tagged on uplink port, untagged on port 3)
+Create VLAN 20 for IoT (tagged on uplink port, untagged on port 3)
 uci add network switch_vlan
 uci set network.@switch_vlan[-1]=switch_vlan
 uci set network.@switch_vlan[-1].device=switch0
 uci set network.@switch_vlan[-1].vlan=20
 uci set network.@switch_vlan[-1].ports="3 0t"
-# Port 0 = CPU (tagged), Port 3 = physical port for IoT wired devices
+Port 0 = CPU (tagged), Port 3 = physical port for IoT wired devices
 
 uci commit network
 ```
 
 ---
 
-## Step 2: Create IoT Network Interface
+Step 2: Create IoT Network Interface
 
 ```bash
-# Create interface for IoT VLAN
+Create interface for IoT VLAN
 uci set network.iot=interface
 uci set network.iot.ifname=eth0.20
 uci set network.iot.proto=static
 uci set network.iot.ipaddr=192.168.20.1
 uci set network.iot.netmask=255.255.255.0
 
-# Create DHCP server for IoT VLAN
+Create DHCP server for IoT VLAN
 uci set dhcp.iot=dhcp
 uci set dhcp.iot.interface=iot
 uci set dhcp.iot.start=100
 uci set dhcp.iot.limit=150
 uci set dhcp.iot.leasetime=12h
 
-# Set DNS for IoT (Pi-hole or AdGuard for telemetry blocking)
+Set DNS for IoT (Pi-hole or AdGuard for telemetry blocking)
 uci set dhcp.iot.dhcp_option="6,192.168.20.2"  # IoT VLAN Pi-hole instance
 
 uci commit network dhcp
@@ -132,10 +132,10 @@ uci commit network dhcp
 
 ---
 
-## Step 3: Create IoT Firewall Zone
+Step 3: Create IoT Firewall Zone
 
 ```bash
-# Add IoT zone to firewall
+Add IoT zone to firewall
 uci add firewall zone
 uci set firewall.@zone[-1].name=iot
 uci set firewall.@zone[-1].input=REJECT
@@ -143,12 +143,12 @@ uci set firewall.@zone[-1].output=ACCEPT
 uci set firewall.@zone[-1].forward=REJECT
 uci set firewall.@zone[-1].network=iot
 
-# Allow IoT to access internet
+Allow IoT to access internet
 uci add firewall forwarding
 uci set firewall.@forwarding[-1].src=iot
 uci set firewall.@forwarding[-1].dest=wan
 
-# Allow DHCP and DNS from IoT zone
+Allow DHCP and DNS from IoT zone
 uci add firewall rule
 uci set firewall.@rule[-1].name=iot-dhcp-dns
 uci set firewall.@rule[-1].src=iot
@@ -156,7 +156,7 @@ uci set firewall.@rule[-1].dest_port="53 67 68"
 uci set firewall.@rule[-1].proto="udp"
 uci set firewall.@rule[-1].target=ACCEPT
 
-# Block IoT from reaching main LAN (explicit reject rule)
+Block IoT from reaching main LAN (explicit reject rule)
 uci add firewall rule
 uci set firewall.@rule[-1].name=block-iot-to-lan
 uci set firewall.@rule[-1].src=iot
@@ -169,10 +169,10 @@ uci commit firewall
 
 ---
 
-## Step 4: Create IoT WiFi SSID
+Step 4: Create IoT WiFi SSID
 
 ```bash
-# Add a separate SSID for IoT devices on VLAN 20
+Add a separate SSID for IoT devices on VLAN 20
 uci set wireless.radio0.htmode=HT20
 
 uci add wireless wifi-iface
@@ -188,16 +188,16 @@ uci commit wireless
 wifi reload
 ```
 
-**Note**: `isolate=1` breaks local device discovery (mDNS-based pairing). If you need devices to discover each other (e.g., a Home Assistant hub controlling smart bulbs), you'll need mDNS forwarding — covered below.
+`isolate=1` breaks local device discovery (mDNS-based pairing). If you need devices to discover each other (e.g., a Home Assistant hub controlling smart bulbs), you'll need mDNS forwarding. covered below.
 
 ---
 
-## Step 5: mDNS/Bonjour Forwarding (Optional)
+Step 5: mDNS/Bonjour Forwarding (Optional)
 
 Some IoT ecosystems use mDNS for device discovery. With strict VLAN isolation, this breaks. You can selectively forward mDNS between VLANs:
 
 ```bash
-# Install avahi (mDNS responder with multi-subnet support)
+Install avahi (mDNS responder with multi-subnet support)
 opkg install avahi-daemon
 
 cat > /etc/avahi/avahi-daemon.conf << 'EOF'
@@ -224,69 +224,69 @@ This reflects mDNS packets between `br-lan` and `br-iot` without opening the ful
 
 ---
 
-## Step 6: Assign IoT Devices to the VLAN
+Step 6: Assign IoT Devices to the VLAN
 
-**Wired IoT devices**: Connect to the physical port configured for VLAN 20 (port 3 in the example).
+Wired IoT devices: Connect to the physical port configured for VLAN 20 (port 3 in the example).
 
-**Wireless IoT devices**:
+Wireless IoT devices:
 1. Connect the device to the "HomeIoT" SSID
 2. It will receive an IP in the 192.168.20.x range
 3. Verify isolation:
 
 ```bash
-# From main LAN, verify you cannot ping IoT devices
+From main LAN, verify you cannot ping IoT devices
 ping 192.168.20.101   # Should timeout or be REJECTED
 
-# From IoT device, verify it can reach internet but not main LAN
-# (test from the device's built-in network tools, or:)
-# Monitor the firewall log
+From IoT device, verify it can reach internet but not main LAN
+(test from the device's built-in network tools, or:)
+Monitor the firewall log
 logread -f | grep -i "block-iot"
 ```
 
 ---
 
-## Monitor IoT Traffic
+Monitor IoT Traffic
 
 ```bash
-# Watch what your IoT devices are doing at the network level
+Watch what your IoT devices are doing at the network level
 tcpdump -i br-iot -nn -v
 
-# Check DNS queries from IoT VLAN to spot suspicious domains
+Check DNS queries from IoT VLAN to spot suspicious domains
 tail -f /var/log/dnsmasq.log | grep "192.168.20"
 
-# See which IoT devices are talking to external IPs
+See which IoT devices are talking to external IPs
 conntrack -L | grep "192.168.20" | awk '{print $5}' | sort | uniq -c | sort -rn
 ```
 
 ---
 
-## Block IoT Telemetry at DNS Level
+Block IoT Telemetry at DNS Level
 
 Even on the isolated VLAN, you can filter outbound DNS to block manufacturer telemetry:
 
 ```bash
-# Pi-hole on IoT VLAN (or use the same Pi-hole with a separate group)
-# Add IoT-specific blocklist to Pi-hole:
+Pi-hole on IoT VLAN (or use the same Pi-hole with a separate group)
+Add IoT-specific blocklist to Pi-hole:
 
-# Commonly used IoT telemetry domains:
-# iot.samsungcloud.com
-# metrics.ring.com
-# log-upload.ecobee.com
-# analytics.nest.com
-# telemetry.simplisafe.com
+Commonly used IoT telemetry domains:
+iot.samsungcloud.com
+metrics.ring.com
+log-upload.ecobee.com
+analytics.nest.com
+telemetry.simplisafe.com
 
-# In Pi-hole: Groups → Add Group "IoT Devices"
-# Add client IPs (192.168.20.0/24) to IoT group
-# Assign stricter blocklists to IoT group
+In Pi-hole: Groups → Add Group "IoT Devices"
+Add client IPs (192.168.20.0/24) to IoT group
+Assign stricter blocklists to IoT group
 ```
 
 ---
 
-## Verify the Segmentation Works
+Verify the Segmentation Works
 
 ```python
 #!/usr/bin/env python3
-# Test script to verify VLAN isolation from a machine on the main LAN
+Test script to verify VLAN isolation from a machine on the main LAN
 import subprocess, sys
 
 iot_ips = ["192.168.20.101", "192.168.20.102"]  # your IoT device IPs
@@ -313,7 +313,7 @@ for ip in main_lan_ips:
 
 ---
 
-## Related Reading
+Related Reading
 
 - [How to Set Up a VPN on Your Router](/vpn-on-router-setup-guide/)
 - [How to Secure Your Smart TV Privacy](/secure-smart-tv-privacy-guide/)
@@ -324,34 +324,34 @@ for ip in main_lan_ips:
 
 ---
 
-## Related Articles
+Related Articles
 
 - [Set Up VLAN Isolation for IoT Devices on Home Network 2026](/how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/)
 - [Iot Firmware Update Privacy Risks What Data Devices Send](/iot-firmware-update-privacy-risks-what-data-devices-send-dur/)
 - [How to Secure Smart Home Devices Privacy Guide 2026](/how-to-secure-smart-home-devices-privacy-guide-2026/)
 - [Create Separate Network Segment for Smart Home Isolating](/how-to-create-separate-network-segment-for-smart-home-isolat/)
 - [How to Check if Your Smart Home Devices Are Compromised](/how-to-check-if-your-smart-home-devices-are-compromised/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 {% endraw %}

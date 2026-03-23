@@ -20,7 +20,7 @@ A strong password is no longer enough. Credential stuffing attacks, phishing cam
 
 This guide covers every common 2FA method, how to set up each one, and how to avoid the traps that leave people locked out of their own accounts.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -30,30 +30,30 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: 2FA Methods Ranked by Security
+Step 1: 2FA Methods Ranked by Security
 
 From strongest to weakest:
 
-1. **Hardware security keys (FIDO2/WebAuthn)** — YubiKey, Google Titan, etc. Phishing-resistant. Best option.
-2. **Passkeys** — Device-bound FIDO2 credentials stored in a secure enclave. Phishing-resistant.
-3. **TOTP apps** — 6-digit codes from apps like Aegis, Raivo, or Google Authenticator. Good protection.
-4. **Push notifications** — Approve/deny prompts from Duo or Microsoft Authenticator. Vulnerable to push fatigue attacks.
-5. **SMS codes** — Vulnerable to SIM swapping, SS7 attacks, and phishing. Avoid for sensitive accounts.
+1. Hardware security keys (FIDO2/WebAuthn). YubiKey, Google Titan, etc. Phishing-resistant. Best option.
+2. Passkeys. Device-bound FIDO2 credentials stored in a secure enclave. Phishing-resistant.
+3. TOTP apps. 6-digit codes from apps like Aegis, Raivo, or Google Authenticator. Good protection.
+4. Push notifications. Approve/deny prompts from Duo or Microsoft Authenticator. Vulnerable to push fatigue attacks.
+5. SMS codes. Vulnerable to SIM swapping, SS7 attacks, and phishing. Avoid for sensitive accounts.
 
-If a service only offers SMS 2FA, it's better than nothing — but push for TOTP or hardware key support.
+If a service only offers SMS 2FA, it's better than nothing. but push for TOTP or hardware key support.
 
-### Step 2: Method 1: TOTP Apps
+Step 2: Method 1: TOTP Apps
 
 TOTP (Time-based One-Time Password) apps generate a fresh 6-digit code every 30 seconds using a shared secret.
 
-### Recommended Apps
+Recommended Apps
 
-- **Aegis Authenticator** (Android) — open source, encrypted backup, import/export
-- **Raivo** (iOS) — open source, iCloud sync, encrypted export
-- **2FAS** (iOS/Android) — cross-platform, open source
-- Avoid Google Authenticator and Authy — both have privacy or lock-in concerns
+- Aegis Authenticator (Android). open source, encrypted backup, import/export
+- Raivo (iOS). open source, iCloud sync, encrypted export
+- 2FAS (iOS/Android). cross-platform, open source
+- Avoid Google Authenticator and Authy. both have privacy or lock-in concerns
 
-### Setting Up TOTP on a New Account
+Setting Up TOTP on a New Account
 
 1. Go to your account's security settings
 2. Find "Two-Factor Authentication" or "Authenticator App"
@@ -61,12 +61,12 @@ TOTP (Time-based One-Time Password) apps generate a fresh 6-digit code every 30 
 4. Enter the 6-digit code to verify
 5. Save the backup/recovery codes (explained below)
 
-### Setting Up TOTP on GitHub
+Setting Up TOTP on GitHub
 
 ```bash
-# Verify 2FA is active after setup
+Verify 2FA is active after setup
 gh auth status
-# Should show 2FA is required for this account
+Should show 2FA is required for this account
 ```
 
 Via web:
@@ -76,14 +76,14 @@ Via web:
 4. Confirm with a code from the app
 5. Download backup codes
 
-### Backup Your TOTP Seeds
+Backup Your TOTP Seeds
 
 The QR code is a base32-encoded secret seed. If your phone is lost or broken, you need this seed to recover access.
 
-**Export from Aegis:**
+Export from Aegis:
 - Aegis > Settings > Backups > Export > Plain text export (decrypt and store in password manager)
 
-**Export from Raivo:**
+Export from Raivo:
 - Raivo > Settings > Export OTP tokens to ZIP
 
 Store the export file encrypted in your password manager or an encrypted volume. Never in plaintext cloud storage.
@@ -91,78 +91,78 @@ Store the export file encrypted in your password manager or an encrypted volume.
 To manually decode a TOTP QR code:
 
 ```bash
-# Install qr-decode tool
+Install qr-decode tool
 sudo apt install zbar-tools   # Ubuntu
 brew install zbar             # macOS
 
-# Decode a QR image
+Decode a QR image
 zbarimg --raw totp-qr.png
-# Outputs: otpauth://totp/Example:user@example.com?secret=JBSWY3DPEHPK3PXP&issuer=Example
+Outputs: otpauth://totp/Example:user@example.com?secret=JBSWY3DPEHPK3PXP&issuer=Example
 ```
 
 The `secret=` value is what you need to store.
 
-### Step 3: Method 2: Hardware Security Keys
+Step 3: Method 2: Hardware Security Keys
 
-FIDO2/WebAuthn keys are the strongest form of 2FA. They're cryptographic devices — even if a phishing site captures your password, it can't use the hardware key response because the key only responds to the legitimate domain.
+FIDO2/WebAuthn keys are the strongest form of 2FA. They're cryptographic devices. even if a phishing site captures your password, it can't use the hardware key response because the key only responds to the legitimate domain.
 
-### Recommended Keys
+Recommended Keys
 
-- **YubiKey 5 Series** — widest protocol support (FIDO2, PIV, OpenPGP, TOTP, OTP)
-- **Google Titan Key** — FIDO2 only, simpler, cheaper
-- **Nitrokey 3** — open source hardware
+- YubiKey 5 Series. widest protocol support (FIDO2, PIV, OpenPGP, TOTP, OTP)
+- Google Titan Key. FIDO2 only, simpler, cheaper
+- Nitrokey 3. open source hardware
 
-**Buy at least two keys** — one primary, one backup. Register both everywhere. Store the backup somewhere safe.
+Buy at least two keys. one primary, one backup. Register both everywhere. Store the backup somewhere safe.
 
-### Register a YubiKey on GitHub
+Register a YubiKey on GitHub
 
 1. Settings > Password and Authentication > Security Keys > Add a security key
 2. Name the key (e.g., "YubiKey 5C primary")
 3. When prompted, insert the YubiKey and tap it
 4. Registration completes
 
-### Use YubiKey for SSH Authentication
+Use YubiKey for SSH Authentication
 
 The YubiKey can hold FIDO2 SSH keys in its secure enclave:
 
 ```bash
-# Generate an SSH key stored on the YubiKey (requires OpenSSH 8.2+)
+Generate an SSH key stored on the YubiKey (requires OpenSSH 8.2+)
 ssh-keygen -t ed25519-sk -f ~/.ssh/id_ed25519_yubikey -C "yubikey-ssh"
 
-# This creates a key stub on disk — the private key never leaves the YubiKey
-# Upload public key to server
+This creates a key stub on disk. the private key never leaves the YubiKey
+Upload public key to server
 ssh-copy-id -i ~/.ssh/id_ed25519_yubikey.pub user@server
 
-# Connect (will prompt for YubiKey tap)
+Connect (will prompt for YubiKey tap)
 ssh -i ~/.ssh/id_ed25519_yubikey user@server
 ```
 
-### TOTP on YubiKey
+TOTP on YubiKey
 
 YubiKeys can store TOTP secrets with the `ykman` tool:
 
 ```bash
-# Install ykman
+Install ykman
 sudo apt install yubikey-manager   # Ubuntu
 brew install ykman                 # macOS
 
-# List existing TOTP accounts on the key
+List existing TOTP accounts on the key
 ykman oath accounts list
 
-# Add a TOTP account
+Add a TOTP account
 ykman oath accounts add "GitHub:user@example.com" JBSWY3DPEHPK3PXP
 
-# Get a code
+Get a code
 ykman oath accounts code "GitHub:user@example.com"
 ```
 
-This stores TOTP seeds on the hardware key rather than your phone — they can't be phished or exported without physical access.
+This stores TOTP seeds on the hardware key rather than your phone. they can't be phished or exported without physical access.
 
-### Step 4: Method 3: Passkeys
+Step 4: Method 3: Passkeys
 
 Passkeys are FIDO2 credentials stored in your device's secure enclave (Secure Enclave on Apple, TPM on Windows, OS keystore on Android). They replace passwords entirely for supported sites.
 
-### Set Up a Passkey on a Supported Site
+Set Up a Passkey on a Supported Site
 
 Sites supporting passkeys in 2026: GitHub, Google, Apple, Microsoft, PayPal, Amazon, Coinbase, and many others.
 
@@ -179,17 +179,17 @@ Passkeys sync across devices via:
 To use passkeys in a password manager:
 
 ```bash
-# Bitwarden CLI — list passkeys
+Bitwarden CLI. list passkeys
 bw list items --search "passkey" | jq '.[] | select(.type == 7)'
 
-# 1Password supports passkey creation and storage via browser extension
+1Password supports passkey creation and storage via browser extension
 ```
 
-### Step 5: Backup Codes: The Safety Net
+Step 5: Backup Codes: The Safety Net
 
-Every service that offers 2FA also provides backup codes — single-use codes for account recovery if you lose your 2FA device.
+Every service that offers 2FA also provides backup codes. single-use codes for account recovery if you lose your 2FA device.
 
-**How to handle backup codes:**
+How to handle backup codes:
 
 1. Download or print them immediately after enabling 2FA
 2. Store in your password manager as a secure note attached to the account entry
@@ -197,70 +197,70 @@ Every service that offers 2FA also provides backup codes — single-use codes fo
 4. Never photograph them with your phone
 5. Regenerate them after using one
 
-Backup codes are not a shortcut — they're a recovery mechanism for genuine emergencies. If you're reaching for backup codes regularly, something is wrong with your 2FA setup.
+Backup codes are not a shortcut. they're a recovery mechanism for genuine emergencies. If you're reaching for backup codes regularly, something is wrong with your 2FA setup.
 
-### Step 6: Enable 2FA on Critical Accounts
+Step 6: Enable 2FA on Critical Accounts
 
 Priority order:
 
-1. **Email** (Google/Microsoft/ProtonMail) — controls everything else
-2. **Password manager** (Bitwarden, 1Password) — protects all other passwords
-3. **Code repositories** (GitHub, GitLab) — contains your work and sometimes secrets
-4. **Financial accounts** (bank, brokerage, PayPal) — obvious
-5. **Domain registrar** (Cloudflare, Namecheap) — DNS hijacking is catastrophic
-6. **Cloud providers** (AWS, GCP, Azure) — infrastructure access
-7. **Social media** — impersonation and recovery phone abuse
+1. Email (Google/Microsoft/ProtonMail). controls everything else
+2. Password manager (Bitwarden, 1Password). protects all other passwords
+3. Code repositories (GitHub, GitLab). contains your work and sometimes secrets
+4. Financial accounts (bank, brokerage, PayPal). obvious
+5. Domain registrar (Cloudflare, Namecheap). DNS hijacking is catastrophic
+6. Cloud providers (AWS, GCP, Azure). infrastructure access
+7. Social media. impersonation and recovery phone abuse
 
 Check which accounts have 2FA enabled (and which don't) at `https://2fa.directory`.
 
-### Step 7: Common Mistakes
+Step 7: Common Mistakes
 
-**Using SMS as a fallback** — If you enable TOTP but keep SMS as a fallback, attackers can SIM swap and bypass your TOTP. Remove SMS fallback after enabling a stronger method.
+Using SMS as a fallback. If you enable TOTP but keep SMS as a fallback, attackers can SIM swap and bypass your TOTP. Remove SMS fallback after enabling a stronger method.
 
-**Storing TOTP app backup in the same account** — Don't back up your email TOTP seed only to your email account's cloud backup. Circular dependency.
+Storing TOTP app backup in the same account. Don't back up your email TOTP seed only to your email account's cloud backup. Circular dependency.
 
-**Only registering one hardware key** — If you lose it, you're locked out. Always register two.
+Only registering one hardware key. If you lose it, you're locked out. Always register two.
 
-**Not storing backup codes** — Skipping this step is the single most common reason people get locked out of accounts permanently.
+Not storing backup codes. Skipping this step is the single most common reason people get locked out of accounts permanently.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to guide?**
+How long does it take to guide?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Dating App Two Factor Authentication Setup Protecting Accoun](/dating-app-two-factor-authentication-setup-protecting-accoun/)
 - [ProtonMail Two-Factor Authentication Guide](/protonmail-two-factor-authentication-guide/)
@@ -269,5 +269,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Dkim Spf Dmarc Email Authentication How They Protect Against](/dkim-spf-dmarc-email-authentication-how-they-protect-against/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

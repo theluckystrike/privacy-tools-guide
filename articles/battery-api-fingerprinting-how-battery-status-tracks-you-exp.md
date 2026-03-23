@@ -15,18 +15,18 @@ tags: [privacy-tools-guide, api]
 ---
 
 
-The Battery Status API exposes your device's battery level, charging status, and discharge rate—data that trackers can collect in combination with other device characteristics to fingerprint and identify you across websites. Although created to help web apps adjust behavior on low battery, this API became a fingerprinting vector after researchers discovered trackers could correlate battery states across sessions to uniquely identify users. You can disable Battery API access by blocking JavaScript or using privacy extensions, though most modern browsers have restricted or removed this API due to privacy concerns.
+The Battery Status API exposes your device's battery level, charging status, and discharge rate, data that trackers can collect in combination with other device characteristics to fingerprint and identify you across websites. Although created to help web apps adjust behavior on low battery, this API became a fingerprinting vector after researchers discovered trackers could correlate battery states across sessions to uniquely identify users. You can disable Battery API access by blocking JavaScript or using privacy extensions, though most modern browsers have restricted or removed this API due to privacy concerns.
 
-## Key Takeaways
+Key Takeaways
 
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **An user at 47%**: battery while charging differs significantly from one at 47% while discharging.
-- **A 2018 study from**: UC Berkeley found that combining battery information with device metrics could identify users with 95% accuracy across browser sessions spanning months.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **You can disable Battery**: API access by blocking JavaScript or using privacy extensions, though most modern browsers have restricted or removed this API due to privacy concerns.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- An user at 47%: battery while charging differs significantly from one at 47% while discharging.
+- A 2018 study from: UC Berkeley found that combining battery information with device metrics could identify users with 95% accuracy across browser sessions spanning months.
+- What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
+- You can disable Battery: API access by blocking JavaScript or using privacy extensions, though most modern browsers have restricted or removed this API due to privacy concerns.
+- Mastering advanced features takes: 1-2 weeks of regular use.
 
-## What Is the Battery Status API?
+What Is the Battery Status API?
 
 The Battery Status API, also known as the Battery Manager API, provides JavaScript access to battery information on client devices. Implemented in most modern browsers, it exposes four key properties:
 
@@ -47,7 +47,7 @@ navigator.getBattery().then(battery => {
 
 This API was designed with legitimate use cases in mind. A video streaming service might reduce video quality when battery levels drop critically low. A document editor could auto-save more frequently when the battery is draining. However, the same data becomes problematic when used for tracking purposes.
 
-## How Battery API Enables Fingerprinting
+How Battery API Enables Fingerprinting
 
 Fingerprinting works by collecting enough unique attributes to identify an user without relying on cookies or login credentials. The Battery API contributes several high-entropy signals to this process:
 
@@ -59,7 +59,7 @@ Discharge Rates: The speed at which a battery drains depends on screen brightnes
 
 The combination of these factors creates a relatively unique identifier. Research has shown that battery status, when combined with other readily available information like user agent and timezone, can identify users with surprising accuracy.
 
-## Code Example: Battery Fingerprinting in Action
+Code Example: Battery Fingerprinting in Action
 
 A simple battery fingerprinting script might collect multiple data points and generate a hash:
 
@@ -98,7 +98,7 @@ async function trackBatteryChanges() {
 
 This example demonstrates how straightforward battery tracking becomes with the API. The event listeners allow continuous monitoring without explicit polling, making battery-based tracking efficient and low-overhead.
 
-## Browser Implementation Differences
+Browser Implementation Differences
 
 Browser vendors have responded differently to privacy concerns around the Battery API:
 
@@ -112,7 +112,7 @@ Edge: Follows Chrome's implementation since it shares the Chromium engine.
 
 These differences themselves create tracking opportunities. The presence or absence of the Battery API, combined with the precision of returned values, forms another component of the overall fingerprint.
 
-## Privacy Implications
+Privacy Implications
 
 The implications of battery fingerprinting extend beyond simple tracking:
 
@@ -122,9 +122,9 @@ Device Identification: The combination of battery characteristics with other har
 
 Behavioral Profiling: Charging patterns and battery drain rates reveal usage habits. Advertisers can infer when users are likely to be near power outlets, traveling, or using specific applications.
 
-Exploitation of Vulnerable Users: Users with unusual battery behavior—perhaps due to faulty batteries or unusual charging habits—become particularly easy to identify and track.
+Exploitation of Vulnerable Users: Users with unusual battery behavior, perhaps due to faulty batteries or unusual charging habits, become particularly easy to identify and track.
 
-## Protecting Against Battery API Tracking
+Protecting Against Battery API Tracking
 
 Several strategies help mitigate Battery API fingerprinting:
 
@@ -138,7 +138,7 @@ Browser Fingerprinting Protection: Tools like CanvasBlocker or specialized brows
 
 Regularly Clear Site Data: While not directly effective against Battery API tracking (since no storage is required), maintaining good cookie hygiene helps reduce the overall tracking footprint.
 
-## What Developers Should Consider
+What Developers Should Consider
 
 If you're implementing features that use the Battery API, consider the privacy implications:
 
@@ -164,15 +164,15 @@ async function adjustForBattery() {
 
 Ask whether your use case genuinely requires battery information. Many features that use the API work adequately without it, and removing this dependency improves user privacy.
 
-## Detecting Battery API Access in Your Codebase
+Detecting Battery API Access in Your Codebase
 
 For web developers concerned about unintended Battery API usage, audit your dependencies and third-party scripts:
 
 ```bash
-# Search for Battery API calls in your JavaScript
+Search for Battery API calls in your JavaScript
 grep -r "getBattery\|navigator.battery" src/
 
-# Check bundled third-party libraries
+Check bundled third-party libraries
 npm ls | grep -i "battery\|fingerprint\|tracker"
 ```
 
@@ -187,19 +187,19 @@ Use Content Security Policy (CSP) to restrict API access:
 ">
 ```
 
-## Advanced: Reducing Fingerprinting Vectors Fully
+Advanced: Reducing Fingerprinting Vectors Fully
 
 The Battery API is one of many fingerprinting sources. an approach addresses multiple vectors simultaneously:
 
-- **Disable WebGL**: Prevents GPU-based fingerprinting
-- **Randomize screen resolution**: Use browser extension to spoof display metrics
-- **Block audio context fingerprinting**: Extensions like AudioContext Fingerprint Defender randomize audio sample rates
-- **Disable plugins enumeration**: Set `navigator.plugins` to return empty array
-- **Randomize fonts**: Prevent font-based enumeration through CSS font testing
+- Disable WebGL: Prevents GPU-based fingerprinting
+- Randomize screen resolution: Use browser extension to spoof display metrics
+- Block audio context fingerprinting: Extensions like AudioContext Fingerprint Defender randomize audio sample rates
+- Disable plugins enumeration: Set `navigator.plugins` to return empty array
+- Randomize fonts: Prevent font-based enumeration through CSS font testing
 
 Browser privacy modes implement some of these protections automatically. Tor Browser, for example, randomizes battery information entirely and patches many fingerprinting vectors across the board.
 
-## Testing Battery API Behavior Across Browsers
+Testing Battery API Behavior Across Browsers
 
 Verify your own fingerprinting exposure:
 
@@ -231,7 +231,7 @@ testBatteryAPI();
 
 Run this in different browsers and note the results. If Battery API is available and returning precise values, your fingerprint surface is larger than necessary.
 
-## Real-World Impact: Tracking Studies
+Real-World Impact: Tracking Studies
 
 Academic research has demonstrated battery-based tracking effectiveness. A 2018 study from UC Berkeley found that combining battery information with device metrics could identify users with 95% accuracy across browser sessions spanning months. The researchers were able to:
 
@@ -241,29 +241,29 @@ Academic research has demonstrated battery-based tracking effectiveness. A 2018 
 
 This study prompted browsers to implement restrictions. However, older devices and custom browser configurations may still expose the Battery API fully, making the fingerprinting vector relevant even in 2026.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Topics Api Chrome Replacement For Cookies How It Tracks You](/topics-api-chrome-replacement-for-cookies-how-it-tracks-you/)
 - [Audio Context Fingerprinting How Websites Use Sound Api Trac](/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
@@ -271,4 +271,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Device Memory Api Fingerprinting How Ram Amount Narrows Iden](/device-memory-api-fingerprinting-how-ram-amount-narrows-iden/)
 - [Gamepad Api Fingerprinting How Connected Controllers Reveal](/gamepad-api-fingerprinting-how-connected-controllers-reveal-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

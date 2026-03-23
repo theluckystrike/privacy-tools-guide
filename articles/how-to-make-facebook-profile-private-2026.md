@@ -18,7 +18,7 @@ voice-checked: true
 
 If you're a developer or power user looking to lock down your Facebook presence, the platform's privacy controls have evolved significantly. While Facebook still offers manual settings, programmatic access through the Graph API and browser automation provide powerful options for bulk management and automation. This guide covers both approaches to make your Facebook profile private in 2026.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding Facebook's Privacy Architecture](#understanding-facebooks-privacy-architecture)
 - [Method 1: Using the Facebook Graph API](#method-1-using-the-facebook-graph-api)
@@ -27,17 +27,17 @@ If you're a developer or power user looking to lock down your Facebook presence,
 - [Security Hardening Beyond Privacy](#security-hardening-beyond-privacy)
 - [Automating Privacy Audits](#automating-privacy-audits)
 
-## Understanding Facebook's Privacy Architecture
+Understanding Facebook's Privacy Architecture
 
 Facebook organizes privacy settings across several categories: profile visibility, audience selection, tagging controls, and connection visibility. The platform uses a tiered audience system: Public, Friends, Friends Except Acquaintances, Specific Friends, and Only Me. Understanding these layers is essential for developers building tools that interact with Facebook's privacy controls.
 
 The Facebook Graph API provides the most reliable programmatic approach for managing privacy settings. However, Facebook has restricted many privacy-related APIs, so some automation requires browser-based solutions using tools like Playwright or Selenium.
 
-## Method 1: Using the Facebook Graph API
+Method 1: Using the Facebook Graph API
 
 The Graph API remains the primary method for programmatic Facebook interactions. To access privacy settings, you'll need a Facebook Developer account and an access token with appropriate permissions.
 
-### Step 1: Obtain an Access Token
+Step 1: Obtain an Access Token
 
 For personal profile management, you can use the Facebook Login flow to obtain a user access token. The minimal required permissions for privacy reading are:
 
@@ -48,7 +48,7 @@ permissions[]=pages_manage_posts
 
 For full privacy management, you'll need additional permissions that Facebook now restricts. Many privacy settings require manual verification or are not available via API for personal accounts.
 
-### Step 2: Query Current Privacy Settings
+Step 2: Query Current Privacy Settings
 
 Once you have a valid token, query your profile's privacy settings:
 
@@ -75,7 +75,7 @@ The response includes privacy settings in JSON format:
 }
 ```
 
-### Step 3: Update Privacy Settings via API
+Step 3: Update Privacy Settings via API
 
 For pages and posts, you can update privacy programmatically:
 
@@ -85,13 +85,13 @@ curl -i -X POST "https://graph.facebook.com/v21.0/PAGE_ID/privacy" \
   -d "access_token=YOUR_ACCESS_TOKEN"
 ```
 
-Note: For personal profiles, Facebook restricts direct API modification of most privacy settings. This is where browser automation becomes necessary.
+For personal profiles, Facebook restricts direct API modification of most privacy settings. This is where browser automation becomes necessary.
 
-## Method 2: Browser Automation with Playwright
+Method 2: Browser Automation with Playwright
 
 For managing personal profile settings that the API restricts, browser automation provides a viable alternative. The following example uses Playwright to navigate Facebook's settings interface.
 
-### Setup and Dependencies
+Setup and Dependencies
 
 ```javascript
 const { chromium } = require('playwright');
@@ -131,46 +131,46 @@ setFacebookPrivacy().catch(console.error);
 
 This script demonstrates the core pattern: authenticate, navigate to settings, and interact with the appropriate UI elements. Facebook's UI changes frequently, so you'll need to inspect the current DOM structure and adjust selectors accordingly.
 
-## Method 3: Manual Settings for Maximum Privacy
+Method 3: Manual Settings for Maximum Privacy
 
 For users who prefer manual configuration, Facebook's privacy settings are accessible through the Settings & Privacy menu. Here's the configuration checklist for maximum privacy:
 
-### Profile Visibility Settings
+Profile Visibility Settings
 
 Navigate to Settings > Privacy > Your Profile. Set each option according to your preferences:
 
-- **Who can see your friend list**: Only Me or Friends
-- **Who can see the people, Pages and lists you follow**: Only Me
-- **Who can see your birth date**: Only Me (for both month/day and year)
-- **Who can see your contact information**: Only Me for all fields
+- Who can see your friend list: Only Me or Friends
+- Who can see the people, Pages and lists you follow: Only Me
+- Who can see your birth date: Only Me (for both month/day and year)
+- Who can see your contact information: Only Me for all fields
 
-### Timeline and Tagging
+Timeline and Tagging
 
-- **Who can post on your timeline**: Only Me
-- **Who can see what others post on your timeline**: Friends
-- **Allow tagging by friends**: Disabled or Friends only
-- **Review posts you're tagged in before the post appears on your timeline**: Enabled
+- Who can post on your timeline: Only Me
+- Who can see what others post on your timeline: Friends
+- Allow tagging by friends: Disabled or Friends only
+- Review posts you're tagged in before the post appears on your timeline: Enabled
 
-### Connection Visibility
+Connection Visibility
 
-- **Who can send you friend requests**: Friends of Friends
-- **Who can see your friend requests**: No One
-- **Who can look you up using the email address you provided**: Only Me
-- **Who can look you up using the phone number you provided**: Only Me
-- **Allow search engines outside of Facebook to link to your profile**: Disabled
+- Who can send you friend requests: Friends of Friends
+- Who can see your friend requests: No One
+- Who can look you up using the email address you provided: Only Me
+- Who can look you up using the phone number you provided: Only Me
+- Allow search engines outside of Facebook to link to your profile: Disabled
 
-## Security Hardening Beyond Privacy
+Security Hardening Beyond Privacy
 
 Privacy and security go hand in hand. Beyond visibility settings, enable these security features:
 
-### Two-Factor Authentication
+Two-Factor Authentication
 
 ```bash
-# Check if 2FA is enabled via Graph API
+Check if 2FA is enabled via Graph API
 curl -i -X GET "https://graph.facebook.com/v21.0/me?fields=two_factor_status&access_token=YOUR_ACCESS_TOKEN"
 ```
 
-### Active Sessions Review
+Active Sessions Review
 
 Regularly review and terminate unused sessions:
 
@@ -182,11 +182,11 @@ const sessions = await page.$$eval('.uiListHelperClearfix li',
 console.log('Active sessions:', sessions);
 ```
 
-### Login Alerts
+Login Alerts
 
 Enable login alerts to receive notifications when your account is accessed from new devices. This appears in Settings > Security and Login > Get alerts about unrecognized logins.
 
-## Automating Privacy Audits
+Automating Privacy Audits
 
 For developers managing multiple accounts or conducting privacy audits, create a scheduled script that:
 
@@ -230,29 +230,29 @@ async function auditPrivacySettings(page) {
 })();
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to make facebook profile private?**
+How long does it take to make facebook profile private?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Facebook Privacy Settings 2026 Complete Guide](/facebook-privacy-settings-2026-complete-guide/)
 - [Facebook Marketplace Privacy Settings Guide](/facebook-marketplace-privacy-settings-guide/)
@@ -260,5 +260,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Facebook Data Collection: What They Track in 2026](/facebook-data-collection-what-they-track-2026/)
 - [Facebook Location History Deletion How To Remove All Stored](/facebook-location-history-deletion-how-to-remove-all-stored-/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

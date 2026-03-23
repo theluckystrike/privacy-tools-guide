@@ -18,59 +18,59 @@ tags: [privacy-tools-guide, best-of]
 
 Jitsi Meet is the best secure video calling app in 2026 for developers who want a self-hosted, open-source solution with an embeddable iframe API and solid call quality. For maximum privacy with zero infrastructure overhead, Signal provides the strongest end-to-end encryption available out of the box. If you need federation across servers and tight integration with encrypted chat, Matrix video rooms offer E2EE calls built on the MLS protocol. Below, we compare each option with deployment configs and integration code so you can pick the right fit for your threat model.
 
-## Key Takeaways
+Key Takeaways
 
-- **Jitsi Meet is the**: best secure video calling app in 2026 for developers who want a self-hosted, open-source solution with an embeddable iframe API and solid call quality.
-- **Below**: we compare each option with deployment configs and integration code so you can pick the right fit for your threat model.
-- **Google Meet free tier**: has no E2EE.
-- **If you need federation**: across servers and tight integration with encrypted chat, Matrix video rooms offer E2EE calls built on the MLS protocol.
-- **It offers a complete**: stack that you can self-host or use via public instances.
-- **Call streams use MLS**: encryption by default.
+- Jitsi Meet is the: best secure video calling app in 2026 for developers who want a self-hosted, open-source solution with an embeddable iframe API and solid call quality.
+- Below: we compare each option with deployment configs and integration code so you can pick the right fit for your threat model.
+- Google Meet free tier: has no E2EE.
+- If you need federation: across servers and tight integration with encrypted chat, Matrix video rooms offer E2EE calls built on the MLS protocol.
+- It offers a complete: stack that you can self-host or use via public instances.
+- Call streams use MLS: encryption by default.
 
-## What Secure Video Calling Actually Requires
+What Secure Video Calling Actually Requires
 
 True secure video calling goes beyond TLS encryption. You need to understand what you're actually protecting:
 
-End-to-end encryption (E2EE) means video and audio streams are encrypted on the sender's device and only decryptable by recipients—the server should never possess the keys. Clients must be independently auditable with reproducible builds. Even when content is encrypted, call metadata (who called whom, when, for how long) reveals significant information, so metadata minimization matters. Running your own infrastructure through self-hosting eliminates trust in third-party providers. And open protocols allow independent verification that proprietary alternatives cannot match.
+End-to-end encryption (E2EE) means video and audio streams are encrypted on the sender's device and only decryptable by recipients, the server should never possess the keys. Clients must be independently auditable with reproducible builds. Even when content is encrypted, call metadata (who called whom, when, for how long) reveals significant information, so metadata minimization matters. Running your own infrastructure through self-hosting eliminates trust in third-party providers. And open protocols allow independent verification that proprietary alternatives cannot match.
 
-## Jitsi Meet: The Open-Source Standard
+Jitsi Meet: The Open-Source Standard
 
 Jitsi Meet has established itself as the leading open-source video conferencing solution. It offers a complete stack that you can self-host or use via public instances.
 
-### Self-Hosting Jitsi
+Self-Hosting Jitsi
 
 The Jitsi stack consists of JVB (Video Bridge), Jicofo (Conference Focus), and the web client. Docker simplifies deployment:
 
 ```bash
-# Clone the Jitsi deployment repository
+Clone the Jitsi deployment repository
 git clone https://github.com/jitsi/docker-jitsi-meet.git
 cd docker-jitsi-meet
 
-# Copy and configure environment
+Copy and configure environment
 cp env.example .env
 nano .env  # Set your domain and authentication options
 
-# Start the stack
+Start the stack
 docker-compose up -d
 ```
 
 Key configuration for security in your `.env` file:
 
 ```bash
-# Enable authentication
+Enable authentication
 ENABLE_AUTH=1
 AUTH_TYPE=internal
 
-# Disable external connections to public rooms
+Disable external connections to public rooms
 PUBLIC_URL=https://meet.your-domain.com
 
-# Configure Let's Encrypt
+Configure Let's Encrypt
 LETSENCRYPT_ENABLED=1
 LETSENCRYPT_DOMAIN=meet.your-domain.com
 LETSENCRYPT_EMAIL=admin@your-domain.com
 ```
 
-### Jitsi E2EE Considerations
+Jitsi E2EE Considerations
 
 Jitsi supports end-to-end encryption using the Insertable Extensions framework. However, it's important to understand the current limitations:
 
@@ -80,17 +80,17 @@ Jitsi supports end-to-end encryption using the Insertable Extensions framework. 
 
 For organizations requiring stronger guarantees, consider implementing Jitsi in combination with a VPN or using it exclusively on a trusted network.
 
-## Matrix Video Rooms (VoIP)
+Matrix Video Rooms (VoIP)
 
 Matrix, the open protocol for decentralized communication, now supports video rooms as a native feature. This represents a significant advancement in secure video calling.
 
-### Setting Up Matrix VoIP
+Setting Up Matrix VoIP
 
 Using an existing Synapse homeserver, you can enable video rooms:
 
 ```bash
-# In your homeserver.yaml
-# Ensure VoIP is properly configured
+In your homeserver.yaml
+Ensure VoIP is properly configured
 voip:
   turn_allow: true
   turn_uris:
@@ -110,36 +110,36 @@ The Element client provides the interface:
 // The room automatically becomes a video room
 ```
 
-## Signal: When Privacy Is Non-Negotiable
+Signal: When Privacy Is Non-Negotiable
 
 Signal remains the gold standard for privacy, and its video calling extends that guarantee. While primarily a mobile-first application, Signal Desktop now supports video calls.
 
-### Signal Protocol Deep Dive
+Signal Protocol Deep Dive
 
 Signal uses the Double Ratchet algorithm combined with X3DH (Extended Triple Diffie-Hellman) key agreement:
 
-- **Forward secrecy**: Compromised session keys don't expose past conversations
-- **Future secrecy**: Compromised keys don't expose future conversations
-- **Metadata reduction**: Signal's Sealed Sender hides sender identity from servers
+- Forward secrecy: Compromised session keys don't expose past conversations
+- Future secrecy: Compromised keys don't expose future conversations
+- Metadata reduction: Signal's Sealed Sender hides sender identity from servers
 
-Signal video calls inherit these properties. The trade-off is that Signal doesn't offer self-hosting—you're placing trust in the Signal Foundation. However, their security audit transparency and open-source client make this a calculated trust decision.
+Signal video calls inherit these properties. The trade-off is that Signal doesn't offer self-hosting, you're placing trust in the Signal Foundation. However, their security audit transparency and open-source client make this a calculated trust decision.
 
-## BigBlueButton: Self-Hosted for Education and Teams
+BigBlueButton: Self-Hosted for Education and Teams
 
 BigBlueButton provides a complete virtual classroom solution optimized for interactive teaching and collaboration. It runs entirely self-hosted.
 
-### Deployment
+Deployment
 
 BigBlueButton typically runs on Ubuntu with bbb-install script:
 
 ```bash
-# Prerequisites
+Prerequisites
 sudo apt update && sudo apt upgrade -y
 
-# Run the installation script
+Run the installation script
 wget -qO- https://ubuntu.bigbluebutton.org/bbb-install.sh | bash -s -- -v focal-260 -s meet.your-domain.com -e admin@your-domain.com
 
-# Start BigBlueButton
+Start BigBlueButton
 sudo bbb-conf --start
 ```
 
@@ -148,7 +148,7 @@ BigBlueButton security features:
 Meeting recordings can be encrypted at rest. Guest access control lets you configure waiting rooms and approval workflows. Role-based permissions separate presenter, viewer, and moderator roles. TURN server integration with coturn handles NAT traversal.
 
 ```bash
-# Configure TURN server in bigbluebutton.yml
+Configure TURN server in bigbluebutton.yml
 external:
   turn:
     - uris:
@@ -156,7 +156,7 @@ external:
       secret: your_turn_secret
 ```
 
-## Comparison at a Glance
+Comparison at a Glance
 
 | Solution | Self-Hosted | E2EE | Open Protocol | Metadata Minimal |
 |----------|-------------|------|---------------|------------------|
@@ -165,11 +165,11 @@ external:
 | Signal | No | Yes | No | Very Low |
 | BigBlueButton | Yes | Partial | No | Moderate |
 
-## Implementation Recommendations
+Implementation Recommendations
 
 For developers building applications:
 
-1. **Embed Jitsi** — Use the Jitsi Meet iframe API for quick integration:
+1. Embed Jitsi. Use the Jitsi Meet iframe API for quick integration:
  ```javascript
    const domain = 'meet.your-server.com';
    const options = {
@@ -188,7 +188,7 @@ For developers building applications:
    const api = new JitsiMeetExternalAPI(domain, options);
    ```
 
-2. **Matrix for custom solutions** — Build on Matrix's client-server API for full control:
+2. Matrix for custom solutions. Build on Matrix's client-server API for full control:
  ```javascript
    import { MatrixClient } from 'matrix-js-sdk';
    const client = MatrixClient.createClient({
@@ -200,28 +200,28 @@ For developers building applications:
    });
    ```
 
-3. **Signal for maximum privacy** — When you need verified security without infrastructure headaches, Signal remains the safest choice.
+3. Signal for maximum privacy. When you need verified security without infrastructure headaches, Signal remains the safest choice.
 
 Choose based on your threat model. Self-hosted solutions give you infrastructure control but require operational expertise. Signal offers the strongest privacy guarantees with minimal configuration. Matrix provides the best balance for developers who need both security and flexibility.
 
-## TURN Server Considerations for NAT Traversal
+TURN Server Considerations for NAT Traversal
 
 Video calls need TURN servers to traverse firewalls and NAT:
 
 ```bash
-# Without TURN servers, peers behind restrictive NAT cannot connect
-# With TURN, voice/video is relayed through the server (server can see data)
+Without TURN servers, peers behind restrictive NAT cannot connect
+With TURN, voice/video is relayed through the server (server can see data)
 
-# Jitsi TURN configuration
-# In docker-compose.yml or jitsi-meet configuration:
+Jitsi TURN configuration
+In docker-compose.yml or jitsi-meet configuration:
 
 JITSI_TURN_HOST=turn.your-domain.com
 JITSI_TURN_PORT=3478
 JITSI_TURN_TRANSPORT=tcp
 JITSI_TURN_SECRET=your-shared-secret
 
-# Self-hosted TURN (coturn)
-# For maximum privacy, run your own TURN server
+Self-hosted TURN (coturn)
+For maximum privacy, run your own TURN server
 
 docker run -d \
   -p 3478:3478/tcp \
@@ -232,7 +232,7 @@ docker run -d \
 
 Relaying through your own TURN server prevents the video call provider from seeing video content while still enabling connectivity.
 
-## Call Metadata Privacy
+Call Metadata Privacy
 
 Even with E2EE, metadata reveals sensitive information:
 
@@ -258,32 +258,32 @@ Defense: Use VPN + Tor for metadata privacy
 
 For maximum privacy, layer multiple tools: Jitsi (content E2EE) + Tor Browser (metadata hiding).
 
-## Recording and Transcript Privacy
+Recording and Transcript Privacy
 
 Video calls are often recorded. Check if recordings include encryption:
 
 ```bash
-# Jitsi recording configurations
+Jitsi recording configurations
 
-# Option 1: Server-side recording (provider can see content)
+Option 1: Server-side recording (provider can see content)
 JIBRI_RECORDINGS_ENABLED=true
 RECORDING_FOLDER=/recordings
 
-# Option 2: Client-side recording (only you have access)
-# Browser extension: ScreenFlow, OBS
-# Records to your device, not server
-# Provides end-to-end privacy for recordings
+Option 2: Client-side recording (only you have access)
+Browser extension: ScreenFlow, OBS
+Records to your device, not server
+Provides end-to-end privacy for recordings
 
-# Transcript generation (if supported)
-# Google Meet auto-generates transcripts
-# Transcripts are stored on Google's servers indefinitely
-# Transcripts are searchable, indexable
-# Disable transcripts if privacy matters
+Transcript generation (if supported)
+Google Meet auto-generates transcripts
+Transcripts are stored on Google's servers indefinitely
+Transcripts are searchable, indexable
+Disable transcripts if privacy matters
 ```
 
 Insist on client-side recording or refuse recording altogether for sensitive discussions.
 
-## Mobile App Comparison
+Mobile App Comparison
 
 Secure video calling on mobile has different constraints:
 
@@ -307,7 +307,7 @@ Recommendation for mobile:
 
 Mobile video calling has weaker privacy guarantees than desktop.
 
-## End-to-End Encryption Algorithm Comparison
+End-to-End Encryption Algorithm Comparison
 
 | App | Algorithm | Key Agreement | Forward Secrecy |
 |-----|-----------|---|---|
@@ -319,7 +319,7 @@ Mobile video calling has weaker privacy guarantees than desktop.
 
 Signal's Double Ratchet is the strongest for privacy. Jitsi's SRTP provides good encryption but metadata still visible.
 
-## Threat Model: Who Should Use What
+Threat Model: Who Should Use What
 
 ```
 Threat: Corporate espionage → Use Jitsi self-hosted
@@ -333,7 +333,7 @@ Threat: Hardware compromise → No software solution helps; physical inspection 
 
 Different threats require different tools.
 
-## Call Quality vs Privacy Tradeoff
+Call Quality vs Privacy Tradeoff
 
 ```
 Maximum privacy = Lower call quality
@@ -354,13 +354,13 @@ Best balance: Jitsi with local TURN + standard encryption
 
 Choose based on whether you prioritize privacy or call quality.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Are free video calling tools good enough for secure calls?**
+Are free video calling tools good enough for secure calls?
 
 Free tools often have limitations: Jitsi free instances at meet.jit.si are public and shouldn't be trusted for sensitive calls. Self-hosted free Jitsi is secure. Signal is free and very secure. Google Meet free tier has no E2EE. Evaluate specific tools.
 
-**How do I evaluate which tool fits my threat model?**
+How do I evaluate which tool fits my threat model?
 
 Answer these questions:
 1. Who is the adversary? (ISP, provider, nation-state, corporate rival)
@@ -368,18 +368,18 @@ Answer these questions:
 3. What resources do I have? (budget for self-hosting, technical expertise)
 4. What's acceptable? (call quality, usability, learning curve)
 
-**Do these tools work for large conference calls?**
+Do these tools work for large conference calls?
 
 Signal: No (limited to ~8 people)
 Jitsi: Yes (50+ participants, quality degrades)
 BigBlueButton: Yes (hundreds, education-focused)
 Matrix: Yes (federation allows unlimited)
 
-**Can I switch between tools mid-call?**
+Can I switch between tools mid-call?
 
 No. All participants must use the same tool. Switching requires rescheduling and re-inviting.
 
-**Should I self-host if I'm not technical?**
+Should I self-host if I'm not technical?
 
 No. Self-hosting Jitsi or BigBlueButton requires:
 - Linux server knowledge
@@ -389,7 +389,7 @@ No. Self-hosting Jitsi or BigBlueButton requires:
 
 Use hosted solutions if you lack these skills.
 
-## Related Articles
+Related Articles
 
 - [Secure Screen Sharing Tools That Encrypt Video Stream End To](/secure-screen-sharing-tools-that-encrypt-video-stream-end-to/)
 - [Secure Video Messaging Apps That Do Not Store Recordings On](/secure-video-messaging-apps-that-do-not-store-recordings-on-/)
@@ -397,5 +397,5 @@ Use hosted solutions if you lack these skills.
 - [Best Encrypted SMS App for Android 2026: A Technical Guide](/best-encrypted-sms-app-android-2026/)
 - [Best Secure Group Chat App 2026](/best-secure-group-chat-app-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

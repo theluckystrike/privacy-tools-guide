@@ -18,7 +18,7 @@ voice-checked: true
 
 Track India's internet shutdowns using AccessNow's Shutdown Tracker, InternetShutdowns.in, or SFLC.in (Software Freedom Law Center). Jammu & Kashmir, Manipur, and Nagaland experience the most frequent shutdowns, typically lasting 2-30 days. Monitor state government orders, cache offline content before predicted shutdowns, and use pre-positioned VPN credentials. For developers building resilient apps, implement local-first architecture and mesh networks that work without centralized internet connectivity.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding Internet Shutdowns in India](#understanding-internet-shutdowns-in-india)
 - [States with Most Frequent Internet Shutdowns](#states-with-most-frequent-internet-shutdowns)
@@ -35,56 +35,56 @@ Track India's internet shutdowns using AccessNow's Shutdown Tracker, InternetShu
 - [Financial Impact Tracking](#financial-impact-tracking)
 - [Resources for Activists and Journalists](#resources-for-activists-and-journalists)
 
-## Understanding Internet Shutdowns in India
+Understanding Internet Shutdowns in India
 
 Internet shutdowns in India are typically ordered by state governments under Section 144 of the Code of Criminal Procedure, which authorizes authorities to restrict gatherings and communication. While the law was originally designed for public safety, it has increasingly been used to control internet access during protests, exams, and civil unrest.
 
 The government classifies shutdowns as "pubic safety" or "national security" measures, though critics argue that many orders lack transparency and proper justification. As of 2026, the frequency and duration of shutdowns have made automated tracking a necessity for anyone relying on consistent internet connectivity.
 
-## States with Most Frequent Internet Shutdowns
+States with Most Frequent Internet Shutdowns
 
 Based on data from organizations like the Software Freedom Law Centre (SFLC) and the Internet Freedom Foundation, several Indian states have consistently led in internet shutdown orders:
 
-**Jammu and Kashmir** tops the list, with the region experiencing prolonged shutdowns following the revocation of Article 370 in 2019. While restrictions have eased somewhat, periodic shutdowns continue, particularly during anniversary dates and political events.
+Jammu and Kashmir tops the list, with the region experiencing prolonged shutdowns following the revocation of Article 370 in 2019. While restrictions have eased somewhat, periodic shutdowns continue, particularly during anniversary dates and political events.
 
-**Rajasthan** has seen a significant increase in shutdown orders, primarily during examination periods to prevent cheating and during local protests. The state recorded over 40 shutdown incidents in 2025 alone.
+Rajasthan has seen a significant increase in shutdown orders, primarily during examination periods to prevent cheating and during local protests. The state recorded over 40 shutdown incidents in 2025 alone.
 
-**Uttar Pradesh** orders shutdowns frequently during law and order situations, religious festivals, and exam periods. The state's large population means that each shutdown affects millions of users.
+Uttar Pradesh orders shutdowns frequently during law and order situations, religious festivals, and exam periods. The state's large population means that each shutdown affects millions of users.
 
-**Haryana** has implemented numerous restrictions, particularly in districts bordering Delhi during protest periods and examination seasons.
+Haryana has implemented numerous restrictions, particularly in districts bordering Delhi during protest periods and examination seasons.
 
-**Maharashtra** and **Madhya Pradesh** also feature prominently in shutdown records, with restrictions often tied to student examinations and communal tensions.
+Maharashtra and Madhya Pradesh also feature prominently in shutdown records, with restrictions often tied to student examinations and communal tensions.
 
-## Tools for Tracking Internet Shutdowns
+Tools for Tracking Internet Shutdowns
 
 Several platforms provide real-time data on internet shutdowns in India:
 
-### 1. Internet Freedom Foundation's Internet Shutdown Tracker
+1. Internet Freedom Foundation's Internet Shutdown Tracker
 
 The Internet Freedom Foundation maintains a shutdown tracker covering incidents across India. You can access their data through their official website, which provides dates, duration, and rationale for each shutdown.
 
-### 2. OONI Probe
+2. OONI Probe
 
 The Open Observatory of Network Interference (OONI) provides a global network of testing probes that detect internet censorship. Running OONI Probe on your machine allows you to contribute to a global dataset while monitoring connectivity:
 
 ```bash
-# Install OONI Probe CLI
+Install OONI Probe CLI
 pip install ooniprobe
 
-# Run a basic connectivity test
+Run a basic connectivity test
 ooni probe run --input https://example.com
 ```
 
-### 3. NetBlocks
+3. NetBlocks
 
 NetBlocks provides real-time network monitoring and tracks internet shutdowns globally. Their India-specific page offers visualizations of connectivity data and historical records.
 
-### 4. GitHub-Based Trackers
+4. GitHub-Based Trackers
 
 Several developers maintain GitHub repositories that aggregate shutdown data:
 
 ```bash
-# Example: Clone an Indian shutdown tracker repository
+Clone an Indian shutdown tracker repository
 git clone https://github.com/priyankjair/india-internet-shutdowns.git
 ```
 
@@ -100,7 +100,7 @@ These repositories often include JSON files with structured data that you can pa
 }
 ```
 
-## Building Your Own Shutdown Monitoring System
+Building Your Own Shutdown Monitoring System
 
 For developers who need real-time notifications, building a custom monitoring system is straightforward. Here's a basic approach using Python:
 
@@ -150,25 +150,25 @@ if __name__ == "__main__":
 
 This script logs connectivity status every minute, which helps identify patterns and durations of shutdowns affecting your location.
 
-## Legal Framework and Your Rights
+Legal Framework and Your Rights
 
 Understanding the legal framework surrounding internet shutdowns helps when documenting incidents or advocating for transparency. Under Indian law, shutdown orders must be reviewed by the relevant state government, but public disclosure of these orders varies significantly between states.
 
 The Supreme Court has ruled that internet suspension is a violation of fundamental rights under Article 19 of the Constitution. Organizations like the Internet Freedom Foundation provide legal resources for those affected by unjustified shutdowns.
 
-## Practical Recommendations
+Practical Recommendations
 
 For developers and organizations that need resilience against internet shutdowns:
 
-1. **Implement offline-first architectures** - Design applications that can function without continuous internet connectivity
-2. **Use distributed DNS** - Services like Cloudflare or Google DNS can sometimes bypass restrictions
-3. **Maintain documentation** - Record shutdown incidents with timestamps for potential legal challenges
-4. **use mesh networks** - In areas with frequent shutdowns, local mesh networks can provide alternative communication channels
-5. **Use end-to-end encrypted messaging** - Signal and similar apps often work when other services are blocked
+1. Implement offline-first architectures - Design applications that can function without continuous internet connectivity
+2. Use distributed DNS - Services like Cloudflare or Google DNS can sometimes bypass restrictions
+3. Maintain documentation - Record shutdown incidents with timestamps for potential legal challenges
+4. use mesh networks - In areas with frequent shutdowns, local mesh networks can provide alternative communication channels
+5. Use end-to-end encrypted messaging - Signal and similar apps often work when other services are blocked
 
-## Regional Shutdown Patterns and Analysis
+Regional Shutdown Patterns and Analysis
 
-### Jammu & Kashmir Historical Data
+Jammu & Kashmir Historical Data
 
 The region experienced the longest continuous shutdown (2019-2020, 184+ days) following Article 370 revocation:
 
@@ -182,7 +182,7 @@ Timeline:
 
 Current pattern (2025-2026): Short intermittent shutdowns (12-48 hours) during anniversaries and sensitive dates, typically from August 5-15.
 
-### Rajasthan Examination Shutdowns
+Rajasthan Examination Shutdowns
 
 Consistent pattern tied to state examinations:
 
@@ -200,7 +200,7 @@ Strategy: Predictable timing allows for preparation
 
 The Internet Freedom Foundation maintains calendars predicting these shutdowns with 80%+ accuracy.
 
-### Manipur Civil Unrest Shutdowns
+Manipur Civil Unrest Shutdowns
 
 Most volatile state with unpredictable patterns:
 
@@ -212,44 +212,44 @@ Duration: Can extend unexpectedly beyond announced periods
 
 Manipur lacks predictability, requiring continuous monitoring rather than calendar-based planning.
 
-## International Coordination of Tracking Data
+International Coordination of Tracking Data
 
 Multiple organizations share shutdown data:
 
-### AccessNow Shutdown Observatory
+AccessNow Shutdown Observatory
 
 Provides API access to shutdown data:
 
 ```bash
-# Query shutdown data via API
+Query shutdown data via API
 curl "https://api.accessnow.org/shutdowns?country=IN&date=2026-03"
 
-# Response includes:
-# - Start/end dates
-# - Geographic scope
-# - Issued by (state government)
-# - Stated reason
-# - Actual impact duration
+Response includes:
+- Start/end dates
+- Geographic scope
+- Issued by (state government)
+- Stated reason
+- Actual impact duration
 ```
 
 Requires attribution for data usage; API calls are free.
 
-### Internet Shutdown Database (GitHub)
+Internet Shutdown Database (GitHub)
 
 Community-maintained dataset:
 
 ```bash
 git clone https://github.com/InternetShutdownTracker/india-shutdowns.git
 
-# JSON format with structured data
+JSON format with structured data
 jq '.[] | select(.state == "Rajasthan")' shutdowns.json
 ```
 
 Community contributions help maintain currency.
 
-## Building Resilient Applications
+Building Resilient Applications
 
-### Local-First Architecture
+Local-First Architecture
 
 Design apps functioning without internet connectivity:
 
@@ -296,36 +296,36 @@ class LocalFirstChat {
 
 This ensures users don't lose data during shutdowns.
 
-### Peer-to-Peer Networks
+Peer-to-Peer Networks
 
 For high-risk areas, implement p2p communication:
 
 ```bash
-# Using Holepunch for p2p connectivity
+Using Holepunch for p2p connectivity
 npm install holepunch
 
-# Users can communicate directly if any internet is available
-# Removes dependency on centralized servers
+Users can communicate directly if any internet is available
+Removes dependency on centralized servers
 ```
 
-## Accessing Services During Shutdowns
+Accessing Services During Shutdowns
 
-### VPN Configuration Pre-Shutdown
+VPN Configuration Pre-Shutdown
 
 Before shutdown occurs, pre-position VPN configuration:
 
 ```bash
-# Configure multiple VPN options before shutdown
-# Store credentials locally
-# Test before shutdown event
+Configure multiple VPN options before shutdown
+Store credentials locally
+Test before shutdown event
 
-# Use VPN with built-in offline mode if available
-# Some VPNs include offline connectivity data
+Use VPN with built-in offline mode if available
+Some VPNs include offline connectivity data
 ```
 
 Once shutdown begins, establishing new VPN connections becomes difficult.
 
-### Proxy Chaining
+Proxy Chaining
 
 Combine multiple proxy layers:
 
@@ -337,7 +337,7 @@ User → Tor browser → VPN → Server
 
 This provides redundancy if one layer fails.
 
-### Satellite Internet Fallback
+Satellite Internet Fallback
 
 For critical operations, consider satellite options:
 
@@ -356,9 +356,9 @@ Limitations:
 
 Practical mainly for organizations, not individual users.
 
-## Legal Implications and Documentation
+Legal Implications and Documentation
 
-### Documenting Shutdowns
+Documenting Shutdowns
 
 For legal challenges, maintain records:
 
@@ -382,7 +382,7 @@ def log_shutdown_incident(state, start_time, end_time, services_affected):
 
 Multiple incident reports strengthen legal arguments.
 
-### Filing Complaints
+Filing Complaints
 
 Organizations like Internet Freedom Foundation assist with:
 - Filing complaints with state governments
@@ -392,35 +392,35 @@ Organizations like Internet Freedom Foundation assist with:
 
 Document everything thoroughly before filing.
 
-## Advanced Monitoring Techniques
+Advanced Monitoring Techniques
 
-### BGP Route Hijacking Detection
+BGP Route Hijacking Detection
 
 Sometimes shutdowns use BGP manipulation rather than ISP blocking:
 
 ```bash
-# Monitor BGP announcements
+Monitor BGP announcements
 apt install bgpdump
 
-# Analyze route changes during shutdown period
-# Look for unusual AS path changes to India
+Analyze route changes during shutdown period
+Look for unusual AS path changes to India
 ```
 
 Technical teams can detect BGP-based shutdowns faster than simple connectivity tests.
 
-### DNS Sinkholing Detection
+DNS Sinkholing Detection
 
 Some shutdowns intercept DNS to sinkholes:
 
 ```bash
-# Check DNS responses during suspected shutdown
+Check DNS responses during suspected shutdown
 dig @ISP_DNS example.com
 
-# Compare response IPs with known sinkhole IPs
-# Sinkholed domains often resolve to 127.0.0.1 or test IPs
+Compare response IPs with known sinkhole IPs
+Sinkholed domains often resolve to 127.0.0.1 or test IPs
 ```
 
-## Financial Impact Tracking
+Financial Impact Tracking
 
 Internet shutdowns have measurable economic costs:
 
@@ -434,9 +434,9 @@ Rajasthan 2025: 42 shutdown incidents
 
 These figures support advocacy for legal limitations on government shutdown authority.
 
-## Resources for Activists and Journalists
+Resources for Activists and Journalists
 
-### Organizations Working on Internet Shutdowns
+Organizations Working on Internet Shutdowns
 
 | Organization | Focus | Website |
 |-------------|-------|---------|
@@ -447,29 +447,29 @@ These figures support advocacy for legal limitations on government shutdown auth
 
 These organizations provide legal assistance, documentation support, and international coordination.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [How To Communicate During Internet Shutdown Alternative](/how-to-communicate-during-internet-shutdown-alternative-netw/)
 - [Iran Internet Shutdown Survival Guide](/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)
@@ -477,5 +477,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Turkey Election Period Internet Throttling](/turkey-election-period-internet-throttling-how-to-maintain-a/)
 - [Russia Sovereign Internet Law What It Means For Vpn Users](/russia-sovereign-internet-law-what-it-means-for-vpn-users-an/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

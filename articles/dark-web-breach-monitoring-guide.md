@@ -15,12 +15,12 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# How to Monitor the Dark Web for Data Breaches
+How to Monitor the Dark Web for Data Breaches
 
-When a company's database is breached, the stolen data ends up on dark web markets, paste sites, and breach-trading forums within hours to weeks. Your credentials may be circulating for months before the company notifies you — or they never do. Monitoring these sources lets you react before attackers do.
+When a company's database is breached, the stolen data ends up on dark web markets, paste sites, and breach-trading forums within hours to weeks. Your credentials may be circulating for months before the company notifies you. or they never do. Monitoring these sources lets you react before attackers do.
 ---
 
-## Table of Contents
+Table of Contents
 
 - [Have I Been Pwned (HIBP)](#have-i-been-pwned-hibp)
 - [Understanding Breach Data](#understanding-breach-data)
@@ -28,20 +28,20 @@ When a company's database is breached, the stolen data ends up on dark web marke
 - [Troubleshooting](#troubleshooting)
 - [Related Reading](#related-reading)
 
-## Have I Been Pwned (HIBP)
+Have I Been Pwned (HIBP)
 
 HIBP is the most reliable public breach index, operated by Troy Hunt.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- What are the most: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding Breach Data
+Understanding Breach Data
 
 A typical breach dump contains one or more of:
 
-- **Email + password hash**: The most common — email and bcrypt/MD5/SHA1 hash of password
-- **Email + plaintext password**: Worst case — plaintext if the site stored them poorly
-- **Email + personal data**: Name, address, phone, date of birth, SSN
-- **API tokens and secrets**: From developer credential breaches
-- **Session tokens**: Short-lived but exploitable immediately after breach
+- Email + password hash: The most common. email and bcrypt/MD5/SHA1 hash of password
+- Email + plaintext password: Worst case. plaintext if the site stored them poorly
+- Email + personal data: Name, address, phone, date of birth, SSN
+- API tokens and secrets: From developer credential breaches
+- Session tokens: Short-lived but exploitable immediately after breach
 
 Breach data flows from:
 1. Initial breach → hacker's private possession
@@ -51,7 +51,7 @@ Breach data flows from:
 
 ---
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -61,24 +61,24 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Have I Been Pwned (HIBP)
+Step 1: Have I Been Pwned (HIBP)
 
 HIBP is the most reliable public breach index, operated by Troy Hunt. It indexes breaches and lets you check without exposing your full password.
 
 ```bash
-# Quick check via web
-# https://haveibeenpwned.com — enter email
+Quick check via web
+https://haveibeenpwned.com. enter email
 
-# API access (free with rate limiting, or paid for higher limits)
-# Check if email is in any breach:
+API access (free with rate limiting, or paid for higher limits)
+Check if email is in any breach:
 curl -s "https://haveibeenpwned.com/api/v3/breachedaccount/you@example.com" \
   -H "hibp-api-key: YOUR_API_KEY" \
   -H "User-Agent: YourMonitoringScript/1.0" | python3 -m json.tool
 ```
 
-### Check Password Hashes (k-Anonymity)
+Check Password Hashes (k-Anonymity)
 
-HIBP's password check uses k-anonymity — you send only the first 5 characters of a SHA-1 hash, so HIBP never sees your full password:
+HIBP's password check uses k-anonymity. you send only the first 5 characters of a SHA-1 hash, so HIBP never sees your full password:
 
 ```python
 #!/usr/bin/env python3
@@ -116,7 +116,7 @@ if __name__ == "__main__":
         print("Not found in known breach data.")
 ```
 
-### Automated Email Monitoring
+Automated Email Monitoring
 
 ```python
 #!/usr/bin/env python3
@@ -188,12 +188,12 @@ if __name__ == "__main__":
 
 ---
 
-### Step 2: DeHashed (Paid, More Detail)
+Step 2: DeHashed (Paid, More Detail)
 
-DeHashed indexes breach data including plaintext passwords, IP addresses, names, and phone numbers — more detailed than HIBP but costs money.
+DeHashed indexes breach data including plaintext passwords, IP addresses, names, and phone numbers. more detailed than HIBP but costs money.
 
 ```bash
-# API access requires subscription (from $5/month)
+API access requires subscription (from $5/month)
 curl -s "https://api.dehashed.com/search?query=email%3Ayou%40example.com" \
   -H "Authorization: Basic $(echo -n 'youremail:your-api-key' | base64)" \
   -H "Content-Type: application/json" | python3 -m json.tool
@@ -207,28 +207,28 @@ DeHashed response includes:
 
 ---
 
-### Step 3: Self-Hosted Breach Monitoring
+Step 3: Self-Hosted Breach Monitoring
 
 For maximum control, download HIBP's password database locally:
 
 ```bash
-# Download HIBP password hash list (8GB+ compressed)
-# Get the torrent from haveibeenpwned.com/Passwords
-# This is SHA-1 hashes of 847 million+ compromised passwords
+Download HIBP password hash list (8GB+ compressed)
+Get the torrent from haveibeenpwned.com/Passwords
+This is SHA-1 hashes of 847 million+ compromised passwords
 
-# After download, search locally (no API calls):
-# Sort by SHA-1 prefix for binary search efficiency
+After download, search locally (no API calls):
+Sort by SHA-1 prefix for binary search efficiency
 
-# Using ripgrep for fast searching:
+Using ripgrep for fast searching:
 sha1=$(echo -n "password123" | sha1sum | awk '{print toupper($1)}')
 echo "Looking for: $sha1"
 rg "^${sha1:5}" pwned-passwords-sha1-ordered-by-hash-v8.txt
-# Much faster than per-query API and completely offline
+Much faster than per-query API and completely offline
 ```
 
 ---
 
-### Step 4: Monitor Paste Sites
+Step 4: Monitor Paste Sites
 
 Attackers often dump credentials on Pastebin and similar sites before selling on dark web markets:
 
@@ -266,14 +266,14 @@ check_pastebin_for_domain("yourdomain.com")
 
 ---
 
-### Step 5: What to Do When You Find Your Data
+Step 5: What to Do When You Find Your Data
 
-The priority order matters — act quickly:
+The priority order matters. act quickly:
 
 ```
 1. Identify which password was breached
    - Check the breach name → when it happened → which service
-   - Most passwords are old — you may have already changed them
+   - Most passwords are old. you may have already changed them
 
 2. Change the breached password immediately
    - Every site where you used that password (password reuse is the real risk)
@@ -298,34 +298,34 @@ The priority order matters — act quickly:
 
 ---
 
-### Step 6: Automated Monitoring Setup
+Step 6: Automated Monitoring Setup
 
 ```bash
-# Add to crontab to run weekly
-# crontab -e
+Add to crontab to run weekly
+crontab -e
 
 0 9 * * 1 /usr/local/bin/check-hibp.py >> /var/log/hibp-monitor.log 2>&1
-# Runs every Monday at 9am, appends to log
+Runs every Monday at 9am, appends to log
 ```
 
 ---
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Articles
+Related Articles
 
 - [What Happens When Your Password Appears In Data Breach](/what-happens-when-your-password-appears-in-data-breach-steps/)
 - [Password Manager Breach Notification Features](/password-manager-breach-notification-features/)
@@ -333,27 +333,27 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Gdpr Data Breach Notification Rights What Company Must](/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
 - [1Password vs LastPass: Which Survived Their Breaches?](/1password-vs-lastpass-which-survived-breach/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to monitor the dark web for data breaches?**
+How long does it take to monitor the dark web for data breaches?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 {% endraw %}

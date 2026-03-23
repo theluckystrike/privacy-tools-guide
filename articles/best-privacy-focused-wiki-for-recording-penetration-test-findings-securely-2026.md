@@ -14,5 +14,5 @@ voice-checked: true
 tags: [privacy-tools-guide, best-of, privacy]
 ---
 
-*Built by theluckystrike — More at zovo.one*
+*Built by theluckystrike. More at zovo.one*
 {% endraw %}

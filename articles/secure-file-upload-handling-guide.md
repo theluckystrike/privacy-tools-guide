@@ -17,7 +17,7 @@ tags: [privacy-tools-guide]
 
 File upload endpoints are one of the most exploited attack surfaces in web applications. A misconfigured uploader lets attackers drop web shells, trigger SSRF via SVG/XML, bypass malware scanners, or cause denial-of-service through zip bombs. This guide covers the full stack of defenses.
 
-## Threat Model
+Threat Model
 
 | Attack | Risk |
 |---|---|
@@ -30,7 +30,7 @@ File upload endpoints are one of the most exploited attack surfaces in web appli
 
 ---
 
-## 1. Validate File Type by Content, Not Extension
+1. Validate File Type by Content, Not Extension
 
 Extension and `Content-Type` header are attacker-controlled. The only reliable check is inspecting the file's actual magic bytes:
 
@@ -80,7 +80,7 @@ sudo apt install -y libmagic1
 
 ---
 
-## 2. Sanitize Filenames
+2. Sanitize Filenames
 
 Never trust the original filename. Strip everything suspicious:
 
@@ -105,7 +105,7 @@ def safe_filename(mime_type: str) -> str:
     ext = ALLOWED_EXTENSIONS.get(mime_type, ".bin")
     return f"{uuid.uuid4().hex}{ext}"
 
-# If you must preserve a user-provided name (e.g., for display):
+If you must preserve a user-provided name (e.g., for display):
 def sanitize_display_name(name: str) -> str:
     # Strip path components
     name = PurePosixPath(name).name
@@ -117,18 +117,18 @@ def sanitize_display_name(name: str) -> str:
 
 ---
 
-## 3. Store Files Outside Web Root
+3. Store Files Outside Web Root
 
 ```python
 import os
 
-# WRONG — file accessible directly via /uploads/shell.php
+WRONG. file accessible directly via /uploads/shell.php
 UPLOAD_DIR = "/var/www/html/uploads/"
 
-# CORRECT — outside web root entirely
+CORRECT. outside web root entirely
 UPLOAD_DIR = "/var/app-data/uploads/"
 
-# Or use object storage (S3, GCS) — files are never served through your web server
+Or use object storage (S3, GCS). files are never served through your web server
 import boto3
 
 s3 = boto3.client("s3")
@@ -151,10 +151,10 @@ When serving files, always generate pre-signed URLs with short TTL rather than m
 
 ---
 
-## 4. Scan with ClamAV
+4. Scan with ClamAV
 
 ```bash
-# Install ClamAV
+Install ClamAV
 sudo apt install -y clamav clamav-daemon
 sudo freshclam   # update virus database
 sudo systemctl enable --now clamav-daemon
@@ -186,7 +186,7 @@ def scan_with_clamav(file_bytes: bytes) -> bool:
 
 ---
 
-## 5. Prevent Zip Bomb Extraction
+5. Prevent Zip Bomb Extraction
 
 If your app extracts archives, always validate before extracting:
 
@@ -229,7 +229,7 @@ def safe_extract_zip(zip_bytes: bytes, dest_dir: str):
 
 ---
 
-## 6. Prevent Image-Based XSS (SVG/HTML)
+6. Prevent Image-Based XSS (SVG/HTML)
 
 SVG files can contain JavaScript. Never serve them with their correct MIME type:
 
@@ -261,7 +261,7 @@ import io
 
 def re_encode_image(file_bytes: bytes, max_width=1920, max_height=1080) -> bytes:
     """
-    Re-encode image through Pillow — strips embedded scripts, metadata, and ICC profiles.
+    Re-encode image through Pillow. strips embedded scripts, metadata, and ICC profiles.
     Any polyglot file that's valid PHP + valid JPEG will lose the PHP content here.
     """
     img = Image.open(io.BytesIO(file_bytes))
@@ -278,7 +278,7 @@ def re_encode_image(file_bytes: bytes, max_width=1920, max_height=1080) -> bytes
 
 ---
 
-## 7. Rate Limit Upload Endpoints
+7. Rate Limit Upload Endpoints
 
 ```python
 from slowapi import Limiter
@@ -295,7 +295,7 @@ async def upload_file(request: Request, file: UploadFile = File(...)):
 
 ---
 
-## Complete Validation Pipeline
+Complete Validation Pipeline
 
 ```python
 async def handle_upload(file: UploadFile) -> dict:
@@ -326,7 +326,7 @@ async def handle_upload(file: UploadFile) -> dict:
 
 ---
 
-## Related Reading
+Related Reading
 
 - [Secure API Gateway Setup with Kong](/kong-api-gateway-secure-setup-guide/)
 - [How to Set Up ModSecurity WAF with Nginx](/modsecurity-waf-nginx-setup-guide/)
@@ -334,5 +334,5 @@ async def handle_upload(file: UploadFile) -> dict:
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

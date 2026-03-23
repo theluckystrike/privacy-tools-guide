@@ -14,11 +14,11 @@ tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}
-# Privacy-Focused Smart Home Hub Alternatives
+Privacy-Focused Smart Home Hub Alternatives
 
-Amazon Alexa, Google Home, and Samsung SmartThings process your automation data on vendor clouds. This means a record of when you turn lights on, when motion is detected, when you arrive home, and — for voice-based hubs — recordings of everything said near a device. Local hubs eliminate this. This guide covers three alternatives that run entirely on your network.
+Amazon Alexa, Google Home, and Samsung SmartThings process your automation data on vendor clouds. This means a record of when you turn lights on, when motion is detected, when you arrive home, and. for voice-based hubs. recordings of everything said near a device. Local hubs eliminate this. This guide covers three alternatives that run entirely on your network.
 
-## What Cloud-Connected Hubs Collect
+What Cloud-Connected Hubs Collect
 
 ```
 Amazon Echo/Alexa:
@@ -42,19 +42,19 @@ All three platforms retain this data for months to years and use it for advertis
 
 ---
 
-## Option 1: Home Assistant (Most Flexible)
+Option 1: Home Assistant (Most Flexible)
 
-Home Assistant is the most popular local smart home platform — 700,000+ active installations. It runs on a Raspberry Pi, dedicated mini PC, or as a Docker container. With "Home Assistant Cloud" (Nabu Casa, optional) disabled, it operates 100% locally.
+Home Assistant is the most popular local smart home platform. 700,000+ active installations. It runs on a Raspberry Pi, dedicated mini PC, or as a Docker container. With "Home Assistant Cloud" (Nabu Casa, optional) disabled, it operates 100% locally.
 
-**Install on a Raspberry Pi 4**:
+Install on a Raspberry Pi 4:
 
 ```bash
-# Flash the Home Assistant OS image (easiest method)
-# Download: https://www.home-assistant.io/installation/raspberrypi
-# Flash with balenaEtcher or rpi-imager
-# Boot → access http://homeassistant.local:8123
+Flash the Home Assistant OS image (easiest method)
+Download: https://www.home-assistant.io/installation/raspberrypi
+Flash with balenaEtcher or rpi-imager
+Boot → access http://homeassistant.local:8123
 
-# Or install as Docker container on an existing server
+Or install as Docker container on an existing server
 docker run -d \
   --name homeassistant \
   --privileged \
@@ -65,32 +65,32 @@ docker run -d \
   ghcr.io/home-assistant/home-assistant:stable
 ```
 
-**Verify no cloud data is sent**:
+Verify no cloud data is sent:
 
 ```bash
-# Block Home Assistant from reaching the internet (whitelist exceptions for NTP/updates)
+Block Home Assistant from reaching the internet (whitelist exceptions for NTP/updates)
 sudo ufw deny out from <ha-ip>
 sudo ufw allow out from <ha-ip> to any port 443  # only if you use Nabu Casa
 
-# Check what HA is connecting to
+Check what HA is connecting to
 sudo tcpdump -i eth0 host <ha-ip> -n port 443 -w /tmp/ha_traffic.pcap
 ```
 
-**Zigbee and Z-Wave integration (no cloud required)**:
+Zigbee and Z-Wave integration (no cloud required):
 
 ```yaml
-# configuration.yaml
+configuration.yaml
 zha:
   database_path: /config/zigbee.db
 
-# Or use Zigbee2MQTT (connects Zigbee coordinator to MQTT broker)
-# No Zigbee vendor cloud required
+Or use Zigbee2MQTT (connects Zigbee coordinator to MQTT broker)
+No Zigbee vendor cloud required
 ```
 
-**Privacy-respecting automations**:
+Privacy-respecting automations:
 
 ```yaml
-# automations.yaml — local motion-triggered light with no cloud
+automations.yaml. local motion-triggered light with no cloud
 - alias: "Living room motion"
   trigger:
     platform: state
@@ -102,8 +102,8 @@ zha:
     data:
       brightness: 200
 
-# Presence detection without Google/Apple location sharing
-# Use local Bluetooth scanner (HACS bluetooth_tracker)
+Presence detection without Google/Apple location sharing
+Use local Bluetooth scanner (HACS bluetooth_tracker)
 - alias: "Arrive home"
   trigger:
     platform: state
@@ -114,32 +114,32 @@ zha:
     entity_id: alarm_control_panel.home
 ```
 
-**Voice assistant — fully local with Whisper + Piper**:
+Voice assistant. fully local with Whisper + Piper:
 
 ```yaml
-# Home Assistant Voice (local processing, no cloud)
-# Requires HACS Wyoming integration
+Home Assistant Voice (local processing, no cloud)
+Requires HACS Wyoming integration
 
-# whisper (speech-to-text)
-# piper (text-to-speech)
-# openwakeword (wake word detection)
+whisper (speech-to-text)
+piper (text-to-speech)
+openwakeword (wake word detection)
 
-# All run on-device — nothing leaves your network
+All run on-device. nothing leaves your network
 ```
 
 ---
 
-## Option 2: openHAB (Enterprise-Grade)
+Option 2: openHAB (Enterprise-Grade)
 
 openHAB (Open Home Automation Bus) is Java-based and focuses on enterprise-grade stability. It supports 400+ bindings (integrations). Its declarative configuration model is more structured than Home Assistant's YAML.
 
-**Install on Ubuntu**:
+Install on Ubuntu:
 
 ```bash
-# Java requirement
+Java requirement
 sudo apt install -y openjdk-17-jdk
 
-# Add openHAB repository
+Add openHAB repository
 wget -qO- "https://openhab.jfrog.io/artifactory/api/gpg/key/public" \
   | sudo apt-key add -
 echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg stable main' \
@@ -148,22 +148,22 @@ echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg stable main' \
 sudo apt update && sudo apt install -y openhab
 
 sudo systemctl enable --now openhab
-# Access at http://localhost:8080
+Access at http://localhost:8080
 ```
 
-**Blocking cloud calls in openHAB**:
+Blocking cloud calls in openHAB:
 
 ```bash
-# openHAB does not require cloud connectivity
-# Disable usage statistics reporting:
-# In PaperUI > Settings > System > Remote Access: OFF
+openHAB does not require cloud connectivity
+Disable usage statistics reporting:
+In PaperUI > Settings > System > Remote Access: OFF
 
-# Verify no outbound connections
+Verify no outbound connections
 ss -tnp | grep java | grep ESTABLISHED
-# Should only show local connections
+Should only show local connections
 ```
 
-**Sample items and rules**:
+Sample items and rules:
 
 ```
 // items/home.items
@@ -184,17 +184,17 @@ end
 
 ---
 
-## Option 3: Hubitat Elevation
+Option 3: Hubitat Elevation
 
 Hubitat is a commercial hub (hardware device, ~$150) that processes all automations locally. Unlike SmartThings, nothing leaves the hub. There is no subscription required for local operation.
 
-**Privacy properties**:
+Privacy properties:
 - Hub runs on-device; automations do not reach Hubitat's servers
-- Optional cloud dashboard (hubitat.com) — disable if not needed
+- Optional cloud dashboard (hubitat.com). disable if not needed
 - Z-Wave, Zigbee, LAN, and cloud integrations all supported
 - Regular firmware updates from a US company
 
-**Disable cloud features**:
+Disable cloud features:
 
 ```
 Settings > Hub Details > Cloud Connection > Disable
@@ -202,17 +202,17 @@ Settings > Hub Details > Cloud Connection > Disable
 Settings > Hub Mesh > Off (if not using multi-hub setup)
 ```
 
-**Backup locally**:
+Backup locally:
 
 ```bash
-# Hubitat provides local backup via web UI
+Hubitat provides local backup via web UI
 curl -s "http://hubitat.local/hub/backup" \
   -o hub_backup_$(date +%Y%m%d).lzf
 ```
 
 ---
 
-## Choosing a Protocol (No Cloud Required)
+Choosing a Protocol (No Cloud Required)
 
 | Protocol | Range | Mesh | Cloud Required |
 |---|---|---|---|
@@ -222,11 +222,11 @@ curl -s "http://hubitat.local/hub/backup" \
 | Wi-Fi | Home coverage | No | Depends on device |
 | Bluetooth LE | 5–10m | No (BLE mesh exists) | Depends |
 
-For maximum privacy: use **Zigbee** or **Z-Wave** with a local coordinator (ConBee II, HUSBZB-1). These devices talk directly to your hub without any internet requirement.
+For maximum privacy: use Zigbee or Z-Wave with a local coordinator (ConBee II, HUSBZB-1). These devices talk directly to your hub without any internet requirement.
 
 ```bash
-# Zigbee2MQTT — bridges Zigbee coordinator to MQTT broker locally
-# No zigbee vendor cloud required even for commercial devices
+Zigbee2MQTT. bridges Zigbee coordinator to MQTT broker locally
+No zigbee vendor cloud required even for commercial devices
 
 docker run -d \
   --name zigbee2mqtt \
@@ -235,30 +235,30 @@ docker run -d \
   -e TZ=America/New_York \
   koenkk/zigbee2mqtt
 
-# All Zigbee device events go to local MQTT broker, not any cloud
+All Zigbee device events go to local MQTT broker, not any cloud
 ```
 
 ---
 
-## Network Isolation for IoT Devices
+Network Isolation for IoT Devices
 
 Regardless of which hub you choose, isolate IoT devices on a dedicated VLAN:
 
 ```bash
-# Create VLAN 30 for IoT on pfSense/OPNsense
-# Rule: IoT VLAN can communicate with Hub IP only
-# Rule: IoT VLAN cannot reach main LAN
-# Rule: Block IoT VLAN from internet (adjust per device)
+Create VLAN 30 for IoT on pfSense/OPNsense
+Rule: IoT VLAN can communicate with Hub IP only
+Rule: IoT VLAN cannot reach main LAN
+Rule: Block IoT VLAN from internet (adjust per device)
 
-# Home Assistant configuration for isolated IoT VLAN
-# Set HA IP to 192.168.30.2 (gateway on IoT VLAN)
-# All Zigbee/Z-Wave/Thread devices communicate only with HA
-# HA on main LAN for dashboard access
+Home Assistant configuration for isolated IoT VLAN
+Set HA IP to 192.168.30.2 (gateway on IoT VLAN)
+All Zigbee/Z-Wave/Thread devices communicate only with HA
+HA on main LAN for dashboard access
 ```
 
 ---
 
-## Related Reading
+Related Reading
 
 - [How to Run Zigbee2MQTT Locally for Smart Home Without Vendor Cloud](/how-to-run-zigbee2mqtt-locally-for-smart-home-without-vendor/)
 - [How to Secure Smart Home Devices Privacy Guide 2026](/how-to-secure-smart-home-devices-privacy-guide-2026/)
@@ -266,5 +266,5 @@ Regardless of which hub you choose, isolate IoT devices on a dedicated VLAN:
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

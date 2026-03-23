@@ -20,7 +20,7 @@ Tor hidden services (also called onion services) allow you to host and access se
 
 This guide covers practical methods for accessing hidden services safely, with configuration examples and security considerations for developers building privacy-focused applications.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -30,13 +30,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand Tor Hidden Services
+Step 1: Understand Tor Hidden Services
 
-A hidden service is a service accessible only through the Tor network. Instead of using a traditional IP address, hidden services use a unique onion address—a 56-character base32 string ending in `.onion` (for version 3) or a 16-character base32 string ending in `.onion` (for version 2, which is deprecated).
+A hidden service is a service accessible only through the Tor network. Instead of using a traditional IP address, hidden services use a unique onion address, a 56-character base32 string ending in `.onion` (for version 3) or a 16-character base32 string ending in `.onion` (for version 2, which is deprecated).
 
 When you access a hidden service, your traffic takes a path through at least three Tor relays, and the service itself is also accessed through Tor relays. Neither party learns the other's IP address. The connection uses TLS with ephemeral keys, providing forward secrecy.
 
-### Step 2: Install and Configuring Tor
+Step 2: Install and Configuring Tor
 
 First, install the Tor daemon. On macOS, use Homebrew:
 
@@ -53,28 +53,28 @@ sudo apt install tor
 The Tor configuration file is typically located at `/etc/tor/torrc` on Linux or `/usr/local/etc/tor/torrc` on macOS. For accessing hidden services as a client, the default configuration usually works. However, for better security, consider these settings:
 
 ```conf
-# Force using bridges if you're in a restrictive environment
+Force using bridges if you're in a restrictive environment
 UseBridges 1
 Bridge obfs4 <bridge-address>
 
-# Exclude known bad exits (optional, for advanced users)
+Exclude known bad exits (optional, for advanced users)
 ExcludeNodes {ru},{ua},{by}
 
-# Use only secure protocols
+Use only secure protocols
 SafeSocks 1
 ```
 
 Start the Tor service:
 
 ```bash
-# macOS
+macOS
 brew services start tor
 
-# Linux
+Linux
 sudo systemctl start tor
 ```
 
-### Step 3: Access Hidden Services with Tor Browser
+Step 3: Access Hidden Services with Tor Browser
 
 The simplest method to access hidden services is using Tor Browser, available at torproject.org. Tor Browser is a modified Firefox that routes all traffic through the Tor network automatically.
 
@@ -88,7 +88,7 @@ Tor Browser includes several privacy features:
 - HTTPS Everywhere for encrypted connections
 - New identity feature to clear cookies and tabs
 
-### Step 4: Implement Programmatic Access Using Stem
+Step 4: Implement Programmatic Access Using Stem
 
 For developers building applications that interact with hidden services, the Stem library provides Python bindings for Tor control. Install it with:
 
@@ -128,21 +128,21 @@ def access_hidden_service(onion_address, controller_port=9051):
             print(f"Error accessing service: {e}")
             return None
 
-# Example usage
+Example usage
 if __name__ == "__main__":
     # Use the DuckDuckGo hidden service as an example
     result = access_hidden_service("3g2upl4pq6kufc4m.onion")
 ```
 
-### Step 5: Use curl with Tor
+Step 5: Use curl with Tor
 
 For command-line access, you can use curl with the Tor SOCKS proxy. This is useful for scripting and automation:
 
 ```bash
-# Using SOCKS5 proxy (port 9050 for Tor daemon)
+Using SOCKS5 proxy (port 9050 for Tor daemon)
 curl --socks5 localhost:9050 https://3g2upl4pq6kufc4m.onion
 
-# Or use torsocks for transparent proxying
+Or use torsocks for transparent proxying
 torsocks curl https://3g2upl4pnhvihwli.onion
 ```
 
@@ -152,7 +152,7 @@ For HTTPS enforcement (recommended):
 curl --socks5 localhost:9050 -H "Host: 3g2upl4pq6kufc4m.onion" https://3g2upl4pq6kufc4m.onion
 ```
 
-### Step 6: Verify Connection Security
+Step 6: Verify Connection Security
 
 Before accessing any hidden service, verify that your Tor circuit is working correctly. Check your IP address through the Tor network:
 
@@ -165,24 +165,24 @@ You should receive a response indicating you're using Tor. The response should i
 For hidden services that support it, verify the onion service's authentication key. Version 3 onion services use a public key that can be verified:
 
 ```bash
-# The descriptor contains the service's public key
+The descriptor contains the service's public key
 tor --list-descriptors --hidden-service <onion-address>
 ```
 
-## Security Best Practices
+Security Best Practices
 
 When accessing hidden services, follow these security guidelines:
 
-**Always use HTTPS when available**
+Always use HTTPS when available
 Many hidden services support HTTPS. This provides an additional layer of encryption beyond Tor's circuit encryption. Check for the HTTPS lock icon in Tor Browser or use `-k` sparingly in curl to allow invalid certificates only when necessary.
 
-**Verify onion addresses**
+Verify onion addresses
 Hidden service addresses are cryptographically derived. Don't trust addresses shared through unsecured channels. When possible, verify the address through multiple independent sources.
 
-**Disable JavaScript for unknown services**
+Disable JavaScript for unknown services
 Tor Browser's NoScript default settings block JavaScript on untrusted sites. Only enable JavaScript for services you trust and understand.
 
-**Use dedicated Tor instances**
+Use dedicated Tor instances
 For development work, consider running a separate Tor daemon instance rather than using the same Tor connection for sensitive browsing and development. Configure a different SOCKS port:
 
 ```conf
@@ -191,19 +191,19 @@ ControlPort 9053
 DataDirectory /var/lib/tor-dev
 ```
 
-**Monitor for IP leaks**
+Monitor for IP leaks
 Ensure your application doesn't make DNS queries or direct connections outside the Tor network. Use Wireshark or tcpdump to verify all traffic goes through the Tor proxy:
 
 ```bash
-# Monitor connections on the Tor SOCKS port
+Monitor connections on the Tor SOCKS port
 sudo tcpdump -i lo0 -n 'tcp port 9050'
 ```
 
-## Troubleshooting Common Issues
+Troubleshooting Common Issues
 
 If you cannot connect to a hidden service, consider these common problems:
 
-The service may be offline or overloaded. Try again later or check if the address is correct. Some networks block Tor connections—consider using Tor bridges configured in your `torrc` file.
+The service may be offline or overloaded. Try again later or check if the address is correct. Some networks block Tor connections, consider using Tor bridges configured in your `torrc` file.
 
 Connection timeouts can occur if the hidden service has limited capacity or network issues. Increase your connection timeout in applications:
 
@@ -220,29 +220,29 @@ session.timeout = 30  # Increase timeout
 response = session.get('https://exampleonion.onion')
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to access safely?**
+How long does it take to access safely?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Best Browser To Use With Tor Hidden Services](/best-browser-to-use-with-tor-hidden-services/)
 - [Tor Hidden Service Setup Guide Developers](/tor-hidden-service-setup-guide-developers/)
@@ -250,5 +250,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Set Up Onion Routing For Email Using Tor Hidden](/how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/)
 - [How to Use Tor Safely in Country That Criminalizes Its](/how-to-use-tor-safely-in-country-that-criminalizes-its-use/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

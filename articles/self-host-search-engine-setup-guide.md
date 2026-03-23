@@ -15,11 +15,11 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# How to Self-Host a Privacy Search Engine
+How to Self-Host a Privacy Search Engine
 
-Every search query to Google, Bing, or DuckDuckGo is logged, profiled, and used to build a behavioral record. Self-hosting a meta search engine means your queries pass through your server to multiple search backends — no account, no persistent profile, no tracking cookie. This guide covers SearXNG and Whoogle, the two strongest self-hosted options.
+Every search query to Google, Bing, or DuckDuckGo is logged, profiled, and used to build a behavioral record. Self-hosting a meta search engine means your queries pass through your server to multiple search backends. no account, no persistent profile, no tracking cookie. This guide covers SearXNG and Whoogle, the two strongest self-hosted options.
 
-## SearXNG vs Whoogle
+SearXNG vs Whoogle
 
 | Feature | SearXNG | Whoogle |
 |---------|---------|---------|
@@ -31,12 +31,12 @@ Every search query to Google, Bing, or DuckDuckGo is logged, profiled, and used 
 | JavaScript required | Yes | Optional |
 | Resource usage | ~200MB RAM | ~100MB RAM |
 
-SearXNG queries Bing, DuckDuckGo, Startpage, Wikipedia, and others simultaneously and merges results. Whoogle proxies Google, so results match Google exactly — without tracking.
+SearXNG queries Bing, DuckDuckGo, Startpage, Wikipedia, and others simultaneously and merges results. Whoogle proxies Google, so results match Google exactly. without tracking.
 
-## Option 1: SearXNG with Docker
+Option 1: SearXNG with Docker
 
 ```yaml
-# /opt/searxng/docker-compose.yml
+/opt/searxng/docker-compose.yml
 version: '3.8'
 
 services:
@@ -82,10 +82,10 @@ services:
 mkdir -p /opt/searxng/searxng
 cd /opt/searxng
 
-# Generate a secret key
+Generate a secret key
 docker compose run --rm searxng sh -c "openssl rand -hex 32 > /etc/searxng/secret_key" 2>/dev/null
 
-# Create initial settings file
+Create initial settings file
 cat > searxng/settings.yml << 'EOF'
 use_default_settings: true
 
@@ -110,7 +110,7 @@ ui:
   theme_args:
     simple_style: auto
 
-# Disable engines that break frequently or require accounts
+Disable engines that break frequently or require accounts
 engines:
   - name: google
     disabled: true   # use Google via Startpage to avoid blocks
@@ -131,19 +131,19 @@ EOF
 docker compose up -d
 ```
 
-## SearXNG Configuration Deep Dive
+SearXNG Configuration Deep Dive
 
 ```yaml
-# searxng/settings.yml — extended privacy configuration
+searxng/settings.yml. extended privacy configuration
 
 server:
   secret_key: !include secret_key
   bind_address: "0.0.0.0"
   port: 8080
-  limiter: true     # rate limit per IP — important for public instances
+  limiter: true     # rate limit per IP. important for public instances
   public_instance: false  # set true if you allow public access
 
-# Outgoing requests — anonymize or route through Tor
+Outgoing requests. anonymize or route through Tor
 outgoing:
   request_timeout: 3.0
   max_request_timeout: 10.0
@@ -152,14 +152,14 @@ outgoing:
   #   http:  socks5://127.0.0.1:9050  # Tor
   #   https: socks5://127.0.0.1:9050
 
-# Privacy: do not log searches
+Privacy: do not log searches
 general:
   debug: false
   donation_url: false
   contact_url: false
   enable_metrics: false  # disables the /stats page
 
-# Search result settings
+Search result settings
 search:
   safe_search: 0
   formats:
@@ -168,7 +168,7 @@ search:
     - csv
     - rss
 
-# Enabled engines with categories
+Enabled engines with categories
 engines:
   - name: duckduckgo
     engine: duckduckgo
@@ -193,12 +193,12 @@ engines:
     disabled: false
 ```
 
-## Option 2: Whoogle (Google Results, No Tracking)
+Option 2: Whoogle (Google Results, No Tracking)
 
-Whoogle is simpler — it proxies Google results through your server, stripping ads, AMP links, and tracking parameters.
+Whoogle is simpler. it proxies Google results through your server, stripping ads, AMP links, and tracking parameters.
 
 ```yaml
-# /opt/whoogle/docker-compose.yml
+/opt/whoogle/docker-compose.yml
 version: '3.8'
 
 services:
@@ -239,10 +239,10 @@ Whoogle replaces links to:
 - Twitter → Nitter
 - Instagram → Bibliogram
 
-## Nginx Reverse Proxy
+Nginx Reverse Proxy
 
 ```nginx
-# /etc/nginx/sites-available/search
+/etc/nginx/sites-available/search
 server {
     listen 443 ssl;
     server_name search.yourdomain.com;
@@ -251,7 +251,7 @@ server {
     ssl_certificate_key /etc/letsencrypt/live/search.yourdomain.com/privkey.pem;
     ssl_protocols TLSv1.2 TLSv1.3;
 
-    # If private instance — restrict to your IP ranges
+    # If private instance. restrict to your IP ranges
     # allow 10.0.0.0/8;
     # allow 192.168.0.0/16;
     # deny all;
@@ -272,9 +272,9 @@ server {
 }
 ```
 
-## Browser Integration
+Browser Integration
 
-### Set as Default Search Engine in Firefox
+Set as Default Search Engine in Firefox
 
 1. Navigate to your SearXNG instance
 2. Right-click the address bar → "Add Search Engine"
@@ -291,14 +291,14 @@ Or add manually:
 // Click the + icon in the address bar
 ```
 
-### Using the SearXNG JSON API
+Using the SearXNG JSON API
 
 ```bash
-# Query via API
+Query via API
 curl "https://search.yourdomain.com/search?q=linux+security&format=json" \
   | jq '.results[:3] | .[] | {title, url, content}'
 
-# Script that searches and opens the first result
+Script that searches and opens the first result
 #!/bin/bash
 QUERY="${*// /+}"
 URL=$(curl -s "https://search.yourdomain.com/search?q=${QUERY}&format=json" \
@@ -307,24 +307,24 @@ echo "Opening: $URL"
 xdg-open "$URL"
 ```
 
-## Monitoring and Maintenance
+Monitoring and Maintenance
 
 ```bash
-# Check for updates
+Check for updates
 cd /opt/searxng && docker compose pull && docker compose up -d
 
-# Check logs for errors
+Check logs for errors
 docker compose logs searxng --tail 50
 
-# Monitor container health
+Monitor container health
 docker stats searxng
 
-# SearXNG: review which engines are returning results
-# Visit: https://search.yourdomain.com/stats
-# (disable metrics in settings if public instance)
+SearXNG: review which engines are returning results
+Visit: https://search.yourdomain.com/stats
+(disable metrics in settings if public instance)
 ```
 
-## Related Articles
+Related Articles
 
 - [Privacy Focused Search Engines Comparison 2026](/privacy-focused-search-engines-comparison-2026/)
 - [Best Privacy-Focused Search Engines Comparison 2026](/best-privacy-focused-search-engines-comparison-2026/)
@@ -332,6 +332,6 @@ docker stats searxng
 - [How to Disable Google AMP Tracking in Search Results Guide](/how-to-disable-google-amp-tracking-in-search-results-guide/)
 - [Facial Recognition Search Opt Out How To Remove Your Face](/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

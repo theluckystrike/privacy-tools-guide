@@ -18,26 +18,26 @@ tags: [privacy-tools-guide, privacy]
 
 Protect yourself from digital stalking by enabling full-disk encryption, using a separate device and phone number for communications, disabling location sharing on all devices, removing metadata from photos, using Signal and Tor for sensitive communications, and implementing strong unique passwords with two-factor authentication on all accounts. Monitor for account compromises regularly and physically inspect devices for tracking apps or hidden hardware. This guide provides a systematic approach to securing your digital life including threat model assessment, device hardening, account security, communications protection, and monitoring strategies.
 
-## Table of Contents
+Table of Contents
 
 - [Threat Model Assessment](#threat-model-assessment)
 - [Prerequisites](#prerequisites)
 - [Physical Security Considerations](#physical-security-considerations)
 - [Troubleshooting](#troubleshooting)
 
-## Threat Model Assessment
+Threat Model Assessment
 
 Before implementing protections, identify what you're defending against. Stalking threats typically fall into several categories:
 
-- **Location tracking** through GPS, cell tower triangulation, or WiFi positioning
-- **Account compromise** via credential stuffing or social engineering
-- **Device infiltration** through spyware or firmware modifications
-- **Social engineering** exploiting personal information
-- **Physical surveillance** aided by smart home devices
+- Location tracking through GPS, cell tower triangulation, or WiFi positioning
+- Account compromise via credential stuffing or social engineering
+- Device infiltration through spyware or firmware modifications
+- Social engineering exploiting personal information
+- Physical surveillance aided by smart home devices
 
 Understanding the attack surface helps prioritize defensive measures. Document any known compromised accounts or suspicious device activity before hardening your environment.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -47,45 +47,45 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Device Hardening Fundamentals
+Step 1: Device Hardening Fundamentals
 
-### Mobile Device Security
+Mobile Device Security
 
 Your smartphone is the most significant vulnerability. Stalkers frequently exploit find-my-device features, location sharing settings, and insecure backups.
 
-First, perform a factory reset on any device you suspect may have spyware. This eliminates trojaned applications and compromised operating system components. After reset, avoid restoring from backups created before you suspected compromise—those backups may contain malicious software.
+First, perform a factory reset on any device you suspect may have spyware. This eliminates trojaned applications and compromised operating system components. After reset, avoid restoring from backups created before you suspected compromise, those backups may contain malicious software.
 
 Configure your device with these critical settings:
 
 ```bash
-# Android: Disable location for all non-essential apps
+Android: Disable location for all non-essential apps
 adb shell pm revoke <package> android.permission.ACCESS_FINE_LOCATION
 adb shell pm revoke <package> android.permission.ACCESS_COARSE_LOCATION
 
-# iOS: Review and revoke location access
-# Settings > Privacy & Security > Location Services
-# Set every app to "Never" unless explicitly required
+iOS: Review and revoke location access
+Settings > Privacy & Security > Location Services
+Set every app to "Never" unless explicitly required
 ```
 
-Enable encryption on all mobile devices. Modern Android and iOS devices encrypt storage by default when a passcode is set, but verify this in your security settings. Use a strong alphanumeric passcode rather than biometrics alone—biometrics can be coerced or circumvented.
+Enable encryption on all mobile devices. Modern Android and iOS devices encrypt storage by default when a passcode is set, but verify this in your security settings. Use a strong alphanumeric passcode rather than biometrics alone, biometrics can be coerced or circumvented.
 
-### Account Security Architecture
+Account Security Architecture
 
 Create entirely new accounts for sensitive communications. Do not reuse usernames or email addresses from compromised accounts. Generate unique, complex passwords using a dedicated password manager.
 
 ```bash
-# Generate secure password with Bitwarden CLI
+Generate secure password with Bitwarden CLI
 bw generate --length 24 --includeSymbols --includeNumbers --includeUppercase --includeLowercase
 
-# Enable 2FA using TOTP rather than SMS
-# Store TOTP secrets in your password manager's secure notes
+Enable 2FA using TOTP rather than SMS
+Store TOTP secrets in your password manager's secure notes
 ```
 
 For accounts requiring maximum security, consider hardware security keys. YubiKeys or SoloKeys provide phishing-resistant authentication that cannot be intercepted through man-in-the-middle attacks.
 
-### Step 2: Communication Channel Hardening
+Step 2: Communication Channel Hardening
 
-### Email Configuration
+Email Configuration
 
 Stalkers frequently target email accounts to reset passwords on other services, read communications, and monitor activity. Secure your email with these measures:
 
@@ -95,15 +95,15 @@ Stalkers frequently target email accounts to reset passwords on other services, 
 4. Check active sessions and revoke unauthorized access
 
 ```bash
-# Generate PGP key pair using gpg
+Generate PGP key pair using gpg
 gpg --full-generate-key
-# Select RSA 4096, no expiration, and a strong passphrase
+Select RSA 4096, no expiration, and a strong passphrase
 
-# Export public key for sharing
+Export public key for sharing
 gpg --armor --export your-email@example.com > public.asc
 ```
 
-### Messaging Application Selection
+Messaging Application Selection
 
 Choose messaging platforms with end-to-end encryption and minimal metadata retention. Signal provides strong encryption with features specifically useful for stalking victims:
 
@@ -113,24 +113,24 @@ Choose messaging platforms with end-to-end encryption and minimal metadata reten
 - Relay contacts option to hide your number
 
 ```bash
-# Enable Signal registration lock (requires setup from mobile)
-# Settings > Account > Registration Lock
-# This requires your Signal PIN to register on new devices
+Enable Signal registration lock (requires setup from mobile)
+Settings > Account > Registration Lock
+This requires your Signal PIN to register on new devices
 ```
 
 Avoid messaging platforms that store message content on servers, lack end-to-end encryption, or retain extensive metadata about your communications.
 
-### Step 3: Network-Level Protection
+Step 3: Network-Level Protection
 
-### VPN Implementation
+VPN Implementation
 
 A reputable VPN encrypts network traffic and masks your IP address, preventing network observers from monitoring your browsing activity or determining your physical location through IP geolocation.
 
 Configure your VPN to activate automatically on network connection. This prevents accidental exposure if you forget to enable it:
 
 ```bash
-# Linux: Auto-connect VPN with systemd
-# /etc/systemd/system/vpn-autoconnect.service
+Linux: Auto-connect VPN with systemd
+/etc/systemd/system/vpn-autoconnect.service
 [Unit]
 Description=Auto-connect VPN
 After=network-online.target
@@ -145,13 +145,13 @@ WantedBy=multi-user.target
 
 Select VPN providers with verified no-logging policies and RAM-only server infrastructure. Avoid free VPNs, which often monetize user data.
 
-### DNS Configuration
+DNS Configuration
 
 Use encrypted DNS to prevent ISP-level tracking and DNS-based location inference:
 
 ```bash
-# Configure systemd-resolved for DNS-over-TLS
-# /etc/systemd/resolved.conf
+Configure systemd-resolved for DNS-over-TLS
+/etc/systemd/resolved.conf
 [Resolve]
 DNS=1.1.1.1 1.0.0.1
 DNSOverTLS=yes
@@ -160,40 +160,40 @@ FallbackDNS=9.9.9.9 8.8.8.8
 
 Alternatively, deploy a local DNS resolver like Pi-hole on a Raspberry Pi to block tracking domains at the network level.
 
-### Step 4: Location Privacy
+Step 4: Location Privacy
 
-### Location Services Audit
+Location Services Audit
 
 Review every application with location access. Ask yourself whether each app genuinely needs your location. Remove location access from applications that don't require it:
 
 ```bash
-# Android: Check location permissions via ADB
+Android: Check location permissions via ADB
 adb shell pm list permissions -d -g | grep -i location
 
-# iOS: Review in Settings > Privacy & Security > Location Services
-# Check "Share My Location" settings and disable Family Sharing if abusive
+iOS: Review in Settings > Privacy & Security > Location Services
+Check "Share My Location" settings and disable Family Sharing if abusive
 ```
 
 Disable "Find My Device" features on all accounts unless absolutely necessary. These same features that help you locate a lost phone allow stalkers to locate you if they gain account access.
 
-### WiFi and Bluetooth Hardening
+WiFi and Bluetooth Hardening
 
 Avoid connecting to unfamiliar networks. Stalkers may create fake WiFi access points to capture traffic or perform man-in-the-middle attacks. Disable auto-connect to WiFi networks:
 
 ```bash
-# Android: Disable auto-connect
-# Settings > Network & Internet > Internet > WiFi > WiFi preferences
-# Turn off "Connect to open networks"
+Android: Disable auto-connect
+Settings > Network & Internet > Internet > WiFi > WiFi preferences
+Turn off "Connect to open networks"
 
-# iOS: Forget unknown networks regularly
-# Settings > WiFi > Tap "i" on unknown networks > "Forget This Network"
+iOS: Forget unknown networks regularly
+Settings > WiFi > Tap "i" on unknown networks > "Forget This Network"
 ```
 
 Disable Bluetooth when not in use. Bluetooth beacons can track device presence, and Bluetooth vulnerabilities have allowed remote code execution on millions of devices.
 
-### Step 5: Data Minimization and Cleanup
+Step 5: Data Minimization and Cleanup
 
-### Reducing Digital Footprint
+Reducing Digital Footprint
 
 Stalkers gather information from public sources. Minimize your online presence:
 
@@ -203,36 +203,36 @@ Stalkers gather information from public sources. Minimize your online presence:
 4. Remove personal information from websites
 
 ```bash
-# Use a privacy-focused email alias for online accounts
-# Services like Proton Mail or FastMail provide alias features
-# that forward to your primary inbox while hiding your real address
+Use a privacy-focused email alias for online accounts
+Services like Proton Mail or FastMail provide alias features
+that forward to your primary inbox while hiding your real address
 ```
 
-### Metadata Stripping
+Metadata Stripping
 
 Photos contain metadata revealing exact coordinates, device information, and timestamps. Strip metadata before sharing images:
 
 ```bash
-# Remove EXIF data using exiftool
+Remove EXIF data using exiftool
 exiftool -all= -overwrite_original image.jpg
 
-# Batch processing
+Batch processing
 for img in *.jpg; do exiftool -all= -overwrite_original "$img"; done
 ```
 
-### Step 6: Monitor and Incident Response
+Step 6: Monitor and Incident Response
 
-### Account Monitoring
+Account Monitoring
 
 Enable alerts for account login attempts and password changes. Most services offer notification options in security settings. Register for data breaches affecting your accounts:
 
 ```bash
-# Check if your email appears in breaches
-# Visit haveibeenpwned.com or use their API
+Check if your email appears in breaches
+Visit haveibeenpwned.com or use their API
 curl -s "https://haveibeenpwned.com/api/v3/breachedaccount/youremail@example.com" | jq
 ```
 
-### Creating an Incident Response Plan
+Creating an Incident Response Plan
 
 Document steps to take if you discover unauthorized access:
 
@@ -242,7 +242,7 @@ Document steps to take if you discover unauthorized access:
 4. Notify financial institutions if applicable
 5. Preserve evidence without altering compromised systems
 
-## Physical Security Considerations
+Physical Security Considerations
 
 Digital protection must complement physical security. Stalkers may gain access to your devices through physical proximity:
 
@@ -252,44 +252,44 @@ Digital protection must complement physical security. Stalkers may gain access t
 - Consider using a privacy screen in public
 - Use Faraday bags for devices when not in use
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to stalking victim digital?**
+How long does it take to stalking victim digital?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Privacy Setup For Witness Protection Program Participant](/privacy-setup-for-witness-protection-program-participant-dig/)
 - [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-setup-for-immigration-activist-protecting-undocumented/)
@@ -297,5 +297,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Privacy Setup For Safe House Protecting Location](/privacy-setup-for-safe-house-protecting-location-from-digita/)
 - [Encrypt Your Entire Digital Life: A Checklist](/encrypt-entire-digital-life--checklist/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

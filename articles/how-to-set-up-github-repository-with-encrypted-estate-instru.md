@@ -18,14 +18,14 @@ voice-checked: true
 
 Storing sensitive estate planning documents, password vaults, and financial instructions requires AES-256 encryption before they ever touch a cloud repository. This guide shows you how to set up a GitHub repository with encrypted files using age encryption, ensuring that even if your repository is compromised, your most sensitive information remains unreadable. We'll cover three production-ready approaches: age (the modern, Go-based encryption tool favored by the Tor Project), git-crypt (for Git-aware transparent encryption), and SOPS (for YAML/JSON-based secret management used by Mozilla and Discord). Each method has distinct trade-offs in key management, CI/CD integration, and recovery workflows that matter for estate planning where losing access means your heirs cannot recover anything.
 
-## Table of Contents
+Table of Contents
 
 - [Why Encrypt Estate Documents in GitHub?](#why-encrypt-estate-documents-in-github)
 - [Prerequisites](#prerequisites)
 - [Troubleshooting](#troubleshooting)
 - [Related Reading](#related-reading)
 
-## Why Encrypt Estate Documents in GitHub?
+Why Encrypt Estate Documents in GitHub?
 
 Estate planning documents contain some of the most sensitive information a person can store digitally: master passwords to password managers, bank account credentials, locations of safety deposit keys, social security numbers, medical directives, and funeral preferences. Storing unencrypted versions of these documents in any cloud service creates a single point of failure that hackers, data breaches, or government subpoenas can exploit. Encryption before commit transforms your GitHub repository from a liability into a secure, version-controlled vault that your executor or family members can access using keys you've separately provided.
 
@@ -33,7 +33,7 @@ GitHub's own security features protect repositories against unauthorized access,
 
 Beyond security, using Git for estate documents provides powerful version control that paper documents cannot match. You can track when you added a new bank account, see the history of changes to your funeral preferences, and revert mistakes without physically managing multiple versions of spreadsheets or PDFs. The Git history becomes an audit trail of your estate planning evolution, valuable for resolving disputes among heirs or proving that specific instructions were added at specific times.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -43,11 +43,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Method 1: Age Encryption (Recommended)
+Step 1: Method 1: Age Encryption (Recommended)
 
 Age is a modern encryption tool written in Go, endorsed by the Tor Project for bridging relaying, and designed for simplicity without sacrificing security. It uses X25519 for key exchange and ChaCha20-Poly1305 for encryption, meeting modern cryptographic standards while remaining approachable for non-cryptographers. Age's design philosophy prioritates clear security boundaries, making it easier to reason about what is protected and what is not.
 
-### Installing Age
+Installing Age
 
 On macOS, install age via Homebrew:
 
@@ -68,7 +68,7 @@ Verify the installation:
 age --version
 ```
 
-### Creating Encryption Keys
+Creating Encryption Keys
 
 Generate a recipient public key that will be embedded in your encrypted files:
 
@@ -79,14 +79,14 @@ age-keygen
 This outputs something like:
 
 ```
-# created: 2026-03-19T10:30:00-07:00
-# public key: age1EXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLE
+created: 2026-03-19T10:30:00-07:00
+public key: age1EXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLE
 AGE-SECRET-KEY-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
-The public key (starting with `age1`) is safe to share and can be embedded in configuration files. The secret key must be stored securely—ideally on multiple encrypted USB drives stored in separate physical locations, plus one copy with your attorney or executor. For estate purposes, generate separate keys for each person who needs access, and store all keys using a password manager or hardware security key.
+The public key (starting with `age1`) is safe to share and can be embedded in configuration files. The secret key must be stored securely, ideally on multiple encrypted USB drives stored in separate physical locations, plus one copy with your attorney or executor. For estate purposes, generate separate keys for each person who needs access, and store all keys using a password manager or hardware security key.
 
-### Encrypting Files
+Encrypting Files
 
 Encrypt a single file:
 
@@ -94,7 +94,7 @@ Encrypt a single file:
 age -p -o estate-documents.txt.age -r age1EXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLE estate-documents.txt
 ```
 
-The `-p` flag prompts for a passphrase as an additional layer of protection. Without `-p`, encryption relies solely on the recipient key. For estate documents, using both the recipient key and a passphrase provides defense in depth—if someone obtains your recipient key but not the passphrase, they still cannot read the files.
+The `-p` flag prompts for a passphrase as an additional layer of protection. Without `-p`, encryption relies solely on the recipient key. For estate documents, using both the recipient key and a passphrase provides defense in depth, if someone obtains your recipient key but not the passphrase, they still cannot read the files.
 
 Encrypt an entire directory:
 
@@ -102,7 +102,7 @@ Encrypt an entire directory:
 tar czf - documents/ | age -r age1EXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLE -o documents.tar.gz.age
 ```
 
-### Decrypting Files
+Decrypting Files
 
 Decrypt a file:
 
@@ -112,7 +112,7 @@ age -d -o estate-documents.txt estate-documents.txt.age
 
 If you used a passphrase with `-p`, age prompts for it. The decrypted output writes to the specified file or stdout if no output file is specified.
 
-### Automating Encryption in Git
+Automating Encryption in Git
 
 Create a Git filter to encrypt specific files automatically on commit and decrypt them on checkout. Add this to your repository's `.gitattributes`:
 
@@ -129,7 +129,7 @@ Create a Python wrapper script at `.git/hooks/filter-age` that Git calls automat
 import sys
 import subprocess
 
-# Load recipient keys from .age-recipients (one per line)
+Load recipient keys from .age-recipients (one per line)
 with open('.age-recipients', 'r') as f:
     recipients = [line.strip() for line in f if line.strip()]
 
@@ -163,11 +163,11 @@ git config filter.agecrypt.smudge "python3 .git/hooks/filter-age smudge"
 
 Now files matching your `.gitattributes` patterns encrypt automatically when you `git add` them and decrypt when you `git checkout`. The plaintext never leaves your local machine, but GitHub stores only encrypted versions.
 
-### Step 2: Method 2: Git-Crypt for Transparent Encryption
+Step 2: Method 2: Git-Crypt for Transparent Encryption
 
-Git-crypt provides Git-aware encryption that works smoothly with standard Git workflows. Unlike age, which requires manual encryption and decryption commands, git-crypt encrypts files transparently—committed files appear as ciphertext in Git, but checkout automatically decrypts them if you possess the correct GPG key. This approach suits teams or families comfortable with GPG key management.
+Git-crypt provides Git-aware encryption that works smoothly with standard Git workflows. Unlike age, which requires manual encryption and decryption commands, git-crypt encrypts files transparently, committed files appear as ciphertext in Git, but checkout automatically decrypts them if you possess the correct GPG key. This approach suits teams or families comfortable with GPG key management.
 
-### Installing Git-Crypt
+Installing Git-Crypt
 
 On macOS:
 
@@ -181,7 +181,7 @@ On Linux:
 sudo apt install git-crypt  # Debian/Ubuntu
 ```
 
-### Initializing Git-Crypt
+Initializing Git-Crypt
 
 Navigate to your repository and initialize git-crypt:
 
@@ -192,19 +192,19 @@ git-crypt init
 
 Git-crypt generates a symmetric key and stores it encrypted in `.git-crypt/.git-crypt-key`. You need GPG to protect this key.
 
-### Configuring File Patterns
+Configuring File Patterns
 
 Edit `.gitattributes` to specify which files to encrypt:
 
 ```
-secret-info/** filter=git-crypt diff=git-crypt
+secret-info/ filter=git-crypt diff=git-crypt
 *.key filter=git-crypt diff=git-crypt
-passwords/** filter=git-crypt diff=git-crypt
+passwords/ filter=git-crypt diff=git-crypt
 ```
 
 Files not matching these patterns remain unencrypted and are stored in Git as plain text.
 
-### Adding Collaborators
+Adding Collaborators
 
 Export your GPG public key and import it into the repository:
 
@@ -216,12 +216,12 @@ This command encrypts the git-crypt key using the recipient's GPG public key and
 
 For estate planning, add each trusted person (executor, attorney, family members) using their GPG keys. Each person receives the encrypted git-crypt key tailored to their GPG identity.
 
-### Using Git-Crypt
+Using Git-Crypt
 
 After configuration, git-crypt works transparently:
 
 ```bash
-# Edit encrypted files normally
+Edit encrypted files normally
 vim passwords/master.txt
 git add passwords/master.txt
 git commit -m "Update master password"
@@ -242,11 +242,11 @@ To unlock:
 git-crypt unlock
 ```
 
-### Step 3: Method 3: SOPS for Encrypted Secret Management
+Step 3: Method 3: SOPS for Encrypted Secret Management
 
 SOPS (Secrets OPerationS), developed by Mozilla and used by companies like Discord and embedded in the Cloudflare CDN infrastructure, encrypts YAML, JSON, INI, and Terraform files while preserving their structure. Unlike age or git-crypt which encrypt entire files, SOPS encrypts individual values within files, making it ideal for configuration files that mix sensitive and non-sensitive data. For estate planning, SOPS excels when your documents include both public information (like beneficiary names) and sensitive data (like account numbers) in the same file.
 
-### Installing SOPS
+Installing SOPS
 
 On macOS:
 
@@ -262,12 +262,12 @@ tar xzf sops_v3.7.3_linux_amd64.tar.gz
 sudo mv sops /usr/local/bin/
 ```
 
-### Creating Encrypted Files
+Creating Encrypted Files
 
 Create a YAML file with mixed sensitive and public data:
 
 ```yaml
-# estate-config.yaml
+estate-config.yaml
 executor:
   name: "Jane Executor"
   email: "jane@example.com"
@@ -285,7 +285,7 @@ accounts:
 
 Notice how `account_number` and `routing_number` are wrapped in `ENC[...]` markers. These values will be encrypted while `name`, `email`, and `notes` (unless marked) remain readable.
 
-### Encrypting with Age
+Encrypting with Age
 
 Create a `.sops.yaml` configuration file:
 
@@ -316,7 +316,7 @@ accounts:
     notes: "Joint account with spouse"
 ```
 
-### Decrypting Files
+Decrypting Files
 
 Decrypt a SOPS file for viewing:
 
@@ -332,27 +332,27 @@ sops -d --extract '["accounts"][0]["account_number"]' estate-config.yaml
 
 This ability to decrypt individual values without exposing the entire file makes SOPS powerful for CI/CD pipelines where only specific secrets need injection.
 
-### Step 4: Key Management for Estate Planning
+Step 4: Key Management for Estate Planning
 
 Encryption is only as strong as key management. For estate documents, key management has unique requirements: keys must survive you, be accessible to your executor, and remain secure against unauthorized access during your lifetime. The following strategies address these competing needs.
 
-### Primary Key Storage
+Primary Key Storage
 
 Your primary encryption key (for age) or GPG key (for git-crypt) should be stored in three locations using the 3-2-1 backup principle: three copies, on two different types of media, with one stored offsite. For encryption keys specifically, these copies should be:
 
-1. **Hardware security key** (YubiKey or SoloKey) storing the key in its secure element. This provides tamper-resistant storage and requires physical presence to use.
+1. Hardware security key (YubiKey or SoloKey) storing the key in its secure element. This provides tamper-resistant storage and requires physical presence to use.
 
-2. **Encrypted USB drive** stored in a safe deposit box or with your attorney. Use LUKS (Linux) or FileVault (macOS) encryption with a strong passphrase separate from your everyday passwords.
+2. Encrypted USB drive stored in a safe deposit box or with your attorney. Use LUKS (Linux) or FileVault (macOS) encryption with a strong passphrase separate from your everyday passwords.
 
-3. **Paper backup** using a QR code or armored paper (waterproof, fireproof paper designed for long-term storage). Store this in a physically separate location from the USB drive.
+3. Paper backup using a QR code or armored paper (waterproof, fireproof paper designed for long-term storage). Store this in a physically separate location from the USB drive.
 
-### Executor Access
+Executor Access
 
 Your executor needs access to decryption keys, but giving them keys during your lifetime creates security risks. Consider a time-locked approach where keys become accessible after a specified period of inactivity, or use a safe deposit box that your executor can access with proper documentation after your death.
 
 For SOPS or git-crypt with multiple recipients, you can add your executor's GPG key to the repository, but store their key encrypted with a passphrase that you provide separately (in your will, in a sealed envelope with your attorney, or in a separate secure location).
 
-### Key Recovery Scenarios
+Key Recovery Scenarios
 
 Test your recovery procedures before relying on them. Create a test repository with sample encrypted files, then attempt recovery using only the backup keys. Document the exact steps your executor should follow, including:
 
@@ -363,46 +363,46 @@ Test your recovery procedures before relying on them. Create a test repository w
 
 Store this documentation alongside the keys or with your estate planning documents.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to set up github repository with encrypted estate?**
+How long does it take to set up github repository with encrypted estate?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
 {% endraw %}
 
-## Related Articles
+Related Articles
 
 - [Best Encrypted Cloud Storage Free Tier 2026](/best-encrypted-cloud-storage-free-tier-2026/)
 - [How To Set Up Encrypted Usb Drive With Recovery Instructions](/how-to-set-up-encrypted-usb-drive-with-recovery-instructions/)
@@ -410,4 +410,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Encrypted Cloud Storage 2026: A Developer's Guide](/best-encrypted-cloud-storage-2026/)
 - [Best Encrypted Messaging App 2026](/best-encrypted-messaging-app-2026/)
 - [AI Tools for Generating GitHub Wiki Pages from Repository](https://bestremotetools.com/ai-tools-for-generating-github-wiki-pages-from-repository-st/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

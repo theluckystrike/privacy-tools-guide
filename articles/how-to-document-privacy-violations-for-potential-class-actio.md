@@ -16,11 +16,11 @@ intent-checked: true
 
 {% raw %}
 
-Documenting privacy violations requires preserving timestamped screenshots, browser inspector captures showing data transmission, network logs (using Charles or Fiddler), and metadata proving your access date and conditions, with parallel documentation of privacy policy text and company statements contemporaneous to the violation. Hash file timestamps, save browser consoles showing data being transmitted to unexpected third parties, and preserve ToS or privacy policy versions via archive.org before they're updated—this layer of authentication evidence transforms anecdotal complaints into admissible documentation. Class action lawyers specifically need evidence showing: (1) what data was actually collected, (2) violation of stated privacy policy or law, (3) company knowledge (security researcher disclosures, regulatory complaints), and (4) affected population scale—technical documentation you can provide demonstrating large-scale unencrypted data transmission, hardcoded API keys in client code, or retention beyond stated periods becomes crucial evidence distinguishing frivolous from meritorious class actions.
+Documenting privacy violations requires preserving timestamped screenshots, browser inspector captures showing data transmission, network logs (using Charles or Fiddler), and metadata proving your access date and conditions, with parallel documentation of privacy policy text and company statements contemporaneous to the violation. Hash file timestamps, save browser consoles showing data being transmitted to unexpected third parties, and preserve ToS or privacy policy versions via archive.org before they're updated, this layer of authentication evidence transforms anecdotal complaints into admissible documentation. Class action lawyers specifically need evidence showing: (1) what data was actually collected, (2) violation of stated privacy policy or law, (3) company knowledge (security researcher disclosures, regulatory complaints), and (4) affected population scale, technical documentation you can provide demonstrating large-scale unencrypted data transmission, hardcoded API keys in client code, or retention beyond stated periods becomes crucial evidence distinguishing frivolous from meritorious class actions.
 
-## Understanding Evidence Requirements
+Understanding Evidence Requirements
 
-For privacy violations to support a class action, evidence must be **authentic**, **reliable**, and **preserved in forensically sound ways**. Courts look for documentation that shows:
+For privacy violations to support a class action, evidence must be authentic, reliable, and preserved in forensically sound ways. Courts look for documentation that shows:
 - What data was collected
 - How it was transmitted or stored
 - Who had access to it
@@ -28,7 +28,7 @@ For privacy violations to support a class action, evidence must be **authentic**
 
 Screen captures alone rarely suffice. You need reproducible, timestamped evidence that can be independently verified.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -38,21 +38,21 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Capture Network Traffic
+Step 1: Capture Network Traffic
 
 One of the most compelling forms of evidence comes from observing actual data transmissions. Developers can use tools like Wireshark or mitmproxy to capture and analyze network traffic.
 
-### Using mitmproxy for HTTPS Inspection
+Using mitmproxy for HTTPS Inspection
 
 ```bash
-# Install mitmproxy
+Install mitmproxy
 pip install mitmproxy
 
-# Run mitmproxy in regular mode
+Run mitmproxy in regular mode
 mitmproxy -p 8080
 
-# Configure your system or browser to route traffic through 127.0.0.1:8080
-# Examine the traffic for unexpected data exfiltration
+Configure your system or browser to route traffic through 127.0.0.1:8080
+Examine the traffic for unexpected data exfiltration
 ```
 
 After capturing traffic, export the data:
@@ -62,11 +62,11 @@ mitmproxy -n -r capture_file.mitm --set flow_detail=3 > network_analysis.txt
 
 This creates a permanent record showing exactly what data leaves your device and where it goes.
 
-### Step 2: Document API Calls and Data Leaks
+Step 2: Document API Calls and Data Leaks
 
 For web applications, browser developer tools provide immediate evidence of privacy issues. Documenting API calls reveals what information gets sent to external servers.
 
-### Capturing Console Logs
+Capturing Console Logs
 
 Open Chrome DevTools (F12), navigate to the Network tab, and record XHR/Fetch requests. Export these as HAR files:
 
@@ -76,7 +76,7 @@ Open Chrome DevTools (F12), navigate to the Network tab, and record XHR/Fetch re
 
 HAR files contain complete request/response cycles including headers and payloads.
 
-### Automated API Monitoring Script
+Automated API Monitoring Script
 
 ```python
 #!/usr/bin/env python3
@@ -103,19 +103,19 @@ def log_request(method, url, headers, body):
 
     print(f"[{entry['timestamp']}] {method} {url}")
 
-# Example using mitmproxy's API
-# from mitmproxy import http
-# def request(flow: http.HTTPFlow):
-#     log_request(flow.request.method, str(flow.request.pretty_url),
-#                 flow.request.headers, flow.request.get_text(strict=False))
+Example using mitmproxy's API
+from mitmproxy import http
+def request(flow: http.HTTPFlow):
+    log_request(flow.request.method, str(flow.request.pretty_url),
+                flow.request.headers, flow.request.get_text(strict=False))
 ```
 
-### Step 3: Screenshot Documentation with Metadata
+Step 3: Screenshot Documentation with Metadata
 
 Screenshots provide visual evidence but require careful handling. Always capture full-page screenshots that include URL bars and timestamps.
 
 ```bash
-# Using Chrome headless for automated captures
+Using Chrome headless for automated captures
 chrome --headless --screenshot=evidence_$(date +%Y%m%d_%H%M%S).png \
   --virtual-time-budget=5000 \
   "https://example.com"
@@ -123,12 +123,12 @@ chrome --headless --screenshot=evidence_$(date +%Y%m%d_%H%M%S).png \
 
 For timestamp verification, use services that embed metadata or capture browser console output alongside screenshots.
 
-### Step 4: Preserving Web Archives
+Step 4: Preserving Web Archives
 
 Internet Archive's Wayback Machine provides immutable snapshots. Submit suspicious pages before they change:
 
 ```bash
-# Use the Wayback Machine save API
+Use the Wayback Machine save API
 curl -I "https://web.archive.org/web/$(date +%Y%m%d%H%M%S)/https://example.com/suspicious-page"
 ```
 
@@ -144,11 +144,11 @@ wget --mirror --convert-links --adjust-extension \
 
 The log file becomes part of your evidence chain, showing exactly when content was retrieved.
 
-### Step 5: Configure Cookie and Storage Analysis
+Step 5: Configure Cookie and Storage Analysis
 
 Privacy violations often involve unauthorized tracking. Document cookies and local storage:
 
-### Extracting Browser Cookies
+Extracting Browser Cookies
 
 ```javascript
 // Run in browser console to export all cookies
@@ -168,22 +168,22 @@ sqlite3 cookies.sqlite "SELECT host, name, value, expiry FROM moz_cookies" \
   > cookies_export.txt
 ```
 
-### Step 6: Hashing and Chain of Custody
+Step 6: Hashing and Chain of Custody
 
 Raw evidence files are only as credible as your ability to prove they have not been modified since collection. Generate cryptographic hashes immediately after saving any evidence file:
 
 ```bash
-# Generate SHA-256 checksums for all evidence files
+Generate SHA-256 checksums for all evidence files
 find ./evidence -type f | sort | xargs sha256sum > evidence_manifest.sha256
 
-# Verify integrity later
+Verify integrity later
 sha256sum -c evidence_manifest.sha256
 ```
 
-Store the manifest file separately from the evidence directory — ideally signed with a GPG key or uploaded to a public blockchain timestamp service. RFC 3161 timestamp tokens from services like FreeTSA.org provide cryptographically verifiable proof that a file existed at a specific moment in time without relying on any single party.
+Store the manifest file separately from the evidence directory. ideally signed with a GPG key or uploaded to a public blockchain timestamp service. RFC 3161 timestamp tokens from services like FreeTSA.org provide cryptographically verifiable proof that a file existed at a specific moment in time without relying on any single party.
 
 ```bash
-# Create an RFC 3161 timestamp token
+Create an RFC 3161 timestamp token
 openssl ts -query -data evidence_manifest.sha256 -sha256 -cert -out request.tsq
 curl -H "Content-Type: application/timestamp-query" \
      --data-binary @request.tsq \
@@ -192,37 +192,37 @@ curl -H "Content-Type: application/timestamp-query" \
 
 The `.tsr` file cryptographically binds your evidence manifest to the timestamp authority's signed assertion of the date and time, providing court-admissible proof of when your evidence was collected.
 
-### Step 7: Mobile App Traffic Analysis
+Step 7: Mobile App Traffic Analysis
 
 Many privacy violations originate in mobile applications that transmit data without visible browser tooling. Analyze mobile app traffic using a rooted Android device or iOS with SSL Kill Switch:
 
 For Android analysis without root, use an Android emulator with a user-installed certificate authority:
 
 ```bash
-# Set up Android emulator with mitmproxy CA
+Set up Android emulator with mitmproxy CA
 adb push ~/.mitmproxy/mitmproxy-ca-cert.cer /sdcard/
-# Install via Settings > Security > Install Certificate
+Install via Settings > Security > Install Certificate
 ```
 
 For iOS, use the iOS Simulator with mitmproxy or Charles Proxy configured as the system proxy. Capture the traffic while interacting with the app normally, then examine request payloads for personal information transmitted to unexpected domains.
 
-Document any transmission of device identifiers (IDFA, IDFV, Android Advertising ID), location data, contact lists, or health information that the app's privacy policy does not disclose. Cross-reference against the app's stated data practices in the App Store or Play Store listing as of the date you captured the traffic — archive those listing pages before examining traffic so you have evidence of what was claimed at the relevant time.
+Document any transmission of device identifiers (IDFA, IDFV, Android Advertising ID), location data, contact lists, or health information that the app's privacy policy does not disclose. Cross-reference against the app's stated data practices in the App Store or Play Store listing as of the date you captured the traffic. archive those listing pages before examining traffic so you have evidence of what was claimed at the relevant time.
 
-### Step 8: Build an Evidence Package
+Step 8: Build an Evidence Package
 
 Organize collected evidence systematically:
 
 ```
 evidence/
-├── network_captures/
-│   └── mitmproxy_dump.jsonl
-├── screenshots/
-│   └── evidence_*.png
-├── web_archives/
-│   └── example.com/
-├── api_logs/
-│   └── privacy_log.jsonl
-└── metadata.json
+ network_captures/
+    mitmproxy_dump.jsonl
+ screenshots/
+    evidence_*.png
+ web_archives/
+    example.com/
+ api_logs/
+    privacy_log.jsonl
+ metadata.json
 ```
 
 Create a manifest file documenting each piece:
@@ -247,48 +247,48 @@ Create a manifest file documenting each piece:
 }
 ```
 
-### Step 9: Static Analysis of Application Code
+Step 9: Static Analysis of Application Code
 
-When a violation stems from an application rather than a website, static analysis can reveal behaviors that traffic capture might miss — especially for obfuscated or certificate-pinned apps.
+When a violation stems from an application rather than a website, static analysis can reveal behaviors that traffic capture might miss. especially for obfuscated or certificate-pinned apps.
 
 For Android APKs, use apktool and jadx to decompile the application:
 
 ```bash
-# Decompile APK
+Decompile APK
 apktool d suspicious-app.apk -o decompiled/
 
-# Convert to Java source with jadx
+Convert to Java source with jadx
 jadx -d jadx-output/ suspicious-app.apk
 ```
 
 Search the decompiled source for common privacy-relevant patterns:
 
 ```bash
-# Look for hardcoded API keys or tracking IDs
+Look for hardcoded API keys or tracking IDs
 grep -r "api_key\|tracking_id\|analytics_token\|MIXPANEL\|AMPLITUDE" decompiled/
 
-# Find network endpoints
+Find network endpoints
 grep -r "http\|https" decompiled/ | grep -v "schema\|xmlns" | head -50
 
-# Identify data retention calls
+Identify data retention calls
 grep -r "SharedPreferences\|SQLiteDatabase\|ContentProvider" decompiled/
 ```
 
 Evidence from static analysis can demonstrate that the application was designed to collect specific data categories, reinforcing network capture evidence showing that data being transmitted. When an app's privacy policy claims no location data is collected but the decompiled source contains explicit GPS coordinate serialization to a third-party domain, that contradiction is compelling evidence of a knowing misrepresentation.
 
-### Step 10: Documenting Third-Party Data Sharing
+Step 10: Documenting Third-Party Data Sharing
 
 Class actions involving advertising ecosystems require documenting the chain of data sharing, not just collection from the user. Identify which third-party SDKs are embedded in an application:
 
 ```bash
-# List all packages in decompiled APK
+List all packages in decompiled APK
 find decompiled/smali -name "*.smali" | sed 's|decompiled/smali/||' | \
   cut -d/ -f1-3 | sort -u | grep -v "^com/yourapp"
 ```
 
 Common advertising and analytics SDK packages to document include com/facebook/ads, com/google/firebase, com/amplitude, com/mixpanel, com/braze, and com/appsflyer. Cross-reference detected SDKs against the privacy policy's disclosure of third-party data processors. Any SDK present in the binary but absent from the privacy policy disclosures is a potential violation of transparency requirements under CCPA and similar laws.
 
-### Step 11: Legal Considerations
+Step 11: Legal Considerations
 
 Preserve evidence properly from the start. Chain of custody matters:
 - Use write-once storage when possible
@@ -296,48 +296,48 @@ Preserve evidence properly from the start. Chain of custody matters:
 - Document who collected what and when
 - Avoid modifying original files
 
-When engaging with attorneys, prepare a technical summary that translates your findings for non-technical readers. Courts and juries do not read HAR files or JSONL logs. Describe in plain language what data was collected, what the privacy policy said about that data, and why the technical evidence proves a discrepancy. Attorneys experienced in data privacy litigation — particularly those familiar with CCPA, GDPR, or BIPA class actions — will guide you on jurisdiction-specific admissibility requirements.
+When engaging with attorneys, prepare a technical summary that translates your findings for non-technical readers. Courts and juries do not read HAR files or JSONL logs. Describe in plain language what data was collected, what the privacy policy said about that data, and why the technical evidence proves a discrepancy. Attorneys experienced in data privacy litigation. particularly those familiar with CCPA, GDPR, or BIPA class actions. will guide you on jurisdiction-specific admissibility requirements.
 
 Consult with an attorney before initiating any formal action. This guide provides technical documentation methods, not legal advice.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to document privacy violations for potential class?**
+How long does it take to document privacy violations for potential class?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Privacy Notice Vs Privacy Policy Difference](/privacy-notice-vs-privacy-policy-difference/)
 - [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
@@ -345,5 +345,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Chromebook Privacy Settings for Students 2026](/chromebook-privacy-settings-for-students-2026/)
 - [Best Browser for iOS Privacy 2026: A Developer Guide](/best-browser-for-ios-privacy-2026/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -13,18 +13,18 @@ voice-checked: true
 tags: [privacy-tools-guide]
 ---
 
-## Audit Logging and Compliance
+Audit Logging and Compliance
 
 Vault logs every read and write operation. Enable the audit device to capture a structured log of all secret accesses:
 
 ```bash
-# Enable file audit log
+Enable file audit log
 vault audit enable file file_path=/var/log/vault/audit.log
 
-# Enable syslog audit (to ship to your SIEM)
+Enable syslog audit (to ship to your SIEM)
 vault audit enable syslog tag="vault" facility="AUTH"
 
-# Verify audit is enabled
+Verify audit is enabled
 vault audit list
 ```
 
@@ -52,10 +52,10 @@ The audit log contains JSON entries for each operation:
 }
 ```
 
-Secret values are HMAC-hashed in the audit log — you can verify whether a specific value was accessed without storing it in plaintext. Query who accessed production database credentials in the last hour:
+Secret values are HMAC-hashed in the audit log. you can verify whether a specific value was accessed without storing it in plaintext. Query who accessed production database credentials in the last hour:
 
 ```bash
-# Parse audit log for reads of the database secret
+Parse audit log for reads of the database secret
 jq 'select(.request.path == "secret/data/myapp/database" and .request.operation == "read")
     | {time: .time, user: .auth.display_name}' /var/log/vault/audit.log
 ```
@@ -64,7 +64,7 @@ For compliance reporting, these logs satisfy SOC 2, PCI DSS, and ISO 27001 secre
 
 ---
 
-## Related Articles
+Related Articles
 
 - [How to Audit Your Password Manager Vault: A Practical Guide](/how-to-audit-your-password-manager-vault/)
 - [Audit Password Vault for Weak, Duplicate, and Reused](/how-to-audit-password-vault-for-weak-duplicates-reused-passw/)
@@ -72,6 +72,6 @@ For compliance reporting, these logs satisfy SOC 2, PCI DSS, and ISO 27001 secre
 - [1Password Secrets Automation for DevOps: A Practical Guide](/1password-secrets-automation-devops-guide/)
 - [Bitwarden Vault Export Backup Guide](/bitwarden-vault-export-backup-guide/)
 - [AI Tools for Automated Secrets Rotation and Vault Management](https://bestremotetools.com/ai-tools-for-automated-secrets-rotation-and-vault-management/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

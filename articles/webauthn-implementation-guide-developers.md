@@ -16,14 +16,14 @@ voice-checked: true
 
 {% raw %}To implement WebAuthn, generate a cryptographic challenge on your server, call `navigator.credentials.create()` for registration or `navigator.credentials.get()` for authentication on the client, then verify the signed response server-side against the stored public key. This guide provides copy-ready Python and JavaScript code for the full registration and authentication flow, plus best practices for challenge management, credential storage, and error handling.
 
-## Table of Contents
+Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Implementation Best Practices](#implementation-best-practices)
 - [Security Considerations](#security-considerations)
 - [Troubleshooting](#troubleshooting)
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -33,13 +33,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand WebAuthn Fundamentals
+Step 1: Understand WebAuthn Fundamentals
 
 WebAuthn replaces passwords with cryptographic key pairs. When users register, their device generates a public-private key pair. The private key stays on their authenticator (security key, smartphone, or biometric system), while the public key gets stored on your server. During authentication, the server sends a challenge that the user signs with their private key.
 
 The flow involves three main operations: registration, authentication, and credential management. Each operation uses specific JavaScript APIs on the client side and corresponding server endpoints.
 
-### Step 2: Server-Side Challenge Generation
+Step 2: Server-Side Challenge Generation
 
 Your server initiates every WebAuthn flow by generating a challenge. This challenge must be cryptographically random and stored temporarily for verification.
 
@@ -55,11 +55,11 @@ def generate_challenge():
 
 Store the challenge in your session or temporary storage with an expiration. The client returns this challenge signed, and you verify the signature matches.
 
-### Step 3: Registration Implementation
+Step 3: Registration Implementation
 
 The registration flow has two phases: server prepares options, then client creates the credential.
 
-### Server: Generate Registration Options
+Server: Generate Registration Options
 
 ```python
 import json
@@ -104,7 +104,7 @@ def get_registration_options(user_id, username):
  return json.dumps(options)
 ```
 
-### Client: Create Credential
+Client: Create Credential
 
 ```javascript
 async function registerCredential(options) {
@@ -142,7 +142,7 @@ function serializeCredential(credential) {
 }
 ```
 
-### Server: Verify Registration
+Server: Verify Registration
 
 ```python
 import json
@@ -175,11 +175,11 @@ def verify_registration(user_id, credential_data):
  return True
 ```
 
-### Step 4: Authentication Implementation
+Step 4: Authentication Implementation
 
 Authentication (login) follows a similar pattern but verifies rather than creates credentials.
 
-### Server: Generate Authentication Options
+Server: Generate Authentication Options
 
 ```python
 def get_authentication_options(user_id):
@@ -208,7 +208,7 @@ def get_authentication_options(user_id):
  return json.dumps(options)
 ```
 
-### Client: Get Assertion
+Client: Get Assertion
 
 ```javascript
 async function authenticate(options) {
@@ -229,7 +229,7 @@ async function authenticate(options) {
 }
 ```
 
-### Server: Verify Authentication
+Server: Verify Authentication
 
 ```python
 def verify_authentication(user_id, assertion_data):
@@ -263,17 +263,17 @@ def verify_authentication(user_id, assertion_data):
  return create_session(user_id)
 ```
 
-## Implementation Best Practices
+Implementation Best Practices
 
-### Relying Party ID Management
+Relying Party ID Management
 
 Your `rpId` (Relying Party ID) must match your domain exactly or be a parent domain. For `app.example.com`, you can use either `app.example.com` or `example.com`. Subdomains are treated as separate origins.
 
-### Credential ID Storage
+Credential ID Storage
 
 Store credential IDs as binary data, not base64 strings, in your database. This prevents encoding issues and allows efficient lookups.
 
-### User Handle Implementation
+User Handle Implementation
 
 For passwordless flows where users don't enter usernames, implement the user handle:
 
@@ -287,7 +287,7 @@ authenticatorSelection: {
 
 This allows the authenticator to store multiple credentials, enabling username-less authentication.
 
-### Error Handling
+Error Handling
 
 WebAuthn operations can fail for various reasons:
 
@@ -311,7 +311,7 @@ try {
 }
 ```
 
-## Security Considerations
+Security Considerations
 
 Always serve WebAuthn pages over HTTPS. The WebAuthn API is only available in secure contexts. For local development, use `localhost` or configure self-signed certificates.
 
@@ -319,7 +319,7 @@ Implement rate limiting on registration and authentication endpoints to prevent 
 
 Store public keys with appropriate access controls. While public keys aren't secret, they should be protected against modification.
 
-### Step 5: Use py_webauthn for Production Verification
+Step 5: Use py_webauthn for Production Verification
 
 The verification snippets above show the conceptual flow. For production code, use the `py_webauthn` library rather than implementing CBOR parsing and signature verification yourself:
 
@@ -335,7 +335,7 @@ from webauthn.helpers.structs import (
  UserVerificationRequirement,
 )
 
-# Registration options
+Registration options
 options = generate_registration_options(
  rp_id="yourdomain.com",
  rp_name="Your Application",
@@ -344,7 +344,7 @@ options = generate_registration_options(
  user_display_name=display_name,
 )
 
-# Verify registration response from client
+Verify registration response from client
 verification = verify_registration_response(
  credential=credential_response, # JSON from client
  expected_challenge=stored_challenge,
@@ -352,7 +352,7 @@ verification = verify_registration_response(
  expected_origin="https://yourdomain.com",
 )
 
-# Store the returned credential
+Store the returned credential
 db.credentials.insert({
  "user_id": user_id,
  "credential_id": verification.credential_id,
@@ -362,14 +362,14 @@ db.credentials.insert({
 })
 ```
 
-The library handles CBOR decoding, attestation verification, and public key parsing. The `sign_count` field in the verification result is important: increment it with each authentication and reject requests where the count does not increase — this detects cloned authenticators.
+The library handles CBOR decoding, attestation verification, and public key parsing. The `sign_count` field in the verification result is important: increment it with each authentication and reject requests where the count does not increase. this detects cloned authenticators.
 
-### Step 6: Supporting Multiple Authenticators Per User
+Step 6: Supporting Multiple Authenticators Per User
 
 Users should be able to register multiple devices (laptop, phone, hardware security key) for account recovery. Design your credential storage to support this from the start:
 
 ```python
-# Schema that supports multiple credentials per user
+Schema that supports multiple credentials per user
 CREATE TABLE webauthn_credentials (
  id SERIAL PRIMARY KEY,
  user_id UUID NOT NULL REFERENCES users(id),
@@ -389,13 +389,13 @@ Expose a credential management UI where users can:
 
 When a device is deleted, generate a new challenge immediately on the server side to invalidate any in-progress authentication from that credential.
 
-### Step 7: Adding WebAuthn to an Existing Password-Based System
+Step 7: Adding WebAuthn to an Existing Password-Based System
 
 Most teams add WebAuthn as a second factor before removing passwords entirely. The migration path:
 
-1. **Add as 2FA**: Users register a passkey after password login. Password remains required, passkey provides the second factor.
-2. **Offer as alternative login**: Users who have registered a passkey can use it in place of the password + OTP flow.
-3. **Deprecate passwords**: After majority passkey adoption, encourage password removal. Keep a recovery path (email link or support contact) for edge cases.
+1. Add as 2FA: Users register a passkey after password login. Password remains required, passkey provides the second factor.
+2. Offer as alternative login: Users who have registered a passkey can use it in place of the password + OTP flow.
+3. Deprecate passwords: After majority passkey adoption, encourage password removal. Keep a recovery path (email link or support contact) for edge cases.
 
 ```javascript
 // Login flow that supports both paths
@@ -418,44 +418,44 @@ async function login(username, password) {
 
 This progressive approach lets you introduce WebAuthn without requiring all users to migrate simultaneously, reducing support burden during the transition.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to ation guide for developers?**
+How long does it take to ation guide for developers?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Passwordless Authentication Pros and Cons: A Developer Guide](/passwordless-authentication-pros-and-cons/)
 - [Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn](/passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/)
@@ -463,5 +463,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained](/webauthn-vs-fido2-vs-passkey-differences/)
 - [Two-Factor Authentication Setup Guide 2026](/two-factor-authentication-setup-2026)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

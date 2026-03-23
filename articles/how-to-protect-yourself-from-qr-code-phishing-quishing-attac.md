@@ -16,9 +16,9 @@ voice-checked: true
 
 {% raw %}
 
-QR codes have become ubiquitous in modern workflows—payments, authentication, product tracking, and event check-ins all rely on them. However, this convenience has attracted threat actors who exploit QR codes for phishing attacks, a technique called "quishing." This guide provides developers and power users with practical strategies to identify, prevent, and respond to QR code phishing attempts.
+QR codes have become ubiquitous in modern workflows, payments, authentication, product tracking, and event check-ins all rely on them. However, this convenience has attracted threat actors who exploit QR codes for phishing attacks, a technique called "quishing." This guide provides developers and power users with practical strategies to identify, prevent, and respond to QR code phishing attempts.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -28,29 +28,29 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand Quishing Attacks
+Step 1: Understand Quishing Attacks
 
 Quishing combines "QR code" with "phishing." Attackers embed malicious URLs in QR codes that redirect users to credential-harvesting pages, malware download sites, or fake login portals. The attack succeeds because QR codes bypass traditional email filters and appear innocuous when printed on physical materials.
 
 Attack vectors include:
 
-- **Physical placement**: Attackers replace legitimate QR codes on posters, flyers, or product packaging with malicious ones
-- **Email embedding**: QR codes embedded in emails bypass many spam filters since they contain images rather than clickable links
-- **URL shortening abuse**: Attackers use shortened URLs within QR codes to disguise the true destination
+- Physical placement: Attackers replace legitimate QR codes on posters, flyers, or product packaging with malicious ones
+- Email embedding: QR codes embedded in emails bypass many spam filters since they contain images rather than clickable links
+- URL shortening abuse: Attackers use shortened URLs within QR codes to disguise the true destination
 
 For developers building applications that generate or scan QR codes, understanding these attack surfaces is essential for building secure systems.
 
-### Step 2: How QR Codes Enable Attacks
+Step 2: How QR Codes Enable Attacks
 
-A QR code simply encodes text—typically a URL. When scanned, the phone's camera or a dedicated app interprets this text and acts on it. The critical security gap: users cannot determine a QR code's destination without scanning it first.
+A QR code simply encodes text, typically a URL. When scanned, the phone's camera or a dedicated app interprets this text and acts on it. The critical security gap: users cannot determine a QR code's destination without scanning it first.
 
 Consider this example of a QR code that appears legitimate but leads to a malicious site:
 
 ```
-# A simple Python script to generate a QR code
+A simple Python script to generate a QR code
 import qrcode
 
-# This QR code looks innocent but points to attacker-controlled domain
+This QR code looks innocent but points to attacker-controlled domain
 malicious_data = "https://example-login.com.phishing-website.xyz/reset-password"
 qr = qrcode.QRCode(version=1, box_size=10, border=5)
 qr.add_data(malicious_data)
@@ -59,13 +59,13 @@ img = qr.make_image(fill_color="black", back_color="white")
 img.save("qr_code.png")
 ```
 
-The URL uses a technique called "typosquatting"—replacing legitimate characters with similar-looking ones to deceive users.
+The URL uses a technique called "typosquatting", replacing legitimate characters with similar-looking ones to deceive users.
 
-### Step 3: Detecting Malicious QR Codes
+Step 3: Detecting Malicious QR Codes
 
 Several techniques help identify potentially dangerous QR codes before scanning:
 
-### URL Analysis
+URL Analysis
 
 Before visiting any URL from a QR code, extract and analyze it:
 
@@ -110,7 +110,7 @@ def analyze_url(url):
 
     return warnings
 
-# Example usage
+Example usage
 url = extract_qr_url("sample_qr.png")
 if url:
     warnings = analyze_url(url)
@@ -118,7 +118,7 @@ if url:
         print(f"Warning: {warning}")
 ```
 
-### Visual Inspection
+Visual Inspection
 
 Physical QR codes often show signs of tampering:
 
@@ -127,11 +127,11 @@ Physical QR codes often show signs of tampering:
 - Codes in unusual locations (e.g., on parking meters, elevator buttons)
 - Codes that are too large or poorly aligned
 
-### Step 4: Build QR Security into Applications
+Step 4: Build QR Security into Applications
 
 For developers creating applications that handle QR codes, implement these defensive measures:
 
-### URL Preview Screens
+URL Preview Screens
 
 Always show users the destination URL before opening it:
 
@@ -174,7 +174,7 @@ function QRNavigator({ extractedUrl }) {
 
       {warnings.length > 0 ? (
         <div className="warning-box">
-          <h3>⚠️ Security Warnings</h3>
+          <h3> Security Warnings</h3>
           <ul>
             {warnings.map((w, i) => <li key={i}>{w}</li>)}
           </ul>
@@ -192,7 +192,7 @@ function QRNavigator({ extractedUrl }) {
 }
 ```
 
-### URL Unwrapping Services
+URL Unwrapping Services
 
 For enterprise environments, implement URL unwrapping to reveal the true destination:
 
@@ -212,75 +212,75 @@ def unwrap_url(shortened_url, timeout=5):
     except requests.RequestException as e:
         return f"Error: {str(e)}"
 
-# Usage
+Usage
 final_url = unwrap_url("https://bit.ly/3xY7z8A")
 print(f"Actual destination: {final_url}")
 ```
 
-This technique reveals shortened URLs but introduces privacy considerations—ensure your implementation complies with applicable privacy regulations and organizational policies.
+This technique reveals shortened URLs but introduces privacy considerations, ensure your implementation complies with applicable privacy regulations and organizational policies.
 
-### Step 5: Protecting Your Organization
+Step 5: Protecting Your Organization
 
 Beyond individual awareness, organizations should implement these measures:
 
-**Employee Training**: Conduct regular security awareness sessions specifically covering quishing. Show examples of physical and digital quishing attempts targeting your industry.
+Employee Training: Conduct regular security awareness sessions specifically covering quishing. Show examples of physical and digital quishing attempts targeting your industry.
 
-**Technical Controls**: Deploy email security gateways that analyze QR codes within emails. Implement network-level URL filtering to block known malicious domains.
+Technical Controls: Deploy email security gateways that analyze QR codes within emails. Implement network-level URL filtering to block known malicious domains.
 
-**Reporting Mechanisms**: Create clear channels for employees to report suspicious QR codes. Quick reporting enables faster response to emerging threats.
+Reporting Mechanisms: Create clear channels for employees to report suspicious QR codes. Quick reporting enables faster response to emerging threats.
 
-**Physical Security**: Regularly audit physical spaces for tampered QR codes. Include QR code inspection in security checklists for offices, retail locations, and public areas.
+Physical Security: Regularly audit physical spaces for tampered QR codes. Include QR code inspection in security checklists for offices, retail locations, and public areas.
 
-### Step 6: Responding to Quishing Incidents
+Step 6: Responding to Quishing Incidents
 
 If you or your organization encounters a quishing attempt:
 
-1. **Document the source**: Note where the QR code was found, whether physical or digital
-2. **Analyze the URL**: Use tools like the Python script above to examine the destination
-3. **Report to authorities**: File reports with relevantCERT teams (US-CERT, CISA, or local equivalents)
-4. **Notify affected users**: If the QR code reached multiple people, warn potential victims
-5. **Block malicious domains**: Add identified malicious URLs to blocklists
+1. Document the source: Note where the QR code was found, whether physical or digital
+2. Analyze the URL: Use tools like the Python script above to examine the destination
+3. Report to authorities: File reports with relevantCERT teams (US-CERT, CISA, or local equivalents)
+4. Notify affected users: If the QR code reached multiple people, warn potential victims
+5. Block malicious domains: Add identified malicious URLs to blocklists
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to protect yourself from qr code phishing quishing?**
+How long does it take to protect yourself from qr code phishing quishing?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
 {% endraw %}
 
-## Related Articles
+Related Articles
 
 - [How To Protect Yourself From Sim Swap Attack Prevention](/how-to-protect-yourself-from-sim-swap-attack-prevention-guid/)
 - [Protect Yourself from Deepfake Identity Theft](/how-to-protect-yourself-from-deepfake-identity-theft-prevent/)
@@ -288,4 +288,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Protect Yourself from Doxxing After Meeting Someone](/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
 - [What Happens If You Click A Phishing Link On Chrome](/what-happens-if-you-click-a-phishing-link-on-chrome-steps/)
 - [Does Cursor AI Store Your Code on Their Servers Data](https://bestremotetools.com/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

@@ -14,11 +14,11 @@ tags: [privacy-tools-guide]
 ---
 
 {% raw %}
-# How to Implement mTLS Between Microservices
+How to Implement mTLS Between Microservices
 
-Mutual TLS (mTLS) is the most reliable way to enforce identity between microservices. Both the client service and the server service present X.509 certificates; connections from services without a valid certificate are rejected at the TLS layer — before any application code runs. This guide implements mTLS at three levels: manual (for understanding), cert-manager (for Kubernetes), and Vault PKI (for multi-cloud).
+Mutual TLS (mTLS) is the most reliable way to enforce identity between microservices. Both the client service and the server service present X.509 certificates; connections from services without a valid certificate are rejected at the TLS layer. before any application code runs. This guide implements mTLS at three levels: manual (for understanding), cert-manager (for Kubernetes), and Vault PKI (for multi-cloud).
 
-## Why mTLS Over API Keys
+Why mTLS Over API Keys
 
 API keys can be stolen, logged, and shared. They don't expire automatically and don't identify which specific instance of a service is making a call. An X.509 certificate with a 24-hour TTL issued to a specific pod identity is far harder to abuse.
 
@@ -34,21 +34,21 @@ mTLS threat model:
 
 ---
 
-## Part 1: Manual mTLS Setup (Foundation)
+Part 1: Manual mTLS Setup (Foundation)
 
-### Create a Private CA
+Create a Private CA
 
 ```bash
-# Generate CA private key and certificate
+Generate CA private key and certificate
 openssl genrsa -out ca.key 4096
 openssl req -new -x509 -key ca.key -out ca.crt -days 3650 \
   -subj "/O=MyOrg/CN=Internal Services CA"
 
-# Set secure permissions
+Set secure permissions
 chmod 600 ca.key
 ```
 
-### Issue Service Certificates
+Issue Service Certificates
 
 ```bash
 issue_cert() {
@@ -61,7 +61,7 @@ issue_cert() {
     -subj "/O=MyOrg/CN=${SERVICE}" \
     -addext "subjectAltName=DNS:${SERVICE},DNS:${SERVICE}.default.svc.cluster.local"
 
-  # Sign with CA — short 24h TTL forces rotation
+  # Sign with CA. short 24h TTL forces rotation
   openssl x509 -req -in "${SERVICE}.csr" -CA ca.crt -CAkey ca.key \
     -CAcreateserial -out "${SERVICE}.crt" -days 1 \
     -extensions v3_req \
@@ -75,47 +75,47 @@ issue_cert "payment-service"
 issue_cert "order-service"
 ```
 
-### Test mTLS Connection
+Test mTLS Connection
 
 ```bash
-# Server (payment-service)
+Server (payment-service)
 openssl s_server -accept 8443 \
   -cert payment-service.crt -key payment-service.key \
   -CAfile ca.crt \
   -Verify 1 \   # require client certificate
   -tls1_3 &
 
-# Client (auth-service connecting to payment-service)
+Client (auth-service connecting to payment-service)
 openssl s_client -connect localhost:8443 \
   -cert auth-service.crt -key auth-service.key \
   -CAfile ca.crt \
   -tls1_3
 
-# Connection rejected without client cert:
+Connection rejected without client cert:
 openssl s_client -connect localhost:8443 -CAfile ca.crt
-# Result: SSL_ERROR_HANDSHAKE_FAILURE_ALERT
+SSL_ERROR_HANDSHAKE_FAILURE_ALERT
 ```
 
 ---
 
-## Part 2: cert-manager on Kubernetes
+Part 2: cert-manager on Kubernetes
 
 cert-manager automates certificate issuance, renewal, and distribution as Kubernetes Secrets.
 
-### Install cert-manager
+Install cert-manager
 
 ```bash
 kubectl apply -f https://github.com/cert-manager/cert-manager/releases/latest/download/cert-manager.yaml
 
-# Wait for pods
+Wait for pods
 kubectl wait --for=condition=Ready pod -l app.kubernetes.io/instance=cert-manager \
   -n cert-manager --timeout=120s
 ```
 
-### Create an Internal CA Issuer
+Create an Internal CA Issuer
 
 ```yaml
-# internal-ca.yaml — create CA secret and issuer
+internal-ca.yaml. create CA secret and issuer
 ---
 apiVersion: v1
 kind: Secret
@@ -137,17 +137,17 @@ spec:
 ```
 
 ```bash
-# Encode CA cert and key
+Encode CA cert and key
 kubectl create secret tls internal-ca-key-pair \
   --cert=ca.crt --key=ca.key -n cert-manager
 
 kubectl apply -f internal-ca.yaml
 ```
 
-### Request Certificates for Each Service
+Request Certificates for Each Service
 
 ```yaml
-# auth-service-cert.yaml
+auth-service-cert.yaml
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
@@ -172,16 +172,16 @@ spec:
 kubectl apply -f auth-service-cert.yaml
 kubectl apply -f payment-service-cert.yaml
 
-# Verify cert was issued
+Verify cert was issued
 kubectl get certificate auth-service-tls
-# NAME               READY   SECRET             AGE
-# auth-service-tls   True    auth-service-tls   30s
+NAME               READY   SECRET             AGE
+auth-service-tls   True    auth-service-tls   30s
 ```
 
-### Mount Certificates in Pods
+Mount Certificates in Pods
 
 ```yaml
-# Deployment snippet for auth-service
+Deployment snippet for auth-service
 spec:
   template:
     spec:
@@ -216,27 +216,27 @@ spec:
 
 ---
 
-## Part 3: Vault PKI Secrets Engine
+Part 3: Vault PKI Secrets Engine
 
 For multi-cloud or non-Kubernetes environments, HashiCorp Vault's PKI engine issues short-lived certificates on demand.
 
 ```bash
-# Enable PKI secrets engine
+Enable PKI secrets engine
 vault secrets enable pki
 vault secrets tune -max-lease-ttl=87600h pki   # 10-year CA
 
-# Generate internal CA
+Generate internal CA
 vault write pki/root/generate/internal \
   common_name="Internal Services CA" \
   ttl=87600h
 
-# Create intermediate CA for services
+Create intermediate CA for services
 vault secrets enable -path=pki_int pki
 vault write pki_int/intermediate/generate/internal \
   common_name="Services Intermediate CA"
   # Get CSR, sign with root, import back
 
-# Create role for service certs
+Create role for service certs
 vault write pki_int/roles/services \
   allowed_domains="svc.cluster.local,internal" \
   allow_subdomains=true \
@@ -249,7 +249,7 @@ vault write pki_int/roles/services \
 Issue a cert for a service (called at container startup via init container):
 
 ```bash
-# In an init container or entrypoint script
+In an init container or entrypoint script
 vault write pki_int/issue/services \
   common_name="payment-service.default.svc.cluster.local" \
   alt_names="payment-service" \
@@ -267,25 +267,25 @@ print('Certificate issued, expires:', data['expiration'])
 
 ---
 
-## Part 4: Verify mTLS in Production
+Part 4: Verify mTLS in Production
 
 ```bash
-# Check that a service rejects connections without client cert
+Check that a service rejects connections without client cert
 kubectl exec -it debug-pod -- \
   curl -v --cacert /certs/ca.crt \
   https://payment-service.default.svc.cluster.local:8443/health
-# Should fail: "SSL peer certificate or SSH remote key was not OK"
+Should fail: "SSL peer certificate or SSH remote key was not OK"
 
-# Verify with client cert
+Verify with client cert
 kubectl exec -it debug-pod -- \
   curl -v \
   --cacert /certs/ca.crt \
   --cert /certs/tls.crt \
   --key /certs/tls.key \
   https://payment-service.default.svc.cluster.local:8443/health
-# Should succeed: HTTP 200
+Should succeed: HTTP 200
 
-# Check certificate TTL
+Check certificate TTL
 echo | openssl s_client -connect payment-service:8443 \
   -CAfile /certs/ca.crt \
   -cert /certs/tls.crt \
@@ -295,13 +295,13 @@ echo | openssl s_client -connect payment-service:8443 \
 
 ---
 
-## Automating Certificate Rotation
+Automating Certificate Rotation
 
 ```bash
-# If using cert-manager: automatic (watches Secret, triggers renewal)
-# If using Vault: use Vault Agent with auto-renew
+If using cert-manager: automatic (watches Secret, triggers renewal)
+If using Vault: use Vault Agent with auto-renew
 
-# Vault Agent config for automatic renewal
+Vault Agent config for automatic renewal
 cat > /etc/vault-agent.hcl <<'EOF'
 auto_auth {
   method "kubernetes" {
@@ -318,15 +318,15 @@ template {
 }
 EOF
 
-# Template file for certificate
-# {{- with secret "pki_int/issue/services" "common_name=payment-service" "ttl=24h" -}}
-# {{ .Data.certificate }}
-# {{- end }}
+Template file for certificate
+{{- with secret "pki_int/issue/services" "common_name=payment-service" "ttl=24h" -}}
+{{ .Data.certificate }}
+{{- end }}
 ```
 
 ---
 
-## Related Reading
+Related Reading
 
 - [Secure Microservice Communication Patterns](/secure-microservice-communication-patterns/)
 - [Secure JWT Implementation Best Practices](/secure-jwt-implementation-best-practices/)
@@ -334,5 +334,5 @@ EOF
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

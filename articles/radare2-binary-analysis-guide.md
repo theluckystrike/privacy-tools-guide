@@ -15,44 +15,44 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# How to Use radare2 for Binary Analysis
+How to Use radare2 for Binary Analysis
 
-radare2 (r2) is a free, open-source reverse engineering framework. It handles disassembly, debugging, binary patching, and scripting across a wide range of architectures and file formats. This guide covers the essential commands for analyzing compiled binaries — finding strings, understanding function logic, identifying vulnerabilities, and extracting useful intelligence.
+radare2 (r2) is a free, open-source reverse engineering framework. It handles disassembly, debugging, binary patching, and scripting across a wide range of architectures and file formats. This guide covers the essential commands for analyzing compiled binaries. finding strings, understanding function logic, identifying vulnerabilities, and extracting useful intelligence.
 
-## Installation
+Installation
 
 ```bash
-# Debian/Ubuntu
+Debian/Ubuntu
 sudo apt install -y radare2
 
-# macOS
+macOS
 brew install radare2
 
-# Build from source (latest)
+Build from source (latest)
 git clone https://github.com/radareorg/radare2
 cd radare2 && sys/install.sh
 
-# Verify
+Verify
 r2 -v
 ```
 
-## Opening a Binary
+Opening a Binary
 
 ```bash
-# Open in read-only mode (safe default)
+Open in read-only mode (safe default)
 r2 /path/to/binary
 
-# Open for writing/patching
+Open for writing/patching
 r2 -w /path/to/binary
 
-# Open and immediately analyze (auto-analysis)
+Open and immediately analyze (auto-analysis)
 r2 -A /path/to/binary
 
-# Open with debug mode
+Open with debug mode
 r2 -d /path/to/binary
 ```
 
-## Essential Navigation Commands
+Essential Navigation Commands
 
 At the r2 prompt, you issue commands using a consistent syntax: command prefix + subcommand + optional arguments.
 
@@ -67,7 +67,7 @@ pd 20       Disassemble 20 instructions
 pdf         Disassemble current function
 ```
 
-## Step 1 — Initial Analysis
+Step 1. Initial Analysis
 
 When you open a binary, run analysis to populate the function database:
 
@@ -92,7 +92,7 @@ View what was found:
 ...
 ```
 
-## Step 2 — Analyzing Functions
+Step 2. Analyzing Functions
 
 Seek to main and disassemble it:
 
@@ -100,7 +100,7 @@ Seek to main and disassemble it:
 [0x00000000]> s main
 [0x00401180]> pdf
 / (fcn) sym.main 72
-|   int main (int argc, char **argv)
+|   int main (int argc, char argv)
 |           0x00401180      55             push rbp
 |           0x00401181      4889e5         mov rbp, rsp
 |           0x00401184      4883ec10       sub rsp, 0x10
@@ -115,9 +115,9 @@ Navigate the function graph visually:
 
 This opens an interactive function graph. Use arrow keys to navigate, `q` to quit back to the command line.
 
-## Step 3 — Strings Analysis
+Step 3. Strings Analysis
 
-Find embedded strings — useful for spotting hardcoded credentials, API endpoints, and debug messages:
+Find embedded strings. useful for spotting hardcoded credentials, API endpoints, and debug messages:
 
 ```
 [0x00000000]> iz
@@ -134,7 +134,7 @@ nth paddr      vaddr      len size section type    string
 3   0x00402053 0x00402053 12  13   .rodata ascii   "admin12345\n"
 ```
 
-The string `admin12345` is a hardcoded credential — a direct security finding from a basic strings scan.
+The string `admin12345` is a hardcoded credential. a direct security finding from a basic strings scan.
 
 Filter strings by pattern:
 
@@ -144,13 +144,13 @@ Filter strings by pattern:
 [0x00000000]> iz~key
 ```
 
-## Step 4 — Cross-Reference Analysis
+Step 4. Cross-Reference Analysis
 
 Find where a function is called from (xrefs):
 
 ```
 [0x00000000]> axt sym.process_input
-# Shows all call sites to process_input
+Shows all call sites to process_input
 ```
 
 Find where a string is used:
@@ -159,11 +159,11 @@ Find where a string is used:
 [0x00000000]> /v 0x00402010    # Find references to this address
 ```
 
-## Step 5 — Finding Common Vulnerabilities
+Step 5. Finding Common Vulnerabilities
 
-### Unsafe string functions
+Unsafe string functions
 
-Search for calls to `strcpy`, `sprintf`, `gets` — classic buffer overflow sources:
+Search for calls to `strcpy`, `sprintf`, `gets`. classic buffer overflow sources:
 
 ```
 [0x00000000]> afl~strcpy
@@ -179,12 +179,12 @@ If these functions appear, seek to each call site and examine what precedes the 
 [0x00401xxx]> pdf    # disassemble the calling function
 ```
 
-### Stack canary detection
+Stack canary detection
 
 Check if the binary has security mitigations:
 
 ```bash
-# From shell (not r2 prompt)
+From shell (not r2 prompt)
 r2 -A /path/to/binary -q -c 'iI' | grep -E "canary|nx|pie|relro"
 ```
 
@@ -204,7 +204,7 @@ relro    full    # Full RELRO protection
 
 A binary with `canary false`, `nx false`, and `pic false` is a classic exploitation target.
 
-## Step 6 — Patching Binaries
+Step 6. Patching Binaries
 
 Open with write mode to modify bytes directly:
 
@@ -218,13 +218,13 @@ To patch a conditional jump to always jump (bypass a check):
 [0x00401200]> pd 5       # View instructions
 0x00401200  7405         je 0x00401207    # Jump if equal (zero flag set)
 
-# Patch je to jmp (unconditional)
+Patch je to jmp (unconditional)
 [0x00401200]> wx eb05    # eb = jmp short, 05 = offset
 [0x00401200]> pd 5       # Verify
 0x00401200  eb05         jmp 0x00401207
 ```
 
-## Step 7 — Scripting with r2pipe
+Step 7. Scripting with r2pipe
 
 Automate analysis with Python via r2pipe:
 
@@ -238,12 +238,12 @@ import r2pipe
 r2 = r2pipe.open("/path/to/binary")
 r2.cmd("aaa")  # Full analysis
 
-# Get all functions as JSON
+Get all functions as JSON
 functions = r2.cmdj("aflj")
 for fn in functions:
     print(f"{fn['name']:40} offset: {hex(fn['offset'])}")
 
-# Find dangerous function calls
+Find dangerous function calls
 dangerous = ["strcpy", "gets", "sprintf", "system"]
 for fn in dangerous:
     result = r2.cmd(f"afl~{fn}")
@@ -257,19 +257,19 @@ r2.quit()
 python3 audit_binary.py
 ```
 
-## Step 8 — Comparing Two Binaries
+Step 8. Comparing Two Binaries
 
-Useful for patch analysis — finding what changed between firmware versions:
+Useful for patch analysis. finding what changed between firmware versions:
 
 ```bash
-# Install radiff2 (bundled with radare2)
+Install radiff2 (bundled with radare2)
 radiff2 -A /path/to/binary_old /path/to/binary_new
 
-# Compare function-by-function
+Compare function-by-function
 radiff2 -C /path/to/binary_old /path/to/binary_new
 ```
 
-## Useful Command Reference
+Useful Command Reference
 
 ```
 Command     Purpose
@@ -286,7 +286,7 @@ wx <bytes>  Write hex bytes at current position
 !r2 -A -q   Run in batch (non-interactive) mode
 ```
 
-## Related Reading
+Related Reading
 
 - [How to Use GDB for Security Debugging](/gdb-security-debugging-guide/)
 - [How to Use Ghidra for Reverse Engineering](/ghidra-reverse-engineering-guide/)
@@ -294,6 +294,6 @@ wx <bytes>  Write hex bytes at current position
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

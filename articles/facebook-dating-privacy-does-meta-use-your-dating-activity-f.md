@@ -18,7 +18,7 @@ tags: [privacy-tools-guide, privacy]
 
 Facebook Dating represents Meta's attempt to compete in the crowded online dating market by using its massive social graph. Since launching in 2019, the feature has raised legitimate privacy questions from security-conscious users, particularly those familiar with how platforms monetize user data. This article examines whether Meta uses your dating activity for ad targeting and provides actionable controls for managing your privacy.
 
-## Table of Contents
+Table of Contents
 
 - [How Facebook Dating Works](#how-facebook-dating-works)
 - [Data Collection Scope](#data-collection-scope)
@@ -32,7 +32,7 @@ Facebook Dating represents Meta's attempt to compete in the crowded online datin
 - [Comparison: Facebook Dating vs Dedicated Apps](#comparison-facebook-dating-vs-dedicated-apps)
 - [Data Portability and Deletion](#data-portability-and-deletion)
 
-## How Facebook Dating Works
+How Facebook Dating Works
 
 Facebook Dating integrates directly into the main Facebook app, requiring a separate profile distinct from your social media presence. When you enable the feature, Facebook asks for additional permissions and collects different data points than standard app usage.
 
@@ -44,25 +44,25 @@ The system creates recommendations based on:
 
 Unlike traditional dating apps, Facebook Dating emphasizes connecting people through mutual friends and interests, which theoretically reduces catfishing but increases data overlap between dating and social activities.
 
-## Data Collection Scope
+Data Collection Scope
 
 When you use Facebook Dating, Meta collects:
 
-- **Profile information**: Dating preferences, bio, photos specifically for Dating
-- **Interaction data**: Likes, messages, conversations within Dating
-- **Behavioral signals**: Response times, profile views, match frequency
-- **Device data**: Location, device type, connection quality
-- **Cross-platform data**: Activity from Instagram if accounts are linked
+- Profile information: Dating preferences, bio, photos specifically for Dating
+- Interaction data: Likes, messages, conversations within Dating
+- Behavioral signals: Response times, profile views, match frequency
+- Device data: Location, device type, connection quality
+- Cross-platform data: Activity from Instagram if accounts are linked
 
 The collection scope differs from standard Facebook browsing. A 2025 Meta transparency report indicated that Dating data receives separate treatment in their data classification system, though it remains within the broader Meta ecosystem.
 
-## Does Dating Activity Influence Ad Targeting?
+Does Dating Activity Influence Ad Targeting?
 
-The direct answer: **Meta does not use Facebook Dating activity to target ads on Facebook or Instagram.** This policy has remained consistent since Dating's launch and was reinforced in their 2025 Privacy Center updates.
+The direct answer: Meta does not use Facebook Dating activity to target ads on Facebook or Instagram. This policy has remained consistent since Dating's launch and was reinforced in their 2025 Privacy Center updates.
 
 However, understanding why requires examining Meta's advertising architecture:
 
-### What Happens to Dating Data
+What Happens to Dating Data
 
 ```
 Dating Profile Data → Separate Classification
@@ -76,12 +76,12 @@ Dating Profile Data → Separate Classification
 
 Meta's official stance states that Dating data is siloed from the advertising system. Your likes, messages, and matches within Dating do not appear in the audiences you can target or be targeted by.
 
-### The Cross-Platform Complexity
+The Cross-Platform Complexity
 
 The situation becomes nuanced when you link Instagram to Facebook Dating. Instagram operates under the same Meta advertising infrastructure, and the line between "Dating activity" and "Instagram activity" can blur:
 
 ```python
-# Hypothetical data flow (simplified)
+Hypothetical data flow (simplified)
 class DataPipeline:
     def __init__(self):
         self.dating_data = []
@@ -98,39 +98,39 @@ class DataPipeline:
 
 This theoretical model reflects Meta's public documentation: Dating-specific actions receive exclusion from targeting, but linked Instagram accounts maintain standard advertising data practices.
 
-### The Interest Category Question
+The Interest Category Question
 
 Meta builds interest categories based on broad behavioral signals. While your Dating preferences (e.g., "interested in men aged 25-35") do not directly become targeting parameters, the general activity patterns might influence broader interest categories.
 
 A privacy researcher demonstrated this by creating test accounts with varied Dating preferences. The resulting ad categories showed minimal direct correlation, suggesting that dating-specific data remains segmented from core advertising systems.
 
-## Privacy Controls for Power Users
+Privacy Controls for Power Users
 
 Developers and privacy-conscious users should understand both the interface controls and the technical mechanisms available.
 
-### Interface-Based Controls
+Interface-Based Controls
 
-1. **Limit Dating Profile Visibility**
+1. Limit Dating Profile Visibility
  - Settings → Dating → Edit Settings → "Who can see your dating profile"
  - Options include "Friends of Friends" or "Everyone"
 
-2. **Disconnect Instagram**
+2. Disconnect Instagram
  - Settings → Dating → Instagram Settings
  - Removing the link prevents cross-platform data merging
 
-3. **Activity Controls**
+3. Activity Controls
  - Turn off "Show activity on Facebook" to prevent Dating activity appearing in friends' feeds
 
-### API-Level Controls (For Developers)
+API-Level Controls (For Developers)
 
 If you're building applications that integrate with Facebook's APIs, the Graph API provides granular consent management:
 
 ```bash
-# Check current permissions for Dating-related data
+Check current permissions for Dating-related data
 GET /v18.0/me/permissions HTTP/1.1
 Host: graph.facebook.com
 
-# Request specific data deletion (GDPR/CCPA)
+Request specific data deletion (GDPR/CCPA)
 POST /v18.0/me/data_deletion HTTP/1.1
 Host: graph.facebook.com
 Content-Type: application/json
@@ -141,7 +141,7 @@ Content-Type: application/json
 }
 ```
 
-### Clearing Dating History
+Clearing Dating History
 
 Unlike standard Facebook activity, Dating maintains separate history management:
 
@@ -152,16 +152,16 @@ Unlike standard Facebook activity, Dating maintains separate history management:
 
 This clears match history and conversation data, though some metadata may remain in backup systems for operational integrity.
 
-## Technical Privacy Considerations
+Technical Privacy Considerations
 
 For users running Facebook through containerization or privacy-focused setups:
 
-### Network-Level Blocking
+Network-Level Blocking
 
 You can verify Facebook Dating API calls using network inspection tools:
 
 ```bash
-# Example: Monitor Dating API endpoints
+Monitor Dating API endpoints
 tcpdump -i any -n host graph.facebook.com | grep dating
 ```
 
@@ -170,103 +170,103 @@ Common Dating-related endpoints include:
 - `graph.facebook.com/v18.0/dating_profiles`
 - `graph.facebook.com/v18.0/matching`
 
-### Container Isolation
+Container Isolation
 
 Using Firefox Container or similar isolation tools prevents cross-site tracking. However, this approach has limitations with mobile apps, where containerization requires additional configuration through tools like GrapheneOS or sideloaded privacy-focused ROMs.
 
-## What Has Changed in 2026
+What Has Changed in 2026
 
 Meta has made several privacy-related updates to Facebook Dating in 2026:
 
-- **Enhanced Data Minimization**: Dating now processes more data locally on-device before transmission
-- **Clearer Privacy Labels**: App Store listings now explicitly state Dating data separation
-- **GDPR Compliance Updates**: European users received additional deletion rights specific to Dating
-- **Transparency Reports**: Meta now publishes Dating-specific data handling metrics quarterly
+- Enhanced Data Minimization: Dating now processes more data locally on-device before transmission
+- Clearer Privacy Labels: App Store listings now explicitly state Dating data separation
+- GDPR Compliance Updates: European users received additional deletion rights specific to Dating
+- Transparency Reports: Meta now publishes Dating-specific data handling metrics quarterly
 
 These changes represent incremental improvements rather than fundamental shifts in how dating data flows through Meta's systems.
 
-## Recommendations for Privacy-Conscious Users
+Recommendations for Privacy-Conscious Users
 
-1. **Assume partial data overlap**: While Dating activity doesn't directly target ads, linked accounts create indirect connections
-2. **Use separate identity**: Create an Instagram account specifically for Dating to minimize cross-contamination
-3. **Review permissions regularly**: Monthly audits of connected apps and data sharing settings
-4. **Consider deletion, not just hiding**: Hiding profile doesn't remove data; deletion is the stronger privacy action
+1. Assume partial data overlap: While Dating activity doesn't directly target ads, linked accounts create indirect connections
+2. Use separate identity: Create an Instagram account specifically for Dating to minimize cross-contamination
+3. Review permissions regularly: Monthly audits of connected apps and data sharing settings
+4. Consider deletion, not just hiding: Hiding profile doesn't remove data; deletion is the stronger privacy action
 
-## Advanced Privacy Auditing for Dating Features
+Advanced Privacy Auditing for Dating Features
 
 Power users can perform technical audits of Facebook Dating's actual data flows:
 
-### Network Traffic Analysis
+Network Traffic Analysis
 
 Monitor what data leaves your device when using Facebook Dating:
 
 ```bash
 #!/bin/bash
-# facebook-dating-network-audit.sh
+facebook-dating-network-audit.sh
 
-# Install mitmproxy for HTTPS inspection
-# brew install mitmproxy
+Install mitmproxy for HTTPS inspection
+brew install mitmproxy
 
-# Start proxy
+Start proxy
 mitmproxy --mode regular -p 8080 &
 
-# Configure system to route through proxy
-# Settings > Network > WiFi > Advanced > Proxy
+Configure system to route through proxy
+Settings > Network > WiFi > Advanced > Proxy
 
-# Record all outbound requests
+Record all outbound requests
 tcpdump -i any -n 'host graph.facebook.com or host gateway.facebook.com' \
   -A > facebook_dating_traffic.pcap
 
-# Alternative: Use Firefox Developer Tools
-# Settings > Network > Filter > graph.facebook.com
+Alternative: Use Firefox Developer Tools
+Settings > Network > Filter > graph.facebook.com
 
-# Analyze requests
-# Look for:
-# - POST requests to /dating_* endpoints
-# - Data payloads containing preferences
-# - Third-party domains called from Dating feature
-# - Timing patterns (batch uploads, background syncs)
+Analyze requests
+Look for:
+- POST requests to /dating_* endpoints
+- Data payloads containing preferences
+- Third-party domains called from Dating feature
+- Timing patterns (batch uploads, background syncs)
 ```
 
-### API Endpoint Mapping
+API Endpoint Mapping
 
 Document which Graph API endpoints Dating uses:
 
 ```bash
-# Common Facebook Dating API endpoints
-# (These are frequently called when using the feature)
+Common Facebook Dating API endpoints
+(These are frequently called when using the feature)
 
-# 1. Get user's dating profile
+1. Get user's dating profile
 GET /v18.0/me/dating_profile
-# Payloads: preferences, location, photos
+Payloads: preferences, location, photos
 
-# 2. Get dating matches/recommendations
+2. Get dating matches/recommendations
 GET /v18.0/me/dating_matches
-# Reveals ranking algorithm inputs
+Reveals ranking algorithm inputs
 
-# 3. Update dating preferences
+3. Update dating preferences
 POST /v18.0/me/dating_profile
-# Data: age range, gender, location, interests
+Data: age range, gender, location, interests
 
-# 4. Get dating conversations
+4. Get dating conversations
 GET /v18.0/me/dating_conversations
 
-# 5. Send dating message
+5. Send dating message
 POST /v18.0/me/dating_conversations/{conversation_id}/messages
 
-# Monitor these requests in Firefox Developer Tools
-# Network tab > Filter "dating" > Inspect request payloads
+Monitor these requests in Firefox Developer Tools
+Network tab > Filter "dating" > Inspect request payloads
 ```
 
-## Privacy by Regulation
+Privacy by Regulation
 
 Different regulatory frameworks provide specific Dating privacy rights:
 
-### GDPR (EU Users)
+GDPR (EU Users)
 
 ```bash
-# Right to access: Article 15 GDPR
-# Request all your Dating data
+Right to access: Article 15 GDPR
+Request all your Dating data
 
 curl -X POST "https://www.facebook.com/dsar/request" \
   -H "Content-Type: application/json" \
@@ -276,35 +276,35 @@ curl -X POST "https://www.facebook.com/dsar/request" \
     "format": "portable_format"
   }'
 
-# Right to rectification: Article 16 GDPR
-# Correct inaccurate Dating data
+Right to rectification: Article 16 GDPR
+Correct inaccurate Dating data
 
-# Right to erasure: Article 17 GDPR
-# Delete all Dating data specifically
+Right to erasure: Article 17 GDPR
+Delete all Dating data specifically
 
-# Right to restrict processing: Article 18 GDPR
-# Stop processing for Dating purposes without deletion
+Right to restrict processing: Article 18 GDPR
+Stop processing for Dating purposes without deletion
 ```
 
-### CCPA (California Users)
+CCPA (California Users)
 
 ```bash
-# Right to know: Business must disclose:
-# - Categories of personal information collected
-# - Sources of collection
-# - Purpose of collection
-# - Recipients of data
+Right to know: Business must disclose:
+- Categories of personal information collected
+- Sources of collection
+- Purpose of collection
+- Recipients of data
 
-# Right to delete: Can request deletion of Dating data
-# Meta must comply within 45 days
+Right to delete: Can request deletion of Dating data
+Meta must comply within 45 days
 
-# Right to opt-out: Can prevent sale of Dating information
-# Send "Do Not Sell My Personal Information" request
+Right to opt-out: Can prevent sale of Dating information
+Send "Do Not Sell My Personal Information" request
 
-# Right to non-discrimination: Cannot be penalized for exercising rights
+Right to non-discrimination: Cannot be penalized for exercising rights
 ```
 
-## Comparison: Facebook Dating vs Dedicated Apps
+Comparison: Facebook Dating vs Dedicated Apps
 
 Understanding how Facebook Dating's data flows differ from traditional dating apps:
 
@@ -319,53 +319,53 @@ Understanding how Facebook Dating's data flows differ from traditional dating ap
 
 The key difference: Facebook Dating data ultimately sits in Meta's ecosystem with its history of secondary uses.
 
-## Data Portability and Deletion
+Data Portability and Deletion
 
 Exercise your regulatory rights:
 
 ```bash
-# Request data export (GDPR/CCPA)
-# 1. Go to Settings > Your Information > Download Your Information
-# 2. Select "Dating" as category
-# 3. Choose date range and format
-# 4. Meta exports to your email within days
+Request data export (GDPR/CCPA)
+1. Go to Settings > Your Information > Download Your Information
+2. Select "Dating" as category
+3. Choose date range and format
+4. Meta exports to your email within days
 
-# Automated deletion via API (requires token)
+Automated deletion via API (requires token)
 curl -X DELETE "https://graph.instagram.com/me/media" \
   -d "access_token=YOUR_ACCESS_TOKEN"
 
-# Request permanent deletion
-# Settings > Account > Deactivation and Deletion
-# Select "Delete Account"
-# 30-day grace period before permanent deletion
+Request permanent deletion
+Settings > Account > Deactivation and Deletion
+Select "Delete Account"
+30-day grace period before permanent deletion
 
-# Verify deletion (may take 90 days for full processing)
-# Check Meta Help Center for deletion status
+Verify deletion (may take 90 days for full processing)
+Check Meta Help Center for deletion status
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Use Compartmentalized Identity for Online Dating](/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
 - [How To Set Up Privacy Focused Phone Specifically For Dating](/how-to-set-up-privacy-focused-phone-specifically-for-dating-/)
@@ -373,5 +373,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Create Burner Email Specifically For Dating Site](/how-to-create-burner-email-specifically-for-dating-site-regi/)
 - [Dating App Notification Privacy Preventing Matches](/dating-app-notification-privacy-preventing-matches-and-messa/)
 - [Cursor Pro Privacy Mode Does It Cost Extra](https://bestremotetools.com/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

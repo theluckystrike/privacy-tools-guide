@@ -14,14 +14,14 @@ voice-checked: true
 ---
 
 
-## Table of Contents
+Table of Contents
 
 - [I2P vs Tor: When to Use Which](#i2p-vs-tor-when-to-use-which)
 - [Prerequisites](#prerequisites)
 - [Troubleshooting](#troubleshooting)
 - [Related Reading](#related-reading)
 
-## I2P vs Tor: When to Use Which
+I2P vs Tor: When to Use Which
 
 | Characteristic | I2P | Tor |
 |---------------|-----|-----|
@@ -38,7 +38,7 @@ Use Tor when: accessing clearnet sites anonymously, .onion services.
 
 ---
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -48,65 +48,65 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Install I2P
+Step 1: Install I2P
 
-**Option A: Java I2P (reference implementation)**
+Option A: Java I2P (reference implementation)
 
 ```bash
-# Ubuntu/Debian
+Ubuntu/Debian
 sudo apt install default-jre-headless
 
-# Download I2P installer from geti2p.net
+Download I2P installer from geti2p.net
 wget https://geti2p.net/en/download/2.6.0/stable/i2pinstall_2.6.0.jar
 wget https://geti2p.net/en/download/2.6.0/stable/i2pinstall_2.6.0.jar.sig
 
-# Verify signature
+Verify signature
 gpg --keyserver keyserver.ubuntu.com --recv-keys 0x2D3D2D03910C6504
 gpg --verify i2pinstall_2.6.0.jar.sig i2pinstall_2.6.0.jar
 
-# Install
+Install
 java -jar i2pinstall_2.6.0.jar -console
 
-# Start I2P
+Start I2P
 /usr/local/i2p/i2prouter start
 
-# Access the router console
-# http://127.0.0.1:7657
+Access the router console
+http://127.0.0.1:7657
 ```
 
-**Option B: i2pd (C++ implementation, lighter)**
+Option B: i2pd (C++ implementation, lighter)
 
 ```bash
-# Install i2pd — lighter C++ implementation, no web UI by default
+Install i2pd. lighter C++ implementation, no web UI by default
 sudo apt install i2pd    # Ubuntu/Debian
 sudo pacman -S i2pd      # Arch
 
-# Start
+Start
 sudo systemctl enable --now i2pd
 
-# i2pd config
+i2pd config
 cat /etc/i2pd/i2pd.conf
 ```
 
-**Option C: Tor Browser-style bundle (I2P Browser)**
+Option C: Tor Browser-style bundle (I2P Browser)
 
 The I2P project distributes a Firefox-based browser pre-configured for I2P:
 
 ```bash
-# Download I2P Browser from geti2p.net/en/download
-# Linux: extract and run ./start-i2pbrowser.sh
-# macOS/Windows: standard installer available
+Download I2P Browser from geti2p.net/en/download
+Linux: extract and run ./start-i2pbrowser.sh
+macOS/Windows: standard installer available
 ```
 
 ---
 
-### Step 2: Initial Configuration (Java I2P)
+Step 2: Initial Configuration (Java I2P)
 
 After starting, open the router console at `http://127.0.0.1:7657`:
 
-1. **Network setup wizard** runs on first launch — complete it
+1. Network setup wizard runs on first launch. complete it
 2. Wait for the router to integrate (shows "Integrated" status, ~5-10 minutes)
-3. Watch the bandwidth graph — as you connect to more peers, performance improves
+3. Watch the bandwidth graph. as you connect to more peers, performance improves
 4. The "Network" page shows your integration level: Integrated means you're participating in routing
 
 ```
@@ -116,7 +116,7 @@ Router Console → Network:
   Bandwidth: set limits to avoid saturating your connection
 ```
 
-**Set bandwidth limits:**
+Set bandwidth limits:
 
 ```
 Router Console → Config → Bandwidth
@@ -127,7 +127,7 @@ Router Console → Config → Bandwidth
 
 ---
 
-### Step 3: Configure Your Browser for I2P
+Step 3: Configure Your Browser for I2P
 
 The Java I2P router runs an HTTP proxy on port 4444:
 
@@ -136,8 +136,8 @@ Firefox → Settings → Network Settings → Manual proxy configuration:
   HTTP Proxy: 127.0.0.1   Port: 4444
   No proxy for: localhost, 127.0.0.1
 
-# Do NOT enable "Use this proxy server for all protocols"
-# I2P proxy only handles HTTP to .i2p addresses
+Do NOT enable "Use this proxy server for all protocols"
+I2P proxy only handles HTTP to .i2p addresses
 ```
 
 Test that it's working by visiting an eepsite:
@@ -152,40 +152,40 @@ These take 30-90 seconds to load on first visit while the router builds tunnels 
 
 ---
 
-### Step 4: SOCKS Proxy for Other Applications
+Step 4: SOCKS Proxy for Other Applications
 
 I2P also provides a SOCKS5 proxy on port 4447:
 
 ```bash
-# Use with curl to access eepsites
+Use with curl to access eepsites
 curl --socks5-hostname 127.0.0.1:4447 http://i2p-projekt.i2p/
 
-# Configure applications that support SOCKS5:
-# Proxy: 127.0.0.1, Port: 4447
+Configure applications that support SOCKS5:
+Proxy: 127.0.0.1, Port: 4447
 ```
 
 ---
 
-### Step 5: Host an Eepsite (.i2p Hidden Service)
+Step 5: Host an Eepsite (.i2p Hidden Service)
 
 Eepsites are websites hosted within the I2P network, accessible only to I2P users.
 
 ```bash
-# I2P includes a built-in webserver (I2P-Jetty)
-# Documents served from: ~/.i2p/eepsite/docroot/
+I2P includes a built-in webserver (I2P-Jetty)
+Documents served from: ~/.i2p/eepsite/docroot/
 
-# Or configure your own webserver:
+Or configure your own webserver:
 
-# Create a simple site
+Create a simple site
 mkdir -p ~/.i2p/eepsite/docroot
 echo "<h1>My Eepsite</h1>" > ~/.i2p/eepsite/docroot/index.html
 
-# In Router Console → Hidden Services Manager → I2P Server Tunnels
-# Your site will have a .b32.i2p address (base32 hash of your key)
-# e.g., abc123def456....b32.i2p
+In Router Console → Hidden Services Manager → I2P Server Tunnels
+Your site will have a .b32.i2p address (base32 hash of your key)
+e.g., abc123def456....b32.i2p
 ```
 
-**Publish your eepsite address:**
+Publish your eepsite address:
 
 ```
 Router Console → Hidden Services Manager → your tunnel → show address
@@ -195,30 +195,30 @@ Register at stats.i2p for a human-readable .i2p alias
 
 ---
 
-### Step 6: I2P-Bote: Encrypted Anonymous Email
+Step 6: I2P-Bote: Encrypted Anonymous Email
 
 I2P-Bote is a serverless, encrypted email system built for I2P. Messages are stored in a distributed hash table with no central server.
 
 ```
 Router Console → I2P Apps → I2P-Bote
 
-# In I2P-Bote:
-# Create new identity → give it a name → generate keys
-# Your email address is a long base64 string (the public key)
+In I2P-Bote:
+Create new identity → give it a name → generate keys
+Your email address is a long base64 string (the public key)
 
-# To send email:
-# Compose → Enter recipient's I2P-Bote address (their public key)
-# Messages are encrypted end-to-end before storage in DHT
+To send email:
+Compose → Enter recipient's I2P-Bote address (their public key)
+Messages are encrypted end-to-end before storage in DHT
 
-# High latency (hours to days) by design — prevents timing analysis
+High latency (hours to days) by design. prevents timing analysis
 ```
 
 ---
 
-### Step 7: i2pd Configuration (Lightweight Option)
+Step 7: i2pd Configuration (Lightweight Option)
 
 ```ini
-# /etc/i2pd/i2pd.conf
+/etc/i2pd/i2pd.conf
 
 [general]
 datadir = /var/lib/i2pd
@@ -253,42 +253,42 @@ enabled = true
 ```
 
 ```bash
-# Restart with new config
+Restart with new config
 sudo systemctl restart i2pd
 
-# Access i2pd web console
-# http://127.0.0.1:7070
+Access i2pd web console
+http://127.0.0.1:7070
 ```
 
 ---
 
-### Step 8: Anonymity Considerations
+Step 8: Anonymity Considerations
 
 I2P provides anonymity within its own network, but:
 
-- **Don't log into accounts** while using I2P, just as with Tor — account login deanonymizes you regardless of network
-- **Java I2P leaks DNS** if you have the SOCKS proxy misconfigured — always use `.i2p` addresses through the HTTP proxy
-- **Traffic timing analysis** is partially mitigated by garlic routing but not eliminated against a global passive adversary
-- **Clearnet access via I2P** (outproxies) is limited and less anonymous than using Tor exit nodes
+- Don't log into accounts while using I2P, just as with Tor. account login deanonymizes you regardless of network
+- Java I2P leaks DNS if you have the SOCKS proxy misconfigured. always use `.i2p` addresses through the HTTP proxy
+- Traffic timing analysis is partially mitigated by garlic routing but not eliminated against a global passive adversary
+- Clearnet access via I2P (outproxies) is limited and less anonymous than using Tor exit nodes
 
 ---
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Articles
+Related Articles
 
 - [I2P vs Tor: Anonymous Network Comparison 2026](/i2p-vs-tor-anonymous-network-comparison-2026/)
 - [Tor vs VPN vs I2P: Anonymity Network Comparison 2026](/tor-vs-vpn-vs-i2p-anonymity-comparison-2026/)
@@ -296,27 +296,27 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Onionshare Secure File Sharing Over Tor Network Setup](/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
 - [Anonymous Email Over Tor Setup Guide](/anonymous-email-over-tor-setup-guide/)
 - [AI Coding Assistant for Network Traffic Analysis: What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use the i2p anonymous network?**
+How long does it take to use the i2p anonymous network?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 {% endraw %}

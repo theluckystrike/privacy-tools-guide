@@ -14,28 +14,28 @@ tags: [privacy-tools-guide, api, automation]
 ---
 
 {% raw %}
-# Secure API Key Rotation Automation Guide
+Secure API Key Rotation Automation Guide
 
-Long-lived API keys are a silent security debt. A key that was legitimately issued three years ago may have been copied to ten different systems, a Slack message, and a committed `.env` file. Rotation doesn't just reduce the window after a compromise — it forces you to audit where each key is actually used. This guide automates rotation for AWS, database credentials, and third-party services.
+Long-lived API keys are a silent security debt. A key that was legitimately issued three years ago may have been copied to ten different systems, a Slack message, and a committed `.env` file. Rotation doesn't just reduce the window after a compromise. it forces you to audit where each key is actually used. This guide automates rotation for AWS, database credentials, and third-party services.
 
-## Why Manual Rotation Fails
+Why Manual Rotation Fails
 
 Manual rotation has two failure modes:
-1. It doesn't happen — keys are "rotated annually" but the policy slips
-2. It causes downtime — the new key is deployed before old key is revoked, or vice versa
+1. It doesn't happen. keys are "rotated annually" but the policy slips
+2. It causes downtime. the new key is deployed before old key is revoked, or vice versa
 
 Automated rotation with zero-downtime overlap eliminates both.
 
 ---
 
-## 1. AWS IAM Key Rotation
+1. AWS IAM Key Rotation
 
 AWS IAM allows two access keys per user simultaneously. This enables overlap: create the new key, update all consumers, then delete the old key.
 
 ```python
 #!/usr/bin/env python3
 """
-rotate_iam_key.py — Zero-downtime IAM key rotation.
+rotate_iam_key.py. Zero-downtime IAM key rotation.
 Usage: python3 rotate_iam_key.py <iam-username>
 """
 import boto3, time, json, sys, subprocess
@@ -101,7 +101,7 @@ def delete_key(username, key_id):
 if __name__ == "__main__":
     existing_keys = get_active_keys(USERNAME)
     if len(existing_keys) >= 2:
-        raise RuntimeError("User already has 2 active keys — clean up first")
+        raise RuntimeError("User already has 2 active keys. clean up first")
 
     old_key_id = existing_keys[0]["AccessKeyId"] if existing_keys else None
     print(f"[*] Old key: {old_key_id[:8]}..." if old_key_id else "[*] No existing key")
@@ -119,7 +119,7 @@ if __name__ == "__main__":
     # Verify
     if not verify_new_key(new_key["AccessKeyId"], new_key["SecretAccessKey"]):
         delete_key(USERNAME, new_key["AccessKeyId"])
-        raise RuntimeError("New key verification failed — rolled back")
+        raise RuntimeError("New key verification failed. rolled back")
 
     # Deactivate old key (keep for 24h before deletion as safety net)
     if old_key_id:
@@ -130,12 +130,12 @@ if __name__ == "__main__":
 
 ---
 
-## 2. Database Password Rotation (PostgreSQL)
+2. Database Password Rotation (PostgreSQL)
 
 ```bash
 #!/bin/bash
-# rotate_db_password.sh — rotate PostgreSQL app user password
-# Runs as a privileged user (postgres or DBA account)
+rotate_db_password.sh. rotate PostgreSQL app user password
+Runs as a privileged user (postgres or DBA account)
 
 set -euo pipefail
 
@@ -145,30 +145,30 @@ DB_PORT="5432"
 DBA_USER="postgres"
 VAULT_PATH="secret/myapp/db"
 
-# Generate a strong random password
+Generate a strong random password
 NEW_PASS=$(openssl rand -base64 48 | tr -d '/+=' | head -c 48)
 
 echo "[*] Rotating password for ${APP_USER}"
 
-# Update password in PostgreSQL
+Update password in PostgreSQL
 PGPASSWORD="$POSTGRES_MASTER_PASS" psql \
   -h "$DB_HOST" -p "$DB_PORT" -U "$DBA_USER" \
   -c "ALTER USER ${APP_USER} WITH PASSWORD '${NEW_PASS}';"
 
 echo "[+] Password updated in PostgreSQL"
 
-# Store new password in Vault
+Store new password in Vault
 vault kv put "${VAULT_PATH}" password="${NEW_PASS}" rotated_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 echo "[+] Password stored in Vault at ${VAULT_PATH}"
 
-# Verify new password works
+Verify new password works
 PGPASSWORD="$NEW_PASS" psql \
   -h "$DB_HOST" -p "$DB_PORT" -U "$APP_USER" \
   -c "SELECT 1;" >/dev/null 2>&1 && echo "[+] New password verified" \
   || { echo "[!] New password verification FAILED"; exit 1; }
 
-# Signal app to reload (depends on your deployment)
-# For Kubernetes:
+Signal app to reload (depends on your deployment)
+For Kubernetes:
 kubectl rollout restart deployment/myapp
 
 echo "[+] Rotation complete"
@@ -176,14 +176,14 @@ echo "[+] Rotation complete"
 
 ---
 
-## 3. Third-Party API Key Rotation (Stripe, SendGrid, etc.)
+3. Third-Party API Key Rotation (Stripe, SendGrid, etc.)
 
 Most SaaS providers allow creating multiple API keys. Use this pattern:
 
 ```python
 #!/usr/bin/env python3
 """
-rotate_stripe_key.py — rotate Stripe restricted key
+rotate_stripe_key.py. rotate Stripe restricted key
 Requires Stripe API key with key management permissions.
 """
 import stripe
@@ -204,7 +204,7 @@ def create_new_stripe_key(old_key_name: str) -> dict:
     """Create a new restricted key with the same permissions as the old one."""
     new_name = f"app-key-{datetime.now().strftime('%Y%m')}"
     # Stripe API: create restricted key (via dashboard API or Stripe CLI)
-    # This is a simplified example — actual implementation uses Stripe's key API
+    # This is a simplified example. actual implementation uses Stripe's key API
     return {
         "id": "rk_live_new_key_id",
         "secret": "rk_live_new_key_secret",
@@ -242,23 +242,23 @@ if not verify_new_key(new_key["secret"]):
     raise RuntimeError("New Stripe key verification failed")
 
 print("[+] Verified new key works")
-# Allow 5 minutes for all services to pick up new key
-# Then delete old key
+Allow 5 minutes for all services to pick up new key
+Then delete old key
 ```
 
 ---
 
-## 4. Automated Rotation with HashiCorp Vault
+4. Automated Rotation with HashiCorp Vault
 
 Vault's dynamic secrets engine generates credentials on demand and revokes them automatically:
 
 ```bash
-# Configure Vault to rotate a static secret on a schedule
+Configure Vault to rotate a static secret on a schedule
 vault write secret/myapp/api_key \
   key="current_api_key" \
   rotation_period="168h"  # rotate weekly
 
-# Use Vault Agent to write credentials to a file automatically renewed
+Use Vault Agent to write credentials to a file automatically renewed
 cat > /etc/vault-agent.hcl <<'EOF'
 vault { address = "https://vault.internal:8200" }
 
@@ -283,20 +283,20 @@ vault agent -config=/etc/vault-agent.hcl -daemon
 
 ---
 
-## 5. Rotation Schedule and Monitoring
+5. Rotation Schedule and Monitoring
 
 ```bash
-# /etc/cron.d/key-rotation
-# Rotate IAM keys weekly, database passwords monthly
+/etc/cron.d/key-rotation
+Rotate IAM keys weekly, database passwords monthly
 0 2 * * 0 ubuntu /opt/scripts/rotate_iam_key.py myapp-user >> /var/log/rotation.log 2>&1
 0 3 1 * * ubuntu /opt/scripts/rotate_db_password.sh >> /var/log/rotation.log 2>&1
 
-# Alert on rotation failures
-# Send to Slack or PagerDuty if any rotation script exits non-zero
+Alert on rotation failures
+Send to Slack or PagerDuty if any rotation script exits non-zero
 ```
 
 ```python
-# Add to each rotation script — notify on failure
+Add to each rotation script. notify on failure
 import requests, os
 
 def alert_on_failure(service: str, error: str):
@@ -309,34 +309,34 @@ def alert_on_failure(service: str, error: str):
 
 ---
 
-## Key Rotation Audit Log
+Key Rotation Audit Log
 
 ```bash
-# Query CloudTrail for IAM key usage after deactivation
+Query CloudTrail for IAM key usage after deactivation
 aws cloudtrail lookup-events \
   --lookup-attributes AttributeKey=AccessKeyId,AttributeValue=AKIAIOSFODNN7EXAMPLE \
   --start-time "2026-03-15" \
   --query 'Events[].{Time:EventTime,Name:EventName,Source:EventSource}' \
   --output table
 
-# If old key is used after deactivation — something didn't get updated
+If old key is used after deactivation. something didn't get updated
 ```
 
 ---
 
-## Rotation Checklist
+Rotation Checklist
 
 - [ ] Keys have a documented rotation schedule (IAM: 90d max, DB: 30d, third-party: 180d)
-- [ ] Vault or Secrets Manager used — no plaintext keys in files or env
+- [ ] Vault or Secrets Manager used. no plaintext keys in files or env
 - [ ] Rotation creates new key before revoking old (zero-downtime overlap)
 - [ ] Rotation scripts verify new key before deleting old key
 - [ ] Failed rotation triggers an alert (Slack, PagerDuty)
-- [ ] All key usages inventoried — rotation fails if a consumer isn't updated
+- [ ] All key usages inventoried. rotation fails if a consumer isn't updated
 - [ ] CloudTrail / audit logs reviewed after rotation for any missed consumers
 
 ---
 
-## Related Reading
+Related Reading
 
 - [Secure Environment Variable Management](/secure-environment-variable-management-guide/)
 - [Secure API Gateway Setup with Kong](/kong-api-gateway-secure-setup-guide/)
@@ -344,5 +344,5 @@ aws cloudtrail lookup-events \
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

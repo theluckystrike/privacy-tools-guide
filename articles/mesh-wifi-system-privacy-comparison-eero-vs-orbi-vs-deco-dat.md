@@ -17,14 +17,14 @@ voice-checked: true
 
 TP-Link Deco collects the least user data among mainstream mesh systems, offering local processing options and operating without mandatory cloud accounts. Amazon Eero collects the most data, integrating with Alexa and sharing analytics with third parties, while Netgear Orbi sits in the middle with moderate data collection and improved privacy controls. This comparison examines data collection practices, local processing capabilities, and privacy controls across all three systems to help you choose the most privacy-respecting option for your home network.
 
-# Eero privacy hardening (if you must use it)
+Eero privacy hardening (if you must use it)
 1.
 
-## Data Collection Overview
+Data Collection Overview
 
 Each manufacturer approaches data collection differently, largely influenced by their business models and existing ecosystem integration.
 
-### Amazon Eero
+Amazon Eero
 
 Eero collects the most extensive dataset of the three, which aligns with Amazon's broader data-driven business model. The system gathers:
 
@@ -36,10 +36,10 @@ Eero collects the most extensive dataset of the three, which aligns with Amazon'
 
 Eero's privacy policy explicitly states that aggregated network data may be shared with third parties for analytics and advertising purposes. Users with Amazon accounts linked to Eero experience cross-service data correlation.
 
-**API Access**: Eero provides a limited public API primarily for integration partners. Developers can access basic network status but not granular device-level telemetry.
+API Access: Eero provides a limited public API primarily for integration partners. Developers can access basic network status but not granular device-level telemetry.
 
 ```python
-# Eero API authentication example (unofficial)
+Eero API authentication example (unofficial)
 import requests
 
 def get_eero_data(bearer_token):
@@ -51,7 +51,7 @@ def get_eero_data(bearer_token):
     return response.json()
 ```
 
-### Netgear Orbi
+Netgear Orbi
 
 Netgear Orbi systems collect moderate amounts of data, though the company has improved transparency in recent years. Data collection includes:
 
@@ -62,14 +62,14 @@ Netgear Orbi systems collect moderate amounts of data, though the company has im
 
 Netgear provides more granular controls within the Orbi app to limit telemetry. The data primarily serves network optimization and security features rather than advertising.
 
-**API Access**: Netgear offers limited API access through its Netgear NMS (Network Management System) for business users. Consumer-grade Orbi lacks a documented public API, though some community projects have reverse-engineered basic functionality.
+API Access: Netgear offers limited API access through its Netgear NMS (Network Management System) for business users. Consumer-grade Orbi lacks a documented public API, though some community projects have reverse-engineered basic functionality.
 
 ```bash
-# Checking Orbi firmware version via SNMP (if enabled)
+Checking Orbi firmware version via SNMP (if enabled)
 snmpget -v2c -c public 192.168.1.1 NETGEAR-ROUTER-MIB::fwVersion.0
 ```
 
-### TP-Link Deco
+TP-Link Deco
 
 TP-Link Deco collects the least amount of data among the three mainstream options. Their approach prioritizes privacy more explicitly:
 
@@ -80,15 +80,15 @@ TP-Link Deco collects the least amount of data among the three mainstream option
 
 Deco systems can operate with full functionality using only local network management without creating a TP-Link ID, a significant privacy advantage. When cloud accounts are used, data is primarily stored for remote access rather than analytics.
 
-**API Access**: TP-Link provides a local HTTP API on Deco devices that developers can use for automation without cloud connectivity:
+API Access: TP-Link provides a local HTTP API on Deco devices that developers can use for automation without cloud connectivity:
 
 ```python
-# TP-Link Deco local API example
+TP-Link Deco local API example
 import requests
 
 deco_ip = "192.168.1.1"
 
-# Get device list from local Deco API
+Get device list from local Deco API
 response = requests.get(f"http://{deco_ip}/api/mesh/device/list")
 devices = response.json()
 
@@ -96,17 +96,17 @@ for device in devices["device_list"]:
     print(f"{device['name']}: {device['ip']} ({device['mac']})")
 ```
 
-## Network Traffic Analysis
+Network Traffic Analysis
 
 For developers seeking maximum privacy, understanding what each system inspects matters significantly.
 
-**Eero** performs deep packet inspection for its subscription-based security features and filters DNS queries through Amazon's servers by default (configurable). This means DNS requests route through Amazon's infrastructure, providing them with browsing metadata.
+Eero performs deep packet inspection for its subscription-based security features and filters DNS queries through Amazon's servers by default (configurable). This means DNS requests route through Amazon's infrastructure, providing them with browsing metadata.
 
-**Orbi** with Netgear Armor enabled performs similar inspection through Bitdefender's cloud, though users can disable security features and use alternative DNS providers.
+Orbi with Netgear Armor enabled performs similar inspection through Bitdefender's cloud, though users can disable security features and use alternative DNS providers.
 
-**Deco** offers the most privacy-friendly default behavior, with DNS queries typically remaining local unless users configure TP-Link's cloud DNS service.
+Deco offers the most privacy-friendly default behavior, with DNS queries typically remaining local unless users configure TP-Link's cloud DNS service.
 
-## Local Processing Capabilities
+Local Processing Capabilities
 
 Privacy-focused users should evaluate what processing happens locally versus in the cloud:
 
@@ -117,45 +117,45 @@ Privacy-focused users should evaluate what processing happens locally versus in 
 | Local API | Unofficial | Limited | Yes |
 | Offline Mode | No | No | Partial |
 
-## Practical Recommendations
+Practical Recommendations
 
 For developers building privacy-conscious deployments, consider these approaches:
 
-**Isolated VLAN Setup**: All three systems support basic guest networks, but advanced users should implement VLANs. Create a dedicated IoT VLAN with its own DHCP scope and restrict inter-VLAN communication at your router level.
+Isolated VLAN Setup: All three systems support basic guest networks, but advanced users should implement VLANs. Create a dedicated IoT VLAN with its own DHCP scope and restrict inter-VLAN communication at your router level.
 
 ```bash
-# Example VLAN configuration on compatible router
-# Create IoT VLAN
+Example VLAN configuration on compatible router
+Create IoT VLAN
 set vlans iot-vlan 100
 
-# Assign ports to IoT VLAN
+Assign ports to IoT VLAN
 set interface eth0.100 bridge-group 100
 ```
 
-**DNS Configuration**: Bypass manufacturer DNS to maintain privacy:
+DNS Configuration: Bypass manufacturer DNS to maintain privacy:
 
 - Use Pi-hole or AdGuard Home as local DNS resolver
 - Configure router-level DNS to point to your local instance
 - Consider encrypted DNS (DoH/DoT) for upstream queries
 
-**Firmware Audit**: For maximum security awareness, examine what network calls your mesh system makes:
+Firmware Audit: For maximum security awareness, examine what network calls your mesh system makes:
 
 ```bash
-# Monitor DNS queries from mesh system
+Monitor DNS queries from mesh system
 sudo tcpdump -i eth0 port 53 -n | grep "192.168.1.X"
 ```
 
 Replace `192.168.1.X` with your mesh device IP to observe domain lookups.
 
-## The Privacy Hierarchy
+The Privacy Hierarchy
 
 If minimizing data collection ranks highest in your decision criteria, TP-Link Deco represents the most privacy-respecting option for 2026. Amazon Eero, while offering excellent mesh performance and regular updates, collects significantly more user data due to its Amazon ecosystem integration. Netgear Orbi sits in the middle, providing decent privacy controls but requiring more user engagement to maximize them.
 
-For developers specifically, the local API availability on Deco systems enables custom integrations without cloud dependencies—a meaningful advantage for self-hosted and privacy-focused smart home deployments.
+For developers specifically, the local API availability on Deco systems enables custom integrations without cloud dependencies, a meaningful advantage for self-hosted and privacy-focused smart home deployments.
 
 The choice ultimately depends on your threat model. If you prioritize integration and accept data sharing in exchange for polished UX, Eero remains compelling. For privacy-first configurations requiring local control and minimal cloud dependency, Deco offers the strongest foundation.
 
-## Detailed Pricing and Feature Matrix (2026)
+Detailed Pricing and Feature Matrix (2026)
 
 | Feature | Eero Pro | Orbi Pro | Deco X90 |
 |---------|----------|----------|----------|
@@ -170,12 +170,12 @@ The choice ultimately depends on your threat model. If you prioritize integratio
 
 Deco offers better value, while Eero provides tighter ecosystem integration if you use Amazon devices.
 
-## Setting Up Local-Only Operation on Each System
+Setting Up Local-Only Operation on Each System
 
-### Deco: Maximum Local Control
+Deco: Maximum Local Control
 
 ```bash
-# Set up local Deco without cloud account
+Set up local Deco without cloud account
 1. Power on Deco units
 2. Open web browser to http://192.168.0.1
 3. Create admin account (local only)
@@ -186,10 +186,10 @@ Deco offers better value, while Eero provides tighter ecosystem integration if y
 
 This approach gives you full control without any cloud dependency.
 
-### Orbi: Partial Local Control
+Orbi: Partial Local Control
 
 ```bash
-# Netgear Orbi can operate without cloud but with limitations
+Netgear Orbi can operate without cloud but with limitations
 1. Access web interface at http://orbilogin.com or 192.168.1.1
 2. Create local admin account
 3. Enable "Local Management" in settings
@@ -199,12 +199,12 @@ This approach gives you full control without any cloud dependency.
 
 You lose security features but maintain network management locally.
 
-### Eero: Cloud-Dependent
+Eero: Cloud-Dependent
 
 Eero requires an Amazon account and cloud connectivity for all management. No pure local-only operation exists. However, you can minimize data collection:
 
 ```bash
-# Eero privacy hardening (if you must use it)
+Eero privacy hardening (if you must use it)
 1. Create dedicated Amazon account (separate from personal)
 2. Disable Alexa integration in app
 3. Disable usage analytics in settings
@@ -212,40 +212,40 @@ Eero requires an Amazon account and cloud connectivity for all management. No pu
 5. Monitor outbound DNS with tcpdump
 ```
 
-## Network Monitoring Commands
+Network Monitoring Commands
 
 Verify what your mesh system is actually communicating:
 
 ```bash
-# Monitor DNS queries from mesh device
+Monitor DNS queries from mesh device
 sudo tcpdump -i en0 dst port 53 -v | grep -E "192.168.1.1|<mesh-ip>"
 
-# Check HTTPS destinations (encrypted)
+Check HTTPS destinations (encrypted)
 sudo tcpdump -i en0 tcp port 443 -v | grep -E "192.168.1.1|<mesh-ip>"
 
-# Find mesh device IP and monitor continuously
+Find mesh device IP and monitor continuously
 arp-scan -l | grep -i "tplink\|netgear\|amazon\|eero\|orbi"
 
-# Use Wireshark for detailed packet analysis
-# Filter for traffic from mesh device IP
+Use Wireshark for detailed packet analysis
+Filter for traffic from mesh device IP
 ip.src == 192.168.1.X
 ```
 
-## Custom Firmware and Privacy Enhancements
+Custom Firmware and Privacy Enhancements
 
 For developers willing to flash custom firmware:
 
-### OpenWrt on Compatible Routers
+OpenWrt on Compatible Routers
 
 Not all mesh systems support OpenWrt, but some Netgear and TP-Link models do:
 
 ```bash
-# Check OpenWrt compatibility
+Check OpenWrt compatibility
 visit https://openwrt.org/supported_devices
 
-# If compatible, install OpenWrt for full local control
-# Benefits: no cloud, full customization, unlimited features
-# Tradeoff: loses warranty, requires technical expertise
+If compatible, install OpenWrt for full local control
+Benefits: no cloud, full customization, unlimited features
+Tradeoff: loses warranty, requires technical expertise
 ```
 
 OpenWrt provides:
@@ -254,28 +254,28 @@ OpenWrt provides:
 - Traffic analysis tools
 - No cloud connectivity whatsoever
 
-### Pi-hole Integration
+Pi-hole Integration
 
 All three mesh systems can route DNS through a local Pi-hole:
 
 ```bash
-# Set up Pi-hole on Raspberry Pi
+Set up Pi-hole on Raspberry Pi
 docker run -d --name pihole -e TZ=UTC \
   -p 53:53/tcp -p 53:53/udp \
   -p 80:80 \
   pihole/pihole
 
-# Configure mesh system to use Pi-hole as DNS
-# Eero: Settings > Advanced > DNS
-# Orbi: Advanced > DNS Settings
-# Deco: Advanced > DNS Settings
+Configure mesh system to use Pi-hole as DNS
+Eero: Settings > Advanced > DNS
+Orbi: Advanced > DNS Settings
+Deco: Advanced > DNS Settings
 
-# Point to: 192.168.1.XX (your Pi-hole IP)
+Point to: 192.168.1.XX (your Pi-hole IP)
 ```
 
 All DNS queries flow through Pi-hole, blocking trackers and advertising domains before they leave your network.
 
-## Privacy Audit Checklist
+Privacy Audit Checklist
 
 Before purchasing or after setup, verify:
 
@@ -290,45 +290,45 @@ Before purchasing or after setup, verify:
 - [ ] Local API available for automation without cloud
 - [ ] Zero-day vulnerability disclosure process exists
 
-## Threat Model Application
+Threat Model Application
 
 Choose based on your specific situation:
 
-**Consumer with smart home**: Eero works fine if you accept Amazon integration. The convenience may outweigh privacy concerns for non-sensitive networks.
+Consumer with smart home: Eero works fine if you accept Amazon integration. The convenience may outweigh privacy concerns for non-sensitive networks.
 
-**Privacy-conscious home**: Deco with local-only operation provides strong privacy with good performance.
+Privacy-conscious home: Deco with local-only operation provides strong privacy with good performance.
 
-**Developer building infrastructure**: Consider OpenWrt-compatible hardware for maximum control, even if not a branded mesh system.
+Developer building infrastructure: Consider OpenWrt-compatible hardware for maximum control, even if not a branded mesh system.
 
-**Small business**: Orbi with local management disabled offers professional features without mandatory cloud.
+Small business: Orbi with local management disabled offers professional features without mandatory cloud.
 
-**High-security environment**: Separate mesh system from sensitive infrastructure. Use a privacy-focused standalone router for lab or development network.
+High-security environment: Separate mesh system from sensitive infrastructure. Use a privacy-focused standalone router for lab or development network.
 ---
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Can I use the first tool and the second tool together?**
+Can I use the first tool and the second tool together?
 
 Yes, many users run both tools simultaneously. the first tool and the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.
 
-**Which is better for beginners, the first tool or the second tool?**
+Which is better for beginners, the first tool or the second tool?
 
 It depends on your background. the first tool tends to work well if you prefer a guided experience, while the second tool gives more control for users comfortable with configuration. Try the free tier or trial of each before committing to a paid plan.
 
-**Is the first tool or the second tool more expensive?**
+Is the first tool or the second tool more expensive?
 
 Pricing varies by tier and usage patterns. Both offer free or trial options to start. Check their current pricing pages for the latest plans, since AI tool pricing changes frequently. Factor in your actual usage volume when comparing costs.
 
-**How often do the first tool and the second tool update their features?**
+How often do the first tool and the second tool update their features?
 
 Both tools release updates regularly, often monthly or more frequently. Feature sets and capabilities change fast in this space. Check each tool's changelog or blog for the latest additions before making a decision based on any specific feature.
 
-**What happens to my data when using the first tool or the second tool?**
+What happens to my data when using the first tool or the second tool?
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
-## Related Articles
+Related Articles
 
 - [Privacy Notice Vs Privacy Policy Difference](/privacy-notice-vs-privacy-policy-difference/)
 - [Tinder Privacy Settings What Personal Data The App Collects](/tinder-privacy-settings-what-personal-data-the-app-collects-/)
@@ -336,6 +336,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
 - [Privacy Risks of AI Chatbots: Data Collection (2026)](/privacy-risks-of-ai-chatbots-data-collection-2026/---)
 - [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://bestremotetools.com/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```
 ```

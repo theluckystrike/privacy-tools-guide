@@ -18,20 +18,20 @@ tags: [privacy-tools-guide, advanced]
 
 The Arch Linux hardened kernel provides enhanced security features for users who prioritize privacy and system integrity. This guide covers the complete installation process, from understanding the hardened kernel variants to configuring boot parameters for maximum protection. The hardened kernel builds upon the standard Linux kernel with additional security patches from the Linux Hardening Project and grsecurity, though many grsecurity features now require paid subscriptions.
 
-## Key Takeaways
+Key Takeaways
 
-- **If you experience stability issues**: you may need to use the open-source nouveau driver instead.
-- **Benchmark your typical workloads**: ```bash
+- If you experience stability issues: you may need to use the open-source nouveau driver instead.
+- Benchmark your typical workloads: ```bash
 hyperfine --warmup 3 'your-workload-command'
 ```
 
 Typical performance impact ranges from 1-5% for compute-heavy workloads.
-- **The Arch Linux hardened**: kernel provides enhanced security features for users who prioritize privacy and system integrity.
-- **The kernel includes features**: like kernel page table isolation (KPTI), randomize kernel memory offsets, and hardened user copy operations.
-- **The hardened kernel provides**: substantial security improvements for privacy-conscious users.
-- **Combined with proper system**: configuration and security practices, it forms a foundation for a privacy-focused Arch Linux installation.
+- The Arch Linux hardened: kernel provides enhanced security features for users who prioritize privacy and system integrity.
+- The kernel includes features: like kernel page table isolation (KPTI), randomize kernel memory offsets, and hardened user copy operations.
+- The hardened kernel provides: substantial security improvements for privacy-conscious users.
+- Combined with proper system: configuration and security practices, it forms a foundation for a privacy-focused Arch Linux installation.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -41,7 +41,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand Kernel Hardening Options
+Step 1: Understand Kernel Hardening Options
 
 Arch Linux offers several kernel packages through the official repositories and the AUR. The primary options include:
 
@@ -53,7 +53,7 @@ For privacy-focused users, `linux-hardened` provides the most aggressive securit
 
 The linux-hardened package also enables various compile-time security features that are disabled in the standard kernel for performance reasons. This includes stronger stack protection, fortify source functions, and readonly GOT (Global Offset Table) relocations.
 
-## Installation Prerequisites
+Installation Prerequisites
 
 Before installing the hardened kernel, ensure your system is fully updated:
 
@@ -85,7 +85,7 @@ Backup your current kernel configuration if you've made custom modifications:
 cp /boot/config-linux $(uname -r)-config-backup
 ```
 
-### Step 2: Install the Hardened Kernel
+Step 2: Install the Hardened Kernel
 
 Install the hardened kernel and its dependencies:
 
@@ -101,7 +101,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 If you use a different bootloader such as systemd-boot, rEFInd, or Clover, consult its documentation for adding kernel entries. You may need to manually create a boot entry pointing to `/boot/vmlinuz-linux-hardened` and `/boot/initramfs-linux-hardened.img`.
 
-### Step 3: Configure Boot Parameters
+Step 3: Configure Boot Parameters
 
 Hardened kernel features require appropriate boot parameters. Edit your GRUB configuration at `/etc/default/grub` and add the following to `GRUB_CMDLINE_LINUX_DEFAULT`:
 
@@ -125,7 +125,7 @@ After editing, regenerate the GRUB config:
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-### Step 4: Verify Hardening Features
+Step 4: Verify Hardening Features
 
 After rebooting into the new kernel, verify the hardening features are active:
 
@@ -157,7 +157,7 @@ Check the current sysctl settings related to kernel hardening:
 sysctl -a | grep -E 'kernel\.(randomize|unprivileged)'
 ```
 
-### Step 5: Manage Kernel Modules
+Step 5: Manage Kernel Modules
 
 The hardened kernel provides additional module loading controls. To restrict module loading:
 
@@ -189,7 +189,7 @@ blacklist thunderbolt
 
 These blocklists prevent specific hardware drivers from loading, which can protect against physical attacks through USB, FireWire, or Thunderbolt ports.
 
-### Step 6: Systemd Hardening
+Step 6: Systemd Hardening
 
 Extend kernel hardening with systemd security options. Edit `/etc/systemd/system.conf`:
 
@@ -218,7 +218,7 @@ ReadOnlyPaths=/bin /boot /dev /etc /lib /lib64 /opt /proc /root /sbin /sys /usr 
 
 These settings isolate services from the filesystem and prevent privilege escalation.
 
-### Step 7: Boot Security with Secure Boot
+Step 7: Boot Security with Secure Boot
 
 For systems with UEFI Secure Boot, sign the hardened kernel:
 
@@ -234,7 +234,7 @@ If you're using sbctl from the AUR, enrollment is simplified:
 sudo sbctl enroll-keys
 ```
 
-## Troubleshooting Common Issues
+Troubleshooting Common Issues
 
 Some proprietary drivers may not work with the hardened kernel. If you encounter issues:
 
@@ -255,7 +255,7 @@ Common issues include:
 - Wireless drivers needing rebuilding
 - Container runtimes requiring specific kernel parameters
 
-### Step 8: Perform Maintenance and Updates
+Step 8: Perform Maintenance and Updates
 
 Keep your hardened kernel updated through regular system updates:
 
@@ -271,7 +271,7 @@ pacman -Qlinux-hardened
 
 Verify your system boots correctly after each update. Keep a fallback kernel available in your GRUB menu by ensuring the standard kernel remains installed.
 
-## Performance Considerations
+Performance Considerations
 
 Hardened kernels may introduce slight performance overhead from security features. Benchmark your typical workloads:
 
@@ -283,29 +283,29 @@ Typical performance impact ranges from 1-5% for compute-heavy workloads. If perf
 
 The hardened kernel provides substantial security improvements for privacy-conscious users. Combined with proper system configuration and security practices, it forms a foundation for a privacy-focused Arch Linux installation.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to advanced?**
+How long does it take to advanced?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Linux Kernel Hardening with sysctl](/linux-kernel-hardening-sysctl-guide)
 - [Hardened Firefox Privacy Configuration Guide](/hardened-firefox-privacy-configuration/)
@@ -313,6 +313,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [WireGuard PostUp/PostDown Scripts for Advanced Routing](/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
 - [Wireguard Postup Postdown Scripts For Advanced Routing.](/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

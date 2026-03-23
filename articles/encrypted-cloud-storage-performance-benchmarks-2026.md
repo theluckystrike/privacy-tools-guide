@@ -18,7 +18,7 @@ tags: [privacy-tools-guide]
 
 Proton Drive and Filen achieve 80-90% of unencrypted cloud storage speeds for most operations, while self-hosted Nextcloud on adequate hardware matches unencrypted speeds completely. Large file uploads (100MB+) show the highest encryption overhead at 30-40% slowdown, while small file sync stays relatively fast. Zero-knowledge encryption overhead comes from client-side AES-256 and key derivation operations, so faster CPUs and SSDs noticeably improve performance across all encrypted services.
 
-## Table of Contents
+Table of Contents
 
 - [Benchmark Methodology](#benchmark-methodology)
 - [Small File Sync Performance](#small-file-sync-performance)
@@ -29,22 +29,22 @@ Proton Drive and Filen achieve 80-90% of unencrypted cloud storage speeds for mo
 - [Performance Optimization Strategies](#performance-optimization-strategies)
 - [Recommendation Matrix](#recommendation-matrix)
 
-## Benchmark Methodology
+Benchmark Methodology
 
 Tests were conducted on a 100Mbps symmetric fiber connection with average latency of 15ms to US-East servers. Each service was tested using official desktop clients with default settings. File sets included: 1,000 small files (1-5MB each), 10 large files (100MB each), and a mixed folder structure totaling 2GB.
 
 Encryption overhead was measured by comparing raw upload times versus encrypted upload times for identical files to unencrypted reference services.
 
-## Small File Sync Performance
+Small File Sync Performance
 
 Small files are where encrypted cloud storage typically struggles most. The encryption overhead compounds with metadata operations.
 
-### Proton Drive
+Proton Drive
 
-Proton Drive uses AES-256 encryption with client-side processing. For the 1,000 small file test, initial sync took 47 minutes — significantly slower than unencrypted alternatives. Subsequent syncs of unchanged files completed in 3 minutes.
+Proton Drive uses AES-256 encryption with client-side processing. For the 1,000 small file test, initial sync took 47 minutes. significantly slower than unencrypted alternatives. Subsequent syncs of unchanged files completed in 3 minutes.
 
 ```bash
-# Proton Drive sync log (first run, 1000 files)
+Proton Drive sync log (first run, 1000 files)
 [2026-03-15 10:00:00] Starting sync: 1000 files, 2.1GB total
 [2026-03-15 10:03:22] Encrypted 847 files (1.8GB)
 [2026-03-15 10:08:45] Uploaded 847 files
@@ -54,7 +54,7 @@ Proton Drive uses AES-256 encryption with client-side processing. For the 1,000 
 
 The bottleneck is CPU-bound encryption on the client side. On a modern M2 MacBook, encryption processing consumed 40-60% of one core during sync.
 
-### Filen
+Filen
 
 Filen's ChaCha20-Poly1305 implementation proved notably faster for small files. The same 1,000 file test completed in 28 minutes initial sync, with 4 minutes for subsequent runs.
 
@@ -72,15 +72,15 @@ console.log(`Encryption + upload: ${(performance.now() - start)/1000}s`);
 // Result: 142 seconds (vs 198s for Proton Drive)
 ```
 
-### Tresorit
+Tresorit
 
-Tresorit's business-focused approach includes hardware-accelerated encryption. Initial sync of 1,000 files took 31 minutes — competitive with Filen but with more consistent performance across different file types.
+Tresorit's business-focused approach includes hardware-accelerated encryption. Initial sync of 1,000 files took 31 minutes. competitive with Filen but with more consistent performance across different file types.
 
-## Large File Upload Performance
+Large File Upload Performance
 
 Large files benefit from streaming encryption, reducing memory overhead but still adding latency.
 
-### Test Results: 100MB Single File Upload
+Test Results: 100MB Single File Upload
 
 | Service | Raw Upload | Encrypted Upload | Overhead |
 |---------|-----------|------------------|----------|
@@ -92,10 +92,10 @@ Large files benefit from streaming encryption, reducing memory overhead but stil
 
 Icedrive surprised with the lowest overhead, using an improved encryption pipeline that minimizes context switching.
 
-### Test Results: 10 × 100MB Files (Parallel Upload)
+Test Results: 10 × 100MB Files (Parallel Upload)
 
 ```bash
-# Testing parallel upload capability
+Testing parallel upload capability
 time for i in {1..10}; do
   curl -X PUT "https://api.filen.io/v1/upload/$i" \
     -H "Authorization: Bearer $KEY" \
@@ -103,17 +103,17 @@ time for i in {1..10}; do
 done
 wait
 
-# Results:
-# Filen: 82s total (efficient parallel handling)
-# Proton: 95s total (serialized due to queue)
-# Tresorit: 88s total (parallel with limits)
+Results:
+Filen: 82s total (efficient parallel handling)
+Proton: 95s total (serialized due to queue)
+Tresorit: 88s total (parallel with limits)
 ```
 
-## Folder Synchronization Speed
+Folder Synchronization Speed
 
 Real-world usage involves ongoing sync of changed files. This test measured delta sync performance after modifying 50 files in a 2GB folder.
 
-### Delta Sync Results
+Delta Sync Results
 
 | Service | Detect Changes | Encrypt Changed | Upload | Total |
 |---------|---------------|-----------------|--------|-------|
@@ -125,11 +125,11 @@ Real-world usage involves ongoing sync of changed files. This test measured delt
 
 Cryptomator paired with S3 showed the best delta sync performance because it uses the underlying storage's change detection while handling encryption locally.
 
-## API Performance for Developers
+API Performance for Developers
 
 Programmatic access introduces different performance characteristics than desktop clients.
 
-### Upload API Latency
+Upload API Latency
 
 ```python
 import aiohttp
@@ -149,14 +149,14 @@ async def benchmark_upload(service, file_size_mb=50):
     elapsed = time.perf_counter() - start
     return elapsed
 
-# Results (50MB file, 5 runs average):
-# Filen API: 6.2s
-# Tresorit API: 7.8s
-# Proton API: 9.4s
-# Icedrive API: 5.8s
+Results (50MB file, 5 runs average):
+Filen API: 6.2s
+Tresorit API: 7.8s
+Proton API: 9.4s
+Icedrive API: 5.8s
 ```
 
-### Concurrent Operation Limits
+Concurrent Operation Limits
 
 | Service | Max Concurrent Uploads | Rate Limit | API Throttle |
 |---------|----------------------|------------|--------------|
@@ -165,18 +165,18 @@ async def benchmark_upload(service, file_size_mb=50):
 | Proton | 3 | 50 req/min | Strict |
 | Icedrive | 8 | 150 req/min | Soft |
 
-## Mobile Performance Considerations
+Mobile Performance Considerations
 
 Mobile devices face additional constraints: limited CPU for encryption, battery sensitivity, and variable network conditions.
 
-### Battery Impact (30-minute sync session)
+Battery Impact (30-minute sync session)
 
-- **Proton Drive**: 18% battery drain — high due to continuous AES encryption
-- **Filen**: 12% battery drain — optimized ChaCha20 implementation
-- **Tresorit**: 14% battery drain — business client optimizations
-- **Icedrive**: 10% battery drain — efficient streaming encryption
+- Proton Drive: 18% battery drain. high due to continuous AES encryption
+- Filen: 12% battery drain. optimized ChaCha20 implementation
+- Tresorit: 14% battery drain. business client optimizations
+- Icedrive: 10% battery drain. efficient streaming encryption
 
-### Mobile Upload Resume Capability
+Mobile Upload Resume Capability
 
 All services tested support upload resume after network interruption, but implementation quality varies:
 
@@ -190,25 +190,25 @@ if (uploadState.resumable) {
 // Proton: Automatic but slow re-scan on resume
 ```
 
-## Performance Optimization Strategies
+Performance Optimization Strategies
 
-### Local Encryption Caching
+Local Encryption Caching
 
 Reduce repeated encryption overhead by caching encrypted manifests:
 
 ```bash
-# Create a local cache of encryption keys for frequently-synced folders
+Create a local cache of encryption keys for frequently-synced folders
 mkdir -p ~/.encrypted-storage-cache
 export ENCRYPTION_CACHE_DIR="$HOME/.encrypted-storage-cache"
 
-# Use rclone with --cache-dir for encrypted metadata
+Use rclone with --cache-dir for encrypted metadata
 rclone sync local/encrypted \
   remote:bucket \
   --crypt-directory-password-encryption \
   --cache-dir "$ENCRYPTION_CACHE_DIR"
 ```
 
-### Selective Sync Best Practices
+Selective Sync Best Practices
 
 Only sync active projects to minimize encryption overhead:
 
@@ -222,22 +222,22 @@ const protonConfig = {
       '/documents/*'
     ],
     exclude: [
-      '/archives/**',
-      '/media/raw/**'
+      '/archives/',
+      '/media/raw/'
     ]
   }
 };
 ```
 
-### Network-Bound vs CPU-Bound Scenarios
+Network-Bound vs CPU-Bound Scenarios
 
 Identify your bottleneck to choose the right service:
 
-- **CPU-bound** (slow device, fast network): Choose Filen or Icedrive — faster encryption
-- **Network-bound** (fast device, slow network): Any service works — encryption is negligible
-- **Balanced**: Tresorit offers consistent performance across hardware
+- CPU-bound (slow device, fast network): Choose Filen or Icedrive. faster encryption
+- Network-bound (fast device, slow network): Any service works. encryption is negligible
+- Balanced: Tresorit offers consistent performance across hardware
 
-## Recommendation Matrix
+Recommendation Matrix
 
 | Use Case | Recommended Service | Reason |
 |----------|---------------------|--------|
@@ -247,29 +247,29 @@ Identify your bottleneck to choose the right service:
 | Power user with large files | Icedrive | Lowest overhead |
 | Technical users with S3 | Cryptomator + S3 | Best delta sync performance |
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Best Encrypted Cloud Storage 2026: A Developer's Guide](/best-encrypted-cloud-storage-2026/)
 - [Best Encrypted Cloud Storage Free Tier 2026](/best-encrypted-cloud-storage-free-tier-2026/)
@@ -278,5 +278,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Encrypted Cloud Storage Gdpr Compliant 2026](/encrypted-cloud-storage-gdpr-compliant-2026/)
 - [AI-Powered Cloud Cost Analyzer Tools Compared](https://bestremotetools.com/ai-cloud-cost-analyzer-tools-compared/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

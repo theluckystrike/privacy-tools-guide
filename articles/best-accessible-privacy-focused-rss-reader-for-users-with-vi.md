@@ -14,7 +14,7 @@ intent-checked: true
 ---
 
 
-Users with visual impairments require RSS readers that work with screen readers like NVDA, JAWS, and VoiceOver while maintaining strict privacy controls. Many mainstream RSS clients prioritize cloud features and data collection over user privacy — a problematic approach for anyone relying on assistive technology. This guide evaluates privacy-first RSS readers that provide excellent accessibility without compromising data security, with configuration examples for developers integrating these tools into accessible workflows.
+Users with visual impairments require RSS readers that work with screen readers like NVDA, JAWS, and VoiceOver while maintaining strict privacy controls. Many mainstream RSS clients prioritize cloud features and data collection over user privacy. a problematic approach for anyone relying on assistive technology. This guide evaluates privacy-first RSS readers that provide excellent accessibility without compromising data security, with configuration examples for developers integrating these tools into accessible workflows.
 
 
 | Tool | Accessibility Features | Privacy Level | Platform | Price |
@@ -26,7 +26,7 @@ Users with visual impairments require RSS readers that work with screen readers 
 | Tails OS | Accessibility screen reader | Maximum (amnesic) | USB boot | Free |
 
 
-## Table of Contents
+Table of Contents
 
 - [Why Privacy Matters for Accessibility Tooling](#why-privacy-matters-for-accessibility-tooling)
 - [Top Privacy-Focused RSS Readers for Visual Impairment Access](#top-privacy-focused-rss-readers-for-visual-impairment-access)
@@ -36,30 +36,30 @@ Users with visual impairments require RSS readers that work with screen readers 
 - [Screen Reader Testing Methodology](#screen-reader-testing-methodology)
 - [Feed Management for Low-Vision Workflows](#feed-management-for-low-vision-workflows)
 
-## Why Privacy Matters for Accessibility Tooling
+Why Privacy Matters for Accessibility Tooling
 
-Screen reader users often interact with applications in ways that create unique data exposure risks. Text-to-speech engines may process content through cloud APIs depending on configuration, and third-party RSS services can log reading patterns, feed subscriptions, and usage metadata. For users in restrictive environments — journalists, activists, or individuals in countries with surveillance infrastructure — these logs can have serious consequences.
+Screen reader users often interact with applications in ways that create unique data exposure risks. Text-to-speech engines may process content through cloud APIs depending on configuration, and third-party RSS services can log reading patterns, feed subscriptions, and usage metadata. For users in restrictive environments. journalists, activists, or individuals in countries with surveillance infrastructure. these logs can have serious consequences.
 
 Privacy-focused RSS readers minimize attack surface by processing everything locally, avoiding cloud dependencies, and providing clear data export controls. The ideal solution combines three properties: local-first architecture, open-source transparency, and keyboard accessibility.
 
-## Top Privacy-Focused RSS Readers for Visual Impairment Access
+Top Privacy-Focused RSS Readers for Visual Impairment Access
 
-### 1. Miniflux (Self-Hosted)
+1. Miniflux (Self-Hosted)
 
 Miniflux stands as the most capable self-hosted option for visually impaired users. It offers a clean semantic HTML structure that screen readers navigate efficiently, full keyboard navigation without requiring mouse interaction, and a minimal JavaScript footprint that reduces potential accessibility barriers.
 
-**Privacy architecture:** Miniflux runs entirely on your server, meaning no third party sees your feed subscriptions or reading habits. The software supports CalibreOPDS for audiobook integration, allowing integration with screen reader-friendly ebook workflows.
+Privacy architecture: Miniflux runs entirely on your server, meaning no third party sees your feed subscriptions or reading habits. The software supports CalibreOPDS for audiobook integration, allowing integration with screen reader-friendly ebook workflows.
 
-**Accessibility features:**
+Accessibility features:
 - Complete keyboard shortcuts for all operations (j/k for navigation, r to refresh, v to view original)
 - ARIA labels on all interactive elements
 - High contrast theme support
 - No CAPTCHAs or visual verification challenges
 
-**Developer integration example:**
+Developer integration example:
 
 ```yaml
-# docker-compose.yml for Miniflux deployment
+docker-compose.yml for Miniflux deployment
 services:
   miniflux:
     image: miniflux/miniflux:latest
@@ -76,7 +76,7 @@ services:
 ```
 
 ```python
-# Python script to fetch Miniflux entries via API
+Python script to fetch Miniflux entries via API
 import requests
 
 MINIFLUX_URL = "https://your-miniflux-instance.com"
@@ -95,40 +95,40 @@ def get_unread_entries(feed_id=None):
     )
     return response.json()
 
-# Use with screen reader: pipe output to espeak
+Use with screen reader: pipe output to espeak
 entries = get_unread_entries()
 for entry in entries["entries"][:10]:
     print(f"{entry['title']} - {entry['url']}")
 ```
 
-### 2. NetNewsWire (macOS/iOS)
+2. NetNewsWire (macOS/iOS)
 
 NetNewsWire provides excellent VoiceOver support on Apple platforms with a completely local-first model. Unlike cloud-synced alternatives, all data remains on your device, and the application supports manual feed import/export without requiring account creation.
 
-**Privacy advantages:** No account required, no data collection, full OPML import/export, and synchronization via iCloud or local network only if you explicitly enable it.
+Privacy advantages: No account required, no data collection, full OPML import/export, and synchronization via iCloud or local network only if you explicitly enable it.
 
-**Accessibility highlights:**
+Accessibility highlights:
 - Native VoiceOver optimization with rotor navigation
 - Well-organized window structure for efficient keyboard focus management
 - Smart feeds and undo support for quick recovery from mistakes
 
-**Installation via Homebrew for power users:**
+Installation via Homebrew for power users:
 
 ```bash
 brew install --cask netnewswire
 ```
 
-### 3. FreshRSS (Self-Hosted with Extensions)
+3. FreshRSS (Self-Hosted with Extensions)
 
 FreshRSS offers extensive customization through its extension system while maintaining local processing. The platform provides a dedicated accessibility extension and supports customization of display themes for various vision needs.
 
-**Accessibility capabilities:**
+Accessibility capabilities:
 - JavaScript-free fallback mode for maximum compatibility
 - Multiple color themes including high-contrast options
 - OPML import/export for feed management
 - API access for custom automation
 
-**Keyboard shortcuts configuration:**
+Keyboard shortcuts configuration:
 
 ```javascript
 // FreshRSS user.js keyboard customization
@@ -142,7 +142,7 @@ const shortcuts = {
 };
 ```
 
-**Docker deployment with privacy defaults:**
+Docker deployment with privacy defaults:
 
 ```yaml
 version: '3.8'
@@ -166,33 +166,33 @@ networks:
     driver: bridge
 ```
 
-### 4. Command-Line Solutions: Newsboat
+4. Command-Line Solutions: Newsboat
 
 For maximum privacy and accessibility control, Newsboat operates entirely in the terminal, making it fully compatible with any terminal-based screen reader. This approach eliminates GUI accessibility concerns entirely.
 
-**Installation:**
+Installation:
 
 ```bash
-# Ubuntu/Debian
+Ubuntu/Debian
 sudo apt install newsboat
 
-# macOS
+macOS
 brew install newsboat
 
-# Fedora
+Fedora
 sudo dnf install newsboat
 ```
 
-**Configuration for screen reader optimization:**
+Configuration for screen reader optimization:
 
 ```ini
-# ~/.newsboat/config
-# UI settings for accessibility
+~/.newsboat/config
+UI settings for accessibility
 show-read-articles no
 show-read-feeds no
 browser "lynx %u"
 
-# Navigation
+Navigation
 bind-key j down
 bind-key k up
 bind-key g home
@@ -204,45 +204,45 @@ bind-key r reload
 bind-key n next-unread
 bind-key p prev-unread
 
-# Display
+Display
 text-width 80
 color listnormal cyan default
 color listfocus black cyan
 color info magenta default
 ```
 
-**Basic usage workflow:**
+Basic usage workflow:
 
 ```bash
-# Add feeds via URL
+Add feeds via URL
 newsboat -i feeds.opml
 
-# Or add individually
+Or add individually
 echo "https://example.com/feed.xml" >> ~/.newsboat/urls
 
-# Launch with screen reader
+Launch with screen reader
 newsboat
 
-# Common commands within newsboat:
-# r - refresh all feeds
-# q - quit
-# Enter - open article
-# o - open in browser
+Common commands within newsboat:
+r - refresh all feeds
+q - quit
+Enter - open article
+o - open in browser
 ```
 
-## Privacy Architecture Considerations
+Privacy Architecture Considerations
 
 When evaluating RSS readers for accessibility, examine these privacy-critical components:
 
-**Data storage location:** Self-hosted solutions keep your feed subscriptions and reading history under your control. Cloud services may retain metadata even after account deletion.
+Data storage location: Self-hosted solutions keep your feed subscriptions and reading history under your control. Cloud services may retain metadata even after account deletion.
 
-**Feed fetching behavior:** Some aggregators send your IP address and user agent to feed servers on every request. Privacy-conscious clients offer proxy configuration or Tor integration.
+Feed fetching behavior: Some aggregators send your IP address and user agent to feed servers on every request. Privacy-conscious clients offer proxy configuration or Tor integration.
 
-**Third-party dependencies:** Review JavaScript included in web interfaces. Self-hosted solutions typically minimize or allow disabling non-essential scripts.
+Third-party dependencies: Review JavaScript included in web interfaces. Self-hosted solutions typically minimize or allow disabling non-essential scripts.
 
-**API security:** If using mobile apps or external integrations, ensure API tokens can be revoked and support for two-factor authentication exists.
+API security: If using mobile apps or external integrations, ensure API tokens can be revoked and support for two-factor authentication exists.
 
-## Building an Accessible RSS Workflow
+Building an Accessible RSS Workflow
 
 Developers can create custom automation around privacy-first RSS readers:
 
@@ -257,7 +257,7 @@ import subprocess
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta
 
-# Privacy: use local TTS instead of cloud APIs
+Privacy: use local TTS instead of cloud APIs
 TTS_ENGINE = "espeak"  # or "say" on macOS
 
 def fetch_feed(url, tor_proxy=None):
@@ -289,7 +289,7 @@ def speak_entry(entry):
     text = f"{entry['title']}. {entry['description'][:500]}"
     subprocess.run([TTS_ENGINE, text])
 
-# Usage for screen reader users
+Usage for screen reader users
 if __name__ == "__main__":
     feeds = [
         "https://example.com/feed.xml",
@@ -304,9 +304,9 @@ if __name__ == "__main__":
             speak_entry(entry)
 ```
 
-## Evaluating Cloud RSS Services: What to Avoid
+Evaluating Cloud RSS Services: What to Avoid
 
-Not all RSS services respect user privacy equally. Many popular cloud-based aggregators — including historical services that have since shut down — monetized reading behavior through advertising profiles built from subscription data. When evaluating any cloud-hosted option, look for explicit answers to these questions:
+Not all RSS services respect user privacy equally. Many popular cloud-based aggregators. including historical services that have since shut down. monetized reading behavior through advertising profiles built from subscription data. When evaluating any cloud-hosted option, look for explicit answers to these questions:
 
 - Does the service sell or share feed subscription lists with advertisers?
 - Are reading timestamps and article interaction events logged and retained?
@@ -315,29 +315,29 @@ Not all RSS services respect user privacy equally. Many popular cloud-based aggr
 
 Cloud services that cannot answer these questions with published privacy policies should be avoided, particularly for users whose reading habits could expose sensitive affiliations or interests.
 
-## Screen Reader Testing Methodology
+Screen Reader Testing Methodology
 
 When testing an RSS reader for screen reader compatibility, use a structured approach rather than spot-checking:
 
-**NVDA on Windows**: Navigate the application entirely with keyboard, verifying that every interactive element announces its role and state. Check that article lists announce item count, that focus moves predictably when marking articles read, and that no content is trapped in inaccessible custom widgets.
+NVDA on Windows: Navigate the application entirely with keyboard, verifying that every interactive element announces its role and state. Check that article lists announce item count, that focus moves predictably when marking articles read, and that no content is trapped in inaccessible custom widgets.
 
-**VoiceOver on macOS**: Use the VoiceOver cursor independently of keyboard focus to verify that web-view content within the reader renders with proper heading structure. RSS article content often contains deeply nested HTML — confirm that headings H1–H3 navigate correctly with VO+Command+H.
+VoiceOver on macOS: Use the VoiceOver cursor independently of keyboard focus to verify that web-view content within the reader renders with proper heading structure. RSS article content often contains deeply nested HTML. confirm that headings H1–H3 navigate correctly with VO+Command+H.
 
-**JAWS on Windows**: Test virtual cursor mode against application mode switching. Some Electron-based RSS readers trigger unexpected mode switches that lose context. A well-built reader stays in application mode with consistent behavior.
+JAWS on Windows: Test virtual cursor mode against application mode switching. Some Electron-based RSS readers trigger unexpected mode switches that lose context. A well-built reader stays in application mode with consistent behavior.
 
 A useful quick test: can you subscribe to a new feed, read three articles, mark them read, and export your OPML file entirely without touching a mouse? If any step requires visual interaction, the tool is not fully accessible.
 
-## Feed Management for Low-Vision Workflows
+Feed Management for Low-Vision Workflows
 
 Users with partial vision often benefit from additional organizational strategies within their RSS reader:
 
-**Category organization**: Group feeds into broad categories (News, Technical, Personal) and use keyboard shortcuts to navigate between categories rather than scrolling long feed lists. Both Miniflux and FreshRSS support multi-level categories.
+Category organization: Group feeds into broad categories (News, Technical, Personal) and use keyboard shortcuts to navigate between categories rather than scrolling long feed lists. Both Miniflux and FreshRSS support multi-level categories.
 
-**Reading view consistency**: Enable reader mode or article extraction when available. Raw feed content often includes poorly structured HTML that creates erratic screen reader behavior. Tools like Miniflux can be configured to fetch and clean full article content rather than displaying feed excerpts.
+Reading view consistency: Enable reader mode or article extraction when available. Raw feed content often includes poorly structured HTML that creates erratic screen reader behavior. Tools like Miniflux can be configured to fetch and clean full article content rather than displaying feed excerpts.
 
-**Font and spacing adjustments**: For low-vision users who benefit from enlarged text, self-hosted solutions allow custom CSS injection. A simple override like `body { font-size: 1.4em; line-height: 1.8; }` in your user stylesheet dramatically improves readability without requiring separate magnification software.
+Font and spacing adjustments: For low-vision users who benefit from enlarged text, self-hosted solutions allow custom CSS injection. A simple override like `body { font-size: 1.4em; line-height: 1.8; }` in your user stylesheet dramatically improves readability without requiring separate magnification software.
 
-## Related Articles
+Related Articles
 
 - [Best Accessible Privacy-Focused Keyboard App for Users with](/best-accessible-privacy-focused-keyboard-app-for-users-with-/)
 - [Privacy Tools That Work with Screen Readers: Comparison for](/privacy-tools-that-work-with-screen-readers-comparison-for-b/)
@@ -346,4 +346,4 @@ Users with partial vision often benefit from additional organizational strategie
 - [Privacy-Focused Home Assistant Setup Accessible for Users](/privacy-focused-home-assistant-setup-accessible-for-users-wi/)
 - [Best AI Tool for Generating Accessible Cookie Consent](https://bestremotetools.com/best-ai-tool-for-generating-accessible-cookie-consent-banner/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

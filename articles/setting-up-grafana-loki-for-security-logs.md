@@ -15,24 +15,24 @@ tags: [privacy-tools-guide, security]
 
 {% raw %}
 
-Loki is a horizontally scalable log aggregation system from Grafana Labs that indexes labels rather than full log content — making it far cheaper to run than Elasticsearch for pure log storage. Combined with Promtail for log shipping and Grafana for visualization, it gives you a full security logging stack for a fraction of the cost of an ELK setup.
+Loki is a horizontally scalable log aggregation system from Grafana Labs that indexes labels rather than full log content. making it far cheaper to run than Elasticsearch for pure log storage. Combined with Promtail for log shipping and Grafana for visualization, it gives you a full security logging stack for a fraction of the cost of an ELK setup.
 
-## Architecture
+Architecture
 
 ```
 Servers (auth.log, syslog, app logs)
-    └─ Promtail (log shipper, runs on each server)
-            └─ Loki (storage + query engine)
-                    └─ Grafana (dashboards + alerts)
+     Promtail (log shipper, runs on each server)
+             Loki (storage + query engine)
+                     Grafana (dashboards + alerts)
 ```
 
-## Prerequisites
+Prerequisites
 
 - One server to run Loki and Grafana (4GB RAM minimum for production)
 - Promtail on each server you want to collect logs from
 - Docker Compose (simplest deployment method)
 
-## Step 1: Deploy Loki and Grafana with Docker Compose
+Step 1: Deploy Loki and Grafana with Docker Compose
 
 ```bash
 mkdir -p /opt/loki && cd /opt/loki
@@ -119,12 +119,12 @@ docker compose up -d
 docker compose logs -f
 ```
 
-## Step 2: Install Promtail on Log Sources
+Step 2: Install Promtail on Log Sources
 
 On each server whose logs you want to ship:
 
 ```bash
-# Download Promtail binary
+Download Promtail binary
 curl -LO "https://github.com/grafana/loki/releases/latest/download/promtail-linux-amd64.zip"
 unzip promtail-linux-amd64.zip
 sudo mv promtail-linux-amd64 /usr/local/bin/promtail
@@ -204,7 +204,7 @@ sudo systemctl enable --now promtail
 
 The `SupplementaryGroups=adm systemd-journal` gives Promtail permission to read system logs without running as root.
 
-## Step 3: Configure Grafana Data Source
+Step 3: Configure Grafana Data Source
 
 1. Open Grafana at `http://your-server:3000`
 2. Log in with admin / changeme (change immediately)
@@ -213,31 +213,31 @@ The `SupplementaryGroups=adm systemd-journal` gives Promtail permission to read 
 5. Set URL: `http://loki:3100` (or the actual IP if not using Docker networking)
 6. Click Save & Test
 
-## Step 4: Writing Security Queries with LogQL
+Step 4: Writing Security Queries with LogQL
 
 LogQL is Loki's query language. For security monitoring:
 
 ```logql
-# All failed SSH login attempts
+All failed SSH login attempts
 {job="auth"} |= "Failed password"
 
-# Failed logins by source IP (rate over 5 minutes)
+Failed logins by source IP (rate over 5 minutes)
 sum by (ip) (
   rate({job="auth"} |= "Failed password"
   | regexp "from (?P<ip>[0-9.]+)"
   [5m])
 )
 
-# Nginx 5xx errors in last hour
+Nginx 5xx errors in last hour
 {job="nginx", status=~"5.."}
 
-# sudo usage (privilege escalation)
+sudo usage (privilege escalation)
 {job="auth"} |= "sudo"
 
-# Successful SSH logins
+Successful SSH logins
 {job="auth"} |= "Accepted publickey" OR "Accepted password"
 
-# Top IPs hitting 404s
+Top IPs hitting 404s
 topk(10,
   sum by (remote_addr) (
     count_over_time({job="nginx", status="404"}[1h])
@@ -245,14 +245,14 @@ topk(10,
 )
 ```
 
-## Step 5: Create Security Alerts
+Step 5: Create Security Alerts
 
 In Grafana, navigate to Alerting > Alert Rules > New Rule.
 
-Example: Alert on 5+ failed SSH attempts from the same IP in 5 minutes:
+Alert on 5+ failed SSH attempts from the same IP in 5 minutes:
 
 ```logql
-# Alert query
+Alert query
 sum by (ip) (
   rate({job="auth"} |= "Failed password"
   | regexp "from (?P<ip>[0-9.]+)"
@@ -262,12 +262,12 @@ sum by (ip) (
 
 0.016/s = ~5 events per 5-minute window. Configure the alert to fire when this threshold is exceeded and send to a notification channel (Slack, email, PagerDuty).
 
-## Step 6: Securing Loki
+Step 6: Securing Loki
 
 By default Loki has no authentication. Add basic auth via Nginx or Caddy reverse proxy:
 
 ```
-# Caddyfile snippet
+Caddyfile snippet
 loki.internal.example.com {
     basicauth {
         promtail $2a$14$...bcrypt-hash-of-promtail-password...
@@ -285,16 +285,16 @@ clients:
       password: your-promtail-password
 ```
 
-## Step 7: Log Retention and Storage Management
+Step 7: Log Retention and Storage Management
 
 Loki's compactor handles retention automatically if configured. Check current storage usage:
 
 ```bash
-# Check how much disk Loki is using
+Check how much disk Loki is using
 du -sh /opt/loki/data/loki/chunks/
 du -sh /opt/loki/data/loki/
 
-# Check Loki's internal stats via API
+Check Loki's internal stats via API
 curl -s http://localhost:3100/loki/api/v1/status/buildinfo | jq .
 curl -s http://localhost:3100/metrics | grep loki_ingester_chunks_stored_total
 ```
@@ -330,17 +330,17 @@ chunk_store_config:
 
 ---
 
-## Step 8: High-Value Security Dashboards
+Step 8: High-Value Security Dashboards
 
 Import or build these dashboards in Grafana to make the security data actionable:
 
-**SSH Brute Force Dashboard panels:**
+SSH Brute Force Dashboard panels:
 
 ```logql
-# Panel 1: Failed SSH attempts per minute (rate graph)
+Panel 1: Failed SSH attempts per minute (rate graph)
 sum(rate({job="auth"} |= "Failed password" [1m])) by (host)
 
-# Panel 2: Top attacking IPs (table)
+Panel 2: Top attacking IPs (table)
 topk(20,
   sum by (src_ip) (
     count_over_time(
@@ -351,24 +351,24 @@ topk(20,
   )
 )
 
-# Panel 3: Successful logins after failures (potential compromise indicator)
+Panel 3: Successful logins after failures (potential compromise indicator)
 {job="auth"} |= "Accepted" | line_format "{{.message}}"
 ```
 
-**Web Application Attack Dashboard panels:**
+Web Application Attack Dashboard panels:
 
 ```logql
-# HTTP 400-499 rate (client errors including scanner noise)
+HTTP 400-499 rate (client errors including scanner noise)
 sum(rate({job="nginx", status=~"4.."}[5m])) by (host)
 
-# Top paths receiving 404s (scanner enumeration detection)
+Top paths receiving 404s (scanner enumeration detection)
 topk(10,
   sum by (path) (
     count_over_time({job="nginx", status="404"}[1h])
   )
 )
 
-# POST requests with 200 response to unusual paths
+POST requests with 200 response to unusual paths
 {job="nginx", method="POST", status="200"}
 | line_format "{{.path}}"
 | regexp "^(?!.*(login|api|upload|submit))(?P<suspicious_path>.+)"
@@ -380,7 +380,7 @@ To import a dashboard JSON:
 
 ---
 
-## Related Reading
+Related Reading
 
 - [How to Set Up Promtail for Log Shipping](/how-to-set-up-promtail-for-log-shipping/)
 - [How to Use syslog-ng for Centralized Logging](/how-to-use-syslog-ng-for-centralized-logging/)
@@ -391,13 +391,13 @@ To import a dashboard JSON:
 - [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 ---
 
-## Related Articles
+Related Articles
 
 - [How to Set Up Promtail for Log Shipping](/how-to-set-up-promtail-for-log-shipping/)
 - [What VPN Logs Actually Mean No Log Policy Explained](/what-vpn-logs-actually-mean-no-log-policy-explained-technically/)
 - [What VPN Logs Actually Mean: No-Log Policy Explained](/what-vpn-logs-actually-mean-no-log-policy-explained-technically/)
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
 - [Cloud Storage Security Breach History: Compromised](/cloud-storage-security-breach-history-compromised-services-t/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

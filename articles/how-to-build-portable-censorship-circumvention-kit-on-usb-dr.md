@@ -17,13 +17,13 @@ intent-checked: true
 
 Building a portable censorship circumvention kit on an USB drive enables reliable internet access in regions with heavy filtering and censorship. This guide provides step-by-step instructions for creating a self-contained toolkit with Tor, VPN clients, and DNS tunneling tools that work across any computer without installation or traces. You'll learn how to configure bridges, automate connections, and maintain your kit for consistent access when traveling to countries that restrict internet freedom.
 
-# In most countries**: you have right to attorney before questioning
-# Do not discuss your tools or activities without legal counsel
+In most countries: you have right to attorney before questioning
+Do not discuss your tools or activities without legal counsel
 
-# 3.
-- **DOCUMENT THE INTERACTION #**: Try to remember: Time, location, badge numbers, questions asked # Report interaction to press freedoms organizations # 4.
+3.
+- DOCUMENT THE INTERACTION #: Try to remember: Time, location, badge numbers, questions asked # Report interaction to press freedoms organizations # 4.
 
-## Table of Contents
+Table of Contents
 
 - [Why Build a Portable Kit](#why-build-a-portable-kit)
 - [Prerequisites](#prerequisites)
@@ -31,13 +31,13 @@ Building a portable censorship circumvention kit on an USB drive enables reliabl
 - [Advanced: Chaining Multiple Proxies for Resilience](#advanced-chaining-multiple-proxies-for-resilience)
 - [Troubleshooting](#troubleshooting)
 
-## Why Build a Portable Kit
+Why Build a Portable Kit
 
 Many countries implement network-level censorship that blocks access to news sites, social media platforms, and communication tools. When traveling to these regions, having a portable solution means you do not need to install software on every computer you use. An USB-based kit runs directly from the drive, leaves no installed software behind, and works on any computer with an USB port and operating system.
 
 The key components you need are a Tor Browser bundle configured with bridges, portable VPN clients, and tools for DNS tunneling. Each component serves different scenarios, and having all three ensures you can adapt to varying network restrictions.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -47,7 +47,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Preparing the USB Drive
+Step 1: Preparing the USB Drive
 
 Select an USB 3.0 drive with at least 16GB of storage. The extra space accommodates the Tor Browser bundle, additional tools, and any cached bridges or configuration files you download while traveling.
 
@@ -65,7 +65,7 @@ Create a folder structure that keeps your tools organized:
 
 This separation makes it easy to locate specific tools and update individual components without affecting others.
 
-### Step 2: Set Up Tor Browser with Bridges
+Step 2: Set Up Tor Browser with Bridges
 
 The Tor Network provides the most reliable method for circumventing censorship in most situations. However, many censored networks block direct connections to Tor entry nodes. Using pluggable transports like obfs4 makes your traffic appear random and bypasses deep packet inspection.
 
@@ -84,7 +84,7 @@ Before traveling, obtain fresh bridge addresses from sources like `https://bridg
 
 Launch Tor Browser using the portable executable on your USB drive. The first connection may take longer as Tor establishes circuits through the bridge. Once connected, verify your IP address at `https://check.torproject.org` to confirm the connection works.
 
-### Step 3: Configure Portable VPN Tools
+Step 3: Configure Portable VPN Tools
 
 Some situations require VPN protocols that Tor cannot handle, such as streaming services that block Tor exit nodes. Having a portable VPN client provides an alternative when one method fails.
 
@@ -100,7 +100,7 @@ ssh -D 1080 -N -f user@your-server.com
 
 Configure your applications to use `localhost:1080` as a SOCKS5 proxy. This tunnels all traffic through your SSH server, bypassing local network filters.
 
-### Step 4: DNS Tunneling for Restricted Networks
+Step 4: DNS Tunneling for Restricted Networks
 
 Some networks block direct connections but allow DNS queries through. DNS tunneling tools like `dnscat2` encode data within DNS queries, providing a fallback when other methods fail.
 
@@ -118,7 +118,7 @@ ruby dnscat2.rb --exec "cmd.exe" --secret=your-secret-key
 
 When standard connections fail, run the dnscat2 client from your USB drive. The tool encapsulates traffic within DNS queries that most networks allow. This method works slowly but provides a last-resort connection option.
 
-### Step 5: Automate Connection Scripts
+Step 5: Automate Connection Scripts
 
 Create wrapper scripts that simplify switching between methods. A simple bash script on Linux and macOS or a batch file on Windows can check connectivity and automatically try alternative methods.
 
@@ -140,7 +140,7 @@ fi
 
 Keep these scripts in the `/kit/scripts` folder and update them as you refine your setup.
 
-## Security Considerations
+Security Considerations
 
 Using censorship circumvention tools carries legal risks in some jurisdictions. Research local laws before traveling and understand the potential consequences. In some countries, using Tor or VPNs is illegal or monitored.
 
@@ -148,7 +148,7 @@ Your USB drive contains sensitive configuration files and potentially bridge add
 
 When using public computers, be aware of keyloggers and surveillance software. The portable kit protects against installed malware, but hardware keyloggers on USB ports can still capture keystrokes. Use on-screen keyboards when entering sensitive credentials on public machines.
 
-### Step 6: Maintaining Your Kit
+Step 6: Maintaining Your Kit
 
 Update your tools before each trip. New censorship techniques emerge constantly, and tool developers release updates to address them. Check for new bridge addresses, software updates, and configuration improvements.
 
@@ -156,7 +156,7 @@ Test your complete setup in a restrictive environment before relying on it durin
 
 Keep backup copies of important configuration files. If your USB drive fails or gets lost, having backups ensures you can quickly restore your working setup.
 
-### Step 7: Build a Tor Browser Configuration with Fallback Chains
+Step 7: Build a Tor Browser Configuration with Fallback Chains
 
 The most reliable portable kit includes multiple Tor bridge configurations. If your primary bridges get blocked, fallback bridges provide continued access without downloading new configurations.
 
@@ -175,36 +175,36 @@ Create multiple Tor configurations in separate folders:
 In each torrc-br file, specify your bridge lines:
 
 ```
-# Primary configuration (obfs4 bridges)
+Primary configuration (obfs4 bridges)
 UseBridges 1
 Bridge obfs4 1.2.3.4:443 cert=ABC... iat-mode=1
 Bridge obfs4 5.6.7.8:443 cert=DEF... iat-mode=1
 
-# Fallback to meek bridges if obfs4 blocked
+Fallback to meek bridges if obfs4 blocked
 Bridge meek 1.9.9.9:443 url=https://meek.azureedge.net/
 ```
 
 Test each configuration before travel to verify connectivity. Document which configuration to use based on network conditions you encounter.
 
-## Advanced: Chaining Multiple Proxies for Resilience
+Advanced: Chaining Multiple Proxies for Resilience
 
 For maximum resilience, chain multiple proxy layers. This approach uses Tor behind a VPN behind a SSH tunnel, providing multiple fallback points:
 
 ```bash
-# Layer 1: SSH tunnel through trusted server (fastest, detectable)
+Layer 1: SSH tunnel through trusted server (fastest, detectable)
 ssh -D 1080 -N user@trusted-server.com &
 SSH_PID=$!
 
-# Layer 2: VPN through SSH tunnel (adds encryption, harder to detect)
+Layer 2: VPN through SSH tunnel (adds encryption, harder to detect)
 openvpn --proto tcp --socks-proxy 127.0.0.1 1080 \
   --config vpn-config.ovpn &
 VPN_PID=$!
 
-# Layer 3: Tor through VPN (slowest, most resistant to detection)
-# Configure Tor to use 127.0.0.1:8080 (VPN socks proxy)
-# Then use Tor Browser normally
+Layer 3: Tor through VPN (slowest, most resistant to detection)
+Configure Tor to use 127.0.0.1:8080 (VPN socks proxy)
+Then use Tor Browser normally
 
-# Script to kill layers if detection occurs
+Script to kill layers if detection occurs
 kill_layer() {
   kill $SSH_PID
   sleep 5
@@ -212,13 +212,13 @@ kill_layer() {
 }
 ```
 
-This architecture provides automatic fallback—if your VPN gets blocked, Tor attempts to work directly. If that fails, you still have SSH tunnel access.
+This architecture provides automatic fallback, if your VPN gets blocked, Tor attempts to work directly. If that fails, you still have SSH tunnel access.
 
-### Step 8: Mobile Circumvention Toolkit
+Step 8: Mobile Circumvention Toolkit
 
 Mobile devices require different tools since you cannot install arbitrary software on iOS or Android.
 
-**iOS circumvention approach:**
+iOS circumvention approach:
 
 ```
 1. Install Onion Browser from App Store (Tor-based)
@@ -228,90 +228,90 @@ Mobile devices require different tools since you cannot install arbitrary softwa
 5. Configure WireGuard via system settings as final fallback
 ```
 
-**Android circumvention approach:**
+Android circumvention approach:
 
 ```bash
-# Install F-Droid from https://f-droid.org (open-source app store)
-# Through F-Droid, install:
-# - Orbot (Tor client)
-# - Shadowsocks for Android
-# - Outline (Shadowsocks client)
-# - Wireguard
+Install F-Droid from https://f-droid.org (open-source app store)
+Through F-Droid, install:
+- Orbot (Tor client)
+- Shadowsocks for Android
+- Outline (Shadowsocks client)
+- Wireguard
 
-# Create shortcut launcher for quick app switching:
-# Home screen → Quick settings → Add "Orbot" toggle
-# Switch between Tor and Shadowsocks by toggling network app
+Create shortcut launcher for quick app switching:
+Home screen → Quick settings → Add "Orbot" toggle
+Switch between Tor and Shadowsocks by toggling network app
 ```
 
 Document which apps and configurations work on your specific devices before travel.
 
-### Step 9: Maintaining Your Kit During Long Trips
+Step 9: Maintaining Your Kit During Long Trips
 
 Extended travel requires kit maintenance procedures:
 
-**Weekly checks:**
+Weekly checks:
 
 ```bash
-# Verify all tools still launch correctly
+Verify all tools still launch correctly
 ./tor/TorBrowser/start-tor-browser  # Should launch browser
 ./vpn/openvpn --version             # Should show version
 ./scripts/test-connectivity.sh      # Custom test script
 ```
 
-**Network environment testing:**
+Network environment testing:
 
 ```bash
 #!/bin/bash
-# test-connectivity.sh
+test-connectivity.sh
 
 echo "Testing connection methods in current network..."
 
-# Test 1: Direct internet (likely blocked in censored regions)
+Test 1: Direct internet (likely blocked in censored regions)
 timeout 5 curl -s https://www.google.com > /dev/null && \
   echo "Direct: SUCCESS (not in restricted network)" || \
   echo "Direct: BLOCKED (enter restricted network)"
 
-# Test 2: Tor Browser
+Test 2: Tor Browser
 timeout 10 curl -s --proxy socks5://127.0.0.1:9050 \
   https://check.torproject.org | grep "Congratulations" && \
   echo "Tor: SUCCESS" || echo "Tor: FAILED - try different bridges"
 
-# Test 3: VPN
+Test 3: VPN
 timeout 10 openvpn --config config.ovpn --ping 10 --ping-exit 60 && \
   echo "VPN: SUCCESS" || echo "VPN: FAILED"
 
-# Test 4: DNS tunneling
+Test 4: DNS tunneling
 timeout 10 ./dns/dnscat2 client --secret=key --domain example.com && \
   echo "DNS: SUCCESS" || echo "DNS: FAILED"
 ```
 
 Run these tests every 2-3 days when traveling to identify problems early.
 
-### Step 10: Hardware Redundancy for USB Kit
+Step 10: Hardware Redundancy for USB Kit
 
 A single USB drive failing ruins your trip. Maintain hardware redundancy:
 
 ```bash
-# Primary kit on USB-A drive (16GB)
-# Backup kit on USB-C drive (16GB, identical contents)
-# Emergency kit on microSD card (stored separately)
+Primary kit on USB-A drive (16GB)
+Backup kit on USB-C drive (16GB, identical contents)
+Emergency kit on microSD card (stored separately)
 
-# Create backup using rsync
+Create backup using rsync
 rsync -av /Volumes/KitDrive /Volumes/BackupKitDrive --delete
 ```
 
 Store backup drives separately from your primary device. If your primary USB drive gets confiscated or damaged, you still have working backups.
 
-### Step 11: Legal Considerations by Region
+Step 11: Legal Considerations by Region
 
 Circumvention tools are legal in most countries but prohibited in others. Research before traveling:
 
-**Legal in most regions:**
+Legal in most regions:
 - Tor Browser (legal)
 - VPN usage for privacy (legal in most countries)
 - SSH tunneling (legal, but may violate ISP terms of service)
 
-**Restricted or illegal in:**
+Restricted or illegal in:
 - China: VPN/Tor usage heavily monitored; detection can trigger investigations
 - Russia: Using circumvention to access blocked content may violate information laws
 - Iran: Unauthorized circumvention is illegal; detection risk is high
@@ -320,69 +320,69 @@ Circumvention tools are legal in most countries but prohibited in others. Resear
 
 Consult with lawyers in your destination country before travel. Some organizations provide legal guidance for journalists and activists operating in restricted environments.
 
-### Step 12: Emergency Procedures
+Step 12: Emergency Procedures
 
 If authorities discover your circumvention kit:
 
 ```bash
-# 1. SECURE YOUR DATA IMMEDIATELY
-# If possible, power off device before authorities access it
-# Powered-off encrypted drives are harder to access than running systems
+1. SECURE YOUR DATA IMMEDIATELY
+If possible, power off device before authorities access it
+Powered-off encrypted drives are harder to access than running systems
 
-# 2. KNOW YOUR RIGHTS
-# In most countries, you have right to attorney before questioning
-# Do not discuss your tools or activities without legal counsel
+2. KNOW YOUR RIGHTS
+In most countries, you have right to attorney before questioning
+Do not discuss your tools or activities without legal counsel
 
-# 3. DOCUMENT THE INTERACTION
-# Try to remember: Time, location, badge numbers, questions asked
-# Report interaction to press freedoms organizations
+3. DOCUMENT THE INTERACTION
+Try to remember: Time, location, badge numbers, questions asked
+Report interaction to press freedoms organizations
 
-# 4. LAWYER COMMUNICATION
-# Contact embassy/consulate (if applicable)
-# Notify international press freedom organizations
-# Have emergency contact pre-loaded in your phone
+4. LAWYER COMMUNICATION
+Contact embassy/consulate (if applicable)
+Notify international press freedom organizations
+Have emergency contact pre-loaded in your phone
 ```
 
 Preparation before travel prevents panic and poor decisions during interactions.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to build portable censorship circumvention kit on usb?**
+How long does it take to build portable censorship circumvention kit on usb?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How To Use Naiveproxy To Disguise Censorship Circumvention](/how-to-use-naiveproxy-to-disguise-censorship-circumvention-t/)
 - [Tor Browser Portable USB Setup Guide](/tor-browser-portable-usb-setup-guide/)
@@ -390,4 +390,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [China Censorship Circumvention Tool Comparison Shadowsocks](/china-censorship-circumvention-tool-comparison-shadowsocks-v/)
 - [Verify Your VPN Is Actually Bypassing Censorship (Not](/how-to-verify-vpn-is-actually-bypassing-censorship-and-not-l/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

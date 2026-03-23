@@ -15,7 +15,7 @@ voice-checked: true
 
 {% raw %}
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -25,13 +25,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: The Autofill Privacy Problem
+Step 1: The Autofill Privacy Problem
 
 Browser autofill (for passwords, credit cards, addresses) is convenient but dangerous. Malicious websites can trick your browser into auto-filling sensitive data into invisible form fields, leaking your information without clicking submit. This guide explains the risks and how to disable risky autofill features.
 
-### Step 2: How Autofill Attacks Work
+Step 2: How Autofill Attacks Work
 
-**Scenario: Email harvesting attack**
+Scenario: Email harvesting attack
 
 A malicious website contains this code:
 
@@ -56,7 +56,7 @@ setTimeout(() => {
 
 The browser auto-fills your email address (from saved passwords or contacts) into the hidden field. JavaScript reads it and sends it to the attacker. You never notice.
 
-**Scenario: Credit card harvesting attack**
+Scenario: Credit card harvesting attack
 
 Similar approach, but for credit card fields:
 
@@ -79,9 +79,9 @@ setTimeout(() => {
 
 Your credit card details leak to the attacker without you interacting.
 
-### Step 3: Attack Variations
+Step 3: Attack Variations
 
-**Invisible input fields:**
+Invisible input fields:
 ```html
 <input style="display: none;">
 <input style="width: 0; height: 0; border: none;">
@@ -92,14 +92,14 @@ Your credit card details leak to the attacker without you interacting.
 
 All variations prevent the input from being visible while still allowing autofill.
 
-**Off-screen fields:**
+Off-screen fields:
 ```html
 <input style="position: fixed; top: -1000px; left: -1000px;">
 ```
 
 The field exists but is far outside the viewport.
 
-**Password field variant (worse):**
+Password field variant (worse):
 ```html
 <input type="password" name="pwd" style="display: none;">
 <script>
@@ -112,9 +112,9 @@ setTimeout(() => {
 
 Browsers often auto-fill the login password for saved accounts. This attack captures it.
 
-### Step 4: Which Data is at Risk?
+Step 4: Which Data is at Risk?
 
-**High Risk (disable autofill):**
+High Risk (disable autofill):
 - Passwords
 - Credit card numbers and CVV
 - Social Security numbers
@@ -123,31 +123,31 @@ Browsers often auto-fill the login password for saved accounts. This attack capt
 - Full addresses
 - Date of birth
 
-**Medium Risk (review before enabling):**
+Medium Risk (review before enabling):
 - Email addresses
 - Username
 - Billing address
 - Company name
 
-**Low Risk (safe to autofill):**
+Low Risk (safe to autofill):
 - Country
 - Postal code (alone, not with other data)
 - Website URL
 
-### Step 5: Browser Autofill Settings
+Step 5: Browser Autofill Settings
 
-### Chrome/Chromium
+Chrome/Chromium
 
-**Disable all autofill:**
+Disable all autofill:
 
 1. Chrome menu → Settings
 2. Autofill and passwords → Password Manager
-3. "Offer to save passwords" — **Toggle OFF**
+3. "Offer to save passwords". Toggle OFF
 4. Go back to Autofill
-5. "Payment methods" — **Delete all cards**
-6. "Addresses and more" — **Delete all addresses**
+5. "Payment methods". Delete all cards
+6. "Addresses and more". Delete all addresses
 
-**Disable autofill for specific sites:**
+Disable autofill for specific sites:
 
 ```javascript
 // Run in browser console on a website
@@ -157,14 +157,14 @@ document.querySelectorAll('[autocomplete]').forEach(el => {
 });
 ```
 
-**Better: Edit Chrome config (advanced)**
+Better: Edit Chrome config (advanced)
 
 1. Chrome menu → Settings → Advanced
 2. Privacy and security → Manage your Google Account
-3. Data & Privacy → Web & App Activity — Toggle OFF
+3. Data & Privacy → Web & App Activity. Toggle OFF
 4. This prevents Chrome from learning your autofill patterns
 
-**Disable autofill in Chrome DevTools (for developers testing):**
+Disable autofill in Chrome DevTools (for developers testing):
 ```javascript
 // Disable autofill globally
 Object.defineProperty(navigator, 'credentials', {
@@ -172,22 +172,22 @@ Object.defineProperty(navigator, 'credentials', {
 });
 ```
 
-### Firefox
+Firefox
 
-**Disable password autofill:**
+Disable password autofill:
 
 1. Firefox menu → Settings
 2. Privacy & Security → Logins and Passwords
-3. "Ask to save logins and passwords" — **Uncheck**
-4. "Autofill logins and passwords" — **Uncheck**
+3. "Ask to save logins and passwords". Uncheck
+4. "Autofill logins and passwords". Uncheck
 
-**Disable address autofill:**
+Disable address autofill:
 
 1. Privacy & Security → Forms and autofill
-2. "Addresses" — **Uncheck**
-3. "Payment methods" — **Uncheck**
+2. "Addresses". Uncheck
+3. "Payment methods". Uncheck
 
-**Firefox about:config tweaks:**
+Firefox about:config tweaks:
 
 Type in address bar: `about:config`
 
@@ -198,35 +198,35 @@ extensions.formautofill.addresses.enabled = false
 extensions.formautofill.creditCards.enabled = false
 ```
 
-### Safari (iOS/macOS)
+Safari (iOS/macOS)
 
-**Disable autofill:**
+Disable autofill:
 
 1. Settings → Passwords
-2. "AutoFill Passwords" — **Toggle OFF**
+2. "AutoFill Passwords". Toggle OFF
 3. Settings → Passwords → AutoFill
-4. "Autofill from Saved Settings" — **Toggle OFF**
+4. "Autofill from Saved Settings". Toggle OFF
 
-**iCloud Keychain (risky):**
+iCloud Keychain (risky):
 
 Disable iCloud Keychain:
 1. Settings → [Your name] → iCloud
-2. "Keychain" — **Toggle OFF**
+2. "Keychain". Toggle OFF
 
-Note: iCloud Keychain syncs passwords across Apple devices, creating additional risk if Apple account is compromised.
+iCloud Keychain syncs passwords across Apple devices, creating additional risk if Apple account is compromised.
 
-### Edge
+Edge
 
 1. Settings → Profiles → Passwords
-2. "Offer to save passwords" — **Toggle OFF**
+2. "Offer to save passwords". Toggle OFF
 3. Settings → Autofill → Manage autofill settings
-4. "Passwords", "Payment info", "Addresses" — All **OFF**
+4. "Passwords", "Payment info", "Addresses". All OFF
 
-### Step 6: Use Password Manager Instead
+Step 6: Use Password Manager Instead
 
 Browser autofill is convenient but insecure. Use a dedicated password manager instead:
 
-**Recommended Password Managers:**
+Recommended Password Managers:
 
 | Manager | Desktop | Mobile | Auto-fill | Cost | Privacy |
 |---------|---------|--------|-----------|------|---------|
@@ -236,13 +236,13 @@ Browser autofill is convenient but insecure. Use a dedicated password manager in
 | LastPass | Yes | Yes | Good | Free/$36/year | 7/10 |
 | Apple Keychain | macOS/iOS | Yes | Excellent | Free | 8/10 |
 
-**Why password managers are safer:**
+Why password managers are safer:
 1. They use encryption (passwords stay encrypted)
 2. They don't auto-fill invisible fields (require user interaction)
 3. They work offline (no sync risk if server breached)
 4. They have master password (access requires authentication)
 
-**Setup Bitwarden (free, open-source):**
+Setup Bitwarden (free, open-source):
 
 1. Download: https://bitwarden.com
 2. Create account (use strong master password)
@@ -252,11 +252,11 @@ Browser autofill is convenient but insecure. Use a dedicated password manager in
 
 Bitwarden is safer than browser autofill because it requires explicit user action (click the icon) rather than auto-filling silently.
 
-### Step 7: Prevent Autofill Abuse (For Website Developers)
+Step 7: Prevent Autofill Abuse (For Website Developers)
 
 If you own a website, prevent autofill abuse:
 
-**Disable autocomplete on sensitive fields:**
+Disable autocomplete on sensitive fields:
 
 ```html
 <!-- Disable autofill on sensitive form -->
@@ -268,7 +268,7 @@ If you own a website, prevent autofill abuse:
 </form>
 ```
 
-**Better: Use specific autocomplete values:**
+Better: Use specific autocomplete values:
 
 ```html
 <!-- Legitimate password field -->
@@ -283,7 +283,7 @@ If you own a website, prevent autofill abuse:
 
 Modern browsers respect `autocomplete="off"` for legitimate privacy reasons.
 
-**Use Content Security Policy (CSP):**
+Use Content Security Policy (CSP):
 
 ```html
 <!-- Prevent inline JavaScript from reading form values -->
@@ -293,15 +293,15 @@ Modern browsers respect `autocomplete="off"` for legitimate privacy reasons.
 
 This prevents attackers from running JavaScript that steals form data.
 
-### Step 8: Disable JavaScript to Prevent Attacks
+Step 8: Disable JavaScript to Prevent Attacks
 
 The nuclear option: disable JavaScript on untrusted websites.
 
-**Browser Extensions:**
+Browser Extensions:
 
-- **uMatrix** (Chromium): Block all scripts by default, whitelist trusted sites
-- **NoScript** (Firefox): Similar to uMatrix
-- **uBlock Origin** (all browsers): Block scripts + ads
+- uMatrix (Chromium): Block all scripts by default, whitelist trusted sites
+- NoScript (Firefox): Similar to uMatrix
+- uBlock Origin (all browsers): Block scripts + ads
 
 Example uBlock Origin filter:
 ```
@@ -310,11 +310,11 @@ Example uBlock Origin filter:
 
 This blocks all scripts from attacker.com.
 
-### Step 9: Form Field Inspection
+Step 9: Form Field Inspection
 
 Check if a website has hidden form fields:
 
-**In Browser DevTools:**
+In Browser DevTools:
 
 1. Press F12 (open DevTools)
 2. Go to Console tab
@@ -348,16 +348,16 @@ Hidden field found: {name: "tracking_id", type: "hidden", value: "[VALUE PRESENT
 
 If you find hidden fields with values, the website is likely harvesting data.
 
-### Step 10: Check Saved Passwords
+Step 10: Check Saved Passwords
 
 Regularly audit what the browser has saved:
 
-**Chrome:**
+Chrome:
 1. Settings → Passwords
 2. Review saved passwords
 3. Click trash icon to delete suspicious entries
 
-**Firefox:**
+Firefox:
 1. Settings → Privacy & Security → Logins and Passwords
 2. Scroll down to "Saved Logins"
 3. Review and delete as needed
@@ -367,26 +367,26 @@ Look for:
 - Multiple passwords for the same site (old ones should be deleted)
 - Phishing sites that saved your real password
 
-### Step 11: Mobile Considerations
+Step 11: Mobile Considerations
 
-**iOS Autofill Risks:**
+iOS Autofill Risks:
 
 iOS asks for permission before autofilling (good). But Siri can leak passwords:
 1. Ask Siri a question
 2. Siri displays your saved passwords in suggestions
 
-**Mitigation:**
-- Settings → Siri & Search → "Ask Siri" — Toggle OFF
+Mitigation:
+- Settings → Siri & Search → "Ask Siri". Toggle OFF
 - Or use Face ID/Touch ID to lock Siri
 
-**Android Autofill Risks:**
+Android Autofill Risks:
 
 Android Autofill Provider can be exploited:
 1. Go to Settings → Passwords and autofill → Autofill service
 2. Select "None" (disable completely)
 3. Or use 1Password/Bitwarden as autofill service
 
-**iOS Alternative: Use 1Password autofill:**
+iOS Alternative: Use 1Password autofill:
 
 1. Install 1Password app
 2. Settings → Passwords & Autofill → Autofill Passwords
@@ -394,24 +394,24 @@ Android Autofill Provider can be exploited:
 
 1Password requires explicit taps to autofill, preventing silent harvesting.
 
-### Step 12: Website Hardening Checklist
+Step 12: Website Hardening Checklist
 
 If building a web app, implement:
 
 ```
-□ Set autocomplete="off" on sensitive fields
-□ Use CSP header: Content-Security-Policy: script-src 'self'
-□ Hide sensitive fields in form (don't send to client)
-□ Validate all input server-side (never trust browser)
-□ Don't use data attributes to store sensitive info
-□ Log unauthorized access attempts
-□ Implement rate limiting on form submissions
-□ Use HTTPS only (never HTTP)
-□ Set Secure + HttpOnly flags on cookies
-□ Implement CSRF tokens for form submissions
+ Set autocomplete="off" on sensitive fields
+ Use CSP header: Content-Security-Policy: script-src 'self'
+ Hide sensitive fields in form (don't send to client)
+ Validate all input server-side (never trust browser)
+ Don't use data attributes to store sensitive info
+ Log unauthorized access attempts
+ Implement rate limiting on form submissions
+ Use HTTPS only (never HTTP)
+ Set Secure + HttpOnly flags on cookies
+ Implement CSRF tokens for form submissions
 ```
 
-**Example CSP header:**
+Example CSP header:
 
 ```
 Content-Security-Policy:
@@ -429,11 +429,11 @@ This prevents:
 - External scripts (limits attack surface)
 - Forms submitting to other domains (no data exfiltration)
 
-### Step 13: Monitor Your Autofill
+Step 13: Monitor Your Autofill
 
 Track what data browsers are saving:
 
-**Create a test page (for your own devices):**
+Create a test page (for your own devices):
 
 ```html
 <!DOCTYPE html>
@@ -468,72 +468,72 @@ Track what data browsers are saving:
 
 Open this on your own computer. If autofill populates sensitive fields, disable it.
 
-### Step 14: Final Recommendations
+Step 14: Final Recommendations
 
-**Immediate Actions:**
+Immediate Actions:
 1. Disable browser autofill (password + payment methods)
 2. Delete all saved passwords from browser
 3. Delete all saved payment methods
 4. Install password manager (1Password or Bitwarden)
 5. Start saving new passwords in password manager only
 
-**Ongoing:**
+Ongoing:
 - Quarterly audit of saved passwords
 - Review browser autofill suggestions
 - Disable autofill on new devices
 - Educate family members about autofill risks
 
-**For Privacy-Focused Users:**
+For Privacy-Focused Users:
 1. Disable autofill entirely
 2. Use password manager (offline mode)
 3. Type passwords manually (or copy from password manager)
 4. Use browser without sync (no cloud password storage)
 
-**For Average Users:**
+For Average Users:
 1. Disable browser autofill
 2. Use 1Password or Bitwarden ($10/year)
 3. Accept that you'll type passwords a few more times
 
 Browser autofill is convenient but creates privacy risk. Password managers offer 95% of the convenience with 99% less risk.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to mitigate?**
+How long does it take to mitigate?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Browser Autofill Privacy Security](/browser-autofill-privacy-security-risks/)
 - [Best Password Manager For Safari Autofill](/best-password-manager-for-safari-autofill/)
@@ -541,6 +541,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Browser for iOS Privacy 2026: A Developer Guide](/best-browser-for-ios-privacy-2026/)
 - [How to Audit Browser Extensions for Privacy Risks 2026](/how-to-audit-browser-extensions-for-privacy-risks-2026/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

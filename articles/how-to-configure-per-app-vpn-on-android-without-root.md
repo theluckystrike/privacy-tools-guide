@@ -20,7 +20,7 @@ When you use a VPN on Android, you typically route all your device traffic throu
 
 The good news is that Android has built-in support for per-app VPN configuration without requiring root access. This guide walks you through setting up selective VPN routing on your Android device in 2026.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding Per App VPN on Android](#understanding-per-app-vpn-on-android)
 - [Prerequisites for Per App VPN](#prerequisites-for-per-app-vpn)
@@ -31,35 +31,35 @@ The good news is that Android has built-in support for per-app VPN configuration
 - [Security Considerations](#security-considerations)
 - [Which Apps Should Use VPN?](#which-apps-should-use-vpn)
 
-## Understanding Per App VPN on Android
+Understanding Per App VPN on Android
 
 Android's per-app VPN feature, introduced in Android 7 (Nougat) and improved in subsequent versions, allows you to create a VPN profile that only certain apps can use. This is different from a traditional VPN that routes everything through the tunnel.
 
-### Why Use Per App VPN?
+Why Use Per App VPN?
 
 There are several practical reasons to configure per-app VPN:
 
-**Bandwidth Conservation**: Streaming services like YouTube or Netflix consume massive bandwidth. By excluding them from the VPN, you can save your VPN data allowance and reduce buffering.
+Bandwidth Conservation: Streaming services like YouTube or Netflix consume massive bandwidth. By excluding them from the VPN, you can save your VPN data allowance and reduce buffering.
 
-**Local Network Access**: Smart home devices, printers, and NAS storage often require direct local network access. A full-device VPN can break this connectivity.
+Local Network Access: Smart home devices, printers, and NAS storage often require direct local network access. A full-device VPN can break this connectivity.
 
-**Performance Optimization**: Some apps don't need encryption and work faster with direct connections. Gaming apps and real-time trading applications often perform better outside VPN tunnels.
+Performance Optimization: Some apps don't need encryption and work faster with direct connections. Gaming apps and real-time trading applications often perform better outside VPN tunnels.
 
-**Split Tunneling by App**: You can route banking apps through the VPN for security while allowing other apps to connect directly.
+Split Tunneling by App: You can route banking apps through the VPN for security while allowing other apps to connect directly.
 
-## Prerequisites for Per App VPN
+Prerequisites for Per App VPN
 
 Before configuring per-app VPN, ensure you have:
 
-1. **Android 7.0 or higher** - Per-app VPN requires Android 7.0 (Nougat) or later
-2. **A VPN app** - Any VPN provider that supports the Android VPNService API
-3. **The apps you want to configure** - Know which apps need VPN and which don't
+1. Android 7.0 or higher - Per-app VPN requires Android 7.0 (Nougat) or later
+2. A VPN app - Any VPN provider that supports the Android VPNService API
+3. The apps you want to configure - Know which apps need VPN and which don't
 
-## Configuring Per App VPN Using Android's Built-in Settings
+Configuring Per App VPN Using Android's Built-in Settings
 
 Here's how to set up per-app VPN on your Android device:
 
-### Step 1: Set Up Your VPN App First
+Step 1: Set Up Your VPN App First
 
 First, install and configure your preferred VPN app from the Google Play Store. Popular options include:
 
@@ -71,7 +71,7 @@ First, install and configure your preferred VPN app from the Google Play Store. 
 
 Configure the VPN app normally and ensure it connects successfully before proceeding.
 
-### Step 2: Access VPN Settings
+Step 2: Access VPN Settings
 
 Navigate to your Android settings:
 
@@ -85,7 +85,7 @@ Or on some devices:
 Settings → Connections → VPN
 ```
 
-### Step 3: Configure Per-App VPN
+Step 3: Configure Per-App VPN
 
 For Android 11 and above:
 
@@ -101,30 +101,30 @@ For Android 10 and earlier:
 2. Select "Configure per-app VPN" or "Split tunneling"
 3. Choose apps to include or exclude
 
-### Step 4: Test Your Configuration
+Step 4: Test Your Configuration
 
 After configuring:
 
 ```bash
-# Check which apps are using VPN
-# Open your VPN app and verify connected status
-# Test with an app inside the VPN tunnel
-# Test with an app outside the VPN tunnel
+Check which apps are using VPN
+Open your VPN app and verify connected status
+Test with an app inside the VPN tunnel
+Test with an app outside the VPN tunnel
 ```
 
-## Using VPN Apps with Built-in Per-App Features
+Using VPN Apps with Built-in Per-App Features
 
 Many modern VPN apps include their own per-app configuration interfaces. Here's how to use these features:
 
-### NordVPN Split tunneling
+NordVPN Split tunneling
 
 ```bash
-# NordVPN Android app
+NordVPN Android app
 Settings → Split tunneling → Add apps
-# Select apps to exclude from VPN
+Select apps to exclude from VPN
 ```
 
-### WireGuard Configuration
+WireGuard Configuration
 
 If using WireGuard, you can configure per-app rules in the WireGuard config file:
 
@@ -139,110 +139,110 @@ PublicKey = <server-public-key>
 Endpoint = vpn.example.com:51820
 AllowedIPs = 0.0.0.0/0, ::/0
 
-# Exclude specific apps from tunnel
-# Note: This requires root on most devices
+Exclude specific apps from tunnel
+This requires root on most devices
 ExcludeApp = com.netflix.android
 ExcludeApp = com.google.android.youtube
 ```
 
-### OpenVPN for Android Per-App Settings
+OpenVPN for Android Per-App Settings
 
 ```bash
-# In OpenVPN for Android app
+In OpenVPN for Android app
 Settings → Per-app settings
-# Configure which apps connect through VPN
-# Set different rules for each profile
+Configure which apps connect through VPN
+Set different rules for each profile
 ```
 
-## Advanced: Using Sharik for Android Network Sharing
+Advanced: Using Sharik for Android Network Sharing
 
 For advanced users who want more control, Sharik is an open-source tool that can help:
 
 ```bash
-# Install Sharik from F-Droid or compile from source
-# Configure network sharing rules
-# Set per-app restrictions
+Install Sharik from F-Droid or compile from source
+Configure network sharing rules
+Set per-app restrictions
 ```
 
-## Troubleshooting Common Issues
+Troubleshooting Common Issues
 
-### Apps Not Connecting Through VPN
+Apps Not Connecting Through VPN
 
 If your selected apps aren't using the VPN:
 
-1. **Check VPN is connected**: Ensure the VPN shows as connected in the status bar
-2. **Verify app selection**: Go back to VPN settings and confirm apps are selected
-3. **Restart the VPN**: Disconnect and reconnect the VPN profile
-4. **Check app permissions**: Some apps may need VPN permission
+1. Check VPN is connected: Ensure the VPN shows as connected in the status bar
+2. Verify app selection: Go back to VPN settings and confirm apps are selected
+3. Restart the VPN: Disconnect and reconnect the VPN profile
+4. Check app permissions: Some apps may need VPN permission
 
-### VPN Connection Drops
+VPN Connection Drops
 
 To maintain stable per-app VPN:
 
 ```bash
-# Check your VPN app settings
-# Enable "Kill switch" or "Block if disconnected"
-# Enable "Always-on VPN" in Android settings
+Check your VPN app settings
+Enable "Kill switch" or "Block if disconnected"
+Enable "Always-on VPN" in Android settings
 Settings → Network & Internet → VPN → Always-on VPN
 ```
 
-### DNS Leaks in Per-App VPN
+DNS Leaks in Per-App VPN
 
 Ensure your per-app VPN is properly configured:
 
 ```bash
-# Test for DNS leaks
-# Visit https://dnsleaktest.com
-# Verify the DNS server matches your VPN provider
+Test for DNS leaks
+Visit https://dnsleaktest.com
+Verify the DNS server matches your VPN provider
 ```
 
-## Security Considerations
+Security Considerations
 
 When using per-app VPN, keep these security points in mind:
 
-1. **Always-on VPN**: Enable this feature in Android settings to prevent accidental data leaks
-2. **Kill switch**: Use a VPN app with kill switch to block traffic if VPN disconnects
-3. **Split tunneling risks**: Be careful about which apps you exclude—banking apps should typically use VPN
-4. **Verify configuration**: Regularly test that excluded apps are actually connecting directly
+1. Always-on VPN: Enable this feature in Android settings to prevent accidental data leaks
+2. Kill switch: Use a VPN app with kill switch to block traffic if VPN disconnects
+3. Split tunneling risks: Be careful about which apps you exclude, banking apps should typically use VPN
+4. Verify configuration: Regularly test that excluded apps are actually connecting directly
 
-## Which Apps Should Use VPN?
+Which Apps Should Use VPN?
 
 Here's a recommended split:
 
 | Category | Use VPN | Direct Connection |
 |----------|---------|-------------------|
-| Banking & Finance | ✅ | |
-| Messaging (Signal, WhatsApp) | ✅ | |
-| Email | ✅ | |
-| Streaming (Netflix, YouTube) | | ✅ |
-| Gaming | | ✅ |
-| Smart Home | | ✅ |
-| Social Media | ✅ | |
-| Browsing | ✅ | |
+| Banking & Finance |  | |
+| Messaging (Signal, WhatsApp) |  | |
+| Email |  | |
+| Streaming (Netflix, YouTube) | |  |
+| Gaming | |  |
+| Smart Home | |  |
+| Social Media |  | |
+| Browsing |  | |
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to configure per app vpn on android?**
+How long does it take to configure per app vpn on android?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [CalyxOS Datura Firewall Setup: Controlling Per-App.](/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
 - [Configure Private DNS on Android for System-Wide Tracker](/how-to-configure-private-dns-on-android-for-system-wide-trac/)
@@ -251,5 +251,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Android App Permissions Audit Guide 2026](/android-app-permissions-audit-guide-2026/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

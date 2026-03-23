@@ -18,7 +18,7 @@ voice-checked: true
 
 Use Privacy.com to generate unique virtual card numbers for each merchant: sign up, link your bank account, and create a new card for each online purchase with a custom spending limit (e.g., $25 per transaction, $50 monthly). If that merchant is breached, only that specific virtual card is exposed while your real bank account remains protected. Pause or delete cards instantly without contacting your bank. This prevents merchant profiling and cross-site tracking while protecting against credential theft.
 
-## Table of Contents
+Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Advanced Usage Patterns](#advanced-usage-patterns)
@@ -26,7 +26,7 @@ Use Privacy.com to generate unique virtual card numbers for each merchant: sign 
 - [Practical Example: Developer Subscription Management](#practical-example-developer-subscription-management)
 - [Troubleshooting](#troubleshooting)
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -36,20 +36,20 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: What Privacy.com Virtual Cards Offer
+Step 1: What Privacy.com Virtual Cards Offer
 
 Privacy.com creates card numbers that function like regular debit cards but with crucial differences:
 
-- **Merchant-specific cards**: Generate unique card numbers for each merchant
-- **Spending limits**: Set hard caps on any card—per transaction and monthly
-- **Card pausing/cancellation**: Instantly freeze or delete a card without affecting your bank account
-- **Transaction tracking**: Each virtual card shows exactly where it's been used
+- Merchant-specific cards: Generate unique card numbers for each merchant
+- Spending limits: Set hard caps on any card, per transaction and monthly
+- Card pausing/cancellation: Instantly freeze or delete a card without affecting your bank account
+- Transaction tracking: Each virtual card shows exactly where it's been used
 
 Unlike traditional credit cards, these virtual numbers don't contain your actual account details. When a merchant experiences a breach, your real bank account remains protected.
 
-### Step 2: Set Up Your Account
+Step 2: Set Up Your Account
 
-To use Privacy.com, you need a US bank account—currently the service only supports US-based financial institutions. The setup process:
+To use Privacy.com, you need a US bank account, currently the service only supports US-based financial institutions. The setup process:
 
 1. Create an account at privacy.com
 2. Connect your bank account via Plaid (secure bank linking)
@@ -58,19 +58,19 @@ To use Privacy.com, you need a US bank account—currently the service only supp
 
 Once verified, you can create unlimited virtual cards through their web dashboard or mobile app.
 
-### Step 3: Create Cards Through the Dashboard
+Step 3: Create Cards Through the Dashboard
 
 The web interface offers straightforward card creation:
 
 1. Log into your Privacy.com dashboard
 2. Click "Create Card"
-3. Choose between a **single-use** card (one transaction only) or **merchant-locked** card (usable only at specific merchants)
+3. Choose between a single-use card (one transaction only) or merchant-locked card (usable only at specific merchants)
 4. Set spending limits if desired
 5. Name your card for easy tracking
 
 For anonymous purchases, single-use cards with no merchant lock provide the strongest privacy guarantee. The card becomes useless after one transaction, meaning even if the merchant database is compromised, there's nothing valuable to steal.
 
-### Step 4: Developer Integration: The Privacy.com API
+Step 4: Developer Integration: The Privacy.com API
 
 For power users and developers, Privacy.com offers API access that enables programmatic card generation. This proves valuable for:
 
@@ -116,9 +116,9 @@ console.log(`Use card: ${card.cardNumber} ${card.expMonth}/${card.expYear}`);
 
 The API returns full card details usable at any merchant that accepts Visa or Mastercard.
 
-## Advanced Usage Patterns
+Advanced Usage Patterns
 
-### Subscription Management
+Subscription Management
 
 Create separate cards for each subscription service:
 
@@ -145,12 +145,12 @@ for (const sub of subscriptions) {
 
 If any service raises prices or experiences a breach, you cancel just that specific card.
 
-### One-Time Purchase Workflow
+One-Time Purchase Workflow
 
 For maximum anonymity on single purchases:
 
 ```python
-# Python example using Privacy.com API
+Python example using Privacy.com API
 import os
 from privacy import PrivacyClient
 
@@ -171,25 +171,25 @@ def create_anon_card(amount_cents):
         "cvv": card.cvv
     }
 
-# Create $25 single-use card
+Create $25 single-use card
 card = create_anon_card(2500)
 print(f"Card: {card['number']} {card['exp']} CVV: {card['cvv']}")
 ```
 
 The `max_interval: "TRANSACTION"` setting ensures the card works exactly once, regardless of amount.
 
-## Security Considerations
+Security Considerations
 
 While virtual cards enhance privacy, understand their limitations:
 
-- **KYC requirements**: Privacy.com still requires identity verification
-- **Bank linkage**: Your bank sees Privacy.com transactions
-- **Not anonymous cash**: Law enforcement can subpoena records
-- **Merchant compatibility**: Some merchants reject virtual cards
+- KYC requirements: Privacy.com still requires identity verification
+- Bank linkage: Your bank sees Privacy.com transactions
+- Not anonymous cash: Law enforcement can subpoena records
+- Merchant compatibility: Some merchants reject virtual cards
 
 For true anonymity, combine virtual cards with other tools like privacy-focused email aliases (addy.io, SimpleLogin) and VPN services.
 
-## Practical Example: Developer Subscription Management
+Practical Example: Developer Subscription Management
 
 Here's a complete workflow for managing multiple developer tool subscriptions:
 
@@ -242,55 +242,55 @@ await manager.provisionCard('vercel-pro', 20000);      // $200 limit
 
 This approach gives you granular control over every subscription, easy cancellation if prices increase, and protection if any service is compromised.
 
-### Step 5: When Virtual Cards Make Sense
+Step 5: When Virtual Cards Make Sense
 
 Virtual cards excel in these scenarios:
 
-- **Trial subscriptions**: Create cards with short expiry to prevent auto-renewal
-- **Untrusted merchants**: New services or unfamiliar websites
-- **Subscription management**: Track exactly what each service costs
-- **Data breach protection**: Limit exposure if any merchant is hacked
+- Trial subscriptions: Create cards with short expiry to prevent auto-renewal
+- Untrusted merchants: New services or unfamiliar websites
+- Subscription management: Track exactly what each service costs
+- Data breach protection: Limit exposure if any merchant is hacked
 
 They add friction for subscription management but reduce long-term risk significantly.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use virtual credit card numbers from privacy com?**
+How long does it take to use virtual credit card numbers from privacy com?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How To Protect Credit Card From Being Skimmed Online Shoppin](/how-to-protect-credit-card-from-being-skimmed-online-shoppin/)
 - [What to Do If Your Credit Card Was Used Fraudulently Online](/what-to-do-if-your-credit-card-was-used-fraudulently-online/)
@@ -299,5 +299,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Use Masked Credit Cards For Online Purchases Privacy](/how-to-use-masked-credit-cards-for-online-purchases-privacy-/)
 - [Best AI Coding Tool Free Trial Longest No Credit](https://bestremotetools.com/best-ai-coding-tool-free-trial-longest-no-credit-card/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

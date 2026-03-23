@@ -17,19 +17,19 @@ intent-checked: true
 
 GDPR Article 17 right to erasure requires companies to delete data within 30 days when you withdraw consent, data becomes unnecessary, or processing is unlawful. Send formal requests explicitly referencing the regulation (not generic "delete my account"), escalate to Data Protection Authorities (ICO, CNIL, AEPD) when companies ignore you, and file compensation claims under Article 82 for damages from non-compliance. Verify deletion by requesting subject access exports afterward (should return empty), and use email aliases per service to track which companies have your data.
 
-# Deletion verification checklist
+Deletion verification checklist
 
 EMAIL="user@example.com"
 SERVICE="example-company.com"
 
 echo "=== GDPR Deletion Verification ==="
 
-# 1.
-- **Verify deletion by requesting**: subject access exports afterward (should return empty), and use email aliases per service to track which companies have your data.
-- **> > If you**: do not respond within one month or refuse to delete my data, I will file a complaint with the relevant supervisory authority.
-- **Use email aliases**: Create aliases like `service+eraser@gmail.com` for each service.
+1.
+- Verify deletion by requesting: subject access exports afterward (should return empty), and use email aliases per service to track which companies have your data.
+- > > If you: do not respond within one month or refuse to delete my data, I will file a complaint with the relevant supervisory authority.
+- Use email aliases: Create aliases like `service+eraser@gmail.com` for each service.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding Your Rights Under Article 17](#understanding-your-rights-under-article-17)
 - [Step 1: Identify What Data Companies Hold](#step-1-identify-what-data-companies-hold)
@@ -42,7 +42,7 @@ echo "=== GDPR Deletion Verification ==="
 - [Verifying Deletion Beyond Account Removal](#verifying-deletion-beyond-account-removal)
 - [Escalation Decision Tree](#escalation-decision-tree)
 
-## Understanding Your Rights Under Article 17
+Understanding Your Rights Under Article 17
 
 The GDPR right to erasure isn't absolute, but it covers most situations where you'd reasonably want your data gone. You can request deletion when:
 
@@ -54,12 +54,12 @@ The GDPR right to erasure isn't absolute, but it covers most situations where yo
 
 Companies cannot simply ignore these requests. They must respond within one month and actually delete your data, not just mark it as "inactive" in their systems.
 
-## Step 1: Identify What Data Companies Hold
+Step 1: Identify What Data Companies Hold
 
 Before sending erasure requests, understand what companies typically collect. For developers and technical users, this process involves thinking through data storage systems:
 
 ```python
-# Example: Common data categories to request deletion for
+Common data categories to request deletion for
 data_categories = [
     "account_credentials",
     "profile_information",
@@ -76,12 +76,12 @@ data_categories = [
 
 Every service you use likely stores some combination of these. Make a list of every service you've signed up for, then prioritize based on how much data you've shared and how sensitive it is.
 
-## Step 2: Send Formal Erasure Requests
+Step 2: Send Formal Erasure Requests
 
 Generic "delete my account" requests often get lost in customer support tickets. Use explicit language referencing GDPR Article 17:
 
 ```bash
-# Example: curl command to send deletion request via API (if available)
+curl command to send deletion request via API (if available)
 curl -X DELETE "https://api.example.com/v1/user/data" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
@@ -94,7 +94,7 @@ curl -X DELETE "https://api.example.com/v1/user/data" \
 
 For services without API access, send emails using this structure:
 
-> **Subject:** GDPR Article 17 Erasure Request - [Your Email/Account ID]
+> Subject: GDPR Article 17 Erasure Request - [Your Email/Account ID]
 >
 > Dear Data Protection Officer,
 >
@@ -114,14 +114,14 @@ For services without API access, send emails using this structure:
 > [Your Email]
 > [Account ID if known]
 
-## Step 3: Escalate When Companies Ignore You
+Step 3: Escalate When Companies Ignore You
 
 Many companies hope you'll give up. GDPR gives you enforcement options:
 
-**Stage 1: Follow Up**
+Stage 1: Follow Up
 Document every interaction. After one month with no response, send a second email noting the deadline violation. Many companies have automated systems that prioritize follow-up tickets.
 
-**Stage 2: File a Complaint**
+Stage 2: File a Complaint
 If a company refuses or ignores your request, file a complaint with the Data Protection Authority (DPA) in your country. The process is typically free and online:
 
 - UK: ICO (Information Commissioner's Office)
@@ -135,15 +135,15 @@ When filing, include:
 - Dates of all correspondence
 - Any response (or lack thereof)
 
-**Stage 3: Demand Compensation**
+Stage 3: Demand Compensation
 Under GDPR Article 82, you can claim compensation for material and non-material damage caused by data protection violations. This includes distress from knowing your data remains in systems you explicitly asked to be deleted.
 
-## How to Verify Deletion
+How to Verify Deletion
 
-A company claims they deleted your data—how do you verify this? Technical users can check through multiple channels:
+A company claims they deleted your data, how do you verify this? Technical users can check through multiple channels:
 
 ```python
-# Pseudocode for deletion verification checklist
+Pseudocode for deletion verification checklist
 def verify_deletion(company_name, email):
     checks = []
 
@@ -168,9 +168,9 @@ def verify_deletion(company_name, email):
 
 Request a complete data export (your right under GDPR Article 15) after your erasure request. If they still return any personal data, the erasure was incomplete.
 
-## Special Cases and Limitations
+Special Cases and Limitations
 
-**Data That Cannot Be Fully Deleted:**
+Data That Cannot Be Fully Deleted:
 - Financial records required for tax purposes (typically 7-10 years)
 - Legal obligations to retain certain data
 - Data essential for contract fulfillment
@@ -178,32 +178,32 @@ Request a complete data export (your right under GDPR Article 15) after your era
 
 However, companies must still delete data beyond what's strictly necessary for these purposes.
 
-**Third-Party Data Sharing:**
+Third-Party Data Sharing:
 Under Article 17, companies must inform third parties about your erasure request when technically feasible. Request a list of all third parties they've shared your data with, then send direct erasure requests to each.
 
-**Services That Claim Inability to Delete:**
+Services That Claim Inability to Delete:
 Some companies claim data is "anonymized" and therefore exempt. Ask for proof of anonymization methodology. True anonymization under GDPR means the data cannot be re-identified even when combined with other data sources.
 
-## Practical Tips for Power Users
+Practical Tips for Power Users
 
 Use these strategies to minimize your data footprint and make future erasure requests easier:
 
-1. **Use email aliases**: Create aliases like `service+eraser@gmail.com` for each service. This makes it easy to identify which company leaked or sold your data.
+1. Use email aliases: Create aliases like `service+eraser@gmail.com` for each service. This makes it easy to identify which company leaked or sold your data.
 
-2. **Document everything**: Keep records of what you signed up for, when, and what data you provided. This makes erasure requests faster and helps if you need to file complaints.
+2. Document everything: Keep records of what you signed up for, when, and what data you provided. This makes erasure requests faster and helps if you need to file complaints.
 
-3. **Check HaveIBeenPwned regularly**: This service tracks data breaches. If your data appears in a breach, you know exactly which companies to target for erasure.
+3. Check HaveIBeenPwned regularly: This service tracks data breaches. If your data appears in a breach, you know exactly which companies to target for erasure.
 
-4. **Use deletion reminders**: Add calendar events for services you plan to delete. The longer data sits in a system, the more likely it's been backed up, shared, or processed in ways that complicate deletion.
+4. Use deletion reminders: Add calendar events for services you plan to delete. The longer data sits in a system, the more likely it's been backed up, shared, or processed in ways that complicate deletion.
 
-5. **Automate where possible**: Some privacy tools can send GDPR requests automatically. For developers, building automation for recurring erasure requests across services saves significant time.
+5. Automate where possible: Some privacy tools can send GDPR requests automatically. For developers, building automation for recurring erasure requests across services saves significant time.
 
-## Automating Erasure Requests at Scale
+Automating Erasure Requests at Scale
 
 Developers can automate deletion workflows for managing multiple accounts:
 
 ```python
-# Automated GDPR erasure request system
+Automated GDPR erasure request system
 
 import requests
 import json
@@ -324,43 +324,43 @@ class AutomatedErasureRequester:
         with open(self.log_file, 'a') as f:
             f.write(json.dumps(result) + '\n')
 
-# Usage
+Usage
 requester = AutomatedErasureRequester('user@example.com')
 
-# Send requests to multiple services
+Send requests to multiple services
 services = ['google', 'meta', 'amazon']
 for service in services:
     response = requester.send_erasure_request(service)
     print(f"{service}: {response['status']}")
 
-# Track compliance deadlines
+Track compliance deadlines
 compliance_status = requester.track_compliance()
 for item in compliance_status:
     print(f"{item['service']}: {item['status']}")
 ```
 
-## Verifying Deletion Beyond Account Removal
+Verifying Deletion Beyond Account Removal
 
 Companies sometimes hide data rather than delete it. Verify actual deletion:
 
 ```bash
 #!/bin/bash
-# Deletion verification checklist
+Deletion verification checklist
 
 EMAIL="user@example.com"
 SERVICE="example-company.com"
 
 echo "=== GDPR Deletion Verification ==="
 
-# 1. Confirm account is gone
+1. Confirm account is gone
 echo "1. Testing account access..."
 if curl -s "$SERVICE/login" | grep -q "user not found"; then
-    echo "   ✓ Account removed from active database"
+    echo "    Account removed from active database"
 else
-    echo "   ✗ Account still exists"
+    echo "    Account still exists"
 fi
 
-# 2. Check for data in data brokers
+2. Check for data in data brokers
 echo "2. Checking data broker databases..."
 services=(
     "haveibeenpwned.com"
@@ -369,13 +369,13 @@ services=(
 )
 for broker in "${services[@]}"; do
     if curl -s "$broker/search?q=$EMAIL" | grep -q "results"; then
-        echo "   ⚠ Data found in $broker - request removal"
+        echo "    Data found in $broker - request removal"
     fi
 done
 
-# 3. Request complete data export
+3. Request complete data export
 echo "3. Requesting Subject Access export..."
-# Use the SAR (Subject Access Request) API endpoint
+Use the SAR (Subject Access Request) API endpoint
 curl -X POST "$SERVICE/api/data-rights/export" \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json" \
@@ -383,25 +383,25 @@ curl -X POST "$SERVICE/api/data-rights/export" \
   > export.json
 
 if [ ! -s export.json ] || grep -q "no data" export.json; then
-    echo "   ✓ No personal data returned"
+    echo "    No personal data returned"
 else
-    echo "   ✗ Data still exists in systems"
+    echo "    Data still exists in systems"
     echo "     File DPA complaint for non-compliance"
 fi
 
-# 4. Check for cached copies
+4. Check for cached copies
 echo "4. Checking for cached data..."
 if curl -s "https://web.archive.org/web/*/example.com/profile/$EMAIL" | grep -q "404"; then
-    echo "   ✓ Archive.org doesn't have cached profile"
+    echo "    Archive.org doesn't have cached profile"
 else
-    echo "   ⚠ Internet Archive has cached copy"
+    echo "    Internet Archive has cached copy"
     echo "     Submit removal request to archive.org"
 fi
 
 echo "=== Verification Complete ==="
 ```
 
-## Escalation Decision Tree
+Escalation Decision Tree
 
 When companies refuse deletion, follow this escalation path:
 
@@ -409,19 +409,19 @@ When companies refuse deletion, follow this escalation path:
 Deletion Request Sent
     ↓
 [30 days pass]
-    ├─→ NO RESPONSE: Send follow-up (Email #2)
-    │       ↓
-    │   [5 days more]
-    │       ├─→ NO RESPONSE: File DPA Complaint (→ Complaint)
-    │       └─→ PARTIAL RESPONSE: Request clarification
-    │
-    ├─→ REFUSAL: Review refusal justification
-    │       ├─→ Legitimate refusal (legal obligation): Accept
-    │       └─→ Illegitimate refusal: File DPA Complaint
-    │
-    └─→ COMPLIANCE: Verify deletion
-            ├─→ VERIFIED: Complete
-            └─→ NOT VERIFIED: File DPA Complaint + Article 82 claim
+    → NO RESPONSE: Send follow-up (Email #2)
+           ↓
+       [5 days more]
+           → NO RESPONSE: File DPA Complaint (→ Complaint)
+           → PARTIAL RESPONSE: Request clarification
+    
+    → REFUSAL: Review refusal justification
+           → Legitimate refusal (legal obligation): Accept
+           → Illegitimate refusal: File DPA Complaint
+    
+    → COMPLIANCE: Verify deletion
+            → VERIFIED: Complete
+            → NOT VERIFIED: File DPA Complaint + Article 82 claim
 
 DPA Complaint Process:
     → Submit to local DPA (ICO, CNIL, AEPD, etc.)
@@ -435,29 +435,29 @@ Article 82 Compensation Claim (parallel to DPA):
     → European courts increasingly award €500-2000 per violation
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to force companies to delete all?**
+How long does it take to force companies to delete all?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How To Request Data Deletion From Companies Not Covered](/how-to-request-data-deletion-from-companies-not-covered-by-g/)
 - [How To File Gdpr Complaint Against Company That Refuses](/how-to-file-gdpr-complaint-against-company-that-refuses-to-d/)
@@ -465,4 +465,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Gdpr Data Breach Notification Rights What Company Must](/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
 - [GDPR Legitimate Interest: What Companies Can Do](/gdpr-legitimate-interest-what-companies-can-do-with-your-dat/)
 - [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://bestremotetools.com/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

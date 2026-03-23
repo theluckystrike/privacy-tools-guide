@@ -20,7 +20,7 @@ V2Ray is a powerful network proxy tool that supports multiple protocols, includi
 
 This guide walks through setting up V2Ray with VMess from scratch. You'll learn how to configure both the server and client components, test the connection, and optimize settings for performance and security.
 
-## Table of Contents
+Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Security Considerations](#security-considerations)
@@ -28,7 +28,7 @@ This guide walks through setting up V2Ray with VMess from scratch. You'll learn 
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 - [Getting Started](#getting-started)
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -38,18 +38,18 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand the Architecture
+Step 1: Understand the Architecture
 
 V2Ray operates on a client-server model. The server runs on a machine outside the restricted region (such as a VPS in Hong Kong, Japan, or Singapore), and the client runs on your local machine or network. When you connect to a blocked website, the traffic routes through the V2Ray server, bypassing regional restrictions.
 
 The VMess protocol uses UUID-based authentication and supports dynamic port allocation. Each user has a unique UUID that identifies them to the server. The protocol also includes anti-replay mechanisms and traffic obfuscation to prevent detection.
 
-### Step 2: Install V2Ray
+Step 2: Install V2Ray
 
 The installation process varies by operating system. For most Linux distributions, use the official installation script:
 
 ```bash
-# Download and run the official installation script
+Download and run the official installation script
 sudo bash -c "$(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)" @ install-release.sh
 ```
 
@@ -69,7 +69,7 @@ v2ray --version
 
 This command should output the version number, confirming a successful installation.
 
-### Step 3: Configure the Server
+Step 3: Configure the Server
 
 Create a configuration file at `/etc/v2ray/config.json` on your server. This file defines how V2Ray handles incoming connections.
 
@@ -109,14 +109,14 @@ The `alterId` parameter determines the number of alternative IDs used for traffi
 Start the V2Ray service:
 
 ```bash
-# Linux with systemd
+Linux with systemd
 sudo systemctl start v2ray
 sudo systemctl enable v2ray
 
-# Linux without systemd
+Linux without systemd
 sudo v2ray -config /etc/v2ray/config.json
 
-# macOS
+macOS
 brew services start v2ray
 ```
 
@@ -128,7 +128,7 @@ sudo systemctl status v2ray
 
 The service should show as active and running.
 
-### Step 4: Configure the Client
+Step 4: Configure the Client
 
 On your local machine, create a client configuration file. The structure is similar to the server config but includes an outbound connection to your server.
 
@@ -176,7 +176,7 @@ Start the client:
 v2ray -config ~/.v2ray/config.json
 ```
 
-### Step 5: Test the Connection
+Step 5: Test the Connection
 
 With both server and client running, test the connection by routing traffic through the local SOCKS proxy. The client listens on port 1080 by default.
 
@@ -203,11 +203,11 @@ curl --socks5 127.0.0.1:1080 https://api.ipify.org?format=json
 
 The returned IP should match your server's IP, not your local machine's IP.
 
-### Step 6: Optimizing Performance
+Step 6: Optimizing Performance
 
 Several settings improve V2Ray performance and reliability.
 
-### Enabling Mux
+Enabling Mux
 
 Mux (multiplexing) creates multiple TCP connections over a single underlying connection, reducing latency and improving throughput:
 
@@ -233,7 +233,7 @@ Mux (multiplexing) creates multiple TCP connections over a single underlying con
 
 The `concurrency` parameter controls how many connections the multiplexer uses. Values between 4 and 16 work well for most connections.
 
-### Using WebSocket Transport
+Using WebSocket Transport
 
 For better circumvention capabilities, use WebSocket as the transport layer instead of raw TCP:
 
@@ -289,7 +289,7 @@ Client configuration must match:
 
 This configuration wraps VMess traffic inside WebSocket frames, making it harder to distinguish from regular web traffic.
 
-## Security Considerations
+Security Considerations
 
 Several practices improve the security of your V2Ray deployment.
 
@@ -317,7 +317,7 @@ sudo ufw enable
 
 Only allow connections on the specific port V2Ray uses.
 
-## Advanced: Running Behind Nginx
+Advanced: Running Behind Nginx
 
 For additional flexibility, run V2Ray behind a Nginx reverse proxy. This allows you to serve a legitimate website alongside your proxy server.
 
@@ -343,7 +343,7 @@ server {
 
 This setup lets you use port 443 (the standard HTTPS port) for both your website and the V2Ray proxy.
 
-## Troubleshooting Common Issues
+Troubleshooting Common Issues
 
 Connection failures often stem from configuration mismatches. Double-check that the UUID on your client exactly matches the server configuration, including hyphens.
 
@@ -357,7 +357,7 @@ sudo iptables -L -n | grep 10086
 
 No output indicates the rule is missing or traffic is being blocked.
 
-## Getting Started
+Getting Started
 
 Begin by setting up a VPS in a region with good connectivity to your location. Many providers offer servers in Hong Kong, Tokyo, or Singapore that work well for users in mainland China.
 
@@ -367,29 +367,29 @@ Test your setup thoroughly before relying on it for important work. Verify DNS r
 
 The configuration in this guide provides a foundation. As you become familiar with V2Ray's capabilities, you can explore additional features like routing rules, traffic statistics, and load balancing across multiple servers.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to set up v2ray vmess for accessing blocked websites?**
+How long does it take to set up v2ray vmess for accessing blocked websites?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Best VPN for Expats in UAE Accessing VoIP 2026](/best-vpn-for-expats-in-uae-accessing-voip-2026/)
 - [VPN for Accessing US Pharmacy Websites from Europe Safely](/vpn-for-accessing-us-pharmacy-websites-from-europe-safely/)
@@ -397,5 +397,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [China Censorship Circumvention Tool Comparison Shadowsocks](/china-censorship-circumvention-tool-comparison-shadowsocks-v/)
 - [VPN for Accessing US Sports Streaming from Europe 2026](/vpn-for-accessing-us-sports-streaming-from-europe-2026/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -18,7 +18,7 @@ voice-checked: true
 
 Nextcloud Talk provides a self-hosted video conferencing solution that gives you complete control over your communication infrastructure. Unlike cloud-based alternatives, your data stays on your servers, making it an attractive option for privacy-conscious developers and organizations with compliance requirements. This guide walks through the complete setup process, from basic installation to advanced configurations that optimize performance for production environments.
 
-## Table of Contents
+Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Server Requirements and Installation](#server-requirements-and-installation)
@@ -26,7 +26,7 @@ Nextcloud Talk provides a self-hosted video conferencing solution that gives you
 - [Recording and Compliance](#recording-and-compliance)
 - [Troubleshooting](#troubleshooting)
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -36,13 +36,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand Nextcloud Talk Architecture
+Step 1: Understand Nextcloud Talk Architecture
 
 Nextcloud Talk uses WebRTC for peer-to-peer communication, which means video streams flow directly between participants when possible. However, NAT traversal and firewall configurations often require relay servers to ensure connectivity. The system consists of three main components: the Nextcloud server with the Talk app installed, a signaling server (built into Nextcloud), and TURN/STUN servers for media relay.
 
-The signaling server coordinates connection establishment between clients, while STUN servers help endpoints discover their public IP addresses. When direct peer-to-peer connections fail—typically due to symmetric NAT or firewall restrictions—TURN servers relay the media traffic through an intermediary. Proper configuration of these components determines call quality and reliability.
+The signaling server coordinates connection establishment between clients, while STUN servers help endpoints discover their public IP addresses. When direct peer-to-peer connections fail, typically due to symmetric NAT or firewall restrictions, TURN servers relay the media traffic through an intermediary. Proper configuration of these components determines call quality and reliability.
 
-## Server Requirements and Installation
+Server Requirements and Installation
 
 For a basic installation, ensure your Nextcloud instance meets these minimum requirements: PHP 8.1 or higher, at least 2GB RAM, and the PHP extensions `bcmath`, `gmp`, and `bz2`. Install the Talk app directly from the Nextcloud App Store or enable it via the command line:
 
@@ -51,9 +51,9 @@ occ app:install spreed
 occ app:enable spreed
 ```
 
-After installation, navigate to **Settings > Administration > Talk** in your Nextcloud dashboard to configure basic options. The default settings work for small deployments, but production environments require additional tuning.
+After installation, navigate to Settings > Administration > Talk in your Nextcloud dashboard to configure basic options. The default settings work for small deployments, but production environments require additional tuning.
 
-### Step 2: Configure TURN Servers for Reliable Connectivity
+Step 2: Configure TURN Servers for Reliable Connectivity
 
 The most critical configuration for video call success is the TURN server setup. Without properly configured TURN servers, participants behind corporate firewalls or NAT cannot establish connections. The public STUN server list maintained by Nextcloud provides basic functionality, but production deployments should run their own TURN server.
 
@@ -83,18 +83,18 @@ netstat -tulpn | grep 3478
 
 Return to Nextcloud Talk settings and enter your TURN server details:
 
-- **TURN server:** `turn:your-domain.com:3478`
-- **TURN secret:** Your generated secret
-- **STUN server:** `stun:your-domain.com:3478`
+- TURN server: `turn:your-domain.com:3478`
+- TURN secret: Your generated secret
+- STUN server: `stun:your-domain.com:3478`
 
 For high availability, configure multiple TURN servers using a load balancer or specify multiple entries in the Nextcloud settings.
 
-### Step 3: Firewall and Network Configuration
+Step 3: Firewall and Network Configuration
 
 Firewall rules often block the UDP ports required for WebRTC. Configure your firewall to allow:
 
 ```bash
-# STUN/TURN ports
+STUN/TURN ports
 iptables -A INPUT -p udp --dport 3478 -j ACCEPT
 iptables -A INPUT -p udp --dport 5349 -j ACCEPT
 iptables -A INPUT -p tcp --dport 3478 -j ACCEPT
@@ -109,12 +109,12 @@ iptables -A INPUT -p udp --dport 32768:60999 -j ACCEPT
 
 For organizations with strict outbound restrictions, you may need to allow traffic to external TURN servers. Document the required ports and IP ranges, noting that UDP is preferred but TCP fallback improves compatibility.
 
-### Step 4: Optimizing Performance for Large Calls
+Step 4: Optimizing Performance for Large Calls
 
-Nextcloud Talk handles group calls differently than one-on-one conversations. For calls with more than a few participants, the system uses a Selective Forwarding Unit (SFU) architecture that reduces client-side processing requirements. Enable these settings in **Settings > Administration > Talk > Advanced settings**:
+Nextcloud Talk handles group calls differently than one-on-one conversations. For calls with more than a few participants, the system uses a Selective Forwarding Unit (SFU) architecture that reduces client-side processing requirements. Enable these settings in Settings > Administration > Talk > Advanced settings:
 
 ```php
-# In config.php for performance tuning
+In config.php for performance tuning
 'spreed' => [
     'stun-servers' => ['stun:your-domain.com:3478'],
     'turn-servers' => [
@@ -128,7 +128,7 @@ Nextcloud Talk handles group calls differently than one-on-one conversations. Fo
 
 The `max-attendees` setting prevents resource exhaustion on shared hosting environments. For dedicated servers, values up to 200 work well depending on available CPU and bandwidth.
 
-### Step 5: Integrate with External Authentication
+Step 5: Integrate with External Authentication
 
 For organizations using existing identity providers, Nextcloud Talk supports OAuth2 and SAML integration. Configure external storage in your `config.php`:
 
@@ -143,7 +143,7 @@ For organizations using existing identity providers, Nextcloud Talk supports OAu
 
 This integration allows single sign-on across your communication tools while maintaining audit logs for compliance requirements.
 
-## Monitoring and Troubleshooting
+Monitoring and Troubleshooting
 
 After deployment, establish monitoring for key metrics: concurrent call count, average call duration, and connection success rates. Nextcloud provides logging via the admin interface, but for detailed diagnostics, enable debug mode temporarily:
 
@@ -154,11 +154,11 @@ After deployment, establish monitoring for key metrics: concurrent call count, a
 
 Common issues and solutions include:
 
-- **One-way audio:** Usually indicates firewall blocking UDP return traffic. Verify outbound rules allow ephemeral ports.
-- **Call connection failures:** Check TURN server connectivity with `nc -zvu your-domain.com 3478`
-- **Poor video quality:** Enable hardware encoding if available; check bandwidth between participants and TURN servers.
+- One-way audio: Usually indicates firewall blocking UDP return traffic. Verify outbound rules allow ephemeral ports.
+- Call connection failures: Check TURN server connectivity with `nc -zvu your-domain.com 3478`
+- Poor video quality: Enable hardware encoding if available; check bandwidth between participants and TURN servers.
 
-### Step 6: Scripted Deployment with Ansible
+Step 6: Scripted Deployment with Ansible
 
 For repeatable deployments, use configuration management tools. Here's an Ansible task for TURN server setup:
 
@@ -177,7 +177,7 @@ For repeatable deployments, use configuration management tools. Here's an Ansibl
 
 This approach ensures consistent configuration across development, staging, and production environments while maintaining documentation in code.
 
-### Step 7: Scaling Beyond Single Server
+Step 7: Scaling Beyond Single Server
 
 As usage grows, consider separating components onto dedicated infrastructure. The signaling component can be scaled horizontally behind a load balancer, while TURN servers benefit from anycast routing to minimize latency. Nextcloud Enterprise provides optimized container images for Kubernetes deployment.
 
@@ -185,11 +185,11 @@ For most small to medium deployments, a single well-configured server handles 50
 
 Nextcloud Talk delivers capable video conferencing without sacrificing data sovereignty. With proper TURN server configuration and network setup, you gain a reliable communication platform under your complete control.
 
-### Step 8: WebRTC Protocol Deep-Dive
+Step 8: WebRTC Protocol Deep-Dive
 
 Understanding WebRTC internals helps optimize Nextcloud Talk:
 
-### ICE Candidate Gathering
+ICE Candidate Gathering
 
 WebRTC gathers multiple candidate addresses for connection:
 
@@ -211,7 +211,7 @@ const icePriorityRanking = [
 ];
 ```
 
-### DTLS-SRTP Encryption
+DTLS-SRTP Encryption
 
 Media streams use DTLS (Datagram TLS) for encryption:
 
@@ -234,12 +234,12 @@ Configuration in Nextcloud:
 ],
 ```
 
-### Step 9: Media Codec Selection and Quality
+Step 9: Media Codec Selection and Quality
 
 Codec choice affects quality, bandwidth, and CPU usage:
 
 ```bash
-# Nextcloud Talk supported codecs:
+Nextcloud Talk supported codecs:
 
 Video Codecs:
 - VP8 (baseline compatibility, lower CPU)
@@ -252,7 +252,7 @@ Audio Codecs:
 - PCMU (legacy, ~64kbps)
 - PCMA (legacy, ~64kbps)
 
-# Configure codec preferences in config.php
+Configure codec preferences in config.php
 'media_providers' => [
     'video_codec_vp8' => true,
     'video_codec_vp9' => true,
@@ -260,53 +260,53 @@ Audio Codecs:
 ],
 ```
 
-### Step 10: Bandwidth Management and QoS
+Step 10: Bandwidth Management and QoS
 
 Control bandwidth usage to prevent network saturation:
 
 ```bash
-# Configure bandwidth limits per call
-# In config.php:
+Configure bandwidth limits per call
+In config.php:
 'spreed' => [
     'video_bitrate_limit' => 2500000,  // 2.5 Mbps
     'audio_bitrate_limit' => 128000,   // 128 kbps
 ],
 
-# Linux: tc (traffic control) for QoS
+Linux: tc (traffic control) for QoS
 tc qdisc add dev eth0 root tbf rate 10mbit burst 32kbit latency 400ms
 
-# Monitor real-time bandwidth
+Monitor real-time bandwidth
 iftop -n -i eth0
 
-# Check Nextcloud-specific bandwidth
+Check Nextcloud-specific bandwidth
 netstat -an | grep established | wc -l
 ```
 
-## Recording and Compliance
+Recording and Compliance
 
 Nextcloud Talk can record calls for compliance:
 
 ```bash
-# Enable recording
+Enable recording
 occ config:app:set spreed recording_enabled --value=yes
 
-# Set recording format
+Set recording format
 occ config:app:set spreed recording_format --value=mp4
 
-# Configure storage location
+Configure storage location
 occ config:app:set spreed recording_path --value=/mnt/secure-storage/recordings
 
-# Encrypt recordings at rest
+Encrypt recordings at rest
 openssl enc -aes-256-cbc -e -in call-recording.mp4 -out call-recording.mp4.enc
 ```
 
-### Step 11: Integration with Chatbot Services
+Step 11: Integration with Chatbot Services
 
 Automate meeting features with bots:
 
 ```bash
-# Nextcloud Talk Bot API
-# Register bot webhook
+Nextcloud Talk Bot API
+Register bot webhook
 curl -X POST https://nextcloud.example.com/ocs/v2.php/apps/spreed/api/v1/bots/start \
     -u admin:password \
     -H "OCS-APIREQUEST: true" \
@@ -315,19 +315,19 @@ curl -X POST https://nextcloud.example.com/ocs/v2.php/apps/spreed/api/v1/bots/st
         "webhook": "https://your-bot-server/webhook"
     }'
 
-# Bot webhook receives events:
-# - conversation started
-# - user joined
-# - user left
-# - message sent
+Bot webhook receives events:
+- conversation started
+- user joined
+- user left
+- message sent
 ```
 
-### Step 12: High-Availability Deployment
+Step 12: High-Availability Deployment
 
 For production, ensure redundancy:
 
 ```yaml
-# Docker Compose HA setup
+Docker Compose HA setup
 version: '3.8'
 services:
   nextcloud1:
@@ -372,7 +372,7 @@ volumes:
   redis-data:
 ```
 
-### Step 13: Security Hardening for Talk
+Step 13: Security Hardening for Talk
 
 Additional hardening measures:
 
@@ -397,17 +397,17 @@ Additional hardening measures:
 ],
 ```
 
-### Step 14: Mobile App Optimization
+Step 14: Mobile App Optimization
 
 Optimize for mobile clients:
 
 ```bash
-# Test on mobile networks
-# Use network throttling tools
-# Simulate 4G: ~4 Mbps down, ~1 Mbps up
-# Simulate 3G: ~1 Mbps down, ~0.5 Mbps up
+Test on mobile networks
+Use network throttling tools
+Simulate 4G: ~4 Mbps down, ~1 Mbps up
+Simulate 3G: ~1 Mbps down, ~0.5 Mbps up
 
-# Mobile-specific configuration
+Mobile-specific configuration
 'spreed' => [
     'mobile_video_default' => 'vga',  // 640x480 instead of full HD
     'mobile_max_bitrate' => 1000000,   // 1 Mbps
@@ -415,44 +415,44 @@ Optimize for mobile clients:
 ],
 ```
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to guide?**
+How long does it take to guide?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Nextcloud Collabora Office Setup Guide](/nextcloud-collabora-office-setup-guide/)
 - [Nextcloud Setup Guide Raspberry Pi 2026](/nextcloud-setup-guide-raspberry-pi-2026/)
@@ -460,5 +460,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Nextcloud External Storage Setup Guide 2026](/nextcloud-external-storage-setup-guide-2026/)
 - [Self-Hosted Private Video Calling Setup Guide](/private-video-calling-selfhosted-guide/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

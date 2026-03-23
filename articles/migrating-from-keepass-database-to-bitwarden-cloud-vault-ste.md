@@ -18,7 +18,7 @@ voice-checked: true
 
 Migrating your passwords from a local KeePass database to Bitwarden's cloud vault is a practical upgrade if you need cross-device synchronization, easier sharing with family or team members, or a more accessible backup solution. This guide walks you through the entire process using command-line tools and automation scripts, ideal for developers who prefer terminal-based workflows.
 
-## Table of Contents
+Table of Contents
 
 - [Why Migrate From KeePass to Bitwarden](#why-migrate-from-keepass-to-bitwarden)
 - [Prerequisites](#prerequisites)
@@ -30,13 +30,13 @@ Migrating your passwords from a local KeePass database to Bitwarden's cloud vaul
 - [Handling Edge Cases](#handling-edge-cases)
 - [Security Considerations](#security-considerations)
 
-## Why Migrate From KeePass to Bitwarden
+Why Migrate From KeePass to Bitwarden
 
 KeePass and KeePassXC store your password database in an encrypted file (`.kdbx`) on your local machine. This approach gives you full control over your data but lacks native cloud synchronization. You likely sync your database manually or through a service like Dropbox, which can create version conflicts and leaves your vault vulnerable if your sync folder is compromised.
 
-Bitwarden stores your encrypted vault on their servers while maintaining zero-knowledge encryption—your master password never leaves your device. The cloud approach means your passwords are available instantly on any device without manual file management.
+Bitwarden stores your encrypted vault on their servers while maintaining zero-knowledge encryption, your master password never leaves your device. The cloud approach means your passwords are available instantly on any device without manual file management.
 
-## Prerequisites
+Prerequisites
 
 Before starting the migration, ensure you have:
 
@@ -48,31 +48,31 @@ Before starting the migration, ensure you have:
 Install the Bitwarden CLI:
 
 ```bash
-# macOS
+macOS
 brew install bitwarden-cli
 
-# Ubuntu/Debian
+Ubuntu/Debian
 sudo apt install bitwarden
 
-# Or download from https://github.com/bitwarden/cli/releases
+Or download from https://github.com/bitwarden/cli/releases
 ```
 
-## Step 1: Export Your KeePass Database
+Step 1: Export Your KeePass Database
 
 KeePass provides a built-in export feature, but for programmatic access, you have two reliable options.
 
-### Option A: Using KeePassXC CLI
+Option A: Using KeePassXC CLI
 
 KeePassXC includes `keepassxc-cli` for command-line operations:
 
 ```bash
-# Export database to XML (unencrypted)
+Export database to XML (unencrypted)
 keepassxc-cli export -o keepass_export.xml your_database.kdbx
 ```
 
 You'll be prompted for your master password. The XML output contains all entries with fields like username, password, URL, notes, and custom attributes.
 
-### Option B: Using Python with pykeepass
+Option B: Using Python with pykeepass
 
 For more control, use the `pykeepass` library:
 
@@ -98,7 +98,7 @@ for entry in kp.entries:
         'tags': entry.tags
     })
 
-# Output to JSON for easier parsing
+Output to JSON for easier parsing
 import json
 with open('keepass_export.json', 'w') as f:
     json.dump(entries, f, indent=2)
@@ -106,7 +106,7 @@ with open('keepass_export.json', 'w') as f:
 
 This approach preserves custom fields and allows selective migration based on tags or folders.
 
-## Step 2: Authenticate with Bitwarden CLI
+Step 2: Authenticate with Bitwarden CLI
 
 Initialize the Bitwarden CLI and log in:
 
@@ -127,13 +127,13 @@ Set up your encryption key:
 bw unlock
 ```
 
-The CLI returns a session key—store this securely. You can also use the `BW_SESSION` environment variable:
+The CLI returns a session key, store this securely. You can also use the `BW_SESSION` environment variable:
 
 ```bash
 export BW_SESSION="your_session_key"
 ```
 
-## Step 3: Import Entries to Bitwarden
+Step 3: Import Entries to Bitwarden
 
 Bitwarden supports CSV import, which works well for most migrations. Generate a CSV from your export:
 
@@ -168,7 +168,7 @@ bw import bitwarden_import.csv --formats keepass
 
 The `--formats keepass` flag tells Bitwarden to map KeePass fields correctly.
 
-## Step 4: Automate the Full Migration
+Step 4: Automate the Full Migration
 
 For a complete automation solution, here's a consolidated Python script:
 
@@ -267,7 +267,7 @@ Run the migration:
 python migrate.py your_database.kdbx "your_master_password" ./migration_output
 ```
 
-## Step 5: Verify and Clean Up
+Step 5: Verify and Clean Up
 
 After migration, verify your entries in the Bitwarden web vault or desktop app:
 
@@ -279,22 +279,22 @@ After migration, verify your entries in the Bitwarden web vault or desktop app:
 Delete the temporary export files securely:
 
 ```bash
-# macOS
+macOS
 srm keepass_export.json bitwarden_import.csv
 
-# Linux
+Linux
 shred -u keepass_export.json bitwarden_import.csv
 ```
 
-## Handling Edge Cases
+Handling Edge Cases
 
-**Two-Factor Authentication**: KeePass doesn't store TOTP seeds in the standard entry fields. If you used a separate TOTP authenticator, you'll need to re-add 2FA to your Bitwarden entries manually or export from your TOTP app if supported.
+Two-Factor Authentication: KeePass doesn't store TOTP seeds in the standard entry fields. If you used a separate TOTP authenticator, you'll need to re-add 2FA to your Bitwarden entries manually or export from your TOTP app if supported.
 
-**Custom Attributes**: KeePass allows arbitrary key-value pairs on entries. Bitwarden's custom fields support this, but the Python script handles basic custom properties. Review entries with complex custom fields after import.
+Custom Attributes: KeePass allows arbitrary key-value pairs on entries. Bitwarden's custom fields support this, but the Python script handles basic custom properties. Review entries with complex custom fields after import.
 
-**Database Merging**: If you have multiple KeePass databases, run the migration script for each and import the resulting CSVs sequentially. Bitwarden handles duplicates based on title and username.
+Database Merging: If you have multiple KeePass databases, run the migration script for each and import the resulting CSVs sequentially. Bitwarden handles duplicates based on title and username.
 
-## Security Considerations
+Security Considerations
 
 During migration, your passwords briefly exist in unencrypted files. Work in an isolated environment:
 
@@ -303,31 +303,31 @@ During migration, your passwords briefly exist in unencrypted files. Work in an 
 - Clear clipboard after use
 - Delete temporary files immediately after verification
 
-Bitwarden's zero-knowledge architecture means even their servers cannot read your vault. Your master password is the only key—ensure it's strong and unique.
+Bitwarden's zero-knowledge architecture means even their servers cannot read your vault. Your master password is the only key, ensure it's strong and unique.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does Bitwarden offer a free tier?**
+Does Bitwarden offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check Bitwarden's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Migrating from RoboForm to Bitwarden](/migrating-from-roboform-to-bitwarden-export-import-complete-/)
 - [Migrating From NordPass to Bitwarden](/migrating-from-nordpass-to-bitwarden-export-import-process-guide/)
@@ -335,5 +335,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Migrating from Safari Keychain to Bitwarden](/migrating-from-safari-keychain-to-bitwarden-complete-migration-guide/)
 - [Migrating From Icloud Keychain To Bitwarden Complete](/migrating-from-icloud-keychain-to-bitwarden-complete-transfe/)
 - [AI-Powered Cloud Cost Analyzer Tools Compared](https://bestremotetools.com/ai-cloud-cost-analyzer-tools-compared/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

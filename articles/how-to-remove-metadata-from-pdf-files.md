@@ -15,18 +15,18 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-PDF files carry extensive metadata: author name, organization, software used, creation and modification timestamps, GPS coordinates (if created on a phone), and editing history. Leaking this data has caused real harm — whistleblowers have been identified from document metadata, and corporate negotiations have been compromised by revision history. This guide shows how to strip it all.
+PDF files carry extensive metadata: author name, organization, software used, creation and modification timestamps, GPS coordinates (if created on a phone), and editing history. Leaking this data has caused real harm. whistleblowers have been identified from document metadata, and corporate negotiations have been compromised by revision history. This guide shows how to strip it all.
 
-## What Metadata PDFs Contain
+What Metadata PDFs Contain
 
 Use `exiftool` to inspect a file before cleaning it:
 
 ```bash
-# Install exiftool
+Install exiftool
 sudo apt install libimage-exiftool-perl   # Debian/Ubuntu
 brew install exiftool                      # macOS
 
-# View all metadata
+View all metadata
 exiftool document.pdf
 ```
 
@@ -47,48 +47,48 @@ GPS Longitude       : 0° 7' 39.41" W
 
 The GPS coordinates here came from a PDF created on an iPhone. The Author and Company fields expose the creator's identity.
 
-## Method 1: exiftool (Recommended for Scripting)
+Method 1: exiftool (Recommended for Scripting)
 
 ```bash
-# Remove all metadata from a single file
+Remove all metadata from a single file
 exiftool -all= document.pdf
 
-# This creates document.pdf_original (backup) and overwrites document.pdf
-# To skip backup:
+This creates document.pdf_original (backup) and overwrites document.pdf
+To skip backup:
 exiftool -all= -overwrite_original document.pdf
 
-# Remove metadata from all PDFs in a directory
+Remove metadata from all PDFs in a directory
 exiftool -all= -overwrite_original *.pdf
 
-# Remove all metadata but keep the title (useful for document management)
+Remove all metadata but keep the title (useful for document management)
 exiftool -all= -Title="Document" -overwrite_original document.pdf
 
-# Verify removal
+Verify removal
 exiftool document.pdf | grep -v "^File\|^Directory\|^MIME\|^PDF Version\|^Linearized\|^Page"
 ```
 
 After running `exiftool -all=`, check that `Author`, `Creator`, `GPS*`, and `Document ID` fields are gone.
 
-## Method 2: qpdf (Preserves PDF Structure)
+Method 2: qpdf (Preserves PDF Structure)
 
 qpdf is a C++ library and command-line tool for structural PDF manipulation. It preserves PDF integrity better than some other tools when dealing with encrypted or form-containing PDFs.
 
 ```bash
-# Install
+Install
 sudo apt install qpdf
 brew install qpdf
 
-# Remove metadata stream and flatten document structure
+Remove metadata stream and flatten document structure
 qpdf --linearize --replace-input document.pdf
 
-# Or write to a new file
+Or write to a new file
 qpdf --linearize document.pdf cleaned.pdf
 
-# For encrypted PDFs, provide the password
+For encrypted PDFs, provide the password
 qpdf --password="password" --decrypt --linearize document.pdf cleaned.pdf
 ```
 
-Note: `qpdf --linearize` does not strip XMP metadata by itself. Combine with exiftool for full cleaning:
+`qpdf --linearize` does not strip XMP metadata by itself. Combine with exiftool for full cleaning:
 
 ```bash
 qpdf --linearize document.pdf temp.pdf && \
@@ -96,16 +96,16 @@ exiftool -all= -overwrite_original temp.pdf && \
 mv temp.pdf cleaned.pdf
 ```
 
-## Method 3: Ghostscript (Nuclear Option)
+Method 3: Ghostscript (Nuclear Option)
 
 Ghostscript re-renders the entire PDF, stripping metadata, embedded fonts metadata, and JavaScript:
 
 ```bash
-# Install
+Install
 sudo apt install ghostscript
 brew install ghostscript
 
-# Re-render the PDF (strips virtually everything)
+Re-render the PDF (strips virtually everything)
 gs \
   -dBATCH \
   -dNOPAUSE \
@@ -119,33 +119,33 @@ gs \
 
 Ghostscript can slightly change the visual rendering of complex PDFs. Test on a sample page before processing important documents. It also strips embedded fonts (and re-embeds them from system fonts), which can change the appearance of custom-font documents.
 
-## Method 4: mat2 (GUI and CLI, Thorough)
+Method 4: mat2 (GUI and CLI, Thorough)
 
 `mat2` is designed specifically for metadata removal and handles dozens of file types including PDFs, images, Office documents, and audio files.
 
 ```bash
-# Install
+Install
 sudo apt install mat2
 pip3 install mat2
 
-# Check metadata
+Check metadata
 mat2 --show document.pdf
 
-# Remove metadata
+Remove metadata
 mat2 document.pdf
-# Creates document.cleaned.pdf
+Creates document.cleaned.pdf
 
-# In-place (overwrites original)
+In-place (overwrites original)
 mat2 --inplace document.pdf
 ```
 
 mat2 is the recommended tool for privacy activists and journalists because it has the most stripping across file formats.
 
-## Batch Processing
+Batch Processing
 
 ```bash
 #!/bin/bash
-# clean_pdfs.sh - Strip metadata from all PDFs in a directory
+clean_pdfs.sh - Strip metadata from all PDFs in a directory
 
 INPUT_DIR="$1"
 OUTPUT_DIR="${2:-${INPUT_DIR}/cleaned}"
@@ -178,13 +178,13 @@ chmod +x clean_pdfs.sh
 ./clean_pdfs.sh /path/to/documents /path/to/output
 ```
 
-## Handling Redacted Documents
+Handling Redacted Documents
 
-If you are redacting sensitive content before sharing, do not just draw black boxes over text in a PDF editor — the underlying text remains selectable and searchable. The proper approach:
+If you are redacting sensitive content before sharing, do not just draw black boxes over text in a PDF editor. the underlying text remains selectable and searchable. The proper approach:
 
 ```bash
-# Flatten the PDF (rasterize to image, then re-PDF)
-# This makes text non-selectable — best for truly redacted documents
+Flatten the PDF (rasterize to image, then re-PDF)
+This makes text non-selectable. best for truly redacted documents
 gs \
   -dBATCH \
   -dNOPAUSE \
@@ -193,10 +193,10 @@ gs \
   -sOutputFile=pages_%d.png \
   document.pdf
 
-# Then convert images back to PDF
+Then convert images back to PDF
 convert pages_*.png -compress jpeg -quality 85 redacted.pdf
 
-# Remove metadata from result
+Remove metadata from result
 exiftool -all= -overwrite_original redacted.pdf
 ```
 
@@ -206,16 +206,16 @@ pip3 install pdf-redact-tools
 pdf-redact-tools --sanitize document.pdf
 ```
 
-## What Metadata Cleaning Does Not Remove
+What Metadata Cleaning Does Not Remove
 
-- **Steganographic watermarks**: Publishers like Elsevier and IEEE embed invisible watermarks in PDFs that survive metadata stripping
-- **Font-based fingerprinting**: Some services generate slightly unique glyph positions per download
-- **Content-based identifiers**: Text content itself is not modified
-- **Print tracking dots**: Printed documents from color laser printers contain yellow tracking dots identifying printer and timestamp
+- Steganographic watermarks: Publishers like Elsevier and IEEE embed invisible watermarks in PDFs that survive metadata stripping
+- Font-based fingerprinting: Some services generate slightly unique glyph positions per download
+- Content-based identifiers: Text content itself is not modified
+- Print tracking dots: Printed documents from color laser printers contain yellow tracking dots identifying printer and timestamp
 
 For maximum anonymity, re-type or re-create the document from scratch rather than cleaning an existing one.
 
-## Related Reading
+Related Reading
 
 - [How to Detect Keyloggers on Your System](/how-to-detect-keyloggers-on-your-system/)
 - [Privacy Risks of QR Codes Explained](/how-to-protect-yourself-from-qr-code-phishing-quishing-attac/)
@@ -226,13 +226,13 @@ For maximum anonymity, re-type or re-create the document from scratch rather tha
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 ---
 
-## Related Articles
+Related Articles
 
 - [Metadata Removal Tools Comparison 2026: ExifTool vs MAT2](/metadata-removal-tools-comparison-2026/)
 - [Dating App Photo Metadata Stripping How To Remove Exif Gps](/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
 - [How to Remove EXIF Metadata from Photos Before Sharing](/how-to-remove-exif-metadata-from-photos-before-sharing-guide/)
 - [iPhone Photo Metadata Location Strip Guide for Developers](/iphone-photo-metadata-location-strip-guide/)
 - [Remove EXIF Data from Photos Automatically](/remove-exif-data-photos-automated)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

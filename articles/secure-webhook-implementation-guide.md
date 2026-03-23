@@ -14,24 +14,24 @@ tags: [privacy-tools-guide]
 ---
 
 {% raw %}
-# Secure Webhook Implementation Guide
+Secure Webhook Implementation Guide
 
-Webhooks are HTTP callbacks — when an event occurs on a third-party service, it sends a POST request to your endpoint. Without signature verification, anyone can send a fake webhook to trigger actions in your system. This guide covers the full stack of webhook security: HMAC signing, replay attack prevention, secret rotation, and delivery reliability.
+Webhooks are HTTP callbacks. when an event occurs on a third-party service, it sends a POST request to your endpoint. Without signature verification, anyone can send a fake webhook to trigger actions in your system. This guide covers the full stack of webhook security: HMAC signing, replay attack prevention, secret rotation, and delivery reliability.
 
-## The Threat Model
+The Threat Model
 
-- **Forged payloads**: An attacker crafts a payload that looks legitimate and POSTs it to your endpoint
-- **Replay attacks**: A legitimate webhook is captured and re-sent to trigger the same action twice
-- **SSRF via webhook delivery**: A malicious service sends webhooks from unexpected IPs
-- **Secret leakage**: Webhook secrets committed to git or logged in plaintext
+- Forged payloads: An attacker crafts a payload that looks legitimate and POSTs it to your endpoint
+- Replay attacks: A legitimate webhook is captured and re-sent to trigger the same action twice
+- SSRF via webhook delivery: A malicious service sends webhooks from unexpected IPs
+- Secret leakage: Webhook secrets committed to git or logged in plaintext
 
 ---
 
-## 1. Sender Side: Sign Every Webhook
+1. Sender Side: Sign Every Webhook
 
 The sender (your service or a third-party you control) computes a HMAC of the request body and includes it in a header. The receiver verifies it.
 
-### Python (FastAPI webhook sender)
+Python (FastAPI webhook sender)
 
 ```python
 import hmac
@@ -73,15 +73,15 @@ async def deliver_webhook(url: str, event: str, data: dict) -> bool:
                     return True
             except httpx.TimeoutException:
                 pass
-            await asyncio.sleep(2 ** attempt)   # exponential backoff
+            await asyncio.sleep(2  attempt)   # exponential backoff
     return False
 ```
 
 ---
 
-## 2. Receiver Side: Verify Before Processing
+2. Receiver Side: Verify Before Processing
 
-### Python (FastAPI webhook receiver)
+Python (FastAPI webhook receiver)
 
 ```python
 import hmac
@@ -149,7 +149,7 @@ async def receive_webhook(
     return {"status": "ok"}
 ```
 
-### Node.js (Express webhook receiver)
+Node.js (Express webhook receiver)
 
 ```javascript
 const express  = require('express');
@@ -163,7 +163,7 @@ await client.connect();
 const WEBHOOK_SECRET      = process.env.WEBHOOK_SECRET;
 const TIMESTAMP_TOLERANCE = 300 * 1000;   // 5 minutes in ms
 
-// IMPORTANT: parse body as raw buffer, not JSON — JSON.stringify is not idempotent
+// IMPORTANT: parse body as raw buffer, not JSON. JSON.stringify is not idempotent
 app.use('/webhooks', express.raw({ type: 'application/json' }));
 
 function verifyWebhook(body, signature, timestamp, webhookId) {
@@ -213,16 +213,16 @@ app.post('/webhooks/events', async (req, res) => {
 
 ---
 
-## 3. IP Allowlisting
+3. IP Allowlisting
 
 Most webhook providers publish their source IP ranges. Allowlist them at the firewall level:
 
 ```python
-# FastAPI middleware — check source IP before signature verification
+FastAPI middleware. check source IP before signature verification
 from fastapi import Request
 from starlette.middleware.base import BaseHTTPMiddleware
 
-# Stripe webhook IPs (example — always fetch current list from provider)
+Stripe webhook IPs (example. always fetch current list from provider)
 ALLOWED_WEBHOOK_IPS = {
     "3.18.12.63", "3.130.192.231", "13.235.14.237",
     # ... fetch from https://stripe.com/files/ips/ips_webhooks.txt
@@ -245,7 +245,7 @@ app.add_middleware(WebhookIPFilter)
 
 ---
 
-## 4. Secret Rotation
+4. Secret Rotation
 
 Rotate webhook secrets without downtime by accepting both old and new secrets during a transition window:
 
@@ -258,7 +258,7 @@ WEBHOOK_SECRETS = [
 ]
 
 def verify_any_secret(body: bytes, signature: str, timestamp: str) -> bool:
-    """Try each secret in sequence — allows overlap during rotation."""
+    """Try each secret in sequence. allows overlap during rotation."""
     for secret in WEBHOOK_SECRETS:
         ts = int(timestamp)
         message  = f"{ts}.".encode() + body
@@ -277,7 +277,7 @@ Rotation procedure:
 
 ---
 
-## 5. Webhook Delivery Reliability
+5. Webhook Delivery Reliability
 
 ```python
 import asyncio
@@ -324,7 +324,7 @@ async def delivery_worker(queue: asyncio.Queue):
 
         delivery.attempts += 1
         if delivery.attempts < 5:
-            await asyncio.sleep(min(30 * (2 ** delivery.attempts), 3600))
+            await asyncio.sleep(min(30 * (2  delivery.attempts), 3600))
             await queue.put(delivery)
         else:
             delivery.status = DeliveryStatus.FAILED
@@ -333,7 +333,7 @@ async def delivery_worker(queue: asyncio.Queue):
 
 ---
 
-## Security Checklist
+Security Checklist
 
 - [ ] HMAC-SHA256 signature on every delivery
 - [ ] Timestamp in signed payload; reject messages older than 5 minutes
@@ -347,7 +347,7 @@ async def delivery_worker(queue: asyncio.Queue):
 
 ---
 
-## Related Reading
+Related Reading
 
 - [Secure JWT Implementation Best Practices](/secure-jwt-implementation-best-practices/)
 - [Secure API Gateway Setup with Kong](/kong-api-gateway-secure-setup-guide/)
@@ -357,5 +357,5 @@ async def delivery_worker(queue: asyncio.Queue):
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

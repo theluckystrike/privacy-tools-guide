@@ -18,7 +18,7 @@ voice-checked: true
 
 Protect protest medic patient data by documenting encounters without storing identifiers (encrypted case numbers only), using encrypted messaging (Signal) for coordination, never storing names/locations together, and destroying paper notes securely. Anticipate law enforcement subpoenas and device seizure by keeping encrypted offline storage separate from operational devices.
 
-## Table of Contents
+Table of Contents
 
 - [Who Wants Your Data](#who-wants-your-data)
 - [Digital Footprint Assessment](#digital-footprint-assessment)
@@ -30,23 +30,23 @@ Protect protest medic patient data by documenting encounters without storing ide
 - [Incident Response Plan](#incident-response-plan)
 - [Implementation Checklist](#implementation-checklist)
 
-## Who Wants Your Data
+Who Wants Your Data
 
 Before implementing protections, identify the adversaries. Protest medic data faces several threat actors:
 
-- **Law enforcement**: Subpoenas for medical records, real-time surveillance of communications, device seizure at protests
-- **Event organizers**: May request incident reports for liability purposes
-- **Data brokers**: Aggregating health-related information from multiple sources
-- **Bad actors**: Individuals who may target medics for harassment or doxxing
+- Law enforcement: Subpoenas for medical records, real-time surveillance of communications, device seizure at protests
+- Event organizers: May request incident reports for liability purposes
+- Data brokers: Aggregating health-related information from multiple sources
+- Bad actors: Individuals who may target medics for harassment or doxxing
 
 The core principle: assume any data you create could eventually be accessed by an adversary. Design your systems accordingly.
 
-## Digital Footprint Assessment
+Digital Footprint Assessment
 
 Start by mapping where patient information flows through your systems:
 
 ```bash
-# Audit your current data storage
+Audit your current data storage
 echo "=== Current Documentation Methods ==="
 echo "1. Paper notebooks - where stored?"
 echo "2. Phone notes - which apps?"
@@ -57,7 +57,7 @@ echo "5. Email - personal or work accounts?"
 
 Understanding your current data flow reveals vulnerabilities. Most medics inadvertently store patient information across multiple platforms, creating a fragmented attack surface.
 
-## Secure Encounter Documentation
+Secure Encounter Documentation
 
 The most practical solution for protest medics is documenting encounters without storing identifying information. Here's a technical approach:
 
@@ -134,7 +134,7 @@ class SecureEncounterLog:
             with open(filepath, 'w') as f:
                 f.write(data)
 
-# Usage example
+Usage example
 logger = SecureEncounterLog()
 incident_id = logger.log_encounter(
     treatment_codes=["TEAR", "BLK"],
@@ -146,35 +146,35 @@ print(f"Logged incident: {incident_id}")
 
 This approach records what treatments were provided without linking them to specific individuals. The location gets hashed to a code rather than storing exact addresses.
 
-## Device Security Fundamentals
+Device Security Fundamentals
 
 Your phone and any devices containing encounter notes become high-value targets. Implement these baseline protections:
 
 ```bash
-# iOS: Enable these settings immediately
-# 1. Settings > Face ID/Touch ID & Passcode - Strong passcode (6+ digits)
-# 2. Settings > Face ID/Touch ID & Passcode - Erase Data after 10 failed attempts
-# 3. Settings > Privacy - Disable Analytics sharing
-# 4. Settings > Privacy > Location Services - Set to "While Using" only for essential apps
+iOS: Enable these settings immediately
+1. Settings > Face ID/Touch ID & Passcode - Strong passcode (6+ digits)
+2. Settings > Face ID/Touch ID & Passcode - Erase Data after 10 failed attempts
+3. Settings > Privacy - Disable Analytics sharing
+4. Settings > Privacy > Location Services - Set to "While Using" only for essential apps
 
-# Android (AOSP):
-# 1. Settings > Security - Strong lock (PIN/biometric)
-# 2. Settings > Security - Encrypt phone (full disk encryption)
-# 3. Settings > Apps > Permissions - Audit all permissions
-# 4. Settings > Network > Advanced - Disable WiFi scanning
+Android (AOSP):
+1. Settings > Security - Strong lock (PIN/biometric)
+2. Settings > Security - Encrypt phone (full disk encryption)
+3. Settings > Apps > Permissions - Audit all permissions
+4. Settings > Network > Advanced - Disable WiFi scanning
 
-# Both platforms:
-# - Enable encrypted messaging (Signal)
-# - Use separate work phone for protest activities if possible
-# - Disable cloud backup for sensitive apps
+Both platforms:
+- Enable encrypted messaging (Signal)
+- Use separate work phone for protest activities if possible
+- Disable cloud backup for sensitive apps
 ```
 
-## Communication Security
+Communication Security
 
 When coordinating with other medics or communicating about encounters, use these protocols:
 
 ```python
-# Signal group security checklist:
+Signal group security checklist:
 """
 1. Create NEW group for each event (don't reuse)
 2. Enable disappearing messages (24-hour default)
@@ -188,7 +188,7 @@ When coordinating with other medics or communicating about encounters, use these
    - "Arrested" → "taken" or "removed"
 """
 
-# For group chats, establish protocol:
+For group chats, establish protocol:
 GROUP_PROTOCOL = """
 Signal Security Protocol:
 - Disappearing messages: 24 hours
@@ -199,14 +199,14 @@ Signal Security Protocol:
 """
 ```
 
-## Data Retention Strategy
+Data Retention Strategy
 
 Implement strict retention policies. The safest data is data you never keep:
 
 ```bash
-# Automated cleanup script for encounter notes
+Automated cleanup script for encounter notes
 #!/bin/bash
-# Run daily via cron - deletes notes older than 30 days
+Run daily via cron - deletes notes older than 30 days
 
 NOTES_DIR="$HOME/Documents/protest-notes"
 DAYS_TO_KEEP=30
@@ -221,15 +221,15 @@ For paper notes:
 - Store in secure location (not at home if warrants possible)
 - Destroy after 30 days or after legal risk passes
 
-## Physical Security Considerations
+Physical Security Considerations
 
 Digital protections fail without physical security:
 
-- **Device seizure**: Use device encryption, don't unlock with biometrics (can be compelled), use strong passcodes
-- **Home raids**: Don't store patient information at home if possible, use secure cloud with legal protection
-- **Protests**: Leave unnecessary devices at home, use airplane mode, consider Faraday bag
+- Device seizure: Use device encryption, don't unlock with biometrics (can be compelled), use strong passcodes
+- Home raids: Don't store patient information at home if possible, use secure cloud with legal protection
+- Protests: Leave unnecessary devices at home, use airplane mode, consider Faraday bag
 
-## Incident Response Plan
+Incident Response Plan
 
 If your device is seized or you're detained:
 
@@ -242,7 +242,7 @@ If your device is seized or you're detained:
 6. Document everything you remember about the interaction
 ```
 
-## Implementation Checklist
+Implementation Checklist
 
 Use this checklist when setting up your protest medic security:
 
@@ -257,31 +257,31 @@ Use this checklist when setting up your protest medic security:
 - [ ] Remove identifying photos from devices before events
 - [ ] Use separate phone if possible
 
-The goal isn't paranoia—it's reasonable protection for the people who trust you with their care. By implementing these measures, you reduce the risk that patient information becomes evidence, gets leaked, or harms the people you treated.
+The goal isn't paranoia, it's reasonable protection for the people who trust you with their care. By implementing these measures, you reduce the risk that patient information becomes evidence, gets leaked, or harms the people you treated.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Threat Model For Medical Marijuana Patient In Non Legal Stat](/threat-model-for-medical-marijuana-patient-in-non-legal-stat/)
 - [Threat Model For Corporate Whistleblower Protecting Evidence](/threat-model-for-corporate-whistleblower-protecting-evidence/)
@@ -290,5 +290,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Threat Model for Undocumented Immigrant Protecting.](/threat-model-for-undocumented-immigrant-protecting-location-/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

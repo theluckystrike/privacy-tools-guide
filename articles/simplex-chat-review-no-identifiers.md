@@ -17,7 +17,7 @@ voice-checked: true
 
 Simplex Chat is worth it if metadata protection is your top priority. It is the only production messaging app that operates without any persistent user identifiers -- no phone numbers, no usernames, no cryptographic keys that serve as stable IDs. This eliminates correlation attacks, social graph harvesting, and account hijacking entirely. The trade-offs are real: initial contact requires out-of-band address exchange, and the user base is small. For journalists, activists, or anyone whose threat model includes communication metadata analysis, Simplex Chat provides architectural guarantees no other network-based messenger can match.
 
-## Table of Contents
+Table of Contents
 
 - [The Identifier Problem](#the-identifier-problem)
 - [How Simplex Chat Eliminates Identifiers](#how-simplex-chat-eliminates-identifiers)
@@ -27,7 +27,7 @@ Simplex Chat is worth it if metadata protection is your top priority. It is the 
 - [Comparison with Alternatives](#comparison-with-alternatives)
 - [Developer Integration](#developer-integration)
 
-## The Identifier Problem
+The Identifier Problem
 
 Every conventional messaging platform requires some form of user identification to establish connections. Your phone number links your identity across services. Your username creates a persistent handle. Even cryptographic identities in protocols like Signal still produce stable public keys that serve as permanent identifiers.
 
@@ -37,11 +37,11 @@ Correlation attacks occur because your phone number or username links conversati
 
 Simplex Chat addresses these issues by eliminating identifiers entirely from the protocol layer.
 
-## How Simplex Chat Eliminates Identifiers
+How Simplex Chat Eliminates Identifiers
 
-Simplex Chat uses a connection model based on **temporary, disposable connection addresses** rather than persistent user IDs. The protocol operates through a network of SMP (Simple Messaging Protocol) servers, but these servers never learn user identities.
+Simplex Chat uses a connection model based on temporary, disposable connection addresses rather than persistent user IDs. The protocol operates through a network of SMP (Simple Messaging Protocol) servers, but these servers never learn user identities.
 
-### Connection Establishment Process
+Connection Establishment Process
 
 When two users want to communicate, they exchange connection addresses rather than usernames or IDs:
 
@@ -57,7 +57,7 @@ These addresses are:
 
 The critical innovation is that connection addresses contain no inherent information about the user's identity. You can generate new addresses for each conversation or rotate them periodically.
 
-### Server Architecture
+Server Architecture
 
 Simplex Chat servers (SMP servers) act as message relays but maintain no user accounts:
 
@@ -73,11 +73,11 @@ Servers store only:
 - Connection addresses (temporary)
 - No plaintext messages (only relay)
 
-## Protocol Implementation Details
+Protocol Implementation Details
 
 The Simple Messaging Protocol (SMP) handles message delivery without knowledge of recipient identity. Here's how the protocol works at a technical level:
 
-### Message Queue Model
+Message Queue Model
 
 Each connection address corresponds to a message queue on the server:
 
@@ -99,7 +99,7 @@ The server never learns:
 - What the messages contain
 - Who else has access
 
-### End-to-End Encryption
+End-to-End Encryption
 
 Simplex Chat implements double-ratchet encryption ensuring forward secrecy:
 
@@ -126,23 +126,23 @@ The double-ratchet provides:
 - Future secrecy (compromised keys don't reveal future messages)
 - Deniability (no non-repudiable signatures)
 
-## Practical Usage Patterns
+Practical Usage Patterns
 
 For developers and power users, Simplex Chat offers several unique operational characteristics:
 
-### One-Time Connections
+One-Time Connections
 
 Create connection addresses that expire after use:
 
 ```bash
-# Generate single-use connection address
-# (via Simplex Chat CLI or mobile app)
+Generate single-use connection address
+(via Simplex Chat CLI or mobile app)
 smq new --single-use --expiry 24h
 ```
 
 This prevents long-term correlation of your identity across conversations.
 
-### Multiple Identities
+Multiple Identities
 
 Run multiple Simplex Chat instances simultaneously, each with completely unlinkable identities:
 
@@ -154,12 +154,12 @@ Instance 3: smp://ghi789...@server3.simplex.chat  # Sensitive
 
 Network observers cannot determine these belong to the same person.
 
-### Self-Hosted Servers
+Self-Hosted Servers
 
 Deploy your own SMP server for additional privacy:
 
 ```yaml
-# docker-compose.yml for self-hosted SMP server
+docker-compose.yml for self-hosted SMP server
 services:
   smp-server:
     image: simplexchat/smp-server
@@ -173,21 +173,21 @@ services:
 
 Running your own server eliminates even the minimal metadata visible to third-party servers.
 
-## Security Analysis
+Security Analysis
 
-### Threat Model Advantages
+Threat Model Advantages
 
 Simplex Chat's architecture provides strong protection against:
 
 Without persistent identifiers, there is nothing to correlate in mass surveillance. No address book upload is required, eliminating contact harvesting. Connection addresses don't reveal relationships, preventing social graph analysis. With no account to hijack, identity theft through account takeover is not possible.
 
-### Remaining Considerations
+Remaining Considerations
 
 Several limitations warrant awareness:
 
 At least one SMP server must be online for messages to be delivered. Initial contact requires exchanging addresses through some out-of-band channel. While messages are encrypted, servers still see connection metadata such as timing and volume. If you lose your device and all saved addresses, communication cannot be recovered because there is no phone number or account to fall back on.
 
-### Metadata Minimization
+Metadata Minimization
 
 Compared to other privacy-focused messengers:
 
@@ -198,18 +198,18 @@ Compared to other privacy-focused messengers:
 | Simplex Chat | None | Minimal timing only |
 | Briar | None | None (mesh only) |
 
-## Comparison with Alternatives
+Comparison with Alternatives
 
 For developers evaluating privacy messaging options:
 
-- **Signal**: Most mature, but requires phone number (identifies you)
-- **Session**: Decentralized, but uses persistent session IDs
-- **Briar**: No network dependency, but mobile-only and limited range
-- **Simplex Chat**: No identifiers, network-based, cross-platform
+- Signal: Most mature, but requires phone number (identifies you)
+- Session: Decentralized, but uses persistent session IDs
+- Briar: No network dependency, but mobile-only and limited range
+- Simplex Chat: No identifiers, network-based, cross-platform
 
 The choice depends on your threat model. If phone number confidentiality is critical, Simplex Chat provides the strongest guarantees among network-based messengers.
 
-## Developer Integration
+Developer Integration
 
 Simplex Chat offers a Haskell library for building custom clients:
 
@@ -229,29 +229,29 @@ msgs <- pollMessages addr
 
 The protocol specifications are open, enabling verification and custom implementations.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Is this product worth the price?**
+Is this product worth the price?
 
 Value depends on your usage frequency and specific needs. If you use this product daily for core tasks, the cost usually pays for itself through time savings. For occasional use, consider whether a free alternative covers enough of your needs.
 
-**What are the main drawbacks of this product?**
+What are the main drawbacks of this product?
 
 No tool is perfect. Common limitations include pricing for advanced features, learning curve for power features, and occasional performance issues during peak usage. Weigh these against the specific benefits that matter most to your workflow.
 
-**How does this product compare to its closest competitor?**
+How does this product compare to its closest competitor?
 
 The best competitor depends on which features matter most to you. For some users, a simpler or cheaper alternative works fine. For others, this product's specific strengths justify the investment. Try both before committing to an annual plan.
 
-**Does this product have good customer support?**
+Does this product have good customer support?
 
 Support quality varies by plan tier. Free and basic plans typically get community forum support and documentation. Paid plans usually include email support with faster response times. Enterprise plans often include dedicated support contacts.
 
-**Can I migrate away from this product if I decide to switch?**
+Can I migrate away from this product if I decide to switch?
 
 Check the export options before committing. Most tools let you export your data, but the format and completeness of exports vary. Test the export process early so you are not locked in if your needs change later.
 
-## Related Articles
+Related Articles
 
 - [Simplex Chat Protocol No User Identifiers How It Works Techn](/simplex-chat-protocol-no-user-identifiers-how-it-works-techn/)
 - [Firefox Vs Chromium Privacy Architecture](/firefox-vs-chromium-privacy-architecture/)
@@ -260,4 +260,4 @@ Check the export options before committing. Most tools let you export your data,
 - [How Blockchain Analysis Companies Track Your Crypto.](/blockchain-analysis-companies-how-chainalysis-elliptic-track/)
 - [AI Assistants for Creating Security Architecture Review](https://bestremotetools.com/ai-assistants-for-creating-security-architecture-review-docu/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

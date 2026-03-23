@@ -15,15 +15,15 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# How to Set Up Authelia for SSO
+How to Set Up Authelia for SSO
 
 Authelia is a self-hosted authentication proxy that puts a login screen (with optional 2FA) in front of any HTTP service. Instead of setting up authentication in each of your self-hosted apps individually, Authelia intercepts requests to your internal services and handles authentication centrally.
 
-## Architecture
+Architecture
 
 ```
 Browser → Traefik (reverse proxy) → Authelia (auth check)
-                                          │
+                                          
                      NOT authenticated → Login page
                          Authenticated → Forward request to internal service
                                          (Grafana, Portainer, Gitea, etc.)
@@ -31,16 +31,16 @@ Browser → Traefik (reverse proxy) → Authelia (auth check)
 
 Traefik sends an auth forward request to Authelia for every incoming request. If Authelia says the user is authenticated, Traefik forwards the request. If not, it redirects to the Authelia login page.
 
-## Prerequisites
+Prerequisites
 
 - A domain name with DNS pointing to your server
 - Traefik v2+ running (or nginx as an alternative)
 - Docker and Docker Compose
 
-## Step 1: Docker Compose Setup
+Step 1: Docker Compose Setup
 
 ```yaml
-# docker-compose.yml
+docker-compose.yml
 version: '3.8'
 
 services:
@@ -79,10 +79,10 @@ networks:
     external: true
 ```
 
-## Step 2: Authelia Configuration
+Step 2: Authelia Configuration
 
 ```yaml
-# authelia/configuration.yml
+authelia/configuration.yml
 ---
 server:
   host: 0.0.0.0
@@ -115,22 +115,22 @@ access_control:
   default_policy: deny
 
   rules:
-    # Public services — no auth needed
+    # Public services. no auth needed
     - domain: public.yourdomain.com
       policy: bypass
 
-    # Internal services — require 1FA (password only)
+    # Internal services. require 1FA (password only)
     - domain: gitea.yourdomain.com
       policy: one_factor
 
-    # Sensitive services — require 2FA
+    # Sensitive services. require 2FA
     - domain: portainer.yourdomain.com
       policy: two_factor
 
     - domain: grafana.yourdomain.com
       policy: two_factor
 
-    # Admin panel — 2FA + specific user group
+    # Admin panel. 2FA + specific user group
     - domain: admin.yourdomain.com
       policy: two_factor
       subject: "group:admins"
@@ -168,17 +168,17 @@ notifier:
   #   filename: /config/notification.txt
 ```
 
-## Step 3: Create Users
+Step 3: Create Users
 
 ```bash
-# Generate a password hash
+Generate a password hash
 docker run --rm authelia/authelia:latest \
   authelia hash-password 'your-secure-password'
-# Digest: $argon2id$v=19$m=65536,t=3,p=4$...
+Digest: $argon2id$v=19$m=65536,t=3,p=4$...
 ```
 
 ```yaml
-# authelia/users_database.yml
+authelia/users_database.yml
 ---
 users:
   alice:
@@ -199,10 +199,10 @@ users:
       - users
 ```
 
-## Step 4: Protect a Service with Traefik
+Step 4: Protect a Service with Traefik
 
 ```yaml
-# Add these labels to any service you want protected:
+Add these labels to any service you want protected:
 labels:
   - "traefik.enable=true"
   - "traefik.http.routers.grafana.rule=Host(`grafana.yourdomain.com`)"
@@ -212,12 +212,12 @@ labels:
   - "traefik.http.routers.grafana.middlewares=authelia@docker"
 ```
 
-## Step 5: nginx ForwardAuth Alternative
+Step 5: nginx ForwardAuth Alternative
 
 If using nginx instead of Traefik:
 
 ```nginx
-# nginx.conf — protect an internal service
+nginx.conf. protect an internal service
 server {
     listen 443 ssl;
     server_name grafana.yourdomain.com;
@@ -249,7 +249,7 @@ server {
 }
 ```
 
-## Step 6: Configure TOTP 2FA
+Step 6: Configure TOTP 2FA
 
 After first login, users are prompted to register a TOTP device:
 
@@ -260,21 +260,21 @@ After first login, users are prompted to register a TOTP device:
 5. Enter the 6-digit code to verify
 
 ```bash
-# Verify Authelia is running and can send emails
+Verify Authelia is running and can send emails
 docker logs authelia --tail 50 | grep -i "notification\|email\|smtp"
 ```
 
-## Step 7: Check Access Logs
+Step 7: Check Access Logs
 
 ```bash
-# Watch authentication attempts in real time
+Watch authentication attempts in real time
 docker logs authelia -f | grep -E "(authentication|access_control|banned)"
 
-# Check the Authelia log for specific user
+Check the Authelia log for specific user
 docker logs authelia | grep "alice" | tail -20
 ```
 
-## Migrating from File-Based to LDAP Authentication
+Migrating from File-Based to LDAP Authentication
 
 The flat `users_database.yml` works for small self-hosted setups. When you need centralized user management across multiple services, switch to LDAP. This lets you add and remove users in one place rather than editing YAML files.
 
@@ -300,7 +300,7 @@ authentication_backend:
 `lldap` (Lightweight LDAP) is a popular Docker container for self-hosted LDAP:
 
 ```yaml
-# Add to docker-compose.yml
+Add to docker-compose.yml
 lldap:
   image: lldap/lldap:stable
   container_name: lldap
@@ -317,7 +317,7 @@ lldap:
 
 Once lldap is running, use its web UI at port 17170 to manage users and groups. Authelia reads the LDAP directory without a local file to manage.
 
-## Authelia with OAuth2 / OpenID Connect
+Authelia with OAuth2 / OpenID Connect
 
 Authelia 4.35+ supports acting as an OpenID Connect provider. This means applications that support OIDC (Nextcloud, Gitea, Grafana) can delegate login to Authelia rather than requiring `forwardAuth`.
 
@@ -374,9 +374,9 @@ token_url = https://auth.yourdomain.com/api/oidc/token
 api_url = https://auth.yourdomain.com/api/oidc/userinfo
 ```
 
-OIDC is more secure than forwardAuth for apps that support it — the application handles the token exchange directly rather than relying on proxy headers.
+OIDC is more secure than forwardAuth for apps that support it. the application handles the token exchange directly rather than relying on proxy headers.
 
-## Related Articles
+Related Articles
 
 - [How to Set Up Authentik for Identity Management](/how-to-set-up-authentik-for-identity-management/)
 - [Self-Hosted Private Git Server with Gitea](/private-git-server-gitea-setup-guide/)
@@ -384,6 +384,6 @@ OIDC is more secure than forwardAuth for apps that support it — the applicatio
 - [Nextcloud Collabora Office Setup Guide](/nextcloud-collabora-office-setup-guide/)
 - [Jitsi Meet Self Hosted Setup Guide](/jitsi-meet-self-hosted-setup-guide/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

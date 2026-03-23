@@ -15,53 +15,53 @@ voice-checked: true
 
 {% raw %}
 
-# Threat Modeling Basics for Developers
+Threat Modeling Basics for Developers
 
-Threat modeling is the practice of identifying what could go wrong with a system before it does. Unlike penetration testing (which finds bugs that already exist), threat modeling shapes design decisions — you build mitigations in from the start.
+Threat modeling is the practice of identifying what could go wrong with a system before it does. Unlike penetration testing (which finds bugs that already exist), threat modeling shapes design decisions. you build mitigations in from the start.
 
 This guide uses STRIDE as the primary framework with practical examples you can apply to a web API, a CI/CD pipeline, and a data store.
 
-## The STRIDE Framework
+The STRIDE Framework
 
 STRIDE maps threat categories to security properties:
 
 | Threat | Breaks | Example |
 |--------|--------|---------|
-| **S**poofing | Authentication | Attacker impersonates a user |
-| **T**ampering | Integrity | Attacker modifies data in transit |
-| **R**epudiation | Non-repudiation | User denies an action they took |
-| **I**nformation Disclosure | Confidentiality | API leaks user data |
-| **D**enial of Service | Availability | Attacker floods the endpoint |
-| **E**levation of Privilege | Authorization | Regular user accesses admin function |
+| Spoofing | Authentication | Attacker impersonates a user |
+| Tampering | Integrity | Attacker modifies data in transit |
+| Repudiation | Non-repudiation | User denies an action they took |
+| Information Disclosure | Confidentiality | API leaks user data |
+| Denial of Service | Availability | Attacker floods the endpoint |
+| Elevation of Privilege | Authorization | Regular user accesses admin function |
 
-## Step 1: Draw a Data Flow Diagram
+Step 1: Draw a Data Flow Diagram
 
 A DFD shows where data comes from, where it goes, and what transforms it. You need:
-- **External entities** (users, third-party services) — rectangles
-- **Processes** (your code) — circles/ovals
-- **Data stores** (databases, files, caches) — parallel lines
-- **Data flows** (arrows showing direction)
-- **Trust boundaries** (dashed lines separating zones of different trust)
+- External entities (users, third-party services). rectangles
+- Processes (your code). circles/ovals
+- Data stores (databases, files, caches). parallel lines
+- Data flows (arrows showing direction)
+- Trust boundaries (dashed lines separating zones of different trust)
 
 ```
-[Browser User] ──HTTPS──> [API Gateway] ──internal──> [Auth Service]
-                                │                            │
+[Browser User] HTTPS> [API Gateway] internal> [Auth Service]
+                                                            
                           trust boundary                  [User DB]
-                                │
-                         [App Service] ──> [Postgres DB]
-                                │
-                         [Message Queue] ──> [Worker Service]
+                                
+                         [App Service] > [Postgres DB]
+                                
+                         [Message Queue] > [Worker Service]
 ```
 
 The key insight from a DFD: every arrow that crosses a trust boundary is a potential attack surface.
 
-## Step 2: Enumerate Threats Systematically
+Step 2: Enumerate Threats Systematically
 
 For each element in your diagram, apply STRIDE. Use a spreadsheet or a simple text file.
 
 ```python
 #!/usr/bin/env python3
-# threat-model.py — generate a STRIDE threat list from your DFD components
+threat-model.py. generate a STRIDE threat list from your DFD components
 
 components = [
     {"name": "API Gateway", "type": "process"},
@@ -78,7 +78,7 @@ stride_by_type = {
     "external_entity": ["Spoofing", "Repudiation"],
 }
 
-# Flows crossing trust boundaries get the full STRIDE set
+Flows crossing trust boundaries get the full STRIDE set
 for c in components:
     threats = stride_by_type.get(c["type"], [])
     if c.get("crosses_boundary"):
@@ -91,10 +91,10 @@ for c in components:
 
 ```bash
 python3 threat-model.py > threats.txt
-# Work through threats.txt, marking each as: mitigated / accepted / deferred
+Work through threats.txt, marking each as: mitigated / accepted / deferred
 ```
 
-## Step 3: Rate Each Threat — DREAD or CVSS Lite
+Step 3: Rate Each Threat. DREAD or CVSS Lite
 
 DREAD scores let you prioritize which threats to fix first.
 
@@ -110,7 +110,7 @@ Total: 5–15. 12+ = critical, 8–11 = high, 5–7 = medium, <5 = low.
 ```
 
 ```python
-# Simple DREAD calculator
+Simple DREAD calculator
 def dread_score(damage, reproducibility, exploitability, affected, discoverability):
     total = damage + reproducibility + exploitability + affected + discoverability
     if total >= 12:
@@ -122,7 +122,7 @@ def dread_score(damage, reproducibility, exploitability, affected, discoverabili
     else:
         return total, "LOW"
 
-# Example: SQL injection in login endpoint
+SQL injection in login endpoint
 score, rating = dread_score(
     damage=3,           # full DB read
     reproducibility=3,  # easy, just send payload
@@ -131,15 +131,15 @@ score, rating = dread_score(
     discoverability=2   # scanners find it
 )
 print(f"SQL injection: {score}/15 ({rating})")
-# SQL injection: 13/15 (CRITICAL)
+SQL injection: 13/15 (CRITICAL)
 ```
 
-## Step 4: Document Mitigations
+Step 4: Document Mitigations
 
-For each threat, write the control. Be specific — "use authentication" is useless, "enforce JWT validation on every route using middleware at the gateway level" is actionable.
+For each threat, write the control. Be specific. "use authentication" is useless, "enforce JWT validation on every route using middleware at the gateway level" is actionable.
 
 ```yaml
-# threat-model.yaml — machine-readable threat register
+threat-model.yaml. machine-readable threat register
 
 threats:
   - id: T001
@@ -183,17 +183,17 @@ threats:
       ticket: SEC-145
 ```
 
-## Applying STRIDE to a CI/CD Pipeline
+Applying STRIDE to a CI/CD Pipeline
 
-CI/CD pipelines are often overlooked but have elevated privilege — they deploy to production.
+CI/CD pipelines are often overlooked but have elevated privilege. they deploy to production.
 
 ```
-[Developer Workstation] ──git push──> [GitHub] ──webhook──> [CI Runner]
-                                                                   │
+[Developer Workstation] git push> [GitHub] webhook> [CI Runner]
+                                                                   
                                                           [Build + Test]
-                                                                   │
+                                                                   
                                                         [Docker Registry]
-                                                                   │
+                                                                   
                                                         [Production Deploy]
 ```
 
@@ -208,18 +208,18 @@ Key threats:
 | Deploy step | Elevation of Privilege | Least-privilege deploy token; no direct prod shell |
 
 ```bash
-# Pin GitHub Actions to SHA (not tag) to prevent supply chain attacks
-# Bad:  uses: actions/checkout@v4
-# Good: uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+Pin GitHub Actions to SHA (not tag) to prevent supply chain attacks
+Bad:  uses: actions/checkout@v4
+Good: uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
-# Verify image signatures before deploy
+Verify image signatures before deploy
 cosign verify \
   --certificate-identity "https://github.com/myorg/myrepo/.github/workflows/build.yml@refs/heads/main" \
   --certificate-oidc-issuer "https://token.actions.githubusercontent.com" \
   myregistry.io/myapp:latest
 ```
 
-## Applying STRIDE to a Data Store
+Applying STRIDE to a Data Store
 
 Databases hold your most sensitive data. Common oversights:
 
@@ -244,46 +244,46 @@ GRANT SELECT, INSERT, UPDATE ON TABLE events TO write_service;
 -- No service needs DROP TABLE or TRUNCATE
 ```
 
-## Quick Threat Model Template
+Quick Threat Model Template
 
 ```markdown
-# Threat Model: [System Name]
+Threat Model: [System Name]
 Date: YYYY-MM-DD
 Author: [Name]
 Scope: [What is included / excluded]
 
-## Assets (what are we protecting?)
+Assets (what are we protecting?)
 - User PII stored in Postgres
 - API authentication tokens
 - Source code in private repos
 
-## Actors
+Actors
 - Unauthenticated internet users
 - Authenticated users
 - Internal services / workers
 - Developers with prod access
 
-## Trust Boundaries
+Trust Boundaries
 - Public internet → API Gateway (TLS termination)
 - API Gateway → Internal services (mTLS)
 - Services → Database (VPC-internal only)
 
-## Threats
+Threats
 
 | ID | Component | STRIDE | Description | Risk | Mitigation | Status |
 |----|-----------|--------|-------------|------|------------|--------|
 | T001 | ... | ... | ... | ... | ... | ... |
 
-## Assumptions
+Assumptions
 - VPC perimeter is not breached
 - Cloud provider's managed services are trusted
 
-## Out of Scope
+Out of Scope
 - Physical attacks on data centers
 - Nation-state adversaries
 ```
 
-## Related Articles
+Related Articles
 
 - [How To Anonymize User Data In Production Database](/how-to-anonymize-user-data-in-production-database-for-privac/)
 - [Implement Data Portability Feature For Customers Gdpr Right](/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
@@ -291,5 +291,5 @@ Scope: [What is included / excluded]
 - [Threat Model for Undocumented Immigrant Protecting](/threat-model-for-undocumented-immigrant-protecting-location-/)
 - [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

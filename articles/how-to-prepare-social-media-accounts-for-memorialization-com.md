@@ -16,9 +16,9 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-You can memorialization social media accounts on Facebook, Instagram, LinkedIn, Google, Twitter/X, Reddit, and Discord by submitting death certificate documentation and designating legacy contacts. Each platform provides different preservation features—from account freezing to data transfer to complete deletion—requiring proactive planning and documentation. This guide provides a checklist for memorializing accounts across major platforms and automating digital estate inventory.
+You can memorialization social media accounts on Facebook, Instagram, LinkedIn, Google, Twitter/X, Reddit, and Discord by submitting death certificate documentation and designating legacy contacts. Each platform provides different preservation features, from account freezing to data transfer to complete deletion, requiring proactive planning and documentation. This guide provides a checklist for memorializing accounts across major platforms and automating digital estate inventory.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand Account Memorialization
+Step 1: Understand Account Memorialization
 
 When a social media account holder passes away, their accounts become vulnerable to several risks: unauthorized access by malicious actors, identity theft, and the potential loss of valuable digital memories. Most major platforms offer memorialization features that freeze accounts in a read-only state, preserving content while preventing modifications.
 
 The memorialization process varies significantly between platforms, and not all services provide official memorialization options. Understanding these differences helps you create a digital estate plan.
 
-### Step 2: Facebook Memorialization
+Step 2: Facebook Memorialization
 
 Facebook provides one of the most established memorialization processes. To request memorialization, you need to:
 
@@ -45,9 +45,9 @@ Facebook provides one of the most established memorialization processes. To requ
 For developers, Facebook offers the Legacy Contact feature, which allows you to designate someone to manage your account after death. You can configure this through Settings > Memorialization Settings.
 
 ```bash
-# Facebook does not offer CLI-based memorialization
-# Configure Legacy Contact through the web interface
-# or Graph API for business accounts
+Facebook does not offer CLI-based memorialization
+Configure Legacy Contact through the web interface
+or Graph API for business accounts
 ```
 
 After memorialization, the account:
@@ -56,7 +56,7 @@ After memorialization, the account:
 - Allows approved friends to post tributes
 - Removes sensitive information from search results
 
-### Step 3: Instagram Memorialization
+Step 3: Instagram Memorialization
 
 Instagram, owned by Meta, follows similar memorialization procedures. The process requires:
 
@@ -70,13 +70,13 @@ Instagram memorialization results in:
 - Prevention of new login attempts
 - Preservation of all posts and stories
 
-### Step 4: Twitter/X Account Handling
+Step 4: Twitter/X Account Handling
 
 Twitter (now X) does not have a formal memorialization process as of 2026. However, you can take several protective measures:
 
-1. **Deactivation Request**: Submit a request to deactivate the account permanently
-2. **Legacy Contact**: Designate someone with your login credentials
-3. **Documentation**: Provide death certificate to Twitter Support
+1. Deactivation Request: Submit a request to deactivate the account permanently
+2. Legacy Contact: Designate someone with your login credentials
+3. Documentation: Provide death certificate to Twitter Support
 
 For power users managing multiple accounts, consider using the Twitter API to archive important tweets before requesting deactivation:
 
@@ -106,7 +106,7 @@ def archive_user_tweets(consumer_key, consumer_secret, access_token, access_secr
     return len(tweets)
 ```
 
-### Step 5: LinkedIn Profile Management
+Step 5: LinkedIn Profile Management
 
 LinkedIn offers a dedicated process for removing deceased members' profiles:
 
@@ -116,7 +116,7 @@ LinkedIn offers a dedicated process for removing deceased members' profiles:
 
 LinkedIn also allows you to designate a connection as a legacy contact through account settings, though this feature is limited compared to other platforms.
 
-### Step 6: Google Account Inactive Account Manager
+Step 6: Google Account Inactive Account Manager
 
 Google provides a powerful Inactive Account Manager that automatically transfers account data to a designated contact after a period of inactivity:
 
@@ -147,21 +147,21 @@ async function configureInactiveAccountManager(auth, config) {
 }
 ```
 
-### Step 7: Reddit Account Options
+Step 7: Reddit Account Options
 
 Reddit does not offer formal memorialization. However, you can:
 1. Request account deletion through Reddit Support
 2. Use the Reddit API to archive content before deletion
 3. Designate a legacy contact with account credentials
 
-### Step 8: Discord Account Handling
+Step 8: Discord Account Handling
 
 Discord requires direct contact with their support team for memorialization requests. Provide:
 - Death certificate or obituary
 - Discord ID of the account
 - Your relationship to the deceased
 
-### Step 9: General Checklist for All Platforms
+Step 9: General Checklist for All Platforms
 
 Use this checklist when preparing accounts for memorialization:
 
@@ -176,13 +176,13 @@ Use this checklist when preparing accounts for memorialization:
 - [ ] Document the memorialization process for each platform
 - [ ] Inform trusted individuals about account wishes
 
-### Step 10: Automate Documentation
+Step 10: Automate Documentation
 
 For power users managing numerous accounts, create a documentation script:
 
 ```bash
 #!/bin/bash
-# social-media-inventory.sh - Document your social media presence
+social-media-inventory.sh - Document your social media presence
 
 ACCOUNTS_FILE="social_media_accounts.txt"
 TIMESTAMP=$(date +%Y-%m-%d)
@@ -190,12 +190,12 @@ TIMESTAMP=$(date +%Y-%m-%d)
 echo "Social Media Account Inventory - $TIMESTAMP" > "$ACCOUNTS_FILE"
 echo "==========================================" >> "$ACCOUNTS_FILE"
 
-# Add your accounts in the following format:
-# Platform: [Platform Name]
-# Username: [Username]
-# Legacy Contact: [Contact Name]
-# Memorialization Method: [Manual/Auto]
-# Notes: [Any additional notes]
+Add your accounts in the following format:
+Platform: [Platform Name]
+Username: [Username]
+Legacy Contact: [Contact Name]
+Memorialization Method: [Manual/Auto]
+Notes: [Any additional notes]
 
 echo "" >> "$ACCOUNTS_FILE"
 echo "Instructions:" >> "$ACCOUNTS_FILE"
@@ -221,44 +221,44 @@ Notes:
 EOF
 ```
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to prepare social media accounts for memorialization?**
+How long does it take to prepare social media accounts for memorialization?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How To Delete Old Social Media Accounts](/how-to-delete-old-social-media-accounts/)
 - [How To Create Anonymous Social Media Accounts](/how-to-create-anonymous-social-media-accounts/)
@@ -266,5 +266,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Social Media Will What Legal Authority Executor Has Over](/social-media-will-what-legal-authority-executor-has-over-you/)
 - [How To Document All Online Accounts For Executor Of Estate](/how-to-document-all-online-accounts-for-executor-of-estate-c/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

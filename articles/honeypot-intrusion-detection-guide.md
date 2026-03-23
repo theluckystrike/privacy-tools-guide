@@ -15,16 +15,16 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# How to Set Up a Honeypot for Intrusion Detection
+How to Set Up a Honeypot for Intrusion Detection
 
-A honeypot is a decoy system that looks valuable but has no legitimate users. Any access to it is suspicious by definition — there's no reason for real traffic. When someone probes it, you get an early warning that an attacker is on your network or scanning your infrastructure, along with their IP, tools, and techniques.
+A honeypot is a decoy system that looks valuable but has no legitimate users. Any access to it is suspicious by definition. there's no reason for real traffic. When someone probes it, you get an early warning that an attacker is on your network or scanning your infrastructure, along with their IP, tools, and techniques.
 ---
 
-## Honeypot Types
+Honeypot Types
 
 | Type | What it simulates | Complexity | Risk |
 |------|------------------|-----------|------|
-| Low-interaction | Fake services (SSH, HTTP) — no real shell | Low | Low |
+| Low-interaction | Fake services (SSH, HTTP). no real shell | Low | Low |
 | Medium-interaction | Realistic but limited OS environment | Medium | Medium |
 | High-interaction | Real systems, carefully monitored | High | High |
 
@@ -32,7 +32,7 @@ For most home and small business uses, low-interaction honeypots (Cowrie, OpenCa
 
 ---
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -42,40 +42,40 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Cowrie: SSH Honeypot
+Step 1: Cowrie: SSH Honeypot
 
-Cowrie is a medium-to-low interaction SSH/Telnet honeypot that logs all attacker activity — commands run, files uploaded, credentials attempted.
+Cowrie is a medium-to-low interaction SSH/Telnet honeypot that logs all attacker activity. commands run, files uploaded, credentials attempted.
 
-### Install Cowrie
+Install Cowrie
 
 ```bash
-# Create dedicated user (never run honeypots as root)
+Create dedicated user (never run honeypots as root)
 sudo useradd -m -d /opt/cowrie -s /bin/bash cowrie
 sudo su - cowrie
 
-# Clone Cowrie
+Clone Cowrie
 git clone https://github.com/cowrie/cowrie.git
 cd cowrie
 
-# Create virtual environment
+Create virtual environment
 python3 -m venv cowrie-env
 source cowrie-env/bin/activate
 pip install -r requirements/requirements.txt
 
-# Create config from template
+Create config from template
 cp cowrie.cfg.dist cowrie.cfg
 ```
 
-### Configure Cowrie
+Configure Cowrie
 
 ```ini
-# /opt/cowrie/cowrie/cowrie.cfg
+/opt/cowrie/cowrie/cowrie.cfg
 
 [honeypot]
-# Fake hostname shown to attackers
+Fake hostname shown to attackers
 hostname = prod-db-01
 
-# Log files
+Log files
 log_path = /opt/cowrie/var/log/cowrie
 download_path = /opt/cowrie/var/lib/cowrie/downloads
 
@@ -83,7 +83,7 @@ download_path = /opt/cowrie/var/lib/cowrie/downloads
 enabled = true
 logfile = /opt/cowrie/var/log/cowrie/cowrie.json
 
-# Listen port (redirect real port 22 to this via iptables)
+Listen port (redirect real port 22 to this via iptables)
 [ssh]
 listen_endpoints = tcp:2222:interface=0.0.0.0
 version = SSH-2.0-OpenSSH_8.4p1 Debian-5+deb11u1
@@ -93,40 +93,40 @@ enabled = true
 listen_endpoints = tcp:2323:interface=0.0.0.0
 ```
 
-### Redirect Port 22 to Cowrie
+Redirect Port 22 to Cowrie
 
 Move your real SSH to a different port, let Cowrie listen on 2222, redirect 22 to 2222:
 
 ```bash
-# Move real SSH to port 2200
-# /etc/ssh/sshd_config → Port 2200
+Move real SSH to port 2200
+/etc/ssh/sshd_config → Port 2200
 sudo systemctl restart sshd
 
-# Redirect port 22 to Cowrie
+Redirect port 22 to Cowrie
 sudo iptables -t nat -A PREROUTING -p tcp --dport 22 -j REDIRECT --to-port 2222
 sudo iptables -t nat -A PREROUTING -p tcp --dport 23 -j REDIRECT --to-port 2323
 
-# Save iptables rules
+Save iptables rules
 sudo iptables-save | sudo tee /etc/iptables/rules.v4
 ```
 
-### Start Cowrie
+Start Cowrie
 
 ```bash
-# Start as cowrie user
+Start as cowrie user
 sudo su - cowrie
 cd /opt/cowrie
 source cowrie-env/bin/activate
 bin/cowrie start
 
-# Watch live log
+Watch live log
 tail -f var/log/cowrie/cowrie.log
 ```
 
-### Monitor Cowrie Attacks
+Monitor Cowrie Attacks
 
 ```bash
-# Watch live attack log
+Watch live attack log
 tail -f /opt/cowrie/var/log/cowrie/cowrie.json | python3 -c "
 import sys, json
 for line in sys.stdin:
@@ -138,12 +138,12 @@ for line in sys.stdin:
         pass
 "
 
-# Top attacking IPs
+Top attacking IPs
 cat /opt/cowrie/var/log/cowrie/cowrie.json | \
   python3 -c "import sys,json; [print(json.loads(l).get('src_ip','')) for l in sys.stdin if l.strip()]" | \
   sort | uniq -c | sort -rn | head -20
 
-# Most tried passwords
+Most tried passwords
 cat /opt/cowrie/var/log/cowrie/cowrie.json | \
   python3 -c "
 import sys, json
@@ -159,18 +159,18 @@ for l in sys.stdin:
 
 ---
 
-### Step 2: OpenCanary: Multi-Service Honeypot
+Step 2: OpenCanary: Multi-Service Honeypot
 
 OpenCanary simulates multiple services at once: HTTP, FTP, SSH, MySQL, Redis, SMB, and more. Ideal for detecting internal network reconnaissance.
 
 ```bash
-# Install OpenCanary
+Install OpenCanary
 pip install opencanary
 pip install scapy pcapy   # for packet-level modules (optional)
 
-# Generate default config
+Generate default config
 opencanaryd --copyconfig
-# Creates /etc/opencanary.conf
+Creates /etc/opencanary.conf
 ```
 
 ```json
@@ -211,13 +211,13 @@ opencanaryd --copyconfig
 ```
 
 ```bash
-# Start OpenCanary
+Start OpenCanary
 opencanaryd --start
 
-# Watch log in real time
+Watch log in real time
 tail -f /var/log/opencanary.log | python3 -m json.tool
 
-# Run as a service
+Run as a service
 cat > /etc/systemd/system/opencanary.service << 'EOF'
 [Unit]
 Description=OpenCanary Honeypot
@@ -237,9 +237,9 @@ systemctl enable --now opencanary
 
 ---
 
-### Step 3: Alert on Honeypot Access
+Step 3: Alert on Honeypot Access
 
-The real value of a honeypot is alerting — knowing the moment someone accesses it:
+The real value of a honeypot is alerting. knowing the moment someone accesses it:
 
 ```python
 #!/usr/bin/env python3
@@ -294,7 +294,7 @@ def monitor():
                     continue
                 try:
                     event = json.loads(line)
-                    # Any access is suspicious — alert on all events
+                    # Any access is suspicious. alert on all events
                     send_alert(event)
                 except json.JSONDecodeError:
                     pass
@@ -307,43 +307,43 @@ if __name__ == "__main__":
 
 ---
 
-### Step 4: Canary Tokens: File-Based Honeypots
+Step 4: Canary Tokens: File-Based Honeypots
 
-Canary tokens are files (documents, PDFs, images) that phone home when opened. Drop them in sensitive directories — if someone opens the "Passwords.xlsx" canary token, you get notified.
+Canary tokens are files (documents, PDFs, images) that phone home when opened. Drop them in sensitive directories. if someone opens the "Passwords.xlsx" canary token, you get notified.
 
 ```bash
-# Generate a canary token at canarytokens.org
-# Choose: Word Document, PDF, or Windows Folder
+Generate a canary token at canarytokens.org
+Choose: Word Document, PDF, or Windows Folder
 
-# Download the token file
+Download the token file
 wget https://canarytokens.org/download?token=abc123... -O "Passwords-2026.docx"
 
-# Place in directories you want to monitor:
+Place in directories you want to monitor:
 cp "Passwords-2026.docx" ~/Documents/
 cp "Passwords-2026.docx" /var/www/html/admin/
 cp "Passwords-2026.docx" /home/backup/credentials/
 
-# When opened from anywhere, you receive an email alert with:
-# - Timestamp
-# - IP address of the opener
-# - Browser/OS details (for web tokens)
+When opened from anywhere, you receive an email alert with:
+- Timestamp
+- IP address of the opener
+- Browser/OS details (for web tokens)
 ```
 
 ---
 
-### Step 5: Network Canary: Detect Internal Reconnaissance
+Step 5: Network Canary: Detect Internal Reconnaissance
 
 Place a canary service on an IP that should never be accessed:
 
 ```bash
-# Use a spare IP on your LAN that no legitimate device uses
-# Set up OpenCanary on this IP
-# Any port scan or connection attempt = intruder alert
+Use a spare IP on your LAN that no legitimate device uses
+Set up OpenCanary on this IP
+Any port scan or connection attempt = intruder alert
 
-# On your router, assign the canary IP as static
-# In Pi-hole: block the canary's own DNS queries (avoid false positives)
+On your router, assign the canary IP as static
+In Pi-hole: block the canary's own DNS queries (avoid false positives)
 
-# Monitor with nftables logging:
+Monitor with nftables logging:
 sudo nft add rule inet filter input ip daddr 192.168.1.200 \
   log prefix "CANARY_HIT: " counter drop
 sudo journalctl -f | grep CANARY_HIT
@@ -351,22 +351,22 @@ sudo journalctl -f | grep CANARY_HIT
 
 ---
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Articles
+Related Articles
 
 - [How to Use OSSEC for Host Intrusion Detection](/ossec-host-intrusion-detection-setup/)
 - [Suricata Home Network IDS Setup Guide](/suricata-home-network-ids-setup/)
@@ -374,27 +374,27 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [How to Harden SSH Server Configuration](/how-to-harden-ssh-server-configuration/)
 - [How To Access Google Services From China Without Getting](/how-to-access-google-services-from-china-without-getting-det/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to set up a honeypot for intrusion detection?**
+How long does it take to set up a honeypot for intrusion detection?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Will this work with my existing CI/CD pipeline?**
+Will this work with my existing CI/CD pipeline?
 
 The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ. You may need to adapt file paths, environment variable names, and trigger conditions to match your pipeline tool. The underlying workflow logic stays the same.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 {% endraw %}

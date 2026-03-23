@@ -16,11 +16,11 @@ voice-checked: true
 
 {% raw %}
 
-To detect ISP throttling of VPN traffic, compare your connection speed with and without a VPN using speed tests—if performance drops below 50% of baseline, throttling is likely occurring. This guide covers five proven detection methods using command-line tools and network analysis to identify whether your ISP targets VPN protocols, specific ports, or general VPN traffic.
+To detect ISP throttling of VPN traffic, compare your connection speed with and without a VPN using speed tests, if performance drops below 50% of baseline, throttling is likely occurring. This guide covers five proven detection methods using command-line tools and network analysis to identify whether your ISP targets VPN protocols, specific ports, or general VPN traffic.
 
 Armed with diagnostic techniques like baseline testing, packet loss analysis, MTR monitoring, and protocol-specific testing, you can confirm throttling and choose appropriate workarounds like protocol switching or port changes.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -30,13 +30,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand VPN Throttling
+Step 1: Understand VPN Throttling
 
-VPN throttling occurs when your ISP intentionally slows down traffic using specific protocols—typically OpenVPN (UDP/TCP port 1194), WireGuard, or IKEv2. ISPs may target VPN traffic for several reasons: bandwidth management during peak hours, enforcement of data caps, or in some jurisdictions, compliance with regulatory requirements.
+VPN throttling occurs when your ISP intentionally slows down traffic using specific protocols, typically OpenVPN (UDP/TCP port 1194), WireGuard, or IKEv2. ISPs may target VPN traffic for several reasons: bandwidth management during peak hours, enforcement of data caps, or in some jurisdictions, compliance with regulatory requirements.
 
 Unlike general speed drops, throttling exhibits specific patterns. You will notice significantly reduced speeds when using a VPN while regular browsing remains relatively unaffected. Protocol-level blocking often manifests as connection timeouts, packet loss, or throughput that plateaus well below your subscribed bandwidth.
 
-## Method 1: Baseline Speed Comparison
+Method 1: Baseline Speed Comparison
 
 The most straightforward approach involves comparing your network speed with and without a VPN active.
 
@@ -47,10 +47,10 @@ pip install speedtest-cli
 speedtest
 ```
 
-Note your download and upload speeds, ping latency, and server location. Then connect to your VPN and run the identical test from the same server location. A substantial speed differential—typically below 50% of your baseline—suggests throttling, though legitimate VPN overhead typically reduces speeds by 20-40%.
+Note your download and upload speeds, ping latency, and server location. Then connect to your VPN and run the identical test from the same server location. A substantial speed differential, typically below 50% of your baseline, suggests throttling, though legitimate VPN overhead typically reduces speeds by 20-40%.
 
 ```bash
-# Run multiple tests for statistical significance
+Run multiple tests for statistical significance
 for i in {1..5}; do
   speedtest --server-id=SERVER_ID >> vpn_speed_results.txt
   sleep 30
@@ -59,55 +59,55 @@ done
 
 Compare the averages to determine whether the speed reduction exceeds expected VPN overhead.
 
-### Step 2: Method 2: Packet Loss Analysis
+Step 2: Method 2: Packet Loss Analysis
 
 Throttling often introduces packet loss, particularly for UDP-based VPN protocols. The `ping` utility provides a simple diagnostic:
 
 ```bash
-# Test baseline latency to a common server
+Test baseline latency to a common server
 ping -c 100 8.8.8.8
 
-# Test VPN tunnel latency (with VPN active)
+Test VPN tunnel latency (with VPN active)
 ping -c 100 <VPN_SERVER_IP>
 ```
 
 Compare the packet loss percentage and latency variance. Consistent packet loss exceeding 2-3% during VPN use indicates network interference. Traceroute helps identify where packets drop:
 
 ```bash
-# Trace route with VPN disabled
+Trace route with VPN disabled
 traceroute 8.8.8.8
 
-# Trace route with VPN enabled
+Trace route with VPN enabled
 traceroute <VPN_SERVER_IP>
 ```
 
 If your ISP's local nodes show increased latency or packet loss only when the VPN is active, throttling is likely occurring at their infrastructure level.
 
-### Step 3: Method 3: Protocol-Specific Testing
+Step 3: Method 3: Protocol-Specific Testing
 
 Different VPN protocols exhibit varying susceptibility to throttling. Testing multiple protocols isolates whether your ISP targets specific protocols rather than VPN traffic generally.
 
 WireGuard typically presents a smaller attack surface than OpenVPN because it uses a single UDP port and modern cryptography. Test connectivity across protocols:
 
 ```bash
-# Test OpenVPN performance
+Test OpenVPN performance
 sudo openvpn --config client.ovpn --verb 4
 
-# Test WireGuard performance
+Test WireGuard performance
 sudo wg-quick up wg0
 
-# Test IKEv2 connectivity
+Test IKEv2 connectivity
 sudo iked -s
 ```
 
 If WireGuard performs significantly better than OpenVPN or IKEv2, your ISP likely performs deep packet inspection (DPI) to identify and throttle specific VPN protocols. Some ISPs throttle based on DPI signatures rather than port numbers, making protocol switching an effective workaround.
 
-### Step 4: Method 4: Port-Based Detection
+Step 4: Method 4: Port-Based Detection
 
 ISPs often throttle traffic based on port numbers. Test your connection speed across different ports:
 
 ```bash
-# Test common VPN ports
+Test common VPN ports
 for port in 443 1194 51820 500 4500; do
   echo "Testing port $port"
   nc -zv vpn.example.com $port &
@@ -117,33 +117,33 @@ wait
 
 If certain ports show dramatically reduced performance while others remain fast, your ISP implements port-based throttling. This differs from protocol-based throttling and may respond to port switching or obfuscation techniques.
 
-### Step 5: Method 5: Using MTR for Continuous Monitoring
+Step 5: Method 5: Using MTR for Continuous Monitoring
 
 The `mtr` utility combines ping and traceroute, providing continuous network path analysis:
 
 ```bash
-# Install mtr if needed
+Install mtr if needed
 brew install mtr  # macOS
 sudo apt-get install mtr-tiny  # Linux
 
-# Run continuous monitoring
+Run continuous monitoring
 mtr -c 100 --report-wide <VPN_SERVER_IP>
 ```
 
 Look for patterns: increased packet loss at specific hops, latency spikes that correlate with VPN activation, or routing anomalies that only appear when tunneling. Persistent issues at early hops (typically within your ISP's network) strongly indicate ISP-level throttling.
 
-### Step 6: Automate Detection with Scripts
+Step 6: Automate Detection with Scripts
 
 For ongoing monitoring, consider a simple detection script that runs periodic tests:
 
 ```bash
 #!/bin/bash
-# vpn_throttle_detector.sh
+vpn_throttle_detector.sh
 
 BASELINE_SPEED=100  # Your expected speed in Mbps
 VPN_SERVER="vpn.example.com"
 
-# Test without VPN (manual baseline required)
+Test without VPN (manual baseline required)
 echo "Testing with VPN active..."
 SPEED=$(speedtest --server-id=SERVER_ID --simple | grep -oP '\d+\.\d+' | head -1)
 
@@ -158,21 +158,21 @@ fi
 Schedule this with cron for continuous monitoring:
 
 ```bash
-# Run every hour
+Run every hour
 0 * * * * /path/to/vpn_throttle_detector.sh
 ```
 
-### Step 7: What to Do If You Detect Throttling
+Step 7: What to Do If You Detect Throttling
 
 Once you confirm throttling, several approaches may help:
 
-1. **Switch protocols**: Move from OpenVPN to WireGuard or use protocols with built-in obfuscation
-2. **Change ports**: Try port 443 (HTTPS) or other common ports that ISPs rarely throttle
-3. **Use obfuscation**: Tools like obfsproxy or specialized VPN services that mask VPN traffic as regular HTTPS
-4. **Contact your ISP**: Request clarification on their traffic management policies
-5. **Document findings**: Keep logs and speed tests as evidence if pursuing complaints
+1. Switch protocols: Move from OpenVPN to WireGuard or use protocols with built-in obfuscation
+2. Change ports: Try port 443 (HTTPS) or other common ports that ISPs rarely throttle
+3. Use obfuscation: Tools like obfsproxy or specialized VPN services that mask VPN traffic as regular HTTPS
+4. Contact your ISP: Request clarification on their traffic management policies
+5. Document findings: Keep logs and speed tests as evidence if pursuing complaints
 
-### Step 8: Deep Packet Inspection (DPI) Detection
+Step 8: Deep Packet Inspection (DPI) Detection
 
 If your ISP uses DPI to identify VPN traffic, certain markers reveal their approach. OpenVPN uses specific handshake patterns that DPI systems can recognize without decrypting content. The TLS version, certificate size, and timing information provide fingerprints.
 
@@ -180,7 +180,7 @@ Detect DPI throttling by testing protocol variations:
 
 ```bash
 #!/bin/bash
-# DPI detection script - test protocol variations
+DPI detection script - test protocol variations
 
 test_protocol() {
     local protocol=$1
@@ -195,7 +195,7 @@ test_protocol() {
     echo "Packet loss for $description: $LOSS"
 }
 
-# Test different protocols
+Test different protocols
 test_protocol "tcp" "443" "OpenVPN over TCP port 443"
 test_protocol "tcp" "1194" "OpenVPN over TCP port 1194"
 test_protocol "udp" "1194" "OpenVPN over UDP port 1194"
@@ -204,25 +204,25 @@ test_protocol "udp" "443" "Custom UDP port 443"
 
 If port 443 shows significantly better performance than port 1194, your ISP likely recognizes VPN traffic by port number. If all VPN protocols show degradation, DPI-based identification is occurring.
 
-### Step 9: ISP Throttling Mitigation Strategies
+Step 9: ISP Throttling Mitigation Strategies
 
 Once you've confirmed throttling, several technical approaches may improve performance.
 
-### Port Obfuscation
+Port Obfuscation
 
 Configure your VPN to use port 443 (standard HTTPS), which ISPs rarely throttle since blocking it would break legitimate web traffic:
 
 ```bash
-# OpenVPN obfuscation configuration
+OpenVPN obfuscation configuration
 proto tcp
 remote vpn.example.com 443
 port 443
 
-# Enable obfsproxy for additional masking
+Enable obfsproxy for additional masking
 plugin /usr/lib/openvpn/openvpn-plugin-auth-pam.so /etc/openvpn/auth openvpn
 ```
 
-### Protocol Switching Strategy
+Protocol Switching Strategy
 
 Create a fallback chain testing multiple protocols:
 
@@ -258,17 +258,17 @@ def test_protocol_speed(protocol):
 
     return speed
 
-# Find fastest protocol
+Find fastest protocol
 best_protocol = max(protocols, key=test_protocol_speed)
 print(f"Fastest protocol: {best_protocol['name']}")
 ```
 
-### Split Tunneling Optimization
+Split Tunneling Optimization
 
 If allowed by your ISP and threat model, route only traffic requiring privacy through the VPN:
 
 ```bash
-# Linux systemd-networkd split tunneling
+Linux systemd-networkd split tunneling
 [Match]
 Name=tun0
 
@@ -279,64 +279,64 @@ Gateway=10.8.0.1
 
 This reduces VPN throughput pressure on ISP throttling, though it exposes non-VPN traffic to ISP monitoring.
 
-### Step 10: Regulatory Context
+Step 10: Regulatory Context
 
 In several jurisdictions, ISP throttling of specific traffic types has legal implications. The FCC's 2015 Open Internet rules prohibited blocking and throttling, though the rules faced legal challenges. In Europe, the Specialised Services Framework allows ISP traffic management but requires transparency.
 
 Document throttling for potential complaints to regulatory bodies:
 
 ```markdown
-# ISP Throttling Complaint Documentation
+ISP Throttling Complaint Documentation
 
-**Date**: 2026-03-21
-**ISP**: [Your ISP Name]
-**Evidence**:
+Date: 2026-03-21
+ISP: [Your ISP Name]
+Evidence:
 - Baseline speed without VPN: 100 Mbps
 - Speed with OpenVPN UDP port 1194: 15 Mbps (85% reduction)
 - Speed with OpenVPN TCP port 443: 92 Mbps (8% reduction)
 - Speed with non-VPN traffic: 98 Mbps
 
-**Conclusion**: Selective throttling of non-standard ports indicates deliberate VPN targeting
+Conclusion: Selective throttling of non-standard ports indicates deliberate VPN targeting
 ```
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to detect if your isp is throttling vpn traffic?**
+How long does it take to detect if your isp is throttling vpn traffic?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Verify a VPN Is Actually Encrypting Your Traffic](/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)
 - [How To Diagnose Slow Vpn Connection Speeds](/how-to-diagnose-slow-vpn-connection-speeds-step-by-step/)
@@ -344,5 +344,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Use Tcpdump to Verify VPN Traffic Is Encrypted](/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [VPN Packet Inspection Explained](/vpn-packet-inspection-how-deep-packet-inspection-detects-vpn-traffic/)
 - [AI Coding Assistant for Network Traffic Analysis: What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

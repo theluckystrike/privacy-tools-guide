@@ -16,9 +16,9 @@ voice-checked: true
 
 {% raw %}
 
-Tor Browser stops font fingerprinting by normalizing fonts across all users—the Standard security level provides default protection by blocking aggressive fingerprinting vectors, the Safer level allows only minimal system fonts, and the Safest level disables JavaScript access to font enumeration APIs entirely. Combined with letterboxing (gray margins that prevent window-size tracking), these defenses ensure trackers see the same fonts from your browser as from thousands of other Tor users, making you indistinguishable from the crowd.
+Tor Browser stops font fingerprinting by normalizing fonts across all users, the Standard security level provides default protection by blocking aggressive fingerprinting vectors, the Safer level allows only minimal system fonts, and the Safest level disables JavaScript access to font enumeration APIs entirely. Combined with letterboxing (gray margins that prevent window-size tracking), these defenses ensure trackers see the same fonts from your browser as from thousands of other Tor users, making you indistinguishable from the crowd.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding Font Fingerprinting](#understanding-font-fingerprinting)
 - [Font Restriction Levels](#font-restriction-levels)
@@ -30,14 +30,14 @@ Tor Browser stops font fingerprinting by normalizing fonts across all users—th
 - [Best Practices for Maximum Protection](#best-practices-for-maximum-protection)
 - [Font Fingerprinting Attack Vectors](#font-fingerprinting-attack-vectors)
 - [Security Levels Comparison](#security-levels-comparison)
-- [Technical Deep Dive: Font Normalization](#technical-deep-dive-font-normalization)
+- [Technical Deep Dive: Font Normalization](#technical-deep detailed look-font-normalization)
 - [Identifying Font Fingerprinting Attempts](#identifying-font-fingerprinting-attempts)
 - [Testing Specific Font Protection](#testing-specific-font-protection)
 - [Complementary Protections](#complementary-protections)
 - [Font Configuration for Maximum Privacy](#font-configuration-for-maximum-privacy)
 - [Monitoring Font Fingerprinting Threats](#monitoring-font-fingerprinting-threats)
 
-## Understanding Font Fingerprinting
+Understanding Font Fingerprinting
 
 When a website loads text, the browser must render that text using available fonts. Each operating system ships with different fonts pre-installed, and users often install additional fonts for design work, programming, or personal preference. This creates a unique combination that can identify you across sessions and websites.
 
@@ -45,19 +45,19 @@ The attack works by JavaScript code querying the browser's font capabilities. Th
 
 Tor Browser addresses this threat through several interconnected mechanisms designed to normalize the font environment across all users.
 
-## Font Restriction Levels
+Font Restriction Levels
 
 Tor Browser provides three font restriction levels accessible through the security slider. Navigate to `about:config` and search for `font.restrict` to see these settings in detail, or access them through the Tor Button menu under "Security Settings."
 
-The **Standard** level provides the default balance between usability and privacy. This setting allows most system fonts while blocking the most aggressive fingerprinting vectors. For typical browsing, this level offers sufficient protection without sacrificing functionality.
+The Standard level provides the default balance between usability and privacy. This setting allows most system fonts while blocking the most aggressive fingerprinting vectors. For typical browsing, this level offers sufficient protection without sacrificing functionality.
 
-The **Safer** level restricts fonts further, allowing only a minimal set of fonts known to be widely available across operating systems. This reduces the uniqueness of your browser fingerprint significantly but may cause some websites to display fallback fonts.
+The Safer level restricts fonts further, allowing only a minimal set of fonts known to be widely available across operating systems. This reduces the uniqueness of your browser fingerprint significantly but may cause some websites to display fallback fonts.
 
-The **Safest** level provides maximum protection by limiting fonts to a minimal set and disabling JavaScript access to font enumeration APIs. This level ensures the most consistent fingerprint across Tor Browser users but may break functionality on websites with complex typography requirements.
+The Safest level provides maximum protection by limiting fonts to a minimal set and disabling JavaScript access to font enumeration APIs. This level ensures the most consistent fingerprint across Tor Browser users but may break functionality on websites with complex typography requirements.
 
 You can also configure specific font allowlists and blocklists using the `font.whitelist` and `font.blacklist` preferences in about:config.
 
-## The Letterboxing Defense
+The Letterboxing Defense
 
 Tor Browser implements letterboxing as a primary defense against window-based fingerprinting. When enabled, Tor Browser adds gray margins around web content to maintain a consistent window size regardless of the actual content dimensions. This prevents trackers from measuring your exact viewport size, which correlates with your screen resolution and installed fonts.
 
@@ -73,7 +73,7 @@ The letterboxing implementation specifically targets the practice of measuring r
 
 The minimum inner dimensions settings determine the smallest size Tor Browser will report to websites. Setting these to common values like 1024x768 or 1280x720 helps blend your browser with other users.
 
-## Font Loading Restrictions
+Font Loading Restrictions
 
 Tor Browser modifies the font loading process to prevent fingerprinting through timing attacks. When a webpage attempts to load a font, Tor Browser may substitute the requested font with a fallback, measuring the loading time consistently across all users rather than revealing which fonts are actually available.
 
@@ -81,27 +81,27 @@ The `browser.display.use_font_map_smoothing` preference controls font smoothing 
 
 For developers testing their websites, you can observe how Tor Browser handles font requests by enabling the browser's font debugging. Open the Developer Tools (Ctrl+Shift+I), navigate to the Network tab, and observe how font requests are processed differently than in standard browsers.
 
-## Configuring Advanced Font Settings
+Configuring Advanced Font Settings
 
 For power users seeking fine-grained control, Tor Browser exposes several about:config preferences. The following configurations enhance font fingerprinting protection:
 
 ```bash
-# Disable CSS font enumeration
-# This prevents websites from listing available fonts
+Disable CSS font enumeration
+This prevents websites from listing available fonts
 font.dom.always_return_array = false
 
-# Limit font access for canvas rendering
-# Prevents font-based canvas fingerprinting
+Limit font access for canvas rendering
+Prevents font-based canvas fingerprinting
 privacy.resistFingerprinting = true
 
-# Randomize fonts for canvas operations
-# Adds noise to font-based measurements
+Randomize fonts for canvas operations
+Adds noise to font-based measurements
 canvas.randomize-font = true
 ```
 
 The `privacy.resistFingerprinting` boolean enables the fingerprinting resistance system, which affects fonts, canvas, WebGL, and other fingerprinting vectors. Setting this to true is recommended for maximum protection.
 
-## Platform-Specific Considerations
+Platform-Specific Considerations
 
 Font availability differs significantly across operating systems, which creates inherent challenges for fingerprinting defense. Tor Browser addresses these differences by normalizing the exposed font environment, but some platform-specific behaviors remain.
 
@@ -109,7 +109,7 @@ On Windows, the GDI subsystem provides font rendering that differs from Quartz o
 
 Linux users often have the most diverse font installations due to the distribution model. If you run Tor Browser on Linux, consider removing unnecessary fonts from your system to reduce your fingerprint uniqueness. The `fc-list` command enumerates installed fonts, helping you identify candidates for removal.
 
-## Testing Your Font Fingerprint
+Testing Your Font Fingerprint
 
 To verify Tor Browser's font fingerprinting protection, use the Cover Your Tracks (formerly Panopticlick) test from the Electronic Frontier Foundation. This tool analyzes your browser's fingerprint and provides an uniqueness score. A well-configured Tor Browser should show high entropy reduction compared to unprotected browsers.
 
@@ -127,7 +127,7 @@ document.fonts.check("12px NonExistentFont");
 document.fonts.size;
 ```
 
-## Best Practices for Maximum Protection
+Best Practices for Maximum Protection
 
 Combining Tor Browser's built-in protections with good browsing habits provides the strongest defense against font fingerprinting:
 
@@ -139,14 +139,14 @@ Resist the temptation to customize Tor Browser's appearance excessively. Themes,
 
 When using the Safest security level, test critical websites you visit regularly. Some legitimate sites require JavaScript font access for proper functionality. You can create exceptions for trusted sites while maintaining the highest protection level elsewhere.
 
-## Font Fingerprinting Attack Vectors
+Font Fingerprinting Attack Vectors
 
 Understanding how trackers extract font information helps appreciate Tor Browser's defenses:
 
-**Vector 1: CSS Fallback Chain Timing**
+Vector 1: CSS Fallback Chain Timing
 Trackers measure how long it takes to render text with progressively less common fonts. If a font isn't available, rendering takes longer due to fallback processing. By timing multiple fonts, attackers build a unique profile.
 
-**Vector 2: Canvas Text Measurement**
+Vector 2: Canvas Text Measurement
 JavaScript can render text to an HTML canvas element and measure pixel dimensions. Different fonts produce different widths for identical text, revealing which fonts are installed.
 
 ```javascript
@@ -179,15 +179,15 @@ Tor Browser prevents this attack by:
 2. Disabling the Canvas API fingerprinting methods
 3. Randomizing canvas rendering to produce inconsistent results
 
-**Vector 3: CSS Font Load Events**
+Vector 3: CSS Font Load Events
 Websites can listen to `@font-face` load events to determine which fonts successfully loaded, inferring system fonts.
 
-**Vector 4: DOM Metrics Measurement**
+Vector 4: DOM Metrics Measurement
 JavaScript measures DOM element heights and widths, which vary based on available fonts. Different font metrics (ascender height, baseline, x-height) produce detectable differences.
 
 Tor Browser's letterboxing defense prevents this by constraining the content area to fixed dimensions.
 
-## Security Levels Comparison
+Security Levels Comparison
 
 | Feature | Standard | Safer | Safest |
 |---------|----------|-------|--------|
@@ -199,7 +199,7 @@ Tor Browser's letterboxing defense prevents this by constraining the content are
 | Plugin Fingerprinting | Mitigated | Mitigated | Blocked |
 | User Experience Impact | Minimal | Moderate | High |
 
-## Technical Deep Dive: Font Normalization
+Technical Deep Dive: Font Normalization
 
 Tor Browser implements font normalization through several mechanisms:
 
@@ -238,7 +238,7 @@ function enumerateFonts() {
 
 This normalization ensures that JavaScript queries for available fonts always receive identical results, eliminating the fingerprinting vector.
 
-## Identifying Font Fingerprinting Attempts
+Identifying Font Fingerprinting Attempts
 
 Monitor your Tor Browser console for suspicious font-related activity:
 
@@ -268,7 +268,7 @@ CanvasRenderingContext2D.prototype.measureText = function(text) {
 
 In Safest mode, many of these operations will be unavailable, blocking the attack.
 
-## Testing Specific Font Protection
+Testing Specific Font Protection
 
 Create a test to verify Tor Browser's font protections:
 
@@ -333,43 +333,43 @@ Create a test to verify Tor Browser's font protections:
 
 View this test in Tor Browser at different security levels to observe how defenses vary.
 
-## Complementary Protections
+Complementary Protections
 
 Font fingerprinting is just one of many fingerprinting vectors. Combine Tor Browser's protections with these additional measures:
 
-**Canvas Fingerprinting**: Tor Browser randomizes canvas rendering through `privacy.resistFingerprinting`. Test at coverYourTracks.eff.org to verify protection.
+Canvas Fingerprinting: Tor Browser randomizes canvas rendering through `privacy.resistFingerprinting`. Test at coverYourTracks.eff.org to verify protection.
 
-**WebGL Fingerprinting**: GPU capabilities reveal information about hardware. Tor Browser disables WebGL in Safest mode.
+WebGL Fingerprinting: GPU capabilities reveal information about hardware. Tor Browser disables WebGL in Safest mode.
 
-**Timezone Fingerprinting**: `privacy.resistFingerprinting` sets timezone to UTC for all users.
+Timezone Fingerprinting: `privacy.resistFingerprinting` sets timezone to UTC for all users.
 
-**Language Fingerprinting**: Accept-Language headers are normalized to match Tor Browser's default language.
+Language Fingerprinting: Accept-Language headers are normalized to match Tor Browser's default language.
 
 The cumulative effect: even if one fingerprinting vector leaks information, the others remain protected, maintaining anonymity through a diverse fingerprint pool.
 
-## Font Configuration for Maximum Privacy
+Font Configuration for Maximum Privacy
 
 For maximum privacy, manually configure these about:config settings:
 
 ```
-# Disable font smoothing (can reveal hardware)
+Disable font smoothing (can reveal hardware)
 browser.display.use_font_map_smoothing = false
 
-# Disable dynamic font loading
+Disable dynamic font loading
 dom.webfont.fontmanager.enabled = false
 
-# Restrict fonts to baseline set
+Restrict fonts to baseline set
 font.default.sans-serif = "Arial"
 font.default.serif = "Times New Roman"
 font.default.monospace = "Courier New"
 
-# Disable font size zooming per-domain
+Disable font size zooming per-domain
 browser.zoom.text_only = true
 ```
 
 Apply these in addition to the security slider settings for defense-in-depth.
 
-## Monitoring Font Fingerprinting Threats
+Monitoring Font Fingerprinting Threats
 
 Watch for new font fingerprinting techniques:
 
@@ -380,29 +380,29 @@ Subscribe to:
 
 The threat ecosystem continuously evolves. New JavaScript APIs (like Font Metrics API) may introduce new vectors requiring Tor Project updates.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Tor Browser Fingerprinting Protection How It Makes Everyone](/tor-browser-fingerprinting-protection-how-it-makes-everyone-/)
 - [Tor Browser Canvas Fingerprinting Protection](/tor-browser-canvas-fingerprinting-protection/)
@@ -410,5 +410,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Tor Browser Screen Size Fingerprint Protection](/tor-browser-screen-size-fingerprint-protection/)
 - [Browser Fingerprinting: What It Is and How to Block It](/browser-fingerprinting-what-it-is-how-to-block/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

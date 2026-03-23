@@ -18,21 +18,21 @@ tags: [privacy-tools-guide]
 
 To use Bitwarden custom fields, open any vault item, scroll to the "Custom Fields" section, and click "Add Item" to create Text (visible metadata), Hidden (masked values like API keys), or Protected (extra-secure, non-searchable) fields. Custom fields let you store API keys, database connection strings, SSH configurations, and environment tags alongside your login credentials, and you can retrieve them programmatically via the Bitwarden CLI with `bw get item "name" | jq '.fields[]'`.
 
-## Key Takeaways
+Key Takeaways
 
-- **Use only for non-sensitive**: metadata like server hostnames or documentation URLs.
-- **Use these for URLs**: server hostnames, or any non-sensitive metadata you want to associate with an entry.
-- **Best for recovery codes**: encryption keys, or emergency credentials.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
+- Use only for non-sensitive: metadata like server hostnames or documentation URLs.
+- Use these for URLs: server hostnames, or any non-sensitive metadata you want to associate with an entry.
+- Best for recovery codes: encryption keys, or emergency credentials.
+- What are the most: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- Consider a security review: if your application handles sensitive user data.
 
-## What Are Custom Fields?
+What Are Custom Fields?
 
 Custom fields are additional data points you can attach to any vault item in Bitwarden. Each field consists of a name and value, with optional attributes for masking (hiding the value) or marking the field as a protected note. This flexibility makes custom fields ideal for storing API keys, database credentials, server addresses, and other developer-specific information.
 
 To access custom fields, open any vault item in the Bitwarden web vault, desktop app, or browser extension. Scroll past the standard login fields to find the "Custom Fields" section. Click "Add Item" to create your first custom field.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -42,19 +42,19 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Field Types and Their Applications
+Step 1: Field Types and Their Applications
 
 Bitwarden supports three distinct field types, each serving different use cases:
 
-**Text Fields** store plain text values. Use these for URLs, server hostnames, or any non-sensitive metadata you want to associate with an entry. Text fields appear as readable text in the vault.
+Text Fields store plain text values. Use these for URLs, server hostnames, or any non-sensitive metadata you want to associate with an entry. Text fields appear as readable text in the vault.
 
-**Hidden Fields** mask their values similar to password fields. These are appropriate for API keys, tokens, or any sensitive string you don't want visible on screen. Hidden fields still copy to clipboard normally when you click them.
+Hidden Fields mask their values similar to password fields. These are appropriate for API keys, tokens, or any sensitive string you don't want visible on screen. Hidden fields still copy to clipboard normally when you click them.
 
-**Protected Fields** provide an additional security layer. The value remains hidden and requires explicit action to reveal. Protected fields cannot be searched or exported in plaintext, making them suitable for particularly sensitive data like recovery codes or encryption keys.
+Protected Fields provide an additional security layer. The value remains hidden and requires explicit action to reveal. Protected fields cannot be searched or exported in plaintext, making them suitable for particularly sensitive data like recovery codes or encryption keys.
 
-## Practical Examples for Developers
+Practical Examples for Developers
 
-### Storing API Credentials
+Storing API Credentials
 
 For services requiring API keys, create a dedicated login item with custom fields:
 
@@ -71,7 +71,7 @@ Custom Fields:
 
 This organization keeps all authentication-related data in one place while clearly separating human credentials from machine credentials.
 
-### Database Connection Strings
+Database Connection Strings
 
 Database credentials often require multiple pieces of information. Custom fields handle this elegantly:
 
@@ -89,7 +89,7 @@ Custom Fields:
 
 The connection string field aggregates the individual values into a format ready for direct use in configuration files or environment variables.
 
-### SSH Key Management
+SSH Key Management
 
 Managing SSH keys becomes simpler with custom fields:
 
@@ -107,7 +107,7 @@ Custom Fields:
 
 This approach keeps all SSH configuration details accessible alongside your credentials, eliminating the need to search through documentation or configuration files.
 
-### Step 2: Automate with the Bitwarden CLI
+Step 2: Automate with the Bitwarden CLI
 
 The Bitwarden command-line interface (CLI) provides programmatic access to custom fields, enabling automation scripts and integration with development workflows.
 
@@ -126,7 +126,7 @@ bw login your@email.com
 Retrieve an item and extract custom field values using JSON parsing:
 
 ```bash
-# Get item with custom fields
+Get item with custom fields
 bw get item "GitHub API" | jq '.fields[] | select(.name == "API Key") | .value'
 ```
 
@@ -156,7 +156,7 @@ bw create item login '{
 
 Field type `0` represents text, while `1` represents hidden fields.
 
-### Step 3: Organizing Large Vaults
+Step 3: Organizing Large Vaults
 
 Custom fields shine when organizing vault entries for large projects or multiple environments. Create consistent field naming conventions across items:
 
@@ -168,17 +168,17 @@ For expiration tracking, store expiration dates in an "Expires" text field. Writ
 bw list items | jq -r '.[] | select(.fields != null) | select(.fields[] | .name == "Expires") | "\(.name): \((.fields[] | select(.name == "Expires") | .value))"'
 ```
 
-## Security Considerations
+Security Considerations
 
 While custom fields enhance organization, follow security best practices:
 
-Never store plaintext passwords in text fields—use hidden or protected fields instead. Be cautious with clipboard operations; clear clipboard data after copying sensitive values. The Bitwarden CLI supports automatic clipboard clearing with the `--clipboard` flag and `--timeout` parameter.
+Never store plaintext passwords in text fields, use hidden or protected fields instead. Be cautious with clipboard operations; clear clipboard data after copying sensitive values. The Bitwarden CLI supports automatic clipboard clearing with the `--clipboard` flag and `--timeout` parameter.
 
 When sharing items through Bitwarden Send or organizational sharing, custom field visibility depends on the item's sharing settings. Review shared items carefully to ensure sensitive fields aren't exposed unintentionally.
 
-## Advanced Field Patterns for Power Users
+Advanced Field Patterns for Power Users
 
-### Multi-Step Deployment Documentation
+Multi-Step Deployment Documentation
 
 Store complete deployment instructions in custom fields:
 
@@ -196,20 +196,20 @@ Custom Fields:
 
 This approach keeps deployment knowledge with credentials, preventing situations where credentials exist but the deployment process is lost to departing team members.
 
-### Credential Expiration Tracking
+Credential Expiration Tracking
 
 Implement automated expiration monitoring:
 
 ```bash
 #!/bin/bash
-# Check expiring credentials in Bitwarden
+Check expiring credentials in Bitwarden
 bw list items | jq -r '.[] | select(.fields != null) |
   select(.fields[] | select(.name == "Expires") |
   ((.value | split("-")[0] | tonumber) - 2026 < 1)) |
   "\(.name): Expires \((.fields[] | select(.name == "Expires") | .value))"'
 ```
 
-### Geographic/Temporal Field Organization
+Geographic/Temporal Field Organization
 
 Add custom fields for context-aware credential use:
 
@@ -227,55 +227,55 @@ Custom Fields:
 
 This allows scripts to select credentials based on deployment context.
 
-### Step 4: Integration with Infrastructure-as-Code
+Step 4: Integration with Infrastructure-as-Code
 
 Connect Bitwarden credentials to Terraform or other IaC tools:
 
 ```bash
 #!/bin/bash
-# Terraform variable file generator from Bitwarden
+Terraform variable file generator from Bitwarden
 
 bw unlock your@email.com  # Or use BW_SESSION environment variable
 
 cat > terraform.tfvars <<'EOF'
-# Auto-generated from Bitwarden - DO NOT EDIT MANUALLY
+Auto-generated from Bitwarden - DO NOT EDIT MANUALLY
 
-# Database credentials
+Database credentials
 rds_password = "$(bw get item 'RDS Production' | jq -r '.login.password')"
 db_host = "$(bw get item 'RDS Production' | jq -r '.fields[] | select(.name=="Host") | .value')"
 
-# API keys
+API keys
 stripe_api_key = "$(bw get item 'Stripe Live' | jq -r '.fields[] | select(.name=="API Key") | .value')"
 
-# AWS credentials
+AWS credentials
 aws_access_key = "$(bw get item 'AWS Prod' | jq -r '.login.username')"
 aws_secret_key = "$(bw get item 'AWS Prod' | jq -r '.login.password')"
 EOF
 
-# Then provision with Terraform
+Then provision with Terraform
 terraform apply -var-file=terraform.tfvars
 ```
 
-## Threat Modeling Custom Fields
+Threat Modeling Custom Fields
 
 Understand the security properties of different field types:
 
-**Text Fields**: Visible in plaintext. Use only for non-sensitive metadata like server hostnames or documentation URLs.
+Text Fields: Visible in plaintext. Use only for non-sensitive metadata like server hostnames or documentation URLs.
 
-**Hidden Fields**: Masked in UI but still searchable and exportable. Suitable for API keys that don't require extra protection layers.
+Hidden Fields: Masked in UI but still searchable and exportable. Suitable for API keys that don't require extra protection layers.
 
-**Protected Fields**: Completely hidden, non-searchable, not included in plaintext exports. Best for recovery codes, encryption keys, or emergency credentials.
+Protected Fields: Completely hidden, non-searchable, not included in plaintext exports. Best for recovery codes, encryption keys, or emergency credentials.
 
 ```bash
-# Export shows protected fields as empty
+Export shows protected fields as empty
 bw export --format json | jq '.items[].fields[] | select(.type == 2) | .value'
 
-# Output: null (protected fields are not exported unencrypted)
+Output: null (protected fields are not exported unencrypted)
 ```
 
 Use Protected fields for anything you absolutely don't want leaving your Bitwarden vault, even in encrypted exports.
 
-### Step 5: Field Naming Conventions at Scale
+Step 5: Field Naming Conventions at Scale
 
 Establish consistent field naming to support large vaults:
 
@@ -292,14 +292,14 @@ Prefixed naming:
 This allows consistent grep patterns and CLI queries:
 
 ```bash
-# Find all API endpoints
+Find all API endpoints
 bw list items | jq '.[] | .fields[] | select(.name | startswith("API_")) | .name'
 
-# Extract specific configuration
+Extract specific configuration
 bw get item "MyService" | jq '.fields[] | select(.name | startswith("API_")) | {name, value}'
 ```
 
-## Audit and Compliance
+Audit and Compliance
 
 Track credential usage for compliance:
 
@@ -316,44 +316,44 @@ Track credential usage for compliance:
 
 Document this in custom fields for regulatory audits.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to complete this setup?**
+How long does it take to complete this setup?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Iran Vpn Usage Risks Legal Consequences And How To Minimize](/iran-vpn-usage-risks-legal-consequences-and-how-to-minimize-/)
 - [How to Use Tor Browser Safely](/tor-browser-safe-usage-guide)
@@ -361,5 +361,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Firefox Strict Tracking Protection Vs Custom](/firefox-strict-tracking-protection-vs-custom/)
 - [Linux Secure Boot Setup with Custom Keys for Preventing.](/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -18,7 +18,7 @@ voice-checked: true
 
 Create a compartmentalized dating identity by using a dedicated email (ProtonMail or SimpleLogin), separate phone number (Google Voice or Burner app), unique username with no digital footprint, VPN connection, and a separate browser profile. Never link your dating accounts to Facebook or other social media. Use Signal for early messaging instead of exchanging phone numbers, and store dating photos separately from your personal photo library. This limits data exposure if your account is breached or matches turn out unsafe.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -28,24 +28,24 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Core Compartmentalization Principles
+Step 1: Core Compartmentalization Principles
 
 The fundamental concept is simple: your dating identity should share zero identifiers with your primary digital life. This means no shared email addresses, phone numbers, device identifiers, payment methods, or photos that could be reverse-searched to identify you.
 
-**Separation layers include:**
+Separation layers include:
 
-- **Account isolation**: Dedicated email addresses and phone numbers
-- **Device separation**: Using a secondary device or isolated container
-- **Photo compartmentalization**: Images that cannot be linked to your real identity
-- **Behavioral separation**: Different browsing patterns, login times, and usage habits
+- Account isolation: Dedicated email addresses and phone numbers
+- Device separation: Using a secondary device or isolated container
+- Photo compartmentalization: Images that cannot be linked to your real identity
+- Behavioral separation: Different browsing patterns, login times, and usage habits
 
 Each layer provides defense-in-depth. A single compromised layer does not automatically expose your real identity.
 
-### Step 2: Dedicated Email Infrastructure
+Step 2: Dedicated Email Infrastructure
 
 Create a completely separate email provider for your dating identity. Avoid using major providers like Gmail that link to your real identity through account recovery mechanisms.
 
-### Email Provider Recommendations
+Email Provider Recommendations
 
 | Provider | Registration Requirements | Privacy Features |
 |----------|---------------------------|------------------|
@@ -57,19 +57,19 @@ Create a completely separate email provider for your dating identity. Avoid usin
 Create a new account using your compartmentalized identity. Never access this email from your primary device or IP address.
 
 ```bash
-# Example: Setting up a dedicated email alias using FastMail's mask feature
-# This creates a unique sender for each service
+Setting up a dedicated email alias using FastMail's mask feature
+This creates a unique sender for each service
 ALIAS_NAME="dating-[servicename]-[random]"
 fastmail mask create "$ALIAS_NAME"@example.com
 ```
 
-### Email Forwarding Automation
+Email Forwarding Automation
 
 Set up email forwarding to route messages from your dating accounts to a dedicated inbox without linking identities:
 
 ```python
-# Python script to manage compartmentalized email forwarding
-# Uses separate SMTP connections for each identity
+Python script to manage compartmentalized email forwarding
+Uses separate SMTP connections for each identity
 
 import smtplib
 from email.mime.text import MIMEText
@@ -88,40 +88,40 @@ def create_dating_forwarder(dating_email, forwarding_email):
     }
     return config
 
-# Alternative: Use email masking services like AnonAddy
-# which create unlimited alias addresses
+Alternative: Use email masking services like AnonAddy
+which create unlimited alias addresses
 ```
 
-### Step 3: Phone Number Isolation
+Step 3: Phone Number Isolation
 
 Phone numbers are among the most sensitive identifiers. Dating apps require SMS verification, making number isolation critical.
 
-### VoIP vs. Burner SIM Options
+VoIP vs. Burner SIM Options
 
-**VoIP Numbers (Recommended):**
+VoIP Numbers (Recommended):
 
 - Google Voice (free, but requires primary account)
 - MySudo (paid, dedicated app numbers)
 - Burner (temporary numbers)
 - VoIP.ms (cheap DID numbers with SIP support)
 
-**Burner SIM Cards:**
+Burner SIM Cards:
 
 - Purchase with cash at convenience stores
 - Use with secondary device
 - Prepaid plans without ID verification
 
 ```bash
-# Example: Setting up a VoIP number with Twilio for dating apps
-# This creates a number that forwards to your actual phone
+Setting up a VoIP number with Twilio for dating apps
+This creates a number that forwards to your actual phone
 
-# Using Twilio CLI
+Using Twilio CLI
 twilio phone-numbers:create \
   --phone-number "+1[YOUR_AREA_CODE]" \
   --sms-url="https://your-forwarding-server.com/sms"
 
-# Server endpoint to handle forwarding
-# app.py (Flask)
+Server endpoint to handle forwarding
+app.py (Flask)
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -138,20 +138,20 @@ def forward_sms():
     return '<Response></Response>', 200
 ```
 
-### Critical Security Consideration
+Critical Security Consideration
 
 Never link your real phone number to your compartmentalized identity. Even one verification code sent to your real number breaks the isolation chain.
 
-### Step 4: Photo Compartmentalization
+Step 4: Photo Compartmentalization
 
 Photos are the weakest link in compartmentalization. Reverse image search can instantly link dating profile photos to your real identity through social media, professional profiles, or image databases.
 
-### Metadata Stripping
+Metadata Stripping
 
 All photos must have EXIF data removed before upload:
 
 ```python
-# Python script to strip EXIF metadata from images
+Python script to strip EXIF metadata from images
 from PIL import Image
 import piexif
 import os
@@ -175,7 +175,7 @@ def strip_metadata(image_path, output_path=None):
 
     return output_path
 
-# Batch process all dating photos
+Batch process all dating photos
 def process_dating_photos(directory):
     for filename in os.listdir(directory):
         if filename.lower().endswith(('.jpg', '.jpeg', '.png')):
@@ -183,27 +183,27 @@ def process_dating_photos(directory):
             strip_metadata(filepath)
             print(f"Processed: {filename}")
 
-# Usage
+Usage
 process_dating_photos('./dating_photos')
 ```
 
-### Photo Uniqueness Strategy
+Photo Uniqueness Strategy
 
 Create photos exclusively for your dating identity. Never reuse images from other platforms:
 
-1. **Dedicated photo shoot**: Take new photos using a separate camera or device
-2. **Generated imagery**: Use AI avatar generators with random seeds
-3. **Heavily edited images**: Apply filters that alter facial recognition signatures
+1. Dedicated photo shoot: Take new photos using a separate camera or device
+2. Generated imagery: Use AI avatar generators with random seeds
+3. Heavily edited images: Apply filters that alter facial recognition signatures
 
 ```bash
-# Example: Using ffmpeg to alter video/images slightly for uniqueness
-# This changes encoding signatures while maintaining visual quality
+Using ffmpeg to alter video/images slightly for uniqueness
+This changes encoding signatures while maintaining visual quality
 
 ffmpeg -i input.jpg \
   -vf "eq=brightness=0.05:saturation=0.9:contrast=1.02" \
   -codec:a copy output.jpg
 
-# For video dating profiles
+For video dating profiles
 ffmpeg -i input.mp4 \
   -c:v libx264 -preset fast -crf 23 \
   -c:a aac -b:a 128k \
@@ -211,11 +211,11 @@ ffmpeg -i input.mp4 \
   output.mp4
 ```
 
-### Step 5: Device Compartmentalization
+Step 5: Device Compartmentalization
 
 Physical device separation provides the strongest isolation layer.
 
-### Options by Threat Model
+Options by Threat Model
 
 | Method | Cost | Effort | Security Level |
 |--------|------|--------|----------------|
@@ -224,97 +224,97 @@ Physical device separation provides the strongest isolation layer.
 | Dedicated VM/container | Free | Medium | Medium |
 | Physical air-gapped device | Variable | High | Highest |
 
-### Container-Based Separation (Android)
+Container-Based Separation (Android)
 
 ```bash
-# Using Shelter app to create isolated profiles on Android
-# This requires a work profile with Island/Shelter
+Using Shelter app to create isolated profiles on Android
+This requires a work profile with Island/Shelter
 
-# Install Shelter from F-Droid
+Install Shelter from F-Droid
 adb install shelter.apk
 
-# Create isolated profile
-# All dating apps run in the work profile
-# Main profile remains clean
+Create isolated profile
+All dating apps run in the work profile
+Main profile remains clean
 ```
 
-### iOS Limitations
+iOS Limitations
 
 iOS provides limited compartmentalization without jailbreaking. Consider:
 - Using a dedicated secondary iPhone
 - Using Alfred or Shortcuts to automate data handling
 - Avoiding dating apps on iOS if maximum compartmentalization is required
 
-### Step 6: Operational Security for Dating Compartments
+Step 6: Operational Security for Dating Compartments
 
 Maintaining compartmentalization requires consistent operational practices:
 
-1. **Never access dating apps from work or home networks**
+1. Never access dating apps from work or home networks
  - Use a VPN with a dedicated IP
  - Consider mobile data only for dating activities
 
-2. **Separate payment methods**
+2. Separate payment methods
  - Prepaid cards without name linking
  - Gift cards purchased with cash
  - Privacy.com with virtual cards (requires identity verification)
 
-3. **Consistent cover story**
+3. Consistent cover story
  - Memorize your compartmentalized details
  - Avoid mixing personal and dating stories
  - Keep notes encrypted, never in plain text
 
-4. **Account hygiene**
+4. Account hygiene
  - Regular account deletion and recreation
  - Rotate email addresses periodically
  - Use unique passwords generated by password managers
 
-### Step 7: Emergency Procedures
+Step 7: Emergency Procedures
 
 When compartmentalization fails:
 
-1. **Immediate account termination**: Delete all dating accounts
-2. **Evidence preservation**: Screenshot any threats or harassment
-3. **Platform reporting**: Report to dating app security teams
-4. **Legal consideration**: Consult with privacy attorney if necessary
+1. Immediate account termination: Delete all dating accounts
+2. Evidence preservation: Screenshot any threats or harassment
+3. Platform reporting: Report to dating app security teams
+4. Legal consideration: Consult with privacy attorney if necessary
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use compartmentalized identity for online dating?**
+How long does it take to use compartmentalized identity for online dating?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Use Compartmentalized Identity for Online Dating](/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
 - [How To Create Anonymous Online Identity That Cannot Be Linke](/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
@@ -323,5 +323,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [What To Do If Your Identity Was Stolen Online Step Guide](/what-to-do-if-your-identity-was-stolen-online-step-guide/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

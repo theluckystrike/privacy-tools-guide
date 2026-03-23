@@ -16,9 +16,9 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-Executors must systematically identify, document, and manage hundreds of online accounts to prevent asset loss and identity theft. This guide provides practical discovery methods—email analysis, CLI tools, Have I Been Pwned API checks, and structured inventory templates—to document financial accounts, social media, cloud storage, and subscriptions. Use Python scripts and automation to accelerate account discovery and track completion of priority actions.
+Executors must systematically identify, document, and manage hundreds of online accounts to prevent asset loss and identity theft. This guide provides practical discovery methods, email analysis, CLI tools, Have I Been Pwned API checks, and structured inventory templates, to document financial accounts, social media, cloud storage, and subscriptions. Use Python scripts and automation to accelerate account discovery and track completion of priority actions.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding the Scope of Digital Estate](#understanding-the-scope-of-digital-estate)
 - [Systematic Discovery Methods](#systematic-discovery-methods)
@@ -27,23 +27,23 @@ Executors must systematically identify, document, and manage hundreds of online 
 - [Priority Actions by Account Type](#priority-actions-by-account-type)
 - [Security Considerations](#security-considerations)
 
-## Understanding the Scope of Digital Estate
+Understanding the Scope of Digital Estate
 
 Modern digital life encompasses far more than most people realize. The average user maintains over 100 online accounts across various services. For executors, this means tracking:
 
-- **Financial accounts**: Banking, investment platforms, cryptocurrency wallets, payment processors
-- **Social media**: Facebook, Instagram, Twitter/X, LinkedIn, TikTok, dating apps
-- **Email services**: Gmail, Outlook, ProtonMail, custom domain hosting
-- **Cloud storage**: Google Drive, Dropbox, iCloud, OneDrive, pCloud
-- **Subscriptions**: Streaming services, software licenses, magazine subscriptions, membership sites
-- **E-commerce**: Amazon, eBay, Etsy shops, PayPal
-- **Developer accounts**: GitHub, AWS, Google Cloud, Heroku, domain registrations
+- Financial accounts: Banking, investment platforms, cryptocurrency wallets, payment processors
+- Social media: Facebook, Instagram, Twitter/X, LinkedIn, TikTok, dating apps
+- Email services: Gmail, Outlook, ProtonMail, custom domain hosting
+- Cloud storage: Google Drive, Dropbox, iCloud, OneDrive, pCloud
+- Subscriptions: Streaming services, software licenses, magazine subscriptions, membership sites
+- E-commerce: Amazon, eBay, Etsy shops, PayPal
+- Developer accounts: GitHub, AWS, Google Cloud, Heroku, domain registrations
 
-The executor must locate credentials, understand what each account contains, determine its value (monetary or sentimental), and take appropriate action—whether transferring ownership, closing accounts, or memorializing profiles.
+The executor must locate credentials, understand what each account contains, determine its value (monetary or sentimental), and take appropriate action, whether transferring ownership, closing accounts, or memorializing profiles.
 
-## Systematic Discovery Methods
+Systematic Discovery Methods
 
-### Step 1: Physical and Digital Search
+Step 1: Physical and Digital Search
 
 Begin with a thorough physical search of the deceased's home office:
 
@@ -60,7 +60,7 @@ Digital discovery involves checking:
 - Notes applications containing credentials
 - Cloud storage documents labeled "passwords" or "accounts"
 
-### Step 2: Email Account Analysis
+Step 2: Email Account Analysis
 
 The deceased's primary email account often serves as an account registry. Use email search with these queries:
 
@@ -71,7 +71,7 @@ From: "noreply@*.com" OR "support@*.com"
 
 This reveals registration confirmations across thousands of services. Export relevant emails to a searchable format for systematic review.
 
-### Step 3: Using CLI Tools for Account Discovery
+Step 3: Using CLI Tools for Account Discovery
 
 For developers and power users, command-line tools accelerate the discovery process. Here's a Python script that analyzes exported email to identify service accounts:
 
@@ -88,7 +88,7 @@ import os
 from pathlib import Path
 from collections import defaultdict
 
-# Common service patterns for account identification
+Common service patterns for account identification
 SERVICE_PATTERNS = {
     'financial': [
         r'chase|bank of america|wells fargo|citibank|pnc',
@@ -179,14 +179,14 @@ if __name__ == '__main__':
     generate_inventory_report(all_accounts)
 ```
 
-### Step 4: Using Have I Been Pwned for Breach Data
+Step 4: Using Have I Been Pwned for Breach Data
 
 The deceased's email address may have appeared in data breaches, revealing account existence at specific services. Use the Have I Been Pwned API to check:
 
 ```bash
 #!/bin/bash
-# Check email for breach data
-# Requires: curl, jq
+Check email for breach data
+Requires: curl, jq
 
 EMAIL="deceased@example.com"
 HIBP_API="https://haveibeenpwned.com/api/v3/breachedaccount/$EMAIL"
@@ -198,7 +198,7 @@ curl -s -H "User-Agent: EstateExecutorTool" \
 
 This reveals services where the email was compromised, indicating active or former accounts.
 
-## Building the Inventory Template
+Building the Inventory Template
 
 Create a structured inventory using this template structure:
 
@@ -243,7 +243,7 @@ Create a structured inventory using this template structure:
 
 Export this template to CSV or a database for collaborative editing among family members.
 
-## Automating Documentation with Custom Scripts
+Automating Documentation with Custom Scripts
 
 For managing multiple accounts efficiently, create automation scripts:
 
@@ -333,9 +333,9 @@ if __name__ == '__main__':
     print(f"  Value: ${summary['total_monetary_value']}")
 ```
 
-## Priority Actions by Account Type
+Priority Actions by Account Type
 
-### Financial Accounts (Highest Priority)
+Financial Accounts (Highest Priority)
 
 Contact institutions directly with death certificate and executor documentation. Many banks require:
 
@@ -345,55 +345,55 @@ Contact institutions directly with death certificate and executor documentation.
 
 Close or transfer accounts systematically, maintaining records of all communications.
 
-### Social Media Accounts
+Social Media Accounts
 
 Major platforms offer memorialization or deletion options:
 
-- **Facebook**: Request memorialization or account deletion
-- **Instagram**: Request deletion with death certificate
-- **Google**: Inactive Account Manager can transfer data
-- **Twitter/X**: Account can be deactivated permanently
+- Facebook: Request memorialization or account deletion
+- Instagram: Request deletion with death certificate
+- Google: Inactive Account Manager can transfer data
+- Twitter/X: Account can be deactivated permanently
 
-### Subscription Services
+Subscription Services
 
 Cancel recurring payments to prevent unauthorized charges. Document cancellation confirmations for records.
 
-### Cloud Storage
+Cloud Storage
 
 Transfer ownership of important data to family members. Ensure photos, documents, and creative works are preserved before closing accounts.
 
-## Security Considerations
+Security Considerations
 
 During estate administration, protect against identity theft:
 
-1. **Freeze credit** at major bureaus (Equifax, Experian, TransUnion)
-2. **Change passwords** on critical accounts if you have legal authority
-3. **Monitor for fraud** using identity theft protection services
-4. **Document everything** in case of disputes
+1. Freeze credit at major bureaus (Equifax, Experian, TransUnion)
+2. Change passwords on critical accounts if you have legal authority
+3. Monitor for fraud using identity theft protection services
+4. Document everything in case of disputes
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to document all online accounts for executor of estate?**
+How long does it take to document all online accounts for executor of estate?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How To Delete Old Social Media Accounts](/how-to-delete-old-social-media-accounts/)
 - [How To Prepare Social Media Accounts For Memorialization](/how-to-prepare-social-media-accounts-for-memorialization-com/)
@@ -401,5 +401,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [What To Do If Your Identity Was Stolen Online Step Guide](/what-to-do-if-your-identity-was-stolen-online-step-guide/)
 - [How To Create Anonymous Social Media Accounts](/how-to-create-anonymous-social-media-accounts/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

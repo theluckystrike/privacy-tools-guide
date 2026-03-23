@@ -11,7 +11,7 @@ reviewed: true
 score: 6
 intent-checked: true
 voice-checked: true
-Example: alert on repeated SSH failures:
+alert on repeated SSH failures:
 Name: SSH Brute Force Attempt
 Priority: High
 Query: message:"Failed password" AND facility:auth
@@ -22,7 +22,7 @@ Condition: count() >= 5 in last 1 minute
 ---
 
 
-## Related Reading
+Related Reading
 
 - [How to Set Up ntopng for Network Analytics](/ntopng-network-analytics-setup-guide/)
 - [How to Set Up Falco for Container Runtime Security](/falco-container-runtime-security-setup/)
@@ -30,6 +30,6 @@ Condition: count() >= 5 in last 1 minute
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

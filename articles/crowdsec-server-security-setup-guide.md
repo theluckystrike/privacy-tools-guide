@@ -14,29 +14,29 @@ tags: [privacy-tools-guide, security]
 ---
 
 {% raw %}
-# How to Set Up CrowdSec for Server Security
+How to Set Up CrowdSec for Server Security
 
 CrowdSec is a modern, open-source intrusion prevention system that learns from attacks across thousands of deployments. When one node gets attacked, the offending IP is shared with the community and blocked everywhere. This guide covers installing the CrowdSec agent, connecting bouncers to actually block traffic, and tuning scenarios for a typical web server.
 
-## How CrowdSec Works
+How CrowdSec Works
 
 CrowdSec has two components:
 
-- **Agent** — reads log files, runs scenarios, raises "alerts" when thresholds are met
-- **Bouncer** — sits at the firewall or application layer and enforces the block list
+- Agent. reads log files, runs scenarios, raises "alerts" when thresholds are met
+- Bouncer. sits at the firewall or application layer and enforces the block list
 
-The agent never blocks anything itself. You can have multiple bouncers — firewall, Nginx, Traefik — each enforcing the same decisions.
+The agent never blocks anything itself. You can have multiple bouncers. firewall, Nginx, Traefik. each enforcing the same decisions.
 
 ---
 
-## 1. Install CrowdSec Agent
+1. Install CrowdSec Agent
 
 ```bash
-# Add repository and install
+Add repository and install
 curl -s https://install.crowdsec.net | sudo bash
 sudo apt install -y crowdsec
 
-# Verify
+Verify
 sudo cscli version
 sudo systemctl status crowdsec
 ```
@@ -45,19 +45,19 @@ CrowdSec auto-detects running services (SSH, Nginx, Apache, MySQL) and installs 
 
 ---
 
-## 2. Review Auto-Detected Configuration
+2. Review Auto-Detected Configuration
 
 ```bash
-# See what collections were installed
+See what collections were installed
 sudo cscli collections list
 
-# See active parsers
+See active parsers
 sudo cscli parsers list
 
-# See active scenarios (detection logic)
+See active scenarios (detection logic)
 sudo cscli scenarios list
 
-# See where CrowdSec is reading logs from
+See where CrowdSec is reading logs from
 sudo cat /etc/crowdsec/acquis.yaml
 ```
 
@@ -77,7 +77,7 @@ labels:
 
 ---
 
-## 3. Add More Log Sources
+3. Add More Log Sources
 
 If CrowdSec missed a log file, add it:
 
@@ -100,12 +100,12 @@ sudo systemctl restart crowdsec
 
 ---
 
-## 4. Install Collections for Your Services
+4. Install Collections for Your Services
 
 Collections bundle parsers + scenarios for a specific service:
 
 ```bash
-# Common collections
+Common collections
 sudo cscli collections install crowdsecurity/nginx
 sudo cscli collections install crowdsecurity/sshd
 sudo cscli collections install crowdsecurity/linux
@@ -113,94 +113,94 @@ sudo cscli collections install crowdsecurity/http-cve          # CVE scanner det
 sudo cscli collections install crowdsecurity/wordpress         # if running WP
 sudo cscli collections install crowdsecurity/postfix           # if running mail
 
-# Reload after installing collections
+Reload after installing collections
 sudo systemctl reload crowdsec
 ```
 
 ---
 
-## 5. Install the firewall Bouncer
+5. Install the firewall Bouncer
 
 The firewall bouncer translates CrowdSec decisions into `nftables` or `iptables` rules:
 
 ```bash
 sudo apt install -y crowdsec-firewall-bouncer-nftables
 
-# Connect to the local agent (auto-configures on install)
+Connect to the local agent (auto-configures on install)
 sudo systemctl enable --now crowdsec-firewall-bouncer
 
-# Verify the bouncer registered
+Verify the bouncer registered
 sudo cscli bouncers list
 ```
 
 Test it's working:
 
 ```bash
-# Manually add a test ban
+Manually add a test ban
 sudo cscli decisions add --ip 198.51.100.1 --reason "test ban" --duration 5m
 
-# Check it appears in nftables
+Check it appears in nftables
 sudo nft list table ip crowdsec
 
-# Remove test ban
+Remove test ban
 sudo cscli decisions delete --ip 198.51.100.1
 ```
 
 ---
 
-## 6. Install the Nginx Bouncer (Optional, Deeper Inspection)
+6. Install the Nginx Bouncer (Optional, Deeper Inspection)
 
-The Nginx bouncer blocks at the application layer before requests hit your app — useful for rate limiting per-endpoint:
+The Nginx bouncer blocks at the application layer before requests hit your app. useful for rate limiting per-endpoint:
 
 ```bash
 sudo apt install -y crowdsec-nginx-bouncer
 
-# Edit /etc/crowdsec/bouncers/crowdsec-nginx-bouncer.conf
-# Set api_url = http://127.0.0.1:8080 and api_key (generated automatically)
+Edit /etc/crowdsec/bouncers/crowdsec-nginx-bouncer.conf
+Set api_url = http://127.0.0.1:8080 and api_key (generated automatically)
 
-# Add to nginx.conf in the http block:
-# lua_package_path '/usr/lib/crowdsec/lua/?.lua;;';
-# lua_shared_dict crowdsec_cache 50m;
-# init_by_lua_block { require "crowdsec" }
+Add to nginx.conf in the http block:
+lua_package_path '/usr/lib/crowdsec/lua/?.lua;;';
+lua_shared_dict crowdsec_cache 50m;
+init_by_lua_block { require "crowdsec" }
 
 sudo systemctl restart nginx
 ```
 
 ---
 
-## 7. Monitor Decisions in Real Time
+7. Monitor Decisions in Real Time
 
 ```bash
-# Watch live alerts as they fire
+Watch live alerts as they fire
 sudo cscli alerts list --limit 20
 
-# Watch decisions (actual blocks)
+Watch decisions (actual blocks)
 sudo cscli decisions list
 
-# Filter by scenario
+Filter by scenario
 sudo cscli alerts list --scenario crowdsecurity/ssh-bf
 
-# See current banned IPs with reason
+See current banned IPs with reason
 sudo cscli decisions list -o human
 ```
 
 Sample output:
 
 ```
- ID  │Scope:Value        │Reason                          │Action│Country│
-─────┼───────────────────┼────────────────────────────────┼──────┼───────┼
- 101 │Ip:203.0.113.5     │crowdsecurity/ssh-bf            │ban   │CN     │
- 102 │Ip:198.51.100.22   │crowdsecurity/nginx-req-limit-ip│ban   │RU     │
+ ID  Scope:Value        Reason                          ActionCountry
+
+ 101 Ip:203.0.113.5     crowdsecurity/ssh-bf            ban   CN     
+ 102 Ip:198.51.100.22   crowdsecurity/nginx-req-limit-ipban   RU     
 ```
 
 ---
 
-## 8. Write a Custom Scenario
+8. Write a Custom Scenario
 
 CrowdSec scenarios are YAML files. Here's one that fires when an IP hits 404 errors more than 15 times in 30 seconds (scanner detection):
 
 ```yaml
-# /etc/crowdsec/scenarios/custom-404-scan.yaml
+/etc/crowdsec/scenarios/custom-404-scan.yaml
 type: leaky
 name: custom/http-404-scan
 description: "Detect HTTP 404 scanners"
@@ -222,50 +222,50 @@ sudo systemctl reload crowdsec
 
 ---
 
-## 9. Enroll with the CrowdSec Console (Optional)
+9. Enroll with the CrowdSec Console (Optional)
 
 The cloud console gives you a dashboard and access to the community block list (CTI feed):
 
 ```bash
-# Get your enrollment key from app.crowdsec.net
+Get your enrollment key from app.crowdsec.net
 sudo cscli console enroll <your-enrollment-key>
 sudo systemctl restart crowdsec
 
-# This unlocks the "blocklist mirror" — subscribe to curated IP lists
-# (premium) or use the free community decisions
+This unlocks the "blocklist mirror". subscribe to curated IP lists
+(premium) or use the free community decisions
 ```
 
 Even without enrollment, CrowdSec pulls a community blocklist of known scanners and attackers via the API on startup.
 
 ---
 
-## 10. Notifications and Alerting
+10. Notifications and Alerting
 
 ```bash
-# Configure Slack or email notifications
+Configure Slack or email notifications
 sudo cscli notifications install crowdsecurity/slack
 
-# Edit /etc/crowdsec/notifications/slack.yaml
-# Set webhook_url and min_severity (default: alert)
+Edit /etc/crowdsec/notifications/slack.yaml
+Set webhook_url and min_severity (default: alert)
 
-# Test notification
+Test notification
 sudo cscli notifications test slack
 
-# Assign notification to a profile
-# Edit /etc/crowdsec/profiles.yaml — add 'notifications: [slack]' under relevant profile
+Assign notification to a profile
+Edit /etc/crowdsec/profiles.yaml. add 'notifications: [slack]' under relevant profile
 sudo systemctl reload crowdsec
 ```
 
 ---
 
-## Tuning False Positives
+Tuning False Positives
 
 ```bash
-# Check the simulation mode — preview what decisions WOULD be made without banning
+Check the simulation mode. preview what decisions WOULD be made without banning
 sudo cscli simulation enable crowdsecurity/nginx-req-limit-ip
 sudo cscli simulation status
 
-# Whitelist your own IP to avoid locking yourself out
+Whitelist your own IP to avoid locking yourself out
 sudo tee /etc/crowdsec/parsers/s02-enrich/whitelist.yaml > /dev/null <<'EOF'
 name: my/whitelist
 description: "Whitelist office and monitoring IPs"
@@ -281,20 +281,20 @@ sudo systemctl reload crowdsec
 
 ---
 
-## Metrics
+Metrics
 
 ```bash
-# Show agent metrics: alerts fired, scenarios triggered
+Show agent metrics: alerts fired, scenarios triggered
 sudo cscli metrics
 
-# Prometheus endpoint (if enabled in config.yaml)
-# metrics_addr: 127.0.0.1:6060
+Prometheus endpoint (if enabled in config.yaml)
+metrics_addr: 127.0.0.1:6060
 curl http://127.0.0.1:6060/metrics | grep crowdsec
 ```
 
 ---
 
-## Related Reading
+Related Reading
 
 - [How to Set Up Snort IDS on Linux](/snort-ids-linux-setup-guide/)
 - [How to Set Up Wazuh SIEM for Small Teams](/wazuh-siem-small-teams-setup-guide/)
@@ -305,5 +305,5 @@ curl http://127.0.0.1:6060/metrics | grep crowdsec
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

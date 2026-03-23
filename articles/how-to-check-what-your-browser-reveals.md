@@ -20,7 +20,7 @@ Every time you visit a website, your browser hands over a surprising amount of i
 
 For developers and power users, understanding what your browser reveals is the first step toward hardening your privacy posture. This guide covers practical methods to audit your browser's digital footprint with working code examples.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -30,34 +30,34 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: What Your Browser Exposes by Default
+Step 1: What Your Browser Exposes by Default
 
 Modern browsers expose numerous APIs for legitimate functionality, but these same APIs enable fingerprinting. The key categories include:
 
-**Basic Navigator Properties**
+Basic Navigator Properties
 - User Agent string
 - Platform and OS version
 - Language and languages accepted
 - Hardware concurrency (CPU cores)
 - Device memory (if available)
 
-**Screen and Display**
+Screen and Display
 - Screen resolution and color depth
 - Available screen space
 - Pixel ratio
 
-**Hardware Features**
+Hardware Features
 - GPU renderer and vendor
 - Audio context fingerprint
 - WebGL renderer info
 
-**Browser State**
+Browser State
 - Cookies enabled
 - Do Not Track setting
 - Timezone
 - Connection type
 
-### Step 2: Use the Navigator API
+Step 2: Use the Navigator API
 
 The simplest way to see what your browser reveals is directly querying the Navigator API. Create a test HTML file:
 
@@ -89,7 +89,7 @@ document.getElementById('output').textContent = output;
 
 Open this file in your browser and examine the output. You'll likely see your exact browser version, operating system, and language preferences exposed.
 
-### Step 3: Querying Screen Properties
+Step 3: Querying Screen Properties
 
 Screen information adds another fingerprinting vector. Query the Screen API:
 
@@ -108,7 +108,7 @@ console.table(screenInfo);
 
 These values reveal your monitor resolution, whether taskbars are visible, and your display configuration. Multiple monitors or unusual resolutions make you more identifiable.
 
-### Step 4: Extracting GPU Information
+Step 4: Extracting GPU Information
 
 Graphics card details are particularly valuable for fingerprinting. Use WebGL:
 
@@ -134,7 +134,7 @@ console.log(getGpuInfo());
 
 This exposes your exact graphics card model. Combined with your CPU and screen resolution, this creates a highly unique fingerprint.
 
-### Step 5: Canvas Fingerprinting Test
+Step 5: Canvas Fingerprinting Test
 
 Canvas fingerprinting works by drawing a hidden image and extracting its hash. Different browsers and GPUs render slightly differently, creating a unique signature:
 
@@ -164,7 +164,7 @@ console.log('Canvas hash:', fingerprint.slice(0, 50) + '...');
 
 The resulting data URL differs between browsers and devices, even when running the same code.
 
-### Step 6: Font Detection
+Step 6: Font Detection
 
 Installed fonts provide another fingerprinting vector. This technique works by measuring text width with different font families:
 
@@ -203,7 +203,7 @@ console.log('Detected fonts:', detectFonts(baseFonts, testFonts));
 
 This reveals which fonts you have installed, and the specific combination is highly identifying.
 
-### Step 7: WebRTC Leak Detection
+Step 7: WebRTC Leak Detection
 
 WebRTC can expose your real IP address even behind a VPN:
 
@@ -239,19 +239,19 @@ checkWebRTC().then(result => console.log('WebRTC result:', result));
 
 If this returns an IP address that differs from your VPN's IP, you have a WebRTC leak.
 
-### Step 8: Use Existing Fingerprinting Test Sites
+Step 8: Use Existing Fingerprinting Test Sites
 
 While building your own tests provides the deepest understanding, several established tools audit browser fingerprinting:
 
-Panopticlick (EFF Cover Your Tracks) tests how unique your browser is based on exposed attributes—higher uniqueness means easier tracking. AmIUnique is an European project that analyzes fingerprint data and provides a detailed breakdown of identifying attributes. BrowserLeaks covers canvas, WebGL, audio, and WebRTC fingerprinting vectors.
+Panopticlick (EFF Cover Your Tracks) tests how unique your browser is based on exposed attributes, higher uniqueness means easier tracking. AmIUnique is an European project that analyzes fingerprint data and provides a detailed breakdown of identifying attributes. BrowserLeaks covers canvas, WebGL, audio, and WebRTC fingerprinting vectors.
 
 These tools compare your fingerprint against a database to calculate your uniqueness score.
 
-### Step 9: Reducing Your Digital Footprint
+Step 9: Reducing Your Digital Footprint
 
 After auditing what your browser reveals, consider these hardening steps:
 
-Privacy-focused browsers—Firefox with the arkenfox configuration, Brave, or Tor Browser—block many fingerprinting vectors by default. Tor Browser can disable JavaScript entirely, though many sites will break; use the NoScript extension for granular control.
+Privacy-focused browsers, Firefox with the arkenfox configuration, Brave, or Tor Browser, block many fingerprinting vectors by default. Tor Browser can disable JavaScript entirely, though many sites will break; use the NoScript extension for granular control.
 
 Firefox 128+ includes `resistFingerprinting`, which normalizes many exposed values. Enable it in `about:config`:
 
@@ -261,44 +261,44 @@ privacy.resistFingerprinting = true
 
 Disable WebRTC in browser settings or use an extension that blocks the leak.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to check what your browser reveals: a developer guide?**
+How long does it take to check what your browser reveals: a developer guide?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How To Check Your Browser Fingerprint Uniqueness Score Onlin](/how-to-check-your-browser-fingerprint-uniqueness-score-onlin/)
 - [Best Browser for Avoiding Google Tracking: A Developer Guide](/best-browser-for-avoiding-google-tracking/)
@@ -307,5 +307,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Lightweight Private Browser 2026: A Developer Guide](/best-lightweight-private-browser-2026/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -13,13 +13,13 @@ voice-checked: true
 tags: [privacy-tools-guide]
 ---
 
-## Related Articles
+Related Articles
 
 - [How to Harden SSH Server Configuration](/how-to-harden-ssh-server-configuration/)
 - [Secure Shell Hardening Beyond SSH Config](/secure-shell-hardening-beyond-ssh-config/)
 - [SSH Server Hardening Guide](/ssh-server-hardening-guide/)
 - [How To Use Ssh Tunneling For Encrypted Communication](/how-to-use-ssh-tunneling-for-encrypted-communication-between/)
 - [SSH Server Hardening Config Guide](/ssh-server-hardening-config-guide)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

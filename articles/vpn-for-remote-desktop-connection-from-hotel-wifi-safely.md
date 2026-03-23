@@ -18,7 +18,7 @@ voice-checked: true
 
 Hotel WiFi is vulnerable to packet sniffing, man-in-the-middle attacks, and session hijacking; tunneling RDP or VNC through a VPN encrypts your credentials and session data, preventing attackers on the same network from capturing them. Use WireGuard or OpenVPN over hotel WiFi, ensure the VPN has a kill switch to disconnect RDP if the tunnel drops, and route all traffic through the tunnel (no split tunneling). A self-hosted VPN on your corporate server or cloud provider is better than public VPN services for this use case, because you control the authentication and can audit logs.
 
-## Table of Contents
+Table of Contents
 
 - [The Security Risks of Hotel WiFi](#the-security-risks-of-hotel-wifi)
 - [Choosing the Right VPN Setup](#choosing-the-right-vpn-setup)
@@ -33,35 +33,35 @@ Hotel WiFi is vulnerable to packet sniffing, man-in-the-middle attacks, and sess
 - [Firewall Rules for RDP Over VPN](#firewall-rules-for-rdp-over-vpn)
 - [Troubleshooting Hotel Network Issues](#troubleshooting-hotel-network-issues)
 
-## The Security Risks of Hotel WiFi
+The Security Risks of Hotel WiFi
 
 Hotel networks operate differently from corporate or home networks. Most hotels provide open (unencrypted) WiFi or use weak encryption that can be bypassed with minimal effort. When you connect to RDP or VNC over these networks without protection, your credentials, session data, and potentially sensitive company information travel in plain text.
 
 The attack surface includes:
 
-- **Packet sniffing**: Anyone on the same network can capture unencrypted traffic using tools like Wireshark or tcpdump
-- **Man-in-the-middle attacks**: Attackers can intercept and modify traffic between your device and the remote server
-- **Evil twin hotspots**: Malicious actors may set up fake hotel WiFi access points to capture credentials
-- **Session hijacking**: Unprotected RDP/VNC sessions can be taken over by attackers on the same network
+- Packet sniffing: Anyone on the same network can capture unencrypted traffic using tools like Wireshark or tcpdump
+- Man-in-the-middle attacks: Attackers can intercept and modify traffic between your device and the remote server
+- Evil twin hotspots: Malicious actors may set up fake hotel WiFi access points to capture credentials
+- Session hijacking: Unprotected RDP/VNC sessions can be taken over by attackers on the same network
 
 A VPN encrypts all traffic between your device and your VPN server, turning an insecure hotel network into a secure tunnel for your remote desktop sessions.
 
-## Choosing the Right VPN Setup
+Choosing the Right VPN Setup
 
 For remote desktop connections from hotel WiFi, you have two primary options: a commercial VPN service or a self-hosted VPN server. Each has trade-offs worth understanding.
 
-### Self-Hosted VPN (WireGuard or OpenVPN)
+Self-Hosted VPN (WireGuard or OpenVPN)
 
 Self-hosting gives you complete control over your security posture. WireGuard is the recommended protocol for this use case due to its modern cryptography, minimal latency, and low resource usage.
 
 Setting up a WireGuard server on a cloud VPS takes approximately 10 minutes:
 
 ```bash
-# Install WireGuard on Ubuntu
+Install WireGuard on Ubuntu
 sudo apt update
 sudo apt install wireguard
 
-# Generate server keys
+Generate server keys
 wg genkey | tee server_private.key | wg pubkey > server_public.key
 wg genkey | tee client_private.key | wg pubkey > client_public.key
 ```
@@ -100,22 +100,22 @@ PersistentKeepalive = 25
 
 Start the VPN with `sudo wg-quick up wg0`.
 
-### Commercial VPN Services
+Commercial VPN Services
 
 If self-hosting isn't practical, a reputable commercial VPN can work, though you should verify they support the features needed for remote desktop:
 
-- **Port forwarding**: RDP (3389) and VNC (5900) require specific ports
-- **WireGuard or OpenVPN support**: Both protocols work well for this use case
-- **No logging policy**: Ensures your connection metadata isn't stored
-- **Kill switch**: Prevents data leaks if the VPN connection drops
+- Port forwarding: RDP (3389) and VNC (5900) require specific ports
+- WireGuard or OpenVPN support: Both protocols work well for this use case
+- No logging policy: Ensures your connection metadata isn't stored
+- Kill switch: Prevents data leaks if the VPN connection drops
 
 Not all commercial VPNs support port forwarding, which is essential for hosting or accessing RDP/VNC servers. Check documentation before subscribing.
 
-## Configuring Remote Desktop Over VPN
+Configuring Remote Desktop Over VPN
 
 Once your VPN is running, you need to configure your remote desktop client to use the VPN interface.
 
-### Windows RDP Over VPN
+Windows RDP Over VPN
 
 For Windows Remote Desktop, ensure your RDP client connects to the remote machine's VPN IP address rather than its public IP:
 
@@ -126,52 +126,52 @@ For Windows Remote Desktop, ensure your RDP client connects to the remote machin
 For additional security, enable Network Level Authentication (NLA) in Windows System Properties:
 
 ```powershell
-# Enable NLA via PowerShell (run as Administrator)
+Enable NLA via PowerShell (run as Administrator)
 Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -Name "UserAuthentication" -Value 1
 ```
 
-### VNC Over VPN on macOS and Linux
+VNC Over VPN on macOS and Linux
 
 For VNC connections, use the VPN IP address similarly:
 
 ```bash
-# Connect via VNC over VPN tunnel
+Connect via VNC over VPN tunnel
 vncviewer 10.0.0.1:5900
 ```
 
 Consider SSH tunneling for additional security:
 
 ```bash
-# Create SSH tunnel for VNC
+Create SSH tunnel for VNC
 ssh -L 5900:localhost:5900 user@10.0.0.1
 ```
 
 Then connect your VNC client to localhost:5900.
 
-## Network Configuration Checklist
+Network Configuration Checklist
 
 Before connecting from a hotel, verify these settings:
 
-1. **VPN is connected and stable** before opening RDP/VNC
-2. **Firewall rules** allow RDP/VNC only from the VPN subnet
-3. **Strong authentication** is enabled (NLA for RDP, password + key for VNC)
-4. **Kill switch is active** on your VPN client to prevent leaks
-5. **DNS leaks are prevented** by using VPN-provided DNS servers
+1. VPN is connected and stable before opening RDP/VNC
+2. Firewall rules allow RDP/VNC only from the VPN subnet
+3. Strong authentication is enabled (NLA for RDP, password + key for VNC)
+4. Kill switch is active on your VPN client to prevent leaks
+5. DNS leaks are prevented by using VPN-provided DNS servers
 
 Test your configuration with:
 
 ```bash
-# Verify VPN is routing traffic
+Verify VPN is routing traffic
 ip route | grep wg0
 
-# Check for DNS leaks
+Check for DNS leaks
 dig +short myip.opendns.com @resolver1.opendns.com
 
-# Capture traffic to verify encryption
+Capture traffic to verify encryption
 tcpdump -i wg0 -c 10
 ```
 
-## Handling Connection Drops
+Handling Connection Drops
 
 Hotel networks are notoriously unstable. Configure your VPN and remote desktop clients to handle disconnections gracefully.
 
@@ -182,22 +182,22 @@ keepalive 10 60
 ping-restart 60
 ```
 
-Windows RDP automatically attempts reconnection, but consider enabling **reconnection prompts** in Group Policy if your connection drops frequently.
+Windows RDP automatically attempts reconnection, but consider enabling reconnection prompts in Group Policy if your connection drops frequently.
 
-## Alternative: SSH Jump Host
+Alternative: SSH Jump Host
 
 For developers comfortable with the command line, a SSH jump host provides a lightweight alternative to a full VPN:
 
 ```bash
-# Connect to remote desktop via SSH tunnel
+Connect to remote desktop via SSH tunnel
 ssh -L 3389:localhost:3389 user@your-server
 
-# Then RDP to localhost:3389
+Then RDP to localhost:3389
 ```
 
 This approach encrypts your traffic and provides authentication without the overhead of a full VPN stack. However, it only protects a single connection rather than all your network traffic.
 
-## Security Comparison Table
+Security Comparison Table
 
 | Method | Security | Latency | Complexity | Cost |
 |--------|----------|---------|-----------|------|
@@ -207,7 +207,7 @@ This approach encrypts your traffic and provides authentication without the over
 | SSH Tunnel Only | Good | Low | Low | Variable |
 | No VPN (unencrypted) | Dangerous | Zero | Zero | Free |
 
-## Advanced WireGuard Configuration for Stability
+Advanced WireGuard Configuration for Stability
 
 For extended hotel stays, harden your WireGuard setup with persistent connections and reconnection handling:
 
@@ -227,12 +227,12 @@ PersistentKeepalive = 25
 
 The key addition is `PersistentKeepalive = 25` which sends keepalive packets every 25 seconds, preventing NAT timeout on unstable networks.
 
-## Certificate Validation for VPN Connections
+Certificate Validation for VPN Connections
 
 When using OpenVPN, validate that certificate pinning is configured to prevent MITM attacks even within the VPN tunnel:
 
 ```bash
-# Extract certificate fingerprint for pinning
+Extract certificate fingerprint for pinning
 openssl x509 -in ca.crt -noout -fingerprint -sha256
 ```
 
@@ -244,7 +244,7 @@ verify-x509-name your-vpn-server.com
 remote-cert-tls server
 ```
 
-## Monitoring Connection Health
+Monitoring Connection Health
 
 Create a monitoring script to ensure your VPN remains stable:
 
@@ -268,19 +268,19 @@ done
 
 Run this in a separate terminal to catch disconnections immediately.
 
-## Firewall Rules for RDP Over VPN
+Firewall Rules for RDP Over VPN
 
 Configure the VPN server's firewall to accept RDP only from the VPN subnet:
 
 ```bash
-# On VPN server - Allow RDP only from VPN clients
+On VPN server - Allow RDP only from VPN clients
 sudo ufw allow from 10.0.0.0/24 to any port 3389/tcp comment "RDP over WireGuard"
 sudo ufw deny from any to any port 3389/tcp comment "Block direct RDP access"
 ```
 
 This prevents accidental exposure of RDP on the public internet.
 
-## Troubleshooting Hotel Network Issues
+Troubleshooting Hotel Network Issues
 
 Hotel networks often have captive portals that interfere with VPN connections. Before connecting to hotel WiFi:
 
@@ -296,29 +296,29 @@ ListenPort = 443
 
 For maximum compatibility, layer WireGuard over Wireguard (using a service like Ubiquiti EdgeOS) or use OpenVPN with TLS obfuscation enabled.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get my team to adopt a new tool?**
+How do I get my team to adopt a new tool?
 
 Start with a small pilot group of willing early adopters. Let them use it for 2-3 weeks, then gather their honest feedback. Address concerns before rolling out to the full team. Forced adoption without buy-in almost always fails.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [VPN for Safe Browsing on Public WiFi in Airports](/vpn-for-safe-browsing-on-public-wifi-in-airports/)
 - [How To Diagnose Slow Vpn Connection Speeds](/how-to-diagnose-slow-vpn-connection-speeds-step-by-step/)
@@ -326,5 +326,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Verify That Your VPN Is Actually Working and Not Leaking](/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
 - [Best VPN for Linux Desktop: A Developer Guide](/best-vpn-for-linux-desktop/)
 - [Best AI IDE Features for Pair Programming](https://bestremotetools.com/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

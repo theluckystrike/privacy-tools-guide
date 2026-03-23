@@ -13,13 +13,13 @@ voice-checked: true
 tags: [privacy-tools-guide]
 ---
 
-## Related Articles
+Related Articles
 
 - [How to Use Tripwire for File Integrity Monitoring](/tripwire-file-integrity-monitoring-guide/)
 - [Linux File Permissions Privacy](/linux-file-permissions-privacy-audit/)
 - [Verify Your Devices Are Not Compromised: A Complete](/how-to-verify-your-devices-are-not-compromised-complete-audit/)
 - [How to Set Up Promtail for Log Shipping](/how-to-set-up-promtail-for-log-shipping/)
 - [How to Use OSSEC for Host Intrusion Detection](/ossec-host-intrusion-detection-setup/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

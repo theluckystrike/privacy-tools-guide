@@ -14,11 +14,11 @@ voice-checked: true
 ---
 
 
-# Read-only monitoring user
+Read-only monitoring user
 user readonly on >MonitorPass!
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- Mastering advanced features takes: 1-2 weeks of regular use.
 
-## Table of Contents
+Table of Contents
 
 - [The Default-Open Problem](#the-default-open-problem)
 - [Redis Security](#redis-security)
@@ -27,15 +27,15 @@ user readonly on >MonitorPass!
 - [Verify Your Hardening](#verify-your-hardening)
 - [Related Reading](#related-reading)
 
-## The Default-Open Problem
+The Default-Open Problem
 
-**Redis defaults**:
-- Listens on `0.0.0.0:6379` — accessible from any IP
+Redis defaults:
+- Listens on `0.0.0.0:6379`. accessible from any IP
 - No authentication required
 - Commands allow reading/writing all keys
 - The `CONFIG SET` command can write files anywhere on the filesystem
 
-**MongoDB defaults** (older versions):
+MongoDB defaults (older versions):
 - Listens on `0.0.0.0:27017` with no auth
 - Any connection can read/write any database
 
@@ -43,115 +43,115 @@ If you deploy either without configuration changes on a server with a public IP,
 
 ---
 
-## Redis Security
+Redis Security
 
-### Step 1: Bind to Localhost or Specific IP
+Step 1: Bind to Localhost or Specific IP
 
 ```bash
-# /etc/redis/redis.conf (Debian/Ubuntu) or /etc/redis.conf (RHEL)
+/etc/redis/redis.conf (Debian/Ubuntu) or /etc/redis.conf (RHEL)
 
-# Only accept connections from localhost
+Only accept connections from localhost
 bind 127.0.0.1
 
-# Or bind to a specific internal IP only
-# bind 192.168.1.10
+Or bind to a specific internal IP only
+bind 192.168.1.10
 
-# Enable protected mode (denies external connections if no auth configured)
+Enable protected mode (denies external connections if no auth configured)
 protected-mode yes
 ```
 
 ```bash
-# Verify binding
+Verify binding
 ss -tlnp | grep 6379
-# Should show: 127.0.0.1:6379, NOT 0.0.0.0:6379
+Should show: 127.0.0.1:6379, NOT 0.0.0.0:6379
 
 sudo systemctl restart redis
 ```
 
-### Step 2: Enable Authentication
+Step 2: Enable Authentication
 
 ```bash
-# Generate a strong password
+Generate a strong password
 openssl rand -base64 32
-# Copy the output
+Copy the output
 
-# /etc/redis/redis.conf:
+/etc/redis/redis.conf:
 requirepass "YOUR_STRONG_PASSWORD_HERE"
 
-# ACL-based authentication (Redis 6+, preferred)
-# Disable default user, create named users
+ACL-based authentication (Redis 6+, preferred)
+Disable default user, create named users
 aclfile /etc/redis/users.acl
 ```
 
 ```bash
-# /etc/redis/users.acl
-# Syntax: user <name> [flags] [passwords] [commands] [keys]
+/etc/redis/users.acl
+Syntax: user <name> [flags] [passwords] [commands] [keys]
 
-# Disable the default user (catches unauthenticated access)
+Disable the default user (catches unauthenticated access)
 user default off nopass nocommands nokeys
 
-# Application user: full access to app-specific keys only
+Application user: full access to app-specific keys only
 user appuser on >StrongPassword123! ~app:* +@all
 
-# Read-only monitoring user
+Read-only monitoring user
 user readonly on >MonitorPass! ~* +@read -@dangerous
 
-# Admin user with all permissions (for management only)
+Admin user with all permissions (for management only)
 user admin on >AdminPassword456! ~* +@all
 ```
 
 ```bash
-# Reload ACL
+Reload ACL
 redis-cli -a AdminPassword456! ACL LOAD
 
-# Test authentication
+Test authentication
 redis-cli -a StrongPassword123! PING
-# Expected: PONG
+Expected: PONG
 
 redis-cli PING
-# Expected: NOAUTH Authentication required
+Expected: NOAUTH Authentication required
 ```
 
-### Step 3: Disable Dangerous Commands
+Step 3: Disable Dangerous Commands
 
 ```bash
-# /etc/redis/redis.conf
+/etc/redis/redis.conf
 
-# Rename dangerous commands to empty string (disables them)
-# or rename to a secret string (hides them)
+Rename dangerous commands to empty string (disables them)
+or rename to a secret string (hides them)
 rename-command CONFIG ""
 rename-command FLUSHALL ""
 rename-command FLUSHDB ""
-rename-command KEYS ""     # Use SCAN instead — KEYS blocks server
+rename-command KEYS ""     # Use SCAN instead. KEYS blocks server
 rename-command DEBUG ""
 rename-command EVAL ""     # Disable if Lua scripting not needed
 ```
 
-**Why `CONFIG` is dangerous**: An attacker with Redis access can use `CONFIG SET dir /home/user/.ssh` + `CONFIG SET dbfilename authorized_keys` + `SAVE` to write their SSH key to the server, gaining shell access.
+Why `CONFIG` is dangerous: An attacker with Redis access can use `CONFIG SET dir /home/user/.ssh` + `CONFIG SET dbfilename authorized_keys` + `SAVE` to write their SSH key to the server, gaining shell access.
 
-### Step 4: Enable TLS (Redis 6+)
+Step 4: Enable TLS (Redis 6+)
 
 ```bash
-# Generate TLS certificates
+Generate TLS certificates
 openssl req -newkey rsa:4096 -x509 -sha256 -days 3650 \
   -nodes -out /etc/redis/tls/redis.crt \
   -keyout /etc/redis/tls/redis.key \
   -subj "/CN=redis-server"
 
-# /etc/redis/redis.conf:
+/etc/redis/redis.conf:
 tls-port 6380
 tls-cert-file /etc/redis/tls/redis.crt
 tls-key-file /etc/redis/tls/redis.key
 tls-ca-cert-file /etc/redis/tls/ca.crt
 tls-auth-clients yes   # Require client certificates
 
-# Keep port 6379 for localhost only (no TLS needed for same-host connections)
+Keep port 6379 for localhost only (no TLS needed for same-host connections)
 port 6379
 bind 127.0.0.1
 ```
 
 ```bash
-# Connect via TLS
+Connect via TLS
 redis-cli --tls \
   --cert /path/to/client.crt \
   --key /path/to/client.key \
@@ -160,34 +160,34 @@ redis-cli --tls \
   -a StrongPassword123! PING
 ```
 
-### Step 5: Persistence and File Permissions
+Step 5: Persistence and File Permissions
 
 ```bash
-# /etc/redis/redis.conf
-# Run Redis as non-root user
-# (typically handled by systemd unit — verify)
+/etc/redis/redis.conf
+Run Redis as non-root user
+(typically handled by systemd unit. verify)
 
-# Restrict RDB/AOF file locations
+Restrict RDB/AOF file locations
 dir /var/lib/redis
 dbfilename dump.rdb
 
-# Set file permissions
+Set file permissions
 chmod 750 /var/lib/redis
 chown redis:redis /var/lib/redis
 
-# Verify Redis runs as redis user, not root
+Verify Redis runs as redis user, not root
 ps aux | grep redis
-# Should show: redis   ... redis-server
+Should show: redis   ... redis-server
 ```
 
 ---
 
-## MongoDB Security
+MongoDB Security
 
-### Step 1: Enable Authentication
+Step 1: Enable Authentication
 
 ```yaml
-# /etc/mongod.conf
+/etc/mongod.conf
 
 security:
   authorization: enabled
@@ -202,44 +202,44 @@ net:
 ```
 
 ```bash
-# Start MongoDB initially WITHOUT auth to create the admin user
-# Then enable auth
+Start MongoDB initially WITHOUT auth to create the admin user
+Then enable auth
 
-# Connect without auth:
+Connect without auth:
 mongosh
 
-# Create admin user
+Create admin user
 use admin
 db.createUser({
   user: "admin",
   pwd: passwordPrompt(),  // prompts securely
   roles: [{ role: "userAdminAnyDatabase", db: "admin" }, "readWriteAnyDatabase"]
 })
-# Set a strong password when prompted
+Set a strong password when prompted
 
 exit
 ```
 
 ```bash
-# Enable auth in /etc/mongod.conf and restart
+Enable auth in /etc/mongod.conf and restart
 sudo systemctl restart mongod
 
-# Test auth
+Test auth
 mongosh --username admin --password --authenticationDatabase admin
-# Should prompt for password and connect
+Should prompt for password and connect
 
 mongosh --username wronguser --password badpass
-# Should fail: Authentication failed
+Should fail: Authentication failed
 ```
 
-### Step 2: Create Role-Based Users
+Step 2: Create Role-Based Users
 
 ```javascript
 // Connect as admin: mongosh -u admin -p --authenticationDatabase admin
 
 use myapp_db
 
-// Application user — only accesses its own database
+// Application user. only accesses its own database
 db.createUser({
   user: "appuser",
   pwd: "StrongAppPassword!",
@@ -266,24 +266,24 @@ db.createUser({
 })
 ```
 
-### Step 3: Enable TLS for MongoDB
+Step 3: Enable TLS for MongoDB
 
 ```bash
-# Generate MongoDB certificate (combined key + cert PEM)
+Generate MongoDB certificate (combined key + cert PEM)
 openssl req -newkey rsa:4096 -nodes \
   -keyout /etc/mongodb/tls/mongod.key \
   -x509 -days 3650 \
   -out /etc/mongodb/tls/mongod.crt \
   -subj "/CN=mongodb-server"
 
-# Combine into PEM for MongoDB
+Combine into PEM for MongoDB
 cat /etc/mongodb/tls/mongod.key /etc/mongodb/tls/mongod.crt > /etc/mongodb/tls/mongod.pem
 chmod 600 /etc/mongodb/tls/mongod.pem
 chown mongodb:mongodb /etc/mongodb/tls/mongod.pem
 ```
 
 ```yaml
-# /etc/mongod.conf
+/etc/mongod.conf
 net:
   bindIp: 127.0.0.1,192.168.1.10   # localhost + internal IP
   tls:
@@ -292,7 +292,7 @@ net:
 ```
 
 ```bash
-# Connect via TLS
+Connect via TLS
 mongosh --tls \
   --tlsCAFile /etc/mongodb/tls/ca.pem \
   --username admin --password \
@@ -300,12 +300,12 @@ mongosh --tls \
   "mongodb://localhost:27017/"
 ```
 
-### Step 4: Enable Audit Logging (Enterprise) or mongocryptd
+Step 4: Enable Audit Logging (Enterprise) or mongocryptd
 
 For Community Edition, enable operation logging:
 
 ```yaml
-# /etc/mongod.conf
+/etc/mongod.conf
 systemLog:
   destination: file
   path: /var/log/mongodb/mongod.log
@@ -321,7 +321,7 @@ operationProfiling:
 use myapp_db
 db.getProfilingStatus()
 
-// Enable profiling for all operations (use carefully — performance impact)
+// Enable profiling for all operations (use carefully. performance impact)
 db.setProfilingLevel(1, { slowms: 100 })
 
 // Query the system.profile collection to see recent operations
@@ -330,47 +330,47 @@ db.system.profile.find().sort({ts:-1}).limit(5).pretty()
 
 ---
 
-## Firewall Rules for Both Services
+Firewall Rules for Both Services
 
 ```bash
-# Using ufw (Ubuntu)
+Using ufw (Ubuntu)
 sudo ufw deny 6379   # Block Redis from all external access
 sudo ufw deny 27017  # Block MongoDB from external access
 
-# Allow only from specific app server IPs:
+Allow only from specific app server IPs:
 sudo ufw allow from 192.168.1.20 to any port 6379
 sudo ufw allow from 192.168.1.20 to any port 27017
 
-# Using nftables directly:
+Using nftables directly:
 sudo nft add rule inet filter input tcp dport 6379 ip saddr != 127.0.0.1 drop
 sudo nft add rule inet filter input tcp dport 27017 ip saddr != { 127.0.0.1, 192.168.1.0/24 } drop
 ```
 
 ---
 
-## Verify Your Hardening
+Verify Your Hardening
 
 ```bash
-# Test Redis from external IP (should fail)
+Test Redis from external IP (should fail)
 redis-cli -h your.server.ip PING
-# Expected: Could not connect / Connection refused
+Expected: Could not connect / Connection refused
 
-# Test MongoDB from external (should fail)
+Test MongoDB from external (should fail)
 mongosh "mongodb://your.server.ip:27017"
-# Expected: Connection refused or timeout
+Expected: Connection refused or timeout
 
-# Scan your own server for exposed ports
+Scan your own server for exposed ports
 nmap -p 6379,27017 your.public.ip
-# Expected: filtered or closed for both
+Expected: filtered or closed for both
 
-# Check Redis ACL is working
+Check Redis ACL is working
 redis-cli -h 127.0.0.1 KEYS "*"
-# Expected: NOAUTH or permission denied (without credentials)
+Expected: NOAUTH or permission denied (without credentials)
 ```
 
 ---
 
-## Related Articles
+Related Articles
 
 - [Secure Redis Deployment Without Exposure](/secure-redis-deployment-without-exposure/)
 - [How To Anonymize User Data In Production Database](/how-to-anonymize-user-data-in-production-database-for-privac/)
@@ -378,27 +378,27 @@ redis-cli -h 127.0.0.1 KEYS "*"
 - [How To Build Privacy Dashboard For Customers To Manage](/how-to-build-privacy-dashboard-for-customers-to-manage-their/)
 - [How to Secure PostgreSQL for Production](/secure-postgresql-production-guide/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does Redis offer a free tier?**
+Does Redis offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check Redis's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 {% endraw %}

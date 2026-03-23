@@ -18,7 +18,7 @@ tags: [privacy-tools-guide, privacy]
 
 Understanding what happens during a Bumble video call requires examining the data flow from both network and application perspectives. This article provides a technical breakdown for developers and power users who want to understand the privacy implications of in-app video calling.
 
-## Table of Contents
+Table of Contents
 
 - [How Bumble Video Calls Work](#how-bumble-video-calls-work)
 - [Data Transmitted During Video Calls](#data-transmitted-during-video-calls)
@@ -37,7 +37,7 @@ Understanding what happens during a Bumble video call requires examining the dat
 - [Post-Call Privacy Cleanup](#post-call-privacy-cleanup)
 - [Recommendations for Developers Building Dating Apps](#recommendations-for-developers-building-dating-apps)
 
-## How Bumble Video Calls Work
+How Bumble Video Calls Work
 
 Bumble's video calling feature uses WebRTC (Web Real-Time Communication) as its underlying technology. When you initiate a video call, the app establishes a peer-to-peer connection between devices, though some routing through Bumble's servers may occur for signaling and NAT traversal.
 
@@ -65,43 +65,43 @@ stream.getTracks().forEach(track => {
 
 The STUN servers (Session Traversal Utilities for NAT) help discover your public IP address and port, enabling peer-to-peer connection establishment. This is a standard WebRTC pattern used by many video calling applications.
 
-## Data Transmitted During Video Calls
+Data Transmitted During Video Calls
 
 When you make a Bumble video call, several types of data are transmitted:
 
-### Media Data
-- **Video frames**: Compressed using VP8/VP9 or H.264 codecs
-- **Audio frames**: Encoded using Opus codec (typically 32-128 kbps)
-- **Resolution and quality**: Automatically adjusted based on network conditions
+Media Data
+- Video frames: Compressed using VP8/VP9 or H.264 codecs
+- Audio frames: Encoded using Opus codec (typically 32-128 kbps)
+- Resolution and quality: Automatically adjusted based on network conditions
 
-### Signaling Data
-- **Session descriptions**: SDP (Session Description Protocol) offers and answers
-- **ICE candidates**: Network path information for NAT traversal
-- **Call metadata**: Timestamps, duration, connection quality metrics
+Signaling Data
+- Session descriptions: SDP (Session Description Protocol) offers and answers
+- ICE candidates: Network path information for NAT traversal
+- Call metadata: Timestamps, duration, connection quality metrics
 
-### User Data
-- **Profile information**: Display name and visibility status
-- **Connection data**: IP addresses (potentially revealing location)
+User Data
+- Profile information: Display name and visibility status
+- Connection data: IP addresses (potentially revealing location)
 
 From a network analysis perspective, you can observe TLS-encrypted traffic between clients and Bumble's infrastructure. The actual media streams use SRTP (Secure Real-time Transport Protocol), which encrypts the video and audio content.
 
-## What Bumble Stores
+What Bumble Stores
 
 Based on privacy policies and technical analysis, Bumble stores several categories of data related to video calls:
 
-### Call Logs
+Call Logs
 - Timestamps (when calls started and ended)
 - Duration information
 - Connection success/failure status
 - Anonymous identifiers for both participants
 
-### Media Storage
+Media Storage
 Bumble does not typically record or store video call content by default. However, users should be aware that:
 - Screen recordings may be captured by either party (depending on device permissions)
 - If a user takes screenshots during a call, that image exists locally
 - Any reported calls may be reviewed by moderation teams
 
-### Network Analytics
+Network Analytics
 ```json
 {
   "call_id": "abc123xyz",
@@ -118,43 +118,43 @@ Bumble does not typically record or store video call content by default. However
 
 Bumble collects aggregate quality metrics to improve their service, though the specific contents of conversations are not stored on their servers under normal circumstances.
 
-## Encryption and Security
+Encryption and Security
 
 Bumble implements encryption for video calls, but understanding the specifics helps you assess actual privacy:
 
-### In-Transit Encryption
-- **Media streams**: SRTP encryption (ZRTP-like key exchange via DTLS-SRTP)
-- **Signaling**: TLS encryption for all WebRTC signaling traffic
-- **Server communication**: HTTPS for all API calls
+In-Transit Encryption
+- Media streams: SRTP encryption (ZRTP-like key exchange via DTLS-SRTP)
+- Signaling: TLS encryption for all WebRTC signaling traffic
+- Server communication: HTTPS for all API calls
 
-### End-to-End Considerations
+End-to-End Considerations
 Unlike some encrypted messaging apps, video call metadata (who called whom, when, for how long) is visible to Bumble's servers. The actual audio and video content travels peer-to-peer, but:
 - The signaling server knows call participants
 - Connection quality data passes through servers
 - Call duration is logged
 
-## Privacy Implications for Power Users
+Privacy Implications for Power Users
 
 For developers and technically-minded users, here are practical considerations:
 
-### Network-Level Visibility
+Network-Level Visibility
 If you're concerned about network-level surveillance:
 - Use a VPN to mask IP addresses during calls
 - Consider that VPN usage itself may be logged
 - Corporate networks may inspect TLS metadata
 
-### Device Permissions
+Device Permissions
 Bumble requires camera and microphone permissions. Review what permissions your app has:
-- **iOS**: Settings > Privacy > Camera/Microphone > Bumble
-- **Android**: Settings > Apps > Bumble > Permissions
+- iOS: Settings > Privacy > Camera/Microphone > Bumble
+- Android: Settings > Apps > Bumble > Permissions
 
-### Account-Level Data
+Account-Level Data
 Your Bumble account data, including video call history, may be subject to:
 - Legal requests from law enforcement
 - Terms of service violations investigations
 - Aggregate analytics and service improvement
 
-## Requesting Your Data
+Requesting Your Data
 
 Under various privacy regulations, you can request your data from Bumble:
 1. Open Bumble app settings
@@ -169,7 +169,7 @@ The downloaded data may include:
 - Login history
 - Video call logs
 
-## Comparison with Other Platforms
+Comparison with Other Platforms
 
 For context, here's how Bumble's approach compares:
 
@@ -180,17 +180,17 @@ For context, here's how Bumble's approach compares:
 | Metadata retention | Yes | Minimal | Yes |
 | Peer-to-peer media | Yes | Yes | Partial |
 
-## Practical Recommendations
+Practical Recommendations
 
 If you're concerned about video call privacy on Bumble:
 
-1. **Use the app, not web**: Mobile apps generally have better security implementations
-2. **Check your network**: Avoid public WiFi when making video calls
-3. **Review permissions**: Regularly audit app permissions
-4. **Understand the limitations**: Know that call metadata is not private
-5. **Consider alternatives**: For highly sensitive conversations, use dedicated encrypted communication apps
+1. Use the app, not web: Mobile apps generally have better security implementations
+2. Check your network: Avoid public WiFi when making video calls
+3. Review permissions: Regularly audit app permissions
+4. Understand the limitations: Know that call metadata is not private
+5. Consider alternatives: For highly sensitive conversations, use dedicated encrypted communication apps
 
-## Analyzing Bumble's WebRTC Implementation
+Analyzing Bumble's WebRTC Implementation
 
 For developers interested in the technical details of Bumble's video calling:
 
@@ -233,23 +233,23 @@ const callStats = {
 
 This shows the types of metrics collected about calls, even when content itself isn't recorded.
 
-## Network-Level Privacy During Video Calls
+Network-Level Privacy During Video Calls
 
 If you're on a corporate or monitored network, video calls create detectable traffic patterns:
 
 ```bash
-# Monitor what's visible in your network traffic
+Monitor what's visible in your network traffic
 sudo tcpdump -i any -n 'port 5000-5500 or port 49000-65535' -v
 
-# UDP media streams on high ports (WebRTC media)
-# TLS handshakes to Bumble servers (metadata)
-# DNS queries to bump CDN servers
+UDP media streams on high ports (WebRTC media)
+TLS handshakes to Bumble servers (metadata)
+DNS queries to bump CDN servers
 
-# What's exposed:
-# - Call duration (time of first packet to last packet)
-# - Approximate data volume (indicates call quality/duration)
-# - Server IPs (indicates Bumble infrastructure)
-# - Pattern of packets (indicates speaking patterns)
+What's exposed:
+- Call duration (time of first packet to last packet)
+- Approximate data volume (indicates call quality/duration)
+- Server IPs (indicates Bumble infrastructure)
+- Pattern of packets (indicates speaking patterns)
 ```
 
 Even on private networks, sophisticated traffic analysis can infer:
@@ -258,7 +258,7 @@ Even on private networks, sophisticated traffic analysis can infer:
 - Number of participants
 - Call quality issues
 
-## Screen Sharing Risks During Video Calls
+Screen Sharing Risks During Video Calls
 
 If Bumble ever adds screen sharing to video calls, be aware:
 
@@ -277,7 +277,7 @@ Screen sharing privacy matrix:
 
 For now, Bumble's video calls are limited to video/audio. Don't use it for sharing sensitive screens.
 
-## Legal and Regulatory Implications
+Legal and Regulatory Implications
 
 Video call metadata can be requested by law enforcement:
 
@@ -298,32 +298,32 @@ NOT typically available (encrypted):
 
 In jurisdictions like the US (CALEA), Bumble may be required to provide call metadata under legal process. Content itself is better protected due to SRTP encryption.
 
-## Testing Your Video Call Privacy
+Testing Your Video Call Privacy
 
 Verify Bumble's encryption is actually active:
 
 ```bash
-# On Android using Wireshark via USB:
+On Android using Wireshark via USB:
 adb shell tcpdump -i any -w - | wireshark -k -i -
 
-# Look for:
-# ✓ TLS handshakes to Bumble servers
-# ✓ Encrypted UDP media streams
-# ✗ Plaintext video content
-# ✗ Unencrypted audio frames
+Look for:
+ TLS handshakes to Bumble servers
+ Encrypted UDP media streams
+ Plaintext video content
+ Unencrypted audio frames
 
-# On iOS (requires jailbreak or corporate MDM):
-# Similar packet analysis to verify SRTP usage
+On iOS (requires jailbreak or corporate MDM):
+Similar packet analysis to verify SRTP usage
 ```
 
 If you see plaintext video or audio in the packet capture, Bumble's encryption isn't working properly.
 
-## Comparison: Bumble vs Dedicated Encrypted Video Apps
+Comparison: Bumble vs Dedicated Encrypted Video Apps
 
 For context on privacy trade-offs:
 
 ```python
-# Privacy score matrix (subjective assessment)
+Privacy score matrix (subjective assessment)
 
 apps_privacy = {
     "Bumble Video": {
@@ -349,34 +349,34 @@ apps_privacy = {
     }
 }
 
-# Bumble is acceptable for casual dating convos
-# But not for sensitive business or legal discussions
+Bumble is acceptable for casual dating convos
+But not for sensitive business or legal discussions
 ```
 
-## Post-Call Privacy Cleanup
+Post-Call Privacy Cleanup
 
 After using Bumble video calls, take these privacy steps:
 
 ```bash
-# Clear cached video frames
-# iOS: Settings → Bumble → Offload Data
-# Android: Settings → Apps → Bumble → Clear Cache
+Clear cached video frames
+iOS: Settings → Bumble → Offload Data
+Android: Settings → Apps → Bumble → Clear Cache
 
-# Remove call history from Bumble UI
-# In-app: Message with person → Long-press → Delete
+Remove call history from Bumble UI
+In-app: Message with person → Long-press → Delete
 
-# Device-level cleanup
-# iOS: iPhone Storage → Bumble → Remove App Data
-# Android: Settings → Apps → Bumble → Storage → Clear Cache
+Device-level cleanup
+iOS: iPhone Storage → Bumble → Remove App Data
+Android: Settings → Apps → Bumble → Storage → Clear Cache
 
-# Network logs
-# If on VPN, restart connection after call
-# If on home network, refresh router DHCP leases
+Network logs
+If on VPN, restart connection after call
+If on home network, refresh router DHCP leases
 ```
 
 This reduces the window in which cached data could be exposed through device compromise.
 
-## Recommendations for Developers Building Dating Apps
+Recommendations for Developers Building Dating Apps
 
 If building video features for a dating app:
 
@@ -402,29 +402,29 @@ If building video features for a dating app:
 
 Bumble's approach is reasonable for a dating app, though stricter privacy would be better.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Telehealth Privacy Rights What Therapist Doctor Video Calls](/telehealth-privacy-rights-what-therapist-doctor-video-calls-/)
 - [Bumble Private Detector AI Scanning Privacy How Uploaded](/bumble-private-detector-ai-scanning-privacy-how-uploaded-photos-are-analyzed-and-stored/)
@@ -432,5 +432,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Bumble Beeline Data Privacy Who Can See That You Swiped](/bumble-beeline-data-privacy-who-can-see-that-you-swiped-righ/)
 - [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

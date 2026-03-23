@@ -16,29 +16,29 @@ intent-checked: true
 
 {% raw %}
 
-Installing a VPN doesn't guarantee your traffic is private. Misconfigured VPNs leak your real IP through DNS queries, WebRTC connections, or IPv6 traffic—all while the VPN indicator shows green. Your ISP can still see your browsing, and websites can still fingerprint you. This guide walks through verification tests you can run right now: DNS leak detection (nslookup command), WebRTC leak tests (browser console), IPv6 leak detection (running a local server), and kill switch verification (testing connection drop behavior). Each test reveals whether your VPN is actually working. Real tools: dnsleak.com, ipleak.net, whoami.akamai.com, and tcpdump for advanced users.
+Installing a VPN doesn't guarantee your traffic is private. Misconfigured VPNs leak your real IP through DNS queries, WebRTC connections, or IPv6 traffic, all while the VPN indicator shows green. Your ISP can still see your browsing, and websites can still fingerprint you. This guide walks through verification tests you can run right now: DNS leak detection (nslookup command), WebRTC leak tests (browser console), IPv6 leak detection (running a local server), and kill switch verification (testing connection drop behavior). Each test reveals whether your VPN is actually working. Real tools: dnsleak.com, ipleak.net, whoami.akamai.com, and tcpdump for advanced users.
 
-# Output: 64 bytes from 8.8.8.8: icmp_seq=0 ttl=119 time=45ms
+Output: 64 bytes from 8.8.8.8: icmp_seq=0 ttl=119 time=45ms
 ```
 
 4.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Real tools**: dnsleak.com, ipleak.net, whoami.akamai.com, and tcpdump for advanced users.
+- Mastering advanced features takes: 1-2 weeks of regular use.
+- Focus on the 20%: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- Real tools: dnsleak.com, ipleak.net, whoami.akamai.com, and tcpdump for advanced users.
 
-## Why VPN Verification Matters
+Why VPN Verification Matters
 
 A "working" VPN means:
 
-1. **Your real IP is hidden** - Websites see the VPN's IP, not yours
-2. **DNS queries are encrypted** - Your ISP can't see what sites you're visiting
-3. **WebRTC doesn't leak your real IP** - Browser doesn't bypass the VPN
-4. **IPv6 traffic routes through VPN** - Not leaking via IPv6 tunnel
-5. **Kill switch works** - If VPN drops, internet stops (prevents unencrypted traffic)
+1. Your real IP is hidden - Websites see the VPN's IP, not yours
+2. DNS queries are encrypted - Your ISP can't see what sites you're visiting
+3. WebRTC doesn't leak your real IP - Browser doesn't bypass the VPN
+4. IPv6 traffic routes through VPN - Not leaking via IPv6 tunnel
+5. Kill switch works - If VPN drops, internet stops (prevents unencrypted traffic)
 
-Many VPN apps claim to do this. Few actually do it correctly. Misconfigurations like DNS not routing through the VPN, WebRTC not being blocked, or IPv6 bypass routes mean your privacy isn't actually protected—even though the VPN app shows "Connected."
+Many VPN apps claim to do this. Few actually do it correctly. Misconfigurations like DNS not routing through the VPN, WebRTC not being blocked, or IPv6 bypass routes mean your privacy isn't actually protected, even though the VPN app shows "Connected."
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -48,11 +48,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Test 1: Check Your Real IP
+Step 1: Test 1: Check Your Real IP
 
 First, establish what your real IP is. This is what you want to hide.
 
-**Find your real IP (easiest way):**
+Find your real IP (easiest way):
 
 Disconnect from VPN. Visit any of these sites:
 
@@ -62,27 +62,27 @@ Disconnect from VPN. Visit any of these sites:
 
 Your real IP appears. Remember it. If you see this IP after connecting to VPN, the VPN isn't working.
 
-**Command-line method:**
+Command-line method:
 
 ```bash
-# macOS/Linux
+macOS/Linux
 curl https://ifconfig.me
-# Output: 203.0.113.45
+Output: 203.0.113.45
 
 curl https://icanhazip.com
-# Output: 203.0.113.45
+Output: 203.0.113.45
 
-# Windows PowerShell
+Windows PowerShell
 (Invoke-WebRequest https://ifconfig.me).Content
 ```
 
 Note the IP address (e.g., 203.0.113.45). This is your real IP that you want to hide.
 
-### Step 2: Test 2: DNS Leak Detection
+Step 2: Test 2: DNS Leak Detection
 
 When you use a VPN, your DNS queries should go through the VPN's DNS servers, encrypted. If they leak, your ISP can still see what sites you visit.
 
-**Method 1: Online DNS leak test (easiest)**
+Method 1: Online DNS leak test (easiest)
 
 Visit [dnsleak.com](https://dnsleak.com)
 
@@ -93,7 +93,7 @@ Visit [dnsleak.com](https://dnsleak.com)
 
 If the DNS servers change to the VPN provider's servers, DNS leaks aren't happening. If they stay the same, your VPN has a DNS leak.
 
-**Expected results:**
+Expected results:
 
 Before VPN:
 ```
@@ -111,49 +111,49 @@ DNS Servers Detected:
 
 If you see your ISP's servers while connected to VPN, you have a DNS leak.
 
-**Method 2: Command-line DNS leak test**
+Method 2: Command-line DNS leak test
 
 ```bash
-# Check what DNS server your system uses
+Check what DNS server your system uses
 nslookup google.com
 
-# Output on VPN should show VPN's DNS:
-# Server: 10.0.0.1 (VPN's DNS)
-# Address: 10.0.0.1#53
+Output on VPN should show VPN's DNS:
+Server: 10.0.0.1 (VPN's DNS)
+Address: 10.0.0.1#53
 
-# Non-VPN output shows ISP's DNS:
-# Server: 8.8.8.8
-# Address: 8.8.8.8#53
+Non-VPN output shows ISP's DNS:
+Server: 8.8.8.8
+Address: 8.8.8.8#53
 ```
 
 If the server address is your ISP's DNS while VPN is connected, you have a leak.
 
-**Method 3: Advanced - tcpdump to capture traffic**
+Method 3: Advanced - tcpdump to capture traffic
 
 For technical users, capture actual DNS traffic to verify it's encrypted through VPN:
 
 ```bash
-# Install tcpdump if needed
-# macOS: brew install tcpdump
-# Linux: sudo apt-get install tcpdump
+Install tcpdump if needed
+macOS: brew install tcpdump
+Linux: sudo apt-get install tcpdump
 
-# Capture DNS traffic
+Capture DNS traffic
 sudo tcpdump -i any -n 'udp port 53' -c 5
 
-# Output while NOT on VPN:
-# Your computer -> ISP DNS (unencrypted)
+Output while NOT on VPN:
+Your computer -> ISP DNS (unencrypted)
 
-# Output while on VPN:
-# Your computer -> VPN endpoint (encrypted tunnel, no direct DNS queries visible)
+Output while on VPN:
+Your computer -> VPN endpoint (encrypted tunnel, no direct DNS queries visible)
 ```
 
 If you see DNS queries (port 53) going directly to your ISP while connected to VPN, there's a leak.
 
-### Step 3: Test 3: WebRTC Leak Detection
+Step 3: Test 3: WebRTC Leak Detection
 
 WebRTC is used by browsers for real-time communication (video calls, file sharing). It can bypass your VPN and leak your real IP directly.
 
-**Method 1: Online WebRTC leak test (easiest)**
+Method 1: Online WebRTC leak test (easiest)
 
 Visit [ipleak.net](https://ipleak.net)
 
@@ -164,21 +164,21 @@ Visit [ipleak.net](https://ipleak.net)
 
 If it shows your VPN's IP only, no leak. If it shows your real IP in the WebRTC section, you have a leak.
 
-**Expected results (no leak):**
+Expected results (no leak):
 
 ```
 IPv4: 198.51.100.42 (VPN provider's IP)
 WebRTC: 198.51.100.42 (same as VPN)
 ```
 
-**Bad result (WebRTC leak):**
+Bad result (WebRTC leak):
 
 ```
 IPv4: 198.51.100.42 (VPN provider's IP)
 WebRTC: 203.0.113.45 (YOUR REAL IP - LEAK!)
 ```
 
-**Method 2: Browser console WebRTC leak test**
+Method 2: Browser console WebRTC leak test
 
 For technical users, test WebRTC directly in browser console:
 
@@ -213,29 +213,29 @@ setTimeout(() => {
 }, 3000);
 ```
 
-**What to look for:**
+What to look for:
 
 In the candidates, look for IP addresses. If you see your real IP (e.g., 203.0.113.45) instead of your VPN IP, you have a WebRTC leak.
 
-**Method 3: Disable WebRTC in browser (fix if leaking)**
+Method 3: Disable WebRTC in browser (fix if leaking)
 
 If you found a WebRTC leak, disable WebRTC:
 
-**Firefox:**
+Firefox:
 1. Type `about:config` in address bar
 2. Search for `media.peerconnection.enabled`
 3. Set it to `false`
 
-**Chrome:**
+Chrome:
 1. Visit `chrome://extensions/`
 2. Install WebRTC Leak Prevent extension
 3. Leave it enabled
 
-### Step 4: Test 4: IPv6 Leak Detection
+Step 4: Test 4: IPv6 Leak Detection
 
 If your network supports IPv6, traffic can leak through IPv6 routes that bypass your VPN.
 
-**Method 1: Online IPv6 leak test (easiest)**
+Method 1: Online IPv6 leak test (easiest)
 
 Visit [ipleak.net](https://ipleak.net)
 
@@ -245,70 +245,70 @@ Visit [ipleak.net](https://ipleak.net)
 
 If no IPv6 address is shown, or it shows the VPN provider's IPv6, you're fine. If it shows a different IPv6 (your real one), you have a leak.
 
-**Expected results (no leak):**
+Expected results (no leak):
 
 ```
 IPv4: 198.51.100.42 (VPN IP)
 IPv6: Not detected OR 2001:db8::1 (VPN provider's IPv6)
 ```
 
-**Bad result (IPv6 leak):**
+Bad result (IPv6 leak):
 
 ```
 IPv4: 198.51.100.42 (VPN IP)
 IPv6: 2600:1700:1234:5678::1 (YOUR REAL IPv6 - LEAK!)
 ```
 
-**Method 2: Command-line IPv6 check**
+Method 2: Command-line IPv6 check
 
 ```bash
-# Check if you have an IPv6 address
+Check if you have an IPv6 address
 ifconfig | grep inet6
 
-# Output with IPv6:
-# inet6 fe80::1 (link-local, okay)
-# inet6 2600:1700:1234:5678::1 (global, check this)
+Output with IPv6:
+inet6 fe80::1 (link-local, okay)
+inet6 2600:1700:1234:5678::1 (global, check this)
 
-# If your global IPv6 is visible on ipleak.net but shouldn't be,
-# your VPN isn't routing IPv6 traffic
+If your global IPv6 is visible on ipleak.net but shouldn't be,
+your VPN isn't routing IPv6 traffic
 ```
 
-**Method 3: Disable IPv6 if leaked (fix)**
+Method 3: Disable IPv6 if leaked (fix)
 
 If you have IPv6 leaks and can't use IPv6, disable it:
 
-**macOS:**
+macOS:
 ```bash
-# Disable IPv6
+Disable IPv6
 networksetup -setv6off Wi-Fi
 
-# Re-enable later:
+Re-enable later:
 networksetup -setv6automatic Wi-Fi
 ```
 
-**Linux:**
+Linux:
 ```bash
-# Temporarily disable IPv6
+Temporarily disable IPv6
 sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
 
-# Re-enable:
+Re-enable:
 sudo sysctl -w net.ipv6.conf.all.disable_ipv6=0
 ```
 
-**Windows:**
+Windows:
 ```bash
-# Open PowerShell as admin
+Open PowerShell as admin
 netsh interface ipv6 set state disabled=yes
 
-# Re-enable:
+Re-enable:
 netsh interface ipv6 set state disabled=no
 ```
 
-### Step 5: Test 5: Kill Switch Verification
+Step 5: Test 5: Kill Switch Verification
 
 A "kill switch" stops all traffic if the VPN drops, preventing unencrypted data from leaking.
 
-**Method 1: Manual disconnect test**
+Method 1: Manual disconnect test
 
 1. Connect to VPN
 2. Open a terminal/command prompt
@@ -316,7 +316,7 @@ A "kill switch" stops all traffic if the VPN drops, preventing unencrypted data 
 
 ```bash
 ping 8.8.8.8
-# Output: 64 bytes from 8.8.8.8: icmp_seq=0 ttl=119 time=45ms
+Output: 64 bytes from 8.8.8.8: icmp_seq=0 ttl=119 time=45ms
 ```
 
 4. Disconnect the VPN (toggle it off in the app)
@@ -326,38 +326,38 @@ ping 8.8.8.8
 ping 8.8.8.8
 ```
 
-**Good result (kill switch working):**
+Good result (kill switch working):
 - Ping continues returning "no response" or "unreachable"
 - Internet is completely blocked
 - No packets get through
 
-**Bad result (no kill switch):**
+Bad result (no kill switch):
 - Ping returns responses immediately after VPN disconnect
 - Internet continues working
 - Unencrypted traffic leaks to the internet
 
-**Method 2: Network connectivity test (advanced)**
+Method 2: Network connectivity test (advanced)
 
 For technical users, use netstat to monitor connections:
 
-**macOS/Linux:**
+macOS/Linux:
 ```bash
-# Monitor network connections
+Monitor network connections
 netstat -an | grep ESTABLISHED
 
-# Before VPN disconnect: Shows connection to VPN endpoint
-# tcp4 0 0 192.168.1.100.54321 198.51.100.42.1194 ESTABLISHED
+Before VPN disconnect: Shows connection to VPN endpoint
+tcp4 0 0 192.168.1.100.54321 198.51.100.42.1194 ESTABLISHED
 
-# After VPN disconnect with kill switch ON:
-# No ESTABLISHED connections appear
-# (kill switch blocks all traffic)
+After VPN disconnect with kill switch ON:
+No ESTABLISHED connections appear
+(kill switch blocks all traffic)
 
-# After VPN disconnect with kill switch OFF:
-# Direct connections to ISP reappear
-# tcp4 0 0 192.168.1.100.54322 8.8.8.8.443 ESTABLISHED
+After VPN disconnect with kill switch OFF:
+Direct connections to ISP reappear
+tcp4 0 0 192.168.1.100.54322 8.8.8.8.443 ESTABLISHED
 ```
 
-### Step 6: Test 6: Check Leak Test Sites Themselves
+Step 6: Test 6: Check Leak Test Sites Themselves
 
 Some leak test sites have false positives. Cross-reference:
 
@@ -368,7 +368,7 @@ Some leak test sites have false positives. Cross-reference:
 
 Visit 2-3 sites. If they all show the same IP (your VPN's IP), the VPN is working. If they show different IPs, something is wrong.
 
-### Step 7: Test Checklist
+Step 7: Test Checklist
 
 Before you trust a VPN, run this full verification:
 
@@ -404,9 +404,9 @@ Before you trust a VPN, run this full verification:
  [ ] All three should show VPN provider's IP
 ```
 
-### Step 8: Common Leaks and Fixes
+Step 8: Common Leaks and Fixes
 
-**Problem: DNS leak detected**
+Problem: DNS leak detected
 
 Causes:
 - VPN app not configured to use VPN DNS
@@ -418,7 +418,7 @@ Fixes:
 - Disable DNS-over-HTTPS (DoH) in browser if it conflicts
 - Restart computer after VPN connection
 
-**Problem: WebRTC leak detected**
+Problem: WebRTC leak detected
 
 Causes:
 - WebRTC enabled in browser
@@ -429,7 +429,7 @@ Fixes:
 - Chrome: Install WebRTC Leak Prevent extension
 - Safari: Less prone to WebRTC leaks due to stricter WebRTC implementation
 
-**Problem: IPv6 leak detected**
+Problem: IPv6 leak detected
 
 Causes:
 - ISP provides IPv6 but VPN doesn't support it
@@ -440,7 +440,7 @@ Fixes:
 - Choose VPN provider with IPv6 support
 - Configure VPN to tunnel IPv6 traffic
 
-**Problem: Kill switch not working**
+Problem: Kill switch not working
 
 Causes:
 - Kill switch disabled in VPN settings
@@ -451,58 +451,58 @@ Fixes:
 - Check firewall isn't allowing exceptions
 - Restart VPN app and computer
 
-### Step 9: Real Example: Testing ExpressVPN
+Step 9: Real Example: Testing ExpressVPN
 
 Here's a complete verification of ExpressVPN:
 
-1. **Real IP (no VPN):** 203.0.113.45
-2. **Connect to ExpressVPN** (VPN provider: United States server)
-3. **IP on ipleak.net:** 198.51.100.42 ✓ (different from real IP)
-4. **DNS on dnsleak.com:** Cloudflare 1.1.1.1 ✓ (VPN provider's DNS)
-5. **WebRTC on ipleak.net:** 198.51.100.42 ✓ (VPN IP, no leak)
-6. **IPv6 on ipleak.net:** Not detected ✓ (IPv6 not routed, safe)
-7. **Kill switch test:** Ping stops on VPN disconnect ✓ (working)
+1. Real IP (no VPN): 203.0.113.45
+2. Connect to ExpressVPN (VPN provider: United States server)
+3. IP on ipleak.net: 198.51.100.42  (different from real IP)
+4. DNS on dnsleak.com: Cloudflare 1.1.1.1  (VPN provider's DNS)
+5. WebRTC on ipleak.net: 198.51.100.42  (VPN IP, no leak)
+6. IPv6 on ipleak.net: Not detected  (IPv6 not routed, safe)
+7. Kill switch test: Ping stops on VPN disconnect  (working)
 
-Result: **ExpressVPN working correctly, no leaks detected.**
+ExpressVPN working correctly, no leaks detected.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [How to Verify VPN Is Working Correctly 2026](/how-to-verify-vpn-is-working-correctly-2026/)
 - [Verify That Your VPN Is Actually Working and Not Leaking](/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
@@ -510,6 +510,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [VPN IPv6 Leak Explained: Why Most VPNs Still Fail](/vpn-ipv6-leak-explained-why-most-vpns-still-fail-test/)
 - [How to Verify Your VPN is Not Leaking DNS Requests in 2026](/how-to-verify-your-vpn-is-not-leaking-dns-requests/)
 - [AI Autocomplete for Test Files How Well Different Tools Pred](https://bestremotetools.com/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

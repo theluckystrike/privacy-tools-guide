@@ -18,19 +18,19 @@ voice-checked: true
 
 Protect your deadname by auditing breaches (Have I Been Pwned), removing yourself from data brokers, deleting old accounts, requesting name changes on social platforms, and monitoring for new leaks. Use privacy-focused email providers, delete archived content, update professional profiles (LinkedIn, GitHub), and separate old identity data from new online presence to prevent accidental re-association.
 
-## Understanding Your Threat Space
+Understanding Your Threat Space
 
 Before implementing any protective measures, you need to map your exposure. Your deadname likely exists across multiple data points:
 
-- **Email accounts**: Primary and secondary addresses tied to your legal name
-- **Social media**: Old accounts, tagged photos, posts mentioning your deadname
-- **Data brokers**: People-search sites aggregating your information
-- **Breach databases**: Have I Been Pwned often links accounts to email addresses
-- **Professional platforms**: LinkedIn, GitHub, Stack Overflow accounts
+- Email accounts: Primary and secondary addresses tied to your legal name
+- Social media: Old accounts, tagged photos, posts mentioning your deadname
+- Data brokers: People-search sites aggregating your information
+- Breach databases: Have I Been Pwned often links accounts to email addresses
+- Professional platforms: LinkedIn, GitHub, Stack Overflow accounts
 
 A threat model for protecting your deadname should address adversaries ranging from malicious actors harvesting personal data to employers conducting background checks. The goal is minimizing the discoverability of information linking your old identity to your new one.
 
-## Digital Footprint Audit
+Digital Footprint Audit
 
 Start by discovering where your deadname appears. Create a script to search known information across breach databases:
 
@@ -56,7 +56,7 @@ def check_breaches(email):
         print(f"Error checking {email}: {response.status_code}")
         return []
 
-# Usage
+Usage
 emails = ["deadname@example.com", "newname@example.com"]
 for email in emails:
     check_breaches(email)
@@ -64,38 +64,38 @@ for email in emails:
 
 This script helps you identify which accounts require attention first. Prioritize accounts linked to breaches, as these are most likely to be searched by adversaries.
 
-## Account Segregation Strategy
+Account Segregation Strategy
 
 Separating your identities requires a systematic approach. Use dedicated email addresses for different identity contexts:
 
 ```bash
-# Example: Setting up email aliases in your password manager
-# Store separate entries for each identity
+Setting up email aliases in your password manager
+Store separate entries for each identity
 #
-# Identity: Old/Deadname
-# - email: deadname.surname@provider.com
-# - notes: "Use for legacy accounts only"
+Identity: Old/Deadname
+- email: deadname.surname@provider.com
+- notes: "Use for legacy accounts only"
 #
-# Identity: New Name
-# - email: new.name@provider.com
-# - notes: "Use for professional and new accounts"
+Identity: New Name
+- email: new.name@provider.com
+- notes: "Use for professional and new accounts"
 ```
 
 Your password manager should contain distinct vault sections or tags for "deadname-era" accounts versus new identity accounts. This separation prevents accidental cross-contamination when you're rotating credentials.
 
-## Email Management for Name Transitions
+Email Management for Name Transitions
 
 Email is the foundation of digital identity. When transitioning:
 
-1. **Create new email addresses** using your chosen name
-2. **Forward strategically** - Set up forwarding from old addresses to your new primary, but review each message to identify which services need updating
-3. **Use email aliases** - Services like Proton Mail or SimpleLogin create aliases that hide your primary address while maintaining deliverability
+1. Create new email addresses using your chosen name
+2. Forward strategically - Set up forwarding from old addresses to your new primary, but review each message to identify which services need updating
+3. Use email aliases - Services like Proton Mail or SimpleLogin create aliases that hide your primary address while maintaining deliverability
 
 Configure your email client to display both inbox views simultaneously:
 
 ```python
-# IMAP configuration for dual-account monitoring
-# Example for monitoring multiple identities
+IMAP configuration for dual-account monitoring
+Example for monitoring multiple identities
 
 ACCOUNTS = {
     "new_identity": {
@@ -116,13 +116,13 @@ def check_accounts():
         pass
 ```
 
-## Data Broker Removal
+Data Broker Removal
 
 People-search sites represent a significant threat vector. These aggregators compile your information and make it publicly searchable. Use automation to request removals:
 
 ```bash
 #!/bin/bash
-# Basic data broker removal request template
+Basic data broker removal request template
 
 BROKERS=("beenverified.com" "peoplefinder.com" "spokeo.com")
 
@@ -139,18 +139,18 @@ done
 
 For removal, consider services like DeleteMe or Incogni, which automate broker removals on your behalf.
 
-## Social Media and Platform Privacy
+Social Media and Platform Privacy
 
 Review each platform's privacy settings systematically:
 
-- **Facebook/Instagram**: Review tagged photos, limit past posts visibility
-- **Twitter/X**: Enable "Let others find you by your email" off, review muted words
-- **LinkedIn**: Update name, adjust profile visibility settings
-- **GitHub**: Update profile name, review repository commit history
+- Facebook/Instagram: Review tagged photos, limit past posts visibility
+- Twitter/X: Enable "Let others find you by your email" off, review muted words
+- LinkedIn: Update name, adjust profile visibility settings
+- GitHub: Update profile name, review repository commit history
 
-Use platform export tools to download your data before making changes—this creates a backup if you need to reference old information.
+Use platform export tools to download your data before making changes, this creates a backup if you need to reference old information.
 
-## Practical Automation: Name Change Checklist
+Practical Automation: Name Change Checklist
 
 Create a personal script to track your migration progress:
 
@@ -181,7 +181,7 @@ class IdentityMigration:
         print(f"- Pending: {len(pending)}")
         return pending
 
-# Track your migration
+Track your migration
 migration = IdentityMigration()
 migration.add_account("GitHub", "deadname@email.com", "newname@email.com", "updated")
 migration.add_account("Twitter", "deadname@email.com", "newname@email.com", "pending")
@@ -190,49 +190,49 @@ migration.add_account("Bank", "deadname@email.com", "newname@email.com", "pendin
 pending = migration.generate_report()
 ```
 
-## Device and Browser Considerations
+Device and Browser Considerations
 
 Your browsing habits can expose your deadname:
 
-- **Browser profiles**: Consider separate browser profiles for each identity context
-- **Search history**: Clear or exclude your old name from search predictions
-- **Autofill**: Review and update autofill profiles in your browser
-- **Bookmarks**: Audit bookmarks for sites using your deadname credentials
+- Browser profiles: Consider separate browser profiles for each identity context
+- Search history: Clear or exclude your old name from search predictions
+- Autofill: Review and update autofill profiles in your browser
+- Bookmarks: Audit bookmarks for sites using your deadname credentials
 
 Implement browser isolation for high-risk browsing:
 
 ```bash
-# Firefox profile management
-# Create separate profile for new identity
+Firefox profile management
+Create separate profile for new identity
 firefox --no-remote -P "NewIdentity"
 
-# Create separate profile for legacy accounts
+Create separate profile for legacy accounts
 firefox --no-remote -P "LegacyAccounts"
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Threat Model For Sex Worker Protecting Real Identity](/threat-model-for-sex-worker-protecting-real-identity-and-location/)
 - [Threat Model For Political Dissident In Surveillance State](/threat-model-for-political-dissident-in-surveillance-state-2/)
@@ -240,5 +240,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Threat Model for Undocumented Immigrant Protecting](/threat-model-for-undocumented-immigrant-protecting-location-/)
 - [Threat Model For Protest Medic Protecting Patient Encounter](/threat-model-for-protest-medic-protecting-patient-encounter-/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

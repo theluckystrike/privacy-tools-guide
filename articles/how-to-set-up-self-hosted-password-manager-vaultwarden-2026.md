@@ -14,9 +14,9 @@ voice-checked: true
 
 {% raw %}
 
-Vaultwarden is a free, open-source password manager compatible with Bitwarden clients. Unlike cloud-hosted password managers, you control the server—no company between you and your encrypted vault. This guide covers complete setup: Docker deployment, reverse proxy configuration, automated backups, HTTPS, and admin panel hardening.
+Vaultwarden is a free, open-source password manager compatible with Bitwarden clients. Unlike cloud-hosted password managers, you control the server, no company between you and your encrypted vault. This guide covers complete setup: Docker deployment, reverse proxy configuration, automated backups, HTTPS, and admin panel hardening.
 
-## Table of Contents
+Table of Contents
 
 - [Why Self-Host Vaultwarden?](#why-self-host-vaultwarden)
 - [Prerequisites](#prerequisites)
@@ -37,52 +37,52 @@ Vaultwarden is a free, open-source password manager compatible with Bitwarden cl
 - [Cost Breakdown](#cost-breakdown)
 - [Alternatives](#alternatives)
 
-## Why Self-Host Vaultwarden?
+Why Self-Host Vaultwarden?
 
-**Advantages:**
+Advantages:
 - No third-party access to encrypted data
 - Full control over updates and deployment
 - Cheap ($5-15/month cloud hosting)
 - Works offline if you proxy locally
 - Open-source code (audit it)
 
-**Tradeoffs:**
+Tradeoffs:
 - You manage backups, updates, and security
 - No company customer support
 - Single point of failure (if your server fails, you manage recovery)
 - Small ecosystem (community-maintained, not commercial)
 
-**Best for:** Developers, privacy-conscious individuals, teams wanting complete control. Not for non-technical users.
+Best for: Developers, privacy-conscious individuals, teams wanting complete control. Not for non-technical users.
 
-## Prerequisites
+Prerequisites
 
 - VPS with 2GB RAM, 20GB storage (Vultr, Hetzner, DigitalOcean)
 - Domain name pointing to your VPS IP
 - SSH access to VPS
 - Basic Linux command-line comfort
 
-**Estimated cost:** $5/month hosting + $10/year domain = $70/year total
+Estimated cost: $5/month hosting + $10/year domain = $70/year total
 
-## Step 1: Set Up VPS and SSH
+Step 1: Set Up VPS and SSH
 
 Using DigitalOcean as example (Ubuntu 24.04):
 
 ```bash
-# SSH into VPS
+SSH into VPS
 ssh root@your.vps.ip
 
-# Update system
+Update system
 apt update && apt upgrade -y
 
-# Install Docker and Docker Compose
+Install Docker and Docker Compose
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 
-# Verify Docker installed
+Verify Docker installed
 docker --version
 ```
 
-## Step 2: Create Vaultwarden Docker Compose
+Step 2: Create Vaultwarden Docker Compose
 
 Create `/root/vaultwarden/docker-compose.yml`:
 
@@ -135,7 +135,7 @@ networks:
     driver: bridge
 ```
 
-## Step 3: Configure Reverse Proxy (Caddy)
+Step 3: Configure Reverse Proxy (Caddy)
 
 Create `/root/vaultwarden/Caddyfile`:
 
@@ -167,24 +167,24 @@ vault.yourdomain.com {
 }
 ```
 
-## Step 4: Launch Vaultwarden
+Step 4: Launch Vaultwarden
 
 ```bash
 cd /root/vaultwarden
 
-# Generate secure admin token
+Generate secure admin token
 openssl rand -base64 48
 
-# Update docker-compose.yml with the token you just generated
-# Edit ADMIN_TOKEN in docker-compose.yml
+Update docker-compose.yml with the token you just generated
+Edit ADMIN_TOKEN in docker-compose.yml
 
-# Create data directory
+Create data directory
 mkdir -p data
 
-# Start containers
+Start containers
 docker compose up -d
 
-# Verify running
+Verify running
 docker compose ps
 docker compose logs -f vaultwarden
 ```
@@ -196,23 +196,23 @@ vaultwarden | Rocket has launched from http://0.0.0.0:80
 caddy | caddy started successfully
 ```
 
-## Step 5: Access Admin Panel
+Step 5: Access Admin Panel
 
 Open browser to `https://vault.yourdomain.com/admin`
 
 You'll see login prompt. Enter your admin token (from Step 3) into the "Master Password Hash" field.
 
-**Admin panel options:**
+Admin panel options:
 - Disable new user registrations (already set `SIGNUPS_ALLOWED: false`)
 - View user list and delete users
 - Monitor server logs
 - Update configuration
 - Check database stats
 
-**Important:** Disable logins to admin panel after setup:
+Disable logins to admin panel after setup:
 ```bash
-# Edit docker-compose.yml
-# Add environment variable:
+Edit docker-compose.yml
+Add environment variable:
 ADMIN_DISABLE_2FA: "true"
 ADMIN_SESSION_LIFETIME: 5  # Session expires after 5 minutes
 ```
@@ -222,24 +222,24 @@ Restart:
 docker compose restart vaultwarden
 ```
 
-## Step 6: Add First User
+Step 6: Add First User
 
 Two options:
 
-**Option A: Admin panel (easiest)**
+Option A: Admin panel (easiest)
 1. Go to `vault.yourdomain.com/admin`
 2. Click "Users"
 3. Click "New User"
 4. Enter email, set temporary password
 5. Share link with user
 
-**Option B: Manual command (if admin panel fails)**
+Option B: Manual command (if admin panel fails)
 ```bash
 docker compose exec -it vaultwarden \
   /vaultwarden hash --preset owasp --input yourpassword
 ```
 
-## Step 7: Enable SMTP for Email Invitations
+Step 7: Enable SMTP for Email Invitations
 
 Edit `docker-compose.yml`:
 
@@ -257,7 +257,7 @@ environment:
   MAIL_SMTP_PASSWORD: "app-specific-password"
 ```
 
-**For Gmail:**
+For Gmail:
 1. Enable 2-factor authentication on your Google Account
 2. Generate app password: https://myaccount.google.com/apppasswords
 3. Use app password above (not your regular password)
@@ -267,7 +267,7 @@ Restart:
 docker compose restart vaultwarden
 ```
 
-## Step 8: Automated Backups
+Step 8: Automated Backups
 
 Create backup script `/root/vaultwarden/backup.sh`:
 
@@ -278,23 +278,23 @@ BACKUP_DIR="/root/vaultwarden/backups"
 DB_PATH="/root/vaultwarden/data/db.sqlite3"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 
-# Create backup directory
+Create backup directory
 mkdir -p $BACKUP_DIR
 
-# Backup database
+Backup database
 cp $DB_PATH $BACKUP_DIR/db_$TIMESTAMP.sqlite3
 
-# Backup attachments and sends
+Backup attachments and sends
 tar -czf $BACKUP_DIR/vaultwarden_$TIMESTAMP.tar.gz \
   /root/vaultwarden/data/attachments \
   /root/vaultwarden/data/sends \
   /root/vaultwarden/data/icon_cache
 
-# Delete backups older than 30 days
+Delete backups older than 30 days
 find $BACKUP_DIR -mtime +30 -delete
 
-# Upload to remote storage (optional)
-# aws s3 cp $BACKUP_DIR/db_$TIMESTAMP.sqlite3 s3://your-bucket/backups/
+Upload to remote storage (optional)
+aws s3 cp $BACKUP_DIR/db_$TIMESTAMP.sqlite3 s3://your-bucket/backups/
 ```
 
 Make executable and add to cron:
@@ -302,23 +302,23 @@ Make executable and add to cron:
 ```bash
 chmod +x /root/vaultwarden/backup.sh
 
-# Edit crontab
+Edit crontab
 crontab -e
 
-# Add line (daily backup at 2am):
+Add line (daily backup at 2am):
 0 2 * * * /root/vaultwarden/backup.sh
 ```
 
 Verify:
 ```bash
-# Run backup manually
+Run backup manually
 /root/vaultwarden/backup.sh
 
-# Check results
+Check results
 ls -la /root/vaultwarden/backups/
 ```
 
-## Step 9: Enable Two-Factor Authentication (2FA)
+Step 9: Enable Two-Factor Authentication (2FA)
 
 In admin panel:
 1. Settings → Authentication
@@ -335,7 +335,7 @@ environment:
   TWOFACTOR_REMEMBER_EXPIRES_IN: 30
 ```
 
-## Step 10: Configure Organization (Optional)
+Step 10: Configure Organization (Optional)
 
 If you want to share passwords with family/team:
 
@@ -345,41 +345,41 @@ If you want to share passwords with family/team:
 4. Add users via admin panel or send invitations
 5. Create collections (folders) and assign to users
 
-**Example org structure:**
+Example org structure:
 ```
 Organization: MyFamily
-├─ Collection: Banking (shared with spouse)
-├─ Collection: Streaming (shared with all)
-└─ Collection: Personal (only me)
+ Collection: Banking (shared with spouse)
+ Collection: Streaming (shared with all)
+ Collection: Personal (only me)
 ```
 
-## Client Setup
+Client Setup
 
-**Desktop (Windows, Mac, Linux):**
+Desktop (Windows, Mac, Linux):
 1. Download Bitwarden client (works with Vaultwarden)
 2. Login with your email
 3. Settings → Server URL → `https://vault.yourdomain.com`
 4. Restart client, re-authenticate
 
-**Mobile (iOS, Android):**
+Mobile (iOS, Android):
 1. Download Bitwarden app
 2. Settings → Server URL → `https://vault.yourdomain.com`
 3. Login with email
 4. Pin app to home screen
 
-**Browser Extension:**
+Browser Extension:
 1. Install Bitwarden extension (Chrome, Firefox, Safari, Edge)
 2. Click icon → Settings → Server URL → `https://vault.yourdomain.com`
 3. Login once
 4. Auto-fill works normally
 
-## Monitoring and Maintenance
+Monitoring and Maintenance
 
-**Weekly:**
+Weekly:
 - Check logs: `docker compose logs vaultwarden`
 - Look for errors (bad logins, sync failures)
 
-**Monthly:**
+Monthly:
 - Verify backups exist and are fresh
 - Test restore procedure (copy backup, start test container)
 - Check for Vaultwarden updates:
@@ -388,42 +388,42 @@ Organization: MyFamily
   docker compose up -d
   ```
 
-**Quarterly:**
+Quarterly:
 - Audit users (admin panel → Users)
 - Remove inactive accounts
 - Review security logs
 
-## Troubleshooting
+Troubleshooting
 
-**Connection refused when accessing admin panel:**
+Connection refused when accessing admin panel:
 ```bash
-# Check if containers running
+Check if containers running
 docker compose ps
 
-# Check logs
+Check logs
 docker compose logs caddy
 docker compose logs vaultwarden
 
-# Restart all
+Restart all
 docker compose restart
 ```
 
-**Email not sending:**
+Email not sending:
 ```bash
-# Test SMTP connection
+Test SMTP connection
 docker compose exec -it vaultwarden \
   /vaultwarden test-mail your-email@gmail.com
 ```
 
-**Database locked error:**
+Database locked error:
 ```bash
-# Stop containers, wait 10 seconds, restart
+Stop containers, wait 10 seconds, restart
 docker compose down
 sleep 10
 docker compose up -d
 ```
 
-**Forgotten admin password:**
+Forgotten admin password:
 You can't reset it directly. Instead:
 1. Stop Vaultwarden
 2. Replace database with backup
@@ -431,7 +431,7 @@ You can't reset it directly. Instead:
 
 This is why backups are critical.
 
-## Security Hardening Checklist
+Security Hardening Checklist
 
 - [ ] Changed default admin token (not empty string)
 - [ ] Disabled public signup (`SIGNUPS_ALLOWED: false`)
@@ -444,59 +444,59 @@ This is why backups are critical.
 - [ ] Reviewed firewall rules (only ports 80/443 open)
 - [ ] Tested backup restoration
 
-## Cost Breakdown
+Cost Breakdown
 
-**Annual cost:**
+Annual cost:
 - VPS: $60/year (DigitalOcean $5/month)
 - Domain: $10/year (Google Domains)
-- Total: **$70/year**
+- Total: $70/year
 
-**vs. Bitwarden Premium:**
+vs. Bitwarden Premium:
 - Bitwarden: $10/month = $120/year
 - Savings: $50/year
 
-**but you pay in time:**
+but you pay in time:
 - Initial setup: 2-3 hours
 - Monthly maintenance: 1-2 hours
 - Backup restore (disaster): 1-2 hours
 
-## Alternatives
+Alternatives
 
-**Bitwarden Cloud ($10/month):**
+Bitwarden Cloud ($10/month):
 - Pro: No maintenance, free mobile apps, family sharing
 - Con: Trust Bitwarden, pay subscription
 
-**1Password ($36-99/year):**
+1Password ($36-99/year):
 - Pro: Slick UX, family plan
 - Con: Proprietary, more expensive
 
-**KeePass (free, local):**
+KeePass (free, local):
 - Pro: Zero cloud trust
 - Con: No sync, no mobile, management burden
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to set up self-hosted password manager vaultwarden?**
+How long does it take to set up self-hosted password manager vaultwarden?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Self-Host Bitwarden Vaultwarden: Complete Setup Guide](/how-to-self-host-bitwarden-vaultwarden-complete-setup-guide/)
 - [Self-Hosted Password Manager Comparison](/self-hosted-password-manager-comparison)
@@ -504,5 +504,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Password Manager for Developers: A Technical Guide](/best-password-manager-for-developers/)
 - [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/bitwarden-vs-vaultwarden-self-hosted-comparison/)
 - [Best Self-Hosted AI Model for JavaScript TypeScript Code](https://bestremotetools.com/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

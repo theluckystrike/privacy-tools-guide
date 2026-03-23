@@ -15,9 +15,9 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-Shipping a Docker image without scanning it is like deploying code without testing — you are pushing unknown vulnerabilities to production. Most containers are built on base images with hundreds of packages, each with its own CVE history. This guide covers scanning images locally, integrating into CI/CD, and interpreting results.
+Shipping a Docker image without scanning it is like deploying code without testing. you are pushing unknown vulnerabilities to production. Most containers are built on base images with hundreds of packages, each with its own CVE history. This guide covers scanning images locally, integrating into CI/CD, and interpreting results.
 
-## Tools Overview
+Tools Overview
 
 | Tool | Database | Best For |
 |------|----------|----------|
@@ -25,12 +25,12 @@ Shipping a Docker image without scanning it is like deploying code without testi
 | Grype | Anchore's vulnerability DB | SBOM integration |
 | Docker Scout | Docker's advisory DB | Native Docker tooling |
 
-## Trivy: The Fast Standard
+Trivy: The Fast Standard
 
-### Install Trivy
+Install Trivy
 
 ```bash
-# Ubuntu/Debian
+Ubuntu/Debian
 sudo apt install wget gnupg
 wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | \
   sudo gpg --dearmor -o /usr/share/keyrings/trivy.gpg
@@ -39,58 +39,58 @@ echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] \
   sudo tee /etc/apt/sources.list.d/trivy.list
 sudo apt update && sudo apt install trivy
 
-# macOS
+macOS
 brew install trivy
 ```
 
-### Scan an Image
+Scan an Image
 
 ```bash
-# Scan a local image
+Scan a local image
 trivy image nginx:1.25
 
-# Only show HIGH and CRITICAL
+Only show HIGH and CRITICAL
 trivy image --severity HIGH,CRITICAL nginx:1.25
 
-# Exit with error code 1 if any CRITICAL found (for CI)
+Exit with error code 1 if any CRITICAL found (for CI)
 trivy image --exit-code 1 --severity CRITICAL myapp:latest
 
-# JSON output
+JSON output
 trivy image --format json --output scan-results.json myapp:latest
 
-# Include secrets and misconfigurations
+Include secrets and misconfigurations
 trivy image --scanners vuln,secret,misconfig myapp:latest
 
-# Ignore unfixed vulnerabilities
+Ignore unfixed vulnerabilities
 trivy image --ignore-unfixed myapp:latest
 ```
 
-### Scan Dockerfile Before Building
+Scan Dockerfile Before Building
 
 ```bash
 trivy config Dockerfile
 trivy config .
 ```
 
-## Grype: SBOM-First Scanning
+Grype: SBOM-First Scanning
 
 ```bash
-# Install
+Install
 curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | \
   sudo sh -s -- -b /usr/local/bin
 
-# Scan
+Scan
 grype nginx:1.25
 
-# Generate SBOM then scan
+Generate SBOM then scan
 syft nginx:1.25 -o cyclonedx-json > nginx-sbom.json
 grype sbom:nginx-sbom.json
 
-# Fail on critical
+Fail on critical
 grype --fail-on critical nginx:1.25
 ```
 
-## Docker Scout
+Docker Scout
 
 ```bash
 docker scout cves nginx:1.25
@@ -99,12 +99,12 @@ docker scout recommendations nginx:1.25
 docker scout quickview myapp:latest
 ```
 
-## CI/CD Integration
+CI/CD Integration
 
-### GitHub Actions with Trivy
+GitHub Actions with Trivy
 
 ```yaml
-# .github/workflows/scan.yml
+.github/workflows/scan.yml
 name: Container Security Scan
 
 on:
@@ -138,7 +138,7 @@ jobs:
           sarif_file: trivy-results.sarif
 ```
 
-### GitLab CI
+GitLab CI
 
 ```yaml
 container-scan:
@@ -148,17 +148,17 @@ container-scan:
     - trivy image --exit-code 1 --severity CRITICAL,HIGH $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
 ```
 
-## Trivy Ignore Files
+Trivy Ignore Files
 
 When a CVE has no fix or is a false positive:
 
 ```bash
-# .trivyignore
+.trivyignore
 CVE-2024-12345
 CVE-2024-99999 exp:2026-09-01
 ```
 
-## Interpreting Results
+Interpreting Results
 
 Prioritize by:
 1. CVSS score 9.0+: patch immediately
@@ -167,31 +167,31 @@ Prioritize by:
 4. EPSS score: probability of exploitation in the wild
 
 ```bash
-# Extract CVSS scores for criticals
+Extract CVSS scores for criticals
 trivy image --format json myapp:latest | \
   jq '[.Results[].Vulnerabilities[] |
        select(.Severity == "CRITICAL") |
        {vuln: .VulnerabilityID, cvss: .CVSS.nvd.V3Score}]'
 ```
 
-## SBOM Generation: Software Bill of Materials
+SBOM Generation: Software Bill of Materials
 
 An SBOM documents every package in your image. This is required by many enterprises and government contracts.
 
 ```bash
-# Generate SBOM with Syft (Anchore's tool)
+Generate SBOM with Syft (Anchore's tool)
 curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | \
   sudo sh -s -- -b /usr/local/bin
 
-# Generate CycloneDX format (most common)
+Generate CycloneDX format (most common)
 syft myapp:latest -o cyclonedx-json > myapp-sbom.json
 
-# Generate SPDX format (alternative standard)
+Generate SPDX format (alternative standard)
 syft myapp:latest -o spdx-json > myapp-sbom-spdx.json
 
-# View the SBOM
+View the SBOM
 jq '.components | length' myapp-sbom.json
-# Example output: 847 (847 packages in the image)
+Example output: 847 (847 packages in the image)
 ```
 
 An SBOM is essential for:
@@ -200,24 +200,24 @@ An SBOM is essential for:
 - Supply chain security (detecting compromised dependencies)
 - License compliance (tracking open-source licenses)
 
-## Private Registry Scanning
+Private Registry Scanning
 
 If using a private Docker registry, scan images immediately after push:
 
 ```bash
-# Configure registry credentials
+Configure registry credentials
 trivy image --registry-username user --registry-password token \
   my-private-registry.com/myapp:latest
 
-# Or use Docker config
+Or use Docker config
 trivy image --skip-update my-private-registry.com/myapp:latest
 ```
 
 Combine with webhooks to automate:
 
 ```bash
-# Setup: Your registry sends webhook to a scanning endpoint
-# Scanning script: scan-webhook.sh
+Setup: Your registry sends webhook to a scanning endpoint
+Scanning script: scan-webhook.sh
 
 #!/bin/bash
 IMAGE_NAME=$1
@@ -236,13 +236,13 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# Tag and push
+Tag and push
 docker tag "${IMAGE_NAME}:${IMAGE_TAG}" \
   my-registry.com/scanned/"${IMAGE_NAME}:${IMAGE_TAG}"
 docker push my-registry.com/scanned/"${IMAGE_NAME}:${IMAGE_TAG}"
 ```
 
-## Enforcing Minimal Base Images
+Enforcing Minimal Base Images
 
 Use the smallest base images to reduce the attack surface:
 
@@ -254,17 +254,17 @@ Use the smallest base images to reduce the attack surface:
 | scratch (empty) | 0 MB | 0 | 0 |
 
 ```dockerfile
-# Bad: Based on full Ubuntu
+Bad: Based on full Ubuntu
 FROM ubuntu:22.04
 RUN apt-get update && apt-get install -y curl wget git
-# ... 450 MB final image
+... 450 MB final image
 
-# Better: Slim variant
+Better: Slim variant
 FROM debian:bookworm-slim
 RUN apt-get update && apt-get install -y curl
-# ... 150 MB final image
+... 150 MB final image
 
-# Best: Multi-stage with alpine
+Best: Multi-stage with alpine
 FROM golang:1.21-alpine as builder
 WORKDIR /src
 COPY . .
@@ -272,57 +272,57 @@ RUN go build -o myapp
 
 FROM alpine:latest
 COPY --from=builder /src/myapp /usr/local/bin/
-# ... 50 MB final image
+... 50 MB final image
 
-# Optimal: Scratch for compiled languages
+Optimal: Scratch for compiled languages
 FROM scratch
 COPY --from=builder /src/myapp /myapp
-# ... 15 MB final image (just the binary)
+... 15 MB final image (just the binary)
 ```
 
 For interpreted languages (Python, Node, Java), scratch is not possible, but alpine reduces size by 90%.
 
-## Scanning Dockerfiles Before Build
+Scanning Dockerfiles Before Build
 
 Scan the Dockerfile itself for misconfigurations:
 
 ```bash
 trivy config Dockerfile
 
-# Example output:
-# HIGH: Missing USER instruction (runs as root)
-# MEDIUM: Using latest tag instead of pinned version
-# LOW: No healthcheck defined
+Example output:
+HIGH: Missing USER instruction (runs as root)
+MEDIUM: Using latest tag instead of pinned version
+LOW: No healthcheck defined
 ```
 
 Common misconfigurations to avoid:
 
 ```dockerfile
-# BAD: Runs as root
+BAD: Runs as root
 FROM alpine:latest
 RUN apk add curl
 
-# GOOD: Creates non-root user
+GOOD: Creates non-root user
 FROM alpine:latest
 RUN apk add curl && \
     addgroup -g 1001 -S appgroup && \
     adduser -u 1001 -S appuser -G appgroup
 USER appuser
 
-# BAD: Uses latest tag
+BAD: Uses latest tag
 FROM ubuntu:latest
 
-# GOOD: Uses pinned version with digest
+GOOD: Uses pinned version with digest
 FROM ubuntu:22.04@sha256:abcdef0123456789
 
-# BAD: Single layer, large image
+BAD: Single layer, large image
 FROM ubuntu:22.04
 RUN apt-get update && apt-get install -y build-essential && \
     apt-get install -y nodejs && \
     apt-get install -y git && \
     apt-get clean
 
-# GOOD: Multi-stage build
+GOOD: Multi-stage build
 FROM ubuntu:22.04 as builder
 RUN apt-get update && apt-get install -y build-essential
 
@@ -330,18 +330,18 @@ FROM alpine:latest
 COPY --from=builder /app /app
 ```
 
-## Continuous Scanning: Registry Monitoring
+Continuous Scanning: Registry Monitoring
 
 For production registries, scan all images weekly:
 
 ```bash
 #!/bin/bash
-# scan-all-images.sh
+scan-all-images.sh
 
 REGISTRY="my-registry.com"
 REPO="production"
 
-# List all images
+List all images
 curl -s https://${REGISTRY}/v2/${REPO}/_catalog | \
   jq -r '.repositories[]' | while read IMAGE; do
 
@@ -359,26 +359,26 @@ done
 
 Run via cron:
 ```bash
-# /etc/cron.weekly/docker-scan
+/etc/cron.weekly/docker-scan
 0 2 * * 0 root /path/to/scan-all-images.sh 2>&1 | \
   mail -s "Weekly Docker Scan Report" security@example.com
 ```
 
-## Signing Docker Images
+Signing Docker Images
 
 Prevent unauthorized image tampering with signatures:
 
 ```bash
-# Install Notary (Docker's signing tool)
-# Download from: https://github.com/notaryproject/notary/releases
+Install Notary (Docker's signing tool)
+Download from: https://github.com/notaryproject/notary/releases
 
-# Create signing key (you'll be prompted for a passphrase)
+Create signing key (you'll be prompted for a passphrase)
 notary key generate --rootkey
 
-# Sign an image
+Sign an image
 notary addhash my-registry.com/myapp latest <image-digest>
 
-# Verify signature before running
+Verify signature before running
 docker pull my-registry.com/myapp:latest
 notary verify my-registry.com/myapp
 ```
@@ -386,7 +386,7 @@ notary verify my-registry.com/myapp
 Push signed images and verify in CI/CD:
 
 ```yaml
-# .github/workflows/verify-image.yml
+.github/workflows/verify-image.yml
 - name: Verify image signature
   run: |
     notary verify my-registry.com/myapp:latest
@@ -395,7 +395,7 @@ Push signed images and verify in CI/CD:
 
 Images without valid signatures are rejected during deployment.
 
-## Related Articles
+Related Articles
 
 - [Nextcloud Setup Guide Raspberry Pi 2026](/nextcloud-setup-guide-raspberry-pi-2026/)
 - [Securing Docker Containers Best Practices](/securing-docker-containers-best-practices/)
@@ -403,6 +403,6 @@ Images without valid signatures are rejected during deployment.
 - [How to Audit npm Packages for Security](/audit-npm-packages-security-guide/)
 - [How to Set Up a Tor Relay](/how-to-set-up-tor-relay-node/)
 - [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

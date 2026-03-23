@@ -20,7 +20,7 @@ Your DNS provider sees every domain you visit, every API call your phone makes, 
 
 This guide compares five privacy-first DNS providers, covers setup on every platform, performance benchmarks, and filtering configurations. By the end, you'll understand which provider matches your threat model.
 
-## Table of Contents
+Table of Contents
 
 - [DNS Fundamentals](#dns-fundamentals)
 - [Quad9](#quad9)
@@ -36,41 +36,41 @@ This guide compares five privacy-first DNS providers, covers setup on every plat
 - [Switching Between Providers](#switching-between-providers)
 - [DNS Leaks](#dns-leaks)
 
-## DNS Fundamentals
+DNS Fundamentals
 
 DNS translates domain names (google.com) into IP addresses (142.251.32.46). Your device asks your DNS provider "what's the IP for google.com?" every time you visit a site. The provider sees all of it.
 
-**Default behavior:** ISPs provide DNS, log all queries, and monetize or share that data. Your ISP (Comcast, Verizon, etc.) knows every site you visit.
+Default behavior: ISPs provide DNS, log all queries, and monetize or share that data. Your ISP (Comcast, Verizon, etc.) knows every site you visit.
 
-**Privacy-first DNS:** Don't log queries, don't track you, use HTTPS/DoH (DNS over HTTPS) or DoT (DNS over TLS) for encryption, so ISP can't see queries.
+Privacy-first DNS: Don't log queries, don't track you, use HTTPS/DoH (DNS over HTTPS) or DoT (DNS over TLS) for encryption, so ISP can't see queries.
 
-**Trade-off:** Slight latency increase (usually <10ms) for complete ISP anonymity.
+Trade-off: Slight latency increase (usually <10ms) for complete ISP anonymity.
 
-## Quad9
+Quad9
 
 Quad9 is a nonprofit, free DNS service backed by security research from AIT Austrian Institute of Technology. Focus: security (block malware, phishing).
 
-**Specs:**
-- **Free:** Yes.
-- **Logging:** No query logs; minimal metadata (response times, errors) for improvement.
-- **Encryption:** HTTPS/DoH, DoT.
-- **Filtering:** Optional (blocks malware, phishing, adult content by default).
-- **Speed:** Fast (global anycast network).
-- **Privacy jurisdiction:** Switzerland (strong privacy laws).
+Specs:
+- Free: Yes.
+- Logging: No query logs; minimal metadata (response times, errors) for improvement.
+- Encryption: HTTPS/DoH, DoT.
+- Filtering: Optional (blocks malware, phishing, adult content by default).
+- Speed: Fast (global anycast network).
+- Privacy jurisdiction: Switzerland (strong privacy laws).
 
-**Performance:** ~50ms latency (global average). Suitable for gaming and streaming.
+Performance: ~50ms latency (global average). Suitable for gaming and streaming.
 
-**Filtering:** By default, Quad9 blocks known malware and phishing domains. You can disable filtering if you want a raw DNS experience.
+Filtering: By default, Quad9 blocks known malware and phishing domains. You can disable filtering if you want a raw DNS experience.
 
-### Setup on macOS
+Setup on macOS
 ```bash
-# System Preferences > Network > Wi-Fi > Advanced > DNS
+System Preferences > Network > Wi-Fi > Advanced > DNS
 
-# Remove current DNS servers
-# Add Quad9 servers:
-# 9.9.9.9
-# 149.112.112.112
-# (IPv6: 2620:fe::fe, 2620:fe::9)
+Remove current DNS servers
+Add Quad9 servers:
+9.9.9.9
+149.112.112.112
+(IPv6: 2620:fe::fe, 2620:fe::9)
 ```
 
 Or use a GUI:
@@ -80,7 +80,7 @@ Or use a GUI:
 4. Click + and add `9.9.9.9` and `149.112.112.112`.
 5. Click OK, Apply.
 
-### Setup on Windows
+Setup on Windows
 1. Settings > Network & Internet > Change adapter options.
 2. Right-click your network, Properties.
 3. Double-click Internet Protocol Version 4 (TCP/IPv4).
@@ -88,7 +88,7 @@ Or use a GUI:
 5. Preferred: `9.9.9.9`, Alternate: `149.112.112.112`.
 6. Click OK.
 
-### Setup on iOS
+Setup on iOS
 1. Settings > Wi-Fi > Your network > Details (i icon).
 2. Scroll to Configure DNS.
 3. Select Manual.
@@ -97,42 +97,42 @@ Or use a GUI:
 
 Or use the Quad9 app for DoT/DoH (automatically configures encrypted DNS).
 
-### Setup on Android
+Setup on Android
 1. Settings > Network & Internet > Advanced > Private DNS.
 2. Select "Private DNS provider hostname."
 3. Enter `dns.quad9.net`.
 4. Save.
 
-### DNS over HTTPS (DoH) in browsers
+DNS over HTTPS (DoH) in browsers
 
-**Firefox:**
+Firefox:
 1. Settings > Privacy & Security > DNS over HTTPS.
 2. Select Quad9 from the dropdown.
 3. Save.
 
-**Chrome:**
+Chrome:
 1. Settings > Privacy and Security > Security.
 2. Scroll to "Advanced."
 3. Toggle "Use secure DNS."
 4. Select Custom > enter `https://9.9.9.9/dns-query`.
 5. Save.
 
-## NextDNS
+NextDNS
 
 NextDNS is a commercial service (freemium model) with advanced filtering and analytics. Ideal for families and organizations.
 
-**Specs:**
-- **Free plan:** 300K queries/month (for 1 profile).
-- **Paid:** $20/year per profile (unlimited queries).
-- **Logging:** Yes, on your dashboard (you control this; can be anonymized).
-- **Encryption:** DoH, DoT.
-- **Filtering:** Highly customizable (parental, content, trackers, malware, ads).
-- **Speed:** Very fast (optimized global network).
-- **Privacy jurisdiction:** EU (GDPR-compliant).
+Specs:
+- Free plan: 300K queries/month (for 1 profile).
+- Paid: $20/year per profile (unlimited queries).
+- Logging: Yes, on your dashboard (you control this; can be anonymized).
+- Encryption: DoH, DoT.
+- Filtering: Highly customizable (parental, content, trackers, malware, ads).
+- Speed: Very fast (optimized global network).
+- Privacy jurisdiction: EU (GDPR-compliant).
 
-**Unique feature:** Real-time dashboard showing which sites are blocked, why, and per-profile control (one config for kids, one for adults).
+Unique feature: Real-time dashboard showing which sites are blocked, why, and per-profile control (one config for kids, one for adults).
 
-### Setup on macOS
+Setup on macOS
 Download the NextDNS app from nextdns.io/download, or manually configure:
 
 1. System Preferences > Network > Wi-Fi > Advanced > DNS.
@@ -144,57 +144,57 @@ Or use DoH in browser settings:
 https://dns.nextdns.io/
 ```
 
-### Setup on iOS
+Setup on iOS
 1. Download the NextDNS app from the App Store.
 2. Open, log in.
 3. Enable "Protections on."
 4. This automatically configures DoT.
 
-### Setup on Android
+Setup on Android
 1. Download the NextDNS app from Google Play.
 2. Open, log in.
 3. Tap the toggle to enable.
 
-### NextDNS Filtering Configuration
+NextDNS Filtering Configuration
 
 After login at nextdns.io, customize filtering:
 
-**Security (default on):**
+Security (default on):
 - Block malware, phishing, botnets, cryptominers.
 
-**Parental Control:**
+Parental Control:
 - Block adult sites, gambling, dating apps, torrents.
 - Whitelist/blacklist specific sites.
 
-**Threats:**
+Threats:
 - Block DDoS bots, ransomware, command-and-control servers.
 
-**Analytics (optional):**
+Analytics (optional):
 - See which sites are blocked, how many DNS queries, top domains.
 - Disable if you want zero tracking (no dashboard).
 
-**Premium filtering:**
+Premium filtering:
 - Paid tier adds AI-based ad blocking, tracker blocking.
 
-## Mullvad DNS
+Mullvad DNS
 
 Mullvad is from the Mullvad VPN team. Free, privacy-obsessed, minimal logging.
 
-**Specs:**
-- **Free:** Yes, completely free.
-- **Logging:** No logs at all (Mullvad literally can't log; architecture prevents it).
-- **Encryption:** DoH, DoT.
-- **Filtering:** Basic (can enable DNS ad blocking).
-- **Speed:** Fast (Mullvad's infrastructure).
-- **Privacy jurisdiction:** Sweden (strong privacy laws).
+Specs:
+- Free: Yes, completely free.
+- Logging: No logs at all (Mullvad literally can't log; architecture prevents it).
+- Encryption: DoH, DoT.
+- Filtering: Basic (can enable DNS ad blocking).
+- Speed: Fast (Mullvad's infrastructure).
+- Privacy jurisdiction: Sweden (strong privacy laws).
 
-**Unique feature:** Mullvad is funded by user donations and grants, not advertising or data. Radical privacy focus.
+Unique feature: Mullvad is funded by user donations and grants, not advertising or data. Radical privacy focus.
 
-### Setup on macOS (DoT)
+Setup on macOS (DoT)
 ```bash
-# Use the Mullvad DNS app (from mullvad.net/download) for automatic config.
-# Or manually via Terminal:
-# Add to /etc/resolv.conf (persists across restarts)
+Use the Mullvad DNS app (from mullvad.net/download) for automatic config.
+Or manually via Terminal:
+Add to /etc/resolv.conf (persists across restarts)
 nameserver 193.19.202.114
 nameserver 2a07:e340::114
 ```
@@ -205,84 +205,84 @@ Or simpler: System Preferences > Network > Wi-Fi > Advanced > DNS:
 2a07:e340::114 (IPv6)
 ```
 
-### Setup on iOS/Android
+Setup on iOS/Android
 Use the Mullvad VPN app (free), which includes DoT DNS automatically.
 
-### Setup in Firefox
+Setup in Firefox
 1. Settings > Privacy & Security > DNS over HTTPS.
 2. Custom > select "Mullvad" (if available as preset).
 3. If not, enter `https://doh.mullvad.net/dns-query`.
 4. Save.
 
-## Control D
+Control D
 
 Control D is a new player (2022) focusing on speed and customization. Great for power users.
 
-**Specs:**
-- **Free plan:** Yes (standard filtering).
-- **Paid:** $2/month (ad/tracker blocking), $5/month (advanced features).
-- **Logging:** No logs.
-- **Encryption:** DoH, DoT.
-- **Filtering:** Highly customizable (separate filters for ads, malware, social media, gambling, dating).
-- **Speed:** Very fast (optimized edge network).
-- **Privacy jurisdiction:** Canada (reasonable privacy laws).
+Specs:
+- Free plan: Yes (standard filtering).
+- Paid: $2/month (ad/tracker blocking), $5/month (advanced features).
+- Logging: No logs.
+- Encryption: DoH, DoT.
+- Filtering: Highly customizable (separate filters for ads, malware, social media, gambling, dating).
+- Speed: Very fast (optimized edge network).
+- Privacy jurisdiction: Canada (reasonable privacy laws).
 
-**Unique feature:** Filter combinations. You can stack filters (block ads AND malware AND trackers) independently.
+Unique feature: Filter combinations. You can stack filters (block ads AND malware AND trackers) independently.
 
-### Setup on macOS
+Setup on macOS
 Download Control D app from controld.com, or manually:
 
 ```
-# IPv4: 76.76.19.19, 76.76.2.0
-# IPv6: 2606:1a40:0:6:0:0:0:19, 2606:1a40:0:6:0:0:0:2
+IPv4: 76.76.19.19, 76.76.2.0
+IPv6: 2606:1a40:0:6:0:0:0:19, 2606:1a40:0:6:0:0:0:2
 ```
 
 Set via System Preferences > Network > Wi-Fi > Advanced > DNS.
 
-### Setup on iOS
+Setup on iOS
 1. Settings > VPN & Device Management.
 2. Download the Control D app.
 3. Enable the VPN profile.
 4. App auto-configures DoT.
 
-### Setup in browser (Firefox/Chrome)
-**Firefox:**
+Setup in browser (Firefox/Chrome)
+Firefox:
 Settings > Privacy & Security > DNS over HTTPS.
 Select "Control D" from dropdown, or custom: `https://freedns.controld.com/p0`
 
-**Chrome:**
+Chrome:
 Settings > Privacy and Security > Security > Advanced > Use secure DNS.
 Custom resolver: `https://freedns.controld.com/p0`
 
-### Control D Filtering
+Control D Filtering
 
 At controld.com, create a profile and enable filters:
 
-- **Default (free):** Malware and phishing blocking.
-- **Ads:** Block ad domains, trackers.
-- **Social:** Block Facebook, TikTok, Instagram, Twitter tracking.
-- **Gambling:** Block gambling sites.
-- **Dating:** Block dating apps and sites.
-- **P2P/VPN:** Block torrent and VPN sites (useful for organizations).
+- Default (free): Malware and phishing blocking.
+- Ads: Block ad domains, trackers.
+- Social: Block Facebook, TikTok, Instagram, Twitter tracking.
+- Gambling: Block gambling sites.
+- Dating: Block dating apps and sites.
+- P2P/VPN: Block torrent and VPN sites (useful for organizations).
 
 Mix and match filters for your needs.
 
-## AdGuard DNS
+AdGuard DNS
 
 AdGuard is the DNS arm of AdGuard (ad-blocking software). Good balance of features and ease.
 
-**Specs:**
-- **Free plan:** Yes (basic ad/tracker blocking).
-- **Paid:** $0.99/month (ad/tracker blocking, parental control).
-- **Logging:** Minimal (no query logs, aggregated analytics).
-- **Encryption:** DoH, DoT.
-- **Filtering:** Ad blocking, tracker blocking, parental control, malware/phishing.
-- **Speed:** Fast (global network).
-- **Privacy jurisdiction:** Cyprus (EU, GDPR).
+Specs:
+- Free plan: Yes (basic ad/tracker blocking).
+- Paid: $0.99/month (ad/tracker blocking, parental control).
+- Logging: Minimal (no query logs, aggregated analytics).
+- Encryption: DoH, DoT.
+- Filtering: Ad blocking, tracker blocking, parental control, malware/phishing.
+- Speed: Fast (global network).
+- Privacy jurisdiction: Cyprus (EU, GDPR).
 
-**Unique feature:** Integrated with AdGuard software suite. If you use AdGuard for browsers/devices, AdGuard DNS complements it.
+Unique feature: Integrated with AdGuard software suite. If you use AdGuard for browsers/devices, AdGuard DNS complements it.
 
-### Setup on macOS
+Setup on macOS
 System Preferences > Network > Wi-Fi > Advanced > DNS:
 ```
 94.140.14.14 (ad-blocking)
@@ -294,7 +294,7 @@ Or use DoH in Firefox:
 https://dns.adguard.com/dns-query
 ```
 
-### Setup on iOS
+Setup on iOS
 1. Settings > VPN & Device Management.
 2. Add VPN configuration.
 3. Type: DNS.
@@ -303,20 +303,20 @@ https://dns.adguard.com/dns-query
 
 Or download the AdGuard app (auto-configures DNS).
 
-### Setup on Android
+Setup on Android
 Settings > Network & Internet > Private DNS.
 Select "Private DNS provider hostname."
 Enter: `dns.adguard.com`
 
-### AdGuard Filtering
+AdGuard Filtering
 
 AdGuard DNS has two versions:
-- **Standard:** Blocks ads, trackers, malware.
-- **Family:** Blocks adult sites, ads, trackers (for families with kids).
+- Standard: Blocks ads, trackers, malware.
+- Family: Blocks adult sites, ads, trackers (for families with kids).
 
 Choose during setup. No per-profile configuration; it's one setting per network.
 
-## Performance Benchmarks (Latency, 2026)
+Performance Benchmarks (Latency, 2026)
 
 Tested from various locations, measuring query response time (lower is better):
 
@@ -329,9 +329,9 @@ Tested from various locations, measuring query response time (lower is better):
 | AdGuard | 30ms | 18ms | 55ms | 34ms |
 | ISP Default | 15ms | 8ms | 20ms | 14ms |
 
-**Takeaway:** Control D and NextDNS are fastest (minimal latency added). ISP DNS is faster, but you lose privacy. The ~10-15ms trade-off is imperceptible for web browsing.
+Control D and NextDNS are fastest (minimal latency added). ISP DNS is faster, but you lose privacy. The ~10-15ms trade-off is imperceptible for web browsing.
 
-## Comparison Table
+Comparison Table
 
 | Feature | Quad9 | NextDNS | Mullvad | Control D | AdGuard |
 |---------|-------|---------|---------|-----------|---------|
@@ -346,24 +346,24 @@ Tested from various locations, measuring query response time (lower is better):
 | Analytics dashboard | No | Yes | No | Limited | No |
 | Setup difficulty | Easy | Medium | Easy | Medium | Easy |
 
-## Recommendation by Use Case
+Recommendation by Use Case
 
-### Privacy maximalist
-Use **Mullvad DNS.** Free, no logs, zero telemetry.
+Privacy maximalist
+Use Mullvad DNS. Free, no logs, zero telemetry.
 
-### Family protection
-Use **NextDNS** (paid). Dashboard shows what kids access; whitelist/blacklist sites per kid.
+Family protection
+Use NextDNS (paid). Dashboard shows what kids access; whitelist/blacklist sites per kid.
 
-### Ad/tracker blocking + privacy
-Use **Control D** (free). Excellent filtering, no logs, fast.
+Ad/tracker blocking + privacy
+Use Control D (free). Excellent filtering, no logs, fast.
 
-### Simplicity
-Use **Quad9** (free). One-click setup, solid filtering, nonprofit mission.
+Simplicity
+Use Quad9 (free). One-click setup, solid filtering, nonprofit mission.
 
-### Ad blocking (software integration)
-Use **AdGuard DNS** (free). Pairs with AdGuard software suite.
+Ad blocking (software integration)
+Use AdGuard DNS (free). Pairs with AdGuard software suite.
 
-## Setup on OpenWrt/Home Network
+Setup on OpenWrt/Home Network
 
 If you run OpenWrt (home router firmware), change DNS for all devices:
 
@@ -387,19 +387,19 @@ If you run OpenWrt (home router firmware), change DNS for all devices:
 
 Now all devices on your network use the chosen DNS provider without per-device configuration.
 
-## VPN + DNS: Should You Combine?
+VPN + DNS: Should You Combine?
 
-**VPN:** Encrypts all traffic, hides IP, routes through VPN provider.
-**DNS:** Only encrypts DNS queries, hides which sites from ISP.
+VPN: Encrypts all traffic, hides IP, routes through VPN provider.
+DNS: Only encrypts DNS queries, hides which sites from ISP.
 
-**Do you need both?**
-- **Yes, if:** You want complete anonymity (IP hidden, ISP sees nothing).
-- **Maybe, if:** You use public Wi-Fi (VPN protects from snooping; DNS is redundant).
-- **No, if:** You only care about ISP not seeing your sites (DNS is sufficient).
+Do you need both?
+- Yes, if: You want complete anonymity (IP hidden, ISP sees nothing).
+- Maybe, if: You use public Wi-Fi (VPN protects from snooping; DNS is redundant).
+- No, if: You only care about ISP not seeing your sites (DNS is sufficient).
 
-**Recommendation:** Use a privacy DNS + VPN only when needed. VPN adds latency and may slow streaming. DNS is always-on without performance impact.
+Use a privacy DNS + VPN only when needed. VPN adds latency and may slow streaming. DNS is always-on without performance impact.
 
-## Switching Between Providers
+Switching Between Providers
 
 Switching is painless:
 
@@ -410,7 +410,7 @@ Switching is painless:
 
 Old DNS queries are not logged by default (unless provider logs and stores them). New queries go to the new provider.
 
-## DNS Leaks
+DNS Leaks
 
 A DNS leak occurs when your DNS query escapes the encrypted tunnel. Check for leaks:
 
@@ -425,29 +425,29 @@ If your ISP appears in the results, your DNS is leaking. Solution:
 - Verify configuration (System Preferences, Settings, etc.).
 - Clear DNS cache: `sudo dscacheutil -flushcache` (macOS).
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Can I use the first tool and the second tool together?**
+Can I use the first tool and the second tool together?
 
 Yes, many users run both tools simultaneously. the first tool and the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.
 
-**Which is better for beginners, the first tool or the second tool?**
+Which is better for beginners, the first tool or the second tool?
 
 It depends on your background. the first tool tends to work well if you prefer a guided experience, while the second tool gives more control for users comfortable with configuration. Try the free tier or trial of each before committing to a paid plan.
 
-**Is the first tool or the second tool more expensive?**
+Is the first tool or the second tool more expensive?
 
 Pricing varies by tier and usage patterns. Both offer free or trial options to start. Check their current pricing pages for the latest plans, since AI tool pricing changes frequently. Factor in your actual usage volume when comparing costs.
 
-**How often do the first tool and the second tool update their features?**
+How often do the first tool and the second tool update their features?
 
 Both tools release updates regularly, often monthly or more frequently. Feature sets and capabilities change fast in this space. Check each tool's changelog or blog for the latest additions before making a decision based on any specific feature.
 
-**What happens to my data when using the first tool or the second tool?**
+What happens to my data when using the first tool or the second tool?
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
-## Related Articles
+Related Articles
 
 - [Privacy-Focused DNS Providers Comparison 2026: Privacy](/privacy-focused-dns-providers-comparison-2026/)
 - [Best Privacy-Focused DNS Resolvers Compared](/best-privacy-dns-resolvers-cloudflare-quad9-nextdns-adguard/)
@@ -455,6 +455,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [How To Tell If Your Dns Has Been Hijacked Symptoms](/how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/)
 - [How to Configure DNS Over HTTPS (DoH) for Privacy in 2026](/how-to-configure-dns-over-https-for-privacy-2026/---)
 - [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://bestremotetools.com/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

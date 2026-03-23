@@ -15,9 +15,9 @@ voice-checked: true
 ---
 
 
-## Data Retention and Deletion Policies
+Data Retention and Deletion Policies
 
-## Table of Contents
+Table of Contents
 
 - [Data Retention and Deletion Policies](#data-retention-and-deletion-policies)
 - [Analytics Data Ownership Comparison](#analytics-data-ownership-comparison)
@@ -28,7 +28,7 @@ voice-checked: true
 
 Understanding data retention impacts compliance and user privacy:
 
-### Plausible Data Retention
+Plausible Data Retention
 
 ```
 Plausible default settings:
@@ -39,7 +39,7 @@ Plausible default settings:
 
 For GDPR compliance, Plausible requires no consent banner since no personally identifiable data is collected.
 
-### Matomo Data Retention Configuration
+Matomo Data Retention Configuration
 
 ```php
 // Set Matomo data retention policy
@@ -52,14 +52,14 @@ $anonymizeIpMask = 2;  // Last 2 octets become zeros
 $deleteLogsOlderThan = 180;  // Delete raw data after 6 months
 ```
 
-### Fathom Retention and Deletion
+Fathom Retention and Deletion
 
 Fathom automatically handles data deletion:
 - Default: 30-day visitor data retention
 - Configurable: 7 to 365 days via dashboard
 - GDPR right-to-be-forgotten: Automatic for users opting out
 
-## Analytics Data Ownership Comparison
+Analytics Data Ownership Comparison
 
 | Aspect | Plausible | Matomo | Fathom |
 |--------|-----------|--------|--------|
@@ -71,9 +71,9 @@ Fathom automatically handles data deletion:
 
 For maximum data portability, Matomo's export capabilities exceed both competitors.
 
-## Real Implementation: Migrating from Google Analytics
+Real Implementation: Migrating from Google Analytics
 
-### Step 1: Set Up Analytics in Parallel
+Step 1: Set Up Analytics in Parallel
 
 ```html
 <!-- Keep Google Analytics while testing alternative -->
@@ -90,7 +90,7 @@ For maximum data portability, Matomo's export capabilities exceed both competito
   src="https://plausible.io/js/script.js"></script>
 ```
 
-### Step 2: Validate Data Consistency
+Step 2: Validate Data Consistency
 
 ```javascript
 // Create dashboards in both systems
@@ -105,7 +105,7 @@ For maximum data portability, Matomo's export capabilities exceed both competito
 // - Different attribution models
 ```
 
-### Step 3: Adjust Expectations
+Step 3: Adjust Expectations
 
 Analytics without cookies and fingerprinting will show:
 - 10-30% lower traffic than Google Analytics (blocked/anonymized users)
@@ -113,7 +113,7 @@ Analytics without cookies and fingerprinting will show:
 - No individual user journeys
 - Aggregate trends instead of detailed funnels
 
-### Step 4: Remove Google Analytics
+Step 4: Remove Google Analytics
 
 ```html
 <!-- After 4-6 week validation period -->
@@ -123,7 +123,7 @@ Analytics without cookies and fingerprinting will show:
   src="https://plausible.io/js/script.js"></script>
 ```
 
-## Privacy Compliance Checklist
+Privacy Compliance Checklist
 
 Before deploying privacy analytics, verify:
 
@@ -136,7 +136,7 @@ Before deploying privacy analytics, verify:
 - [ ] Data retention policy documented
 - [ ] Backup and disaster recovery planned
 
-## Performance Impact Comparison
+Performance Impact Comparison
 
 Analytics loading affects page performance:
 
@@ -156,11 +156,11 @@ Cumulative Traffic Impact:
 
 For mobile and low-bandwidth users, privacy analytics dramatically reduce page load times.
 
-## Enterprise Deployment: Multi-Site Analytics Consolidation
+Enterprise Deployment: Multi-Site Analytics Consolidation
 
 For organizations managing multiple properties:
 
-### Matomo Multi-Site Approach
+Matomo Multi-Site Approach
 
 ```php
 // Matomo allows tracking unlimited sites in single installation
@@ -177,7 +177,7 @@ $sites = [
 // Single admin panel manages all properties
 ```
 
-### Plausible Enterprise
+Plausible Enterprise
 
 Plausible Enterprise supports:
 - Multiple properties under single account
@@ -185,7 +185,7 @@ Plausible Enterprise supports:
 - Consolidated reporting
 - Custom integrations
 
-### Fathom Business
+Fathom Business
 
 Fathom Business tier includes:
 - Unlimited sites
@@ -197,29 +197,29 @@ For enterprises with 10+ properties, Matomo's unlimited sites (at no extra cost)
 
 ---
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Can I use the first tool and the second tool together?**
+Can I use the first tool and the second tool together?
 
 Yes, many users run both tools simultaneously. the first tool and the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.
 
-**Which is better for beginners, the first tool or the second tool?**
+Which is better for beginners, the first tool or the second tool?
 
 It depends on your background. the first tool tends to work well if you prefer a guided experience, while the second tool gives more control for users comfortable with configuration. Try the free tier or trial of each before committing to a paid plan.
 
-**Is the first tool or the second tool more expensive?**
+Is the first tool or the second tool more expensive?
 
 Pricing varies by tier and usage patterns. Both offer free or trial options to start. Check their current pricing pages for the latest plans, since AI tool pricing changes frequently. Factor in your actual usage volume when comparing costs.
 
-**How often do the first tool and the second tool update their features?**
+How often do the first tool and the second tool update their features?
 
 Both tools release updates regularly, often monthly or more frequently. Feature sets and capabilities change fast in this space. Check each tool's changelog or blog for the latest additions before making a decision based on any specific feature.
 
-**What happens to my data when using the first tool or the second tool?**
+What happens to my data when using the first tool or the second tool?
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
-## Related Articles
+Related Articles
 
 - [Privacy-Focused Alternatives to Google Analytics](/privacy-analytics-alternatives-google)
 - [How To Set Up Privacy Preserving Customer Analytics Without](/how-to-set-up-privacy-preserving-customer-analytics-without-/)
@@ -228,5 +228,5 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Best Privacy-Focused DNS Resolvers Compared](/best-privacy-dns-resolvers-cloudflare-quad9-nextdns-adguard/)
 - [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://bestremotetools.com/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

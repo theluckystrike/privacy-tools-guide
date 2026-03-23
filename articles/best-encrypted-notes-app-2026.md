@@ -16,18 +16,14 @@ tags: [privacy-tools-guide, best-of]
 
 {% raw %}
 
-I switched from Apple Notes to Standard Notes eight months ago and have since tested Obsidian with Cryptomator, Joplin, and even built a minimal encrypted notes system in Python. Standard Notes won me over with its no-nonsense E2E encryption and CLI access. Obsidian is better for knowledge graphs if you add your own encryption layer. Here is how each option performed in my daily workflow.
+I switched from Apple Notes to Standard Notes eight months ago and have since tested Obsidian with Cryptomator, Joplin, and even built a minimal encrypted notes system in Python. Standard Notes won me over with its no-nonsense E2E encryption and CLI access. Obsidian is better for knowledge graphs if you add your own encryption layer. free tier with E2EE, and the desktop applications are open-source.
+- The notes feature is: less developer-focused but provides solid E2EE for general-purpose note storage.
+- Start with free options: to find what works for your workflow, then upgrade when you hit limitations.
+- Bitwarden Notes If you: already use Bitwarden for password management, their secure notes feature provides a convenient option.
+- A week-long trial with: actual work gives better signal than feature comparison charts.
+- Do these tools work: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
 
-## Key Takeaways
-
-- **It offers a generous**: free tier with E2EE, and the desktop applications are open-source.
-- **The notes feature is**: less developer-focused but provides solid E2EE for general-purpose note storage.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Bitwarden Notes If you**: already use Bitwarden for password management, their secure notes feature provides a convenient option.
-- **A week-long trial with**: actual work gives better signal than feature comparison charts.
-- **Do these tools work**: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
-
-## What Makes an Encrypted Notes App Developer-Friendly
+What Makes an Encrypted Notes App Developer-Friendly
 
 Here are the criteria that matter for technical users:
 
@@ -37,67 +33,67 @@ Here are the criteria that matter for technical users:
 - Open-source foundation: Independent security audits and community trust
 - Markdown support: Developer-friendly formatting with code block support
 
-## Top Encrypted Notes Apps for 2026
+Top Encrypted Notes Apps for 2026
 
-### 1. Standard Notes
+1. Standard Notes
 
 Standard Notes continues to dominate the encrypted notes space. It offers a generous free tier with E2EE, and the desktop applications are open-source. The extended plan adds features like file attachments and notes history.
 
 Developers appreciate Standard Notes for its clean Markdown editor with syntax highlighting. The application supports code blocks natively, making it suitable for storing code snippets, API configurations, and technical documentation.
 
 ```bash
-# Standard Notes CLI installation
+Standard Notes CLI installation
 npm install -g @standardnotes/cli
 
-# Sign in via CLI
+Sign in via CLI
 sn auth
 
-# Create an encrypted note
+Create an encrypted note
 sn note:create --title "API Keys" --content "$(cat api-keys.txt)"
 ```
 
-### 2. Obsidian with Third-Party Encryption
+2. Obsidian with Third-Party Encryption
 
 Obsidian has become the defacto standard for knowledge management among developers. While the base application doesn't include built-in E2EE, you can combine it with third-party encryption tools for a strong solution.
 
 The most popular approach uses Cryptomator or gocryptfs to encrypt the vault directory:
 
 ```bash
-# Using gocryptfs to encrypt your Obsidian vault
+Using gocryptfs to encrypt your Obsidian vault
 brew install gocryptfs
 
-# Initialize encrypted directory
+Initialize encrypted directory
 gocryptfs -init ~/encrypted-vault
 
-# Mount when working
+Mount when working
 gocryptfs ~/encrypted-vault ~/obsidian-secure
 
-# Your Obsidian vault lives in ~/obsidian-secure
+Your Obsidian vault lives in ~/obsidian-secure
 ```
 
 This hybrid approach gives you Obsidian's powerful linking, graph view, and plugin ecosystem while maintaining encryption at rest.
 
-### 3. Bitwarden Notes
+3. Bitwarden Notes
 
 If you already use Bitwarden for password management, their secure notes feature provides a convenient option. While not a full-featured notes app, it excels for storing sensitive snippets, API keys, and configuration values alongside your credentials.
 
 ```bash
-# Bitwarden CLI for secure notes
+Bitwarden CLI for secure notes
 bw get note "api-production-key"
 
-# Create a secure note programmatically
+Create a secure note programmatically
 bw create item "Secure Note" --notes "API_KEY=xxx\nSECRET=yyy"
 ```
 
-### 4. Tutanota
+4. Tutanota
 
 Tutanota offers a privacy-first email solution with integrated encrypted notes. The notes feature is less developer-focused but provides solid E2EE for general-purpose note storage. Their encrypted calendar integration appeals to developers managing sensitive schedules.
 
-### 5. Logseq with Encryption
+5. Logseq with Encryption
 
 Logseq, the outliner for knowledge management, supports encryption through plugins. While requiring more configuration than dedicated encrypted apps, it offers superior organization for complex note graphs.
 
-## Building Your Own Encrypted Notes System
+Building Your Own Encrypted Notes System
 
 For developers who want complete control, building a minimal encrypted notes system is straightforward using standard tools:
 
@@ -111,7 +107,7 @@ from pathlib import Path
 NOTES_DIR = Path("~/secure-notes").expanduser()
 NOTES_DIR.mkdir(exist_ok=True)
 
-# Generate or load encryption key
+Generate or load encryption key
 KEY_FILE = NOTES_DIR / ".key"
 if KEY_FILE.exists():
     key = KEY_FILE.read_bytes()
@@ -132,7 +128,7 @@ def decrypt_note(title: str) -> str:
     encrypted = (NOTES_DIR / f"{title}.enc").read_bytes()
     return cipher.decrypt(encrypted).decode()
 
-# Example usage
+Example usage
 if __name__ == "__main__":
     encrypt_note("api-config", "API_KEY=sk-xxx\nDATABASE_URL=postgresql://...")
     print(decrypt_note("api-config"))
@@ -140,7 +136,7 @@ if __name__ == "__main__":
 
 This approach gives you complete ownership of your encryption keys and data storage. You can extend it with git for version control or sync to your own cloud storage.
 
-## Comparing Encryption Standards
+Comparing Encryption Standards
 
 When evaluating encrypted notes apps, understanding the encryption implementations helps make informed decisions:
 
@@ -151,7 +147,7 @@ When evaluating encrypted notes apps, understanding the encryption implementatio
 | Bitwarden | AES-256 | Master password | Yes |
 | Tutanota | AES-256+E2EE | Account-based | No |
 
-## Choosing the Right Solution
+Choosing the Right Solution
 
 Your choice depends on your specific requirements:
 
@@ -160,7 +156,7 @@ Your choice depends on your specific requirements:
 - Integration with existing tools: Bitwarden works well if you're already in their ecosystem
 - Complete control: Building your own solution using Python or shell scripts gives you full ownership
 
-## Pricing Comparison and Feature Matrix
+Pricing Comparison and Feature Matrix
 
 | Feature | Standard Notes | Obsidian | Bitwarden | Tutanota | Logseq |
 |---------|---|---|---|---|---|
@@ -173,63 +169,63 @@ Your choice depends on your specific requirements:
 | Version History | Extended plan | Yes | Yes | Basic | Yes |
 | Attachment Support | Extended plan | Yes | Free | Yes | Yes |
 
-## Advanced Integration Scenarios
+Advanced Integration Scenarios
 
-### Obsidian + Encryption + Syncing
+Obsidian + Encryption + Syncing
 
 For developers using Obsidian without built-in encryption, this setup provides full privacy:
 
 ```bash
-# Install gocryptfs and set up encrypted sync
+Install gocryptfs and set up encrypted sync
 brew install gocryptfs
 mkdir -p ~/encrypted-vault ~/obsidian-vault
 
-# Initialize encrypted storage
+Initialize encrypted storage
 gocryptfs -init ~/encrypted-vault
 
-# Mount when needed
+Mount when needed
 gocryptfs -ro ~/encrypted-vault ~/obsidian-vault
 
-# Sync from ~/obsidian-vault to cloud storage
+Sync from ~/obsidian-vault to cloud storage
 rsync -av ~/obsidian-vault/ ~/Dropbox/obsidian-backup/
 ```
 
-### Standard Notes Programmatic Access
+Standard Notes Programmatic Access
 
 For developers building tools that need to access encrypted notes:
 
 ```bash
-# Install Standard Notes CLI
+Install Standard Notes CLI
 npm install -g @standardnotes/cli
 
-# Authenticate
+Authenticate
 sn auth
 
-# Create note with metadata
+Create note with metadata
 sn note:create \
   --title "API Documentation" \
   --content "$(cat api-docs.md)" \
   --tags "development,technical"
 
-# Retrieve and pipe to other tools
+Retrieve and pipe to other tools
 sn note:get "API Documentation" | jq .
 
-# List notes with filters
+List notes with filters
 sn list --tag "development"
 ```
 
-## Security Audit and Trust Considerations
+Security Audit and Trust Considerations
 
 When choosing an encrypted notes app, security verification matters:
 
-**Open-source verification:**
+Open-source verification:
 - Standard Notes: Client applications fully open-source and auditable
 - Logseq: Source code available on GitHub for inspection
 - Bitwarden: Server and client code public on GitHub
 - Tutanota: Closed-source components in encryption layer
 - Obsidian: Closed core with open plugin ecosystem
 
-**Third-party security audits:**
+Third-party security audits:
 - Standard Notes: Independent audit available (review before use)
 - Bitwarden: Multiple third-party audits, results published
 - Tutanota: Security review completed, results public
@@ -238,19 +234,19 @@ When choosing an encrypted notes app, security verification matters:
 
 For developers handling sensitive information, open-source and independently audited solutions provide verifiable security.
 
-## Backup and Recovery Strategies
+Backup and Recovery Strategies
 
 Encrypted notes require special backup considerations:
 
 ```bash
-# Standard Notes: Export encrypted backup
+Standard Notes: Export encrypted backup
 sn backup-export --path ~/encrypted-notes-backup.json
 
-# Obsidian: Backup encrypted vault
+Obsidian: Backup encrypted vault
 gocryptfs-lazy -o allow_other ~/encrypted-vault ~/obsidian-vault
 rsync -av --backup ~/obsidian-vault/ ~/backup-location/
 
-# Python solution: Encrypted backup
+Python solution: Encrypted backup
 #!/usr/bin/env python3
 import json
 from pathlib import Path
@@ -259,7 +255,7 @@ from cryptography.fernet import Fernet
 BACKUP_DIR = Path("~/backups").expanduser()
 BACKUP_DIR.mkdir(exist_ok=True)
 
-# Load your encryption key from secure storage
+Load your encryption key from secure storage
 key = Fernet.generate_key()
 
 def backup_notes(notes_dir: Path):
@@ -272,67 +268,67 @@ def backup_notes(notes_dir: Path):
         backup_file.write_bytes(encrypted)
 ```
 
-## Data Portability and Vendor Lock-in
+Data Portability and Vendor Lock-in
 
 Moving your notes between platforms requires considering export capabilities:
 
-- **Standard Notes**: Export to JSON or Markdown; full portability
-- **Obsidian**: Notes are plain Markdown files; native portability
-- **Bitwarden**: Can export secure notes in various formats
-- **Tutanota**: Limited export options; difficult migration path
-- **Logseq**: Markdown-based; good portability
+- Standard Notes: Export to JSON or Markdown; full portability
+- Obsidian: Notes are plain Markdown files; native portability
+- Bitwarden: Can export secure notes in various formats
+- Tutanota: Limited export options; difficult migration path
+- Logseq: Markdown-based; good portability
 
 For long-term peace of mind, prioritize platforms with open export formats.
 
-## Real-World Workflow Examples
+Real-World Workflow Examples
 
-### Developer Workflow: Technical Documentation
+Developer Workflow: Technical Documentation
 
 ```bash
-# Use Standard Notes with CLI for inline documentation
+Use Standard Notes with CLI for inline documentation
 sn note:create --title "Database Schema" \
   --content "$(cat db-schema.sql)"
 
-# Retrieve and format
+Retrieve and format
 sn get --id ABC123 | jq -r '.content' > current-schema.sql
 ```
 
-### Researcher Workflow: Citation Management
+Researcher Workflow: Citation Management
 
 Combine Obsidian with encrypted storage for research notes:
 
 ```bash
-# Create encrypted vault for sensitive research
+Create encrypted vault for sensitive research
 gocryptfs -init ~/research-encrypted
 gocryptfs ~/research-encrypted ~/research-vault
 
-# Use Obsidian for bidirectional linking between papers
-# Notes stored encrypted on disk
+Use Obsidian for bidirectional linking between papers
+Notes stored encrypted on disk
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Are free AI tools good enough for encrypted notes app?**
+Are free AI tools good enough for encrypted notes app?
 
 Free tiers work for basic tasks and evaluation, but paid plans typically offer higher rate limits, better models, and features needed for professional work. Start with free options to find what works for your workflow, then upgrade when you hit limitations.
 
-**How do I evaluate which tool fits my workflow?**
+How do I evaluate which tool fits my workflow?
 
 Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
-**Do these tools work offline?**
+Do these tools work offline?
 
 Most AI-powered tools require an internet connection since they run models on remote servers. A few offer local model options with reduced capability. If offline access matters to you, check each tool's documentation for local or self-hosted options.
 
-**How quickly do AI tool recommendations go out of date?**
+How quickly do AI tool recommendations go out of date?
 
 AI tools evolve rapidly, with major updates every few months. Feature comparisons from 6 months ago may already be outdated. Check the publication date on any review and verify current features directly on each tool's website before purchasing.
 
-**Should I switch tools if something better comes out?**
+Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific pain point you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
-## Related Articles
+Related Articles
 
 - [Best Encrypted Calendar App 2026: A Developer's Guide](/best-encrypted-calendar-app-2026/)
 - [Best Authenticator App 2026 Review: A Developer's Guide](/best-authenticator-app-2026-review/)
@@ -340,5 +336,5 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Best Encrypted Email Service 2026: A Developer Guide](/best-encrypted-email-service-2026/)
 - [Encrypted File Sync for Teams Comparison: A Developer Guide](/encrypted-file-sync-for-teams-comparison/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -17,19 +17,19 @@ tags: [privacy-tools-guide, vpn]
 
 Nebula is an open-source overlay network built by Slack's infrastructure team. It creates encrypted mesh tunnels directly between nodes using UDP hole-punching, with a central lighthouse that helps peers find each other without routing all traffic through it. This makes it fast, private, and suitable for distributed teams.
 
-## What You Need
+What You Need
 
 - One VPS as the lighthouse (a small $5/month instance works)
 - Linux or macOS on each team member's machine
 - Root or sudo access on all nodes
 - Ports: UDP 4242 open on the lighthouse
 
-## Step 1: Install Nebula
+Step 1: Install Nebula
 
 Download the latest release on all nodes. On the lighthouse and each team machine:
 
 ```bash
-# On x86_64 Linux
+On x86_64 Linux
 wget https://github.com/slackhq/nebula/releases/latest/download/nebula-linux-amd64.tar.gz
 tar -xzf nebula-linux-amd64.tar.gz
 sudo mv nebula nebula-cert /usr/local/bin/
@@ -46,37 +46,37 @@ Verify:
 nebula-cert --version
 ```
 
-## Step 2: Create the Certificate Authority
+Step 2: Create the Certificate Authority
 
-Run this once on a secure machine — not on the lighthouse. The CA key should never leave this machine.
+Run this once on a secure machine. not on the lighthouse. The CA key should never leave this machine.
 
 ```bash
 mkdir -p ~/nebula-ca && cd ~/nebula-ca
 
-# Create the CA certificate (valid 5 years)
+Create the CA certificate (valid 5 years)
 nebula-cert ca -name "MyTeam CA" -duration 43800h
 
 ls -la
-# ca.crt  ca.key
+ca.crt  ca.key
 ```
 
 Store `ca.key` in an encrypted location (e.g., a KeePassXC database or an offline machine). You only need it when creating new node certificates.
 
-## Step 3: Sign Node Certificates
+Step 3: Sign Node Certificates
 
 Each node needs a certificate with a unique Nebula IP. Use the `10.42.0.0/16` range (or any RFC1918 range you prefer).
 
 ```bash
-# Lighthouse
+Lighthouse
 nebula-cert sign -name "lighthouse" -ip "10.42.0.1/24" -ca-crt ca.crt -ca-key ca.key
 
-# Team member Alice
+Team member Alice
 nebula-cert sign -name "alice" -ip "10.42.0.2/24" -ca-crt ca.crt -ca-key ca.key
 
-# Team member Bob
+Team member Bob
 nebula-cert sign -name "bob" -ip "10.42.0.3/24" -ca-crt ca.crt -ca-key ca.key
 
-# Server (e.g., internal wiki)
+Server (e.g., internal wiki)
 nebula-cert sign -name "wiki" -ip "10.42.0.10/24" \
   -groups "servers" -ca-crt ca.crt -ca-key ca.key
 ```
@@ -85,7 +85,7 @@ The `-groups` flag lets you write firewall rules targeting a set of nodes rather
 
 Each sign command produces `<name>.crt` and `<name>.key`. Distribute each pair securely to the matching machine along with `ca.crt`.
 
-## Step 4: Configure the Lighthouse
+Step 4: Configure the Lighthouse
 
 Create `/etc/nebula/config.yml` on the lighthouse VPS:
 
@@ -140,7 +140,7 @@ sudo cp ca.crt lighthouse.crt lighthouse.key /etc/nebula/
 sudo chmod 600 /etc/nebula/lighthouse.key
 ```
 
-## Step 5: Configure Team Member Nodes
+Step 5: Configure Team Member Nodes
 
 Create `/etc/nebula/config.yml` on Alice's machine (and each other team member, adjusting cert names):
 
@@ -192,15 +192,15 @@ firewall:
 
 The inbound rules here allow ICMP from anyone on the mesh, SSH from any mesh peer, and HTTPS only from nodes in the `servers` group.
 
-## Step 6: Start Nebula
+Step 6: Start Nebula
 
 On the lighthouse and all nodes:
 
 ```bash
-# Test first
+Test first
 sudo nebula -config /etc/nebula/config.yml -test
 
-# Run as a systemd service
+Run as a systemd service
 sudo tee /etc/systemd/system/nebula.service > /dev/null <<EOF
 [Unit]
 Description=Nebula overlay network
@@ -220,26 +220,26 @@ sudo systemctl enable --now nebula
 sudo systemctl status nebula
 ```
 
-## Step 7: Verify Connectivity
+Step 7: Verify Connectivity
 
 From Alice's machine:
 ```bash
-# Ping lighthouse
+Ping lighthouse
 ping -c 3 10.42.0.1
 
-# Ping Bob directly (should punch through NAT)
+Ping Bob directly (should punch through NAT)
 ping -c 3 10.42.0.2
 
-# Check Nebula interface
+Check Nebula interface
 ip addr show nebula1
 
-# Check nebula logs for direct tunnel establishment
+Check nebula logs for direct tunnel establishment
 sudo journalctl -u nebula -f
 ```
 
-Look for `Direct connection established` in the logs — this confirms peer-to-peer tunneling is working rather than relaying through the lighthouse.
+Look for `Direct connection established` in the logs. this confirms peer-to-peer tunneling is working rather than relaying through the lighthouse.
 
-## Firewall Rules and Groups
+Firewall Rules and Groups
 
 Nebula's firewall is evaluated on the receiving node. You can restrict access by group membership:
 
@@ -264,27 +264,27 @@ nebula-cert sign -name "carol" -ip "10.42.0.4/24" \
   -groups "team,developers" -ca-crt ca.crt -ca-key ca.key
 ```
 
-## Certificate Rotation
+Certificate Rotation
 
 Certificates expire. To rotate before expiry:
 
 ```bash
-# Generate new cert for alice (keep same IP)
+Generate new cert for alice (keep same IP)
 nebula-cert sign -name "alice" -ip "10.42.0.2/24" \
   -duration 8760h -ca-crt ca.crt -ca-key ca.key
 
-# Distribute alice.crt and alice.key to Alice's machine
-# Restart nebula on Alice's machine
+Distribute alice.crt and alice.key to Alice's machine
+Restart nebula on Alice's machine
 sudo systemctl restart nebula
 ```
 
-## Revoking a Node
+Revoking a Node
 
-Nebula 1.x does not have a CRL mechanism — to revoke access, you must issue a new CA and re-sign all nodes. Plan your team structure so that you can re-roll certificates when a member departs.
+Nebula 1.x does not have a CRL mechanism. to revoke access, you must issue a new CA and re-sign all nodes. Plan your team structure so that you can re-roll certificates when a member departs.
 
 One workaround: use short-lived certificates (e.g., 90-day) and automate renewal with a script that requires re-authentication before issuing a new cert.
 
-## Related Articles
+Related Articles
 
 - [VPN Kill Switch Configuration on Linux with iptables](/vpn-kill-switch-linux-iptables-setup/)
 - [Use Mesh Networking for Private Communication](/how-to-use-mesh-networking-for-private-communication-without/)
@@ -292,6 +292,6 @@ One workaround: use short-lived certificates (e.g., 90-day) and automate renewal
 - [How To Set Up Vpn Failover Between Two Providers Automatical](/how-to-set-up-vpn-failover-between-two-providers-automatical/)
 - [How to Configure VPN Exempt List for Local Network](/how-to-configure-vpn-exempt-list-for-local-network-access/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

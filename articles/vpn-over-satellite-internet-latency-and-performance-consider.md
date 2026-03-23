@@ -18,7 +18,7 @@ voice-checked: true
 
 VPN over satellite internet adds roughly 15ms of overhead with WireGuard versus 120ms with OpenVPN on top of the satellite link's base latency of 500-800ms, making WireGuard the clear protocol choice for satellite deployments. Key optimizations include setting MTU to 1400-1420 bytes to prevent fragmentation, using UDP-only transport (WireGuard does this by default), enabling split tunneling to route only sensitive traffic through the VPN, and configuring persistent keepalives to maintain connections through weather-related signal interruptions.
 
-## Table of Contents
+Table of Contents
 
 - [How Satellite Internet Differs from Terrestrial Connections](#how-satellite-internet-differs-from-terrestrial-connections)
 - [VPN Protocol Selection for Satellite Networks](#vpn-protocol-selection-for-satellite-networks)
@@ -28,30 +28,30 @@ VPN over satellite internet adds roughly 15ms of overhead with WireGuard versus 
 - [Practical Network Architecture](#practical-network-architecture)
 - [Weather and Signal Degradation](#weather-and-signal-degradation)
 
-## How Satellite Internet Differs from Terrestrial Connections
+How Satellite Internet Differs from Terrestrial Connections
 
 Satellite internet operates by sending data between your dish and a geostationary satellite orbiting approximately 35,786 kilometers above Earth's equator. This distance creates a minimum one-way latency of around 240 milliseconds, though real-world performance typically ranges from 500ms to 800ms due to processing delays, atmospheric interference, and network congestion.
 
 In contrast, fiber-optic connections typically exhibit latencies of 20-50ms, and cable internet averages 15-30ms. The satellite round-trip time (RTT) alone exceeds what most VPN protocols are optimized for, resulting in compounded delays when encryption overhead is added.
 
-Traditional VPNs were designed with the assumption of relatively low-latency networks. Each packet exchange involves a handshake, encryption, transmission, decryption, and acknowledgment—all of which multiply across the satellite link's inherent delay.
+Traditional VPNs were designed with the assumption of relatively low-latency networks. Each packet exchange involves a handshake, encryption, transmission, decryption, and acknowledgment, all of which multiply across the satellite link's inherent delay.
 
-## VPN Protocol Selection for Satellite Networks
+VPN Protocol Selection for Satellite Networks
 
 Protocol choice significantly impacts performance over high-latency connections. Here's a practical comparison:
 
-### WireGuard
+WireGuard
 
 WireGuard represents the modern standard for VPN over satellite. Its lightweight design, using approximately 4,000 lines of code versus OpenVPN's 600,000+, results in minimal handshake overhead.
 
 ```bash
-# Install WireGuard on Ubuntu/Debian
+Install WireGuard on Ubuntu/Debian
 sudo apt install wireguard
 
-# Generate keypair
+Generate keypair
 wg genkey | tee private.key | wg pubkey > public.key
 
-# Example wg0.conf for satellite connection
+Example wg0.conf for satellite connection
 [Interface]
 PrivateKey = <your-private-key>
 Address = 10.0.0.2/24
@@ -67,7 +67,7 @@ PersistentKeepalive = 25
 
 The `PersistentKeepalive` parameter is critical for satellite connections. Without it, NAT mappings and firewall states may timeout during satellite link outages common during heavy rain or storms.
 
-### OpenVPN vs. WireGuard Latency Overhead
+OpenVPN vs. WireGuard Latency Overhead
 
 Testing reveals the following approximate latencies added by VPN protocols:
 
@@ -79,13 +79,13 @@ Testing reveals the following approximate latencies added by VPN protocols:
 
 WireGuard's overhead remains relatively constant regardless of base latency, making it particularly suitable for satellite deployments.
 
-### IKEv2/IPSec
+IKEv2/IPSec
 
 IKEv2 handles network transitions well, which matters for satellite users experiencing brief outages during weather events. However, its authentication overhead still exceeds WireGuard's minimal footprint.
 
 ```bash
-# StrongSwan configuration example for satellite-optimized IPSec
-# /etc/ipsec.conf
+StrongSwan configuration example for satellite-optimized IPSec
+/etc/ipsec.conf
 
 config setup
  charondebug="ike 2, knl 2, net 2, esp 2, dmn 2"
@@ -107,68 +107,68 @@ conn satellite-vpn
  mtu=1400
 ```
 
-## MTU and Fragmentation Considerations
+MTU and Fragmentation Considerations
 
 Satellite links typically use smaller maximum transmission units than ethernet. Setting incorrect MTU values causes fragmentation that dramatically degrades performance.
 
 ```bash
-# Test optimal MTU using ping with don't fragment flag
-# Start with 1500 and work downward
+Test optimal MTU using ping with don't fragment flag
+Start with 1500 and work downward
 ping -M do -s 1472 -c 3 vpn.example.com
 
-# WireGuard interface MTU in config
+WireGuard interface MTU in config
 [Interface]
 MTU = 1420
 
-# Alternative: Adjust system-wide for all VPN traffic
+Alternative: Adjust system-wide for all VPN traffic
 sudo ip link set dev wg0 mtu 1420
 ```
 
 The optimal MTU for most satellite connections falls between 1400-1420 bytes. This accounts for the satellite link's overhead plus the VPN encapsulation.
 
-## TCP vs. UDP Performance
+TCP vs. UDP Performance
 
 VPN protocols typically offer both TCP and UDP transport options. For satellite internet:
 
-- **UDP** performs better because TCP's congestion control mechanisms interpret satellite latency as network congestion, triggering aggressive backoff
+- UDP performs better because TCP's congestion control mechanisms interpret satellite latency as network congestion, triggering aggressive backoff
 - WireGuard exclusively uses UDP, which provides an advantage
 - If you must use TCP-based VPNs (corporate firewalls, etc.), consider using TCP forwarding over SSH or `sslh`
 
 ```bash
-# Test UDP vs TCP performance
-# UDP test
+Test UDP vs TCP performance
+UDP test
 iperf3 -c vpn.example.com -u -b 10M
 
-# TCP test
+TCP test
 iperf3 -c vpn.example.com
 ```
 
-## Compression and Encryption Overhead
+Compression and Encryption Overhead
 
 Satellite bandwidth comes at a premium. Every byte of VPN overhead reduces effective throughput.
 
-### Encryption Cipher Selection
+Encryption Cipher Selection
 
 Modern processors handle AES-256 with minimal overhead, but the key exchange method matters more:
 
 ```bash
-# WireGuard uses ChaCha20-Poly1305 by default
-# For maximum performance, this is already optimized
+WireGuard uses ChaCha20-Poly1305 by default
+For maximum performance, this is already optimized
 
-# OpenVPN: prefer CHACHA20-POLY1305 over AES
+OpenVPN: prefer CHACHA20-POLY1305 over AES
 cipher CHACHA20-POLY1305
 auth SHA256
 ```
 
-### Compression Trade-offs
+Compression Trade-offs
 
 Avoid compression over satellite links unless you specifically need to trade CPU for bandwidth:
 
 ```
-# OpenVPN: disable compression for satellite
+OpenVPN: disable compression for satellite
 compress lz4-v2
 
-# Or disable entirely (recommended for security)
+Or disable entirely (recommended for security)
 compress none
 ```
 
@@ -177,24 +177,24 @@ Compression over VPN can actually reduce performance because:
 2. Compressed data doesn't compress well again
 3. CPU cycles spent on compression increase latency
 
-## Practical Network Architecture
+Practical Network Architecture
 
 For developers building applications that must work over satellite VPN, consider these architectural patterns:
 
-### Split Tunneling
+Split Tunneling
 
 Route only necessary traffic through the VPN to reduce latency:
 
 ```bash
-# WireGuard: only route specific networks through VPN
+WireGuard: only route specific networks through VPN
 [Peer]
 AllowedIPs = 10.0.0.0/8, 192.168.100.0/24
-# Internet traffic goes direct (bypasses VPN)
+Internet traffic goes direct (bypasses VPN)
 ```
 
 This approach reduces latency for non-sensitive traffic while still protecting sensitive connections.
 
-### Persistent Connections
+Persistent Connections
 
 Maintain long-lived connections to avoid handshake overhead:
 
@@ -223,16 +223,16 @@ class SatelliteVPNConnection:
  self.sock.sendto(b'\x00\x00\x00\x00', (self.host, self.port))
 ```
 
-## Weather and Signal Degradation
+Weather and Signal Degradation
 
 Satellite performance varies significantly with weather conditions. Plan for:
 
-- **Rain fade**: Signal loss during heavy rain can exceed 20dB
-- **VPN reconnection logic**: Implement exponential backoff
-- **Connection monitoring**: Use tools like `watch -n 1 wg show` to monitor interface status
+- Rain fade: Signal loss during heavy rain can exceed 20dB
+- VPN reconnection logic: Implement exponential backoff
+- Connection monitoring: Use tools like `watch -n 1 wg show` to monitor interface status
 
 ```bash
-# Simple satellite VPN health check script
+Simple satellite VPN health check script
 #!/bin/bash
 VPN_INTERFACE="wg0"
 TARGET="8.8.8.8"
@@ -251,29 +251,29 @@ while true; do
 done
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [How To Set Up Satellite Internet As Backup During Government](/how-to-set-up-satellite-internet-as-backup-during-government/)
 - [How Vpn Affects Gaming Latency Actual Measurements And.](/how-vpn-affects-gaming-latency-actual-measurements-and-explanation/)
@@ -282,5 +282,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Canvas Blocker Extension How It Works And Performance Impact](/canvas-blocker-extension-how-it-works-and-performance-impact/)
 - [AI Code Completion Latency Comparison](https://bestremotetools.com/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

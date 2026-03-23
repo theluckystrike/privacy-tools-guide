@@ -15,11 +15,11 @@ tags: [privacy-tools-guide, privacy]
 
 {% raw %}
 
-# Privacy-Focused Analytics: Self-Hosted Options
+Privacy-Focused Analytics: Self-Hosted Options
 
 Self-hosting your analytics means visitor data never leaves your infrastructure. No third-party JavaScript on your pages, no cross-site tracking, no GDPR consent banners required (for cookie-free analytics), and no feeding behavioral data to ad networks. This guide covers deploying Plausible, Umami, and Matomo on your own server.
 
-## Why Self-Host vs. Cloud Analytics
+Why Self-Host vs. Cloud Analytics
 
 | Factor | Google Analytics | Plausible Cloud | Self-Hosted |
 |--------|-----------------|-----------------|-------------|
@@ -29,12 +29,12 @@ Self-hosting your analytics means visitor data never leaves your infrastructure.
 | Data ownership | Google owns it | You own it | You own it |
 | Cost | Free (you are the product) | $9+/mo | Server cost only |
 
-## Option 1: Plausible (Lightweight, Cookie-Free)
+Option 1: Plausible (Lightweight, Cookie-Free)
 
 Plausible is the simplest option: no cookies, no personal data, GDPR-compliant without a consent banner.
 
 ```bash
-# /opt/plausible/docker-compose.yml
+/opt/plausible/docker-compose.yml
 version: '3.8'
 
 services:
@@ -81,7 +81,7 @@ volumes:
 ```
 
 ```bash
-# plausible-conf.env
+plausible-conf.env
 BASE_URL=https://analytics.yourdomain.com
 SECRET_KEY_BASE=$(openssl rand -base64 48)
 DATABASE_URL=postgres://postgres:postgres@plausible_db:5432/plausible_db
@@ -93,7 +93,7 @@ MAILER_EMAIL=noreply@yourdomain.com
 mkdir -p /opt/plausible/clickhouse
 cd /opt/plausible
 
-# Create ClickHouse config files (reduces logging noise)
+Create ClickHouse config files (reduces logging noise)
 cat > clickhouse/clickhouse-config.xml << 'EOF'
 <clickhouse><logger><level>warning</level><console>true</console></logger><query_thread_log remove="remove"/><query_log remove="remove"/><text_log remove="remove"/><trace_log remove="remove"/><metric_log remove="remove"/><asynchronous_metric_log remove="remove"/><session_log remove="remove"/><part_log remove="remove"/></clickhouse>
 EOF
@@ -106,20 +106,20 @@ docker compose up -d
 ```
 
 ```bash
-# Add the tracking snippet to your site
-# Replace your-domain.com with your actual domain as registered in Plausible
+Add the tracking snippet to your site
+Replace your-domain.com with your actual domain as registered in Plausible
 ```
 
 ```html
 <script defer data-domain="your-domain.com" src="https://analytics.yourdomain.com/js/script.js"></script>
 ```
 
-## Option 2: Umami (Minimal, Multi-Site)
+Option 2: Umami (Minimal, Multi-Site)
 
 Umami is a clean alternative with real-time stats, multi-user support, and a simpler stack than Plausible.
 
 ```yaml
-# /opt/umami/docker-compose.yml
+/opt/umami/docker-compose.yml
 version: '3.8'
 
 services:
@@ -158,8 +158,8 @@ volumes:
 ```bash
 cd /opt/umami && docker compose up -d
 
-# Default login: admin / umami — change immediately
-# Access at localhost:3000 (put behind nginx/Traefik with TLS)
+Default login: admin / umami. change immediately
+Access at localhost:3000 (put behind nginx/Traefik with TLS)
 ```
 
 Umami tracking snippet:
@@ -168,40 +168,40 @@ Umami tracking snippet:
 <script async src="https://analytics.yourdomain.com/script.js" data-website-id="your-website-id"></script>
 ```
 
-## Option 3: Matomo (Feature-Rich, GDPR Mode)
+Option 3: Matomo (Feature-Rich, GDPR Mode)
 
 Matomo is the closest to Google Analytics in features. It supports heatmaps, funnels, A/B testing (paid plugins), and a full GDPR consent mode.
 
 ```bash
-# Install on bare metal or VM (not Docker — Matomo works better with traditional LAMP)
+Install on bare metal or VM (not Docker. Matomo works better with traditional LAMP)
 sudo apt install apache2 php php-mysql php-curl php-gd php-xml php-mbstring mariadb-server
 
-# Create database
+Create database
 sudo mysql -e "CREATE DATABASE matomo; GRANT ALL ON matomo.* TO 'matomo'@'localhost' IDENTIFIED BY 'strong-password';"
 
-# Download Matomo
+Download Matomo
 wget https://builds.matomo.org/matomo.zip
 unzip matomo.zip -d /var/www/html/
 sudo chown -R www-data:www-data /var/www/html/matomo
 ```
 
-### GDPR Configuration in Matomo
+GDPR Configuration in Matomo
 
 ```bash
-# Matomo can anonymize IPs by default (no consent banner needed for basic stats)
-# Settings → Privacy → Anonymize visitor information:
-# - Anonymize IP addresses: last 2 bytes
-# - Anonymize User ID: yes
-# - Force new visit on browser date change: yes
-# - Delete old raw data: after 6 months
+Matomo can anonymize IPs by default (no consent banner needed for basic stats)
+Settings → Privacy → Anonymize visitor information:
+- Anonymize IP addresses: last 2 bytes
+- Anonymize User ID: yes
+- Force new visit on browser date change: yes
+- Delete old raw data: after 6 months
 
-# Or use Matomo's Consent Manager plugin for full consent flow
+Or use Matomo's Consent Manager plugin for full consent flow
 ```
 
-## Nginx Reverse Proxy for Any of the Above
+Nginx Reverse Proxy for Any of the Above
 
 ```nginx
-# /etc/nginx/sites-available/analytics
+/etc/nginx/sites-available/analytics
 server {
     listen 443 ssl;
     server_name analytics.yourdomain.com;
@@ -238,12 +238,12 @@ server {
 }
 ```
 
-## Blocking Bot Traffic
+Blocking Bot Traffic
 
 All three tools have some bot filtering, but you can add your own at the nginx level:
 
 ```nginx
-# Add to your analytics nginx config
+Add to your analytics nginx config
 map $http_user_agent $is_bot {
     default         0;
     ~*bot           1;
@@ -263,22 +263,22 @@ server {
 }
 ```
 
-## Backup Your Analytics Data
+Backup Your Analytics Data
 
 ```bash
-# Plausible: backup PostgreSQL + ClickHouse
+Plausible: backup PostgreSQL + ClickHouse
 docker exec plausible_db pg_dump -U postgres plausible_db | gzip > /backup/plausible-pg-$(date +%Y%m%d).sql.gz
 docker exec plausible_events_db clickhouse-client --query="SELECT * FROM plausible_events_db.events FORMAT Native" | gzip > /backup/plausible-ch-$(date +%Y%m%d).gz
 
-# Umami: just PostgreSQL
+Umami: just PostgreSQL
 docker exec umami-db-1 pg_dump -U umami umami | gzip > /backup/umami-$(date +%Y%m%d).sql.gz
 
-# Matomo: MySQL + files
+Matomo: MySQL + files
 mysqldump -u matomo -p matomo | gzip > /backup/matomo-db-$(date +%Y%m%d).sql.gz
 tar czf /backup/matomo-files-$(date +%Y%m%d).tar.gz /var/www/html/matomo/
 ```
 
-## Related Articles
+Related Articles
 
 - [Google Analytics Tracking Alternatives That Respect User](/google-analytics-tracking-alternatives-that-respect-user-pri/)
 - [Privacy-Focused Alternatives to Google Analytics](/privacy-analytics-alternatives-google)
@@ -286,6 +286,6 @@ tar czf /backup/matomo-files-$(date +%Y%m%d).tar.gz /var/www/html/matomo/
 - [How To Configure Google Analytics Alternative For Gdpr](/how-to-configure-google-analytics-alternative-for-gdpr-compl/)
 - [iPhone Analytics And Improvement Data What Apple Collects](/iphone-analytics-and-improvement-data-what-apple-collects-an/)
 - [Best Self-Hosted AI Model for JavaScript TypeScript Code](https://bestremotetools.com/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

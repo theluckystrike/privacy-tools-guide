@@ -14,6 +14,6 @@ voice-checked: true
 intent-checked: true
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

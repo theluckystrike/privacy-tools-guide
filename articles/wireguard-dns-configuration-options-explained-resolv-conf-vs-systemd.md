@@ -25,9 +25,9 @@ voice-checked: true
 
 {% raw %}
 
-Configuring DNS properly with WireGuard is essential for privacy and functionality. When your VPN tunnel routes all traffic through WireGuard, you need to ensure DNS queries also go through the tunnel—otherwise your DNS requests could leak outside the encrypted connection, undermining your privacy. This guide covers the primary DNS configuration methods, comparing the traditional `/etc/resolv.conf` approach with the more modern `systemd-resolved` integration.
+Configuring DNS properly with WireGuard is essential for privacy and functionality. When your VPN tunnel routes all traffic through WireGuard, you need to ensure DNS queries also go through the tunnel, otherwise your DNS requests could leak outside the encrypted connection, undermining your privacy. This guide covers the primary DNS configuration methods, comparing the traditional `/etc/resolv.conf` approach with the more modern `systemd-resolved` integration.
 
-## Table of Contents
+Table of Contents
 
 - [Why DNS Configuration Matters with WireGuard](#why-dns-configuration-matters-with-wireguard)
 - [Method 1: Using wg-quick with the DNS Directive](#method-1-using-wg-quick-with-the-dns-directive)
@@ -38,13 +38,13 @@ Configuring DNS properly with WireGuard is essential for privacy and functionali
 - [Troubleshooting DNS Leaks](#troubleshooting-dns-leaks)
 - [Best Practices for WireGuard DNS](#best-practices-for-wireguard-dns)
 
-## Why DNS Configuration Matters with WireGuard
+Why DNS Configuration Matters with WireGuard
 
-WireGuard operates at the kernel level, handling encrypted tunnel traffic efficiently. However, DNS resolution happens separately from the VPN tunnel itself. By default, your system continues using the DNS servers configured by your ISP or network manager. This creates a DNS leak—your traffic may go through the VPN tunnel, but your DNS queries remain visible to your ISP and potentially other observers.
+WireGuard operates at the kernel level, handling encrypted tunnel traffic efficiently. However, DNS resolution happens separately from the VPN tunnel itself. By default, your system continues using the DNS servers configured by your ISP or network manager. This creates a DNS leak, your traffic may go through the VPN tunnel, but your DNS queries remain visible to your ISP and potentially other observers.
 
 Configuring DNS to work with WireGuard ensures that all your DNS queries also travel through the encrypted tunnel. This prevents DNS leaks and maintains consistent privacy regardless of which applications you're using. The method you choose depends on your Linux distribution, network setup, and whether you're running systemd.
 
-## Method 1: Using wg-quick with the DNS Directive
+Method 1: Using wg-quick with the DNS Directive
 
 The simplest approach for most users is using WireGuard's built-in `wg-quick` tool, which handles DNS configuration automatically through the tunnel interface settings. This method works on most Linux distributions and is the recommended approach for desktop and laptop configurations.
 
@@ -70,7 +70,7 @@ DNS = 1.1.1.1 1.0.0.1
 
 This method handles DNS configuration at the interface level, making it work system-wide once the tunnel is active. The DNS setting persists only while the tunnel is up, which is the desired behavior for most use cases.
 
-## Method 2: Direct /etc/resolv.conf Configuration
+Method 2: Direct /etc/resolv.conf Configuration
 
 The traditional method involves directly editing `/etc/resolv.conf`, which is the primary configuration file for DNS resolvers on most Unix-like systems. This file contains nameserver entries that define which DNS servers your system uses.
 
@@ -96,22 +96,22 @@ nameserver 9.9.9.9
 nameserver 149.112.112.112
 ```
 
-The main advantage of this method is transparency—you know exactly which DNS servers are being used. However, this approach has drawbacks: network manager services might overwrite your changes, the configuration doesn't automatically revert when the VPN disconnects, and you need to manually manage the DNS servers when switching between VPN and non-VPN states.
+The main advantage of this method is transparency, you know exactly which DNS servers are being used. However, this approach has drawbacks: network manager services might overwrite your changes, the configuration doesn't automatically revert when the VPN disconnects, and you need to manually manage the DNS servers when switching between VPN and non-VPN states.
 
 Some users create scripts to manage resolv.conf changes:
 
 ```bash
 #!/bin/bash
-# Save as /usr/local/bin/vpn-dns-up
+Save as /usr/local/bin/vpn-dns-up
 cp /etc/resolv.conf /etc/resolv.conf.backup
 echo "nameserver 1.1.1.1" > /etc/resolv.conf
 echo "nameserver 1.0.0.1" >> /etc/resolv.conf
 
-# Save as /usr/local/bin/vpn-dns-down
+Save as /usr/local/bin/vpn-dns-down
 cp /etc/resolv.conf.backup /etc/resolv.conf
 ```
 
-## Method 3: systemd-resolved Integration
+Method 3: systemd-resolved Integration
 
 Modern Linux distributions using systemd include systemd-resolved, which manages DNS configuration through a local stub resolver. This approach integrates cleanly with NetworkManager and provides benefits like DNS caching and split-tunneling support.
 
@@ -122,49 +122,49 @@ The first approach uses wg-quick's built-in systemd-resolved support. Modern ver
 Alternatively, you can configure DNS manually through systemd-resolved:
 
 ```bash
-# View current DNS configuration
+View current DNS configuration
 resolvectl status
 
-# Set DNS for a specific interface
+Set DNS for a specific interface
 sudo resolvectl dns wg0 1.1.1.1 1.0.0.1
 
-# Verify the configuration
+Verify the configuration
 resolvectl status wg0
 ```
 
 systemd-resolved supports domain-specific DNS routing, which is useful for split-tunnel configurations. You can route DNS for specific domains through different servers:
 
 ```bash
-# Route corporate domain through a different DNS when on VPN
+Route corporate domain through a different DNS when on VPN
 sudo resolvectl domain wg0 corporate.example.com ~internal.corp
 ```
 
 This flexibility makes systemd-resolved the preferred method for complex network configurations. The stub resolver also provides DNS caching, which can slightly improve response times for repeated queries.
 
-## Comparing resolv.conf and systemd-resolved
+Comparing resolv.conf and systemd-resolved
 
 The choice between these methods depends on your system configuration and requirements. Here's a practical comparison:
 
-**resolv.conf method advantages:**
+resolv.conf method advantages:
 - Works on all Unix-like systems, including non-systemd distributions
 - Transparent and easy to understand
 - No dependency on systemd services
 - Works consistently across different network setups
 
-**resolv.conf method disadvantages:**
+resolv.conf method disadvantages:
 - Can be overwritten by network managers
 - Requires manual management of VPN up/down scripts
 - No built-in DNS caching
 - May not persist across network changes
 
-**systemd-resolved advantages:**
+systemd-resolved advantages:
 - Automatic integration with NetworkManager
 - DNS caching improves performance
 - Supports domain-specific routing
 - Clean up/down handling with wg-quick
 - Modern and actively maintained
 
-**systemd-resolved disadvantages:**
+systemd-resolved disadvantages:
 - Requires systemd-based distribution
 - Slightly more complex to debug
 - Stub resolver adds a small overhead
@@ -172,7 +172,7 @@ The choice between these methods depends on your system configuration and requir
 
 For most desktop Linux users with modern distributions (Ubuntu 22.04+, Fedora, Arch), systemd-resolved with wg-quick provides the smoothest experience. For servers, embedded systems, or non-systemd distributions, the direct resolv.conf approach offers more control.
 
-## DNS Configuration for Mobile and Router Setups
+DNS Configuration for Mobile and Router Setups
 
 WireGuard runs on various platforms beyond Linux desktops, and DNS configuration varies accordingly.
 
@@ -190,34 +190,34 @@ config interface 'wg0'
 
 This ensures all devices behind the router use the VPN's DNS servers, providing leak protection for your entire network.
 
-## Troubleshooting DNS Leaks
+Troubleshooting DNS Leaks
 
 After configuring DNS with WireGuard, verify that your DNS requests aren't leaking:
 
 ```bash
-# Check which DNS server is currently in use
+Check which DNS server is currently in use
 cat /etc/resolv.conf
 
-# Test DNS resolution and see which server responds
+Test DNS resolution and see which server responds
 dig example.com
 
-# Use an online DNS leak test
-# Visit https://dnsleaktest.com or similar service
+Use an online DNS leak test
+Visit https://dnsleaktest.com or similar service
 ```
 
 If you're using systemd-resolved:
 
 ```bash
-# Check which DNS servers are active
+Check which DNS servers are active
 resolvectl status
 
-# Look for your WireGuard interface
+Look for your WireGuard interface
 resolvectl status wg0
 ```
 
 Common issues include NetworkManager overriding resolv.conf (solve by configuring NetworkManager to ignore VPN DNS), wg-quick not supporting your systemd version (update wg-quick or use manual configuration), and stub resolver conflicts (check `/etc/resolv.conf` points to 127.0.0.53).
 
-## Best Practices for WireGuard DNS
+Best Practices for WireGuard DNS
 
 When configuring DNS for WireGuard, consider these recommendations:
 
@@ -239,29 +239,29 @@ sudo resolvectl flush-caches
 
 Proper DNS configuration completes your WireGuard privacy setup. Whether you choose the simplicity of wg-quick's built-in handling or the flexibility of manual systemd-resolved configuration, ensuring DNS queries travel through your VPN tunnel prevents one of the most common privacy leaks in VPN setups.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does WireGuard offer a free tier?**
+Does WireGuard offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check WireGuard's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [How to Configure DNS over HTTPS Inside a VPN](/how-to-configure-dns-over-https-inside-vpn-tunnel/)
 - [How To Tell If Your Dns Has Been Hijacked Symptoms](/how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/)
@@ -269,5 +269,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Set Up Encrypted Dns To Bypass Dns Poisoning](/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
 - [How to Verify Your VPN is Not Leaking DNS Requests in 2026](/how-to-verify-your-vpn-is-not-leaking-dns-requests/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

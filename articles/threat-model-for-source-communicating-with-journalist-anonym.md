@@ -18,7 +18,7 @@ voice-checked: true
 
 Sources communicating with journalists must assume potential state-level compromise including OS-level exploits, network-level interception, and zero-day vulnerabilities; therefore use Tails Linux booted from USB for all sensitive communications, SecureDrop for anonymous document submission, Signal for messaging if using personal devices, and Tor for any internet access. Use a separate device unconnected to your identity, remove all metadata from documents using Mat2 or ExifTool, and establish out-of-band communication channels for verifying journalist identity. This guide provides a practical threat modeling framework covering adversary types, attack vectors, layered defenses, and operational discipline required for source-journalist relationships.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding the Threat ecosystem](#understanding-the-threat-ecosystem)
 - [Building Your Defensive Architecture](#building-your-defensive-architecture)
@@ -28,31 +28,31 @@ Sources communicating with journalists must assume potential state-level comprom
 - [Operational Security Discipline](#operational-security-discipline)
 - [Detecting Investigative Surveillance](#detecting-investigative-surveillance)
 
-## Understanding the Threat ecosystem
+Understanding the Threat ecosystem
 
 Sources communicating with journalists encounter adversaries with significant resources. Understanding who might attempt to compromise your communication determines which defenses matter most.
 
-### Primary Threat Actors
+Primary Threat Actors
 
-**State-level adversaries** possess capabilities that can compromise operating systems, intercept network traffic at infrastructure points, and deploy zero-day exploits. If you face this threat level, assume that any device connected to the internet may be compromised.
+State-level adversaries possess capabilities that can compromise operating systems, intercept network traffic at infrastructure points, and deploy zero-day exploits. If you face this threat level, assume that any device connected to the internet may be compromised.
 
-**Corporate entities** may use legal pressure, technical surveillance, or social engineering to identify sources. They often work through legal discovery, NSL letters, or direct technical compromise of devices.
+Corporate entities may use legal pressure, technical surveillance, or social engineering to identify sources. They often work through legal discovery, NSL letters, or direct technical compromise of devices.
 
-**Local adversaries** include anyone who might benefit from identifying you as a source—employers, family members, or local authorities. Their capabilities vary widely but should not be underestimated.
+Local adversaries include anyone who might benefit from identifying you as a source, employers, family members, or local authorities. Their capabilities vary widely but should not be underestimated.
 
-### Attack Vectors to Consider
+Attack Vectors to Consider
 
 Your threat model must account for multiple attack surfaces:
 
-- **Device compromise**: Malware, firmware attacks, or physical access to your devices
-- **Network surveillance**: ISP-level logging, WiFi interception, or traffic analysis
-- **Metadata leakage**: Communication patterns, timestamps, and contact associations
-- **Operational security failures**: Behavioral patterns, digital traces, or social engineering
-- **Legal pressure**: Subpoenas, warrants, or mandatory data retention
+- Device compromise: Malware, firmware attacks, or physical access to your devices
+- Network surveillance: ISP-level logging, WiFi interception, or traffic analysis
+- Metadata leakage: Communication patterns, timestamps, and contact associations
+- Operational security failures: Behavioral patterns, digital traces, or social engineering
+- Legal pressure: Subpoenas, warrants, or mandatory data retention
 
-## Building Your Defensive Architecture
+Building Your Defensive Architecture
 
-### Device Selection and Isolation
+Device Selection and Isolation
 
 The foundation of secure source communication starts with dedicated devices that never touch your normal digital life.
 
@@ -66,30 +66,30 @@ Consider using a dedicated laptop or mobile device purchased with cash, never as
 For maximum protection, use an air-gapped machine for the most sensitive communications, transferring messages via encrypted USB drives using a procedure like this:
 
 ```bash
-# Verify USB drive integrity before use
+Verify USB drive integrity before use
 sudo cryptsetup luksFormat /dev/sdX
-# Create encrypted container
+Create encrypted container
 sudo cryptsetup luksOpen /dev/sdX secure_container
 sudo mkfs.ext4 /dev/mapper/secure_container
-# Mount and use for file transfer
+Mount and use for file transfer
 sudo mount /dev/mapper/secure_container /mnt/secure/
 ```
 
-### Communication Channel Selection
+Communication Channel Selection
 
 Choose communication channels based on your threat model:
 
-**Secure messaging apps** like Signal provide excellent forward secrecy and end-to-end encryption. However, they require phone number registration and store contact information on devices. Use a burner phone number registered with cash for maximum privacy.
+Secure messaging apps like Signal provide excellent forward secrecy and end-to-end encryption. However, they require phone number registration and store contact information on devices. Use a burner phone number registered with cash for maximum privacy.
 
-**Email with PGP encryption** offers asynchronous communication without phone number requirements. The learning curve is higher, but metadata exposure is reduced:
+Email with PGP encryption offers asynchronous communication without phone number requirements. The learning curve is higher, but metadata exposure is reduced:
 
 ```python
-# Example PGP encryption workflow using python-gnupg
+Example PGP encryption workflow using python-gnupg
 from gnupg import GPG
 
 gpg = GPG(gnupghome='/path/to/gpg/home')
 
-# Encrypt message for journalist's public key
+Encrypt message for journalist's public key
 public_key_data = open('journalist_pubkey.asc').read()
 gpg.import_keys(public_key_data)
 
@@ -102,23 +102,23 @@ encrypted = gpg.encrypt(
 print(str(encrypted))
 ```
 
-**Secure drop systems** like SecureDrop provide institutionalized protection, but require institutional setup and trust in the organization's infrastructure.
+Secure drop systems like SecureDrop provide institutionalized protection, but require institutional setup and trust in the organization's infrastructure.
 
-### Network Operational Security
+Network Operational Security
 
 Your network connection reveals significant information about your communication patterns.
 
 Tor browser provides anonymity by routing traffic through multiple relays, obscuring your IP address and preventing simple traffic analysis:
 
 ```bash
-# Verify Tor is working correctly
-# Check your IP appears different
+Verify Tor is working correctly
+Check your IP appears different
 curl -s https://check.torproject.org/api/ip
 ```
 
 Use Tor for all sensitive communications. Avoid logging into personal accounts or revealing identifying information while using Tor. Consider using Tor in a TAILS live operating system for added protection.
 
-### Metadata Protection
+Metadata Protection
 
 Even with encrypted communications, metadata can reveal your network:
 
@@ -130,27 +130,27 @@ Even with encrypted communications, metadata can reveal your network:
 | Message Length | Low | Padding can help |
 | Communication Frequency | Medium | Vary communication patterns |
 
-## Operational Security Practices
+Operational Security Practices
 
-### Identity Separation
+Identity Separation
 
 Maintain strict separation between your source identity and normal digital presence:
 
-- **Separate devices**: Never use your source device for personal activities
-- **Separate identities**: Create entirely new email addresses, phone numbers, and accounts
-- **Separate locations**: Access sensitive communications from unexpected locations when possible
-- **Separate behaviors**: Your browsing patterns, typing speed, and timing can fingerprint you
+- Separate devices: Never use your source device for personal activities
+- Separate identities: Create entirely new email addresses, phone numbers, and accounts
+- Separate locations: Access sensitive communications from unexpected locations when possible
+- Separate behaviors: Your browsing patterns, typing speed, and timing can fingerprint you
 
-### Communication Discipline
+Communication Discipline
 
 Establish protocols that minimize risk:
 
-1. **Pre-agreed security words**: Establish codes for urgent situations
-2. **Scheduled check-ins**: Agree on regular communication windows
-3. **Dead drop protocols**: Establish fallback methods if primary channels fail
-4. **Automatic message deletion**: Configure messages to delete after reading
+1. Pre-agreed security words: Establish codes for urgent situations
+2. Scheduled check-ins: Agree on regular communication windows
+3. Dead drop protocols: Establish fallback methods if primary channels fail
+4. Automatic message deletion: Configure messages to delete after reading
 
-### Physical Security
+Physical Security
 
 Digital security means nothing without physical security:
 
@@ -159,19 +159,19 @@ Digital security means nothing without physical security:
 - Never leave devices unlocked or unattended
 - Consider faraday bags for storing sensitive devices
 
-## Recovery and Incident Response
+Recovery and Incident Response
 
-### If You Suspect Compromise
+If You Suspect Compromise
 
 Have a pre-planned response:
 
-1. **Immediately stop** using compromised devices for sensitive communication
-2. **Power down** devices—do not reboot, as startup may trigger evidence destruction
-3. **Preserve evidence**: If safe, image the device before any cleanup
-4. **Switch to backup channels** using pre-established protocols
-5. **Notify your journalist** through a secure fallback method
+1. Immediately stop using compromised devices for sensitive communication
+2. Power down devices, do not reboot, as startup may trigger evidence destruction
+3. Preserve evidence: If safe, image the device before any cleanup
+4. Switch to backup channels using pre-established protocols
+5. Notify your journalist through a secure fallback method
 
-### Backup Communication Plans
+Backup Communication Plans
 
 Always maintain redundant communication methods:
 
@@ -180,12 +180,12 @@ Always maintain redundant communication methods:
 - Tertiary: Encrypted dead drop using secure file hosting
 - Emergency: Physical dead drop with pre-arranged location
 
-## Technical Detection Vectors and Countermeasures
+Technical Detection Vectors and Countermeasures
 
 Sophisticated adversaries use multiple detection methods. Understanding each improves your defense:
 
 ```python
-# Attack vectors and countermeasures for source-journalist communication
+Attack vectors and countermeasures for source-journalist communication
 
 class SourceThreatVectors:
     """Technical attacks that could identify sources"""
@@ -272,19 +272,19 @@ class SourceThreatVectors:
         return metrics
 ```
 
-## Operational Security Discipline
+Operational Security Discipline
 
 Technical tools fail without operational discipline:
 
 ```bash
 #!/bin/bash
-# Source operational security checklist
+Source operational security checklist
 
 echo "=== SOURCE COMMUNICATION OPSEC ==="
 
-# 1. DEVICE PREPARATION
+1. DEVICE PREPARATION
 echo "1. Device isolation check"
-# Verify device is air-gapped or isolated
+Verify device is air-gapped or isolated
 if [ -f ~/.ssh/config ]; then
     echo "  WARNING: SSH config detected - may indicate identity linkage"
 fi
@@ -293,45 +293,45 @@ if pgrep -l dropbox > /dev/null; then
     killall dropbox
 fi
 
-# 2. NETWORK VERIFICATION
+2. NETWORK VERIFICATION
 echo "2. Network identity verification"
-# Verify Tor is working
+Verify Tor is working
 curl -s https://check.torproject.org/api/ip | jq '.IsTor'
-# Should return: true
+Should return: true
 
-# 3. COMMUNICATION PREPARATION
+3. COMMUNICATION PREPARATION
 echo "3. Document preparation"
-# Strip metadata from documents
+Strip metadata from documents
 find . -name "*.pdf" -o -name "*.docx" | while read file; do
     mat2 --inplace "$file"
     echo "  Stripped: $file"
 done
 
-# 4. PRE-COMMUNICATION VERIFICATION
+4. PRE-COMMUNICATION VERIFICATION
 echo "4. Verify journalist identity before first contact"
-# Check PGP key fingerprint through multiple sources
-# - Published on website
-# - In WhatsApp about section
-# - On Twitter verified check
-# If all three match, likely legitimate
+Check PGP key fingerprint through multiple sources
+- Published on website
+- In WhatsApp about section
+- On Twitter verified check
+If all three match, likely legitimate
 
-# 5. POST-COMMUNICATION CLEANUP
+5. POST-COMMUNICATION CLEANUP
 echo "5. Communication cleanup"
-# Clear all traces
+Clear all traces
 history -c
 sudo shred -vfz -n 5 ~/.bash_history
 pkill -f signal  # Kill Signal process
-# Unplug USB device, reboot
+Unplug USB device, reboot
 
 echo "=== OPSEC COMPLETE ==="
 ```
 
-## Detecting Investigative Surveillance
+Detecting Investigative Surveillance
 
 If authorities or adversaries are investigating you:
 
 ```python
-# Warning signs of active investigation
+Warning signs of active investigation
 
 warning_signs = {
     'social_engineering': [
@@ -375,29 +375,29 @@ def respond_to_compromise():
     return steps
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Threat Model Assessment For High Risk Journalist In Hostile](/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
 - [Threat Model For Political Dissident In Surveillance State](/threat-model-for-political-dissident-in-surveillance-state-2/)
@@ -405,5 +405,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Threat Model For Transgender Person Protecting Deadname](/threat-model-for-transgender-person-protecting-deadname-and-/)
 - [Threat Model For Sex Worker Protecting Real Identity](/threat-model-for-sex-worker-protecting-real-identity-and-location/)
 - [Best Self Hosted AI Model for Writing SQL Queries from](https://bestremotetools.com/best-self-hosted-ai-model-for-writing-sql-queries-from-natural-language/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

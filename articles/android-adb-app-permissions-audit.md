@@ -16,39 +16,39 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-Android's Settings menu shows permissions per app, but it's slow and incomplete — it doesn't show you which apps have which permission groups in bulk. ADB (Android Debug Bridge) lets you query and modify permissions across all installed apps from your computer in seconds.
+Android's Settings menu shows permissions per app, but it's slow and incomplete. it doesn't show you which apps have which permission groups in bulk. ADB (Android Debug Bridge) lets you query and modify permissions across all installed apps from your computer in seconds.
 
 This guide covers extracting a full permissions audit, finding problematic grants, and revoking permissions without uninstalling apps.
 
-## Key Takeaways
+Key Takeaways
 
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Whether you are evaluating**: options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
-- **Open-source options can fill**: some gaps if you are willing to handle setup and maintenance yourself.
+- Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
+- Mastering advanced features takes: 1-2 weeks of regular use.
+- Focus on the 20%: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- Whether you are evaluating: options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
+- Open-source options can fill: some gaps if you are willing to handle setup and maintenance yourself.
 
-## Prerequisites
+Prerequisites
 
-### Enable USB Debugging on Android
+Enable USB Debugging on Android
 
 1. Settings > About Phone > tap "Build number" 7 times (enables Developer Options)
 2. Settings > Developer Options > USB debugging > Enable
 3. Connect phone to computer via USB
 
-### Install ADB on Your Computer
+Install ADB on Your Computer
 
 ```bash
-# Ubuntu/Debian
+Ubuntu/Debian
 sudo apt install adb
 
-# macOS
+macOS
 brew install android-platform-tools
 
-# Windows — download Platform Tools from:
-# https://developer.android.com/studio/releases/platform-tools
-# Add to PATH after extracting
+Windows. download Platform Tools from:
+https://developer.android.com/studio/releases/platform-tools
+Add to PATH after extracting
 ```
 
 Verify connection:
@@ -65,28 +65,28 @@ R5CNA1234B   device
 
 If it shows "unauthorized", check your phone for the "Allow USB debugging" prompt and accept it.
 
-## List All Installed Apps
+List All Installed Apps
 
 Get a complete list of installed package names:
 
 ```bash
-# All packages
+All packages
 adb shell pm list packages
 
-# Third-party (non-system) apps only
+Third-party (non-system) apps only
 adb shell pm list packages -3
 
-# System apps only
+System apps only
 adb shell pm list packages -s
 
-# Include APK path
+Include APK path
 adb shell pm list packages -f -3
 ```
 
 To map package names to human-readable app names:
 
 ```bash
-# For each package, get the label
+For each package, get the label
 adb shell pm list packages -3 | sed 's/package://' | while read pkg; do
   label=$(adb shell dumpsys package "$pkg" 2>/dev/null | grep "versionName" | head -1)
   echo "$pkg: $label"
@@ -102,15 +102,15 @@ adb shell cmd package list packages -3 | cut -d: -f2 | while IFS= read -r pkg; d
 done
 ```
 
-## Dump All Permissions for All Apps
+Dump All Permissions for All Apps
 
 Get a complete permissions dump:
 
 ```bash
-# Full package info for all installed apps
+Full package info for all installed apps
 adb shell dumpsys package > /tmp/packages_full.txt
 
-# Extract just the granted permissions
+Extract just the granted permissions
 grep -A100 "^Package \[" /tmp/packages_full.txt | grep -E "(Package \[|grantedPermissions|android.permission)" > /tmp/permissions_summary.txt
 ```
 
@@ -130,43 +130,43 @@ View the results:
 cat /tmp/app_permissions.txt | grep -B2 "LOCATION\|CAMERA\|MICROPHONE\|CONTACTS\|READ_SMS\|CALL_LOG"
 ```
 
-## Find Specific High-Risk Permissions
+Find Specific High-Risk Permissions
 
 Search for apps with specific sensitive permissions:
 
 ```bash
-# Apps with location access
+Apps with location access
 adb shell dumpsys package | grep -B20 "android.permission.ACCESS_FINE_LOCATION" | grep "Package \["
 
-# Apps with camera access
+Apps with camera access
 adb shell dumpsys package | grep -B20 "android.permission.CAMERA" | grep "Package \["
 
-# Apps with microphone access
+Apps with microphone access
 adb shell dumpsys package | grep -B20 "android.permission.RECORD_AUDIO" | grep "Package \["
 
-# Apps with contacts access
+Apps with contacts access
 adb shell dumpsys package | grep -B20 "android.permission.READ_CONTACTS" | grep "Package \["
 
-# Apps that can read SMS (very sensitive)
+Apps that can read SMS (very sensitive)
 adb shell dumpsys package | grep -B20 "android.permission.READ_SMS" | grep "Package \["
 
-# Apps with call log access
+Apps with call log access
 adb shell dumpsys package | grep -B20 "android.permission.READ_CALL_LOG" | grep "Package \["
 ```
 
-## Check a Specific App's Permissions
+Check a Specific App's Permissions
 
 Inspect exactly what one app has been granted:
 
 ```bash
-# Replace com.example.app with the actual package name
+Replace com.example.app with the actual package name
 adb shell dumpsys package com.example.app | grep -A200 "grantedPermissions"
 ```
 
 Or use the cleaner appops approach:
 
 ```bash
-# See current permission states for an app
+See current permission states for an app
 adb shell appops get com.example.app
 ```
 
@@ -180,21 +180,21 @@ Package com.example.app:
   ...
 ```
 
-## Revoke Permissions via ADB
+Revoke Permissions via ADB
 
 Revoke a specific permission without uninstalling the app:
 
 ```bash
-# Syntax: adb shell pm revoke <package> <permission>
+Syntax: adb shell pm revoke <package> <permission>
 
-# Revoke location from a weather app
+Revoke location from a weather app
 adb shell pm revoke com.weather.example android.permission.ACCESS_FINE_LOCATION
 adb shell pm revoke com.weather.example android.permission.ACCESS_COARSE_LOCATION
 
-# Revoke microphone from a utility app
+Revoke microphone from a utility app
 adb shell pm revoke com.utility.example android.permission.RECORD_AUDIO
 
-# Revoke contacts access
+Revoke contacts access
 adb shell pm revoke com.social.example android.permission.READ_CONTACTS
 adb shell pm revoke com.social.example android.permission.WRITE_CONTACTS
 ```
@@ -202,32 +202,32 @@ adb shell pm revoke com.social.example android.permission.WRITE_CONTACTS
 Revoke multiple permissions from an app at once:
 
 ```bash
-# Revoke all location permissions from a specific app
+Revoke all location permissions from a specific app
 for perm in ACCESS_FINE_LOCATION ACCESS_COARSE_LOCATION ACCESS_BACKGROUND_LOCATION; do
   adb shell pm revoke com.suspicious.app "android.permission.$perm"
   echo "Revoked $perm from com.suspicious.app"
 done
 ```
 
-## Use appops for Finer Control
+Use appops for Finer Control
 
-`appops` gives you more granular control than `pm revoke` — you can set a permission to "ignore" (silently fail) rather than fully revoking it (which can cause app crashes or popups):
+`appops` gives you more granular control than `pm revoke`. you can set a permission to "ignore" (silently fail) rather than fully revoking it (which can cause app crashes or popups):
 
 ```bash
-# Ignore (silently deny) instead of revoke
+Ignore (silently deny) instead of revoke
 adb shell appops set com.example.app CAMERA ignore
 
-# Operations you can control
-# CAMERA, RECORD_AUDIO, READ_CONTACTS, WRITE_CONTACTS
-# ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, ACCESS_BACKGROUND_LOCATION
-# READ_CALL_LOG, WRITE_CALL_LOG, READ_SMS, SEND_SMS
-# PROCESS_OUTGOING_CALLS
+Operations you can control
+CAMERA, RECORD_AUDIO, READ_CONTACTS, WRITE_CONTACTS
+ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, ACCESS_BACKGROUND_LOCATION
+READ_CALL_LOG, WRITE_CALL_LOG, READ_SMS, SEND_SMS
+PROCESS_OUTGOING_CALLS
 
-# Reset to default (prompts user again next time)
+Reset to default (prompts user again next time)
 adb shell appops set com.example.app CAMERA default
 ```
 
-## Bulk Audit Script
+Bulk Audit Script
 
 Save this script as `audit_permissions.sh`:
 
@@ -271,58 +271,58 @@ chmod +x audit_permissions.sh
 cat permission_report.txt
 ```
 
-## Monitor App Network Activity
+Monitor App Network Activity
 
 Combine permission audit with network monitoring:
 
 ```bash
-# See which apps have open network connections
+See which apps have open network connections
 adb shell cat /proc/net/tcp6 | awk '{print $3}' | while read hex; do
   port=$(printf "%d" 0x${hex##*:})
   echo $port
 done | sort -u
 
-# Or use the more readable approach
+Or use the more readable approach
 adb shell dumpsys netstats | grep -E "iface=|uid=" | head -50
 ```
 
-## Re-enable Debugging After Audit
+Re-enable Debugging After Audit
 
 When finished:
 
 ```bash
-# Disconnect ADB
+Disconnect ADB
 adb disconnect
 
-# On phone: Settings > Developer Options > Disable USB debugging
-# Or: Settings > Developer Options (toggle off entirely)
+On phone: Settings > Developer Options > Disable USB debugging
+Or: Settings > Developer Options (toggle off entirely)
 ```
 
-Leaving USB debugging enabled is a security risk — a malicious charger or USB cable could silently connect.
+Leaving USB debugging enabled is a security risk. a malicious charger or USB cable could silently connect.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Android App Permissions Audit Guide 2026](/android-app-permissions-audit-guide-2026/)
 - [How to Audit Android App Permissions (2026)](/android-adb-app-permissions-audit/)
@@ -330,14 +330,14 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Audit Android App Permissions: Step-by-Step Guide](/how-to-audit-android-app-permissions-guide/)
 - [Android Storage Scopes How Modern Permissions Limit App Acce](/android-storage-scopes-how-modern-permissions-limit-app-acce/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Related Reading
+Related Reading
 
 - [How to Audit Android App Permissions Privacy Guide 2026](/how-to-audit-android-app-permissions-privacy-guide-2026/)
 - [How to Audit Android App Permissions: Step-by-Step Guide](/how-to-audit-android-app-permissions-guide/)
 - [How To Audit Android App Permissions And Revoke Unnecessary](/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -17,21 +17,21 @@ tags: [privacy-tools-guide, vpn]
 
 Running your own OpenVPN server on a VPS gives you a private VPN that no commercial provider can log. This guide uses Easy-RSA for certificate management, TLS authentication to block port scans, and modern cipher selection.
 
-## Prerequisites
+Prerequisites
 
 - Ubuntu 22.04 VPS with root access
 - A public IPv4 address
 - UDP port 1194 open
 - Clients with OpenVPN client software
 
-## Step 1: Install OpenVPN and Easy-RSA
+Step 1: Install OpenVPN and Easy-RSA
 
 ```bash
 sudo apt update && sudo apt install openvpn easy-rsa
 openvpn --version | head -1
 ```
 
-## Step 2: Set Up the Certificate Authority
+Step 2: Set Up the Certificate Authority
 
 ```bash
 mkdir -p ~/openvpn-ca
@@ -40,10 +40,10 @@ cd ~/openvpn-ca
 
 ./easyrsa init-pki
 ./easyrsa build-ca nopass
-# Enter "OpenVPN-CA" as Common Name
+Enter "OpenVPN-CA" as Common Name
 ```
 
-## Step 3: Generate Server Certificate and Keys
+Step 3: Generate Server Certificate and Keys
 
 ```bash
 cd ~/openvpn-ca
@@ -51,28 +51,28 @@ cd ~/openvpn-ca
 ./easyrsa gen-req server nopass
 ./easyrsa sign-req server server
 
-# DH parameters
+DH parameters
 ./easyrsa gen-dh
 
-# TLS auth key
+TLS auth key
 openvpn --genkey secret ta.key
 
-# Copy to OpenVPN directory
+Copy to OpenVPN directory
 sudo cp pki/ca.crt pki/issued/server.crt pki/private/server.key \
   pki/dh.pem ta.key /etc/openvpn/server/
 sudo chmod 600 /etc/openvpn/server/*.key /etc/openvpn/server/*.pem
 ```
 
-## Step 4: Generate Client Certificate
+Step 4: Generate Client Certificate
 
 ```bash
 cd ~/openvpn-ca
 ./easyrsa gen-req alice nopass
 ./easyrsa sign-req client alice
-# Client needs: ca.crt, alice.crt, alice.key, ta.key
+Client needs: ca.crt, alice.crt, alice.key, ta.key
 ```
 
-## Step 5: Server Configuration
+Step 5: Server Configuration
 
 Create `/etc/openvpn/server/server.conf`:
 
@@ -110,27 +110,27 @@ status /var/log/openvpn/status.log 30
 log-append /var/log/openvpn/openvpn.log
 verb 3
 
-# Compression disabled (VORACLE vulnerability)
+Compression disabled (VORACLE vulnerability)
 compress
 ```
 
-## Step 6: Enable IP Forwarding and NAT
+Step 6: Enable IP Forwarding and NAT
 
 ```bash
 echo "net.ipv4.ip_forward = 1" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 
-# Get your public interface name
+Get your public interface name
 ip route get 8.8.8.8 | grep dev | awk '{print $5}'
 
-# Add NAT rule (replace eth0 with your interface)
+Add NAT rule (replace eth0 with your interface)
 sudo iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 
 sudo apt install iptables-persistent
 sudo netfilter-persistent save
 ```
 
-## Step 7: Start OpenVPN
+Step 7: Start OpenVPN
 
 ```bash
 sudo mkdir -p /var/log/openvpn
@@ -139,11 +139,11 @@ sudo systemctl status openvpn-server@server
 sudo journalctl -u openvpn-server@server -f
 ```
 
-## Step 8: Create Client Configuration File
+Step 8: Create Client Configuration File
 
 ```bash
 #!/bin/bash
-# generate-client.sh
+generate-client.sh
 CLIENT="alice"
 CA_DIR="$HOME/openvpn-ca"
 SERVER_IP="YOUR_VPS_IP"
@@ -183,7 +183,7 @@ EOF
 echo "Client config written to ${CLIENT}.ovpn"
 ```
 
-## Step 9: Revoking a Client
+Step 9: Revoking a Client
 
 ```bash
 cd ~/openvpn-ca
@@ -191,33 +191,33 @@ cd ~/openvpn-ca
 ./easyrsa gen-crl
 
 sudo cp pki/crl.pem /etc/openvpn/server/
-# Add to server.conf: crl-verify /etc/openvpn/server/crl.pem
+Add to server.conf: crl-verify /etc/openvpn/server/crl.pem
 sudo systemctl restart openvpn-server@server
 ```
 
-## Verify
+Verify
 
 ```bash
 ip addr show tun0
 sudo cat /var/log/openvpn/status.log
-# From client: curl https://ifconfig.me (should show VPS IP)
+From client: curl https://ifconfig.me (should show VPS IP)
 ```
 
-## Split Tunneling: Route Only Specific Traffic Through VPN
+Split Tunneling: Route Only Specific Traffic Through VPN
 
 Full tunnel (redirect-gateway) routes all client traffic through the VPS. Split tunneling sends only specific subnets through the VPN, leaving other traffic on the client's local internet.
 
 Remove the redirect-gateway push directive and replace it with specific routes:
 
 ```conf
-# server.conf — split tunnel example
-# Do NOT push redirect-gateway
+server.conf. split tunnel example
+Do NOT push redirect-gateway
 
-# Route internal subnet through VPN
+Route internal subnet through VPN
 push "route 10.0.0.0 255.255.0.0"
 push "route 192.168.1.0 255.255.255.0"
 
-# Push DNS only for internal resolution
+Push DNS only for internal resolution
 push "dhcp-option DNS 10.8.0.1"
 ```
 
@@ -231,24 +231,24 @@ Use split tunneling when:
 Verify routing after connection:
 
 ```bash
-# On client after connecting
+On client after connecting
 ip route show
-# Should see: 10.0.0.0/16 via 10.8.0.1 dev tun0
-# Default route should still point to local gateway, not tun0
+Should see: 10.0.0.0/16 via 10.8.0.1 dev tun0
+Default route should still point to local gateway, not tun0
 curl https://ifconfig.me  # Should show client's ISP IP, not VPS IP
 ```
 
-## Hardening: Block DNS Leaks and IPv6
+Hardening: Block DNS Leaks and IPv6
 
 A DNS leak occurs when the client resolves DNS through the ISP's resolver even while connected to VPN. Push DNS servers through the tunnel and disable IPv6 to prevent leaks:
 
 ```conf
-# server.conf additions
+server.conf additions
 push "dhcp-option DNS 10.8.0.1"
 push "dhcp-option DNS 1.1.1.1"
 push "block-outside-dns"  # Windows only, prevents DNS leaks on Windows clients
 
-# Disable IPv6 pushing to prevent v6 leaks
+Disable IPv6 pushing to prevent v6 leaks
 tun-ipv6 no
 ```
 
@@ -256,7 +256,7 @@ On the VPS, run an unbound or dnsmasq resolver that listens on `10.8.0.1` to han
 
 ```bash
 sudo apt install unbound
-# /etc/unbound/unbound.conf.d/openvpn.conf
+/etc/unbound/unbound.conf.d/openvpn.conf
 cat <<'EOF' | sudo tee /etc/unbound/unbound.conf.d/openvpn.conf
 server:
     interface: 10.8.0.1
@@ -273,12 +273,12 @@ sudo systemctl enable --now unbound
 Clients verify there are no leaks with:
 
 ```bash
-# Test on client after connecting
+Test on client after connecting
 dig +short whoami.akamai.net  # Should resolve through VPS IP
-# Or use https://dnsleaktest.com
+Or use https://dnsleaktest.com
 ```
 
-## Related Articles
+Related Articles
 
 - [Configure Openvpn With Obfuscation For Censored Networks](/how-to-configure-openvpn-with-obfuscation-for-censored-networks/)
 - [OpenVPN Access Server vs Community Edition](/openvpn-access-server-vs-community-edition-differences-features-2026/)
@@ -286,6 +286,6 @@ dig +short whoami.akamai.net  # Should resolve through VPS IP
 - [Set Up a Personal VPN with WireGuard](/wireguard-personal-vpn-setup-guide)
 - [Openvpn Tls Auth Vs Tls Crypt Difference Security Comparison](/openvpn-tls-auth-vs-tls-crypt-difference-security-comparison/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

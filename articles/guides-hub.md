@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy & Security Guides Hub"
-description: "Browse every privacy and security guide — VPN setup, password managers, encrypted messaging, browser hardening, and more."
+description: "Browse every privacy and security guide. VPN setup, password managers, encrypted messaging, browser hardening, and more."
 date: 2026-03-22
 last_modified_at: 2026-03-22
 permalink: /guides-hub/
@@ -15,7 +15,7 @@ tags: [privacy-tools-guide]
 
 Everything you need to protect your digital privacy, organized by topic. Each guide is technically reviewed and scored for depth and accuracy.
 
-## Table of Contents
+Table of Contents
 
 - [Guides](#guides)
 - [Comparisons](#comparisons)
@@ -26,9 +26,9 @@ Everything you need to protect your digital privacy, organized by topic. Each gu
 - [Ai Tools](#ai-tools)
 - [Privacy Tools](#privacy-tools)
 
-**914 articles** organized by category.
+914 articles organized by category.
 
-## Guides
+Guides
 
 - [1password Cli Secrets Management Guide](/1password-cli-secrets-management-guide/)
 - [1Password Masked Email Feature Review: A Developer Guide](/1password-masked-email-feature-review/)
@@ -897,7 +897,7 @@ Everything you need to protect your digital privacy, organized by topic. Each gu
 - [WireGuard Postup Postdown Scripts For Advanced Routing](/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
 - [YubiKey vs Titan Security Key: A Developer Comparison](/yubikey-vs-titan-security-key-comparison/)
 
-## Comparisons
+Comparisons
 
 - [1Password Families Plan Review 2026: Is It Worth It](/1password-families-plan-review-2026/)
 - [1Password vs Dashlane Comparison 2026: Which Is Better](/1password-vs-dashlane-comparison-2026/)
@@ -912,13 +912,13 @@ Everything you need to protect your digital privacy, organized by topic. Each gu
 - [GitHub Pull Request Workflow For Distributed Teams](/github-pull-request-workflow-for-distributed-teams/)
 - [Password Manager Phishing Protection Compared](/password-manager-phishing-protection-compared/)
 
-## Best Of Lists
+Best Of Lists
 
 - [Best Anonymous Email Service 2026: A Privacy-Focused Guide](/best-anonymous-email-service-2026/)
 - [Best Encrypted Email Service 2026: A Developer Guide](/best-encrypted-email-service-2026/)
 - [Best Secure Alternative to Gmail 2026: A Developer Guide](/best-secure-alternative-to-gmail-2026/)
 
-## Troubleshooting
+Troubleshooting
 
 - [Dating App Notification Privacy Preventing Matches](/dating-app-notification-privacy-preventing-matches-and-messa/)
 - [Email Security Headers Dmarc Dkim Spf Setup To Prevent](/email-security-headers-dmarc-dkim-spf-setup-to-prevent-spoofing/)
@@ -926,7 +926,7 @@ Everything you need to protect your digital privacy, organized by topic. Each gu
 - [How To Tell If Your Phone Has Been Jailbroken](/how-to-tell-if-your-phone-has-been-jailbroken-without-consent/)
 - [VPN Certificate Pinning How It Prevents Mitm Attacks](/vpn-certificate-pinning-how-it-prevents-mitm-attacks-explained/)
 
-## Security
+Security
 
 - [1Password vs LastPass: Which Survived Their Breaches?](/1password-vs-lastpass-which-survived-breach/)
 - [Android Custom ROM Privacy Comparison 2026](/android-custom-rom-privacy-comparison-2026/)
@@ -952,16 +952,16 @@ Everything you need to protect your digital privacy, organized by topic. Each gu
 - [Protect Yourself from Credential Stuffing Attack](/how-to-protect-yourself-from-credential-stuffing-attack-pass/)
 - [to Physical Mail Privacy: Preventing Address Harvesting](/complete-guide-to-physical-mail-privacy-preventing-address-h/)
 
-## Privacy
+Privacy
 
 - [Anonymous Prepaid Sim Card Countries Where You Can Buy](/anonymous-prepaid-sim-card-countries-where-you-can-buy-without-id-2026/)
 - [Insurance Agent Client Health Data Privacy Protection Setup](/insurance-agent-client-health-data-privacy-protection-setup/)
 - [VPN for Using Snapchat in Countries Where Restricted 2026](/vpn-for-using-snapchat-in-countries-where-restricted-2026/)
 
-## Ai Tools
+Ai Tools
 
 - [ChatGPT Voice Mode Not Working Fix 2026](/chatgpt-voice-mode-not-working-fix-2026/)
 
-## Privacy Tools
+Privacy Tools
 
 - [Protect Client Photos: Privacy Best Practices](/photographer-client-photo-privacy-protection-cloud-storage/)

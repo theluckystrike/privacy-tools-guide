@@ -15,7 +15,7 @@ intent-checked: true
 ---
 
 {% raw %}
-## The Email Privacy Problem
+The Email Privacy Problem
 
 
 Gmail reads your emails to serve ads. ProtonMail is closed-source. Mailbox.org (privacy-focused) is owned by T-Online (German mega-corp). The only way to guarantee privacy: self-host.
@@ -30,7 +30,7 @@ This guide covers five self-hosted email platforms and helps you choose based on
 ---
 
 
-## Table of Contents
+Table of Contents
 
 - [The Self-Hosted Email Market](#the-self-hosted-email-market)
 - [Mail-in-a-Box: Easiest Setup](#mail-in-a-box-easiest-setup)
@@ -45,7 +45,7 @@ This guide covers five self-hosted email platforms and helps you choose based on
 - [Bottom Line](#bottom-line)
 - [Related Reading](#related-reading)
 
-## The Self-Hosted Email Market
+The Self-Hosted Email Market
 
 | Solution | Setup Time | Monthly Cost | Maintenance | Spam Fighting |
 |----------|-----------|--------------|-------------|---------------|
@@ -57,11 +57,11 @@ This guide covers five self-hosted email platforms and helps you choose based on
 
 ---
 
-## Mail-in-a-Box: Easiest Setup
+Mail-in-a-Box: Easiest Setup
 
 Mail-in-a-Box is purpose-built for privacy advocates who don't want to spend 10 hours configuring email.
 
-### What's Included
+What's Included
 ```
 - Postfix (SMTP server)
 - Dovecot (IMAP/POP3)
@@ -72,26 +72,26 @@ Mail-in-a-Box is purpose-built for privacy advocates who don't want to spend 10 
 - Backup system (daily to B2/S3)
 ```
 
-### Installation
+Installation
 
 ```bash
-# Step 1: Rent a VPS
-# Recommended: Linode, DigitalOcean, Hetzner
-# Specs: 2GB RAM, 2 CPU, 40GB SSD
-# Cost: $10-20/month
+Step 1: Rent a VPS
+Recommended: Linode, DigitalOcean, Hetzner
+Specs: 2GB RAM, 2 CPU, 40GB SSD
+Cost: $10-20/month
 
-# Step 2: Install Mail-in-a-Box
+Step 2: Install Mail-in-a-Box
 curl https://mailinabox.email/setup.sh | sudo bash
 
-# Step 3: Access admin panel
-# https://your-domain.com/admin
-# Login with password set during install
+Step 3: Access admin panel
+https://your-domain.com/admin
+Login with password set during install
 
-# Step 4: Add email addresses
-# Admin panel > Mail > Add email address
+Step 4: Add email addresses
+Admin panel > Mail > Add email address
 ```
 
-### Pricing Breakdown
+Pricing Breakdown
 
 ```
 VPS (Linode 2GB):           $12/month
@@ -103,9 +103,9 @@ For 5 email addresses: $3.80 per address
 vs. ProtonMail: $5/month for 1 address
 ```
 
-### Key Features
+Key Features
 
-**Webmail (Roundcube):**
+Webmail (Roundcube):
 ```
 Access via: https://mail.your-domain.com
 Web-based email client
@@ -114,18 +114,18 @@ No app installation needed
 Can't match native Mail.app performance (acceptable)
 ```
 
-**Spam Filtering:**
+Spam Filtering:
 ```
 Mail-in-a-Box uses:
 - SPF/DKIM/DMARC (prevent impersonation)
 - SpamAssassin (basic ML filtering)
 - Greylisting (delays unknown senders)
 
-Result: ~85% spam caught automatically
-Note: NOT as aggressive as Gmail/Proton (more false negatives)
+~85% spam caught automatically
+NOT as aggressive as Gmail/Proton (more false negatives)
 ```
 
-**Backup System:**
+Backup System:
 ```
 Built-in backup to:
 - AWS S3
@@ -137,27 +137,27 @@ Retention: 30 days (configurable)
 Recovery: Full mailbox or single email
 ```
 
-### Configuration Example: Custom Domain
+Configuration Example: Custom Domain
 
 ```bash
-# Step 1: Add domain in admin panel
-# Admin > Mail > Add domain
+Step 1: Add domain in admin panel
+Admin > Mail > Add domain
 
-# Step 2: Update DNS records (provided by panel)
-# MX record: mail.your-domain.com
-# SPF record: v=spf1 include:mail.your-domain.com ~all
-# DKIM record: [public key from admin panel]
-# DMARC record: v=DMARC1; p=quarantine;
+Step 2: Update DNS records (provided by panel)
+MX record: mail.your-domain.com
+SPF record: v=spf1 include:mail.your-domain.com ~all
+DKIM record: [public key from admin panel]
+DMARC record: v=DMARC1; p=quarantine;
 
-# Step 3: Wait 24 hours for DNS propagation
-# Step 4: Create email address
-# Admin > Mail > Add mail user
-# user@your-domain.com
+Step 3: Wait 24 hours for DNS propagation
+Step 4: Create email address
+Admin > Mail > Add mail user
+user@your-domain.com
 
-# Step 5: Receive email in Roundcube webmail
+Step 5: Receive email in Roundcube webmail
 ```
 
-### Strengths
+Strengths
 
 - Simplest setup (30 minutes)
 - Lowest learning curve
@@ -167,7 +167,7 @@ Recovery: Full mailbox or single email
 - Regular updates
 - Active community on Discourse
 
-### Weaknesses
+Weaknesses
 
 - Spam filtering not as good as Gmail
 - Webmail (Roundcube) feels dated
@@ -176,34 +176,34 @@ Recovery: Full mailbox or single email
 - No multi-user admin support
 - Single-server only (no HA)
 
-### Best For
+Best For
 
 - Privacy advocates who want to self-host but hate Linux
 - Single users or small families
 - People prioritizing simplicity over features
 - Budget-conscious individuals
 
-### Maintenance Schedule
+Maintenance Schedule
 
 ```bash
-# Monthly: Check admin panel for updates
-# Mail-in-a-Box > System > Check for updates > Install
+Monthly: Check admin panel for updates
+Mail-in-a-Box > System > Check for updates > Install
 
-# Weekly: Monitor disk space
-# Admin > Backup status > Ensure backup succeeds
+Weekly: Monitor disk space
+Admin > Backup status > Ensure backup succeeds
 
-# Quarterly: Review spam training
-# Manually mark false positives/negatives
-# (Helps SpamAssassin learn over time)
+Quarterly: Review spam training
+Manually mark false positives/negatives
+(Helps SpamAssassin learn over time)
 ```
 
 ---
 
-## Mailcow: Best Spam Filtering
+Mailcow: Best Spam Filtering
 
 Mailcow is a dockerized email stack with excellent spam filtering through Sieve scripts.
 
-### What's Included
+What's Included
 
 ```
 - Postfix (SMTP)
@@ -216,33 +216,33 @@ Mailcow is a dockerized email stack with excellent spam filtering through Sieve 
 - LDAP support (for multiple users)
 ```
 
-### Installation
+Installation
 
 ```bash
-# Step 1: Rent a VPS (same as Mail-in-a-Box)
-# Linode 2GB: $12/month
+Step 1: Rent a VPS (same as Mail-in-a-Box)
+Linode 2GB: $12/month
 
-# Step 2: Install Docker
+Step 2: Install Docker
 curl -fsSL https://get.docker.com | sh
 
-# Step 3: Clone Mailcow
+Step 3: Clone Mailcow
 cd /opt
 git clone https://github.com/mailcow/mailcow-dockerized.git
 cd mailcow-dockerized
 
-# Step 4: Configure
+Step 4: Configure
 ./generate_config.sh
-# Follow prompts for domain, hostname, IP
+Follow prompts for domain, hostname, IP
 
-# Step 5: Start containers
+Step 5: Start containers
 docker-compose up -d
 
-# Step 6: Access admin panel
-# https://your-domain.com/admin
-# Login with admin credentials
+Step 6: Access admin panel
+https://your-domain.com/admin
+Login with admin credentials
 ```
 
-### Pricing
+Pricing
 
 ```
 VPS (Linode 2GB):           $12/month
@@ -253,9 +253,9 @@ Total:                       $19/month
 
 Same cost as Mail-in-a-Box, better features.
 
-### Key Feature: Advanced Spam Filtering
+Key Feature: Advanced Spam Filtering
 
-**Rspamd Configuration:**
+Rspamd Configuration:
 ```
 Mailcow uses Rspamd with pre-trained models:
 - Neural networks (learns from data)
@@ -264,10 +264,10 @@ Mailcow uses Rspamd with pre-trained models:
 - URL reputation (checks URLs against blocklists)
 - SPF/DKIM/DMARC validation
 
-Result: ~92% spam caught automatically
+~92% spam caught automatically
 ```
 
-**Sieve Scripts (Custom Filtering):**
+Sieve Scripts (Custom Filtering):
 ```
 Sieve is a mail filtering language (RFC 5228)
 Create rules like:
@@ -285,7 +285,7 @@ if anyof (
 Effect: Auto-organize email by custom rules
 ```
 
-**Webmail (SOGo):**
+Webmail (SOGo):
 ```
 Better than Roundcube:
 - Integrated contacts
@@ -296,25 +296,25 @@ Better than Roundcube:
 - Task management
 ```
 
-### Configuration Example: Spam Training
+Configuration Example: Spam Training
 
 ```bash
-# Step 1: Mark emails as spam
-# SOGo > Email > Select spam message > Mark as Spam
+Step 1: Mark emails as spam
+SOGo > Email > Select spam message > Mark as Spam
 
-# Step 2: Rspamd learns from patterns
-# Over 1-2 weeks, spam filtering improves
+Step 2: Rspamd learns from patterns
+Over 1-2 weeks, spam filtering improves
 
-# Step 3: Adjust Rspamd thresholds (advanced)
-# Admin panel > Settings > Rspamd
-# Adjust scores for stricter filtering
+Step 3: Adjust Rspamd thresholds (advanced)
+Admin panel > Settings > Rspamd
+Adjust scores for stricter filtering
 
-# Step 4: Fine-tune with Sieve rules
-# Admin > User > Settings > Filters
-# Create custom rules
+Step 4: Fine-tune with Sieve rules
+Admin > User > Settings > Filters
+Create custom rules
 ```
 
-### Strengths
+Strengths
 
 - Excellent spam filtering (92%+)
 - Modern webmail (SOGo)
@@ -324,7 +324,7 @@ Better than Roundcube:
 - Calendar + contacts built-in
 - TFA support
 
-### Weaknesses
+Weaknesses
 
 - Docker knowledge required (steeper learning curve)
 - More resource-intensive (needs 2GB+ RAM)
@@ -332,37 +332,37 @@ Better than Roundcube:
 - Docker maintenance overhead
 - Container updates can be complex
 
-### Best For
+Best For
 
 - Users who want better spam filtering
 - Teams that need calendar/contacts
 - Linux enthusiasts
 - People comfortable with Docker
 
-### Maintenance Schedule
+Maintenance Schedule
 
 ```bash
-# Weekly: Monitor container health
-# docker-compose logs | grep error
+Weekly: Monitor container health
+docker-compose logs | grep error
 
-# Monthly: Update containers
-# cd /opt/mailcow-dockerized
-# git pull
-# docker-compose pull
-# docker-compose up -d
+Monthly: Update containers
+cd /opt/mailcow-dockerized
+git pull
+docker-compose pull
+docker-compose up -d
 
-# Quarterly: Review spam scores
-# Admin > Rspamd > Monitor spam trends
-# Adjust thresholds if needed
+Quarterly: Review spam scores
+Admin > Rspamd > Monitor spam trends
+Adjust thresholds if needed
 ```
 
 ---
 
-## iRedMail: Traditional, Stable
+iRedMail: Traditional, Stable
 
 iRedMail uses traditional Linux packages (not containerized). It's the old-school approach but stable.
 
-### What's Included
+What's Included
 
 ```
 - Postfix (SMTP)
@@ -375,29 +375,29 @@ iRedMail uses traditional Linux packages (not containerized). It's the old-schoo
 - MySQL (database)
 ```
 
-### Installation
+Installation
 
 ```bash
-# Step 1: Download iRedMail
+Step 1: Download iRedMail
 cd /root
 wget https://github.com/iredmail/iRedMail/releases/download/...
 
-# Step 2: Extract and run installer
+Step 2: Extract and run installer
 tar xjf iRedMail-x.x.x.tar.bz2
 cd iRedMail-x.x.x
 bash iRedMail.sh
 
-# Step 3: Follow prompts
-# Choose web server (Apache/Nginx)
-# Set domain name
-# Set admin password
-# Choose components to install
+Step 3: Follow prompts
+Choose web server (Apache/Nginx)
+Set domain name
+Set admin password
+Choose components to install
 
-# Step 4: Reboot server
-# Installer modifies system files
+Step 4: Reboot server
+Installer modifies system files
 ```
 
-### Pricing
+Pricing
 
 ```
 VPS (Linode 2GB):           $12/month
@@ -406,9 +406,9 @@ Backup storage:              $6/month
 Total:                       $19/month
 ```
 
-### Key Features
+Key Features
 
-**Traditional Architecture:**
+Traditional Architecture:
 ```
 iRedMail installs everything on OS:
 - Postfix via package manager
@@ -416,50 +416,48 @@ iRedMail installs everything on OS:
 - MySQL via package manager
 - OpenLDAP via package manager
 
-Pros:
 - Standard Linux tools apply
 - Easy to troubleshoot (no Docker abstractions)
 - Uses OS security updates
 
-Cons:
 - System-level changes
 - Package conflicts possible
 - Harder to migrate
 ```
 
-**Spam Filtering:**
+Spam Filtering:
 ```
 SpamAssassin + Bayes:
 - Traditional ML approach
 - Configurable rules
 - Slow to adapt (needs retraining)
 
-Result: ~80% spam blocked
+~80% spam blocked
 Less effective than Rspamd
 ```
 
-**Webmail (Roundcube):**
+Webmail (Roundcube):
 ```
 Same as Mail-in-a-Box
 Functional but dated UI
 Works fine for email reading/writing
 ```
 
-### Configuration Example: Custom Rules
+Configuration Example: Custom Rules
 
 ```bash
-# iRedMail stores config in /etc/postfix
-# Sieve rules go in Dovecot config
+iRedMail stores config in /etc/postfix
+Sieve rules go in Dovecot config
 
-# Create filter for specific sender:
-# In Roundcube: Settings > Filters > Add
-# Rule: If from contains "newsletter@sender.com"
-# Action: Move to folder "Newsletters"
+Create filter for specific sender:
+In Roundcube: Settings > Filters > Add
+Rule: If from contains "newsletter@sender.com"
+Action: Move to folder "Newsletters"
 
-# Apply server-side (persistent across clients)
+Apply server-side (persistent across clients)
 ```
 
-### Strengths
+Strengths
 
 - Traditional, stable approach
 - Works on any Linux distro
@@ -468,7 +466,7 @@ Works fine for email reading/writing
 - Good for learning email infrastructure
 - Lower resource usage (if optimized)
 
-### Weaknesses
+Weaknesses
 
 - Spam filtering is basic (80%)
 - Webmail (Roundcube) is dated
@@ -477,7 +475,7 @@ Works fine for email reading/writing
 - System-wide impact (harder to isolate)
 - No modern integrations (calendar/contacts)
 
-### Best For
+Best For
 
 - System administrators
 - People learning email infrastructure
@@ -486,11 +484,11 @@ Works fine for email reading/writing
 
 ---
 
-## Modoboa: Modern and Flexible
+Modoboa: Modern and Flexible
 
 Modoboa is a newer project (started 2013) with modern architecture and excellent customization.
 
-### What's Included
+What's Included
 
 ```
 - Postfix (SMTP)
@@ -502,25 +500,25 @@ Modoboa is a newer project (started 2013) with modern architecture and excellent
 - Ansible playbooks (deployment)
 ```
 
-### Installation
+Installation
 
 ```bash
-# Step 1: Download Modoboa installer
+Step 1: Download Modoboa installer
 git clone https://github.com/modoboa/modoboa-installer.git
 
-# Step 2: Configure installer
+Step 2: Configure installer
 cd modoboa-installer
-# Edit inventory file with domain/hostname/IP
+Edit inventory file with domain/hostname/IP
 
-# Step 3: Run Ansible
+Step 3: Run Ansible
 ansible-playbook -i inventory playbook.yml
 
-# Step 4: Access admin panel
-# https://admin.your-domain.com
-# Login with credentials
+Step 4: Access admin panel
+https://admin.your-domain.com
+Login with credentials
 ```
 
-### Pricing
+Pricing
 
 ```
 VPS (Linode 2GB):           $12/month
@@ -529,9 +527,9 @@ Backup:                      $6/month
 Total:                       $19/month
 ```
 
-### Key Features
+Key Features
 
-**Modern Architecture:**
+Modern Architecture:
 ```
 Built on Django (Python web framework)
 Advantages:
@@ -541,12 +539,12 @@ Advantages:
 - Good for future customization
 
 Example custom plugin:
-# Create /modoboa/plugins/custom_plugin/
-# Implement email forwarding rule
-# Integrate with external service
+Create /modoboa/plugins/custom_plugin/
+Implement email forwarding rule
+Integrate with external service
 ```
 
-**Webmail (Django-based):**
+Webmail (Django-based):
 ```
 Modern UI:
 - Responsive design (works on mobile)
@@ -556,7 +554,7 @@ Modern UI:
 - Good search functionality
 ```
 
-**Admin Interface:**
+Admin Interface:
 ```
 Modoboa admin is more powerful:
 - Manage multiple domains
@@ -566,31 +564,31 @@ Modoboa admin is more powerful:
 - Easy API access
 ```
 
-### Configuration Example: Multiple Domains
+Configuration Example: Multiple Domains
 
 ```bash
-# Step 1: Add domain in admin panel
-# Admin > Domains > Add domain
-# my-company.com
+Step 1: Add domain in admin panel
+Admin > Domains > Add domain
+my-company.com
 
-# Step 2: Configure DNS
-# MX record: mail.my-company.com
-# SPF/DKIM/DMARC records (provided by panel)
+Step 2: Configure DNS
+MX record: mail.my-company.com
+SPF/DKIM/DMARC records (provided by panel)
 
-# Step 3: Create users
-# Admin > Users > Add user
-# alice@my-company.com
-# bob@my-company.com
+Step 3: Create users
+Admin > Users > Add user
+alice@my-company.com
+bob@my-company.com
 
-# Step 4: Set mailbox quotas
-# Admin > Users > alice@my-company.com > Quota: 5GB
+Step 4: Set mailbox quotas
+Admin > Users > alice@my-company.com > Quota: 5GB
 
-# Step 5: Enable forwarding (advanced)
-# Admin > Aliases > Add alias
-# forward-all@my-company.com → alice, bob
+Step 5: Enable forwarding (advanced)
+Admin > Aliases > Add alias
+forward-all@my-company.com → alice, bob
 ```
 
-### Strengths
+Strengths
 
 - Modern, well-designed UI
 - Extensible via plugins
@@ -600,7 +598,7 @@ Modoboa admin is more powerful:
 - Responsive webmail
 - Good documentation
 
-### Weaknesses
+Weaknesses
 
 - Younger project (less battle-tested)
 - Smaller community than iRedMail
@@ -608,7 +606,7 @@ Modoboa admin is more powerful:
 - More complex setup than Mail-in-a-Box
 - Fewer tutorials online
 
-### Best For
+Best For
 
 - Developers who want extensibility
 - Teams managing multiple domains
@@ -617,11 +615,11 @@ Modoboa admin is more powerful:
 
 ---
 
-## Docker Mailserver: Maximum Control
+Docker Mailserver: Maximum Control
 
 Docker Mailserver is a fully customizable Docker setup. Everything is configurable; nothing is pre-configured.
 
-### What's Included
+What's Included
 
 ```
 - Postfix (SMTP)
@@ -632,32 +630,32 @@ Docker Mailserver is a fully customizable Docker setup. Everything is configurab
 - Docker Compose configuration
 ```
 
-### Installation
+Installation
 
 ```bash
-# Step 1: Clone repository
+Step 1: Clone repository
 git clone https://github.com/docker-mailserver/docker-mailserver
 
-# Step 2: Create docker-compose.yml
+Step 2: Create docker-compose.yml
 cd docker-mailserver
 cp docker-compose.yml.example docker-compose.yml
 
-# Step 3: Generate environment file
+Step 3: Generate environment file
 cp .env.example .env
 
-# Step 4: Configure mailbox accounts
+Step 4: Configure mailbox accounts
 ./setup.sh email add user@example.com password123
 ./setup.sh email add admin@example.com password456
 
-# Step 5: Start containers
+Step 5: Start containers
 docker-compose up -d
 
-# Step 6: Access webmail (optional)
-# Install Roundcube separately
+Step 6: Access webmail (optional)
+Install Roundcube separately
 docker run -d -p 80:80 roundcube
 ```
 
-### Pricing
+Pricing
 
 ```
 VPS (Linode 2GB):           $12/month
@@ -667,9 +665,9 @@ Total:                       $19/month
 (Same as others, more work)
 ```
 
-### Key Features
+Key Features
 
-**Full Customization:**
+Full Customization:
 ```
 Every component configurable via environment:
 - Postfix settings
@@ -678,15 +676,14 @@ Every component configurable via environment:
 - Virus scanning (on/off)
 - Greylisting (on/off)
 
-Example:
-# .env file
+.env file
 POSTFIX_LOG_LEVEL=1
 RSPAMD_DCC=1
 ENABLE_CLAMAV=1
 ENABLE_FAIL2BAN=1
 ```
 
-**CLI Management:**
+CLI Management:
 ```
 ./setup.sh provides:
 - Email account creation/deletion
@@ -695,13 +692,12 @@ ENABLE_FAIL2BAN=1
 - Alias management
 - Domain setup
 
-Example:
 ./setup.sh email add work@mydomain.com mypassword
 ./setup.sh email restrict add work@mydomain.com spam
 ./setup.sh mailbox quota set work@mydomain.com 5GB
 ```
 
-**No Webmail Included:**
+No Webmail Included:
 ```
 You must add your own:
 - Roundcube (popular)
@@ -717,10 +713,10 @@ Disadvantages:
 - Extra Docker container
 ```
 
-### Configuration Example: Advanced Setup
+Configuration Example: Advanced Setup
 
 ```bash
-# docker-compose.yml
+docker-compose.yml
 
 version: '3.3'
 services:
@@ -760,7 +756,7 @@ volumes:
   maillogs:
 ```
 
-### Strengths
+Strengths
 
 - Maximum flexibility
 - Excellent documentation (very detailed)
@@ -770,7 +766,7 @@ volumes:
 - Easy to upgrade (just update image)
 - Minimal resource overhead
 
-### Weaknesses
+Weaknesses
 
 - High learning curve (Docker + mail protocols)
 - No admin webUI (CLI only)
@@ -779,31 +775,31 @@ volumes:
 - No integrated services (calendar, contacts)
 - More troubleshooting needed
 
-### Best For
+Best For
 
 - DevOps engineers
 - Organizations with existing Docker infrastructure
 - People wanting complete control
 - Those comfortable with Linux/Docker
 
-### Maintenance Schedule
+Maintenance Schedule
 
 ```bash
-# Weekly: Check logs
-# docker-compose logs mailserver | grep error
+Weekly: Check logs
+docker-compose logs mailserver | grep error
 
-# Monthly: Update images
-# docker-compose pull
-# docker-compose up -d
+Monthly: Update images
+docker-compose pull
+docker-compose up -d
 
-# Quarterly: Review configuration
-# Check environment variables
-# Ensure security best practices followed
+Quarterly: Review configuration
+Check environment variables
+Ensure security best practices followed
 ```
 
 ---
 
-## Comparison Matrix
+Comparison Matrix
 
 | Feature | Mail-in-a-Box | Mailcow | iRedMail | Modoboa | Docker |
 |---------|--------------|---------|---------|---------|--------|
@@ -818,61 +814,61 @@ volumes:
 
 ---
 
-## Migration Costs (Switching Providers)
+Migration Costs (Switching Providers)
 
 Moving from one provider to another:
 
-**Easy ($0, <1 hour):**
+Easy ($0, <1 hour):
 - Mail-in-a-Box → Mailcow (both use Postfix/Dovecot)
 - Mail-in-a-Box → iRedMail (same)
 - Mail-in-a-Box → Modoboa (same)
 
 Process:
 ```bash
-# 1. Export mailbox from source via IMAP
-# 2. Import to destination via IMAP
-# 3. Update DNS MX records
-# 4. Wait 24 hours for convergence
+1. Export mailbox from source via IMAP
+2. Import to destination via IMAP
+3. Update DNS MX records
+4. Wait 24 hours for convergence
 ```
 
-**Medium ($0, 2-4 hours):**
+Medium ($0, 2-4 hours):
 - Mailcow → Docker Mailserver (both containerized)
 - iRedMail → Modoboa (different architectures)
 
 Process:
 ```bash
-# 1. Backup source database
-# 2. Set up new server
-# 3. Restore user accounts
-# 4. IMAP migration
-# 5. Test thoroughly
+1. Backup source database
+2. Set up new server
+3. Restore user accounts
+4. IMAP migration
+5. Test thoroughly
 ```
 
-**Hard ($0, 4-8 hours):**
+Hard ($0, 4-8 hours):
 - Any → different platform (requires manual user recreation)
 
 ---
 
-## Recommendations by Use Case
+Recommendations by Use Case
 
-**Solo user, privacy-focused:**
+Solo user, privacy-focused:
 → Mail-in-a-Box ($19/month, 30 min setup, minimal maintenance)
 
-**Team with 5+ members:**
+Team with 5+ members:
 → Mailcow ($19/month, better spam, calendar/contacts included)
 
-**System administrator learning email:**
+System administrator learning email:
 → iRedMail ($19/month, traditional setup, good learning experience)
 
-**Company managing multiple domains:**
+Company managing multiple domains:
 → Modoboa ($19/month, excellent API, scalable)
 
-**DevOps with Docker infrastructure:**
+DevOps with Docker infrastructure:
 → Docker Mailserver ($19/month, maximum control, integrate with Kubernetes)
 
 ---
 
-## Cost Comparison Over 1 Year
+Cost Comparison Over 1 Year
 
 For 5 email addresses:
 
@@ -886,28 +882,28 @@ For 5 email addresses:
 | Gmail | $0 | $0 | $0 | $0 (but privacy cost) |
 | ProtonMail | $0 | $60 | $720 | $144 |
 
-**Key insight:** All self-hosted solutions cost the same ($19/month). Choose based on:
-- **Features** (spam filtering, calendar, contacts)
-- **Maintenance burden** (time commitment)
-- **Scalability** (single vs multiple domains)
+Key insight: All self-hosted solutions cost the same ($19/month). Choose based on:
+- Features (spam filtering, calendar, contacts)
+- Maintenance burden (time commitment)
+- Scalability (single vs multiple domains)
 
 ---
 
-## Bottom Line
+Bottom Line
 
-**Start here:** Mail-in-a-Box if you want simplicity, $19/month, 30-minute setup
+Start here: Mail-in-a-Box if you want simplicity, $19/month, 30-minute setup
 
-**Upgrade to:** Mailcow if spam filtering becomes a problem, better webmail needed, or calendar/contacts required
+Upgrade to: Mailcow if spam filtering becomes a problem, better webmail needed, or calendar/contacts required
 
-**Switch to:** Modoboa if managing 5+ domains or need strong API for integrations
+Switch to: Modoboa if managing 5+ domains or need strong API for integrations
 
-**Use:** Docker Mailserver only if you already use Docker and want maximum control
+Use: Docker Mailserver only if you already use Docker and want maximum control
 
 All self-hosted options cost ~$19/month for VPS + domain. The choice is about time investment and features, not price.
 
 Start with Mail-in-a-Box. Migrate later if needed (easy process). The hardest part is fighting spam, and all five solutions handle that adequately.
 
-## Related Articles
+Related Articles
 
 - [Privacy Focused Email Providers Comparison 2026](/privacy-focused-email-providers-comparison-2026/)
 - [Protonmail Vs Gmail Privacy Comparison](/protonmail-vs-gmail-privacy-comparison/)
@@ -915,27 +911,27 @@ Start with Mail-in-a-Box. Migrate later if needed (easy process). The hardest pa
 - [Privacy Focused Email Alias Services Comparison 2026](/privacy-focused-email-alias-services-comparison-2026/)
 - [Set Up Own Email Server For Maximum Privacy Using Mail](/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
 - [Best Self-Hosted AI Model for JavaScript TypeScript Code](https://bestremotetools.com/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Can I use the first tool and the second tool together?**
+Can I use the first tool and the second tool together?
 
 Yes, many users run both tools simultaneously. the first tool and the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.
 
-**Which is better for beginners, the first tool or the second tool?**
+Which is better for beginners, the first tool or the second tool?
 
 It depends on your background. the first tool tends to work well if you prefer a guided experience, while the second tool gives more control for users comfortable with configuration. Try the free tier or trial of each before committing to a paid plan.
 
-**Is the first tool or the second tool more expensive?**
+Is the first tool or the second tool more expensive?
 
 Pricing varies by tier and usage patterns. Both offer free or trial options to start. Check their current pricing pages for the latest plans, since AI tool pricing changes frequently. Factor in your actual usage volume when comparing costs.
 
-**How often do the first tool and the second tool update their features?**
+How often do the first tool and the second tool update their features?
 
 Both tools release updates regularly, often monthly or more frequently. Feature sets and capabilities change fast in this space. Check each tool's changelog or blog for the latest additions before making a decision based on any specific feature.
 
-**What happens to my data when using the first tool or the second tool?**
+What happens to my data when using the first tool or the second tool?
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 {% endraw %}

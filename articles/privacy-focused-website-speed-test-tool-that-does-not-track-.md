@@ -17,7 +17,7 @@ voice-checked: true
 
 Most mainstream website speed test tools collect and store the URLs you test, often sharing them with third parties or using them for analytics. For developers and power users working with sensitive projects, client websites, or confidential web applications, this data collection poses real privacy risks. This guide covers privacy-focused alternatives that measure website performance without tracking or logging tested URLs.
 
-## Table of Contents
+Table of Contents
 
 - [Why URL Tracking Matters in Speed Testing](#why-url-tracking-matters-in-speed-testing)
 - [Self-Hosted Speed Testing with WebPageTest](#self-hosted-speed-testing-with-webpagetest)
@@ -32,31 +32,31 @@ Most mainstream website speed test tools collect and store the URLs you test, of
 - [Building a Monitoring Dashboard](#building-a-monitoring-dashboard)
 - [Continuous Integration: CI/CD Speed Testing](#continuous-integration-cicd-speed-testing)
 
-## Why URL Tracking Matters in Speed Testing
+Why URL Tracking Matters in Speed Testing
 
 When you run a speed test on a client website or internal application through a public service, that URL enters someone else's database. Popular speed testing platforms may retain these records indefinitely, creating several concerns:
 
-- **Client confidentiality**: Testing a client's staging site reveals its existence to a third party
-- **Competitive intelligence**: Competitors could discover unreleased products or features
-- **Security research**: Bug bounty researchers testing vulnerability disclosure programs may inadvertently expose program URLs
-- **Compliance requirements**: Some industries require audit trails showing who accessed what systems
+- Client confidentiality: Testing a client's staging site reveals its existence to a third party
+- Competitive intelligence: Competitors could discover unreleased products or features
+- Security research: Bug bounty researchers testing vulnerability disclosure programs may inadvertently expose program URLs
+- Compliance requirements: Some industries require audit trails showing who accessed what systems
 
 The solution involves using speed testing tools that either run entirely locally or operate under strict privacy policies with verifiable no-logging practices.
 
-## Self-Hosted Speed Testing with WebPageTest
+Self-Hosted Speed Testing with WebPageTest
 
 WebPageTest offers a self-hosted option that gives you complete control over data handling. Running your own instance means no URL data leaves your infrastructure.
 
-### Setting Up a Private WebPageTest Instance
+Setting Up a Private WebPageTest Instance
 
 Deploy WebPageTest using Docker on your own server:
 
 ```bash
-# Clone the WebPageTest server repository
+Clone the WebPageTest server repository
 git clone https://github.com/WPO-Foundation/webpagetest.git
 cd webpagetest
 
-# Start the server with Docker
+Start the server with Docker
 docker run -d --name wptserver \
   -p 4000:80 \
   -p 4001:443 \
@@ -79,25 +79,25 @@ connect_secret = your_secret_token_here
 
 Access your private speed test at `http://your-server:4000`. All test results remain on your infrastructure, and you can disable result archiving entirely through configuration.
 
-## Command-Line Speed Testing Tools
+Command-Line Speed Testing Tools
 
 For developers who prefer terminal-based workflows, several CLI tools provide privacy-focused speed testing without sending URLs to external services.
 
-### Using curl for Basic Performance Measurements
+Using curl for Basic Performance Measurements
 
 The simplest approach uses standard Unix tools to measure response times:
 
 ```bash
-# Measure time to first byte (TTFB)
+Measure time to first byte (TTFB)
 curl -o /dev/null -s -w "TTFB: %{time_starttransfer}s\nTotal: %{time_total}s\n" https://example.com
 
-# Test with different connection options
+Test with different connection options
 curl -o /dev/null -s -w "DNS: %{time_namelookup}s\nConnect: %{time_connect}s\n" https://example.com
 ```
 
-This method sends no data to external servers—the measurement happens entirely on your machine using your network connection to the target server.
+This method sends no data to external servers, the measurement happens entirely on your machine using your network connection to the target server.
 
-### Chrome DevTools Protocol for Analysis
+Chrome DevTools Protocol for Analysis
 
 For more detailed performance data, use Puppeteer or Playwright with the Chrome DevTools Protocol:
 
@@ -138,15 +138,15 @@ Run this script locally without any external dependencies:
 node performance-test.js https://your-website.com
 ```
 
-### Lighthouse CLI for Performance Audits
+Lighthouse CLI for Performance Audits
 
 Google Lighthouse provides detailed performance analysis through its CLI tool:
 
 ```bash
-# Install Lighthouse globally
+Install Lighthouse globally
 npm install -g lighthouse
 
-# Run a privacy-preserving audit (no external URLs stored)
+Run a privacy-preserving audit (no external URLs stored)
 lighthouse https://example.com \
   --only-categories=performance \
   --output=json \
@@ -154,15 +154,15 @@ lighthouse https://example.com \
   --chrome-flags="--headless"
 ```
 
-Lighthouse sends requests from your local machine to the target site. The only data leaving your network is the actual HTTP requests to measure performance—no URL logging occurs.
+Lighthouse sends requests from your local machine to the target site. The only data leaving your network is the actual HTTP requests to measure performance, no URL logging occurs.
 
-## Building a Custom Speed Test Dashboard
+Building a Custom Speed Test Dashboard
 
 For teams needing regular speed testing across multiple URLs, create a simple dashboard using Python:
 
 ```python
 #!/usr/bin/env python3
-# speed_test_dashboard.py
+speed_test_dashboard.py
 
 import time
 import urllib.request
@@ -207,25 +207,25 @@ if __name__ == '__main__':
 
 This script runs entirely locally with no external services involved. Extend it to store results in your own database or generate automated reports.
 
-## Comparing Public Speed Test Privacy Policies
+Comparing Public Speed Test Privacy Policies
 
 Not all public speed testing services are equally invasive. Understanding what different services actually log helps you make informed choices when self-hosting is not practical.
 
-**GTmetrix** retains test results and associated URLs for up to 90 days by default on free accounts. Logged-in users can delete individual tests, but the data is retained server-side during that window. GTmetrix's parent company also uses aggregate data for benchmarking reports.
+GTmetrix retains test results and associated URLs for up to 90 days by default on free accounts. Logged-in users can delete individual tests, but the data is retained server-side during that window. GTmetrix's parent company also uses aggregate data for benchmarking reports.
 
-**Pingdom** stores test data including origin URLs and result sets. Their privacy policy permits sharing aggregated data with partners, though individual URLs are not publicly broadcast. Account-based usage links your identity to every tested URL.
+Pingdom stores test data including origin URLs and result sets. Their privacy policy permits sharing aggregated data with partners, though individual URLs are not publicly broadcast. Account-based usage links your identity to every tested URL.
 
-**PageSpeed Insights (Google)** sends URLs to Google's infrastructure for testing. Google's privacy policy applies broadly, and URLs tested through PageSpeed Insights may inform Google's understanding of your web properties. For confidential projects, this is a meaningful concern.
+PageSpeed Insights (Google) sends URLs to Google's infrastructure for testing. Google's privacy policy applies broadly, and URLs tested through PageSpeed Insights may inform Google's understanding of your web properties. For confidential projects, this is a meaningful concern.
 
-**WebPageTest (public instance)** stores results publicly by default, including the full tested URL, waterfall charts, and connection details. Anyone with the result link can see what you tested. The private option requires an account and extends retention to 13 months.
+WebPageTest (public instance) stores results publicly by default, including the full tested URL, waterfall charts, and connection details. Anyone with the result link can see what you tested. The private option requires an account and extends retention to 13 months.
 
-By contrast, tools running entirely on your hardware — Lighthouse CLI, curl, Puppeteer scripts — leave no external footprint beyond the actual HTTP requests to the target server.
+By contrast, tools running entirely on your hardware. Lighthouse CLI, curl, Puppeteer scripts. leave no external footprint beyond the actual HTTP requests to the target server.
 
-## Integrating Speed Testing Into CI/CD Pipelines
+Integrating Speed Testing Into CI/CD Pipelines
 
 For development teams, integrating performance checks into automated pipelines provides continuous visibility without manual testing. This approach keeps all data internal to your infrastructure.
 
-### GitHub Actions with Lighthouse
+GitHub Actions with Lighthouse
 
 Run Lighthouse audits as part of your pull request workflow:
 
@@ -263,15 +263,15 @@ jobs:
           fi
 ```
 
-The staging URL comes from a repository secret, keeping it out of logs. Lighthouse runs locally within the GitHub Actions runner — no URLs are sent to external speed-testing services.
+The staging URL comes from a repository secret, keeping it out of logs. Lighthouse runs locally within the GitHub Actions runner. no URLs are sent to external speed-testing services.
 
-### Storing Historical Performance Data
+Storing Historical Performance Data
 
 Track performance trends over time with a simple SQLite store:
 
 ```python
 #!/usr/bin/env python3
-# perf_tracker.py
+perf_tracker.py
 
 import sqlite3
 import subprocess
@@ -320,16 +320,16 @@ def trend_report(conn, url, days=30):
 
 This keeps all performance history on your own server with no external dependencies.
 
-## Privacy Verification Tips
+Privacy Verification Tips
 
 When evaluating any speed testing tool, verify its privacy claims:
 
-1. **Check network traffic**: Use Wireshark or your browser's network inspector to confirm no unexpected requests go to analytics endpoints
-2. **Review source code**: Open-source tools allow you to verify no URL exfiltration occurs
-3. **Test with a unique URL**: Create a URL with a distinctive subdomain, then search for it in public databases to see if it was logged
-4. **Read the privacy policy**: Look for explicit statements about URL retention and third-party sharing
+1. Check network traffic: Use Wireshark or your browser's network inspector to confirm no unexpected requests go to analytics endpoints
+2. Review source code: Open-source tools allow you to verify no URL exfiltration occurs
+3. Test with a unique URL: Create a URL with a distinctive subdomain, then search for it in public databases to see if it was logged
+4. Read the privacy policy: Look for explicit statements about URL retention and third-party sharing
 
-## Advanced Metrics: Beyond Basic Speed
+Advanced Metrics: Beyond Basic Speed
 
 Modern web performance includes metrics that simple curl tests miss. Implement measurement:
 
@@ -438,7 +438,7 @@ async function measureComprehensively(url) {
 })();
 ```
 
-## Threat Model: What URL Testing Leaks
+Threat Model: What URL Testing Leaks
 
 Testing a URL externally leaks more than you might realize:
 
@@ -454,13 +454,13 @@ Testing a URL externally leaks more than you might realize:
 
 Self-hosting eliminates all of these risks by keeping the URL completely private.
 
-## Building a Monitoring Dashboard
+Building a Monitoring Dashboard
 
 For ongoing performance tracking without cloud dependency:
 
 ```python
 #!/usr/bin/env python3
-# web-perf-dashboard.py
+web-perf-dashboard.py
 
 import subprocess
 import json
@@ -544,7 +544,7 @@ class LocalPerfDashboard:
 
         return report
 
-# Usage
+Usage
 sites_to_monitor = [
     {'name': 'main-site', 'url': 'https://example.com'},
     {'name': 'api-site', 'url': 'https://api.example.com'},
@@ -553,17 +553,17 @@ sites_to_monitor = [
 dashboard = LocalPerfDashboard(sites_to_monitor)
 dashboard.run_daily_tests()
 
-# Generate weekly report
+Generate weekly report
 weekly = dashboard.generate_report(days=7)
 print(json.dumps(weekly, indent=2))
 ```
 
-## Continuous Integration: CI/CD Speed Testing
+Continuous Integration: CI/CD Speed Testing
 
 Integrate privacy-preserving speed tests into your CI/CD pipeline:
 
 ```yaml
-# .github/workflows/speed-test.yml
+.github/workflows/speed-test.yml
 name: Local Speed Test
 
 on:
@@ -606,7 +606,7 @@ jobs:
 
 This approach keeps all testing data in your repository, never sending URLs to external services.
 
-## Related Articles
+Related Articles
 
 - [Privacy-Focused Network Speed Test Comparison Tools That](/privacy-focused-network-speed-test-comparison-tools-that-res/)
 - [Proton VPN vs Mullvad Speed Test and Privacy Audit 2026](/proton-vpn-vs-mullvad-speed-test-privacy-audit-2026/)
@@ -615,6 +615,6 @@ This approach keeps all testing data in your repository, never sending URLs to e
 - [Best Privacy-Focused Monitoring Tool That Does Not Collect](/best-privacy-focused-monitoring-tool-that-does-not-collect-s/)
 - [Cursor Pro Privacy Mode Does It Cost Extra](https://bestremotetools.com/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

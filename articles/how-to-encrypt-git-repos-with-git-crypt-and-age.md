@@ -18,7 +18,7 @@ voice-checked: true
 
 git-crypt transparently encrypts files in a Git repository -- they are encrypted at rest and in the remote, but automatically decrypted when you check them out on an unlocked machine. age handles the actual file encryption for workflows where git-crypt is not suitable: secret shares, offline archives, or encrypting entire directories before pushing. Use git-crypt for secrets that live alongside code (API keys, certs, .env files). Use age directly when you need to encrypt artifacts, share secrets outside the repo, or avoid GPG entirely.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -28,50 +28,50 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Install git-crypt
+Step 1: Install git-crypt
 
 ```bash
-# macOS
+macOS
 brew install git-crypt
 
-# Ubuntu/Debian
+Ubuntu/Debian
 sudo apt install git-crypt
 
-# Verify
+Verify
 git-crypt --version
 ```
 
-### Step 2: Initialize git-crypt in a Repository
+Step 2: Initialize git-crypt in a Repository
 
 ```bash
 cd /path/to/your-repo
 
-# Initialize -- creates .git-crypt/ directory
+Initialize -- creates .git-crypt/ directory
 git-crypt init
 
-# Export the symmetric key (back this up -- losing it means losing access)
+Export the symmetric key (back this up -- losing it means losing access)
 git-crypt export-key ~/backup/git-crypt-key.bin
 chmod 600 ~/backup/git-crypt-key.bin
 ```
 
-### Step 3: Configure Which Files Get Encrypted
+Step 3: Configure Which Files Get Encrypted
 
 Edit or create .gitattributes in the repo root:
 
 ```
-# .gitattributes
+.gitattributes
 
-# Encrypt all .env files anywhere in the repo
-**/.env filter=git-crypt diff=git-crypt
+Encrypt all .env files anywhere in the repo
+/.env filter=git-crypt diff=git-crypt
 
-# Encrypt specific secret files
+Encrypt specific secret files
 secrets/api-keys.json filter=git-crypt diff=git-crypt
 config/production.yml filter=git-crypt diff=git-crypt
 
-# Encrypt entire directory
-secrets/** filter=git-crypt diff=git-crypt
+Encrypt entire directory
+secrets/ filter=git-crypt diff=git-crypt
 
-# Encrypt .pem and .key files everywhere
+Encrypt .pem and .key files everywhere
 *.pem filter=git-crypt diff=git-crypt
 *.key filter=git-crypt diff=git-crypt
 ```
@@ -83,25 +83,25 @@ git add .gitattributes secrets/api-keys.json
 git commit -m "Add git-crypt encryption config"
 git push
 
-# Verify files are encrypted in the remote
+Verify files are encrypted in the remote
 git show HEAD:secrets/api-keys.json  # Shows encrypted binary
 git-crypt status                      # Shows which files are encrypted
 ```
 
-### Step 4: Add Team Members via GPG Keys
+Step 4: Add Team Members via GPG Keys
 
 git-crypt multi-user model uses GPG: each team member GPG public key can unlock the repo.
 
 ```bash
-# Each team member: generate or export their GPG public key
+Each team member: generate or export their GPG public key
 gpg --gen-key
 gpg --export --armor alice@example.com > alice.pub
 
-# Repo admin: import the key and add them
+Repo admin: import the key and add them
 gpg --import alice.pub
 git-crypt add-gpg-user alice@example.com
 
-# Commit the key blob
+Commit the key blob
 git add .git-crypt/
 git commit -m "Add alice as git-crypt collaborator"
 git push
@@ -116,27 +116,27 @@ git-crypt unlock  # Uses her GPG private key automatically
 cat secrets/api-keys.json  # Now readable
 ```
 
-### Step 5: GPG-Free Workflow: Use a Shared Key File
+Step 5: GPG-Free Workflow: Use a Shared Key File
 
 For teams that want to avoid GPG complexity, share the symmetric key via a secrets manager:
 
 ```bash
-# Repo admin: export key and store in 1Password / Vault / AWS Secrets Manager
+Repo admin: export key and store in 1Password / Vault / AWS Secrets Manager
 git-crypt export-key - | base64 > /tmp/git-crypt-key.b64
-# Store this base64 string in your secrets manager
+Store this base64 string in your secrets manager
 
-# Team member: retrieve and unlock
+Team member: retrieve and unlock
 your-secrets-tool get git-crypt-key | base64 -d > /tmp/git-crypt-key.bin
 git-crypt unlock /tmp/git-crypt-key.bin
 shred -u /tmp/git-crypt-key.bin
 ```
 
-### Step 6: Configure CI/CD Integration
+Step 6: Configure CI/CD Integration
 
 Store the git-crypt key as a base64 CI secret and unlock during the pipeline:
 
 ```yaml
-# GitHub Actions
+GitHub Actions
 name: Deploy
 on: [push]
 
@@ -173,42 +173,42 @@ unlock_and_deploy:
     - ./deploy.sh
 ```
 
-### Step 7: Encrypt Individual Files with age
+Step 7: Encrypt Individual Files with age
 
 For files you want to keep out of the repo entirely, encrypt them with age before committing:
 
 ```bash
-# Install age
+Install age
 brew install age  # macOS
-# or: go install filippo.io/age/cmd/age@latest
+or: go install filippo.io/age/cmd/age@latest
 
-# Generate a key pair
+Generate a key pair
 age-keygen -o ~/.age/key.txt
-# Public key printed to stdout: age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5sfn9aqmcac8p
+Public key printed to stdout: age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5sfn9aqmcac8p
 
-# Encrypt a secrets file
+Encrypt a secrets file
 age -r age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5sfn9aqmcac8p \
     -o secrets/prod-env.age \
     secrets/prod-env.txt
 
-# Add plaintext to .gitignore, commit only the encrypted version
+Add plaintext to .gitignore, commit only the encrypted version
 echo "secrets/prod-env.txt" >> .gitignore
 git add secrets/prod-env.age .gitignore
 git commit -m "Add encrypted production secrets"
 
-# Decrypt
+Decrypt
 age -d -i ~/.age/key.txt -o secrets/prod-env.txt secrets/prod-env.age
 ```
 
-### Step 8: Multi-Recipient age Encryption for Teams
+Step 8: Multi-Recipient age Encryption for Teams
 
 Encrypt to multiple recipients -- anyone with their private key can decrypt:
 
 ```bash
-# Collect team members public keys
-# alice: age1abc123...
-# bob:   age1def456...
-# ci:    age1ghi789...
+Collect team members public keys
+alice: age1abc123...
+bob:   age1def456...
+ci:    age1ghi789...
 
 age -r age1abc123... \
     -r age1def456... \
@@ -216,55 +216,55 @@ age -r age1abc123... \
     -o secrets/prod-env.age \
     secrets/prod-env.txt
 
-# Decrypt (any recipient's key works)
+Decrypt (any recipient's key works)
 age -d -i ~/.age/key.txt secrets/prod-env.age
 ```
 
 Store all team public keys in a file for repeatability:
 
 ```bash
-# recipients.txt
-# age1abc123...  alice
-# age1def456...  bob
-# age1ghi789...  ci-runner
+recipients.txt
+age1abc123...  alice
+age1def456...  bob
+age1ghi789...  ci-runner
 
-# Encrypt to all recipients at once
+Encrypt to all recipients at once
 age $(grep -v '^#' recipients.txt | sed 's/^/-r /') \
     -o secrets/prod-env.age secrets/prod-env.txt
 ```
 
-### Step 9: Audit and Rotate Keys
+Step 9: Audit and Rotate Keys
 
 ```bash
-# List all git-crypt encrypted files
+List all git-crypt encrypted files
 git-crypt status -e | head -20
 
-# For age: stop including the departing user's key in future encryptions
-# Re-encrypt existing files with new recipient list
+For age: stop including the departing user's key in future encryptions
+Re-encrypt existing files with new recipient list
 age -r age1alice... -r age1bob... \
     -o secrets/prod-env.age \
     <(age -d -i ~/.age/key.txt secrets/prod-env.age.bak)
 
-# Rotate git-crypt key: remove user's key blob and reinitialize
+Rotate git-crypt key: remove user's key blob and reinitialize
 rm -rf .git-crypt/keys/default/0/<removed-user-key-id>/
 git-crypt init
-# All remaining users must re-add themselves
+All remaining users must re-add themselves
 ```
 
-### Step 10: Preventing Accidental Plaintext Commits
+Step 10: Preventing Accidental Plaintext Commits
 
-The biggest failure mode for git-crypt is committing a secret file before adding the filter attribute to `.gitattributes`. Once the plaintext is in history, you need a history rewrite — expensive and disruptive. Add a pre-commit hook to catch this before it happens:
+The biggest failure mode for git-crypt is committing a secret file before adding the filter attribute to `.gitattributes`. Once the plaintext is in history, you need a history rewrite. expensive and disruptive. Add a pre-commit hook to catch this before it happens:
 
 ```bash
 #!/usr/bin/env bash
-# .git/hooks/pre-commit — block commits of known secret files if git-crypt is not unlocked
+.git/hooks/pre-commit. block commits of known secret files if git-crypt is not unlocked
 
-# Check if git-crypt is initialized
+Check if git-crypt is initialized
 if [ ! -d ".git-crypt" ]; then
   exit 0  # No git-crypt, nothing to check
 fi
 
-# Verify that encrypted files are listed in .gitattributes
+Verify that encrypted files are listed in .gitattributes
 STAGED=$(git diff --cached --name-only)
 
 for file in $STAGED; do
@@ -284,7 +284,7 @@ Install the hook in every clone with a setup script:
 
 ```bash
 #!/usr/bin/env bash
-# scripts/setup-hooks.sh
+scripts/setup-hooks.sh
 cp scripts/pre-commit .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 echo "Git hooks installed."
@@ -292,66 +292,66 @@ echo "Git hooks installed."
 
 Add `./scripts/setup-hooks.sh` to your onboarding README so new team members run it on first clone.
 
-## Migrating Existing Secrets into git-crypt
+Migrating Existing Secrets into git-crypt
 
 If secrets are already in your repository history in plaintext, you need to purge them before adding encryption. The safest approach:
 
 ```bash
-# Step 1: Rotate the actual secrets first — assume they are compromised
-# (change API keys, rotate certs, generate new passwords)
+Step 1: Rotate the actual secrets first. assume they are compromised
+(change API keys, rotate certs, generate new passwords)
 
-# Step 2: Remove the file from history using git-filter-repo
+Step 2: Remove the file from history using git-filter-repo
 pip install git-filter-repo
 git filter-repo --path secrets/api-keys.json --invert-paths
 
-# Step 3: Add git-crypt attributes
+Step 3: Add git-crypt attributes
 echo 'secrets/api-keys.json filter=git-crypt diff=git-crypt' >> .gitattributes
 git-crypt init
 git-crypt export-key ~/backup/git-crypt-key.bin
 
-# Step 4: Add the new (rotated) secret file and commit
+Step 4: Add the new (rotated) secret file and commit
 git add .gitattributes secrets/api-keys.json
 git commit -m "Encrypt api-keys.json with git-crypt"
 
-# Step 5: Force push the rewritten history
+Step 5: Force push the rewritten history
 git push --force-with-lease origin main
 ```
 
 Alert all collaborators to re-clone after a history rewrite. Any stale clones can re-introduce the purged files if pushed again.
 
-### Step 11: Use age-plugin-yubikey for Hardware Key Protection
+Step 11: Use age-plugin-yubikey for Hardware Key Protection
 
 For higher-assurance environments, the `age-plugin-yubikey` plugin lets you store age private keys on a YubiKey rather than on disk:
 
 ```bash
-# Install the plugin
+Install the plugin
 cargo install age-plugin-yubikey
 
-# Initialize a new age identity on the YubiKey
+Initialize a new age identity on the YubiKey
 age-plugin-yubikey --generate --slot 1
-# Outputs recipient: age1yubikey1q...
+Outputs recipient: age1yubikey1q...
 
-# Encrypt to the YubiKey recipient
+Encrypt to the YubiKey recipient
 age -r age1yubikey1q... -o secrets/prod.age secrets/prod.txt
 
-# Decrypt — requires physical YubiKey touch
+Decrypt. requires physical YubiKey touch
 age -d -i age-plugin-yubikey: secrets/prod.age
 ```
 
 YubiKey-backed age identities are particularly useful for repository administrators who hold the master encryption key. Day-to-day CI pipelines use the shared symmetric git-crypt key, while the YubiKey-secured age identity protects the key export itself.
 
-### Step 12: Team Offboarding: Revoking Access Without Rekeying
+Step 12: Team Offboarding: Revoking Access Without Rekeying
 
-When a team member leaves, git-crypt has no native revocation — you cannot simply remove their GPG key and have them locked out of future commits, because they already have a copy of the decrypted history. The correct procedure:
+When a team member leaves, git-crypt has no native revocation. you cannot simply remove their GPG key and have them locked out of future commits, because they already have a copy of the decrypted history. The correct procedure:
 
 1. Remove the departing user's key blob from the repository:
 
 ```bash
-# Find their GPG key fingerprint
+Find their GPG key fingerprint
 gpg --list-keys departing@example.com
-# FINGERPRINT: ABCD1234...
+FINGERPRINT: ABCD1234...
 
-# Remove their key blob
+Remove their key blob
 rm .git-crypt/keys/default/0/ABCD1234.gpg
 git add -A
 git commit -m "Remove departing user from git-crypt access"
@@ -360,66 +360,66 @@ git commit -m "Remove departing user from git-crypt access"
 2. Rotate the symmetric key and all secrets it protects:
 
 ```bash
-# Export current encrypted files as plaintext
+Export current encrypted files as plaintext
 git-crypt unlock
 cp secrets/api-keys.json /tmp/api-keys-backup.json
 
-# Re-initialize git-crypt with a new key
+Re-initialize git-crypt with a new key
 git-crypt init
 git-crypt export-key ~/backup/git-crypt-key-v2.bin
 
-# Re-add remaining team members
+Re-add remaining team members
 git-crypt add-gpg-user alice@example.com
 git-crypt add-gpg-user bob@example.com
 
-# Re-encrypt the files (they are already tracked by .gitattributes)
+Re-encrypt the files (they are already tracked by .gitattributes)
 git add secrets/
 git commit -m "Rekey git-crypt after team member departure"
 ```
 
 3. Distribute the new key to CI/CD systems and remaining team members.
-4. Rotate the actual secret values (API keys, passwords) as an independent step — assume the departing person has copies of the plaintext values regardless of repository access.
+4. Rotate the actual secret values (API keys, passwords) as an independent step. assume the departing person has copies of the plaintext values regardless of repository access.
 
 The combination of key rotation and secret rotation is the only complete offboarding. Repository access removal alone is insufficient.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to encrypt git repos with git-crypt and age?**
+How long does it take to encrypt git repos with git-crypt and age?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Age Encryption Tool Tutorial for Developers](/age-encryption-tool-tutorial-developers/)
 - [CryptDrive vs ProtonDrive Comparison](/crypt-drive-vs-proton-drive-comparison/)
@@ -428,5 +428,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Way to Encrypt Google Drive Files: A Developer Guide](/best-way-to-encrypt-google-drive-files/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

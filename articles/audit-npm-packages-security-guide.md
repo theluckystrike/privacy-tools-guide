@@ -15,25 +15,25 @@ tags: [privacy-tools-guide, security]
 
 {% raw %}
 
-# How to Audit npm Packages for Security
+How to Audit npm Packages for Security
 
 The average Node.js project pulls in hundreds of transitive dependencies. Any one of them can introduce a vulnerability, or worse, malicious code designed to steal credentials or environment variables. This guide covers the full audit workflow from basic npm audit to CI automation.
 
-## Step 1: npm audit
+Step 1: npm audit
 
 The built-in audit command checks your installed packages against the npm advisory database.
 
 ```bash
-# Basic audit — shows vulnerabilities and severity
+Basic audit. shows vulnerabilities and severity
 npm audit
 
-# JSON output for scripting
+JSON output for scripting
 npm audit --json | jq '.vulnerabilities | to_entries[] | {pkg: .key, severity: .value.severity, via: .value.via}'
 
-# Audit only production dependencies (skip devDependencies)
+Audit only production dependencies (skip devDependencies)
 npm audit --omit=dev
 
-# Show the full dependency path for each vulnerability
+Show the full dependency path for each vulnerability
 npm audit --json | jq '.vulnerabilities | to_entries[] | {
   pkg: .key,
   severity: .value.severity,
@@ -42,97 +42,97 @@ npm audit --json | jq '.vulnerabilities | to_entries[] | {
 }'
 ```
 
-## Step 2: Fix Vulnerabilities
+Step 2: Fix Vulnerabilities
 
 ```bash
-# Automatically fix vulnerabilities where a compatible update exists
+Automatically fix vulnerabilities where a compatible update exists
 npm audit fix
 
-# Force updates even if they include breaking changes (review diff first)
+Force updates even if they include breaking changes (review diff first)
 npm audit fix --force
 
-# Dry run — show what would change without applying
+Dry run. show what would change without applying
 npm audit fix --dry-run
 
-# Fix a specific package manually
+Fix a specific package manually
 npm update lodash --save
 ```
 
 Not all vulnerabilities can be auto-fixed. When a fix would require a major version bump, you need to evaluate manually:
 
 ```bash
-# Check what version is available and what changed
+Check what version is available and what changed
 npm view lodash versions --json | jq '.[-5:]'
 npm view lodash changelog
 
-# Update and run your test suite
+Update and run your test suite
 npm install lodash@4.17.21
 npm test
 ```
 
-## Step 3: Socket.dev for Supply Chain Analysis
+Step 3: Socket.dev for Supply Chain Analysis
 
 `npm audit` only checks known CVEs. Supply chain attacks (malicious code injected into a package) often appear before a CVE is filed. [Socket](https://socket.dev) analyzes package behavior.
 
 ```bash
-# Install Socket CLI
+Install Socket CLI
 npm install -g @socketsecurity/cli
 
-# Scan your project
+Scan your project
 socket scan npm
 
-# Check a specific package before installing
+Check a specific package before installing
 socket npm info malicious-looking-package
 ```
 
 Socket flags:
-- **Install scripts** — packages that run code during `npm install`
-- **Network access** — packages that make HTTP requests
-- **Filesystem access** — packages that read/write files
-- **Obfuscated code** — packages that use eval or base64 strings
-- **Typosquatting** — packages that look like popular ones
+- Install scripts. packages that run code during `npm install`
+- Network access. packages that make HTTP requests
+- Filesystem access. packages that read/write files
+- Obfuscated code. packages that use eval or base64 strings
+- Typosquatting. packages that look like popular ones
 
 ```bash
-# Example output from socket scan:
-# lodash@4.17.21: OK
-# colors@1.4.0: WARNING — install script detected
-# faker@5.5.3: CRITICAL — obfuscated code, network access
+Example output from socket scan:
+lodash@4.17.21: OK
+colors@1.4.0: WARNING. install script detected
+faker@5.5.3: CRITICAL. obfuscated code, network access
 ```
 
-## Step 4: Snyk for Vulnerability Scanning
+Step 4: Snyk for Vulnerability Scanning
 
 Snyk maintains its own vulnerability database and catches issues npm audit misses.
 
 ```bash
-# Install and authenticate
+Install and authenticate
 npm install -g snyk
 snyk auth   # opens browser, links to snyk.io account
 
-# Scan current project
+Scan current project
 snyk test
 
-# Monitor a project (alerts when new vulns are disclosed)
+Monitor a project (alerts when new vulns are disclosed)
 snyk monitor
 
-# Fix vulnerabilities using Snyk's patches
+Fix vulnerabilities using Snyk's patches
 snyk fix
 
-# Scan a Docker image for npm vulnerabilities
+Scan a Docker image for npm vulnerabilities
 snyk container test node:18-alpine
 ```
 
 ```bash
-# In CI without a Snyk account — use the free tier API
+In CI without a Snyk account. use the free tier API
 snyk test --severity-threshold=high
-# Exit code 1 if high or critical vulns found
+Exit code 1 if high or critical vulns found
 ```
 
-## Step 5: Detect Malicious Package Patterns
+Step 5: Detect Malicious Package Patterns
 
 Beyond scanners, know what to look for manually:
 
 ```bash
-# List all install scripts in your dependency tree
+List all install scripts in your dependency tree
 node -e "
 const lock = require('./package-lock.json');
 const packages = lock.packages || {};
@@ -141,31 +141,31 @@ Object.entries(packages)
   .forEach(([name, v]) => console.log(name, v.scripts));
 "
 
-# Inspect a specific package's install script
+Inspect a specific package's install script
 cat node_modules/suspicious-pkg/package.json | jq '.scripts'
 
-# Look for network calls in install scripts
+Look for network calls in install scripts
 grep -r "http\|fetch\|axios\|request\|curl\|wget" node_modules/suspicious-pkg/
 
-# Inspect for obfuscated code patterns
+Inspect for obfuscated code patterns
 grep -r "eval\|atob\|Buffer.from.*base64\|String.fromCharCode" node_modules/suspicious-pkg/ | head -20
 ```
 
-## Step 6: Lockfile Integrity
+Step 6: Lockfile Integrity
 
 The `package-lock.json` file is your first line of defense. Commit it and verify it.
 
 ```bash
-# Install only what's in the lockfile — no surprise updates
+Install only what's in the lockfile. no surprise updates
 npm ci
 
-# Never run npm install in CI (it can update the lockfile)
-# Always use npm ci in CI environments
+Never run npm install in CI (it can update the lockfile)
+Always use npm ci in CI environments
 
-# Verify lockfile hasn't been tampered with
+Verify lockfile hasn't been tampered with
 git diff HEAD package-lock.json
 
-# Check if the lockfile matches package.json
+Check if the lockfile matches package.json
 npm ls --depth=0 2>&1 | grep "UNMET\|invalid"
 ```
 
@@ -182,10 +182,10 @@ Integrity hashes are stored in `package-lock.json`:
 
 npm verifies this hash on every install. If a package is modified after publish, the hash will not match.
 
-## Step 7: CI Integration
+Step 7: CI Integration
 
 ```yaml
-# .github/workflows/security.yml
+.github/workflows/security.yml
 name: Security Scan
 
 on:
@@ -228,12 +228,12 @@ jobs:
           args: --severity-threshold=high
 ```
 
-## Step 8: Dependency Review for Pull Requests
+Step 8: Dependency Review for Pull Requests
 
 GitHub's dependency review action blocks PRs that introduce vulnerable packages:
 
 ```yaml
-# .github/workflows/dependency-review.yml
+.github/workflows/dependency-review.yml
 name: Dependency Review
 
 on:
@@ -250,11 +250,11 @@ jobs:
           deny-licenses: GPL-3.0, AGPL-3.0   # optional license policy
 ```
 
-## Auditing Existing Projects: Quick Script
+Auditing Existing Projects: Quick Script
 
 ```bash
 #!/bin/bash
-# npm-security-check.sh — run in any Node project
+npm-security-check.sh. run in any Node project
 
 echo "=== npm audit ==="
 npm audit --omit=dev --json | jq '{
@@ -283,7 +283,7 @@ echo "=== Dependencies older than 1 year ==="
 npm outdated --json | jq -r 'to_entries[] | select(.value.current != .value.latest) | "\(.key): \(.value.current) → \(.value.latest)"' | head -20
 ```
 
-## Related Articles
+Related Articles
 
 - [VPN Provider Annual Audit Results: Independent Security](/vpn-provider-annual-audit-results-independent-security-verified/)
 - [How to Audit Your Password Manager Vault: A Practical Guide](/how-to-audit-your-password-manager-vault/)
@@ -291,6 +291,6 @@ npm outdated --json | jq -r 'to_entries[] | select(.value.current != .value.late
 - [How to Use Lynis for Linux Security Auditing](/lynis-linux-security-audit-guide/)
 - [How to Audit Docker Images for Vulnerabilities](/how-to-audit-docker-images-for-vulnerabilities/)
 - [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

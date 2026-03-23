@@ -36,7 +36,7 @@ spec:
 
 This approach automatically synchronizes secrets from 1Password into Kubernetes, refreshing them periodically without manual intervention.
 
-### Step 5: GitLab CI/CD Implementation
+Step 5: GitLab CI/CD Implementation
 
 GitLab CI/CD integrates smoothly with 1Password using the service account token:
 
@@ -81,68 +81,68 @@ deploy:
 
 This configuration installs the 1Password CLI in the job, authenticates using the service account token, retrieves secrets as needed, and uses them within each job without persisting them to logs or artifacts.
 
-## Production Considerations
+Production Considerations
 
 When implementing 1Password automation at scale, several practices improve security and reliability.
 
-Session management matters in long-running processes. The CLI caches credentials temporarily—for extended automation workflows, periodically refresh the session:
+Session management matters in long-running processes. The CLI caches credentials temporarily, for extended automation workflows, periodically refresh the session:
 
 ```bash
-# Check session validity
+Check session validity
 op account get || op signin --stdin < /dev/null
 ```
 
 Network security becomes critical when transmitting credentials between systems. Always use TLS and avoid logging secret values:
 
 ```bash
-# Wrong - exposes password in process list
+Wrong - exposes password in process list
 export PASSWORD=$(op item get "Item" --field password)
 echo $PASSWORD # Never do this
 
-# Correct - suppress command output
+Correct - suppress command output
 export PASSWORD=$(op item get "Item" --field password 2>/dev/null)
 ```
 
 Access auditing provides visibility into which automation systems accessed which secrets. Review the 1Password audit logs regularly to identify unusual access patterns or unauthorized attempts.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to complete this setup?**
+How long does it take to complete this setup?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Will this work with my existing CI/CD pipeline?**
+Will this work with my existing CI/CD pipeline?
 
 The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ. You may need to adapt file paths, environment variable names, and trigger conditions to match your pipeline tool. The underlying workflow logic stays the same.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [1password Secrets Automation Guide](/1password-secrets-automation-guide/)
 - [1password Cli Secrets Management Guide](/1password-cli-secrets-management-guide/)
@@ -150,14 +150,14 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Data Broker Opt Out Automation Tools That Continuously Remov](/data-broker-opt-out-automation-tools-that-continuously-remov/)
 - [Ios Shortcuts Automation Privacy Considerations](/ios-shortcuts-automation-privacy-considerations/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Related Reading
+Related Reading
 
 - [1password Secrets Automation Guide](/1password-secrets-automation-guide/)
 - [1password Cli Secrets Management Guide](/1password-cli-secrets-management-guide/)
 - [Secure API Key Rotation Automation Guide](/secure-api-key-rotation-automation-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

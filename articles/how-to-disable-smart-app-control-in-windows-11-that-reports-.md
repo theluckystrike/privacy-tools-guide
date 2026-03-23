@@ -18,7 +18,7 @@ voice-checked: true
 
 Windows 11 includes Smart App Control (SAC), a security feature that monitors applications and determines whether they are safe to run. While this feature enhances security for average users, developers and power users often find it interferes with their workflow. Understanding how to disable Smart App Control becomes essential when you work with custom software, development tools, or applications that have not been widely distributed.
 
-## Table of Contents
+Table of Contents
 
 - [What is Smart App Control](#what-is-smart-app-control)
 - [Prerequisites](#prerequisites)
@@ -26,13 +26,13 @@ Windows 11 includes Smart App Control (SAC), a security feature that monitors ap
 - [Performance Impact Analysis](#performance-impact-analysis)
 - [Automating SAC Across Enterprise Devices](#automating-sac-across-enterprise-devices)
 
-## What is Smart App Control
+What is Smart App Control
 
 Smart App Control represents Microsoft's evolution of Windows Defender Application Control (WDAC). It uses a combination of code integrity policies and artificial intelligence to block potentially harmful applications before they execute. When enabled, SAC checks every application against a database of known safe applications and blocks anything that appears suspicious.
 
 The critical issue for privacy-conscious users is that Smart App Control inherently requires Microsoft to know which applications you run. While Microsoft claims this data improves security for everyone, developers and power users often prefer to control what information leaves their systems.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -42,7 +42,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Checking Smart App Control Status
+Step 1: Checking Smart App Control Status
 
 Before disabling SAC, verify its current state on your system. You can check this through the Windows Security interface or programmatically using PowerShell.
 
@@ -54,7 +54,7 @@ Get-MpComputerStatus | Select-Object -Property SmartAppControlState
 
 The output will show whether SAC is On, Off, or in another state. You can also find this information by opening Windows Security → App & browser control → Smart App Control status.
 
-### Step 2: Method 1: Disabling Through Windows Security
+Step 2: Method 1: Disabling Through Windows Security
 
 The most straightforward method uses the Windows Security interface:
 
@@ -67,7 +67,7 @@ The most straightforward method uses the Windows Security interface:
 
 This method works for most users, but some systems may not display this option if the feature is enforced by group policy or if your system does not meet certain requirements.
 
-### Step 3: Method 2: Using Local Group Policy Editor
+Step 3: Method 2: Using Local Group Policy Editor
 
 Windows 11 Pro and Enterprise users can disable Smart App Control through Group Policy for more permanent control.
 
@@ -89,7 +89,7 @@ Configure the appropriate policy settings to disable SAC enforcement.
 
 After making these changes, restart your computer for the modifications to take effect.
 
-### Step 4: Method 3: Registry Modifications
+Step 4: Method 3: Registry Modifications
 
 Windows 11 Home users who cannot access Group Policy can achieve the same results through direct Registry modifications. Create a backup before proceeding.
 
@@ -104,7 +104,7 @@ Create a new DWORD value named "EnableSmartAppControl" and set its value to `0` 
 You can also create this entry using PowerShell:
 
 ```powershell
-# Disable Smart App Control via Registry
+Disable Smart App Control via Registry
 $registryPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System"
 $name = "EnableSmartAppControl"
 $value = 0
@@ -118,7 +118,7 @@ New-ItemProperty -Path $registryPath -Name $name -Value $value -PropertyType DWo
 
 After applying Registry changes, restart your system to ensure the modifications take effect.
 
-### Step 5: Verify Smart App Control is Disabled
+Step 5: Verify Smart App Control is Disabled
 
 After disabling SAC through any method, verify the changes:
 
@@ -130,7 +130,7 @@ The status should now show as "Off" or unavailable. You can also attempt to laun
 
 For additional verification, check the Windows Security interface to confirm that Smart App Control no longer appears as active.
 
-### Step 6: Understand the Security Implications
+Step 6: Understand the Security Implications
 
 Disabling Smart App Control removes an additional layer of protection against malware and potentially unwanted software. Before disabling this feature, consider the following alternatives:
 
@@ -141,12 +141,12 @@ Disabling Smart App Control removes an additional layer of protection against ma
 
 For developers who regularly test custom software, consider creating test environments using Windows Sandbox or virtual machines rather than disabling SAC on your primary system.
 
-### Step 7: Automate the Disable Process
+Step 7: Automate the Disable Process
 
 Power users managing multiple systems can automate the disable process through scripts. Here is a complete script that checks the current status, disables SAC, and verifies the result:
 
 ```powershell
-# Check current Smart App Control status
+Check current Smart App Control status
 $currentStatus = Get-MpComputerStatus | Select-Object -ExpandProperty SmartAppControlState
 Write-Host "Current Smart App Control status: $currentStatus"
 
@@ -171,56 +171,56 @@ if ($currentStatus -eq "On") {
 
 Save this script as `Disable-SAC.ps1` and execute with administrator privileges.
 
-### Step 8: Re-Enabling Smart App Control
+Step 8: Re-Enabling Smart App Control
 
 If you need to re-enable SAC after testing or temporary use, reverse the process:
 
 ```powershell
-# Re-enable Smart App Control
+Re-enable Smart App Control
 $registryPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System"
 Remove-ItemProperty -Path $registryPath -Name "EnableSmartAppControl" -ErrorAction SilentlyContinue
 ```
 
 After removing the registry entry and restarting, Windows will restore SAC to its default behavior based on your system configuration.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to disable smart app control in windows 11 that reports?**
+How long does it take to disable smart app control in windows 11 that reports?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How To Tell If Your Smart Tv Is Spying On](/how-to-tell-if-your-smart-tv-is-spying-on-you/)
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/windows-11-privacy-settings-disable-telemetry/)
@@ -228,11 +228,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Windows 11 Cortana Disable Privacy Guide](/windows-11-cortana-disable-privacy-guide/)
 - [Windows 11 Telemetry Disable Guide](/windows-11-telemetry-disable-guide-step-by-step/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-### Step 9: Deep Dive: What Smart App Control Actually Sends to Microsoft
+Step 9: Deep Dive: What Smart App Control Actually Sends to Microsoft
 
 Smart App Control operates through multiple telemetry channels. Understanding exactly what data leaves your system helps you make informed decisions:
 
-### Telemetry Data Streams
+Telemetry Data Streams
 
 ```json
 {
@@ -262,46 +262,46 @@ Smart App Control operates through multiple telemetry channels. Understanding ex
 
 The `machine_id` is a persistent identifier that links all your application executions together, creating a profile of software you use.
 
-### Network Monitoring
+Network Monitoring
 
 Smart App Control makes real-time requests to Microsoft servers for each unknown application:
 
 ```powershell
-# Monitor outbound connections while SAC blocks an app
+Monitor outbound connections while SAC blocks an app
 netstat -ano | findstr /R "established"
 
-# You'll see connections to:
-# - wdcp.microsoft.com (Windows Defender Cloud Protection)
-# - telemetry.microsoft.com
-# - settings.data.microsoft.com
+You'll see connections to:
+- wdcp.microsoft.com (Windows Defender Cloud Protection)
+- telemetry.microsoft.com
+- settings.data.microsoft.com
 ```
 
 Each blocked or permitted application generates an HTTPS request that includes a hash of the executable plus system identifiers.
 
-### Step 10: Alternative Security Models
+Step 10: Alternative Security Models
 
 Before disabling SAC, consider alternatives that provide protection without Microsoft telemetry:
 
-### Windows Defender Application Control (WDAC)
+Windows Defender Application Control (WDAC)
 
 WDAC lets you create your own application allowlists locally without cloud connectivity:
 
 ```powershell
-# Create a WDAC policy allowing only trusted applications
+Create a WDAC policy allowing only trusted applications
 $PolicyPath = "C:\Temp\DevPolicy.xml"
 New-CIPolicy -FilePath $PolicyPath -ScanPath "C:\Program Files" `
     -UserPEs -Level PcaCertificate -Fallback ModeWarning
 
-# Convert to binary format
+Convert to binary format
 ConvertFrom-CIPolicy -XmlFilePath $PolicyPath -BinaryFilePath "C:\Windows\System32\CodeIntegrity\SIPolicy.p7b"
 
-# Reboot required
+Reboot required
 Restart-Computer
 ```
 
 With custom WDAC policies, you control which applications run without cloud checking.
 
-### Third-Party Endpoint Protection
+Third-Party Endpoint Protection
 
 Consider alternatives to Windows Defender:
 
@@ -314,18 +314,18 @@ Norton 360 Premium           - Full alternative
 
 These provide similar protections to Smart App Control through local analysis rather than cloud-based reputation checks.
 
-### Step 11: Monitor SAC Activity
+Step 11: Monitor SAC Activity
 
 If you keep SAC enabled, monitor what it's actually blocking:
 
 ```powershell
-# Check Smart App Control event logs
+Check Smart App Control event logs
 Get-WinEvent -FilterHashtable @{
     LogName = "Microsoft-Windows-SmartScreen/Debug"
     Level = 2  # Warnings and errors
 } | Select-Object TimeCreated, Message | Format-Table
 
-# Export blocked apps for review
+Export blocked apps for review
 Get-WinEvent -FilterHashtable @{
     LogName = "Microsoft-Windows-SmartScreen/Debug"
 } | Where-Object { $_.Message -like "*BLOCKED*" } |
@@ -334,12 +334,12 @@ Get-WinEvent -FilterHashtable @{
 
 Review this log to identify false positives or overly aggressive blocking.
 
-## Performance Impact Analysis
+Performance Impact Analysis
 
 Smart App Control adds measurable overhead. Measure the impact on your system:
 
 ```powershell
-# Benchmark application launch time
+Benchmark application launch time
 function Measure-AppLaunchTime {
     param([string]$AppPath, [int]$Iterations = 10)
 
@@ -360,17 +360,17 @@ function Measure-AppLaunchTime {
     }
 }
 
-# Measure with SAC enabled, then disabled
+Measure with SAC enabled, then disabled
 ```
 
 SAC can add 50-200ms to first execution of unknown apps as it checks cloud reputation.
 
-## Automating SAC Across Enterprise Devices
+Automating SAC Across Enterprise Devices
 
 For IT administrators managing multiple systems:
 
 ```powershell
-# Deployment script for 50+ developer machines
+Deployment script for 50+ developer machines
 
 param(
     [string]$Action = "Disable",  # Disable or Enable
@@ -404,22 +404,22 @@ foreach ($computer in $computers) {
 
 This script allows fleet-wide SAC configuration changes without touching each machine manually.
 
-### Step 12: SAC Bypass Techniques and Detection
+Step 12: SAC Bypass Techniques and Detection
 
 Understanding how attackers bypass SAC informs your security decisions:
 
-### Signed Malware
+Signed Malware
 Attackers create legitimate certificates (or steal them) to sign malware. SAC trusts signed executables:
 
 ```powershell
-# Check code signing
+Check code signing
 Get-AuthenticodeSignature "C:\suspicious.exe"
 
-# Output shows certificate details, validity
-# Bypass: Attacker signs with purchased or compromised cert
+Output shows certificate details, validity
+Bypass: Attacker signs with purchased or compromised cert
 ```
 
-### Code Injection Attacks
+Code Injection Attacks
 SAC checks disk files, not runtime modifications:
 
 ```
@@ -432,7 +432,7 @@ Malicious Code (SAC bypass - no disk execution detected)
 
 This highlights that SAC alone doesn't prevent sophisticated attacks.
 
-### Step 13: SAC Policy vs Privacy Trade-off
+Step 13: SAC Policy vs Privacy Trade-off
 
 Create a decision matrix for your organization:
 
@@ -446,5 +446,5 @@ Create a decision matrix for your organization:
 
 Your choice depends on your threat model versus privacy requirements.
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

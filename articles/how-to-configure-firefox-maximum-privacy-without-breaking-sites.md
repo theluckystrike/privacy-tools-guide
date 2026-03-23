@@ -16,9 +16,9 @@ intent-checked: true
 
 {% raw %}
 
-Firefox is the only major browser developed by a non-profit. It's the best privacy browser if configured correctly—but the default settings leave you exposed to trackers and advertisers. This guide hardens Firefox without causing widespread site breakage (the common problem with overly aggressive privacy configs).
+Firefox is the only major browser developed by a non-profit. It's the best privacy browser if configured correctly, but the default settings leave you exposed to trackers and advertisers. This guide hardens Firefox without causing widespread site breakage (the common problem with overly aggressive privacy configs).
 
-## Table of Contents
+Table of Contents
 
 - [The Privacy Problem Firefox Solves](#the-privacy-problem-firefox-solves)
 - [The Balance: Privacy vs. Breakage](#the-balance-privacy-vs-breakage)
@@ -31,7 +31,7 @@ Firefox is the only major browser developed by a non-profit. It's the best priva
 - [Advanced: Container Tabs](#advanced-container-tabs)
 - [Privacy Maintenance Checklist](#privacy-maintenance-checklist)
 
-## The Privacy Problem Firefox Solves
+The Privacy Problem Firefox Solves
 
 Most browsers (Chrome, Edge, Safari) are built by corporations that profit from your data:
 - Chrome: Google collects tracking data across the web
@@ -42,7 +42,7 @@ Firefox is built by Mozilla, a nonprofit. They don't sell your data. But they us
 
 This guide locks Firefox down while keeping sites functional.
 
-## The Balance: Privacy vs. Breakage
+The Balance: Privacy vs. Breakage
 
 Aggressive privacy settings break ~5% of sites:
 - Video players that require Flash (obsolete, already broken)
@@ -52,9 +52,9 @@ Aggressive privacy settings break ~5% of sites:
 
 This guide targets 95%+ functionality. If you want 99.9% privacy, you'll lose some sites.
 
-## Step 1: Firefox Settings (about:preferences)
+Step 1: Firefox Settings (about:preferences)
 
-### Privacy & Security → Enhanced Tracking Protection
+Privacy & Security → Enhanced Tracking Protection
 
 ```
 Current setting: Standard
@@ -65,23 +65,22 @@ Breakage: <1%
 
 Click: Settings → Privacy & Security → Enhanced Tracking Protection → Strict
 
-### Cookies and Site Data
+Cookies and Site Data
 
 ```
 Current: "Allow all cookies"
 Better: "Only from sites you visit"
 Best: "Block all cookies" (requires whitelisting)
-Recommendation: "Only from sites you visit"
+"Only from sites you visit"
 ```
 
 Firefox → Preferences → Privacy → Cookies and Site Data → "Only from sites you visit"
 
-**Explanation:**
 - Third-party cookies are how advertisers track you across sites
 - First-party cookies (same-site) are necessary for logins and preferences
 - "Only from sites you visit" blocks trackers but keeps logins working
 
-### Site Permissions
+Site Permissions
 
 ```
 Location: Block by default
@@ -94,7 +93,7 @@ Firefox → Preferences → Privacy → Permissions
 
 You'll manually grant permissions to sites that need them (rare).
 
-### DNS over HTTPS
+DNS over HTTPS
 
 ```
 Current: Off
@@ -105,13 +104,13 @@ Breakage: <0.1%
 
 Firefox → Preferences → Privacy & Security → DNS over HTTPS → Enable with Cloudflare
 
-**Why this matters:** Without DNS over HTTPS, your ISP sees every site you visit (sold to advertisers). With it, only Cloudflare sees (and Cloudflare has a better privacy policy than ISPs).
+Why this matters: Without DNS over HTTPS, your ISP sees every site you visit (sold to advertisers). With it, only Cloudflare sees (and Cloudflare has a better privacy policy than ISPs).
 
-## Step 2: about:config Advanced Settings
+Step 2: about:config Advanced Settings
 
 Enter `about:config` in address bar and confirm you'll be careful.
 
-### Core Privacy Settings
+Core Privacy Settings
 
 ```javascript
 // Disable telemetry
@@ -133,7 +132,7 @@ profiler.enabled = false
 breakpad.reportURL = ""
 ```
 
-### Tracking Protection Settings
+Tracking Protection Settings
 
 ```javascript
 // Prevent DOM-based tracking
@@ -149,7 +148,7 @@ privacy.query_stripping.enabled = true
 privacy.query_stripping.enabled.pbmode = true
 ```
 
-### Fingerprinting Protection
+Fingerprinting Protection
 
 Websites track you by fingerprinting (your unique browser config):
 
@@ -169,7 +168,7 @@ webgl.disabled = false  // Breaking; disable only if needed
 dom.battery.enabled = false
 ```
 
-### Network Security
+Network Security
 
 ```javascript
 // Require HTTPS for all connections (upgrade http:// to https://)
@@ -183,7 +182,7 @@ security.csp.enable = true
 network.http.keep-alive.timeout = 300
 ```
 
-### Third-Party Restrictions
+Third-Party Restrictions
 
 ```javascript
 // Block third-party frames
@@ -194,15 +193,15 @@ privacy.partition.network_state_isolation = true
 security.OCSP.enabled = 0  // Value 0 disables OCSP
 ```
 
-## Step 3: Privacy Extensions (Minimal Set)
+Step 3: Privacy Extensions (Minimal Set)
 
 Avoid extension bloat (each extension is an attack surface). Use only 3-4:
 
-### uBlock Origin (Ad/Tracker Blocking)
+uBlock Origin (Ad/Tracker Blocking)
 
 Install from: addons.mozilla.org
 
-**Configuration:**
+Configuration:
 1. Click uBlock icon → Dashboard
 2. Go to "Filter lists" tab
 3. Enable recommended lists:
@@ -212,90 +211,90 @@ Install from: addons.mozilla.org
  - Fanboy's Annoyance List (social media widgets)
  - Peter Lowe's Ad/Tracking list
 
-**Settings → Behavior:**
+Settings → Behavior:
 - Check "Prevent media elements from loading data"
 - Check "Block remote fonts"
 - Check "Block WebSockets"
 
-**Why uBlock Origin:**
+Why uBlock Origin:
 - Blocks ads AND trackers (not just ads)
 - Minimal performance impact
 - No send-back to server (works locally)
 
-### Bitwarden (Password Manager)
+Bitwarden (Password Manager)
 
 Install from: addons.mozilla.org
 
 Bitwarden reduces password reuse (biggest security problem). Each site gets unique password.
 
-**Configuration:**
+Configuration:
 - Create account at bitwarden.com ($0-10/year)
 - Log in via extension
 - Auto-fill passwords on login (reduces typing attack vectors)
 
-### Decentraleyes (CDN Privacy)
+Decentraleyes (CDN Privacy)
 
 Install from: addons.mozilla.org
 
 Blocks requests to centralized CDNs (Cloudflare, Google Fonts, Bootstrap). Replaces with local versions.
 
-**Effect:**
+Effect:
 - Websites load jQuery locally instead of googleapis.com
 - Google can't track font requests
 - Minimal breakage (<0.5%)
 
-**Configuration:** Zero setup required; works silently.
+Configuration: Zero setup required; works silently.
 
-### SimpleLogin (Email Masking)
+SimpleLogin (Email Masking)
 
 Install from: addons.mozilla.org (optional, only if you care about email privacy)
 
 Creates alias email addresses for every site signup. Forwards to your real email, preventing trackers from connecting your email across sites.
 
-**Cost:** $99/year (alternative: use email provider's alias feature)
+Cost: $99/year (alternative: use email provider's alias feature)
 
-**When to use:**
+When to use:
 - Signing up for new services (use alias)
 - Shopping sites (use alias)
 - Marketing newsletters (use alias)
 
-**When to skip:**
+When to skip:
 - Close contacts (use real email)
 - Email accounts themselves (can't use alias for the email you own)
 
-**Why it matters:** Advertisers buy email lists and cross-reference to build profiles. Aliases prevent this linking.
+Why it matters: Advertisers buy email lists and cross-reference to build profiles. Aliases prevent this linking.
 
-## Testing Your Configuration
+Testing Your Configuration
 
-### Test 1: Check Tracker Blocking
+Test 1: Check Tracker Blocking
 
 Visit: https://cookiepedia.co.uk/
 
 Expected: Site should show you're blocking most trackers. Compare to default browser.
 
-### Test 2: Check DNS over HTTPS
+Test 2: Check DNS over HTTPS
 
 Visit: https://1.1.1.1/dns/
 
 Expected: Shows "DNS over HTTPS working" (green).
 
-### Test 3: Check Fingerprinting Resistance
+Test 3: Check Fingerprinting Resistance
 
 Visit: https://browserleaks.com/
 
 Expected:
-- ✓ Blocks WebRTC leak
-- ✓ Blocks canvas fingerprinting
-- ✗ Minor fingerprinting possible (acceptable)
+-  Blocks WebRTC leak
+-  Blocks canvas fingerprinting
+-  Minor fingerprinting possible (acceptable)
 
-### Test 4: Common Sites Still Work
+Test 4: Common Sites Still Work
 
 ```
-✓ Gmail / Yahoo Mail
-✓ Banking sites (some may require whitelisting)
-✓ YouTube / Netflix
-✓ Reddit / Twitter
-✓ Amazon / shopping sites
+ Gmail / Yahoo Mail
+ Banking sites (some may require whitelisting)
+ YouTube / Netflix
+ Reddit / Twitter
+ Amazon / shopping sites
 ? Corporate intranets (may require HTTPS exceptions)
 ```
 
@@ -305,21 +304,21 @@ If a critical site breaks:
 3. Reload page
 4. If it works, add to permanent whitelist
 
-**Whitelist process:**
+Whitelist process:
 1. Click uBlock → Dashboard
 2. "Whitelist" tab
 3. Add domain
 
-## Avoiding Fingerprinting While Maintaining Functionality
+Avoiding Fingerprinting While Maintaining Functionality
 
-### The Fingerprinting Tradeoff
+The Fingerprinting Tradeoff
 
-**Aggressive privacy:**
+Aggressive privacy:
 ```
 privacy.resistFingerprinting = true  // But breaks many sites
 ```
 
-**Balanced (recommended):**
+Balanced (recommended):
 ```
 privacy.resistFingerprinting = false  // Fingerprinting possible
 privacy.reduceTimerPrecision = true    // Reduced timing attack surface
@@ -327,44 +326,44 @@ privacy.reduceTimerPrecision = true    // Reduced timing attack surface
 
 Browser fingerprinting is complex. Truly defeating it requires tools like Tor Browser, which is slower. For normal browsing, the above balance is good.
 
-## Site Breakage: Troubleshooting
+Site Breakage: Troubleshooting
 
-### Scenario 1: Login Page Doesn't Work
+Scenario 1: Login Page Doesn't Work
 
-**Cause:** HTTPS only mode or strict cookies
+Cause: HTTPS only mode or strict cookies
 
-**Fix:**
+Fix:
 1. Temporarily disable HTTPS only mode for that domain:
  ```
    about:preferences → Privacy & Security → HTTPS only mode → Off
    ```
 2. Or whitelist in uBlock Origin
 
-**Permanent fix:** Report to site (HTTPS not working is their bug)
+Permanent fix: Report to site (HTTPS not working is their bug)
 
-### Scenario 2: Video Won't Play
+Scenario 2: Video Won't Play
 
-**Cause:** uBlock Origin blocking ad/tracking scripts
+Cause: uBlock Origin blocking ad/tracking scripts
 
-**Fix:**
+Fix:
 1. Click uBlock icon
 2. Power button to whitelist that domain
 3. Reload
 4. Click icon again, check "Media" and "Scripts" categories
 
-### Scenario 3: Payment Page Errors
+Scenario 3: Payment Page Errors
 
-**Cause:** Overly aggressive privacy preventing form submission
+Cause: Overly aggressive privacy preventing form submission
 
-**Fix:**
+Fix:
 1. Enable HTTPS only mode OFF for that domain
 2. Disable Enhanced Tracking Protection for that domain
 3. Complete payment
 4. Re-enable after
 
-**Note:** Legitimate payment sites should work with your privacy settings. If they don't, they have trust/security problems.
+Legitimate payment sites should work with your privacy settings. If they don't, they have trust/security problems.
 
-## Advanced: Container Tabs
+Advanced: Container Tabs
 
 For maximum privacy, use Firefox Containers (separate cookie jars per domain):
 
@@ -376,52 +375,52 @@ Configuration:
 - Cookies never cross containers
 ```
 
-**Effect:**
+Effect:
 - Amazon can't track you on other sites (different container)
 - Facebook can't see your banking activity (different container)
 
-**Tradeoff:** Slightly inconvenient (must remember container assignments)
+Tradeoff: Slightly inconvenient (must remember container assignments)
 
-## Privacy Maintenance Checklist
+Privacy Maintenance Checklist
 
-**Monthly:**
+Monthly:
 - [ ] Update Firefox (automatic, but verify in Settings)
 - [ ] Update extensions (automatic)
 - [ ] Review about:config settings haven't been reset
 
-**Quarterly:**
+Quarterly:
 - [ ] Check Firefox privacy report (top-right menu → Privacy → "View Protection Report")
 - [ ] Review blocked trackers (should be 100+)
 - [ ] Check for site breakage (report major issues)
 
-**Annually:**
+Annually:
 - [ ] Review Mozilla's privacy policy (no major changes expected)
 - [ ] Audit installed extensions (remove unused ones)
 - [ ] Regenerate Firefox profile if feeling paranoid
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Firefox Privacy Settings Guide 2026](/firefox-privacy-settings-guide-2026/)
 - [How to Harden Firefox for Privacy (2026)](/how-to-harden-firefox-for-privacy-2026/---)
@@ -429,5 +428,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Hardened Firefox Privacy Configuration Guide](/hardened-firefox-privacy-configuration/)
 - [Best Accessible Privacy Extension for Firefox That Does Not](/best-accessible-privacy-extension-for-firefox-that-does-not-/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

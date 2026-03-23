@@ -20,13 +20,13 @@ Technical estate inheritance refers to the process of transferring digital infra
 
 This guide walks through creating SSH and server access documentation that makes technical inheritance and secure.
 
-## Why Technical Estate Documentation Matters
+Why Technical Estate Documentation Matters
 
-Every organization has critical infrastructure that only certain individuals can access. When those individuals become unavailable—whether due to role changes, extended leave, or unexpected circumstances—their technical knowledge dies with them. This creates operational risk.
+Every organization has critical infrastructure that only certain individuals can access. When those individuals become unavailable, whether due to role changes, extended leave, or unexpected circumstances, their technical knowledge dies with them. This creates operational risk.
 
 Good documentation serves multiple purposes. It enables continuity during personnel changes. It supports compliance requirements for access auditing. It reduces the time required to onboard new technical staff. And it provides a clear inventory of what exists in your technical environment.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -36,11 +36,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Inventorying SSH Keys and Access Points
+Step 1: Inventorying SSH Keys and Access Points
 
 Before you can document anything, you need to know what exists. Start by creating a complete inventory of every system that requires SSH access.
 
-### Discovering Your SSH Keys
+Discovering Your SSH Keys
 
 Run this command to list all SSH keys in your default location:
 
@@ -64,12 +64,12 @@ Document each key with the following information:
 - Passphrase status (set or unset)
 - Key purpose or project association
 
-### Mapping Server Access
+Mapping Server Access
 
 For each server or service, document the connection details:
 
 ```bash
-# Example inventory entry format
+Example inventory entry format
 server:
   hostname: prod-web-01.example.com
   ip: 10.0.1.25
@@ -83,11 +83,11 @@ server:
 
 Create a master spreadsheet or YAML file that tracks all servers, their purpose, who has access, and the authentication method used.
 
-### Step 2: Documenting Authentication Methods
+Step 2: Documenting Authentication Methods
 
 SSH access typically relies on several authentication mechanisms. Document each one thoroughly.
 
-### Key-Based Authentication
+Key-Based Authentication
 
 For key-based access, store the public key fingerprint rather than the private key itself:
 
@@ -112,7 +112,7 @@ authorized_keys:
       purpose: "Emergency access"
 ```
 
-### Password and MFA Documentation
+Password and MFA Documentation
 
 If any systems use password authentication (which we recommend avoiding), document the password vault location and access procedures. For systems with MFA, document which MFA method is configured:
 
@@ -122,11 +122,11 @@ If any systems use password authentication (which we recommend avoiding), docume
 
 Never store actual passwords in plain text. Instead, reference your password manager and document the vault structure.
 
-### Step 3: Create Access Runbooks
+Step 3: Create Access Runbooks
 
 Documentation is only useful if others can understand it. Create clear runbooks for common access scenarios.
 
-### Basic SSH Connection
+Basic SSH Connection
 
 For each server, provide the exact connection command:
 
@@ -140,22 +140,22 @@ If non-standard ports are used, include that information:
 ssh -i ~/.ssh/prod_deploy_key -p 2222 deploy@prod-web-01.example.com
 ```
 
-### Jump Host and Bastion Access
+Jump Host and Bastion Access
 
 Many organizations use bastion hosts or jump servers. Document the complete chain:
 
 ```bash
-# First hop: bastion
+First hop: bastion
 ssh -i ~/.ssh/bastion_key admin@bastion.example.com
 
-# Second hop: internal server (from bastion)
+Second hop: internal server (from bastion)
 ssh -i ~/.ssh/internal_key webserver@10.0.1.25
 ```
 
 For SSH config convenience, document the SSH config entries:
 
 ```bash
-# Add to ~/.ssh/config
+Add to ~/.ssh/config
 Host bastion
     HostName bastion.example.com
     User admin
@@ -169,7 +169,7 @@ Host prod-web-01
     ProxyJump bastion
 ```
 
-### Emergency Access Procedures
+Emergency Access Procedures
 
 Document what to do when normal access fails. Include:
 
@@ -178,27 +178,27 @@ Document what to do when normal access fails. Include:
 - Procedure for requesting new SSH keys
 - Recovery options if SSH config is broken
 
-### Step 4: Secure Storage and Access Control
+Step 4: Secure Storage and Access Control
 
 Your documentation itself becomes a high-value target. Protect it accordingly.
 
-### Encryption at Rest
+Encryption at Rest
 
 Store sensitive documentation in an encrypted volume or password-protected vault. For plaintext documentation, encrypt the files:
 
 ```bash
-# Using age (recommended)
+Using age (recommended)
 age -p -o documentation.age README.md
 
-# Using GPG
+Using GPG
 gpg -c documentation.md
 ```
 
-### Access Restrictions
+Access Restrictions
 
 Limit who can view the documentation. Use access control lists or group-based permissions. Audit access regularly.
 
-### Regular Updates
+Regular Updates
 
 Set a schedule to review and update documentation. We recommend quarterly reviews for active projects and annual reviews for stable infrastructure. Include a last-updated timestamp in your documents:
 
@@ -210,7 +210,7 @@ documentation_meta:
   maintained_by: platform-team@example.com
 ```
 
-### Step 5: Transition Checklist
+Step 5: Transition Checklist
 
 When actual handover occurs, use this checklist to ensure nothing is missed:
 
@@ -225,44 +225,44 @@ When actual handover occurs, use this checklist to ensure nothing is missed:
 - [ ] Previous access revoked (where applicable)
 - [ ] Sign-off from both parties
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to prepare ssh key and server access documentation?**
+How long does it take to prepare ssh key and server access documentation?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How To Prepare Pgp Key Revocation Certificate For Publicatio](/how-to-prepare-pgp-key-revocation-certificate-for-publicatio/)
 - [How to Set Up a Password Manager for Home Server SSH Keys](/how-to-set-up-password-manager-for-home-server-ssh-keys/)
@@ -271,5 +271,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [OpenVPN Access Server vs Community Edition](/openvpn-access-server-vs-community-edition-differences-features-2026/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

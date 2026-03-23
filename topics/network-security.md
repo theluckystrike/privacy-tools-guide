@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Network Security — Firewalls, DNS Privacy & Home"
+title: "Network Security. Firewalls, DNS Privacy & Home"
 description: "Network security guides: firewall configuration, DNS privacy, WiFi security, SSH hardening, and home network protection for privacy-conscious users."
 permalink: /topics/network-security/
 intent-checked: true
@@ -8,13 +8,13 @@ voice-checked: true
 date: 2026-03-21
 ---
 
-# Network Security — Firewalls, DNS Privacy & Home Network Protection
+# Network Security. Firewalls, DNS Privacy & Home Network Protection
 
 Your home network is the gateway to all your digital activity, and securing it is fundamental to protecting your privacy. This hub covers firewall configuration, DNS privacy solutions, SSH server hardening, WiFi security against deauthentication attacks, and detecting unknown devices on your network. We also explain technical topics like NAT traversal, TLS fingerprinting, and deep packet inspection. Whether you are hardening a home office network or setting up a secure development environment, these guides provide practical security configurations.
 
 ---
 
-## Articles in This Topic (102)
+Articles in This Topic (102)
 
 - [Air Gapped Computer Setup For Maximum Security Practical Gui](/air-gapped-computer-setup-for-maximum-security-practical-gui/)
 - [Anonymous Wifi Access Strategies For Connecting To Internet](/anonymous-wifi-access-strategies-for-connecting-to-internet-/)

@@ -18,7 +18,7 @@ voice-checked: true
 
 To identify unknown devices, check your router's admin interface (192.168.1.1 or 192.168.0.1) for the connected devices list showing IP, MAC address, and device names, or use network scanning tools like nmap. Immediately change your WiFi password to WPA3 (or WPA2 with a strong passphrase), isolate suspicious devices onto a guest network if possible, and check your router logs for access attempts. If you find unfamiliar devices, disable WPS (Wi-Fi Protected Setup), enable MAC filtering to whitelist only your devices, and update router firmware to patch security vulnerabilities that allowed unauthorized access.
 
-## Table of Contents
+Table of Contents
 
 - [Identifying Devices on Your Network](#identifying-devices-on-your-network)
 - [Investigating the Unknown Device](#investigating-the-unknown-device)
@@ -26,13 +26,13 @@ To identify unknown devices, check your router's admin interface (192.168.1.1 or
 - [Preventing Future Unauthorized Access](#preventing-future-unauthorized-access)
 - [When to Seek Professional Help](#when-to-seek-professional-help)
 
-## Identifying Devices on Your Network
+Identifying Devices on Your Network
 
 The first step in handling unknown devices is identifying what's currently connected to your network. Modern routers maintain a list of all connected devices, though the process for accessing this information varies by manufacturer.
 
-### Accessing Your Router's Device List
+Accessing Your Router's Device List
 
-Most routers provide a web-based interface where you can view all connected devices. To access this, open your web browser and enter your router's IP address (commonly 192.168.0.1, 192.168.1.1, or 10.0.0.1). Log in with your administrator credentials—you'll find these on the router itself or in its documentation.
+Most routers provide a web-based interface where you can view all connected devices. To access this, open your web browser and enter your router's IP address (commonly 192.168.0.1, 192.168.1.1, or 10.0.0.1). Log in with your administrator credentials, you'll find these on the router itself or in its documentation.
 
 Once logged in, look for sections labeled "Device List," "Connected Devices," "DHCP Clients," or "Wireless Clients." This list typically displays:
 
@@ -42,41 +42,41 @@ Once logged in, look for sections labeled "Device List," "Connected Devices," "D
 | John's Phone | 192.168.1.110 | AA:BB:CC:DD:EE:02 | Wi-Fi 5 |
 | Unknown Device | 192.168.1.145 | AA:BB:CC:DD:EE:FF | Wi-Fi 2.4GHz |
 
-### Using Network Scanning Tools
+Using Network Scanning Tools
 
 For more detailed information, consider using network scanning tools. These applications can discover devices your router's interface might miss and provide additional details like open ports and device fingerprints.
 
-**Using nmap for network scanning:**
+Using nmap for network scanning:
 
 ```bash
-# Install nmap if needed
+Install nmap if needed
 sudo apt-get install nmap
 
-# Scan your local network
+Scan your local network
 sudo nmap -sn 192.168.1.0/24
 
-# For more detailed information
+For more detailed information
 sudo nmap -O 192.168.1.0/24
 ```
 
-**Using arp-scan:**
+Using arp-scan:
 
 ```bash
-# Install arp-scan
+Install arp-scan
 sudo apt-get install arp-scan
 
-# Scan the local network
+Scan the local network
 sudo arp-scan --localnet
 ```
 
 These tools send packets to each IP address in your subnet and analyze the responses to identify active devices and their MAC addresses.
 
-### Identifying Device Manufacturers
+Identifying Device Manufacturers
 
-Every network device has a unique MAC address (Media Access Control address) that includes an Organizationally Unique Identifier (OUI)—the first six characters that identify the manufacturer. You can look up MAC addresses using online databases like macvendors.com or use command-line tools:
+Every network device has a unique MAC address (Media Access Control address) that includes an Organizationally Unique Identifier (OUI), the first six characters that identify the manufacturer. You can look up MAC addresses using online databases like macvendors.com or use command-line tools:
 
 ```bash
-# Look up manufacturer from MAC address
+Look up manufacturer from MAC address
 curl -s https://api.macvendors.com/AA:BB:CC:DD:EE:FF
 ```
 
@@ -86,11 +86,11 @@ Common manufacturer prefixes include:
 - Intel: 00:02:B3, 00:0E:0C, 3C:A9:F4
 - Unknown or randomized: This may indicate a newer device using MAC randomization for privacy
 
-## Investigating the Unknown Device
+Investigating the Unknown Device
 
-Once you've identified an unknown device, your next step is determining whether it's legitimate. Not all unknown devices are malicious—some may be temporary guests, smart home devices, or devices you simply forgot about.
+Once you've identified an unknown device, your next step is determining whether it's legitimate. Not all unknown devices are malicious, some may be temporary guests, smart home devices, or devices you simply forgot about.
 
-### Checking Your Known Devices
+Checking Your Known Devices
 
 Start by making a list of all devices you expect to be on your network:
 
@@ -103,15 +103,15 @@ Start by making a list of all devices you expect to be on your network:
 
 Cross-reference the unknown device's MAC address and IP address against this list. Some devices may show generic names like "android-xxxxx" or "iPhone" that don't immediately identify the owner.
 
-### Analyzing Connection Patterns
+Analyzing Connection Patterns
 
 The behavior of an unknown device can provide clues about its nature:
 
 ```bash
-# Ping the unknown device to check if it's responsive
+Ping the unknown device to check if it's responsive
 ping 192.168.1.145
 
-# Check current connections from the device
+Check current connections from the device
 netstat -an | grep 192.168.1.145
 ```
 
@@ -121,25 +121,25 @@ Questions to consider:
 - Is it connecting to specific ports or services?
 - Does its activity pattern match your household's usage?
 
-### Testing Connectivity
+Testing Connectivity
 
 You can perform basic connectivity tests to understand what the device might be doing:
 
 ```bash
-# Port scan the unknown device
+Port scan the unknown device
 sudo nmap -sV 192.168.1.145
 
-# Check for common ports
+Check for common ports
 sudo nmap -p 80,443,22,3389,8080 192.168.1.145
 ```
 
 If you discover open ports that shouldn't be accessible (like remote desktop or SSH on unusual devices), this could indicate a security concern.
 
-## Securing Your Network
+Securing Your Network
 
 If you've determined the unknown device doesn't belong on your network, take immediate action to secure your network.
 
-### Blocking the Device
+Blocking the Device
 
 Most routers allow you to block devices by MAC address. Access your router's admin panel and look for:
 - Access Control
@@ -147,13 +147,13 @@ Most routers allow you to block devices by MAC address. Access your router's adm
 - Device Blocking
 
 ```bash
-# Example: Some routers support blocking via command line
-# This varies significantly by router manufacturer
+Some routers support blocking via command line
+This varies significantly by router manufacturer
 ```
 
 Once you've blocked the device, monitor your network to ensure it doesn't reconnect using a different MAC address.
 
-### Changing Your Wi-Fi Password
+Changing Your Wi-Fi Password
 
 If you suspect someone has obtained your Wi-Fi password, changing it is essential:
 
@@ -163,19 +163,19 @@ If you suspect someone has obtained your Wi-Fi password, changing it is essentia
 4. Ensure you're using WPA3 or WPA2-AES encryption
 5. Save settings and reconnect all your legitimate devices
 
-### Enabling Network Isolation
+Enabling Network Isolation
 
 Most modern routers offer network isolation features that prevent devices from communicating with each other. This is particularly useful for guest networks or IoT devices:
 
-- **AP Isolation**: Prevents wireless clients from communicating with each other
-- **Guest Network Isolation**: Keeps guest devices separate from your main network
-- **VLAN Support**: Advanced feature for segmenting network traffic
+- AP Isolation: Prevents wireless clients from communicating with each other
+- Guest Network Isolation: Keeps guest devices separate from your main network
+- VLAN Support: Advanced feature for segmenting network traffic
 
-## Preventing Future Unauthorized Access
+Preventing Future Unauthorized Access
 
 After addressing the immediate concern, implement these practices to minimize future risks.
 
-### Strengthen Your Wi-Fi Security
+Strengthen Your Wi-Fi Security
 
 | Protocol | Security Level | Notes |
 |----------|---------------|-------|
@@ -187,7 +187,7 @@ After addressing the immediate concern, implement these practices to minimize fu
 
 Always use a strong, unique password and avoid sharing it freely.
 
-### Use a Guest Network
+Use a Guest Network
 
 Most routers support creating a separate guest network. Use this for:
 - Visitors who need internet access
@@ -196,21 +196,21 @@ Most routers support creating a separate guest network. Use this for:
 
 Guest networks typically have internet-only access, preventing guests from accessing your local devices or files.
 
-### Monitor Your Network Regularly
+Monitor Your Network Regularly
 
 Set up regular checks to ensure only authorized devices are connected:
 
 ```bash
 #!/bin/bash
-# Simple network monitoring script
+Simple network monitoring script
 
-# Get current timestamp
+Get current timestamp
 echo "=== Network Scan: $(date) ===" >> network_log.txt
 
-# Scan network and save results
+Scan network and save results
 arp-scan --localnet | grep -v "Starting" | grep -v "packets" >> network_log.txt
 
-# Check for new devices compared to known list
+Check for new devices compared to known list
 diff -u known_devices.txt <(arp-scan --localnet | grep -E "([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}" | awk '{print $2}') >> network_changes.txt
 
 echo "Scan complete. Check network_log.txt for results."
@@ -219,15 +219,15 @@ echo "Scan complete. Check network_log.txt for results."
 Schedule this script to run weekly using cron:
 
 ```bash
-# Add to crontab
+Add to crontab
 0 9 * * 0 /path/to/network_monitor.sh
 ```
 
-### Update Router Firmware
+Update Router Firmware
 
 Router manufacturers regularly release firmware updates that patch security vulnerabilities. Check your router's admin panel monthly for updates, or enable automatic updates if available.
 
-## When to Seek Professional Help
+When to Seek Professional Help
 
 In some cases, you may need professional assistance:
 - If you discover persistent unauthorized access despite taking precautions
@@ -237,29 +237,29 @@ In some cases, you may need professional assistance:
 
 A network security professional can perform advanced diagnostics, check for firmware-level compromises, and help implement enterprise-grade security measures.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Verify Your Devices Are Not Compromised](/how-to-verify-your-devices-are-not-compromised-complete-audit/)
 - [Verify Your Devices Are Not Compromised: A Complete](/how-to-verify-your-devices-are-not-compromised-complete-audit/)
@@ -267,5 +267,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Tell If Your Wifi Password Has Been Cracked](/how-to-tell-if-your-wifi-password-has-been-cracked/)
 - [Is Someone Monitoring My Home WiFi Network? How](/is-someone-monitoring-my-home-wifi-network-how-to-check/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

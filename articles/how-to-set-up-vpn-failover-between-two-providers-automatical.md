@@ -18,20 +18,20 @@ voice-checked: true
 
 Set up automatic VPN failover by configuring two WireGuard tunnels (wg0 and wg1) on a Linux machine, then running a bash monitoring script as a systemd service that pings through the active tunnel every 10 seconds and switches the default route to the backup provider on failure. This eliminates manual intervention and restores connectivity within seconds of a provider outage. The full implementation uses open-source tools and works with most VPN providers.
 
-## Table of Contents
+Table of Contents
 
 - [Why Automatic Failover Matters](#why-automatic-failover-matters)
 - [Prerequisites](#prerequisites)
 - [Additional Considerations](#additional-considerations)
 - [Troubleshooting](#troubleshooting)
 
-## Why Automatic Failover Matters
+Why Automatic Failover Matters
 
-VPN connections serve as critical infrastructure for remote access, site-to-site networking, and privacy. Network interruptions happen—provider outages, ISP issues, or hardware failures can disconnect your tunnel. Manual switching wastes time and introduces human error. An automatic failover system detects connectivity loss within seconds and restores your connection through an alternate provider.
+VPN connections serve as critical infrastructure for remote access, site-to-site networking, and privacy. Network interruptions happen, provider outages, ISP issues, or hardware failures can disconnect your tunnel. Manual switching wastes time and introduces human error. An automatic failover system detects connectivity loss within seconds and restores your connection through an alternate provider.
 
-The solution described here uses **WireGuard** for its simplicity and performance, combined with a monitoring script that tracks tunnel health. You can adapt these principles to OpenVPN or other protocols as needed.
+The solution described here uses WireGuard for its simplicity and performance, combined with a monitoring script that tracks tunnel health. You can adapt these principles to OpenVPN or other protocols as needed.
 
-## Prerequisites
+Prerequisites
 
 Before implementing failover, gather the following:
 
@@ -40,14 +40,14 @@ Before implementing failover, gather the following:
 - Basic familiarity with terminal commands and cron scheduling
 - Root or sudo access on your Linux system
 
-### Step 1: Set Up Your Primary and Secondary VPN Tunnels
+Step 1: Set Up Your Primary and Secondary VPN Tunnels
 
 First, establish both VPN connections on your Linux machine. This example uses WireGuard, but the principles apply to any protocol.
 
-### Install WireGuard
+Install WireGuard
 
 ```bash
-# Debian/Ubuntu
+Debian/Ubuntu
 sudo apt update
 sudo apt install wireguard
 
@@ -55,7 +55,7 @@ sudo apt install wireguard
 sudo dnf install wireguard-tools
 ```
 
-### Configure the Primary Tunnel
+Configure the Primary Tunnel
 
 Create the WireGuard configuration for your primary provider:
 
@@ -78,7 +78,7 @@ AllowedIPs = 0.0.0.0/0
 PersistentKeepalive = 25
 ```
 
-### Configure the Secondary Tunnel
+Configure the Secondary Tunnel
 
 Create a second WireGuard interface for your backup provider:
 
@@ -108,7 +108,7 @@ sudo wg-quick up wg0
 sudo wg-quick up wg1
 ```
 
-### Step 2: Implementing the Failover Script
+Step 2: Implementing the Failover Script
 
 The core of your failover system is a monitoring script that checks connectivity through each tunnel and switches routes when needed.
 
@@ -123,7 +123,7 @@ Add this content:
 ```bash
 #!/bin/bash
 
-# Configuration
+Configuration
 PRIMARY_IF="wg0"
 SECONDARY_IF="wg1"
 PRIMARY_GW="10.0.0.1"
@@ -164,7 +164,7 @@ failover() {
     sudo wg-quick up "$from_if" 2>/dev/null
 }
 
-# Main monitoring loop
+Main monitoring loop
 while true; do
     ACTIVE=$(get_active_tunnel)
 
@@ -192,7 +192,7 @@ Make the script executable:
 sudo chmod +x /usr/local/bin/vpn-failover.sh
 ```
 
-### Step 3: Run the Failover Monitor
+Step 3: Run the Failover Monitor
 
 Start the failover script as a systemd service for reliability. Create the service file:
 
@@ -225,11 +225,11 @@ sudo systemctl enable vpn-failover
 sudo systemctl start vpn-failover
 ```
 
-### Step 4: Test Your Failover System
+Step 4: Test Your Failover System
 
 Verify the failover mechanism works before relying on it in production.
 
-### Simulate a Failure
+Simulate a Failure
 
 Disconnect your primary VPN to trigger failover:
 
@@ -249,7 +249,7 @@ You should see the failover script detect the failure and switch to the secondar
 curl ifconfig.me
 ```
 
-### Restore Primary Connectivity
+Restore Primary Connectivity
 
 Bring the primary tunnel back up:
 
@@ -259,80 +259,80 @@ sudo wg-quick up wg0
 
 The script will detect recovery and switch back, or you can configure it to remain on the secondary tunnel until manually restored.
 
-## Additional Considerations
+Additional Considerations
 
-**Routing Policy**: Modify the script to prioritize specific traffic through either tunnel based on destination, source IP, or application requirements using `ip rule` tables.
+Routing Policy: Modify the script to prioritize specific traffic through either tunnel based on destination, source IP, or application requirements using `ip rule` tables.
 
-**Health Check Frequency**: Adjust the `CHECK_INTERVAL` based on your tolerance for downtime. A 10-second interval balances responsiveness with system overhead.
+Health Check Frequency: Adjust the `CHECK_INTERVAL` based on your tolerance for downtime. A 10-second interval balances responsiveness with system overhead.
 
-**Multiple Failures**: Extend the script to support additional VPN providers by adding more interfaces and corresponding checks.
+Multiple Failures: Extend the script to support additional VPN providers by adding more interfaces and corresponding checks.
 
-**Logging**: Monitor the log file regularly or integrate with a log aggregation system for production environments.
+Logging: Monitor the log file regularly or integrate with a log aggregation system for production environments.
 
-### Step 5: Policy Routing for Split Traffic
+Step 5: Policy Routing for Split Traffic
 
 Use `ip rule` with named routing tables to send specific traffic through each tunnel independently of the default route:
 
 ```bash
-# Register named routing tables
+Register named routing tables
 echo "200 vpn0" | sudo tee -a /etc/iproute2/rt_tables
 echo "201 vpn1" | sudo tee -a /etc/iproute2/rt_tables
 
-# Route traffic from wg0 IP through provider 1 table
+Route traffic from wg0 IP through provider 1 table
 sudo ip rule add from 10.0.0.2 table vpn0
 sudo ip route add default dev wg0 table vpn0
 
-# Route traffic from wg1 IP through provider 2 table
+Route traffic from wg1 IP through provider 2 table
 sudo ip rule add from 10.0.1.2 table vpn1
 sudo ip route add default dev wg1 table vpn1
 
-# Verify active rules
+Verify active rules
 ip rule show
 ip route show table vpn0
 ```
 
 This routes sensitive API traffic through provider 1 and general traffic through provider 2, without modifying the global default route. Add rules to `/etc/rc.local` or a systemd oneshot service for persistence across reboots.
 
-Automatic failover with WireGuard and systemd eliminates single-point failures. Swap providers by updating the `.conf` files — the monitoring script and routing tables stay unchanged.
+Automatic failover with WireGuard and systemd eliminates single-point failures. Swap providers by updating the `.conf` files. the monitoring script and routing tables stay unchanged.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to set up vpn failover between two providers automatical?**
+How long does it take to set up vpn failover between two providers automatical?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Best VPN for Linux Desktop: A Developer Guide](/best-vpn-for-linux-desktop/)
 - [How To Run Concurrent Vpn Connections For Different Applicat](/how-to-run-concurrent-vpn-connections-for-different-applicat/)
@@ -340,5 +340,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How VPN Reconnection Works After Network Switch: Technical](/how-vpn-reconnection-works-after-network-switch-mobile-handoff/)
 - [How To Use Tcpdump To Verify Vpn Traffic Is Encrypted](/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [AI Autocomplete Behavior Differences Between VS Code](https://bestremotetools.com/ai-autocomplete-behavior-differences-between-vscode-jetbrain/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

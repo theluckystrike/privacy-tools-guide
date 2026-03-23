@@ -13,13 +13,13 @@ voice-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
 
-## Related Articles
+Related Articles
 
 - [Best Privacy-Focused DNS Resolvers Compared](/best-privacy-dns-resolvers-cloudflare-quad9-nextdns-adguard/)
 - [How to Configure Pi-hole with Unbound DNS](/how-to-configure-pihole-with-unbound-dns/)
 - [Privacy-Focused DNS Providers Comparison 2026: Privacy](/privacy-focused-dns-providers-comparison-2026/)
 - [Privacy-Focused DNS Providers Comparison 2026](/privacy-focused-dns-providers-comparison-2026/)
 - [WireGuard DNS Configuration Options Explained](/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

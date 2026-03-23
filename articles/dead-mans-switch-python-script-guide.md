@@ -15,14 +15,14 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# How to Set Up a Dead Man's Switch for Data
+How to Set Up a Dead Man's Switch for Data
 
 A dead man's switch (DMS) releases information or sends alerts automatically if you fail to check in within a set period. Uses include: releasing encrypted credentials to trusted people if you're incapacitated, notifying contacts if you go silent, or deleting sensitive data if a device isn't checked within a timeframe.
 
 This guide builds a Python-based DMS with configurable check-in periods, escalating alerts, and encrypted payload release.
 ---
 
-## Table of Contents
+Table of Contents
 
 - [Design Principles](#design-principles)
 - [Architecture](#architecture)
@@ -30,18 +30,18 @@ This guide builds a Python-based DMS with configurable check-in periods, escalat
 - [Troubleshooting](#troubleshooting)
 - [Related Reading](#related-reading)
 
-## Design Principles
+Design Principles
 
 A good DMS has:
-1. **Regular check-in requirement**: You must actively confirm you're alive at intervals
-2. **Escalating response**: First sends a reminder, then alerts, then releases/acts
-3. **Tamper resistance**: Stored on a system you don't fully control (or on multiple systems)
-4. **Encrypted payload**: The released data is encrypted until needed
-5. **Clear recovery**: Easy for intended recipients to use the released data
+1. Regular check-in requirement: You must actively confirm you're alive at intervals
+2. Escalating response: First sends a reminder, then alerts, then releases/acts
+3. Tamper resistance: Stored on a system you don't fully control (or on multiple systems)
+4. Encrypted payload: The released data is encrypted until needed
+5. Clear recovery: Easy for intended recipients to use the released data
 
 ---
 
-## Architecture
+Architecture
 
 ```
 [You] ← regularly send check-in token → [DMS Server/Script]
@@ -56,7 +56,7 @@ A good DMS has:
 
 ---
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -66,12 +66,12 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Core DMS Script
+Step 1: Core DMS Script
 
 ```python
 #!/usr/bin/env python3
 """
-Dead Man's Switch — checks if you've checked in recently.
+Dead Man's Switch. checks if you've checked in recently.
 Run via cron every hour on a server or trusted machine.
 """
 import os
@@ -84,7 +84,7 @@ from datetime import datetime, timedelta
 from email.message import EmailMessage
 from pathlib import Path
 
-# Configuration
+Configuration
 CONFIG = {
     "check_in_file": "/var/dms/last_checkin.json",
     "state_file": "/var/dms/state.json",
@@ -216,7 +216,7 @@ if __name__ == "__main__":
 
 ---
 
-### Step 2: Check-In Server (Simple HTTP Endpoint)
+Step 2: Check-In Server (Simple HTTP Endpoint)
 
 ```python
 #!/usr/bin/env python3
@@ -227,8 +227,8 @@ from pathlib import Path
 
 app = Flask(__name__)
 
-# Set your check-in token (share only with yourself)
-# Generate: python3 -c "import secrets; print(secrets.token_urlsafe(32))"
+Set your check-in token (share only with yourself)
+Generate: python3 -c "import secrets; print(secrets.token_urlsafe(32))"
 VALID_TOKEN = "YOUR_SECRET_CHECK_IN_TOKEN"
 CHECK_IN_FILE = "/var/dms/last_checkin.json"
 
@@ -254,24 +254,24 @@ if __name__ == "__main__":
 ```
 
 ```bash
-# Import hmac (fix the script):
-# Add "import hmac" at the top of the Flask script
+Import hmac (fix the script):
+Add "import hmac" at the top of the Flask script
 
-# Run with gunicorn behind nginx:
+Run with gunicorn behind nginx:
 pip install flask gunicorn
 gunicorn -b 127.0.0.1:5000 checkin_server:app
 ```
 
 ---
 
-### Step 3: Encrypt the Payload
+Step 3: Encrypt the Payload
 
 ```bash
-# Create your payload (credentials, instructions, etc.)
+Create your payload (credentials, instructions, etc.)
 nano /tmp/dms-payload.txt
-# Write what trusted contacts need to know
+Write what trusted contacts need to know
 
-# Encrypt with their GPG public keys
+Encrypt with their GPG public keys
 gpg --import alice-public-key.asc
 gpg --import bob-public-key.asc
 
@@ -281,65 +281,65 @@ gpg --encrypt \
   --output /var/dms/payload.enc \
   /tmp/dms-payload.txt
 
-# Verify encryption
+Verify encryption
 gpg --list-packets /var/dms/payload.enc
 
-# Shred plaintext
+Shred plaintext
 shred -uz /tmp/dms-payload.txt
 ```
 
 ---
 
-### Step 4: Crontab Setup
+Step 4: Crontab Setup
 
 ```bash
-# Create DMS directory with restricted permissions
+Create DMS directory with restricted permissions
 sudo mkdir -p /var/dms
 sudo chown youruser:youruser /var/dms
 chmod 700 /var/dms
 
-# Add to crontab (check every 6 hours)
+Add to crontab (check every 6 hours)
 crontab -e
-# Add:
+Add:
 0 */6 * * * /usr/bin/python3 /usr/local/bin/dms-check.py >> /var/log/dms.log 2>&1
 ```
 
 ---
 
-### Step 5: Check-In from Anywhere
+Step 5: Check-In from Anywhere
 
 ```bash
-# Check in via curl (save this as a shell alias)
+Check in via curl (save this as a shell alias)
 alias checkin='curl -s -X POST "https://yourserver.com/dms/checkin?token=YOUR_TOKEN"'
 
-# Or from a phone, open:
-# https://yourserver.com/dms/checkin?token=YOUR_TOKEN
+Or from a phone, open:
+https://yourserver.com/dms/checkin?token=YOUR_TOKEN
 
-# From anywhere with internet access:
+From anywhere with internet access:
 curl "https://yourserver.com/dms/checkin?token=YOUR_TOKEN"
 ```
 
 ---
 
-### Step 6: Reset After Release
+Step 6: Reset After Release
 
 If the DMS fires and you're fine:
 
 ```bash
-# Update the check-in timestamp immediately
+Update the check-in timestamp immediately
 curl "https://yourserver.com/dms/checkin?token=YOUR_TOKEN"
 
-# Reset the state file (clear "released" flags)
+Reset the state file (clear "released" flags)
 echo "{}" > /var/dms/state.json
 
-# Contact trusted contacts to confirm you're OK
+Contact trusted contacts to confirm you're OK
 ```
 
-### Step 7: Hardening the Check-In Server
+Step 7: Hardening the Check-In Server
 
 The simple Flask check-in server works for personal use, but a production deployment on an internet-facing server needs additional hardening to prevent the token from being brute-forced or the server from being disrupted.
 
-**Rate limiting**: Add rate limiting to the check-in endpoint to prevent brute-force token guessing. With a 32-character random token, brute force is computationally infeasible, but rate limiting reduces noise in your logs and prevents your server from being used as part of a larger scanning campaign:
+Rate limiting: Add rate limiting to the check-in endpoint to prevent brute-force token guessing. With a 32-character random token, brute force is computationally infeasible, but rate limiting reduces noise in your logs and prevents your server from being used as part of a larger scanning campaign:
 
 ```python
 from flask import Flask, request, jsonify, abort
@@ -349,13 +349,13 @@ import hmac
 
 app = Flask(__name__)
 
-# Simple in-memory rate limiter (use Redis for multi-process deployments)
+Simple in-memory rate limiter (use Redis for multi-process deployments)
 request_times = {}
 
 def rate_limit(max_requests=5, window_seconds=60):
     def decorator(f):
         @wraps(f)
-        def wrapper(*args, **kwargs):
+        def wrapper(*args, kwargs):
             ip = request.remote_addr
             now = time.time()
             times = request_times.get(ip, [])
@@ -365,7 +365,7 @@ def rate_limit(max_requests=5, window_seconds=60):
                 abort(429)
             times.append(now)
             request_times[ip] = times
-            return f(*args, **kwargs)
+            return f(*args, kwargs)
         return wrapper
     return decorator
 
@@ -381,7 +381,7 @@ def checkin():
     # ... rest of check-in logic
 ```
 
-**Nginx authentication layer**: Put nginx in front of the Flask server with an additional IP allowlist if you always check in from known locations:
+Nginx authentication layer: Put nginx in front of the Flask server with an additional IP allowlist if you always check in from known locations:
 
 ```nginx
 location /dms/checkin {
@@ -397,14 +397,14 @@ location /dms/checkin {
 
 This provides defense-in-depth: even if your token is compromised, attackers from unknown IPs cannot use it to reset the DMS state.
 
-### Step 8: Distributing DMS Across Multiple Servers
+Step 8: Distributing DMS Across Multiple Servers
 
-A single-server DMS has a significant failure mode: if that server goes down—due to payment lapse, infrastructure failure, or targeted attack—the DMS stops checking and either fires prematurely or fails to fire at all. For high-assurance use cases, distribute the check-in across multiple independent servers.
+A single-server DMS has a significant failure mode: if that server goes down, due to payment lapse, infrastructure failure, or targeted attack, the DMS stops checking and either fires prematurely or fails to fire at all. For high-assurance use cases, distribute the check-in across multiple independent servers.
 
 The simplest approach runs the same DMS script on two servers from different providers (e.g., Hetzner and Vultr). Both receive check-ins. The payload releases only when both servers agree the threshold has been exceeded:
 
 ```python
-# Distributed check-in: sends the check-in token to multiple servers simultaneously
+Distributed check-in: sends the check-in token to multiple servers simultaneously
 import requests
 import concurrent.futures
 
@@ -443,22 +443,22 @@ Run this script as your check-in command instead of a raw `curl` call. The conso
 
 ---
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Articles
+Related Articles
 
 - [Set Up a Dead Man's Switch Email That Sends Credentials If](/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
 - [Use Dead Man's Switch with Multiple Independent Trustees](/how-to-use-dead-mans-switch-with-multiple-independent-truste/)
@@ -466,5 +466,5 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers/---)
 - [How to Remove Personal Data from Data](/how-to-remove-personal-data-from-data-brokers/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

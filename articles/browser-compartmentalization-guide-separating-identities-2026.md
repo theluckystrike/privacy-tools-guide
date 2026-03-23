@@ -16,9 +16,9 @@ intent-checked: true
 
 {% raw %}
 
-## Why Browser Compartmentalization Matters
+Why Browser Compartmentalization Matters
 
-## Table of Contents
+Table of Contents
 
 - [Why Browser Compartmentalization Matters](#why-browser-compartmentalization-matters)
 - [Compartmentalization Strategies (Ranked by Effectiveness)](#compartmentalization-strategies-ranked-by-effectiveness)
@@ -29,9 +29,9 @@ intent-checked: true
 - [Tracking Prevention (Beyond Compartmentalization)](#tracking-prevention-beyond-compartmentalization)
 - [Switching Between Compartments (Workflow)](#switching-between-compartments-workflow)
 
-Advertisers track you across websites using cookies and fingerprinting. You login to Google, then visit unrelated news site—Google's ad tracking code fires, matches your identity, builds profile. Same identity fragments appear across 100+ sites. Compartmentalization means: Google cookies don't leak to news sites. Each identity has separate browser profile/window. Trackers can't connect the dots.
+Advertisers track you across websites using cookies and fingerprinting. You login to Google, then visit unrelated news site, Google's ad tracking code fires, matches your identity, builds profile. Same identity fragments appear across 100+ sites. Compartmentalization means: Google cookies don't leak to news sites. Each identity has separate browser profile/window. Trackers can't connect the dots.
 
-**Typical Tracking Without Compartmentalization:**
+Typical Tracking Without Compartmentalization:
 ```
 You login to Gmail
   → Google sets cookie + ad pixel
@@ -46,7 +46,7 @@ You visit Amazon
 After 50+ sites, Google has comprehensive profile of your behavior
 ```
 
-**Compartmentalization Prevents This:**
+Compartmentalization Prevents This:
 ```
 Work Email: Gmail in separate container
   → Google cookies isolated to gmail.com
@@ -55,12 +55,12 @@ Personal Email: Another container
 News Reading: Private window (no cookies shared between sites)
 Shopping: Separate browser profile (Amazon doesn't see Gmail)
 
-Result: Trackers see fragmented, useless profiles instead of unified you
+Trackers see fragmented, useless profiles instead of unified you
 ```
 
 ---
 
-## Compartmentalization Strategies (Ranked by Effectiveness)
+Compartmentalization Strategies (Ranked by Effectiveness)
 
 | Strategy | Isolation Strength | Effort | Best For |
 |----------|------------------|--------|----------|
@@ -71,13 +71,13 @@ Result: Trackers see fragmented, useless profiles instead of unified you
 
 ---
 
-## Strategy 1: Browser Profiles (Easiest)
+Strategy 1: Browser Profiles (Easiest)
 
 Browser profiles keep separate cookies, cache, history, passwords. Same browser, different identities.
 
-### Chrome Profile Setup
+Chrome Profile Setup
 
-**Create Profile 1 (Work):**
+Create Profile 1 (Work):
 ```
 Chrome Menu (top right) → Manage people → Add person
 Name: "Work"
@@ -86,7 +86,7 @@ Icon: Choose color/icon
   → Separate cookies, login, extensions
 ```
 
-**Create Profile 2 (Personal):**
+Create Profile 2 (Personal):
 ```
 Chrome Menu → Manage people → Add person
 Name: "Personal"
@@ -94,7 +94,7 @@ Icon: Different color
   → Another Chrome window for Personal profile
 ```
 
-**Usage:**
+Usage:
 ```
 Window 1 (Work Profile):
 - Gmail work account (@company.com)
@@ -109,37 +109,37 @@ Window 2 (Personal Profile):
 - Separate tracking profile
 ```
 
-**Key Advantage:** Same browser, zero effort to switch. Click taskbar icon.
+Key Advantage: Same browser, zero effort to switch. Click taskbar icon.
 
-**Limitation:** Both profiles on same computer share IP address, hardware identifiers. Tracker can potentially correlate via fingerprinting. But cookies/logins are completely separate.
+Limitation: Both profiles on same computer share IP address, hardware identifiers. Tracker can potentially correlate via fingerprinting. But cookies/logins are completely separate.
 
-### Firefox Profile Setup
+Firefox Profile Setup
 
-**Similar to Chrome but more powerful:**
+Similar to Chrome but more powerful:
 
 ```bash
-# List existing profiles
+List existing profiles
 firefox -ProfileManager
 
-# Create profile via UI
+Create profile via UI
 Firefox Menu → Settings → [Scroll to Profiles]
 Create new profile "Work"
 Create new profile "Personal"
 
-# Launch specific profile from command line
+Launch specific profile from command line
 firefox -P "Work"   # Opens Work profile
 firefox -P "Personal"  # Opens Personal profile in separate window
 ```
 
-**Advantage over Chrome:** Firefox profiles use separate directories, harder to fingerprint across profiles.
+Advantage over Chrome: Firefox profiles use separate directories, harder to fingerprint across profiles.
 
 ---
 
-## Strategy 2: Firefox Multi-Account Containers (Powerful + Easy)
+Strategy 2: Firefox Multi-Account Containers (Powerful + Easy)
 
 Containers isolate cookies at the site level. Login to same site with multiple identities.
 
-### Installation
+Installation
 
 ```
 1. Firefox → Add-ons → Search "Multi-Account Containers"
@@ -148,9 +148,9 @@ Containers isolate cookies at the site level. Login to same site with multiple i
 4. Opens extension menu
 ```
 
-### Creating Containers
+Creating Containers
 
-**Default containers provided:**
+Default containers provided:
 ```
 - Personal (blue)
 - Work (red)
@@ -159,9 +159,9 @@ Containers isolate cookies at the site level. Login to same site with multiple i
 - Custom (create your own)
 ```
 
-### Usage Example
+Usage Example
 
-**Gmail (Dual Account):**
+Gmail (Dual Account):
 
 ```
 1. Open tab, address bar shows: gmail.com
@@ -177,7 +177,7 @@ Containers isolate cookies at the site level. Login to same site with multiple i
    → Switching between tabs logs you into different accounts
 ```
 
-**Amazon (Shopping):**
+Amazon (Shopping):
 ```
 1. Open tab, click container icon, select "Shopping"
 2. Visit Amazon, login
@@ -186,7 +186,7 @@ Containers isolate cookies at the site level. Login to same site with multiple i
 5. Other sites don't see Amazon cookies
 ```
 
-**Banking (Maximum Isolation):**
+Banking (Maximum Isolation):
 ```
 1. Create "Banking" container
 2. Visit bank.com ONLY in Banking container
@@ -194,9 +194,9 @@ Containers isolate cookies at the site level. Login to same site with multiple i
 4. Banking cookies never leave Banking container
 ```
 
-### Container Security Rules
+Container Security Rules
 
-**Automatic Container Assignment:**
+Automatic Container Assignment:
 ```
 Firefox Settings → Privacy → Multi-Account Containers
 Assign sites to containers:
@@ -208,7 +208,7 @@ Assign sites to containers:
 Auto-switches tabs to correct container when you visit these sites
 ```
 
-### Container Isolation Strength
+Container Isolation Strength
 
 ```
 Cookies: Completely isolated per container
@@ -218,18 +218,18 @@ Local Storage: Per-container
 Tracking Pixels: Container-scoped (can't correlate cross-site)
 IP Address: Shared (all containers same IP)
 
-Result: Cookies/auth isolated, but fingerprinting still possible via IP + hardware
+Cookies/auth isolated, but fingerprinting still possible via IP + hardware
 ```
 
 ---
 
-## Strategy 3: Separate Browsers (Highest Isolation)
+Strategy 3: Separate Browsers (Highest Isolation)
 
 For maximum privacy separation, use completely separate browser applications.
 
-### Setup Example
+Setup Example
 
-**Computer Configuration:**
+Computer Configuration:
 ```
 Browser 1 (Chrome):
 - Work accounts only
@@ -247,13 +247,13 @@ Browser 3 (Safari):
 - Used for research, comparisons
 ```
 
-**Why Separate Browsers:**
+Why Separate Browsers:
 1. Completely different cookie stores
 2. Different user agents (Chrome identifies differently than Firefox)
 3. Different hardware fingerprints (browser differences)
 4. Trackable identity is fragmented across 3 agents
 
-**Practical Workflow:**
+Practical Workflow:
 ```
 Morning:
 - Open Firefox (personal browsing)
@@ -270,14 +270,14 @@ Evening:
 - Access bank account
 Safari profile: "Isolated banking session"
 
-Result: Trackers see 3 fragmented, incomplete profiles instead of unified person
+Trackers see 3 fragmented, incomplete profiles instead of unified person
 ```
 
 ---
 
-## Practical Compartmentalization Scenarios
+Practical Compartmentalization Scenarios
 
-### Scenario 1: Freelancer (Work + Personal Income + Shopping)
+Scenario 1: Freelancer (Work + Personal Income + Shopping)
 
 ```
 Profile/Container 1: "Client Work"
@@ -300,10 +300,10 @@ Profile/Container 3: "Personal"
 - Shopping, social media
 - Isolated from work
 
-Result: Clients can't track personal activity, multiple income sources aren't correlated
+Clients can't track personal activity, multiple income sources aren't correlated
 ```
 
-### Scenario 2: Privacy-Conscious Individual
+Scenario 2: Privacy-Conscious Individual
 
 ```
 Container 1: "Authentication" (Banking, Email, Essential)
@@ -324,10 +324,10 @@ Container 3: "Private Browsing"
 - Research, news, temporary sessions
 - Deleted every session
 
-Result: Sensitive data separated from tracking, tracking contained to social profiles
+Sensitive data separated from tracking, tracking contained to social profiles
 ```
 
-### Scenario 3: Researcher (Multiple Accounts + Identities)
+Scenario 3: Researcher (Multiple Accounts + Identities)
 
 ```
 Identity 1 (Researcher):
@@ -348,16 +348,16 @@ Identity 3 (Personal):
 - Shopping, social media
 - No connection to academic work
 
-Result: University doesn't correlate personal activity, students can't find researcher profile
+University doesn't correlate personal activity, students can't find researcher profile
 ```
 
 ---
 
-## Tracking Prevention (Beyond Compartmentalization)
+Tracking Prevention (Beyond Compartmentalization)
 
-### Browser Settings to Enable
+Browser Settings to Enable
 
-**Firefox (Strong Defaults):**
+Firefox (Strong Defaults):
 ```
 Settings → Privacy & Security → Enhanced Tracking Protection
 → Select "Strict" (not "Standard")
@@ -369,7 +369,7 @@ This blocks:
 - Social media trackers
 ```
 
-**Chrome (Weak by Default, Improve):**
+Chrome (Weak by Default, Improve):
 ```
 Settings → Privacy and security → Cookies and other site data
 → Delete cookies and site data when you quit Chrome: ON
@@ -380,7 +380,7 @@ Chrome Web Store → Search "uBlock Origin" → Install
 Blocks tracking scripts, ads, fingerprinters
 ```
 
-### Additional Tools
+Additional Tools
 
 | Tool | What It Does | Where |
 |------|-------------|-------|
@@ -390,7 +390,7 @@ Blocks tracking scripts, ads, fingerprinters
 | Ghostery | Reveal and block trackers | Chrome, Firefox |
 | ClearURLs | Strip tracking parameters from URLs | Chrome, Firefox |
 
-**Install all at once:**
+Install all at once:
 ```
 Firefox: Add-ons → Extensions → Search each, install
 Chrome: Web Store → Search each, install
@@ -398,33 +398,33 @@ Chrome: Web Store → Search each, install
 
 ---
 
-## Switching Between Compartments (Workflow)
+Switching Between Compartments (Workflow)
 
-### Keyboard Shortcuts (Efficiency)
+Keyboard Shortcuts (Efficiency)
 
-**Chrome Profiles:**
+Chrome Profiles:
 ```bash
-# macOS
+macOS
 Cmd+Shift+M → Switch between profiles (shows profile menu)
 
-# Windows/Linux
+Windows/Linux
 Ctrl+Shift+M → Same effect
 ```
 
-**Firefox Containers:**
+Firefox Containers:
 ```
 Ctrl+Shift+O → Open container menu (assign tab to container)
 Long-press container icon to see all containers
 ```
 
-**Private/Incognito:**
+Private/Incognito:
 ```
 Chrome: Cmd+Shift+N (macOS) or Ctrl+Shift+N (Windows)
 Firefox: Cmd+Shift+P (macOS) or Ctrl+Shift+P (Windows)
 Safari: Cmd+Shift+N (macOS)
 ```
 
-### Organized Desktop Setup
+Organized Desktop Setup
 
 ```
 Monitor 1 (Work):
@@ -440,7 +440,7 @@ Monitor 3 (Mobile):
 - Email, messaging, banking
 ```
 
-**Or Single Monitor (Taskbar):**
+Or Single Monitor (Taskbar):
 ```
 Taskbar icons:
 - Chrome (click = Work profile)
@@ -451,32 +451,32 @@ Taskbar icons:
 
 ---
 
-## FAQ
+FAQ
 
-**Q: Do I need separate browsers or just profiles?**
+Q: Do I need separate browsers or just profiles?
 A: Profiles work well for most people. Separate browsers add extra isolation if highly targeted.
 
-**Q: Can trackers fingerprint me even with compartmentalization?**
+Q: Can trackers fingerprint me even with compartmentalization?
 A: Yes, but harder. IP address is shared, hardware fingerprint visible. Containers prevent cookie-based tracking.
 
-**Q: Should I use compartmentalization on mobile?**
+Q: Should I use compartmentalization on mobile?
 A: Harder on mobile (most apps don't support containers). Use separate apps or private mode.
 
-**Q: Does compartmentalization slow down browsing?**
+Q: Does compartmentalization slow down browsing?
 A: No. Slight overhead from isolation, negligible (<5ms per request).
 
-**Q: What if I forget which container to use?**
+Q: What if I forget which container to use?
 A: Firefox auto-assigns containers to sites. Chrome profiles are obvious. Worse case: cookie gets set, harmless.
 
-**Q: Can VPN help with compartmentalization?**
+Q: Can VPN help with compartmentalization?
 A: VPN changes IP, hiding it. But fingerprinting still works. Combine VPN + compartmentalization for best privacy.
 
-**Q: Should I log out between sessions?**
+Q: Should I log out between sessions?
 A: Logout is good practice. Compartmentalization means logout isn't required (different containers = different cookies).
 
 ---
 
-## Related Articles
+Related Articles
 
 - [Identity Compartmentalization Strategy Separating Real Name](/identity-compartmentalization-strategy-separating-real-name-/)
 - [How To Use Multiple Identities Online Compartmentalization](/how-to-use-multiple-identities-online-compartmentalization/)
@@ -484,6 +484,6 @@ A: Logout is good practice. Compartmentalization means logout isn't required (di
 - [How to Use Multiple Identities Online: Compartmentalization](/how-to-use-multiple-identities-online-compartmentalization/)
 - [Tor Browser Cookies Tracking Prevention Guide](/tor-browser-cookies-tracking-prevention-guide/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

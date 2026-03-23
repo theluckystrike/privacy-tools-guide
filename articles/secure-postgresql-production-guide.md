@@ -15,54 +15,54 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# How to Secure PostgreSQL for Production
+How to Secure PostgreSQL for Production
 
 A default PostgreSQL installation is not production-ready from a security perspective. The superuser is trusted locally without a password, network access may be open, and logging is minimal. This guide takes a fresh PostgreSQL 16 install and makes it fit for production.
 
-## Step 1: Lock Down Network Access
+Step 1: Lock Down Network Access
 
 ```bash
-# postgresql.conf — restrict which interfaces PostgreSQL listens on
-# Default is localhost only, but verify:
+postgresql.conf. restrict which interfaces PostgreSQL listens on
+Default is localhost only, but verify:
 grep listen_addresses /etc/postgresql/16/main/postgresql.conf
-# listen_addresses = 'localhost'   (good — only listen locally)
+listen_addresses = 'localhost'   (good. only listen locally)
 
-# If your app is on the same host, localhost is correct.
-# If you need remote connections, list specific IPs:
-# listen_addresses = '192.168.1.50, 10.0.0.50'
-# Never: listen_addresses = '*'  (exposes to all interfaces)
+If your app is on the same host, localhost is correct.
+If you need remote connections, list specific IPs:
+listen_addresses = '192.168.1.50, 10.0.0.50'
+Never: listen_addresses = '*'  (exposes to all interfaces)
 ```
 
 ```bash
-# pg_hba.conf — control who can connect
-# File location:
+pg_hba.conf. control who can connect
+File location:
 sudo -u postgres psql -c "SHOW hba_file;"
 
-# Secure pg_hba.conf (example)
+Secure pg_hba.conf (example)
 sudo nano /etc/postgresql/16/main/pg_hba.conf
 ```
 
 ```
-# pg_hba.conf — secure configuration
-# TYPE  DATABASE        USER            ADDRESS         METHOD
+pg_hba.conf. secure configuration
+TYPE  DATABASE        USER            ADDRESS         METHOD
 
-# Superuser: local socket only, not from network
+Superuser: local socket only, not from network
 local   all             postgres                        peer
 
-# Application user: only from specific IP, require password, require SSL
+Application user: only from specific IP, require password, require SSL
 hostssl appdb           appuser         10.0.0.0/24     scram-sha-256
 
-# Deny all other connections
+Deny all other connections
 host    all             all             0.0.0.0/0       reject
 host    all             all             ::/0            reject
 ```
 
 ```bash
-# Reload after editing
+Reload after editing
 sudo systemctl reload postgresql
 ```
 
-## Step 2: Change the Default Superuser Password
+Step 2: Change the Default Superuser Password
 
 ```bash
 sudo -u postgres psql
@@ -76,10 +76,10 @@ sudo -u postgres psql -c "\password postgres"
 
 Better: disable remote login for the postgres user entirely (the `peer` auth in pg_hba.conf above already does this for local socket connections from any user other than the `postgres` OS user).
 
-## Step 3: Enforce SSL/TLS
+Step 3: Enforce SSL/TLS
 
 ```bash
-# Enable SSL in postgresql.conf
+Enable SSL in postgresql.conf
 sudo nano /etc/postgresql/16/main/postgresql.conf
 ```
 
@@ -93,7 +93,7 @@ ssl_ciphers = 'HIGH:!aNULL:!MD5'
 ```
 
 ```bash
-# Generate a self-signed certificate (or use your CA)
+Generate a self-signed certificate (or use your CA)
 openssl req -new -x509 -days 3650 -nodes \
   -out /etc/ssl/certs/postgresql.crt \
   -keyout /etc/ssl/private/postgresql.key \
@@ -102,20 +102,20 @@ openssl req -new -x509 -days 3650 -nodes \
 sudo chown postgres:postgres /etc/ssl/private/postgresql.key
 sudo chmod 600 /etc/ssl/private/postgresql.key
 
-# Force SSL for the application connection
-# In pg_hba.conf: use "hostssl" instead of "host"
-# This rejects plaintext connections from the application
+Force SSL for the application connection
+In pg_hba.conf: use "hostssl" instead of "host"
+This rejects plaintext connections from the application
 
 sudo systemctl restart postgresql
 ```
 
 ```bash
-# Verify SSL is working
+Verify SSL is working
 psql "host=localhost dbname=appdb user=appuser sslmode=require" -c "\conninfo"
-# SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384)
+SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384)
 ```
 
-## Step 4: Create Least-Privilege Roles
+Step 4: Create Least-Privilege Roles
 
 ```sql
 -- Connect as superuser
@@ -162,40 +162,40 @@ REVOKE CREATE ON SCHEMA public FROM PUBLIC;
 \du   -- show users and roles
 ```
 
-## Step 5: Enable Audit Logging
+Step 5: Enable Audit Logging
 
 ```bash
-# postgresql.conf — logging configuration
+postgresql.conf. logging configuration
 log_destination = 'syslog'
 syslog_facility = 'LOCAL0'
 syslog_ident = 'postgres'
 
-# What to log
+What to log
 log_connections = on
 log_disconnections = on
 log_failed_attempts = on
 log_hostname = off     # avoid DNS lookups in logs
 
-# Log slow queries (useful for both performance and detecting attacks)
+Log slow queries (useful for both performance and detecting attacks)
 log_min_duration_statement = 1000   # log queries slower than 1 second
 
-# Log all DDL (CREATE, DROP, ALTER)
+Log all DDL (CREATE, DROP, ALTER)
 log_statement = 'ddl'
 
-# Log all connections from IP ranges you do not expect
-# (use pg_hba.conf to deny them, but log helps detect attempts)
+Log all connections from IP ranges you do not expect
+(use pg_hba.conf to deny them, but log helps detect attempts)
 ```
 
 For more detailed auditing, install `pgaudit`:
 
 ```bash
-# Install pgaudit
+Install pgaudit
 sudo apt install postgresql-16-pgaudit
 
-# postgresql.conf
+postgresql.conf
 shared_preload_libraries = 'pgaudit'
 
-# pgaudit settings
+pgaudit settings
 pgaudit.log = 'ddl, write, role'
 pgaudit.log_catalog = off
 pgaudit.log_parameter = on
@@ -207,7 +207,7 @@ pgaudit.log_statement_once = off
 ALTER ROLE appuser SET pgaudit.log = 'write';
 ```
 
-## Step 6: Restrict Row-Level Access
+Step 6: Restrict Row-Level Access
 
 Row-Level Security (RLS) ensures users can only see their own data even if they access the table:
 
@@ -225,11 +225,11 @@ CREATE POLICY user_orders ON orders
 -- SELECT * FROM orders;  -- returns only orders for user 42
 ```
 
-## Step 7: Encrypted Backups
+Step 7: Encrypted Backups
 
 ```bash
 #!/bin/bash
-# pg-backup-encrypted.sh
+pg-backup-encrypted.sh
 
 DB_NAME="appdb"
 BACKUP_DIR="/var/backups/postgresql"
@@ -239,7 +239,7 @@ RECIPIENTS_FILE="/root/.age-recipients"   # age public keys
 
 mkdir -p "$BACKUP_DIR"
 
-# Dump and encrypt in a pipeline — plaintext never touches disk
+Dump and encrypt in a pipeline. plaintext never touches disk
 pg_dump -U postgres "$DB_NAME" \
   | gzip \
   | age -R "$RECIPIENTS_FILE" \
@@ -247,24 +247,24 @@ pg_dump -U postgres "$DB_NAME" \
 
 echo "Backup written: $BACKUP_FILE ($(du -sh "$BACKUP_FILE" | cut -f1))"
 
-# Keep 30 days of backups
+Keep 30 days of backups
 find "$BACKUP_DIR" -name "*.age" -mtime +30 -delete
 ```
 
 ```bash
-# Restore
+Restore
 age -d -i ~/.age/identity.txt backup.sql.gz.age | gunzip | psql -U postgres appdb
 ```
 
-## Step 8: Rotate Credentials
+Step 8: Rotate Credentials
 
 ```bash
-# Script to rotate the application user password and update the secret manager
+Script to rotate the application user password and update the secret manager
 NEW_PASSWORD=$(openssl rand -base64 32)
 
 sudo -u postgres psql -c "ALTER ROLE appuser PASSWORD '${NEW_PASSWORD}';"
 
-# Update in your secret manager (example: AWS)
+Update in your secret manager (example: AWS)
 aws secretsmanager put-secret-value \
   --secret-id "prod/appdb/appuser" \
   --secret-string "{\"password\":\"${NEW_PASSWORD}\"}"
@@ -272,7 +272,7 @@ aws secretsmanager put-secret-value \
 echo "Password rotated. Restart application to pick up new credentials."
 ```
 
-## Related Articles
+Related Articles
 
 - [Secure Redis Deployment Without Exposure](/secure-redis-deployment-without-exposure/)
 - [How to Set Up Secure File Sharing for Sensitive Documents](/how-to-set-up-secure-file-sharing-for-sensitive-documents/)
@@ -280,6 +280,6 @@ echo "Password rotated. Restart application to pick up new credentials."
 - [Secure Shell Hardening Beyond SSH Config](/secure-shell-hardening-beyond-ssh-config/)
 - [Best Password Manager with Secure Notes: A Technical Guide](/best-password-manager-with-secure-notes/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

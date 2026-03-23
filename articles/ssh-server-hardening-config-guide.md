@@ -18,25 +18,25 @@ voice-checked: true
 
 A default SSH installation accepts password logins, allows root access, and supports legacy ciphers that have known weaknesses. Every internet-facing server running stock SSH config is one brute-force attempt away from disaster.
 
-This guide walks through locking down `sshd_config` to a minimal, defensible state — key-only authentication, no root login, restricted algorithms, and basic rate limiting.
+This guide walks through locking down `sshd_config` to a minimal, defensible state. key-only authentication, no root login, restricted algorithms, and basic rate limiting.
 
-## Prerequisites
+Prerequisites
 
 - A Linux server (Debian/Ubuntu or RHEL/Fedora)
 - A non-root user with `sudo` privileges
 - An SSH key pair already generated (if not, see below)
 
-**Do not lock yourself out.** Before making changes, open a second terminal session and keep it connected until you verify the new config works.
+Do not lock yourself out. Before making changes, open a second terminal session and keep it connected until you verify the new config works.
 
-### Step 1: Generate a SSH Key Pair
+Step 1: Generate a SSH Key Pair
 
 If you don't have a key pair:
 
 ```bash
-# Ed25519 is preferred — smaller, faster, more secure than RSA 2048
+Ed25519 is preferred. smaller, faster, more secure than RSA 2048
 ssh-keygen -t ed25519 -C "yourname@host" -f ~/.ssh/id_ed25519
 
-# Copy the public key to the server
+Copy the public key to the server
 ssh-copy-id -i ~/.ssh/id_ed25519.pub user@your-server-ip
 ```
 
@@ -48,7 +48,7 @@ ssh -i ~/.ssh/id_ed25519 user@your-server-ip
 
 Why Ed25519 over RSA? Ed25519 uses elliptic curve cryptography on Curve25519. The keys are 256 bits, produce 64-byte signatures, and are significantly faster to verify than RSA-2048. Ed25519 is also resistant to side-channel attacks that affect RSA implementations. If you must use RSA for compatibility with older systems, use RSA-4096 at minimum.
 
-### Step 2: Back Up the Default Config
+Step 2: Back Up the Default Config
 
 ```bash
 sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
@@ -61,7 +61,7 @@ sudo cp /etc/ssh/sshd_config.bak /etc/ssh/sshd_config
 sudo systemctl restart sshd
 ```
 
-### Step 3: The Hardened sshd_config
+Step 3: The Hardened sshd_config
 
 Open the file:
 
@@ -72,16 +72,16 @@ sudo nano /etc/ssh/sshd_config
 Apply these settings. Comment out or remove conflicting defaults:
 
 ```
-# ============================================================
-# Port and Protocol
-# ============================================================
+============================================================
+Port and Protocol
+============================================================
 Port 2222                        # Change from default 22
 AddressFamily inet               # IPv4 only; use 'any' if you need IPv6
 ListenAddress 0.0.0.0
 
-# ============================================================
-# Authentication
-# ============================================================
+============================================================
+Authentication
+============================================================
 PermitRootLogin no               # Never allow direct root SSH
 PasswordAuthentication no        # Keys only
 ChallengeResponseAuthentication no
@@ -91,15 +91,15 @@ AuthorizedKeysFile .ssh/authorized_keys
 MaxAuthTries 3                   # Limit guessing attempts per connection
 LoginGraceTime 30                # Seconds before unauthenticated session drops
 
-# ============================================================
-# User / Group Restrictions
-# ============================================================
+============================================================
+User / Group Restrictions
+============================================================
 AllowUsers deploy admin          # Whitelist specific users only
-# AllowGroups sshusers           # Alternative: allow by group
+AllowGroups sshusers           # Alternative: allow by group
 
-# ============================================================
-# Session Hardening
-# ============================================================
+============================================================
+Session Hardening
+============================================================
 X11Forwarding no
 AllowAgentForwarding no
 AllowTcpForwarding no            # Set to 'yes' only if you use tunnels
@@ -107,22 +107,22 @@ PermitTunnel no
 PrintLastLog yes
 Banner /etc/issue.net            # Legal warning banner
 
-# ============================================================
-# Idle Timeout
-# ============================================================
+============================================================
+Idle Timeout
+============================================================
 ClientAliveInterval 300          # Send keepalive every 5 minutes
 ClientAliveCountMax 2            # Drop after 2 missed keepalives (10 min)
 
-# ============================================================
-# Cryptography — Restrict to Modern Algorithms
-# ============================================================
+============================================================
+Cryptography. Restrict to Modern Algorithms
+============================================================
 KexAlgorithms curve25519-sha256,curve25519-sha256@libssh.org,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512
 Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com
 MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com
 
-# ============================================================
-# Logging
-# ============================================================
+============================================================
+Logging
+============================================================
 SyslogFacility AUTH
 LogLevel VERBOSE                 # Logs key fingerprints; useful for audits
 ```
@@ -139,15 +139,15 @@ If there are no errors, restart SSH:
 sudo systemctl restart sshd
 ```
 
-## Why Each Cryptographic Setting Matters
+Why Each Cryptographic Setting Matters
 
-The cipher list deserves explanation. Legacy algorithms still present in many default OpenSSH installs include `arcfour` (RC4, broken), `3des-cbc` (triple DES with CBC mode — vulnerable to SWEET32), and `aes128-cbc` (CBC mode susceptible to BEAST and Lucky13 attacks).
+The cipher list deserves explanation. Legacy algorithms still present in many default OpenSSH installs include `arcfour` (RC4, broken), `3des-cbc` (triple DES with CBC mode. vulnerable to SWEET32), and `aes128-cbc` (CBC mode susceptible to BEAST and Lucky13 attacks).
 
 The `etm` suffix on MAC algorithms stands for Encrypt-Then-MAC, which is the correct ordering. Older `hmac-sha2-512` without `etm` uses MAC-Then-Encrypt, which enables padding oracle attacks. Always prefer ETM variants.
 
-The `KexAlgorithms` list removes `diffie-hellman-group14-sha256` and all `diffie-hellman-group1` or `group14` with SHA-1. Group 14 uses 2048-bit DH which is borderline acceptable, but groups 16 (4096-bit) and 18 (8192-bit) with SHA-512 are definitively modern. The `curve25519` options are preferred when both sides support them — they are faster and resist attacks that target traditional finite-field DH.
+The `KexAlgorithms` list removes `diffie-hellman-group14-sha256` and all `diffie-hellman-group1` or `group14` with SHA-1. Group 14 uses 2048-bit DH which is borderline acceptable, but groups 16 (4096-bit) and 18 (8192-bit) with SHA-512 are definitively modern. The `curve25519` options are preferred when both sides support them. they are faster and resist attacks that target traditional finite-field DH.
 
-### Step 4: Verify from a New Terminal
+Step 4: Verify from a New Terminal
 
 Before closing your existing session, open a new one and test:
 
@@ -157,23 +157,23 @@ ssh -p 2222 -i ~/.ssh/id_ed25519 user@your-server-ip
 
 If it connects, the hardened config is working. If not, restore the backup from your existing session.
 
-### Step 5: Update Your Firewall
+Step 5: Update Your Firewall
 
 If you changed the port, update your firewall rules:
 
 ```bash
-# UFW
+UFW
 sudo ufw allow 2222/tcp
 sudo ufw delete allow 22/tcp
 sudo ufw reload
 
-# firewalld
+firewalld
 sudo firewall-cmd --permanent --add-port=2222/tcp
 sudo firewall-cmd --permanent --remove-service=ssh
 sudo firewall-cmd --reload
 ```
 
-### Step 6: Add a Legal Warning Banner
+Step 6: Add a Legal Warning Banner
 
 Create the banner file:
 
@@ -190,15 +190,15 @@ Unauthorized access will be prosecuted.
 
 The `Banner` directive in `sshd_config` already points to this file.
 
-### Step 7: Install and Configure fail2ban
+Step 7: Install and Configure fail2ban
 
 fail2ban blocks IPs after repeated failed login attempts:
 
 ```bash
-# Debian/Ubuntu
+Debian/Ubuntu
 sudo apt install fail2ban
 
-# RHEL/Fedora
+RHEL/Fedora
 sudo dnf install fail2ban
 ```
 
@@ -235,7 +235,7 @@ Check active bans:
 sudo fail2ban-client status sshd
 ```
 
-### fail2ban Tuning for High-Traffic Servers
+fail2ban Tuning for High-Traffic Servers
 
 On servers that receive many legitimate connections from dynamic IPs (CI/CD systems, monitoring agents), aggressive ban settings cause operational pain. Use `ignoreip` to whitelist known good addresses:
 
@@ -247,14 +247,14 @@ findtime = 5m
 maxretry = 3
 ```
 
-You can also use `bantime.increment = true` with `bantime.factor = 2` to double ban duration on repeat offenders — a useful escalating deterrent for persistent scanners.
+You can also use `bantime.increment = true` with `bantime.factor = 2` to double ban duration on repeat offenders. a useful escalating deterrent for persistent scanners.
 
-### Step 8: Restrict SSH Access by IP (Optional but Effective)
+Step 8: Restrict SSH Access by IP (Optional but Effective)
 
 If you connect from a known static IP, restrict access at the firewall level:
 
 ```bash
-# UFW — only allow SSH from your IP
+UFW. only allow SSH from your IP
 sudo ufw allow from 203.0.113.10 to any port 2222 proto tcp
 sudo ufw deny 2222/tcp
 sudo ufw reload
@@ -262,7 +262,7 @@ sudo ufw reload
 
 For dynamic IPs, use a VPN or jump host instead.
 
-### Step 9: Use SSH Certificates Instead of Authorized Keys
+Step 9: Use SSH Certificates Instead of Authorized Keys
 
 For environments with multiple servers and multiple users, per-user `authorized_keys` files become difficult to manage. SSH certificates offer a more scalable alternative.
 
@@ -283,10 +283,10 @@ The `-V +30d` flag makes the certificate expire in 30 days, enforcing regular ro
 On each server, trust the CA rather than individual keys:
 
 ```bash
-# Add to sshd_config
+Add to sshd_config
 TrustedUserCAKeys /etc/ssh/ca.pub
 
-# Disable per-user authorized_keys if going certificate-only
+Disable per-user authorized_keys if going certificate-only
 AuthorizedKeysFile none
 ```
 
@@ -296,9 +296,9 @@ Copy the CA public key to all servers:
 sudo cp ~/.ssh/ca_key.pub /etc/ssh/ca.pub
 ```
 
-This approach means revoking access requires only removing the user from valid principals at certificate signing time — no need to touch individual server `authorized_keys` files.
+This approach means revoking access requires only removing the user from valid principals at certificate signing time. no need to touch individual server `authorized_keys` files.
 
-### Step 10: Audit Current Connections
+Step 10: Audit Current Connections
 
 View active SSH sessions:
 
@@ -313,7 +313,7 @@ Check recent authentication attempts:
 sudo journalctl -u sshd --since "24 hours ago" | grep -E "(Failed|Accepted|Invalid)"
 ```
 
-### Step 11: SSH Key Management
+Step 11: SSH Key Management
 
 List authorized keys on the server:
 
@@ -329,7 +329,7 @@ ssh-keygen -lf ~/.ssh/authorized_keys
 
 For servers with many users, consider `AuthorizedKeysCommand` to fetch keys from a central directory service rather than per-user files.
 
-### Step 12: Periodic Config Audit
+Step 12: Periodic Config Audit
 
 Run `ssh-audit` (a Python tool) monthly to check your server configuration against current recommendations:
 
@@ -338,9 +338,9 @@ pip install ssh-audit
 ssh-audit localhost -p 2222
 ```
 
-The tool outputs a color-coded report of algorithms, highlighting deprecated entries and suggesting replacements. It tests both server-side configuration and the actual negotiated algorithms — catching cases where sshd_config looks correct but system-level defaults override individual settings.
+The tool outputs a color-coded report of algorithms, highlighting deprecated entries and suggesting replacements. It tests both server-side configuration and the actual negotiated algorithms. catching cases where sshd_config looks correct but system-level defaults override individual settings.
 
-### Step 13: Hardening Checklist
+Step 13: Hardening Checklist
 
 - Root login disabled (`PermitRootLogin no`)
 - Password authentication disabled
@@ -355,44 +355,44 @@ The tool outputs a color-coded report of algorithms, highlighting deprecated ent
 - ssh-audit run and clean
 - Certificate-based auth considered for multi-server environments
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to complete this setup?**
+How long does it take to complete this setup?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [SSH Server Hardening Guide](/ssh-server-hardening-guide/)
 - [How to Harden SSH Server Configuration](/how-to-harden-ssh-server-configuration/)
@@ -400,5 +400,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Prepare Ssh Key And Server Access Documentation](/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)
 - [How To Use Ssh Tunneling For Encrypted Communication](/how-to-use-ssh-tunneling-for-encrypted-communication-between/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

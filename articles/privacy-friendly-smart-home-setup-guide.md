@@ -20,16 +20,16 @@ Smart home devices spy on you by default. Alexa records audio, Google Home liste
 
 This guide shows how to build a fully local smart home using Home Assistant, local wireless protocols, and network isolation.
 
-## Quick Overview
+Quick Overview
 
-**The Privacy Problem:**
+The Privacy Problem:
 - Amazon Alexa: Records audio 24/7, stored in AWS
 - Google Home: "Just listening" for wake word, but captures everything
 - SmartThings: Samsung can see all your device status
 - Philips Hue: Requires cloud connection, phoned home
 - Ring doorbell: All video goes to Amazon's servers
 
-**The Solution:**
+The Solution:
 - Home Assistant (local automation hub)
 - Zigbee/Z-Wave (wireless without Wi-Fi)
 - Pi-hole (DNS blocking)
@@ -38,9 +38,9 @@ This guide shows how to build a fully local smart home using Home Assistant, loc
 
 ---
 
-## Hardware Shopping List
+Hardware Shopping List
 
-## Table of Contents
+Table of Contents
 
 - [Hardware Shopping List](#hardware-shopping-list)
 - [Step 1: Home Assistant Installation](#step-1-home-assistant-installation)
@@ -57,45 +57,45 @@ This guide shows how to build a fully local smart home using Home Assistant, loc
 - [Expansion: What's Next](#expansion-whats-next)
 - [Related Reading](#related-reading)
 
-**Total Cost: ~$400-700 for complete setup**
+Total Cost: ~$400-700 for complete setup
 
-### Core System
+Core System
 
 ```
 Raspberry Pi Setup:
-├── Raspberry Pi 5 (8GB RAM) - $65
-├── 256GB SSD (A2 rated) - $35
-├── USB 3.0 SSD adapter - $10
-├── Gigabit Ethernet adapter - $10
-└── 27W USB-C power supply - $15
+ Raspberry Pi 5 (8GB RAM) - $65
+ 256GB SSD (A2 rated) - $35
+ USB 3.0 SSD adapter - $10
+ Gigabit Ethernet adapter - $10
+ 27W USB-C power supply - $15
     SUBTOTAL: $135
 
 Wireless Protocols:
-├── Zigbee coordinator (Sonoff ZBDongle-P) - $35
-├── Z-Wave+ stick (Aeotec Z-Stick) - $45
-└── USB hub (7-port, powered) - $25
+ Zigbee coordinator (Sonoff ZBDongle-P) - $35
+ Z-Wave+ stick (Aeotec Z-Stick) - $45
+ USB hub (7-port, powered) - $25
     SUBTOTAL: $105
 
 Network Infrastructure:
-├── Managed switch (TP-Link SG108PE, PoE) - $45
-├── Ethernet cables (CAT6, 3-pack) - $12
-└── WiFi 6 router (Unifi 6E, optional) - $250
+ Managed switch (TP-Link SG108PE, PoE) - $45
+ Ethernet cables (CAT6, 3-pack) - $12
+ WiFi 6 router (Unifi 6E, optional) - $250
     SUBTOTAL: $307 (or $57 without WiFi router)
 
 Starter Devices:
-├── Smart plugs (Sonoff, Zigbee x4) - $40
-├── Motion sensor (Aqara, Zigbee) - $15
-├── Temperature sensor (Aqara, Zigbee x2) - $20
-├── Door sensor (Aqara, Zigbee x2) - $20
-└── Smart bulbs (IKEA Tradfri, Zigbee x4) - $40
+ Smart plugs (Sonoff, Zigbee x4) - $40
+ Motion sensor (Aqara, Zigbee) - $15
+ Temperature sensor (Aqara, Zigbee x2) - $20
+ Door sensor (Aqara, Zigbee x2) - $20
+ Smart bulbs (IKEA Tradfri, Zigbee x4) - $40
     SUBTOTAL: $135
 
 GRAND TOTAL: ~$580-700 (without UniFi router: ~$330-450)
 ```
 
-### Individual Device Recommendations
+Individual Device Recommendations
 
-**Zigbee Coordinator (Required):**
+Zigbee Coordinator (Required):
 
 | Device | Price | Advantage | Drawback |
 |--------|-------|-----------|----------|
@@ -104,9 +104,9 @@ GRAND TOTAL: ~$580-700 (without UniFi router: ~$330-450)
 | Zig-a-zig-ah! (DIY) | $60 | Open source | Requires soldering |
 | ConBee III | $50 | Well-supported | Expensive |
 
-**Best Choice:** Sonoff ZBDongle-P ($35) + external antenna extension ($5).
+Best Choice: Sonoff ZBDongle-P ($35) + external antenna extension ($5).
 
-**Z-Wave Stick (Optional, if Z-Wave devices):**
+Z-Wave Stick (Optional, if Z-Wave devices):
 
 | Device | Price | Range | Notes |
 |--------|-------|-------|-------|
@@ -114,67 +114,67 @@ GRAND TOTAL: ~$580-700 (without UniFi router: ~$330-450)
 | Zooz Z-Stick | $40 | Adequate | Budget option |
 | Zig-a-zig-ah Z-Wave | $80 | Excellent | Open source, DIY |
 
-**Budget Approach:** Skip Z-Wave, use Zigbee only (better device selection).
+Budget Approach: Skip Z-Wave, use Zigbee only (better device selection).
 
-**Smart Home Devices (Zigbee-compatible, no cloud required):**
+Smart Home Devices (Zigbee-compatible, no cloud required):
 
 | Category | Recommended | Price | Privacy | Range |
 |----------|-------------|-------|---------|-------|
-| **Bulbs** | IKEA Tradfri | $12 | Perfect | 50m |
-| **Plugs** | Sonoff ZBMINI | $10 | Perfect | 40m |
-| **Motion** | Aqara RTCGQ11LM | $15 | Perfect | 30m |
-| **Temp/Humidity** | Aqara WSDCGQ11LM | $10 | Perfect | 30m |
-| **Door/Window** | Aqara MCCGQ11LM | $8 | Perfect | 30m |
-| **Lock** | Nuki Smart Lock | $200 | Good | 100m |
-| **Camera** | Reolink RLC-810A (local) | $80 | Good | WiFi only |
-| **Thermostat** | Eve Thermo | $40 | Good | Zigbee |
+| Bulbs | IKEA Tradfri | $12 | Perfect | 50m |
+| Plugs | Sonoff ZBMINI | $10 | Perfect | 40m |
+| Motion | Aqara RTCGQ11LM | $15 | Perfect | 30m |
+| Temp/Humidity | Aqara WSDCGQ11LM | $10 | Perfect | 30m |
+| Door/Window | Aqara MCCGQ11LM | $8 | Perfect | 30m |
+| Lock | Nuki Smart Lock | $200 | Good | 100m |
+| Camera | Reolink RLC-810A (local) | $80 | Good | WiFi only |
+| Thermostat | Eve Thermo | $40 | Good | Zigbee |
 
-**Pro Tip:** Avoid anything with "Works with Alexa" or "Google Home compatible." Those are cloud-dependent.
+Pro Tip: Avoid anything with "Works with Alexa" or "Google Home compatible." Those are cloud-dependent.
 
 ---
 
-## Step 1: Home Assistant Installation
+Step 1: Home Assistant Installation
 
 Home Assistant is the open-source hub that controls everything locally.
 
-### Option A: HAOS (Recommended)
+Option A: HAOS (Recommended)
 
-**HAOS = Home Assistant Operating System** (purpose-built)
+HAOS = Home Assistant Operating System (purpose-built)
 
 ```bash
-# Download HAOS image
-# From: https://www.home-assistant.io/installation/
+Download HAOS image
+From: https://www.home-assistant.io/installation/
 
-# For Raspberry Pi 5 with SSD:
-# 1. Download haos_rpi5-64-arm64.wic.gz
+For Raspberry Pi 5 with SSD:
+1. Download haos_rpi5-64-arm64.wic.gz
 
-# Write to SSD (on Mac)
+Write to SSD (on Mac)
 unzip haos_rpi5-64.wic.xz
-# Download Balena Etcher
-# Select downloaded .wic file
-# Select USB SSD adapter
-# Click Flash (takes 5-10 minutes)
+Download Balena Etcher
+Select downloaded .wic file
+Select USB SSD adapter
+Click Flash (takes 5-10 minutes)
 
-# Insert SSD into Pi
-# Power on (wait 3-5 minutes for first boot)
+Insert SSD into Pi
+Power on (wait 3-5 minutes for first boot)
 
-# Access at: http://homeassistant.local:8123
-# Initial setup: Create admin account
+Access at: http://homeassistant.local:8123
+Initial setup: Create admin account
 ```
 
-**HAOS Features:**
+HAOS Features:
 - Built-in backup & restore
 - Add-ons (Pi-hole, Zigbee integration, etc)
 - Automatic updates
 - Web UI + mobile app
 
-### Option B: Docker (For existing Linux server)
+Option B: Docker (For existing Linux server)
 
 ```bash
-# Install Docker
+Install Docker
 sudo apt install docker.io docker-compose
 
-# Create Home Assistant container
+Create Home Assistant container
 cat > docker-compose.yml << 'EOF'
 version: '3'
 services:
@@ -195,46 +195,46 @@ EOF
 docker-compose up -d
 ```
 
-**Access:** http://localhost:8123
+Access: http://localhost:8123
 
 ---
 
-## Step 2: Add Zigbee Coordinator
+Step 2: Add Zigbee Coordinator
 
-### Connect Hardware
+Connect Hardware
 
 ```bash
-# Plug Sonoff ZBDongle-P into USB hub
-# Verify it shows up:
+Plug Sonoff ZBDongle-P into USB hub
+Verify it shows up:
 ls -la /dev/ttyUSB*
-# Should show: /dev/ttyUSB0
+Should show: /dev/ttyUSB0
 
-# If not found:
+If not found:
 lsusb | grep -i zigbee
 ```
 
-### Configure in Home Assistant
+Configure in Home Assistant
 
-**Via UI:**
+Via UI:
 
 ```
 Home Assistant Web UI
-├── Settings (gear icon)
-├── Devices & Services
-├── Create Integration
-├── Search for "Zigbee Home Automation"
-├── Select "ZHA"
-├── Device: /dev/ttyUSB0
-├── Radio Type: "EZSP (Silicon Labs)"
-├── Port Speed: 115200
-├── Create
-└── Wait for "Zigbee Home Automation hub initialized"
+ Settings (gear icon)
+ Devices & Services
+ Create Integration
+ Search for "Zigbee Home Automation"
+ Select "ZHA"
+ Device: /dev/ttyUSB0
+ Radio Type: "EZSP (Silicon Labs)"
+ Port Speed: 115200
+ Create
+ Wait for "Zigbee Home Automation hub initialized"
 ```
 
-**Via YAML (alternative):**
+Via YAML (alternative):
 
 ```yaml
-# configuration.yaml
+configuration.yaml
 homeassistant:
   name: Home
 
@@ -244,13 +244,13 @@ zha:
   radio_type: ezsp
 ```
 
-### Verify Zigbee Working
+Verify Zigbee Working
 
 ```
 ZHA Dashboard in Home Assistant:
-├── Should show "Coordinator" device
-├── Status: "Connected"
-└── Network: Shows hex ID
+ Should show "Coordinator" device
+ Status: "Connected"
+ Network: Shows hex ID
 
 When working:
 - Coordinator light blinks (active)
@@ -259,11 +259,11 @@ When working:
 
 ---
 
-## Step 3: Pair Zigbee Devices
+Step 3: Pair Zigbee Devices
 
-### Pairing Process
+Pairing Process
 
-**General Steps:**
+General Steps:
 
 ```
 1. In Home Assistant
@@ -284,7 +284,7 @@ When working:
 5. Device appears in ZHA Devices list
 ```
 
-### Example: Pair Aqara Motion Sensor
+Pair Aqara Motion Sensor
 
 ```
 Device: Aqara RTCGQ11LM (Motion Sensor)
@@ -313,7 +313,7 @@ Steps:
 Done. No app, no cloud, no account.
 ```
 
-### Example: Pair IKEA Tradfri Bulb
+Pair IKEA Tradfri Bulb
 
 ```
 Device: IKEA Tradfri E27 (Color bulb)
@@ -344,35 +344,35 @@ Done. Bulb now locally controllable.
 
 ---
 
-## Step 4: Network Isolation (VLAN)
+Step 4: Network Isolation (VLAN)
 
 Isolate smart home devices from your main network so they can't access personal data.
 
-### Network Architecture
+Network Architecture
 
 ```
 Your Network Structure:
 
 Router (Main Gateway)
-├── LAN (192.168.1.0/24)
-│   ├── Main devices (PC, phone, NAS)
-│   ├── Home Assistant (192.168.1.100)
-│   └── Rule: Can see everything
-│
-└── IoT VLAN (192.168.50.0/24)
-    ├── Zigbee devices via WiFi gateway
-    ├── Smart plugs
-    ├── Smart bulbs
-    └── Rule: Cannot see LAN (isolated)
+ LAN (192.168.1.0/24)
+    Main devices (PC, phone, NAS)
+    Home Assistant (192.168.1.100)
+    Rule: Can see everything
+
+ IoT VLAN (192.168.50.0/24)
+     Zigbee devices via WiFi gateway
+     Smart plugs
+     Smart bulbs
+     Rule: Cannot see LAN (isolated)
 ```
 
-### Setup (Managed Switch Required)
+Setup (Managed Switch Required)
 
-**Hardware Needed:**
+Hardware Needed:
 - Managed switch (TP-Link SG108PE, $45)
 - Separate WiFi SSID for IoT devices (or WiFi 6 router with VLAN support)
 
-**Switch Configuration:**
+Switch Configuration:
 
 ```
 TP-Link SG108PE Configuration:
@@ -383,16 +383,16 @@ TP-Link SG108PE Configuration:
 
 2. Create VLAN:
    VLAN Management → Add VLAN
-   ├── VLAN ID: 50
-   ├── VLAN Name: "IoT"
-   └── Create
+    VLAN ID: 50
+    VLAN Name: "IoT"
+    Create
 
 3. Assign ports:
    VLAN Configuration
-   ├── Port 1 (to router): Tagged (allows all VLANs)
-   ├── Port 2-5: Untagged VLAN 1 (Main LAN)
-   ├── Port 6-8: Untagged VLAN 50 (IoT VLAN)
-   └── Apply
+    Port 1 (to router): Tagged (allows all VLANs)
+    Port 2-5: Untagged VLAN 1 (Main LAN)
+    Port 6-8: Untagged VLAN 50 (IoT VLAN)
+    Apply
 
 4. Enable VLAN function:
    VLAN Settings → VLAN Status: Enable
@@ -401,7 +401,7 @@ TP-Link SG108PE Configuration:
    System Tools → Save
 ```
 
-**Firewall Rules (on Router):**
+Firewall Rules (on Router):
 
 ```
 Assume router is UniFi Dream Machine or similar:
@@ -409,38 +409,37 @@ Assume router is UniFi Dream Machine or similar:
 Settings → Firewall & Security → Firewall Rules
 
 Outbound:
-├── From: IoT VLAN (192.168.50.0/24)
-├── To: Any
-├── Action: Allow (to internet)
-└── Create
+ From: IoT VLAN (192.168.50.0/24)
+ To: Any
+ Action: Allow (to internet)
+ Create
 
 Inbound (FROM LAN to IoT):
-├── From: Main LAN (192.168.1.0/24)
-├── To: IoT VLAN (192.168.50.0/24)
-├── Action: Deny
-└── Create
+ From: Main LAN (192.168.1.0/24)
+ To: IoT VLAN (192.168.50.0/24)
+ Action: Deny
+ Create
 
-Result:
 - IoT devices can access internet (for updates)
 - IoT devices cannot see/access your PC, NAS, phones
 - Home Assistant (on LAN) cannot access IoT devices
   (But can control via Zigbee coordinator, which bridges)
 ```
 
-**WiFi for IoT Devices (Guest Network):**
+WiFi for IoT Devices (Guest Network):
 
 ```
 Create separate SSID for IoT:
 
 Router Settings:
-├── WiFi 1: "HomeNetwork" (Main LAN)
-│   └── VLAN: LAN (1)
-│
-└── WiFi 2: "SmartHome" (IoT)
-    ├── VLAN: IoT (50)
-    ├── Password: Different from main
-    ├── Hide SSID: Optional
-    └── Disable WPS: Yes (security)
+ WiFi 1: "HomeNetwork" (Main LAN)
+    VLAN: LAN (1)
+
+ WiFi 2: "SmartHome" (IoT)
+     VLAN: IoT (50)
+     Password: Different from main
+     Hide SSID: Optional
+     Disable WPS: Yes (security)
 
 When pairing Zigbee WiFi devices (some, like certain gateways):
 - Connect to "SmartHome" SSID
@@ -450,80 +449,80 @@ When pairing Zigbee WiFi devices (some, like certain gateways):
 
 ---
 
-## Step 5: Pi-hole (DNS Blocking)
+Step 5: Pi-hole (DNS Blocking)
 
 Pi-hole blocks tracking domains at the DNS level, protecting all devices on your network.
 
-### Installation
+Installation
 
-**Option A: HAOS Add-on (Easiest)**
+Option A: HAOS Add-on (Easiest)
 
 ```
 Home Assistant Interface:
-├── Settings (gear)
-├── Add-ons
-├── Add-on Store
-├── Search for "Pi-hole"
-├── Install
-├── Start
-└── Open web UI
+ Settings (gear)
+ Add-ons
+ Add-on Store
+ Search for "Pi-hole"
+ Install
+ Start
+ Open web UI
 ```
 
-**Option B: Standalone on Raspberry Pi**
+Option B: Standalone on Raspberry Pi
 
 ```bash
-# Install on separate Pi (or same Pi, different port)
+Install on separate Pi (or same Pi, different port)
 curl -sSL https://install.pi-hole.net | bash
 
-# Follow prompts:
-# - Choose upstream DNS (Cloudflare 1.1.1.1 recommended)
-# - Enable blocking
-# - Web interface password: Set strong password
+Follow prompts:
+- Choose upstream DNS (Cloudflare 1.1.1.1 recommended)
+- Enable blocking
+- Web interface password: Set strong password
 
-# Access at: http://raspberrypi.local/admin
+Access at: http://raspberrypi.local/admin
 ```
 
-### Configuration
+Configuration
 
-**Upstream DNS (Private):**
+Upstream DNS (Private):
 
 ```
 Home Assistant Pi-hole Add-on Config:
 
 Upstream DNS:
-├── Primary: 1.1.1.1 (Cloudflare - privacy-focused)
-├── Secondary: 1.0.0.1 (Cloudflare backup)
-└── Disable: Google (8.8.8.8), Quad9, others unless needed
+ Primary: 1.1.1.1 (Cloudflare - privacy-focused)
+ Secondary: 1.0.0.1 (Cloudflare backup)
+ Disable: Google (8.8.8.8), Quad9, others unless needed
 ```
 
-**Blocklists:**
+Blocklists:
 
 ```
 Default blocklists included:
-├── StevenBlack's hosts (malware, ads)
-├── Firebog's aggressive list (extensive tracking)
-└── Many more
+ StevenBlack's hosts (malware, ads)
+ Firebog's aggressive list (extensive tracking)
+ Many more
 
 Additional recommended blocklists:
-├── https://blocklistproject.github.io/lists/ (ads & trackers)
-├── https://www.youtube.com/watch?v=SmLjWGxv8QA (blocklist guide)
-└── https://reddit.com/r/pihole (community recommendations)
+ https://blocklistproject.github.io/lists/ (ads & trackers)
+ https://www.youtube.com/watch?v=SmLjWGxv8QA (blocklist guide)
+ https://reddit.com/r/pihole (community recommendations)
 
 Add via Settings → Adlists
 (Paste URL of blocklist)
 ```
 
-### Router Integration
+Router Integration
 
-**Tell all devices to use Pi-hole for DNS:**
+Tell all devices to use Pi-hole for DNS:
 
 ```
 Router DHCP Settings:
 
 Change DNS Servers:
-├── Primary DNS: 192.168.1.100 (Home Assistant IP)
-├── Secondary DNS: 1.1.1.1 (Cloudflare backup)
-└── Save
+ Primary DNS: 192.168.1.100 (Home Assistant IP)
+ Secondary DNS: 1.1.1.1 (Cloudflare backup)
+ Save
 
 Now all devices automatically:
 - Use Pi-hole for DNS
@@ -531,27 +530,27 @@ Now all devices automatically:
 - No app installation needed
 ```
 
-**Verify Working:**
+Verify Working:
 
 ```
 On any device connected to WiFi:
 
 nslookup doubleclick.net
-# Should return: NXDOMAIN (blocked)
-# Not blocked before = Pi-hole working
+Should return: NXDOMAIN (blocked)
+Not blocked before = Pi-hole working
 
 curl https://ipinfo.io/json
-# Should see your home IP (not tracked by ISP)
+Should see your home IP (not tracked by ISP)
 ```
 
 ---
 
-## Step 6: Automation Examples
+Step 6: Automation Examples
 
-### Example 1: Motion-Activated Lights
+Example 1: Motion-Activated Lights
 
 ```yaml
-# configuration.yaml
+configuration.yaml
 automation:
   - alias: "Hallway lights on motion"
     trigger:
@@ -578,7 +577,7 @@ automation:
         entity_id: light.tradfri_bulb_hallway
 ```
 
-### Example 2: Temperature-Based Alerts
+Example 2: Temperature-Based Alerts
 
 ```yaml
 automation:
@@ -594,7 +593,7 @@ automation:
         message: "Living room temperature is {{ states('sensor.aqara_temperature_sensor_living_room') }}°F"
 ```
 
-### Example 3: Scene Control
+Example 3: Scene Control
 
 ```yaml
 scene:
@@ -623,101 +622,101 @@ automation:
 
 ---
 
-## Step 7: Mobile Access (Secure)
+Step 7: Mobile Access (Secure)
 
 Home Assistant provides secure external access via their cloud, but that's optional. For maximum privacy, use:
 
-### Option A: Tailscale (Recommended)
+Option A: Tailscale (Recommended)
 
-**Tailscale = Private VPN to your home network**
+Tailscale = Private VPN to your home network
 
 ```bash
-# Install on Home Assistant
-# Settings → Add-ons → Install Tailscale
+Install on Home Assistant
+Settings → Add-ons → Install Tailscale
 
-# Or standalone:
+Or standalone:
 curl -fsSL https://tailscale.com/install.sh | sh
 
-# Authenticate:
+Authenticate:
 sudo tailscale up
 
-# Open browser link to authenticate
-# Click "Connect"
+Open browser link to authenticate
+Click "Connect"
 
-# Get IP:
+Get IP:
 tailscale ip
-# Returns: 100.x.x.x (Tailscale IP)
+Returns: 100.x.x.x (Tailscale IP)
 
-# Access Home Assistant remotely:
-# On phone: http://100.x.x.x:8123
-# (Only works when connected to Tailscale VPN)
+Access Home Assistant remotely:
+On phone: http://100.x.x.x:8123
+(Only works when connected to Tailscale VPN)
 ```
 
-**Cost:** Free (personal use).
+Cost: Free (personal use).
 
-### Option B: WireGuard (Manual)
+Option B: WireGuard (Manual)
 
 ```bash
-# Install WireGuard on Home Assistant
-# Settings → Add-ons → WireGuard
+Install WireGuard on Home Assistant
+Settings → Add-ons → WireGuard
 
-# Generate config:
-# Click "Show interface" → Shows QR code
+Generate config:
+Click "Show interface" → Shows QR code
 
-# On phone:
-# Install WireGuard app
-# Scan QR code
-# Connect to VPN
+On phone:
+Install WireGuard app
+Scan QR code
+Connect to VPN
 
-# Access Home Assistant:
-# Open browser: http://homeassistant.local:8123
-# (While connected to WireGuard)
+Access Home Assistant:
+Open browser: http://homeassistant.local:8123
+(While connected to WireGuard)
 ```
 
-**Cost:** Free.
+Cost: Free.
 
 ---
 
-## Privacy Comparison: Cloud vs Local
+Privacy Comparison: Cloud vs Local
 
 | Feature | Cloud (Alexa/Google) | Local (Home Assistant) |
 |---------|-------|-------|
-| **Audio Recording** | Always | Never |
-| **Cloud Storage** | All data | None |
-| **ISP Visibility** | No | No |
-| **Subscription Cost** | $0-15/month | $0 |
-| **Setup Time** | 5 minutes | 2 hours |
-| **Mobile Access** | Everywhere | VPN only |
-| **Reliability** | Depends on internet | Works offline |
-| **Privacy** | Weak (corporate) | Excellent |
+| Audio Recording | Always | Never |
+| Cloud Storage | All data | None |
+| ISP Visibility | No | No |
+| Subscription Cost | $0-15/month | $0 |
+| Setup Time | 5 minutes | 2 hours |
+| Mobile Access | Everywhere | VPN only |
+| Reliability | Depends on internet | Works offline |
+| Privacy | Weak (corporate) | Excellent |
 
 ---
 
-## Total Cost Breakdown
+Total Cost Breakdown
 
 ```
 Complete Privacy-Friendly Smart Home:
 
 Hardware (One-time):
-├── Raspberry Pi 5 + SSD: $135
-├── Zigbee coordinator: $40
-├── Z-Wave stick (optional): $45
-├── Managed switch: $45
-├── Smart bulbs (4×IKEA): $40
-├── Smart plugs (4×Sonoff): $40
-├── Motion sensor: $15
-├── Temperature sensors (2×): $20
-├── Door sensors (2×): $20
-└── SUBTOTAL: $400-450
+ Raspberry Pi 5 + SSD: $135
+ Zigbee coordinator: $40
+ Z-Wave stick (optional): $45
+ Managed switch: $45
+ Smart bulbs (4×IKEA): $40
+ Smart plugs (4×Sonoff): $40
+ Motion sensor: $15
+ Temperature sensors (2×): $20
+ Door sensors (2×): $20
+ SUBTOTAL: $400-450
 
 Network (One-time):
-├── WiFi 6 router (optional): $250
-└── Ethernet cables: $20
+ WiFi 6 router (optional): $250
+ Ethernet cables: $20
 
 Annual Costs:
-├── Electricity: ~$15/year
-├── Internet: Already have it
-└── Subscriptions: $0
+ Electricity: ~$15/year
+ Internet: Already have it
+ Subscriptions: $0
 
 Total Year 1: ~$650-720
 Total Year 2+: ~$15/year
@@ -725,16 +724,16 @@ Total Year 2+: ~$15/year
 vs Cloud:
 
 Alexa/Google Setup:
-├── Initial: $50-100
-├── Annual: $120+ (Prime, subscriptions)
-└── Hidden cost: Your privacy
+ Initial: $50-100
+ Annual: $120+ (Prime, subscriptions)
+ Hidden cost: Your privacy
 ```
 
 ---
 
-## Backup & Restore
+Backup & Restore
 
-**Automated Backups (Critical):**
+Automated Backups (Critical):
 
 ```yaml
 automation:
@@ -746,7 +745,7 @@ automation:
       service: homeassistant.backup
 ```
 
-**Manual Backup:**
+Manual Backup:
 
 ```
 Home Assistant:
@@ -757,27 +756,27 @@ Includes: All automations, scenes, device configs
 Size: ~500 MB - 1 GB
 ```
 
-**Restore (if Pi fails):**
+Restore (if Pi fails):
 
 ```bash
-# Install Home Assistant on new Pi (same steps as before)
+Install Home Assistant on new Pi (same steps as before)
 
-# Copy backup file:
+Copy backup file:
 scp homeassistant.tar ~/.../backups/
 
-# Home Assistant Auto-detects:
-# On first boot, shows: "Restore from backup?"
-# Click "Yes"
-# All configs restored within 5 minutes
+Home Assistant Auto-detects:
+On first boot, shows: "Restore from backup?"
+Click "Yes"
+All configs restored within 5 minutes
 
-# Devices reconnect automatically
+Devices reconnect automatically
 ```
 
 ---
 
-## Troubleshooting
+Troubleshooting
 
-**Devices Not Pairing:**
+Devices Not Pairing:
 
 ```
 1. Check range
@@ -800,25 +799,25 @@ scp homeassistant.tar ~/.../backups/
    - Permit joining again
 ```
 
-**Home Assistant Slow:**
+Home Assistant Slow:
 
 ```
 Causes:
-├── Too many entities (>500)
-├── Database corrupted (zigbee.db)
-├── Insufficient RAM (<2GB)
-└── Slow disk (SD card instead of SSD)
+ Too many entities (>500)
+ Database corrupted (zigbee.db)
+ Insufficient RAM (<2GB)
+ Slow disk (SD card instead of SSD)
 
 Solutions:
-├── Archive old automations
-├── Switch to SSD (if using SD)
-├── Restart Home Assistant
-├── Check system resources:
+ Archive old automations
+ Switch to SSD (if using SD)
+ Restart Home Assistant
+ Check system resources:
     Settings → System → About
     Shows CPU, RAM, disk usage
 ```
 
-**Zigbee Devices Unresponsive:**
+Zigbee Devices Unresponsive:
 
 ```
 Intermittent unresponsiveness:
@@ -833,40 +832,40 @@ Intermittent unresponsiveness:
 3. Increase transmit power
    - Some coordinators support this:
    Settings → ZHA → Configure
-   └── TX Power: 19 dBm (max)
+    TX Power: 19 dBm (max)
 ```
 
 ---
 
-## Expansion: What's Next
+Expansion: What's Next
 
-**After basic setup:**
+After basic setup:
 
-1. **Add more rooms**
+1. Add more rooms
  - Bulbs, motion sensors, temperature sensors in each room
  - Cost: $15-30/room
 
-2. **Advanced automation**
+2. Advanced automation
  - Sunrise/sunset lighting
  - Occupancy-based climate control
  - Voice commands (Rhasspy, wake word detection)
 
-3. **Energy monitoring**
+3. Energy monitoring
  - Add smart plugs to measure consumption
  - Track which devices use most power
 
-4. **Home security**
+4. Home security
  - Local cameras (Reolink, not cloud-based)
  - Door locks (Nuki, Aqara)
  - Glass break sensors
 
-5. **Media server**
+5. Media server
  - Plex for local movies/TV
  - Runs on same Raspberry Pi
 
 ---
 
-## Related Articles
+Related Articles
 
 - [How to Secure Smart Home Devices Privacy Guide 2026](/how-to-secure-smart-home-devices-privacy-guide-2026/)
 - [How to Set Up a Privacy Focused Home](/how-to-set-up-a-privacy-focused-home-network/)
@@ -874,27 +873,27 @@ Intermittent unresponsiveness:
 - [Tell If Your Home Assistant or Alexa Was Compromised](/how-to-tell-if-your-home-assistant-alexa-was-compromised/)
 - [Privacy-Focused Home Assistant Setup Accessible for Users](/privacy-focused-home-assistant-setup-accessible-for-users-wi/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to guide?**
+How long does it take to guide?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 

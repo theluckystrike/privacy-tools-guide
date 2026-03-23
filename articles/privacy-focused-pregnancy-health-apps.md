@@ -15,13 +15,13 @@ tags: [privacy-tools-guide, privacy]
 
 {% raw %}
 
-# Privacy-Focused Pregnancy and Health Apps
+Privacy-Focused Pregnancy and Health Apps
 
-Pregnancy apps collect some of the most sensitive data imaginable — gestational age, symptoms, medical history, location, and intimate physical details. This data is routinely sold to data brokers, insurers, employers, and marketers. Several major apps have shared user data with law enforcement following abortion-related investigations.
+Pregnancy apps collect some of the most sensitive data imaginable. gestational age, symptoms, medical history, location, and intimate physical details. This data is routinely sold to data brokers, insurers, employers, and marketers. Several major apps have shared user data with law enforcement following abortion-related investigations.
 
 This guide covers what to look for, which apps are worth trusting, and how to minimize exposure if you must use a mainstream option.
 
-## Why Pregnancy Data Is High-Risk
+Why Pregnancy Data Is High-Risk
 
 Pregnancy and reproductive health data sits in a unique legal gray zone. In the United States post-Dobbs, this data has been subpoenaed by state prosecutors. Even in jurisdictions where abortion is legal, the data trails created by these apps can be:
 
@@ -31,7 +31,7 @@ Pregnancy and reproductive health data sits in a unique legal gray zone. In the 
 - Used in targeted advertising for formula, diapers, or debt products
 - Accessed via law enforcement legal process without a warrant in many states
 
-## Threat Model Questions
+Threat Model Questions
 
 Before picking any app, answer these:
 
@@ -42,12 +42,12 @@ Before picking any app, answer these:
 
 Your answers determine how strict your requirements need to be.
 
-## The Privacy Audit Checklist
+The Privacy Audit Checklist
 
 For any health app, verify these before entering data:
 
 ```
-[ ] Privacy policy reviewed — does it explicitly prohibit selling data?
+[ ] Privacy policy reviewed. does it explicitly prohibit selling data?
 [ ] Can you use the app without creating an account?
 [ ] Does the app work without internet access?
 [ ] Is there an export/delete function for all your data?
@@ -56,9 +56,9 @@ For any health app, verify these before entering data:
 [ ] Does it use end-to-end encryption if syncing?
 ```
 
-## Recommended Apps
+Recommended Apps
 
-### Drip (Android/iOS — Open Source)
+Drip (Android/iOS. Open Source)
 
 Drip is an open-source menstrual and reproductive health tracker that stores all data locally on the device with no account required. The source code is publicly available on GitHub, meaning independent researchers can verify what it does and doesn't transmit.
 
@@ -69,9 +69,9 @@ Key facts:
 - Supports export to CSV for backup
 - Available on F-Droid (Android) for accountless install
 
-**Privacy verdict: Excellent.** Drip is the go-to recommendation for anyone in a high-risk legal jurisdiction.
+Privacy verdict: Excellent. Drip is the go-to recommendation for anyone in a high-risk legal jurisdiction.
 
-### Euki (Android/iOS)
+Euki (Android/iOS)
 
 Euki is built by a reproductive health advocacy organization explicitly focused on user privacy in the post-Dobbs landscape. It includes a PIN lock and a "quick exit" button that closes the app and wipes recent session data.
 
@@ -82,58 +82,58 @@ Key facts:
 - Includes pregnancy information and symptom tracking
 - Free, no ads
 
-**Privacy verdict: Excellent.** Designed specifically for people concerned about legal exposure.
+Privacy verdict: Excellent. Designed specifically for people concerned about legal exposure.
 
-### What to Avoid
+What to Avoid
 
 Apps to stay away from if privacy is a concern:
 
-**Glow, Flo, BabyCenter** — All have histories of sharing data with third parties. Flo signed a FTC consent order in 2021 after sharing health data with Facebook and Google despite promises not to. They've improved somewhat, but their business model depends on data monetization.
+Glow, Flo, BabyCenter. All have histories of sharing data with third parties. Flo signed a FTC consent order in 2021 after sharing health data with Facebook and Google despite promises not to. They've improved somewhat, but their business model depends on data monetization.
 
-**The Bump, What to Expect** — These are content/community platforms owned by large media companies. Extensive ad tracking, data sharing with partners.
+The Bump, What to Expect. These are content/community platforms owned by large media companies. Extensive ad tracking, data sharing with partners.
 
-**Any app tied to your insurance or employer wellness program** — These apps often have contractual data sharing obligations that override any privacy policy.
+Any app tied to your insurance or employer wellness program. These apps often have contractual data sharing obligations that override any privacy policy.
 
-## Hardening a Mainstream App If You Must Use One
+Hardening a Mainstream App If You Must Use One
 
 If your OB or midwife requires a specific app that isn't privacy-friendly, apply these mitigations:
 
 ```bash
-# Android: Use a work profile to isolate the app
-# Install Shelter from F-Droid to create a work profile
+Android: Use a work profile to isolate the app
+Install Shelter from F-Droid to create a work profile
 
-# Revoke unnecessary permissions via adb
+Revoke unnecessary permissions via adb
 adb shell pm revoke com.example.pregnancyapp android.permission.ACCESS_FINE_LOCATION
 adb shell pm revoke com.example.pregnancyapp android.permission.READ_CONTACTS
 
-# Block the app's network access using NetGuard (no-root firewall)
-# Install NetGuard from F-Droid, add the app to the blocklist
+Block the app's network access using NetGuard (no-root firewall)
+Install NetGuard from F-Droid, add the app to the blocklist
 ```
 
 On iOS:
 
 ```
-Settings > Privacy & Security > Tracking — deny tracking permission
-Settings > [App Name] — revoke Location, Contacts, Photos access
-Settings > Privacy & Security > Health — review exactly what the app can read
+Settings > Privacy & Security > Tracking. deny tracking permission
+Settings > [App Name]. revoke Location, Contacts, Photos access
+Settings > Privacy & Security > Health. review exactly what the app can read
 ```
 
-## Data Minimization Principles
+Data Minimization Principles
 
 Regardless of which app you use:
 
-- **Never enter your real name or date of birth** in an app that doesn't require identity verification
-- **Use a separate email address** — create a dedicated alias via SimpleLogin or AnonAddy
-- **Disable cloud backup** for any folder where the app stores its data (check Android's auto-backup settings and iCloud settings)
-- **Export and locally encrypt your data** periodically, then delete it from the app's history
-- **Uninstall the app** after you no longer need it and explicitly request data deletion
+- Never enter your real name or date of birth in an app that doesn't require identity verification
+- Use a separate email address. create a dedicated alias via SimpleLogin or AnonAddy
+- Disable cloud backup for any folder where the app stores its data (check Android's auto-backup settings and iCloud settings)
+- Export and locally encrypt your data periodically, then delete it from the app's history
+- Uninstall the app after you no longer need it and explicitly request data deletion
 
-## Requesting Data Deletion
+Requesting Data Deletion
 
 Most apps in the US and EU must honor data deletion requests under CCPA and GDPR. Template message:
 
 ```
-Subject: Data Deletion Request — [Your Username or Email]
+Subject: Data Deletion Request. [Your Username or Email]
 
 I am requesting immediate deletion of all personal data associated
 with my account under [CCPA / GDPR Article 17].
@@ -145,7 +145,7 @@ deletion within the required timeframe.
 
 Send this via email to the privacy contact listed in the app's privacy policy. Screenshot or save the response.
 
-## Related Reading
+Related Reading
 
 - [Privacy Risks of Period Tracking Apps](/privacy-risks-of-period-tracking-apps-2026/)
 - [How to Use a Masked Email Address for App Signups](/masked-email-address-guide/)
@@ -153,6 +153,6 @@ Send this via email to the privacy contact listed in the app's privacy policy. S
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

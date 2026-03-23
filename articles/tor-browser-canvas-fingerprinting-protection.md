@@ -18,7 +18,7 @@ voice-checked: true
 
 Canvas fingerprinting is one of the most sophisticated tracking techniques used by websites to identify users without cookies. Tor Browser includes protections against this threat, but understanding how these protections work helps you configure your setup for maximum privacy.
 
-## Table of Contents
+Table of Contents
 
 - [What is Canvas Fingerprinting?](#what-is-canvas-fingerprinting)
 - [How Tor Browser Protects Against Canvas Fingerprinting](#how-tor-browser-protects-against-canvas-fingerprinting)
@@ -33,7 +33,7 @@ Canvas fingerprinting is one of the most sophisticated tracking techniques used 
 - [Best Practices for 2026](#best-practices-for-2026)
 - [Testing Your Protection](#testing-your-protection)
 
-## What is Canvas Fingerprinting?
+What is Canvas Fingerprinting?
 
 Canvas fingerprinting exploits the HTML5 canvas element to create a unique identifier for your browser. When a website renders graphics through the canvas API, subtle differences in hardware, graphics drivers, and font rendering produce distinct output. These microscopic variations create a fingerprint that persists across sessions.
 
@@ -61,11 +61,11 @@ function getCanvasFingerprint() {
 
 The resulting data URL varies between systems, making it an effective tracking mechanism.
 
-## How Tor Browser Protects Against Canvas Fingerprinting
+How Tor Browser Protects Against Canvas Fingerprinting
 
 Tor Browser implements multiple layers of defense against canvas fingerprinting:
 
-### 1. Canvas Randomization
+1. Canvas Randomization
 
 Tor Browser adds noise to canvas readback operations. When a website attempts to read canvas data, Tor randomly modifies the output, making each reading unique:
 
@@ -81,7 +81,7 @@ function secureCanvasReadback(canvas) {
 
 This randomization means the same webpage produces different canvas fingerprints across sessions.
 
-### 2. Resistance Fingerprinting
+2. Resistance Fingerprinting
 
 Tor Browser presents a uniform fingerprint regardless of your actual system configuration. This "resistance" mode makes all Tor users appear identical to websites:
 
@@ -90,25 +90,25 @@ Tor Browser presents a uniform fingerprint regardless of your actual system conf
 - Uniform font rendering
 - Consistent color profiles
 
-### 3. First-Party Isolation
+3. First-Party Isolation
 
 When enabled, First-Party Isolation separates tracking data by domain. This prevents canvas fingerprints from one site being linked to another.
 
-## Configuring Tor Browser for Maximum Protection
+Configuring Tor Browser for Maximum Protection
 
-### Enable Strict Security
+Enable Strict Security
 
 In Tor Browser's about:config, verify these settings:
 
 ```bash
-# Recommended privacy settings
+Recommended privacy settings
 privacy.resistFingerprinting = true
 webgl.disabled = true
 ```
 
 The `privacy.resistFingerprinting` setting activates Tor's anti-fingerprinting measures.
 
-### Disable Canvas Readback
+Disable Canvas Readback
 
 For sensitive use cases, you can block canvas entirely:
 
@@ -125,39 +125,39 @@ HTMLCanvasElement.prototype.toBlob = function() {
 
 However, this breaks some legitimate website functionality.
 
-### Use NoScript Wisely
+Use NoScript Wisely
 
 NoScript provides additional canvas protection through its ABE (Application Boundaries Enforcer) rules:
 
 ```
-# NoScript ABE canvas protection rule
+NoScript ABE canvas protection rule
 Site ^https://tracker\.example\.com$
   Deny
 ```
 
-## Understanding the Limitations
+Understanding the Limitations
 
 Tor Browser's canvas protection isn't perfect. Advanced fingerprinting techniques can still identify users through:
 
-- **Timing attacks**: Measuring how long canvas operations take
-- **Hardware detection**: Identifying specific GPU characteristics
-- **WebGL fingerprinting**: Using WebGL instead of 2D canvas
+- Timing attacks: Measuring how long canvas operations take
+- Hardware detection: Identifying specific GPU characteristics
+- WebGL fingerprinting: Using WebGL instead of 2D canvas
 
 To mitigate timing attacks, Tor Browser randomizes operation timing, though this can reduce protection effectiveness.
 
-## Best Practices for 2026
+Best Practices for 2026
 
-1. **Keep Tor Browser updated**: Each release includes improved fingerprinting protections
-2. **Don't maximize windows**: This reveals your actual screen size
-3. **Avoid changing window sizes frequently**: This creates unique timing patterns
-4. **Use default Tor Browser settings**: Modifications can make you more identifiable
-5. **Enable strict security level**: Go to about:preferences#privacy and select "Safest"
+1. Keep Tor Browser updated: Each release includes improved fingerprinting protections
+2. Don't maximize windows: This reveals your actual screen size
+3. Avoid changing window sizes frequently: This creates unique timing patterns
+4. Use default Tor Browser settings: Modifications can make you more identifiable
+5. Enable strict security level: Go to about:preferences#privacy and select "Safest"
 
-## Advanced Canvas Protection Techniques
+Advanced Canvas Protection Techniques
 
 Beyond Tor's built-in protections, additional layers strengthen your defense:
 
-### WebGL Fingerprinting Mitigation
+WebGL Fingerprinting Mitigation
 
 Canvas isn't the only graphics API used for fingerprinting. WebGL (Web Graphics Library) can reveal GPU characteristics:
 
@@ -182,7 +182,7 @@ if (gl) {
 }
 ```
 
-### CSS and Font Fingerprinting
+CSS and Font Fingerprinting
 
 Beyond canvas, websites can fingerprint through font rendering:
 
@@ -200,18 +200,18 @@ body { font-family: 'TestFont'; }
 Tor Browser counters this through font normalization, but you can add personal mitigations:
 
 ```bash
-# Tor Browser Settings → about:config
-# Verify these protections are enabled:
+Tor Browser Settings → about:config
+Verify these protections are enabled:
 privacy.resistFingerprinting = true
 privacy.trackingprotection.fingerprinting.enabled = true
 ```
 
-## Fingerprinting Attack Detection
+Fingerprinting Attack Detection
 
 Recognize when websites attempt fingerprinting:
 
 ```python
-# Common fingerprinting libraries websites use
+Common fingerprinting libraries websites use
 fingerprinting_libraries = {
     "FingerprintJS": {
         "method": "Canvas, WebGL, audio, fonts",
@@ -231,7 +231,7 @@ fingerprinting_libraries = {
     }
 }
 
-# Detection: Check browser console for requests to fingerprinting domains
+Detection: Check browser console for requests to fingerprinting domains
 ```
 
 To identify if a website is fingerprinting you:
@@ -242,12 +242,12 @@ To identify if a website is fingerprinting you:
 4. Search for requests to known fingerprinting domains
 5. If found, assume you're being tracked
 
-## Comparison: Tor Browser vs Firefox with Extensions
+Comparison: Tor Browser vs Firefox with Extensions
 
 Some users mix Tor Browser with privacy extensions on regular Firefox. This is a mistake:
 
 ```python
-# Why Tor Browser is superior to Firefox + extensions
+Why Tor Browser is superior to Firefox + extensions
 
 comparison = {
     "tor_browser": {
@@ -271,7 +271,7 @@ comparison = {
 
 Using Tor Browser is simpler and safer than trying to harden Firefox yourself.
 
-## Testing Canvas Protection Across Sessions
+Testing Canvas Protection Across Sessions
 
 Verify Tor Browser's canvas randomization:
 
@@ -348,14 +348,14 @@ class TorCanvasTest:
 
         return result
 
-# Usage
-# tester = TorCanvasTest("/path/to/TorBrowser")
-# results = tester.run_multiple_sessions(5)
-# analysis = tester.analyze_results(results)
-# print(json.dumps(analysis, indent=2))
+Usage
+tester = TorCanvasTest("/path/to/TorBrowser")
+results = tester.run_multiple_sessions(5)
+analysis = tester.analyze_results(results)
+print(json.dumps(analysis, indent=2))
 ```
 
-## Canvas Protection in Tor Browser v2026
+Canvas Protection in Tor Browser v2026
 
 Tor Browser's latest versions (2026) include improvements:
 
@@ -378,21 +378,21 @@ version_improvements = {
     }
 }
 
-# Always update to latest version for strongest protection
+Always update to latest version for strongest protection
 ```
 
-## Best Practices for 2026
+Best Practices for 2026
 
-1. **Always update Tor Browser**: Each release includes fingerprinting improvements
-2. **Never resize the window**: Stick with standard dimensions
-3. **Use "Safest" security level**: Disables JavaScript which eliminates many fingerprinting vectors
-4. **Don't modify about:config**: Tor Project's defaults are optimized for privacy
-5. **Disable browser extensions**: Even privacy extensions can leak fingerprinting information
-6. **Use one profile**: Don't mix Tor Browser with regular Firefox on the same system
-7. **Verify canvas protection**: Test regularly on amiunique.org to confirm protections work
-8. **Understand limitations**: Canvas protection is strong, but not perfect against all adversaries
+1. Always update Tor Browser: Each release includes fingerprinting improvements
+2. Never resize the window: Stick with standard dimensions
+3. Use "Safest" security level: Disables JavaScript which eliminates many fingerprinting vectors
+4. Don't modify about:config: Tor Project's defaults are optimized for privacy
+5. Disable browser extensions: Even privacy extensions can leak fingerprinting information
+6. Use one profile: Don't mix Tor Browser with regular Firefox on the same system
+7. Verify canvas protection: Test regularly on amiunique.org to confirm protections work
+8. Understand limitations: Canvas protection is strong, but not perfect against all adversaries
 
-## Testing Your Protection
+Testing Your Protection
 
 To verify Tor Browser's canvas protection:
 
@@ -407,29 +407,29 @@ If fingerprinting detection shows persistent identifiers:
 - Verify privacy.resistFingerprinting is enabled in about:config
 - Consider using Tails OS for even stronger isolation
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Tor Browser Fingerprinting Protection How It Makes Everyone](/tor-browser-fingerprinting-protection-how-it-makes-everyone-/)
 - [Tor Browser Font Fingerprinting Protection](/tor-browser-font-fingerprinting-protection/)
@@ -438,5 +438,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Tor Browser Screen Size Fingerprint Protection](/tor-browser-screen-size-fingerprint-protection/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

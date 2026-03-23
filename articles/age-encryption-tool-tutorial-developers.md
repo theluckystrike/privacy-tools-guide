@@ -18,27 +18,27 @@ tags: [privacy-tools-guide, tutorial, encryption]
 
 Install age with `brew install age` (macOS) or `go install filippo.io/age@latest`, generate a key pair with `age-keygen`, then encrypt any file with `age -r <public-key> -o output.age input.txt`. Age is a modern, minimal alternative to PGP that handles file encryption with far less complexity -- no key servers, no web of trust, no configuration files. This tutorial covers command-line usage, passphrase-based encryption, Go library integration, SSH key interoperability, and CI/CD pipeline automation.
 
-## Quick Start Steps
+Quick Start Steps
 
-1. **Install age:** `brew install age` (macOS) or `apt install age` (Debian/Ubuntu)
-2. **Generate a keypair:** `age-keygen -o key.txt` (saves private key, prints public key)
-3. **Encrypt a file:** `age -r age1xxxxxxxxx -o secret.age plaintext.txt`
-4. **Decrypt a file:** `age -d -i key.txt -o plaintext.txt secret.age`
-5. **Encrypt with passphrase:** `age -p -o secret.age plaintext.txt` (prompts for password)
-6. **Encrypt for multiple recipients:** `age -r age1xxx -r age1yyy -o shared.age file.txt`
-7. **Use SSH keys instead:** `age -R ~/.ssh/id_ed25519.pub -o secret.age file.txt`
-8. **Pipe from stdin:** `echo "secret data" | age -r age1xxx > secret.age`
+1. Install age: `brew install age` (macOS) or `apt install age` (Debian/Ubuntu)
+2. Generate a keypair: `age-keygen -o key.txt` (saves private key, prints public key)
+3. Encrypt a file: `age -r age1xxxxxxxxx -o secret.age plaintext.txt`
+4. Decrypt a file: `age -d -i key.txt -o plaintext.txt secret.age`
+5. Encrypt with passphrase: `age -p -o secret.age plaintext.txt` (prompts for password)
+6. Encrypt for multiple recipients: `age -r age1xxx -r age1yyy -o shared.age file.txt`
+7. Use SSH keys instead: `age -R ~/.ssh/id_ed25519.pub -o secret.age file.txt`
+8. Pipe from stdin: `echo "secret data" | age -r age1xxx > secret.age`
 
 
-## Key Takeaways
+Key Takeaways
 
-- **This approach uses your**: existing SSH infrastructure.
-- **Use hardware security modules**: or secure key management services for production secrets.
-- **When using `-p`**: choose passphrases that meet modern complexity requirements.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
+- This approach uses your: existing SSH infrastructure.
+- Use hardware security modules: or secure key management services for production secrets.
+- When using `-p`: choose passphrases that meet modern complexity requirements.
+- What are the most: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- Consider a security review: if your application handles sensitive user data.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -48,7 +48,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Install Age
+Step 1: Install Age
 
 Age supports multiple platforms including macOS, Linux, and Windows. Install it using Homebrew on macOS:
 
@@ -77,23 +77,23 @@ age --version
 age v1.2.1
 ```
 
-### Step 2: Understand Age's Key Pairs
+Step 2: Understand Age's Key Pairs
 
 Age uses two types of keys: identity keys (private keys) and recipient keys (public keys). Generate a new identity key pair:
 
 ```bash
-# Generate identity (private key)
+Generate identity (private key)
 age-keygen
 
-# Output example:
-# # created: 2026-03-15T12:00:00Z
-# # public key: age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrjwfkg5vwveyq6mk9l
-# AGE-SECRET-KEY-1XK7Q6Z9J8V4Y2W5N3M1L6P0R8T3U9V7W4X1Y2Z5A3B6C9D0E2F4G7H8J
+Output example:
+# created: 2026-03-15T12:00:00Z
+# public key: age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrjwfkg5vwveyq6mk9l
+AGE-SECRET-KEY-1XK7Q6Z9J8V4Y2W5N3M1L6P0R8T3U9V7W4X1Y2Z5A3B6C9D0E2F4G7H8J
 ```
 
 Save this output securely. The public key (`age1ql3z...`) allows others to encrypt files for you without accessing your private key.
 
-### Step 3: Encrypt Files
+Step 3: Encrypt Files
 
 Encrypt a file for yourself using your public key:
 
@@ -116,7 +116,7 @@ For multiple recipients, specify each public key with a separate `-r` flag:
 age -r age1recipient1... -r age1recipient2... -o shared.tar.gz.age secret.tar.gz
 ```
 
-### Step 4: Decrypt Files
+Step 4: Decrypt Files
 
 Decrypt a file using your identity key:
 
@@ -136,7 +136,7 @@ This prompts for the passphrase. For automated workflows, pipe the passphrase:
 echo "your-passphrase" | age -d -i ~/age-key.txt encrypted.tar.gz.age -o decrypted.tar.gz
 ```
 
-### Step 5: Use Passphrases Only
+Step 5: Use Passphrases Only
 
 For quick symmetric encryption without key pairs, use passphrase-based encryption:
 
@@ -150,7 +150,7 @@ This creates a file encrypted with a passphrase. Decrypt using the same approach
 age -d secret.txt.age > restored_secret.txt
 ```
 
-### Step 6: Implement Programmatic Integration
+Step 6: Implement Programmatic Integration
 
 Integrate age into your Go applications using the age package:
 
@@ -217,24 +217,24 @@ Install the package:
 go get filippo.io/age
 ```
 
-### Step 7: Integration with SSH Keys
+Step 7: Integration with SSH Keys
 
 Age can derive recipient keys from existing SSH keys, making migration easier:
 
 ```bash
-# Generate age key from SSH key
+Generate age key from SSH key
 ssh-to-age < ~/.ssh/id_rsa.pub
 ```
 
 Use the resulting age public key for encryption. This approach uses your existing SSH infrastructure.
 
-### Step 8: Create Shell Script Automation
+Step 8: Create Shell Script Automation
 
 Create a reusable encryption script:
 
 ```bash
 #!/bin/bash
-# encrypt.sh
+encrypt.sh
 
 RECIPIENT="$1"
 INPUT_FILE="$2"
@@ -253,7 +253,7 @@ Create a corresponding decryption script:
 
 ```bash
 #!/bin/bash
-# decrypt.sh
+decrypt.sh
 
 INPUT_FILE="$1"
 OUTPUT_FILE="${INPUT_FILE%.age}"
@@ -275,37 +275,37 @@ chmod +x encrypt.sh decrypt.sh
 ./decrypt.sh backup.tar.gz.age
 ```
 
-### Step 9: Configure CI/CD Pipeline Integration
+Step 9: Configure CI/CD Pipeline Integration
 
 Use age in automated deployment pipelines. Generate keys specifically for CI environments:
 
 ```bash
-# In your CI pipeline
+In your CI pipeline
 age-keygen > /tmp/ci-age-key.txt
 
-# Encrypt secrets for the pipeline
+Encrypt secrets for the pipeline
 age -r "$(grep 'public key:' /tmp/ci-age-key.txt | awk '{print $3}')" \
     -o secrets.age .env
 
-# Decrypt during build
+Decrypt during build
 age -d -i /tmp/ci-age-key.txt -o .env secrets.age
 ```
 
 Store the CI identity key as a secret in your CI platform's secrets management.
 
-## Security Considerations
+Security Considerations
 
 When using age in production environments, follow these practices:
 
 Store identity keys separately from encrypted data. Use hardware security modules or secure key management services for production secrets.
 
-Periodically rotate keys and re-encrypt sensitive data. Age makes this straightforward—decrypt with the old key and re-encrypt with a new one.
+Periodically rotate keys and re-encrypt sensitive data. Age makes this straightforward, decrypt with the old key and re-encrypt with a new one.
 
 When using `-p`, choose passphrases that meet modern complexity requirements. Combine with public-key encryption for defense in depth.
 
 Log encryption and decryption operations in sensitive environments. Consider adding metadata to encrypted files for organizational purposes.
 
-## Troubleshooting
+Troubleshooting
 
 Common issues and solutions:
 
@@ -315,35 +315,35 @@ If you get a permission denied error, ensure your identity key file has restrict
 chmod 600 ~/.age/identity
 ```
 
-If you see an invalid key format error, verify the public key format—age public keys start with `age1`. Check for copy errors when sharing keys.
+If you see an invalid key format error, verify the public key format, age public keys start with `age1`. Check for copy errors when sharing keys.
 
 A passphrase mismatch occurs when decrypting files encrypted with `-p` using the wrong passphrase. There is no recovery mechanism for lost passphrases.
 
 Age encrypts files in streaming fashion, handling large files efficiently. For very large files, consider splitting them first with `split` before encryption.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to developers?**
+How long does it take to developers?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How To Use Age Encryption For Secure File Sharing Command Li](/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
 - [How to Encrypt Git Repos with git-crypt and age](/how-to-encrypt-git-repos-with-git-crypt-and-age/)
@@ -351,14 +351,14 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Encrypted Backup Solution For Developers](/best-encrypted-backup-solution-for-developers/)
 - [Best Hardware Security Key for Developers: A Practical Guide](/best-hardware-security-key-for-developers/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Related Reading
+Related Reading
 
 - [How To Use Age Encryption For Secure File Sharing Command](/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
 - [How to Use Age Encryption for File Sharing 2026](/how-to-use-age-encryption-for-file-sharing-2026/)
 - [How to Set Up age Encryption for Teams](/age-encryption-team-setup-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

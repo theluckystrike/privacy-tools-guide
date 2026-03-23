@@ -18,58 +18,58 @@ intent-checked: true
 
 Vaultwarden is a lightweight, open-source implementation of Bitwarden's password vault API. Self-hosting Vaultwarden gives you full control over your credentials without trusting a third-party SaaS provider. This guide covers full Docker deployment, reverse proxy configuration with Nginx, SSL certificate automation with Let's Encrypt, automated backups, security hardening, and the maintenance workflow for running your own password vault.
 
-## Quick Setup Steps
+Quick Setup Steps
 
-1. **Provision a VPS or local server** with at least 512 MB RAM and Docker installed
-2. **Pull the Vaultwarden image:** `docker pull vaultwarden/server:latest`
-3. **Create a Docker Compose file** with volume mounts for persistent data storage
-4. **Configure environment variables** including `ADMIN_TOKEN`, `DOMAIN`, and `SMTP_HOST`
-5. **Set up Nginx or Caddy** as a reverse proxy with SSL termination
-6. **Obtain SSL certificates** using Certbot or Caddy automatic HTTPS
-7. **Start the container:** `docker-compose up -d`
-8. **Create your admin account** at `https://yourdomain.com/admin`
-9. **Configure automated backups** of the SQLite database to encrypted offsite storage
-10. **Set up Watchtower** for automatic container image updates
+1. Provision a VPS or local server with at least 512 MB RAM and Docker installed
+2. Pull the Vaultwarden image: `docker pull vaultwarden/server:latest`
+3. Create a Docker Compose file with volume mounts for persistent data storage
+4. Configure environment variables including `ADMIN_TOKEN`, `DOMAIN`, and `SMTP_HOST`
+5. Set up Nginx or Caddy as a reverse proxy with SSL termination
+6. Obtain SSL certificates using Certbot or Caddy automatic HTTPS
+7. Start the container: `docker-compose up -d`
+8. Create your admin account at `https://yourdomain.com/admin`
+9. Configure automated backups of the SQLite database to encrypted offsite storage
+10. Set up Watchtower for automatic container image updates
 
 
-## Table of Contents
+Table of Contents
 
 - [Why Self-Host Vaultwarden?](#why-self-host-vaultwarden)
 - [System Requirements](#system-requirements)
 - [Prerequisites](#prerequisites)
 - [Troubleshooting](#troubleshooting)
 
-## Why Self-Host Vaultwarden?
+Why Self-Host Vaultwarden?
 
 Bitwarden's SaaS offering is privacy-respecting, but self-hosting provides:
-- **Zero trust dependency:** Your encryption keys never leave your server
-- **Full data ownership:** No vendor lock-in, easy migration
-- **Cost savings:** Free (Docker) vs. $2.99/month Bitwarden Premium
-- **Compliance:** Required for regulated industries (healthcare, finance)
-- **Custom features:** Add integrations, modify workflows
+- Zero trust dependency: Your encryption keys never leave your server
+- Full data ownership: No vendor lock-in, easy migration
+- Cost savings: Free (Docker) vs. $2.99/month Bitwarden Premium
+- Compliance: Required for regulated industries (healthcare, finance)
+- Custom features: Add integrations, modify workflows
 
 Trade-off: You manage infrastructure, backups, SSL certificates, and server updates.
 
-## System Requirements
+System Requirements
 
-**Minimum specs for single-user Vaultwarden:**
+Minimum specs for single-user Vaultwarden:
 - 512 MB RAM
 - 5 GB disk space (includes database + backups)
 - 1 vCPU (or ARM equivalent, Raspberry Pi 4 works)
 - Ubuntu 20.04 LTS or later, Debian 11+, or macOS with Docker Desktop
 
-**For multiple users (family, small team):**
+For multiple users (family, small team):
 - 2 GB RAM
 - 20 GB disk space
 - 2 vCPU
 - 25-50 Mbps connection (upload for backups)
 
-**Deployment options:**
+Deployment options:
 - VPS (DigitalOcean $6-12/month, Linode $5+/month, Vultr $2.50+/month)
 - Home server (Raspberry Pi 4, old laptop, NAS)
 - Synology NAS (Docker support built-in)
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -79,50 +79,50 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Install ation: Docker Compose Setup
+Step 1: Install ation: Docker Compose Setup
 
-**Step 1: Install Docker**
+Step 1: Install Docker
 
 On Ubuntu/Debian:
 ```bash
-# Update system packages
+Update system packages
 sudo apt update && sudo apt upgrade -y
 
-# Install Docker
+Install Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 
-# Add current user to docker group (avoid sudo for docker commands)
+Add current user to docker group (avoid sudo for docker commands)
 sudo usermod -aG docker $USER
 newgrp docker
 
-# Verify installation
+Verify installation
 docker --version
 docker run hello-world
 ```
 
 On macOS:
 ```bash
-# Install via Homebrew
+Install via Homebrew
 brew install docker-compose
 
-# Or download Docker Desktop from docker.com
-# Docker Desktop includes docker and docker-compose
+Or download Docker Desktop from docker.com
+Docker Desktop includes docker and docker-compose
 ```
 
-**Step 2: Create directory structure**
+Step 2: Create directory structure
 
 ```bash
-# Create vaultwarden directory
+Create vaultwarden directory
 mkdir -p ~/vaultwarden/{data,nginx,letsencrypt}
 cd ~/vaultwarden
 
-# Create subdirectories
+Create subdirectories
 mkdir -p data/attachments
 mkdir -p nginx/ssl
 ```
 
-**Step 3: Create Docker Compose configuration**
+Step 3: Create Docker Compose configuration
 
 Create `docker-compose.yml`:
 
@@ -200,41 +200,41 @@ networks:
     name: vaultwarden-network
 ```
 
-**Generate admin token:**
+Generate admin token:
 
 ```bash
-# Generate a strong admin token
+Generate a strong admin token
 openssl rand -base64 32
 
-# Use with htpasswd to create Argon2id hash
+Use with htpasswd to create Argon2id hash
 sudo apt install apache2-utils  # or brew install httpd
 htpasswd -c -B -C 10 /tmp/admin admin
-# Copy the hash to ADMIN_TOKEN in docker-compose.yml
+Copy the hash to ADMIN_TOKEN in docker-compose.yml
 ```
 
 Or use an online generator (less secure): [Argon2 generator](https://argon2.online)
 
-**Step 4: Start Vaultwarden**
+Step 4: Start Vaultwarden
 
 ```bash
-# Navigate to vaultwarden directory
+Navigate to vaultwarden directory
 cd ~/vaultwarden
 
-# Start the container
+Start the container
 docker-compose up -d
 
-# View logs
+View logs
 docker-compose logs -f vaultwarden
 
-# Expected output:
-# [INFO] vaultwarden 1.0.37
-# [INFO] Rocket has launched from http://0.0.0.0
-# [INFO] Database: sqlite:///data/db.sqlite3
+Expected output:
+[INFO] vaultwarden 1.0.37
+[INFO] Rocket has launched from http://0.0.0.0
+[INFO] Database: sqlite:///data/db.sqlite3
 ```
 
 Vaultwarden is now running on `http://localhost:8080` (local access only).
 
-### Step 2: Reverse Proxy: Nginx Configuration
+Step 2: Reverse Proxy: Nginx Configuration
 
 Running Vaultwarden directly on the internet is risky. Use Nginx as a reverse proxy to:
 - Add SSL/TLS encryption
@@ -242,18 +242,18 @@ Running Vaultwarden directly on the internet is risky. Use Nginx as a reverse pr
 - Add security headers
 - Separate concerns (web server vs. application)
 
-**Step 1: Create Nginx configuration**
+Step 1: Create Nginx configuration
 
 Create `nginx/vaultwarden.conf`:
 
 ```nginx
-# Upstream vaultwarden server
+Upstream vaultwarden server
 upstream vaultwarden {
     server vaultwarden:80;
     keepalive 32;
 }
 
-# Rate limiting
+Rate limiting
 limit_req_zone $binary_remote_addr zone=vaultwarden_limit:10m rate=10r/s;
 limit_req_zone $binary_remote_addr zone=identity_limit:10m rate=5r/m;
 
@@ -359,7 +359,7 @@ server {
 }
 ```
 
-**Step 2: Add Nginx to Docker Compose**
+Step 2: Add Nginx to Docker Compose
 
 Update `docker-compose.yml`:
 
@@ -381,39 +381,39 @@ Update `docker-compose.yml`:
       - vaultwarden-network
 ```
 
-### Step 3: SSL Certificates: Let's Encrypt Setup
+Step 3: SSL Certificates: Let's Encrypt Setup
 
-**Option 1: Certbot (recommended for dynamic DNS)**
+Option 1: Certbot (recommended for dynamic DNS)
 
 Install Certbot on your host machine (not in Docker):
 
 ```bash
-# Ubuntu/Debian
+Ubuntu/Debian
 sudo apt install certbot python3-certbot-nginx
 
-# macOS
+macOS
 brew install certbot
 
-# Request initial certificate
+Request initial certificate
 sudo certbot certonly --standalone -d vault.example.com -d www.vault.example.com
 
-# Expected output:
-# Saving debug log to /var/log/letsencrypt/letsencrypt.log
-# Certificate is saved at: /etc/letsencrypt/live/vault.example.com/fullchain.pem
-# Key is saved at: /etc/letsencrypt/live/vault.example.com/privkey.pem
+Expected output:
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Certificate is saved at: /etc/letsencrypt/live/vault.example.com/fullchain.pem
+Key is saved at: /etc/letsencrypt/live/vault.example.com/privkey.pem
 ```
 
-**Auto-renew with cron job:**
+Auto-renew with cron job:
 
 ```bash
-# Edit crontab
+Edit crontab
 sudo crontab -e
 
-# Add line (runs daily at 2 AM):
+Add line (runs daily at 2 AM):
 0 2 * * * certbot renew --quiet && systemctl reload nginx
 ```
 
-**Option 2: Docker-based (Certbot in container)**
+Option 2: Docker-based (Certbot in container)
 
 Add to docker-compose.yml:
 
@@ -430,112 +430,112 @@ Add to docker-compose.yml:
       CERTBOT_EMAIL: "admin@example.com"
 ```
 
-### Step 4: Backups: Automated Daily Backups
+Step 4: Backups: Automated Daily Backups
 
 Create backup script `backup.sh`:
 
 ```bash
 #!/bin/bash
 
-# Configuration
+Configuration
 BACKUP_DIR="./backups"
 DATA_DIR="./data"
 RETENTION_DAYS=30
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 BACKUP_FILE="$BACKUP_DIR/vaultwarden_backup_$TIMESTAMP.tar.gz"
 
-# Create backup directory
+Create backup directory
 mkdir -p $BACKUP_DIR
 
-# Backup database, config, and attachments
+Backup database, config, and attachments
 tar -czf $BACKUP_FILE \
     -C $DATA_DIR db.sqlite3 config.json 2>/dev/null || \
     tar -czf $BACKUP_FILE \
     -C $DATA_DIR . \
     --exclude='*.log'
 
-# Log backup
+Log backup
 echo "[$(date)] Backup created: $BACKUP_FILE ($(du -h $BACKUP_FILE | cut -f1))" >> $BACKUP_DIR/backup.log
 
-# Remove old backups (keep last 30 days)
+Remove old backups (keep last 30 days)
 find $BACKUP_DIR -name "vaultwarden_backup_*.tar.gz" -mtime +$RETENTION_DAYS -delete
 
-# Optional: Upload to cloud storage
-# aws s3 cp $BACKUP_FILE s3://your-backup-bucket/vaultwarden/
+Optional: Upload to cloud storage
+aws s3 cp $BACKUP_FILE s3://your-backup-bucket/vaultwarden/
 
 echo "Backup complete."
 ```
 
-**Add daily backup cron job:**
+Add daily backup cron job:
 
 ```bash
-# Make script executable
+Make script executable
 chmod +x backup.sh
 
-# Edit crontab
+Edit crontab
 crontab -e
 
-# Add line (runs daily at 3 AM):
+Add line (runs daily at 3 AM):
 0 3 * * * /home/user/vaultwarden/backup.sh >> /tmp/vaultwarden_backup.log 2>&1
 ```
 
-**Test backup recovery:**
+Test backup recovery:
 
 ```bash
-# Extract backup
+Extract backup
 tar -xzf ./backups/vaultwarden_backup_20260320_030000.tar.gz
 
-# Verify files are intact
+Verify files are intact
 ls -la ./data/
 ```
 
-### Step 5: Security Hardening
+Step 5: Security Hardening
 
-**1. Disable signups (if self-hosted for one user):**
+1. Disable signups (if self-hosted for one user):
 
 Already set in docker-compose.yml: `SIGNUPS_ALLOWED: "false"`
 
-**2. Change admin token:**
+2. Change admin token:
 
 Generate a new token and restart:
 
 ```bash
-# Generate token
+Generate token
 openssl rand -base64 32
 
-# Update docker-compose.yml ADMIN_TOKEN
-# Restart service
+Update docker-compose.yml ADMIN_TOKEN
+Restart service
 docker-compose restart vaultwarden
 ```
 
-**3. Firewall rules:**
+3. Firewall rules:
 
 ```bash
-# UFW (Ubuntu)
+UFW (Ubuntu)
 sudo ufw allow 22/tcp    # SSH
 sudo ufw allow 80/tcp    # HTTP
 sudo ufw allow 443/tcp   # HTTPS
 sudo ufw enable
 
-# iptables (direct)
+iptables (direct)
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 iptables -A INPUT -j DROP
 ```
 
-**4. Fail2ban (rate-limit login attempts):**
+4. Fail2ban (rate-limit login attempts):
 
 ```bash
-# Install
+Install
 sudo apt install fail2ban
 
-# Create filter /etc/fail2ban/filter.d/vaultwarden.conf:
+Create filter /etc/fail2ban/filter.d/vaultwarden.conf:
 [Definition]
 failregex = ^.* Invalid username or password\. \[.*?\] \[<HOST>\] .* -$
 ignoreregex =
 
-# Create jail /etc/fail2ban/jail.d/vaultwarden.conf:
+Create jail /etc/fail2ban/jail.d/vaultwarden.conf:
 [vaultwarden]
 enabled = true
 port = http,https
@@ -545,127 +545,127 @@ maxretry = 5
 findtime = 3600
 bantime = 604800
 
-# Restart fail2ban
+Restart fail2ban
 sudo systemctl restart fail2ban
 ```
 
-**5. Monitor logs:**
+5. Monitor logs:
 
 ```bash
-# Follow logs in real-time
+Follow logs in real-time
 docker-compose logs -f vaultwarden
 
-# Check for suspicious activity
+Check for suspicious activity
 docker-compose logs vaultwarden | grep -i "error\|invalid\|unauthorized"
 ```
 
-### Step 6: Perform Maintenance and Updates
+Step 6: Perform Maintenance and Updates
 
-**Updating Vaultwarden:**
+Updating Vaultwarden:
 
 ```bash
-# Pull latest image
+Pull latest image
 docker pull vaultwarden/server:latest
 
-# Restart container (will use new image)
+Restart container (will use new image)
 docker-compose up -d vaultwarden
 
-# View version
+View version
 docker-compose logs vaultwarden | grep "vaultwarden"
 ```
 
-**Monitoring disk space:**
+Monitoring disk space:
 
 ```bash
-# Check backup size
+Check backup size
 du -sh ./backups/
 
-# Check database size
+Check database size
 du -sh ./data/db.sqlite3
 
-# Alert if backup grows too large
+Alert if backup grows too large
 find ./backups -name "*.tar.gz" -mtime -1 -exec du -sh {} \; | awk '{print $1}'
 ```
 
-**Database maintenance:**
+Database maintenance:
 
 ```bash
-# Optimize SQLite database (monthly)
-# Connect to container and run:
+Optimize SQLite database (monthly)
+Connect to container and run:
 docker-compose exec vaultwarden sqlite3 /data/db.sqlite3 "VACUUM;"
 ```
 
-### Step 7: Client Setup
+Step 7: Client Setup
 
-**Bitwarden Web Vault:** https://vault.example.com
+Bitwarden Web Vault: https://vault.example.com
 
-**Mobile/Desktop Apps:**
+Mobile/Desktop Apps:
 1. Download Bitwarden app (iOS, Android, macOS, Windows, Linux)
 2. In settings, set custom server: https://vault.example.com
 3. Create account (or import from cloud Bitwarden)
 4. Sync vault data
 
-**Browser Extension:**
+Browser Extension:
 1. Install Bitwarden extension
 2. Open extension settings
 3. Set server URL: https://vault.example.com
 4. Login with account credentials
 
-## Troubleshooting
+Troubleshooting
 
-**Login fails with "connection refused":**
+Login fails with "connection refused":
 ```bash
-# Check if vaultwarden is running
+Check if vaultwarden is running
 docker-compose ps
 
-# Restart if needed
+Restart if needed
 docker-compose restart vaultwarden
 ```
 
-**HTTPS certificate errors:**
+HTTPS certificate errors:
 ```bash
-# Check certificate expiration
+Check certificate expiration
 openssl x509 -in /etc/letsencrypt/live/vault.example.com/fullchain.pem -text -noout | grep -E "Not Before|Not After"
 
-# Manually renew
+Manually renew
 sudo certbot renew --force-renewal
 ```
 
-**Slow performance:**
+Slow performance:
 ```bash
-# Check resource usage
+Check resource usage
 docker stats vaultwarden
 
-# Increase memory limit in docker-compose.yml
-# Restart container
+Increase memory limit in docker-compose.yml
+Restart container
 docker-compose restart vaultwarden
 ```
 
-**Database is locked:**
+Database is locked:
 ```bash
-# Stop container
+Stop container
 docker-compose stop vaultwarden
 
-# Delete lock file
+Delete lock file
 rm ./data/db.sqlite3-wal ./data/db.sqlite3-shm 2>/dev/null
 
-# Restart
+Restart
 docker-compose start vaultwarden
 ```
 
-### Step 8: Cost and Alternatives
+Step 8: Cost and Alternatives
 
-**Self-hosted Vaultwarden:**
+Self-hosted Vaultwarden:
 - Cost: $0-5/month (VPS) + your time
-- Pros: Full control, no recurring fees
-- Cons: Maintenance responsibility
+- Full control, no recurring fees
+- Maintenance responsibility
 
-**Bitwarden Cloud:**
+Bitwarden Cloud:
 - Cost: $0 (free tier) or $2.99/month (premium)
-- Pros: Managed, automatic updates
-- Cons: Trust third-party
+- Managed, automatic updates
+- Trust third-party
 
-**Alternative password managers:**
+Alternative password managers:
 - 1Password ($14.99/month): Excellent, closed-source
 - LastPass ($36/year): Basic features, security history
 - KeePass (free): Local-only, requires manual sync
@@ -673,29 +673,29 @@ docker-compose start vaultwarden
 
 For privacy-conscious users who want control, self-hosted Vaultwarden is the best value.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to self-host bitwarden vaultwarden: complete setup guide?**
+How long does it take to self-host bitwarden vaultwarden: complete setup guide?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Set Up Self-Hosted Password Manager Vaultwarden 2026](/how-to-set-up-self-hosted-password-manager-vaultwarden-2026/)
 - [Bitwarden Self-Hosted Setup Guide](/bitwarden-self-hosted-setup-guide/)
@@ -703,5 +703,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Bitwarden vs 1Password 2026: Which Is Better for Developers](/bitwarden-vs-1password-2026-which-is-better/)
 - [1password Vs Bitwarden 2026 Comparison](/1password-vs-bitwarden-2026-comparison/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

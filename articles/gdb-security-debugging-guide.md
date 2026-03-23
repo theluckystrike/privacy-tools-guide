@@ -15,22 +15,22 @@ tags: [privacy-tools-guide, troubleshooting, security]
 
 {% raw %}
 
-# How to Use GDB for Security Debugging
+How to Use GDB for Security Debugging
 
 GDB (GNU Debugger) is the standard debugger for Linux binaries. Security researchers use it to step through execution, inspect memory, find overflow conditions, and understand what a suspicious binary actually does at runtime. This guide focuses on security-relevant techniques: stack analysis, vulnerability identification, and controlled execution.
 
-## Installation
+Installation
 
 ```bash
-# Debian/Ubuntu
+Debian/Ubuntu
 sudo apt install -y gdb gdb-multiarch
 
-# Add GDB extensions for better security research experience
-# PEDA (Python Exploit Development Assistance)
+Add GDB extensions for better security research experience
+PEDA (Python Exploit Development Assistance)
 git clone https://github.com/longld/peda.git ~/peda
 echo "source ~/peda/peda.py" >> ~/.gdbinit
 
-# Or pwndbg (more active development)
+Or pwndbg (more active development)
 git clone https://github.com/pwndbg/pwndbg
 cd pwndbg && ./setup.sh
 ```
@@ -41,24 +41,24 @@ Verify:
 gdb --version
 ```
 
-## Starting GDB
+Starting GDB
 
 ```bash
-# Debug a binary
+Debug a binary
 gdb ./target_binary
 
-# Debug with arguments
+Debug with arguments
 gdb --args ./target_binary arg1 arg2
 
-# Attach to running process
+Attach to running process
 gdb -p PID
 
-# Remote debugging (target running GDB server)
+Remote debugging (target running GDB server)
 gdb target_binary
 (gdb) target remote 192.168.1.50:1234
 ```
 
-## Essential GDB Commands
+Essential GDB Commands
 
 ```
 Command             Action
@@ -73,85 +73,85 @@ ni                  Step over next instruction (assembly level)
 q / quit            Exit GDB
 ```
 
-## Setting Breakpoints
+Setting Breakpoints
 
 ```bash
-# Break at function name
+Break at function name
 (gdb) break main
 (gdb) break sym.process_input
 
-# Break at address
+Break at address
 (gdb) break *0x00401180
 
-# Break at line number (if debug symbols available)
+Break at line number (if debug symbols available)
 (gdb) break main.c:42
 
-# List all breakpoints
+List all breakpoints
 (gdb) info breakpoints
 
-# Delete breakpoint
+Delete breakpoint
 (gdb) delete 1
 ```
 
-## Inspecting Memory and Registers
+Inspecting Memory and Registers
 
 ```bash
-# Show all register values
+Show all register values
 (gdb) info registers
 
-# Show specific register
+Show specific register
 (gdb) print $rsp
 (gdb) print $rbp
 (gdb) print $rip
 
-# Examine memory at address
-# Format: x/[count][format][size] address
-# Formats: x=hex, d=decimal, s=string, i=instructions
-# Sizes: b=byte, h=halfword, w=word, g=giant(8bytes)
+Examine memory at address
+Format: x/[count][format][size] address
+Formats: x=hex, d=decimal, s=string, i=instructions
+Sizes: b=byte, h=halfword, w=word, g=giant(8bytes)
 
-# 16 hex bytes at stack pointer
+16 hex bytes at stack pointer
 (gdb) x/16xb $rsp
 
-# 20 instructions at instruction pointer
+20 instructions at instruction pointer
 (gdb) x/20i $rip
 
-# String at address
+String at address
 (gdb) x/s 0x402010
 
-# Stack inspection — 20 words from current stack pointer
+Stack inspection. 20 words from current stack pointer
 (gdb) x/20wx $rsp
 ```
 
-## Analyzing Stack Frames
+Analyzing Stack Frames
 
 ```bash
-# Show current stack frame
+Show current stack frame
 (gdb) info frame
 
-# Show all stack frames (call stack)
+Show all stack frames (call stack)
 (gdb) backtrace
 (gdb) bt
 
-# Move up/down stack frames
+Move up/down stack frames
 (gdb) up
 (gdb) down
 
-# Show local variables in current frame
+Show local variables in current frame
 (gdb) info locals
 
-# Show function arguments
+Show function arguments
 (gdb) info args
 ```
 
-## Finding Buffer Overflows
+Finding Buffer Overflows
 
 The most common security debugging task: finding where input overflows a buffer.
 
-### Example: Testing an Overflow Condition
+Testing an Overflow Condition
 
 ```bash
-# Generate a cyclic pattern to find the overflow offset
-# Using python to create a De Bruijn sequence
+Generate a cyclic pattern to find the overflow offset
+Using python to create a De Bruijn sequence
 python3 -c "
 import string
 chars = string.ascii_letters + string.digits
@@ -162,81 +162,81 @@ for i in range(len(chars)):
 print(pattern[:200])
 " > /tmp/pattern.txt
 
-# Run the binary with the pattern
+Run the binary with the pattern
 (gdb) run $(cat /tmp/pattern.txt)
 
-# When it crashes, check where RIP/EIP points
+When it crashes, check where RIP/EIP points
 (gdb) info registers rip
-# The value in RIP tells you the offset within the pattern
+The value in RIP tells you the offset within the pattern
 ```
 
 With pwndbg or PEDA, this is easier:
 
 ```bash
-# In pwndbg
+In pwndbg
 (gdb) cyclic 200
-# Copy the output and run:
+Copy the output and run:
 (gdb) run AAAaBAAcBAAd...
 
-# On crash:
+On crash:
 (gdb) cyclic -l $rsp    # Find offset automatically
 ```
 
-### Inspecting a Stack Frame During a Crash
+Inspecting a Stack Frame During a Crash
 
 ```bash
 (gdb) run $(python3 -c "print('A'*200)")
 
-# On segfault:
+On segfault:
 (gdb) info registers
 
-# Typical output showing overwritten RIP:
-# rip  0x4141414141414141  <-- 'AAAA...' has overwritten return address
+Typical output showing overwritten RIP:
+rip  0x4141414141414141  <-- 'AAAA...' has overwritten return address
 
-# Show what's on the stack around the overflow
+Show what's on the stack around the overflow
 (gdb) x/40wx $rsp-80
 ```
 
-## Examining Function Calls
+Examining Function Calls
 
 ```bash
-# Disassemble a function
+Disassemble a function
 (gdb) disassemble main
 (gdb) disassemble /m main    # Mix source and assembly if symbols available
 
-# Set a breakpoint before a dangerous function call
+Set a breakpoint before a dangerous function call
 (gdb) break strcpy
 (gdb) run test_input
 
-# When stopped at strcpy, examine arguments
+When stopped at strcpy, examine arguments
 (gdb) info args
-# Or manually: first arg in rdi, second in rsi (x86_64 calling convention)
+Or manually: first arg in rdi, second in rsi (x86_64 calling convention)
 (gdb) x/s $rdi    # destination buffer
 (gdb) x/s $rsi    # source string
 (gdb) print (int)strlen($rsi)    # length of input
 ```
 
-## Watchpoints: Monitoring Memory Changes
+Watchpoints: Monitoring Memory Changes
 
 ```bash
-# Watch for writes to a specific memory address
+Watch for writes to a specific memory address
 (gdb) watch *0x00404010
 
-# Watch for reads
+Watch for reads
 (gdb) rwatch *0x00404010
 
-# Watch a variable (if symbols available)
+Watch a variable (if symbols available)
 (gdb) watch password_buf
 ```
 
-When the watched location changes, GDB pauses and shows you what caused the change — invaluable for tracking how attacker-controlled input propagates through memory.
+When the watched location changes, GDB pauses and shows you what caused the change. invaluable for tracking how attacker-controlled input propagates through memory.
 
-## Scripting GDB with Python
+Scripting GDB with Python
 
 Automate repetitive analysis:
 
 ```python
-# gdb_audit.py — run with: gdb -x gdb_audit.py ./target
+gdb_audit.py. run with: gdb -x gdb_audit.py ./target
 
 import gdb
 
@@ -269,13 +269,13 @@ gdb -x gdb_audit.py ./target
 (gdb) audit
 ```
 
-## Remote Debugging for Embedded Targets
+Remote Debugging for Embedded Targets
 
 ```bash
-# On the target device (ARM, MIPS, etc.)
+On the target device (ARM, MIPS, etc.)
 gdbserver 0.0.0.0:1234 ./target_binary
 
-# On your analysis machine
+On your analysis machine
 gdb-multiarch ./target_binary
 (gdb) set architecture arm
 (gdb) target remote 192.168.1.100:1234
@@ -284,7 +284,7 @@ gdb-multiarch ./target_binary
 
 This is essential for analyzing firmware running on embedded systems where installing GDB locally is impractical.
 
-## Quick Security Triage Commands
+Quick Security Triage Commands
 
 When you get an unknown binary, run these in sequence:
 
@@ -301,7 +301,7 @@ gdb ./unknown_binary
 (gdb) bt               # Backtrace
 ```
 
-## Related Reading
+Related Reading
 
 - [How to Use radare2 for Binary Analysis](/radare2-binary-analysis-guide/)
 - [How to Use Ghidra for Reverse Engineering](/ghidra-reverse-engineering-guide/)
@@ -309,6 +309,6 @@ gdb ./unknown_binary
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

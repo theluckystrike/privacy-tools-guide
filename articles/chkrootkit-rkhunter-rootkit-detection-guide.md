@@ -15,43 +15,43 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# How to Use chkrootkit and rkhunter
+How to Use chkrootkit and rkhunter
 
-chkrootkit and rkhunter are command-line rootkit scanners for Linux. They check for known rootkit signatures, suspicious file permissions, hidden processes, and system binary modifications. Neither tool is perfect — rootkits can evade them — but they catch common infections and are worth running regularly as part of a defense-in-depth strategy.
+chkrootkit and rkhunter are command-line rootkit scanners for Linux. They check for known rootkit signatures, suspicious file permissions, hidden processes, and system binary modifications. Neither tool is perfect. rootkits can evade them. but they catch common infections and are worth running regularly as part of a defense-in-depth strategy.
 
-## Installing Both Tools
+Installing Both Tools
 
 ```bash
-# Debian/Ubuntu
+Debian/Ubuntu
 sudo apt install chkrootkit rkhunter
 
-# RHEL/CentOS/Fedora
+RHEL/CentOS/Fedora
 sudo yum install chkrootkit rkhunter
 
-# Verify versions
+Verify versions
 chkrootkit -V
 rkhunter --version
 ```
 
-Install on a clean system, then run a baseline scan. If you install after a suspected compromise, the scanners themselves may be compromised — boot from external media instead.
+Install on a clean system, then run a baseline scan. If you install after a suspected compromise, the scanners themselves may be compromised. boot from external media instead.
 
-## Running chkrootkit
+Running chkrootkit
 
 ```bash
-# Basic scan
+Basic scan
 sudo chkrootkit
 
-# Quiet mode — only show infected/suspect results
+Quiet mode. only show infected/suspect results
 sudo chkrootkit -q
 
-# Test a specific rootkit
+Test a specific rootkit
 sudo chkrootkit lrk5
 
-# Run against a different root (useful for forensic analysis of a mounted disk)
+Run against a different root (useful for forensic analysis of a mounted disk)
 sudo chkrootkit -r /mnt/compromised-disk
 ```
 
-### Interpreting chkrootkit Output
+Interpreting chkrootkit Output
 
 ```
 ROOTDIR is `/'
@@ -72,95 +72,95 @@ Checking `z2'...                           chklastlog: nothing deleted
 ```
 
 Key status values:
-- **not found** — the binary checked does not exist on your system (normal for server installs)
-- **not infected** — binary matches expected patterns
-- **INFECTED** — binary matches a rootkit signature (investigate immediately)
-- **suspicious** — unusual but not definitively malicious
+- not found. the binary checked does not exist on your system (normal for server installs)
+- not infected. binary matches expected patterns
+- INFECTED. binary matches a rootkit signature (investigate immediately)
+- suspicious. unusual but not definitively malicious
 
-### Common chkrootkit False Positives
+Common chkrootkit False Positives
 
 ```bash
-# chkrootkit sometimes flags these as suspicious on clean systems:
+chkrootkit sometimes flags these as suspicious on clean systems:
 
-# /tmp/.ICE-unix — X11 socket, normal on desktop systems
-# bindshell — a port open on certain services can trigger this
-# eth0 in promiscuous mode — happens with packet capture tools, VMs, Docker
+/tmp/.ICE-unix. X11 socket, normal on desktop systems
+bindshell. a port open on certain services can trigger this
+eth0 in promiscuous mode. happens with packet capture tools, VMs, Docker
 
-# Check what is actually listening
+Check what is actually listening
 sudo ss -tlnp
 sudo ip link show | grep PROMISC
 ```
 
-## Running rkhunter
+Running rkhunter
 
 rkhunter has a more extensive check list and a properties database that tracks file hashes for system binaries.
 
 ```bash
-# Update the rkhunter data files first
+Update the rkhunter data files first
 sudo rkhunter --update
 
-# Run a full scan
+Run a full scan
 sudo rkhunter --check
 
-# Non-interactive (for cron/scripts)
+Non-interactive (for cron/scripts)
 sudo rkhunter --check --skip-keypress
 
-# Show only warnings and errors
+Show only warnings and errors
 sudo rkhunter --check --skip-keypress 2>&1 | grep -E "Warning|Infected|Found"
 
-# Check a specific binary
+Check a specific binary
 sudo rkhunter --check-modes /usr/sbin/sshd
 ```
 
-### Initial Properties Baseline
+Initial Properties Baseline
 
 The first time you run rkhunter after a clean install, store the file properties as the baseline:
 
 ```bash
-# Build the initial database of known-good binary hashes
+Build the initial database of known-good binary hashes
 sudo rkhunter --propupd
 
-# After any package update, update the database:
+After any package update, update the database:
 sudo apt upgrade && sudo rkhunter --propupd
 ```
 
 If you forget to run `--propupd` after an update, rkhunter will flag all updated binaries as suspicious.
 
-### rkhunter Configuration
+rkhunter Configuration
 
 ```bash
-# /etc/rkhunter.conf — key settings
+/etc/rkhunter.conf. key settings
 
-# Email alerts
+Email alerts
 MAIL-ON-WARNING=admin@yourdomain.com
 MAIL_CMD=sendmail
 
-# Whitelist false positives
+Whitelist false positives
 SCRIPTWHITELIST=/usr/sbin/adduser
 SCRIPTWHITELIST=/usr/bin/ldd
 
-# Allow hidden directories that are legitimate
+Allow hidden directories that are legitimate
 ALLOWHIDDENDIR=/dev/.udev
 ALLOWHIDDENDIR=/dev/.static
 ALLOWHIDDENDIR=/dev/.initramfs
 
-# Allow SSH root login if you have a reason for it
+Allow SSH root login if you have a reason for it
 ALLOW_SSH_ROOT_USER=no
 
-# Update mirrors (for --update)
+Update mirrors (for --update)
 UPDATE_MIRRORS=1
 MIRRORS_MODE=0
 
-# Log file
+Log file
 LOGFILE=/var/log/rkhunter.log
 ```
 
 ```bash
-# Validate your config
+Validate your config
 sudo rkhunter --config-check
 ```
 
-### Interpreting rkhunter Warnings
+Interpreting rkhunter Warnings
 
 ```
 [10:30:45]   Checking for suspicious (large) shared memory segments  [ None found ]
@@ -175,22 +175,22 @@ sudo rkhunter --config-check
 ```
 
 Common legitimate warnings to whitelist:
-- Hidden directories in `/dev` — created by udev, normal
-- SSH config mismatches — update `rkhunter.conf` to match your `sshd_config`
-- Script warnings for `/usr/sbin/adduser`, `/usr/bin/ldd` — common false positives
+- Hidden directories in `/dev`. created by udev, normal
+- SSH config mismatches. update `rkhunter.conf` to match your `sshd_config`
+- Script warnings for `/usr/sbin/adduser`, `/usr/bin/ldd`. common false positives
 
 ```bash
-# Whitelist a specific warning after verifying it is legitimate
-# Edit /etc/rkhunter.conf and add to ALLOWHIDDENDIR or SCRIPTWHITELIST
+Whitelist a specific warning after verifying it is legitimate
+Edit /etc/rkhunter.conf and add to ALLOWHIDDENDIR or SCRIPTWHITELIST
 
-# Rerun to confirm warning is gone
+Rerun to confirm warning is gone
 sudo rkhunter --check --skip-keypress 2>&1 | grep Warning
 ```
 
-## Automating Both Scanners
+Automating Both Scanners
 
 ```bash
-# /usr/local/bin/rootkit-scan.sh — runs both scanners, emails summary
+/usr/local/bin/rootkit-scan.sh. runs both scanners, emails summary
 
 #!/bin/bash
 REPORT=$(mktemp)
@@ -200,18 +200,18 @@ DATE=$(date +%Y-%m-%d)
 
 echo "=== Rootkit Scan Report: $HOST - $DATE ===" >> "$REPORT"
 
-# chkrootkit
+chkrootkit
 echo "" >> "$REPORT"
 echo "--- chkrootkit ---" >> "$REPORT"
 sudo chkrootkit -q 2>&1 >> "$REPORT"
 
-# rkhunter
+rkhunter
 echo "" >> "$REPORT"
 echo "--- rkhunter ---" >> "$REPORT"
 sudo rkhunter --check --skip-keypress 2>&1 | \
   grep -E "Warning|Infected|Found|Rootkit" >> "$REPORT"
 
-# Send only if something suspicious found
+Send only if something suspicious found
 if grep -qiE "infected|warning|rootkit found" "$REPORT"; then
   mail -s "[ALERT] Rootkit scan: issues on $HOST" "$ADMIN" < "$REPORT"
 else
@@ -224,33 +224,33 @@ rm -f "$REPORT"
 ```bash
 chmod +x /usr/local/bin/rootkit-scan.sh
 
-# Add weekly cron job
+Add weekly cron job
 echo "0 4 * * 0 root /usr/local/bin/rootkit-scan.sh" | \
   sudo tee /etc/cron.d/rootkit-scan
 ```
 
-## If a Rootkit Is Found
+If a Rootkit Is Found
 
 Do not trust any tool on the compromised system. Assume the rootkit has modified `ls`, `ps`, `netstat`, and the kernel itself.
 
 ```bash
-# Step 1: Isolate the system (block outbound connections)
+Step 1: Isolate the system (block outbound connections)
 sudo iptables -P OUTPUT DROP
 
-# Step 2: Take a memory dump if possible (rootkit may be in RAM only)
-# Boot from external media for this
+Step 2: Take a memory dump if possible (rootkit may be in RAM only)
+Boot from external media for this
 
-# Step 3: Capture disk image for forensics
+Step 3: Capture disk image for forensics
 dd if=/dev/sda bs=4096 | gzip > /media/external/disk-image.gz
 
-# Step 4: Do NOT attempt to clean — rebuild from a known-good image
-# Cleaning a rootkit infection is unreliable
+Step 4: Do NOT attempt to clean. rebuild from a known-good image
+Cleaning a rootkit infection is unreliable
 
-# Step 5: Investigate how the rootkit got in
-# Check auth logs, web server logs, package logs
+Step 5: Investigate how the rootkit got in
+Check auth logs, web server logs, package logs
 ```
 
-## Comparing the Two Tools
+Comparing the Two Tools
 
 | Feature | chkrootkit | rkhunter |
 |---------|-----------|----------|
@@ -263,7 +263,7 @@ dd if=/dev/sda bs=4096 | gzip > /media/external/disk-image.gz
 
 Run both. They use different detection methods and catch different things.
 
-## Related Reading
+Related Reading
 
 - [How to Use OSSEC for Host Intrusion Detection](/ossec-host-intrusion-detection-setup/)
 - [How to Use Tripwire for File Integrity Monitoring](/tripwire-file-integrity-monitoring-guide/)
@@ -274,13 +274,13 @@ Run both. They use different detection methods and catch different things.
 
 ---
 
-## Related Articles
+Related Articles
 
 - [How to Use AIDE for File Integrity Checking](/how-to-use-aide-for-file-integrity-checking/)
 - [How to Use Lynis for Linux Security Auditing](/lynis-linux-security-audit-guide/)
 - [How to Use OSSEC for Host Intrusion Detection](/ossec-host-intrusion-detection-setup/)
 - [Setting Up Vault for Secrets Management](/hashicorp-vault-secrets-management-setup/)
 - [Nextcloud Setup Guide Raspberry Pi 2026](/nextcloud-setup-guide-raspberry-pi-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

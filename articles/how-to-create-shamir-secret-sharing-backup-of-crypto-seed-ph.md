@@ -16,9 +16,9 @@ voice-checked: true
 
 {% raw %}
 
-Shamir Secret Sharing (SSS) provides a mathematically elegant solution for securing cryptocurrency seed phrases across multiple parties without placing trust in a single location. Originally described by cryptographer Adi Shamir in 1979, this algorithm enables you to divide a secret into N shares where any subset of K shares can reconstruct the original secret, but fewer than K shares reveal nothing. For cryptocurrency inheritance planning, this means you can distribute seed phrase fragments among family members, attorneys, or secure locations—ensuring no single point of failure compromises your holdings while enabling recovery when needed.
+Shamir Secret Sharing (SSS) provides a mathematically elegant solution for securing cryptocurrency seed phrases across multiple parties without placing trust in a single location. Originally described by cryptographer Adi Shamir in 1979, this algorithm enables you to divide a secret into N shares where any subset of K shares can reconstruct the original secret, but fewer than K shares reveal nothing. For cryptocurrency inheritance planning, this means you can distribute seed phrase fragments among family members, attorneys, or secure locations, ensuring no single point of failure compromises your holdings while enabling recovery when needed.
 
-## Table of Contents
+Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Air-Gapped Security Considerations](#air-gapped-security-considerations)
@@ -26,7 +26,7 @@ Shamir Secret Sharing (SSS) provides a mathematically elegant solution for secur
 - [Physical Share Storage Best Practices](#physical-share-storage-best-practices)
 - [Troubleshooting](#troubleshooting)
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -36,13 +36,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand the Mathematics Behind SSS
+Step 1: Understand the Mathematics Behind SSS
 
 The mathematical foundation relies on polynomial interpolation over a finite field. To create K shares from a secret, you construct a random polynomial of degree K-1 where the constant term equals your seed phrase (encoded as a number). Evaluating this polynomial at K different points produces the shares. Any K points uniquely determine the polynomial, while K-1 or fewer points remain information-theoretically secure.
 
-This property makes SSS particularly valuable for inheritance scenarios: you might create a 3-of-5 scheme where any three family members together can recover the seed, but two share holders alone cannot access the funds. The cryptographic guarantees are provable—you cannot shortcut the security without obtaining sufficient shares.
+This property makes SSS particularly valuable for inheritance scenarios: you might create a 3-of-5 scheme where any three family members together can recover the seed, but two share holders alone cannot access the funds. The cryptographic guarantees are provable, you cannot shortcut the security without obtaining sufficient shares.
 
-### Step 2: Implementing SSS with the Python SSS Library
+Step 2: Implementing SSS with the Python SSS Library
 
 The Python `ssss` library provides a straightforward implementation. Install it:
 
@@ -56,7 +56,7 @@ Create a script to split your seed phrase:
 #!/usr/bin/env python3
 """
 Split a cryptocurrency seed phrase into Shamir shares.
-Warning: Run this on an air-gapped machine for production use.
+Run this on an air-gapped machine for production use.
 """
 
 import sys
@@ -111,7 +111,7 @@ Run the script:
 python sss_split.py a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6 3 5
 ```
 
-### Step 3: Converting BIP39 Seed Phrases to Hex
+Step 3: Converting BIP39 Seed Phrases to Hex
 
 Your cryptocurrency wallet likely uses BIP39 seed phrases (12 or 24 words). Convert these to hex for SSS processing:
 
@@ -122,8 +122,8 @@ Convert BIP39 mnemonic to hex for SSS processing.
 Uses the reference implementation from trezor/trezor-crypto.
 """
 
-# For production, install the trezor-crypto Python bindings
-# pip install mnemonic
+For production, install the trezor-crypto Python bindings
+pip install mnemonic
 
 from mnemonic import Mnemonic
 
@@ -149,43 +149,43 @@ if __name__ == "__main__":
     print(f"Hex seed: {hex_seed}")
 ```
 
-### Step 4: Practical Inheritance Planning: The 2-of-3 Strategy
+Step 4: Practical Inheritance Planning: The 2-of-3 Strategy
 
 For inheritance planning, a common and secure configuration uses three shares with a two-share threshold. This provides redundancy (losing one share doesn't lock you out) while requiring collaboration to access funds.
 
 Configure your shares as follows:
 
-- **Share 1**: Stored with your primary attorney or legal representative
-- **Share 2**: Stored in a safe deposit box or home safe
-- **Share 3**: Given to a trusted family member
+- Share 1: Stored with your primary attorney or legal representative
+- Share 2: Stored in a safe deposit box or home safe
+- Share 3: Given to a trusted family member
 
 With this setup, any two of the three parties must collaborate to reconstruct the seed. If one share is lost due to death or incapacity, the other two can still access the funds. Include clear instructions in your estate planning documents explaining which parties hold shares and the recovery process.
 
-## Air-Gapped Security Considerations
+Air-Gapped Security Considerations
 
 Never generate shares on a machine connected to the internet. Malware could exfiltrate your seed phrase during processing. Create a dedicated air-gapped system:
 
 ```bash
-# On an air-gapped machine, generate shares from a live USB
-# Boot into Tails or a dedicated security-focused distribution
+On an air-gapped machine, generate shares from a live USB
+Boot into Tails or a dedicated security-focused distribution
 
-# Clone this repository
+Clone this repository
 git clone https://github.com/yourtrustedrepo/shamir-inheritance.git
 cd shamir-inheritance
 
-# Run the splitting script in an isolated environment
+Run the splitting script in an isolated environment
 python3 sss_split.py <your-hex-seed> 2 3
 ```
 
-Disconnect your machine from all networks before entering seed phrases. Use a hardware wallet to generate your seed initially, then export it in hex format for SSS processing. Some hardware wallets like Ledger and Trezor now include native SSS support—verify your model supports this before purchasing.
+Disconnect your machine from all networks before entering seed phrases. Use a hardware wallet to generate your seed initially, then export it in hex format for SSS processing. Some hardware wallets like Ledger and Trezor now include native SSS support, verify your model supports this before purchasing.
 
-### Step 5: Integrate with Existing Wallets
+Step 5: Integrate with Existing Wallets
 
 After recovering your seed from shares, import it into your wallet software:
 
 ```bash
-# Using Bitcoin Core with a newly recovered seed
-# WARNING: Ensure you're on an air-gapped machine
+Using Bitcoin Core with a newly recovered seed
+Ensure you're on an air-gapped machine
 bitcoin-cli importprivkey <private-key-from-seed> "Inheritance Recovery" true
 ```
 
@@ -197,13 +197,13 @@ For Ethereum and EVM-compatible chains, use Metamask or similar wallets:
 
 Always verify the recovered wallet shows your expected balance before transferring any significant funds.
 
-### Step 6: Alternative: Multi-Sig Wallets
+Step 6: Alternative: Multi-Sig Wallets
 
-Shamir Secret Sharing isn't your only option for inheritance planning. Multi-signature wallets require multiple private keys to authorize transactions—different from SSS in that the blockchain itself enforces the requirement rather than cryptographic splitting.
+Shamir Secret Sharing isn't your only option for inheritance planning. Multi-signature wallets require multiple private keys to authorize transactions, different from SSS in that the blockchain itself enforces the requirement rather than cryptographic splitting.
 
 Consider multi-sig for larger estates where you want ongoing control requiring multiple approvals for large transactions. SSS works better when you want a one-time backup that becomes active only after triggering conditions (death, incapacity).
 
-### Step 7: Security Trade-offs and Risks
+Step 7: Security Trade-offs and Risks
 
 Weigh these considerations before implementing SSS for inheritance:
 
@@ -215,7 +215,7 @@ Estate coordination requires clear documentation. Your will or trust should spec
 
 Legal frameworks vary by jurisdiction. Consult with an estate planning attorney familiar with cryptocurrency to ensure your arrangement complies with local laws and your wishes will be honored.
 
-### Step 8: Implementing Time-Locked Recovery
+Step 8: Implementing Time-Locked Recovery
 
 Add time-locked conditions to prevent premature access:
 
@@ -265,31 +265,31 @@ class TimeLockedSSS:
         return current_time >= self.unlock_date
 ```
 
-## Advanced: Multi-Signature Integration
+Advanced: Multi-Signature Integration
 
 Combine SSS with multi-signature wallets for additional security:
 
 ```bash
 #!/bin/bash
-# Setup 2-of-3 multi-sig wallet with SSS backup
+Setup 2-of-3 multi-sig wallet with SSS backup
 
-# Create 3-of-5 SSS shares of master seed
+Create 3-of-5 SSS shares of master seed
 python3 sss_split.py $MASTER_SEED 3 5
 
-# Create 2-of-3 multi-sig wallet using the recovered seed
-# This adds signature-level protection on top of key-level protection
+Create 2-of-3 multi-sig wallet using the recovered seed
+This adds signature-level protection on top of key-level protection
 
 bitcoin-cli createmultisig 2 '["key1_pubkey","key2_pubkey","key3_pubkey"]'
 
-# Combine benefits:
-# - SSS protects the master seed (requires 3 of 5 family members)
-# - Multi-sig protects transaction signing (requires 2 of 3 signers)
-# - Double protection against single point of failure
+Combine benefits:
+- SSS protects the master seed (requires 3 of 5 family members)
+- Multi-sig protects transaction signing (requires 2 of 3 signers)
+- Double protection against single point of failure
 ```
 
 This creates a system where both key recovery AND transaction signing require multiple parties.
 
-### Step 9: Test Your SSS Setup
+Step 9: Test Your SSS Setup
 
 Before relying on SSS for production, thoroughly test recovery:
 
@@ -326,36 +326,36 @@ def test_sss_recovery():
 
     print("All SSS recovery tests passed!")
 
-# Run tests
+Run tests
 test_sss_recovery()
 ```
 
-## Physical Share Storage Best Practices
+Physical Share Storage Best Practices
 
 How to physically secure your shares:
 
-**Share 1 (Attorney):**
+Share 1 (Attorney):
 - Store in sealed envelope with instructions
 - Include recovery procedure document
 - Specify trigger conditions (death, incapacity)
 
-**Share 2 (Safe Deposit Box):**
+Share 2 (Safe Deposit Box):
 - Use a tamper-evident container
 - Include instructions and recovery tools
 - Consider a secondary copy if feasible
 
-**Share 3 (Family Member):**
+Share 3 (Family Member):
 - Provide clear written instructions
 - Include contact info for other share holders
 - Consider whether this person will be available
 
-**Storage Medium Considerations:**
+Storage Medium Considerations:
 - Laminated paper: cheap, durable, no single point of failure
 - Metal tablets: more durable, harder to copy
 - Encrypted USB drives: vulnerable if lost, needs backup
 - Avoid: unencrypted digital storage, cloud services with SSS shares
 
-### Step 10: Verify Share Integrity
+Step 10: Verify Share Integrity
 
 Over time, shares might become damaged or altered. Implement verification:
 
@@ -393,7 +393,7 @@ class ShareVerification:
         return report
 ```
 
-### Step 11: Comparing SSS with Hardware Wallets
+Step 11: Comparing SSS with Hardware Wallets
 
 Modern hardware wallets offer native SSS support:
 
@@ -408,26 +408,26 @@ Modern hardware wallets offer native SSS support:
 
 Consider using a hardware wallet's native SSS if you prioritize ease of use. DIY SSS provides more transparency but requires careful implementation.
 
-### Step 12: Post-Recovery Key Management
+Step 12: Post-Recovery Key Management
 
 After recovering your seed from shares:
 
 ```bash
 #!/bin/bash
-# After recovering seed from SSS shares
+After recovering seed from SSS shares
 
-# 1. Import into air-gapped device only
-# 2. Generate fresh keys
-# 3. Transfer funds to new addresses
-# 4. Securely destroy the recovered seed
+1. Import into air-gapped device only
+2. Generate fresh keys
+3. Transfer funds to new addresses
+4. Securely destroy the recovered seed
 
-# Secure destruction (multiple overwrites)
+Secure destruction (multiple overwrites)
 shred -vfz -n 7 /path/to/recovered_seed.txt
 
-# Verify destruction
+Verify destruction
 ls -la /path/to/recovered_seed.txt  # Should not exist
 
-# Test new addresses before transferring full amount
+Test new addresses before transferring full amount
 transfer_funds_incremental() {
   local total=$1
   local address=$2
@@ -443,44 +443,44 @@ transfer_funds_incremental() {
 
 This staged approach ensures your recovery process works before committing all funds.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to create shamir secret sharing backup of crypto seed?**
+How long does it take to create shamir secret sharing backup of crypto seed?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How Secure Is Telegram Secret Chat Mode](/how-secure-is-telegram-secret-chat-mode/)
 - [How Blockchain Analysis Companies Track Your Crypto.](/blockchain-analysis-companies-how-chainalysis-elliptic-track/)
@@ -489,5 +489,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Set Up Dedicated Hardware Wallet For Each Crypto Spen](/how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

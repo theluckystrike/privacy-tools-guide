@@ -17,7 +17,7 @@ tags: [privacy-tools-guide, encryption]
 
 LUKS (Linux Unified Key Setup) is the standard for disk encryption on Linux. It wraps block devices in an encrypted container, protecting all data on the drive if it is physically stolen or accessed without authorization. This guide walks through setting up LUKS2 encryption on a new installation and on an existing secondary drive.
 
-## Prerequisites
+Prerequisites
 
 ```bash
 sudo apt install cryptsetup cryptsetup-initramfs
@@ -27,21 +27,21 @@ Verify LUKS2 support:
 
 ```bash
 cryptsetup --version
-# Should show 2.x.x
+Should show 2.x.x
 ```
 
-### Step 2: Option A: Encrypt a Secondary Drive
+Step 2: Option A: Encrypt a Secondary Drive
 
-This is the simpler case — encrypting a data drive that does not contain your OS.
+This is the simpler case. encrypting a data drive that does not contain your OS.
 
-**Warning**: This destroys all existing data on the target drive.
+This destroys all existing data on the target drive.
 
 ```bash
-# Identify the target drive (DO NOT use your system drive)
+Identify the target drive (DO NOT use your system drive)
 lsblk
-# Example: /dev/sdb
+/dev/sdb
 
-# Create LUKS2 container with strong parameters
+Create LUKS2 container with strong parameters
 sudo cryptsetup luksFormat --type luks2 \
   --cipher aes-xts-plain64 \
   --key-size 512 \
@@ -53,16 +53,16 @@ sudo cryptsetup luksFormat --type luks2 \
   /dev/sdb
 ```
 
-You will be prompted to type YES (uppercase) and enter a passphrase. Use a strong passphrase — at least 6 random words from a wordlist.
+You will be prompted to type YES (uppercase) and enter a passphrase. Use a strong passphrase. at least 6 random words from a wordlist.
 
 ```bash
-# Open the encrypted container
+Open the encrypted container
 sudo cryptsetup luksOpen /dev/sdb secure_data
 
-# Create a filesystem inside it
+Create a filesystem inside it
 sudo mkfs.ext4 /dev/mapper/secure_data
 
-# Mount it
+Mount it
 sudo mkdir -p /mnt/secure
 sudo mount /dev/mapper/secure_data /mnt/secure
 ```
@@ -74,32 +74,32 @@ sudo umount /mnt/secure
 sudo cryptsetup luksClose secure_data
 ```
 
-### Step 3: Option B: Full System Encryption During OS Install
+Step 3: Option B: Full System Encryption During OS Install
 
-Most Linux installers (Ubuntu, Debian, Fedora) offer full disk encryption during the setup wizard. Ubuntu calls it "Encrypt the new Ubuntu installation for security." This is the recommended path for a new system — the installer handles partition layout and bootloader integration automatically.
+Most Linux installers (Ubuntu, Debian, Fedora) offer full disk encryption during the setup wizard. Ubuntu calls it "Encrypt the new Ubuntu installation for security." This is the recommended path for a new system. the installer handles partition layout and bootloader integration automatically.
 
 For manual control:
 
-### Partition Layout
+Partition Layout
 
 A typical LUKS-encrypted system needs:
-- `/boot` partition — unencrypted (bootloader cannot decrypt LUKS at early boot on most systems)
-- `/boot/efi` — EFI system partition, unencrypted
-- LUKS container — contains LVM or direct partitions for `/`, `swap`, `/home`
+- `/boot` partition. unencrypted (bootloader cannot decrypt LUKS at early boot on most systems)
+- `/boot/efi`. EFI system partition, unencrypted
+- LUKS container. contains LVM or direct partitions for `/`, `swap`, `/home`
 
 ```bash
-# Partition the drive (adjust sizes to your needs)
+Partition the drive (adjust sizes to your needs)
 sudo parted /dev/sda -- mklabel gpt
 sudo parted /dev/sda -- mkpart ESP fat32 1MiB 512MiB
 sudo parted /dev/sda -- set 1 esp on
 sudo parted /dev/sda -- mkpart boot ext4 512MiB 1GiB
 sudo parted /dev/sda -- mkpart primary 1GiB 100%
 
-# Format EFI and boot
+Format EFI and boot
 sudo mkfs.fat -F32 /dev/sda1
 sudo mkfs.ext4 /dev/sda2
 
-# Create LUKS on the main partition
+Create LUKS on the main partition
 sudo cryptsetup luksFormat --type luks2 \
   --cipher aes-xts-plain64 \
   --key-size 512 \
@@ -108,7 +108,7 @@ sudo cryptsetup luksFormat --type luks2 \
 
 sudo cryptsetup luksOpen /dev/sda3 cryptroot
 
-# Set up LVM inside LUKS
+Set up LVM inside LUKS
 sudo pvcreate /dev/mapper/cryptroot
 sudo vgcreate vg0 /dev/mapper/cryptroot
 sudo lvcreate -L 16G vg0 -n swap
@@ -118,76 +118,76 @@ sudo mkswap /dev/vg0/swap
 sudo mkfs.ext4 /dev/vg0/root
 ```
 
-### Step 4: Configure Auto-Mount via crypttab
+Step 4: Configure Auto-Mount via crypttab
 
 To have the system prompt for a LUKS passphrase at boot and mount the drive automatically, add an entry to `/etc/crypttab`:
 
 ```bash
-# Get the UUID of the encrypted partition
+Get the UUID of the encrypted partition
 sudo blkid /dev/sdb | grep UUID
-# Example output: UUID="a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+Example output: UUID="a1b2c3d4-e5f6-7890-abcd-ef1234567890"
 
-# Add to /etc/crypttab
+Add to /etc/crypttab
 echo "secure_data UUID=a1b2c3d4-e5f6-7890-abcd-ef1234567890 none luks" \
   | sudo tee -a /etc/crypttab
 
-# Add to /etc/fstab for auto-mount
+Add to /etc/fstab for auto-mount
 echo "/dev/mapper/secure_data /mnt/secure ext4 defaults 0 2" \
   | sudo tee -a /etc/fstab
 ```
 
 After rebooting, the system will prompt for the passphrase before mounting the drive.
 
-### Step 5: Adding a Keyfile (for Convenience)
+Step 5: Adding a Keyfile (for Convenience)
 
-A keyfile allows unlocking the container without typing a passphrase — useful for automatically mounting secondary drives while still keeping your root partition passphrase-protected.
+A keyfile allows unlocking the container without typing a passphrase. useful for automatically mounting secondary drives while still keeping your root partition passphrase-protected.
 
 ```bash
-# Generate a strong keyfile
+Generate a strong keyfile
 sudo dd if=/dev/urandom of=/etc/luks-keys/secure_data.key bs=4096 count=1
 sudo chmod 600 /etc/luks-keys/secure_data.key
 
-# Add keyfile as an additional key slot
+Add keyfile as an additional key slot
 sudo cryptsetup luksAddKey /dev/sdb /etc/luks-keys/secure_data.key
 
-# Update crypttab to use the keyfile
-# Replace "none" with the keyfile path
+Update crypttab to use the keyfile
+Replace "none" with the keyfile path
 sudo nano /etc/crypttab
-# secure_data UUID=... /etc/luks-keys/secure_data.key luks
+secure_data UUID=... /etc/luks-keys/secure_data.key luks
 ```
 
-Keep the passphrase as a backup key slot — if the keyfile is lost or the system disk fails, you can still unlock the drive with the passphrase.
+Keep the passphrase as a backup key slot. if the keyfile is lost or the system disk fails, you can still unlock the drive with the passphrase.
 
-### Step 6: Inspecting and Managing Key Slots
+Step 6: Inspecting and Managing Key Slots
 
 LUKS supports up to 32 key slots (LUKS2). You can have multiple passphrases, keyfiles, or recovery keys:
 
 ```bash
-# Show LUKS header information including active key slots
+Show LUKS header information including active key slots
 sudo cryptsetup luksDump /dev/sdb
 
-# Add a backup passphrase (e.g., for recovery)
+Add a backup passphrase (e.g., for recovery)
 sudo cryptsetup luksAddKey /dev/sdb
 
-# Remove a specific key slot (be careful — ensure another slot works first)
+Remove a specific key slot (be careful. ensure another slot works first)
 sudo cryptsetup luksKillSlot /dev/sdb 1
 ```
 
-### Step 7: Benchmarking Your Configuration
+Step 7: Benchmarking Your Configuration
 
 Test encryption speed to ensure your parameters are practical:
 
 ```bash
-# Benchmark available cipher options
+Benchmark available cipher options
 sudo cryptsetup benchmark
 
-# Test the key derivation time for your LUKS header
+Test the key derivation time for your LUKS header
 sudo cryptsetup luksDump /dev/sdb | grep -A5 "Key Slot 0"
 ```
 
-The Argon2id settings above target ~5 seconds for key derivation — slow enough to resist brute force but fast enough not to be annoying at boot.
+The Argon2id settings above target ~5 seconds for key derivation. slow enough to resist brute force but fast enough not to be annoying at boot.
 
-### Step 8: Backup the LUKS Header
+Step 8: Backup the LUKS Header
 
 The LUKS header contains the key slots. If it is corrupted, all data is unrecoverable. Back it up:
 
@@ -198,22 +198,22 @@ sudo cryptsetup luksHeaderBackup /dev/sdb \
 
 Store this backup encrypted (ironically, in another LUKS container or encrypted ZIP) and off-device.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+Related Reading
 
 - [VeraCrypt Full Disk Encryption Setup Guide](/veracrypt-full-disk-encryption-setup-guide/)
 - [Secure File Deletion on SSD Drives](/secure-file-deletion-ssd-drives-guide/)
@@ -222,34 +222,34 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [How to Evaluate AI Coding Tool Encryption Standards](https://bestremotetools.com/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-## Related Articles
+Related Articles
 
 - [Disk Encryption Comparison: LUKS vs BitLocker](/disk-encryption-luks-vs-bitlocker-comparison/)
 - [VeraCrypt Full Disk Encryption Setup Guide](/veracrypt-full-disk-encryption-setup-guide/)
 - [How to Create an Encrypted Container with LUKS](/luks-encrypted-container-guide/)
 - [How To Set Up Secureboot Plus Encryption On Fedora Linux](/how-to-set-up-secureboot-plus-encryption-on-fedora-linux-for/)
 - [Email Encryption with GPG](/gpg-email-encryption-step-by-step)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 

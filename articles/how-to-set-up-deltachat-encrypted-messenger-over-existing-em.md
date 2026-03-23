@@ -17,33 +17,33 @@ voice-checked: true
 
 Set up DeltaChat by installing the application, adding your existing email account, and enabling Autocrypt encryption to create end-to-end encrypted messaging over email infrastructure. DeltaChat works with any IMAP-compatible email provider without server setup, making it ideal for developers who want encryption without infrastructure maintenance. The email-based architecture means you retain access through any email client and avoid vendor lock-in, though metadata (subject lines, sender/recipient addresses) remains visible to email providers.
 
-## Table of Contents
+Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Advanced Configuration Options](#advanced-configuration-options)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 - [Security Considerations](#security-considerations)
 
-## Prerequisites
+Prerequisites
 
-Before configuring DeltaChat, ensure you have access to an email account that supports IMAP and SMTP. Most providers—including Gmail, ProtonMail, self-hosted solutions like Mailu or DockerMail, and standard email services—work with DeltaChat.
+Before configuring DeltaChat, ensure you have access to an email account that supports IMAP and SMTP. Most providers, including Gmail, ProtonMail, self-hosted solutions like Mailu or DockerMail, and standard email services, work with DeltaChat.
 
 For developers seeking maximum privacy, consider running a personal email server. A minimal Postfix and Dovecot setup on a VPS provides complete control over your communication infrastructure.
 
-### Step 2: Configure DeltaChat with Your Email Provider
+Step 2: Configure DeltaChat with Your Email Provider
 
-### Desktop Client Setup
+Desktop Client Setup
 
 Download the DeltaChat desktop client from the official repository or install via your system's package manager. On Linux, you can use:
 
 ```bash
-# Debian/Ubuntu
+Debian/Ubuntu
 sudo apt install deltachat
 
-# Fedora
+Fedora
 sudo dnf install deltachat
 
-# Arch Linux
+Arch Linux
 sudo pacman -S deltachat
 ```
 
@@ -60,13 +60,13 @@ SMTP Security: STARTTLS
 
 For Gmail users, you'll need to generate an App Password since DeltaChat cannot use your primary Google credentials. Navigate to your Google Account security settings, enable 2-Step Verification, and create an App Password specifically for DeltaChat.
 
-### Android and iOS Configuration
+Android and iOS Configuration
 
-Mobile users can install DeltaChat from F-Droid (recommended for privacy-conscious users) or the Google Play Store. The setup process mirrors the desktop experience—enter your email credentials and let DeltaChat handle the connection details automatically.
+Mobile users can install DeltaChat from F-Droid (recommended for privacy-conscious users) or the Google Play Store. The setup process mirrors the desktop experience, enter your email credentials and let DeltaChat handle the connection details automatically.
 
 For advanced users configuring custom servers, tap the three-dot menu and select "Manual Settings" to access advanced configuration options.
 
-### Step 3: Verify Encryption Setup
+Step 3: Verify Encryption Setup
 
 After initial configuration, DeltaChat generates encryption keys automatically. To verify your setup is functioning correctly:
 
@@ -76,20 +76,20 @@ After initial configuration, DeltaChat generates encryption keys automatically. 
 
 DeltaChat implements the Autocrypt Level 1 specification, which automatically negotiates encryption between clients without requiring manual key exchange. Each device generates its own key pair, and keys are shared automatically when you first message another DeltaChat user.
 
-### Checking Key Fingerprints
+Checking Key Fingerprints
 
 For paranoid security verification, compare key fingerprints through an out-of-band channel:
 
 ```
-# View your fingerprint in DeltaChat desktop
+View your fingerprint in DeltaChat desktop
 Settings → Encryption → Show My Fingerprint
 ```
 
 Both parties should verify they see matching fingerprints to confirm there's no man-in-the-middle attack.
 
-## Advanced Configuration Options
+Advanced Configuration Options
 
-### Custom Server Configuration
+Custom Server Configuration
 
 Developers hosting their own mail servers can fine-tune DeltaChat's behavior through advanced settings. Access these via:
 
@@ -99,23 +99,23 @@ Settings → Advanced → Custom Settings
 
 Key settings include:
 
-- `e2ee_enabled` — Enable or disable end-to-end encryption globally
-- `autokey` — Automatic key generation for new contacts
-- `bcc_self` — Receive copies of messages you send
+- `e2ee_enabled`. Enable or disable end-to-end encryption globally
+- `autokey`. Automatic key generation for new contacts
+- `bcc_self`. Receive copies of messages you send
 
-### Self-Hosted Email Server Recommendations
+Self-Hosted Email Server Recommendations
 
 For users seeking complete infrastructure control, the following self-hosted solutions integrate well with DeltaChat:
 
-- **Mailu** — Docker-based mail server with webmail, IMAP, and SMTP
-- **Mailcow** — Feature-rich mail server with a modern web interface
-- **DockerMail** — Lightweight containerized mail solution
-- **Postfix + Dovecot** — Manual setup offering maximum customization
+- Mailu. Docker-based mail server with webmail, IMAP, and SMTP
+- Mailcow. Feature-rich mail server with a modern web interface
+- DockerMail. Lightweight containerized mail solution
+- Postfix + Dovecot. Manual setup offering maximum customization
 
 A minimal Postfix configuration for DeltaChat compatibility requires:
 
 ```bash
-# /etc/postfix/main.cf
+/etc/postfix/main.cf
 smtpd_tls_cert_file = /etc/letsencrypt/live/mail.example.com/fullchain.pem
 smtpd_tls_key_file = /etc/letsencrypt/live/mail.example.com/privkey.pem
 smtpd_use_tls = yes
@@ -124,34 +124,34 @@ smtpd_sasl_type = dovecot
 smtpd_sasl_path = private/auth
 ```
 
-## Troubleshooting Common Issues
+Troubleshooting Common Issues
 
-### Connection Failures
+Connection Failures
 
 If DeltaChat fails to connect, verify your credentials and server settings. Common issues include:
 
-- **Port blocking** — Ensure your firewall allows IMAP (993) and SMTP (587/465) traffic
-- **SSL certificate errors** — Check that your server's TLS certificate is valid and not self-signed for production use
-- **Authentication failures** — Confirm your credentials work in a standard email client
+- Port blocking. Ensure your firewall allows IMAP (993) and SMTP (587/465) traffic
+- SSL certificate errors. Check that your server's TLS certificate is valid and not self-signed for production use
+- Authentication failures. Confirm your credentials work in a standard email client
 
-### Encryption Not Working
+Encryption Not Working
 
 When the green lock icon doesn't appear:
 
 1. Verify your contact is also using DeltaChat
 2. Check that both parties have encryption enabled in settings
-3. Try sending a new message—Autocrypt activates on first contact
+3. Try sending a new message, Autocrypt activates on first contact
 
-### Message Delivery Delays
+Message Delivery Delays
 
 DeltaChat checks for new messages periodically. You can reduce latency by adjusting the sync interval in settings, though more frequent checks increase server load and battery consumption on mobile devices.
 
-### Step 4: Autocrypt Key Management Deep Dive
+Step 4: Autocrypt Key Management Deep Dive
 
 DeltaChat implements the Autocrypt standard, which automatically manages encryption keys without user intervention:
 
 ```python
-# Understanding Autocrypt key exchange
+Understanding Autocrypt key exchange
 autocrypt_process = {
     "first_message": {
         "sender": "Generates keypair locally",
@@ -172,24 +172,24 @@ autocrypt_process = {
 For paranoid users, verify fingerprints through an independent channel:
 
 ```bash
-# Export your public key for out-of-band verification
-# In DeltaChat: Settings → Encryption → Export Public Key
-# Share fingerprint via voice call or in-person meeting
+Export your public key for out-of-band verification
+In DeltaChat: Settings → Encryption → Export Public Key
+Share fingerprint via voice call or in-person meeting
 ```
 
-### Step 5: Integration with Self-Hosted Email Infrastructure
+Step 5: Integration with Self-Hosted Email Infrastructure
 
 For maximum control, run DeltaChat against self-hosted mail servers:
 
 ```bash
-# Minimal Postfix + Dovecot setup for DeltaChat
-# Install on a VPS (Ubuntu 22.04 example)
+Minimal Postfix + Dovecot setup for DeltaChat
+Install on a VPS (Ubuntu 22.04 example)
 
-# 1. Install prerequisites
+1. Install prerequisites
 sudo apt update
 sudo apt install postfix dovecot-core dovecot-imapd certbot python3-certbot-nginx
 
-# 2. Configure Postfix (simplified /etc/postfix/main.cf)
+2. Configure Postfix (simplified /etc/postfix/main.cf)
 smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated defer_unauth_destination
 smtpd_sasl_auth_enable = yes
 smtpd_sasl_type = dovecot
@@ -198,27 +198,27 @@ smtpd_tls_cert_file = /etc/letsencrypt/live/mail.example.com/fullchain.pem
 smtpd_tls_key_file = /etc/letsencrypt/live/mail.example.com/privkey.pem
 smtpd_use_tls = yes
 
-# 3. Generate SSL certificate
+3. Generate SSL certificate
 sudo certbot certonly --standalone -d mail.example.com
 
-# 4. Configure Dovecot (/etc/dovecot/conf.d/10-ssl.conf)
+4. Configure Dovecot (/etc/dovecot/conf.d/10-ssl.conf)
 ssl_cert = </etc/letsencrypt/live/mail.example.com/fullchain.pem
 ssl_key = </etc/letsencrypt/live/mail.example.com/privkey.pem
 
-# 5. Create user accounts
+5. Create user accounts
 sudo useradd -m -s /usr/sbin/nologin user@example.com
 echo "user@example.com:$(openssl passwd -crypt password)" | sudo tee -a /etc/dovecot/users
 
-# 6. Test DeltaChat connection
-# Connect to mail.example.com:993 (IMAP) and mail.example.com:587 (SMTP)
+6. Test DeltaChat connection
+Connect to mail.example.com:993 (IMAP) and mail.example.com:587 (SMTP)
 ```
 
-### Step 6: Multi-Device DeltaChat Setup
+Step 6: Multi-Device DeltaChat Setup
 
 Managing DeltaChat across multiple devices requires careful key synchronization:
 
 ```python
-# Device synchronization strategy
+Device synchronization strategy
 device_setup = {
     "primary_device": {
         "generates": "Master keypair",
@@ -238,13 +238,13 @@ device_setup = {
 Export your backup code immediately after setup:
 
 ```bash
-# In DeltaChat: Settings → Encryption → Backup
-# Write down the 11-word backup code
-# Store in secure location separate from devices
-# Can be used to restore if device is lost
+In DeltaChat: Settings → Encryption → Backup
+Write down the 11-word backup code
+Store in secure location separate from devices
+Can be used to restore if device is lost
 ```
 
-### Step 7: Comparing DeltaChat to Alternatives
+Step 7: Comparing DeltaChat to Alternatives
 
 When evaluating encrypted messaging solutions:
 
@@ -258,34 +258,34 @@ When evaluating encrypted messaging solutions:
 | Self-hosted option | Partial | No | No | No |
 | Cost | Free | Free | Free-paid | Paid |
 
-DeltaChat stands out for its use of existing email infrastructure—you can access conversations from any email client, even if DeltaChat is unavailable.
+DeltaChat stands out for its use of existing email infrastructure, you can access conversations from any email client, even if DeltaChat is unavailable.
 
-### Step 8: Practical DeltaChat Workflows
+Step 8: Practical DeltaChat Workflows
 
-### For Journalists
-
-```bash
-# Journalist-to-source encrypted communication
-# 1. Create dedicated DeltaChat profile
-# 2. Share email address publicly on website/social media
-# 3. Sources contact via email → automatically encrypted
-# 4. No phone number exposure, no centralized server
-```
-
-### For Organizations
+For Journalists
 
 ```bash
-# Team communication setup
-# 1. Assign DeltaChat email to each team member
-# 2. Create group chats in DeltaChat
-# 3. All messages encrypted end-to-end
-# 4. Requires no infrastructure beyond existing mail server
+Journalist-to-source encrypted communication
+1. Create dedicated DeltaChat profile
+2. Share email address publicly on website/social media
+3. Sources contact via email → automatically encrypted
+4. No phone number exposure, no centralized server
 ```
 
-### For Privacy-Conscious Developers
+For Organizations
+
+```bash
+Team communication setup
+1. Assign DeltaChat email to each team member
+2. Create group chats in DeltaChat
+3. All messages encrypted end-to-end
+4. Requires no infrastructure beyond existing mail server
+```
+
+For Privacy-Conscious Developers
 
 ```python
-# Integration example: Send encrypted DeltaChat message
+Integration example: Send encrypted DeltaChat message
 import subprocess
 import os
 
@@ -305,14 +305,14 @@ def send_deltachat_message(recipient_email: str, message: str):
     else:
         return {"status": "failed", "error": result.stderr.decode()}
 
-# Usage
+Usage
 send_deltachat_message(
     "recipient@example.com",
     "This message is automatically encrypted"
 )
 ```
 
-## Security Considerations
+Security Considerations
 
 While DeltaChat provides strong end-to-end encryption, several supplementary practices enhance your security posture:
 
@@ -324,31 +324,31 @@ While DeltaChat provides strong end-to-end encryption, several supplementary pra
 - Monitor device access to your email account
 - Review email forwarding rules and authorized apps regularly
 
-Metadata—including subject lines, sender, and recipient addresses—remains visible to email providers. For complete anonymity, combine DeltaChat with a privacy-focused email provider (ProtonMail, Tutanota) and consider using Tor or a VPN for email access.
+Metadata, including subject lines, sender, and recipient addresses, remains visible to email providers. For complete anonymity, combine DeltaChat with a privacy-focused email provider (ProtonMail, Tutanota) and consider using Tor or a VPN for email access.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to set up deltachat encrypted messenger over existing?**
+How long does it take to set up deltachat encrypted messenger over existing?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Business Email Privacy: How to Set Up Encrypted Email](/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
 - [Best Encrypted Email for Business 2026: A Technical Guide](/best-encrypted-email-for-business-2026/)
@@ -356,4 +356,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Encrypted Email Providers For Privacy Compared Protonma](/best-encrypted-email-providers-for-privacy-compared-protonma/)
 - [Setting Up Encrypted Email with Tutanota](/tutanota-encrypted-email-setup-guide/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

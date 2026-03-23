@@ -13,13 +13,13 @@ voice-checked: true
 tags: [privacy-tools-guide]
 ---
 
-## Related Articles
+Related Articles
 
 - [How to Use WireGuard for Self-Hosted VPN in 2026](/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
 - [How to Set Up WireGuard on VPS for Personal](/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
 - [Set Up a Personal VPN with WireGuard](/wireguard-personal-vpn-setup-guide)
 - [How to Set Up WireGuard VPN on VPS 2026](/how-to-set-up-wireguard-vpn-on-vps-2026/)
 - [WireGuard Dynamic Endpoint Update](/wireguard-dynamic-endpoint-update-how-roaming-between-networks-works/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

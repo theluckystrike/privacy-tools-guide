@@ -18,7 +18,7 @@ voice-checked: true
 
 GBoard sends keystrokes to Google servers for predictions and emoji suggestions. SwiftKey, Gboard, and many keyboards transmit keystroke data to cloud services for personalization. Use locally-processing keyboards (Heliboard, OpenBoard) or analyze network traffic with Burp Suite to verify no data leaves your device before choosing.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding Keyboard Data Transmission](#understanding-keyboard-data-transmission)
 - [Major Keyboard Privacy Comparison](#major-keyboard-privacy-comparison)
@@ -30,21 +30,21 @@ GBoard sends keystrokes to Google servers for predictions and emoji suggestions.
 - [Testing Keyboard Behavior Yourself](#testing-keyboard-behavior-yourself)
 - [Privacy Scoring Your Current Keyboard](#privacy-scoring-your-current-keyboard)
 
-## Understanding Keyboard Data Transmission
+Understanding Keyboard Data Transmission
 
 Mobile keyboards typically collect data for three purposes: improving prediction accuracy, enabling cloud-based features, and gathering analytics. The privacy implications vary significantly depending on whether processing happens locally or remotely.
 
 When a keyboard sends keystrokes to cloud servers, your typing patterns, partial words, and potentially sensitive data traverse networks that you do not control. Even with encryption, metadata analysis can reveal information about your communication patterns.
 
-### Local Processing vs Cloud Processing
+Local Processing vs Cloud Processing
 
-Modern keyboards often use on-device machine learning for predictions. Apple's QuickType and Google's GBoard both use device-side processing for many features. However, certain capabilities—such as collaborative learning across devices or advanced language models—require server-side processing.
+Modern keyboards often use on-device machine learning for predictions. Apple's QuickType and Google's GBoard both use device-side processing for many features. However, certain capabilities, such as collaborative learning across devices or advanced language models, require server-side processing.
 
 The distinction matters for threat models. If your primary concern is preventing your typing data from reaching third parties, local-only keyboards provide the strongest guarantees. If you accept some data collection but want transparency about what leaves your device, understanding each keyboard's architecture becomes critical.
 
-## Major Keyboard Privacy Comparison
+Major Keyboard Privacy Comparison
 
-### GBoard (Google)
+GBoard (Google)
 
 Google's GBoard sends keystroke data to Google's servers for several features. When you enable "Google Search" or use emoji predictions, your input may be transmitted. The keyboard stores usage statistics locally but syncs aggregated data to your Google account for personalization across devices.
 
@@ -57,48 +57,48 @@ Settings → Languages → Google Input Tools (disable for offline-only)
 
 For developers, analyzing network traffic reveals that GBoard makes HTTPS requests to `clients3.google.com` and related domains during active typing sessions.
 
-### SwiftKey (Microsoft)
+SwiftKey (Microsoft)
 
 Microsoft's SwiftKey historically transmitted typing data to improve its prediction algorithms. The application collects keystrokes, word sequences, and usage patterns, which Microsoft states are used to enhance prediction accuracy across users.
 
 SwiftKey offers a "Privacy Dashboard" in its settings where you can view and delete collected data. However, cloud-based predictions remain enabled by default, meaning your typing data continues traveling to Microsoft's servers unless you explicitly disable these features.
 
-### Apple Keyboard (iOS)
+Apple Keyboard (iOS)
 
 Apple's on-device keyboard processes nearly all predictions locally using the device's neural engine. iOS does not transmit keystroke data to external servers for keyboard predictions. This architecture provides stronger privacy guarantees compared to third-party alternatives.
 
 Apple's keyboard does send usage statistics to Apple if you enable "Share Keyboard Usage Data" in settings. Developers can verify this by monitoring network traffic from the keyboard process, which shows minimal external communication during normal typing.
 
-### Open Source Alternatives
+Open Source Alternatives
 
 For maximum privacy, several open-source keyboards process everything locally:
 
-- **OpenBoard** (Android): Fully local processing, no network permissions required
-- **AnySoftKeyboard** (Android): Open-source with optional cloud predictions you can disable
-- **Hacker's Keyboard** (Android): Designed for developers with local dictionary only
+- OpenBoard (Android): Fully local processing, no network permissions required
+- AnySoftKeyboard (Android): Open-source with optional cloud predictions you can disable
+- Hacker's Keyboard (Android): Designed for developers with local dictionary only
 
 These keyboards provide verifiable behavior since you can audit their source code or examine network traffic directly.
 
-## Verifying Keyboard Network Behavior
+Verifying Keyboard Network Behavior
 
 For developers who want empirical data about keyboard behavior, several methods exist to observe network transmission.
 
-### Android Network Inspection
+Android Network Inspection
 
 Using Android's built-in debugging tools, you can monitor which servers your keyboard contacts:
 
 ```bash
-# Enable USB debugging on your device
+Enable USB debugging on your device
 adb devices
 adb shell pm list packages | grep keyboard
 
-# Monitor network traffic from a specific package
+Monitor network traffic from a specific package
 adb shell am monitor -p com.google.android.inputmethod.latin
 ```
 
 More detailed analysis requires setting up a proxy or using tools like Wireshark with a rooted device.
 
-### iOS Network Analysis
+iOS Network Analysis
 
 iOS provides less visibility into individual app network connections. Developers can use Xcode's Network Instrument or third-party tools like Charles Proxy (requires certificate installation) to observe traffic:
 
@@ -107,35 +107,35 @@ iOS provides less visibility into individual app network connections. Developers
 3. Install Charles SSL certificate on your iOS device
 4. Monitor traffic while typing in different keyboards
 
-### Code-Level Verification
+Code-Level Verification
 
 For a more thorough audit, examine the keyboard's source code if available:
 
 ```bash
-# Check GBoard open-source components
+Check GBoard open-source components
 git clone https://github.com/google/arabic-packages
-# Review LatinIME library for network call patterns
+Review LatinIME library for network call patterns
 
-# Examine AnySoftKeyboard source
+Examine AnySoftKeyboard source
 git clone https://github.com/AnySoftKeyboard/AnySoftKeyboard
 grep -r "HttpURLConnection\|OkHttp\|Retrofit" --include="*.java"
 ```
 
 This approach reveals exactly what network calls the keyboard makes, though analyzing compiled binaries for closed-source keyboards requires reverse engineering.
 
-## Practical Recommendations
+Practical Recommendations
 
 Based on the privacy implications, here are actionable recommendations for different use cases.
 
-### High-Security Environments
+High-Security Environments
 
-If you handle sensitive information—credentials, financial data, or confidential communications—use a keyboard with verified local-only processing:
+If you handle sensitive information, credentials, financial data, or confidential communications, use a keyboard with verified local-only processing:
 
-1. **OpenBoard** for Android provides zero network permissions
-2. **iOS default keyboard** with "Share Keyboard Usage Data" disabled
-3. **Hardware keyboard** (Bluetooth) eliminates touchscreen keyboard data concerns entirely
+1. OpenBoard for Android provides zero network permissions
+2. iOS default keyboard with "Share Keyboard Usage Data" disabled
+3. Hardware keyboard (Bluetooth) eliminates touchscreen keyboard data concerns entirely
 
-### Balanced Privacy and Functionality
+Balanced Privacy and Functionality
 
 If you want predictive text while limiting data exposure:
 
@@ -144,7 +144,7 @@ If you want predictive text while limiting data exposure:
 3. Periodically clear keyboard data through app settings
 4. Consider keyboards that allow you to self-host prediction models
 
-### For Developers
+For Developers
 
 When building applications that accept text input:
 
@@ -158,7 +158,7 @@ editText.inputType = InputType.TYPE_TEXT_FLAG_NO_SUGGESTION
 
 Implement password fields with `inputType="textPassword"` to ensure keyboards treat the input as sensitive data, which typically prevents prediction and transmission.
 
-## Detailed Keyboard Comparison Table
+Detailed Keyboard Comparison Table
 
 | Keyboard | Platform | Local Processing | Cloud Features | Data Retention | Privacy Policy |
 |----------|----------|------------------|-----------------|-----------------|-----------------|
@@ -173,7 +173,7 @@ Implement password fields with `inputType="textPassword"` to ensure keyboards tr
 
 *When cloud sync disabled
 
-## Privacy Risk Scoring for Common Keyboards
+Privacy Risk Scoring for Common Keyboards
 
 Here's a quantitative approach to evaluating keyboard privacy risk:
 
@@ -211,33 +211,33 @@ Output:
 - Apple Keyboard: 78/100
 - GBoard: 52/100
 
-## Hardware Keyboard Alternative
+Hardware Keyboard Alternative
 
 For the highest security, use an external hardware keyboard:
 
-**Bluefruit EZ-Key** ($40): Bluetooth keyboard with zero software requirements. No keyboard app runs on your device, eliminating all keyboard-based tracking vectors entirely.
+Bluefruit EZ-Key ($40): Bluetooth keyboard with zero software requirements. No keyboard app runs on your device, eliminating all keyboard-based tracking vectors entirely.
 
-**Seaboard Rise** ($300): Premium Bluetooth keyboard with customizable firmware. Open-source firmware available for auditing network behavior.
+Seaboard Rise ($300): Premium Bluetooth keyboard with customizable firmware. Open-source firmware available for auditing network behavior.
 
-**OnBoard Virtual Keyboard over Bluetooth**: Use your computer's keyboard input forwarded to mobile device via Bluetooth—eliminates mobile keyboard data transmission entirely.
+OnBoard Virtual Keyboard over Bluetooth: Use your computer's keyboard input forwarded to mobile device via Bluetooth, eliminates mobile keyboard data transmission entirely.
 
-## Testing Keyboard Behavior Yourself
+Testing Keyboard Behavior Yourself
 
 If you use Android, you can verify keyboard data transmission directly:
 
 ```bash
-# Install Charles Proxy on your computer
-# Configure Android device to proxy through Charles
-# Monitor HTTPS traffic while typing in different keyboards
+Install Charles Proxy on your computer
+Configure Android device to proxy through Charles
+Monitor HTTPS traffic while typing in different keyboards
 
-# Alternatively, use tcpdump on rooted Android:
+Alternatively, use tcpdump on rooted Android:
 adb shell su -c 'tcpdump -i any -w /sdcard/traffic.pcap'
-# Download and analyze with Wireshark
+Download and analyze with Wireshark
 
-# Look for:
-# - Requests to *.google.com (GBoard)
-# - Requests to *.microsoft.com (SwiftKey)
-# - Requests to keyboard service domains (others)
+Look for:
+- Requests to *.google.com (GBoard)
+- Requests to *.microsoft.com (SwiftKey)
+- Requests to keyboard service domains (others)
 ```
 
 For iOS developers:
@@ -254,7 +254,7 @@ monitor.pathUpdateHandler = { path in
 }
 ```
 
-## Privacy Scoring Your Current Keyboard
+Privacy Scoring Your Current Keyboard
 
 Use this framework to evaluate your current keyboard setup:
 
@@ -272,7 +272,7 @@ def keyboard_privacy_score(keyboard_config):
     total = sum(factors.values())
     return min(100, total)
 
-# Scoring examples
+Scoring examples
 configs = {
     "OpenBoard": {
         "local_only": 25,
@@ -301,29 +301,29 @@ for keyboard, config in configs.items():
     print(f"{keyboard}: {score}/100")
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Privacy-Focused Keyboard Apps for Mobile](/privacy-focused-keyboard-apps-for-mobile/)
 - [Prevent Android Keyboard From Sending Typing Data To Google](/how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/)
@@ -331,5 +331,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Mobile Fitness Tracker Privacy](/mobile-fitness-tracker-privacy-what-health-apps-share-with-t/)
 - [iOS Privacy Settings: Complete Walkthrough](/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 - [Does WindSurf AI Send Entire Project Context or Just Open](https://bestremotetools.com/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

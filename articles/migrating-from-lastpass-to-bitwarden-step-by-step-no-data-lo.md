@@ -18,7 +18,7 @@ voice-checked: true
 
 Switching password managers doesn't have to mean losing your data. With the right approach, you can transfer every login, secure note, and TOTP code from LastPass to Bitwarden without gaps. This guide covers the technical steps for developers and power users who want full control over their migration.
 
-## Prerequisites
+Prerequisites
 
 Before starting the migration, ensure you have:
 
@@ -30,21 +30,21 @@ Before starting the migration, ensure you have:
 Install the Bitwarden CLI via your package manager:
 
 ```bash
-# macOS
+macOS
 brew install bitwarden-cli
 
-# Ubuntu/Debian
+Ubuntu/Debian
 sudo apt install bitwarden
 
-# npm
+npm
 npm install -g @bitwarden/cli
 ```
 
-## Step 1: Export Data from LastPass
+Step 1: Export Data from LastPass
 
 LastPass provides two export formats: CSV and encrypted JSON. For a complete migration, use the CSV export as it preserves more fields.
 
-### Using the LastPass CLI
+Using the LastPass CLI
 
 If you have `lpass` installed, export your vault:
 
@@ -52,11 +52,11 @@ If you have `lpass` installed, export your vault:
 lpass export --format=csv > lastpass-export.csv
 ```
 
-### Using the Web Interface
+Using the Web Interface
 
 1. Log into LastPass at lastpass.com
-2. Go to **Advanced Options** > **Export**
-3. Choose **LastPass CSV File**
+2. Go to Advanced Options > Export
+3. Choose LastPass CSV File
 4. Save the file to your local machine
 
 Review the exported file to ensure all entries are present:
@@ -68,12 +68,12 @@ head -5 lastpass-export.csv
 
 The CSV contains columns for URL, username, password, name, and notes.
 
-## Step 2: Handle TOTP Codes
+Step 2: Handle TOTP Codes
 
 LastPass stores TOTP secrets within the notes field or as separate entries. Extract these before migration:
 
 ```bash
-# Extract entries with TOTP in notes
+Extract entries with TOTP in notes
 grep -i "otp" lastpass-export.csv | head -10
 ```
 
@@ -93,7 +93,7 @@ def extract_totp(notes):
             return secret.group(1)
     return None
 
-# Process CSV and identify TOTP entries
+Process CSV and identify TOTP entries
 with open('lastpass-export.csv', 'r') as f:
     reader = csv.DictReader(f)
     for row in reader:
@@ -102,7 +102,7 @@ with open('lastpass-export.csv', 'r') as f:
             print(f"{row['name']}: {totp}")
 ```
 
-## Step 3: Import into Bitwarden
+Step 3: Import into Bitwarden
 
 Bitwarden supports direct CSV import with its CLI. First, unlock your vault:
 
@@ -116,7 +116,7 @@ This returns a session key. Set it as an environment variable:
 export BW_SESSION="your-session-key-here"
 ```
 
-### Format the Import File
+Format the Import File
 
 Bitwarden expects a specific CSV format. Create a conversion script:
 
@@ -151,7 +151,7 @@ def convert_to_bitwarden(input_file, output_file):
 convert_to_bitwarden('lastpass-export.csv', 'bitwarden-import.csv')
 ```
 
-### Run the Import
+Run the Import
 
 ```bash
 bw import --format=csv --file=bitwarden-import.csv
@@ -163,7 +163,7 @@ Verify the import count matches your export:
 bw list items | jq length
 ```
 
-## Step 4: Import TOTP Codes
+Step 4: Import TOTP Codes
 
 Bitwarden stores TOTP as a separate field. Add TOTP codes programmatically:
 
@@ -191,7 +191,7 @@ def add_totp_to_item(item_id, totp_secret):
         input=json.dumps(item), text=True
     )
 
-# Process TOTP entries
+Process TOTP entries
 with open('lastpass-export.csv', 'r') as f:
     reader = csv.DictReader(f)
     for row in reader:
@@ -201,21 +201,21 @@ with open('lastpass-export.csv', 'r') as f:
 
 Alternatively, use Bitwarden's web vault to manually add TOTP codes for critical accounts like email and banking.
 
-## Step 5: Verify Migration Completeness
+Step 5: Verify Migration Completeness
 
 Run comparison checks to ensure nothing was lost:
 
 ```bash
-# Count LastPass entries
+Count LastPass entries
 echo "LastPass entries: $(tail -n +2 lastpass-export.csv | wc -l)"
 
-# Count Bitwarden entries
+Count Bitwarden entries
 echo "Bitwarden entries: $(bw list items | jq length)"
 
-# List Bitwarden folders
+List Bitwarden folders
 bw list folders
 
-# List Bitwarden collections
+List Bitwarden collections
 bw list collections
 ```
 
@@ -224,30 +224,30 @@ Create a verification script:
 ```bash
 #!/bin/bash
 
-# Compare entry counts
+Compare entry counts
 LP_COUNT=$(tail -n +2 lastpass-export.csv | wc -l)
 BW_COUNT=$(bw list items | jq '. | length')
 
 if [ "$LP_COUNT" -eq "$BW_COUNT" ]; then
-    echo "✓ Entry count matches: $LP_COUNT"
+    echo " Entry count matches: $LP_COUNT"
 else
-    echo "✗ Mismatch: LastPass has $LP_COUNT, Bitwarden has $BW_COUNT"
+    echo " Mismatch: LastPass has $LP_COUNT, Bitwarden has $BW_COUNT"
 fi
 ```
 
-## Step 6: Configure Bitwarden CLI for Automation
+Step 6: Configure Bitwarden CLI for Automation
 
 Set up CLI shortcuts for daily use:
 
 ```bash
-# Quick unlock with environment variable
+Quick unlock with environment variable
 export BW_CLIENTID="your-client-id"
 export BW_CLIENTSECRET="your-client-secret"
 
-# Sync vault
+Sync vault
 bw sync
 
-# Generate password
+Generate password
 bw generate --length 24 --uppercase --lowercase --number --symbol
 ```
 
@@ -257,7 +257,7 @@ Add to your shell profile for persistent access:
 echo 'export BW_SESSION="$(bw unlock --raw)"' >> ~/.bashrc
 ```
 
-## Step 7: Browser Extension and Migration
+Step 7: Browser Extension and Migration
 
 Install the Bitwarden browser extension:
 
@@ -272,19 +272,19 @@ After installation:
 3. Check "Disable auto-fill on page load" to prevent conflicts
 4. Import browser passwords from your browser's built-in manager
 
-## Troubleshooting Common Issues
+Troubleshooting Common Issues
 
-### Encoding Problems
+Encoding Problems
 
 If special characters don't import correctly:
 
 ```python
-# Ensure UTF-8 encoding
+Ensure UTF-8 encoding
 with open('file.csv', 'r', encoding='utf-8-sig') as f:
     # Process with proper encoding
 ```
 
-### Duplicate Entries
+Duplicate Entries
 
 Bitwarden prevents exact duplicates. Check for them before import:
 
@@ -292,50 +292,50 @@ Bitwarden prevents exact duplicates. Check for them before import:
 sort bitwarden-import.csv | uniq -d
 ```
 
-### Missing Custom Fields
+Missing Custom Fields
 
 LastPass custom fields need manual recreation:
 
 ```bash
-# List items with notes containing custom field markers
+List items with notes containing custom field markers
 grep -i "custom field" lastpass-export.csv
 ```
 
 Re-add these manually through the Bitwarden web interface or CLI.
 
-## Security Considerations
+Security Considerations
 
 After migration, strengthen your security:
 
-1. **Rotate critical passwords**: Prioritize email, banking, and social media
-2. **Enable two-factor authentication**: Use YubiKey or TOTP
-3. **Audit login history**: Check for unauthorized access
-4. **Delete LastPass data**: Remove your vault after confirming migration success
-5. **Update recovery options**: Ensure your email and phone are current
+1. Rotate critical passwords: Prioritize email, banking, and social media
+2. Enable two-factor authentication: Use YubiKey or TOTP
+3. Audit login history: Check for unauthorized access
+4. Delete LastPass data: Remove your vault after confirming migration success
+5. Update recovery options: Ensure your email and phone are current
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does Bitwarden offer a free tier?**
+Does Bitwarden offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check Bitwarden's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Migrating from Sticky Password to Bitwarden: A Guide](/migrating-from-sticky-password-to-bitwarden-step-by-step-gui/)
 - [Bitwarden vs LastPass Migration Guide](/bitwarden-vs-lastpass-migration-guide/)
@@ -344,5 +344,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Migrating From NordPass to Bitwarden](/migrating-from-nordpass-to-bitwarden-export-import-process-guide/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

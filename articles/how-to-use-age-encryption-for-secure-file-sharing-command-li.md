@@ -18,7 +18,7 @@ voice-checked: true
 
 Install age (`brew install age` on macOS, `apt install age` on Linux), generate recipient keys with `age-keygen`, then encrypt files using `age -r [public-key] file.txt > file.txt.age` and decrypt with `age -d file.txt.age`. For best results, share your public key through a trusted channel, have recipients encrypt their files using your key, and decrypt using your private key. Age is simpler than GPG, works with modern cryptography (ChaCha20-Poly1305), and requires no key servers or complex configuration.
 
-## Table of Contents
+Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Security Considerations](#security-considerations)
@@ -27,7 +27,7 @@ Install age (`brew install age` on macOS, `apt install age` on Linux), generate 
 - [Threat Model Analysis](#threat-model-analysis)
 - [Troubleshooting](#troubleshooting)
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -37,7 +37,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Install AGE
+Step 1: Install AGE
 
 The installation process varies by operating system, but most developers can install age with a single command. On macOS, use Homebrew:
 
@@ -59,7 +59,7 @@ age --version
 
 You should see version information confirming a successful installation.
 
-### Step 2: Generate Encryption Keys
+Step 2: Generate Encryption Keys
 
 Before encrypting files, you need to generate a keypair. AGE supports two types of keys: identity files (password-protected) and SSH keys. For most use cases, generating a dedicated identity file provides the best balance of security and convenience.
 
@@ -85,7 +85,7 @@ age-keygen -y ~/.ssh/id_ed25519
 
 This outputs the age-format public key derived from your SSH private key, allowing you to use existing credentials for age encryption.
 
-### Step 3: Encrypt Files
+Step 3: Encrypt Files
 
 With your keypair ready, encrypting files becomes straightforward. The basic syntax uses `age` with the `-p` flag for password-based encryption, or the `-r` flag for recipient-based encryption using public keys.
 
@@ -118,7 +118,7 @@ For encrypting directories, combine age with tar:
 tar czf - /path/to/directory | age -p -o backup.tar.gz.age
 ```
 
-### Step 4: Decrypt Files
+Step 4: Decrypt Files
 
 Decryption requires the corresponding private key or the correct passphrase. The `age-decrypt` command handles both recipient-based and password-based encrypted files.
 
@@ -142,7 +142,7 @@ age-decrypt -p -o original-file.txt encrypted-file.txt.age
 
 The `-p` flag prompts for the passphrase used during encryption.
 
-### Step 5: Automation Patterns
+Step 5: Automation Patterns
 
 Integrating age into scripts and workflows requires understanding how to pass keys securely. Avoid hardcoding keys in scripts. Instead, use environment variables or file references with appropriate permissions.
 
@@ -173,7 +173,7 @@ tar czf - /local/data | age -p | ssh user@server "cat > remote-data.tar.gz.age"
 
 The receiving end then decrypts with the appropriate key or passphrase.
 
-## Security Considerations
+Security Considerations
 
 Age implements modern cryptographic primitives by default. The symmetric encryption uses ChaCha20-Poly1305, providing authenticated encryption that detects tampering. Key derivation uses Argon2id, resistant to both GPU and ASIC-based attacks when password-protected.
 
@@ -181,17 +181,17 @@ A few best practices improve your security posture. Never commit identity files 
 
 For team usage, consider a key management strategy where each team member has their own key, and encrypted files list all team members as recipients. This maintains individual key control while enabling collaborative access.
 
-## Comparison with GPG
+Comparison with GPG
 
-Developers familiar with GPG might wonder why age exists. Age prioritizes simplicity and modern defaults over broad compatibility. GPG supports numerous algorithms, some outdated, and carries historical complexity from decades of development. Age chooses sane defaults—modern algorithms, no configuration required—and focuses on the most common use case: encrypting files for yourself or specific recipients.
+Developers familiar with GPG might wonder why age exists. Age prioritizes simplicity and modern defaults over broad compatibility. GPG supports numerous algorithms, some outdated, and carries historical complexity from decades of development. Age chooses sane defaults, modern algorithms, no configuration required, and focuses on the most common use case: encrypting files for yourself or specific recipients.
 
 For teams already using SSH, age's SSH key compatibility reduces the credential management burden. You can encrypt files using keys you already use for server authentication.
 
-### Step 6: Age Cryptography Deep-Dive
+Step 6: Age Cryptography Deep-Dive
 
 Understanding age's cryptographic foundation ensures proper security assumptions:
 
-### ChaCha20-Poly1305 Algorithm
+ChaCha20-Poly1305 Algorithm
 
 Age uses ChaCha20-Poly1305, a modern AEAD cipher providing both confidentiality and authenticity:
 
@@ -210,7 +210,7 @@ Poly1305: Polynomial authentication
 
 This combination ensures ciphertext cannot be decrypted incorrectly without detection.
 
-### Key Derivation Details
+Key Derivation Details
 
 For password-based encryption, age uses Argon2id:
 
@@ -234,13 +234,13 @@ X25519: Elliptic curve Diffie-Hellman
 - Widely considered cryptographically sound
 ```
 
-### Step 7: Batch Encryption Operations
+Step 7: Batch Encryption Operations
 
 For processing many files:
 
 ```bash
 #!/bin/bash
-# Batch encrypt directory structure
+Batch encrypt directory structure
 
 RECIPIENT_KEY="age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5eu9rq"
 SOURCE_DIR="./sensitive-data"
@@ -248,7 +248,7 @@ OUTPUT_DIR="./encrypted-backup"
 
 mkdir -p "$OUTPUT_DIR"
 
-# Encrypt each file, preserving directory structure
+Encrypt each file, preserving directory structure
 find "$SOURCE_DIR" -type f | while read -r file; do
     # Calculate output path
     relative_path="${file#$SOURCE_DIR/}"
@@ -264,157 +264,157 @@ find "$SOURCE_DIR" -type f | while read -r file; do
     echo "Encrypted: $relative_path"
 done
 
-# Create manifest of encrypted files
+Create manifest of encrypted files
 find "$OUTPUT_DIR" -type f -exec sha256sum {} \; > "$OUTPUT_DIR/manifest.sha256"
 ```
 
-### Step 8: Integration with Backup Tools
+Step 8: Integration with Backup Tools
 
 Age integrates with backup workflows:
 
-### Restic Backup with Age
+Restic Backup with Age
 
 ```bash
-# Setup restic with age encryption
+Setup restic with age encryption
 restic init -r /mnt/backups -e age
 
-# Create age key for backup
+Create age key for backup
 age-keygen -o restic-key.txt
 
-# Set environment variable
+Set environment variable
 export RESTIC_PASSWORD_COMMAND="age -d -i restic-key.txt < /tmp/restic.age"
 
-# Backup with encryption
+Backup with encryption
 restic -r /mnt/backups backup /important/data
 
-# Verify backup
+Verify backup
 restic -r /mnt/backups check
 
-# Restore when needed
+Restore when needed
 restic -r /mnt/backups restore latest --target /restore/location
 ```
 
-### Tar + Age for Versioned Backups
+Tar + Age for Versioned Backups
 
 ```bash
 #!/bin/bash
-# Daily incremental backup with age
+Daily incremental backup with age
 
 BACKUP_DATE=$(date +%Y%m%d-%H%M%S)
 RECIPIENT="age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5eu9rq"
 BACKUP_ROOT="/backups"
 
-# Create tarball with modification time delta
+Create tarball with modification time delta
 find /data -type f -newer /tmp/last-backup-marker 2>/dev/null | \
     tar czf - -T - | \
     age -r "$RECIPIENT" -o "$BACKUP_ROOT/incremental-$BACKUP_DATE.tar.gz.age"
 
-# Update marker for next run
+Update marker for next run
 touch /tmp/last-backup-marker
 
-# List recent backups
+List recent backups
 ls -lh "$BACKUP_ROOT"/incremental-*.age | tail -5
 ```
 
-### Step 9: Secure Key Sharing Protocols
+Step 9: Secure Key Sharing Protocols
 
 Distributing keys securely is critical:
 
-### Out-of-Band Verification
+Out-of-Band Verification
 
 ```bash
 #!/bin/bash
-# Share key through multiple channels
+Share key through multiple channels
 
-# Primary: encrypted email
+Primary: encrypted email
 echo "Your age public key: age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5eu9rq" | \
     mail -s "Your encryption key" recipient@example.com
 
-# Secondary: SMS with fingerprint (short form)
+Secondary: SMS with fingerprint (short form)
 FINGERPRINT=$(echo "age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5eu9rq" | \
     sha256sum | cut -c1-16)
 echo "Key fingerprint: $FINGERPRINT" | sms recipient
 
-# Verify with voice call
-# "For security, read back the fingerprint you received in SMS"
+Verify with voice call
+"For security, read back the fingerprint you received in SMS"
 ```
 
-### Shamir's Secret Sharing for Keys
+Shamir's Secret Sharing for Keys
 
 For high-security scenarios, split keys across trustees:
 
 ```bash
-# Install ssss (Shamir's Secret Sharing)
+Install ssss (Shamir's Secret Sharing)
 brew install ssss
 
-# Create key with 3-of-5 splitting
-# Any 3 shares can recover the key
+Create key with 3-of-5 splitting
+Any 3 shares can recover the key
 cat age-identity.txt | \
     ssss-split -t 3 -n 5 > key-shares.txt
 
-# Distribute each share to separate trustee
+Distribute each share to separate trustee
 split -n l/5 key-shares.txt share_
 
-# To recover
+To recover
 cat share_00 share_01 share_02 | \
     ssss-combine > recovered-key.txt
 ```
 
-## Performance and Scalability
+Performance and Scalability
 
 Age handles large-scale encryption efficiently:
 
 ```bash
-# Performance testing
-# Age on 1GB file (modern CPU)
+Performance testing
+Age on 1GB file (modern CPU)
 time age -r "$KEY" -o file.1gb.age file.1gb
-# Typical: 0.5-1.5 seconds
+Typical: 0.5-1.5 seconds
 
-# Parallel encryption of many files
+Parallel encryption of many files
 find data -type f | \
     parallel age -r "$KEY" -o {}.age {}
 
-# Memory usage: Minimal (~10MB regardless of file size)
-# This is because age streams data rather than loading entirely
+Memory usage: Minimal (~10MB regardless of file size)
+This is because age streams data rather than loading entirely
 ```
 
-### Step 10: Decryption in Restricted Environments
+Step 10: Decryption in Restricted Environments
 
 Recovering files when tools are limited:
 
 ```bash
-# On system without age installed:
-# Compile minimal age decoder or use reference implementation
+On system without age installed:
+Compile minimal age decoder or use reference implementation
 
-# Python implementation (partial, for testing)
+Python implementation (partial, for testing)
 import os
 from cryptography.hazmat.primitives.ciphers.aead import ChaCha20Poly1305
 
-# This would require implementing full age format parsing
-# For production, always compile/install proper age binary
+This would require implementing full age format parsing
+For production, always compile/install proper age binary
 ```
 
-### Step 11: Integration with Git for Encrypted Repositories
+Step 11: Integration with Git for Encrypted Repositories
 
 Store sensitive config in git with age encryption:
 
 ```bash
-# Setup encrypted git attributes
+Setup encrypted git attributes
 echo "*.secret.txt diff=age" > .gitattributes
 
-# Configure git filter
+Configure git filter
 git config filter.age.clean "age -e -r $AGE_PUBLIC_KEY"
 git config filter.age.smudge "age -d -i $AGE_IDENTITY_FILE"
 
-# Track encrypted secrets
+Track encrypted secrets
 git add config.secret.txt
 git commit -m "Add encrypted configuration"
 
-# Developers with key can decrypt
+Developers with key can decrypt
 git smudge .git/config.secret.txt > config.txt
 ```
 
-## Threat Model Analysis
+Threat Model Analysis
 
 Age provides protection against specific threats:
 
@@ -432,44 +432,44 @@ NOT protected against:
 - Side-channel attacks on implementation
 ```
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to use age encryption for secure file sharing command?**
+How long does it take to use age encryption for secure file sharing command?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Best Secure File Sharing Tools for Teams Handling.](/best-secure-file-sharing-tools-for-teams-handling-sensitive-data/)
 - [How to Set Up Secure File Sharing for Sensitive Documents](/how-to-set-up-secure-file-sharing-for-sensitive-documents/)
@@ -478,7 +478,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Age Encryption Tool Tutorial for Developers](/age-encryption-tool-tutorial-developers/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```
 ```
 {% endraw %}

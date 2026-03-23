@@ -14,22 +14,22 @@ tags: [privacy-tools-guide]
 ---
 
 {% raw %}
-# How to Use Zeek for Network Monitoring
+How to Use Zeek for Network Monitoring
 
-Zeek (formerly Bro) does not match patterns against packets — it reconstructs full sessions and writes structured logs for every protocol it understands. You get a detailed record of every DNS query, HTTP request, TLS handshake, and connection on your network, queryable without replaying PCAPs. This guide covers installation, log analysis, and writing custom detection scripts.
+Zeek (formerly Bro) does not match patterns against packets. it reconstructs full sessions and writes structured logs for every protocol it understands. You get a detailed record of every DNS query, HTTP request, TLS handshake, and connection on your network, queryable without replaying PCAPs. This guide covers installation, log analysis, and writing custom detection scripts.
 
-## How Zeek Differs from Snort/Suricata
+How Zeek Differs from Snort/Suricata
 
-Snort and Suricata match signatures against raw packet bytes. Zeek parses protocols into structured events and exposes them to a scripting engine. The result: Zeek logs are SQL-queryable, schema-consistent, and much richer than IDS alerts — but Zeek doesn't block traffic by default.
+Snort and Suricata match signatures against raw packet bytes. Zeek parses protocols into structured events and exposes them to a scripting engine. The result: Zeek logs are SQL-queryable, schema-consistent, and much richer than IDS alerts. but Zeek doesn't block traffic by default.
 
 Zeek is commonly paired with a SIEM (Splunk, Elastic, Wazuh) as the data source for threat hunting, rather than as a real-time blocker.
 
 ---
 
-## 1. Install Zeek
+1. Install Zeek
 
 ```bash
-# Ubuntu 24.04 — use the official repository
+Ubuntu 24.04. use the official repository
 echo 'deb http://download.opensuse.org/repositories/security:/zeek/xUbuntu_24.04/ /' \
   | sudo tee /etc/apt/sources.list.d/security:zeek.list
 
@@ -38,7 +38,7 @@ curl -fsSL https://download.opensuse.org/repositories/security:zeek/xUbuntu_24.0
 
 sudo apt update && sudo apt install -y zeek
 
-# Add Zeek to PATH
+Add Zeek to PATH
 echo 'export PATH=/opt/zeek/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 
@@ -47,10 +47,10 @@ zeek --version
 
 ---
 
-## 2. Configure Interface and Logging
+2. Configure Interface and Logging
 
 ```bash
-# Edit the main node config
+Edit the main node config
 sudo tee /opt/zeek/etc/node.cfg > /dev/null <<'EOF'
 [zeek]
 type=standalone
@@ -58,76 +58,76 @@ host=localhost
 interface=eth0   # replace with your capture interface
 EOF
 
-# Set log rotation and format
+Set log rotation and format
 sudo tee -a /opt/zeek/etc/zeekctl.cfg > /dev/null <<'EOF'
 LogRotationInterval = 3600
 LogDir = /var/log/zeek
 EOF
 
-# Create log dir
+Create log dir
 sudo mkdir -p /var/log/zeek
 sudo chown zeek: /var/log/zeek
 
-# Disable interface offloading
+Disable interface offloading
 sudo ethtool -K eth0 rx off tx off sg off tso off gso off gro off lro off
 ```
 
 ---
 
-## 3. Deploy with ZeekControl
+3. Deploy with ZeekControl
 
 ```bash
-# Install (first-time setup)
+Install (first-time setup)
 sudo zeekctl install
 
-# Start
+Start
 sudo zeekctl start
 
-# Check status
+Check status
 sudo zeekctl status
 
-# Stop
+Stop
 sudo zeekctl stop
 
-# Zeek restarts automatically on crash; check logs:
+Zeek restarts automatically on crash; check logs:
 sudo zeekctl diag
 ```
 
 ---
 
-## 4. Understand the Log Files
+4. Understand the Log Files
 
 Zeek writes tab-separated logs to `/var/log/zeek/current/`:
 
 ```bash
 ls /var/log/zeek/current/
-# conn.log      — every TCP/UDP/ICMP connection
-# dns.log       — every DNS query and response
-# http.log      — every HTTP request
-# ssl.log       — every TLS handshake
-# files.log     — every transferred file
-# weird.log     — protocol anomalies
-# notice.log    — policy-triggered notices
-# dpd.log       — dynamic protocol detection results
+conn.log     . every TCP/UDP/ICMP connection
+dns.log      . every DNS query and response
+http.log     . every HTTP request
+ssl.log      . every TLS handshake
+files.log    . every transferred file
+weird.log    . protocol anomalies
+notice.log   . policy-triggered notices
+dpd.log      . dynamic protocol detection results
 ```
 
 Read logs with `zeek-cut` (Zeek's column selector):
 
 ```bash
-# Top 10 source IPs by connection count
+Top 10 source IPs by connection count
 zeek-cut id.orig_h < /var/log/zeek/current/conn.log \
   | sort | uniq -c | sort -rn | head -10
 
-# All DNS queries for a specific domain
+All DNS queries for a specific domain
 zeek-cut ts id.orig_h query answers < /var/log/zeek/current/dns.log \
   | grep "example\.com"
 
-# TLS connections with expired or self-signed certificates
+TLS connections with expired or self-signed certificates
 zeek-cut ts id.orig_h id.resp_h server_name validation_status \
   < /var/log/zeek/current/ssl.log \
   | grep -v "ok"
 
-# HTTP requests with non-200 status and large response bodies (potential data exfil)
+HTTP requests with non-200 status and large response bodies (potential data exfil)
 zeek-cut ts id.orig_h host uri status_code resp_body_len \
   < /var/log/zeek/current/http.log \
   | awk -F'\t' '$6 > 1000000'
@@ -135,12 +135,12 @@ zeek-cut ts id.orig_h host uri status_code resp_body_len \
 
 ---
 
-## 5. Write a Custom Detection Script
+5. Write a Custom Detection Script
 
 Zeek scripts are event-driven. This script detects SSH logins from unexpected countries by watching for repeated connection attempts and fires a notice:
 
 ```zeek
-# /opt/zeek/share/zeek/site/detect-ssh-scan.zeek
+/opt/zeek/share/zeek/site/detect-ssh-scan.zeek
 
 module SSHScan;
 
@@ -184,12 +184,12 @@ sudo zeekctl deploy
 
 ---
 
-## 6. Detect DNS Tunneling
+6. Detect DNS Tunneling
 
 DNS tunneling encodes data in DNS queries to exfiltrate traffic or bypass firewalls. Telltale signs: very long query names, high query rate, unusual record types.
 
 ```zeek
-# /opt/zeek/share/zeek/site/detect-dns-tunnel.zeek
+/opt/zeek/share/zeek/site/detect-dns-tunnel.zeek
 
 module DNSTunnel;
 
@@ -215,21 +215,21 @@ event dns_request(c: connection, msg: dns_msg, qtype: count, qclass: count)
 
 ---
 
-## 7. Integrate with Elasticsearch (ELK)
+7. Integrate with Elasticsearch (ELK)
 
 ```bash
-# Install Filebeat
+Install Filebeat
 sudo apt install -y filebeat
 
-# Use Zeek module
+Use Zeek module
 sudo filebeat modules enable zeek
 
-# Edit /etc/filebeat/modules.d/zeek.yml
-# Set path for each log type:
-# - module: zeek
-#   connection:
-#     enabled: true
-#     var.paths: ["/var/log/zeek/current/conn.log"]
+Edit /etc/filebeat/modules.d/zeek.yml
+Set path for each log type:
+- module: zeek
+  connection:
+    enabled: true
+    var.paths: ["/var/log/zeek/current/conn.log"]
 
 sudo filebeat setup --index-management -E output.logstash.enabled=false \
   -E 'output.elasticsearch.hosts=["http://localhost:9200"]'
@@ -241,39 +241,39 @@ Kibana provides a pre-built Zeek dashboard once data flows in.
 
 ---
 
-## 8. Query Logs with `zq` (Fast JSON/TSV Tool)
+8. Query Logs with `zq` (Fast JSON/TSV Tool)
 
 `zq` (from the Zed project) queries Zeek TSV logs like a database:
 
 ```bash
-# Install
+Install
 sudo snap install zq || pip3 install zq
 
-# Find all HTTP requests to a specific host
+Find all HTTP requests to a specific host
 zq -f text 'host=="malicious.example.com" | count()' /var/log/zeek/current/http.log
 
-# Top talkers by bytes sent
+Top talkers by bytes sent
 zq -f text 'sum(orig_bytes) by id.orig_h | sort -r sum | head 10' \
   /var/log/zeek/current/conn.log
 
-# DNS queries for newly-registered domains (requires threat intel enrichment)
+DNS queries for newly-registered domains (requires threat intel enrichment)
 zq -f text 'qtype_name=="A" | count() by query | sort -r count | head 20' \
   /var/log/zeek/current/dns.log
 ```
 
 ---
 
-## Zeek Package Manager
+Zeek Package Manager
 
 ```bash
-# Install ZeekPkg
+Install ZeekPkg
 pip3 install zkg
 zkg autoconfig
 
-# Install threat intelligence framework
+Install threat intelligence framework
 zkg install zeek/zeek-intel-threatbus
 
-# Install JA3 TLS fingerprinting (identify malware by TLS client fingerprint)
+Install JA3 TLS fingerprinting (identify malware by TLS client fingerprint)
 zkg install salesforce/ja3
 
 sudo zeekctl deploy
@@ -281,7 +281,7 @@ sudo zeekctl deploy
 
 ---
 
-## Performance Tuning
+Performance Tuning
 
 | Setting | File | Recommendation |
 |---|---|---|
@@ -292,7 +292,7 @@ sudo zeekctl deploy
 
 ---
 
-## Related Reading
+Related Reading
 
 - [How to Set Up Snort IDS on Linux](/snort-ids-linux-setup-guide/)
 - [How to Set Up Wazuh SIEM for Small Teams](/wazuh-siem-small-teams-setup-guide/)
@@ -303,5 +303,5 @@ sudo zeekctl deploy
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

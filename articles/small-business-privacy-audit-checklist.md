@@ -20,7 +20,7 @@ Small businesses often skip privacy audits because they seem like an enterprise 
 
 This checklist is organized into eight areas. Work through each section, mark what's done, and create a remediation task for anything that isn't.
 
-## Table of Contents
+Table of Contents
 
 - [1. Data Inventory](#1-data-inventory)
 - [2. Access Controls](#2-access-controls)
@@ -32,11 +32,11 @@ This checklist is organized into eight areas. Work through each section, mark wh
 - [8. Employee Awareness](#8-employee-awareness)
 - [Audit Schedule](#audit-schedule)
 
-## 1. Data Inventory
+1. Data Inventory
 
 You can't protect data you don't know you have. Start by mapping what personal data your business collects and where it lives.
 
-**Questions to answer:**
+Questions to answer:
 
 - What personal data do you collect? (names, emails, phone numbers, payment cards, addresses, health data, behavioral data)
 - Where is it stored? (SaaS tools, local databases, spreadsheets, email inboxes, paper files)
@@ -44,7 +44,7 @@ You can't protect data you don't know you have. Start by mapping what personal d
 - How long do you keep it?
 - Do you share it with third parties?
 
-**Action: Create a data register**
+Action: Create a data register
 
 A simple spreadsheet works:
 
@@ -54,13 +54,13 @@ A simple spreadsheet works:
 | Payment card numbers | Stripe | Nobody (Stripe holds) | N/A | Stripe |
 | Employee records | Google Drive | HR only | 7 years | Payroll provider |
 
-The goal is to identify data you're keeping unnecessarily — delete it, or stop collecting it.
+The goal is to identify data you're keeping unnecessarily. delete it, or stop collecting it.
 
-## 2. Access Controls
+2. Access Controls
 
 Employees should only access data they need for their role. Audit this now.
 
-**Checklist:**
+Checklist:
 
 - [ ] Every employee has their own individual account (no shared logins)
 - [ ] Admin accounts are separate from daily-use accounts
@@ -70,32 +70,32 @@ Employees should only access data they need for their role. Audit this now.
 - [ ] MFA enabled for all business-critical accounts (email, cloud storage, CRM, accounting)
 - [ ] A process exists for quarterly access reviews
 
-**Quick audit:**
+Quick audit:
 
 ```bash
-# If using Google Workspace — export user list and review
-# Google Admin Console > Users > Export users
+If using Google Workspace. export user list and review
+Google Admin Console > Users > Export users
 
-# Check for inactive accounts (Google Admin > Reports > User activity)
+Check for inactive accounts (Google Admin > Reports > User activity)
 ```
 
 For AWS/cloud infrastructure:
 
 ```bash
-# List IAM users with console access
+List IAM users with console access
 aws iam list-users --query 'Users[*].[UserName,CreateDate]' --output table
 
-# Find users with no recent activity
+Find users with no recent activity
 aws iam generate-credential-report
 aws iam get-credential-report --query 'Content' --output text | base64 -d | \
   awk -F',' '$5 < "2025-01-01" {print $1, $5}'
 ```
 
-## 3. Third-Party Vendor Review
+3. Third-Party Vendor Review
 
 Every SaaS tool you use is a potential breach vector. Review your vendor list.
 
-**Checklist:**
+Checklist:
 
 - [ ] List every third-party tool that handles personal data
 - [ ] Confirm each vendor has a Data Processing Agreement (DPA) if you serve EU customers (GDPR requirement)
@@ -103,7 +103,7 @@ Every SaaS tool you use is a potential breach vector. Review your vendor list.
 - [ ] Remove or replace tools that have had recent security incidents without adequate response
 - [ ] Verify each vendor has SOC 2 Type II, ISO 27001, or equivalent certification for sensitive data
 
-**Common tools to audit:**
+Common tools to audit:
 
 - Email marketing (Mailchimp, Klaviyo, Brevo)
 - CRM (Salesforce, HubSpot, Pipedrive)
@@ -115,9 +115,9 @@ Every SaaS tool you use is a potential breach vector. Review your vendor list.
 
 For GDPR compliance, every vendor in this list that processes EU personal data needs a signed DPA. Most provide them on request or in their terms.
 
-## 4. Website Privacy
+4. Website Privacy
 
-**Checklist:**
+Checklist:
 
 - [ ] Privacy policy is accurate, up to date, and covers all data collected
 - [ ] Cookie consent is implemented (required for EU visitors under ePrivacy Directive)
@@ -127,17 +127,17 @@ For GDPR compliance, every vendor in this list that processes EU personal data n
 - [ ] Google Analytics is configured with IP anonymization, or replaced with a privacy-first alternative
 - [ ] No unnecessary third-party scripts load on the site (check with browser dev tools)
 
-**Check what's loading on your site:**
+Check what's loading on your site:
 
 ```bash
-# Check for third-party scripts with curl
+Check for third-party scripts with curl
 curl -s https://yourwebsite.com | grep -oE 'src="[^"]*"' | grep -v "yourwebsite.com"
 
-# Or use a headless browser check
+Or use a headless browser check
 npx playwright chromium --screenshot https://yourwebsite.com screenshot.png
 ```
 
-**IP anonymization in Google Analytics (gtag.js):**
+IP anonymization in Google Analytics (gtag.js):
 
 ```javascript
 gtag('config', 'GA_MEASUREMENT_ID', {
@@ -147,9 +147,9 @@ gtag('config', 'GA_MEASUREMENT_ID', {
 });
 ```
 
-## 5. Email Security
+5. Email Security
 
-**Checklist:**
+Checklist:
 
 - [ ] SPF record configured for your domain
 - [ ] DKIM signing enabled
@@ -159,16 +159,16 @@ gtag('config', 'GA_MEASUREMENT_ID', {
 - [ ] Business email stored by a reputable provider with encryption at rest
 - [ ] Employees trained on phishing identification
 
-**Verify email authentication:**
+Verify email authentication:
 
 ```bash
-# Check SPF
+Check SPF
 dig +short TXT yourdomain.com | grep spf
 
-# Check DMARC
+Check DMARC
 dig +short TXT _dmarc.yourdomain.com
 
-# Check DKIM (replace 'default' with your selector)
+Check DKIM (replace 'default' with your selector)
 dig +short TXT default._domainkey.yourdomain.com
 ```
 
@@ -177,9 +177,9 @@ Expected results:
 - DMARC: `v=DMARC1; p=quarantine; ...` or `p=reject`
 - DKIM: Long RSA or Ed25519 public key
 
-## 6. Device and Endpoint Security
+6. Device and Endpoint Security
 
-**Checklist:**
+Checklist:
 
 - [ ] Full-disk encryption enabled on all laptops (FileVault on macOS, BitLocker on Windows)
 - [ ] Mobile Device Management (MDM) deployed if employees use personal phones for work
@@ -189,21 +189,21 @@ Expected results:
 - [ ] Operating systems and software kept updated
 - [ ] Backup solution in place for critical data
 
-**Check FileVault status:**
+Check FileVault status:
 
 ```bash
 fdesetup status
 ```
 
-**Check BitLocker:**
+Check BitLocker:
 
 ```powershell
 manage-bde -status
 ```
 
-## 7. Incident Response Plan
+7. Incident Response Plan
 
-**Checklist:**
+Checklist:
 
 - [ ] You know what constitutes a reportable breach (GDPR: 72-hour notification to supervisory authority for high-risk breaches; CCPA: notification to affected individuals)
 - [ ] You have a list of who to notify internally if a breach is suspected
@@ -219,11 +219,11 @@ A minimal incident response document should cover:
 4. Regulatory notification timelines
 5. Customer communication templates
 
-## 8. Employee Awareness
+8. Employee Awareness
 
 Technical controls fail when employees don't understand basic threats.
 
-**Checklist:**
+Checklist:
 
 - [ ] Employees know how to identify phishing emails
 - [ ] Employees know not to send customer data via personal email
@@ -231,13 +231,13 @@ Technical controls fail when employees don't understand basic threats.
 - [ ] Policy exists prohibiting use of personal cloud storage for work files
 - [ ] At least annual security awareness training conducted
 
-**Phishing simulation tools** (for testing employee awareness):
+Phishing simulation tools (for testing employee awareness):
 
 - GoPhish (free, open source, self-hosted)
 - KnowBe4 (commercial)
 - Proofpoint Security Awareness Training
 
-## Audit Schedule
+Audit Schedule
 
 | Activity | Frequency |
 |----------|-----------|
@@ -249,29 +249,29 @@ Technical controls fail when employees don't understand basic threats.
 | Test backup restoration | Annually |
 | Full privacy audit (this checklist) | Annually |
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How do I prioritize which recommendations to implement first?**
+How do I prioritize which recommendations to implement first?
 
 Start with changes that require the least effort but deliver the most impact. Quick wins build momentum and demonstrate value to stakeholders. Save larger structural changes for after you have established a baseline and can measure improvement.
 
-**Do these recommendations work for small teams?**
+Do these recommendations work for small teams?
 
-Yes, most practices scale down well. Small teams can often implement changes faster because there are fewer people to coordinate. Adapt the specifics to your team size—a 5-person team does not need the same formal processes as a 50-person organization.
+Yes, most practices scale down well. Small teams can often implement changes faster because there are fewer people to coordinate. Adapt the specifics to your team size, a 5-person team does not need the same formal processes as a 50-person organization.
 
-**How do I measure whether these changes are working?**
+How do I measure whether these changes are working?
 
 Define 2-3 measurable outcomes before you start. Track them weekly for at least a month to see trends. Common metrics include response time, completion rate, team satisfaction scores, and error frequency. Avoid measuring too many things at once.
 
-**Can I customize these recommendations for my specific situation?**
+Can I customize these recommendations for my specific situation?
 
 Absolutely. Treat these as starting templates rather than rigid rules. Every team and project has unique constraints. Test each recommendation on a small scale, observe results, and adjust the approach based on what actually works in your context.
 
-**What is the biggest mistake people make when applying these practices?**
+What is the biggest mistake people make when applying these practices?
 
 Trying to change everything at once. Pick one or two practices, implement them well, and let the team adjust before adding more. Gradual adoption sticks better than wholesale transformation, which often overwhelms people and gets abandoned.
 
-## Related Articles
+Related Articles
 
 - [Privacy Audit Checklist for SaaS Companies](/privacy-audit-checklist-for-saas-companies--gui/)
 - [Enterprise Privacy Tool Deployment Checklist](/enterprise-privacy-tool-deployment-checklist-for-multi-cloud/)
@@ -279,5 +279,5 @@ Trying to change everything at once. Pick one or two practices, implement them w
 - [Windows 10 Privacy Settings Complete Checklist](/windows-10-privacy-settings-complete-checklist/)
 - [Privacy Notice Vs Privacy Policy Difference](/privacy-notice-vs-privacy-policy-difference/)
 - [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

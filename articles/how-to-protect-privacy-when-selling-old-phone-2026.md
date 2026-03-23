@@ -16,7 +16,7 @@ intent-checked: true
 
 {% raw %}
 
-## The Risk: What Remains on Your Old Phone
+The Risk: What Remains on Your Old Phone
 
 Factory reset doesn't erase everything. Data recovery tools can recover deleted files from the storage. Your buyer might:
 - Recover deleted photos and videos
@@ -38,75 +38,75 @@ This guide walks through selling an iPhone or Android device safely.
 
 ---
 
-## Pre-Wipe Checklist (Do This First)
+Pre-Wipe Checklist (Do This First)
 
 Before factory resetting, handle these tasks:
 
-### 1. Back Up Important Data
+1. Back Up Important Data
 
 You need your photos, contacts, messages somewhere safe before wiping:
 
-**iPhone:**
+iPhone:
 ```
 Settings → [Your Name] → iCloud → Photos
-  ├─ Check "iCloud Photos" is ON
-  └─ Wait for sync to complete (check Settings → iCloud Storage)
+   Check "iCloud Photos" is ON
+   Wait for sync to complete (check Settings → iCloud Storage)
 
 Settings → [Your Name] → iCloud → Contacts
-  ├─ Check "Contacts" is ON
-  └─ Confirms contacts synced to iCloud
+   Check "Contacts" is ON
+   Confirms contacts synced to iCloud
 ```
 
 Or use Mac:
 ```
 Finder → [iPhone name] → Photos tab
-  └─ Drag important photos to Mac
+   Drag important photos to Mac
 ```
 
-**Android:**
+Android:
 ```
 Settings → Google Account → Manage your Google Account → Backup
-  ├─ Check "Backup by Google One" is ON
-  ├─ Select Photos (backs up to Google Photos)
-  └─ Select Contacts (backs up to Google Contacts)
+   Check "Backup by Google One" is ON
+   Select Photos (backs up to Google Photos)
+   Select Contacts (backs up to Google Contacts)
 ```
 
 Wait for sync to complete (check Storage → Google Photos).
 
-### 2. Download Your Data (Privacy Protection)
+2. Download Your Data (Privacy Protection)
 
 You have a legal right to your data. Download it now (before it's deleted):
 
-**Google Data Download:**
+Google Data Download:
 ```
 1. Go to https://takeout.google.com
 2. Select what to download:
-   ├─ Gmail
-   ├─ Google Photos
-   ├─ Google Calendar
-   ├─ Google Drive
-   └─ Location History
+    Gmail
+    Google Photos
+    Google Calendar
+    Google Drive
+    Location History
 3. Click "Create export"
 4. Download ZIP file to your computer
 5. Keep it safe (encrypted external drive)
 ```
 
-**Apple Data Download:**
+Apple Data Download:
 ```
 1. Go to https://privacy.apple.com
 2. Sign in with Apple ID
 3. Select "Download your data"
 4. Choose data types:
-   ├─ Photos
-   ├─ Messages
-   ├─ Mail
-   ├─ Calendar
-   └─ Device information
+    Photos
+    Messages
+    Mail
+    Calendar
+    Device information
 5. Verify identity (email/2FA)
 6. Download ZIP file
 ```
 
-**Microsoft Data Download (if using Outlook/OneDrive):**
+Microsoft Data Download (if using Outlook/OneDrive):
 ```
 1. Go to https://account.microsoft.com/privacy
 2. Download your data
@@ -115,11 +115,11 @@ You have a legal right to your data. Download it now (before it's deleted):
 
 Storing these downloads: Use encrypted external drive or secure cloud storage (Backblaze, Wasabi). Not on the phone being sold.
 
-### 3. Disable Two-Factor Authentication
+3. Disable Two-Factor Authentication
 
 If 2FA is tied to this phone (recovery codes only on this device), disable it before wiping:
 
-**Google Account:**
+Google Account:
 ```
 1. Go to https://myaccount.google.com
 2. Security (left nav)
@@ -127,7 +127,7 @@ If 2FA is tied to this phone (recovery codes only on this device), disable it be
 4. Or replace recovery method (print codes, save to password manager)
 ```
 
-**Apple Account:**
+Apple Account:
 ```
 1. Go to https://iforgot.apple.com
 2. Manage Apple ID
@@ -135,7 +135,7 @@ If 2FA is tied to this phone (recovery codes only on this device), disable it be
 4. Disable OR update recovery phone
 ```
 
-**Microsoft Account:**
+Microsoft Account:
 ```
 1. Go to https://account.microsoft.com/security
 2. Security info → Edit
@@ -145,55 +145,55 @@ If 2FA is tied to this phone (recovery codes only on this device), disable it be
 
 ---
 
-## iPhone: Complete Wipe Guide
+iPhone: Complete Wipe Guide
 
-### Step 1: Deauthorize Apps and Payment Methods
+Step 1: Deauthorize Apps and Payment Methods
 
-**Apple Pay (disable on this device):**
+Apple Pay (disable on this device):
 ```
 Settings → Wallet & Apple Pay
-  ├─ Remove all cards (swipe left, delete)
-  ├─ Remove passes (swipe left, delete)
-  └─ If cards reappear, Settings → General → Reset → Reset Location & Privacy
+   Remove all cards (swipe left, delete)
+   Remove passes (swipe left, delete)
+   If cards reappear, Settings → General → Reset → Reset Location & Privacy
 ```
 
-**App Store and iTunes:**
+App Store and iTunes:
 ```
 Settings → [Your Name] → Media & Purchases
-  ├─ Review purchases (confirm this is your account)
-  ├─ Tap device name
-  └─ Remove Device (if needed, sign out first)
+   Review purchases (confirm this is your account)
+   Tap device name
+   Remove Device (if needed, sign out first)
 ```
 
-**Bluetooth Devices:**
+Bluetooth Devices:
 ```
 Settings → Bluetooth
-  └─ Tap (i) next to each device → Forget This Device
+   Tap (i) next to each device → Forget This Device
 ```
 
-**Wi-Fi Networks (removes stored passwords):**
+Wi-Fi Networks (removes stored passwords):
 ```
 Settings → Wi-Fi
-  ├─ Tap (i) next to each network
-  └─ Forget This Network
+   Tap (i) next to each network
+   Forget This Network
 ```
 
-**VPN and Profiles:**
+VPN and Profiles:
 ```
 Settings → General → VPN & Device Management
-  └─ Remove all VPN profiles and certificates
+   Remove all VPN profiles and certificates
 ```
 
-### Step 2: Sign Out of iCloud and Apple ID
+Step 2: Sign Out of iCloud and Apple ID
 
 This is critical. Signing out disables Find My iPhone (prevents buyer from tracking you).
 
 ```
 Settings → [Your Name]
-  ├─ Find My → Find My iPhone (toggle OFF)
-  │  └─ Enter Apple ID password to confirm
-  ├─ (scroll down) Sign Out
-  └─ Enter Apple ID password (prompted)
+   Find My → Find My iPhone (toggle OFF)
+     Enter Apple ID password to confirm
+   (scroll down) Sign Out
+   Enter Apple ID password (prompted)
 ```
 
 This signs you out of:
@@ -204,9 +204,9 @@ This signs you out of:
 - iCloud Keychain
 - Find My
 
-### Step 3: Remove SIM Card
+Step 3: Remove SIM Card
 
-**Before factory reset, physically remove the SIM:**
+Before factory reset, physically remove the SIM:
 
 ```
 Use SIM eject tool (included with iPhone):
@@ -219,31 +219,31 @@ Use SIM eject tool (included with iPhone):
 
 Why now? If you erase ESIM after factory reset, it might not fully deregister.
 
-**eSIM (digital SIM):**
+eSIM (digital SIM):
 
 ```
 Settings → Cellular
-  ├─ Cellular Plans (if using eSIM)
-  ├─ Remove eSIM
-  └─ Or let it deactivate during factory reset
+   Cellular Plans (if using eSIM)
+   Remove eSIM
+   Or let it deactivate during factory reset
 ```
 
-### Step 4: Disable Find My iPhone (Again)
+Step 4: Disable Find My iPhone (Again)
 
 ```
 Settings → [Your Name] → Find My
-  ├─ Find My iPhone → toggle OFF
-  └─ Sign out of Find My (if prompted)
+   Find My iPhone → toggle OFF
+   Sign out of Find My (if prompted)
 ```
 
-This removes Activation Lock (critical—without this, new owner can't activate the phone).
+This removes Activation Lock (critical, without this, new owner can't activate the phone).
 
-### Step 5: Erase All Content and Settings
+Step 5: Erase All Content and Settings
 
 ```
 Settings → General → Transfer or Reset
-  ├─ Erase All Content and Settings
-  └─ Enter passcode when prompted
+   Erase All Content and Settings
+   Enter passcode when prompted
 ```
 
 iPhone will:
@@ -254,20 +254,20 @@ iPhone will:
 
 Wait for completion. Don't interrupt.
 
-### Step 6: Verify Erasure
+Step 6: Verify Erasure
 
 When phone reboots to Setup screen:
 
 ```
 You should see: "Hello" or "Welcome"
-  ├─ No personal data visible
-  ├─ No previous Apple ID logged in
-  └─ Ready for new owner to activate
+   No personal data visible
+   No previous Apple ID logged in
+   Ready for new owner to activate
 ```
 
 Tap through to confirm no data is accessible.
 
-### Step 7: Optional: Wipe Free Space
+Step 7: Optional: Wipe Free Space
 
 If you're paranoid (extra paranoid, even Apple says factory reset is enough):
 
@@ -281,16 +281,16 @@ After Setup screen appears:
 
 ---
 
-## Android: Complete Wipe Guide
+Android: Complete Wipe Guide
 
-### Step 1: Remove Google Account
+Step 1: Remove Google Account
 
-**Sign out of Google:**
+Sign out of Google:
 ```
 Settings → Accounts → Google
-  ├─ Select your Google account
-  ├─ (top right) Remove account
-  └─ Confirm (you'll lose synced data on this device)
+   Select your Google account
+   (top right) Remove account
+   Confirm (you'll lose synced data on this device)
 ```
 
 This disables:
@@ -299,96 +299,96 @@ This disables:
 - Google Drive sync
 - Play Store
 
-### Step 2: Disable Biometric Data
+Step 2: Disable Biometric Data
 
-**Fingerprint:**
+Fingerprint:
 ```
 Settings → Security → Biometrics → Fingerprint
-  ├─ Select each fingerprint
-  └─ Delete or Remove
+   Select each fingerprint
+   Delete or Remove
 ```
 
-**Face recognition:**
+Face recognition:
 ```
 Settings → Security → Face Unlock
-  └─ Delete Face Data (or just let factory reset remove it)
+   Delete Face Data (or just let factory reset remove it)
 ```
 
-### Step 3: Remove Payment Methods
+Step 3: Remove Payment Methods
 
-**Google Pay:**
+Google Pay:
 ```
 Google Pay app → Payment methods
-  ├─ Select each card/payment method
-  └─ Delete
+   Select each card/payment method
+   Delete
 ```
 
-**Samsung Pay (if applicable):**
+Samsung Pay (if applicable):
 ```
 Samsung Pay app → Cards
-  └─ Remove all cards
+   Remove all cards
 ```
 
-### Step 4: Remove Connected Devices
+Step 4: Remove Connected Devices
 
-**Bluetooth:**
+Bluetooth:
 ```
 Settings → Bluetooth
-  ├─ Select each paired device
-  └─ Forget / Unpair
+   Select each paired device
+   Forget / Unpair
 ```
 
-**Connected Apps:**
+Connected Apps:
 ```
 Settings → Apps → Permissions → [Permission type]
-  └─ Revoke permissions for sensitive apps
+   Revoke permissions for sensitive apps
 ```
 
-### Step 5: Disable Find My Mobile (Samsung)
+Step 5: Disable Find My Mobile (Samsung)
 
-**Samsung Find My Mobile:**
+Samsung Find My Mobile:
 ```
 Settings → Accounts → Samsung → Find My Mobile
-  ├─ Sign out
-  └─ Or disable remote tracking
+   Sign out
+   Or disable remote tracking
 ```
 
-**Google Find My Device:**
+Google Find My Device:
 ```
 Go to https://findmymobile.google.com
-  ├─ Sign in with your Google account
-  ├─ Select this device
-  └─ Click "Erase"
+   Sign in with your Google account
+   Select this device
+   Click "Erase"
 ```
 
 This removes remote lock/wipe capabilities.
 
-### Step 6: Remove SIM Card
+Step 6: Remove SIM Card
 
 ```
 Turn phone off
 Use SIM eject tool or paperclip:
-  1. Locate SIM slot (varies by phone—side or back)
+  1. Locate SIM slot (varies by phone, side or back)
   2. Insert tool into hole
   3. Tray pops out
   4. Remove SIM
   5. Power on
 ```
 
-**For eSIM (Pixel, modern Android):**
+For eSIM (Pixel, modern Android):
 ```
 Settings → Mobile network → SIM settings
-  ├─ eSIM list
-  ├─ Tap your carrier
-  └─ Remove eSIM
+   eSIM list
+   Tap your carrier
+   Remove eSIM
 ```
 
-### Step 7: Factory Reset
+Step 7: Factory Reset
 
 ```
 Settings → System → Reset options
-  ├─ Erase all data
-  └─ Erase all data (confirm)
+   Erase all data
+   Erase all data (confirm)
 ```
 
 Android will ask:
@@ -397,78 +397,78 @@ Android will ask:
 
 Takes 5-20 minutes. Phone reboots to Setup screen.
 
-### Step 8: Verify (Like iPhone)
+Step 8: Verify (Like iPhone)
 
 When Setup appears:
 ```
 You should see: "Welcome" or "Hello"
-  ├─ No previous apps
-  ├─ No Google account logged in
-  ├─ No personal data visible
-  └─ Ready for new owner
+   No previous apps
+   No Google account logged in
+   No personal data visible
+   Ready for new owner
 ```
 
 ---
 
-## Wipe Verification Checklist
+Wipe Verification Checklist
 
 Before handing over the phone, verify these:
 
-**iPhone:**
+iPhone:
 ```
-☐ Home screen is factory default (no apps)
-☐ Settings → [Your Name] is empty (no Apple ID)
-☐ Contacts app shows no contacts
-☐ Photos app shows no photos or videos
-☐ Messages app shows no conversations
-☐ Mail shows no emails configured
-☐ Calendar shows no events
-☐ Siri is disabled (Settings → Siri & Search → toggle OFF)
+ Home screen is factory default (no apps)
+ Settings → [Your Name] is empty (no Apple ID)
+ Contacts app shows no contacts
+ Photos app shows no photos or videos
+ Messages app shows no conversations
+ Mail shows no emails configured
+ Calendar shows no events
+ Siri is disabled (Settings → Siri & Search → toggle OFF)
 ```
 
-**Android:**
+Android:
 ```
-☐ Home screen shows launcher setup wizard
-☐ Settings → Accounts shows no Google account
-☐ Contacts app shows no contacts
-☐ Google Photos shows no photos
-☐ Gmail shows no account configured
-☐ Messages app shows no conversations
-☐ Calendar shows no events
-☐ Play Store prompts to add account
+ Home screen shows launcher setup wizard
+ Settings → Accounts shows no Google account
+ Contacts app shows no contacts
+ Google Photos shows no photos
+ Gmail shows no account configured
+ Messages app shows no conversations
+ Calendar shows no events
+ Play Store prompts to add account
 ```
 
 If any personal data is visible after factory reset, repeat the wipe.
 
 ---
 
-## Additional Security (Optional)
+Additional Security (Optional)
 
-### Encrypt Before Sale
+Encrypt Before Sale
 
-**iPhone (automatic):**
+iPhone (automatic):
 iPhone automatically encrypts data at rest. Factory reset is sufficient.
 
-**Android:**
+Android:
 ```
 Settings → Security → Encryption
-  ├─ Encrypt phone (older Android versions)
-  └─ Modern Android is always encrypted
+   Encrypt phone (older Android versions)
+   Modern Android is always encrypted
 ```
 
-### Use Secure Wipe Tool
+Use Secure Wipe Tool
 
 If you're extremely paranoid, use dedicated wipe tools:
 
-**Mac/Linux:**
+Mac/Linux:
 ```bash
-# Securely wipe external drive (if selling as part of bundle)
+Securely wipe external drive (if selling as part of bundle)
 shred -vfz -n 3 /path/to/file  # 3 passes
 
-# Or use DBAN (Darik's Boot and Nuke) for entire drive
+Or use DBAN (Darik's Boot and Nuke) for entire drive
 ```
 
-**Specialized tools:**
+Specialized tools:
 - DBAN (free, old school)
 - Eraser (Windows, open source)
 - CCleaner Professional (Windows/Mac, paid)
@@ -477,30 +477,30 @@ For phones, factory reset is industry-standard and sufficient.
 
 ---
 
-## Selling & Handoff
+Selling & Handoff
 
-### Before Handoff
+Before Handoff
 
-1. **Verify all data is gone** (checklist above)
-2. **Disable Activation Lock** (Apple ID sign-out for iPhone, Google sign-out for Android)
-3. **Power off device** (buyer turns it on fresh)
-4. **Remove SIM card** (keep or destroy)
-5. **Pack safely** (phone in box, original charger if available)
+1. Verify all data is gone (checklist above)
+2. Disable Activation Lock (Apple ID sign-out for iPhone, Google sign-out for Android)
+3. Power off device (buyer turns it on fresh)
+4. Remove SIM card (keep or destroy)
+5. Pack safely (phone in box, original charger if available)
 
-### Provide to Buyer
+Provide to Buyer
 
 Include:
 - USB charging cable
 - Original charger (if you have it)
 - Box or documentation (if available)
-- Accessories (screen protector, case—optional)
+- Accessories (screen protector, case, optional)
 
 What NOT to include:
 - SIM card
 - Accounts or passwords
 - Documentation with your personal info
 
-### For Legal Protection
+For Legal Protection
 
 Consider a bill of sale:
 
@@ -530,55 +530,55 @@ Keep a copy for your records.
 
 ---
 
-## If Seller Claims Data Remains
+If Seller Claims Data Remains
 
 If a buyer claims they found your data:
 
-1. **Stay calm.** Factory reset + account sign-out makes data recovery extremely difficult (requires expensive forensics).
-2. **Ask for proof.** Is it actually your data, or misidentified?
-3. **Contact phone company.** Report the device if lost/stolen (IMEI can be blacklisted).
-4. **Use Find My.** If buyer is malicious, use Apple's Find My iPhone or Google's Find My Device to locate it.
-5. **File police report** (if device was stolen).
+1. Stay calm. Factory reset + account sign-out makes data recovery extremely difficult (requires expensive forensics).
+2. Ask for proof. Is it actually your data, or misidentified?
+3. Contact phone company. Report the device if lost/stolen (IMEI can be blacklisted).
+4. Use Find My. If buyer is malicious, use Apple's Find My iPhone or Google's Find My Device to locate it.
+5. File police report (if device was stolen).
 
 For peace of mind, photograph your phone's IMEI before selling (for future claims).
 
 ---
 
-## FAQ
+FAQ
 
-**Q: Is factory reset enough to secure my data?**
+Q: Is factory reset enough to secure my data?
 
 A: Yes, for most scenarios. Buyer would need expensive forensic recovery tools. But if extremely sensitive data, use the "wipe free space" method (wait 24 hours after reset).
 
-**Q: Should I wipe the SD card too?**
+Q: Should I wipe the SD card too?
 
 A: Yes, if you have an external SD card, wipe it separately. Android factory reset doesn't always wipe external storage.
 
-**Q: What about old backups on my iCloud / Google Drive?**
+Q: What about old backups on my iCloud / Google Drive?
 
 A: Those aren't on the phone. They're in the cloud. But if you want privacy, delete them:
 - iCloud: Settings → iCloud → Manage Storage → Delete backups
 - Google Drive: https://myaccount.google.com/device-activity → Delete backups
 
-**Q: Can I remove Activation Lock before selling?**
+Q: Can I remove Activation Lock before selling?
 
 A: You MUST. Without removing Apple ID, new owner can't activate the phone. Go to Settings → [Your Name] → Find My → Find My iPhone → OFF.
 
-**Q: What if I forgot my Apple ID password?**
+Q: What if I forgot my Apple ID password?
 
 A: Go to https://iforgot.apple.com, reset password, then return to Settings to sign out.
 
-**Q: Is it safe to sell to a stranger?**
+Q: Is it safe to sell to a stranger?
 
 A: Yes, after factory reset. Physically wipe the phone, verify it's clean, then hand it over. Use secure payment (never meet with cash).
 
-**Q: Should I report the IMEI as lost/sold?**
+Q: Should I report the IMEI as lost/sold?
 
 A: Not necessary. If you report as lost, it gets blacklisted (good for recovery if stolen later, but blocks the new owner). Skip this unless the phone was actually lost.
 
 ---
 
-## Related Articles
+Related Articles
 
 - [How to Set Up Private DNS Server at Home](/how-to-set-up-private-dns-server-at-home-2026/)
 - [Best Practices for Securing Your Devices](/best-practices-securing-devices-2026/)
@@ -587,6 +587,6 @@ A: Not necessary. If you report as lost, it gets blacklisted (good for recovery 
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

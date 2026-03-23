@@ -18,7 +18,7 @@ intent-checked: true
 
 Stalkerware disguises as legitimate apps but secretly records location, messages, and calls. Detection involves checking running processes, analyzing network traffic, examining file permissions, and monitoring battery drain. iOS: Focus on jailbreak detection and MDM profiles. Android: Review installed apps, permissions, and adb logs. This technical guide covers detection methods, commands you can run, and how to preserve evidence for authorities.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand Stalkerware vs Legitimate Monitoring
+Step 1: Understand Stalkerware vs Legitimate Monitoring
 
 Legitimate monitoring (parental controls, corporate MDM):
 - Installed with user knowledge and consent
@@ -45,30 +45,30 @@ Stalkerware (illegal in most jurisdictions):
 
 Stalkerware is illegal in the US, EU, UK, Canada, Australia, and many other countries. If you suspect stalkerware, you have legal options: contact police, file a restraining order, or work with organizations like NNEDV (National Network to End Domestic Violence).
 
-### Step 2: iOS Stalkerware Detection
+Step 2: iOS Stalkerware Detection
 
-### Method 1: Check for Jailbreak
+Method 1: Check for Jailbreak
 
 Most stalkerware apps require iOS jailbreak (removal of Apple's security sandbox). Run these checks:
 
 ```bash
-# On your iPhone (using any SSH terminal app like SSH Files):
-# Try to access private directories that shouldn't be accessible:
+On your iPhone (using any SSH terminal app like SSH Files):
+Try to access private directories that shouldn't be accessible:
 ls /var/mobile/Library/Caches/
 
-# If this succeeds, your phone is likely jailbroken
-# Non-jailbroken iOS should deny access
+If this succeeds, your phone is likely jailbroken
+Non-jailbroken iOS should deny access
 
-# Check for common jailbreak artifacts:
+Check for common jailbreak artifacts:
 ls /System/Library/LaunchDaemons/ | grep -E "com.saurik|com.cydia"
 
-# Common jailbreak tweak names (stalkerware hides here):
+Common jailbreak tweak names (stalkerware hides here):
 ls /Library/MobileSubstrates/DynamicLibraries/ 2>/dev/null
 ```
 
 If jailbreak detection succeeds and you didn't authorize it, your phone is likely compromised.
 
-### Method 2: Check for MDM Profiles (Management Profiles)
+Method 2: Check for MDM Profiles (Management Profiles)
 
 Stalkerware sometimes hides as a Mobile Device Management (MDM) profile. Check Settings:
 
@@ -86,7 +86,7 @@ or your device manufacturer.
 
 Real stalkerware example: Profile named "Apple Security Update" but installed by unknown email address. Legitimate Apple MDM profiles show "Apple Inc." as the issuer.
 
-### Method 3: Check Battery and Data Usage
+Method 3: Check Battery and Data Usage
 
 Stalkerware runs constant background processes: location tracking, data upload.
 
@@ -108,19 +108,19 @@ Suspicious patterns:
 
 Real example: SpyBubble variant used 8% battery daily on background process named "System Services."
 
-### Method 4: Network Traffic Analysis
+Method 4: Network Traffic Analysis
 
 Stalkerware exfiltrates data to external servers. Monitor outbound connections:
 
 ```bash
-# Using Network Link Conditioner (Apple's tool):
-# 1. Download from Apple's Additional Tools for Xcode
-# 2. Observe network traffic spikes
+Using Network Link Conditioner (Apple's tool):
+1. Download from Apple's Additional Tools for Xcode
+2. Observe network traffic spikes
 
-# Or use Surge (network monitoring app):
-# 1. Install Surge from App Store ($3 one-time)
-# 2. Enable "Network Activity Logging"
-# 3. Look for:
+Or use Surge (network monitoring app):
+1. Install Surge from App Store ($3 one-time)
+2. Enable "Network Activity Logging"
+3. Look for:
    - Connections to IP addresses (not domain names, often obfuscated)
    - Regular data uploads at fixed intervals
    - Connections to non-US servers (many stalkerware servers are abroad)
@@ -129,7 +129,7 @@ Stalkerware exfiltrates data to external servers. Monitor outbound connections:
 
 Real example: mSpy variant connected to `185.92.75.190` (Ukrainian server) every 600 seconds, uploading 2MB data packages.
 
-### Method 5: App Store Verification
+Method 5: App Store Verification
 
 Check if all installed apps are from legitimate App Store sources:
 
@@ -159,33 +159,33 @@ Real stalkerware names to check: If you see any of these, they're definitely mal
 - MoniMaster
 - Spyier
 
-### Step 3: Android Stalkerware Detection
+Step 3: Android Stalkerware Detection
 
 Android is more vulnerable because it allows sideloading (installing apps from sources other than Google Play).
 
-### Method 1: Check App Installation Sources
+Method 1: Check App Installation Sources
 
 ```bash
-# On Android (adb shell or local terminal app):
-# List all installed apps with source:
+On Android (adb shell or local terminal app):
+List all installed apps with source:
 adb shell pm list packages -3
 
-# Third-party apps (should recognize all of them)
-# Any unfamiliar app is suspicious
+Third-party apps (should recognize all of them)
+Any unfamiliar app is suspicious
 
-# Check specifically for common stalkerware packages:
+Check specifically for common stalkerware packages:
 adb shell pm list packages | grep -E "mspy|flexispy|spytech|trackioo"
 
-# If any return results, stalkerware is installed
+If any return results, stalkerware is installed
 ```
 
-### Method 2: Check App Permissions
+Method 2: Check App Permissions
 
 ```bash
-# List which apps have dangerous permissions:
+List which apps have dangerous permissions:
 adb shell pm list packages -p | grep -E "FINE_LOCATION|CALL_LOG|READ_SMS"
 
-# Or via GUI:
+Or via GUI:
 Settings → Apps → Permissions → Location
 Settings → Apps → Permissions → Contacts
 Settings → Apps → Permissions → SMS
@@ -204,37 +204,37 @@ Real example: Stalkerware app named "Device Manager" had:
 - Call logs (read all)
 - Microphone (continuous recording)
 
-### Method 3: Check Running Processes
+Method 3: Check Running Processes
 
 ```bash
-# View all running processes:
+View all running processes:
 adb shell ps | grep -v 'com.android\|com.google'
 
-# Common stalkerware service names:
-# Look for processes with names like:
-# - service_update
-# - system_monitor
-# - device_care
-# - cloud_backup
-# - security_check
+Common stalkerware service names:
+Look for processes with names like:
+- service_update
+- system_monitor
+- device_care
+- cloud_backup
+- security_check
 
-# Anything suspicious:
+Anything suspicious:
 adb shell dumpsys package [package_name] | grep requestedPermissions
 
-# Example: Check if installed app "SystemUpdate" is legit:
+Check if installed app "SystemUpdate" is legit:
 adb shell dumpsys package com.system.update
 
-# Legitimate system updates come from Google Play Services
-# Fake updates come from unknown sources
+Legitimate system updates come from Google Play Services
+Fake updates come from unknown sources
 ```
 
-### Method 4: Check Device Administrator Apps
+Method 4: Check Device Administrator Apps
 
 ```bash
-# Stalkerware often registers as Device Administrator
-# (prevents user from uninstalling it)
+Stalkerware often registers as Device Administrator
+(prevents user from uninstalling it)
 
-# Via GUI:
+Via GUI:
 Settings → Security → Device administrators
 
 Look for any app you don't recognize.
@@ -243,47 +243,47 @@ Especially suspicious:
 - Apps with blank names
 - Apps from unknown developers
 
-# Via command line:
+Via command line:
 adb shell dumpsys devicepolicy | grep "Admin User"
 ```
 
-### Method 5: Battery and Data Anomalies
+Method 5: Battery and Data Anomalies
 
 ```bash
-# Check battery drain sources:
+Check battery drain sources:
 Settings → Battery → Battery Usage
 
-# Check for:
+Check for:
 - Background activity from unfamiliar apps
 - Services like "SystemUpdate" using >5% battery
 - GPS/Location services constantly active
 
-# Monitor data usage:
+Monitor data usage:
 Settings → Network → Data Usage
 
-# Stalkerware uploads data constantly
-# Look for regular hourly spikes (e.g., 2MB every 3600 seconds)
+Stalkerware uploads data constantly
+Look for regular hourly spikes (e.g., 2MB every 3600 seconds)
 ```
 
-### Method 6: Inspect /data Directory
+Method 6: Inspect /data Directory
 
 ```bash
-# Advanced: Requires root access (careful!)
-# Check for hidden apps or processes:
+Advanced: Requires root access (careful!)
+Check for hidden apps or processes:
 adb shell su -c "ls -la /data/data/ | grep -v com.android"
 
-# Stalkerware sometimes stores data in hidden directories
-# Named suspiciously:
-# - /data/data/com.system.config
-# - /data/data/service.update
-# - /data/data/device.monitor
+Stalkerware sometimes stores data in hidden directories
+Named suspiciously:
+- /data/data/com.system.config
+- /data/data/service.update
+- /data/data/device.monitor
 ```
 
-### Step 4: Preservation of Evidence
+Step 4: Preservation of Evidence
 
 If you suspect stalkerware, preserve evidence for legal proceedings:
 
-### Screenshots and Documentation
+Screenshots and Documentation
 
 ```
 1. Photograph your phone screen showing:
@@ -301,65 +301,65 @@ If you suspect stalkerware, preserve evidence for legal proceedings:
    - Complete app lists with installation dates
 ```
 
-### Data Export
+Data Export
 
 ```bash
-# iOS: Export and backup
-# Settings > iCloud > iCloud Backup > Back Up Now
-# Save backup to external drive
+iOS: Export and backup
+Settings > iCloud > iCloud Backup > Back Up Now
+Save backup to external drive
 
-# Android: Export data
+Android: Export data
 adb shell pm list packages > installed_apps_$(date +%Y%m%d).txt
 adb shell dumpsys > device_state_$(date +%Y%m%d).txt
 adb shell logcat > system_logs_$(date +%Y%m%d).log
 ```
 
-### Network Traffic Capture
+Network Traffic Capture
 
 ```bash
-# iOS: Use Surge or similar to export connection logs
-# Export in HAR format with timestamps
+iOS: Use Surge or similar to export connection logs
+Export in HAR format with timestamps
 
-# Android: Use packet capture
+Android: Use packet capture
 adb shell tcpdump -i any -w /sdcard/capture.pcap
-# Transfer file: adb pull /sdcard/capture.pcap
+Transfer file: adb pull /sdcard/capture.pcap
 ```
 
-### Step 5: Removal and Recovery
+Step 5: Removal and Recovery
 
-### iOS Removal
+iOS Removal
 
 ```bash
-# If jailbroken:
+If jailbroken:
 1. Connect to computer with iTunes/Finder
 2. Put phone in DFU mode
 3. Restore from backup (before stalkerware installation)
 
-# If MDM profile installed:
+If MDM profile installed:
 1. Settings > General > VPN & Device Management
 2. Tap the unknown profile
 3. Tap "Remove Management"
 4. Confirm removal
 5. Restart phone
 
-# If app-based (rare):
+If app-based (rare):
 1. Delete any suspicious apps from Home Screen
 2. Go to Settings > Apps
 3. Find suspicious app
 4. Tap "Delete"
 ```
 
-### Android Removal
+Android Removal
 
 ```bash
-# If stalkerware as system app (most dangerous):
-# Requires factory reset:
+If stalkerware as system app (most dangerous):
+Requires factory reset:
 1. Backup important data to cloud
 2. Settings > System > Reset > Erase all data
 3. Set up phone from scratch
 4. Restore data from cloud backup (NOT from previous backup)
 
-# If stalkerware as user app:
+If stalkerware as user app:
 1. Settings > Apps
 2. Find the suspicious app
 3. Tap "Uninstall"
@@ -369,25 +369,25 @@ adb shell tcpdump -i any -w /sdcard/capture.pcap
    - Tap "Deactivate"
    - Then uninstall
 
-# After removal:
+After removal:
 1. Change all passwords (from computer, not phone)
 2. Enable two-factor authentication
 3. Review recent account activity
 4. Update contact list (stalker may have stolen it)
 ```
 
-### Step 6: Get Help and Report
+Step 6: Get Help and Report
 
 Organizations assisting stalkerware victims:
 
-- **NNEDV (US)**: 1-855-738-6339 (free, confidential)
-- **Cyber Civil Rights Initiative**: cybercivilrights.org
-- **Internet Society**: isoc.org (technical resources)
-- **Local police**: File a report with screenshots and preserved evidence
+- NNEDV (US): 1-855-738-6339 (free, confidential)
+- Cyber Civil Rights Initiative: cybercivilrights.org
+- Internet Society: isoc.org (technical resources)
+- Local police: File a report with screenshots and preserved evidence
 
 Document everything for law enforcement: installation date, capabilities, duration, data stolen.
 
-### Step 7: Prevention Going Forward
+Step 7: Prevention Going Forward
 
 After removal:
 
@@ -402,44 +402,44 @@ After removal:
 8. Review Privacy Dashboard regularly (iOS 15+, Android 12+)
 ```
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to detect stalkerware on your phone?**
+How long does it take to detect stalkerware on your phone?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How To Detect And Remove Stalkerware From Android Phone](/how-to-detect-and-remove-stalkerware-from-phone-2026/)
 - [How to Detect Stalkerware on Android Phone 2026](/how-to-detect-stalkerware-on-android-phone-2026/)
@@ -447,5 +447,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Detect and Remove Stalkerware From Your iPhone and iPad](/how-to-detect-remove-stalkerware-ios-iphone/)
 - [How To Tell If Your Phone Camera Is Being Accessed Remotely](/how-to-tell-if-your-phone-camera-is-being-accessed-remotely/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -16,11 +16,11 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-By default, DNS queries on Linux go to your ISP's resolver in plaintext on UDP port 53. Anyone between you and that resolver — your ISP, your network admin, a rogue router — can log every domain you visit. DNS over HTTPS (DoH) encrypts those queries inside standard HTTPS traffic on port 443.
+By default, DNS queries on Linux go to your ISP's resolver in plaintext on UDP port 53. Anyone between you and that resolver. your ISP, your network admin, a rogue router. can log every domain you visit. DNS over HTTPS (DoH) encrypts those queries inside standard HTTPS traffic on port 443.
 
 This guide covers three approaches: the built-in `systemd-resolved` (no extra software), `dnscrypt-proxy` (flexible, supports filters), and `AdGuard Home` (self-hosted with a web UI).
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Method 1: systemd-resolved with DoH
+Step 1: Method 1: systemd-resolved with DoH
 
 Most modern Debian/Ubuntu and Fedora systems already use `systemd-resolved`. Check:
 
@@ -39,7 +39,7 @@ systemctl status systemd-resolved
 resolvectl status | head -20
 ```
 
-### Enable DNS over HTTPS in systemd-resolved
+Enable DNS over HTTPS in systemd-resolved
 
 Edit the resolved configuration:
 
@@ -84,7 +84,7 @@ Test a lookup and confirm it works:
 resolvectl query example.com
 ```
 
-### Confirm No Plaintext DNS Leaks
+Confirm No Plaintext DNS Leaks
 
 Capture traffic to check that port 53 traffic is gone:
 
@@ -95,24 +95,24 @@ dig example.com
 
 You should see no port 53 traffic if DoH is working correctly. All queries should appear on port 443.
 
-### Step 2: Method 2: dnscrypt-proxy
+Step 2: Method 2: dnscrypt-proxy
 
 `dnscrypt-proxy` supports DoH, DNSCrypt, and ODoH (Oblivious DoH). It runs as a local resolver on `127.0.0.1:53` and proxies queries through encrypted channels.
 
-### Install dnscrypt-proxy
+Install dnscrypt-proxy
 
 ```bash
-# Debian/Ubuntu
+Debian/Ubuntu
 sudo apt install dnscrypt-proxy
 
-# Fedora
+Fedora
 sudo dnf install dnscrypt-proxy
 
-# Arch
+Arch
 sudo pacman -S dnscrypt-proxy
 ```
 
-### Configure dnscrypt-proxy
+Configure dnscrypt-proxy
 
 ```bash
 sudo nano /etc/dnscrypt-proxy/dnscrypt-proxy.toml
@@ -121,22 +121,22 @@ sudo nano /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 Key settings to configure:
 
 ```toml
-# Listen on localhost port 53
+Listen on localhost port 53
 listen_addresses = ['127.0.0.1:53', '[::1]:53']
 
-# Use only DoH servers (not plain DNS)
+Use only DoH servers (not plain DNS)
 server_names = ['cloudflare', 'quad9-doh-ip4-filter-pri', 'nextdns']
 
-# Filter out servers without DNSSEC
+Filter out servers without DNSSEC
 require_dnssec = true
 
-# Filter out servers that log queries
+Filter out servers that log queries
 require_nolog = true
 
-# Filter out servers that don't require NOFILTER
+Filter out servers that don't require NOFILTER
 require_nofilter = false
 
-# Block ads and trackers with built-in blocklists
+Block ads and trackers with built-in blocklists
 [sources]
   [sources.public-resolvers]
   urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md']
@@ -144,11 +144,11 @@ require_nofilter = false
   minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
   refresh_delay = 72
 
-# Enable CLOAKING for local overrides (optional)
-# [cloaking]
-# cloaking_rules = '/etc/dnscrypt-proxy/cloaking-rules.txt'
+Enable CLOAKING for local overrides (optional)
+[cloaking]
+cloaking_rules = '/etc/dnscrypt-proxy/cloaking-rules.txt'
 
-# Block known malware/ad domains
+Block known malware/ad domains
 [blocked_names]
 blocked_names_file = '/etc/dnscrypt-proxy/blocked-names.txt'
 ```
@@ -159,7 +159,7 @@ Start and enable the service:
 sudo systemctl enable --now dnscrypt-proxy
 ```
 
-### Point systemd-resolved at dnscrypt-proxy
+Point systemd-resolved at dnscrypt-proxy
 
 Edit resolved.conf to use the local proxy:
 
@@ -194,11 +194,11 @@ Check which server is actually being used:
 dnscrypt-proxy -resolve example.com
 ```
 
-### Step 3: Method 3: AdGuard Home (Self-Hosted)
+Step 3: Method 3: AdGuard Home (Self-Hosted)
 
 AdGuard Home is a DNS server with DoH support, ad blocking, and a web interface. Good for households or small networks.
 
-### Install AdGuard Home
+Install AdGuard Home
 
 ```bash
 curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -v
@@ -211,9 +211,9 @@ During setup:
 - Set the admin interface to port 3000 (or another port)
 - Choose upstream DNS servers with DoH enabled
 
-### Configure DoH Upstream in AdGuard Home
+Configure DoH Upstream in AdGuard Home
 
-In the web UI, go to **Settings > DNS settings > Upstream DNS servers**:
+In the web UI, go to Settings > DNS settings > Upstream DNS servers:
 
 ```
 https://dns.cloudflare.com/dns-query
@@ -221,7 +221,7 @@ https://dns.quad9.net/dns-query
 https://dns.adguard-dns.com/dns-query
 ```
 
-Enable **Parallel requests** for faster lookups.
+Enable Parallel requests for faster lookups.
 
 Set your system DNS to `127.0.0.1`:
 
@@ -241,7 +241,7 @@ Lock the file against NetworkManager overwrites:
 sudo chattr +i /etc/resolv.conf
 ```
 
-### Step 4: Choose a DoH Provider
+Step 4: Choose a DoH Provider
 
 | Provider | Logs | DNSSEC | Filtering | Notes |
 |----------|------|--------|-----------|-------|
@@ -250,9 +250,9 @@ sudo chattr +i /etc/resolv.conf
 | NextDNS | Configurable | Yes | Highly configurable | Free tier available |
 | AdGuard DNS | Minimal | Yes | Ad/tracker blocking | Self-hostable |
 
-Avoid using your ISP's or Google's DNS for privacy — they log queries.
+Avoid using your ISP's or Google's DNS for privacy. they log queries.
 
-### Step 5: Verify the Full Setup
+Step 5: Verify the Full Setup
 
 Check DNS resolution is working:
 
@@ -261,30 +261,30 @@ nslookup example.com
 curl -s "https://www.dnsleaktest.com/results.json" | python3 -m json.tool | grep name
 ```
 
-Run a DNS leak test at `https://dnsleaktest.com` — all results should show your chosen provider, not your ISP.
+Run a DNS leak test at `https://dnsleaktest.com`. all results should show your chosen provider, not your ISP.
 
 Confirm DNSSEC validation:
 
 ```bash
 dig +dnssec sigfail.verteiltesysteme.net
-# Should return SERVFAIL if DNSSEC validation is working
+Should return SERVFAIL if DNSSEC validation is working
 ```
 
-## Troubleshooting Common Issues
+Troubleshooting Common Issues
 
-### DNS Resolution Fails After Configuration
+DNS Resolution Fails After Configuration
 
 If you lose DNS resolution after enabling DoH, the most likely cause is a configuration syntax error:
 
 ```bash
-# Temporary fix: use a direct DNS server
+Temporary fix: use a direct DNS server
 echo "nameserver 1.1.1.1" | sudo tee /etc/resolv.conf
 
-# Then review your configuration files for typos
+Then review your configuration files for typos
 sudo journalctl -u systemd-resolved --no-pager -n 50
 ```
 
-### Slow DNS Lookups
+Slow DNS Lookups
 
 DoH adds TLS overhead compared to plain DNS. If lookups feel slow, check latency:
 
@@ -296,19 +296,19 @@ time dig @8.8.8.8 example.com
 
 Choose the provider with the lowest latency from your location. Cloudflare consistently provides the fastest response times due to its CDN presence.
 
-### NetworkManager Overwriting resolv.conf
+NetworkManager Overwriting resolv.conf
 
 NetworkManager frequently overwrites `/etc/resolv.conf`. Prevent this:
 
 ```bash
-# /etc/NetworkManager/conf.d/dns.conf
+/etc/NetworkManager/conf.d/dns.conf
 [main]
 dns=systemd-resolved
 ```
 
 Then restart: `sudo systemctl restart NetworkManager`
 
-## Performance Comparison: DoH vs Standard DNS
+Performance Comparison: DoH vs Standard DNS
 
 | Metric | Standard DNS (UDP 53) | DNS over TLS | DNS over HTTPS |
 |--------|----------------------|--------------|----------------|
@@ -320,29 +320,29 @@ Then restart: `sudo systemctl restart NetworkManager`
 
 The first lookup is slower with DoH due to the TLS handshake, but subsequent lookups use cached connections and perform comparably.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices](/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)
 - [How to Configure DNS over HTTPS Inside a VPN Tunnel](/how-to-configure-dns-over-https-inside-vpn-tunnel/)
@@ -351,5 +351,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Proton Drive Linux Client Setup Guide 2026](/proton-drive-linux-client-setup-guide-2026/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

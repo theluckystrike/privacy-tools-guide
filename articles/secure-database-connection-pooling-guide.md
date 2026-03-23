@@ -17,104 +17,104 @@ tags: [privacy-tools-guide]
 
 Database connection poolers sit between your application and PostgreSQL (or MySQL), multiplexing thousands of app connections onto a smaller pool of actual database connections. Without secure configuration, a pooler becomes a chokepoint for credential theft and privilege escalation. This guide covers PgBouncer (the standard PostgreSQL pooler) and HikariCP (Java/JVM) with full TLS and auth hardening.
 
-## Why Pooler Security Matters
+Why Pooler Security Matters
 
-- Poolers often run with static credentials — if compromised, every tenant's connection is exposed
+- Poolers often run with static credentials. if compromised, every tenant's connection is exposed
 - Unencrypted pooler-to-database links can be sniffed on shared infrastructure
 - Over-privileged pooler credentials allow attackers to `DROP TABLE` across schemas
 - Connection limits protect against connection-exhaustion DoS attacks
 
 ---
 
-## Part 1: PgBouncer Setup
+Part 1: PgBouncer Setup
 
-### Install PgBouncer
+Install PgBouncer
 
 ```bash
 sudo apt install -y pgbouncer
 
-# Verify
+Verify
 pgbouncer --version
 ```
 
 ---
 
-### 1. Generate TLS Certificates for Pooler-to-Database Link
+1. Generate TLS Certificates for Pooler-to-Database Link
 
 ```bash
-# On the PostgreSQL server — create client cert for PgBouncer
+On the PostgreSQL server. create client cert for PgBouncer
 openssl genrsa -out pgbouncer-client-key.pem 2048
 openssl req -new -key pgbouncer-client-key.pem \
   -subj "/CN=pgbouncer-client" \
   -out pgbouncer-client.csr
 
-# Sign with your CA
+Sign with your CA
 openssl x509 -req -in pgbouncer-client.csr \
   -CA /etc/ssl/pgca/ca.crt \
   -CAkey /etc/ssl/pgca/ca.key \
   -CAcreateserial \
   -days 365 -out pgbouncer-client-cert.pem
 
-# TLS for app-to-PgBouncer
+TLS for app-to-PgBouncer
 openssl genrsa -out pgbouncer-server-key.pem 2048
 openssl req -new -key pgbouncer-server-key.pem \
   -subj "/CN=pgbouncer.internal" \
   -out pgbouncer-server.csr
-# ... sign same way
+... sign same way
 ```
 
 ---
 
-### 2. Configure PgBouncer
+2. Configure PgBouncer
 
 ```ini
-# /etc/pgbouncer/pgbouncer.ini
+/etc/pgbouncer/pgbouncer.ini
 
 [databases]
-# Map virtual database names to real databases
+Map virtual database names to real databases
 myapp_db = host=127.0.0.1 port=5432 dbname=myapp \
            user=myapp_pool_user \
            client_encoding=UTF8
 
-# Read-only replica pool
+Read-only replica pool
 myapp_ro = host=replica.internal port=5432 dbname=myapp \
            user=myapp_ro_user
 
 [pgbouncer]
-# Network
+Network
 listen_addr = 127.0.0.1   # never 0.0.0.0 unless behind firewall
 listen_port = 5432
 
-# TLS — app-to-pgbouncer
+TLS. app-to-pgbouncer
 client_tls_sslmode = require
 client_tls_key_file = /etc/pgbouncer/pgbouncer-server-key.pem
 client_tls_cert_file = /etc/pgbouncer/pgbouncer-server-cert.pem
 client_tls_ca_file = /etc/ssl/pgca/ca.crt
 
-# TLS — pgbouncer-to-postgres
+TLS. pgbouncer-to-postgres
 server_tls_sslmode = verify-full
 server_tls_key_file = /etc/pgbouncer/pgbouncer-client-key.pem
 server_tls_cert_file = /etc/pgbouncer/pgbouncer-client-cert.pem
 server_tls_ca_file = /etc/ssl/pgca/ca.crt
 
-# Pooling mode
+Pooling mode
 pool_mode = transaction   # transaction-level pooling (best throughput)
-# session pooling is required if using SET LOCAL, prepared statements, advisory locks
+session pooling is required if using SET LOCAL, prepared statements, advisory locks
 
-# Pool sizes — tune based on DB server capacity
+Pool sizes. tune based on DB server capacity
 default_pool_size = 20   # max server connections per database
 max_client_conn = 500    # max app connections to PgBouncer
 reserve_pool_size = 5    # emergency reserve
 
-# Authentication
+Authentication
 auth_type = scram-sha-256
 auth_file = /etc/pgbouncer/userlist.txt
 
-# Admin
+Admin
 admin_users = pgbouncer_admin
 stats_users = monitoring
 
-# Timeouts
+Timeouts
 server_idle_timeout = 600
 client_idle_timeout = 0
 query_timeout = 30
@@ -123,14 +123,14 @@ query_wait_timeout = 120
 
 ---
 
-### 3. Create the User List (Hashed Passwords)
+3. Create the User List (Hashed Passwords)
 
 ```bash
-# Generate SCRAM-SHA-256 hash for a user
-# In psql on PostgreSQL server:
+Generate SCRAM-SHA-256 hash for a user
+In psql on PostgreSQL server:
 psql -c "SELECT concat('\"', usename, '\" \"', passwd, '\"') FROM pg_shadow WHERE usename='myapp_pool_user';"
 
-# Paste the output into userlist.txt
+Paste the output into userlist.txt
 sudo tee /etc/pgbouncer/userlist.txt > /dev/null <<'EOF'
 "myapp_pool_user" "SCRAM-SHA-256$4096:salt_base64_here$stored_key_here:server_key_here"
 "myapp_ro_user"   "SCRAM-SHA-256$..."
@@ -143,7 +143,7 @@ sudo chown pgbouncer: /etc/pgbouncer/userlist.txt
 
 ---
 
-### 4. Least-Privilege Database Users
+4. Least-Privilege Database Users
 
 ```sql
 -- On PostgreSQL: create a pool user with minimal privileges
@@ -166,37 +166,37 @@ GRANT SELECT ON ALL TABLES IN SCHEMA public TO myapp_ro_user;
 
 ---
 
-### 5. Start and Monitor PgBouncer
+5. Start and Monitor PgBouncer
 
 ```bash
 sudo systemctl enable --now pgbouncer
 sudo systemctl status pgbouncer
 
-# Connect to PgBouncer admin console
+Connect to PgBouncer admin console
 psql -h 127.0.0.1 -p 5432 -U pgbouncer_admin pgbouncer
 
-# Admin console commands:
+Admin console commands:
 SHOW POOLS;
 SHOW CLIENTS;
 SHOW SERVERS;
 SHOW STATS;
 SHOW CONFIG;
 
-# Check current connection counts
+Check current connection counts
 SHOW POOLS;
-# database | user | cl_active | cl_waiting | sv_active | sv_idle | maxwait
+database | user | cl_active | cl_waiting | sv_active | sv_idle | maxwait
 ```
 
 ---
 
-## Part 2: HikariCP (Java/Spring Boot)
+Part 2: HikariCP (Java/Spring Boot)
 
 HikariCP is the default connection pool for Spring Boot since 2.0.
 
-### Secure Configuration
+Secure Configuration
 
 ```yaml
-# application.yml
+application.yml
 spring:
   datasource:
     url: jdbc:postgresql://pgbouncer.internal:5432/myapp_db?sslmode=verify-full\
@@ -222,7 +222,7 @@ spring:
       leak-detection-threshold: 60000  # warn if connection held >60s
 ```
 
-### Read Credentials from Vault at Startup
+Read Credentials from Vault at Startup
 
 ```java
 @Configuration
@@ -248,7 +248,7 @@ public class DataSourceConfig {
         config.setPassword(password);
         config.setMaximumPoolSize(20);
         config.setMinimumIdle(5);
-        config.setMaxLifetime(3600000);  // 1h — must be less than Vault TTL
+        config.setMaxLifetime(3600000);  // 1h. must be less than Vault TTL
 
         return new HikariDataSource(config);
     }
@@ -257,7 +257,7 @@ public class DataSourceConfig {
 
 ---
 
-## Part 3: Connection Limit Enforcement at PostgreSQL
+Part 3: Connection Limit Enforcement at PostgreSQL
 
 Even with a pooler, set limits at the database layer:
 
@@ -279,7 +279,7 @@ SELECT usename, count(*) FROM pg_stat_activity GROUP BY usename;
 
 ---
 
-## Security Checklist
+Security Checklist
 
 - [ ] PgBouncer `listen_addr` is `127.0.0.1` or private network only
 - [ ] TLS enforced on both app-to-pooler and pooler-to-database links
@@ -293,7 +293,7 @@ SELECT usename, count(*) FROM pg_stat_activity GROUP BY usename;
 
 ---
 
-## Related Reading
+Related Reading
 
 - [Secure Environment Variable Management](/secure-environment-variable-management-guide/)
 - [Secure API Gateway Setup with Kong](/kong-api-gateway-secure-setup-guide/)
@@ -301,5 +301,5 @@ SELECT usename, count(*) FROM pg_stat_activity GROUP BY usename;
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

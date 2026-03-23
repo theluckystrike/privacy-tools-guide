@@ -15,23 +15,23 @@ tags: [privacy-tools-guide, privacy]
 
 {% raw %}
 
-Windows collects diagnostic data, browsing habits, clipboard content, location data, and usage telemetry by default. Some collection can't be disabled through the UI — it requires Group Policy, registry edits, or PowerShell. This guide covers what to disable and how to verify it's actually off.
+Windows collects diagnostic data, browsing habits, clipboard content, location data, and usage telemetry by default. Some collection can't be disabled through the UI. it requires Group Policy, registry edits, or PowerShell. This guide covers what to disable and how to verify it's actually off.
 ---
 
-## What Windows Collects by Default
+What Windows Collects by Default
 
-- **Diagnostic data**: App crashes, driver failures, OS usage statistics
-- **Inking & typing personalization**: Everything you type (to improve autocomplete and handwriting recognition)
-- **Advertising ID**: Per-user ID for targeted ads across Microsoft services and third-party apps
-- **Location history**: GPS-level position data stored for 24 hours and shared with apps
-- **Search history**: Bing searches from the Start menu and taskbar
-- **Activity history**: Apps used, files opened (synced to Timeline)
-- **Clipboard history**: Contents of your clipboard (on Windows 11, synced to cloud)
-- **Wi-Fi Sense**: Shares Wi-Fi passwords with contacts (Windows 10)
+- Diagnostic data: App crashes, driver failures, OS usage statistics
+- Inking & typing personalization: Everything you type (to improve autocomplete and handwriting recognition)
+- Advertising ID: Per-user ID for targeted ads across Microsoft services and third-party apps
+- Location history: GPS-level position data stored for 24 hours and shared with apps
+- Search history: Bing searches from the Start menu and taskbar
+- Activity history: Apps used, files opened (synced to Timeline)
+- Clipboard history: Contents of your clipboard (on Windows 11, synced to cloud)
+- Wi-Fi Sense: Shares Wi-Fi passwords with contacts (Windows 10)
 
 ---
 
-## Quick Win: Privacy Settings UI
+Quick Win: Privacy Settings UI
 
 Start here before the advanced steps:
 
@@ -64,7 +64,7 @@ Settings → Privacy & security → Search permissions:
 
 ---
 
-## Disable Telemetry via Group Policy (Pro/Enterprise)
+Disable Telemetry via Group Policy (Pro/Enterprise)
 
 Group Policy Editor (`gpedit.msc`) is available on Windows Pro and Enterprise:
 
@@ -85,7 +85,7 @@ Computer Configuration → Administrative Templates → Windows Components → W
 
 ---
 
-## Registry Tweaks (All Windows Editions)
+Registry Tweaks (All Windows Editions)
 
 For Windows Home (no Group Policy Editor), use the Registry Editor (`regedit`):
 
@@ -113,12 +113,12 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /v DoNotShowFe
 
 ---
 
-## PowerShell Hardening Script
+PowerShell Hardening Script
 
 ```powershell
-# Run PowerShell as Administrator
+Run PowerShell as Administrator
 
-# Disable telemetry services
+Disable telemetry services
 $services = @(
     "DiagTrack",           # Connected User Experiences and Telemetry
     "dmwappushservice",    # WAP Push Message Routing Service
@@ -133,7 +133,7 @@ foreach ($svc in $services) {
     Write-Host "Disabled: $svc"
 }
 
-# Disable scheduled telemetry tasks
+Disable scheduled telemetry tasks
 $tasks = @(
     "\Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser",
     "\Microsoft\Windows\Application Experience\ProgramDataUpdater",
@@ -151,7 +151,7 @@ foreach ($task in $tasks) {
     Write-Host "Disabled task: $task"
 }
 
-# Disable Windows Defender telemetry (keeps AV protection, stops data sharing)
+Disable Windows Defender telemetry (keeps AV protection, stops data sharing)
 Set-MpPreference -MAPSReporting Disabled
 Set-MpPreference -SubmitSamplesConsent Never
 
@@ -160,12 +160,12 @@ Write-Host "`nDone. Reboot recommended."
 
 ---
 
-## Block Microsoft Telemetry Domains (Hosts File)
+Block Microsoft Telemetry Domains (Hosts File)
 
 Even with services disabled, Windows may use scheduled tasks or secondary processes to report telemetry. Block at the DNS/hosts level:
 
 ```powershell
-# PowerShell: append telemetry domains to hosts file
+PowerShell: append telemetry domains to hosts file
 $hostsPath = "$env:SystemRoot\System32\drivers\etc\hosts"
 $domains = @(
     "vortex.data.microsoft.com",
@@ -196,7 +196,7 @@ foreach ($d in $domains) {
 
 ---
 
-## Windows 11 Specific: Disable Recall and AI Features
+Windows 11 Specific: Disable Recall and AI Features
 
 Windows 11 24H2 introduced Copilot+ features including Recall (takes screenshots every few seconds):
 
@@ -208,33 +208,33 @@ Settings → Personalization → Device usage → toggle off all usage types
 Settings → System → Clipboard → Clipboard history: OFF
 Settings → System → Clipboard → Sync across devices: OFF
 
-# Via registry (for automation):
+Via registry (for automation):
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\screenCapture" /v Value /t REG_SZ /d Deny /f
 ```
 
 ---
 
-## Verify What's Phoning Home
+Verify What's Phoning Home
 
 ```powershell
-# Monitor network connections from Windows processes
+Monitor network connections from Windows processes
 netstat -b 5 | findstr /i "microsoft"
 
-# Or use Process Monitor from Sysinternals (free):
-# Download: live.sysinternals.com/Procmon.exe
-# Filter: Operation = TCP Connect, then filter by address contains "microsoft"
+Or use Process Monitor from Sysinternals (free):
+Download: live.sysinternals.com/Procmon.exe
+Filter: Operation = TCP Connect, then filter by address contains "microsoft"
 ```
 
 Tools like Glasswire (paid) or the free Wireshark can capture and filter traffic:
 
 ```bash
-# Windows Subsystem for Linux: use tshark (terminal Wireshark)
+Windows Subsystem for Linux: use tshark (terminal Wireshark)
 tshark -i "Wi-Fi" -f "host microsoft.com or host bing.com" -Y "tcp" -T fields -e ip.dst -e http.host
 ```
 
 ---
 
-## What You Can't Fully Disable
+What You Can't Fully Disable
 
 Some telemetry is hardcoded into Windows Update and cannot be disabled without breaking update functionality:
 
@@ -242,11 +242,11 @@ Some telemetry is hardcoded into Windows Update and cannot be disabled without b
 - Microsoft Defender sample submission (can reduce but not fully disable without compromising protection)
 - Windows Hello/Biometric data (stored locally but requires cloud authentication for some enterprise features)
 
-For users needing maximum privacy, consider: Windows LTSC edition (Long Term Servicing Channel) — stripped of most consumer telemetry by design, used in enterprise and kiosk deployments.
+For users needing maximum privacy, consider: Windows LTSC edition (Long Term Servicing Channel). stripped of most consumer telemetry by design, used in enterprise and kiosk deployments.
 
 ---
 
-## Related Articles
+Related Articles
 
 - [Windows 10 Privacy Settings Complete Checklist](/windows-10-privacy-settings-complete-checklist/)
 - [Windows Group Policy Privacy Settings Guide](/windows-group-policy-privacy-settings-guide/)
@@ -254,27 +254,27 @@ For users needing maximum privacy, consider: Windows LTSC edition (Long Term Ser
 - [Windows OneDrive Privacy Settings Guide 2026](/windows-onedrive-privacy-settings-guide-2026/)
 - [Facebook Privacy Settings 2026 Complete Guide](/facebook-privacy-settings-2026-complete-guide/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to harden windows 10 and 11 privacy settings?**
+How long does it take to harden windows 10 and 11 privacy settings?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 {% endraw %}

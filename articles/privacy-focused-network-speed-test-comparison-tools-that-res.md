@@ -17,7 +17,7 @@ voice-checked: true
 
 When you run a speed test, your browser sends data to a remote server that measures latency, download speed, and upload speed. Most commercial speed test services collect this data, aggregate it, and often sell it to third parties. For privacy-conscious developers and power users, understanding which tools respect user data becomes essential. This guide examines privacy-focused alternatives and shows you how to implement your own speed test infrastructure.
 
-## Table of Contents
+Table of Contents
 
 - [Why Standard Speed Tests Collect Your Data](#why-standard-speed-tests-collect-your-data)
 - [Open-Source Speed Test Solutions](#open-source-speed-test-solutions)
@@ -32,22 +32,22 @@ When you run a speed test, your browser sends data to a remote server that measu
 - [Speed Test Accuracy and Limitations](#speed-test-accuracy-and-limitations)
 - [Regulatory Compliance and Data Protection](#regulatory-compliance-and-data-protection)
 
-## Why Standard Speed Tests Collect Your Data
+Why Standard Speed Tests Collect Your Data
 
 Commercial speed test providers operate on advertising revenue models. Your test results contain valuable metadata: your ISP, location, connection type, and performance metrics. This information builds detailed profiles used for targeted advertising and sold to network analysis companies. Some providers retain this data indefinitely, creating permanent records of your browsing patterns and network behavior.
 
-## Open-Source Speed Test Solutions
+Open-Source Speed Test Solutions
 
-### Speedtest by Ookla (Limited Privacy)
+Speedtest by Ookla (Limited Privacy)
 
 Ookla's Speedtest remains the industry standard but collects extensive user data. Their privacy policy explicitly states they share data with third-party advertisers and analytics companies. While accurate, this approach conflicts with privacy-first workflows.
 
-### LibreSpeed
+LibreSpeed
 
 LibreSpeed is an open-source speed test implementation that you can self-host. It requires no user accounts, collects no personal data, and runs entirely on your infrastructure.
 
 ```bash
-# Deploy LibreSpeed with Docker
+Deploy LibreSpeed with Docker
 docker run -d \
   --name librespeed \
   -p 80:80 \
@@ -58,7 +58,7 @@ docker run -d \
 
 The server-side code runs entirely within your environment, meaning no third party ever receives your test data. You can verify this by examining the source code, available on GitHub under the LGPL-3.0 license.
 
-### Meshmetry Speed Test
+Meshmetry Speed Test
 
 For developers building custom testing solutions, Meshmetry provides a JavaScript library you can integrate directly into your applications:
 
@@ -82,7 +82,7 @@ worker.start();
 
 This approach gives you complete control over data handling since results never leave your configured endpoints.
 
-## Building a Custom Speed Test Server
+Building a Custom Speed Test Server
 
 For organizations requiring full data sovereignty, running your own speed test infrastructure provides the strongest privacy guarantees. Here's a minimal Flask implementation for testing:
 
@@ -113,27 +113,27 @@ if __name__ == '__main__':
 
 This server calculates throughput by measuring time taken to transfer known data sizes. For production deployments, add proper error handling and consider using chunked transfer encoding for more accurate measurements across varying connection speeds.
 
-## Evaluating Privacy Policies
+Evaluating Privacy Policies
 
 When selecting a speed test tool, examine these key factors:
 
-1. **Data Retention**: How long are test results stored? Look for providers with explicit retention policies of 24 hours or less.
+1. Data Retention: How long are test results stored? Look for providers with explicit retention policies of 24 hours or less.
 
-2. **Third-Party Sharing**: Does the provider share data with advertisers, analytics services, or data brokers? This is the primary privacy concern with commercial solutions.
+2. Third-Party Sharing: Does the provider share data with advertisers, analytics services, or data brokers? This is the primary privacy concern with commercial solutions.
 
-3. **Geographic Data**: Does the service collect precise location data? Some tools record your exact coordinates, which can be used to identify specific households.
+3. Geographic Data: Does the service collect precise location data? Some tools record your exact coordinates, which can be used to identify specific households.
 
-4. **Account Requirements**: Does the service require registration? Mandatory accounts create permanent user profiles linked to test history.
+4. Account Requirements: Does the service require registration? Mandatory accounts create permanent user profiles linked to test history.
 
-5. **Source Code Availability**: Open-source tools allow independent security audits. Review the codebase before trusting any tool with your network metadata.
+5. Source Code Availability: Open-source tools allow independent security audits. Review the codebase before trusting any tool with your network metadata.
 
-## Privacy-Preserving Alternatives
+Privacy-Preserving Alternatives
 
 For users who want accurate measurements without privacy compromises, several options exist. The Measurement Lab (M-Lab) provides research-grade tests used by academic institutions and privacy advocates. Their infrastructure operates as a non-profit, and they publish transparency reports detailing data handling practices.
 
 Your ISP may also provide speed test servers specifically designed to measure your connection performance accurately without the privacy concerns of commercial alternatives. Contact your provider to obtain their official test server addresses.
 
-## Implementation Recommendations
+Implementation Recommendations
 
 Developers integrating speed tests into applications should consider these practices:
 
@@ -144,12 +144,12 @@ Developers integrating speed tests into applications should consider these pract
 
 For organizations requiring compliance with data protection regulations, self-hosted solutions remain the only option that provides complete control over user data. This approach requires technical investment but eliminates third-party data handling entirely.
 
-## Advanced Implementation: Distributed Testing Network
+Advanced Implementation: Distributed Testing Network
 
 For teams running multiple speed tests across different geographic locations, a distributed architecture captures network behavior more accurately. Deploy lightweight testing agents on multiple VPSs:
 
 ```python
-# distributed-speed-test.py
+distributed-speed-test.py
 import subprocess
 import json
 import requests
@@ -187,7 +187,7 @@ class DistributedSpeedTest:
             self.results.append(result)
         return self.results
 
-# Usage
+Usage
 servers = {
     'us-east': {'host': 'test-us-east.example.com'},
     'eu-west': {'host': 'test-eu-west.example.com'},
@@ -204,7 +204,7 @@ for result in results:
 
 This approach reveals network conditions across multiple paths without centralizing data collection.
 
-## Threat Model: Speed Test Data Exposure
+Threat Model: Speed Test Data Exposure
 
 Understanding what data gets exposed during testing helps you choose the right tool:
 
@@ -217,13 +217,13 @@ Understanding what data gets exposed during testing helps you choose the right t
 | Device fingerprint | Low-Medium | Browser hardening reduces risk |
 | Test frequency | Medium | Patterns reveal work/life schedule |
 
-## Performance Comparison: Tools Tested
+Performance Comparison: Tools Tested
 
 Tests conducted March 2026 measuring consistency and accuracy across five speed test solutions:
 
 ```bash
 #!/bin/bash
-# speed-test-comparison.sh
+speed-test-comparison.sh
 
 echo "Testing LibreSpeed accuracy..."
 for i in {1..3}; do
@@ -234,18 +234,18 @@ done
 
 echo "Testing Measurement Lab (M-Lab)..."
 mlab-ns -s closest mlab_site nearest_site
-# Requires mlab-ns-cli installation
+Requires mlab-ns-cli installation
 ```
 
 Speed test accuracy depends on consistent network conditions. M-Lab tests show ±2% variance on stable connections; LibreSpeed shows ±3-5% depending on server load.
 
-## Building Measurement Dashboards
+Building Measurement Dashboards
 
 Create a long-term speed tracking system that stores results locally:
 
 ```bash
 #!/bin/bash
-# daily-speed-test.sh - Run via crontab
+daily-speed-test.sh - Run via crontab
 
 RESULTS_DIR="$HOME/.local/share/speed-tests"
 mkdir -p "$RESULTS_DIR"
@@ -253,11 +253,11 @@ mkdir -p "$RESULTS_DIR"
 TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
 RESULT_FILE="$RESULTS_DIR/test_$TIMESTAMP.json"
 
-# Run test and capture JSON output
+Run test and capture JSON output
 curl -s http://localhost:8080/speedtest/api/getStatus.php \
   > /tmp/speedtest_status.json
 
-# Extract key metrics
+Extract key metrics
 jq '{
   timestamp: now | todate,
   download_bps: .testState.dlStatus * 1000000,
@@ -265,10 +265,10 @@ jq '{
   latency_ms: .testState.pingStatus
 }' /tmp/speedtest_status.json > "$RESULT_FILE"
 
-# Keep only last 30 days
+Keep only last 30 days
 find "$RESULTS_DIR" -name "test_*.json" -mtime +30 -delete
 
-# Generate weekly report
+Generate weekly report
 jq -s 'group_by(.timestamp[:10]) |
   map({
     date: .[0].timestamp[:10],
@@ -281,38 +281,38 @@ jq -s 'group_by(.timestamp[:10]) |
 
 Schedule this daily to build historical performance data without any cloud dependencies.
 
-## Speed Test Accuracy and Limitations
+Speed Test Accuracy and Limitations
 
 No speed test is perfectly accurate. Understanding measurement limitations helps interpret results correctly:
 
-### Factors Affecting Accuracy
+Factors Affecting Accuracy
 
-**Time of day**: Internet congestion varies throughout the day. Testing at 3 AM yields different results than noon. For consistent measurements, test at the same time daily.
+Time of day: Internet congestion varies throughout the day. Testing at 3 AM yields different results than noon. For consistent measurements, test at the same time daily.
 
-**Server load**: The test server's capacity affects results. Overloaded servers show artificially slow speeds. M-Lab and LibreSpeed distribute load across nodes to minimize this.
+Server load: The test server's capacity affects results. Overloaded servers show artificially slow speeds. M-Lab and LibreSpeed distribute load across nodes to minimize this.
 
-**Network variability**: Your actual connection varies microsecond-by-microsecond. A single test captures one moment. Run multiple tests and average the results.
+Network variability: Your actual connection varies microsecond-by-microsecond. A single test captures one moment. Run multiple tests and average the results.
 
-**Application overhead**: The testing tool itself consumes resources, which can artificially lower speeds on resource-constrained devices.
+Application overhead: The testing tool itself consumes resources, which can artificially lower speeds on resource-constrained devices.
 
-### When Speed Tests Are Misleading
+When Speed Tests Are Misleading
 
 Speed tests can be deliberately manipulated or misinterpreted. Watch for:
 
-- **Zero-rating schemes**: ISPs might prioritize speed test traffic while throttling normal traffic
-- **Selective throttling**: ISPs throttle only specific services (video, P2P), not general web traffic
-- **Caching**: Results served from local caches appear faster than actual internet speeds
-- **Burst speeds**: Initial seconds show maximum speed; sustained speeds are lower
+- Zero-rating schemes: ISPs might prioritize speed test traffic while throttling normal traffic
+- Selective throttling: ISPs throttle only specific services (video, P2P), not general web traffic
+- Caching: Results served from local caches appear faster than actual internet speeds
+- Burst speeds: Initial seconds show maximum speed; sustained speeds are lower
 
 Real-world performance matters more than speed test numbers. Download actual files and measure throughput to verify ISP claims.
 
-## Regulatory Compliance and Data Protection
+Regulatory Compliance and Data Protection
 
 In jurisdictions with strict data protection laws, be aware of legal requirements:
 
 ```bash
 #!/bin/bash
-# compliance-check.sh - Verify speed test tool compliance
+compliance-check.sh - Verify speed test tool compliance
 
 echo "Privacy Compliance Checklist"
 echo "============================"
@@ -344,7 +344,7 @@ For organizations deploying speed testing infrastructure, these compliance consi
 
 The privacy-focused speed test ecosystem continues evolving as awareness grows. By choosing tools that align with your privacy values and understanding how network measurements work, you can maintain accurate performance monitoring without compromising user data.
 
-## Related Articles
+Related Articles
 
 - [Privacy-Focused Website Speed Test Tool That Does Not Track](/privacy-focused-website-speed-test-tool-that-does-not-track-/)
 - [Proton VPN vs Mullvad Speed Test and Privacy Audit 2026](/proton-vpn-vs-mullvad-speed-test-privacy-audit-2026/)
@@ -353,6 +353,6 @@ The privacy-focused speed test ecosystem continues evolving as awareness grows. 
 - [How to Optimize LibreWolf Browser Speed and Compatibility](/how-to-optimize-librewolf-browser-speed-and-compatibility-wi/)
 - [ChatGPT vs Claude for Generating Cypress Component Test](https://bestremotetools.com/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

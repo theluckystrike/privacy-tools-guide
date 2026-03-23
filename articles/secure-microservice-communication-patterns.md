@@ -14,31 +14,31 @@ tags: [privacy-tools-guide]
 ---
 
 {% raw %}
-# Secure Microservice Communication Patterns
+Secure Microservice Communication Patterns
 
 In a microservice architecture, the network between services is as much an attack surface as the internet-facing edge. A compromised service can pivot to any other service on the same network unless you enforce authentication and authorization between them. This guide covers four patterns from basic to production-grade zero trust.
 
-## The Problem: Flat Internal Networks
+The Problem: Flat Internal Networks
 
-In a default Kubernetes cluster or Docker network, all pods can reach all other pods on any port. If attacker code runs in any service — via a supply chain attack, SSRF, or RCE — they have unfettered access to every database, internal API, and message queue.
+In a default Kubernetes cluster or Docker network, all pods can reach all other pods on any port. If attacker code runs in any service. via a supply chain attack, SSRF, or RCE. they have unfettered access to every database, internal API, and message queue.
 
 ```
 Without isolation:
-[Auth Service] ──can reach──> [Payment Service] ──can reach──> [User DB]
-                                                ──can reach──> [Config Service]
-[Compromised Service] ──can reach──> ALL of the above
+[Auth Service] can reach> [Payment Service] can reach> [User DB]
+                                                can reach> [Config Service]
+[Compromised Service] can reach> ALL of the above
 ```
 
 ---
 
-## Pattern 1: mTLS (Mutual TLS)
+Pattern 1: mTLS (Mutual TLS)
 
-mTLS requires both client and server to present certificates. A service without a valid certificate cannot connect to another service — even within the same cluster.
+mTLS requires both client and server to present certificates. A service without a valid certificate cannot connect to another service. even within the same cluster.
 
-### Manual mTLS with Go
+Manual mTLS with Go
 
 ```go
-// server.go — service requiring client certificate
+// server.go. service requiring client certificate
 package main
 
 import (
@@ -79,7 +79,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 ```
 
 ```go
-// client.go — service presenting its certificate
+// client.go. service presenting its certificate
 package main
 
 import (
@@ -107,22 +107,22 @@ func newMTLSClient() *http.Client {
 }
 ```
 
-**Certificate issuance for mTLS**: each service needs a cert. At scale, automate with cert-manager (Kubernetes) or SPIFFE/SPIRE.
+Certificate issuance for mTLS: each service needs a cert. At scale, automate with cert-manager (Kubernetes) or SPIFFE/SPIRE.
 
 ---
 
-## Pattern 2: SPIFFE/SPIRE (Identity Framework)
+Pattern 2: SPIFFE/SPIRE (Identity Framework)
 
 SPIFFE (Secure Production Identity Framework for Everyone) assigns cryptographic identities to workloads, not to machines. A service running on pod X gets a SPIFFE ID like `spiffe://cluster.local/ns/payments/sa/payment-service`.
 
 SPIRE is the reference implementation. It issues X.509 SVIDs (SPIFFE Verifiable Identity Documents) to workloads that automatically rotate every hour.
 
 ```bash
-# Install SPIRE server and agent on Kubernetes
+Install SPIRE server and agent on Kubernetes
 kubectl apply -f https://github.com/spiffe/spire/releases/latest/download/spire-server.yaml
 kubectl apply -f https://github.com/spiffe/spire/releases/latest/download/spire-agent.yaml
 
-# Register a workload
+Register a workload
 kubectl exec -n spire spire-server-0 -- \
   spire-server entry create \
   -spiffeID spiffe://example.org/ns/default/sa/payment-service \
@@ -145,7 +145,7 @@ func getX509Source() *workloadapi.X509Source {
     return source
 }
 
-// Use SPIFFE-aware TLS — SVID rotates automatically
+// Use SPIFFE-aware TLS. SVID rotates automatically
 tlsConfig := tlsconfig.MTLSServerConfig(source, source,
     tlsconfig.AuthorizeID(spiffeid.RequireIDFromString(
         "spiffe://example.org/ns/default/sa/auth-service")))
@@ -153,18 +153,18 @@ tlsConfig := tlsconfig.MTLSServerConfig(source, source,
 
 ---
 
-## Pattern 3: Service Mesh (Istio/Linkerd)
+Pattern 3: Service Mesh (Istio/Linkerd)
 
-A service mesh injects a sidecar proxy (Envoy for Istio, ultra-lightweight proxy for Linkerd) into every pod. The sidecar handles mTLS transparently — application code does not need to implement TLS at all.
+A service mesh injects a sidecar proxy (Envoy for Istio, ultra-lightweight proxy for Linkerd) into every pod. The sidecar handles mTLS transparently. application code does not need to implement TLS at all.
 
-**Istio setup**:
+Istio setup:
 
 ```bash
-# Install Istio
+Install Istio
 curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.21.0 sh -
 istioctl install --set profile=default -y
 
-# Enable mTLS globally (STRICT = reject plaintext)
+Enable mTLS globally (STRICT = reject plaintext)
 kubectl apply -f - <<'EOF'
 apiVersion: security.istio.io/v1beta1
 kind: PeerAuthentication
@@ -177,7 +177,7 @@ spec:
 EOF
 ```
 
-**Authorization Policy** — restrict which services can call which:
+Authorization Policy. restrict which services can call which:
 
 ```yaml
 apiVersion: security.istio.io/v1beta1
@@ -204,12 +204,12 @@ spec:
 
 ---
 
-## Pattern 4: Service-to-Service JWT
+Pattern 4: Service-to-Service JWT
 
 When mTLS infrastructure is too heavy, use short-lived JWTs for service identity. Each service has an asymmetric key pair; it signs JWTs and presents them to downstream services.
 
 ```python
-# service_auth.py — shared library for service-to-service JWT
+service_auth.py. shared library for service-to-service JWT
 import jwt, time, httpx
 from pathlib import Path
 from functools import lru_cache
@@ -248,12 +248,12 @@ def verify_service_token(token: str, expected_issuer: str) -> dict:
 
 ---
 
-## Kubernetes Network Policy
+Kubernetes Network Policy
 
 Regardless of which auth pattern you use, enforce network policy to restrict traffic at the pod level:
 
 ```yaml
-# network-policy.yaml — payment-service only accepts from auth and order
+network-policy.yaml. payment-service only accepts from auth and order
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -294,7 +294,7 @@ Network policy is enforced by the CNI plugin (Calico, Cilium, Weave Net). It pro
 
 ---
 
-## Choosing the Right Pattern
+Choosing the Right Pattern
 
 | Scenario | Pattern |
 |---|---|
@@ -308,7 +308,7 @@ Start with Network Policy for immediate blast-radius reduction, then layer in mT
 
 ---
 
-## Related Reading
+Related Reading
 
 - [How to Set Up Wazuh SIEM for Small Teams](/wazuh-siem-small-teams-setup-guide/)
 - [Secure JWT Implementation Best Practices](/secure-jwt-implementation-best-practices/)
@@ -316,5 +316,5 @@ Start with Network Policy for immediate blast-radius reduction, then layer in mT
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

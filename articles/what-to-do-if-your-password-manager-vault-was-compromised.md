@@ -16,182 +16,182 @@ voice-checked: true
 
 {% raw %}
 
-Immediately disconnect the compromised device from the network, revoke active sessions in your password manager's web dashboard, and change your master password from a different, trusted device. Assume all stored passwords are compromised—start rotating the most critical ones (email, banking, admin accounts) immediately. For developers: regenerate all API keys, SSH private keys, and database credentials stored in the vault, audit access logs on affected services, and deploy updated credentials to production. Contact your password manager provider to report the incident and determine whether the breach was local (malware) or service-wide, then migrate to a new password manager with a new master password once threat is contained.
+Immediately disconnect the compromised device from the network, revoke active sessions in your password manager's web dashboard, and change your master password from a different, trusted device. Assume all stored passwords are compromised, start rotating the most critical ones (email, banking, admin accounts) immediately. For developers: regenerate all API keys, SSH private keys, and database credentials stored in the vault, audit access logs on affected services, and deploy updated credentials to production. Contact your password manager provider to report the incident and determine whether the breach was local (malware) or service-wide, then migrate to a new password manager with a new master password once threat is contained.
 
-## Immediate Actions (First 15 Minutes)
+Immediate Actions (First 15 Minutes)
 
 The first minutes after discovering a compromise are critical. Your priority is limiting damage and securing remaining accounts.
 
-### 1. Disconnect Compromised Devices
+1. Disconnect Compromised Devices
 
 If you suspect malware or keylogger involvement, immediately disconnect affected devices from the network:
 
 ```bash
-# Linux/macOS - disable network interfaces
+Linux/macOS - disable network interfaces
 sudo ifconfig en0 down
 
-# Or use Network Manager on Linux
+Or use Network Manager on Linux
 nmcli device disconnect en0
 ```
 
-Do not shut down the system if you plan to perform forensic analysis later—booting into safe mode or using a live USB to examine the system is preferable.
+Do not shut down the system if you plan to perform forensic analysis later, booting into safe mode or using a live USB to examine the system is preferable.
 
-### 2. Revoke Active Sessions
+2. Revoke Active Sessions
 
 Most password managers support session management. Revoke all active sessions immediately:
 
 ```bash
-# Bitwarden - CLI example to list and revoke sessions
+Bitwarden - CLI example to list and revoke sessions
 bw logout --session "YOUR_SESSION_KEY"
-# Then log in fresh from a known-clean device
+Then log in fresh from a known-clean device
 ```
 
 For 1Password, sign out of all devices through the web vault or mobile app settings.
 
-### 3. Change Your Master Password
+3. Change Your Master Password
 
 If you still have access to your account and suspect the master password may be compromised, change it immediately. Use a passphrase of at least 20 characters:
 
 ```bash
-# Generate a secure passphrase using a password manager or CLI
+Generate a secure passphrase using a password manager or CLI
 openssl rand -base64 24 # generates a 32-character random string
 ```
 
-## Account-Specific Recovery Steps
+Account-Specific Recovery Steps
 
 After securing your password manager, systematically work through your stored credentials.
 
-### Prioritize High-Value Accounts
+Prioritize High-Value Accounts
 
 Start with accounts that grant access to sensitive systems:
 
-1. **Cloud provider consoles** (AWS, GCP, Azure)
-2. **GitHub/GitLab** repositories
-3. **CI/CD pipelines**
-4. **Email accounts** (especially primary email)
-5. **Password managers** (if nested)
-6. **Financial accounts**
+1. Cloud provider consoles (AWS, GCP, Azure)
+2. GitHub/GitLab repositories
+3. CI/CD pipelines
+4. Email accounts (especially primary email)
+5. Password managers (if nested)
+6. Financial accounts
 
-### Use Temporary Credentials Where Possible
+Use Temporary Credentials Where Possible
 
 For service accounts and API keys that cannot be quickly rotated, generate temporary credentials:
 
 ```bash
-# AWS - create temporary credentials via STS
+AWS - create temporary credentials via STS
 aws sts get-session-token --duration-seconds 43200
 
-# Rotate GitHub personal access tokens via API
+Rotate GitHub personal access tokens via API
 curl -X POST \
  -H "Authorization: token OLD_TOKEN" \
  https://api.github.com/authorizations \
  -d '{"note":"temp","scopes":["repo"],"expires_at":"2026-03-17T00:00:00Z"}'
 ```
 
-### Review Access Logs
+Review Access Logs
 
 Check for unauthorized access during the compromise window:
 
 ```bash
-# GitHub - review security log
+GitHub - review security log
 gh auth status
 gh api -X GET /users/USERNAME/events | jq '.[] | select(.type == "PushEvent")'
 
-# AWS - CloudTrail analysis
+AWS - CloudTrail analysis
 aws cloudtrail lookup-events --lookup-attributes attributeKey=EventSource,attributeValue=iam.amazonaws.com
 ```
 
-## Forensic Analysis
+Forensic Analysis
 
 Understanding how the compromise occurred helps prevent future incidents.
 
-### Identify the Attack Vector
+Identify the Attack Vector
 
 Common attack vectors for password manager compromises:
 
-- **Clipboard monitoring**: Malware that captures clipboard content when you copy passwords
-- **Screen recording**: Keyloggers that capture keystrokes or screen content
-- **Browser extensions**: Malicious extensions with broad permissions
-- **Phishing**: Fake login pages for password manager services
-- **Service breach**: Compromise of the password manager's servers
+- Clipboard monitoring: Malware that captures clipboard content when you copy passwords
+- Screen recording: Keyloggers that capture keystrokes or screen content
+- Browser extensions: Malicious extensions with broad permissions
+- Phishing: Fake login pages for password manager services
+- Service breach: Compromise of the password manager's servers
 
-### Check for Indicators of Compromise
+Check for Indicators of Compromise
 
 Run these checks on affected systems:
 
 ```bash
-# macOS - check for unknown login items
+macOS - check for unknown login items
 ls -la ~/Library/Application\ Support/com.apple.backgroundtaskmanagementagent/
 
-# Linux - check cron jobs for persistence
+Linux - check cron jobs for persistence
 crontab -l
 cat /etc/crontab
 
-# Windows - check scheduled tasks
+Windows - check scheduled tasks
 schtasks /query /fo LIST /v
 ```
 
-### Review Recent Installations
+Review Recent Installations
 
 Examine recently installed software, browser extensions, and system modifications:
 
 ```bash
-# macOS - recently installed packages
+macOS - recently installed packages
 ls -lat /Applications | head -20
 
-# Linux - check dpkg/apt logs
+Linux - check dpkg/apt logs
 grep "Commandline" /var/log/dpkg.log | tail -20
 ```
 
-## Rebuilding Your Security Posture
+Rebuilding Your Security Posture
 
 After securing accounts, implement stronger security measures.
 
-### Enable Multi-Factor Authentication
+Enable Multi-Factor Authentication
 
 Ensure all critical accounts use hardware security keys or authenticator apps:
 
 ```bash
-# Add SSH key authentication to GitHub
+Add SSH key authentication to GitHub
 ssh-keygen -t ed25519 -C "your_email@example.com"
-# Add the public key to GitHub via web interface or:
+Add the public key to GitHub via web interface or:
 gh ssh-key add ~/.ssh/id_ed25519.pub
 ```
 
-### Implement Secret Rotation Policies
+Implement Secret Rotation Policies
 
 Set up automated rotation for critical secrets:
 
 ```bash
-# Example: Rotate database credentials in Bitwarden
-# Using Bitwarden CLI to generate and store new credentials
+Rotate database credentials in Bitwarden
+Using Bitwarden CLI to generate and store new credentials
 NEW_PASSWORD=$(openssl rand -base64 32)
 bw get item "database-production" | jq --arg "$NEW_PASSWORD" '.login.password = $NEW_PASSWORD' | bw encode | bw edit item -
 ```
 
-### Consider Architecture Changes
+Consider Architecture Changes
 
 Evaluate whether your current password manager meets your security requirements:
 
-- **Local-first options**: Consider Bitwarden with self-hosted vault, or age-encrypted files
-- **Hardware security keys**: Use YubiKey or similar for storing critical secrets
-- **Air-gapped backups**: Maintain encrypted backups on offline media
+- Local-first options: Consider Bitwarden with self-hosted vault, or age-encrypted files
+- Hardware security keys: Use YubiKey or similar for storing critical secrets
+- Air-gapped backups: Maintain encrypted backups on offline media
 
-## Prevention Strategies
+Prevention Strategies
 
 Implement these practices to reduce future risk:
 
-### Regular Security Audits
+Regular Security Audits
 
 Quarterly review of your credential inventory:
 
 ```bash
-# Bitwarden - export and audit your vault
+Bitwarden - export and audit your vault
 bw export --format json --output vault-export.json
-# Then analyze with jq
+Then analyze with jq
 cat vault-export.json | jq '[.[] | select(.login.password | length < 16)] | length'
 ```
 
-### Device Security Hardening
+Device Security Hardening
 
 Secure the devices you use to access your password manager:
 
@@ -200,40 +200,40 @@ Secure the devices you use to access your password manager:
 - Use a dedicated device for sensitive operations
 - Consider separate user profiles for work and personal
 
-### Network Security
+Network Security
 
 Isolate your password manager access:
 
 ```bash
-# Use a VPN when accessing password managers on public networks
-# Configure your firewall to restrict outbound connections
+Use a VPN when accessing password managers on public networks
+Configure your firewall to restrict outbound connections
 sudo ufw default deny outgoing
 sudo ufw allow out to any port 443 # HTTPS only
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [What Happens If Password Manager Company](/what-happens-if-password-manager-company-closes/)
 - [Best Password Manager for Developers: A Technical Guide](/best-password-manager-for-developers/)
@@ -241,5 +241,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Audit Your Password Manager Vault: A Practical Guide](/how-to-audit-your-password-manager-vault/)
 - [Handle Password Manager on Lost Phone: Immediate](/how-to-handle-password-manager-on-lost-phone-immediate-steps/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

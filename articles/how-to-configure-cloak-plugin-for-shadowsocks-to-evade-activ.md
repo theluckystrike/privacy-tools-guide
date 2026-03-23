@@ -20,7 +20,7 @@ Active probing detection represents one of the most sophisticated censorship tec
 
 This guide walks through installing and configuring the Cloak plugin to transform your Shadowsocks setup into something that resists active probing detection.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -30,20 +30,20 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand Active Probing
+Step 1: Understand Active Probing
 
 When a censor performs active probing, they send packets designed to trigger specific responses from known circumvention protocols. Shadowsocks servers respond in ways that reveal the protocol, enabling censors to identify and block the connection even when encryption prevents content inspection. Cloak addresses this by multiplexing Shadowsocks traffic over a TLS tunnel that looks indistinguishable from regular HTTPS traffic.
 
 The plugin operates at the transport layer, meaning your Shadowsocks configuration remains unchanged. Cloak handles the obfuscation transparently, creating a dual-layer architecture where the outer TLS connection resists classification while the inner Shadowsocks connection provides the actual proxy functionality.
 
-### Step 2: Install Cloak
+Step 2: Install Cloak
 
 Cloak is written in Go and compiles to a single binary. The installation process varies by operating system, but the general approach involves downloading the compiled binary or building from source.
 
 On Linux servers, download the appropriate binary:
 
 ```bash
-# Download the latest release (check github.com/cbeuw/Cloak for current version)
+Download the latest release (check github.com/cbeuw/Cloak for current version)
 VERSION="v2.2.1"
 wget "https://github.com/cbeuw/Cloak/releases/download/${VERSION}/ck-server-linux-amd64"
 chmod +x ck-server-linux-amd64
@@ -62,7 +62,7 @@ Verify the installation:
 ck-server -version
 ```
 
-### Step 3: Server-Side Configuration
+Step 3: Server-Side Configuration
 
 Cloak requires a configuration file in JSON format. Create `/etc/cloak.json` on your server with the following structure:
 
@@ -82,7 +82,7 @@ Cloak requires a configuration file in JSON format. Create `/etc/cloak.json` on 
 Generate the required cryptographic keys using the ck-server binary:
 
 ```bash
-# Generate keys (run locally or use a key generation tool)
+Generate keys (run locally or use a key generation tool)
 ck-server -keygen
 ```
 
@@ -99,7 +99,7 @@ sudo touch /var/lib/cloak/users.json
 
 The database stores user credentials and connection statistics. Each user entry includes their UID, data transfer limits, and connection parameters.
 
-### Step 4: Configure Shadowsocks with Cloak
+Step 4: Configure Shadowsocks with Cloak
 
 Your Shadowsocks configuration needs modification to work with Cloak. Edit your Shadowsocks server configuration (typically in `/etc/shadowsocks-libev/config.json`):
 
@@ -118,10 +118,10 @@ The key change is setting the server to localhost on port 8443. Shadowsocks now 
 Restart both services:
 
 ```bash
-# Restart Shadowsocks
+Restart Shadowsocks
 sudo systemctl restart shadowsocks-libev
 
-# Start Cloak
+Start Cloak
 sudo ck-server -c /etc/cloak.json
 ```
 
@@ -132,7 +132,7 @@ sudo systemctl enable cloak
 sudo systemctl start cloak
 ```
 
-### Step 5: Client-Side Configuration
+Step 5: Client-Side Configuration
 
 On client machines, you need both a Shadowsocks client and the Cloak plugin. Install Cloak using the same method as the server, then configure your client.
 
@@ -153,7 +153,7 @@ Create a client configuration file `/etc/cloak-client.json`:
 }
 ```
 
-The `ServerName` field should match a valid TLS certificate on your server—this helps the connection pass through TLS inspection systems.
+The `ServerName` field should match a valid TLS certificate on your server, this helps the connection pass through TLS inspection systems.
 
 Configure your Shadowsocks client to use the Cloak plugin. In many clients, this means adding the plugin path and enabling it:
 
@@ -162,7 +162,7 @@ Configure your Shadowsocks client to use the Cloak plugin. In many clients, this
 
 When the client connects, it performs a TLS handshake using the server's domain name. The connection appears identical to legitimate HTTPS traffic to external observers. The inner Shadowsocks protocol only activates after the TLS tunnel is established.
 
-### Step 6: Manage Users
+Step 6: Manage Users
 
 Cloak includes a command-line tool for user management. Add a new user:
 
@@ -190,11 +190,11 @@ Remove a user:
 ck-server -deluser -c /etc/cloak.json -u USER_UID
 ```
 
-## Production Considerations
+Production Considerations
 
 For production deployments, consider these additional measures:
 
-**TLS Certificate**: Use a valid TLS certificate from Let's Encrypt. Cloak's TLS tunneling relies on proper certificate validation to establish trust.
+TLS Certificate: Use a valid TLS certificate from Let's Encrypt. Cloak's TLS tunneling relies on proper certificate validation to establish trust.
 
 ```bash
 sudo certbot certonly -d your-domain.com
@@ -202,18 +202,18 @@ sudo cp /etc/letsencrypt/live/your-domain.com/fullchain.pem /etc/cloak/tls.crt
 sudo cp /etc/letsencrypt/live/your-domain.com/privkey.pem /etc/cloak/tls.key
 ```
 
-**Obfuscated Servers**: Cloak works best when hosted on IP addresses that aren't already flagged. Consider using dedicated IPs for your Shadowsocks-Cloak setup rather than shared hosting.
+Obfuscated Servers: Cloak works best when hosted on IP addresses that aren't already flagged. Consider using dedicated IPs for your Shadowsocks-Cloak setup rather than shared hosting.
 
-**Firewall Configuration**: Ensure only port 443 is exposed externally. Shadowsocks on port 8443 should bind only to localhost.
+Firewall Configuration: Ensure only port 443 is exposed externally. Shadowsocks on port 8443 should bind only to localhost.
 
-## Troubleshooting
+Troubleshooting
 
 If connections fail, verify these common issues:
 
-1. **Certificate validation**: Ensure the client has the correct time and can validate the server's TLS certificate
-2. **Firewall rules**: Confirm port 443 accepts incoming connections
-3. **Keys match**: Verify UID, public key, and private key are consistent between server and client
-4. **Service status**: Check that both Cloak and Shadowsocks are running:
+1. Certificate validation: Ensure the client has the correct time and can validate the server's TLS certificate
+2. Firewall rules: Confirm port 443 accepts incoming connections
+3. Keys match: Verify UID, public key, and private key are consistent between server and client
+4. Service status: Check that both Cloak and Shadowsocks are running:
 
 ```bash
 systemctl status cloak
@@ -230,29 +230,29 @@ Cloak provides protection against active probing by transforming your Shadowsock
 ---
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to configure cloak plugin for shadowsocks to evade?**
+How long does it take to configure cloak plugin for shadowsocks to evade?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Best Email Encryption Plugin Thunderbird](/best-email-encryption-plugin-thunderbird/)
 - [China Censorship Circumvention Tool Comparison Shadowsocks V](/china-censorship-circumvention-tool-comparison-shadowsocks-v/)
@@ -261,5 +261,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [VPN Traffic Obfuscation Techniques](/vpn-traffic-obfuscation-techniques-shadowsocks-stunnel-compa/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

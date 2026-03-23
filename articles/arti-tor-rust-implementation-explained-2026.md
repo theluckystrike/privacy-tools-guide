@@ -16,9 +16,9 @@ voice-checked: true
 
 {% raw %}
 
-Arti is a memory-safe Rust rewrite of the Tor anonymity protocol, replacing the original C implementation with stronger security guarantees against buffer overflows and use-after-free vulnerabilities. By 2026 it is production-ready, offering modular crates — `arti-client` for high-level integration, `tor-proto` for the core protocol, and `tor-circmgr` for circuit management — that developers can embed directly into Rust applications. This guide covers Arti's architecture, integration examples, performance tuning, and security best practices for privacy-focused projects.
+Arti is a memory-safe Rust rewrite of the Tor anonymity protocol, replacing the original C implementation with stronger security guarantees against buffer overflows and use-after-free vulnerabilities. By 2026 it is production-ready, offering modular crates. `arti-client` for high-level integration, `tor-proto` for the core protocol, and `tor-circmgr` for circuit management. that developers can embed directly into Rust applications. This guide covers Arti's architecture, integration examples, performance tuning, and security best practices for privacy-focused projects.
 
-## Table of Contents
+Table of Contents
 
 - [Why Rust for Tor](#why-rust-for-tor)
 - [Arti Architecture Overview](#arti-architecture-overview)
@@ -33,7 +33,7 @@ Arti is a memory-safe Rust rewrite of the Tor anonymity protocol, replacing the 
 - [Error Handling Patterns](#error-handling-patterns)
 - [Related Reading](#related-reading)
 
-## Why Rust for Tor
+Why Rust for Tor
 
 The original Tor implementation relies on C, a language prone to memory safety issues. Rust's ownership model and borrow checker eliminate entire classes of bugs, including buffer overflows and use-after-free vulnerabilities. These security properties are critical for anonymity software, where a single vulnerability could deanonymize users.
 
@@ -41,7 +41,7 @@ Beyond memory safety, Rust provides excellent performance characteristics. The T
 
 The Arti project also addresses long-standing architectural complaints about the C implementation. The codebase is significantly easier to audit, the module boundaries are cleaner, and async Rust's structured concurrency model prevents an entire category of race conditions that the C tor daemon had to handle manually.
 
-## Arti Architecture Overview
+Arti Architecture Overview
 
 Arti splits into several key crates that handle specific protocol responsibilities:
 
@@ -52,9 +52,9 @@ Arti splits into several key crates that handle specific protocol responsibiliti
 - `tor-dirmgr`: Directory management and caching
 - `arti-client`: High-level API for applications embedding Tor
 
-This modular design allows developers to use individual components or the complete stack. The `arti-client` crate provides the simplest integration path for most applications. If you need custom behavior, you can compose lower-level crates directly — for instance, using `tor-circmgr` without `arti-client` if you want a non-standard circuit policy.
+This modular design allows developers to use individual components or the complete stack. The `arti-client` crate provides the simplest integration path for most applications. If you need custom behavior, you can compose lower-level crates directly. for instance, using `tor-circmgr` without `arti-client` if you want a non-standard circuit policy.
 
-## Installing and Setting Up Arti
+Installing and Setting Up Arti
 
 Add Arti to your Rust project's `Cargo.toml`:
 
@@ -79,9 +79,9 @@ cargo install arti
 arti proxy -p 9150
 ```
 
-This launches a SOCKS5 proxy on port 9150. You can then configure applications — browsers, curl, wget — to use `127.0.0.1:9150` as their SOCKS proxy.
+This launches a SOCKS5 proxy on port 9150. You can then configure applications. browsers, curl, wget. to use `127.0.0.1:9150` as their SOCKS proxy.
 
-## Basic Integration Example
+Basic Integration Example
 
 Initialize a Tor client with default configuration:
 
@@ -109,9 +109,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 This example demonstrates bootstrapping a Tor client and establishing an anonymous connection. The client automatically handles circuit construction, guard relay selection, and protocol negotiation.
 
-For applications that need to make multiple concurrent connections, reuse the same `TorClient` instance rather than creating a new one per request. Each `TorClient` maintains its own circuit pool and guard state — creating multiple clients wastes resources and reduces anonymity by fragmenting your guard set.
+For applications that need to make multiple concurrent connections, reuse the same `TorClient` instance rather than creating a new one per request. Each `TorClient` maintains its own circuit pool and guard state. creating multiple clients wastes resources and reduces anonymity by fragmenting your guard set.
 
-## Understanding Circuit Management
+Understanding Circuit Management
 
 Tor routes traffic through three relays: entry guard, middle relay, and exit node. Arti's circuit manager (`tor-circmgr`) handles this complexity automatically, but developers can customize behavior:
 
@@ -146,7 +146,7 @@ let stream_b = client.connect_with_prefs(
 ).await?;
 ```
 
-## Directory Authority Interaction
+Directory Authority Interaction
 
 Arti caches directory information to reduce latency, but developers can control caching behavior:
 
@@ -165,9 +165,9 @@ let authorities = vec![
 
 Custom directory authorities enable private Tor networks or testing environments. The fingerprint parameter validates authority certificates, preventing man-in-the-middle attacks on directory connections.
 
-For development and testing, Arti supports `chutney` — the Tor Project's tool for running local Tor networks. Configure Arti to use your chutney network's authorities during integration testing to avoid polluting the public network with test traffic.
+For development and testing, Arti supports `chutney`. the Tor Project's tool for running local Tor networks. Configure Arti to use your chutney network's authorities during integration testing to avoid polluting the public network with test traffic.
 
-## Working with Hidden Services
+Working with Hidden Services
 
 Arti supports creating and accessing onion services (formerly hidden services):
 
@@ -186,9 +186,9 @@ println!("Onion service address: {}.onion", service.ed25519_key());
 
 The published onion service automatically handles circuit creation for both client and service ends. The `.onion` address becomes accessible through the Tor network once bootstrapping completes.
 
-Version 3 onion services (v3) are the current standard. They use 56-character addresses based on Ed25519 public keys, offering much stronger cryptographic properties than the deprecated v2 services. Arti only supports v3 onion services — if you encounter legacy v2 addresses in the wild, they will not connect.
+Version 3 onion services (v3) are the current standard. They use 56-character addresses based on Ed25519 public keys, offering much stronger cryptographic properties than the deprecated v2 services. Arti only supports v3 onion services. if you encounter legacy v2 addresses in the wild, they will not connect.
 
-## Performance Considerations
+Performance Considerations
 
 By 2026, Arti performance has improved substantially through several optimization rounds. Key performance tips include:
 
@@ -212,33 +212,33 @@ cache_dir = "/var/cache/arti"
 state_dir = "/var/lib/arti"
 ```
 
-## Arti vs C Tor: Key Differences
+Arti vs C Tor: Key Differences
 
 Arti is not a drop-in replacement in all scenarios. Key differences to consider:
 
-**Performance**: Arti and C Tor are comparable for typical workloads. Arti has a slight edge in concurrent stream handling thanks to Tokio's async runtime, while C Tor may perform better in relay mode (Arti does not currently support relay operation).
+Performance: Arti and C Tor are comparable for typical workloads. Arti has a slight edge in concurrent stream handling thanks to Tokio's async runtime, while C Tor may perform better in relay mode (Arti does not currently support relay operation).
 
-**API surface**: C Tor exposes a control port protocol. Arti provides a native Rust API and a compatible control port implementation, but some advanced control port commands are not yet implemented.
+API surface: C Tor exposes a control port protocol. Arti provides a native Rust API and a compatible control port implementation, but some advanced control port commands are not yet implemented.
 
-**Relay mode**: As of 2026, Arti does not support running as a Tor relay or bridge. If you need to run a relay, continue using C Tor for that role while using Arti for client applications.
+Relay mode: As of 2026, Arti does not support running as a Tor relay or bridge. If you need to run a relay, continue using C Tor for that role while using Arti for client applications.
 
-**Pluggable transports**: Arti supports pluggable transports (Snowflake, obfs4) for censorship-circumvention scenarios, matching C Tor's capability in this area.
+Pluggable transports: Arti supports pluggable transports (Snowflake, obfs4) for censorship-circumvention scenarios, matching C Tor's capability in this area.
 
-## Security Best Practices
+Security Best Practices
 
 When embedding Arti, follow these security practices:
 
-Validate your configuration at startup. Arti's `TorClientConfigBuilder::build()` returns an error for invalid configurations — surface these errors loudly rather than falling back to insecure defaults.
+Validate your configuration at startup. Arti's `TorClientConfigBuilder::build()` returns an error for invalid configurations. surface these errors loudly rather than falling back to insecure defaults.
 
 Monitor circuit failures for potential attack indicators. A surge in `CircuitTimeout` or `NoGuardsAvailable` errors may indicate active interference with your Tor connections.
 
 Keep Arti updated. The Tor protocol evolves, and older versions may lose the ability to connect to the network as the directory authorities stop serving older consensus formats.
 
-Use system DNS resolution through the Tor network rather than leaking DNS queries to your local resolver. Arti routes DNS lookups through the Tor circuit when you use `TorClient::connect()` — never resolve hostnames outside the Tor network in privacy-sensitive applications.
+Use system DNS resolution through the Tor network rather than leaking DNS queries to your local resolver. Arti routes DNS lookups through the Tor circuit when you use `TorClient::connect()`. never resolve hostnames outside the Tor network in privacy-sensitive applications.
 
 Avoid disabling security features for convenience. Features like strict node selection and entry guard rotation exist to protect users from traffic analysis.
 
-## Error Handling Patterns
+Error Handling Patterns
 
 Applications must handle several failure modes:
 
@@ -261,21 +261,21 @@ match client.connect(("example.com", 443)).await {
 
 Circuit timeouts occur when relays become unresponsive. Exit unavailability typically indicates that no relay in the network allows your target port. Guard availability errors suggest configuration problems with entry node selection.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Is Arti ready for production use in 2026?**
+Is Arti ready for production use in 2026?
 Yes. The Tor Project declared Arti production-ready for client use in 2025. It is not yet suitable for relay operation, but for anonymized client connections it is stable and actively maintained.
 
-**Can I use Arti with Tor Browser?**
-Tor Browser still uses the C Tor implementation internally. However, you can run Arti as a separate SOCKS5 proxy on port 9150 and configure Tor Browser to use it — though this is not officially supported and may affect anonymity properties.
+Can I use Arti with Tor Browser?
+Tor Browser still uses the C Tor implementation internally. However, you can run Arti as a separate SOCKS5 proxy on port 9150 and configure Tor Browser to use it. though this is not officially supported and may affect anonymity properties.
 
-**How does Arti handle pluggable transports for censorship circumvention?**
+How does Arti handle pluggable transports for censorship circumvention?
 Arti supports the pluggable transport API. You can configure Snowflake or obfs4 bridges in your Arti configuration the same way you would in `torrc`. The external transport binary handles the obfuscation layer while Arti handles the Tor protocol.
 
-**Does embedding Arti expose my application to Tor's legal considerations?**
-Embedding Arti makes your application a Tor client, not a relay. The legal considerations are the same as using the Tor Browser or any other Tor client software — predominantly your application routes traffic through the Tor network, it does not carry others' traffic.
+Does embedding Arti expose my application to Tor's legal considerations?
+Embedding Arti makes your application a Tor client, not a relay. The legal considerations are the same as using the Tor Browser or any other Tor client software. predominantly your application routes traffic through the Tor network, it does not carry others' traffic.
 
-## Related Articles
+Related Articles
 
 - [Nym Mixnet vs Tor Comparison Explained: A Technical Guide](/nym-mixnet-vs-tor-comparison-explained/)
 - [Tor Browser Threat Model Explained for Developers](/tor-browser-threat-model-explained-developers/)
@@ -283,5 +283,5 @@ Embedding Arti makes your application a Tor client, not a relay. The legal consi
 - [How to Use Tor Browser Safely](/tor-browser-safe-usage-guide)
 - [Tor Network Censorship Resistance Explained](/tor-network-censorship-resistance-explained/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -16,9 +16,9 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-Union organizers in hostile employer environments need a threat model that accounts for corporate surveillance capabilities—email monitoring, badge swipes, video surveillance, and potential infiltration—while remaining practical for organizing work. This guide uses the STRIDE framework adapted for union contexts, showing you how to identify your assets (communication metadata, membership lists, meeting locations), map adversary capabilities, and implement concrete countermeasures that developers and power users can deploy immediately.
+Union organizers in hostile employer environments need a threat model that accounts for corporate surveillance capabilities, email monitoring, badge swipes, video surveillance, and potential infiltration, while remaining practical for organizing work. This guide uses the STRIDE framework adapted for union contexts, showing you how to identify your assets (communication metadata, membership lists, meeting locations), map adversary capabilities, and implement concrete countermeasures that developers and power users can deploy immediately.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding Your Adversary](#understanding-your-adversary)
 - [Building Your Threat Model](#building-your-threat-model)
@@ -32,7 +32,7 @@ Union organizers in hostile employer environments need a threat model that accou
 - [Budgeting for Security](#budgeting-for-security)
 - [Incident Response During Active Threat](#incident-response-during-active-threat)
 
-## Understanding Your Adversary
+Understanding Your Adversary
 
 Hostile employers often possess significant resources: corporate security teams, legal departments, private investigators, and sometimes access to sophisticated surveillance technology. Your threat model must account for these capabilities while remaining practical for organizing efforts.
 
@@ -43,11 +43,11 @@ Start by mapping what an adversary can theoretically do versus what they actuall
 - Social media monitoring tools
 - Possibility of "labor spy" infiltration
 
-## Building Your Threat Model
+Building Your Threat Model
 
 A practical threat model uses the STRIDE framework adapted for organizing contexts: Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, and Elevation of Privilege.
 
-### Step 1: Asset Identification
+Step 1: Asset Identification
 
 Identify what you need to protect. For union organizers, this typically includes:
 
@@ -60,7 +60,7 @@ Identify what you need to protect. For union organizers, this typically includes
 Create a simple asset inventory in a structured format:
 
 ```python
-# assets.py - Simple asset inventory for threat modeling
+assets.py - Simple asset inventory for threat modeling
 assets = {
     "communications": {
         "sensitivity": "high",
@@ -80,7 +80,7 @@ assets = {
 }
 ```
 
-### Step 2: Threat Actor Analysis
+Step 2: Threat Actor Analysis
 
 Document specific threats using a severity matrix:
 
@@ -91,45 +91,45 @@ Document specific threats using a severity matrix:
 | Social engineering | High | Medium | Training, verification protocols |
 | Physical surveillance | Medium | Medium | OPSEC procedures, counter-surveillance |
 
-### Step 3: Attack Vector Mapping
+Step 3: Attack Vector Mapping
 
 Consider how each adversary might access your assets:
 
-**Digital attack vectors:**
+Digital attack vectors:
 - Phishing emails targeting organizing email addresses
 - Compromised accounts through password reuse
 - Malware on personal devices
 - SIM swapping for phone number takeover
 - Keyloggers on shared or public computers
 
-**Physical attack vectors:**
+Physical attack vectors:
 - Shoulder surfing in public spaces
 - Document theft from cars or homes
 - Planted informants at meetings
 - Trash diving for discarded materials
 
-## Practical Countermeasures
+Practical Countermeasures
 
-### Secure Communication Architecture
+Secure Communication Architecture
 
 Use a defense-in-depth approach to communications:
 
 ```bash
-# Signal configuration for high-security use
-# Enable disappearing messages by default
+Signal configuration for high-security use
+Enable disappearing messages by default
 signal-cli -u +1234567890 set-expiration --expiration 3600 *
 
-# Use Signal groups with strict membership
-# Create separate groups for different organizing activities
-# Never use work devices for union communications
+Use Signal groups with strict membership
+Create separate groups for different organizing activities
+Never use work devices for union communications
 ```
 
 For sensitive discussions, consider layered encryption:
 
 ```python
-# Use multiple encryption layers for sensitive communications
-# Layer 1: Signal (transport encryption)
-# Layer 2: PGP for additional protection on stored messages
+Use multiple encryption layers for sensitive communications
+Layer 1: Signal (transport encryption)
+Layer 2: PGP for additional protection on stored messages
 
 from cryptography.fernet import Fernet
 import base64
@@ -145,41 +145,41 @@ def double_encrypt(message, key1, key2):
     return base64.b64encode(double_encrypted)
 ```
 
-### Device Security Checklist
+Device Security Checklist
 
 Implement these technical controls on devices used for organizing:
 
-1. **Enable full disk encryption** - FileVault on macOS, BitLocker on Windows, LUKS on Linux
-2. **Use a strong passphrase** - Minimum 20 characters, stored in password manager
-3. **Enable automatic updates** - Security patches within 48 hours of release
-4. **Use a separate device** - Dedicated phone and laptop for organizing work
-5. **Configure secure messaging** - Signal with disappearing messages enabled
-6. **Enable Find My Device** - Remote wipe capability for lost/stolen devices
-7. **Use VPN always** - Protect network traffic from local surveillance
+1. Enable full disk encryption - FileVault on macOS, BitLocker on Windows, LUKS on Linux
+2. Use a strong passphrase - Minimum 20 characters, stored in password manager
+3. Enable automatic updates - Security patches within 48 hours of release
+4. Use a separate device - Dedicated phone and laptop for organizing work
+5. Configure secure messaging - Signal with disappearing messages enabled
+6. Enable Find My Device - Remote wipe capability for lost/stolen devices
+7. Use VPN always - Protect network traffic from local surveillance
 
-### Operational Security Procedures
+Operational Security Procedures
 
 Establish routines that minimize risk exposure:
 
-**Meeting security:**
+Meeting security:
 - Rotate meeting locations frequently
 - Use code words for sensitive discussions
 - Designate security observers
 - Search for surveillance devices before sensitive meetings
 - Leave devices outside meeting rooms
 
-**Information handling:**
+Information handling:
 - Need-to-know distribution for member data
 - Regular purging of unnecessary communications
 - Secure deletion of strategy documents after campaigns
 - Physical security for paper documents
 
-## Incident Response Planning
+Incident Response Planning
 
 Prepare for potential security incidents with a documented response plan:
 
 ```yaml
-# incident-response.yaml
+incident-response.yaml
 incident_response:
   device_compromised:
     - Immediately disconnect from networks
@@ -200,7 +200,7 @@ incident_response:
     - Adjust security protocols
 ```
 
-## Continuous Assessment
+Continuous Assessment
 
 Threat models require regular updates as conditions change. Schedule quarterly reviews of:
 
@@ -211,14 +211,14 @@ Threat models require regular updates as conditions change. Schedule quarterly r
 
 Document these reviews and adjust countermeasures accordingly. Security is an ongoing process, not a one-time configuration.
 
-## Advanced Counter-Surveillance Tradecraft
+Advanced Counter-Surveillance Tradecraft
 
-### TEMPEST and Eavesdropping Mitigation
+TEMPEST and Eavesdropping Mitigation
 
 Protect against sophisticated electronic surveillance:
 
 ```python
-# Counter-surveillance device detection
+Counter-surveillance device detection
 class CounterSurveillanceAssessment:
     def __init__(self, meeting_location):
         self.location = meeting_location
@@ -263,7 +263,7 @@ class CounterSurveillanceAssessment:
         }
 ```
 
-### Social Engineering Defense
+Social Engineering Defense
 
 Build resistance to infiltration and social engineering:
 
@@ -294,7 +294,7 @@ Social Engineering Prevention:
     - Suspicious documentation requests
 ```
 
-## Legal Defense Framework
+Legal Defense Framework
 
 Prepare for potential legal actions:
 
@@ -374,13 +374,13 @@ class LegalDefenseFramework:
         }
 ```
 
-## Secure Information Sharing Infrastructure
+Secure Information Sharing Infrastructure
 
 Build secure systems for organizing communication:
 
 ```bash
 #!/bin/bash
-# Setup secure information sharing infrastructure
+Setup secure information sharing infrastructure
 
 setup_secure_communication() {
   # 1. Encrypted file sharing server
@@ -415,7 +415,7 @@ setup_secure_communication() {
 }
 ```
 
-### Access Control Matrix
+Access Control Matrix
 
 Define precise access controls:
 
@@ -461,7 +461,7 @@ class SecureAccessControl:
         }
 ```
 
-## Risk Assessment Matrix
+Risk Assessment Matrix
 
 Formalize threat evaluation:
 
@@ -510,7 +510,7 @@ class ThreatRiskMatrix:
         }
 ```
 
-## Budgeting for Security
+Budgeting for Security
 
 Allocate resources appropriately:
 
@@ -540,7 +540,7 @@ security_budget_allocation = {
 }
 ```
 
-## Incident Response During Active Threat
+Incident Response During Active Threat
 
 If security incident occurs:
 
@@ -577,31 +577,31 @@ Incident Response Protocol:
     - Document for future reference
 ```
 
-This threat model for union organizers emphasizes that security is both technical and procedural—both aspects are equally important for protecting your organizing work.
+This threat model for union organizers emphasizes that security is both technical and procedural, both aspects are equally important for protecting your organizing work.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Threat Model Assessment For High Risk Journalist In Hostile](/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
 - [Threat Model For Political Dissident In Surveillance State](/threat-model-for-political-dissident-in-surveillance-state-2/)
@@ -609,5 +609,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Threat Model For Sex Worker Protecting Real Identity](/threat-model-for-sex-worker-protecting-real-identity-and-location/)
 - [Threat Model For Transgender Person Protecting Deadname](/threat-model-for-transgender-person-protecting-deadname-and-/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

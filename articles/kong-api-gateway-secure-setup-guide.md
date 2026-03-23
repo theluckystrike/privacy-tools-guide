@@ -14,11 +14,11 @@ tags: [privacy-tools-guide, api]
 ---
 
 {% raw %}
-# Secure API Gateway Setup with Kong
+Secure API Gateway Setup with Kong
 
-Kong is an open-source API gateway that sits in front of your services and enforces authentication, rate limiting, logging, and TLS — without touching application code. This guide covers a production-grade setup using Kong Gateway (OSS) 3.x on Ubuntu 24.04 with PostgreSQL, deployed behind Nginx for TLS termination.
+Kong is an open-source API gateway that sits in front of your services and enforces authentication, rate limiting, logging, and TLS. without touching application code. This guide covers a production-grade setup using Kong Gateway (OSS) 3.x on Ubuntu 24.04 with PostgreSQL, deployed behind Nginx for TLS termination.
 
-## Architecture Overview
+Architecture Overview
 
 ```
 Client → Nginx (TLS) → Kong (8000) → Upstream Services
@@ -30,10 +30,10 @@ Kong handles: JWT validation, rate limiting, IP allowlisting, request logging. N
 
 ---
 
-## 1. Install Kong and PostgreSQL
+1. Install Kong and PostgreSQL
 
 ```bash
-# Add Kong repository
+Add Kong repository
 curl -fsSL https://packages.konghq.com/public/gateway-38/gpg.asc \
   | sudo gpg --dearmor -o /usr/share/keyrings/kong-archive-keyring.gpg
 
@@ -45,13 +45,13 @@ echo "deb [signed-by=/usr/share/keyrings/kong-archive-keyring.gpg] \
 sudo apt update && sudo apt install -y kong-enterprise-edition || \
 sudo apt install -y kong
 
-# Install PostgreSQL
+Install PostgreSQL
 sudo apt install -y postgresql postgresql-contrib
 ```
 
 ---
 
-## 2. Configure PostgreSQL
+2. Configure PostgreSQL
 
 ```bash
 sudo -u postgres psql <<'SQL'
@@ -62,12 +62,12 @@ SQL
 
 ---
 
-## 3. Configure Kong
+3. Configure Kong
 
 ```bash
 sudo cp /etc/kong/kong.conf.default /etc/kong/kong.conf
 sudo tee /etc/kong/kong.conf > /dev/null <<'EOF'
-# Database
+Database
 database = postgres
 pg_host = 127.0.0.1
 pg_port = 5432
@@ -75,22 +75,22 @@ pg_user = kong
 pg_password = StrongPassHere42!
 pg_database = kong
 
-# Proxy (public)
+Proxy (public)
 proxy_listen = 0.0.0.0:8000
-# Admin (local only — NEVER expose to internet)
+Admin (local only. NEVER expose to internet)
 admin_listen = 127.0.0.1:8001
 
-# TLS — Kong itself can do TLS, but we'll use Nginx in front
+TLS. Kong itself can do TLS, but we'll use Nginx in front
 proxy_ssl = off
 
-# Log level
+Log level
 log_level = warn
 EOF
 
-# Initialize database
+Initialize database
 sudo kong migrations bootstrap -c /etc/kong/kong.conf
 
-# Start Kong
+Start Kong
 sudo systemctl enable --now kong
 sudo systemctl status kong
 ```
@@ -103,42 +103,42 @@ curl -s http://127.0.0.1:8001/ | python3 -m json.tool | grep version
 
 ---
 
-## 4. Add a Service and Route
+4. Add a Service and Route
 
 Services represent upstream APIs. Routes define what paths/hosts map to a service.
 
 ```bash
 ADMIN="http://127.0.0.1:8001"
 
-# Create a service pointing to your backend
+Create a service pointing to your backend
 curl -s -X POST $ADMIN/services \
   -d name=my-api \
   -d url=http://127.0.0.1:3000
 
-# Create a route for that service
+Create a route for that service
 curl -s -X POST $ADMIN/services/my-api/routes \
   -d 'paths[]=/api' \
   -d strip_path=false
 
-# Verify
+Verify
 curl -s $ADMIN/services | python3 -m json.tool
 ```
 
 ---
 
-## 5. Enable Rate Limiting
+5. Enable Rate Limiting
 
 Protect backend services from brute-force and DoS:
 
 ```bash
-# Global rate limiting: 100 requests per minute per IP
+Global rate limiting: 100 requests per minute per IP
 curl -s -X POST $ADMIN/plugins \
   -d name=rate-limiting \
   -d config.minute=100 \
   -d config.policy=local \
   -d config.hide_client_headers=false
 
-# Per-service rate limiting: stricter limit for sensitive endpoint
+Per-service rate limiting: stricter limit for sensitive endpoint
 curl -s -X POST $ADMIN/services/my-api/plugins \
   -d name=rate-limiting \
   -d config.minute=30 \
@@ -152,26 +152,26 @@ Use Redis-backed policy in multi-node deployments to share rate limit state acro
 
 ---
 
-## 6. Enable JWT Authentication
+6. Enable JWT Authentication
 
 ```bash
-# Enable the JWT plugin on your service
+Enable the JWT plugin on your service
 curl -s -X POST $ADMIN/services/my-api/plugins \
   -d name=jwt
 
-# Create a consumer
+Create a consumer
 curl -s -X POST $ADMIN/consumers \
   -d username=api-client-1
 
-# Generate a JWT credential
+Generate a JWT credential
 curl -s -X POST $ADMIN/consumers/api-client-1/jwt
 
-# Response includes:
-# {
-#   "key": "rsa_key_or_hs256_key",
-#   "secret": "your_shared_secret",
-#   "algorithm": "HS256"
-# }
+Response includes:
+{
+  "key": "rsa_key_or_hs256_key",
+  "secret": "your_shared_secret",
+  "algorithm": "HS256"
+}
 ```
 
 Clients must include the JWT in the `Authorization: Bearer <token>` header. Generate tokens in your application:
@@ -191,18 +191,18 @@ print(token)
 
 ---
 
-## 7. Enable IP Restriction
+7. Enable IP Restriction
 
 Block or allow specific IP ranges:
 
 ```bash
-# Allow only your office IP and VPN exit node
+Allow only your office IP and VPN exit node
 curl -s -X POST $ADMIN/services/my-api/plugins \
   -d name=ip-restriction \
   -d 'config.allow[]=203.0.113.10' \
   -d 'config.allow[]=10.0.0.0/8'
 
-# Block a known bad actor IP range
+Block a known bad actor IP range
 curl -s -X POST $ADMIN/plugins \
   -d name=ip-restriction \
   -d 'config.deny[]=198.51.100.0/24'
@@ -210,16 +210,16 @@ curl -s -X POST $ADMIN/plugins \
 
 ---
 
-## 8. Enable Request Logging
+8. Enable Request Logging
 
 ```bash
-# Log to file (for local ELK or Splunk ingest)
+Log to file (for local ELK or Splunk ingest)
 curl -s -X POST $ADMIN/plugins \
   -d name=file-log \
   -d config.path=/var/log/kong/access.log \
   -d config.reopen=true
 
-# Or HTTP log (forward to logging service)
+Or HTTP log (forward to logging service)
 curl -s -X POST $ADMIN/plugins \
   -d name=http-log \
   -d config.http_endpoint=http://log-aggregator:9200/kong-logs \
@@ -230,10 +230,10 @@ curl -s -X POST $ADMIN/plugins \
 
 ---
 
-## 9. TLS Termination with Nginx
+9. TLS Termination with Nginx
 
 ```nginx
-# /etc/nginx/sites-available/api-gateway
+/etc/nginx/sites-available/api-gateway
 server {
     listen 443 ssl http2;
     server_name api.example.com;
@@ -269,47 +269,47 @@ sudo nginx -t && sudo systemctl reload nginx
 
 ---
 
-## 10. Harden Kong Admin
+10. Harden Kong Admin
 
 The admin API must never be internet-accessible. Restrict it further:
 
 ```bash
-# Bind to Unix socket instead of TCP (if single-node)
-# In kong.conf:
-# admin_listen = unix:/run/kong/kong_admin.sock
+Bind to Unix socket instead of TCP (if single-node)
+In kong.conf:
+admin_listen = unix:/run/kong/kong_admin.sock
 
-# If using TCP, add firewall rule
+If using TCP, add firewall rule
 sudo ufw deny 8001
 sudo ufw allow from 127.0.0.1 to any port 8001
 
-# Add basic auth to admin via Nginx proxy (optional)
-# Only expose admin behind VPN or bastion host
+Add basic auth to admin via Nginx proxy (optional)
+Only expose admin behind VPN or bastion host
 ```
 
 ---
 
-## 11. Monitor with Prometheus
+11. Monitor with Prometheus
 
 ```bash
-# Enable Prometheus plugin globally
+Enable Prometheus plugin globally
 curl -s -X POST $ADMIN/plugins \
   -d name=prometheus
 
-# Kong exposes metrics at :8001/metrics
-# Add to prometheus.yml:
-# - job_name: kong
-#   static_configs:
-#     - targets: ['127.0.0.1:8001']
-#   metrics_path: /metrics
+Kong exposes metrics at :8001/metrics
+Add to prometheus.yml:
+- job_name: kong
+  static_configs:
+    - targets: ['127.0.0.1:8001']
+  metrics_path: /metrics
 ```
 
 Key metrics: `kong_http_requests_total`, `kong_latency_bucket`, `kong_bandwidth_bytes_total`.
 
 ---
 
-## Security Checklist
+Security Checklist
 
-- Admin API bound to `127.0.0.1` only — never `0.0.0.0`
+- Admin API bound to `127.0.0.1` only. never `0.0.0.0`
 - Rate limiting enabled globally with tighter per-service limits
 - JWT plugin enforced on all authenticated routes
 - TLS 1.2+ with strong cipher suites at the Nginx layer
@@ -319,7 +319,7 @@ Key metrics: `kong_http_requests_total`, `kong_latency_bucket`, `kong_bandwidth_
 
 ---
 
-## Related Articles
+Related Articles
 
 - [How to Secure PostgreSQL for Production](/secure-postgresql-production-guide/)
 - [Nextcloud Setup Guide Raspberry Pi 2026](/nextcloud-setup-guide-raspberry-pi-2026/)
@@ -327,5 +327,5 @@ Key metrics: `kong_http_requests_total`, `kong_latency_bucket`, `kong_bandwidth_
 - [How to Set Up a Tor Relay](/how-to-set-up-tor-relay-node/)
 - [How to Set Up Snort IDS on Linux](/snort-ids-linux-setup-guide/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -15,11 +15,11 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# Privacy-Focused DNS over QUIC Setup
+Privacy-Focused DNS over QUIC Setup
 
-DNS over QUIC (DoQ, RFC 9250) is the newest encrypted DNS protocol. It uses QUIC transport — the same protocol behind HTTP/3 — which means lower connection setup latency than DNS over TLS (DoT) and better performance on unreliable networks. DoQ also prevents DNS traffic from being identified and blocked by DPI (Deep Packet Inspection) as easily as DoT.
+DNS over QUIC (DoQ, RFC 9250) is the newest encrypted DNS protocol. It uses QUIC transport. the same protocol behind HTTP/3. which means lower connection setup latency than DNS over TLS (DoT) and better performance on unreliable networks. DoQ also prevents DNS traffic from being identified and blocked by DPI (Deep Packet Inspection) as easily as DoT.
 
-## Table of Contents
+Table of Contents
 
 - [Why DoQ Over DoT or DoH](#why-doq-over-dot-or-doh)
 - [Public DoQ Resolvers](#public-doq-resolvers)
@@ -39,7 +39,7 @@ DNS over QUIC (DoQ, RFC 9250) is the newest encrypted DNS protocol. It uses QUIC
 - [Monitoring DoQ Usage and Performance](#monitoring-doq-usage-and-performance)
 - [Related Reading](#related-reading)
 
-## Why DoQ Over DoT or DoH
+Why DoQ Over DoT or DoH
 
 | Protocol | Transport | Port | Latency | Fingerprint risk |
 |----------|-----------|------|---------|-----------------|
@@ -47,9 +47,9 @@ DNS over QUIC (DoQ, RFC 9250) is the newest encrypted DNS protocol. It uses QUIC
 | DNS over HTTPS (DoH) | TLS/TCP | 443 | Moderate | Looks like HTTPS |
 | DNS over QUIC (DoQ) | QUIC/UDP | 853 | Lower (0-RTT) | Harder to distinguish from QUIC traffic |
 
-DoQ runs on UDP, which means no TCP three-way handshake, and QUIC has built-in connection migration — DNS queries complete even if your network changes mid-request.
+DoQ runs on UDP, which means no TCP three-way handshake, and QUIC has built-in connection migration. DNS queries complete even if your network changes mid-request.
 
-## Public DoQ Resolvers
+Public DoQ Resolvers
 
 | Provider | DoQ address | Policy |
 |----------|------------|--------|
@@ -58,23 +58,23 @@ DoQ runs on UDP, which means no TCP three-way handshake, and QUIC has built-in c
 | NextDNS | `quic://YOUR-ID.dns.nextdns.io` | Per-account config |
 | Quad9 | `quic://dns.quad9.net` | Malware blocking, no logs |
 
-## Configuration on Linux (AdGuard Home)
+Configuration on Linux (AdGuard Home)
 
 AdGuard Home supports DoQ as both a client (upstream) and server:
 
 ```yaml
-# /opt/AdGuardHome/AdGuardHome.yaml
+/opt/AdGuardHome/AdGuardHome.yaml
 
-# Use DoQ as upstream
+Use DoQ as upstream
 upstream_dns:
   - quic://dns.mullvad.net
   - quic://dns.adguard-dns.com
 
-# Fallback if DoQ fails
+Fallback if DoQ fails
 fallback_dns:
   - 9.9.9.9
 
-# Serve DoQ to your clients (requires TLS certificate)
+Serve DoQ to your clients (requires TLS certificate)
 tls:
   enabled: true
   server_name: dns.yourdomain.com
@@ -85,22 +85,22 @@ tls:
 ```
 
 ```bash
-# Verify DoQ is listening
+Verify DoQ is listening
 ss -ulnp | grep 784
-# UNCONN  0  0  0.0.0.0:784  0.0.0.0:*  users:(("AdGuardHome",pid=1234))
+UNCONN  0  0  0.0.0.0:784  0.0.0.0:*  users:(("AdGuardHome",pid=1234))
 ```
 
-## Configuration on Linux (dnsproxy)
+Configuration on Linux (dnsproxy)
 
 dnsproxy is a lightweight proxy from AdGuard that supports all encrypted DNS protocols:
 
 ```bash
-# Install dnsproxy
+Install dnsproxy
 wget https://github.com/AdguardTeam/dnsproxy/releases/latest/download/dnsproxy-linux-amd64-*.tar.gz
 tar xzf dnsproxy-linux-amd64-*.tar.gz
 sudo mv dnsproxy /usr/local/bin/
 
-# Run with DoQ upstream, listen locally for all protocols
+Run with DoQ upstream, listen locally for all protocols
 sudo dnsproxy \
   --listen=127.0.0.1 \
   --port=53 \
@@ -115,7 +115,7 @@ sudo dnsproxy \
 ```
 
 ```ini
-# /etc/systemd/system/dnsproxy.service
+/etc/systemd/system/dnsproxy.service
 [Unit]
 Description=DNS Proxy (DoQ)
 After=network.target
@@ -138,24 +138,24 @@ WantedBy=multi-user.target
 ```bash
 sudo systemctl enable --now dnsproxy
 
-# Point local resolver to dnsproxy
+Point local resolver to dnsproxy
 sudo tee /etc/resolv.conf << 'EOF'
 nameserver 127.0.0.1
 options edns0 trust-ad
 EOF
 ```
 
-## Testing DoQ with q (Command-Line DNS Client)
+Testing DoQ with q (Command-Line DNS Client)
 
 ```bash
-# Install q — a modern DNS client with DoQ support
+Install q. a modern DNS client with DoQ support
 go install github.com/natesales/q@latest
 
-# Query over DoQ
+Query over DoQ
 q example.com A @quic://dns.mullvad.net
 q example.com AAAA @quic://dns.adguard-dns.com
 
-# Compare latency: DoQ vs DoT vs DoH vs plain DNS
+Compare latency: DoQ vs DoT vs DoH vs plain DNS
 time q example.com @quic://dns.mullvad.net
 time q example.com @tls://dns.mullvad.net
 time q example.com @https://dns.mullvad.net/dns-query
@@ -163,20 +163,20 @@ time q example.com @1.1.1.1
 ```
 
 ```bash
-# Or use doggo (another modern DNS CLI)
+Or use doggo (another modern DNS CLI)
 brew install doggo   # macOS
-# Linux: download from github.com/mr-karan/doggo/releases
+Linux: download from github.com/mr-karan/doggo/releases
 
 doggo example.com --type A @quic://dns.mullvad.net
 ```
 
-## Android Configuration
+Android Configuration
 
 Android 9+ supports Private DNS (DoT). DoQ on Android requires a third-party app:
 
-- **Intra** by Jigsaw — supports DoH and DoQ
-- **DNSCloak** — supports all protocols including DoQ
-- **AdGuard for Android** — supports DoQ natively
+- Intra by Jigsaw. supports DoH and DoQ
+- DNSCloak. supports all protocols including DoQ
+- AdGuard for Android. supports DoQ natively
 
 ```
 In AdGuard for Android:
@@ -191,15 +191,15 @@ Settings → Network & internet → Private DNS → Private DNS provider hostnam
 Enter: dns.mullvad.net
 ```
 
-## Router-Level DoQ (OpenWrt)
+Router-Level DoQ (OpenWrt)
 
 OpenWrt with `odhcp6c` and `knot-resolver` supports DoQ:
 
 ```bash
-# Install knot-resolver on OpenWrt
+Install knot-resolver on OpenWrt
 opkg install knot-resolver knot-resolver-mod-dns64
 
-# /etc/knot-resolver/kresd.conf
+/etc/knot-resolver/kresd.conf
 -- Use DoQ upstream
 policy.add(policy.all(policy.TLS_FORWARD({
   {'193.138.218.74', hostname='dns.mullvad.net'},
@@ -212,27 +212,27 @@ cache.size = 10 * MB
 net.listen('0.0.0.0', 53, { kind = 'dns' })
 ```
 
-## Verifying Encrypted DNS
+Verifying Encrypted DNS
 
 ```bash
-# Confirm DNS queries are not going out in plaintext
-# Run tcpdump while making a DNS request
+Confirm DNS queries are not going out in plaintext
+Run tcpdump while making a DNS request
 sudo tcpdump -i eth0 -n port 53 &
 curl https://example.com
-# If you see UDP port 53 traffic → plaintext DNS is leaking
+If you see UDP port 53 traffic → plaintext DNS is leaking
 
-# If using DoQ correctly: you should see UDP port 784 (DoQ) or 443 (DoH)
+If using DoQ correctly: you should see UDP port 784 (DoQ) or 443 (DoH)
 sudo tcpdump -i eth0 -n udp port 784 &
 q example.com @quic://dns.mullvad.net
-# Should see traffic on 784
+Should see traffic on 784
 
-# Online leak test
+Online leak test
 curl https://browserleaks.com/dns  # requires browser
-# Or:
+Or:
 curl https://api.ipify.org   # then check what resolvers your ISP sees
 ```
 
-## Selecting a DoQ Provider by Privacy Policy
+Selecting a DoQ Provider by Privacy Policy
 
 The strongest privacy option is a DoQ resolver with:
 - No query logging
@@ -246,15 +246,15 @@ NextDNS (USA): logs optional and configurable per account
 Quad9 (Switzerland): no logs, malware filtering, nonprofit
 ```
 
-## macOS Configuration for DoQ
+macOS Configuration for DoQ
 
 macOS has limited native support, but third-party tools work well:
 
 ```bash
-# Install Knot Resolver (supports DoQ)
+Install Knot Resolver (supports DoQ)
 brew install knot-resolver
 
-# Create configuration
+Create configuration
 mkdir -p ~/.knot-resolver
 cat > ~/.knot-resolver/config << 'EOF'
 -- Knot Resolver macOS configuration
@@ -273,74 +273,74 @@ cache.min_ttl = 300
 net.listen('127.0.0.1', 53, { kind = 'dns' })
 EOF
 
-# Run Knot Resolver
+Run Knot Resolver
 kresd -c ~/.knot-resolver/config
 
-# Configure system DNS to use local resolver
-# System Preferences → Network → Advanced → DNS
-# Add: 127.0.0.1
+Configure system DNS to use local resolver
+System Preferences → Network → Advanced → DNS
+Add: 127.0.0.1
 ```
 
-Alternatively, use **dnscrypt-proxy**:
+Alternatively, use dnscrypt-proxy:
 
 ```bash
-# Install dnscrypt-proxy
+Install dnscrypt-proxy
 brew install dnscrypt-proxy
 
-# Configuration file
+Configuration file
 cat > /usr/local/etc/dnscrypt-proxy/dnscrypt-proxy.toml << 'EOF'
 listen_addresses = ['127.0.0.1:53']
 
-# Use Mullvad DoQ
+Use Mullvad DoQ
 server_names = ['mullvad']
 
-# Log DNS queries (optional, privacy implications)
+Log DNS queries (optional, privacy implications)
 log_files = []
 
-# Disable logging for privacy
+Disable logging for privacy
 cert_ignore_timestamp = false
 EOF
 
-# Start service
+Start service
 brew services start dnscrypt-proxy
 
-# Verify
+Verify
 dig @127.0.0.1 example.com
 ```
 
-## Windows Configuration for DoQ
+Windows Configuration for DoQ
 
 Windows 11 native DoT support exists, but DoQ requires workaround:
 
 ```powershell
-# Install AdGuard DNS Client (supports DoQ)
-# Download from adguard-dns.io/windows
+Install AdGuard DNS Client (supports DoQ)
+Download from adguard-dns.io/windows
 
-# Or use Nextdns app (supports DoQ)
-# Download from nextdns.io
+Or use Nextdns app (supports DoQ)
+Download from nextdns.io
 
-# For manual setup, use Go DoQ client:
-# Install Go, then:
+For manual setup, use Go DoQ client:
+Install Go, then:
 go install github.com/natesales/q@latest
 
-# Query over DoQ from command line
+Query over DoQ from command line
 q example.com @quic://dns.mullvad.net
 ```
 
 PowerShell to verify DoQ is working:
 
 ```powershell
-# Check DNS server configuration
+Check DNS server configuration
 Get-DnsClientServerAddress
 
-# Set DNS to local DoQ proxy (if running)
+Set DNS to local DoQ proxy (if running)
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses ("127.0.0.1")
 
-# Verify DoQ traffic (requires Wireshark or similar)
-# Look for UDP port 784 traffic
+Verify DoQ traffic (requires Wireshark or similar)
+Look for UDP port 784 traffic
 ```
 
-## iOS Configuration for DoQ
+iOS Configuration for DoQ
 
 iOS 15+ partially supports DoQ via Private DNS (though limited):
 
@@ -352,9 +352,9 @@ Enter: dns.mullvad.net
 
 For full DoQ support on iOS, use third-party apps:
 
-- **Intra**: Supports DoH and DoQ, open source
-- **AdGuard for iOS**: Full DoQ support
-- **DNSCloak**: Supports all protocols
+- Intra: Supports DoH and DoQ, open source
+- AdGuard for iOS: Full DoQ support
+- DNSCloak: Supports all protocols
 
 Installation via TestFlight (example for Intra):
 
@@ -365,39 +365,39 @@ Installation via TestFlight (example for Intra):
 4. Configure DoQ resolver in app settings
 ```
 
-## Troubleshooting DoQ Connectivity Issues
+Troubleshooting DoQ Connectivity Issues
 
 If DoQ appears not to be working:
 
 ```bash
-# 1. Verify local DoQ proxy is listening
+1. Verify local DoQ proxy is listening
 ss -ulnp | grep 784
-# Should show: UNCONN  0  0  0.0.0.0:784  0.0.0.0:*
+Should show: UNCONN  0  0  0.0.0.0:784  0.0.0.0:*
 
-# 2. Test DoQ query directly
+2. Test DoQ query directly
 q example.com @quic://dns.mullvad.net -v
 
-# 3. Check firewall rules
+3. Check firewall rules
 sudo ufw status | grep 784
-# Add if needed: sudo ufw allow 784/udp
+Add if needed: sudo ufw allow 784/udp
 
-# 4. Capture traffic to verify
+4. Capture traffic to verify
 sudo tcpdump -i eth0 -n 'udp port 784'
 
-# 5. Test from different network (ISP blocking?)
-# Use hotspot or mobile data to test
+5. Test from different network (ISP blocking?)
+Use hotspot or mobile data to test
 
-# 6. Verify certificate validity (if self-hosted)
+6. Verify certificate validity (if self-hosted)
 openssl s_client -connect yourdns.example.com:784
 ```
 
-## Performance Comparison: DoQ vs Other Protocols
+Performance Comparison: DoQ vs Other Protocols
 
 Real-world testing on various networks:
 
 ```bash
 #!/bin/bash
-# dns-protocol-benchmark.sh
+dns-protocol-benchmark.sh
 
 DOMAIN="example.com"
 ITERATIONS=100
@@ -447,12 +447,12 @@ echo "DoH:       +15-25ms, looks like HTTPS"
 echo "DoQ:       +5-15ms, lowest latency (QUIC)"
 ```
 
-## Selecting Multiple DoQ Providers for Redundancy
+Selecting Multiple DoQ Providers for Redundancy
 
 Production setup with failover:
 
 ```yaml
-# /opt/AdGuardHome/AdGuardHome.yaml
+/opt/AdGuardHome/AdGuardHome.yaml
 upstream_dns:
   - quic://dns.mullvad.net       # Primary (Sweden, audited)
   - quic://dns.adguard-dns.com   # Secondary (Cyprus)
@@ -462,16 +462,16 @@ fallback_dns:
   - 9.9.9.9  # Quad9 (fallback to plain DNS)
   - 1.1.1.1  # Cloudflare (plain DNS backup)
 
-# If all DoQ fails, falls back to plain DNS
-# Ensures service continuity with privacy degradation only during outages
+If all DoQ fails, falls back to plain DNS
+Ensures service continuity with privacy degradation only during outages
 ```
 
-## Monitoring DoQ Usage and Performance
+Monitoring DoQ Usage and Performance
 
 Track DNS query statistics:
 
 ```bash
-# Using AdGuard Home API
+Using AdGuard Home API
 curl -s http://localhost:3000/control/stats \
   -H "Authorization: Basic $(echo -n 'admin:password' | base64)" | jq '{
     total_queries: .num_dns_queries,
@@ -481,12 +481,12 @@ curl -s http://localhost:3000/control/stats \
     stats_interval: .stats_interval
   }'
 
-# Parse query log for DoQ specific stats
+Parse query log for DoQ specific stats
 jq -r 'select(.Protocol == "quic") | .QH' /opt/AdGuardHome/data/querylog.json \
   | sort | uniq -c | sort -rn | head -10
 ```
 
-## Related Articles
+Related Articles
 
 - [DNS over TLS Setup on Linux](/dns-over-tls-setup-linux-android/)
 - [Best Privacy-Focused DNS Resolvers Compared](/best-privacy-dns-resolvers-cloudflare-quad9-nextdns-adguard/)
@@ -494,6 +494,6 @@ jq -r 'select(.Protocol == "quic") | .QH' /opt/AdGuardHome/data/querylog.json \
 - [Privacy-Focused DNS Filtering with AdGuard Home](/adguard-home-dns-filtering-setup/)
 - [Privacy-Focused DNS Providers Comparison 2026](/privacy-focused-dns-providers-comparison-2026/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

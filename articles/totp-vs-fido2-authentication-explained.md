@@ -16,9 +16,9 @@ voice-checked: true
 
 TOTP generates 6-digit codes that rotate every 30 seconds using a shared secret. FIDO2 uses public-key cryptography bound to a hardware device. Both add a second factor beyond passwords, but they protect against different attacks.
 
-**TOTP** (RFC 6238) works by hashing a shared secret with the current timestamp. Both server and client know the secret, so if the server database leaks, attackers can generate valid codes. TOTP is phishable because users type codes into whatever page they are looking at, including fake login pages.
+TOTP (RFC 6238) works by hashing a shared secret with the current timestamp. Both server and client know the secret, so if the server database leaks, attackers can generate valid codes. TOTP is phishable because users type codes into whatever page they are looking at, including fake login pages.
 
-**FIDO2** (WebAuthn + CTAP) generates a unique keypair per service. The private key never leaves the hardware authenticator. During login, the browser cryptographically binds the authentication to the origin domain. A phishing site at `g00gle.com` cannot use a credential registered for `google.com` because the origin check fails at the protocol level.
+FIDO2 (WebAuthn + CTAP) generates a unique keypair per service. The private key never leaves the hardware authenticator. During login, the browser cryptographically binds the authentication to the origin domain. A phishing site at `g00gle.com` cannot use a credential registered for `google.com` because the origin check fails at the protocol level.
 
 | Property | TOTP | FIDO2 |
 |----------|------|-------|
@@ -30,13 +30,13 @@ TOTP generates 6-digit codes that rotate every 30 seconds using a shared secret.
 | Recovery | Backup codes or seed | Multiple keys or backup codes |
 | Cost | Free | $25-70 per key |
 
-**When to use TOTP:** Low-risk accounts, services that do not support FIDO2, or situations where you cannot carry a hardware key. TOTP is better than no second factor.
+When to use TOTP: Low-risk accounts, services that do not support FIDO2, or situations where you cannot carry a hardware key. TOTP is better than no second factor.
 
-**When to use FIDO2:** High-value accounts (email, cloud infrastructure, source code repos, banking). Any account where a phishing attack would cause serious damage. FIDO2 eliminates the entire class of phishing-based credential theft.
+When to use FIDO2: High-value accounts (email, cloud infrastructure, source code repos, banking). Any account where a phishing attack would cause serious damage. FIDO2 eliminates the entire class of phishing-based credential theft.
 
 For developers implementing authentication: support both. Offer FIDO2 as the recommended option and TOTP as a fallback. Use the WebAuthn API for FIDO2 and a standard TOTP library like `pyotp` or `otplib`.
 
-## Related Articles
+Related Articles
 
 - [WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained](/webauthn-vs-fido2-vs-passkey-differences/)
 - [How To Use Password Manager Totp Authenticator Replace](/how-to-use-password-manager-totp-authenticator-replace-googl/)
@@ -44,4 +44,4 @@ For developers implementing authentication: support both. Offer FIDO2 as the rec
 - [Best Hardware Security Key Comparison: A Developer's Guide](/best-hardware-security-key-comparison/)
 - [Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn](/passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

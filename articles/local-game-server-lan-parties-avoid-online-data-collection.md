@@ -15,7 +15,7 @@ voice-checked: false
 
 Playing games online typically sends significant amounts of data to game publishers, including your IP address, gaming habits, chat logs, purchase history, and behavioral analytics. For privacy-conscious gamers, LAN parties offer an alternative that keeps your gaming activity completely offline and under your control. This guide covers how to set up local game servers, configure your network for peer-to-peer gaming, and find self-hosted alternatives to popular online games.
 
-## Table of Contents
+Table of Contents
 
 - [Why Online Gaming Collects Your Data](#why-online-gaming-collects-your-data)
 - [Setting Up a Local Game Server](#setting-up-a-local-game-server)
@@ -25,43 +25,43 @@ Playing games online typically sends significant amounts of data to game publish
 - [Practical Setup: Valheim Server](#practical-setup-valheim-server)
 - [Finding Privacy-Respecting Games](#finding-privacy-respecting-games)
 
-## Why Online Gaming Collects Your Data
+Why Online Gaming Collects Your Data
 
 Every time you play an online game, the publisher collects substantial information about you and your gaming behavior. Understanding what gets collected helps motivate the switch to local gaming alternatives.
 
-### Data Collection in Modern Games
+Data Collection in Modern Games
 
 Online games collect various types of data through mandatory connections to publisher servers:
 
-- **Account information**: Email addresses, usernames, real names (often required for account creation)
-- **IP address and location**: Used for matchmaking but also reveals your approximate geographic location
-- **Gameplay telemetry**: In-game actions, playtime, achievement completion, and behavioral patterns
-- **Voice and text chat**: Often monitored for "safety" but stored indefinitely
-- **Hardware information**: System specifications, graphics card details, and device identifiers
-- **Purchase history**: Digital store transactions, DLC ownership, and spending patterns
+- Account information: Email addresses, usernames, real names (often required for account creation)
+- IP address and location: Used for matchmaking but also reveals your approximate geographic location
+- Gameplay telemetry: In-game actions, playtime, achievement completion, and behavioral patterns
+- Voice and text chat: Often monitored for "safety" but stored indefinitely
+- Hardware information: System specifications, graphics card details, and device identifiers
+- Purchase history: Digital store transactions, DLC ownership, and spending patterns
 
 Major publishers like EA, Activision, Ubisoft, and Epic Games operate extensive data collection infrastructure. Even single-player games often require online connections that transmit telemetry. Some games literally cannot be played offline despite having no online multiplayer component.
 
-### The Business Model Behind Data Collection
+The Business Model Behind Data Collection
 
 Game publishers collect data because it has significant monetary value. Behavioral analytics help publishers understand which game features keep players engaged, optimize monetization strategies, and inform development decisions for sequels and microtransactions. This data gets shared with advertisers, analytics brokers, and sometimes law enforcement without explicit user consent.
 
-## Setting Up a Local Game Server
+Setting Up a Local Game Server
 
 Creating your own game server puts you in complete control of what data gets collected and who has access to it.
 
-### Network Infrastructure Requirements
+Network Infrastructure Requirements
 
 A proper LAN party setup requires some basic networking equipment:
 
-- **Router**: A decent router capable of handling multiple simultaneous connections (preferably gigabit)
-- **Switch**: Managed or unmanaged gigabit switch for wired connections
-- **Cabling**: Cat5e or Cat6 Ethernet cables for low-latency connections
-- **Wireless access points**: If wireless gaming is necessary (wired is always preferred for latency)
+- Router: A decent router capable of handling multiple simultaneous connections (preferably gigabit)
+- Switch: Managed or unmanaged gigabit switch for wired connections
+- Cabling: Cat5e or Cat6 Ethernet cables for low-latency connections
+- Wireless access points: If wireless gaming is necessary (wired is always preferred for latency)
 
 For smaller gatherings (under 10 players), a consumer router with built-in switch works fine. Larger events benefit from dedicated network hardware to reduce latency and handle traffic efficiently.
 
-### Server Hardware Considerations
+Server Hardware Considerations
 
 The type of server hardware depends on the games you want to host:
 
@@ -73,48 +73,48 @@ The type of server hardware depends on the games you want to host:
 
 A dedicated machine running Linux offers the best reliability and security. Many game servers run natively on Linux with better performance than Windows alternatives.
 
-## Self-Hosted Alternatives to Popular Online Games
+Self-Hosted Alternatives to Popular Online Games
 
 Several popular games have open-source or self-hosted alternatives that work without connecting to publisher servers.
 
-### Minecraft Alternatives
+Minecraft Alternatives
 
 The original Minecraft offers LAN play, but Java Edition requires purchasing the game. For completely open alternatives:
 
-- **Minetest**: Open-source voxel game inspired by Minecraft, runs on Linux
-- **Freeminer**: Another open-source Minecraft-like game
-- **Luxe Star**: Multiplayer voxel engine
+- Minetest: Open-source voxel game inspired by Minecraft, runs on Linux
+- Freeminer: Another open-source Minecraft-like game
+- Luxe Star: Multiplayer voxel engine
 
 For hosting private Minecraft servers without Mojang's servers, use the official server software which operates independently. Players connect directly to your IP address without authentication to Microsoft's servers.
 
-### First-Person Shooters
+First-Person Shooters
 
 Classic shooters have excellent self-hosted options:
 
-- **OpenArena**: Free, open-source Quake III Arena clone
-- **Warsow**: Fast-paced shooter with unique visual style
-- **Xonotic**: Fast-paced arena shooter derived from Nexuiz
-- **Cube 2: Sauerbraten**: Classic arena shooter with built-in editor
+- OpenArena: Free, open-source Quake III Arena clone
+- Warsow: Fast-paced shooter with unique visual style
+- Xonotic: Fast-paced arena shooter derived from Nexuiz
+- Cube 2: Sauerbraten: Classic arena shooter with built-in editor
 
 These games run dedicated servers that you control completely. No account registration, no telemetry, no data collection.
 
-### Racing Games
+Racing Games
 
-- **SuperTuxKart**: Mario Kart-like racing with online capabilities
-- **TORCS**: Open-source racing simulator
-- **Vdrift**: Open-source racing game with drift mechanics
+- SuperTuxKart: Mario Kart-like racing with online capabilities
+- TORCS: Open-source racing simulator
+- Vdrift: Open-source racing game with drift mechanics
 
-### Strategy and RPGs
+Strategy and RPGs
 
-- **OpenRA**: Open-source reimplementation of Command & Conquer
-- **Wesnoth**: Turn-based fantasy strategy, fully open-source
-- **0 A.D.**: Open-source real-time strategy game
+- OpenRA: Open-source reimplementation of Command & Conquer
+- Wesnoth: Turn-based fantasy strategy, fully open-source
+- 0 A.D.: Open-source real-time strategy game
 
-## Configuring Games for Offline Play
+Configuring Games for Offline Play
 
 Many commercial games can be configured to work on local networks without connecting to publisher servers.
 
-### Steam Offline Mode
+Steam Offline Mode
 
 Steam's offline mode allows playing single-player games without internet connection, but some games still check for updates or validate licenses. For LAN parties:
 
@@ -124,21 +124,21 @@ Steam's offline mode allows playing single-player games without internet connect
 
 Note that some games with always-online DRM cannot be played offline regardless of Steam settings.
 
-### EA, Ubisoft, and Epic Games
+EA, Ubisoft, and Epic Games
 
 These launchers create challenges for offline play:
 
-- **EA App (Origin)**: Many games require initial online activation but can run offline afterward
-- **Epic Games Store**: Limited offline support; some games work, others require connectivity
-- **Ubisoft Connect**: Often requires online verification even for single-player
+- EA App (Origin): Many games require initial online activation but can run offline afterward
+- Epic Games Store: Limited offline support; some games work, others require connectivity
+- Ubisoft Connect: Often requires online verification even for single-player
 
 Consider using console emulators or Linux wine wrappers for older games to avoid launcher issues entirely.
 
-## Security Best Practices for LAN Parties
+Security Best Practices for LAN Parties
 
 Keep your LAN party secure and private with these practices.
 
-### Network Isolation
+Network Isolation
 
 Create a separate network segment for gaming that doesn't connect to your main home network:
 
@@ -146,7 +146,7 @@ Create a separate network segment for gaming that doesn't connect to your main h
 - Block outbound internet access for gaming devices at the router level
 - Disable UPnP to prevent port forwarding that could expose devices
 
-### Server Hardening
+Server Hardening
 
 When running game servers:
 
@@ -155,7 +155,7 @@ When running game servers:
 - Disable telemetry or logging features in server configuration
 - Use strong passwords for admin functions if applicable
 
-### Physical Security
+Physical Security
 
 For in-person LAN parties:
 
@@ -163,29 +163,29 @@ For in-person LAN parties:
 - Don't allow untrusted devices on the network
 - Consider using a separate internet connection for any necessary online access
 
-## Practical Setup: Valheim Server
+Practical Setup: Valheim Server
 
 Valheim demonstrates modern self-hosted gaming perfectly. The game runs dedicated Linux servers with excellent performance.
 
-### Installing the Server
+Installing the Server
 
 ```bash
-# Create user and directory
+Create user and directory
 sudo useradd -m valheim
 sudo su - valheim
 mkdir -p ~/valheim/steamcmd
 
-# Install SteamCMD
+Install SteamCMD
 cd ~/valheim/steamcmd
 wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
 tar xzf steamcmd_linux.tar.gz
 
-# Update and install required packages
+Update and install required packages
 sudo apt update
 sudo apt install lib32gcc-s1 lib32stdc++6 screen -y
 ```
 
-### Server Configuration
+Server Configuration
 
 Create the startup script:
 
@@ -205,24 +205,24 @@ screen -S valheim ./start_server.sh -name "My LAN Party" -world "World1" -passwo
 
 Players connect using your local IP address, completely bypassing Iron Gate's servers after initial download.
 
-## Finding Privacy-Respecting Games
+Finding Privacy-Respecting Games
 
 Look for these characteristics when selecting games for private LAN parties:
 
-- **No account requirement**: Games that work without creating publisher accounts
-- **Open source**: Source code available for inspection
-- **Offline functionality**: Works completely without internet
-- **Self-hosted servers**: Can run your own dedicated server
-- **No telemetry**: Clearly documented as not collecting gameplay data
+- No account requirement: Games that work without creating publisher accounts
+- Open source: Source code available for inspection
+- Offline functionality: Works completely without internet
+- Self-hosted servers: Can run your own dedicated server
+- No telemetry: Clearly documented as not collecting gameplay data
 
 The open-source game community provides excellent alternatives to most commercial titles, often with better mod support and completely free of data collection concerns.
 
-## Advanced: Game Server Deployment with Docker
+Advanced: Game Server Deployment with Docker
 
 Containerized game servers provide consistent, reproducible deployments:
 
 ```dockerfile
-# Dockerfile for CS2 game server
+Dockerfile for CS2 game server
 FROM ubuntu:22.04
 
 RUN apt-get update && apt-get install -y \
@@ -232,12 +232,12 @@ RUN useradd -m csserver
 USER csserver
 WORKDIR /home/csserver
 
-# Install CS2 server
+Install CS2 server
 RUN /usr/games/steamcmd +login anonymous \
     +app_update 730 \
     +quit
 
-# Copy server configuration
+Copy server configuration
 COPY server.cfg /home/csserver/csgo/cfg/
 
 EXPOSE 27015/udp 27015/tcp
@@ -277,37 +277,37 @@ networks:
         - subnet: 192.168.100.0/24
 ```
 
-## Network Performance Optimization for LAN Gaming
+Network Performance Optimization for LAN Gaming
 
 Maximize throughput and minimize latency for smooth gameplay:
 
 ```bash
 #!/bin/bash
-# LAN gaming network optimization
+LAN gaming network optimization
 
-# Increase network buffer sizes
+Increase network buffer sizes
 sudo sysctl -w net.core.rmem_max=134217728
 sudo sysctl -w net.core.wmem_max=134217728
 sudo sysctl -w net.ipv4.tcp_rmem="4096 87380 134217728"
 sudo sysctl -w net.ipv4.tcp_wmem="4096 65536 134217728"
 
-# Reduce packet loss on LAN (disable flow control)
+Reduce packet loss on LAN (disable flow control)
 sudo ethtool -A eth0 rx off tx off
 
-# Verify network quality
+Verify network quality
 iperf3 -s  # On server
 iperf3 -c 192.168.1.100 -P 4 -t 30  # From client
 
-# Expected LAN performance: >900 Mbps, <1ms latency
+Expected LAN performance: >900 Mbps, <1ms latency
 ```
 
-## Game Selection and Testing Matrix
+Game Selection and Testing Matrix
 
 Create a testing matrix for games before your LAN party:
 
 ```bash
 #!/bin/bash
-# game-testing-matrix.sh
+game-testing-matrix.sh
 
 GAMES=(
   "minecraft-server:latest"
@@ -330,7 +330,7 @@ for game in "${GAMES[@]}"; do
     case $test in
       connectivity)
         docker run --rm $game timeout 10 nc -zv localhost 27015
-        echo "✓ Connectivity: PASS"
+        echo " Connectivity: PASS"
         ;;
       performance)
         docker stats --no-stream $game
@@ -351,12 +351,12 @@ for game in "${GAMES[@]}"; do
 done
 ```
 
-## Anti-Cheat and Fair Play Without Data Collection
+Anti-Cheat and Fair Play Without Data Collection
 
 Implement local anti-cheat without sending data to publishers:
 
 ```python
-# Simple anti-cheat for local servers
+Simple anti-cheat for local servers
 class LocalAntiCheat:
     def __init__(self):
         self.known_cheats = {
@@ -392,7 +392,7 @@ class LocalAntiCheat:
 
 All monitoring happens locally, no data sent to external servers.
 
-## LAN Party Hosting Checklist
+LAN Party Hosting Checklist
 
 Before your LAN party:
 
@@ -424,29 +424,29 @@ DOCUMENTATION
 - [ ] Emergency contact for technical support
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to lan parties?**
+How long does it take to lan parties?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Veterinarian Client Pet Data Privacy Protection Setup Guide](/veterinarian-client-pet-data-privacy-protection-setup-guide/)
 - [Android Google Account Privacy Settings: Complete Guide to Limiting Data Collection 2026](/android-google-account-privacy-settings-complete-guide-to-li/)
@@ -455,5 +455,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 - [Does Cursor AI Store Your Code on Their Servers Data](https://bestremotetools.com/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 

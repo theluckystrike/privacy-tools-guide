@@ -16,9 +16,9 @@ voice-checked: true
 
 {% raw %}
 
-To use GPG signed emails, generate a key pair with `gpg --gen-key`, configure your email client to sign outgoing messages with your private key, and share your public key with recipients. They can then verify that incoming emails genuinely came from you by checking the digital signature—the email client typically displays a green checkmark for valid signatures. Verification proves both authenticity (the sender controls that private key) and integrity (the message wasn't modified after signing).
+To use GPG signed emails, generate a key pair with `gpg --gen-key`, configure your email client to sign outgoing messages with your private key, and share your public key with recipients. They can then verify that incoming emails genuinely came from you by checking the digital signature, the email client typically displays a green checkmark for valid signatures. Verification proves both authenticity (the sender controls that private key) and integrity (the message wasn't modified after signing).
 
-## Table of Contents
+Table of Contents
 
 - [Why GPG Sign Your Emails?](#why-gpg-sign-your-emails)
 - [Prerequisites](#prerequisites)
@@ -26,28 +26,28 @@ To use GPG signed emails, generate a key pair with `gpg --gen-key`, configure yo
 - [Getting Started](#getting-started)
 - [Troubleshooting](#troubleshooting)
 
-## Why GPG Sign Your Emails?
+Why GPG Sign Your Emails?
 
 Email spoofing is trivial to perform. Attackers can easily forge the "From" header to appear as anyone. GPG signing adds a cryptographic layer that proves:
 
-- **Authenticity**: The message actually came from the holder of the private key
-- **Integrity**: The message content was not modified after signing
-- **Non-repudiation**: The sender cannot deny signing the message
+- Authenticity: The message actually came from the holder of the private key
+- Integrity: The message content was not modified after signing
+- Non-repudiation: The sender cannot deny signing the message
 
 For developers communicating about code, infrastructure, or sensitive topics, GPG signatures provide assurance that you're interacting with the genuine party.
 
-## Prerequisites
+Prerequisites
 
 Ensure you have GPG installed on your system:
 
 ```bash
-# macOS
+macOS
 brew install gnupg
 
-# Debian/Ubuntu
+Debian/Ubuntu
 sudo apt-get install gnupg
 
-# Fedora/RHEL
+Fedora/RHEL
 sudo dnf install gnupg
 ```
 
@@ -57,7 +57,7 @@ Verify the installation:
 gpg --version
 ```
 
-### Step 1: Generate Your GPG Key Pair
+Step 1: Generate Your GPG Key Pair
 
 If you don't already have a GPG key, generate one specifically for email use:
 
@@ -65,7 +65,7 @@ If you don't already have a GPG key, generate one specifically for email use:
 gpg --full-generate-key
 ```
 
-Select RSA and RSA (default), choose a key size of 4096 bits for better security, and set an expiration date—two years is reasonable for email keys. Enter your name and email address associated with the email account you'll sign from.
+Select RSA and RSA (default), choose a key size of 4096 bits for better security, and set an expiration date, two years is reasonable for email keys. Enter your name and email address associated with the email account you'll sign from.
 
 After generation, list your keys to confirm:
 
@@ -75,20 +75,20 @@ gpg --list-secret-keys
 
 Note the key ID (the hexadecimal string after `sec rsa4096/`). You'll need this for configuration.
 
-### Step 2: Configure Your Email Client
+Step 2: Configure Your Email Client
 
-### Thunderbird
+Thunderbird
 
 Thunderbird has native GPG support. Open Settings → Account Settings → End-to-End Encryption. Click "Add Key" and select your newly created key. Enable "Digitally Sign" by default for outgoing messages.
 
 For each account, ensure "Digitally sign outgoing messages" is checked under the account's Security Settings.
 
-### Command-Line with Mutt
+Command-Line with Mutt
 
 If you prefer a terminal-based email client, configure Mutt:
 
 ```bash
-# Add to ~/.muttrc
+Add to ~/.muttrc
 set crypt_use_gpgme = yes
 set crypt_default_keys = "0xYOURKEYID"
 set sig_dashed = yes
@@ -97,28 +97,28 @@ set crypt_autosign = yes
 
 Replace `0xYOURKEYID` with your actual key ID (without the `0x` prefix).
 
-### Apple Mail
+Apple Mail
 
 Apple Mail requires the GPG Suite plugin. After installation, enable signing in Preferences → GPG Suite. You can also set default behavior to always sign.
 
-### Step 3: Signing Outgoing Emails
+Step 3: Signing Outgoing Emails
 
 Once configured, signing happens automatically for outgoing messages. You can also sign manually in clients that support it.
 
 To sign a message from the command line (useful for scripts or automated emails):
 
 ```bash
-# Create a signed message
+Create a signed message
 echo "Your message content here" | gpg --clearsign --local-user 0xYOURKEYID > signed_message.txt
 ```
 
 For actual email sending, most clients handle the signing transparently after initial configuration.
 
-### Step 4: Verify Incoming Signed Emails
+Step 4: Verify Incoming Signed Emails
 
 Verification is where GPG provides real value. When you receive a signed email, your client checks the signature against the sender's public key.
 
-### Using the Command Line
+Using the Command Line
 
 Save the signed portion of an email (the block between `-----BEGIN PGP SIGNED MESSAGE-----` and `-----BEGIN PGP SIGNATURE-----`) to a file, then verify:
 
@@ -134,38 +134,38 @@ gpg:                using RSA key ABC123DEF456
 gpg: Good signature from "Your Name <your@email.com>"
 ```
 
-### Importing Sender Public Keys
+Importing Sender Public Keys
 
 For verification to work, you need the sender's public key. Several methods exist:
 
 ```bash
-# Fetch from a keyserver
+Fetch from a keyserver
 gpg --keyserver keyserver.ubuntu.com --search-keys sender@example.com
 
-# Import from a file
+Import from a file
 gpg --import sender_public_key.asc
 
-# Fetch from a keyserver by key ID
+Fetch from a keyserver by key ID
 gpg --keyserver keyserver.ubuntu.com --recv-keys ABC123DEF456
 ```
 
 Many developers publish their keys on their websites or include them in email signatures. The OpenPGP Keyserver network (`keys.openpgp.org`) is a reliable choice.
 
-### Thunderbird Verification
+Thunderbird Verification
 
 Thunderbird displays a verification icon next to signed messages. A green checkmark indicates a valid signature. Clicking the icon shows signature details, including the key used and any warnings.
 
-### Step 5: Handling Signature Failures
+Step 5: Handling Signature Failures
 
 When verification fails, investigate the cause:
 
-**"No public key"**: The sender's public key is not in your keyring. Obtain and import it using the methods above.
+"No public key": The sender's public key is not in your keyring. Obtain and import it using the methods above.
 
-**"BAD signature"**: The message was modified after signing. Do not trust the content.
+"BAD signature": The message was modified after signing. Do not trust the content.
 
-**"Key expired"**: The sender's key has expired. Contact them to obtain a renewed key.
+"Key expired": The sender's key has expired. Contact them to obtain a renewed key.
 
-**"Untrusted signature"**: The key is valid but not trusted. This happens with new keys or keys not signed by someone you trust. Manually verify the key fingerprint through another channel:
+"Untrusted signature": The key is valid but not trusted. This happens with new keys or keys not signed by someone you trust. Manually verify the key fingerprint through another channel:
 
 ```bash
 gpg --fingerprint sender@example.com
@@ -173,14 +173,14 @@ gpg --fingerprint sender@example.com
 
 Confirm the fingerprint via a different communication channel (phone, in-person) before marking the key as trusted.
 
-### Step 6: Automate Verification in Scripts
+Step 6: Automate Verification in Scripts
 
 For automated workflows, verify PGP signatures in shell scripts:
 
 ```bash
 #!/bin/bash
 
-# Verify a signed file
+Verify a signed file
 verify_signature() {
     local file="$1"
     if gpg --verify "$file" 2>/dev/null; then
@@ -192,25 +192,25 @@ verify_signature() {
     fi
 }
 
-# Usage
+Usage
 verify_signature "message.txt"
 ```
 
 This pattern works well for CI/CD pipelines that validate commit signatures or package release announcements.
 
-## Key Management Best Practices
+Key Management Best Practices
 
 Maintain your GPG keys properly:
 
-**Backup your secret key**: Export to a secure location, preferably encrypted:
+Backup your secret key: Export to a secure location, preferably encrypted:
 
 ```bash
 gpg --export-secret-keys 0xYOURKEYID | gpg --armor --output backup.asc
 ```
 
-**Use subkeys for daily signing**: Create subkeys for signing and encryption while keeping your master key offline. This limits damage if a subkey is compromised.
+Use subkeys for daily signing: Create subkeys for signing and encryption while keeping your master key offline. This limits damage if a subkey is compromised.
 
-**Revoke certificates**: Generate a revocation certificate when you create your key:
+Revoke certificates: Generate a revocation certificate when you create your key:
 
 ```bash
 gpg --gen-revoke 0xYOURKEYID > revocation_cert.asc
@@ -218,7 +218,7 @@ gpg --gen-revoke 0xYOURKEYID > revocation_cert.asc
 
 Store this securely. If you lose access to your key, the revocation certificate notifies others not to trust messages signed with that key.
 
-### Step 7: Integrate with Git
+Step 7: Integrate with Git
 
 Many developers use the same GPG key for Git commits. Configure Git to use your signing key:
 
@@ -229,50 +229,50 @@ git config --global commit.gpgsign true
 
 This provides verified commit provenance, complementary to signed emails.
 
-## Getting Started
+Getting Started
 
 Start by generating a GPG key if you don't have one. Configure your primary email client to sign outgoing messages by default. Import keys from frequent correspondents, and verify signatures on all signed messages you receive. Over time, building this habit creates a web of cryptographic trust.
 
 GPG signing adds friction to email communication, but the authenticity guarantees are valuable for technical collaboration. Start with low-stakes communications to build familiarity before relying on signatures for sensitive matters.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [How to Use GPG Signed Emails to Verify Sender Identity](/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
 - [Email Encryption with GPG](/gpg-email-encryption-step-by-step)
@@ -280,5 +280,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Someone Signed Up for Services Using My Email](/someone-signed-up-for-services-using-my-email-what-to-do/)
 - [Use Tor With Encrypted Email for Maximum Sender Anonymity](/how-to-use-tor-with-encrypted-email-for-maximum-sender-anonymity/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

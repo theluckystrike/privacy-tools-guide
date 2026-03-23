@@ -14,11 +14,11 @@ tags: [privacy-tools-guide, best-of]
 ---
 
 {% raw %}
-# Secure JWT Implementation Best Practices
+Secure JWT Implementation Best Practices
 
-JSON Web Tokens are everywhere — and so are JWT vulnerabilities. The `alg: none` bypass, HMAC/RSA confusion, weak shared secrets, and missing expiry checks have each led to serious auth bypasses in production systems. This guide covers the full set of secure implementation requirements with working code.
+JSON Web Tokens are everywhere. and so are JWT vulnerabilities. The `alg: none` bypass, HMAC/RSA confusion, weak shared secrets, and missing expiry checks have each led to serious auth bypasses in production systems. This guide covers the full set of secure implementation requirements with working code.
 
-## JWT Structure Refresher
+JWT Structure Refresher
 
 A JWT is three base64url-encoded parts joined by dots: `header.payload.signature`. The header declares the algorithm, the payload holds claims, and the signature proves integrity.
 
@@ -28,29 +28,29 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9   <- header
 .signature_bytes_here                              <- signature
 ```
 
-**JWT does not encrypt by default.** Anyone who has the token can decode the header and payload. If you need confidentiality, use JWE (JSON Web Encryption), not plain JWT.
+JWT does not encrypt by default. Anyone who has the token can decode the header and payload. If you need confidentiality, use JWE (JSON Web Encryption), not plain JWT.
 
 ---
 
-## Critical Vulnerabilities and Fixes
+Critical Vulnerabilities and Fixes
 
-### 1. Algorithm Confusion (RS256 → HS256)
+1. Algorithm Confusion (RS256 → HS256)
 
-If your server accepts RS256 (asymmetric), an attacker can sometimes forge tokens by switching the algorithm to HS256 (symmetric) and signing with the public key as the HMAC secret — because the public key is often known.
+If your server accepts RS256 (asymmetric), an attacker can sometimes forge tokens by switching the algorithm to HS256 (symmetric) and signing with the public key as the HMAC secret. because the public key is often known.
 
-**The fix**: always specify the expected algorithm explicitly on the server side:
+The fix: always specify the expected algorithm explicitly on the server side:
 
 ```python
-# INSECURE — trusts the 'alg' header from the token
+INSECURE. trusts the 'alg' header from the token
 import jwt
 payload = jwt.decode(token, public_key, algorithms=None)  # NEVER do this
 
-# SECURE — hard-code the expected algorithm
+SECURE. hard-code the expected algorithm
 payload = jwt.decode(token, public_key, algorithms=["RS256"])
 ```
 
 ```javascript
-// Node.js — jsonwebtoken library
+// Node.js. jsonwebtoken library
 // INSECURE
 const payload = jwt.verify(token, publicKey);
 
@@ -58,26 +58,26 @@ const payload = jwt.verify(token, publicKey);
 const payload = jwt.verify(token, publicKey, { algorithms: ['RS256'] });
 ```
 
-### 2. The `alg: none` Attack
+2. The `alg: none` Attack
 
 Some libraries historically accepted tokens with `"alg": "none"` and no signature. Fix: use a library that rejects `none` by default and never list it in allowed algorithms.
 
 ```python
-# Explicit rejection
+Explicit rejection
 ALLOWED_ALGORITHMS = ["RS256", "RS384", "RS512", "ES256", "ES384"]
-# Never include "none", "HS256" if you use asymmetric keys
+Never include "none", "HS256" if you use asymmetric keys
 payload = jwt.decode(token, public_key, algorithms=ALLOWED_ALGORITHMS)
 ```
 
-### 3. Weak HMAC Secrets
+3. Weak HMAC Secrets
 
-HS256 with a short or guessable secret can be brute-forced offline using tools like `hashcat`. The JWT signature is a MAC — it's only as strong as the secret.
+HS256 with a short or guessable secret can be brute-forced offline using tools like `hashcat`. The JWT signature is a MAC. it's only as strong as the secret.
 
 ```bash
-# Attack: hashcat can try millions of candidates per second
+Attack: hashcat can try millions of candidates per second
 hashcat -a 0 -m 16500 captured_jwt.txt wordlist.txt
 
-# Generate a cryptographically strong secret (32 bytes minimum for HS256)
+Generate a cryptographically strong secret (32 bytes minimum for HS256)
 openssl rand -base64 64   # 48 bytes → 64 base64 chars
 ```
 
@@ -85,34 +85,34 @@ For production, prefer RS256 with a 2048+ bit RSA key or ES256 with P-256. HMAC 
 
 ---
 
-## Secure Token Generation
+Secure Token Generation
 
-### Python (PyJWT)
+Python (PyJWT)
 
 ```python
 import jwt
 import time
 from pathlib import Path
 
-# Load RS256 private key (generated with: openssl genrsa -out private.pem 2048)
+Load RS256 private key (generated with: openssl genrsa -out private.pem 2048)
 PRIVATE_KEY = Path("/run/secrets/jwt_private_key.pem").read_text()
 
 def create_token(user_id: str, roles: list[str]) -> str:
     now = int(time.time())
     payload = {
-        "iss": "https://auth.example.com",     # issuer — who created the token
-        "sub": str(user_id),                   # subject — the user
-        "aud": "https://api.example.com",      # audience — intended recipient
+        "iss": "https://auth.example.com",     # issuer. who created the token
+        "sub": str(user_id),                   # subject. the user
+        "aud": "https://api.example.com",      # audience. intended recipient
         "iat": now,                            # issued at
         "nbf": now,                            # not valid before
         "exp": now + 3600,                     # expires in 1 hour
-        "jti": secrets.token_hex(16),          # JWT ID — unique per token
+        "jti": secrets.token_hex(16),          # JWT ID. unique per token
         "roles": roles,
     }
     return jwt.encode(payload, PRIVATE_KEY, algorithm="RS256")
 ```
 
-### Node.js (jsonwebtoken)
+Node.js (jsonwebtoken)
 
 ```javascript
 const jwt = require('jsonwebtoken');
@@ -142,9 +142,9 @@ function createToken(userId, roles) {
 
 ---
 
-## Secure Token Validation
+Secure Token Validation
 
-Always validate **all** of these claims on every request:
+Always validate all of these claims on every request:
 
 ```python
 import jwt
@@ -157,7 +157,7 @@ def validate_token(token: str) -> dict:
         payload = jwt.decode(
             token,
             PUBLIC_KEY,
-            algorithms=["RS256"],           # hard-coded — never dynamic
+            algorithms=["RS256"],           # hard-coded. never dynamic
             audience="https://api.example.com",   # must match aud claim
             issuer="https://auth.example.com",    # must match iss claim
             options={
@@ -181,9 +181,9 @@ def validate_token(token: str) -> dict:
 
 ---
 
-## Token Revocation
+Token Revocation
 
-JWTs are stateless — they remain valid until expiry even if the user logs out or is banned. Fix this with a short expiry plus a blocklist for critical tokens:
+JWTs are stateless. they remain valid until expiry even if the user logs out or is banned. Fix this with a short expiry plus a blocklist for critical tokens:
 
 ```python
 import redis
@@ -197,7 +197,7 @@ def revoke_token(jti: str, ttl_seconds: int):
 def is_revoked(jti: str) -> bool:
     return r.exists(f"revoked_jti:{jti}") > 0
 
-# In validate_token, after decoding:
+In validate_token, after decoding:
 if is_revoked(payload["jti"]):
     raise AuthError("Token has been revoked")
 ```
@@ -206,16 +206,16 @@ Keep token TTL short (15–60 minutes for access tokens) and use refresh tokens 
 
 ---
 
-## Key Rotation
+Key Rotation
 
 ```bash
-# Generate a new RSA key pair
+Generate a new RSA key pair
 openssl genrsa -out new_private.pem 2048
 openssl rsa -in new_private.pem -pubout -out new_public.pem
 
-# Publish the new public key in your JWKS endpoint
-# /well-known/jwks.json should expose ALL currently valid public keys
-# so tokens signed with the old key continue to validate during rollover
+Publish the new public key in your JWKS endpoint
+/well-known/jwks.json should expose ALL currently valid public keys
+so tokens signed with the old key continue to validate during rollover
 ```
 
 Implement a JWKS endpoint so API consumers can auto-fetch valid public keys:
@@ -233,14 +233,14 @@ def jwks():
     jwk = json.loads(RSAAlgorithm.to_jwk(
         RSAAlgorithm.from_jwk(public_key_pem)
     ))
-    jwk["kid"] = "2026-03-v1"   # key ID — increment on rotation
+    jwk["kid"] = "2026-03-v1"   # key ID. increment on rotation
     jwk["use"] = "sig"
     return {"keys": [jwk]}
 ```
 
 ---
 
-## Common Mistakes Reference
+Common Mistakes Reference
 
 | Mistake | Risk | Fix |
 |---|---|---|
@@ -254,7 +254,7 @@ def jwks():
 
 ---
 
-## Related Reading
+Related Reading
 
 - [Secure API Gateway Setup with Kong](/kong-api-gateway-secure-setup-guide/)
 - [Secure Webhook Implementation Guide](/secure-webhook-implementation-guide/)
@@ -265,5 +265,5 @@ def jwks():
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

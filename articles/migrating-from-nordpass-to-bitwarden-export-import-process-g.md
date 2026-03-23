@@ -18,7 +18,7 @@ voice-checked: true
 
 Migrate from NordPass to Bitwarden by exporting to CSV through the desktop app or CLI, then importing into Bitwarden using the web interface or bitwarden CLI tool. Both methods preserve passwords, folders, and custom fields, though some NordPass-specific features require manual remapping.
 
-## Table of Contents
+Table of Contents
 
 - [Understanding Export Formats](#understanding-export-formats)
 - [Exporting Data From NordPass](#exporting-data-from-nordpass)
@@ -30,7 +30,7 @@ Migrate from NordPass to Bitwarden by exporting to CSV through the desktop app o
 - [Security Considerations](#security-considerations)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 
-## Understanding Export Formats
+Understanding Export Formats
 
 NordPass and Bitwarden use different export mechanisms. NordPass provides encrypted exports that require specific handling, while Bitwarden accepts multiple import formats including CSV and JSON.
 
@@ -39,11 +39,11 @@ Before starting the migration, ensure you have:
 - A Bitwarden account created (free tier works for imports)
 - The Bitwarden CLI installed for programmatic handling
 
-## Exporting Data From NordPass
+Exporting Data From NordPass
 
 NordPass offers several export methods. The most reliable approach for full data transfer uses their desktop application or CLI.
 
-### Desktop Application Export
+Desktop Application Export
 
 1. Open NordPass and log in with your master password
 2. Navigate to Settings → Export
@@ -53,44 +53,44 @@ NordPass offers several export methods. The most reliable approach for full data
 
 The CSV export includes most standard fields: site URLs, usernames, passwords, notes, and folder assignments.
 
-### CLI Export (Recommended for Automation)
+CLI Export (Recommended for Automation)
 
 For developers preferring command-line workflows, install the NordPass CLI:
 
 ```bash
-# Install NordPass CLI via npm
+Install NordPass CLI via npm
 npm install -g nordpass-cli
 
-# Authenticate with your Nord account
+Authenticate with your Nord account
 np login
 
-# Export vault to CSV
+Export vault to CSV
 np export --format csv --output ~/nordpass-export.csv
 
-# Verify the export file
+Verify the export file
 head -5 ~/nordpass-export.csv
 ```
 
 The CLI export provides the same data as the desktop application but enables scripting for large vaults.
 
-### Handling Encrypted Exports
+Handling Encrypted Exports
 
 NordPass also offers an encrypted backup that preserves more data types:
 
 ```bash
-# Create encrypted backup (includes all items)
+Create encrypted backup (includes all items)
 np backup create --output ~/nordpass-backup.npe
 
-# This file requires NordPass to decrypt—use for full restoration only
+This file requires NordPass to decrypt, use for full restoration only
 ```
 
 For migration purposes, the CSV format provides the best balance of compatibility and field coverage.
 
-## Importing Into Bitwarden
+Importing Into Bitwarden
 
 Bitwarden supports multiple import formats. The CSV format from NordPass maps cleanly to Bitwarden's import structure.
 
-### Direct CSV Import via Web Vault
+Direct CSV Import via Web Vault
 
 1. Log into vault.bitwarden.com
 2. Navigate to Tools → Import
@@ -98,32 +98,32 @@ Bitwarden supports multiple import formats. The CSV format from NordPass maps cl
 4. Upload your exported CSV file
 5. Review the import preview and confirm
 
-### CLI Import (Programmatic Approach)
+CLI Import (Programmatic Approach)
 
 The Bitwarden CLI provides more control over the import process:
 
 ```bash
-# Install Bitwarden CLI
-# macOS: brew install bitwarden-cli
-# Linux: sudo apt install bitwarden
+Install Bitwarden CLI
+macOS: brew install bitwarden-cli
+Linux: sudo apt install bitwarden
 
-# Log in to Bitwarden
+Log in to Bitwarden
 bw login your@email.com
 
-# Unlock vault and copy session key
+Unlock vault and copy session key
 export BW_SESSION=$(bw unlock --raw)
 
-# Import the NordPass CSV
+Import the NordPass CSV
 bw import bitwardencsv ~/nordpass-export.csv --formats
 
-# Alternatively, use generic CSV format
+Alternatively, use generic CSV format
 bw import csv ~/nordpass-export.csv
 
-# Verify import count
+Verify import count
 echo "Import completed. Check vault for $(bw list items | jq 'length') items"
 ```
 
-### Handling Custom Fields
+Handling Custom Fields
 
 NordPass supports custom fields that require special attention during migration. The CSV export includes custom fields in a specific format that Bitwarden can parse:
 
@@ -135,18 +135,18 @@ github.com,dev@example.com,super_secret_pass,"API key notes",{"api_key":"value12
 If custom fields don't import correctly, use the Bitwarden CLI to add them programmatically:
 
 ```bash
-# Get the item ID for a specific login
+Get the item ID for a specific login
 ITEM_ID=$(bw get item "github.com" --pretty | jq -r '.id')
 
-# Add a custom field to the item
+Add a custom field to the item
 bw get item $ITEM_ID | jq '. |= .+ {"fields": [{"name": "api_key", "value": "value123", "type": 0}]}' | bw edit item $ITEM_ID
 ```
 
-## Migrating TOTP Authenticator Data
+Migrating TOTP Authenticator Data
 
 Both NordPass and Bitwarden can store TOTP (time-based one-time password) secrets. This requires manual intervention since CSV exports don't reliably transfer TOTP keys.
 
-### Export TOTP Secrets From NordPass
+Export TOTP Secrets From NordPass
 
 NordPass stores TOTP secrets in the vault. To export:
 
@@ -155,7 +155,7 @@ NordPass stores TOTP secrets in the vault. To export:
 3. Click the TOTP field to reveal the secret
 4. Copy the secret (format: `otpauth://totp/...` or base32 key)
 
-### Import TOTP Into Bitwarden
+Import TOTP Into Bitwarden
 
 Bitwarden allows TOTP key import via the web vault:
 
@@ -168,10 +168,10 @@ Bitwarden allows TOTP key import via the web vault:
 For bulk TOTP migration, use this CLI approach:
 
 ```bash
-# Extract TOTP secrets from NordPass export (manual process)
-# Format expected: base32 secret key
+Extract TOTP secrets from NordPass export (manual process)
+Format expected: base32 secret key
 
-# Add TOTP to multiple items via script
+Add TOTP to multiple items via script
 while read line; do
   ITEM_NAME=$(echo $line | cut -d',' -f1)
   TOTP_SECRET=$(echo $line | cut -d',' -f6)
@@ -185,7 +185,7 @@ while read line; do
 done < totp-secrets.csv
 ```
 
-## Preserving Folder Organization
+Preserving Folder Organization
 
 NordPass uses folders and tags. Bitwarden uses collections and folders. The CSV import typically creates Bitwarden folders automatically:
 
@@ -198,69 +198,69 @@ Personal,netflix.com,personal@example.com,pass456,"Personal account"
 After import, verify folder structure:
 
 ```bash
-# List all folders in Bitwarden
+List all folders in Bitwarden
 bw list folders
 
-# Create new folders if needed
+Create new folders if needed
 bw create folder "Development"
 ```
 
-## Automation Script for Complete Migration
+Automation Script for Complete Migration
 
 Here's a bash script that automates the entire process:
 
 ```bash
 #!/bin/bash
-# migrate-nordpass-to-bitwarden.sh
+migrate-nordpass-to-bitwarden.sh
 
 set -e
 
-# Configuration
+Configuration
 EXPORT_FILE="~/nordpass-export.csv"
 BITWARDEN_EMAIL="your@email.com"
 
 echo "Starting NordPass to Bitwarden migration..."
 
-# Step 1: Export from NordPass (assumes CLI is installed)
+Step 1: Export from NordPass (assumes CLI is installed)
 echo "[1/5] Exporting from NordPass..."
 np export --format csv --output $EXPORT_FILE
 
-# Step 2: Log into Bitwarden
+Step 2: Log into Bitwarden
 echo "[2/5] Logging into Bitwarden..."
 bw login $BITWARDEN_EMAIL
 export BW_SESSION=$(bw unlock --raw)
 
-# Step 3: Import data
+Step 3: Import data
 echo "[3/5] Importing vault data..."
 bw import csv $EXPORT_FILE
 
-# Step 4: Sync to ensure data is on server
+Step 4: Sync to ensure data is on server
 echo "[4/5] Syncing vault..."
 bw sync
 
-# Step 5: Verify import
+Step 5: Verify import
 echo "[5/5] Verifying import..."
 ITEM_COUNT=$(bw list items | jq 'length')
 echo "Migration complete. Vault contains $ITEM_COUNT items."
 
-# Cleanup
+Cleanup
 unset BW_SESSION
 echo "Done. Remember to secure-delete the export file."
 ```
 
-## Post-Migration Verification
+Post-Migration Verification
 
 After importing, verify your data integrity:
 
 ```bash
-# List all imported items
+List all imported items
 bw list items | jq '.[] | {name: .name, url: .login.uri, username: .login.username}'
 
-# Check for any items without passwords (potential import issues)
+Check for any items without passwords (potential import issues)
 bw list items | jq '.[] | select(.login.password == null)'
 
-# Verify TOTP functionality
-# Each item should show a TOTP code in the web vault
+Verify TOTP functionality
+Each item should show a TOTP code in the web vault
 ```
 
 Common verification steps:
@@ -270,69 +270,69 @@ Common verification steps:
 4. Check that folders/collections preserved correctly
 5. Delete the NordPass export file securely
 
-## Security Considerations
+Security Considerations
 
 During migration, handle your data carefully:
 
-- **Temporary files**: Delete the CSV export after successful import
-- **Clipboard**: Clear clipboard after copying passwords
-- **Session tokens**: CLI session tokens expire; re-authenticate as needed
-- **Master password**: Never share or store your master password in scripts
+- Temporary files: Delete the CSV export after successful import
+- Clipboard: Clear clipboard after copying passwords
+- Session tokens: CLI session tokens expire; re-authenticate as needed
+- Master password: Never share or store your master password in scripts
 
 For enhanced security during migration, consider running these commands on an offline machine:
 
 ```bash
-# Securely delete export file after import
+Securely delete export file after import
 shred -u ~/nordpass-export.csv
 
-# Clear bash history containing any sensitive commands
+Clear bash history containing any sensitive commands
 history -c
 ```
 
-## Troubleshooting Common Issues
+Troubleshooting Common Issues
 
-**Issue**: CSV import fails with encoding errors
+Issue: CSV import fails with encoding errors
 
-**Solution**: Ensure the CSV uses UTF-8 encoding:
+Solution: Ensure the CSV uses UTF-8 encoding:
 ```bash
 iconv -f ISO-8859-1 -t UTF-8 nordpass-export.csv > nordpass-utf8.csv
 ```
 
-**Issue**: Custom fields not appearing
+Issue: Custom fields not appearing
 
-**Solution**: Manually add via CLI or web interface, as CSV custom field support varies
+Solution: Manually add via CLI or web interface, as CSV custom field support varies
 
-**Issue**: Duplicate entries after import
+Issue: Duplicate entries after import
 
-**Solution**: Use Bitwarden's deduplication feature or import to a fresh vault first, then merge
+Solution: Use Bitwarden's deduplication feature or import to a fresh vault first, then merge
 
-**Issue**: TOTP codes not working
+Issue: TOTP codes not working
 
-**Solution**: Verify the secret key format—Bitwarden requires base32, not otpauth:// URIs
+Solution: Verify the secret key format, Bitwarden requires base32, not otpauth:// URIs
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does Bitwarden offer a free tier?**
+Does Bitwarden offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check Bitwarden's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Migrating from RoboForm to Bitwarden](/migrating-from-roboform-to-bitwarden-export-import-complete-/)
 - [ProtonMail Import Export Tool Guide](/protonmail-import-export-tool-guide/)
@@ -341,5 +341,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Migrating From Icloud Keychain To Bitwarden Complete Transfe](/migrating-from-icloud-keychain-to-bitwarden-complete-transfe/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -18,7 +18,7 @@ voice-checked: true
 
 Every browser has potential information leakage points that can expose your identity, location, or browsing habits to websites and third parties. For developers and power users, verifying that your browser is not leaking information requires testing multiple attack vectors systematically. This checklist provides actionable steps with code examples to audit your browser's privacy posture.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -28,11 +28,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: WebRTC Leak Test
+Step 1: WebRTC Leak Test
 
 WebRTC (Web Real-Time Communication) can expose your real IP address even when using a VPN. This happens because WebRTC creates direct peer-to-peer connections that bypass VPN tunnels.
 
-### How to Test for WebRTC Leaks
+How to Test for WebRTC Leaks
 
 Create a simple test file:
 
@@ -64,20 +64,20 @@ testWebRTCLeak();
 
 If this code returns candidate information, your browser is leaking IP addresses through WebRTC. Firefox users can disable WebRTC by setting `media.peerconnection.enabled` to `false` in about:config. Chrome users should install an extension like WebRTC Leak Shield or use a browser with built-in WebRTC protection.
 
-### Step 2: DNS Leak Test
+Step 2: DNS Leak Test
 
 Even with a VPN, your DNS requests might bypass the encrypted tunnel and go through your ISP's servers. This defeats the purpose of privacy-focused browsing.
 
-### Testing DNS Leaks
+Testing DNS Leaks
 
 Use dig or nslookup to verify which DNS server responds to your queries:
 
 ```bash
-# Test which DNS server is resolving your queries
+Test which DNS server is resolving your queries
 dig +short myip.opendns.com @resolver1.opendns.com
 dig +short whoami.akamai.net @ns1-1.akamaitech.net
 
-# Check your current DNS servers
+Check your current DNS servers
 cat /etc/resolv.conf  # Linux/macOS
 ipconfig /all | findstr "DNS"  # Windows
 ```
@@ -85,17 +85,17 @@ ipconfig /all | findstr "DNS"  # Windows
 For a more test, visit dnsleaktest.com or use the command-line tool:
 
 ```bash
-# Using dnsleaktest CLI (if available)
+Using dnsleaktest CLI (if available)
 dnsleaktest -t standard
 ```
 
 If the DNS servers shown belong to your ISP rather than your VPN provider, you have a DNS leak. Fix this by configuring your system to use DNS-over-HTTPS (DoH) or DNS-over-TLS (DoT).
 
-### Step 3: Canvas Fingerprinting Test
+Step 3: Canvas Fingerprinting Test
 
 Canvas fingerprinting works by having your browser draw a hidden image and extracting the resulting pixel data. Different hardware and software configurations produce unique signatures.
 
-### Testing Canvas Fingerprinting
+Testing Canvas Fingerprinting
 
 Create a test to see if your canvas is readable:
 
@@ -122,11 +122,11 @@ console.log('Canvas fingerprint:', getCanvasFingerprint());
 
 If the function returns a consistent string across different websites, your browser has a unique canvas fingerprint. Firefox with `privacy.resistFingerprinting` enabled randomizes canvas output. Extensions like CanvasBlocker add noise to canvas readings.
 
-### Step 4: WebGL Fingerprint Test
+Step 4: WebGL Fingerprint Test
 
 Similar to canvas fingerprinting, WebGL can expose your GPU renderer and vendor information, creating another unique identifier.
 
-### Testing WebGL Information Leakage
+Testing WebGL Information Leakage
 
 ```javascript
 function getWebGLInfo() {
@@ -150,11 +150,11 @@ console.log('WebGL Info:', getWebGLInfo());
 
 A privacy-hardened browser should either block this API or return generic values. Tor Browser, for example, standardizes WebGL output across all users.
 
-### Step 5: User Agent and Navigator Properties
+Step 5: User Agent and Navigator Properties
 
 Your browser's user agent string and navigator properties reveal significant information about your system.
 
-### Navigator Audit
+Navigator Audit
 
 ```javascript
 function auditNavigator() {
@@ -180,7 +180,7 @@ console.table(auditNavigator());
 
 Compare this output across different browsers and incognito windows. A well-configured privacy browser should show consistent or generic values.
 
-### Step 6: Configure Cookie and Storage Isolation Test
+Step 6: Configure Cookie and Storage Isolation Test
 
 Verify that websites cannot access cookies and storage from other domains:
 
@@ -207,22 +207,22 @@ function testStorageIsolation() {
 console.log('Storage Isolation:', testStorageIsolation());
 ```
 
-### Step 7: Browser Privacy Checklist
+Step 7: Browser Privacy Checklist
 
 Use this checklist to verify your browser configuration:
 
-1. **WebRTC**: Disabled or leaking only VPN IP
-2. **DNS**: Requests go through DoH/DoT or VPN tunnel
-3. **Canvas**: Fingerprint is randomized or blocked
-4. **WebGL**: Renderer info is masked or generic
-5. **User Agent**: Does not reveal specific OS version
-6. **Cookies**: Properly isolated between sites
-7. **Third-party cookies**: Blocked
-8. **Tracking protection**: Enabled and functioning
-9. **Extensions**: Audited for excessive permissions
-10. **Fingerprinting resistance**: Enabled in browser settings
+1. WebRTC: Disabled or leaking only VPN IP
+2. DNS: Requests go through DoH/DoT or VPN tunnel
+3. Canvas: Fingerprint is randomized or blocked
+4. WebGL: Renderer info is masked or generic
+5. User Agent: Does not reveal specific OS version
+6. Cookies: Properly isolated between sites
+7. Third-party cookies: Blocked
+8. Tracking protection: Enabled and functioning
+9. Extensions: Audited for excessive permissions
+10. Fingerprinting resistance: Enabled in browser settings
 
-### Step 8: Automation for Regular Auditing
+Step 8: Automation for Regular Auditing
 
 For developers who want to automate these checks, create a Node.js script:
 
@@ -258,44 +258,44 @@ auditBrowserPrivacy('https://example.com')
 
 Run this script periodically to track changes in your browser's privacy posture.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Verify That Your VPN Is Actually Working and Not Leaking](/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
 - [How to Verify Your VPN is Not Leaking DNS Requests in 2026](/how-to-verify-your-vpn-is-not-leaking-dns-requests/)
@@ -304,5 +304,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Remove Personal Information From Ai Training Datasets](/how-to-remove-personal-information-from-ai-training-datasets/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

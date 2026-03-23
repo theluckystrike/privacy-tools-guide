@@ -14,11 +14,11 @@ tags: [privacy-tools-guide, privacy, vpn]
 ---
 
 {% raw %}
-# Privacy-Focused VPN Protocol Comparison 2026
+Privacy-Focused VPN Protocol Comparison 2026
 
 VPN protocols differ significantly in their privacy properties. WireGuard is fast and auditable, but its handshake is fingerprint-identifiable. OpenVPN is flexible but slow and uses TLS in a recognizable pattern. Shadowsocks and VLESS are designed to look like HTTPS traffic to evade deep packet inspection. This guide covers the privacy trade-offs, not just speeds.
 
-## What a VPN Protocol Protects (and Doesn't)
+What a VPN Protocol Protects (and Doesn't)
 
 ```
 What VPN encrypts:
@@ -36,7 +36,7 @@ What VPN does NOT protect:
 
 ---
 
-## Protocol Comparison Matrix
+Protocol Comparison Matrix
 
 | Protocol | Transport | DPI Resistance | Forward Secrecy | Audit Status | Censorship Bypass |
 |---|---|---|---|---|---|
@@ -49,25 +49,25 @@ What VPN does NOT protect:
 
 ---
 
-## WireGuard
+WireGuard
 
-WireGuard is a lean kernel-level VPN (4,000 lines vs OpenVPN's 100,000+). Its simplicity is its security advantage — less code = fewer bugs. The 2019 security audit found no critical issues.
+WireGuard is a lean kernel-level VPN (4,000 lines vs OpenVPN's 100,000+). Its simplicity is its security advantage. less code = fewer bugs. The 2019 security audit found no critical issues.
 
-**Privacy properties**:
+Privacy properties:
 - Initiator and responder authentication via static public keys (no PKI required)
 - Forward secrecy: ephemeral ECDH keys per session (Curve25519)
 - Handshake is encrypted but recognizable: fixed UDP port, specific packet size patterns
 
-**WireGuard IP privacy limitation**: WireGuard stores allowed peer IPs in kernel tables. If you disconnect and reconnect, your IP is logged. Mulvad and Proton VPN implement "roaming" workarounds, but a stock WireGuard server logs connection IPs.
+WireGuard IP privacy limitation: WireGuard stores allowed peer IPs in kernel tables. If you disconnect and reconnect, your IP is logged. Mulvad and Proton VPN implement "roaming" workarounds, but a stock WireGuard server logs connection IPs.
 
 ```bash
-# Install WireGuard
+Install WireGuard
 sudo apt install -y wireguard
 
-# Generate key pair
+Generate key pair
 wg genkey | tee private.key | wg pubkey > public.key
 
-# Minimal client config
+Minimal client config
 sudo tee /etc/wireguard/wg0.conf > /dev/null <<'EOF'
 [Interface]
 PrivateKey = YOUR_PRIVATE_KEY
@@ -85,21 +85,21 @@ sudo wg-quick up wg0
 wg show   # verify connection
 ```
 
-**DPI fingerprinting**: WireGuard's initial handshake has a specific structure (4-byte message type, 4-byte sender index, 32-byte Curve25519 key, 16-byte MAC). Firewalls in China, Russia, and Iran identify and block it. Obfuscated WireGuard tunnels (AmneziaWG) exist but are not standardized.
+DPI fingerprinting: WireGuard's initial handshake has a specific structure (4-byte message type, 4-byte sender index, 32-byte Curve25519 key, 16-byte MAC). Firewalls in China, Russia, and Iran identify and block it. Obfuscated WireGuard tunnels (AmneziaWG) exist but are not standardized.
 
 ---
 
-## OpenVPN
+OpenVPN
 
 OpenVPN has been the default enterprise VPN for 20 years. It tunnels over TCP or UDP and uses TLS for control channel authentication.
 
-**Privacy properties**:
+Privacy properties:
 - Full TLS handshake provides forward secrecy
 - Certificates or username/password authentication
 - `--tls-auth` or `--tls-crypt` pre-shared key prevents unauthenticated handshakes (reduces fingerprinting)
 
 ```bash
-# OpenVPN with tls-crypt and strong ciphers (server config snippet)
+OpenVPN with tls-crypt and strong ciphers (server config snippet)
 cipher AES-256-GCM
 data-ciphers AES-256-GCM:AES-128-GCM:CHACHA20-POLY1305
 auth SHA256
@@ -108,19 +108,19 @@ tls-version-min 1.2
 tls-cipher TLS-ECDHE-RSA-WITH-AES-256-GCM-SHA384
 ```
 
-**DPI fingerprinting**: OpenVPN's TLS hello is identifiable — specific TLS extensions, packet sizes, and behavior patterns. `--tls-crypt-v2` randomizes the first packet but deep packet inspection systems at the session level still identify it. Running on TCP port 443 helps evade naive port-based blocking but not DPI.
+DPI fingerprinting: OpenVPN's TLS hello is identifiable. specific TLS extensions, packet sizes, and behavior patterns. `--tls-crypt-v2` randomizes the first packet but deep packet inspection systems at the session level still identify it. Running on TCP port 443 helps evade naive port-based blocking but not DPI.
 
 ---
 
-## Shadowsocks
+Shadowsocks
 
-Shadowsocks was created in China to circumvent the Great Firewall. It wraps traffic in AEAD encryption and makes it look like random TLS noise. It does not implement full TLS (no certificate, no handshake) — traffic is indistinguishable from encrypted application data.
+Shadowsocks was created in China to circumvent the Great Firewall. It wraps traffic in AEAD encryption and makes it look like random TLS noise. It does not implement full TLS (no certificate, no handshake). traffic is indistinguishable from encrypted application data.
 
 ```bash
-# Shadowsocks server (Python)
+Shadowsocks server (Python)
 pip3 install shadowsocks
 
-# Server config: /etc/shadowsocks/config.json
+Server config: /etc/shadowsocks/config.json
 {
     "server": "0.0.0.0",
     "server_port": 8388,
@@ -132,22 +132,22 @@ pip3 install shadowsocks
 
 ssserver -c /etc/shadowsocks/config.json -d start
 
-# Client connection
+Client connection
 sslocal -s vpn.example.com -p 8388 -l 1080 \
   -k strong_password -m chacha20-ietf-poly1305 -d 8.8.8.8
 ```
 
-**Privacy limitation**: Shadowsocks has no forward secrecy — if the password is compromised, all past traffic is decryptable. Use strong passwords and rotate them. Modern implementations (Shadowsocks-libev, Outline) use AEAD (AES-256-GCM or ChaCha20-Poly1305) which provides authentication and integrity.
+Privacy limitation: Shadowsocks has no forward secrecy. if the password is compromised, all past traffic is decryptable. Use strong passwords and rotate them. Modern implementations (Shadowsocks-libev, Outline) use AEAD (AES-256-GCM or ChaCha20-Poly1305) which provides authentication and integrity.
 
 ---
 
-## VLESS + XTLS-Reality (2024+)
+VLESS + XTLS-Reality (2024+)
 
 VLESS is a protocol in the Xray/V2Ray ecosystem designed for maximum censorship resistance. XTLS-Reality takes this further by stealing a real TLS certificate fingerprint from a target domain (e.g., google.com), making the traffic cryptographically indistinguishable from HTTPS to google.com.
 
 ```bash
-# Server setup (Xray)
-# /usr/local/etc/xray/config.json (simplified)
+Server setup (Xray)
+/usr/local/etc/xray/config.json (simplified)
 {
   "inbounds": [{
     "listen": "0.0.0.0",
@@ -171,23 +171,23 @@ VLESS is a protocol in the Xray/V2Ray ecosystem designed for maximum censorship 
 }
 ```
 
-**Privacy properties**: Full TLS 1.3 forward secrecy. Server impersonates a real domain's TLS parameters. DPI sees a TLS 1.3 connection to google.com — indistinguishable from normal HTTPS traffic.
+Privacy properties: Full TLS 1.3 forward secrecy. Server impersonates a real domain's TLS parameters. DPI sees a TLS 1.3 connection to google.com. indistinguishable from normal HTTPS traffic.
 
-**Privacy limitation**: Centralized in the Xray/V2Ray Chinese developer community; less audited than WireGuard. Trust model is weaker for non-technical users.
+Privacy limitation: Centralized in the Xray/V2Ray Chinese developer community; less audited than WireGuard. Trust model is weaker for non-technical users.
 
 ---
 
-## Obfs4 (Tor Bridges)
+Obfs4 (Tor Bridges)
 
 Obfs4 is the obfuscation protocol used by Tor bridges. It randomizes all traffic so no protocol structure is identifiable. It cannot be fingerprinted because the ciphertext has no structure.
 
 ```bash
-# Use Tor Browser with bridges for censored environments
-# Or use obfs4proxy as a tunnel for another VPN
+Use Tor Browser with bridges for censored environments
+Or use obfs4proxy as a tunnel for another VPN
 
 sudo apt install -y obfs4proxy
 
-# Client config (bridges.torproject.org for current bridges)
+Client config (bridges.torproject.org for current bridges)
 obfs4proxy -enableLogging -logLevel DEBUG
 ```
 
@@ -195,7 +195,7 @@ Obfs4 is slower than WireGuard due to overhead but provides the strongest obfusc
 
 ---
 
-## Choosing a Protocol by Threat Model
+Choosing a Protocol by Threat Model
 
 | Situation | Recommended |
 |---|---|
@@ -208,10 +208,10 @@ Obfs4 is slower than WireGuard due to overhead but provides the strongest obfusc
 
 ---
 
-## Verifying No DNS Leaks
+Verifying No DNS Leaks
 
 ```bash
-# With VPN active
+With VPN active
 curl -s https://api.ipleak.net/json/ | python3 -c "
 import sys, json
 d = json.load(sys.stdin)
@@ -220,13 +220,13 @@ print('Country:', d.get('country_name'))
 print('ISP:', d.get('isp_name'))
 "
 
-# DNS leak test
+DNS leak test
 curl -s https://www.dnsleaktest.com/results.json | python3 -m json.tool
 ```
 
 ---
 
-## Related Reading
+Related Reading
 
 - [How to Use Tcpdump to Verify VPN Traffic Is Encrypted](/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [How to Diagnose Slow VPN Connection Speeds Step by Step](/how-to-diagnose-slow-vpn-connection-speeds-step-by-step/)
@@ -234,5 +234,5 @@ curl -s https://www.dnsleaktest.com/results.json | python3 -m json.tool
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

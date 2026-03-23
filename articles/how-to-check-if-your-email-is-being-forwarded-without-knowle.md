@@ -20,7 +20,7 @@ Email forwarding is a legitimate feature that millions of users rely on daily. H
 
 This guide provides practical methods to identify if your emails are being forwarded without your knowledge, with code examples and tools suitable for technical users.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -30,34 +30,34 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand Email Forwarding Mechanics
+Step 1: Understand Email Forwarding Mechanics
 
 When an email is forwarded, the original message traverses multiple servers before reaching its destination. Each server adds diagnostic headers to the message, creating a trail that reveals the forwarding path. These headers become your primary investigative tool.
 
 Email forwarding occurs in several forms:
 
-- **Manual forwarding**: You or an authorized user explicitly sets up a forward rule
-- **Automatic forwarding**: Server-side rules that redirect incoming mail based on conditions
-- **Bcc forwarding**: Silent carbon copies that may go unnoticed
-- **Alias redirection**: Emails sent to one address delivered to another
+- Manual forwarding: You or an authorized user explicitly sets up a forward rule
+- Automatic forwarding: Server-side rules that redirect incoming mail based on conditions
+- Bcc forwarding: Silent carbon copies that may go unnoticed
+- Alias redirection: Emails sent to one address delivered to another
 
 Malicious forwarding typically happens through compromised accounts, unauthorized inbox rules, or compromised credentials. Attackers configure forwarding rules to exfiltrate sensitive communications without alerting the account owner.
 
-### Step 2: Examining Email Headers
+Step 2: Examining Email Headers
 
 The most reliable method to detect forwarding involves analyzing raw email headers. Every email contains metadata that documents its journey through the mail system.
 
-### Finding Email Headers
+Finding Email Headers
 
 Most email clients hide headers by default. Here's how to access them:
 
-**Gmail**: Open an email, click the three dots, select "Show original"
+Gmail: Open an email, click the three dots, select "Show original"
 
-**Apple Mail**: View → Message → All Headers
+Apple Mail: View → Message → All Headers
 
-**Thunderbird**: View → Headers → All
+Thunderbird: View → Headers → All
 
-**Programmatic access (Python)**:
+Programmatic access (Python):
 
 ```python
 import email
@@ -78,23 +78,23 @@ def extract_headers(raw_email):
     return received
 ```
 
-### Key Headers That Reveal Forwarding
+Key Headers That Reveal Forwarding
 
 Several headers indicate forwarding activity:
 
-- **Received**: Each mail server adds a "Received" header showing timestamp, server name, and sometimes the source IP
-- **X-Forwarded-For**: Explicitly lists intermediate destinations
-- **X-Originating-IP**: Shows the original sender's IP address
-- **Delivered-To**: The final destination address
-- **Return-Path**: Where bounce messages are sent (often differs from "From")
+- Received: Each mail server adds a "Received" header showing timestamp, server name, and sometimes the source IP
+- X-Forwarded-For: Explicitly lists intermediate destinations
+- X-Originating-IP: Shows the original sender's IP address
+- Delivered-To: The final destination address
+- Return-Path: Where bounce messages are sent (often differs from "From")
 
 Compare the "From" address against "Delivered-To" and "Return-Path" to identify discrepancies that suggest forwarding.
 
-### Step 3: Detecting Unauthorized Forwarding Rules
+Step 3: Detecting Unauthorized Forwarding Rules
 
 Email providers offer various ways to view active forwarding rules. Checking these regularly helps catch unauthorized configurations.
 
-### Gmail
+Gmail
 
 Access forwarding settings at `Settings → Forwarding and POP/IMAP`. You'll see all configured forwarding addresses here. For programmatic access, use the Gmail API:
 
@@ -114,22 +114,22 @@ def check_gmail_forwarding(credentials):
         print(f"Forwarding to: {forward['forwardingEmail']}")
 ```
 
-### Microsoft 365 / Outlook
+Microsoft 365 / Outlook
 
 Use the Exchange Online PowerShell module:
 
 ```powershell
-# Check forwarding rules
+Check forwarding rules
 Get-InboxRule -Mailbox "user@domain.com" |
   Where-Object { $_.ForwardTo -or $_.RedirectTo } |
   Select-Object Name, ForwardTo, RedirectTo, Enabled
 
-# Check mailbox forwarding settings
+Check mailbox forwarding settings
 Get-Mailbox user@domain.com |
   Select-Object ForwardingSmtpAddress, DeliverToMailboxAndForward
 ```
 
-### Apple iCloud
+Apple iCloud
 
 iCloud doesn't provide a web interface for viewing rules. Use AppleScript to check:
 
@@ -142,44 +142,44 @@ tell application "Mail"
 end tell
 ```
 
-### Step 4: Server-Side Detection for Administrators
+Step 4: Server-Side Detection for Administrators
 
 If you administer your own mail server, several methods help detect forwarding anomalies.
 
-### Postfix Logging
+Postfix Logging
 
 Check `/var/log/mail.log` for forwarding patterns:
 
 ```bash
-# Find emails forwarded to external domains
+Find emails forwarded to external domains
 grep -E "to=<.*@gmail\.com|to=<.*@yahoo\.com" /var/log/mail.log | \
   grep -E "from=<.*@yourdomain\.com"
 
-# Monitor for new forwarding aliases
+Monitor for new forwarding aliases
 grep "forward" /var/log/mail.log | tail -100
 ```
 
-### Checking DMARC and SPF Failures
+Checking DMARC and SPF Failures
 
 Forwarded emails often trigger authentication failures. Monitor these:
 
 ```bash
-# Check for SPF/DKIM failures indicating forwarding
+Check for SPF/DKIM failures indicating forwarding
 grep -E "spf=fail|dkim=fail" /var/log/mail.log | \
   awk '{print $NF}' | sort | uniq -c | sort -rn
 ```
 
-### Step 5: Practical Detection Workflow
+Step 5: Practical Detection Workflow
 
 Implement a systematic detection process:
 
-1. **Baseline your headers**: Save headers from emails you know weren't forwarded
-2. **Compare new emails**: Look for new "Received" chain entries or unexpected "X-Forwarded-For" values
-3. **Verify forwarding rules**: Check your provider's forwarding settings weekly
-4. **Monitor sent folder**: Attackers forwarding your emails may use your account
-5. **Set up alerts**: Configure notifications for new forwarding rules
+1. Baseline your headers: Save headers from emails you know weren't forwarded
+2. Compare new emails: Look for new "Received" chain entries or unexpected "X-Forwarded-For" values
+3. Verify forwarding rules: Check your provider's forwarding settings weekly
+4. Monitor sent folder: Attackers forwarding your emails may use your account
+5. Set up alerts: Configure notifications for new forwarding rules
 
-### Automated Monitoring Script
+Automated Monitoring Script
 
 Here's a Python script that checks Gmail for suspicious forwarding:
 
@@ -218,18 +218,18 @@ if __name__ == '__main__':
     print(f"Monitoring from history: {alert_history_id}")
 ```
 
-### Step 6: What To Do If You Detect Unauthorized Forwarding
+Step 6: What To Do If You Detect Unauthorized Forwarding
 
 If you discover unauthorized forwarding:
 
-1. **Immediately remove the rule**: Access your email settings and delete suspicious forwarding addresses
-2. **Change your password**: Assume your account may be compromised
-3. **Enable two-factor authentication**: Add an extra layer of security
-4. **Check for other rules**: Look for additional malicious rules like email deletion or marking as read
-5. **Review recent account activity**: Check login history for unfamiliar locations
-6. **Notify contacts**: Inform people who emailed you recently that your account may have been compromised
+1. Immediately remove the rule: Access your email settings and delete suspicious forwarding addresses
+2. Change your password: Assume your account may be compromised
+3. Enable two-factor authentication: Add an extra layer of security
+4. Check for other rules: Look for additional malicious rules like email deletion or marking as read
+5. Review recent account activity: Check login history for unfamiliar locations
+6. Notify contacts: Inform people who emailed you recently that your account may have been compromised
 
-## Prevention Best Practices
+Prevention Best Practices
 
 - Use dedicated email aliases for different services
 - Enable login alerts for new devices
@@ -239,44 +239,44 @@ If you discover unauthorized forwarding:
 
 Detecting unauthorized email forwarding requires vigilance and understanding of email metadata. By regularly examining headers, monitoring forwarding rules, and implementing automated checks, you can protect your communications from silent exfiltration.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to check if your email is being forwarded?**
+How long does it take to check if your email is being forwarded?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [1Password Masked Email Feature Review: A Developer Guide](/1password-masked-email-feature-review/)
 - [Secure Email Forwarding With Encryption How To Set Up](/secure-email-forwarding-with-encryption-how-to-set-up-anonad/)
@@ -284,5 +284,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Detect if Your Email Is Compromised](/detect-email-compromise-guide)
 - [Privacy-Focused Email Forwarding Services Comparison](/privacy-focused-email-forwarding-services-comparison/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

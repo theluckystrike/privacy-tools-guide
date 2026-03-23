@@ -18,7 +18,7 @@ voice-checked: true
 
 Syncthing is an open-source, decentralized file sync tool that transfers data directly between your devices using peer-to-peer connections, eliminating any cloud server and keeping your files under your complete control. Install Syncthing on macOS via Homebrew, Windows via installer, or Linux via package manager, then add devices by scanning QR codes or pasting device IDs and selecting folders to sync. This guide covers installation on all platforms, device pairing, folder configuration, security settings including TLS encryption and device verification, and practical setup for privacy-conscious file management across multiple devices.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -28,11 +28,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Install Syncthing
+Step 1: Install Syncthing
 
 Syncthing runs on Windows, macOS, Linux, and several other platforms. The installation methods vary depending on your operating system.
 
-### macOS Installation
+macOS Installation
 
 On macOS, you can install Syncthing using Homebrew:
 
@@ -46,7 +46,7 @@ After installation, launch Syncthing in the background:
 syncthing serve &
 ```
 
-### Linux Installation
+Linux Installation
 
 Most Linux distributions package Syncthing in their repositories. On Debian or Ubuntu:
 
@@ -62,25 +62,25 @@ tar -xzf syncthing-linux-amd64-v1.27.2.tar.gz
 ./syncthing-linux-amd64-v1.27.2/syncthing
 ```
 
-### Windows Installation
+Windows Installation
 
 Download the Windows installer from the official website or use the portable version. The portable version works well for power users who prefer not to install software system-wide.
 
 Verify your installation by accessing the web UI at `http://localhost:8384` after starting Syncthing.
 
-### Step 2: Initial Configuration
+Step 2: Initial Configuration
 
 When you first run Syncthing, it generates a unique device ID and configuration files in your home directory. On Linux and macOS, these are stored in `~/.config/syncthing/`.
 
-### Understanding the Web Interface
+Understanding the Web Interface
 
 The web interface provides access to all Syncthing settings. Key sections include:
 
-- **Folders**: Manage which directories are synchronized
-- **Devices**: Add other devices to your sync network
-- **Settings**: Configure global preferences including network, UI, and advanced options
+- Folders: Manage which directories are synchronized
+- Devices: Add other devices to your sync network
+- Settings: Configure global preferences including network, UI, and advanced options
 
-### Adding Your First Folder
+Adding Your First Folder
 
 To synchronize a folder between devices:
 
@@ -95,19 +95,19 @@ The folder path must exist on your system before Syncthing can sync it. Create t
 mkdir -p ~/Sync/Documents
 ```
 
-### Step 3: Connecting Devices
+Step 3: Connecting Devices
 
 Syncthing identifies devices by their unique Device ID, a long string of characters generated during first startup. To connect two devices:
 
-### Finding Your Device ID
+Finding Your Device ID
 
 Access the web interface and click the "Actions" menu (gear icon), then select "Show ID". Your Device ID will display along with a QR code for easy mobile device setup.
 
-### Adding a Remote Device
+Adding a Remote Device
 
 On each device, navigate to "Add Device" and enter the other device's ID. Give the device a friendly name for easier identification. After adding the device, you can choose which folders to share with it.
 
-### Network Configuration
+Network Configuration
 
 Syncthing uses TCP port 22000 for local connections and can traverse NAT via UPnP or relaying through the Syncthing discovery servers. For better privacy, you may want to disable relay connections and discovery servers:
 
@@ -121,11 +121,11 @@ For manual connections, specify the address directly:
 tcp://192.168.1.100:22000
 ```
 
-## Security Best Practices
+Security Best Practices
 
 Syncthing encrypts all transfers using TLS, but additional security measures strengthen your setup.
 
-### Enabling HTTPS for Local Access
+Enabling HTTPS for Local Access
 
 By default, Syncthing's web interface uses HTTP. Enable HTTPS for local access:
 
@@ -133,7 +133,7 @@ By default, Syncthing's web interface uses HTTP. Enable HTTPS for local access:
 syncthing -gui-address=https://127.0.0.1:8384
 ```
 
-### Configuring a GUI Password
+Configuring a GUI Password
 
 Protect the web interface with authentication:
 
@@ -147,20 +147,20 @@ For enhanced security, use environment variables to store credentials rather tha
 SYNCTHING_GUI_USER=admin SYNCTHING_GUI_PASSWORD=your_secure_password syncthing
 ```
 
-### Firewall Configuration
+Firewall Configuration
 
 Ensure your firewall allows Syncthing's communication port:
 
 ```bash
-# UFW example
+UFW example
 sudo ufw allow 22000/tcp
 ```
 
-## Advanced Configuration
+Advanced Configuration
 
 For developers and power users, Syncthing offers advanced features through configuration files.
 
-### Using the Config File
+Using the Config File
 
 Edit `~/.config/syncthing/config.xml` directly for precise control. After editing, trigger a configuration reload:
 
@@ -168,26 +168,26 @@ Edit `~/.config/syncthing/config.xml` directly for precise control. After editin
 syncthing -reload
 ```
 
-### Ignoring Files
+Ignoring Files
 
 Create a `.stignore` file in each folder root to exclude files from synchronization:
 
 ```
-# Ignore temporary files
+Ignore temporary files
 *.tmp
 *.swp
 *~
 
-# Ignore version control
+Ignore version control
 .git/
 .svn/
 
-# Ignore OS files
+Ignore OS files
 .DS_Store
 Thumbs.db
 ```
 
-### Selective Synchronization
+Selective Synchronization
 
 For large folders, use folder markers to synchronize only specific subdirectories. Create a `.stfolders` file listing the paths you want to sync:
 
@@ -197,9 +197,9 @@ Projects/mobile
 Documents/Important
 ```
 
-### Step 4: Automate Syncthing Startup
+Step 4: Automate Syncthing Startup
 
-### Systemd Service (Linux)
+Systemd Service (Linux)
 
 Create a systemd service for automatic startup:
 
@@ -225,7 +225,7 @@ sudo systemctl enable syncthing
 sudo systemctl start syncthing
 ```
 
-### LaunchAgent (macOS)
+LaunchAgent (macOS)
 
 For macOS, create a LaunchAgent plist in `~/Library/LaunchAgents/`:
 
@@ -253,33 +253,33 @@ Load the agent:
 launchctl load ~/Library/LaunchAgents/com.github.xor-gate.syncthing.plist
 ```
 
-## Troubleshooting Common Issues
+Troubleshooting Common Issues
 
 If devices won't connect, verify both have the correct Device ID added and that firewalls allow port 22000. At least one folder must be shared between them. If files aren't syncing, check the `.stignore` file for patterns that block them, then review the Syncthing log for specific error messages. High CPU usage can be reduced by lowering the concurrent file operation limit in Settings → Advanced → Max Concurrent Items.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to guide for private file sync?**
+How long does it take to guide for private file sync?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Encrypted File Sync for Teams Comparison: A Developer Guide](/encrypted-file-sync-for-teams-comparison/)
 - [Best Self-Hosted File Sync Alternatives in 2026](/best-self-hosted-file-sync-alternative-2026/)
@@ -287,5 +287,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Linux File Permissions Privacy](/linux-file-permissions-privacy-audit/)
 - [Nextcloud Setup Guide Raspberry Pi 2026](/nextcloud-setup-guide-raspberry-pi-2026/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

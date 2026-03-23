@@ -13,6 +13,6 @@ voice-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

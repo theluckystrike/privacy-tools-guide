@@ -17,38 +17,38 @@ tags: [privacy-tools-guide]
 
 `inotifywait` uses the Linux kernel's inotify API to watch files and directories for changes in real time. Unlike polling-based tools, it receives kernel events instantly with zero CPU overhead when idle. This makes it ideal for security monitoring, automated backup triggers, and detecting unauthorized file modifications.
 
-## Installation
+Installation
 
 ```bash
 sudo apt install inotify-tools
 inotifywait --version
 ```
 
-## Basic Usage
+Basic Usage
 
 ```bash
-# Watch a single file
+Watch a single file
 inotifywait -m /etc/passwd
 
-# Watch a directory recursively
+Watch a directory recursively
 inotifywait -m -r /var/www/html
 
-# Watch for specific events only
+Watch for specific events only
 inotifywait -m -e modify,create,delete,moved_from,moved_to /etc/
 ```
 
 Common event types: `access`, `modify`, `attrib`, `create`, `delete`, `moved_from`, `moved_to`, `close_write`.
 
-## Formatted Output
+Formatted Output
 
 ```bash
-# Human-readable with timestamps
+Human-readable with timestamps
 inotifywait -m -r \
   --format '%T %w %f %e' \
   --timefmt '%Y-%m-%d %H:%M:%S' \
   /etc/ /var/www/
 
-# CSV format
+CSV format
 inotifywait -m -r \
   --csv \
   --format '%T,%w,%f,%e' \
@@ -56,11 +56,11 @@ inotifywait -m -r \
   /home/
 ```
 
-## Script: Alert on Unauthorized Changes
+Script: Alert on Unauthorized Changes
 
 ```bash
 #!/bin/bash
-# /usr/local/bin/watch-critical-dirs.sh
+/usr/local/bin/watch-critical-dirs.sh
 
 WATCH_DIRS="/etc /usr/bin /usr/sbin /bin /sbin"
 LOG="/var/log/file-watch.log"
@@ -93,11 +93,11 @@ while read -r timestamp filepath event; do
 done
 ```
 
-## Script: Detect Webshell Drops
+Script: Detect Webshell Drops
 
 ```bash
 #!/bin/bash
-# /usr/local/bin/watch-webroot.sh
+/usr/local/bin/watch-webroot.sh
 
 WEBROOT="/var/www/html"
 QUARANTINE="/var/quarantine"
@@ -131,7 +131,7 @@ while read -r filepath event; do
 done
 ```
 
-## Systemd Service
+Systemd Service
 
 ```bash
 sudo tee /etc/systemd/system/file-watch.service > /dev/null <<'EOF'
@@ -154,10 +154,10 @@ sudo systemctl daemon-reload
 sudo systemctl enable --now file-watch
 ```
 
-## Watching for Specific Patterns
+Watching for Specific Patterns
 
 ```bash
-# Alert on new executables in temp directories
+Alert on new executables in temp directories
 inotifywait -m -r \
   --format '%w%f' \
   -e create \
@@ -168,7 +168,7 @@ while read -r filepath; do
     fi
 done
 
-# Watch for crontab modifications (persistence mechanism)
+Watch for crontab modifications (persistence mechanism)
 inotifywait -m \
   -e modify,create \
   /etc/crontab /etc/cron.d/ /var/spool/cron/ 2>/dev/null | \
@@ -177,19 +177,19 @@ while read -r path event file; do
 done
 ```
 
-## inotifywait vs AIDE
+inotifywait vs AIDE
 
 inotifywait gives real-time alerting for immediate response. AIDE provides forensic baseline comparison that detects rootkit-level changes. Use both: inotifywait for rapid alerting, AIDE for periodic deep verification.
 
-## Advanced Monitoring Patterns
+Advanced Monitoring Patterns
 
-### Detecting Supply Chain Attacks via File Integrity
+Detecting Supply Chain Attacks via File Integrity
 
 Supply chain attacks often modify trusted binaries. Detect them by watching for unexpected changes to system executables:
 
 ```bash
 #!/bin/bash
-# /usr/local/bin/detect-supply-chain-changes.sh
+/usr/local/bin/detect-supply-chain-changes.sh
 
 CRITICAL_BINARIES=(
   "/usr/bin/sudo"
@@ -203,12 +203,12 @@ CRITICAL_BINARIES=(
 BASELINE_DIR="/var/lib/file-baseline"
 mkdir -p "$BASELINE_DIR"
 
-# Create baseline hashes on first run
+Create baseline hashes on first run
 for binary in "${CRITICAL_BINARIES[@]}"; do
   sha256sum "$binary" > "$BASELINE_DIR/$(basename $binary).hash"
 done
 
-# Monitor for changes
+Monitor for changes
 inotifywait -m -e modify,attrib "${CRITICAL_BINARIES[@]}" | \
 while read path action file; do
   current_hash=$(sha256sum "${path}${file}" | cut -d' ' -f1)
@@ -227,13 +227,13 @@ done
 
 This catches scenarios where compromised package updates or repository mirrors replace binaries with malicious versions.
 
-### Detecting Privilege Escalation via setuid Changes
+Detecting Privilege Escalation via setuid Changes
 
 Attackers often create setuid binaries as persistence mechanisms. Monitor for suspicious setuid assignments:
 
 ```bash
 #!/bin/bash
-# /usr/local/bin/detect-setuid-changes.sh
+/usr/local/bin/detect-setuid-changes.sh
 
 WATCH_DIRS=(
   "/usr/bin"
@@ -244,7 +244,7 @@ WATCH_DIRS=(
   "/home"
 )
 
-# Build baseline of current setuid binaries
+Build baseline of current setuid binaries
 BASELINE="/var/lib/setuid-baseline.txt"
 find "${WATCH_DIRS[@]}" -perm /4000 -type f -exec ls -lh {} \; > "$BASELINE" 2>/dev/null
 
@@ -274,13 +274,13 @@ while read path action file; do
 done
 ```
 
-### Real-Time Backup Triggering
+Real-Time Backup Triggering
 
 Use inotifywait to trigger backups the moment critical files change, rather than relying on scheduled backups:
 
 ```bash
 #!/bin/bash
-# /usr/local/bin/realtime-backup.sh
+/usr/local/bin/realtime-backup.sh
 
 CRITICAL_PATHS=(
   "/etc"
@@ -296,7 +296,7 @@ mkdir -p "$BACKUP_DEST"
 
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOG"; }
 
-# Track recently backed-up files to avoid redundant backups
+Track recently backed-up files to avoid redundant backups
 BACKUP_WINDOW_SECONDS=300
 declare -A last_backup_time
 
@@ -336,20 +336,20 @@ while read filepath; do
 done
 ```
 
-### Detecting Configuration Drift in Container Orchestration
+Detecting Configuration Drift in Container Orchestration
 
 For Kubernetes clusters, detect when config files drift from their committed versions:
 
 ```bash
 #!/bin/bash
-# /usr/local/bin/detect-k8s-config-drift.sh
+/usr/local/bin/detect-k8s-config-drift.sh
 
 KUBECONFIG_DIR="/etc/kubernetes"
 GIT_REPO="/var/lib/k8s-config-repo"
 
 log() { echo "[$(date '+%Y-%m-%dT%H:%M:%S')] $*" | logger -p user.notice; }
 
-# Initial commit of configs
+Initial commit of configs
 if [ ! -d "$GIT_REPO/.git" ]; then
   mkdir -p "$GIT_REPO"
   cd "$GIT_REPO"
@@ -360,7 +360,7 @@ if [ ! -d "$GIT_REPO/.git" ]; then
   log "Created initial K8s config baseline"
 fi
 
-# Monitor for changes
+Monitor for changes
 inotifywait -m -r \
   --format '%w%f' \
   -e modify,create,delete \
@@ -386,13 +386,13 @@ while read filepath; do
 done
 ```
 
-### Monitoring Log Files for Security Events
+Monitoring Log Files for Security Events
 
 Watch application logs in real-time for security-relevant patterns:
 
 ```bash
 #!/bin/bash
-# /usr/local/bin/monitor-security-logs.sh
+/usr/local/bin/monitor-security-logs.sh
 
 SECURITY_PATTERNS=(
   "Failed password"
@@ -432,16 +432,16 @@ $matching_lines"
 done
 ```
 
-### CPU-Efficient Long-Term Monitoring
+CPU-Efficient Long-Term Monitoring
 
 For large directory trees, inotifywait can consume CPU. Optimize with strategic watches:
 
 ```bash
 #!/bin/bash
-# /usr/local/bin/efficient-dir-monitor.sh
+/usr/local/bin/efficient-dir-monitor.sh
 
-# Watch only directories, not every file
-# This drastically reduces inotify event volume
+Watch only directories, not every file
+This drastically reduces inotify event volume
 
 inotifywait -m -r \
   --exclude '(\.git|\.venv|node_modules|__pycache__|\.cache)' \
@@ -463,7 +463,7 @@ done
 
 Performance note: Watching 1 million files costs significant memory. Use `--exclude` aggressively to watch only what matters.
 
-## Related Articles
+Related Articles
 
 - [How to Use AIDE for File Integrity Checking](/how-to-use-aide-for-file-integrity-checking/)
 - [How to Set Up Promtail for Log Shipping](/how-to-set-up-promtail-for-log-shipping/)
@@ -471,6 +471,6 @@ Performance note: Watching 1 million files costs significant memory. Use `--excl
 - [Linux Kernel Hardening with sysctl](/linux-kernel-hardening-sysctl-guide)
 - [Linux File Permissions Privacy](/linux-file-permissions-privacy-audit/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

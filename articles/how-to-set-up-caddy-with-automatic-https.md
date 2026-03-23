@@ -15,19 +15,19 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-Caddy is a web server written in Go that automatically provisions and renews TLS certificates from Let's Encrypt. There is no certbot, no cron jobs, no manual renewal — Caddy handles it all. This makes it the fastest way to get a self-hosted service behind HTTPS on a VPS.
+Caddy is a web server written in Go that automatically provisions and renews TLS certificates from Let's Encrypt. There is no certbot, no cron jobs, no manual renewal. Caddy handles it all. This makes it the fastest way to get a self-hosted service behind HTTPS on a VPS.
 
-## Prerequisites
+Prerequisites
 
 - A VPS with a public IP
 - A domain pointing at your VPS (A record)
 - Ports 80 and 443 open (Caddy needs both for ACME HTTP-01 challenge)
 - Ubuntu 20.04 or later
 
-## Step 1: Install Caddy
+Step 1: Install Caddy
 
 ```bash
-# Install from the official Caddy repository
+Install from the official Caddy repository
 sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https curl
 
 curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | \
@@ -38,14 +38,14 @@ curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | \
 
 sudo apt update && sudo apt install caddy
 
-# Verify
+Verify
 caddy version
-# v2.8.x
+v2.8.x
 ```
 
 Caddy installs as a systemd service and starts listening on port 80 immediately. It serves a placeholder page until you configure your Caddyfile.
 
-## Step 2: Basic Caddyfile
+Step 2: Basic Caddyfile
 
 The Caddyfile lives at `/etc/caddy/Caddyfile`. Edit it:
 
@@ -79,9 +79,9 @@ Check certificate:
 curl -vI https://example.com 2>&1 | grep -A2 "SSL certificate\|subject:\|issuer:"
 ```
 
-## Step 3: Reverse Proxy to a Backend
+Step 3: Reverse Proxy to a Backend
 
-The most common use case — proxying to an application running on localhost:
+The most common use case. proxying to an application running on localhost:
 
 ```
 example.com {
@@ -98,7 +98,7 @@ Caddy forwards all headers and handles TLS termination. The backend only needs t
 For multiple services on subdomains:
 
 ```
-# Wildcard cert (requires DNS challenge — see below)
+Wildcard cert (requires DNS challenge. see below)
 *.example.com {
     @wiki host wiki.example.com
     @gitea host gitea.example.com
@@ -116,7 +116,7 @@ For multiple services on subdomains:
 }
 ```
 
-## Step 4: Security Headers
+Step 4: Security Headers
 
 Add security headers globally using the `header` directive:
 
@@ -143,12 +143,12 @@ example.com {
 
 The `-Server` and `-X-Powered-By` lines remove those response headers entirely to reduce fingerprinting.
 
-## Step 5: Rate Limiting
+Step 5: Rate Limiting
 
 Caddy's rate limit module is not built-in but available as a plugin. For basic protection, use the `respond` directive to block excessive requests, or deploy the `caddy-ratelimit` plugin:
 
 ```bash
-# Build caddy with rate limit module
+Build caddy with rate limit module
 xcaddy build --with github.com/mholt/caddy-ratelimit
 
 sudo mv caddy /usr/bin/caddy
@@ -170,14 +170,14 @@ example.com {
 }
 ```
 
-## Step 6: Basic Authentication
+Step 6: Basic Authentication
 
 Protect an internal service with an username/password:
 
 ```bash
-# Generate a bcrypt-hashed password
+Generate a bcrypt-hashed password
 caddy hash-password --plaintext 'your-strong-password'
-# $2a$14$...
+$2a$14$...
 ```
 
 ```
@@ -189,7 +189,7 @@ private.example.com {
 }
 ```
 
-## Step 7: Logging
+Step 7: Logging
 
 Enable structured JSON access logs for security analysis:
 
@@ -215,22 +215,22 @@ sudo chown caddy:caddy /var/log/caddy
 
 Parse logs:
 ```bash
-# Top 10 IPs by request count
+Top 10 IPs by request count
 cat /var/log/caddy/access.log | jq -r '.request.remote_ip' | sort | uniq -c | sort -rn | head
 
-# Show 404s
+Show 404s
 cat /var/log/caddy/access.log | jq 'select(.status == 404) | {uri: .request.uri, ip: .request.remote_ip}'
 ```
 
-## Step 8: DNS Challenge for Wildcard Certificates
+Step 8: DNS Challenge for Wildcard Certificates
 
 Wildcard certs (`*.example.com`) require DNS-01 challenge, which means Caddy needs API access to your DNS provider. Install the appropriate DNS module:
 
 ```bash
-# For Cloudflare
+For Cloudflare
 xcaddy build --with github.com/caddy-dns/cloudflare
 
-# In Caddyfile, provide the API token
+In Caddyfile, provide the API token
 *.example.com {
     tls {
         dns cloudflare {env.CF_API_TOKEN}
@@ -241,7 +241,7 @@ xcaddy build --with github.com/caddy-dns/cloudflare
 
 Set the environment variable:
 ```bash
-# /etc/systemd/system/caddy.service.d/override.conf
+/etc/systemd/system/caddy.service.d/override.conf
 [Service]
 Environment="CF_API_TOKEN=your_cloudflare_api_token"
 ```
@@ -251,23 +251,23 @@ sudo systemctl daemon-reload
 sudo systemctl restart caddy
 ```
 
-## Verify Everything
+Verify Everything
 
 ```bash
-# Check certificate status
+Check certificate status
 sudo caddy certificates
 
-# Validate your Caddyfile without restarting
+Validate your Caddyfile without restarting
 caddy validate --config /etc/caddy/Caddyfile
 
-# Test TLS configuration
+Test TLS configuration
 curl -vI https://example.com
 
-# Grade your TLS at Qualys SSL Labs
-# https://www.ssllabs.com/ssltest/analyze.html?d=example.com
+Grade your TLS at Qualys SSL Labs
+https://www.ssllabs.com/ssltest/analyze.html?d=example.com
 ```
 
-## Related Reading
+Related Reading
 
 - [How to Configure UFW Firewall on Ubuntu](/how-to-configure-ufw-firewall-on-ubuntu/)
 - [Secure WebSocket Connections Setup Guide](/secure-websocket-connections-setup-guide/)
@@ -278,13 +278,13 @@ curl -vI https://example.com
 - [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 ---
 
-## Related Articles
+Related Articles
 
 - [How to Set Up Mullvad VPN on Linux](/mullvad-vpn-linux-setup-guide/)
 - [Encrypted DNS over HTTPS on Linux](/encrypted-dns-over-https-linux-setup)
 - [Setting Up Vault for Secrets Management](/hashicorp-vault-secrets-management-setup/)
 - [How To Use Trojan Gfw Proxy To Disguise Traffic As Https](/how-to-use-trojan-gfw-proxy-to-disguise-traffic-as-https-fro/)
 - [How to Set Up Authentik for Identity Management](/how-to-set-up-authentik-for-identity-management/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

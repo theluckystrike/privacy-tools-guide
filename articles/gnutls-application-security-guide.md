@@ -14,34 +14,34 @@ tags: [privacy-tools-guide, security]
 ---
 
 {% raw %}
-# How to Set Up GnuTLS for Application Security
+How to Set Up GnuTLS for Application Security
 
-GnuTLS is the TLS library preferred on GNU/Linux systems (used by GLib, curl, libsoup, and GNOME applications). It has a different API philosophy from OpenSSL — credential-based rather than context-based — and excellent support for TLS 1.3, DTLS, and mutual certificate authentication. This guide covers practical integration in C and Python, certificate pinning, and system-level hardening.
+GnuTLS is the TLS library preferred on GNU/Linux systems (used by GLib, curl, libsoup, and GNOME applications). It has a different API philosophy from OpenSSL. credential-based rather than context-based. and excellent support for TLS 1.3, DTLS, and mutual certificate authentication. This guide covers practical integration in C and Python, certificate pinning, and system-level hardening.
 
-## Install GnuTLS
+Install GnuTLS
 
 ```bash
-# Ubuntu / Debian
+Ubuntu / Debian
 sudo apt install -y libgnutls28-dev gnutls-bin gnutls-doc python3-gnutls
 
-# RHEL / Fedora
+RHEL / Fedora
 sudo dnf install -y gnutls gnutls-devel gnutls-utils
 
-# Verify version (3.8+ recommended for TLS 1.3 support)
+Verify version (3.8+ recommended for TLS 1.3 support)
 gnutls-cli --version
 ```
 
 ---
 
-## Generate Certificates with certtool
+Generate Certificates with certtool
 
 GnuTLS ships `certtool`, which is more scriptable than OpenSSL's CA workflow:
 
 ```bash
-# Generate a private key (Ed25519 for modern security)
+Generate a private key (Ed25519 for modern security)
 certtool --generate-privkey --key-type ed25519 --outfile server-key.pem
 
-# Generate a self-signed certificate for testing
+Generate a self-signed certificate for testing
 certtool --generate-self-signed --load-privkey server-key.pem \
   --outfile server-cert.pem <<'EOF'
 Country name: US
@@ -55,12 +55,12 @@ Enter the dnsName of the subject of the certificate: server.example.com
 Is the above information ok? yes
 EOF
 
-# Generate CA + signed server cert (production pattern)
+Generate CA + signed server cert (production pattern)
 certtool --generate-privkey --key-type rsa --bits 4096 --outfile ca-key.pem
 certtool --generate-self-signed --load-privkey ca-key.pem \
   --template ca.cfg --outfile ca-cert.pem
 
-# ca.cfg template:
+ca.cfg template:
 cat > ca.cfg <<'EOF'
 cn = "Example CA"
 ca
@@ -81,32 +81,32 @@ certtool --generate-certificate \
 
 ---
 
-## Command-Line TLS Testing
+Command-Line TLS Testing
 
 ```bash
-# Connect to a server and show certificate details
+Connect to a server and show certificate details
 gnutls-cli --print-cert server.example.com
 
-# Test with specific TLS version
+Test with specific TLS version
 gnutls-cli --priority "NORMAL:-VERS-TLS-ALL:+VERS-TLS1.3" server.example.com
 
-# Test with mutual TLS (client presents a certificate)
+Test with mutual TLS (client presents a certificate)
 gnutls-cli --x509certfile client-cert.pem --x509keyfile client-key.pem \
   server.example.com
 
-# Verify a certificate against a CA bundle
+Verify a certificate against a CA bundle
 gnutls-cli --x509cafile ca-cert.pem --no-system-cas server.example.com
 
-# Check supported cipher suites for a server
+Check supported cipher suites for a server
 gnutls-cli --list server.example.com
 ```
 
 ---
 
-## C Integration: Minimal TLS Client
+C Integration: Minimal TLS Client
 
 ```c
-/* tls_client.c — GnuTLS 3.x minimal client */
+/* tls_client.c. GnuTLS 3.x minimal client */
 #include <gnutls/gnutls.h>
 #include <stdio.h>
 #include <string.h>
@@ -204,14 +204,14 @@ gcc -o tls_client tls_client.c $(pkg-config --cflags --libs gnutls)
 
 ---
 
-## Python Integration with python-gnutls
+Python Integration with python-gnutls
 
 ```python
 from gnutls.library.functions import *
 from gnutls.crypto import *
 import socket
 
-# Simpler approach: use Python's ssl module (backed by GnuTLS on Debian/Ubuntu)
+Simpler approach: use Python's ssl module (backed by GnuTLS on Debian/Ubuntu)
 import ssl
 
 def create_gnutls_context(cafile=None, certfile=None, keyfile=None,
@@ -252,7 +252,7 @@ def connect_with_pin(host, port, ctx, expected_pin=None):
                     )
             return tls_sock.version(), tls_sock.cipher()
 
-# Usage
+Usage
 ctx, pin = create_gnutls_context(
     pin="a3b4c5d6e7..."   # SHA-256 of expected server cert DER
 )
@@ -262,41 +262,41 @@ print(f"Connected: {version} / {cipher[0]}")
 
 ---
 
-## Priority Strings Reference
+Priority Strings Reference
 
 GnuTLS uses priority strings to configure allowed algorithms:
 
 ```bash
-# TLS 1.3 only, strong ciphers
+TLS 1.3 only, strong ciphers
 "SECURE256:+VERS-TLS1.3:-VERS-TLS-ALL"
 
-# All modern versions (1.2 + 1.3), no weak ciphers
+All modern versions (1.2 + 1.3), no weak ciphers
 "NORMAL:-3DES-CBC:-RC4-128"
 
-# mTLS: require client certificate
+mTLS: require client certificate
 "NORMAL:%REQUIRE_CRT_IN_HANDSHAKE"
 
-# FIPS-compatible
+FIPS-compatible
 "FIPS140-2"
 
-# Test what a priority string enables
+Test what a priority string enables
 gnutls-cli --list --priority "SECURE256"
 ```
 
 ---
 
-## Setting System-Wide GnuTLS Policy
+Setting System-Wide GnuTLS Policy
 
 On Fedora/RHEL with system crypto policies:
 
 ```bash
-# View current policy
+View current policy
 update-crypto-policies --show
 
-# Upgrade to FUTURE policy (TLS 1.2+, RSA 3072+)
+Upgrade to FUTURE policy (TLS 1.2+, RSA 3072+)
 sudo update-crypto-policies --set FUTURE
 
-# Or set custom policy
+Or set custom policy
 sudo tee /etc/crypto-policies/policies/custom.pol > /dev/null <<'EOF'
 min_tls_version = TLS1.2
 min_dtls_version = DTLS1.2
@@ -309,7 +309,7 @@ sudo update-crypto-policies --set CUSTOM
 
 ---
 
-## Related Reading
+Related Reading
 
 - [Secure JWT Implementation Best Practices](/secure-jwt-implementation-best-practices/)
 - [How to Set Up ModSecurity WAF with Nginx](/modsecurity-waf-nginx-setup-guide/)
@@ -319,5 +319,5 @@ sudo update-crypto-policies --set CUSTOM
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

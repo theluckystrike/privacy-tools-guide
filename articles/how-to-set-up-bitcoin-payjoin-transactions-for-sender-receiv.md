@@ -18,7 +18,7 @@ voice-checked: true
 
 Bitcoin PayJoin (BIP 78) lets the receiver contribute inputs to a transaction, making it impossible for blockchain observers to identify who sent the funds. Unlike normal payments where the sender's inputs are obvious, PayJoin creates ambiguity that defeats standard on-chain analysis heuristics. This guide provides step-by-step technical implementation for both senders and receivers, including Python and Flask code examples, testing strategies, and production deployment checklists.
 
-## Prerequisites
+Prerequisites
 
 Before implementing PayJoin, ensure you have:
 
@@ -27,7 +27,7 @@ Before implementing PayJoin, ensure you have:
 - Python 3.9+ or a Bitcoin library like `bitcoinlib` or `btcpy`
 - Tor for receiver endpoints (recommended for privacy)
 
-### Step 2: Implementing the Sender (Payee-Initiated)
+Step 2: Implementing the Sender (Payee-Initiated)
 
 The sender initiates the PayJoin by requesting a PayJoin URL from the receiver. Here's a Python implementation using the `btcpy` library:
 
@@ -81,7 +81,7 @@ class PayjoinSender:
         pass
 ```
 
-### Step 3: Implementing the Receiver (Payee)
+Step 3: Implementing the Receiver (Payee)
 
 The receiver must set up an endpoint to receive PayJoin requests. Here's a Flask-based implementation:
 
@@ -153,7 +153,7 @@ class PayjoinReceiver:
         return True
 ```
 
-### Step 4: PayJoin URL Format
+Step 4: PayJoin URL Format
 
 The PayJoin protocol uses a specific URL scheme defined in BIP 78:
 
@@ -168,34 +168,34 @@ Parameters include:
 - `expire`: Expiration duration in seconds
 - `signature`: Signature proving the receiver controls the endpoint
 
-### Step 5: Privacy Considerations
+Step 5: Privacy Considerations
 
 When implementing PayJoin, consider these privacy-critical aspects:
 
-1. **UTXO Selection**: Both parties should avoid creating obvious change outputs. The receiver's contribution should roughly match the payment amount to minimize detectable change.
+1. UTXO Selection: Both parties should avoid creating obvious change outputs. The receiver's contribution should roughly match the payment amount to minimize detectable change.
 
-2. **Fee Management**: PayJoin transactions are larger than standard payments, requiring higher fees. Budget for approximately 2-3x the normal transaction fee.
+2. Fee Management: PayJoin transactions are larger than standard payments, requiring higher fees. Budget for approximately 2-3x the normal transaction fee.
 
-3. **Timing**: Avoid initiating or completing PayJoin transactions at predictable intervals. Random delays between request and completion improve unlinkability.
+3. Timing: Avoid initiating or completing PayJoin transactions at predictable intervals. Random delays between request and completion improve unlinkability.
 
-4. **Network Isolation**: Run your PayJoin receiver over Tor to prevent IP address correlation between the sender and receiver.
+4. Network Isolation: Run your PayJoin receiver over Tor to prevent IP address correlation between the sender and receiver.
 
-5. **Replay Protection**: Ensure each PayJoin session uses fresh UTXOs to prevent transaction replay.
+5. Replay Protection: Ensure each PayJoin session uses fresh UTXOs to prevent transaction replay.
 
-### Step 6: Test Your Implementation
+Step 6: Test Your Implementation
 
 Test PayJoin on Bitcoin's testnet before production use:
 
 ```bash
-# Start a testnet node
+Start a testnet node
 bitcoind -testnet -server -rpcuser=testuser -rpcpassword=testpass
 
-# Create test wallets
+Create test wallets
 ./bitcoin-cli -testnet createwallet "payjoin_sender"
 ./bitcoin-cli -testnet createwallet "payjoin_receiver"
 
-# Get testnet coins from a faucet
-# https://bitcoinfaucet.net/
+Get testnet coins from a faucet
+https://bitcoinfaucet.net/
 ```
 
 Verify your implementation using the PayJoin Dev Toolkit:
@@ -203,7 +203,7 @@ Verify your implementation using the PayJoin Dev Toolkit:
 ```python
 from payjoin import Sender, Receiver, Environment
 
-# Test that your implementation follows BIP 78
+Test that your implementation follows BIP 78
 def test_payjoin_compliance():
     sender = Sender(Environment.TESTNET)
     receiver = Receiver(Environment.TESTNET)
@@ -213,21 +213,21 @@ def test_payjoin_compliance():
     assert result.is_valid(), f"Compliance errors: {result.errors}"
 ```
 
-### Step 7: Common Implementation Mistakes
+Step 7: Common Implementation Mistakes
 
 Avoid these frequent errors when implementing PayJoin:
 
-- **Fixed Contribution Amounts**: Always vary the receiver's contribution amount to prevent amount-based clustering.
+- Fixed Contribution Amounts: Always vary the receiver's contribution amount to prevent amount-based clustering.
 
-- **Missing Expiration**: Always implement expiration to prevent indefinite waiting and resource consumption.
+- Missing Expiration: Always implement expiration to prevent indefinite waiting and resource consumption.
 
-- **Inadequate Fee Estimation**: PayJoin transactions require more vbytes. Use a fee estimator that accounts for additional inputs.
+- Inadequate Fee Estimation: PayJoin transactions require more vbytes. Use a fee estimator that accounts for additional inputs.
 
-- **No Input Value Matching**: The receiver should attempt to match or exceed the sender's payment amount to maximize privacy.
+- No Input Value Matching: The receiver should attempt to match or exceed the sender's payment amount to maximize privacy.
 
-- **Ignoring RBF**: Always enable Replace-By-Fee for PayJoin transactions to handle fee market volatility.
+- Ignoring RBF: Always enable Replace-By-Fee for PayJoin transactions to handle fee market volatility.
 
-## Production Deployment Checklist
+Production Deployment Checklist
 
 Before deploying PayJoin in production:
 
@@ -242,44 +242,44 @@ Before deploying PayJoin in production:
 
 PayJoin represents one of the most effective practical improvements in Bitcoin transaction privacy. By carefully implementing both sender and receiver components, you can significantly reduce on-chain analysis effectiveness while maintaining full Bitcoin security guarantees.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Bitcoin Dust Attack Explained How Small Transactions](/bitcoin-dust-attack-explained-how-small-transactions-deanony/)
 - [Bitcoin Inheritance Planning Using Multisig With Family](/bitcoin-inheritance-planning-using-multisig-with-family-memb/)
@@ -287,5 +287,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Use Tor With Encrypted Email for Maximum Sender Anonymity](/how-to-use-tor-with-encrypted-email-for-maximum-sender-anonymity/)
 - [How To Buy Bitcoin Without Kyc Verification Private Purchase](/how-to-buy-bitcoin-without-kyc-verification-private-purchase/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

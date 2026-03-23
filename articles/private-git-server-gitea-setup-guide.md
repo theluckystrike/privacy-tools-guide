@@ -17,9 +17,9 @@ voice-checked: true
 
 GitHub and GitLab are convenient but they hold your code. GitHub (owned by Microsoft) scans repositories for content policy violations, sells data for Copilot training, and is subject to US legal requests. If your code contains unreleased work, personal projects, sensitive configurations, or anything you'd prefer to keep private, a self-hosted git server gives you complete control.
 
-Gitea is a lightweight, fast git service written in Go. It runs on minimal hardware — a Raspberry Pi or a $5/month VPS handles dozens of repositories and users comfortably.
+Gitea is a lightweight, fast git service written in Go. It runs on minimal hardware. a Raspberry Pi or a $5/month VPS handles dozens of repositories and users comfortably.
 
-## Table of Contents
+Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Step 1: Install Gitea](#step-1-install-gitea)
@@ -36,29 +36,29 @@ Gitea is a lightweight, fast git service written in Go. It runs on minimal hardw
 - [Migrating from GitHub/GitLab](#migrating-from-githubgitlab)
 - [Related Reading](#related-reading)
 
-## Prerequisites
+Prerequisites
 
 - A Linux server (Debian/Ubuntu 22.04+ recommended) with a public IP
 - A domain name pointing to the server (for HTTPS)
 - Open ports: 22 (SSH), 80 (HTTP, for cert renewal), 443 (HTTPS), and optionally 3000 (if not using reverse proxy)
 
-## Step 1: Install Gitea
+Step 1: Install Gitea
 
 ```bash
-# Download the latest Gitea binary
-# Check https://dl.gitea.com/gitea/ for the latest version
+Download the latest Gitea binary
+Check https://dl.gitea.com/gitea/ for the latest version
 GITEA_VERSION="1.22.0"
 wget "https://dl.gitea.com/gitea/${GITEA_VERSION}/gitea-${GITEA_VERSION}-linux-amd64"
 
-# Verify the checksum
+Verify the checksum
 wget "https://dl.gitea.com/gitea/${GITEA_VERSION}/gitea-${GITEA_VERSION}-linux-amd64.sha256"
 sha256sum -c "gitea-${GITEA_VERSION}-linux-amd64.sha256"
 
-# Install
+Install
 sudo mv "gitea-${GITEA_VERSION}-linux-amd64" /usr/local/bin/gitea
 sudo chmod 755 /usr/local/bin/gitea
 
-# Create gitea user and directories
+Create gitea user and directories
 sudo adduser --system --shell /bin/bash --gecos 'Gitea' --group \
   --disabled-password --home /home/git git
 
@@ -70,7 +70,7 @@ sudo chown root:git /etc/gitea
 sudo chmod 770 /etc/gitea
 ```
 
-## Step 2: Configure Gitea as a systemd Service
+Step 2: Configure Gitea as a systemd Service
 
 ```bash
 sudo tee /etc/systemd/system/gitea.service << 'EOF'
@@ -100,14 +100,14 @@ sudo systemctl enable gitea
 sudo systemctl start gitea
 ```
 
-## Step 3: Set Up a Reverse Proxy with Nginx and HTTPS
+Step 3: Set Up a Reverse Proxy with Nginx and HTTPS
 
 Install Nginx and Certbot:
 
 ```bash
 sudo apt install nginx certbot python3-certbot-nginx
 
-# Create Nginx config for Gitea
+Create Nginx config for Gitea
 sudo tee /etc/nginx/sites-available/gitea << 'EOF'
 server {
     listen 80;
@@ -146,35 +146,35 @@ EOF
 sudo ln -s /etc/nginx/sites-available/gitea /etc/nginx/sites-enabled/
 sudo nginx -t
 
-# Obtain TLS certificate
+Obtain TLS certificate
 sudo certbot --nginx -d git.yourdomain.com
 
-# Enable Nginx
+Enable Nginx
 sudo systemctl enable nginx
 sudo systemctl reload nginx
 ```
 
-## Step 4: Initial Gitea Setup
+Step 4: Initial Gitea Setup
 
 Browse to `https://git.yourdomain.com` for the setup wizard.
 
 Key settings to configure:
 
-**Database**: SQLite (simple, fine for personal use) or PostgreSQL (better for multiple users)
+Database: SQLite (simple, fine for personal use) or PostgreSQL (better for multiple users)
 
-**General Settings**:
+General Settings:
 - Site Title: your name (not publicly readable to crawlers if you disable registration)
 - Repository Root Path: `/var/lib/gitea/data/repositories`
 - Git Hooks Path: `/var/lib/gitea/data`
 - Base URL: `https://git.yourdomain.com`
 
-**Server and Third-Party Service Settings**:
-- Disable Gravatar (this sends email hashes to Gravatar's CDN — a privacy leak)
+Server and Third-Party Service Settings:
+- Disable Gravatar (this sends email hashes to Gravatar's CDN. a privacy leak)
 - Uncheck "Enable Federated Avatars Lookup"
 
-**Admin Account**: Create your admin account here. Use a strong passphrase.
+Admin Account: Create your admin account here. Use a strong passphrase.
 
-## Step 5: Harden Gitea Configuration
+Step 5: Harden Gitea Configuration
 
 Edit `/etc/gitea/app.ini` after initial setup:
 
@@ -188,7 +188,7 @@ SSH_PORT = 22
 START_SSH_SERVER = false
 
 [service]
-; Disable public registration — only invite known users
+; Disable public registration. only invite known users
 DISABLE_REGISTRATION = true
 ; Require admin approval for new users (if registration enabled)
 REGISTER_MANUAL_CONFIRM = true
@@ -223,7 +223,7 @@ Apply changes:
 sudo systemctl restart gitea
 ```
 
-## Step 6: Enable Two-Factor Authentication
+Step 6: Enable Two-Factor Authentication
 
 In Gitea web interface:
 1. Click your profile → Settings → Security
@@ -233,7 +233,7 @@ In Gitea web interface:
 For all users, enforce 2FA via the admin panel:
 - Admin Panel → Users → [user] → Edit → Require 2FA: checked
 
-## Step 7: Configure SSH Access
+Step 7: Configure SSH Access
 
 Add your SSH public key for command-line git operations:
 
@@ -247,12 +247,12 @@ git clone git@git.yourdomain.com:yourusername/your-repo.git
 
 Gitea's SSH server runs through the system SSH daemon using authorized keys. The `git` system user handles authentication.
 
-### Hardening SSH on the Server
+Hardening SSH on the Server
 
 Your git server is a public-facing machine. Reduce its SSH attack surface:
 
 ```bash
-# /etc/ssh/sshd_config — key changes
+/etc/ssh/sshd_config. key changes
 PermitRootLogin no
 PasswordAuthentication no
 PubkeyAuthentication yes
@@ -284,21 +284,21 @@ And update your git remote URLs accordingly:
 git remote set-url origin ssh://git@git.yourdomain.com:2222/user/repo.git
 ```
 
-## Step 8: Set Up Automated Backups
+Step 8: Set Up Automated Backups
 
 ```bash
 #!/bin/bash
-# /usr/local/bin/gitea-backup
+/usr/local/bin/gitea-backup
 BACKUP_DIR="/var/backups/gitea"
 TIMESTAMP=$(date +%Y%m%d-%H%M%S)
 
 mkdir -p "$BACKUP_DIR"
 
-# Gitea built-in backup
+Gitea built-in backup
 sudo -u git gitea dump -c /etc/gitea/app.ini \
   --file "$BACKUP_DIR/gitea-dump-$TIMESTAMP.zip"
 
-# Keep only last 7 backups
+Keep only last 7 backups
 find "$BACKUP_DIR" -name "gitea-dump-*.zip" -mtime +7 -delete
 
 echo "Backup completed: $BACKUP_DIR/gitea-dump-$TIMESTAMP.zip"
@@ -309,65 +309,65 @@ chmod +x /usr/local/bin/gitea-backup
 echo "0 3 * * * root /usr/local/bin/gitea-backup" | sudo tee /etc/cron.d/gitea-backup
 ```
 
-### Offsite Backup with rclone
+Offsite Backup with rclone
 
 Keeping backups on the same server provides no protection against hardware failure or server compromise. Offload to encrypted remote storage:
 
 ```bash
-# Install rclone and configure a remote (Backblaze B2, S3, etc.)
+Install rclone and configure a remote (Backblaze B2, S3, etc.)
 curl https://rclone.org/install.sh | sudo bash
 rclone config  # follow prompts for your provider
 
-# Add to the backup script, after the dump
+Add to the backup script, after the dump
 rclone copy "$BACKUP_DIR/gitea-dump-$TIMESTAMP.zip" remote:gitea-backups/ \
   --b2-chunk-size 96M
 ```
 
 For maximum privacy, encrypt the backup before uploading using rclone's built-in crypt backend. This means even your cloud storage provider cannot read the backup contents.
 
-## Setting Up Gitea Webhooks for Deployment
+Setting Up Gitea Webhooks for Deployment
 
 Gitea supports webhooks that trigger on push, pull request, and release events. Use them to kick off deployments or notify external services without exposing your code:
 
 1. Go to your repository → Settings → Webhooks → Add Webhook
-2. Select **Gitea** as the type
+2. Select Gitea as the type
 3. Set the Payload URL to your deployment endpoint (e.g., `https://deploy.yourdomain.com/hook`)
-4. Choose **application/json** as the content type
-5. Set a secret token — Gitea signs each payload with HMAC-SHA256 using this token
+4. Choose application/json as the content type
+5. Set a secret token. Gitea signs each payload with HMAC-SHA256 using this token
 
 On your deployment server, verify the signature before acting:
 
 ```bash
 #!/bin/bash
-# verify-webhook.sh
+verify-webhook.sh
 SIGNATURE="$HTTP_X_GITEA_SIGNATURE"
 BODY=$(cat /dev/stdin)
 EXPECTED=$(echo -n "$BODY" | openssl dgst -sha256 -hmac "$WEBHOOK_SECRET" | awk '{print $2}')
 
 if [ "$SIGNATURE" != "sha256=$EXPECTED" ]; then
-  echo "Signature mismatch — ignoring request" >&2
+  echo "Signature mismatch. ignoring request" >&2
   exit 1
 fi
 
-# Deploy
+Deploy
 git -C /var/www/myapp pull origin main
 systemctl restart myapp
 ```
 
 This pattern lets you implement continuous deployment entirely within your own infrastructure, with no dependency on external CI services.
 
-## Using Gitea Actions for CI/CD
+Using Gitea Actions for CI/CD
 
 Gitea 1.21+ includes a built-in CI/CD system compatible with GitHub Actions syntax. You can run your own runners without sending code to external services:
 
 ```bash
-# Download the Gitea runner binary
+Download the Gitea runner binary
 RUNNER_VERSION="0.2.6"
 wget "https://dl.gitea.com/act_runner/${RUNNER_VERSION}/act_runner-${RUNNER_VERSION}-linux-amd64"
 sudo mv "act_runner-${RUNNER_VERSION}-linux-amd64" /usr/local/bin/act_runner
 sudo chmod 755 /usr/local/bin/act_runner
 
-# Register the runner with your instance
+Register the runner with your instance
 act_runner register \
   --instance https://git.yourdomain.com \
   --token YOUR_RUNNER_TOKEN \
@@ -393,12 +393,12 @@ jobs:
 
 This gives you a fully self-hosted CI pipeline. Your code, build artifacts, and test results never leave your infrastructure.
 
-## Access Control and Team Management
+Access Control and Team Management
 
 Gitea's organization and team system gives granular control over who can read or write which repositories:
 
-- **Organizations** group repositories under a shared namespace (e.g., `git.yourdomain.com/myteam/repo`)
-- **Teams** within an organization hold members and define their permission level: Owner, Admin, Write, Read, or None
+- Organizations group repositories under a shared namespace (e.g., `git.yourdomain.com/myteam/repo`)
+- Teams within an organization hold members and define their permission level: Owner, Admin, Write, Read, or None
 - Repository visibility can be set to Public, Internal (organization members only), or Private per-repo
 
 For a solo developer or small team, the simplest approach is to create one organization, add all your repositories under it, and add collaborators as members of a Write-permission team. They get access to everything the team covers without requiring per-repo invitations.
@@ -412,23 +412,23 @@ If you run Gitea for a development team with contractors or external contributor
 
 This model keeps sensitive repositories invisible to contractors while sharing only the repositories they need.
 
-## Migrating from GitHub/GitLab
+Migrating from GitHub/GitLab
 
 Gitea can mirror or import existing repositories:
 
 ```bash
-# Via CLI
+Via CLI
 git clone --mirror https://github.com/user/repo.git
 cd repo.git
 git remote set-url origin git@git.yourdomain.com:user/repo.git
 git push --mirror
 
-# Via Gitea web UI
-# + (new repo) → Migrate → GitHub/GitLab/Bitbucket
-# Enter credentials and select repos to migrate
+Via Gitea web UI
++ (new repo) → Migrate → GitHub/GitLab/Bitbucket
+Enter credentials and select repos to migrate
 ```
 
-## Related Articles
+Related Articles
 
 - [How To Configure Openpgp Key Server For Organization](/how-to-configure-openpgp-key-server-for-organization-interna/)
 - [Mumble Encrypted Voice Chat Server Setup For Private Team](/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)
@@ -436,27 +436,27 @@ git push --mirror
 - [Self-Hosted Private Video Calling Setup Guide](/private-video-calling-selfhosted-guide/)
 - [SSH Server Hardening Guide](/ssh-server-hardening-guide/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 

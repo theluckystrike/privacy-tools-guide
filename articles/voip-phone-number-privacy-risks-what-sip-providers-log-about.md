@@ -18,7 +18,7 @@ voice-checked: true
 
 When you make a call through a SIP (Session Initiation Protocol) provider, the call itself is only part of the story. The metadata generated during call setup, routing, and termination creates an extensive trail that reveals who you called, when, for how long, and often where you were at the time. Understanding what providers log is essential for anyone building privacy-sensitive communications systems or selecting a VoIP service.
 
-## Table of Contents
+Table of Contents
 
 - [SIP Call Logging Fundamentals](#sip-call-logging-fundamentals)
 - [What Providers Actually Log](#what-providers-actually-log)
@@ -26,15 +26,15 @@ When you make a call through a SIP (Session Initiation Protocol) provider, the c
 - [Practical Implications for Developers](#practical-implications-for-developers)
 - [Mitigating SIP Metadata Exposure](#mitigating-sip-metadata-exposure)
 
-## SIP Call Logging Fundamentals
+SIP Call Logging Fundamentals
 
 SIP operates in two distinct layers: signaling and media. The signaling layer (using SIP messages) handles call setup, teardown, and modification. The media layer (using RTP - Real-time Transport Protocol) carries the actual audio. Most providers log both, but the signaling logs contain the most sensitive metadata.
 
 Every SIP call begins with an INVITE request, followed by a 200 OK response, and concludes with a BYE request. These messages travel through proxy servers operated by your SIP provider, creating detailed logs regardless of whether the call content itself is encrypted.
 
-## What Providers Actually Log
+What Providers Actually Log
 
-### Connection Metadata
+Connection Metadata
 
 When your SIP client registers with a provider, it sends a REGISTER request containing your SIP URI, contact address, and often the IP address of your device. Providers retain this registration data along with timestamps showing when you came online and went offline.
 
@@ -49,15 +49,15 @@ Expires: 3600
 
 This single registration message reveals your phone number (in the SIP URI), your device's IP address, and with basic traffic analysis, your approximate physical location. Providers typically retain registration history for months or years.
 
-### Call Detail Records (CDRs)
+Call Detail Records (CDRs)
 
 Every completed call generates a Call Detail Record containing:
 
-- **Caller and callee numbers** - Both the calling and called party numbers
-- **Timestamps** - Call start time, answer time, and end time
-- **Duration** - Total call length, often broken down by ring time and talk time
-- **Call routing** - The SIP proxies and media relays the call traversed
-- **Termination reason** - Whether the call ended normally or due to busy/no answer
+- Caller and callee numbers - Both the calling and called party numbers
+- Timestamps - Call start time, answer time, and end time
+- Duration - Total call length, often broken down by ring time and talk time
+- Call routing - The SIP proxies and media relays the call traversed
+- Termination reason - Whether the call ended normally or due to busy/no answer
 
 These CDRs form the backbone of billing systems but also represent a record of your communication patterns. Law enforcement regularly requests CDR data from VoIP providers as part of investigations.
 
@@ -66,7 +66,7 @@ These CDRs form the backbone of billing systems but also represent a record of y
 Beyond basic CDRs, providers capture the full SIP message exchange:
 
 ```python
-# Example: Parsing SIP headers from a pcap capture
+Parsing SIP headers from a pcap capture
 from scapy.all import *
 
 def extract_sip_metadata(pcap_file):
@@ -88,7 +88,7 @@ def extract_sip_metadata(pcap_file):
 
 This script demonstrates how trivially the Call-ID header links all SIP messages belonging to a single call. Providers use this to reconstruct complete call flows.
 
-### Media Relay Information
+Media Relay Information
 
 When calls go through provider-operated media relays (often necessary for NAT traversal), the provider knows:
 
@@ -99,7 +99,7 @@ When calls go through provider-operated media relays (often necessary for NAT tr
 
 Even with encrypted SRTP (Secure RTP), the metadata about who exchanged media with whom remains visible to the provider.
 
-## Provider Retention Practices
+Provider Retention Practices
 
 Retention periods vary significantly by provider and jurisdiction:
 
@@ -113,15 +113,15 @@ Retention periods vary significantly by provider and jurisdiction:
 
 The "free" consumer VoIP services often have the most aggressive retention because your usage data is monetized through advertising and data sharing.
 
-## Practical Implications for Developers
+Practical Implications for Developers
 
-### Building Privacy-Aware SIP Applications
+Building Privacy-Aware SIP Applications
 
 When implementing SIP-based applications, you have several options to minimize logging exposure:
 
 ```python
-# Minimal logging configuration for Asterisk
-# /etc/asterisk/logger.conf
+Minimal logging configuration for Asterisk
+/etc/asterisk/logger.conf
 
 [general]
 ; Disable detailed logging to files
@@ -138,8 +138,8 @@ console => notice,warning,error
 ```
 
 ```python
-# Python script to query your own Asterisk CDR database
-# showing what data your system collects
+Python script to query your own Asterisk CDR database
+showing what data your system collects
 
 import sqlite3
 
@@ -196,57 +196,57 @@ def sanitize_cdr_for_privacy(db_path='/var/log/asterisk/cdr.db',
 
     print(f"Deleted {deleted} CDR records older than {keep_days} days")
 
-# Run daily via cron: 0 3 * * * /usr/bin/python3 /path/to/sanitize_cdr.py
+Run daily via cron: 0 3 * * * /usr/bin/python3 /path/to/sanitize_cdr.py
 ```
 
-### Evaluating Third-Party SIP Providers
+Evaluating Third-Party SIP Providers
 
 When selecting a provider for production systems, request answers to these questions:
 
-1. **How long are CDRs retained?** - Less than 30 days is reasonable for privacy
-2. **Is call content logged?** - Should be no for encrypted calls
-3. **Is metadata shared with advertisers or data brokers?** - Must be no
-4. **Do you support SRTP encryption?** - Mandatory for privacy
-5. **Can I use my own SIP domain?** - Prevents number-to-identity linking
-6. **What happens to data if I close my account?** - Must be deleted within 30 days
+1. How long are CDRs retained? - Less than 30 days is reasonable for privacy
+2. Is call content logged? - Should be no for encrypted calls
+3. Is metadata shared with advertisers or data brokers? - Must be no
+4. Do you support SRTP encryption? - Mandatory for privacy
+5. Can I use my own SIP domain? - Prevents number-to-identity linking
+6. What happens to data if I close my account? - Must be deleted within 30 days
 
 Providers like Twilio, Vonage, and Bandwidth are designed for business compliance and retain extensive records. For privacy-sensitive applications, consider self-hosting or providers specifically marketed as privacy-focused.
 
-## Mitigating SIP Metadata Exposure
+Mitigating SIP Metadata Exposure
 
 Complete metadata elimination is difficult because some information exchange is required for call delivery. However, several strategies reduce exposure:
 
-- **Use Tor or a VPN** for SIP registration and signaling to hide your IP address from the provider
-- **Implement end-to-end encryption** with ZRTP or DTLS-SRTP so providers cannot access media even with keys
-- **Self-host your SIP proxy** (using Kamailio, OpenSIPS, or Asterisk) to control all logging
-- **Use number masking services** with rolling numbers rather than persistent personal numbers
-- **Disable detailed logging** in your SIP software while maintaining billing functionality
+- Use Tor or a VPN for SIP registration and signaling to hide your IP address from the provider
+- Implement end-to-end encryption with ZRTP or DTLS-SRTP so providers cannot access media even with keys
+- Self-host your SIP proxy (using Kamailio, OpenSIPS, or Asterisk) to control all logging
+- Use number masking services with rolling numbers rather than persistent personal numbers
+- Disable detailed logging in your SIP software while maintaining billing functionality
 
 The reality is that SIP was designed for functionality, not privacy. Understanding what your provider logs is the first step toward making informed decisions about the services you use and the systems you build.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [How To Use Signal Without Linking Phone Number Privacy](/how-to-use-signal-without-linking-phone-number-privacy-worka/)
 - [Anonymous Conference Call Services That Do Not Log](/anonymous-conference-call-services-that-do-not-log-participa/)
@@ -254,5 +254,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Use Separate Phone Number for Dating Apps Without Revealing](/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
 - [Use Virtual Phone Number For Whatsapp Dating Conversations](/how-to-use-virtual-phone-number-for-whatsapp-dating-conversations/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

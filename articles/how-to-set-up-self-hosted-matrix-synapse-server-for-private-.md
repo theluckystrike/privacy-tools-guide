@@ -18,7 +18,7 @@ voice-checked: true
 
 Matrix is an open protocol for real-time communication, and Synapse is the reference implementation of a Matrix homeserver. Running your own Synapse instance gives you complete control over your messaging infrastructure, end-to-end encryption keys, and data retention policies. This guide walks through deploying a production-ready Synapse server using Docker, configuring essential security settings, and connecting your first clients.
 
-## Prerequisites
+Prerequisites
 
 Before starting, ensure you have a Linux server with at least 2GB RAM and a domain pointing to your server's IP address. You'll also need Docker and Docker Compose installed:
 
@@ -29,7 +29,7 @@ sudo systemctl enable docker
 
 This guide assumes you have basic familiarity with the command line and a registered domain. Let's proceed with the installation.
 
-### Step 1: Install Synapse with Docker
+Step 1: Install Synapse with Docker
 
 The recommended way to run Synapse is via Docker, which isolates the application and simplifies updates. Create a directory for your Synapse deployment:
 
@@ -78,7 +78,7 @@ docker logs synapse
 
 You should see messages indicating Synapse has started successfully and is listening on ports 8008 (client API) and 8448 (federation).
 
-### Step 2: Configure SSL/TLS
+Step 2: Configure SSL/TLS
 
 Matrix requires TLS for secure communications. For a production deployment, use a reverse proxy like Caddy or Nginx with automatic SSL certificates. Here's a Caddyfile configuration:
 
@@ -122,7 +122,7 @@ Add security headers to all responses to prevent clickjacking and content-type s
     add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
 ```
 
-### Step 3: Create Admin Users and Registering Clients
+Step 3: Create Admin Users and Registering Clients
 
 Create an admin user to manage your server:
 
@@ -140,7 +140,7 @@ For client connections, you can use Element (formerly Riot.im), the reference Ma
 
 For mobile users, Element is available on Android via F-Droid (preferred for privacy) and both iOS and Android through their respective app stores. The SchildiChat client on Android provides additional privacy-focused defaults including automatic room key backup and improved notification handling.
 
-### Step 4: Enable End-to-End Encryption
+Step 4: Enable End-to-End Encryption
 
 Matrix supports end-to-end encryption (E2EE) by default using the Olm and Megolm protocols. When you create a new room in Element, encryption is available by toggling the encryption setting in room settings. Each device gets its own encryption keys stored locally.
 
@@ -155,17 +155,17 @@ encryption_enabled_by_default_for_room_presets:
   public_chat: false
 ```
 
-This ensures any private or trusted private room created on your server defaults to encrypted. Public rooms remain unencrypted since encryption in open rooms provides limited privacy benefit—anyone can join and read messages.
+This ensures any private or trusted private room created on your server defaults to encrypted. Public rooms remain unencrypted since encryption in open rooms provides limited privacy benefit, anyone can join and read messages.
 
-### Cross-Signing for Multi-Device Verification
+Cross-Signing for Multi-Device Verification
 
-Matrix's cross-signing system allows you to verify all your devices with a single action rather than verifying each device pair individually. After logging in on a second device, go to **Settings → Security & Privacy → Cross-signing** and verify the new session from an already-verified device. Once cross-signing is set up, new room members appear as verified automatically if they share a verified identity across devices.
+Matrix's cross-signing system allows you to verify all your devices with a single action rather than verifying each device pair individually. After logging in on a second device, go to Settings → Security & Privacy → Cross-signing and verify the new session from an already-verified device. Once cross-signing is set up, new room members appear as verified automatically if they share a verified identity across devices.
 
-### Step 5: Hardening Your Synapse Server
+Step 5: Hardening Your Synapse Server
 
 Several configuration changes improve your server's security. Edit the `homeserver.yaml` file in your data directory:
 
-### Disable Public Registration
+Disable Public Registration
 
 Prevent unauthorized users from creating accounts:
 
@@ -182,7 +182,7 @@ docker exec -it synapse register_new_matrix_user -c /data/homeserver.yaml \
 
 Share the token over a separate encrypted channel. Tokens expire after one use, preventing unauthorized account creation even if a token leaks.
 
-### Rate Limiting
+Rate Limiting
 
 Synapse includes configurable rate limiting to prevent brute-force login attempts and message flooding:
 
@@ -201,7 +201,7 @@ rc_login:
 
 Tight rate limits significantly raise the cost of credential-stuffing attacks while having no practical impact on legitimate users.
 
-### Configure Cross-Origin Resource Sharing
+Configure Cross-Origin Resource Sharing
 
 Restrict API access:
 
@@ -210,7 +210,7 @@ cors:
   enabled: false
 ```
 
-### Set Up Automated Backups
+Set Up Automated Backups
 
 Matrix stores data in SQLite (for small deployments) or PostgreSQL (recommended for production). For SQLite, create a backup script:
 
@@ -234,7 +234,7 @@ pg_dump -U synapse synapse | gpg --symmetric --cipher-algo AES256 \
   -o /backup/synapse-$(date +%Y%m%d).sql.gpg
 ```
 
-### Update Synapse Regularly
+Update Synapse Regularly
 
 Stay current with security patches:
 
@@ -245,12 +245,12 @@ docker-compose up -d
 
 Subscribe to the Matrix Security Disclosure mailing list at matrix.org to receive notifications of new CVEs before they are publicly disclosed.
 
-### Step 6: Monitor and Log Management
+Step 6: Monitor and Log Management
 
 For a privacy-focused deployment, log retention deserves deliberate attention. Synapse logs contain IP addresses and user identifiers by default. Configure log rotation and minimal retention:
 
 ```yaml
-# homeserver.yaml
+homeserver.yaml
 log_config: "/data/log.yaml"
 ```
 
@@ -276,7 +276,7 @@ root:
 
 Three days of log retention at WARNING level captures operational errors without accumulating a detailed record of user sessions. If your server is subpoenaed, there is little to hand over.
 
-### Step 7: Configure a Tor Onion Service for Hidden Access
+Step 7: Configure a Tor Onion Service for Hidden Access
 
 For high-risk deployments where server location must remain unknown, run Synapse behind a Tor onion service. This hides the server's IP address from both users and potential adversaries, and provides a stable address that remains accessible even if the domain is seized or blocked.
 
@@ -308,9 +308,9 @@ public_baseurl: "http://youronionaddress.onion/"
 
 Clients that support onion addresses (Element Desktop with Tor configured as a SOCKS5 proxy on 127.0.0.1:9050) can connect directly without exposing the connection to their ISP. Share the `.onion` address only through already-encrypted channels.
 
-### Step 8: Test Federation
+Step 8: Test Federation
 
-One of Matrix's strengths is federation—servers communicating with each other. Test federation by creating a room and inviting a user from another Matrix server, such as matrix.org. If federation works, you'll see messages flow between servers.
+One of Matrix's strengths is federation, servers communicating with each other. Test federation by creating a room and inviting a user from another Matrix server, such as matrix.org. If federation works, you'll see messages flow between servers.
 
 To verify federation is working, check the server's federation API:
 
@@ -322,7 +322,7 @@ A successful response indicates federation is operational.
 
 Use the Matrix Federation Tester at federationtester.matrix.org to diagnose delegation issues, certificate problems, and firewall misconfiguration without leaving any trace on the target server.
 
-## Troubleshooting Common Issues
+Troubleshooting Common Issues
 
 If clients cannot connect, check your reverse proxy configuration and ensure ports 8008 and 8448 are open in your firewall:
 
@@ -357,29 +357,29 @@ services:
 
 PostgreSQL dramatically improves performance for servers with more than a handful of active users. SQLite is acceptable for personal use or small teams; beyond roughly ten concurrent users, message delivery latency noticeably degrades.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to set up self hosted matrix synapse server for private?**
+How long does it take to set up self hosted matrix synapse server for private?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Matrix/Element vs Signal for Private Group Communication](/matrix-element-vs-signal-for-private-group-communication-comparison/)
 - [How To Configure Element Matrix Client For Maximum Privacy](/how-to-configure-element-matrix-client-for-maximum-privacy-a/)
@@ -387,5 +387,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Self-Hosted Private Git Server with Gitea](/private-git-server-gitea-setup-guide/)
 - [Set Up Mail In A Box Private Email Server Complete 2026](/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
 - [How to Set Up Ollama as Private AI Coding Assistant](https://bestremotetools.com/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

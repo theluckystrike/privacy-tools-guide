@@ -18,7 +18,7 @@ voice-checked: true
 
 OpenWRT provides powerful network isolation capabilities that go beyond simple WiFi separation. By configuring a guest network with separate DNS resolution and firewall rules, you can create air-gapped network segments that prevent guest devices from accessing your main network while forcing DNS queries through trusted servers. This guide walks through the complete configuration using both the LuCI web interface and command-line tools.
 
-## Table of Contents
+Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Step 1: Create the Guest Network Interface](#step-1-create-the-guest-network-interface)
@@ -34,14 +34,14 @@ OpenWRT provides powerful network isolation capabilities that go beyond simple W
 - [Monitoring Guest Activity](#monitoring-guest-activity)
 - [Troubleshooting](#troubleshooting)
 
-## Prerequisites
+Prerequisites
 
 Before starting, ensure you have:
 - OpenWRT 21.02 or later installed on your router
 - SSH access to the router
 - A secondary WiFi interface or VLAN-capable hardware
 
-## Step 1: Create the Guest Network Interface
+Step 1: Create the Guest Network Interface
 
 Using the command line, create a new interface for guest devices. Edit `/etc/config/network`:
 
@@ -69,7 +69,7 @@ config dhcp 'guest'
 
 This allocates IPs 10.0.2.100-10.0.2.249 to guests and assigns Cloudflare and Google DNS to connected devices automatically.
 
-## Step 2: Configure Separate DNS Resolution
+Step 2: Configure Separate DNS Resolution
 
 To force guest traffic through specific DNS servers rather than your router's default resolver, install and configure `dnsmasq` properly. Edit `/etc/config/dhcp`:
 
@@ -97,7 +97,7 @@ config dnsmasq
 
 This sends all DNS queries through the local DoH proxy running on port 5353.
 
-## Step 3: Set Up Wireless for Guest Access
+Step 3: Set Up Wireless for Guest Access
 
 Create a dedicated WiFi network for guests in `/etc/config/wireless`:
 
@@ -112,13 +112,13 @@ config wifi-iface 'guest_wifi'
     option isolate '1'
 ```
 
-The `isolate '1'` option is critical—it prevents guest devices from communicating directly with each other, adding another layer of security.
+The `isolate '1'` option is critical, it prevents guest devices from communicating directly with each other, adding another layer of security.
 
-## Step 4: Configure Firewall Isolation Rules
+Step 4: Configure Firewall Isolation Rules
 
 The firewall is where true network separation happens. Edit `/etc/config/firewall` to create strict rules:
 
-### Deny Guest to Main Network
+Deny Guest to Main Network
 
 ```bash
 config zone
@@ -131,7 +131,7 @@ config zone
 
 This zone configuration rejects all incoming connections and forwards from the guest network. Guests can initiate outbound connections but cannot access internal services.
 
-### Allow Guest to WAN
+Allow Guest to WAN
 
 ```bash
 config forwarding
@@ -141,7 +141,7 @@ config forwarding
 
 This allows guests to access the internet through your WAN connection while blocking access to the LAN.
 
-### Block Guest to LAN
+Block Guest to LAN
 
 ```bash
 config rule
@@ -154,7 +154,7 @@ config rule
 
 Explicitly block any traffic attempting to traverse from guest to LAN zones.
 
-### Allow Guest DNS Queries
+Allow Guest DNS Queries
 
 ```bash
 config rule
@@ -167,35 +167,35 @@ config rule
 
 This permits DNS queries through the firewall to your configured DNS servers.
 
-## Step 5: Apply and Verify Configuration
+Step 5: Apply and Verify Configuration
 
 Apply all changes and verify the setup:
 
 ```bash
-# Restart services
+Restart services
 /etc/init.d/network restart
 /etc/init.d/firewall restart
 /etc/init.d/dnsmasq restart
 
-# Verify interfaces
+Verify interfaces
 ip addr show br-guest
 
-# Check firewall rules
+Check firewall rules
 iptables -L guest_forward -v -n
 ```
 
 You should see the guest bridge interface with your assigned subnet and firewall chains properly configured.
 
-## Testing the Setup
+Testing the Setup
 
 Connect a device to the guest WiFi and verify:
 
-1. **IP Assignment**: Confirm the device receives an IP in the 10.0.2.x range
-2. **DNS Resolution**: Test with `nslookup example.com` — should resolve through your configured servers
-3. **Isolation Test**: Attempt to ping your main router (e.g., 192.168.1.1) — should fail
-4. **Internet Access**: Confirm web browsing works through the guest network
+1. IP Assignment: Confirm the device receives an IP in the 10.0.2.x range
+2. DNS Resolution: Test with `nslookup example.com`. should resolve through your configured servers
+3. Isolation Test: Attempt to ping your main router (e.g., 192.168.1.1). should fail
+4. Internet Access: Confirm web browsing works through the guest network
 
-## Advanced: VLAN-Based Isolation
+Advanced: VLAN-Based Isolation
 
 For hardware with limited radio interfaces, use VLANs to create multiple guest networks:
 
@@ -209,7 +209,7 @@ config interface 'guest_vlan'
 
 Tag VLAN 10 on your switch ports and configure separate DHCP pools for each virtual guest network.
 
-## Preventing DNS Leaks on the Guest Network
+Preventing DNS Leaks on the Guest Network
 
 One common gap in guest network configurations is DNS leak prevention. Even after assigning custom DNS servers through DHCP, a determined guest device may attempt to use hardcoded DNS servers, bypassing your configuration entirely.
 
@@ -230,7 +230,7 @@ This redirects any DNS query destined for an external server to your local resol
 Additionally, consider blocking DNS-over-HTTPS at the firewall level. Applications like Chrome and Firefox will attempt DoH using well-known IP addresses. You can block the most common DoH providers:
 
 ```bash
-# Block Cloudflare DoH
+Block Cloudflare DoH
 config rule
     option name 'Block-Guest-DoH-Cloudflare'
     option src 'guest'
@@ -243,14 +243,14 @@ config rule
 
 This is an advanced mitigation. For most home use cases, redirecting port 53 is sufficient.
 
-## Captive Portal for Guest Authentication
+Captive Portal for Guest Authentication
 
 In shared living situations, small offices, or AirBnB setups, you may want guests to acknowledge terms of service before accessing the internet. OpenWRT supports this through the `nodogsplash` captive portal package:
 
 ```bash
 opkg install nodogsplash
 
-# Basic nodogsplash configuration at /etc/config/nodogsplash
+Basic nodogsplash configuration at /etc/config/nodogsplash
 config nodogsplash
     option enabled '1'
     option gatewayinterface 'br-guest'
@@ -262,15 +262,15 @@ config nodogsplash
 
 When a guest connects and opens a browser, nodogsplash intercepts the request and redirects to your splash page. After the guest clicks through, the portal logs their MAC address and session start time and grants access. This provides a lightweight accountability layer without requiring login credentials.
 
-## Rate Limiting and Bandwidth Fairness
+Rate Limiting and Bandwidth Fairness
 
 Guest networks benefit from bandwidth limits so a single guest cannot saturate your connection. OpenWRT's traffic shaping supports per-interface limits through the `qosify` or `tc` utilities:
 
 ```bash
-# Install simple bandwidth limiter
+Install simple bandwidth limiter
 opkg install luci-app-sqm
 
-# Set download/upload limits for guest interface
+Set download/upload limits for guest interface
 uci set sqm.guest=queue
 uci set sqm.guest.interface='br-guest'
 uci set sqm.guest.download='20000'
@@ -281,7 +281,7 @@ uci commit sqm
 
 This example limits guest traffic to 20 Mbps down and 10 Mbps up. Adjust values based on your connection capacity and how many guests you expect.
 
-## Monitoring Guest Activity
+Monitoring Guest Activity
 
 Maintaining visibility into what your guest network is doing is good security hygiene. The `ntopng` package provides a lightweight traffic analysis dashboard:
 
@@ -294,7 +294,7 @@ After installation, configure it to monitor the `br-guest` interface specificall
 For simpler logging, the standard dnsmasq query log captures all DNS lookups on the guest interface:
 
 ```bash
-# /etc/config/dhcp - enable query logging
+/etc/config/dhcp - enable query logging
 config dnsmasq
     option logqueries '1'
     option logfacility '/var/log/dnsmasq-guest.log'
@@ -302,40 +302,40 @@ config dnsmasq
 
 Review this log periodically to identify unusual lookup patterns that might indicate a compromised guest device.
 
-## Troubleshooting
+Troubleshooting
 
 Common issues and solutions:
 
-- **Guest devices can't get IP**: Verify the DHCP server is enabled and the interface is in the correct firewall zone
-- **DNS not working**: Ensure the dnsmasq instance is listening on the guest interface and firewall allows port 53
-- **Guest can access LAN**: Check that the `block-guest-to-lan` firewall rule exists and is before any forwarding rules
-- **Guest devices see each other**: Confirm `option isolate '1'` is set in the wireless configuration and restart the wireless subsystem
-- **Slow DNS on guest**: If using dnscrypt-proxy or DoH forwarding, verify the upstream resolver is responding; fall back to direct DNS temporarily to isolate the bottleneck
-- **VLAN traffic not tagging correctly**: Use `swconfig show` to inspect your switch port configuration and confirm the VLAN is properly tagged on the uplink port
+- Guest devices can't get IP: Verify the DHCP server is enabled and the interface is in the correct firewall zone
+- DNS not working: Ensure the dnsmasq instance is listening on the guest interface and firewall allows port 53
+- Guest can access LAN: Check that the `block-guest-to-lan` firewall rule exists and is before any forwarding rules
+- Guest devices see each other: Confirm `option isolate '1'` is set in the wireless configuration and restart the wireless subsystem
+- Slow DNS on guest: If using dnscrypt-proxy or DoH forwarding, verify the upstream resolver is responding; fall back to direct DNS temporarily to isolate the bottleneck
+- VLAN traffic not tagging correctly: Use `swconfig show` to inspect your switch port configuration and confirm the VLAN is properly tagged on the uplink port
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to configure openwrt guest network with separate dns?**
+How long does it take to configure openwrt guest network with separate dns?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Create Separate Network Segment for Smart Home Isolating](/how-to-create-separate-network-segment-for-smart-home-isolat/)
 - [How to Configure DNS over HTTPS Inside a VPN Tunnel](/how-to-configure-dns-over-https-inside-vpn-tunnel/)
@@ -344,5 +344,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Home Network Privacy Pihole Dns Filtering Guide 2026](/home-network-privacy-pihole-dns-filtering-guide-2026/)
 - [AI Coding Assistant for Network Traffic Analysis: What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

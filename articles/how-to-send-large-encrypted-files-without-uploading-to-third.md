@@ -18,20 +18,20 @@ voice-checked: true
 
 Use OnionShare for encrypted peer-to-peer file transfer without intermediaries: it creates a Tor onion address that the recipient accesses directly from your machine, keeping files off all servers. Alternatively, use age encryption combined with SFTP or rsync to send encrypted files directly to the recipient's server, or use the age-encrypted-backup pattern for offline transfer via USB drives. All three methods avoid cloud services entirely while keeping data encrypted end-to-end.
 
-## Table of Contents
+Table of Contents
 
 - [Why Avoid Third-Party File Sharing Services](#why-avoid-third-party-file-sharing-services)
 - [Prerequisites](#prerequisites)
 - [Best Practices for Secure File Transfer](#best-practices-for-secure-file-transfer)
 - [Troubleshooting](#troubleshooting)
 
-## Why Avoid Third-Party File Sharing Services
+Why Avoid Third-Party File Sharing Services
 
 Cloud file sharing services create multiple attack surfaces. The service operator can read your files, their servers can be breached, and metadata about your communications remains visible. Additionally, many services impose file size limits or require account creation. When dealing with sensitive documents, backups, code repositories, or personal media, you deserve better control over your data.
 
 Peer-to-peer encrypted file transfer keeps your data on your machines until the exact moment of transfer. No cloud storage, no intermediate servers, and no persistent copies anywhere except on the intended recipient's device.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -41,11 +41,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Use age Encryption for File Transfer
+Step 1: Use age Encryption for File Transfer
 
 The `age` encryption tool (age-encryption.org) provides modern, secure file encryption using X25519 public keys or passphrase-based encryption. It's designed as a replacement for age-old PGP with simpler syntax and better defaults.
 
-### Installing age
+Installing age
 
 On macOS:
 ```bash
@@ -57,13 +57,13 @@ On Linux:
 sudo apt install age
 ```
 
-### Encrypting Files with age
+Encrypting Files with age
 
 Generate a keypair for the recipient:
 ```bash
 age-keygen -o recipient_key.txt
 cat recipient_key.txt
-# Public key: age1EXAMPLE...
+Public key: age1EXAMPLE...
 ```
 
 Encrypt a large file using the recipient's public key:
@@ -74,10 +74,10 @@ age -r age1EXAMPLE... largefile.zip > largefile.zip.encrypted
 For passphrase-based encryption (when you can't exchange keys):
 ```bash
 age -p -o largefile.zip.encrypted largefile.zip
-# Enter passphrase when prompted
+Enter passphrase when prompted
 ```
 
-### Decrypting Files
+Decrypting Files
 
 Recipient decrypts using their private key:
 ```bash
@@ -89,24 +89,24 @@ Or with a passphrase:
 age -d -o decrypted_largefile.zip largefile.zip.encrypted
 ```
 
-The encrypted file can now be sent through any channel—email attachment, USB drive, or temporary file hosting—without exposing the contents.
+The encrypted file can now be sent through any channel, email attachment, USB drive, or temporary file hosting, without exposing the contents.
 
-### Step 2: Use OpenPGP for Large File Encryption
+Step 2: Use OpenPGP for Large File Encryption
 
 OpenPGP remains the standard for encrypted file transfer. Modern implementations handle large files efficiently with proper streaming.
 
-### Encrypting with GPG
+Encrypting with GPG
 
 Generate a keypair if you don't have one:
 ```bash
 gpg --full-generate-key
-# Select RSA 4096, no expiration for simplicity
+Select RSA 4096, no expiration for simplicity
 ```
 
 Encrypt a large file:
 ```bash
 gpg --encrypt --armor --recipient recipient@example.com largefile.tar.gz
-# Output: largefile.tar.gz.asc
+Output: largefile.tar.gz.asc
 ```
 
 The recipient decrypts with:
@@ -120,11 +120,11 @@ For streaming very large files without buffering everything in memory, GPG handl
 gpg --symmetric --cipher-algo AES256 largefile.iso
 ```
 
-### Step 3: Onion Share: Peer-to-Peer Through Tor
+Step 3: Onion Share: Peer-to-Peer Through Tor
 
-Onion Share creates a temporary Tor hidden service that lets recipients download files directly from your computer. The file never touches a third-party server—transfers occur entirely peer-to-peer through the Tor network.
+Onion Share creates a temporary Tor hidden service that lets recipients download files directly from your computer. The file never touches a third-party server, transfers occur entirely peer-to-peer through the Tor network.
 
-### Basic Onion Share Usage
+Basic Onion Share Usage
 
 Install Onion Share:
 ```bash
@@ -145,11 +145,11 @@ onionshare --persistent --title "Secure Transfer" --schedule 1h largefile.zip
 
 This creates a link valid for one hour that can be used multiple times.
 
-### Step 4: Build Custom Transfer Scripts
+Step 4: Build Custom Transfer Scripts
 
 For automated workflows or integration into applications, build custom peer-to-peer transfer solutions.
 
-### Simple Web Server Transfer with Encryption
+Simple Web Server Transfer with Encryption
 
 Create a self-destructing transfer script:
 
@@ -193,7 +193,7 @@ class TransferHandler(http.server.SimpleHTTPRequestHandler):
     def log_message(self, format, *args):
         pass  # Silence logging
 
-# Generate one-time token
+Generate one-time token
 token = hashlib.sha256(str(time.time()).encode()).hexdigest()[:8]
 print(f"Starting transfer server for {FILE_PATH}")
 print(f"Token: {token}")
@@ -205,82 +205,82 @@ with socketserver.TCPServer(("", PORT), TransferHandler) as httpd:
 
 Before running this, encrypt the file using age or GPG. The recipient needs the encryption key through a separate secure channel.
 
-### Using scp with Jump Hosts
+Using scp with Jump Hosts
 
 For direct transfers between servers:
 
 ```bash
-# Transfer through an intermediate bastion host
+Transfer through an intermediate bastion host
 scp -o "ProxyJump bastion@example.com" largefile.tar.gz user@internal-server:/path/
 
-# Or set up persistent port forwarding
+Or set up persistent port forwarding
 ssh -L 2222:internal-server:22 bastion@example.com
-# Then in another terminal:
+Then in another terminal:
 scp -P 2222 largefile.tar.gz localhost:/path/
 ```
 
 Combine with encrypted archives for additional security:
 ```bash
-# Create encrypted archive
+Create encrypted archive
 tar czf - largefile/ | age -p -o archive.tar.gz.age
 
-# Extract on recipient side
+Extract on recipient side
 age -d -o - archive.tar.gz.age | tar xzf - -C /destination/
 ```
 
-## Best Practices for Secure File Transfer
+Best Practices for Secure File Transfer
 
 When transferring sensitive files, follow these guidelines:
 
-**Use independent channels for keys and files.** If you send an encrypted file via email, share the decryption key through Signal, a phone call, or in person. This prevents compromise of a single channel from exposing your data.
+Use independent channels for keys and files. If you send an encrypted file via email, share the decryption key through Signal, a phone call, or in person. This prevents compromise of a single channel from exposing your data.
 
-**Verify file integrity.** Always share a checksum separately:
+Verify file integrity. Always share a checksum separately:
 ```bash
 sha256sum largefile.zip > checksums.txt
 ```
 
-**Set expiration on transfers.** When using Onion Share or similar tools, configure automatic link expiration. The recipient should download and verify immediately.
+Set expiration on transfers. When using Onion Share or similar tools, configure automatic link expiration. The recipient should download and verify immediately.
 
-**Consider forward secrecy.** Tools like Signal and similar messaging apps provide automatic forward secrecy—the same file sent through these channels gets new encryption keys for each session. For files, age with ephemeral keys or GPG with proper key management provides similar properties when keys rotate.
+Consider forward secrecy. Tools like Signal and similar messaging apps provide automatic forward secrecy, the same file sent through these channels gets new encryption keys for each session. For files, age with ephemeral keys or GPG with proper key management provides similar properties when keys rotate.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to send large encrypted files without uploading?**
+How long does it take to send large encrypted files without uploading?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Magic Wormhole Encrypted File Transfer How To Send Files](/magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/)
 - [How To Send Encrypted Attachments That Recipients Can Open](/how-to-send-encrypted-attachments-that-recipients-can-open-w/)
@@ -288,7 +288,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Encrypt Files Before Cloud](/how-to-encrypt-files-before-cloud-upload/)
 - [Best Encrypted Cloud Storage Free Tier 2026](/best-encrypted-cloud-storage-free-tier-2026/)
 - [Copilot Completions Extremely Slow on Large Python Files Fix](https://bestremotetools.com/copilot-completions-extremely-slow-on-large-python-files-fix/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```
 ```
 {% endraw %}

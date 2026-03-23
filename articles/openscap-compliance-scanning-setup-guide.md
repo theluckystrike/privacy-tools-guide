@@ -14,11 +14,11 @@ tags: [privacy-tools-guide]
 ---
 
 {% raw %}
-# How to Set Up OpenSCAP for Compliance Scanning
+How to Set Up OpenSCAP for Compliance Scanning
 
-OpenSCAP is the open-source implementation of the SCAP (Security Content Automation Protocol) standard. It scans your system against published security baselines — CIS Benchmarks, DISA STIGs, PCI DSS profiles — produces scored HTML reports, and generates Bash remediation scripts that automatically fix failures. This guide uses RHEL/CentOS 9 and Ubuntu 24.04.
+OpenSCAP is the open-source implementation of the SCAP (Security Content Automation Protocol) standard. It scans your system against published security baselines. CIS Benchmarks, DISA STIGs, PCI DSS profiles. produces scored HTML reports, and generates Bash remediation scripts that automatically fix failures. This guide uses RHEL/CentOS 9 and Ubuntu 24.04.
 
-## What OpenSCAP Checks
+What OpenSCAP Checks
 
 - User and group account settings (UID 0 accounts, password aging)
 - Service configuration (SSH, FTP, Telnet, NFS hardening)
@@ -31,53 +31,53 @@ OpenSCAP is the open-source implementation of the SCAP (Security Content Automat
 
 ---
 
-## 1. Install OpenSCAP
+1. Install OpenSCAP
 
 ```bash
-# RHEL / CentOS / Fedora
+RHEL / CentOS / Fedora
 sudo dnf install -y openscap openscap-scanner openscap-utils scap-security-guide
 
-# Ubuntu / Debian
+Ubuntu / Debian
 sudo apt install -y libopenscap8 openscap-scanner python3-openscap ssg-base ssg-debderived
 
-# Verify
+Verify
 oscap --version
 ```
 
 ---
 
-## 2. List Available Profiles
+2. List Available Profiles
 
 The SCAP Security Guide (SSG) ships XML data stream files containing multiple profiles:
 
 ```bash
-# RHEL / CentOS
+RHEL / CentOS
 oscap info /usr/share/xml/scap/ssg/content/ssg-rhel9-ds.xml
 
-# Ubuntu
+Ubuntu
 oscap info /usr/share/xml/scap/ssg/content/ssg-ubuntu2404-ds.xml
 
-# Sample output:
-# Profiles:
-#     Title: CIS Red Hat Enterprise Linux 9 Benchmark for Level 1 - Server
-#         Id: xccdf_org.ssgproject.content_profile_cis_server_l1
-#     Title: DISA STIG for Red Hat Enterprise Linux 9
-#         Id: xccdf_org.ssgproject.content_profile_stig
+Sample output:
+Profiles:
+    Title: CIS Red Hat Enterprise Linux 9 Benchmark for Level 1 - Server
+        Id: xccdf_org.ssgproject.content_profile_cis_server_l1
+    Title: DISA STIG for Red Hat Enterprise Linux 9
+        Id: xccdf_org.ssgproject.content_profile_stig
 ```
 
 ---
 
-## 3. Run Your First Scan
+3. Run Your First Scan
 
 ```bash
-# RHEL — CIS Level 1 Server profile
+RHEL. CIS Level 1 Server profile
 sudo oscap xccdf eval \
   --profile xccdf_org.ssgproject.content_profile_cis_server_l1 \
   --results /tmp/scan-results.xml \
   --report /tmp/scan-report.html \
   /usr/share/xml/scap/ssg/content/ssg-rhel9-ds.xml
 
-# Ubuntu — CIS Level 1
+Ubuntu. CIS Level 1
 sudo oscap xccdf eval \
   --profile xccdf_org.ssgproject.content_profile_cis_level1_server \
   --results /tmp/scan-results.xml \
@@ -87,23 +87,23 @@ sudo oscap xccdf eval \
 echo "Report generated: /tmp/scan-report.html"
 ```
 
-Open the HTML report in a browser — it shows pass/fail for each rule with explanations and references.
+Open the HTML report in a browser. it shows pass/fail for each rule with explanations and references.
 
 ---
 
-## 4. Read the Results
+4. Read the Results
 
 ```bash
-# Quick summary from the XML results
+Quick summary from the XML results
 oscap xccdf generate guide \
   --profile xccdf_org.ssgproject.content_profile_cis_server_l1 \
   /usr/share/xml/scap/ssg/content/ssg-rhel9-ds.xml \
   > /tmp/guide.html
 
-# Count passes and failures
+Count passes and failures
 grep -o '<result>.*</result>' /tmp/scan-results.xml | sort | uniq -c
 
-# List only failed rules
+List only failed rules
 oscap xccdf results-arf /tmp/scan-results.xml 2>/dev/null || \
 python3 - <<'EOF'
 import xml.etree.ElementTree as ET
@@ -119,10 +119,10 @@ EOF
 
 ---
 
-## 5. Generate and Apply Remediation Scripts
+5. Generate and Apply Remediation Scripts
 
 ```bash
-# Generate a Bash script that fixes all failures
+Generate a Bash script that fixes all failures
 sudo oscap xccdf generate fix \
   --profile xccdf_org.ssgproject.content_profile_cis_server_l1 \
   --result-id "" \
@@ -130,13 +130,13 @@ sudo oscap xccdf generate fix \
   --output /tmp/remediation.sh \
   /usr/share/xml/scap/ssg/content/ssg-rhel9-ds.xml
 
-# REVIEW the script before running — some fixes restart services
+REVIEW the script before running. some fixes restart services
 less /tmp/remediation.sh
 
-# Run remediation (test on non-production first)
+Run remediation (test on non-production first)
 sudo bash /tmp/remediation.sh 2>&1 | tee /tmp/remediation.log
 
-# Re-scan after remediation to verify improvements
+Re-scan after remediation to verify improvements
 sudo oscap xccdf eval \
   --profile xccdf_org.ssgproject.content_profile_cis_server_l1 \
   --results /tmp/post-remediation-results.xml \
@@ -146,33 +146,33 @@ sudo oscap xccdf eval \
 
 ---
 
-## 6. Ansible Playbook Remediation (Infrastructure as Code)
+6. Ansible Playbook Remediation (Infrastructure as Code)
 
 For automated fleet compliance:
 
 ```bash
-# Generate Ansible playbook instead of shell script
+Generate Ansible playbook instead of shell script
 sudo oscap xccdf generate fix \
   --profile xccdf_org.ssgproject.content_profile_cis_server_l1 \
   --fix-type ansible \
   --output /tmp/remediation-playbook.yml \
   /usr/share/xml/scap/ssg/content/ssg-rhel9-ds.xml
 
-# Run on a remote host
+Run on a remote host
 ansible-playbook -i "targethost," -u root \
   /tmp/remediation-playbook.yml
 ```
 
 ---
 
-## 7. Scan a Specific Rule (Targeted Checks)
+7. Scan a Specific Rule (Targeted Checks)
 
 ```bash
-# List rule IDs
+List rule IDs
 oscap info /usr/share/xml/scap/ssg/content/ssg-rhel9-ds.xml \
   | grep "Id:" | grep -v profile
 
-# Scan only the SSH hardening rules
+Scan only the SSH hardening rules
 sudo oscap xccdf eval \
   --profile xccdf_org.ssgproject.content_profile_cis_server_l1 \
   --rule xccdf_org.ssgproject.content_rule_sshd_disable_root_login \
@@ -184,37 +184,37 @@ sudo oscap xccdf eval \
 
 ---
 
-## 8. Scan Docker Container Images
+8. Scan Docker Container Images
 
 OpenSCAP can scan container images offline:
 
 ```bash
-# Install container scanning plugin
+Install container scanning plugin
 sudo dnf install -y openscap-containers   # RHEL
 
-# Pull and scan a container image
+Pull and scan a container image
 docker pull registry.access.redhat.com/ubi9/ubi
 oscap-docker image-cve registry.access.redhat.com/ubi9/ubi \
   --report /tmp/container-report.html
 
-# Scan running container
+Scan running container
 oscap-docker container-cve <container_id> \
   --report /tmp/container-cve.html
 ```
 
 ---
 
-## 9. DISA STIG Scan (Government/DoD Compliance)
+9. DISA STIG Scan (Government/DoD Compliance)
 
 ```bash
-# DISA STIG for RHEL 9
+DISA STIG for RHEL 9
 sudo oscap xccdf eval \
   --profile xccdf_org.ssgproject.content_profile_stig \
   --results /tmp/stig-results.xml \
   --report /tmp/stig-report.html \
   /usr/share/xml/scap/ssg/content/ssg-rhel9-ds.xml
 
-# Generate STIG Viewer compatible XCCDF results
+Generate STIG Viewer compatible XCCDF results
 sudo oscap xccdf eval \
   --profile xccdf_org.ssgproject.content_profile_stig \
   --results-arf /tmp/stig-arf.xml \
@@ -225,10 +225,10 @@ Import `/tmp/stig-arf.xml` into the DISA STIG Viewer tool for checklist generati
 
 ---
 
-## 10. Automate with Cron
+10. Automate with Cron
 
 ```bash
-# Daily compliance scan, report emailed to security team
+Daily compliance scan, report emailed to security team
 sudo tee /etc/cron.d/openscap > /dev/null <<'EOF'
 0 2 * * * root /usr/bin/oscap xccdf eval \
   --profile xccdf_org.ssgproject.content_profile_cis_server_l1 \
@@ -245,7 +245,7 @@ sudo mkdir -p /var/log/oscap
 
 ---
 
-## Interpreting the Score
+Interpreting the Score
 
 | Score Range | Posture |
 |---|---|
@@ -254,11 +254,11 @@ sudo mkdir -p /var/log/oscap
 | 50–69% | Weak; systematic hardening needed |
 | Below 50% | Critical; remediate before production exposure |
 
-Focus on **severity=high** failures first. Many low-severity failures are cosmetic or context-dependent.
+Focus on severity=high failures first. Many low-severity failures are cosmetic or context-dependent.
 
 ---
 
-## Related Reading
+Related Reading
 
 - [How to Set Up Wazuh SIEM for Small Teams](/wazuh-siem-small-teams-setup-guide/)
 - [How to Configure SELinux Policies Step by Step](/selinux-policy-configuration-guide/)
@@ -266,5 +266,5 @@ Focus on **severity=high** failures first. Many low-severity failures are cosmet
 
 ---
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -18,7 +18,7 @@ voice-checked: true
 
 Signal's relay calls feature represents a significant advancement in protecting user privacy during voice and video communications. When enabled, this feature routes all call traffic through Signal's servers, preventing the other party from discovering your IP address. This article explores the technical implementation, use cases, and configuration options for developers and power users who want maximum privacy.
 
-## Table of Contents
+Table of Contents
 
 - [How Signal Relay Calls Work](#how-signal-relay-calls-work)
 - [Technical Implementation Details](#technical-implementation-details)
@@ -28,7 +28,7 @@ Signal's relay calls feature represents a significant advancement in protecting 
 - [Limitations and Trade-offs](#limitations-and-trade-offs)
 - [Advanced Configuration and Optimization](#advanced-configuration-and-optimization)
 
-## How Signal Relay Calls Work
+How Signal Relay Calls Work
 
 When you make a standard VoIP call, the calling and receiving devices typically exchange IP addresses directly. This direct peer-to-peer connection enables low-latency communication but exposes sensitive network information. The other party can potentially:
 
@@ -37,14 +37,14 @@ When you make a standard VoIP call, the calling and receiving devices typically 
 - Correlate your identity across multiple calls
 - Conduct more sophisticated network attacks
 
-Signal's relay calls feature solves this by introducing an intermediary server into the call path. Instead of connecting directly, both parties connect to Signal's relay server, which forwards audio and video data between them. The call remains encrypted end-to-end—the relay server cannot decrypt the content.
+Signal's relay calls feature solves this by introducing an intermediary server into the call path. Instead of connecting directly, both parties connect to Signal's relay server, which forwards audio and video data between them. The call remains encrypted end-to-end, the relay server cannot decrypt the content.
 
 ```
 Standard Call (Peer-to-Peer):
-[Caller IP] <─────> [Recipient IP]
+[Caller IP] <> [Recipient IP]
 
 Relay Call:
-[Caller IP] <────> [Signal Relay Server] <────> [Recipient IP]
+[Caller IP] <> [Signal Relay Server] <> [Recipient IP]
                  (encrypted content)
 ```
 
@@ -55,17 +55,17 @@ The Signal server acts as a simple packet forwarder. Neither party ever sees the
 - Privacy-conscious individuals
 - Anyone wanting to minimize their digital footprint
 
-## Technical Implementation Details
+Technical Implementation Details
 
 Signal uses WebRTC for its voice and video capabilities. The relay mechanism operates at the ICE (Interactive Connectivity Establishment) layer. Understanding this helps developers appreciate the privacy guarantees.
 
-### WebRTC ICE Candidates
+WebRTC ICE Candidates
 
 WebRTC collects multiple connection candidates during negotiation:
 
-- **Host candidates**: Direct IP addresses
-- **Server reflexive (Srflx) candidates**: Public IPs from STUN servers
-- **Relayed candidates**: IPs from TURN relay servers
+- Host candidates: Direct IP addresses
+- Server reflexive (Srflx) candidates: Public IPs from STUN servers
+- Relayed candidates: IPs from TURN relay servers
 
 When relay calls are enabled, Signal's client prioritizes relayed candidates, ensuring traffic flows through the relay:
 
@@ -85,21 +85,21 @@ const iceServers = [
 
 The actual implementation happens in Signal's native clients, which manage ICE candidate gathering and selection automatically.
 
-### Encryption Guarantees
+Encryption Guarantees
 
 The relay server handles encrypted packets only. Signal uses the Signal Protocol (formerly TextSecure Protocol) for voice and video, which provides:
 
-- **Double ratchet algorithm**: Forward secrecy maintained through continuous key changes
-- **Deniable authentication**: Messages cannot be proven to any third party
-- **Forward secrecy**: Compromised session keys don't expose past communications
+- Double ratchet algorithm: Forward secrecy maintained through continuous key changes
+- Deniable authentication: Messages cannot be proven to any third party
+- Forward secrecy: Compromised session keys don't expose past communications
 
-This means Signal's servers—even when operating as relays—cannot eavesdrop on conversations. The relay sees only encrypted bytes it forwards between parties.
+This means Signal's servers, even when operating as relays, cannot eavesdrop on conversations. The relay sees only encrypted bytes it forwards between parties.
 
-## Enabling and Configuring Relay Calls
+Enabling and Configuring Relay Calls
 
 Signal provides straightforward controls for enabling relay calls on mobile and desktop clients.
 
-### Mobile Clients (iOS and Android)
+Mobile Clients (iOS and Android)
 
 1. Open Signal Settings
 2. Navigate to Privacy
@@ -107,7 +107,7 @@ Signal provides straightforward controls for enabling relay calls on mobile and 
 
 The setting is per-device, so enabling it on one device doesn't automatically enable it on others.
 
-### Desktop Client
+Desktop Client
 
 Desktop Signal supports relay calls with additional configuration:
 
@@ -118,14 +118,14 @@ Settings → Privacy → Enable Call Relay
 Desktop users can also configure custom TURN servers for enterprise deployments requiring additional control:
 
 ```yaml
-# Custom TURN server configuration (advanced)
+Custom TURN server configuration (advanced)
 turn:
   - urls: turn:your-turn-server.com:3478
     username: your-username
     credential: your-password
 ```
 
-## Performance Considerations
+Performance Considerations
 
 Relaying calls introduces latency because traffic makes an additional hop. The impact varies based on:
 
@@ -135,9 +135,9 @@ Signal automatically selects optimal relay servers based on geographic location.
 
 Typical latency additions range from 20-80ms depending on server distance. For most users, this remains imperceptible during voice calls.
 
-## Use Cases for Developers and Power Users
+Use Cases for Developers and Power Users
 
-### Threat Model Considerations
+Threat Model Considerations
 
 Relay calls protect against specific threats while acknowledging limitations:
 
@@ -150,7 +150,7 @@ For high-security scenarios, combine relay calls with additional measures:
 - Verify safety numbers before sensitive calls
 - Consider burnable devices for sensitive communications
 
-### Integration Possibilities
+Integration Possibilities
 
 Developers building privacy-focused applications can learn from Signal's implementation:
 
@@ -165,22 +165,22 @@ realm=your-domain.com
 user=username:password
 ```
 
-## Limitations and Trade-offs
+Limitations and Trade-offs
 
 Power users should understand several constraints:
 
-1. **Battery impact**: Continuous relay connections may increase battery consumption on mobile devices
-2. **Bandwidth costs**: Relaying consumes more server resources; Signal limits apply
-3. **Feature restrictions**: Some features may work differently with relay calls enabled
-4. **Connection reliability**: Additional hops can cause connection issues on unstable networks
+1. Battery impact: Continuous relay connections may increase battery consumption on mobile devices
+2. Bandwidth costs: Relaying consumes more server resources; Signal limits apply
+3. Feature restrictions: Some features may work differently with relay calls enabled
+4. Connection reliability: Additional hops can cause connection issues on unstable networks
 
 Signal's relay feature strikes a practical balance between privacy and usability. For most users, the privacy benefits outweigh these trade-offs.
 
-## Advanced Configuration and Optimization
+Advanced Configuration and Optimization
 
 For developers and power users needing finer control over relay behavior, Signal exposes several advanced options through configuration files on desktop platforms.
 
-### Desktop Platform Configuration
+Desktop Platform Configuration
 
 Signal Desktop stores configuration in a platform-specific location. On Linux, this is typically `~/.config/Signal`. You can override relay behavior by modifying the configuration:
 
@@ -201,29 +201,29 @@ Signal Desktop stores configuration in a platform-specific location. On Linux, t
 
 The `forceTurn` flag ensures all media routes through relay servers, eliminating any direct peer-to-peer fallback even if conditions permit it.
 
-### Performance Metrics and Monitoring
+Performance Metrics and Monitoring
 
 Understanding call quality metrics helps identify when relay calls are working optimally. Signal collects telemetry about:
 
-- **Round-trip time (RTT)**: Measures latency between your device and the relay server
-- **Packet loss percentage**: Indicates network reliability
-- **Jitter**: Variation in packet arrival times affecting audio quality
-- **Bandwidth utilization**: Media stream bitrate
+- Round-trip time (RTT): Measures latency between your device and the relay server
+- Packet loss percentage: Indicates network reliability
+- Jitter: Variation in packet arrival times affecting audio quality
+- Bandwidth utilization: Media stream bitrate
 
 Monitor these metrics during calls to detect network problems early. Elevated RTT (>150ms) or packet loss (>2%) suggests switching to a closer relay server.
 
-### Network Conditions and Adaptive Streaming
+Network Conditions and Adaptive Streaming
 
 Signal implements adaptive bitrate control that responds to network conditions. When relay calls detect degradation, Signal automatically reduces video quality to maintain audio reliability. This prioritization acknowledges that voice clarity matters more than video resolution in most scenarios.
 
 Developers integrating similar features should implement aggressive monitoring of network conditions and be willing to degrade non-critical features to preserve core functionality.
 
-### Relay Server Geolocation Strategy
+Relay Server Geolocation Strategy
 
 Signal operates relay servers in multiple geographic regions. The client automatically selects the nearest server, but latency-sensitive applications benefit from understanding the topology:
 
 ```python
-# Pseudocode for relay server selection
+Pseudocode for relay server selection
 def select_optimal_relay(user_location, available_relays):
     # Calculate latency to each relay
     latencies = measure_latency_to_all(available_relays)
@@ -243,33 +243,33 @@ def select_optimal_relay(user_location, available_relays):
 
 This dual-relay approach provides easy failover if the primary relay experiences problems.
 
-### Comparing Relay Implementations
+Comparing Relay Implementations
 
-Different VoIP platforms implement relaying differently. Signal's approach—using TURN servers managed directly by Signal—differs from alternatives:
+Different VoIP platforms implement relaying differently. Signal's approach, using TURN servers managed directly by Signal, differs from alternatives:
 
-- **WhatsApp**: Uses proprietary relay infrastructure with minimal transparency
-- **Telegram**: Supports relaying but requires explicit user configuration
-- **Wire**: Implements corporate-grade relay with audit logging
-- **Jami** (GNU Ring): Peer-to-peer without centralized relay servers
+- WhatsApp: Uses proprietary relay infrastructure with minimal transparency
+- Telegram: Supports relaying but requires explicit user configuration
+- Wire: Implements corporate-grade relay with audit logging
+- Jami (GNU Ring): Peer-to-peer without centralized relay servers
 
 Each approach involves trade-offs between privacy guarantees, reliability, and control.
 
-### Debugging Relay Issues
+Debugging Relay Issues
 
 When relay calls fail or perform poorly, diagnostic tools help identify the problem:
 
 ```bash
-# Test connectivity to Signal's relay servers (on Linux)
+Test connectivity to Signal's relay servers (on Linux)
 nc -zvu relay.signal.org 3478
-# Should show open (Connection accepted)
+Should show open (Connection accepted)
 
-# Monitor media stream quality during a call
+Monitor media stream quality during a call
 strace -e trace=network -p $(pgrep Signal) 2>&1 | grep -i relay
 ```
 
 These diagnostics help distinguish between local network issues, ISP blocking, and actual relay server problems.
 
-### Operational Security with Relay Calls
+Operational Security with Relay Calls
 
 While relay calls protect your IP address, they do not protect metadata. Signal's servers still log:
 - When you made calls
@@ -283,29 +283,29 @@ For high-threat environments, combine relay calls with additional measures:
 - Employ physical security measures preventing device access
 - Consider using air-gapped devices for the most sensitive communications
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does Signal offer a free tier?**
+Does Signal offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check Signal's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Signal Username Feature Privacy Review](/signal-username-feature-privacy-review/)
 - [Encrypted Voice Calls Comparison](/encrypted-voice-calls-comparison-signal-whatsapp-facetime-wh/)
@@ -314,5 +314,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Telehealth Privacy Rights What Therapist Doctor Video Calls](/telehealth-privacy-rights-what-therapist-doctor-video-calls-/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

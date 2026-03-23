@@ -17,7 +17,7 @@ intent-checked: true
 
 When internet shutdowns occur in Iran, mesh networking and offline communication tools enable connectivity without relying on centralized infrastructure. Partial mesh networks using Wi-Fi Direct and Bluetooth Low Energy offer the best practical balance, with applications like Briar providing encrypted peer-to-peer messaging that syncs automatically when devices reconnect. For developers and technical users, understanding these decentralized technologies is essential for maintaining communication during network disruptions.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -27,38 +27,38 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand Mesh Networking Fundamentals
+Step 1: Understand Mesh Networking Fundamentals
 
-Mesh networking creates interconnected networks where each node can communicate directly with nearby nodes, forming a resilient web of communication that doesn't require internet access. Unlike traditional client-server models, mesh networks are decentralized—no single point of failure can bring down the entire system.
+Mesh networking creates interconnected networks where each node can communicate directly with nearby nodes, forming a resilient web of communication that doesn't require internet access. Unlike traditional client-server models, mesh networks are decentralized, no single point of failure can bring down the entire system.
 
 There are three primary mesh networking topologies:
 
-- **Full mesh**: Every node connects to every other node (impractical for large networks)
-- **Partial mesh**: Nodes connect to multiple nearby nodes but not all (optimal balance)
-- **Hybrid mesh**: Combines mesh principles with traditional infrastructure when available
+- Full mesh: Every node connects to every other node (impractical for large networks)
+- Partial mesh: Nodes connect to multiple nearby nodes but not all (optimal balance)
+- Hybrid mesh: Combines mesh principles with traditional infrastructure when available
 
 For practical emergency communication, partial mesh networks using Wi-Fi Direct and Bluetooth Low Energy (BLE) offer the best balance of range, battery efficiency, and device compatibility.
 
-### Step 2: Briar: Mesh Messaging for Android
+Step 2: Briar: Mesh Messaging for Android
 
 Briar stands as the most mature offline mesh messaging application available. It creates encrypted peer-to-peer connections over Bluetooth, Wi-Fi Direct, and Tor hidden services, enabling communication without any internet connectivity.
 
-### Installation and Setup
+Installation and Setup
 
 ```bash
-# Briar is available on F-Droid and Google Play Store
-# No command-line installation required for Android
+Briar is available on F-Droid and Google Play Store
+No command-line installation required for Android
 
-# Key features:
-# - End-to-end encryption via Signal protocol
-# - No phone number requirement (contacts via QR code exchange)
-# - Forums and groups work offline
-# - Message syncs automatically when peers connect
+Key features:
+- End-to-end encryption via Signal protocol
+- No phone number requirement (contacts via QR code exchange)
+- Forums and groups work offline
+- Message syncs automatically when peers connect
 ```
 
-The application operates entirely without servers—messages propagate through the mesh when devices are in range. This makes it ideal for protest coordination where participants can relay messages across distances without direct connectivity to all participants.
+The application operates entirely without servers, messages propagate through the mesh when devices are in range. This makes it ideal for protest coordination where participants can relay messages across distances without direct connectivity to all participants.
 
-### Practical Deployment
+Practical Deployment
 
 For community organizers, the recommended approach involves:
 
@@ -67,48 +67,48 @@ For community organizers, the recommended approach involves:
 3. Establishing "message courier" nodes at strategic locations
 4. Using forums for broadcast announcements to all connected peers
 
-### Step 3: Serval Mesh: Mesh Networking for Multiple Platforms
+Step 3: Serval Mesh: Mesh Networking for Multiple Platforms
 
 Serval Mesh offers cross-platform support including Android, iOS, and dedicated mesh hardware. Unlike Briar's focus on messaging, Serval emphasizes voice communication and file sharing over mesh networks.
 
-### Mesh Potato: Dedicated Hardware
+Mesh Potato: Dedicated Hardware
 
 The Mesh Potato project combines mesh networking with voice capability in a dedicated device. While primarily designed for development regions, these devices work excellently for local community networks:
 
 ```bash
-# Serval DNA daemon configuration example
-# Located at /etc/serval/serval.conf
+Serval DNA daemon configuration example
+Located at /etc/serval/serval.conf
 
-# Configure mesh interface
+Configure mesh interface
 interface=wlan0
-# Enable automatic peer discovery
+Enable automatic peer discovery
 discovery=yes
-# Set mesh network name
+Set mesh network name
 meshname=community-mesh-01
-# Enable voice routing
+Enable voice routing
 voice=enabled
 ```
 
 The Rhizome protocol ensures data eventually reaches its destination through store-and-forward mechanisms, even when direct paths don't exist.
 
-### Step 4: Build Custom Mesh Networks with Python
+Step 4: Build Custom Mesh Networks with Python
 
 For developers wanting to build custom solutions, the `meshshake` library provides Python tools for experimental mesh networking:
 
 ```python
 import meshshake
 
-# Initialize mesh node
+Initialize mesh node
 node = meshshake.Node(
     interface='wlan0',
     protocol='olsr',  # Optimized Link State Routing
     mesh_id='iran-emergency-mesh'
 )
 
-# Start mesh advertisement
+Start mesh advertisement
 node.start_advertising()
 
-# Send message to mesh
+Send message to mesh
 def send_emergency_message(message, recipients):
     """Broadcast message across mesh network"""
     packet = meshshake.Packet(
@@ -120,19 +120,19 @@ def send_emergency_message(message, recipients):
     for recipient in recipients:
         node.send(packet, recipient)
 
-# Listen for incoming messages
+Listen for incoming messages
 @node.on_message
 def handle_incoming(msg, sender):
     print(f"Received from {sender}: {msg.content}")
 ```
 
-### Step 5: Syncthing: Offline File Synchronization
+Step 5: Syncthing: Offline File Synchronization
 
 When internet is unavailable but local networks exist, Syncthing provides decentralized file synchronization across devices without cloud dependencies:
 
 ```yaml
-# Syncthing configuration snippet
-# ~/.config/syncthing/config.xml
+Syncthing configuration snippet
+~/.config/syncthing/config.xml
 
 <device id="DEVICE-ID-1" name="laptop">
     <address>dynamic</address>
@@ -157,109 +157,109 @@ Key advantages for emergency scenarios:
 - Selective synchronization (only needed folders)
 - Works over Wi-Fi Direct on Android
 
-### Step 6: Offline Maps and Navigation
+Step 6: Offline Maps and Navigation
 
 Internet shutdowns often disrupt navigation and mapping services. Pre-cached offline maps become essential:
 
-### OsmAnd: Offline GPS Navigation
+OsmAnd: Offline GPS Navigation
 
 ```bash
-# OsmAnd can be installed from F-Droid
-# Maps are downloaded directly to device storage
-# Supports:
-# - Turn-by-turn navigation offline
-# - Vector maps (searchable)
-# - Custom POI markers for meeting points
-# - Track recording for creating mesh node maps
+OsmAnd can be installed from F-Droid
+Maps are downloaded directly to device storage
+Supports:
+- Turn-by-turn navigation offline
+- Vector maps (searchable)
+- Custom POI markers for meeting points
+- Track recording for creating mesh node maps
 ```
 
 For community coordination, exporting custom maps with marked meeting points, safe houses, and medical facilities enables navigation without connectivity.
 
-### Step 7: Implementing Mesh VPN for Network Extension
+Step 7: Implementing Mesh VPN for Network Extension
 
 When some community members maintain internet access (via satellite, international borders, or cached content), mesh VPN solutions can extend connectivity:
 
 ```bash
-# WireGuard mesh setup example
-# Install on each node
+WireGuard mesh setup example
+Install on each node
 
-# Node A configuration (10.0.0.1)
+Node A configuration (10.0.0.1)
 [Interface]
 Address = 10.0.0.1/24
 PrivateKey = <node-a-private-key>
 ListenPort = 51820
 
-# Node B peer (10.0.0.2)
+Node B peer (10.0.0.2)
 [Peer]
 PublicKey = <node-b-public-key>
 AllowedIPs = 10.0.0.2/32, 10.0.0.0/24
 Endpoint = 192.168.1.100:51820  # Local IP when mesh connected
 PersistentKeepalive = 25
 
-# This allows traffic to flow between mesh nodes
-# extending network access to all connected devices
+This allows traffic to flow between mesh nodes
+extending network access to all connected devices
 ```
 
-### Step 8: Practical Preparation Checklist
+Step 8: Practical Preparation Checklist
 
 Technical preparation before an emergency involves:
 
-- **Pre-installed applications**: Briar, Serval, Syncthing on all devices
-- **Contact exchanges**: QR code exchanges in safe environments
-- **Offline content**: Downloaded maps, documents, and guides
-- **Local caches**: Browsers with fully cached critical websites
-- **Hardware redundancy**: Multiple devices with different capabilities
-- **Practice sessions**: Regular mesh network testing within community
+- Pre-installed applications: Briar, Serval, Syncthing on all devices
+- Contact exchanges: QR code exchanges in safe environments
+- Offline content: Downloaded maps, documents, and guides
+- Local caches: Browsers with fully cached critical websites
+- Hardware redundancy: Multiple devices with different capabilities
+- Practice sessions: Regular mesh network testing within community
 
-### Step 9: Limitations and Threat Considerations
+Step 9: Limitations and Threat Considerations
 
 Mesh networking provides resilience but comes with constraints:
 
-- **Range limitations**: Bluetooth (~10m), Wi-Fi Direct (~200m), dedicated mesh hardware (several km with line-of-sight)
-- **Timing dependencies**: Messages propagate only when nodes are in range
-- **Device discovery**: Initial contact requires physical proximity
-- **Metadata risks**: Even encrypted traffic reveals who communicates with whom
+- Range limitations: Bluetooth (~10m), Wi-Fi Direct (~200m), dedicated mesh hardware (several km with line-of-sight)
+- Timing dependencies: Messages propagate only when nodes are in range
+- Device discovery: Initial contact requires physical proximity
+- Metadata risks: Even encrypted traffic reveals who communicates with whom
 
-For high-risk scenarios, combining mesh networking with appropriate operational security—limiting communication to essential messages, using dead drops, and rotating devices—reduces exposure.
+For high-risk scenarios, combining mesh networking with appropriate operational security, limiting communication to essential messages, using dead drops, and rotating devices, reduces exposure.
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to complete this setup?**
+How long does it take to complete this setup?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Use Mesh Networking for Private Communication Without](/how-to-use-mesh-networking-for-private-communication-without/)
 - [How To Communicate During Internet Shutdown Alternative Netw](/how-to-communicate-during-internet-shutdown-alternative-netw/)
@@ -268,4 +268,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Briar Messenger Offline Mesh Review: Technical Deep Dive](/briar-messenger-offline-mesh-review/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)

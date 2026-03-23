@@ -15,43 +15,43 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# How to Verify Software Supply Chain Integrity
+How to Verify Software Supply Chain Integrity
 
-Supply chain attacks inject malicious code between the developer and you — in the build system, the package registry, the release artifacts, or the CI pipeline. Verification cannot stop every attack, but it confirms the software you are running matches what the author intended to ship.
+Supply chain attacks inject malicious code between the developer and you. in the build system, the package registry, the release artifacts, or the CI pipeline. Verification cannot stop every attack, but it confirms the software you are running matches what the author intended to ship.
 
-## Verifying Downloads with Checksums
+Verifying Downloads with Checksums
 
 Most projects publish SHA256 checksums alongside their releases.
 
 ```bash
-# Download a release and its checksum file
+Download a release and its checksum file
 wget https://releases.example.com/myapp-2.1.0-linux-amd64.tar.gz
 wget https://releases.example.com/myapp-2.1.0-SHA256SUMS
 
-# Verify
+Verify
 sha256sum -c myapp-2.1.0-SHA256SUMS
-# myapp-2.1.0-linux-amd64.tar.gz: OK
+myapp-2.1.0-linux-amd64.tar.gz: OK
 
-# If you only have the expected hash (no checksum file)
+If you only have the expected hash (no checksum file)
 echo "a3f2b1c4d5e6... myapp-2.1.0-linux-amd64.tar.gz" | sha256sum -c
 ```
 
-Checksums prove the file was not corrupted in transit, but they do not prove the file came from the developer — the checksum file could be replaced alongside the binary. GPG or Sigstore signatures provide stronger guarantees.
+Checksums prove the file was not corrupted in transit, but they do not prove the file came from the developer. the checksum file could be replaced alongside the binary. GPG or Sigstore signatures provide stronger guarantees.
 
-## Verifying GPG Signatures
+Verifying GPG Signatures
 
 ```bash
-# Import the developer's public key
+Import the developer's public key
 gpg --keyserver keys.openpgp.org --recv-keys 0xABCDEF1234567890
 
-# Or from a project's own keyserver URL
+Or from a project's own keyserver URL
 curl https://example.com/signing-key.asc | gpg --import
 
-# Verify the signature
+Verify the signature
 gpg --verify myapp-2.1.0-linux-amd64.tar.gz.asc myapp-2.1.0-linux-amd64.tar.gz
-# Good signature from "Developer Name <dev@example.com>"
+Good signature from "Developer Name <dev@example.com>"
 
-# Check the key fingerprint matches what the project documents
+Check the key fingerprint matches what the project documents
 gpg --fingerprint 0xABCDEF1234567890
 ```
 
@@ -61,28 +61,28 @@ A good signature means:
 
 It does not mean the key itself was not compromised (that requires a trust chain or key transparency).
 
-## Sigstore / cosign for Container Images
+Sigstore / cosign for Container Images
 
 Sigstore is the modern replacement for GPG-signed container images. GitHub Actions can sign images automatically during CI using keyless signing (OIDC-based).
 
 ```bash
-# Install cosign
+Install cosign
 curl -L https://github.com/sigstore/cosign/releases/latest/download/cosign-linux-amd64 -o cosign
 chmod +x cosign
 sudo mv cosign /usr/local/bin/
 
-# Verify a signed image
+Verify a signed image
 cosign verify \
   --certificate-identity "https://github.com/myorg/myrepo/.github/workflows/build.yml@refs/heads/main" \
   --certificate-oidc-issuer "https://token.actions.githubusercontent.com" \
   ghcr.io/myorg/myapp:v2.1.0
 
-# Output: Verified OK
-# Shows: signature, certificate, build workflow reference
+Output: Verified OK
+Shows: signature, certificate, build workflow reference
 ```
 
 ```yaml
-# In your GitHub Actions workflow — sign the image during build
+In your GitHub Actions workflow. sign the image during build
 - name: Sign the container image
   env:
     DIGEST: ${{ steps.build.outputs.digest }}
@@ -90,27 +90,27 @@ cosign verify \
     cosign sign --yes ghcr.io/myorg/myapp@${DIGEST}
 ```
 
-The keyless model ties the signature to the GitHub Actions workflow identity — you can verify not just "who signed" but "which pipeline signed, from which repo, on which branch."
+The keyless model ties the signature to the GitHub Actions workflow identity. you can verify not just "who signed" but "which pipeline signed, from which repo, on which branch."
 
-## Pinning GitHub Actions to Commit SHAs
+Pinning GitHub Actions to Commit SHAs
 
 Referencing an action by tag (`actions/checkout@v4`) means the tag can be moved to point to different code. Pin to a SHA instead.
 
 ```bash
-# Find the SHA for a tag
+Find the SHA for a tag
 gh api repos/actions/checkout/git/refs/tags/v4 --jq '.object.sha'
-# Returns a tag SHA, then dereference to the commit:
+Returns a tag SHA, then dereference to the commit:
 gh api repos/actions/checkout/git/tags/abc123... --jq '.object.sha'
 
-# Or check the commit directly on GitHub
-# github.com/actions/checkout/commits/v4
+Or check the commit directly on GitHub
+github.com/actions/checkout/commits/v4
 ```
 
 ```yaml
-# Bad — tag can be updated
+Bad. tag can be updated
 uses: actions/checkout@v4
 
-# Good — pinned to commit SHA
+Good. pinned to commit SHA
 uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
 ```
 
@@ -120,7 +120,7 @@ Use [pin-github-actions](https://github.com/mheap/pin-github-actions) to automat
 npx pin-github-actions .github/workflows/*.yml
 ```
 
-## SLSA Framework
+SLSA Framework
 
 SLSA (Supply-chain Levels for Software Artifacts) defines four levels of build integrity guarantees.
 
@@ -132,8 +132,8 @@ SLSA (Supply-chain Levels for Software Artifacts) defines four levels of build i
 | SLSA 4 | Hermetic, reproducible builds |
 
 ```bash
-# Generate SLSA provenance for a release with slsa-github-generator
-# In your GitHub Actions workflow:
+Generate SLSA provenance for a release with slsa-github-generator
+In your GitHub Actions workflow:
 ```
 
 ```yaml
@@ -170,63 +170,63 @@ jobs:
 ```
 
 ```bash
-# Verify SLSA provenance
+Verify SLSA provenance
 slsa-verifier verify-artifact myapp \
   --provenance-path myapp.intoto.jsonl \
   --source-uri github.com/myorg/myapp \
   --source-tag v2.1.0
 ```
 
-## Software Bill of Materials (SBOM)
+Software Bill of Materials (SBOM)
 
-An SBOM lists every component in your software — useful for quickly checking whether a newly disclosed vulnerability affects you.
+An SBOM lists every component in your software. useful for quickly checking whether a newly disclosed vulnerability affects you.
 
 ```bash
-# Generate SBOM for a Go binary
+Generate SBOM for a Go binary
 syft myapp -o spdx-json > myapp.spdx.json
 
-# Generate SBOM for a container image
+Generate SBOM for a container image
 syft ghcr.io/myorg/myapp:v2.1.0 -o cyclonedx-json > myapp.cdx.json
 
-# Scan SBOM for known vulnerabilities
+Scan SBOM for known vulnerabilities
 grype sbom:./myapp.cdx.json
 
-# Example output:
-# NAME            INSTALLED  FIXED-IN   TYPE  VULNERABILITY   SEVERITY
-# openssl         3.1.2      3.1.3      deb   CVE-2023-XXXX   High
+Example output:
+NAME            INSTALLED  FIXED-IN   TYPE  VULNERABILITY   SEVERITY
+openssl         3.1.2      3.1.3      deb   CVE-2023-XXXX   High
 ```
 
 ```bash
-# Attach SBOM to a container image (stored alongside in OCI registry)
+Attach SBOM to a container image (stored alongside in OCI registry)
 cosign attach sbom --sbom myapp.cdx.json ghcr.io/myorg/myapp:v2.1.0
 
-# Retrieve and verify the attached SBOM
+Retrieve and verify the attached SBOM
 cosign download sbom ghcr.io/myorg/myapp:v2.1.0
 ```
 
-## Verifying npm Packages
+Verifying npm Packages
 
 ```bash
-# Check package integrity against npm registry
+Check package integrity against npm registry
 npm audit signatures
 
-# Verify a specific package's signature
+Verify a specific package's signature
 npm pack mypackage@1.2.3 --dry-run
-# Then inspect: npm view mypackage dist.integrity
+Then inspect: npm view mypackage dist.integrity
 
-# Check that your installed packages match the registry
+Check that your installed packages match the registry
 npm ci --audit=all  # in CI
 
-# Use socket.dev for behavior analysis
+Use socket.dev for behavior analysis
 npx @socketsecurity/cli npm info suspicious-package
 ```
 
-## Dependency Verification Script
+Dependency Verification Script
 
 ```bash
 #!/bin/bash
-# verify-release.sh <url> <expected-sha256>
-# Example: ./verify-release.sh https://releases.example.com/myapp.tar.gz abc123...
+verify-release.sh <url> <expected-sha256>
+./verify-release.sh https://releases.example.com/myapp.tar.gz abc123...
 
 URL="$1"
 EXPECTED_SHA="$2"
@@ -249,7 +249,7 @@ fi
 rm -f "$TMPFILE"
 ```
 
-## Related Articles
+Related Articles
 
 - [How to Verify PGP Signatures on Software Downloads](/verify-pgp-signatures-software-downloads/)
 - [How to Use GPG Signed Emails to Verify Sender Identity](/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
@@ -257,6 +257,6 @@ rm -f "$TMPFILE"
 - [Verify Your Devices Are Not Compromised: A Complete](/how-to-verify-your-devices-are-not-compromised-complete-audit/)
 - [How to Use Tripwire for File Integrity Monitoring](/tripwire-file-integrity-monitoring-guide/)
 - [AI Coding Tools for Writing Chainguard Image Supply Chain](https://bestremotetools.com/ai-coding-tools-for-writing-chainguard-image-supply-chain-se/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

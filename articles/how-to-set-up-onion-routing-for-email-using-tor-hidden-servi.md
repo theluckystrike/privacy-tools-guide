@@ -18,7 +18,7 @@ voice-checked: true
 
 Route email through Tor hidden services by configuring Postfix as a Tor hidden service with an onion address, then configure your email client to connect via SOCKS proxy to the Tor network. This masks your mail server's IP address and your outbound email metadata. For maximum privacy, combine this with end-to-end encryption (PGP or Proton Mail) so neither the mail server operator nor your ISP can observe who you're communicating with.
 
-## Prerequisites and Initial Setup
+Prerequisites and Initial Setup
 
 Before beginning, ensure you have a working Tor installation. On Linux, install it via your package manager:
 
@@ -40,7 +40,7 @@ tor --version
 
 You'll also need a mail transfer agent. Postfix is a solid choice for this setup due to its flexibility and Tor integration capabilities.
 
-### Step 2: Configure Tor as a Hidden Service
+Step 2: Configure Tor as a Hidden Service
 
 Edit your Tor configuration file to enable hidden service functionality for SMTP:
 
@@ -78,9 +78,9 @@ Retrieve your new onion address:
 sudo cat /var/lib/tor/mail_hidden_service/hostname
 ```
 
-This command outputs something like `abcdef1234567890.onion`—share this address with correspondents who want to reach you via your hidden service.
+This command outputs something like `abcdef1234567890.onion`, share this address with correspondents who want to reach you via your hidden service.
 
-### Step 3: Set Up Postfix for Tor Integration
+Step 3: Set Up Postfix for Tor Integration
 
 Configure Postfix to listen on localhost and work with Tor. Edit your Postfix configuration:
 
@@ -131,7 +131,7 @@ Restart Postfix:
 sudo systemctl restart postfix
 ```
 
-### Step 4: Client Configuration for Onion Email
+Step 4: Client Configuration for Onion Email
 
 Configure your email client to route mail through the Tor network. Most clients support SOCKS proxy configuration.
 
@@ -155,7 +155,7 @@ curl --socks5-hostname 127.0.0.1:9050 \
   smtp://mail.onion-service.com:25/
 ```
 
-### Step 5: Verify Your Setup
+Step 5: Verify Your Setup
 
 Test that your hidden service is reachable:
 
@@ -173,7 +173,7 @@ curl --socks5-hostname 127.0.0.1:9050 ifconfig.me
 
 This should return an IP address different from your regular internet connection, confirming Tor routing.
 
-## Security Considerations
+Security Considerations
 
 Onion routing for email significantly reduces metadata exposure but doesn't make you invincible. Consider these additional measures:
 
@@ -185,7 +185,7 @@ Tor exit nodes can be blocked by some mail providers. You may need to maintain a
 
 Clock skew can deanonymize Tor connections. Ensure your system clock is accurate using NTP synchronization.
 
-## Troubleshooting Common Issues
+Troubleshooting Common Issues
 
 Connection timeouts often indicate Tor isn't running or the hidden service hasn't fully initialized. Check Tor's status:
 
@@ -201,41 +201,41 @@ Delivery failures to specific domains usually mean the recipient's mail server b
 sudo tail -f /var/log/mail.log
 ```
 
-## Performance Implications
+Performance Implications
 
 Expect increased latency when routing email through Tor. A typical SMTP handshake adds 2-5 seconds, though actual delivery time varies based on Tor network congestion. For high-volume email, consider batch sending during off-peak hours.
 
 Bandwidth usage approximately doubles since your traffic traverses multiple Tor nodes. Monitor your connection if you have data caps.
 
-## Getting Started
+Getting Started
 
 Start small by setting up a hidden service for receiving email. Configure Tor and Postfix as described, share your onion address with trusted contacts, and verify delivery. Once comfortable with the setup, add outbound routing for complete email privacy.
 
 The initial configuration requires attention to detail, but the resulting protection against traffic analysis justifies the effort. Your email metadata becomes significantly harder to collect and correlate.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to set up onion routing for email using tor hidden?**
+How long does it take to set up onion routing for email using tor hidden?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Session Messenger Decentralized Onion Routing How It Protect](/session-messenger-decentralized-onion-routing-how-it-protect/)
 - [Best Browser To Use With Tor Hidden Services](/best-browser-to-use-with-tor-hidden-services/)
@@ -244,5 +244,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Tor Hidden Services: How to Access Safely](/tor-hidden-services-how-to-access-safely/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

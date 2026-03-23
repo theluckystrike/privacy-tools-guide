@@ -13,27 +13,27 @@ voice-checked: true
 tags: [privacy-tools-guide, security]
 ---
 
-## Interpreting the Lynis Report for Remediation Priority
+Interpreting the Lynis Report for Remediation Priority
 
-The Lynis report file is tab-separated and machine-parseable. A score of 80+ is achievable on most servers within a few hours of remediation — but not all suggestions have equal impact on your actual security posture.
+The Lynis report file is tab-separated and machine-parseable. A score of 80+ is achievable on most servers within a few hours of remediation. but not all suggestions have equal impact on your actual security posture.
 
 Prioritize in this order:
 
 | Priority | Test Type | Examples | Impact |
 |----------|-----------|---------|--------|
-| 1 | Warnings (red) | Open world-readable sensitive files, root SSH enabled | High — active risk |
-| 2 | Authentication tests | Weak password policy, no account lockout | High — attack vector |
-| 3 | SSH hardening | Weak ciphers, forwarding enabled | Medium — reduces attack surface |
-| 4 | Kernel hardening | Missing sysctl settings | Medium — defense in depth |
-| 5 | Suggestions (yellow) | Missing auditing, unused services | Low — incremental improvement |
+| 1 | Warnings (red) | Open world-readable sensitive files, root SSH enabled | High. active risk |
+| 2 | Authentication tests | Weak password policy, no account lockout | High. attack vector |
+| 3 | SSH hardening | Weak ciphers, forwarding enabled | Medium. reduces attack surface |
+| 4 | Kernel hardening | Missing sysctl settings | Medium. defense in depth |
+| 5 | Suggestions (yellow) | Missing auditing, unused services | Low. incremental improvement |
 
 Track your improvement over time by saving the score after each remediation pass:
 
 ```bash
-# Quick score check without running a full audit
+Quick score check without running a full audit
 grep "^hardening_index=" /var/log/lynis-report.dat
 
-# Score trend from multiple reports
+Score trend from multiple reports
 for report in /var/log/lynis/report-*.dat; do
     date=$(basename "$report" | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}')
     score=$(grep "^hardening_index=" "$report" | cut -d= -f2)
@@ -45,7 +45,7 @@ A realistic improvement path for a default Ubuntu server: 60 → 72 (SSH hardeni
 
 ---
 
-## Related Articles
+Related Articles
 
 - [How to Audit npm Packages for Security](/audit-npm-packages-security-guide/)
 - [VPN Provider Annual Audit Results: Independent Security](/vpn-provider-annual-audit-results-independent-security-verified/)
@@ -53,6 +53,6 @@ A realistic improvement path for a default Ubuntu server: 60 → 72 (SSH hardeni
 - [Arch Linux Hardened Kernel Installation Guide For Advanced](/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
 - [How to Audit Your Password Manager Vault: A Practical Guide](/how-to-audit-your-password-manager-vault/)
 - [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

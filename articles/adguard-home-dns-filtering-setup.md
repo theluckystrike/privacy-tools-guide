@@ -13,13 +13,13 @@ voice-checked: true
 tags: [privacy-tools-guide]
 ---
 
-## Related Articles
+Related Articles
 
 - [Home Network Privacy Pihole Dns Filtering Guide 2026](/home-network-privacy-pihole-dns-filtering-guide-2026/)
 - [Privacy-Focused DNS Providers Comparison 2026: Privacy](/privacy-focused-dns-providers-comparison-2026/)
 - [Privacy-Focused DNS Providers Comparison 2026](/privacy-focused-dns-providers-comparison-2026/)
 - [Best Privacy-Focused DNS Resolvers Compared](/best-privacy-dns-resolvers-cloudflare-quad9-nextdns-adguard/)
 - [Privacy-Focused DNS over QUIC Setup](/dns-over-quic-setup-guide/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

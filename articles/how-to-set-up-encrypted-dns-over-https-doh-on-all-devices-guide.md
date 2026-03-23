@@ -18,9 +18,9 @@ intent-checked: true
 
 DNS (Domain Name System) queries reveal every website you visit. Without encryption, your ISP, network administrators, and anyone monitoring traffic sees a complete log: "User visited reddit.com at 3:47pm, github.com at 4:02pm, banking.example.com at 4:15pm." DNS-over-HTTPS (DoH) encrypts these queries, protecting your browsing privacy from ISPs and network snoopers.
 
-This guide covers step-by-step setup for all devices—macOS, Windows, Linux, iOS, Android, and routers. DoH is the most impactful privacy improvement you can make with minimal effort. Implementing it across your devices costs nothing and takes 1-2 hours.
+This guide covers step-by-step setup for all devices, macOS, Windows, Linux, iOS, Android, and routers. DoH is the most impactful privacy improvement you can make with minimal effort. Implementing it across your devices costs nothing and takes 1-2 hours.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -30,9 +30,9 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Understand DNS Encryption
+Step 1: Understand DNS Encryption
 
-Standard DNS queries travel unencrypted over UDP port 53. Any device on your network—including your router, ISP infrastructure, or network sniffer—can see every query. Schools, workplaces, and ISPs routinely log DNS queries for monitoring or control purposes.
+Standard DNS queries travel unencrypted over UDP port 53. Any device on your network, including your router, ISP infrastructure, or network sniffer, can see every query. Schools, workplaces, and ISPs routinely log DNS queries for monitoring or control purposes.
 
 DNS-over-HTTPS (DoH) wraps DNS queries inside HTTPS encryption. Your DNS query to resolve example.com is now encrypted the same way as web traffic to example.com. ISPs see only that you connected to the DNS provider; they don't see which domains you queried.
 
@@ -40,13 +40,13 @@ The privacy gain is substantial. ISPs can no longer build profiles of your brows
 
 Performance impact is negligible. HTTPS adds ~10-50ms to initial queries (amortized across all browsing because results are cached). You won't notice the difference.
 
-## DNS Provider Comparison
+DNS Provider Comparison
 
-### Cloudflare 1.1.1.1 (Fast and Free)
+Cloudflare 1.1.1.1 (Fast and Free)
 
 Cloudflare is the largest DoH provider, operated by a company with strong privacy policies.
 
-**Features:**
+Features:
 - Free to all users (no account required)
 - Very fast: 99.99% uptime, global anycast network
 - Privacy: Cloudflare doesn't log IP addresses (independent audit)
@@ -54,26 +54,26 @@ Cloudflare is the largest DoH provider, operated by a company with strong privac
 - Adult filter available (optional)
 - No account needed; just point to their servers
 
-**Privacy policy:**
+Privacy policy:
 - Cloudflare publishes detailed transparency reports
 - Committed to not logging your queries
 - Third-party audits verify claims
 - US jurisdiction (less protective than some alternatives)
 
-**DNS addresses:**
+DNS addresses:
 - IPv4: 1.1.1.1, 1.0.0.1
 - IPv6: 2606:4700:4700::1111, 2606:4700:4700::1001
 - DoH endpoint: https://cloudflare-dns.com/dns-query
 
-**Cost:** Free.
+Cost: Free.
 
-**Best for:** Individuals wanting free, fast DoH without account management.
+Best for: Individuals wanting free, fast DoH without account management.
 
-### NextDNS (Configurable, Detailed Control)
+NextDNS (Configurable, Detailed Control)
 
 NextDNS provides customizable DNS filtering with detailed analytics about your queries.
 
-**Features:**
+Features:
 - Free tier: 300k DNS queries per month (sufficient for single user)
 - Paid tier: Unlimited queries ($5.99/month)
 - Detailed analytics: See all queries resolved, breakdown by category
@@ -83,24 +83,24 @@ NextDNS provides customizable DNS filtering with detailed analytics about your q
 - Apps available for all platforms (easier setup)
 - DoH and DoT (DNS-over-TLS) support
 
-**Privacy policy:**
+Privacy policy:
 - NextDNS can see all queries (by design)
 - They don't share data with advertisers
 - Queries retained for 90 days minimum
 - Less privacy-focused than Cloudflare (more data retention)
 - US jurisdiction
 
-**Cost:** Free tier (300k/month), $5.99/month unlimited.
+Cost: Free tier (300k/month), $5.99/month unlimited.
 
-**Setup complexity:** Requires account creation and profile configuration. Slightly more complex than Cloudflare but provides more control.
+Setup complexity: Requires account creation and profile configuration. Slightly more complex than Cloudflare but provides more control.
 
-**Best for:** Users wanting detailed filtering and analytics. Worth the cost for families or organizations.
+Best for: Users wanting detailed filtering and analytics. Worth the cost for families or organizations.
 
-### Quad9 (Privacy and Security Focused)
+Quad9 (Privacy and Security Focused)
 
 Quad9 prioritizes privacy and security, audited by independent researchers.
 
-**Features:**
+Features:
 - Free to all users
 - Privacy policy emphasizes minimal data collection
 - Malware/botnet protection (automatically blocks malicious domains)
@@ -110,25 +110,25 @@ Quad9 prioritizes privacy and security, audited by independent researchers.
 - No filtering (unlike NextDNS)
 - Headquartered in Switzerland (strong privacy laws)
 
-**Privacy policy:**
+Privacy policy:
 - Anonymizes logs (doesn't retain IP addresses)
 - Independent privacy audits published
 - Non-profit governance model (no profit motive to monetize data)
 - Swiss jurisdiction (excellent privacy protections)
 - Most privacy-protective option among major providers
 
-**DNS addresses:**
+DNS addresses:
 - IPv4: 9.9.9.9, 149.112.112.112
 - IPv6: 2620:fe::fe
 - DoH endpoint: https://dns.quad9.net/dns-query
 
-**Cost:** Free.
+Cost: Free.
 
-**Best for:** Privacy advocates prioritizing non-profit governance and Swiss jurisdiction over additional features.
+Best for: Privacy advocates prioritizing non-profit governance and Swiss jurisdiction over additional features.
 
-### Step 2: macOS Setup
+Step 2: macOS Setup
 
-### Method 1: System Settings (iOS 14+ and macOS Monterey+, Easiest)
+Method 1: System Settings (iOS 14+ and macOS Monterey+, Easiest)
 
 1. Open System Settings (or System Preferences)
 2. Navigate to Network (left sidebar)
@@ -140,9 +140,9 @@ Quad9 prioritizes privacy and security, audited by independent researchers.
 
 This native method automatically encrypts DNS queries on the device.
 
-**Limitations:** This sets DNS for connected network only. You need to repeat for each network you join.
+Limitations: This sets DNS for connected network only. You need to repeat for each network you join.
 
-### Method 2: Encrypted DNS Profile (System-Wide, Advanced)
+Method 2: Encrypted DNS Profile (System-Wide, Advanced)
 
 For encryption on all networks including cellular hotspots:
 
@@ -153,23 +153,23 @@ For encryption on all networks including cellular hotspots:
 
 Alternatively, use Quad9 native macOS app or NextDNS app for similar functionality.
 
-### Method 3: Manual Security Configuration (Technical)
+Method 3: Manual Security Configuration (Technical)
 
 1. Open Terminal
 2. Create DNS configuration:
 ```bash
-# Enable encrypted DNS for all interfaces
+Enable encrypted DNS for all interfaces
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.dnssd.plist \
   DNSSDDenyInterfaces -array-add "en0"
 
-# Configure DoH endpoint (requires custom profile, advanced)
+Configure DoH endpoint (requires custom profile, advanced)
 ```
 
 This method requires creating a configuration profile (XML file) and installing it system-wide. Use GUI methods unless you're comfortable with macOS configuration.
 
-### Step 3: Windows Setup
+Step 3: Windows Setup
 
-### Method 1: Network Settings (Windows 11, Easiest)
+Method 1: Network Settings (Windows 11, Easiest)
 
 1. Open Settings (Win+I)
 2. Navigate to Network & Internet → WiFi
@@ -182,7 +182,7 @@ This method requires creating a configuration profile (XML file) and installing 
 
 This enables DoH for current network. Repeat for other networks.
 
-### Method 2: NextDNS or Quad9 App (All Windows Versions)
+Method 2: NextDNS or Quad9 App (All Windows Versions)
 
 1. Download NextDNS app or Quad9 app from official website
 2. Install and run
@@ -192,23 +192,23 @@ This enables DoH for current network. Repeat for other networks.
 
 Apps work on all Windows versions and provide system-wide encryption.
 
-### Method 3: PowerShell Configuration (Windows 10/11, Advanced)
+Method 3: PowerShell Configuration (Windows 10/11, Advanced)
 
 1. Open PowerShell as Administrator
 2. Enter:
 ```powershell
-# Enable DoH for Cloudflare DNS
+Enable DoH for Cloudflare DNS
 Set-DnsClientDohServerAddress -ServerAddress https://cloudflare-dns.com/dns-query -AllowFallbackToUDP $true
 
-# Verify configuration
+Verify configuration
 Get-DnsClientDohServerAddress
 ```
 
 Repeat for multiple providers or additional DNS servers.
 
-### Step 4: Linux Setup
+Step 4: Linux Setup
 
-### Method 1: systemd-resolved Configuration (Modern Linux)
+Method 1: systemd-resolved Configuration (Modern Linux)
 
 Most modern Linux distributions use systemd-resolved for DNS resolution.
 
@@ -238,22 +238,22 @@ systemctl status systemd-resolved
 resolvectl status
 ```
 
-### Method 2: stubby (Dedicated DoH Resolver, Recommended)
+Method 2: stubby (Dedicated DoH Resolver, Recommended)
 
 Stubby is a dedicated DNS resolver supporting DoH:
 
 1. Install stubby:
 ```bash
-# Ubuntu/Debian
+Ubuntu/Debian
 sudo apt install stubby
 
-# Fedora/RHEL
+Fedora/RHEL
 sudo dnf install stubby
 ```
 
 2. Edit `/etc/stubby/stubby.yml`:
 ```yaml
-# Cloudflare configuration
+Cloudflare configuration
 upstream_recursive_servers:
   - address_data: 1.1.1.1
     tls_auth_name: cloudflare-dns.com
@@ -267,7 +267,7 @@ upstream_recursive_servers:
       - digest: "sha256"
         value: "rBtSQ3e90U+mzJYUJkMKn75edfMUFpwHFFUagKHoVeE="
 
-# Listen on localhost
+Listen on localhost
 listen_addresses:
   - 127.0.0.1@53
   - 0::1@53
@@ -282,7 +282,7 @@ sudo systemctl start stubby
 4. Configure systemd-resolved to use stubby:
 ```bash
 sudo nano /etc/systemd/resolved.conf
-# Add:
+Add:
 DNS=127.0.0.1
 FallbackDNS=
 DNSSEC=yes
@@ -293,25 +293,25 @@ DNSSEC=yes
 sudo systemctl restart systemd-resolved
 ```
 
-### Method 3: NextDNS App (Simple, All Linux)
+Method 3: NextDNS App (Simple, All Linux)
 
 1. Install NextDNS app from GitHub releases
 2. Run and authenticate with account
 3. App handles all configuration automatically
 
-### Step 5: iOS Setup
+Step 5: iOS Setup
 
-### Method 1: Settings (iOS 14+, System-Wide)
+Method 1: Settings (iOS 14+, System-Wide)
 
 1. Open Settings → VPN & Device Management
-2. Tap "DNS Settings" (if visible—available on iOS 15+)
+2. Tap "DNS Settings" (if visible, available on iOS 15+)
 3. Add DNS configuration
 4. Select "Encrypted (DoH)"
 5. Enter provider details
 
 Not all versions support this directly; iOS 15+ is most reliable.
 
-### Method 2: VPN Configuration Profile (All iOS Versions)
+Method 2: VPN Configuration Profile (All iOS Versions)
 
 1. Download configuration profile from provider website (Cloudflare, NextDNS)
 2. Open the profile in Safari
@@ -322,27 +322,27 @@ Not all versions support this directly; iOS 15+ is most reliable.
 
 This installs provider-specific encryption settings.
 
-### Method 3: Official Provider App
+Method 3: Official Provider App
 
-**Cloudflare WARP:**
+Cloudflare WARP:
 1. Download from App Store
 2. Enable in app settings
 3. Runs automatically on all networks
 
-**NextDNS app:**
+NextDNS app:
 1. Download from App Store
 2. Create or log into account
 3. Select profile and enable
 4. App encrypts all DNS
 
-**Quad9:**
+Quad9:
 1. Download Quad9 app from App Store
 2. Enable in settings
 3. Automatic encryption on all networks
 
-### Step 6: Android Setup
+Step 6: Android Setup
 
-### Method 1: System Settings (Android 9+)
+Method 1: System Settings (Android 9+)
 
 1. Open Settings → Network & Internet → Private DNS
 2. Select "Private DNS provider hostname"
@@ -351,24 +351,24 @@ This installs provider-specific encryption settings.
 
 This applies to all networks automatically.
 
-### Method 2: VPN Configuration
+Method 2: VPN Configuration
 
-Some providers offer VPN apps that encrypt DNS as part of VPN connection. Use caution—VPN routes all traffic through provider servers, not just DNS.
+Some providers offer VPN apps that encrypt DNS as part of VPN connection. Use caution, VPN routes all traffic through provider servers, not just DNS.
 
 For DNS-only encryption, use Method 1 or official app.
 
-### Method 3: NextDNS App
+Method 3: NextDNS App
 
 1. Download from Play Store
 2. Create account or use existing
 3. Enable "Connect" in app
 4. App encrypts all DNS queries
 
-### Step 7: Router Configuration (Network-Wide DoH)
+Step 7: Router Configuration (Network-Wide DoH)
 
 Setting DoH on your router encrypts DNS for all connected devices automatically.
 
-### Supported Routers
+Supported Routers
 
 - Asus (many models support DoH)
 - Ubiquiti EdgeRouter
@@ -376,7 +376,7 @@ Setting DoH on your router encrypts DNS for all connected devices automatically.
 - Firewalla
 - Synology NAS (can serve as router)
 
-### Example: Asus Router
+Asus Router
 
 1. Connect to router admin panel (192.168.1.1 or similar)
 2. Navigate to WAN settings
@@ -389,7 +389,7 @@ Setting DoH on your router encrypts DNS for all connected devices automatically.
 
 All connected devices now use encrypted DNS automatically.
 
-### Example: OpenWrt (Advanced)
+OpenWrt (Advanced)
 
 For custom firmware like OpenWrt:
 
@@ -416,26 +416,26 @@ config dnscrypt_proxy
 /etc/init.d/dnscrypt-proxy restart
 ```
 
-### Step 8: Verification: Confirm DoH is Working
+Step 8: Verification: Confirm DoH is Working
 
-### Test 1: DNS Query Encryption Check
+Test 1: DNS Query Encryption Check
 
 Use an online DoH verification tool:
 1. Visit: https://doh.test/
 2. Tool shows whether queries are encrypted
 3. Confirms DoH provider in use
 
-### Test 2: Command Line (Linux/macOS)
+Test 2: Command Line (Linux/macOS)
 
 ```bash
-# Test DNS resolution
+Test DNS resolution
 nslookup example.com
 
-# Test with specific DoH server (requires dig with DoH support)
+Test with specific DoH server (requires dig with DoH support)
 dig @1.1.1.1 example.com
 ```
 
-### Test 3: Network Inspection (Technical)
+Test 3: Network Inspection (Technical)
 
 Use Wireshark packet capture to verify traffic:
 1. Capture traffic on your device
@@ -445,71 +445,71 @@ Use Wireshark packet capture to verify traffic:
 
 If DNS queries appear in plaintext, DoH isn't enabled or fallback occurred.
 
-## Troubleshooting Common Issues
+Troubleshooting Common Issues
 
-**DNS not resolving:** Some networks block custom DNS. Try:
+DNS not resolving: Some networks block custom DNS. Try:
 - Switching to different DoH provider
 - Using network admin credentials if available
 - Testing on different network to isolate issue
 
-**Slow internet:** DoH adds minimal latency. If noticeable:
+Slow internet: DoH adds minimal latency. If noticeable:
 - Confirm DoH endpoint is responsive (ping the IP)
 - Switch to geographically closer provider
 - Disable malware filtering if enabled (reduces latency)
 
-**App doesn't recognize DoH setting:** Some apps use hardcoded DNS servers:
+App doesn't recognize DoH setting: Some apps use hardcoded DNS servers:
 - Check app privacy settings for DNS options
 - Some browsers (Firefox) have DoH settings independent of system
 - VPN apps often override system DoH
 
-**Mobile hotspot DNS leaks:** Phone-provided hotspot may override DoH:
+Mobile hotspot DNS leaks: Phone-provided hotspot may override DoH:
 - Enable DoH on both phone and connected device
 - Use dedicated mobile router with DoH support instead
 
-### Step 9: Privacy Considerations
+Step 9: Privacy Considerations
 
-**DoH doesn't encrypt destination IP:** ISPs still see which servers you connect to (by IP address). DoH protects domain names only, not destination addresses. For complete privacy, combine DoH with VPN.
+DoH doesn't encrypt destination IP: ISPs still see which servers you connect to (by IP address). DoH protects domain names only, not destination addresses. For complete privacy, combine DoH with VPN.
 
-**VPN adds DoH redundancy:** A VPN encrypts all traffic including DNS, so separate DoH isn't needed. However, DoH provides defense-in-depth: even if VPN fails, DNS remains encrypted.
+VPN adds DoH redundancy: A VPN encrypts all traffic including DNS, so separate DoH isn't needed. However, DoH provides defense-in-depth: even if VPN fails, DNS remains encrypted.
 
-**Provider trust:** You're trusting the DoH provider with your DNS queries. Choose providers with strong privacy policies:
+Provider trust: You're trusting the DoH provider with your DNS queries. Choose providers with strong privacy policies:
 - Cloudflare and Quad9: Strong independent audits
 - NextDNS: Good privacy, but retains logs
 - Avoid suspicious providers claiming privacy without audits
 
-### Step 10: Implementation Timeline
+Step 10: Implementation Timeline
 
-**Day 1:** Set up DoH on primary device (phone or laptop) using official app or system settings.
+Day 1: Set up DoH on primary device (phone or laptop) using official app or system settings.
 
-**Day 2-3:** Configure DoH on remaining personal devices (secondary phone, tablet, desktop).
+Day 2-3: Configure DoH on remaining personal devices (secondary phone, tablet, desktop).
 
-**Day 4-5:** If you have network access, configure router for network-wide DoH.
+Day 4-5: If you have network access, configure router for network-wide DoH.
 
-**Ongoing:** Verify DoH is working monthly using verification tools. Update settings if provider changes recommendations.
+Ongoing: Verify DoH is working monthly using verification tools. Update settings if provider changes recommendations.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to set up encrypted dns-over-https (doh) on all devices?**
+How long does it take to set up encrypted dns-over-https (doh) on all devices?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [How to Set Up Encrypted DNS on All Devices 2026](/how-to-set-up-encrypted-dns-on-all-devices-2026/)
 - [How to Configure DNS Over HTTPS (DoH) for Privacy in 2026](/how-to-configure-dns-over-https-for-privacy-2026/---)
@@ -517,7 +517,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [DNS over TLS Setup on Linux](/dns-over-tls-setup-linux-android/)
 - [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```
 ```
 {% endraw %}

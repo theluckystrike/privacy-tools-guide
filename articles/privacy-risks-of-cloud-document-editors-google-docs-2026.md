@@ -13,9 +13,9 @@ voice-checked: true
 ---
 
 
-## What Notion Collects
+What Notion Collects
 
-## Table of Contents
+Table of Contents
 
 - [What Notion Collects](#what-notion-collects)
 - [What Microsoft Office365 Collects](#what-microsoft-office365-collects)
@@ -30,15 +30,15 @@ voice-checked: true
 
 Notion's privacy is worse than Google Docs in some ways.
 
-### Content Collection
+Content Collection
 
-- **Everything**: All page content, block structure, metadata
-- **Workspace structure**: How pages are organized, relationships between docs
-- **Images**: Even if encrypted in transit, Notion stores unencrypted
-- **User sessions**: Tracks who accesses what, when, for how long
-- **Real-time collaboration**: Every keystroke during simultaneous editing
+- Everything: All page content, block structure, metadata
+- Workspace structure: How pages are organized, relationships between docs
+- Images: Even if encrypted in transit, Notion stores unencrypted
+- User sessions: Tracks who accesses what, when, for how long
+- Real-time collaboration: Every keystroke during simultaneous editing
 
-### Behavioral Tracking
+Behavioral Tracking
 
 Notion tracks:
 - Page view counts
@@ -46,14 +46,14 @@ Notion tracks:
 - Time spent on pages
 - Click patterns within workspace
 
-### Data Retention
+Data Retention
 
 Notion privacy policy:
 > "We may retain information about you that we collect even if you delete your account"
 
 Translation: Even deleted docs may be retained for "legal/business purposes."
 
-### Integration Hell
+Integration Hell
 
 Notion integrates with hundreds of apps. Each integration leaks:
 - Your workspace ID
@@ -61,7 +61,7 @@ Notion integrates with hundreds of apps. Each integration leaks:
 - User email addresses
 - Integration tokens (if stored in Notion's database)
 
-Example: Using Zapier to auto-populate Notion from form submissions:
+Using Zapier to auto-populate Notion from form submissions:
 1. Form data goes to Zapier
 2. Zapier sends to Notion
 3. Both Zapier and Notion store data
@@ -69,20 +69,20 @@ Example: Using Zapier to auto-populate Notion from form submissions:
 
 ---
 
-## What Microsoft Office365 Collects
+What Microsoft Office365 Collects
 
 Office365 is more transparent than Google/Notion but still aggressive.
 
-### Built-in Collection
+Built-in Collection
 
-- **Document content**: Everything
-- **Edit timestamps**: Every change logged
-- **Version history**: Unlimited restore points
-- **Commenting/tracking**: All collaboration tracked
-- **AI-powered features**: Documents analyzed for "smart" suggestions
+- Document content: Everything
+- Edit timestamps: Every change logged
+- Version history: Unlimited restore points
+- Commenting/tracking: All collaboration tracked
+- AI-powered features: Documents analyzed for "smart" suggestions
  - Requires Microsoft to process content through ML models
 
-### Microsoft's AI Training
+Microsoft's AI Training
 
 Office365 documents may be used for:
 - Language model training
@@ -91,7 +91,7 @@ Office365 documents may be used for:
 
 Microsoft's privacy policy allows this unless you opt out explicitly (buried in settings).
 
-### Enterprise Tracking
+Enterprise Tracking
 
 Office365 for Business includes:
 - Microsoft 365 Compliance Center (analyzes all docs)
@@ -106,7 +106,7 @@ Your administrator can:
 
 ---
 
-## Comparison: What Each Platform Stores
+Comparison: What Each Platform Stores
 
 | Data Type | Google | Notion | Office365 |
 |-----------|--------|--------|-----------|
@@ -122,9 +122,9 @@ Your administrator can:
 
 ---
 
-## Privacy Risks in Practice
+Privacy Risks in Practice
 
-### Scenario 1: Sensitive Business Information
+Scenario 1: Sensitive Business Information
 
 You're a startup founder writing pitch deck.
 
@@ -145,7 +145,7 @@ Google logs show:
 
 Privacy leak: Competitors, hostile investors, tax authorities could all benefit from this data.
 
-### Scenario 2: Healthcare Information
+Scenario 2: Healthcare Information
 
 You're a patient advocate documenting health issues for a doctor appointment.
 
@@ -169,7 +169,7 @@ If Notion is breached or subpoenaed:
 
 Risk: Data breach leaks private health info. Subpoena discloses patient records.
 
-### Scenario 3: Legal/Privileged Communications
+Scenario 3: Legal/Privileged Communications
 
 You're documenting a contract dispute with a vendor.
 
@@ -194,9 +194,9 @@ Risk: Attorney-client privilege may be waived. Opposing counsel sees your legal 
 
 ---
 
-## What Privacy Alternatives Exist?
+What Privacy Alternatives Exist?
 
-### CryptPad (Best Overall)
+CryptPad (Best Overall)
 
 CryptPad is open-source, end-to-end encrypted Google Docs alternative.
 
@@ -227,7 +227,7 @@ Pricing:
 - Free: 50MB storage
 - Pro: €4.17/month, unlimited storage
 
-### Standard Notes (Best for Sensitive Notes)
+Standard Notes (Best for Sensitive Notes)
 
 Not a collaborative editor, but for personal/sensitive docs:
 
@@ -243,7 +243,7 @@ Pricing:
 - Free: Basic notes
 - Plus: €2.99/month, advanced features
 
-### Etherpad (Self-Hosted)
+Etherpad (Self-Hosted)
 
 Open-source collaborative editor you can host.
 
@@ -256,12 +256,10 @@ How it works:
 5. You control all data
 ```
 
-Pros:
 - Complete privacy (self-hosted)
 - No logs shared with third parties
 - Transparent (open-source code)
 
-Cons:
 - Requires technical setup (server management)
 - No automatic backups
 - No mobile app
@@ -269,7 +267,7 @@ Cons:
 
 Cost: Free software, only cost is server ($5-50/month).
 
-### Matrix Synapse + Element (Encrypted Collaboration)
+Matrix Synapse + Element (Encrypted Collaboration)
 
 Matrix is a decentralized protocol (like email but encrypted).
 
@@ -282,13 +280,11 @@ Elements (client) + Synapse (server):
 5. Complete control, decentralized
 ```
 
-Pros:
 - Fully encrypted
 - Decentralized (can federate)
 - Open-source
 - Works for chat + documents
 
-Cons:
 - Steep learning curve
 - Requires server setup
 - Not as polished as Google Docs
@@ -296,7 +292,7 @@ Cons:
 
 ---
 
-## Privacy Comparison: All Options
+Privacy Comparison: All Options
 
 | Tool | Encryption | Server Sees Content | Self-Hosted | Cost | Features |
 |------|-----------|-------------------|-------------|------|----------|
@@ -310,9 +306,9 @@ Cons:
 
 ---
 
-## Practical Recommendations
+Practical Recommendations
 
-### For Most Teams: Acceptable Compromise
+For Most Teams: Acceptable Compromise
 
 Use Google Docs/Notion/Office365 with guardrails:
 
@@ -327,7 +323,7 @@ Use Google Docs/Notion/Office365 with guardrails:
 5. Periodically clear revision history (Office365 only)
 ```
 
-Example: Using Google Docs for PR strategy
+Using Google Docs for PR strategy
 
 ```
 Bad: "Our strategy is to beat Competitor X by targeting their customers"
@@ -336,7 +332,7 @@ Good: "We will focus on features that differentiate vs. Product Y"
 Rationale: If leaked, the second statement is less damaging
 ```
 
-### For Sensitive Work: Use CryptPad
+For Sensitive Work: Use CryptPad
 
 - Medical information
 - Legal documents
@@ -352,7 +348,7 @@ Setup:
 4. Encrypt/decrypt in browser
 5. No account needed (can remain anonymous)
 
-### For Truly Sensitive Work: Self-Host
+For Truly Sensitive Work: Self-Host
 
 - Government agencies
 - Law firms
@@ -362,16 +358,16 @@ Setup:
 Deploy Etherpad or Matrix on your own servers:
 
 ```bash
-# Etherpad setup (simplified)
+Etherpad setup (simplified)
 docker run -d -p 9001:9001 etherpad/etherpad
 
-# Access at http://localhost:9001
-# Documents stored on your servers only
+Access at http://localhost:9001
+Documents stored on your servers only
 ```
 
 Cost: $50-200/month for hosting + setup time.
 
-### For Personal/Private Notes: Use Standard Notes
+For Personal/Private Notes: Use Standard Notes
 
 - Medical journal
 - Financial records
@@ -382,17 +378,17 @@ All encrypted, no signup (optional), no ads.
 
 ---
 
-## Red Flags: When NOT to Use Cloud Docs
+Red Flags: When NOT to Use Cloud Docs
 
 Don't use Google Docs, Notion, or Office365 for:
 
-1. **Health information**: HIPAA violation if patient-identifiable
-2. **Financial records**: Tax info, passwords, investment strategy
-3. **Legal documents**: Attorney-client privilege waived
-4. **Trade secrets**: Competitive intelligence stolen
-5. **Personal identification**: SSN, passport, driver's license
-6. **Confidential contracts**: Before signatures
-7. **Government security**: Classified information
+1. Health information: HIPAA violation if patient-identifiable
+2. Financial records: Tax info, passwords, investment strategy
+3. Legal documents: Attorney-client privilege waived
+4. Trade secrets: Competitive intelligence stolen
+5. Personal identification: SSN, passport, driver's license
+6. Confidential contracts: Before signatures
+7. Government security: Classified information
 
 If you work with any of these, use:
 - CryptPad (encrypted, no signup)
@@ -401,9 +397,9 @@ If you work with any of these, use:
 
 ---
 
-## Checking Your Current Exposure
+Checking Your Current Exposure
 
-### Audit Your Google Drive
+Audit Your Google Drive
 
 ```
 1. Go to myactivity.google.com
@@ -418,7 +414,7 @@ on 2026-03-21 at 2:30 PM from Chrome on macOS"
 This is what Google logs about your usage.
 ```
 
-### Check Notion Integrations
+Check Notion Integrations
 
 ```
 1. Open Notion workspace
@@ -426,7 +422,7 @@ This is what Google logs about your usage.
 3. See all apps with access to your workspace
 4. Review permissions (what data can they access)
 
-Example: Zapier integration
+Zapier integration
 - Can read all pages
 - Can create new pages
 - Can see revision history
@@ -434,7 +430,7 @@ Example: Zapier integration
 This means Zapier sees everything.
 ```
 
-### Check Office365 Sharing
+Check Office365 Sharing
 
 ```
 1. Open Office.com
@@ -450,9 +446,9 @@ Danger: If admin has "manage permissions", they can:
 
 ---
 
-## Data Deletion: What Actually Happens
+Data Deletion: What Actually Happens
 
-### Google Docs
+Google Docs
 
 You delete a document:
 - Document removed from your Drive
@@ -463,7 +459,7 @@ You delete a document:
 
 Reality: Google likely keeps encrypted backup for months.
 
-### Notion
+Notion
 
 You delete a document:
 - Moved to Notion Trash
@@ -472,7 +468,7 @@ You delete a document:
 
 Reality: Notion keeps deleted data indefinitely (per their policy).
 
-### Office365
+Office365
 
 You delete a document:
 - Moved to Recycle Bin
@@ -482,7 +478,7 @@ You delete a document:
 
 Reality: Enterprise administrators can prevent any deletion.
 
-**Key point**: Deletion doesn't mean destruction. Assume data persists even after you delete.
+Key point: Deletion doesn't mean destruction. Assume data persists even after you delete.
 
 ---
 
@@ -494,29 +490,29 @@ Local encrypted files for: Final sensitive versions
 
 Don't assume cloud docs are private. Assume they're logged, analyzed, and retained.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does Go offer a free tier?**
+Does Go offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check Go's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**Can I trust these tools with sensitive data?**
+Can I trust these tools with sensitive data?
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Secure Document Collaboration Alternatives to Google](/secure-document-collaboration-alternatives-to-google-docs-wi/)
 - [How to Delete Your Google Activity History Completely](/how-to-delete-your-google-activity-history-completely/)
@@ -524,5 +520,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Google Nest Hub Data Collection](/google-nest-hub-data-collection-what-information-google-capt/)
 - [Use Android Without Google Play Services](/how-to-use-android-without-google-play-services-alternative-stores/)
 - [Gemini in Google Docs Not Showing Up? Fixes for 2026](https://bestremotetools.com/gemini-in-google-docs-not-showing-up-fix-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

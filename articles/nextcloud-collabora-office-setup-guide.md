@@ -18,7 +18,7 @@ voice-checked: true
 
 Deploy Collabora Online with your Nextcloud instance to enable real-time document editing, spreadsheets, and presentations directly in your private cloud. This guide covers the complete setup process using Docker, nginx reverse proxy configuration, and security hardening for production deployments.
 
-## Table of Contents
+Table of Contents
 
 - [Why Collabora Office with Nextcloud](#why-collabora-office-with-nextcloud)
 - [Prerequisites](#prerequisites)
@@ -33,13 +33,13 @@ Deploy Collabora Online with your Nextcloud instance to enable real-time documen
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 - [Performance Optimization](#performance-optimization)
 
-## Why Collabora Office with Nextcloud
+Why Collabora Office with Nextcloud
 
 Collabora Online provides a self-hosted alternative to Google Docs or Microsoft 365. When integrated with Nextcloud, you gain full control over your documents without sending data to third-party services. The integration supports real-time collaboration, version history, and the full LibreOffice feature set.
 
 For developers, this setup demonstrates reverse proxy configuration, Docker networking, and secure internal service communication. For organizations, it delivers enterprise document editing while maintaining data sovereignty.
 
-## Prerequisites
+Prerequisites
 
 Before starting, verify these requirements:
 
@@ -49,7 +49,7 @@ Before starting, verify these requirements:
 - nginx as your reverse proxy (other web servers work but this guide uses nginx)
 - SSL certificates (Let's Encrypt recommended)
 
-## Architecture Overview
+Architecture Overview
 
 Understanding the communication flow between components helps during troubleshooting. When a user opens a document in Nextcloud, the following happens:
 
@@ -57,11 +57,11 @@ Understanding the communication flow between components helps during troubleshoo
 2. The browser receives a redirect to the Collabora iframe with the WOPI token
 3. Collabora fetches the document from Nextcloud using the WOPI token and your internal network
 4. The user edits in the browser; changes are saved back via WOPI calls to Nextcloud
-5. All document content stays within your infrastructure — only the rendered interface reaches the browser
+5. All document content stays within your infrastructure. only the rendered interface reaches the browser
 
 This architecture means Collabora and Nextcloud must be able to reach each other over the network, either on the same Docker network or via your public hostnames. Placing them on a shared Docker network is more efficient and avoids hairpin NAT issues on some hosting environments.
 
-## Step 1: Deploy Collabora Online via Docker
+Step 1: Deploy Collabora Online via Docker
 
 Create a Docker Compose file for Collabora. The official Collabora image includes everything needed for the office suite.
 
@@ -120,7 +120,7 @@ Verify the container is running:
 docker ps | grep collabora
 ```
 
-## Step 2: Configure nginx Reverse Proxy
+Step 2: Configure nginx Reverse Proxy
 
 Set up nginx to forward HTTPS requests to the Collabora container. This separates the office backend from your main Nextcloud URL while maintaining SSL termination.
 
@@ -171,7 +171,7 @@ nginx -t
 systemctl reload nginx
 ```
 
-## Step 3: Install and Configure the Nextcloud App
+Step 3: Install and Configure the Nextcloud App
 
 Install the Collabora Online app through the Nextcloud web interface or via occ:
 
@@ -182,7 +182,7 @@ occ app:install richdocuments
 
 After installation, configure the server URL in Nextcloud settings:
 
-1. Navigate to **Settings** → **Administration** → **Office**
+1. Navigate to Settings → Administration → Office
 2. Enter your Collabora URL: `https://office.yourdomain.com`
 3. Enable "Use your own server"
 4. Save the configuration
@@ -194,11 +194,11 @@ occ config:app:set richdocuments wopi_url --value="https://office.yourdomain.com
 occ config:app:set richdocuments disable_certificate_verification --value="yes"
 ```
 
-## Step 4: Security Hardening
+Step 4: Security Hardening
 
 For production deployments, apply these security measures:
 
-### Restrict Access by IP
+Restrict Access by IP
 
 Edit the Collabora container environment in `docker-compose.yml`:
 
@@ -208,7 +208,7 @@ environment:
   - allowed_origin=cloud.yourdomain.com
 ```
 
-### Enable SSL in Production
+Enable SSL in Production
 
 Remove the `DONT_GEN_SSL_CERT` setting and ensure your reverse proxy handles SSL properly:
 
@@ -219,7 +219,7 @@ environment:
   - password=your-secure-password
 ```
 
-### Configure WOPI Isolation
+Configure WOPI Isolation
 
 Edit `/etc/loolwsd/loolwsd.xml` inside the container or mount a custom configuration:
 
@@ -243,19 +243,19 @@ Restart the container after changes:
 docker-compose down && docker-compose up -d
 ```
 
-### Firewall Rules
+Firewall Rules
 
 Collabora's port 9980 should never be exposed directly to the internet. nginx handles all external access. Enforce this with a firewall rule:
 
 ```bash
-# Block direct access to Collabora port from outside
+Block direct access to Collabora port from outside
 ufw deny in 9980
 ufw allow in on lo to any port 9980
 ```
 
 If you run nginx on the same host as Docker, use `127.0.0.1:9980` as the proxy target rather than `0.0.0.0:9980` in Docker's port binding. This prevents the Docker daemon from opening the port on the public interface, which can bypass UFW rules on some configurations.
 
-## Step 5: Verify the Integration
+Step 5: Verify the Integration
 
 Test your setup by:
 
@@ -276,7 +276,7 @@ Monitor nginx access logs for connection issues:
 tail -f /var/log/nginx/office.access.log
 ```
 
-## Multi-User and Team Configuration
+Multi-User and Team Configuration
 
 For teams using Nextcloud collaboratively, configure Collabora to support concurrent document editing. By default, multiple users opening the same document each get independent sessions. Enable collaborative editing in the Nextcloud richdocuments app settings:
 
@@ -293,13 +293,13 @@ occ config:app:set richdocuments token_ttl --value="86400"
 
 The `token_ttl` value controls how long WOPI tokens remain valid in seconds. The default is 12 hours; increase it for long editing sessions where users keep documents open all day without reloading.
 
-For guest access — allowing external collaborators to edit documents via shared links without Nextcloud accounts — ensure the `allow_local_remote_links` setting in `loolwsd.xml` is enabled and that your Collabora instance's `domain` regex pattern would match any hostnames used in the WOPI callback URLs.
+For guest access. allowing external collaborators to edit documents via shared links without Nextcloud accounts. ensure the `allow_local_remote_links` setting in `loolwsd.xml` is enabled and that your Collabora instance's `domain` regex pattern would match any hostnames used in the WOPI callback URLs.
 
-## Backup and Update Strategy
+Backup and Update Strategy
 
-### Backing Up Collabora Configuration
+Backing Up Collabora Configuration
 
-The primary backup concern for Collabora is the `loolwsd.xml` configuration file. The application itself is stateless — all documents live in Nextcloud. Back up your Docker Compose file and mounted configuration:
+The primary backup concern for Collabora is the `loolwsd.xml` configuration file. The application itself is stateless. all documents live in Nextcloud. Back up your Docker Compose file and mounted configuration:
 
 ```bash
 tar -czf collabora-config-$(date +%Y%m%d).tar.gz \
@@ -309,7 +309,7 @@ tar -czf collabora-config-$(date +%Y%m%d).tar.gz \
 
 Store this archive alongside your Nextcloud backup. When restoring after a server failure, you only need to restore Nextcloud's data directory and database; Collabora requires only its configuration file.
 
-### Updating Collabora
+Updating Collabora
 
 Update the image tag in `docker-compose.yml` to the latest Collabora release, then pull and restart:
 
@@ -319,19 +319,19 @@ docker-compose pull
 docker-compose up -d
 ```
 
-Check the Collabora release notes before updating — major version bumps occasionally require changes to the WOPI configuration or nginx proxy headers. Testing on a staging Nextcloud instance before updating production avoids document loading failures during business hours.
+Check the Collabora release notes before updating. major version bumps occasionally require changes to the WOPI configuration or nginx proxy headers. Testing on a staging Nextcloud instance before updating production avoids document loading failures during business hours.
 
-## Troubleshooting Common Issues
+Troubleshooting Common Issues
 
-### Document Fails to Load
+Document Fails to Load
 
 Check that the domain in your Collabora configuration matches your Nextcloud URL exactly. Dots must be escaped in the `domain` environment variable.
 
-### WebSocket Connection Errors
+WebSocket Connection Errors
 
 Verify nginx has WebSocket proxy headers configured correctly. The `Upgrade` and `Connection` headers are required for real-time collaboration.
 
-### Slow Document Loading
+Slow Document Loading
 
 Increase container memory limits:
 
@@ -342,7 +342,7 @@ deploy:
       memory: 4G
 ```
 
-### SSL Certificate Errors
+SSL Certificate Errors
 
 Ensure your reverse proxy SSL certificates are valid. For testing, you can disable certificate verification in Nextcloud:
 
@@ -350,7 +350,7 @@ Ensure your reverse proxy SSL certificates are valid. For testing, you can disab
 occ config:app:set richdocuments disable_certificate_verification --value="yes"
 ```
 
-## Performance Optimization
+Performance Optimization
 
 For deployments with multiple users, consider these optimizations:
 
@@ -369,29 +369,29 @@ location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2)$ {
 
 Collabora allocates a separate process per open document. On a shared server, set the `max_connections` parameter in `loolwsd.xml` to prevent the service from consuming all available memory when many users open documents simultaneously. A starting point for small teams is 20 concurrent documents; monitor container memory usage and adjust accordingly.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to guide?**
+How long does it take to guide?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Articles
+Related Articles
 
 - [Nextcloud Talk Video Calls Setup Guide](/nextcloud-talk-video-calls-setup-guide/)
 - [Nextcloud Setup Guide Raspberry Pi 2026](/nextcloud-setup-guide-raspberry-pi-2026/)
@@ -399,5 +399,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Nextcloud External Storage Setup Guide 2026](/nextcloud-external-storage-setup-guide-2026/)
 - [Nextcloud vs Synology Drive Comparison 2026](/nextcloud-vs-synology-drive-comparison-2026/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

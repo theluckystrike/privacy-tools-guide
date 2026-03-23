@@ -20,7 +20,7 @@ The Linux kernel exposes hundreds of tunable parameters via `/proc/sys/`. Many d
 
 This guide covers the most impactful settings with an explanation of what each one does.
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -30,13 +30,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: How sysctl Works
+Step 1: How sysctl Works
 
 Read a current value:
 
 ```bash
 sysctl kernel.randomize_va_space
-# kernel.randomize_va_space = 2
+kernel.randomize_va_space = 2
 ```
 
 Set a value at runtime (does not persist across reboots):
@@ -57,7 +57,7 @@ Apply all settings from the file:
 sudo sysctl --system
 ```
 
-### Step 2: The Complete Hardening File
+Step 2: The Complete Hardening File
 
 Create the configuration file:
 
@@ -69,57 +69,57 @@ Paste the following:
 
 ```ini
 ##############################################################
-# KERNEL HARDENING
+KERNEL HARDENING
 ##############################################################
 
-# Enable ASLR (Address Space Layout Randomization)
-# Randomizes memory addresses, making exploitation harder
-# 2 = full randomization
+Enable ASLR (Address Space Layout Randomization)
+Randomizes memory addresses, making exploitation harder
+2 = full randomization
 kernel.randomize_va_space = 2
 
-# Restrict kernel dmesg access to root
-# Hides kernel memory addresses from unprivileged users
+Restrict kernel dmesg access to root
+Hides kernel memory addresses from unprivileged users
 kernel.dmesg_restrict = 1
 
-# Restrict access to kernel pointers in /proc
-# Hides kernel memory addresses shown in /proc/kallsyms, /proc/modules
+Restrict access to kernel pointers in /proc
+Hides kernel memory addresses shown in /proc/kallsyms, /proc/modules
 kernel.kptr_restrict = 2
 
-# Disable kernel profiling (hides kernel internals from non-root)
+Disable kernel profiling (hides kernel internals from non-root)
 kernel.perf_event_paranoid = 3
 
-# Disable kernel magic SysRq key
-# Prevents direct kernel reboots/crashes via keyboard
+Disable kernel magic SysRq key
+Prevents direct kernel reboots/crashes via keyboard
 kernel.sysrq = 0
 
-# Restrict use of ptrace to direct parent processes (reduces ptrace abuse)
-# 1 = restricted, 2 = admin only, 3 = disabled
+Restrict use of ptrace to direct parent processes (reduces ptrace abuse)
+1 = restricted, 2 = admin only, 3 = disabled
 kernel.yama.ptrace_scope = 1
 
-# Disable BPF JIT for non-root users (reduces JIT spraying attacks)
+Disable BPF JIT for non-root users (reduces JIT spraying attacks)
 kernel.unprivileged_bpf_disabled = 1
 net.core.bpf_jit_harden = 2
 
 ##############################################################
-# NETWORK STACK HARDENING
+NETWORK STACK HARDENING
 ##############################################################
 
-# Disable IP forwarding (enable ONLY if this is a router)
+Disable IP forwarding (enable ONLY if this is a router)
 net.ipv4.ip_forward = 0
 net.ipv6.conf.all.forwarding = 0
 
-# Disable source routing (packets should not dictate their own path)
+Disable source routing (packets should not dictate their own path)
 net.ipv4.conf.all.accept_source_route = 0
 net.ipv4.conf.default.accept_source_route = 0
 net.ipv6.conf.all.accept_source_route = 0
 net.ipv6.conf.default.accept_source_route = 0
 
-# Enable reverse path filtering (prevents IP spoofing)
-# Drops packets with source addresses that are unreachable via the incoming interface
+Enable reverse path filtering (prevents IP spoofing)
+Drops packets with source addresses that are unreachable via the incoming interface
 net.ipv4.conf.all.rp_filter = 1
 net.ipv4.conf.default.rp_filter = 1
 
-# Disable ICMP redirects (attackers use these to redirect traffic)
+Disable ICMP redirects (attackers use these to redirect traffic)
 net.ipv4.conf.all.accept_redirects = 0
 net.ipv4.conf.default.accept_redirects = 0
 net.ipv6.conf.all.accept_redirects = 0
@@ -127,51 +127,51 @@ net.ipv6.conf.default.accept_redirects = 0
 net.ipv4.conf.all.send_redirects = 0
 net.ipv4.conf.default.send_redirects = 0
 
-# Enable TCP SYN cookies (prevents SYN flood DoS attacks)
+Enable TCP SYN cookies (prevents SYN flood DoS attacks)
 net.ipv4.tcp_syncookies = 1
 
-# Ignore ICMP broadcast requests (Smurf attack prevention)
+Ignore ICMP broadcast requests (Smurf attack prevention)
 net.ipv4.icmp_echo_ignore_broadcasts = 1
 
-# Ignore bogus error messages
+Ignore bogus error messages
 net.ipv4.icmp_ignore_bogus_error_responses = 1
 
-# Log martian packets (packets with impossible source addresses)
+Log martian packets (packets with impossible source addresses)
 net.ipv4.conf.all.log_martians = 1
 net.ipv4.conf.default.log_martians = 1
 
-# Disable secure ICMP redirects (ICMP redirects from gateways)
+Disable secure ICMP redirects (ICMP redirects from gateways)
 net.ipv4.conf.all.secure_redirects = 0
 net.ipv4.conf.default.secure_redirects = 0
 
-# Increase TCP connection limits for busy servers
+Increase TCP connection limits for busy servers
 net.ipv4.tcp_max_syn_backlog = 2048
 
-# Reduce TIME_WAIT sockets for faster recovery
+Reduce TIME_WAIT sockets for faster recovery
 net.ipv4.tcp_fin_timeout = 15
 net.ipv4.tcp_tw_reuse = 1
 
-# Disable IPv6 if not needed (reduces attack surface)
-# Comment out if you use IPv6
+Disable IPv6 if not needed (reduces attack surface)
+Comment out if you use IPv6
 net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 = 1
 
-# Restrict local port range
+Restrict local port range
 net.ipv4.ip_local_port_range = 32768 60999
 
 ##############################################################
-# FILE SYSTEM HARDENING
+FILE SYSTEM HARDENING
 ##############################################################
 
-# Restrict core dump files (prevents credential leaks from crashed processes)
+Restrict core dump files (prevents credential leaks from crashed processes)
 fs.suid_dumpable = 0
 
-# Protect hardlinks and symlinks from privilege escalation
+Protect hardlinks and symlinks from privilege escalation
 fs.protected_hardlinks = 1
 fs.protected_symlinks = 1
 
-# Restrict /proc/PID/ to process owner
+Restrict /proc/PID/ to process owner
 fs.protected_fifos = 2
 fs.protected_regular = 2
 ```
@@ -182,37 +182,37 @@ Apply the settings:
 sudo sysctl --system
 ```
 
-### Step 3: Verify Key Settings
+Step 3: Verify Key Settings
 
 Check that the most critical settings are applied:
 
 ```bash
-# ASLR enabled
+ASLR enabled
 sysctl kernel.randomize_va_space
-# Expected: 2
+Expected: 2
 
-# Kernel pointers hidden
+Kernel pointers hidden
 sysctl kernel.kptr_restrict
-# Expected: 2
+Expected: 2
 
-# dmesg restricted
+dmesg restricted
 sysctl kernel.dmesg_restrict
-# Expected: 1
+Expected: 1
 
-# SYN cookies active
+SYN cookies active
 sysctl net.ipv4.tcp_syncookies
-# Expected: 1
+Expected: 1
 
-# No ICMP redirects accepted
+No ICMP redirects accepted
 sysctl net.ipv4.conf.all.accept_redirects
-# Expected: 0
+Expected: 0
 
-# Reverse path filtering
+Reverse path filtering
 sysctl net.ipv4.conf.all.rp_filter
-# Expected: 1
+Expected: 1
 ```
 
-## Additional Hardening: Kernel Module Restrictions
+Additional Hardening: Kernel Module Restrictions
 
 Restrict which kernel modules can be loaded. Useful on production servers that shouldn't load new drivers:
 
@@ -221,7 +221,7 @@ sudo nano /etc/modprobe.d/hardening.conf
 ```
 
 ```
-# Disable uncommon network protocols (rarely needed, common attack vector)
+Disable uncommon network protocols (rarely needed, common attack vector)
 install dccp /bin/false
 install sctp /bin/false
 install rds /bin/false
@@ -242,7 +242,7 @@ install p8022 /bin/false
 install can /bin/false
 install atm /bin/false
 
-# Disable uncommon filesystems
+Disable uncommon filesystems
 install cramfs /bin/false
 install freevxfs /bin/false
 install jffs2 /bin/false
@@ -251,8 +251,8 @@ install hfsplus /bin/false
 install squashfs /bin/false
 install udf /bin/false
 
-# Disable USB if physical access is not trusted
-# install usb-storage /bin/false
+Disable USB if physical access is not trusted
+install usb-storage /bin/false
 ```
 
 Update initramfs so changes take effect at boot:
@@ -262,7 +262,7 @@ sudo update-initramfs -u   # Debian/Ubuntu
 sudo dracut --force         # Fedora/RHEL
 ```
 
-### Step 4: Secure /proc and /sys Mounts
+Step 4: Secure /proc and /sys Mounts
 
 Mount `/proc` with `hidepid=2` so users can only see their own processes:
 
@@ -289,70 +289,70 @@ Remount without rebooting:
 sudo mount -o remount,hidepid=2,gid=proc /proc
 ```
 
-### Step 5: Audit Current Settings Against Baseline
+Step 5: Audit Current Settings Against Baseline
 
 The `lynis` tool audits Linux security configuration and reports on settings that deviate from hardening benchmarks:
 
 ```bash
-# Install
+Install
 sudo apt install lynis   # Debian/Ubuntu
 sudo dnf install lynis   # Fedora
 
-# Run audit
+Run audit
 sudo lynis audit system
 
-# Look for sysctl suggestions in the report
+Look for sysctl suggestions in the report
 sudo grep -A2 "sysctl" /var/log/lynis.log | tail -50
 ```
 
 Lynis outputs a hardening index score and specific recommendations. Run it after applying changes to measure improvement.
 
-### Step 6: Impact on Performance
+Step 6: Impact on Performance
 
 Most of these settings have zero measurable performance impact on typical workloads. The exceptions:
 
-- `tcp_syncookies` — adds minor CPU overhead under SYN flood conditions (acceptable tradeoff)
-- `log_martians` — generates log entries for spoofed packets (can be noisy on some networks, disable if logs fill up)
-- `rp_filter` — can cause issues on multi-homed servers with asymmetric routing (set to `0` per interface if needed)
+- `tcp_syncookies`. adds minor CPU overhead under SYN flood conditions (acceptable tradeoff)
+- `log_martians`. generates log entries for spoofed packets (can be noisy on some networks, disable if logs fill up)
+- `rp_filter`. can cause issues on multi-homed servers with asymmetric routing (set to `0` per interface if needed)
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Are there free alternatives available?**
+Are there free alternatives available?
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Arch Linux Hardened Kernel Installation Guide For Advanced](/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
 - [Encrypted DNS over HTTPS on Linux](/encrypted-dns-over-https-linux-setup)
@@ -360,5 +360,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Linux Network Namespaces for VPN Isolation](/linux-network-namespace-vpn-isolation/)
 - [Linux File Permissions Privacy](/linux-file-permissions-privacy-audit/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

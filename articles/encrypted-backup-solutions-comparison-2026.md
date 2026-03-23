@@ -18,7 +18,7 @@ intent-checked: true
 
 Regular backups protect against ransomware, hardware failure, and accidental deletion. Encrypted backups additionally protect your privacy: even if a backup is stolen, the data remains unreadable without the encryption key. This guide compares five encrypted backup solutions with different architectures, use cases, and pricing models.
 
-## Table of Contents
+Table of Contents
 
 - [Why Encrypted Backups Matter](#why-encrypted-backups-matter)
 - [Borg Backup: Deduplication-Focused](#borg-backup-deduplication-focused)
@@ -31,7 +31,7 @@ Regular backups protect against ransomware, hardware failure, and accidental del
 - [Restore Testing Checklist](#restore-testing-checklist)
 - [Encryption Key Safety](#encryption-key-safety)
 
-## Why Encrypted Backups Matter
+Why Encrypted Backups Matter
 
 Standard backups without encryption expose your data:
 
@@ -42,59 +42,59 @@ Standard backups without encryption expose your data:
 
 Encrypted backups ensure that even if someone accesses the backup, they can't read the data without your encryption key.
 
-## Borg Backup: Deduplication-Focused
+Borg Backup: Deduplication-Focused
 
 Borg is an open-source backup tool emphasizing efficiency through deduplication. Only stores changed data, dramatically reducing storage needs.
 
-### Installation
+Installation
 
 ```bash
-# macOS
+macOS
 brew install borgbackup
 
-# Linux (Ubuntu/Debian)
+Linux (Ubuntu/Debian)
 sudo apt install borgbackup
 
-# Or via pip (all platforms)
+Or via pip (all platforms)
 pip install borgbackup
 ```
 
-### Basic Setup: Local Backup
+Basic Setup: Local Backup
 
 ```bash
-# Initialize backup repository
+Initialize backup repository
 borg init --encryption=repokey ~/.backups/myrepo
 
-# Create first backup
+Create first backup
 borg create ~/.backups/myrepo::backup-2026-03-20 \
   ~/Documents \
   ~/Pictures \
   --exclude '*.tmp' \
   --exclude '.git'
 
-# List backups
+List backups
 borg list ~/.backups/myrepo
 
-# Restore a file
+Restore a file
 borg extract ~/.backups/myrepo::backup-2026-03-20 Documents/important.txt
 ```
 
-### Remote Backup to SSH Server
+Remote Backup to SSH Server
 
 Backup to a remote server via SSH:
 
 ```bash
-# Initialize remote repository
+Initialize remote repository
 borg init --encryption=repokey ssh://user@backupserver:~/borg-repo
 
-# Backup to remote
+Backup to remote
 borg create ssh://user@backupserver:~/borg-repo::backup-2026-03-20 ~/Documents
 
-# Restore from remote
+Restore from remote
 borg extract ssh://user@backupserver:~/borg-repo::backup-2026-03-20
 ```
 
-### Deduplication Example
+Deduplication Example
 
 Borg's efficiency through deduplication:
 
@@ -116,11 +116,11 @@ Backup 3: 103GB total, but only 2GB new data
 
 After 10 backups of the same data with incremental changes, you've stored 120GB of data in ~150GB of storage instead of 1.2TB.
 
-### Automation: Cron Job
+Automation: Cron Job
 
 ```bash
 #!/bin/bash
-# Daily backup script
+Daily backup script
 
 export BORG_PASSPHRASE="your-encryption-passphrase"
 
@@ -134,24 +134,24 @@ borg create \
   --exclude '*.tmp' \
   --exclude '.cache'
 
-# Prune old backups (keep last 30 daily, 12 monthly, 2 yearly)
+Prune old backups (keep last 30 daily, 12 monthly, 2 yearly)
 borg prune ssh://user@server:~/borg-repo \
   --keep-daily=30 \
   --keep-monthly=12 \
   --keep-yearly=2
 
-# Check backup integrity
+Check backup integrity
 borg check ssh://user@server:~/borg-repo
 ```
 
 Add to crontab:
 
 ```bash
-# Daily backup at 2 AM
+Daily backup at 2 AM
 0 2 * * * /home/user/backup-script.sh
 ```
 
-### Strengths
+Strengths
 
 - Deduplication dramatically reduces storage
 - Excellent for frequent backups (daily)
@@ -160,7 +160,7 @@ Add to crontab:
 - Free and open-source
 - Fast incremental backups
 
-### Limitations
+Limitations
 
 - Command-line only (no GUI)
 - Steeper learning curve
@@ -168,70 +168,70 @@ Add to crontab:
 - Requires SSH access for remote backups
 - No built-in cloud storage integrations
 
-### Pricing
+Pricing
 
 Free and open-source. Storage costs depend on destination (SSH server, self-hosted NAS, etc).
 
-## Restic: Simplicity and Flexibility
+Restic: Simplicity and Flexibility
 
 Restic prioritizes ease of use while supporting multiple backends (local, SSH, S3, B2, Google Drive, etc).
 
-### Installation
+Installation
 
 ```bash
-# macOS
+macOS
 brew install restic
 
-# Linux
+Linux
 sudo apt install restic
 
-# Or download binary from restic.net
+Or download binary from restic.net
 ```
 
-### Basic Backup
+Basic Backup
 
 ```bash
-# Initialize repository
+Initialize repository
 restic init --repo /mnt/backups
 
-# Create backup
+Create backup
 restic -r /mnt/backups backup ~/Documents ~/Pictures
 
-# List backups
+List backups
 restic -r /mnt/backups snapshots
 
-# Restore files
+Restore files
 restic -r /mnt/backups restore latest --target ~/restore-location
 ```
 
-### Cloud Storage Integration
+Cloud Storage Integration
 
 Restic works with S3 (AWS, Wasabi, DigitalOcean Spaces):
 
 ```bash
-# Initialize on AWS S3
+Initialize on AWS S3
 export AWS_ACCESS_KEY_ID=your-key
 export AWS_SECRET_ACCESS_KEY=your-secret
 restic init --repo s3:s3.amazonaws.com/my-backup-bucket
 
-# Backup to S3
+Backup to S3
 restic -r s3:s3.amazonaws.com/my-backup-bucket backup ~/Documents
 
-# Restore from S3
+Restore from S3
 restic -r s3:s3.amazonaws.com/my-backup-bucket restore latest
 ```
 
-### Forget Policy (Retention)
+Forget Policy (Retention)
 
 ```bash
-# Keep last 7 daily, 4 weekly, 12 monthly backups
+Keep last 7 daily, 4 weekly, 12 monthly backups
 restic -r /mnt/backups forget \
   --keep-daily 7 \
   --keep-weekly 4 \
   --keep-monthly 12 \
   --prune
 
-# Check what will be deleted before pruning
+Check what will be deleted before pruning
 restic -r /mnt/backups forget \
   --keep-daily 7 \
   --keep-weekly 4 \
@@ -239,10 +239,10 @@ restic -r /mnt/backups forget \
   --dry-run
 ```
 
-### Automation: Systemd Timer
+Automation: Systemd Timer
 
 ```ini
-# /etc/systemd/system/restic-backup.service
+/etc/systemd/system/restic-backup.service
 [Unit]
 Description=Restic Backup
 After=network.target
@@ -254,7 +254,7 @@ ExecStart=/usr/bin/restic -r /mnt/backups backup \
   /home/user/Pictures
 Environment=RESTIC_PASSWORD=your-password
 
-# /etc/systemd/system/restic-backup.timer
+/etc/systemd/system/restic-backup.timer
 [Unit]
 Description=Restic Backup Timer
 
@@ -273,7 +273,7 @@ sudo systemctl enable restic-backup.timer
 sudo systemctl start restic-backup.timer
 ```
 
-### Strengths
+Strengths
 
 - Very simple commands and clear output
 - Works with many backends (S3, SFTP, local, etc)
@@ -282,37 +282,37 @@ sudo systemctl start restic-backup.timer
 - Restore is straightforward
 - Free and open-source
 
-### Limitations
+Limitations
 
 - No built-in scheduling (need external tools)
 - Less optimization for certain use cases
 - Smaller ecosystem than commercial tools
 
-### Pricing
+Pricing
 
 Free and open-source. Cloud storage costs depend on provider.
 
-## Duplicati: User-Friendly GUI
+Duplicati: User-Friendly GUI
 
 Duplicati provides a web-based interface making backups accessible to non-technical users while supporting encryption.
 
-### Installation and Setup
+Installation and Setup
 
 ```bash
-# macOS
+macOS
 brew install duplicati
 
-# Linux
+Linux
 sudo apt install duplicati
 
-# Windows: download installer from duplicati.com
+Windows: download installer from duplicati.com
 
-# Start the service
+Start the service
 duplicati --start-tray
-# Opens http://localhost:8200 in browser
+Opens http://localhost:8200 in browser
 ```
 
-### GUI Workflow
+GUI Workflow
 
 1. Open http://localhost:8200
 2. Click "Add backup"
@@ -322,7 +322,7 @@ duplicati --start-tray
 6. Choose schedule (daily, weekly, monthly)
 7. Save
 
-### Real-World Setup: Backup to AWS S3
+Real-World Setup: Backup to AWS S3
 
 ```
 GUI Steps:
@@ -345,7 +345,7 @@ GUI Steps:
 Click Save and Duplicati handles everything.
 ```
 
-### Advanced Configuration
+Advanced Configuration
 
 Duplicati can be configured via command-line for automation:
 
@@ -358,7 +358,7 @@ duplicati-cli backup \
   --backup-name "my-backup"
 ```
 
-### Strengths
+Strengths
 
 - Easiest GUI of all options
 - Supports many cloud backends
@@ -367,22 +367,22 @@ duplicati-cli backup \
 - Good for non-technical users
 - Free and open-source
 
-### Limitations
+Limitations
 
 - Slower performance than Borg or Restic
 - Less efficient storage usage (less optimal deduplication)
 - Can be resource-intensive for large backups
 - Smaller community than commercial options
 
-### Pricing
+Pricing
 
 Free and open-source. Cloud storage costs based on provider.
 
-## Arq: Commercial Backup Solution
+Arq: Commercial Backup Solution
 
 Arq provides a polished macOS/Windows application with automatic backups and cloud integration.
 
-### Installation and Setup
+Installation and Setup
 
 ```
 1. Download from arqbackup.com
@@ -397,17 +397,17 @@ Arq provides a polished macOS/Windows application with automatic backups and clo
 6. Enable automatic backup (every 5 minutes)
 ```
 
-### Features
+Features
 
-**Continuous backup**: Monitors folders and backs up changes automatically.
+Continuous backup: Monitors folders and backs up changes automatically.
 
-**De-duplication**: Stores only changed files and blocks.
+De-duplication: Stores only changed files and blocks.
 
-**Versioning**: Keep full history of file changes.
+Versioning: Keep full history of file changes.
 
-**Selective restore**: Restore individual files or full folders.
+Selective restore: Restore individual files or full folders.
 
-### Real-World Example: Photographer Workflow
+Real-World Example: Photographer Workflow
 
 ```
 Photographer backing up photo library:
@@ -428,7 +428,7 @@ Scenario: Photographer accidentally deletes recent photos
 - Photos recovered instantly
 ```
 
-### Strengths
+Strengths
 
 - Excellent macOS integration
 - Automatic continuous backup
@@ -437,86 +437,86 @@ Scenario: Photographer accidentally deletes recent photos
 - Good customer support
 - Works with local and cloud storage
 
-### Limitations
+Limitations
 
 - macOS/Windows only (no Linux)
 - More expensive than open-source alternatives
 - Fewer storage backend options than Duplicati
 - Overkill for many use cases
 
-### Pricing
+Pricing
 
 $69.99 one-time purchase (recent versions) or $59.99/year subscription.
 
-## Kopia: Modern and Fast
+Kopia: Modern and Fast
 
 Kopia is a newer open-source backup tool with modern architecture, fast performance, and excellent deduplication.
 
-### Installation
+Installation
 
 ```bash
-# macOS
+macOS
 brew install kopia
 
-# Linux
+Linux
 sudo apt install kopia
 
-# Windows
+Windows
 choco install kopia
 ```
 
-### Basic Usage
+Basic Usage
 
 ```bash
-# Create repository
+Create repository
 kopia repository create filesystem --path /mnt/backup-repo
 
-# Connect to existing repository
+Connect to existing repository
 kopia repository connect filesystem --path /mnt/backup-repo
 
-# Create snapshot
+Create snapshot
 kopia snapshot create ~/Documents
 
-# List snapshots
+List snapshots
 kopia snapshot list
 
-# Restore files
+Restore files
 kopia show <snapshot-id>
 kopia restore <snapshot-id> ~/restore-location
 ```
 
-### S3 Backend
+S3 Backend
 
 ```bash
-# Create repository on AWS S3
+Create repository on AWS S3
 kopia repository create s3 \
   --bucket=my-backups \
   --endpoint=s3.amazonaws.com
 
-# Backup
+Backup
 kopia snapshot create ~/Documents
 
-# Restore
+Restore
 kopia restore <snapshot-id> ~/restore
 ```
 
-### Automation Script
+Automation Script
 
 ```bash
 #!/bin/bash
-# Daily backup with Kopia
+Daily backup with Kopia
 
 kopia repository connect filesystem --path /mnt/backups
 
-# Backup multiple locations
+Backup multiple locations
 kopia snapshot create ~/Documents
 kopia snapshot create ~/Pictures
 kopia snapshot create ~/Code
 
-# Keep last 30 daily snapshots
+Keep last 30 daily snapshots
 kopia maintenance run --full
 
-# Verify repository integrity
+Verify repository integrity
 kopia repository verify
 ```
 
@@ -526,7 +526,7 @@ Schedule with cron:
 0 2 * * * /home/user/kopia-backup.sh
 ```
 
-### Strengths
+Strengths
 
 - Modern architecture (written in Go)
 - Very fast backup and restore
@@ -536,17 +536,17 @@ Schedule with cron:
 - Free and open-source
 - Active development
 
-### Limitations
+Limitations
 
 - Newer tool (smaller community than Borg/Restic)
 - Repository format still evolving
 - Documentation could be more
 
-### Pricing
+Pricing
 
 Free and open-source. Cloud storage costs depend on backend.
 
-## Comparison Matrix
+Comparison Matrix
 
 | Tool | Type | Dedup | Ease of Use | Cloud Support | Speed | Cost |
 |------|------|-------|------------|---------------|-------|------|
@@ -556,19 +556,19 @@ Free and open-source. Cloud storage costs depend on backend.
 | Arq | App | Excellent | Very easy | Multiple | Fast | $69.99 |
 | Kopia | CLI/Web | Excellent | Medium | Multiple | Very fast | Free |
 
-## Backup Strategy by Use Case
+Backup Strategy by Use Case
 
-**Individual home computer (100GB)**: Use Duplicati or Arq. Set and forget approach.
+Individual home computer (100GB): Use Duplicati or Arq. Set and forget approach.
 
-**Linux server (1TB+)**: Use Borg or Restic. Efficient storage, SSH access available.
+Linux server (1TB+): Use Borg or Restic. Efficient storage, SSH access available.
 
-**Team data (multi-device)**: Use Kopia with S3 backend. Fast performance, scales well.
+Team data (multi-device): Use Kopia with S3 backend. Fast performance, scales well.
 
-**Budget-conscious**: Use Restic to AWS or Wasabi. Cheap cloud storage ($0.006/GB/month at Wasabi).
+Budget-conscious: Use Restic to AWS or Wasabi. Cheap cloud storage ($0.006/GB/month at Wasabi).
 
-**Mac user wanting simplicity**: Use Arq. Best experience, one-time purchase.
+Mac user wanting simplicity: Use Arq. Best experience, one-time purchase.
 
-## Restore Testing Checklist
+Restore Testing Checklist
 
 Never skip restore testing. Backups don't exist if you can't restore:
 
@@ -581,7 +581,7 @@ Never skip restore testing. Backups don't exist if you can't restore:
 
 Test each backup solution at least monthly.
 
-## Encryption Key Safety
+Encryption Key Safety
 
 Your encryption key is critical. If lost, backups are unrecoverable:
 
@@ -591,29 +591,29 @@ Your encryption key is critical. If lost, backups are unrecoverable:
 - [ ] Use strong passphrases (20+ characters)
 - [ ] Never commit passphrases to git or config files
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Can I use the first tool and the second tool together?**
+Can I use the first tool and the second tool together?
 
 Yes, many users run both tools simultaneously. the first tool and the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.
 
-**Which is better for beginners, the first tool or the second tool?**
+Which is better for beginners, the first tool or the second tool?
 
 It depends on your background. the first tool tends to work well if you prefer a guided experience, while the second tool gives more control for users comfortable with configuration. Try the free tier or trial of each before committing to a paid plan.
 
-**Is the first tool or the second tool more expensive?**
+Is the first tool or the second tool more expensive?
 
 Pricing varies by tier and usage patterns. Both offer free or trial options to start. Check their current pricing pages for the latest plans, since AI tool pricing changes frequently. Factor in your actual usage volume when comparing costs.
 
-**Can AI-generated tests replace manual test writing entirely?**
+Can AI-generated tests replace manual test writing entirely?
 
 Not yet. AI tools generate useful test scaffolding and catch common patterns, but they often miss edge cases specific to your business logic. Use AI-generated tests as a starting point, then add cases that cover your unique requirements and failure modes.
 
-**What happens to my data when using the first tool or the second tool?**
+What happens to my data when using the first tool or the second tool?
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
-## Related Articles
+Related Articles
 
 - [Best Encrypted Backup Solution For Developers](/best-encrypted-backup-solution-for-developers/)
 - [Restic vs Borg Backup: Encrypted Comparison for Developers](/restic-vs-borg-backup-encrypted-comparison/)
@@ -621,5 +621,5 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Restic Encrypted Backup Setup Guide](/restic-encrypted-backup-setup-guide)
 - [Set Up Encrypted Local Backup Of iPhone](/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
 - [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://bestremotetools.com/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -14,14 +14,14 @@ voice-checked: true
 ---
 
 
-## Table of Contents
+Table of Contents
 
 - [The Default Problem](#the-default-problem)
 - [Prerequisites](#prerequisites)
 - [Troubleshooting](#troubleshooting)
 - [Related Reading](#related-reading)
 
-## The Default Problem
+The Default Problem
 
 NAS systems come out of the box with:
 
@@ -36,7 +36,7 @@ Each of these is a potential entry point.
 
 ---
 
-## Prerequisites
+Prerequisites
 
 Before you begin, make sure you have the following ready:
 
@@ -46,9 +46,9 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-### Step 1: Section 1: Account and Authentication
+Step 1: Section 1: Account and Authentication
 
-### Disable the Default Admin Account
+Disable the Default Admin Account
 
 ```
 Synology DSM:
@@ -64,7 +64,7 @@ Accounts → Users → edit root → Lock Account
 Use a dedicated admin account instead
 ```
 
-### Enable Two-Factor Authentication
+Enable Two-Factor Authentication
 
 ```
 Synology DSM:
@@ -77,7 +77,7 @@ TrueNAS SCALE:
 Credentials → Users → edit user → Authentication → OTP Secret → Generate
 ```
 
-### Strong Password Policy
+Strong Password Policy
 
 ```
 Synology: Control Panel → User → Advanced → Password Strength Rules
@@ -91,11 +91,11 @@ QNAP: Control Panel → Security → Password Policy
 
 ---
 
-### Step 2: Section 2: Enable Disk Encryption
+Step 2: Section 2: Enable Disk Encryption
 
 Disk encryption protects data if the NAS is physically stolen. Without it, drives pulled from the chassis are fully readable.
 
-### Synology Volume Encryption
+Synology Volume Encryption
 
 ```
 Synology DSM:
@@ -103,49 +103,49 @@ Storage Manager → Volume → Create → choose encryption
   - Encryption key: stored in Synology Secure Erase key manager
   - Or: use USB key to unlock on boot
 
-# For existing volumes (requires data migration):
-# Back up all data
-# Destroy volume → recreate with encryption → restore data
+For existing volumes (requires data migration):
+Back up all data
+Destroy volume → recreate with encryption → restore data
 
-# Check encryption status
+Check encryption status
 Storage Manager → Volume → select volume → Details → Encryption: Enabled
 ```
 
-### QNAP Volume Encryption
+QNAP Volume Encryption
 
 ```
 QNAP QTS:
 Storage & Snapshots → Storage → create pool → Enable Encryption
 Key management: QNAP key manager (AES-256)
 
-# Lock volumes manually:
+Lock volumes manually:
 Storage & Snapshots → Storage → Secure → Lock
-# Requires unlock key on next boot
+Requires unlock key on next boot
 ```
 
-### TrueNAS (ZFS Encryption)
+TrueNAS (ZFS Encryption)
 
 ```bash
-# TrueNAS SCALE: enable dataset encryption via UI
-# Storage → Pools → Add Dataset → Encryption: Enabled
-# Encryption Type: Key (recommended), or Passphrase
+TrueNAS SCALE: enable dataset encryption via UI
+Storage → Pools → Add Dataset → Encryption: Enabled
+Encryption Type: Key (recommended), or Passphrase
 
-# Via CLI:
+Via CLI:
 zfs create -o encryption=on -o keyformat=passphrase -o keylocation=prompt pool/encrypted-dataset
 
-# Check encryption status
+Check encryption status
 zfs get encryption,keystatus pool/encrypted-dataset
 
-# Load key on boot
+Load key on boot
 zfs load-key pool/encrypted-dataset
 zfs mount pool/encrypted-dataset
 ```
 
 ---
 
-### Step 3: Section 3: Network Hardening
+Step 3: Section 3: Network Hardening
 
-### Firewall Rules
+Firewall Rules
 
 ```
 Synology DSM:
@@ -164,7 +164,7 @@ Network → Global Configuration → set interfaces
 System → General → GUI SSL certificate
 ```
 
-### Disable Unnecessary Services
+Disable Unnecessary Services
 
 ```
 Services to check and potentially disable:
@@ -181,9 +181,9 @@ Control Panel → Network Services → disable UPnP port forwarding
 MyQNAPcloud → disconnect from cloud if not using
 ```
 
-### Disable UPnP
+Disable UPnP
 
-UPnP lets devices automatically open ports on your router — including your NAS. Disable at both the NAS and router level:
+UPnP lets devices automatically open ports on your router. including your NAS. Disable at both the NAS and router level:
 
 ```
 Synology: Control Panel → External Access → Router Configuration → Disable UPnP
@@ -193,7 +193,7 @@ Router: Admin interface → disable UPnP (varies by router)
 
 ---
 
-### Step 4: Section 4: Disable Cloud Relay Features
+Step 4: Section 4: Disable Cloud Relay Features
 
 QuickConnect (Synology) and myQNAPcloud create persistent tunnels to manufacturer servers, making your NAS reachable from the internet through their relay. Disable unless you specifically need remote access.
 
@@ -212,7 +212,7 @@ TrueNAS: Services → OpenVPN/WireGuard → configure
 
 ---
 
-### Step 5: Section 5: Enable Audit Logging
+Step 5: Section 5: Enable Audit Logging
 
 ```
 Synology DSM:
@@ -229,7 +229,7 @@ TrueNAS:
 System → Audit → enable all audit categories
 ```
 
-### Monitor for Brute Force Attempts
+Monitor for Brute Force Attempts
 
 ```
 Synology:
@@ -247,86 +247,86 @@ Control Panel → Security → IP Access Protection
 
 ---
 
-### Step 6: Section 6: Backup and Snapshots
+Step 6: Section 6: Backup and Snapshots
 
 A compromised or ransomware-hit NAS is only recoverable if you have backups it can't reach:
 
 ```bash
-# TrueNAS: ZFS snapshots (immutable, ransomware-resistant)
-# Periodic Snapshot Tasks → create hourly/daily/weekly tasks
-# Snapshots can't be deleted by the OS — only from TrueNAS admin
+TrueNAS: ZFS snapshots (immutable, ransomware-resistant)
+Periodic Snapshot Tasks → create hourly/daily/weekly tasks
+Snapshots can't be deleted by the OS. only from TrueNAS admin
 
-# Synology: Snapshot Replication package
-# Package Center → Snapshot Replication → install
-# Set schedule: daily, retain 30 days
+Synology: Snapshot Replication package
+Package Center → Snapshot Replication → install
+Set schedule: daily, retain 30 days
 
-# External backup (2nd copy, off-NAS)
-# Synology Hyper Backup → backup to external USB or remote
-# Target: encrypted external drive (kept offline)
+External backup (2nd copy, off-NAS)
+Synology Hyper Backup → backup to external USB or remote
+Target: encrypted external drive (kept offline)
 
-# Verify backups work
-# Restore a test file from a 30-day-old snapshot monthly
+Verify backups work
+Restore a test file from a 30-day-old snapshot monthly
 ```
 
 ---
 
-### Step 7: Section 7: Keep Firmware Updated
+Step 7: Section 7: Keep Firmware Updated
 
 ```bash
-# Synology: Control Panel → Update & Restore → Check for updates
-# Enable: Automatically install important updates
+Synology: Control Panel → Update & Restore → Check for updates
+Enable: Automatically install important updates
 
-# QNAP: System → Firmware Update → Check for Updates
-# QNAP has had critical vulnerabilities exploited in the wild (2021, 2022)
-# Keep firmware current — this is not optional
+QNAP: System → Firmware Update → Check for Updates
+QNAP has had critical vulnerabilities exploited in the wild (2021, 2022)
+Keep firmware current. this is not optional
 
-# TrueNAS: System → Update → Check for Updates
+TrueNAS: System → Update → Check for Updates
 
-# Verify update signatures (TrueNAS):
-# TrueNAS verifies update packages automatically
-# Check: System → General → Version
+Verify update signatures (TrueNAS):
+TrueNAS verifies update packages automatically
+Check: System → General → Version
 ```
 
 ---
 
-### Step 8: Verify Your Hardening
+Step 8: Verify Your Hardening
 
 ```bash
-# From an external machine on your LAN, port scan your NAS
+From an external machine on your LAN, port scan your NAS
 nmap -sV 192.168.1.x
-# Expected: only ports you intentionally opened should respond
+Expected: only ports you intentionally opened should respond
 
-# Check for NAS exposed to internet (if you have a firewall/router)
+Check for NAS exposed to internet (if you have a firewall/router)
 nmap -sV your.public.ip.address
-# Nothing from your NAS should appear here
+Nothing from your NAS should appear here
 
-# Test 2FA: log out, attempt login, verify OTP prompt appears
+Test 2FA: log out, attempt login, verify OTP prompt appears
 
-# Test account lockout: enter wrong password 5+ times
-# Verify the account locks as configured
+Test account lockout: enter wrong password 5+ times
+Verify the account locks as configured
 
-# Review audit log for any unexpected access
-# Look for: access from unexpected IPs, after-hours access, bulk file reads
+Review audit log for any unexpected access
+Look for: access from unexpected IPs, after-hours access, bulk file reads
 ```
 
 ---
 
-## Troubleshooting
+Troubleshooting
 
-**Configuration changes not taking effect**
+Configuration changes not taking effect
 
 Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
 
-**Permission denied errors**
+Permission denied errors
 
 Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
 
-**Connection or network-related failures**
+Connection or network-related failures
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Articles
+Related Articles
 
 - [How to Secure Your Home Router Firmware](/home-router-firmware-security-guide)
 - [How to Set up Local Network Storage for Security](/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
@@ -334,27 +334,27 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [How to Secure Smart Home Devices Privacy Guide 2026](/how-to-secure-smart-home-devices-privacy-guide-2026/)
 - [Is Someone Monitoring My Home WiFi Network? How](/is-someone-monitoring-my-home-wifi-network-how-to-check/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to secure nas storage for home use?**
+How long does it take to secure nas storage for home use?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Is this approach secure enough for production?**
+Is this approach secure enough for production?
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 {% endraw %}

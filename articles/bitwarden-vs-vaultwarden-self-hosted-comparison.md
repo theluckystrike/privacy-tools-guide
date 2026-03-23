@@ -19,7 +19,7 @@ tags: [privacy-tools-guide, comparison]
 Running your own password manager gives you full control over your data, eliminates subscription costs, and removes dependencies on third-party services. Two primary options exist for self-hosted password management: the official Bitwarden server and Vaultwarden, a lightweight alternative written in Rust. This comparison examines the practical differences for developers and power users who want to self-host.
 
 
-## Head-to-Head Comparison
+Head-to-Head Comparison
 
 | Feature | Bitwarden (Official) | Vaultwarden |
 |---------|---------------------|------------|
@@ -34,22 +34,22 @@ Running your own password manager gives you full control over your data, elimina
 | SMTP Integration | Built-in | Built-in |
 | Hardware Requirements | 4+ GB RAM, multi-core | Raspberry Pi capable |
 
-## Key Takeaways
+Key Takeaways
 
-- **Generate secure admin token**: export ADMIN_TOKEN=$(openssl rand -base64 48) export DB_PASSWORD=$(openssl rand -base64 32) # 4.
-- **Most individual users and**: small teams find Vaultwarden covers their needs adequately.
-- **A Vaultwarden instance typically**: uses 50-100MB of RAM under normal operation.
-- **The official Bitwarden server**: requires at least 2GB RAM and performs best with 4GB or more.
-- **Or use Bitwarden CLI**: bw login your@email.com bw export --output vault_export.json # 3.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- Generate secure admin token: export ADMIN_TOKEN=$(openssl rand -base64 48) export DB_PASSWORD=$(openssl rand -base64 32) # 4.
+- Most individual users and: small teams find Vaultwarden covers their needs adequately.
+- A Vaultwarden instance typically: uses 50-100MB of RAM under normal operation.
+- The official Bitwarden server: requires at least 2GB RAM and performs best with 4GB or more.
+- Or use Bitwarden CLI: bw login your@email.com bw export --output vault_export.json # 3.
+- Start with whichever matches: your most frequent task, then add the other when you hit its limits.
 
-## What Are You Self-Hosting?
+What Are You Self-Hosting?
 
-**Bitwarden** offers an official self-hosted deployment through Docker. The full implementation includes all features from their cloud service: password generation, secure sharing, collections, organization policies, and the Bitwarden Send feature. The official image requires significant resources but provides feature parity with the hosted version.
+Bitwarden offers an official self-hosted deployment through Docker. The full implementation includes all features from their cloud service: password generation, secure sharing, collections, organization policies, and the Bitwarden Send feature. The official image requires significant resources but provides feature parity with the hosted version.
 
-**Vaultwarden** is an alternative implementation of the Bitwarden API, originally known as bitwarden_rs. It runs with dramatically lower resource requirements and targets users who want essential password management without the full enterprise feature set. Vaultwarden is not affiliated with Bitwarden, Inc., but maintains API compatibility with Bitwarden clients.
+Vaultwarden is an alternative implementation of the Bitwarden API, originally known as bitwarden_rs. It runs with dramatically lower resource requirements and targets users who want essential password management without the full enterprise feature set. Vaultwarden is not affiliated with Bitwarden, Inc., but maintains API compatibility with Bitwarden clients.
 
-## Feature Comparison
+Feature Comparison
 
 The feature sets diverge significantly when comparing the two implementations:
 
@@ -66,16 +66,16 @@ The feature sets diverge significantly when comparing the two implementations:
 
 For individual users or small teams, Vaultwarden covers the essential functionality: storing passwords, generating new ones, and sharing vault items with others. Organizations requiring directory integration, advanced policies, or single sign-on will find the official Bitwarden deployment necessary.
 
-## Installation and Setup
+Installation and Setup
 
 Both options deploy easily with Docker, but the resource requirements differ substantially.
 
-### Vaultwarden Installation
+Vaultwarden Installation
 
 Vaultwarden runs with minimal configuration:
 
 ```bash
-# Basic Vaultwarden deployment
+Basic Vaultwarden deployment
 docker run -d \
   --name vaultwarden \
   -v /vw-data:/data \
@@ -86,7 +86,7 @@ docker run -d \
 This single command starts a functional password manager. The SQLite database creates automatically in the `/data` volume. For production use, add environment variables for the admin token and enable HTTPS through a reverse proxy.
 
 ```bash
-# Production Vaultwarden with environment configuration
+Production Vaultwarden with environment configuration
 docker run -d \
   --name vaultwarden \
   -v /vw-data:/data \
@@ -96,17 +96,17 @@ docker run -d \
   vaultwarden/server:latest
 ```
 
-Setting `SIGNUPS_ALLOWED=false` prevents new user creation after you've created your account—essential for personal deployments.
+Setting `SIGNUPS_ALLOWED=false` prevents new user creation after you've created your account, essential for personal deployments.
 
-### Bitwarden (Official) Installation
+Bitwarden (Official) Installation
 
 The official deployment requires more setup:
 
 ```bash
-# Create installation directory
+Create installation directory
 mkdir -p /opt/bitwarden && cd /opt/bitwarden
 
-# Download and extract the installer
+Download and extract the installer
 curl -L -o bitwarden.sh https://go.btwrd.co/bsh
 chmod +x bitwarden.sh
 ./bitwarden.sh install
@@ -114,7 +114,7 @@ chmod +x bitwarden.sh
 
 After installation, you configure the environment through the `./bitwarden.sh` script, which prompts for domain, SSL certificates, and database preferences. The full stack launches multiple containers including the API server, web vault, identity server, and admin portal.
 
-## Performance and Resource Usage
+Performance and Resource Usage
 
 The resource difference between these implementations is striking. A Vaultwarden instance typically uses 50-100MB of RAM under normal operation. The official Bitwarden deployment consumes 500MB-1GB idle and can spike significantly during heavy usage.
 
@@ -122,19 +122,19 @@ For single users or small families, Vaultwarden's efficiency is compelling. A Ra
 
 Database choice impacts performance further. Vaultwarden defaults to SQLite, which works well for individual users and small teams. For larger deployments, switching to PostgreSQL improves query performance but increases complexity.
 
-## Security Considerations
+Security Considerations
 
 Both implementations use Bitwarden's encryption protocol. Your master password never leaves your device, and all vault items encrypt with AES-256 before transmission. The encryption architecture remains consistent regardless of which server handles your data.
 
 Key security differences emerge in implementation details:
 
-**Vaultwarden considerations:**
+Vaultwarden considerations:
 - Fewer security audits compared to the official implementation
 - Community-maintained, so vulnerability response depends on maintainer availability
 - Some features require additional configuration or third-party add-ons
 - The admin panel provides basic user management but limited organizational controls
 
-**Bitwarden (Official) considerations:**
+Bitwarden (Official) considerations:
 - Regular third-party security audits
 - Enterprise-grade access controls and policies
 - Built-in intrusion detection for organizations
@@ -142,40 +142,40 @@ Key security differences emerge in implementation details:
 
 For personal use, Vaultwarden's security model is adequate. Organizations handling sensitive data or requiring compliance certifications should evaluate whether Vaultwarden meets their specific requirements.
 
-## Accessing Your Vault
+Accessing Your Vault
 
 Both servers work with official Bitwarden clients. The client connects to whichever server you configure, maintaining feature compatibility for core functionality:
 
 ```bash
-# Configure Bitwarden CLI to connect to self-hosted instance
+Configure Bitwarden CLI to connect to self-hosted instance
 bw config server https://your-vault.example.com
 
-# Login after server configuration
+Login after server configuration
 bw login your@email.com
 ```
 
 The web vault, browser extensions, and mobile apps all function with either server implementation. This compatibility means you can switch between server options without redistributing passwords to clients.
 
-## When to Choose Each Option
+When to Choose Each Option
 
-Choose **Vaultwarden** when you want:
+Choose Vaultwarden when you want:
 - Minimal resource usage on modest hardware
 - Essential password management features
 - A simple, maintainable deployment
 - Cost-free self-hosting without licensing concerns
 
-Choose **Bitwarden (Official)** when you need:
+Choose Bitwarden (Official) when you need:
 - Full organization features with policies
 - Directory sync and SSO integration
 - Compliance certifications or audit support
 - The complete feature set including Bitwarden Send
 - Predictable update cycles with enterprise support
 
-## Detailed Feature Matrix with Real-World Use Cases
+Detailed Feature Matrix with Real-World Use Cases
 
-### Organizations vs Individual Users
+Organizations vs Individual Users
 
-**For Individual Users:**
+For Individual Users:
 Vaultwarden provides everything needed. Core functions include:
 - Password storage and generation
 - Browser extension integration
@@ -183,7 +183,7 @@ Vaultwarden provides everything needed. Core functions include:
 - Basic sharing with one other user
 - No payment required (self-hosted)
 
-**For Small Teams (2-10 people):**
+For Small Teams (2-10 people):
 Vaultwarden covers most use cases:
 - Shared collections (e.g., company credentials, WiFi passwords)
 - User management through admin panel
@@ -195,7 +195,7 @@ Consider Bitwarden if:
 - You require separate collections with per-group access controls
 - You want automatic LDAP/Active Directory synchronization
 
-**For Enterprise (20+ users):**
+For Enterprise (20+ users):
 Official Bitwarden necessary because:
 - Directory sync (import users from Active Directory automatically)
 - Single Sign-On via SAML/OAuth
@@ -203,69 +203,69 @@ Official Bitwarden necessary because:
 - Compliance certifications (SOC 2, HIPAA support)
 - Professional support with SLAs
 
-## Deployment Architecture Comparison
+Deployment Architecture Comparison
 
-### Vaultwarden Architecture (Minimal Stack)
+Vaultwarden Architecture (Minimal Stack)
 
 ```
-┌─────────────────────────────────────────┐
-│ Client Layer (Browser/Mobile/CLI)       │
-├─────────────────────────────────────────┤
-│ Vaultwarden Container (~20MB)           │
-│ ├─ Rust Web Service                     │
-│ ├─ SQLite Database (or PostgreSQL)      │
-│ └─ TLS/SSL Termination                  │
-├─────────────────────────────────────────┤
-│ Persistent Storage (/vw-data)           │
-│ ├─ Database file                        │
-│ ├─ Encryption keys                      │
-│ └─ Session data                         │
-└─────────────────────────────────────────┘
+
+ Client Layer (Browser/Mobile/CLI)       
+
+ Vaultwarden Container (~20MB)           
+  Rust Web Service                     
+  SQLite Database (or PostgreSQL)      
+  TLS/SSL Termination                  
+
+ Persistent Storage (/vw-data)           
+  Database file                        
+  Encryption keys                      
+  Session data                         
+
 
 Total resource footprint: 20MB disk + 50-100MB RAM
 ```
 
-### Bitwarden (Official) Architecture (Full Stack)
+Bitwarden (Official) Architecture (Full Stack)
 
 ```
-┌──────────────────────────────────────────────────┐
-│ Client Layer (Browser/Mobile/CLI)                │
-├──────────────────────────────────────────────────┤
-│ Load Balancer (nginx/haproxy)                    │
-├──────────────────────────────────────────────────┤
-│ Bitwarden API Container (~200MB)                 │
-│ Bitwarden Web Vault Container (~150MB)           │
-│ Bitwarden Identity Container (~100MB)            │
-│ Bitwarden Admin Portal Container (~80MB)         │
-├──────────────────────────────────────────────────┤
-│ Background Service (job queue processor)         │
-├──────────────────────────────────────────────────┤
-│ Database: Microsoft SQL Server or PostgreSQL     │
-│ ├─ Vault data                                    │
-│ ├─ Organization policies                        │
-│ └─ User accounts and permissions                 │
-├──────────────────────────────────────────────────┤
-│ Persistent Storage                               │
-│ ├─ Database (10GB+ for 1000 users)              │
-│ ├─ Attachment storage                           │
-│ └─ Encryption keys                              │
-└──────────────────────────────────────────────────┘
+
+ Client Layer (Browser/Mobile/CLI)                
+
+ Load Balancer (nginx/haproxy)                    
+
+ Bitwarden API Container (~200MB)                 
+ Bitwarden Web Vault Container (~150MB)           
+ Bitwarden Identity Container (~100MB)            
+ Bitwarden Admin Portal Container (~80MB)         
+
+ Background Service (job queue processor)         
+
+ Database: Microsoft SQL Server or PostgreSQL     
+  Vault data                                    
+  Organization policies                        
+  User accounts and permissions                 
+
+ Persistent Storage                               
+  Database (10GB+ for 1000 users)              
+  Attachment storage                           
+  Encryption keys                              
+
 
 Total resource footprint: 500MB+ disk + 2-4GB RAM
 Scaling: Requires external database for multiple servers
 ```
 
-## Installation Walkthrough with Production Hardening
+Installation Walkthrough with Production Hardening
 
-### Vaultwarden Production Deployment
+Vaultwarden Production Deployment
 
 ```bash
-# 1. Create data directory with proper permissions
+1. Create data directory with proper permissions
 mkdir -p /srv/vaultwarden/data
 chown -R nobody:nobody /srv/vaultwarden
 chmod 700 /srv/vaultwarden/data
 
-# 2. Create docker-compose.yml
+2. Create docker-compose.yml
 cat > /srv/vaultwarden/docker-compose.yml <<'EOF'
 version: '3'
 services:
@@ -312,15 +312,15 @@ networks:
     driver: bridge
 EOF
 
-# 3. Generate secure admin token
+3. Generate secure admin token
 export ADMIN_TOKEN=$(openssl rand -base64 48)
 export DB_PASSWORD=$(openssl rand -base64 32)
 
-# 4. Launch services
+4. Launch services
 cd /srv/vaultwarden
 docker-compose up -d
 
-# 5. Configure reverse proxy (nginx)
+5. Configure reverse proxy (nginx)
 cat > /etc/nginx/sites-available/vaultwarden <<'EOF'
 server {
     listen 443 ssl http2;
@@ -363,49 +363,49 @@ server {
 }
 EOF
 
-# 6. Enable site and reload
+6. Enable site and reload
 ln -s /etc/nginx/sites-available/vaultwarden /etc/nginx/sites-enabled/
 nginx -t && systemctl reload nginx
 
-# 7. Setup automatic SSL renewal
+7. Setup automatic SSL renewal
 certbot certonly --nginx -d vault.example.com
 ```
 
-### Bitwarden Official Deployment
+Bitwarden Official Deployment
 
 ```bash
-# 1. Create installation directory
+1. Create installation directory
 mkdir -p /opt/bitwarden && cd /opt/bitwarden
 
-# 2. Download and extract official script
+2. Download and extract official script
 curl -L -o bitwarden.sh https://go.btwrd.co/bsh
 chmod +x bitwarden.sh
 
-# 3. Run installation wizard
+3. Run installation wizard
 ./bitwarden.sh install
 
-# Interactive prompts request:
-# - Installation ID (leave blank for random)
-# - Domain name (vault.company.com)
-# - Certificate path or Let's Encrypt
-# - Database type (defaults to MSSQL, can select PostgreSQL)
-# - HTTPS configuration
+Interactive prompts request:
+- Installation ID (leave blank for random)
+- Domain name (vault.company.com)
+- Certificate path or Let's Encrypt
+- Database type (defaults to MSSQL, can select PostgreSQL)
+- HTTPS configuration
 
-# 4. Configure environment
+4. Configure environment
 cat > .env.override <<'EOF'
-# Licensing
+Licensing
 bw_enable_premium=true
 bw_license_certificate_path=/path/to/cert.pfx
 
-# Database (if not MSSQL)
+Database (if not MSSQL)
 database_type=postgres
 postgres_version=13
 postgres_password=SecurePassword123!
 
-# Identity provider
+Identity provider
 identityserver_enabled=true
 
-# Email configuration (SMTP)
+Email configuration (SMTP)
 mail_provider=smtp
 mail_smtp_host=smtp.gmail.com
 mail_smtp_port=587
@@ -414,83 +414,83 @@ mail_smtp_password=app-specific-password
 mail_smtp_from=noreply@company.com
 EOF
 
-# 5. Build and start
+5. Build and start
 ./bitwarden.sh build
 ./bitwarden.sh start
 
-# 6. Access admin portal
-# https://vault.company.com/admin
-# Login with generated admin token from installation
+6. Access admin portal
+https://vault.company.com/admin
+Login with generated admin token from installation
 
-# 7. Configure users and organizations
-# Create organization
-# Invite users via email
-# Configure policies (optional)
+7. Configure users and organizations
+Create organization
+Invite users via email
+Configure policies (optional)
 ```
 
-## Migration Between Implementations
+Migration Between Implementations
 
-### Exporting from Bitwarden Cloud to Self-Hosted
+Exporting from Bitwarden Cloud to Self-Hosted
 
 ```bash
-# 1. Export from web vault
-# Login at vault.bitwarden.com
-# Settings → Data Export → File format (JSON)
-# Download encrypted export
+1. Export from web vault
+Login at vault.bitwarden.com
+Settings → Data Export → File format (JSON)
+Download encrypted export
 
-# 2. Or use Bitwarden CLI
+2. Or use Bitwarden CLI
 bw login your@email.com
 bw export --output vault_export.json
 
-# 3. Create new account on self-hosted instance
-# Visit https://your-vault.example.com
-# Register new account
+3. Create new account on self-hosted instance
+Visit https://your-vault.example.com
+Register new account
 
-# 4. Import data
+4. Import data
 bw config server https://your-vault.example.com
 bw login
 bw import bitwarden vault_export.json
 
-# 5. Verify all items imported
+5. Verify all items imported
 bw list items --search ""
 ```
 
-### Migrating Between Vaultwarden and Official Bitwarden
+Migrating Between Vaultwarden and Official Bitwarden
 
 ```bash
-# Both support JSON export format
-# Export from Vaultwarden:
+Both support JSON export format
+Export from Vaultwarden:
 bw export --output export.json
 
-# Import to Official Bitwarden:
+Import to Official Bitwarden:
 bw config server https://official-bitwarden.com
 bw login
 bw import bitwarden export.json
 
-# No data loss—all passwords, notes, and metadata transfers
+No data loss, all passwords, notes, and metadata transfers
 ```
 
-## Cost Analysis (Annual, 2026 Pricing)
+Cost Analysis (Annual, 2026 Pricing)
 
-### Self-Hosted Vaultwarden
+Self-Hosted Vaultwarden
 - Server costs: $4-8/month ($48-96/year) for VPS
 - Domain registration: $12-15/year
 - SSL certificate: Free (Let's Encrypt)
-- **Total: $60-111/year for unlimited users on one instance**
+- Total: $60-111/year for unlimited users on one instance
 
-### Self-Hosted Bitwarden (Official)
+Self-Hosted Bitwarden (Official)
 - Server costs: $50-100/month for sufficient resources ($600-1200/year)
 - Domain registration: $12-15/year
 - License costs: Free for single user; $3-5 per organization user per month
-- **Total: $612-1500+/year depending on team size**
+- Total: $612-1500+/year depending on team size
 
-### Bitwarden Cloud
+Bitwarden Cloud
 - Personal: Free (basic features)
 - Premium: $10/year (US pricing, 2026)
 - Team/Organization: $3-5 per user per month minimum 5 users
-- **Total: $10/year (personal) to $180-300+/year (team)**
+- Total: $10/year (personal) to $180-300+/year (team)
 
-### Cost-Benefit Decision Matrix
+Cost-Benefit Decision Matrix
 
 | Scenario | Recommendation | Annual Cost |
 |----------|-----------------|-------------|
@@ -499,9 +499,9 @@ bw import bitwarden export.json
 | Small business (5-20 users) | Vaultwarden if technical, Bitwarden Cloud if non-technical | $250 or $900-1500 |
 | Enterprise (50+ users) | Bitwarden Official | $1500-5000+ |
 
-## Performance and Scaling
+Performance and Scaling
 
-### Vaultwarden Performance Metrics
+Vaultwarden Performance Metrics
 
 - Single instance handles 500-1000 concurrent users
 - API response time: 50-100ms for password lookup
@@ -509,7 +509,7 @@ bw import bitwarden export.json
 - Scaling: PostgreSQL backend supports multiple Vaultwarden instances behind load balancer
 - Bottleneck: Database concurrent connections (PostgreSQL default 100 connections)
 
-### Bitwarden Official Performance
+Bitwarden Official Performance
 
 - Architected for enterprise scale (10,000+ users)
 - API response time: 30-80ms (generally faster due to optimization)
@@ -519,68 +519,68 @@ bw import bitwarden export.json
 
 For personal or small team use, Vaultwarden performance exceeds practical needs.
 
-## Backup and Disaster Recovery
+Backup and Disaster Recovery
 
-### Vaultwarden Backup Strategy
+Vaultwarden Backup Strategy
 
 ```bash
-# Daily encrypted backup
+Daily encrypted backup
 #!/bin/bash
 BACKUP_DIR="/backups/vaultwarden"
 TODAY=$(date +%Y%m%d)
 
-# Stop container briefly for consistent backup
+Stop container briefly for consistent backup
 docker stop vaultwarden
 
-# Backup data directory
+Backup data directory
 tar --aes-256-cbc -cf "$BACKUP_DIR/vw_backup_$TODAY.tar" /srv/vaultwarden/data
 docker start vaultwarden
 
-# Cleanup old backups (keep 30 days)
+Cleanup old backups (keep 30 days)
 find $BACKUP_DIR -name "*.tar" -mtime +30 -delete
 
-# Offsite backup (to S3 or B2)
+Offsite backup (to S3 or B2)
 aws s3 cp "$BACKUP_DIR/vw_backup_$TODAY.tar" s3://backup-bucket/vaultwarden/
 ```
 
-### Bitwarden Official Backup Strategy
+Bitwarden Official Backup Strategy
 
 ```bash
-# Bitwarden maintains its own backup mechanisms
+Bitwarden maintains its own backup mechanisms
 ./bitwarden.sh backup
-# Creates timestamped backup of entire environment
+Creates timestamped backup of entire environment
 
-# Additional database backup for MSSQL
-# Use native SQL Server backup tools or pg_dump for PostgreSQL
+Additional database backup for MSSQL
+Use native SQL Server backup tools or pg_dump for PostgreSQL
 ```
 
 Vaultwarden's simpler architecture makes disaster recovery more straightforward.
 
 Most individual users and small teams find Vaultwarden covers their needs adequately. The trade-off between features and resources favors Vaultwarden for personal deployments. The official server becomes necessary when organizational requirements exceed what the lightweight implementation provides.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Can I use Bitwarden and the second tool together?**
+Can I use Bitwarden and the second tool together?
 
 Yes, many users run both tools simultaneously. Bitwarden and the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.
 
-**Which is better for beginners, Bitwarden or the second tool?**
+Which is better for beginners, Bitwarden or the second tool?
 
 It depends on your background. Bitwarden tends to work well if you prefer a guided experience, while the second tool gives more control for users comfortable with configuration. Try the free tier or trial of each before committing to a paid plan.
 
-**Is Bitwarden or the second tool more expensive?**
+Is Bitwarden or the second tool more expensive?
 
 Pricing varies by tier and usage patterns. Both offer free or trial options to start. Check their current pricing pages for the latest plans, since AI tool pricing changes frequently. Factor in your actual usage volume when comparing costs.
 
-**How often do Bitwarden and the second tool update their features?**
+How often do Bitwarden and the second tool update their features?
 
 Both tools release updates regularly, often monthly or more frequently. Feature sets and capabilities change fast in this space. Check each tool's changelog or blog for the latest additions before making a decision based on any specific feature.
 
-**What happens to my data when using Bitwarden or the second tool?**
+What happens to my data when using Bitwarden or the second tool?
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
-## Related Articles
+Related Articles
 
 - [How to Self-Host Bitwarden Vaultwarden: Complete Setup Guide](/how-to-self-host-bitwarden-vaultwarden-complete-setup-guide/)
 - [Bitwarden Self-Hosted Setup Guide](/bitwarden-self-hosted-setup-guide/)
@@ -588,5 +588,5 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [How To Set Up Jitsi Meet Self Hosted Encrypted Video Confere](/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
 - [How To Set Up Self Hosted Matrix Synapse Server For Private](/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

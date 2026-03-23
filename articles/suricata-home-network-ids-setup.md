@@ -17,44 +17,44 @@ voice-checked: true
 
 Suricata is an open-source network threat detection engine that can analyze all traffic passing through your home network in real time. It identifies known malware signatures, suspicious connection patterns, data exfiltration attempts, and policy violations using rule sets maintained by the community and commercial security teams.
 
-This guide sets up Suricata in IDS (Intrusion Detection System) mode on a Linux host that sees your network traffic — either a router running OpenWrt, a Pi-hole server, or any always-on Linux machine positioned to see your LAN traffic.
+This guide sets up Suricata in IDS (Intrusion Detection System) mode on a Linux host that sees your network traffic. either a router running OpenWrt, a Pi-hole server, or any always-on Linux machine positioned to see your LAN traffic.
 
-## Architecture Options
+Architecture Options
 
-**Inline mode (IPS)**: Suricata sits in the traffic path and can drop packets. Requires the machine to be a router or bridge device.
+Inline mode (IPS): Suricata sits in the traffic path and can drop packets. Requires the machine to be a router or bridge device.
 
-**Passive/sniffing mode (IDS)**: Suricata listens on a network interface and analyzes a copy of traffic. Cannot block but generates alerts. Suitable for any machine on your network.
+Passive/sniffing mode (IDS): Suricata listens on a network interface and analyzes a copy of traffic. Cannot block but generates alerts. Suitable for any machine on your network.
 
-This guide covers passive mode — the safer starting point. You see what's happening without risking network disruption from misconfigured drop rules.
+This guide covers passive mode. the safer starting point. You see what's happening without risking network disruption from misconfigured drop rules.
 
-## Installation
+Installation
 
-### Debian/Ubuntu
+Debian/Ubuntu
 
 ```bash
 sudo add-apt-repository ppa:oisf/suricata-stable
 sudo apt update
 sudo apt install suricata
 
-# Verify installation
+Verify installation
 suricata --version
 ```
 
-### From source (latest version)
+From source (latest version)
 
 ```bash
 sudo apt install libpcre3-dev libpcre3 libnet1-dev libyaml-dev \
   libcap-ng-dev libmagic-dev libjansson-dev libnspr4-dev \
   libnss3-dev liblz4-dev rustc cargo
 
-# Download and build
+Download and build
 wget https://www.openinfosecfoundation.org/download/suricata-7.0.x.tar.gz
 tar -xzf suricata-7.0.x.tar.gz && cd suricata-7.0.x
 ./configure --enable-nfqueue --prefix=/usr --sysconfdir=/etc --localstatedir=/var
 make && sudo make install-conf
 ```
 
-## Step 1: Configure Suricata
+Step 1: Configure Suricata
 
 The main configuration file is `/etc/suricata/suricata.yaml`. Key sections to configure:
 
@@ -62,7 +62,7 @@ The main configuration file is `/etc/suricata/suricata.yaml`. Key sections to co
 sudo nano /etc/suricata/suricata.yaml
 ```
 
-### Set your home network range
+Set your home network range
 
 ```yaml
 vars:
@@ -72,7 +72,7 @@ vars:
     # Add other segments specific to your network
 ```
 
-### Configure the capture interface
+Configure the capture interface
 
 ```yaml
 af-packet:
@@ -88,10 +88,10 @@ Check your interface name:
 
 ```bash
 ip link show
-# Look for your LAN interface (commonly eth0, enp3s0, br-lan on routers)
+Look for your LAN interface (commonly eth0, enp3s0, br-lan on routers)
 ```
 
-### Configure logging
+Configure logging
 
 ```yaml
 outputs:
@@ -119,110 +119,110 @@ outputs:
             enabled: no
 ```
 
-## Step 2: Install Rule Sets
+Step 2: Install Rule Sets
 
 Suricata needs rule files to detect threats. Use `suricata-update` to manage rules:
 
 ```bash
-# Update the default rule sources
+Update the default rule sources
 sudo suricata-update update-sources
 
-# List available rule sources
+List available rule sources
 sudo suricata-update list-sources
 
-# Enable free high-quality rule sets
+Enable free high-quality rule sets
 sudo suricata-update enable-source et/open          # Emerging Threats Open
 sudo suricata-update enable-source oisf/trafficid   # Traffic identification
 
-# Update rules
+Update rules
 sudo suricata-update
 
-# Verify rules loaded
+Verify rules loaded
 sudo suricata-update list-enabled-sources
 ls /var/lib/suricata/rules/
 ```
 
 The Emerging Threats Open ruleset contains over 35,000 rules covering known malware, C2 communication, exploit attempts, and suspicious behavior patterns.
 
-## Step 3: Test the Configuration
+Step 3: Test the Configuration
 
 ```bash
-# Test configuration file for syntax errors
+Test configuration file for syntax errors
 sudo suricata -T -c /etc/suricata/suricata.yaml
 
-# If output shows: "Configuration provided was successfully loaded."
-# the configuration is valid.
+If output shows: "Configuration provided was successfully loaded."
+the configuration is valid.
 ```
 
-## Step 4: Start Suricata
+Step 4: Start Suricata
 
 ```bash
-# Start in IDS mode on your interface
+Start in IDS mode on your interface
 sudo systemctl enable suricata
 sudo systemctl start suricata
 
-# Check it's running
+Check it's running
 sudo systemctl status suricata
 
-# Watch alerts in real time
+Watch alerts in real time
 sudo tail -f /var/log/suricata/fast.log
 ```
 
 You should see something like:
 ```
-03/21/2026-14:23:01.123456  [**] [1:2001219:20] ET SCAN Potential SSH Scan [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.1.50:52341 -> 93.184.216.34:22
+03/21/2026-14:23:01.123456  [] [1:2001219:20] ET SCAN Potential SSH Scan [] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.1.50:52341 -> 93.184.216.34:22
 ```
 
-## Step 5: Test with a Known-Bad Signature
+Step 5: Test with a Known-Bad Signature
 
 Trigger a test rule to verify detection is working:
 
 ```bash
-# Suricata includes a test rule (sid 2100498) that triggers on a known test string
-# Send it as an HTTP request to trigger the rule
+Suricata includes a test rule (sid 2100498) that triggers on a known test string
+Send it as an HTTP request to trigger the rule
 curl http://testmyids.com/
 
-# Check for the alert
+Check for the alert
 sudo grep "2100498" /var/log/suricata/fast.log
 ```
 
-## Step 6: Analyze Alerts with jq
+Step 6: Analyze Alerts with jq
 
 The EVE JSON log is machine-readable and can be analyzed with `jq`:
 
 ```bash
-# View all alerts from the last hour
+View all alerts from the last hour
 sudo jq 'select(.event_type=="alert")' /var/log/suricata/eve.json | \
   jq '{timestamp, src_ip, dest_ip, proto, alert: .alert.signature}'
 
-# Count alerts by signature
+Count alerts by signature
 sudo cat /var/log/suricata/eve.json | \
   jq -r 'select(.event_type=="alert") | .alert.signature' | \
   sort | uniq -c | sort -rn | head -20
 
-# Find all DNS queries made by a specific IP
+Find all DNS queries made by a specific IP
 sudo jq 'select(.event_type=="dns" and .src_ip=="192.168.1.50")' \
   /var/log/suricata/eve.json | jq '.dns.rrname'
 
-# Find all TLS connections to unusual ports
+Find all TLS connections to unusual ports
 sudo jq 'select(.event_type=="tls" and .dest_port!=443)' \
   /var/log/suricata/eve.json | jq '{timestamp, src_ip, dest_ip, dest_port, tls}'
 ```
 
-## Step 7: Suppress False Positives
+Step 7: Suppress False Positives
 
 New Suricata installations generate many false positives. Suppress rules that are noisy and irrelevant to your environment:
 
 Create `/etc/suricata/threshold.conf`:
 
 ```
-# Suppress a specific rule (by SID) for all sources
+Suppress a specific rule (by SID) for all sources
 suppress gen_id 1, sig_id 2013028
 
-# Suppress a rule for a specific source IP (e.g., your media server)
+Suppress a rule for a specific source IP (e.g., your media server)
 suppress gen_id 1, sig_id 2012887, track by_src, ip 192.168.1.200
 
-# Rate-limit alerts from a specific rule
+Rate-limit alerts from a specific rule
 threshold gen_id 1, sig_id 2009582, type threshold, track by_src, count 5, seconds 60
 ```
 
@@ -231,20 +231,20 @@ Reference this file in `suricata.yaml`:
 threshold-file: /etc/suricata/threshold.conf
 ```
 
-## Step 8: Automate Rule Updates
+Step 8: Automate Rule Updates
 
 ```bash
-# Set up daily rule updates via cron
+Set up daily rule updates via cron
 echo "0 2 * * * root /usr/bin/suricata-update && systemctl reload suricata" \
   | sudo tee /etc/cron.d/suricata-update
 ```
 
-## Viewing Logs with Kibana or Grafana (Optional)
+Viewing Logs with Kibana or Grafana (Optional)
 
 For a graphical dashboard, the ELK Stack (Elasticsearch + Logstash + Kibana) or Grafana + Loki can ingest Suricata's EVE JSON logs:
 
 ```bash
-# Quick setup with Filebeat to ship logs to Elasticsearch
+Quick setup with Filebeat to ship logs to Elasticsearch
 sudo apt install filebeat
 sudo filebeat modules enable suricata
 sudo filebeat setup
@@ -253,7 +253,7 @@ sudo systemctl start filebeat
 
 Kibana provides pre-built dashboards for Suricata that show alert trends, top sources, protocol breakdowns, and DNS analysis.
 
-## Related Articles
+Related Articles
 
 - [Is Someone Monitoring My Home WiFi Network? How](/is-someone-monitoring-my-home-wifi-network-how-to-check/)
 - [Create Separate Network Segment for Smart Home Isolating](/how-to-create-separate-network-segment-for-smart-home-isolat/)
@@ -261,27 +261,27 @@ Kibana provides pre-built dashboards for Suricata that show alert trends, top so
 - [Vpn For Remote Access To Home Network While Traveling](/vpn-for-remote-access-to-home-network-while-traveling/)
 - [Home Network Privacy Pihole Dns Filtering Guide 2026](/home-network-privacy-pihole-dns-filtering-guide-2026/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**How long does it take to guide?**
+How long does it take to guide?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-**What are the most common mistakes to avoid?**
+What are the most common mistakes to avoid?
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
 
-**Do I need prior experience to follow this guide?**
+Do I need prior experience to follow this guide?
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-**Can I adapt this for a different tech stack?**
+Can I adapt this for a different tech stack?
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-**Where can I get help if I run into issues?**
+Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 

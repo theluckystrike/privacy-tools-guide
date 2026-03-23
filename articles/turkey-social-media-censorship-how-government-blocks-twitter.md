@@ -16,7 +16,7 @@ intent-checked: true
 
 {% raw %}
 
-## Table of Contents
+Table of Contents
 
 - [How Turkey Blocks Social Media: Technical Overview](#how-turkey-blocks-social-media-technical-overview)
 - [DNS-Level Blocking](#dns-level-blocking)
@@ -25,27 +25,27 @@ intent-checked: true
 - [Content Delivery Network Blocking](#content-delivery-network-blocking)
 - [Current State in 2026](#current-state-in-2026)
 
-## How Turkey Blocks Social Media: Technical Overview
+How Turkey Blocks Social Media: Technical Overview
 
 Turkey maintains one of the most sophisticated internet censorship systems in the Western world, with the Information and Communication Technologies Authority (BTK) blocking access to major social media platforms. The blocking methods include DNS hijacking, IP address blocking, deep packet inspection (DPI), and SNI (Server Name Indication) filtering. This guide explains each blocking technique and provides practical workarounds for developers and power users who need to access blocked services.
 
-## DNS-Level Blocking
+DNS-Level Blocking
 
 The most common blocking method in Turkey involves DNS hijacking and DNS filtering. When you attempt to resolve a blocked domain like twitter.com, the BTK's DNS servers return incorrect IP addresses or NXDOMAIN responses. This method is relatively easy to detect and bypass.
 
 To verify if DNS blocking is affecting your connection, use tools like `dig` or `nslookup`:
 
 ```bash
-# Check DNS resolution for twitter.com
+Check DNS resolution for twitter.com
 dig twitter.com
 
-# Compare results with a known working DNS server
+Compare results with a known working DNS server
 dig @1.1.1.1 twitter.com
 ```
 
 If the results differ significantly, DNS blocking is likely active. Turkish ISPs typically intercept DNS requests on port 53 and redirect them to BTK-controlled resolvers that return blocked IP addresses.
 
-### DNS-over-HTTPS Bypass
+DNS-over-HTTPS Bypass
 
 The most effective countermeasure is using DNS-over-HTTPS (DoH), which encrypts DNS queries and prevents ISP-level interception:
 
@@ -65,41 +65,41 @@ resolveDNS('twitter.com').then(ips => console.log(ips));
 
 Many browsers now support DoH natively. In Firefox, navigate to Settings > Privacy & Security > DNS over HTTPS and enable it. Chrome users can enable DoH in Settings > Privacy and security > Security > Use secure DNS.
 
-## IP Address Blocking
+IP Address Blocking
 
 Turkey blocks the IP addresses of social media platforms directly at the ISP level. When you attempt to connect to a blocked IP, the connection is dropped or reset. This affects both IPv4 and increasingly IPv6 addresses.
 
-### Identifying Blocked IPs
+Identifying Blocked IPs
 
 ```bash
-# Test connectivity to Twitter's IP ranges
-# Twitter uses multiple CDNs and edge servers
+Test connectivity to Twitter's IP ranges
+Twitter uses multiple CDNs and edge servers
 
-# Check current IP for twitter.com
+Check current IP for twitter.com
 host twitter.com
 
-# Test connectivity to specific IPs
+Test connectivity to specific IPs
 nc -zv 104.244.42.1 443
 nc -zv 104.244.42.193 443
 ```
 
 Twitter maintains a large, distributed network of IP addresses across multiple ranges. When the government blocks certain IPs, Twitter often migrates to new address ranges, creating a cat-and-mouse game. The blocked IP lists change frequently, with BTK maintaining approximately 100,000+ blocked domains and IPs as of 2026.
 
-## Deep Packet Inspection and SNI Filtering
+Deep Packet Inspection and SNI Filtering
 
 The most sophisticated blocking method uses deep packet inspection to analyze encrypted TLS connections. When you connect to a website, the TLS ClientHello message contains the Server Name Indication (SNI), which specifies the target domain. Turkish firewalls can filter based on SNI even when the connection is encrypted:
 
 ```python
-# Python: SNI is visible in TLS ClientHello
-# This is what the Turkish firewall inspects:
+Python: SNI is visible in TLS ClientHello
+This is what the Turkish firewall inspects:
 
 import socket
 import ssl
 
-# When you connect to twitter.com:443, the TLS ClientHello contains:
-# SNI: twitter.com
-# This is sent BEFORE encryption is established
-# Turkish DPI can block based on this plaintext field
+When you connect to twitter.com:443, the TLS ClientHello contains:
+SNI: twitter.com
+This is sent BEFORE encryption is established
+Turkish DPI can block based on this plaintext field
 
 context = ssl.create_default_context()
 with socket.create_connection(("twitter.com", 443)) as sock:
@@ -107,20 +107,20 @@ with socket.create_connection(("twitter.com", 443)) as sock:
         print(ssock.version())
 ```
 
-### Obfuscation Techniques
+Obfuscation Techniques
 
 To bypass SNI filtering, you need obfuscation techniques that hide the target domain:
 
-**1. Domain Fronting**
+1. Domain Fronting
 
 Domain fronting uses a CDN or cloud provider as an intermediary. The visible SNI shows a different domain (like a cloudflare.com subdomain) while the actual destination is different:
 
 ```python
-# Python: Domain fronting example with requests
+Python: Domain fronting example with requests
 import requests
 
-# The visible connection goes to cdn.example.com
-# But the actual Host header routes to twitter.com
+The visible connection goes to cdn.example.com
+But the actual Host header routes to twitter.com
 response = requests.get(
     'https://cdn.example.com/target/content',
     headers={
@@ -135,23 +135,23 @@ response = requests.get(
 )
 ```
 
-**2. TLS Hiding (Obfuscated Servers)**
+2. TLS Hiding (Obfuscated Servers)
 
 Tools like Shadowsocks,cloak, and obfs4 create obfuscated tunnels that make encrypted traffic look like random noise:
 
 ```bash
-# Set up obfuscated Shadowsocks server
-# Server side (VPS):
+Set up obfuscated Shadowsocks server
+Server side (VPS):
 pip install shadowsocks[rust]
 ss-server -m aes-256-gcm -p 8388 -k yourpassword --obfs http --obfs-host twitter.com
 
-# Client side:
+Client side:
 ss-local -m aes-256-gcm -p 8388 -k yourpassword -d twitter.com --obfs http --obfs-host twitter.com
 ```
 
 The traffic now appears as normal HTTP to the Turkish firewall, but the content is encrypted and destination is hidden.
 
-## Content Delivery Network Blocking
+Content Delivery Network Blocking
 
 Turkey has increasingly targeted the CDNs that social media platforms use. When blocking Twitter or YouTube directly proves difficult, authorities block the CDNs that deliver their content, such as:
 
@@ -160,14 +160,14 @@ Turkey has increasingly targeted the CDNs that social media platforms use. When 
 - `fbcdn.net` (Facebook content delivery)
 - `akamaihd.net` (General CDN services)
 
-### Practical Bypass Methods
+Practical Bypass Methods
 
-**Using Alternative DNS Providers**
+Using Alternative DNS Providers
 
 Set your system to use DoH-compatible DNS resolvers:
 
 ```bash
-# Linux: Configure systemd-resolved for DoH
+Linux: Configure systemd-resolved for DoH
 sudo mkdir -p /etc/systemd/resolved.conf.d
 sudo tee /etc/systemd/resolved.conf.d/doh.conf << EOF
 [Resolve]
@@ -178,7 +178,7 @@ EOF
 sudo systemctl restart systemd-resolved
 ```
 
-**Configure Browser for DoH**
+Configure Browser for DoH
 
 In Firefox, enter `about:config` and set:
 
@@ -187,19 +187,19 @@ network.trr.mode = 3  # Enable DoH with fallback
 network.trr.uri = https://cloudflare-dns.com/dns-query
 ```
 
-**Using a Personal VPN**
+Using a Personal VPN
 
 For developers building applications, a self-hosted VPN on a foreign VPS provides reliable access:
 
 ```bash
-# WireGuard server setup on a non-Turkish VPS
-# Install WireGuard
+WireGuard server setup on a non-Turkish VPS
+Install WireGuard
 sudo apt install wireguard
 
-# Generate keys
+Generate keys
 wg genkey | tee privatekey | wg pubkey > publickey
 
-# Server configuration (/etc/wireguard/wg0.conf)
+Server configuration (/etc/wireguard/wg0.conf)
 [Interface]
 PrivateKey = <your-private-key>
 Address = 10.0.0.1/24
@@ -215,7 +215,7 @@ AllowedIPs = 0.0.0.0/0
 
 Connect to this server from within Turkey, and all your traffic exits from the foreign VPS, bypassing Turkish filtering.
 
-## Current State in 2026
+Current State in 2026
 
 As of 2026, Turkey continues to employ all these blocking methods, with periodic escalations during politically sensitive periods. The BTK maintains an updated blocklist that includes thousands of domains, and ISPs are required to implement blocking within 24 hours of receiving an order.
 
@@ -231,7 +231,7 @@ The most reliable workarounds remain:
 For developers building applications that must work in Turkey, implementing multiple fallback mechanisms and detecting blocking states programmatically ensures resilience:
 
 ```python
-# Python: Detect if connection is being blocked
+Python: Detect if connection is being blocked
 import socket
 import requests
 
@@ -265,29 +265,29 @@ print(f"Twitter access status: {status}")
 
 Understanding these technical mechanisms allows developers to build more resilient applications and provides power users with practical tools to maintain access to information.
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Who is this article written for?**
+Who is this article written for?
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-**How current is the information in this article?**
+How current is the information in this article?
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
-**Does Go offer a free tier?**
+Does Go offer a free tier?
 
 Most major tools offer some form of free tier or trial period. Check Go's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-**How do I get started quickly?**
+How do I get started quickly?
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-**What is the learning curve like?**
+What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Related Articles
+Related Articles
 
 - [Register Social Media Accounts Without Providing Real Phone](/how-to-register-social-media-accounts-without-providing-real/)
 - [How To Safely Exchange Social Media Handles With Dating](/how-to-safely-exchange-social-media-handles-with-dating-matc/)
@@ -295,5 +295,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Social Media Will What Legal Authority Executor Has Over](/social-media-will-what-legal-authority-executor-has-over-you/)
 - [How to Block Social Media Share Button Tracking on Websites](/how-to-block-social-media-share-button-tracking-on-websites/)
 - [AI Tools for Social Media Analytics: A Practical Guide](https://bestremotetools.com/ai-tools-for-social-media-analytics/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

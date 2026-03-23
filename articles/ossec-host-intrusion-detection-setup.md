@@ -15,59 +15,59 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# How to Use OSSEC for Host Intrusion Detection
+How to Use OSSEC for Host Intrusion Detection
 
 OSSEC is a host-based intrusion detection system (HIDS) that monitors your server in real time. It watches log files for suspicious patterns, checks file integrity against known-good baselines, runs rootkit detection scans, and sends alerts when something changes. Unlike network IDS (which monitors traffic), OSSEC runs on the host and sees inside the system.
 
-## What OSSEC Monitors
+What OSSEC Monitors
 
-- **File Integrity Monitoring (FIM):** Alerts when a monitored file is added, modified, or deleted
-- **Log Analysis:** Scans system logs for attack patterns (SSH brute force, su attempts, Apache errors)
-- **Rootcheck:** Detects rootkits, hidden files, and suspicious kernel modules
-- **Policy monitoring:** Checks for insecure configurations
+- File Integrity Monitoring (FIM): Alerts when a monitored file is added, modified, or deleted
+- Log Analysis: Scans system logs for attack patterns (SSH brute force, su attempts, Apache errors)
+- Rootcheck: Detects rootkits, hidden files, and suspicious kernel modules
+- Policy monitoring: Checks for insecure configurations
 
-## Installation
+Installation
 
 ```bash
-# Install dependencies
+Install dependencies
 sudo apt install build-essential libpcre2-dev libz-dev libssl-dev
 
-# Download and verify
+Download and verify
 wget https://github.com/ossec/ossec-hids/archive/refs/tags/3.7.0.tar.gz
 sha256sum 3.7.0.tar.gz
-# Verify against published hash at ossec.net
+Verify against published hash at ossec.net
 
 tar xzf 3.7.0.tar.gz
 cd ossec-hids-3.7.0
 
-# Interactive installer
+Interactive installer
 sudo ./install.sh
 ```
 
 During installation:
-- Choose **local** for a standalone system (or **server** if you have multiple agents)
+- Choose local for a standalone system (or server if you have multiple agents)
 - Accept defaults for directories: `/var/ossec`
 - When asked about email, configure now or leave blank and edit config later
 - Enable active response for common attacks (optional, review before enabling)
 
 ```bash
-# Start OSSEC
+Start OSSEC
 sudo /var/ossec/bin/ossec-control start
 
-# Verify it is running
+Verify it is running
 sudo /var/ossec/bin/ossec-control status
-# ossec-monitord is running...
-# ossec-logcollector is running...
-# ossec-syscheckd is running...
-# ossec-analysisd is running...
+ossec-monitord is running...
+ossec-logcollector is running...
+ossec-syscheckd is running...
+ossec-analysisd is running...
 ```
 
-## Configuration Overview
+Configuration Overview
 
 All configuration is in `/var/ossec/etc/ossec.conf`:
 
 ```xml
-<!-- /var/ossec/etc/ossec.conf — key sections -->
+<!-- /var/ossec/etc/ossec.conf. key sections -->
 
 <ossec_config>
 
@@ -133,7 +133,7 @@ All configuration is in `/var/ossec/etc/ossec.conf`:
 </ossec_config>
 ```
 
-## Adding Custom Rules
+Adding Custom Rules
 
 OSSEC rules are XML. Custom rules go in `/var/ossec/rules/local_rules.xml`.
 
@@ -173,27 +173,27 @@ OSSEC rules are XML. Custom rules go in `/var/ossec/rules/local_rules.xml`.
 ```
 
 ```bash
-# Validate rules and restart
+Validate rules and restart
 sudo /var/ossec/bin/ossec-control restart
 
-# Test a rule against sample log data
+Test a rule against sample log data
 echo "Mar 22 10:30:00 server sshd[1234]: Invalid user admin from 185.234.219.45" \
   | sudo /var/ossec/bin/ossec-logtest
 ```
 
-## Checking Alerts
+Checking Alerts
 
 ```bash
-# Recent alerts
+Recent alerts
 sudo tail -f /var/ossec/logs/alerts/alerts.log
 
-# Only high-severity alerts (level 7+)
+Only high-severity alerts (level 7+)
 sudo grep "level=\"[7-9]\|level=\"1[0-5]" /var/ossec/logs/alerts/alerts.xml | head -40
 
-# File integrity changes
+File integrity changes
 sudo cat /var/ossec/logs/alerts/alerts.log | grep "Integrity checksum changed"
 
-# Parse with Python
+Parse with Python
 python3 << 'EOF'
 import xml.etree.ElementTree as ET
 import sys
@@ -215,7 +215,7 @@ except ET.ParseError as e:
 EOF
 ```
 
-## Active Response
+Active Response
 
 OSSEC can automatically block IPs that trigger certain rules (like SSH brute force):
 
@@ -231,36 +231,36 @@ OSSEC can automatically block IPs that trigger certain rules (like SSH brute for
 ```
 
 ```bash
-# Verify active response scripts exist
+Verify active response scripts exist
 ls /var/ossec/active-response/bin/
-# host-deny.sh  firewall-drop.sh  route-null.sh  etc.
+host-deny.sh  firewall-drop.sh  route-null.sh  etc.
 
-# Test active response
+Test active response
 sudo /var/ossec/active-response/bin/host-deny.sh add "" 185.234.219.45 0
 ```
 
-Review active response carefully before enabling in production — false positives can lock out legitimate users.
+Review active response carefully before enabling in production. false positives can lock out legitimate users.
 
-## Scheduled Syscheck Reports
+Scheduled Syscheck Reports
 
 ```bash
-# Generate a file integrity report
+Generate a file integrity report
 sudo /var/ossec/bin/syscheck_control -u 0  # check agent 0 (local)
 sudo /var/ossec/bin/syscheck_control -l    # list monitored files
 
-# Export database of baseline hashes
+Export database of baseline hashes
 sudo /var/ossec/bin/manage_agents -l
 
-# Run rootcheck manually
+Run rootcheck manually
 sudo /var/ossec/bin/rootcheck_control -u 0
 ```
 
-## Log Rotation
+Log Rotation
 
 OSSEC logs grow fast:
 
 ```bash
-# /etc/logrotate.d/ossec
+/etc/logrotate.d/ossec
 /var/ossec/logs/alerts/*.log {
     daily
     rotate 30
@@ -274,44 +274,44 @@ OSSEC logs grow fast:
 }
 ```
 
-## Agent Mode: Monitoring Multiple Servers
+Agent Mode: Monitoring Multiple Servers
 
 For infrastructure with multiple servers, run OSSEC in manager/agent mode. The manager receives all alerts centrally; agents run on each monitored host.
 
-**On the manager server:**
+On the manager server:
 
 ```bash
-# Install OSSEC as manager
+Install OSSEC as manager
 sudo ./install.sh
-# Choose: server
+Choose: server
 
-# Add an agent
+Add an agent
 sudo /var/ossec/bin/manage_agents
-# (A)dd agent → name: web01 → IP: 10.0.1.10
-# Extract key for the agent (copy this)
+(A)dd agent → name: web01 → IP: 10.0.1.10
+Extract key for the agent (copy this)
 
-# Start OSSEC
+Start OSSEC
 sudo /var/ossec/bin/ossec-control start
 ```
 
-**On each agent host:**
+On each agent host:
 
 ```bash
-# Install OSSEC as agent
+Install OSSEC as agent
 sudo ./install.sh
-# Choose: agent
-# Manager IP: 10.0.0.5 (your manager's IP)
+Choose: agent
+Manager IP: 10.0.0.5 (your manager's IP)
 
-# Import the agent key
+Import the agent key
 sudo /var/ossec/bin/manage_agents
-# (I)mport key → paste the key from the manager
+(I)mport key → paste the key from the manager
 
 sudo /var/ossec/bin/ossec-control start
 
-# Verify the agent connected
-# On the manager:
+Verify the agent connected
+On the manager:
 sudo /var/ossec/bin/agent_control -l
-# ID: 001, Name: web01, IP: 10.0.1.10, Status: Active
+ID: 001, Name: web01, IP: 10.0.1.10, Status: Active
 ```
 
 Firewall rule needed on the manager:
@@ -324,7 +324,7 @@ All alerts from agents appear centralized in `/var/ossec/logs/alerts/alerts.log`
 
 ---
 
-## Exporting OSSEC Alerts to a SIEM
+Exporting OSSEC Alerts to a SIEM
 
 Forward OSSEC alerts to a centralized SIEM (Elastic, Splunk, or Graylog) in real time using syslog output:
 
@@ -347,8 +347,8 @@ sudo /var/ossec/bin/ossec-control restart
 For JSON output suitable for Elasticsearch/Graylog GELF:
 
 ```bash
-# OSSEC does not natively output JSON, but you can parse alerts.log with a script
-# and forward via HTTP to Graylog
+OSSEC does not natively output JSON, but you can parse alerts.log with a script
+and forward via HTTP to Graylog
 
 python3 << 'EOF'
 import re, json, requests, time
@@ -367,7 +367,7 @@ def parse_alert(block: str) -> dict | None:
         "timestamp": time.time(),
     }
 
-# Tail alerts.log and forward to Graylog GELF HTTP
+Tail alerts.log and forward to Graylog GELF HTTP
 with open('/var/ossec/logs/alerts/alerts.log') as f:
     f.seek(0, 2)  # seek to end
     block = ""
@@ -387,7 +387,7 @@ EOF
 
 ---
 
-## Related Articles
+Related Articles
 
 - [How to Set Up a Honeypot for Intrusion Detection](/honeypot-intrusion-detection-guide/)
 - [How to Use Tripwire for File Integrity Monitoring](/tripwire-file-integrity-monitoring-guide/)
@@ -395,6 +395,6 @@ EOF
 - [Suricata Home Network IDS Setup Guide](/suricata-home-network-ids-setup/)
 - [How to Verify Software Supply Chain Integrity](/verify-software-supply-chain-integrity/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 {% endraw %}

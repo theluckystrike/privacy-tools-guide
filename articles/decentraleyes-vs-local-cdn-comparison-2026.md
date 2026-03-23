@@ -18,7 +18,7 @@ tags: [privacy-tools-guide, comparison]
 
 When building privacy-focused web applications or configuring your browsing environment, you have two main approaches for reducing dependency on third-party content delivery networks: the Decentraleyes browser extension and self-hosted local CDN solutions. This comparison examines both options from a developer's perspective, helping you choose the right approach for your use case.
 
-## Table of Contents
+Table of Contents
 
 - [What is Decentraleyes?](#what-is-decentraleyes)
 - [Quick Comparison](#quick-comparison)
@@ -37,7 +37,7 @@ When building privacy-focused web applications or configuring your browsing envi
 - [Monitoring and Observability](#monitoring-and-observability)
 - [Migration Path from Decentraleyes](#migration-path-from-decentraleyes)
 
-## What is Decentraleyes?
+What is Decentraleyes?
 
 Decentraleyes is a browser extension available for Firefox, Chrome, and Edge that intercepts requests to known third-party CDN domains and serves those resources locally from a bundled collection. The extension maps common JavaScript libraries and CSS frameworks to local copies, effectively blocking the tracking that occurs when your browser connects to external CDN servers.
 
@@ -46,16 +46,16 @@ The extension maintains local copies of popular libraries including jQuery, Boot
 Installation is straightforward:
 
 ```bash
-# Firefox (via addons.mozilla.org)
-# Search for "Decentraleyes" and install
+Firefox (via addons.mozilla.org)
+Search for "Decentraleyes" and install
 
-# Chrome/Edge (via chrome web store)
-# Search for "Decentraleyes" and install
+Chrome/Edge (via chrome web store)
+Search for "Decentraleyes" and install
 ```
 
 From a privacy standpoint, Decentraleyes prevents CDN servers from logging your IP address and browsing patterns. It also protects against CDN-level tracking scripts and reduces fingerprinting by ensuring consistent resource delivery regardless of which websites you visit.
 
-## Quick Comparison
+Quick Comparison
 
 | Feature | Decentraleyes | Local Cdn |
 |---|---|---|
@@ -66,22 +66,22 @@ From a privacy standpoint, Decentraleyes prevents CDN servers from logging your 
 | Pricing | See current pricing | See current pricing |
 | Platform Support | Cross-platform | Cross-platform |
 
-## What is a Local CDN?
+What is a Local CDN?
 
 A local CDN refers to self-hosting static assets on infrastructure you control. Instead of relying on Cloudflare, jsDelivr, unpkg, or similar services, you download and serve libraries from your own server or within your application bundle.
 
 There are several implementation approaches:
 
-### Option 1: Manual Download
+Option 1: Manual Download
 
 Download libraries directly and serve them from your project's `public/assets` directory:
 
 ```bash
-# Download jQuery for local hosting
+Download jQuery for local hosting
 curl -L -o jquery.min.js https://code.jquery.com/jquery-3.7.1.min.js
 
-# Serve from your web server
-# Nginx configuration example
+Serve from your web server
+Nginx configuration example
 location /assets/ {
     alias /var/www/myapp/public/assets/;
     expires 1y;
@@ -89,7 +89,7 @@ location /assets/ {
 }
 ```
 
-### Option 2: Build Tool Integration
+Option 2: Build Tool Integration
 
 Use bundlers to include libraries in your build output:
 
@@ -106,12 +106,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // No external CDN requests needed
 ```
 
-### Option 3: Self-Hosted CDN Server
+Option 3: Self-Hosted CDN Server
 
 Deploy a dedicated CDN using software like jsDelivr's open-source version or a simple Nginx cache proxy:
 
 ```yaml
-# docker-compose.yml for a simple local CDN
+docker-compose.yml for a simple local CDN
 version: '3'
 services:
   cdn:
@@ -125,13 +125,13 @@ services:
       - NGINX_PORT=80
 ```
 
-## Performance Comparison
+Performance Comparison
 
 Performance characteristics differ significantly between these approaches.
 
-**Decentraleyes** loads resources instantly from the browser extension bundle. There is zero network latency for intercepted requests since the resources exist in your browser's extension storage. However, the extension only includes a limited set of popular libraries, and updating to newer versions depends on extension maintainers.
+Decentraleyes loads resources instantly from the browser extension bundle. There is zero network latency for intercepted requests since the resources exist in your browser's extension storage. However, the extension only includes a limited set of popular libraries, and updating to newer versions depends on extension maintainers.
 
-**Local CDNs** require initial download time but offer superior caching. Once your server has the resources, subsequent requests are served from your infrastructure. You control caching headers entirely, enabling long-term caching with content hashing for cache busting:
+Local CDNs require initial download time but offer superior caching. Once your server has the resources, subsequent requests are served from your infrastructure. You control caching headers entirely, enabling long-term caching with content hashing for cache busting:
 
 ```javascript
 // Vite configuration for optimal caching
@@ -148,7 +148,7 @@ export default defineConfig({
 })
 ```
 
-## Privacy Analysis
+Privacy Analysis
 
 Both approaches eliminate third-party CDN tracking, but they differ in implementation.
 
@@ -156,11 +156,11 @@ Decentraleyes provides zero-configuration privacy for browsing. It works automat
 
 Local CDNs give you complete control over your assets. You decide which versions to run, when to update, and you can audit the code yourself. This approach is ideal for applications you control, though it requires more setup effort.
 
-## Maintenance Considerations
+Maintenance Considerations
 
-**Decentraleyes maintenance** is minimal—you install the extension and occasionally update your browser. The extension developers handle library updates and security patches.
+Decentraleyes maintenance is minimal, you install the extension and occasionally update your browser. The extension developers handle library updates and security patches.
 
-**Local CDN maintenance** involves:
+Local CDN maintenance involves:
 
 - Tracking library security advisories
 - Updating libraries periodically
@@ -183,16 +183,16 @@ For application developers, the build tool approach integrates library managemen
 
 Running `npm update` regularly keeps your dependencies current, and your CI/CD pipeline handles deployment.
 
-## Use Case Recommendations
+Use Case Recommendations
 
-Choose **Decentraleyes** when:
+Choose Decentraleyes when:
 
 - You want effortless privacy protection while browsing
 - You need protection on websites you don't control
 - You prefer a zero-maintenance solution
 - You primarily browse rather than develop
 
-Choose **Local CDN** when:
+Choose Local CDN when:
 
 - You control the applications and websites you use
 - You need specific library versions not included in Decentraleyes
@@ -200,9 +200,9 @@ Choose **Local CDN** when:
 - You're building or hosting web applications
 - You need to meet specific compliance requirements
 
-## Combining Both Approaches
+Combining Both Approaches
 
-For maximum benefit, you can use both strategies simultaneously. Run Decentraleyes for general browsing protection while maintaining a local CDN for your own projects. This layered approach provides defense in depth—Decentraleyes handles third-party websites while your local CDN ensures complete control over your applications.
+For maximum benefit, you can use both strategies simultaneously. Run Decentraleyes for general browsing protection while maintaining a local CDN for your own projects. This layered approach provides defense in depth, Decentraleyes handles third-party websites while your local CDN ensures complete control over your applications.
 
 ```html
 <!-- Example: Using local CDN in your project -->
@@ -213,58 +213,58 @@ For maximum benefit, you can use both strategies simultaneously. Run Decentraley
 <!-- No external CDN requests leave your server -->
 ```
 
-## Frequently Asked Questions
+Frequently Asked Questions
 
-**Can I use the first tool and the second tool together?**
+Can I use the first tool and the second tool together?
 
 Yes, many users run both tools simultaneously. the first tool and the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.
 
-**Which is better for beginners, the first tool or the second tool?**
+Which is better for beginners, the first tool or the second tool?
 
 It depends on your background. the first tool tends to work well if you prefer a guided experience, while the second tool gives more control for users comfortable with configuration. Try the free tier or trial of each before committing to a paid plan.
 
-**Is the first tool or the second tool more expensive?**
+Is the first tool or the second tool more expensive?
 
 Pricing varies by tier and usage patterns. Both offer free or trial options to start. Check their current pricing pages for the latest plans, since AI tool pricing changes frequently. Factor in your actual usage volume when comparing costs.
 
-**How often do the first tool and the second tool update their features?**
+How often do the first tool and the second tool update their features?
 
 Both tools release updates regularly, often monthly or more frequently. Feature sets and capabilities change fast in this space. Check each tool's changelog or blog for the latest additions before making a decision based on any specific feature.
 
-**What happens to my data when using the first tool or the second tool?**
+What happens to my data when using the first tool or the second tool?
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
-## Library Coverage: What's Actually Cached
+Library Coverage: What's Actually Cached
 
 Decentraleyes maintains approximately 4,000 libraries, but this covers only a fraction of what's available:
 
 ```
 Covered by Decentraleyes:
-✓ jQuery (all versions)
-✓ Bootstrap (all versions)
-✓ Font Awesome (all versions)
-✓ Moment.js
-✓ Underscore.js
-✓ D3.js
-✓ Lodash
-✓ Vue.js (older versions)
+ jQuery (all versions)
+ Bootstrap (all versions)
+ Font Awesome (all versions)
+ Moment.js
+ Underscore.js
+ D3.js
+ Lodash
+ Vue.js (older versions)
 
 NOT Covered (requires external CDN):
-✗ Three.js (3D graphics)
-✗ Babylon.js
-✗ TensorFlow.js
-✗ Modern framework assets (Next.js, Nuxt)
-✗ Specialized animation libraries
-✗ Real-time charting libraries
+ Three.js (3D graphics)
+ Babylon.js
+ TensorFlow.js
+ Modern framework assets (Next.js, Nuxt)
+ Specialized animation libraries
+ Real-time charting libraries
 ```
 
 For modern applications using modern frameworks, Decentraleyes provides only partial coverage.
 
-## Implementing Local CDN with Docker
+Implementing Local CDN with Docker
 
 ```yaml
-# docker-compose.yml - Self-hosted CDN server
+docker-compose.yml - Self-hosted CDN server
 version: '3.9'
 services:
   cdn-cache:
@@ -329,7 +329,7 @@ setInterval(syncAll, 24 * 60 * 60 * 1000);
 syncAll(); // Initial sync
 ```
 
-## Network Traffic Comparison
+Network Traffic Comparison
 
 Decentraleyes intercepts requests at the extension level:
 
@@ -355,7 +355,7 @@ Browser → Your Server → Browser
 (ISP sees: traffic to your own server, not external CDN)
 ```
 
-## Size and Storage Analysis
+Size and Storage Analysis
 
 Decentraleyes extension size: ~60 MB
 Maintained library set: ~4,000 files
@@ -364,28 +364,28 @@ Common Local CDN approaches:
 
 ```
 Approach 1: Full bundle (all common libraries)
-├─ Download size: ~200-400 MB
-├─ Setup time: 1 hour
-├─ Storage requirement: 500 MB on server
-└─ Benefit: Maximum offline capability
+ Download size: ~200-400 MB
+ Setup time: 1 hour
+ Storage requirement: 500 MB on server
+ Benefit: Maximum offline capability
 
 Approach 2: Selective caching (top 100 libraries)
-├─ Download size: ~50-100 MB
-├─ Setup time: 30 minutes
-├─ Storage requirement: 200 MB on server
-└─ Benefit: Balance convenience and storage
+ Download size: ~50-100 MB
+ Setup time: 30 minutes
+ Storage requirement: 200 MB on server
+ Benefit: Balance convenience and storage
 
 Approach 3: Dynamic caching (fetch on first request)
-├─ Initial download: 5-10 MB
-├─ Setup time: 15 minutes
-├─ Storage requirement: Grows with usage
-└─ Benefit: Minimal initial investment
+ Initial download: 5-10 MB
+ Setup time: 15 minutes
+ Storage requirement: Grows with usage
+ Benefit: Minimal initial investment
 ```
 
-## Advanced Caching Strategy
+Advanced Caching Strategy
 
 ```python
-# Intelligent cache manager
+Intelligent cache manager
 class LocalCDNCache:
     def __init__(self, cache_dir):
         self.cache_dir = cache_dir
@@ -424,7 +424,7 @@ class LocalCDNCache:
                 self.delete_from_cache(key)
 ```
 
-## Fallback Strategies
+Fallback Strategies
 
 For strong implementation, combine both approaches:
 
@@ -446,54 +446,54 @@ For strong implementation, combine both approaches:
 </script>
 ```
 
-## Monitoring and Observability
+Monitoring and Observability
 
 Track your Local CDN health:
 
 ```bash
-# Monitor cache hit rate
-# Log every request and whether it hit local cache
+Monitor cache hit rate
+Log every request and whether it hit local cache
 
-# Sample log entry:
-# 2026-03-22 10:45:32 | jquery@3.7.1.min.js | HIT | 150KB | 45ms
-# 2026-03-22 10:45:33 | bootstrap@5.3.2 | MISS | 300KB | 1200ms
+Sample log entry:
+2026-03-22 10:45:32 | jquery@3.7.1.min.js | HIT | 150KB | 45ms
+2026-03-22 10:45:33 | bootstrap@5.3.2 | MISS | 300KB | 1200ms
 
-# Calculate metrics:
-# Hit rate = hits / (hits + misses) * 100%
-# Average latency = total response time / requests
-# Bandwidth saved = (misses * CDN avg size) compared to local serve
+Calculate metrics:
+Hit rate = hits / (hits + misses) * 100%
+Average latency = total response time / requests
+Bandwidth saved = (misses * CDN avg size) compared to local serve
 ```
 
-## Migration Path from Decentraleyes
+Migration Path from Decentraleyes
 
 If moving from Decentraleyes to Local CDN:
 
 ```
 Phase 1: Assessment (Week 1)
-├─ Audit which libraries your sites actually use
-├─ List top 20 most-accessed libraries
-└─ Estimate storage requirements
+ Audit which libraries your sites actually use
+ List top 20 most-accessed libraries
+ Estimate storage requirements
 
 Phase 2: Setup (Week 2)
-├─ Deploy Docker container with Nginx
-├─ Download top 100 libraries
-├─ Configure local DNS (optional)
-└─ Test fallbacks
+ Deploy Docker container with Nginx
+ Download top 100 libraries
+ Configure local DNS (optional)
+ Test fallbacks
 
 Phase 3: Migration (Week 3)
-├─ Disable Decentraleyes extension
-├─ Monitor site performance
-├─ Fill cache with any missing libraries
-└─ Enable local CDN for all traffic
+ Disable Decentraleyes extension
+ Monitor site performance
+ Fill cache with any missing libraries
+ Enable local CDN for all traffic
 
 Phase 4: Optimization (Week 4)
-├─ Analyze cache hit rates
-├─ Remove unused libraries (free space)
-├─ Fine-tune caching headers
-└─ Document your setup
+ Analyze cache hit rates
+ Remove unused libraries (free space)
+ Fine-tune caching headers
+ Document your setup
 ```
 
-## Related Articles
+Related Articles
 
 - [Brave Browser Vs Edge Privacy Comparison 2026](/brave-browser-vs-edge-privacy-comparison-2026/)
 - [Tor Browser vs VPN Comparison: Which Is Better for Privacy?](/tor-browser-vs-vpn-comparison-which-is-better/)
@@ -501,5 +501,5 @@ Phase 4: Optimization (Week 4)
 - [Protonmail Vs Gmail Privacy Comparison](/protonmail-vs-gmail-privacy-comparison/)
 - [Tor Browser vs Epic Privacy Browser Comparison](/tor-browser-vs-epic-privacy-browser-comparison/)
 - [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://bestremotetools.com/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}
