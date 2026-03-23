@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://securetoolsguide.com/sitemap.xml
+Sitemap: https://securetoolsguide.com/feed.xml
