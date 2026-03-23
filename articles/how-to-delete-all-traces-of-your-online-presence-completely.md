@@ -9,7 +9,7 @@ permalink: /how-to-delete-all-traces-of-your-online-presence-completely/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

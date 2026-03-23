@@ -7,7 +7,7 @@ last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-create-tiered-access-plan-giving-executor-immediate-a/
 reviewed: true
-score: 9
+score: 7
 voice-checked: true
 categories: [guides]
 tags: [privacy-tools-guide, tools]

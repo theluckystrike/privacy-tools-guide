@@ -9,7 +9,7 @@ permalink: /how-to-detect-baseband-attacks-and-rogue-cell-towers-with-an/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---

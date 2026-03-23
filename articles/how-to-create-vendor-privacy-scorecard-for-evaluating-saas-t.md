@@ -9,7 +9,7 @@ permalink: /how-to-create-vendor-privacy-scorecard-for-evaluating-saas-t/
 categories: [guides]
 tags: [privacy-tools-guide, privacy]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

@@ -9,7 +9,7 @@ permalink: /how-to-demand-company-stop-selling-your-personal-data-under-/
 categories: [guides]
 tags: [privacy-tools-guide, best-of]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
