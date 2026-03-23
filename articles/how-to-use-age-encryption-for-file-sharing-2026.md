@@ -7,7 +7,7 @@ tags: [privacy-tools-guide, encryption]
 date: 2026-03-23
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 ---
 
