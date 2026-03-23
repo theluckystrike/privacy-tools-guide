@@ -9,7 +9,7 @@ permalink: /vpn-port-selection-which-ports-bypass-most-firewall-restrictions/
 categories: [guides, security]
 tags: [privacy-tools-guide, vpn]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---

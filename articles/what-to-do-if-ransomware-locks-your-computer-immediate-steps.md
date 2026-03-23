@@ -9,7 +9,7 @@ permalink: /what-to-do-if-ransomware-locks-your-computer-immediate-steps/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

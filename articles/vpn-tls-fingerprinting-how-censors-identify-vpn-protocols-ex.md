@@ -9,7 +9,7 @@ permalink: /vpn-tls-fingerprinting-how-censors-identify-vpn-protocols-ex/
 categories: [guides, security]
 tags: [privacy-tools-guide, vpn]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---
