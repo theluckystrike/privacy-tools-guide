@@ -9,7 +9,7 @@ permalink: /how-to-configure-openvpn-with-obfuscation-for-censored-networks/
 categories: [guides]
 tags: [privacy-tools-guide, vpn]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

@@ -9,7 +9,7 @@ permalink: /how-to-create-anonymous-online-identity-that-cannot-be-linke/
 categories: [troubleshooting]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

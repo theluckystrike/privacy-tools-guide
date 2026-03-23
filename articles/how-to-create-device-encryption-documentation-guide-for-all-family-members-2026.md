@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /how-to-create-device-encryption-documentation-guide-for-all-family-members-2026/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 6
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, encryption]

@@ -9,7 +9,7 @@ permalink: /how-to-configure-vpn-exempt-list-for-local-network-access/
 categories: [guides]
 tags: [privacy-tools-guide, vpn]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

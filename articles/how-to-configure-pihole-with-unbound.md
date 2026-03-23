@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /how-to-configure-pihole-with-unbound-dns/
 categories: [guides]
 reviewed: true
-score: 8
+score: 6
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

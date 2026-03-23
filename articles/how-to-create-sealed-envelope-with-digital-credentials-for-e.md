@@ -9,7 +9,7 @@ permalink: /how-to-create-sealed-envelope-with-digital-credentials-for-e/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

@@ -9,7 +9,7 @@ permalink: /how-to-create-new-digital-identity-after-escaping-domestic-v/
 categories: [guides]
 tags: [privacy-tools-guide, api]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
