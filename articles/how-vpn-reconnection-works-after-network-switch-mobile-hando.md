@@ -6,7 +6,7 @@ description: "Learn how vpn reconnection works after network switch mobile hando
 tags: [privacy-tools-guide, vpn]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [vpn]
 ---
