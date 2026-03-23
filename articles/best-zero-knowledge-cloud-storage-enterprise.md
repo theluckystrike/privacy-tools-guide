@@ -9,7 +9,7 @@ permalink: /best-zero-knowledge-cloud-storage-enterprise/
 categories: [guides]
 voice-checked: true
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 tags: [privacy-tools-guide, best-of]
 ---

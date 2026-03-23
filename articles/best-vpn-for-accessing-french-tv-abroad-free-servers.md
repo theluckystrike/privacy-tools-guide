@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /best-vpn-for-accessing-french-tv-abroad-free-servers/
 categories: [guides]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of, vpn]
