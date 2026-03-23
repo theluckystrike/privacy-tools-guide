@@ -5,7 +5,7 @@ description: "Learn how to generate, securely store, and publish a PGP key revoc
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
-permalink: /a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/
+permalink: /how-to-prepare-pgp-key-revocation-certificate-for-publicatio/
 categories: [guides]
 reviewed: true
 score: 9

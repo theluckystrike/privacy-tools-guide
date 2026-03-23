@@ -470,7 +470,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best VPN for Linux Desktop: A Developer Guide](/best-vpn-for-linux-desktop/)
 - [VPN Packet Inspection Explained](/vpn-packet-inspection-how-deep-packet-inspection-detects-vpn-traffic/)
 - [How to Detect If Your ISP Is Throttling VPN Traffic](/how-to-detect-if-your-isp-is-throttling-vpn-traffic/)
-- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://bestremotetools.com/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

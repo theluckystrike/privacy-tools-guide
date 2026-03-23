@@ -336,7 +336,7 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [VPN Tunnel Interface vs Full Tunnel Routing](/vpn-tunnel-interface-vs-full-tunnel-routing-difference-expla/)
 - [VPN Kill Switch Configuration on Linux with iptables](/vpn-kill-switch-linux-iptables-setup/)
 - [How To Use Tcpdump To Verify Vpn Traffic Is Encrypted](/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
-- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [How VPN Reconnection Works After Network Switch: Technical](/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
 - [VPN Tunnel Interface vs Full Tunnel Routing Difference](https://bestremotetools.com/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

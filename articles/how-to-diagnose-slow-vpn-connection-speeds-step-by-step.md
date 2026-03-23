@@ -5,7 +5,7 @@ description: "When your VPN connection slows to a crawl, it can turn productive 
 date: 2026-03-18
 last_modified_at: 2026-03-18
 author: "Privacy Tools Guide"
-permalink: /a123-how-to-diagnose-slow-vpn-connection-speeds-step-by-step/
+permalink: /how-to-diagnose-slow-vpn-connection-speeds-step-by-step/
 categories: [guides, security]
 reviewed: true
 score: 9
@@ -20,7 +20,7 @@ description: "When your VPN connection slows to a crawl, it can turn productive 
 date: 2026-03-18
 last_modified_at: 2026-03-18
 author: "Privacy Tools Guide"
-permalink: /a123-how-to-diagnose-slow-vpn-connection-speeds-step-by-step/
+permalink: /how-to-diagnose-slow-vpn-connection-speeds-step-by-step/
 categories: [guides, security]
 reviewed: true
 score: 8

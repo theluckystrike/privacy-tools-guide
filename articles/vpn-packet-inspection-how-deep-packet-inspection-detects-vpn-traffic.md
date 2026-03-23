@@ -453,7 +453,7 @@ Before using DPI evasion techniques, understand local laws and organization poli
 - [Best Vpn Protocols That Still Work Inside China After Deep](/best-vpn-protocols-that-still-work-inside-china-after-deep-p/)
 - [Russia Tspu Deep Packet Inspection Boxes How They Detect](/russia-tspu-deep-packet-inspection-boxes-how-they-detect-and/)
 - [How to Verify a VPN Is Actually Encrypting Your Traffic](/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)
-- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [How to Detect If Your ISP Is Throttling VPN Traffic](/how-to-detect-if-your-isp-is-throttling-vpn-traffic/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

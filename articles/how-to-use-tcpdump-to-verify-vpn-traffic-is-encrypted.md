@@ -319,7 +319,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [How to Verify a VPN Is Actually Encrypting Your Traffic](/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)
 - [Verify That Your VPN Is Actually Working and Not Leaking](/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
 - [How to Verify VPN Is Working Correctly 2026](/how-to-verify-vpn-is-working-correctly-2026/)

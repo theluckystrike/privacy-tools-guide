@@ -11,7 +11,7 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-permalink: /articles/privacy-focused-web-browsers-comparison-2026/
+permalink: /privacy-focused-web-browsers-comparison-2026/
 ---
 
 

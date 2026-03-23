@@ -452,7 +452,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Verify That Your VPN Is Actually Working and Not Leaking](/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
 - [How to Verify VPN Is Working Correctly 2026](/how-to-verify-vpn-is-working-correctly-2026/)
 - [How to Verify a VPN Is Actually Encrypting Your Traffic](/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)
-- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [How To Use Tcpdump To Verify Vpn Traffic Is Encrypted](/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

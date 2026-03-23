@@ -352,7 +352,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 - [VPN Kill Switch Configuration on Linux with iptables](/vpn-kill-switch-linux-iptables-setup/)
 - [Verify That Your VPN Is Actually Working and Not Leaking](/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
-- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [VPN Connection Timeout Troubleshooting](/vpn-connection-timeout-troubleshooting-tcp-handshake-failure/)
 - [VPN TLS Fingerprinting: How Censors Identify VPN Protocols](/vpn-tls-fingerprinting-how-censors-identify-vpn-protocols-ex/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
