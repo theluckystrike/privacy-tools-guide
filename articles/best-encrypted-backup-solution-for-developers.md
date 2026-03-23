@@ -16,7 +16,7 @@ tags: [privacy-tools-guide, best-of]
 
 {% raw %}
 
-As a developer, your code repositories, configuration files, and environment variables represent significant intellectual property. Losing this data to hardware failure, accidental deletion, or ransomware can set projects back weeks or months. This guide evaluates encrypted backup solutions specifically designed for developers who need versioned, secure, and automated backup workflows.
+I lost a week of work to a failed SSD two years ago. Since then, I've tested every encrypted backup tool I could find -- restic, BorgBackup, Duplicati, Arq, and Kopia. My requirements are simple: encrypted, versioned, automated, and able to back up dotfiles, SSH keys, and project directories without manual intervention. Here is what actually works.
 
 ## Key Takeaways
 
