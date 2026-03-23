@@ -14,28 +14,27 @@ intent-checked: true
 voice-checked: true
 ---
 
+TOTP generates 6-digit codes that rotate every 30 seconds using a shared secret. FIDO2 uses public-key cryptography bound to a hardware device. Both add a second factor beyond passwords, but they protect against different attacks.
 
-## Frequently Asked Questions
+**TOTP** (RFC 6238) works by hashing a shared secret with the current timestamp. Both server and client know the secret, so if the server database leaks, attackers can generate valid codes. TOTP is phishable because users type codes into whatever page they are looking at, including fake login pages.
 
-**Can I use the first tool and the second tool together?**
+**FIDO2** (WebAuthn + CTAP) generates a unique keypair per service. The private key never leaves the hardware authenticator. During login, the browser cryptographically binds the authentication to the origin domain. A phishing site at `g00gle.com` cannot use a credential registered for `google.com` because the origin check fails at the protocol level.
 
-Yes, many users run both tools simultaneously. the first tool and the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.
+| Property | TOTP | FIDO2 |
+|----------|------|-------|
+| Phishing resistant | No | Yes |
+| Shared secret on server | Yes | No (public key only) |
+| Hardware required | No (app-based) | Yes (security key or platform auth) |
+| Offline capable | Yes | Depends on implementation |
+| Setup complexity | Low | Moderate |
+| Recovery | Backup codes or seed | Multiple keys or backup codes |
+| Cost | Free | $25-70 per key |
 
-**Which is better for beginners, the first tool or the second tool?**
+**When to use TOTP:** Low-risk accounts, services that do not support FIDO2, or situations where you cannot carry a hardware key. TOTP is better than no second factor.
 
-It depends on your background. the first tool tends to work well if you prefer a guided experience, while the second tool gives more control for users comfortable with configuration. Try the free tier or trial of each before committing to a paid plan.
+**When to use FIDO2:** High-value accounts (email, cloud infrastructure, source code repos, banking). Any account where a phishing attack would cause serious damage. FIDO2 eliminates the entire class of phishing-based credential theft.
 
-**Is the first tool or the second tool more expensive?**
-
-Pricing varies by tier and usage patterns. Both offer free or trial options to start. Check their current pricing pages for the latest plans, since AI tool pricing changes frequently. Factor in your actual usage volume when comparing costs.
-
-**Do these tools handle security-sensitive code well?**
-
-Both tools can generate authentication and security code, but you should always review generated security code manually. AI tools may miss edge cases in token handling, CSRF protection, or input validation. Treat AI-generated security code as a starting draft, not production-ready output.
-
-**What happens to my data when using the first tool or the second tool?**
-
-Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+For developers implementing authentication: support both. Offer FIDO2 as the recommended option and TOTP as a fallback. Use the WebAuthn API for FIDO2 and a standard TOTP library like `pyotp` or `otplib`.
 
 ## Related Articles
 
@@ -44,6 +43,5 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Best Hardware Security Key for Developers: A Practical Guide](/best-hardware-security-key-for-developers/)
 - [Best Hardware Security Key Comparison: A Developer's Guide](/best-hardware-security-key-comparison/)
 - [Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn](/passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/)
-- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}

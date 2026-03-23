@@ -14,36 +14,50 @@ voice-checked: true
 intent-checked: true
 ---
 
-## Frequently Asked Questions
+Four tools handle private file transfers well: OnionShare, Magic Wormhole, Croc, and Firefox Send (self-hosted). Each suits a different threat model.
 
-**Can I use the first tool and the second tool together?**
+**OnionShare** creates a temporary Tor onion service on your machine. The recipient connects through Tor Browser to download files directly from your computer. No server stores anything. Files never leave your device until the recipient downloads them. Downside: transfers are slow (Tor overhead) and both parties need Tor.
 
-Yes, many users run both tools simultaneously. the first tool and the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.
+```bash
+# Install and share a file
+pip install onionshare-cli
+onionshare-cli --receive  # or share a specific file
+```
 
-**Which is better for beginners, the first tool or the second tool?**
+**Magic Wormhole** uses a short passphrase to establish an encrypted peer-to-peer connection. Simple, fast, and the passphrase is human-readable. Files transit through a relay server but are end-to-end encrypted. The relay sees only encrypted bytes.
 
-It depends on your background. the first tool tends to work well if you prefer a guided experience, while the second tool gives more control for users comfortable with configuration. Try the free tier or trial of each before committing to a paid plan.
+```bash
+# Sender
+wormhole send secret-document.pdf
+# Prints: wormhole receive 7-crossover-clockwork
 
-**Is the first tool or the second tool more expensive?**
+# Receiver
+wormhole receive 7-crossover-clockwork
+```
 
-Pricing varies by tier and usage patterns. Both offer free or trial options to start. Check their current pricing pages for the latest plans, since AI tool pricing changes frequently. Factor in your actual usage volume when comparing costs.
+**Croc** improves on Magic Wormhole with resume support, multiple files, and cross-platform binaries. Uses PAKE (password-authenticated key exchange) for encryption. Relay servers are optional and can be self-hosted.
 
-**How often do the first tool and the second tool update their features?**
+```bash
+croc send secret-document.pdf
+# Receiver uses the generated code
+croc <code>
+```
 
-Both tools release updates regularly, often monthly or more frequently. Feature sets and capabilities change fast in this space. Check each tool's changelog or blog for the latest additions before making a decision based on any specific feature.
+**Send** (self-hosted) is Mozilla's discontinued Firefox Send, now maintained by the community as `timvisee/send`. Provides a web interface for encrypted file sharing with expiration and download limits.
 
-**What happens to my data when using the first tool or the second tool?**
+| Tool | Encryption | Server Required | Max Size | Speed |
+|------|-----------|-----------------|----------|-------|
+| OnionShare | Tor E2E | No (P2P via Tor) | Unlimited | Slow |
+| Magic Wormhole | SPAKE2 E2E | Relay (encrypted) | Unlimited | Fast |
+| Croc | PAKE E2E | Optional relay | Unlimited | Fast |
+| Send (self-hosted) | AES-GCM | Yes (your server) | 2.5 GB | Fast |
 
-Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+For maximum anonymity, use OnionShare. For quick transfers between trusted parties, Magic Wormhole or Croc. For sharing with non-technical recipients, self-host Send.
 
 ## Related Articles
 
 - [Magic Wormhole Encrypted File Transfer How To Send Files Sec](/magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/)
 - [WireGuard Performance Tuning for Large File Transfer.](/wireguard-performance-tuning-large-file-transfer-optimizatio/)
-- [How To File Ftc Complaint For Privacy Violation By Company D](/how-to-file-ftc-complaint-for-privacy-violation-by-company-d/)
-- [Privacy Tools For Private Investigator Protecting Case File](/privacy-tools-for-private-investigator-protecting-case-file-/)
 - [Privacy Tools For Social Worker Handling Sensitive Case File](/privacy-tools-for-social-worker-handling-sensitive-case-file/)
-- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://bestremotetools.com/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}

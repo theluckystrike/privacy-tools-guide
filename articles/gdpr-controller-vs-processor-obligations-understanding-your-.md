@@ -14,29 +14,25 @@ voice-checked: true
 intent-checked: true
 ---
 
-Understanding whether you're dealing with a controller or processor—and recognizing your position as a data subject—helps you navigate GDPR effectively. Whether you're asserting your own rights or building compliant systems, this framework provides the foundation for protecting personal data in the digital ecosystem.
+Under GDPR, every entity handling personal data is either a **controller** (decides why and how data is processed) or a **processor** (processes data on the controller's behalf). Getting this wrong leads to compliance failures and fines.
 
-## Frequently Asked Questions
+**Controllers** determine the purpose and means of processing. If your company decides to collect user emails for a newsletter, your company is the controller. Controllers bear primary responsibility: they must establish a legal basis for processing, respond to data subject requests, report breaches within 72 hours, and conduct data protection impact assessments.
 
-**Can I use the first tool and the second tool together?**
+**Processors** act on the controller's instructions. Your email service provider (Mailchimp, SendGrid) is a processor -- it sends emails because you told it to. Processors must maintain processing records, implement appropriate security measures, notify the controller of breaches without undue delay, and not engage sub-processors without the controller's authorization.
 
-Yes, many users run both tools simultaneously. the first tool and the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.
+| Obligation | Controller | Processor |
+|-----------|-----------|-----------|
+| Legal basis for processing | Must establish | N/A (follows controller) |
+| Data subject requests (access, deletion) | Must respond within 30 days | Must assist controller |
+| Breach notification | To supervisory authority (72h) | To controller (without undue delay) |
+| DPA required | Must sign with processors | Must sign with controllers |
+| DPIA (impact assessment) | Required for high-risk processing | Must assist |
+| Records of processing | Required | Required |
+| Fines (maximum) | 4% annual revenue / 20M EUR | 4% annual revenue / 20M EUR |
 
-**Which is better for beginners, the first tool or the second tool?**
+**For developers:** if you build a SaaS product, you are typically the processor for your customers' data and the controller for your own user account data. You need Data Processing Agreements (DPAs) with every sub-processor you use (cloud hosting, analytics, payment providers). Map your data flows to identify every controller-processor relationship in your stack.
 
-It depends on your background. the first tool tends to work well if you prefer a guided experience, while the second tool gives more control for users comfortable with configuration. Try the free tier or trial of each before committing to a paid plan.
-
-**Is the first tool or the second tool more expensive?**
-
-Pricing varies by tier and usage patterns. Both offer free or trial options to start. Check their current pricing pages for the latest plans, since AI tool pricing changes frequently. Factor in your actual usage volume when comparing costs.
-
-**How often do the first tool and the second tool update their features?**
-
-Both tools release updates regularly, often monthly or more frequently. Feature sets and capabilities change fast in this space. Check each tool's changelog or blog for the latest additions before making a decision based on any specific feature.
-
-**What happens to my data when using the first tool or the second tool?**
-
-Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+A single entity can be both controller and processor for different data sets. This is common and expected. Document each role clearly.
 
 ## Related Articles
 
@@ -45,7 +41,5 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Encrypted Cloud Storage Gdpr Compliant 2026](/encrypted-cloud-storage-gdpr-compliant-2026/)
 - [Enterprise Privacy Compliance Tool Comparison for GDPR.](/enterprise-privacy-compliance-tool-comparison-for-gdpr-and-ccpa/)
 - [GDPR Article 17 Erasure Implementation Code](/gdpr-article-17-erasure-implementation-code/)
-- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://bestremotetools.com/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}

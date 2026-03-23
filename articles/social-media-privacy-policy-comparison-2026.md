@@ -14,37 +14,32 @@ intent-checked: true
 voice-checked: true
 ---
 
+Every major social platform collects data differently. Understanding the specifics helps you decide which platforms align with your privacy requirements and which need mitigation.
 
+**Meta (Facebook/Instagram)** collects device identifiers, location history, purchase activity, browsing behavior via the Meta Pixel, contact lists, and facial recognition data. Data is shared with advertisers and can be subpoenaed. Data export is available but incomplete. Account deletion takes 30 days and metadata may persist.
 
-## Frequently Asked Questions
+**X (Twitter)** collects device info, IP addresses, browsing history (via embedded tweets on third-party sites), DM content, and location data. Policies have shifted frequently since 2022. Data export works but format is JSON-heavy and hard to parse.
 
-**Can I use the first tool and the second tool together?**
+**TikTok** collects device identifiers, keystroke patterns, clipboard contents, face and voice data from videos, and location. Data flows to servers in the US and Singapore. The extent of data accessible to ByteDance in China remains disputed. Data export is available but limited.
 
-Yes, many users run both tools simultaneously. the first tool and the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.
+**LinkedIn** collects employment history, salary data (inferred), browsing behavior on partner sites, email content (if using LinkedIn email), and connection graphs. Shares data with advertisers and recruiters.
 
-**Which is better for beginners, the first tool or the second tool?**
+**Mastodon** (federated) collects what your instance admin configures. Most instances collect IP addresses in logs. Posts federate across servers you cannot control. No advertising. Data export is straightforward ActivityPub JSON.
 
-It depends on your background. the first tool tends to work well if you prefer a guided experience, while the second tool gives more control for users comfortable with configuration. Try the free tier or trial of each before committing to a paid plan.
+| Platform | Ad Tracking | Data Export | Deletion Timeline | E2E Encryption |
+|----------|-------------|-------------|-------------------|----------------|
+| Meta | Extensive | Partial | 30 days | WhatsApp only |
+| X | Moderate | Full (JSON) | 30 days | DMs: No |
+| TikTok | Extensive | Limited | 30 days | No |
+| LinkedIn | Moderate | Full | 30 days | No |
+| Mastodon | None | Full | Immediate | No (public posts) |
 
-**Is the first tool or the second tool more expensive?**
-
-Pricing varies by tier and usage patterns. Both offer free or trial options to start. Check their current pricing pages for the latest plans, since AI tool pricing changes frequently. Factor in your actual usage volume when comparing costs.
-
-**How often do the first tool and the second tool update their features?**
-
-Both tools release updates regularly, often monthly or more frequently. Feature sets and capabilities change fast in this space. Check each tool's changelog or blog for the latest additions before making a decision based on any specific feature.
-
-**What happens to my data when using the first tool or the second tool?**
-
-Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+For privacy-conscious users: Mastodon eliminates ad tracking entirely. For platforms you must use professionally, limit data exposure with dedicated browsers, separate email addresses, and minimal profile information. Use data export tools regularly to maintain local copies.
 
 ## Related Articles
 
 - [Data Retention Policy Template What To Keep And For How](/data-retention-policy-template-what-to-keep-and-for-how-long/)
-- [Data Retention Policy Template for Startups](/data-retention-policy-template-for-startups/)
 - [Privacy Notice Vs Privacy Policy Difference](/privacy-notice-vs-privacy-policy-difference/)
-- [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
 - [Smart Sleep Tracker Privacy Comparison](/smart-sleep-tracker-privacy-comparison-what-oura-whoop-eight/)
-- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
