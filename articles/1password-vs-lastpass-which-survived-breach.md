@@ -18,6 +18,22 @@ tags: [privacy-tools-guide, comparison]
 
 Choose 1Password if you want the password manager that survived its breach with zero vault exposure, thanks to its Secret Key architecture and strict zero-knowledge boundaries. Choose LastPass if cost is your priority, but know that its 2022 breach led to actual credential exposure for some users after attackers cracked master password hashes. Both services experienced security incidents, but 1Password's architectural decisions contained the damage far more effectively.
 
+
+## Head-to-Head Comparison
+
+| Feature | 1Password | LastPass |
+|---------|-----------|----------|
+| Price (Individual) | $2.99/mo | $3.00/mo |
+| Encryption | AES-256 + Secret Key | AES-256 |
+| Key Derivation | PBKDF2 (100k) + Secret Key | PBKDF2 (600k iterations) |
+| 2022 Breach Impact | No vault exposure | Encrypted vaults stolen |
+| Open Source | No | No |
+| Self-Hosting | No | No |
+| CLI Access | Full CLI (op) | Limited CLI |
+| Zero-Knowledge | Yes (Secret Key architecture) | Yes (master password only) |
+| Breach Response | Transparent, no user action needed | Users advised to rotate all passwords |
+| Independent Audits | Regular third-party audits | SOC 2 Type II |
+
 ## Key Takeaways
 
 - **LastPass used AES-256 encryption**: for vault data, but the encryption key derivation relied on a relatively limited number of iterations for the key derivation function.

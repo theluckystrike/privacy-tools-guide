@@ -18,6 +18,22 @@ tags: [privacy-tools-guide, comparison]
 
 Running your own password manager gives you full control over your data, eliminates subscription costs, and removes dependencies on third-party services. Two primary options exist for self-hosted password management: the official Bitwarden server and Vaultwarden, a lightweight alternative written in Rust. This comparison examines the practical differences for developers and power users who want to self-host.
 
+
+## Head-to-Head Comparison
+
+| Feature | Bitwarden (Official) | Vaultwarden |
+|---------|---------------------|------------|
+| Language | C# (.NET) | Rust |
+| RAM Usage | 2-4 GB minimum | 50-100 MB |
+| Docker Image Size | ~1.5 GB (multiple containers) | ~100 MB (single container) |
+| Database | MSSQL required | SQLite, MySQL, or PostgreSQL |
+| Premium Features | Requires license | All features unlocked free |
+| Official Support | Yes (paid plans) | Community only |
+| Admin Panel | Enterprise feature | Built-in web admin |
+| Push Notifications | Native support | WebSocket-based |
+| SMTP Integration | Built-in | Built-in |
+| Hardware Requirements | 4+ GB RAM, multi-core | Raspberry Pi capable |
+
 ## Key Takeaways
 
 - **Generate secure admin token**: export ADMIN_TOKEN=$(openssl rand -base64 48) export DB_PASSWORD=$(openssl rand -base64 32) # 4.

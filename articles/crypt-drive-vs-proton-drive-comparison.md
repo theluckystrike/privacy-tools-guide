@@ -18,6 +18,22 @@ tags: [privacy-tools-guide, comparison]
 
 Choosing between CryptDrive and ProtonDrive means evaluating two fundamentally different approaches to encrypted cloud storage. Both promise to keep your files private, but their implementations, pricing models, and feature sets differ significantly. This comparison helps you determine which service aligns with your privacy needs and workflow.
 
+
+## Head-to-Head Comparison
+
+| Feature | CryptDrive | Proton Drive |
+|---------|------------|-------------|
+| Free Storage | 1 GB | 1 GB |
+| Paid Storage | Up to 100 GB | Up to 3 TB |
+| Price (Basic) | $5/mo | $3.99/mo (Mail Plus bundle) |
+| Encryption | End-to-end (XSalsa20-Poly1305) | End-to-end (PGP-based) |
+| Open Source | Yes (AGPLv3) | Yes (client-side) |
+| Self-Hosting | Yes (CryptPad) | No |
+| File Sharing | Encrypted links | Encrypted links + password protection |
+| Jurisdiction | France | Switzerland |
+| Collaboration | Real-time encrypted editing | View/download only |
+| Mobile App | Web-based (PWA) | iOS + Android native |
+
 ## Table of Contents
 
 - [Encryption Architecture](#encryption-architecture)
