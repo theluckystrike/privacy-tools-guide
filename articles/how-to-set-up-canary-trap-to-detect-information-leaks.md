@@ -6,7 +6,7 @@ description: "Follow this guide to how to set up canary trap to detect informati
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---
