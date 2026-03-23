@@ -1,29 +1,17 @@
 ---
 layout: default
-
-permalink: /smart-device-deregistration-after-death-how-to-remove-deceas/
-description: "Follow this guide to smart device deregistration after death how to remove deceas with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Smart Device Deregistration After Death How To Remove"
 description: "A technical guide for developers and power users on removing deceased persons accounts from smart home devices, shared electronics, and IoT ecosystems"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /smart-device-deregistration-after-death-how-to-remove-deceas/
+categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
-voice-checked: true
-categories: [guides]
 intent-checked: true
-tags: [privacy-tools-guide]
+voice-checked: true
 ---
 
 {% raw %}

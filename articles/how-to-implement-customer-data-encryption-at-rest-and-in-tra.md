@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-implement-customer-data-encryption-at-rest-and-in-tra/
-description: "Follow this guide to how to implement customer data encryption at rest and in tra with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide, encryption]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Implement Customer Data Encryption At Rest"
 description: "A developer guide for implementing encryption at rest and in transit. Learn practical techniques with code examples for securing customer"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-implement-customer-data-encryption-at-rest-and-in-tra/
 categories: [guides, security]
+tags: [privacy-tools-guide, encryption]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, encryption]
 ---
 
 {% raw %}

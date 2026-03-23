@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/
-description: "Follow this guide to how to set up onion routing for email using tor hidden servi with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Set Up Onion Routing For Email Using Tor Hidden"
 description: "A practical guide for developers and power users to route email through Tor hidden services for enhanced privacy and anonymity"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

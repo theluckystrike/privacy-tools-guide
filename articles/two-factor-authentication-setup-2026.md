@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /two-factor-authentication-setup-2026/
-description: "Learn two factor authentication setup 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Two-Factor Authentication Setup Guide 2026"
 description: "Set up 2FA properly in 2026. Covers TOTP apps, hardware keys, passkeys, and backup codes. Includes setup for Google, GitHub, and SSH."
 date: 2026-03-21
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: two-factor-authentication-setup-2026
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Privacy Risks of Grocery Store Loyalty Programs in 2026"
 description: "What Kroger, Safeway, Target collect through loyalty programs. Purchase profiling, data broker sales, and practical opt-out methods."
 author: "Privacy Tools Guide"

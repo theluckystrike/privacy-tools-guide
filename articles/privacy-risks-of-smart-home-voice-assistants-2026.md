@@ -7,25 +7,11 @@ last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /privacy-risks-of-smart-home-voice-assistants-2026/
 categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, smart-home, voice-assistant, alexa, google-home, siri, privacy]
----
-layout: default
-title: "Privacy Risks of Smart Home Voice Assistants 2026"
-description: "Alexa, Google Home, Siri privacy comparison. What they record, data retention, how to disable always-listening, audit options."
-date: 2026-03-22
-last_modified_at: 2026-03-22
-author: "Privacy Tools Guide"
-permalink: /privacy-risks-of-smart-home-voice-assistants-2026/
-categories: [guides]
+tags: [privacy-tools-guide, smart-home, voice-assistant, alexa, google-home, siri]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, smart-home, voice-assistant, alexa, google-home, siri]
 ---
 
 {% raw %}

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /secure-email-forwarding-with-encryption-how-to-set-up-anonad/
-description: "Follow this guide to secure email forwarding with encryption how to set up anonad with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide, encryption]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Secure Email Forwarding With Encryption How To Set Up"
 description: "A practical guide to setting up secure email forwarding with encryption using Anonaddy and SimpleLogin. Learn how to protect your inbox with alias"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /secure-email-forwarding-with-encryption-how-to-set-up-anonad/
 categories: [guides, security]
+tags: [privacy-tools-guide, encryption]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, encryption]
 ---
 
 {% raw %}

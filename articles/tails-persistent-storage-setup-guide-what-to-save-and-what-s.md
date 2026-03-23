@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /tails-persistent-storage-setup-guide-what-to-save-and-what-s/
-description: "Follow this guide to tails persistent storage setup guide what to save and what s with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Tails Persistent Storage Setup Guide What To Save And What"
 description: "A practical guide for developers and power users on setting up Tails persistent storage, understanding what data persists between sessions, and what"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /tails-persistent-storage-setup-guide-what-to-save-and-what-s/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

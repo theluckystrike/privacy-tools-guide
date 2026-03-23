@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "How to Remove Personal Data from Data Brokers 2026:"
 description: "Remove your data from Spokeo, BeenVerified, Whitepages. Manual removal steps, automation tools like DeleteMe and Kanary, legal requirements, and verification."
 author: "Privacy Tools Guide"

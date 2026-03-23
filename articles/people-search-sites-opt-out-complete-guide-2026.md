@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /people-search-sites-opt-out-complete-guide-2026/
-description: "Follow this guide to people search sites opt out complete guide 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "People Search Sites Opt Out Complete Guide 2026"
 description: "A practical guide for developers and power users on opting out of people search sites. Includes automated removal scripts, API approaches, and direct"
 date: 2026-03-20
@@ -19,12 +7,13 @@ last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /people-search-sites-opt-out-complete-guide-2026/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
+
 {% raw %}
 
 People search sites aggregate and publish personal information obtained from public records, social media, and data brokers. These platforms—commonly known as people search engines or people lookup services—compile profiles containing names, addresses, phone numbers, email addresses, and sometimes even financial information. Understanding how to opt out is essential for developers and power users who value digital privacy.

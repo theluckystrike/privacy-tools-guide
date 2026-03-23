@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /xmpp-omemo-encryption-setup-guide/
-description: "Follow this guide to xmpp omemo encryption setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, encryption]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Xmpp Omemo Encryption Setup Guide"
 description: "A practical guide to setting up OMEMO encryption for XMPP messaging. Learn how to configure your client, manage identity keys, and achieve end-to-end"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /xmpp-omemo-encryption-setup-guide/
 categories: [guides]
+tags: [privacy-tools-guide, encryption]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, encryption]
 ---
 
 {% raw %}

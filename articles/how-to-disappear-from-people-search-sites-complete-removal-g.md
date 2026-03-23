@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-disappear-from-people-search-sites-complete-removal-g/
-description: "Follow this guide to how to disappear from people search sites complete removal g with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Disappear From People Search Sites Complete Removal"
 description: "A practical guide for developers and power users to remove personal data from people search sites using automation, API techniques, and systematic"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-disappear-from-people-search-sites-complete-removal-g/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

@@ -1,36 +1,18 @@
 ---
 layout: default
-
-permalink: /whonix-anonymous-browsing-setup-guide/
-description: "Follow this guide to whonix anonymous browsing setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How to Use Whonix for Anonymous Browsing"
 description: "Set up Whonix Gateway and Workstation on VirtualBox or KVM, configure Tor routing for all traffic, and use Whonix safely for anonymous internet access"
 date: 2026-03-22
 author: theluckystrike
 permalink: /whonix-anonymous-browsing-setup-guide/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
-{% raw %}
-
-# How to Use Whonix for Anonymous Browsing
-
-Whonix is a two-VM anonymity system: the Gateway routes all traffic through Tor; the Workstation is completely isolated from the internet and can only communicate through the Gateway. Even if the Workstation is compromised — by malware, an exploit, or user error — the attacker cannot discover your real IP because the Workstation has no direct internet access.
----
 
 ## Table of Contents
 

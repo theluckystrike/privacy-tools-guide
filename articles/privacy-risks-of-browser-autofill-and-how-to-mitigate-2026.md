@@ -1,29 +1,18 @@
 ---
 layout: default
-
-permalink: /privacy-risks-of-browser-autofill-and-how-to-mitigate-2026/
-description: "Follow this guide to privacy risks of browser autofill and how to mitigate 2026 with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-
-
 title: "Privacy Risks of Browser Autofill and How to Mitigate 2026"
 description: "How autofill leaks data, invisible form field attacks, browser-specific settings, password manager alternatives, and CSP headers to prevent autofill abuse."
-author: Privacy Tools Guide
 date: 2026-03-21
+author: Privacy Tools Guide
 permalink: /privacy-risks-of-browser-autofill-and-how-to-mitigate-2026/
+categories: [guides]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 9
-voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide, privacy]
+voice-checked: true
 ---
+
 {% raw %}
 
 ## Prerequisites

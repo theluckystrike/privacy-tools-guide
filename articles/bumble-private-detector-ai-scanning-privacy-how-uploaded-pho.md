@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /bumble-private-detector-ai-scanning-privacy-how-uploaded-pho/
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
-description: "Learn bumble private detector ai scanning privacy how uploaded pho with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy, artificial-intelligence]
----
-
-layout: default
 title: "Bumble Private Detector AI Scanning Privacy How Uploaded"
 description: "Bumble Private Detector: How AI Scans Your Uploaded. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
@@ -22,8 +10,8 @@ categories: [guides]
 tags: [privacy-tools-guide, tools, privacy, artificial-intelligence]
 reviewed: true
 score: 9
-voice-checked: true
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}

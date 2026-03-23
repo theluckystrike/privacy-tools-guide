@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-exercise-montana-consumer-data-privacy-act-rights-dat/
-description: "Follow this guide to how to exercise montana consumer data privacy act rights dat with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Exercise Montana Consumer Data Privacy Act Rights"
 description: "A practical guide for developers and power users on exercising rights under the Montana Consumer Data Privacy Act. Learn how to request data deletion"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-exercise-montana-consumer-data-privacy-act-rights-dat/
 categories: [guides]
-intent-checked: true
-voice-checked: true
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 8
-tags: [privacy-tools-guide, privacy]
+intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}

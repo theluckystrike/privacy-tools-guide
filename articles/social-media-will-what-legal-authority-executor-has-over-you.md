@@ -1,29 +1,17 @@
 ---
 layout: default
-
-permalink: /social-media-will-what-legal-authority-executor-has-over-you/
-description: "Learn social media will what legal authority executor has over you with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Social Media Will What Legal Authority Executor Has Over"
 description: "A guide for developers and power users on how estate executors can access and manage digital accounts across different U.S. states"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /social-media-will-what-legal-authority-executor-has-over-you/
+categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
-voice-checked: true
-categories: [guides]
 intent-checked: true
-tags: [privacy-tools-guide]
+voice-checked: true
 ---
 
 {% raw %}

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-vpn-subnet-conflicts-happen-and-how-to-fix-them/
-description: "Fix how vpn subnet conflicts happen and how to fix them with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, troubleshooting, vpn]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [vpn]
----
-
-layout: default
 title: "How VPN Subnet Conflicts Happen and How to Fix"
 description: "A technical guide explaining VPN subnet conflicts, why they occur, and practical solutions for developers and power users managing multiple VPN"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-vpn-subnet-conflicts-happen-and-how-to-fix-them/
 categories: [guides]
+tags: [privacy-tools-guide, troubleshooting, vpn]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, troubleshooting, vpn]
 ---
 
 {% raw %}

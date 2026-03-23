@@ -1,29 +1,17 @@
 ---
 layout: default
-
-permalink: /how-to-set-up-dead-mans-switch-email-that-sends-credentials-/
-description: "Follow this guide to how to set up dead mans switch email that sends credentials  with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Set Up a Dead Man's Switch Email That Sends Credentials If"
 description: "A practical guide for developers and power users to create an automated system that delivers your credentials to trusted contacts if you become inactive"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-dead-mans-switch-email-that-sends-credentials-/
+categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
-voice-checked: true
-categories: [guides]
 intent-checked: true
-tags: [privacy-tools-guide]
+voice-checked: true
 ---
 
 {% raw %}

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /privacy-preserving-logging-guide-for-developers-2026/
-description: "Follow this guide to privacy preserving logging guide for developers 2026 with practical examples, tips, and step-by-step instructions for getting the..."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Privacy Preserving Logging Guide for Developers 2026"
 description: "A practical guide to implementing privacy-preserving logging in your applications. Learn data minimization, PII redaction techniques, and secure log"
 date: 2026-03-20
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-20
 author: "Privacy Tools Guide"
 permalink: /privacy-preserving-logging-guide-for-developers-2026/
 categories: [guides]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}

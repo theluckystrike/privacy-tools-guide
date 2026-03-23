@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "How to Use YubiKey for Maximum Security in 2026"
 description: "Complete YubiKey setup guide. FIDO2, GPG, SSH, OTP configuration. Multi-key backup strategy and disaster recovery planning."
 author: "Privacy Tools Guide"

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /virginia-consumer-data-protection-act-vcdpa-guide/
-description: "Follow this guide to virginia consumer data protection act vcdpa guide with practical examples, tips, and step-by-step instructions for getting the..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Virginia Consumer Data Protection Act Vcdpa Guide"
 description: "A practical technical guide to the Virginia Consumer Data Protection Act covering compliance requirements, data handling patterns, and implementation"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /virginia-consumer-data-protection-act-vcdpa-guide/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

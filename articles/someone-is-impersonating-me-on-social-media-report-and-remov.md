@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /someone-is-impersonating-me-on-social-media-report-and-remov/
-description: "Learn someone is impersonating me on social media report and remov with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Someone Is Impersonating Me On Social Media Report"
 description: "A technical guide for developers and power users on how to report and remove impersonation accounts on social media platforms. Includes API approaches"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /someone-is-impersonating-me-on-social-media-report-and-removal/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
+score: 8
 intent-checked: true
 voice-checked: true
-score: 8
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-safely-exchange-social-media-handles-with-dating-matc/
-description: "Follow this guide to how to safely exchange social media handles with dating matc with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Safely Exchange Social Media Handles With Dating"
 description: "A technical guide for developers and power users on exchanging social media handles with dating matches while protecting privacy. Covers"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-safely-exchange-social-media-handles-with-dating-matc/
 categories: [guides, security]
-intent-checked: true
-voice-checked: true
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
-tags: [privacy-tools-guide]
+intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}

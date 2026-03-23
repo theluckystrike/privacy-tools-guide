@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /wireguard-personal-vpn-setup-guide/
-description: "Follow this guide to wireguard personal vpn setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, vpn]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Set Up a Personal VPN with WireGuard"
 description: "Build a personal WireGuard VPN on a cheap VPS. Covers server setup, key generation, client configs for Linux, macOS, Windows, iOS, and Android."
 date: 2026-03-21
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: wireguard-personal-vpn-setup-guide
 categories: [guides, security]
+tags: [privacy-tools-guide, vpn]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]
 ---
 
 {% raw %}

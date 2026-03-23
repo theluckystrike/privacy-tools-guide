@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /llmnr-netbios-name-resolution-privacy-disabling-windows-prot/
-description: "Learn llmnr netbios name resolution privacy disabling windows prot with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy, llm]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Llmnr Netbios Name Resolution Privacy Disabling Windows"
 description: "A technical guide for developers and power users to disable LLMNR and NetBIOS name resolution on Windows, preventing hostname leakage that exposes your"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /llmnr-netbios-name-resolution-privacy-disabling-windows-prot/
 categories: [guides]
+tags: [privacy-tools-guide, privacy, llm]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy, llm]
 ---
 
 {% raw %}

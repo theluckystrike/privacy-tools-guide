@@ -1,28 +1,16 @@
 ---
 layout: default
-
-permalink: /verify-pgp-signatures-software-downloads/
-description: "Learn verify pgp signatures software downloads with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How to Verify PGP Signatures on Software Downloads"
 description: "Step-by-step guide to verifying PGP and GPG signatures before installing software, ensuring downloads are authentic and untampered with real commands"
 date: 2026-03-21
 author: theluckystrike
 permalink: /verify-pgp-signatures-software-downloads/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

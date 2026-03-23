@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-make-facebook-profile-private-2026/
-description: "Follow this guide to how to make facebook profile private 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Make Facebook Profile Private 2026"
 description: "If you're a developer or power user looking to lock down your Facebook presence, the platform's privacy controls have evolved significantly. While Facebook"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /how-to-make-facebook-profile-private-2026/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

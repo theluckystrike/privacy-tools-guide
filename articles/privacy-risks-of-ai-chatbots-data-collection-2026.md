@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Privacy Risks of AI Chatbots: Data Collection (2026)"
 description: "What ChatGPT, Claude, Gemini collect. Data retention policies, opt-out procedures, enterprise vs consumer, self-hosted alternatives."
 author: "Privacy Tools Guide"

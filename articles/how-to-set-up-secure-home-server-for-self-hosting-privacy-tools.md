@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/
-description: "Follow this guide to how to set up secure home server for self hosting privacy tools with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Set Up a Secure Home Server for Self-Hosting Privacy Tools"
 description: "Build a self-hosted privacy server: hardware selection, OS hardening, Docker containers for VPN, DNS, and email on local infrastructure."
 date: 2026-03-20
@@ -22,8 +10,8 @@ categories: [guides]
 tags: [privacy-tools-guide, privacy, self-hosting, security, networking, infrastructure]
 reviewed: true
 score: 9
-voice-checked: true
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}

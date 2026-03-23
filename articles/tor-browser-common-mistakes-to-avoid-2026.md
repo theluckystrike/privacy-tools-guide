@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /tor-browser-common-mistakes-to-avoid-2026/
-description: "Learn tor browser common mistakes to avoid 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Tor Browser Common Mistakes to Avoid in 2026"
 description: "A practical guide for developers and power users on the most common Tor Browser mistakes and how to avoid them. Includes configuration tips, security"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-common-mistakes-to-avoid-2026/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

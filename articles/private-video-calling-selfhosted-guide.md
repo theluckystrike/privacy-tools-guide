@@ -1,36 +1,18 @@
 ---
 layout: default
-
-permalink: /private-video-calling-selfhosted-guide/
-description: "Follow this guide to private video calling selfhosted guide with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Self-Hosted Private Video Calling Setup Guide"
 description: "Set up Jitsi Meet, Matrix Element, and Galene as self-hosted video calling alternatives to Zoom and Google Meet, with E2EE and no third-party data collection"
 date: 2026-03-22
 author: theluckystrike
 permalink: /private-video-calling-selfhosted-guide/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
-{% raw %}
-
-# Self-Hosted Private Video Calling Setup Guide
-
-Zoom sends meeting metadata to Amazon, Google Meet processes video through Google's infrastructure, and Microsoft Teams is tied to a Microsoft account. Self-hosted video calling gives you control over who has access to call data, recordings, and participant information. This guide covers three options: Jitsi Meet (easiest to deploy), Matrix + Element (federated, persistent rooms), and Galene (minimal, for small groups).
----
 
 ## Prerequisites
 

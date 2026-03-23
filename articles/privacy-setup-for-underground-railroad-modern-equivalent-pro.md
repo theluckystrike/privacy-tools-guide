@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /privacy-setup-for-underground-railroad-modern-equivalent-pro/
-description: "Learn privacy setup for underground railroad modern equivalent pro with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Privacy Setup For Underground Railroad Modern Equivalent Pro"
 description: "Discover modern digital privacy tools that serve as equivalents to the Underground Railroad's route protection methods. Learn practical implementations for"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-underground-railroad-modern-equivalent-pro/
 categories: [guides]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 9
-voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide, privacy]
+voice-checked: true
 ---
 
 {% raw %}

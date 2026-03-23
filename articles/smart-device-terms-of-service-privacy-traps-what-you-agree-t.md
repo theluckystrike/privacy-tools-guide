@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /smart-device-terms-of-service-privacy-traps-what-you-agree-t/
-description: "Learn smart device terms of service privacy traps what you agree t with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Smart Device Terms of Service Privacy Traps"
 description: "Discover the hidden privacy risks in smart device terms of service. Learn to analyze ToS, understand data collection practices, and protect your"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /smart-device-terms-of-service-privacy-traps-what-you-agree-t/
 categories: [guides]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /india-upi-payment-privacy-what-digital-payment-metadata-gove/
-description: "Learn india upi payment privacy what digital payment metadata gove with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "India Upi Payment Privacy What Digital Payment Metadata"
 description: "A technical deep dive into UPI metadata retention policies, what transaction data banks and the Indian government can access, and privacy"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /india-upi-payment-privacy-what-digital-payment-metadata-gove/
 categories: [guides]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}

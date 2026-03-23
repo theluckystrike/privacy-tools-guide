@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-use-bitcoin-atm-anonymously-without-providing-photo-i/
-description: "Follow this guide to how to use bitcoin atm anonymously without providing photo i with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Use Bitcoin Atm Anonymously Without Providing Photo"
 description: "Find no-KYC Bitcoin ATMs using CoinATMRadar filtered for 'No verification' operators, which allow cash purchases up to $3,000 USD daily without ID. If higher"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-use-bitcoin-atm-anonymously-without-providing-photo-i/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

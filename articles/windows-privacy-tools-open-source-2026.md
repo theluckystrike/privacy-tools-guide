@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /windows-privacy-tools-open-source-2026/
-description: "Learn windows privacy tools open source 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Windows Privacy Tools Open Source 2026: A Developer Guide"
 description: "A practical guide to open source privacy tools for Windows in 2026. Explore command-line utilities, encryption tools, network monitors, and more"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /windows-privacy-tools-open-source-2026/
 categories: [guides]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}

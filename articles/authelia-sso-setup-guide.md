@@ -6,45 +6,13 @@ date: 2026-03-22
 author: theluckystrike
 permalink: /authelia-sso-setup-guide/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
----
-
-{% raw %}
-
-# How to Set Up Authelia for SSO
-
-Authelia is a self-hosted authentication proxy that puts a login screen (with optional 2FA) in front of any HTTP service. Instead of setting up authentication in each of your self-hosted apps individually, Authelia intercepts requests to your internal services and handles authentication centrally.
-
-## Architecture
-
-```
-Browser → Traefik (reverse proxy) → Authelia (auth check)
-                                          │
-                     NOT authenticated → Login page
-                         Authenticated → Forward request to internal service
-                                         (Grafana, Portainer, Gitea, etc.)
-```
-
-Traefik sends an auth forward request to Authelia for every incoming request. If Authelia says the user is authenticated, Traefik forwards the request. If not, it redirects to the Authelia login page.
-
-## Prerequisites
-
-- A domain name with DNS pointing to your server
-- Traefik v2+ running (or nginx as an alternative)
-- Docker and Docker Compose
-
-## Step 1: Docker Compose Setup
-
-```yaml
-# docker-compose.yml
 version: '3.8'
-
-services:
-  authelia:
+services: authelia:
     image: authelia/authelia:latest
     container_name: authelia
     restart: unless-stopped
@@ -64,7 +32,6 @@ services:
       - "traefik.http.middlewares.authelia.forwardauth.authresponseheaders=Remote-User,Remote-Groups,Remote-Name,Remote-Email"
     networks:
       - proxy
-
   redis:
     image: redis:alpine
     container_name: authelia-redis
@@ -73,113 +40,10 @@ services:
       - ./redis:/data
     networks:
       - proxy
-
-networks:
-  proxy:
+networks: proxy:
     external: true
-```
-
-## Step 2: Authelia Configuration
-
-```yaml
-# authelia/configuration.yml
 ---
-server:
-  host: 0.0.0.0
-  port: 9091
 
-log:
-  level: info
-
-theme: dark
-
-jwt_secret: "$(openssl rand -hex 32)"   # replace with actual random string
-
-default_redirection_url: https://yourdomain.com
-
-totp:
-  issuer: yourdomain.com
-  period: 30
-  skew: 1
-
-authentication_backend:
-  file:
-    path: /config/users_database.yml
-    password:
-      algorithm: argon2id
-      iterations: 3
-      memory: 65536
-      parallelism: 4
-
-access_control:
-  default_policy: deny
-
-  rules:
-    # Public services — no auth needed
-    - domain: public.yourdomain.com
-      policy: bypass
-
-    # Internal services — require 1FA (password only)
-    - domain: gitea.yourdomain.com
-      policy: one_factor
-
-    # Sensitive services — require 2FA
-    - domain: portainer.yourdomain.com
-      policy: two_factor
-
-    - domain: grafana.yourdomain.com
-      policy: two_factor
-
-    # Admin panel — 2FA + specific user group
-    - domain: admin.yourdomain.com
-      policy: two_factor
-      subject: "group:admins"
-
-session:
-  name: authelia_session
-  secret: "$(openssl rand -hex 32)"   # replace with actual random string
-  expiration: 3600       # 1 hour
-  inactivity: 300        # 5 minutes
-  domain: yourdomain.com
-
-  redis:
-    host: authelia-redis
-    port: 6379
-
-regulation:
-  max_retries: 3
-  find_time: 120
-  ban_time: 300
-
-storage:
-  local:
-    path: /config/db.sqlite3
-
-notifier:
-  # For production, use SMTP:
-  smtp:
-    username: authelia@yourdomain.com
-    password: your-smtp-password
-    host: smtp.yourdomain.com
-    port: 587
-    sender: authelia@yourdomain.com
-  # For testing, use filesystem:
-  # filesystem:
-  #   filename: /config/notification.txt
-```
-
-## Step 3: Create Users
-
-```bash
-# Generate a password hash
-docker run --rm authelia/authelia:latest \
-  authelia hash-password 'your-secure-password'
-# Digest: $argon2id$v=19$m=65536,t=3,p=4$...
-```
-
-```yaml
-# authelia/users_database.yml
----
 users:
   alice:
     disabled: false

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-verify-someone-identity-before-meeting-from-dating-ap/
-description: "Follow this guide to how to verify someone identity before meeting from dating ap with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Verify Someone's Identity Before Meeting from a Dating App"
 description: "Meeting someone from a dating app in person requires trust, but blind trust can be dangerous. Catfishing—where someone creates a fake identity—remains"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-verify-someone-identity-before-meeting-from-dating-ap/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

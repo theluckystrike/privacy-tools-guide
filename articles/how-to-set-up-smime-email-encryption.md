@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-set-up-smime-email-encryption/
-description: "Follow this guide to how to set up smime email encryption with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, encryption]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How to Set Up S/MIME Email Encryption: A Practical Guide"
 description: "A technical guide for developers and power users on configuring S/MIME email encryption using OpenSSL, Thunderbird, and Apple Mail with practical"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /how-to-set-up-smime-email-encryption/
 categories: [guides, security]
+tags: [privacy-tools-guide, encryption]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, encryption]
 ---
 
 {% raw %}

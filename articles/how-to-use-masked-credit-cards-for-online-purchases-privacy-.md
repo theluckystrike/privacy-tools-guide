@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-use-masked-credit-cards-for-online-purchases-privacy-/
-description: "Follow this guide to how to use masked credit cards for online purchases privacy  with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Use Masked Credit Cards For Online Purchases Privacy"
 description: "Online shopping leaves a financial footprint that data brokers actively harvest. Every transaction links your identity, purchasing habits, and payment details"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-masked-credit-cards-for-online-purchases-privacy-/
 categories: [guides, security]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}

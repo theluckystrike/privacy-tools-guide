@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /migrating-from-lastpass-to-bitwarden-step-by-step-no-data-lo/
-description: "Learn migrating from lastpass to bitwarden step by step no data lo with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Migrating from LastPass to Bitwarden No Data Loss"
 description: "A technical guide for developers and power users migrating from LastPass to Bitwarden without losing any passwords, TOTP codes, or custom"
 date: 2026-03-16
@@ -19,12 +7,13 @@ last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /migrating-from-lastpass-to-bitwarden-step-by-step-no-data-lo/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
+
 {% raw %}
 
 Switching password managers doesn't have to mean losing your data. With the right approach, you can transfer every login, secure note, and TOTP code from LastPass to Bitwarden without gaps. This guide covers the technical steps for developers and power users who want full control over their migration.

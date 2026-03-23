@@ -1,71 +1,17 @@
 ---
-permalink: /privacy-risks-of-cloud-document-editors-google-docs-2026/
-description: "Learn privacy risks of cloud document editors google docs 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-date: 2026-03-23
----
+layout: default
 title: "Privacy Risks of Cloud Document Editors - Google Docs 2026"
 description: "What Google Docs, Notion, and Office365 collect. Includes collaboration metadata, access logs, privacy risks, and alternatives like CryptPad."
-author: Privacy Tools Guide
 date: 2026-03-21
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true
+author: Privacy Tools Guide
 permalink: /privacy-risks-of-cloud-document-editors-google-docs-2026/
 tags: [privacy-tools-guide, privacy]
+reviewed: true
+score: 9
+intent-checked: true
+voice-checked: true
 ---
 
-{% raw %}
-
-Google Docs, Notion, and Microsoft Office365 dominate collaborative editing. They're convenient. They're also data collection platforms. Here's what you're actually trading for that convenience.
-
-## What Google Docs Collects
-
-### Direct Metadata
-
-Everything you write is stored on Google's servers. This includes:
-
-- **Document content**: Every word, revision, formatting change
-- **Timestamps**: When document created, edited, accessed
-- **Editor identity**: Email address of everyone who viewed/edited
-- **IP addresses**: Logged for each access
-- **Device info**: Browser type, OS, device model
-- **Change history**: Full revision history (every keystroke can be reconstructed)
-- **Comments & suggestions**: All discussion threads
-- **Sharing settings**: Who has access, what permissions
-
-Example: Open a Google Doc, make a change. Google logs:
-```
-timestamp: 2026-03-21T14:30:45Z
-editor_email: alice@company.com
-ip_address: 203.0.113.42 (can identify location, ISP)
-change: "Added text: 'budget for Q2 is $500k'"
-device: Chrome, macOS, Apple M3
-```
-
-### Indirect Metadata (More Invasive)
-
-Google also infers:
-
-- **Browsing patterns**: How often you access docs, from where, peak times
-- **Collaboration patterns**: Who you work with, frequency, network mapping
-- **Content analysis**: Topic extraction (do you work on health, finance, defense?)
-- **Typing patterns**: Speed, error rate, pauses (biometric fingerprinting)
-- **Time zone inference**: By analysis of access times
-
-One research study found Google can identify document authors with 95% accuracy based purely on typing patterns and timestamps (no content needed).
-
-### Third-Party Access
-
-Google Docs shares data with:
-
-- **Google Analytics**: Every doc with embedded analytics
-- **Ad networks**: To profile your interests (if you use free Gmail account)
-- **Third-party add-ons**: Grammarly, Zapier, etc. get access to document content
-- **Law enforcement**: Google complies with ~80% of US government data requests
-- **Advertisers**: De-identified data (but linkable back to you)
----
 
 ## What Notion Collects
 

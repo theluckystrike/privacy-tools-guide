@@ -1,36 +1,18 @@
 ---
 layout: default
-
-permalink: /voice-assistant-privacy-risks-guide/
-description: "Follow this guide to voice assistant privacy risks guide with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Privacy Risks of Voice Assistants Guide"
 description: "What Amazon Alexa, Google Assistant, and Siri collect, how accidental activations work, and practical steps to reduce voice assistant surveillance"
 date: 2026-03-22
 author: theluckystrike
 permalink: /voice-assistant-privacy-risks-guide/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
-{% raw %}
-
-# Privacy Risks of Voice Assistants Guide
-
-Voice assistants listen continuously for wake words. That's the design — there's no other way to respond to "Hey Alexa" without the microphone being on and the audio being analyzed. The question isn't whether they listen, but what happens to what they hear, when they get it wrong, and who else gets access.
----
 
 ## Table of Contents
 

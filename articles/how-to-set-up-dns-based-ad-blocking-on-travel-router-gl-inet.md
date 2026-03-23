@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-set-up-dns-based-ad-blocking-on-travel-router-gl-inet/
-description: "Follow this guide to how to set up dns based ad blocking on travel router gl inet with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Set Up DNS-Based Ad Blocking on Travel Router GL-Inet"
 description: "A practical guide to configuring DNS-based ad blocking on GL-Inet travel routers. Protect your devices network-wide with AdGuard Home or Pi-hole deployment"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-dns-based-ad-blocking-on-travel-router-gl-inet/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

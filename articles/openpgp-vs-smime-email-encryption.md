@@ -1,31 +1,18 @@
 ---
 layout: default
-
-permalink: /openpgp-vs-smime-email-encryption/
-description: "Compare openpgp vs smime email encryption with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, comparison, encryption]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "OpenPGP vs S/MIME Email Encryption: A Technical Comparison"
 description: "Choose OpenPGP if you need decentralized key management, cross-organizational communication, or full control over your cryptographic identity -- it uses a"
 date: 2026-03-15
 last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /openpgp-vs-smime-email-encryption/
+categories: [guides]
+tags: [privacy-tools-guide, comparison, encryption]
 reviewed: true
 score: 7
-categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, encryption]
 ---
-
 
 {% raw %}
 

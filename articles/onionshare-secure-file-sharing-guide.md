@@ -1,38 +1,18 @@
 ---
 layout: default
-
-permalink: /onionshare-secure-file-sharing-guide/
-description: "Follow this guide to onionshare secure file sharing guide with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Secure File Sharing with OnionShare"
 description: "Use OnionShare to share files, host anonymous websites, and receive documents over Tor without exposing sender or recipient identities or IP addresses"
 date: 2026-03-22
 author: theluckystrike
 permalink: /onionshare-secure-file-sharing-guide/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
-{% raw %}
-
-# Secure File Sharing with OnionShare
-
-OnionShare creates a temporary .onion address and runs a local web server behind it. The person you share with visits the .onion address in Tor Browser and downloads the file directly from your machine — no cloud storage intermediary, no account, no IP visible to either party. For receiving files (whistleblower drops, source submissions), it runs in receive mode — an upload form at a private .onion address.
-
-This guide covers installation, every major mode, security considerations, metadata stripping, scripting, and real operational decisions you need to make when using OnionShare for sensitive transfers.
----
 
 ## Table of Contents
 

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-submit-subject-access-request-to-employer-for-all-mon/
-description: "Follow this guide to how to submit subject access request to employer for all mon with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Submit Subject Access Request To Employer For All"
 description: "A practical guide for employees to exercise their data subject rights under GDPR and similar privacy laws. Learn how to request all monitoring data"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-submit-subject-access-request-to-employer-for-all-mon/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

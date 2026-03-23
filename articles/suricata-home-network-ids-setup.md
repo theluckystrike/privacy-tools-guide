@@ -1,28 +1,16 @@
 ---
 layout: default
-
-permalink: /suricata-home-network-ids-setup/
-description: "Learn suricata home network ids setup with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-date: 2026-03-23
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-categories: [setup]
----
-
-layout: default
 title: "Suricata Home Network IDS Setup Guide"
 description: "How to set up Suricata as a network intrusion detection system on a Linux home server or router to monitor for malware, data exfiltration, and suspicious"
 date: 2026-03-21
 author: theluckystrike
 permalink: /suricata-home-network-ids-setup/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

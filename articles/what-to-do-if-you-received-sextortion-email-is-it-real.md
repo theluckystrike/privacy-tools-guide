@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /what-to-do-if-you-received-sextortion-email-is-it-real/
-description: "Learn what to do if you received sextortion email is it real with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "What to Do If You Received Sextortion Email: Is It Real?"
 description: "Learn how to identify and handle sextortion emails. Technical analysis, verification steps, and actionable advice for developers and power users"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /what-to-do-if-you-received-sextortion-email-is-it-real/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

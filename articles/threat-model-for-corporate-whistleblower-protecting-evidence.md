@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /threat-model-for-corporate-whistleblower-protecting-evidence/
-description: "Learn threat model for corporate whistleblower protecting evidence with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Threat Model For Corporate Whistleblower Protecting Evidence"
 description: "A practical threat modeling guide for corporate whistleblowers. Learn to protect evidence, secure communications, and maintain anonymity using proven"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-corporate-whistleblower-protecting-evidence/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

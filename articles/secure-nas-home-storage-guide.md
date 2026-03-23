@@ -1,36 +1,18 @@
 ---
 layout: default
-
-permalink: /secure-nas-home-storage-guide/
-description: "Follow this guide to secure nas home storage guide with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-date: 2026-03-23
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-categories: [guides]
----
-
-layout: default
 title: "How to Secure NAS Storage for Home Use"
 description: "Harden a Synology, QNAP, or TrueNAS home NAS with disk encryption, network isolation, firewall rules, 2FA, and audit logging to prevent unauthorized access"
 date: 2026-03-22
 author: theluckystrike
 permalink: /secure-nas-home-storage-guide/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
-{% raw %}
-
-# How to Secure NAS Storage for Home Use
-
-A home NAS holding photos, documents, and backups is a high-value target. By default, most NAS systems ship with permissive configurations, outdated security defaults, and services exposed to the local network that don't need to be. This guide covers encryption, access control, network hardening, and monitoring for Synology DSM, QNAP QTS, and TrueNAS.
----
 
 ## Table of Contents
 

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-opt-out-of-linkedin-data-being-used-for-ai-training-a/
-description: "Follow this guide to how to opt out of linkedin data being used for ai training a with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide, artificial-intelligence]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Opt Out Of LinkedIn Data Being Used For Ai Training"
 description: "A practical guide for developers and power users on how to prevent LinkedIn from using your professional data for AI training and machine learning"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-opt-out-of-linkedin-data-being-used-for-ai-training-a/
 categories: [guides, security]
+tags: [privacy-tools-guide, artificial-intelligence]
 reviewed: true
+score: 8
 intent-checked: true
 voice-checked: true
-score: 8
-tags: [privacy-tools-guide, artificial-intelligence]
 ---
 
 {% raw %}

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /voip-phone-number-privacy-risks-what-sip-providers-log-about/
-description: "Learn voip phone number privacy risks what sip providers log about with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Voip Phone Number Privacy Risks What Sip Providers Log"
 description: "A technical breakdown of the metadata and call logs that SIP/VOIP providers collect, with practical examples for developers evaluating"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /voip-phone-number-privacy-risks-what-sip-providers-log-about/
 categories: [guides, security]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}

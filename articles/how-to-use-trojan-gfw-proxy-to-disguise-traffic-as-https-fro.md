@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-use-trojan-gfw-proxy-to-disguise-traffic-as-https-fro/
-description: "Follow this guide to how to use trojan gfw proxy to disguise traffic as https fro with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Use Trojan Gfw Proxy To Disguise Traffic As Https"
 description: "A practical guide for developers and power users on configuring Trojan GFW proxy to mask traffic as HTTPS for use from China"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-trojan-gfw-proxy-to-disguise-traffic-as-https-fro/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

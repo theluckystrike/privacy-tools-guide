@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/
-description: "Follow this guide to how to opt out of aadhaar based surveillance and limit biome with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Opt Out of Aadhaar-Based Surveillance and Limit Biometric"
 description: "A practical guide for developers and power users to reduce Aadhaar surveillance exposure. Learn to lock biometrics, revoke consents, and minimize biometric"
 date: 2026-03-16
@@ -19,13 +7,12 @@ last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
-voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]
+voice-checked: true
 ---
-
 
 You can minimize Aadhaar surveillance exposure by locking biometrics on the UIDAI portal, generating a Virtual ID proxy, auditing authentication history, revoking optional service provider consents, and monitoring for breaches. This guide provides concrete steps to reduce your biometric data footprint within India's centralized identification system while acknowledging that complete opt-out is impossible due to mandatory linkages for banking and telecom.
 

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-protect-your-zoom-meeting-from-zoom-bombing-security/
-description: "Follow this guide to how to protect your zoom meeting from zoom bombing security with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide, security]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Protect Your Zoom Meeting From Zoom Bombing Security"
 description: "Learn practical methods to secure your Zoom meetings from zoom bombing attacks. Includes configuration settings, security best practices, and code"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-protect-your-zoom-meeting-from-zoom-bombing-security/
 categories: [guides]
+tags: [privacy-tools-guide, security]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, security]
 ---
 
 {% raw %}

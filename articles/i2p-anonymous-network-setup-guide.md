@@ -1,34 +1,18 @@
 ---
 layout: default
-
-permalink: /i2p-anonymous-network-setup-guide/
-description: "Follow this guide to i2p anonymous network setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-date: 2026-03-23
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-categories: [setup]
----
-
-layout: default
 title: "How to Use the I2P Anonymous Network"
 description: "Install and configure I2P for anonymous browsing, set up eepsites, use I2P-Bote for email, and understand how I2P differs from Tor for threat modeling"
 date: 2026-03-22
 author: theluckystrike
 permalink: /i2p-anonymous-network-setup-guide/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
-{% raw %}
-
-I2P (Invisible Internet Project) is a garlic-routing network designed for internal anonymous communication — hidden services, encrypted email, file sharing, and messaging within the I2P network itself. Unlike Tor, I2P isn't primarily designed for accessing the clearnet anonymously. Each peer routes traffic for others, making every participant a relay by default.
----
 
 ## Table of Contents
 

@@ -1,28 +1,16 @@
 ---
 layout: default
-
-permalink: /private-git-server-gitea-setup-guide/
-description: "Follow this guide to private git server gitea setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Self-Hosted Private Git Server with Gitea"
 description: "Set up a private Gitea git server on a VPS or home server with HTTPS, SSH key auth, and access controls to keep your code off GitHub and GitLab's servers"
 date: 2026-03-21
 author: theluckystrike
 permalink: /private-git-server-gitea-setup-guide/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /india-digilocker-privacy-concerns-what-personal-documents-go/
-description: "Learn india digilocker privacy concerns what personal documents go with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "India Digilocker Privacy Concerns What Personal Documents"
 description: "India DigiLocker Privacy Concerns: What Personal. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /india-digilocker-privacy-concerns-what-personal-documents-go/
 categories: [guides]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 9
-voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide, privacy]
+voice-checked: true
 ---
 
 {% raw %}

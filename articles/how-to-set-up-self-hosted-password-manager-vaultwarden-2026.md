@@ -1,19 +1,15 @@
 ---
-permalink: /how-to-set-up-self-hosted-password-manager-vaultwarden-2026/
-description: "Follow this guide to how to set up self hosted password manager vaultwarden 2026 with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-date: 2026-03-23
----
+layout: default
 title: "How to Set Up Self-Hosted Password Manager Vaultwarden 2026"
+description: "Set up Vaultwarden, a free open-source password manager compatible with Bitwarden clients. Covers Docker deployment, reverse proxy, backups, and HTTPS."
 date: 2026-03-21
 author: "Privacy Tools Guide"
+permalink: /how-to-set-up-self-hosted-password-manager-vaultwarden-2026/
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
-voice-checked: true
 intent-checked: true
-permalink: /how-to-set-up-self-hosted-password-manager-vaultwarden-2026/
-description: "Follow this guide to how to set up self hosted password manager vaultwarden 2026 with practical examples, tips, and step-by-step instructions for getting"
-tags: [privacy-tools-guide]
+voice-checked: true
 ---
 
 {% raw %}

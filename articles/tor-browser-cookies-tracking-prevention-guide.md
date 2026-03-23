@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /tor-browser-cookies-tracking-prevention-guide/
-description: "Follow this guide to tor browser cookies tracking prevention guide with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Tor Browser Cookies Tracking Prevention Guide"
 description: "A practical guide for developers and power users on how Tor Browser prevents cookie-based tracking through isolation mechanisms, configuration"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-cookies-tracking-prevention-guide/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

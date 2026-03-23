@@ -1,29 +1,17 @@
 ---
 layout: default
-
-permalink: /how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/
-description: "Follow this guide to how to set up casa multisig bitcoin inheritance plan with co with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Set Up Casa Multisig Bitcoin Inheritance Plan"
 description: "A technical guide for developers and power users on implementing Bitcoin inheritance planning using Casa multisig wallets with collaborative custody"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/
+categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
-voice-checked: true
-categories: [guides]
 intent-checked: true
-tags: [privacy-tools-guide]
+voice-checked: true
 ---
 
 {% raw %}

@@ -1,38 +1,18 @@
 ---
 layout: default
-
-permalink: /luks-encrypted-container-guide/
-description: "Follow this guide to luks encrypted container guide with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How to Create an Encrypted Container with LUKS"
 description: "Create portable LUKS encrypted containers as loop device files on Linux, separate from full-disk encryption, for encrypting specific directories and files"
 date: 2026-03-22
 author: theluckystrike
 permalink: /luks-encrypted-container-guide/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
-{% raw %}
-
-# How to Create an Encrypted Container with LUKS
-
-LUKS full-disk encryption protects everything on a disk. But sometimes you need a portable, specific encrypted container — a single file that acts like an encrypted vault you can move around, back up, or mount on any Linux system. This is done using a loop device: LUKS on a regular file.
-
-This guide walks through creating a LUKS2 container from scratch, including choosing the right cipher and key derivation function, managing keyslots, backing up the header, resizing the container, and using convenience scripts for daily use.
----
 
 ## Table of Contents
 

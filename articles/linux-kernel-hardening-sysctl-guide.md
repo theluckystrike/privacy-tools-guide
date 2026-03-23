@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /linux-kernel-hardening-sysctl-guide/
-description: "Follow this guide to linux kernel hardening sysctl guide with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Linux Kernel Hardening with sysctl"
 description: "Harden a Linux server with sysctl settings. Covers network stack hardening, kernel pointer hiding, ASLR, dmesg restriction, and persistence."
 date: 2026-03-21
@@ -19,12 +7,13 @@ last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: linux-kernel-hardening-sysctl-guide
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
+
 {% raw %}
 
 The Linux kernel exposes hundreds of tunable parameters via `/proc/sys/`. Many defaults exist for broad compatibility, not security. Hardening these settings closes off attack paths that local and remote attackers use to escalate privileges, enumerate systems, and exploit the network stack.

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /signal-protocol-explained-for-developers/
-description: "Learn signal protocol explained for developers with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Signal Protocol Explained for Developers"
 description: "A developer-focused explanation of the Signal Protocol's cryptographic mechanisms, including Double Ratchet Algorithm, X3DH key agreement, and practical"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /signal-protocol-explained-for-developers/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

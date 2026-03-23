@@ -1,29 +1,17 @@
 ---
 layout: default
-
-permalink: /password-manager-browser-extension-attack-surface/
-description: "Learn password manager browser extension attack surface with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Password Manager Browser Extension Attack"
 description: "Explore the security risks and attack vectors of password manager browser extensions. Learn how developers and power users can assess and mitigate"
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /password-manager-browser-extension-attack-surface/
+categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
-categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

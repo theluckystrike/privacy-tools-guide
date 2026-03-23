@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/
-description: "Follow this guide to how to tell if your dns has been hijacked symptoms check with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Tell If Your Dns Has Been Hijacked Symptoms"
 description: "A practical guide for developers and power users to detect DNS hijacking. Learn to identify symptoms, use diagnostic tools, and verify your DNS integrity"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

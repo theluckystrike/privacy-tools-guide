@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /vpn-for-safe-browsing-on-public-wifi-in-airports/
-description: "Learn vpn for safe browsing on public wifi in airports with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, vpn]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "VPN for Safe Browsing on Public WiFi in Airports"
 description: "Airport public WiFi networks present significant security risks for travelers. This guide covers the technical implementation of VPN solutions for developers"
 date: 2026-03-17
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-17
 author: theluckystrike
 permalink: /vpn-for-safe-browsing-on-public-wifi-in-airports/
 categories: [guides]
+tags: [privacy-tools-guide, vpn]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]
 ---
 
 {% raw %}

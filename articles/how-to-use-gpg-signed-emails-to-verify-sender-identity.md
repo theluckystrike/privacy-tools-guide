@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-use-gpg-signed-emails-to-verify-sender-identity/
-description: "Follow this guide to how to use gpg signed emails to verify sender identity with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Use GPG Signed Emails to Verify Sender Identity"
 description: "Learn how to use GPG signed emails to verify sender identity with this practical guide for developers and power users. Includes setup, signing"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-use-gpg-signed-emails-to-verify-sender-identity/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /windows-11-cortana-disable-privacy-guide/
-description: "Follow this guide to windows 11 cortana disable privacy guide with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Windows 11 Cortana Disable Privacy Guide"
 description: "A practical guide for developers and power users to disable Cortana in Windows 11, covering Settings, Group Policy, Registry, and PowerShell methods"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /windows-11-cortana-disable-privacy-guide/
 categories: [guides]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}

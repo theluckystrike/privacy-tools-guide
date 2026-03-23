@@ -1,28 +1,16 @@
 ---
 layout: default
-
-permalink: /privacy-browser-comparison-2026/
-description: "Learn privacy browser comparison 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-date: 2026-03-23
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-categories: [browser-privacy]
----
-
-layout: default
 title: "Privacy-Focused Web Browser Comparison 2026"
 description: "Head-to-head comparison of Firefox, Brave, LibreWolf, Mullvad Browser, and Tor Browser across fingerprinting, telemetry, defaults, and real-world privacy"
 date: 2026-03-21
 author: theluckystrike
 permalink: /privacy-browser-comparison-2026/
 categories: [guides]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}

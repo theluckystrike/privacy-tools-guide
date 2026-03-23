@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-protect-yourself-from-swatting-attack-prevention-meas/
-description: "Follow this guide to how to protect yourself from swatting attack prevention meas with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Protect Yourself From Swatting Attack Prevention Measures"
 description: "Learn practical swatting attack prevention measures. This guide covers threat modeling, address protection, emergency response protocols"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-protect-yourself-from-swatting-attack-prevention-measures/
 categories: [troubleshooting]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

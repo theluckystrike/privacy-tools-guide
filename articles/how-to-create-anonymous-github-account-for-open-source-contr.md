@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-create-anonymous-github-account-for-open-source-contr/
-description: "Follow this guide to how to create anonymous github account for open source contr with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Create Anonymous GitHub Account For Open Source"
 description: "A practical guide for developers who want to contribute to open source projects while maintaining privacy. Learn how to set up a completely separate"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-anonymous-github-account-for-open-source-contr/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
+score: 9
 intent-checked: true
 voice-checked: true
-score: 9
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

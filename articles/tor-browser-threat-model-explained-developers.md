@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /tor-browser-threat-model-explained-developers/
-description: "Learn tor browser threat model explained developers with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Tor Browser Threat Model Explained for Developers"
 description: "Tor Browser Threat Model Explained for Developers — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /tor-browser-threat-model-explained-developers/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

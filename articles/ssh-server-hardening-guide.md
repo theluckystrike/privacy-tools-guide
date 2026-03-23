@@ -1,9 +1,4 @@
 ---
-permalink: /ssh-server-hardening-guide/
-description: "Follow this guide to ssh server hardening guide with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-date: 2026-03-23
----
 layout: default
 title: "SSH Server Hardening Guide"
 description: "Step-by-step SSH server hardening for Linux: disable password auth, configure key-only login, change default port, set up fail2ban, and audit active sessions"
@@ -11,11 +6,11 @@ date: 2026-03-21
 author: theluckystrike
 permalink: /ssh-server-hardening-guide/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

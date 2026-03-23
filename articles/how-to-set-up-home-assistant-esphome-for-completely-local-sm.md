@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-set-up-home-assistant-esphome-for-completely-local-sm/
-description: "Follow this guide to how to set up home assistant esphome for completely local sm with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Set Up Home Assistant Esphome For Completely Local"
 description: "A practical guide for developers and power users setting up ESPHome with Home Assistant for privacy-focused, fully local smart home sensors without"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-home-assistant-esphome-for-completely-local-sm/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

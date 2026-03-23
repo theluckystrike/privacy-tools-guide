@@ -1,29 +1,17 @@
 ---
 layout: default
-
-permalink: /school-surveillance-technology-privacy-student-rights-agains/
-description: "Learn school surveillance technology privacy student rights agains with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "School Surveillance Technology Privacy"
 description: "A technical guide for developers and power users on facial recognition surveillance in schools, privacy concerns, legal frameworks, and protective measures"
 date: 2026-03-16
 last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /school-surveillance-technology-privacy-student-rights-against/
+categories: [security, guides]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 8
-categories: [security, guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}

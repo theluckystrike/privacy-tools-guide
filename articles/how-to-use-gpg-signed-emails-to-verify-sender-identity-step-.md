@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/
-description: "Follow this guide to how to use gpg signed emails to verify sender identity step  with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How to Use GPG Signed Emails to Verify Sender Identity"
 description: "Generate a GPG key pair with gpg --gen-key, export your public key with gpg --armor --export [email], and share it with contacts. To sign an email, use gpg"
 date: 2026-03-15
@@ -19,110 +7,14 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
-{% raw %}
-
-Generate a GPG key pair with `gpg --gen-key`, export your public key with `gpg --armor --export [email]`, and share it with contacts. To sign an email, use `gpg --clearsign email.txt` which generates a signed version others can verify with `gpg --verify email.txt.asc`. Recipients obtain your public key, verify it against your key fingerprint (check over a trusted channel), and then verify your signatures automatically. This proves the message came from you and wasn't altered in transit.
-
-## Prerequisites
-
-Before you begin, make sure you have the following ready:
-
-- A computer running macOS, Linux, or Windows
-- Terminal or command-line access
-- Administrator or sudo privileges (for system-level changes)
-- A stable internet connection for downloading tools
-
-
-### Step 1: Understand GPG Email Signatures
-
-When someone signs an email with GPG, they attach a cryptographic signature generated using their private key. The recipient can then verify this signature using the sender's public key. If verification succeeds, you know:
-
-1. The message was created by someone with access to the sender's private key
-2. The message has not been altered since it was signed
-3. The sender controls the email address associated with that GPG key
-
-GPG supports two types of signatures: clear-signed and detached. Clear-signed messages display the original text with the signature attached inline, while detached signatures are stored in separate files. Most email clients use clear-signed format for automatic verification.
-
-### Step 2: Set Up Your GPG Environment
-
-Before working with signed emails, ensure you have GPG installed. On macOS, install via Homebrew:
-
-```bash
-brew install gnupg
-```
-
-On Linux, use your package manager:
-
-```bash
-sudo apt-get install gnupg  # Debian/Ubuntu
-sudo dnf install gnupg      # Fedora
-```
-
-Generate a new GPG key if you don't have one:
-
-```bash
-gpg --full-generate-key
-```
-
-Select RSA (2048 or 4096 bits), set an expiration date, and enter your name and email. Choose a strong passphrase to protect your private key.
-
-### Step 3: Configure Your Email Client for Signed Emails
-
-Most terminal-based email clients support GPG signing. Here's how to configure a few popular options.
-
-### Mutt Configuration
-
-Add these lines to your `~/.muttrc`:
-
-```
-set pgp_sign_as = "0xYOURKEYID"
-set crypt_use_gpgme = yes
-```
-
-Replace `0xYOURKEYID` with your actual key ID (found via `gpg --list-keys`).
-
-### Neomutt Configuration
-
-Neomutt uses similar settings. Add to your `~/.neomuttrc`:
-
-```
-set pgp_sign_as = "0xYOURKEYID"
-set crypt_verify_sig = yes
-```
-
-### Emacs with Mu4e
-
-For Emacs users, add to your configuration:
-
-```elisp
-(setq mml-secure-gpg-signers '("your-email@example.com"))
-(setq mm-verify-option 'known)
-(setq mm-decrypt-option 'known)
-```
-
-### Step 4: Signing an Email Manually
-
-For testing or scripting purposes, you can sign emails directly from the command line. Create a simple message and sign it:
-
-```bash
-echo "Hello, this is a test message." | gpg --clearsign
-```
-
-The output resembles:
-
-```---
---BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA256
-
-Hello, this is a test message.
------BEGIN PGP SIGNATURE-----
+--BEGIN PGP SIGNATURE-----
 iQEzBEBCAAoFiEEexample1234567890FAKEexample=
 =A1B2
 -----END PGP SIGNATURE-----

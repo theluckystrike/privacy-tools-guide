@@ -1,19 +1,5 @@
 ---
 layout: default
-
-permalink: /macos-firewall-configuration-for-privacy/
-description: "Learn macos firewall configuration for privacy with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
----
-
-
-
-layout: default
 title: "macOS Firewall Configuration"
 description: "Configure macOS firewall for privacy using pf, Application Firewall, and command-line tools. Block trackers, control inbound connections, and secure your"
 date: 2026-03-15
@@ -21,12 +7,13 @@ last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /macos-firewall-configuration-for-privacy/
 categories: [guides, security]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]
 ---
+
 {% raw %}
 
 ## Introduction

@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "How to Configure DNS Over HTTPS (DoH) for Privacy in 2026"
 description: "Set up DNS over HTTPS on Windows, macOS, iOS, and Android. Cloudflare, NextDNS, Quad9, and Mullvad compared with configuration examples."
 author: Privacy Tools Guide

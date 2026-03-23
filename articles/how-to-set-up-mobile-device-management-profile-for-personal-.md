@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-set-up-mobile-device-management-profile-for-personal-/
-description: "Follow this guide to how to set up mobile device management profile for personal  with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Set Up Mobile Device Management Profile For Personal"
 description: "A technical guide for developers and power users on configuring MDM profiles on iOS and Android to enhance personal privacy and security"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-mobile-device-management-profile-for-personal-/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-replace-cloud-dependent-smart-switches-with-local-zig/
-description: "Follow this guide to how to replace cloud dependent smart switches with local zig with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Replace Cloud Dependent Smart Switches With Local"
 description: "A practical guide for developers and power users on migrating from cloud-dependent smart switches to local Zigbee alternatives for privacy and reliability"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-replace-cloud-dependent-smart-switches-with-local-zig/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

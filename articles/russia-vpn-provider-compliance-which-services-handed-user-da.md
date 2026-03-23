@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /russia-vpn-provider-compliance-which-services-handed-user-da/
-description: "Learn russia vpn provider compliance which services handed user da with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, vpn]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Russia Vpn Provider Compliance Which Services Handed User"
 description: "A technical analysis of VPN provider compliance with Russian data requests. Learn which services cooperated with authorities, what data was disclosed"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /russia-vpn-provider-compliance-which-services-handed-user-da/
 categories: [guides, security]
+tags: [privacy-tools-guide, vpn]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]
 ---
 
 {% raw %}

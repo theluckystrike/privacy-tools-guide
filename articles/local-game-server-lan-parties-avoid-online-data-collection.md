@@ -1,29 +1,16 @@
 ---
 layout: default
-
-permalink: /local-game-server-lan-parties-avoid-online-data-collection/
-description: "Learn local game server lan parties avoid online data collection with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-
-layout: default
 title: "Local Game Server Setup for LAN Parties"
 description: "A guide to setting up local game servers for LAN parties that keep your gaming activity private and away from online data collection."
 date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /local-game-server-lan-parties-avoid-online-data-collection/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: false
-tags: [privacy-tools-guide]
 ---
 
 Playing games online typically sends significant amounts of data to game publishers, including your IP address, gaming habits, chat logs, purchase history, and behavioral analytics. For privacy-conscious gamers, LAN parties offer an alternative that keeps your gaming activity completely offline and under your control. This guide covers how to set up local game servers, configure your network for peer-to-peer gaming, and find self-hosted alternatives to popular online games.

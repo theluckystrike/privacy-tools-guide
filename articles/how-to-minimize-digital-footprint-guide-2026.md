@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-minimize-digital-footprint-guide-2026/
-description: "Follow this guide to how to minimize digital footprint guide 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Minimize Digital Footprint Guide 2026"
 description: "Your digital footprint encompasses every data point you leave behind while using the internet—search queries, browsing history, social media activity, device"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /how-to-minimize-digital-footprint-guide-2026/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

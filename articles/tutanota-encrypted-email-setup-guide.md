@@ -1,36 +1,18 @@
 ---
 layout: default
-
-permalink: /tutanota-encrypted-email-setup-guide/
-description: "Follow this guide to tutanota encrypted email setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Setting Up Encrypted Email with Tutanota"
 description: "Set up Tutanota encrypted email: custom domains, desktop client configuration, and external tool integration for end-to-end encrypted messaging."
 date: 2026-03-22
 author: theluckystrike
 permalink: /tutanota-encrypted-email-setup-guide/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
-{% raw %}
-
-# Setting Up Encrypted Email with Tutanota
-
-Tutanota (now rebranded as Tuta) encrypts email end-to-end between Tutanota users automatically, and can encrypt to external recipients using a shared password. Unlike ProtonMail, Tutanota also encrypts subject lines — a meaningful privacy detail since subject lines are often more revealing than message bodies.
----
 
 ## Table of Contents
 

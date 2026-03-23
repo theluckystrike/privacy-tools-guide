@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-tell-if-your-computer-is-part-of-botnet-check/
-description: "Follow this guide to how to tell if your computer is part of botnet check with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Tell If Your Computer Is Part Of Botnet"
 description: "Learn how to identify if your computer has been compromised and added to a botnet. This guide covers warning signs, detection methods, and removal steps"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: "theluckystrike"
 permalink: /how-to-tell-if-your-computer-is-part-of-botnet-check/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

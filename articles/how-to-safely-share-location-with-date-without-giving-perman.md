@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-safely-share-location-with-date-without-giving-perman/
-description: "Follow this guide to how to safely share location with date without giving perman with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Safely Share Location With Date Without Giving"
 description: "Learn technical methods to share your location temporarily with dates or new contacts without revealing your permanent address. Includes code examples"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-safely-share-location-with-date-without-giving-perman/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
-voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]
+voice-checked: true
 ---
 
 {% raw %}

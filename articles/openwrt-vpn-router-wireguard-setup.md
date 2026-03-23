@@ -1,29 +1,18 @@
 ---
 layout: default
-
-permalink: /openwrt-vpn-router-wireguard-setup/
-description: "Learn openwrt vpn router wireguard setup with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, vpn]
-date: 2026-03-23
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-categories: [vpn]
----
-
-layout: default
 title: "OpenWrt VPN Router Setup with WireGuard"
 description: "How to configure OpenWrt as a WireGuard VPN router so that all devices on your home network route through the VPN without per-device configuration"
 date: 2026-03-21
 author: theluckystrike
 permalink: /openwrt-vpn-router-wireguard-setup/
 categories: [guides, security]
+tags: [privacy-tools-guide, vpn]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]
 ---
+
 {% raw %}
 
 Running a VPN on each individual device means 8 apps to configure, update, and maintain. A VPN at the router level means every device on your network — phone, laptop, smart TV, game console, IoT sensors — is protected automatically, without installing anything on them.

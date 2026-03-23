@@ -1,18 +1,5 @@
 ---
 layout: default
-
-permalink: /best-privacy-browser-extensions-ranked-by-performance-impact/
-description: "Discover the best privacy browser extensions ranked by performance impact with practical examples, tips, and step-by-step instructions for getting..."
-tags: [privacy-tools-guide, best-of, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-
-layout: default
 title: "Best Privacy Browser Extensions Ranked by Performance"
 description: "A technical analysis of privacy browser extensions and their impact on page load performance. Rankings and benchmarks for developers and power users."
 date: 2026-03-21
@@ -25,7 +12,6 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
-
 
 {% raw %}
 

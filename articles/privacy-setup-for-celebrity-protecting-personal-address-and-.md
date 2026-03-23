@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /privacy-setup-for-celebrity-protecting-personal-address-and-/
-description: "Learn privacy setup for celebrity protecting personal address and  with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Privacy Setup for Celebrity: Protecting Personal Address"
 description: "Remove your home address from data broker sites (Spokeo, Whitepages, BeenVerified) using automated services or manual opt-outs, then prevent future exposure by"
 date: 2026-03-16

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /privacy-tools-for-election-observer-protecting-witness-testi/
-description: "Learn privacy tools for election observer protecting witness testi with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Privacy Tools For Election Observer Protecting Witness"
 description: "A practical guide to securing witness testimony and election observation data using encryption, secure communication, and operational security tools"
 date: 2026-03-16
@@ -25,7 +13,6 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
-
 
 Protect election observer witness testimony using Signal for encrypted communications, exiftool to strip GPS from photos, encrypted storage containers (VeraCrypt) for case notes, and Tor for communications. Never store unencrypted witness identities with evidence, and use separate devices for different operations to compartmentalize data.
 

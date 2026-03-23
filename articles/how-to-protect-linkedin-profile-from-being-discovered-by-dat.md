@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-protect-linkedin-profile-from-being-discovered-by-dat/
-description: "Follow this guide to how to protect linkedin profile from being discovered by dat with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Protect LinkedIn Profile From Being Discovered"
 description: "LinkedIn is one of the most publicly available professional databases, containing your employment history, skills, connections, and often personal details that"
 date: 2026-03-19
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-19
 author: theluckystrike
 permalink: /how-to-protect-linkedin-profile-from-being-discovered-by-dat/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
+score: 8
 intent-checked: true
 voice-checked: true
-score: 8
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

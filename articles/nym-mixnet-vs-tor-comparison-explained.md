@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /nym-mixnet-vs-tor-comparison-explained/
-description: "Compare nym mixnet vs tor comparison explained with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, comparison]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [comparisons]
----
-
-layout: default
 title: "Nym Mixnet vs Tor Comparison Explained: A Technical Guide"
 description: "A detailed technical comparison of Nym Mixnet and Tor for developers and power users. Understand the architectural differences, metadata protection"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /nym-mixnet-vs-tor-comparison-explained/
 categories: [guides]
-voice-checked: true
+tags: [privacy-tools-guide, comparison]
 reviewed: true
 score: 9
 intent-checked: true
-tags: [privacy-tools-guide, comparison]
+voice-checked: true
 ---
 
 {% raw %}

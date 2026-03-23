@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /russia-tspu-deep-packet-inspection-boxes-how-they-detect-and/
-description: "Learn russia tspu deep packet inspection boxes how they detect and with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Russia Tspu Deep Packet Inspection Boxes How They Detect"
 description: "Learn how TSPU deep packet inspection boxes work, how they identify and block VPN traffic, and what developers can do to build more resilient privacy"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /russia-tspu-deep-packet-inspection-boxes-how-they-detect-and/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
-voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]
+voice-checked: true
 ---
 
 {% raw %}

@@ -1,28 +1,16 @@
 ---
 layout: default
-
-permalink: /secure-messaging-protocol-comparison/
-description: "Learn secure messaging protocol comparison with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-date: 2026-03-23
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-categories: [guides]
----
-
-layout: default
 title: "Secure Messaging Protocol Comparison"
 description: "Technical comparison of Signal Protocol, Matrix, MLS, and OMEMO encryption protocols used in private messaging apps — what each protects and where each"
 date: 2026-03-21
 author: theluckystrike
 permalink: /secure-messaging-protocol-comparison/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

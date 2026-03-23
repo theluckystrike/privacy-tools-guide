@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-send-large-encrypted-files-without-uploading-to-third/
-description: "Follow this guide to how to send large encrypted files without uploading to third with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Send Large Encrypted Files Without Uploading"
 description: "A guide for developers and power users on sending large encrypted files peer-to-peer without relying on cloud services. Covers age"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-send-large-encrypted-files-without-uploading-to-third/
 categories: [guides]
-voice-checked: true
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
-tags: [privacy-tools-guide]
+voice-checked: true
 ---
 
 {% raw %}

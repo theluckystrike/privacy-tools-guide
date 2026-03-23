@@ -1,31 +1,18 @@
 ---
 layout: default
-
-permalink: /subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
-description: "Follow this guide to subscription service cancellation after death how executor can close recurring payment accounts guide with practical examples,..."
-tags: [privacy-tools-guide]
----
-
-layout: default
 title: "Subscription Service Cancellation After Death"
 description: "A technical guide for executors and power users on how to identify, access, and cancel subscription services after someone passes away. Includes"
 date: 2026-03-18
 last_modified_at: 2026-03-18
 author: "Privacy Tools Guide"
 permalink: /subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/
-score: 8
-voice-checked: true
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
+score: 8
 intent-checked: true
+voice-checked: true
 ---
-
 
 {% raw %}
 

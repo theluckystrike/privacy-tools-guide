@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-prevent-screenshots-of-dating-conversations-from-being-shared-without-your-consent-guide/
-description: "Follow this guide to how to prevent screenshots of dating conversations from being shared without your consent guide with practical examples, tips, and..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Prevent Screenshots of Dating Conversations from Being"
 description: "A practical guide for developers and power users on screenshot prevention technologies, platform limitations, and privacy-conscious messaging app implementation"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prevent-screenshots-of-dating-conversations-from-being-shared-without-your-consent-guide/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /smart-refrigerator-data-collection-what-samsung-family-hub-s/
-description: "Learn smart refrigerator data collection what samsung family hub s with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Smart Refrigerator Data Collection What Samsung Family Hub"
 description: "A technical analysis of Samsung Family Hub refrigerator network traffic, data endpoints, and privacy implications for developers and power users"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /smart-refrigerator-data-collection-what-samsung-family-hub-s/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

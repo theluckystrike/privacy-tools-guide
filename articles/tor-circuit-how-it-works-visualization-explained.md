@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /tor-circuit-how-it-works-visualization-explained/
-description: "Learn tor circuit how it works visualization explained with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Tor Circuit: How It Works and Visualization Explained"
 description: "A technical deep dive into Tor circuit mechanics for developers and power users. Understand the onion routing protocol, circuit construction, and how"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /tor-circuit-how-it-works-visualization-explained/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

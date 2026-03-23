@@ -1,29 +1,17 @@
 ---
 layout: default
-
-permalink: /protonmail-import-export-tool-guide/
-description: "Follow this guide to protonmail import export tool guide with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "ProtonMail Import Export Tool Guide"
 description: "Export Proton Mail data using three methods: the web interface (Settings > Download my data) for one-time MBOX exports, the IMAP Bridge (brew install --cask"
 date: 2026-03-15
 last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /protonmail-import-export-tool-guide/
+categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
-categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

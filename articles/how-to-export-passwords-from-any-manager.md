@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-export-passwords-from-any-manager/
-description: "Follow this guide to how to export passwords from any manager with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How to Export Passwords from Any Manager"
 description: "To export passwords from any manager, use its CLI tool for the most control: op vault export for 1Password, bw export --format json for Bitwarden, lpass export"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /how-to-export-passwords-from-any-manager/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

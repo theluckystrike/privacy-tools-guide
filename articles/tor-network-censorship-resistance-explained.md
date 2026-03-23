@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /tor-network-censorship-resistance-explained/
-description: "Learn tor network censorship resistance explained with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Tor Network Censorship Resistance Explained"
 description: "Learn how Tor provides censorship resistance through onion routing, bridges, and pluggable transports. Practical examples for developers and power users"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /tor-network-censorship-resistance-explained/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

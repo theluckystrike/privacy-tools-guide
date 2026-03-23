@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-handle-password-manager-when-switching-phones-android/
-description: "Follow this guide to how to handle password manager when switching phones android with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Handle Password Manager When Switching Phones"
 description: "A practical guide for developers and power users on transferring your password vault from Android to iPhone, covering export methods, import processes"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-handle-password-manager-when-switching-phones-android/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

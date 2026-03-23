@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /webrtc-local-ip-leak-how-it-reveals-your-real-address/
-description: "Learn webrtc local ip leak how it reveals your real address with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "WebRTC Local IP Leak: How It Reveals Your Real"
 description: "Discover how WebRTC local IP leaks can expose your real network address even when using a VPN. Learn practical detection methods and mitigation"
 date: 2026-03-16
@@ -19,12 +7,13 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /webrtc-local-ip-leak-how-it-reveals-your-real-address/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
+
 {% raw %}
 
 WebRTC (Web Real-Time Communication) is a powerful browser API that enables direct peer-to-peer communication between browsers for audio, video, and data sharing. While WebRTC brings valuable capabilities like video conferencing and file transfer, it harbors a privacy vulnerability that many users remain unaware of: the local IP leak.

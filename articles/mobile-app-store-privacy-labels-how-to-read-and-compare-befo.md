@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /mobile-app-store-privacy-labels-how-to-read-and-compare-befo/
-description: "Follow this guide to mobile app store privacy labels how to read and compare befo with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide, comparison, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [comparisons]
----
-
-layout: default
 title: "Mobile App Store Privacy Labels How To Read And Compare"
 description: "A technical guide for developers and power users on understanding Apple App Store and Google Play privacy labels. Learn what each data category means"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /mobile-app-store-privacy-labels-how-to-read-and-compare-befo/
 categories: [guides, security]
+tags: [privacy-tools-guide, comparison, privacy]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, privacy]
 ---
 
 {% raw %}

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /russia-yarovaya-law-mass-surveillance-requirements-what-tele/
-description: "Learn russia yarovaya law mass surveillance requirements what tele with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Russia Yarovaya Law Mass Surveillance Requirements What"
 description: "Russia Yarovaya Law: What Data Telecom Companies Must. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /russia-yarovaya-law-mass-surveillance-requirements-what-tele/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

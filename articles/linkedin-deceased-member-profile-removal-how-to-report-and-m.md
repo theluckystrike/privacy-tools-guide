@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /linkedin-deceased-member-profile-removal-how-to-report-and-m/
-description: "Follow this guide to linkedin deceased member profile removal how to report and m with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "LinkedIn Deceased Member Profile Removal How To Report"
 description: "Report a deceased LinkedIn member's profile through the memorial request form in profile settings or via LinkedIn's support page. Provide a death certificate"
 date: 2026-03-16
@@ -19,12 +7,13 @@ last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /linkedin-deceased-member-profile-removal-how-to-report-and-m/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
-voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]
+voice-checked: true
 ---
+
 {% raw %}
 
 Report a deceased LinkedIn member's profile through the memorial request form in profile settings or via LinkedIn's support page. Provide a death certificate, obituary, or news article as proof. LinkedIn can memorialize (make read-only, add "Remembering" label) or delete the account if requested. For your own profile, designate a legacy contact in Account Settings > Legacy Settings to give someone permission to memorialize or manage your profile after death.

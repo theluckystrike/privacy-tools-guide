@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-tell-if-your-home-assistant-alexa-was-compromised/
-description: "Follow this guide to how to tell if your home assistant alexa was compromised with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Tell If Your Home Assistant or Alexa Was Compromised"
 description: "A technical guide to detecting if your smart home voice assistants have been compromised. Learn to identify signs of unauthorized access, audit logs"
 date: 2026-03-17
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /how-to-tell-if-your-home-assistant-alexa-was-compromised/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

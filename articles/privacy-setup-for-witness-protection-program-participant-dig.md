@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /privacy-setup-for-witness-protection-program-participant-dig/
-description: "Learn privacy setup for witness protection program participant dig with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Privacy Setup For Witness Protection Program Participant"
 description: "Learn how to set up secure digital privacy measures as a witness protection program participant. This guide covers device security, communication"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /privacy-setup-for-witness-protection-program-participant-dig/
 categories: [guides]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
+score: 9
 intent-checked: true
 voice-checked: true
-score: 9
-tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}

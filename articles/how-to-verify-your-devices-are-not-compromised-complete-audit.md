@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-verify-your-devices-are-not-compromised-complete-audit/
-description: "Follow this guide to how to verify your devices are not compromised complete audit with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Verify Your Devices Are Not Compromised: A Complete"
 description: "A practical guide for developers and power users to audit device security. Learn to identify signs of compromise through process analysis, network monitoring"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-verify-your-devices-are-not-compromised-complete-audit/
 categories: [security, guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /matrix-spaces-vs-discord-servers-comparison/
-description: "Compare matrix spaces vs discord servers comparison with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, comparison]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [comparisons]
----
-
-layout: default
 title: "Matrix Spaces vs Discord Servers: A Technical Comparison"
 description: "A technical comparison of Matrix Spaces and Discord servers for developers and power users. Explore federation, encryption, API"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /matrix-spaces-vs-discord-servers-comparison/
 categories: [guides, security]
+tags: [privacy-tools-guide, comparison]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison]
 ---
 
 {% raw %}

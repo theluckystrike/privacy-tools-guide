@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /qubes-os-compartmentalized-workflow-guide-separating-work-and-personal/
-description: "Follow this guide to qubes os compartmentalized workflow guide separating work and personal with practical examples, tips, and step-by-step..."
-tags: [privacy-tools-guide, workflow]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Qubes OS Compartmentalized Workflow Guide"
 description: "A practical guide to implementing a compartmentalized workflow in Qubes OS, isolating work and personal activities with proven security boundaries"
 date: 2026-03-18
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /qubes-os-compartmentalized-workflow-guide-separating-work-and-personal/
 categories: [guides, security]
+tags: [privacy-tools-guide, workflow]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, workflow]
 ---
 
 {% raw %}

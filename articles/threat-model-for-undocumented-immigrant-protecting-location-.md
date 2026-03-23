@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /threat-model-for-undocumented-immigrant-protecting-location-/
-description: "Learn threat model for undocumented immigrant protecting location  with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Threat Model for Undocumented Immigrant Protecting"
 description: "A practical guide to building a digital threat model for protecting location and identity. Learn actionable strategies for device hardening, network"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /threat-model-for-undocumented-immigrant-protecting-location-/
 categories: [guides]
-voice-checked: true
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
-tags: [privacy-tools-guide]
+voice-checked: true
 ---
 
 {% raw %}

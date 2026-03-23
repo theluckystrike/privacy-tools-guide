@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /local-only-security-camera-setup-without-cloud-using-frigate/
-description: "Learn local only security camera setup without cloud using frigate with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, security]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Local-Only Security Camera Setup Without Cloud Using Frigate"
 description: "A practical guide for setting up Frigate NVR for completely local security camera monitoring without cloud dependencies. Keep your video footage private"
 date: 2026-03-15
@@ -19,12 +7,13 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /local-only-security-camera-setup-without-cloud-using-frigate/
 categories: [guides]
+tags: [privacy-tools-guide, security]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, security]
 ---
+
 {% raw %}
 
 Deploy Frigate on a Docker-capable computer (mini-PC, Intel NUC, or Raspberry Pi) to record IP camera streams directly to local storage with no cloud upload, no subscriptions, and no monthly fees. Frigate performs real-time object detection (people, vehicles, animals) locally and integrates with Home Assistant for automation. Set up is straightforward: install Docker, configure your IP cameras' RTSP streams in Frigate's config file, and video records directly to attached storage. Your footage stays fully under your control.

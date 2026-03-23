@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /wireguard-postup-postdown-scripts-for-advanced-routing-confi/
-description: "Learn wireguard postup postdown scripts for advanced routing confi with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, advanced]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "WireGuard PostUp/PostDown Scripts for Advanced Routing"
 description: "Master WireGuard PostUp and PostDown scripts for advanced routing. Learn to implement split tunneling, kill switches, custom DNS, and selective traffic"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /wireguard-postup-postdown-scripts-for-advanced-routing-confi/
 categories: [guides, security]
+tags: [privacy-tools-guide, advanced]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, advanced]
 ---
 
 {% raw %}

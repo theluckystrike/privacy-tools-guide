@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-use-dead-mans-switch-with-multiple-independent-truste/
-description: "Follow this guide to how to use dead mans switch with multiple independent truste with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Use Dead Man's Switch with Multiple Independent Trustees"
 description: "How to Use Dead Man — privacy guide covering tools, techniques, and best practices to protect your data and digital identity in 2026"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-use-dead-mans-switch-with-multiple-independent-truste/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
-voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]
+voice-checked: true
 ---
 
 {% raw %}

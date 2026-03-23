@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /okcupid-data-sharing-history-what-third-parties-received-use/
-description: "Learn okcupid data sharing history what third parties received use with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Okcupid Data Sharing History What Third Parties Received"
 description: "OkCupid Data Sharing History: What Third Parties. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
@@ -19,12 +7,13 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /okcupid-data-sharing-history-what-third-parties-received-use/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
+
 {% raw %}
 
 OkCupid, one of the earliest major dating platforms to embrace algorithmic matching, has a complex history with user data sharing that spans over a decade. Understanding what third parties received user profile and message data from OkCupid provides important context for developers building privacy-conscious applications and for users evaluating dating platforms.

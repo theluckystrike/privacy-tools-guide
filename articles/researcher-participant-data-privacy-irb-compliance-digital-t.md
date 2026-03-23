@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /researcher-participant-data-privacy-irb-compliance-digital-t/
-description: "Learn researcher participant data privacy irb compliance digital t with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Researcher Participant Data Privacy Irb Compliance Digital"
 description: "A practical guide for researchers on protecting participant data, maintaining IRB compliance, and selecting privacy-respecting digital tools for human"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /researcher-participant-data-privacy-irb-compliance-digital-t/
 categories: [guides]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}

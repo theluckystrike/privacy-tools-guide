@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-use-naiveproxy-to-disguise-censorship-circumvention-t/
-description: "Follow this guide to how to use naiveproxy to disguise censorship circumvention t with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Use Naiveproxy To Disguise Censorship Circumvention"
 description: "A practical guide for developers and power users on using NaiveProxy to disguise censorship circumvention traffic as normal web browsing"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-use-naiveproxy-to-disguise-censorship-circumvention-t/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
-voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]
+voice-checked: true
 ---
 
 {% raw %}

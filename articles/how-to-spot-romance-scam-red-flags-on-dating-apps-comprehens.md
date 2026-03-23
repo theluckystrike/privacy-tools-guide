@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-spot-romance-scam-red-flags-on-dating-apps-comprehens/
-description: "Follow this guide to how to spot romance scam red flags on dating apps comprehens with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Spot Romance Scam Red Flags On Dating Apps Comprehens"
 description: "A technical breakdown of romance scam patterns, verification techniques, and automated detection methods for developers and privacy-conscious users"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-spot-romance-scam-red-flags-on-dating-apps-comprehens/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
-voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]
+voice-checked: true
 ---
 
 {% raw %}

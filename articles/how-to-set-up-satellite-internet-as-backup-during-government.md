@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-set-up-satellite-internet-as-backup-during-government/
-description: "Follow this guide to how to set up satellite internet as backup during government with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Set Up Satellite Internet As Backup During Government"
 description: "A technical guide for developers and power users on configuring satellite internet as a reliable backup connection when government-mandated internet"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-satellite-internet-as-backup-during-government/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

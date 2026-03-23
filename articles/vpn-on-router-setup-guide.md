@@ -1,9 +1,4 @@
 ---
-permalink: /vpn-on-router-setup-guide/
-description: "Follow this guide to vpn on router setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, vpn]
-date: 2026-03-23
----
 layout: default
 title: "How to Set Up a VPN on Your Router"
 description: "Configure WireGuard or OpenVPN on your router with OpenWrt or DD-WRT to protect every device on your network without per-device clients"
@@ -11,19 +6,13 @@ date: 2026-03-22
 author: theluckystrike
 permalink: /vpn-on-router-setup-guide/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
-{% raw %}
-
-Running a VPN on each device individually means constant maintenance. A router-level VPN tunnels every device on your network — phones, smart TVs, consoles, IoT gadgets — through the VPN without installing anything on them.
-
-This guide covers WireGuard setup on OpenWrt (the best modern option) and briefly covers OpenVPN for routers that don't support WireGuard.
----
 
 ## Table of Contents
 

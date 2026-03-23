@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /tor-hidden-services-how-to-access-safely/
-description: "Follow this guide to tor hidden services how to access safely with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Tor Hidden Services: How to Access Safely"
 description: "A practical guide for developers and power users on accessing Tor hidden services safely. Learn configuration, security best practices, and real-world"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /tor-hidden-services-how-to-access-safely/
 categories: [guides, security]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Privacy Risks of Fitness Trackers and Health Data 2026"
 date: 2026-03-21
 author: "Privacy Tools Guide"
@@ -7,7 +8,7 @@ score: 9
 voice-checked: true
 intent-checked: true
 permalink: /privacy-risks-of-fitness-trackers-health-data-2026/
-description: "Learn privacy risks of fitness trackers health data 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Fitness trackers collect heart rate, sleep, location, and behavioral data. Learn what data is shared, who receives it, HIPAA gaps, and how to harden privacy."
 tags: [privacy-tools-guide, privacy]
 ---
 

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /privacy-tools-for-whistle-blower-preparing-disclosure-protec/
-description: "Learn privacy tools for whistle blower preparing disclosure protec with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Privacy Tools For Whistle Blower Preparing Disclosure"
 description: "A practical guide to privacy tools and techniques for whistleblowers preparing to disclose sensitive information securely. Covers encryption, secure"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /privacy-tools-for-whistle-blower-preparing-disclosure-protec/
 categories: [guides, security]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}

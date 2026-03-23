@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /password-manager-for-couple-sharing-streaming-accounts-secur/
-description: "Learn password manager for couple sharing streaming accounts secur with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Password Manager For Couple Sharing Streaming Accounts"
 description: "Learn how couples can securely share streaming accounts using password managers. This guide covers setup, encryption, access controls, and automation"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /password-manager-for-couple-sharing-streaming-accounts-secur/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

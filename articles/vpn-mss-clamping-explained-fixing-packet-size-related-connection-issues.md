@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /vpn-mss-clamping-explained-fixing-packet-size-related-connection-issues/
-description: "Fix vpn mss clamping explained fixing packet size related connection issues with practical examples, tips, and step-by-step instructions for getting..."
-tags: [privacy-tools-guide, troubleshooting, vpn]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "VPN MSS Clamping Explained: Fixing Packet Size Related"
 description: "A technical guide to understanding MSS clamping in VPN connections. Learn how to diagnose and fix MTU-related connection problems that cause VPN"
 date: 2026-03-18
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-18
 author: theluckystrike
 permalink: /vpn-mss-clamping-explained-fixing-packet-size-related-connection-issues/
 categories: [guides]
+tags: [privacy-tools-guide, troubleshooting, vpn]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, troubleshooting, vpn]
 ---
 
 {% raw %}

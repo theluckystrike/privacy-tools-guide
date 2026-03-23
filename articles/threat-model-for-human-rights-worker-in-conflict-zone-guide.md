@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /threat-model-for-human-rights-worker-in-conflict-zone-guide/
-description: "Follow this guide to threat model for human rights worker in conflict zone guide with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Threat Model For Human Rights Worker In Conflict Zone Guide"
 description: "A threat modeling guide for human rights workers in conflict zones. Learn to identify assets, analyze adversaries, and implement"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /threat-model-for-human-rights-worker-in-conflict-zone-guide/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

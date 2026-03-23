@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-use-tor-safely-in-country-that-criminalizes-its-use/
-description: "Follow this guide to how to use tor safely in country that criminalizes its use with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How to Use Tor Safely in Country That Criminalizes Its"
 description: "A technical guide for developers and power users on using Tor securely in regions where its use is criminalized. Includes configuration examples"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-tor-safely-in-country-that-criminalizes-its-use/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /proton-drive-review-honest-assessment-2026/
-description: "Learn proton drive review honest assessment 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Proton Drive Review: Honest Assessment 2026"
 description: "Proton Drive has evolved significantly since its initial release, emerging as a viable option for developers and privacy-conscious users who need encrypted"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /proton-drive-review-honest-assessment-2026/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
+score: 9
 intent-checked: true
 voice-checked: true
-score: 9
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

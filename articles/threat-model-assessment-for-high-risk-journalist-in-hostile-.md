@@ -1,31 +1,18 @@
 ---
 layout: default
-
-permalink: /threat-model-assessment-for-high-risk-journalist-in-hostile-/
-description: "Learn threat model assessment for high risk journalist in hostile  with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Threat Model Assessment For High Risk Journalist In Hostile"
 description: "A practical guide to security threat modeling for journalists operating in hostile environments. Includes actionable frameworks and technical"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /threat-model-assessment-for-high-risk-journalist-in-hostile-/
+categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
-voice-checked: true
-categories: [guides]
 intent-checked: true
-tags: [privacy-tools-guide]
+voice-checked: true
 ---
-
 
 Create a threat model by assessing your adversaries' capabilities (state surveillance, ISP monitoring, physical targeting), identifying attack vectors (device seizure, source compromise, metadata exposure), and implementing layered defenses: separate reporting device with clean OS, Tor for communications, encrypted storage with plausible deniability, and operational security protocols (regular pattern-breaking, location variation). Document your threat model, update it as conditions change, and maintain emergency exfiltration plans with trusted international contacts.
 

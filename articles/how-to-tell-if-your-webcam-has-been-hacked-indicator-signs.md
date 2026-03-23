@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-tell-if-your-webcam-has-been-hacked-indicator-signs/
-description: "Follow this guide to how to tell if your webcam has been hacked indicator signs with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How to Tell If Your Webcam Has Been Hacked: Indicator"
 description: "Webcam compromises represent a serious threat to privacy. Whether you're a developer working with sensitive code or a power user who values digital security"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-tell-if-your-webcam-has-been-hacked-indicator-signs/
 categories: [security, guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

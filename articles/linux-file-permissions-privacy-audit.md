@@ -1,28 +1,16 @@
 ---
 layout: default
-
-permalink: /linux-file-permissions-privacy-audit/
-description: "Learn linux file permissions privacy audit with practical examples, tips, and step-by-step instructions for getting the best results."
-tags: [privacy-tools-guide, privacy]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "Linux File Permissions Privacy"
 description: "How to audit Linux file permissions to find world-readable sensitive files, SUID binaries, insecure home directories, and misconfigured shared directories"
 date: 2026-03-21
 author: theluckystrike
 permalink: /linux-file-permissions-privacy-audit/
 categories: [guides, security]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}

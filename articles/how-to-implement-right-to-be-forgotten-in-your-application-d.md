@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-implement-right-to-be-forgotten-in-your-application-d/
-description: "Follow this guide to how to implement right to be forgotten in your application d with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 8
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Implement Right To Be Forgotten In Your Application"
 description: "A practical developer guide for implementing the right to be forgotten (data deletion) in your application's database. Includes code examples for SQL, MongoDB"
 date: 2026-03-15
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /how-to-implement-right-to-be-forgotten-in-your-application-d/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

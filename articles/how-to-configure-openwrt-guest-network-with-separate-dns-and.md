@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-configure-openwrt-guest-network-with-separate-dns-and/
-description: "Follow this guide to how to configure openwrt guest network with separate dns and with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Configure Openwrt Guest Network With Separate Dns"
 description: "A practical guide for developers and power users to set up OpenWRT guest networks with custom DNS servers and strict firewall isolation"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-openwrt-guest-network-with-separate-dns-and/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}

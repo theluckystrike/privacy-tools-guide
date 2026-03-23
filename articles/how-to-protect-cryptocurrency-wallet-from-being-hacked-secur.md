@@ -1,17 +1,5 @@
 ---
 layout: default
-
-permalink: /how-to-protect-cryptocurrency-wallet-from-being-hacked-secur/
-description: "Follow this guide to how to protect cryptocurrency wallet from being hacked secur with practical examples, tips, and step-by-step instructions for..."
-tags: [privacy-tools-guide]
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-date: 2026-03-15
-categories: [guides]
----
-
-layout: default
 title: "How To Protect Cryptocurrency Wallet From Being Hacked"
 description: "A security guide for developers and power users on protecting cryptocurrency wallets from hackers. Covers hardware wallets, key"
 date: 2026-03-16
@@ -19,11 +7,11 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-protect-cryptocurrency-wallet-from-being-hacked-secur/
 categories: [guides]
+tags: [privacy-tools-guide]
 reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
 ---
 
 {% raw %}
