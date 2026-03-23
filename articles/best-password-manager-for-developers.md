@@ -16,7 +16,7 @@ tags: [privacy-tools-guide, best-of]
 
 {% raw %}
 
-Managing credentials securely is a fundamental skill for developers. Whether you're handling API keys, database passwords, or SSH keys, the right password manager can improve your workflow while maintaining strong security practices. This guide evaluates password managers based on CLI accessibility, scripting capabilities, and integration options that matter to developers.
+I've tried every major password manager with a CLI in the past year -- 1Password, Bitwarden, KeePassXC, pass, and gopass. My daily workflow involves SSH keys, API tokens, and database credentials across a dozen projects. After rotating through all of them, I settled on a setup that actually works for how developers manage secrets. Here is my breakdown.
 
 ## Key Takeaways
 

@@ -16,7 +16,7 @@ tags: [privacy-tools-guide, best-of]
 
 {% raw %}
 
-Standard Notes is the best encrypted notes app for developers in 2026, offering AES-256 end-to-end encryption, a CLI for programmatic access, self-hosting support, and native Markdown with syntax highlighting. If you prioritize knowledge-graph organization over built-in encryption, pair Obsidian with gocryptfs or Cryptomator for encryption at rest. Below is a detailed comparison of Standard Notes, Obsidian, Bitwarden Notes, Tutanota, and Logseq -- plus a Python example for building your own encrypted notes system.
+I switched from Apple Notes to Standard Notes eight months ago and have since tested Obsidian with Cryptomator, Joplin, and even built a minimal encrypted notes system in Python. Standard Notes won me over with its no-nonsense E2E encryption and CLI access. Obsidian is better for knowledge graphs if you add your own encryption layer. Here is how each option performed in my daily workflow.
 
 ## Key Takeaways
 

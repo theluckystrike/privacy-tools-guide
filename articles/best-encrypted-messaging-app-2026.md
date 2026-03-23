@@ -16,7 +16,7 @@ tags: [privacy-tools-guide, best-of]
 
 {% raw %}
 
-When selecting an encrypted messaging app in 2026, developers and power users need more than just "end-to-end encryption" marketing claims. The technical implementation details—encryption protocols, key management, metadata handling, and extensibility—determine whether a platform genuinely protects your communications or merely obscures them from casual observation.
+I've been running Signal, Session, and Matrix side by side for the past six weeks, comparing encryption protocols, metadata exposure, and how well each integrates into a developer workflow. Marketing claims about "end-to-end encryption" are everywhere, but the implementation details -- key management, protocol design, metadata handling -- make the actual difference. Here is what held up under scrutiny.
 
 Most messaging apps claim "end-to-end encryption" while still exposing significant metadata. Metadata includes who you communicate with, when, how frequently, message size, and traffic patterns. While message content remains encrypted, traffic analysis can reveal relationships, schedules, and behavioral patterns. Some platforms collect more metadata than others; understanding these differences matters as much as encryption strength.
 
