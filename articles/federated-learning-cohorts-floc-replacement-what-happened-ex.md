@@ -9,7 +9,7 @@ permalink: /federated-learning-cohorts-floc-replacement-what-happened-ex/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---

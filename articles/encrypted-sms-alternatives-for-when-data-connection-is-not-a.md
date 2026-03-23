@@ -9,7 +9,7 @@ permalink: /encrypted-sms-alternatives-for-when-data-connection-is-not-a/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

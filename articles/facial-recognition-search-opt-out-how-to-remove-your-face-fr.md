@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /facial-recognition-search-opt-out-how-to-remove-your-face-fr/
 categories: [guides]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

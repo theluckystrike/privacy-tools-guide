@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /falco-container-runtime-security-setup/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 6
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, security]

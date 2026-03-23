@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /etag-tracking-how-server-caching-headers-follow-you-across-w/
 categories: [guides, security]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
