@@ -9,7 +9,7 @@ permalink: /social-media-privacy-policy-comparison-2026/
 categories: [guides, security]
 tags: [privacy-tools-guide, privacy]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

@@ -9,7 +9,7 @@ permalink: /taproot-upgrade-bitcoin-privacy-improvements-what-changed-fo/
 categories: [guides]
 tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---

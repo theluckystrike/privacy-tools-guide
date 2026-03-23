@@ -9,7 +9,7 @@ permalink: /social-media-will-what-legal-authority-executor-has-over-you/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

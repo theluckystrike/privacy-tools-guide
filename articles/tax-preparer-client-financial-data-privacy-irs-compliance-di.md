@@ -9,7 +9,7 @@ permalink: /tax-preparer-client-financial-data-privacy-irs-compliance-di/
 categories: [guides]
 tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---
