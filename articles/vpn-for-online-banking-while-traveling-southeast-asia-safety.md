@@ -331,7 +331,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [VPN for Accessing Local Bank Account from Abroad Safely](/vpn-for-accessing-local-bank-account-from-abroad-safely/)
 - [VPN for Accessing European Banking Apps from United](/vpn-for-accessing-european-banking-apps-from-united-states/)
 - [Verify That Your VPN Is Actually Working and Not Leaking](/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
-- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

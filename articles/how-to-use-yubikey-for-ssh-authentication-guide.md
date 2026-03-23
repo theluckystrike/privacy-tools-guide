@@ -6,7 +6,7 @@ categories: [security, guides]
 tags: [privacy-tools-guide]
 title: "How to Use YubiKey for SSH Authentication"
 description: "Step-by-step guide to using YubiKey for SSH authentication with GPG and FIDO2. Configure smart card authentication, manage keys, and secure your infrastructure."
-permalink: /articles/how-to-use-yubikey-for-ssh-authentication-guide/
+permalink: /how-to-use-yubikey-for-ssh-authentication-guide/
 reviewed: true
 score: 9
 voice-checked: true

@@ -4,7 +4,7 @@ title: "Device Encryption Guide for All Family Members"
 description: "A step-by-step guide to documenting device encryption setup for every family member, from grandparents to tech-savvy teens, ensuring everyone understands how"
 date: 2026-03-22
 author: theluckystrike
-permalink: /a132-how-to-create-device-encryption-documentation-guide-for-all-family-members-2026/
+permalink: /how-to-create-device-encryption-documentation-guide-for-all-family-members-2026/
 categories: [guides, security]
 reviewed: true
 score: 8

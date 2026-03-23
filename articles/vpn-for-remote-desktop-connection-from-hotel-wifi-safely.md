@@ -321,7 +321,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [VPN for Safe Browsing on Public WiFi in Airports](/vpn-for-safe-browsing-on-public-wifi-in-airports/)
-- [How To Diagnose Slow Vpn Connection Speeds](/a123-how-to-diagnose-slow-vpn-connection-speeds-step-by-step/)
+- [How To Diagnose Slow Vpn Connection Speeds](/how-to-diagnose-slow-vpn-connection-speeds-step-by-step/)
 - [Vpn For Remote Workers Connecting To Us Office](/vpn-for-remote-workers-connecting-to-us-office-from-asia/)
 - [Verify That Your VPN Is Actually Working and Not Leaking](/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
 - [Best VPN for Linux Desktop: A Developer Guide](/best-vpn-for-linux-desktop/)

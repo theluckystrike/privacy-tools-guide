@@ -11,7 +11,7 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-permalink: /articles/how-to-use-wireguard-for-self-hosted-vpn-2026/
+permalink: /how-to-use-wireguard-for-self-hosted-vpn-2026/
 ---
 
 

@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /best-privacy-browser-extensions-ranked-by-performance-impact/
-description: "Discover the best best privacy browser extensions ranked by performance impact with practical examples, tips, and step-by-step instructions for getting..."
+description: "Discover the best privacy browser extensions ranked by performance impact with practical examples, tips, and step-by-step instructions for getting..."
 tags: [privacy-tools-guide, best-of, privacy]
 author: "Privacy Tools Guide"
 reviewed: true

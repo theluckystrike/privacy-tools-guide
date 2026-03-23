@@ -276,7 +276,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Prepare Pgp Key Revocation Certificate For Publicatio](/a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/)
+- [How To Prepare Pgp Key Revocation Certificate For Publicatio](/how-to-prepare-pgp-key-revocation-certificate-for-publicatio/)
 - [How to Set Up a Password Manager for Home Server SSH Keys](/how-to-set-up-password-manager-for-home-server-ssh-keys/)
 - [SSH Server Hardening Config Guide](/ssh-server-hardening-config-guide)
 - [How To Configure Openpgp Key Server For Organization Interna](/how-to-configure-openpgp-key-server-for-organization-interna/)
