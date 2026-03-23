@@ -9,7 +9,7 @@ permalink: /mumble-encrypted-voice-chat-server-setup-for-private-team-co/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---

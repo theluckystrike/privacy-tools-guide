@@ -9,7 +9,7 @@ permalink: /migrating-from-roboform-to-bitwarden-export-import-complete-/
 categories: [guides, security]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---

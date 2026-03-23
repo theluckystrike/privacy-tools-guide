@@ -8,7 +8,7 @@ permalink: /mtls-microservices-setup-guide/
 categories: [guides, security]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 apiVersion: cert-manager.io/v1
