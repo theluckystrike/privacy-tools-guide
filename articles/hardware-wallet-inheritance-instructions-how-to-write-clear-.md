@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /hardware-wallet-inheritance-instructions-how-to-write-clear-/
 categories: [guides]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
