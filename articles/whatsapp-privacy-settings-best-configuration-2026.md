@@ -6,7 +6,7 @@ description: "Discover the best whatsapp privacy settings best configuration 202
 tags: [privacy-tools-guide, best-of, privacy]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 9
+score: 8
 date: 2026-03-15
 categories: [best-of]
 ---
