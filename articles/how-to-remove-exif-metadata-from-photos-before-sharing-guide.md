@@ -9,7 +9,7 @@ permalink: /how-to-remove-exif-metadata-from-photos-before-sharing-guide/
 categories: [guides]
 tags: [privacy-tools-guide, privacy, exif, metadata, photos, security]
 reviewed: true
-score: 9
+score: 7
 voice-checked: true
 intent-checked: true
 ---

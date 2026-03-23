@@ -9,7 +9,7 @@ permalink: /how-to-remove-court-records-and-arrest-records-from-public-s/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
