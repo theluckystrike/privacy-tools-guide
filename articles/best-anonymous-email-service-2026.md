@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /best-anonymous-email-service-2026/
 categories: [best-of]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]

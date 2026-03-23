@@ -8,7 +8,7 @@ permalink: /best-accessible-encrypted-cloud-backup-with-one-button-resto/
 categories: [guides]
 tags: [privacy-tools-guide, best-of]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

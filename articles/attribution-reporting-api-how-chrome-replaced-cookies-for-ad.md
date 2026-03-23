@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /attribution-reporting-api-how-chrome-replaced-cookies-for-ad/
 categories: [guides]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, api]
