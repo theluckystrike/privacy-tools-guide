@@ -9,7 +9,7 @@ permalink: /gdpr-article-17-erasure-implementation-code/
 intent-checked: true
 voice-checked: true
 reviewed: true
-score: 9
+score: 7
 categories: [guides]
 tags: [privacy-tools-guide]
 ---

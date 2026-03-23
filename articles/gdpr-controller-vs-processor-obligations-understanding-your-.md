@@ -9,7 +9,7 @@ permalink: /gdpr-controller-vs-processor-obligations-understanding-your-/
 categories: [guides]
 tags: [privacy-tools-guide, tools, comparison]
 reviewed: true
-score: 8
+score: 7
 voice-checked: true
 intent-checked: true
 ---
