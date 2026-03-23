@@ -9,7 +9,7 @@ permalink: /how-to-revoke-previously-given-consent-for-data-processing-u/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

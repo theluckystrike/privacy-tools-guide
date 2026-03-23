@@ -8,7 +8,7 @@ permalink: /how-to-secure-home-router-for-privacy-2026/
 categories: [guides]
 tags: [privacy-tools-guide, home-router-security, vpn, dns-privacy, network-security, openwrt, guest-networks, firewall]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

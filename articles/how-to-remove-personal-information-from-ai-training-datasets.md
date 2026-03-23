@@ -9,7 +9,7 @@ permalink: /how-to-remove-personal-information-from-ai-training-datasets/
 categories: [guides, security]
 tags: [privacy-tools-guide, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
