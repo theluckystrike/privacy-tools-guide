@@ -9,7 +9,7 @@ permalink: /ios-advanced-data-protection-for-icloud-end-to-end-encryption-setup-
 categories: [guides, security]
 tags: [privacy-tools-guide, advanced]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---

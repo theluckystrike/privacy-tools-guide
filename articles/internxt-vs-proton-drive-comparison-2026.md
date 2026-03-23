@@ -9,7 +9,7 @@ permalink: /internxt-vs-proton-drive-comparison-2026/
 categories: [guides]
 tags: [privacy-tools-guide, comparison]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---
