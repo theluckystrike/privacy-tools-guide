@@ -9,7 +9,7 @@ permalink: /wireguard-dynamic-endpoint-update-how-roaming-between-networks-works
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---
