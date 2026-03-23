@@ -9,7 +9,7 @@ permalink: /people-search-sites-opt-out-complete-guide-2026/
 categories: [guides, security]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

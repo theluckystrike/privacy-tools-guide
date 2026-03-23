@@ -9,7 +9,7 @@ permalink: /password-manager-for-travel-agent-managing-booking-platform-/
 categories: [guides, security]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
