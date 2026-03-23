@@ -361,7 +361,7 @@ Best for: Solo users, privacy extremists, simple event tracking, not business sc
 
 6. Self-Hosted Solutions
 
-#### Option A: Radicale (Ultra-Lightweight)
+Option A: Radicale (Ultra-Lightweight)
 
 ```bash
 Install Radicale (CalDAV/CardDAV server)
@@ -379,7 +379,7 @@ No encryption, no web UI, requires manual setup.
 
 ---
 
-#### Option B: Baïkal (Feature-Rich)
+Option B: Baïkal (Feature-Rich)
 
 ```bash
 Install Baïkal
@@ -396,7 +396,7 @@ Manual setup, requires PHP/MySQL.
 
 ---
 
-#### Option C: Nextcloud (Feature-Complete)
+Option C: Nextcloud (Feature-Complete)
 
 See Nextcloud section above. Best option if you want everything.
 

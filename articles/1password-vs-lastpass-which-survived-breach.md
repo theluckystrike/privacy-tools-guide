@@ -34,7 +34,6 @@ Head-to-Head Comparison
 | Breach Response | Transparent, no user action needed | Users advised to rotate all passwords |
 | Independent Audits | Regular third-party audits | SOC 2 Type II |
 
-Key Takeaways
 
 - LastPass used AES-256 encryption: for vault data, but the encryption key derivation relied on a relatively limited number of iterations for the key derivation function.
 - Choose 1Password if you: want the password manager that survived its breach with zero vault exposure, thanks to its Secret Key architecture and strict zero-knowledge boundaries.

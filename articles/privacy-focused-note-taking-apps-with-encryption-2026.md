@@ -120,7 +120,7 @@ Weaknesses
 Self-Hosting Cost
 
 Joplin Server on DigitalOcean droplet: ~$5/month (droplet) + storage.
-DIY setup requires Linux knowledge; takes 1–2 hours.
+DIY setup requires Linux knowledge; takes 1, 2 hours.
 
 Deploy a self-hosted Joplin Server with Docker for complete data ownership:
 
@@ -207,7 +207,7 @@ For full privacy without subscription:
 3. Encrypt entire git repo with git-crypt or similar.
 4. Sync across devices via git.
 
-Time investment: 2–3 hours for Linux knowledge. Not trivial.
+Time investment: 2, 3 hours for Linux knowledge. Not trivial.
 
 Verdict
 
@@ -256,7 +256,7 @@ Comparison Table
 
 | Feature | Standard Notes | Joplin | Obsidian | Notesnook |
 |---------|---|---|---|---|
-| Pricing | Free + $8–20/mo | Free (optl $6/mo) | Free + $8/mo | Free + $6–15/mo |
+| Pricing | Free + $8, 20/mo | Free (optl $6/mo) | Free + $8/mo | Free + $6, 15/mo |
 | E2E Encryption | Yes | Yes | Optional ($8/mo) | Yes |
 | Self-hosting | Yes (complex) | Yes (simple) | Yes (complex) | No |
 | Web app | Yes | No | No | Yes |
@@ -277,7 +277,7 @@ Quick Decision Matrix
 Use Standard Notes if:
 - Privacy is your absolute top priority.
 - You want audited encryption.
-- You don't mind spending $8–20/month.
+- You don't mind spending $8, 20/month.
 - You use Markdown for writing.
 
 Use Joplin if:
@@ -324,7 +324,7 @@ Use Standard Notes or Notesnook.
 - E2E encryption mandatory.
 - No self-hosting risk.
 - Audit trail (Standard Notes) or biometric lock (Notesnook).
-- Cost: $8–15/month. Worth privacy.
+- Cost: $8, 15/month. Worth privacy.
 
 Scenario 2: Team Knowledge Base (Dev Team)
 
@@ -339,7 +339,7 @@ Scenario 3: Personal Notes + Published Blog
 Use Notesnook or Obsidian.
 - Publish feature needed (Obsidian Publish or Notesnook's public links).
 - Modern UI is a plus (Obsidian + themes, Notesnook's design).
-- Cost: $96–180/year.
+- Cost: $96, 180/year.
 
 ---
 

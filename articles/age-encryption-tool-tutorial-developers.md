@@ -30,7 +30,6 @@ Quick Start Steps
 8. Pipe from stdin: `echo "secret data" | age -r age1xxx > secret.age`
 
 
-Key Takeaways
 
 - This approach uses your: existing SSH infrastructure.
 - Use hardware security modules: or secure key management services for production secrets.

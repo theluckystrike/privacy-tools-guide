@@ -13,7 +13,7 @@ voice-checked: true
 tags: [privacy-tools-guide]
 ---
 {% raw %}
-# Secure Database Connection Pooling Guide
+Secure Database Connection Pooling Guide
 
 Database connection poolers sit between your application and PostgreSQL (or MySQL), multiplexing thousands of app connections onto a smaller pool of actual database connections. Without secure configuration, a pooler becomes a chokepoint for credential theft and privilege escalation. This guide covers PgBouncer (the standard PostgreSQL pooler) and HikariCP (Java/JVM) with full TLS and auth hardening.
 

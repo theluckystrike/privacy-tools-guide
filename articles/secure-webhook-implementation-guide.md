@@ -273,7 +273,7 @@ def verify_any_secret(body: bytes, signature: str, timestamp: str) -> bool:
 Rotation procedure:
 1. Generate new secret, add as `WEBHOOK_SECRET_NEW`; keep old as `WEBHOOK_SECRET_OLD`
 2. Update webhook URL config on the sender side with new secret
-3. After all in-flight webhooks have been delivered (typically 30–60 min), remove `WEBHOOK_SECRET_OLD`
+3. After all in-flight webhooks have been delivered (typically 30, 60 min), remove `WEBHOOK_SECRET_OLD`
 
 ---
 

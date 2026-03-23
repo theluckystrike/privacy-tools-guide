@@ -28,7 +28,6 @@ tags: [privacy-tools-guide, best-of, security]
 
 The best hardware security key for most developers is the YubiKey 5 series -- it supports FIDO2, OpenPGP code signing, TOTP, and integrates with GitHub, AWS, and CI/CD pipelines out of the box. If open-source firmware verification matters more to you, choose SoloKeys instead. Both eliminate phishing vulnerabilities that plague password-only and TOTP-based authentication, providing defense-in-depth that software solutions cannot match.
 
-Key Takeaways
 
 - The best hardware security: key for most developers is the YubiKey 5 series -- it supports FIDO2, OpenPGP code signing, TOTP, and integrates with GitHub, AWS, and CI/CD pipelines out of the box.
 - If open-source firmware verification: matters more to you, choose SoloKeys instead.

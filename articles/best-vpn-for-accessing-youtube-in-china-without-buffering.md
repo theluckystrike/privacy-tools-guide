@@ -32,7 +32,6 @@ Use a VPN with obfuscation support like NordVPN or a Shadowsocks proxy to access
 
 {% raw %}
 
-Key Takeaways
 
 - Tokyo and Singapore servers: provide better sustained bandwidth but add 30-50ms of latency.
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.

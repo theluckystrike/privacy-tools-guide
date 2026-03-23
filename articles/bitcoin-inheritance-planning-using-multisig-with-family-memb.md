@@ -18,7 +18,6 @@ tags: [privacy-tools-guide]
 
 Bitcoin inheritance planning requires more than just writing down a seed phrase and hoping loved ones can access it. For developers and power users holding significant bitcoin, the complexity of self-custody creates real risk that heirs may lose access permanently. Multi-signature (multisig) setups provide a solution by distributing key custody across multiple parties, eliminating single points of failure while enabling inheritance scenarios that work with family members and legal frameworks.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.

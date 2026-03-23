@@ -45,7 +45,7 @@ Check version
 onionshare --version
 ```
 
-OnionShare automatically downloads and manages its own Tor binary. you don't need Tor Browser or a separate Tor installation. On first launch it connects to the Tor network and establishes a circuit before generating any .onion address, which takes 30–90 seconds depending on network conditions.
+OnionShare automatically downloads and manages its own Tor binary. you don't need Tor Browser or a separate Tor installation. On first launch it connects to the Tor network and establishes a circuit before generating any .onion address, which takes 30, 90 seconds depending on network conditions.
 
 ---
 

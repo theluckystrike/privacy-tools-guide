@@ -116,7 +116,7 @@ Method 2: Registry Modification
 
 Create a `.reg` file or use PowerShell to modify the registry directly.
 
-#### Disable LLMNR via Registry
+Disable LLMNR via Registry
 
 ```powershell
 Create registry key if it doesn't exist and disable LLMNR
@@ -127,7 +127,7 @@ if (!(Test-Path $regPath)) {
 Set-ItemProperty -Path $regPath -Name "EnableMulticast" -Value 0 -Type DWord
 ```
 
-#### Disable NetBIOS over TCP/IP via Registry
+Disable NetBIOS over TCP/IP via Registry
 
 ```powershell
 Get all network adapters and disable NetBIOS

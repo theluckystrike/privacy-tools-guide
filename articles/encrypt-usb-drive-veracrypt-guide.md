@@ -248,7 +248,7 @@ Benchmark encryption algorithms in VeraCrypt
 veracrypt --text --test
 ```
 
-On any CPU with AES-NI, you'll see 400–800 MB/s throughput. faster than most USB drives. On older CPUs without AES-NI, AES is still the best choice (Serpent or Twofish are slower).
+On any CPU with AES-NI, you'll see 400, 800 MB/s throughput. faster than most USB drives. On older CPUs without AES-NI, AES is still the best choice (Serpent or Twofish are slower).
 
 ---
 

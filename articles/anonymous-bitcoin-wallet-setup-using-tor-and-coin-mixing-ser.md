@@ -18,7 +18,6 @@ tags: [privacy-tools-guide]
 
 Achieving genuine financial privacy with Bitcoin requires more than just using a wallet, you need to obscure the connection between your identity and your transactions. This guide covers the technical implementation of an anonymous Bitcoin wallet setup using Tor for network-level privacy and coin mixing services for transaction obfuscation. We'll focus on practical, actionable steps that developers and power users can implement immediately.
 
-Key Takeaways
 
 - Configure Wasabi to use: Tor in Settings 3.
 - We'll focus on practical: actionable steps that developers and power users can implement immediately.

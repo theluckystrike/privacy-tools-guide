@@ -34,7 +34,6 @@ Head-to-Head Comparison
 | Custom Icons | Yes | No |
 | Offline Use | Full functionality | Full functionality |
 
-Key Takeaways
 
 - Choose Aegis Authenticator if: you need open-source transparency, encrypted token storage (AES-256-GCM), flexible export formats, and screen capture protection on Android.
 - Choose Google Authenticator if: you want the simplest possible setup with tight Google ecosystem integration and do not require advanced security features.

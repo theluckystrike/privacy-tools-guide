@@ -216,11 +216,11 @@ Choosing a Protocol (No Cloud Required)
 
 | Protocol | Range | Mesh | Cloud Required |
 |---|---|---|---|
-| Zigbee | 10–20m | Yes | No |
-| Z-Wave | 30–100m | Yes | No |
-| Thread/Matter | 10–20m | Yes | No (Matter = local first) |
+| Zigbee | 10, 20m | Yes | No |
+| Z-Wave | 30, 100m | Yes | No |
+| Thread/Matter | 10, 20m | Yes | No (Matter = local first) |
 | Wi-Fi | Home coverage | No | Depends on device |
-| Bluetooth LE | 5–10m | No (BLE mesh exists) | Depends |
+| Bluetooth LE | 5, 10m | No (BLE mesh exists) | Depends |
 
 For maximum privacy: use Zigbee or Z-Wave with a local coordinator (ConBee II, HUSBZB-1). These devices talk directly to your hub without any internet requirement.
 

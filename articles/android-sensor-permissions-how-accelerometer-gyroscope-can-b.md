@@ -20,7 +20,6 @@ Modern Android devices contain a variety of sensors that measure physical phenom
 
 This guide covers how Android sensor permissions work, what data these sensors provide, and how they can be used for tracking purposes.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - Both sensors operate at the hardware level and can sample data at high frequencies: typically 50-200 Hz on most devices, though some support rates exceeding 1000 Hz.

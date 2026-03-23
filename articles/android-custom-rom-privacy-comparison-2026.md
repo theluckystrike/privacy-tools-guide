@@ -18,7 +18,6 @@ tags: [privacy-tools-guide, privacy]
 
 Choosing a privacy-focused custom ROM requires understanding the technical tradeoffs between security hardening, Google dependency, and ecosystem compatibility. This guide compares the leading options for developers and power users who prioritize data minimization without sacrificing usability.
 
-Key Takeaways
 
 - Choosing a privacy-focused custom: ROM requires understanding the technical tradeoffs between security hardening, Google dependency, and ecosystem compatibility.
 - GrapheneOS only supports devices: with verified boot andTitan M/M2 co-processors (Pixel 6 and newer).

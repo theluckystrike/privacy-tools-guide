@@ -18,7 +18,6 @@ tags: [privacy-tools-guide, comparison, best-of]
 
 Choose the Bitwarden desktop app if you need offline access, faster vault search, system tray quick-copy, or reliable CLI integration for automated scripts. Choose the web vault if you access Bitwarden from multiple browsers or devices, want minimal resource usage, and prefer not to install additional software. Here is a detailed breakdown of security architecture, performance, and developer workflow differences between the two.
 
-Key Takeaways
 
 - Export encrypted backup (requires: master password) BW_SESSION=$(cat ~/.bw-session) bw export --format=encrypted --output ./vault-backup-$(date +%Y%m%d).json.enc \ --session $BW_SESSION # 2.
 - Verify backup integrity gpg: --detach-sign vault-backup-*.json.enc echo "Backup signed: $(ls -lh vault-backup-*.json.enc*)" # 3.

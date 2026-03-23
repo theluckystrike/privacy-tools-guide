@@ -18,7 +18,6 @@ tags: [privacy-tools-guide]
 
 To set up anonymous IRC over Tor, install the Tor daemon, configure your IRC client (like WeeChat or Irssi) to connect through SOCKS5 on localhost:9050, then connect to Tor-hidden IRC networks that operate as .onion services for near-complete anonymity. Standard IRC exposes your IP address to all network observers, while running IRC over Tor hides your IP and adds multiple layers of routing obfuscation, protecting you from traffic analysis and deanonymization.
 
-Key Takeaways
 
 - In the Network List: ensure "Use proxy for DNS lookups" is enabled, or better yet, always use .onion addresses that require no DNS resolution.
 - IRC over Tor is: best suited for communities that already use IRC and want privacy improvements without switching platforms.

@@ -33,7 +33,6 @@ Head-to-Head Comparison
 | Passkey Support | Yes | Yes |
 | Dark Web Monitoring | Watchtower | Yes (built-in) |
 
-Key Takeaways
 
 - The difference is minimal for end users: but 1Password's integration works better for developers who want to inspect credential details.
 - For developers and power: users who rely on scripting and CI/CD integration, 1Password is the stronger choice overall.

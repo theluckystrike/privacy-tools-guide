@@ -23,7 +23,6 @@ This guide gives you the tools and process to evaluate extensions before install
 
 For developers, understanding these attack vectors matters because the same principles apply to any application requesting elevated system access. Browser extensions represent an extreme case, they have nearly unfettered access to user data, but the audit methodology generalizes to applications, system services, and integrations in any platform.
 
-Key Takeaways
 
 - Users assume published extensions: have been evaluated; most haven't.
 - Browser extensions represent an extreme case: they have nearly unfettered access to user data, but the audit methodology generalizes to applications, system services, and integrations in any platform.

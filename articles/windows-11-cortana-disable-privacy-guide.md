@@ -115,10 +115,10 @@ Step 5: Verify Cortana is Disabled
 
 After applying your chosen method, verify that Cortana no longer operates:
 
-1. Check the taskbar – the Cortana icon should not appear
-2. Press `Win + S` – search should work without Cortana integration
-3. Open Task Manager → Startup – no Cortana-related entries should appear
-4. Check Services – verify no Cortana services are running
+1. Check the taskbar, the Cortana icon should not appear
+2. Press `Win + S`, search should work without Cortana integration
+3. Open Task Manager → Startup, no Cortana-related entries should appear
+4. Check Services, verify no Cortana services are running
 
 ```powershell
 Verify Cortana is disabled

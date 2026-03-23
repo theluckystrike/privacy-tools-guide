@@ -20,7 +20,6 @@ Android's Settings menu shows permissions per app, but it's slow and incomplete.
 
 This guide covers extracting a full permissions audit, finding problematic grants, and revoking permissions without uninstalling apps.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.

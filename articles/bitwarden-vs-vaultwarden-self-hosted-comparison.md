@@ -34,7 +34,6 @@ Head-to-Head Comparison
 | SMTP Integration | Built-in | Built-in |
 | Hardware Requirements | 4+ GB RAM, multi-core | Raspberry Pi capable |
 
-Key Takeaways
 
 - Generate secure admin token: export ADMIN_TOKEN=$(openssl rand -base64 48) export DB_PASSWORD=$(openssl rand -base64 32) # 4.
 - Most individual users and: small teams find Vaultwarden covers their needs adequately.

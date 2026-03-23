@@ -44,7 +44,7 @@ Method 1: WireGuard with DoH Stubby Configuration
 
 WireGuard is known for its simplicity and performance. Here's how to configure DoH with WireGuard on Linux:
 
-#### Step 1: Install Required Packages
+Step 1: Install Required Packages
 
 ```bash
 Ubuntu/Debian
@@ -55,7 +55,7 @@ Fedora/RHEL
 sudo dnf install stubby dnsmasq
 ```
 
-#### Step 2: Configure Stubby for DNS over HTTPS
+Step 2: Configure Stubby for DNS over HTTPS
 
 Edit the Stubby configuration file:
 
@@ -88,7 +88,7 @@ upstream_recursive_servers:
         value: JSMUlqH2g/3BE/h2+aSxL+jEv9IU/A9zZ5Xu2HI7RoM=
 ```
 
-#### Step 3: Configure WireGuard to Use Local DNS
+Step 3: Configure WireGuard to Use Local DNS
 
 Edit your WireGuard configuration:
 
@@ -111,7 +111,7 @@ AllowedIPs = 0.0.0.0/0, ::/0
 PersistentKeepalive = 25
 ```
 
-#### Step 4: Configure Dnsmasq as Local Caching Resolver
+Step 4: Configure Dnsmasq as Local Caching Resolver
 
 ```bash
 sudo nano /etc/dnsmasq.conf
@@ -125,7 +125,7 @@ server=127.0.0.1#53530
 cache-size=1000
 ```
 
-#### Step 5: Restart Services
+Step 5: Restart Services
 
 ```bash
 sudo systemctl restart stubby
@@ -140,7 +140,7 @@ Method 2: OpenVPN with DoH Configuration
 
 OpenVPN doesn't natively support DoH, but you can chain a local DoH resolver similar to the WireGuard method.
 
-#### Using dnscrypt-proxy with OpenVPN
+Using dnscrypt-proxy with OpenVPN
 
 ```bash
 Install dnscrypt-proxy
@@ -198,7 +198,7 @@ Method 3: Configuring DoH on Windows with VPN
 
 Windows 11 has native DoH support, which you can configure to work with your VPN:
 
-#### Step 1: Enable DoH in Windows Settings
+Step 1: Enable DoH in Windows Settings
 
 1. Open Settings → Network & Internet → Wi-Fi or Ethernet
 2. Click on your active network connection
@@ -213,7 +213,7 @@ Windows 11 has native DoH support, which you can configure to work with your VPN
 8. Under "Preferred DNS encryption", select "Encrypted (DNS over HTTPS)"
 9. Repeat for IPv6 if desired
 
-#### Step 2: Configure VPN to Use System DNS
+Step 2: Configure VPN to Use System DNS
 
 When your VPN connects, it may override your DNS settings. To ensure your VPN uses the DoH-enabled system DNS:
 
@@ -226,7 +226,7 @@ Method 4: macOS DoH with VPN Tunnel
 
 On macOS, you can use the built-in DoH support or third-party applications:
 
-#### Using macOS System Preferences
+Using macOS System Preferences
 
 ```bash
 For macOS Ventura and later
@@ -236,7 +236,7 @@ sudo networksetup -setdnsservers "Wi-Fi" 1.1.1.1 8.8.8.8
 Native DoH GUI settings are in System Preferences > Network > Wi-Fi > Advanced > DNS
 ```
 
-#### Using dnscrypt-proxy with macOS VPN
+Using dnscrypt-proxy with macOS VPN
 
 ```bash
 Install Homebrew if not installed
@@ -258,7 +258,7 @@ Method 5: Router-Level Configuration
 
 Configuring DoH at the router level protects all devices on your network:
 
-#### Using OpenWrt with DoH
+Using OpenWrt with DoH
 
 1. Install required packages:
 ```bash

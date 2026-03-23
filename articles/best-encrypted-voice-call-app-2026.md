@@ -18,7 +18,6 @@ tags: [privacy-tools-guide, best-of]
 
 I test encrypted voice calls weekly with my distributed team, and we've tried Signal, Jami, Wire, and Element over the past year. Call quality varies wildly between apps, and "encrypted" means different things depending on the protocol. This review focuses on apps built specifically for secure voice -- not messaging apps with a call button bolted on.
 
-Key Takeaways
 
 - The open-source SIP client: supports ZRTP encryption with SAS verification.
 - Start with free options: to find what works for your workflow, then upgrade when you hit limitations.

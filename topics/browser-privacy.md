@@ -8,7 +8,7 @@ voice-checked: true
 date: 2026-03-21
 ---
 
-# Browser Privacy. Tor, Firefox, Brave & Anti-Fingerprinting
+Browser Privacy. Tor, Firefox, Brave & Anti-Fingerprinting
 
 Your web browser is the primary vector for online tracking, fingerprinting, and data collection. This hub covers Tor Browser configuration and safety guides, Firefox privacy hardening, Brave browser settings, and protection against advanced fingerprinting techniques including canvas, audio context, font, and WebRTC fingerprinting. We explain how the Topics API replaced third-party cookies, how battery API fingerprinting works, and which browsers best protect your privacy on mobile devices. Essential reading for anyone serious about browsing without being tracked.
 

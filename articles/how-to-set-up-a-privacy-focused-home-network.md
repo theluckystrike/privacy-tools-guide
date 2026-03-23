@@ -66,7 +66,7 @@ Option A: Dedicated Router (Recommended for Most)
 
 Hardware: Used enterprise router (Ubiquiti EdgeRouter X, Netgate SG-2100) or mini PC (Intel NUC, Raspberry Pi 4 with cooling)
 
-Cost: $150–500 (used) or $300–800 (new)
+Cost: $150, 500 (used) or $300, 800 (new)
 
 - Full control over all traffic
 - Can run Pi-hole + pfSense together
@@ -82,7 +82,7 @@ Option B: ISP Router with Pi-hole Only
 
 Hardware: Keep ISP router + add Raspberry Pi 4 ($50)
 
-Cost: $50–100 (if buying Pi-hole only)
+Cost: $50, 100 (if buying Pi-hole only)
 
 - Minimal setup, Pi-hole is simple
 - Least disruptive to existing network
@@ -287,7 +287,7 @@ https://v.firebog.net/hosts/static/w3kbl.txt
 (Aggressive ad blocking)
 ```
 
-Too many blocklists cause false positives (legitimate sites blocked). Start with 3–4, monitor your web traffic for a week, then add more.
+Too many blocklists cause false positives (legitimate sites blocked). Start with 3, 4, monitor your web traffic for a week, then add more.
 
 Step 8: Check Pi-hole Dashboard
 
@@ -299,7 +299,7 @@ Login with password you set during installation
 ```
 
 Dashboard shows:
-- Queries blocked: How many tracker queries Pi-hole is blocking (expect 15–30% of all queries)
+- Queries blocked: How many tracker queries Pi-hole is blocking (expect 15, 30% of all queries)
 - Top blocked domains: Common trackers trying to load
 - Top permitted domains: Sites that load normally
 - Client activity: Which devices are querying what
@@ -333,13 +333,13 @@ Option A: Netgate SG-2100 (Commercial, Recommended)
 - Link: https://www.netgate.com/products/SG-2100
 
 Option B: Used Netgate Box (Budget)
-- Cost: $100–300 used (eBay, Reddit r/homelabsales)
+- Cost: $100, 300 used (eBay, Reddit r/homelabsales)
 - SG-1100 ($150), APU2c4 ($200)
 - Slightly older hardware but runs pfSense fine
 - No warranty but 10x cheaper
 
 Option C: Mini PC Running pfSense
-- Cost: $300–600
+- Cost: $300, 600
 - Intel NUC with 8GB RAM
 - Most flexible (can run other services)
 - Requires software installation
@@ -625,18 +625,18 @@ Your pfSense router should have WiFi, or connect a separate AP (access point) to
 Recommended Access Points
 
 Ubiquiti UniFi 6E (U6+ or newer)
-- Cost: $150–200
+- Cost: $150, 200
 - Performance: Excellent, tri-band
 - VLAN support: Yes, native
 - Setup: Via UniFi Controller app
 
 TP-Link Deco X95 (WiFi 6)
-- Cost: $200–300 (3-pack)
+- Cost: $200, 300 (3-pack)
 - Performance: Good, mesh support
 - VLAN support: Limited (not recommended for VLAN setup)
 
 TP-Link Archer AXE300
-- Cost: $80–120
+- Cost: $80, 120
 - Performance: Decent, WiFi 6E
 - VLAN support: Not recommended
 - Good secondary AP
@@ -804,7 +804,7 @@ Maintenance Timeline
 - Day 2: Configure pfSense, create VLANs
 - Day 3: Set up firewall rules, test isolation
 - Day 4: Install WireGuard, test remote access
-- Day 5–7: Deploy devices to appropriate VLANs, test functionality
+- Day 5, 7: Deploy devices to appropriate VLANs, test functionality
 - Weekly: Monitor Pi-hole for blocked domains
 - Monthly: Update firmware and blocklists
 

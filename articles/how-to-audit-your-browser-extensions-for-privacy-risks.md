@@ -150,7 +150,7 @@ Each entry is what we described above.
 
 Step 1: Audit Your Current Extensions
 
-Do this now. You probably have 5–15 installed and forgot about half of them.
+Do this now. You probably have 5, 15 installed and forgot about half of them.
 
 Inventory Your Extensions
 
@@ -346,7 +346,7 @@ Risky: VPN "extensions" claiming to protect you. Extensions can't truly VPN (the
 
 Safe: Use a proper VPN app (Wireguard, OpenVPN, Mullvad).
 
-Cost: $5–15/month (varies by provider).
+Cost: $5, 15/month (varies by provider).
 
 Instead of Generic "Optimizer" Extensions → Delete Them
 
@@ -362,7 +362,7 @@ Risky: Browser extensions for to-do lists, note-taking, time tracking. They're u
 
 Safe: Dedicated apps (Todoist for to-do lists, Obsidian for notes, Toggl for time tracking). You pay for them, so they're incentivized to protect your data.
 
-Cost: $0–15/month (varies).
+Cost: $0, 15/month (varies).
 
 Ongoing Monitoring
 

@@ -59,7 +59,7 @@ Configuration Testing
 
 For developers and power users who need reliable connectivity, the following configuration steps improve success rates:
 
-#### Stealth Protocol Configuration
+Stealth Protocol Configuration
 
 The Stealth protocol wraps VPN traffic in a TLS tunnel, making it appear as regular HTTPS traffic:
 
@@ -68,7 +68,7 @@ Windscribe CLI connection example (Linux)
 windscribe connect us-east --protocol stealth
 ```
 
-#### WireGuard with Obfuscation
+WireGuard with Obfuscation
 
 For users preferring WireGuard performance with additional obfuscation:
 
@@ -87,7 +87,7 @@ AllowedIPs = 0.0.0.0/0
 PersistentKeepalive = 25
 ```
 
-#### Testing Script for Automation
+Testing Script for Automation
 
 Developers can automate connectivity testing with this bash script:
 

@@ -13,7 +13,7 @@ voice-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
 {% raw %}
-# Privacy Risks of Location Tracking Explained
+Privacy Risks of Location Tracking Explained
 
 Your phone broadcasts your location through dozens of channels simultaneously. Most people are aware of GPS location permissions, but GPS is only one layer. This guide explains every tracking vector, who collects and monetizes the data, what gets inferred from location history, and what actually reduces exposure.
 
@@ -66,7 +66,7 @@ Your phone constantly connects to the nearest cell tower. even when in airplane 
 - Which tower you connected to, with timestamp
 - Call records (who you called, when, duration)
 
-Carriers in most countries retain this data for 6–24 months and provide it to law enforcement on subpoena. In the US, carriers also historically sold this data commercially (AT&T, T-Mobile, Sprint were fined by the FCC for selling real-time location to third parties).
+Carriers in most countries retain this data for 6, 24 months and provide it to law enforcement on subpoena. In the US, carriers also historically sold this data commercially (AT&T, T-Mobile, Sprint were fined by the FCC for selling real-time location to third parties).
 
 IMSI Catchers (Stingrays): Law enforcement devices that impersonate cell towers, forcing nearby phones to connect. This reveals your precise location and phone identifier without carrier cooperation. IMSI catchers are in widespread use by police in the US, EU, and authoritarian states.
 
@@ -103,7 +103,7 @@ Limitation of MAC randomization: iOS and Android still use persistent randomized
 
 4. Bluetooth Beacons
 
-Bluetooth Low Energy (BLE) beacons are installed in retail stores, airports, museums, and stadiums. When an app has Bluetooth permission, it can detect nearby beacons and report your presence to the app's backend. accurate to within 1–10 meters.
+Bluetooth Low Energy (BLE) beacons are installed in retail stores, airports, museums, and stadiums. When an app has Bluetooth permission, it can detect nearby beacons and report your presence to the app's backend. accurate to within 1, 10 meters.
 
 Apple iBeacon and Google Eddystone are the two main protocols. Retailers use them for:
 - Sending targeted push notifications when you enter a store section

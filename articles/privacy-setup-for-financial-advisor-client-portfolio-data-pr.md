@@ -333,7 +333,7 @@ class MFAManager:
         return totp.verify(token, valid_window=1)
 ```
 
-Session management deserves equal attention. Financial applications should implement short session timeouts (15–30 minutes of inactivity), re-authentication requirements for sensitive actions like bulk data exports, and concurrent session controls that limit active sessions per advisor:
+Session management deserves equal attention. Financial applications should implement short session timeouts (15, 30 minutes of inactivity), re-authentication requirements for sensitive actions like bulk data exports, and concurrent session controls that limit active sessions per advisor:
 
 ```python
 from datetime import datetime, timedelta

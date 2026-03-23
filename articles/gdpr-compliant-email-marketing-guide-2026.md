@@ -203,7 +203,7 @@ Step 5: Email List Hygiene and Management
 
 Maintain compliance through ongoing list management:
 
-Remove unengaged subscribers after 12–18 months, remove hard bounces immediately, process unsubscribe requests within 10 days, and log any modifications to consent terms.
+Remove unengaged subscribers after 12, 18 months, remove hard bounces immediately, process unsubscribe requests within 10 days, and log any modifications to consent terms.
 
 ```python
 def cleanup_inactive_subscribers(db, days_inactive: int = 547):

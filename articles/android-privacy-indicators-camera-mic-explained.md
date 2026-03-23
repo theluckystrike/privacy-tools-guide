@@ -18,7 +18,6 @@ tags: [privacy-tools-guide, privacy]
 
 Android privacy indicators provide real-time visual feedback when apps access your camera or microphone. Introduced in Android 12, these indicators address long-standing privacy concerns by making hidden surveillance attempts visible to users. This guide explains how these indicators work, their technical implementation, and how developers and power users can use this functionality.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - Use per-app permissions Android: 12+ supports granular microphone and camera permissions.

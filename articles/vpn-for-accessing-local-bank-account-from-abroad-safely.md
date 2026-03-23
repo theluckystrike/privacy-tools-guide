@@ -181,7 +181,7 @@ Step-by-Step VPN Setup for Banking
 
 Option 1: Self-Hosted WireGuard (Recommended for Power Users)
 
-#### Server Setup on DigitalOcean
+Server Setup on DigitalOcean
 
 ```bash
 #!/bin/bash
@@ -241,7 +241,7 @@ echo "Server setup complete!"
 echo "Client configuration coming next..."
 ```
 
-#### Client Configuration on Your Local Machine
+Client Configuration on Your Local Machine
 
 ```bash
 #!/bin/bash

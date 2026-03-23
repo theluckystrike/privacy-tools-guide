@@ -34,7 +34,6 @@ Head-to-Head Comparison
 | Password Sharing | Yes (Organizations) | Yes |
 | Breach Monitoring | Yes (premium) | Yes (premium) |
 
-Key Takeaways
 
 - Choose Bitwarden if you: need open-source transparency, self-hosting, extensive API/CLI access, or the lowest premium price ($10/year).
 - Choose NordPass if you: already use the Nord ecosystem, prefer XChaCha20-Poly1305 encryption with Argon2id key derivation, or want built-in masked email aliases.

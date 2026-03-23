@@ -34,7 +34,6 @@ Head-to-Head Comparison
 | PAM Features | Limited | Full PAM suite |
 | Audit Logging | Basic | Detailed enterprise logs |
 
-Key Takeaways
 
 - Choose 1Password if you: prioritize polished user experience, strong secret key architecture, and extensive integrations with developer tools.
 - 1Password's key derivation uses: Argon2id for the secret key derivation, providing strong resistance against GPU-based attacks.

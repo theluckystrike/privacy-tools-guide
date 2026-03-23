@@ -57,13 +57,13 @@ Essential Filter Lists for Anti-Tracking
 
 Enable these pre-built lists in the dashboard for enhanced protection:
 
-- uBlock filters – Privacy. Blocks tracking domains and analytics endpoints
+- uBlock filters, Privacy. Blocks tracking domains and analytics endpoints
 - EasyPrivacy. Removes tracking elements and beacon calls from web pages
 - Fanboy's Enhanced Tracking List. Additional fingerprinting and behavioral tracking protection
 - AdGuard Tracking Protection. Covers trackers that EasyPrivacy misses, particularly on non-English sites
 - Peter Lowe's Ad and tracking server list. Long-running list with minimal false positives
 
-Under the "Annoyances" category, enabling uBlock filters – Annoyances also removes cookie consent banners, which often include embedded tracking scripts.
+Under the "Annoyances" category, enabling uBlock filters, Annoyances also removes cookie consent banners, which often include embedded tracking scripts.
 
 Step 2: Implementing Advanced Anti-Fingerprinting
 

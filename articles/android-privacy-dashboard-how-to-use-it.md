@@ -18,7 +18,6 @@ tags: [privacy-tools-guide, privacy]
 
 Android's Privacy Dashboard provides a centralized view of how apps access sensitive permissions on your device. Introduced in Android 12 and refined in subsequent versions, this feature helps you understand which apps have accessed your camera, microphone, location, and other sensitive data, and when they did so. This guide walks through accessing the Privacy Dashboard, interpreting the data it provides, and using that information to strengthen your privacy posture.
 
-Key Takeaways
 
 - Restrict to "Allow only: while using the app" and manually disable location immediately after use.
 - Android 14+: Enhanced dashboard with more detailed analytics, longer historical records, and better integration with app permissions.

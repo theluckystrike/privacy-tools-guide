@@ -20,7 +20,6 @@ Location data represents one of the most sensitive categories of personal inform
 
 This guide covers methods to remove location history from Google Timeline, including manual deletion, programmatic approaches using the Google Maps Platform API, and strategies for preventing future accumulation.
 
-Key Takeaways
 
 - Choose "Manage Activity" to: open Timeline 4.
 - Use the trash icon: to delete entries by date 5.

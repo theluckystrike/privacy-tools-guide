@@ -18,7 +18,6 @@ tags: [privacy-tools-guide, best-of]
 
 I've tried every major password manager with a CLI in the past year -- 1Password, Bitwarden, KeePassXC, pass, and gopass. My daily workflow involves SSH keys, API tokens, and database credentials across a dozen projects. After rotating through all of them, I settled on a setup that actually works for how developers manage secrets. Here is my breakdown.
 
-Key Takeaways
 
 - Make it strong but: memorable using a passphrase approach: ``` Good: CorrectHorseBatteryStaple2026!Cloud Bad: P@ssw0rd123 ``` Use at least 20 characters with mixed case, numbers, and symbols.
 - As an open-source solution: you can self-host the entire stack or use their hosted service.

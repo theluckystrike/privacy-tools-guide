@@ -13,7 +13,7 @@ voice-checked: true
 tags: [privacy-tools-guide]
 ---
 {% raw %}
-# How to Use John the Ripper for Password Auditing
+How to Use John the Ripper for Password Auditing
 
 John the Ripper (JtR) audits the strength of stored password hashes. In a security assessment, you use it to identify accounts using weak or guessable passwords before an attacker does. This guide covers authorized use. auditing your own infrastructure and running penetration tests you have explicit written permission to perform.
 

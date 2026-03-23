@@ -18,7 +18,6 @@ tags: [privacy-tools-guide, privacy]
 
 Veterinary practices handle sensitive information that deserves the same level of protection as human medical records. Pet owner contact details, medical histories, billing information, and even pet DNA data can be valuable to identity thieves and marketers. This guide walks veterinary practices through establishing privacy protections that meet client expectations and comply with evolving regulations.
 
-Key Takeaways
 
 - Look for AES-256 encryption standards: which represent current best practices.
 - Require password changes every 90 days: and prohibit reuse of the previous ten passwords.

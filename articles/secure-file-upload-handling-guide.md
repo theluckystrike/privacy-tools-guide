@@ -13,7 +13,7 @@ voice-checked: true
 tags: [privacy-tools-guide]
 ---
 {% raw %}
-# Secure File Upload Handling for Developers
+Secure File Upload Handling for Developers
 
 File upload endpoints are one of the most exploited attack surfaces in web applications. A misconfigured uploader lets attackers drop web shells, trigger SSRF via SVG/XML, bypass malware scanners, or cause denial-of-service through zip bombs. This guide covers the full stack of defenses.
 

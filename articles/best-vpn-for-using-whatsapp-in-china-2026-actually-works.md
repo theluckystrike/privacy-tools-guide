@@ -30,7 +30,6 @@ WhatsApp remains blocked in mainland China, and this situation continues into 20
 
 This guide focuses on technical implementation rather than product recommendations. You'll learn which protocols work, how to configure them, and practical methods to verify your setup functions correctly inside China.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - V2Ray builds on this: concept with additional protocol support and better traffic randomization.

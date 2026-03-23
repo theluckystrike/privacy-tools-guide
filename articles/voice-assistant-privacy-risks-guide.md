@@ -93,7 +93,7 @@ Apple's model is meaningfully better for privacy, but "better" doesn't mean "pri
 
 Step 2: Accidental Activations in Practice
 
-Research published by Northeastern University found that smart speakers activate accidentally 1.5–19 times per day depending on model and ambient conditions. Common false triggers:
+Research published by Northeastern University found that smart speakers activate accidentally 1.5, 19 times per day depending on model and ambient conditions. Common false triggers:
 
 - "Okay Google" → fires on "OK cooler", "Okay dude"
 - "Alexa" → triggers on "Alex", "relaxing", "electronics"

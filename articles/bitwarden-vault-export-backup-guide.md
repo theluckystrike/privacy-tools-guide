@@ -18,7 +18,6 @@ tags: [privacy-tools-guide]
 
 To back up your Bitwarden vault, run `bw export --format json --encrypted` from the Bitwarden CLI to create a master-password-protected export of all your passwords, notes, and identities. For automated daily backups, wrap this command in a cron job that also handles session management and old backup cleanup. This guide covers all three export formats (JSON, encrypted JSON, CSV), step-by-step CLI setup, automated backup scripts, restore procedures, and security best practices for storing your exports.
 
-Key Takeaways
 
 - Test the restore process: on a fresh Bitwarden account (you can use a free account on a different email address): ```bash # 1.
 - Import your encrypted backup: export BW_SESSION=$(bw unlock --raw) bw import --format json --vault ~/path/to/vault-backup-encrypted.json # 3.

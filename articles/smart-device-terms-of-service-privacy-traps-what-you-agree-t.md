@@ -175,11 +175,11 @@ Reading Terms of Service Effectively
 
 Rather than reading every word of every ToS, focus on high-risk sections:
 
-1. Data Collection – What specifically is collected, and how precise is it?
-2. Data Retention – How long is data stored? Can you request deletion?
-3. Third-Party Sharing – Who receives your data, and for what purposes?
-4. Children's Data – If you have family members under 13, understand special protections
-5. Arbitration Clauses – Understand how disputes will be resolved
+1. Data Collection, What specifically is collected, and how precise is it?
+2. Data Retention, How long is data stored? Can you request deletion?
+3. Third-Party Sharing, Who receives your data, and for what purposes?
+4. Children's Data, If you have family members under 13, understand special protections
+5. Arbitration Clauses, Understand how disputes will be resolved
 
 Browser extensions like Terms of Service; Didn't Read (ToS;DR) provide community ratings for major services, offering quick insight into problematic clauses.
 
@@ -236,11 +236,11 @@ Building Privacy-Conscious Habits
 
 The most effective strategy combines multiple protective measures:
 
-- Research first – Check privacy policies before purchasing devices
-- Minimize exposure – Only connect devices that provide clear utility
-- Network segmentation – Isolate IoT devices from primary networks
-- Regular audits – Periodically review connected devices and permissions
-- Firmware updates – Keep devices patched against security vulnerabilities
+- Research first, Check privacy policies before purchasing devices
+- Minimize exposure, Only connect devices that provide clear utility
+- Network segmentation, Isolate IoT devices from primary networks
+- Regular audits, Periodically review connected devices and permissions
+- Firmware updates, Keep devices patched against security vulnerabilities
 
 Advanced Monitoring for Developer-Level Protections
 

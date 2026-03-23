@@ -18,7 +18,6 @@ tags: [privacy-tools-guide]
 
 To disable Brave's crypto features, go to `brave://settings`, toggle off Brave Rewards and Brave Wallet, then visit `brave://flags` and set IPFS, Brave Wallet, Native Wallet, and Solana Wallet to "Disabled." For persistent enforcement on managed devices, deploy registry policies (Windows), plist configurations (macOS), or JSON policies (Linux) that set `BraveWalletAllowed` and `BraveRewardsAllowed` to false. This guide covers five methods from simple GUI toggles to custom compiled builds, each with different tradeoffs between ease and permanence.
 
-Key Takeaways
 
 - Use policy enforcement (Method: 4) for persistent configuration or command line arguments (Method 3) for scripted deployments.
 - Features may reappear after: browser updates or can be re-enabled by users with access to the settings panel.

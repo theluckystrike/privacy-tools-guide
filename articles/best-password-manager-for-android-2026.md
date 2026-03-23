@@ -20,7 +20,6 @@ The best password manager for Android in 2026 depends on your workflow. If you n
 
 This guide evaluates password managers based on criteria that matter to developers: export formats, CLI availability, open-source auditability, and self-hosting options.
 
-Key Takeaways
 
 - The best tool is: one you'll consistently use.
 - The best password manager: for Android in 2026 depends on your workflow.

@@ -18,7 +18,6 @@ tags: [privacy-tools-guide, workflow]
 
 Set up an application performance monitoring (APM) workflow by instrumenting your code with custom metrics, establishing meaningful alerts based on service level objectives (SLOs), and implementing distributed tracing to quickly isolate performance bottlenecks. This guide covers metric collection strategies, alerting best practices, tracing implementation, and building a monitoring culture that balances observability with user privacy.
 
-Key Takeaways
 
 - An alert on "database: CPU high" is less actionable than "p95 latency exceeds 2 seconds." Focus alerts on user-visible symptoms.
 - This guide covers metric: collection strategies, alerting best practices, tracing implementation, and building a monitoring culture that balances observability with user privacy.

@@ -73,7 +73,7 @@ def submit_dsar_request(email, request_type, jurisdiction="GDPR"):
 
 OneTrust excels at automated data discovery and classification, making it suitable for enterprises with complex data landscapes. The platform supports over 100 pre-built regulatory templates and integrates with major data governance tools.
 
-A practical consideration when deploying OneTrust is connector configuration. The platform ships with pre-built connectors for Salesforce, Workday, and Snowflake, but organizations running custom data stores must build connectors using the OneTrust SDK. Budget 3–6 weeks per custom connector for a team with no prior OneTrust experience. The platform's workflow engine is powerful but has a steep learning curve, plan for dedicated administrator training before going live.
+A practical consideration when deploying OneTrust is connector configuration. The platform ships with pre-built connectors for Salesforce, Workday, and Snowflake, but organizations running custom data stores must build connectors using the OneTrust SDK. Budget 3, 6 weeks per custom connector for a team with no prior OneTrust experience. The platform's workflow engine is powerful but has a steep learning curve, plan for dedicated administrator training before going live.
 
 Cookiebot Consent Manager
 

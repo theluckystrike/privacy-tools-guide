@@ -28,7 +28,6 @@ tags: [privacy-tools-guide, best-of]
 
 I manage 2FA on over 40 accounts and have used Aegis, Raivo, Bitwarden TOTP, and oathtool in rotation over the past year. My conclusion: there is no single best authenticator app. The right choice depends on whether you want your TOTP codes inside your password manager, in a standalone app, or generated from your terminal. I'll walk through each approach with the specific tradeoffs I ran into.
 
-Key Takeaways
 
 - If you prefer open-source: standalone apps, Aegis (Android) or Raivo (iOS) provide excellent mobile experiences with export capabilities.
 - Command-line focused developers benefit: from `oathtool` or `pass-totp`, integrating 2FA into terminal workflows without mobile devices.

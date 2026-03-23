@@ -296,7 +296,7 @@ Generally safe (rare leaks):
 - ProtonVPN (owned by Swiss company Proton, audited)
 
 Known issues:
-- NordVPN: WebRTC leaks reported 2020–2022 (likely fixed, still verify)
+- NordVPN: WebRTC leaks reported 2020, 2022 (likely fixed, still verify)
 - ExpressVPN: DNS leaks in some regions
 - CyberGhost: IPv6 leaks reported
 - Windscribe: Kill switch occasionally fails (known issue)

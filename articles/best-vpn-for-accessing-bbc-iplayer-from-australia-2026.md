@@ -24,7 +24,6 @@ Use a UK-based WireGuard VPN with DNS leak protection to access BBC iPlayer from
 
 Accessing BBC iPlayer from Australia presents a unique technical challenge. The service uses geo-restriction mechanisms that require more than just a basic VPN connection. This guide covers the technical implementation details, configuration approaches, and verification methods that developers and power users need to know in 2026.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - Use WireGuard protocol for: best performance and reliability 2.

@@ -30,7 +30,6 @@ Quick Setup Steps
 8. Test anonymity: send a test email and verify the originating IP is a Tor exit node
 
 
-Key Takeaways
 
 - For developers building privacy-focused: applications or researchers requiring network anonymity, Tor provides a proven layer of protection.
 - The latter approach provides: stronger anonymity because your traffic never exits to the clearnet.

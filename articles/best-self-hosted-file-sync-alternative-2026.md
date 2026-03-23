@@ -24,7 +24,6 @@ Self-hosted alternatives eliminate monthly per-user licensing and storage tier f
 
 For developers managing repositories, config files, or sensitive documents, self-hosted sync provides consistency across machines without relying on external services.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.

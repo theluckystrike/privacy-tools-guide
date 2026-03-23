@@ -18,7 +18,6 @@ tags: [privacy-tools-guide]
 
 Scoped storage (introduced in Android 10 and mandatory since Android 12) limits apps to their own sandbox directories and prevents broad read-write access to all files on external storage. Instead of requesting READ_EXTERNAL_STORAGE permission that granted access to all files, apps now use the MediaStore API for shared media or request user file picks through the Storage Access Framework. This fundamentally reduces privacy risks by preventing apps from accessing your documents, photos, or other sensitive files without explicit per-file user consent.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - This approach provides the: best user experience, requires no permissions, and clearly communicates what data your app accesses.

@@ -44,7 +44,7 @@ The 72-Hour Timeline: Technical Considerations
 
 The 72-hour clock presents practical challenges for technical teams. Your incident response process must account for:
 
-In the first 24 hours, confirm that the incident constitutes a breach. Hours 24–48 are for assessing scope and risk level. The final window, hours 48–72, is for compiling required information and preparing the notification.
+In the first 24 hours, confirm that the incident constitutes a breach. Hours 24, 48 are for assessing scope and risk level. The final window, hours 48, 72, is for compiling required information and preparing the notification.
 
 Many organizations find the 72-hour window challenging because breach confirmation often takes longer than initial detection. Building automated monitoring and logging systems helps accelerate the confirmation process.
 

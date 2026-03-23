@@ -459,10 +459,10 @@ Cleaning 1000 photos (JPEG, PNG mixed):
 
 | Tool | Time | Resource Use | Accuracy |
 |------|------|--------------|----------|
-| ExifTool | 3–5 min | Low (native) | 100% |
-| MAT2 | 5–8 min | Medium (Python) | 100% |
-| ExifCleaner | 8–12 min | High (Electron) | 100% |
-| Metapho | 10–15 min | Medium (GUI) | 100% |
+| ExifTool | 3, 5 min | Low (native) | 100% |
+| MAT2 | 5, 8 min | Medium (Python) | 100% |
+| ExifCleaner | 8, 12 min | High (Electron) | 100% |
+| Metapho | 10, 15 min | Medium (GUI) | 100% |
 | Scrambled Exif | N/A (mobile) | N/A | 100% |
 
 ---

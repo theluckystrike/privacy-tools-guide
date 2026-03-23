@@ -321,7 +321,7 @@ When testing an RSS reader for screen reader compatibility, use a structured app
 
 NVDA on Windows: Navigate the application entirely with keyboard, verifying that every interactive element announces its role and state. Check that article lists announce item count, that focus moves predictably when marking articles read, and that no content is trapped in inaccessible custom widgets.
 
-VoiceOver on macOS: Use the VoiceOver cursor independently of keyboard focus to verify that web-view content within the reader renders with proper heading structure. RSS article content often contains deeply nested HTML. confirm that headings H1–H3 navigate correctly with VO+Command+H.
+VoiceOver on macOS: Use the VoiceOver cursor independently of keyboard focus to verify that web-view content within the reader renders with proper heading structure. RSS article content often contains deeply nested HTML. confirm that headings H1, H3 navigate correctly with VO+Command+H.
 
 JAWS on Windows: Test virtual cursor mode against application mode switching. Some Electron-based RSS readers trigger unexpected mode switches that lose context. A well-built reader stays in application mode with consistent behavior.
 

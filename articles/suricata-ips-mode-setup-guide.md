@@ -25,7 +25,7 @@ IDS vs IPS Mode
 | IDS (pcap/af-packet) | Passive copy | None. read-only |
 | IPS (NFQUEUE) | Kernel intercepts; Suricata decides verdict | Blocks matching traffic |
 
-IPS mode adds latency (0.5–2 ms typical) and a new failure mode: if Suricata crashes, traffic stops unless you configure fail-open.
+IPS mode adds latency (0.5, 2 ms typical) and a new failure mode: if Suricata crashes, traffic stops unless you configure fail-open.
 
 ---
 

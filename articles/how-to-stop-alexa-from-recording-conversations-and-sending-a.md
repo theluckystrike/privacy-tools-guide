@@ -126,7 +126,7 @@ Blocking Alexa at the Network Level
 
 You can block Alexa's outbound traffic using several methods:
 
-#### Using Pi-hole (DNS-level blocking)
+Using Pi-hole (DNS-level blocking)
 
 Add these domains to your Pi-hole blocklist:
 
@@ -138,7 +138,7 @@ amazonaws.com
 
 This prevents DNS resolution for Alexa's servers, effectively blocking most communications.
 
-#### Using Firewall Rules (iptables)
+Using Firewall Rules (iptables)
 
 On a Linux router or gateway:
 
@@ -154,7 +154,7 @@ Log blocked attempts for analysis
 iptables -A OUTPUT -d 52.94.0.0/14 -j LOG --log-prefix "ALEXA_BLOCKED: "
 ```
 
-#### Using VLAN Isolation (Advanced)
+Using VLAN Isolation (Advanced)
 
 For the most solution, isolate your Alexa devices on a separate VLAN with restricted outbound access:
 

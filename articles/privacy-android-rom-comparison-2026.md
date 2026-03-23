@@ -101,7 +101,7 @@ Key differences from GrapheneOS:
 - Mozilla location services instead of Google location
 - Less aggressive memory hardening than GrapheneOS
 
-Supported devices: Pixel 6–9, Fairphone 4 and 5, Motorola Moto G32/G42/G52 (limited).
+Supported devices: Pixel 6, 9, Fairphone 4 and 5, Motorola Moto G32/G42/G52 (limited).
 
 ```bash
 CalyxOS installation via CLI

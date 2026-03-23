@@ -22,7 +22,6 @@ Most people pick a cloud storage provider based on price and storage size, then 
 This guide covers a systematic six-step audit process: reviewing privacy policies for specific red flags, requesting and analyzing your data export, auditing OAuth grants, verifying encryption claims, finding stale shared links, and reading transparency reports. For each problem found, concrete remediation options are listed.
 ---
 
-Key Takeaways
 
 - Zero-knowledge providers use client-side: encryption before upload; the provider stores ciphertext only and provably cannot read the content.
 - Revoke anything not used: in the last 90 days unless you have a specific reason to keep it active.

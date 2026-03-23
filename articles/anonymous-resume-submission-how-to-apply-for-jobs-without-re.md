@@ -20,7 +20,6 @@ Applying for jobs often requires revealing more personal information than necess
 
 This guide covers practical methods for developers and power users to submit applications without exposing their full identity.
 
-Key Takeaways
 
 - This guide covers practical: methods for developers and power users to submit applications without exposing their full identity.
 - Users verify employment at: specific companies without revealing their identity to other users.

@@ -249,9 +249,9 @@ Interpreting the Score
 
 | Score Range | Posture |
 |---|---|
-| 90–100% | Strong compliance; investigate remaining failures |
-| 70–89% | Moderate; address high-severity failures first |
-| 50–69% | Weak; systematic hardening needed |
+| 90, 100% | Strong compliance; investigate remaining failures |
+| 70, 89% | Moderate; address high-severity failures first |
+| 50, 69% | Weak; systematic hardening needed |
 | Below 50% | Critical; remediate before production exposure |
 
 Focus on severity=high failures first. Many low-severity failures are cosmetic or context-dependent.

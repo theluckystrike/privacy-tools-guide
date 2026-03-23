@@ -18,7 +18,6 @@ tags: [privacy-tools-guide]
 
 Crossing international borders with a smartphone containing sensitive code, API keys, or personal data requires understanding what customs authorities can legally search. The rules vary dramatically by country, and the consequences of non-compliance can range from device confiscation to criminal charges. This guide covers what customs agents can legally access and provides practical hardening strategies for developers and power users.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - Travel legal assistance #: - Services like TravelSOS provide emergency legal support # - Include in travel planning # - Cost: $50-200/year # 3.

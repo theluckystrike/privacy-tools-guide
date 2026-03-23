@@ -183,7 +183,7 @@ Android (Google)
 
 Windows (Microsoft)
 - Passkeys stored in Windows Hello
-- Synced across Microsoft account–linked devices
+- Synced across Microsoft account, linked devices
 - Uses Windows Hello biometric (Face ID, fingerprint) or PIN
 - Available for auto-fill and native OS integration
 - Can work offline after initial setup

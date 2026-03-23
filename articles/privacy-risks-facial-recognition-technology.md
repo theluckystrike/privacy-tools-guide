@@ -20,7 +20,7 @@ Facial recognition has moved from border checkpoints to retail stores, concert v
 
 How Facial Recognition Works
 
-Modern FRT uses deep neural networks to generate a 128–512 dimensional embedding vector from a face image. Two faces match if their embedding vectors are within a threshold distance. The quality of the embedding depends on image resolution, lighting, and model training data.
+Modern FRT uses deep neural networks to generate a 128, 512 dimensional embedding vector from a face image. Two faces match if their embedding vectors are within a threshold distance. The quality of the embedding depends on image resolution, lighting, and model training data.
 
 ```
 Input image → Face detection → Face alignment → Feature extraction → Embedding vector

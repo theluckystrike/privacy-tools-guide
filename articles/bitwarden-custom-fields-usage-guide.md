@@ -18,7 +18,6 @@ tags: [privacy-tools-guide]
 
 To use Bitwarden custom fields, open any vault item, scroll to the "Custom Fields" section, and click "Add Item" to create Text (visible metadata), Hidden (masked values like API keys), or Protected (extra-secure, non-searchable) fields. Custom fields let you store API keys, database connection strings, SSH configurations, and environment tags alongside your login credentials, and you can retrieve them programmatically via the Bitwarden CLI with `bw get item "name" | jq '.fields[]'`.
 
-Key Takeaways
 
 - Use only for non-sensitive: metadata like server hostnames or documentation URLs.
 - Use these for URLs: server hostnames, or any non-sensitive metadata you want to associate with an entry.

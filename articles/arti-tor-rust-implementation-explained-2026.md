@@ -204,7 +204,7 @@ let perf_config = PerfConfig::default()
 
 Connection pooling reuses existing circuits for multiple streams, reducing the overhead of circuit construction. The pool size should match your application's concurrency requirements.
 
-Bootstrapping time is one of the biggest performance factors for first-launch scenarios. Arti caches directory documents between runs. Persist the state directory across restarts to avoid the 30–60 second bootstrap delay on every launch:
+Bootstrapping time is one of the biggest performance factors for first-launch scenarios. Arti caches directory documents between runs. Persist the state directory across restarts to avoid the 30, 60 second bootstrap delay on every launch:
 
 ```toml
 [storage]

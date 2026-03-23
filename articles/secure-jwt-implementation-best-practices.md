@@ -202,7 +202,7 @@ if is_revoked(payload["jti"]):
     raise AuthError("Token has been revoked")
 ```
 
-Keep token TTL short (15–60 minutes for access tokens) and use refresh tokens with longer expiry for UX. Revoke refresh tokens on logout.
+Keep token TTL short (15, 60 minutes for access tokens) and use refresh tokens with longer expiry for UX. Revoke refresh tokens on logout.
 
 ---
 

@@ -368,7 +368,7 @@ netsh interface tcp set global autotuninglevel=normal
 
 macOS
 
-macOS WireGuard uses the userspace implementation (`wireguard-go`). It is notably slower than the Linux kernel module. typically 50–70% of equivalent Linux throughput on the same hardware. This is a fundamental limitation of the userspace architecture.
+macOS WireGuard uses the userspace implementation (`wireguard-go`). It is notably slower than the Linux kernel module. typically 50, 70% of equivalent Linux throughput on the same hardware. This is a fundamental limitation of the userspace architecture.
 
 ```bash
 Install via Homebrew or the Mac App Store

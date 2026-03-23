@@ -16,7 +16,7 @@ voice-checked: true
 
 {% raw %}
 
-Small businesses often skip privacy audits because they seem like an enterprise concern. They're not. A single data breach at a small company can cost $50,000–$500,000 in recovery costs, regulatory fines, and lost customers. Most breaches exploit simple, fixable problems.
+Small businesses often skip privacy audits because they seem like an enterprise concern. They're not. A single data breach at a small company can cost $50,000, $500,000 in recovery costs, regulatory fines, and lost customers. Most breaches exploit simple, fixable problems.
 
 This checklist is organized into eight areas. Work through each section, mark what's done, and create a remediation task for anything that isn't.
 

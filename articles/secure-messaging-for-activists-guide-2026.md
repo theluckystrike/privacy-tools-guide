@@ -250,7 +250,7 @@ Strengths:
 
 Weaknesses:
 - Beta software (not production-ready)
-- Extremely slow (mixnet delays messages 5–30 seconds)
+- Extremely slow (mixnet delays messages 5, 30 seconds)
 - Very small user base (nearly unknown)
 - Limited mobile support (desktop-first)
 - Not suitable for real-time conversation

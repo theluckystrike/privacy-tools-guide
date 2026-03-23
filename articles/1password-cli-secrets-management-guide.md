@@ -18,7 +18,6 @@ tags: [privacy-tools-guide]
 
 Use the 1Password CLI (`op`) to retrieve secrets directly in your terminal with `op item get "API Key" --field password`, eliminating hardcoded credentials from config files and environment variables. Install it via `brew install --cask 1password-cli` on macOS, authenticate with `op signin`, and inject secrets into scripts, CI/CD pipelines, or shell aliases. This guide walks through setup, authentication, vault management, and scripting patterns for secure secrets management.
 
-Key Takeaways
 
 - The learning curve is: minimal for those familiar with the 1Password ecosystem, and the CLI integrates with the same vault used for everyday password management.
 - Use the 1Password CLI: (`op`) to retrieve secrets directly in your terminal with `op item get "API Key" --field password`, eliminating hardcoded credentials from config files and environment variables.

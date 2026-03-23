@@ -107,7 +107,7 @@ Step 3: Analyze Packet Contents
 
 When VPN encryption is working properly, you should see:
 
-#### Encrypted Packets (What You Want to See)
+Encrypted Packets (What You Want to See)
 
 ```text
 14:23:45.123456 IP 10.0.0.2.51820 > 203.0.113.1.51820: UDP, length 128
@@ -115,7 +115,7 @@ When VPN encryption is working properly, you should see:
 
 The payload is encrypted, you'll see the packet headers but not readable content. For WireGuard, UDP port 51820 is used. For OpenVPN, you'll typically see UDP/TCP port 1194.
 
-#### What Unencrypted Traffic Looks Like
+What Unencrypted Traffic Looks Like
 
 ```text
 14:23:45.123456 IP 192.168.1.100.443 > 10.0.0.2.52341: Flags [P.], seq 1:100, ack 1, win 502, length 99

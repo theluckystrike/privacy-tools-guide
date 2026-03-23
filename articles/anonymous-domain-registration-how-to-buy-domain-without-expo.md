@@ -18,7 +18,6 @@ tags: [privacy-tools-guide]
 
 Domain registration privacy requires enabling WHOIS protection through registrars like Namecheap or Cloudflare, using privacy-focused registrars with built-in protections, or combining anonymous email (Proton Mail), VPN/Tor routing, and cryptocurrency payment. Proxy services like Njalla act as intermediaries so the domain registers under their legal name while forwarding communications to you. For maximum privacy, combine registrar-provided WHOIS protection with DNS privacy via Cloudflare to hide origin server IPs, and monitor WHOIS regularly to confirm protection remains active.
 
-Key Takeaways
 
 - Mitigation: Use CoinJoin mixing service before paying for domain (increases cost by 1-2%).
 - Domain type: Use .com or .io (fewest privacy restrictions)

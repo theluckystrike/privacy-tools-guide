@@ -70,12 +70,12 @@ Observed results across test locations:
 
 | Server Region | Connection Success Rate | Avg Latency | Stability (30 min) |
 |---|---|---|---|
-| Singapore | ~68% | 55–90ms | Moderate |
-| Japan | ~52% | 75–120ms | Low |
-| Germany | ~31% | 180–250ms | Low |
-| Switzerland | ~29% | 190–270ms | Low |
+| Singapore | ~68% | 55, 90ms | Moderate |
+| Japan | ~52% | 75, 120ms | Low |
+| Germany | ~31% | 180, 250ms | Low |
+| Switzerland | ~29% | 190, 270ms | Low |
 
-Singapore servers performed best due to proximity and lower latency, which means packets are less distinguishable from normal HTTPS browsing traffic by timing analysis. Evening hours (18:00–22:00 local time) showed notably lower success rates, correlating with increased DPI scrutiny during peak traffic periods.
+Singapore servers performed best due to proximity and lower latency, which means packets are less distinguishable from normal HTTPS browsing traffic by timing analysis. Evening hours (18:00, 22:00 local time) showed notably lower success rates, correlating with increased DPI scrutiny during peak traffic periods.
 
 Configuration for Myanmar
 

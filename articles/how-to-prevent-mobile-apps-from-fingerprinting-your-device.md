@@ -109,7 +109,7 @@ iOS Privacy Protections
 
 Apple's iOS provides several built-in features to limit fingerprinting, though some require iOS 17 or later:
 
-#### Limit Ad Tracking
+Limit Ad Tracking
 
 Navigate to Settings > Privacy & Security > Apple Advertising and disable Personalized Ads. This reduces advertising-based tracking but does not prevent all fingerprinting.
 
@@ -118,7 +118,7 @@ On iOS, you can also use Shortcuts to create automation
 that resets advertising ID periodically
 ```
 
-#### App Privacy Reports
+App Privacy Reports
 
 iOS 15 and later includes App Privacy Reports that show which apps access certain data:
 
@@ -127,14 +127,14 @@ iOS 15 and later includes App Privacy Reports that show which apps access certai
 3. Review which apps access your data most frequently
 4. Delete or restrict permissions for apps with excessive access
 
-#### Hide IP Address
+Hide IP Address
 
 Enable Hide IP Address in Safari settings to prevent tracking across websites:
 
 - Go to Settings > Safari
 - Enable Hide IP Address (requires iOS 17+)
 
-#### Limit Location Access
+Limit Location Access
 
 Use Precise Location toggles sparingly:
 
@@ -146,7 +146,7 @@ Android Privacy Protections
 
 Android provides more granular controls but requires more manual configuration:
 
-#### Reset Advertising ID
+Reset Advertising ID
 
 Google allows users to reset their advertising ID:
 
@@ -156,7 +156,7 @@ Google allows users to reset their advertising ID:
 
 Note that apps can still fingerprint your device even with this reset.
 
-#### Use Private DNS
+Use Private DNS
 
 Configure a private DNS provider to prevent DNS-based tracking:
 
@@ -164,7 +164,7 @@ Configure a private DNS provider to prevent DNS-based tracking:
 2. Select Private DNS provider hostname
 3. Enter a privacy-focused provider like `dns.privacy` or `nextdns.io`
 
-#### Restrict Background Activity
+Restrict Background Activity
 
 Limit how apps run in the background:
 
@@ -172,7 +172,7 @@ Limit how apps run in the background:
 2. Select Restricted or Unrestricted based on app trust
 3. Disable Allow background activity for untrusted apps
 
-#### Disable Sensor Access for Untrusted Apps
+Disable Sensor Access for Untrusted Apps
 
 Review sensor permissions:
 
@@ -184,7 +184,7 @@ Using Privacy-Focused Alternatives
 
 Certain apps and services minimize fingerprinting by design:
 
-#### Privacy Browsers
+Privacy Browsers
 
 Use browsers specifically designed to resist fingerprinting:
 
@@ -192,7 +192,7 @@ Use browsers specifically designed to resist fingerprinting:
 - Brave Browser: Includes fingerprinting protection
 - DuckDuckGo Browser: Mobile version includes tracker blocking
 
-#### Signal for Communication
+Signal for Communication
 
 Signal provides excellent privacy with minimal metadata:
 
@@ -200,7 +200,7 @@ Signal provides excellent privacy with minimal metadata:
 - Minimal server-side data retention
 - Sealed sender option to hide sender identity
 
-#### Proton Apps
+Proton Apps
 
 Proton's privacy-focused ecosystem includes:
 
@@ -212,7 +212,7 @@ Advanced Protection Techniques
 
 For users requiring stronger privacy protections, these advanced methods provide additional defense:
 
-#### Use a VPN
+Use a VPN
 
 A reputable VPN masks your IP address and encrypts traffic:
 
@@ -221,7 +221,7 @@ A reputable VPN masks your IP address and encrypts traffic:
 - Use obfuscated servers in restrictive environments
 - Consider multi-hop configurations for advanced needs
 
-#### Network-Level Blocking
+Network-Level Blocking
 
 Implement DNS-level blocking to prevent tracking domains:
 
@@ -229,7 +229,7 @@ Implement DNS-level blocking to prevent tracking domains:
 - Use Pi-hole for home network blocking
 - Enable private DNS on all devices
 
-#### Restrict App Installation
+Restrict App Installation
 
 Limit your app ecosystem to minimize fingerprinting surface:
 
@@ -238,7 +238,7 @@ Limit your app ecosystem to minimize fingerprinting surface:
 - Prefer web apps over native apps when possible
 - Use browser-based services instead of dedicated apps
 
-#### Use Work Profile (Android)
+Use Work Profile (Android)
 
 Android's Work Profile creates a separate, sandboxed environment:
 

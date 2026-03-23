@@ -81,29 +81,29 @@ Free search services:
 - Pinterest People Search: pinterest.com (check if profile exists)
 
 Paid check:
-- Privacy.com's Data Broker Report ($50–$150): Shows which brokers list you
+- Privacy.com's Data Broker Report ($50, $150): Shows which brokers list you
 - Experian SafeGuard: Shows data brokers + credit inquiries
 - ReputationDefender: Professional audit
 
-Expected result: You'll likely find yourself on 10–20 major brokers.
+Expected result: You'll likely find yourself on 10, 20 major brokers.
 
 Step 2: Bulk Opt-Out Services (Fastest Path)
 
-Option A: Automated Services ($15–$60 one-time)
+Option A: Automated Services ($15, $60 one-time)
 
 DeleteMe by Abine
 - Website: abine.com/deleteme
 - Cost: $129 for 1 year (removes, 1 year monitoring), $199/year renewals
 - What they do: Submit opt-outs to 200+ brokers automatically
 - Hands-off: They handle follow-up emails, manual opt-outs
-- Timeframe: 3–4 weeks typically
+- Timeframe: 3, 4 weeks typically
 
 Subscription cost breakdown:
 - Personal plan: $129/year → $10.75/month
 - Plus (higher priority): $199/year → $16.50/month
 - Family plan (5 people): $399/year → $33/month
 
-Option B: Manual but Free (4–8 hours)
+Option B: Manual but Free (4, 8 hours)
 
 Go to each broker directly, submit opt-out request.
 
@@ -115,7 +115,7 @@ Spokeo removal (example):
 5. Verify via email link
 6. Done
 
-Repeat for 15–20 major brokers (4–6 hours of work).
+Repeat for 15, 20 major brokers (4, 6 hours of work).
 
 Step 3: Individual Removal Requests (For Resistant Brokers)
 
@@ -202,7 +202,7 @@ Method 1: Automated Monitoring (Easiest)
 
 Method 2: Manual Monitoring (Free)
 1. Every 3 months, Google your name
-2. Check 3–5 brokers you previously removed from
+2. Check 3, 5 brokers you previously removed from
 3. If re-listed, resubmit removal request with note: "Already removed [date], re-listed without consent"
 
 Method 3: Google Alert
@@ -278,7 +278,7 @@ Cost-Benefit Analysis
 | Approach | Cost | Time | Effectiveness | Ongoing |
 |----------|------|------|---|---|
 | DeleteMe (auto) | $129/year | 5 min setup | 95% | Auto-renewed |
-| Manual removal | $0 | 4–6 hours | 70% | Re-check quarterly |
+| Manual removal | $0 | 4, 6 hours | 70% | Re-check quarterly |
 | Legal letter | $50 (certified mail) | 1 hour | 85% | For resistant brokers |
 | DIY automation | $0 | 2 hours | 60% | Risky, limited APIs |
 
@@ -300,13 +300,13 @@ Q: Will my data ever be gone completely?
 A: No. Public records (property, court records) are public and brokers can re-aggregate. But you can make discovery harder and more expensive.
 
 Q: Can I sue data brokers for profit?
-A: In some cases (GDPR, CCPA with damages). CCPA allows $100–$750 per incident per person. Requires attorney; class actions are more practical.
+A: In some cases (GDPR, CCPA with damages). CCPA allows $100, $750 per incident per person. Requires attorney; class actions are more practical.
 
 Q: Do data brokers sell to bad actors?
 A: Yes, unfortunately. Stalkers, scammers, and harassment networks all buy from brokers. Removal protects against targeted harassment.
 
 Q: How long does removal take?
-A: 2–4 weeks typically. Some brokers take up to 90 days. Re-listing can happen 3–6 months later.
+A: 2, 4 weeks typically. Some brokers take up to 90 days. Re-listing can happen 3, 6 months later.
 
 Q: Do I need a VPN to remove my data?
 A: No, but it's safer to use a VPN when submitting removal requests (masks your real IP).

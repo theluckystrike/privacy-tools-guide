@@ -168,7 +168,7 @@ Windows Server and routers can configure similar rules.
 
 Solution 3: Enable Fragmentation in VPN Config
 
-#### WireGuard
+WireGuard
 
 WireGuard handles fragmentation automatically in most cases, but you can explicitly set MTU:
 
@@ -177,7 +177,7 @@ WireGuard handles fragmentation automatically in most cases, but you can explici
 MTU = 1420
 ```
 
-#### OpenVPN
+OpenVPN
 
 Add these options to your client configuration:
 
@@ -193,7 +193,7 @@ tun-mtu 1400
 tun-mtu-extra 32
 ```
 
-#### IKEv2/IPSec
+IKEv2/IPSec
 
 Configure MTU in strongSwan:
 

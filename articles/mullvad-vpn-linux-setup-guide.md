@@ -320,7 +320,7 @@ mullvad status
 Should show: Connected to [exit-server] via [entry-server]
 ```
 
-Multihop increases latency by 20–60ms depending on geographic distance between entry and exit nodes. Use it when you need to obscure which VPN provider's exit IP you're using, or when operating in environments where known Mullvad IP ranges are monitored.
+Multihop increases latency by 20, 60ms depending on geographic distance between entry and exit nodes. Use it when you need to obscure which VPN provider's exit IP you're using, or when operating in environments where known Mullvad IP ranges are monitored.
 
 ---
 

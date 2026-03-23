@@ -20,7 +20,6 @@ Gmail's free model means you're the product, Google reads your email to serve ta
 
 This guide compares privacy-first email services and shows how to migrate from Gmail while maintaining access to existing accounts.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - Keep Gmail alive: - Use it only for password recovery

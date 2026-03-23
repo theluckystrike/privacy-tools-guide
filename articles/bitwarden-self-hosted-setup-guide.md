@@ -20,7 +20,6 @@ Running your own Bitwarden instance gives you complete control over your passwor
 
 This guide walks through deploying Bitwarden on a Linux server using Docker, configuring SSL with Let's Encrypt, and performing essential first-time setup tasks. It also covers the privacy implications of each approach, legal considerations for organizations handling regulated data, and how self-hosting compares to the managed cloud option.
 
-Key Takeaways
 
 - SSL certificate: Choose "Let's Encrypt" for automatic free certificates, or provide your own
 5.

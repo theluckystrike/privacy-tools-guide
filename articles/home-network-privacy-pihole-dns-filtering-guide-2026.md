@@ -587,7 +587,7 @@ Long-Term Blocklist Management
 
 Blocklist quality degrades over time. Ad networks register new domains, trackers migrate to new hostnames, and legitimate services occasionally appear on blocklists through false-positive errors. Active blocklist management keeps your Pi-hole effective without breaking legitimate services.
 
-Evaluate your blocking rate monthly. A healthy Pi-hole typically blocks 15–40% of DNS queries depending on household browsing patterns. If your blocking rate drops suddenly, check whether blocklists have been updated and whether devices have been added that bypass Pi-hole.
+Evaluate your blocking rate monthly. A healthy Pi-hole typically blocks 15, 40% of DNS queries depending on household browsing patterns. If your blocking rate drops suddenly, check whether blocklists have been updated and whether devices have been added that bypass Pi-hole.
 
 Maintain a local exceptions file for services that get incorrectly blocked on your network. Store this separately from Pi-hole's built-in whitelist so it survives updates:
 

@@ -18,7 +18,6 @@ tags: [privacy-tools-guide, comparison]
 
 Choosing between Bitwarden and KeePassXC comes down to a fundamental decision: do you want a cloud-synced, centralized password manager, or a local-first, fully offline solution? Both are excellent choices for developers and power users, but their architectures serve different workflows and threat models.
 
-Key Takeaways
 
 - KeePassXC uses Argon2id as: the default key derivation function (with PBKDF2 as a fallback), which provides better resistance against GPU-based brute force attacks compared to PBKDF2 alone.
 - Bitwarden uses PBKDF2 with 600:000 iterations for key derivation, and the server never sees your master password or decrypted data.
