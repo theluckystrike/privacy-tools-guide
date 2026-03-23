@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /browser-first-party-isolation-what-it-does/
 categories: [guides, security]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
