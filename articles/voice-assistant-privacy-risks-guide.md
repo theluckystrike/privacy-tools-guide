@@ -6,9 +6,9 @@ date: 2026-03-22
 author: theluckystrike
 permalink: /voice-assistant-privacy-risks-guide/
 categories: [guides]
-tags: [privacy-tools-guide]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

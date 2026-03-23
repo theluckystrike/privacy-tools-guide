@@ -9,7 +9,7 @@ permalink: /vpn-for-accessing-korean-webtoon-sites-from-outside-korea/
 categories: [guides]
 tags: [privacy-tools-guide, vpn]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---
