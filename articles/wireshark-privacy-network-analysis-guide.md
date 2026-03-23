@@ -8,7 +8,7 @@ permalink: /wireshark-privacy-network-analysis-guide/
 categories: [guides, security]
 tags: [privacy-tools-guide, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

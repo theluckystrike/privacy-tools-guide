@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /1password-vs-bitwarden-2026-comparison/
 categories: [guides, security]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, comparison]
