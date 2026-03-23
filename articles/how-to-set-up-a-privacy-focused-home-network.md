@@ -20,6 +20,18 @@ Most home networks leak data relentlessly. Your ISP logs all DNS queries (every 
 
 Building a privacy-hardened home network requires layered controls: DNS filtering (blocking trackers before they load), VLAN segmentation (isolating untrusted devices), encrypted DNS (preventing ISP snooping), and a home VPN (encrypting all traffic). This guide covers the complete setup using open-source tools: Pi-hole (DNS filtering), pfSense or OPNsense (firewall), VLAN segmentation, and WireGuard (VPN).
 
+## Quick Setup Steps
+
+1. **Install pfSense or OPNsense** on a dedicated mini PC or old laptop to replace your ISP router
+2. **Set up Pi-hole** on a Raspberry Pi for DNS-level ad and tracker blocking
+3. **Create VLANs** to separate trusted devices, IoT devices, and guest networks
+4. **Configure DNS over HTTPS** using Cloudflare or Quad9 to encrypt DNS queries
+5. **Deploy WireGuard** for a home VPN server so all remote traffic routes through your network
+6. **Set firewall rules** blocking IoT devices from accessing the internet directly
+7. **Test for DNS leaks** using `dig` and online leak test tools
+8. **Automate updates** for Pi-hole blocklists and pfSense security patches
+
+
 ## Privacy Network Architecture Overview
 
 Your hardened network will have:

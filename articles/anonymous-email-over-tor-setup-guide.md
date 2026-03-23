@@ -18,6 +18,18 @@ tags: [privacy-tools-guide]
 
 Running email over Tor provides strong protection against network surveillance and traffic analysis. This guide covers the technical steps for configuring your email client to route traffic through the Tor network, connecting to email providers via onion services where available, and maintaining operational security throughout.
 
+## Quick Setup Steps
+
+1. **Install Tor:** `sudo apt install tor` (Linux) or download Tor Browser for other platforms
+2. **Verify Tor is running:** `curl --socks5 127.0.0.1:9050 https://check.torproject.org/`
+3. **Choose a Tor-friendly email provider** like ProtonMail (onion: `protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion`)
+4. **Configure Thunderbird SOCKS proxy:** Settings > Network > Connection Settings > Manual Proxy > SOCKS Host: 127.0.0.1, Port: 9050
+5. **Set DNS resolution through SOCKS:** enable `network.proxy.socks_remote_dns` in `about:config`
+6. **Add your IMAP/SMTP settings** using the provider onion address or clearnet address through the proxy
+7. **Disable HTML email rendering** to prevent tracking pixels and remote content loading
+8. **Test anonymity:** send a test email and verify the originating IP is a Tor exit node
+
+
 ## Key Takeaways
 
 - **For developers building privacy-focused**: applications or researchers requiring network anonymity, Tor provides a proven layer of protection.

@@ -19,6 +19,19 @@ tags: [privacy-tools-guide]
 
 AppArmor restricts what a process can do by defining explicit rules about which files it can read, write, or execute, which network operations it can perform, and which capabilities it can use. When a program is compromised, AppArmor limits what the attacker can reach. Ubuntu ships with AppArmor enabled and includes profiles for common daemons — this guide covers writing custom profiles and enforcing them.
 
+## Quick Setup Steps
+
+1. **Check AppArmor status:** `sudo aa-status` to see loaded profiles and their modes
+2. **Install utilities:** `sudo apt install apparmor-utils apparmor-profiles apparmor-profiles-extra`
+3. **Generate a profile skeleton:** `sudo aa-genprof /path/to/application`
+4. **Run the application** in another terminal while aa-genprof monitors its behavior
+5. **Review and approve access rules** as aa-genprof presents them interactively
+6. **Test in complain mode:** `sudo aa-complain /etc/apparmor.d/your.profile` to log violations without blocking
+7. **Check logs for denials:** `sudo dmesg | grep apparmor` or `journalctl -k | grep apparmor`
+8. **Enforce the profile:** `sudo aa-enforce /etc/apparmor.d/your.profile`
+9. **Reload after edits:** `sudo apparmor_parser -r /etc/apparmor.d/your.profile`
+
+
 ## Understanding AppArmor Modes
 
 AppArmor runs profiles in two modes:

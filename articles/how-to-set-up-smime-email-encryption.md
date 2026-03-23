@@ -18,6 +18,19 @@ voice-checked: true
 
 To set up S/MIME email encryption, generate a certificate with OpenSSL (or obtain one from a public CA like DigiCert), export it to PKCS#12 format, and import it into your email client — Thunderbird, Apple Mail, and Outlook all have native S/MIME support with no plugins required. The full process takes about 15 minutes for a self-signed certificate or a few hours when waiting for CA validation, and this guide covers every step from key generation through client configuration and troubleshooting.
 
+## Quick Setup Steps
+
+1. **Generate a private key:** `openssl genrsa -aes256 -out smime-key.pem 4096`
+2. **Create a certificate signing request:** `openssl req -new -key smime-key.pem -out smime.csr`
+3. **Self-sign the certificate:** `openssl x509 -req -days 365 -in smime.csr -signkey smime-key.pem -out smime-cert.pem`
+4. **Export to PKCS#12 format:** `openssl pkcs12 -export -in smime-cert.pem -inkey smime-key.pem -out smime.p12`
+5. **Import into Thunderbird:** Settings > Account Settings > End-to-End Encryption > S/MIME > Manage S/MIME Certificates
+6. **Import into Apple Mail:** double-click the .p12 file to add it to Keychain Access
+7. **Send a signed test email** to yourself to verify the certificate works
+8. **Exchange public certificates** with recipients by sending them a signed email
+9. **Verify encryption** by checking for the lock icon on received encrypted messages
+
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

@@ -18,6 +18,20 @@ SSH key management remains one of the weakest links in security infrastructure. 
 
 This guide covers configuring YubiKey for SSH authentication using GPG mode and FIDO2, including key generation, server configuration, and operational best practices.
 
+## Quick Setup Steps
+
+1. **Buy a YubiKey 5** series (5C NFC recommended for USB-C + NFC support, ~$55)
+2. **Install dependencies:** `brew install gnupg yubikey-manager` (macOS) or `apt install gnupg2 scdaemon`
+3. **Generate GPG keys on the YubiKey:** `gpg --card-edit` then `admin` > `generate`
+4. **Export your SSH public key:** `gpg --export-ssh-key your@email.com`
+5. **Add the public key to `~/.ssh/authorized_keys`** on your remote servers
+6. **Configure GPG agent** as SSH agent: add `enable-ssh-support` to `~/.gnupg/gpg-agent.conf`
+7. **Set `SSH_AUTH_SOCK`** to point to the GPG agent socket in your shell profile
+8. **Test the connection:** `ssh -T git@github.com` (should require YubiKey touch)
+9. **Optional FIDO2 method:** `ssh-keygen -t ed25519-sk` for simpler hardware-backed keys
+10. **Back up your GPG master key** to encrypted offline storage before daily use
+
+
 {% raw %}
 
 ## Why Hardware-Based SSH Keys Matter

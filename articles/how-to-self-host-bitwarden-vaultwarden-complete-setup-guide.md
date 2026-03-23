@@ -18,6 +18,20 @@ intent-checked: true
 
 Vaultwarden is a lightweight, open-source implementation of Bitwarden's password vault API. Self-hosting Vaultwarden gives you full control over your credentials without trusting a third-party SaaS provider. This guide covers full Docker deployment, reverse proxy configuration with Nginx, SSL certificate automation with Let's Encrypt, automated backups, security hardening, and the maintenance workflow for running your own password vault.
 
+## Quick Setup Steps
+
+1. **Provision a VPS or local server** with at least 512 MB RAM and Docker installed
+2. **Pull the Vaultwarden image:** `docker pull vaultwarden/server:latest`
+3. **Create a Docker Compose file** with volume mounts for persistent data storage
+4. **Configure environment variables** including `ADMIN_TOKEN`, `DOMAIN`, and `SMTP_HOST`
+5. **Set up Nginx or Caddy** as a reverse proxy with SSL termination
+6. **Obtain SSL certificates** using Certbot or Caddy automatic HTTPS
+7. **Start the container:** `docker-compose up -d`
+8. **Create your admin account** at `https://yourdomain.com/admin`
+9. **Configure automated backups** of the SQLite database to encrypted offsite storage
+10. **Set up Watchtower** for automatic container image updates
+
+
 ## Table of Contents
 
 - [Why Self-Host Vaultwarden?](#why-self-host-vaultwarden)

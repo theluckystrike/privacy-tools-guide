@@ -18,6 +18,18 @@ tags: [privacy-tools-guide, tutorial, encryption]
 
 Install age with `brew install age` (macOS) or `go install filippo.io/age@latest`, generate a key pair with `age-keygen`, then encrypt any file with `age -r <public-key> -o output.age input.txt`. Age is a modern, minimal alternative to PGP that handles file encryption with far less complexity -- no key servers, no web of trust, no configuration files. This tutorial covers command-line usage, passphrase-based encryption, Go library integration, SSH key interoperability, and CI/CD pipeline automation.
 
+## Quick Start Steps
+
+1. **Install age:** `brew install age` (macOS) or `apt install age` (Debian/Ubuntu)
+2. **Generate a keypair:** `age-keygen -o key.txt` (saves private key, prints public key)
+3. **Encrypt a file:** `age -r age1xxxxxxxxx -o secret.age plaintext.txt`
+4. **Decrypt a file:** `age -d -i key.txt -o plaintext.txt secret.age`
+5. **Encrypt with passphrase:** `age -p -o secret.age plaintext.txt` (prompts for password)
+6. **Encrypt for multiple recipients:** `age -r age1xxx -r age1yyy -o shared.age file.txt`
+7. **Use SSH keys instead:** `age -R ~/.ssh/id_ed25519.pub -o secret.age file.txt`
+8. **Pipe from stdin:** `echo "secret data" | age -r age1xxx > secret.age`
+
+
 ## Key Takeaways
 
 - **This approach uses your**: existing SSH infrastructure.

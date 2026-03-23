@@ -18,6 +18,18 @@ voice-checked: true
 
 A VPN kill switch is a critical security feature that prevents your real IP address from leaking when the VPN connection drops unexpectedly. However, many users assume their kill switch works without actually verifying it. This guide provides practical methods to test whether your VPN kill switch functions correctly, using command-line tools and scripts that developers and power users can implement.
 
+
+## Quick Test Steps
+
+1. **Connect to your VPN** and verify your IP has changed with `curl ifconfig.me`
+2. **Start a continuous ping:** `ping -c 1000 8.8.8.8 > ping_log.txt &`
+3. **Run tcpdump** to capture all traffic: `sudo tcpdump -i any -w capture.pcap &`
+4. **Force-disconnect the VPN** by killing the process or pulling the network cable
+5. **Check if pings continued** -- a working kill switch stops all traffic immediately
+6. **Analyze the pcap file** for any packets that leaked outside the VPN tunnel
+7. **Test DNS separately:** disconnect VPN and run `dig example.com` to verify DNS is blocked
+8. **Reconnect the VPN** and verify traffic resumes normally
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

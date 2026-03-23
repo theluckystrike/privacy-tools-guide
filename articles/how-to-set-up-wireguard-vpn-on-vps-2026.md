@@ -13,6 +13,20 @@ voice-checked: true
 ---
 
 
+## Quick Setup Overview
+
+1. **Provision a VPS** with Ubuntu 22.04+ on DigitalOcean, Linode, or Hetzner ($5-10/mo)
+2. **Install WireGuard:** `sudo apt update && sudo apt install wireguard`
+3. **Generate server keys:** `wg genkey | tee server_privatekey | wg pubkey > server_publickey`
+4. **Create `/etc/wireguard/wg0.conf`** with your server private key and listen port 51820
+5. **Enable IP forwarding:** `echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf`
+6. **Add iptables NAT rules** for masquerading in the PostUp/PostDown hooks
+7. **Start the interface:** `sudo wg-quick up wg0 && sudo systemctl enable wg-quick@wg0`
+8. **Generate client keys** and add peer sections to the server config
+9. **Create client config files** with the server endpoint and allowed IPs
+10. **Test the connection** and verify with `curl ifconfig.me` through the tunnel
+
+
 ## 3. Client Setup (Linux/Mac)
 
 ### Step 1: Generate Client Keys

@@ -27,6 +27,18 @@ voice-checked: true
 
 Amazon Alexa devices are designed to listen for their wake word continuously, which means they constantly process audio from your environment. Understanding how to minimize what Alexa records and where that data goes is essential for privacy-conscious users. This guide provides practical methods to reduce Alexa's data collection, from basic settings adjustments to more advanced techniques suitable for developers and power users.
 
+
+## Quick Steps to Limit Alexa Recording
+
+1. **Open the Alexa app** and go to Settings > Alexa Privacy > Manage Your Alexa Data
+2. **Delete voice history:** tap "Delete All Recordings" or set auto-delete to 3 months
+3. **Disable "Help Improve Alexa"** to stop Amazon from reviewing your voice clips
+4. **Mute the microphone** using the physical button when not actively using the device
+5. **Block Alexa domains** at your router: add `device-metrics-us.amazon.com` to your blocklist
+6. **Set up a Pi-hole rule** to block `unagi-na.amazon.com` (audio upload endpoint)
+7. **Isolate Alexa on a separate VLAN** so it cannot communicate with other home devices
+8. **Audit network traffic** with `tcpdump` to verify blocked domains are not being reached
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
