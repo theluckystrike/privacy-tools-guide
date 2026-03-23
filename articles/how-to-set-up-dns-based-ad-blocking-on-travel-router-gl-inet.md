@@ -9,7 +9,7 @@ permalink: /how-to-set-up-dns-based-ad-blocking-on-travel-router-gl-inet/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

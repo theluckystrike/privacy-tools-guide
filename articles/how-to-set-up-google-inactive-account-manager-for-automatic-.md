@@ -9,7 +9,7 @@ permalink: /how-to-set-up-google-inactive-account-manager-for-automatic-/
 categories: [guides, security]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---
