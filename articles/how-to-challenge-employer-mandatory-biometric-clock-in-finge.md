@@ -9,7 +9,7 @@ permalink: /how-to-challenge-employer-mandatory-biometric-clock-in-fingerprint-f
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---
