@@ -3,7 +3,7 @@ description: "In-depth guides and reviews of privacy tools, encrypted services, 
 url: "https://securetoolsguide.com"
 baseurl: ""
 permalink: /:title/
-theme: minima
+# theme: minima  # disabled — using custom _layouts/default.html
 twitter:
   username: _alphashark_
   card: summary_large_image
