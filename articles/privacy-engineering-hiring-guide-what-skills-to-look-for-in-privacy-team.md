@@ -9,7 +9,7 @@ permalink: /privacy-engineering-hiring-guide-what-skills-to-look-for-in-privacy-
 categories: [guides]
 tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---

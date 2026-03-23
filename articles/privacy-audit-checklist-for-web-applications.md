@@ -9,7 +9,7 @@ permalink: /privacy-audit-checklist-for-web-applications/
 categories: [guides]
 tags: [privacy-tools-guide, privacy]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---

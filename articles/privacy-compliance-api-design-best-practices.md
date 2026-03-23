@@ -9,7 +9,7 @@ permalink: /privacy-compliance-api-design-best-practices/
 categories: [guides]
 tags: [privacy-tools-guide, tools, best-of, privacy, api]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---

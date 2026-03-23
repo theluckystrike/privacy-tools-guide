@@ -9,7 +9,7 @@ permalink: /privacy-focused-email-alias-services-comparison-2026/
 categories: [guides]
 tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 9
+score: 6
 voice-checked: true
 intent-checked: true
 ---
