@@ -9,7 +9,7 @@ permalink: /how-to-use-steganography-tools-to-hide-encrypted-messages-in/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

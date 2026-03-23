@@ -9,7 +9,7 @@ permalink: /how-to-use-tor-browser-for-creating-anonymous-accounts-witho/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---
