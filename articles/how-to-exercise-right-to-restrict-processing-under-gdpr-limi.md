@@ -9,7 +9,7 @@ permalink: /how-to-exercise-right-to-restrict-processing-under-gdpr-limi/
 categories: [guides, security, enterprise]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

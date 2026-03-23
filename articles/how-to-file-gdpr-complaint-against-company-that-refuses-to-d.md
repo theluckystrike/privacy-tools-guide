@@ -9,7 +9,7 @@ permalink: /how-to-file-gdpr-complaint-against-company-that-refuses-to-d/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 9
+score: 8
 voice-checked: true
 intent-checked: true
 ---

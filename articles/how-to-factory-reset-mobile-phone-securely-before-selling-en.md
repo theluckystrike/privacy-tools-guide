@@ -9,7 +9,7 @@ permalink: /how-to-factory-reset-mobile-phone-securely-before-selling-en/
 categories: [guides, security]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---
