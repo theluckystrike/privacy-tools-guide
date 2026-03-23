@@ -1,69 +1,39 @@
 ---
 layout: default
-title: "Privacy Tools Guide — Independent VPN, Password Manager & Security Reviews"
-description: "In-depth, independent reviews of privacy tools, VPNs, password managers, encrypted messaging, and digital security software. No sponsored content."
-permalink: /
+title: "Privacy Tools Guide — Independent Security Reviews"
+description: "Independent privacy tool reviews. VPN speed tests, password manager comparisons, encryption guides. No sponsored content."
 ---
 
-{% assign all_articles = site.pages | where_exp: "p", "p.path contains 'articles/'" | sort: "date" | reverse %}
+# Privacy Tools Guide
 
-I review privacy tools so you don't have to trust marketing pages. Speed tests are real. Breach histories are documented. Recommendations come with trade-offs, not affiliate links. Every guide on this site is written for people who want straight answers about which tools actually protect their data -- and which ones just claim to.
-
----
+I review privacy tools so you do not have to trust marketing pages. VPN speed tests are real. Breach histories are documented. When a tool has problems, I say so. No sponsored content.
 
 ## Start Here
 
-If you are new to privacy tools or just want the essentials, these five guides cover the decisions that matter most.
-
-- **[Signal vs Telegram: Privacy Comparison 2026](/signal-vs-telegram-privacy-comparison-2026/)** -- Which messenger actually protects your conversations, and which one just looks like it does.
-- **[1Password vs Bitwarden 2026 Comparison](/1password-vs-bitwarden-2026-comparison/)** -- The two best password managers compared on security architecture, CLI tools, and self-hosting.
-- **[Two-Factor Authentication Setup Guide 2026](/two-factor-authentication-setup-2026/)** -- TOTP apps, hardware keys, passkeys, and backup codes. Set up 2FA properly across all your accounts.
-- **[Best Encrypted Email Service 2026](/best-encrypted-email-service-2026/)** -- Proton Mail, Tutanota, and alternatives evaluated for real-world use.
-- **[Encrypt Your Entire Digital Life: A Checklist](/encrypt-entire-digital-life--checklist/)** -- Device encryption, email, messaging, storage, passwords, and dead man's switches.
-
----
+1. [Signal vs Telegram: Privacy Comparison 2026](/signal-vs-telegram-privacy-comparison-2026/) — Which encrypted messenger actually protects your conversations.
+2. [1Password vs Bitwarden 2026 Comparison](/1password-vs-bitwarden-2026-comparison/) — The only two password managers most people need to consider.
+3. [Proton VPN vs Mullvad: Speed Test and Privacy Audit](/proton-vpn-vs-mullvad-speed-test-privacy-audit-2026/) — Two privacy-first VPNs tested head to head.
+4. [Two-Factor Authentication Setup Guide](/two-factor-authentication-setup-2026/) — From zero to protected in 10 minutes.
+5. [Firefox Privacy Settings Guide 2026](/firefox-privacy-settings-guide-2026/) — Stop your browser from tracking everything you do.
 
 ## Recently Updated
 
-{% for p in all_articles limit:8 %}{% if p.title %}
-<div style="margin-bottom:0.6rem;">
-  <a href="{{ p.url | relative_url }}" style="font-weight:600;">{{ p.title }}</a>
-  {% if p.description %}<br><span style="font-size:0.88rem; color:#666;">{{ p.description | truncate: 140 }}</span>{% endif %}
-</div>
+{% assign sorted_pages = site.pages | where_exp: "p", "p.path contains 'articles/'" | sort: "date" | reverse %}
+{% for p in sorted_pages limit: 6 %}{% if p.title %}
+- [{{ p.title }}]({{ p.url }})
 {% endif %}{% endfor %}
-
----
 
 ## Browse by Topic
 
-| Topic | Articles | |
-|-------|----------|-|
-| **[VPN Guides](/topics/vpn-guides/)** | 140+ guides | [Browse all &rarr;](/topics/vpn-guides/) |
-| **[Password Managers](/topics/password-managers/)** | 100+ reviews | [Browse all &rarr;](/topics/password-managers/) |
-| **[Browser Privacy](/topics/browser-privacy/)** | 120+ guides | [Browse all &rarr;](/topics/browser-privacy/) |
-| **[Email Privacy](/topics/email-privacy/)** | 70+ guides | [Browse all &rarr;](/topics/email-privacy/) |
-| **[Encrypted Messaging](/topics/encrypted-messaging/)** | 50+ comparisons | [Browse all &rarr;](/topics/encrypted-messaging/) |
-| **[Network Security](/topics/network-security/)** | 90+ tutorials | [Browse all &rarr;](/topics/network-security/) |
-| **[Data Removal Guides](/topics/data-removal-guides/)** | 40+ walkthroughs | [Browse all &rarr;](/topics/data-removal-guides/) |
-| **[Privacy for Developers](/topics/privacy-for-developers/)** | 30+ technical guides | [Browse all &rarr;](/topics/privacy-for-developers/) |
+- **VPN Reviews** — [Browse all →](/topics/vpn-guides/)
+- **Password Managers** — [Browse all →](/topics/password-managers/)
+- **Encrypted Messaging** — [Browse all →](/topics/encrypted-messaging/)
+- **Browser Privacy** — [Browse all →](/topics/browser-privacy/)
+- **Email Privacy** — [Browse all →](/topics/email-privacy/)
+- **Network Security** — [Browse all →](/topics/network-security/)
+- **Data Removal** — [Browse all →](/topics/data-removal-guides/)
+- **Privacy for Developers** — [Browse all →](/topics/privacy-for-developers/)
 
-{{ all_articles.size }} articles total, updated weekly.
+## About
 
----
-
-## More Worth Reading
-
-- [Tor Browser vs VPN: Which Is Better for Privacy?](/tor-browser-vs-vpn-comparison-which-is-better/) -- When to use each, and how to combine both.
-- [ProtonMail Security Model Explained](/protonmail-security-model-explained/) -- RSA-2048, AES-256, zero-access encryption. What it actually means.
-- [Best Privacy-Focused Search Engines 2026](/best-privacy-focused-search-engines-comparison-2026/) -- DuckDuckGo, Startpage, Brave Search, Mojeek, and SearXNG benchmarked.
-- [How to Verify VPN No-Logs Claims](/how-to-verify-vpn-provider-no-logs-claims-2026/) -- Technical methods for testing whether your VPN actually keeps no logs.
-- [Signal vs Session vs Briar: Secure Messaging 2026](/secure-messaging-app-comparison-signal-vs-session-vs-briar-2026/) -- Three different approaches to private messaging compared.
-- [Privacy Risks of Browser Fingerprinting](/privacy-risks-browser-fingerprinting-2026/) -- How canvas, WebGL, and audio fingerprinting track you without cookies.
-- [Set Up a Personal VPN with WireGuard](/wireguard-personal-vpn-setup-guide/) -- Build your own VPN on a cheap VPS. Server setup, key generation, client configs.
-- [Brave Browser: Honest Review 2026](/brave-browser-honest-review-2026/) -- What Brave gets right, what it gets wrong, and who should use it.
-
----
-
-## About This Site
-
-Privacy Tools Guide publishes independent reviews. No content is sponsored. No recommendations are paid placements. When a tool has a serious flaw, we say so. Read more on the [About page](/about/).
+Privacy Tools Guide publishes independent, no-sponsored-content reviews. [Read more →](/about/)
