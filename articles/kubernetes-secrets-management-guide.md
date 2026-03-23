@@ -8,7 +8,7 @@ permalink: /kubernetes-secrets-management-guide/
 categories: [guides, security]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 9
+score: 6
 intent-checked: true
 voice-checked: true
 apiVersion: rbac.authorization.k8s.io/v1
