@@ -6,7 +6,7 @@ description: "Follow this guide to how to detect stalkerware on android phone 20
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---
