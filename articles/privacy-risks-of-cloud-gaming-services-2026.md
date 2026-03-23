@@ -8,7 +8,7 @@ permalink: /privacy-risks-of-cloud-gaming-services-2026/
 categories: [guides]
 tags: [privacy-tools-guide, cloud-gaming, data-collection, privacy-risks, nvidia-geforce, xbox-cloud, playstation-plus, tracking]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

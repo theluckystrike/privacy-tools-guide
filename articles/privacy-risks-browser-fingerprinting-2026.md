@@ -8,7 +8,7 @@ permalink: /privacy-risks-browser-fingerprinting-2026/
 categories: [guides]
 tags: [privacy-tools-guide, privacy]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 Hardware: - Screen resolution and color depth

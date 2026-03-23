@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /privacy-risks-of-smart-speakers-explained/
 categories: [guides]
 reviewed: true
-score: 9
+score: 6
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]

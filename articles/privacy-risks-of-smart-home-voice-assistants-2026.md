@@ -7,9 +7,9 @@ last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /privacy-risks-of-smart-home-voice-assistants-2026/
 categories: [guides]
-tags: [privacy-tools-guide, smart-home, voice-assistant, alexa, google-home, siri]
+tags: [privacy-tools-guide, smart-home, voice-assistant, alexa, google-home, siri, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
