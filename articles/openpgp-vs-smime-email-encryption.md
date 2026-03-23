@@ -9,7 +9,7 @@ permalink: /openpgp-vs-smime-email-encryption/
 categories: [guides]
 tags: [privacy-tools-guide, comparison, encryption]
 reviewed: true
-score: 7
+score: 9
 intent-checked: true
 voice-checked: true
 ---

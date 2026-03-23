@@ -9,7 +9,7 @@ permalink: /nextcloud-vs-owncloud-self-hosted-comparison/
 categories: [guides]
 tags: [privacy-tools-guide, comparison]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

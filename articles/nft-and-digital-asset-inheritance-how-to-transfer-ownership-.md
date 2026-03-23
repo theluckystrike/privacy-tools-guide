@@ -9,7 +9,7 @@ permalink: /nft-and-digital-asset-inheritance-how-to-transfer-ownership-/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---
