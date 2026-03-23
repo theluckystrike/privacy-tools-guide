@@ -9,7 +9,7 @@ permalink: /protonmail-vpn-integration-how-combining-email-and-vpn-impro/
 categories: [guides, security]
 tags: [privacy-tools-guide, integration, vpn]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

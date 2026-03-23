@@ -9,7 +9,7 @@ permalink: /protonmail-bridge-setup-for-desktop-email-clients-privacy-co/
 categories: [guides]
 tags: [privacy-tools-guide, best-of, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

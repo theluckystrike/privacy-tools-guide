@@ -9,7 +9,7 @@ permalink: /protonmail-security-model-explained/
 categories: [guides]
 tags: [privacy-tools-guide, security]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---

@@ -8,7 +8,7 @@ permalink: /private-video-calling-selfhosted-guide/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
