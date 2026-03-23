@@ -6,7 +6,7 @@ description: "Learn self hosted password manager comparison with practical examp
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 9
+score: 8
 date: 2026-03-15
 categories: [guides]
 ---
