@@ -6,7 +6,7 @@ description: "Follow this guide to how to set up local network storage for secur
 tags: [privacy-tools-guide, security]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---
