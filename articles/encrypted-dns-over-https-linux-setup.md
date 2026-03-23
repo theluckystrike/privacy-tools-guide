@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: encrypted-dns-over-https-linux-setup
 categories: [guides]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
