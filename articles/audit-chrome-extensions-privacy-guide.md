@@ -12,20 +12,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
----
-layout: default
-title: "How to Audit Chrome Extensions for Privacy"
-description: "Step-by-step guide to reviewing Chrome extension permissions, network requests, and source code to identify extensions that spy on your browsing activity"
-date: 2026-03-21
-author: theluckystrike
-permalink: /audit-chrome-extensions-privacy-guide/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]
----
 
 {% raw %}
 

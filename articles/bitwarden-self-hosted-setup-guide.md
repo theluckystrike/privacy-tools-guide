@@ -13,21 +13,6 @@ reviewed: true
 score: 9
 tags: [privacy-tools-guide]
 ---
----
-layout: default
-title: "Bitwarden Self-Hosted Setup Guide"
-description: "Running your own Bitwarden instance gives you complete control over your password data. For developers and power users, self-hosting eliminates reliance on"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /bitwarden-self-hosted-setup-guide/
-categories: [guides]
-intent-checked: true
-voice-checked: true
-reviewed: true
-score: 9
-tags: [privacy-tools-guide]
----
 
 {% raw %}
 

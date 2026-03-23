@@ -13,21 +13,6 @@ score: 9
 intent-checked: true
 tags: [privacy-tools-guide, best-of]
 ---
----
-layout: default
-title: "Android Location Permissions Best Practices"
-description: "Android location permission best practices require requesting fine location through runtime permissions (not manifest-only), explicitly distinguishing between"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /android-location-permissions-best-practices/
-categories: [guides]
-voice-checked: true
-reviewed: true
-score: 9
-intent-checked: true
-tags: [privacy-tools-guide, best-of]
----
 
 
 | Tool | Privacy Feature | Open Source | Platform | Pricing |

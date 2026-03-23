@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]
 ---
----
-layout: default
-title: "Best Encrypted Messaging for Journalists: A Technical Guide"
-description: "A developer-focused comparison of encrypted messaging apps for journalists, covering Signal, Matrix, Session, and self-hosted options with code examples"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /best-encrypted-messaging-for-journalists/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, best-of]
----
 
 {% raw %}
 

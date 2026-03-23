@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, api]
 ---
----
-layout: default
-title: "Battery API Fingerprinting How Battery Status Tracks You"
-description: "Discover how websites use the Battery API to fingerprint users, the privacy risks involved, and practical ways to protect yourself from this"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /battery-api-fingerprinting-how-battery-status-tracks-you-exp/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, api]
----
 
 
 The Battery Status API exposes your device's battery level, charging status, and discharge rate—data that trackers can collect in combination with other device characteristics to fingerprint and identify you across websites. Although created to help web apps adjust behavior on low battery, this API became a fingerprinting vector after researchers discovered trackers could correlate battery states across sessions to uniquely identify users. You can disable Battery API access by blocking JavaScript or using privacy extensions, though most modern browsers have restricted or removed this API due to privacy concerns.

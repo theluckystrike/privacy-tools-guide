@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
----
-layout: default
-title: "Audit Android App Permissions with ADB"
-description: "Use ADB to audit and revoke Android app permissions from your computer. Find apps with excessive access to location, camera, and contacts."
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: android-adb-app-permissions-audit
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]
----
 
 {% raw %}
 

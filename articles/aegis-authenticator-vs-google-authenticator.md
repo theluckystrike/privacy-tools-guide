@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, comparison]
 ---
----
-layout: default
-title: "Aegis Authenticator vs Google Authenticator"
-description: "A technical comparison of Aegis Authenticator and Google Authenticator for developers and power users. Evaluate security features, import/export"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: "Privacy Tools Guide"
-permalink: /aegis-authenticator-vs-google-authenticator/
-reviewed: true
-score: 9
-categories: [comparisons]
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, comparison]
----
 
 {% raw %}
 

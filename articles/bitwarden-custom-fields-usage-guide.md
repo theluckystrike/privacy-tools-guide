@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
----
-layout: default
-title: "Bitwarden Custom Fields Usage Guide"
-description: "To use Bitwarden custom fields, open any vault item, scroll to the 'Custom Fields' section, and click 'Add Item' to create Text (visible metadata), Hidden"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /bitwarden-custom-fields-usage-guide/
-reviewed: true
-score: 8
-categories: [guides]
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]
----
 
 {% raw %}
 

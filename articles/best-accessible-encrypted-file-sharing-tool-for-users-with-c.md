@@ -12,20 +12,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, accessibility, cognitive-impairments, encrypted-file-sharing, best-of]
 ---
----
-layout: default
-title: "Best Accessible Encrypted File Sharing Tool for Users With"
-description: "Discover the most accessible encrypted file sharing tools designed for users with cognitive impairments. This guide covers key accessibility features"
-date: 2026-03-21
-author: theluckystrike
-permalink: /best-accessible-encrypted-file-sharing-tool-for-users-with-c/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, accessibility, cognitive-impairments, encrypted-file-sharing, best-of]
----
 
 {% raw %}
 

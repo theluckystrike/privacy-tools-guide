@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
----
-layout: default
-title: "1Password Masked Email Feature Review: A Developer Guide"
-description: "1Password's masked email feature is worth using if you are a developer managing dozens of service accounts and want to keep your real inbox hidden. It"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /1password-masked-email-feature-review/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]
----
 
 {% raw %}
 

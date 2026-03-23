@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
----
-layout: default
-title: "Android Privacy Indicators: Camera and Mic Access Explained"
-description: "Android privacy indicators provide real-time visual feedback when apps access your camera or microphone. Introduced in Android 12, these indicators address"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /android-privacy-indicators-camera-mic-explained/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]
----
 
 {% raw %}
 

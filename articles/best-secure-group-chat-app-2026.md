@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]
 ---
----
-layout: default
-title: "Best Secure Group Chat App 2026"
-description: "A technical comparison of secure group chat applications for developers and power users, covering Matrix, Session, Brijnet, and self-hosted solutions with code"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /best-secure-group-chat-app-2026/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, best-of]
----
 
 {% raw %}
 

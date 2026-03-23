@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
----
-layout: default
-title: "Border Crossing Phone Search Rights What Customs Agents Can"
-description: "A practical guide for developers and power users on phone search rights at international borders. Learn what customs agents can legally access"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /border-crossing-phone-search-rights-what-customs-agents-can-/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]
----
 
 {% raw %}
 

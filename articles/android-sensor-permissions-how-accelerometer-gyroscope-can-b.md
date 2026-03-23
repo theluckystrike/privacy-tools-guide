@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
----
-layout: default
-title: "Android Sensor Permissions How Accelerometer Gyroscope Can"
-description: "Modern Android devices contain a variety of sensors that measure physical phenomena. Among the most common are the accelerometer and gyroscope, which detect"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /android-sensor-permissions-how-accelerometer-gyroscope-can-b/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]
----
 
 {% raw %}
 

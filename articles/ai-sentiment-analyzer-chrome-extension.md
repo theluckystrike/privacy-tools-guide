@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, artificial-intelligence]
 ---
----
-layout: default
-title: "Ai Sentiment Analyzer Chrome Extension"
-description: "Discover privacy-focused AI sentiment analyzer Chrome extensions that analyze text emotion locally. Compare top tools, understand their data handling"
-date: 2026-03-18
-last_modified_at: 2026-03-18
-author: "Privacy Tools Guide"
-permalink: /ai-sentiment-analyzer-chrome-extension/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, artificial-intelligence]
----
 
 {% raw %}
 

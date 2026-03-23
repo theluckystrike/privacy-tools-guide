@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, workflow]
 ---
----
-layout: default
-title: "Application Performance Monitoring Workflow Guide"
-description: "Master application performance monitoring workflows for production systems. Learn about metrics collection, alerting strategies, distributed tracing"
-date: 2026-03-20
-last_modified_at: 2026-03-20
-author: "Privacy Tools Guide"
-permalink: /application-performance-monitoring-workflow-guide/
-reviewed: true
-score: 8
-categories: [guides]
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, workflow]
----
 
 {% raw %}
 

@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, tutorial, encryption]
 ---
----
-layout: default
-title: "Age Encryption Tool Tutorial for Developers"
-description: "A practical guide to using age encryption for developers and power users. Learn command-line usage, programmatic integration, and advanced workflows"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /age-encryption-tool-tutorial-developers/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, tutorial, encryption]
----
 
 {% raw %}
 

@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
----
-layout: default
-title: "Bitcoin Inheritance Planning Using Multisig With Family"
-description: "A technical guide for developers and power users on setting up Bitcoin multisig inheritance planning with family members and estate lawyers"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /bitcoin-inheritance-planning-using-multisig-with-family-memb/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]
----
 
 {% raw %}
 

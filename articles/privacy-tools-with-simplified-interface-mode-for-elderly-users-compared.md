@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, elderly, accessibility, simplified-interface, comparison, privacy]
 ---
----
-layout: default
-title: "Privacy Tools with Simplified Interface Mode for Elderly"
-description: "A practical comparison of privacy tools featuring simplified interface modes designed for elderly users. Learn which applications prioritize accessibility"
-date: 2026-03-22
-last_modified_at: 2026-03-22
-author: "theluckystrike"
-permalink: /privacy-tools-with-simplified-interface-mode-for-elderly-users-compared/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, elderly, accessibility, simplified-interface]
----
 
 {% raw %}
 

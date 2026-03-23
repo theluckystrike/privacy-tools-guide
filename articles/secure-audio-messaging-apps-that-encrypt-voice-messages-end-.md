@@ -14,52 +14,6 @@ intent-checked: true
 voice-checked: true
 ---
 
-- name: Deploy secure messaging
- hosts: message_servers
- tasks:
- - name: Install Synapse
- apt:
- name: matrix-synapse
- state: latest
-
- - name: Enable encryption by default
- lineinfile:
- path: /etc/matrix-synapse/conf.d/server.yaml
- line: "encryption:default_algorithm: m.megolm.v1.aes-sha2"
-
- - name: Disable telemetry
- lineinfile:
- path: /etc/matrix-synapse/conf.d/server.yaml
- line: "opt_out_metrics: true"
-```
-
-## Emergency Protocol Switching
-
-In compromise scenarios, being able to rapidly switch communication channels is critical:
-
-```bash
-#!/bin/bash
-# Emergency protocol switch script for journalists
-
-# If Signal is compromised, switch to Session
-PROTOCOL="session"
-
-if [ "$1" = "signal" ]; then
- PROTOCOL="signal"
- ENDPOINT="signal://contact-id"
-elif [ "$1" = "session" ]; then
- PROTOCOL="session"
- ENDPOINT="session://pubkey"
-fi
-
-echo "Switching to: $PROTOCOL"
-echo "Notify contacts to connect via: $ENDPOINT"
-```
-
-This workflow allows journalists to rapidly coordinate protocol changes if a platform is compromised.
-
----
-
 ## Frequently Asked Questions
 
 **Who is this article written for?**

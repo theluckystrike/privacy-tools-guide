@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
----
-layout: default
-title: "Android Location History Google Timeline How To Delete"
-description: "A technical guide for developers and power users on permanently deleting Android location history from Google Timeline. Includes API methods, automated"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /android-location-history-google-timeline-how-to-delete-perma/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]
----
 
 {% raw %}
 

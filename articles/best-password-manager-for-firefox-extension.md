@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]
 ---
----
-layout: default
-title: "Best Password Manager For Firefox Extension"
-description: "A practical comparison of password manager Firefox extensions with focus on security features, developer tools, API integration, and automation"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /best-password-manager-for-firefox-extension/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, best-of]
----
 
 {% raw %}
 

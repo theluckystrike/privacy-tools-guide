@@ -13,21 +13,6 @@ score: 9
 intent-checked: true
 tags: [privacy-tools-guide]
 ---
----
-layout: default
-title: "Anonymous IRC Over Tor Setup Guide 2026"
-description: "A practical guide to configuring IRC over Tor for anonymous communications. Learn to set up Tor daemon, configure IRC clients, connect to onion-service"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /anonymous-irc-over-tor-setup-guide-2026/
-categories: [guides]
-voice-checked: true
-reviewed: true
-score: 9
-intent-checked: true
-tags: [privacy-tools-guide]
----
 
 {% raw %}
 

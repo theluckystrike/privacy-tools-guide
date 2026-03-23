@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]
 ---
----
-layout: default
-title: "Best Lightweight Private Browser 2026: A Developer Guide"
-description: "A technical comparison of lightweight privacy-focused browsers in 2026, with code examples for testing fingerprinting protection and configuring"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /best-lightweight-private-browser-2026/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, best-of]
----
 
 {% raw %}
 

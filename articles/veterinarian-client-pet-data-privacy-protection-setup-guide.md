@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
----
-layout: default
-title: "Veterinarian Client Pet Data Privacy Protection Setup Guide"
-description: "A guide for veterinary practices to protect client and pet data privacy. Learn HIPAA compliance, secure record storage, client"
-date: 2026-03-17
-last_modified_at: 2026-03-17
-author: theluckystrike
-permalink: /veterinarian-client-pet-data-privacy-protection-setup-guide/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]
----
 
 {% raw %}
 

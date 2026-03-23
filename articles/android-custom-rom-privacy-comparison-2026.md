@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
----
-layout: default
-title: "Android Custom ROM Privacy Comparison 2026"
-description: "A developer-focused comparison of GrapheneOS, CalyxOS, LineageOS, and DivestOS privacy features, sandboxing, and degoogled Android experiences"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /android-custom-rom-privacy-comparison-2026/
-categories: [security, guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]
----
 
 {% raw %}
 

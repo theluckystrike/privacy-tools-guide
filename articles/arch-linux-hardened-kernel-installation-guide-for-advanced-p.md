@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, advanced]
 ---
----
-layout: default
-title: "Arch Linux Hardened Kernel Installation Guide For Advanced"
-description: "A guide to installing and configuring the Linux hardened kernel on Arch Linux for enhanced security and privacy. Includes practical examples"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /arch-linux-hardened-kernel-installation-guide-for-advanced-p/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, advanced]
----
 
 {% raw %}
 

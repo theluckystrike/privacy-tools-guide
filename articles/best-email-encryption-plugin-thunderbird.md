@@ -13,21 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of, encryption]
 ---
----
-layout: default
-title: "Best Email Encryption Plugin Thunderbird"
-description: "A practical comparison of email encryption plugins for Thunderbird, focusing on OpenPGP and S/MIME implementation, key management, and CLI automation"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /best-email-encryption-plugin-thunderbird/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, best-of, encryption]
----
 
 
 | Plugin/Method | Protocol | Key Management | Ease of Use | Compatibility |

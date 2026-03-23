@@ -13,21 +13,6 @@ intent-checked: true
 categories: [guides]
 tags: [privacy-tools-guide, best-of, vpn]
 ---
----
-layout: default
-title: "Best Vpn Protocols That Still Work Inside China After Deep"
-description: "V2Ray with VMess over WebSocket+TLS, Shadowsocks with obfsproxy, and Trojan all bypass China's deep packet inspection in 2026 by obfuscating VPN traffic to"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "Privacy Tools Guide"
-permalink: /best-vpn-protocols-that-still-work-inside-china-after-deep-p/
-reviewed: true
-score: 8
-voice-checked: true
-intent-checked: true
-categories: [guides]
-tags: [privacy-tools-guide, best-of, vpn]
----
 
 {% raw %}
 
