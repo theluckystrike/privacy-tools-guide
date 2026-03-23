@@ -9,7 +9,7 @@ permalink: /secure-audio-messaging-apps-that-encrypt-voice-messages-end-/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---

@@ -8,7 +8,7 @@ permalink: /secure-container-registry-setup-guide/
 categories: [guides, security]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 6
 intent-checked: true
 voice-checked: true
 version: '3.8'

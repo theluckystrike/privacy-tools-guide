@@ -9,7 +9,7 @@ permalink: /russia-vpn-ban-which-services-still-work-after-roskomnadzor-/
 categories: [guides]
 tags: [privacy-tools-guide, vpn]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---

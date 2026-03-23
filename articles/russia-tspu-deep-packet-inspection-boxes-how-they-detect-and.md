@@ -9,7 +9,7 @@ permalink: /russia-tspu-deep-packet-inspection-boxes-how-they-detect-and/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
