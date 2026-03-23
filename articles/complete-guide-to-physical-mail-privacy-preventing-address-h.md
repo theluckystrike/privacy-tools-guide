@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /complete-guide-to-physical-mail-privacy-preventing-address-h/
 categories: [security, guides]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
