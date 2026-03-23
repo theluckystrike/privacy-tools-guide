@@ -9,7 +9,7 @@ permalink: /threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/
 categories: [guides]
 tags: [privacy-tools-guide, comparison]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

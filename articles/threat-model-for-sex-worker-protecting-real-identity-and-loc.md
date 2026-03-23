@@ -9,7 +9,7 @@ permalink: /threat-model-for-sex-worker-protecting-real-identity-and-location/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

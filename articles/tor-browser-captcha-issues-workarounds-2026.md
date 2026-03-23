@@ -9,7 +9,7 @@ permalink: /tor-browser-captcha-issues-workarounds-2026/
 categories: [guides, security, troubleshooting]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

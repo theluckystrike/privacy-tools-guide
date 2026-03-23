@@ -9,7 +9,7 @@ permalink: /timezone-fingerprinting-how-websites-determine-your-location/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---

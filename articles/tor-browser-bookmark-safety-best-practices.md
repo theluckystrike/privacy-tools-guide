@@ -9,7 +9,7 @@ permalink: /tor-browser-bookmark-safety-best-practices/
 categories: [guides]
 tags: [privacy-tools-guide, tools, best-of]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---
