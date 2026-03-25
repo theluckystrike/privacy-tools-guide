@@ -40,7 +40,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Implementing Automated Retention Policies
+Step 1 - Implementing Automated Retention Policies
 
 Rather than manual processes, automate retention enforcement at the infrastructure level. This ensures consistency and reduces human error.
 
@@ -117,7 +117,7 @@ Schedule this script daily in your crontab:
 0 2 * * * /usr/local/bin/backup-retention.sh
 ```
 
-Step 2: Encryption and Access Controls
+Step 2 - Encryption and Access Controls
 
 GDPR requires appropriate technical measures to protect personal data. For backups, this means encryption at rest and in transit.
 
@@ -200,7 +200,7 @@ def create_encrypted_backup(db_config, output_dir, retention_days=30):
     return f"{backup_name}.sql.gz.gpg"
 ```
 
-Step 3: Data Subject Rights and Backups
+Step 3 - Data Subject Rights and Backups
 
 GDPR grants individuals rights that affect backup handling. The right to erasure (Article 17) means you must be able to remove personal data from backups when requested.
 
@@ -231,7 +231,7 @@ def delete_data_subject_backup(subject_id, key_id):
 
 Key rotation provides another mechanism, rotate the encryption key periodically and only maintain keys for active retention periods.
 
-Step 4: Documenting Your Retention Policy
+Step 4 - Documenting Your Retention Policy
 
 Compliance requires documentation. Create a formal retention policy document that includes:
 
@@ -244,7 +244,7 @@ Compliance requires documentation. Create a formal retention policy document tha
 
 Store this document alongside your privacy policy and conduct annual reviews.
 
-Step 5: Monitor and Auditing
+Step 5 - Monitor and Auditing
 
 Implement monitoring to verify retention policies execute correctly:
 

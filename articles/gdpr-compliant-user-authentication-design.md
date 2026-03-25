@@ -45,7 +45,7 @@ You do not need:
 
 Consider using a separate identifier from the email address for login, allowing users to create pseudonymous accounts. This approach provides stronger privacy while still enabling authentication.
 
-Implementation Example: Minimal User Schema
+Implementation Example - Minimal User Schema
 
 ```python
 PostgreSQL schema with data minimization
@@ -191,7 +191,7 @@ Log authentication events for security but apply data minimization to logs as we
 Privacy-Preserving Auth Logging
 
 ```python
-Good: Minimal, purpose-specific logging
+Good - Minimal, purpose-specific logging
 auth_log = {
     "event": "login_success",
     "user_id": user_id,  # Reference, not email
@@ -200,8 +200,8 @@ auth_log = {
     "auth_method": "password"
 }
 
-Avoid: Excessive logging
-DON'T log: plain email, full IP, password attempts,
+Avoid - Excessive logging
+DON'T log - plain email, full IP, password attempts,
 browser fingerprint, or detailed device info
 ```
 

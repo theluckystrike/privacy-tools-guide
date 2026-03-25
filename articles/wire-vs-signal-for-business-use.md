@@ -36,7 +36,7 @@ Table of Contents
 - [API Access and Developer Extensibility](#api-access-and-developer-extensibility)
 - [Self-Hosting and Data Sovereignty](#self-hosting-and-data-sovereignty)
 - [Group Communication and Team Features](#group-communication-and-team-features)
-- [Integration Ecosystem](#integration-ecosystem)
+- [Integration environment](#integration-environment)
 - [When to Choose Each Platform](#when-to-choose-each-platform)
 - [Cost Considerations](#cost-considerations)
 
@@ -49,8 +49,8 @@ Signal maintains a minimal trust model. Messages encrypt on the client, and Sign
 Wire also implements the Signal Protocol (for 1:1 conversations) but extends it with additional encryption layers for group chats using the MLS (Messaging Layer Security) protocol. Wire separates identity from phone numbers, allowing username-based identification.
 
 ```
-Signal: Phone Number Identity + Signal Protocol
-Wire: Username/Email Identity + Signal Protocol + MLS (groups)
+Signal - Phone Number Identity + Signal Protocol
+Wire - Username/Email Identity + Signal Protocol + MLS (groups)
 ```
 
 For organizations requiring strict identity management, Wire's flexible identity model offers advantages. Developers can implement SSO integrations without exposing phone numbers to the messaging infrastructure.
@@ -80,7 +80,7 @@ async def handle_message(message: utils.Message):
 bot.start()
 ```
 
-Signal's bot ecosystem is relatively limited compared to other platforms. The API focuses on sending and receiving messages rather than deep integrations.
+Signal's bot environment is relatively limited compared to other platforms. The API focuses on sending and receiving messages rather than deep integrations.
 
 Wire Bot and Webhook Framework
 
@@ -184,7 +184,7 @@ Wire Team Features:
 
 For organizations regularly collaborating with external partners, Wire's guest room feature reduces the friction of secure external communication.
 
-Integration Ecosystem
+Integration environment
 
 Signal
 

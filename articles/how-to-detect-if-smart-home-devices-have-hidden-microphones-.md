@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Challenge
+Step 1 - Understand the Challenge
 
 Manufacturers are not always forthcoming about all sensors built into their devices. A smart display may include a secondary microphone for noise cancellation that also records ambient audio. A "security camera" might have cloud connectivity that uploads footage without clear disclosure. Some devices have hardware capabilities that remain dormant until a firmware update activates them.
 
 The goal is not paranoia but informed consent. You deserve to know what sensors exist in devices operating in your personal space.
 
-Step 2: Physical Inspection Techniques
+Step 2 - Physical Inspection Techniques
 
 Before exploring technical analysis, perform a thorough physical inspection:
 
@@ -49,7 +49,7 @@ Documentation Review
 - Check iFixit teardowns for hidden components
 - Review FCC compliance documentation for sensor specifications
 
-Step 3: Network Traffic Analysis
+Step 3 - Network Traffic Analysis
 
 One of the most effective methods for detecting data exfiltration involves monitoring network traffic. This approach works regardless of whether the device uses encrypted connections.
 
@@ -119,7 +119,7 @@ Check for RTSP connections (real-time streaming protocol)
 tshark -r capture.pcap -Y 'rtsp' -T fields -e rtsp.uri -e ip.src | sort | uniq
 ```
 
-Step 4: Local Network Scanning and Device Fingerprinting
+Step 4 - Local Network Scanning and Device Fingerprinting
 
 Active Port Scanning
 
@@ -152,7 +152,7 @@ Filter for specific device types
 avahi-browse -a -r | grep -i "camera\|mic\|audio\|media"
 ```
 
-Step 5: Firmware Analysis
+Step 5 - Firmware Analysis
 
 For advanced users, examining firmware can reveal hidden capabilities.
 
@@ -190,7 +190,7 @@ Look for sensor configuration files
 find . -name "*.conf" -o -name "*.cfg" | xargs grep -l "sensor\|camera\|mic"
 ```
 
-Step 6: Radio Frequency Analysis
+Step 6 - Radio Frequency Analysis
 
 Some devices transmit data wirelessly even when not actively used.
 
@@ -224,7 +224,7 @@ Monitor BLE GATT services (reveals capabilities)
 gatttool -i hpi0 -b <device_mac> --char-desc
 ```
 
-Step 7: Practical Detection Workflow
+Step 7 - Practical Detection Workflow
 
 Combine these techniques into a systematic audit process:
 
@@ -234,7 +234,7 @@ Combine these techniques into a systematic audit process:
 4. Firmware Audit: Analyze firmware if possible
 5. Periodic Re-audit: Repeat after firmware updates
 
-Step 8: Hardening Your Setup
+Step 8 - Hardening Your Setup
 
 Once you've identified recording capabilities, take action:
 

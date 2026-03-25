@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Email Forwarding Mechanics
+Step 1 - Understand Email Forwarding Mechanics
 
 When an email is forwarded, the original message traverses multiple servers before reaching its destination. Each server adds diagnostic headers to the message, creating a trail that reveals the forwarding path. These headers become your primary investigative tool.
 
@@ -43,7 +43,7 @@ Email forwarding occurs in several forms:
 
 Malicious forwarding typically happens through compromised accounts, unauthorized inbox rules, or compromised credentials. Attackers configure forwarding rules to exfiltrate sensitive communications without alerting the account owner.
 
-Step 2: Examining Email Headers
+Step 2 - Examining Email Headers
 
 The most reliable method to detect forwarding involves analyzing raw email headers. Every email contains metadata that documents its journey through the mail system.
 
@@ -51,11 +51,11 @@ Finding Email Headers
 
 Most email clients hide headers by default. Here's how to access them:
 
-Gmail: Open an email, click the three dots, select "Show original"
+Gmail - Open an email, click the three dots, select "Show original"
 
-Apple Mail: View → Message → All Headers
+Apple Mail - View → Message → All Headers
 
-Thunderbird: View → Headers → All
+Thunderbird - View → Headers → All
 
 Programmatic access (Python):
 
@@ -90,7 +90,7 @@ Several headers indicate forwarding activity:
 
 Compare the "From" address against "Delivered-To" and "Return-Path" to identify discrepancies that suggest forwarding.
 
-Step 3: Detecting Unauthorized Forwarding Rules
+Step 3 - Detecting Unauthorized Forwarding Rules
 
 Email providers offer various ways to view active forwarding rules. Checking these regularly helps catch unauthorized configurations.
 
@@ -142,7 +142,7 @@ tell application "Mail"
 end tell
 ```
 
-Step 4: Server-Side Detection for Administrators
+Step 4 - Server-Side Detection for Administrators
 
 If you administer your own mail server, several methods help detect forwarding anomalies.
 
@@ -169,7 +169,7 @@ grep -E "spf=fail|dkim=fail" /var/log/mail.log | \
   awk '{print $NF}' | sort | uniq -c | sort -rn
 ```
 
-Step 5: Practical Detection Workflow
+Step 5 - Practical Detection Workflow
 
 Implement a systematic detection process:
 
@@ -218,7 +218,7 @@ if __name__ == '__main__':
     print(f"Monitoring from history: {alert_history_id}")
 ```
 
-Step 6: What To Do If You Detect Unauthorized Forwarding
+Step 6 - What To Do If You Detect Unauthorized Forwarding
 
 If you discover unauthorized forwarding:
 

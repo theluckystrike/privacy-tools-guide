@@ -24,8 +24,8 @@ Table of Contents
 - [Why Text to Speech Matters for Privacy Configuration](#why-text-to-speech-matters-for-privacy-configuration)
 - [Password Managers With Built-in TTS Support](#password-managers-with-built-in-tts-support)
 - [VPN Clients With Audio Configuration Feedback](#vpn-clients-with-audio-configuration-feedback)
-- [Encrypted Messaging: Signal and Privacy Dashboard](#encrypted-messaging-signal-and-privacy-dashboard)
-- [Developer Tools: GPG and Encryption Utilities](#developer-tools-gpg-and-encryption-utilities)
+- [Encrypted Messaging - Signal and Privacy Dashboard](#encrypted-messaging-signal-and-privacy-dashboard)
+- [Developer Tools - GPG and Encryption Utilities](#developer-tools-gpg-and-encryption-utilities)
 - [Building Accessible Privacy Tool Interfaces](#building-accessible-privacy-tool-interfaces)
 - [Custom TTS Integration Strategies](#custom-tts-integration-strategies)
 - [Privacy Considerations in TTS Implementation](#privacy-considerations-in-tts-implementation)
@@ -89,7 +89,7 @@ wg.on('connection-change', (state) => {
 
 This pattern ensures that blind users receive immediate audio notification of connection state changes without needing to navigate through the interface.
 
-Encrypted Messaging: Signal and Privacy Dashboard
+Encrypted Messaging - Signal and Privacy Dashboard
 
 Signal, the encrypted messaging platform, has improved its accessibility features significantly. The Android application provides TalkBack support for most configuration options, including notification settings, privacy defaults, and relay configuration options.
 
@@ -146,7 +146,7 @@ if settings:
 
 This approach allows blind users to audit their messaging privacy settings through custom scripts.
 
-Developer Tools: GPG and Encryption Utilities
+Developer Tools - GPG and Encryption Utilities
 
 For developers working with GPG encryption, command-line tools naturally support screen reader interaction. However, when building frontends for GPG operations, developers should implement text to speech feedback:
 
@@ -291,13 +291,13 @@ Privacy Considerations in TTS Implementation
 
 Text-to-speech implementation introduces new privacy considerations:
 
-Audio output leakage: Announced settings read aloud are exposed to anyone in proximity. Consider these mitigations:
+Audio output leakage - Announced settings read aloud are exposed to anyone in proximity. Consider these mitigations:
 
 - Offer a "headphones required" mode preventing audio output without connected audio
 - Provide a settings summary option where users request all settings at once (reducing repeated announcements)
 - Display a visual indicator when audio playback is occurring
 
-Speech synthesis data retention: Some TTS engines send audio fragments to cloud services for synthesis. Verify your TTS implementation processes entirely on-device:
+Speech synthesis data retention - Some TTS engines send audio fragments to cloud services for synthesis. Verify your TTS implementation processes entirely on-device:
 
 ```javascript
 // Verify local TTS processing

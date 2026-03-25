@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Digital Transaction Records
+Step 1 - Understand Digital Transaction Records
 
 Every time you swipe a credit card, use a debit card, or transfer money through a bank, a permanent record gets created. These records include the transaction amount, merchant identity, timestamp, location data, and often your full account details. Financial institutions retain these records for years, and they can be subpoenaed, sold to data brokers, or exploited in data breaches.
 
 The goal isn't necessarily to eliminate all digital records, often impractical, but to reduce the traceability of everyday purchases and limit the amount of personal financial data that accumulates in centralized databases.
 
-Step 2: Cash: The Foundation of Private Transactions
+Step 2 - Cash: The Foundation of Private Transactions
 
 Cash remains the most straightforward method for payments without digital records. When you pay with physical currency, no electronic record links the transaction to your identity (assuming you purchased the cash without leaving a trace).
 
@@ -85,7 +85,7 @@ class CashLedger:
 
 Keep this data local and encrypted. Never sync to cloud storage if privacy is your goal.
 
-Step 3: Prepaid Cards and Gift Cards
+Step 3 - Prepaid Cards and Gift Cards
 
 Prepaid cards offer a middle ground between cash and traditional banking. When purchased with cash, they create no link to your identity.
 
@@ -101,7 +101,7 @@ For higher-value purchases, generic prepaid cards work well. Load them with cash
 
 Store-specific gift cards provide even stronger privacy since they're typically used at a single merchant. Amazon, Target, and other major retailers offer gift cards that can be purchased with cash at physical locations.
 
-Step 4: Privacy-Focused Cryptocurrency
+Step 4 - Privacy-Focused Cryptocurrency
 
 Cryptocurrency offers programmatic control over payment privacy. Unlike traditional digital payments, crypto transactions can be structured to minimize linkability.
 
@@ -134,7 +134,7 @@ const coinJoin = async (inputs, outputs) => {
 
 Wallets like Wasabi Wallet and Samourai Wallet implement CoinJoin automatically. These wallets coordinate with other users to mix your coins with theirs, making transaction graph analysis significantly more difficult.
 
-Monero: Built-in Privacy
+Monero - Built-in Privacy
 
 Monero represents cryptocurrency designed from the ground up for privacy:
 
@@ -172,13 +172,13 @@ from blockchain observers
 
 Running your own node means you don't rely on third-party services to broadcast transactions, preventing IP address logging.
 
-Step 5: Money Orders and Cashier's Checks
+Step 5 - Money Orders and Cashier's Checks
 
 For larger cash transactions, money orders provide a verifiable payment method without creating a detailed bank record. They're available at post offices, convenience stores, and money transfer services. Purchase with cash, and the receipt serves as proof of payment without linking to your primary accounts.
 
 Money orders typically have lower limits ($1,000-$3,000 per order), but you can purchase multiple to cover larger amounts.
 
-Step 6: Barter and Peer-to-Peer Exchange
+Step 6 - Barter and Peer-to-Peer Exchange
 
 Digital records disappear entirely when you exchange goods or services directly:
 
@@ -189,7 +189,7 @@ Digital records disappear entirely when you exchange goods or services directly:
 For developers, P2P cryptocurrency trading represents a particularly useful option:
 
 ```python
-Example concept: Creating a P2P trade invoice
+Example concept - Creating a P2P trade invoice
 Using pyinvoice or similar library to generate local invoices
 
 from faker import Faker
@@ -217,7 +217,7 @@ def generate_trade_invoice():
     return invoice
 ```
 
-Step 7: Practical Implementation Strategy
+Step 7 - Practical Implementation Strategy
 
 For most developers and power users, a layered approach works best:
 

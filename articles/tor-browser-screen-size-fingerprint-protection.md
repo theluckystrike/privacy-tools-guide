@@ -211,7 +211,7 @@ Using Cover Your Tracks
 The EFF's Cover Your Tracks tool (formerly Panopticlick) tests your browser fingerprint against known Tor users:
 
 ```
-Visit: https://coveryourtracks.eff.org
+Visit - https://coveryourtracks.eff.org
 
 The tool reports:
 - Your unique fingerprint
@@ -232,7 +232,7 @@ BrowserLeaks Fingerprinting Test
 BrowserLeaks provides detailed fingerprinting analysis:
 
 ```
-Visit: https://browserleaks.com/
+Visit - https://browserleaks.com/
 
 Provides analysis of:
 - Canvas fingerprinting resistance
@@ -343,21 +343,21 @@ Combining Protection Methods for Defense-in-Depth
 
 No single protection is perfect. Combine multiple techniques:
 
-Layer 1: Tor Browser defaults
+Layer 1 - Tor Browser defaults
 - Window resizing to standard width
 - Letterboxing
 - Normalized device properties
 
-Layer 2: Security level adjustment
+Layer 2 - Security level adjustment
 - Safer or Safest mode disables additional features
 - Blocks JavaScript, WebGL, others reducing fingerprint surface
 
-Layer 3: Extensions
+Layer 3 - Extensions
 - NoScript provides script blocking
 - uBlock Origin blocks fingerprinting scripts
 - Canvas fingerprint protection blocks canvas access
 
-Layer 4: Browser configuration
+Layer 4 - Browser configuration
 - Disable WebGL: `webgl.disabled = true`
 - Disable WebRTC: `media.peerconnection.enabled = false`
 - Disable hardware acceleration: `layers.acceleration.disabled = true`
@@ -369,9 +369,9 @@ Fingerprinting Across Tor Circuits
 When you request a new Tor circuit:
 
 ```
-Old circuit: IP 1.2.3.4, Browser fingerprint A
+Old circuit - IP 1.2.3.4, Browser fingerprint A
 Renew circuit (Ctrl+Shift+L)
-New circuit: IP 5.6.7.8, Browser fingerprint A
+New circuit - IP 5.6.7.8, Browser fingerprint A
 ```
 
 Your fingerprint stays the same while IP changes. Websites can correlate through fingerprint even after IP rotation.

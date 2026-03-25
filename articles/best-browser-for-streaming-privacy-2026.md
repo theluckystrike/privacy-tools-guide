@@ -22,7 +22,7 @@ Streaming platforms collect extensive user data including viewing habits, device
 - The best privacy-focused browsers: for streaming should minimize fingerprinting surface while maintaining stream quality.
 - Streaming platforms collect extensive: user data including viewing habits, device information, IP addresses, and behavioral patterns.
 - For developers and power: users who value privacy, choosing the right browser with appropriate privacy configurations significantly reduces the data footprint left behind during streaming sessions.
-- However: this may cause some streaming platforms to display standard definition instead of HD, as the browser reports generic hardware capabilities.
+- However - this may cause some streaming platforms to display standard definition instead of HD, as the browser reports generic hardware capabilities.
 - The browser also includes: a Tor mode for users who need additional anonymity.
 - The best streaming browsers: should either disable WebRTC or provide leak protection.
 
@@ -264,7 +264,7 @@ Quick Decision Matrix
 |------|-----------|-----|
 | Privacy + Full HD streaming | Firefox + uBlock Origin | Best performance/privacy balance |
 | Minimal configuration needed | Brave | Works well out of the box |
-| Chrome extensions required | Ungoogled Chromium | Maintains extension ecosystem |
+| Chrome extensions required | Ungoogled Chromium | Maintains extension environment |
 | Maximum anonymity | Tor Browser | Routes through Tor network |
 | Gaming/4K streaming | Brave | Lowest overhead |
 

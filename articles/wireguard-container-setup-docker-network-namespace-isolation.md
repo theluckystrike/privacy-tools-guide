@@ -85,7 +85,7 @@ Network Namespace Isolation
 
 For stronger isolation, create a dedicated network namespace. This approach separates the WireGuard interface from the host's default network namespace, giving you precise control over which processes use the VPN tunnel.
 
-Step 1: Create the Network Namespace
+Step 1 - Create the Network Namespace
 
 ```bash
 Create a new network namespace
@@ -98,7 +98,7 @@ Add a loopback interface to the namespace
 sudo ip netns exec wg-vpn ip link set lo up
 ```
 
-Step 2: Configure the WireGuard Interface in the Namespace
+Step 2 - Configure the WireGuard Interface in the Namespace
 
 Rather than running the container directly inside the namespace, create the WireGuard interface manually in the namespace and attach it:
 
@@ -115,7 +115,7 @@ sudo ip netns exec wg-vpn ip addr add 10.0.0.2/24 dev wg0
 sudo ip netns exec wg-vpn ip link set wg0 up
 ```
 
-Step 3: Configure Routing in the Namespace
+Step 3 - Configure Routing in the Namespace
 
 Route all traffic in the namespace through the WireGuard tunnel:
 
@@ -127,7 +127,7 @@ Verify routing
 sudo ip netns exec wg-vpn ip route show
 ```
 
-Step 4: Run Docker Container in the Namespace
+Step 4 - Run Docker Container in the Namespace
 
 Execute containers within the network namespace:
 
@@ -207,7 +207,7 @@ networks:
     driver: bridge
 ```
 
-Using `network_mode: "service:wireguard"` in Compose is equivalent to `--network container:wireguard` in the CLI. The protected-app container inherits the WireGuard container's entire network stack. including its IP address and routing table.
+Using `network_mode - "service:wireguard"` in Compose is equivalent to `--network container:wireguard` in the CLI. The protected-app container inherits the WireGuard container's entire network stack. including its IP address and routing table.
 
 Preventing DNS Leaks
 
@@ -324,6 +324,6 @@ Related Articles
 - [How to Set Up WireGuard on VPS for Personal](/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
 - [How to Use WireGuard for Self-Hosted VPN in 2026](/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
 - [Tor Browser Isolation Container Setup Guide](/tor-browser-isolation-container-setup-guide/)
-- [AI Coding Assistant for Network Traffic Analysis: What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
+- [AI Coding Assistant for Network Traffic Analysis - What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

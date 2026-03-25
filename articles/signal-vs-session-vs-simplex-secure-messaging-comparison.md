@@ -21,12 +21,12 @@ Signal, Session, and SimpleX are the gold standard for encrypted messaging, but 
 Table of Contents
 
 - [Quick Comparison Table](#quick-comparison-table)
-- [Deep Dive: Signal](#deep detailed look-signal)
-- [Deep Dive: Session](#deep detailed look-session)
-- [Deep Dive: SimpleX](#deep detailed look-simplex)
-- [Detailed Comparison: Real-World Scenarios](#detailed-comparison-real-world-scenarios)
-- [Detailed Comparison: Encryption & Security](#detailed-comparison-encryption-security)
-- [Setup Comparison: Time Investment](#setup-comparison-time-investment)
+- [Deep Dive - Signal](#deep detailed look-signal)
+- [Deep Dive - Session](#deep detailed look-session)
+- [Deep Dive - SimpleX](#deep detailed look-simplex)
+- [Detailed Comparison - Real-World Scenarios](#detailed-comparison-real-world-scenarios)
+- [Detailed Comparison - Encryption & Security](#detailed-comparison-encryption-security)
+- [Setup Comparison - Time Investment](#setup-comparison-time-investment)
 - [Switching Between Apps](#switching-between-apps)
 - [Recommendation by User Type](#recommendation-by-user-type)
 - [How to Get Contacts to Adopt](#how-to-get-contacts-to-adopt)
@@ -48,7 +48,7 @@ Quick Comparison Table
 | Best For | Privacy-conscious daily use | Higher threat model | Maximum privacy |
 | Recommendation | General population | Activists, journalists | Ultra-sensitive communications |
 
-Deep Dive: Signal
+Deep Dive - Signal
 
 Signal is the most popular secure messenger for good reason: military-grade encryption + extreme usability.
 
@@ -70,10 +70,10 @@ Alice sends "Meet at 3 PM":
   → Bob decrypts message locally
 ```
 
-Signal's Strength: Encryption
+Signal's Strength - Encryption
 
 ```
-Threat level: Government wants to read your messages
+Threat level - Government wants to read your messages
 
 Can Signal protect you?
  YES. Signal Protocol is mathematically proven
@@ -87,10 +87,10 @@ Can government still get info?
   - Knows from where (IP address if Signal server in US)
 ```
 
-Signal's Weakness: Phone Number = Identity
+Signal's Weakness - Phone Number = Identity
 
 ```
-Problem: Your phone number is your Signal username.
+Problem - Your phone number is your Signal username.
 
 Consequences:
 1. Phone number reveals your identity
@@ -102,12 +102,12 @@ Consequences:
 
 Example attack:
 Attacker knows: "Alice uses Signal"
-Attacker gets your phone number: (503) 555-1234
+Attacker gets your phone number - (503) 555-1234
 Attacker opens Signal, adds (503) 555-1234
-Attacker sees: "Alice" (knows it's you)
+Attacker sees - "Alice" (knows it's you)
 ```
 
-Signal Setup: 10 Seconds
+Signal Setup - 10 Seconds
 
 ```
 1. Download app: https://signal.org
@@ -123,14 +123,14 @@ Backup/restore across devices:
 → On new device: Enter phone + password → restored
 ```
 
-Best Use Case: Signal
+Best Use Case - Signal
 
  General population: Friends, family, business
  Privacy-conscious professionals: Journalists, lawyers
  High-risk activists: (metadata still visible to US Signal server)
  Ultra-sensitive: (phone number is a liability)
 
-Deep Dive: Session
+Deep Dive - Session
 
 Session removes the phone number problem by using Session IDs instead. It's Signal's codebase but with different identity model.
 
@@ -147,17 +147,17 @@ Session architecture:
    (doesn't say from whom or to whom)
 ```
 
-Session's Strength: No Phone Number + Onion Routing
+Session's Strength - No Phone Number + Onion Routing
 
 ```
-Threat level: Government monitors who you're talking to
+Threat level - Government monitors who you're talking to
 
 Can Session protect you?
  YES. No phone number means no identity tied to number
  YES. Onion routing hides metadata from server
  YES. Server doesn't know you're talking to Bob
 
-Attack scenario: Compare Signal vs Session
+Attack scenario - Compare Signal vs Session
 
 
 Signal scenario:
@@ -171,31 +171,31 @@ Session scenario:
   Conclusion: ??? (doesn't know who's talking to whom)
 ```
 
-Session's Weakness: Slower Usability
+Session's Weakness - Slower Usability
 
 ```
-Problem 1: No automatic contact discovery
+Problem 1 - No automatic contact discovery
   Signal: Add phone number → contacts show up automatically
   Session: Must manually exchange Session IDs
 
-  Reality: Session ID: "05de1b6e0b96f88ff2c7d3c6c..."
+  Reality - Session ID: "05de1b6e0b96f88ff2c7d3c6c..."
   You must share it via Signal (ironic), email, QR code
 
-Problem 2: Slower delivery on Tor
+Problem 2 - Slower delivery on Tor
   Session routes through onion network
   Adds 2-5 second latency vs Signal's instant
   Not a deal-breaker for messages, but noticeable
 
-Problem 3: Limited device sync
+Problem 3 - Limited device sync
   Signal syncs message history across devices
   Session: Devices maintain separate message history
   If you message on phone, desktop doesn't see it
 ```
 
-Session Setup: 2 Minutes
+Session Setup - 2 Minutes
 
 ```
-1. Download: https://getsession.org
+1. Download - https://getsession.org
 2. Create Session ID (randomly generated)
 3. System shows your Session ID: "05de1b6e..."
 4. Share with contacts via:
@@ -211,7 +211,7 @@ Restore on new device:
 → Restored (message history is NOT synced)
 ```
 
-Best Use Case: Session
+Best Use Case - Session
 
  Activists, journalists in surveilled countries
  High-risk communications (metadata matters)
@@ -219,7 +219,7 @@ Best Use Case: Session
  Casual group chats (device sync is limited)
  Mainstream adoption (very few people use it)
 
-Deep Dive: SimpleX
+Deep Dive - SimpleX
 
 SimpleX is the newest and most privacy-focused. Removes the concept of user IDs altogether.
 
@@ -238,13 +238,13 @@ Alice creates a "contact link": "https://simplex.chat/contact/#..."
 Alice shares link with Bob (via email, in person, etc.)
 Bob clicks link, establishes encrypted channel to Alice
 Only Alice and Bob know they're talking
-SimpleX server: Sees encrypted blob, doesn't know sender/receiver
+SimpleX server - Sees encrypted blob, doesn't know sender/receiver
 ```
 
-SimpleX's Strength: Maximum Anonymity
+SimpleX's Strength - Maximum Anonymity
 
 ```
-Threat level: Adversary has access to server + government pressure
+Threat level - Adversary has access to server + government pressure
 
 Can SimpleX protect you?
  YES. Even SimpleX developers can't see who's talking to whom
@@ -254,47 +254,47 @@ Can SimpleX protect you?
 
 Example attack (impossible):
 Government: "Show us Alice's messages"
-SimpleX: "We don't know who Alice is. She has no username."
-Government: "Show us who's using app"
-SimpleX: "We see encrypted blobs. We don't know usernames."
-Government: "Show us who Alice is talking to"
-SimpleX: "We don't know if she's even on our server."
+SimpleX - "We don't know who Alice is. She has no username."
+Government - "Show us who's using app"
+SimpleX - "We see encrypted blobs. We don't know usernames."
+Government - "Show us who Alice is talking to"
+SimpleX - "We don't know if she's even on our server."
 ```
 
-SimpleX's Weakness: Extreme Friction
+SimpleX's Weakness - Extreme Friction
 
 ```
-Problem 1: Manual contact exchange required
+Problem 1 - Manual contact exchange required
   Signal/Session: Add someone, they appear automatically
   SimpleX: Must exchange contact links for every person
 
   Reality:
   Alice: "Here's my SimpleX link: https://simplex.chat/contact/#..."
-  Bob: "Here's mine: https://simplex.chat/contact/#..."
+  Bob - "Here's mine: https://simplex.chat/contact/#..."
   Both: Add each other
 
   Multiplied across 100 contacts = tedious
 
-Problem 2: No group chats (yet)
+Problem 2 - No group chats (yet)
   Signal: Create group, add 50 people, works instantly
   SimpleX: Group chats experimental, limited to ~10 people
   Not practical for large teams
 
-Problem 3: No auto-sync
+Problem 3 - No auto-sync
   Message only stored locally on your devices
   New device: Install SimpleX, all history is gone
   Must manually export/import if you want backup
 
-Problem 4: Niche adoption
+Problem 4 - Niche adoption
   Signal: Everyone heard of it
   Session: Privacy people know it
   SimpleX: Very few people use it (smaller network)
 ```
 
-SimpleX Setup: 5 Minutes per Contact
+SimpleX Setup - 5 Minutes per Contact
 
 ```
-1. Download: https://simplex.chat
+1. Download - https://simplex.chat
 2. App generates unique contact link for you
    (looks like: https://simplex.chat/contact/#...)
 3. Share your link via:
@@ -312,7 +312,7 @@ For each contact:
 Repeats for every new contact (tedious but private).
 ```
 
-Best Use Case: SimpleX
+Best Use Case - SimpleX
 
  Ultra-sensitive communications (whistleblowers, activists at extreme risk)
  Temporary conversations (no sync = no lingering trace)
@@ -321,78 +321,78 @@ Best Use Case: SimpleX
  Group chat (experimental, limited)
  General adoption (very small user base)
 
-Detailed Comparison: Real-World Scenarios
+Detailed Comparison - Real-World Scenarios
 
-Scenario 1: Business Messaging (Team of 5)
+Scenario 1 - Business Messaging (Team of 5)
 
 ```
-Requirement: Secure, but need group chat and device sync
+Requirement - Secure, but need group chat and device sync
 
 Signal:
  Group chat: Excellent, can add 5 people instantly
  Device sync: Works across laptop, phone, desktop
  Usability: Everyone can use it immediately
  Adoption: Team already has Signal usually
-Answer: Use Signal
+Answer - Use Signal
 
 Session:
  Device sync: Limited, devices have separate histories
  Group chat: Works but slower
  Adoption: Team may not be on Session
-Answer: Not ideal for this use case
+Answer - Not ideal for this use case
 
 SimpleX:
  Device sync: None (messages local only)
  Adoption: Too friction-heavy for business team
-Answer: Not suitable
+Answer - Not suitable
 ```
 
-Scenario 2: Journalist Source Protection
+Scenario 2 - Journalist Source Protection
 
 ```
-Requirement: Source anonymity + metadata protection
+Requirement - Source anonymity + metadata protection
 
 Signal:
  Encryption: Excellent
  Metadata: Server sees journalist ↔ source (phone visible)
  Risk: Government subpoenas phone number mapping
-Answer: Acceptable if source uses public WiFi/VPN to hide IP
+Answer - Acceptable if source uses public WiFi/VPN to hide IP
 
 Session:
  Encryption: Excellent
  Metadata: Onion-routed, server doesn't see who's talking
  Phone: No phone number required
-Answer: Better choice than Signal for this use case
+Answer - Better choice than Signal for this use case
 
 SimpleX:
  Encryption: Excellent
  Metadata: SimpleX literally doesn't know source exists
  Friction: Journalist + source must exchange links (doable once)
-Answer: Best, but requires one-time setup
+Answer - Best, but requires one-time setup
 ```
 
-Scenario 3: Large Group Chat (50+ People)
+Scenario 3 - Large Group Chat (50+ People)
 
 ```
-Requirement: Encrypted, but needs to work at scale
+Requirement - Encrypted, but needs to work at scale
 
 Signal:
  Group chat: Handles 50+ people easily
  Device sync: All devices stay in sync
  Usability: Easy
-Answer: Use Signal
+Answer - Use Signal
 
 Session:
  Group chat: Works but slower than Signal
  Adoption: Most people aren't on Session
-Answer: Not ideal
+Answer - Not ideal
 
 SimpleX:
  Group chat: Experimental, max ~10 people
-Answer: Not suitable
+Answer - Not suitable
 ```
 
-Detailed Comparison: Encryption & Security
+Detailed Comparison - Encryption & Security
 
 Does Their Encryption Differ?
 
@@ -407,22 +407,22 @@ All three apps use fundamentally same encryption.
 Differences:
 
 Signal: Encryption is strong. But metadata visible to server.
-Session: Same encryption. Plus onion routing hides metadata.
-SimpleX: Same encryption. Plus server doesn't know identities exist.
+Session - Same encryption. Plus onion routing hides metadata.
+SimpleX - Same encryption. Plus server doesn't know identities exist.
 
 Analogy:
 
 Signal: Lock on your message, but envelope has sender/recipient written.
-Session: Lock + sender/recipient are routed anonymously.
-SimpleX: Lock + envelope has no sender/recipient, just encrypted blob.
+Session - Lock + sender/recipient are routed anonymously.
+SimpleX - Lock + envelope has no sender/recipient, just encrypted blob.
 ```
 
-Forward Secrecy: All Three Have It
+Forward Secrecy - All Three Have It
 
 ```
 Forward secrecy = If attacker gets today's key, can't decrypt past messages.
 
-Test scenario: Attacker compromises Signal server March 15, 2026
+Test scenario - Attacker compromises Signal server March 15, 2026
 
 Signal before compromise (March 1):
    Messages encrypted with key-A
@@ -440,35 +440,35 @@ Messages before/after are safe.
 All three (Signal, Session, SimpleX) have this protection.
 ```
 
-Setup Comparison: Time Investment
+Setup Comparison - Time Investment
 
 ```
-Signal: 30 seconds
+Signal - 30 seconds
   1. Download
   2. Phone number
   3. SMS verification
   4. Done
 
-Session: 2 minutes
+Session - 2 minutes
   1. Download
   2. Session ID generated
   3. Share with contacts (find their IDs)
   4. Done
 
-SimpleX: 5+ minutes per contact (once)
+SimpleX - 5+ minutes per contact (once)
   1. Download
   2. Get your SimpleX link
   3. For each contact: Share link, receive theirs, add each other
   4. Repeat 10-50 times depending on contact count
 
-Reality: Most people will choose Signal.
+Reality - Most people will choose Signal.
 ```
 
 Switching Between Apps
 
 ```
 Can you use multiple simultaneously?
-Answer: YES
+Answer - YES
 
 Recommended approach:
 - Signal: Default for friends, family, most people
@@ -478,9 +478,9 @@ Recommended approach:
 They don't interfere. Contacts appear in each app separately.
 
 Migration path if you're a privacy person:
-Year 1: Use Signal
-Year 2: Introduce Session to privacy-conscious contacts
-Year 3: SimpleX for ultra-sensitive conversations
+Year 1 - Use Signal
+Year 2 - Introduce Session to privacy-conscious contacts
+Year 3 - SimpleX for ultra-sensitive conversations
 (Gradual adoption is better than switching everyone at once)
 ```
 

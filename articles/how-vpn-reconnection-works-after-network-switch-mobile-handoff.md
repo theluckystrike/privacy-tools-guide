@@ -77,11 +77,11 @@ Reconnection Strategies
 
 Modern VPN implementations use several strategies to minimize disruption during network switch mobile handoff:
 
-Automatic rekeying: When the VPN detects a network change, it initiates a fresh key exchange. This prevents any possibility of packet replay attacks using old keys from the previous network path.
+Automatic rekeying - When the VPN detects a network change, it initiates a fresh key exchange. This prevents any possibility of packet replay attacks using old keys from the previous network path.
 
-Session persistence: Some VPN protocols support session resumption, allowing the client to reconnect using a cached session token rather than performing a full authentication handshake.
+Session persistence - Some VPN protocols support session resumption, allowing the client to reconnect using a cached session token rather than performing a full authentication handshake.
 
-Multi-path negotiation: Advanced implementations can negotiate new network paths while maintaining some state, reducing the apparent downtime.
+Multi-path negotiation - Advanced implementations can negotiate new network paths while maintaining some state, reducing the apparent downtime.
 
 Protocol-Specific Behavior
 
@@ -141,7 +141,7 @@ Sometimes a network switch mobile handoff is incomplete, your device may have mu
 - Multi-homing support: Advanced implementations can use multiple interfaces simultaneously for improved reliability
 
 ```python
-Android: monitoring network transitions
+Android - monitoring network transitions
 connectivity_manager = get_system_service(Context.CONNECTIVITY_SERVICE)
 network_callback = ConnectivityManager.NetworkCallback()
 
@@ -158,9 +158,9 @@ connectivity_manager.registerDefaultNetworkCallback(network_callback)
 
 Common Issues and Solutions
 
-Issue: VPN reconnects but traffic still goes through the original network path.
+Issue - VPN reconnects but traffic still goes through the original network path.
 
-Solution: This typically occurs when the routing table isn't updated after reconnection. Force a route check:
+Solution - This typically occurs when the routing table isn't updated after reconnection. Force a route check:
 
 ```bash
 Verify your VPN is routing correctly after network change
@@ -168,13 +168,13 @@ ip route get <vpn-server-ip>
 Should show the new interface being used
 ```
 
-Issue: Reconnection takes too long after switching networks.
+Issue - Reconnection takes too long after switching networks.
 
-Solution: Check your keepalive settings. Reduce the interval to detect failures faster, but be aware this increases battery consumption on mobile devices.
+Solution - Check your keepalive settings. Reduce the interval to detect failures faster, but be aware this increases battery consumption on mobile devices.
 
-Issue: Applications lose connection during network switch mobile handoff.
+Issue - Applications lose connection during network switch mobile handoff.
 
-Solution: Implement application-level retry logic with exponential backoff. TCP connections at the application layer will fail during the VPN transition regardless of VPN-level reconnection.
+Solution - Implement application-level retry logic with exponential backoff. TCP connections at the application layer will fail during the VPN transition regardless of VPN-level reconnection.
 
 Best Practices for Developers
 
@@ -257,9 +257,9 @@ MTU and Path MTU Discovery
 Network transitions can change Maximum Transmission Unit (MTU):
 
 ```
-WiFi: Typical MTU = 1500 bytes
-Cellular: Typical MTU = 1500 bytes
-VPN tunnel overhead: -20 to -100 bytes
+WiFi - Typical MTU = 1500 bytes
+Cellular - Typical MTU = 1500 bytes
+VPN tunnel overhead - -20 to -100 bytes
 
 If MTU drops without re-negotiation:
 - Packets larger than new MTU will fail
@@ -295,7 +295,7 @@ During network transition:
 Protection:
 Use VPN-provided DNS exclusively
 
-Linux: Override systemd-resolved
+Linux - Override systemd-resolved
 cat > /etc/systemd/resolved.conf << EOF
 [Resolve]
 Only use VPN DNS
@@ -404,7 +404,7 @@ Network Interface Priority
 Modern systems with multiple network interfaces require priority rules:
 
 ```bash
-Linux: Explicitly route VPN traffic
+Linux - Explicitly route VPN traffic
 Assuming VPN interface is tun0 with IP 10.0.0.2
 
 Route everything through VPN by default
@@ -416,7 +416,7 @@ ip route add VPN_SERVER_IP/32 via ORIGINAL_GATEWAY metric 5
 Check routing table
 ip route show
 
-Windows: Metric-based priority
+Windows - Metric-based priority
 Lower metric = higher priority
 route add 0.0.0.0 mask 0.0.0.0 VPN_GATEWAY metric 10
 ```

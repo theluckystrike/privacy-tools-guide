@@ -147,13 +147,13 @@ Regional Network Provider Considerations
 
 The three major Chinese ISPs have different international bandwidth allocations and filtering implementations:
 
-China Mobile (): Largest user base but variable international bandwidth. Beijing and Shanghai nodes have better capacity than provincial locations. Often more expensive to run VPN infrastructure on these networks due to detection.
+China Mobile () - Largest user base but variable international bandwidth. Beijing and Shanghai nodes have better capacity than provincial locations. Often more expensive to run VPN infrastructure on these networks due to detection.
 
-China Unicom (): Better international bandwidth in many regions, particularly for Asia-Pacific routing. Often provides more stable connections for obfuscated protocols.
+China Unicom () - Better international bandwidth in many regions, particularly for Asia-Pacific routing. Often provides more stable connections for obfuscated protocols.
 
-China Telecom (): Most aggressive DPI implementation. VPN detection and throttling most effective on these networks. However, certain provincial nodes have less filtering.
+China Telecom () - Most aggressive DPI implementation. VPN detection and throttling most effective on these networks. However, certain provincial nodes have less filtering.
 
-Practical approach: If possible, test your VPN setup on multiple ISPs. Your primary ISP choice can mean the difference between 480p and 1080p streaming:
+Practical approach - If possible, test your VPN setup on multiple ISPs. Your primary ISP choice can mean the difference between 480p and 1080p streaming:
 
 ```bash
 Check your ISP
@@ -174,7 +174,7 @@ Protocol Obfuscation with Shadowsocks-libev:
 Install Shadowsocks-libev
 sudo apt-get install shadowsocks-libev simple-obfs
 
-Create config: /etc/shadowsocks-libev/config.json
+Create config - /etc/shadowsocks-libev/config.json
 {
   "server": "your_server.com",
   "server_port": 443,
@@ -199,7 +199,7 @@ V2Ray implements multiple protocols (VMess, VLESS) with flexible traffic disguis
 Install V2Ray
 curl https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/main/install-release.sh | sudo bash
 
-Config: /usr/local/etc/v2ray/config.json
+Config - /usr/local/etc/v2ray/config.json
 {
   "outbounds": [
     {
@@ -236,26 +236,26 @@ Config: /usr/local/etc/v2ray/config.json
 
 This makes V2Ray traffic appear as normal HTTPS traffic to the GFW's inspection systems.
 
-Streaming Quality Degradation: Diagnosis and Solutions
+Streaming Quality Degradation - Diagnosis and Solutions
 
 When YouTube buffers despite working VPN, the problem is usually one of three types:
 
-Symptom 1: Constant buffering even at 480p
-Diagnosis: Insufficient bandwidth (< 5 Mbps)
+Symptom 1 - Constant buffering even at 480p
+Diagnosis - Insufficient bandwidth (< 5 Mbps)
 Solution:
 - Test actual bandwidth: speedtest.net through your VPN
 - Switch to different exit node
 - Try protocol with lower overhead (WireGuard vs. OpenVPN)
 
-Symptom 2: Buffering starts during 1080p, works fine at 720p
-Diagnosis: Inconsistent bandwidth, likely throttling
+Symptom 2 - Buffering starts during 1080p, works fine at 720p
+Diagnosis - Inconsistent bandwidth, likely throttling
 Solution:
 - Implement bandwidth shaping to anticipate throttling
 - Try another server location
 - Test if specific ISP is throttling (use VPN from different provider)
 
-Symptom 3: Starts fine then degrades over time
-Diagnosis: Connection degradation, likely active throttling
+Symptom 3 - Starts fine then degrades over time
+Diagnosis - Connection degradation, likely active throttling
 Solution:
 - Enable persistent keepalive packets
 - Reduce video player buffer aggressiveness
@@ -266,8 +266,8 @@ Monitor bandwidth in real-time
 watch -n 1 'ifstat -i wg0 -n 1'
 
 If bandwidth suddenly drops, you're likely being throttled
-Immediate solution: restart the VPN client, which changes your tunnel parameters
-Long-term: switch servers or protocols
+Immediate solution - restart the VPN client, which changes your tunnel parameters
+Long-term - switch servers or protocols
 ```
 
 Split Tunneling and YouTube-Specific Optimization
@@ -275,7 +275,7 @@ Split Tunneling and YouTube-Specific Optimization
 Rather than routing all traffic through VPN, route only YouTube through VPN while keeping other traffic direct. This reduces bandwidth requirements and improves reliability:
 
 ```bash
-Linux: route YouTube queries through VPN only
+Linux - route YouTube queries through VPN only
 1. Identify YouTube's IP ranges
 AS15169 is YouTube's autonomous system
 whois -h whois.radb.net -- '-i origin AS15169' | grep "route:"

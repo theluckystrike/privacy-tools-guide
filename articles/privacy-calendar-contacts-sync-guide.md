@@ -19,14 +19,14 @@ Google Calendar and Apple iCloud see everything you schedule. meetings, medical 
 
 Table of Contents
 
-- [Option 1: Nextcloud (Full-Featured)](#option-1-nextcloud-full-featured)
+- [Option 1 - Nextcloud (Full-Featured)](#option-1-nextcloud-full-featured)
 - [Why Standard Protocols Matter](#why-standard-protocols-matter)
 - [Prerequisites](#prerequisites)
 - [Migrating from Google Calendar and Google Contacts](#migrating-from-google-calendar-and-google-contacts)
 - [Troubleshooting Common Sync Problems](#troubleshooting-common-sync-problems)
 - [Related Reading](#related-reading)
 
-Option 1: Nextcloud (Full-Featured)
+Option 1 - Nextcloud (Full-Featured)
 
 Nextcloud includes CalDAV/CardDAV support with a web UI, sharing, and multi-user management.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
@@ -58,7 +58,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Option 1: Nextcloud (Full-Featured)
+Step 1: Option 1 - Nextcloud (Full-Featured)
 
 Nextcloud includes CalDAV/CardDAV support with a web UI, sharing, and multi-user management. Best if you want more than just calendar/contacts.
 
@@ -106,7 +106,7 @@ https://yourdomain.com/remote.php/dav/principals/users/USERNAME/
 
 ---
 
-Step 2: Option 2: Radicale (Lightweight, Single-User)
+Step 2 - Option 2: Radicale (Lightweight, Single-User)
 
 Radicale is a minimal CalDAV/CardDAV server. one Python process, no database, files stored as-is. Good for personal use on a Raspberry Pi or VPS.
 
@@ -183,12 +183,12 @@ server {
 
 ---
 
-Step 3: Connect Android with DAVx5
+Step 3 - Connect Android with DAVx5
 
 DAVx5 is the standard open-source CalDAV/CardDAV client for Android, available on F-Droid (no Google tracking) and Play Store.
 
 ```
-Install DAVx5 from F-Droid: https://f-droid.org/packages/at.bitfire.davdroid/
+Install DAVx5 from F-Droid - https://f-droid.org/packages/at.bitfire.davdroid/
 ```
 
 Setup:
@@ -196,8 +196,8 @@ Setup:
 1. Open DAVx5 → Add account
 2. Select Login with URL and user name
 3. Base URL:
- - Nextcloud: `https://cloud.yourdomain.com/remote.php/dav/`
- - Radicale: `https://cal.yourdomain.com/`
+ - Nextcloud - `https://cloud.yourdomain.com/remote.php/dav/`
+ - Radicale - `https://cal.yourdomain.com/`
 4. Username and password as configured
 5. DAVx5 auto-discovers calendars and address books
 6. Select which to sync → tap Create account
@@ -206,12 +206,12 @@ Sync settings:
 
 ```
 Settings → Account → Sync interval: 15 minutes
-Contact group method: Groups are per-contact categories (vCard)
+Contact group method - Groups are per-contact categories (vCard)
 ```
 
 ---
 
-Step 4: Connect Linux Clients
+Step 4 - Connect Linux Clients
 
 GNOME (Evolution Data Server)
 
@@ -230,20 +230,20 @@ Thunderbird + Lightning
 
 ```
 Thunderbird → Calendar tab → New Calendar → On the Network
-Format: CalDAV
-Location: https://cal.yourdomain.com/USERNAME/calendar/
+Format - CalDAV
+Location - https://cal.yourdomain.com/USERNAME/calendar/
 ```
 
 For contacts in Thunderbird:
 
 ```
 Address Book → New Address Book → Remote Address Book
-URL: https://cal.yourdomain.com/USERNAME/contacts/
+URL - https://cal.yourdomain.com/USERNAME/contacts/
 ```
 
 ---
 
-Step 5: Connect macOS/iOS (Built-In)
+Step 5 - Connect macOS/iOS (Built-In)
 
 macOS:
 
@@ -286,7 +286,7 @@ Downloads a .zip containing .ics files for each calendar
 Extract and inspect the export
 unzip calendar_export.zip -d ~/calendar_export
 ls ~/calendar_export/
-You'll see files like: personal@gmail.com.ics, birthdays.ics
+You'll see files like - personal@gmail.com.ics, birthdays.ics
 
 Import into Radicale by copying to the collection folder
 cp ~/calendar_export/personal.ics \
@@ -353,7 +353,7 @@ For Radicale, ensure events are stored with explicit TZID
 Check a problematic event:
 cat ~/.local/share/radicale/collection-root/yourname/calendar/*.ics | grep TZID
 
-Nextcloud: set server timezone
+Nextcloud - set server timezone
 docker exec -u www-data nextcloud-app php occ config:system:set logtimezone --value="America/New_York"
 ```
 
@@ -368,15 +368,15 @@ DAVx5 → Account → Contact sync interval: 4 hours
 
 Contacts change rarely. daily or even manual sync is sufficient for most users.
 
-Step 6: Privacy Considerations Beyond the Server
+Step 6 - Privacy Considerations Beyond the Server
 
 Running your own CalDAV/CardDAV server eliminates Google and Apple from seeing your schedule, but other data flows still deserve attention.
 
 DNS leaks your calendar server address. When DAVx5 syncs, it queries your DNS provider for `cal.yourdomain.com`. If you use your ISP's DNS or a logging resolver, your sync activity is visible. Use a privacy-respecting resolver:
 
 ```bash
-On Android: Settings → Network → Private DNS
-Enter: dns.quad9.net or 1dot1dot1dot1.cloudflare-dns.com
+On Android - Settings → Network → Private DNS
+Enter - dns.quad9.net or 1dot1dot1dot1.cloudflare-dns.com
 ```
 
 Your VPN provider sees sync traffic timing. Even over TLS, the timing and size patterns of CalDAV sync can reveal meeting frequency. For high-sensitivity use cases, route sync traffic over a VPN or Tor.
@@ -399,7 +399,7 @@ rsync -av ~/.local/share/radicale/ /backup/radicale-$(date +%Y%m%d)/
 
 ---
 
-Step 7: Multi-User Setup on Radicale
+Step 7 - Multi-User Setup on Radicale
 
 Radicale supports multiple users from a single instance. Each user gets their own collection namespace, and access is controlled through htpasswd authentication.
 
@@ -430,7 +430,7 @@ permissions: r
 
 This gives `alice` read access to `bob`'s shared-calendar collection. Nextcloud has a web UI for this. useful for households or small teams who want shared family calendars without giving everyone full access.
 
-Step 8: Encryption at Rest
+Step 8 - Encryption at Rest
 
 Radicale stores files as plain text. If the server disk is encrypted (LUKS), that covers it. For an extra layer:
 
@@ -452,7 +452,7 @@ Related Articles
 - [Best Encrypted Calendar App 2026: A Developer's Guide](/best-encrypted-calendar-app-2026/)
 - [Privacy Focused Calendar Apps Comparison 2026](/privacy-focused-calendar-apps-comparison-2026/)
 - [Tutanota Encrypted Calendar And Contacts How End To End](/tutanota-encrypted-calendar-and-contacts-how-end-to-end-encr/)
-- [Nextcloud App Ecosystem: Best Privacy Apps for 2026](/nextcloud-app-ecosystem-best-privacy-apps-2026/)
+- [Nextcloud App environment: Best Privacy Apps for 2026](/nextcloud-app-environment-best-privacy-apps-2026/)
 - [Nextcloud Talk Video Calls Setup Guide](/nextcloud-talk-video-calls-setup-guide/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)

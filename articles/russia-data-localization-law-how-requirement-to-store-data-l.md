@@ -194,19 +194,19 @@ Meeting localization requires physical infrastructure inside Russia. This sectio
 
 Companies typically choose one of three approaches:
 
-Option 1: Partner with Russian hosting provider
+Option 1 - Partner with Russian hosting provider
 - Outsource compliance to local provider (Yandex Cloud, VK Cloud, 1C-Bitrix)
 - Trade convenience for control
 - Russian provider controls encryption keys and infrastructure
 - Stripe, PayPal used this approach before eventually blocking Russian access
 
-Option 2: Establish Russian subsidiary with own infrastructure
+Option 2 - Establish Russian subsidiary with own infrastructure
 - Maintain direct control
 - Significant capital expense ($100k-$1M+ for redundant infrastructure)
 - Ongoing operational complexity
 - Regulatory liability concentrated in your entity
 
-Option 3: Hybrid approach
+Option 3 - Hybrid approach
 - Russian servers for personal data storage
 - International servers for encrypted content and metadata
 - Most privacy-preserving if implemented correctly
@@ -282,7 +282,7 @@ Estonian/EU privacy law has no jurisdiction over Russian servers.
 For developers building applications used by both Russian and non-Russian users:
 
 ```python
-Problem: How to provide strong privacy to non-Russian users
+Problem - How to provide strong privacy to non-Russian users
 while complying with Russian localization?
 
 def architecture_for_mixed_user_base(user_location):
@@ -310,7 +310,7 @@ Cryptographic Approaches Under Localization
 
 Even with data stored in Russia, encryption can provide meaningful protection:
 
-Approach 1: User-Controlled Keys
+Approach 1 - User-Controlled Keys
 - User stores encryption key locally
 - Server stores encrypted data
 - Server cannot decrypt user content
@@ -361,7 +361,7 @@ class LocalizedEncryption {
 }
 ```
 
-Approach 2: Separate Key Management
+Approach 2 - Separate Key Management
 - Encryption keys stored outside Russia (EU key management service)
 - Data encrypted at Russian servers
 - Keys never travel to Russia
@@ -423,28 +423,28 @@ Migration Strategy for Global Companies
 If you're currently non-compliant and need to localize:
 
 ```
-Phase 1 (Month 1): Build Russian infrastructure
+Phase 1 (Month 1) - Build Russian infrastructure
 - Contract with Russian hosting provider or establish subsidiary
 - Deploy replicated databases to Russian servers
 - Test failover and performance
 
-Phase 2 (Month 2): Migrate data and test
+Phase 2 (Month 2) - Migrate data and test
 - Begin migrating user data to Russian infrastructure
 - Maintain international replicas for redundancy
 - Test access patterns
 
-Phase 3 (Month 3): Gradual traffic migration
+Phase 3 (Month 3) - Gradual traffic migration
 - Route Russian users to Russian servers
 - Monitor for issues and performance
 - Maintain fallback to international infrastructure
 
-Phase 4 (Ongoing): Compliance monitoring
+Phase 4 (Ongoing) - Compliance monitoring
 - Regular audits of data location
 - Updates to infrastructure as laws change
 - Monitoring of government data requests
 ```
 
-Estimated timeline: 3-6 months for small-to-medium companies.
+Estimated timeline - 3-6 months for small-to-medium companies.
 
 Economic Impact and Long-Term Viability
 
@@ -457,7 +457,7 @@ Estimated annual costs:
 - Network redundancy and backup: $50k-$200k
 - Compliance audits: $20k-$50k
 
-Total annual overhead: $280k-$900k per major service
+Total annual overhead - $280k-$900k per major service
 ```
 
 For many companies, this exceeds the revenue potential from Russian market. This is why many international companies (Google, Facebook, Amazon) have either blocked Russian users or severely limited services in Russia rather than implement localization.

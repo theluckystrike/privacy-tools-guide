@@ -99,9 +99,9 @@ ExpressVPN connection string for obfuscated mode
 expressVPN connect --obfuscated true --protocol auto
 ```
 
-Pricing: $12.95/month ($99.95/year billed annually)
-China reliability: Medium (blocking occurs periodically)
-Protocol: Proprietary obfuscation layer over OpenVPN
+Pricing - $12.95/month ($99.95/year billed annually)
+China reliability - Medium (blocking occurs periodically)
+Protocol - Proprietary obfuscation layer over OpenVPN
 
 NordVPN Specialized China Servers
 
@@ -112,17 +112,17 @@ NordVPN CLI connection to obfuscated server
 nordvpn connect --obfuscated --auto-connect on
 ```
 
-Pricing: $11.99/month (various billing cycles available)
-China reliability: Medium-High (frequent updates to evade blocking)
-Protocol: OpenVPN with obfuscation
+Pricing - $11.99/month (various billing cycles available)
+China reliability - Medium-High (frequent updates to evade blocking)
+Protocol - OpenVPN with obfuscation
 
 CyberGhost VPN for China
 
 CyberGhost provides dedicated streaming and region-specific servers:
 
-Pricing: $2.75/month (long-term plans)
-China reliability: Low-Medium (less focused on China than competitors)
-Protocol: OpenVPN and IKEv2
+Pricing - $2.75/month (long-term plans)
+China reliability - Low-Medium (less focused on China than competitors)
+Protocol - OpenVPN and IKEv2
 
 Mullvad VPN for Privacy
 
@@ -136,10 +136,10 @@ Check your IP
 curl https://am.i.mullvad.net/ip
 ```
 
-Pricing: Fixed 5 EUR (~$5.50) per month
-China reliability: Low (not optimized for China)
-Protocol: WireGuard
-Key feature: No user accounts required, complete anonymity
+Pricing - Fixed 5 EUR (~$5.50) per month
+China reliability - Low (not optimized for China)
+Protocol - WireGuard
+Key feature - No user accounts required, complete anonymity
 
 Custom OpenVPN Configuration for Maximum Control
 
@@ -180,7 +180,7 @@ DPI Detection Methods
 
 DPI Evasion Techniques
 
-MTU Fragmentation: Reduce MTU size to fragment packets:
+MTU Fragmentation - Reduce MTU size to fragment packets:
 
 ```bash
 Set lower MTU to fragment packets
@@ -189,7 +189,7 @@ ip link set dev tun0 mtu 1200
 This makes traffic appear more like standard HTTPS
 ```
 
-Traffic Shaping: Add randomized delays to mimic human behavior:
+Traffic Shaping - Add randomized delays to mimic human behavior:
 
 ```python
 #!/usr/bin/env python3
@@ -204,23 +204,23 @@ def shaped_request(data):
         time.sleep(random.uniform(0.1, 0.5))
 ```
 
-Domain Fronting: Use legitimate CDN domains to hide VPN traffic:
+Domain Fronting - Use legitimate CDN domains to hide VPN traffic:
 
 ```bash
 Route traffic through Cloudflare domain while actually connecting to VPN
-SNI: cdn.example.com (legitimate)
-Real destination: vpn.example.com (obfuscated)
+SNI - cdn.example.com (legitimate)
+Real destination - vpn.example.com (obfuscated)
 ```
 
 Legal and Regulatory Considerations
 
 VPN usage in China exists in a gray legal area:
 
-Official Position: The Chinese government has stated that unauthorized VPNs violate regulations, but enforcement is inconsistent.
+Official Position - The Chinese government has stated that unauthorized VPNs violate regulations, but enforcement is inconsistent.
 
-Business Travel Context: Foreign business travelers are generally given more latitude than citizens. However, VPN use is technically restricted.
+Business Travel Context - Foreign business travelers are generally given more latitude than citizens. However, VPN use is technically restricted.
 
-Practical Reality: Thousands of foreign business travelers use VPNs daily. Detection and prosecution of individual travelers is uncommon, though ISPs may throttle or block VPN traffic.
+Practical Reality - Thousands of foreign business travelers use VPNs daily. Detection and prosecution of individual travelers is uncommon, though ISPs may throttle or block VPN traffic.
 
 Risk Mitigation:
 1. Check with your company's legal team before traveling

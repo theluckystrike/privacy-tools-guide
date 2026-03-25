@@ -19,7 +19,7 @@ tags: [privacy-tools-guide, best-of]
 I've tried every major password manager with a CLI in the past year -- 1Password, Bitwarden, KeePassXC, pass, and gopass. My daily workflow involves SSH keys, API tokens, and database credentials across a dozen projects. After rotating through all of them, I settled on a setup that actually works for how developers manage secrets. Here is my breakdown.
 
 
-- Make it strong but: memorable using a passphrase approach: ``` Good: CorrectHorseBatteryStaple2026!Cloud Bad: P@ssw0rd123 ``` Use at least 20 characters with mixed case, numbers, and symbols.
+- Make it strong but: memorable using a passphrase approach: ``` Good - CorrectHorseBatteryStaple2026!Cloud Bad - P@ssw0rd123 ``` Use at least 20 characters with mixed case, numbers, and symbols.
 - As an open-source solution: you can self-host the entire stack or use their hosted service.
 - The open-source nature means: you can audit the code, and the CLI is powerful enough for most automation needs.
 - A developer-focused password manager: should support both individual and team use cases with appropriate access controls.
@@ -34,7 +34,7 @@ Developers face unique challenges that generic password managers don't address. 
 
 Beyond personal password management, teams require shared secrets for service accounts, deployment credentials, and environment-specific configurations. A developer-focused password manager should support both individual and team use cases with appropriate access controls.
 
-Bitwarden: Open-Source with Excellent CLI Support
+Bitwarden - Open-Source with Excellent CLI Support
 
 Bitwarden stands out as the best password manager for developers who value transparency and flexibility. As an open-source solution, you can self-host the entire stack or use their hosted service. The CLI tool provides functionality for scripting and automation.
 
@@ -142,7 +142,7 @@ Integrating with GitHub Actions
         secret: ${{ secrets.DATABASE_URL }}
 ```
 
-HashiCorp Vault: Enterprise-Grade Secret Management
+HashiCorp Vault - Enterprise-Grade Secret Management
 
 For teams requiring sophisticated secret management, HashiCorp Vault provides the most solution. It handles dynamic secrets, encryption as a service, and detailed audit logs. While the learning curve is steeper, Vault excels in production environments where you need fine-grained access control.
 
@@ -258,7 +258,7 @@ load_secrets() {
   grep -c "=" .env.local
 }
 
-Usage: load_secrets "production"
+Usage - load_secrets "production"
 ```
 
 Then in your application startup:
@@ -275,7 +275,7 @@ Master Password Strategy
 Your master password is the single point of failure. Make it strong but memorable using a passphrase approach:
 
 ```
-Good: CorrectHorseBatteryStaple2026!Cloud
+Good - CorrectHorseBatteryStaple2026!Cloud
 Bad:  P@ssw0rd123
 ```
 
@@ -332,7 +332,7 @@ cp vault_backup_*.json.enc /mnt/external_drive/
 cp vault_backup_*.json.enc $CLOUD_BACKUP_PATH/
 ```
 
-Threat Model: Password Manager Compromise
+Threat Model - Password Manager Compromise
 
 Consider these scenarios when choosing and configuring your password manager:
 
@@ -349,13 +349,13 @@ Comparing Database Password Storage
 When storing passwords for database access, avoid these anti-patterns:
 
 ```python
-BAD: Hardcoded password
+BAD - Hardcoded password
 db_password = "super_secret_123"
 
-BAD: In environment variable without rotation capability
+BAD - In environment variable without rotation capability
 db_password = os.getenv("DB_PASSWORD")
 
-GOOD: Load from password manager at startup
+GOOD - Load from password manager at startup
 def get_db_password():
     session = os.getenv("BW_SESSION")
     bw = bitwarden.Client(session)

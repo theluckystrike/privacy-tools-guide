@@ -50,7 +50,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install Fail2ban
+Step 1 - Install Fail2ban
 
 ```bash
 Debian/Ubuntu
@@ -71,7 +71,7 @@ fail2ban-client status
 
 ---
 
-Step 2: Basic Configuration
+Step 2 - Basic Configuration
 
 Fail2ban's configuration has two layers:
 - `/etc/fail2ban/jail.conf`. default settings (don't edit this, it gets overwritten on updates)
@@ -109,7 +109,7 @@ banaction_allports = nftables[type=allports]
 
 ---
 
-Step 3: SSH Jail
+Step 3 - SSH Jail
 
 ```ini
 In /etc/fail2ban/jail.local, add:
@@ -123,7 +123,7 @@ maxretry = 3
 bantime = 86400   # 24 hours for SSH attackers
 findtime = 300    # 5-minute window
 
-Aggressive mode: ban for 1 week after repeat offenses
+Aggressive mode - ban for 1 week after repeat offenses
 (requires fail2ban-extras or custom jail)
 ```
 
@@ -133,7 +133,7 @@ sudo fail2ban-client reload
 
 Check sshd jail status
 sudo fail2ban-client status sshd
-Shows: Currently banned IPs, total banned, failures
+Shows - Currently banned IPs, total banned, failures
 
 Manually ban an IP
 sudo fail2ban-client set sshd banip 1.2.3.4
@@ -144,7 +144,7 @@ sudo fail2ban-client set sshd unbanip 1.2.3.4
 
 ---
 
-Step 4: Nginx and Apache Jails
+Step 4 - Nginx and Apache Jails
 
 ```ini
 /etc/fail2ban/jail.local
@@ -188,7 +188,7 @@ bantime = 86400
 
 ---
 
-Step 5: Custom Jail and Filter
+Step 5 - Custom Jail and Filter
 
 Create a jail for any service that logs authentication failures. Example: protecting a WordPress login:
 
@@ -217,12 +217,12 @@ findtime = 600
 ```bash
 Test your filter against the log file before enabling
 fail2ban-regex /var/log/nginx/access.log /etc/fail2ban/filter.d/wordpress-xmlrpc.conf
-Shows: how many lines match, what was captured
+Shows - how many lines match, what was captured
 ```
 
 ---
 
-Step 6: Email Alerts
+Step 6 - Email Alerts
 
 ```bash
 Configure email notifications for each ban event
@@ -276,7 +276,7 @@ if __name__ == '__main__':
 
 ---
 
-Step 7: Persistent Bans (Database)
+Step 7 - Persistent Bans (Database)
 
 By default, fail2ban forgets bans on restart. Enable persistent bans via its database:
 
@@ -289,7 +289,7 @@ dbpurgeage = 86400  # Keep ban history for 24 hours
 
 ---
 
-Step 8: Aggressive Mode: Increasing Ban Times for Repeat Offenders
+Step 8 - Aggressive Mode: Increasing Ban Times for Repeat Offenders
 
 ```bash
 Install fail2ban-extras for recidive jail (bans IPs that get banned repeatedly)
@@ -308,7 +308,7 @@ maxretry = 5       # 5 bans in 24 hours = 1 week ban
 
 ---
 
-Step 9: Monitor and Statistics
+Step 9 - Monitor and Statistics
 
 ```bash
 Overall status
@@ -337,7 +337,7 @@ grep "Ban " /var/log/fail2ban.log | \
 
 ---
 
-Step 10: Test Your Configuration
+Step 10 - Test Your Configuration
 
 ```bash
 Deliberately trigger the SSH jail using a test (from a safe IP)

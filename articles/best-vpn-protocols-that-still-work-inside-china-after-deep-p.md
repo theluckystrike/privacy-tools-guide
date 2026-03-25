@@ -27,7 +27,7 @@ V2Ray with VMess over WebSocket+TLS, Shadowsocks with obfsproxy, and Trojan all 
 2.
 - Mastering advanced features takes: 1-2 weeks of regular use.
 
-Understanding the Enemy: How DPI Detects VPNs
+Understanding the Enemy - How DPI Detects VPNs
 
 Deep packet inspection examines not just packet headers, but the payload contents. Standard VPN protocols have recognizable signatures:
 
@@ -127,7 +127,7 @@ def start_obfs_bridge(listen_port, target_port, node_id):
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
-        print("Usage: obfs_bridge.py <listen_port> <target_port> <node_id>")
+        print("Usage - obfs_bridge.py <listen_port> <target_port> <node_id>")
         sys.exit(1)
 
     start_obfs_bridge(int(sys.argv[1]), int(sys.argv[2]), sys.argv[3])
@@ -143,7 +143,7 @@ obfs4proxy -client -bindAddress=127.0.0.1:1194 \
 Then connect OpenVPN to 127.0.0.1:1194
 ```
 
-V2Ray and Shadowsocks: Purpose-Built for Censorship
+V2Ray and Shadowsocks - Purpose-Built for Censorship
 
 Shadowsocks and V2Ray were specifically designed to evade censorship. V2Ray supports multiple protocols and can chain multiple transport methods.
 
@@ -210,7 +210,7 @@ Start server
 ss-server -c /etc/shadowsocks-libev/config.json -v
 ```
 
-Custom TLS Tunnel: The Developer Approach
+Custom TLS Tunnel - The Developer Approach
 
 For maximum control, you can create a custom TLS tunnel that wraps any traffic. This technique uses a simple TLS endpoint to tunnel traffic through port 443.
 
@@ -300,7 +300,7 @@ Verify DNS isn't leaking
 dig +short myip.opendns.com @resolver1.opendns.com
 ```
 
-The ecosystem changes frequently. What works today may be blocked tomorrow. Stay informed through communities like the [AzireVPN forums](https://azirevpn.com) and follow developers who actively maintain obfuscation tools.
+The environment changes frequently. What works today may be blocked tomorrow. Stay informed through communities like the [AzireVPN forums](https://azirevpn.com) and follow developers who actively maintain obfuscation tools.
 
 Frequently Asked Questions
 

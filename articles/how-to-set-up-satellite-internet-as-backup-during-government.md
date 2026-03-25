@@ -24,7 +24,7 @@ Table of Contents
 - [Hardware Requirements](#hardware-requirements)
 - [Operational Security Considerations](#operational-security-considerations)
 - [Troubleshooting](#troubleshooting)
-- [Advanced Redundancy: Multiple Satellite Providers](#advanced-redundancy-multiple-satellite-providers)
+- [Advanced Redundancy - Multiple Satellite Providers](#advanced-redundancy-multiple-satellite-providers)
 - [Compliance and Legal Considerations](#compliance-and-legal-considerations)
 
 Prerequisites
@@ -37,7 +37,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Satellite Internet as a Backup Solution
+Step 1 - Understand Satellite Internet as a Backup Solution
 
 Satellite internet operates by transmitting data between a dish antenna at your location and satellites orbiting the Earth. Unlike cable or fiber optic connections that depend on ground-level infrastructure, satellite connectivity only requires a clear view of the sky. This independence from local telecommunications infrastructure makes it resilient to government-ordered shutdowns that target terrestrial networks.
 
@@ -61,7 +61,7 @@ For portable or emergency setups, consider:
 - Portable terminals: Compact units designed for mobility and quick deployment
 - Vehicle-mounted systems: Integrated solutions for mobile operations
 
-Step 2: Network Configuration for Automatic Failover
+Step 2 - Network Configuration for Automatic Failover
 
 Implementing true backup functionality requires configuring your network to automatically switch to satellite internet when your primary connection fails. This section covers the technical implementation using common tools.
 
@@ -187,7 +187,7 @@ Satellite connections typically have lower bandwidth and higher latency:
 - Use bandwidth-efficient protocols (HTTP/2, gRPC with compression)
 - Set up offline-first workflows that sync when connectivity is available
 
-Step 3: Test Your Configuration
+Step 3 - Test Your Configuration
 
 Regular testing ensures your backup system works when needed:
 
@@ -207,7 +207,7 @@ iperf3 -c test-server.example.com -R -V -M 1280
 
 Document your test results to establish baseline expectations during actual emergencies.
 
-Step 4: Cost and Accessibility
+Step 4 - Cost and Accessibility
 
 Satellite internet services typically operate on subscription models with varying data allowances. Some providers offer pay-as-you-go options, while others provide monthly plans with priority data. Research providers available in your region and understand their terms of service, including any restrictions that might apply during government emergencies.
 
@@ -250,7 +250,7 @@ Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-Advanced Redundancy: Multiple Satellite Providers
+Advanced Redundancy - Multiple Satellite Providers
 
 For critical resilience, organizations should maintain contracts with multiple satellite providers to prevent single-point-of-failure scenarios.
 
@@ -370,7 +370,7 @@ class MultiProviderMonitor:
         print(f"[{timestamp}] {provider['name']}: {status['status']}", end='')
 
         if status['status'] == 'up':
-            print(f" - Latency: {status['latency']:.1f}ms, Loss: {status['packet_loss']:.1f}%")
+            print(f" - Latency - {status['latency']:.1f}ms, Loss - {status['packet_loss']:.1f}%")
         elif status['status'] == 'degraded':
             print(f" - WARNING: High packet loss {status['packet_loss']:.1f}%")
         else:
@@ -415,7 +415,7 @@ if __name__ == '__main__':
 
 This system maintains awareness of both connections and can switch automatically if the primary fails.
 
-Step 5: Privacy-Optimized Satellite Configuration
+Step 5 - Privacy-Optimized Satellite Configuration
 
 Satellite internet creates unique privacy considerations, your terminal's physical location and orbital position data could reveal information.
 
@@ -473,7 +473,7 @@ chmod +x /usr/local/bin/wg-obfs.sh
 
 This makes your satellite VPN traffic indistinguishable from normal web traffic to network analysis.
 
-Step 6: Offline-First Architecture for Satellite Resilience
+Step 6 - Offline-First Architecture for Satellite Resilience
 
 Satellite connectivity is unreliable compared to terrestrial internet. Design applications to work offline and sync when connection is available:
 
@@ -556,7 +556,7 @@ function OfflineFirstApp() {
   return (
     <div>
       <div className="status">
-        Network: {isOnline ? 'online' : 'offline'}
+        Network - {isOnline ? 'online' : 'offline'}
         Sync: {syncStatus}
       </div>
 
@@ -568,7 +568,7 @@ function OfflineFirstApp() {
 
 This architecture ensures work is never lost even during extended satellite outages, data syncs when connection resumes.
 
-Step 7: Long-Duration Outage Preparation
+Step 7 - Long-Duration Outage Preparation
 
 For extended internet shutdowns (days or weeks), additional preparation helps:
 

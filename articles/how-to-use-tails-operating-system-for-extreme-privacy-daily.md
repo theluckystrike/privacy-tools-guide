@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Tails Architecture
+Step 1 - Understand Tails Architecture
 
 Tails operates on a fundamental principle: nothing should persist between sessions unless explicitly configured. When you boot Tails, the entire operating system loads into RAM, leaving no trace on the host machine's storage. This architecture provides several privacy guarantees that traditional operating systems cannot match.
 
@@ -48,7 +48,7 @@ The system consists of three primary layers:
 
 This design means every session starts with a clean slate, no browser history, no cached credentials, no filesystem artifacts. For developers working with sensitive data or conducting security research, this isolation provides a valuable sandbox.
 
-Step 2: Set Up Tails for Daily Use
+Step 2 - Set Up Tails for Daily Use
 
 Installation Methods
 
@@ -87,9 +87,9 @@ Inspect persistent volume from another Linux system
 sudo cryptsetup luksDump /dev/sdX2
 
 The header shows encryption parameters
-Type: LUKS2
-Cipher: aes-xts-plain64
-Key size: 256 bits
+Type - LUKS2
+Cipher - aes-xts-plain64
+Key size - 256 bits
 ```
 
 Configure which features persist by editing `/live/persistence.conf` on the persistent volume:
@@ -100,7 +100,7 @@ Configure which features persist by editing `/live/persistence.conf` on the pers
 /home/amnesia/.gnupg       source=Persistent,link=./tor-connection/gnupg
 ```
 
-Step 3: Daily Workflow Integration
+Step 3 - Daily Workflow Integration
 
 Development Workflows
 
@@ -181,7 +181,7 @@ This provides additional isolation between applications
 Requires significant resources and setup time
 ```
 
-Step 4: Automation and Scripting
+Step 4 - Automation and Scripting
 
 For daily privacy workflows, automation reduces human error:
 

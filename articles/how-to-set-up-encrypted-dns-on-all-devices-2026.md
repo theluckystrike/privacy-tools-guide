@@ -38,16 +38,16 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The DNS Privacy Problem
+Step 1 - The DNS Privacy Problem
 
 When you visit example.com:
 
 Without Encrypted DNS:
 ```
 Your Device → ISP DNS Server
-    Query: "What is the IP for example.com?"
+    Query - "What is the IP for example.com?"
     ↓
-ISP sees: example.com
+ISP sees - example.com
     → Logs query to your account
     → Can sell this data to advertisers
     → ISP invoice shows all sites visited
@@ -63,17 +63,17 @@ ISP implications:
 With Encrypted DNS (DoH/DoT):
 ```
 Your Device → Encrypted tunnel → DNS Provider
-    Query: "What is the IP for example.com?" (encrypted)
+    Query - "What is the IP for example.com?" (encrypted)
     ↓
-ISP sees: "Encrypted DNS traffic to 1.1.1.1"
+ISP sees - "Encrypted DNS traffic to 1.1.1.1"
     → Cannot see which sites you visit
     → Cannot log browsing history
     → Browsing remains private
 ```
 
-Privacy benefit: ISP cannot identify sites you visit. DNS provider sees queries (choose provider carefully).
+Privacy benefit - ISP cannot identify sites you visit. DNS provider sees queries (choose provider carefully).
 
-Step 2: DNS Encryption Standards
+Step 2 - DNS Encryption Standards
 
 DNS over HTTPS (DoH)
 
@@ -91,9 +91,9 @@ DNS over TLS (DoT)
 - Disadvantage: Easily blocked by restrictive networks
 - Adoption: Enterprise preference
 
-Practical difference: Negligible for consumers. DoH recommended for ease.
+Practical difference - Negligible for consumers. DoH recommended for ease.
 
-Step 3: Encrypted DNS Providers Compared
+Step 3 - Encrypted DNS Providers Compared
 
 1. Cloudflare (1.1.1.1)
 
@@ -115,9 +115,9 @@ Additional Features:
 - Adult content filtering (optional)
 - Performance optimized (fast response times)
 
-Cost: Free (with optional pro features)
+Cost - Free (with optional pro features)
 
-Best for: Users prioritizing speed + privacy, zero budget.
+Best for - Users prioritizing speed + privacy, zero budget.
 
 2. NextDNS
 
@@ -144,7 +144,7 @@ Pricing:
 - Free: 300k queries/month (~10 queries/min = very limited)
 - Paid: $1.99-4.99/month per device
 
-Best for: Privacy-focused users, multiple devices, advanced filtering needs.
+Best for - Privacy-focused users, multiple devices, advanced filtering needs.
 
 3. Quad9
 
@@ -165,9 +165,9 @@ Additional Features:
 - Phishing prevention
 - CDN optimization
 
-Cost: Free (completely, no limits)
+Cost - Free (completely, no limits)
 
-Best for: Privacy purists, security focus, non-profit preferred.
+Best for - Privacy purists, security focus, non-profit preferred.
 
 4. Mullvad (mullvad.net)
 
@@ -186,11 +186,11 @@ Additional Features:
 - Ad blocking (optional)
 - Tracker blocking (optional)
 - DNSSEC validation
-- Optional: Use with Mullvad VPN ($5.99/month)
+- Optional - Use with Mullvad VPN ($5.99/month)
 
-Cost: Free standalone, $5.99/month with VPN
+Cost - Free standalone, $5.99/month with VPN
 
-Best for: VPN users, jurisdiction privacy preference (Sweden), maximum privacy.
+Best for - VPN users, jurisdiction privacy preference (Sweden), maximum privacy.
 
 5. Open DNS (Cisco)
 
@@ -205,7 +205,7 @@ Privacy Policy:
 -  Not pure privacy-focused
 -  Logging by default
 
-Best for: Enterprise/parental control use cases, not privacy-first.
+Best for - Enterprise/parental control use cases, not privacy-first.
 
 Provider Comparison Table
 
@@ -219,9 +219,9 @@ Provider Comparison Table
 
 Cloudflare (speed + privacy) or Quad9 (non-profit, security focus).
 
-Step 4: Set Up : macOS
+Step 4 - Set Up : macOS
 
-Method 1: System Preferences (Easiest)
+Method 1 - System Preferences (Easiest)
 
 macOS 13+:
 
@@ -243,13 +243,13 @@ https://dns.quad9.net/dns-query
 
 Verification:
 ```bash
-Terminal: Verify DNS queries are encrypted
+Terminal - Verify DNS queries are encrypted
 scutil -d -v <<< 'show State:/Network/Global/DNS'
 
 Should show your custom DNS provider
 ```
 
-Method 2: Network Interface (Advanced)
+Method 2 - Network Interface (Advanced)
 
 For more control, edit networksetup:
 
@@ -264,7 +264,7 @@ Verify
 networksetup -getdnsservers Wi-Fi
 ```
 
-Method 3: Stubby (DNS over TLS)
+Method 3 - Stubby (DNS over TLS)
 
 For native DoT support (more private than DoH):
 
@@ -289,11 +289,11 @@ listen_addresses:
 
 4. Start Stubby: `brew services start stubby`
 
-Advantage: Encrypts DNS all the way to provider, more secure than DoH in some scenarios.
+Advantage - Encrypts DNS all the way to provider, more secure than DoH in some scenarios.
 
-Step 5: Set Up : Windows 10/11
+Step 5 - Set Up : Windows 10/11
 
-Method 1: Built-in Settings (Windows 11)
+Method 1 - Built-in Settings (Windows 11)
 
 1. Settings > Network & Internet > Advanced network options
 2. Under "More network options" > DNS settings
@@ -308,11 +308,11 @@ Method 1: Built-in Settings (Windows 11)
 
 Verification:
 ```powershell
-PowerShell: Verify DNS
+PowerShell - Verify DNS
 nslookup google.com
 ```
 
-Method 2: Command Line (All Windows)
+Method 2 - Command Line (All Windows)
 
 ```powershell
 Set DNS with DoH for Cloudflare
@@ -325,7 +325,7 @@ Verify
 Get-DnsClientNrptPolicy
 ```
 
-Method 3: Group Policy (Enterprise)
+Method 3 - Group Policy (Enterprise)
 
 For domain-joined computers:
 
@@ -337,7 +337,7 @@ gpedit.msc > Computer Configuration >
 
 Set DNS servers to DoH provider addresses.
 
-Method 4: Stubby on Windows
+Method 4 - Stubby on Windows
 
 1. Download Stubby from GitHub: `github.com/getdnsapi/stubby`
 
@@ -347,9 +347,9 @@ Method 4: Stubby on Windows
 
 4. Set system DNS to 127.0.0.1
 
-Step 6: Set Up : Linux
+Step 6 - Set Up : Linux
 
-Method 1: systemd-resolved (Modern)
+Method 1 - systemd-resolved (Modern)
 
 Most Linux distros use systemd-resolved for DNS.
 
@@ -364,7 +364,7 @@ FallbackDNS=2606:4700:4700::1111
 Enable DoH
 DNSOverTLS=yes
 
-Optional: DNSSEC validation
+Optional - DNSSEC validation
 DNSSEC=yes
 ```
 
@@ -376,7 +376,7 @@ Verify
 systemd-resolve --status
 ```
 
-Method 2: Quad9 on Linux
+Method 2 - Quad9 on Linux
 
 ```bash
 Edit resolved.conf
@@ -390,7 +390,7 @@ Restart
 sudo systemctl restart systemd-resolved
 ```
 
-Method 3: Stubby on Linux (Advanced)
+Method 3 - Stubby on Linux (Advanced)
 
 ```bash
 Install Stubby
@@ -412,14 +412,14 @@ Verify
 dig @127.0.0.1 google.com
 ```
 
-Step 7: Set Up : iOS
+Step 7 - Set Up : iOS
 
 Native DoH Support (iOS 14+)
 
 1. Settings > VPN & Device Management
 2. DNS Settings > Encrypted DNS
 3. Choose provider:
- - Cloudflare: `https://1.1.1.1/dns-query`
+ - Cloudflare - `https://1.1.1.1/dns-query`
  - Quad9: `https://dns.quad9.net/dns-query`
  - NextDNS: `https://dns.nextdns.io` (requires account)
 
@@ -436,9 +436,9 @@ Alternative app for more control:
 3. Enable VPN mode (allows system-wide DNS encryption)
 4. Verify: Open app, check "Connected" status
 
-Advantage: Works across WiFi and cellular automatically.
+Advantage - Works across WiFi and cellular automatically.
 
-Step 8: Set Up : Android
+Step 8 - Set Up : Android
 
 Native DoH Support (Android 9+)
 
@@ -477,9 +477,9 @@ Nebulo provides GUI and additional features:
 3. Enable VPN mode
 4. Verification: Nebulo dashboard shows "Connected"
 
-Advantage: Works across WiFi and cellular, shows query log.
+Advantage - Works across WiFi and cellular, shows query log.
 
-Step 9: Verification: All Platforms
+Step 9 - Verification: All Platforms
 
 DNS Leak Test
 
@@ -528,9 +528,9 @@ Resolve-DnsName -Name google.com
 
 Performance Impact
 
-Myth: Encrypted DNS is slower.
+Myth - Encrypted DNS is slower.
 
-Reality: Negligible performance difference (0-5ms added latency).
+Reality - Negligible performance difference (0-5ms added latency).
 
 Actual measurements (2026 data):
 | Provider | Avg Latency | Query Time |
@@ -544,7 +544,7 @@ Actual measurements (2026 data):
 
 Troubleshooting
 
-Problem: "DNS not responding" after setup.
+Problem - "DNS not responding" after setup.
 
 Solution:
 - Verify network connected
@@ -552,28 +552,28 @@ Solution:
 - Clear DNS cache: `sudo systemctl restart systemd-resolved` (Linux)
 - Disable VPN briefly (may conflict)
 
-Problem: Some websites won't load.
+Problem - Some websites won't load.
 
 Solution:
 - May be ISP-level blocking (rare)
 - Try different DNS provider (Quad9 if Cloudflare fails)
 - Add fallback DNS server
 
-Problem: DNS slowdown on mobile.
+Problem - DNS slowdown on mobile.
 
 Solution:
 - Switch from cellular to WiFi
 - Use app (DNSCloak, Nebulo) instead of native settings
 - Verify VPN not active (causes double-encryption)
 
-Problem: Corporate network blocks DoH.
+Problem - Corporate network blocks DoH.
 
 Solution:
 - Firewall blocking port 443 (DoH) or 853 (DoT)
 - Use VPN to bypass corporate firewall
 - Use Mullvad VPN ($5.99/mo) combines DNS encryption + VPN
 
-Step 10: Privacy Considerations
+Step 10 - Privacy Considerations
 
 Choosing Between Providers:
 
@@ -584,14 +584,14 @@ Choosing Between Providers:
 | VPN included | Mullvad |
 | Advanced filtering | NextDNS |
 
-Key point: Even with encrypted DNS, your DNS provider sees queries. Choose provider based on trust:
+Key point - Even with encrypted DNS, your DNS provider sees queries. Choose provider based on trust:
 
 - Cloudflare: US company, transparent, audited
 - Quad9: Non-profit, EU-friendly
 - Mullvad: VPN provider, maximalist privacy
 - NextDNS: Privacy startup, advanced controls
 
-Step 11: Complete Setup Checklist
+Step 11 - Complete Setup Checklist
 
 - [ ] Choose DNS provider (recommend: Cloudflare or Quad9)
 - [ ] Set up on all devices (macOS, Windows, iOS, Android)

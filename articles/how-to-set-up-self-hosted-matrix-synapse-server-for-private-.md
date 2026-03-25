@@ -29,7 +29,7 @@ sudo systemctl enable docker
 
 This guide assumes you have basic familiarity with the command line and a registered domain. Let's proceed with the installation.
 
-Step 1: Install Synapse with Docker
+Step 1 - Install Synapse with Docker
 
 The recommended way to run Synapse is via Docker, which isolates the application and simplifies updates. Create a directory for your Synapse deployment:
 
@@ -78,7 +78,7 @@ docker logs synapse
 
 You should see messages indicating Synapse has started successfully and is listening on ports 8008 (client API) and 8448 (federation).
 
-Step 2: Configure SSL/TLS
+Step 2 - Configure SSL/TLS
 
 Matrix requires TLS for secure communications. For a production deployment, use a reverse proxy like Caddy or Nginx with automatic SSL certificates. Here's a Caddyfile configuration:
 
@@ -122,7 +122,7 @@ Add security headers to all responses to prevent clickjacking and content-type s
     add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
 ```
 
-Step 3: Create Admin Users and Registering Clients
+Step 3 - Create Admin Users and Registering Clients
 
 Create an admin user to manage your server:
 
@@ -140,7 +140,7 @@ For client connections, you can use Element (formerly Riot.im), the reference Ma
 
 For mobile users, Element is available on Android via F-Droid (preferred for privacy) and both iOS and Android through their respective app stores. The SchildiChat client on Android provides additional privacy-focused defaults including automatic room key backup and improved notification handling.
 
-Step 4: Enable End-to-End Encryption
+Step 4 - Enable End-to-End Encryption
 
 Matrix supports end-to-end encryption (E2EE) by default using the Olm and Megolm protocols. When you create a new room in Element, encryption is available by toggling the encryption setting in room settings. Each device gets its own encryption keys stored locally.
 
@@ -161,7 +161,7 @@ Cross-Signing for Multi-Device Verification
 
 Matrix's cross-signing system allows you to verify all your devices with a single action rather than verifying each device pair individually. After logging in on a second device, go to Settings → Security & Privacy → Cross-signing and verify the new session from an already-verified device. Once cross-signing is set up, new room members appear as verified automatically if they share a verified identity across devices.
 
-Step 5: Hardening Your Synapse Server
+Step 5 - Hardening Your Synapse Server
 
 Several configuration changes improve your server's security. Edit the `homeserver.yaml` file in your data directory:
 
@@ -245,7 +245,7 @@ docker-compose up -d
 
 Subscribe to the Matrix Security Disclosure mailing list at matrix.org to receive notifications of new CVEs before they are publicly disclosed.
 
-Step 6: Monitor and Log Management
+Step 6 - Monitor and Log Management
 
 For a privacy-focused deployment, log retention deserves deliberate attention. Synapse logs contain IP addresses and user identifiers by default. Configure log rotation and minimal retention:
 
@@ -276,7 +276,7 @@ root:
 
 Three days of log retention at WARNING level captures operational errors without accumulating a detailed record of user sessions. If your server is subpoenaed, there is little to hand over.
 
-Step 7: Configure a Tor Onion Service for Hidden Access
+Step 7 - Configure a Tor Onion Service for Hidden Access
 
 For high-risk deployments where server location must remain unknown, run Synapse behind a Tor onion service. This hides the server's IP address from both users and potential adversaries, and provides a stable address that remains accessible even if the domain is seized or blocked.
 
@@ -308,7 +308,7 @@ public_baseurl: "http://youronionaddress.onion/"
 
 Clients that support onion addresses (Element Desktop with Tor configured as a SOCKS5 proxy on 127.0.0.1:9050) can connect directly without exposing the connection to their ISP. Share the `.onion` address only through already-encrypted channels.
 
-Step 8: Test Federation
+Step 8 - Test Federation
 
 One of Matrix's strengths is federation, servers communicating with each other. Test federation by creating a room and inviting a user from another Matrix server, such as matrix.org. If federation works, you'll see messages flow between servers.
 

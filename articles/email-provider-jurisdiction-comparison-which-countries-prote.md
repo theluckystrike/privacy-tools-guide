@@ -18,7 +18,7 @@ tags: [privacy-tools-guide]
 
 When selecting an email provider, most users focus on features, storage, and interface design. However, the legal jurisdiction where an email provider operates determines how much access governments have to your inbox. This factor often receives less attention than it deserves, especially for developers and power users who handle sensitive communications.
 
-Manual step: Register and verify new account
+Manual step - Register and verify new account
 
 2.
 
@@ -32,7 +32,7 @@ Table of Contents
 - [Making an Informed Choice](#making-an-informed-choice)
 - [Government Data Request Analysis by Jurisdiction](#government-data-request-analysis-by-jurisdiction)
 - [Metadata Exposure by Country](#metadata-exposure-by-country)
-- [Email Provider Audit: Checking Jurisdiction Claims](#email-provider-audit-checking-jurisdiction-claims)
+- [Email Provider Audit - Checking Jurisdiction Claims](#email-provider-audit-checking-jurisdiction-claims)
 - [Jurisdiction-Aware Email Architecture](#jurisdiction-aware-email-architecture)
 - [Alternative Jurisdiction Strategies](#alternative-jurisdiction-strategies)
 - [Transitioning Between Providers](#transitioning-between-providers)
@@ -255,7 +255,7 @@ METADATA_EXPOSED = {
 
 For journalists and activists, metadata exposure is as damaging as content exposure.
 
-Email Provider Audit: Checking Jurisdiction Claims
+Email Provider Audit - Checking Jurisdiction Claims
 
 Before trusting an email provider's privacy claims, verify their actual jurisdiction:
 
@@ -324,9 +324,9 @@ BACKUP_EMAIL="you@tutanota.com"     # Germany
 EMERGENCY_EMAIL="you@posteo.de"     # Germany
 
 Distribute contact info selectively
-Journalists: ProtonMail (Swiss jurisdiction)
-Colleagues: Tutanota (German jurisdiction)
-Family: Personal domain (whatever jurisdiction preferred)
+Journalists - ProtonMail (Swiss jurisdiction)
+Colleagues - Tutanota (German jurisdiction)
+Family - Personal domain (whatever jurisdiction preferred)
 ```
 
 Self-Hosted Email Server:
@@ -334,7 +334,7 @@ For maximum control, run your own mail server on infrastructure you control:
 
 ```bash
 Self-hosted email with Mail-in-a-Box
-Jurisdiction: Depends on hosting provider location
+Jurisdiction - Depends on hosting provider location
 
 Install Mail-in-a-Box (open-source email server)
 curl https://mailinabox.email/setup.sh | sudo bash
@@ -370,7 +370,7 @@ NEW_PROVIDER="protonmail.com"
 
 1. Set up new email account
 echo "Step 1: Create new email account at $NEW_PROVIDER"
-Manual step: Register and verify new account
+Manual step - Register and verify new account
 
 2. Export old emails (if provider allows)
 Gmail export via Takeout
@@ -386,7 +386,7 @@ Do this gradually to avoid exposure
 4. Forward emails from old account
 Set up auto-forward to new account
 Keep forwarding for 6-12 months
-SECURITY: Use BCC if possible to hide forwarding
+SECURITY - Use BCC if possible to hide forwarding
 
 5. Announce transition securely
 Email announcement to important contacts ONLY

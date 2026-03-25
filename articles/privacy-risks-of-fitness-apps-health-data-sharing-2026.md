@@ -35,7 +35,7 @@ Table of Contents
 - [The Fitness Data Economy](#the-fitness-data-economy)
 - [Strava. Location Privacy Problem](#strava-location-privacy-problem)
 - [Peloton. Data Broker Risks](#peloton-data-broker-risks)
-- [Apple Health. Ecosystem Advantage](#apple-health-ecosystem-advantage)
+- [Apple Health. environment Advantage](#apple-health-environment-advantage)
 - [Google Fit. Data Sharing Model](#google-fit-data-sharing-model)
 - [Fitbit (Amazon). Data Acquisition Concern](#fitbit-amazon-data-acquisition-concern)
 - [HIPAA Gaps and Legal Exposure](#hipaa-gaps-and-legal-exposure)
@@ -55,7 +55,7 @@ Fitness data is monetized in ways most users never realize:
 - Data brokers: Aggregate fitness data and resell to insurance companies, employers, and governments
 - Researchers: Academic institutions and government health agencies purchase anonymized datasets
 
-Financial incentive: A single user's fitness dataset sells for $10-$50 to insurers. With 100 million users, that's $1-5 billion in annual data sales.
+Financial incentive - A single user's fitness dataset sells for $10-$50 to insurers. With 100 million users, that's $1-5 billion in annual data sales.
 
 Strava. Location Privacy Problem
 
@@ -92,7 +92,7 @@ Insurers can:
 - Identify activity drops that correlate with health issues
 - Set premiums based on activity levels
 
-Real Case: In 2018, Strava's heatmap revealed military base locations and patrol routes when aggregated activity data was published. The app is now banned on many military installations.
+Real Case - In 2018, Strava's heatmap revealed military base locations and patrol routes when aggregated activity data was published. The app is now banned on many military installations.
 
 How to Secure Strava
 
@@ -131,7 +131,7 @@ Peloton collects:
 - Weight/body metrics (optional profile data)
 - Payment information (billing address, method)
 
-Privacy Problem: Peloton was revealed in 2021 to be working with data brokers to sell aggregated fitness data. The company explicitly states in their privacy policy:
+Privacy Problem - Peloton was revealed in 2021 to be working with data brokers to sell aggregated fitness data. The company explicitly states in their privacy policy:
 
 > "We may share your information with... vendors and service providers... including those who may use your information for marketing purposes."
 
@@ -155,9 +155,9 @@ Peloton Privacy Controls
  - While this is extreme, old workouts can be deleted individually
  - Or delete account entirely to erase all data
 
-Cost: Peloton still monitors aggregate usage patterns. Opting out only prevents individual-level sharing.
+Cost - Peloton still monitors aggregate usage patterns. Opting out only prevents individual-level sharing.
 
-Apple Health. Ecosystem Advantage
+Apple Health. environment Advantage
 
 Apple Health is the most privacy-forward major fitness platform, but with caveats.
 
@@ -176,7 +176,7 @@ Apple's Privacy Model:
 - No third-party advertising in Health app
 - No data sharing with external companies (Apple claims)
 
-Caveat: Apple does share health data with:
+Caveat - Apple does share health data with:
 - Your doctor (if you consent to Health Records feature)
 - Medical research institutions (ResearchKit. opt-in only)
 - Third-party apps you explicitly authorize (e.g., MyFitnessPal, Strava)
@@ -249,7 +249,7 @@ Amazon acquired Fitbit in 2021. Major concern: FTC settlement prohibits Amazon f
 What Amazon Currently Does:
 - Uses Fitbit data to recommend products (internal use)
 - Sends you targeted ads based on fitness patterns (Amazon Shopping app)
-- May share data with Echo/Alexa ecosystem
+- May share data with Echo/Alexa environment
 
 Future Risk:
 - After 2041, FTC restrictions lift
@@ -322,18 +322,18 @@ Insurance company, employer, advertiser
 
 Actionable Privacy Steps
 
-Tier 1: Basic Protection (5 minutes)
+Tier 1 - Basic Protection (5 minutes)
 - [ ] Make Strava activities private
 - [ ] Opt out of Peloton data sharing
 - [ ] Remove third-party apps from Apple Health
 
-Tier 2: Medium Protection (30 minutes)
+Tier 2 - Medium Protection (30 minutes)
 - [ ] Switch to Apple Health or Garmin (if possible)
 - [ ] Enable two-factor authentication on all fitness apps
 - [ ] Export data from Fitbit, Strava, Peloton
 - [ ] Delete accounts for apps you don't actively use
 
-Tier 3: Maximum Protection (2 hours)
+Tier 3 - Maximum Protection (2 hours)
 - [ ] Delete all fitness app accounts
 - [ ] Verify deletion in data broker opt-out services (Experian, Equifax)
 - [ ] Use offline-only fitness tracking (Garmin watch with no cloud sync)
@@ -350,7 +350,7 @@ Several services can opt you out of data brokers:
  - Optery (GDPR/CCPA specialist)
  - Data.com removal tool
 
-Cost: $0 (manual process) to $300/year (automated services)
+Cost - $0 (manual process) to $300/year (automated services)
 
 Privacy-First Fitness Alternatives
 
@@ -360,15 +360,15 @@ Garmin: Minimal cloud sync, data stays on device, less aggressive data collectio
 - Privacy: Excellent
 - Features: Good
 - Cost: $300-$800 watch
-- Drawback: Smaller app ecosystem
+- Drawback: Smaller app environment
 
-Apple Watch + Apple Health: Strong encryption, limited sharing
+Apple Watch + Apple Health - Strong encryption, limited sharing
 - Privacy: Excellent (among mainstream options)
 - Features: Excellent
 - Cost: $250-$800
-- Ecosystem: Tightly integrated
+- environment: Tightly integrated
 
-Simple Step Counter: Non-smart device that doesn't track personal data
+Simple Step Counter - Non-smart device that doesn't track personal data
 - Privacy: Perfect
 - Features: Minimal
 - Cost: $20-$50
@@ -397,9 +397,9 @@ Related Articles
 
 - [How Data Brokers Compile Your Personal Profile](/articles/data-brokers-personal-profile-2026.md)
 - [HIPAA vs Consumer Privacy Laws for Health Data](/articles/hipaa-vs-consumer-privacy-2026.md)
-- [Health Insurance Discrimination: Genetic and Fitness Data](/articles/health-insurance-discrimination-2026.md)
+- [Health Insurance Discrimination - Genetic and Fitness Data](/articles/health-insurance-discrimination-2026.md)
 - [Best Privacy-Focused Wearables 2026](/articles/privacy-wearables-2026.md)
-- [Opting Out of Data Brokers: Complete Guide 2026](/articles/opting-out-data-brokers-2026.md)
+- [Opting Out of Data Brokers - Complete Guide 2026](/articles/opting-out-data-brokers-2026.md)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike. More at [zovo.one](https://zovo.one)

@@ -21,11 +21,11 @@ Privacy-focused email providers encrypt your inbox so that the email provider it
 Table of Contents
 
 - [Why Standard Email Is Insecure](#why-standard-email-is-insecure)
-- [Proton Mail: Market Leader](#proton-mail-market-leader)
-- [Tutanota: Maximum Encryption](#tutanota-maximum-encryption)
-- [Mailfence: Maximum Aliases](#mailfence-maximum-aliases)
-- [Posteo: Privacy Without Accounts](#posteo-privacy-without-accounts)
-- [Disroot: Community-Oriented](#disroot-community-oriented)
+- [Proton Mail - Market Leader](#proton-mail-market-leader)
+- [Tutanota - Maximum Encryption](#tutanota-maximum-encryption)
+- [Mailfence - Maximum Aliases](#mailfence-maximum-aliases)
+- [Posteo - Privacy Without Accounts](#posteo-privacy-without-accounts)
+- [Disroot - Community-Oriented](#disroot-community-oriented)
 - [Comparison Table](#comparison-table)
 - [Security Audit Status](#security-audit-status)
 - [Selecting Your Provider](#selecting-your-provider)
@@ -42,7 +42,7 @@ However, encryption alone doesn't ensure privacy. Metadata (who you emailed, whe
 
 Privacy providers differ in their approaches to these problems. No single provider optimizes all dimensions.
 
-Proton Mail: Market Leader
+Proton Mail - Market Leader
 
 Proton Mail dominates privacy email with 5 million users, professional features, and strong funding. The Swiss company benefits from GDPR compliance and strict privacy laws.
 
@@ -82,11 +82,11 @@ Weaknesses:
 - Expiring Messages don't auto-delete from recipient devices
 - Swiss jurisdiction (not ideal if you distrust any government)
 
-Best for: Users who want privacy with professional features, want to use calendar and storage together, and value user experience over maximum security.
+Best for - Users who want privacy with professional features, want to use calendar and storage together, and value user experience over maximum security.
 
-Pricing reality (annual): Plus $72, Professional $144, Visionary $360. Add VPN if not included ($120/year), making total cost $192-480/year.
+Pricing reality (annual) - Plus $72, Professional $144, Visionary $360. Add VPN if not included ($120/year), making total cost $192-480/year.
 
-Tutanota: Maximum Encryption
+Tutanota - Maximum Encryption
 
 Tutanota (now Tuta) emphasizes encryption above all. Subject lines and recipient addresses are encrypted, which Proton Mail doesn't do. This makes Tutanota stronger for metadata protection at the cost of slightly less convenient user interface.
 
@@ -127,11 +127,11 @@ Weaknesses:
 - No IMAP (cannot use with desktop email apps)
 - Less polished user interface
 
-Best for: Privacy maximalists willing to trade user experience for stronger encryption, users who only need email (not bundled products).
+Best for - Privacy maximalists willing to trade user experience for stronger encryption, users who only need email (not bundled products).
 
-Pricing reality (annual): Premium €144 (~$157), Pro €288 (~$313). Pro is comparable cost to Proton Professional ($144 annual) while offering better encryption.
+Pricing reality (annual) - Premium €144 (~$157), Pro €288 (~$313). Pro is comparable cost to Proton Professional ($144 annual) while offering better encryption.
 
-Mailfence: Maximum Aliases
+Mailfence - Maximum Aliases
 
 Mailfence specializes in unlimited aliases, allowing you to create separate email addresses for different purposes (shopping, banking, newsletters, dating) without managing multiple accounts.
 
@@ -170,11 +170,11 @@ Weaknesses:
 - No mobile apps (must use IMAP clients)
 - Forward secrecy not automatic
 
-Best for: Users who want multiple email identities without managing multiple accounts, who are comfortable with IMAP setup, and who prioritize aliases over maximum metadata encryption.
+Best for - Users who want multiple email identities without managing multiple accounts, who are comfortable with IMAP setup, and who prioritize aliases over maximum metadata encryption.
 
-Pricing reality (annual): Standard €30, Professional €90. Add VPN separately ($120/year) for full privacy suite.
+Pricing reality (annual) - Standard €30, Professional €90. Add VPN separately ($120/year) for full privacy suite.
 
-Posteo: Privacy Without Accounts
+Posteo - Privacy Without Accounts
 
 Posteo operates entirely anonymously. No accounts, no usernames, just email addresses. You can create an account with zero personal information, pay with cryptocurrency, and have complete privacy.
 
@@ -211,11 +211,11 @@ Weaknesses:
 - Requires local encryption setup (user responsibility for end-to-end)
 - Limited features (no calendar integration)
 
-Best for: Users who want ultra-cheap privacy, don't mind using IMAP clients, and prioritize anonymity over features.
+Best for - Users who want ultra-cheap privacy, don't mind using IMAP clients, and prioritize anonymity over features.
 
-Pricing reality (annual): €11.88. Cheapest option by far.
+Pricing reality (annual) - €11.88. Cheapest option by far.
 
-Disroot: Community-Oriented
+Disroot - Community-Oriented
 
 Disroot is operated by a non-profit collective, relying on donations and prioritizing community values over profit. All infrastructure is open-source and auditable.
 
@@ -252,9 +252,9 @@ Weaknesses:
 - Relies on donations (sustainability risk)
 - No mobile apps
 
-Best for: Users who value community-driven privacy, want to support non-profit infrastructure, and are comfortable with less-polished interfaces.
+Best for - Users who value community-driven privacy, want to support non-profit infrastructure, and are comfortable with less-polished interfaces.
 
-Pricing reality (annual): Free (basic), €60/year (supporter tier). Not-for-profit positioning attracts mission-aligned users.
+Pricing reality (annual) - Free (basic), €60/year (supporter tier). Not-for-profit positioning attracts mission-aligned users.
 
 Comparison Table
 
@@ -285,15 +285,15 @@ Proton invests most in security verification, while Tutanota combines community 
 
 Selecting Your Provider
 
-Choose Proton Mail if: You want professional features (calendar, storage, VPN), trust Swiss jurisdiction, and value user experience. Best for hybrid privacy/productivity needs.
+Choose Proton Mail if - You want professional features (calendar, storage, VPN), trust Swiss jurisdiction, and value user experience. Best for hybrid privacy/productivity needs.
 
-Choose Tutanota if: You prioritize maximum encryption including metadata, want automatic expiring messages, and accept a smaller network. Best for security maximalists.
+Choose Tutanota if - You prioritize maximum encryption including metadata, want automatic expiring messages, and accept a smaller network. Best for security maximalists.
 
-Choose Mailfence if: You need unlimited aliases for privacy compartmentalization and want IMAP flexibility. Best for users managing multiple identities.
+Choose Mailfence if - You need unlimited aliases for privacy compartmentalization and want IMAP flexibility. Best for users managing multiple identities.
 
-Choose Posteo if: You're on minimal budget, want complete anonymity, and don't mind using desktop clients. Best for cost-conscious privacy advocates.
+Choose Posteo if - You're on minimal budget, want complete anonymity, and don't mind using desktop clients. Best for cost-conscious privacy advocates.
 
-Choose Disroot if: You want to support community infrastructure and don't require professional features. Best for mission-aligned users.
+Choose Disroot if - You want to support community infrastructure and don't require professional features. Best for mission-aligned users.
 
 Migration From Gmail
 
@@ -337,7 +337,7 @@ gpg --armor --export yourname@mailfence.com > publickey.asc
 Send an encrypted email via command line
 echo "Confidential project update attached." | \
   gpg --encrypt --armor --recipient recipient@protonmail.com | \
-  mail -s "Encrypted: Project Update" recipient@protonmail.com
+  mail -s "Encrypted - Project Update" recipient@protonmail.com
 ```
 
 Realistic Privacy

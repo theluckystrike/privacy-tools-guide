@@ -19,7 +19,7 @@ Table of Contents
 - [What Tutanota Encrypts](#what-tutanota-encrypts)
 - [Create an Account](#create-an-account)
 - [Prerequisites](#prerequisites)
-- [Comparison Table: Encrypted Email Providers 2026](#comparison-table-encrypted-email-providers-2026)
+- [Comparison Table - Encrypted Email Providers 2026](#comparison-table-encrypted-email-providers-2026)
 - [Threat Model Considerations](#threat-model-considerations)
 - [Troubleshooting](#troubleshooting)
 - [Related Reading](#related-reading)
@@ -59,7 +59,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Enable Two-Factor Authentication
+Step 1 - Enable Two-Factor Authentication
 
 Adding a second factor dramatically reduces the risk from password leaks. Tutanota supports both authenticator apps (TOTP) and hardware security keys.
 
@@ -85,7 +85,7 @@ If you add a hardware key, also add an authenticator app as a fallback. Losing y
 
 ---
 
-Step 2: Desktop Client Setup
+Step 2 - Desktop Client Setup
 
 The Tutanota desktop client is built on Electron and signed by Tutanota GmbH. Verify the signature before running any downloaded binary.
 
@@ -110,7 +110,7 @@ macOS:
 ```bash
 Download from tuta.com/download
 Drag to Applications
-First launch: right-click → Open (bypasses Gatekeeper warning)
+First launch - right-click → Open (bypasses Gatekeeper warning)
 ```
 
 Windows:
@@ -121,11 +121,11 @@ The desktop client stores a local cache of your emails in an encrypted SQLite da
 
 ---
 
-Step 3: Custom Domain Setup
+Step 3 - Custom Domain Setup
 
 A custom domain (`you@yourdomain.com`) gives you email independence. if Tutanota were to shut down or you want to move, your address stays yours.
 
-Requirements: A domain you control and a paid Tutanota plan (Legends tier or above).
+Requirements - A domain you control and a paid Tutanota plan (Legends tier or above).
 
 ```
 Account settings → Email → Custom email domain → Add domain
@@ -151,7 +151,7 @@ Once the domain is verified, you can create aliases at that domain directly in t
 
 ---
 
-Step 4: Sending Encrypted Email to External Recipients
+Step 4 - Sending Encrypted Email to External Recipients
 
 When you email someone outside Tutanota, they receive a link to a password-protected message hosted on Tutanota's servers:
 
@@ -166,7 +166,7 @@ A common pattern for journalists or lawyers is to publish a Tutanota address wit
 
 ---
 
-Step 5: Tutanota's Encryption Implementation
+Step 5 - Tutanota's Encryption Implementation
 
 Tutanota's encryption is audited and open source. The client code is available at `github.com/tutao/tutanota`.
 
@@ -188,7 +188,7 @@ Tutanota does not support PGP. this is by design. PGP leaves subject lines unenc
 
 ---
 
-Step 6: Export / Backup Your Emails
+Step 6 - Export / Backup Your Emails
 
 Tutanota's desktop client includes a basic export function. For a more systematic backup, use the Tutanota export functionality periodically:
 
@@ -200,13 +200,13 @@ Account Settings → Backup → Create backup (exports all data)
 Store the backup in an encrypted location
 ```
 
-EML files are plain MIME-formatted text and are importable into Thunderbird, Apple Mail, and most mail clients. Store backups in an encrypted volume. on macOS, use a disk image created with Disk Utility (Format: Mac OS Extended, Encryption: AES-256). On Linux, use a LUKS-encrypted container or Cryptomator vault.
+EML files are plain MIME-formatted text and are importable into Thunderbird, Apple Mail, and most mail clients. Store backups in an encrypted volume. on macOS, use a disk image created with Disk Utility (Format - Mac OS Extended, Encryption: AES-256). On Linux, use a LUKS-encrypted container or Cryptomator vault.
 
 If you have years of email and large attachments, export by folder and compress each folder before archiving. Tutanota's export does not currently resume interrupted exports, so running it on a fast, stable connection matters for large mailboxes.
 
 ---
 
-Step 7: Aliases and Spam Compartmentalization
+Step 7 - Aliases and Spam Compartmentalization
 
 One practical use for Tutanota is creating aliases for different contexts. shopping, newsletters, professional contacts. while all mail lands in one inbox. This way, if one alias gets spammed, you delete it and create a new one without losing your main address.
 
@@ -219,7 +219,7 @@ For free-plan users, Tutanota offers `+` subaddressing at some address domains: 
 
 ---
 
-Step 8: Comparing Tutanota vs ProtonMail
+Step 8 - Comparing Tutanota vs ProtonMail
 
 | Feature | Tutanota | ProtonMail |
 |---------|----------|-----------|
@@ -237,7 +237,7 @@ Germany's privacy laws (GDPR, BDSG) provide strong legal protections, though Ger
 
 ---
 
-Step 9: Metadata That Tutanota CANNOT Encrypt
+Step 9 - Metadata That Tutanota CANNOT Encrypt
 
 Even with E2EE, some metadata remains visible to Tutanota's servers:
 
@@ -254,13 +254,13 @@ This metadata alone reveals communication patterns. If Tutanota receives a law e
 
 For maximum privacy, pair Tutanota with Tor Browser or a VPN to hide your IP address.
 
-Step 10: Use Tutanota with Mobile Devices
+Step 10 - Use Tutanota with Mobile Devices
 
 The Tutanota mobile app (iOS and Android) provides the same E2EE guarantees as the web and desktop clients:
 
 ```bash
 iOS: Download from App Store
-Android: Download from Play Store or F-Droid (open-source build)
+Android - Download from Play Store or F-Droid (open-source build)
 
 Setup on mobile:
 1. Install app
@@ -271,7 +271,7 @@ Setup on mobile:
 
 Mobile E2EE continues even for emails sent outside Tutanota, the mobile app handles password-encrypted external emails .
 
-Step 11: Integration with Standard Email Clients
+Step 11 - Integration with Standard Email Clients
 
 Tutanota does not support IMAP/POP access because those protocols lack E2EE support. This means:
 
@@ -281,7 +281,7 @@ Tutanota does not support IMAP/POP access because those protocols lack E2EE supp
 
 For users requiring Outlook or Thunderbird integration, ProtonMail's mail bridge provides this at the cost of additional complexity.
 
-Step 12: Tutanota Business/Organization Plans
+Step 12 - Tutanota Business/Organization Plans
 
 Organizations with custom domain requirements and multiple accounts use Tutanota Business:
 
@@ -300,7 +300,7 @@ curl -X GET https://mail.tutanota.com/api/users \
 
 Business plans start at €5/user/month and suitable for teams prioritizing encrypted collaboration.
 
-Step 13: Test Tutanota's Encryption
+Step 13 - Test Tutanota's Encryption
 
 For developers who want to verify encryption claims:
 
@@ -322,7 +322,7 @@ mitmproxy shows encrypted request body. no plaintext
 
 This verification demonstrates that encryption happens on your device before data leaves your computer.
 
-Comparison Table: Encrypted Email Providers 2026
+Comparison Table - Encrypted Email Providers 2026
 
 | Provider | E2EE | Subject Encrypted | Open Source | Custom Domain (Free) | Jurisdiction |
 |----------|------|-----------------|------------|---------------------|--------------|
@@ -344,11 +344,11 @@ Tutanota is ideal if:
 - You don't need IMAP integration
 
 Consider alternatives if:
-- You need wider ecosystem compatibility (ProtonMail has better Android integration)
+- You need wider environment compatibility (ProtonMail has better Android integration)
 - You require legacy email client support (Posteo + Tor)
 - You need quantum-resistant encryption (not yet available in any mainstream provider)
 
-Step 14: Automation and Integration Scripts
+Step 14 - Automation and Integration Scripts
 
 For developers managing multiple Tutanota accounts:
 

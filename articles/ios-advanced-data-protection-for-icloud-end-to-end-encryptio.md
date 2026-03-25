@@ -21,7 +21,7 @@ Table of Contents
 
 - [Testing Advanced Data Protection Manually](#testing-advanced-data-protection-manually)
 - [Data Accessibility Across Devices](#data-accessibility-across-devices)
-- [Recovery Scenario: Lost Device](#recovery-scenario-lost-device)
+- [Recovery Scenario - Lost Device](#recovery-scenario-lost-device)
 - [iCloud Keychain and Advanced Data Protection](#icloud-keychain-and-advanced-data-protection)
 - [Backup Strategy with Advanced Data Protection](#backup-strategy-with-advanced-data-protection)
 - [Performance and Storage Impact](#performance-and-storage-impact)
@@ -106,29 +106,29 @@ Device B (iPad) - same Apple ID:
   4. Photos decrypt on Device B only
   5. All devices use same encryption hierarchy
 
-Critical: All devices must be on same Apple ID
+Critical - All devices must be on same Apple ID
          and enrolled in Advanced Data Protection
          for smooth sharing
 ```
 
-Recovery Scenario: Lost Device
+Recovery Scenario - Lost Device
 
 What happens when you lose a device with ADP enabled:
 
 ```
-Scenario: Lost iPhone with ADP enabled
+Scenario - Lost iPhone with ADP enabled
 
 Before losing device:
 - Recovery Key stored in password manager (good)
 - Recovery Contact configured (good)
 
-Day 1: Realize iPhone is missing
+Day 1 - Realize iPhone is missing
 - Immediately sign into iCloud.com from Mac/web
 - Settings → Security → Find My iPhone
 - Remote wipe the device
 - Data on Apple servers remains encrypted
 
-Day 2-3: Use recovery contact
+Day 2-3 - Use recovery contact
 - Contact calls/verifies your identity
 - Receives partial key, confirms identity
 - You receive recovery link
@@ -147,7 +147,7 @@ OR: Add new trusted device
 - Receives encryption keys
 - Full access in minutes
 
-Outcome: Data safe, access restored, no data loss
+Outcome - Data safe, access restored, no data loss
 ```
 
 iCloud Keychain and Advanced Data Protection
@@ -187,23 +187,23 @@ Recovery information checklist
 Store in multiple locations (not iCloud):
 
 1. Recovery Key (physical backup)
-Location 1: Safe in home safe
-Location 2: With trusted family member
-Location 3: Lawyer or accountant office
+Location 1 - Safe in home safe
+Location 2 - With trusted family member
+Location 3 - Lawyer or accountant office
 
 2. Recovery Contact information
-Document: Email/phone of recovery contact
-Verify: Can they access their own Apple ID?
+Document - Email/phone of recovery contact
+Verify - Can they access their own Apple ID?
 
 3. Device list
-Document: List of all devices enrolled in ADP
+Document - List of all devices enrolled in ADP
 Current devices:
   - iPhone 14 Pro (UUID: ...)
   - iPad Air (UUID: ...)
   - Mac Mini (UUID: ...)
 
 4. Two-factor authentication recovery codes
-Download from: appleid.apple.com
+Download from - appleid.apple.com
 Store encrypted in password manager
 
 5. Passkey recovery codes
@@ -233,7 +233,7 @@ Performance metrics (measured on iPhone 14 Pro):
 - Backup time: Same as without ADP
 - Restore time: Same as without ADP
 
-Conclusion: No practical performance penalty
+Conclusion - No practical performance penalty
             Full encryption transparency
 ```
 
@@ -259,12 +259,12 @@ During conversion:
  Do not disable ADP mid-process
  Keep device plugged in (or battery >20%)
 
-Completion: All existing data encrypted with new keys
+Completion - All existing data encrypted with new keys
             Fresh start for encryption
 
 Verification:
 Settings → [Your Name] → iCloud → Advanced Data Protection
-Should show: "Advanced Data Protection is on"
+Should show - "Advanced Data Protection is on"
 ```
 
 Limitations and Workarounds

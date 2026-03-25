@@ -184,13 +184,13 @@ Browser Extensions for CSS Fingerprinting Defense
 
 uMatrix ($0, free, Chrome/Firefox): Blocks all external stylesheet loads by default. Whitelist only trusted sites. Prevents @font-face tracking.
 
-NoScript ($0, free, Firefox): Blocks JavaScript but allows CSS. Pair with CSP headers for defense-in-depth.
+NoScript ($0, free, Firefox) - Blocks JavaScript but allows CSS. Pair with CSP headers for defense-in-depth.
 
 Privacy Badger ($0, free, Chrome/Firefox): Learns to block trackers based on behavior. Includes CSS tracker detection.
 
 uBlock Origin ($0, free, Chrome/Firefox): Advanced content blocker that can target tracking URLs in stylesheets.
 
-CSS Guard ($0, free, Chrome): Specifically designed for CSS fingerprinting defense. Randomizes CSS-detectable properties.
+CSS Guard ($0, free, Chrome) - Specifically designed for CSS fingerprinting defense. Randomizes CSS-detectable properties.
 
 Server-Side Mitigations
 

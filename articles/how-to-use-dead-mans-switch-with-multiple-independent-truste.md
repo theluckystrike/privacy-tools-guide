@@ -22,7 +22,7 @@ Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Security Considerations](#security-considerations)
-- [Advanced: Encrypted Trustee Communication](#advanced-encrypted-trustee-communication)
+- [Advanced - Encrypted Trustee Communication](#advanced-encrypted-trustee-communication)
 - [Getting Started](#getting-started)
 - [Troubleshooting](#troubleshooting)
 
@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Architecture
+Step 1 - Understand the Architecture
 
 The core concept involves distributing cryptographic shares among several trustees, where a threshold number of trustees must cooperate to reconstruct the credential. This threshold cryptography approach, often implemented using Shamir's Secret Sharing, ensures that no single trustee can access your credentials independently.
 
@@ -44,7 +44,7 @@ A typical setup might involve five trustees with a threshold of three. This mean
 
 The "dead man's switch" element adds a time-based check-in mechanism. If you fail to confirm your presence within the designated period, the system triggers the release process to your designated trustees.
 
-Step 2: Implementing Shamir's Secret Sharing
+Step 2 - Implementing Shamir's Secret Sharing
 
 Shamir's Secret Sharing divides a secret into multiple shares, where a configurable threshold determines how many shares are required to reconstruct the original secret. Here's a Python implementation using the `ssss` library or `cryptography`:
 
@@ -103,7 +103,7 @@ reconstructed = ssss.combine_shares(shares[:3])
 print(f"Reconstructed: {reconstructed}")
 ```
 
-Step 3: Build the Check-In Mechanism
+Step 3 - Build the Check-In Mechanism
 
 The dead man's switch requires a reliable check-in system. This example uses a simple file-based timestamp that you update regularly:
 
@@ -166,7 +166,7 @@ switch = DeadManSwitch()
 switch.checkin()  # Call this regularly (automate with cron)
 ```
 
-Step 4: Automate the Check-In
+Step 4 - Automate the Check-In
 
 For a system, automate the check-in process using cron jobs or systemd timers. Create a simple script that runs daily:
 
@@ -190,7 +190,7 @@ Add to your crontab:
 0 9 * * * ~/.deadmanswitch/checkin.sh >> ~/.deadmanswitch/log.txt 2>&1
 ```
 
-Step 5: Distributing Shares to Trustees
+Step 5 - Distributing Shares to Trustees
 
 Once you've generated your credential shares, distribute them to your trustees through separate, secure channels. Avoid sending all shares through the same communication channel.
 
@@ -232,7 +232,7 @@ Regular testing proves the system works when needed. Periodically verify that tr
 
 Jurisdictional concerns affect legal enforceability. Different countries have varying laws about digital inheritance. Consult legal counsel if your threat model includes legal challenges to your inheritance arrangements.
 
-Advanced: Encrypted Trustee Communication
+Advanced - Encrypted Trustee Communication
 
 For enhanced security, implement encrypted communication between trustees using a purpose-built key exchange:
 
@@ -317,7 +317,7 @@ Related Articles
 - [Set Up a Dead Man's Switch Email That Sends Credentials If](/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
 - [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
 - [Crypto Dead Man Switch Services That Transfer Wallet Access](/crypto-dead-man-switch-services-that-transfer-wallet-access-/)
-- [VPN Provider Annual Audit Results: Independent Security.](/vpn-provider-annual-audit-results-independent-security-verified/)
+- [VPN Provider Annual Audit Results - Independent Security.](/vpn-provider-annual-audit-results-independent-security-verified/)
 - [How To Use Multiple Identities Online Compartmentalization C](/how-to-use-multiple-identities-online-compartmentalization/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 

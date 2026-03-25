@@ -22,7 +22,7 @@ This guide provides direct opt-out procedures, practical examples, and considera
 
 Table of Contents
 
-- [Understanding the Data Broker Ecosystem](#understanding-the-data-broker-ecosystem)
+- [Understanding the Data Broker environment](#understanding-the-data-broker-environment)
 - [Opting Out of Acxiom](#opting-out-of-acxiom)
 - [Opting Out of Oracle Data Cloud](#opting-out-of-oracle-data-cloud)
 - [Opting Out of Nielsen](#opting-out-of-nielsen)
@@ -31,7 +31,7 @@ Table of Contents
 - [Maintaining Your Opt-Out Status](#maintaining-your-opt-out-status)
 - [Additional Resources](#additional-resources)
 
-Understanding the Data Broker Ecosystem
+Understanding the Data Broker environment
 
 Acxiom, now part of IPG Mediabrands, maintains one of the largest consumer databases in the world, containing information on over 500 million consumers globally. Their data includes demographic details, purchasing behavior, lifestyle interests, and predictive scores used by marketers for targeting.
 
@@ -45,7 +45,7 @@ Opting Out of Acxiom
 
 Acxiom provides a dedicated consumer opt-out through their AboutTheData.com portal. The process involves verifying your identity and submitting an opt-out request.
 
-Step 1: Access the Acxiom Opt-Out Portal
+Step 1 - Access the Acxiom Opt-Out Portal
 
 Navigate directly to their consumer privacy page:
 
@@ -55,7 +55,7 @@ https://isapps.acxiom.com/optout/preference.aspx
 
 This page allows you to view what data Acxiom holds about you and submit opt-out requests.
 
-Step 2: Submit Your Opt-Out Request
+Step 2 - Submit Your Opt-Out Request
 
 The portal requires either:
 - Email verification with home address confirmation
@@ -63,7 +63,7 @@ The portal requires either:
 
 For email verification, you will receive a confirmation and should see your opt-out take effect within 10-14 business days.
 
-Step 3: Verify Your Opt-Out Status
+Step 3 - Verify Your Opt-Out Status
 
 After the processing period, revisit the portal to confirm your opt-out is active. Note that opting out does not delete historical data, it prevents future data sharing.
 
@@ -81,7 +81,7 @@ https://www.oracle.com/legal/privacy/
 
 Navigate to the "Privacy Choices" or "Opt-Out" section and complete the form. Include your full name, email, and state that you wish to opt out of Oracle Data Cloud sharing.
 
-Alternative: DMA Choice
+Alternative - DMA Choice
 
 For California residents, the Digital Marketing Alliance (DMA) provides a centralized opt-out for many data brokers including Oracle partners:
 

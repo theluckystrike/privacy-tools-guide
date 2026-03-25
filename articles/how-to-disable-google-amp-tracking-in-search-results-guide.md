@@ -27,7 +27,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How Google AMP Tracking Works
+Step 1 - How Google AMP Tracking Works
 
 When you perform a Google Search on mobile or desktop, results often display AMP versions of web pages. Clicking these results sends your request through `google.com/amp` or `google-search` redirects, creating a detailed log of:
 
@@ -38,7 +38,7 @@ When you perform a Google Search on mobile or desktop, results often display AMP
 
 Google's own documentation acknowledges this tracking, stating that AMP cache URLs provide analytics and performance data. Even if you visit a website directly later, the initial AMP click creates a persistent tracking record linked to your Google account.
 
-Step 2: Method 1: Disable AMP in Google Search Settings
+Step 2 - Method 1: Disable AMP in Google Search Settings
 
 The simplest approach involves adjusting Google Search preferences:
 
@@ -49,7 +49,7 @@ The simplest approach involves adjusting Google Search preferences:
 
 This method has limitations, Google may not offer this setting in all regions, and the setting can reset after clearing cookies or using incognito mode. Additionally, some search results may still redirect through AMP URLs even with this setting disabled.
 
-Step 3: Method 2: Use Alternative Search Engines
+Step 3 - Method 2: Use Alternative Search Engines
 
 Several privacy-focused search engines do not use AMP:
 
@@ -65,7 +65,7 @@ Query DuckDuckGo HTML (no JavaScript required)
 curl -s "https://html.duckduckgo.com/html/?q=privacy+tools"
 ```
 
-Step 4: Method 3: Browser Extensions for AMP Blocking
+Step 4 - Method 3: Browser Extensions for AMP Blocking
 
 Several browser extensions strip AMP tracking:
 
@@ -109,7 +109,7 @@ uBlock Origin - With proper filter lists, uBlock can block AMP tracking:
 ||google.co.*/amp$redirect=noop
 ```
 
-Step 5: Method 4: DNS-Level Blocking
+Step 5 - Method 4: DNS-Level Blocking
 
 For network-wide protection, you can block AMP tracking at the DNS level. This approach works for all devices on your network without individual configuration.
 
@@ -138,7 +138,7 @@ dig +short A google.com.amp @9.9.9.9
 
 If these domains resolve to blocked IPs, your DNS provider may already be filtering them.
 
-Step 6: Method 5: Browser Configuration
+Step 6 - Method 5: Browser Configuration
 
 Modern browsers offer settings to reduce AMP tracking:
 
@@ -169,7 +169,7 @@ Windows
 chrome.exe --disable-google-top-replacement
 ```
 
-Step 7: Method 6: Developer's Approach - AMP URL Detection
+Step 7 - Method 6: Developer's Approach - AMP URL Detection
 
 For developers building privacy tools, detecting and handling AMP URLs requires understanding their structure:
 
@@ -202,7 +202,7 @@ def extract_canonical_url(amp_url: str) -> str:
     pass  # Implementation depends on specific URL patterns
 ```
 
-Step 8: Method 7: Use "NoAMP" Services
+Step 8 - Method 7: Use "NoAMP" Services
 
 Several services provide "NoAMP" redirects:
 
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-Step 9: Verify Your Protection
+Step 9 - Verify Your Protection
 
 After implementing your chosen methods, verify AMP tracking is blocked:
 
@@ -298,7 +298,7 @@ Related Articles
 - [Best Browser for Avoiding Google Tracking: A Developer Guide](/best-browser-for-avoiding-google-tracking/)
 - [Google Analytics Tracking Alternatives That Respect User Pri](/google-analytics-tracking-alternatives-that-respect-user-pri/)
 - [Does ExpressVPN Work in Oman? 2026 Latest Tested Results](/does-expressvpn-work-in-oman-2026-latest-tested-results/)
-- [VPN Provider Annual Audit Results: Independent Security.](/vpn-provider-annual-audit-results-independent-security-verified/)
+- [VPN Provider Annual Audit Results - Independent Security.](/vpn-provider-annual-audit-results-independent-security-verified/)
 - [Best AI Tool for Generating Accessible Search Results Page](https://bestremotetools.com/best-ai-tool-for-generating-accessible-search-results-page-m/)
 
 Built by theluckystrike. More at [zovo.one](https://zovo.one)

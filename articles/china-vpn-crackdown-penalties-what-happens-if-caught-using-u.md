@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "China VPN Crackdown: Penalties and Consequences"
-description: "China VPN Crackdown: Penalties and Consequences for.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
+description: "China VPN Crackdown - Penalties and Consequences for.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
 last_modified_at: 2026-03-22
 author: theluckystrike
@@ -67,11 +67,11 @@ Chinese authorities employ multiple detection mechanisms:
 
 Scenarios Based on Location
 
-If detected within China: The penalties described above apply directly. Real-world cases show users receiving warnings through their internet service providers, with repeated offenses leading to fines. Foreign visitors have been temporarily detained and had their devices examined, though prosecution of tourists remains relatively rare.
+If detected within China - The penalties described above apply directly. Real-world cases show users receiving warnings through their internet service providers, with repeated offenses leading to fines. Foreign visitors have been temporarily detained and had their devices examined, though prosecution of tourists remains relatively rare.
 
-If operating a VPN service: Providers face significantly harsher penalties. Several cases have resulted in prison sentences exceeding five years for operators of unauthorized VPN services, particularly when those services were commercialized.
+If operating a VPN service - Providers face significantly harsher penalties. Several cases have resulted in prison sentences exceeding five years for operators of unauthorized VPN services, particularly when those services were commercialized.
 
-If accessing from outside China: Foreign nationals or entities outside China generally face limited direct liability under Chinese law. However, using Chinese infrastructure (such as servers hosted in mainland China) or targeting Chinese users may establish jurisdiction.
+If accessing from outside China - Foreign nationals or entities outside China generally face limited direct liability under Chinese law. However, using Chinese infrastructure (such as servers hosted in mainland China) or targeting Chinese users may establish jurisdiction.
 
 Technical Considerations for Developers
 
@@ -177,7 +177,7 @@ WireGuard with packet obfuscation:
 ```bash
 WireGuard with obfuscation wrapper
 Uses UDP jitter and payload obfuscation
-Build from: https://github.com/valisimo/wg-dynamic
+Build from - https://github.com/valisimo/wg-dynamic
 
 wg-quick up wg-obfuscated
 ```
@@ -237,7 +237,7 @@ Create a cron job to check major legal databases
 
 Cross-Border Developer Scenarios
 
-Scenario 1: Accessing GitHub from China
+Scenario 1 - Accessing GitHub from China
 
 Many developers in China need GitHub access. Practical approaches:
 
@@ -246,7 +246,7 @@ Many developers in China need GitHub access. Practical approaches:
 3. GitLab Mirror: Mirror to corporate GitLab instance
 4. Jsdelivr CDN: Access JavaScript libraries via CDN when direct npm fails
 
-Scenario 2: Accessing AWS/Cloud Services
+Scenario 2 - Accessing AWS/Cloud Services
 
 Cloud infrastructure often gets blocked for non-approved users:
 
@@ -261,7 +261,7 @@ aws s3 ls \
   --ca-bundle ~/.aws/certs/ca-bundle.crt
 ```
 
-Scenario 3: SaaS Application Access
+Scenario 3 - SaaS Application Access
 
 Many SaaS tools get partially blocked in China:
 
@@ -300,9 +300,9 @@ Risk Level = (Regulatory Severity × Detection Probability)
              × Organizational Size × Foreign Visibility
              ÷ Business Criticality
 
-Low Risk: Individual developer, non-commercial use, light usage
-Medium Risk: Small team, commercial but internal use, moderate traffic
-High Risk: Published services, large user base, heavy cross-border traffic
+Low Risk - Individual developer, non-commercial use, light usage
+Medium Risk - Small team, commercial but internal use, moderate traffic
+High Risk - Published services, large user base, heavy cross-border traffic
 ```
 
 ---

@@ -77,7 +77,7 @@ VPN Protocol Selection for India
 
 Protocol choice matters significantly for bypassing ISP blocks in India, as some protocols are more detectable than others.
 
-WireGuard: Modern and Efficient
+WireGuard - Modern and Efficient
 
 WireGuard offers excellent performance and uses modern cryptography with a minimal code base, making it harder to fingerprint:
 
@@ -165,7 +165,7 @@ Test TLS handshake to TikTok
 openssl s_client -connect api.tiktok.com:443 -servername api.tiktok.com
 
 Check for WebRTC leaks in browsers
-Visit: https://browserleaks.com/webrtc
+Visit - https://browserleaks.com/webrtc
 ```
 
 Identifying Working Server Locations

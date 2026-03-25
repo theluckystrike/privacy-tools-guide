@@ -27,10 +27,10 @@ Table of Contents
 - [Technical Limitations and Considerations](#technical-limitations-and-considerations)
 - [Recommendations for Power Users](#recommendations-for-power-users)
 - [Real-World Testing Results and Success Metrics](#real-world-testing-results-and-success-metrics)
-- [Advanced: Custom Obfuscation Strategies](#advanced-custom-obfuscation-strategies)
+- [Advanced - Custom Obfuscation Strategies](#advanced-custom-obfuscation-strategies)
 - [Machine Learning Detection and Evasion](#machine-learning-detection-and-evasion)
 - [Fallback Strategies When Obfuscated VPN Fails](#fallback-strategies-when-obfuscated-vpn-fails)
-- [Cost-Benefit Analysis: VPN vs Tor vs Hybrid](#cost-benefit-analysis-vpn-vs-tor-vs-hybrid)
+- [Cost-Benefit Analysis - VPN vs Tor vs Hybrid](#cost-benefit-analysis-vpn-vs-tor-vs-hybrid)
 - [Temporary vs Long-Term Solutions](#temporary-vs-long-term-solutions)
 - [Monitoring Blocking Patterns Over Time](#monitoring-blocking-patterns-over-time)
 - [Security During VPN Disruptions](#security-during-vpn-disruptions)
@@ -168,13 +168,13 @@ Technical Limitations and Considerations
 
 Several factors affect obfuscated server reliability in China:
 
-Network Variability: Connection success rates fluctuate based on current GFW inspection intensity, network congestion, and political events. Testing during national holidays or significant political periods may yield different results.
+Network Variability - Connection success rates fluctuate based on current GFW inspection intensity, network congestion, and political events. Testing during national holidays or significant political periods may yield different results.
 
-Protocol Evolution: The GFW continuously evolves, employing machine learning to detect traffic patterns. Obfuscation techniques that work today may require updates tomorrow. Maintaining multiple connection methods is advisable.
+Protocol Evolution - The GFW continuously evolves, employing machine learning to detect traffic patterns. Obfuscation techniques that work today may require updates tomorrow. Maintaining multiple connection methods is advisable.
 
-Speed Trade-offs: Obfuscation adds overhead, typically reducing connection speeds by 15-30% compared to standard VPN connections. The computational cost of wrapping additional encryption layers impacts throughput.
+Speed Trade-offs - Obfuscation adds overhead, typically reducing connection speeds by 15-30% compared to standard VPN connections. The computational cost of wrapping additional encryption layers impacts throughput.
 
-Alternative Solutions: Some developers maintain their own VPN infrastructure using self-hosted solutions like Outline Manager or WireGuard with custom obfuscation. These approaches offer more control but require additional technical expertise to deploy and maintain.
+Alternative Solutions - Some developers maintain their own VPN infrastructure using self-hosted solutions like Outline Manager or WireGuard with custom obfuscation. These approaches offer more control but require additional technical expertise to deploy and maintain.
 
 Recommendations for Power Users
 
@@ -204,7 +204,7 @@ Success rates fluctuate significantly based on time of day and network congestio
 - 7-10 PM (evening usage peak)
 - National holidays and political events (immediate spike in blocking)
 
-Advanced: Custom Obfuscation Strategies
+Advanced - Custom Obfuscation Strategies
 
 For developers, combining multiple obfuscation techniques improves success rates:
 
@@ -212,14 +212,14 @@ For developers, combining multiple obfuscation techniques improves success rates
 #!/bin/bash
 advanced_nordvpn_china.sh - Multi-layered obfuscation
 
-Layer 1: OpenVPN with obfuscation
-Layer 2: Proxychains for application-level routing
-Layer 3: DNS over HTTPS to avoid DNS leak
+Layer 1 - OpenVPN with obfuscation
+Layer 2 - Proxychains for application-level routing
+Layer 3 - DNS over HTTPS to avoid DNS leak
 
 OPENVPN_CONF="/etc/openvpn/nordvpn_obfs.conf"
 PROXYCHAINS_CONF="/etc/proxychains4.conf"
 
-Step 1: Configure OpenVPN with obfuscation
+Step 1 - Configure OpenVPN with obfuscation
 cat > "$OPENVPN_CONF" << 'EOF'
 client
 proto tcp
@@ -239,7 +239,7 @@ nobind
 verb 3
 EOF
 
-Step 2: Layer proxychains over VPN
+Step 2 - Layer proxychains over VPN
 cat > "$PROXYCHAINS_CONF" << 'EOF'
 strict_chain
 proxy_dns
@@ -250,7 +250,7 @@ tcp_connect_time_out 8000
 socks5 127.0.0.1 9050
 EOF
 
-Step 3: Route applications through both layers
+Step 3 - Route applications through both layers
 function run_through_layers() {
     local app=$1
 
@@ -311,8 +311,8 @@ def human_like_browsing(proxy_url):
 
     return True
 
-Good: Browse normally first, then access restricted content after establishing pattern
-Bad: Connect VPN, immediately request sensitive site
+Good - Browse normally first, then access restricted content after establishing pattern
+Bad - Connect VPN, immediately request sensitive site
 ```
 
 The GFW uses behavioral analysis to identify VPN users even with obfuscation. Establish normal browsing patterns first.
@@ -325,25 +325,25 @@ Have backup methods ready:
 #!/bin/bash
 Fallback strategy for VPN blocking
 
-Primary: NordVPN obfuscated OpenVPN
+Primary - NordVPN obfuscated OpenVPN
 attempt_nordvpn_obfs() {
     timeout 30 openvpn --config nordvpn-obfs.conf
     return $?
 }
 
-Secondary: Meek (routes through CDN)
+Secondary - Meek (routes through CDN)
 attempt_meek() {
     timeout 30 tor --UseBridges 1 --Bridge "meek 0.0.2.0:2 ..."
     return $?
 }
 
-Tertiary: Custom Shadowsocks (simpler, harder to detect)
+Tertiary - Custom Shadowsocks (simpler, harder to detect)
 attempt_shadowsocks() {
     timeout 30 ss-local -c shadowsocks.json
     return $?
 }
 
-Quaternary: Wireguard with masquerading
+Quaternary - Wireguard with masquerading
 attempt_wireguard() {
     timeout 30 wg-quick up china-wg
     return $?
@@ -366,7 +366,7 @@ exit 1
 
 Maintain documented backups of 4-5 working methods. When one fails (which happens regularly), switch immediately.
 
-Cost-Benefit Analysis: VPN vs Tor vs Hybrid
+Cost-Benefit Analysis - VPN vs Tor vs Hybrid
 
 For China-specific use:
 
@@ -460,7 +460,7 @@ Security During VPN Disruptions
 When your VPN drops unexpectedly:
 
 ```bash
-Kill switch: Prevent leaking unencrypted traffic
+Kill switch - Prevent leaking unencrypted traffic
 sudo iptables -I OUTPUT 1 -m state --state NEW ! -o lo ! -d 127.0.0.1 ! -d 127.0.0.2 -j DROP
 
 Only restore after VPN reconnects

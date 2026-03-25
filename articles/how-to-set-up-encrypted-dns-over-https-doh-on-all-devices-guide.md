@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand DNS Encryption
+Step 1 - Understand DNS Encryption
 
 Standard DNS queries travel unencrypted over UDP port 53. Any device on your network, including your router, ISP infrastructure, or network sniffer, can see every query. Schools, workplaces, and ISPs routinely log DNS queries for monitoring or control purposes.
 
@@ -65,9 +65,9 @@ DNS addresses:
 - IPv6: 2606:4700:4700::1111, 2606:4700:4700::1001
 - DoH endpoint: https://cloudflare-dns.com/dns-query
 
-Cost: Free.
+Cost - Free.
 
-Best for: Individuals wanting free, fast DoH without account management.
+Best for - Individuals wanting free, fast DoH without account management.
 
 NextDNS (Configurable, Detailed Control)
 
@@ -90,11 +90,11 @@ Privacy policy:
 - Less privacy-focused than Cloudflare (more data retention)
 - US jurisdiction
 
-Cost: Free tier (300k/month), $5.99/month unlimited.
+Cost - Free tier (300k/month), $5.99/month unlimited.
 
-Setup complexity: Requires account creation and profile configuration. Slightly more complex than Cloudflare but provides more control.
+Setup complexity - Requires account creation and profile configuration. Slightly more complex than Cloudflare but provides more control.
 
-Best for: Users wanting detailed filtering and analytics. Worth the cost for families or organizations.
+Best for - Users wanting detailed filtering and analytics. Worth the cost for families or organizations.
 
 Quad9 (Privacy and Security Focused)
 
@@ -122,13 +122,13 @@ DNS addresses:
 - IPv6: 2620:fe::fe
 - DoH endpoint: https://dns.quad9.net/dns-query
 
-Cost: Free.
+Cost - Free.
 
-Best for: Privacy advocates prioritizing non-profit governance and Swiss jurisdiction over additional features.
+Best for - Privacy advocates prioritizing non-profit governance and Swiss jurisdiction over additional features.
 
-Step 2: macOS Setup
+Step 2 - macOS Setup
 
-Method 1: System Settings (iOS 14+ and macOS Monterey+, Easiest)
+Method 1 - System Settings (iOS 14+ and macOS Monterey+, Easiest)
 
 1. Open System Settings (or System Preferences)
 2. Navigate to Network (left sidebar)
@@ -140,9 +140,9 @@ Method 1: System Settings (iOS 14+ and macOS Monterey+, Easiest)
 
 This native method automatically encrypts DNS queries on the device.
 
-Limitations: This sets DNS for connected network only. You need to repeat for each network you join.
+Limitations - This sets DNS for connected network only. You need to repeat for each network you join.
 
-Method 2: Encrypted DNS Profile (System-Wide, Advanced)
+Method 2 - Encrypted DNS Profile (System-Wide, Advanced)
 
 For encryption on all networks including cellular hotspots:
 
@@ -153,7 +153,7 @@ For encryption on all networks including cellular hotspots:
 
 Alternatively, use Quad9 native macOS app or NextDNS app for similar functionality.
 
-Method 3: Manual Security Configuration (Technical)
+Method 3 - Manual Security Configuration (Technical)
 
 1. Open Terminal
 2. Create DNS configuration:
@@ -167,9 +167,9 @@ Configure DoH endpoint (requires custom profile, advanced)
 
 This method requires creating a configuration profile (XML file) and installing it system-wide. Use GUI methods unless you're comfortable with macOS configuration.
 
-Step 3: Windows Setup
+Step 3 - Windows Setup
 
-Method 1: Network Settings (Windows 11, Easiest)
+Method 1 - Network Settings (Windows 11, Easiest)
 
 1. Open Settings (Win+I)
 2. Navigate to Network & Internet → WiFi
@@ -182,7 +182,7 @@ Method 1: Network Settings (Windows 11, Easiest)
 
 This enables DoH for current network. Repeat for other networks.
 
-Method 2: NextDNS or Quad9 App (All Windows Versions)
+Method 2 - NextDNS or Quad9 App (All Windows Versions)
 
 1. Download NextDNS app or Quad9 app from official website
 2. Install and run
@@ -192,7 +192,7 @@ Method 2: NextDNS or Quad9 App (All Windows Versions)
 
 Apps work on all Windows versions and provide system-wide encryption.
 
-Method 3: PowerShell Configuration (Windows 10/11, Advanced)
+Method 3 - PowerShell Configuration (Windows 10/11, Advanced)
 
 1. Open PowerShell as Administrator
 2. Enter:
@@ -206,9 +206,9 @@ Get-DnsClientDohServerAddress
 
 Repeat for multiple providers or additional DNS servers.
 
-Step 4: Linux Setup
+Step 4 - Linux Setup
 
-Method 1: systemd-resolved Configuration (Modern Linux)
+Method 1 - systemd-resolved Configuration (Modern Linux)
 
 Most modern Linux distributions use systemd-resolved for DNS resolution.
 
@@ -238,7 +238,7 @@ systemctl status systemd-resolved
 resolvectl status
 ```
 
-Method 2: stubby (Dedicated DoH Resolver, Recommended)
+Method 2 - stubby (Dedicated DoH Resolver, Recommended)
 
 Stubby is a dedicated DNS resolver supporting DoH:
 
@@ -293,15 +293,15 @@ DNSSEC=yes
 sudo systemctl restart systemd-resolved
 ```
 
-Method 3: NextDNS App (Simple, All Linux)
+Method 3 - NextDNS App (Simple, All Linux)
 
 1. Install NextDNS app from GitHub releases
 2. Run and authenticate with account
 3. App handles all configuration automatically
 
-Step 5: iOS Setup
+Step 5 - iOS Setup
 
-Method 1: Settings (iOS 14+, System-Wide)
+Method 1 - Settings (iOS 14+, System-Wide)
 
 1. Open Settings → VPN & Device Management
 2. Tap "DNS Settings" (if visible, available on iOS 15+)
@@ -311,7 +311,7 @@ Method 1: Settings (iOS 14+, System-Wide)
 
 Not all versions support this directly; iOS 15+ is most reliable.
 
-Method 2: VPN Configuration Profile (All iOS Versions)
+Method 2 - VPN Configuration Profile (All iOS Versions)
 
 1. Download configuration profile from provider website (Cloudflare, NextDNS)
 2. Open the profile in Safari
@@ -322,7 +322,7 @@ Method 2: VPN Configuration Profile (All iOS Versions)
 
 This installs provider-specific encryption settings.
 
-Method 3: Official Provider App
+Method 3 - Official Provider App
 
 Cloudflare WARP:
 1. Download from App Store
@@ -340,9 +340,9 @@ Quad9:
 2. Enable in settings
 3. Automatic encryption on all networks
 
-Step 6: Android Setup
+Step 6 - Android Setup
 
-Method 1: System Settings (Android 9+)
+Method 1 - System Settings (Android 9+)
 
 1. Open Settings → Network & Internet → Private DNS
 2. Select "Private DNS provider hostname"
@@ -351,20 +351,20 @@ Method 1: System Settings (Android 9+)
 
 This applies to all networks automatically.
 
-Method 2: VPN Configuration
+Method 2 - VPN Configuration
 
 Some providers offer VPN apps that encrypt DNS as part of VPN connection. Use caution, VPN routes all traffic through provider servers, not just DNS.
 
 For DNS-only encryption, use Method 1 or official app.
 
-Method 3: NextDNS App
+Method 3 - NextDNS App
 
 1. Download from Play Store
 2. Create account or use existing
 3. Enable "Connect" in app
 4. App encrypts all DNS queries
 
-Step 7: Router Configuration (Network-Wide DoH)
+Step 7 - Router Configuration (Network-Wide DoH)
 
 Setting DoH on your router encrypts DNS for all connected devices automatically.
 
@@ -416,16 +416,16 @@ config dnscrypt_proxy
 /etc/init.d/dnscrypt-proxy restart
 ```
 
-Step 8: Verification: Confirm DoH is Working
+Step 8 - Verification: Confirm DoH is Working
 
-Test 1: DNS Query Encryption Check
+Test 1 - DNS Query Encryption Check
 
 Use an online DoH verification tool:
-1. Visit: https://doh.test/
+1. Visit - https://doh.test/
 2. Tool shows whether queries are encrypted
 3. Confirms DoH provider in use
 
-Test 2: Command Line (Linux/macOS)
+Test 2 - Command Line (Linux/macOS)
 
 ```bash
 Test DNS resolution
@@ -435,7 +435,7 @@ Test with specific DoH server (requires dig with DoH support)
 dig @1.1.1.1 example.com
 ```
 
-Test 3: Network Inspection (Technical)
+Test 3 - Network Inspection (Technical)
 
 Use Wireshark packet capture to verify traffic:
 1. Capture traffic on your device
@@ -447,12 +447,12 @@ If DNS queries appear in plaintext, DoH isn't enabled or fallback occurred.
 
 Troubleshooting Common Issues
 
-DNS not resolving: Some networks block custom DNS. Try:
+DNS not resolving - Some networks block custom DNS. Try:
 - Switching to different DoH provider
 - Using network admin credentials if available
 - Testing on different network to isolate issue
 
-Slow internet: DoH adds minimal latency. If noticeable:
+Slow internet - DoH adds minimal latency. If noticeable:
 - Confirm DoH endpoint is responsive (ping the IP)
 - Switch to geographically closer provider
 - Disable malware filtering if enabled (reduces latency)
@@ -462,30 +462,30 @@ App doesn't recognize DoH setting: Some apps use hardcoded DNS servers:
 - Some browsers (Firefox) have DoH settings independent of system
 - VPN apps often override system DoH
 
-Mobile hotspot DNS leaks: Phone-provided hotspot may override DoH:
+Mobile hotspot DNS leaks - Phone-provided hotspot may override DoH:
 - Enable DoH on both phone and connected device
 - Use dedicated mobile router with DoH support instead
 
-Step 9: Privacy Considerations
+Step 9 - Privacy Considerations
 
 DoH doesn't encrypt destination IP: ISPs still see which servers you connect to (by IP address). DoH protects domain names only, not destination addresses. For complete privacy, combine DoH with VPN.
 
-VPN adds DoH redundancy: A VPN encrypts all traffic including DNS, so separate DoH isn't needed. However, DoH provides defense-in-depth: even if VPN fails, DNS remains encrypted.
+VPN adds DoH redundancy - A VPN encrypts all traffic including DNS, so separate DoH isn't needed. However, DoH provides defense-in-depth: even if VPN fails, DNS remains encrypted.
 
-Provider trust: You're trusting the DoH provider with your DNS queries. Choose providers with strong privacy policies:
+Provider trust - You're trusting the DoH provider with your DNS queries. Choose providers with strong privacy policies:
 - Cloudflare and Quad9: Strong independent audits
 - NextDNS: Good privacy, but retains logs
 - Avoid suspicious providers claiming privacy without audits
 
-Step 10: Implementation Timeline
+Step 10 - Implementation Timeline
 
-Day 1: Set up DoH on primary device (phone or laptop) using official app or system settings.
+Day 1 - Set up DoH on primary device (phone or laptop) using official app or system settings.
 
-Day 2-3: Configure DoH on remaining personal devices (secondary phone, tablet, desktop).
+Day 2-3 - Configure DoH on remaining personal devices (secondary phone, tablet, desktop).
 
-Day 4-5: If you have network access, configure router for network-wide DoH.
+Day 4-5 - If you have network access, configure router for network-wide DoH.
 
-Ongoing: Verify DoH is working monthly using verification tools. Update settings if provider changes recommendations.
+Ongoing - Verify DoH is working monthly using verification tools. Update settings if provider changes recommendations.
 
 Frequently Asked Questions
 

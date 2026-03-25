@@ -19,7 +19,7 @@ tags: [privacy-tools-guide]
 To set up anonymous IRC over Tor, install the Tor daemon, configure your IRC client (like WeeChat or Irssi) to connect through SOCKS5 on localhost:9050, then connect to Tor-hidden IRC networks that operate as .onion services for near-complete anonymity. Standard IRC exposes your IP address to all network observers, while running IRC over Tor hides your IP and adds multiple layers of routing obfuscation, protecting you from traffic analysis and deanonymization.
 
 
-- In the Network List: ensure "Use proxy for DNS lookups" is enabled, or better yet, always use .onion addresses that require no DNS resolution.
+- In the Network List - ensure "Use proxy for DNS lookups" is enabled, or better yet, always use .onion addresses that require no DNS resolution.
 - IRC over Tor is: best suited for communities that already use IRC and want privacy improvements without switching platforms.
 - Always use SSL/TLS on: port 6697 rather than plaintext port 6667, even when routing through Tor, to protect against malicious exit nodes.
 - - Malicious exit nodes: Always use SSL (port 6697) to protect against exit node eavesdropping when connecting to clearnet IRC servers.
@@ -42,7 +42,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install and Configuring the Tor Daemon
+Step 1 - Install and Configuring the Tor Daemon
 
 The foundation of anonymous IRC is a properly configured Tor installation. On Linux, install the Tor daemon:
 
@@ -63,7 +63,7 @@ Configure Tor for IRC traffic by editing `/etc/tor/torrc` (Linux) or `~/Library/
 Enable SOCKS proxy on port 9050
 SOCKSPort 9050
 
-Optional: Control port for scripting
+Optional - Control port for scripting
 ControlPort 9051
 CookieAuthentication 1
 
@@ -91,10 +91,10 @@ Verify the SOCKS proxy is listening:
 
 ```bash
 netstat -an | grep 9050
-Expected: tcp 0.0.0.0:9050 LISTEN
+Expected - tcp 0.0.0.0:9050 LISTEN
 ```
 
-Step 2: IRC Client Configuration
+Step 2 - IRC Client Configuration
 
 Several IRC clients support Tor natively. This guide focuses on three popular options: HexChat (GUI), WeeChat (terminal), and Irssi (terminal).
 
@@ -113,13 +113,13 @@ For OFTC, which maintains an official Tor hidden service:
 
 ```conf
 Server settings
-Server/Hostname: irc6.oftc.net.onion
-Port: 6697
-Use SSL: Yes
-Proxy: 127.0.0.1:9050 (SOCKS5)
+Server/Hostname - irc6.oftc.net.onion
+Port - 6697
+Use SSL - Yes
+Proxy - 127.0.0.1:9050 (SOCKS5)
 ```
 
-One critical HexChat setting: disable DNS lookups through the local resolver. If HexChat resolves hostnames before passing them to the SOCKS proxy, it leaks your DNS queries outside Tor. In the Network List, ensure "Use proxy for DNS lookups" is enabled, or better yet, always use .onion addresses that require no DNS resolution.
+One critical HexChat setting - disable DNS lookups through the local resolver. If HexChat resolves hostnames before passing them to the SOCKS proxy, it leaks your DNS queries outside Tor. In the Network List, ensure "Use proxy for DNS lookups" is enabled, or better yet, always use .onion addresses that require no DNS resolution.
 
 WeeChat Configuration
 
@@ -142,7 +142,7 @@ Verify the connection shows a .onion address:
 
 ```bash
 /server
-Should show: oftc-tor [irc6.oftc.net.onion/6697] (connected)
+Should show - oftc-tor [irc6.oftc.net.onion/6697] (connected)
 ```
 
 Irssi Configuration
@@ -166,7 +166,7 @@ Add network
 
 Irssi's configuration is stored in `~/.irssi/config`. Back this file up securely. it contains your server list, and losing it means reconfiguring all your anonymous connections.
 
-Step 3: Connecting to Tor-Based IRC Networks
+Step 3 - Connecting to Tor-Based IRC Networks
 
 Several IRC networks operate Tor hidden services, providing inherent protection against IP-based attacks.
 
@@ -191,7 +191,7 @@ IRCnet and Custom Server Connections
 
 Many networks allow connections through Tor exits. Use caution. exit nodes can be monitored for unencrypted traffic. Always use SSL/TLS on port 6697 rather than plaintext port 6667, even when routing through Tor, to protect against malicious exit nodes.
 
-Step 4: Verify Anonymity
+Step 4 - Verify Anonymity
 
 After connecting, verify your anonymity:
 
@@ -231,7 +231,7 @@ TLS Certificate Pinning
 Record server certificate fingerprints on first connection and configure your client to reject changes:
 
 ```bash
-WeeChat: Display SSL certificate fingerprint
+WeeChat - Display SSL certificate fingerprint
 /set irc.server.oftc.tls_verify on
 /set irc.server.oftc.tls_fingerprint "SHA256:xxxx..."
 /save
@@ -262,7 +262,7 @@ Disable all IRC logging
 /set logger.level.irc 0
 
 Or encrypt with GPG using a post-processing script
-Pipe WeeChat log output through: gpg --symmetric --cipher-algo AES256
+Pipe WeeChat log output through - gpg --symmetric --cipher-algo AES256
 ```
 
 For Irssi, configure autolog with encryption:
@@ -303,7 +303,7 @@ sudo ntpdate pool.ntp.org
 
 If you see `Connection refused` when using .onion addresses, the hidden service may be temporarily unreachable. Wait a few minutes and try again. .onion services sometimes have brief interruptions as their introduction points rotate.
 
-Advanced: Running Your Own Tor-Enabled IRC Server
+Advanced - Running Your Own Tor-Enabled IRC Server
 
 For complete control and to eliminate exit node exposure entirely, run an IRC daemon with a Tor hidden service:
 

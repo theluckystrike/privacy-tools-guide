@@ -49,7 +49,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install the Mullvad App
+Step 1 - Install the Mullvad App
 
 Debian/Ubuntu:
 
@@ -81,7 +81,7 @@ yay -S mullvad-vpn-bin
 
 ---
 
-Step 2: CLI Setup and Connect
+Step 2 - CLI Setup and Connect
 
 Mullvad's CLI tool is `mullvad`:
 
@@ -91,14 +91,14 @@ mullvad account login 1234567890123456
 
 Verify account status
 mullvad account get
-Shows: time remaining, account number
+Shows - time remaining, account number
 
 Connect to VPN (auto-selects nearest server)
 mullvad connect
 
 Check connection status
 mullvad status
-Should show: Connected to [server] via WireGuard
+Should show - Connected to [server] via WireGuard
 
 Check your public IP (should now be Mullvad's IP)
 curl -s https://am.i.mullvad.net/json | python3 -m json.tool
@@ -106,7 +106,7 @@ curl -s https://am.i.mullvad.net/json | python3 -m json.tool
 
 ---
 
-Step 3: Server Selection
+Step 3 - Server Selection
 
 ```bash
 List available servers
@@ -131,7 +131,7 @@ mullvad reconnect
 
 ---
 
-Step 4: Enable the Kill Switch
+Step 4 - Enable the Kill Switch
 
 The kill switch blocks all internet traffic if the VPN connection drops:
 
@@ -141,20 +141,20 @@ mullvad lockdown-mode set on
 
 Verify status
 mullvad lockdown-mode get
-Shows: Lockdown mode enabled
+Shows - Lockdown mode enabled
 
-Test: disconnect and verify internet is blocked
+Test - disconnect and verify internet is blocked
 mullvad disconnect
 ping 8.8.8.8   # Should fail
 curl https://ifconfig.me  # Should fail
 mullvad connect          # Reconnect to restore access
 ```
 
-How it works: Mullvad's kill switch uses network rules (via `nftables` or `iptables`) that allow only traffic through the WireGuard tunnel interface. All other outbound traffic is dropped.
+How it works - Mullvad's kill switch uses network rules (via `nftables` or `iptables`) that allow only traffic through the WireGuard tunnel interface. All other outbound traffic is dropped.
 
 ---
 
-Step 5: DNS Configuration
+Step 5 - DNS Configuration
 
 ```bash
 View current DNS servers (Mullvad's by default)
@@ -172,7 +172,7 @@ curl -s https://am.i.mullvad.net/json | python3 -c "import json,sys; d=json.load
 
 ---
 
-Step 6: Split Tunneling
+Step 6 - Split Tunneling
 
 Split tunneling sends specific apps outside the VPN tunnel while others go through it:
 
@@ -196,7 +196,7 @@ Not natively supported in Mullvad. requires custom routing
 
 ---
 
-Step 7: Manual WireGuard Setup (Without the App)
+Step 7 - Manual WireGuard Setup (Without the App)
 
 For servers, minimal installs, or when you prefer to manage the connection directly:
 
@@ -243,7 +243,7 @@ sudo wg-quick down mullvad-se
 
 ---
 
-Step 8: DAITA (Defense Against AI-Guided Traffic Analysis)
+Step 8 - DAITA (Defense Against AI-Guided Traffic Analysis)
 
 Mullvad's DAITA feature adds random padding and artificial traffic to your connection to frustrate machine learning-based traffic fingerprinting:
 
@@ -259,12 +259,12 @@ DAITA adds bandwidth overhead (roughly 15-30%) but provides meaningful protectio
 
 ---
 
-Step 9: Verify No Leaks
+Step 9 - Verify No Leaks
 
 ```bash
 Full leak test
 curl -s https://am.i.mullvad.net/json | python3 -m json.tool
-Check: mullvad_exit_ip: true, mullvad_server: [server]
+Check - mullvad_exit_ip: true, mullvad_server: [server]
 
 DNS leak test
 for i in {1..5}; do
@@ -277,7 +277,7 @@ curl -6 https://ipv6.icanhazip.com 2>/dev/null || echo "IPv6 not routed (good)"
 If you get an IPv6 address, check Mullvad's IPv6 settings
 
 WebRTC leak (browser-based)
-Open: browserleaks.com/webrtc
+Open - browserleaks.com/webrtc
 Your real IP should NOT appear
 
 Disable IPv6 if leaking
@@ -286,7 +286,7 @@ mullvad tunnel wireguard set ipv6 disable
 
 ---
 
-Step 10: Autostart on Boot
+Step 10 - Autostart on Boot
 
 ```bash
 Enable Mullvad to connect automatically at startup
@@ -294,7 +294,7 @@ mullvad auto-connect set on
 
 Verify
 mullvad auto-connect get
-Shows: Autoconnect: on
+Shows - Autoconnect: on
 
 For systemd service (manual WireGuard):
 sudo systemctl enable wg-quick@mullvad-se
@@ -302,7 +302,7 @@ sudo systemctl enable wg-quick@mullvad-se
 
 ---
 
-Step 11: Multihop (Double VPN) Configuration
+Step 11 - Multihop (Double VPN) Configuration
 
 Mullvad supports multihop routing, where your traffic enters one server and exits through a different server in another country. This adds a layer of separation. the entry server knows your IP but not your destination, while the exit server knows your destination but not your real IP.
 
@@ -317,14 +317,14 @@ mullvad relay set location us nyc        # Exit: New York
 
 Verify multihop is active
 mullvad status
-Should show: Connected to [exit-server] via [entry-server]
+Should show - Connected to [exit-server] via [entry-server]
 ```
 
 Multihop increases latency by 20, 60ms depending on geographic distance between entry and exit nodes. Use it when you need to obscure which VPN provider's exit IP you're using, or when operating in environments where known Mullvad IP ranges are monitored.
 
 ---
 
-Step 12: Configure Mullvad with a Firewall (nftables)
+Step 12 - Configure Mullvad with a Firewall (nftables)
 
 On headless servers running Mullvad's manual WireGuard setup, you may want explicit firewall rules rather than relying solely on the `wg-quick` AllowedIPs mechanism. The following nftables configuration enforces that all outbound traffic routes through the WireGuard interface:
 
@@ -361,20 +361,20 @@ This kill switch approach operates at the firewall layer independently of the VP
 
 Troubleshooting Common Linux Issues
 
-Problem: DNS leaks despite VPN being connected
+Problem - DNS leaks despite VPN being connected
 
 Check whether your system is using `systemd-resolved` and whether it respects the DNS pushed by WireGuard:
 
 ```bash
 resolvectl status
-Look for: DNS Servers line on the WireGuard interface
+Look for - DNS Servers line on the WireGuard interface
 
 If wrong DNS is showing, force it:
 sudo resolvectl dns mullvad-se 10.64.0.1
 sudo resolvectl domain mullvad-se "~."
 ```
 
-Problem: VPN connects but traffic still routes through physical interface
+Problem - VPN connects but traffic still routes through physical interface
 
 Verify routing table priorities:
 
@@ -387,7 +387,7 @@ sudo wg show
 AllowedIPs should include 0.0.0.0/0 for full tunnel routing
 ```
 
-Problem: High latency or packet loss on WireGuard tunnel
+Problem - High latency or packet loss on WireGuard tunnel
 
 WireGuard is sensitive to MTU mismatches across different network paths. Try reducing the MTU on your WireGuard interface:
 

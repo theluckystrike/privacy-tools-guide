@@ -37,7 +37,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What Faraday Bags Actually Do
+Step 1 - What Faraday Bags Actually Do
 
 Faraday bags create a conductive enclosure that distributes external electric fields across the bag's surface, preventing them from reaching devices inside. This blocking works bidirectionally: signals cannot escape from your device, and external signals cannot reach it.
 
@@ -75,7 +75,7 @@ Emergency Signal Blocking
 
 During certain security incidents, you may need to immediately prevent all wireless communications from a device. A Faraday bag provides instant signal isolation without requiring you to power off the device or remove the battery.
 
-Step 2: How to Test Your Faraday Bag
+Step 2 - How to Test Your Faraday Bag
 
 Testing is critical. A damaged or low-quality Faraday bag may provide a false sense of security. Here are reliable testing methods.
 
@@ -85,7 +85,7 @@ Basic Connectivity Test
 #!/usr/bin/env python3
 """
 Faraday bag RF isolation test
-Requires: a phone or device that can run a simple HTTP server
+Requires - a phone or device that can run a simple HTTP server
 """
 import socket
 import sys
@@ -156,19 +156,19 @@ Confusing Faraday Bags with RF-Blocking Sleeves
 
 Some products marketed as "signal blocking" are merely RF-blocking sleeves that reduce signal strength without providing true Faraday protection. Always verify the product specifications and test your bags.
 
-Step 3: Choose the Right Faraday Bag
+Step 3 - Choose the Right Faraday Bag
 
 Quality matters significantly. Consider these factors:
 
-Material construction: True Faraday bags use conductive metalized fabric or metal mesh. The fabric should feel slightly stiff or have a noticeable metallic sheen.
+Material construction - True Faraday bags use conductive metalized fabric or metal mesh. The fabric should feel slightly stiff or have a noticeable metallic sheen.
 
-Closure type: Roll-top closures generally provide better sealing than zipper-style closures, though both can be effective when properly used.
+Closure type - Roll-top closures generally provide better sealing than zipper-style closures, though both can be effective when properly used.
 
-Size selection: Choose a bag large enough for your device with room to fully close without forcing the contents.
+Size selection - Choose a bag large enough for your device with room to fully close without forcing the contents.
 
-Reputation: Purchase from vendors who provide testing specifications. Many cheap products on the market do not actually provide meaningful RF attenuation.
+Reputation - Purchase from vendors who provide testing specifications. Many cheap products on the market do not actually provide meaningful RF attenuation.
 
-Step 4: Practical Implementation
+Step 4 - Practical Implementation
 
 For developers integrating Faraday bags into security workflows, consider this simple verification script that can run on an Android device:
 
@@ -199,34 +199,34 @@ For developers requiring rigorous verification, use proper RF measurement equipm
 #!/bin/bash
 RF measurement setup
 
-Option 1: HackRF One + GNU Radio
+Option 1 - HackRF One + GNU Radio
 Install hackrf tools and monitor 2.4 GHz band
 hackrf_transfer -r wifi_spectrum.bin -f 2400000000 -s 8000000
 
-Option 2: USRP (Universal Software Radio Peripheral)
+Option 2 - USRP (Universal Software Radio Peripheral)
 More expensive but more precise
 UHD drivers provide Python/C++ APIs
 
-Option 3: USB spectrum analyzer
+Option 3 - USB spectrum analyzer
 Cheap($50-100) but limited frequency range
 Use for quick verification in 2.4/5 GHz bands
 ```
 
 Real RF analysis confirms whether your Faraday bag blocks across the full frequency range. A properly functioning bag should show signal attenuation of 60+ dB at WiFi and cellular frequencies.
 
-Step 5: Faraday Bag Use in High-Risk Environments
+Step 5 - Faraday Bag Use in High-Risk Environments
 
 Specific threat scenarios justify Faraday bag usage:
 
-Border Security: Some jurisdictions perform device cloning at borders. Place your device in the bag before reaching checkpoints to prevent unauthorized wireless access.
+Border Security - Some jurisdictions perform device cloning at borders. Place your device in the bag before reaching checkpoints to prevent unauthorized wireless access.
 
-Insider Threat Environments: Corporate espionage scenarios where devices might receive malicious firmware updates. Keep devices in Faraday bags when not actively in use.
+Insider Threat Environments - Corporate espionage scenarios where devices might receive malicious firmware updates. Keep devices in Faraday bags when not actively in use.
 
-Forensic Preservation: During police custody or evidence collection, a Faraday bag prevents remote wipe commands that could destroy evidence of crimes committed by others on your device.
+Forensic Preservation - During police custody or evidence collection, a Faraday bag prevents remote wipe commands that could destroy evidence of crimes committed by others on your device.
 
-Secure Communication: When conducting sensitive interviews or intelligence gathering, Faraday bags prevent tracking of the interview location by device location services.
+Secure Communication - When conducting sensitive interviews or intelligence gathering, Faraday bags prevent tracking of the interview location by device location services.
 
-Step 6: Distinguishing Real Faraday Bags from Marketing Fraud
+Step 6 - Distinguishing Real Faraday Bags from Marketing Fraud
 
 Many products claim signal blocking without actual testing:
 
@@ -251,7 +251,7 @@ No gaps or thin points in the material
 
 Cheap eBay Faraday bags frequently provide inadequate shielding. Verify specifications from manufacturers that publish technical data.
 
-Step 7: Perform Maintenance and Durability Concerns
+Step 7 - Perform Maintenance and Durability Concerns
 
 Faraday bags degrade over time, affecting performance:
 
@@ -280,7 +280,7 @@ Defense Layers:
 
 Never rely solely on Faraday bags. Use them alongside encrypted storage, strong authentication, and device monitoring.
 
-Step 8: Practical Packing Recommendations
+Step 8 - Practical Packing Recommendations
 
 Pack your Faraday bag efficiently:
 

@@ -24,7 +24,7 @@ When your application receives webhook notifications from external services, you
 
 The standard defense layers include transport-layer security (HTTPS), payload signing, and application-layer encryption. Each layer addresses different threats: TLS protects against network-level eavesdropping, HMAC signatures verify authenticity and detect tampering, and AES encryption ensures payload confidentiality even if other layers fail.
 
-Step 1: Enforce TLS and Verify Certificates
+Step 1 - Enforce TLS and Verify Certificates
 
 Always serve your webhook endpoints over HTTPS with modern TLS versions. Configure your server to use TLS 1.2 or higher and disable fallback to older versions. Beyond basic HTTPS, implement certificate pinning for high-security integrations where you know the exact certificate the sender uses.
 
@@ -46,7 +46,7 @@ ssl_context.minimum_version = ssl.TLSVersion.TLSv1_2
 ssl_context.set_ciphers('ECDHE+AESGCM:ECDHE+CHACHA20:DHE+AESGCM:DHE+CHACHA20')
 ```
 
-Step 2: Implement HMAC Signature Verification
+Step 2 - Implement HMAC Signature Verification
 
 HMAC (Hash-based Message Authentication Code) signatures prevent attackers from forging webhook requests. The sender computes a signature using a shared secret key and includes it in a header. Your server recomputes the signature and rejects requests with invalid or missing signatures.
 
@@ -116,7 +116,7 @@ def handle_webhook():
     return jsonify({"status": "received"}), 200
 ```
 
-Step 3: Add AES Payload Encryption
+Step 3 - Add AES Payload Encryption
 
 For highly sensitive data, encrypt the entire payload using AES-256-GCM. This provides both confidentiality and integrity verification. The sender encrypts before transmission, and your server decrypts after signature verification.
 
@@ -183,7 +183,7 @@ def send_encrypted_webhook(url: str, payload: dict, secret: bytes, encryption_ke
     return response
 ```
 
-Step 4: Implement Request Validation and Rate Limiting
+Step 4 - Implement Request Validation and Rate Limiting
 
 Beyond signature verification, implement additional security measures to protect your webhook endpoints from abuse.
 
@@ -230,7 +230,7 @@ Complete Implementation Checklist
 When deploying encrypted webhooks in production, ensure you address these items:
 
 - Secret rotation: Implement a process to rotate webhook secrets without service interruption. Support multiple active secrets during transitions.
-- Idempotency: Design your webhook handlers to process each unique event exactly once. Use event IDs stored in a database to detect and skip duplicate deliveries.
+- Idempotency - Design your webhook handlers to process each unique event exactly once. Use event IDs stored in a database to detect and skip duplicate deliveries.
 - Logging and monitoring: Log webhook deliveries for debugging while avoiding logging sensitive payload contents. Alert on verification failures or unusual delivery patterns.
 - Timeout handling: Set appropriate timeouts for webhook requests. Implement asynchronous processing for webhooks that require lengthy operations.
 - Failure handling: Design a retry strategy for failed webhook processing, typically with exponential backoff and a maximum retry count.

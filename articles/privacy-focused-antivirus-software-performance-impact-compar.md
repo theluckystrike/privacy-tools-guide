@@ -44,7 +44,7 @@ Privacy-focused solutions typically minimize these impacts by using different de
 Benchmarking Methodology
 
 For accurate comparisons, I tested each solution on identical hardware:
-- System: Linux (Ubuntu 22.04 LTS) and Windows 11 Pro
+- System - Linux (Ubuntu 22.04 LTS) and Windows 11 Pro
 - CPU: AMD Ryzen 7 5800X (8 cores, 16 threads)
 - RAM: 32GB DDR4
 - Storage: NVMe SSD
@@ -61,9 +61,9 @@ Privacy-Focused Solutions Tested
 
 ClamAV remains the go-to open-source solution for privacy-conscious users. Its architecture prioritizes user control over convenience.
 
-Memory Usage (Idle): 45-80 MB
-CPU Impact (file access): 2-5% during active scanning
-Disk I/O: Moderate increase (~10% during scans)
+Memory Usage (Idle) - 45-80 MB
+CPU Impact (file access) - 2-5% during active scanning
+Disk I/O - Moderate increase (~10% during scans)
 
 For developers, ClamAV integrates well with build systems. Here's a quick integration example for Makefiles:
 
@@ -82,9 +82,9 @@ The memory footprint remains remarkably low, making it suitable for containerize
 
 Sophos offers a privacy-focused approach with cloud-assisted detection that minimizes local resource usage.
 
-Memory Usage (Idle): 120-180 MB
-CPU Impact (file access): 3-8% during file operations
-Network Usage: Higher due to cloud query system
+Memory Usage (Idle) - 120-180 MB
+CPU Impact (file access) - 3-8% during file operations
+Network Usage - Higher due to cloud query system
 
 The cloud-assisted model means lighter local databases, but it does require an active internet connection. For developers working in air-gapped environments, this is a limitation worth noting.
 
@@ -92,9 +92,9 @@ The cloud-assisted model means lighter local databases, but it does require an a
 
 Bitdefender's free tier provides solid protection with minimal resource consumption, though it's Windows-focused.
 
-Memory Usage (Idle): 200-280 MB
-CPU Impact (file access): 5-10% peak usage
-Startup Impact: Noticeable 3-5 second delay
+Memory Usage (Idle) - 200-280 MB
+CPU Impact (file access) - 5-10% peak usage
+Startup Impact - Noticeable 3-5 second delay
 
 The behavioral detection system runs primarily in user-space, reducing kernel-level interference that can cause driver conflicts.
 
@@ -102,9 +102,9 @@ The behavioral detection system runs primarily in user-space, reducing kernel-le
 
 Surprisingly, Windows Defender has evolved into a viable privacy-conscious option, especially for users who prefer minimal third-party software.
 
-Memory Usage (Idle): 150-250 MB (varies with Windows version)
-CPU Impact: Adaptive, 3-12% depending on activity
-Tamper Protection: Built-in, prevents unauthorized disabling
+Memory Usage (Idle) - 150-250 MB (varies with Windows version)
+CPU Impact - Adaptive, 3-12% depending on activity
+Tamper Protection - Built-in, prevents unauthorized disabling
 
 For PowerShell automation developers, Windows Defender offers excellent integration:
 
@@ -120,9 +120,9 @@ Add-MpPreference -ExclusionPath "C:\Projects" -ExclusionPath "C:\DevTools"
 
 Comodo provides a sandbox-first approach that isolates suspicious processes.
 
-Memory Usage (Idle): 180-300 MB
-CPU Impact: Higher during sandbox operations
-Sandbox Memory: +200-500 MB per sandboxed application
+Memory Usage (Idle) - 180-300 MB
+CPU Impact - Higher during sandbox operations
+Sandbox Memory - +200-500 MB per sandboxed application
 
 The sandbox feature is valuable for testing unknown software, but developers should be aware of the memory overhead when running multiple compiled binaries.
 
@@ -147,9 +147,9 @@ Memory-Constrained Environments
 
 For developers working on systems with limited RAM (16GB or less), the memory footprint directly impacts available resources for IDEs, containers, and virtual machines.
 
-Recommended for 16GB systems: ClamAV (manual scanning) or Windows Defender with exclusions configured.
+Recommended for 16GB systems - ClamAV (manual scanning) or Windows Defender with exclusions configured.
 
-Recommended for containers: ClamAV in a sidecar container pattern, scanning CI/CD artifacts rather than running continuously on developer machines.
+Recommended for containers - ClamAV in a sidecar container pattern, scanning CI/CD artifacts rather than running continuously on developer machines.
 
 Battery Impact (Laptop Developers)
 

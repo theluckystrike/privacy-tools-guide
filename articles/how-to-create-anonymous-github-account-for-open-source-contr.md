@@ -21,22 +21,22 @@ Contributing to open source projects is a rewarding way to improve your coding s
 Table of Contents
 
 - [Why Create an Anonymous GitHub Account](#why-create-an-anonymous-github-account)
-- [Step 1: Create an Anonymous Email Address](#step-1-create-an-anonymous-email-address)
-- [Step 2: Set Up Git with a Separate Identity](#step-2-set-up-git-with-a-separate-identity)
-- [Step 3: Generate New SSH Keys](#step-3-generate-new-ssh-keys)
-- [Step 4: Create the GitHub Account](#step-4-create-the-github-account)
-- [Step 5: Add Your Anonymous SSH Key](#step-5-add-your-anonymous-ssh-key)
-- [Step 6: Maintain Separation](#step-6-maintain-separation)
+- [Step 1 - Create an Anonymous Email Address](#step-1-create-an-anonymous-email-address)
+- [Step 2 - Set Up Git with a Separate Identity](#step-2-set-up-git-with-a-separate-identity)
+- [Step 3 - Generate New SSH Keys](#step-3-generate-new-ssh-keys)
+- [Step 4 - Create the GitHub Account](#step-4-create-the-github-account)
+- [Step 5 - Add Your Anonymous SSH Key](#step-5-add-your-anonymous-ssh-key)
+- [Step 6 - Maintain Separation](#step-6-maintain-separation)
 - [Maintaining Compartmentalization in Practice](#maintaining-compartmentalization-in-practice)
 - [Understanding GitHub's Privacy Limitations](#understanding-githubs-privacy-limitations)
 
 Why Create an Anonymous GitHub Account
 
-Developers choose anonymous GitHub accounts for various reasons. Some contribute to projects related to privacy tools, security research, or advocacy work where identification could attract unwanted attention. Others maintain strict compartmentalization between their day job and personal projects. Whatever your motivation, the goal remains the same: participate in the open source ecosystem without exposing who you are.
+Developers choose anonymous GitHub accounts for various reasons. Some contribute to projects related to privacy tools, security research, or advocacy work where identification could attract unwanted attention. Others maintain strict compartmentalization between their day job and personal projects. Whatever your motivation, the goal remains the same: participate in the open source environment without exposing who you are.
 
 GitHub itself requires an email address for account creation, but with careful configuration, you can prevent this email from being publicly visible and ensure your commits remain untraceable back to you.
 
-Step 1: Create an Anonymous Email Address
+Step 1 - Create an Anonymous Email Address
 
 The foundation of an anonymous GitHub account is an email address that cannot be traced to your real identity. Avoid using email services tied to your real name, employer, or existing online accounts. Instead, consider these options:
 
@@ -48,7 +48,7 @@ Self-hosted email using a custom domain provides the highest level of control. R
 
 When creating your email, use a pseudonym that doesn't match your real name. Avoid reusing usernames from other platforms where your identity is known.
 
-Step 2: Set Up Git with a Separate Identity
+Step 2 - Set Up Git with a Separate Identity
 
 After creating your anonymous email, you need to configure Git to use this identity. This involves two main components: your Git user information and your SSH keys.
 
@@ -69,7 +69,7 @@ git config user.email "your-anonymous@proton.me"
 
 This ensures commits from this repository use your anonymous identity, while other repositories on your machine continue using your regular identity.
 
-Step 3: Generate New SSH Keys
+Step 3 - Generate New SSH Keys
 
 Never reuse SSH keys from your main GitHub account. Generate a fresh SSH key pair specifically for your anonymous account:
 
@@ -101,7 +101,7 @@ Now you can clone repositories using this specific SSH configuration:
 git clone git@github-anonymous:username/anonymous-repo.git
 ```
 
-Step 4: Create the GitHub Account
+Step 4 - Create the GitHub Account
 
 With your anonymous email and SSH keys ready, create your GitHub account:
 
@@ -112,7 +112,7 @@ With your anonymous email and SSH keys ready, create your GitHub account:
 
 After creating the account, immediately navigate to Settings → Emails and verify your anonymous email. Check the box to "Keep my email addresses private". this hides your email from your public profile and replaces it with a no-reply GitHub address in commits.
 
-Step 5: Add Your Anonymous SSH Key
+Step 5 - Add Your Anonymous SSH Key
 
 Upload the public key you generated to your anonymous GitHub account:
 
@@ -130,7 +130,7 @@ ssh -T git@github-anonymous
 
 You should see a message confirming your anonymous identity.
 
-Step 6: Maintain Separation
+Step 6 - Maintain Separation
 
 Keeping your anonymous identity separate requires ongoing vigilance. Follow these practices:
 

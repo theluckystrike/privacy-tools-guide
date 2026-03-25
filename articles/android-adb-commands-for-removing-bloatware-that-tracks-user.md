@@ -141,8 +141,8 @@ For managing multiple packages efficiently, create a shell script:
 ```bash
 #!/bin/bash
 
-File: remove_trackers.sh
-Usage: ./remove_trackers.sh
+File - remove_trackers.sh
+Usage - ./remove_trackers.sh
 
 PACKAGES=(
     "com.google.android.gms"

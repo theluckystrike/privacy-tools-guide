@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the User-Agent Header
+Step 1 - Understand the User-Agent Header
 
 The User-Agent header follows a standardized format:
 
@@ -38,7 +38,7 @@ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like 
 
 This string reveals your browser vendor, version, operating system, and sometimes CPU architecture. Combined with other signals like screen resolution, installed fonts, and JavaScript capabilities, your User-Agent becomes part of a browser fingerprint that can track you even without cookies.
 
-Step 2: Browser Extensions for Quick Spoofing
+Step 2 - Browser Extensions for Quick Spoofing
 
 The fastest way to modify your User-Agent without touching code is through browser extensions. Popular options include:
 
@@ -48,7 +48,7 @@ The fastest way to modify your User-Agent without touching code is through brows
 
 After installing an extension, you can select from preset User-Agent strings or create custom ones. This method works well for casual privacy improvements and quick testing, but power users should note that sophisticated trackers can still detect extension-based spoofing through JavaScript API checks.
 
-Step 3: Use Browser Developer Tools
+Step 3 - Use Browser Developer Tools
 
 Modern browsers include built-in options to override the User-Agent in their developer tools.
 
@@ -71,7 +71,7 @@ Firefox requires a configuration change:
 
 This sets a persistent User-Agent for all Firefox sessions until you remove the preference.
 
-Step 4: Spoofing User-Agent in JavaScript
+Step 4 - Spoofing User-Agent in JavaScript
 
 For web developers testing how their applications handle different User-Agents, JavaScript provides direct control:
 
@@ -87,7 +87,7 @@ console.log(navigator.userAgent);
 
 This JavaScript override affects only the page where you execute the code and doesn't persist across page reloads. For more persistent modifications, you can inject this code through an userscript manager like Tampermonkey or Violentmonkey.
 
-Step 5: Implement Programmatic Spoofing with Python
+Step 5 - Implement Programmatic Spoofing with Python
 
 When building web scrapers or automated testing frameworks, Python offers well-maintained libraries for HTTP requests with custom User-Agent headers:
 
@@ -114,7 +114,7 @@ driver = webdriver.Chrome(options=options)
 driver.get('https://example.com')
 ```
 
-Step 6: Command-Line Tools for Privacy
+Step 6 - Command-Line Tools for Privacy
 
 Several command-line utilities let you browse or make requests with custom User-Agents:
 
@@ -140,23 +140,23 @@ The modern replacement for curl, `htpx`, offers similar functionality with impro
 htpx https://example.com -H "User-Agent: Mozilla/5.0 (Windows NT 10.0)"
 ```
 
-Step 7: Limitations and Counter-Detection
+Step 7 - Limitations and Counter-Detection
 
 While User-Agent spoofing provides basic privacy benefits, be aware of its limitations:
 
 1. Canvas and WebGL Fingerprinting: Sophisticated trackers can still identify your browser through canvas rendering differences
-2. JavaScript API Consistency: Modifying the User-Agent string doesn't change what `navigator.platform` or `navigator.appVersion` returns
+2. JavaScript API Consistency - Modifying the User-Agent string doesn't change what `navigator.platform` or `navigator.appVersion` returns
 3. HTTP/2 and HTTP/3 Fingerprinting: Modern protocols expose additional signals beyond headers
 
 For stronger protection, combine User-Agent spoofing with other privacy measures like browser fingerprinting protection, privacy-focused browser extensions, and disabling JavaScript on untrusted sites.
 
-Step 8: Practical Recommendations
+Step 8 - Practical Recommendations
 
 For developers testing cross-browser compatibility, use browser developer tools or automated testing frameworks like Playwright with custom User-Agent configurations. This approach provides accurate testing without permanent browser changes.
 
 For privacy-conscious users, browser extensions offer the easiest entry point, though they should be combined with other privacy tools for better protection. Firefox with `privacy.resistFingerprinting` enabled provides solid baseline protection without additional configuration.
 
-Step 9: Browser Fingerprinting Defense
+Step 9 - Browser Fingerprinting Defense
 
 User-Agent spoofing addresses only one component of browser fingerprinting. A complete defense strategy requires multiple layers.
 
@@ -239,11 +239,11 @@ function detectInstalledFonts() {
 
 Mitigation involves using privacy-focused browsers that normalize font rendering or disabling web fonts entirely.
 
-Step 10: Browser Selection for Privacy
+Step 10 - Browser Selection for Privacy
 
 Different browsers provide different privacy baselines.
 
-Brave Browser: Balance of Privacy and Usability
+Brave Browser - Balance of Privacy and Usability
 
 Brave includes built-in protections without extensive configuration:
 
@@ -262,7 +262,7 @@ Settings → Privacy and security
 - Set User-Agent to random selection
 ```
 
-Firefox: Power User Flexibility
+Firefox - Power User Flexibility
 
 Firefox allows detailed configuration for users willing to read documentation:
 
@@ -273,7 +273,7 @@ Firefox allows detailed configuration for users willing to read documentation:
 - `dom.maxHardwareConcurrency: 2` (spoof core count)
 - `dom.navigator.hardwareConcurrency: 2`
 
-Tor Browser: Maximum Anonymity
+Tor Browser - Maximum Anonymity
 
 Tor Browser isolates fingerprinting through window letterboxing, maintaining consistent window size across all users, making fingerprinting less effective:
 
@@ -284,7 +284,7 @@ Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0
 
 All Tor users report nearly identical User-Agents, making individual identification impossible.
 
-Safari: Minimal Configuration, Strong Defaults
+Safari - Minimal Configuration, Strong Defaults
 
 Safari provides fingerprinting protection with limited user configuration:
 
@@ -294,7 +294,7 @@ Safari provides fingerprinting protection with limited user configuration:
 
 However, Safari's limited customization makes it difficult to implement advanced hardening.
 
-Step 11: Real-World Testing of User-Agent Effectiveness
+Step 11 - Real-World Testing of User-Agent Effectiveness
 
 Test your protection by visiting fingerprinting test sites.
 
@@ -315,13 +315,13 @@ AmIUnique.org Fingerprinting Assessment
 AmIUnique calculates how unique your browser fingerprint is:
 
 ```
-Expected uniqueness: 1 in 1 million
+Expected uniqueness - 1 in 1 million
 (Indicates strong protection - high uniqueness defeats tracking)
 ```
 
 Aim for "1 in several thousand" or higher uniqueness. Very low numbers indicate you're easily identifiable.
 
-Step 12: User-Agent Randomization Strategies
+Step 12 - User-Agent Randomization Strategies
 
 Rather than static spoofing, randomization improves privacy:
 
@@ -388,7 +388,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
 );
 ```
 
-Step 13: Practical Recommendations for Different User Types
+Step 13 - Practical Recommendations for Different User Types
 
 Web Developers
 

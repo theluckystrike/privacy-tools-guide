@@ -17,7 +17,7 @@ tags: [privacy-tools-guide, privacy]
 
 When you check into a hotel, you surrender more personal information than you might realize. Hotels maintain detailed records of their guests, and these records can become accessible to law enforcement and government agencies under certain circumstances. Understanding your privacy rights and how hotel data systems work helps you make informed decisions about what information you share and how you protect yourself.
 
-What Hotels Collect: The Data Landscape
+What Hotels Collect - The Data field
 
 Modern hotels collect a range of guest information during booking and check-in:
 
@@ -40,11 +40,11 @@ Hotels increasingly collect digital data through:
 
 This creates a profile that law enforcement can request under various legal mechanisms.
 
-Legal Framework: When Hotels Must Disclose Data
+Legal Framework - When Hotels Must Disclose Data
 
 Hotels operate under multiple legal frameworks that govern data disclosure. The specific requirements vary by jurisdiction, but several common principles apply across the United States and other countries.
 
-United States: PATRIOT Act and Beyond
+United States - PATRIOT Act and Beyond
 
 The USA PATRIOT Act, enacted after September 11, 2001, significantly expanded government access to hotel records. Under this law, the FBI can request "any tangible things" relevant to terrorism investigations through National Security Letters (NSLs). These requests often include hotel guest records, and hotels typically must comply without notifying the guest.
 
@@ -56,7 +56,7 @@ Key points about US law:
 - Emergency requests can bypass normal procedures
 - Hotels can voluntarily share information with law enforcement
 
-European Union: GDPR and National Laws
+European Union - GDPR and National Laws
 
 The General Data Protection Regulation (GDPR) provides stronger baseline protections for hotel guests in EU member states. Under GDPR, hotels must have a lawful basis for processing personal data, and disclosure to law enforcement must comply with specific legal requirements.
 
@@ -70,7 +70,7 @@ GDPR Article 6 establishes lawful bases including:
 
 Hotels cannot simply hand over guest data to police upon request. They must verify the legal basis for the request and respond appropriately. However, national security exemptions can override many GDPR protections.
 
-Canada: PIPEDA and the Charter
+Canada - PIPEDA and the Charter
 
 Canada's Personal Information Protection and Electronic Documents Act (PIPEDA) governs hotel data practices. The law requires meaningful consent for data collection and use, but includes exceptions for law enforcement requests.
 
@@ -116,7 +116,7 @@ At Booking Time
 
 Use privacy-focused payment methods. Consider prepaid cards or privacy-protected payment services when possible. Avoid providing more information than required, most hotels only need your name, payment method, and ID for check-in.
 
-Code example: Generating a privacy-focused booking reference
+Code example - Generating a privacy-focused booking reference
 
 ```python
 import secrets

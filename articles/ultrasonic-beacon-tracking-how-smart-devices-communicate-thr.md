@@ -78,26 +78,26 @@ Real-World Applications and Privacy Concerns
 
 Several categories of applications have been discovered using this tracking method:
 
-Retail Analytics: Some in-store tracking systems use smartphone microphones to detect ultrasonic beacons from other devices, building heat maps of customer movement and dwell time.
+Retail Analytics - Some in-store tracking systems use smartphone microphones to detect ultrasonic beacons from other devices, building heat maps of customer movement and dwell time.
 
-Cross-Device Matching: Advertisers use ultrasonic signals to link devices that appear in proximity, building more complete user profiles by connecting desktop and mobile activity.
+Cross-Device Matching - Advertisers use ultrasonic signals to link devices that appear in proximity, building more complete user profiles by connecting desktop and mobile activity.
 
-Smart TV Tracking: Certain smart TVs have been found to emit ultrasonic audio signals, potentially enabling tracking of viewing habits and household device graphs.
+Smart TV Tracking - Certain smart TVs have been found to emit ultrasonic audio signals, potentially enabling tracking of viewing habits and household device graphs.
 
-In-Store Purchase Confirmation: Some point-of-sale systems use ultrasonic signals to confirm when a mobile device (running a shopping app) is present at the checkout, linking online profiles with offline purchases.
+In-Store Purchase Confirmation - Some point-of-sale systems use ultrasonic signals to confirm when a mobile device (running a shopping app) is present at the checkout, linking online profiles with offline purchases.
 
 Technical Implementation Details
 
 The tracking works through several mechanisms:
 
-Encoding Schemes: Beacons typically use frequency-shift keying or amplitude modulation within the ultrasonic range. The identifier is encoded as a series of tones that devices can decode.
+Encoding Schemes - Beacons typically use frequency-shift keying or amplitude modulation within the ultrasonic range. The identifier is encoded as a series of tones that devices can decode.
 
-Timing Patterns: Beacons often transmit in specific patterns, some continuous, others burst-based. Burst transmission reduces battery impact but makes detection more difficult.
+Timing Patterns - Beacons often transmit in specific patterns, some continuous, others burst-based. Burst transmission reduces battery impact but makes detection more difficult.
 
-Protocol Layers: Similar to network protocols, ultrasonic communication has defined layers for addressing, error correction, and data encapsulation.
+Protocol Layers - Similar to network protocols, ultrasonic communication has defined layers for addressing, error correction, and data encapsulation.
 
 ```python
-Python example: Basic ultrasonic beacon encoding
+Python example - Basic ultrasonic beacon encoding
 Generates a simple ultrasonic beacon signal
 
 import numpy as np
@@ -141,13 +141,13 @@ Detection and Defense Strategies
 
 For developers and security-conscious users, several approaches can help identify and block ultrasonic tracking:
 
-Audio Context Monitoring: Browser extensions can monitor Web Audio API usage, alerting when websites or apps access the microphone for non-obvious purposes.
+Audio Context Monitoring - Browser extensions can monitor Web Audio API usage, alerting when websites or apps access the microphone for non-obvious purposes.
 
-Ultrasonic Jamming: Some privacy tools emit background ultrasonic noise that interferes with beacon detection, though this approach has limited effectiveness and potential side effects.
+Ultrasonic Jamming - Some privacy tools emit background ultrasonic noise that interferes with beacon detection, though this approach has limited effectiveness and potential side effects.
 
-Microphone Permission Review: Regularly auditing which applications have microphone access remains essential. Both iOS and Android provide granular permission controls that users should use.
+Microphone Permission Review - Regularly auditing which applications have microphone access remains essential. Both iOS and Android provide granular permission controls that users should use.
 
-Network Monitoring: Some tracking systems relay ultrasonic data through network connections. Monitoring network traffic can reveal suspicious communication patterns.
+Network Monitoring - Some tracking systems relay ultrasonic data through network connections. Monitoring network traffic can reveal suspicious communication patterns.
 
 ```bash
 Using SDR (Software Defined Radio) to detect ultrasonic signals
@@ -163,9 +163,9 @@ Platform-Specific Mitigations
 
 iOS: Users should review microphone permissions in Settings > Privacy & Security > Microphone. iOS 15 and later include indicators when apps actively use the microphone.
 
-Android: Android 12+ provides a privacy dashboard showing recent microphone and camera access. Users can revoke unnecessary permissions or use permission manager to restrict background access.
+Android - Android 12+ provides a privacy dashboard showing recent microphone and camera access. Users can revoke unnecessary permissions or use permission manager to restrict background access.
 
-Desktop: Browser extensions like Privacy Badger and uBlock Origin can block known trackers. For browsers, the Web Audio API can be restricted through extensions like AudioContext Defender.
+Desktop - Browser extensions like Privacy Badger and uBlock Origin can block known trackers. For browsers, the Web Audio API can be restricted through extensions like AudioContext Defender.
 
 What Developers Should Know
 
@@ -205,7 +205,7 @@ Specialized radio hardware can detect ultrasonic signals:
 
 ```bash
 Using RTLSDR dongle to monitor ultrasonic frequencies
-Requires: RTL-SDR dongle (~$25), antenna, software
+Requires - RTL-SDR dongle (~$25), antenna, software
 
 Install RTL-SDR tools
 sudo apt install rtl-sdr sox
@@ -343,7 +343,7 @@ For companies protecting user privacy:
 
 ```bash
 #!/bin/bash
-Corporate policy: Disable ultrasonic tracking
+Corporate policy - Disable ultrasonic tracking
 
 1. Audit software for ultrasonic code
 grep -r "18000\|19000\|20000\|21000\|22000" src/

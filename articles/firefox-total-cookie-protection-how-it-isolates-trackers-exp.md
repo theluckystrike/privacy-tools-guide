@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Firefox Total Cookie Protection How It Isolates Trackers"
-description: "Firefox Total Cookie Protection: How It Isolates.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
+description: "Firefox Total Cookie Protection - How It Isolates.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
@@ -34,11 +34,11 @@ This isolation happens at the browser level without requiring any user configura
 
 The technical implementation works by partitioning cookies based on the top-level site context. When your browser makes a request to a third-party resource, Firefox associates any resulting cookies with the top-level URL rather than the third-party domain. This means advertising network cookies set on news-site-a.com remain inaccessible when you visit news-site-b.com, even though both pages load content from the same advertising network.
 
-Verification: Testing Cookie Isolation
+Verification - Testing Cookie Isolation
 
 For developers who want to verify that cookie isolation is working, you can test this behavior directly. Create two simple HTML files on different domains or use a testing setup with local hosts entries pointing to different subdomain configurations.
 
-Consider this test scenario: Create a page on domain-a.com that includes an iframe loading content from tracker.example. Set a cookie through the iframe, then attempt to read that cookie from domain-b.com with an iframe from the same tracker domain. With Total Cookie Protection enabled, the cookie set in the first context will not be available in the second.
+Consider this test scenario - Create a page on domain-a.com that includes an iframe loading content from tracker.example. Set a cookie through the iframe, then attempt to read that cookie from domain-b.com with an iframe from the same tracker domain. With Total Cookie Protection enabled, the cookie set in the first context will not be available in the second.
 
 You can also verify this using browser developer tools. Open the Storage Inspector in Firefox (Storage tab in Developer Tools) and observe how cookies appear grouped by their owning site rather than by domain. Each top-level site maintains its own cookie container, and cookies from embedded third parties appear under the top-level site's storage rather than under their native domain.
 
@@ -82,23 +82,23 @@ Supercookies and other storage mechanisms like ETags, cache timing, and HSTS sup
 
 Network-level tracking, where ISPs or network observers log DNS queries and traffic patterns, also bypasses browser-level cookie protections. Users concerned about network-level tracking need to combine browser privacy features with DNS-over-HTTPS configuration or VPN services.
 
-Threat Model: Tracking Scenarios Prevented
+Threat Model - Tracking Scenarios Prevented
 
 Understanding what Total Cookie Protection protects against helps you evaluate whether your configuration meets your privacy needs:
 
-Behavioral Profile Building: Without partitioning, advertisers track you across dozens of sites, your reading habits, shopping interests, political views, health concerns, building a behavioral profile. With TCP, each site's third parties see only what you do on that specific site. A fashion retailer cannot see that you visit health symptom checkers.
+Behavioral Profile Building - Without partitioning, advertisers track you across dozens of sites, your reading habits, shopping interests, political views, health concerns, building a behavioral profile. With TCP, each site's third parties see only what you do on that specific site. A fashion retailer cannot see that you visit health symptom checkers.
 
-Cross-Domain Fingerprinting: Trackers combine cookies with other identifiers (canvas fingerprinting, IP addresses) to recognize you across sites. TCP prevents the cookie component of this attack, though browser fingerprinting remains effective.
+Cross-Domain Fingerprinting - Trackers combine cookies with other identifiers (canvas fingerprinting, IP addresses) to recognize you across sites. TCP prevents the cookie component of this attack, though browser fingerprinting remains effective.
 
-Remarketing Escape: Advertisers use cookies to follow you after you leave their site, showing you relevant ads everywhere else. TCP breaks this mechanism, advertisers cannot build persistent audiences across unrelated sites.
+Remarketing Escape - Advertisers use cookies to follow you after you leave their site, showing you relevant ads everywhere else. TCP breaks this mechanism, advertisers cannot build persistent audiences across unrelated sites.
 
-Identity Resolution: Data brokers purchase cookies from tracking networks to match user identifiers across sites, creating unified profiles from multiple sources. TCP prevents trackers from sharing identifiers across different browsing contexts.
+Identity Resolution - Data brokers purchase cookies from tracking networks to match user identifiers across sites, creating unified profiles from multiple sources. TCP prevents trackers from sharing identifiers across different browsing contexts.
 
-Hands-On Verification: Testing Cookie Isolation Yourself
+Hands-On Verification - Testing Cookie Isolation Yourself
 
 Create a practical test to verify cookie isolation works on your browser:
 
-Test Setup: Open two browser tabs to different websites:
+Test Setup - Open two browser tabs to different websites:
 - Tab A: Visit reddit.com
 - Tab B: Visit news.ycombinator.com
 
@@ -111,7 +111,7 @@ Verification Steps:
 4. Switch to Tab B and repeat the process
 5. Observe that the cookies are different, the same tracking domain has separate cookies in each context
 
-Browser Console Verification: In Developer Tools Console, you can verify isolation:
+Browser Console Verification - In Developer Tools Console, you can verify isolation:
 
 ```javascript
 // In Tab A with reddit.com loaded
@@ -123,7 +123,7 @@ document.cookie;
 document.cookie;
 ```
 
-Advanced Testing: Create test pages on different local domains:
+Advanced Testing - Create test pages on different local domains:
 
 ```html
 <!-- Save as test-a.local -->
@@ -171,7 +171,7 @@ network.cookie.sameSite.laxByDefault = true
   # Makes SameSite=Lax the default for cookies without explicit SameSite attribute
 ```
 
-Verification Command: Check your current privacy settings:
+Verification Command - Check your current privacy settings:
 
 ```javascript
 // In Firefox console, check the privacy settings
@@ -187,9 +187,9 @@ Total Cookie Protection also affects other storage mechanisms:
 
 localStorage and sessionStorage: These are now partitioned per-site, meaning trackers cannot store identifiers in localStorage that persist across different sites.
 
-IndexedDB: Similarly partitioned, preventing cross-site IndexedDB access. This affects applications that use IndexedDB for client-side data storage.
+IndexedDB - Similarly partitioned, preventing cross-site IndexedDB access. This affects applications that use IndexedDB for client-side data storage.
 
-Cache Partitioning: HTTP cache is also partitioned by the top-level site, preventing trackers from detecting your previous visits through cache timing attacks.
+Cache Partitioning - HTTP cache is also partitioned by the top-level site, preventing trackers from detecting your previous visits through cache timing attacks.
 
 Testing localStorage Isolation:
 
@@ -207,11 +207,11 @@ localStorage.setItem("tracker_id", "abc123");
 
 Interaction with Other Firefox Privacy Features
 
-Multi-Account Containers: Combines with TCP for enhanced isolation. Containers partition storage by both site and container, creating additional context separation.
+Multi-Account Containers - Combines with TCP for enhanced isolation. Containers partition storage by both site and container, creating additional context separation.
 
-First-Party Isolation (FPI): Older privacy mechanism now superseded by TCP, but some users still enable both for maximum partitioning. FPI created entirely separate browser contexts (different dom storage IDs), while TCP uses a simpler partitioning approach.
+First-Party Isolation (FPI) - Older privacy mechanism now superseded by TCP, but some users still enable both for maximum partitioning. FPI created entirely separate browser contexts (different dom storage IDs), while TCP uses a simpler partitioning approach.
 
-SmartBlock: Handles compatibility issues when trackers are blocked. If a site breaks due to missing tracker functionality, SmartBlock provides a local substitute. Works alongside TCP to maintain functionality.
+SmartBlock - Handles compatibility issues when trackers are blocked. If a site breaks due to missing tracker functionality, SmartBlock provides a local substitute. Works alongside TCP to maintain functionality.
 
 Practical Configuration for Different Use Cases
 
@@ -264,13 +264,13 @@ Limitations and Complementary Protections
 
 While TCP is, it doesn't prevent:
 
-Browser Fingerprinting: Canvas fingerprinting, WebGL fingerprinting, font detection, and other technique still work. Use Firefox's fingerprinting protection (Enhanced Tracking Protection → Strict).
+Browser Fingerprinting - Canvas fingerprinting, WebGL fingerprinting, font detection, and other technique still work. Use Firefox's fingerprinting protection (Enhanced Tracking Protection → Strict).
 
-HSTS Supercookies: Some sites use HSTS cache to store identifiers. These bypass cookie partitioning. HSTS pinning attacks remain possible.
+HSTS Supercookies - Some sites use HSTS cache to store identifiers. These bypass cookie partitioning. HSTS pinning attacks remain possible.
 
-IP-Based Tracking: Network-level tracking using your IP address, ISP logs, or DNS queries. Combine with VPN or DNS-over-HTTPS.
+IP-Based Tracking - Network-level tracking using your IP address, ISP logs, or DNS queries. Combine with VPN or DNS-over-HTTPS.
 
-First-Party Tracking: Tracking from the website you're actually visiting isn't prevented by TCP. Use privacy settings to minimize first-party data collection.
+First-Party Tracking - Tracking from the website you're actually visiting isn't prevented by TCP. Use privacy settings to minimize first-party data collection.
 
 Frequently Asked Questions
 

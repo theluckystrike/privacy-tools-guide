@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How Android Keyboards Transmit Data
+Step 1 - How Android Keyboards Transmit Data
 
 Android keyboards operate with extensive system permissions. When you install Gboard or Samsung Keyboard, these apps request permission to read what you type, which fields you're filling, and sometimes even what you're about to type before you finish. This capability, called "predictive text" or "personalized suggestions," requires sending data to remote servers.
 
@@ -41,7 +41,7 @@ Google's Gboard collects typing patterns to improve Google Search suggestions, a
 
 For developers building privacy-conscious applications, understanding this data flow is essential. Users increasingly demand control over their typing data, and offering keyboard-aware privacy options can differentiate your app.
 
-Step 2: Disable Data Collection in Gboard
+Step 2 - Disable Data Collection in Gboard
 
 Google's Gboard provides several settings to limit data collection, though some remain tied to your Google account.
 
@@ -77,9 +77,9 @@ gstatic.com (fonts and resources)
 
 Note that blocking network access may break some features like emoji suggestions and translation within Gboard.
 
-Step 3: Disable Data Collection in Samsung Keyboard
+Step 3 - Disable Data Collection in Samsung Keyboard
 
-Samsung Keyboard (Samsung IME) collects data primarily for Samsung's ecosystem integration. Here's how to minimize collection:
+Samsung Keyboard (Samsung IME) collects data primarily for Samsung's environment integration. Here's how to minimize collection:
 
 Turn Off Predictive Text and Learning
 
@@ -106,7 +106,7 @@ adb shell pm revoke com.samsung.android.lool android.permission.INTERNET
 
 Be aware that some Samsung-specific features, like Samsung Pass integration, may stop working.
 
-Step 4: Privacy-Focused Keyboard Alternatives
+Step 4 - Privacy-Focused Keyboard Alternatives
 
 Several keyboards prioritize privacy by design, storing all data locally:
 
@@ -141,7 +141,7 @@ Settings > Data > Disable usage statistics
 
 FlorisBoard supports emoji, GIF search (local-only), and clipboards without network communication.
 
-Step 5: For Developers: Implementing Privacy-Aware Input
+Step 5 - For Developers: Implementing Privacy-Aware Input
 
 When building applications that handle sensitive data, consider these approaches:
 
@@ -205,7 +205,7 @@ fun isKeyboardPrivacyEnabled(): Boolean {
 
 This helps you warn users when typing data might be collected in fields requiring extra privacy.
 
-Advanced: Network-Level Blocking
+Advanced - Network-Level Blocking
 
 For enterprise or power user scenarios, consider network-level blocking:
 
@@ -225,7 +225,7 @@ Use a VPN with Blocking
 
 Some VPN providers offer malware and tracker blocking. Route all traffic through such a VPN to catch any keyboard data attempts.
 
-Step 6: Verify Your Configuration
+Step 6 - Verify Your Configuration
 
 After implementing changes, verify data transmission is blocked:
 

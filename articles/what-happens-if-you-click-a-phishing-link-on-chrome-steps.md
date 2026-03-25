@@ -51,7 +51,7 @@ The redirect parameter makes the URL appear legitimate, but the actual domain `a
 
 Immediate Steps If You Clicked a Link
 
-Step 1: Disconnect from the Internet
+Step 1 - Disconnect from the Internet
 
 The first action should be severing the connection to prevent further data exfiltration:
 
@@ -65,7 +65,7 @@ nmcli device disconnect wlan0
 Or simply toggle Airplane Mode on your device
 ```
 
-Step 2: Close Chrome Completely
+Step 2 - Close Chrome Completely
 
 Don't just close the tab, exit the entire browser to terminate any executing scripts:
 
@@ -77,7 +77,7 @@ Linux
 pkill -f chrome
 ```
 
-Step 3: Check for Suspicious Processes
+Step 3 - Check for Suspicious Processes
 
 Examine running processes for anything unfamiliar:
 
@@ -89,7 +89,7 @@ Linux - check for unusual network connections
 ss -tunap | grep ESTAB
 ```
 
-Step 4: Clear Browser Data
+Step 4 - Clear Browser Data
 
 Remove potentially compromised session data:
 
@@ -107,7 +107,7 @@ For command-line cleanup, you can delete Chrome's profile data:
 rm -rf ~/Library/Application\ Support/Google/Chrome/Default/
 ```
 
-Step 5: Check for Extensions
+Step 5 - Check for Extensions
 
 Malicious extensions can persist after closing Chrome. Review your extensions:
 
@@ -168,13 +168,13 @@ What Attackers Can Access Without You Entering Anything
 
 Many users assume a phishing link is only dangerous if they enter their credentials on the fake page. This is incorrect. The moment the page loads and JavaScript executes, several things can happen without any user action:
 
-Browser fingerprinting: The phishing page can record your user agent, screen resolution, installed fonts, WebGL capabilities, and time zone. This data is used to track you across sessions and sold to data brokers or used in targeted attacks.
+Browser fingerprinting - The phishing page can record your user agent, screen resolution, installed fonts, WebGL capabilities, and time zone. This data is used to track you across sessions and sold to data brokers or used in targeted attacks.
 
-Cookie access: Any cookies not protected by the HttpOnly flag are readable by JavaScript. This includes session tokens for sites you visited earlier in the same browser session if those sites failed to set HttpOnly correctly.
+Cookie access - Any cookies not protected by the HttpOnly flag are readable by JavaScript. This includes session tokens for sites you visited earlier in the same browser session if those sites failed to set HttpOnly correctly.
 
-Redirect chains: The initial URL may immediately redirect through multiple domains, each dropping a tracking pixel or cookie before landing on the final payload. By the time you see a warning and close the tab, several tracking operations have already completed.
+Redirect chains - The initial URL may immediately redirect through multiple domains, each dropping a tracking pixel or cookie before landing on the final payload. By the time you see a warning and close the tab, several tracking operations have already completed.
 
-Resource loading attacks: The page can attempt to load resources from your local network (10.x.x.x, 192.168.x.x addresses) to map your internal network topology. a technique called DNS rebinding.
+Resource loading attacks - The page can attempt to load resources from your local network (10.x.x.x, 192.168.x.x addresses) to map your internal network topology. a technique called DNS rebinding.
 
 Closing the tab quickly after realizing you've clicked a phishing link genuinely helps limit exposure. The less JavaScript executes, the fewer data points the attacker collects.
 
@@ -222,13 +222,13 @@ How to Analyze a Suspicious URL Before Clicking
 
 When you receive a link you're uncertain about, several tools allow safe analysis without loading it in your browser:
 
-VirusTotal (virustotal.com): Paste any URL and VirusTotal checks it against 90+ security engines simultaneously. A clean result does not guarantee safety on new domains but flags the majority of known phishing infrastructure.
+VirusTotal (virustotal.com) - Paste any URL and VirusTotal checks it against 90+ security engines simultaneously. A clean result does not guarantee safety on new domains but flags the majority of known phishing infrastructure.
 
-Google Safe Browsing Transparency Report: Navigate to transparencyreport.google.com/safe-browsing/search and enter the domain. This shows you exactly what Google's Safe Browsing database currently thinks of the site.
+Google Safe Browsing Transparency Report - Navigate to transparencyreport.google.com/safe-browsing/search and enter the domain. This shows you exactly what Google's Safe Browsing database currently thinks of the site.
 
-URLScan.io: This service loads the URL in a sandboxed browser and gives you a full screenshot, list of loaded resources, network requests made, and a risk score. without you ever loading the page directly. It is especially useful for understanding what a phishing page actually does.
+URLScan.io - This service loads the URL in a sandboxed browser and gives you a full screenshot, list of loaded resources, network requests made, and a risk score. without you ever loading the page directly. It is especially useful for understanding what a phishing page actually does.
 
-Whois lookup: A domain registered within the last 48-72 hours sending you an urgent account security email is almost certainly a phishing attempt. Check registration date at whois.domaintools.com.
+Whois lookup - A domain registered within the last 48-72 hours sending you an urgent account security email is almost certainly a phishing attempt. Check registration date at whois.domaintools.com.
 
 Checking If Your Credentials Were Compromised
 

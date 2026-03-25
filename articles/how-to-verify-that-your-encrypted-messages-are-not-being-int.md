@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Interception Threat
+Step 1 - Understand the Interception Threat
 
 Before examining verification methods, you need to understand how interception attacks work. In any encrypted communication system, keys must be exchanged before messages can be decrypted. This key exchange represents the vulnerable point where an attacker can insert themselves between two parties.
 
@@ -55,7 +55,7 @@ def naive_key_exchange(my_private, their_public):
 
 The vulnerability exists because the code assumes `their_public` genuinely belongs to your contact. An attacker intercepting the initial connection could substitute their own public key, establishing separate encryption keys with both parties.
 
-Step 2: Verify Encryption in Practice
+Step 2 - Verify Encryption in Practice
 
 1. Signal Safety Number Verification
 
@@ -91,7 +91,7 @@ When exchanging keys with a contact, verify the fingerprint through an independe
 If you develop applications handling sensitive data, implement certificate pinning to prevent interception through rogue CA certificates:
 
 ```javascript
-// Example: Certificate pinning in Node.js using axios
+// Example - Certificate pinning in Node.js using axios
 const https = require('https');
 const axios = require('axios');
 
@@ -111,7 +111,7 @@ axios.get('https://api.yourapp.com/secure-endpoint', { httpsAgent })
 
 Without pinning, an attacker with access to a trusted CA could issue fraudulent certificates, enabling transparent interception of all TLS connections.
 
-Step 3: Detecting Tampering Through Message Authentication
+Step 3 - Detecting Tampering Through Message Authentication
 
 Beyond key verification, message authentication codes (MAC) or digital signatures provide continuous verification that messages have not been altered during transit.
 
@@ -150,7 +150,7 @@ def verify_message(secret_key, message):
 
 If an interceptor modifies even a single character in the encrypted message, the signature verification fails, alerting you to the tampering.
 
-Step 4: Understand Perfect Forward Secrecy Limitations
+Step 4 - Understand Perfect Forward Secrecy Limitations
 
 Forward secrecy protects past messages if a current session key is compromised, but it does not protect against interception attacks happening right now. If an attacker intercepts your key exchange today, they can decrypt today's messages even with forward secrecy enabled.
 
@@ -162,7 +162,7 @@ To verify your app implements forward secrecy correctly, look for:
 - Visible indication in the app's security settings
 - Security documentation mentioning "perfect forward secrecy" or "Double Ratchet"
 
-Step 5: Network-Level Verification
+Step 5 - Network-Level Verification
 
 For developers who want to verify that encrypted channels are actually encrypted at the network level, packet capture analysis provides concrete proof:
 
@@ -183,7 +183,7 @@ Test TLS connection and inspect certificate chain
 openssl s_client -connect mail.example.com:995 -showcerts
 
 Verify certificate details match expected server
-Look for: Certificate chain, Server certificate, Signature algorithm
+Look for - Certificate chain, Server certificate, Signature algorithm
 
 Check SSL/TLS version and cipher strength
 openssl s_client -connect mail.example.com:995 -tls1_2
@@ -194,7 +194,7 @@ openssl x509 -in cert.pem -noout -dates
 
 This command reveals the certificate chain, allowing you to verify the certificate belongs to the expected entity and uses strong encryption protocols. For production communication systems, verify that the server uses TLS 1.2 or higher with strong cipher suites, avoid older protocols like SSLv3 or TLS 1.0.
 
-Step 6: Forward Secrecy as a Defense Layer
+Step 6 - Forward Secrecy as a Defense Layer
 
 Forward secrecy ensures that compromise of long-term keys does not retroactively decrypt past conversations. Signal implements forward secrecy through the Double Ratchet algorithm, which generates new encryption keys for each message. This is one of the strongest protections available in modern messaging protocols.
 
@@ -209,7 +209,7 @@ Testing Forward Secrecy in Signal
 
 To verify forward secrecy is working in Signal, perform this simple test. Have a conversation with a contact and document their safety number. Reinstall Signal or use a backup to restore conversations. Continue messaging with the same contact and verify the safety number changes, this indicates fresh key material was generated. Old messages should remain readable, proving that backward compatibility works while forward secrecy protects future messages. If the safety number remains the same after reinstall, something is wrong with your app's implementation.
 
-Step 7: Metadata Leakage and Privacy Beyond Encryption
+Step 7 - Metadata Leakage and Privacy Beyond Encryption
 
 Encrypted messages might be secure, but metadata (who you're talking to, when, how often) can reveal nearly as much as the message content. A sophisticated adversary can build behavioral profiles from metadata alone.
 
@@ -251,12 +251,12 @@ Keybase allows public, auditable key verification
 Your contact publishes their key with Twitter/GitHub proof
 You verify their public social identity before trusting their encryption key
 
-This creates a chain: GitHub account → public Keybase profile → encryption key
+This creates a chain - GitHub account → public Keybase profile → encryption key
 Attacking this chain requires compromising either their GitHub account
 and your ability to verify they own it through previous interactions
 ```
 
-Step 8: Escalation Procedures for Compromised Keys
+Step 8 - Escalation Procedures for Compromised Keys
 
 If you suspect your encryption keys have been compromised, have a plan to recover:
 
@@ -269,7 +269,7 @@ If you suspect your encryption keys have been compromised, have a plan to recove
 
 For messaging apps like Signal, the app handles key changes automatically. Contacts are notified and can verify the new key has the same safety number.
 
-Step 9: Establishing a Verification Routine
+Step 9 - Establishing a Verification Routine
 
 For power users handling sensitive information, make verification a standard practice:
 

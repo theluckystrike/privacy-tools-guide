@@ -41,7 +41,7 @@ The privacy concerns with mainstream cloud doorbell systems extend beyond indivi
 
 Cloud doorbell footage is also subject to data breaches. In 2019, Ring suffered a breach affecting customer accounts, and subsequent years saw additional security incidents across the industry.
 
-From a legal standpoint, your doorbell footage may capture neighbors, passersby, and visitors. all potentially subject to GDPR if you are in the EU, or various US state privacy laws. Local storage keeps this footage under your control and out of a vendor's commercial ecosystem. If footage is subpoenaed, local storage ensures law enforcement must approach you directly rather than obtaining footage from a cloud provider without your knowledge.
+From a legal standpoint, your doorbell footage may capture neighbors, passersby, and visitors. all potentially subject to GDPR if you are in the EU, or various US state privacy laws. Local storage keeps this footage under your control and out of a vendor's commercial environment. If footage is subpoenaed, local storage ensures law enforcement must approach you directly rather than obtaining footage from a cloud provider without your knowledge.
 
 Technical Approaches to Local Video Storage
 
@@ -113,9 +113,9 @@ mount -t cifs //192.168.1.200/recordings /mnt/doorbell \
   -o username=camera,password=secret,vers=3.0
 ```
 
-Important note on Hikvision and Dahua: Both manufacturers have faced US government sanctions and security concerns related to their Chinese government connections. Organizations with high security requirements should research current federal guidance before deploying these systems, or consider the Raspberry Pi DIY approach for maximum supply chain control.
+Important note on Hikvision and Dahua - Both manufacturers have faced US government sanctions and security concerns related to their Chinese government connections. Organizations with high security requirements should research current federal guidance before deploying these systems, or consider the Raspberry Pi DIY approach for maximum supply chain control.
 
-DIY Solution: Raspberry Pi with USB Camera
+DIY Solution - Raspberry Pi with USB Camera
 
 For developers seeking maximum control, building a custom doorbell system with a Raspberry Pi provides complete flexibility. This approach requires more setup but eliminates all proprietary dependencies.
 

@@ -22,10 +22,10 @@ Understanding Hulu's Geo-Blocking Mechanism
 
 Hulu employs multiple layers of detection to enforce geographic restrictions. The primary methods include:
 
-1. IP Address Geolocation: Hulu maintains databases mapping IP addresses to geographic locations. Canadian IP addresses are automatically blocked.
-2. DNS Leak Detection: If your DNS requests bypass the VPN tunnel and resolve to Canadian servers, Hulu detects this and blocks access.
-3. WebRTC Leaks: Browser WebRTC implementations can expose real IP addresses, bypassing VPN protection.
-4. Browser Fingerprinting: Hulu analyzes browser characteristics, timezone settings, and language preferences to identify VPN usage patterns.
+1. IP Address Geolocation - Hulu maintains databases mapping IP addresses to geographic locations. Canadian IP addresses are automatically blocked.
+2. DNS Leak Detection - If your DNS requests bypass the VPN tunnel and resolve to Canadian servers, Hulu detects this and blocks access.
+3. WebRTC Leaks - Browser WebRTC implementations can expose real IP addresses, bypassing VPN protection.
+4. Browser Fingerprinting - Hulu analyzes browser characteristics, timezone settings, and language preferences to identify VPN usage patterns.
 
 For developers and power users, understanding these mechanisms helps in configuring more VPN setups.
 
@@ -159,7 +159,7 @@ Install these extensions to verify leakage:
 - DNS Leak Test
 - Header Spoofing
 
-Advanced: Testing Your VPN Setup
+Advanced - Testing Your VPN Setup
 
 Run these commands to verify your VPN properly routes traffic:
 
@@ -171,10 +171,10 @@ Verify DNS resolution
 dig hulu.com
 
 Test for WebRTC leaks
-Visit: https://browserleaks.com/webrtc
+Visit - https://browserleaks.com/webrtc
 
 Check for DNS leaks
-Visit: https://dnsleaktest.com
+Visit - https://dnsleaktest.com
 ```
 
 Expected results:
@@ -185,9 +185,9 @@ Expected results:
 
 Common Issues and Solutions
 
-Issue: Hulu Detects VPN
+Issue - Hulu Detects VPN
 
-Symptoms: Error message displaying "Hulu isn't available in your area"
+Symptoms - Error message displaying "Hulu isn't available in your area"
 
 Solutions:
 1. Switch to a different server region
@@ -195,16 +195,16 @@ Solutions:
 3. Clear browser cookies and cache
 4. Update your VPN client to the latest version
 
-Issue: DNS Leaks
+Issue - DNS Leaks
 
-Symptoms: IP shows US but Hulu still blocks access
+Symptoms - IP shows US but Hulu still blocks access
 
 Solutions:
 1. Enable kill switch on your VPN client
 2. Configure DNS manually to use 1.1.1.1 or 8.8.8.8
 3. Use VPN provider's DNS servers exclusively
 
-Issue: Slow Streaming Speeds
+Issue - Slow Streaming Speeds
 
 Solutions:
 1. Connect to servers closer to your geographic location

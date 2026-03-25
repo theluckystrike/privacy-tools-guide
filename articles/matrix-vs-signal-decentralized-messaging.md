@@ -99,7 +99,7 @@ Protocol Feature Comparison
 | Group size limit | ~1000 | Effectively unlimited |
 | Self-hosting | Not supported | Full homeserver control |
 | Phone number required | Yes | No |
-| Bridging to other protocols | No | Extensive bridge ecosystem |
+| Bridging to other protocols | No | Extensive bridge environment |
 | Open server registration | No | Depends on homeserver |
 | Sealed sender | Yes | No |
 | Multi-device sync | Yes | Yes |
@@ -196,7 +196,7 @@ asyncio.run(matrix_bot(
 ))
 ```
 
-Matrix Application Services allow developers to build bridges, bots, and integrations that appear as native Matrix users. This capability has produced a rich ecosystem of bridges to IRC, Slack, Discord, Telegram, and WhatsApp. Developers can also use Application Services to build custom moderation bots, notification systems, or workflow automation tools that integrate directly into encrypted Matrix rooms.
+Matrix Application Services allow developers to build bridges, bots, and integrations that appear as native Matrix users. This capability has produced a rich environment of bridges to IRC, Slack, Discord, Telegram, and WhatsApp. Developers can also use Application Services to build custom moderation bots, notification systems, or workflow automation tools that integrate directly into encrypted Matrix rooms.
 
 When to Choose Each Protocol
 
@@ -245,7 +245,7 @@ Many developers combine both protocols for different use cases. A common pattern
 - Deploying Matrix for team collaboration and organizational messaging
 - Bridging Matrix rooms to Signal groups for cross-platform conversations
 
-The Matrix bridge ecosystem supports integration with Signal through various community projects, though official Signal-to-Matrix bridges don't exist due to Signal's terms of service.
+The Matrix bridge environment supports integration with Signal through various community projects, though official Signal-to-Matrix bridges don't exist due to Signal's terms of service.
 
 Related Articles
 

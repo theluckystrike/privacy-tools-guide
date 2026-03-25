@@ -26,7 +26,7 @@ Prerequisites
 - A public IPv4 or IPv6 address
 - Debian, Ubuntu, or a compatible distribution (this guide uses Debian/Ubuntu)
 
-Step 1: Install Tor
+Step 1 - Install Tor
 
 Use the Tor Project's official repository, not the version in your distro's default repos (which may be outdated):
 
@@ -48,7 +48,7 @@ Install
 sudo apt update && sudo apt install -y tor deb.torproject.org-keyring
 ```
 
-Step 2: Configure the Relay
+Step 2 - Configure the Relay
 
 Edit the Tor configuration file:
 
@@ -79,7 +79,7 @@ Bandwidth settings - adjust to match your available capacity
 RelayBandwidthRate 10 MBytes
 Allow up to 20 MBytes/s burst
 RelayBandwidthBurst 20 MBytes
-Optional: limit total monthly traffic (example: 500 GB/month)
+Optional - limit total monthly traffic (example: 500 GB/month)
 AccountingMax 500 GBytes
 AccountingStart month 1 00:00
 
@@ -92,7 +92,7 @@ Log notice file /var/log/tor/notices.log
 
 Save and close the file.
 
-Step 3: Configure the Firewall
+Step 3 - Configure the Firewall
 
 Allow traffic on the ORPort and DirPort:
 
@@ -107,7 +107,7 @@ sudo iptables -A INPUT -p tcp --dport 9030 -j ACCEPT
 sudo iptables-save | sudo tee /etc/iptables/rules.v4
 ```
 
-Step 4: Start Tor and Enable at Boot
+Step 4 - Start Tor and Enable at Boot
 
 ```bash
 sudo systemctl enable tor
@@ -131,7 +131,7 @@ Within a few minutes you should see:
 
 The identity fingerprint is your relay's unique identifier in the Tor directory.
 
-Step 5: Monitor Your Relay
+Step 5 - Monitor Your Relay
 
 Check relay status on Metrics Portal
 
@@ -164,7 +164,7 @@ sudo apt install vnstat
 vnstat -i eth0
 ```
 
-Step 6: Relay Flags and Growth Period
+Step 6 - Relay Flags and Growth Period
 
 New relays go through a ramp-up period of approximately 2-3 months before receiving full traffic allocation from the Tor directory authorities. This is intentional. the network builds trust in new relays incrementally.
 
@@ -187,7 +187,7 @@ Tor on Debian/Ubuntu already runs as the `debian-tor` user. Do not run it as roo
 
 ```bash
 ps aux | grep tor
-Should show: debian-tor  ...
+Should show - debian-tor  ...
 ```
 
 Keep Tor updated
@@ -212,9 +212,9 @@ In torrc on each relay:
 MyFamily fingerprint1,fingerprint2,fingerprint3
 ```
 
-Get the fingerprint from: `sudo cat /var/lib/tor/fingerprint`
+Get the fingerprint from - `sudo cat /var/lib/tor/fingerprint`
 
-Middle Relay vs Bridge vs Exit: Quick Reference
+Middle Relay vs Bridge vs Exit - Quick Reference
 
 | Type | Function | Risk level | Who should run it |
 |------|----------|------------|-------------------|

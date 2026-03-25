@@ -26,10 +26,10 @@ Firejail creates restricted containers using:
 
 - Linux namespaces: Separate filesystem view, process table, network stack, and user namespace
 - seccomp-bpf: Whitelist of allowed system calls. unknown/dangerous calls are blocked
-- Capabilities: Drop Linux capabilities the application doesn't need (e.g., no raw socket access)
+- Capabilities - Drop Linux capabilities the application doesn't need (e.g., no raw socket access)
 - AppArmor (optional): Additional MAC policy layer
 
-The result: a browser running under Firejail sees a restricted subset of your filesystem and can only make system calls that are in the allowed list.
+The result - a browser running under Firejail sees a restricted subset of your filesystem and can only make system calls that are in the allowed list.
 
 ---
 
@@ -43,7 +43,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install Firejail
+Step 1 - Install Firejail
 
 ```bash
 Debian/Ubuntu
@@ -64,7 +64,7 @@ ls /etc/firejail/*.profile | head -20
 
 ---
 
-Step 2: Basic Usage
+Step 2 - Basic Usage
 
 ```bash
 Run Firefox in a Firejail sandbox
@@ -88,7 +88,7 @@ firejail --status
 
 ---
 
-Step 3: Desktop Integration (Launch From App Menu)
+Step 3 - Desktop Integration (Launch From App Menu)
 
 To always launch Firefox sandboxed, create a desktop entry override:
 
@@ -123,7 +123,7 @@ Creates symlinks in /usr/local/bin/ that wrap apps with firejail
 
 ---
 
-Step 4: Understand Default Firefox Profile
+Step 4 - Understand Default Firefox Profile
 
 Examine the default Firejail Firefox profile:
 
@@ -165,7 +165,7 @@ seccomp
 
 ---
 
-Step 5: Custom Profile: Hardened Firefox
+Step 5 - Custom Profile: Hardened Firefox
 
 Create a stricter profile for maximum isolation:
 
@@ -201,13 +201,13 @@ nosound
 Use a private /tmp (prevents /tmp sniffing)
 private-tmp
 
-Private network namespace: only allow specific interfaces
+Private network namespace - only allow specific interfaces
 net eth0   # Uncomment to restrict to specific interface
 ```
 
 ---
 
-Step 6: Network Isolation for Sandboxed Apps
+Step 6 - Network Isolation for Sandboxed Apps
 
 Firejail can create a completely separate network namespace:
 
@@ -229,7 +229,7 @@ Then use tor's SOCKS proxy at 127.0.0.1:9050
 
 ---
 
-Step 7: Sandbox Testing: Verify What's Blocked
+Step 7 - Sandbox Testing: Verify What's Blocked
 
 ```bash
 Run a test to see what Firejail blocks
@@ -249,7 +249,7 @@ Certain syscalls will show EPERM if blocked by seccomp
 
 ---
 
-Step 8: Firejail for Other Applications
+Step 8 - Firejail for Other Applications
 
 ```bash
 Sandbox a PDF reader (high-value target for malicious PDFs)
@@ -269,7 +269,7 @@ No network + private home = maximum isolation for unknown executables
 
 ---
 
-Step 9: Audit Firejail's Effectiveness
+Step 9 - Audit Firejail's Effectiveness
 
 ```bash
 Check what seccomp filters are applied

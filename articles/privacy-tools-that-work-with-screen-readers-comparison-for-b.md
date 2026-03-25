@@ -242,11 +242,11 @@ proton-bridge --human -i
 
 Recommendations by Use Case
 
-Maximum Accessibility: Use Bitwarden CLI, Firefox with uBlock Origin, Signal, and GPG. These tools prioritize screen reader compatibility and keyboard-only operation.
+Maximum Accessibility - Use Bitwarden CLI, Firefox with uBlock Origin, Signal, and GPG. These tools prioritize screen reader compatibility and keyboard-only operation.
 
-Maximum Privacy: Combine Tor Browser, WireGuard VPN, Pi-hole, and self-hosted Bitwarden. This stack minimizes fingerprinting while remaining fully accessible.
+Maximum Privacy - Combine Tor Browser, WireGuard VPN, Pi-hole, and self-hosted Bitwarden. This stack minimizes fingerprinting while remaining fully accessible.
 
-Developer Workflow: Use the Bitwarden or 1Password CLI, GPG for commit signing, and WireGuard for secure development. Terminal-based tools provide the most reliable experience.
+Developer Workflow - Use the Bitwarden or 1Password CLI, GPG for commit signing, and WireGuard for secure development. Terminal-based tools provide the most reliable experience.
 
 Accessibility Testing Checklist
 

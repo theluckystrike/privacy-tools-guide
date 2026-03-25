@@ -27,10 +27,10 @@ Table of Contents
 - [Integrating Speed Testing Into CI/CD Pipelines](#integrating-speed-testing-into-cicd-pipelines)
 - [Privacy Verification Tips](#privacy-verification-tips)
 - [Conclusion](#conclusion)
-- [Advanced Metrics: Beyond Basic Speed](#advanced-metrics-beyond-basic-speed)
-- [Threat Model: What URL Testing Leaks](#threat-model-what-url-testing-leaks)
+- [Advanced Metrics - Beyond Basic Speed](#advanced-metrics-beyond-basic-speed)
+- [Threat Model - What URL Testing Leaks](#threat-model-what-url-testing-leaks)
 - [Building a Monitoring Dashboard](#building-a-monitoring-dashboard)
-- [Continuous Integration: CI/CD Speed Testing](#continuous-integration-cicd-speed-testing)
+- [Continuous Integration - CI/CD Speed Testing](#continuous-integration-cicd-speed-testing)
 
 Why URL Tracking Matters in Speed Testing
 
@@ -329,12 +329,12 @@ When evaluating any speed testing tool, verify its privacy claims:
 3. Test with a unique URL: Create a URL with a distinctive subdomain, then search for it in public databases to see if it was logged
 4. Read the privacy policy: Look for explicit statements about URL retention and third-party sharing
 
-Advanced Metrics: Beyond Basic Speed
+Advanced Metrics - Beyond Basic Speed
 
 Modern web performance includes metrics that simple curl tests miss. Implement measurement:
 
 ```javascript
-// comprehensive-metrics.js - Full page performance analysis
+// complete-metrics.js - Full page performance analysis
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
@@ -438,7 +438,7 @@ async function measureComprehensively(url) {
 })();
 ```
 
-Threat Model: What URL Testing Leaks
+Threat Model - What URL Testing Leaks
 
 Testing a URL externally leaks more than you might realize:
 
@@ -558,7 +558,7 @@ weekly = dashboard.generate_report(days=7)
 print(json.dumps(weekly, indent=2))
 ```
 
-Continuous Integration: CI/CD Speed Testing
+Continuous Integration - CI/CD Speed Testing
 
 Integrate privacy-preserving speed tests into your CI/CD pipeline:
 

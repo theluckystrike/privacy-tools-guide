@@ -55,7 +55,7 @@ iperf3 -c speedtest-server.example.com
 
 For streaming purposes, the actual bandwidth requirement is modest, 720p streams require around 3-5 Mbps, while 1080p needs 8-12 Mbps. The critical factor is latency and packet loss, which cause buffering during live broadcasts.
 
-DNS Configuration: Preventing DNS Leaks
+DNS Configuration - Preventing DNS Leaks
 
 DNS leaks represent the most common failure mode when attempting to bypass geo-restrictions. When your DNS queries bypass the VPN tunnel, the streaming service can determine your actual location regardless of your VPN IP address.
 
@@ -132,7 +132,7 @@ curl -s https://api.ipify.org?format=json
 cat /etc/resolv.conf
 
 3. Test for WebRTC leaks
-Visit: https://browserleaks.com/webrtc
+Visit - https://browserleaks.com/webrtc
 
 4. Verify timezone detection
 curl -s https://worldtimeapi.org/api/ip
@@ -177,7 +177,7 @@ NFL Game Pass pricing varies by region, and the service offers different content
 
 This guide covers the technical foundation for accessing US NFL Game Pass from Europe. The configuration requires attention to multiple details, IP routing, DNS resolution, browser settings, and network performance all contribute to reliable access.
 
-Advanced DNS Configuration: Beyond Standard Settings
+Advanced DNS Configuration - Beyond Standard Settings
 
 Most VPN clients claim "automatic DNS configuration," but verifying this is critical. Different VPN providers use different DNS servers:
 
@@ -185,25 +185,25 @@ Most VPN clients claim "automatic DNS configuration," but verifying this is crit
 Test which DNS servers are actually in use
 Run this while connected to VPN
 
-Method 1: Check DNS resolvers
+Method 1 - Check DNS resolvers
 cat /etc/resolv.conf | grep nameserver
 
-Method 2: Query multiple public DNS checkers
+Method 2 - Query multiple public DNS checkers
 dig @8.8.8.8 whoami.akamai.net +short          # Google's DNS
 dig @1.1.1.1 whoami.akamai.net +short          # Cloudflare's DNS
 dig @208.67.222.222 whoami.akamai.net +short   # OpenDNS
 
-Method 3: Advanced leak test (requires jq)
+Method 3 - Advanced leak test (requires jq)
 curl -s https://api.ipleak.net/json | jq '.dns'
 
-Expected output: DNS servers should show US locations
+Expected output - DNS servers should show US locations
 If any show European locations, your VPN's DNS configuration is leaking
 ```
 
 If you find DNS leaks, configure manual DNS servers through your VPN:
 
 ```bash
-WireGuard: Manual DNS configuration
+WireGuard - Manual DNS configuration
 In your wg0.conf file, add:
 DNS = 8.8.8.8, 8.8.4.4
 or for greater privacy:
@@ -260,7 +260,7 @@ echo -e "\nTesting MTU size:"
 ping -M do -s 1472 your-vpn-server.com
 
 If MTU test fails, your MTU is too large
-Common MTU values: 1500 (standard), 1400 (with VPN overhead), 1200 (conservative)
+Common MTU values - 1500 (standard), 1400 (with VPN overhead), 1200 (conservative)
 ```
 
 If you encounter packet loss above 2%, your connection is unsuitable for live streaming. Try:
@@ -278,7 +278,7 @@ Edit the WireGuard config to add:
 MTU = 1200
 ```
 
-Advanced WebRTC Blocking: Testing and Verification
+Advanced WebRTC Blocking - Testing and Verification
 
 WebRTC leaks are subtle and easy to miss. Here's how to fully test for them:
 
@@ -397,7 +397,7 @@ Fallback Strategies
 
 If you cannot achieve reliable access through standard VPN approaches:
 
-1. Use NFL Game Pass International: The European version includes highlights, condensed games, and some live coverage. Not ideal but legal and reliable.
+1. Use NFL Game Pass International - The European version includes highlights, condensed games, and some live coverage. Not ideal but legal and reliable.
 
 2. Streaming through residential proxy services: Services like Oxylabs or Luminati provide residential IPs from real devices. These are expensive ($100+/month) but extremely difficult to block.
 

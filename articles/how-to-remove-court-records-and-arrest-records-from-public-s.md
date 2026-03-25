@@ -16,7 +16,7 @@ voice-checked: true
 
 {% raw %}
 
-Court records and arrest records occupy a unique position in the data broker ecosystem. Unlike general personal information, these records carry significant stigma and can impact employment, housing, and personal reputation for years after any case resolves. Public search databases aggregate these records from judicial sources, making them easily accessible to landlords, employers, and curious parties. This guide covers the technical and legal pathways for removing or suppressing these records.
+Court records and arrest records occupy a unique position in the data broker environment. Unlike general personal information, these records carry significant stigma and can impact employment, housing, and personal reputation for years after any case resolves. Public search databases aggregate these records from judicial sources, making them easily accessible to landlords, employers, and curious parties. This guide covers the technical and legal pathways for removing or suppressing these records.
 
 Prerequisites
 
@@ -28,19 +28,19 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Court Record Aggregation
+Step 1 - Understand Court Record Aggregation
 
 Public courts generate vast amounts of records that flow through multiple channels. Trial courts maintain original documents, but appellate courts, probation departments, and clerks' offices each maintain separate systems. Third-party aggregators like PublicSearchRecords, SearchPeopleFree, and StateRecords collect this data through bulk data requests, public records requests, and direct court electronic interfaces.
 
 The technical architecture typically involves:
 
 - PACER (Federal): The PACER system hosts federal court records. While access requires registration, third-party services republish this data.
-- State Court Databases: Each state maintains unique court record systems. Some provide public portals (e.g., Florida's ePortal, California's Court Records), while others require in-person requests.
-- County Clerk Systems: Municipal and county courts often maintain separate systems with varying accessibility.
+- State Court Databases - Each state maintains unique court record systems. Some provide public portals (e.g., Florida's ePortal, California's Court Records), while others require in-person requests.
+- County Clerk Systems - Municipal and county courts often maintain separate systems with varying accessibility.
 
 For developers, understanding these sources matters because removal requests must target the original source in many cases, aggregators simply republish what courts make available.
 
-Step 2: Immediate Action: Opt-Out Requests
+Step 2 - Immediate Action: Opt-Out Requests
 
 Most people-search sites maintain opt-out mechanisms. While not always effective for court records specifically, these requests prevent re-aggregation after successful source removal.
 
@@ -115,19 +115,19 @@ if __name__ == "__main__":
 
 This script demonstrates the concept but requires verification of current opt-out endpoints, these change frequently as sites attempt to discourage removal requests.
 
-Step 3: Source Removal: Court Record Expungement
+Step 3 - Source Removal: Court Record Expungement
 
 Removing records from aggregators succeeds only when the original court record becomes inaccessible. This requires legal action at the source.
 
 Types of Court Record Removal
 
-1. Expungement: Completely destroys the record, as if it never existed. Available for cases that were dismissed, acquitted, or completed without conviction (varies by jurisdiction).
+1. Expungement - Completely destroys the record, as if it never existed. Available for cases that were dismissed, acquitted, or completed without conviction (varies by jurisdiction).
 
-2. Sealing: Hides the record from public view while maintaining it for certain purposes (law enforcement, background checks for sensitive positions).
+2. Sealing - Hides the record from public view while maintaining it for certain purposes (law enforcement, background checks for sensitive positions).
 
-3. Vacatur: Sets aside a conviction, often used when procedural errors occurred or to restore rights.
+3. Vacatur - Sets aside a conviction, often used when procedural errors occurred or to restore rights.
 
-4. Pardon: Does not remove the record but prevents most background checks from considering it.
+4. Pardon - Does not remove the record but prevents most background checks from considering it.
 
 Jurisdiction-Specific Research
 
@@ -150,16 +150,16 @@ async function findJurisdiction(caseNumber, state) {
 }
 ```
 
-Step 4: Federal vs. State Records
+Step 4 - Federal vs. State Records
 
 Federal court records (accessible via PACER) operate under different rules than state courts. Key differences:
 
 - Federal PACER: Records remain accessible indefinitely unless sealed by court order. Removal requires a motion to seal with demonstrated cause.
-- State Courts: Many states have automatic expungement for certain offenses after waiting periods. Some offer "clean slate" laws that seal eligible records automatically.
+- State Courts - Many states have automatic expungement for certain offenses after waiting periods. Some offer "clean slate" laws that seal eligible records automatically.
 
 The Interstate Identification Index (III) maintained by the FBI contains criminal history records that flow to background check companies. Removing a federal record requires updating this system, which involves FBI record correction requests.
 
-Step 5: Practical Removal Workflow
+Step 5 - Practical Removal Workflow
 
 For most effective removal, follow this sequence:
 
@@ -211,7 +211,7 @@ list_records() {
 }
 ```
 
-Step 6: Automation Limitations and Ethical Considerations
+Step 6 - Automation Limitations and Ethical Considerations
 
 Court record removal cannot be fully automated. Each jurisdiction has unique processes, and legal requirements (court hearings, prosecutor notification) inherently require human involvement.
 
@@ -223,7 +223,7 @@ Additionally, certain records cannot be removed:
 
 The systems exist to maintain transparency in criminal justice. Removal processes exist for cases where rehabilitation has been demonstrated, not to help people evade accountability for serious offenses.
 
-Step 7: Prevention and Future Protection
+Step 7 - Prevention and Future Protection
 
 For those with sealed or expunged records, prevent re-aggregation through:
 

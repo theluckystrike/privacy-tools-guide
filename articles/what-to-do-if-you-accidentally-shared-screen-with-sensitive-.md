@@ -19,7 +19,7 @@ Stop screen sharing immediately using platform shortcuts (Cmd+Shift+E in Zoom, C
 
 Table of Contents
 
-- [Immediate Actions: The First 60 Seconds](#immediate-actions-the-first-60-seconds)
+- [Immediate Actions - The First 60 Seconds](#immediate-actions-the-first-60-seconds)
 - [Platform-Specific Recovery Steps](#platform-specific-recovery-steps)
 - [Assessing the Actual Risk](#assessing-the-actual-risk)
 - [Technical Containment for Developers](#technical-containment-for-developers)
@@ -29,7 +29,7 @@ Table of Contents
 - [Automated Detection of Sensitive Content](#automated-detection-of-sensitive-content)
 - [Platform-Specific Recording Protection](#platform-specific-recording-protection)
 
-Immediate Actions: The First 60 Seconds
+Immediate Actions - The First 60 Seconds
 
 When you realize sensitive information is visible to others, act immediately. The goal is to minimize exposure time and prevent recording or caching of the content.
 
@@ -110,9 +110,9 @@ Or use the clear command with history preservation
 clear
 
 For specific shells, clear history files
-Bash: history -c && history -w
-Zsh: history -p && fc -W
-Fish: history --clear
+Bash - history -c && history -w
+Zsh - history -p && fc -W
+Fish - history --clear
 ```
 
 Review clipboard history. If you copy-pasted the sensitive information shortly before sharing, check whether clipboard managers retained it. On macOS, disable clipboard history temporarily:
@@ -184,7 +184,7 @@ For security teams investigating potential data leaks from screen sharing incide
 Timeline Reconstruction
 
 ```python
-Incident forensics: Determine what was actually exposed
+Incident forensics - Determine what was actually exposed
 
 class ScreenShareIncidentAnalysis:
  def __init__(self, meeting_platform, incident_report):

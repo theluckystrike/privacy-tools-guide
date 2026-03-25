@@ -99,8 +99,8 @@ Or download from github.com/FiloSottile/age
 Generate a key pair:
 ```bash
 age-keygen
-Output: age1example... (public key)
-# secret key (keep private)
+Output - age1example... (public key)
+secret key (keep private)
 ```
 
 Encrypt a file:

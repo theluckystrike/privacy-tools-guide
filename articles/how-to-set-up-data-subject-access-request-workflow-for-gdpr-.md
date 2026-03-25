@@ -41,7 +41,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Designing Your DSAR Pipeline
+Step 1 - Designing Your DSAR Pipeline
 
 A DSAR workflow consists of five stages:
 
@@ -100,7 +100,7 @@ Implementing Identity Verification
 
 You cannot fulfill a DSAR without confirming the requester's identity. The complexity of verification depends on how much data you have and the sensitivity of your systems. A practical approach includes:
 
-Step 1: Email Verification
+Step 1 - Email Verification
 Send a verification link to the email address on file. This confirms the requester has access to that inbox.
 
 ```javascript
@@ -122,7 +122,7 @@ async function sendVerificationEmail(request) {
 }
 ```
 
-Step 2: Knowledge-Based Authentication
+Step 2 - Knowledge-Based Authentication
 For higher assurance, ask the requester to confirm specific information only they would know, previous addresses, account creation date, or recent transactions.
 
 ```javascript
@@ -272,7 +272,7 @@ async function checkAndAlertDeadlines() {
 }
 ```
 
-Step 2: Handling Erasure Requests
+Step 2 - Handling Erasure Requests
 
 The Right to Erasure (Article 17) adds complexity, data must be deleted not just from your primary systems but from backups, third-party processors, and any cached copies.
 
@@ -310,7 +310,7 @@ async function processErasureRequest(requestId) {
 }
 ```
 
-Step 3: Automate Where Possible
+Step 3 - Automate Where Possible
 
 Manual DSAR handling doesn't scale. As request volume grows, automate:
 
@@ -321,7 +321,7 @@ Manual DSAR handling doesn't scale. As request volume grows, automate:
 
 However, retain human oversight for complex cases, ambiguous requests, potential legal holds, or requests affecting multiple jurisdictions.
 
-Step 4: Test Your Workflow
+Step 4 - Test Your Workflow
 
 Before relying on your DSAR pipeline, validate it works:
 

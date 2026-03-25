@@ -49,7 +49,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How to View Your Significant Locations Data
+Step 1 - How to View Your Significant Locations Data
 
 Accessing this data requires navigating through iOS settings. Follow these steps to review what your iPhone has recorded:
 
@@ -72,7 +72,7 @@ Individual Location View reveals specific addresses or coordinates. Each entry i
 
 For developers curious about the underlying data structure, iOS stores this information in a SQLite database within the device's system partition. Direct file system access requires jailbreaking, so the Settings interface remains the only official viewing method.
 
-Step 2: Delete Significant Locations History
+Step 2 - Delete Significant Locations History
 
 Removing this data involves understanding that deletion operates at two distinct levels: clearing individual entries versus disabling the entire collection system.
 
@@ -106,7 +106,7 @@ For selective deletion:
 
 This granular approach allows preserving useful locations while removing specific visits you prefer not to record.
 
-Step 3: Automate Location Management with Shortcuts
+Step 3 - Automate Location Management with Shortcuts
 
 Power users can automate location data management using iOS Shortcuts. While you cannot directly access the Significant Locations database through Shortcuts, you can create workflows around location permission management.
 
@@ -122,7 +122,7 @@ Power users can automate location data management using iOS Shortcuts. While you
 
 For developers interested in programmatic approaches, the Shortcuts app exposes location trigger conditions but does not provide direct database access. Third-party apps from the App Store cannot modify Significant Locations due to iOS sandbox restrictions.
 
-Step 4: Technical Details for Developers
+Step 4 - Technical Details for Developers
 
 Understanding how Significant Locations integrates with iOS helps when building privacy-aware applications or conducting security audits.
 
@@ -148,7 +148,7 @@ When building location-aware applications, consider these principles:
 
 Apple enforces these principles through App Store review guidelines. Apps attempting to collect location data without proper disclosure face rejection.
 
-Step 5: What Happens After Deletion
+Step 5 - What Happens After Deletion
 
 After clearing Significant Locations, several behaviors change:
 
@@ -169,13 +169,13 @@ Additional Location Privacy Controls
 
 Managing Significant Locations represents one component of location privacy. Consider these complementary measures:
 
-Per-App Location Permissions: Review which applications access location data. Navigate to Settings → Privacy & Security → Location Services to audit each app's permissions.
+Per-App Location Permissions - Review which applications access location data. Navigate to Settings → Privacy & Security → Location Services to audit each app's permissions.
 
-System Services Controls: Beyond Significant Locations, iOS includes numerous location-using services. The System Services page contains toggles for location-based Apple Ads, location-based suggestions, and emergency location features.
+System Services Controls - Beyond Significant Locations, iOS includes numerous location-using services. The System Services page contains toggles for location-based Apple Ads, location-based suggestions, and emergency location features.
 
-Share My Location: Disable this feature in Settings → [Your Name] → Find My to prevent location sharing with contacts.
+Share My Location - Disable this feature in Settings → [Your Name] → Find My to prevent location sharing with contacts.
 
-Step 6: Extracting Significant Locations Data on Jailbroken Devices
+Step 6 - Extracting Significant Locations Data on Jailbroken Devices
 
 For researchers and developers (jailbroken devices only), direct database access is possible:
 
@@ -194,9 +194,9 @@ Export full location history
 sqlite3 ~/Library/Caches/LocationCache/consolidated.db ".dump" > locations.sql
 ```
 
-This reveals the raw data Apple collects. Note: Jailbreaking voids your warranty and can compromise security.
+This reveals the raw data Apple collects. Note - Jailbreaking voids your warranty and can compromise security.
 
-Step 7: Location Privacy by iOS Version
+Step 7 - Location Privacy by iOS Version
 
 Apple has refined location tracking across iOS versions:
 
@@ -208,7 +208,7 @@ iOS 18+ (planned): Enhanced local processing, user transparency improvements, po
 
 If privacy is critical, verify your iOS version's capabilities. Older versions provide less control.
 
-Step 8: Use Shortcuts for Location Automation
+Step 8 - Use Shortcuts for Location Automation
 
 Create Shortcuts to manage location settings:
 
@@ -251,7 +251,7 @@ High Threat (journalist, activist, person in abusive situation):
 - Use separate phone for sensitive activities
 - Consider older iPhone with early iOS version (less tracking)
 
-Step 9: Location Privacy Beyond Significant Locations
+Step 9 - Location Privacy Beyond Significant Locations
 
 Significant Locations is one tracking mechanism. Other location data collection includes:
 
@@ -261,11 +261,11 @@ System Services Location Access:
 - Weather location personalizes forecasts
 - Emergency SOS location to emergency services
 
-Third-Party Apps: Review app permissions individually
+Third-Party Apps - Review app permissions individually
 
 iCloud Location Data: Find My feature syncs locations to iCloud account
 
-WiFi Networks: Your device remembers WiFi networks you've connected to and their locations
+WiFi Networks - Your device remembers WiFi networks you've connected to and their locations
 
 Disabling Significant Locations alone doesn't provide complete location privacy. Implement location privacy:
 
@@ -275,7 +275,7 @@ Settings → Privacy & Security → Location Services → Toggle OFF
 
 Or selective approach:
 Location Services: ON (needed for core features)
-Significant Locations: OFF
+Significant Locations - OFF
 System Services:
   #  Emergency SOS (necessary)
   #  Apple Ads (disable)
@@ -285,16 +285,16 @@ System Services:
 
 Per-app settings:
 Maps: "While Using"
-Health: "Never"
-Social Media: "Never"
-Shopping: "Never"
+Health - "Never"
+Social Media - "Never"
+Shopping - "Never"
 ```
 
-Step 10: Privacy Audit Process
+Step 10 - Privacy Audit Process
 
 Quarterly location privacy audit:
 
-1. Check Significant Locations: How many entries exist? Has it grown unexpectedly?
+1. Check Significant Locations - How many entries exist? Has it grown unexpectedly?
 2. Review per-app permissions: Have you granted location to apps you forgot about?
 3. Audit System Services: Verify you haven't accidentally re-enabled services
 4. Check Find My: Verify location sharing is limited to trusted contacts
@@ -302,7 +302,7 @@ Quarterly location privacy audit:
 
 This regular audit catches configuration drift where privacy settings gradually get relaxed.
 
-Step 11: Recovery from Excessive Location Tracking
+Step 11 - Recovery from Excessive Location Tracking
 
 If you've been using Significant Locations for years, here's how to recover privacy:
 

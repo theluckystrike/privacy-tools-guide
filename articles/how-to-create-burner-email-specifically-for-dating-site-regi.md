@@ -45,7 +45,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Method 1: Email Aliasing Services
+Step 1 - Method 1: Email Aliasing Services
 
 Email aliasing services provide the most solution for managing multiple identities while maintaining usability. Services like Simplelogin (now part of Proton), DuckDuckGo's Email Protection, and Firefox Relay offer alias generation without requiring separate mailbox management.
 
@@ -70,7 +70,7 @@ DuckDuckGo Email Protection
 
 For a free alternative, DuckDuckGo's Email Protection generates `@duck.com` aliases through their browser extension or by visiting https://email-protection.duckduckgo.com. These aliases forward to your existing inbox and support reply functionality for site communications.
 
-Step 2: Method 2: Custom Domain with catch-all Configuration
+Step 2 - Method 2: Custom Domain with catch-all Configuration
 
 For maximum control, run your own mail server with a custom domain and configure catch-all routing. This approach allows infinite alias creation using any format without manual configuration.
 
@@ -105,8 +105,8 @@ Self-hosting enthusiasts can configure Postfix with virtual alias maps:
 
 ```conf
 /etc/postfix/virtual
-Format: alias@yourdomain.com destination@real.com
-Catch-all: @yourdomain.com destination@real.com
+Format - alias@yourdomain.com destination@real.com
+Catch-all - @yourdomain.com destination@real.com
 @yourdomain.com    yourrealemail@gmail.com
 
 Per-site aliases for tracking
@@ -116,7 +116,7 @@ bumble@yourdomain.com    yourrealemail@gmail.com
 
 Reload Postfix after configuration: `postmap /etc/postfix/virtual && postfix reload`
 
-Step 3: Method 3: Temporary Disposable Email Services
+Step 3 - Method 3: Temporary Disposable Email Services
 
 Temporary email services suit one-time registrations where you need immediate access but don't require long-term mailbox validity. Services like Guerrilla Mail, 33Mail, and TempMail provide throwaway addresses.
 
@@ -150,13 +150,13 @@ def check_guerrilla_mail(token):
 Usage
 mail = create_guerrilla_mail()
 print(f"Use this email: {mail['email']}")
-Later: check for verification emails
+Later - check for verification emails
 emails = check_guerrilla_mail(mail['token'])
 ```
 
 For dating sites specifically, avoid purely temporary services, they often block verification emails, and the addresses expire quickly, preventing account recovery.
 
-Step 4: Method 4: Gmail/Outlook Aliases
+Step 4 - Method 4: Gmail/Outlook Aliases
 
 Your existing email provider may support alias creation without additional services. Gmail allows appending `+` and random characters to your address: `yourname+datingtinder123@gmail.com` delivers to your inbox but appears as a distinct address to recipients.
 
@@ -187,7 +187,7 @@ Use a password manager to store both the burner email and associated dating site
 
 Consider two-factor authentication on your email forwarding destination. The burner email protects your identity, but compromising your real email still exposes everything forwarded through it.
 
-Step 5: Automation Script for Managing Multiple Aliases
+Step 5 - Automation Script for Managing Multiple Aliases
 
 Power users managing multiple dating platforms benefit from alias tracking scripts:
 

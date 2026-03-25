@@ -40,7 +40,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Use Age for Encrypted Password Sharing
+Step 1 - Use Age for Encrypted Password Sharing
 
 Age is a modern encryption tool that excels at secure file sharing. Unlike PGP, age has a minimal attack surface and requires no key management infrastructure. Here's how to use it for team password sharing:
 
@@ -53,8 +53,8 @@ Generate a new age key pair
 age-keygen
 
 Output example:
-# created: 2026-03-16T10:30:00
-# public key: age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrjwjkg5eu6rqfpklg
+created: 2026-03-16T10:30:00
+public key: age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrjwjkg5eu6rqfpklg
 AGE-SECRET-KEY-1YOURSECRETKEYHERE
 ```
 
@@ -85,12 +85,12 @@ Recipients decrypt the file using their age secret key:
 Decrypt the file (prompts for key or uses SSH agent)
 age -d -i ~/.config/age/keys.txt api_key.age
 
-Output: my-secret-api-key-12345
+Output - my-secret-api-key-12345
 ```
 
 For automated pipelines or scripts, set the `AGE_CONFIG_DIR` environment variable and use SSH agent integration.
 
-Step 2: Use GPG for Sensitive Credential Sharing
+Step 2 - Use GPG for Sensitive Credential Sharing
 
 GPG remains widely used in enterprise environments. While more complex than age, it offers compatibility with systems that expect PGP-signed messages.
 
@@ -119,7 +119,7 @@ pass init "team-gpg-key-id"
 
 Insert a new password
 pass insert dev/database-api-key
-Enter password: [type securely]
+Enter password - [type securely]
 
 Generate a random password
 pass generate dev/service-account-token 32
@@ -130,7 +130,7 @@ pass
 
 Team members clone the password store repository and use GPG keys to access shared credentials. All passwords remain encrypted at rest, only authorized team members can decrypt them.
 
-Step 3: Signal: Ephemeral Password Sharing
+Step 3 - Signal: Ephemeral Password Sharing
 
 For one-off password sharing during conversations, Signal provides disappearing messages with screenshot detection:
 
@@ -141,7 +141,7 @@ For one-off password sharing during conversations, Signal provides disappearing 
 
 Signal's encryption ensures only the recipient reads the message. The disappearing feature removes it from both devices after the timer expires. However, Signal lacks file attachment encryption for large credential databases, making it unsuitable for systematic credential management.
 
-Step 4: Practical Workflow: Secure Credential Rotation
+Step 4 - Practical Workflow: Secure Credential Rotation
 
 Here's a workflow combining these tools for regular credential rotation:
 
@@ -156,9 +156,9 @@ git pull origin main
 Generate new API key
 NEW_KEY=$(openssl rand -base64 32)
 pass insert -m production/api-key <<EOF
-Service: AWS Production
-Key: $NEW_KEY
-Rotated: $(date)
+Service - AWS Production
+Key - $NEW_KEY
+Rotated - $(date)
 EOF
 
 Push changes
@@ -180,13 +180,13 @@ Regardless of which encryption tool you choose, follow these principles:
 - Set expiration policies. Credentials should have defined lifetimes
 - Use key revocation lists. Remove access immediately when team members leave
 
-Step 5: Build Credential Sharing Into Team Culture
+Step 5 - Build Credential Sharing Into Team Culture
 
 Technical tools alone don't solve credential sharing, team practices matter equally:
 
-No Passwords in Code: Establish a non-negotiable rule that credentials never appear in source code, configuration files, or documentation. Use environment variables and secret management services exclusively.
+No Passwords in Code - Establish a non-negotiable rule that credentials never appear in source code, configuration files, or documentation. Use environment variables and secret management services exclusively.
 
-Audit Access: Track who accessed which credentials and when. This enables detecting unauthorized access and supporting incident investigation:
+Audit Access - Track who accessed which credentials and when. This enables detecting unauthorized access and supporting incident investigation:
 
 ```bash
 Using age audit logging
@@ -209,13 +209,13 @@ Usage
 log_credentials_access "$USER" "db_password_prod" "viewed"
 ```
 
-Rotation Discipline: Establish a credential rotation schedule. Many teams have "credential rotation day" monthly or quarterly where all shared credentials are regenerated. This limits the window where stolen credentials provide access.
+Rotation Discipline - Establish a credential rotation schedule. Many teams have "credential rotation day" monthly or quarterly where all shared credentials are regenerated. This limits the window where stolen credentials provide access.
 
-Step 6: Integrate Credential Sharing Into CI/CD Pipelines
+Step 6 - Integrate Credential Sharing Into CI/CD Pipelines
 
 Developers often need credentials for automated deployment. Implement this safely:
 
-GitHub Secrets: For GitHub-based workflows, use repository secrets:
+GitHub Secrets - For GitHub-based workflows, use repository secrets:
 
 ```yaml
 .github/workflows/deploy.yml
@@ -235,7 +235,7 @@ jobs:
         run: ./deploy.sh
 ```
 
-GitLab CI/CD Variables: Similarly, GitLab supports protected variables:
+GitLab CI/CD Variables - Similarly, GitLab supports protected variables:
 
 ```yaml
 .gitlab-ci.yml
@@ -253,11 +253,11 @@ deploy:
 
 These systems mask credential values in logs, preventing accidental exposure in build output.
 
-Step 7: Credential Sharing for Contractors and Temporary Access
+Step 7 - Credential Sharing for Contractors and Temporary Access
 
 Temporary team members create special challenges:
 
-Time-Limited Credentials: Generate credentials specifically for contractors that expire after the contract ends:
+Time-Limited Credentials - Generate credentials specifically for contractors that expire after the contract ends:
 
 ```bash
 #!/bin/bash
@@ -277,7 +277,7 @@ Set expiration (requires custom Lambda for automatic deletion)
 echo "Reminder: Delete $CONTRACTOR_NAME on $CONTRACT_END_DATE"
 ```
 
-Separate Credential Scope: Never give contractors access to production databases or payment systems. Create read-only or development-only accounts:
+Separate Credential Scope - Never give contractors access to production databases or payment systems. Create read-only or development-only accounts:
 
 ```python
 def create_contractor_credentials(contractor_email, access_level="readonly"):
@@ -294,23 +294,23 @@ def create_contractor_credentials(contractor_email, access_level="readonly"):
     return generate_iam_credentials(contractor_email, permissions)
 ```
 
-Step 8: Credential Sharing for Multiple Organizations
+Step 8 - Credential Sharing for Multiple Organizations
 
 Developers working across organizations face credential management complexity:
 
-Separate Password Managers: Use completely separate password managers for work credentials versus personal accounts. This prevents a single breach from compromising both.
+Separate Password Managers - Use completely separate password managers for work credentials versus personal accounts. This prevents a single breach from compromising both.
 
-Alias Email Addresses: Use email aliases for different organizations:
+Alias Email Addresses - Use email aliases for different organizations:
 - main.email+work-company-a@example.com
 - main.email+freelance-client@example.com
 
 This prevents account enumeration and makes it harder to correlate accounts across organizations.
 
-Step 9: Plan Incident Response for Credential Leaks
+Step 9 - Plan Incident Response for Credential Leaks
 
 Despite precautions, credentials sometimes leak. Have a response plan:
 
-Detection: Monitor for credential leaks using services like BreachNotification.com or GitHub's built-in secret scanning. These services alert when credentials appear in public repositories.
+Detection - Monitor for credential leaks using services like BreachNotification.com or GitHub's built-in secret scanning. These services alert when credentials appear in public repositories.
 
 Immediate Response:
 1. Immediately revoke the leaked credential
@@ -324,7 +324,7 @@ Post-Incident Analysis:
 - Why wasn't it caught earlier?
 - What process improvements prevent recurrence?
 
-Step 10: Cost-Benefit Analysis
+Step 10 - Cost-Benefit Analysis
 
 Choosing credential management approaches requires understanding tradeoffs:
 
@@ -342,11 +342,11 @@ Legal and Compliance Aspects
 
 Credential sharing affects compliance:
 
-SOC 2 Type II: Auditors expect documented credential management procedures and access logs. Implement audit trails from day one.
+SOC 2 Type II - Auditors expect documented credential management procedures and access logs. Implement audit trails from day one.
 
-HIPAA (Healthcare): Access to healthcare systems must be logged and audited. Each person must have individual credentials (no shared accounts). Implement the tools and practices described here to demonstrate compliance.
+HIPAA (Healthcare) - Access to healthcare systems must be logged and audited. Each person must have individual credentials (no shared accounts). Implement the tools and practices described here to demonstrate compliance.
 
-PCI-DSS: Similar to HIPAA, each user needs individual credentials. Shared service accounts violate PCI-DSS requirements.
+PCI-DSS - Similar to HIPAA, each user needs individual credentials. Shared service accounts violate PCI-DSS requirements.
 
 Document your credential management practices and have legal review them before adopting. Proper documentation during normal operations prevents compliance issues later.
 

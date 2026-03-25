@@ -16,7 +16,7 @@ voice-checked: true
 
 
 
-Advanced: Statistical Analysis of Camera Access Patterns
+Advanced - Statistical Analysis of Camera Access Patterns
 
 For researchers and security professionals, statistical analysis reveals camera access beyond simple logging:
 
@@ -31,7 +31,7 @@ def analyze_camera_entropy(logs):
     """
     Identify statistically impossible camera access patterns.
 
-    Hypothesis: Legitimate app access shows human usage patterns.
+    Hypothesis - Legitimate app access shows human usage patterns.
     RAT access shows bot-like patterns (predictable intervals).
     """
 
@@ -70,7 +70,7 @@ analyze_camera_entropy([
 
 Regular, predictable camera access indicates automated surveillance rather than app usage.
 
-Step 8: Baseband Processor Compromise
+Step 8 - Baseband Processor Compromise
 
 The most sophisticated attacks bypass Android/iOS entirely through baseband attacks:
 
@@ -81,14 +81,14 @@ Baseband = separate processor handling cellular radio
 - Can access camera without OS knowing
 - No Android/iOS permissions apply
 
-Detection difficulty: VERY HIGH
+Detection difficulty - VERY HIGH
 - OS-level monitoring cannot detect baseband camera access
 - Requires specialized equipment (Software Defined Radio) to detect radio pattern anomalies
 ```
 
 For journalists or targets of state-level adversaries, physical phone disassembly and inspection by experts may be necessary.
 
-Step 9: RAT (Remote Access Trojan) Behavior Profiles
+Step 9 - RAT (Remote Access Trojan) Behavior Profiles
 
 Different RATs exhibit different camera patterns:
 
@@ -111,7 +111,7 @@ Detection strategy varies by RAT type:
 - Triggered: Requires code-level inspection of applications
 ```
 
-Step 10: Mobile Device Hardening Against Camera Hijacking
+Step 10 - Mobile Device Hardening Against Camera Hijacking
 
 Reduce attack surface for camera access:
 
@@ -128,13 +128,13 @@ Settings → Privacy → Camera → Revoke access for all non-essential apps
 Settings → Privacy & Security → Camera → Prevent Camera Access in these apps
 
 System level
-Both platforms: Use Focus mode to disable all notifications (blocks trojan C&C)
-Both platforms: Use restricted mode that limits app capabilities
+Both platforms - Use Focus mode to disable all notifications (blocks trojan C&C)
+Both platforms - Use restricted mode that limits app capabilities
 ```
 
 These measures don't prevent all attacks but raise the bar significantly.
 
-Step 11: Forensic Analysis: Extracting Camera Logs
+Step 11 - Forensic Analysis: Extracting Camera Logs
 
 For users with technical expertise who want deep evidence:
 
@@ -180,7 +180,7 @@ How long does it take to tell if your phone camera is being accessed remotely?
 
 Immediate detection via green dot (iOS) or privacy indicators (Android 12+): seconds.
 Forensic analysis requiring logs and network inspection: hours to days.
-Complete assurance of absence: impossible without specialized hardware analysis.
+Complete assurance of absence - impossible without specialized hardware analysis.
 
 What are the most common mistakes to avoid?
 

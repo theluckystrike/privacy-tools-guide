@@ -221,7 +221,7 @@ Vaultwarden Architecture (Minimal Stack)
   Session data                         
 
 
-Total resource footprint: 20MB disk + 50-100MB RAM
+Total resource footprint - 20MB disk + 50-100MB RAM
 ```
 
 Bitwarden (Official) Architecture (Full Stack)
@@ -250,8 +250,8 @@ Bitwarden (Official) Architecture (Full Stack)
   Encryption keys                              
 
 
-Total resource footprint: 500MB+ disk + 2-4GB RAM
-Scaling: Requires external database for multiple servers
+Total resource footprint - 500MB+ disk + 2-4GB RAM
+Scaling - Requires external database for multiple servers
 ```
 
 Installation Walkthrough with Production Hardening

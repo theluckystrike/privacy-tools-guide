@@ -32,7 +32,7 @@ Table of Contents
 - [Passkey Backup and Recovery Strategies](#passkey-backup-and-recovery-strategies)
 - [Performance and Latency Considerations](#performance-and-latency-considerations)
 - [Compliance and Regulation](#compliance-and-regulation)
-- [Advanced: Building Custom Passkey Managers](#advanced-building-custom-passkey-managers)
+- [Advanced - Building Custom Passkey Managers](#advanced-building-custom-passkey-managers)
 - [Future Roadmap Expectations](#future-roadmap-expectations)
 
 Passkeys Implementation Overview
@@ -172,7 +172,7 @@ These constraints reflect Proton Pass's focus on individual and family use cases
 
 Comparison with Competing Managers
 
-Against Bitwarden and 1Password, Proton Pass offers the best ecosystem integration if you already use Proton services. The built-in email aliasing feature works well with passkey management, you can create passkeys tied to aliased email addresses without exposing your primary address.
+Against Bitwarden and 1Password, Proton Pass offers the best environment integration if you already use Proton services. The built-in email aliasing feature works well with passkey management, you can create passkeys tied to aliased email addresses without exposing your primary address.
 
 Bitwarden's passkey support remains more mature in terms of CLI tooling and API access. If you require extensive automation or custom integrations, Bitwarden's architecture may better suit those needs. However, Proton Pass closes the gap rapidly with each release.
 
@@ -251,11 +251,11 @@ const PasskeyTestSuite = {
 
 Troubleshooting Common Passkey Issues
 
-Passkey Not Appearing in Selector: Ensure Proton Pass is unlocked and the browser extension has permission to manage credentials. Check browser permissions in Settings → Extensions.
+Passkey Not Appearing in Selector - Ensure Proton Pass is unlocked and the browser extension has permission to manage credentials. Check browser permissions in Settings → Extensions.
 
-Incorrect RP ID: The relying party ID must exactly match the domain being accessed. For localhost development, use "localhost" (not "127.0.0.1"). Proton Pass strictly validates this for security.
+Incorrect RP ID - The relying party ID must exactly match the domain being accessed. For localhost development, use "localhost" (not "127.0.0.1"). Proton Pass strictly validates this for security.
 
-Platform Authenticator Conflicts: If multiple authenticators are installed (macOS Keychain, Windows Hello, Proton Pass), ensure your app handles the credential selector properly.
+Platform Authenticator Conflicts - If multiple authenticators are installed (macOS Keychain, Windows Hello, Proton Pass), ensure your app handles the credential selector properly.
 
 Migration Path from Passwords to Passkeys
 
@@ -287,19 +287,19 @@ Run tracking
 track_migration_progress
 ```
 
-Phase 1 (Weeks 1-2): Passkey registration is optional. Users maintain password backups.
+Phase 1 (Weeks 1-2) - Passkey registration is optional. Users maintain password backups.
 
-Phase 2 (Weeks 3-4): Passkey registration recommended in UI/email campaigns. Target 50% adoption.
+Phase 2 (Weeks 3-4) - Passkey registration recommended in UI/email campaigns. Target 50% adoption.
 
-Phase 3 (Weeks 5-6): Password-only access deprecated for new features. Encourage remaining users to migrate.
+Phase 3 (Weeks 5-6) - Password-only access deprecated for new features. Encourage remaining users to migrate.
 
-Phase 4 (Week 7+): Passwords deprecated entirely. Legacy password authentication disabled.
+Phase 4 (Week 7+) - Passwords deprecated entirely. Legacy password authentication disabled.
 
 Passkey Backup and Recovery Strategies
 
 A critical consideration for Proton Pass passkeys: what happens if you lose device access?
 
-Proton Pass Cloud Backup: Encrypted passkeys sync to Proton's servers, allowing recovery on new devices. The private keys are encrypted with your master key, so Proton cannot access them.
+Proton Pass Cloud Backup - Encrypted passkeys sync to Proton's servers, allowing recovery on new devices. The private keys are encrypted with your master key, so Proton cannot access them.
 
 Manual Export for Disaster Recovery:
 
@@ -312,7 +312,7 @@ Restore on new device:
 protonpass passkey import passkey_backup.json --password <master_password>
 ```
 
-Family Sharing Consideration: Proton Pass Family accounts cannot share passkeys between members, each person maintains separate passkey databases. This is a security feature but complicates family account recovery.
+Family Sharing Consideration - Proton Pass Family accounts cannot share passkeys between members, each person maintains separate passkey databases. This is a security feature but complicates family account recovery.
 
 Performance and Latency Considerations
 
@@ -346,16 +346,16 @@ Compliance and Regulation
 
 HIPAA Considerations (healthcare applications): Passkeys meet HIPAA authentication requirements. The asymmetric cryptography provides stronger security than password-based authentication. Document passkey implementation in your Security Risk Assessment for compliance purposes.
 
-GDPR Data Processing: Proton Pass stores minimal personal data associated with passkeys. No tracking data, no device fingerprints, only encrypted credential material. Your privacy policy can accurately claim "minimal data processing" for authentication.
+GDPR Data Processing - Proton Pass stores minimal personal data associated with passkeys. No tracking data, no device fingerprints, only encrypted credential material. Your privacy policy can accurately claim "minimal data processing" for authentication.
 
-PCI DSS (payment processing): WebAuthn/passkey authentication is eligible for PCI DSS compliance with proper implementation. The credential doesn't store cardholder data, so it avoids the most stringent PCI requirements.
+PCI DSS (payment processing) - WebAuthn/passkey authentication is eligible for PCI DSS compliance with proper implementation. The credential doesn't store cardholder data, so it avoids the most stringent PCI requirements.
 
-Advanced: Building Custom Passkey Managers
+Advanced - Building Custom Passkey Managers
 
 For organizations with specialized requirements, building custom passkey storage is possible (though not recommended except in specific scenarios):
 
 ```python
-Minimal example: custom passkey storage with client-side encryption
+Minimal example - custom passkey storage with client-side encryption
 from cryptography.hazmat.primitives.asymmetric import ec
 from cryptography.hazmat.primitives import serialization, hashes
 from cryptography.hazmat.backends import default_backend

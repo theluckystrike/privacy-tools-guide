@@ -42,7 +42,7 @@ Cryptocurrency payments offer pseudonymity by default, but most mainstream excha
 
 Obtaining Cryptocurrency Anonymously
 
-Method 1: Peer-to-Peer Exchange
+Method 1 - Peer-to-Peer Exchange
 
 LocalBitcoins and Paxful help in-person cash trades. Meet in a public location, pay with, and receive Bitcoin immediately into a wallet you control.
 
@@ -55,7 +55,7 @@ Verify the address format
 bitcoin-cli validateaddress bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh
 ```
 
-Method 2: Bitcoin ATM
+Method 2 - Bitcoin ATM
 
 Bitcoin ATMs allow cash purchases without identification. Fees range from 5-15% but provide immediate Bitcoin with no account requirements. Use a dedicated wallet that has never been linked to your identity.
 
@@ -68,7 +68,7 @@ Always generate new addresses for each transaction
 electrum getnewaddress()
 ```
 
-Method 3: Mining or Earning
+Method 3 - Mining or Earning
 
 For maximum privacy, earn cryptocurrency through mining, freelance work paid in crypto, or purchasing gift cards with cash and exchanging them on platforms like Purse.io. These methods require no KYC and create no financial paper trail.
 
@@ -145,7 +145,7 @@ lncli payinvoice lnbc500n1...
 
 Practical Payment Workflow
 
-Step 1: Prepare Your Environment
+Step 1 - Prepare Your Environment
 
 Boot into a privacy-focused operating system like Tails or Whonix before making any VPN-related transactions. These systems route all traffic through Tor by default and leave no persistent storage.
 
@@ -153,14 +153,14 @@ Boot into a privacy-focused operating system like Tails or Whonix before making 
 Verify Tor is working in Tails
 curl -s https://check.torproject.org/api/ip
 
-Should return: {"IsTor":true,"IP":"..."}
+Should return - {"IsTor":true,"IP":"..."}
 ```
 
-Step 2: Acquire Cryptocurrency
+Step 2 - Acquire Cryptocurrency
 
 Using one of the methods described earlier, obtain enough cryptocurrency to cover the VPN subscription. Mullvad currently costs approximately €5/month (around $5.50 at current rates), and IVPN costs approximately $6/month.
 
-Step 3: Make the Payment
+Step 3 - Make the Payment
 
 Navigate to the VPN provider's payment page using Tor Browser. Select cryptocurrency as the payment method. For Mullvad or IVPN, you can pay directly with your wallet without creating an account first.
 
@@ -170,7 +170,7 @@ Always use a new change address
 electrum payto <provider_address> --fee 0.0001 --from_account vpn_spending --change_addr <new_change_address>
 ```
 
-Step 4: Verify Payment and Configure VPN
+Step 4 - Verify Payment and Configure VPN
 
 After payment confirmation, the provider assigns you an account number. Save this number securely, it is your only way to access the VPN service. Configure your VPN client using the provider's configuration files or connection details.
 
@@ -194,7 +194,7 @@ Common Mistakes to Avoid
 
 2. Reusing addresses: Generate a new address for each transaction. Address reuse makes behavioral analysis trivial.
 
-3. Accessing provider websites without Tor: Your IP address is logged when visiting VPN provider websites, even if you pay with cryptocurrency. Always use Tor for the initial signup and payment.
+3. Accessing provider websites without Tor - Your IP address is logged when visiting VPN provider websites, even if you pay with cryptocurrency. Always use Tor for the initial signup and payment.
 
 4. Saving payment information: After payment, delete all records. The provider already has your account number, do not store it in an unencrypted file.
 
@@ -224,11 +224,11 @@ Rotating Cryptocurrency Payment Methods
 Paying repeatedly with the same cryptocurrency wallet or address creates a pattern that can be analyzed:
 
 ```bash
-Recommended practice: Use different payment method each renewal
-Month 1: Bitcoin (via peer-to-peer trade)
-Month 2: Monero (via mining)
-Month 3: Bitcoin (via ATM)
-Month 4: Monero (via peer-to-peer)
+Recommended practice - Use different payment method each renewal
+Month 1 - Bitcoin (via peer-to-peer trade)
+Month 2 - Monero (via mining)
+Month 3 - Bitcoin (via ATM)
+Month 4 - Monero (via peer-to-peer)
 
 Never pay from the same wallet twice
 This prevents analysts from linking payments to a single identity
@@ -238,7 +238,7 @@ monero-wallet-cli --generate-new-wallet vpn_payment_march
 monero-wallet-cli --generate-new-wallet vpn_payment_april
 ```
 
-Temporal Decoupling: Delaying Payment Processing
+Temporal Decoupling - Delaying Payment Processing
 
 Paying immediately when your subscription expires creates a temporal correlation, subscribing at specific times and purchasing at specific times. Introduce delay:
 
@@ -265,8 +265,8 @@ mullvad set wireguard exit-location us
 
 This means:
 Your ISP sees: Connection to VPN entry point
-First VPN: Your traffic to second VPN
-Second VPN: Your actual browsing
+First VPN - Your traffic to second VPN
+Second VPN - Your actual browsing
 This prevents even the VPN provider from seeing destinations
 ```
 
@@ -280,8 +280,8 @@ Tor-first approach (requires running Tor locally)
 2. Configure VPN to route all traffic through Tor
 3. VPN sees Tor exit node, not your ISP
 
-Drawback: VPN provider may have policies against Tor connections
-Advantage: Your ISP has no visibility into your activities
+Drawback - VPN provider may have policies against Tor connections
+Advantage - Your ISP has no visibility into your activities
 
 Some VPN providers explicitly support this:
 - Mullvad: No-log policy, doesn't block Tor over VPN
@@ -298,7 +298,7 @@ Backup Account Recovery
 For Mullvad and IVPN (account-based systems):
 
 Immediately after creating account, save account number securely
-echo "Account: 4829102384920384" | gpg --symmetric --armor > account_backup.asc
+echo "Account - 4829102384920384" | gpg --symmetric --armor > account_backup.asc
 
 Store backup in geographically distributed locations:
 - Encrypted USB drive at home
@@ -314,7 +314,7 @@ Cryptocurrency Wallet Recovery
 
 ```bash
 Monero wallet recovery phrase MUST be backed up
-Standard: 25-word mnemonic seed
+Standard - 25-word mnemonic seed
 monero-wallet-cli --generate-new-wallet vpn_spending
 After wallet creation, you'll receive seed phrase
 Verify seed on screen, then:
@@ -356,25 +356,25 @@ xmrig -o pool.address:443 \
 
 CPU-only mining is slow (~300 H/s on modern CPU)
 Sufficient for $5-6/month VPN in 2-3 months
-Benefits: No exchanges, no identity links, no surveillance
-Drawback: Time intensive, generates heat/electricity costs
+Benefits - No exchanges, no identity links, no surveillance
+Drawback - Time intensive, generates heat/electricity costs
 ```
 
 VPN Provider Feature Comparison Beyond Payment
 
 Choosing the right provider matters as much as anonymous payment.
 
-No-Logging Claims: Verification
+No-Logging Claims - Verification
 
 Mullvad and IVPN have undergone third-party audits:
 
 ```
-Mullvad: Annual third-party audits by Cure53
+Mullvad - Annual third-party audits by Cure53
 - Latest audit: 2023
 - No issues found
 - Audit available at: mullvad.net/security
 
-IVPN: Third-party audits by Cure53 and Decipher
+IVPN - Third-party audits by Cure53 and Decipher
 - Latest audit: 2023
 - No persistent logs found
 - Audit available at: ivpn.net/security
@@ -385,13 +385,13 @@ Jurisdiction and Legal Pressure
 Where a VPN provider operates affects data retention laws they must follow:
 
 ```
-Mullvad: Sweden
+Mullvad - Sweden
 - GDPR applies
 - Swedish law allows temporary logs for ISP blocking
 - Sweden has weak data retention laws
 - Swedish courts can mandate data retention in limited circumstances
 
-IVPN: Gibraltar
+IVPN - Gibraltar
 - GDPR applies
 - Gibraltar is outside EU court jurisdiction
 - Gibraltar has no mandatory data retention laws

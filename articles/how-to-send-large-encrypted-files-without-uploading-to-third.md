@@ -41,7 +41,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Use age Encryption for File Transfer
+Step 1 - Use age Encryption for File Transfer
 
 The `age` encryption tool (age-encryption.org) provides modern, secure file encryption using X25519 public keys or passphrase-based encryption. It's designed as a replacement for age-old PGP with simpler syntax and better defaults.
 
@@ -63,7 +63,7 @@ Generate a keypair for the recipient:
 ```bash
 age-keygen -o recipient_key.txt
 cat recipient_key.txt
-Public key: age1EXAMPLE...
+Public key - age1EXAMPLE...
 ```
 
 Encrypt a large file using the recipient's public key:
@@ -91,7 +91,7 @@ age -d -o decrypted_largefile.zip largefile.zip.encrypted
 
 The encrypted file can now be sent through any channel, email attachment, USB drive, or temporary file hosting, without exposing the contents.
 
-Step 2: Use OpenPGP for Large File Encryption
+Step 2 - Use OpenPGP for Large File Encryption
 
 OpenPGP remains the standard for encrypted file transfer. Modern implementations handle large files efficiently with proper streaming.
 
@@ -106,7 +106,7 @@ Select RSA 4096, no expiration for simplicity
 Encrypt a large file:
 ```bash
 gpg --encrypt --armor --recipient recipient@example.com largefile.tar.gz
-Output: largefile.tar.gz.asc
+Output - largefile.tar.gz.asc
 ```
 
 The recipient decrypts with:
@@ -120,7 +120,7 @@ For streaming very large files without buffering everything in memory, GPG handl
 gpg --symmetric --cipher-algo AES256 largefile.iso
 ```
 
-Step 3: Onion Share: Peer-to-Peer Through Tor
+Step 3 - Onion Share: Peer-to-Peer Through Tor
 
 Onion Share creates a temporary Tor hidden service that lets recipients download files directly from your computer. The file never touches a third-party server, transfers occur entirely peer-to-peer through the Tor network.
 
@@ -145,7 +145,7 @@ onionshare --persistent --title "Secure Transfer" --schedule 1h largefile.zip
 
 This creates a link valid for one hour that can be used multiple times.
 
-Step 4: Build Custom Transfer Scripts
+Step 4 - Build Custom Transfer Scripts
 
 For automated workflows or integration into applications, build custom peer-to-peer transfer solutions.
 

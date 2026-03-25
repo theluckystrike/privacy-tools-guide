@@ -36,13 +36,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Privacy Problem with Dating App Verification
+Step 1 - The Privacy Problem with Dating App Verification
 
 When you verify a dating app with your primary phone number, you create an irreversible link between your dating profile and your real identity. Data brokers compile phone number records alongside addresses, property ownership, and family connections. Anyone with your phone number can purchase a profile containing your full name, home address, and background information.
 
 Beyond data broker risks, dating app phone numbers face additional threats. Ex-partners, harasses, or malicious actors can use your number to perform SIM swap attacks, hijack your accounts, or conduct social engineering campaigns. The consequences extend beyond the dating context, your professional reputation, family safety, and financial security all depend on controlling who accesses your primary contact information.
 
-Step 2: Solution Categories for Separate Dating App Numbers
+Step 2 - Solution Categories for Separate Dating App Numbers
 
 Three primary approaches provide effective separation between your dating app presence and your real phone number. Each offers different trade-offs regarding cost, convenience, and sustainability.
 
@@ -89,9 +89,9 @@ Modern smartphones support multiple eSIM profiles, enabling you to maintain sepa
 
 This approach provides the most separation because eSIM numbers operate independently from your primary carrier account. Even if someone obtains your primary phone number, they cannot easily correlate it with your dating app number.
 
-Step 3: Implementation Strategies
+Step 3 - Implementation Strategies
 
-Strategy 1: Complete Isolation with New VoIP Number
+Strategy 1 - Complete Isolation with New VoIP Number
 
 For maximum privacy, create a completely new VoIP number without any connection to your existing identity. This approach works best when you want zero correlation between your dating presence and real identity.
 
@@ -101,7 +101,7 @@ For maximum privacy, create a completely new VoIP number without any connection 
 4. Use this number exclusively for dating app verification
 5. Never share this number with contacts from your primary life
 
-Strategy 2: Dual-SIM Configuration
+Strategy 2 - Dual-SIM Configuration
 
 If you prefer keeping your dating number physically separate but want native phone functionality, use a dual-SIM phone with a prepaid SIM card purchased with cash.
 
@@ -116,7 +116,7 @@ Verification workflow for dual-SIM users
 
 Prepaid SIM cards purchased with cash provide stronger anonymity than registered accounts. Many jurisdictions sell prepaid SIMs without ID verification, though regulations vary. Research local requirements before purchasing.
 
-Strategy 3: Forwarding Architecture
+Strategy 3 - Forwarding Architecture
 
 Advanced users can implement call and SMS forwarding from a separate number to their primary device. This maintains separation while ensuring you never miss important messages.
 
@@ -137,7 +137,7 @@ async function configureCallForwarding(voipmsNumber, forwardToNumber) {
 }
 ```
 
-Step 4: Practical Considerations
+Step 4 - Practical Considerations
 
 Number Portability and Recovery
 
@@ -165,7 +165,7 @@ Understanding the pricing models of different approaches helps you choose the ri
 
 The most cost-effective approach for casual dating app users is Google Voice (free if you already have a Google account). For maximum privacy and separation, Airalo or a prepaid SIM provides genuine independence from your primary carrier relationship.
 
-Step 5: Practical Setup Walkthrough
+Step 5 - Practical Setup Walkthrough
 
 Google Voice Setup (Fastest Method)
 
@@ -207,7 +207,7 @@ This approach gives developers programmatic control over incoming SMS, enabling 
 
 Advanced Privacy Hardening
 
-Layer 1: Separate Device Ecosystem
+Layer 1 - Separate Device environment
 
 Consider using a second phone or tablet solely for dating apps. This device should:
 - Run a fresh OS installation without your personal contacts
@@ -215,9 +215,9 @@ Consider using a second phone or tablet solely for dating apps. This device shou
 - Use separate WiFi login credentials
 - Store no payment methods
 
-Cost: $50-150 for a used smartphone or $200-400 for a budget tablet provides complete device isolation.
+Cost - $50-150 for a used smartphone or $200-400 for a budget tablet provides complete device isolation.
 
-Layer 2: Email Account Segregation
+Layer 2 - Email Account Segregation
 
 Each dating app should connect to a different masked email address:
 
@@ -233,7 +233,7 @@ Use 1Password or Bitwarden to generate unique passwords for each
 
 ProtonMail offers encrypted email with a free tier. Premium plans ($120/year) allow multiple custom domains. For maximum separation, use different mail providers altogether (ProtonMail for one app, SimpleLogin for another, etc.).
 
-Layer 3: Network-Level Privacy
+Layer 3 - Network-Level Privacy
 
 When accessing dating apps, route traffic through a reliable VPN:
 
@@ -243,8 +243,8 @@ Use a split tunnel VPN that excludes banking/work apps
 
 Mullvad VPN configuration
 Download from mullvad.net (open-source, no logging)
-Configuration: Enable Kill Switch to prevent IP leaks
-Cost: $5/month or optional donation
+Configuration - Enable Kill Switch to prevent IP leaks
+Cost - $5/month or optional donation
 
 Verify no DNS leaks
 nslookup whatismyipaddress.com # Should return VPN IP
@@ -252,9 +252,9 @@ nslookup whatismyipaddress.com # Should return VPN IP
 
 IVPN ($6/month) and Mullvad ($5/month or pay-what-you-want) both provide strong kill switches and no-logging policies suitable for sensitive activities.
 
-Step 6: Real-World Threat Scenarios and Responses
+Step 6 - Real-World Threat Scenarios and Responses
 
-Scenario: SIM Swap Attack on Your Dating App Number
+Scenario - SIM Swap Attack on Your Dating App Number
 
 If someone targets your dating app phone number:
 
@@ -262,7 +262,7 @@ If someone targets your dating app phone number:
 2. VoIP number recovery: Contact the VoIP provider immediately; they can block forwarding and reset your account
 3. Prevention: Never link your dating number to financial accounts or password resets for critical accounts
 
-Scenario: Doxxing Through Phone Number
+Scenario - Doxxing Through Phone Number
 
 If someone obtains your dating app number:
 
@@ -287,7 +287,7 @@ Different platforms have varying verification strictness:
 
 Tinder is the most aggressive about blocking VOIP services; if you encounter a block, try purchasing a physical prepaid SIM instead. Hinge and Bumble are generally more permissive.
 
-Step 7: Long-Term Sustainability Planning
+Step 7 - Long-Term Sustainability Planning
 
 If you plan to use dating apps continuously over months or years:
 
@@ -302,7 +302,7 @@ Example annual budget for complete dating app privacy:
 - VPN service: $60/year (Mullvad/IVPN)
 - Total: ~$84/year for complete separation
 
-Step 8: Security Hardening Beyond Phone Numbers
+Step 8 - Security Hardening Beyond Phone Numbers
 
 Phone number separation forms one layer of a dating privacy strategy. Supplement this with:
 

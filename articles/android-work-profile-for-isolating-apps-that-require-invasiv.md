@@ -22,7 +22,7 @@ This guide explains how to configure and use Android Work Profile effectively, w
 
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- Gaming App with Ad Network Integration: Free mobile games include ad networks that track location, build user profiles, and sell data to brokers.
+- Gaming App with Ad Network Integration - Free mobile games include ad networks that track location, build user profiles, and sell data to brokers.
 - Island (Paid, Play Store): Provides "frozen" apps that cannot run in background, scheduled unfreezing (useful for battery optimization), and simplified dual-profile management.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
 - Navigate to Work profile: or Multiple users 3.
@@ -37,7 +37,7 @@ When you enable Work Profile, Android creates two distinct spaces:
 - Personal Profile Your regular apps and data, protected from work profile monitoring
 - Work Profile A managed container where designated apps operate under IT or user-defined policies
 
-The key privacy benefit: apps installed in the Work Profile cannot access data from your personal profile, and vice versa. This isolation extends to file systems, contacts, and installed app lists.
+The key privacy benefit - apps installed in the Work Profile cannot access data from your personal profile, and vice versa. This isolation extends to file systems, contacts, and installed app lists.
 
 Why Use Work Profile for Privacy Isolation?
 
@@ -54,14 +54,14 @@ Setting Up Work Profile on Android 14-16
 
 Most modern Android devices support Work Profile natively through the Settings application. The exact path varies by manufacturer, but the general process remains consistent.
 
-Method 1: Built-in Work Profile (Stock Android)
+Method 1 - Built-in Work Profile (Stock Android)
 
 1. Open Settings → Passwords & security (or System on some devices)
 2. Navigate to Work profile or Multiple users
 3. Tap Add Work Profile
 4. Follow the on-screen prompts to complete setup
 
-Method 2: Using Google's Work Profile Implementation
+Method 2 - Using Google's Work Profile Implementation
 
 For devices without native support, Google's "Work Profile" app available on the Play Store provides a standardized implementation:
 
@@ -99,15 +99,15 @@ adb shell pm grant --user 10 com.example.app android.permission.CAMERA
 
 The `--user 10` flag targets the Work Profile user ID (always 10 on Android).
 
-Practical Example: Isolating a Banking App
+Practical Example - Isolating a Banking App
 
 Suppose you need to use a banking app that requires Device Admin permissions but you distrust its other permission requests.
 
-Step 1: Enable Work Profile
+Step 1 - Enable Work Profile
 
 Follow the setup steps above to create a clean Work Profile.
 
-Step 2: Install the Banking App in Work Profile
+Step 2 - Install the Banking App in Work Profile
 
 Install the app from the Work Profile Play Store or sideload directly to the Work Profile:
 
@@ -116,7 +116,7 @@ Install APK to Work Profile
 adb install -user 10 banking-app.apk
 ```
 
-Step 3: Restrict Background Activity
+Step 3 - Restrict Background Activity
 
 Work Profile allows you to limit what happens when the app runs in the background. On supported devices:
 
@@ -124,17 +124,17 @@ Work Profile allows you to limit what happens when the app runs in the backgroun
 2. Tap App info → Battery
 3. Select Restricted to prevent background data usage
 
-Step 4: Verify Isolation
+Step 4 - Verify Isolation
 
 Confirm the sandbox is working by attempting cross-profile access:
 
 ```bash
 This should fail - Work Profile apps cannot access personal storage
 adb shell run-as com.banking.app cat /sdcard/Pictures/test.jpg
-Output: Operation not allowed
+Output - Operation not allowed
 ```
 
-Advanced: Managing Work Profile via MDM
+Advanced - Managing Work Profile via MDM
 
 For developers and power users managing multiple devices, Mobile Device Management (MDM) solutions provide programmatic control over Work Profile configurations:
 
@@ -162,15 +162,15 @@ Work Profile isn't a perfect solution. Be aware of these constraints:
 - Limited isolation Some system APIs remain accessible across profiles; Work Profile doesn't protect against all attack vectors
 - Not a replacement for vetting Always review app permissions before installation, even within Work Profile
 
-Practical Threat Model: When Work Profile Saves You
+Practical Threat Model - When Work Profile Saves You
 
 Consider these real-world scenarios where Work Profile prevents serious privacy breaches:
 
-Banking App with Excessive Permissions: Your bank's app demands contacts, photos, location, and SMS access. Without Work Profile, granting these permissions gives the app, and any malicious code it loads, access to your entire contact list and location history. With Work Profile, the app sees only the contacts it needs and cannot access your personal location data.
+Banking App with Excessive Permissions - Your bank's app demands contacts, photos, location, and SMS access. Without Work Profile, granting these permissions gives the app, and any malicious code it loads, access to your entire contact list and location history. With Work Profile, the app sees only the contacts it needs and cannot access your personal location data.
 
-Gaming App with Ad Network Integration: Free mobile games include ad networks that track location, build user profiles, and sell data to brokers. Placing the game in Work Profile prevents it from accessing your personal contacts, email accounts, or browsing history while still allowing game functionality.
+Gaming App with Ad Network Integration - Free mobile games include ad networks that track location, build user profiles, and sell data to brokers. Placing the game in Work Profile prevents it from accessing your personal contacts, email accounts, or browsing history while still allowing game functionality.
 
-Emerging Market Utility App: Apps required for services in developing regions (payment apps, government services) sometimes use aggressive data collection. Work Profile contains this without affecting your primary profile.
+Emerging Market Utility App - Apps required for services in developing regions (payment apps, government services) sometimes use aggressive data collection. Work Profile contains this without affecting your primary profile.
 
 Limitations to Understand
 
@@ -205,7 +205,7 @@ Compare to personal profile for missing apps
 adb shell pm list packages --user 0 | wc -l
 ```
 
-Solution: Some apps detect Work Profile and refuse installation for policy reasons (banks, corporate apps). In this case, you may need to install to personal profile with minimal permissions.
+Solution - Some apps detect Work Profile and refuse installation for policy reasons (banks, corporate apps). In this case, you may need to install to personal profile with minimal permissions.
 
 Cross-Profile Data Leaks
 
@@ -224,9 +224,9 @@ Alternatives and Complementary Tools
 
 While Work Profile is the native solution, consider these alternatives for specific use cases:
 
-Shelter (Open source, F-Droid): Creates a lightweight isolated container without full Android Device Admin requirements. Good for users who want Work Profile benefits without device policy overhead. Download from F-Droid since it won't work properly installed from Play Store.
+Shelter (Open source, F-Droid) - Creates a lightweight isolated container without full Android Device Admin requirements. Good for users who want Work Profile benefits without device policy overhead. Download from F-Droid since it won't work properly installed from Play Store.
 
-Island (Paid, Play Store): Provides "frozen" apps that cannot run in background, scheduled unfreezing (useful for battery optimization), and simplified dual-profile management. Works well on Samsung and MIUI devices.
+Island (Paid, Play Store) - Provides "frozen" apps that cannot run in background, scheduled unfreezing (useful for battery optimization), and simplified dual-profile management. Works well on Samsung and MIUI devices.
 
 Cross-profile limitations in Android 14+: The operating system now restricts what information crosses profile boundaries by default, making the baseline privacy even stronger regardless of which isolation method you use.
 

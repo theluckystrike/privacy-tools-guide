@@ -63,7 +63,7 @@ Your device encrypts the data before it leaves, using a key derived from your pa
 Your files → [Your device encrypts with your key] → Encrypted data sent to provider
 ```
 
-The provider stores encrypted blobs it cannot read. Examples: Tresorit, ProtonDrive, Cryptomator + any provider.
+The provider stores encrypted blobs it cannot read. Examples - Tresorit, ProtonDrive, Cryptomator + any provider.
 
 Knowledge of What "Zero-Knowledge" Actually Means
 
@@ -123,7 +123,7 @@ If you are subject to surveillance risk, client-side encryption means a warrant 
 
 Practical Secure Backup Setup
 
-Option 1: Restic with Encrypted Remote Backend
+Option 1 - Restic with Encrypted Remote Backend
 
 ```bash
 Install restic
@@ -149,12 +149,12 @@ restic -r s3:s3.amazonaws.com/my-backup-bucket \
 
 The provider (AWS S3, Backblaze B2, etc.) stores only encrypted data. The passphrase never leaves your machine.
 
-Option 2: Cryptomator + Any Cloud
+Option 2 - Cryptomator + Any Cloud
 
 Cryptomator creates an encrypted virtual drive that syncs with any cloud provider.
 
 ```bash
-Linux: install from cryptomator.org/downloads
+Linux - install from cryptomator.org/downloads
 Creates a vault directory. contents are encrypted before syncing
 
 Structure on cloud:
@@ -168,7 +168,7 @@ Random 36-char directories with encrypted filenames
 Cannot determine file count, names, or structure
 ```
 
-Option 3: Borg Backup
+Option 3 - Borg Backup
 
 ```bash
 Install
@@ -195,14 +195,14 @@ What iCloud, Google, and Dropbox Can Access
 iCloud Photos: Apple can read unless Advanced Data Protection is enabled
   → Enable: Settings → [Your Name] → iCloud → Advanced Data Protection
 
-Google Drive: Google can read all files
+Google Drive - Google can read all files
   → Alternative: Use Google Drive with Cryptomator vault
 
-Dropbox: Dropbox can read all files
+Dropbox - Dropbox can read all files
   → Alternative: Cryptomator vault in Dropbox folder
   → Or switch to Tresorit, which is zero-knowledge by design
 
-OneDrive: Microsoft can read all files (Personal Vault adds PIN, not E2E)
+OneDrive - Microsoft can read all files (Personal Vault adds PIN, not E2E)
   → Same Cryptomator workaround applies
 ```
 
@@ -228,11 +228,11 @@ backup-test.sh - Test backup recovery capability
 
 BACKUP_LOCATION="s3:my-backup-bucket"
 TEST_FILE="/tmp/backup-test-$(date +%s).txt"
-TEST_DATA="Critical data: $(openssl rand -hex 32)"
+TEST_DATA="Critical data - $(openssl rand -hex 32)"
 
 echo "$TEST_DATA" > "$TEST_FILE"
 
-Test 1: Can you encrypt and back up?
+Test 1 - Can you encrypt and back up?
 echo "Testing backup encryption..."
 restic -r "$BACKUP_LOCATION" --password-file ~/.restic-password \
   backup "$TEST_FILE"
@@ -242,7 +242,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-Test 2: Can you restore?
+Test 2 - Can you restore?
 RESTORE_DIR="/tmp/restore-test-$(date +%s)"
 mkdir "$RESTORE_DIR"
 
@@ -255,7 +255,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-Test 3: Is the data intact?
+Test 3 - Is the data intact?
 RESTORED_FILE=$(find "$RESTORE_DIR" -name "backup-test-*" | head -1)
 RESTORED_DATA=$(cat "$RESTORED_FILE")
 
@@ -285,7 +285,7 @@ Attacker with S3 access sees:
 - Encrypted data (useless without passphrase)
 - Backup timestamps
 - Approximate backup sizes
-Cannot see: filenames, content, directory structure
+Cannot see - filenames, content, directory structure
 
 Even if AWS is breached:
 - Your encrypted backups remain secure
@@ -311,22 +311,22 @@ Migrating From Cloud Provider to Self-Hosted
 If you currently use Google Drive or iCloud and want to switch to encrypted backup:
 
 ```bash
-Step 1: Export from Google Drive
+Step 1 - Export from Google Drive
 Use Google Takeout (takeout.google.com)
 Downloads all data as encrypted backup file
 
-Step 2: Transfer to Restic
+Step 2 - Transfer to Restic
 tar -xzf takeout.tar.gz
 restic -r s3:my-secure-bucket \
   --password-file ~/.restic-password \
   backup ~/Downloads/Takeout/
 
-Step 3: Verify
+Step 3 - Verify
 restic -r s3:my-secure-bucket \
   --password-file ~/.restic-password \
   restore latest --target /tmp/verify-restore
 
-Step 4: Delete from cloud provider (optional)
+Step 4 - Delete from cloud provider (optional)
 Settings → Manage your Google Account → Data & Privacy → Delete...
 ```
 
@@ -337,7 +337,7 @@ Your backup is only as secure as your encryption passphrase:
 ```bash
 Generate a strong passphrase using cryptography-grade randomness
 openssl rand -base64 32
-Output: aB3xY9kL2mN5oP8qR1sT4uV7wX0yZ
+Output - aB3xY9kL2mN5oP8qR1sT4uV7wX0yZ
 
 Or use diceware method (human-memorable, cryptographically strong)
 Download diceware word list and roll dice

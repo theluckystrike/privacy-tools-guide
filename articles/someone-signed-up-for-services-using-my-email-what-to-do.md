@@ -117,7 +117,7 @@ Use Email Aliases
 
 For developers and power users, email aliases provide excellent protection:
 
-- Gmail: Add `+anything` after your username (yourname+netflix@gmail.com)
+- Gmail - Add `+anything` after your username (yourname+netflix@gmail.com)
 - Proton Mail: Built-in alias system
 - Custom domain: Set up catch-all forwarding or create specific aliases per service
 
@@ -169,16 +169,16 @@ For developers wanting deeper analysis, examine full email headers. These reveal
 
 ```bash
 Gmail header analysis
-The Received: field shows the email path
+The Received - field shows the email path
 
-Received: from mail.example.com (mail.example.com. [203.0.113.5])
+Received - from mail.example.com (mail.example.com. [203.0.113.5])
     by mx.gmail.com with SMTP id ...
     Wed, 15 Mar 2026 14:23:00 +0000
 
 Key header fields:
 Authentication-Results: Shows if SPF, DKIM, DMARC passed
-Return-Path: Sender's bounce address (may differ from From:)
-X-Originating-IP: May reveal sender's IP address
+Return-Path - Sender's bounce address (may differ from From:)
+X-Originating-IP - May reveal sender's IP address
 ```
 
 If Authentication-Results shows failures, the email may be spoofed.
@@ -298,10 +298,10 @@ Create forwarding rules to monitor signup emails:
 
 ```bash
 Gmail filter example
-From: noreply@*
-Contains: "confirm your email"
-Forward to: monitor@example.com
-Label: "Suspicious Signups"
+From - noreply@*
+Contains - "confirm your email"
+Forward to - monitor@example.com
+Label - "Suspicious Signups"
 ```
 
 This centralizes all signup notifications for easier monitoring.

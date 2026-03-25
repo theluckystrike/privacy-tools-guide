@@ -27,7 +27,7 @@ Table of Contents
 - [Best Practices for Dating Communication](#best-practices-for-dating-communication)
 - [Advanced Privacy Configuration](#advanced-privacy-configuration)
 - [Alternative Phone Number Services](#alternative-phone-number-services)
-- [Advanced: Programmers Building Dating Apps](#advanced-programmers-building-dating-apps)
+- [Advanced - Programmers Building Dating Apps](#advanced-programmers-building-dating-apps)
 - [Google Voice Advanced Features](#google-voice-advanced-features)
 - [Security Concerns with Google Voice](#security-concerns-with-google-voice)
 - [Integration with Dating App Best Practices](#integration-with-dating-app-best-practices)
@@ -47,7 +47,7 @@ The key advantages for dating privacy include:
 
 Setting Up Your Google Voice Number
 
-Step 1: Create or Use Your Existing Google Account
+Step 1 - Create or Use Your Existing Google Account
 
 For maximum privacy, create a dedicated Google account specifically for your dating communications. This separates your Voice number from your primary Gmail, Google Maps data, and other Google services that might leak personal information.
 
@@ -58,7 +58,7 @@ Avoid using your real name, birth year, or identifiable information in the usern
 
 Visit [voice.google.com](https://voice.google.com) and sign in with your account. Google Voice is available in most countries, though some regions have limited features.
 
-Step 2: Select Your Area Code and Number
+Step 2 - Select Your Area Code and Number
 
 When prompted to choose a number, select an area code that makes sense for your location or matches where you claim to live. This adds credibility to your dating profile.
 
@@ -71,7 +71,7 @@ Consider these factors when choosing:
 
 Browse available numbers in your preferred area code. Take your time, once you choose a number, changing it later is possible but requires additional steps.
 
-Step 3: Link Your Forwarding Phone
+Step 3 - Link Your Forwarding Phone
 
 Google Voice requires at least one forwarding phone number to receive calls and texts. You have several options:
 
@@ -81,7 +81,7 @@ Google Voice requires at least one forwarding phone number to receive calls and 
 
 For maximum privacy, consider using the Google Voice app as your primary interface and forwarding to your actual phone only when necessary. This creates an additional layer between your identity and your dating communications.
 
-Step 4: Configure Important Settings
+Step 4 - Configure Important Settings
 
 After obtaining your number, navigate to Settings (gear icon) and configure these privacy-critical options:
 
@@ -172,7 +172,7 @@ Google Voice isn't the only option for dating privacy:
 
 Google Voice remains the best balance of free, reliable, and relatively privacy-respecting for most dating scenarios.
 
-Advanced: Programmers Building Dating Apps
+Advanced - Programmers Building Dating Apps
 
 If you're developing applications that handle dating communications:
 

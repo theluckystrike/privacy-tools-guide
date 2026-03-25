@@ -16,7 +16,7 @@ intent-checked: true
 
 {% raw %}
 
-Stalkerware disguises as legitimate apps but secretly records location, messages, and calls. Detection involves checking running processes, analyzing network traffic, examining file permissions, and monitoring battery drain. iOS: Focus on jailbreak detection and MDM profiles. Android: Review installed apps, permissions, and adb logs. This technical guide covers detection methods, commands you can run, and how to preserve evidence for authorities.
+Stalkerware disguises as legitimate apps but secretly records location, messages, and calls. Detection involves checking running processes, analyzing network traffic, examining file permissions, and monitoring battery drain. iOS: Focus on jailbreak detection and MDM profiles. Android - Review installed apps, permissions, and adb logs. This technical guide covers detection methods, commands you can run, and how to preserve evidence for authorities.
 
 Prerequisites
 
@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Stalkerware vs Legitimate Monitoring
+Step 1 - Understand Stalkerware vs Legitimate Monitoring
 
 Legitimate monitoring (parental controls, corporate MDM):
 - Installed with user knowledge and consent
@@ -45,9 +45,9 @@ Stalkerware (illegal in most jurisdictions):
 
 Stalkerware is illegal in the US, EU, UK, Canada, Australia, and many other countries. If you suspect stalkerware, you have legal options: contact police, file a restraining order, or work with organizations like NNEDV (National Network to End Domestic Violence).
 
-Step 2: iOS Stalkerware Detection
+Step 2 - iOS Stalkerware Detection
 
-Method 1: Check for Jailbreak
+Method 1 - Check for Jailbreak
 
 Most stalkerware apps require iOS jailbreak (removal of Apple's security sandbox). Run these checks:
 
@@ -68,7 +68,7 @@ ls /Library/MobileSubstrates/DynamicLibraries/ 2>/dev/null
 
 If jailbreak detection succeeds and you didn't authorize it, your phone is likely compromised.
 
-Method 2: Check for MDM Profiles (Management Profiles)
+Method 2 - Check for MDM Profiles (Management Profiles)
 
 Stalkerware sometimes hides as a Mobile Device Management (MDM) profile. Check Settings:
 
@@ -84,9 +84,9 @@ Legitimate MDM profiles should be from your employer (if work phone)
 or your device manufacturer.
 ```
 
-Real stalkerware example: Profile named "Apple Security Update" but installed by unknown email address. Legitimate Apple MDM profiles show "Apple Inc." as the issuer.
+Real stalkerware example - Profile named "Apple Security Update" but installed by unknown email address. Legitimate Apple MDM profiles show "Apple Inc." as the issuer.
 
-Method 3: Check Battery and Data Usage
+Method 3 - Check Battery and Data Usage
 
 Stalkerware runs constant background processes: location tracking, data upload.
 
@@ -106,9 +106,9 @@ Suspicious patterns:
 - Data usage at night when phone is idle
 ```
 
-Real example: SpyBubble variant used 8% battery daily on background process named "System Services."
+Real example - SpyBubble variant used 8% battery daily on background process named "System Services."
 
-Method 4: Network Traffic Analysis
+Method 4 - Network Traffic Analysis
 
 Stalkerware exfiltrates data to external servers. Monitor outbound connections:
 
@@ -127,9 +127,9 @@ Or use Surge (network monitoring app):
    - Encrypted connections you didn't initiate
 ```
 
-Real example: mSpy variant connected to `185.92.75.190` (Ukrainian server) every 600 seconds, uploading 2MB data packages.
+Real example - mSpy variant connected to `185.92.75.190` (Ukrainian server) every 600 seconds, uploading 2MB data packages.
 
-Method 5: App Store Verification
+Method 5 - App Store Verification
 
 Check if all installed apps are from legitimate App Store sources:
 
@@ -151,7 +151,7 @@ Many stalkerware apps impersonate legitimate apps:
 - Fake "Device Optimizer" (actually stalkerware)
 - Fake "Cloud Storage" (actually stalkerware)
 
-Real stalkerware names to check: If you see any of these, they're definitely malicious:
+Real stalkerware names to check - If you see any of these, they're definitely malicious:
 - mSpy
 - FlexiSPY
 - SpyBubble
@@ -159,11 +159,11 @@ Real stalkerware names to check: If you see any of these, they're definitely mal
 - MoniMaster
 - Spyier
 
-Step 3: Android Stalkerware Detection
+Step 3 - Android Stalkerware Detection
 
 Android is more vulnerable because it allows sideloading (installing apps from sources other than Google Play).
 
-Method 1: Check App Installation Sources
+Method 1 - Check App Installation Sources
 
 ```bash
 On Android (adb shell or local terminal app):
@@ -179,7 +179,7 @@ adb shell pm list packages | grep -E "mspy|flexispy|spytech|trackioo"
 If any return results, stalkerware is installed
 ```
 
-Method 2: Check App Permissions
+Method 2 - Check App Permissions
 
 ```bash
 List which apps have dangerous permissions:
@@ -197,14 +197,14 @@ Look for:
 - Multiple apps with camera/microphone permissions
 ```
 
-Real example: Stalkerware app named "Device Manager" had:
+Real example - Stalkerware app named "Device Manager" had:
 - Location (background)
 - Contacts (read all)
 - SMS (read all)
 - Call logs (read all)
 - Microphone (continuous recording)
 
-Method 3: Check Running Processes
+Method 3 - Check Running Processes
 
 ```bash
 View all running processes:
@@ -228,7 +228,7 @@ Legitimate system updates come from Google Play Services
 Fake updates come from unknown sources
 ```
 
-Method 4: Check Device Administrator Apps
+Method 4 - Check Device Administrator Apps
 
 ```bash
 Stalkerware often registers as Device Administrator
@@ -247,7 +247,7 @@ Via command line:
 adb shell dumpsys devicepolicy | grep "Admin User"
 ```
 
-Method 5: Battery and Data Anomalies
+Method 5 - Battery and Data Anomalies
 
 ```bash
 Check battery drain sources:
@@ -265,10 +265,10 @@ Stalkerware uploads data constantly
 Look for regular hourly spikes (e.g., 2MB every 3600 seconds)
 ```
 
-Method 6: Inspect /data Directory
+Method 6 - Inspect /data Directory
 
 ```bash
-Advanced: Requires root access (careful!)
+Advanced - Requires root access (careful!)
 Check for hidden apps or processes:
 adb shell su -c "ls -la /data/data/ | grep -v com.android"
 
@@ -279,7 +279,7 @@ Named suspiciously:
 - /data/data/device.monitor
 ```
 
-Step 4: Preservation of Evidence
+Step 4 - Preservation of Evidence
 
 If you suspect stalkerware, preserve evidence for legal proceedings:
 
@@ -308,7 +308,7 @@ iOS: Export and backup
 Settings > iCloud > iCloud Backup > Back Up Now
 Save backup to external drive
 
-Android: Export data
+Android - Export data
 adb shell pm list packages > installed_apps_$(date +%Y%m%d).txt
 adb shell dumpsys > device_state_$(date +%Y%m%d).txt
 adb shell logcat > system_logs_$(date +%Y%m%d).log
@@ -320,12 +320,12 @@ Network Traffic Capture
 iOS: Use Surge or similar to export connection logs
 Export in HAR format with timestamps
 
-Android: Use packet capture
+Android - Use packet capture
 adb shell tcpdump -i any -w /sdcard/capture.pcap
-Transfer file: adb pull /sdcard/capture.pcap
+Transfer file - adb pull /sdcard/capture.pcap
 ```
 
-Step 5: Removal and Recovery
+Step 5 - Removal and Recovery
 
 iOS Removal
 
@@ -376,18 +376,18 @@ After removal:
 4. Update contact list (stalker may have stolen it)
 ```
 
-Step 6: Get Help and Report
+Step 6 - Get Help and Report
 
 Organizations assisting stalkerware victims:
 
 - NNEDV (US): 1-855-738-6339 (free, confidential)
-- Cyber Civil Rights Initiative: cybercivilrights.org
+- Cyber Civil Rights Initiative - cybercivilrights.org
 - Internet Society: isoc.org (technical resources)
 - Local police: File a report with screenshots and preserved evidence
 
 Document everything for law enforcement: installation date, capabilities, duration, data stolen.
 
-Step 7: Prevention Going Forward
+Step 7 - Prevention Going Forward
 
 After removal:
 

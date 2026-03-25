@@ -23,13 +23,13 @@ Table of Contents
 - [Platform-Specific Implementation Details](#platform-specific-implementation-details)
 - [Current State and Recommendations](#current-state-and-recommendations)
 - [Looking Forward](#looking-forward)
-- [Server-Side Implementation: Verifying Passkey Credentials](#server-side-implementation-verifying-passkey-credentials)
+- [Server-Side Implementation - Verifying Passkey Credentials](#server-side-implementation-verifying-passkey-credentials)
 - [Passkey Security Considerations and Limitations](#passkey-security-considerations-and-limitations)
 - [Passkey Performance Characteristics](#passkey-performance-characteristics)
 - [Passkey Registration UX Patterns](#passkey-registration-ux-patterns)
 - [Enterprise Passkey Deployment](#enterprise-passkey-deployment)
 - [Monitoring and Troubleshooting Passkey Issues](#monitoring-and-troubleshooting-passkey-issues)
-- [Looking Ahead: Post-Passkey Authentication](#looking-ahead-post-passkey-authentication)
+- [Looking Ahead - Post-Passkey Authentication](#looking-ahead-post-passkey-authentication)
 
 What Are Passkeys?
 
@@ -59,7 +59,7 @@ Apple's implementation stores private keys in the Secure Enclave, providing hard
 
 Google Platforms (Android, ChromeOS)
 
-Google's passkey rollout began in early 2023 with Android 14 and Chrome. The company positioned passkeys as the default authentication method across its ecosystem, integrating with Google Password Manager.
+Google's passkey rollout began in early 2023 with Android 14 and Chrome. The company positioned passkeys as the default authentication method across its environment, integrating with Google Password Manager.
 
 Timeline:
 - Android 14 (2023): native passkey API support, Google Password Manager integration
@@ -178,14 +178,14 @@ As of 2026, passkey support is mature across all major consumer platforms. For d
 
 Looking Forward
 
-The passkey ecosystem continues evolving. Upcoming developments include:
+The passkey environment continues evolving. Upcoming developments include:
 - Enhanced enterprise credential management APIs
 - Improved QR-code-based cross-device authentication
 - Deeper integration with password managers across platforms
 
 For developers, the message is clear: passkey implementation is no longer experimental. Major platforms have stabilized their APIs, and user expectations around passwordless authentication continue rising. The timeline for adoption has passed, now is the time for implementation.
 
-Server-Side Implementation: Verifying Passkey Credentials
+Server-Side Implementation - Verifying Passkey Credentials
 
 The server's role is to verify that the cryptographic signature is valid:
 
@@ -289,7 +289,7 @@ Passkey Security Considerations and Limitations
 
 Despite their strengths, passkeys have limitations developers must understand:
 
-Limitation 1: Device Loss or Failure
+Limitation 1 - Device Loss or Failure
 If a user loses the device with their passkey, they cannot authenticate unless they have:
 - Synced passkeys to another device (iCloud, Google Password Manager)
 - Recovery codes saved
@@ -313,7 +313,7 @@ async function onboardingFlow() {
 }
 ```
 
-Limitation 2: Phishing Through Social Engineering
+Limitation 2 - Phishing Through Social Engineering
 While passkeys resist traditional phishing, attackers can social-engineer users into registering attacker's passkey:
 
 ```
@@ -344,12 +344,12 @@ If you didn't register this passkey, immediately:
 2. Remove the unauthorized passkey
 3. Contact support if you need help
 
-View all registered passkeys: https://yourdomain.com/account/passkeys
+View all registered passkeys - https://yourdomain.com/account/passkeys
         """
     )
 ```
 
-Limitation 3: Cross-Platform Sync
+Limitation 3 - Cross-Platform Sync
 Passkeys do not sync across platforms:
 - iOS passkeys (iCloud Keychain) sync to other Apple devices but not to Android
 - Android passkeys (Google Password Manager) sync to other Android devices and Chrome but not to iOS
@@ -375,8 +375,8 @@ Passkey authentication has measurable performance implications:
 ```
 Latency comparison:
 Password auth: ~100-200ms (database lookup + hash comparison)
-TOTP auth: ~50ms (time-based code validation)
-Passkey auth: ~300-500ms (cryptographic signature verification)
+TOTP auth - ~50ms (time-based code validation)
+Passkey auth - ~300-500ms (cryptographic signature verification)
 
 However, passkey auth prevents account compromise, justifying the overhead.
 ```
@@ -548,7 +548,7 @@ class PasskeyMetrics:
         }
 ```
 
-Looking Ahead: Post-Passkey Authentication
+Looking Ahead - Post-Passkey Authentication
 
 Future authentication may layer additional factors on top of passkeys:
 

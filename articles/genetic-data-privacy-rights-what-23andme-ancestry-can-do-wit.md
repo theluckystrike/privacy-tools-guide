@@ -32,7 +32,7 @@ Table of Contents
 - [Genetic Discrimination Concerns](#genetic-discrimination-concerns)
 - [Requesting Regulatory Oversight](#requesting-regulatory-oversight)
 - [Managing Genetic Data Across Services](#managing-genetic-data-across-services)
-- [Scenario: Genetic Testing and Career Security](#scenario-genetic-testing-and-career-security)
+- [Scenario - Genetic Testing and Career Security](#scenario-genetic-testing-and-career-security)
 - [When Genetic Testing Makes Sense](#when-genetic-testing-makes-sense)
 - [Open-Source Genetic Analysis](#open-source-genetic-analysis)
 
@@ -330,13 +330,13 @@ Risks of uploading to GEDmatch:
 
 Avoid uploading unless your threat model explicitly allows law enforcement access.
 
-Scenario: Genetic Testing and Career Security
+Scenario - Genetic Testing and Career Security
 
 Example threat model for professional concern:
 
 ```
-Scenario: You're a software developer considering genetic testing
-Threat: Future employer uses genetic predisposition info to disqualify you
+Scenario - You're a software developer considering genetic testing
+Threat - Future employer uses genetic predisposition info to disqualify you
 
 Mitigations:
 1. Don't test through major commercial services

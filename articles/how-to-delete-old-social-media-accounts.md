@@ -23,7 +23,7 @@ Table of Contents
 - [Why Deleting Old Accounts Matters](#why-deleting-old-accounts-matters)
 - [Prerequisites](#prerequisites)
 - [Advanced Deletion Verification Techniques](#advanced-deletion-verification-techniques)
-- [Tool Comparison: Account Management Systems](#tool-comparison-account-management-systems)
+- [Tool Comparison - Account Management Systems](#tool-comparison-account-management-systems)
 - [Troubleshooting](#troubleshooting)
 
 Why Deleting Old Accounts Matters
@@ -40,7 +40,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Direct Deletion Methods for Major Platforms
+Step 1 - Direct Deletion Methods for Major Platforms
 
 Each platform has different deletion processes. Here are the specific steps for major social networks:
 
@@ -64,7 +64,7 @@ TikTok
 
 TikTok offers deletion through Settings and Privacy → Account → Delete account. The process requires re-entering your password and completing a CAPTCHA. Deletion completes within 30 days.
 
-Step 2: Automate Account Discovery
+Step 2 - Automate Account Discovery
 
 If you cannot remember all your old accounts, several tools help track them down:
 
@@ -76,7 +76,7 @@ Email Search
 
 Search your email inbox for registration confirmations from social platforms. Use your password manager to find saved credentials for old accounts. Most password managers synchronize across devices and can reveal forgotten accounts.
 
-Step 3: Implement Programmatic Account Management with Selenium
+Step 3 - Implement Programmatic Account Management with Selenium
 
 For developers managing multiple accounts or testing deletion flows, Selenium provides browser automation:
 
@@ -110,7 +110,7 @@ def delete_instagram_account(username, password):
     finally:
         driver.quit()
 
-Usage: delete_instagram_account("your_username", "your_password")
+Usage - delete_instagram_account("your_username", "your_password")
 ```
 
 This example demonstrates the principle, adapt it for different platforms. Note that automated deletion may violate platform terms of service. Use this approach for testing or managing accounts you legitimately own.
@@ -165,7 +165,7 @@ def bulk_account_deletion(accounts_file: str):
 
 This approach logs each deletion attempt for verification later.
 
-Step 4: Verify Complete Deletion
+Step 4 - Verify Complete Deletion
 
 After requesting deletion, verify the process completed:
 
@@ -177,7 +177,7 @@ After requesting deletion, verify the process completed:
 
 4. Monitor email: Some platforms send confirmation emails during the deletion process. Keep these for records.
 
-Step 5: Requesting Data Removal Under Privacy Regulations
+Step 5 - Requesting Data Removal Under Privacy Regulations
 
 GDPR, CCPA, and similar regulations grant you the right to request complete data deletion. If a platform makes deletion difficult or unresponsive, submit a formal data deletion request:
 
@@ -191,7 +191,7 @@ curl -X POST "https://api.example-platform.com/v1/account/delete" \
 
 Contact platform privacy teams directly if no self-service deletion option exists. Reference specific legal articles in your request, companies are legally required to respond within mandated timeframes (typically 30 days under GDPR).
 
-Step 6: Alternative: Account Takeover Services
+Step 6 - Alternative: Account Takeover Services
 
 Services like JustDelete.me and AccountKiller provide direct links to deletion pages for hundreds of services. These aggregators maintain current deletion URLs and difficulty ratings:
 
@@ -203,7 +203,7 @@ Services like JustDelete.me and AccountKiller provide direct links to deletion p
 
 These tools are particularly useful for obscure platforms where deletion instructions are not immediately obvious.
 
-Step 7: Preventing Future Account Accumulation
+Step 7 - Preventing Future Account Accumulation
 
 Reduce future cleanup burden by adopting these practices:
 
@@ -243,7 +243,7 @@ Identity Theft Monitoring Services
 
 Use services like Experian, EquiFax, or TransUnion monitoring to ensure deleted accounts don't get reactivated by fraudsters. These services send alerts when new accounts appear under your name.
 
-Tool Comparison: Account Management Systems
+Tool Comparison - Account Management Systems
 
 Several tools smooth out account management at scale:
 
@@ -255,7 +255,7 @@ Several tools smooth out account management at scale:
 | LastPass | $3/month | Emergency contact access, account deletion workflows |
 | Privacy.com | Free | Virtual card numbers to track merchants, limit exposure |
 
-Step 8: Understand Data Persistence
+Step 8 - Understand Data Persistence
 
 Even after account deletion, data may persist in multiple locations:
 
@@ -276,7 +276,7 @@ Major Data Brokers to Contact:
 
 Each requires individual removal requests, but tools like DeleteMe ($129/year) automate this process across 100+ data brokers.
 
-Step 9: Handling Persistent Platform Issues
+Step 9 - Handling Persistent Platform Issues
 
 Some platforms resist deletion requests:
 

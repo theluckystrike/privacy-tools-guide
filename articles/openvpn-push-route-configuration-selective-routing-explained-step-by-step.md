@@ -41,7 +41,7 @@ push "redirect-gateway def1 bypass-dhcp"
 
 The `def1` flag ensures the redirect uses the 0.0.0.0/0 destination with a lower metric, while `bypass-dhcp` prevents the VPN from interfering with DHCP requests on the local network.
 
-Selective Routing: Send Only Specific Traffic Through VPN
+Selective Routing - Send Only Specific Traffic Through VPN
 
 Instead of routing everything through the VPN, you can implement selective routing by pushing specific routes for the networks or services you want to tunnel. This approach gives you precise control over your traffic flow.
 
@@ -78,9 +78,9 @@ route 192.168.1.0 255.255.255.0 net_gateway
 
 The `net_gateway` option tells OpenVPN to use the original default gateway for that specific network, effectively excluding it from the VPN tunnel.
 
-Step-by-Step: Implementing Selective Routing
+Step-by-Step - Implementing Selective Routing
 
-Step 1: Define Your Routing Strategy
+Step 1 - Define Your Routing Strategy
 
 Before configuring OpenVPN, determine which traffic should go through the VPN:
 
@@ -88,7 +88,7 @@ Before configuring OpenVPN, determine which traffic should go through the VPN:
 - Split tunnel: Only specific traffic routes through VPN (push specific routes)
 - Inverse split tunnel: All except specific traffic routes through VPN (push default route, exclude specific routes client-side)
 
-Step 2: Configure the Server
+Step 2 - Configure the Server
 
 Edit your OpenVPN server configuration file:
 
@@ -106,7 +106,7 @@ push "dhcp-option DNS 10.8.0.1"
 push "dhcp-option DNS 8.8.8.8"
 ```
 
-Step 3: Configure the Client
+Step 3 - Configure the Client
 
 For clients that need selective routing, use client-specific configuration:
 
@@ -119,7 +119,7 @@ Exclude local network from VPN
 route 192.168.1.0 255.255.255.0 net_gateway
 ```
 
-Step 4: Verify Your Configuration
+Step 4 - Verify Your Configuration
 
 After establishing the connection, verify the routing table:
 
@@ -136,7 +136,7 @@ ip route show
 
 Look for entries that include your tunnel interface (usually `tun0` or `tap0`) to confirm proper routing.
 
-Advanced: Route-Based Access Control
+Advanced - Route-Based Access Control
 
 You can combine push routes with firewall rules to create sophisticated access control policies:
 
@@ -163,7 +163,7 @@ topology subnet
 
 Troubleshooting Common Issues
 
-Issue 1: Local Network Inaccessible
+Issue 1 - Local Network Inaccessible
 
 If you cannot access local network devices after connecting to VPN, exclude your local subnet from the tunnel:
 
@@ -172,7 +172,7 @@ Add to client configuration
 route 192.168.1.0 255.255.255.0 net_gateway
 ```
 
-Issue 2: DNS Leaks
+Issue 2 - DNS Leaks
 
 Ensure DNS queries go through the VPN tunnel:
 
@@ -185,7 +185,7 @@ Client configuration to prevent DNS leaks
 block-outside-dns
 ```
 
-Issue 3: VPN Connection Drops
+Issue 3 - VPN Connection Drops
 
 Implement persistent keepalive to maintain connections through NAT:
 
@@ -205,7 +205,7 @@ When implementing selective routing, keep these security principles in mind:
 
 For maximum security, use the full tunnel unless you have specific requirements for split tunneling. When using selective routing, regularly audit your routing tables to ensure no sensitive traffic is accidentally leaking outside the VPN.
 
-Advanced Routing: Policy-Based Routing
+Advanced Routing - Policy-Based Routing
 
 For complex environments, implement policy-based routing using OpenVPN with iptables rules:
 
@@ -240,7 +240,7 @@ Save to file for later analysis
 sudo tcpdump -i tun0 -w vpn-traffic.pcap
 
 Analyze with Wireshark
-Look for: packets that should be in VPN but aren't
+Look for - packets that should be in VPN but aren't
 Check TTL (Time To Live) values. VPN traffic should show expected TTL
 ```
 

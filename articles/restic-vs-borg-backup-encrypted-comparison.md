@@ -26,7 +26,7 @@ Table of Contents
 - [Repository Management](#repository-management)
 - [Remote and Cloud Backends](#remote-and-cloud-backends)
 - [Automation and Scheduling](#automation-and-scheduling)
-- [Key Management: The Most Overlooked Risk](#key-management-the-most-overlooked-risk)
+- [Key Management - The Most Overlooked Risk](#key-management-the-most-overlooked-risk)
 - [Compression Options](#compression-options)
 - [Use Case Recommendations](#use-case-recommendations)
 - [Security Considerations](#security-considerations)
@@ -258,7 +258,7 @@ borg create "$REPO::$(date +%Y-%m-%d-%H%M%S)" \
 
 Both tools integrate cleanly with systemd timers, cron, and CI pipelines. The key practice is always pinging a monitoring endpoint on successful completion. silent backup failures are far more dangerous than noisy ones.
 
-Key Management: The Most Overlooked Risk
+Key Management - The Most Overlooked Risk
 
 Encryption is only as durable as your key management. Both tools are excellent at encrypting data, but many developers lose access to encrypted backups not because of cryptographic failure but because of key loss.
 
@@ -344,10 +344,10 @@ Both tools provide strong encryption, but deployment matters:
 4. Use key derivation parameters. increase iterations/memory for sensitive data:
 
 ```bash
-Restic: custom key derivation
+Restic - custom key derivation
 restic -r /backup/restic-repo unlock --max-size 100GB
 
-Borg: custom Argon2 parameters
+Borg - custom Argon2 parameters
 borg init --encryption=keyfile-chacha20poly1305 \
     --argon2-memory=1048576 \
     --argon2-parallelism=4 \

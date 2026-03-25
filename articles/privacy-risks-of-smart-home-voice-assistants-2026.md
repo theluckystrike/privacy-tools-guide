@@ -18,20 +18,20 @@ voice-checked: true
 
 Smart home voice assistants are always listening. Technically, they listen locally for wake words ("Alexa," "Hey Google," "Siri"), then send audio to servers for processing. In practice, this means your every word near the device could be recorded, stored, and analyzed by corporations with significant incentives to monetize that data.
 
-The core privacy question: what do these companies record, how long do they keep it, and who has access to it? The answers vary significantly by vendor and are often more invasive than most users realize.
+The core privacy question - what do these companies record, how long do they keep it, and who has access to it? The answers vary significantly by vendor and are often more invasive than most users realize.
 
 This guide compares Alexa, Google Home, and Siri on privacy practices, data retention, and what you can actually control.
 
 Table of Contents
 
 - [How Voice Assistants Work (And What Gets Recorded)](#how-voice-assistants-work-and-what-gets-recorded)
-- [Amazon Alexa: Aggressive Data Retention](#amazon-alexa-aggressive-data-retention)
-- [Google Home: Slightly Better Defaults, Still Privacy-Invasive](#google-home-slightly-better-defaults-still-privacy-invasive)
-- [Apple Siri: Privacy-Friendly By Default, But Limited](#apple-siri-privacy-friendly-by-default-but-limited)
-- [Comparison Table: Privacy Practices](#comparison-table-privacy-practices)
+- [Amazon Alexa - Aggressive Data Retention](#amazon-alexa-aggressive-data-retention)
+- [Google Home - Slightly Better Defaults, Still Privacy-Invasive](#google-home-slightly-better-defaults-still-privacy-invasive)
+- [Apple Siri - Privacy-Friendly By Default, But Limited](#apple-siri-privacy-friendly-by-default-but-limited)
+- [Comparison Table - Privacy Practices](#comparison-table-privacy-practices)
 - [Real Privacy Risks You Should Know About](#real-privacy-risks-you-should-know-about)
 - [How to Minimize Risk](#how-to-minimize-risk)
-- [Protecting Your Privacy: Practical Steps](#protecting-your-privacy-practical-steps)
+- [Protecting Your Privacy - Practical Steps](#protecting-your-privacy-practical-steps)
 
 How Voice Assistants Work (And What Gets Recorded)
 
@@ -47,13 +47,13 @@ Processing and Storage
 
 Amazon's servers transcribe the audio, interpret the request, and store records. Amazon keeps your voice recordings indefinitely unless you delete them.
 
-Fallout: Data Retention and Sharing
+Fallout - Data Retention and Sharing
 
 Amazon sells aggregated insights from Alexa usage to third parties. They also use your voice data to improve their speech recognition. Your recordings can be reviewed by human workers (Amazon calls them "QA associates") to improve accuracy. You can disable this, but it requires explicit action.
 
 The same pattern applies to Google Home and Siri, though the details differ.
 
-Amazon Alexa: Aggressive Data Retention
+Amazon Alexa - Aggressive Data Retention
 
 What Alexa Records
 
@@ -73,7 +73,7 @@ How Alexa Uses Your Data
 
 - Training data for speech recognition: Amazon explicitly uses your voice recordings to improve Alexa's accuracy. You can opt out, but this is not the default.
 - Third-party seller data: Alexa integrates with thousands of third-party services. Each integration has potential data sharing. When you ask Alexa to control a Philips Hue light, Philips sees that you made the request.
-- Advertising: Amazon uses Alexa data to improve ad targeting. If you frequently ask about pizza places, Amazon's ad system knows that.
+- Advertising - Amazon uses Alexa data to improve ad targeting. If you frequently ask about pizza places, Amazon's ad system knows that.
 - Behavioral analysis: Amazon analyzes what you ask about and when. Patterns reveal your interests, habits, and routines.
 
 Data Breaches and Leaks
@@ -91,7 +91,7 @@ The Reality Check
 
 Even with these controls, Alexa still sends your voice to Amazon's servers. The company still builds profiles of what you ask about. Deleting recordings is a band-aid on a deeper issue: you've invited a permanent listening device into your home owned by a company with a track record of monetizing user data.
 
-Google Home: Slightly Better Defaults, Still Privacy-Invasive
+Google Home - Slightly Better Defaults, Still Privacy-Invasive
 
 What Google Home Records
 
@@ -100,7 +100,7 @@ What Google Home Records
 - Interaction patterns
 - Location data (if enabled)
 
-Google's key difference: by default, Google deletes voice recordings after 3 months. Alexa keeps them forever. This is a meaningful privacy advantage, though the default still stores 3 months of data.
+Google's key difference - by default, Google deletes voice recordings after 3 months. Alexa keeps them forever. This is a meaningful privacy advantage, though the default still stores 3 months of data.
 
 How to Check What Google Recorded
 
@@ -130,7 +130,7 @@ Privacy Controls for Google Home
 - Disable location history: Google Home app > Settings > Location Services > Turn off.
 - Check activity history: myactivity.google.com. Delete specific interactions or bulk-delete by date range.
 
-Apple Siri: Privacy-Friendly By Default, But Limited
+Apple Siri - Privacy-Friendly By Default, But Limited
 
 What Siri Records
 
@@ -138,7 +138,7 @@ What Siri Records
 - Device identifiers
 - Request patterns
 
-Apple's core promise: Siri processing happens on-device as much as possible. Unlike Alexa and Google, which send all audio to servers, Apple processes many requests locally without sending data to Apple's servers.
+Apple's core promise - Siri processing happens on-device as much as possible. Unlike Alexa and Google, which send all audio to servers, Apple processes many requests locally without sending data to Apple's servers.
 
 Siri's On-Device Processing
 
@@ -163,7 +163,7 @@ Privacy Controls for Siri
 - Delete Siri data: Apple ID settings > iCloud > Disable "Siri History" to delete all Siri voice data.
 - Disable dictation: Keyboard settings > Dictation > Turn off to prevent voice-to-text processing.
 
-Comparison Table: Privacy Practices
+Comparison Table - Privacy Practices
 
 | Feature | Alexa | Google Home | Siri |
 |---------|-------|------------|------|
@@ -172,7 +172,7 @@ Comparison Table: Privacy Practices
 | Human review (if enabled) | Yes, QA workers | Yes, contractors | No, machine-only |
 | Disable human review | Yes (Settings) | Yes (Settings) | N/A |
 | Ad targeting | Yes | Yes | No |
-| Third-party integrations | Extensive | Extensive | Limited (Apple ecosystem) |
+| Third-party integrations | Extensive | Extensive | Limited (Apple environment) |
 | Cross-device tracking | Amazon services | All Google services | Apple services only |
 | Encryption in transit | Standard | Standard | End-to-end capable |
 | Data breach history | Multiple incidents | One major incident | Fewer incidents |
@@ -201,15 +201,15 @@ Voice assistants with poor security can be hijacked. A 2020 study showed that Al
 
 How to Minimize Risk
 
-Option 1: Use Sparingly
+Option 1 - Use Sparingly
 
 Use voice assistants only for specific, non-sensitive tasks (playing music, checking weather). Avoid asking about health conditions, financial information, or sensitive topics. Delete voice history frequently.
 
-Option 2: Use Siri Only
+Option 2 - Use Siri Only
 
-If you're in the Apple ecosystem, Siri is the privacy-friendly option. It processes most requests locally, doesn't target ads, and has shorter retention. The trade-off: Siri is less capable than Alexa or Google for third-party integrations.
+If you're in the Apple environment, Siri is the privacy-friendly option. It processes most requests locally, doesn't target ads, and has shorter retention. The trade-off: Siri is less capable than Alexa or Google for third-party integrations.
 
-Option 3: Use a Privacy-Focused Alternative
+Option 3 - Use a Privacy-Focused Alternative
 
 Several privacy-focused voice assistant projects exist:
 
@@ -253,41 +253,41 @@ pip install piper-tts
 echo "Your lights are now off" | piper --model en_US-lessac-medium --output_file response.wav
 ```
 
-Option 4: Disable Always-Listening
+Option 4 - Disable Always-Listening
 
 For Alexa and Google Home, disable the microphone when you're not using them. Many devices have a physical mute button. Some users unplug devices when not in use.
 
-Protecting Your Privacy: Practical Steps
+Protecting Your Privacy - Practical Steps
 
 The reality is that most smart home voice assistants involve privacy trade-offs. The devices are useful, but they collect extensive data. Assess Your Tolerance
 
 Before installing any voice assistant, ask yourself: Do I need this device? Voice assistants are convenient for a small percentage of daily tasks. If you use it five times a week, the privacy cost may not be worth it. If you use it dozens of times per day, you're getting value but at a higher privacy cost.
 
-Step 2: Choose Siri if Possible
+Step 2 - Choose Siri if Possible
 
-If you're in the Apple ecosystem, Siri is the privacy-safe choice. It processes most requests locally, doesn't collect data for ad targeting, and has reasonable data retention policies. The capability gap with Google Home or Alexa is real, but the privacy advantage is significant.
+If you're in the Apple environment, Siri is the privacy-safe choice. It processes most requests locally, doesn't collect data for ad targeting, and has reasonable data retention policies. The capability gap with Google Home or Alexa is real, but the privacy advantage is significant.
 
-Step 3: Limit Always-Listening Devices
+Step 3 - Limit Always-Listening Devices
 
 If you use Alexa or Google Home, consider limiting how many devices you have. One device in a main room is less invasive than devices in every room. Every additional device is another listening point.
 
-Step 4: Establish Device-Free Zones
+Step 4 - Establish Device-Free Zones
 
 Bedrooms, bathrooms, and other private spaces are reasonable places to exclude voice assistants. You don't need voice control everywhere.
 
-Step 5: Regularly Delete Data
+Step 5 - Regularly Delete Data
 
-Set a monthly reminder to delete voice history. Alexa app > Account > Alexa Privacy > Manage Your Alexa Data > Delete all voice recordings. Google: myactivity.google.com > Delete activity > All time. Short retention windows reduce exposure.
+Set a monthly reminder to delete voice history. Alexa app > Account > Alexa Privacy > Manage Your Alexa Data > Delete all voice recordings. Google - myactivity.google.com > Delete activity > All time. Short retention windows reduce exposure.
 
-Step 6: Disable Features You Don't Use
+Step 6 - Disable Features You Don't Use
 
 If you don't make purchases via voice, disable voice purchasing. If you don't want human review, disable it in settings. Disable location services if you don't need them. Each disabled feature reduces data collection.
 
-Step 7: Use Wake Word Alternatives
+Step 7 - Use Wake Word Alternatives
 
 Some devices support multiple wake words. If your device supports it, avoid common names that might trigger false activations. A custom wake word (if available) reduces accidental activations and recording.
 
-Step 8: Monitor Privacy Practices
+Step 8 - Monitor Privacy Practices
 
 Follow privacy news from organizations like EFF (Electronic Frontier Foundation). Voice assistant privacy policies change. Companies sometimes expand data collection without announcement. Stay informed.
 
@@ -319,7 +319,7 @@ Yes. If you ask Alexa about pregnancy symptoms, expect ads for maternity product
 
 Can I delete my history without manually clicking each recording?
 
-Yes, most platforms support bulk deletion. Alexa app > Account > Alexa Privacy > Manage Your Alexa Data > Delete all recordings. Google: myactivity.google.com > Delete activity by. Apple: Settings > Siri & Search > Delete Siri data.
+Yes, most platforms support bulk deletion. Alexa app > Account > Alexa Privacy > Manage Your Alexa Data > Delete all recordings. Google - myactivity.google.com > Delete activity by. Apple - Settings > Siri & Search > Delete Siri data.
 
 Is it safe to use voice assistants with kids?
 

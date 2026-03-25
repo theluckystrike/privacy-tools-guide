@@ -53,7 +53,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install Frigate
+Step 1 - Install Frigate
 
 The easiest way to run Frigate is using Docker Compose. Create a directory for Frigate and add the following to your `docker-compose.yml`:
 
@@ -88,7 +88,7 @@ docker compose up -d
 
 Access the Frigate web interface at `http://your-server-ip:5000`.
 
-Step 2: Configure Your Cameras
+Step 2 - Configure Your Cameras
 
 In the Frigate configuration file (`config/config.yml`), define your cameras. Here's an example for two cameras:
 
@@ -141,7 +141,7 @@ cameras:
 
 Replace the camera IP addresses and credentials with your actual camera information. The RTSP path varies by camera manufacturer, consult your camera's documentation for the correct format.
 
-Step 3: Set Up Object Detection
+Step 3 - Set Up Object Detection
 
 Frigate uses OpenCV and TensorFlow for local object detection. The default configuration detects people, cats, dogs, and cars. Add detection zones to reduce false alerts:
 
@@ -163,7 +163,7 @@ cameras:
 
 This configuration focuses on person detection while filtering out small movements or distant objects that might trigger unnecessary recordings.
 
-Step 4: Integrate with Home Assistant
+Step 4 - Integrate with Home Assistant
 
 For integration, add the Frigate integration in Home Assistant by adding this to your `configuration.yaml`:
 
@@ -175,7 +175,7 @@ frigate:
 
 After restarting Home Assistant, you'll have access to Frigate camera entities, motion sensors, and can create automations based on detected objects.
 
-Step 5: Storage and Retention
+Step 5 - Storage and Retention
 
 Configure retention policies based on your storage capacity and needs:
 
@@ -195,7 +195,7 @@ snapshots:
 
 Consider setting up a separate storage mount for long-term archives if you need to retain footage beyond the default retention period.
 
-Step 6: Remote Access Without Cloud
+Step 6 - Remote Access Without Cloud
 
 To access your cameras remotely without cloud services, set up a VPN connection to your home network. WireGuard provides a lightweight, secure option that works well for remote camera viewing. Install WireGuard on your phone and home router, then connect to your network when you need to view live footage or review recordings.
 
@@ -210,7 +210,7 @@ If you experience performance issues with multiple cameras, consider these adjus
 - Limit the number of detection zones and object types
 - Use motion-based recording instead of continuous recording to save resources
 
-Step 7: Camera Selection Guide
+Step 7 - Camera Selection Guide
 
 Not all cameras work equally well with Frigate:
 
@@ -224,12 +224,12 @@ Not all cameras work equally well with Frigate:
 
 Avoid cameras that require cloud connectivity. Ring, Nest, and Arlo depend on cloud services and may stop working without internet access.
 
-Step 8: Network Isolation for Camera Security
+Step 8 - Network Isolation for Camera Security
 
 Place your cameras on a separate VLAN to prevent them from reaching the internet:
 
 ```bash
-Firewall rule: block camera VLAN from internet
+Firewall rule - block camera VLAN from internet
 iptables -A FORWARD -i br-cameras -o eth0 -j DROP
 Allow cameras to reach Frigate only
 iptables -A FORWARD -i br-cameras -d 192.168.1.100 -p tcp --dport 5000 -j ACCEPT
@@ -237,7 +237,7 @@ iptables -A FORWARD -i br-cameras -d 192.168.1.100 -p tcp --dport 5000 -j ACCEPT
 
 This prevents compromised cameras from phoning home or being used as entry points into your network.
 
-Step 9: Backup Strategy for Recorded Footage
+Step 9 - Backup Strategy for Recorded Footage
 
 Configure automated backups of critical footage:
 

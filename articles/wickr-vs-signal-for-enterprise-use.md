@@ -57,7 +57,7 @@ Signal provides limited official API access. The Signal server is designed prima
 Wickr offers a full API suite designed for enterprise use:
 
 ```python
-Wickr API example: Creating a secure room
+Wickr API example - Creating a secure room
 import wickr
 
 client = wickr.Client(api_key="YOUR_API_KEY", api_secret="YOUR_SECRET")
@@ -284,19 +284,19 @@ Pilot Program Approach
 
 Most successful enterprise deployments start small:
 
-Phase 1 (Weeks 1-4): Pilot with 50 users
+Phase 1 (Weeks 1-4) - Pilot with 50 users
 - Select diverse group: executives, operations, IT
 - Document feature gaps and workflow issues
 - Measure user adoption and satisfaction
 - Train support team on troubleshooting
 
-Phase 2 (Weeks 5-8): Expand to 250 users
+Phase 2 (Weeks 5-8) - Expand to 250 users
 - Address pilot feedback
 - Establish IT support procedures
 - Monitor compliance and audit logs
 - Refine security policies
 
-Phase 3 (Weeks 9+): Organization-wide rollout
+Phase 3 (Weeks 9+) - Organization-wide rollout
 - Staged deployment by department
 - Ongoing training and support
 - Regular security audits
@@ -307,7 +307,7 @@ Hybrid Deployment Example
 Many organizations use both platforms strategically:
 
 ```
-Internal Teams: Wickr (compliance, control, logging)
+Internal Teams - Wickr (compliance, control, logging)
   Engineering: Signal (open-source transparency priority)
   Finance: Wickr (regulatory requirements)
   Sales: Signal (cross-platform convenience)

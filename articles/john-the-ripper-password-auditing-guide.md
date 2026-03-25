@@ -17,7 +17,7 @@ How to Use John the Ripper for Password Auditing
 
 John the Ripper (JtR) audits the strength of stored password hashes. In a security assessment, you use it to identify accounts using weak or guessable passwords before an attacker does. This guide covers authorized use. auditing your own infrastructure and running penetration tests you have explicit written permission to perform.
 
-Legal note: Only run password auditing on systems and hashes you own or have written authorization to test. Unauthorized access to computer systems is a criminal offense in nearly every jurisdiction.
+Legal note - Only run password auditing on systems and hashes you own or have written authorization to test. Unauthorized access to computer systems is a criminal offense in nearly every jurisdiction.
 
 ---
 
@@ -52,7 +52,7 @@ cd /opt/john/src && ./configure --enable-opencl && make -j$(nproc)
 
 ---
 
-Step 1: Extract Password Hashes
+Step 1 - Extract Password Hashes
 
 Linux (shadow file)
 
@@ -74,7 +74,7 @@ pip3 install impacket
 impacket-secretsdump -system /mnt/windows/Windows/System32/config/SYSTEM \
   -sam /mnt/windows/Windows/System32/config/SAM LOCAL
 
-Output format: username:RID:LM_hash:NTLM_hash:::
+Output format - username:RID:LM_hash:NTLM_hash:::
 Save NTLM hashes for John
 ```
 
@@ -95,7 +95,7 @@ mysql -u root -p -e "SELECT User, authentication_string FROM mysql.user;" \
 
 ---
 
-Step 2: Identify Hash Type
+Step 2 - Identify Hash Type
 
 ```bash
 John auto-detects many types
@@ -117,7 +117,7 @@ md5crypt       = Linux $1$ and FreeBSD MD5
 
 ---
 
-Step 3: Wordlist Attack
+Step 3 - Wordlist Attack
 
 The fastest attack. tries every word in a dictionary:
 
@@ -138,7 +138,7 @@ john --show=left /tmp/linux_hashes.txt   # shows remaining uncracked
 
 ---
 
-Step 4: Rules-Based Mangling
+Step 4 - Rules-Based Mangling
 
 Rules apply transformations to each wordlist entry. capitalizing, adding numbers, substituting characters. This catches "Password1", "p@ssw0rd", and similar patterns:
 
@@ -183,7 +183,7 @@ john --format=sha512crypt \
 
 ---
 
-Step 5: Incremental (Brute-Force) Mode
+Step 5 - Incremental (Brute-Force) Mode
 
 When wordlist attacks fail, try all character combinations within a keyspace:
 
@@ -206,7 +206,7 @@ john --format=NT --incremental=Printable8 /tmp/ntlm_hashes.txt
 
 ---
 
-Step 6: Run Multiple Sessions in Parallel
+Step 6 - Run Multiple Sessions in Parallel
 
 ```bash
 Split hash file and run two instances on different CPUs
@@ -230,12 +230,12 @@ john --status=session1
 
 ---
 
-Step 7: Crack NTLM Hashes (Windows)
+Step 7 - Crack NTLM Hashes (Windows)
 
 NTLM hashes are unsalted and fast to crack. thousands per second on a GPU:
 
 ```bash
-Format: user:rid:lm:ntlm:::
+Format - user:rid:lm:ntlm:::
 echo "administrator:500:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::" \
   > /tmp/ntlm.txt
 
@@ -251,7 +251,7 @@ john --format=NT --show /tmp/ntlm.txt
 
 ---
 
-Step 8: Read Results and Write an Audit Report
+Step 8 - Read Results and Write an Audit Report
 
 ```bash
 All cracked credentials
@@ -259,7 +259,7 @@ john --show /tmp/linux_hashes.txt
 
 Summary
 echo "Total hashes: $(wc -l < /tmp/linux_hashes.txt)"
-echo "Cracked: $(john --show /tmp/linux_hashes.txt | tail -1)"
+echo "Cracked - $(john --show /tmp/linux_hashes.txt | tail -1)"
 
 Identify accounts using duplicate passwords
 john --show /tmp/linux_hashes.txt | awk -F: '{print $2}' | sort | uniq -d

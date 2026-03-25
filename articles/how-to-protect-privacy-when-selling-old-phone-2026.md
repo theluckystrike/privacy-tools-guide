@@ -16,7 +16,7 @@ intent-checked: true
 
 {% raw %}
 
-The Risk: What Remains on Your Old Phone
+The Risk - What Remains on Your Old Phone
 
 Factory reset doesn't erase everything. Data recovery tools can recover deleted files from the storage. Your buyer might:
 - Recover deleted photos and videos
@@ -113,7 +113,7 @@ Microsoft Data Download (if using Outlook/OneDrive):
 3. Choose timeframe (all data)
 ```
 
-Storing these downloads: Use encrypted external drive or secure cloud storage (Backblaze, Wasabi). Not on the phone being sold.
+Storing these downloads - Use encrypted external drive or secure cloud storage (Backblaze, Wasabi). Not on the phone being sold.
 
 3. Disable Two-Factor Authentication
 
@@ -147,7 +147,7 @@ Microsoft Account:
 
 iPhone: Complete Wipe Guide
 
-Step 1: Deauthorize Apps and Payment Methods
+Step 1 - Deauthorize Apps and Payment Methods
 
 Apple Pay (disable on this device):
 ```
@@ -184,7 +184,7 @@ Settings → General → VPN & Device Management
    Remove all VPN profiles and certificates
 ```
 
-Step 2: Sign Out of iCloud and Apple ID
+Step 2 - Sign Out of iCloud and Apple ID
 
 This is critical. Signing out disables Find My iPhone (prevents buyer from tracking you).
 
@@ -204,7 +204,7 @@ This signs you out of:
 - iCloud Keychain
 - Find My
 
-Step 3: Remove SIM Card
+Step 3 - Remove SIM Card
 
 Before factory reset, physically remove the SIM:
 
@@ -228,7 +228,7 @@ Settings → Cellular
    Or let it deactivate during factory reset
 ```
 
-Step 4: Disable Find My iPhone (Again)
+Step 4 - Disable Find My iPhone (Again)
 
 ```
 Settings → [Your Name] → Find My
@@ -238,7 +238,7 @@ Settings → [Your Name] → Find My
 
 This removes Activation Lock (critical, without this, new owner can't activate the phone).
 
-Step 5: Erase All Content and Settings
+Step 5 - Erase All Content and Settings
 
 ```
 Settings → General → Transfer or Reset
@@ -254,12 +254,12 @@ iPhone will:
 
 Wait for completion. Don't interrupt.
 
-Step 6: Verify Erasure
+Step 6 - Verify Erasure
 
 When phone reboots to Setup screen:
 
 ```
-You should see: "Hello" or "Welcome"
+You should see - "Hello" or "Welcome"
    No personal data visible
    No previous Apple ID logged in
    Ready for new owner to activate
@@ -267,7 +267,7 @@ You should see: "Hello" or "Welcome"
 
 Tap through to confirm no data is accessible.
 
-Step 7: Optional: Wipe Free Space
+Step 7 - Optional: Wipe Free Space
 
 If you're paranoid (extra paranoid, even Apple says factory reset is enough):
 
@@ -281,9 +281,9 @@ After Setup screen appears:
 
 ---
 
-Android: Complete Wipe Guide
+Android - Complete Wipe Guide
 
-Step 1: Remove Google Account
+Step 1 - Remove Google Account
 
 Sign out of Google:
 ```
@@ -299,7 +299,7 @@ This disables:
 - Google Drive sync
 - Play Store
 
-Step 2: Disable Biometric Data
+Step 2 - Disable Biometric Data
 
 Fingerprint:
 ```
@@ -314,7 +314,7 @@ Settings → Security → Face Unlock
    Delete Face Data (or just let factory reset remove it)
 ```
 
-Step 3: Remove Payment Methods
+Step 3 - Remove Payment Methods
 
 Google Pay:
 ```
@@ -329,7 +329,7 @@ Samsung Pay app → Cards
    Remove all cards
 ```
 
-Step 4: Remove Connected Devices
+Step 4 - Remove Connected Devices
 
 Bluetooth:
 ```
@@ -344,7 +344,7 @@ Settings → Apps → Permissions → [Permission type]
    Revoke permissions for sensitive apps
 ```
 
-Step 5: Disable Find My Mobile (Samsung)
+Step 5 - Disable Find My Mobile (Samsung)
 
 Samsung Find My Mobile:
 ```
@@ -363,7 +363,7 @@ Go to https://findmymobile.google.com
 
 This removes remote lock/wipe capabilities.
 
-Step 6: Remove SIM Card
+Step 6 - Remove SIM Card
 
 ```
 Turn phone off
@@ -383,7 +383,7 @@ Settings → Mobile network → SIM settings
    Remove eSIM
 ```
 
-Step 7: Factory Reset
+Step 7 - Factory Reset
 
 ```
 Settings → System → Reset options
@@ -397,11 +397,11 @@ Android will ask:
 
 Takes 5-20 minutes. Phone reboots to Setup screen.
 
-Step 8: Verify (Like iPhone)
+Step 8 - Verify (Like iPhone)
 
 When Setup appears:
 ```
-You should see: "Welcome" or "Hello"
+You should see - "Welcome" or "Hello"
    No previous apps
    No Google account logged in
    No personal data visible
@@ -507,13 +507,13 @@ Consider a bill of sale:
 ```
 BILL OF SALE
 
-Device: iPhone 13 Pro, Space Gray, 128GB
-Serial Number: [from Settings → General → About → Serial Number]
-IMEI: [from Settings → General → About → IMEI]
-Condition: [describe wear, damage, working condition]
+Device - iPhone 13 Pro, Space Gray, 128GB
+Serial Number - [from Settings → General → About → Serial Number]
+IMEI - [from Settings → General → About → IMEI]
+Condition - [describe wear, damage, working condition]
 
-Seller: [Your name], Date: [date]
-Buyer: [Buyer name], Date: [date]
+Seller - [Your name], Date: [date]
+Buyer - [Buyer name], Date: [date]
 
 Seller confirms:
 - All personal data has been erased
@@ -558,7 +558,7 @@ Q: What about old backups on my iCloud / Google Drive?
 
 A: Those aren't on the phone. They're in the cloud. But if you want privacy, delete them:
 - iCloud: Settings → iCloud → Manage Storage → Delete backups
-- Google Drive: https://myaccount.google.com/device-activity → Delete backups
+- Google Drive - https://myaccount.google.com/device-activity → Delete backups
 
 Q: Can I remove Activation Lock before selling?
 

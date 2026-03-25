@@ -51,13 +51,13 @@ Parental Rights Under COPPA
 
 Parents have several enforceable rights when it comes to their children's online data:
 
-The Right to Consent: Before any data collection begins, companies must obtain verifiable parental consent. This can be achieved through various methods, signed consent forms sent via mail or fax, credit card verification, government ID matching, or video conferencing. Some services offer a "consent through play" method where parents answer questions only they would know.
+The Right to Consent - Before any data collection begins, companies must obtain verifiable parental consent. This can be achieved through various methods, signed consent forms sent via mail or fax, credit card verification, government ID matching, or video conferencing. Some services offer a "consent through play" method where parents answer questions only they would know.
 
-The Right to Review: Parents can request to see what information has been collected about their children. Companies must make this information available within a reasonable timeframe, typically 30 days from the request.
+The Right to Review - Parents can request to see what information has been collected about their children. Companies must make this information available within a reasonable timeframe, typically 30 days from the request.
 
-The Right to Deletion: Parents can demand that their child's personal information be deleted. Companies must comply and remove the data from their systems and any third-party vendors they share information with.
+The Right to Deletion - Parents can demand that their child's personal information be deleted. Companies must comply and remove the data from their systems and any third-party vendors they share information with.
 
-The Right to Withdraw Consent: Parents can revoke consent at any time, after which the company must stop collecting data and delete existing information within a reasonable timeframe.
+The Right to Withdraw Consent - Parents can revoke consent at any time, after which the company must stop collecting data and delete existing information within a reasonable timeframe.
 
 Practical Implementation for Developers
 
@@ -189,7 +189,7 @@ COPPA Safe Harbor Programs
 
 The FTC provides "safe harbor" certifications for companies demonstrating strong COPPA compliance. These programs reduce liability by showing good-faith compliance efforts:
 
-Common Sense Media Certification: Companies can earn certification by meeting third-party privacy standards. This certification becomes evidence of compliance if a violation occurs.
+Common Sense Media Certification - Companies can earn certification by meeting third-party privacy standards. This certification becomes evidence of compliance if a violation occurs.
 
 iKeepSafe: Another third-party certifier that audits privacy practices for child-focused services. Certification requires independent assessment and ongoing compliance monitoring.
 
@@ -265,15 +265,15 @@ Special Considerations for Different Service Types
 
 COPPA applies differently depending on what your service does:
 
-Social Networks: Services like TikTok, Instagram, and YouTube must implement strict age verification, prevent algorithmic recommendation systems from profiling children, and disallow direct messaging between children and strangers.
+Social Networks - Services like TikTok, Instagram, and YouTube must implement strict age verification, prevent algorithmic recommendation systems from profiling children, and disallow direct messaging between children and strangers.
 
-Gaming Platforms: Game developers must verify parental consent before allowing in-game purchases, collecting location data, or enabling chat features.
+Gaming Platforms - Game developers must verify parental consent before allowing in-game purchases, collecting location data, or enabling chat features.
 
-Educational Apps: Schools and educational platforms face different compliance expectations than commercial services. The FERPA (Family Educational Rights and Privacy Act) may also apply, adding additional requirements.
+Educational Apps - Schools and educational platforms face different compliance expectations than commercial services. The FERPA (Family Educational Rights and Privacy Act) may also apply, adding additional requirements.
 
-Streaming Services: Netflix and Disney+ must implement parental controls and restrict data collection for child accounts.
+Streaming Services - Netflix and Disney+ must implement parental controls and restrict data collection for child accounts.
 
-E-commerce: Online retailers must implement parental consent before allowing children to purchase items or create accounts.
+E-commerce - Online retailers must implement parental consent before allowing children to purchase items or create accounts.
 
 Understanding which category your service falls into helps determine specific compliance requirements.
 
@@ -281,15 +281,15 @@ International COPPA Equivalents
 
 COPPA is a US law, but other countries have similar protections:
 
-GDPR (EU): Requires parental consent for children under 16 (member states can lower to 13), provides stronger deletion rights, and emphasizes data minimization.
+GDPR (EU) - Requires parental consent for children under 16 (member states can lower to 13), provides stronger deletion rights, and emphasizes data minimization.
 
-PIPEDA (Canada): Requires meaningful consent from parents before collecting information from children under 13, with similar deletion and access rights.
+PIPEDA (Canada) - Requires meaningful consent from parents before collecting information from children under 13, with similar deletion and access rights.
 
-LGPD (Brazil): Requires parental consent for children under 13, with particularly strict rules around profiling and targeted advertising.
+LGPD (Brazil) - Requires parental consent for children under 13, with particularly strict rules around profiling and targeted advertising.
 
-PDPA (Singapore): Requires parental consent for children under 13, with strong restrictions on direct marketing.
+PDPA (Singapore) - Requires parental consent for children under 13, with strong restrictions on direct marketing.
 
-Australia's Privacy Principles: Require reasonable steps to verify parental consent for children under 13.
+Australia's Privacy Principles - Require reasonable steps to verify parental consent for children under 13.
 
 If your service operates internationally or might attract international users, compliance with multiple frameworks is essential.
 
@@ -297,15 +297,15 @@ Common Compliance Mistakes
 
 Several implementation errors create legal risk:
 
-Assuming all users are 13+: Services that don't implement age verification assume liability for any child users they attract. "We didn't know" is not a legal defense.
+Assuming all users are 13+ - Services that don't implement age verification assume liability for any child users they attract. "We didn't know" is not a legal defense.
 
 Collecting demographic data under the guise of preference: Collecting "interests" through a survey that actually identifies race, religion, or socioeconomic status violates COPPA's spirit even if technically justified.
 
-Storing deleted data in backups: The FTC expects complete deletion, including from backups and archives. Having deleted data that can be recovered from backups is considered a violation.
+Storing deleted data in backups - The FTC expects complete deletion, including from backups and archives. Having deleted data that can be recovered from backups is considered a violation.
 
 Inadequate parental notification: Simply burying consent in privacy policies doesn't meet COPPA requirements. Explicit email consent with clear descriptions is necessary.
 
-Allowing behavioral tracking: Even without explicitly storing data, behavioral tracking (through pixels, analytics, or ad networks) violates COPPA requirements for children.
+Allowing behavioral tracking - Even without explicitly storing data, behavioral tracking (through pixels, analytics, or ad networks) violates COPPA requirements for children.
 
 Frequently Asked Questions
 

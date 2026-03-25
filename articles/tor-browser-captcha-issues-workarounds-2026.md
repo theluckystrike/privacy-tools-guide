@@ -131,7 +131,7 @@ def solve_captcha(site_key, page_url, api_key):
         time.sleep(5)
 ```
 
-Ethical Consideration: Only use these services for legitimate access to services you are authorized to use. Automated captcha solving may violate terms of service.
+Ethical Consideration - Only use these services for legitimate access to services you are authorized to use. Automated captcha solving may violate terms of service.
 
 hCaptcha Considerations
 
@@ -201,13 +201,13 @@ puppeteer.use(PluginHandleRecaptcha());
 
 Practical Recommendations
 
-1. Patience Often Works: Many captchas resolve after waiting and retrying with a new identity. Some sites rate-limit rather than permanently block Tor users.
+1. Patience Often Works - Many captchas resolve after waiting and retrying with a new identity. Some sites rate-limit rather than permanently block Tor users.
 
-2. Use Onion Services When Available: Many services offer .onion versions that bypass clearnet detection entirely. Wikipedia, DuckDuckGo, and ProtonMail all provide onion domains.
+2. Use Onion Services When Available - Many services offer .onion versions that bypass clearnet detection entirely. Wikipedia, DuckDuckGo, and ProtonMail all provide onion domains.
 
-3. Consider Bridge Transport: If your ISP blocks Tor or your exit nodes face heavy scrutiny, configure Tor bridges through Tor Button > Configure Bridge.
+3. Consider Bridge Transport - If your ISP blocks Tor or your exit nodes face heavy scrutiny, configure Tor bridges through Tor Button > Configure Bridge.
 
-4. Document Workarounds: If you frequently access specific services, maintain a personal knowledge base of which circuits and configurations work for each.
+4. Document Workarounds - If you frequently access specific services, maintain a personal knowledge base of which circuits and configurations work for each.
 
 Start with circuit changes and security level adjustments. they resolve most captcha friction without touching your privacy settings.
 
@@ -335,7 +335,7 @@ If connection succeeds but captcha appears, it's site-level detection
 curl -s https://api.abuseipdb.com/api/v2/check \
   --data-urlencode "ipAddress=$(curl -s --socks5 127.0.0.1:9050 https://api.ipify.org)" \
   -H "Key: YOUR_API_KEY" \
-  -H "Accept: application/json" | jq '.data.abuseConfidenceScore'
+  -H "Accept - application/json" | jq '.data.abuseConfidenceScore'
 
 4. If score is high, request new circuit
 echo -e "AUTHENTICATE\r\nSIGNAL NEWNYM\r\nQUIT" | nc localhost 9051
@@ -364,8 +364,8 @@ about:config → privacy.reduceTimerPrecision = true
 about:config → media.peerconnection.enabled = false
 
 // Check fingerprint score
-// Visit: https://browserleaks.com
-// Visit: https://panopticlick.eff.org
+// Visit - https://browserleaks.com
+// Visit - https://panopticlick.eff.org
 ```
 
 Workaround Effectiveness by Site Type

@@ -22,7 +22,7 @@ Table of Contents
 
 - [Understanding the Sensor API](#understanding-the-sensor-api)
 - [How Sensor Data Creates Unique Fingerprints](#how-sensor-data-creates-unique-fingerprints)
-- [Code Example: Collecting Sensor Data](#code-example-collecting-sensor-data)
+- [Code Example - Collecting Sensor Data](#code-example-collecting-sensor-data)
 - [Fingerprinting Techniques](#fingerprinting-techniques)
 - [Privacy Implications](#privacy-implications)
 - [Mitigation Strategies](#mitigation-strategies)
@@ -53,7 +53,7 @@ A 2018 study by Al-Haiqi et al. demonstrated that combining accelerometer and gy
 
 The fingerprint from sensor calibration biases is especially problematic: unlike a canvas fingerprint or WebGL hash, it cannot be changed by resetting your browser profile, clearing data, or using a VPN. The biases are permanent hardware-level characteristics of the physical chip.
 
-Code Example: Collecting Sensor Data
+Code Example - Collecting Sensor Data
 
 Here's a practical example of how websites collect sensor data for fingerprinting:
 
@@ -196,29 +196,29 @@ Sensor fingerprinting poses significant privacy concerns that differ from other 
 
 Mitigation Strategies
 
-For Users: Practical Steps
+For Users - Practical Steps
 
-Step 1: Deny sensor permissions at the browser level
+Step 1 - Deny sensor permissions at the browser level
 
-In Chrome for Android: Settings → Site Settings → Motion sensors → Block
+In Chrome for Android - Settings → Site Settings → Motion sensors → Block
 
-In Firefox: Navigate to `about:config`, search for `device.sensors.enabled`, set to `false`. This disables all sensor access globally.
+In Firefox - Navigate to `about:config`, search for `device.sensors.enabled`, set to `false`. This disables all sensor access globally.
 
-In Safari on iOS: Settings → Privacy → Motion & Fitness → disable for your browser
+In Safari on iOS - Settings → Privacy → Motion & Fitness → disable for your browser
 
-Step 2: Use Firefox with resistFingerprinting
+Step 2 - Use Firefox with resistFingerprinting
 
 In Firefox `about:config`, set `privacy.resistFingerprinting` to `true`. This causes Firefox to report fake, standardized sensor values rather than real hardware readings, making fingerprinting impossible.
 
-Step 3: Use Tor Browser
+Step 3 - Use Tor Browser
 
 Tor Browser blocks `DeviceMotionEvent` and the Generic Sensor API entirely. Sensor fingerprinting code on a webpage simply receives errors rather than data.
 
-Step 4: Use a sensor spoofing extension
+Step 4 - Use a sensor spoofing extension
 
 Extensions like SpoofSensor (Firefox) override sensor APIs to return constant or randomized values. This is less strong than browser-level protections but works in Chromium-based browsers where `resistFingerprinting` is unavailable.
 
-For Developers: Responsible Sensor Use
+For Developers - Responsible Sensor Use
 
 ```javascript
 // Browser-level sensor permission request
@@ -245,7 +245,7 @@ Browser Implementations
 Chrome, Firefox, and Safari have implemented varying levels of sensor protection:
 
 - Chrome: Requires explicit permission for the Generic Sensor API; `DeviceMotionEvent` is gated behind user gesture requirements on HTTPS
-- Firefox: Blocks sensor access in third-party contexts by default; `privacy.resistFingerprinting` provides spoofed values globally
+- Firefox - Blocks sensor access in third-party contexts by default; `privacy.resistFingerprinting` provides spoofed values globally
 - Safari: Implements intelligent tracking prevention and requires permission for motion events since iOS 13
 - Brave: Blocks sensor APIs by default and returns randomized values when sites request access, similar to resistFingerprinting behavior
 

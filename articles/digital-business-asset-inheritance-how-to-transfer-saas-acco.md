@@ -27,13 +27,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Your Digital Business Asset Portfolio
+Step 1 - Understand Your Digital Business Asset Portfolio
 
 Every developer accumulates digital assets that have real business value. These include cloud hosting accounts, SaaS subscriptions, API credentials, domain names, source code repositories, and automated deployment pipelines. Without proper documentation and transfer procedures, these assets become inaccessible or worse, get terminated due to non-renewal.
 
 The first step is creating an inventory of all digital business assets. Document each service, the associated credentials, and the criticality to your operations. This inventory serves as the foundation for any inheritance planning.
 
-Step 2: SaaS Account Transfer Procedures
+Step 2 - SaaS Account Transfer Procedures
 
 Transferring SaaS accounts requires understanding each platform's specific policies. Most enterprise SaaS platforms support account transfer through their administrative interfaces, but the process varies significantly between providers.
 
@@ -65,7 +65,7 @@ Password Managers with Inheritance Features
 
 Several password managers now include inheritance or emergency access features. 1Password offers Family plans where designated individuals can access shared vaults. Bitwarden provides emergency access allowing trusted contacts to request vault access after a specified waiting period. These features provide a secure mechanism for credential transfer.
 
-Step 3: API Key Management and Transfer
+Step 3 - API Key Management and Transfer
 
 API keys represent critical business assets that require careful handling. Unlike passwords, many API keys cannot be easily rotated without breaking existing integrations.
 
@@ -104,7 +104,7 @@ When transferring API keys, avoid sending them through unencrypted channels. Use
 
 For production API keys, consider implementing a key rotation schedule before inheritance transfer. This ensures your heir can manage the keys without inheriting potentially compromised credentials.
 
-Step 4: Domain Name Transfer Process
+Step 4 - Domain Name Transfer Process
 
 Domain transfers involve specific ICANN procedures and typically require a 60-day waiting period after registration or previous transfer. The process includes:
 
@@ -142,7 +142,7 @@ domains:
         value: "api.herokudns.com"
 ```
 
-Step 5: Build an Inheritance-Ready Documentation System
+Step 5 - Build an Inheritance-Ready Documentation System
 
 Effective digital asset inheritance requires maintaining current documentation. Consider implementing a documentation system that includes:
 
@@ -160,7 +160,7 @@ Regular Maintenance Schedule
 
 Update your documentation quarterly or whenever you add significant new assets. Test access procedures periodically to ensure everything works as expected.
 
-Step 6: Legal Considerations
+Step 6 - Legal Considerations
 
 Digital business assets have legal implications. Consider:
 
@@ -169,15 +169,15 @@ Digital business assets have legal implications. Consider:
 - Consulting with an estate planning attorney familiar with digital assets
 - Understanding that some SaaS terms of service may restrict transfer
 
-Step 7: Tool Recommendations for Asset Documentation
+Step 7 - Tool Recommendations for Asset Documentation
 
 1Password Families ($14.99/month for 5 users): Provides Emergency Access feature where designated family members can request vault access after 30 days of inactivity. Supports sharing of specific items with defined expiration.
 
 Bitwarden Family Organizations ($12/year): Allows creating an organization vault where multiple family members have admin access. Cheaper than competitors with strong open-source credentials.
 
-LastPass Family ($17.99/month): Has designated emergency contacts who can access shared vaults. Note: LastPass has had security issues historically, current version is improved but verify current status before using.
+LastPass Family ($17.99/month) - Has designated emergency contacts who can access shared vaults. Note - LastPass has had security issues historically, current version is improved but verify current status before using.
 
-Step 8: Digital Asset Inventory Template
+Step 8 - Digital Asset Inventory Template
 
 Create a detailed spreadsheet documenting all digital assets:
 
@@ -224,7 +224,7 @@ digital_assets:
     expiration_date: "2027-03-15"
 ```
 
-Step 9: API Key Inventory and Rotation
+Step 9 - API Key Inventory and Rotation
 
 Document every API key with rotation schedule:
 
@@ -254,21 +254,21 @@ Document every API key with rotation schedule:
 }
 ```
 
-Step 10: SaaS Platforms with Built-In Succession Features
+Step 10 - SaaS Platforms with Built-In Succession Features
 
 Several platforms have native successor or emergency access features:
 
-GitHub: GitHub organizations can have multiple owners. Transfer ownership through Settings > Owners. Consider creating a business organization if you currently use a personal account.
+GitHub - GitHub organizations can have multiple owners. Transfer ownership through Settings > Owners. Consider creating a business organization if you currently use a personal account.
 
-AWS: Create a separate "root access" IAM user for your heir. Document the process in your inheritance documentation. Test it works before creating your will.
+AWS - Create a separate "root access" IAM user for your heir. Document the process in your inheritance documentation. Test it works before creating your will.
 
-Stripe: Multiple account owners can be added. Stripe doesn't have an automatic succession feature but allows changing account ownership through the Dashboard.
+Stripe - Multiple account owners can be added. Stripe doesn't have an automatic succession feature but allows changing account ownership through the Dashboard.
 
-Google Workspace: Set up a designated "succession admin" account. Google provides procedures for account recovery and data transfer to designated contacts.
+Google Workspace - Set up a designated "succession admin" account. Google provides procedures for account recovery and data transfer to designated contacts.
 
-Zapier: Create a shared organization account where your heir is co-owner. Important integrations shouldn't depend on your personal account.
+Zapier - Create a shared organization account where your heir is co-owner. Important integrations shouldn't depend on your personal account.
 
-Step 11: Inheritance Testing Protocol
+Step 11 - Inheritance Testing Protocol
 
 Before finalizing your documentation, test that your heir can actually access critical systems:
 
@@ -288,7 +288,7 @@ aws ec2 describe-instances  # Should return your instances
 
 Test GitHub access
 echo "Testing GitHub API..."
-curl -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/user/repos
+curl -H "Authorization - token $GITHUB_TOKEN" https://api.github.com/user/repos
 
 Test domain registrar access
 echo "Verify registrar account access..."
@@ -299,7 +299,7 @@ echo "All critical systems accessible from heir account"
 
 Run this test quarterly to ensure everything still works as inheritance systems change.
 
-Step 12: Post-Inheritance Priorities
+Step 12 - Post-Inheritance Priorities
 
 If you're inheriting digital assets from someone:
 

@@ -25,7 +25,7 @@ Table of Contents
 - [What Is an Identity Graph?](#what-is-an-identity-graph)
 - [How Data Brokers Connect Your Records](#how-data-brokers-connect-your-records)
 - [What Data Brokers Know About You](#what-data-brokers-know-about-you)
-- [Code Example: Simple Identity Resolution](#code-example-simple-identity-resolution)
+- [Code Example - Simple Identity Resolution](#code-example-simple-identity-resolution)
 - [Data Sources Feeding Identity Graphs](#data-sources-feeding-identity-graphs)
 - [How Data Brokers Monetize Your Graph](#how-data-brokers-monetize-your-graph)
 - [Advanced Identity Resolution Techniques](#advanced-identity-resolution-techniques)
@@ -95,7 +95,7 @@ Behavioral Insights
 - Travel patterns
 - Entertainment preferences
 
-Code Example: Simple Identity Resolution
+Code Example - Simple Identity Resolution
 
 Here's a basic example of how identity resolution works at the data level:
 
@@ -165,15 +165,15 @@ How Data Brokers Monetize Your Graph
 
 Once constructed, identity graphs generate revenue through multiple channels:
 
-Marketing Lists: Companies buy lists of prospects matching specific characteristics. Target women aged 25-35 with household income >$100K? That's an identity graph filter.
+Marketing Lists - Companies buy lists of prospects matching specific characteristics. Target women aged 25-35 with household income >$100K? That's an identity graph filter.
 
-Risk Assessment: Insurance companies, banks, and lending platforms buy graphs to assess fraud risk and credit worthiness.
+Risk Assessment - Insurance companies, banks, and lending platforms buy graphs to assess fraud risk and credit worthiness.
 
-Lead Generation: Advertisers buy verified contact information for cold outreach campaigns.
+Lead Generation - Advertisers buy verified contact information for cold outreach campaigns.
 
-Data Enrichment: Services like Clearview AI sell access to identity graphs built from billions of facial recognition matches.
+Data Enrichment - Services like Clearview AI sell access to identity graphs built from billions of facial recognition matches.
 
-Targeted Advertising: Ad networks use graphs to identify users across multiple websites and devices for behavioral targeting.
+Targeted Advertising - Ad networks use graphs to identify users across multiple websites and devices for behavioral targeting.
 
 A person's identity graph might be bought and sold dozens of times, with different companies adding their own data layers and inferences.
 
@@ -181,13 +181,13 @@ Advanced Identity Resolution Techniques
 
 Data brokers use increasingly sophisticated methods beyond basic matching:
 
-Household Inference: If two people share an IP address, appear in the same location data, or share device identifiers, brokers infer they live together and create household-level profiles that track spouses, children, and shared device usage.
+Household Inference - If two people share an IP address, appear in the same location data, or share device identifiers, brokers infer they live together and create household-level profiles that track spouses, children, and shared device usage.
 
-Behavioral Clustering: Machine learning algorithms identify people with similar behavior patterns, websites visited, apps installed, purchase timing, and merge their profiles based on behavioral similarity rather than explicit identifiers.
+Behavioral Clustering - Machine learning algorithms identify people with similar behavior patterns, websites visited, apps installed, purchase timing, and merge their profiles based on behavioral similarity rather than explicit identifiers.
 
-Synthetic Identity Creation: Brokers sometimes create synthetic profiles by combining partial data from multiple individuals. This creates new profiles that may not correspond to any real person but still generate ad revenue.
+Synthetic Identity Creation - Brokers sometimes create synthetic profiles by combining partial data from multiple individuals. This creates new profiles that may not correspond to any real person but still generate ad revenue.
 
-Cross-Device Tracking: When you use your laptop, smartphone, and tablet, different tracking mechanisms operate on each device. Brokers correlate data across devices using probabilistic matching (same WiFi network, login behavior, timing patterns) to create unified profiles.
+Cross-Device Tracking - When you use your laptop, smartphone, and tablet, different tracking mechanisms operate on each device. Brokers correlate data across devices using probabilistic matching (same WiFi network, login behavior, timing patterns) to create unified profiles.
 
 Here's a practical example of cross-device correlation:
 
@@ -225,27 +225,27 @@ Data Broker Inventory
 
 Major identity graph companies include:
 
-Experian/Equifax/TransUnion: Credit bureaus with extensive financial and identity data.
+Experian/Equifax/TransUnion - Credit bureaus with extensive financial and identity data.
 
-Acxiom: One of the largest, with data on over 700 million people. Recently acquired by Interpublic Group.
+Acxiom - One of the largest, with data on over 700 million people. Recently acquired by Interpublic Group.
 
-Clearview AI: Operates the largest facial recognition database, combining billions of photos from social media and public sources.
+Clearview AI - Operates the largest facial recognition database, combining billions of photos from social media and public sources.
 
-Data.com (owned by Salesforce): Business contact and employee information.
+Data.com (owned by Salesforce) - Business contact and employee information.
 
-Spokeo: Aggregates public records and sells identity information for people searches.
+Spokeo - Aggregates public records and sells identity information for people searches.
 
-Pipl: Aggregates identity data from public sources, particularly social media.
+Pipl - Aggregates identity data from public sources, particularly social media.
 
 Monitoring and Removing Your Data
 
 Services like DeleteMe and OneRep automate the opt-out process:
 
-DeleteMe: Manually submits removal requests to major brokers. Cost: $99-129/year. Most thorough but slower.
+DeleteMe - Manually submits removal requests to major brokers. Cost - $99-129/year. Most thorough but slower.
 
-OneRep: Automated scanning and removal. Cost: $99/year for initial removal, $49/year renewal.
+OneRep - Automated scanning and removal. Cost - $99/year for initial removal, $49/year renewal.
 
-Manual Opt-Out: Direct removal requests to individual brokers, time-intensive but free.
+Manual Opt-Out - Direct removal requests to individual brokers, time-intensive but free.
 
 After removal, data often reappears within months as brokers repopulate from new sources. Consider annual re-removal or continuous monitoring subscriptions.
 
@@ -253,15 +253,15 @@ State Privacy Laws and Data Access Rights
 
 Several US states provide rights to access and delete your identity graph data:
 
-California (CCPA/CPRA): Right to access all collected data, delete collected data, and opt-out of sale. Data brokers must honor requests.
+California (CCPA/CPRA) - Right to access all collected data, delete collected data, and opt-out of sale. Data brokers must honor requests.
 
-Virginia (VCDPA): Similar rights, applicable to Virginia residents.
+Virginia (VCDPA) - Similar rights, applicable to Virginia residents.
 
-Colorado (CPA): Right to delete personal data, though brokers can retain data for legitimate business purposes.
+Colorado (CPA) - Right to delete personal data, though brokers can retain data for legitimate business purposes.
 
-Connecticut (CTDPA): Right to access and delete, with exceptions for fraud prevention.
+Connecticut (CTDPA) - Right to access and delete, with exceptions for fraud prevention.
 
-Utah (UCPA): Consumer privacy rights with business exemptions.
+Utah (UCPA) - Consumer privacy rights with business exemptions.
 
 If you live in these states, you can send legal opt-out requests that brokers must honor. Many privacy lawyers offer template letters that brokers respect more than informal requests.
 

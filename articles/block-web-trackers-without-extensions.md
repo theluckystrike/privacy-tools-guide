@@ -28,11 +28,11 @@ This guide covers five layers of tracker blocking. from DNS resolvers and local 
 - Misconfigured blocklists (too many: rules) can add 50-100ms per query.
 - DNS-level blocking: system hosts files, and browser native settings catch most trackers without adding extensions to your browser.
 
-Layer 1: DNS-Level Blocking
+Layer 1 - DNS-Level Blocking
 
 DNS blocking works by refusing to resolve tracker domains. When a page tries to load `googletagmanager.com`, your DNS resolver returns NXDOMAIN (no such domain) instead of the real IP. The request never leaves your network.
 
-Option A: Use a Privacy-Respecting DNS Resolver
+Option A - Use a Privacy-Respecting DNS Resolver
 
 | Resolver | Address | Blocks trackers? |
 |----------|---------|-----------------|
@@ -71,7 +71,7 @@ sudo systemctl restart systemd-resolved
 resolvectl status | grep "DNS over TLS"
 ```
 
-Option B: Run Pi-hole Locally
+Option B - Run Pi-hole Locally
 
 ```bash
 Install Pi-hole
@@ -95,7 +95,7 @@ Pi-hole runs on any Linux machine including a Raspberry Pi Zero W and acts as th
 
 ---
 
-Layer 2: System-Wide Hosts File
+Layer 2 - System-Wide Hosts File
 
 ```bash
 Download Steven Black's hosts file
@@ -103,7 +103,7 @@ sudo curl -o /etc/hosts https://raw.githubusercontent.com/StevenBlack/hosts/mast
 
 Verify
 cat /etc/hosts | grep "googletagmanager.com"
-Should show: 0.0.0.0 googletagmanager.com
+Should show - 0.0.0.0 googletagmanager.com
 
 Keep it updated (add to crontab)
 echo "0 3 * * 0 root curl -s https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts > /etc/hosts" \
@@ -116,7 +116,7 @@ The main limitation is lookup performance at scale: a hosts file with 130,000 en
 
 ---
 
-Layer 3: Browser Native Privacy Settings
+Layer 3 - Browser Native Privacy Settings
 
 Firefox
 
@@ -156,7 +156,7 @@ Safari's Intelligent Tracking Prevention (ITP) uses on-device machine learning t
 
 ---
 
-Layer 4: Firefox Advanced Config
+Layer 4 - Firefox Advanced Config
 
 ```
 Firefox → about:config:
@@ -168,7 +168,7 @@ Additional preferences worth setting in Firefox for a hardened configuration:
 
 ```
 privacy.resistFingerprinting = true
-Reports standardized values for: screen resolution, timezone, font list,
+Reports standardized values for - screen resolution, timezone, font list,
 canvas fingerprint, WebGL renderer, hardware concurrency
 
 geo.enabled = false
@@ -185,7 +185,7 @@ Sends Referer only for same-site navigation (1) vs always (2)
 
 ---
 
-Layer 5: Verify Tracker Blocking
+Layer 5 - Verify Tracker Blocking
 
 ```bash
 Test DNS blocking. these should fail to resolve
@@ -243,7 +243,7 @@ CNAME cloaking is worth understanding in detail. A site can configure `tracking.
 
 ---
 
-Putting It Together: Coverage by Layer
+Putting It Together - Coverage by Layer
 
 The following table shows which tracker types each layer addresses, so you can choose the right combination for your threat model:
 
@@ -261,14 +261,14 @@ For most users, combining AdGuard DNS (or Pi-hole) with Firefox in Strict mode a
 
 ---
 
-Layer 6: Advanced DNS Techniques
+Layer 6 - Advanced DNS Techniques
 
 DNS-over-HTTPS (DoH) for Enforced Privacy
 
 Standard DNS queries are sent in plaintext, your ISP can see every domain you request. DNS-over-HTTPS encrypts DNS queries end-to-end:
 
 ```bash
-Firefox: about:config
+Firefox - about:config
 network.trr.mode = 2  # Strict DoH mode
 network.trr.uri = https://94.140.14.14/dns-query  # AdGuard DoH endpoint
 
@@ -310,7 +310,7 @@ dig @127.0.0.1 example.com
 
 Stubby encrypts all DNS traffic between your machine and the resolver. This adds a security layer but requires local daemon management.
 
-Layer 7: Content Security Policy Inspection
+Layer 7 - Content Security Policy Inspection
 
 Modern sites implement Content Security Policy (CSP) headers that restrict where scripts and resources load from. Examining CSP reveals the tracking infrastructure a site uses:
 
@@ -319,7 +319,7 @@ Check CSP headers
 curl -I https://example.com | grep -i "content-security"
 
 Example CSP output:
-Content-Security-Policy: default-src 'self'; script-src 'self' *.example.com *.analytics.com
+Content-Security-Policy - default-src 'self'; script-src 'self' *.example.com *.analytics.com
 
 Domains after script-src are allowed to inject JavaScript
 Domains referenced in img-src, font-src, etc. can load tracking pixels/fonts
@@ -327,7 +327,7 @@ Domains referenced in img-src, font-src, etc. can load tracking pixels/fonts
 
 Extract and block these domains at the DNS level for that specific site.
 
-Layer 8: Monitoring Your Success
+Layer 8 - Monitoring Your Success
 
 Verify that your blocking is actually working:
 

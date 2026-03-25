@@ -278,13 +278,13 @@ Even with proper client-side permission handling, the data your app transmits to
 
 Server-side best practices for location data:
 
-Precision reduction: Store location at the precision your feature actually requires. If you need neighborhood-level data, round coordinates to 2 decimal places (about 1km precision) rather than storing GPS-accurate coordinates (6 decimal places, about 10cm precision). This minimizes the sensitivity of your stored data.
+Precision reduction - Store location at the precision your feature actually requires. If you need neighborhood-level data, round coordinates to 2 decimal places (about 1km precision) rather than storing GPS-accurate coordinates (6 decimal places, about 10cm precision). This minimizes the sensitivity of your stored data.
 
-Retention limits: Define and enforce retention windows. A delivery tracking app may need location data for 7 days to handle disputes; after that, purge it automatically. Implement database jobs that regularly delete expired location records.
+Retention limits - Define and enforce retention windows. A delivery tracking app may need location data for 7 days to handle disputes; after that, purge it automatically. Implement database jobs that regularly delete expired location records.
 
-Access control: Restrict who in your organization can query raw location data. Use role-based access control and audit logs. Location history is sensitive enough that engineering access to production data should require approval.
+Access control - Restrict who in your organization can query raw location data. Use role-based access control and audit logs. Location history is sensitive enough that engineering access to production data should require approval.
 
-Aggregation before storage: For analytics use cases, aggregate location data into zone-level statistics before persisting it. Instead of storing "user X was at coordinates 40.7128, -74.0060 at 8:34am", store "1 user entered zone Z at 8:30-9:00am block". Individual coordinates are discarded.
+Aggregation before storage - For analytics use cases, aggregate location data into zone-level statistics before persisting it. Instead of storing "user X was at coordinates 40.7128, -74.0060 at 8:34am", store "1 user entered zone Z at 8:30-9:00am block". Individual coordinates are discarded.
 
 ```python
 Python function to reduce coordinate precision
@@ -350,7 +350,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -362,7 +362,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

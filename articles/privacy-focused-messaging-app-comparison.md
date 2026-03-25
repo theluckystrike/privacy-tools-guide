@@ -32,8 +32,8 @@ Comparison Matrix
 
 Signal
 
-Protocol: Signal Protocol (Double Ratchet + X3DH + Sealed Sender)
-Phone number: Required for registration and discovery
+Protocol - Signal Protocol (Double Ratchet + X3DH + Sealed Sender)
+Phone number - Required for registration and discovery
 
 Signal is the baseline. The Signal Protocol provides forward secrecy (each message uses a new key), break-in recovery (future messages secure after compromise), and authenticated encryption. The "sealed sender" feature hides the sender's identity from Signal's servers. the server knows a message was delivered but not who sent it.
 
@@ -47,7 +47,7 @@ Key weaknesses:
 - Signal Foundation is a US entity subject to legal process
 - Sealed sender reduces but doesn't eliminate metadata. traffic analysis can correlate timing
 
-Best for: Most users who want strong encryption with a smooth UX and don't need censorship resistance.
+Best for - Most users who want strong encryption with a smooth UX and don't need censorship resistance.
 
 ```bash
 Verify Signal's open-source builds match official APK (Android)
@@ -60,8 +60,8 @@ Compare certificate fingerprint with published value at signal.org/android/apk/
 
 SimpleX Chat
 
-Protocol: SimpleX Protocol (built on Signal primitives)
-Phone number: Not required. no user identifiers at all
+Protocol - SimpleX Protocol (built on Signal primitives)
+Phone number - Not required. no user identifiers at all
 
 SimpleX takes a radical approach: users have no global identity. Instead, you create per-contact one-time invitation links. If someone gets your link without your knowledge, they can start a conversation, but you don't have a persistent "address" that maps to a global account.
 
@@ -98,18 +98,18 @@ Configure users' clients to use your server as relay
 Settings > Network > SMP Servers > Add server: smp://fingerprint@your.server.com
 ```
 
-Best for: Journalists and activists who need to contact sources without revealing an identifier, or share a one-time contact link in a high-risk context.
+Best for - Journalists and activists who need to contact sources without revealing an identifier, or share a one-time contact link in a high-risk context.
 
 ---
 
 Briar
 
-Protocol: Bramble Transport Protocol
-Infrastructure: None required (P2P over Tor, Wi-Fi, Bluetooth)
+Protocol - Bramble Transport Protocol
+Infrastructure - None required (P2P over Tor, Wi-Fi, Bluetooth)
 
 Briar stores messages locally on devices, never on a central server. Messages are routed over Tor (internet), local Wi-Fi, or Bluetooth. whichever is available. This makes it uniquely useful in internet shutdowns or when internet access is too risky.
 
-What servers see: Nothing. there are no Briar servers for message routing.
+What servers see - Nothing. there are no Briar servers for message routing.
 
 Tor circuit routing:
 
@@ -125,16 +125,16 @@ Key weaknesses:
 - Group features more limited than Signal/Element
 - Android only (iOS support limited)
 
-Best for: Censorship-critical environments where internet may be unavailable or surveilled at the ISP level.
+Best for - Censorship-critical environments where internet may be unavailable or surveilled at the ISP level.
 
 ---
 
 Element / Matrix
 
-Protocol: Matrix federation protocol
-Infrastructure: Federated (like email. multiple servers)
+Protocol - Matrix federation protocol
+Infrastructure - Federated (like email. multiple servers)
 
-Matrix is federated: you run your own homeserver (Synapse, Dendrite, or Conduit), and it federates with other servers. You can communicate across servers without trusting a central authority.
+Matrix is federated - you run your own homeserver (Synapse, Dendrite, or Conduit), and it federates with other servers. You can communicate across servers without trusting a central authority.
 
 What your homeserver sees:
 - All unencrypted room content (if E2EE is not enabled)
@@ -171,14 +171,14 @@ Key weaknesses:
 - Disabling federation requires all contacts to use your server
 - Synapse has had multiple security vulnerabilities; keep it updated
 
-Best for: Teams who want Slack-like functionality with E2EE and don't need to trust a third-party server.
+Best for - Teams who want Slack-like functionality with E2EE and don't need to trust a third-party server.
 
 ---
 
 Session
 
-Protocol: Session Protocol (based on Signal Protocol)
-Phone number: Not required. Session ID (public key) is your address
+Protocol - Session Protocol (based on Signal Protocol)
+Phone number - Not required. Session ID (public key) is your address
 
 Session removes phone numbers. Your identity is an Ed25519 public key. Messages are routed through the Session Network (Lokinet), a decentralized overlay network run by staked node operators.
 
@@ -191,7 +191,7 @@ Key weaknesses:
 - Smaller user base than Signal (fewer contacts already using it)
 - No perfect forward secrecy in the classic Double Ratchet sense for closed groups
 
-Best for: Users who need phone-number-free accounts and want decentralized infrastructure without running their own server.
+Best for - Users who need phone-number-free accounts and want decentralized infrastructure without running their own server.
 
 ---
 
@@ -215,15 +215,15 @@ Common Privacy Mistakes Across All Apps
 Turn off cloud backup in settings. local backup to encrypted drive only
 
 2. Linked devices expand your attack surface
-Audit linked devices regularly: Signal > Settings > Linked Devices
+Audit linked devices regularly - Signal > Settings > Linked Devices
 
 3. Screen security. disable message previews in notifications
 Prevents lock screen leakage and screen capture by surveillance software
 
 4. Disappearing messages
 Enable for all sensitive conversations; set appropriate timer
-Signal: per-conversation or global default
-SimpleX: per-conversation disappearing messages
+Signal - per-conversation or global default
+SimpleX - per-conversation disappearing messages
 ```
 
 ---

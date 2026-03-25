@@ -41,18 +41,18 @@ lezhin:
 
 Common Issues and Solutions
 
-Issue: Video not loading despite Korean IP
+Issue - Video not loading despite Korean IP
 - Clear browser cache and cookies
 - Disable all browser extensions
 - Try incognito mode
 - Check if the platform requires Korean payment for premium content
 
-Issue: Intermittent connection drops
+Issue - Intermittent connection drops
 - Enable kill switch in your VPN client
 - Try different VPN protocols (WireGuard if available)
 - Check if your provider has server congestion
 
-Issue: Platform detects VPN usage
+Issue - Platform detects VPN usage
 - Switch to a dedicated IP if available
 - Try a different Korean server
 - Ensure DNS is properly configured

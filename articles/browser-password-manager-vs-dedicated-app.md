@@ -20,9 +20,9 @@ Choose a dedicated password manager if you need CLI access, cross-browser sync, 
 
 Table of Contents
 
-- [The Security Model: Where Your Data Lives](#the-security-model-where-your-data-lives)
+- [The Security Model - Where Your Data Lives](#the-security-model-where-your-data-lives)
 - [Quick Comparison](#quick-comparison)
-- [Command-Line Access: The Developer Requirement](#command-line-access-the-developer-requirement)
+- [Command-Line Access - The Developer Requirement](#command-line-access-the-developer-requirement)
 - [API Keys and Secret Management](#api-keys-and-secret-management)
 - [Browser Extension Limitations](#browser-extension-limitations)
 - [Practical Integration Patterns](#practical-integration-patterns)
@@ -34,12 +34,12 @@ Table of Contents
 - [Performance Considerations](#performance-considerations)
 - [Migration Strategies](#migration-strategies)
 - [The Economics of Password Manager Selection](#the-economics-of-password-manager-selection)
-- [Advanced Features: Distinguishing Premium Managers](#advanced-features-distinguishing-premium-managers)
+- [Advanced Features - Distinguishing Premium Managers](#advanced-features-distinguishing-premium-managers)
 - [Security Incident Response Patterns](#security-incident-response-patterns)
 - [Regulatory and Compliance Considerations](#regulatory-and-compliance-considerations)
 - [Integration with Infrastructure Automation](#integration-with-infrastructure-automation)
 
-The Security Model: Where Your Data Lives
+The Security Model - Where Your Data Lives
 
 Browser password managers store credentials within the browser's encrypted vault. Chrome uses OS-level encryption through the Data Protection API on Windows and Keychain on macOS. Firefox employs a master password system that encrypts your logins using AES-256 before storage. The encryption key derivation typically uses PBKDF2 with a configurable iteration count.
 
@@ -62,7 +62,7 @@ Quick Comparison
 | Platform Support | Cross-platform | Cross-platform |
 | Compliance | See documentation | See documentation |
 
-Command-Line Access: The Developer Requirement
+Command-Line Access - The Developer Requirement
 
 The practical difference becomes apparent when you need programmatic access. Browser password managers lack native CLI tools. While Chrome and Firefox store credentials in SQLite databases that are technically accessible, querying them requires workarounds and breaks when browsers update their schema.
 
@@ -193,7 +193,7 @@ Comparing Popular Dedicated Password Managers
 
 Understanding the specific tradeoffs between popular dedicated solutions helps you choose the right tool for your needs.
 
-Bitwarden is open-source and transparent with pricing ($10/year for individuals, $40/year for families). The CLI is fully featured, supports self-hosting, and provides team sharing with audit logs. The ecosystem includes browser extensions, mobile apps, and desktop clients. For developers, Bitwarden's export functionality and API make it easy to migrate between managers. The main limitation is that the free tier doesn't support organization/team features.
+Bitwarden is open-source and transparent with pricing ($10/year for individuals, $40/year for families). The CLI is fully featured, supports self-hosting, and provides team sharing with audit logs. The environment includes browser extensions, mobile apps, and desktop clients. For developers, Bitwarden's export functionality and API make it easy to migrate between managers. The main limitation is that the free tier doesn't support organization/team features.
 
 1Password costs $2.99/month for individuals ($4.99 with advanced features) or $5.99/user/month for teams. It includes strong CLI support, security-focused design, and excellent team collaboration features. The company's transparency reports and third-party security audits provide confidence. The drawback is that 1Password is proprietary with no self-hosting option, your vaults live only on their servers.
 
@@ -251,7 +251,7 @@ Migration Strategies
 
 Moving credentials from a browser manager to a dedicated app requires careful planning to avoid security gaps. Most browsers provide export functions, though the output is typically unencrypted CSV, creating a security risk if intercepted or left on disk.
 
-Better approach: use the browser's import functions in the dedicated manager:
+Better approach - use the browser's import functions in the dedicated manager:
 
 ```bash
 Export from Chrome (outputs encrypted export)
@@ -272,7 +272,7 @@ When evaluating which manager to use long-term, consider total cost of ownership
 
 Most developers find that paying for a premium manager ($30-50/year) is worthwhile compared to the time spent managing password security manually. The investment returns itself within weeks through automation efficiency.
 
-Advanced Features: Distinguishing Premium Managers
+Advanced Features - Distinguishing Premium Managers
 
 Beyond basic password storage, premium managers offer capabilities essential for developers:
 
@@ -309,13 +309,13 @@ Regulatory and Compliance Considerations
 
 For organizations handling sensitive data, password manager selection affects compliance:
 
-HIPAA (Healthcare): Requires encryption for healthcare data. Business associate agreements with password managers may be necessary. Some managers offer BAA-compliant tiers with additional compliance features.
+HIPAA (Healthcare) - Requires encryption for healthcare data. Business associate agreements with password managers may be necessary. Some managers offer BAA-compliant tiers with additional compliance features.
 
-SOC 2: Third-party security audits evaluate password manager security. Bitwarden and 1Password have published SOC 2 Type II reports. Browser-based managers lack independent audits.
+SOC 2 - Third-party security audits evaluate password manager security. Bitwarden and 1Password have published SOC 2 Type II reports. Browser-based managers lack independent audits.
 
-GDPR (EU): Requires clear data processing agreements. Dedicated managers provide these; browser managers may not have formalized agreements.
+GDPR (EU) - Requires clear data processing agreements. Dedicated managers provide these; browser managers may not have formalized agreements.
 
-PCI-DSS: Payment card data cannot be stored in consumer-grade managers. Only managers with enterprise security certifications can store PCI-regulated data.
+PCI-DSS - Payment card data cannot be stored in consumer-grade managers. Only managers with enterprise security certifications can store PCI-regulated data.
 
 For most developers, these compliance requirements don't apply. However, developers working in regulated industries must ensure their password manager meets specific compliance obligations.
 

@@ -20,14 +20,14 @@ Crossing international borders with a smartphone containing sensitive code, API 
 
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- Travel legal assistance #: - Services like TravelSOS provide emergency legal support # - Include in travel planning # - Cost: $50-200/year # 3.
-- Cyber liability insurance #: - Covers legal defense for device seizure # - Examples: Chubb, AIG, Hiscox # - Cost: $200-500/year # 2.
+- Travel legal assistance #: - Services like TravelSOS provide emergency legal support # - Include in travel planning # - Cost - $50-200/year # 3.
+- Cyber liability insurance #: - Covers legal defense for device seizure # - Examples - Chubb, AIG, Hiscox # - Cost: $200-500/year # 2.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
 - Use Tresorit: Sync.com, or pCloud (E2E encryption)
 2.
 - I refuse to provide: encryption keys on the grounds that: 1.
 
-United States: Broad Powers with Limits
+United States - Broad Powers with Limits
 
 US Customs and Border Protection (CBP) operates under Section 311 of the Tariff Act, which grants officers authority to search electronic devices without a warrant at the border. This applies to both US citizens and foreign nationals entering the country.
 
@@ -42,9 +42,9 @@ What you should know:
 - Warrantless searches at the border are considered constitutional under the "border search exception"
 - Refusing to provide a password can result in denial of entry (for non-citizens) or civil penalties
 
-Practical tip: Enable a secondary device profile or use a separate work phone when traveling. Many developers maintain a "clean" device with minimal data for border crossings.
+Practical tip - Enable a secondary device profile or use a separate work phone when traveling. Many developers maintain a "clean" device with minimal data for border crossings.
 
-European Union: GDPR Provides Some Protection
+European Union - GDPR Provides Some Protection
 
 EU border searches operate under national laws transposed from the Schengen Border Code. The rules vary between member states, but GDPR provides a baseline of data protection that affects how border searches can be conducted.
 
@@ -58,7 +58,7 @@ Country-specific notes:
 - France: Officers can demand passwords; penalties for refusal include seizure and fines
 - Netherlands: Border checks allow device inspection, though forensic copies require approval
 
-United Kingdom: Investigatory Powers Act extends to Borders
+United Kingdom - Investigatory Powers Act extends to Borders
 
 The UK Home Office operates under the Investigatory Powers Act 2016, which provides broad surveillance authority. At borders, customs officers can examine devices under the Borders Act 2007.
 
@@ -67,9 +67,9 @@ UK border search rules:
 - Refusal to comply may result in denial of entry
 - More invasive forensic examination requires senior authorization
 
-Post-Brexit changes: UK citizens returning from the EU may face reciprocal searches in both directions. The UK has increased border security resources for device examination.
+Post-Brexit changes - UK citizens returning from the EU may face reciprocal searches in both directions. The UK has increased border security resources for device examination.
 
-Canada: Growing Digital Search Authority
+Canada - Growing Digital Search Authority
 
 The Canada Border Services Agency (CBSA) has expanded its digital search capabilities. Under the Customs Act, officers can examine goods, including digital content, without a warrant.
 
@@ -79,9 +79,9 @@ Canada's approach:
 - The ARREST Act (Bill C-21) proposed expanded authorities for warrantless searches of devices
 - Parliamentary reviews continue to debate the balance between security and privacy
 
-Recent developments: CBSA has deployed mobile device forensic tools at major international airports. Expect more thorough searches as equipment improves.
+Recent developments - CBSA has deployed mobile device forensic tools at major international airports. Expect more thorough searches as equipment improves.
 
-Australia: Strict Border Controls for Digital Devices
+Australia - Strict Border Controls for Digital Devices
 
 Australia maintains some of the toughest border search powers in the Five Eyes alliance. The Customs Act 1901 and related regulations grant extensive authority.
 
@@ -91,7 +91,7 @@ Australian border search powers:
 - Penalties include fines up to AUD $5,500 and potential criminal charges
 - The Assistance and Access Act 2018 can compel technical assistance with device decryption
 
-What developers should note: Australia has mandatory metadata retention laws, and border devices may be cross-referenced with telecommunications data.
+What developers should note - Australia has mandatory metadata retention laws, and border devices may be cross-referenced with telecommunications data.
 
 Technical Protection Strategies
 
@@ -120,7 +120,7 @@ Activate airplane mode before landing and keep it on until clear of customs area
 
 ```bash
 iOS: Use Shortcuts to create a quick toggle
-Android: Long-press airplane icon for immediate activation
+Android - Long-press airplane icon for immediate activation
 Physical switch on some devices provides certainty
 ```
 
@@ -190,23 +190,23 @@ sudo fdesetup enable -user $(whoami)
 Verify encryption status
 sudo fdesetup status
 
-Linux: LUKS full-disk encryption (most private)
+Linux - LUKS full-disk encryption (most private)
 During installation, select encrypted filesystem
 Verify LUKS status
 sudo cryptsetup luksDump /dev/sda1
 
-Windows: BitLocker (Pro/Enterprise editions only)
-Home edition: Use VeraCrypt for full-disk alternative
+Windows - BitLocker (Pro/Enterprise editions only)
+Home edition - Use VeraCrypt for full-disk alternative
 manage-bde -status C:
 
 iOS: Enabled by default with passcode
-Verify: Settings → Privacy → Face ID/Touch ID
+Verify - Settings → Privacy → Face ID/Touch ID
 
-Android: Enabled by default on modern versions
-Verify: Settings → Security → Encryption
+Android - Enabled by default on modern versions
+Verify - Settings → Security → Encryption
 ```
 
-The critical point: Full-disk encryption makes it nearly impossible for customs agents to access data without your password. This is your strongest protection.
+The critical point - Full-disk encryption makes it nearly impossible for customs agents to access data without your password. This is your strongest protection.
 
 Hidden Volume Configuration with Plausible Deniability
 
@@ -234,25 +234,25 @@ This provides plausible deniability:
 - Hidden volume remains protected and undetectable
 ```
 
-Important caveat: Using hidden volumes might raise suspicion, and lying to authorities carries legal risks. This technique is legitimate for protecting against unauthorized access, but understand the legal implications in your jurisdiction.
+Important caveat - Using hidden volumes might raise suspicion, and lying to authorities carries legal risks. This technique is legitimate for protecting against unauthorized access, but understand the legal implications in your jurisdiction.
 
 Tiered Device Architecture
 
 Rather than keeping all sensitive data on one device:
 
 ```bash
-Tier 1: Travel Device (minimal data)
+Tier 1 - Travel Device (minimal data)
 - Only necessary business documents
 - No source code, no API keys
 - Clean browser history
 - Minimal app installation
 
-Tier 2: Secure Home Device (sensitive but not critical)
+Tier 2 - Secure Home Device (sensitive but not critical)
 - Work projects in active development
 - Encrypted containers with project files
 - Does NOT travel internationally
 
-Tier 3: Offline Storage (maximum critical data)
+Tier 3 - Offline Storage (maximum critical data)
 - Hardware wallet (for cryptocurrency)
 - Air-gapped encryption key storage
 - Stored securely at home/office
@@ -335,8 +335,8 @@ class SecureFileDestruction:
 
 Command-line tools for secure deletion
 macOS: `srm -rf /path/to/sensitive/data`
-Linux: `shred -vfz -n 7 /path/to/file`
-Windows: `cipher /w:C:` (erases free space)
+Linux - `shred -vfz -n 7 /path/to/file`
+Windows - `cipher /w:C:` (erases free space)
 ```
 
 Cross-Border Data Transfer Considerations
@@ -346,7 +346,7 @@ If you need to carry sensitive data across borders:
 Encrypted Cloud Storage vs. Physical Transport
 
 ```bash
-Option 1: Cloud-based with encryption
+Option 1 - Cloud-based with encryption
 Advantages:
 - No physical device to seize
 - Data remains on secure servers
@@ -361,9 +361,9 @@ Recommended approach:
 
 Implementation:
 tresorit-cli upload /path/to/sensitive/documents
-Document password: [store in password manager]
+Document password - [store in password manager]
 
-Option 2: Physical encrypted device
+Option 2 - Physical encrypted device
 Advantages:
 - No cloud provider access
 - Works offline
@@ -415,8 +415,8 @@ If my device is seized:
 
 DEVICE OWNER:
 Name: [Your Name]
-Email: [Your Email]
-Attorney Contact: [Attorney Name/Number]
+Email - [Your Email]
+Attorney Contact - [Attorney Name/Number]
 EOF
 
 Print this and keep with your device

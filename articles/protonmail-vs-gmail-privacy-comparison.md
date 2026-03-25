@@ -66,7 +66,7 @@ const gmailEncryption = {
 };
 ```
 
-The key distinction: ProtonMail's zero-access model means they physically cannot read your emails. Gmail's encryption protects against external attackers but Google retains the ability to process message content internally.
+The key distinction - ProtonMail's zero-access model means they physically cannot read your emails. Gmail's encryption protects against external attackers but Google retains the ability to process message content internally.
 
 Quick Comparison
 
@@ -92,14 +92,14 @@ Key data ownership points:
 - Bug bounty program for security research
 
 ```bash
-ProtonMail's commitment: no backdoors
+ProtonMail's commitment - no backdoors
 Swiss laws prohibit compelled decryption without:
 1. Swiss court order
 2. Applicable to Swiss residents only
 3. Cannot be enforced for foreign entities
 ```
 
-Gmail Data Ecosystem
+Gmail Data environment
 
 Gmail's free model relies on data collection. While Google has disabled personalized advertising in Gmail, the infrastructure still processes content for:
 - Spam filtering (necessary service)
@@ -130,7 +130,7 @@ Available API capabilities:
 
 The Bridge application provides IMAP/SMTP access for desktop clients, but requires a paid ProtonMail subscription.
 
-Gmail API Ecosystem
+Gmail API environment
 
 Gmail provides API access through Google Cloud:
 
@@ -165,16 +165,16 @@ For developers building email-dependent applications, Gmail's API maturity and d
 
 Self-Hosting Considerations
 
-ProtonMail Alternative: Self-Hosted Email
+ProtonMail Alternative - Self-Hosted Email
 
 ProtonMail's parent company offers [Proton Mailbox](https://github.com/ProtonMail/proton-mailbox), but true self-hosting typically involves:
 
 ```bash
 Common self-hosted email stack
-Mailserver: Mailu, Docker-mailserver, or Mail-in-a-Box
-Webmail: Roundcube, SOGo, or Rainloop
-IMAP: Dovecot
-SMTP: Postfix with OpenDKIM, OpenDMARC
+Mailserver - Mailu, Docker-mailserver, or Mail-in-a-Box
+Webmail - Roundcube, SOGo, or Rainloop
+IMAP - Dovecot
+SMTP - Postfix with OpenDKIM, OpenDMARC
 
 Mailu basic setup
 mailu:
@@ -197,7 +197,7 @@ Gmail through Google Workspace provides managed infrastructure with:
 - Google Drive integration
 - Admin controls and audit logs
 
-The trade-off is clear: managed service versus full control.
+The trade-off is clear - managed service versus full control.
 
 Practical Decision Framework
 
@@ -210,7 +210,7 @@ Choose ProtonMail when:
 
 Choose Gmail when:
 - API-driven automation is central to your workflow
-- Integration with Google Workspace ecosystem is valuable
+- Integration with Google Workspace environment is valuable
 - Deliverability and spam handling are critical
 - Free tier meets your needs
 - Team collaboration features take priority

@@ -65,7 +65,7 @@ Cloud servers behind load balancers or NAT configurations also benefit. Many clo
 
 Mobile devices present another common scenario. Cellular networks and WiFi networks both use aggressive NAT timeout values to conserve resources. Without persistent keepalive, your VPN connection will almost certainly drop when the device sleeps or when switching between networks.
 
-Testing is straightforward: connect your WireGuard tunnel, let it sit idle for a few minutes, then try to ping or SSH into the client from the server. If the connection fails but resumes after generating traffic from the client side, you have a NAT timeout issue that persistent keepalive solves.
+Testing is straightforward - connect your WireGuard tunnel, let it sit idle for a few minutes, then try to ping or SSH into the client from the server. If the connection fails but resumes after generating traffic from the client side, you have a NAT timeout issue that persistent keepalive solves.
 
 When You Can Skip It
 
@@ -197,7 +197,7 @@ echo "=== NAT Timeout Detection ==="
 echo "This script tests when your NAT drops connections"
 echo ""
 
-Requires two machines: one inside NAT, one outside
+Requires two machines - one inside NAT, one outside
 Run from the inside-NAT device
 
 TARGET_SERVER="vpn.example.com"

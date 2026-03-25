@@ -26,7 +26,7 @@ The regulation requires you to process data lawfully, transparently, and for spe
 
 Three GDPR articles directly govern logging practices. Article 5 establishes the principles of data minimization and storage limitation. Article 17 grants data subjects the right to erasure, which extends to log files. Article 25 mandates privacy by design, meaning you cannot bolt on compliance later, it must be baked into your logging architecture from the start.
 
-Data Minimization: Log Only What You Need
+Data Minimization - Log Only What You Need
 
 The principle of data minimization is your starting point. Collect the minimum amount of personal data necessary for debugging and security monitoring. Ask yourself: does each log field serve a concrete purpose?
 
@@ -74,8 +74,8 @@ function sanitizeUserContext(user) {
 For IP addresses, consider truncating or masking:
 
 ```python
-IPv4: keep first two octets (e.g., 192.168.0.0)
-IPv6: keep first 64 bits
+IPv4 - keep first two octets (e.g., 192.168.0.0)
+IPv6 - keep first 64 bits
 def anonymize_ip(ip):
     if ':' in ip:  # IPv6
         return ip.split(':')[:4] + ['0'] * 4
@@ -214,13 +214,13 @@ Common GDPR Logging Pitfalls
 
 Teams frequently encounter the same mistakes when retrofitting GDPR compliance onto existing logging infrastructure:
 
-Logging full request bodies: Even if the body contains primarily non-personal data, POST bodies often include names, addresses, or payment details. Log request paths and response codes rather than bodies, and add specific instrumentation only for non-PII fields you genuinely need for debugging.
+Logging full request bodies - Even if the body contains primarily non-personal data, POST bodies often include names, addresses, or payment details. Log request paths and response codes rather than bodies, and add specific instrumentation only for non-PII fields you genuinely need for debugging.
 
 Assuming internal logs are out of scope: GDPR applies to all personal data processing, regardless of whether the system is customer-facing. Internal administrative tools that log employee data or support staff activity are subject to the same requirements.
 
 Forgetting third-party log aggregators: If you ship logs to Datadog, Splunk, Loggly, or similar services, those vendors become data processors under GDPR. Ensure you have a Data Processing Agreement (DPA) in place and that the vendor's storage regions comply with your transfer obligations.
 
-Relying on log rotation alone: Log rotation manages file sizes but does not guarantee deletion of specific user records within a log file. For granular erasure compliance, you need either field-level pseudonymization that can be invalidated, or a structured log store that supports record-level deletion.
+Relying on log rotation alone - Log rotation manages file sizes but does not guarantee deletion of specific user records within a log file. For granular erasure compliance, you need either field-level pseudonymization that can be invalidated, or a structured log store that supports record-level deletion.
 
 GDPR-compliant logging starts with intentional, privacy-aware design rather than capturing everything and filtering later. Audit your current logs for personal data, implement pseudonymization for user identifiers, establish clear retention policies, and ensure your logging infrastructure supports data subject requests.
 

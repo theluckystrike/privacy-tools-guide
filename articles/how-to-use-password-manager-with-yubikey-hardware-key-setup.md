@@ -50,13 +50,13 @@ Setting Up Bitwarden with YubiKey
 
 Bitwarden offers free support for FIDO2 authentication, making it an excellent choice for budget-conscious users who want hardware key protection.
 
-Step 1: Enable Two-Step Login in Bitwarden
+Step 1 - Enable Two-Step Login in Bitwarden
 
 Log into your Bitwarden vault through the web interface. Navigate to Settings → Two-Step Login. You'll see available two-step methods listed. Locate FIDO2 WebAuthn in the list and click the toggle to enable it.
 
 Bitwarden will prompt you to register your YubiKey. Insert your YubiKey into an USB port when prompted. When the browser requests access to your security key, touch the golden contact on your YubiKey when it pulses. This touch confirms your physical presence and completes the registration.
 
-Step 2: Verify the Setup
+Step 2 - Verify the Setup
 
 After registration, test the setup by logging out and logging back in. When prompted for your master password, Bitwarden will request your second factor. Select your YubiKey from the available options, insert it if not already connected, and touch the sensor to authenticate.
 
@@ -68,7 +68,7 @@ bw login your@email.com
 
 The CLI will output a URL to open in your browser. After authenticating with your YubiKey, return to the CLI and enter the generated code to unlock your vault.
 
-Step 3: Add a Backup YubiKey
+Step 3 - Add a Backup YubiKey
 
 Hardware keys can fail or be lost. Bitwarden allows registering multiple FIDO2 keys. Register a second YubiKey following the same process, storing it in a secure location. This ensures you maintain access if your primary key is lost or damaged.
 
@@ -76,15 +76,15 @@ Setting Up 1Password with YubiKey
 
 1Password requires a paid subscription for YubiKey support, but provides a polished integration experience.
 
-Step 1: Access Security Settings
+Step 1 - Access Security Settings
 
 Open the 1Password desktop application. Click your account name → Settings → Security. Under "Two-Factor Authentication," locate the option to add a security key.
 
-Step 2: Register Your YubiKey
+Step 2 - Register Your YubiKey
 
 Click "Add Security Key" and follow the prompts. Insert your YubiKey when asked, then touch the sensor to complete registration. 1Password will display a confirmation showing your key's name and the date added.
 
-Step 3: Configure Browser Extension
+Step 3 - Configure Browser Extension
 
 The 1Password browser extension handles YubiKey differently. During authentication in the browser, 1Password will prompt you to connect your YubiKey. The extension uses WebAuthn, which works natively in Chrome, Firefox, and Edge without additional configuration.
 

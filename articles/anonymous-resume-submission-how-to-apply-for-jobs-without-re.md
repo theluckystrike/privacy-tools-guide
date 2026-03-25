@@ -44,7 +44,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Remove Personal Identifiers from Your Resume
+Step 1 - Remove Personal Identifiers from Your Resume
 
 The first step involves editing your resume to remove information that directly identifies you. This goes beyond simply using a pseudonym.
 
@@ -69,7 +69,7 @@ Include information that demonstrates your qualifications:
 - Education credentials
 - Portfolio links to anonymous GitHub or code samples
 
-Step 2: Create Anonymous Contact Channels
+Step 2 - Create Anonymous Contact Channels
 
 Before submitting applications, establish separate communication channels that protect your primary identity.
 
@@ -100,7 +100,7 @@ Burner phones work for those requiring maximum separation. Purchase a prepaid ph
 
 Skype or similar services provide VoIP numbers that mask your real number while remaining functional for interviews.
 
-Step 3: Use Privacy-Focused Job Platforms
+Step 3 - Use Privacy-Focused Job Platforms
 
 Certain platforms specialize in or support anonymous applications.
 
@@ -120,7 +120,7 @@ Several job boards allow partial anonymity:
 - RemoteOK focuses on remote work and maintains privacy standards
 - AngelList (Wellfound) allows anonymous applications to startups
 
-Step 4: Email Masking and Forwarding Services
+Step 4 - Email Masking and Forwarding Services
 
 For additional privacy, consider email masking services that hide your actual email address while maintaining communication flow.
 
@@ -129,19 +129,19 @@ Simple Email Forwarding
 Most email providers support aliases:
 
 ```bash
-Gmail: Use the plus addressing trick
-Send to: yourname+company@email.com
+Gmail - Use the plus addressing trick
+Send to - yourname+company@email.com
 This filters to your main inbox but appears unique to each recipient
 
 Gmail also supports creating aliases without a plus sign
-Visit: Account Settings → Create a new email address
+Visit - Account Settings → Create a new email address
 ```
 
 Privacy Email Services
 
 Services like 33Mail or Firefox Relay create disposable email addresses that forward to your real inbox while hiding your actual address from recipients.
 
-Step 5: Handling Employer Name Anonymity
+Step 5 - Handling Employer Name Anonymity
 
 When your current employer is a well-known company, you have several options:
 
@@ -166,7 +166,7 @@ Software Engineer | Fortune 500 Technology Company | 2020-Present
 
 Verify whether this approach fits your target company's application requirements. Some employers specifically request complete work history.
 
-Step 6: LinkedIn Privacy During Job Search
+Step 6 - LinkedIn Privacy During Job Search
 
 Your LinkedIn activity can reveal your job search intentions. Adjust your settings before beginning:
 
@@ -177,7 +177,7 @@ Your LinkedIn activity can reveal your job search intentions. Adjust your settin
 
 Create a new LinkedIn account if maintaining complete separation is critical. This approach requires building connections from scratch but provides absolute privacy.
 
-Step 7: Code Portfolios Without Personal Identity
+Step 7 - Code Portfolios Without Personal Identity
 
 For developer positions, your portfolio demonstrates capability. Create anonymous GitHub profiles:
 
@@ -185,7 +185,7 @@ Anonymous GitHub Setup
 
 ```bash
 Create a new GitHub account with professional but anonymous username
-Examples: dev-portfolio-2024, code-samples-dev, anonymous-dev
+Examples - dev-portfolio-2024, code-samples-dev, anonymous-dev
 
 Configure git for anonymous commits
 git config --global user.name "Portfolio User"

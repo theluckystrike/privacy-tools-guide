@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Zoom Bombing Attack Vectors
+Step 1 - Understand Zoom Bombing Attack Vectors
 
 Before implementing defenses, recognize how zoom bombing attacks succeed. The primary attack vectors include:
 
@@ -47,7 +47,7 @@ Before implementing defenses, recognize how zoom bombing attacks succeed. The pr
 
 Each vulnerability represents a configuration option you can disable or strengthen.
 
-Step 2: Essential Security Settings for Zoom Meetings
+Step 2 - Essential Security Settings for Zoom Meetings
 
 Account-Level Security Configuration
 
@@ -75,7 +75,7 @@ When scheduling individual meetings, apply these settings:
 3. Lock the meeting: Once all expected participants have joined, lock the meeting to prevent additional joins
 4. Restrict screen sharing: Limit to host only or designated presenters
 
-Step 3: Use Zoom CLI for Automated Meeting Security
+Step 3 - Use Zoom CLI for Automated Meeting Security
 
 For developers who want to script meeting creation with security baked in, the Zoom CLI (part of the Zoom SDK) provides programmatic control. While Zoom doesn't offer a direct CLI for end users, you can use the Zoom API with curl or your preferred HTTP client.
 
@@ -118,7 +118,7 @@ curl -X POST "https://api.zoom.us/v2/users/me/meetings" \
 
 This API call creates a meeting with waiting room enabled, join-before-host disabled, and geographic restrictions applied.
 
-Step 4: Implementing a Meeting Security Script
+Step 4 - Implementing a Meeting Security Script
 
 Create a shell script that generates secure meeting credentials and logs them to your password manager or secure storage:
 
@@ -157,7 +157,7 @@ op item create --category=login "Zoom Meeting $(date +%Y-%m-%d)" \
   password="$MEETING_PASSWORD" url="https://zoom.us/j/YOUR-MEETING-ID"
 ```
 
-Step 5: Real-Time Meeting Security Commands
+Step 5 - Real-Time Meeting Security Commands
 
 During an active meeting, hosts can execute several security actions:
 

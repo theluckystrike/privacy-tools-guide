@@ -21,13 +21,13 @@ OpenWRT provides powerful network isolation capabilities that go beyond simple W
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Step 1: Create the Guest Network Interface](#step-1-create-the-guest-network-interface)
-- [Step 2: Configure Separate DNS Resolution](#step-2-configure-separate-dns-resolution)
-- [Step 3: Set Up Wireless for Guest Access](#step-3-set-up-wireless-for-guest-access)
-- [Step 4: Configure Firewall Isolation Rules](#step-4-configure-firewall-isolation-rules)
-- [Step 5: Apply and Verify Configuration](#step-5-apply-and-verify-configuration)
+- [Step 1 - Create the Guest Network Interface](#step-1-create-the-guest-network-interface)
+- [Step 2 - Configure Separate DNS Resolution](#step-2-configure-separate-dns-resolution)
+- [Step 3 - Set Up Wireless for Guest Access](#step-3-set-up-wireless-for-guest-access)
+- [Step 4 - Configure Firewall Isolation Rules](#step-4-configure-firewall-isolation-rules)
+- [Step 5 - Apply and Verify Configuration](#step-5-apply-and-verify-configuration)
 - [Testing the Setup](#testing-the-setup)
-- [Advanced: VLAN-Based Isolation](#advanced-vlan-based-isolation)
+- [Advanced - VLAN-Based Isolation](#advanced-vlan-based-isolation)
 - [Preventing DNS Leaks on the Guest Network](#preventing-dns-leaks-on-the-guest-network)
 - [Captive Portal for Guest Authentication](#captive-portal-for-guest-authentication)
 - [Rate Limiting and Bandwidth Fairness](#rate-limiting-and-bandwidth-fairness)
@@ -41,7 +41,7 @@ Before starting, ensure you have:
 - SSH access to the router
 - A secondary WiFi interface or VLAN-capable hardware
 
-Step 1: Create the Guest Network Interface
+Step 1 - Create the Guest Network Interface
 
 Using the command line, create a new interface for guest devices. Edit `/etc/config/network`:
 
@@ -69,7 +69,7 @@ config dhcp 'guest'
 
 This allocates IPs 10.0.2.100-10.0.2.249 to guests and assigns Cloudflare and Google DNS to connected devices automatically.
 
-Step 2: Configure Separate DNS Resolution
+Step 2 - Configure Separate DNS Resolution
 
 To force guest traffic through specific DNS servers rather than your router's default resolver, install and configure `dnsmasq` properly. Edit `/etc/config/dhcp`:
 
@@ -97,7 +97,7 @@ config dnsmasq
 
 This sends all DNS queries through the local DoH proxy running on port 5353.
 
-Step 3: Set Up Wireless for Guest Access
+Step 3 - Set Up Wireless for Guest Access
 
 Create a dedicated WiFi network for guests in `/etc/config/wireless`:
 
@@ -114,7 +114,7 @@ config wifi-iface 'guest_wifi'
 
 The `isolate '1'` option is critical, it prevents guest devices from communicating directly with each other, adding another layer of security.
 
-Step 4: Configure Firewall Isolation Rules
+Step 4 - Configure Firewall Isolation Rules
 
 The firewall is where true network separation happens. Edit `/etc/config/firewall` to create strict rules:
 
@@ -167,7 +167,7 @@ config rule
 
 This permits DNS queries through the firewall to your configured DNS servers.
 
-Step 5: Apply and Verify Configuration
+Step 5 - Apply and Verify Configuration
 
 Apply all changes and verify the setup:
 
@@ -190,12 +190,12 @@ Testing the Setup
 
 Connect a device to the guest WiFi and verify:
 
-1. IP Assignment: Confirm the device receives an IP in the 10.0.2.x range
-2. DNS Resolution: Test with `nslookup example.com`. should resolve through your configured servers
-3. Isolation Test: Attempt to ping your main router (e.g., 192.168.1.1). should fail
+1. IP Assignment - Confirm the device receives an IP in the 10.0.2.x range
+2. DNS Resolution - Test with `nslookup example.com`. should resolve through your configured servers
+3. Isolation Test - Attempt to ping your main router (e.g., 192.168.1.1). should fail
 4. Internet Access: Confirm web browsing works through the guest network
 
-Advanced: VLAN-Based Isolation
+Advanced - VLAN-Based Isolation
 
 For hardware with limited radio interfaces, use VLANs to create multiple guest networks:
 
@@ -342,7 +342,7 @@ Related Articles
 - [Configure Private DNS on Android for System-Wide Tracker](/how-to-configure-private-dns-on-android-for-system-wide-trac/)
 - [How to Configure VPN Exempt List for Local Network Access](/how-to-configure-vpn-exempt-list-for-local-network-access/)
 - [Home Network Privacy Pihole Dns Filtering Guide 2026](/home-network-privacy-pihole-dns-filtering-guide-2026/)
-- [AI Coding Assistant for Network Traffic Analysis: What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
+- [AI Coding Assistant for Network Traffic Analysis - What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
 
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

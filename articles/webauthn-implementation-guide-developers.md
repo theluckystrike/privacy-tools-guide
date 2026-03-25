@@ -33,13 +33,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand WebAuthn Fundamentals
+Step 1 - Understand WebAuthn Fundamentals
 
 WebAuthn replaces passwords with cryptographic key pairs. When users register, their device generates a public-private key pair. The private key stays on their authenticator (security key, smartphone, or biometric system), while the public key gets stored on your server. During authentication, the server sends a challenge that the user signs with their private key.
 
 The flow involves three main operations: registration, authentication, and credential management. Each operation uses specific JavaScript APIs on the client side and corresponding server endpoints.
 
-Step 2: Server-Side Challenge Generation
+Step 2 - Server-Side Challenge Generation
 
 Your server initiates every WebAuthn flow by generating a challenge. This challenge must be cryptographically random and stored temporarily for verification.
 
@@ -55,11 +55,11 @@ def generate_challenge():
 
 Store the challenge in your session or temporary storage with an expiration. The client returns this challenge signed, and you verify the signature matches.
 
-Step 3: Registration Implementation
+Step 3 - Registration Implementation
 
 The registration flow has two phases: server prepares options, then client creates the credential.
 
-Server: Generate Registration Options
+Server - Generate Registration Options
 
 ```python
 import json
@@ -104,7 +104,7 @@ def get_registration_options(user_id, username):
  return json.dumps(options)
 ```
 
-Client: Create Credential
+Client - Create Credential
 
 ```javascript
 async function registerCredential(options) {
@@ -142,7 +142,7 @@ function serializeCredential(credential) {
 }
 ```
 
-Server: Verify Registration
+Server - Verify Registration
 
 ```python
 import json
@@ -175,11 +175,11 @@ def verify_registration(user_id, credential_data):
  return True
 ```
 
-Step 4: Authentication Implementation
+Step 4 - Authentication Implementation
 
 Authentication (login) follows a similar pattern but verifies rather than creates credentials.
 
-Server: Generate Authentication Options
+Server - Generate Authentication Options
 
 ```python
 def get_authentication_options(user_id):
@@ -208,7 +208,7 @@ def get_authentication_options(user_id):
  return json.dumps(options)
 ```
 
-Client: Get Assertion
+Client - Get Assertion
 
 ```javascript
 async function authenticate(options) {
@@ -229,7 +229,7 @@ async function authenticate(options) {
 }
 ```
 
-Server: Verify Authentication
+Server - Verify Authentication
 
 ```python
 def verify_authentication(user_id, assertion_data):
@@ -319,7 +319,7 @@ Implement rate limiting on registration and authentication endpoints to prevent 
 
 Store public keys with appropriate access controls. While public keys aren't secret, they should be protected against modification.
 
-Step 5: Use py_webauthn for Production Verification
+Step 5 - Use py_webauthn for Production Verification
 
 The verification snippets above show the conceptual flow. For production code, use the `py_webauthn` library rather than implementing CBOR parsing and signature verification yourself:
 
@@ -364,7 +364,7 @@ db.credentials.insert({
 
 The library handles CBOR decoding, attestation verification, and public key parsing. The `sign_count` field in the verification result is important: increment it with each authentication and reject requests where the count does not increase. this detects cloned authenticators.
 
-Step 6: Supporting Multiple Authenticators Per User
+Step 6 - Supporting Multiple Authenticators Per User
 
 Users should be able to register multiple devices (laptop, phone, hardware security key) for account recovery. Design your credential storage to support this from the start:
 
@@ -389,7 +389,7 @@ Expose a credential management UI where users can:
 
 When a device is deleted, generate a new challenge immediately on the server side to invalidate any in-progress authentication from that credential.
 
-Step 7: Adding WebAuthn to an Existing Password-Based System
+Step 7 - Adding WebAuthn to an Existing Password-Based System
 
 Most teams add WebAuthn as a second factor before removing passwords entirely. The migration path:
 

@@ -30,10 +30,10 @@ Table of Contents
 - [Related Reading](#related-reading)
 - [Analyzing Your Own Wearable Data](#analyzing-your-own-wearable-data)
 - [Building a Personal Metrics Server](#building-a-personal-metrics-server)
-- [Threat Model: De-anonymization Vectors](#threat-model-de-anonymization-vectors)
+- [Threat Model - De-anonymization Vectors](#threat-model-de-anonymization-vectors)
 - [GDPR and Legal Rights](#gdpr-and-legal-rights)
-- [Alternative: Open Source Fitness Tracking](#alternative-open-source-fitness-tracking)
-- [Regulatory Compliance: Healthcare Context](#regulatory-compliance-healthcare-context)
+- [Alternative - Open Source Fitness Tracking](#alternative-open-source-fitness-tracking)
+- [Regulatory Compliance - Healthcare Context](#regulatory-compliance-healthcare-context)
 
 What Fitness Trackers Collect
 
@@ -67,18 +67,18 @@ What Google/Fitbit stores:
 - Connected apps data
 - Google account tied to all of it
 
-Access: US users are subject to CLOUD Act requests. Google received 89,000 government data requests in 2022 (combined across products).
+Access - US users are subject to CLOUD Act requests. Google received 89,000 government data requests in 2022 (combined across products).
 
 Garmin
 
 Garmin had a major ransomware attack in 2020 that exposed the fragility of centralized fitness data. Garmin stores full activity and health data on their servers.
 
-Garmin Connect data export: You can download a full archive, which reveals the extent of stored data:
+Garmin Connect data export - You can download a full archive, which reveals the extent of stored data:
 
 ```bash
-Request data export: Garmin Connect → Account → Data Export
-Export includes: activities, health stats, body composition, sleep logs
-Format: FIT files (GPS + biometrics), CSV (daily stats), JSON (health data)
+Request data export - Garmin Connect → Account → Data Export
+Export includes - activities, health stats, body composition, sleep logs
+Format - FIT files (GPS + biometrics), CSV (daily stats), JSON (health data)
 
 Parse FIT files to inspect GPS routes
 pip install fitparse
@@ -150,11 +150,11 @@ Apps commonly connected to fitness data:
 
 Insurance and Employer Risks
 
-Health insurance: Some health insurers (primarily in the US) offer premium discounts for fitness tracker use. The trade-off: they get access to your activity data. Discounts of $100-300/year in exchange for continuous health monitoring.
+Health insurance - Some health insurers (primarily in the US) offer premium discounts for fitness tracker use. The trade-off: they get access to your activity data. Discounts of $100-300/year in exchange for continuous health monitoring.
 
-Life insurance: John Hancock's Vitality program uses Apple Watch data to adjust life insurance premiums dynamically. More steps = lower premium, potentially. But the insurer also knows when you stop exercising or your HRV drops.
+Life insurance - John Hancock's Vitality program uses Apple Watch data to adjust life insurance premiums dynamically. More steps = lower premium, potentially. But the insurer also knows when you stop exercising or your HRV drops.
 
-Employer wellness programs: Programs like Virgin Pulse, Limeade, and Wellable pay employees to wear trackers. The employer or their vendor receives aggregated (and sometimes individual) health data.
+Employer wellness programs - Programs like Virgin Pulse, Limeade, and Wellable pay employees to wear trackers. The employer or their vendor receives aggregated (and sometimes individual) health data.
 
 ```
 Practical guidance:
@@ -196,10 +196,10 @@ Export and Delete
 
 ```bash
 Regularly export and delete your data
-Fitbit: Account → Data Export → request archive
-After downloading: Settings → Clear User Data
+Fitbit - Account → Data Export → request archive
+After downloading - Settings → Clear User Data
 
-Garmin: Account → Data Management → Delete Account (nuclear option)
+Garmin - Account → Data Management → Delete Account (nuclear option)
 Or: selectively delete individual activities
 
 Apple Health export (for backup before changing phones)
@@ -432,7 +432,7 @@ if __name__ == '__main__':
 
 This server runs locally and stores all metrics on your machine.
 
-Threat Model: De-anonymization Vectors
+Threat Model - De-anonymization Vectors
 
 Fitness data can be combined with other information to identify you:
 
@@ -482,7 +482,7 @@ echo "  - In EU: ico.org.uk or equivalent national authority"
 
 In the EU, you have the right to download all your data, and the right to be forgotten (deletion) under specific circumstances.
 
-Alternative: Open Source Fitness Tracking
+Alternative - Open Source Fitness Tracking
 
 Use tools that respect privacy by design:
 
@@ -501,7 +501,7 @@ adb install app/build/outputs/apk/debug/OpenTracks-debug.apk
 
 Open source allows you to verify the code doesn't transmit your data.
 
-Regulatory Compliance: Healthcare Context
+Regulatory Compliance - Healthcare Context
 
 Organizations handling fitness data in healthcare contexts must ensure compliance:
 

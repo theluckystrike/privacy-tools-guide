@@ -24,14 +24,14 @@ Table of Contents
 - [Integrations and Smart Home Data Leaks](#integrations-and-smart-home-data-leaks)
 - [Data Broker Selling](#data-broker-selling)
 - [Practical Defense Layers](#practical-defense-layers)
-- [The Local Assistant Alternative: Real Implementation](#the-local-assistant-alternative-real-implementation)
+- [The Local Assistant Alternative - Real Implementation](#the-local-assistant-alternative-real-implementation)
 - [Related Reading](#related-reading)
 
 How Voice Assistants Work
 
 Wake word detection runs locally on the device. A small neural network listens 24/7 for the trigger phrase. When detected, it starts recording and sends audio to the cloud.
 
-The problem: wake word detection is imperfect. False triggers happen regularly, and when they do, a clip of your conversation gets recorded and sent to company servers.
+The problem - wake word detection is imperfect. False triggers happen regularly, and when they do, a clip of your conversation gets recorded and sent to company servers.
 
 What gets sent to the cloud:
 - Audio of your request
@@ -64,7 +64,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What the Companies Keep
+Step 1 - What the Companies Keep
 
 Amazon Alexa
 
@@ -79,7 +79,7 @@ Data Amazon shares:
 
 Google Assistant
 
-Google's privacy controls are more granular but the collection is broader. The Google Home ecosystem ties voice data to your Google account, which also knows your search history, location history, Gmail, and YouTube habits.
+Google's privacy controls are more granular but the collection is broader. The Google Home environment ties voice data to your Google account, which also knows your search history, location history, Gmail, and YouTube habits.
 
 Google Audio History can be turned off, but the audio is still processed in the cloud. you're just choosing not to have it associated with your account history.
 
@@ -91,7 +91,7 @@ Apple's model is meaningfully better for privacy, but "better" doesn't mean "pri
 
 ---
 
-Step 2: Accidental Activations in Practice
+Step 2 - Accidental Activations in Practice
 
 Research published by Northeastern University found that smart speakers activate accidentally 1.5, 19 times per day depending on model and ambient conditions. Common false triggers:
 
@@ -107,14 +107,14 @@ What happens during accidental activation:
 
 ---
 
-Step 3: Audit Your Existing Data
+Step 3 - Audit Your Existing Data
 
 ```bash
 Request your data from each company:
 
 Amazon Alexa data export
 Settings → Alexa Privacy → Manage Your Alexa Data → Request My Data
-You'll receive a zip with: voice history, smart home interactions,
+You'll receive a zip with - voice history, smart home interactions,
 shopping lists, routines, contacts used
 
 Google data export
@@ -142,7 +142,7 @@ def analyze_alexa_history(filepath):
 
     print(f"Total recordings: {total}")
     print(f"Likely accidental (transcript < 5 chars): {len(accidental)}")
-    print(f"Percentage: {len(accidental)/total*100:.1f}%")
+    print(f"Percentage - {len(accidental)/total*100:.1f}%")
 
     # Show sample of what was accidentally captured
     for r in accidental[:10]:
@@ -154,19 +154,19 @@ if __name__ == "__main__":
 
 ---
 
-Step 4: Practical Mitigation Steps
+Step 4 - Practical Mitigation Steps
 
 Hardware Mute Is the Only Real Mute
 
 Software mute (via app or voice command) still processes the wake word. the microphone is still active. The physical mute button cuts power to the microphone circuit.
 
 ```
-Alexa Echo: press the microphone button (orange ring = muted)
-Google Nest: slide the mute switch (orange indicator)
-Apple HomePod: no physical mute. use "Hey Siri, pause listening"
+Alexa Echo - press the microphone button (orange ring = muted)
+Google Nest - slide the mute switch (orange indicator)
+Apple HomePod - no physical mute. use "Hey Siri, pause listening"
 ```
 
-Get in the habit: mute the device when having private conversations, medical calls, or financial discussions near the device.
+Get in the habit - mute the device when having private conversations, medical calls, or financial discussions near the device.
 
 Delete Voice History Automatically
 
@@ -187,9 +187,9 @@ Settings → Siri & Search → "Delete Siri & Dictation History"
 Opt Out of Human Review
 
 ```
-Amazon: alexa.amazon.com → Settings → Alexa Privacy → "Help improve Alexa" → OFF
-Google: myactivity.google.com → Activity Controls → "Include audio recordings" → OFF
-Apple: Settings → Privacy → Analytics → "Improve Siri & Dictation" → OFF
+Amazon - alexa.amazon.com → Settings → Alexa Privacy → "Help improve Alexa" → OFF
+Google - myactivity.google.com → Activity Controls → "Include audio recordings" → OFF
+Apple - Settings → Privacy → Analytics → "Improve Siri & Dictation" → OFF
 ```
 
 Network-Level Blocking
@@ -213,7 +213,7 @@ This completely breaks Alexa responses. only local processing continues
 
 ---
 
-Step 5: Local Voice Assistants
+Step 5 - Local Voice Assistants
 
 If you want voice control without cloud dependency, local alternatives exist:
 
@@ -247,43 +247,43 @@ Risk Summary
 
 ---
 
-Step 6: Voice Assistants and Legal Access to Your Data
+Step 6 - Voice Assistants and Legal Access to Your Data
 
 Law enforcement can and does request voice assistant data. The process differs by company and jurisdiction, but all three major providers have compliance teams that respond to valid legal orders.
 
-Amazon: In 2023 Amazon disclosed it received thousands of government requests for Alexa data. The company complies with valid legal process and in many cases does not notify users. Ring camera audio tied to Alexa routines has also been subject to law enforcement requests.
+Amazon - In 2023 Amazon disclosed it received thousands of government requests for Alexa data. The company complies with valid legal process and in many cases does not notify users. Ring camera audio tied to Alexa routines has also been subject to law enforcement requests.
 
-Google: Google publishes a transparency report showing government request volumes by country. Requests include Google Assistant interaction history. Data tied to a Google account is subject to requests without requiring a device seizure.
+Google - Google publishes a transparency report showing government request volumes by country. Requests include Google Assistant interaction history. Data tied to a Google account is subject to requests without requiring a device seizure.
 
-Apple: Apple's approach differs structurally. Because Siri uses random identifiers rather than Apple IDs for most requests, Apple claims it cannot link recordings to a specific user. making targeted Siri data requests less useful to law enforcement. However, if Siri data is tied to an iCloud account (for features like Siri cross-device learning), that data is accessible.
+Apple - Apple's approach differs structurally. Because Siri uses random identifiers rather than Apple IDs for most requests, Apple claims it cannot link recordings to a specific user. making targeted Siri data requests less useful to law enforcement. However, if Siri data is tied to an iCloud account (for features like Siri cross-device learning), that data is accessible.
 
-The practical implication: if a voice assistant is always on in a space where sensitive conversations happen, those conversations may be accessible to parties beyond the company. through legal process, data breaches, or contractor access.
+The practical implication - if a voice assistant is always on in a space where sensitive conversations happen, those conversations may be accessible to parties beyond the company. through legal process, data breaches, or contractor access.
 
 ---
 
-Step 7: Children and Voice Assistants
+Step 7 - Children and Voice Assistants
 
 COPPA (the US Children's Online Privacy Protection Act) places restrictions on collecting data from children under 13, but enforcement in the voice assistant space has been inconsistent. The FTC fined Amazon $25 million in 2023 specifically for retaining children's Alexa recordings and location data contrary to parents' deletion requests.
 
 If children use voice assistants in your home:
 
 ```
-Amazon: Settings → Alexa Privacy → Kids profiles
+Amazon - Settings → Alexa Privacy → Kids profiles
 → Enable auto-deletion
 → Review Kids features enabled
 
-Google: Settings → Digital Wellbeing → Filters for kids
+Google - Settings → Digital Wellbeing → Filters for kids
 → SafeSearch on
 → Restrict explicit music
 
-Apple: Screen Time parental controls limit Siri access to specific apps
+Apple - Screen Time parental controls limit Siri access to specific apps
 ```
 
-The safest approach: disable voice assistants in children's rooms entirely, or use a local Home Assistant setup that keeps audio on-network.
+The safest approach - disable voice assistants in children's rooms entirely, or use a local Home Assistant setup that keeps audio on-network.
 
 ---
 
-Step 8: Evaluating Newer Devices: 2025-2026 Models
+Step 8 - Evaluating Newer Devices: 2025-2026 Models
 
 Amazon's Echo devices now offer optional on-device processing for a subset of commands. primarily smart home controls and timers. which do not leave the device. This is marketed as "Ultra privacy mode."
 
@@ -295,7 +295,7 @@ The trend toward on-device processing is positive for privacy, but "on-device fo
 
 ---
 
-Step 9: What Disabling a Voice Assistant Actually Does
+Step 9 - What Disabling a Voice Assistant Actually Does
 
 When you say "Hey Alexa, stop listening" or disable a voice assistant via the app, the behavior is not what most people assume:
 
@@ -361,8 +361,8 @@ Segment your smart home network:
 
 ```bash
 On your router, create separate WiFi networks:
-Main network: computers, phones (where you do banking/work)
-IoT network: smart home devices, voice assistants
+Main network - computers, phones (where you do banking/work)
+IoT network - smart home devices, voice assistants
 
 This prevents a compromised smart speaker from accessing
 devices on your primary network
@@ -385,30 +385,30 @@ This invisible data extraction has no obvious control panel. You can't opt out g
 
 Practical Defense Layers
 
-Layer 1: Hardware control (most effective)
+Layer 1 - Hardware control (most effective)
 - Physical mute button, use it during sensitive conversations
 - Unplug the device when not actively using it
 - Cover microphones with tape if truly paranoid
 
-Layer 2: Account controls (moderately effective)
+Layer 2 - Account controls (moderately effective)
 - Delete voice history regularly (weekly is reasonable)
 - Disable model training opt-in
 - Disable human review of recordings
 - Turn off audio history storage
 
-Layer 3: Network controls (somewhat effective)
+Layer 3 - Network controls (somewhat effective)
 - Isolate IoT devices on separate network
 - Block cloud endpoints at router level
 - Monitor bandwidth to detect unusual outbound transmission
 
-Layer 4: Behavioral changes (most sustainable)
+Layer 4 - Behavioral changes (most sustainable)
 - Don't discuss sensitive topics near voice assistants
 - Use voice commands for non-personal queries only
 - Remember: assume everything you say is recorded
 
-The reality: once you own a smart speaker, you've accepted some level of surveillance. The question is which surveillance you're willing to tolerate and how to minimize damage.
+The reality - once you own a smart speaker, you've accepted some level of surveillance. The question is which surveillance you're willing to tolerate and how to minimize damage.
 
-The Local Assistant Alternative: Real Implementation
+The Local Assistant Alternative - Real Implementation
 
 Building a local voice assistant requires moderate technical skill but is genuinely practical. Home Assistant with Whisper provides offline voice control that never leaves your network:
 
@@ -423,8 +423,8 @@ Full local setup workflow
 4. Test with real commands
 
 Voice control with zero cloud transmission
-Cost: $50-200 hardware + setup time
-Trade-off: Less capable than cloud assistants
+Cost - $50-200 hardware + setup time
+Trade-off - Less capable than cloud assistants
 ```
 
 Local assistants can't call your mom or check Uber prices, but they can:

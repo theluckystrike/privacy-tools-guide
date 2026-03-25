@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand iPhone Photo Metadata
+Step 1 - Understand iPhone Photo Metadata
 
 When you capture a photo on an iPhone, iOS embeds extensive EXIF data within each image file. The most privacy-sensitive fields include:
 
@@ -42,7 +42,7 @@ When you capture a photo on an iPhone, iOS embeds extensive EXIF data within eac
 
 This data persists even when you share photos through messaging apps or upload to cloud services. Removing metadata before sharing prevents unintended location exposure.
 
-Step 2: Method 1: Using exiftool (Command Line)
+Step 2 - Method 1: Using exiftool (Command Line)
 
 The industry-standard tool for metadata manipulation is Phil Harvey's exiftool. Install it via Homebrew:
 
@@ -70,7 +70,7 @@ exiftool -all= -overwrite_original *.jpg
 
 The `-overwrite_original` flag modifies files in place without creating backup copies. Remove this flag if you need backup versions.
 
-Step 3: Method 2: Python Script with Pillow
+Step 3 - Method 2: Python Script with Pillow
 
 For developers building automated workflows, Python provides programmatic metadata removal. Install the required libraries:
 
@@ -118,7 +118,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         process_directory(sys.argv[1])
     else:
-        print("Usage: python strip_gps.py <directory>")
+        print("Usage - python strip_gps.py <directory>")
 ```
 
 Run the script on a directory of photos:
@@ -127,7 +127,7 @@ Run the script on a directory of photos:
 python strip_gps.py /path/to/photos
 ```
 
-Step 4: Method 3: Using ImageMagick
+Step 4 - Method 3: Using ImageMagick
 
 ImageMagick offers another command-line approach for batch processing:
 
@@ -146,7 +146,7 @@ mogrify -sampling-factor 4:2:0 -strip -auto-orient \
 
 The `-define jpeg:remove-gps=true` flag specifically targets GPS data while preserving color profiles and orientation.
 
-Step 5: Method 4: Shortcuts App (No-Code Solution)
+Step 5 - Method 4: Shortcuts App (No-Code Solution)
 
 For users preferring a native iOS solution, the Shortcuts app provides automation without scripting:
 
@@ -158,7 +158,7 @@ For users preferring a native iOS solution, the Shortcuts app provides automatio
 
 This shortcut can be run manually or scheduled via automation.
 
-Step 6: Method 5: macOS Automator Workflow
+Step 6 - Method 5: macOS Automator Workflow
 
 Build a drag-and-drop solution using Automator:
 
@@ -168,7 +168,7 @@ Build a drag-and-drop solution using Automator:
 4. Save as an app
 5. Drag photos onto the app icon to process them
 
-Step 7: Verification: Checking Removed Metadata
+Step 7 - Verification: Checking Removed Metadata
 
 After processing, verify that GPS data is gone:
 
@@ -184,7 +184,7 @@ exiftool -a -u photo.jpg | head -50
 
 This shows all metadata including previously unknown tags, confirming removal.
 
-Step 8: Integration Examples
+Step 8 - Integration Examples
 
 GitHub Actions Pipeline
 
@@ -278,7 +278,7 @@ Related Articles
 - [iPhone Location Tracking How to Stop It: A Practical Guide](/iphone-location-tracking-how-to-stop-it/)
 - [How To Prevent Someone From Tracking Your Location](/how-to-prevent-someone-from-tracking-your-location-through-p/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Step 9: Preventing Metadata at Capture Time
+Step 9 - Preventing Metadata at Capture Time
 
 Stripping metadata after the fact works, but preventing collection at capture time is cleaner. On iOS, disable location access for the Camera app: Settings > Privacy and Security > Location Services > Camera > Never.
 
@@ -330,7 +330,7 @@ Convert HEIC to JPEG while stripping all metadata
 exiftool -o output_dir/ -all= -ext heic .
 ```
 
-Step 10: Integrate Metadata Stripping into Upload Pipelines
+Step 10 - Integrate Metadata Stripping into Upload Pipelines
 
 If you build applications that accept user photo uploads, enforce metadata stripping server-side as defense in depth. Users may upload photos from older apps or devices that ignore client-side stripping:
 

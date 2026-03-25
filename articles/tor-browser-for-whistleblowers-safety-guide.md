@@ -35,13 +35,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How Tor Provides Anonymity for Sources
+Step 1 - How Tor Provides Anonymity for Sources
 
 Tor encrypts traffic through a circuit of at least three relays, the entry guard, middle relay, and exit node. Each relay only knows its predecessor and successor, never the complete path. Your ISP sees encrypted traffic to a Tor relay but cannot determine what you're accessing or with whom you're communicating. The destination website sees traffic from a Tor exit node, not your actual IP address.
 
 However, anonymity is not invisibility. Correlation attacks can deanonymize users who behave inconsistently across Tor and regular connections. Browser fingerprinting can identify users based on unique characteristics even without cookies or IP addresses. Understanding these limitations is critical before using Tor for sensitive communications.
 
-Step 2: Secure Installation and Verification
+Step 2 - Secure Installation and Verification
 
 Always verify Tor Browser signatures before first use. Attackers may distribute compromised versions through third-party download sites:
 
@@ -60,13 +60,13 @@ gpg --verify tor-browser-linux-x86_64-13.5.tar.xz.asc tor-browser-linux-x86_64-1
 
 For whistleblowers in high-risk environments, consider downloading Tor Browser over a trusted VPN or through a network that doesn't log your activities. Your initial Tor connection should not trace back to your real location.
 
-Step 3: Browser Configuration for Maximum Protection
+Step 3 - Browser Configuration for Maximum Protection
 
 Tor Browser ships with reasonable defaults, but several settings require attention for sensitive use:
 
-Security Level Settings: Access `about:config` and set `security.slider.value` to 2 (Safer) or 3 (Safest) depending on your usability requirements. Higher security levels disable JavaScript on certain sites, but many news portals and secure drop sites function correctly at level 2.
+Security Level Settings - Access `about:config` and set `security.slider.value` to 2 (Safer) or 3 (Safest) depending on your usability requirements. Higher security levels disable JavaScript on certain sites, but many news portals and secure drop sites function correctly at level 2.
 
-Resist Fingerprinting: The `privacy.resistFingerprinting` preference should remain enabled. This normalizes window sizes, limits font enumeration, and randomizes timing to prevent browser fingerprinting:
+Resist Fingerprinting - The `privacy.resistFingerprinting` preference should remain enabled. This normalizes window sizes, limits font enumeration, and randomizes timing to prevent browser fingerprinting:
 
 ```javascript
 // In about:config, verify these settings
@@ -75,20 +75,20 @@ browser.display.max_inner_width = 1000
 browser.display.max_inner_height = 800
 ```
 
-Disable WebGL: WebGL can expose hardware information useful for fingerprinting:
+Disable WebGL - WebGL can expose hardware information useful for fingerprinting:
 
 ```javascript
 webgl.disabled = true
 ```
 
-Configure Circuit Display: Use the Tor button to view your current circuit. For sensitive communications, request a new circuit before accessing different documents or contacts:
+Configure Circuit Display - Use the Tor button to view your current circuit. For sensitive communications, request a new circuit before accessing different documents or contacts:
 
 ```javascript
 // New Identity closes all tabs and clears state
 // Use before starting sensitive sessions
 ```
 
-Step 4: Network Configuration for Threat Environments
+Step 4 - Network Configuration for Threat Environments
 
 Standard Tor connections can be blocked or monitored in some networks. Tor bridges help circumvent censorship and hide the fact that you're using Tor:
 
@@ -102,7 +102,7 @@ Bridge obfs4 <IP>:<PORT> <FINGERPRINT> <CERT> <NODE-ID>
 
 For maximum operational security, use pluggable transports that obfuscate Tor traffic as HTTPS or other protocols. This prevents simple blocking and makes Tor usage harder to detect through deep packet inspection.
 
-Step 5: Operational Security Practices
+Step 5 - Operational Security Practices
 
 Configuration alone does not guarantee anonymity. Behavioral patterns matter equally:
 
@@ -114,7 +114,7 @@ Avoid logging into personal accounts: Never access email, social media, or servi
 
 Clear browser state between sessions: Tor Browser's "New Identity" feature provides this, but for extreme scenarios, restart the entire application between sensitive operations.
 
-Be cautious with documents: Files downloaded through Tor may contain metadata identifying your system. Use tools to strip metadata before sharing:
+Be cautious with documents - Files downloaded through Tor may contain metadata identifying your system. Use tools to strip metadata before sharing:
 
 ```bash
 Remove metadata from documents using exiftool
@@ -123,7 +123,7 @@ Or use MAT2 for full metadata scrubbing
 mat2 document.docx
 ```
 
-Step 6: Secure Communication Patterns
+Step 6 - Secure Communication Patterns
 
 When contacting journalists or lawyers through Tor, prefer end-to-end encrypted protocols over the Tor network itself. Tor protects metadata but doesn't encrypt message content beyond the circuit, the exit node can see unencrypted HTTP traffic.
 
@@ -140,25 +140,25 @@ Endpoint Security Considerations
 
 Tor Browser protects network-level anonymity, but endpoint compromises can still expose your activities:
 
-Keep software updated: Tor Browser updates patch critical vulnerabilities. Delay updates only after understanding the security implications.
+Keep software updated - Tor Browser updates patch critical vulnerabilities. Delay updates only after understanding the security implications.
 
-Use full disk encryption: If your device is seized, full disk encryption prevents extraction of browsing history, downloaded documents, and saved credentials.
+Use full disk encryption - If your device is seized, full disk encryption prevents extraction of browsing history, downloaded documents, and saved credentials.
 
-Consider TAILS: The TAILS amnesiac operating system leaves no trace on the host machine and routes all traffic through Tor by default. For high-risk whistleblower scenarios, TAILS provides stronger guarantees than a hardened Tor Browser on a regular OS.
+Consider TAILS - The TAILS amnesiac operating system leaves no trace on the host machine and routes all traffic through Tor by default. For high-risk whistleblower scenarios, TAILS provides stronger guarantees than a hardened Tor Browser on a regular OS.
 
 Advanced Attack Vectors Against Tor Users
 
 Understanding the sophisticated attacks whistleblowers face informs defensive practices:
 
-Exit Node Monitoring: Attackers can operate Tor exit nodes (the final relay that connects to destination websites). They see unencrypted HTTP traffic passing through. While Tor protects your IP, traffic to unencrypted services becomes visible. Always use HTTPS when possible; verify SSL certificates match expected values.
+Exit Node Monitoring - Attackers can operate Tor exit nodes (the final relay that connects to destination websites). They see unencrypted HTTP traffic passing through. While Tor protects your IP, traffic to unencrypted services becomes visible. Always use HTTPS when possible; verify SSL certificates match expected values.
 
-Guard Relay Compromise: Your entry guard is the first relay in your circuit. If an attacker controls your entry guard and the exit node, they can correlate traffic timing to deanonymize you. Mitigate by rotating identity and device usage patterns.
+Guard Relay Compromise - Your entry guard is the first relay in your circuit. If an attacker controls your entry guard and the exit node, they can correlate traffic timing to deanonymize you. Mitigate by rotating identity and device usage patterns.
 
-JavaScript Execution Attacks: JavaScript running in your browser can potentially reveal your real IP through WebRTC leaks or plugin vulnerabilities. Tor Browser disables JavaScript by default at Safer security levels, but some sites require it. When enabling JavaScript, understand you're accepting additional risk.
+JavaScript Execution Attacks - JavaScript running in your browser can potentially reveal your real IP through WebRTC leaks or plugin vulnerabilities. Tor Browser disables JavaScript by default at Safer security levels, but some sites require it. When enabling JavaScript, understand you're accepting additional risk.
 
-Browser Fingerprinting Resistance: Tor Browser normalizes browser characteristics (window size, timezone, font availability) to prevent identification based on unique browser configurations. However, plugins and extensions can reintroduce fingerprinting vectors.
+Browser Fingerprinting Resistance - Tor Browser normalizes browser characteristics (window size, timezone, font availability) to prevent identification based on unique browser configurations. However, plugins and extensions can reintroduce fingerprinting vectors.
 
-Step 7: Compartmentalization Strategy for Sensitive Work
+Step 7 - Compartmentalization Strategy for Sensitive Work
 
 The most sophisticated whistleblowers practice complete compartmentalization:
 
@@ -184,7 +184,7 @@ Time Separation
 
 This compartmentalization approach adds operational security layers beyond Tor's technical guarantees.
 
-Step 8: Metadata Preservation in Downloaded Documents
+Step 8 - Metadata Preservation in Downloaded Documents
 
 Documents often contain metadata revealing system information:
 
@@ -194,8 +194,8 @@ exiftool document.pdf
 
 Output might reveal:
 Creator: John Smith
-Producer: Microsoft Word 16.16
-CreateDate: 2026-03-14
+Producer - Microsoft Word 16.16
+CreateDate - 2026-03-14
 
 Strip all metadata
 exiftool -all= document.pdf
@@ -214,13 +214,13 @@ Document metadata includes:
 
 Always strip metadata before uploading to SecureDrop or contacting journalists.
 
-Step 9: Secure Communication Patterns Beyond Tor
+Step 9 - Secure Communication Patterns Beyond Tor
 
 Tor protects your IP, but additional measures improve security:
 
-Email Over Tor: Never use your real email address in Tor. Create throwaway accounts through Tor. Example: access ProtonMail (which supports Tor) and create a new account specifically for whistleblower communications.
+Email Over Tor - Never use your real email address in Tor. Create throwaway accounts through Tor. Example - access ProtonMail (which supports Tor) and create a new account specifically for whistleblower communications.
 
-PGP Encryption: Encrypt messages to journalists' public PGP keys before submission. This adds an encryption layer beyond SecureDrop's TLS.
+PGP Encryption - Encrypt messages to journalists' public PGP keys before submission. This adds an encryption layer beyond SecureDrop's TLS.
 
 ```bash
 Encrypt a document with journalist's public key
@@ -230,46 +230,46 @@ This creates sensitive_document.pdf.gpg
 Even if intercepted, only the journalist can decrypt
 ```
 
-Signal or Wickr: Download via Tor if contacting someone through encrypted messaging. These apps provide better metadata protection than email.
+Signal or Wickr - Download via Tor if contacting someone through encrypted messaging. These apps provide better metadata protection than email.
 
-Dead Drops: For maximum security, consider submitting documents through physical dead drops or USB devices rather than digital channels. This eliminates digital trails entirely.
+Dead Drops - For maximum security, consider submitting documents through physical dead drops or USB devices rather than digital channels. This eliminates digital trails entirely.
 
-Step 10: TAILS Operating System Deep Dive
+Step 10 - TAILS Operating System Deep Dive
 
 TAILS (The Amnesic Incognito Live System) provides stronger guarantees than Tor Browser alone:
 
-Complete Anonymity: TAILS routes all traffic through Tor by default. No application can accidentally bypass Tor.
+Complete Anonymity - TAILS routes all traffic through Tor by default. No application can accidentally bypass Tor.
 
-Amnesic Computing: TAILS runs from RAM and leaves no trace on the host machine. After shutdown, all data vanishes except what you explicitly saved to encrypted USB.
+Amnesic Computing - TAILS runs from RAM and leaves no trace on the host machine. After shutdown, all data vanishes except what you explicitly saved to encrypted USB.
 
-Pre-configured Tools: TAILS includes Tor Browser, GPG, and other privacy tools already configured optimally.
+Pre-configured Tools - TAILS includes Tor Browser, GPG, and other privacy tools already configured optimally.
 
-Disadvantage: TAILS requires booting from USB, making it less convenient than Tor Browser on your regular system.
+Disadvantage - TAILS requires booting from USB, making it less convenient than Tor Browser on your regular system.
 
 For high-risk whistleblowing (government corruption, corporate crimes), TAILS provides measurably stronger protection than Tor Browser on a regular operating system.
 
 Access TAILS at https://tails.boum.org (via Tor for maximum security).
 
-Step 11: Behavior Analysis and Correlation
+Step 11 - Behavior Analysis and Correlation
 
 Sophisticated adversaries use behavioral analysis to identify whistleblowers:
 
-Access Pattern Consistency: If you always access Tor between 9-10 PM and your office notifies after hours access is blocked, observers outside the office can infer your location and schedule.
+Access Pattern Consistency - If you always access Tor between 9-10 PM and your office notifies after hours access is blocked, observers outside the office can infer your location and schedule.
 
-Linguistic Analysis: Your writing style is distinctive. Journalists know your typing patterns, sentence structure, and word choice can identify you. Mitigate by writing in brief, simple language without personal quirks.
+Linguistic Analysis - Your writing style is distinctive. Journalists know your typing patterns, sentence structure, and word choice can identify you. Mitigate by writing in brief, simple language without personal quirks.
 
-Content Correlation: If you submit documents that only specific people in your organization could access, that limited access set becomes identifying information. Consider submitting documents through public sources when possible.
+Content Correlation - If you submit documents that only specific people in your organization could access, that limited access set becomes identifying information. Consider submitting documents through public sources when possible.
 
-Communication Frequency: Regular submissions create patterns. Irregular, unpredictable submission timing is safer than weekly reports.
+Communication Frequency - Regular submissions create patterns. Irregular, unpredictable submission timing is safer than weekly reports.
 
-Step 12: Safe Submission to SecureDrop Instances
+Step 12 - Safe Submission to SecureDrop Instances
 
 Major news organizations run SecureDrop instances (Tor onion services) specifically for whistleblower submissions:
 
 ```
-ProPublica: p53lf7kc6iaezst5.onion
-Washington Post: 2a5thpq6xvcyp5mf.onion
-New York Times: nxu3htheg3vj7unv.onion
+ProPublica - p53lf7kc6iaezst5.onion
+Washington Post - 2a5thpq6xvcyp5mf.onion
+New York Times - nxu3htheg3vj7unv.onion
 ```
 
 Before submitting through any SecureDrop instance:
@@ -279,7 +279,7 @@ Before submitting through any SecureDrop instance:
 3. Use the organization's PGP key to encrypt submissions
 4. Submit documents incrementally (multiple small submissions) rather than one large dump
 
-Step 13: Counter-Surveillance Awareness
+Step 13 - Counter-Surveillance Awareness
 
 In addition to technical measures, maintain operational security:
 
@@ -290,7 +290,7 @@ In addition to technical measures, maintain operational security:
 
 Technical security (Tor Browser, encryption) protects against remote surveillance. Physical and behavioral awareness protects against local surveillance.
 
-Step 14: Warning Signs of Compromise
+Step 14 - Warning Signs of Compromise
 
 Watch for these indicators that something may be wrong:
 

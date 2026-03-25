@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How Browser Fingerprinting Works
+Step 1 - How Browser Fingerprinting Works
 
 When you visit a website, your browser sends a wealth of information to the server: your user agent string, screen resolution, installed fonts, timezone, language preferences, and more. Individually, these details seem innocuous. Together, they create a unique signature that can identify you across sessions, even without cookies.
 
@@ -92,7 +92,7 @@ This technique is particularly concerning because:
 
 Fingerprinting works across sessions without any persistent storage, and private browsing modes provide minimal protection. Users typically have no idea it is happening, and it can track them across websites without any visible indication. Perhaps most counterintuitively, actively resisting fingerprinting can itself become an identifying feature.
 
-Step 2: How to Block Browser Fingerprinting
+Step 2 - How to Block Browser Fingerprinting
 
 Blocking fingerprinting requires a multi-layered approach since there is no single solution that addresses all fingerprinting vectors.
 
@@ -160,7 +160,7 @@ Manual browser configuration can reduce your fingerprint surface:
 - Use common system fonts rather than installing additional fonts
 - Avoid customizing browser appearance with themes
 
-Step 3: Test Your Fingerprint
+Step 3 - Test Your Fingerprint
 
 To understand your current exposure, visit cover-your-tracks.com (formerly Panopticlick) or amiunique.org. These tools analyze your browser and show how unique your fingerprint is. A lower uniqueness percentage indicates better privacy protection.
 
@@ -258,11 +258,11 @@ if (navigator.getBattery) {
 }
 ```
 
-Step 4: Browser Fingerprinting Defense Strategy
+Step 4 - Browser Fingerprinting Defense Strategy
 
 Implement multiple defensive layers:
 
-Layer 1: Browser Selection
+Layer 1 - Browser Selection
 
 | Browser | Fingerprinting Protection | Ease of Use |
 |---------|---------------------------|-------------|
@@ -272,28 +272,28 @@ Layer 1: Browser Selection
 | Safari (hardened) | Good (limited API exposure) | Very Good |
 | Chrome (default) | Poor (extensive API exposure) | Very Good |
 
-Layer 2: Extension-Based Hardening
+Layer 2 - Extension-Based Hardening
 
 Combine multiple privacy extensions for defense-in-depth:
 
 ```bash
 Recommended extension combinations
 
-Tier 1: Core blocking
+Tier 1 - Core blocking
 - uBlock Origin (with extra filter lists)
 - Privacy Badger (learns tracker patterns)
 
-Tier 2: Browser API protection
+Tier 2 - Browser API protection
 - CanvasBlocker (canvas fingerprinting)
 - AudioContext Fingerprint Defender (WebAudio)
 - WebGL Fingerprint Defender (WebGL)
 
-Tier 3: Metadata protection
+Tier 3 - Metadata protection
 - Decentraleyes (CDN link blocking)
 - Cookie AutoDelete (automatic cookie cleanup)
 ```
 
-Layer 3: Manual Browser Configuration
+Layer 3 - Manual Browser Configuration
 
 Firefox about:config hardening for fingerprinting resistance:
 
@@ -307,7 +307,7 @@ canvas.capturestream.enabled = false
 plugin.state = 0 (disable all plugins)
 ```
 
-Step 5: Measuring Fingerprint Effectiveness
+Step 5 - Measuring Fingerprint Effectiveness
 
 After implementing protections, test against multiple fingerprinting databases:
 

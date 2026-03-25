@@ -37,13 +37,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand VPN Routing at the Network Level
+Step 1 - Understand VPN Routing at the Network Level
 
 Before implementing concurrent connections, you need to understand how network routing works. Each VPN creates a virtual network interface with its own IP address and routing table entries. By default, all traffic flows through the default route, but you can manipulate routing tables to send specific traffic through specific interfaces.
 
 The key distinction is between split tunneling and full tunnel configurations. Split tunneling allows you to route only certain traffic through the VPN while letting other traffic use your regular connection. This is essential for running concurrent connections without routing all your traffic through every tunnel.
 
-Step 2: Method 1: Using Separate VPN Client Instances
+Step 2 - Method 1: Using Separate VPN Client Instances
 
 The simplest approach involves running multiple VPN client instances, each configured with different routing rules. Most OpenVPN, WireGuard, and IKEv2 clients support configuration files that specify which traffic should traverse the tunnel.
 
@@ -81,7 +81,7 @@ sudo openvpn --config vpn-client-b.conf &
 
 Each instance creates its own network interface, and the `route` directives ensure traffic to those networks goes through the appropriate tunnel.
 
-Step 3: Method 2: WireGuard with Custom Routing Tables
+Step 3 - Method 2: WireGuard with Custom Routing Tables
 
 WireGuard offers a modern, high-performance alternative with straightforward routing configuration. Each WireGuard interface can have its own peer configuration with specific allowed IPs.
 
@@ -124,7 +124,7 @@ sudo wg-quick up wg-client-b
 
 The `AllowedIPs` parameter controls what traffic each tunnel handles. Setting specific subnets rather than `0.0.0.0/0` enables split tunneling.
 
-Step 4: Method 3: Application-Level Routing with Proxy Chains
+Step 4 - Method 3: Application-Level Routing with Proxy Chains
 
 For fine-grained control at the application level, you can route specific processes through different tunnels without modifying system-wide routing. This approach is particularly useful for developers testing applications in different network environments.
 
@@ -135,7 +135,7 @@ Configure your VPN clients to expose SOCKS proxies, then use `proxychains` to fo
 ```bash
 Install proxychains
 macOS: brew install proxychains4
-Ubuntu: sudo apt install proxychains4
+Ubuntu - sudo apt install proxychains4
 
 Configure proxychains
 /etc/proxychains.conf or ~/.proxychains.conf
@@ -191,7 +191,7 @@ sudo ip netns exec vpn-namespace-a curl https://api.example.com
 
 This approach provides complete isolation, ensuring no traffic leaks between namespaces.
 
-Step 5: Method 4: Routing Applications by UID on Linux
+Step 5 - Method 4: Routing Applications by UID on Linux
 
 For system-level control on Linux, you can route traffic based on user or group IDs using `iptables` marks:
 
@@ -211,11 +211,11 @@ Practical Examples for Developers
 Running Development Servers with Different VPN Contexts
 
 ```bash
-Terminal 1: Start VPN A and development server
+Terminal 1 - Start VPN A and development server
 sudo wg-quick up wg-client-a
 cd project-a && npm run dev
 
-Terminal 2: Start VPN B and different service
+Terminal 2 - Start VPN B and different service
 sudo wg-quick up wg-client-b
 cd project-b && python -m flask run --port 5001
 ```
@@ -247,7 +247,7 @@ When running concurrent VPN connections, several security factors require attent
 
 Troubleshooting Common Issues
 
-Problem: Traffic not routing through the correct tunnel
+Problem - Traffic not routing through the correct tunnel
 
 ```bash
 Check routing tables
@@ -255,7 +255,7 @@ ip route show table all
 sudo tcpdump -i tun0 -n
 ```
 
-Problem: DNS resolution failing
+Problem - DNS resolution failing
 
 ```bash
 Verify DNS configuration
@@ -263,12 +263,12 @@ sudo resolvectl status
 cat /etc/resolv.conf
 ```
 
-Problem: Connection drops
+Problem - Connection drops
 
 ```bash
 Enable persistent keepalive in your VPN config
-For WireGuard: PersistentKeepalive = 25
-For OpenVPN: persist-key persist-tun
+For WireGuard - PersistentKeepalive = 25
+For OpenVPN - persist-key persist-tun
 ```
 
 Frequently Asked Questions

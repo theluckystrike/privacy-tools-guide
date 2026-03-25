@@ -37,9 +37,9 @@ The refrigerator transmits basic device status information continuously:
 
 ```http
 POST /v1/device/telemetry HTTP/1.1
-Host: smartthings.samsung.com
-Content-Type: application/json
-Authorization: Bearer <device_token>
+Host - smartthings.samsung.com
+Content-Type - application/json
+Authorization - Bearer <device_token>
 
 {
   "deviceId": "RF28R7551SR",
@@ -163,7 +163,7 @@ The advertising ID from the device also transmits to ad networks:
 }
 ```
 
-Analyzing Network Traffic: Practical Approach
+Analyzing Network Traffic - Practical Approach
 
 For developers and security researchers wanting to inspect Family Hub traffic directly, several approaches exist:
 

@@ -42,7 +42,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Cowrie: SSH Honeypot
+Step 1 - Cowrie: SSH Honeypot
 
 Cowrie is a medium-to-low interaction SSH/Telnet honeypot that logs all attacker activity. commands run, files uploaded, credentials attempted.
 
@@ -159,7 +159,7 @@ for l in sys.stdin:
 
 ---
 
-Step 2: OpenCanary: Multi-Service Honeypot
+Step 2 - OpenCanary: Multi-Service Honeypot
 
 OpenCanary simulates multiple services at once: HTTP, FTP, SSH, MySQL, Redis, SMB, and more. Ideal for detecting internal network reconnaissance.
 
@@ -237,7 +237,7 @@ systemctl enable --now opencanary
 
 ---
 
-Step 3: Alert on Honeypot Access
+Step 3 - Alert on Honeypot Access
 
 The real value of a honeypot is alerting. knowing the moment someone accesses it:
 
@@ -263,11 +263,11 @@ def send_alert(event: dict):
     msg.set_content(f"""
 Honeypot access detected!
 
-Time: {event.get('local_time', 'unknown')}
-Source IP: {event.get('src_host', 'unknown')}
-Service: {event.get('dst_service', 'unknown')}
-Port: {event.get('dst_port', 'unknown')}
-Node: {event.get('node_id', 'unknown')}
+Time - {event.get('local_time', 'unknown')}
+Source IP - {event.get('src_host', 'unknown')}
+Service - {event.get('dst_service', 'unknown')}
+Port - {event.get('dst_port', 'unknown')}
+Node - {event.get('node_id', 'unknown')}
 
 Full event:
 {json.dumps(event, indent=2)}
@@ -307,13 +307,13 @@ if __name__ == "__main__":
 
 ---
 
-Step 4: Canary Tokens: File-Based Honeypots
+Step 4 - Canary Tokens: File-Based Honeypots
 
 Canary tokens are files (documents, PDFs, images) that phone home when opened. Drop them in sensitive directories. if someone opens the "Passwords.xlsx" canary token, you get notified.
 
 ```bash
 Generate a canary token at canarytokens.org
-Choose: Word Document, PDF, or Windows Folder
+Choose - Word Document, PDF, or Windows Folder
 
 Download the token file
 wget https://canarytokens.org/download?token=abc123... -O "Passwords-2026.docx"
@@ -331,7 +331,7 @@ When opened from anywhere, you receive an email alert with:
 
 ---
 
-Step 5: Network Canary: Detect Internal Reconnaissance
+Step 5 - Network Canary: Detect Internal Reconnaissance
 
 Place a canary service on an IP that should never be accessed:
 
@@ -341,7 +341,7 @@ Set up OpenCanary on this IP
 Any port scan or connection attempt = intruder alert
 
 On your router, assign the canary IP as static
-In Pi-hole: block the canary's own DNS queries (avoid false positives)
+In Pi-hole - block the canary's own DNS queries (avoid false positives)
 
 Monitor with nftables logging:
 sudo nft add rule inet filter input ip daddr 192.168.1.200 \

@@ -20,7 +20,7 @@ Religious minorities in persecuting countries face state-level surveillance incl
 
 Table of Contents
 
-- [Threat ecosystem for Religious Minorities](#threat-ecosystem-for-religious-minorities)
+- [Threat environment for Religious Minorities](#threat-environment-for-religious-minorities)
 - [Risk Assessment Framework](#risk-assessment-framework)
 - [Communications Security](#communications-security)
 - [Data Protection and Encryption](#data-protection-and-encryption)
@@ -36,7 +36,7 @@ Table of Contents
 - [Long-term Survival Strategies](#long-term-survival-strategies)
 - [Ethical Considerations](#ethical-considerations)
 
-Threat ecosystem for Religious Minorities
+Threat environment for Religious Minorities
 
 Religious minorities in persecuting countries face a distinct set of digital threats that differ from standard privacy concerns. State-level adversaries possess capabilities that exceed typical threat models: mass surveillance infrastructure, ISP-level monitoring, SIM card registration requirements, device seizure patterns, and social network analysis.
 
@@ -105,13 +105,13 @@ Data Protection and Encryption
 Local device encryption is your first line of defense when devices are seized:
 
 ```bash
-Linux: Encrypt home directory
+Linux - Encrypt home directory
 ecryptfs-setup-private
 
 macOS: Enable FileVault
 fdesetup enable
 
-Android: Enable file-based encryption in settings
+Android - Enable file-based encryption in settings
 iOS: Enable device encryption (automatic on modern devices)
 ```
 
@@ -134,7 +134,7 @@ Network Operational Security
 
 Network-level threats require architectural solutions:
 
-Tor usage: Tor provides defense against network-level surveillance and allows access to blocked communication tools. Configure applications to use Tor:
+Tor usage - Tor provides defense against network-level surveillance and allows access to blocked communication tools. Configure applications to use Tor:
 
 ```bash
 Install Tor
@@ -145,13 +145,13 @@ Configure application to use SOCKS5 proxy
 export ALL_PROXY="socks5://127.0.0.1:9050"
 ```
 
-Self-hosted infrastructure: Avoid cloud services that can be subpoenaed or compromised. Self-host critical communication tools:
+Self-hosted infrastructure - Avoid cloud services that can be subpoenaed or compromised. Self-host critical communication tools:
 
 - Matrix servers: E2E encrypted chat, federated architecture
 - Email with PGP: Self-hosted mail server with encrypted storage
 - VPN with killswitch: Route all traffic through encrypted tunnel, auto-disconnect if tunnel drops
 
-DNS and hosts file hardening: Block known surveillance domains:
+DNS and hosts file hardening - Block known surveillance domains:
 
 ```bash
 Example /etc/hosts block for known tracking domains
@@ -169,7 +169,7 @@ When compromise occurs, having a practiced response matters more than having the
 3. Physical location compromise: Have predetermined safe meeting points. Practice safe meeting habits.
 
 ```bash
-Pre-computation: Generate one-time credentials
+Pre-computation - Generate one-time credentials
 Store these securely, use only if primary credentials compromised
 age-keygen > emergency-credentials.age
 ```
@@ -237,15 +237,15 @@ Secure Messaging Architecture for Distributed Groups
 Large distributed communities need scalable messaging without central point of failure:
 
 ```bash
-Option 1: Matrix (decentralized IRC-like)
+Option 1 - Matrix (decentralized IRC-like)
 Self-host on server in permissive jurisdiction
 docker run -it --rm -p 8008:8008 matrixdotorg/synapse
 
-Option 2: XMPP with TLS required
+Option 2 - XMPP with TLS required
 Open-source federated messaging
-Clients: Conversations (Android), Gajim (Desktop)
+Clients - Conversations (Android), Gajim (Desktop)
 
-Option 3: Offline-first mesh network
+Option 3 - Offline-first mesh network
 Use Briar for phone-to-phone communication
 Messages sync via Bluetooth, Tor
 
@@ -258,7 +258,7 @@ Practical Defense Layers for High-Risk Contexts
 
 Layer defenses across multiple technical and operational dimensions:
 
-Layer 1: Device Security
+Layer 1 - Device Security
 
 ```bash
 Tails Linux for sensitive communications only
@@ -272,7 +272,7 @@ Never use Tails on unsecured networks
 Always use wired connection or Tor bridges if WiFi necessary
 ```
 
-Layer 2: Network Security
+Layer 2 - Network Security
 
 ```bash
 Tor bridges to disguise Tor usage from ISP
@@ -284,7 +284,7 @@ Multiple Tor relays (through nested proxies)
 VPN -> Tor -> destination
 ```
 
-Layer 3: Behavioral Security
+Layer 3 - Behavioral Security
 
 ```python
 Avoid predictable patterns
@@ -310,13 +310,13 @@ def generate_random_access_schedule(
 Access times are unpredictable even to community members
 ```
 
-Layer 4: Physical Security
+Layer 4 - Physical Security
 
 ```bash
 Dead drop communication for highest risk
 Leave encrypted USB in public location
-Coordinates: GPS coordinates, time window
-Recovery: Friend collects, processes offline, responds
+Coordinates - GPS coordinates, time window
+Recovery - Friend collects, processes offline, responds
 
 In-person check meetings
 Use counter-surveillance
@@ -336,11 +336,11 @@ Use age encryption for local storage
 age-keygen > medical.key
 
 Create encrypted medical summary
-Include: allergies, conditions, current medications, emergency contacts
+Include - allergies, conditions, current medications, emergency contacts
 age -e -r $(cat medical.key.pub) < medical-summary.txt > medical.enc
 
 Share with trusted individuals only
-Recovery: Unlock with medical.key only in emergency
+Recovery - Unlock with medical.key only in emergency
 ```
 
 Educational Continuity
@@ -362,7 +362,7 @@ sudo cryptsetup luksFormat /dev/sdb1
 sudo cryptsetup luksOpen /dev/sdb1 education
 sudo mkfs.ext4 /dev/mapper/education
 
-Include: textbooks, videos, curriculum guides
+Include - textbooks, videos, curriculum guides
 Everything encrypted, no server traces
 ```
 
@@ -403,7 +403,7 @@ Prepare members for potential need to leave the country:
 
 ```bash
 Document personal information securely
-Backup copies of: passport, licenses, certificates
+Backup copies of - passport, licenses, certificates
 Store encrypted with password shared with trusted person
 
 gpg --symmetric --cipher-algo AES256 \

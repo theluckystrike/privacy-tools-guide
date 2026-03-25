@@ -133,7 +133,7 @@ Exclude sensitive directories from indexing
 mdutil -i off /Users/username/Documents/ClientWork
 ```
 
-Review Siri & Spotlight settings in System Settings. Disable suggestions that involve sending data to Apple servers when privacy is paramount.
+Review Siri & Spotlight settings in System Settings. Disable suggestions that involve sending data to Apple servers when privacy is essential.
 
 Terminal and Developer Privacy
 
@@ -148,7 +148,7 @@ export SAVEHIST=1000
 export HISTCONTROL=ignoredups:erasedups
 export HISTIGNORE="ls:ps:history"
 
-Alternative: don't save history for sensitive sessions
+Alternative - don't save history for sensitive sessions
 unset HISTFILE
 ```
 
@@ -300,7 +300,7 @@ Or use software to disable:
 defaults write com.apple.pluginkit.pkd DisableSandboxAuditEvents -bool true
 
 Check Activity Monitor for processes using camera/microphone
-Look for: com.apple.mediaserver, FaceTime, Zoom, Teams
+Look for - com.apple.mediaserver, FaceTime, Zoom, Teams
 ```
 
 For highly sensitive work, consider disabling camera and microphone at the system level:
@@ -310,7 +310,7 @@ Remove camera access for all apps
 sudo chmod 000 /dev/video*
 
 This may break Zoom, FaceTime, etc.
-Restore with: sudo chmod 644 /dev/video*
+Restore with - sudo chmod 644 /dev/video*
 ```
 
 Remote work offers flexibility but demands vigilance. By implementing these privacy configurations, you reduce your attack surface while maintaining the productivity tools and access that remote work requires. Review and audit these settings quarterly as your work environment and threat model evolve.

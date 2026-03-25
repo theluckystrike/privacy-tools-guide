@@ -42,7 +42,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Set Up Tor for Bitcoin Operations
+Step 1 - Set Up Tor for Bitcoin Operations
 
 Tor (The Onion Router) routes your network traffic through multiple relays, masking your IP address from observers. For Bitcoin usage, you'll want to run Tor as a local daemon rather than relying on the Tor Browser, which is designed for browsing rather than application connectivity.
 
@@ -79,7 +79,7 @@ curl --socks5 localhost:9050 https://check.torproject.org/api/ip
 
 A successful response confirms Tor is handling your traffic.
 
-Step 2: Choose an Anonymous-Compatible Wallet
+Step 2 - Choose an Anonymous-Compatible Wallet
 
 For anonymous Bitcoin usage, you need a wallet that supports Tor connectivity and doesn't leak identifying information. Hardware wallets combined with software interfaces offer the best security-to-privacy ratio.
 
@@ -117,7 +117,7 @@ onlynet=onion
 
 This configuration ensures all network communication traverses Tor, preventing IP address leakage.
 
-Step 3: Understand Coin Mixing Services
+Step 3 - Understand Coin Mixing Services
 
 Coin mixing (also called coin tumbling or laundering) breaks the transaction graph by combining your coins with those of other users, then returning coins of equal value (minus a fee) to new addresses you control. This makes blockchain analysis significantly more difficult since the origin of mixed coins becomes computationally expensive to trace.
 
@@ -140,7 +140,7 @@ Whirlpool is Samourai Wallet's implementation of CoinJoin, featuring zero-link o
 
 The protocol uses a coordinator running as a Tor hidden service, ensuring no network-level information leaks during mixing.
 
-Step 4: Practical Mixing Workflow
+Step 4 - Practical Mixing Workflow
 
 Here's a practical workflow combining Tor and coin mixing:
 
@@ -150,7 +150,7 @@ Here's a practical workflow combining Tor and coin mixing:
 4. Withdraw to fresh addresses from a new wallet or hardware device
 5. Never reuse addresses, generate new receiving addresses for each transaction
 
-The key principle is separation: keep your identity-linked coins completely separate from mixed coins, and never combine them in a single transaction.
+The key principle is separation - keep your identity-linked coins completely separate from mixed coins, and never combine them in a single transaction.
 
 Additional Privacy Considerations
 
@@ -178,17 +178,17 @@ Multi-Hop Mixing for Maximum Privacy
 Perform mixing across multiple services and multiple rounds:
 
 ```
-Step 1: Acquire Bitcoin from DEX
+Step 1 - Acquire Bitcoin from DEX
 ↓
-Step 2: Mix through Wasabi (Round 1-5)
+Step 2 - Mix through Wasabi (Round 1-5)
 ↓
-Step 3: Transfer to Samourai Wallet
+Step 3 - Transfer to Samourai Wallet
 ↓
-Step 4: Mix through Whirlpool (Round 1-5)
+Step 4 - Mix through Whirlpool (Round 1-5)
 ↓
-Step 5: Transfer to separate wallet for storage
+Step 5 - Transfer to separate wallet for storage
 ↓
-Step 6: After 2+ week wait, spend mixed coins
+Step 6 - After 2+ week wait, spend mixed coins
 ```
 
 Each mixing service operates independently. A service that could track coins through one cannot connect them through another. Multiple rounds increase anonymity sets exponentially.
@@ -199,12 +199,12 @@ Track your UTXOs (Unspent Transaction Outputs) carefully:
 
 ```bash
 Example UTXO management strategy
-Address 1 (mixed): 0.5 BTC (spend carefully)
-Address 2 (mixed): 0.5 BTC (spend after 1 month)
-Address 3 (mixed): 0.5 BTC (hold long-term)
-Address 4 (mixed): 0.5 BTC (backup)
+Address 1 (mixed) - 0.5 BTC (spend carefully)
+Address 2 (mixed) - 0.5 BTC (spend after 1 month)
+Address 3 (mixed) - 0.5 BTC (hold long-term)
+Address 4 (mixed) - 0.5 BTC (backup)
 
-Rule: Never combine UTXOs in a single transaction
+Rule - Never combine UTXOs in a single transaction
       (combining reveals they're from the same source)
 ```
 
@@ -215,13 +215,13 @@ Fee Bumping Without Privacy Loss
 If you need to increase transaction fees, do it privately:
 
 ```bash
-Bad: Replace-by-fee with higher fee
+Bad - Replace-by-fee with higher fee
 Analysis can infer you're the sender by watching fee pattern
 
-Good: Wait for next batch and let it confirm naturally
+Good - Wait for next batch and let it confirm naturally
 Bad pattern is less apparent after time delay
 
-Better: Send to mixer again first
+Better - Send to mixer again first
 New transaction obscures original fee patterns
 ```
 
@@ -231,25 +231,25 @@ Threat Models and Assumptions
 
 Your approach depends on what you're defending against:
 
-Model 1: Internet Service Provider Monitoring
-Threat: ISP sees you visit Bitcoin exchange
-Defense: Use Tor for all exchange interactions
-Level: Basic
+Model 1 - Internet Service Provider Monitoring
+Threat - ISP sees you visit Bitcoin exchange
+Defense - Use Tor for all exchange interactions
+Level - Basic
 
-Model 2: Exchange Metadata Correlation
-Threat: Exchange records your ID, amount purchased, withdrawal address
-Defense: DEX without KYC, mixing before spending
-Level: Intermediate
+Model 2 - Exchange Metadata Correlation
+Threat - Exchange records your ID, amount purchased, withdrawal address
+Defense - DEX without KYC, mixing before spending
+Level - Intermediate
 
-Model 3: Blockchain Analysis Companies
-Threat: Chain surveillance following addresses across time
-Defense: Mixing, time delays, address separation
-Level: Advanced
+Model 3 - Blockchain Analysis Companies
+Threat - Chain surveillance following addresses across time
+Defense - Mixing, time delays, address separation
+Level - Advanced
 
-Model 4: Targeted State Actor
-Threat: Law enforcement analysis of transactions over years
-Defense: Sophisticated UTXO management, sophisticated address creation patterns
-Level: Paranoid
+Model 4 - Targeted State Actor
+Threat - Law enforcement analysis of transactions over years
+Defense - Sophisticated UTXO management, sophisticated address creation patterns
+Level - Paranoid
 
 Choose your defensive measures to match your realistic threat model. Defending against state actors requires significant sophistication and paranoia.
 
@@ -289,9 +289,9 @@ Multi-Signature (Multiple Keys Required)
 
 ```bash
 2-of-3 multisig setup
-Key 1: Hardware wallet (home safe)
-Key 2: Backup seed (different location)
-Key 3: Trusted friend (emergency)
+Key 1 - Hardware wallet (home safe)
+Key 2 - Backup seed (different location)
+Key 3 - Trusted friend (emergency)
 
 Spend transaction requires at least 2 keys
 Each key held in geographically separate location
@@ -303,10 +303,10 @@ After mixing, verify your privacy gains:
 
 ```bash
 Test mixing effectiveness
-Before: trace transaction history
+Before - trace transaction history
 ./bitcoin-cli gettransaction <txid>
 
-After mixing: attempts to trace should fail
+After mixing - attempts to trace should fail
 Use blockchain.com or whale-alert.io to search
 Your mixed coins should not appear in analysis
 ```
@@ -322,11 +322,11 @@ Legal and Regulatory Considerations
 
 Privacy coins (Monero, Zcash) and mixing may face regulatory restrictions:
 
-United States: Mixing is legal, though regulatory scrutiny increases. FATF guidance suggests exchanges may delist privacy coins.
+United States - Mixing is legal, though regulatory scrutiny increases. FATF guidance suggests exchanges may delist privacy coins.
 
-European Union: Proposed regulations may restrict mixing service access.
+European Union - Proposed regulations may restrict mixing service access.
 
-Authoritarian Jurisdictions: Expect crackdowns on mixing and anonymity.
+Authoritarian Jurisdictions - Expect crackdowns on mixing and anonymity.
 
 Research your jurisdiction's laws. Bitcoin mixing is legal in most developed countries, but this may change. Stay informed.
 
@@ -335,14 +335,14 @@ Service Reliability and Backup Plans
 Coin mixing services can become unavailable:
 
 ```
-Wasabi: Maintained by Bitcoin privacy developers
+Wasabi - Maintained by Bitcoin privacy developers
         High likelihood of long-term availability
 
-Samourai: Maintained by dedicated team
+Samourai - Maintained by dedicated team
          Some centralized elements (coordinator)
          Lower likelihood vs Wasabi
 
-CoinJoin.io: Decentralized implementation
+CoinJoin.io - Decentralized implementation
             More reliable against service closure
             Less user-friendly
 ```
@@ -354,17 +354,17 @@ Combining Mixing with Other Privacy Techniques
  privacy combines multiple approaches:
 
 ```
-Network Privacy: Tor
+Network Privacy - Tor
   ↓
-Exchange Privacy: No-KYC DEX
+Exchange Privacy - No-KYC DEX
   ↓
-Wallet Privacy: Fresh address per transaction
+Wallet Privacy - Fresh address per transaction
   ↓
-Mixing Privacy: CoinJoin
+Mixing Privacy - CoinJoin
   ↓
-Temporal Privacy: Time delays between steps
+Temporal Privacy - Time delays between steps
   ↓
-Custody Privacy: Cold storage, multisig
+Custody Privacy - Cold storage, multisig
 ```
 
 Each layer adds friction but increases privacy exponentially.

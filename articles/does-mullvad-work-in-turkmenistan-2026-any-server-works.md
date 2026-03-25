@@ -49,7 +49,7 @@ WireGuard remains the most resilient protocol due to its minimal handshake and n
 
 ```bash
 Test WireGuard connectivity to various Mullvad servers
-Using mullvad CLI (install via: brew install mullvad-cli)
+Using mullvad CLI (install via - brew install mullvad-cli)
 
 mullvad protocol set wireguard
 mullvad connect

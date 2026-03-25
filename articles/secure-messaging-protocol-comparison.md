@@ -30,7 +30,7 @@ Table of Contents
 - [Comparison Table](#comparison-table)
 - [What Protocol Audit Reports Say](#what-protocol-audit-reports-say)
 - [What Protocol Cannot Protect Against](#what-protocol-cannot-protect-against)
-- [Practical Implementation: Verifying Protocol Claims](#practical-implementation-verifying-protocol-claims)
+- [Practical Implementation - Verifying Protocol Claims](#practical-implementation-verifying-protocol-claims)
 - [Comparing Real-World Deployments](#comparing-real-world-deployments)
 - [Threat Models and Protocol Choices](#threat-models-and-protocol-choices)
 - [Code-Level Protocol Differences](#code-level-protocol-differences)
@@ -56,13 +56,13 @@ Metadata protection. Beyond message content, how much communication metadata (wh
 
 Signal Protocol
 
-Used by: Signal, WhatsApp (partially), Skype (partially)
+Used by - Signal, WhatsApp (partially), Skype (partially)
 
 Signal Protocol combines the X3DH key agreement protocol for session establishment with the Double Ratchet Algorithm for ongoing message encryption.
 
 X3DH (Extended Triple Diffie-Hellman): Establishes a shared secret using four key pairs. two long-term identity keys and two ephemeral keys. This provides forward secrecy from the first message.
 
-Double Ratchet: After X3DH, the Double Ratchet advances two ratchets on every message. one symmetric (advancing a KDF chain) and one Diffie-Hellman (introducing new ephemeral key material). This provides both forward secrecy and break-in recovery.
+Double Ratchet - After X3DH, the Double Ratchet advances two ratchets on every message. one symmetric (advancing a KDF chain) and one Diffie-Hellman (introducing new ephemeral key material). This provides both forward secrecy and break-in recovery.
 
 Specific guarantees:
 - Forward secrecy: Yes. per-message key rotation
@@ -71,24 +71,24 @@ Specific guarantees:
 - Sealed sender: Yes (Signal app only). server cannot link sender to recipient
 
 What it does not cover:
-- Metadata: Signal's server sees that you're using Signal and message timing. Contact discovery leaks phone numbers. The server knows recipient IDs even with sealed sender.
+- Metadata - Signal's server sees that you're using Signal and message timing. Contact discovery leaks phone numbers. The server knows recipient IDs even with sealed sender.
 - Group messaging: Signal's group protocol (SGM) is more complex and has different security properties. Large group metadata is less protected.
 
 ```
 Protocol strength for 1:1 messaging: Very high
 Protocol strength for group messaging: High, but more complex
-Metadata protection: Moderate (sealed sender helps, but timing and network-level data remains)
+Metadata protection - Moderate (sealed sender helps, but timing and network-level data remains)
 ```
 
 Matrix Protocol (Megolm + Olm)
 
-Used by: Element, Cinny, FluffyChat, many Matrix clients
+Used by - Element, Cinny, FluffyChat, many Matrix clients
 
 Matrix uses two separate protocols:
 - Olm: Based on Signal Protocol's Double Ratchet, used for 1:1 Encrypted Direct Messages
 - Megolm: A group ratchet used for room encryption, optimized for multi-device and large groups
 
-The Megolm trade-off: Megolm uses a single ratchet shared among all group members rather than pairwise Double Ratchet. This is computationally efficient. important for rooms with hundreds of participants. but means:
+The Megolm trade-off - Megolm uses a single ratchet shared among all group members rather than pairwise Double Ratchet. This is computationally efficient. important for rooms with hundreds of participants. but means:
 - No break-in recovery: If a Megolm session key is compromised, all messages encrypted with that session key (typically a day's worth) are exposed.
 - More complex key management: Each new member joining a room must be sent past session keys by existing members, creating opportunities for misconfiguration.
 
@@ -99,14 +99,14 @@ What Matrix adds beyond the protocol:
 
 ```
 1:1 DM encryption (Olm): Similar to Signal Protocol
-Group room encryption (Megolm): Forward secrecy but limited break-in recovery
-Metadata protection: Weaker than Signal. federation creates metadata across servers
-Decentralization: Strong advantage for censorship resistance
+Group room encryption (Megolm) - Forward secrecy but limited break-in recovery
+Metadata protection - Weaker than Signal. federation creates metadata across servers
+Decentralization - Strong advantage for censorship resistance
 ```
 
 OMEMO (for XMPP)
 
-Used by: Conversations, Gajim, Dino XMPP clients
+Used by - Conversations, Gajim, Dino XMPP clients
 
 OMEMO is a XMPP extension (XEP-0384) that ports the Signal Protocol to XMPP. It uses the same Double Ratchet for 1:1 messages and an Olm-based approach for multi-device messaging.
 
@@ -171,7 +171,7 @@ No messaging protocol protects against:
 - Server-side analysis of contact graphs even where message content is protected
 - Legal demands backed by device seizure rather than server requests
 
-Practical Implementation: Verifying Protocol Claims
+Practical Implementation - Verifying Protocol Claims
 
 When selecting a messaging platform, the protocol matters more than the brand. Here's how to verify actual protocol implementation and what to look for in the code:
 
@@ -219,17 +219,17 @@ Threat Models and Protocol Choices
 
 Different threat models require different protocols:
 
-Threat: ISP or network observer monitoring your activity
-- Solution: Any end-to-end encrypted app works. Signal, WhatsApp, and Telegram all hide message content from network observers.
+Threat - ISP or network observer monitoring your activity
+- Solution - Any end-to-end encrypted app works. Signal, WhatsApp, and Telegram all hide message content from network observers.
 
-Threat: Authoritarian government with legal intercept capability
-- Solution: Signal or Session. Both support sealed sender and provide no decryptable metadata to servers. Tor-integrated apps like Session add network-level protection.
+Threat - Authoritarian government with legal intercept capability
+- Solution - Signal or Session. Both support sealed sender and provide no decryptable metadata to servers. Tor-integrated apps like Session add network-level protection.
 
-Threat: Accidental past message disclosure (device theft)
-- Solution: Protocols with forward secrecy. Signal, Session, and Telegram secret chats protect past messages even after key compromise.
+Threat - Accidental past message disclosure (device theft)
+- Solution - Protocols with forward secrecy. Signal, Session, and Telegram secret chats protect past messages even after key compromise.
 
-Threat: Server operator snooping (untrusted provider)
-- Solution: Matrix with strong server-side encryption, or Briar's peer-to-peer model eliminates server entirely.
+Threat - Server operator snooping (untrusted provider)
+- Solution - Matrix with strong server-side encryption, or Briar's peer-to-peer model eliminates server entirely.
 
 Code-Level Protocol Differences
 
@@ -274,10 +274,10 @@ Post-Quantum Considerations
 
 In 2026, quantum computing remains theoretical for cryptanalysis, but protocols are beginning post-quantum transitions:
 
-- Signal Protocol: No built-in post-quantum protection yet. Discussions ongoing for hybrid approaches.
-- Matrix: XMPP community discussing post-quantum hybrid modes using Kyber alongside Curve25519.
+- Signal Protocol - No built-in post-quantum protection yet. Discussions ongoing for hybrid approaches.
+- Matrix - XMPP community discussing post-quantum hybrid modes using Kyber alongside Curve25519.
 - MLS: IETF working on post-quantum variant (hybrid classical + lattice-based).
-- Briar: Uses standard curves, but peer-to-peer architecture reduces long-term key exposure risk.
+- Briar - Uses standard curves, but peer-to-peer architecture reduces long-term key exposure risk.
 
 Deployment Checklist for Teams
 

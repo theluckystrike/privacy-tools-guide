@@ -22,7 +22,7 @@ Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Advanced Protections for High-Risk Users](#advanced-protections-for-high-risk-users)
-- [Threat Model: Attack Scenarios Explained](#threat-model-attack-scenarios-explained)
+- [Threat Model - Attack Scenarios Explained](#threat-model-attack-scenarios-explained)
 - [Advanced Hardware Security Key Configuration](#advanced-hardware-security-key-configuration)
 - [Troubleshooting](#troubleshooting)
 
@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Attack Vector
+Step 1 - Understand the Attack Vector
 
 A SIM swap attack begins with social engineering. Attackers gather personal information about you through data breaches, social media, or phishing campaigns. They then contact your mobile carrier, impersonating you and requesting a SIM swap. With enough stolen information, often just your name, address, and last four digits of your Social Security number, customer service representatives may honor the request.
 
@@ -44,7 +44,7 @@ Once the swap completes, your phone loses signal. The attacker now receives all 
 
 The 2020 Twitter hack demonstrated this attack's power when attackers used SIM swaps to hijack accounts belonging to Barack Obama, Elon Musk, and others. Cryptocurrency users have lost millions to this attack vector, making it a critical threat for anyone holding digital assets.
 
-Step 2: Warning Signs You Should Not Ignore
+Step 2 - Warning Signs You Should Not Ignore
 
 Recognizing an attack in progress allows you to act quickly. Watch for these indicators:
 
@@ -54,7 +54,7 @@ Recognizing an attack in progress allows you to act quickly. Watch for these ind
 
 If you experience these signs, contact your carrier immediately through an official channel, preferably in person at a retail store with photo identification.
 
-Step 3: Carrier-Level Protections
+Step 3 - Carrier-Level Protections
 
 Your first line of defense involves securing your carrier account. Most carriers offer account PIN or password protection that must be provided before any SIM-related changes. Enable this feature immediately:
 
@@ -64,7 +64,7 @@ Your first line of defense involves securing your carrier account. Most carriers
 
 Verizon, AT&T, T-Mobile, and other major carriers all offer these protections, but they often require explicit opt-in. Without this barrier, anyone with basic personal information can request a SIM swap through customer service.
 
-Step 4: Authentication Methods That Resist SIM Swaps
+Step 4 - Authentication Methods That Resist SIM Swaps
 
 SMS-based two-factor authentication has become a liability. Migrate to more secure authentication methods:
 
@@ -111,7 +111,7 @@ Withdrawal Whitelists
 
 Cryptocurrency exchanges and financial services often support address whitelisting. Configure your account to require manual verification for any new withdrawal addresses. This prevents attackers from adding their own wallets even if they compromise your account.
 
-Step 5: Recovery Procedures When Compromised
+Step 5 - Recovery Procedures When Compromised
 
 If you suspect a SIM swap has occurred despite your precautions, act immediately:
 
@@ -121,11 +121,11 @@ If you suspect a SIM swap has occurred despite your precautions, act immediately
 4. Enable additional authentication on accounts the attacker may have accessed.
 5. Monitor accounts for unusual activity for months following the incident.
 
-Threat Model: Attack Scenarios Explained
+Threat Model - Attack Scenarios Explained
 
 Understanding realistic SIM swap attack patterns helps you prioritize defenses:
 
-Target Profile Analysis: Attackers target high-value accounts likely to contain cryptocurrency, sensitive financial access, or corporate credentials. Primary targets include:
+Target Profile Analysis - Attackers target high-value accounts likely to contain cryptocurrency, sensitive financial access, or corporate credentials. Primary targets include:
 - Cryptocurrency exchange account holders (potential loss: tens of thousands of dollars)
 - High-profile social media accounts (value for hacking and reselling)
 - Email accounts (master key to all other accounts through password reset)
@@ -145,7 +145,7 @@ Common Information Used for Social Engineering:
 - Account number (sometimes visible on bills)
 - Date of birth (social media, public records)
 
-Step 6: Step-by-Step Carrier Protection Setup
+Step 6 - Step-by-Step Carrier Protection Setup
 
 For Verizon:
 
@@ -203,7 +203,7 @@ Contact your carrier's security team directly and request:
 - Port freeze/prevention service
 - Notification of any account access attempts
 
-Step 7: Verification: Confirm Your Carrier Protections Are Active
+Step 7 - Verification: Confirm Your Carrier Protections Are Active
 
 ```
 Verification Checklist:
@@ -260,7 +260,7 @@ Registration Process:
 6. Test authentication by logging out and back in using the key
 ```
 
-Step 8: TOTP Implementation for Developers
+Step 8 - TOTP Implementation for Developers
 
 Setting Up TOTP Authentication:
 
@@ -310,13 +310,13 @@ TOTP Migration Strategy:
 For existing users without 2FA, implement progressive enforcement:
 
 ```
-Week 1-2: Announce TOTP requirement, provide guides
-Week 3-4: Offer incentives for early adoption (badge, feature access)
-Week 5-6: Require TOTP for sensitive operations (password change, payment)
-Week 7+: Require TOTP for all account access (with grace period for support)
+Week 1-2 - Announce TOTP requirement, provide guides
+Week 3-4 - Offer incentives for early adoption (badge, feature access)
+Week 5-6 - Require TOTP for sensitive operations (password change, payment)
+Week 7+ - Require TOTP for all account access (with grace period for support)
 ```
 
-Step 9: Cryptocurrency-Specific Protections
+Step 9 - Cryptocurrency-Specific Protections
 
 For users holding significant cryptocurrency:
 
@@ -353,7 +353,7 @@ Exchange Account Hardening:
    - Use separate API keys for different exchange accounts
 ```
 
-Step 10: Post-SIM Swap Recovery Protocol
+Step 10 - Post-SIM Swap Recovery Protocol
 
 If you discover a SIM swap has occurred:
 
@@ -433,7 +433,7 @@ Ongoing Monitoring (Weeks/Months):
     - Consider credit monitoring service for 24+ months
 ```
 
-Step 11: Build Defense in Depth
+Step 11 - Build Defense in Depth
 
 Security requires layered approaches. No single measure guarantees protection, but combining carrier account protections, hardware security keys, authenticator apps, and vigilant monitoring significantly reduces your attack surface. Review your authentication methods periodically, removing SMS-based 2FA where alternatives exist.
 

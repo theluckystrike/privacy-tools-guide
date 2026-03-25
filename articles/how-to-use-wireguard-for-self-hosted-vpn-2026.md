@@ -80,36 +80,36 @@ PersistentKeepalive = 25
 
 3. In WireGuard app: Import tunnel → Select `.conf` file → Activate
 
-Step 4: Add Multiple Clients (Scaling)
+Step 4 - Add Multiple Clients (Scaling)
 
 Repeat Steps 2-3 for each device:
 
 {% raw %}
 ```bash
-Server: Generate client 2
+Server - Generate client 2
 sudo wg genkey | sudo tee client2_privatekey | wg pubkey | sudo tee client2_publickey
 
 Table of Contents
 
-- [Step 4: Add Multiple Clients (Scaling)](#step-4-add-multiple-clients-scaling)
-- [Step 5: Security Hardening](#step-5-security-hardening)
+- [Step 4 - Add Multiple Clients (Scaling)](#step-4-add-multiple-clients-scaling)
+- [Step 5 - Security Hardening](#step-5-security-hardening)
 - [Troubleshooting](#troubleshooting)
 - [Performance Benchmarks (2026)](#performance-benchmarks-2026)
 - [Privacy & Security Considerations](#privacy-security-considerations)
 - [Automated Setup Script](#automated-setup-script)
-- [Advanced: Site-to-Site VPN (Office Network)](#advanced-site-to-site-vpn-office-network)
+- [Advanced - Site-to-Site VPN (Office Network)](#advanced-site-to-site-vpn-office-network)
 
-Server: Add to wg0.conf
+Server - Add to wg0.conf
 sudo nano /etc/wireguard/wg0.conf
 Add:
 [Peer]
 PublicKey = client2_publickey
 AllowedIPs = 10.0.0.3/32
 
-Server: Restart WireGuard
+Server - Restart WireGuard
 sudo systemctl restart wg-quick@wg0.service
 
-Client 2: Create config
+Client 2 - Create config
 Address = 10.0.0.3/24 (unique IP per client)
 PrivateKey = client2_privatekey
 Same peer config as before
@@ -139,9 +139,9 @@ AllowedIPs = 10.0.0.4/32
 ```
 {% endraw %}
 
-Step 5: Security Hardening
+Step 5 - Security Hardening
 
-Firewall: Restrict SSH Access
+Firewall - Restrict SSH Access
 
 ```bash
 Allow SSH only from your home IP
@@ -198,10 +198,10 @@ Regular Key Rotation (Recommended Every 6-12 Months)
 
 {% raw %}
 ```bash
-Server: Generate new key
+Server - Generate new key
 sudo wg genkey | sudo tee /etc/wireguard/privatekey.new | wg pubkey | sudo tee /etc/wireguard/publickey.new
 
-Server: Update config and restart
+Server - Update config and restart
 (Update [Interface] PrivateKey with new key)
 sudo systemctl restart wg-quick@wg0.service
 
@@ -214,20 +214,20 @@ Troubleshooting
 Client Can't Connect
 
 {% raw %}
-Check 1: Server is running
+Check 1 - Server is running
 ```bash
 sudo systemctl status wg-quick@wg0.service
 sudo wg show
 ```
 
-Check 2: Port 51820 is open
+Check 2 - Port 51820 is open
 ```bash
 From client:
 nc -u -zv YOUR_SERVER_IP 51820
-Expected: succeeded (or connection timeout = firewalled)
+Expected - succeeded (or connection timeout = firewalled)
 ```
 
-Check 3: Client config is correct
+Check 3 - Client config is correct
 ```bash
 Verify on client:
 - PrivateKey matches client1_privatekey
@@ -236,7 +236,7 @@ Verify on client:
 - AllowedIPs format correct (0.0.0.0/0 for all traffic)
 ```
 
-Check 4: Check server logs
+Check 4 - Check server logs
 ```bash
 sudo journalctl -u wg-quick@wg0.service -n 20
 ```
@@ -275,7 +275,7 @@ Or: 9.9.9.9, 149.112.112.112  # Quad9
 Or: Run local DNS resolver on VPN server
 ```
 
-Advanced: Self-hosted DNS on VPS
+Advanced - Self-hosted DNS on VPS
 
 ```bash
 sudo apt install -y unbound
@@ -380,7 +380,7 @@ sudo systemctl start wg-quick@wg0.service
 echo "Done! Server is running."
 echo "Server IP: $SERVER_IP"
 echo "Server Public Key: $SERVER_PUBKEY"
-echo "Next: Generate client keys and add peers."
+echo "Next - Generate client keys and add peers."
 ```
 
 Save as `wg-setup.sh`, then run:
@@ -391,7 +391,7 @@ sudo ./wg-setup.sh
 
 {% endraw %}
 
-Advanced: Site-to-Site VPN (Office Network)
+Advanced - Site-to-Site VPN (Office Network)
 
 Connect two office networks via WireGuard:
 

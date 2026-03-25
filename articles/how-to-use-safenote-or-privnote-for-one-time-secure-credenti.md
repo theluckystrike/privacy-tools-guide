@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand One-Time Secure Notes
+Step 1 - Understand One-Time Secure Notes
 
 One-time note services work on a simple but powerful principle: the secret is stored, a unique link is generated, and after the link is visited once, the content is permanently deleted from the server. This eliminates the risk of the credential lingering in inboxes, chat logs, or server logs where it could be discovered later.
 
 For developers working with executors, CI/CD pipelines, or automated deployment systems, these tools provide a secure way to pass sensitive values without hardcoding them or storing them in configuration files that might be committed to version control.
 
-Step 2: SafeNote: Open-Source Self-Hosting Option
+Step 2 - SafeNote: Open-Source Self-Hosting Option
 
 SafeNote offers an open-source alternative that you can self-host, giving you complete control over where your sensitive data resides. This makes it particularly attractive for organizations with strict data sovereignty requirements.
 
@@ -116,7 +116,7 @@ secret = retrieve_and_burn_note(note_url)
 Use the secret for your task, then it's gone forever
 ```
 
-Step 3: PrivNote: Quick Web-Based Solution
+Step 3 - PrivNote: Quick Web-Based Solution
 
 PrivNote provides a hosted service that requires no setup. You visit the website, create a note, and share the generated link. It's ideal for quick, ad-hoc credential sharing without any infrastructure overhead.
 
@@ -216,7 +216,7 @@ Send link via chat, verification code via SMS
 
 This layered approach ensures that even if someone intercepts the note link, they cannot access the content without the separate verification code delivered through a different channel.
 
-Step 4: Comparing SafeNote vs PrivNote
+Step 4 - Comparing SafeNote vs PrivNote
 
 For developers and power users, the choice depends on your requirements:
 

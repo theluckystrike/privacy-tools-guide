@@ -34,7 +34,7 @@ Table of Contents
 - [Clipboard Auto-Clear Implementation](#clipboard-auto-clear-implementation)
 - [Developer Best Practices](#developer-best-practices)
 - [User Configuration Recommendations](#user-configuration-recommendations)
-- [Advanced: Zero-Clearing Techniques](#advanced-zero-clearing-techniques)
+- [Advanced - Zero-Clearing Techniques](#advanced-zero-clearing-techniques)
 - [Monitoring and Alerting](#monitoring-and-alerting)
 
 The Clipboard Attack Surface
@@ -45,7 +45,7 @@ The fundamental problem stems from how operating systems handle clipboard data. 
 
 Real-World Attack Scenarios
 
-Consider a typical workflow: you open your password manager, search for your banking credentials, copy the password, switch to your browser, and paste it into the login form. During those few seconds, your password exists in plaintext in clipboard memory. An attacker with access to your system, whether through malware, a compromised application, or physical access, can capture this value.
+Consider a typical workflow - you open your password manager, search for your banking credentials, copy the password, switch to your browser, and paste it into the login form. During those few seconds, your password exists in plaintext in clipboard memory. An attacker with access to your system, whether through malware, a compromised application, or physical access, can capture this value.
 
 Keyloggers specifically target clipboard operations. Modern keyloggers don't just capture keystrokes, they monitor clipboard changes, capture screenshot sequences, and exfiltrate any sensitive data that passes through system buffers.
 
@@ -219,14 +219,14 @@ Operating System Hardening
 Beyond password manager configuration, harden your system clipboard:
 
 - macOS: Go to System Settings > Keyboard > Keyboard Shortcuts > Input Sources and review clipboard shortcuts. Consider disabling the clipboard history feature.
-- Windows: Navigate to Settings > System > Clipboard and disable clipboard history and sync across devices.
-- Linux: Disable any clipboard manager daemon that automatically stores clipboard history.
+- Windows - Navigate to Settings > System > Clipboard and disable clipboard history and sync across devices.
+- Linux - Disable any clipboard manager daemon that automatically stores clipboard history.
 
 Application Sandboxing
 
 Run sensitive applications in sandboxed environments when possible. Browser sandboxing and containerization limit what malicious code can access, including clipboard data.
 
-Advanced: Zero-Clearing Techniques
+Advanced - Zero-Clearing Techniques
 
 For maximum security, implement zero-clearing techniques that overwrite memory locations:
 
@@ -266,7 +266,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -278,7 +278,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

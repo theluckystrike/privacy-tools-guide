@@ -37,13 +37,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What Intelius Actually Shows About You
+Step 1 - What Intelius Actually Shows About You
 
 Before opting out, it helps to understand the scope of data Intelius holds. A typical Intelius profile includes full legal name and known aliases, current and historical home addresses going back 10 or more years, phone numbers (landline and mobile), email addresses, relatives' names and contact information, estimated age and birth year, employment and educational history, and in some cases court records and property ownership data.
 
 For developers, the relative detail is concerning: Intelius cross-references records to infer social graphs. Your relatives listed in your profile are often shown links to their own profiles, which means opting out of your own record does not automatically remove your name from a sibling's or parent's record. Plan your opt-out strategy to cover both your direct record and associated family records.
 
-Step 2: How Intelius Collects and Uses Your Data
+Step 2 - How Intelius Collects and Uses Your Data
 
 Intelius obtains personal information from multiple sources, including:
 
@@ -54,7 +54,7 @@ Intelius obtains personal information from multiple sources, including:
 
 Once your information is in their database, it becomes available through Intelius's people search, background check, and reverse phone lookup services. Removing your data requires submitting an opt-out request and verifying your identity.
 
-Step 3: Manual Intelius Opt-Out Process
+Step 3 - Manual Intelius Opt-Out Process
 
 The standard method to remove your information from Intelius involves their online opt-out form.
 
@@ -80,13 +80,13 @@ Common Opt-Out Problems
 
 Several issues routinely trip up people attempting to opt out of Intelius:
 
-Name not found in search: Intelius may index you under a slightly different spelling or a maiden name. Try variations of your name, including with and without middle initials.
+Name not found in search - Intelius may index you under a slightly different spelling or a maiden name. Try variations of your name, including with and without middle initials.
 
-Confirmation email not arriving: Check spam folders. If the email does not arrive within 15 minutes, the email address may have been rejected by Intelius's verification system. Try a different provider (Gmail, Proton Mail).
+Confirmation email not arriving - Check spam folders. If the email does not arrive within 15 minutes, the email address may have been rejected by Intelius's verification system. Try a different provider (Gmail, Proton Mail).
 
-Record reappears after removal: Intelius sources data from multiple upstream aggregators. When those aggregators re-send updated records, your profile can regenerate. Repeat the opt-out every 3-6 months.
+Record reappears after removal - Intelius sources data from multiple upstream aggregators. When those aggregators re-send updated records, your profile can regenerate. Repeat the opt-out every 3-6 months.
 
-Step 4: Automate Opt-Out Requests
+Step 4 - Automate Opt-Out Requests
 
 For developers managing opt-outs across multiple data brokers, scripting the process saves significant time. Below is a Python example demonstrating how to track opt-out requests.
 
@@ -129,7 +129,7 @@ print(f"Created request: {intelius_request.platform} on {intelius_request.reques
 
 This tracker helps maintain a record of all opt-out requests, including confirmation codes and status updates.
 
-Step 5: Batch Processing Multiple Data Brokers
+Step 5 - Batch Processing Multiple Data Brokers
 
 Removing your data from a single platform provides limited protection. A privacy strategy requires targeting multiple data brokers. Here's a shell script template for managing multiple opt-out processes.
 
@@ -161,7 +161,7 @@ echo "Opt-out requests logged to $LOG_FILE"
 
 This script provides a foundation for tracking opt-out requests across multiple platforms. Extend it with platform-specific automation where the data broker permits automated submissions.
 
-Step 6: Verify Your Data Removal
+Step 6 - Verify Your Data Removal
 
 After submitting an opt-out request, verify that your information has been removed by searching for yourself on Intelius and related platforms.
 
@@ -198,19 +198,19 @@ print(f"Intelius record found: {verification.get('intelius_found', 'Unknown')}")
 
 Note that automated scraping may violate terms of service. Use manual verification or official removal verification tools when available.
 
-Step 7: Understand Your Legal Rights
+Step 7 - Understand Your Legal Rights
 
 Depending on your state of residence, you may have stronger legal tools than the voluntary opt-out process:
 
-California (CCPA/CPRA): California residents have the right to know what data a business holds, to request deletion, and to opt out of the sale of personal information. Intelius must respond to CCPA deletion requests within 45 days. Submit requests via their privacy portal and reference California Civil Code 1798.100 if they do not respond.
+California (CCPA/CPRA) - California residents have the right to know what data a business holds, to request deletion, and to opt out of the sale of personal information. Intelius must respond to CCPA deletion requests within 45 days. Submit requests via their privacy portal and reference California Civil Code 1798.100 if they do not respond.
 
-Virginia (CDPA): Virginia consumers can request deletion of personal data and appeal denied requests. Intelius is a data broker under CDPA and must honor confirmed deletion requests.
+Virginia (CDPA) - Virginia consumers can request deletion of personal data and appeal denied requests. Intelius is a data broker under CDPA and must honor confirmed deletion requests.
 
-Colorado (CPA): Similar to Virginia, Colorado residents have opt-out and deletion rights with mandatory response timelines.
+Colorado (CPA) - Similar to Virginia, Colorado residents have opt-out and deletion rights with mandatory response timelines.
 
 If Intelius does not honor your opt-out within the stated timeframe, file a complaint with your state attorney general's office. For California, file with the California Privacy Protection Agency (CPPA). These complaints create accountability and often prompt faster removal than repeated opt-out form submissions.
 
-Step 8: Ongoing Data Protection
+Step 8 - Ongoing Data Protection
 
 Data broker databases continuously refresh with new information. A single opt-out request does not guarantee permanent removal. Consider these ongoing strategies:
 
@@ -219,7 +219,7 @@ Data broker databases continuously refresh with new information. A single opt-ou
 - Use privacy tools like data removal services for automated monitoring
 - Limit public data sharing on social media and public directories
 
-Step 9: Data Brokers Related to Intelius
+Step 9 - Data Brokers Related to Intelius
 
 Intelius is owned by PeopleConnect, which also operates Spokeo, Classmates.com, and other people-search properties. Removing data from Intelius alone does not remove it from sibling platforms. Submit separate opt-out requests to each:
 

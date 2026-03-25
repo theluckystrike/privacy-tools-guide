@@ -22,12 +22,12 @@ Table of Contents
 - [Why Mandatory TLS Matters for Email Privacy](#why-mandatory-tls-matters-for-email-privacy)
 - [Prerequisites](#prerequisites)
 - [Understanding TLS Modes in Postfix](#understanding-tls-modes-in-postfix)
-- [Step 1: Generate or Obtain TLS Certificates](#step-1-generate-or-obtain-tls-certificates)
-- [Step 2: Configure Postfix TLS Parameters](#step-2-configure-postfix-tls-parameters)
-- [Step 3: Configure the Submission Port](#step-3-configure-the-submission-port)
-- [Step 4: Configure Granular TLS Policies per Destination](#step-4-configure-granular-tls-policies-per-destination)
-- [Step 5: Enable DANE and MTA-STS](#step-5-enable-dane-and-mta-sts)
-- [Step 6: Test and Verify Configuration](#step-6-test-and-verify-configuration)
+- [Step 1 - Generate or Obtain TLS Certificates](#step-1-generate-or-obtain-tls-certificates)
+- [Step 2 - Configure Postfix TLS Parameters](#step-2-configure-postfix-tls-parameters)
+- [Step 3 - Configure the Submission Port](#step-3-configure-the-submission-port)
+- [Step 4 - Configure Granular TLS Policies per Destination](#step-4-configure-granular-tls-policies-per-destination)
+- [Step 5 - Enable DANE and MTA-STS](#step-5-enable-dane-and-mta-sts)
+- [Step 6 - Test and Verify Configuration](#step-6-test-and-verify-configuration)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 - [Security Considerations](#security-considerations)
 
@@ -60,7 +60,7 @@ Postfix supports a hierarchy of TLS security levels, applied independently to ou
 
 For general internet email, `encrypt` is the practical mandatory baseline. Use `verify` or `dane` for specific high-value partner domains.
 
-Step 1: Generate or Obtain TLS Certificates
+Step 1 - Generate or Obtain TLS Certificates
 
 For production, obtain a certificate from Let's Encrypt using Certbot:
 
@@ -96,7 +96,7 @@ sudo chmod 600 /etc/postfix/tls/postfix.key
 sudo chmod 644 /etc/postfix/tls/postfix.crt
 ```
 
-Step 2: Configure Postfix TLS Parameters
+Step 2 - Configure Postfix TLS Parameters
 
 Edit your Postfix main configuration file:
 
@@ -117,7 +117,7 @@ Session cache reduces TLS handshake overhead for repeated connections
 smtp_tls_session_cache_database = btree:/var/lib/postfix/smtp_tls_session_cache
 smtp_tls_session_cache_timeout = 3600s
 
-Protocol hardening: exclude obsolete and weak protocols
+Protocol hardening - exclude obsolete and weak protocols
 smtp_tls_protocols = !SSLv2, !SSLv3, !TLSv1, !TLSv1.1
 smtp_tls_ciphers = high
 smtp_tls_mandatory_ciphers = high
@@ -161,7 +161,7 @@ smtpd_tls_received_header = yes
 
 The `smtpd_tls_auth_only = yes` parameter is critical: it prevents mail clients from transmitting passwords over unencrypted connections. Without it, AUTH commands succeed on cleartext connections, making credential theft trivial on any network path between the client and server.
 
-Step 3: Configure the Submission Port
+Step 3 - Configure the Submission Port
 
 Mail User Agents (email clients like Thunderbird, Apple Mail, or Outlook) should connect on port 587 with STARTTLS or port 465 with implicit TLS. Configure `master.cf` to enforce encryption on both:
 
@@ -170,7 +170,7 @@ sudo nano /etc/postfix/master.cf
 ```
 
 ```bash
-Port 587: Submission with mandatory STARTTLS
+Port 587 - Submission with mandatory STARTTLS
 submission inet n - y - - smtpd
   -o syslog_name=postfix/submission
   -o smtpd_tls_security_level=encrypt
@@ -180,7 +180,7 @@ submission inet n - y - - smtpd
   -o smtpd_client_restrictions=permit_sasl_authenticated,reject
   -o milter_macro_daemon_name=ORIGINATING
 
-Port 465: Implicit TLS (SMTPS). preferred for modern clients
+Port 465 - Implicit TLS (SMTPS). preferred for modern clients
 smtps inet n - y - - smtpd
   -o syslog_name=postfix/smtps
   -o smtpd_tls_wrappermode=yes
@@ -193,7 +193,7 @@ smtps inet n - y - - smtpd
 
 Port 465 with `smtpd_tls_wrappermode=yes` uses implicit TLS. the handshake begins immediately on connect, with no plaintext negotiation phase to intercept. Prefer port 465 over 587 for new client configurations.
 
-Step 4: Configure Granular TLS Policies per Destination
+Step 4 - Configure Granular TLS Policies per Destination
 
 Create a TLS policy map for domain-specific requirements:
 
@@ -202,14 +202,14 @@ sudo nano /etc/postfix/tls_policy
 ```
 
 ```bash
-High-security partners: verify certificate against CA
+High-security partners - verify certificate against CA
 partner-bank.com        verify match=hostname
 law-firm.com            verify match=hostname
 
-Domains with known TLS issues: require encryption but skip cert verify
+Domains with known TLS issues - require encryption but skip cert verify
 legacy-partner.org      encrypt
 
-Global default: mandatory TLS, no cert verification
+Global default - mandatory TLS, no cert verification
 *                       encrypt protocols=!SSLv2:!SSLv3:!TLSv1:!TLSv1.1
 ```
 
@@ -225,7 +225,7 @@ Add to `main.cf`:
 smtp_tls_policy_maps = hash:/etc/postfix/tls_policy
 ```
 
-Step 5: Enable DANE and MTA-STS
+Step 5 - Enable DANE and MTA-STS
 
 DANE (DNS-Based Authentication of Named Entities) uses DNSSEC-signed TLSA records to authenticate remote mail servers without trusting commercial CAs:
 
@@ -241,7 +241,7 @@ Generate and publish your TLSA record:
 openssl x509 -in /etc/letsencrypt/live/mail.yourdomain.com/fullchain.pem \
   -noout -pubkey | openssl pkey -pubin -outform DER | \
   openssl dgst -sha256 -binary | xxd -p -c 64
-Add to DNS: _25._tcp.mail.yourdomain.com. IN TLSA 3 1 1 <hash>
+Add to DNS - _25._tcp.mail.yourdomain.com. IN TLSA 3 1 1 <hash>
 ```
 
 MTA-STS complements DANE for domains without DNSSEC. Create a policy at `https://mta-sts.yourdomain.com/.well-known/mta-sts.txt`:
@@ -261,7 +261,7 @@ _mta-sts.yourdomain.com TXT "v=STSv1; id=20260316T000000"
 
 Update the `id` value whenever your policy changes.
 
-Step 6: Test and Verify Configuration
+Step 6 - Test and Verify Configuration
 
 ```bash
 sudo postfix check
@@ -280,7 +280,7 @@ openssl s_client -connect mail.yourdomain.com:587 -starttls smtp 2>&1 | \
 
 Verify TLS 1.3 is negotiated
 openssl s_client -connect mail.yourdomain.com:465 2>&1 | grep "Protocol"
-Expected: Protocol : TLSv1.3
+Expected - Protocol : TLSv1.3
 ```
 
 Test with swaks for an end-to-end check:
@@ -325,7 +325,7 @@ sudo postconf smtpd_sasl_type  # Should show: dovecot
 sudo ls -la /var/spool/postfix/private/auth
 ```
 
-Performance degradation: TLS handshakes add 1-5ms per connection. Session caching (configured above) mitigates this for repeat connections.
+Performance degradation - TLS handshakes add 1-5ms per connection. Session caching (configured above) mitigates this for repeat connections.
 
 Security Considerations
 

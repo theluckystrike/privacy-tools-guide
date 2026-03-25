@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How sysctl Works
+Step 1 - How sysctl Works
 
 Read a current value:
 
@@ -57,7 +57,7 @@ Apply all settings from the file:
 sudo sysctl --system
 ```
 
-Step 2: The Complete Hardening File
+Step 2 - The Complete Hardening File
 
 Create the configuration file:
 
@@ -182,37 +182,37 @@ Apply the settings:
 sudo sysctl --system
 ```
 
-Step 3: Verify Key Settings
+Step 3 - Verify Key Settings
 
 Check that the most critical settings are applied:
 
 ```bash
 ASLR enabled
 sysctl kernel.randomize_va_space
-Expected: 2
+Expected - 2
 
 Kernel pointers hidden
 sysctl kernel.kptr_restrict
-Expected: 2
+Expected - 2
 
 dmesg restricted
 sysctl kernel.dmesg_restrict
-Expected: 1
+Expected - 1
 
 SYN cookies active
 sysctl net.ipv4.tcp_syncookies
-Expected: 1
+Expected - 1
 
 No ICMP redirects accepted
 sysctl net.ipv4.conf.all.accept_redirects
-Expected: 0
+Expected - 0
 
 Reverse path filtering
 sysctl net.ipv4.conf.all.rp_filter
-Expected: 1
+Expected - 1
 ```
 
-Additional Hardening: Kernel Module Restrictions
+Additional Hardening - Kernel Module Restrictions
 
 Restrict which kernel modules can be loaded. Useful on production servers that shouldn't load new drivers:
 
@@ -262,7 +262,7 @@ sudo update-initramfs -u   # Debian/Ubuntu
 sudo dracut --force         # Fedora/RHEL
 ```
 
-Step 4: Secure /proc and /sys Mounts
+Step 4 - Secure /proc and /sys Mounts
 
 Mount `/proc` with `hidepid=2` so users can only see their own processes:
 
@@ -289,7 +289,7 @@ Remount without rebooting:
 sudo mount -o remount,hidepid=2,gid=proc /proc
 ```
 
-Step 5: Audit Current Settings Against Baseline
+Step 5 - Audit Current Settings Against Baseline
 
 The `lynis` tool audits Linux security configuration and reports on settings that deviate from hardening benchmarks:
 
@@ -307,7 +307,7 @@ sudo grep -A2 "sysctl" /var/log/lynis.log | tail -50
 
 Lynis outputs a hardening index score and specific recommendations. Run it after applying changes to measure improvement.
 
-Step 6: Impact on Performance
+Step 6 - Impact on Performance
 
 Most of these settings have zero measurable performance impact on typical workloads. The exceptions:
 

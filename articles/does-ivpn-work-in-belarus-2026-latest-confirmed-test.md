@@ -21,13 +21,13 @@ Belarus presents unique challenges for VPN users. The country's regulatory envir
 Table of Contents
 
 - [Understanding Belarus's VPN Regulatory Environment](#understanding-belaruss-vpn-regulatory-environment)
-- [Protocol Compatibility: What Works in 2026](#protocol-compatibility-what-works-in-2026)
+- [Protocol Compatibility - What Works in 2026](#protocol-compatibility-what-works-in-2026)
 - [Configuration Recommendations for Developers](#configuration-recommendations-for-developers)
 - [Technical Considerations for Power Users](#technical-considerations-for-power-users)
 - [Testing Your VPN Connection](#testing-your-vpn-connection)
 - [Future Outlook](#future-outlook)
 - [IVPN Specific Capabilities in Belarus](#ivpn-specific-capabilities-in-belarus)
-- [Comparative Testing: IVPN vs. Alternatives](#comparative-testing-ivpn-vs-alternatives)
+- [Comparative Testing - IVPN vs. Alternatives](#comparative-testing-ivpn-vs-alternatives)
 - [Advanced Protocol Manipulation](#advanced-protocol-manipulation)
 - [Alternative Tools for Belarus Developers](#alternative-tools-for-belarus-developers)
 - [Testing Reproducibility and Documentation](#testing-reproducibility-and-documentation)
@@ -42,7 +42,7 @@ Belarus maintains strict internet regulations that affect how VPN services opera
 
 The key difference from many other jurisdictions is the emphasis on protocol obfuscation. Standard VPN protocols often get detected and throttled, making obfuscated or custom-protocol solutions more reliable.
 
-Protocol Compatibility: What Works in 2026
+Protocol Compatibility - What Works in 2026
 
 Based on community testing and confirmed reports, the following protocols demonstrate varying levels of reliability in Belarus:
 
@@ -165,18 +165,18 @@ IVPN Specific Capabilities in Belarus
 
 IVPN distinguishes itself from competitors through specific design choices relevant to restrictive networks:
 
-Port forwarding: IVPN offers port forwarding on paid plans, useful for running local services accessible from outside Belarus. This enables hosting applications or maintaining persistent connections without relying on specific application protocols.
+Port forwarding - IVPN offers port forwarding on paid plans, useful for running local services accessible from outside Belarus. This enables hosting applications or maintaining persistent connections without relying on specific application protocols.
 
-MultiHop routing: IVPN's MultiHop feature chains connections through multiple servers in different countries. In Belarus, using MultiHop (Belarus → Netherlands → Switzerland) makes traffic analysis harder, even if Belarus authorities see you're using a VPN, they can't determine your destination.
+MultiHop routing - IVPN's MultiHop feature chains connections through multiple servers in different countries. In Belarus, using MultiHop (Belarus → Netherlands → Switzerland) makes traffic analysis harder, even if Belarus authorities see you're using a VPN, they can't determine your destination.
 
 ```bash
 IVPN CLI configuration for MultiHop in restrictive environment
 ivpn connect --multihop-entry Belarus --multihop-exit Netherlands
 ```
 
-WireGuard support: IVPN uses WireGuard natively (not just as a wrapper), providing performance advantages. However, WireGuard's distinctive traffic signature remains detectable through DPI.
+WireGuard support - IVPN uses WireGuard natively (not just as a wrapper), providing performance advantages. However, WireGuard's distinctive traffic signature remains detectable through DPI.
 
-Comparative Testing: IVPN vs. Alternatives
+Comparative Testing - IVPN vs. Alternatives
 
 For power users in Belarus, testing multiple services provides insights into regional blocking:
 
@@ -197,7 +197,7 @@ Advanced Protocol Manipulation
 
 For developers comfortable with lower-level network configuration, several techniques improve VPN success in Belarus:
 
-MTU Adjustment: Some firewalls examine packet size. Reducing Maximum Transmission Unit (MTU) causes larger packets to fragment, potentially bypassing detection:
+MTU Adjustment - Some firewalls examine packet size. Reducing Maximum Transmission Unit (MTU) causes larger packets to fragment, potentially bypassing detection:
 
 ```bash
 Test optimal MTU
@@ -213,7 +213,7 @@ Within OpenVPN config, can also set:
 mssfix 1300
 ```
 
-Packet fragmentation: Some firewall evasion techniques involve fragmenting VPN packets themselves:
+Packet fragmentation - Some firewall evasion techniques involve fragmenting VPN packets themselves:
 
 ```bash
 Using tc (traffic control) to fragment packets
@@ -223,7 +223,7 @@ OpenVPN direct config:
 fragment 1300  # Fragments packets larger than 1300 bytes
 ```
 
-IPv6 Tunneling: Belarus DPI focuses primarily on IPv4. Using IPv6 tunneling (Hurricane Electric offers free IPv6 tunneling) may bypass some filters, though this is increasingly detected.
+IPv6 Tunneling - Belarus DPI focuses primarily on IPv4. Using IPv6 tunneling (Hurricane Electric offers free IPv6 tunneling) may bypass some filters, though this is increasingly detected.
 
 Alternative Tools for Belarus Developers
 
@@ -247,7 +247,7 @@ The obfs plugin makes traffic appear as HTTP requests to google.com
 Deep Packet Inspection sees HTTP traffic, not VPN
 ```
 
-Tor Browser: While slower, Tor uses multiple encryption layers and distributed exit nodes, making it difficult to block entirely. Bridges (specially configured Tor entry nodes) provide additional evasion capabilities:
+Tor Browser - While slower, Tor uses multiple encryption layers and distributed exit nodes, making it difficult to block entirely. Bridges (specially configured Tor entry nodes) provide additional evasion capabilities:
 
 ```bash
 Tor configuration for bridge use
@@ -293,15 +293,15 @@ Regulatory and Legal Context
 
 Understanding Belarus's specific regulatory environment helps contextualize VPN blocking:
 
-Official status: VPNs are not illegal in Belarus for citizens, but ISP-level blocking suggests government desire to restrict their use.
+Official status - VPNs are not illegal in Belarus for citizens, but ISP-level blocking suggests government desire to restrict their use.
 
-Professional implications: Developers or business professionals requiring VPN access should:
+Professional implications - Developers or business professionals requiring VPN access should:
 - Document legitimate business purpose
 - Ensure employer authorization
 - Be prepared for performance issues and fallback solutions
 - Consider legal implications of using VPNs to access content restricted in Belarus
 
-ISP enforcement: Different ISPs apply filtering with varying intensity:
+ISP enforcement - Different ISPs apply filtering with varying intensity:
 - Beltelecom (national ISP) aggressively blocks many VPN protocols
 - Regional ISPs may have less sophisticated blocking
 - Testing with multiple ISPs provides better understanding of true blocking capability

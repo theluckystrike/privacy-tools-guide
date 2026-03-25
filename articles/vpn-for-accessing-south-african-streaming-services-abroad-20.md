@@ -20,7 +20,7 @@ Frequently Asked Questions
 
 Table of Contents
 
-- [Provider-Specific Setup: NordVPN for South Africa](#provider-specific-setup-nordvpn-for-south-africa)
+- [Provider-Specific Setup - NordVPN for South Africa](#provider-specific-setup-nordvpn-for-south-africa)
 - [Streaming Service Detection Workarounds](#streaming-service-detection-workarounds)
 - [Speedtest Optimization](#speedtest-optimization)
 - [Bandwidth Optimization](#bandwidth-optimization)
@@ -46,12 +46,12 @@ What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-Provider-Specific Setup: NordVPN for South Africa
+Provider-Specific Setup - NordVPN for South Africa
 
 NordVPN maintains dedicated servers in South Africa optimized for streaming:
 
 ```bash
-Linux: Install NordVPN CLI
+Linux - Install NordVPN CLI
 wget https://repo.nordvpn.com/deb/nordvpn/ubuntu/pool/focal/main/n/nordvpn-release/nordvpn-release_1.0.0_all.deb
 sudo apt install ./nordvpn-release_1.0.0_all.deb
 sudo apt update && sudo apt install nordvpn
@@ -100,28 +100,28 @@ firefox --new-private-window &
 
 2. Use residential proxy for VPN (if available)
 Rotating residential IPs are harder to detect than datacenter VPNs
-Services: Bright Data, Oxylabs, Smartproxy
+Services - Bright Data, Oxylabs, Smartproxy
 export PROXY_SERVER="http://user:pass@proxy.residential-service.com:8080"
 
 3. Disable WebRTC leaks (reveals actual IP)
-Firefox: about:config → media.peerconnection.enabled = false
-Chrome: chrome://extensions → Enable "Developer mode" →
+Firefox - about:config → media.peerconnection.enabled = false
+Chrome - chrome://extensions → Enable "Developer mode" →
         Install WebRTC Leak Shield extension
 
 4. Disable DNS leaks (use VPN's DNS)
-Verify: dig myip.opendns.com
+Verify - dig myip.opendns.com
 dig @resolver1.opendns.com myip.opendns.com +short
 
 5. Disable IPv6 (some services check IPv6 separately)
-Firefox: about:config → network.dns.disableIPv6 = true
+Firefox - about:config → network.dns.disableIPv6 = true
 
 6. Spoof User-Agent to match South African device
 Chrome DevTools → More tools → Network conditions → User Agent
-Select: Chrome on Android or Chrome on Desktop (SA-typical)
+Select - Chrome on Android or Chrome on Desktop (SA-typical)
 
 7. Use a dedicated streaming device (if possible)
-Smart TV on VPN: less tracking than laptop
-VPN-enabled TV apps: Proton VPN, NordVPN have TV apps
+Smart TV on VPN - less tracking than laptop
+VPN-enabled TV apps - Proton VPN, NordVPN have TV apps
 ```
 
 Speedtest Optimization
@@ -142,7 +142,7 @@ If too slow:
 3. Disable encryption temporarily (major speed gain, not recommended)
 4. Use protocol obfuscation to avoid ISP throttling
 
-Real-world test: stream on different servers
+Real-world test - stream on different servers
 #!/bin/bash
 for server in johannesburg capetown durban; do
   vpn-connect $server
@@ -166,8 +166,8 @@ pkill -f dropbox
 pkill -f telegram
 
 Use VPN's built-in compression (if available)
-In OpenVPN config: comp-lzo yes
-In WireGuard: Cannot compress natively
+In OpenVPN config - comp-lzo yes
+In WireGuard - Cannot compress natively
 
 Test actual bandwidth to streaming service
 iperf3 -c streaming-server-ip -t 60 -R
@@ -181,7 +181,7 @@ Accessing South African services from abroad may violate ToS. Understand the ris
 - Showmax: Requires South African payment method (prepaid card/local bank)
 - DStv: Requires South African account, billing address validation
 
-Workaround: Use South African friend's account, or VPN + South African virtual card:
+Workaround - Use South African friend's account, or VPN + South African virtual card:
 
 ```bash
 Services offering South African virtual cards:

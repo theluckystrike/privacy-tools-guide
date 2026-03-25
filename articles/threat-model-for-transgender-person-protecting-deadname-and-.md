@@ -72,11 +72,11 @@ Separating your identities requires a systematic approach. Use dedicated email a
 Setting up email aliases in your password manager
 Store separate entries for each identity
 #
-Identity: Old/Deadname
+Identity - Old/Deadname
 - email: deadname.surname@provider.com
 - notes: "Use for legacy accounts only"
 #
-Identity: New Name
+Identity - New Name
 - email: new.name@provider.com
 - notes: "Use for professional and new accounts"
 ```
@@ -150,7 +150,7 @@ Review each platform's privacy settings systematically:
 
 Use platform export tools to download your data before making changes, this creates a backup if you need to reference old information.
 
-Practical Automation: Name Change Checklist
+Practical Automation - Name Change Checklist
 
 Create a personal script to track your migration progress:
 

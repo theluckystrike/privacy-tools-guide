@@ -43,7 +43,7 @@ The executor must locate credentials, understand what each account contains, det
 
 Systematic Discovery Methods
 
-Step 1: Physical and Digital Search
+Step 1 - Physical and Digital Search
 
 Begin with a thorough physical search of the deceased's home office:
 
@@ -60,18 +60,18 @@ Digital discovery involves checking:
 - Notes applications containing credentials
 - Cloud storage documents labeled "passwords" or "accounts"
 
-Step 2: Email Account Analysis
+Step 2 - Email Account Analysis
 
 The deceased's primary email account often serves as an account registry. Use email search with these queries:
 
 ```
-Subject: "welcome" OR "verify" OR "confirm your account"
-From: "noreply@*.com" OR "support@*.com"
+Subject - "welcome" OR "verify" OR "confirm your account"
+From - "noreply@*.com" OR "support@*.com"
 ```
 
 This reveals registration confirmations across thousands of services. Export relevant emails to a searchable format for systematic review.
 
-Step 3: Using CLI Tools for Account Discovery
+Step 3 - Using CLI Tools for Account Discovery
 
 For developers and power users, command-line tools accelerate the discovery process. Here's a Python script that analyzes exported email to identify service accounts:
 
@@ -164,7 +164,7 @@ if __name__ == '__main__':
     import sys
 
     if len(sys.argv) < 2:
-        print("Usage: python account_discovery.py <email_export_directory>")
+        print("Usage - python account_discovery.py <email_export_directory>")
         sys.exit(1)
 
     email_dir = Path(sys.argv[1])
@@ -179,14 +179,14 @@ if __name__ == '__main__':
     generate_inventory_report(all_accounts)
 ```
 
-Step 4: Using Have I Been Pwned for Breach Data
+Step 4 - Using Have I Been Pwned for Breach Data
 
 The deceased's email address may have appeared in data breaches, revealing account existence at specific services. Use the Have I Been Pwned API to check:
 
 ```bash
 #!/bin/bash
 Check email for breach data
-Requires: curl, jq
+Requires - curl, jq
 
 EMAIL="deceased@example.com"
 HIBP_API="https://haveibeenpwned.com/api/v3/breachedaccount/$EMAIL"

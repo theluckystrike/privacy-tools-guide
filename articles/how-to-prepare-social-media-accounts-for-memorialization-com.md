@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Account Memorialization
+Step 1 - Understand Account Memorialization
 
 When a social media account holder passes away, their accounts become vulnerable to several risks: unauthorized access by malicious actors, identity theft, and the potential loss of valuable digital memories. Most major platforms offer memorialization features that freeze accounts in a read-only state, preserving content while preventing modifications.
 
 The memorialization process varies significantly between platforms, and not all services provide official memorialization options. Understanding these differences helps you create a digital estate plan.
 
-Step 2: Facebook Memorialization
+Step 2 - Facebook Memorialization
 
 Facebook provides one of the most established memorialization processes. To request memorialization, you need to:
 
@@ -56,7 +56,7 @@ After memorialization, the account:
 - Allows approved friends to post tributes
 - Removes sensitive information from search results
 
-Step 3: Instagram Memorialization
+Step 3 - Instagram Memorialization
 
 Instagram, owned by Meta, follows similar memorialization procedures. The process requires:
 
@@ -70,7 +70,7 @@ Instagram memorialization results in:
 - Prevention of new login attempts
 - Preservation of all posts and stories
 
-Step 4: Twitter/X Account Handling
+Step 4 - Twitter/X Account Handling
 
 Twitter (now X) does not have a formal memorialization process as of 2026. However, you can take several protective measures:
 
@@ -106,7 +106,7 @@ def archive_user_tweets(consumer_key, consumer_secret, access_token, access_secr
     return len(tweets)
 ```
 
-Step 5: LinkedIn Profile Management
+Step 5 - LinkedIn Profile Management
 
 LinkedIn offers a dedicated process for removing deceased members' profiles:
 
@@ -116,7 +116,7 @@ LinkedIn offers a dedicated process for removing deceased members' profiles:
 
 LinkedIn also allows you to designate a connection as a legacy contact through account settings, though this feature is limited compared to other platforms.
 
-Step 6: Google Account Inactive Account Manager
+Step 6 - Google Account Inactive Account Manager
 
 Google provides a powerful Inactive Account Manager that automatically transfers account data to a designated contact after a period of inactivity:
 
@@ -147,21 +147,21 @@ async function configureInactiveAccountManager(auth, config) {
 }
 ```
 
-Step 7: Reddit Account Options
+Step 7 - Reddit Account Options
 
 Reddit does not offer formal memorialization. However, you can:
 1. Request account deletion through Reddit Support
 2. Use the Reddit API to archive content before deletion
 3. Designate a legacy contact with account credentials
 
-Step 8: Discord Account Handling
+Step 8 - Discord Account Handling
 
 Discord requires direct contact with their support team for memorialization requests. Provide:
 - Death certificate or obituary
 - Discord ID of the account
 - Your relationship to the deceased
 
-Step 9: General Checklist for All Platforms
+Step 9 - General Checklist for All Platforms
 
 Use this checklist when preparing accounts for memorialization:
 
@@ -176,7 +176,7 @@ Use this checklist when preparing accounts for memorialization:
 - [ ] Document the memorialization process for each platform
 - [ ] Inform trusted individuals about account wishes
 
-Step 10: Automate Documentation
+Step 10 - Automate Documentation
 
 For power users managing numerous accounts, create a documentation script:
 
@@ -191,11 +191,11 @@ echo "Social Media Account Inventory - $TIMESTAMP" > "$ACCOUNTS_FILE"
 echo "==========================================" >> "$ACCOUNTS_FILE"
 
 Add your accounts in the following format:
-Platform: [Platform Name]
-Username: [Username]
-Legacy Contact: [Contact Name]
-Memorialization Method: [Manual/Auto]
-Notes: [Any additional notes]
+Platform - [Platform Name]
+Username - [Username]
+Legacy Contact - [Contact Name]
+Memorialization Method - [Manual/Auto]
+Notes - [Any additional notes]
 
 echo "" >> "$ACCOUNTS_FILE"
 echo "Instructions:" >> "$ACCOUNTS_FILE"

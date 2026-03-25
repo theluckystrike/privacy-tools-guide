@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "China Social Credit System Digital Privacy Implications"
-description: "China Social Credit System: What Online Behavior Is.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
+description: "China Social Credit System - What Online Behavior Is.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
@@ -22,7 +22,7 @@ Table of Contents
 - [Data Aggregation Risks in Other Contexts](#data-aggregation-risks-in-other-contexts)
 - [Building Privacy-Conscious Applications](#building-privacy-conscious-applications)
 - [International Data Transfer Considerations](#international-data-transfer-considerations)
-- [The Surveillance-as-a-Service Ecosystem](#the-surveillance-as-a-service-ecosystem)
+- [The Surveillance-as-a-Service environment](#the-surveillance-as-a-service-environment)
 
 For developers and individuals concerned about behavioral surveillance in any jurisdiction, several approaches provide defense-in-depth:
 
@@ -36,7 +36,7 @@ If one is compromised, others remain protected
 Or use Tails for ephemeral sessions
 All data erased on shutdown
 Forces Tor usage by default
-Download: https://tails.boum.org/
+Download - https://tails.boum.org/
 ```
 
 These approaches limit the damage if a single application is compromised, preventing access to sensitive data from other applications.
@@ -75,7 +75,7 @@ Network-Level Defenses
 ```bash
 Tor usage obscures your IP and adds network hops
 Makes tracking harder even if content is monitored
-Download Tor Browser: https://www.torproject.org/
+Download Tor Browser - https://www.torproject.org/
 
 DNS-over-HTTPS or DNS-over-Tor prevents ISP from seeing queries
 Firefox preferences:
@@ -90,13 +90,13 @@ Data Aggregation Risks in Other Contexts
 
 China's SCS isn't unique, the underlying risks appear in other systems:
 
-US Financial Surveillance: Bank Secrecy Act requires reporting suspicious transactions. Combined with government data access, financial behavior becomes transparent to authorities.
+US Financial Surveillance - Bank Secrecy Act requires reporting suspicious transactions. Combined with government data access, financial behavior becomes transparent to authorities.
 
-European GDPR: While protective on surface, GDPR includes national security exceptions. Data minimization is still the strongest defense.
+European GDPR - While protective on surface, GDPR includes national security exceptions. Data minimization is still the strongest defense.
 
-Corporate Profiling: Not government-run but often more . Companies profile behavior for targeting, price discrimination, and manipulation.
+Corporate Profiling - Not government-run but often more . Companies profile behavior for targeting, price discrimination, and manipulation.
 
-The principle remains universal: aggregated data enables surveillance, regardless of who controls the aggregation.
+The principle remains universal - aggregated data enables surveillance, regardless of who controls the aggregation.
 
 Building Privacy-Conscious Applications
 
@@ -136,14 +136,14 @@ International Data Transfer Considerations
 
 If you operate internationally, understand that different jurisdictions have different requirements:
 
-EU (GDPR): Strict data protection, limited transfers to other countries
-China: Data localization required, government access possible
+EU (GDPR) - Strict data protection, limited transfers to other countries
+China - Data localization required, government access possible
 US: Regulated by sector (healthcare = HIPAA, finance = various), less general protection
-Russia: Similar to China, with strong data localization requirements
+Russia - Similar to China, with strong data localization requirements
 
 When building globally-accessible services, the safest approach is meeting the strictest jurisdiction's requirements everywhere. This means strong encryption, data minimization, and user control regardless of user location.
 
-The Surveillance-as-a-Service Ecosystem
+The Surveillance-as-a-Service environment
 
 China's SCS demonstrates what happens when surveillance infrastructure becomes a national priority. But similar infrastructure is being built piecemeal globally:
 

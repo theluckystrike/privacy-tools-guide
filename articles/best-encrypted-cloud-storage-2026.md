@@ -20,8 +20,8 @@ I've spent the past two months testing every major encrypted cloud storage servi
 - The best encrypted cloud: storage for developers in 2026 depends on your threat model.
 - Proton's Drive API remains: limited compared to traditional S3-compatible services, which constrains programmatic workflows.
 - The service provides 10GB free storage: making it accessible for personal projects and testing workflows before committing to paid plans.
-- However: if your project requires compliance with GDPR, HIPAA, or Swiss data protection regulations, the service provides documented security guarantees that satisfy most audit requirements.
-- Services like Wasabi: Backblaze B2, or self-hosted MinIO work with rclone's encryption layer.
+- However - if your project requires compliance with GDPR, HIPAA, or Swiss data protection regulations, the service provides documented security guarantees that satisfy most audit requirements.
+- Services like Wasabi - Backblaze B2, or self-hosted MinIO work with rclone's encryption layer.
 
 What Developers Need from Encrypted Storage
 
@@ -33,7 +33,7 @@ Zero-Knowledge Cloud Storage Services
 
 Proton Drive
 
-Proton Drive provides zero-knowledge encryption as part of Proton's privacy-focused ecosystem. The service encrypts files client-side using your account password, which never leaves your device. Proton operates under Swiss law, offering additional legal protection compared to US-based providers.
+Proton Drive provides zero-knowledge encryption as part of Proton's privacy-focused environment. The service encrypts files client-side using your account password, which never leaves your device. Proton operates under Swiss law, offering additional legal protection compared to US-based providers.
 
 The web interface works well for occasional access, while desktop applications provide folder synchronization. Proton's Drive API remains limited compared to traditional S3-compatible services, which constrains programmatic workflows.
 
@@ -45,7 +45,7 @@ Mount Proton Drive as a local folder
 proton-drive-cli mount ~/ProtonDrive --username your@email.com
 ```
 
-For developers already invested in Proton Mail or Proton VPN, the integrated ecosystem reduces account management overhead. The main limitation is the relatively small free tier (1GB) and the lack of S3-compatible API access for custom integrations.
+For developers already invested in Proton Mail or Proton VPN, the integrated environment reduces account management overhead. The main limitation is the relatively small free tier (1GB) and the lack of S3-compatible API access for custom integrations.
 
 Filen
 
@@ -100,7 +100,7 @@ occ encryption:enable
 occ encryption:encrypt-all
 ```
 
-Nextcloud's app ecosystem extends functionality with collaboration features, but the Docker image sizes become large quickly. Performance depends heavily on your server infrastructure, and maintaining updates requires ongoing maintenance.
+Nextcloud's app environment extends functionality with collaboration features, but the Docker image sizes become large quickly. Performance depends heavily on your server infrastructure, and maintaining updates requires ongoing maintenance.
 
 S3-Compatible Storage with rclone
 
@@ -129,7 +129,7 @@ Comparing Storage Solutions
 
 | Service | Encryption Model | Free Tier | API Access | Best For |
 |---------|-----------------|-----------|------------|----------|
-| Proton Drive | Client-side, Zero-knowledge | 1GB | Limited | Proton ecosystem users |
+| Proton Drive | Client-side, Zero-knowledge | 1GB | Limited | Proton environment users |
 | Filen | Client-side, Zero-knowledge | 10GB | WebDAV | Budget-conscious privacy |
 | Tresorit | Client-side, Enterprise | None | Enterprise API | Compliance requirements |
 | Nextcloud | Server-side (configurable) | Unlimited | WebDAV, Full API | Self-hosted control |
@@ -145,22 +145,22 @@ Infrastructure-focused developers benefit from the rclone approach. You sacrific
 
 The encrypted cloud storage market continues evolving. New services emerge while existing providers improve their offerings. The key is matching your threat model to the appropriate solution, most developers need not over-engineer their storage choice, but understanding the encryption guarantees helps avoid false security assumptions.
 
-Encryption Deep Dive: Which Model Protects Against What
+Encryption Deep Dive - Which Model Protects Against What
 
 Understanding encryption models reveals what threats each mitigates:
 
 Client-Side Encryption (Proton Drive, Filen):
-Protects against: Server compromise, surveillance of stored data, insider threats at storage provider
-Does NOT protect against: Provider compromising encryption keys (if user is compelled to provide passwords)
+Protects against - Server compromise, surveillance of stored data, insider threats at storage provider
+Does NOT protect against - Provider compromising encryption keys (if user is compelled to provide passwords)
 
 Zero-Knowledge Architecture (additional layer):
-Protects against: All above PLUS provider coercion regarding encryption keys (provider literally cannot decrypt)
-Trade-off: More complex key management, potential for key loss (cannot be recovered by provider)
+Protects against - All above PLUS provider coercion regarding encryption keys (provider literally cannot decrypt)
+Trade-off - More complex key management, potential for key loss (cannot be recovered by provider)
 
 Server-Side Encryption (Nextcloud default):
-Protects against: Accidental data visibility (encryption at rest)
-Does NOT protect against: Provider or government access (provider controls keys)
-Benefit: Simpler operations, built-in key recovery
+Protects against - Accidental data visibility (encryption at rest)
+Does NOT protect against - Provider or government access (provider controls keys)
+Benefit - Simpler operations, built-in key recovery
 
 For developers choosing solutions, the question is: "What adversary am I protecting against?"
 
@@ -168,39 +168,39 @@ For developers choosing solutions, the question is: "What adversary am I protect
 - Developer storing proprietary code: Client-side encryption essential
 - Activist/journalist: Zero-knowledge architecture required
 
-Practical Setup Guide: S3 with Client-Side Encryption
+Practical Setup Guide - S3 with Client-Side Encryption
 
 For technical users wanting maximum control:
 
 ```bash
-Step 1: Choose S3 provider (Wasabi example)
+Step 1 - Choose S3 provider (Wasabi example)
 Wasabi offers S3-compatible storage at lower cost than AWS
 
-Step 2: Create bucket and access credentials
+Step 2 - Create bucket and access credentials
 Use IAM-style permissions restricting bucket access
 
-Step 3: Install rclone and configure encryption
+Step 3 - Install rclone and configure encryption
 rclone config
 
 Interactive prompts:
 Name: encrypted-backup
-Type: crypt
-Remote: wasabi:/secure-folder
-Filename encryption: standard
-Directory name encryption: true
-Password: [Strong password]
-Password2: [Confirmation password]
+Type - crypt
+Remote - wasabi:/secure-folder
+Filename encryption - standard
+Directory name encryption - true
+Password - [Strong password]
+Password2 - [Confirmation password]
 
-Step 4: Test encryption
+Step 4 - Test encryption
 echo "test data" > test.txt
 rclone copy test.txt encrypted-backup:/
 
-Verify in web console: file shows encrypted name, content is unreadable
+Verify in web console - file shows encrypted name, content is unreadable
 
-Step 5: Mount as filesystem
+Step 5 - Mount as filesystem
 rclone mount encrypted-backup:/ ~/encrypted-drive &
 
-Results: Local folder that syncs encrypted to S3
+Results - Local folder that syncs encrypted to S3
 ```
 
 This approach provides:
@@ -209,24 +209,24 @@ This approach provides:
 - Cost efficiency (Wasabi or Backblaze B2 vs. AWS)
 - No vendor lock-in (rclone works with multiple backends)
 
-Threat Modeling: When Each Service Fits
+Threat Modeling - When Each Service Fits
 
-Scenario: Enterprise SaaS Startup
+Scenario - Enterprise SaaS Startup
 - Need: Compliance certifications, audit logs, data residency
 - Solution: Tresorit for strict compliance, or Nextcloud self-hosted for complete control
 - NOT suitable: Consumer services (Filen, Proton) lack enterprise features
 
-Scenario: Privacy-Conscious Developer
+Scenario - Privacy-Conscious Developer
 - Need: Strong encryption, API access, cost efficiency
 - Solution: Proton Drive for ease, or S3 + rclone for maximum flexibility
 - NOT suitable: Self-hosting overhead for individual developer
 
-Scenario: Small Team Handling Regulated Data
+Scenario - Small Team Handling Regulated Data
 - Need: Encryption, team sharing, audit capability
 - Solution: Nextcloud self-hosted with proper key management
 - NOT suitable: Managed services (limited control)
 
-Scenario: Open-Source Project
+Scenario - Open-Source Project
 - Need: Cost-free, easy sharing, collaboration
 - Solution: Either Filen free tier, or GitHub for code + IPFS for large files
 - NOT suitable: Premium services for volunteer projects
@@ -262,7 +262,7 @@ Before committing to a service, benchmark against your workload:
 #!/bin/bash
 Benchmark different encrypted storage services
 
-Test 1: Upload speed (1GB of random data)
+Test 1 - Upload speed (1GB of random data)
 dd if=/dev/urandom of=testfile.bin bs=1M count=1000
 
 echo "=== Upload Speed Test ==="
@@ -275,11 +275,11 @@ time filen-cli upload testfile.bin /test-upload/
 rclone to Wasabi
 time rclone copy testfile.bin s3remote:/
 
-Test 2: Download speed
+Test 2 - Download speed
 echo "=== Download Speed Test ==="
 Similar tests in reverse
 
-Test 3: Directory sync (1000 small files)
+Test 3 - Directory sync (1000 small files)
 mkdir -p sync_test
 for i in {1..1000}; do
     echo "data $i" > sync_test/file_$i.txt
@@ -288,7 +288,7 @@ done
 echo "=== Directory Sync Test ==="
 time proton-drive sync sync_test /backup/
 
-Test 4: Latency (create file, list, delete)
+Test 4 - Latency (create file, list, delete)
 echo "=== Latency Test ==="
 time proton-drive mkdir /latency_test
 time proton-drive upload testfile.bin /latency_test/
@@ -302,27 +302,27 @@ Backup and Disaster Recovery
 
 Storing encrypted files in cloud creates new failure scenarios:
 
-Scenario 1: Lost Master Password
+Scenario 1 - Lost Master Password
 - Proton Drive: Account recovery possible (email verification)
 - Filen: Account recovery via email
 - Nextcloud self-hosted: Must have administrator recovery procedures
 - rclone: Encryption password stored in config file; losing it means data is unrecoverable
 
-Mitigation: Store encryption passwords in separate secure location (hardware security key, backup safe)
+Mitigation - Store encryption passwords in separate secure location (hardware security key, backup safe)
 
-Scenario 2: Cloud Service Shutdown
+Scenario 2 - Cloud Service Shutdown
 - Proton Drive: Use their export tools to download all files
 - Filen: Export functionality available
 - Nextcloud: Direct access to file storage, export is trivial
 - S3 + rclone: Standard S3 tools export everything
 
-Scenario 3: Data Corruption in Cloud
+Scenario 3 - Data Corruption in Cloud
 - Proton Drive: Version history available (limited)
 - Nextcloud: File versioning built-in
 - S3 + rclone: S3 versioning feature available
 - Filen: Version history on paid plans
 
-Recommended: Maintain separate offline backup independent of primary cloud service
+Recommended - Maintain separate offline backup independent of primary cloud service
 
 ```bash
 Monthly encrypted backup to external drive
@@ -344,7 +344,7 @@ curl -X GET "https://api.protonmail.com/drive/files" \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -H "Accept: application/json"
 
-Limitations: Rate limited, not full-featured S3
+Limitations - Rate limited, not full-featured S3
 ```
 
 Filen API:
@@ -405,9 +405,9 @@ Most developers overspend on storage. Assessing actual needs prevents unnecessar
 Analyze actual storage consumption
 du -sh ~/critical-data/*
 
-If under 100GB: consumer service adequate
-If 100-1TB: S3 + rclone becomes cost-effective
-If multi-TB: Nextcloud self-hosted cheaper than commercial services
+If under 100GB - consumer service adequate
+If 100-1TB - S3 + rclone becomes cost-effective
+If multi-TB - Nextcloud self-hosted cheaper than commercial services
 ```
 
 Frequently Asked Questions

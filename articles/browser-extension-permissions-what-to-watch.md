@@ -127,19 +127,19 @@ Privacy-focused extensions often require significant permissions to function eff
 
 Understanding this balance helps you make informed choices. A well-reviewed privacy extension with broad permissions may be more trustworthy than a mysterious extension with minimal access.
 
-However, the principle remains: grant the minimum permissions necessary for the functionality you need. When an extension's permission requirements seem excessive, search for alternatives or contact the developer to understand the reasoning.
+However, the principle remains - grant the minimum permissions necessary for the functionality you need. When an extension's permission requirements seem excessive, search for alternatives or contact the developer to understand the reasoning.
 
 Permission Risk Analysis Framework
 
 Evaluate extension permissions using this threat model:
 
-Data Access Risk: Which sensitive information can the extension access? Login credentials, browsing history, personal data, encryption keys?
+Data Access Risk - Which sensitive information can the extension access? Login credentials, browsing history, personal data, encryption keys?
 
-Persistence Risk: Can the extension's code persist or modify itself? Extensions with `storage` plus `webRequest` could theoretically implement auto-updating exploit code.
+Persistence Risk - Can the extension's code persist or modify itself? Extensions with `storage` plus `webRequest` could theoretically implement auto-updating exploit code.
 
-Tracking Risk: Does the extension communicate with external servers? Extensions phoning home with data create privacy risks independent of local permissions.
+Tracking Risk - Does the extension communicate with external servers? Extensions phoning home with data create privacy risks independent of local permissions.
 
-Supply Chain Risk: Has the extension been acquired by an ad company or data broker? Many privacy extensions have been purchased by advertising networks.
+Supply Chain Risk - Has the extension been acquired by an ad company or data broker? Many privacy extensions have been purchased by advertising networks.
 
 Permission Risk Matrix
 
@@ -303,6 +303,6 @@ Related Articles
 - [Privacy Implications of Browser Extensions](/privacy-implications-browser-extensions/)
 - [How to Audit Browser Extensions for Privacy Risks 2026](/how-to-audit-browser-extensions-for-privacy-risks-2026/)
 - [Audit Android App Permissions with ADB](/android-adb-app-permissions-audit)
-- [AI Tab Organizer Chrome Extension: Managing Browser Tabs](https://bestremotetools.com/ai-tab-organizer-chrome-extension/)
+- [AI Tab Organizer Chrome Extension - Managing Browser Tabs](https://bestremotetools.com/ai-tab-organizer-chrome-extension/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

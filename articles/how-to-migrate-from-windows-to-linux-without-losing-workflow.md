@@ -34,7 +34,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Essential Tool Replacements for Windows Applications
+Step 1 - Essential Tool Replacements for Windows Applications
 
 Your productivity depends on having equivalent tools for common workflows. Here are tested replacements that maintain feature parity:
 
@@ -47,8 +47,8 @@ Install essential development tools on Debian-based systems
 sudo apt install git curl wget vim neovim build-essential
 
 Visual Studio Code (Microsoft's open-source editor)
-Download from: https://code.visualstudio.com/
-Or install via snap: sudo snap install code
+Download from - https://code.visualstudio.com/
+Or install via snap - sudo snap install code
 
 JetBrains tools (IntelliJ, PyCharm, WebStorm)
 All have native Linux builds with identical features
@@ -78,7 +78,7 @@ sudo apt install keepassxc
 
 Export your existing passwords to a CSV file, then import into your chosen Linux password manager. This eliminates the friction of recreating credentials manually.
 
-Step 2: Preserving Your Development Workflow
+Step 2 - Preserving Your Development Workflow
 
 Dotfiles and Configuration
 
@@ -130,7 +130,7 @@ unzip awscliv2.zip
 sudo ./aws/install
 ```
 
-Step 3: Data Migration Strategy
+Step 3 - Data Migration Strategy
 
 Backing Up Personal Files
 
@@ -157,7 +157,7 @@ Browser bookmarks, history, and passwords can transfer between operating systems
 
 Import these files in your Linux browser. Consider switching to a privacy-focused browser during migration, Firefox with arkenfox hardening, Brave with its built-in tracker blocking, or LibreWolf for maximum privacy.
 
-Step 4: Privacy Hardening After Migration
+Step 4 - Privacy Hardening After Migration
 
 Linux provides privacy advantages by default, but configuration remains necessary:
 
@@ -204,7 +204,7 @@ DNS=1.1.1.1 1.0.0.1
 DNSOverTLS=yes
 ```
 
-Then restart the service: `sudo systemctl restart systemd-resolved`
+Then restart the service - `sudo systemctl restart systemd-resolved`
 
 Application Permissions
 
@@ -246,7 +246,7 @@ sudo dpkg -i PlayOnLinux_4.3.4.deb
 sudo apt-get install -f
 ```
 
-Step 5: Maintaining Your Linux Environment
+Step 5 - Maintaining Your Linux Environment
 
 A successful migration requires ongoing maintenance:
 

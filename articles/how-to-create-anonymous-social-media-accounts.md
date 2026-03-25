@@ -36,13 +36,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Threat Model
+Step 1 - Understand the Threat Model
 
 Before implementing anonymity, identify what you're protecting against. Social media platforms collect extensive metadata, IP addresses, device fingerprints, behavioral patterns, and cross-platform correlation. Even with a fake name, your browser characteristics, posting times, or writing style can link accounts to your real identity.
 
 For developers, the stakes include protecting source code contributions, professional reputation, and personal safety. The techniques below address these concerns while remaining practical for daily use.
 
-Step 2: Email Isolation: The Foundation
+Step 2 - Email Isolation: The Foundation
 
 Every anonymous account needs an isolated email address. Never reuse email addresses across anonymous and primary accounts.
 
@@ -65,7 +65,7 @@ Burner Email for Short-Term Use
 
 For accounts you expect to use briefly, temporary email services like Guerrilla Mail or 33Mail work, though they carry higher risk of platform detection. These are useful for verification codes but not for sustained anonymous identities.
 
-Step 3: Device Isolation Strategies
+Step 3 - Device Isolation Strategies
 
 Your device configuration reveals information that can de-anonymize you. Consider these hardening steps:
 
@@ -106,7 +106,7 @@ qemu-system-x86_64 -m 4096 -cdrom tails.iso -boot d \
   -net user -net nic -nographic
 ```
 
-Step 4: Network-Level Protection
+Step 4 - Network-Level Protection
 
 Your IP address is a primary identifier. Anonymous accounts require IP addresses unrelated to your primary identity.
 
@@ -186,7 +186,7 @@ const alias = {
 };
 ```
 
-Step 5: Operational Security: Maintaining Anonymity Over Time
+Step 5 - Operational Security: Maintaining Anonymity Over Time
 
 Creating an anonymous account is only the beginning. Maintaining anonymity requires ongoing discipline:
 
@@ -205,7 +205,7 @@ Common Mistakes to Avoid
 - Using the same pseudonym across multiple platforms
 - Engaging with personal contacts: Anonymous accounts should have no connection to real-world identity
 
-Step 6: Quick Reference: Account Setup Checklist
+Step 6 - Quick Reference: Account Setup Checklist
 
 - [ ] Create new email alias (Proton, Tuta, or SimpleLogin)
 - [ ] Configure dedicated browser profile or VM
@@ -222,7 +222,7 @@ Cross-Platform Correlation Prevention
 
 Social media platforms collaborate with data brokers to identify users across multiple accounts. Prevent this through operational discipline:
 
-Writing style analysis: Each account should have a distinct voice. If you write in formal, technical language across multiple accounts, analysis can correlate them. Consciously vary:
+Writing style analysis - Each account should have a distinct voice. If you write in formal, technical language across multiple accounts, analysis can correlate them. Consciously vary:
 - Sentence structure (some short. Some medium-length sentences. Some long, rambling statements like this one.)
 - Vocabulary (alternate between casual slang and formal terminology)
 - Punctuation patterns (emoji usage, exclamation points, ellipsis frequency)
@@ -311,19 +311,19 @@ Some platforms analyze behavioral patterns: typing speed, mouse movements, touch
 - Occasionally make typos and correct them
 - Use different devices for different accounts when possible
 
-Step 7: Legal and Ethical Considerations
+Step 7 - Legal and Ethical Considerations
 
 Jurisdictional Differences in Anonymous Accounts
 
 Anonymity is legally treated differently across jurisdictions:
 
-United States: Anonymous speech is protected under First Amendment. However, law enforcement can compel platforms for de-anonymization with proper warrants.
+United States - Anonymous speech is protected under First Amendment. However, law enforcement can compel platforms for de-anonymization with proper warrants.
 
-European Union: GDPR creates friction for true anonymity. The "right to be forgotten" requires keeping records that could later be used to de-anonymize.
+European Union - GDPR creates friction for true anonymity. The "right to be forgotten" requires keeping records that could later be used to de-anonymize.
 
-China, Russia, Iran: Anonymity is actively suppressed. Using the techniques in this guide in these jurisdictions carries legal risk.
+China, Russia, Iran - Anonymity is actively suppressed. Using the techniques in this guide in these jurisdictions carries legal risk.
 
-Australia, Canada: Defamation law applies even to anonymous accounts. You can be sued for false statements made anonymously and identified through litigation.
+Australia, Canada - Defamation law applies even to anonymous accounts. You can be sued for false statements made anonymously and identified through litigation.
 
 Before creating anonymous accounts, understand your jurisdiction's laws regarding anonymous speech and potential consequences.
 
@@ -337,7 +337,7 @@ Most platforms prohibit using anonymous accounts to:
 
 Using anonymity for whistleblowing, privacy, or expressing unpopular opinions is generally acceptable. Using it for spam or abuse is not, and platforms actively de-anonymize bad actors.
 
-Step 8: Test Your Anonymity
+Step 8 - Test Your Anonymity
 
 Anonymity Audit
 
@@ -356,13 +356,13 @@ echo "Testing DNS leak..."
 curl -s https://api.dnsleaktest.com/v1/extensions/address
 
 3. Check WebRTC leaks
-Use Firefox Extension: WebRTC Leak Prevent
+Use Firefox Extension - WebRTC Leak Prevent
 
 4. Check if account appears in data broaches
-Query: https://haveibeenpwned.com/
+Query - https://haveibeenpwned.com/
 
 5. Test browser fingerprint
-Visit: https://coveryourtracks.eff.org/
+Visit - https://coveryourtracks.eff.org/
 
 6. Verify VPN is active and routing traffic
 Should show VPN provider's IP, not your ISP
@@ -379,7 +379,7 @@ Schedule quarterly audits of your anonymous accounts:
 4. Verify two-factor authentication is still active
 5. Test account recovery options to ensure they still work
 
-Step 9: Common De-Anonymization Vectors and Defenses
+Step 9 - Common De-Anonymization Vectors and Defenses
 
 | De-Anonymization Vector | What Happens | Defense |
 |---|---|---|
@@ -437,6 +437,6 @@ Related Articles
 - [How To Prepare Social Media Accounts For Memorialization](/how-to-prepare-social-media-accounts-for-memorialization-com/)
 - [How To Create Anonymous Online Identity That Cannot Be](/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
 - [How To Use Tor Browser For Creating Anonymous Accounts](/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)
-- [AI Tools for Social Media Analytics: A Practical Guide](https://bestremotetools.com/ai-tools-for-social-media-analytics/)
+- [AI Tools for Social Media Analytics - A Practical Guide](https://bestremotetools.com/ai-tools-for-social-media-analytics/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -22,7 +22,7 @@ Table of Contents
 
 - [Understanding the Compliance Challenge](#understanding-the-compliance-challenge)
 - [Quick Comparison](#quick-comparison)
-- [Tool Comparison: Architecture and Integration](#tool-comparison-architecture-and-integration)
+- [Tool Comparison - Architecture and Integration](#tool-comparison-architecture-and-integration)
 - [Implementation Patterns for Developers](#implementation-patterns-for-developers)
 - [Selecting the Right Tools](#selecting-the-right-tools)
 
@@ -45,7 +45,7 @@ Quick Comparison
 | Pricing Model | Enterprise license | Subscription tiers | Enterprise license |
 | Best For | Large enterprise | SMB / mid-market | Data-heavy orgs |
 
-Tool Comparison: Architecture and Integration
+Tool Comparison - Architecture and Integration
 
 OneTrust Privacy Management
 
@@ -268,13 +268,13 @@ Selecting the Right Tools
 
 Consider these factors when evaluating privacy compliance tools:
 
-Scale and complexity: Organizations with extensive data infrastructure benefit from BigID's discovery capabilities. Smaller teams may find Cookiebot's simplicity sufficient for consent management.
+Scale and complexity - Organizations with extensive data infrastructure benefit from BigID's discovery capabilities. Smaller teams may find Cookiebot's simplicity sufficient for consent management.
 
-Integration requirements: Evaluate API documentation and SDK availability. OneTrust offers REST APIs, while smaller tools may have limited automation capabilities.
+Integration requirements - Evaluate API documentation and SDK availability. OneTrust offers REST APIs, while smaller tools may have limited automation capabilities.
 
-Budget structure: Pricing models vary significantly. Some platforms charge per-data-subject-request, while others use flat enterprise licensing. Calculate projected request volumes before committing.
+Budget structure - Pricing models vary significantly. Some platforms charge per-data-subject-request, while others use flat enterprise licensing. Calculate projected request volumes before committing.
 
-Compliance scope: If operating exclusively in California, CCPA-specific tools may provide better value. Multi-jurisdictional operations generally require GDPR-first platforms with CCPA add-ons.
+Compliance scope - If operating exclusively in California, CCPA-specific tools may provide better value. Multi-jurisdictional operations generally require GDPR-first platforms with CCPA add-ons.
 
 Engineering resource availability: Tools like Transcend are API-first and require engineering investment to set up but provide more flexibility long-term. OneTrust and Cookiebot offer no-code interfaces that compliance teams can operate without engineering support once initial integration is complete.
 

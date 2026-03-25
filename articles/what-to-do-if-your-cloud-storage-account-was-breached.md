@@ -20,8 +20,8 @@ Immediately revoke all active sessions and access tokens (Google Workspace secur
 
 Table of Contents
 
-- [Immediate Response: Contain the Breach](#immediate-response-contain-the-breach)
-- [Forensic Analysis: Understand the Scope](#forensic-analysis-understand-the-scope)
+- [Immediate Response - Contain the Breach](#immediate-response-contain-the-breach)
+- [Forensic Analysis - Understand the Scope](#forensic-analysis-understand-the-scope)
 - [Data Exposure Assessment](#data-exposure-assessment)
 - [Notification and Compliance](#notification-and-compliance)
 - [Long-Term Security Hardening](#long-term-security-hardening)
@@ -30,7 +30,7 @@ Table of Contents
 - [Long-Term Account Hardening](#long-term-account-hardening)
 - [Incident Prevention Best Practices](#incident-prevention-best-practices)
 
-Immediate Response: Contain the Breach
+Immediate Response - Contain the Breach
 
 The first priority is stopping further unauthorized access. Time is critical, every minute an attacker retains access, they can exfiltrate data, modify files, or escalate privileges to other connected services.
 
@@ -41,7 +41,7 @@ Most cloud services allow you to view and terminate active sessions. Do this imm
 For Google Workspace, you can revoke all sessions via the admin console or individually through the security checkup page. Dropbox offers a similar "Sign out everywhere" option in account settings. For developers using S3 or Azure Blob Storage, revoke IAM credentials and rotate access keys:
 
 ```bash
-AWS: List and deactivate access keys
+AWS - List and deactivate access keys
 aws iam list-access-keys --user-name your-username
 aws iam update-access-key --access-key-id AKIAIOSFODNN7EXAMPLE \
  --status Inactive --user-name your-username
@@ -64,7 +64,7 @@ Use a password manager to generate a strong, unique password. If your cloud stor
 
 If MFA was not enabled, enable it now. Prefer hardware security keys (YubiKey, SoloKey) or TOTP authenticator apps over SMS, which remains vulnerable to SIM swapping attacks. For Google Drive, you can enforce MFA across your organization via admin controls.
 
-Forensic Analysis: Understand the Scope
+Forensic Analysis - Understand the Scope
 
 After containing the immediate threat, assess what happened and what data may have been exposed.
 
@@ -207,8 +207,8 @@ Incident Report Documentation
 
 Create an incident report covering:
 
-1. Timeline: When was the breach discovered? When did it occur? What did you do and when?
-2. Scope: What data was accessed? How many files? What size?
+1. Timeline - When was the breach discovered? When did it occur? What did you do and when?
+2. Scope - What data was accessed? How many files? What size?
 3. Root cause: How did the attacker gain access? Weak password? Malware? Phishing?
 4. Detection method: How did you discover the breach?
 5. Remediation steps: What did you do to stop further access?

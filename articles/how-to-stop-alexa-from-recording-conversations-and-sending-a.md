@@ -42,7 +42,7 @@ Quick Steps to Limit Alexa Recording
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Advanced Methods: Network-Level Blocking](#advanced-methods-network-level-blocking)
+- [Advanced Methods - Network-Level Blocking](#advanced-methods-network-level-blocking)
 - [Advanced Network Isolation for Alexa](#advanced-network-isolation-for-alexa)
 - [Troubleshooting](#troubleshooting)
 
@@ -56,13 +56,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Alexa's Recording Behavior
+Step 1 - Understand Alexa's Recording Behavior
 
 When you speak to Alexa, your voice is processed locally on the device initially, then sent to Amazon's cloud servers for speech recognition and response generation. Amazon stores these recordings, and they can be reviewed, transcribed, and potentially used for improving voice recognition algorithms. Even when you are not actively interacting with Alexa, the device may occasionally record and transmit audio if it misinterprets background sounds as the wake word.
 
 The wake word detection itself happens on-device using a small neural network, but the actual voice commands and any incidental conversations within range of the microphone are transmitted to Amazon's servers. This is a fundamental design choice that cannot be completely eliminated without fundamentally modifying the device's firmware.
 
-Step 2: Basic Privacy Settings Through the Alexa App
+Step 2 - Basic Privacy Settings Through the Alexa App
 
 The most straightforward approach to limiting Alexa's data collection involves adjusting settings within the Alexa app. While these settings do not stop all recording, they provide the first layer of privacy control.
 
@@ -82,7 +82,7 @@ Turn Off Voice Purchasing
 
 Navigate to Settings > Alexa Account > Voice Purchasing and disable this feature. This prevents accidental purchases and reduces the need for Alexa to process payment-related voice data.
 
-Step 3: Use Alexa's Built-in Privacy Features
+Step 3 - Use Alexa's Built-in Privacy Features
 
 Amazon has implemented several privacy-focused features that developers and power users should understand:
 
@@ -101,7 +101,7 @@ Setting Up Voice Profiles
 
 If multiple people use the same Alexa device, setting up voice profiles (Settings > Your Voice > Create Voice Profile) can help Alexa recognize individual users. While this does not reduce recording, it can help you identify which household member's conversations are being stored.
 
-Advanced Methods: Network-Level Blocking
+Advanced Methods - Network-Level Blocking
 
 For developers and users with more technical expertise, network-level blocking provides stronger privacy controls. This approach involves monitoring or blocking traffic between your Alexa device and Amazon's servers.
 
@@ -188,7 +188,7 @@ config rule
 
 This approach requires more configuration but provides granular control over what data your Alexa device can send.
 
-Step 4: Limitations of Network Blocking
+Step 4 - Limitations of Network Blocking
 
 Blocking Alexa's network traffic has consequences you should understand:
 
@@ -199,7 +199,7 @@ Blocking Alexa's network traffic has consequences you should understand:
 
 The only way to have a fully functional Alexa device while preventing data transmission to Amazon is through custom firmware, which is beyond the scope of this guide and may void your warranty.
 
-Step 5: The Muting Strategy
+Step 5 - The Muting Strategy
 
 The most effective immediate action is using the physical mute button on your Alexa device. This provides a hardware-level guarantee that no audio is being captured:
 
@@ -217,7 +217,7 @@ For users with technical expertise, network-level isolation provides deeper cont
 #!/bin/bash
 Complete network isolation for Alexa devices
 
-Method 1: Separate VLAN with strict egress filtering
+Method 1 - Separate VLAN with strict egress filtering
 Requires OpenWrt or enterprise router
 
 cat > /etc/config/network << 'EOF'
@@ -234,7 +234,7 @@ config interface 'guest'
     option netmask '255.255.255.0'
 EOF
 
-Firewall rules: Block Alexa from accessing most of internet
+Firewall rules - Block Alexa from accessing most of internet
 cat > /etc/config/firewall << 'EOF'
 config zone
     option name 'alexa'
@@ -264,20 +264,20 @@ uci commit
 
 This setup allows only Amazon-destined traffic from Alexa, blocking most exfiltration.
 
-Step 6: Monitor Alexa's Actual Network Activity
+Step 6 - Monitor Alexa's Actual Network Activity
 
 See exactly what Alexa sends:
 
 ```bash
-Method 1: tcpdump on router
+Method 1 - tcpdump on router
 sudo tcpdump -i eth0 -A -s 0 'tcp port 443 and (host 52.94.0.0/14)'
 
-Method 2: Router-based DNS sinkholing
+Method 2 - Router-based DNS sinkholing
 Use Pi-hole to log ALL DNS queries from Alexa
 
 Add to Pi-hole admin console:
 Group Management -> Adlists
-Add: https://raw.githubusercontent.com/pi-hole/regex/master/dns-rebind-protection.txt
+Add - https://raw.githubusercontent.com/pi-hole/regex/master/dns-rebind-protection.txt
 
 Then check Pi-hole query log for Alexa device
 Look for patterns:
@@ -285,9 +285,9 @@ Look for patterns:
 - pitangui.amazon.com (metrics)
 - amazonaws.com (various AWS endpoints)
 
-Method 3: Packet inspection with Wireshark
+Method 3 - Packet inspection with Wireshark
 Capture traffic, filter for Alexa IPs
-Use: ip.src == 192.168.50.100 (Alexa device IP)
+Use - ip.src == 192.168.50.100 (Alexa device IP)
 Examine TLS handshakes and traffic volume
 
 What you'll see:
@@ -299,14 +299,14 @@ What you'll see:
 
 Monitoring reveals the extent of Alexa's communication.
 
-Step 7: Firmware-Level Modifications (Advanced)
+Step 7 - Firmware-Level Modifications (Advanced)
 
 For maximum control, modify Alexa's firmware (requires technical expertise):
 
 ```bash
 Voids warranty, may brick device
 
-Goal: Remove or neuter wake word detection
+Goal - Remove or neuter wake word detection
 Current methods:
 1. Hook microphone driver to null output
 2. Redirect network traffic to local mirror
@@ -329,7 +329,7 @@ Simpler alternative:
 
 Firmware modification is extreme but guarantees no recording.
 
-Step 8: Detecting Unauthorized Activation
+Step 8 - Detecting Unauthorized Activation
 
 Monitor for unexpected Alexa usage:
 
@@ -396,7 +396,7 @@ def analyze_recording_patterns():
 
 Regular monitoring catches unauthorized use.
 
-Step 9: Alternative: Replace Alexa Entirely
+Step 9 - Alternative: Replace Alexa Entirely
 
 If Alexa's privacy posture is unacceptable:
 
@@ -431,7 +431,7 @@ Voice assistant that never touches cloud
 
 Open-source alternatives offer full privacy at cost of simplicity.
 
-Step 10: Regulatory and Legal Considerations
+Step 10 - Regulatory and Legal Considerations
 
 Be aware of laws regarding audio recording:
 
@@ -460,7 +460,7 @@ What you can do:
 
 Understand legal implications of voice recording in your location.
 
-Step 11: Complete Privacy Auditing Checklist
+Step 11 - Complete Privacy Auditing Checklist
 
 Alexa privacy audit:
 
@@ -500,7 +500,7 @@ echo "    Review 'Login with Amazon' apps"
 
 5. Network review
 echo "5. Verify network isolation..."
-echo "    Run: sudo tcpdump -i any -n 'host 52.94.0.0/14' -v"
+echo "    Run - sudo tcpdump -i any -n 'host 52.94.0.0/14' -v"
 echo "    Monitor for 5 minutes"
 echo "    Verify only Amazon-destined traffic"
 

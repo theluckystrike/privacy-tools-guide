@@ -28,11 +28,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Challenge
+Step 1 - Understand the Challenge
 
-Non-consensual intimate image (NCII) distribution occurs when intimate media is shared without the subject's consent. The technical ecosystem for removal varies significantly across platforms, some have dedicated reporting systems, while others require email-based takedown requests. Your setup should address both immediate removal needs and long-term monitoring.
+Non-consensual intimate image (NCII) distribution occurs when intimate media is shared without the subject's consent. The technical environment for removal varies significantly across platforms, some have dedicated reporting systems, while others require email-based takedown requests. Your setup should address both immediate removal needs and long-term monitoring.
 
-Step 2: Immediate Action Steps
+Step 2 - Immediate Action Steps
 
 Document Everything
 
@@ -53,7 +53,7 @@ whois example.com
 
 This documentation serves both platform removal requests and potential legal action.
 
-Step 3: Platform Removal Automation
+Step 3 - Platform Removal Automation
 
 Major platforms have specific reporting mechanisms. For developers, automating initial detection and response can significantly reduce response time.
 
@@ -136,7 +136,7 @@ def similarity_check(new_image_hash, known_hash, threshold=5):
 
 This approach works even when images are slightly modified, resized, cropped, or with filters applied.
 
-Step 4: Platform-Specific Removal Processes
+Step 4 - Platform-Specific Removal Processes
 
 Google Search Removal
 
@@ -175,7 +175,7 @@ Reddit:
 - Use the report button, but also contact moderators directly
 - For persistent issues, email the legal team: legal@reddit.com
 
-Step 5: Technical Privacy Protection
+Step 5 - Technical Privacy Protection
 
 Image Fingerprinting
 
@@ -209,7 +209,7 @@ Add to your ~/.bash_profile
 alias private-search="$SEARCH_ENGINE/?q="
 ```
 
-Step 6: Legal Considerations
+Step 6 - Legal Considerations
 
 In the United States, the [NOVID (Non-consensual Distribution of Intimate Images)](https://www.congress.gov/bill/117th-congress/senate-bill/2360) Act provides federal criminalization. Document all:
 
@@ -220,7 +220,7 @@ In the United States, the [NOVID (Non-consensual Distribution of Intimate Images
 
 This documentation strengthens both platform requests and potential legal action.
 
-Step 7: Monitor and Alerts
+Step 7 - Monitor and Alerts
 
 Set up automated monitoring for your name or associated identifiers:
 

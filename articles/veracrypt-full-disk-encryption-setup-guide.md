@@ -21,14 +21,14 @@ VeraCrypt provides multiple encryption layers from full disk encryption to hidde
 Table of Contents
 
 - [Understanding VeraCrypt's Encryption Modes](#understanding-veracrypts-encryption-modes)
-- [Before You Start: Critical Preparation](#before-you-start-critical-preparation)
-- [Step 1: Download and Verify VeraCrypt](#step-1-download-and-verify-veracrypt)
-- [Step 2: Creating Full Disk Encryption on Linux](#step-2-creating-full-disk-encryption-on-linux)
-- [Step 3: System Encryption on Windows](#step-3-system-encryption-on-windows)
-- [Step 4: Creating Hidden Volumes](#step-4-creating-hidden-volumes)
-- [Step 5: Performance Impact Measurement](#step-5-performance-impact-measurement)
-- [Step 6: Recovery Planning](#step-6-recovery-planning)
-- [Advanced: Deniable Volumes](#advanced-deniable-volumes)
+- [Before You Start - Critical Preparation](#before-you-start-critical-preparation)
+- [Step 1 - Download and Verify VeraCrypt](#step-1-download-and-verify-veracrypt)
+- [Step 2 - Creating Full Disk Encryption on Linux](#step-2-creating-full-disk-encryption-on-linux)
+- [Step 3 - System Encryption on Windows](#step-3-system-encryption-on-windows)
+- [Step 4 - Creating Hidden Volumes](#step-4-creating-hidden-volumes)
+- [Step 5 - Performance Impact Measurement](#step-5-performance-impact-measurement)
+- [Step 6 - Recovery Planning](#step-6-recovery-planning)
+- [Advanced - Deniable Volumes](#advanced-deniable-volumes)
 - [Common Mistakes](#common-mistakes)
 - [Related Reading](#related-reading)
 
@@ -36,17 +36,17 @@ Understanding VeraCrypt's Encryption Modes
 
 VeraCrypt offers distinct encryption approaches serving different scenarios:
 
-Full Disk Encryption (FDE): Encrypts the entire drive, including OS and bootloader. Requires entering a password before the OS boots. Protects data if drive is stolen but doesn't protect against sophisticated cold-boot attacks on some systems.
+Full Disk Encryption (FDE) - Encrypts the entire drive, including OS and bootloader. Requires entering a password before the OS boots. Protects data if drive is stolen but doesn't protect against sophisticated cold-boot attacks on some systems.
 
-Hidden Volume: An encrypted volume hidden within another encrypted volume. The outer volume appears normal; the hidden volume is invisible unless you provide its specific password. Provides plausible deniability, you can claim data doesn't exist when coerced.
+Hidden Volume - An encrypted volume hidden within another encrypted volume. The outer volume appears normal; the hidden volume is invisible unless you provide its specific password. Provides plausible deniability, you can claim data doesn't exist when coerced.
 
-Deniable Volume: A special type hidden within a hidden volume. Allows multiple layers of plausible denial.
+Deniable Volume - A special type hidden within a hidden volume. Allows multiple layers of plausible denial.
 
-Container Volume: A file that acts as an encrypted drive. Can be stored on cloud services, USB drives, or your main filesystem. Less secure than FDE (file-level encryption) but more portable.
+Container Volume - A file that acts as an encrypted drive. Can be stored on cloud services, USB drives, or your main filesystem. Less secure than FDE (file-level encryption) but more portable.
 
 This guide covers full disk encryption and hidden volumes, the most common use cases. Container volumes are suitable for secondary storage but less suitable for system-level protection.
 
-Before You Start: Critical Preparation
+Before You Start - Critical Preparation
 
 1. Backup everything. System encryption can fail. Create complete system image before beginning.
 
@@ -58,7 +58,7 @@ Before You Start: Critical Preparation
 
 5. Create bootable USB recovery media. You'll generate an emergency disk image; test that it boots before starting encryption.
 
-Step 1: Download and Verify VeraCrypt
+Step 1 - Download and Verify VeraCrypt
 
 Download from official source at veracrypt.fr (not mirrors). Verify GPG signature:
 
@@ -74,11 +74,11 @@ Verify signature
 gpg --verify VeraCrypt_1.26.7_Linux.tar.gz.sig VeraCrypt_1.26.7_Linux.tar.gz
 ```
 
-Expected output: "Good signature from IDRIX (Main Key)"
+Expected output - "Good signature from IDRIX (Main Key)"
 
 On Windows, VeraCrypt also provides SHA256 checksums. Verify against official site before installing.
 
-Step 2: Creating Full Disk Encryption on Linux
+Step 2 - Creating Full Disk Encryption on Linux
 
 On Linux systems with existing OS installation, VeraCrypt uses LUKS under the hood. The process:
 
@@ -89,9 +89,9 @@ sudo apt-get install veracrypt-gui
 Launch VeraCrypt GUI
 veracrypt
 
-Menu: Tools > Manage Devices
-Select: /dev/sdX (your main disk)
-Click: Format > Linux Full Disk Encryption
+Menu - Tools > Manage Devices
+Select - /dev/sdX (your main disk)
+Click - Format > Linux Full Disk Encryption
 ```
 
 The GUI walks through:
@@ -120,7 +120,7 @@ Testing on Samsung 970 EVO Plus (1TB):
 - System responsiveness: Noticeable slowdown first 30 minutes, then acceptable
 - CPU usage: 15-25% single core (other cores unaffected)
 
-Step 3: System Encryption on Windows
+Step 3 - System Encryption on Windows
 
 Windows full disk encryption is more complex due to bootloader encryption.
 
@@ -139,35 +139,35 @@ The process:
 
 2. Rescue disk generation: Stores boot information needed if bootloader corruption occurs. Save this to USB and test booting from it.
 
-3. Pretest: VeraCrypt reboots and tests encryption. Verify system boots correctly after password entry.
+3. Pretest - VeraCrypt reboots and tests encryption. Verify system boots correctly after password entry.
 
 4. Encryption begins: Takes 2-4 hours on average Windows install. System slow during encryption.
 
-Critical step: Keep rescue disk USB separate. If bootloader corruption occurs, you cannot boot without it.
+Critical step - Keep rescue disk USB separate. If bootloader corruption occurs, you cannot boot without it.
 
-Step 4: Creating Hidden Volumes
+Step 4 - Creating Hidden Volumes
 
 Hidden volumes provide plausible deniability, an encrypted outer volume looks normal, but contains a hidden volume only accessible with its specific password.
 
 ```
 VeraCrypt → Create Volume → Emulate a Hidden Volume
 
-Step 1: Create outer volume
+Step 1 - Create outer volume
   → File-based container or partition
   → Choose encryption algorithm: AES-256
   → Choose password: moderate strength (e.g., "NormalPassword123")
 
-Step 2: Format outer volume
+Step 2 - Format outer volume
   → Create filesystem (NTFS/ext4)
   → Add decoy files to make it appear normal
 
-Step 3: Create hidden volume within it
+Step 3 - Create hidden volume within it
   → Mount outer volume with outer password
   → Launch wizard again: Create hidden volume within mounted volume
   → Choose new password: strong, different from outer (e.g., "HiddenSensitiveData!9#")
   → The hidden volume uses remaining space
 
-Step 4: Test
+Step 4 - Test
   → Mount with outer password: normal files visible, hidden volume not mounted
   → Mount with inner password: hidden volume accessible, outer files unmounted
 ```
@@ -179,7 +179,7 @@ Example allocation:
 - Hidden volume allocation: 5GB (you choose size)
 - Outer appears as 5GB usable, hidden gets remaining space
 
-Step 5: Performance Impact Measurement
+Step 5 - Performance Impact Measurement
 
 Testing VeraCrypt encrypted vs unencrypted systems:
 
@@ -203,36 +203,36 @@ HDD Performance (WD Blue 2TB 5400 RPM):
 
 SSDs show negligible overhead. Mechanical drives show measurable but acceptable slowdown. For most users, the difference is imperceptible.
 
-Step 6: Recovery Planning
+Step 6 - Recovery Planning
 
-Scenario 1: Forgot password
+Scenario 1 - Forgot password
 Permanent data loss. No backdoor exists. Encryption is absolute, the key is derived from your password, and without it, data is irrecoverable.
 
-Prevention: Use password manager (1Password, Bitwarden) to store VeraCrypt password securely.
+Prevention - Use password manager (1Password, Bitwarden) to store VeraCrypt password securely.
 
-Scenario 2: VeraCrypt refuses to mount volume
-Cause: Corruption (rare) or wrong password (common).
+Scenario 2 - VeraCrypt refuses to mount volume
+Cause - Corruption (rare) or wrong password (common).
 
 Recovery:
 ```bash
 Test with rescue disk
 Attempt mount with different password variation
 If truly corrupted, RAID recovery services can attempt to reconstruct
-Cost: $1,000-$3,000 for professional recovery
+Cost - $1,000-$3,000 for professional recovery
 ```
 
-Scenario 3: Bootloader corruption
-Cause: Hardware failure, power loss during boot, filesystem error.
+Scenario 3 - Bootloader corruption
+Cause - Hardware failure, power loss during boot, filesystem error.
 
 Recovery:
 ```bash
 Boot from rescue USB
-Select: Restore bootloader
+Select - Restore bootloader
 VeraCrypt repairs bootloader sector
-If rescue disk unavailable: must decrypt drive first (requires password and secondary computer)
+If rescue disk unavailable - must decrypt drive first (requires password and secondary computer)
 ```
 
-Scenario 4: Complete system failure, disk unrecoverable
+Scenario 4 - Complete system failure, disk unrecoverable
 Encrypted data is unrecoverable even with professional service (encryption means no bypasses exist).
 
 Prevention:
@@ -245,13 +245,13 @@ Critical backup plan:
 3. Store password manager backup encryption key in offline location
 4. Test recovery procedure annually
 
-Advanced: Deniable Volumes
+Advanced - Deniable Volumes
 
 Deniable volumes add another layer, a hidden volume within a hidden volume. If coerced to reveal the hidden volume password, you can reveal an innocuous hidden volume while keeping the truly sensitive data in the deniable volume.
 
 Setup complexity:
 ```
-Outer volume: "Music and photos"
+Outer volume - "Music and photos"
   → Hidden volume (revealed under coercion): "Work documents"
     → Deniable volume (truly sensitive): "Financial records"
 ```

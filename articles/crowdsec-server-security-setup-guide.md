@@ -284,7 +284,7 @@ sudo systemctl reload crowdsec
 Metrics
 
 ```bash
-Show agent metrics: alerts fired, scenarios triggered
+Show agent metrics - alerts fired, scenarios triggered
 sudo cscli metrics
 
 Prometheus endpoint (if enabled in config.yaml)

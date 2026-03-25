@@ -32,7 +32,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Privacy Advantages
+Step 1 - Understand the Privacy Advantages
 
 When you use mainstream email services, your messages pass through servers controlled by companies with financial incentives to analyze your communication patterns. Every email you send reveals metadata: when you communicate, how frequently, and with whom. This data builds profiles used for advertising and potentially shared with third parties.
 
@@ -56,7 +56,7 @@ Research VPS providers carefully. Some actively block port 25 (SMTP) or throttle
 
 Before proceeding, reserve your domain name and ensure you can modify its DNS records. You'll need to create several DNS entries during the Mail-in-a-Box setup process.
 
-Step 2: Install ation Process
+Step 2 - Install ation Process
 
 The actual installation involves downloading and running the automated setup script. Begin by connecting to your server via SSH:
 
@@ -88,7 +88,7 @@ The script prompts for an email address (which becomes your administrative accou
 
 The entire process typically completes in 10-15 minutes. Once finished, the script displays administrative credentials and URLs for accessing your new email system.
 
-Step 3: DNS Configuration
+Step 3 - DNS Configuration
 
 Proper DNS records prove essential for email deliverability and security. After installation, Mail-in-a-Box provides specific records you must add to your domain's DNS settings.
 
@@ -102,7 +102,7 @@ Access your domain registrar's DNS management interface and create these records
 
 Test your DNS configuration using online tools like MXToolbox or mail-tester.com. These services verify that your records are correctly configured and provide feedback on potential issues affecting email deliverability.
 
-Step 4: Hardening Your Mail Server for Privacy
+Step 4 - Hardening Your Mail Server for Privacy
 
 The default Mail-in-a-Box configuration provides solid security, but privacy-conscious users should implement additional measures.
 
@@ -142,13 +142,13 @@ BACKUP_ENCRYPTION=your-encryption-key
 
 Consider backing up to a location separate from your primary server, for example, a S3-compatible storage service or another VPS in a different location.
 
-Step 5: Access Your Email
+Step 5 - Access Your Email
 
 Mail-in-a-Box provides multiple access methods:
 
-Webmail: Navigate to `https://mail.yourdomain.com` and log in with your administrative credentials. Roundcube offers a full-featured web interface supporting folders, searching, and attachments.
+Webmail - Navigate to `https://mail.yourdomain.com` and log in with your administrative credentials. Roundcube offers a full-featured web interface supporting folders, searching, and attachments.
 
-IMAP/SMTP clients: Configure your email client with these settings:
+IMAP/SMTP clients - Configure your email client with these settings:
 
 - Incoming mail (IMAP): mail.yourdomain.com, port 993, SSL
 - Outgoing mail (SMTP): mail.yourdomain.com, port 587, TLS
@@ -157,7 +157,7 @@ IMAP/SMTP clients: Configure your email client with these settings:
 
 For mobile devices, the K-9 Mail app (Android) or Thunderbird (desktop) provide excellent privacy-respecting options that support standard protocols.
 
-Step 6: Adding Additional Users and Aliases
+Step 6 - Adding Additional Users and Aliases
 
 Create separate accounts for different purposes to maintain separation between your communications:
 
@@ -175,39 +175,39 @@ Settings → Mail Aliases
 
 This flexibility enables compartmentalized communication, a valuable privacy practice for managing different aspects of your digital life.
 
-Step 7: Maintaining Your Server
+Step 7 - Maintaining Your Server
 
 Regular maintenance keeps your private email server running securely:
 
-System updates: Apply security patches promptly. Ubuntu's unattended-upgrades package handles this automatically when configured.
+System updates - Apply security patches promptly. Ubuntu's unattended-upgrades package handles this automatically when configured.
 
-Disk space monitoring: Email accumulates quickly. Monitor usage and implement retention policies or cleanup routines.
+Disk space monitoring - Email accumulates quickly. Monitor usage and implement retention policies or cleanup routines.
 
-Certificate renewal: Let's Encrypt certificates auto-renew, but verify this periodically works correctly.
+Certificate renewal - Let's Encrypt certificates auto-renew, but verify this periodically works correctly.
 
-Log rotation: Configure logrotate to prevent disk fills from accumulated system logs.
+Log rotation - Configure logrotate to prevent disk fills from accumulated system logs.
 
 Troubleshooting Common Issues
 
 Even well-configured mail servers encounter problems. Here are solutions for frequent issues:
 
-Emails landing in spam: Verify your SPF, DKIM, and DMARC records through MXToolbox. Ensure your sending IP has a positive reputation by checking Sender Score.
+Emails landing in spam - Verify your SPF, DKIM, and DMARC records through MXToolbox. Ensure your sending IP has a positive reputation by checking Sender Score.
 
-Connection timeouts: Verify firewall rules allow ports 25, 587, and 993. Some VPS providers block port 25 by default, contact support to request opening it.
+Connection timeouts - Verify firewall rules allow ports 25, 587, and 993. Some VPS providers block port 25 by default, contact support to request opening it.
 
-Certificate warnings: Let's Encrypt certificates should auto-renew. If you see warnings, check that your DNS records point correctly and that the renewal cron job runs successfully.
+Certificate warnings - Let's Encrypt certificates should auto-renew. If you see warnings, check that your DNS records point correctly and that the renewal cron job runs successfully.
 
-Step 8: Privacy Considerations for Power Users
+Step 8 - Privacy Considerations for Power Users
 
 For maximum privacy, consider these additional measures:
 
-Use a VPN: Route your email client connections through a VPN to mask your IP address from network observers.
+Use a VPN - Route your email client connections through a VPN to mask your IP address from network observers.
 
-Implement end-to-end encryption: While Mail-in-a-Box handles transport encryption, add PGP encryption for message content using plugins like Enigmail for Thunderbird or built-in support in K-9 Mail.
+Implement end-to-end encryption - While Mail-in-a-Box handles transport encryption, add PGP encryption for message content using plugins like Enigmail for Thunderbird or built-in support in K-9 Mail.
 
-Separate identity domains: Consider running multiple Mail-in-a-Box instances for different identity contexts, preventing correlation between your communications.
+Separate identity domains - Consider running multiple Mail-in-a-Box instances for different identity contexts, preventing correlation between your communications.
 
-Network-level filtering: Deploy firewall rules restricting which IP addresses can access your mail server, limiting exposure to potential attackers.
+Network-level filtering - Deploy firewall rules restricting which IP addresses can access your mail server, limiting exposure to potential attackers.
 
 Running your own email server requires more maintenance than using hosted services, but the privacy benefits justify the effort for developers and power users who value data sovereignty. Mail-in-a-Box simplifies what traditionally represented a complex undertaking, making self-hosted email accessible without deep expertise in mail server administration.
 

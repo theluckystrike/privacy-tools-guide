@@ -227,8 +227,8 @@ Hybrid Approaches
 Some VPN providers explore hybrid key exchange combining DH and post-quantum algorithms:
 
 ```
-Traditional: DH (vulnerable to quantum)
-Hybrid: DH + Kyber (lattice-based post-quantum)
+Traditional - DH (vulnerable to quantum)
+Hybrid - DH + Kyber (lattice-based post-quantum)
 Secure even if either algorithm breaks
 ```
 
@@ -241,7 +241,7 @@ Side-Channel Vulnerabilities
 Naive DH implementations leak information through timing:
 
 ```python
-VULNERABLE: Timing reveals bit patterns
+VULNERABLE - Timing reveals bit patterns
 def modular_exponentiation_naive(base, exp, mod):
     result = 1
     while exp > 0:
@@ -265,12 +265,12 @@ DH security critically depends on quality random numbers for generating private 
 import os
 from cryptography.hazmat.primitives.asymmetric import dh
 
-CORRECT: Cryptographically secure random
+CORRECT - Cryptographically secure random
 def generate_secure_dh_private():
     parameters = dh.generate_parameters(generator=2, key_size=2048)
     return parameters.generate_private_key()
 
-WRONG: Using weak random
+WRONG - Using weak random
 import random
 weak_private = random.randint(1, large_prime)  # DO NOT USE
 ```
@@ -303,10 +303,10 @@ OpenVPN supports:
 - TLS handshake for authentication
 - Renegotiation for key updates
 
-Default: 2048-bit DH + TLS 1.2
-Modern: ECDH with TLS 1.3
+Default - 2048-bit DH + TLS 1.2
+Modern - ECDH with TLS 1.3
 
-Complexity: More implementation surface than WireGuard
+Complexity - More implementation surface than WireGuard
 ```
 
 OpenVPN's flexibility allows weak configurations if not carefully tuned.
@@ -320,7 +320,7 @@ Inspect TLS handshake
 openssl s_client -connect vpn.example.com:443 -showcerts
 
 Check key exchange algorithm in handshake
-Look for: ECDHE (Elliptic Curve Diffie-Hellman Ephemeral)
+Look for - ECDHE (Elliptic Curve Diffie-Hellman Ephemeral)
 
 Verify certificate chain validity
 Ensure no self-signed certs in trust chain
@@ -362,9 +362,9 @@ Perfect Forward Secrecy Evolution
 All modern protocols implement PFS, but mechanisms vary:
 
 ```
-Traditional: Single long-term key + occasional new session keys
-Perfect: Every packet gets independent key material
-Goal: Compromise of long-term key doesn't expose session key history
+Traditional - Single long-term key + occasional new session keys
+Perfect - Every packet gets independent key material
+Goal - Compromise of long-term key doesn't expose session key history
 ```
 
 WireGuard achieves strong PFS; some configurations of older protocols require explicit tuning.

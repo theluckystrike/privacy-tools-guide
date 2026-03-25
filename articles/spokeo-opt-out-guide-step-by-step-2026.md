@@ -59,7 +59,7 @@ This aggregated view goes far beyond what any single public record contains. Spo
 
 Manual Opt-Out Process
 
-Step 1: Find Your Spokeo Profile
+Step 1 - Find Your Spokeo Profile
 
 Search for yourself on Spokeo using your full name, city, and state. Note the unique URL for your profile, it contains an alphanumeric identifier used in the removal process.
 
@@ -72,7 +72,7 @@ The numeric identifier at the end represents your specific record.
 
 Search using name variations you have used: maiden names, middle names, nicknames, and hyphenated surnames. People with common names may have dozens of Spokeo profiles across different states and cities, each requiring a separate opt-out submission.
 
-Step 2: Submit the Opt-Out Request
+Step 2 - Submit the Opt-Out Request
 
 Spokeo provides an automated opt-out form accessible without creating an account:
 
@@ -88,7 +88,7 @@ https://www.spokeo.com/remove?email=YOUR_EMAIL&uid=PROFILE_ID
 
 Use a privacy-focused email address for the opt-out rather than your primary address. Spokeo's privacy policy indicates they may use your submitted email address for other communications. A throwaway address or an alias through a service like SimpleLogin keeps your primary inbox clean.
 
-Step 3: Verify Removal
+Step 3 - Verify Removal
 
 Spokeo claims removal occurs within 24-72 hours. Verify by:
 
@@ -221,7 +221,7 @@ For persistent issues, Spokeo's legal department accepts removal requests by mai
 
 ```
 Spokeo, Inc.
-Attn: Privacy Officer
+Attn - Privacy Officer
 170 S. Main Street, Suite 1000
 Salt Lake City, UT 84101
 ```
@@ -233,9 +233,9 @@ State Privacy Laws
 California residents can invoke CCPA deletion rights. Submit a formal deletion request:
 
 ```
-Email: privacy@spokeo.com
-Subject: CCPA Deletion Request
-Body: [Your name, address, and explicit deletion request]
+Email - privacy@spokeo.com
+Subject - CCPA Deletion Request
+Body - [Your name, address, and explicit deletion request]
 ```
 
 Residents of Virginia, Colorado, Texas, and Connecticut have similar rights under their respective state privacy laws (VCDPA, CPA, TDPSA, and CTDPA). These laws require data brokers to honor deletion requests within 45 days. Cite the specific law in your email subject line, it triggers a different handling workflow than a standard opt-out and often produces faster results.
@@ -271,12 +271,12 @@ This table illustrates why Spokeo often represents the highest-priority removal 
 
 Other Data Brokers
 
-Spokeo operates within a larger ecosystem. Similar removal processes apply to:
+Spokeo operates within a larger environment. Similar removal processes apply to:
 
 - Whitepages.com: `https://www.whitepages.com/suppression_requests`
 - BeenVerified: `https://www.beenverified.com/opt-out`
 - PeopleFinder: `https://www.peoplefinder.com/optout.php`
-- Intelius: `https://www.intelius.com/opt-out-request/`
+- Intelius - `https://www.intelius.com/opt-out-request/`
 
 Systematically removing from each broker reduces your overall digital footprint.
 

@@ -66,7 +66,7 @@ done
 
 Step-by-Step Method to Request Data Deletion
 
-Step 1: Identify the Company and Their Privacy Practices
+Step 1 - Identify the Company and Their Privacy Practices
 
 First, locate the company's privacy policy. Search for terms like:
 - "data deletion"
@@ -79,20 +79,20 @@ Check if they have:
 - A designated privacy contact email
 - A formal data deletion request process
 
-Step 2: Draft Your Data Deletion Request
+Step 2 - Draft Your Data Deletion Request
 
 Create a clear, formal request. Include:
 
 ```text
-Subject: Data Deletion Request - [Your Account Email/ID]
+Subject - Data Deletion Request - [Your Account Email/ID]
 
 To the Privacy Team at [Company Name],
 
 I am requesting the deletion of all personal data your company holds about me.
 
-Account identifier: [Your email or username]
-Registered name: [Your full name if known]
-Account created: [Approximate date if known]
+Account identifier - [Your email or username]
+Registered name - [Your full name if known]
+Account created - [Approximate date if known]
 
 This request is made under [applicable law if any, e.g., California Civil Code § 1798.105, or as a general privacy request].
 
@@ -104,14 +104,14 @@ Sincerely,
 [Your Address]
 ```
 
-Step 3: Send the Request Through Multiple Channels
+Step 3 - Send the Request Through Multiple Channels
 
-- Email: Send to privacy@company.com, support@company.com, or the address listed in their privacy policy
+- Email - Send to privacy@company.com, support@company.com, or the address listed in their privacy policy
 - Contact form: Many companies have web forms, use these as they create documentation
 - Certified mail: For critical requests, postal mail creates legal weight
 - Social media: Sometimes effective for companies with active social presence
 
-Step 4: Follow Up
+Step 4 - Follow Up
 
 - Wait 10-14 business days for initial response
 - Send follow-up if no response
@@ -226,14 +226,14 @@ Template Collection
 Simple Deletion Request Email
 
 ```email
-Subject: Account Deletion Request
+Subject - Account Deletion Request
 
 Hello,
 
 Please delete my account and all associated personal data.
 
-Email: [your@email.com]
-Username: [your-username]
+Email - [your@email.com]
+Username - [your-username]
 
 Regards,
 [Your Name]
@@ -242,7 +242,7 @@ Regards,
 Formal Legal-Style Request
 
 ```email
-Subject: Formal Data Deletion Request Under [State Law]
+Subject - Formal Data Deletion Request Under [State Law]
 
 To the Data Protection Officer:
 
@@ -268,7 +268,7 @@ If you cannot fulfill this request, please provide specific legal basis for refu
 GDPR-Style Request (Even for Non-Covered Companies)
 
 ```email
-Subject: Data Subject Access Request and Deletion Request
+Subject - Data Subject Access Request and Deletion Request
 
 To Whom It May Concern:
 

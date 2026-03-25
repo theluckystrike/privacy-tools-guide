@@ -260,33 +260,33 @@ Choosing a VPN Provider for Crypto Use
 
 Not all VPN providers are suitable for exchange access. Evaluate providers against these criteria before committing:
 
-No-logs policy: Look for providers that have undergone independent audits of their no-logs claims. Mullvad, ProtonVPN, and IVPN have all published audit results. Avoid providers that have surrendered user data to law enforcement, which demonstrates that logs did exist despite marketing claims.
+No-logs policy - Look for providers that have undergone independent audits of their no-logs claims. Mullvad, ProtonVPN, and IVPN have all published audit results. Avoid providers that have surrendered user data to law enforcement, which demonstrates that logs did exist despite marketing claims.
 
-Payment anonymity: Pay for your VPN subscription in a way that does not link your identity to the account. Mullvad accepts cash by mail and Monero. ProtonVPN accepts Bitcoin via the Tor onion site. Paying with a credit card tied to your real identity creates a record connecting your identity to the VPN exit IP addresses you use.
+Payment anonymity - Pay for your VPN subscription in a way that does not link your identity to the account. Mullvad accepts cash by mail and Monero. ProtonVPN accepts Bitcoin via the Tor onion site. Paying with a credit card tied to your real identity creates a record connecting your identity to the VPN exit IP addresses you use.
 
-Dedicated IP options: Shared IP pools are flagged by exchanges as VPN traffic because thousands of users egress from the same address. A dedicated IP. even if more expensive. gives you a unique address that appears as a regular residential or business connection rather than a known VPN exit node.
+Dedicated IP options - Shared IP pools are flagged by exchanges as VPN traffic because thousands of users egress from the same address. A dedicated IP. even if more expensive. gives you a unique address that appears as a regular residential or business connection rather than a known VPN exit node.
 
-Jurisdiction: Providers incorporated in countries with strong privacy laws and outside intelligence-sharing alliances (Fourteen Eyes) carry less legal risk of disclosure. Switzerland, Iceland, and Panama are common choices. Jurisdiction affects which governments can compel a provider to hand over data; a truly no-logs provider in any jurisdiction cannot hand over what it does not store, but jurisdiction still matters for legal process timelines and transparency.
+Jurisdiction - Providers incorporated in countries with strong privacy laws and outside intelligence-sharing alliances (Fourteen Eyes) carry less legal risk of disclosure. Switzerland, Iceland, and Panama are common choices. Jurisdiction affects which governments can compel a provider to hand over data; a truly no-logs provider in any jurisdiction cannot hand over what it does not store, but jurisdiction still matters for legal process timelines and transparency.
 
 Common Issues and Solutions
 
-Issue: Exchange detects VPN and blocks connection
+Issue - Exchange detects VPN and blocks connection
 
 - Solution: Use dedicated IP services or residential proxies
 
-Issue: WebSocket disconnections
+Issue - WebSocket disconnections
 
 - Solution: Implement reconnection logic with exponential backoff
 
-Issue: High latency affecting trading
+Issue - High latency affecting trading
 
 - Solution: Select servers geographically closest to the exchange
 
-Issue: DNS leaks
+Issue - DNS leaks
 
-- Solution: Verify with dnsleaktest.com and use encrypted DNS
+- Solution - Verify with dnsleaktest.com and use encrypted DNS
 
-Issue: Account flagged for unusual activity after VPN connection
+Issue - Account flagged for unusual activity after VPN connection
 
 - Solution: Always connect through the same VPN exit IP; use a dedicated IP subscription rather than shared server pools
 

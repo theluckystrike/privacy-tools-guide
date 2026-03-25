@@ -21,17 +21,17 @@ Asynchronous code review processes have become essential for distributed enginee
 Table of Contents
 
 - [Why Async Code Reviews Work Better Than Live Meetings](#why-async-code-reviews-work-better-than-live-meetings)
-- [Step 1: Set Up Pull Request Templates](#step-1-set-up-pull-request-templates)
+- [Step 1 - Set Up Pull Request Templates](#step-1-set-up-pull-request-templates)
 - [Description](#description)
 - [Type of Change](#type-of-change)
 - [Testing Performed](#testing-performed)
 - [Screenshots (if applicable)](#screenshots-if-applicable)
 - [Self-Review Checklist](#self-review-checklist)
-- [Step 2: Establish Clear Review Guidelines](#step-2-establish-clear-review-guidelines)
-- [Step 3: Use Inline Comments Effectively](#step-3-use-inline-comments-effectively)
-- [Step 4: Create Structured Approval Workflows](#step-4-create-structured-approval-workflows)
-- [Step 5: Handle Disagreements Asynchronously](#step-5-handle-disagreements-asynchronously)
-- [Step 6: Review Your Process Regularly](#step-6-review-your-process-regularly)
+- [Step 2 - Establish Clear Review Guidelines](#step-2-establish-clear-review-guidelines)
+- [Step 3 - Use Inline Comments Effectively](#step-3-use-inline-comments-effectively)
+- [Step 4 - Create Structured Approval Workflows](#step-4-create-structured-approval-workflows)
+- [Step 5 - Handle Disagreements Asynchronously](#step-5-handle-disagreements-asynchronously)
+- [Step 6 - Review Your Process Regularly](#step-6-review-your-process-regularly)
 - [Advanced PR Template Examples](#advanced-pr-template-examples)
 - [Security Checklist](#security-checklist)
 - [Security Review Required](#security-review-required)
@@ -49,7 +49,7 @@ Table of Contents
 - [Documentation Checks](#documentation-checks)
 - [Time-Zone Friendly Review Practices](#time-zone-friendly-review-practices)
 - [Decision Protocol for Disagreements](#decision-protocol-for-disagreements)
-- [Decision Point: [Issue Title]](#decision-point-issue-title)
+- [Decision Point - [Issue Title]](#decision-point-issue-title)
 - [Architecture Decisions](#architecture-decisions)
 - [Automation for Async Review Efficiency](#automation-for-async-review-efficiency)
 - [Metrics and Continuous Improvement](#metrics-and-continuous-improvement)
@@ -61,7 +61,7 @@ Traditional code review often involves scheduling meetings, screen sharing, and 
 
 Async code reviews solve these issues by allowing reviewers to examine code when they're most focused, reference relevant documentation, and provide thoughtful feedback without the pressure of an active conversation. Teams that switch to async code review typically see higher quality feedback, faster iteration cycles, and better knowledge sharing across the organization.
 
-Step 1: Set Up Pull Request Templates
+Step 1 - Set Up Pull Request Templates
 
 The foundation of effective async code review starts with well-structured pull requests. Create a PR template that ensures every submission includes all information reviewers need to provide valuable feedback.
 
@@ -92,7 +92,7 @@ Self-Review Checklist
 - [ ] No console.log or debug code left behind
 ```
 
-Step 2: Establish Clear Review Guidelines
+Step 2 - Establish Clear Review Guidelines
 
 Create a documented code review guide that your team follows. This removes ambiguity from the review process and helps authors understand what to expect. Include sections on what reviewers should focus on, such as logic correctness, security concerns, performance implications, and code readability.
 
@@ -100,7 +100,7 @@ Define response time expectations. Even though reviews are async, set a standard
 
 Specify feedback format expectations. Should reviewers use inline comments, leave a summary comment, or both? Should they use a thumbs-up emoji to signal approval? Clear conventions prevent miscommunication.
 
-Step 3: Use Inline Comments Effectively
+Step 3 - Use Inline Comments Effectively
 
 Inline comments are the most valuable part of async code review. They connect feedback directly to specific lines, making it easy for authors to understand exactly what needs attention. When leaving inline comments, be specific about the issue and suggest a solution.
 
@@ -110,7 +110,7 @@ Use questions when seeking clarification rather than making demands. Phrasing li
 
 Mark optional suggestions clearly. Not every piece of feedback requires changes. Use prefixes like "Nit:" for small, optional improvements or "Suggestion:" for recommendations that aren't blocking approval.
 
-Step 4: Create Structured Approval Workflows
+Step 4 - Create Structured Approval Workflows
 
 Establish clear stages for your async review workflow. A common pattern includes draft reviews, pending reviews, changes requested, and approved stages. Use GitHub's or GitLab's built-in features to manage these stages rather than relying on informal communication.
 
@@ -118,7 +118,7 @@ When changes are requested, authors should respond to each comment, either by ma
 
 Use automation to speed up the process. Require automated tests to pass before human review. Use linting tools to catch style issues automatically. Set up bots that flag common security problems. This frees reviewers to focus on logic and architecture rather than formatting.
 
-Step 5: Handle Disagreements Asynchronously
+Step 5 - Handle Disagreements Asynchronously
 
 Disagreements will happen in code review. The async nature of the process actually helps here, giving both parties time to think through their positions before responding.
 
@@ -128,7 +128,7 @@ Escalate appropriately. If a disagreement can't be resolved between the author a
 
 Document decisions. When a decision is made, note the reasoning in the PR or in a shared documentation location. This creates a reference for future similar situations and helps onboard new team members.
 
-Step 6: Review Your Process Regularly
+Step 6 - Review Your Process Regularly
 
 Async code review isn't a set-it-and-forget-it system. Schedule regular team discussions to evaluate what's working and what needs adjustment. Ask questions like: Are PRs getting reviewed quickly enough? Is the feedback quality good? Are authors getting blocked because of review delays?
 
@@ -156,7 +156,7 @@ Security Review Required
 - [ ] Data handling changes
 - [ ] Permission system modifications
 
-Assign to: @security-team
+Assign to - @security-team
 ```
 
 For Database Migrations:
@@ -193,9 +193,9 @@ Performance Metrics
 
 Benchmark Results
 ```
-Before: ___
-After: ___
-Improvement: ___
+Before - ___
+After - ___
+Improvement - ___
 ```
 
 Load Testing
@@ -259,11 +259,11 @@ When reviewers disagree with an author's approach:
 
 Comment Format:
 ```
-Decision Point: [Issue Title]
+Decision Point - [Issue Title]
 
-Position A (Author): [Author's position and reasoning]
+Position A (Author) - [Author's position and reasoning]
 
-Position B (Reviewer): [Reviewer's position and reasoning]
+Position B (Reviewer) - [Reviewer's position and reasoning]
 
 Resolution Process:
 1. Both parties provide full context within 24 hours
@@ -272,7 +272,7 @@ Resolution Process:
 ```
 ```
 
-Recording Decision Rationale: Document why decisions were made:
+Recording Decision Rationale - Document why decisions were made:
 
 ```bash
 In PR description or comment:
@@ -381,19 +381,19 @@ Improvement Actions Based on Metrics:
 
 Implementation Phases
 
-Phase 1: Foundation (Week 1)
+Phase 1 - Foundation (Week 1)
 - Create PR template
 - Document code review guidelines
 - Set up basic automations
 - Train team on process
 
-Phase 2: Optimization (Weeks 2-3)
+Phase 2 - Optimization (Weeks 2-3)
 - Monitor metrics
 - Adjust approval requirements
 - Refine templates based on feedback
 - Add advanced automations
 
-Phase 3: Scaling (Weeks 4+)
+Phase 3 - Scaling (Weeks 4+)
 - Implement time-zone aware routing
 - Advanced automation pipelines
 - Regular process retrospectives

@@ -43,7 +43,7 @@ Subkeys (daily use):
 - Can be individually revoked and replaced without changing your master key or public identity
 - Set with expiry dates (1-2 years)
 
-If your laptop is stolen: revoke the subkeys, generate new ones certified by your master key. Your correspondents continue to trust your master key fingerprint.
+If your laptop is stolen - revoke the subkeys, generate new ones certified by your master key. Your correspondents continue to trust your master key fingerprint.
 
 Setting Up the Master Key
 
@@ -61,7 +61,7 @@ In the interactive dialog:
 ```
 Please select what kind of key you want:
 (8) RSA (set your own capabilities)
-Current allowed actions: Sign Certify Encrypt
+Current allowed actions - Sign Certify Encrypt
 
 Toggle 's' to remove Sign capability
 Toggle 'e' to remove Encrypt capability
@@ -69,7 +69,7 @@ Leave 'c' (Certify) only
 ```
 
 Select:
-- Key size: 4096
+- Key size - 4096
 - Key does not expire (the master key should be long-lived; subkeys carry expiry)
 - Your real name and email address
 
@@ -93,20 +93,20 @@ Add three subkeys:
 gpg> addkey
 (8) RSA (set your own capabilities)
 Toggle to leave only Sign capability
-Key size: 4096
-Expiry: 1y (or 2y)
+Key size - 4096
+Expiry - 1y (or 2y)
 
 gpg> addkey
 (8) RSA (set your own capabilities)
 Toggle to leave only Encrypt capability
-Key size: 4096
-Expiry: 1y
+Key size - 4096
+Expiry - 1y
 
 gpg> addkey
 (8) RSA (set your own capabilities)
 Toggle to leave only Authenticate capability
-Key size: 4096
-Expiry: 1y
+Key size - 4096
+Expiry - 1y
 
 gpg> save
 ```
@@ -274,7 +274,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -286,6 +286,6 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 {% endraw %}

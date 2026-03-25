@@ -82,8 +82,8 @@ Both services use AES-256 for encryption, but their key derivation approaches di
 
 ```python
 Simplified concept of key derivation
-LastPass (pre-2022): 100,000 iterations
-LastPass (post-2023): 600,000+ iterations
+LastPass (pre-2022) - 100,000 iterations
+LastPass (post-2023) - 600,000+ iterations
 1Password (current): 1,000,000+ iterations with PBKDF2-HMAC-SHA256
 ```
 
@@ -105,7 +105,7 @@ Secret Key Implementation
 
 ```bash
 When setting up 1Password, you receive a Secret Key
-Format example: A3B4-C5D6-E7F8-G9H0
+Format example - A3B4-C5D6-E7F8-G9H0
 This key is combined with your master password locally
 Never transmitted, never stored on servers
 ```
@@ -230,7 +230,7 @@ The key difference between the two services' breach outcomes stemmed from encryp
 ```python
 Computational cost of brute-forcing master passwords
 
-Using estimate: 1 million attempts per second on modern GPU
+Using estimate - 1 million attempts per second on modern GPU
 brute_force_times = {
     "lastpass_pre2022": {
         "iterations": 100000,
@@ -252,7 +252,7 @@ brute_force_times = {
     }
 }
 
-Lesson: Strong master passwords (16+ characters) remain your best defense
+Lesson - Strong master passwords (16+ characters) remain your best defense
 Even with 100k iterations, an 8-character password is trivially cracked
 ```
 
@@ -262,22 +262,22 @@ For sensitive credentials, consider using multiple vaults:
 
 ```bash
 1Password vault segmentation example
-Personal vault: Day-to-day passwords
+Personal vault - Day-to-day passwords
 1password op item list --vault="Personal"
 
-Work vault: Only work credentials
+Work vault - Only work credentials
 1password op item list --vault="Work"
 
-Secrets vault: API keys, encryption keys (encrypted container)
+Secrets vault - API keys, encryption keys (encrypted container)
 1password op item list --vault="Secrets" --session=$OP_SESSION_LIMITED
 
-Dangerous vault: Rarely-used, high-sensitivity credentials
+Dangerous vault - Rarely-used, high-sensitivity credentials
 Consider separate password manager entirely for this category
 ```
 
 This approach limits the damage if one vault is compromised or accessed.
 
-Alternative Approach: Self-Hosted Solutions
+Alternative Approach - Self-Hosted Solutions
 
 For developers willing to manage infrastructure, self-hosted options eliminate breach risk:
 
@@ -296,7 +296,7 @@ Complete control over data, encryption keys, backups
 Monthly maintenance burden but maximum privacy
 ```
 
-Migration Path: LastPass to 1Password
+Migration Path - LastPass to 1Password
 
 If you decide to switch after LastPass's breach history:
 
@@ -365,7 +365,7 @@ Related Articles
 - [Dashlane vs LastPass After Breach: Security Comparison](/dashlane-vs-lastpass-after-breach-comparison/)
 - [Bitwarden vs LastPass Migration Guide](/bitwarden-vs-lastpass-migration-guide/)
 - [Migrating from LastPass to Bitwarden No Data Loss](/migrating-from-lastpass-to-bitwarden-step-by-step-no-data-lo/)
-- [Cloud Storage Security Breach History: Compromised.](/cloud-storage-security-breach-history-compromised-services-t/)
+- [Cloud Storage Security Breach History - Compromised.](/cloud-storage-security-breach-history-compromised-services-t/)
 - [Data Breach Notification Requirements Timeline And Process F](/data-breach-notification-requirements-timeline-and-process-f/)
 
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
@@ -374,7 +374,7 @@ Related Reading
 
 - [Dashlane vs LastPass After Breach: Security Comparison](/dashlane-vs-lastpass-after-breach-comparison/)
 - [Bitwarden vs 1Password 2026: Which Is Better for Developers](/bitwarden-vs-1password-2026-which-is-better/)
-- [Tor Browser vs VPN Comparison: Which Is Better for Privacy?](/tor-browser-vs-vpn-comparison-which-is-better/)
+- [Tor Browser vs VPN Comparison - Which Is Better for Privacy?](/tor-browser-vs-vpn-comparison-which-is-better/)
 
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 

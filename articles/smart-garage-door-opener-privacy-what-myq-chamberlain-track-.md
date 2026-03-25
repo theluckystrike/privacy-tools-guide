@@ -23,7 +23,7 @@ Table of Contents
 - [Data Collection Overview](#data-collection-overview)
 - [Network Traffic Analysis](#network-traffic-analysis)
 - [What Schedule Information Gets Exposed](#what-schedule-information-gets-exposed)
-- [The Developer Perspective: API Limitations and Alternatives](#the-developer-perspective-api-limitations-and-alternatives)
+- [The Developer Perspective - API Limitations and Alternatives](#the-developer-perspective-api-limitations-and-alternatives)
 - [Practical Recommendations](#practical-recommendations)
 - [Deep Network Analysis of MyQ Communication](#deep-network-analysis-of-myq-communication)
 - [Data Export and Forensic Analysis](#data-export-and-forensic-analysis)
@@ -89,7 +89,7 @@ This schedule data has significant implications. Insurance companies increasingl
 
 Law enforcement can potentially request this data through legal processes, creating another avenue for schedule exposure. The historical record of when your garage door opened and closed over months or years provides a detailed timeline of household activities.
 
-The Developer Perspective: API Limitations and Alternatives
+The Developer Perspective - API Limitations and Alternatives
 
 Chamberlain's official API has undergone changes over the years, with the company restricting third-party access in some cases. Developers building home automation systems face challenges when integrating MyQ devices.
 
@@ -247,7 +247,7 @@ court-admissible evidence of his actual location patterns."
 
 Alternative Smart Garage Solutions
 
-Option 1: Retrofit with Local-Only Control
+Option 1 - Retrofit with Local-Only Control
 
 For existing garage door openers without smart features, add local control only:
 
@@ -276,7 +276,7 @@ automation:
         # Notification stays on local network
 ```
 
-Option 2: Matter Protocol Implementation
+Option 2 - Matter Protocol Implementation
 
 Matter-enabled garage doors promise local control while maintaining interoperability:
 
@@ -306,7 +306,7 @@ Matter-enabled garage doors promise local control while maintaining interoperabi
 
 Matter devices execute commands locally and send no activity data to cloud services. This represents the privacy-first approach emerging in 2026.
 
-Option 3: DIY Garage Door Controller
+Option 3 - DIY Garage Door Controller
 
 Build a privacy-preserving garage controller:
 
@@ -379,7 +379,7 @@ iOS Settings → MyQ App:
  Disable Camera (unnecessary for door control)
  Disable Microphone (unnecessary)
  Disable Bluetooth (unnecessary)
-Keep only: HomeKit for device control
+Keep only - HomeKit for device control
 
 Android Settings → MyQ App Permissions:
 Revoke all unnecessary permissions
@@ -397,7 +397,7 @@ Privacy Implications by User Type
 | Remote worker | Home presence leakage | Local control prevents cloud logging |
 | High-security requirements | All data vulnerable to subpoena | DIY or air-gapped local system |
 
-The fundamental issue remains: cloud-connected devices create permanent activity records that persist beyond their operational lifespan and can be repurposed for purposes never contemplated at the time of collection.
+The fundamental issue remains - cloud-connected devices create permanent activity records that persist beyond their operational lifespan and can be repurposed for purposes never contemplated at the time of collection.
 
 Frequently Asked Questions
 
@@ -425,7 +425,7 @@ Related Articles
 
 - [Privacy-Friendly Smart Home Setup Guide 2026: Home.](/privacy-friendly-smart-home-setup-guide-2026/)
 - [Smart Blinds And Shades Privacy Do Motorized Window Covers R](/smart-blinds-and-shades-privacy-do-motorized-window-covers-r/)
-- [Smart City Surveillance: What Data Municipal Cameras and.](/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
+- [Smart City Surveillance - What Data Municipal Cameras and.](/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
 - [Smart Device Terms of Service Privacy Traps](/smart-device-terms-of-service-privacy-traps-what-you-agree-t/)
 - [Smart Plug Energy Monitoring Privacy What Data Manufacturers](/smart-plug-energy-monitoring-privacy-what-data-manufacturers/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)

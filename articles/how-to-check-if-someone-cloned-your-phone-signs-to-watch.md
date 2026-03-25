@@ -22,7 +22,7 @@ Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Advanced Detection Methods](#advanced-detection-methods)
-- [Advanced Detection: Analyzing SIM Swap Indicators](#advanced-detection-analyzing-sim-swap-indicators)
+- [Advanced Detection - Analyzing SIM Swap Indicators](#advanced-detection-analyzing-sim-swap-indicators)
 - [Troubleshooting](#troubleshooting)
 
 Prerequisites
@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Phone Cloning
+Step 1 - Understand Phone Cloning
 
 Phone cloning involves copying the unique identifiers from your SIM card or phone memory to another device. The cloned device then appears identical to yours on the cellular network, enabling attackers to:
 
@@ -46,14 +46,14 @@ Phone cloning involves copying the unique identifiers from your SIM card or phon
 
 Traditional cloning targeted GSM networks through SIM card duplication, but modern attacks increasingly focus on over-the-air (OTA) provisioning exploits, IMSI catchers, and malware that steals device identifiers.
 
-Step 2: Technical Signs Your Phone May Be Cloned
+Step 2 - Technical Signs Your Phone May Be Cloned
 
 1. Unusual Battery Drain and Data Usage
 
 Cloned devices constantly communicate with the cellular network to maintain synchronization. Monitor your battery statistics and mobile data consumption:
 
 ```bash
-Android: Check battery usage statistics
+Android - Check battery usage statistics
 adb shell dumpsys batterystats
 
 iOS: View battery health and usage
@@ -68,10 +68,10 @@ Review connected devices for your Google, Apple, and carrier accounts:
 
 ```bash
 Check Google account devices
-Visit: myaccount.google.com/device-management
+Visit - myaccount.google.com/device-management
 
 Check Apple ID devices
-Visit: appleid.apple.com/sign-in-and-security/devices-and-sessions
+Visit - appleid.apple.com/sign-in-and-security/devices-and-sessions
 ```
 
 Devices you don't recognize or multiple sessions from the same device type warrant immediate investigation.
@@ -151,7 +151,7 @@ Check your carrier provisioning status through hidden menus:
 
 Mismatched carrier information or unexpected carrier names may indicate a compromised network connection.
 
-Step 3: Protection Strategies
+Step 3 - Protection Strategies
 
 Enable SIM Lock
 
@@ -182,7 +182,7 @@ Monitor Financial Accounts
 
 Set up alerts for unusual account activity and review login histories regularly. Consider using hardware security keys for critical accounts.
 
-Step 4: Response Steps If Cloning Is Detected
+Step 4 - Response Steps If Cloning Is Detected
 
 If you confirm unauthorized access:
 
@@ -192,7 +192,7 @@ If you confirm unauthorized access:
 4. Factory reset your device - This removes any malware helping the cloning
 5. File a report - Document the incident with relevant authorities
 
-Advanced Detection: Analyzing SIM Swap Indicators
+Advanced Detection - Analyzing SIM Swap Indicators
 
 Phone cloning often precedes SIM swap attacks. Monitor these specific indicators:
 
@@ -209,7 +209,7 @@ adb shell dumpsys telephony.registry | grep "mSimSerialNumber"
 
 If the SIM serial changes without your action, someone has physically replaced your SIM. This is a critical sign of cloning or SIM swap attack.
 
-Step 5: Carrier Security Controls
+Step 5 - Carrier Security Controls
 
 Most major carriers offer additional protections against cloning and SIM swaps:
 
@@ -244,7 +244,7 @@ Dial *898 to check SIM swap settings
 Or access https://www.t-mobile.com/security
 ```
 
-Step 6: Detecting Unauthorized Mileage Monitoring
+Step 6 - Detecting Unauthorized Mileage Monitoring
 
 Cloning often includes location tracking. Monitor for unauthorized location access:
 
@@ -280,30 +280,30 @@ def check_location_access():
 check_location_access()
 ```
 
-Step 7: Forensic Analysis for Power Users
+Step 7 - Forensic Analysis for Power Users
 
 If you suspect successful cloning, preserve evidence:
 
 ```bash
-Step 1: Create full forensic image (without modifying original)
+Step 1 - Create full forensic image (without modifying original)
 adb shell dumpsys > device_state_$(date +%Y%m%d_%H%M%S).txt
 
-Step 2: Export call logs (may show intercepted calls)
+Step 2 - Export call logs (may show intercepted calls)
 adb shell dumpsys telephony.registry | grep -i "call\|imsi\|imei" > forensics.txt
 
-Step 3: Analyze network connections
+Step 3 - Analyze network connections
 adb shell netstat -an | grep ESTABLISHED > network_forensics.txt
 
-Step 4: Extract suspicious apps
+Step 4 - Extract suspicious apps
 adb shell pm list packages -f > installed_packages.txt
 
-Step 5: Check for hidden app containers (cloning malware)
+Step 5 - Check for hidden app containers (cloning malware)
 adb shell dumpsys package | grep -i "hidden\|shadow\|clone" > suspicious_apps.txt
 ```
 
 Document all findings with timestamps and provide to law enforcement if reporting.
 
-Step 8: Timeline and Evidence Documentation
+Step 8 - Timeline and Evidence Documentation
 
 Maintain a detailed timeline of events:
 
@@ -345,7 +345,7 @@ Maintain a detailed timeline of events:
 
 This documentation is crucial if you pursue legal action or need to prove the timeline of events.
 
-Step 9: Long-Term Monitoring After Incident
+Step 9 - Long-Term Monitoring After Incident
 
 Recovery doesn't end after initial remediation:
 

@@ -56,11 +56,11 @@ For most users, TOTP with a local authenticator app (Aegis on Android, Raivo on 
 
 Setting Up TOTP-Based 2FA
 
-Step 1: Access Security Settings
+Step 1 - Access Security Settings
 
 Log into your ProtonMail account and navigate to Settings → Security. You'll find the two-factor authentication section near the bottom of the page.
 
-Step 2: Generate Your Secret
+Step 2 - Generate Your Secret
 
 Click "Enable 2FA" to generate a TOTP secret. ProtonMail displays a QR code and the raw secret as a Base32 string:
 
@@ -68,7 +68,7 @@ Click "Enable 2FA" to generate a TOTP secret. ProtonMail displays a QR code and 
 JBSWY3DPEHPK3PXPJBSWY3DPEHPK3PXPJBSWY3DPEHPK3PXP
 ```
 
-Step 3: Configure Your Authenticator
+Step 3 - Configure Your Authenticator
 
 For developers who prefer command-line tools, you can generate TOTP codes manually using standard libraries:
 
@@ -98,11 +98,11 @@ const token = TOTP.generate(secret);
 console.log(`Your 2FA code: ${token}`);
 ```
 
-Step 4: Verify and Activate
+Step 4 - Verify and Activate
 
 Enter the 6-digit code from your authenticator app to complete setup. ProtonMail displays a set of recovery codes, store these securely, preferably in a password manager.
 
-Step 5: Back Up Your TOTP Secret
+Step 5 - Back Up Your TOTP Secret
 
 Before closing the setup screen, save the raw Base32 secret string in your password manager alongside your ProtonMail credentials. This lets you regenerate the TOTP entry if you switch authenticator apps or lose your phone.
 
@@ -129,8 +129,8 @@ Registering a Backup Key
 Always register at least two hardware keys. If your primary key is lost or damaged, you need a registered backup key to regain access. A YubiKey 5 NFC as the primary and a cheaper Security Key Series as the backup is a common and cost-effective setup.
 
 ```
-Key 1: YubiKey 5C NFC (daily carry, USB-C + NFC)
-Key 2: YubiKey Security Key NFC (stored in home safe, backup)
+Key 1 - YubiKey 5C NFC (daily carry, USB-C + NFC)
+Key 2 - YubiKey Security Key NFC (stored in home safe, backup)
 ```
 
 Store the backup key separately from your primary. different bag, different location. A lost wallet or stolen backpack should not take both keys simultaneously.
@@ -253,16 +253,16 @@ Hardware Key Backup Strategy
 For teams handling sensitive communications, maintain multiple registered keys in different physical locations:
 
 ```
-Primary Key: YubiKey 5C (carry with daily credentials)
-Backup Key 1: YubiKey 5NFC (home safe)
-Backup Key 2: Titan Security Key (office safe)
+Primary Key - YubiKey 5C (carry with daily credentials)
+Backup Key 1 - YubiKey 5NFC (home safe)
+Backup Key 2 - Titan Security Key (office safe)
 
-Recovery Codes: Printed, stored in lawyer's office
+Recovery Codes - Printed, stored in lawyer's office
 ```
 
 This multi-layer redundancy ensures that losing one key (lost wallet, stolen bag) doesn't result in complete account lockout.
 
-Advanced: Custom 2FA Workflows
+Advanced - Custom 2FA Workflows
 
 Power users can build custom 2FA integrations for specialized workflows:
 

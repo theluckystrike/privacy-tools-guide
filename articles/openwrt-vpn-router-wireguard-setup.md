@@ -27,7 +27,7 @@ Prerequisites
 
 If your router doesn't run OpenWrt, check the OpenWrt Table of Hardware (openwrt.org/toh/start) to see if it's supported.
 
-Step 1: Install WireGuard on OpenWrt
+Step 1 - Install WireGuard on OpenWrt
 
 Connect to your router via SSH:
 
@@ -51,7 +51,7 @@ After rebooting, verify WireGuard is available:
 wg --version
 ```
 
-Step 2: Get or Create WireGuard Configuration
+Step 2 - Get or Create WireGuard Configuration
 
 You need a WireGuard configuration from your VPN provider or your own server.
 
@@ -84,7 +84,7 @@ cat /etc/wireguard/public.key
 
 Add the router's public key to your server's WireGuard configuration as a new peer.
 
-Step 3: Configure WireGuard Interface
+Step 3 - Configure WireGuard Interface
 
 Create a new WireGuard interface in OpenWrt's UCI configuration:
 
@@ -118,7 +118,7 @@ wg show
 Should show the peer with a recent handshake and data transfer
 ```
 
-Step 4: Configure Firewall Rules
+Step 4 - Configure Firewall Rules
 
 Add the WireGuard interface to the VPN firewall zone and create routing rules:
 
@@ -136,7 +136,7 @@ uci commit firewall
 /etc/init.d/firewall restart
 ```
 
-Step 5: Configure Routing
+Step 5 - Configure Routing
 
 Set the WireGuard interface as the default route for all traffic:
 
@@ -169,7 +169,7 @@ curl https://api.ipify.org
 Should also show the VPN IP
 ```
 
-Step 6: Configure DNS for VPN-Routed Traffic
+Step 6 - Configure DNS for VPN-Routed Traffic
 
 When all traffic routes through the VPN, DNS queries should also go through the VPN's DNS server to prevent DNS leaks.
 
@@ -197,12 +197,12 @@ If DNS is leaking, this will show your real IP
 Should show VPN IP or fail if your VPN blocks external DNS
 ```
 
-Step 7: Implement a Kill Switch
+Step 7 - Implement a Kill Switch
 
 If the WireGuard tunnel drops, traffic should be blocked (not fall back to your real IP):
 
 ```bash
-Add firewall rule: block LAN → WAN traffic except through wg0
+Add firewall rule - block LAN → WAN traffic except through wg0
 uci add firewall.rule
 uci set firewall.@rule[-1].name='VPN-killswitch'
 uci set firewall.@rule[-1].src='lan'
@@ -229,17 +229,17 @@ Your visible IP should be the VPN server
 curl -s https://api.ipify.org
 
 DNS should not leak your real resolver
-Visit: https://dnsleaktest.com and run extended test
+Visit - https://dnsleaktest.com and run extended test
 
 Ensure WebRTC doesn't leak local IP (browser test)
-Visit: https://browserleaks.com/webrtc
+Visit - https://browserleaks.com/webrtc
 
 Test that traffic stops if VPN drops
 Temporarily down the wg0 interface on the router:
 ssh root@192.168.1.1 "ip link set wg0 down"
 curl -s --max-time 5 https://api.ipify.org
 Should time out (kill switch working) or return your real IP (kill switch needs adjustment)
-Bring it back up: ssh root@192.168.1.1 "ip link set wg0 up"
+Bring it back up - ssh root@192.168.1.1 "ip link set wg0 up"
 ```
 
 Related Articles

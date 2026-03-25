@@ -18,7 +18,7 @@ intent-checked: true
 
 Installing a VPN doesn't guarantee your traffic is private. Misconfigured VPNs leak your real IP through DNS queries, WebRTC connections, or IPv6 traffic, all while the VPN indicator shows green. Your ISP can still see your browsing, and websites can still fingerprint you. This guide walks through verification tests you can run right now: DNS leak detection (nslookup command), WebRTC leak tests (browser console), IPv6 leak detection (running a local server), and kill switch verification (testing connection drop behavior). Each test reveals whether your VPN is actually working. Real tools: dnsleak.com, ipleak.net, whoami.akamai.com, and tcpdump for advanced users.
 
-Output: 64 bytes from 8.8.8.8: icmp_seq=0 ttl=119 time=45ms
+Output - 64 bytes from 8.8.8.8: icmp_seq=0 ttl=119 time=45ms
 ```
 
 4.
@@ -48,7 +48,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Test 1: Check Your Real IP
+Step 1 - Test 1: Check Your Real IP
 
 First, establish what your real IP is. This is what you want to hide.
 
@@ -67,10 +67,10 @@ Command-line method:
 ```bash
 macOS/Linux
 curl https://ifconfig.me
-Output: 203.0.113.45
+Output - 203.0.113.45
 
 curl https://icanhazip.com
-Output: 203.0.113.45
+Output - 203.0.113.45
 
 Windows PowerShell
 (Invoke-WebRequest https://ifconfig.me).Content
@@ -78,11 +78,11 @@ Windows PowerShell
 
 Note the IP address (e.g., 203.0.113.45). This is your real IP that you want to hide.
 
-Step 2: Test 2: DNS Leak Detection
+Step 2 - Test 2: DNS Leak Detection
 
 When you use a VPN, your DNS queries should go through the VPN's DNS servers, encrypted. If they leak, your ISP can still see what sites you visit.
 
-Method 1: Online DNS leak test (easiest)
+Method 1 - Online DNS leak test (easiest)
 
 Visit [dnsleak.com](https://dnsleak.com)
 
@@ -111,31 +111,31 @@ DNS Servers Detected:
 
 If you see your ISP's servers while connected to VPN, you have a DNS leak.
 
-Method 2: Command-line DNS leak test
+Method 2 - Command-line DNS leak test
 
 ```bash
 Check what DNS server your system uses
 nslookup google.com
 
 Output on VPN should show VPN's DNS:
-Server: 10.0.0.1 (VPN's DNS)
-Address: 10.0.0.1#53
+Server - 10.0.0.1 (VPN's DNS)
+Address - 10.0.0.1#53
 
 Non-VPN output shows ISP's DNS:
 Server: 8.8.8.8
-Address: 8.8.8.8#53
+Address - 8.8.8.8#53
 ```
 
 If the server address is your ISP's DNS while VPN is connected, you have a leak.
 
-Method 3: Advanced - tcpdump to capture traffic
+Method 3 - Advanced - tcpdump to capture traffic
 
 For technical users, capture actual DNS traffic to verify it's encrypted through VPN:
 
 ```bash
 Install tcpdump if needed
 macOS: brew install tcpdump
-Linux: sudo apt-get install tcpdump
+Linux - sudo apt-get install tcpdump
 
 Capture DNS traffic
 sudo tcpdump -i any -n 'udp port 53' -c 5
@@ -149,11 +149,11 @@ Your computer -> VPN endpoint (encrypted tunnel, no direct DNS queries visible)
 
 If you see DNS queries (port 53) going directly to your ISP while connected to VPN, there's a leak.
 
-Step 3: Test 3: WebRTC Leak Detection
+Step 3 - Test 3: WebRTC Leak Detection
 
 WebRTC is used by browsers for real-time communication (video calls, file sharing). It can bypass your VPN and leak your real IP directly.
 
-Method 1: Online WebRTC leak test (easiest)
+Method 1 - Online WebRTC leak test (easiest)
 
 Visit [ipleak.net](https://ipleak.net)
 
@@ -167,18 +167,18 @@ If it shows your VPN's IP only, no leak. If it shows your real IP in the WebRTC 
 Expected results (no leak):
 
 ```
-IPv4: 198.51.100.42 (VPN provider's IP)
-WebRTC: 198.51.100.42 (same as VPN)
+IPv4 - 198.51.100.42 (VPN provider's IP)
+WebRTC - 198.51.100.42 (same as VPN)
 ```
 
 Bad result (WebRTC leak):
 
 ```
-IPv4: 198.51.100.42 (VPN provider's IP)
-WebRTC: 203.0.113.45 (YOUR REAL IP - LEAK!)
+IPv4 - 198.51.100.42 (VPN provider's IP)
+WebRTC - 203.0.113.45 (YOUR REAL IP - LEAK!)
 ```
 
-Method 2: Browser console WebRTC leak test
+Method 2 - Browser console WebRTC leak test
 
 For technical users, test WebRTC directly in browser console:
 
@@ -217,7 +217,7 @@ What to look for:
 
 In the candidates, look for IP addresses. If you see your real IP (e.g., 203.0.113.45) instead of your VPN IP, you have a WebRTC leak.
 
-Method 3: Disable WebRTC in browser (fix if leaking)
+Method 3 - Disable WebRTC in browser (fix if leaking)
 
 If you found a WebRTC leak, disable WebRTC:
 
@@ -231,11 +231,11 @@ Chrome:
 2. Install WebRTC Leak Prevent extension
 3. Leave it enabled
 
-Step 4: Test 4: IPv6 Leak Detection
+Step 4 - Test 4: IPv6 Leak Detection
 
 If your network supports IPv6, traffic can leak through IPv6 routes that bypass your VPN.
 
-Method 1: Online IPv6 leak test (easiest)
+Method 1 - Online IPv6 leak test (easiest)
 
 Visit [ipleak.net](https://ipleak.net)
 
@@ -248,18 +248,18 @@ If no IPv6 address is shown, or it shows the VPN provider's IPv6, you're fine. I
 Expected results (no leak):
 
 ```
-IPv4: 198.51.100.42 (VPN IP)
-IPv6: Not detected OR 2001:db8::1 (VPN provider's IPv6)
+IPv4 - 198.51.100.42 (VPN IP)
+IPv6 - Not detected OR 2001:db8::1 (VPN provider's IPv6)
 ```
 
 Bad result (IPv6 leak):
 
 ```
-IPv4: 198.51.100.42 (VPN IP)
-IPv6: 2600:1700:1234:5678::1 (YOUR REAL IPv6 - LEAK!)
+IPv4 - 198.51.100.42 (VPN IP)
+IPv6 - 2600:1700:1234:5678::1 (YOUR REAL IPv6 - LEAK!)
 ```
 
-Method 2: Command-line IPv6 check
+Method 2 - Command-line IPv6 check
 
 ```bash
 Check if you have an IPv6 address
@@ -273,7 +273,7 @@ If your global IPv6 is visible on ipleak.net but shouldn't be,
 your VPN isn't routing IPv6 traffic
 ```
 
-Method 3: Disable IPv6 if leaked (fix)
+Method 3 - Disable IPv6 if leaked (fix)
 
 If you have IPv6 leaks and can't use IPv6, disable it:
 
@@ -304,11 +304,11 @@ Re-enable:
 netsh interface ipv6 set state disabled=no
 ```
 
-Step 5: Test 5: Kill Switch Verification
+Step 5 - Test 5: Kill Switch Verification
 
 A "kill switch" stops all traffic if the VPN drops, preventing unencrypted data from leaking.
 
-Method 1: Manual disconnect test
+Method 1 - Manual disconnect test
 
 1. Connect to VPN
 2. Open a terminal/command prompt
@@ -316,7 +316,7 @@ Method 1: Manual disconnect test
 
 ```bash
 ping 8.8.8.8
-Output: 64 bytes from 8.8.8.8: icmp_seq=0 ttl=119 time=45ms
+Output - 64 bytes from 8.8.8.8: icmp_seq=0 ttl=119 time=45ms
 ```
 
 4. Disconnect the VPN (toggle it off in the app)
@@ -336,7 +336,7 @@ Bad result (no kill switch):
 - Internet continues working
 - Unencrypted traffic leaks to the internet
 
-Method 2: Network connectivity test (advanced)
+Method 2 - Network connectivity test (advanced)
 
 For technical users, use netstat to monitor connections:
 
@@ -345,7 +345,7 @@ macOS/Linux:
 Monitor network connections
 netstat -an | grep ESTABLISHED
 
-Before VPN disconnect: Shows connection to VPN endpoint
+Before VPN disconnect - Shows connection to VPN endpoint
 tcp4 0 0 192.168.1.100.54321 198.51.100.42.1194 ESTABLISHED
 
 After VPN disconnect with kill switch ON:
@@ -357,7 +357,7 @@ Direct connections to ISP reappear
 tcp4 0 0 192.168.1.100.54322 8.8.8.8.443 ESTABLISHED
 ```
 
-Step 6: Test 6: Check Leak Test Sites Themselves
+Step 6 - Test 6: Check Leak Test Sites Themselves
 
 Some leak test sites have false positives. Cross-reference:
 
@@ -368,7 +368,7 @@ Some leak test sites have false positives. Cross-reference:
 
 Visit 2-3 sites. If they all show the same IP (your VPN's IP), the VPN is working. If they show different IPs, something is wrong.
 
-Step 7: Test Checklist
+Step 7 - Test Checklist
 
 Before you trust a VPN, run this full verification:
 
@@ -404,9 +404,9 @@ Before you trust a VPN, run this full verification:
  [ ] All three should show VPN provider's IP
 ```
 
-Step 8: Common Leaks and Fixes
+Step 8 - Common Leaks and Fixes
 
-Problem: DNS leak detected
+Problem - DNS leak detected
 
 Causes:
 - VPN app not configured to use VPN DNS
@@ -418,7 +418,7 @@ Fixes:
 - Disable DNS-over-HTTPS (DoH) in browser if it conflicts
 - Restart computer after VPN connection
 
-Problem: WebRTC leak detected
+Problem - WebRTC leak detected
 
 Causes:
 - WebRTC enabled in browser
@@ -429,7 +429,7 @@ Fixes:
 - Chrome: Install WebRTC Leak Prevent extension
 - Safari: Less prone to WebRTC leaks due to stricter WebRTC implementation
 
-Problem: IPv6 leak detected
+Problem - IPv6 leak detected
 
 Causes:
 - ISP provides IPv6 but VPN doesn't support it
@@ -440,7 +440,7 @@ Fixes:
 - Choose VPN provider with IPv6 support
 - Configure VPN to tunnel IPv6 traffic
 
-Problem: Kill switch not working
+Problem - Kill switch not working
 
 Causes:
 - Kill switch disabled in VPN settings
@@ -451,7 +451,7 @@ Fixes:
 - Check firewall isn't allowing exceptions
 - Restart VPN app and computer
 
-Step 9: Real Example: Testing ExpressVPN
+Step 9 - Real Example: Testing ExpressVPN
 
 Here's a complete verification of ExpressVPN:
 

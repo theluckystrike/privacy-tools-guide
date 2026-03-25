@@ -23,8 +23,8 @@ Table of Contents
 - [Understanding the TCP Handshake in VPN Connections](#understanding-the-tcp-handshake-in-vpn-connections)
 - [Diagnostic Tools and Initial Investigation](#diagnostic-tools-and-initial-investigation)
 - [Common Causes and Solutions](#common-causes-and-solutions)
-- [Advanced: Packet Capture Analysis](#advanced-packet-capture-analysis)
-- [Quick Reference: Troubleshooting Flowchart](#quick-reference-troubleshooting-flowchart)
+- [Advanced - Packet Capture Analysis](#advanced-packet-capture-analysis)
+- [Quick Reference - Troubleshooting Flowchart](#quick-reference-troubleshooting-flowchart)
 
 Understanding the TCP Handshake in VPN Connections
 
@@ -49,7 +49,7 @@ ping -c 5 <vpn-server-ip>
 
 Test TCP connectivity to the VPN port
 nc -zv <vpn-server-ip> <port>
-Common ports: 443 (OpenVPN TCP), 1194 (OpenVPN UDP), 51820 (WireGuard)
+Common ports - 443 (OpenVPN TCP), 1194 (OpenVPN UDP), 51820 (WireGuard)
 ```
 
 If ping fails, your client cannot reach the server at the IP level. This indicates a network routing problem or server outage.
@@ -89,7 +89,7 @@ The most frequent cause of TCP handshake failures is a firewall between your cli
 
 Check your local firewall:
 ```bash
-Linux: List active iptables rules
+Linux - List active iptables rules
 sudo iptables -L -n -v
 
 macOS: Check application firewall
@@ -187,7 +187,7 @@ http-proxy <proxy-ip> <proxy-port> ntlm
 http-proxy-retry
 ```
 
-Advanced: Packet Capture Analysis
+Advanced - Packet Capture Analysis
 
 When basic diagnostics fail, capture packets to see exactly what's happening:
 
@@ -205,7 +205,7 @@ Open the capture file in Wireshark and look for:
 - TLS Client Hello followed by reset. Server rejecting the connection
 - Traffic going to an unexpected IP. DNS resolution issue
 
-Quick Reference: Troubleshooting Flowchart
+Quick Reference - Troubleshooting Flowchart
 
 When faced with a VPN connection timeout:
 

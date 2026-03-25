@@ -165,13 +165,13 @@ Exit Relay:
 This architecture reveals important limitations:
 
 ```
-You (IP: 203.0.113.42) → Guard Relay sees 203.0.113.42
+You (IP - 203.0.113.42) → Guard Relay sees 203.0.113.42
                        → Middle Relay (encrypted)
                        → Exit Relay → example.com sees unencrypted traffic
 
-Problem: If you access http://example.com over Tor,
+Problem - If you access http://example.com over Tor,
 the exit relay operator can see your traffic content.
-Solution: Always use https:// or .onion sites over Tor.
+Solution - Always use https:// or .onion sites over Tor.
 ```
 
 Performance Optimization and Latency Considerations
@@ -278,7 +278,7 @@ Access Tor hidden services
 These addresses are generated using public key cryptography
 Example real .onion addresses:
 
-The Tor Project: thehiddenwiki.onion
+The Tor Project - thehiddenwiki.onion
 SecureDrop (various news organizations): xxx.onion
 
 Accessing .onion requires Tor Browser
@@ -300,7 +300,7 @@ Tor Exit Node Monitoring:
 
 DNS Leaks:
 - Tor Browser includes DNS leak protection
-- Verify: dnsleaktest.com shows Tor exit IP
+- Verify - dnsleaktest.com shows Tor exit IP
 - If shows your real ISP, DNS is leaking
 
 ```bash
@@ -340,10 +340,10 @@ VPN-Over-Tor (Tor Network → VPN → Destination):
 - Generally not recommended (adds complexity, reduces privacy)
 
 ```bash
-Tor-Over-VPN: VPN first, then use Tor normally
+Tor-Over-VPN - VPN first, then use Tor normally
 In your OS networking, connect to VPN provider
 Then launch Tor Browser normally
-Check with: torsocks curl https://check.torproject.org/api/ip
+Check with - torsocks curl https://check.torproject.org/api/ip
 ```
 
 Operational Security Beyond Tor
@@ -381,7 +381,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -393,7 +393,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

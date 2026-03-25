@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Data Trail
+Step 1 - Understand the Data Trail
 
 Every online purchase generates multiple data points that can be linked back to you:
 
@@ -41,7 +41,7 @@ Every online purchase generates multiple data points that can be linked back to 
 
 The goal is not evasion of lawful requirements but reducing unnecessary data exposure to trackers, data brokers, and potential breach vectors.
 
-Step 2: Anonymous Email and Identity
+Step 2 - Anonymous Email and Identity
 
 Creating separate identities for online purchases starts with email. A throwaway email service like [Proton Mail](https://proton.me/mail) or [Tuta Mail](https://tuta.com) provides end-to-end encrypted email without requiring phone verification. For maximum privacy, use an email address that cannot be traced to your real identity, avoid incorporating your name, birth year, or other identifying information.
 
@@ -60,12 +60,12 @@ def generate_purchase_alias(vendor: str, domain: str = "privacyemail.com") -> st
 Usage:
 For a purchase from "example-store.com"
 alias = generate_purchase_alias("example-store.com")
-Returns something like: purchase-a1b2c3d4-e5f6g7h8@privacyemail.com
+Returns something like - purchase-a1b2c3d4-e5f6g7h8@privacyemail.com
 ```
 
 This approach lets you track which vendor leaked or sold your email address by using a different alias for each purchase.
 
-Step 3: Privacy-Focused Payment Methods
+Step 3 - Privacy-Focused Payment Methods
 
 Prepaid Debit Cards
 
@@ -117,7 +117,7 @@ Gift Cards
 
 Gift cards from major retailers can be purchased with cash and used for online purchases. This method works particularly well for Amazon, Target, or general-purpose Visa gift cards. The key is purchasing in person with cash, digital gift cards often require account creation.
 
-Step 4: Shipping Address Anonymization
+Step 4 - Shipping Address Anonymization
 
 The shipping address presents the most direct challenge to anonymous purchasing. Several strategies help:
 
@@ -137,7 +137,7 @@ Neighbor or Locker Delivery
 
 Some carriers offer delivery to secure lockers (Amazon Hub, UPS Access Point) or nearby convenience stores. This allows package retrieval without home delivery.
 
-Step 5: Network-Level Privacy
+Step 5 - Network-Level Privacy
 
 Your IP address reveals significant location information. Methods to mask it include:
 
@@ -178,7 +178,7 @@ Isolating your purchase activities in a dedicated browser profile with:
 })
 ```
 
-Step 6: Practical Implementation: Anonymous Purchase Workflow
+Step 6 - Practical Implementation: Anonymous Purchase Workflow
 
 A complete anonymous purchase workflow combines multiple techniques:
 
@@ -225,7 +225,7 @@ class AnonymousPurchase:
         return json.loads(result.stdout)
 ```
 
-Step 7: Limitations and Legal Considerations
+Step 7 - Limitations and Legal Considerations
 
 True anonymity online faces practical and legal constraints:
 

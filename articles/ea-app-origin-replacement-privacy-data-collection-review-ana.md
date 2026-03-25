@@ -88,13 +88,13 @@ Privacy Implications for Power Users
 
 Several privacy concerns emerge from this data collection model:
 
-Persistent Authentication: The EA app maintains continuous authentication tokens, allowing EA to track online status and session duration. This differs from standalone game launches that only connect during active play.
+Persistent Authentication - The EA app maintains continuous authentication tokens, allowing EA to track online status and session duration. This differs from standalone game launches that only connect during active play.
 
-Hardware Telemetry: The detailed hardware inventory collected enables fingerprinting even across reinstallations. Your specific GPU model, driver version, and system configuration create a unique identifier.
+Hardware Telemetry - The detailed hardware inventory collected enables fingerprinting even across reinstallations. Your specific GPU model, driver version, and system configuration create a unique identifier.
 
-Cross-Game Tracking: EA's unified platform means your activity across different games gets linked to a single profile, building a behavioral profile.
+Cross-Game Tracking - EA's unified platform means your activity across different games gets linked to a single profile, building a behavioral profile.
 
-Third-Party Data Sharing: EA's privacy policy indicates sharing data with service providers, advertising partners, and for legal compliance purposes.
+Third-Party Data Sharing - EA's privacy policy indicates sharing data with service providers, advertising partners, and for legal compliance purposes.
 
 Auditing EA App Data Collection
 
@@ -180,7 +180,7 @@ Some EA games through EA Play (formerly Access) can be launched without the full
 ```bash
 Check if a game can be launched via Steam
 Many EA Play titles on Steam do not require the EA app to be running
-Test with: steam://run/1234567
+Test with - steam://run/1234567
 ```
 
 Alternative Launch Parameters

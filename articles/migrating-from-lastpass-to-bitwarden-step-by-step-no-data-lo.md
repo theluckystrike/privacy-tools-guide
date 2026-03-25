@@ -40,7 +40,7 @@ npm
 npm install -g @bitwarden/cli
 ```
 
-Step 1: Export Data from LastPass
+Step 1 - Export Data from LastPass
 
 LastPass provides two export formats: CSV and encrypted JSON. For a complete migration, use the CSV export as it preserves more fields.
 
@@ -68,7 +68,7 @@ head -5 lastpass-export.csv
 
 The CSV contains columns for URL, username, password, name, and notes.
 
-Step 2: Handle TOTP Codes
+Step 2 - Handle TOTP Codes
 
 LastPass stores TOTP secrets within the notes field or as separate entries. Extract these before migration:
 
@@ -102,7 +102,7 @@ with open('lastpass-export.csv', 'r') as f:
             print(f"{row['name']}: {totp}")
 ```
 
-Step 3: Import into Bitwarden
+Step 3 - Import into Bitwarden
 
 Bitwarden supports direct CSV import with its CLI. First, unlock your vault:
 
@@ -163,7 +163,7 @@ Verify the import count matches your export:
 bw list items | jq length
 ```
 
-Step 4: Import TOTP Codes
+Step 4 - Import TOTP Codes
 
 Bitwarden stores TOTP as a separate field. Add TOTP codes programmatically:
 
@@ -201,7 +201,7 @@ with open('lastpass-export.csv', 'r') as f:
 
 Alternatively, use Bitwarden's web vault to manually add TOTP codes for critical accounts like email and banking.
 
-Step 5: Verify Migration Completeness
+Step 5 - Verify Migration Completeness
 
 Run comparison checks to ensure nothing was lost:
 
@@ -235,7 +235,7 @@ else
 fi
 ```
 
-Step 6: Configure Bitwarden CLI for Automation
+Step 6 - Configure Bitwarden CLI for Automation
 
 Set up CLI shortcuts for daily use:
 
@@ -257,12 +257,12 @@ Add to your shell profile for persistent access:
 echo 'export BW_SESSION="$(bw unlock --raw)"' >> ~/.bashrc
 ```
 
-Step 7: Browser Extension and Migration
+Step 7 - Browser Extension and Migration
 
 Install the Bitwarden browser extension:
 
-- Chrome/Chromium: [Chrome Web Store](https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb)
-- Firefox: [Add-ons for Firefox](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/)
+- Chrome/Chromium - [Chrome Web Store](https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb)
+- Firefox - [Add-ons for Firefox](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/)
 - Safari: Mac App Store
 
 After installation:

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Brave Browser Ad Blocking vs uBlock"
-description: "Brave Browser Ad Blocking vs uBlock Origin: A Technical Comparison. privacy guide covering tools, techniques, and best practices to protect your data"
+description: "Brave Browser Ad Blocking vs uBlock Origin - A Technical Comparison. privacy guide covering tools, techniques, and best practices to protect your data"
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: "theluckystrike"
@@ -173,7 +173,7 @@ uBlock Origin: Creating Custom Filter Lists
 Power users can maintain their own filter lists for site-specific blocking:
 
 ```txt
-! File: my-custom-filters.txt
+! File - my-custom-filters.txt
 ! Updated: 2026-03-20
 
 ! Block specific ad network across all sites
@@ -202,7 +202,7 @@ site:news.example.com||ads.com^
 
 Import this by copying to uBlock Origin Dashboard → My filters → Paste list. This approach scales to thousands of custom rules.
 
-Brave: Working Within Built-In Limitations
+Brave - Working Within Built-In Limitations
 
 Since Brave doesn't expose custom filter lists through the GUI, advanced users use workarounds:
 
@@ -230,7 +230,7 @@ Test Environment
 - Network: 100Mbps fiber
 - Browser: Latest versions (2026-03)
 
-Test Case 1: News Website with 40+ Ad Requests
+Test Case 1 - News Website with 40+ Ad Requests
 
 Time to first contentful paint:
 - Brave Shields (enabled): 1.2 seconds
@@ -242,13 +242,13 @@ Memory overhead:
 - uBlock Origin: +42MB
 - Difference: uBlock uses 233% more RAM
 
-Test Case 2: SPA Application (React/Vue)
+Test Case 2 - SPA Application (React/Vue)
 
 JavaScript execution time:
 - Brave: 45ms (native filter matching)
 - uBlock Origin: 67ms (WebExtension overhead)
 
-Conclusion: Brave's performance advantage is measurable but small for typical users. The 20ms difference is imperceptible on most connections.
+Conclusion - Brave's performance advantage is measurable but small for typical users. The 20ms difference is imperceptible on most connections.
 
 Debugging Network Issues with Each Tool
 
@@ -320,7 +320,7 @@ Brave's Built-In Fingerprinting Protection
 // 4. Fonts: Limit available fonts to reduce fingerprinting surface
 
 // Test your fingerprinting resistance:
-// Visit: https://coveryourtracks.eff.org/
+// Visit - https://coveryourtracks.eff.org/
 ```
 
 Brave's fingerprinting protection may be more important than ad blocking for privacy-conscious users.
@@ -343,7 +343,7 @@ uBlock Origin
 - Support: GitHub issues, community forums
 - Total annual cost: $0-20/year
 
-Alternative: Commercial Ad Blockers
+Alternative - Commercial Ad Blockers
 - Examples: AdBlock Plus, Adguard (paid version)
 - Cost: $50-80/year
 - Benefit: Support, frequent updates, mobile versions
@@ -356,13 +356,13 @@ Testing Your Ad Blocker Effectiveness
 Verify that your chosen solution is actually blocking ads effectively:
 
 ```bash
-Test 1: Visit ad-testing sites
+Test 1 - Visit ad-testing sites
 https://adblock-tester.com/
 https://ads-blocker.com/testing/
 
-Expected: Most ad slots blocked, should see minimal advertisements
+Expected - Most ad slots blocked, should see minimal advertisements
 
-Test 2: Monitor network traffic
+Test 2 - Monitor network traffic
 Open DevTools → Network tab → Reload page
 Look for requests to known ad networks
 Examples:
@@ -373,31 +373,31 @@ Examples:
 If these appear in Network tab and load, your blocker isn't working
 If they appear but are blocked (red X), your blocker is working
 
-Test 3: Check filter effectiveness
+Test 3 - Check filter effectiveness
 In uBlock Origin Dashboard → Statistics
 Shows total requests blocked today
-Average: 50-300 requests blocked per hour of browsing
+Average - 50-300 requests blocked per hour of browsing
 ```
 
-Migration Path: Switching Solutions
+Migration Path - Switching Solutions
 
 If you're currently using one solution and want to switch:
 
 From Brave to uBlock Origin
 
 ```bash
-Step 1: Install uBlock Origin on Brave
+Step 1 - Install uBlock Origin on Brave
 https://chrome.google.com/webstore → Search "uBlock Origin"
 
-Step 2: Disable Brave Shields (optional)
+Step 2 - Disable Brave Shields (optional)
 chrome://settings/shields → Disable for maximum performance
 Leave uBlock Origin enabled
 
-Step 3: Configure uBlock Origin filters
+Step 3 - Configure uBlock Origin filters
 Click extension → Settings → Filter lists
 Enable recommended lists
 
-Step 4: Test performance
+Step 4 - Test performance
 Monitor memory usage for 1 week
 If performance is acceptable, keep both enabled
 (They won't conflict; both can run simultaneously)
@@ -406,18 +406,18 @@ If performance is acceptable, keep both enabled
 From uBlock Origin to Brave
 
 ```bash
-Step 1: Export uBlock Origin filter lists
+Step 1 - Export uBlock Origin filter lists
 uBlock Origin Dashboard → Filter lists
 Note which custom lists you've enabled
 
-Step 2: Create equivalents in Brave
+Step 2 - Create equivalents in Brave
 Most standard lists are automatically included
-For custom lists: Contact Brave support for inclusion
+For custom lists - Contact Brave support for inclusion
 
-Step 3: Uninstall uBlock Origin
+Step 3 - Uninstall uBlock Origin
 chrome://extensions → Remove uBlock Origin
 
-Step 4: Verify Brave Shields are enabled
+Step 4 - Verify Brave Shields are enabled
 brave://settings/shields → Shields should be "Up"
 ```
 

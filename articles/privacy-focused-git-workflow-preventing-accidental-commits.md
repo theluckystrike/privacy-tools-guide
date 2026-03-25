@@ -22,15 +22,15 @@ Accidentally committing sensitive information to a public repository is one of t
 Table of Contents
 
 - [The Gravity of Accidental Commits](#the-gravity-of-accidental-commits)
-- [Pre-Commit Hooks: Your First Line of Defense](#pre-commit-hooks-your-first-line-of-defense)
-- [Detect-Screts: Enterprise-Grade Secret Detection](#detect-screts-enterprise-grade-secret-detection)
-- [Git-Secrets: AWS-Focused Credential Protection](#git-secrets-aws-focused-credential-protection)
-- [Gitleak: Scanning for Exposed Secrets](#gitleak-scanning-for-exposed-secrets)
-- [Environment Variables: Keep Secrets Out of Code](#environment-variables-keep-secrets-out-of-code)
+- [Pre-Commit Hooks - Your First Line of Defense](#pre-commit-hooks-your-first-line-of-defense)
+- [Detect-Screts - Enterprise-Grade Secret Detection](#detect-screts-enterprise-grade-secret-detection)
+- [Git-Secrets - AWS-Focused Credential Protection](#git-secrets-aws-focused-credential-protection)
+- [Gitleak - Scanning for Exposed Secrets](#gitleak-scanning-for-exposed-secrets)
+- [Environment Variables - Keep Secrets Out of Code](#environment-variables-keep-secrets-out-of-code)
 - [.gitignore: Foundation of Repository Hygiene](#gitignore-foundation-of-repository-hygiene)
 - [Branch Protection and Code Review Requirements](#branch-protection-and-code-review-requirements)
 - [Credential Scanning in IDEs](#credential-scanning-in-ides)
-- [Emergency Response: When Prevention Fails](#emergency-response-when-prevention-fails)
+- [Emergency Response - When Prevention Fails](#emergency-response-when-prevention-fails)
 - [Building a Culture of Security](#building-a-culture-of-security)
 - [Required Practices](#required-practices)
 - [Prohibited Practices](#prohibited-practices)
@@ -43,7 +43,7 @@ Unlike traditional file deletion, Git's distributed nature means that once you c
 
 The consequences extend beyond immediate security risks. Exposed credentials can lead to unauthorized access to your systems, data breaches, financial losses, and reputational damage. For organizations, this can result in regulatory violations, compliance failures, and legal liabilities. Preventing these commits is far easier than cleaning them up after the fact.
 
-Pre-Commit Hooks: Your First Line of Defense
+Pre-Commit Hooks - Your First Line of Defense
 
 Git hooks are scripts that run at specific points in the Git workflow. Pre-commit hooks execute before a commit is recorded, making them ideal for scanning changes for sensitive content before they enter your repository history.
 
@@ -83,7 +83,7 @@ Git includes several useful pre-commit hooks by default. The `pre-commit` framew
 
 The `check-added-large-files` hook prevents accidentally committing files larger than a specified size, which helps avoid bloating repositories with binary files or large datasets that shouldn't be stored in Git. The `check-yaml` and `check-json` hooks validate configuration files, catching syntax errors early. The `trailing-whitespace` hook eliminates accidental trailing spaces that can cause unnecessary diff noise.
 
-Detect-Screts: Enterprise-Grade Secret Detection
+Detect-Screts - Enterprise-Grade Secret Detection
 
 Yelp's detect-secrets is a powerful tool designed specifically for detecting credentials in code repositories. Unlike simple pattern matchers, it uses heuristics and entropy analysis to identify potential secrets while minimizing false positives.
 
@@ -128,7 +128,7 @@ cat >> .secrets.baseline << 'EOF'
 EOF
 ```
 
-Git-Secrets: AWS-Focused Credential Protection
+Git-Secrets - AWS-Focused Credential Protection
 
 Originally developed by AWS, git-secrets prevents commits containing sensitive patterns. While it was designed with AWS credentials in mind, it can be configured to detect any pattern.
 
@@ -166,16 +166,16 @@ Testing Your Configuration
 ```bash
 Test that git-secrets works
 echo "AKIAIOSFODNN7EXAMPLE" | git secrets --test
-Should output: okay (no match) or matches pattern
+Should output - okay (no match) or matches pattern
 
 Try committing a secret (this should fail)
 echo "AKIAIOSFODNN7EXAMPLE" > test.txt
 git add test.txt
 git commit -m "Test commit with secret"
-Output: fatal: commit contains a prohibited pattern
+Output - fatal: commit contains a prohibited pattern
 ```
 
-Gitleak: Scanning for Exposed Secrets
+Gitleak - Scanning for Exposed Secrets
 
 While pre-commit hooks prevent new secrets from entering your repository, gitleak provides scanning for your entire Git history, including existing repositories that may already contain exposed secrets.
 
@@ -222,7 +222,7 @@ jobs:
           GITLEAKS_LOG_LEVEL: debug
 ```
 
-Environment Variables: Keep Secrets Out of Code
+Environment Variables - Keep Secrets Out of Code
 
 The fundamental principle of secret management is never hardcoding credentials in your source code. Instead, use environment variables and secret management solutions.
 
@@ -434,7 +434,7 @@ Enable built-in inspections for hardcoded credentials in JetBrains IDEs:
 2. Enable "Hardcoded credentials" inspection
 3. Configure to flag string literals that match common credential patterns
 
-Emergency Response: When Prevention Fails
+Emergency Response - When Prevention Fails
 
 Despite all precautions, if you discover an exposed secret, act immediately.
 

@@ -22,7 +22,7 @@ Table of Contents
 
 - [Understanding State AG Privacy Enforcement Powers](#understanding-state-ag-privacy-enforcement-powers)
 - [Identifying Applicable State Laws](#identifying-applicable-state-laws)
-- [Filing a Complaint: Step-by-Step Process](#filing-a-complaint-step-by-step-process)
+- [Filing a Complaint - Step-by-Step Process](#filing-a-complaint-step-by-step-process)
 - [Following Up on Your Complaint](#following-up-on-your-complaint)
 - [Escalation and Multi-State Action](#escalation-and-multi-state-action)
 - [Technical Documentation for Privacy Violations](#technical-documentation-for-privacy-violations)
@@ -59,9 +59,9 @@ Most state privacy laws share common elements:
 
 Even without privacy laws, every state has consumer protection statutes that address deceptive practices, which often encompass data mishandling.
 
-Filing a Complaint: Step-by-Step Process
+Filing a Complaint - Step-by-Step Process
 
-Step 1: Gather Evidence
+Step 1 - Gather Evidence
 
 Document everything before submitting your complaint. Collect:
 
@@ -70,7 +70,7 @@ Document everything before submitting your complaint. Collect:
 - Records of data access requests and responses
 - Evidence of unauthorized data sharing or breaches
 
-Step 2: Locate the Correct Office
+Step 2 - Locate the Correct Office
 
 Most state AGs provide online complaint portals. Here's a quick reference for major states:
 
@@ -88,7 +88,7 @@ Florida Attorney General
 https://www.myfloridalegal.com/contactus
 ```
 
-Step 3: Submit Your Complaint
+Step 3 - Submit Your Complaint
 
 Most portals accept complaints through web forms. Structure your complaint with:
 
@@ -104,8 +104,8 @@ Example Complaint Template
 COMPLAINT DETAILS:
 
 Company Name: [Company Name]
-Company Address: [Address]
-Company Website: [URL]
+Company Address - [Address]
+Company Website - [URL]
 
 Violation Description:
 Under [State] Consumer Privacy Law Section [X], consumers have the right to [specific right]. On [date], I submitted a data deletion request to [company] via [method]. As of this complaint, [company] has failed to respond within the required [30/45] day timeframe / has denied my request without valid legal basis.
@@ -138,7 +138,7 @@ Many state AG offices provide complaint tracking numbers. Use them to:
 
 ```bash
 Example follow-up email template
-Subject: Follow-up: Complaint #[NUMBER] - [COMPANY NAME]
+Subject - Follow-up: Complaint #[NUMBER] - [COMPANY NAME]
 
 Dear [AG Office Contact],
 
@@ -237,11 +237,11 @@ Complaint Template with Real Examples
 When constructing your complaint, structure arguments around specific legal language from your state's privacy law:
 
 ```markdown
-COMPLAINT AGAINST: [COMPANY NAME]
+COMPLAINT AGAINST - [COMPANY NAME]
 
-COMPLAINT NUMBER: [IF RESUBMITTING]
-STATE: [YOUR STATE]
-DATE FILED: [TODAY'S DATE]
+COMPLAINT NUMBER - [IF RESUBMITTING]
+STATE - [YOUR STATE]
+DATE FILED - [TODAY'S DATE]
 
 1. CONSUMER IDENTITY
    Name: [Your Name]
@@ -360,8 +360,8 @@ def document_pattern(company_email_account):
     response_rate = sum(1 for a in attempts if a['response_received']) / len(attempts)
     compliance_rate = sum(1 for a in attempts if a['complied']) / len(attempts)
 
-    print(f"Response Rate: {response_rate:.1%}")
-    print(f"Compliance Rate: {compliance_rate:.1%}")
+    print(f"Response Rate - {response_rate:.1%}")
+    print(f"Compliance Rate - {compliance_rate:.1%}")
     print("Pattern indicates systematic non-compliance")
 
     return pattern_evidence
@@ -402,7 +402,7 @@ Office of [Name]
 [House Office Building]
 Washington, DC 20515
 
-Subject: Consumer Complaint About Privacy Violations by [Company Name]
+Subject - Consumer Complaint About Privacy Violations by [Company Name]
 ```
 
 State attorneys general remain powerful allies in enforcing your privacy rights. By documenting violations systematically and submitting well-structured complaints, you contribute to enforcement efforts that hold companies accountable.

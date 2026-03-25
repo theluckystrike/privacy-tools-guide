@@ -15,19 +15,19 @@ voice-checked: true
 ---
 
 
-Step 7: Social Media and Online Presence Isolation
+Step 7 - Social Media and Online Presence Isolation
 
 Table of Contents
 
-- [Step 7: Social Media and Online Presence Isolation](#step-7-social-media-and-online-presence-isolation)
+- [Step 7 - Social Media and Online Presence Isolation](#step-7-social-media-and-online-presence-isolation)
 - [Platform-Specific Deletion (must follow each platform's exact process)](#platform-specific-deletion-must-follow-each-platforms-exact-process)
 - [Data Deletion Request Template](#data-deletion-request-template)
-- [Step 8: Building Trusted Support Systems](#step-8-building-trusted-support-systems)
+- [Step 8 - Building Trusted Support Systems](#step-8-building-trusted-support-systems)
 - [Trusted Contact Briefing (share in person or sealed envelope)](#trusted-contact-briefing-share-in-person-or-sealed-envelope)
 - [If locked out of primary email:](#if-locked-out-of-primary-email)
 - [If locked out of password manager:](#if-locked-out-of-password-manager)
 - [If phone lost:](#if-phone-lost)
-- [Step 9: Ongoing Security Maintenance](#step-9-ongoing-security-maintenance)
+- [Step 9 - Ongoing Security Maintenance](#step-9-ongoing-security-maintenance)
 - [First Friday of Each Month - Security Review (30 min)](#first-friday-of-each-month-security-review-30-min)
 
 Social media accounts are often the easiest way for abusers to track you. Creating clean accounts while removing old presences is essential.
@@ -108,7 +108,7 @@ Never access from same IP as other accounts
 Use separate browser profile if possible
 ```
 
-Critical: Never link new accounts to:
+Critical - Never link new accounts to:
 - Your phone number
 - Your "recovery" email address
 - Any old accounts or identities
@@ -130,7 +130,7 @@ check_breach() {
 }
 
 Remove from data brokers
-Services: DeleteMe, Incogni, OneRep (paid services)
+Services - DeleteMe, Incogni, OneRep (paid services)
 Or manual GDPR/CCPA requests to each broker
 
 echo "Email to monitor:"
@@ -138,7 +138,7 @@ read email
 check_breach "$email"
 ```
 
-Step 8: Building Trusted Support Systems
+Step 8 - Building Trusted Support Systems
 
 Recovery from domestic violence isn't just technical, it requires human support. Build this into your digital safety plan.
 
@@ -180,7 +180,7 @@ Multiple forms of account recovery protect against losing access:
 
 ```bash
 #!/bin/bash
-Create comprehensive recovery documentation
+Create complete recovery documentation
 
 Generate master recovery code (different from master password)
 RECOVERY_CODE=$(openssl rand -hex 24)
@@ -215,7 +215,7 @@ If phone lost:
 EOF
 ```
 
-Step 9: Ongoing Security Maintenance
+Step 9 - Ongoing Security Maintenance
 
 Building a new digital identity is not one-time work. Maintenance is essential:
 

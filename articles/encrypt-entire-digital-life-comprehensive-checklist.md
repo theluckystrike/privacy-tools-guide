@@ -21,15 +21,15 @@ Encryption is not paranoia, it's basic digital hygiene. Yet most people encrypt 
 Table of Contents
 
 - [The Encryption Pyramid](#the-encryption-pyramid)
-- [Phase 1: Device Encryption (Foundation)](#phase-1-device-encryption-foundation)
-- [Phase 2: Passwords & Secrets Management](#phase-2-passwords-secrets-management)
-- [Phase 3: Email Encryption (PGP/GPG)](#phase-3-email-encryption-pgpgpg)
-- [Phase 4: Messaging Encryption](#phase-4-messaging-encryption)
-- [Phase 5: Cloud Storage Encryption](#phase-5-cloud-storage-encryption)
-- [Phase 6: Email Service Replacement](#phase-6-email-service-replacement)
-- [Phase 7: File Encryption for Backups](#phase-7-file-encryption-for-backups)
-- [Phase 8: Backups & Recovery (Redundancy)](#phase-8-backups-recovery-redundancy)
-- [Phase 9: Two-Factor Authentication (2FA)](#phase-9-two-factor-authentication-2fa)
+- [Phase 1 - Device Encryption (Foundation)](#phase-1-device-encryption-foundation)
+- [Phase 2 - Passwords & Secrets Management](#phase-2-passwords-secrets-management)
+- [Phase 3 - Email Encryption (PGP/GPG)](#phase-3-email-encryption-pgpgpg)
+- [Phase 4 - Messaging Encryption](#phase-4-messaging-encryption)
+- [Phase 5 - Cloud Storage Encryption](#phase-5-cloud-storage-encryption)
+- [Phase 6 - Email Service Replacement](#phase-6-email-service-replacement)
+- [Phase 7 - File Encryption for Backups](#phase-7-file-encryption-for-backups)
+- [Phase 8 - Backups & Recovery (Redundancy)](#phase-8-backups-recovery-redundancy)
+- [Phase 9 - Two-Factor Authentication (2FA)](#phase-9-two-factor-authentication-2fa)
 - [Complete Encryption Checklist](#complete-encryption-checklist)
 - [Annual Maintenance](#annual-maintenance)
 - [Related Reading](#related-reading)
@@ -56,7 +56,7 @@ The Encryption Pyramid
 
 Start with the foundation and work upward. Device encryption gives you 80% security with 5 minutes of setup.
 
-Phase 1: Device Encryption (Foundation)
+Phase 1 - Device Encryption (Foundation)
 
 Device encryption ensures that if your laptop or phone is stolen, the thief sees gibberish, not your data.
 
@@ -76,16 +76,16 @@ What happens:
 
 Backup your recovery key:
 ```
-FileVault shows: "Your recovery key is: XXXX-XXXX-XXXX-..."
+FileVault shows - "Your recovery key is: XXXX-XXXX-XXXX-..."
 Copy this to a safe place (Bitwarden, password manager, or paper)
 Without this key, you cannot access your drive if you forget your password
 ```
 
-Performance impact: Negligible (<1% CPU, no perceivable slowdown)
+Performance impact - Negligible (<1% CPU, no perceivable slowdown)
 
-Cost: Free (included with macOS)
+Cost - Free (included with macOS)
 
-Windows 11: BitLocker
+Windows 11 - BitLocker
 
 Enable BitLocker:
 ```
@@ -100,7 +100,7 @@ What happens:
 
 Recovery key:
 ```
-BitLocker shows: "Your recovery key is XXXX-..."
+BitLocker shows - "Your recovery key is XXXX-..."
 Save to USB drive or offline storage
 Do NOT rely on OneDrive storage unless you fully trust Microsoft
 ```
@@ -109,16 +109,16 @@ Windows Home Edition doesn't have BitLocker. Use third-party:
 - VeraCrypt (free, open-source)
 - Axcrypt (free)
 
-Cost: Free (Windows Pro+)
+Cost - Free (Windows Pro+)
 
-Linux: LUKS Full-Disk Encryption
+Linux - LUKS Full-Disk Encryption
 
 Status check (if already encrypted during install):
 ```bash
 Check if root partition is encrypted
 sudo dmsetup status | grep crypt
 
-Output: crypt0: 0 XXXX crypt ...
+Output - crypt0: 0 XXXX crypt ...
 If output appears, you're encrypted 
 ```
 
@@ -129,7 +129,7 @@ Check: "Encrypt the new installation for security"
 Set strong passphrase (25+ characters)
 ```
 
-Cost: Free (standard on most distributions)
+Cost - Free (standard on most distributions)
 
 iOS: Automatic
 
@@ -139,12 +139,12 @@ Settings → Face ID & Passcode → Enable "Face ID" or "Passcode"
 (All data encrypted with key derived from your passcode)
 ```
 
-Android: Automatic
+Android - Automatic
 
 Most Android phones encrypt by default (since Android 5.0). Verify:
 ```
 Settings → Security → Encryption
-Status should show: "Phone encrypted"
+Status should show - "Phone encrypted"
 ```
 
 Force encrypt (if not auto-enabled):
@@ -153,13 +153,13 @@ Settings → Security → Device Admin
 Enable encryption (may take 1-4 hours)
 ```
 
-Phase 2: Passwords & Secrets Management
+Phase 2 - Passwords & Secrets Management
 
 Unencrypted passwords are your biggest vulnerability. A hacked website reveals your password everywhere you use it.
 
 Use a Password Manager
 
-Recommended: Bitwarden (Open-Source, Free)
+Recommended - Bitwarden (Open-Source, Free)
 
 ```
 Installation:
@@ -223,7 +223,7 @@ Create a "Secrets Recovery Kit":
 5. Update annually or after any password change
 ```
 
-Phase 3: Email Encryption (PGP/GPG)
+Phase 3 - Email Encryption (PGP/GPG)
 
 Email is sent in plaintext across the internet. Anyone on the network path can read it. PGP encryption solves this.
 
@@ -242,12 +242,12 @@ gpg --full-generate-key
 
 Prompted for:
 ```
-Key type: RSA and RSA (default)
-Key size: 4096
-Validity: 0 (never expires) or 1y (1 year, renew annually)
-Real name: Your Name
-Email: your.email@domain.com
-Passphrase: Use strong password (different from master password)
+Key type - RSA and RSA (default)
+Key size - 4096
+Validity - 0 (never expires) or 1y (1 year, renew annually)
+Real name - Your Name
+Email - your.email@domain.com
+Passphrase - Use strong password (different from master password)
 ```
 
 Export your public key (share with others):
@@ -260,7 +260,7 @@ Keep your private key safe:
 ```bash
 gpg --armor --export-secret-keys your.email@domain.com > my-private-key.asc
 Store this file in encrypted storage, never share
-Better: Don't export at all, keep it in GPG keyring
+Better - Don't export at all, keep it in GPG keyring
 ```
 
 Use PGP with Email Clients
@@ -279,7 +279,7 @@ Manual (if not using integrated tools):
 
 ```
 1. Copy message in plaintext
-2. Terminal: gpg --encrypt --armor --recipient email@example.com
+2. Terminal - gpg --encrypt --armor --recipient email@example.com
 3. Paste message
 4. Press Ctrl+D twice
 5. Encrypted output appears
@@ -308,9 +308,9 @@ When receiving someone's public key:
    > quit
 ```
 
-Cost: Free (GPG is open-source)
+Cost - Free (GPG is open-source)
 
-Phase 4: Messaging Encryption
+Phase 4 - Messaging Encryption
 
 Messaging apps send billions of messages unencrypted daily. End-to-end encryption prevents your provider from reading your messages.
 
@@ -330,7 +330,7 @@ Everyone can only read messages from members in the conversation
 Server cannot read group content
 ```
 
-Cost: Free (Open-source, funded by Signal Foundation)
+Cost - Free (Open-source, funded by Signal Foundation)
 
 Element (Best for Self-Hosted)
 
@@ -349,7 +349,7 @@ Configuration:
 4. Device verification (to prevent man-in-the-middle)
 ```
 
-Cost: Free for matrix.org, or self-hosted
+Cost - Free for matrix.org, or self-hosted
 
 WhatsApp (Good Enough)
 
@@ -362,7 +362,7 @@ Better than nothing, but:
 - Not open-source
 ```
 
-Use if: Everyone you communicate with uses it, tradeoff is acceptable
+Use if - Everyone you communicate with uses it, tradeoff is acceptable
 
 NOT Recommended
 
@@ -374,7 +374,7 @@ Do NOT use for sensitive communication:
 - Facebook Messenger (unencrypted)
 ```
 
-Phase 5: Cloud Storage Encryption
+Phase 5 - Cloud Storage Encryption
 
 Cloud storage (Dropbox, Google Drive, OneDrive) stores files unencrypted server-side. Use encrypted alternatives.
 
@@ -389,7 +389,7 @@ Download on any device → Auto-decrypted
 
 Architecture:
 ```
-Your device: Plain file
+Your device - Plain file
  Encrypt with your key
  Upload to Proton server
    (File stored encrypted)
@@ -428,7 +428,7 @@ End-to-end encryption of all files
 GDPR compliant
 ```
 
-Cost: $11.50/month
+Cost - $11.50/month
 
 NOT Recommended
 
@@ -440,14 +440,14 @@ Unencrypted cloud storage:
 - iCloud (encrypted, but Apple has master key)
 ```
 
-If you must use these: Add application-level encryption:
+If you must use these - Add application-level encryption:
 ```
 1. Encrypt files with VeraCrypt before uploading
 2. Upload encrypted container to Google Drive
 3. Download container, decrypt locally
 ```
 
-Phase 6: Email Service Replacement
+Phase 6 - Email Service Replacement
 
 Free email providers (Gmail, Yahoo) read your email to build ad profiles. Switch to private email:
 
@@ -484,7 +484,7 @@ Cost:
 - Free: 1 GB
 - Premium: $2.99/month
 
-Phase 7: File Encryption for Backups
+Phase 7 - File Encryption for Backups
 
 Backups are vulnerable (external drives, cloud storage). Encrypt them:
 
@@ -498,10 +498,10 @@ veracrypt --text --create encrypted-backup.img
 
 Prompted:
 Volume size: 5 GB
-Password: 30+ character password
-Encryption: AES (default)
-Hash algorithm: SHA-512
-Filesystem: NTFS
+Password - 30+ character password
+Encryption - AES (default)
+Hash algorithm - SHA-512
+Filesystem - NTFS
 
 Mount volume:
 veracrypt --text encrypted-backup.img /mnt/backup
@@ -513,7 +513,7 @@ Unmount (files now encrypted):
 veracrypt --text --dismount /mnt/backup
 ```
 
-Cost: Free, open-source
+Cost - Free, open-source
 
 7-Zip (File-by-File Encryption)
 
@@ -526,9 +526,9 @@ Creates archive.zip with AES-256 encryption
 Password required to extract
 ```
 
-Cost: Free, open-source
+Cost - Free, open-source
 
-Phase 8: Backups & Recovery (Redundancy)
+Phase 8 - Backups & Recovery (Redundancy)
 
 Encrypted backups are useless if you can't decrypt them. Build recovery:
 
@@ -539,9 +539,9 @@ The 3-2-1 Backup Rule
 2: On 2 different media types (internal drive + external + cloud)
 1: Store 1 copy offsite (different physical location)
 
-Copy 1: Internal SSD (encrypted)
-Copy 2: External drive at home (encrypted)
-Copy 3: Cloud storage overseas (encrypted)
+Copy 1 - Internal SSD (encrypted)
+Copy 2 - External drive at home (encrypted)
+Copy 3 - Cloud storage overseas (encrypted)
 ```
 
 Create Recovery Kits
@@ -553,22 +553,22 @@ For each encrypted system, document:
 3. Software versions used
 4. Instructions for recovery
 
-RECOVERY KIT - Main Laptop (Created: 2026-03-20)
+RECOVERY KIT - Main Laptop (Created - 2026-03-20)
 
-Device: MacBook Pro M3
+Device - MacBook Pro M3
 OS: macOS 14.6
-Encryption: FileVault
+Encryption - FileVault
 
-FileVault Recovery Key: XXXX-XXXX-XXXX-XXXX-XXXX
-Master Password: [30-character password written on paper]
+FileVault Recovery Key - XXXX-XXXX-XXXX-XXXX-XXXX
+Master Password - [30-character password written on paper]
 
-Backup location: External drive (2TB WD My Passport)
-Backup encryption: VeraCrypt
-Backup password: [30-character password written on paper]
+Backup location - External drive (2TB WD My Passport)
+Backup encryption - VeraCrypt
+Backup password - [30-character password written on paper]
 
-Cloud backup: Proton Drive
-Proton account: email@proton.me
-Proton password: [in Bitwarden, recovery key stored separately]
+Cloud backup - Proton Drive
+Proton account - email@proton.me
+Proton password - [in Bitwarden, recovery key stored separately]
 
 Recovery instructions:
 1. Boot from macOS recovery (Cmd+R)
@@ -577,18 +577,18 @@ Recovery instructions:
 4. Use VeraCrypt password from this document
 5. Copy files to new drive
 
-Created: 2026-03-20
-Review date: 2026-09-20 (6 months)
+Created - 2026-03-20
+Review date - 2026-09-20 (6 months)
 ```
 
-Phase 9: Two-Factor Authentication (2FA)
+Phase 9 - Two-Factor Authentication (2FA)
 
 Encryption is useless if someone steals your password. 2FA prevents this:
 
 Hardware Security Keys (Strongest)
 
 ```
-Purchase: YubiKey 5 ($45-60)
+Purchase - YubiKey 5 ($45-60)
 - Supports FIDO2, U2F, TOTP
 - Works with most major services
 - Requires physical key + biometric
@@ -601,12 +601,12 @@ Setup:
 4. Store backup key in safe deposit box
 ```
 
-Cost: $45-60 per key
+Cost - $45-60 per key
 
 Authenticator Apps (Good Alternative)
 
 ```
-Download: Microsoft Authenticator or Google Authenticator
+Download - Microsoft Authenticator or Google Authenticator
 1. Scan QR code when enabling 2FA on service
 2. Phone displays 6-digit code, refreshes every 30 seconds
 3. Code required alongside password to log in
@@ -614,7 +614,7 @@ Download: Microsoft Authenticator or Google Authenticator
 Enable backup codes (printed, stored offline)
 ```
 
-Cost: Free
+Cost - Free
 
 SMS 2FA (Weakest)
 
@@ -627,7 +627,7 @@ Use only as last resort if 2FA app not available
 Complete Encryption Checklist
 
 ```
-PHASE 1: Device Encryption (1 hour)
+PHASE 1 - Device Encryption (1 hour)
 
  macOS: Enable FileVault
    Backup recovery key to password manager
@@ -637,7 +637,7 @@ PHASE 1: Device Encryption (1 hour)
  iOS: Enable Face ID + Passcode
  Android: Verify encryption enabled
 
-PHASE 2: Passwords (30 minutes)
+PHASE 2 - Passwords (30 minutes)
 
  Download password manager (Bitwarden/1Password)
  Generate 30+ character master password
@@ -647,7 +647,7 @@ PHASE 2: Passwords (30 minutes)
  Update critical passwords (unique & strong)
  Enable 2FA on password manager
 
-PHASE 3: Email (45 minutes)
+PHASE 3 - Email (45 minutes)
 
  Switch to Proton Mail (or Tutanota)
  Generate PGP key pair
@@ -656,7 +656,7 @@ PHASE 3: Email (45 minutes)
  Educate contacts about encrypted email
  Enable 2FA on email account
 
-PHASE 4: Messaging (20 minutes)
+PHASE 4 - Messaging (20 minutes)
 
  Download Signal or Element
  Create account
@@ -664,7 +664,7 @@ PHASE 4: Messaging (20 minutes)
  Verify security codes with frequent contacts
  Delete old messaging apps (or reduce use)
 
-PHASE 5: Cloud Storage (30 minutes)
+PHASE 5 - Cloud Storage (30 minutes)
 
  Switch to Proton Drive (or Sync.com)
  Set up desktop sync
@@ -672,7 +672,7 @@ PHASE 5: Cloud Storage (30 minutes)
  Delete old cloud accounts (or cease using)
  Enable 2FA on cloud account
 
-PHASE 6: Backups (1 hour)
+PHASE 6 - Backups (1 hour)
 
  Create VeraCrypt encrypted external drive backup
  Schedule automatic backups (weekly)
@@ -681,7 +681,7 @@ PHASE 6: Backups (1 hour)
  Create recovery kit document
  Store recovery kit in safe deposit box
 
-PHASE 7: Two-Factor Authentication (30 minutes)
+PHASE 7 - Two-Factor Authentication (30 minutes)
 
  Purchase hardware security keys (2x YubiKey)
  Register key with password manager
@@ -690,7 +690,7 @@ PHASE 7: Two-Factor Authentication (30 minutes)
  Download and print backup codes
  Store backup codes offline
 
-TOTAL TIME: ~3.5 hours
+TOTAL TIME - ~3.5 hours
 
 ```
 

@@ -225,24 +225,24 @@ echo "Rule deleted: $?"
 
 Common Error Patterns
 
-Problem: PostUp script uses relative paths that don't exist at startup time.
+Problem - PostUp script uses relative paths that don't exist at startup time.
 
 ```ini
-WRONG: Uses PATH that may not exist
+WRONG - Uses PATH that may not exist
 PostUp = iptables -A FORWARD -i wg0 -j ACCEPT
 
-CORRECT: Uses absolute path
+CORRECT - Uses absolute path
 PostUp = /usr/sbin/iptables -A FORWARD -i wg0 -j ACCEPT
 ```
 
-Problem: Scripts fail because variables aren't available in WireGuard's environment.
+Problem - Scripts fail because variables aren't available in WireGuard's environment.
 
 ```bash
-WRONG: Uses shell variable
+WRONG - Uses shell variable
 interface_name=wg0
 PostUp = iptables -A FORWARD -i $interface_name -j ACCEPT
 
-CORRECT: Hardcodes the interface name
+CORRECT - Hardcodes the interface name
 PostUp = iptables -A FORWARD -i wg0 -j ACCEPT
 ```
 
@@ -257,7 +257,7 @@ Address = 10.0.0.2/24
 
 Send notification when interface comes up
 PostUp = curl -X POST http://localhost:3000/vpn/connected || true
-PostUp = echo "IP: $(hostname -I | awk '{print $1}')" | mail -s "VPN Connected" admin@example.com
+PostUp = echo "IP - $(hostname -I | awk '{print $1}')" | mail -s "VPN Connected" admin@example.com
 
 Send notification when interface goes down
 PostDown = curl -X POST http://localhost:3000/vpn/disconnected || true
@@ -337,8 +337,8 @@ Maintain audit logs of VPN connections for compliance:
 PrivateKey = your-private-key
 Address = 10.0.0.2/24
 
-PostUp = (echo "VPN CONNECTED"; echo "Time: $(date -u +%Y-%m-%dT%H:%M:%SZ)"; echo "User: $(whoami)"; ip addr show wg0) >> /var/log/vpn-audit.log
-PostDown = (echo "VPN DISCONNECTED"; echo "Time: $(date -u +%Y-%m-%dT%H:%M:%SZ)"; echo "User: $(whoami)") >> /var/log/vpn-audit.log
+PostUp = (echo "VPN CONNECTED"; echo "Time - $(date -u +%Y-%m-%dT%H:%M:%SZ)"; echo "User: $(whoami)"; ip addr show wg0) >> /var/log/vpn-audit.log
+PostDown = (echo "VPN DISCONNECTED"; echo "Time - $(date -u +%Y-%m-%dT%H:%M:%SZ)"; echo "User: $(whoami)") >> /var/log/vpn-audit.log
 
 Ensure log file has restricted permissions
 PostUp = chmod 600 /var/log/vpn-audit.log

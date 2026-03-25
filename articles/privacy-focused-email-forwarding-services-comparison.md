@@ -23,11 +23,11 @@ This guide compares 5 privacy-focused forwarding services. Choose SimpleLogin if
 Table of Contents
 
 - [The Email Forwarding Problem](#the-email-forwarding-problem)
-- [SimpleLogin: Maximum Features and Control](#simplelogin-maximum-features-and-control)
-- [Addy.io: Open Source and Developer-Friendly](#addyio-open-source-and-developer-friendly)
-- [Firefox Relay: Simple Integration with Mozilla Products](#firefox-relay-simple-integration-with-mozilla-products)
-- [DuckDuckGo Email: Zero-Config Simplicity](#duckduckgo-email-zero-config-simplicity)
-- [ForwardEmail: Self-Hosted and Open Source](#forwardemail-self-hosted-and-open-source)
+- [SimpleLogin - Maximum Features and Control](#simplelogin-maximum-features-and-control)
+- [Addy.io - Open Source and Developer-Friendly](#addyio-open-source-and-developer-friendly)
+- [Firefox Relay - Simple Integration with Mozilla Products](#firefox-relay-simple-integration-with-mozilla-products)
+- [DuckDuckGo Email - Zero-Config Simplicity](#duckduckgo-email-zero-config-simplicity)
+- [ForwardEmail - Self-Hosted and Open Source](#forwardemail-self-hosted-and-open-source)
 - [Feature Comparison Table](#feature-comparison-table)
 - [Real-World Usage Scenarios](#real-world-usage-scenarios)
 - [Selecting the Right Service](#selecting-the-right-service)
@@ -50,13 +50,13 @@ Spammer/Service (receives forward, not your real email)
 
 If the service leaks the forwarding address, you disable that alias. Spammers email the dead alias. Your real email is never leaked.
 
-SimpleLogin: Maximum Features and Control
+SimpleLogin - Maximum Features and Control
 
 SimpleLogin is the most powerful email forwarding service. Create unlimited aliases, track which services leak your address, receive from any sender, and even reply as the forwarding address.
 
 Pricing:
 - Free tier: 10 aliases max, limited features
-- Premium: $40/year ($3.33/month), unlimited aliases, custom domain
+- Premium - $40/year ($3.33/month), unlimited aliases, custom domain
 - Family plan: $12.99/month, 5 accounts
 
 Strengths:
@@ -82,7 +82,7 @@ your-domain@yourdomain.com (custom domain)
 
 2. Reply as Alias:
 ```
-Email from: newsletter@somesite.com → your-alias@simplelogin.com → your@gmail.com
+Email from - newsletter@somesite.com → your-alias@simplelogin.com → your@gmail.com
 
 Reply through SimpleLogin:
 your@gmail.com → your-alias@simplelogin.com → newsletter@somesite.com
@@ -105,8 +105,8 @@ Generate alias
 simplelogin alias create --description "Netflix signup"
 
 Example output:
-Alias: netflix_xyz@simplelogin.com
-Created: 2026-03-20
+Alias - netflix_xyz@simplelogin.com
+Created - 2026-03-20
 ```
 
 Limitations:
@@ -115,9 +115,9 @@ Limitations:
 - Slower reply latency than other services (1-3 seconds vs instant)
 - Interface can feel cluttered with advanced options
 
-Use Case: Best for power users managing dozens of services. The analytics and reply features are invaluable.
+Use Case - Best for power users managing dozens of services. The analytics and reply features are invaluable.
 
-Addy.io: Open Source and Developer-Friendly
+Addy.io - Open Source and Developer-Friendly
 
 Addy.io is open-source, meaning code is publicly auditable. Developers can self-host. Pricing is transparent and reasonable.
 
@@ -139,7 +139,7 @@ Strengths:
 Wildcard Aliases (Unique Feature):
 
 ```
-Create wildcard: *@yourdomain.com
+Create wildcard - *@yourdomain.com
 
 Signs up for Netflix:
 netflix@yourdomain.com (auto-created, forwards to you)
@@ -161,7 +161,7 @@ Add custom domain to addy.io
 
 Example MX records:
 Priority 10: mail.addy.io
-Priority 20: mail2.addy.io (backup)
+Priority 20 - mail2.addy.io (backup)
 
 Verify
 dig yourdomain.com MX
@@ -175,9 +175,9 @@ Limitations:
 - Less polished UI
 - No built-in reply feature (you can forward replies, but it's manual)
 
-Use Case: Best for developers who want open-source transparency and self-hosting options.
+Use Case - Best for developers who want open-source transparency and self-hosting options.
 
-Firefox Relay: Simple Integration with Mozilla Products
+Firefox Relay - Simple Integration with Mozilla Products
 
 Firefox Relay is Mozilla's email forwarding service. If you use Firefox, accounts.firefox.com, and Mozilla services, Relay integrates .
 
@@ -209,9 +209,9 @@ Limitations:
 - Smaller feature set overall
 - Mozilla account required
 
-Use Case: Best for casual users who want simplicity. The $0.99/month price is unbeatable for unlimited aliases.
+Use Case - Best for casual users who want simplicity. The $0.99/month price is unbeatable for unlimited aliases.
 
-DuckDuckGo Email: Zero-Config Simplicity
+DuckDuckGo Email - Zero-Config Simplicity
 
 DuckDuckGo Email is part of DuckDuckGo's privacy suite. It's the simplest option: minimal features, one-click setup.
 
@@ -230,8 +230,8 @@ How It Works:
 
 ```
 Sign up at duckduckgo.com/email
-Get your unique email like: abc123def@duck.com
-Generate aliases like: username@duck.com for any service
+Get your unique email like - abc123def@duck.com
+Generate aliases like - username@duck.com for any service
 All forward to your primary email
 ```
 
@@ -253,9 +253,9 @@ Limitations:
 - No self-hosting
 - DuckDuckGo controls your data (though company has good privacy track record)
 
-Use Case: Best for users who want zero setup friction and don't need advanced features.
+Use Case - Best for users who want zero setup friction and don't need advanced features.
 
-ForwardEmail: Self-Hosted and Open Source
+ForwardEmail - Self-Hosted and Open Source
 
 ForwardEmail is open-source and designed for self-hosting. Run your own email forwarding server without relying on third parties.
 
@@ -294,8 +294,8 @@ Advanced Features (Self-Hosted):
 
 ```bash
 Create regex-based rules
-Match: support.*@yourdomain.com → support@company.com
-Match: billing.*@yourdomain.com → billing@company.com
+Match - support.*@yourdomain.com → support@company.com
+Match - billing.*@yourdomain.com → billing@company.com
 All others → your@gmail.com
 
 Enable PGP encryption
@@ -310,7 +310,7 @@ Limitations:
 - Smaller community
 - No analytics
 
-Use Case: Best for developers who want full control and understand email infrastructure.
+Use Case - Best for developers who want full control and understand email infrastructure.
 
 Feature Comparison Table
 
@@ -330,23 +330,23 @@ Feature Comparison Table
 
 Real-World Usage Scenarios
 
-Scenario 1: Multiple Online Shopping Accounts
+Scenario 1 - Multiple Online Shopping Accounts
 
 Use DuckDuckGo Email (free, unlimited):
 ```
-Amazon signup: amazon_xyz@duck.com
+Amazon signup - amazon_xyz@duck.com
 eBay signup: ebay_abc@duck.com
-Etsy signup: etsy_def@duck.com
+Etsy signup - etsy_def@duck.com
 
 If eBay leaks your address, only ebay_abc@duck.com gets spam.
 Disable that alias, spam stops.
 ```
 
-Scenario 2: Business Email Forwarding
+Scenario 2 - Business Email Forwarding
 
 Use SimpleLogin with custom domain:
 ```
-Your domain: yourcompany.com
+Your domain - yourcompany.com
 Create aliases:
 - sales@yourcompany.com → sales@internal.com
 - support@yourcompany.com → support@internal.com
@@ -356,19 +356,19 @@ Customers see professional company email.
 You control where emails actually arrive.
 ```
 
-Scenario 3: Complete Privacy Setup
+Scenario 3 - Complete Privacy Setup
 
 Use ForwardEmail self-hosted + custom domain:
 ```
-Own infrastructure: yourserver.com
-Domain: yourdomain.com
+Own infrastructure - yourserver.com
+Domain - yourdomain.com
 
 MX records point to your server.
 All email forwarding happens on your equipment.
 No external service knows your email patterns.
 ```
 
-Scenario 4: Minimal Setup
+Scenario 4 - Minimal Setup
 
 Use Firefox Relay:
 ```

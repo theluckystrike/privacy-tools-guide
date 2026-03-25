@@ -231,13 +231,13 @@ HIPAA's Breach Notification Rule requires notifying affected patients within 60 
 
 A minimal incident response plan should address:
 
-Detection: How will you identify that a breach occurred? This means having log monitoring in place and a way to alert on anomalous access patterns. A front desk employee accessing 200 patient records in an afternoon, or a database query returning results at 3am, should trigger a review.
+Detection - How will you identify that a breach occurred? This means having log monitoring in place and a way to alert on anomalous access patterns. A front desk employee accessing 200 patient records in an afternoon, or a database query returning results at 3am, should trigger a review.
 
-Containment: Document the steps to isolate a compromised system. If a workstation is infected with ransomware, the immediate response is to disconnect it from the network before it encrypts shared drives containing patient records. Staff should know who to call and what not to do. particularly, do not pay ransoms or attempt to decrypt files independently before consulting your IT team and legal counsel.
+Containment - Document the steps to isolate a compromised system. If a workstation is infected with ransomware, the immediate response is to disconnect it from the network before it encrypts shared drives containing patient records. Staff should know who to call and what not to do. particularly, do not pay ransoms or attempt to decrypt files independently before consulting your IT team and legal counsel.
 
-Notification: Maintain a template notification letter that satisfies HIPAA requirements. It must include a description of what happened, the types of PHI involved, steps the patient should take to protect themselves, and contact information for the practice. If the breach affects 500 or more individuals in a state, you must also notify prominent media outlets in that state.
+Notification - Maintain a template notification letter that satisfies HIPAA requirements. It must include a description of what happened, the types of PHI involved, steps the patient should take to protect themselves, and contact information for the practice. If the breach affects 500 or more individuals in a state, you must also notify prominent media outlets in that state.
 
-Documentation: Record everything. HIPAA requires you to document your risk analysis, your risk management activities, and your response to any security incidents. The documentation itself is an addressable requirement subject to audit.
+Documentation - Record everything. HIPAA requires you to document your risk analysis, your risk management activities, and your response to any security incidents. The documentation itself is an addressable requirement subject to audit.
 
 Small practices without dedicated IT staff should consider a managed security service provider (MSSP) that specializes in healthcare. These providers offer 24/7 monitoring, incident response support, and HIPAA compliance documentation as a service.
 
@@ -247,11 +247,11 @@ Several recurring patterns expose dental practices to HIPAA violations:
 
 Emailing patient records unencrypted: Standard email is not HIPAA-compliant for PHI. Use a HIPAA-compliant messaging platform with end-to-end encryption, or use a patient portal for document sharing. If you must send PHI by email, use S/MIME or PGP encryption and confirm the recipient's public key before sending.
 
-Shared login credentials: Every staff member must have individual login credentials. Shared accounts make audit logs meaningless because you cannot attribute actions to specific individuals. This is a common finding in HIPAA audits and carries significant penalties.
+Shared login credentials - Every staff member must have individual login credentials. Shared accounts make audit logs meaningless because you cannot attribute actions to specific individuals. This is a common finding in HIPAA audits and carries significant penalties.
 
-Unencrypted portable storage: USB drives and portable hard drives containing patient records must be encrypted. BitLocker (Windows) and FileVault (macOS) provide full-disk encryption for workstations. For portable media, use VeraCrypt to create encrypted containers before copying any PHI.
+Unencrypted portable storage - USB drives and portable hard drives containing patient records must be encrypted. BitLocker (Windows) and FileVault (macOS) provide full-disk encryption for workstations. For portable media, use VeraCrypt to create encrypted containers before copying any PHI.
 
-Weak session timeouts: Workstations in patient treatment areas should lock automatically after 5-10 minutes of inactivity. An unlocked workstation in a treatment room is a common source of unauthorized access, particularly in busy practices with shared spaces.
+Weak session timeouts - Workstations in patient treatment areas should lock automatically after 5-10 minutes of inactivity. An unlocked workstation in a treatment room is a common source of unauthorized access, particularly in busy practices with shared spaces.
 
 Frequently Asked Questions
 

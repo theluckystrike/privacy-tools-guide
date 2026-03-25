@@ -26,7 +26,7 @@ Table of Contents
 - [Privacy Implications for Developers](#privacy-implications-for-developers)
 - [Practical Examples](#practical-examples)
 - [Mitigation Strategies](#mitigation-strategies)
-- [Threat Model: What Apple Learns About Your Application](#threat-model-what-apple-learns-about-your-application)
+- [Threat Model - What Apple Learns About Your Application](#threat-model-what-apple-learns-about-your-application)
 - [Step-by-Step Notarization Process with Privacy Implications](#step-by-step-notarization-process-with-privacy-implications)
 - [Privacy-Preserving Distribution Alternatives](#privacy-preserving-distribution-alternatives)
 - [Analyzing Notarization Data Collection](#analyzing-notarization-data-collection)
@@ -59,25 +59,25 @@ What Apple Collects and Stores
 
 When you participate in the notarization process, Apple retains several categories of information:
 
-Application Metadata: Apple stores your developer identity, application name, bundle identifier, version number, and build timestamps. This creates a historical record of every version you submit.
+Application Metadata - Apple stores your developer identity, application name, bundle identifier, version number, and build timestamps. This creates a historical record of every version you submit.
 
-Binary Analysis Results: Apple's systems retain the results of their static analysis, including detected patterns, potential security concerns, and whether the submission passed or failed notarization. This information exists in Apple's logs indefinitely.
+Binary Analysis Results - Apple's systems retain the results of their static analysis, including detected patterns, potential security concerns, and whether the submission passed or failed notarization. This information exists in Apple's logs indefinitely.
 
-Submission History: Apple maintains records of all notarization submissions, including timestamps, ticket IDs, and issue details. This allows Apple to track the evolution of your application over time.
+Submission History - Apple maintains records of all notarization submissions, including timestamps, ticket IDs, and issue details. This allows Apple to track the evolution of your application over time.
 
-Hash Values: Apple generates cryptographic hashes of your submitted binaries. These hashes can be used to identify specific versions of your application if Apple needs to revoke or track them later.
+Hash Values - Apple generates cryptographic hashes of your submitted binaries. These hashes can be used to identify specific versions of your application if Apple needs to revoke or track them later.
 
 Privacy Implications for Developers
 
 The information flow to Apple has several practical implications for developers and power users to consider.
 
-Identity Exposure: Your Developer ID certificate links your personal or company identity to every application you distribute. If you develop privacy tools, security software, or applications that might be controversial, this linkage is permanent and discoverable through certificate transparency logs.
+Identity Exposure - Your Developer ID certificate links your personal or company identity to every application you distribute. If you develop privacy tools, security software, or applications that might be controversial, this linkage is permanent and discoverable through certificate transparency logs.
 
-Code Pattern Analysis: Apple's static analysis can identify specific APIs you use, frameworks you depend on, and coding patterns in your application. While Apple states this analysis targets malware detection, the breadth of their database means they accumulate significant knowledge about application ecosystems.
+Code Pattern Analysis - Apple's static analysis can identify specific APIs you use, frameworks you depend on, and coding patterns in your application. While Apple states this analysis targets malware detection, the breadth of their database means they accumulate significant knowledge about application ecosystems.
 
-Revocation Risk: Apple maintains broad authority to revoke certificates or reject notarization submissions. Understanding their content policies becomes essential, as rejected applications cannot be distributed through normal channels to users with Gatekeeper enabled.
+Revocation Risk - Apple maintains broad authority to revoke certificates or reject notarization submissions. Understanding their content policies becomes essential, as rejected applications cannot be distributed through normal channels to users with Gatekeeper enabled.
 
-Geographic Considerations: Notarization requests travel to Apple's servers, typically in the United States. Developers in other jurisdictions may have different privacy regulations that affect how they handle user data in their applications.
+Geographic Considerations - Notarization requests travel to Apple's servers, typically in the United States. Developers in other jurisdictions may have different privacy regulations that affect how they handle user data in their applications.
 
 Practical Examples
 
@@ -120,13 +120,13 @@ Mitigation Strategies
 
 Developers concerned about privacy implications have several options:
 
-Alternative Distribution: For open-source projects, distributing through GitHub releases with manual code signing allows users to verify signatures without mandatory notarization. Users can bypass Gatekeeper for specific applications using System Preferences or the `spctl` command.
+Alternative Distribution - For open-source projects, distributing through GitHub releases with manual code signing allows users to verify signatures without mandatory notarization. Users can bypass Gatekeeper for specific applications using System Preferences or the `spctl` command.
 
-Minimal Information Submissions: Strip unnecessary resources, debug symbols, and development tools from your application bundle before submission. This reduces the information Apple can analyze.
+Minimal Information Submissions - Strip unnecessary resources, debug symbols, and development tools from your application bundle before submission. This reduces the information Apple can analyze.
 
-Transparent Policies: Review Apple's developer policies and stay updated on any changes that might affect how your application is treated or what information Apple retains.
+Transparent Policies - Review Apple's developer policies and stay updated on any changes that might affect how your application is treated or what information Apple retains.
 
-Threat Model: What Apple Learns About Your Application
+Threat Model - What Apple Learns About Your Application
 
 Understanding what information flows to Apple helps developers assess privacy implications:
 
@@ -161,35 +161,35 @@ Step-by-Step Notarization Process with Privacy Implications
 Understanding Each Step's Data Exposure:
 
 ```bash
-Step 1: Create Developer ID Certificate
-Privacy Impact: Apple collects and verifies identity information
+Step 1 - Create Developer ID Certificate
+Privacy Impact - Apple collects and verifies identity information
 Information Collected:
 - Legal name or company name
 - Physical address
 - Business registration details
 - Bank account for payment
-Retention: Indefinite (linked to certificate)
+Retention - Indefinite (linked to certificate)
 
-Step 2: Sign Application
+Step 2 - Sign Application
 codesign --force --sign "Developer ID Application: Your Name (TEAMID)" \
   --deep --options runtime MyApp.app
 
-Privacy Impact: Low - Occurs locally on your machine
+Privacy Impact - Low - Occurs locally on your machine
 No data sent to Apple at this step
 
-Step 3: Create Notarization Package
+Step 3 - Create Notarization Package
 zip -r MyApp.zip MyApp.app
 
-Privacy Impact: Medium - Package contains all application code/resources
-Data to be sent: Full binary, resources, configuration files
+Privacy Impact - Medium - Package contains all application code/resources
+Data to be sent - Full binary, resources, configuration files
 
-Step 4: Submit for Notarization
+Step 4 - Submit for Notarization
 xcrun altool --notarize-app --primary-bundle-id com.yourcompany.myapp \
   --username "your-apple-id@email.com" \
   --password @keychain:altool-password \
   --file MyApp.zip
 
-Privacy Impact: HIGH
+Privacy Impact - HIGH
 Data Sent to Apple:
 - Entire application binary
 - All resources (images, fonts, data files)
@@ -197,8 +197,8 @@ Data Sent to Apple:
 - Submission metadata (timestamp, version)
 - IP address making submission
 
-Step 5: Apple's Analysis
-Privacy Impact: HIGH
+Step 5 - Apple's Analysis
+Privacy Impact - HIGH
 Apple Performs:
 - Static analysis of compiled code
 - Malware pattern matching
@@ -250,7 +250,7 @@ Privacy advantages:
 
 Process:
 1. Sign app with Developer ID
-codesign -s "Developer ID Application: Your Name (TEAMID)" MyApp.app
+codesign -s "Developer ID Application - Your Name (TEAMID)" MyApp.app
 
 2. Verify signature
 codesign -v MyApp.app

@@ -77,8 +77,8 @@ cosign verify \
   --certificate-oidc-issuer "https://token.actions.githubusercontent.com" \
   ghcr.io/myorg/myapp:v2.1.0
 
-Output: Verified OK
-Shows: signature, certificate, build workflow reference
+Output - Verified OK
+Shows - signature, certificate, build workflow reference
 ```
 
 ```yaml
@@ -212,7 +212,7 @@ npm audit signatures
 
 Verify a specific package's signature
 npm pack mypackage@1.2.3 --dry-run
-Then inspect: npm view mypackage dist.integrity
+Then inspect - npm view mypackage dist.integrity
 
 Check that your installed packages match the registry
 npm ci --audit=all  # in CI

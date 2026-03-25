@@ -35,7 +35,7 @@ The benefits extend beyond simplicity. Containers are ephemeral by design, if so
 
 Core Components of Your Privacy Stack
 
-Password Management: Bitwarden or Vaultwarden
+Password Management - Bitwarden or Vaultwarden
 
 Bitwarden offers a full-featured password manager with client applications for every platform. The official Bitwarden image is resource-heavy, so many self-hosters prefer Vaultwarden, a Rust implementation that's significantly lighter and fully compatible with Bitwarden clients.
 
@@ -57,7 +57,7 @@ services:
 
 Set `SIGNUPS_ALLOWED=false` after creating your account to prevent unauthorized registrations. Generate a secure admin token using a random string generator.
 
-File Sync and Sharing: Nextcloud or Syncthing
+File Sync and Sharing - Nextcloud or Syncthing
 
 Nextcloud provides a full-featured alternative to Google Drive with calendar, contacts, and collaborative editing. It requires more resources but offers a complete suite:
 
@@ -88,7 +88,7 @@ services:
 
 For simpler use cases, primarily folder synchronization between devices, Syncthing excels. It uses a peer-to-peer model without cloud storage, keeping your data entirely on your devices.
 
-VPN: WireGuard withwg-easy
+VPN - WireGuard withwg-easy
 
 WireGuard offers modern, performant VPN technology. wg-easy provides a web interface for managing WireGuard configurations:
 
@@ -115,7 +115,7 @@ services:
 
 Replace `${WG_HOST}` with your server's public IP or domain. The web interface runs on port 51821, where you create client configurations to distribute to your devices.
 
-DNS Ad-Blocking: AdGuard Home
+DNS Ad-Blocking - AdGuard Home
 
 AdGuard Home functions as a network-wide ad blocker and DNS server, blocking trackers at the DNS level across all devices on your network:
 
@@ -137,7 +137,7 @@ services:
 
 Configure your router or individual devices to use your AdGuard container's IP for DNS, and you'll block ads and trackers without client-side software.
 
-Notes and Knowledge Base: Obsidian Publish Alternative or TiddlyWiki
+Notes and Knowledge Base - Obsidian Publish Alternative or TiddlyWiki
 
 For a self-hosted notes solution, consider Obsidian with the Obsidian Publish plugin, or TiddlyWiki for a simpler single-file wiki:
 

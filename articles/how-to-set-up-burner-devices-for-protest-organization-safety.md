@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Select Hardware and Initial Acquisition
+Step 1 - Select Hardware and Initial Acquisition
 
 The goal is hardware with no personal data linkage. Purchase devices with cash from physical retail locations rather than online. Avoid devices tied to your identity through carrier accounts. Recommended options include:
 
@@ -38,7 +38,7 @@ The goal is hardware with no personal data linkage. Purchase devices with cash f
 
 Do not use your primary device for protest-related communication. The security of your entire operation depends on maintaining strict separation between personal and operational identities.
 
-Step 2: Harden the Operating System
+Step 2 - Harden the Operating System
 
 After acquiring the device, perform a factory reset before first use. Install a privacy-focused custom ROM or use the stock OS with extensive hardening. GrapheneOS and CalyxOS are the leading choices for Android devices, both remove Google dependencies and implement aggressive security defaults.
 
@@ -80,7 +80,7 @@ while true; do
 done
 ```
 
-Step 3: Communication Stack Selection
+Step 3 - Communication Stack Selection
 
 Choose communication tools based on threat model. For protest coordination, prioritize:
 
@@ -95,7 +95,7 @@ Signal remains the gold standard for encrypted communication. Configure it with 
 
 ```bash
 Signal registration via command line (requires signal-cli)
-Install: brew install asukiaaa/tap/signal-cli
+Install - brew install asukiaaa/tap/signal-cli
 
 signal-cli -u +1555EXAMPLE register
 signal-cli -u +1555EXAMPLE verify VERIFICATION_CODE
@@ -118,7 +118,7 @@ Before deployment, verify these settings in Signal:
 - Disable notification content (prevents message preview on lock screen)
 - Use Screen security (blocks screenshots)
 
-Step 4: Application and Permission Audit
+Step 4 - Application and Permission Audit
 
 Every installed app is a potential attack vector. Install only what is strictly necessary. Audit permissions aggressively:
 
@@ -148,15 +148,15 @@ adb shell dumpsys package | grep -A 5 "android.permission.ACCESS_FINE_LOCATION" 
 
 Remove any app that requests unnecessary permissions. A messaging app should need: network access, storage (for attachments), and notifications. Nothing else.
 
-Step 5: Data Hygiene and Operational Security
+Step 5 - Data Hygiene and Operational Security
 
 During active operations, maintain strict data hygiene:
 
-Separate SIM cards: Use a dedicated SIM for the burner, purchased with cash. Remove it when not in active use. Store it separately from the device.
+Separate SIM cards - Use a dedicated SIM for the burner, purchased with cash. Remove it when not in active use. Store it separately from the device.
 
-Minimal storage: Store no contact lists locally, memorize critical numbers or keep them on paper in a secure location. Never store meeting locations in message history.
+Minimal storage - Store no contact lists locally, memorize critical numbers or keep them on paper in a secure location. Never store meeting locations in message history.
 
-Regular wipes: Configure automatic data expiration. Signal's disappearing messages handle this for communications. For local files:
+Regular wipes - Configure automatic data expiration. Signal's disappearing messages handle this for communications. For local files:
 
 ```bash
 Secure file deletion script
@@ -170,22 +170,22 @@ secure_wipe() {
 }
 ```
 
-Step 6: Device Seizure Response
+Step 6 - Device Seizure Response
 
 Prepare for the possibility of device seizure. The goal is to maximize time before device unlock and minimize exposed data.
 
-Screen lock: Use a strong PIN (6+ digits) rather than biometric unlock. Biometric authentication can be compelled; PINs have protection against self-incrimination in some jurisdictions.
+Screen lock - Use a strong PIN (6+ digits) rather than biometric unlock. Biometric authentication can be compelled; PINs have protection against self-incrimination in some jurisdictions.
 
-Secondary PIN: Many Android devices support a separate PIN for "guest mode" or work profile. Set this up with a different PIN that unlocks a limited shell with decoy data:
+Secondary PIN - Many Android devices support a separate PIN for "guest mode" or work profile. Set this up with a different PIN that unlocks a limited shell with decoy data:
 
 ```bash
 Create limited user profile (Android 5.0+)
 adb shell pm create-user --profileOf 0 --managed DecoyProfile
 ```
 
-Auto-wipe: Configure your device to wipe after failed unlock attempts. On stock Android: Settings → Security → Strong → Auto-wipe after 15 failed attempts.
+Auto-wipe - Configure your device to wipe after failed unlock attempts. On stock Android - Settings → Security → Strong → Auto-wipe after 15 failed attempts.
 
-Faraday cage: Store the device in a Faraday pouch when not in use. This blocks all cellular, WiFi, and Bluetooth signals, preventing remote wipe or data extraction.
+Faraday cage - Store the device in a Faraday pouch when not in use. This blocks all cellular, WiFi, and Bluetooth signals, preventing remote wipe or data extraction.
 
 Threat Model Documentation
 
@@ -221,7 +221,7 @@ Mitigations implemented:
 - Faraday pouches (prevents remote tracking)
 ```
 
-Step 7: Secure Disposal
+Step 7 - Secure Disposal
 
 When a burner device's operational life ends:
 
@@ -241,7 +241,7 @@ adb shell pm clear com.android.systemui
 adb shell wipe data all
 ```
 
-Step 8: Chain of Custody for Burner Devices
+Step 8 - Chain of Custody for Burner Devices
 
 Maintain strict control over device ownership:
 
@@ -282,7 +282,7 @@ class BurnerDeviceLog:
             print(f"Destroyed: {device['destroyed_date']}")
 ```
 
-Step 9: Post-Action Device Handling
+Step 9 - Post-Action Device Handling
 
 After protest activities conclude:
 

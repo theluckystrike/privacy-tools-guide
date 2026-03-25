@@ -28,7 +28,7 @@ mem_use_percent = True
 2.
 - Real-time monitoring: Use htop or btop for immediate process visibility
 2.
-- Prometheus with Local Storage: Prometheus is an open-source monitoring system with a pull-based model.
+- Prometheus with Local Storage - Prometheus is an open-source monitoring system with a pull-based model.
 - The open-source version can: run in "standalone" mode, collecting and displaying data locally without any cloud connection.
 
 Table of Contents
@@ -40,7 +40,7 @@ Table of Contents
 - [Advanced Monitoring Scenarios](#advanced-monitoring-scenarios)
 - [Performance Comparison Table](#performance-comparison-table)
 - [Privacy Monitoring Compliance](#privacy-monitoring-compliance)
-- [Cost Comparison: Self-Hosted vs SaaS](#cost-comparison-self-hosted-vs-saas)
+- [Cost Comparison - Self-Hosted vs SaaS](#cost-comparison-self-hosted-vs-saas)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 - [Integration with Alerts and Notifications](#integration-with-alerts-and-notifications)
 - [Scaling Private Monitoring](#scaling-private-monitoring)
@@ -348,7 +348,7 @@ Check for telemetry home-phones
 lsof -i -P -n | grep -i "out\|established"
 ```
 
-Cost Comparison: Self-Hosted vs SaaS
+Cost Comparison - Self-Hosted vs SaaS
 
 Self-hosted annual cost (basic 3-server setup):
 - VPS/dedicated hardware: $1,800-3,600/year

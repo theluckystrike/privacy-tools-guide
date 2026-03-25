@@ -85,7 +85,7 @@ ProtonMail operates under Swiss jurisdiction, adhering to Swiss privacy laws rat
 - No third-party ad tracking integration
 - Payment data separated from email accounts
 
-The trade-off: ProtonMail's free tier has storage limitations, and some advanced features require paid plans.
+The trade-off - ProtonMail's free tier has storage limitations, and some advanced features require paid plans.
 
 SMTP, IMAP, and Developer Access
 
@@ -124,8 +124,8 @@ The Bridge runs locally, exposing a local IMAP/SMTP server:
 ```bash
 ProtonMail Bridge configuration
 Install Bridge app, authenticate, then configure your client
-IMAP: 127.0.0.1:1143
-SMTP: 127.0.0.1:1025
+IMAP - 127.0.0.1:1143
+SMTP - 127.0.0.1:1025
 Authentication uses your Proton credentials
 ```
 
@@ -133,11 +133,11 @@ For developers who need programmatic access, the Gmail API is more mature. For p
 
 Self-Hosting and Portability
 
-Gmail: Locked In
+Gmail - Locked In
 
-Gmail doesn't support data export in standard formats beyond Google Takeout (MBOX/VCF). There's no IMAP access for consumer accounts, and migrating away requires specialized tools. Your data exists in Google's ecosystem with limited portability.
+Gmail doesn't support data export in standard formats beyond Google Takeout (MBOX/VCF). There's no IMAP access for consumer accounts, and migrating away requires specialized tools. Your data exists in Google's environment with limited portability.
 
-ProtonMail: Export Options
+ProtonMail - Export Options
 
 ProtonMail supports standard protocols:
 
@@ -208,9 +208,9 @@ Pricing and Plan Comparison
 | API Access | Yes (limited) | No | Yes (Gmail API) | Limited | Limited |
 | Support | Community | Community | Standard | Email | Priority |
 
-For individuals: ProtonMail's $0 tier is unbeatable if you don't need much storage. Gmail's $0 tier gives 15x the storage but trades privacy for convenience.
+For individuals - ProtonMail's $0 tier is unbeatable if you don't need much storage. Gmail's $0 tier gives 15x the storage but trades privacy for convenience.
 
-For organizations: Google Workspace costs $6/user/month with full API access, while ProtonMail Business at $10/user adds custom domains and team features.
+For organizations - Google Workspace costs $6/user/month with full API access, while ProtonMail Business at $10/user adds custom domains and team features.
 
 Performance and Reliability Metrics
 
@@ -309,22 +309,22 @@ No label management, no access to custom tags
 
 Data Residency and Legal Jurisdiction
 
-Gmail: Multi-Region, US Jurisdiction
+Gmail - Multi-Region, US Jurisdiction
 
 Gmail stores data across Google's global data centers, subject to US jurisdiction and potential government access via court orders. GDPR compliance in Europe is enforced through data processing agreements but doesn't prevent US government requests.
 
-ProtonMail: Swiss Jurisdiction
+ProtonMail - Swiss Jurisdiction
 
 ProtonMail stores data on servers in Switzerland, subject to Swiss privacy law. Swiss law provides stronger privacy protections against US government access without formal treaty. Metadata logs are minimal and retention is short (typically <7 days).
 
-Important distinction: Even encrypted email on ProtonMail servers could theoretically be decrypted if ProtonMail itself is compromised or compelled. The architecture prevents even ProtonMail from reading content, but this assumes the codebase is what users think it is.
+Important distinction - Even encrypted email on ProtonMail servers could theoretically be decrypted if ProtonMail itself is compromised or compelled. The architecture prevents even ProtonMail from reading content, but this assumes the codebase is what users think it is.
 
 Real-World Usage Patterns
 
 When Gmail is the Right Choice
 
 - Building email-powered applications requiring full API access
-- Teams already invested in Google Workspace ecosystem
+- Teams already invested in Google Workspace environment
 - Organizations prioritizing uptime and performance
 - Developers who need reliable SMTP/IMAP
 - Content that isn't particularly sensitive

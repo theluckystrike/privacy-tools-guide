@@ -28,9 +28,9 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Apple Data Collection
+Step 1 - Understand Apple Data Collection
 
-Apple's ecosystem relies on data synchronization across devices through iCloud, analytics from your device, and various services that improve user experience. While many features depend on this connectivity, power users can selectively disable or limit data transmission without rendering their device unusable.
+Apple's environment relies on data synchronization across devices through iCloud, analytics from your device, and various services that improve user experience. While many features depend on this connectivity, power users can selectively disable or limit data transmission without rendering their device unusable.
 
 The primary categories of Apple data collection include:
 - iCloud sync data (photos, contacts, notes, Keychain)
@@ -39,7 +39,7 @@ The primary categories of Apple data collection include:
 - Safari browsing data and iCloud tabs
 - Device analytics and usage patterns
 
-Step 2: Core iOS Privacy Settings
+Step 2 - Core iOS Privacy Settings
 
 Disable Analytics and Diagnostics
 
@@ -74,8 +74,8 @@ For developers, you can verify tracker blocking effectiveness using these Safari
 
 ```bash
 Test tracker blocking in Safari
-Enable Develop menu: Safari → Settings → Advanced → Show Develop menu
-Then check: Develop → Show Blocked Pop-ups
+Enable Develop menu - Safari → Settings → Advanced → Show Develop menu
+Then check - Develop → Show Blocked Pop-ups
 ```
 
 Location Services Configuration
@@ -92,7 +92,7 @@ Location data reveals significant personal information. Configure in Settings �
 
 For individual apps, set location permissions to "Never" or "While Using" based on necessity. Avoid "Always" unless absolutely required.
 
-Step 3: Network-Level Protections
+Step 3 - Network-Level Protections
 
 DNS Configuration
 
@@ -186,7 +186,7 @@ Automation with Shortcuts
 Create iOS Shortcuts to quickly toggle privacy settings:
 
 ```shortcuts
-Shortcut: Privacy Mode
+Shortcut - Privacy Mode
 1. Set Airplane Mode: On
 2. Wait: 1 second
 3. Set Airplane Mode: Off
@@ -195,9 +195,9 @@ Shortcut: Privacy Mode
 6. Set Location Services: Off
 ```
 
-This provides a quick way to minimize connectivity when privacy is paramount.
+This provides a quick way to minimize connectivity when privacy is essential.
 
-Step 4: Trade-offs to Consider
+Step 4 - Trade-offs to Consider
 
 Disabling certain features affects functionality:
 - Analytics off means you won't contribute to Apple's improvement programs
@@ -207,7 +207,7 @@ Disabling certain features affects functionality:
 
 Balance your privacy requirements against convenience. Most users find disabling analytics, limiting iCloud sync, and using custom DNS provides substantial privacy improvement without major functionality loss.
 
-Step 5: Deepening Privacy Through System-Level Hardening
+Step 5 - Deepening Privacy Through System-Level Hardening
 
 Disabling Siri Data Collection
 
@@ -270,7 +270,7 @@ iOS automatically downloads and installs updates in the background. These update
 
 This gives you visibility into what changes between iOS versions before they're applied.
 
-Step 6: Privacy-Focused App Ecosystem Configuration
+Step 6 - Privacy-Focused App environment Configuration
 
 Restricting App Tracking
 
@@ -297,7 +297,7 @@ Settings → Control Center → Add "Camera" and "Microphone"
 
 Now a small indicator appears when any app accesses these sensors. This alerts you if apps are accessing hardware unexpectedly.
 
-Step 7: Practical Privacy Audits
+Step 7 - Practical Privacy Audits
 
 Email Privacy Analysis
 
@@ -344,7 +344,7 @@ curl -v https://api.apple.com 2>&1 | grep -i certificate
 
 This confirms that sensitive data in transit is encrypted (standard practice, but worth verifying).
 
-Advanced: Using MDM for Enterprise Privacy Policy
+Advanced - Using MDM for Enterprise Privacy Policy
 
 If you manage company-issued iPhones, use Mobile Device Management (MDM) to enforce consistent privacy settings:
 
@@ -370,7 +370,7 @@ If you manage company-issued iPhones, use Mobile Device Management (MDM) to enfo
 
 This ensures that all enrolled devices enforce privacy settings consistently, preventing users from accidentally re-enabling data collection.
 
-Step 8: Create an iPhone Privacy Baseline
+Step 8 - Create an iPhone Privacy Baseline
 
 Document your organization's minimal privacy configuration:
 
@@ -383,17 +383,17 @@ For example:
 ```markdown
 Organization iPhone Privacy Policy
 
-Step 9: Required Disables
+Step 9 - Required Disables
 - [ ] Analytics and Diagnostics (all options)
 - [ ] Siri Improvements
 - [ ] Location Services (except Maps if necessary)
 
-Step 10: Recommended Disables
+Step 10 - Recommended Disables
 - [ ] Handoff and Continuity
 - [ ] iCloud Sync (except Keychain)
 - [ ] Personalized Ads
 
-Step 11: Optional Reviews
+Step 11 - Optional Reviews
 - [ ] Safari Private Relay (if you use streaming services)
 - [ ] VPN Configuration (if required for work)
 ```

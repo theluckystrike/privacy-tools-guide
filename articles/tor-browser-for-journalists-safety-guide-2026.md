@@ -35,13 +35,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Tor's Security Model
+Step 1 - Understand Tor's Security Model
 
 Tor routes your traffic through at least three relays, each with its own encryption layer. The entry node knows your IP address but not what you're accessing. The middle relay sees neither. The exit node sees the destination but not who you are. This layered approach provides strong anonymity against network-level observers.
 
 However, Tor Browser adds critical protections beyond the network layer. It prevents fingerprinting, techniques that identify users based on browser characteristics, screen resolution, installed fonts, and timing behaviors. The difference between a hardened Tor Browser configuration and a default installation can be substantial.
 
-Step 2: Install ation and Initial Configuration
+Step 2 - Install ation and Initial Configuration
 
 Always verify signatures before installing Tor Browser. The project publishes signatures for every release:
 
@@ -61,15 +61,15 @@ On macOS, use the official `.dmg` package and verify the Apple code signature:
 codesign -dv --verbose=4 /Applications/Tor\ Browser.app
 ```
 
-Step 3: Security Level Configuration
+Step 3 - Security Level Configuration
 
 Tor Browser includes a Security Level slider accessible via the shield icon. For journalist work, understand what each level disables:
 
-Standard (Level 0): All features enabled. Suitable for general browsing but leaves more attack surface.
+Standard (Level 0) - All features enabled. Suitable for general browsing but leaves more attack surface.
 
-Safer (Level 1): Disables JavaScript on HTTP sites, prevents font and CSS lazy loading, and blocks some HTML5 media auto-play. Recommended for most source communications.
+Safer (Level 1) - Disables JavaScript on HTTP sites, prevents font and CSS lazy loading, and blocks some HTML5 media auto-play. Recommended for most source communications.
 
-Safest (Level 2): Disables all JavaScript globally. Breaks many modern websites but provides maximum protection against JavaScript-based exploits and fingerprinting. Many secure messaging services offer JavaScript-free alternatives.
+Safest (Level 2) - Disables all JavaScript globally. Breaks many modern websites but provides maximum protection against JavaScript-based exploits and fingerprinting. Many secure messaging services offer JavaScript-free alternatives.
 
 Configure this programmatically in the `torrc` file or through the browser's `about:config`:
 
@@ -80,15 +80,15 @@ network.cookie.cookieBehavior = 1 // Block third-party cookies
 network.cookie.thirdparty.sessionOnly = true
 ```
 
-Step 4: Bridge Configuration for High-Risk Environments
+Step 4 - Bridge Configuration for High-Risk Environments
 
 In countries with active Tor censorship, default bridges may be blocked. The Tor Project provides multiple bridge types:
 
-Obfs4 bridges: Encapsulate Tor traffic to appear as random noise. Request bridges via email to bridges@torproject.org with "get transport obfs4" in the body, or visit https://bridges.torproject.org.
+Obfs4 bridges - Encapsulate Tor traffic to appear as random noise. Request bridges via email to bridges@torproject.org with "get transport obfs4" in the body, or visit https://bridges.torproject.org.
 
-Snowflake bridges: Use WebRTC to disguise Tor connections as regular WebRTC traffic. Particularly useful in environments that block regular Tor entry nodes.
+Snowflake bridges - Use WebRTC to disguise Tor connections as regular WebRTC traffic. Particularly useful in environments that block regular Tor entry nodes.
 
-Meek-azure: Makes Tor traffic look like Microsoft Azure cloud traffic. Effective against sophisticated network filters.
+Meek-azure - Makes Tor traffic look like Microsoft Azure cloud traffic. Effective against sophisticated network filters.
 
 Configure bridges in Tor Browser by navigating to `about:preferences#tor` and entering bridge lines:
 
@@ -96,7 +96,7 @@ Configure bridges in Tor Browser by navigating to `about:preferences#tor` and en
 Bridge obfs4 192.0.2.1:443 fingerprint=ABCD1234 cert=xyz...
 ```
 
-Step 5: New Identity Practices
+Step 5 - New Identity Practices
 
 Tor Browser's "New Identity" feature closes all tabs, clears cookies and site data, and establishes fresh Tor circuits. However, effective usage requires understanding its limitations:
 
@@ -126,15 +126,15 @@ Launch fresh Tor Browser instance
 ~/tor-browser/Browser/start-tor-browser --new-instance &
 ```
 
-Step 6: Network Isolation Strategies
+Step 6 - Network Isolation Strategies
 
 For investigative journalism requiring source protection, consider these advanced configurations:
 
-Tor over VPN: Connect to a reputable VPN first, then launch Tor Browser. This hides Tor usage from your ISP and adds a layer between you and the entry node. Some VPN providers support this natively.
+Tor over VPN - Connect to a reputable VPN first, then launch Tor Browser. This hides Tor usage from your ISP and adds a layer between you and the entry node. Some VPN providers support this natively.
 
-VPN over Tor: More complex but useful when you need a stable IP address for services that flag Tor exit nodes. Requires careful configuration to avoid deanonymization attacks.
+VPN over Tor - More complex but useful when you need a stable IP address for services that flag Tor exit nodes. Requires careful configuration to avoid deanonymization attacks.
 
-Isolating Proxy: Route different browser profiles through separate Tor circuits. Create multiple Tor Browser instances:
+Isolating Proxy - Route different browser profiles through separate Tor circuits. Create multiple Tor Browser instances:
 
 ```bash
 Launch isolated Tor Browser instances with separate control ports
@@ -145,7 +145,7 @@ Launch isolated Tor Browser instances with separate control ports
   --tor-control-port 9053
 ```
 
-Step 7: HTTP vs HTTPS Considerations
+Step 7 - HTTP vs HTTPS Considerations
 
 Tor Browser forces HTTPS by default, a critical security feature. Never accept HTTP connections when accessing sensitive sites. The browser's HTTPS-Only Mode can be configured in `about:preferences#privacy`:
 
@@ -172,7 +172,7 @@ server {
 }
 ```
 
-Step 8: Handling Downloads Safely
+Step 8 - Handling Downloads Safely
 
 Downloads present significant risks in Tor Browser. Configure the browser to handle downloads safely:
 
@@ -192,11 +192,11 @@ Common Mistakes to Avoid
 
 Using Tor Browser alongside regular browsers: Even with Tor running, using Chrome or Firefox simultaneously can correlate your activities through timing and behavioral patterns.
 
-Resizing the Tor Browser window: Tor Browser enforces standard window sizes to prevent fingerprinting. Resizing creates a unique fingerprint.
+Resizing the Tor Browser window - Tor Browser enforces standard window sizes to prevent fingerprinting. Resizing creates a unique fingerprint.
 
-Logging into personal accounts: Never access personal email, social media, or services linked to your real identity while using Tor for source communication.
+Logging into personal accounts - Never access personal email, social media, or services linked to your real identity while using Tor for source communication.
 
-Ignoring Tor Browser warnings: The browser displays warnings for potentially dangerous configurations. Take these seriously, bypassing them often leads to de-anonymization.
+Ignoring Tor Browser warnings - The browser displays warnings for potentially dangerous configurations. Take these seriously, bypassing them often leads to de-anonymization.
 
 Advanced Circuit Analysis and Fingerprinting
 
@@ -251,7 +251,7 @@ analyzer.analyze_circuits()
 analyzer.new_circuit_for_identity()
 ```
 
-Step 9: Hardened Configuration for Critical Work
+Step 9 - Hardened Configuration for Critical Work
 
 For high-stakes journalism in adversarial environments:
 
@@ -289,7 +289,7 @@ sudo ufw allow out to 9.9.9.9  # Only allow Tor
 echo "Hardening complete"
 ```
 
-Step 10: Secure Communication with Sources Over Tor
+Step 10 - Secure Communication with Sources Over Tor
 
 Establish confidential channels for source communications:
 
@@ -332,7 +332,7 @@ server {
 }
 ```
 
-Step 11: Automated Tor Browser Security Updates
+Step 11 - Automated Tor Browser Security Updates
 
 Stay current with security patches:
 
@@ -374,17 +374,17 @@ download_and_verify() {
 check_for_updates
 ```
 
-Step 12: Detection Evasion vs. True Anonymity
+Step 12 - Detection Evasion vs. True Anonymity
 
 Understand the distinction:
 
-Detection Evasion: Hiding that you're using Tor (through bridges, etc.). Important for censorship circumvention.
+Detection Evasion - Hiding that you're using Tor (through bridges, etc.). Important for censorship circumvention.
 
-True Anonymity: Hiding your identity from the destination website and network observers. Tor provides this.
+True Anonymity - Hiding your identity from the destination website and network observers. Tor provides this.
 
 For journalists, prioritize true anonymity. If censorship is not a concern, use Tor Browser without bridges to avoid detection overhead.
 
-Step 13: Source Protection Document Verification
+Step 13 - Source Protection Document Verification
 
 Establish cryptographic verification for source communications:
 
@@ -413,7 +413,7 @@ verify_source() {
 verify_source
 ```
 
-Step 14: Handling Threats During Investigation
+Step 14 - Handling Threats During Investigation
 
 If compromise is suspected:
 
@@ -445,7 +445,7 @@ nmcli networking on
 echo "Emergency protocol complete. Assess situation before proceeding."
 ```
 
-Step 15: Maintaining Operational Security Over Time
+Step 15 - Maintaining Operational Security Over Time
 
 Long-term OPSEC practices:
 

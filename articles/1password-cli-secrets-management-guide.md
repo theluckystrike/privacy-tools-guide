@@ -19,7 +19,7 @@ tags: [privacy-tools-guide]
 Use the 1Password CLI (`op`) to retrieve secrets directly in your terminal with `op item get "API Key" --field password`, eliminating hardcoded credentials from config files and environment variables. Install it via `brew install --cask 1password-cli` on macOS, authenticate with `op signin`, and inject secrets into scripts, CI/CD pipelines, or shell aliases. This guide walks through setup, authentication, vault management, and scripting patterns for secure secrets management.
 
 
-- The learning curve is: minimal for those familiar with the 1Password ecosystem, and the CLI integrates with the same vault used for everyday password management.
+- The learning curve is: minimal for those familiar with the 1Password environment, and the CLI integrates with the same vault used for everyday password management.
 - Use the 1Password CLI: (`op`) to retrieve secrets directly in your terminal with `op item get "API Key" --field password`, eliminating hardcoded credentials from config files and environment variables.
 - The basic syntax uses: the item name and field you want to access: ```bash op item get "API Key" --field password ``` 1Password stores various item types, each with different fields.
 - For interactive use, run: ```bash
@@ -46,7 +46,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install the 1Password CLI
+Step 1 - Install the 1Password CLI
 
 On macOS, the simplest installation method uses Homebrew:
 
@@ -60,7 +60,7 @@ For Linux or Windows Subsystem for Linux (WSL), download the appropriate binary 
 op --version
 ```
 
-Step 2: Authenticate with 1Password
+Step 2 - Authenticate with 1Password
 
 Before retrieving secrets, you must authenticate with your 1Password account. For interactive use, run:
 
@@ -78,7 +78,7 @@ eval $(op signin --account myteam)
 
 This command exports the session credentials to your shell environment, valid for a configurable duration.
 
-Step 3: Retrieve Secrets
+Step 3 - Retrieve Secrets
 
 Once authenticated, retrieving a secret is straightforward. The basic syntax uses the item name and field you want to access:
 
@@ -98,7 +98,7 @@ You can also retrieve secrets by their UUID if you know it:
 op item get u7w8x9y2z --field password
 ```
 
-Step 4: Integrate with Environment Variables
+Step 4 - Integrate with Environment Variables
 
 One of the most practical applications of the 1Password CLI is populating environment variables for your applications. This approach keeps credentials out of configuration files while making them available at runtime.
 
@@ -122,7 +122,7 @@ alias prod-db='op item get "Production DB" --field password'
 
 Add this to your shell configuration file (`.bashrc` or `.zshrc`) for persistent access.
 
-Step 5: Work with Multiple Vaults
+Step 5 - Work with Multiple Vaults
 
 Larger organizations often use multiple vaults to separate secrets by environment or team. By default, `op` queries your personal vault. To access a specific vault, use the `--vault` flag:
 
@@ -138,7 +138,7 @@ op vault list
 
 This command displays all vaults your account can access, including shared team vaults.
 
-Step 6: Script with 1Password CLI
+Step 6 - Script with 1Password CLI
 
 For more complex automation, shell scripts provide greater control. Here's an example that retrieves multiple secrets and exports them for a database migration:
 
@@ -176,11 +176,11 @@ Environment variable exposure can leak secrets inadvertently. Shell history and 
 
 Comparing with Alternative Approaches
 
-Other secret management solutions exist, including HashiCorp Vault, AWS Secrets Manager, and GitHub Secrets. The 1Password CLI appeals to teams already using 1Password for password management, providing a consistent experience across personal and work contexts. The learning curve is minimal for those familiar with the 1Password ecosystem, and the CLI integrates with the same vault used for everyday password management.
+Other secret management solutions exist, including HashiCorp Vault, AWS Secrets Manager, and GitHub Secrets. The 1Password CLI appeals to teams already using 1Password for password management, providing a consistent experience across personal and work contexts. The learning curve is minimal for those familiar with the 1Password environment, and the CLI integrates with the same vault used for everyday password management.
 
 For teams requiring advanced features like secret rotation policies or fine-grained access controls, dedicated secrets management products may offer additional capabilities. However, for many development workflows, the 1Password CLI provides sufficient functionality with excellent usability.
 
-Advanced: Using Templates
+Advanced - Using Templates
 
 1Password supports templates for standard item structures. If your team consistently uses certain field arrangements, perhaps a database item always includes host, port, username, and password, create a template to ensure consistency:
 
@@ -196,7 +196,7 @@ Begin by installing the CLI and authenticating with your account. Start with a s
 
 The 1Password CLI turns secret management into a secure, scriptable workflow. Treating credentials as programmable data rather than static text makes your systems more secure by design.
 
-Advanced Usage: CI/CD Integration
+Advanced Usage - CI/CD Integration
 
 For automated workflows, the CLI shines in CI/CD pipelines. Here's how to integrate securely:
 
@@ -276,7 +276,7 @@ Copy deployment scripts
 COPY ./scripts /app/scripts
 WORKDIR /app
 
-Runtime: Pass OP_SERVICE_ACCOUNT_TOKEN as environment variable
+Runtime - Pass OP_SERVICE_ACCOUNT_TOKEN as environment variable
 ENTRYPOINT ["/app/scripts/entrypoint.sh"]
 ```
 
@@ -349,7 +349,7 @@ Compliance checklist:
 
 Troubleshooting Common Issues
 
-Issue: "op: command not found"
+Issue - "op: command not found"
 
 ```bash
 Installation path issue
@@ -362,7 +362,7 @@ Verify installation
 op --version
 ```
 
-Issue: Session expires during long scripts
+Issue - Session expires during long scripts
 
 ```bash
 Extend session timeout
@@ -375,7 +375,7 @@ op item get "Secret Name" --field value || {
 }
 ```
 
-Issue: "Invalid master password"
+Issue - "Invalid master password"
 
 ```bash
 Biometric authentication failed
@@ -388,7 +388,7 @@ Or use session-based auth instead
 eval $(op signin --account myteam)
 ```
 
-Issue: "Access denied to vault"
+Issue - "Access denied to vault"
 
 ```bash
 Your account lacks permissions
@@ -408,19 +408,19 @@ For scripts making many CLI calls:
 #!/bin/bash
 Retrieve multiple secrets efficiently
 
-BAD: New authentication per call (slow)
+BAD - New authentication per call (slow)
 op item get "Secret1" --field password
 op item get "Secret2" --field password
 op item get "Secret3" --field password
 
-GOOD: Authenticate once, reuse session
+GOOD - Authenticate once, reuse session
 eval $(op signin --account myteam)
 
 SECRET1=$(op item get "Secret1" --field password)
 SECRET2=$(op item get "Secret2" --field password)
 SECRET3=$(op item get "Secret3" --field password)
 
-BETTER: Batch retrieve from same item
+BETTER - Batch retrieve from same item
 SECRETS=$(op item get "AllSecrets")
 DB_HOST=$(echo $SECRETS | jq -r '.fields[] | select(.label=="db-host") | .value')
 DB_USER=$(echo $SECRETS | jq -r '.fields[] | select(.label=="db-user") | .value')
@@ -433,7 +433,7 @@ If you're transitioning from `.env` files:
 
 ```bash
 #!/bin/bash
-Migration script: .env to 1Password
+Migration script - .env to 1Password
 
 Read existing .env file
 while IFS='=' read -r key value; do

@@ -39,9 +39,9 @@ Metadata in messaging contexts encompasses far more than most users realize. It 
 
 Metadata includes the contact graph (who communicated with whom), timestamps and session duration, IP addresses and device identifiers, communication frequency, and device type and software versions.
 
-The critical point: metadata exists regardless of whether message content is encrypted. Service providers, network observers, and adversaries can collect and analyze this data without ever reading a single message.
+The critical point - metadata exists regardless of whether message content is encrypted. Service providers, network observers, and adversaries can collect and analyze this data without ever reading a single message.
 
-Consider this scenario: Alice uses an end-to-end encrypted messenger to communicate with Bob. Even with Signal's encryption protecting the message text, metadata reveals that Alice and Bob exchanged 47 messages between 2:15 AM and 3:42 AM, with Alice's device IP suggesting she was at a particular location. This pattern alone can expose sensitive information, medical conditions, business negotiations, or personal relationships.
+Consider this scenario - Alice uses an end-to-end encrypted messenger to communicate with Bob. Even with Signal's encryption protecting the message text, metadata reveals that Alice and Bob exchanged 47 messages between 2:15 AM and 3:42 AM, with Alice's device IP suggesting she was at a particular location. This pattern alone can expose sensitive information, medical conditions, business negotiations, or personal relationships.
 
 Metadata Protection Mechanisms
 
@@ -340,19 +340,19 @@ Real-World Metadata Leakage Examples
 Even with encryption, metadata reveals intimate details:
 
 ```
-Example 1: Timing Attack
+Example 1 - Timing Attack
 Alice contacts her oncologist at 3 AM repeatedly
 Metadata alone reveals health crisis, even if messages encrypted
 
-Example 2: Volume Analysis
+Example 2 - Volume Analysis
 Alice sends 500 KB message daily at same time
 Observer infers encrypted file transfer, possibly data exfiltration
 
-Example 3: Contact Graph Analysis
+Example 3 - Contact Graph Analysis
 Alice communicates with journalists, lawyers, activists
 Even without knowing content, pattern identifies political activity
 
-Example 4: Frequency Pattern
+Example 4 - Frequency Pattern
 Alice messages Bob 47 times per day
 Observer infers intimate relationship (romantic, medical, or conspiracy)
 ```
@@ -367,7 +367,7 @@ If switching from a service that collects metadata:
 Steps to minimize exposure of old metadata
 
 1. Export and delete old message history
-Most services allow: Settings → Data & Privacy → Delete Messages
+Most services allow - Settings → Data & Privacy → Delete Messages
 
 2. Close and re-register accounts
 old_account = "alice@email.com"
@@ -398,7 +398,7 @@ Evaluating Messenger Claims About Metadata Protection
 When a service claims to protect metadata, verify:
 
 ```
-Claims: "We don't store metadata"
+Claims - "We don't store metadata"
 
 Verify by asking:
  Are timestamps logged? (Yes = metadata collection)
@@ -519,6 +519,6 @@ Related Articles
 - [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
 - [Encrypted Messaging for Journalists Guide](/encrypted-messaging-for-journalists-guide/)
 - [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging](/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)
-- [AI CI/CD Pipeline Optimization: A Developer Guide](https://bestremotetools.com/ai-ci-cd-pipeline-optimization/)
+- [AI CI/CD Pipeline Optimization - A Developer Guide](https://bestremotetools.com/ai-ci-cd-pipeline-optimization/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

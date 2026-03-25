@@ -79,7 +79,7 @@ This architecture means that adding a new team member to a 100-person channel re
 
 Practical Implementation Patterns for 2026
 
-Several messaging platforms have already deployed MLS in production, and the ecosystem is maturing rapidly. If you are evaluating MLS for your own application, here are the patterns that work best in 2026.
+Several messaging platforms have already deployed MLS in production, and the environment is maturing rapidly. If you are evaluating MLS for your own application, here are the patterns that work best in 2026.
 
 External Group Creation
 
@@ -168,7 +168,7 @@ N1 controls encryption for (A, B)
 N2 controls encryption for (C, D)
 Root controls encryption for entire group
 
-When member B updates: Only N1 and Root need recomputation
+When member B updates - Only N1 and Root need recomputation
 (about log(n) operations instead of n operations)
 
 This is why MLS scales better than naive approaches.
@@ -202,21 +202,21 @@ Production Deployment Considerations
 
 Several major platforms have deployed MLS in production, providing implementation lessons for developers:
 
-WhatsApp: Uses Signal Protocol for 1-to-1, exploring MLS for group encryption to reduce infrastructure overhead. Current implementation optimizes for backward compatibility.
+WhatsApp - Uses Signal Protocol for 1-to-1, exploring MLS for group encryption to reduce infrastructure overhead. Current implementation optimizes for backward compatibility.
 
-Wire: Deployed MLS for group conversations across desktop and mobile clients in 2023. Wire's open-source approach provides reference implementations.
+Wire - Deployed MLS for group conversations across desktop and mobile clients in 2023. Wire's open-source approach provides reference implementations.
 
-Element (Matrix): Developing MLS support for the Matrix protocol to provide better group security than current implementations.
+Element (Matrix) - Developing MLS support for the Matrix protocol to provide better group security than current implementations.
 
-Apple: iMessage+ is reported to use MLS-adjacent designs for encrypted group communications across Apple's ecosystem.
+Apple - iMessage+ is reported to use MLS-adjacent designs for encrypted group communications across Apple's environment.
 
 These implementations reveal practical challenges developers should anticipate:
 
-Migration complexity: Moving existing users from legacy group encryption to MLS requires careful state transitions. You cannot simply flip a switch, users must gradually transition as clients support both protocols during overlap periods.
+Migration complexity - Moving existing users from legacy group encryption to MLS requires careful state transitions. You cannot simply flip a switch, users must gradually transition as clients support both protocols during overlap periods.
 
-Client synchronization: All group members must understand the current group state (epoch, ratchet tree, membership). A lagging client that hasn't received the latest commit may reject new messages. Your protocol must handle this gracefully.
+Client synchronization - All group members must understand the current group state (epoch, ratchet tree, membership). A lagging client that hasn't received the latest commit may reject new messages. Your protocol must handle this gracefully.
 
-Server trust assumptions: MLS assumes the server is honest but curious, it won't modify messages but might reorder them or drop them. Stronger assumptions (server is actively malicious) require additional protocol layers.
+Server trust assumptions - MLS assumes the server is honest but curious, it won't modify messages but might reorder them or drop them. Stronger assumptions (server is actively malicious) require additional protocol layers.
 
 Performance Implications for Real Deployments
 
@@ -278,16 +278,16 @@ Official test vectors from the IETF specification ensure interoperability across
 
 Implementation Pitfalls to Avoid
 
-Pitfall 1: Trusting timestamps for ordering
+Pitfall 1 - Trusting timestamps for ordering
 MLS depends on commit ordering for consistency. Servers can reorder commits maliciously. Don't use timestamps, use epoch numbers and message indices for ordering.
 
-Pitfall 2: Incomplete Welcome verification
+Pitfall 2 - Incomplete Welcome verification
 When onboarding new members, completely verify the Welcome message before considering them part of the group. Incomplete verification allows attacks where new members receive invalid initial state.
 
-Pitfall 3: Ignoring proposal batching complexity
+Pitfall 3 - Ignoring proposal batching complexity
 Multiple pending proposals can conflict. MLS requires careful handling of proposal ordering and conflict resolution. Implement proposal queues carefully.
 
-Pitfall 4: Insufficient ratchet tree validation
+Pitfall 4 - Insufficient ratchet tree validation
 The ratchet tree is security-critical. Validate tree structure before accepting updates. Malformed trees can cause incorrect key derivation.
 
 Interoperability Testing Approach

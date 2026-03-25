@@ -39,7 +39,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Time-Delayed Release Mechanisms
+Step 1 - Understand Time-Delayed Release Mechanisms
 
 Time-delayed release in password manager beneficiary systems operates through a combination of cryptographic key sharing and timed authorization workflows. Unlike simple password sharing, which grants immediate and often permanent access, time-delayed release introduces a waiting period between the beneficiary's access request and actual vault decryption.
 
@@ -63,7 +63,7 @@ The typical time-delayed release workflow follows these stages:
 4. Grace Period: The delay timer runs, if you actively deny the request, access is blocked
 5. Release Phase: If not denied, the beneficiary gains decrypted access after the timer elapses
 
-Step 2: Set Up Beneficiary Access in Bitwarden
+Step 2 - Set Up Beneficiary Access in Bitwarden
 
 Bitwarden provides trusted beneficiary functionality through its Emergency Access feature. Here's how to configure it:
 
@@ -97,7 +97,7 @@ bw list emergency-access --pending
 
 The JSON output shows the status, delay hours, and whether the relationship is confirmed.
 
-Step 3: Set Up Beneficiary Access in 1Password
+Step 3 - Set Up Beneficiary Access in 1Password
 
 1Password implements a similar concept called "Emergency Kit" and family sharing, but true time-delayed beneficiary access is available through 1Password Families or Teams.
 
@@ -121,7 +121,7 @@ The Emergency Kit Alternative
 
 While this doesn't provide automatic time-delayed release, it gives your beneficiary complete vault access when needed.
 
-Step 4: Implementing Custom Time-Delayed Release with Vaultwarden
+Step 4 - Implementing Custom Time-Delayed Release with Vaultwarden
 
 For developers who want more control, self-hosted Vaultwarden (the open-source Bitwarden server implementation) can be extended with custom time-delayed access logic.
 
@@ -198,13 +198,13 @@ Attack Surface Analysis
 
 Time-delayed beneficiary access introduces several security considerations:
 
-1. Notification Channels: Ensure your email and other notification methods are secure. If an attacker compromises your email, they could intercept denial notifications.
+1. Notification Channels - Ensure your email and other notification methods are secure. If an attacker compromises your email, they could intercept denial notifications.
 
-2. Beneficiary Security: The designated beneficiary's account becomes a high-value target. Require them to enable two-factor authentication and use a strong master password.
+2. Beneficiary Security - The designated beneficiary's account becomes a high-value target. Require them to enable two-factor authentication and use a strong master password.
 
-3. Social Engineering: Attackers might attempt to socially engineer the beneficiary into requesting access prematurely. Educate beneficiaries about legitimate vs. fraudulent access requests.
+3. Social Engineering - Attackers might attempt to socially engineer the beneficiary into requesting access prematurely. Educate beneficiaries about legitimate vs. fraudulent access requests.
 
-4. Service Provider Trust: You trust the password manager to implement the delay correctly. Choose providers with transparent security audits.
+4. Service Provider Trust - You trust the password manager to implement the delay correctly. Choose providers with transparent security audits.
 
 Best Practices
 
@@ -213,7 +213,7 @@ Best Practices
 - Regular Verification: Periodically verify that your beneficiary's contact information remains current
 - Document Instructions: Provide your beneficiary with written instructions on what to do when they need to request access
 
-Step 5: Alternative Approaches
+Step 5 - Alternative Approaches
 
 Secret Sharing Schemes
 

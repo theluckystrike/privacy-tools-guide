@@ -31,7 +31,7 @@ Table of Contents
 - [Recent Security Research (2024-2026)](#recent-security-research-2024-2026)
 - [Cost and Resource Implications](#cost-and-resource-implications)
 - [2026 Network State](#2026-network-state)
-- [Development Ecosystem Comparison](#development-ecosystem-comparison)
+- [Development environment Comparison](#development-environment-comparison)
 - [Mixing Anonymity Networks](#mixing-anonymity-networks)
 - [Legal and Regulatory Status](#legal-and-regulatory-status)
 - [Practical Migration Path](#practical-migration-path)
@@ -88,7 +88,7 @@ Retrieving your onion address:
 
 ```bash
 sudo cat /var/lib/tor/hidden_service/hostname
-Output: yourdomain.onion
+Output - yourdomain.onion
 ```
 
 Using Stem (Python) to control Tor programmatically:
@@ -146,7 +146,7 @@ Use Case Recommendations
 Choose Tor when:
 - Accessing clearnet websites anonymously
 - Building hidden services that need to be accessible from the regular internet
-- Prioritizing a larger, more established ecosystem with better documentation
+- Prioritizing a larger, more established environment with better documentation
 - Requiring standardized protocols (SOCKS5, HTTP CONNECT)
 
 Choose I2P when:
@@ -214,9 +214,9 @@ Recent Security Research (2024-2026)
 
 Recent academic work has identified theoretical vulnerabilities in both networks:
 
-Tor: Studies showed that large-scale BGP route hijacking could enable adversaries to monitor significant traffic portions. The attack is expensive but theoretically feasible for state actors.
+Tor - Studies showed that large-scale BGP route hijacking could enable adversaries to monitor significant traffic portions. The attack is expensive but theoretically feasible for state actors.
 
-I2P: Research on floodfill routers (the I2P equivalent of Tor directory authorities) showed that if an attacker controls many floodfill routers, they gain significant visibility into the network. However, the distributed nature makes this harder than attacking Tor.
+I2P - Research on floodfill routers (the I2P equivalent of Tor directory authorities) showed that if an attacker controls many floodfill routers, they gain significant visibility into the network. However, the distributed nature makes this harder than attacking Tor.
 
 For developers, the practical implication is that no anonymity network is perfect. Choose based on your specific threat model and use additional tools (VPNs, air-gapping) for critical applications.
 
@@ -254,7 +254,7 @@ As of March 2026, both networks remain operational and actively developed. Tor c
 
 The long-term trajectory suggests Tor will remain the dominant anonymous network for web browsing, while I2P specializes in high-latency applications where users accept slower speeds for better traffic analysis resistance.
 
-Development Ecosystem Comparison
+Development environment Comparison
 
 The maturity of development ecosystems differs significantly between the networks.
 
@@ -271,7 +271,7 @@ I2P Development Resources:
 - Less documentation
 - Smaller research community
 
-For developers integrating anonymous networking into applications, Tor's ecosystem provides more tools, examples, and battle-tested libraries.
+For developers integrating anonymous networking into applications, Tor's environment provides more tools, examples, and battle-tested libraries.
 
 Mixing Anonymity Networks
 

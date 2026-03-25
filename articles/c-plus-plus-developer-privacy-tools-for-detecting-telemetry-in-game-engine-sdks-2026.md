@@ -221,15 +221,15 @@ public:
 
 Best Practices for 2026
 
-1. Audit Before Integration: Before adding any game engine SDK to your project, perform a thorough telemetry audit of the library.
+1. Audit Before Integration - Before adding any game engine SDK to your project, perform a thorough telemetry audit of the library.
 
-2. Use Telemetry-Free Builds: When available, use engine builds specifically compiled without telemetry features.
+2. Use Telemetry-Free Builds - When available, use engine builds specifically compiled without telemetry features.
 
-3. Implement User Consent: If you must include telemetry, implement clear user consent mechanisms in your application.
+3. Implement User Consent - If you must include telemetry, implement clear user consent mechanisms in your application.
 
-4. Maintain an Allowlist: Create and maintain an allowlist of approved network endpoints for your application.
+4. Maintain an Allowlist - Create and maintain an allowlist of approved network endpoints for your application.
 
-5. Stay Updated: Game engine telemetry mechanisms evolve; regularly revisit your detection strategies.
+5. Stay Updated - Game engine telemetry mechanisms evolve; regularly revisit your detection strategies.
 
 Related Articles
 

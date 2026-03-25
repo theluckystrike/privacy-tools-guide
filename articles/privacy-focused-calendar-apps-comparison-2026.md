@@ -44,12 +44,12 @@ Table of Contents
 
 1. Proton Calendar
 
-Part of Proton ecosystem (Proton Mail, VPN, Drive). Strong encryption, tight integration with Proton Mail.
+Part of Proton environment (Proton Mail, VPN, Drive). Strong encryption, tight integration with Proton Mail.
 
 Price:
 - Free: Basic calendar (limited features)
-- Proton Standard: €12/month ($13 USD). Mail + Calendar + 200GB storage
-- Proton Family: €24/month (5 users). Shareable calendars
+- Proton Standard - €12/month ($13 USD). Mail + Calendar + 200GB storage
+- Proton Family - €24/month (5 users). Shareable calendars
 
 Encryption:
 - End-to-end encryption for all calendar data
@@ -104,9 +104,9 @@ Integration with Proton Mail:
 - Cost: €12/month minimum
 - Newer than Google Calendar (less feature parity)
 
-Best for: Proton Mail users, privacy-first individuals, encrypted email + calendar combo.
+Best for - Proton Mail users, privacy-first individuals, encrypted email + calendar combo.
 
-Website: https://proton.me/calendar
+Website - https://proton.me/calendar
 
 ---
 
@@ -116,7 +116,7 @@ German privacy app (Hannover-based). Similar to Proton; email + calendar + encry
 
 Price:
 - Free: Basic calendar (limited)
-- Tutanota Standard: €1/month (upgrade ongoing deal). normally €4
+- Tutanota Standard - €1/month (upgrade ongoing deal). normally €4
 - Tutanota Pro: €8/month. Mail + Calendar + Contacts
 - Tutanota Business: €12/month (multiple users)
 
@@ -167,9 +167,9 @@ Inviting Others:
 - Email less feature-rich than Gmail/Proton
 - CalDAV not supported
 
-Best for: Budget-conscious privacy users, open-source advocates, European users.
+Best for - Budget-conscious privacy users, open-source advocates, European users.
 
-Website: https://tutanota.com
+Website - https://tutanota.com
 
 ---
 
@@ -228,16 +228,16 @@ Sharing Calendar:
 - CalDAV/CardDAV support (works with standard clients)
 - Privacy-first philosophy
 
-- Smaller ecosystem (fewer features than Proton/Tutanota)
+- Smaller environment (fewer features than Proton/Tutanota)
 - No email integration (calendar only)
 - Sharing more complex (invite system)
 - Mobile clients not official (Etar third-party)
 - No team features
 - Less polished UX
 
-Best for: Open-source devotees, self-hosting enthusiasts, minimal-feature users, developers.
+Best for - Open-source devotees, self-hosting enthusiasts, minimal-feature users, developers.
 
-Website: https://www.etesync.com
+Website - https://www.etesync.com
 
 ---
 
@@ -274,10 +274,10 @@ Real-World Usage:
 Self-Hosted Nextcloud Setup:
 
 ```bash
-Option 1: Install on your own server
+Option 1 - Install on your own server
 apt-get install nextcloud
 
-Option 2: Docker (easier)
+Option 2 - Docker (easier)
 docker run -d \
   --name nextcloud \
   -p 80:80 \
@@ -297,7 +297,7 @@ Using Nextcloud Calendar:
 6. Configure CalDAV: Get caldav URL
 7. Add to Outlook, Apple Calendar, or Thunderbird using CalDAV
 
-CalDAV Client Setup (Example: Apple Calendar):
+CalDAV Client Setup (Example - Apple Calendar):
 
 Settings → Internet Accounts → Add Account
 - Account type: CalDAV
@@ -309,7 +309,7 @@ Settings → Internet Accounts → Add Account
 - Free (hosting costs are yours)
 - Open source (full transparency, auditable)
 - CalDAV standard (works with any client)
-- Integrated with Nextcloud ecosystem (files, contacts, notes)
+- Integrated with Nextcloud environment (files, contacts, notes)
 - Unlimited storage/calendars/users
 - Privacy by design (you own servers)
 - Powerful for teams/families
@@ -321,9 +321,9 @@ Settings → Internet Accounts → Add Account
 - Sharing less easy than Proton/Tutanota
 - Support relies on community
 
-Best for: Developers, self-hosting enthusiasts, teams with IT support, privacy purists.
+Best for - Developers, self-hosting enthusiasts, teams with IT support, privacy purists.
 
-Website: https://nextcloud.com
+Website - https://nextcloud.com
 
 ---
 
@@ -355,13 +355,13 @@ Limitations:
 - Not meant for team scheduling
 - Privacy over features
 
-Best for: Solo users, privacy extremists, simple event tracking, not business scheduling.
+Best for - Solo users, privacy extremists, simple event tracking, not business scheduling.
 
 ---
 
 6. Self-Hosted Solutions
 
-Option A: Radicale (Ultra-Lightweight)
+Option A - Radicale (Ultra-Lightweight)
 
 ```bash
 Install Radicale (CalDAV/CardDAV server)
@@ -379,7 +379,7 @@ No encryption, no web UI, requires manual setup.
 
 ---
 
-Option B: Baïkal (Feature-Rich)
+Option B - Baïkal (Feature-Rich)
 
 ```bash
 Install Baïkal
@@ -396,7 +396,7 @@ Manual setup, requires PHP/MySQL.
 
 ---
 
-Option C: Nextcloud (Feature-Complete)
+Option C - Nextcloud (Feature-Complete)
 
 See Nextcloud section above. Best option if you want everything.
 
@@ -451,7 +451,7 @@ Choose Standard Notes if:
 Choose Self-Hosted (Radicale/Baïkal) if:
 - You're a developer comfortable with Linux/servers
 - You want zero dependencies
-- Privacy is paramount
+- Privacy is essential
 - You don't need web UI (CalDAV only)
 
 ---

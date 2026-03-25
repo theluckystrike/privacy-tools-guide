@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Threat Model
+Step 1 - Understand the Threat Model
 
 Before implementing any file sharing solution, identify what you're protecting against. Common threats include:
 
@@ -39,7 +39,7 @@ Before implementing any file sharing solution, identify what you're protecting a
 
 Each protection mechanism addresses different threats. End-to-end encryption protects against interception but doesn't hide metadata. Self-hosted solutions give you control over data retention but require proper hardening.
 
-Step 2: Encrypt Before You Share
+Step 2 - Encrypt Before You Share
 
 The foundation of secure file sharing is encrypting files before transmission. This ensures that even if the transport layer is compromised, your data remains unreadable.
 
@@ -84,7 +84,7 @@ curl -X POST https://your-privatebin-instance.com/api/v1/paste \
 
 This approach ensures the server never sees plaintext data, all encryption happens client-side.
 
-Step 3: Self-Hosted File Sharing Solutions
+Step 3 - Self-Hosted File Sharing Solutions
 
 Self-hosted solutions give you complete control over data, compliance, and retention policies.
 
@@ -128,7 +128,7 @@ Enable end-to-end encryption in the admin settings for sensitive documents. This
 
 For production deployments, use reverse proxies with HTTPS (Let's Encrypt), proper database backends (PostgreSQL), and regular backups.
 
-Step 4: Secure Transfer Utilities
+Step 4 - Secure Transfer Utilities
 
 curl with SFTP/SCP
 
@@ -155,11 +155,11 @@ rclone config
 
 Follow prompts to create a crypt backend:
 Choose "n" for New remote
-Name: encrypted-backup
-Storage: crypt
-Remote: your-backup-bucket:/encrypted
-Password: generate strong random password
-Salt: generate random salt
+Name - encrypted-backup
+Storage - crypt
+Remote - your-backup-bucket:/encrypted
+Password - generate strong random password
+Salt - generate random salt
 
 Copy files with automatic encryption
 rclone copy ./local-folder encrypted-backup:documents/
@@ -167,7 +167,7 @@ rclone copy ./local-folder encrypted-backup:documents/
 
 Files are encrypted client-side with AES-256 before storage. The cloud provider sees only opaque blobs.
 
-Step 5: File Sharing Checklist
+Step 5 - File Sharing Checklist
 
 Before sharing sensitive documents, verify these items:
 
@@ -186,7 +186,7 @@ Securely delete files (overwrite before removal)
 shred -u sensitive-file.pdf
 ```
 
-Step 6: Ephemeral vs Persistent File Sharing
+Step 6 - Ephemeral vs Persistent File Sharing
 
 Different scenarios require different retention models. Understanding when to use each approach is crucial:
 
@@ -241,7 +241,7 @@ seafile-cli create-repo Documents
 seafile-cli share-repo Documents your-team@company.com rw
 ```
 
-Step 7: Manage Encryption Keys Operationally
+Step 7 - Manage Encryption Keys Operationally
 
 For team environments, key management becomes critical. Here are tested patterns:
 

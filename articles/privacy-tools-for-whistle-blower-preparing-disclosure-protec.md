@@ -37,7 +37,7 @@ Understanding the Threat Model
 
 Every whistleblower faces a different adversary. Corporate whistleblowers typically deal with internal investigations, IP tracing, and legal intimidation. Government whistleblowers may face national security laws, sophisticated surveillance, and cross-agency coordination. Your threat model determines which tools and practices matter most.
 
-Start by asking: Who is trying to identify you? What data have you already produced that could link you to the disclosure? What physical and digital access points exist between you and the information you shared with journalists or publishers?
+Start by asking - Who is trying to identify you? What data have you already produced that could link you to the disclosure? What physical and digital access points exist between you and the information you shared with journalists or publishers?
 
 Most failed whistleblower operations share common failure points: unencrypted communications, metadata left on documents, reusable passwords, and insufficient separation between personal and whistleblower identities.
 
@@ -131,11 +131,11 @@ For code examples or technical artifacts, use a dedicated development environmen
 
 Practical Workflow for Evidence Preparation
 
-1. Isolate: Use a dedicated device or Tails Linux for all whistleblower activities.
-2. Collect: Pull evidence directly from systems using secure protocols. Avoid screenshots where possible, they contain metadata and can be captured with inference attacks.
-3. Sanitize: Run all files through exiftool or similar metadata removal tools.
-4. Transfer: Use SecureDrop, OnionShare, or encrypted email with GPG to move evidence to journalists.
-5. Destroy: Securely wipe evidence from your devices after confirmation of receipt. Use `shred` or `bleachbit` for permanent deletion:
+1. Isolate - Use a dedicated device or Tails Linux for all whistleblower activities.
+2. Collect - Pull evidence directly from systems using secure protocols. Avoid screenshots where possible, they contain metadata and can be captured with inference attacks.
+3. Sanitize - Run all files through exiftool or similar metadata removal tools.
+4. Transfer - Use SecureDrop, OnionShare, or encrypted email with GPG to move evidence to journalists.
+5. Destroy - Securely wipe evidence from your devices after confirmation of receipt. Use `shred` or `bleachbit` for permanent deletion:
 
 ```bash
 Overwrite file 7 times before deletion
@@ -173,11 +173,11 @@ Establish secure communication channels before sharing sensitive information. Us
 Generate a temporary GPG key pair for journalist communication
 gpg --batch --generate-key <<EOF
 %echo Generating journalist communication key
-Key-Type: RSA
-Key-Length: 4096
-Name-Real: Disclosure Contact
-Name-Email: journalist-contact@protonmail.com
-Expire-Date: 1y
+Key-Type - RSA
+Key-Length - 4096
+Name-Real - Disclosure Contact
+Name-Email - journalist-contact@protonmail.com
+Expire-Date - 1y
 %commit
 %echo Done
 EOF

@@ -132,7 +132,7 @@ Start local proxy
 ss-local -c ~/.ss_config.json -d start
 
 Configure applications to use SOCKS5 proxy on localhost:1080
-Browser proxy: SOCKS5 127.0.0.1:1080
+Browser proxy - SOCKS5 127.0.0.1:1080
 ```
 
 For enhanced security, combine with NaiveProxy:
@@ -173,14 +173,14 @@ VPN_PORT="1194"
 
 echo "Testing VPN connectivity..."
 
-Test 1: DNS resolution
+Test 1 - DNS resolution
 if ! host "$VPN_SERVER" > /dev/null 2>&1; then
     echo "ERROR: DNS blocked - cannot resolve $VPN_SERVER"
     echo "This suggests Roskomnadzor DNS blocking is active"
     exit 1
 fi
 
-Test 2: Port connectivity
+Test 2 - Port connectivity
 timeout 3 bash -c "cat < /dev/null > /dev/tcp/$VPN_SERVER/$VPN_PORT"
 if [ $? -ne 0 ]; then
     echo "ERROR: Port $VPN_PORT blocked - connection timeout"
@@ -188,7 +188,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-Test 3: SSL/TLS handshake
+Test 3 - SSL/TLS handshake
 openssl s_client -connect "$VPN_SERVER:$VPN_PORT" -connect_timeout 3 < /dev/null 2>/dev/null
 if [ $? -ne 0 ]; then
     echo "WARNING: TLS handshake failed - provider may be blocked"
@@ -251,8 +251,8 @@ Start Tor
 systemctl start tor
 
 Configure applications to use Tor
-Firefox: about:preferences → Network → Settings
-Proxy: 127.0.0.1 port 9050 (SOCKS5)
+Firefox - about:preferences → Network → Settings
+Proxy - 127.0.0.1 port 9050 (SOCKS5)
 ```
 
 Connection verification in Tor:
@@ -261,7 +261,7 @@ Connection verification in Tor:
 Verify Tor is working and exit node location
 curl --socks5-hostname 127.0.0.1:9050 https://check.torproject.org
 
-Should show: "Your browser is configured to use Tor"
+Should show - "Your browser is configured to use Tor"
 Exit IP will be non-Russian
 
 For higher anonymity, chain multiple proxies:
@@ -285,21 +285,21 @@ Common VPN signatures DPI detects:
 - DNS over HTTPS patterns
 
 2. Test obfuscation effectiveness
-Shadowsocks: Encrypts entire packet, harder to detect
-NaiveProxy: Looks exactly like HTTPS, nearly impossible to detect
-V2Ray: VMESS protocol, highly obfuscated
-Trojan: Uses TLS wrapper, very stealthy
+Shadowsocks - Encrypts entire packet, harder to detect
+NaiveProxy - Looks exactly like HTTPS, nearly impossible to detect
+V2Ray - VMESS protocol, highly obfuscated
+Trojan - Uses TLS wrapper, very stealthy
 
 3. Perform live detection test
 Connect VPN from within Russia, check connectivity
-If blocks immediately: DPI detected
-If works: Obfuscation effective (for now)
+If blocks immediately - DPI detected
+If works - Obfuscation effective (for now)
 
 4. Monitor TCP/UDP patterns
 tcpdump -i any 'port 51820 or port 443' -A
-WireGuard: Regular-sized packets every ~25 seconds (keepalive)
-Trojan: Randomized timing, variable sizes
-V2Ray: Mixed packet sizes, irregular patterns
+WireGuard - Regular-sized packets every ~25 seconds (keepalive)
+Trojan - Randomized timing, variable sizes
+V2Ray - Mixed packet sizes, irregular patterns
 ```
 
 Provider Audit Tools
@@ -330,7 +330,7 @@ Red flags:
 3. Check IP geolocation
 Verify claimed servers are actually located where stated
 dig $VPN_PROVIDER
-Then check IP: geoiplookup <ip>
+Then check IP - geoiplookup <ip>
 
 4. Review transparency reports
 Download and verify authenticity of any published reports
@@ -349,31 +349,31 @@ For users in Russia requiring maximum security:
 #!/bin/bash
 multi-layer-vpn-setup.sh - Chained proxies for maximum security
 
-Layer 1: Device → Shadowsocks (runs on your device or home network)
-Layer 2: Shadowsocks → VPS in Estonia (rented from European provider)
-Layer 3: Estonia VPS → NaiveProxy server in Singapore
-Layer 4: Singapore → Final destination
+Layer 1 - Device → Shadowsocks (runs on your device or home network)
+Layer 2 - Shadowsocks → VPS in Estonia (rented from European provider)
+Layer 3 - Estonia VPS → NaiveProxy server in Singapore
+Layer 4 - Singapore → Final destination
 
-Step 1: Install and configure local Shadowsocks
+Step 1 - Install and configure local Shadowsocks
 See earlier section
 
-Step 2: Create VPS in Estonia (uses European jurisdiction)
-Provider: DigitalOcean (Frankfurt), Hetzner (Germany), or Linode (EU)
+Step 2 - Create VPS in Estonia (uses European jurisdiction)
+Provider - DigitalOcean (Frankfurt), Hetzner (Germany), or Linode (EU)
 Do NOT use providers with Russian presence
 
 ssh root@vps-estonia.com
 
-Step 3: Install Shadowsocks server on VPS
+Step 3 - Install Shadowsocks server on VPS
 apt-get update && apt-get install shadowsocks-libev
 
 Create config (same as earlier in article)
 
-Step 4: Configure local Shadowsocks client to connect to Estonia VPS
+Step 4 - Configure local Shadowsocks client to connect to Estonia VPS
 Then have NaiveProxy run locally, using Shadowsocks as upstream
 
-Step 5: Connect browser/apps to NaiveProxy (localhost:8443)
+Step 5 - Connect browser/apps to NaiveProxy (localhost:8443)
 
-Traffic path: Device → Shadowsocks (encrypted)
+Traffic path - Device → Shadowsocks (encrypted)
               Shadowsocks → Estonia VPS (encrypted + different ISP)
               VPS → NaiveProxy server (encrypted + different country)
               NaiveProxy → Internet (looks like HTTPS)
@@ -406,22 +406,22 @@ If returns ISP-controlled address (e.g., 195.208.x.x): DNS blocked
 2. IP blocking
 echo "2. Testing IP connectivity:"
 timeout 3 bash -c "cat < /dev/null > /dev/tcp/blocked-server.com/443"
-If timeout: IP blocked by Russian ISP
+If timeout - IP blocked by Russian ISP
 
 3. DPI blocking (hardest to detect)
 echo "3. Testing for packet inspection:"
 curl -v --http1.1 blocked-site.com 2>&1 | grep -i reset
-If "Connection reset": DPI detected and blocked
+If "Connection reset" - DPI detected and blocked
 
 4. Check for ISP injection (MITM)
 echo "4. Checking for ISP MITM:"
 curl https://blocked-site.com -I 2>&1 | grep -i "x-forwarded-for"
-If header present: ISP is proxying traffic
+If header present - ISP is proxying traffic
 
 5. Monitor routing to blocked domains
 echo "5. Tracing route to blocked domain:"
 traceroute blocked-site.com
-Stops at ISP gateway: IP blocking confirmed
+Stops at ISP gateway - IP blocking confirmed
 ```
 
 Recovery If Caught
@@ -434,7 +434,7 @@ If you're detected using prohibited VPN:
 - Use legal VPNs: Some providers are registered with Russian authorities and operate legally
 - Consider Tor: Tor browser is more legally ambiguous than commercial VPNs
 
-Understand the legal ecosystem:
+Understand the legal environment:
 
 ```
 Russia VPN Law Status (2026):

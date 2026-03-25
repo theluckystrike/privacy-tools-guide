@@ -24,7 +24,7 @@ What You Need
 - Root or sudo access on all nodes
 - Ports: UDP 4242 open on the lighthouse
 
-Step 1: Install Nebula
+Step 1 - Install Nebula
 
 Download the latest release on all nodes. On the lighthouse and each team machine:
 
@@ -46,7 +46,7 @@ Verify:
 nebula-cert --version
 ```
 
-Step 2: Create the Certificate Authority
+Step 2 - Create the Certificate Authority
 
 Run this once on a secure machine. not on the lighthouse. The CA key should never leave this machine.
 
@@ -62,7 +62,7 @@ ca.crt  ca.key
 
 Store `ca.key` in an encrypted location (e.g., a KeePassXC database or an offline machine). You only need it when creating new node certificates.
 
-Step 3: Sign Node Certificates
+Step 3 - Sign Node Certificates
 
 Each node needs a certificate with a unique Nebula IP. Use the `10.42.0.0/16` range (or any RFC1918 range you prefer).
 
@@ -85,7 +85,7 @@ The `-groups` flag lets you write firewall rules targeting a set of nodes rather
 
 Each sign command produces `<name>.crt` and `<name>.key`. Distribute each pair securely to the matching machine along with `ca.crt`.
 
-Step 4: Configure the Lighthouse
+Step 4 - Configure the Lighthouse
 
 Create `/etc/nebula/config.yml` on the lighthouse VPS:
 
@@ -140,7 +140,7 @@ sudo cp ca.crt lighthouse.crt lighthouse.key /etc/nebula/
 sudo chmod 600 /etc/nebula/lighthouse.key
 ```
 
-Step 5: Configure Team Member Nodes
+Step 5 - Configure Team Member Nodes
 
 Create `/etc/nebula/config.yml` on Alice's machine (and each other team member, adjusting cert names):
 
@@ -192,7 +192,7 @@ firewall:
 
 The inbound rules here allow ICMP from anyone on the mesh, SSH from any mesh peer, and HTTPS only from nodes in the `servers` group.
 
-Step 6: Start Nebula
+Step 6 - Start Nebula
 
 On the lighthouse and all nodes:
 
@@ -220,7 +220,7 @@ sudo systemctl enable --now nebula
 sudo systemctl status nebula
 ```
 
-Step 7: Verify Connectivity
+Step 7 - Verify Connectivity
 
 From Alice's machine:
 ```bash
@@ -282,7 +282,7 @@ Revoking a Node
 
 Nebula 1.x does not have a CRL mechanism. to revoke access, you must issue a new CA and re-sign all nodes. Plan your team structure so that you can re-roll certificates when a member departs.
 
-One workaround: use short-lived certificates (e.g., 90-day) and automate renewal with a script that requires re-authentication before issuing a new cert.
+One workaround - use short-lived certificates (e.g., 90-day) and automate renewal with a script that requires re-authentication before issuing a new cert.
 
 Related Articles
 

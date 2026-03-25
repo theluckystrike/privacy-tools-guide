@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "SSH Server Hardening Guide"
-description: "Step-by-step SSH server hardening for Linux: disable password auth, configure key-only login, change default port, set up fail2ban, and audit active ses..."
+description: "Step-by-step SSH server hardening for Linux - disable password auth, configure key-only login, change default port, set up fail2ban, and audit active ses..."
 date: 2026-03-21
 author: theluckystrike
 permalink: /ssh-server-hardening-guide/
@@ -19,11 +19,11 @@ Every publicly accessible Linux server with SSH open on port 22 is scanned by au
 
 This guide covers the essential hardening steps for OpenSSH on a Linux server, ordered from highest to lowest impact.
 
-Step 0: Back Up Working Access Before Starting
+Step 0 - Back Up Working Access Before Starting
 
 Before making any changes, ensure you have an alternative way to access the server (console access through your hosting provider, a second SSH session, etc.). Locking yourself out is a real risk when changing SSH configuration.
 
-Step 1: Set Up SSH Key Authentication
+Step 1 - Set Up SSH Key Authentication
 
 Password authentication should be completely disabled. SSH key authentication is both more secure and more convenient.
 
@@ -53,7 +53,7 @@ Test key authentication before disabling passwords:
 ssh -i ~/.ssh/id_ed25519 user@server-ip
 ```
 
-Step 2: Harden sshd_config
+Step 2 - Harden sshd_config
 
 Edit the main SSH server configuration file:
 
@@ -127,7 +127,7 @@ If no errors:
 sudo systemctl reload sshd
 ```
 
-Step 3: Change the Default SSH Port
+Step 3 - Change the Default SSH Port
 
 Moving SSH off port 22 stops automated scans from the vast majority of bots (which only scan well-known ports). This is not a security control. a targeted attacker will port-scan and find your service. but it dramatically reduces noise in your logs and lowers the attack surface for opportunistic attacks.
 
@@ -159,7 +159,7 @@ Host myserver
     IdentityFile ~/.ssh/id_ed25519
 ```
 
-Step 4: Install and Configure fail2ban
+Step 4 - Install and Configure fail2ban
 
 fail2ban monitors SSH logs and bans IPs that have too many failed authentication attempts:
 
@@ -194,12 +194,12 @@ Check ban status
 sudo fail2ban-client status sshd
 ```
 
-Step 5: Configure a Host-Based Firewall
+Step 5 - Configure a Host-Based Firewall
 
 Only allow SSH connections from trusted IP addresses where possible:
 
 ```bash
-UFW: allow SSH only from your home IP
+UFW - allow SSH only from your home IP
 sudo ufw allow from 203.0.113.10 to any port 2222 proto tcp
 
 Deny SSH from all other IPs
@@ -208,7 +208,7 @@ sudo ufw deny 2222/tcp
 
 If you have a dynamic IP, this isn't practical. In that case, rely on fail2ban and key-only auth.
 
-Step 6: Audit Current SSH Sessions and Authorized Keys
+Step 6 - Audit Current SSH Sessions and Authorized Keys
 
 Periodically check who is logged in and what keys have access:
 
@@ -236,7 +236,7 @@ Check banned IPs from fail2ban
 sudo fail2ban-client status sshd | grep "Banned IP"
 ```
 
-Step 7: Enable SSH Certificates (Advanced)
+Step 7 - Enable SSH Certificates (Advanced)
 
 For environments with multiple servers and users, SSH certificates are more manageable than distributing public keys:
 

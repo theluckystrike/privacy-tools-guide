@@ -37,18 +37,18 @@ Use this template as a starting point for your DSAR handling process:
 ```markdown
 Data Subject Access Request Response
 
-Request ID: {{request_id}}
-Date Received: {{received_date}}
-Requester: {{requester_name}}
-Email: {{requester_email}}
+Request ID - {{request_id}}
+Date Received - {{received_date}}
+Requester - {{requester_name}}
+Email - {{requester_email}}
 
 Personal Data Found
 
 {% for data_category in personal_data %}
 {{data_category.category_name}}
-- Data: {{data_category.content}}
-- Source: {{data_category.source}}
-- Retention: {{data_category.retention_period}}
+- Data - {{data_category.content}}
+- Source - {{data_category.source}}
+- Retention - {{data_category.retention_period}}
 {% endfor %}
 
 Processing Activities

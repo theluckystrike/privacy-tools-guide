@@ -35,13 +35,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Remote Setup Challenge
+Step 1 - Understand the Remote Setup Challenge
 
 Setting up a password manager for someone who isn't technically inclined presents unique obstacles. Your parent may struggle with complex interfaces, password generation, or remembering master passwords. The solution must minimize their cognitive load while maximizing security.
 
 Most password managers offer family or team plans that allow shared vaults. This architecture lets you create and manage items on their behalf while granting them independent access. The key is selecting a manager with sharing features and a family plan that fits your budget.
 
-Step 2: Select the Right Password Manager
+Step 2 - Select the Right Password Manager
 
 For remote setup scenarios, two options stand out: Bitwarden and 1Password. Both offer family plans with shared vaults, but they differ in deployment flexibility.
 
@@ -60,7 +60,7 @@ docker run -d --name bitwarden \
 
 For this guide, I'll focus on Bitwarden because the web vault interface is straightforward, and the CLI enables automation that simplifies remote management.
 
-Step 3: Initial Account Creation
+Step 3 - Initial Account Creation
 
 Create the family organization first, then add your parent's account. You'll need to invite them via email, which they must accept to activate their account.
 
@@ -73,7 +73,7 @@ Then invite family members via web interface or API
 
 The invitation email contains a link your parent must click. If they struggle with email, you can create the account entirely yourself and set a temporary master password, then guide them through changing it during your first video call.
 
-Step 4: Configure Shared Vaults
+Step 4 - Configure Shared Vaults
 
 Create a dedicated vault for shared credentials, accounts you manage on their behalf, such as banking, healthcare portals, or utility services. This separates items you control from their personal passwords.
 
@@ -89,7 +89,7 @@ In practice, most family plans allow vault creation through the web interface. C
 - Utilities: Electric, gas, water, internet
 - Government: Social Security, Medicare
 
-Step 5: Populating Credentials Remotely
+Step 5 - Populating Credentials Remotely
 
 Once the vault exists, add items programmatically or through the web interface. For banking and healthcare accounts, include the URL, username, and password. Add secure notes with recovery instructions.
 
@@ -108,7 +108,7 @@ bw generate -l 20 -usn
 
 When adding sensitive accounts, record the recovery phone number and security questions in the notes field. This information becomes critical if your parent loses access to their master password.
 
-Step 6: Master Password Strategy
+Step 6 - Master Password Strategy
 
 The master password is the weakest point in any password manager setup for elderly users. They must remember it, but it must also be secure. Avoid overly complex passwords that lead to lockouts.
 
@@ -130,7 +130,7 @@ Add your email as emergency contact with waiting period (e.g., 24 hours)
 
 This gives you a last-resort way to access their vault if they're unreachable and you've exhausted other recovery options.
 
-Step 7: Install and Configuring the App
+Step 7 - Install and Configuring the App
 
 Guide your parent through installing the browser extension and mobile app. Use a video call to walk them through the process:
 
@@ -146,7 +146,7 @@ https://vault.bitwarden.com/#/settings/extensions
 
 For mobile, the Bitwarden app supports fingerprint unlock, which eliminates the need to type the master password repeatedly. This significantly improves the user experience for elderly parents.
 
-Step 8: Establishing a Routine
+Step 8 - Establishing a Routine
 
 Technical setup is only half the battle. Create a routine for password management:
 
@@ -175,13 +175,13 @@ Troubleshooting Common Issues
 
 Your parent will inevitably encounter issues. Prepare for these scenarios:
 
-Locked out: If they forget the master password and can't recover via emergency access, the vault is unrecoverable. This is intentional, it's the trade-off for zero-knowledge security. Prevent this by testing recovery periodically.
+Locked out - If they forget the master password and can't recover via emergency access, the vault is unrecoverable. This is intentional, it's the trade-off for zero-knowledge security. Prevent this by testing recovery periodically.
 
-Auto-fill not working: Browser updates sometimes disable extensions. Have them check if the extension is enabled and grant permissions for specific sites.
+Auto-fill not working - Browser updates sometimes disable extensions. Have them check if the extension is enabled and grant permissions for specific sites.
 
-Sync issues: Mobile apps must sync after adding items. Ensure they have internet connectivity and explicitly sync if items appear missing.
+Sync issues - Mobile apps must sync after adding items. Ensure they have internet connectivity and explicitly sync if items appear missing.
 
-Step 9: Final Setup Checklist
+Step 9 - Final Setup Checklist
 
 Before considering the setup complete, verify:
 
@@ -222,44 +222,44 @@ Bitwarden wins for remote elderly setup because:
 
 Avoid LastPass for new elderly setups because recent security incidents and complexity in their interface make it less suitable for vulnerable users.
 
-Step 10: Common Setup Mistakes (and How to Avoid Them)
+Step 10 - Common Setup Mistakes (and How to Avoid Them)
 
 Developers new to setting up password managers for elderly relatives make predictable mistakes. Learning from these errors saves frustration:
 
-Mistake 1: Choosing Too Complex a Master Password
+Mistake 1 - Choosing Too Complex a Master Password
 
 Your parent forgets it after a month, then gets locked out for weeks because recovery takes time. The password manager's security is useless if access is lost.
 
-Solution: Use a passphrase they'll recognize. "MyGrandchildName2024Birthday" is memorable and strong. Write it in two places: a locked drawer at home and with you (encrypted or split with a trusted family member).
+Solution - Use a passphrase they'll recognize. "MyGrandchildName2024Birthday" is memorable and strong. Write it in two places: a locked drawer at home and with you (encrypted or split with a trusted family member).
 
-Mistake 2: Enabling Too Many Security Features at Once
+Mistake 2 - Enabling Too Many Security Features at Once
 
 Your parent's first experience is 2FA codes, recovery emails, and emergency access setup. Overwhelmed, they skip steps or make mistakes.
 
-Solution: Start with just password manager + master password. Add 2FA after they're comfortable logging in. Add emergency access a month later. Complexity compounds; stagger it.
+Solution - Start with just password manager + master password. Add 2FA after they're comfortable logging in. Add emergency access a month later. Complexity compounds; stagger it.
 
-Mistake 3: Not Testing Recovery Before an Emergency
+Mistake 3 - Not Testing Recovery Before an Emergency
 
 You set up emergency access six months ago. When your parent forgets their password, you discover emergency access requires a 24-hour wait period, and you don't remember how to initiate it. Panic ensues.
 
-Solution: Every 6 months, intentionally test your recovery procedure. Set a calendar reminder, deliberately forget the master password, and walk through recovery. Document any stumbles.
+Solution - Every 6 months, intentionally test your recovery procedure. Set a calendar reminder, deliberately forget the master password, and walk through recovery. Document any stumbles.
 
-Mistake 4: Sharing the Master Password in Plain Text
+Mistake 4 - Sharing the Master Password in Plain Text
 
 "I texted your master password." Now it's in your parent's phone, your message history, and possibly their email if they forwarded it somewhere. Compromised.
 
-Solution: Never transmit the master password digitally except through encrypted channels. If you must communicate it, use:
+Solution - Never transmit the master password digitally except through encrypted channels. If you must communicate it, use:
 - Signal or WhatsApp (encrypted messaging)
 - GPG encryption
 - A secure password sharing service (Tresorit, OneSafe)
 
 For initial setup, communicate it in person or via voice call, never written text.
 
-Mistake 5: Not Documenting Recovery Information
+Mistake 5 - Not Documenting Recovery Information
 
 Your parent passes away. Their estate includes financial accounts, insurance, digital assets. Your sibling asks, "How do we access their accounts?" You realize you never wrote down recovery details and the passwords are locked in a manager only they could access.
 
-Solution: Keep a separate document (locked in your own password manager or a safe deposit box) with:
+Solution - Keep a separate document (locked in your own password manager or a safe deposit box) with:
 - Master password (encrypted)
 - Recovery email address
 - Account username
@@ -268,7 +268,7 @@ Solution: Keep a separate document (locked in your own password manager or a saf
 
 Update this document quarterly.
 
-Step 11: Handling Multiple Accounts Across Platforms
+Step 11 - Handling Multiple Accounts Across Platforms
 
 Your parent probably has accounts scattered across decades of platforms. Some companies shut down, some changed logins, some have outdated recovery options.
 
@@ -298,7 +298,7 @@ Create a three-tier structure in the password manager:
 
 Only actively maintain Critical and Important. Legacy accounts can be cleaned up gradually without urgency.
 
-Step 12: Monitor and Maintenance Schedule
+Step 12 - Monitor and Maintenance Schedule
 
 Set recurring calendar reminders to maintain the system. Neglected password managers become useless:
 
@@ -324,7 +324,7 @@ When triggered by events:
 - Platform changes (Gmail 2FA update): adapt master password setup
 - Device loss: revoke old device access, add new devices
 
-Step 13: Assistance for Parents Who Struggle with Technology
+Step 13 - Assistance for Parents Who Struggle with Technology
 
 Some elderly parents resist adopting any new technology. Here's how to bridge that gap:
 
@@ -346,7 +346,7 @@ Offer regular "tech office hours":
 Accept their workflow:
 If they prefer to keep some passwords written in a notebook, perhaps less frequently used accounts, don't force everything into the manager. Security with adoption beats perfect security that's ignored.
 
-Step 14: Special Handling for Accounts Without Recovery Options
+Step 14 - Special Handling for Accounts Without Recovery Options
 
 Some older accounts (created in the 1990s) lack modern recovery mechanisms. No secondary email, no phone number, no security questions set up.
 
@@ -363,9 +363,9 @@ Example entry in password manager:
 ```
 [Bank Account - First Community Bank]
 
-URL: https://firstcommunitybank.com/login
-Username: ParentName@email.com
-Password: [generated strong password]
+URL - https://firstcommunitybank.com/login
+Username - ParentName@email.com
+Password - [generated strong password]
 
 NOTES:
 - LEGACY ACCOUNT (created 1998, no 2FA option)
@@ -377,7 +377,7 @@ NOTES:
 
 This entry tells you everything needed to recover access if your parent's password is lost.
 
-Step 15: Handling Account Sharing Between Spouses
+Step 15 - Handling Account Sharing Between Spouses
 
 If both parents use the same password manager, account access needs clear rules:
 

@@ -128,7 +128,7 @@ Before relying on your inheritance plan, test the entire process. Create a small
 
 Regular testing catches configuration errors and ensures all parties understand their roles. Update your documentation and configuration as wallet software evolves.
 
-Advanced: Shamir Secret Sharing for Key Distribution
+Advanced - Shamir Secret Sharing for Key Distribution
 
 For additional security, consider splitting individual keys using Shamir Secret Sharing (SSS). This technique divides a secret into N shares, requiring M shares to reconstruct the original. You can apply SSS to your seed phrases, distributing shares across locations and people.
 
@@ -136,7 +136,7 @@ For additional security, consider splitting individual keys using Shamir Secret 
 Using the 'ssss' package to split a seed phrase
 Split a 24-word seed into 3 shares, requiring 2 to reconstruct
 ssss-split -s 2 -n 3
-Enter your secret: seed phrase word1 word2 ... word24
+Enter your secret - seed phrase word1 word2 ... word24
 ```
 
 Each family member or lawyer receives a share. If two combine their shares, they can reconstruct the seed. This adds another layer of security, neither your lawyer nor a single family member can access funds independently.
@@ -183,29 +183,29 @@ Create a step-by-step workflow document your executor can follow when coordinati
 ```
 BITCOIN INHERITANCE RECOVERY WORKFLOW
 
-Step 1: Verify death and legal status
+Step 1 - Verify death and legal status
 - Obtain certified death certificate
 - Confirm probate or estate proceedings status
 - Contact all listed keyholders
 
-Step 2: Coordinate signature gathering
+Step 2 - Coordinate signature gathering
 - Contact keyholder 1 (Family member): Request signature authority
 - Contact keyholder 2 (Lawyer): Provide probate documentation
 - Confirm both parties understand inheritance requirements
 
-Step 3: Technical recovery
+Step 3 - Technical recovery
 - Download Sparrow Wallet from https://sparrowwallet.com
 - Import multisig wallet descriptor from documented backup
 - Create unsigned transaction for fund distribution
 - Send transaction file to keyholder 1 for first signature
 
-Step 4: Transaction completion
+Step 4 - Transaction completion
 - Collect signed transaction from keyholder 1
 - Pass to keyholder 2 for second signature
 - Broadcast completed transaction to Bitcoin network
 - Verify transaction confirmation (2-10 minutes)
 
-Step 5: Fund distribution
+Step 5 - Fund distribution
 - Move recovered Bitcoin to beneficiary addresses
 - Document all transactions for estate tax purposes
 ```

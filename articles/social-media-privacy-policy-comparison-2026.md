@@ -34,7 +34,7 @@ Mastodon (federated) collects what your instance admin configures. Most instance
 | LinkedIn | Moderate | Full | 30 days | No |
 | Mastodon | None | Full | Immediate | No (public posts) |
 
-For privacy-conscious users: Mastodon eliminates ad tracking entirely. For platforms you must use professionally, limit data exposure with dedicated browsers, separate email addresses, and minimal profile information. Use data export tools regularly to maintain local copies.
+For privacy-conscious users - Mastodon eliminates ad tracking entirely. For platforms you must use professionally, limit data exposure with dedicated browsers, separate email addresses, and minimal profile information. Use data export tools regularly to maintain local copies.
 
 Related Articles
 

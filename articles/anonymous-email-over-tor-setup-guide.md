@@ -80,7 +80,7 @@ Configuring Thunderbird for Tor
 
 Thunderbird provides a graphical interface with full SOCKS5 proxy support. This example uses a Proton Mail account, but the configuration applies to any IMAP/SMTP provider.
 
-Step 1: Configure Proxy Settings
+Step 1 - Configure Proxy Settings
 
 1. Open Thunderbird → Settings → Connection Settings
 2. Select Manual Proxy Configuration
@@ -91,15 +91,15 @@ Step 1: Configure Proxy Settings
 
 This ensures all DNS queries for mail servers route through Tor, preventing DNS-based traffic analysis.
 
-Step 2: Configure Email Account
+Step 2 - Configure Email Account
 
 Add your email account normally, then modify the server settings:
 
 ```
-IMAP Server: 127.0.0.1
-IMAP Port: 1143 (Proton Mail onion) or 993 (standard)
-SMTP Server: 127.0.0.1
-SMTP Port: 1025 (Proton Mail onion) or 465/587 (standard)
+IMAP Server - 127.0.0.1
+IMAP Port - 1143 (Proton Mail onion) or 993 (standard)
+SMTP Server - 127.0.0.1
+SMTP Port - 1025 (Proton Mail onion) or 465/587 (standard)
 ```
 
 For providers without onion services, you connect through the Tor network to their standard clearnet servers. The traffic still routes through Tor, but exits through a Tor exit node before reaching the email server.

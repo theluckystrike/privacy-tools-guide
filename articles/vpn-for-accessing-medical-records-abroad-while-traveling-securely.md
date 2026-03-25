@@ -59,7 +59,7 @@ Key Security Concerns
 
 1. Public WiFi Vulnerabilities: Hotel lobbies, airports, and cafes often have unsecured networks where data can be intercepted
 2. Geographic Restrictions: Many patient portals block access from foreign IP addresses, treating overseas connections as suspicious activity
-3. Data Privacy Laws: Different countries have varying regulations on health data handling. including laws that permit government interception without the protections you have at home
+3. Data Privacy Laws - Different countries have varying regulations on health data handling. including laws that permit government interception without the protections you have at home
 4. Intermediary Servers: Your data may pass through multiple servers without end-to-end encryption, making it visible to infrastructure operators
 
 How a VPN Protects Your Medical Data
@@ -84,7 +84,7 @@ Not all VPNs are appropriate for medical record access. Free VPNs are particular
 Key criteria for healthcare VPN selection:
 
 - Audited no-log policy: The provider should have a published third-party audit confirming they do not retain connection logs, DNS queries, or IP addresses
-- Jurisdiction: Providers based in the US, UK, Australia, Canada, or New Zealand operate under "Five Eyes" intelligence sharing agreements. For maximum protection, choose Swiss, Icelandic, or Panama-based providers
+- Jurisdiction - Providers based in the US, UK, Australia, Canada, or New Zealand operate under "Five Eyes" intelligence sharing agreements. For maximum protection, choose Swiss, Icelandic, or Panama-based providers
 - Warrant canary: Some providers publish regular statements confirming they have not received government data requests. Absence of the canary signals a request was received
 - Open-source clients: Providers with open-source client code allow security researchers to verify the implementation
 
@@ -92,7 +92,7 @@ Providers that meet these criteria for medical-data use include Mullvad (based i
 
 Setting Up Your VPN for Healthcare Access
 
-Step 1: Choose a Privacy-Focused VPN
+Step 1 - Choose a Privacy-Focused VPN
 
 Select a VPN provider that:
 - Has a strict no-log policy verified by third-party audit
@@ -101,7 +101,7 @@ Select a VPN provider that:
 - Supports multiple devices including mobile
 - Has kill switch functionality to prevent data leaks if the VPN connection drops
 
-Step 2: Configure Your Device
+Step 2 - Configure Your Device
 
 ```bash
 Installing and configuring WireGuard on Linux
@@ -111,7 +111,7 @@ sudo wg-quick up wg0
 
 On mobile devices, download the official VPN app, configure it with the server profile provided by your VPN service, and enable the kill switch before connecting to any network where you'll access healthcare data.
 
-Step 3: Verify Your Connection Before Accessing Records
+Step 3 - Verify Your Connection Before Accessing Records
 
 Before navigating to your patient portal, verify your VPN is active and your IP address appears to be in your home country:
 
@@ -119,7 +119,7 @@ Before navigating to your patient portal, verify your VPN is active and your IP 
 2. Check for DNS leaks at dnsleaktest.com. your DNS queries should resolve through your VPN provider's servers, not your local ISP
 3. Ensure the healthcare portal shows the HTTPS padlock icon before logging in
 
-Step 4: Access Your Patient Portal
+Step 4 - Access Your Patient Portal
 
 1. Connect to a VPN server in your home country
 2. Navigate to your healthcare provider's patient portal
@@ -186,7 +186,7 @@ The EU's GDPR provides strong protections for EU residents' health data, but the
 
 Troubleshooting Common Issues
 
-Problem: Portal Blocks VPN Connection
+Problem - Portal Blocks VPN Connection
 
 Solution:
 - Try connecting to different server locations within your home country
@@ -194,14 +194,14 @@ Solution:
 - Contact your VPN provider for server recommendations specifically for healthcare portal access
 - Contact the healthcare provider's IT support to whitelist your VPN's IP ranges
 
-Problem: Can't Verify Identity
+Problem - Can't Verify Identity
 
 Solution:
 - Ensure your VPN IP isn't flagged as a data center or proxy IP. some portals block data center IP ranges
 - Try accessing during off-peak hours when fraud detection systems may be less aggressive
 - Contact healthcare provider's IT support and explain you're accessing from abroad with a VPN
 
-Problem: Slow Connection to Medical Systems
+Problem - Slow Connection to Medical Systems
 
 Solution:
 - Connect to VPN servers geographically close to the healthcare provider's data centers
@@ -321,7 +321,7 @@ Two-Factor Authentication Setup for Healthcare
 Healthcare accounts often require 2FA. Configure correctly before travel:
 
 ```bash
-Recommended: Use authenticator app (not SMS)
+Recommended - Use authenticator app (not SMS)
 Install on both phone and backup device
 
 Generate backup codes

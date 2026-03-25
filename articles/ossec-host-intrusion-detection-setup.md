@@ -274,7 +274,7 @@ OSSEC logs grow fast:
 }
 ```
 
-Agent Mode: Monitoring Multiple Servers
+Agent Mode - Monitoring Multiple Servers
 
 For infrastructure with multiple servers, run OSSEC in manager/agent mode. The manager receives all alerts centrally; agents run on each monitored host.
 
@@ -283,7 +283,7 @@ On the manager server:
 ```bash
 Install OSSEC as manager
 sudo ./install.sh
-Choose: server
+Choose - server
 
 Add an agent
 sudo /var/ossec/bin/manage_agents
@@ -299,8 +299,8 @@ On each agent host:
 ```bash
 Install OSSEC as agent
 sudo ./install.sh
-Choose: agent
-Manager IP: 10.0.0.5 (your manager's IP)
+Choose - agent
+Manager IP - 10.0.0.5 (your manager's IP)
 
 Import the agent key
 sudo /var/ossec/bin/manage_agents
@@ -311,7 +311,7 @@ sudo /var/ossec/bin/ossec-control start
 Verify the agent connected
 On the manager:
 sudo /var/ossec/bin/agent_control -l
-ID: 001, Name: web01, IP: 10.0.1.10, Status: Active
+ID: 001, Name - web01, IP: 10.0.1.10, Status: Active
 ```
 
 Firewall rule needed on the manager:

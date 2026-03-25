@@ -36,7 +36,7 @@ sudo systemctl enable ssh
 sudo systemctl start ssh
 ```
 
-Step 1: Install Docker and Docker Compose
+Step 1 - Install Docker and Docker Compose
 
 Docker simplifies Nextcloud installation by isolating dependencies and enabling straightforward updates. Install Docker using the convenience script:
 
@@ -61,7 +61,7 @@ docker --version
 docker-compose --version
 ```
 
-Step 2: Configure External Storage
+Step 2 - Configure External Storage
 
 Nextcloud needs persistent storage for data and the database. Mount your external drive and set proper permissions:
 
@@ -87,10 +87,10 @@ sudo blkid /dev/sda1
 
 Edit fstab
 sudo nano /etc/fstab
-Add: UUID=your-uuid-here /mnt/nextcloud-data ext4 defaults,nofail 0 2
+Add - UUID=your-uuid-here /mnt/nextcloud-data ext4 defaults,nofail 0 2
 ```
 
-Step 3: Docker Compose Configuration
+Step 3 - Docker Compose Configuration
 
 Create a directory for Nextcloud and write your compose file:
 
@@ -166,7 +166,7 @@ docker-compose ps
 docker-compose logs -f app
 ```
 
-Step 4: Completing Nextcloud Setup
+Step 4 - Completing Nextcloud Setup
 
 Access Nextcloud through your browser at `http://192.168.1.100:8080` (replace with your Pi's IP). Create an admin account with a strong password. The initial setup takes a few minutes.
 
@@ -176,7 +176,7 @@ After installation, install essential apps from the app store:
 - Onlyoffice or Collabora. document editing
 - Tasks. todo management
 
-Step 5: Reverse Proxy with Nginx
+Step 5 - Reverse Proxy with Nginx
 
 Running Nextcloud behind a reverse proxy enables HTTPS and handles multiple services. Install Nginx:
 
@@ -299,7 +299,7 @@ docker exec --user www-data nextcloud_app php occ db:convert-filecache-bigint
 docker exec --user www-data nextcloud_app php occ maintenance:repair
 ```
 
-Step 6: Security Hardening
+Step 6 - Security Hardening
 
 Protect your Nextcloud instance with these measures:
 
@@ -367,10 +367,10 @@ Schedule daily backups with cron:
 
 ```bash
 crontab -e
-Add: 0 2 * * * /path/to/backup.sh
+Add - 0 2 * * * /path/to/backup.sh
 ```
 
-Step 7: Updating Nextcloud
+Step 7 - Updating Nextcloud
 
 Regular updates patch security vulnerabilities. Before updating, create a backup:
 

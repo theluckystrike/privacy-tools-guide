@@ -226,7 +226,7 @@ For power users concerned about insurance data collection:
 2. Review MIB reports annually for inaccuracies
 3. Request privacy notices in writing before purchasing insurance
 4. Check telematics program terms before installing auto insurance apps
-5. Consider pay-per-mile insurance if privacy is paramount (though this shares more location data)
+5. Consider pay-per-mile insurance if privacy is essential (though this shares more location data)
 
 Understanding these collection practices helps you make informed decisions about what data you share and how you structure your insurance relationships.
 

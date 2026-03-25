@@ -113,7 +113,7 @@ Providers with Japanese server locations that have historically worked well for 
 | Sakura Internet | ISP-adjacent | ~$5/mo | Japanese domestic provider, better acceptance |
 | ConoHa | ISP-adjacent | ~$4/mo | Popular among Japanese residents abroad |
 
-Sakura Internet and ConoHa are Japanese-headquartered providers. Their IP allocations originate from within Japan's domestic ISP ecosystem rather than large global cloud providers, which significantly reduces the chance of being flagged as a VPN exit node.
+Sakura Internet and ConoHa are Japanese-headquartered providers. Their IP allocations originate from within Japan's domestic ISP environment rather than large global cloud providers, which significantly reduces the chance of being flagged as a VPN exit node.
 
 DNS Configuration for Streaming Services
 
@@ -216,9 +216,9 @@ Free trial access on AbemaTV does not require a payment method, making it the ea
 
 Troubleshooting Common Issues
 
-Problem: Streaming service detects VPN usage despite active tunnel.
+Problem - Streaming service detects VPN usage despite active tunnel.
 
-Solution: Check for WebRTC leaks in browsers:
+Solution - Check for WebRTC leaks in browsers:
 
 ```javascript
 // Disable WebRTC in Firefox
@@ -227,18 +227,18 @@ media.peerconnection.enabled = false
 
 WebRTC can expose your real IP address even through a VPN tunnel, because WebRTC uses STUN servers to discover and communicate the local IP. Disabling it entirely is the safest fix for streaming use cases where you do not need real-time communication.
 
-Problem: Buffering on high-definition streams.
+Problem - Buffering on high-definition streams.
 
-Solution: Test throughput and adjust protocol:
+Solution - Test throughput and adjust protocol:
 
 ```bash
 Test Japanese server performance
 iperf3 -c jp-server.example.com -R
 ```
 
-Problem: Service works initially but stops after 30-60 minutes.
+Problem - Service works initially but stops after 30-60 minutes.
 
-Solution: Some services track session duration and trigger re-verification after extended viewing. Refreshing the player page while maintaining the VPN connection typically resolves this without re-authentication.
+Solution - Some services track session duration and trigger re-verification after extended viewing. Refreshing the player page while maintaining the VPN connection typically resolves this without re-authentication.
 
 ---
 

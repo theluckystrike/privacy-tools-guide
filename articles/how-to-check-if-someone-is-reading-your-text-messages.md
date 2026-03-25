@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand SMS Security Architecture
+Step 1 - Understand SMS Security Architecture
 
 Before detecting interception, you need to understand how SMS works. When you send a text message, it passes through several points:
 
@@ -43,7 +43,7 @@ At each point, the message exists in plaintext. Cellular carriers and anyone wit
 - Attackers who compromise network equipment
 - Someone with physical access to your phone who configured message forwarding
 
-Step 2: Signs Someone May Be Reading Your Messages
+Step 2 - Signs Someone May Be Reading Your Messages
 
 Watch for these indicators that suggest unauthorized access:
 
@@ -62,9 +62,9 @@ Settings Changes
 - Unexpected auto-reply or out-of-office responses to your texts
 - New apps installed that request SMS permissions
 
-Step 3: Technical Methods to Check for Interception
+Step 3 - Technical Methods to Check for Interception
 
-Method 1: Inspect Message Forwarding Rules
+Method 1 - Inspect Message Forwarding Rules
 
 On Android, you can check if message forwarding is enabled:
 
@@ -83,7 +83,7 @@ On iOS:
 2. Check "Send as SMS" and "iMessage" settings
 3. Look for any unknown forwarding destinations
 
-Method 2: Monitor Network Traffic
+Method 2 - Monitor Network Traffic
 
 For developers, you can capture and analyze network traffic to detect anomalies:
 
@@ -115,7 +115,7 @@ def analyze_message_timestamps():
     # Your analysis logic here
 ```
 
-Method 3: Check for Spyware with Code Analysis
+Method 3 - Check for Spyware with Code Analysis
 
 If you suspect spyware, examine installed packages:
 
@@ -130,20 +130,20 @@ Examine running services
 adb shell dumpsys activity services | grep -i sms
 ```
 
-Method 4: Use USSD Codes for Carrier Information
+Method 4 - Use USSD Codes for Carrier Information
 
 Various USSD codes can reveal forwarding settings:
 
 ```bash
 Check call forwarding status (may vary by carrier)
-USSD: *#21# - Check all call forwarding
-USSD: *#62# - Check when phone is unreachable
-USSD: ##002# - Cancel all conditional forwarding
+USSD - *#21# - Check all call forwarding
+USSD - *#62# - Check when phone is unreachable
+USSD - ##002# - Cancel all conditional forwarding
 ```
 
 These codes work on most GSM networks but may differ by carrier.
 
-Step 4: Prevention and Hardening
+Step 4 - Prevention and Hardening
 
 For Android Users
 
@@ -198,7 +198,7 @@ class SecureSmsReceiver : BroadcastReceiver() {
 }
 ```
 
-Step 5: What to Do If You Detect Compromise
+Step 5 - What to Do If You Detect Compromise
 
 If you determine someone is reading your messages:
 
@@ -269,13 +269,13 @@ class SS7Vulnerability:
         }
 ```
 
-Step 6: Device Security Assessment
+Step 6 - Device Security Assessment
 
 Perform a full security audit of your device:
 
 ```bash
 #!/bin/bash
-Comprehensive device security assessment
+complete device security assessment
 
 security_audit() {
   echo "=== DEVICE SECURITY ASSESSMENT ==="
@@ -320,7 +320,7 @@ security_audit() {
 security_audit
 ```
 
-Step 7: SMS Encryption Alternatives
+Step 7 - SMS Encryption Alternatives
 
 Since SMS itself cannot be encrypted, use these alternatives:
 
@@ -351,7 +351,7 @@ sms_alternatives_comparison = {
         'metadata_protection': 'Moderate',
         'open_source': False,
         'platform': ['iOS', 'macOS'],
-        'note': 'Good for Apple users, requires Apple ecosystem'
+        'note': 'Good for Apple users, requires Apple environment'
     },
     'ProtonMail': {
         'encryption': 'End-to-end',
@@ -361,7 +361,7 @@ sms_alternatives_comparison = {
 }
 ```
 
-Step 8: Detecting Specific Spyware
+Step 8 - Detecting Specific Spyware
 
 Different spyware leaves different fingerprints:
 
@@ -403,7 +403,7 @@ class SpywareDetection:
         }
 ```
 
-Step 9: Legal and Regulatory Framework
+Step 9 - Legal and Regulatory Framework
 
 Understanding the legal aspects of SMS interception:
 
@@ -443,7 +443,7 @@ Reporting Options:
   - Data Protection Authority (EU)
 ```
 
-Step 10: Create a Recovery Plan
+Step 10 - Create a Recovery Plan
 
 If your SMS has been compromised:
 
@@ -477,7 +477,7 @@ Ongoing (Weeks 1+):
   - [ ] Consider consulting security professional
 ```
 
-Step 11: Professional Help Resources
+Step 11 - Professional Help Resources
 
 When to seek professional help:
 

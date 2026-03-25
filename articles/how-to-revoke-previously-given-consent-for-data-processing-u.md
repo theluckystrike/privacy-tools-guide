@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Legal Foundation: GDPR Article 7(3)
+Step 1 - The Legal Foundation: GDPR Article 7(3)
 
 The GDPR provides clear rights regarding consent withdrawal:
 
@@ -39,7 +39,7 @@ The GDPR provides clear rights regarding consent withdrawal:
 
 This means when you revoke consent, the organization must stop processing your data for purposes covered by that consent. However, they may retain data if another legal basis applies or if required by law.
 
-Step 2: How to Withdraw Your Consent: Practical Steps
+Step 2 - How to Withdraw Your Consent: Practical Steps
 
 1. Identify Where You Gave Consent
 
@@ -63,7 +63,7 @@ Most GDPR-compliant organizations provide ways to manage consent:
 If self-service options are insufficient, submit a formal withdrawal request:
 
 ```
-Subject: Withdrawal of Consent for Data Processing
+Subject - Withdrawal of Consent for Data Processing
 
 I am withdrawing my consent for [organization name] to process my personal data
 for [specific purpose, e.g., marketing communications].
@@ -81,7 +81,7 @@ will take effect.
 [Date]
 ```
 
-Step 3: Technical Implementation for Developers
+Step 3 - Technical Implementation for Developers
 
 Building systems that handle consent withdrawal requires careful architecture. Here's how to implement it properly:
 
@@ -243,9 +243,9 @@ app.post('/api/consent/withdraw/confirm', async (req, res) => {
 });
 ```
 
-Step 4: Common Challenges and Solutions
+Step 4 - Common Challenges and Solutions
 
-Challenge 1: Data Shared with Third Parties
+Challenge 1 - Data Shared with Third Parties
 
 When withdrawing consent, request that the organization:
 
@@ -253,7 +253,7 @@ When withdrawing consent, request that the organization:
 - Ensure those parties also stop processing your data
 - Delete your data from their systems if no other legal basis exists
 
-Challenge 2: Retention Requirements
+Challenge 2 - Retention Requirements
 
 Organizations may retain data even after consent withdrawal if:
 
@@ -263,7 +263,7 @@ Organizations may retain data even after consent withdrawal if:
 
 Ask for a specific explanation of what data is retained and why.
 
-Challenge 3: Cross-Border Processing
+Challenge 3 - Cross-Border Processing
 
 For organizations operating globally:
 
@@ -271,7 +271,7 @@ For organizations operating globally:
 - Request information about data transfers outside your jurisdiction
 - Ask for appropriate safeguards documentation
 
-Step 5: Verify Your Withdrawal Has Been Processed
+Step 5 - Verify Your Withdrawal Has Been Processed
 
 After withdrawing consent:
 

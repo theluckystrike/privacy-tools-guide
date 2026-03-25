@@ -128,11 +128,11 @@ Setting Up Hardware Token VPN Authentication
 
 Implementing hardware token authentication with your VPN involves several steps. This section walks through a practical setup using OpenVPN and a YubiKey.
 
-Step 1: Verify Hardware Token Compatibility
+Step 1 - Verify Hardware Token Compatibility
 
 Check that your VPN provider supports hardware token authentication. Enterprise solutions like Cisco AnyConnect, Fortinet FortiClient, and Pulse Secure have native smart card support. Consumer VPNs vary widely in their authentication options.
 
-Step 2: Configure Your Hardware Token
+Step 2 - Configure Your Hardware Token
 
 For YubiKey users, the PIV application provides the most straightforward VPN integration:
 
@@ -149,7 +149,7 @@ openssl req -new -key public.pem -out vpn-request.csr
 
 Your VPN administrator or the VPN service itself signs this certificate request, enabling the hardware token for authentication.
 
-Step 3: Configure VPN Client
+Step 3 - Configure VPN Client
 
 Update your VPN client configuration to use the hardware token:
 
@@ -164,7 +164,7 @@ Hardware token authentication
 pkcs11-provider /usr/lib/x86_64-linux-gnu/opensc-pkcs11.so
 pkcs11-id 'YubiKey/0000000000/0000000000/0000000000/0000000000'
 
-Alternative: PKCS#11 module path
+Alternative - PKCS#11 module path
 pkcs11-pin-cache 3600
 
 resolv-retry infinite
@@ -176,7 +176,7 @@ cipher AES-256-GCM
 auth SHA256
 ```
 
-Step 4: Test Authentication
+Step 4 - Test Authentication
 
 Before relying on hardware token authentication in production, verify the setup works correctly:
 
@@ -218,20 +218,20 @@ Implementing Token-Based VPN Access Control
 For enterprises deploying hardware token VPN access, implement certificate-based authentication with hardware tokens:
 
 ```bash
-Step 1: Generate CSR (Certificate Signing Request) on YubiKey
+Step 1 - Generate CSR (Certificate Signing Request) on YubiKey
 ykman piv certificates request 9a \
   --subject-name "CN=user@company.com,OU=VPN,O=Company" \
   user.csr
 
-Step 2: Have CA sign the certificate
+Step 2 - Have CA sign the certificate
 openssl x509 -req -in user.csr \
   -CA ca.crt -CAkey ca.key \
   -out user-signed.crt -days 365 -CAcreateserial
 
-Step 3: Import signed certificate back to YubiKey
+Step 3 - Import signed certificate back to YubiKey
 ykman piv certificates import 9a user-signed.crt
 
-Step 4: OpenVPN configuration for token-based auth
+Step 4 - OpenVPN configuration for token-based auth
 remote vpn.company.com 1194
 proto udp
 dev tun
@@ -379,8 +379,8 @@ Decommissioning process:
 6. Document in inventory system
 
 Inventory tracking
-Tool: Simple CSV or database
-Columns: user, token_serial, registration_date, assigned_date, status
+Tool - Simple CSV or database
+Columns - user, token_serial, registration_date, assigned_date, status
 ```
 
 Frequently Asked Questions

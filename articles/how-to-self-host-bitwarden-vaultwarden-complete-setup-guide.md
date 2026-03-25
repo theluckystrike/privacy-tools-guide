@@ -48,7 +48,7 @@ Bitwarden's SaaS offering is privacy-respecting, but self-hosting provides:
 - Compliance: Required for regulated industries (healthcare, finance)
 - Custom features: Add integrations, modify workflows
 
-Trade-off: You manage infrastructure, backups, SSL certificates, and server updates.
+Trade-off - You manage infrastructure, backups, SSL certificates, and server updates.
 
 System Requirements
 
@@ -79,9 +79,9 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install ation: Docker Compose Setup
+Step 1 - Install ation: Docker Compose Setup
 
-Step 1: Install Docker
+Step 1 - Install Docker
 
 On Ubuntu/Debian:
 ```bash
@@ -110,7 +110,7 @@ Or download Docker Desktop from docker.com
 Docker Desktop includes docker and docker-compose
 ```
 
-Step 2: Create directory structure
+Step 2 - Create directory structure
 
 ```bash
 Create vaultwarden directory
@@ -122,7 +122,7 @@ mkdir -p data/attachments
 mkdir -p nginx/ssl
 ```
 
-Step 3: Create Docker Compose configuration
+Step 3 - Create Docker Compose configuration
 
 Create `docker-compose.yml`:
 
@@ -214,7 +214,7 @@ Copy the hash to ADMIN_TOKEN in docker-compose.yml
 
 Or use an online generator (less secure): [Argon2 generator](https://argon2.online)
 
-Step 4: Start Vaultwarden
+Step 4 - Start Vaultwarden
 
 ```bash
 Navigate to vaultwarden directory
@@ -229,12 +229,12 @@ docker-compose logs -f vaultwarden
 Expected output:
 [INFO] vaultwarden 1.0.37
 [INFO] Rocket has launched from http://0.0.0.0
-[INFO] Database: sqlite:///data/db.sqlite3
+[INFO] Database - sqlite:///data/db.sqlite3
 ```
 
 Vaultwarden is now running on `http://localhost:8080` (local access only).
 
-Step 2: Reverse Proxy: Nginx Configuration
+Step 2 - Reverse Proxy: Nginx Configuration
 
 Running Vaultwarden directly on the internet is risky. Use Nginx as a reverse proxy to:
 - Add SSL/TLS encryption
@@ -242,7 +242,7 @@ Running Vaultwarden directly on the internet is risky. Use Nginx as a reverse pr
 - Add security headers
 - Separate concerns (web server vs. application)
 
-Step 1: Create Nginx configuration
+Step 1 - Create Nginx configuration
 
 Create `nginx/vaultwarden.conf`:
 
@@ -359,7 +359,7 @@ server {
 }
 ```
 
-Step 2: Add Nginx to Docker Compose
+Step 2 - Add Nginx to Docker Compose
 
 Update `docker-compose.yml`:
 
@@ -381,9 +381,9 @@ Update `docker-compose.yml`:
       - vaultwarden-network
 ```
 
-Step 3: SSL Certificates: Let's Encrypt Setup
+Step 3 - SSL Certificates: Let's Encrypt Setup
 
-Option 1: Certbot (recommended for dynamic DNS)
+Option 1 - Certbot (recommended for dynamic DNS)
 
 Install Certbot on your host machine (not in Docker):
 
@@ -399,8 +399,8 @@ sudo certbot certonly --standalone -d vault.example.com -d www.vault.example.com
 
 Expected output:
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
-Certificate is saved at: /etc/letsencrypt/live/vault.example.com/fullchain.pem
-Key is saved at: /etc/letsencrypt/live/vault.example.com/privkey.pem
+Certificate is saved at - /etc/letsencrypt/live/vault.example.com/fullchain.pem
+Key is saved at - /etc/letsencrypt/live/vault.example.com/privkey.pem
 ```
 
 Auto-renew with cron job:
@@ -413,7 +413,7 @@ Add line (runs daily at 2 AM):
 0 2 * * * certbot renew --quiet && systemctl reload nginx
 ```
 
-Option 2: Docker-based (Certbot in container)
+Option 2 - Docker-based (Certbot in container)
 
 Add to docker-compose.yml:
 
@@ -430,7 +430,7 @@ Add to docker-compose.yml:
       CERTBOT_EMAIL: "admin@example.com"
 ```
 
-Step 4: Backups: Automated Daily Backups
+Step 4 - Backups: Automated Daily Backups
 
 Create backup script `backup.sh`:
 
@@ -460,7 +460,7 @@ echo "[$(date)] Backup created: $BACKUP_FILE ($(du -h $BACKUP_FILE | cut -f1))" 
 Remove old backups (keep last 30 days)
 find $BACKUP_DIR -name "vaultwarden_backup_*.tar.gz" -mtime +$RETENTION_DAYS -delete
 
-Optional: Upload to cloud storage
+Optional - Upload to cloud storage
 aws s3 cp $BACKUP_FILE s3://your-backup-bucket/vaultwarden/
 
 echo "Backup complete."
@@ -489,7 +489,7 @@ Verify files are intact
 ls -la ./data/
 ```
 
-Step 5: Security Hardening
+Step 5 - Security Hardening
 
 1. Disable signups (if self-hosted for one user):
 
@@ -559,7 +559,7 @@ Check for suspicious activity
 docker-compose logs vaultwarden | grep -i "error\|invalid\|unauthorized"
 ```
 
-Step 6: Perform Maintenance and Updates
+Step 6 - Perform Maintenance and Updates
 
 Updating Vaultwarden:
 
@@ -595,9 +595,9 @@ Connect to container and run:
 docker-compose exec vaultwarden sqlite3 /data/db.sqlite3 "VACUUM;"
 ```
 
-Step 7: Client Setup
+Step 7 - Client Setup
 
-Bitwarden Web Vault: https://vault.example.com
+Bitwarden Web Vault - https://vault.example.com
 
 Mobile/Desktop Apps:
 1. Download Bitwarden app (iOS, Android, macOS, Windows, Linux)
@@ -653,7 +653,7 @@ Restart
 docker-compose start vaultwarden
 ```
 
-Step 8: Cost and Alternatives
+Step 8 - Cost and Alternatives
 
 Self-hosted Vaultwarden:
 - Cost: $0-5/month (VPS) + your time

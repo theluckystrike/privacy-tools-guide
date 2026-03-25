@@ -19,7 +19,7 @@ Secure Container Registry Setup Guide
 
 Running your own container registry keeps images off Docker Hub (where they are public by default), eliminates vendor lock-in, and lets you enforce image scanning and signature verification before anything gets deployed. This guide covers both the lightweight `registry:2` option and the more full-featured Harbor.
 
-Option 1: Docker Registry (registry:2)
+Option 1 - Docker Registry (registry:2)
 
 `registry:2` is the official, minimal registry. It stores images and handles auth. It does not include a vulnerability scanner or web UI.
 
@@ -77,9 +77,9 @@ docker push registry.internal.example.com/nginx:alpine
 docker pull registry.internal.example.com/nginx:alpine
 ```
 
-Option 2: Harbor (Full-Featured)
+Option 2 - Harbor (Full-Featured)
 
-Harbor adds: role-based access control, vulnerability scanning with Trivy, image signing, audit logs, and a web UI. Recommended for teams.
+Harbor adds - role-based access control, vulnerability scanning with Trivy, image signing, audit logs, and a web UI. Recommended for teams.
 
 ```bash
 Download Harbor installer
@@ -174,7 +174,7 @@ cosign verify \
 
 Harbor Content Trust Policy
 
-In Harbor web UI: Project → Configuration → Enable content trust → Prevent vulnerable images
+In Harbor web UI - Project → Configuration → Enable content trust → Prevent vulnerable images
 
 Set a severity threshold:
 - Images with Critical vulnerabilities: block
@@ -184,7 +184,7 @@ Set a severity threshold:
 Access Control and User Management
 
 ```bash
-Harbor: create a robot account for CI with push access to specific project
+Harbor - create a robot account for CI with push access to specific project
 curl -u admin:password \
   -X POST "https://registry.yourdomain.com/api/v2.0/projects/myproject/robots" \
   -H "Content-Type: application/json" \
@@ -226,7 +226,7 @@ registry:2: garbage collection (removes unreferenced layers)
 Stop writes first (or use --dry-run to check)
 docker exec registry bin/registry garbage-collect /etc/docker/registry/config.yml --dry-run
 
-Harbor: retention policies via web UI or API
+Harbor - retention policies via web UI or API
 Project → Tag Immutability (prevent overwriting signed tags)
 Project → Tag Retention → Add rule: keep last 10 versions per repo
 
@@ -243,8 +243,8 @@ nmap --script ssl-enum-ciphers -p 443 registry.yourdomain.com
 
 Check for exposed registry with no auth
 curl -s https://registry.yourdomain.com/v2/ | jq .
-Should return: {"errors":[{"code":"UNAUTHORIZED",...}]}
-Never: {} (open with no auth)
+Should return - {"errors":[{"code":"UNAUTHORIZED",...}]}
+Never - {} (open with no auth)
 
 Scan the registry image itself for vulnerabilities
 trivy image registry:2

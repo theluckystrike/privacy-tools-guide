@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install Onion Share
+Step 1 - Install Onion Share
 
 Onion Share is available on macOS, Linux, and Windows. On macOS, install via Homebrew:
 
@@ -56,13 +56,13 @@ Verify the installation:
 onionshare-cli --version
 ```
 
-Step 2: Understand How Onion Share Works
+Step 2 - Understand How Onion Share Works
 
 Onion Share creates a Tor hidden service pointed at files or folders on your local machine. When you start a sharing session, Onion Share generates a unique .onion URL that you share with recipients. The connection travels entirely through the Tor network, providing end-to-end encryption and anonymity for both sender and receiver.
 
 The key advantage over cloud-based file sharing is that no intermediary server stores your files. The data transfers directly from your computer to the recipient's computer through Tor's encrypted circuits.
 
-Step 3: Basic File Sharing
+Step 3 - Basic File Sharing
 
 Share a single file using the graphical interface or CLI. With onionshare-cli:
 
@@ -85,7 +85,7 @@ onionshare-cli --verbose ~/SharedFiles/
 
 Recipients visit the .onion URL in Tor Browser. They download files directly without installing Onion Share themselves.
 
-Step 4: Persistent Shared Folders
+Step 4 - Persistent Shared Folders
 
 For recurring file sharing without regenerating URLs, configure a persistent shared folder. Create a configuration file:
 
@@ -105,7 +105,7 @@ onionshare-cli --persistent persistent-config.yaml
 
 This creates a stable .onion address that remains active until you stop the service. Files in the designated folder stay available for download across multiple sessions.
 
-Step 5: Command-Line Options and Automation
+Step 5 - Command-Line Options and Automation
 
 Onionshare-cli provides numerous options for scripted workflows:
 
@@ -151,7 +151,7 @@ chmod +x automated-share.sh
 ./automated-share.sh "securepass123" ~/documents/report.pdf
 ```
 
-Step 6: Integrate with Tor Daemon
+Step 6 - Integrate with Tor Daemon
 
 For advanced deployments, run Onion Share connected to an existing Tor daemon instead of spawning its own Tor process. This reduces resource usage and provides centralized control:
 
@@ -169,7 +169,7 @@ CookieAuthentication 1
 
 This approach is useful for servers that already run Tor for other services.
 
-Step 7: Web Server Mode
+Step 7 - Web Server Mode
 
 Onion Share can serve a simple web interface with directory listings:
 
@@ -223,7 +223,7 @@ For persistent issues, check Onion Share's debug logs:
 onionshare-cli --debug --verbose file.txt
 ```
 
-Step 8: Use Cases for Developers
+Step 8 - Use Cases for Developers
 
 Onion Share serves various developer workflows:
 

@@ -46,7 +46,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Finding No-KYC Bitcoin ATMs
+Step 1 - Finding No-KYC Bitcoin ATMs
 
 Several online resources help identify Bitcoin ATMs with minimal verification requirements:
 
@@ -64,7 +64,7 @@ The website Coin ATM Radar maintains a searchable database. Additional resources
 
 When using these resources, verify current operator policies directly, as requirements change frequently.
 
-Step 2: Cash Purchase Methods
+Step 2 - Cash Purchase Methods
 
 The most straightforward anonymous Bitcoin purchase involves paying cash in person:
 
@@ -97,7 +97,7 @@ Bitcoin Depot operates ATMs with varying verification levels. Their standard mac
 
 Check specific machine locations through their mobile app before visiting.
 
-Step 3: Operational Security Practices
+Step 3 - Operational Security Practices
 
 Maintaining anonymity requires attention to operational security (OpSec):
 
@@ -105,7 +105,7 @@ Network Isolation
 
 ```bash
 Route Bitcoin wallet traffic through Tor on macOS
-Install Tor: brew install tor
+Install Tor - brew install tor
 Edit torrc to enable control port:
 ControlPort 9051
 HashControlPassword (generate with: tor --hash-password yourpassword)
@@ -142,7 +142,7 @@ Avoid patterns that link transactions to your identity:
 - Avoid transactions during your typical daily hours
 - Space out purchases over days or weeks
 
-Step 4: Understand Transaction Graph Analysis
+Step 4 - Understand Transaction Graph Analysis
 
 Even without KYC, blockchain analysis can potentially link transactions to your identity. Mitigate this through:
 
@@ -155,7 +155,7 @@ Using Wasabi Wallet for CoinJoin
 Download from wasabiwallet.io
 Verify PGP signature before installation
 Enable CoinJoin after funding wallet
-Settings: target 100 participants, round target 0.1 BTC
+Settings - target 100 participants, round target 0.1 BTC
 ```
 
 Wasabi Wallet implements Chaumian CoinJoin, providing strong anonymity guarantees for moderate transaction sizes.
@@ -164,7 +164,7 @@ Spending Patterns
 
 After purchasing Bitcoin anonymously, avoid immediately moving funds to exchanges that require ID. The "cash exit" becomes meaningless if you then deposit to a regulated exchange.
 
-Step 5: Legal Considerations
+Step 5 - Legal Considerations
 
 Bitcoin regulations vary significantly by jurisdiction. In the United States:
 
@@ -175,7 +175,7 @@ Bitcoin regulations vary significantly by jurisdiction. In the United States:
 
 Consult local regulations before purchasing. This guide is for informational purposes and does not constitute legal advice.
 
-Step 6: Blockchain Analysis Prevention Techniques
+Step 6 - Blockchain Analysis Prevention Techniques
 
 Even with no-KYC Bitcoin ATM purchases, blockchain analysis firms attempt to cluster transactions:
 
@@ -227,7 +227,7 @@ def safe_atm_withdrawal_schedule():
 
 The longer the time separation, the harder for blockchain analysis to correlate transactions.
 
-Step 7: P2P Trading Platforms
+Step 7 - P2P Trading Platforms
 
 LocalBitcoins and Bisq provide privacy advantages over ATMs:
 
@@ -245,7 +245,7 @@ Bisq:
 
 P2P trades avoid ATM transaction limits and provide more anonymity than ATMs, though they require finding trustworthy traders.
 
-Step 8: Geographic Privacy Considerations
+Step 8 - Geographic Privacy Considerations
 
 Avoid patterns that make you identifiable:
 
@@ -265,7 +265,7 @@ DO use ATMs:
 
 This prevents surveillance from linking your Bitcoin purchases to your daily routine.
 
-Step 9: Spending Considerations
+Step 9 - Spending Considerations
 
 Once you own Bitcoin, how you spend it matters:
 

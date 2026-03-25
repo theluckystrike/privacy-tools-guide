@@ -35,7 +35,7 @@ This guide focuses on technical implementation rather than product recommendatio
 - V2Ray builds on this: concept with additional protocol support and better traffic randomization.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
 - High latency (>300ms) makes: voice calls difficult.
-- - Multi-SIM Devices: Keep a secondary SIM with a foreign carrier for data-only use while maintaining a Chinese number for local communication.
+- - Multi-SIM Devices - Keep a secondary SIM with a foreign carrier for data-only use while maintaining a Chinese number for local communication.
 - Mastering advanced features takes: 1-2 weeks of regular use.
 
 Understanding the Technical Challenge
@@ -166,13 +166,13 @@ Testing Your Connection
 
 Verifying functionality inside China requires specific testing methods:
 
-1. WhatsApp Web: Attempt to access web.whatsapp.com directly. If it loads or shows a connection error rather than DNS failure, your tunnel is working.
+1. WhatsApp Web - Attempt to access web.whatsapp.com directly. If it loads or shows a connection error rather than DNS failure, your tunnel is working.
 
-2. DNS Leak Testing: Use tools like `dnsleaktest.com` to verify your DNS queries route through your VPN provider, not through Chinese DNS servers.
+2. DNS Leak Testing - Use tools like `dnsleaktest.com` to verify your DNS queries route through your VPN provider, not through Chinese DNS servers.
 
-3. Protocol Detection: Run your traffic through GFW simulation tools to confirm your chosen protocol isn't being flagged.
+3. Protocol Detection - Run your traffic through GFW simulation tools to confirm your chosen protocol isn't being flagged.
 
-4. Latency Measurement: Use `ping` and `traceroute` to measure connection quality. High latency (>300ms) makes voice calls difficult.
+4. Latency Measurement - Use `ping` and `traceroute` to measure connection quality. High latency (>300ms) makes voice calls difficult.
 
 ```bash
 Test WhatsApp connectivity via curl
@@ -186,11 +186,11 @@ Alternative Approaches
 
 For users who need WhatsApp specifically and don't require general internet access through a VPN, consider these alternatives:
 
-- eSIM with Foreign Carrier: Some international phone carriers offer data plans that work in China. Combined with WhatsApp's phone-based authentication, this provides a simpler solution.
+- eSIM with Foreign Carrier - Some international phone carriers offer data plans that work in China. Combined with WhatsApp's phone-based authentication, this provides a simpler solution.
 
-- Multi-SIM Devices: Keep a secondary SIM with a foreign carrier for data-only use while maintaining a Chinese number for local communication.
+- Multi-SIM Devices - Keep a secondary SIM with a foreign carrier for data-only use while maintaining a Chinese number for local communication.
 
-- Satellite Communication: For remote locations, satellite-based messaging services provide connectivity without depending on Chinese infrastructure.
+- Satellite Communication - For remote locations, satellite-based messaging services provide connectivity without depending on Chinese infrastructure.
 
 These alternatives don't require VPN configuration but may have limitations in speed or functionality.
 

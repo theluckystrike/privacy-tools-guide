@@ -33,7 +33,7 @@ Table of Contents
 - [Mail Metadata Indexed by Spotlight](#mail-metadata-indexed-by-spotlight)
 - [Third-Party App Integration with Spotlight](#third-party-app-integration-with-spotlight)
 - [Regular Auditing of Spotlight Configuration](#regular-auditing-of-spotlight-configuration)
-- [Comparison: Spotlight vs Alfred vs Raycast](#comparison-spotlight-vs-alfred-vs-raycast)
+- [Comparison - Spotlight vs Alfred vs Raycast](#comparison-spotlight-vs-alfred-vs-raycast)
 
 What macOS Spotlight Collects and Indexes
 
@@ -58,7 +58,7 @@ For developers working with sensitive codebases or handling proprietary informat
 
 Configuring Spotlight Privacy Settings
 
-Method 1: System Settings Interface
+Method 1 - System Settings Interface
 
 The most straightforward approach uses macOS System Settings:
 
@@ -68,7 +68,7 @@ The most straightforward approach uses macOS System Settings:
 4. Toggle off suggestions from Apple and third-party sources if desired
 5. Manage which apps can index content
 
-Method 2: Terminal Commands for Advanced Control
+Method 2 - Terminal Commands for Advanced Control
 
 Use Terminal to modify Spotlight behavior directly:
 
@@ -88,7 +88,7 @@ defaults write com.apple.spotlight NSUserDomainEnabled -bool false
 
 The `mdutil` command manages the metadata indexing daemon. Running `mdutil -a -i off` stops indexing across all volumes, which maximally preserves privacy but eliminates search functionality.
 
-Method 3: Exclude Specific Folders from Indexing
+Method 3 - Exclude Specific Folders from Indexing
 
 Prevent sensitive directories from being indexed:
 
@@ -112,7 +112,7 @@ Disable Spotlight Suggestions
 Disable web search suggestions
 defaults write com.apple.spotlight OrderedItems -array
 
-Alternative: Disable in System Settings
+Alternative - Disable in System Settings
 System Settings → Privacy & Security → Spotlight → Allow Spotlight Suggestions
 ```
 
@@ -317,12 +317,12 @@ echo "Suggestions enabled?"
 defaults read com.apple.spotlight NSUserDomainEnabled
 
 Run monthly
-crontab -e  # Add: 0 9 1 * * /path/to/audit-spotlight.sh
+crontab -e  # Add - 0 9 1 * * /path/to/audit-spotlight.sh
 ```
 
 Run this quarterly to catch privacy setting changes from updates.
 
-Comparison: Spotlight vs Alfred vs Raycast
+Comparison - Spotlight vs Alfred vs Raycast
 
 | Feature | Spotlight | Alfred | Raycast |
 |---------|-----------|--------|---------|
@@ -358,9 +358,9 @@ No. Even with exclusions, Spotlight indexes files you might forget to exclude. F
 
 What is the performance impact of disabling Spotlight indexing?
 
-Initial impact: 30+ minutes of background indexing stops.
-Ongoing impact: Spotlight and Siri become slower (5-30 second searches instead of instant).
-RAM/disk impact: Saves ~5GB of index data.
+Initial impact - 30+ minutes of background indexing stops.
+Ongoing impact - Spotlight and Siri become slower (5-30 second searches instead of instant).
+RAM/disk impact - Saves ~5GB of index data.
 
 Related Articles
 

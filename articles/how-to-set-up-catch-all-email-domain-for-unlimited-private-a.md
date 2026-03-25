@@ -22,13 +22,13 @@ Table of Contents
 
 - [Understanding Catch-All Email Domains](#understanding-catch-all-email-domains)
 - [Prerequisites](#prerequisites)
-- [Step 1: Choose an Email Forwarding Service](#step-1-choose-an-email-forwarding-service)
-- [Step 2: Configure DNS Records](#step-2-configure-dns-records)
-- [Step 3: Set Up Catch-All Routing](#step-3-set-up-catch-all-routing)
-- [Step 4: Create Aliases for Specific Services](#step-4-create-aliases-for-specific-services)
-- [Step 5: Automate Alias Creation](#step-5-automate-alias-creation)
-- [Step 6: Manage Incoming Emails](#step-6-manage-incoming-emails)
-- [Step 7: Handle Reply functionality](#step-7-handle-reply-functionality)
+- [Step 1 - Choose an Email Forwarding Service](#step-1-choose-an-email-forwarding-service)
+- [Step 2 - Configure DNS Records](#step-2-configure-dns-records)
+- [Step 3 - Set Up Catch-All Routing](#step-3-set-up-catch-all-routing)
+- [Step 4 - Create Aliases for Specific Services](#step-4-create-aliases-for-specific-services)
+- [Step 5 - Automate Alias Creation](#step-5-automate-alias-creation)
+- [Step 6 - Manage Incoming Emails](#step-6-manage-incoming-emails)
+- [Step 7 - Handle Reply functionality](#step-7-handle-reply-functionality)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 - [Security Considerations](#security-considerations)
 
@@ -53,7 +53,7 @@ Before configuring your catch-all domain, ensure you have:
 3. An email forwarding service. To receive emails sent to your catch-all domain
 4. A primary inbox. Where forwarded emails will arrive
 
-Step 1: Choose an Email Forwarding Service
+Step 1 - Choose an Email Forwarding Service
 
 Several services handle catch-all email forwarding without requiring you to run your own mail server:
 
@@ -63,7 +63,7 @@ Several services handle catch-all email forwarding without requiring you to run 
 
 For this guide, we'll use Cloudflare Email Routing since it's free and integrates with your existing DNS management.
 
-Step 2: Configure DNS Records
+Step 2 - Configure DNS Records
 
 Assuming you already have your domain pointing to Cloudflare, here's how to set up email routing:
 
@@ -77,36 +77,36 @@ Assuming you already have your domain pointing to Cloudflare, here's how to set 
 Cloudflare provides specific MX records you need to add. The typical values:
 
 ```
-Type: MX
-Name: @ or yourdomain.com
-Priority: 10
-Value: mx1.forwardemail.net
+Type - MX
+Name - @ or yourdomain.com
+Priority - 10
+Value - mx1.forwardemail.net
 ```
 
 Replace the values with whatever your email forwarding service provides.
 
-Step 3: Set Up Catch-All Routing
+Step 3 - Set Up Catch-All Routing
 
 With Cloudflare Email Routing, the routing rules handle catch-all functionality automatically. Any email sent to `anything@yourdomain.com` forwards to your destination address.
 
 If you're using Forward Email, add these DNS records:
 
 ```
-Type: MX
-Name: @
-Priority: 10
-Value: mx1.forwardemail.net
+Type - MX
+Name - @
+Priority - 10
+Value - mx1.forwardemail.net
 
-Type: TXT
-Name: @
-Value: v=spf1 include:spf.forwardemail.net -all
+Type - TXT
+Name - @
+Value - v=spf1 include:spf.forwardemail.net -all
 ```
 
-Step 4: Create Aliases for Specific Services
+Step 4 - Create Aliases for Specific Services
 
 Now comes the practical part. generating aliases. There are two main approaches:
 
-Approach A: Service-Based Aliases
+Approach A - Service-Based Aliases
 
 Create aliases using the service name:
 
@@ -118,7 +118,7 @@ linkedin@yourdomain.com
 
 This makes it immediately obvious which service leaked your email.
 
-Approach B: Random Aliases
+Approach B - Random Aliases
 
 Generate random strings for maximum privacy:
 
@@ -140,7 +140,7 @@ op item create --title "New Service Account" \
   item.credential.password="$(openssl rand -base64 20)"
 ```
 
-Step 5: Automate Alias Creation
+Step 5 - Automate Alias Creation
 
 For power users, you can script alias creation using your domain provider's API:
 
@@ -160,7 +160,7 @@ ALIAS="${SERVICE}-$(date +%Y%m%d)@${DOMAIN}"
 echo "Generated alias: $ALIAS"
 echo "Use this alias for $SERVICE registration"
 
-Optional: Log to a local file for tracking
+Optional - Log to a local file for tracking
 echo "$(date): $SERVICE -> $ALIAS" >> ~/aliases.log
 ```
 
@@ -168,10 +168,10 @@ Run it like this:
 
 ```bash
 ./generate-alias.sh github
-Output: Generated alias: github-20260316@yourdomain.com
+Output - Generated alias: github-20260316@yourdomain.com
 ```
 
-Step 6: Manage Incoming Emails
+Step 6 - Manage Incoming Emails
 
 Since catch-all domains receive all emails sent to non-existent addresses, you'll inevitably get spam. Here are strategies to manage it:
 
@@ -193,7 +193,7 @@ If you want different handling per alias, use your forwarding service's rules:
 - Route `finance-*@yourdomain.com` to another
 - Route everything else to your default inbox
 
-Step 7: Handle Reply functionality
+Step 7 - Handle Reply functionality
 
 Standard catch-all forwarding lets you receive emails, but replying from your alias requires more setup. Options include:
 

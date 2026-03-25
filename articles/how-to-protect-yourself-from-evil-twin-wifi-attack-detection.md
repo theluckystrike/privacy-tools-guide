@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Attack Mechanism
+Step 1 - Understand the Attack Mechanism
 
 Evil twin attacks exploit the fundamental way WiFi networks operate. Access points broadcast their SSID, and client devices automatically connect to networks they have previously trusted. Attackers use software like Fluxion, WiFi-Pumpkin, or even basic tools such as `hostapd` to create fake access points that appear identical to legitimate ones.
 
@@ -44,7 +44,7 @@ The attack typically unfolds in phases. First, the attacker performs reconnaissa
 
 The consequences extend beyond simple data theft. Attackers can inject malicious code into HTTP responses, capture authentication tokens, perform man-in-the-middle attacks on encrypted connections, and even install malware on connected devices. For developers handling sensitive code repositories or API credentials, a single compromised session can lead to catastrophic data breaches.
 
-Step 2: Detecting Evil Twin Attacks
+Step 2 - Detecting Evil Twin Attacks
 
 Detection requires both automated tools and manual verification techniques. Several approaches exist for identifying suspicious access points.
 
@@ -136,7 +136,7 @@ wlan.fc.type == 0x0c && wlan.fc.subtype == 0x0001
 
 Frequent deauthentication frames often indicate an attack in progress, attempting to force devices to reconnect to a malicious access point.
 
-Step 3: Protection Strategies
+Step 3 - Protection Strategies
 
 Detection alone is insufficient, implementing protection measures prevents compromise even when attacks succeed.
 
@@ -179,7 +179,7 @@ Enable Two-Factor Authentication
 
 Always enable 2FA for accounts accessed over public WiFi. Even if credentials are intercepted through an evil twin attack, 2FA adds a critical verification layer that prevents unauthorized access. Hardware security keys provide the strongest protection, followed by authenticator apps and SMS codes.
 
-Step 4: Practical Defense Implementation
+Step 4 - Practical Defense Implementation
 
 For developers who need protection, combining multiple strategies creates defense-in-depth. Here's a practical setup:
 
@@ -229,16 +229,16 @@ Threat Modeling for Different Environments
 
 Different locations require different security postures. Tailor your protection strategy to your environment:
 
-Coffee Shop/Co-working Space: Medium threat. Enable VPN before connecting. Use certificate pinning for sensitive services. Monitor network behavior with `netstat` periodically.
+Coffee Shop/Co-working Space - Medium threat. Enable VPN before connecting. Use certificate pinning for sensitive services. Monitor network behavior with `netstat` periodically.
 
 ```bash
 Monitor established connections
 netstat -tuln | grep ESTABLISHED | wc -l
 ```
 
-Airport/Transit Hub: High threat. Assume hostile network. Use VPN with kill switch. Do not access financial or development systems. Only access read-only content.
+Airport/Transit Hub - High threat. Assume hostile network. Use VPN with kill switch. Do not access financial or development systems. Only access read-only content.
 
-Corporate Network: Medium-high threat. Assume network is monitored. Use VPN if policy permits. Enable host-based firewall with strict egress rules.
+Corporate Network - Medium-high threat. Assume network is monitored. Use VPN if policy permits. Enable host-based firewall with strict egress rules.
 
 ```bash
 macOS pf firewall example for high-risk networks
@@ -247,7 +247,7 @@ echo "pass in all" | sudo pfctl -ef -
 
 Public Event (Conference, Protest): High threat. These venues attract sophisticated attackers and state actors. Use Tor Browser for sensitive activities. Prefer wired connections where available. Consider air-gapping sensitive devices.
 
-Step 5: Implementation: Building a Secure Work Environment
+Step 5 - Implementation: Building a Secure Work Environment
 
 For developers who frequently work in hostile environments, implement a dedicated secure workstation setup:
 
@@ -301,7 +301,7 @@ sudo kismet
 
 Kismet maintains a database of known good networks and flags anomalies like unexpected MAC addresses or duplicate SSIDs.
 
-Step 6: Detection Automation Script
+Step 6 - Detection Automation Script
 
 Create a continuous monitoring script that alerts you in real-time:
 

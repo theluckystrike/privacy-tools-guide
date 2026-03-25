@@ -21,9 +21,9 @@ If you're a developer or power user looking to lock down your Facebook presence,
 Table of Contents
 
 - [Understanding Facebook's Privacy Architecture](#understanding-facebooks-privacy-architecture)
-- [Method 1: Using the Facebook Graph API](#method-1-using-the-facebook-graph-api)
-- [Method 2: Browser Automation with Playwright](#method-2-browser-automation-with-playwright)
-- [Method 3: Manual Settings for Maximum Privacy](#method-3-manual-settings-for-maximum-privacy)
+- [Method 1 - Using the Facebook Graph API](#method-1-using-the-facebook-graph-api)
+- [Method 2 - Browser Automation with Playwright](#method-2-browser-automation-with-playwright)
+- [Method 3 - Manual Settings for Maximum Privacy](#method-3-manual-settings-for-maximum-privacy)
 - [Security Hardening Beyond Privacy](#security-hardening-beyond-privacy)
 - [Automating Privacy Audits](#automating-privacy-audits)
 
@@ -33,11 +33,11 @@ Facebook organizes privacy settings across several categories: profile visibilit
 
 The Facebook Graph API provides the most reliable programmatic approach for managing privacy settings. However, Facebook has restricted many privacy-related APIs, so some automation requires browser-based solutions using tools like Playwright or Selenium.
 
-Method 1: Using the Facebook Graph API
+Method 1 - Using the Facebook Graph API
 
 The Graph API remains the primary method for programmatic Facebook interactions. To access privacy settings, you'll need a Facebook Developer account and an access token with appropriate permissions.
 
-Step 1: Obtain an Access Token
+Step 1 - Obtain an Access Token
 
 For personal profile management, you can use the Facebook Login flow to obtain a user access token. The minimal required permissions for privacy reading are:
 
@@ -48,7 +48,7 @@ permissions[]=pages_manage_posts
 
 For full privacy management, you'll need additional permissions that Facebook now restricts. Many privacy settings require manual verification or are not available via API for personal accounts.
 
-Step 2: Query Current Privacy Settings
+Step 2 - Query Current Privacy Settings
 
 Once you have a valid token, query your profile's privacy settings:
 
@@ -75,7 +75,7 @@ The response includes privacy settings in JSON format:
 }
 ```
 
-Step 3: Update Privacy Settings via API
+Step 3 - Update Privacy Settings via API
 
 For pages and posts, you can update privacy programmatically:
 
@@ -87,7 +87,7 @@ curl -i -X POST "https://graph.facebook.com/v21.0/PAGE_ID/privacy" \
 
 For personal profiles, Facebook restricts direct API modification of most privacy settings. This is where browser automation becomes necessary.
 
-Method 2: Browser Automation with Playwright
+Method 2 - Browser Automation with Playwright
 
 For managing personal profile settings that the API restricts, browser automation provides a viable alternative. The following example uses Playwright to navigate Facebook's settings interface.
 
@@ -131,7 +131,7 @@ setFacebookPrivacy().catch(console.error);
 
 This script demonstrates the core pattern: authenticate, navigate to settings, and interact with the appropriate UI elements. Facebook's UI changes frequently, so you'll need to inspect the current DOM structure and adjust selectors accordingly.
 
-Method 3: Manual Settings for Maximum Privacy
+Method 3 - Manual Settings for Maximum Privacy
 
 For users who prefer manual configuration, Facebook's privacy settings are accessible through the Settings & Privacy menu. Here's the configuration checklist for maximum privacy:
 

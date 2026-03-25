@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Russia Yarovaya Law Mass Surveillance Requirements What"
-description: "Russia Yarovaya Law: What Data Telecom Companies Must.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
+description: "Russia Yarovaya Law - What Data Telecom Companies Must.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

@@ -20,7 +20,7 @@ Table of Contents
 
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
-- [Advanced: PayJoin and CoinJoin](#advanced-payjoin-and-coinjoin)
+- [Advanced - PayJoin and CoinJoin](#advanced-payjoin-and-coinjoin)
 - [Device-Level Security Considerations](#device-level-security-considerations)
 - [Troubleshooting](#troubleshooting)
 
@@ -40,7 +40,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Privacy Model
+Step 1 - Understand the Privacy Model
 
 Trezor hardware wallets interact with multiple network layers that can leak information. The default setup connects directly to public nodes, exposes IP addresses to blockchain explorers, and may sync unnecessary wallet data to cloud services. Each vector represents a potential privacy compromise.
 
@@ -48,7 +48,7 @@ The device itself stores private keys in secure elements, Trezor Model T uses an
 
 This guide addresses the peripheral privacy concerns: network-level leakage, address reuse, and blockchain analysis vectors that persist regardless of key security.
 
-Step 2: Network Isolation with Tor
+Step 2 - Network Isolation with Tor
 
 The most impactful privacy improvement involves routing all blockchain traffic through Tor. This masks your IP address from nodes and explorers, preventing traffic analysis that could link transactions to your network location.
 
@@ -57,8 +57,8 @@ Configuring Tor SOCKS Proxy
 The Trezor Suite application supports Tor proxy configuration. Navigate to Settings > Network > Tor and enable the proxy. Configure it to point to your local Tor daemon:
 
 ```
-SOCKS5 Proxy: 127.0.0.1:9050
-Control Port: 127.0.0.1:9051
+SOCKS5 Proxy - 127.0.0.1:9050
+Control Port - 127.0.0.1:9051
 ```
 
 For systems without a persistent Tor installation, use the Tor Browser bundle and configure it as a system-wide proxy. The Trezor Suite respects system proxy settings on Windows and macOS.
@@ -73,7 +73,7 @@ curl --socks5 127.0.0.1:9050 https://check.torproject.org/api/ip
 
 A successful response returns your Tor exit node IP, confirming anonymous connectivity.
 
-Step 3: Coin Control and UTXO Management
+Step 3 - Coin Control and UTXO Management
 
 Bitcoin's unspent transaction output (UTXO) model creates privacy challenges. Default wallet behavior often selects inputs in ways that reveal wallet ownership. Trezor Suite provides coin control features that let you manually select which UTXOs to spend.
 
@@ -96,7 +96,7 @@ The privacy recommendations table below summarizes UTXO handling:
 | Change Addresses | Always use new addresses | Breaks address reuse |
 | Mixed Sources | Avoid combining | Maintains separation |
 
-Step 4: Address Reuse Prevention
+Step 4 - Address Reuse Prevention
 
 Each Bitcoin address should ideally be used only once. Trezor supports BIP-32 hierarchical deterministic key derivation, meaning your wallet can generate unlimited fresh addresses from your recovery seed. The challenge lies in consistently using new addresses and avoiding accidental reuse.
 
@@ -110,7 +110,7 @@ When you spend UTXOs, any remaining Bitcoin becomes "change" sent to a new addre
 
 For enhanced privacy, some users configure custom change address derivation. This advanced technique involves generating specific change addresses and manually specifying them during transaction creation.
 
-Step 5: Blockchain Explorer Privacy
+Step 5 - Blockchain Explorer Privacy
 
 Even with Tor and proper address management, blockchain explorers can log your queries. Each address lookup potentially creates a record linking your IP to the searched address.
 
@@ -129,7 +129,7 @@ Blockstream Satellite Integration
 
 Blockstream's satellite network broadcasts Bitcoin blockchain data via satellite, allowing fully offline transaction signing and broadcasting. This technique provides resistance against network-level adversaries but requires additional hardware setup.
 
-Advanced: PayJoin and CoinJoin
+Advanced - PayJoin and CoinJoin
 
 Beyond basic configuration, transaction privacy benefits from collaborative protocols that break the common-input-ownership heuristic. These techniques intentionally create ambiguous transaction graphs.
 
@@ -166,7 +166,7 @@ Device Pairing
 
 Trezor Connect, the JavaScript library used by web interfaces, validates device authenticity through certificate pinning. When using third-party applications, verify they implement proper certificate validation. Applications that skip validation could potentially route transactions through compromised intermediaries.
 
-Step 6: Network Timing Attacks
+Step 6 - Network Timing Attacks
 
 Transaction timing can reveal wallet behavior patterns. If you consistently broadcast transactions at specific times (e.g., immediately after receiving a deposit), analysis could identify your wallet operations.
 
@@ -190,7 +190,7 @@ def broadcast_with_delay(tx_hex, min_delay=5, max_delay=60):
 
 While this adds minor inconvenience, it prevents observers from correlating your incoming transactions with outgoing broadcasts.
 
-Step 7: Hardening Browser Privacy Settings
+Step 7 - Hardening Browser Privacy Settings
 
 Default browser settings leak data to trackers, advertisers, and DNS providers.
 
@@ -209,7 +209,7 @@ network.http.sendRefererHeader = 0
 
 Apply these changes, then test at https://coveryourtracks.eff.org to measure your fingerprint uniqueness. The goal is to blend into a crowd of similar fingerprints, not to have a unique "hardened" print.
 
-Step 8: DNS-over-HTTPS Configuration
+Step 8 - DNS-over-HTTPS Configuration
 
 Encrypting DNS queries prevents ISPs and network observers from logging every site you visit.
 

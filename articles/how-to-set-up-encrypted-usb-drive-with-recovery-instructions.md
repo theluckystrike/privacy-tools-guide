@@ -64,7 +64,7 @@ Windows users can download the installer from the official VeraCrypt website.
 
 Creating the Encrypted USB Drive
 
-Step 1: Prepare the USB Drive
+Step 1 - Prepare the USB Drive
 
 First, identify your USB drive device:
 
@@ -75,7 +75,7 @@ lsblk           # Linux
 
 Always double-check you're targeting the correct device. Using the wrong device will destroy your data. For this example, assume `/dev/sdX` represents your USB drive.
 
-Step 2: Create an Encrypted Container
+Step 2 - Create an Encrypted Container
 
 For estate executor scenarios, we recommend using a hidden volume within an encrypted container. This provides plausible deniability while ensuring recovery is possible.
 
@@ -88,7 +88,7 @@ Launch VeraCrypt and follow these steps:
 5. Select AES-256 encryption with SHA-512 hash
 6. Set a volume password (we'll cover key derivation shortly)
 
-Step 3: Configure Strong Password Derivation
+Step 3 - Configure Strong Password Derivation
 
 VeraCrypt uses PBKDF2 for key derivation, but you should maximize iteration counts for additional security:
 
@@ -111,7 +111,7 @@ Implementing Recovery Mechanisms
 
 The biggest risk in encrypted USB drives is permanent data loss. If your executor doesn't know the password, the encrypted data becomes inaccessible forever.
 
-Method 1: Separate Recovery Key File
+Method 1 - Separate Recovery Key File
 
 Generate a random key file that can decrypt the volume:
 
@@ -128,7 +128,7 @@ To use with VeraCrypt:
 veracrypt --keyfiles=recovery.key /path/to/container /mount/point
 ```
 
-Method 2: Shamir Secret Sharing
+Method 2 - Shamir Secret Sharing
 
 For additional security, consider splitting the password using Shamir Secret Sharing. This allows you to distribute "shares" among multiple trusted parties, your executor might need 2 of 3 shares to reconstruct the password.
 
@@ -153,7 +153,7 @@ for i, share in enumerate(shares):
 
 Store each share in separate locations (safe deposit box, attorney, trusted family member).
 
-Method 3: Printed Recovery Sheet
+Method 3 - Printed Recovery Sheet
 
 Always create a physical backup of recovery information. Print a recovery sheet that includes:
 
@@ -165,8 +165,8 @@ Always create a physical backup of recovery information. Print a recovery sheet 
 
 ```text
 ESTATE RECOVERY INFORMATION
-USB Drive Label: "Estate Documents"
-Container File: /backup/estate.vc
+USB Drive Label - "Estate Documents"
+Container File - /backup/estate.vc
 
 PRIMARY PASSWORD (stored in safe):
 [REDACTED - see safe deposit box]
@@ -245,9 +245,9 @@ CONTAINS:
 
 CONTACT:
 Your attorney: [Phone]
-IT Support: [Contact]
+IT Support - [Contact]
 
-Last verified: [Date]
+Last verified - [Date]
 ```
 
 Security Considerations

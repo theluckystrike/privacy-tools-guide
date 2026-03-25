@@ -33,7 +33,7 @@ When a company notifies you of a data breach, the GDPR (Article 34) requires the
 
 Required Information for Affected Individuals
 
-1. Nature of the Breach: A clear description of what happened, including the type of breach (e.g., unauthorized access, data leakage, ransomware)
+1. Nature of the Breach - A clear description of what happened, including the type of breach (e.g., unauthorized access, data leakage, ransomware)
 
 2. Categories and Approximate Number of Data Subjects: Which types of personal data were affected and how many individuals are impacted
 
@@ -96,7 +96,7 @@ Verification Steps
 3. Verify with the supervisory authority: You can check if the breach was reported to the relevant authority (e.g., ICO's breach report)
 4. Cross-reference company statements: Check the company's official blog or social media
 
-Code: Verifying Breach Report with Authority APIs
+Code - Verifying Breach Report with Authority APIs
 
 ```python
 import requests
@@ -222,13 +222,13 @@ monitor.log_breach_notification(
 )
 ```
 
-Threat Model: Who Should Be Most Concerned?
+Threat Model - Who Should Be Most Concerned?
 
 Your risk level depends on what data was compromised:
 
 Low Risk (Email address, username): Expect spam and phishing attempts. Use the breach notification email address as a signal that you're worth targeting.
 
-Medium Risk (Email + password): If you reused this password anywhere, immediately change it across all services. Attackers now have valid credentials to attempt account takeover.
+Medium Risk (Email + password) - If you reused this password anywhere, immediately change it across all services. Attackers now have valid credentials to attempt account takeover.
 
 High Risk (Financial data, health information, identity documents): Monitor financial accounts closely, place fraud alerts with credit bureaus, and consider credit freezes. Health data breaches can lead to insurance discrimination or medical identity theft.
 

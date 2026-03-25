@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Attorney-Client Privilege in Digital Contexts
+Step 1 - Understand Attorney-Client Privilege in Digital Contexts
 
 Attorney-client privilege extends to digital communications, but only when certain conditions are met. The communication must be confidential, made between an attorney and client, and intended for seeking or providing legal advice. Once you introduce a third party or use insecure channels, privilege may be waived.
 
@@ -36,7 +36,7 @@ Courts have consistently held that email providers, cloud storage services, and 
 
 The solution involves implementing end-to-end encryption where the service provider itself cannot decrypt messages. Additionally, you must control access to encryption keys and ensure no intermediaries can intercept communications.
 
-Step 2: Essential Components of a Secure Communication Setup
+Step 2 - Essential Components of a Secure Communication Setup
 
 A proper lawyer-client privilege digital communication setup requires several technical components working together:
 
@@ -46,7 +46,7 @@ A proper lawyer-client privilege digital communication setup requires several te
 4. Authentication mechanisms. Verify identities to prevent impersonation attacks
 5. Audit trails. Maintain logs of communications without compromising content privacy
 
-Step 3: Secure Messaging Platforms
+Step 3 - Secure Messaging Platforms
 
 For real-time communication, Signal remains the gold standard for secure messaging. It provides end-to-end encryption using the Signal Protocol, which has undergone extensive cryptographic review. Unlike consumer messaging apps, Signal's encryption ensures that even Signal itself cannot access message contents.
 
@@ -63,7 +63,7 @@ sudo apt update && sudo apt install signal-desktop
 
 Configure Signal with a dedicated phone number used only for legal communications. Enable disappearing messages to automatically delete communications after a set period, reducing the risk of later disclosure.
 
-Step 4: Encrypted Email with PGP or S/MIME
+Step 4 - Encrypted Email with PGP or S/MIME
 
 Email remains essential for formal communications and document sharing. Implementing PGP (Pretty Good Privacy) encryption provides end-to-end protection for email content. While PGP has usability challenges, it remains the most transparent encryption method available.
 
@@ -91,13 +91,13 @@ When communicating with clients, exchange public keys through a secure initial c
 
 For organizations, S/MIME certificates provide a more manageable approach, integrating with major email clients and supporting enterprise key management.
 
-Step 5: Secure File Transfer Solutions
+Step 5 - Secure File Transfer Solutions
 
 Legal work involves sharing sensitive documents that require protection during transfer and storage. Several solutions provide secure file transfer while maintaining accessibility:
 
 Tresorit offers end-to-end encrypted cloud storage with zero-knowledge architecture. The-based service stores encrypted files with no ability for Tresorit to access content. Shared workspaces allow attorney-client document collaboration with persistent encryption.
 
-Proton Drive provides end-to-end encrypted storage integrated with ProtonMail's ecosystem. This integrates well if using ProtonMail for email.
+Proton Drive provides end-to-end encrypted storage integrated with ProtonMail's environment. This integrates well if using ProtonMail for email.
 
 Self-hosted solutions give maximum control. Using Syncthing for continuous file synchronization between authorized devices keeps documents under your direct control:
 
@@ -111,32 +111,32 @@ Use HTTPS for all web interface access
 
 For one-time file transfers, consider OnetimeSecret or similar services that generate time-limited, view-once links. Combine these with password-protected archives for additional security.
 
-Step 6: Implementation Strategy for Law Firms
+Step 6 - Implementation Strategy for Law Firms
 
 Deploying secure communication requires a phased approach. Begin with the highest-risk communications, those involving sensitive litigation strategy or confidential business information, then expand to routine communications.
 
-Phase 1: Foundation
+Phase 1 - Foundation
 
 - Generate PGP keypairs for all attorneys
 - Set up Signal with dedicated legal phone numbers
 - Document encryption key management procedures
 - Train staff on secure communication protocols
 
-Phase 2: Integration
+Phase 2 - Integration
 
 - Implement encrypted email workflows
 - Deploy secure file sharing for client portals
 - Configure email clients (Thunderbird, Apple Mail) with PGP support
 - Set up automatic encryption for outgoing emails
 
-Phase 3: Policy and Compliance
+Phase 3 - Policy and Compliance
 
 - Establish written policies on secure communication requirements
 - Define procedures for handling privileged communications
 - Create incident response plans for potential breaches
 - Regular security audits of communication channels
 
-Step 7: Code Example: Encrypted Note-Taking System
+Step 7 - Code Example: Encrypted Note-Taking System
 
 For attorneys who maintain case notes, consider a simple encrypted note system using GPG and a flat-file approach:
 
@@ -165,7 +165,7 @@ view_note() {
     gpg --decrypt "$1" | less
 }
 
-Usage: ./secure-notes.sh [case-name] <command> [args]
+Usage - ./secure-notes.sh [case-name] <command> [args]
 case "$2" in
     add) encrypt_note ;;
     list) list_notes ;;
@@ -176,7 +176,7 @@ esac
 
 This system ensures that case notes are encrypted at rest, accessible only to authorized attorneys with the corresponding private key.
 
-Step 8: Verification and Maintenance
+Step 8 - Verification and Maintenance
 
 Regularly verify your security setup to ensure continued protection:
 
@@ -201,22 +201,22 @@ Identifying Your Threat Model
 
 Different legal situations require different security postures:
 
-Low-Risk Scenario: Standard contract negotiation with established business
+Low-Risk Scenario - Standard contract negotiation with established business
 - Threat: Casual business intelligence gathering
 - Defense: Encrypted email sufficient
 - Protocol: PGP or S/MIME emails
 
-Medium-Risk Scenario: Litigation with disclosure obligations
+Medium-Risk Scenario - Litigation with disclosure obligations
 - Threat: Opposing counsel seeks privileged communications to find weaknesses
 - Defense: Both encryption and controlled access
 - Protocol: Secure portal with audit logs
 
-High-Risk Scenario: White-collar criminal defense
+High-Risk Scenario - White-collar criminal defense
 - Threat: Government surveillance, phone records subpoena, potentially compromised networks
 - Defense: Multiple security layers, compartmentalization, no metadata leakage
 - Protocol: Signal + in-person meetings + airgapped document handling
 
-Extreme-Risk Scenario: State actor targeting (political asylum, international crimes)
+Extreme-Risk Scenario - State actor targeting (political asylum, international crimes)
 - Threat: Well-funded adversary, potential device compromise, supply chain attacks
 - Defense: Presumption of full compromise, work accordingly
 - Protocol: In-person only, no electronic records, compartmentalized teams
@@ -260,7 +260,7 @@ Legal hold requirements:
 3. Destroying encrypted docs = sanction risk
 4. But preserving encryption keys = metadata risk
 
-Solution: Encrypted legal hold
+Solution - Encrypted legal hold
 1. Encrypt documents at rest with organizational key
 2. Store encrypted archive with key in separate secure location
 3. If discovery ordered: decrypt subset, produce to opposing counsel
@@ -276,11 +276,11 @@ Implementation:
 
 This approach satisfies legal hold requirements while minimizing metadata exposure.
 
-Step 9: Practical Deployment Scenarios
+Step 9 - Practical Deployment Scenarios
 
 Real-world legal communications require adapting these tools to actual workflows.
 
-Scenario 1: Solo Practitioner + Single Client
+Scenario 1 - Solo Practitioner + Single Client
 
 ```bash
 Minimal secure setup for low-complexity representation
@@ -309,7 +309,7 @@ Privilege assertion:
 
 Solo practitioners should keep setup simple. Complexity introduces vulnerabilities.
 
-Scenario 2: Law Firm + Multiple Attorneys
+Scenario 2 - Law Firm + Multiple Attorneys
 
 ```bash
 Scalable secure setup for team environment
@@ -341,7 +341,7 @@ Privilege preservation:
 
 Dedicated portals handle scale better than point-to-point encryption.
 
-Step 10: Specific Use Cases and Solutions
+Step 10 - Specific Use Cases and Solutions
 
 Trade Secret Communications
 
@@ -412,7 +412,7 @@ China Mainland Clients (Limited Privilege)
 
 International clients require jurisdiction-specific security approaches.
 
-Step 11: Test and Validation
+Step 11 - Test and Validation
 
 Before deploying secure communications for real client work, thorough testing is essential:
 
@@ -433,7 +433,7 @@ Pre-Deployment Checklist
 
 Thorough testing prevents embarrassing failures with real clients.
 
-Step 12: Ongoing Maintenance
+Step 12 - Ongoing Maintenance
 
 Secure communication systems require continuous maintenance:
 

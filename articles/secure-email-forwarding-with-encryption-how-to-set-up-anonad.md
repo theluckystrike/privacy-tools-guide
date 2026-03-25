@@ -21,7 +21,7 @@ Email privacy is a fundamental concern for developers and power users who manage
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Advanced: API Integration for Developers](#advanced-api-integration-for-developers)
+- [Advanced - API Integration for Developers](#advanced-api-integration-for-developers)
 - [Best Practices for Production Use](#best-practices-for-production-use)
 - [Troubleshooting](#troubleshooting)
 
@@ -35,13 +35,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Email Alias Services
+Step 1 - Understand Email Alias Services
 
 Email alias services act as intermediaries between your real inbox and the outside world. Instead of giving out your primary email, you create unique aliases that forward to your actual inbox. When an alias gets compromised or sold to spammers, you simply delete it, your primary address remains untouched.
 
 Both Anonaddy and SimpleLogin offer browser extensions, mobile apps, and SMTP forwarding capabilities. The key difference lies in their architecture: Anonaddy is open-source and self-hostable, while SimpleLogin offers both hosted and self-hosted versions.
 
-Step 2: Set Up Anonaddy
+Step 2 - Set Up Anonaddy
 
 Anonaddy provides a free tier with limited features and paid plans for additional aliases and domains. The self-hosted version requires Docker and a mail server, but we'll focus on the hosted version for quick setup.
 
@@ -79,7 +79,7 @@ Export your public key for import into Anonaddy
 gpg --armor --export your@email.com > public_key.asc
 ```
 
-Step 3: Set Up SimpleLogin
+Step 3 - Set Up SimpleLogin
 
 SimpleLogin provides a similar workflow with a polished interface. The free tier includes unlimited aliases on the `@simplelogin.com` domain, while premium plans support custom domains.
 
@@ -120,7 +120,7 @@ services:
       - redis
 ```
 
-Step 4: Implementing End-to-End Encryption
+Step 4 - Implementing End-to-End Encryption
 
 Both services forward emails as plain text by default. For sensitive communications, implement PGP encryption:
 
@@ -159,7 +159,7 @@ poll imap.yourprovider.com
   mda "gpg --encrypt --recipient your@email.com --output ~/mail/.encrypted/new/$(date +%s).eml"
 ```
 
-Advanced: API Integration for Developers
+Advanced - API Integration for Developers
 
 Both services expose APIs for programmatic alias management:
 
@@ -228,7 +228,7 @@ When implementing email aliasing in production environments:
 - Enable 2FA: Protect your alias service account with hardware keys or TOTP
 - Separate concerns: Use different aliases for different purposes (shopping, social media, work)
 
-Step 5: Comparing Anonaddy vs SimpleLogin
+Step 5 - Comparing Anonaddy vs SimpleLogin
 
 | Feature | Anonaddy | SimpleLogin |
 |---------|----------|-------------|
@@ -243,7 +243,7 @@ Step 5: Comparing Anonaddy vs SimpleLogin
 
 SimpleLogin's acquisition by Proton AG means it integrates well with ProtonMail. For users who prefer full independence and self-hosting, Anonaddy remains the better option.
 
-Step 6: Security Hardening for Alias Accounts
+Step 6 - Security Hardening for Alias Accounts
 
 Your alias service account is a high-value target. Protect it:
 

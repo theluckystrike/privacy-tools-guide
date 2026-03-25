@@ -242,13 +242,13 @@ google-chrome \
   --enable-features=ThirdPartyCookieBlocking
 ```
 
-Security Comparison: Exploit Mitigations
+Security Comparison - Exploit Mitigations
 
 Both browsers implement sophisticated exploit mitigations, but with different approaches:
 
-Firefox's Approach: Uses fine-grained compartmentalization and content security policies. The Fission project (similar to Chrome's Site Isolation) provides process-level isolation.
+Firefox's Approach - Uses fine-grained compartmentalization and content security policies. The Fission project (similar to Chrome's Site Isolation) provides process-level isolation.
 
-Chrome's Approach: Aggressive sandboxing with multiple layers. Each renderer process is sandboxed separately, with a broker process mediating all system calls.
+Chrome's Approach - Aggressive sandboxing with multiple layers. Each renderer process is sandboxed separately, with a broker process mediating all system calls.
 
 For users concerned about zero-day exploits, Firefox's lower market share provides some security-through-obscurity advantages. Exploit developers typically target the most popular target (Chrome), meaning Firefox has fewer publicly disclosed vulnerabilities at any given time.
 
@@ -272,21 +272,21 @@ Privacy-Respecting Alternatives
 
 Beyond Firefox and Chromium, several privacy-focused browsers deserve mention:
 
-Tor Browser: Based on Firefox with additional privacy features including:
+Tor Browser - Based on Firefox with additional privacy features including:
 - Onion routing for anonymity
 - Viewport size spoofing against fingerprinting
 - Automatic HTTPS upgrade
 - Permanent private browsing
 - Starts isolated profiles for each session
 
-Brave: Chromium-based with built-in privacy features:
+Brave - Chromium-based with built-in privacy features:
 - Aggressive ad/tracker blocking
 - First-party isolation by default
 - Integrated VPN (paid)
 - Fingerprinting resistance
 - HTTPS upgrade
 
-LibreWolf: Hardened Firefox with privacy defaults:
+LibreWolf - Hardened Firefox with privacy defaults:
 - Pre-configured about:config for privacy
 - Disabled telemetry and data collection
 - Enhanced fingerprinting resistance
@@ -299,15 +299,15 @@ Testing Your Browser's Privacy Settings
 Verify that your privacy configuration actually works:
 
 ```bash
-Firefox: Test if fingerprinting protection is working
-Visit: https://coveryourtracks.eff.org/
+Firefox - Test if fingerprinting protection is working
+Visit - https://coveryourtracks.eff.org/
 Should show randomized fingerprint values
 
 Test DNS leaks
-Visit: https://www.dnsleaktest.com/
+Visit - https://www.dnsleaktest.com/
 
 Test WebRTC leaks
-Visit: https://ipleak.net/
+Visit - https://ipleak.net/
 Should show VPN or proxy IP, not real IP
 
 Test canvas fingerprinting resistance

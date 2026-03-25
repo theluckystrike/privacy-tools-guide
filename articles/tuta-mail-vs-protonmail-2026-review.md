@@ -26,7 +26,7 @@ Table of Contents
 - [Email Forwarding and Aliases](#email-forwarding-and-aliases)
 - [Spam and Phishing Protection](#spam-and-phishing-protection)
 - [Data Residency and Legal Jurisdiction](#data-residency-and-legal-jurisdiction)
-- [Forward Compatibility: Testing Setup](#forward-compatibility-testing-setup)
+- [Forward Compatibility - Testing Setup](#forward-compatibility-testing-setup)
 - [Regulatory Compliance for Businesses](#regulatory-compliance-for-businesses)
 - [Migration Strategy](#migration-strategy)
 - [Long-term Maintenance](#long-term-maintenance)
@@ -86,7 +86,7 @@ Encrypted email systems limit search functionality:
 // Tuta Mail Search
 // - Limited search capabilities
 // - Only searches subject and body
-// - Not as comprehensive
+// - Not as complete
 // - Slower on large mailboxes
 ```
 
@@ -189,7 +189,7 @@ Tuta Mail:
 
 For maximum legal protection, both Switzerland and Germany offer strong privacy frameworks (both GDPR compliant).
 
-Forward Compatibility: Testing Setup
+Forward Compatibility - Testing Setup
 
 Test your encrypted email setup before committing:
 
@@ -247,23 +247,23 @@ ProtonMail Migration
 ```bash
 Can use ProtonMail's import tool
 Or forward Gmail to ProtonMail temporarily
-Advantage: IMAP access easier migration
+Advantage - IMAP access easier migration
 
-Step 1: Create ProtonMail account
-Step 2: Set up forwarding from Gmail
-Step 3: Import existing emails (if needed)
-Step 4: Update email address on services
-Step 5: Set up Bridge for desktop clients
+Step 1 - Create ProtonMail account
+Step 2 - Set up forwarding from Gmail
+Step 3 - Import existing emails (if needed)
+Step 4 - Update email address on services
+Step 5 - Set up Bridge for desktop clients
 ```
 
 Tuta Migration
 ```bash
 Manual process (no IMAP import available)
-Step 1: Create Tuta account
-Step 2: Add Tuta to important services
-Step 3: Forward critical emails from old account
-Step 4: Gradually migrate services
-Step 5: Archive old email account
+Step 1 - Create Tuta account
+Step 2 - Add Tuta to important services
+Step 3 - Forward critical emails from old account
+Step 4 - Gradually migrate services
+Step 5 - Archive old email account
 ```
 
 Long-term Maintenance

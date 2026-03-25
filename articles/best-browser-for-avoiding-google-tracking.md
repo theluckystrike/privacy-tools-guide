@@ -19,15 +19,15 @@ tags: [privacy-tools-guide, best-of]
 Firefox with uBlock Origin and strict tracking protection is the best browser for avoiding Google tracking in 2026, giving developers full extension support, excellent site compatibility, and configurable fingerprinting resistance. Use Brave as a secondary Chromium-based option with strong defaults out of the box, and Tor Browser for situations requiring full anonymity. Below are the specific configurations, extensions, and privacy hardening steps for each browser.
 
 
-- Built on Chromium: it maintains excellent web compatibility while blocking most trackers automatically.
+- Built on Chromium - it maintains excellent web compatibility while blocking most trackers automatically.
 - In a properly configured: Firefox with uBlock Origin, you should see 60-80% of requests blocked.
 - Use Brave as a: secondary Chromium-based option with strong defaults out of the box, and Tor Browser for situations requiring full anonymity.
 - A privacy-focused browser must: block or mitigate all these vectors while remaining functional for daily development work.
 - Secondary browser: Brave for sites that require Chromium compatibility
 3.
-- Profile isolation for Google: services you must access prevents correlation with your privacy-focused browsing.
+- Profile isolation for Google - services you must access prevents correlation with your privacy-focused browsing.
 
-Understanding Google's Tracking Ecosystem
+Understanding Google's Tracking environment
 
 Google's tracking extends far beyond google.com. The company operates the largest advertising network in the world, and thousands of websites embed Google Analytics, Google Tag Manager, and DoubleClick scripts. Even if you avoid Google's search engine, visiting any site that loads these resources transmits your activity back to Google.
 
@@ -35,7 +35,7 @@ Tracking methods include first-party and third-party cookies that persist across
 
 A privacy-focused browser must block or mitigate all these vectors while remaining functional for daily development work.
 
-Firefox: The Open-Source Standard
+Firefox - The Open-Source Standard
 
 Mozilla Firefox provides the strongest privacy defaults among mainstream browsers while maintaining full web compatibility. Firefox's Enhanced Tracking Protection automatically blocks known tracking scripts, including those from Google's advertising and analytics networks.
 
@@ -59,13 +59,13 @@ Firefox supports extensions that provide additional blocking:
 
 ```bash
 uBlock Origin - blocks ads and trackers at the network level
-Install from: https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
+Install from - https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
 
 Privacy Badger - learns to block invisible trackers
-Install from: https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/
+Install from - https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/
 
 Decentraleyes - localizes CDN resources to prevent tracking
-Install from: https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/
+Install from - https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/
 ```
 
 When configuring uBlock Origin, enable "I am an advanced user" in the settings to access more granular blocking rules. Add these custom filters to specifically target Google trackers:
@@ -78,7 +78,7 @@ When configuring uBlock Origin, enable "I am an advanced user" in the settings t
 ||googlesyndication.com^
 ```
 
-Brave: Privacy by Default
+Brave - Privacy by Default
 
 Brave Browser ships with aggressive tracking blocking enabled out of the box. Built on Chromium, it maintains excellent web compatibility while blocking most trackers automatically. Brave's Shields system handles blocking at the browser level, providing protection without requiring extensions.
 
@@ -97,7 +97,7 @@ Access Shields settings through the browser UI or via URL:
 
 For developers who need to test with scripts enabled on specific sites, Brave allows per-site Shields overrides. Create a list of trusted sites where you enable scripts while maintaining blocking everywhere else.
 
-Tor Browser: Maximum Anonymity
+Tor Browser - Maximum Anonymity
 
 For situations requiring strong anonymity, such as researching sensitive topics or avoiding location-based tracking, Tor Browser provides the highest level of protection. It routes traffic through the Tor network, encrypting your traffic and masking your IP address.
 
@@ -189,15 +189,15 @@ Track how many requests are being blocked to understand your exposure baseline:
 #!/bin/bash
 track-blocked-requests.sh - Monitor blocking effectiveness
 
-Test 1: Baseline - Visit a major site
+Test 1 - Baseline - Visit a major site
 Check DevTools Network tab > Requests count
 
 Example results:
 Without blocking: 150+ requests
-With uBlock Origin: 40-50 requests (75% blocked)
-With uBlock + Privacy Badger: 35-40 requests (80% blocked)
+With uBlock Origin - 40-50 requests (75% blocked)
+With uBlock + Privacy Badger - 35-40 requests (80% blocked)
 
-Test 2: Specific tracker domains
+Test 2 - Specific tracker domains
 Look in Network tab for these domains
 If present, blocking is incomplete:
 - google-analytics.com
@@ -205,7 +205,7 @@ If present, blocking is incomplete:
 - doubleclick.net
 - googleadservices.com
 
-Test 3: Third-party content
+Test 3 - Third-party content
 Filter Network tab by "Third-party"
 Count remaining requests
 Should be 10-20% of total in strict mode
@@ -219,24 +219,24 @@ Verify that your privacy setup actually works by testing for information leaks. 
 
 ```bash
 WebRTC leak test - IP should NOT be exposed
-Visit: https://ipleak.net (check WebRTC section)
-Look for: Only VPN IP, not your real IP
-If real IP appears: Enable media.peerconnection.enabled = false
+Visit - https://ipleak.net (check WebRTC section)
+Look for - Only VPN IP, not your real IP
+If real IP appears - Enable media.peerconnection.enabled = false
 
 Canvas fingerprinting test
-Visit: https://canvas.fingerprint.ai
+Visit - https://canvas.fingerprint.ai
 Result should be different on each page load
 Consistency indicates fingerprinting vulnerability
 
 DNS leak test
-Visit: https://www.dnsleaktest.com
+Visit - https://www.dnsleaktest.com
 Your ISP DNS should not appear
-If ISP appears: Use DNS-over-HTTPS instead
+If ISP appears - Use DNS-over-HTTPS instead
 
 IPv6 leak test
-Visit: https://ipleak.net
+Visit - https://ipleak.net
 Check IPv6 section
-If IPv6 revealed: Disable IPv6 in about:config
+If IPv6 revealed - Disable IPv6 in about:config
    network.dns.disableIPv6 = true
 ```
 
@@ -283,8 +283,8 @@ Privacy Extension Conflicts and Solutions
 
 Privacy extensions sometimes conflict with each other or with legitimate site functionality:
 
-- uBlock Origin + Privacy Badger: Generally compatible, but redundant at scale. Choose one as primary and disable the other's network blocking.
-- NoScript + uBlock Origin: Both block scripts, but from different rule sets. Use either NoScript (aggressive) or uBlock's script control (granular), not both.
+- uBlock Origin + Privacy Badger - Generally compatible, but redundant at scale. Choose one as primary and disable the other's network blocking.
+- NoScript + uBlock Origin - Both block scripts, but from different rule sets. Use either NoScript (aggressive) or uBlock's script control (granular), not both.
 - Multiple cookie blockers: Disable redundant cookie-blocking extensions, one is sufficient.
 
 Test your configuration on sites you use regularly. If a site breaks, use the browser's developer tools to identify which extension blocks critical resources, then whitelist selectively.

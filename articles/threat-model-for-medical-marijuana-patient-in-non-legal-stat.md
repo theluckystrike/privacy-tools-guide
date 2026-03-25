@@ -178,7 +178,7 @@ Advanced Threat Modeling Scenarios
 
 Medical marijuana patients in prohibition states face unique risks depending on their specific circumstances. Developing a personal threat model helps identify which protections matter most.
 
-Scenario: Out-of-State Purchase and Travel
+Scenario - Out-of-State Purchase and Travel
 
 If you regularly cross state lines for dispensary visits, your threat profile includes:
 
@@ -187,9 +187,9 @@ If you regularly cross state lines for dispensary visits, your threat profile in
 - Border crossing records (some states maintain detailed entry/exit logs)
 - Hotel records and credit card transactions
 
-Mitigations: Use prepaid cards at out-of-state dispensaries. If crossing borders frequently, consider purchasing supplies in larger quantities during single trips rather than multiple small visits. Use a separate phone on your trips that doesn't connect to your home network before or after travel.
+Mitigations - Use prepaid cards at out-of-state dispensaries. If crossing borders frequently, consider purchasing supplies in larger quantities during single trips rather than multiple small visits. Use a separate phone on your trips that doesn't connect to your home network before or after travel.
 
-Scenario: Visible Growing
+Scenario - Visible Growing
 
 Some patients grow small quantities for personal use. This introduces different risks than possession alone:
 
@@ -198,9 +198,9 @@ Some patients grow small quantities for personal use. This introduces different 
 - Odor detection during vehicle searches
 - Photographic evidence from drones or satellites
 
-Mitigations: Carbon filtration for odor control. Strategic lighting that matches reasonable electrical consumption. Avoid discussing growing operations digitally, even in encrypted channels.
+Mitigations - Carbon filtration for odor control. Strategic lighting that matches reasonable electrical consumption. Avoid discussing growing operations digitally, even in encrypted channels.
 
-Scenario: Medical Communications
+Scenario - Medical Communications
 
 Your medical records represent a vulnerability if law enforcement gains access:
 
@@ -209,7 +209,7 @@ Your medical records represent a vulnerability if law enforcement gains access:
 - Prescription records in your pharmacy's system
 - Insurance claims mentioning cannabis
 
-Mitigations: Use telehealth providers that specifically serve medical marijuana patients in your state. Understand your state's medical privacy laws. Some states offer stronger privacy protections for medical marijuana patients than others.
+Mitigations - Use telehealth providers that specifically serve medical marijuana patients in your state. Understand your state's medical privacy laws. Some states offer stronger privacy protections for medical marijuana patients than others.
 
 Cryptocurrency Payment Strategies
 
@@ -271,7 +271,7 @@ Your spending patterns reveal sensitive information. Regular purchases at dispen
 - Tax records if tracking for medical deductions
 - Financial apps that show spending by category
 
-Mitigation: Use exclusively cash for purchases. This adds inconvenience but eliminates transaction trails entirely.
+Mitigation - Use exclusively cash for purchases. This adds inconvenience but eliminates transaction trails entirely.
 
 Device Behavior Analysis
 
@@ -281,13 +281,13 @@ Your devices' network and app activity creates detectable patterns. Sophisticate
 - Characteristic network patterns when connecting to dispensary WiFi
 - Metadata showing regular visits to specific locations
 
-Mitigation: Don't use location-aware features when traveling to dispensaries. Disable WiFi and Bluetooth. Use a separate phone without location services enabled.
+Mitigation - Don't use location-aware features when traveling to dispensaries. Disable WiFi and Bluetooth. Use a separate phone without location services enabled.
 
 Social Network Analysis
 
 Your contacts and communication patterns reveal information. If multiple people are in encrypted group chats discussing medical marijuana, pattern analysis can infer the group's purpose even without reading messages.
 
-Mitigation: Maintain minimal contact lists. Don't create group chats. If discussing with someone, do so through direct one-to-one encrypted messaging.
+Mitigation - Maintain minimal contact lists. Don't create group chats. If discussing with someone, do so through direct one-to-one encrypted messaging.
 
 State-Specific Considerations
 
@@ -335,10 +335,10 @@ Your answers should guide which protections matter most. Someone with a hidden u
 Example threat model:
 
 ```
-Profile: Out-of-state medical user in Texas
-Visibility: Hidden (family doesn't know)
-Use Pattern: Occasional, discreet
-Threat Actors: Law enforcement (primary)
+Profile - Out-of-state medical user in Texas
+Visibility - Hidden (family doesn't know)
+Use Pattern - Occasional, discreet
+Threat Actors - Law enforcement (primary)
 
 Required Protections:
 - Separate identity for all cannabis communications
@@ -399,7 +399,7 @@ Stress Testing Your Security
 
 Ask trusted colleagues to attempt to correlate your identities or find evidence of your medical marijuana use. This helps identify weaknesses.
 
-Remember: Perfect security doesn't exist. Your goal is making surveillance more effort than it's worth. Implementing the measures above significantly increases the difficulty of tracking your activities.
+Remember - Perfect security doesn't exist. Your goal is making surveillance more effort than it's worth. Implementing the measures above significantly increases the difficulty of tracking your activities.
 
 Frequently Asked Questions
 

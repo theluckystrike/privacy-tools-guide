@@ -14,7 +14,7 @@ intent-checked: true
 voice-checked: true
 ---
 
-A privacy notice is a short disclosure shown at the point of data collection. A privacy policy is a comprehensive legal document covering all data practices. They serve different purposes and are not interchangeable.
+A privacy notice is a short disclosure shown at the point of data collection. A privacy policy is a complete legal document covering all data practices. They serve different purposes and are not interchangeable.
 
 Privacy notices appear in context. When a form asks for your email, the notice below it says what happens to that email. When an app requests location access, the popup explains why. Notices are brief (1-3 sentences), specific to one action, and shown before or during data collection. GDPR Article 13 requires them whenever you collect personal data directly from users.
 

@@ -29,10 +29,10 @@ Table of Contents
 - [Platform Coverage](#platform-coverage)
 - [Developer-Specific Considerations](#developer-specific-considerations)
 - [Pricing](#pricing)
-- [Threat Model: Password Manager Attack Surfaces](#threat-model-password-manager-attack-surfaces)
+- [Threat Model - Password Manager Attack Surfaces](#threat-model-password-manager-attack-surfaces)
 - [Cryptographic Analysis](#cryptographic-analysis)
 - [API and Integration Limitations](#api-and-integration-limitations)
-- [Migration Path: Exporting from Sticky Password](#migration-path-exporting-from-sticky-password)
+- [Migration Path - Exporting from Sticky Password](#migration-path-exporting-from-sticky-password)
 - [Sticky Password vs Open Source Alternatives](#sticky-password-vs-open-source-alternatives)
 - [Security Incidents and Track Record](#security-incidents-and-track-record)
 - [Verdict for Different User Profiles](#verdict-for-different-user-profiles)
@@ -139,19 +139,19 @@ Pricing
 
 Sticky Password offers a free tier with local-only storage and a Premium tier at approximately $30/year (as of 2026). The Premium tier adds cloud sync, priority support, and additional features. This pricing is competitive with Bitwarden Premium ($10/year) and significantly cheaper than 1Password ($35/year), though the feature gap justifies the price differences.
 
-Threat Model: Password Manager Attack Surfaces
+Threat Model - Password Manager Attack Surfaces
 
 Evaluating password managers requires understanding potential attack vectors:
 
-Master Password Compromise: If your master password is weak, attackers with access to the vault file can brute force it. Sticky Password's AES-256 implementation is solid, but strong master password entropy is critical.
+Master Password Compromise - If your master password is weak, attackers with access to the vault file can brute force it. Sticky Password's AES-256 implementation is solid, but strong master password entropy is critical.
 
-Supply Chain Attack: If Sticky Password's servers are compromised, attackers could inject malicious updates. No-logs policies don't protect against this if the update mechanism is compromised.
+Supply Chain Attack - If Sticky Password's servers are compromised, attackers could inject malicious updates. No-logs policies don't protect against this if the update mechanism is compromised.
 
-Synchronization Vulnerability: When syncing vault data across devices, encrypted data is transmitted. If the encryption keys are derived from the master password and someone intercepts sync traffic, they'd need to brute force the key, practically infeasible with strong passwords.
+Synchronization Vulnerability - When syncing vault data across devices, encrypted data is transmitted. If the encryption keys are derived from the master password and someone intercepts sync traffic, they'd need to brute force the key, practically infeasible with strong passwords.
 
-Local Device Compromise: If your device is compromised by malware, password managers are vulnerable because the decrypted vault must reside in memory while in use.
+Local Device Compromise - If your device is compromised by malware, password managers are vulnerable because the decrypted vault must reside in memory while in use.
 
-Browser Extension Vulnerability: The browser extension is the most attack-prone component. It's constantly interacting with websites, making it a prime target.
+Browser Extension Vulnerability - The browser extension is the most attack-prone component. It's constantly interacting with websites, making it a prime target.
 
 Sticky Password's local-first architecture reduces some risks (no server compromise of plaintext data) but doesn't address local device compromise or extension vulnerabilities.
 
@@ -161,11 +161,11 @@ Sticky Password uses AES-256-GCM for vault encryption, which is cryptographicall
 
 Comparison to competitors:
 
-Bitwarden: Open source, uses AES-256-CBC with HMAC for authentication. The open-source nature allows security researcher review. Uses PBKDF2 with 100,001 iterations.
+Bitwarden - Open source, uses AES-256-CBC with HMAC for authentication. The open-source nature allows security researcher review. Uses PBKDF2 with 100,001 iterations.
 
 1Password: Proprietary encryption, but has undergone independent security audits. Uses AES-256-GCM with SRP (Secure Remote Password) for authentication, preventing the server from ever accessing plaintext passwords.
 
-KeePass: Open source, uses AES-256 (or ChaCha20) with database-level encryption. No built-in sync, requiring separate mechanisms.
+KeePass - Open source, uses AES-256 (or ChaCha20) with database-level encryption. No built-in sync, requiring separate mechanisms.
 
 For developers concerned about cryptographic implementation details, Bitwarden's open-source nature and available source code inspection is a significant advantage.
 
@@ -173,7 +173,7 @@ API and Integration Limitations
 
 Sticky Password's lack of API access severely limits automation:
 
-Use Case 1: Database Password Rotation
+Use Case 1 - Database Password Rotation
 ```bash
 With Bitwarden CLI - possible
 export DB_PASS=$(bw get password "production-db" --raw)
@@ -187,7 +187,7 @@ With Sticky Password - not possible
 Must manually copy/paste password
 ```
 
-Use Case 2: CI/CD Secret Injection
+Use Case 2 - CI/CD Secret Injection
 ```bash
 GitHub Actions with Bitwarden
 - name: Get Database Password
@@ -197,15 +197,15 @@ GitHub Actions with Sticky Password
 No supported method - security risk
 ```
 
-Use Case 3: Emergency Access Automation
+Use Case 3 - Emergency Access Automation
 ```bash
 1Password allows programmatic emergency contact setup
-Sticky Password: manual process only
+Sticky Password - manual process only
 ```
 
 These limitations make Sticky Password unsuitable for technical teams managing infrastructure.
 
-Migration Path: Exporting from Sticky Password
+Migration Path - Exporting from Sticky Password
 
 If you decide to migrate to Bitwarden or KeePass:
 
@@ -214,10 +214,10 @@ If you decide to migrate to Bitwarden or KeePass:
 Export data from Sticky Password to CSV
 Then convert to KeePass XML format
 
-Step 1: Export from Sticky Password (GUI)
+Step 1 - Export from Sticky Password (GUI)
 Settings > Export > CSV (encrypted with master password)
 
-Step 2: Convert CSV to standard format
+Step 2 - Convert CSV to standard format
 python3 << 'EOF'
 import csv
 import xml.etree.ElementTree as ET
@@ -247,7 +247,7 @@ def csv_to_keepass_xml(csv_file, xml_output):
 csv_to_keepass_xml('sticky_export.csv', 'keepass_import.xml')
 EOF
 
-Step 3: Import XML into KeePass
+Step 3 - Import XML into KeePass
 File > Import > From XML
 
 echo "Migration complete. Review imported data for accuracy."

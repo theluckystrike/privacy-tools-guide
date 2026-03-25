@@ -24,7 +24,7 @@ Before implementing security measures, identify what you're protecting against. 
 
 If you handle financial documents, medical records, or legally privileged communications, you may face stricter regulatory requirements. Even without specific compliance obligations, clients increasingly ask about your data handling practices. Having a documented approach demonstrates professionalism and builds trust.
 
-Disk Encryption: Your First Line of Defense
+Disk Encryption - Your First Line of Defense
 
 Full disk encryption prevents unauthorized access if your laptop is stolen. Without it, anyone with physical access can bypass your login and read all files.
 
@@ -61,7 +61,7 @@ Virtual machines provide isolation between your personal activities and client w
 
 For freelancers, two approaches work well:
 
-Approach 1: Dedicated VM per client
+Approach 1 - Dedicated VM per client
 
 Create a separate VM for each major client. This prevents cross-contamination and makes it easy to hand off or destroy the entire environment when the project ends.
 
@@ -73,7 +73,7 @@ VBoxManage createhd --filename "ClientAcme-Workstation.vdi" --size 50000 --forma
 VBoxManage storageattach "ClientAcme-Workstation" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "ClientAcme-Workstation.vdi"
 ```
 
-Approach 2: Disposable VMs for sensitive tasks
+Approach 2 - Disposable VMs for sensitive tasks
 
 For quick client file reviews or document editing, spin up a VM, perform the work, then destroy it completely.
 
@@ -81,7 +81,7 @@ For quick client file reviews or document editing, spin up a VM, perform the wor
 Quick disposable VM workflow with Ubuntu
 virt-install --name temp-client-work --ram 2048 --disk path=/tmp/client-work.img,size=10 --os-variant ubuntu22.04 --graphics none --console pty --import
 
-After work: destroy completely
+After work - destroy completely
 virsh destroy temp-client-work
 virsh undefine temp-client-work --remove-all-storage
 ```
@@ -123,7 +123,7 @@ Secure Communication Channels
 
 Client communication often contains sensitive details. Use end-to-end encrypted channels rather than plain email.
 
-For email: Configure PGP encryption with your mail client. Thunderbird with OpenPGP provides good support across platforms.
+For email - Configure PGP encryption with your mail client. Thunderbird with OpenPGP provides good support across platforms.
 
 ```bash
 Generate PGP key pair
@@ -133,9 +133,9 @@ Export public key to share with clients
 gpg --armor --export your-email@example.com > public-key.asc
 ```
 
-For messaging: Signal offers strong encryption and has become the standard for sensitive communications. For more options, consider Session (no phone number required) or SimpleX (no identifier needed).
+For messaging - Signal offers strong encryption and has become the standard for sensitive communications. For more options, consider Session (no phone number required) or SimpleX (no identifier needed).
 
-For file sharing: Avoid sending sensitive documents via unencrypted email attachments. Instead:
+For file sharing - Avoid sending sensitive documents via unencrypted email attachments. Instead:
 
 - Use encrypted zip files with secure passwords transmitted separately
 - Set up a self-hosted file sharing solution like Nextcloud with end-to-end encryption
@@ -196,7 +196,7 @@ Documentation and Client Communication
 
 Document your security practices in a simple policy you can share with clients. This demonstrates professionalism and helps them understand how their data is protected.
 
-Include details about: encryption at rest, access controls, data retention and deletion policies, and incident response procedures. Clients handling sensitive data (healthcare, legal, financial) may have specific requirements, accommodate their compliance needs.
+Include details about - encryption at rest, access controls, data retention and deletion policies, and incident response procedures. Clients handling sensitive data (healthcare, legal, financial) may have specific requirements, accommodate their compliance needs.
 
 Compliance Documentation and Client Contracts
 
@@ -269,7 +269,7 @@ Create a separate Wi-Fi network or Ethernet connection for client work:
 macOS: Create separate network location
 networksetup -createlocation "Client Work" populate
 
-Linux: Separate network namespace
+Linux - Separate network namespace
 sudo ip netns add client-work
 sudo ip netns exec client-work bash
 ```
@@ -284,7 +284,7 @@ Restrict outbound connections during client work sessions:
 macOS firewall rules
 /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned on
 
-Ubuntu: UFW rules for VM-specific interface
+Ubuntu - UFW rules for VM-specific interface
 ufw default deny outgoing from 192.168.100.x
 ufw allow out from 192.168.100.x to 8.8.8.8 port 53  # DNS only
 ```
@@ -355,7 +355,7 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 Related Articles
 
-- [Privacy Setup for Celebrity: Protecting Personal Address.](/privacy-setup-for-celebrity-protecting-personal-address-and-/)
+- [Privacy Setup for Celebrity - Protecting Personal Address.](/privacy-setup-for-celebrity-protecting-personal-address-and-/)
 - [Veterinarian Client Pet Data Privacy Protection Setup Guide](/veterinarian-client-pet-data-privacy-protection-setup-guide/)
 - [Insurance Agent Client Health Data Privacy Protection Setup](/insurance-agent-client-health-data-privacy-protection-setup/)
 - [Privacy Setup For Accountant Handling Client Financial Data](/privacy-setup-for-accountant-handling-client-financial-data-/)

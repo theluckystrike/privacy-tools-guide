@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Problem
+Step 1 - Understand the Problem
 
 Large language models trained on internet data often memorize personal information present in their training corpora. This includes names, email addresses, phone numbers, physical addresses, and other PII (Personally Identifiable Information). When prompted appropriately, models can inadvertently reveal this memorized data, creating serious privacy violations.
 
 The challenge differs from traditional data anonymization because neural networks store information non-linearly. Simply removing explicit identifiers from your dataset does not guarantee the model cannot reconstruct or remember underlying personal information. You need an approach covering preprocessing, training, and post-deployment stages.
 
-Step 2: Preprocessing: PII Detection and Removal
+Step 2 - Preprocessing: PII Detection and Removal
 
 The first line of defense involves identifying and removing PII before training begins. Several tools and techniques make this process practical for large datasets.
 
@@ -62,14 +62,14 @@ anonymized = anonymizer.anonymize(
     text=sample_text,
     analyzer_results=results
 )
-print(f"Anonymized: {anonymized.text}")
+print(f"Anonymized - {anonymized.text}")
 ```
 
 Presidio supports detection for names, emails, phone numbers, social security numbers, credit cards, and custom entity types. You can extend it with domain-specific recognizers for your particular use case.
 
 Handling Code and Configuration Files
 
-Training data often includes code repositories containing API keys, database credentials, and configuration files with sensitive information. The GGUF and tokenization tooling ecosystem provides utilities for filtering such content.
+Training data often includes code repositories containing API keys, database credentials, and configuration files with sensitive information. The GGUF and tokenization tooling environment provides utilities for filtering such content.
 
 ```python
 import re
@@ -122,7 +122,7 @@ print(f"Privacy budget: ε = {epsilon:.2f}")
 
 The noise_multiplier and max_grad_norm parameters balance privacy guarantees against model utility. Lower noise and higher grad norms preserve more accuracy but provide weaker privacy guarantees.
 
-Step 3: Post-Training: Model Editing and Unlearning
+Step 3 - Post-Training: Model Editing and Unlearning
 
 Sometimes you discover personal information in a trained model after training is complete. Several techniques allow you to remove or suppress this information without retraining from scratch.
 
@@ -189,7 +189,7 @@ def unlearn_example(model, forget_data, retain_data, epochs=5):
         optimizer.step()
 ```
 
-Step 4: Deploy ed Model Protection
+Step 4 - Deploy ed Model Protection
 
 After deployment, additional safeguards protect against privacy leaks through model outputs.
 
@@ -254,7 +254,7 @@ class PrivacyAwareGenerator:
         return self.model.generate(prompt)
 ```
 
-Step 5: Implementation Checklist
+Step 5 - Implementation Checklist
 
 When building privacy into your AI pipeline, consider these stages:
 

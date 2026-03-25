@@ -86,8 +86,8 @@ End-to-End Encrypted Messaging
 
 For quick client communications or coordination with colleagues:
 
-- Signal: The gold standard for end-to-end encryption. Self-destructing messages, no metadata logging, and verified security audits. Suitable for discussing case details when email isn't practical.
-- Wire: End-to-end encrypted, supports groups and file sharing, Swiss-based with GDPR compliance.
+- Signal - The gold standard for end-to-end encryption. Self-destructing messages, no metadata logging, and verified security audits. Suitable for discussing case details when email isn't practical.
+- Wire - End-to-end encrypted, supports groups and file sharing, Swiss-based with GDPR compliance.
 
 Avoid standard SMS, WhatsApp (Meta-owned, different privacy posture), or Telegram (default not end-to-end encrypted) for sensitive case communications.
 
@@ -375,13 +375,13 @@ Technology Stack Recommendation
 
 For social work agencies implementing privacy-first systems:
 
-Storage: Proton Drive or Tresorit with HIPAA BAA
-Communication: Signal for urgent matters, Proton Mail for formal
-Authentication: Hardware keys + passwords for case access
-Monitoring: Alerts for after-hours access, unusual data access patterns
-Training: Annual HIPAA/privacy training for all staff
-Backups: Encrypted offline backups in secure location
-Incident response: Written procedures, tested annually
+Storage - Proton Drive or Tresorit with HIPAA BAA
+Communication - Signal for urgent matters, Proton Mail for formal
+Authentication - Hardware keys + passwords for case access
+Monitoring - Alerts for after-hours access, unusual data access patterns
+Training - Annual HIPAA/privacy training for all staff
+Backups - Encrypted offline backups in secure location
+Incident response - Written procedures, tested annually
 
 Frequently Asked Questions
 

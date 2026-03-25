@@ -21,9 +21,9 @@ Choose OpenPGP if you need decentralized key management, cross-organizational co
 Table of Contents
 
 - [Protocol Foundations](#protocol-foundations)
-- [Key Management: The Core Difference](#key-management-the-core-difference)
+- [Key Management - The Core Difference](#key-management-the-core-difference)
 - [Cryptographic Features Comparison](#cryptographic-features-comparison)
-- [Client Support and Ecosystem](#client-support-and-ecosystem)
+- [Client Support and environment](#client-support-and-environment)
 - [Interoperability Considerations](#interoperability-considerations)
 - [Implementation Complexity](#implementation-complexity)
 - [Security Considerations](#security-considerations)
@@ -41,7 +41,7 @@ OpenPGP is an open standard (RFC 4880) based on Phil Zimmermann's Pretty Good Pr
 
 S/MIME (Secure/Multipurpose Internet Mail Extensions) emerged from the PKI (Public Key Infrastructure) world. Defined in RFC 5751, it relies on X.509 certificates issued by Certificate Authorities. This brings certificate validation into the picture, similar to how HTTPS works in browsers.
 
-Key Management: The Core Difference
+Key Management - The Core Difference
 
 The most significant distinction between these protocols lies in how they handle key distribution and trust.
 
@@ -91,9 +91,9 @@ Cryptographic Features Comparison
 
 Both support encryption and digital signatures. OpenPGP historically supported a wider range of algorithms, while S/MIME has converged on RSA and ECC in practice.
 
-Client Support and Ecosystem
+Client Support and environment
 
-OpenPGP Ecosystem
+OpenPGP environment
 
 OpenPGP enjoys broad support across email clients and platforms:
 
@@ -117,7 +117,7 @@ encrypted = gpg.encrypt(
 )
 ```
 
-S/MIME Ecosystem
+S/MIME environment
 
 S/MIME integrates deeply with enterprise environments:
 
@@ -219,7 +219,7 @@ brew install gnupg
 Generate your key
 gpg --full-generate-key
 
-Configure Thunderbird: Account Settings > End-to-End Encryption > OpenPGP > Add Key
+Configure Thunderbird - Account Settings > End-to-End Encryption > OpenPGP > Add Key
 ```
 
 For S/MIME, check with your IT department about certificate issuance. For personal use, you can purchase certificates from Sectigo, DigiCert, or use free certificates from sources like Actalis (limited validation).
@@ -305,17 +305,17 @@ openssl pkcs12 -in certificate.pfx -noout -nodes
 
 Create unified key database
 cat > key_inventory.txt << EOF
-Email: alice@example.com
-OpenPGP Key ID: 1A2B3C4D5E6F7890
-OpenPGP Key Fingerprint: 1A2B3C4D5E6F789012AB34CD56789EF
-OpenPGP Expires: 2027-03-22
-Status: Active
+Email - alice@example.com
+OpenPGP Key ID - 1A2B3C4D5E6F7890
+OpenPGP Key Fingerprint - 1A2B3C4D5E6F789012AB34CD56789EF
+OpenPGP Expires - 2027-03-22
+Status - Active
 
-S/MIME Certificate Subject: CN=Alice Smith,O=Example Corp
-S/MIME Certificate Issuer: CN=Example Corp CA
-S/MIME Certificate Serial: 001A2B3C
-S/MIME Expires: 2026-12-31
-Status: Active - Renewal due in 9 months
+S/MIME Certificate Subject - CN=Alice Smith,O=Example Corp
+S/MIME Certificate Issuer - CN=Example Corp CA
+S/MIME Certificate Serial - 001A2B3C
+S/MIME Expires - 2026-12-31
+Status - Active - Renewal due in 9 months
 EOF
 
 Set calendar reminders for key expiration
@@ -449,9 +449,9 @@ Getting Both Set Up This Week
 
 Starting both protocols doesn't require choosing one first:
 
-For OpenPGP: Generate a key today using `gpg --full-generate-key`, then configure it in Thunderbird through Account Settings.
+For OpenPGP - Generate a key today using `gpg --full-generate-key`, then configure it in Thunderbird through Account Settings.
 
-For S/MIME: Request a certificate from your organization's IT department or purchase one from Sectigo if you're an individual. Install it in your keychain and configure Thunderbird.
+For S/MIME - Request a certificate from your organization's IT department or purchase one from Sectigo if you're an individual. Install it in your keychain and configure Thunderbird.
 
 Both will coexist. Thunderbird automatically uses the right protocol based on recipient capabilities.
 

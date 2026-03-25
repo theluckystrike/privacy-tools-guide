@@ -23,7 +23,7 @@ Table of Contents
 - [Encryption Architecture](#encryption-architecture)
 - [Metadata Analysis](#metadata-analysis)
 - [Self-Hosting and Deployment](#self-hosting-and-deployment)
-- [Protocol and Ecosystem](#protocol-and-ecosystem)
+- [Protocol and environment](#protocol-and-environment)
 - [Verification and Security Features](#verification-and-security-features)
 - [Practical Considerations](#practical-considerations)
 - [Making the Technical Choice](#making-the-technical-choice)
@@ -40,7 +40,7 @@ Signal Protocol Implementation
 Signal uses the Double Ratchet Algorithm combined with X3DH (Extended Triple Diffie-Hellman) key agreement. This provides forward secrecy and break-in recovery, compromised session keys cannot decrypt past messages, and new keys are generated for each message.
 
 ```python
-Pseudocode: Signal's X3DH key agreement
+Pseudocode - Signal's X3DH key agreement
 def x3dh_initiate(identity_key, ephemeral_key, recipient_bundle):
     dh1 = ecdh(identity_key, recipient_bundle.identity_key)
     dh2 = ecdh(ephemeral_key, recipient_bundle.signed_prekey)
@@ -65,7 +65,7 @@ const identitySecretKey = keyPair.secretKey;
 const identityPublicKey = keyPair.publicKey;
 ```
 
-The critical difference: Threema requires a server-side directory mapping user IDs to public keys. This introduces a trust assumption, users must verify public key fingerprints through another channel (Threema's ID verification feature).
+The critical difference - Threema requires a server-side directory mapping user IDs to public keys. This introduces a trust assumption, users must verify public key fingerprints through another channel (Threema's ID verification feature).
 
 Metadata Analysis
 
@@ -128,11 +128,11 @@ threema_onpremise:
 
 For organizations needing compliance with specific data handling policies, Threema OnPremise provides deployment control while maintaining E2EE.
 
-Protocol and Ecosystem
+Protocol and environment
 
-Signal: Open Protocol, Limited Client
+Signal - Open Protocol, Limited Client
 
-Signal's protocol (formerly TextSecure, now the Signal Protocol) powers WhatsApp, Facebook Messenger, and Google Messages. This widespread adoption validates cryptographic strength but creates ecosystem dependency on Signal's server infrastructure.
+Signal's protocol (formerly TextSecure, now the Signal Protocol) powers WhatsApp, Facebook Messenger, and Google Messages. This widespread adoption validates cryptographic strength but creates environment dependency on Signal's server infrastructure.
 
 ```bash
 Signal's protocol adoption (estimated)
@@ -146,9 +146,9 @@ The protocol's openness enables libraries in multiple languages:
 - libsignal-protocol-java
 - libsignal-protocol-c
 
-Threema: Proprietary but Audited
+Threema - Proprietary but Audited
 
-Threema uses proprietary protocols with published cryptographic specifications. The application has undergone independent security audits by Cure53 and others. However, third-party client development remains limited compared to Signal's ecosystem.
+Threema uses proprietary protocols with published cryptographic specifications. The application has undergone independent security audits by Cure53 and others. However, third-party client development remains limited compared to Signal's environment.
 
 Verification and Security Features
 
@@ -156,7 +156,7 @@ Device Verification
 
 Both platforms support key fingerprint verification:
 
-Signal: Safety numbers computed from both parties' identity keys
+Signal - Safety numbers computed from both parties' identity keys
 ```python
 Signal safety number generation
 def compute_safety_number(our_key, their_key):
@@ -164,7 +164,7 @@ def compute_safety_number(our_key, their_key):
     return hash(combined)[:10]
 ```
 
-Threema: QR code scanning for ID verification
+Threema - QR code scanning for ID verification
 ```bash
 Threema verification workflow
 1. User A displays QR code containing their public key
@@ -188,9 +188,9 @@ Practical Considerations
 
 Registration and Onboarding
 
-Signal: Requires phone number, automatically syncs contacts using Signal's service (contacts uploaded as hashed identifiers).
+Signal - Requires phone number, automatically syncs contacts using Signal's service (contacts uploaded as hashed identifiers).
 
-Threema: Phone number optional. Users can create an ID without personal information. Threema imports contacts locally, no server-side contact synchronization.
+Threema - Phone number optional. Users can create an ID without personal information. Threema imports contacts locally, no server-side contact synchronization.
 
 Platform Availability
 
@@ -215,7 +215,7 @@ Choose Threema when:
 - Swiss jurisdiction provides regulatory advantage
 - Simplified contact management without server sync appeals to your threat model
 
-Both provide genuine end-to-end encryption, a meaningful improvement over conventional messaging. The choice depends on your specific requirements for metadata minimization, deployment flexibility, and protocol ecosystem.
+Both provide genuine end-to-end encryption, a meaningful improvement over conventional messaging. The choice depends on your specific requirements for metadata minimization, deployment flexibility, and protocol environment.
 
 Advanced Configuration and Deployment
 
@@ -299,9 +299,9 @@ The Double Ratchet achieves perfect forward secrecy through continuous key rotat
 ```
 Each message advances the ratchet:
 
-Message 1: K1 = H(K0 || "forward")
-Message 2: K2 = H(K1 || "forward")
-Message N: KN = H(K(N-1) || "forward")
+Message 1 - K1 = H(K0 || "forward")
+Message 2 - K2 = H(K1 || "forward")
+Message N - KN = H(K(N-1) || "forward")
 
 Compromise of K5 does NOT allow decryption of K4, K3, K2, K1
 ```
@@ -311,9 +311,9 @@ Threema's Key Rotation
 Threema uses a simpler approach with periodic key refresh:
 
 ```
-Initial key exchange: Public key distribution
-Message encryption: User's current public key
-Periodic rotation: New key distributed (monthly or manual)
+Initial key exchange - Public key distribution
+Message encryption - User's current public key
+Periodic rotation - New key distributed (monthly or manual)
 
 Compromise of current key affects:
 - All messages from compromise point forward

@@ -44,7 +44,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Your CCPA Opt-Out Rights
+Step 1 - Understand Your CCPA Opt-Out Rights
 
 Under CCPA/CPRA, California residents have the right to direct businesses that sell or share their personal information to stop doing so. The law defines "sale" broadly, it includes renting, releasing, disclosing, disseminating, making available, transferring, or communicating your personal information to third parties for monetary or other valuable consideration.
 
@@ -52,7 +52,7 @@ Companies must provide a clear "Do Not Sell or Share My Personal Information" li
 
 This right applies to businesses that meet CCPA thresholds: those with annual gross revenues over $25 million, those that buy/sell/share data of 100,000+ consumers, or those deriving 50%+ revenue from selling personal information.
 
-Step 2: Finding Companies That Sell Your Data
+Step 2 - Finding Companies That Sell Your Data
 
 Before you can opt out, you need to identify which companies have your data. Common sources include:
 
@@ -62,9 +62,9 @@ Before you can opt out, you need to identify which companies have your data. Com
 
 For developers, you can programmatically scan for trackers using tools like `puppeteer-extra-plugin-stealth` combined with request logging to identify which domains receive your data.
 
-Step 3: Methods for Submitting Opt-Out Requests
+Step 3 - Methods for Submitting Opt-Out Requests
 
-Method 1: Direct Website Submission
+Method 1 - Direct Website Submission
 
 Most companies provide an opt-out form on their privacy page. Look for:
 
@@ -72,7 +72,7 @@ Most companies provide an opt-out form on their privacy page. Look for:
 - Privacy settings dashboard
 - Email addresses like privacy@company.com or optout@company.com
 
-Method 2: Email-Based Requests
+Method 2 - Email-Based Requests
 
 When no web form exists, email serves as a valid request method. Your email must include:
 
@@ -80,11 +80,11 @@ When no web form exists, email serves as a valid request method. Your email must
 - Your identifying information (email, phone, or account details used with the company)
 - Request to confirm receipt and compliance
 
-Method 3: Toll-Free Numbers
+Method 3 - Toll-Free Numbers
 
 Some companies offer phone-based opt-out. Document the representative's name, call reference number, and any confirmation provided.
 
-Step 4: Automate Opt-Out Requests with Scripts
+Step 4 - Automate Opt-Out Requests with Scripts
 
 For power users managing opt-outs across multiple companies, automation saves significant time. Below are practical scripts for sending properly formatted CCPA opt-out requests.
 
@@ -103,8 +103,8 @@ def create_ccpa_opt_out_email(company_name, company_email, user_info):
 
 I am a California resident exercising my right under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA) to opt out of the sale and sharing of my personal information.
 
-Company Name: {company_name}
-My Identifying Information: {user_info['email']}
+Company Name - {company_name}
+My Identifying Information - {user_info['email']}
 
 Please confirm receipt of this request and provide written confirmation once you have stopped selling or sharing my personal information.
 
@@ -151,7 +151,7 @@ Bash Script Using Curl for Web Form Submissions
 #!/bin/bash
 
 CCPA Opt-Out Web Form Submitter
-Usage: ./ccpa_optout.sh "company-name" "https://company.com/optout" "user@example.com"
+Usage - ./ccpa_optout.sh "company-name" "https://company.com/optout" "user@example.com"
 
 COMPANY_NAME="$1"
 OPT_OUT_URL="$2"
@@ -165,7 +165,7 @@ echo "Submitting CCPA opt-out request to ${COMPANY_NAME}..."
 RESPONSE=$(curl -s -w "\n%{http_code}" \
   -X POST "${OPT_OUT_URL}" \
   -H "Content-Type: application/x-www-form-urlencoded" \
-  -H "User-Agent: CCPA-OptOut-Tool/1.0" \
+  -H "User-Agent - CCPA-OptOut-Tool/1.0" \
   -d "${PAYLOAD}")
 
 HTTP_CODE=$(echo "${RESPONSE}" | tail -n1)
@@ -238,7 +238,7 @@ const puppeteer = require('puppeteer');
 })();
 ```
 
-Step 5: Documenting Your Opt-Out Requests
+Step 5 - Documenting Your Opt-Out Requests
 
 Always keep records of your opt-out submissions:
 

@@ -52,9 +52,9 @@ Raspberry Pi 4 Model B:
 - Power supply (USB-C, 5V/3A)
 - Optional: Ethernet cable (better than WiFi)
 
-Total cost: ~$100-120 including all components
+Total cost - ~$100-120 including all components
 
-Installation: Straightforward, takes 30 minutes
+Installation - Straightforward, takes 30 minutes
 ```
 
 Alternative Options
@@ -78,7 +78,7 @@ Pi-hole can run on a cloud VPS, but your ISP still sees traffic to VPS, defeatin
 
 Installation Steps
 
-Step 1: Prepare Raspberry Pi
+Step 1 - Prepare Raspberry Pi
 
 ```
 Hardware assembly:
@@ -100,7 +100,7 @@ First boot:
    (default password: raspberry)
 ```
 
-Step 2: Initial Configuration
+Step 2 - Initial Configuration
 
 ```bash
 Update system
@@ -119,7 +119,7 @@ Save and exit (Ctrl+X, Y, Enter)
 sudo reboot
 ```
 
-Step 3: Install Pi-hole
+Step 3 - Install Pi-hole
 
 ```bash
 Download and run installer
@@ -138,7 +138,7 @@ After installation completes:
 - Note the web interface URL (usually http://192.168.1.50/admin)
 ```
 
-Step 4: Access Pi-hole Dashboard
+Step 4 - Access Pi-hole Dashboard
 
 ```
 1. From any computer on network, visit: http://192.168.1.50/admin
@@ -156,7 +156,7 @@ Configuration
 Configure Router to Use Pi-hole
 
 ```
-Most important step: Tell your router to use Pi-hole for DNS
+Most important step - Tell your router to use Pi-hole for DNS
 
 Router login (usually 192.168.1.1):
 1. Visit 192.168.1.1 in browser
@@ -320,13 +320,13 @@ VPN Setup (Advanced)
 ```
 For privacy outside home network:
 
-Option 1: Pi-hole + home VPN
+Option 1 - Pi-hole + home VPN
 - Install WireGuard on Pi-hole
 - Connect phone to home VPN when traveling
 - Uses home network DNS (Pi-hole filtering)
 - Works anywhere, ISP can't track you
 
-Option 2: Pi-hole → VPN to external DNS
+Option 2 - Pi-hole → VPN to external DNS
 - Pi-hole queries external DNS over encrypted VPN
 - Extra privacy (even against home network monitor)
 - More complex, slower
@@ -354,7 +354,7 @@ Expect 70-85% of ad/tracker blocking
 Websites broken after Pi-hole
 
 ```
-Cause: Overly aggressive blocklist blocking legitimate services
+Cause - Overly aggressive blocklist blocking legitimate services
 
 Solution:
 1. Find broken domain in Query Log
@@ -371,7 +371,7 @@ Common false-positives:
 Network slower after Pi-hole
 
 ```
-Cause: Pi-hole processing every DNS query takes CPU
+Cause - Pi-hole processing every DNS query takes CPU
 
 Solutions:
 1. Upgrade Raspberry Pi (4GB RAM minimum, 8GB better)
@@ -379,7 +379,7 @@ Solutions:
 3. Add caching DNS server (recursive = faster queries)
 4. Enable DNS caching in Pi-hole settings
 
-Typical impact: <1ms added latency (imperceptible to users)
+Typical impact - <1ms added latency (imperceptible to users)
 ```
 
 Privacy Impact
@@ -443,7 +443,7 @@ Equipment (one-time):
 - Power supply: $10
 - SD card: $15
 - Ethernet cable: $5
-Total: ~$105
+Total - ~$105
 
 Monthly savings:
 - No ads (removes annoyance)
@@ -453,7 +453,7 @@ Monthly savings:
 Pi-hole pays for itself in peace of mind within a month
 ```
 
-Comparison: Pi-hole vs Alternatives
+Comparison - Pi-hole vs Alternatives
 
 | Feature | Pi-hole | NextDNS | Control D |
 |---------|---------|---------|-----------|
@@ -524,9 +524,9 @@ iptables -A FORWARD -d 8.8.4.4 -j DROP
 Firefox, which has DoH enabled by default in the US, respects the CANARY domain `use-application-dns.net` as a signal to disable DoH. Pi-hole can serve this domain:
 
 ```bash
-In Pi-hole admin: add to custom DNS
+In Pi-hole admin - add to custom DNS
 Settings → DNS → Custom DNS
-Add: use-application-dns.net → 0.0.0.0
+Add - use-application-dns.net → 0.0.0.0
 ```
 
 This tells Firefox running on any device in your network to use the system resolver (Pi-hole) instead of its built-in DoH configuration.

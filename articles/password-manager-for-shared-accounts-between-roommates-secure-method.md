@@ -20,11 +20,11 @@ Audit Trail and Access Logging
 Table of Contents
 
 - [Audit Trail and Access Logging](#audit-trail-and-access-logging)
-- [Conflict Resolution: Password Change Disputes](#conflict-resolution-password-change-disputes)
+- [Conflict Resolution - Password Change Disputes](#conflict-resolution-password-change-disputes)
 - [Onboarding New Roommates](#onboarding-new-roommates)
 - [Off-boarding When Roommates Leave](#off-boarding-when-roommates-leave)
 - [Cost-Benefit Analysis for Shared Vaults](#cost-benefit-analysis-for-shared-vaults)
-- [Alternative: Shared Secret Management Without Permanent Password Manager](#alternative-shared-secret-management-without-permanent-password-manager)
+- [Alternative - Shared Secret Management Without Permanent Password Manager](#alternative-shared-secret-management-without-permanent-password-manager)
 
 When multiple people access shared credentials, tracking who changed what becomes essential:
 
@@ -49,12 +49,12 @@ These logs show:
 
 Regular audit reviews catch unauthorized changes or inappropriate access patterns.
 
-Conflict Resolution: Password Change Disputes
+Conflict Resolution - Password Change Disputes
 
 What happens when two roommates disagree on a password change?
 
 ```
-Scenario: Alice changes Netflix password without telling Bob
+Scenario - Alice changes Netflix password without telling Bob
 Bob is locked out mid-movie
 
 Prevention strategies:
@@ -142,20 +142,20 @@ Cost-Benefit Analysis for Shared Vaults
 Is a paid password manager worth the cost?
 
 ```
-Scenario 1: Single roommate pair
-Cost: Bitwarden Free ($0/month)
-Benefit: End-to-end encrypted credential sharing
-ROI: Infinite (free, prevents password sharing in group chats)
+Scenario 1 - Single roommate pair
+Cost - Bitwarden Free ($0/month)
+Benefit - End-to-end encrypted credential sharing
+ROI - Infinite (free, prevents password sharing in group chats)
 
-Scenario 2: 3-4 roommates
-Cost: Bitwarden Premium ($10/month) or Families
-Benefit: Audit logging, better support, larger vault
-ROI: $2.50-3.30 per person per month for professional-grade security
+Scenario 2 - 3-4 roommates
+Cost - Bitwarden Premium ($10/month) or Families
+Benefit - Audit logging, better support, larger vault
+ROI - $2.50-3.30 per person per month for professional-grade security
 
-Scenario 3: House of 5+ roommates
-Cost: Consider dedicated password manager + VPN
-Benefit: Centralized management, full audit trails
-ROI: More complex; may be worth paying for
+Scenario 3 - House of 5+ roommates
+Cost - Consider dedicated password manager + VPN
+Benefit - Centralized management, full audit trails
+ROI - More complex; may be worth paying for
 
 Decision tree:
 - < 3 people? Use Bitwarden Free
@@ -165,7 +165,7 @@ Decision tree:
 
 The ROI improves as the group size increases.
 
-Alternative: Shared Secret Management Without Permanent Password Manager
+Alternative - Shared Secret Management Without Permanent Password Manager
 
 For short-term roommate situations (college dorms, temporary housing):
 
@@ -176,7 +176,7 @@ Alice creates a secret link
 curl -X POST https://onetimesecret.com/api/share \
   -d "secret=netflix-password-here&passphrase=household-passphrase"
 
-Response: https://onetimesecret.com/s/yyyyyyyy
+Response - https://onetimesecret.com/s/yyyyyyyy
 Alice sends link to Bob via Slack
 Bob opens link, enters "household-passphrase"
 Secret is displayed once, then deleted forever
@@ -212,9 +212,9 @@ Password managers store your most sensitive data. Review encryption, security au
 
 What is the learning curve like?
 
-Basic setup: 15-30 minutes.
-Full feature adoption: 1-2 hours.
-Teaching roommates: 1 hour per person.
+Basic setup - 15-30 minutes.
+Full feature adoption - 1-2 hours.
+Teaching roommates - 1 hour per person.
 Integration into household workflow: 2-4 weeks before becoming natural.
 
 Related Articles

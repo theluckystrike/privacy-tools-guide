@@ -33,7 +33,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Your Fundamental Rights Under VCDPA
+Step 1 - Your Fundamental Rights Under VCDPA
 
 Right to Know and Access
 
@@ -44,7 +44,7 @@ To exercise this right, find the company's privacy policy and look for "data sub
 Here's a sample request template:
 
 ```
-Subject: VCDPA Data Access Request
+Subject - VCDPA Data Access Request
 To: [Company Privacy Email]
 I am a Virginia resident exercising my right to know under the Virginia Consumer Data Protection Act.
 Please provide a copy of all personal data you have collected about me, including:
@@ -80,7 +80,7 @@ Right to Appeal
 
 If a company denies your request, you have the right to appeal. The company must provide information about how to appeal within 45 days. If the company still refuses after appeal, you can file a complaint with the Virginia Attorney General's office.
 
-Step 2: Practical Steps to Protect Your Privacy
+Step 2 - Practical Steps to Protect Your Privacy
 
 Audit Your Data Footprint
 
@@ -102,7 +102,7 @@ Review App Permissions
 
 Mobile apps often collect more data than necessary. Go through your phone's app settings and revoke permissions that aren't essential. Pay special attention to location access, contacts, microphone, and camera permissions. Many apps will still function with reduced permissions.
 
-Step 3: What Companies Must Do
+Step 3 - What Companies Must Do
 
 Under VCDPA, covered businesses must:
 
@@ -114,7 +114,7 @@ Under VCDPA, covered businesses must:
 
 If a company fails to comply, the Virginia Attorney General can impose fines up to $7,500 per violation. While private lawsuits are not permitted under VCDPA, the Attorney General's office can take action on behalf of consumers.
 
-Step 4: Timeline and What to Expect
+Step 4 - Timeline and What to Expect
 
 Companies must respond to your request within 45 days. They may request additional information to verify your identity, which is reasonable, companies must ensure they're not disclosing data to the wrong person. However, they cannot use this as a way to avoid responding entirely.
 
@@ -122,7 +122,7 @@ If a company needs more time, they must notify you before the 45-day deadline an
 
 Keep records of all your requests, including confirmation emails and any responses. If a company ignores your request or provides an inadequate response, document everything before filing a complaint with the Virginia Attorney General.
 
-Step 5: Identifying Which Companies Must Comply with VCDPA
+Step 5 - Identifying Which Companies Must Comply with VCDPA
 
 VCDPA applies to "businesses" that:
 - Collect personal data from Virginia residents AND
@@ -148,16 +148,16 @@ Companies that might be exempt:
 - Government agencies (sometimes)
 - Entities already covered by other privacy laws (HIPAA for healthcare, GLBA for financial institutions)
 
-Step 6: Step-by-Step Request Process
+Step 6 - Step-by-Step Request Process
 
-Step 1: Locate the company's privacy portal
+Step 1 - Locate the company's privacy portal
 Most large companies have privacy centers on their websites:
 - Look for "Privacy", "Your Privacy Choices", or "California/Virginia Privacy"
 - Search the company's domain for "data subject request"
 - Check the footer of their website for privacy links
 - Email their privacy@company.com address
 
-Step 2: Gather your identifying information
+Step 2 - Gather your identifying information
 Before submitting, have ready:
 - Your full legal name
 - Any aliases you use with the company
@@ -167,7 +167,7 @@ Before submitting, have ready:
 - Order numbers or purchase history if relevant
 - Any other identifier specific to their records
 
-Step 3: Submit your request
+Step 3 - Submit your request
 Most companies provide online forms. If not, send an email. Keep this information clear:
 - State you're a Virginia resident
 - Specify which right you're exercising (access, delete, correct, opt out)
@@ -176,7 +176,7 @@ Most companies provide online forms. If not, send an email. Keep this informatio
 - Include your signature and date
 - Keep a copy for your records
 
-Step 4: Document everything
+Step 4 - Document everything
 Create a spreadsheet tracking:
 - Company name
 - Request date
@@ -187,21 +187,21 @@ Create a spreadsheet tracking:
 - Response quality (complete/incomplete/refused)
 - Follow-up needed (yes/no)
 
-Step 7: Common Company Responses and How to Handle Them
+Step 7 - Common Company Responses and How to Handle Them
 
-Response Type 1: Identity Verification Request
+Response Type 1 - Identity Verification Request
 This is legitimate and required. The company must verify you're actually making the request. Provide what they ask (driver's license, utility bill, etc.) but don't provide more than necessary.
 
-Response Type 2: Partial Response
+Response Type 2 - Partial Response
 Company provides some data but claims other data falls under exemptions. Request detailed explanations for what was withheld. You can follow up if explanations seem insufficient.
 
-Response Type 3: "We don't have your data"
+Response Type 3 - "We don't have your data"
 Possible if you truly never used their services, but many companies track you without your interaction (ad networks, data brokers). If suspicious, request confirmation in writing.
 
-Response Type 4: Delayed Response
+Response Type 4 - Delayed Response
 If they miss the 45-day deadline (with documented extensions), this is a violation. Document and escalate to Virginia Attorney General if necessary.
 
-Step 8: Specific Company Examples
+Step 8 - Specific Company Examples
 
 Amazon:
 - Go to amazon.com > Account > Login & security > Manage your content and devices
@@ -226,7 +226,7 @@ Financial Institutions (banks, credit card companies):
 - May require you to submit requests in person with ID
 - Keep documentation of all submissions
 
-Step 9: Handling Company Refusals
+Step 9 - Handling Company Refusals
 
 If a company refuses your request and the refusal seems unjustified:
 
@@ -243,29 +243,29 @@ Filing a complaint:
 - Include dates and identifying information
 - The AG's office will investigate on your behalf
 
-Step 10: Timing Strategy for Multiple Requests
+Step 10 - Timing Strategy for Multiple Requests
 
 Don't submit all requests simultaneously if you want to track responses carefully:
 
-Month 1-2: High-priority companies
+Month 1-2 - High-priority companies
 - Social media where you're active
 - Retailers where you've made purchases
 - Email providers
 - Cloud storage services
 
-Month 3-4: Secondary companies
+Month 3-4 - Secondary companies
 - Subscription services
 - Streaming platforms
 - Financial services (if not already done)
 
-Month 5+: coverage
+Month 5+ - coverage
 - Data brokers
 - Ad networks (harder to identify)
 - Background check companies
 
 This staggered approach allows you to properly handle responses and appeals without being overwhelmed.
 
-Step 11: Special Considerations
+Step 11 - Special Considerations
 
 Children's Data:
 VCDPA has strict rules about children under 13. If you're a parent:
@@ -282,18 +282,18 @@ If you run a Virginia business, remember VCDPA might apply to you if you collect
 - Processes to handle customer requests
 - Data protection assessments for sensitive processing
 
-Step 12: VCDPA vs. Other Privacy Laws
+Step 12 - VCDPA vs. Other Privacy Laws
 
 Virginia residents might also have rights under:
 
-CCPA (California): Applies to some Virginia residents who conducted transactions in California
+CCPA (California) - Applies to some Virginia residents who conducted transactions in California
 COPPA (Children's Online Privacy): Applies if children under 13 use your services
-GLBA (Gramm-Leach-Bliley): Applies to financial institutions
+GLBA (Gramm-Leach-Bliley) - Applies to financial institutions
 HIPAA (Health Insurance Portability): Applies to healthcare providers
 
 Multiple laws may apply to the same company, giving you additional rights.
 
-Step 13: Long-Term Privacy Strategy
+Step 13 - Long-Term Privacy Strategy
 
 Using VCDPA effectively:
 1. Audit data held about you (start with 5-10 major companies)

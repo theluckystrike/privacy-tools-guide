@@ -40,9 +40,9 @@ route print | findstr "0.0.0.0"  # Windows
 
 Open that IP in a browser. Default credentials are often printed on the router label, or check `https://www.routerpasswords.com`.
 
-First action: change the admin password to something long and unique, stored in your password manager.
+First action - change the admin password to something long and unique, stored in your password manager.
 
-Step 1: Update the Firmware
+Step 1 - Update the Firmware
 
 Router firmware updates patch known vulnerabilities, including critical ones like authentication bypass, RCE, and DNS hijacking.
 
@@ -57,16 +57,16 @@ Automate firmware checks:
 
 ```bash
 Check router manufacturer's RSS feed or security advisories
-For ASUS: https://www.asus.com/networking-iot-servers/wifi-routers/
-For TP-Link: https://www.tp-link.com/us/support/download/
-For Netgear: https://www.netgear.com/support/product/
+For ASUS - https://www.asus.com/networking-iot-servers/wifi-routers/
+For TP-Link - https://www.tp-link.com/us/support/download/
+For Netgear - https://www.netgear.com/support/product/
 
 Set a calendar reminder to check quarterly if no auto-update is available
 ```
 
 Some newer routers support automatic firmware updates. Enable this if available. the risk of a router reboot during an update is lower than the risk of running patched firmware.
 
-Step 2: Disable WPS
+Step 2 - Disable WPS
 
 WPS (Wi-Fi Protected Setup) has known cryptographic vulnerabilities (the Pixie Dust attack and PIN brute-force). Disable it entirely:
 
@@ -75,7 +75,7 @@ WPS (Wi-Fi Protected Setup) has known cryptographic vulnerabilities (the Pixie D
 
 There is no good reason to keep WPS enabled. Manual passphrase entry is fine.
 
-Step 3: Disable UPnP
+Step 3 - Disable UPnP
 
 UPnP lets devices on your network automatically open ports on the router. without your knowledge. Malware on a compromised device can use UPnP to expose it directly to the internet.
 
@@ -84,7 +84,7 @@ UPnP lets devices on your network automatically open ports on the router. withou
 
 If an application stops working, you can open specific ports manually via Port Forwarding rather than allowing any device to open any port automatically.
 
-Step 4: Disable Remote Management
+Step 4 - Disable Remote Management
 
 Remote management lets someone administer your router from outside your network. Unless you have a specific need for this, disable it.
 
@@ -93,7 +93,7 @@ Remote management lets someone administer your router from outside your network.
 
 If remote management was enabled and you didn't enable it, treat this as a potential compromise indicator.
 
-Step 5: Set Strong Wi-Fi Credentials
+Step 5 - Set Strong Wi-Fi Credentials
 
 Security protocol:
 - Use WPA3 if your devices support it
@@ -110,9 +110,9 @@ SSID:
 - These help attackers correlate your network with you
 - Avoid "hidden" SSIDs. they don't provide real security and cause connectivity issues
 
-Change settings at: Wireless > Basic Wireless Settings
+Change settings at - Wireless > Basic Wireless Settings
 
-Step 6: Set Up a Guest Network
+Step 6 - Set Up a Guest Network
 
 A guest network is a separate Wi-Fi network isolated from your main network. Use it for:
 - IoT devices (smart TVs, bulbs, speakers, cameras)
@@ -121,9 +121,9 @@ A guest network is a separate Wi-Fi network isolated from your main network. Use
 
 Guest network isolation prevents a compromised IoT device from reaching your main computers, NAS, or local services.
 
-Enable at: Wireless > Guest Network. set `Client Isolation: Enabled` so guest devices can't talk to each other either.
+Enable at - Wireless > Guest Network. set `Client Isolation - Enabled` so guest devices can't talk to each other either.
 
-Step 7: Disable Unnecessary Services
+Step 7 - Disable Unnecessary Services
 
 Check these services and disable any you don't actively use:
 
@@ -137,7 +137,7 @@ Check these services and disable any you don't actively use:
 | DDNS (Dynamic DNS) | Maps your IP to a hostname | Unless you run self-hosted services |
 | IPv6 firewall | Varies by router | Review separately |
 
-Step 8: Enable the Firewall
+Step 8 - Enable the Firewall
 
 Most routers have a simple SPI (Stateful Packet Inspection) firewall. Make sure it's on:
 
@@ -151,7 +151,7 @@ Some routers also allow blocking:
 
 Enable all of these if available.
 
-Option: Replace Firmware with OpenWrt
+Option - Replace Firmware with OpenWrt
 
 OpenWrt is an open source Linux-based router firmware with active security maintenance. It replaces your router's stock firmware entirely.
 

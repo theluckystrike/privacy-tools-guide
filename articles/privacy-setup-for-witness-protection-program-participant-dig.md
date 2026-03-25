@@ -18,7 +18,7 @@ voice-checked: true
 
 Entering a witness protection program marks a significant transition in your life, requiring not just physical security but also digital privacy. Your digital footprint can reveal your location, connections, and identity if not properly managed. This guide provides practical steps to secure your digital presence while maintaining the anonymity that witness protection requires.
 
-Test 3: IPv6 Leak Testing
+Test 3 - IPv6 Leak Testing
 echo ""
 echo "3.
 - Details saved to: $REVIEW_LOG"
@@ -26,7 +26,7 @@ echo "3.
 
 Remember that security is an ongoing process, not an one-time configuration.
 - Go through each app: in your settings and revoke location permissions except for navigation apps used temporarily.
-- Third: use a privacy-focused mobile operating system if possible.
+- Third - use a privacy-focused mobile operating system if possible.
 - Signal offers the best: combination of security and usability, with features like disappearing messages that automatically delete communications after a set time.
 - Abandoned accounts can be: compromised and used to gather information about you.
 
@@ -40,13 +40,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Digital Threat Market
+Step 1 - Understand the Digital Threat Market
 
 When you enter witness protection, your adversaries may attempt to track you through digital means. This includes analyzing your social media activity, tracking device signals, monitoring online accounts, and exploiting any remaining connections to your previous life. The goal is to create a complete digital separation from your past identity while maintaining essential connectivity for legitimate needs.
 
 Modern smartphones and computers constantly broadcast information about your location, habits, and contacts. Every app you install, website you visit, and network you connect to leaves traces that skilled investigators can follow. Understanding these tracking mechanisms is the first step toward counteracting them.
 
-Step 2: Device Hardening Essentials
+Step 2 - Device Hardening Essentials
 
 Your smartphone is both your greatest tool and your biggest vulnerability. For witness protection participants, consider these essential hardening steps:
 
@@ -72,7 +72,7 @@ Signal settings recommendations
 
 For sensitive communications, consider using encrypted email services with zero-knowledge architecture. Services like ProtonMail don't have access to your message contents, meaning they cannot be compelled to provide decrypted data.
 
-Step 3: Identity Management in Digital Spaces
+Step 3 - Identity Management in Digital Spaces
 
 Creating and maintaining a new digital identity requires careful attention to separation from your past presence online. This extends beyond simply creating new accounts, you must ensure no digital breadcrumbs link your new identity to your old one.
 
@@ -88,7 +88,7 @@ Use cash for purchases whenever possible. This breaks the digital transaction ch
 
 Cryptocurrency can provide additional financial privacy, but requires careful handling. Simply purchasing cryptocurrency through exchanges that require identity verification creates a link to your identity. Privacy-focused cryptocurrencies like Monero offer stronger anonymity, but converting to and from traditional currency requires compliant exchanges that may maintain records.
 
-Step 4: Secure the Network Fundamentals
+Step 4 - Secure the Network Fundamentals
 
 Your network connection reveals significant information about your location and activities. Each website you visit logs your IP address, creating a record of your browsing activity that can be traced back to your internet connection.
 
@@ -104,11 +104,11 @@ Audit all account recovery options and remove links to your previous identity. R
 
 Create strong, unique passwords for each account using a password manager. This prevents a single compromised password from exposing multiple accounts. For the password manager itself, use the longest passphrase you can remember.
 
-Step 5: Practical Implementation Steps
+Step 5 - Practical Implementation Steps
 
 Implementing these security measures requires a systematic approach. Begin with the highest-priority items that create the most significant vulnerabilities:
 
-Phase 1: Device Hardening (Week 1)
+Phase 1 - Device Hardening (Week 1)
 
 ```bash
 #!/bin/bash
@@ -137,7 +137,7 @@ echo "4. Settings > Disappearing Messages > Set to 24 hours"
 echo "5. Settings > Notifications > Customize to disable revealing message previews"
 ```
 
-Phase 2: Account Migration (Week 2)
+Phase 2 - Account Migration (Week 2)
 
 ```bash
 #!/bin/bash
@@ -145,15 +145,15 @@ Account migration and old identity removal
 
 Create completely new email identity
 Use ProtonMail for encrypted email: https://protonmail.com
-Alternative: Tutanota (Switzerland-based, full encryption)
+Alternative - Tutanota (Switzerland-based, full encryption)
 
-Step 1: New email account creation
+Step 1 - New email account creation
 echo "Create new email accounts (use Tor Browser for registration if possible)"
 echo "Recommended services:"
 echo " - ProtonMail: Switzerland-based, encrypted, no tracking"
 echo " - Tutanota: Germany-based, automatic encryption"
 
-Step 2: Close old accounts
+Step 2 - Close old accounts
 echo ""
 echo "Closing old social media accounts:"
 echo "Instagram: Settings > Account > Help > Request Account Deletion"
@@ -164,7 +164,7 @@ echo "TikTok: Me > Settings and Privacy > Account Control > Delete Account"
 Wait 30 days for deletion (accounts are recoverable during grace period)
 After 30 days, deletion is permanent
 
-Step 3: Monitor old accounts
+Step 3 - Monitor old accounts
 echo ""
 echo "After account closure, periodically check:"
 echo " - Google Takeout for any remaining linked accounts"
@@ -172,16 +172,16 @@ echo " - Archive.org (Wayback Machine) for cached versions of old profiles"
 echo " - Google Search for name+old information"
 ```
 
-Phase 3: Network Hardening
+Phase 3 - Network Hardening
 
 ```bash
 #!/bin/bash
 VPN Configuration Script
 
 Install ProtonVPN or Mullvad (recommended for witness protection)
-ProtonVPN: Switzerland-based, no-logs audited, accepts cryptocurrency
+ProtonVPN - Switzerland-based, no-logs audited, accepts cryptocurrency
 
-Linux/macOS: Manual WireGuard configuration (maximum privacy)
+Linux/macOS - Manual WireGuard configuration (maximum privacy)
 cat > /etc/wireguard/wg0.conf << 'EOF'
 [Interface]
 PrivateKey = <generate-with-wg-genkey>
@@ -199,10 +199,10 @@ Enable VPN at startup
 systemctl enable wg-quick@wg0
 
 Verify VPN is active before any other network activity
-Test: curl https://api.ipify.org (should return VPN IP, not real IP)
+Test - curl https://api.ipify.org (should return VPN IP, not real IP)
 ```
 
-Phase 4: Verification and Testing
+Phase 4 - Verification and Testing
 
 ```bash
 #!/bin/bash
@@ -210,43 +210,43 @@ Privacy verification checklist
 
 echo "=== Privacy Verification Checklist ==="
 
-Test 1: IP Address Verification
+Test 1 - IP Address Verification
 echo "1. IP Address Leaks:"
 echo " Real IP check: curl https://api.ipify.org"
 echo " VPN should show different IP"
 
-Test 2: DNS Leak Testing
+Test 2 - DNS Leak Testing
 echo ""
 echo "2. DNS Leak Test:"
-echo " Visit: https://www.dnsleaktest.com"
+echo " Visit - https://www.dnsleaktest.com"
 echo " Verify VPN DNS servers are used, not ISP DNS"
 
-Test 3: IPv6 Leak Testing
+Test 3 - IPv6 Leak Testing
 echo ""
 echo "3. IPv6 Leak Test:"
-echo " Visit: https://test-ipv6.com"
+echo " Visit - https://test-ipv6.com"
 echo " Should show no IPv6 address if VPN is active"
 
-Test 4: WebRTC Leak Testing
+Test 4 - WebRTC Leak Testing
 echo ""
 echo "4. WebRTC Leak Test:"
-echo " Visit: https://browserleaks.com/webrtc"
+echo " Visit - https://browserleaks.com/webrtc"
 echo " Should show VPN IP only"
 
-Test 5: Location Verification
+Test 5 - Location Verification
 echo ""
 echo "5. Location Verification:"
-echo " Visit: https://www.iplocation.net"
+echo " Visit - https://www.iplocation.net"
 echo " Should show VPN server location, not your actual location"
 
-Test 6: Browser Fingerprinting
+Test 6 - Browser Fingerprinting
 echo ""
 echo "6. Browser Fingerprint Test:"
-echo " Visit: https://coveryourtracks.eff.org"
+echo " Visit - https://coveryourtracks.eff.org"
 echo " Review what information websites can collect"
 ```
 
-Phase 5: Ongoing Maintenance
+Phase 5 - Ongoing Maintenance
 
 Implement monthly security reviews:
 
@@ -259,33 +259,33 @@ REVIEW_LOG="$HOME/.security_review_$REVIEW_DATE.txt"
 
 echo "Monthly Security Review - $REVIEW_DATE" > "$REVIEW_LOG"
 
-Check 1: App permissions
+Check 1 - App permissions
 echo "" >> "$REVIEW_LOG"
 echo "1. App Permissions Review:" >> "$REVIEW_LOG"
 echo " - Settings > Privacy > Review each app's permissions" >> "$REVIEW_LOG"
 echo " - Remove access for apps no longer used" >> "$REVIEW_LOG"
 
-Check 2: Location history
+Check 2 - Location history
 echo "" >> "$REVIEW_LOG"
 echo "2. Location History Audit:" >> "$REVIEW_LOG"
-echo " - Google: https://myactivity.google.com" >> "$REVIEW_LOG"
+echo " - Google - https://myactivity.google.com" >> "$REVIEW_LOG"
 echo " - Apple: Settings > Privacy > Location Services" >> "$REVIEW_LOG"
 echo " - Clear history if any remains" >> "$REVIEW_LOG"
 
-Check 3: Connected devices
+Check 3 - Connected devices
 echo "" >> "$REVIEW_LOG"
 echo "3. Connected Devices Review:" >> "$REVIEW_LOG"
 echo " - Check Apple ID Sign In & Security" >> "$REVIEW_LOG"
-echo " - Google Security Checkup: https://myaccount.google.com/security-checkup" >> "$REVIEW_LOG"
+echo " - Google Security Checkup - https://myaccount.google.com/security-checkup" >> "$REVIEW_LOG"
 echo " - Remove unrecognized devices" >> "$REVIEW_LOG"
 
-Check 4: App store review
+Check 4 - App store review
 echo "" >> "$REVIEW_LOG"
 echo "4. App Store Review:" >> "$REVIEW_LOG"
 echo " - Identify any new apps requesting new permissions" >> "$REVIEW_LOG"
 echo " - Remove any apps added by others (if shared device)" >> "$REVIEW_LOG"
 
-Check 5: Malware scan
+Check 5 - Malware scan
 echo "" >> "$REVIEW_LOG"
 echo "5. Malware Detection:" >> "$REVIEW_LOG"
 echo " - iOS: Use Find My > Find My iPhone to ensure no tracking" >> "$REVIEW_LOG"

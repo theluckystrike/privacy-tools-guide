@@ -209,11 +209,11 @@ Watchtower Advanced Features
 
 Watchtower goes beyond identifying compromised passwords. It detects:
 
-Reused passwords: If your spouse uses the same password for Netflix and Gmail, Watchtower alerts you. You can then guide them to change the password using 1Password's generator.
+Reused passwords - If your spouse uses the same password for Netflix and Gmail, Watchtower alerts you. You can then guide them to change the password using 1Password's generator.
 
-Weak passwords: Passwords with insufficient entropy trigger alerts.
+Weak passwords - Passwords with insufficient entropy trigger alerts.
 
-Vulnerable websites: Sites with known vulnerabilities are flagged, suggesting forced password changes even if the account hasn't been compromised.
+Vulnerable websites - Sites with known vulnerabilities are flagged, suggesting forced password changes even if the account hasn't been compromised.
 
 Monitor Watchtower regularly:
 

@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How Social Media Share Buttons Track You
+Step 1 - How Social Media Share Buttons Track You
 
 When you visit a page with social media share buttons, the browser loads scripts from the social media company's servers. Even if you never click the button, these scripts execute and transmit information back to the social media platform. The data collected typically includes:
 
@@ -40,7 +40,7 @@ When you visit a page with social media share buttons, the browser loads scripts
 
 Facebook's Like button, for example, sets cookies on your device regardless of whether you have a Facebook account or click anything. Twitter's share button similarly tracks page views across the web. This data builds a profile of your browsing habits, interests, and behavior.
 
-Step 2: Blocking Tracking at the Browser Level
+Step 2 - Blocking Tracking at the Browser Level
 
 Users can block social media tracking through browser extensions. uBlock Origin filters out known tracking domains at the network level. Privacy Badger learns to block trackers based on observed behavior. These extensions work automatically and require no configuration.
 
@@ -48,7 +48,7 @@ For Firefox users, enable Enhanced Tracking Protection in browser settings. This
 
 Browser developers also offer native solutions. Firefox's Facebook Container extension isolates Facebook tracking to prevent it from following you across other websites. Safari's Intelligent Tracking Prevention automatically identifies and blocks cross-site trackers.
 
-Step 3: JavaScript-Based Solutions for Website Owners
+Step 3 - JavaScript-Based Solutions for Website Owners
 
 Web developers can implement solutions that preserve share functionality while blocking tracking. The key is to replace automatic script loading with user-initiated loading.
 
@@ -85,7 +85,7 @@ Create custom share buttons using your own styling:
 
 This method gives you full control over appearance while eliminating unwanted tracking scripts.
 
-Step 4: Use Content Security Policy Headers
+Step 4 - Use Content Security Policy Headers
 
 Server-side configuration provides another layer of protection. Content Security Policy (CSP) headers let you specify which domains can load resources on your site.
 
@@ -105,7 +105,7 @@ add_header Content-Security-Policy "default-src 'self'; script-src 'self' https:
 
 This configuration prevents iframe-based share buttons from loading while allowing your own scripts. Adjust the policy to match your site's legitimate requirements.
 
-Step 5: Implementing a Privacy-First Share Component
+Step 5 - Implementing a Privacy-First Share Component
 
 Build a custom share component that works without external dependencies:
 
@@ -151,7 +151,7 @@ Use it in your HTML:
 
 The `noopener,noreferrer` attributes in the window.open call provide security benefits by preventing the opened page from accessing your page through `window.opener`.
 
-Step 6: Server-Side Rendering Approach
+Step 6 - Server-Side Rendering Approach
 
 For static sites or server-rendered applications, generate share links without any client-side JavaScript:
 
@@ -165,7 +165,7 @@ For static sites or server-rendered applications, generate share links without a
 
 This works for users with JavaScript disabled and provides a baseline sharing capability without any tracking scripts.
 
-Step 7: Test Your Implementation
+Step 7 - Test Your Implementation
 
 Verify that tracking scripts are blocked using browser developer tools. Open the Network tab and filter by domain names like facebook.com, twitter.com, or linkedin.com. Reload your page and confirm no requests go to these domains.
 
@@ -177,11 +177,11 @@ Use online privacy testing tools to check for residual tracking:
 
 Test share functionality manually across different browsers and devices. Ensure users can still share content through all intended platforms.
 
-Step 8: Real-World Tracking Threat Model
+Step 8 - Real-World Tracking Threat Model
 
 Understanding what data social media platforms capture helps justify implementation effort:
 
-Standard Share Button: When Facebook's Like button loads, it:
+Standard Share Button - When Facebook's Like button loads, it:
 - Receives your real IP address
 - Gets any Facebook cookies you've previously stored
 - Learns you're visiting this specific URL
@@ -190,7 +190,7 @@ Standard Share Button: When Facebook's Like button loads, it:
 
 This occurs without any user interaction, simply visiting a page with the button triggers tracking.
 
-Cumulative Profile Building: Across multiple sites, a single user might be tracked by share buttons hundreds of times monthly. This creates:
+Cumulative Profile Building - Across multiple sites, a single user might be tracked by share buttons hundreds of times monthly. This creates:
 - Complete browsing history profiles
 - Interest and behavioral patterns
 - Demographic inference (through visited sites)
@@ -306,7 +306,7 @@ Removing social tracking scripts provides measurable performance improvements:
 
 Sites that removed social share buttons report 10-15% reduction in page load time and corresponding improvements in user engagement.
 
-Step 9: Accessibility Considerations
+Step 9 - Accessibility Considerations
 
 When building custom share buttons, ensure accessibility:
 
@@ -377,6 +377,6 @@ Related Articles
 - [Social Media Privacy For Teenagers Guide 2026](/social-media-privacy-for-teenagers-guide-2026/)
 - [Turkey Social Media Censorship How Government Blocks Twitter](/turkey-social-media-censorship-how-government-blocks-twitter/)
 - [How To Create Anonymous Social Media Accounts](/how-to-create-anonymous-social-media-accounts/)
-- [AI Tools for Social Media Analytics: A Practical Guide](https://bestremotetools.com/ai-tools-for-social-media-analytics/)
+- [AI Tools for Social Media Analytics - A Practical Guide](https://bestremotetools.com/ai-tools-for-social-media-analytics/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

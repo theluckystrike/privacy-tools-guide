@@ -32,7 +32,7 @@ Firefox provides a sandboxed extension environment with strict Content Security 
 
 A password manager's Firefox extension serves as the primary interface for daily use. Performance, reliability, and feature parity with the desktop application directly impact productivity. Some password managers treat their browser extension as a stripped-down version of their main app, while others provide nearly full functionality through the extension.
 
-Bitwarden: Open-Source Excellence
+Bitwarden - Open-Source Excellence
 
 Bitwarden offers one of the most capable Firefox extensions in the password management space. The extension provides complete vault access, including folders, collections, and all stored item types. As an open-source solution, the codebase undergoes independent security audits, and you can self-host the entire infrastructure if privacy regulations or organizational policies require it.
 
@@ -97,7 +97,7 @@ op run --env-file=.env -- your-app-command
 
 The `--env-file` flag generates a temporary environment file, injecting secrets into your application without persisting them to disk.
 
-KeePassXC: Local-First Approach
+KeePassXC - Local-First Approach
 
 KeePassXC takes a different approach, storing your vault locally without cloud synchronization. For developers requiring complete control over data storage or operating in air-gapped environments, this local-first model provides maximum security assurance.
 
@@ -118,7 +118,7 @@ The local-only model provides several security benefits:
 
 For developers working with sensitive data or in regulated industries, KeePassXC's architecture simplifies compliance requirements.
 
-Proton Pass: Privacy-Focused Option
+Proton Pass - Privacy-Focused Option
 
 Proton Pass, developed by the Proton team behind ProtonMail and ProtonVPN, offers a privacy-focused password management solution. The Firefox extension provides solid functionality with end-to-end encryption as a core principle.
 
@@ -216,7 +216,7 @@ Bitwarden Cost Analysis
 
 Individual Plan:
 - Free: $0 (unlimited items, limited features)
-- Premium: $10/year (~$0.83/month)
+- Premium - $10/year (~$0.83/month)
 - Organizations (self-hosted): $0-100+ annually depending on size
 
 Team Plans:
@@ -256,7 +256,7 @@ Integration with Proton subscriptions:
 
 Proton Pass only makes financial sense if you're already using other Proton services.
 
-Security Considerations: Master Password Strength
+Security Considerations - Master Password Strength
 
 Regardless of which manager you choose, your master password is the single point of failure. All security collapses if your master password is compromised:
 
@@ -325,8 +325,8 @@ Store vault in Dropbox, sync automatically
 ln -s ~/Dropbox/keepass.kdbx ~/.config/keepassxc/database.kdbx
 ```
 
-Advantage: Complete control over sync backend
-Disadvantage: Requires manual sync configuration on each device
+Advantage - Complete control over sync backend
+Disadvantage - Requires manual sync configuration on each device
 
 Cloud Sync (Bitwarden, 1Password)
 
@@ -337,8 +337,8 @@ All devices automatically stay synchronized
 Login to extension on any device, vault is available
 ```
 
-Advantage: Easy synchronization across devices
-Disadvantage: Trust in cloud provider's security and availability
+Advantage - Easy synchronization across devices
+Disadvantage - Trust in cloud provider's security and availability
 
 Emergency Access and Account Recovery
 
@@ -368,7 +368,7 @@ Choose your password manager based on:
 1. Open-source requirement: Bitwarden or KeePassXC
 2. Maximum automation: Bitwarden or 1Password (for CLI integration)
 3. Offline capability: KeePassXC
-4. Ecosystem integration: Proton Pass (if using Proton)
+4. environment integration: Proton Pass (if using Proton)
 5. Support and polish: 1Password
 6. Budget-conscious: Bitwarden
 7. Maximum security assurance: 1Password (regular audits and transparency reports)

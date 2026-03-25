@@ -30,7 +30,7 @@ Table of Contents
 - [Best Practices for Maximum Protection](#best-practices-for-maximum-protection)
 - [Font Fingerprinting Attack Vectors](#font-fingerprinting-attack-vectors)
 - [Security Levels Comparison](#security-levels-comparison)
-- [Technical Deep Dive: Font Normalization](#technical-deep detailed look-font-normalization)
+- [Technical Deep Dive - Font Normalization](#technical-deep detailed look-font-normalization)
 - [Identifying Font Fingerprinting Attempts](#identifying-font-fingerprinting-attempts)
 - [Testing Specific Font Protection](#testing-specific-font-protection)
 - [Complementary Protections](#complementary-protections)
@@ -143,10 +143,10 @@ Font Fingerprinting Attack Vectors
 
 Understanding how trackers extract font information helps appreciate Tor Browser's defenses:
 
-Vector 1: CSS Fallback Chain Timing
+Vector 1 - CSS Fallback Chain Timing
 Trackers measure how long it takes to render text with progressively less common fonts. If a font isn't available, rendering takes longer due to fallback processing. By timing multiple fonts, attackers build a unique profile.
 
-Vector 2: Canvas Text Measurement
+Vector 2 - Canvas Text Measurement
 JavaScript can render text to an HTML canvas element and measure pixel dimensions. Different fonts produce different widths for identical text, revealing which fonts are installed.
 
 ```javascript
@@ -179,10 +179,10 @@ Tor Browser prevents this attack by:
 2. Disabling the Canvas API fingerprinting methods
 3. Randomizing canvas rendering to produce inconsistent results
 
-Vector 3: CSS Font Load Events
+Vector 3 - CSS Font Load Events
 Websites can listen to `@font-face` load events to determine which fonts successfully loaded, inferring system fonts.
 
-Vector 4: DOM Metrics Measurement
+Vector 4 - DOM Metrics Measurement
 JavaScript measures DOM element heights and widths, which vary based on available fonts. Different font metrics (ascender height, baseline, x-height) produce detectable differences.
 
 Tor Browser's letterboxing defense prevents this by constraining the content area to fixed dimensions.
@@ -199,7 +199,7 @@ Security Levels Comparison
 | Plugin Fingerprinting | Mitigated | Mitigated | Blocked |
 | User Experience Impact | Minimal | Moderate | High |
 
-Technical Deep Dive: Font Normalization
+Technical Deep Dive - Font Normalization
 
 Tor Browser implements font normalization through several mechanisms:
 
@@ -337,15 +337,15 @@ Complementary Protections
 
 Font fingerprinting is just one of many fingerprinting vectors. Combine Tor Browser's protections with these additional measures:
 
-Canvas Fingerprinting: Tor Browser randomizes canvas rendering through `privacy.resistFingerprinting`. Test at coverYourTracks.eff.org to verify protection.
+Canvas Fingerprinting - Tor Browser randomizes canvas rendering through `privacy.resistFingerprinting`. Test at coverYourTracks.eff.org to verify protection.
 
-WebGL Fingerprinting: GPU capabilities reveal information about hardware. Tor Browser disables WebGL in Safest mode.
+WebGL Fingerprinting - GPU capabilities reveal information about hardware. Tor Browser disables WebGL in Safest mode.
 
-Timezone Fingerprinting: `privacy.resistFingerprinting` sets timezone to UTC for all users.
+Timezone Fingerprinting - `privacy.resistFingerprinting` sets timezone to UTC for all users.
 
-Language Fingerprinting: Accept-Language headers are normalized to match Tor Browser's default language.
+Language Fingerprinting - Accept-Language headers are normalized to match Tor Browser's default language.
 
-The cumulative effect: even if one fingerprinting vector leaks information, the others remain protected, maintaining anonymity through a diverse fingerprint pool.
+The cumulative effect - even if one fingerprinting vector leaks information, the others remain protected, maintaining anonymity through a diverse fingerprint pool.
 
 Font Configuration for Maximum Privacy
 
@@ -378,7 +378,7 @@ Subscribe to:
 - EFF privacy technology updates
 - Academic papers on browser fingerprinting
 
-The threat ecosystem continuously evolves. New JavaScript APIs (like Font Metrics API) may introduce new vectors requiring Tor Project updates.
+The threat environment continuously evolves. New JavaScript APIs (like Font Metrics API) may introduce new vectors requiring Tor Project updates.
 
 Frequently Asked Questions
 

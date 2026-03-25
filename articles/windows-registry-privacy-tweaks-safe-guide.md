@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Registry Safety
+Step 1 - Understand Registry Safety
 
 Before modifying the registry, you must understand the underlying structure. The registry contains five primary hives: `HKEY_CURRENT_USER` (HKCU) for user-specific settings, `HKEY_LOCAL_MACHINE` (HKLM) for machine-wide settings, `HKEY_CLASSES_ROOT`, `HKEY_USERS`, and `HKEY_CURRENT_CONFIG`. Changes to HKCU affect only your user account and typically require no administrator privileges. Changes to HKLM affect all users and usually require elevated permissions.
 
@@ -47,7 +47,7 @@ Checkpoint-Computer -Description "Before Privacy Tweaks" -RestorePointType MODIF
 
 This gives you a reliable rollback option if any tweak causes unexpected behavior.
 
-Step 2: What Registry Privacy Tweaks Can and Cannot Do
+Step 2 - What Registry Privacy Tweaks Can and Cannot Do
 
 Registry changes are effective for disabling telemetry services, restricting app permissions, and preventing Windows from sending behavioral data to Microsoft. They cannot:
 
@@ -58,7 +58,7 @@ Registry changes are effective for disabling telemetry services, restricting app
 
 Think of registry privacy tweaks as one layer in a broader privacy strategy, not a complete solution.
 
-Step 3: Reducing Windows Telemetry
+Step 3 - Reducing Windows Telemetry
 
 Windows 10 and 11 collect diagnostic data by default. While some level of telemetry improves security update targeting, you can reduce collection significantly without breaking essential functionality.
 
@@ -84,7 +84,7 @@ Stop-Service -Name "DiagTrack" -Force
 Set-Service -Name "DiagTrack" -StartupType Disabled
 ```
 
-Step 4: Limiting Activity History and Search
+Step 4 - Limiting Activity History and Search
 
 Windows records your activity history to provide personalized experiences across devices. You can disable this recording while maintaining functional search capabilities.
 
@@ -112,7 +112,7 @@ Also disable Cortana indexing of your files:
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" -Name "CortanaConsent" -Value 0 -Type DWord
 ```
 
-Step 5: Control Application Permissions
+Step 5 - Control Application Permissions
 
 Many Windows Store applications access your location, camera, microphone, and contacts by default. Registry modifications can enforce stricter defaults.
 
@@ -136,7 +136,7 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Capabili
 
 Review all app permissions by examining keys under `HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore`. Each permission type (contacts, calendar, messaging, etc.) has its own subkey where individual app grants are stored.
 
-Step 6: Network Privacy Enhancements
+Step 6 - Network Privacy Enhancements
 
 Windows uses various network protocols that can leak information. Several registry tweaks address network-related privacy concerns.
 
@@ -162,7 +162,7 @@ Disable WPAD (Web Proxy Auto-Discovery), which can be abused to redirect your tr
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name "AutoDetect" -Value 0 -Type DWord
 ```
 
-Step 7: Limiting Windows Update Delivery Optimization
+Step 7 - Limiting Windows Update Delivery Optimization
 
 Delivery Optimization allows Windows to share updates with other users locally, but this involves sending your IP address to Microsoft and potentially receiving data from peer systems.
 
@@ -178,7 +178,7 @@ Alternatively, limit peer connections to your local network only (value `1`):
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" -Name "DODownloadMode" -Value 1 -Type DWord
 ```
 
-Step 8: Disable Advertising ID
+Step 8 - Disable Advertising ID
 
 Windows assigns each user an Advertising ID used by apps to serve targeted ads and track behavior across applications:
 
@@ -191,7 +191,7 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\InputPersonalization" -Name "Re
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\InputPersonalization" -Name "RestrictImplicitTextCollection" -Value 1 -Type DWord
 ```
 
-Step 9: Scripting Multiple Tweaks
+Step 9 - Scripting Multiple Tweaks
 
 For users applying multiple privacy tweaks, creating a PowerShell script provides reproducibility and easy review. Here is a template for applying several registry changes safely:
 
@@ -235,7 +235,7 @@ Execute this script with `-Undo` to revert all changes:
 .\PrivacyTweaks.ps1 -Undo # Revert tweaks
 ```
 
-Step 10: Comparing Registry Tweaks vs. GUI-Based Tools
+Step 10 - Comparing Registry Tweaks vs. GUI-Based Tools
 
 | Method | Reversible | Requires Admin | Scriptable | Survives Updates |
 |--------|-----------|----------------|------------|-----------------|
@@ -247,7 +247,7 @@ Step 10: Comparing Registry Tweaks vs. GUI-Based Tools
 
 For single-machine use, PowerShell scripts offer the best combination of transparency and reversibility. Third-party tools like O&O ShutUp10 are convenient but opaque. you are trusting that the tool applies exactly what it claims.
 
-Step 11: Verify Changes
+Step 11 - Verify Changes
 
 After applying registry modifications, verify changes using `reg query`:
 

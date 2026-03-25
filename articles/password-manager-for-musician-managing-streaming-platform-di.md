@@ -20,7 +20,7 @@ Bitwarden, 1Password, or Dashlane with CLI access and folder organization is the
 
 Table of Contents
 
-- [The Problem: Fragmented Credentials Across Platforms](#the-problem-fragmented-credentials-across-platforms)
+- [The Problem - Fragmented Credentials Across Platforms](#the-problem-fragmented-credentials-across-platforms)
 - [Organizing Streaming Credentials in a Password Manager](#organizing-streaming-credentials-in-a-password-manager)
 - [Using the CLI for Programmatic Access](#using-the-cli-for-programmatic-access)
 - [Automating Credential Rotation](#automating-credential-rotation)
@@ -36,9 +36,9 @@ Table of Contents
 - [Industry-Specific Threats for Musicians](#industry-specific-threats-for-musicians)
 - [Long-Term Credential Strategy](#long-term-credential-strategy)
 
-The Problem: Fragmented Credentials Across Platforms
+The Problem - Fragmented Credentials Across Platforms
 
-Modern musicians interact with an ecosystem of distribution services that continues to expand. A typical independent artist might maintain accounts with:
+Modern musicians interact with an environment of distribution services that continues to expand. A typical independent artist might maintain accounts with:
 
 - Primary distributor (DistroKid, TuneCore, CD Baby)
 - Secondary aggregators for specific territories
@@ -242,7 +242,7 @@ Regular audits prevent unauthorized access to your music accounts:
 
 ```bash
 #!/bin/bash
-music-account-audit.sh - Comprehensive streaming account audit
+music-account-audit.sh - complete streaming account audit
 
 echo "=== Streaming Platform Account Audit ==="
 echo "Run quarterly to verify no unauthorized access"
@@ -421,8 +421,8 @@ CODE-3C4D-5E6F
 
 Store these codes:
 Option 1: Encrypted file on USB drive (offline)
-Option 2: Safe deposit box (physical)
-Option 3: Share with trusted person (encrypted)
+Option 2 - Safe deposit box (physical)
+Option 3 - Share with trusted person (encrypted)
 
 DO NOT store with regular passwords
 ```
@@ -508,19 +508,19 @@ Long-Term Credential Strategy
 Planning for music career longevity:
 
 ```
-Year 1: Setup
+Year 1 - Setup
  Choose password manager (Bitwarden/1Password)
  Set up unique passwords for all platforms
  Enable 2FA on everything
  Document recovery procedures
 
-Year 2-5: Maintenance
+Year 2-5 - Maintenance
  Quarterly password rotation (non-critical)
  Annual complete credential audit
  Yearly emergency contact verification
  Update recovery codes if forgotten
 
-Year 5+: Transition Planning
+Year 5+ - Transition Planning
  If selling catalog or retiring: credential transfer
  If passing to heirs: estate planning
  If transferring to manager: access delegation

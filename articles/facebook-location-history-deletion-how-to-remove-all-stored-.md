@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Facebook's Location Data Storage
+Step 1 - Understand Facebook's Location Data Storage
 
 Facebook stores location data across several distinct data types within your account. The "Places You've Been" section aggregates location data from various sources into a single view. This includes:
 
@@ -42,7 +42,7 @@ Facebook stores location data across several distinct data types within your acc
 
 Access this data through Settings & Privacy > Settings > Your Facebook Information > Access Your Information. Scroll to the "Location" section to see what's stored.
 
-Step 2: Exporting Your Location Data for Analysis
+Step 2 - Exporting Your Location Data for Analysis
 
 Before deletion, export your data to understand what Facebook holds and to maintain a personal record. Facebook provides a bulk data download that includes all location-related information.
 
@@ -107,10 +107,10 @@ def analyze_facebook_location_data(data_dir):
 
     return locations
 
-Usage: python parse_facebook_data.py /path/to/facebook-export/
+Usage - python parse_facebook_data.py /path/to/facebook-export/
 ```
 
-Step 3: Delete Location History Through the Interface
+Step 3 - Delete Location History Through the Interface
 
 Facebook provides interface controls to clear location data, though the options are scattered across different settings sections.
 
@@ -139,7 +139,7 @@ To prevent new location data from accumulating:
 2. Off-Facebook Activity: Go to Settings > Your Facebook Information > Off-Facebook Activity and manage the data Facebook receives from third-party apps
 3. Ad Settings: Navigate to Settings > Ads > Ad settings and disable location-based ads
 
-Step 4: Implement Programmatic Deletion Using Facebook Graph API
+Step 4 - Implement Programmatic Deletion Using Facebook Graph API
 
 For developers who want more control, the Facebook Graph API provides methods to query and delete certain location data. This requires a Facebook Developer account and appropriate permissions.
 
@@ -191,7 +191,7 @@ The Facebook Graph API has restrictions on deleting location data:
 - Off-Facebook activity can be cleared via the interface but API support is limited
 - Location history deletion is only available through the web and mobile interfaces
 
-Step 5: Verify Deletion
+Step 5 - Verify Deletion
 
 After deletion, verify the process completed successfully:
 

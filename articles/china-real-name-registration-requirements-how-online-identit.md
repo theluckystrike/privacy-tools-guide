@@ -165,7 +165,7 @@ Different categories of services face varying real name requirements. Understand
 
 E-Commerce and Payments
 
-Requirement Level: Mandatory
+Requirement Level - Mandatory
 
 ```python
 E-commerce registration flow
@@ -190,7 +190,7 @@ If you want to transact on Chinese e-commerce platforms, real name registration 
 
 Social Media and Forums
 
-Requirement Level: Mandatory (since 2018)
+Requirement Level - Mandatory (since 2018)
 
 ```javascript
 // Major platforms requiring real name:
@@ -212,7 +212,7 @@ While you can create multiple social accounts under one real identity, you canno
 
 Telecommunications and Internet Access
 
-Requirement Level: Mandatory
+Requirement Level - Mandatory
 
 ```bash
 SIM card registration (mandatory since 2010)
@@ -242,7 +242,7 @@ This is the foundational layer, every subsequent service builds on this verified
 
 Streaming and Content Services
 
-Requirement Level: Required for certain features
+Requirement Level - Required for certain features
 
 ```javascript
 // Streaming platforms and content access requirements:
@@ -272,7 +272,7 @@ For casual content consumption, you might avoid registration. For any transactio
 
 Gaming Platforms
 
-Requirement Level: Mandatory for monetary transactions
+Requirement Level - Mandatory for monetary transactions
 
 ```python
 Game platform registration requirements:
@@ -296,7 +296,7 @@ class GamePlatformRequirements:
             }
         }
 
-Special attention: Time limits for minors
+Special attention - Time limits for minors
 Games must enforce playtime restrictions for users under 18
 This requires accurate age verification via ID number
 Falsifying age has legal consequences
@@ -391,7 +391,7 @@ const complianceRequirements = {
 // You can refuse to serve Chinese users OR comply with Chinese law
 ```
 
-This creates a stark boundary: Chinese-based operations must comply; international operations have options.
+This creates a stark boundary - Chinese-based operations must comply; international operations have options.
 
 Technical Implementation Patterns
 
@@ -602,7 +602,7 @@ minimization_strategies = {
 }
 ```
 
-The reality is that true anonymity in China's digital ecosystem is extremely difficult.
+The reality is that true anonymity in China's digital environment is extremely difficult.
 
 Frequently Asked Questions
 

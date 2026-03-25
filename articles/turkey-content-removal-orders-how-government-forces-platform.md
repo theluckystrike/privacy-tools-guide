@@ -20,9 +20,9 @@ Turkey forces platforms to remove content through a layered legal system anchore
 
 Table of Contents
 
-- [Legal Framework: The Laws Enabling Censorship](#legal-framework-the-laws-enabling-censorship)
-- [Technical Mechanisms: How Platforms Actually Censor](#technical-mechanisms-how-platforms-actually-censor)
-- [Real Examples: When Orders Become Public](#real-examples-when-orders-become-public)
+- [Legal Framework - The Laws Enabling Censorship](#legal-framework-the-laws-enabling-censorship)
+- [Technical Mechanisms - How Platforms Actually Censor](#technical-mechanisms-how-platforms-actually-censor)
+- [Real Examples - When Orders Become Public](#real-examples-when-orders-become-public)
 - [Financial Impact of Non-Compliance](#financial-impact-of-non-compliance)
 - [Developer and Power User Implications](#developer-and-power-user-implications)
 - [Practical Defenses](#practical-defenses)
@@ -33,7 +33,7 @@ Table of Contents
 - [What Developers Building Turkish Services Should Know](#what-developers-building-turkish-services-should-know)
 - [The Broader Privacy Implications](#the-broader-privacy-implications)
 
-Legal Framework: The Laws Enabling Censorship
+Legal Framework - The Laws Enabling Censorship
 
 Turkey's content removal authority stems from multiple laws that create a complex, overlapping system of censorship.
 
@@ -50,7 +50,7 @@ The Social Media Law (amended in 2020) added significant requirements for social
 
 Failure to appoint a representative results in progressive penalties: first a 10 million TL fine, then advertising bans, and finally bandwidth reduction of up to 90%.
 
-Technical Mechanisms: How Platforms Actually Censor
+Technical Mechanisms - How Platforms Actually Censor
 
 When Turkey issues a content removal order, platforms typically implement censorship through several technical methods. Understanding these mechanisms helps developers anticipate how their applications might be affected.
 
@@ -102,7 +102,7 @@ Platforms operating in Turkey face pressure to implement proactive filtering. Th
 
 Developers building integrations with Turkish platforms should be aware that content submitted from Turkish IP addresses may be subject to additional automated checks that wouldn't apply in other regions.
 
-Real Examples: When Orders Become Public
+Real Examples - When Orders Become Public
 
 While many removal orders remain confidential, several high-profile cases have illustrated the scope of Turkish content censorship.
 
@@ -139,7 +139,7 @@ Developer and Power User Implications
 
 If you're building applications with Turkish users or managing infrastructure that might serve Turkish audiences, several practical considerations apply.
 
-Data Localization: Turkey's Social Media Law requires certain platforms to store Turkish user data domestically. This affects infrastructure decisions. If you're building a service that might fall under Turkish jurisdiction, consider:
+Data Localization - Turkey's Social Media Law requires certain platforms to store Turkish user data domestically. This affects infrastructure decisions. If you're building a service that might fall under Turkish jurisdiction, consider:
 
 ```yaml
 Infrastructure configuration for Turkish compliance
@@ -153,14 +153,14 @@ services:
       audit_log: true
 ```
 
-Monitoring and Detection: Tools like OONI (Open Observatory of Network Interference) help detect when your application or website is being blocked in Turkey. The OONI Probe mobile app measures:
+Monitoring and Detection - Tools like OONI (Open Observatory of Network Interference) help detect when your application or website is being blocked in Turkey. The OONI Probe mobile app measures:
 
 - DNS-level blocking
 - HTTP blocking
 - TCP/IP blocking
 - WebSocket connectivity issues
 
-Circumvention Considerations: Power users in Turkey frequently use VPN services to access blocked content. However, Turkey also blocks many common VPN protocols and the IP addresses of major VPN providers. Developers building privacy-focused applications should note that:
+Circumvention Considerations - Power users in Turkey frequently use VPN services to access blocked content. However, Turkey also blocks many common VPN protocols and the IP addresses of major VPN providers. Developers building privacy-focused applications should note that:
 
 - OpenVPN ports are frequently blocked
 - WireGuard has proven more resilient
@@ -171,7 +171,7 @@ Practical Defenses
 
 For developers and organizations concerned about Turkish content censorship, several defensive strategies exist.
 
-Implement Regional Content Policies: Design your application with the ability to apply different content visibility rules based on user location. This allows compliance with local laws without affecting users elsewhere:
+Implement Regional Content Policies - Design your application with the ability to apply different content visibility rules based on user location. This allows compliance with local laws without affecting users elsewhere:
 
 ```javascript
 // Example: Regional content policy implementation
@@ -187,25 +187,25 @@ function getContentVisibility(user, content, requestOrigin) {
 }
 ```
 
-Build Transparency Logging: Document content removal requests in transparency reports. Both international platforms and the Turkish government face pressure when removal orders become public.
+Build Transparency Logging - Document content removal requests in transparency reports. Both international platforms and the Turkish government face pressure when removal orders become public.
 
-Support Distributed Infrastructure: Applications that rely on decentralized or distributed architectures are harder to block at the network level. Consider how peer-to-peer protocols, IPFS, or blockchain-based content addressing might provide resilience.
+Support Distributed Infrastructure - Applications that rely on decentralized or distributed architectures are harder to block at the network level. Consider how peer-to-peer protocols, IPFS, or blockchain-based content addressing might provide resilience.
 
 Specific Content Categories Under Attack
 
 Understanding which content categories face the highest removal pressure helps developers anticipate restrictions:
 
-Political Criticism and Speech: Content criticizing government officials, policies, or state institutions faces swift removal. Posts discussing corruption, human rights concerns, or alleged government wrongdoing trigger immediate action from authorities.
+Political Criticism and Speech - Content criticizing government officials, policies, or state institutions faces swift removal. Posts discussing corruption, human rights concerns, or alleged government wrongdoing trigger immediate action from authorities.
 
-Religious Content: Content related to minority religions or unorthodox interpretations of Islam face scrutiny. This includes discussions of atheism, alternative spiritual practices, and criticism of religious authorities.
+Religious Content - Content related to minority religions or unorthodox interpretations of Islam face scrutiny. This includes discussions of atheism, alternative spiritual practices, and criticism of religious authorities.
 
-LGBTQ+ Content: While not explicitly banned, LGBTQ+ activism and educational content faces elevated scrutiny. Discussion of sexual orientation or gender identity is often deemed "insulting" to Turkish values.
+LGBTQ+ Content - While not explicitly banned, LGBTQ+ activism and educational content faces elevated scrutiny. Discussion of sexual orientation or gender identity is often deemed "insulting" to Turkish values.
 
-Kurdish Independence: Content related to Kurdish independence movements or discussions of Kurdish rights face aggressive removal. The overlap between legitimate Kurdish cultural content and political activism creates ambiguity.
+Kurdish Independence - Content related to Kurdish independence movements or discussions of Kurdish rights face aggressive removal. The overlap between legitimate Kurdish cultural content and political activism creates ambiguity.
 
-Armenian Genocide: Turkey legally prohibits recognition of the 1915 Armenian genocide. Wikipedia itself remained blocked for years partly due to this restriction.
+Armenian Genocide - Turkey legally prohibits recognition of the 1915 Armenian genocide. Wikipedia itself remained blocked for years partly due to this restriction.
 
-Terrorism Discussions: Content deemed to support or discuss organizations like the PKK or other Turkish-listed terrorist organizations triggers immediate removal and potential legal liability for platforms.
+Terrorism Discussions - Content deemed to support or discuss organizations like the PKK or other Turkish-listed terrorist organizations triggers immediate removal and potential legal liability for platforms.
 
 Understanding these categories helps developers building content platforms anticipate what their Turkish users will encounter.
 
@@ -249,16 +249,16 @@ Obfuscation approaches make encrypted traffic appear as regular HTTPS:
 - Domain fronting uses legitimate CDNs to hide destination servers
 - Obfs4 bridges combine multiple obfuscation techniques
 
-For developers, the key lesson: VPNs provide privacy benefits in many contexts, but in highly censorious regimes, they become an escalating cat-and-mouse game with authorities who continuously block endpoints.
+For developers, the key lesson - VPNs provide privacy benefits in many contexts, but in highly censorious regimes, they become an escalating cat-and-mouse game with authorities who continuously block endpoints.
 
 What Developers Building Turkish Services Should Know
 
 If you're building applications targeting Turkish users, understand these technical realities:
 
-Regional Content Rules: Implement content policies that allow your system to show different content in different regions. This prevents a situation where blocking one region means the entire service goes down:
+Regional Content Rules - Implement content policies that allow your system to show different content in different regions. This prevents a situation where blocking one region means the entire service goes down:
 
 ```python
-Better: Region-specific policy
+Better - Region-specific policy
 def should_show_content(content, user_location):
     """
     Different rules by region prevent all-or-nothing blocking
@@ -273,7 +273,7 @@ def should_show_content(content, user_location):
     return True  # Show everywhere else
 ```
 
-Data Residency Architecture: If you have Turkish users exceeding the threshold requiring local representation, you need Turkish data storage:
+Data Residency Architecture - If you have Turkish users exceeding the threshold requiring local representation, you need Turkish data storage:
 
 ```yaml
 architecture:
@@ -284,7 +284,7 @@ architecture:
     notification_capability: "email_sms_phone"
 ```
 
-Transparency Reporting: Document removal requests and publish transparency reports. This creates accountability and public awareness of censorship requests. Users and researchers depend on this information to understand censorship patterns.
+Transparency Reporting - Document removal requests and publish transparency reports. This creates accountability and public awareness of censorship requests. Users and researchers depend on this information to understand censorship patterns.
 
 The Broader Privacy Implications
 

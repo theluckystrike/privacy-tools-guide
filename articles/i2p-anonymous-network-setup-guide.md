@@ -16,12 +16,12 @@ voice-checked: true
 
 Table of Contents
 
-- [I2P vs Tor: When to Use Which](#i2p-vs-tor-when-to-use-which)
+- [I2P vs Tor - When to Use Which](#i2p-vs-tor-when-to-use-which)
 - [Prerequisites](#prerequisites)
 - [Troubleshooting](#troubleshooting)
 - [Related Reading](#related-reading)
 
-I2P vs Tor: When to Use Which
+I2P vs Tor - When to Use Which
 
 | Characteristic | I2P | Tor |
 |---------------|-----|-----|
@@ -33,8 +33,8 @@ I2P vs Tor: When to Use Which
 | File sharing | Built-in (I2PSnark) | Not designed for it |
 | Hidden services | Eepsites (.i2p) | .onion sites |
 
-Use I2P when: accessing .i2p sites, anonymous file sharing within the network, I2P-Bote email.
-Use Tor when: accessing clearnet sites anonymously, .onion services.
+Use I2P when - accessing .i2p sites, anonymous file sharing within the network, I2P-Bote email.
+Use Tor when - accessing clearnet sites anonymously, .onion services.
 
 ---
 
@@ -48,9 +48,9 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install I2P
+Step 1 - Install I2P
 
-Option A: Java I2P (reference implementation)
+Option A - Java I2P (reference implementation)
 
 ```bash
 Ubuntu/Debian
@@ -74,7 +74,7 @@ Access the router console
 http://127.0.0.1:7657
 ```
 
-Option B: i2pd (C++ implementation, lighter)
+Option B - i2pd (C++ implementation, lighter)
 
 ```bash
 Install i2pd. lighter C++ implementation, no web UI by default
@@ -88,19 +88,19 @@ i2pd config
 cat /etc/i2pd/i2pd.conf
 ```
 
-Option C: Tor Browser-style bundle (I2P Browser)
+Option C - Tor Browser-style bundle (I2P Browser)
 
 The I2P project distributes a Firefox-based browser pre-configured for I2P:
 
 ```bash
 Download I2P Browser from geti2p.net/en/download
-Linux: extract and run ./start-i2pbrowser.sh
+Linux - extract and run ./start-i2pbrowser.sh
 macOS/Windows: standard installer available
 ```
 
 ---
 
-Step 2: Initial Configuration (Java I2P)
+Step 2 - Initial Configuration (Java I2P)
 
 After starting, open the router console at `http://127.0.0.1:7657`:
 
@@ -127,7 +127,7 @@ Router Console → Config → Bandwidth
 
 ---
 
-Step 3: Configure Your Browser for I2P
+Step 3 - Configure Your Browser for I2P
 
 The Java I2P router runs an HTTP proxy on port 4444:
 
@@ -152,7 +152,7 @@ These take 30-90 seconds to load on first visit while the router builds tunnels 
 
 ---
 
-Step 4: SOCKS Proxy for Other Applications
+Step 4 - SOCKS Proxy for Other Applications
 
 I2P also provides a SOCKS5 proxy on port 4447:
 
@@ -161,18 +161,18 @@ Use with curl to access eepsites
 curl --socks5-hostname 127.0.0.1:4447 http://i2p-projekt.i2p/
 
 Configure applications that support SOCKS5:
-Proxy: 127.0.0.1, Port: 4447
+Proxy - 127.0.0.1, Port: 4447
 ```
 
 ---
 
-Step 5: Host an Eepsite (.i2p Hidden Service)
+Step 5 - Host an Eepsite (.i2p Hidden Service)
 
 Eepsites are websites hosted within the I2P network, accessible only to I2P users.
 
 ```bash
 I2P includes a built-in webserver (I2P-Jetty)
-Documents served from: ~/.i2p/eepsite/docroot/
+Documents served from - ~/.i2p/eepsite/docroot/
 
 Or configure your own webserver:
 
@@ -195,7 +195,7 @@ Register at stats.i2p for a human-readable .i2p alias
 
 ---
 
-Step 6: I2P-Bote: Encrypted Anonymous Email
+Step 6 - I2P-Bote: Encrypted Anonymous Email
 
 I2P-Bote is a serverless, encrypted email system built for I2P. Messages are stored in a distributed hash table with no central server.
 
@@ -215,7 +215,7 @@ High latency (hours to days) by design. prevents timing analysis
 
 ---
 
-Step 7: i2pd Configuration (Lightweight Option)
+Step 7 - i2pd Configuration (Lightweight Option)
 
 ```ini
 /etc/i2pd/i2pd.conf
@@ -262,7 +262,7 @@ http://127.0.0.1:7070
 
 ---
 
-Step 8: Anonymity Considerations
+Step 8 - Anonymity Considerations
 
 I2P provides anonymity within its own network, but:
 
@@ -295,7 +295,7 @@ Related Articles
 - [How To Use Tor Browser For Creating Anonymous Accounts](/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)
 - [Onionshare Secure File Sharing Over Tor Network Setup](/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
 - [Anonymous Email Over Tor Setup Guide](/anonymous-email-over-tor-setup-guide/)
-- [AI Coding Assistant for Network Traffic Analysis: What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
+- [AI Coding Assistant for Network Traffic Analysis - What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 Frequently Asked Questions

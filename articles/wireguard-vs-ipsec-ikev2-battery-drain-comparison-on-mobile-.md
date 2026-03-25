@@ -30,7 +30,7 @@ When choosing a VPN protocol for mobile devices, battery consumption often ranks
 Table of Contents
 
 - [Protocol Architecture Differences](#protocol-architecture-differences)
-- [Battery Impact: Real-World Measurements](#battery-impact-real-world-measurements)
+- [Battery Impact - Real-World Measurements](#battery-impact-real-world-measurements)
 - [Connection Stability and Reconnection Behavior](#connection-stability-and-reconnection-behavior)
 - [Configuration Optimization for Mobile](#configuration-optimization-for-mobile)
 - [Platform-Specific Considerations](#platform-specific-considerations)
@@ -53,7 +53,7 @@ WireGuard represents a modern approach to VPN design. It operates with approxima
 
 IPSec IKEv2, while mature and widely supported, involves a more complex handshake process. The protocol negotiates security associations, handles rekeying, and supports multiple encryption transforms. On mobile devices, this complexity means the CPU must work harder during both initial connection establishment and ongoing packet processing.
 
-Battery Impact: Real-World Measurements
+Battery Impact - Real-World Measurements
 
 Independent testing reveals measurable differences in battery consumption between these protocols. In controlled tests with identical devices, network conditions, and workload patterns, WireGuard consistently demonstrates lower power draw.
 
@@ -176,18 +176,18 @@ Advanced Handshake Comparison
 IPSec IKEv2 negotiations involve multiple round trips:
 
 ```
-Client -> Server: IKE_SA_INIT (300 bytes)
-Server -> Client: IKE_SA_INIT response (400 bytes)
-Client -> Server: IKE_AUTH request (500 bytes)
-Server -> Client: IKE_AUTH response (600 bytes)
+Client -> Server - IKE_SA_INIT (300 bytes)
+Server -> Client - IKE_SA_INIT response (400 bytes)
+Client -> Server - IKE_AUTH request (500 bytes)
+Server -> Client - IKE_AUTH response (600 bytes)
 ```
 
 WireGuard's simpler approach:
 
 ```
-Client -> Server: Handshake Initiation (148 bytes)
-Server -> Client: Handshake Response (148 bytes)
-Client -> Server: Transport Data (encrypted packets)
+Client -> Server - Handshake Initiation (148 bytes)
+Server -> Client - Handshake Response (148 bytes)
+Client -> Server - Transport Data (encrypted packets)
 ```
 
 This difference means WireGuard establishes tunnels in roughly half the time with 60% fewer bytes exchanged. The CPU time spent in cryptographic operations is proportionally lower.
@@ -299,15 +299,15 @@ Kernel vs Userspace Implementation Impact
 
 Mobile VPN performance depends heavily on where the VPN runs:
 
-Kernel-space (iOS): Native IPSec implementation runs in kernel, minimum overhead
+Kernel-space (iOS) - Native IPSec implementation runs in kernel, minimum overhead
 - Battery impact: ~5-8 mAh/hour idle (best case)
 - Latency: <10ms overhead
 
-Userspace (iOS WireGuard app): App process handles encryption
+Userspace (iOS WireGuard app) - App process handles encryption
 - Battery impact: ~8-12 mAh/hour idle (acceptable but higher)
 - Latency: 15-20ms overhead due to context switching
 
-Userspace (Android VpnService): Android's VPN API layer
+Userspace (Android VpnService) - Android's VPN API layer
 - Battery impact: ~10-15 mAh/hour idle (framework overhead)
 - Latency: 20-30ms overhead
 

@@ -22,8 +22,8 @@ Table of Contents
 
 - [What Tails OS Actually Does](#what-tails-os-actually-does)
 - [Tails vs Other Privacy Approaches](#tails-vs-other-privacy-approaches)
-- [Installation: Creating a Tails USB](#installation-creating-a-tails-usb)
-- [Core Configuration: Tor, Network, Persistence](#core-configuration-tor-network-persistence)
+- [Installation - Creating a Tails USB](#installation-creating-a-tails-usb)
+- [Core Configuration - Tor, Network, Persistence](#core-configuration-tor-network-persistence)
 - [Practical Use Cases](#practical-use-cases)
 - [Advanced Configuration](#advanced-configuration)
 - [Common Mistakes and How to Avoid Them](#common-mistakes-and-how-to-avoid-them)
@@ -60,8 +60,8 @@ Tails vs VPN
 | Cost | Free | $5-15/month |
 | Operational difficulty | Medium | Low |
 
-Use VPN for: Privacy from ISP, bypassing geo-blocking, general daily browsing
-Use Tails for: High-threat scenarios, whistleblowing, activism, evidence gathering
+Use VPN for - Privacy from ISP, bypassing geo-blocking, general daily browsing
+Use Tails for - High-threat scenarios, whistleblowing, activism, evidence gathering
 
 Tails vs Whonix
 
@@ -76,12 +76,12 @@ Whonix is another Tor-focused OS but requires VirtualBox. Tails is simpler:
 | Portability | Boot on any computer | Limited to VM host |
 | Learning curve | Lower | Higher |
 
-Use Tails if: Portability and simplicity matter, you move between computers
-Use Whonix if: Segmented threat model (separate Workstation/Gateway), advanced users
+Use Tails if - Portability and simplicity matter, you move between computers
+Use Whonix if - Segmented threat model (separate Workstation/Gateway), advanced users
 
-Installation: Creating a Tails USB
+Installation - Creating a Tails USB
 
-Step 1: Download Tails OS
+Step 1 - Download Tails OS
 
 1. Visit tails.boum.org on a trusted device
 2. Download the latest stable version (~1.3 GB)
@@ -95,7 +95,7 @@ gpg --verify tails-amd64-*.iso.sig
 
 If GPG verification passes, the download is authentic.
 
-Step 2: Create Bootable USB
+Step 2 - Create Bootable USB
 
 Requirements:
 - USB drive, 8GB minimum (will be formatted, loses all data)
@@ -126,7 +126,7 @@ On Windows:
 
 You need a separate USB drive. Tails won't run from the same drive you're installing to.
 
-Step 3: First Boot
+Step 3 - First Boot
 
 1. Shut down your computer completely
 2. Insert Tails USB
@@ -147,7 +147,7 @@ Tails Greeter
 
 Click "Start Tails" to continue.
 
-Core Configuration: Tor, Network, Persistence
+Core Configuration - Tor, Network, Persistence
 
 Setting Up Tor Connection
 
@@ -159,7 +159,7 @@ When Tails boots, it automatically connects to Tor:
 Connecting to the Tor network...
 [] 10%
 
-Status: Connecting to Tor...
+Status - Connecting to Tor...
 ```
 
 Wait for full connection. This typically takes 30-60 seconds. You'll see:
@@ -188,7 +188,7 @@ What it doesn't do:
 - Keep you safe from malware if you run executables
 - Prevent DNS leaks (Tails handles this)
 
-Rule: Never mix anonymous and identified activities in same Tor Browser session. If you log into your real Gmail, you've broken anonymity.
+Rule - Never mix anonymous and identified activities in same Tor Browser session. If you log into your real Gmail, you've broken anonymity.
 
 Persistent Storage Setup
 
@@ -234,9 +234,9 @@ Persistence options to disable:
 
 Practical Use Cases
 
-Case 1: Secure Research on Sensitive Topics
+Case 1 - Secure Research on Sensitive Topics
 
-Goal: Research government surveillance without ISP logging
+Goal - Research government surveillance without ISP logging
 
 Setup:
 ```
@@ -253,11 +253,11 @@ Tools available:
 - Jami (formerly GNU Ring) for secure calling
 - Thunderbird with ProtonMail bridge for email
 
-Security principle: No persistent storage = no logs. ISP sees USB created network connection, but nothing about what you accessed.
+Security principle - No persistent storage = no logs. ISP sees USB created network connection, but nothing about what you accessed.
 
-Case 2: Journalist Receiving Tips
+Case 2 - Journalist Receiving Tips
 
-Goal: Securely receive and protect leaked documents
+Goal - Securely receive and protect leaked documents
 
 Setup:
 ```
@@ -279,9 +279,9 @@ Copy files to backup drive
 Backup drive now encrypted with same passphrase
 ```
 
-Case 3: Activist Operating in Hostile Country
+Case 3 - Activist Operating in Hostile Country
 
-Goal: Communicate without government surveillance
+Goal - Communicate without government surveillance
 
 Setup:
 ```
@@ -295,8 +295,8 @@ Setup:
 5. Shut down and store USB safely
 ```
 
-Threat model: Government surveillance, border searches
-How Tails helps: Even if USB confiscated, encrypted storage requires passphrase. Tails itself leaves no traces on any computer you boot.
+Threat model - Government surveillance, border searches
+How Tails helps - Even if USB confiscated, encrypted storage requires passphrase. Tails itself leaves no traces on any computer you boot.
 
 Advanced Configuration
 
@@ -344,7 +344,7 @@ All SSH traffic routes through Tor automatically. Be aware: even over Tor, a com
 
 Common Mistakes and How to Avoid Them
 
-Mistake 1: Identifying Yourself Over Tor
+Mistake 1 - Identifying Yourself Over Tor
 
 Wrong:
 ```
@@ -362,9 +362,9 @@ Use anonymous email service (ProtonMail with new account)
 Search for topics without personal info
 ```
 
-Rule: Compartmentalize. If you use your real account, don't expect anonymity.
+Rule - Compartmentalize. If you use your real account, don't expect anonymity.
 
-Mistake 2: Assuming Full Anonymity
+Mistake 2 - Assuming Full Anonymity
 
 Tails provides anonymity from network-level observation (ISP, government) but not from:
 
@@ -375,9 +375,9 @@ Tails provides anonymity from network-level observation (ISP, government) but no
 
 Anonymity comes from Tails + careful operational security, not Tails alone.
 
-Mistake 3: Forgetting Physical Security
+Mistake 3 - Forgetting Physical Security
 
-Scenario: You boot Tails, someone sees your screen over your shoulder and reads a URL.
+Scenario - You boot Tails, someone sees your screen over your shoulder and reads a URL.
 
 Prevention:
 - Privacy screen protector on laptop
@@ -387,11 +387,11 @@ Prevention:
 
 Tails is software; physical security is your responsibility.
 
-Mistake 4: Losing Your Passphrase
+Mistake 4 - Losing Your Passphrase
 
 ```
 You set persistent storage passphrase: "MySecurePass123!"
-Six months later: You forget it
+Six months later - You forget it
 You boot Tails and enter wrong passphrase
 Encrypted partition inaccessible forever
 ```
@@ -401,7 +401,7 @@ Prevention:
 - Use password manager on a different device (not Tails)
 - Test passphrase monthly
 
-Mistake 5: Reusing the Same USB Everywhere
+Mistake 5 - Reusing the Same USB Everywhere
 
 Bad practice:
 ```
@@ -417,7 +417,7 @@ Better:
 - Create multiple Tails USBs if crossing borders
 - Destroy USB if confiscated
 
-Mistake 6: Thinking Persistent Storage Is Backup
+Mistake 6 - Thinking Persistent Storage Is Backup
 
 ```
 You enable persistent storage

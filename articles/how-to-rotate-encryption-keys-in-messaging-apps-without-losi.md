@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Key Rotation Challenge
+Step 1 - Understand the Key Rotation Challenge
 
 End-to-end encrypted messaging apps typically use the Signal Protocol or similar cryptographic frameworks. These protocols generate new key pairs for each device and periodically create new session keys. When you reinstall an app or switch devices, the app must re-establish secure sessions with your contacts.
 
-The core challenge: old messages were encrypted with old keys. If those keys are no longer available after rotation, decryption becomes impossible without proper key management.
+The core challenge - old messages were encrypted with old keys. If those keys are no longer available after rotation, decryption becomes impossible without proper key management.
 
-Step 2: Rotating Keys in Signal
+Step 2 - Rotating Keys in Signal
 
 Signal provides the most mature key rotation mechanism while preserving history. Here's how it works:
 
@@ -52,8 +52,8 @@ When you reinstall Signal on a new device:
 
 ```bash
 Export encrypted backup (if enabled)
-On Android: Settings → Chat and media → Backup
-On iOS: Settings → Chats → Backup
+On Android - Settings → Chat and media → Backup
+On iOS - Settings → Chats → Backup
 
 After reinstall, Signal will prompt to restore from backup
 Messages remain decryptable because the backup includes
@@ -62,7 +62,7 @@ necessary key material, encrypted with your backup password
 
 The backup file contains encrypted session states. Your messages aren't lost, they're just re-associated with new session keys that you can restore from the backup.
 
-Step 3: Rotating Keys in WhatsApp
+Step 3 - Rotating Keys in WhatsApp
 
 WhatsApp handles key rotation differently. Here's the practical approach:
 
@@ -75,7 +75,7 @@ WhatsApp doesn't store chat history on their servers, the encryption keys live o
 3. Reinstall WhatsApp and restore from backup
 
 ```bash
-Android: Google Drive backup
+Android - Google Drive backup
 iOS: iCloud backup (enable in Settings → Chats → Chat Backup)
 
 After reinstall:
@@ -93,7 +93,7 @@ After reinstall, you'll see "Number changed" notification
 This indicates new key generation, re-verify safety numbers
 ```
 
-Step 4: Custom Implementation: Building Key Rotation for Developers
+Step 4 - Custom Implementation: Building Key Rotation for Developers
 
 For developers building encrypted messaging systems, here's a practical approach to key rotation with history preservation:
 
@@ -222,9 +222,9 @@ Archive old key material with the same protection as active keys. Consider:
 Always notify users when key rotation occurs, unexpected notifications indicate potential man-in-the-middle attacks:
 
 ```
-Signal: "Safety number changed" notification
-WhatsApp: "Number changed" for new device installations
-Custom apps: Display explicit "Key rotated" banner with verification option
+Signal - "Safety number changed" notification
+WhatsApp - "Number changed" for new device installations
+Custom apps - Display explicit "Key rotated" banner with verification option
 ```
 
 Troubleshooting

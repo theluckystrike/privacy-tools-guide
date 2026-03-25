@@ -43,7 +43,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Rhasspy: The Developer-Friendly Option
+Step 1 - Rhasspy: The Developer-Friendly Option
 
 Rhasspy (pronounced "raspy") is a privacy-first, offline voice assistant toolkit designed for developers who want complete control. It supports multiple speech-to-text engines, natural language understanding systems, and text-to-speech outputs, all running locally.
 
@@ -75,9 +75,9 @@ Configuration Steps
 
 Rhasspy requires configuring three core components: wake word, speech-to-text, and intent recognition.
 
-Wake Word: Rhasspy includes Precise built-in, a neural network wake word detector. In the web interface, select "Precise" under Wake Word, then download the default "Hey Mycroft" model or train your own custom wake word using collected audio samples.
+Wake Word - Rhasspy includes Precise built-in, a neural network wake word detector. In the web interface, select "Precise" under Wake Word, then download the default "Hey Mycroft" model or train your own custom wake word using collected audio samples.
 
-Speech-to-Text: For local transcription, use Pocketsphinx or Whisper. Whisper provides superior accuracy but requires more processing power:
+Speech-to-Text - For local transcription, use Pocketsphinx or Whisper. Whisper provides superior accuracy but requires more processing power:
 
 ```json
 {
@@ -91,7 +91,7 @@ Speech-to-Text: For local transcription, use Pocketsphinx or Whisper. Whisper pr
 }
 ```
 
-Intent Recognition: Mycroft Core's Adapt engine works well for rule-based commands. For more complex natural language, consider integrating with local LLM endpoints.
+Intent Recognition - Mycroft Core's Adapt engine works well for rule-based commands. For more complex natural language, consider integrating with local LLM endpoints.
 
 Creating Voice Commands
 
@@ -149,7 +149,7 @@ automation:
 
 This keeps the entire voice pipeline local: microphone input → Rhasspy wake word detection → local STT → local intent parsing → Home Assistant automation → device control.
 
-Step 2: Mycroft: The Full-Featured Assistant
+Step 2 - Mycroft: The Full-Featured Assistant
 
 Mycroft provides a more complete out-of-the-box experience compared to Rhasspy. It includes its own voice AI (Precise), STT engine (Precise STT), TTS system ( Mimic), and the Adapt intent parser, all pre-integrated.
 
@@ -224,7 +224,7 @@ Configuration in `~/.mycroft/mycroft.conf`:
 }
 ```
 
-Step 3: Comparing Rhasspy and Mycroft
+Step 3 - Comparing Rhasspy and Mycroft
 
 | Feature | Rhasspy | Mycroft |
 |---------|---------|---------|
@@ -239,7 +239,7 @@ Step 3: Comparing Rhasspy and Mycroft
 
 Choose Rhasspy if you want granular control over every component and are comfortable with Docker-based deployments. Choose Mycroft if you prefer a more integrated system with easier third-party skill installation.
 
-OpenWakeWord: A Newer Alternative for Wake Word Detection
+OpenWakeWord - A Newer Alternative for Wake Word Detection
 
 For users who find training wake words in Rhasspy cumbersome, OpenWakeWord (compatible with both Rhasspy and Home Assistant's Wyoming protocol) offers pre-trained models for dozens of phrases and a simpler training pipeline for custom phrases. It runs on a Raspberry Pi 4 with under 5% CPU utilization, making it viable as a dedicated always-listening microphone node that forwards detected wake words to a more powerful processing machine on the same network.
 
@@ -261,7 +261,7 @@ Select the right Whisper model size. Whisper comes in five sizes (tiny, base, sm
 
 Separate the wake word node from the processing node. Run a lightweight wake word detector (OpenWakeWord on a Pi Zero 2W) near your microphone, and send audio snippets over the local network to a more powerful machine running Whisper. This keeps the physical microphone device inexpensive and power-efficient while maintaining accurate transcription.
 
-Step 4: Network Isolation
+Step 4 - Network Isolation
 
 Local voice assistants should be isolated on your network like any other IoT device. Even though Rhasspy and Mycroft don't call home, their MQTT brokers and HTTP APIs should not be exposed to the internet or other untrusted network segments:
 

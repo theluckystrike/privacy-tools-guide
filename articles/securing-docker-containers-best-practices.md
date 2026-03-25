@@ -170,7 +170,7 @@ networks:
     internal: true  # No outbound internet access
 ```
 
-The `internal: true` flag prevents containers on the `backend` network from reaching the internet, while still allowing internal service-to-service communication.
+The `internal - true` flag prevents containers on the `backend` network from reaching the internet, while still allowing internal service-to-service communication.
 
 7. Prevent Privilege Escalation
 
@@ -209,7 +209,7 @@ Distroless images contain no shell, no package manager, and no debugging tools. 
 9. Scan Images Before Deploying
 
 ```bash
-Trivy. fast, comprehensive CVE scanner
+Trivy. fast, complete CVE scanner
 trivy image myimage:latest
 
 Or with Docker Scout
@@ -226,7 +226,7 @@ Protect the Docker socket. access to `/var/run/docker.sock` is equivalent to roo
 ```bash
 Check who can access the socket
 ls -la /var/run/docker.sock
-Should be: srw-rw---- 1 root docker
+Should be - srw-rw---- 1 root docker
 
 Never mount the socket in containers unless absolutely required
 If you must, use a proxy like docker-socket-proxy with an allowlist
@@ -367,10 +367,10 @@ Secrets Management Best Practices
 Never embed secrets in container images:
 
 ```bash
-Bad approach: secrets in Dockerfile
+Bad approach - secrets in Dockerfile
 ENV DATABASE_PASSWORD=secret123
 
-Good approach: use Docker secrets
+Good approach - use Docker secrets
 echo "dbpassword" | docker secret create db_password -
 
 docker run --secret db_password \
@@ -404,7 +404,7 @@ Seccomp profile impact
 time docker run --security-opt seccomp=default myapp:test workload
 time docker run --security-opt seccomp=unconfined myapp:test workload
 
-Expected overhead: 2-5% performance decrease for significant security gain
+Expected overhead - 2-5% performance decrease for significant security gain
 ```
 
 Related Reading

@@ -33,13 +33,13 @@ Table of Contents
 - [Comparing SpiderOak to Competitors](#comparing-spideroak-to-competitors)
 - [Security Audit History](#security-audit-history)
 - [Migration from Dropbox/Google Drive to SpiderOak](#migration-from-dropboxgoogle-drive-to-spideroak)
-- [Advanced: SpiderOak with Git Integration](#advanced-spideroak-with-git-integration)
+- [Advanced - SpiderOak with Git Integration](#advanced-spideroak-with-git-integration)
 - [Limitations and Workarounds](#limitations-and-workarounds)
 - [Performance Benchmarks](#performance-benchmarks)
 
 Encryption Architecture
 
-SpiderOak employs client-side encryption using AES-256 for data at rest and TLS 1.3 for data in transit. The critical differentiator in the zero-knowledge ecosystem is how encryption keys are managed. With SpiderOak, your password never leaves your device, the service never stores or has access to your encryption keys.
+SpiderOak employs client-side encryption using AES-256 for data at rest and TLS 1.3 for data in transit. The critical differentiator in the zero-knowledge environment is how encryption keys are managed. With SpiderOak, your password never leaves your device, the service never stores or has access to your encryption keys.
 
 The encryption process follows this flow:
 
@@ -125,7 +125,7 @@ Practical Integration Patterns
 
 For developers, SpiderOak integrates with common development workflows through several mechanisms:
 
-Version Control Sync: Keep project directories synchronized across machines while maintaining encryption:
+Version Control Sync - Keep project directories synchronized across machines while maintaining encryption:
 
 ```bash
 Configure SpiderOak to sync development projects
@@ -133,7 +133,7 @@ spideroak select ~/Projects/myapp
 spideroak setpolicy --exclude="node_modules" --exclude=".git"
 ```
 
-Credential Management: Store environment-specific configuration files securely:
+Credential Management - Store environment-specific configuration files securely:
 
 ```bash
 Sync encrypted config with credentials
@@ -141,7 +141,7 @@ spideroak select ~/.env.production
 Files encrypted before upload, decrypted only on your devices
 ```
 
-Backup Automation: Schedule automated backups using cron:
+Backup Automation - Schedule automated backups using cron:
 
 ```bash
 Add to crontab for daily backups
@@ -154,7 +154,7 @@ SpiderOak presents certain constraints worth noting:
 
 - File size limits: Individual files capped at 5GB, with storage plans varying by tier
 - No end-to-end encrypted sharing: Shared folders require recipients to trust SpiderOak's server-side access
-- Limited third-party integrations: Fewer ecosystem connections compared to mainstream providers
+- Limited third-party integrations: Fewer environment connections compared to mainstream providers
 - Mobile experience: The mobile apps lack some advanced features found in desktop clients
 
 The service operates on a subscription model with tiered storage quotas. Business plans include additional administrative features and priority support.
@@ -254,7 +254,7 @@ for project in "${PROJECT_DIRS[@]}"; do
 done
 
 6. Set backup schedule
-SpiderOak GUI: Settings → Schedule → Daily at 2 AM
+SpiderOak GUI - Settings → Schedule → Daily at 2 AM
 
 7. Verify backup status
 spideroak status
@@ -355,8 +355,8 @@ spideroak select ~/test-migration
 spideroak backup
 
 2. Download from Dropbox/Google Drive
-Google Drive: Download as ZIP from Takeout
-Dropbox: Download folders via web interface
+Google Drive - Download as ZIP from Takeout
+Dropbox - Download folders via web interface
 
 3. Copy to local directory
 mkdir -p ~/to-sync
@@ -382,7 +382,7 @@ Update backup scripts to use SpiderOak
 Update any automation pointing to old services
 ```
 
-Advanced: SpiderOak with Git Integration
+Advanced - SpiderOak with Git Integration
 
 Encrypt your Git repositories using SpiderOak:
 

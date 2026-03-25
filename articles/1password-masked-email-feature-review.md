@@ -121,7 +121,7 @@ Performance and Reliability
 
 In testing various email masking implementations, forward reliability varies by provider:
 
-iCloud Hide My Email offers high reliability with minimal latency, integrated directly into the Apple ecosystem. Fastmail custom domains provide excellent deliverability with professional spam filtering. Third-party forwarding services vary in reliability, and some log extensively.
+iCloud Hide My Email offers high reliability with minimal latency, integrated directly into the Apple environment. Fastmail custom domains provide excellent deliverability with professional spam filtering. Third-party forwarding services vary in reliability, and some log extensively.
 
 Average forwarding delays typically remain under 30 seconds, though burst traffic can introduce temporary delays.
 
@@ -210,9 +210,9 @@ Set up filtering to track which services use your masked addresses:
 
 ```bash
 Gmail filter setup (if using Gmail as primary inbox)
-Filter: from:noreply@analytics-service.com
-Action: Label as " Email Exposure Tracking"
-Then: Archive
+Filter - from:noreply@analytics-service.com
+Action - Label as " Email Exposure Tracking"
+Then - Archive
 
 This creates an easy audit trail of which service sent what
 
@@ -279,9 +279,9 @@ Some services provide hidden reply addresses that route back through their syste
 Stripe account recovery
 
 Email received at masked address:
-From: noreply@stripe.com
+From - noreply@stripe.com
 To: your-masked-email@icloud.com
-Reply-To: ???
+Reply-To - ???
 
 To find hidden reply-to:
 1. View original email headers in Gmail
@@ -300,20 +300,20 @@ Multiple Masked Email Identities
 Go beyond single-service masking by creating distinct identities:
 
 ```bash
-Identity 1: Professional Development
-Email: dev.professional@icloud.com
-Password manager vault: 1password://work
-Used for: GitHub, GitLab, professional SaaS
+Identity 1 - Professional Development
+Email - dev.professional@icloud.com
+Password manager vault - 1password://work
+Used for - GitHub, GitLab, professional SaaS
 
-Identity 2: Personal Projects
-Email: dev.personal@icloud.com
-Password manager vault: 1password://personal
-Used for: Hobby projects, side services
+Identity 2 - Personal Projects
+Email - dev.personal@icloud.com
+Password manager vault - 1password://personal
+Used for - Hobby projects, side services
 
-Identity 3: Testing/Trials
-Email: dev.test@icloud.com
-Password manager vault: 1password://disposable
-Used for: 30-day trials, throwaway accounts
+Identity 3 - Testing/Trials
+Email - dev.test@icloud.com
+Password manager vault - 1password://disposable
+Used for - 30-day trials, throwaway accounts
 
 Benefits:
 - Prevents correlation across account types
@@ -326,25 +326,25 @@ Custom Domain Masking (Premium Setup)
 If using Fastmail with 1Password integration:
 
 ```bash
-Step 1: Configure custom domain in Fastmail
+Step 1 - Configure custom domain in Fastmail
 yourdomain.com → mail.yourdomain.com
 
-Step 2: Create unlimited sub-addresses
+Step 2 - Create unlimited sub-addresses
 api@yourdomain.com
 security@yourdomain.com
 testing@yourdomain.com
 
-Step 3: Configure 1Password integration
+Step 3 - Configure 1Password integration
 Fastmail API key → 1Password settings
 1Password can now generate addresses on your domain
 
-Cost: Fastmail ($5/month) + domain ($10/year) = $70/year
-Benefit: Branded masked emails that appear more legitimate
+Cost - Fastmail ($5/month) + domain ($10/year) = $70/year
+Benefit - Branded masked emails that appear more legitimate
 ```
 
 This provides the appearance of professional email infrastructure while maintaining complete anonymity.
 
-Comparison: Other Email Masking Solutions
+Comparison - Other Email Masking Solutions
 
 Beyond 1Password's native features, consider these alternatives:
 
@@ -354,7 +354,7 @@ Beyond 1Password's native features, consider these alternatives:
 | ProtonMail | $5/month | Encrypted, 10 masks | Privacy-focused users |
 | SimpleLogin | $99/year | Unlimited masks, catch-all | High-volume account creation |
 | Fastmail | $5/month | Custom domain, replies | Professional + privacy |
-| Firefox Relay | Free | Limited (5 masks) | Mozilla ecosystem |
+| Firefox Relay | Free | Limited (5 masks) | Mozilla environment |
 | Apple Mail alias | Included | iCloud+ only | Apple users |
 
 Recommendation by use case:
@@ -371,9 +371,9 @@ Understanding what information masking actually hides:
 ```bash
 Example email header with masking
 
-From: service@example.com
+From - service@example.com
 To: your-masked-email@icloud.com
-Date: Wed, 20 Mar 2026 14:23:00 +0000
+Date - Wed, 20 Mar 2026 14:23:00 +0000
 
 What the SERVICE SEES:
  Your masked email address

@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Canary Traps
+Step 1 - Understand Canary Traps
 
 The fundamental concept is straightforward: create slightly different versions of your document, each marked with a unique identifier. When a leaked version appears, the identifier tells you exactly which recipient was compromised. Each version contains the same core information, but subtle differences make it possible to trace the source.
 
@@ -41,7 +41,7 @@ This approach provides several advantages for developers and security-conscious 
 - Evidence gathering: Documentation of which version leaked aids investigation
 - No dependencies: Implementation requires no special infrastructure
 
-Step 2: Implementing a Basic Canary Trap
+Step 2 - Implementing a Basic Canary Trap
 
 For text documents, emails, or reports, you can implement a simple canary trap using unique identifiers. Here's a Python implementation that generates unique document versions:
 
@@ -107,7 +107,7 @@ def verify_canary(document: str) -> Dict:
 
 This script creates a unique canary identifier for each recipient. The identifier combines a short UUID, the recipient's name, and the date, making it easy to trace the source when a leak occurs.
 
-Step 3: Use Unique URLs for Digital Distribution
+Step 3 - Use Unique URLs for Digital Distribution
 
 For online documents or shared links, URL-based canary trapping provides an elegant solution. By appending unique query parameters to links, you can track which recipient accessed or shared specific content:
 
@@ -139,7 +139,7 @@ def generate_tracked_urls(base_url: str, recipients: List[str]) -> Dict[str, str
 
 When sharing sensitive documents through services like Google Drive, Dropbox, or private file hosting, generate a unique link for each recipient. Store a mapping of which link was sent to whom. If a link appears publicly or in unauthorized locations, you immediately know the source.
 
-Step 4: Canary Tokens for File Tracking
+Step 4 - Canary Tokens for File Tracking
 
 Canary tokens extend the concept to files and digital assets. A canary token is a hidden trigger that activates when accessed, alerting you to unauthorized access:
 
@@ -185,7 +185,7 @@ class CanaryToken:
 
 Embed these tokens in documents, configuration files, or API responses. When triggered, they provide evidence of exactly which credentials or access path was used for the leak.
 
-Step 5: Practical Applications for Developers
+Step 5 - Practical Applications for Developers
 
 API Key Protection
 
@@ -207,7 +207,7 @@ Best Practices
 4. Test your system: Verify that your canary detection mechanism works before relying on it
 5. Combine with other measures: Use canary traps alongside access controls, watermarking, and monitoring
 
-Step 6: Limitations to Consider
+Step 6 - Limitations to Consider
 
 Canary traps work best when recipients have a reasonable expectation of privacy and the information has clear proprietary value. They are less effective against sophisticated attackers who understand the mechanism and actively work to obscure the source. Additionally, if multiple recipients collaborate or share information after receiving it, the trail may become complicated.
 

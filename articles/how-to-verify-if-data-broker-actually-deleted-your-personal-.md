@@ -34,7 +34,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Direct Verification Methods
+Step 1 - Direct Verification Methods
 
 1. Search the Broker's Public Portal
 
@@ -51,7 +51,7 @@ Create a test account with minimal information to check if your data still appea
 Under GDPR Article 15 and CCPA, you can request a copy of all data the broker holds about you. This is different from the deletion request. Here's a template you can adapt:
 
 ```
-Subject: Data Subject Access Request - [Your Name]
+Subject - Data Subject Access Request - [Your Name]
 To: [broker's privacy email]
 
 I am requesting a complete copy of all personal data you hold about me, including:
@@ -65,7 +65,7 @@ Please provide this in a portable format within 30 days per GDPR Article 15 / CC
 
 If the broker cannot produce a report or claims no data exists, your deletion likely succeeded. If they provide a report showing your data still exists, you have grounds for a complaint.
 
-Step 2: Automated Verification with Scripts
+Step 2 - Automated Verification with Scripts
 
 For power users managing opt-outs across multiple brokers, automated verification provides ongoing monitoring.
 
@@ -161,7 +161,7 @@ def check_email_breaches(email):
 
 This doesn't verify broker deletion directly but helps you understand if your data is circulating elsewhere.
 
-Step 3: Third-Party Monitoring Services
+Step 3 - Third-Party Monitoring Services
 
 Several services automate broker monitoring:
 
@@ -183,7 +183,7 @@ When selecting a monitoring service, prioritize:
 3. API access: Can you integrate with your own systems?
 4. Custom alerts: Do they notify you when your data reappears?
 
-Step 4: Legal Verification Methods
+Step 4 - Legal Verification Methods
 
 Filing Complaints with Regulatory Bodies
 
@@ -204,7 +204,7 @@ Maintain records for potential legal action:
 - Record timestamps of verification checks
 - Keep copies of any data reports received
 
-Step 5: Practical Verification Workflow
+Step 5 - Practical Verification Workflow
 
 For systematic verification, follow this workflow:
 
@@ -216,7 +216,7 @@ For systematic verification, follow this workflow:
 
 This timeline accounts for processing delays while establishing a documented pattern of non-compliance.
 
-Step 6: Technical Considerations
+Step 6 - Technical Considerations
 
 API Limitations
 

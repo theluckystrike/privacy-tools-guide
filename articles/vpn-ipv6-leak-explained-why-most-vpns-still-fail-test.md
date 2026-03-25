@@ -184,7 +184,7 @@ When choosing a VPN, don't just compare speeds and server counts, ask about thei
 
 For maximum privacy, combine VPN protection with other measures like DNS-over-HTTPS, Tor browser, and privacy-focused browsers. Each layer adds protection against different attack vectors.
 
-Remember: a VPN is only as strong as its weakest link. IPv6 leaks are common enough that assuming you're protected without testing is risky. Take a few minutes to verify your setup, you might be surprised by what you find.
+Remember - a VPN is only as strong as its weakest link. IPv6 leaks are common enough that assuming you're protected without testing is risky. Take a few minutes to verify your setup, you might be surprised by what you find.
 
 Block IPv6 with nftables (Persistent)
 

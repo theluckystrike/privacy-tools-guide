@@ -50,7 +50,7 @@ Specs needed:
 - Network cable (Ethernet strongly preferred over WiFi)
 - Optional: case with heatsink ($10)
 
-Setup time: 30 minutes
+Setup time - 30 minutes
 
 Old Laptop / Desktop
 
@@ -63,7 +63,7 @@ Why:
 - Louder (fans)
 - Takes up desk space
 
-Good for: Households with 10+ devices or if running additional services (DHCP, media server).
+Good for - Households with 10+ devices or if running additional services (DHCP, media server).
 
 NUC (Intel Mini PC, $200-400)
 
@@ -73,17 +73,17 @@ Why:
 - Professional appearance
 - Handles 200+ devices
 
-Good for: Large households, advanced configurations, or if you plan to run multiple services.
+Good for - Large households, advanced configurations, or if you plan to run multiple services.
 
 ---
 
-Option 1: Pi-hole (Easiest)
+Option 1 - Pi-hole (Easiest)
 
 Pi-hole is the easiest entry point. It's purpose-built for ad-blocking and DNS filtering at the network level.
 
 Installation (30 minutes)
 
-Step 1: Prepare Raspberry Pi
+Step 1 - Prepare Raspberry Pi
 
 Download Raspberry Pi Imager (official):
 ```
@@ -105,7 +105,7 @@ Download Raspberry Pi Imager (official):
 
 Wait 2 minutes for first boot.
 
-Step 2: Connect to Pi
+Step 2 - Connect to Pi
 
 From your computer:
 ```bash
@@ -114,10 +114,10 @@ ping pihole.local
 
 SSH into it:
 ssh pi@pihole.local
-Password: [the password you set]
+Password - [the password you set]
 ```
 
-Step 3: Install Pi-hole
+Step 3 - Install Pi-hole
 
 ```bash
 curl -sSL https://install.pi-hole.net | bash
@@ -130,7 +130,7 @@ This will:
 - Configure DNS service
 - Finish in 5-10 minutes
 
-Step 4: Configure Your Router
+Step 4 - Configure Your Router
 
 Your router must tell all devices to use the Pi for DNS:
 
@@ -143,7 +143,7 @@ Your router must tell all devices to use the Pi for DNS:
 
 Now all connected devices will use your Pi for DNS.
 
-Step 5: Access Pi-hole Admin Panel
+Step 5 - Access Pi-hole Admin Panel
 
 From any browser:
 ```
@@ -200,33 +200,33 @@ Dashboard shows:
 
 Example output:
 ```
-Queries processed (24h): 48,000
-Ads blocked: 12,400 (25.8%)
-Cache hit rate: 30%
-Unique clients: 6
+Queries processed (24h) - 48,000
+Ads blocked - 12,400 (25.8%)
+Cache hit rate - 30%
+Unique clients - 6
 ```
 
 ---
 
-Option 2: Unbound (Technically Advanced, Max Privacy)
+Option 2 - Unbound (Technically Advanced, Max Privacy)
 
 Unbound is a recursive DNS resolver. Unlike Pi-hole (which forwards queries to upstream DNS), Unbound asks root nameservers directly. No upstream provider sees your queries.
 
 Installation (45 minutes, requires terminal comfort)
 
-Step 1: Prepare Pi (same as Pi-hole)
+Step 1 - Prepare Pi (same as Pi-hole)
 
 ```bash
 ssh pi@pihole.local
 ```
 
-Step 2: Install Unbound
+Step 2 - Install Unbound
 
 ```bash
 sudo apt update && sudo apt install -y unbound
 ```
 
-Step 3: Configure Unbound
+Step 3 - Configure Unbound
 
 Create configuration file:
 ```bash
@@ -267,15 +267,15 @@ remote-control:
   control-enable: no
 ```
 
-Save: `Ctrl+X`, `Y`, `Enter`
+Save - `Ctrl+X`, `Y`, `Enter`
 
-Step 4: Get Root Hints
+Step 4 - Get Root Hints
 
 ```bash
 sudo curl -o /etc/unbound/root.hints https://www.internic.net/domain/named.cache
 ```
 
-Step 5: Start Unbound
+Step 5 - Start Unbound
 
 ```bash
 sudo systemctl start unbound
@@ -289,7 +289,7 @@ dig google.com @127.0.0.1 -p 5335
 
 You should see DNS response.
 
-Step 6: Install Pi-hole (for web UI)
+Step 6 - Install Pi-hole (for web UI)
 
 Even though you're using Unbound, Pi-hole provides a nice interface:
 
@@ -304,13 +304,13 @@ Now Pi-hole queries Unbound, which queries root nameservers directly. Zero track
 
 ---
 
-Option 3: AdGuard Home (User-Friendly, Advanced Features)
+Option 3 - AdGuard Home (User-Friendly, Advanced Features)
 
-AdGuard Home is a middle ground: easier than Unbound, more powerful than Pi-hole.
+AdGuard Home is a middle ground - easier than Unbound, more powerful than Pi-hole.
 
 Installation (30 minutes)
 
-Step 1: Download AdGuard Home
+Step 1 - Download AdGuard Home
 
 ```bash
 ssh pi@pihole.local
@@ -326,7 +326,7 @@ cd AdGuardHome
 sudo ./AdGuardHome -s install
 ```
 
-Step 2: Access AdGuard Panel
+Step 2 - Access AdGuard Panel
 
 From browser:
 ```
@@ -340,9 +340,9 @@ Complete setup wizard:
 - Upstream DNS (use Quad9: 9.9.9.9 or Cloudflare: 1.1.1.1 for privacy)
 - DHCP server (optional)
 
-Step 3: Configure Router
+Step 3 - Configure Router
 
-Same as Pi-hole: set router's DHCP DNS to Pi's IP.
+Same as Pi-hole - set router's DHCP DNS to Pi's IP.
 
 Configure AdGuard Home
 
@@ -406,9 +406,9 @@ DNS-over-HTTPS (DoH) / DNS-over-TLS (DoT)
 
 These encrypt DNS queries from your devices to your Pi. Requires certificates.
 
-Simple approach: Use Pi-hole + Unbound upstream (Pi → Unbound queries are local and safe).
+Simple approach - Use Pi-hole + Unbound upstream (Pi → Unbound queries are local and safe).
 
-Complex approach: Install WireGuard on Pi, then clients connect via encrypted tunnel. Overkill unless you access DNS remotely.
+Complex approach - Install WireGuard on Pi, then clients connect via encrypted tunnel. Overkill unless you access DNS remotely.
 
 Dynamic DNS (if you want to access from outside home)
 
@@ -422,7 +422,7 @@ If you travel and want to use your home DNS:
 3. Configure for your domain registrar
 4. Now you can use `pihole.yourdomain.com` from anywhere
 
-Access admin panel: `https://pihole.yourdomain.com/admin`
+Access admin panel - `https://pihole.yourdomain.com/admin`
 
 Backup & Recovery
 

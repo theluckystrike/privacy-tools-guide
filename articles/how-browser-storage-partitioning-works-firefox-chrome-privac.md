@@ -110,7 +110,7 @@ if (window.isolationSentinel) {
 
 Chrome's implementation allows some exceptions for specific use cases, particularly for legitimate cross-site functionality that requires shared state. The Partitioned cookie attribute (`Partitioned`) allows cookies to work in a partitioned context while maintaining privacy boundaries.
 
-Code Examples: Testing Partitioning
+Code Examples - Testing Partitioning
 
 Here's a complete example demonstrating storage partitioning behavior:
 
@@ -229,7 +229,7 @@ if (isSafari) {
 }
 ```
 
-Practical Testing: Verifying Partitioning in Your Browser
+Practical Testing - Verifying Partitioning in Your Browser
 
 Here's a complete test suite you can run locally:
 
@@ -286,7 +286,7 @@ Building Sites That Work With Partitioning
 
 For developers maintaining websites that embed third-party content, partitioning requires architectural changes:
 
-Pattern 1: First-Party Requests (No Changes Needed)
+Pattern 1 - First-Party Requests (No Changes Needed)
 
 If your site is the top-level site, partitioning doesn't affect you:
 
@@ -297,7 +297,7 @@ localStorage.setItem('user-preference', 'dark-mode');
 // Stored in: ("https://example.com", "https://example.com")
 ```
 
-Pattern 2: Embedded Content (Needs Storage Access API)
+Pattern 2 - Embedded Content (Needs Storage Access API)
 
 If your company's analytics script is embedded on customer websites:
 
@@ -326,7 +326,7 @@ async function ensureStorageAccess() {
 
 This API requires user interaction (click), so it's not a complete solution. Expect some users to deny storage access.
 
-Pattern 3: Server-Side Sessions (Most Reliable)
+Pattern 3 - Server-Side Sessions (Most Reliable)
 
 The most strong approach is moving away from client-side storage:
 
@@ -392,7 +392,7 @@ const userData = await fetch('/api/user');
 // Result: More API requests, slightly higher server load
 ```
 
-Migration Timeline: What You Need to Do
+Migration Timeline - What You Need to Do
 
 Different browsers enable partitioning on different schedules:
 
@@ -405,10 +405,10 @@ Different browsers enable partitioning on different schedules:
 
 For most applications, the migration path is:
 
-Phase 1 (Now): Test your app with storage partitioning enabled in DevTools
-Phase 2 (Next 3 months): Implement Storage Access API request for critical features
-Phase 3 (Next 6 months): Migrate to server-side sessions for all cross-site functionality
-Phase 4 (Ongoing): Monitor for issues as browsers finalize their implementations
+Phase 1 (Now) - Test your app with storage partitioning enabled in DevTools
+Phase 2 (Next 3 months) - Implement Storage Access API request for critical features
+Phase 3 (Next 6 months) - Migrate to server-side sessions for all cross-site functionality
+Phase 4 (Ongoing) - Monitor for issues as browsers finalize their implementations
 ---
 
 

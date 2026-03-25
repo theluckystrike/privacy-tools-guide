@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Data Broker Ecosystem
+Step 1 - Understand the Data Broker environment
 
 Data brokers collect information from public records, social media, purchase histories, and app usage. They compile detailed profiles sold to advertisers, insurers, employers, and other parties. The largest brokers maintain records on hundreds of millions of individuals.
 
 Major categories include people search sites (Spokeo, Whitepages), background check services (BeenVerified, Instant Checkmate), and marketing data aggregators (Acxiom, Experian). Each category requires different removal strategies.
 
-Step 2: Top 50 Data Broker Sites and Opt-Out Methods
+Step 2 - Top 50 Data Broker Sites and Opt-Out Methods
 
 People Search Sites
 
@@ -137,7 +137,7 @@ async def opt_out_all(brokers: list, email: str):
 if __name__ == "__main__":
     import sys
     if len(sys.argv) < 2:
-        print("Usage: python3 opt_out.py your@email.com")
+        print("Usage - python3 opt_out.py your@email.com")
         sys.exit(1)
 
     print(f"Starting opt-out process for {sys.argv[1]}...")
@@ -159,7 +159,7 @@ Check removal status
 delete-broker-data --check-status
 ```
 
-Step 3: Verification and Follow-Up
+Step 3 - Verification and Follow-Up
 
 After submitting opt-out requests:
 
@@ -181,7 +181,7 @@ for site in "${SITES[@]}"; do
 done
 ```
 
-Advanced: Using Data Removal Services
+Advanced - Using Data Removal Services
 
 For developers who prefer automated solutions, several services provide API-based removal:
 
@@ -222,13 +222,13 @@ result = service.submit_removal_request(
 print(f"Removal request: {result['request_id']}")
 ```
 
-Step 4: Build a Personal Data Removal Pipeline
+Step 4 - Build a Personal Data Removal Pipeline
 
 Integrate data broker removal into your existing privacy workflow:
 
 ```bash
 Cron job for quarterly opt-out refresh
-Add to crontab: 0 0 1 */3 * /path/to/opt-out-script.sh
+Add to crontab - 0 0 1 */3 * /path/to/opt-out-script.sh
 
 #!/bin/bash
 opt-out-refresh.sh - Quarterly data broker removal refresh
@@ -247,7 +247,7 @@ bash /path/to/verify-removal.sh "$EMAIL" >> "$LOG_FILE" 2>&1
 echo "Opt-out refresh complete" >> "$LOG_FILE"
 ```
 
-Step 5: Legal Frameworks Supporting Your Rights
+Step 5 - Legal Frameworks Supporting Your Rights
 
 Several regulations require brokers to honor removal requests:
 
@@ -259,7 +259,7 @@ Several regulations require brokers to honor removal requests:
 When submitting requests, cite the applicable regulation:
 
 ```
-Subject: CCPA Deletion Request
+Subject - CCPA Deletion Request
 To: privacy@broker-site.com
 
 I am a California resident requesting deletion of all personal information
@@ -268,14 +268,14 @@ My email is [your email]. Please confirm receipt and completion within
 45 days as required by law.
 ```
 
-Step 6: Common Pitfalls to Avoid
+Step 6 - Common Pitfalls to Avoid
 
 - Single submission only - Many brokers require annual renewal
 - Using work email - Use a dedicated privacy email
 - Skipping verification - Most brokers require email confirmation
 - Ignoring re-listings - Check quarterly for re-appeared data
 
-Step 7: Tracking Opt-Out Progress in a Local Database
+Step 7 - Tracking Opt-Out Progress in a Local Database
 
 Submitting requests is only half the work. Without a record of what you submitted and when, you will lose track of which brokers have been addressed and which are overdue for a re-check. A SQLite database keeps this organized without requiring any external service:
 
@@ -330,7 +330,7 @@ def mark_verified(conn, broker: str, email: str):
 
 Run `due_for_check()` weekly from a cron job to get a list of brokers that need re-verification. If a broker re-listed your data, call `record_submission()` again to start a new tracking cycle.
 
-Step 8: Use a Dedicated Opt-Out Email Address
+Step 8 - Use a Dedicated Opt-Out Email Address
 
 Submitting opt-out requests with your primary email creates a new problem: you are confirming that address to each broker's marketing database when you click the verification link. Use a dedicated address instead:
 
@@ -341,7 +341,7 @@ Submitting opt-out requests with your primary email creates a new problem: you a
 
 For the automated script above, pass this dedicated address as the `email` parameter. The actual personal data you want removed (your real name, home address, phone) goes in the form fields where the broker requires it. the opt-out email address itself does not need to match your real identity.
 
-Step 9: What Data Brokers Cannot Remove
+Step 9 - What Data Brokers Cannot Remove
 
 Even after successful opt-outs, some data sources fall outside individual brokers' control:
 

@@ -34,19 +34,19 @@ Understanding Airport WiFi Security Risks
 
 Airport WiFi networks are among the most dangerous public networks you'll encounter. Multiple factors contribute to this risk:
 
-Unencrypted Networks: Many airport WiFi networks transmit data without any encryption, meaning anyone nearby can capture network traffic with freely available tools. Airmon-ng, Wireshark, and similar utilities allow attackers to intercept credentials, session cookies, and sensitive communications.
+Unencrypted Networks - Many airport WiFi networks transmit data without any encryption, meaning anyone nearby can capture network traffic with freely available tools. Airmon-ng, Wireshark, and similar utilities allow attackers to intercept credentials, session cookies, and sensitive communications.
 
-Evil Twin Attacks: Attackers create fake WiFi access points with legitimate-sounding names like "Free Airport WiFi" or "Terminal X Guest." These rogue access points route your traffic through attacker-controlled infrastructure, enabling man-in-the-middle attacks.
+Evil Twin Attacks - Attackers create fake WiFi access points with legitimate-sounding names like "Free Airport WiFi" or "Terminal X Guest." These rogue access points route your traffic through attacker-controlled infrastructure, enabling man-in-the-middle attacks.
 
-SSL Stripping: Even when websites use HTTPS, attackers can use SSL stripping techniques to downgrade connections to unencrypted HTTP, exposing login credentials and session tokens.
+SSL Stripping - Even when websites use HTTPS, attackers can use SSL stripping techniques to downgrade connections to unencrypted HTTP, exposing login credentials and session tokens.
 
-Session Hijacking: Unsecured airport WiFi makes session cookies visible to network observers. Tools like Firesheep demonstrated how easily attackers can hijack social media and email sessions on open networks.
+Session Hijacking - Unsecured airport WiFi makes session cookies visible to network observers. Tools like Firesheep demonstrated how easily attackers can hijack social media and email sessions on open networks.
 
 VPN Protocol Selection for Travel
 
 Selecting the right VPN protocol balances security, performance, and compatibility. For airport WiFi usage, consider these options:
 
-WireGuard: Modern Security
+WireGuard - Modern Security
 
 WireGuard represents the current modern in VPN protocols. Its minimal codebase reduces attack surface and simplifies security auditing:
 
@@ -66,7 +66,7 @@ PersistentKeepalive = 25
 
 WireGuard uses ChaCha20-Poly1305 for authenticated encryption, providing excellent security with minimal computational overhead, important for battery-powered devices.
 
-OpenVPN: Maximum Compatibility
+OpenVPN - Maximum Compatibility
 
 OpenVPN remains viable when WireGuard isn't supported:
 
@@ -87,7 +87,7 @@ sudo openvpn \
   --auth SHA512
 ```
 
-IPSec/IKEv2: Enterprise-Grade
+IPSec/IKEv2 - Enterprise-Grade
 
 IKEv2 provides excellent mobility support, automatically reconnecting when switching between WiFi and cellular networks, a common scenario during travel:
 
@@ -210,7 +210,7 @@ dig +short TXT whoami.cloudflare-idxd.com @1.1.1.1
 dig +short whoami.akamai.net
 
 Check for WebRTC leaks
-Visit: https://browserleaks.com/webrtc
+Visit - https://browserleaks.com/webrtc
 
 Verify IP address
 curl -s https://ipinfo.io/json
@@ -273,11 +273,11 @@ Key criteria for provider selection:
 
 No-logs policy with independent verification: Look for providers whose no-logs claims have been verified through third-party audits (not just self-attestation) or demonstrated through actual government data requests that returned no useful data. Providers like Mullvad, ProtonVPN, and IVPN have established track records here.
 
-Jurisdiction: Providers incorporated in countries outside the 5/9/14 Eyes intelligence-sharing alliances face different legal compulsions. This matters for long-term metadata retention, though for airport use cases, the immediate encryption benefit matters more than jurisdiction.
+Jurisdiction - Providers incorporated in countries outside the 5/9/14 Eyes intelligence-sharing alliances face different legal compulsions. This matters for long-term metadata retention, though for airport use cases, the immediate encryption benefit matters more than jurisdiction.
 
-Protocol support: Confirm the provider supports WireGuard or OpenVPN. Proprietary protocols lack independent security review. PPTP is broken and should never be used.
+Protocol support - Confirm the provider supports WireGuard or OpenVPN. Proprietary protocols lack independent security review. PPTP is broken and should never be used.
 
-Kill switch reliability: Test the kill switch before you need it. Connect to the VPN, then simulate a drop by disabling the network interface, and verify that traffic does not flow without the VPN active. Some providers advertise kill switches that only work on desktop, not mobile.
+Kill switch reliability - Test the kill switch before you need it. Connect to the VPN, then simulate a drop by disabling the network interface, and verify that traffic does not flow without the VPN active. Some providers advertise kill switches that only work on desktop, not mobile.
 
 For self-hosted solutions, Algo VPN simplifies WireGuard setup on a cloud VPS:
 
@@ -302,7 +302,7 @@ Before connecting to airport WiFi, establish your baseline security configuratio
 
 Verify these settings before entering an airport:
 
-Automatic connection disabled: Set your device to ask before connecting to networks, never to connect automatically. Devices that auto-connect to previously seen network names are vulnerable to evil twin attacks that clone your home network SSID.
+Automatic connection disabled - Set your device to ask before connecting to networks, never to connect automatically. Devices that auto-connect to previously seen network names are vulnerable to evil twin attacks that clone your home network SSID.
 
 ```bash
 macOS: Disable auto-connect via networksetup
@@ -311,25 +311,25 @@ networksetup -setairportpower en0 off
 Or disable specific remembered networks
 sudo networksetup -removepreferredwirelessnetwork en0 "Airport Free WiFi"
 
-Linux: NetworkManager prevent auto-connection
+Linux - NetworkManager prevent auto-connection
 nmcli connection modify "Airport Free WiFi" connection.autoconnect no
 ```
 
-Firewall enabled and configured: Confirm your host-based firewall is active before traveling:
+Firewall enabled and configured - Confirm your host-based firewall is active before traveling:
 
 ```bash
 macOS: Enable application firewall
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
 
-Linux: UFW basic configuration
+Linux - UFW basic configuration
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw allow out on wg0
 sudo ufw enable
 ```
 
-Sensitive applications closed: Close email clients, Slack, and banking apps before connecting to public networks. Even with VPN active, a vulnerability in an application could be exploited during the connection window before the tunnel establishes.
+Sensitive applications closed - Close email clients, Slack, and banking apps before connecting to public networks. Even with VPN active, a vulnerability in an application could be exploited during the connection window before the tunnel establishes.
 
 After connecting to airport WiFi and before starting VPN, verify you are on the legitimate network by checking the gateway MAC address matches what airport staff confirm, or use your mobile data connection to verify the network legitimacy before trusting it.
 

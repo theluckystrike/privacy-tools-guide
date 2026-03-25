@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Location Data Collection in Mobile Games
+Step 1 - Understand Location Data Collection in Mobile Games
 
 Mobile games collect location data through multiple pathways beyond the obvious GPS sensor. The primary vectors include:
 
@@ -48,7 +48,7 @@ Mobile games collect location data through multiple pathways beyond the obvious 
 
 Game developers often embed third-party analytics SDKs, Unity Analytics, Firebase, AppsFlyer, or Adjust, that automatically collect location data as part of their telemetry pipelines. Even when a game does not explicitly request location permissions, these SDKs may harvest data from IP addresses or network information.
 
-Step 2: Technical Countermeasures for Power Users
+Step 2 - Technical Countermeasures for Power Users
 
 Analyzing App Permissions and Network Traffic
 
@@ -91,7 +91,7 @@ locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
 // This reduces precision while maintaining functionality
 ```
 
-Android: Permission Manager and Mock Locations
+Android - Permission Manager and Mock Locations
 
 Android's Permission Manager allows you to revoke location permission post-installation while keeping the app functional (though some games may degrade). For testing or privacy-focused usage, enable developer options to allow mock location apps:
 
@@ -114,7 +114,7 @@ geolocation-api.purple.ai
 
 This approach blocks some SDKs from reaching their backend servers entirely, preventing location data from leaving your device.
 
-Step 3: Developer-Level Solutions
+Step 3 - Developer-Level Solutions
 
 Implementing Privacy-Preserving Location Handling
 
@@ -171,7 +171,7 @@ Identify and remove SDKs that transmit location data unnecessarily. Many analyti
 FirebaseAnalytics.getInstance(context).setUserProperty("location_collection", "disabled");
 ```
 
-Step 4: Practical Protection Strategy
+Step 4 - Practical Protection Strategy
 
 A layered approach provides the strongest protection:
 
@@ -291,7 +291,7 @@ POST /sdk/event
   }
 ```
 
-Step 5: SDK-Specific Configuration Options
+Step 5 - SDK-Specific Configuration Options
 
 Major analytics SDKs include flags to disable location collection. Developers can implement these:
 
@@ -330,7 +330,7 @@ Analytics.CustomEvent("game_start", new Dictionary<string, object>
 });
 ```
 
-Step 6: Network-Level Filtering Strategy
+Step 6 - Network-Level Filtering Strategy
 
 For power users, creating blocklists prevents location data exfiltration:
 
@@ -347,7 +347,7 @@ For power users, creating blocklists prevents location data exfiltration:
 
 For more sophisticated filtering, use Pi-hole's blocklist functionality to filter these domains across all devices on your network.
 
-Step 7: Behavioral Detection Systems
+Step 7 - Behavioral Detection Systems
 
 Some games implement detection to flag users who:
 - Disable location permission (may block gameplay features)
@@ -387,7 +387,7 @@ Comparison of Location Privacy Approaches
 
 Emulators provide the strongest protection since they inherently provide fake location data that games cannot distinguish from real GPS.
 
-Step 8: Build Privacy-First Mobile Games
+Step 8 - Build Privacy-First Mobile Games
 
 For developers creating location-based games, privacy by design reduces liability:
 

@@ -156,7 +156,7 @@ connect() {
     if [ "$COUNTRY" = "PL" ]; then
         log "Connected successfully. Country: Poland"
     else
-        log "Warning: Connection may have failed. Country: $COUNTRY"
+        log "Warning - Connection may have failed. Country: $COUNTRY"
     fi
 }
 

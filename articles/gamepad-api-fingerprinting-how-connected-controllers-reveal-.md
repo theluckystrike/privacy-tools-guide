@@ -55,7 +55,7 @@ Timing Patterns
 
 The rate at which users press buttons, the duration of button holds, and the intervals between inputs create a temporal fingerprint. These timing characteristics are difficult to forge and remain consistent across sessions.
 
-Code Example: Collecting Gamepad Data
+Code Example - Collecting Gamepad Data
 
 Websites can collect gamepad information using straightforward JavaScript. Here's how the fingerprinting typically works:
 
@@ -93,11 +93,11 @@ Real-World Fingerprinting Techniques
 
 Advanced fingerprinting scripts combine Gamepad data with other browser APIs to create highly unique identifiers. The Gamepad API contributes several advantages to this process:
 
-Cross-session persistence: Unlike cookies, gamepad information remains available as long as the same controller connects to the browser. Users who switch between browsers or clear their cookies can still be tracked if they use the same controller.
+Cross-session persistence - Unlike cookies, gamepad information remains available as long as the same controller connects to the browser. Users who switch between browsers or clear their cookies can still be tracked if they use the same controller.
 
 Low entropy but high correlation: While the Gamepad API alone provides limited unique information, it serves as an excellent correlator when combined with other fingerprinting vectors. A user's gamepad preferences combined with screen resolution, installed fonts, and other attributes create a highly unique profile.
 
-Passive collection: Unlike some fingerprinting techniques that require explicit user interaction, gamepad data can be collected passively while the controller remains connected.
+Passive collection - Unlike some fingerprinting techniques that require explicit user interaction, gamepad data can be collected passively while the controller remains connected.
 
 Privacy Implications
 

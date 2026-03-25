@@ -71,7 +71,7 @@ clients:
 scrape_configs: []  # Defined in sections below
 ```
 
-Scrape Config 1: Static File Tailing
+Scrape Config 1 - Static File Tailing
 
 ```yaml
 scrape_configs:
@@ -104,7 +104,7 @@ Use glob patterns to tail multiple files:
           __path__: /var/log/myapp/*.log
 ```
 
-Scrape Config 2: Systemd Journal
+Scrape Config 2 - Systemd Journal
 
 Promtail can read directly from systemd's journal without needing log files:
 
@@ -126,7 +126,7 @@ Promtail can read directly from systemd's journal without needing log files:
 
 This ships all systemd unit logs. Filter to specific units via relabel rules if needed.
 
-Scrape Config 3: Syslog Receiver
+Scrape Config 3 - Syslog Receiver
 
 Promtail can act as a syslog receiver (UDP/TCP):
 
@@ -150,7 +150,7 @@ Promtail can act as a syslog receiver (UDP/TCP):
 
 Configure remote syslog sources to forward to `promtail-host:1514`.
 
-Pipeline Stages: Parsing and Enrichment
+Pipeline Stages - Parsing and Enrichment
 
 Pipeline stages transform log lines before shipping. They run in order:
 

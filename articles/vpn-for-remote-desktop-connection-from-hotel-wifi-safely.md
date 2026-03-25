@@ -25,7 +25,7 @@ Table of Contents
 - [Configuring Remote Desktop Over VPN](#configuring-remote-desktop-over-vpn)
 - [Network Configuration Checklist](#network-configuration-checklist)
 - [Handling Connection Drops](#handling-connection-drops)
-- [Alternative: SSH Jump Host](#alternative-ssh-jump-host)
+- [Alternative - SSH Jump Host](#alternative-ssh-jump-host)
 - [Security Comparison Table](#security-comparison-table)
 - [Advanced WireGuard Configuration for Stability](#advanced-wireguard-configuration-for-stability)
 - [Certificate Validation for VPN Connections](#certificate-validation-for-vpn-connections)
@@ -184,7 +184,7 @@ ping-restart 60
 
 Windows RDP automatically attempts reconnection, but consider enabling reconnection prompts in Group Policy if your connection drops frequently.
 
-Alternative: SSH Jump Host
+Alternative - SSH Jump Host
 
 For developers comfortable with the command line, a SSH jump host provides a lightweight alternative to a full VPN:
 

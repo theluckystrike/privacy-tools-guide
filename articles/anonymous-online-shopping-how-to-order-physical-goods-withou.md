@@ -37,11 +37,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Privacy Problem
+Step 1 - Understand the Privacy Problem
 
 Every online order reveals your shipping address to the merchant, their payment processors, and potentially data brokers who aggregate this information. Your purchasing history, combined with your physical location, creates a detailed profile that can be sold, breached, or used in ways you never intended. The goal is separating your online purchasing activity from your physical identity.
 
-Step 2: Mail Forwarding Services
+Step 2 - Mail Forwarding Services
 
 Private mail forwarding services receive packages at their address and reship them to your actual location. This adds a layer between you and the merchant.
 
@@ -71,7 +71,7 @@ City, State ZIP
 
 Many services let you create multiple "accounts" with different names, enabling you to order under aliases.
 
-Step 3: General Delivery at Carrier Locations
+Step 3 - General Delivery at Carrier Locations
 
 Major shipping carriers offer general delivery or hold-for-pickup services that let you collect packages from their facilities.
 
@@ -100,7 +100,7 @@ Both carriers offer package hold services:
 
 These services typically cost $0-5 per package and require ID matching the delivery name.
 
-Step 4: Private Mailboxes (PMBs)
+Step 4 - Private Mailboxes (PMBs)
 
 Private mailbox services like Postal Annex or The UPS Store provide street addresses that look like regular addresses:
 
@@ -118,7 +118,7 @@ Advantages over PO Boxes:
 - Often includes mail scanning services
 - Can be registered under a business name
 
-Step 5: Anonymous Payment Methods
+Step 5 - Anonymous Payment Methods
 
 Payment method privacy is equally important. Even with a hidden shipping address, your payment card links purchases to your identity.
 
@@ -168,23 +168,23 @@ Services like Privacy.com create virtual card numbers linked to your actual acco
 - Merchant locking after single use
 - Ability to freeze or close instantly
 
-Step 6: Build a System
+Step 6 - Build a System
 
 For power users, combining multiple techniques creates privacy:
 
 Layered Approach
 
 ```
-Layer 1: Anonymous Payment
+Layer 1 - Anonymous Payment
      Prepaid card or virtual card
 
-Layer 2: Shipping Address
+Layer 2 - Shipping Address
      Forwarding service or PMB
 
-Layer 3: Delivery Method
+Layer 3 - Delivery Method
      Carrier hold or in-person pickup
 
-Layer 4: Identity Separation
+Layer 4 - Identity Separation
      Business name for all transactions
 ```
 
@@ -244,7 +244,7 @@ config = AnonymousOrderConfig.get_config("amazon")
 print(f"Use {config['address']} address with {config['payment']}")
 ```
 
-Step 7: Important Considerations
+Step 7 - Important Considerations
 
 Legal considerations vary by jurisdiction. Some states require ID for package pickup. International shipping can trigger customs requirements. Certain products may have shipping restrictions that make anonymous ordering impractical.
 

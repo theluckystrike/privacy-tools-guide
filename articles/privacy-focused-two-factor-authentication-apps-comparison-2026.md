@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Focused Two Factor Authentication Apps Comparison"
-description: "Aegis vs Raivo vs 2FAS vs Authy: encrypted backups, open-source audits, and cross-device sync compared for privacy-conscious users in 2026."
+description: "Aegis vs Raivo vs 2FAS vs Authy - encrypted backups, open-source audits, and cross-device sync compared for privacy-conscious users in 2026."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
@@ -20,12 +20,12 @@ Use Aegis Authenticator if you want maximum privacy (open-source, zero cloud, lo
 Table of Contents
 
 - [Why 2FA App Privacy Matters](#why-2fa-app-privacy-matters)
-- [Aegis Authenticator: Maximum Privacy, Manual Backups](#aegis-authenticator-maximum-privacy-manual-backups)
+- [Aegis Authenticator - Maximum Privacy, Manual Backups](#aegis-authenticator-maximum-privacy-manual-backups)
 - [2FAS: Privacy with Optional Cloud Backup](#2fas-privacy-with-optional-cloud-backup)
-- [Raivo: Privacy on iOS, Encrypted Cloud Backup](#raivo-privacy-on-ios-encrypted-cloud-backup)
-- [Authy: Least Private, Avoid If Possible](#authy-least-private-avoid-if-possible)
-- [Comparison Table: Privacy and Features](#comparison-table-privacy-and-features)
-- [Setup Guide: Privacy-First 2FA](#setup-guide-privacy-first-2fa)
+- [Raivo - Privacy on iOS, Encrypted Cloud Backup](#raivo-privacy-on-ios-encrypted-cloud-backup)
+- [Authy - Least Private, Avoid If Possible](#authy-least-private-avoid-if-possible)
+- [Comparison Table - Privacy and Features](#comparison-table-privacy-and-features)
+- [Setup Guide - Privacy-First 2FA](#setup-guide-privacy-first-2fa)
 - [Migration Between Authenticators](#migration-between-authenticators)
 
 Why 2FA App Privacy Matters
@@ -38,16 +38,16 @@ Your 2FA authenticator stores the master secrets that unlock your email, bank ac
 
 Most people wrongly assume all authenticator apps offer equal privacy. They don't. Authy, despite Twilio's assurances, is fundamentally less private than Aegis or 2FAS.
 
-Aegis Authenticator: Maximum Privacy, Manual Backups
+Aegis Authenticator - Maximum Privacy, Manual Backups
 
 Aegis is open-source, requires zero internet, and stores all secrets locally. Backups are encrypted and saved locally (your device, computer, or USB drive). You control everything.
 
 Installation:
 
 ```
-Android: Google Play Store or F-Droid (free)
+Android - Google Play Store or F-Droid (free)
 iOS: No official Aegis app (Apple restrictions limit local-only apps)
-Desktop: Windows, macOS, Linux (Aegis Desktop via GitHub releases)
+Desktop - Windows, macOS, Linux (Aegis Desktop via GitHub releases)
 ```
 
 Setup:
@@ -110,9 +110,9 @@ Limitations:
 - No iOS app (Apple doesn't allow offline-only authenticators easily)
 - Requires discipline: master password must be memorable and strong
 
-Cost: Free (open-source)
+Cost - Free (open-source)
 
-Best for: Security-conscious users, developers, anyone who values open-source code review
+Best for - Security-conscious users, developers, anyone who values open-source code review
 
 2FAS: Privacy with Optional Cloud Backup
 
@@ -121,10 +121,10 @@ Best for: Security-conscious users, developers, anyone who values open-source co
 Installation:
 
 ```
-Android: Google Play Store (free, open-source)
+Android - Google Play Store (free, open-source)
 iOS: App Store (free, open-source)
-Web: https://web.2fas.com (browser-based)
-Desktop: Windows, macOS, Linux
+Web - https://web.2fas.com (browser-based)
+Desktop - Windows, macOS, Linux
 ```
 
 Setup:
@@ -152,7 +152,7 @@ Most users never enable cloud backup. Instead:
 ```
 Settings → Export Backup
   (downloads encrypted backup file to your device)
-Manually save to: external drive, separate cloud account, or email to yourself
+Manually save to - external drive, separate cloud account, or email to yourself
 ```
 
 This is simpler than Aegis because the app generates backup files automatically.
@@ -182,11 +182,11 @@ Limitations:
 - Web client is browser-based (less secure than native app)
 - Premium features are limited ($8/year is cheap, but some want fully free)
 
-Cost: Free (cloud backup $8/year optional)
+Cost - Free (cloud backup $8/year optional)
 
-Best for: Privacy-conscious users who want optional backup convenience without sacrificing security
+Best for - Privacy-conscious users who want optional backup convenience without sacrificing security
 
-Raivo: Privacy on iOS, Encrypted Cloud Backup
+Raivo - Privacy on iOS, Encrypted Cloud Backup
 
 Raivo is iOS-native, beautifully designed, and offers encrypted cloud backup. Secrets are encrypted before leaving your device.
 
@@ -194,8 +194,8 @@ Installation:
 
 ```
 iOS: App Store ($1.99 one-time)
-Android: No official app (third-party Raivo ports exist but not recommended)
-Desktop: No desktop app
+Android - No official app (third-party Raivo ports exist but not recommended)
+Desktop - No desktop app
 ```
 
 Setup:
@@ -239,11 +239,11 @@ Limitations:
 - Relies on iCloud (if Apple's security fails, backups compromised)
 - No desktop app (must use phone to retrieve codes)
 
-Cost: $1.99 one-time
+Cost - $1.99 one-time
 
-Best for: iOS users who want encrypted backup without ongoing subscription
+Best for - iOS users who want encrypted backup without ongoing subscription
 
-Authy: Least Private, Avoid If Possible
+Authy - Least Private, Avoid If Possible
 
 Authy is maintained by Twilio and backs up secrets to their servers with device metadata collection. While Authy doesn't read your secrets (they're encrypted), Twilio collects extensive metadata about your devices and backup patterns.
 
@@ -251,9 +251,9 @@ Installation:
 
 ```
 iOS: App Store (free)
-Android: Google Play Store (free)
-Desktop: Windows, macOS (free)
-Web: https://web.authy.com (browser)
+Android - Google Play Store (free)
+Desktop - Windows, macOS (free)
+Web - https://web.authy.com (browser)
 ```
 
 Backup and Sync:
@@ -292,14 +292,14 @@ Weaknesses:
 - Secrets stored on Twilio servers (encrypted, but centralized)
 - Encourages device sync (more devices = more metadata points)
 
-Cost: Free (Twilio subsidizes it)
+Cost - Free (Twilio subsidizes it)
 
 When to use Authy:
 - Your employer mandates Authy for corporate accounts (no choice)
 - You need smooth desktop/mobile sync and don't care about metadata
 - Otherwise: avoid in favor of Aegis, 2FAS, or Raivo
 
-Comparison Table: Privacy and Features
+Comparison Table - Privacy and Features
 
 | Feature | Aegis | 2FAS | Raivo | Authy |
 |---------|-------|------|-------|-------|
@@ -315,51 +315,51 @@ Comparison Table: Privacy and Features
 | Master password required | Yes | Yes | Yes | Optional |
 | Offline operation | Yes | Yes | Limited | No |
 
-Setup Guide: Privacy-First 2FA
+Setup Guide - Privacy-First 2FA
 
-Step 1: Choose your authenticator:
+Step 1 - Choose your authenticator:
 
 ```
 iOS user:  Choose Raivo ($1.99) or 2FAS (free)
-Android user: Choose Aegis (free, open-source) or 2FAS (free)
-Both: 2FAS (works on both, encrypted cloud backup optional)
+Android user - Choose Aegis (free, open-source) or 2FAS (free)
+Both - 2FAS (works on both, encrypted cloud backup optional)
 ```
 
-Step 2: Create strong master password:
+Step 2 - Create strong master password:
 
 ```
 20+ characters
-Mix: uppercase, lowercase, numbers, symbols
+Mix - uppercase, lowercase, numbers, symbols
 "Tr0p1c@lSunset!2026Apr"
 Don't use personal information or dictionary words
 Save in password manager, not in notes
 ```
 
-Step 3: Add your first account (GitHub example):
+Step 3 - Add your first account (GitHub example):
 
 ```
 GitHub.com → Settings → Security → Two-Factor Authentication
 Click "Setup authenticator app"
 Scan QR code with your 2FA app
 Store first backup (external drive or USB stick)
-Test: GitHub asks for 6-digit code from 2FA app
+Test - GitHub asks for 6-digit code from 2FA app
 Enter code; GitHub confirms "2FA enabled"
 Save recovery codes in separate password manager
 ```
 
-Step 4: Backup strategy:
+Step 4 - Backup strategy:
 
 ```
-Aegis/2FAS: Export encrypted backup monthly
+Aegis/2FAS - Export encrypted backup monthly
   Save to: external hard drive + separate cloud account
-Raivo: iCloud backups automatic; also export backup monthly to external drive
-Authy: Cloud backup automatic (but prefer Aegis/2FAS/Raivo)
+Raivo - iCloud backups automatic; also export backup monthly to external drive
+Authy - Cloud backup automatic (but prefer Aegis/2FAS/Raivo)
 ```
 
-Step 5: Test recovery (once per year):
+Step 5 - Test recovery (once per year):
 
 ```
-Simulate: I lost my phone. Can I recover my accounts?
+Simulate - I lost my phone. Can I recover my accounts?
   - Retrieve backup from external drive
   - Install authenticator on new device
   - Restore backup
@@ -374,15 +374,15 @@ From Authy to Aegis:
 ```
 Authy → Export (plaintext)
 Aegis → Import from file
-Advantages: Open-source, no metadata collection
-Disadvantages: Manual process, requires careful handling of plaintext export
+Advantages - Open-source, no metadata collection
+Disadvantages - Manual process, requires careful handling of plaintext export
 ```
 
 From Google Authenticator to 2FAS:
 
 ```
 Google Authenticator has no built-in export.
-Instead: Re-add codes manually (scan QR codes again) or
+Instead - Re-add codes manually (scan QR codes again) or
 Export as plaintext JSON from Google (requires Google Takeout)
 2FAS → Import from JSON file
 ```
@@ -392,7 +392,7 @@ From any app to Raivo:
 ```
 Most apps lack direct export; re-add accounts manually
 Raivo has built-in importer for Authy backups
-Best practice: Set up new device alongside old, gradually migrate accounts
+Best practice - Set up new device alongside old, gradually migrate accounts
 ```
 
 Frequently Asked Questions
@@ -420,7 +420,7 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 Related Articles
 
 - [Privacy Focused Cloud Backup Services Comparison 2026](/privacy-focused-cloud-backup-services-comparison-2026/)
-- [Nextcloud App Ecosystem: Best Privacy Apps for 2026](/nextcloud-app-ecosystem-best-privacy-apps-2026/)
+- [Nextcloud App environment: Best Privacy Apps for 2026](/nextcloud-app-environment-best-privacy-apps-2026/)
 - [Privacy Focused Cloud Email Comparison 2026](/privacy-focused-cloud-email-comparison-2026/)
 - [Mobile App Store Privacy Labels How To Read And Compare](/mobile-app-store-privacy-labels-how-to-read-and-compare-befo/)
 - [Privacy Focused Email Providers Comparison 2026](/privacy-focused-email-providers-comparison-2026/)

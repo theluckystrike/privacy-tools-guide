@@ -32,7 +32,7 @@ Table of Contents
 - [Comparison Table](#comparison-table)
 - [Recommendation by Use Case](#recommendation-by-use-case)
 - [Setup on OpenWrt/Home Network](#setup-on-openwrthome-network)
-- [VPN + DNS: Should You Combine?](#vpn-dns-should-you-combine)
+- [VPN + DNS - Should You Combine?](#vpn-dns-should-you-combine)
 - [Switching Between Providers](#switching-between-providers)
 - [DNS Leaks](#dns-leaks)
 
@@ -40,27 +40,27 @@ DNS Fundamentals
 
 DNS translates domain names (google.com) into IP addresses (142.251.32.46). Your device asks your DNS provider "what's the IP for google.com?" every time you visit a site. The provider sees all of it.
 
-Default behavior: ISPs provide DNS, log all queries, and monetize or share that data. Your ISP (Comcast, Verizon, etc.) knows every site you visit.
+Default behavior - ISPs provide DNS, log all queries, and monetize or share that data. Your ISP (Comcast, Verizon, etc.) knows every site you visit.
 
-Privacy-first DNS: Don't log queries, don't track you, use HTTPS/DoH (DNS over HTTPS) or DoT (DNS over TLS) for encryption, so ISP can't see queries.
+Privacy-first DNS - Don't log queries, don't track you, use HTTPS/DoH (DNS over HTTPS) or DoT (DNS over TLS) for encryption, so ISP can't see queries.
 
-Trade-off: Slight latency increase (usually <10ms) for complete ISP anonymity.
+Trade-off - Slight latency increase (usually <10ms) for complete ISP anonymity.
 
 Quad9
 
-Quad9 is a nonprofit, free DNS service backed by security research from AIT Austrian Institute of Technology. Focus: security (block malware, phishing).
+Quad9 is a nonprofit, free DNS service backed by security research from AIT Austrian Institute of Technology. Focus - security (block malware, phishing).
 
 Specs:
 - Free: Yes.
-- Logging: No query logs; minimal metadata (response times, errors) for improvement.
-- Encryption: HTTPS/DoH, DoT.
-- Filtering: Optional (blocks malware, phishing, adult content by default).
-- Speed: Fast (global anycast network).
+- Logging - No query logs; minimal metadata (response times, errors) for improvement.
+- Encryption - HTTPS/DoH, DoT.
+- Filtering - Optional (blocks malware, phishing, adult content by default).
+- Speed - Fast (global anycast network).
 - Privacy jurisdiction: Switzerland (strong privacy laws).
 
-Performance: ~50ms latency (global average). Suitable for gaming and streaming.
+Performance - ~50ms latency (global average). Suitable for gaming and streaming.
 
-Filtering: By default, Quad9 blocks known malware and phishing domains. You can disable filtering if you want a raw DNS experience.
+Filtering - By default, Quad9 blocks known malware and phishing domains. You can disable filtering if you want a raw DNS experience.
 
 Setup on macOS
 ```bash
@@ -123,14 +123,14 @@ NextDNS is a commercial service (freemium model) with advanced filtering and ana
 
 Specs:
 - Free plan: 300K queries/month (for 1 profile).
-- Paid: $20/year per profile (unlimited queries).
-- Logging: Yes, on your dashboard (you control this; can be anonymized).
+- Paid - $20/year per profile (unlimited queries).
+- Logging - Yes, on your dashboard (you control this; can be anonymized).
 - Encryption: DoH, DoT.
-- Filtering: Highly customizable (parental, content, trackers, malware, ads).
-- Speed: Very fast (optimized global network).
+- Filtering - Highly customizable (parental, content, trackers, malware, ads).
+- Speed - Very fast (optimized global network).
 - Privacy jurisdiction: EU (GDPR-compliant).
 
-Unique feature: Real-time dashboard showing which sites are blocked, why, and per-profile control (one config for kids, one for adults).
+Unique feature - Real-time dashboard showing which sites are blocked, why, and per-profile control (one config for kids, one for adults).
 
 Setup on macOS
 Download the NextDNS app from nextdns.io/download, or manually configure:
@@ -182,13 +182,13 @@ Mullvad is from the Mullvad VPN team. Free, privacy-obsessed, minimal logging.
 
 Specs:
 - Free: Yes, completely free.
-- Logging: No logs at all (Mullvad literally can't log; architecture prevents it).
+- Logging - No logs at all (Mullvad literally can't log; architecture prevents it).
 - Encryption: DoH, DoT.
-- Filtering: Basic (can enable DNS ad blocking).
-- Speed: Fast (Mullvad's infrastructure).
+- Filtering - Basic (can enable DNS ad blocking).
+- Speed - Fast (Mullvad's infrastructure).
 - Privacy jurisdiction: Sweden (strong privacy laws).
 
-Unique feature: Mullvad is funded by user donations and grants, not advertising or data. Radical privacy focus.
+Unique feature - Mullvad is funded by user donations and grants, not advertising or data. Radical privacy focus.
 
 Setup on macOS (DoT)
 ```bash
@@ -199,7 +199,7 @@ nameserver 193.19.202.114
 nameserver 2a07:e340::114
 ```
 
-Or simpler: System Preferences > Network > Wi-Fi > Advanced > DNS:
+Or simpler - System Preferences > Network > Wi-Fi > Advanced > DNS:
 ```
 193.19.202.114 (IPv4)
 2a07:e340::114 (IPv6)
@@ -220,21 +220,21 @@ Control D is a new player (2022) focusing on speed and customization. Great for 
 
 Specs:
 - Free plan: Yes (standard filtering).
-- Paid: $2/month (ad/tracker blocking), $5/month (advanced features).
+- Paid - $2/month (ad/tracker blocking), $5/month (advanced features).
 - Logging: No logs.
 - Encryption: DoH, DoT.
-- Filtering: Highly customizable (separate filters for ads, malware, social media, gambling, dating).
-- Speed: Very fast (optimized edge network).
+- Filtering - Highly customizable (separate filters for ads, malware, social media, gambling, dating).
+- Speed - Very fast (optimized edge network).
 - Privacy jurisdiction: Canada (reasonable privacy laws).
 
-Unique feature: Filter combinations. You can stack filters (block ads AND malware AND trackers) independently.
+Unique feature - Filter combinations. You can stack filters (block ads AND malware AND trackers) independently.
 
 Setup on macOS
 Download Control D app from controld.com, or manually:
 
 ```
-IPv4: 76.76.19.19, 76.76.2.0
-IPv6: 2606:1a40:0:6:0:0:0:19, 2606:1a40:0:6:0:0:0:2
+IPv4 - 76.76.19.19, 76.76.2.0
+IPv6 - 2606:1a40:0:6:0:0:0:19, 2606:1a40:0:6:0:0:0:2
 ```
 
 Set via System Preferences > Network > Wi-Fi > Advanced > DNS.
@@ -252,17 +252,17 @@ Select "Control D" from dropdown, or custom: `https://freedns.controld.com/p0`
 
 Chrome:
 Settings > Privacy and Security > Security > Advanced > Use secure DNS.
-Custom resolver: `https://freedns.controld.com/p0`
+Custom resolver - `https://freedns.controld.com/p0`
 
 Control D Filtering
 
 At controld.com, create a profile and enable filters:
 
 - Default (free): Malware and phishing blocking.
-- Ads: Block ad domains, trackers.
-- Social: Block Facebook, TikTok, Instagram, Twitter tracking.
-- Gambling: Block gambling sites.
-- Dating: Block dating apps and sites.
+- Ads - Block ad domains, trackers.
+- Social - Block Facebook, TikTok, Instagram, Twitter tracking.
+- Gambling - Block gambling sites.
+- Dating - Block dating apps and sites.
 - P2P/VPN: Block torrent and VPN sites (useful for organizations).
 
 Mix and match filters for your needs.
@@ -274,13 +274,13 @@ AdGuard is the DNS arm of AdGuard (ad-blocking software). Good balance of featur
 Specs:
 - Free plan: Yes (basic ad/tracker blocking).
 - Paid: $0.99/month (ad/tracker blocking, parental control).
-- Logging: Minimal (no query logs, aggregated analytics).
+- Logging - Minimal (no query logs, aggregated analytics).
 - Encryption: DoH, DoT.
-- Filtering: Ad blocking, tracker blocking, parental control, malware/phishing.
-- Speed: Fast (global network).
+- Filtering - Ad blocking, tracker blocking, parental control, malware/phishing.
+- Speed - Fast (global network).
 - Privacy jurisdiction: Cyprus (EU, GDPR).
 
-Unique feature: Integrated with AdGuard software suite. If you use AdGuard for browsers/devices, AdGuard DNS complements it.
+Unique feature - Integrated with AdGuard software suite. If you use AdGuard for browsers/devices, AdGuard DNS complements it.
 
 Setup on macOS
 System Preferences > Network > Wi-Fi > Advanced > DNS:
@@ -306,13 +306,13 @@ Or download the AdGuard app (auto-configures DNS).
 Setup on Android
 Settings > Network & Internet > Private DNS.
 Select "Private DNS provider hostname."
-Enter: `dns.adguard.com`
+Enter - `dns.adguard.com`
 
 AdGuard Filtering
 
 AdGuard DNS has two versions:
-- Standard: Blocks ads, trackers, malware.
-- Family: Blocks adult sites, ads, trackers (for families with kids).
+- Standard - Blocks ads, trackers, malware.
+- Family - Blocks adult sites, ads, trackers (for families with kids).
 
 Choose during setup. No per-profile configuration; it's one setting per network.
 
@@ -387,10 +387,10 @@ If you run OpenWrt (home router firmware), change DNS for all devices:
 
 Now all devices on your network use the chosen DNS provider without per-device configuration.
 
-VPN + DNS: Should You Combine?
+VPN + DNS - Should You Combine?
 
-VPN: Encrypts all traffic, hides IP, routes through VPN provider.
-DNS: Only encrypts DNS queries, hides which sites from ISP.
+VPN - Encrypts all traffic, hides IP, routes through VPN provider.
+DNS - Only encrypts DNS queries, hides which sites from ISP.
 
 Do you need both?
 - Yes, if: You want complete anonymity (IP hidden, ISP sees nothing).

@@ -45,7 +45,7 @@ The difference between a standard provider and a zero-knowledge provider is not 
 
 ---
 
-Step 1: Review the Privacy Policy
+Step 1 - Review the Privacy Policy
 
 Key questions:
 
@@ -55,7 +55,7 @@ Key questions:
    - For advertising?
 
 2. Who do you share data with?
-   - "Analytics partners" = advertising ecosystem
+   - "Analytics partners" = advertising environment
    - "Service providers" = subprocessors
 
 3. Law enforcement response:
@@ -87,16 +87,16 @@ Compare this to privacy-forward policy language:
 
 ---
 
-Step 2: Request Your Data Export
+Step 2 - Request Your Data Export
 
 ```bash
 Google Drive:
 takeout.google.com → Select Drive → Export
-Includes: files, metadata (created/modified dates, sharing settings)
+Includes - files, metadata (created/modified dates, sharing settings)
 
 Dropbox:
 dropbox.com → Settings → Privacy → Download your data
-Includes: file list, sharing events, linked apps, location of accesses
+Includes - file list, sharing events, linked apps, location of accesses
 
 OneDrive:
 account.microsoft.com → Privacy → Download your data
@@ -144,7 +144,7 @@ What to look for in the export beyond file count:
 
 ---
 
-Step 3: Audit Connected Apps and OAuth Grants
+Step 3 - Audit Connected Apps and OAuth Grants
 
 ```bash
 Google Drive connected apps:
@@ -169,12 +169,12 @@ For Dropbox, the "last used" timestamp in the Connected Apps panel is valuable. 
 
 ---
 
-Step 4: Check Encryption Status
+Step 4 - Check Encryption Status
 
 ```bash
 Verify TLS on provider endpoints
 openssl s_client -connect api.dropbox.com:443 -brief 2>/dev/null | head -5
-Look for: Protocol: TLSv1.3
+Look for - Protocol: TLSv1.3
 
 For providers claiming zero-knowledge:
 Inspect network traffic with mitmproxy
@@ -188,7 +188,7 @@ The mitmproxy check is the definitive test for zero-knowledge claims. Configure 
 
 ---
 
-Step 5: Review Shared Links
+Step 5 - Review Shared Links
 
 Old shared links remain active indefinitely. a common exposure point:
 
@@ -210,7 +210,7 @@ For files you shared publicly (no password, no expiry), check whether search eng
 
 ---
 
-Step 6: Check Data Residency and Transparency Reports
+Step 6 - Check Data Residency and Transparency Reports
 
 ```bash
 Find where your cloud provider's servers are located
@@ -219,9 +219,9 @@ whois $(dig +short api.dropbox.com | head -1)
 
 Check transparency reports:
 Dropbox: dropbox.com/transparency
-Google: transparencyreport.google.com
-Apple: apple.com/legal/transparency
-Proton: proton.me/legal/transparency
+Google - transparencyreport.google.com
+Apple - apple.com/legal/transparency
+Proton - proton.me/legal/transparency
 ```
 
 What to look at:
@@ -239,20 +239,20 @@ Data residency matters if you are under specific regulatory obligations (GDPR, H
 Remediation If You Find Problems
 
 ```bash
-Option 1: Encrypt before upload (Cryptomator)
+Option 1 - Encrypt before upload (Cryptomator)
 Files encrypted locally, upload encrypted blobs to any provider
 
-Option 2: Migrate to zero-knowledge provider
+Option 2 - Migrate to zero-knowledge provider
 Proton Drive, Tresorit, Filen.io
 
-Option 3: Self-host (Nextcloud)
+Option 3 - Self-host (Nextcloud)
 
-Option 4: Rclone with client-side encryption
+Option 4 - Rclone with client-side encryption
 rclone config
 Set up encrypted remote:
 Type: crypt
-Remote: your existing remote (e.g., dropbox:/)
-Password: set strong password
+Remote - your existing remote (e.g., dropbox:/)
+Password - set strong password
 rclone copy /local/files encrypteddropbox:backup/
 ```
 
@@ -262,7 +262,7 @@ Rclone's `crypt` remote wraps any other Rclone remote with client-side encryptio
 
 ---
 
-Step 7: Analyze Access Patterns from Your Data Export
+Step 7 - Analyze Access Patterns from Your Data Export
 
 Once you have your data export, analyze patterns that reveal privacy implications:
 
@@ -314,7 +314,7 @@ analyze_access_patterns("/path/to/export")
 
 This reveals whether the cloud provider accessed your files outside of your actions, indicating scanning or backup operations.
 
-Step 8: File Scanning and Content Analysis
+Step 8 - File Scanning and Content Analysis
 
 Determine what scanning the provider does:
 
@@ -322,10 +322,10 @@ Determine what scanning the provider does:
 Request provider's scanning policies
 Google Drive:
 support.google.com → "How does Google scan files?"
-Usually scans for: malware, CSAM, copyright, policy violations
+Usually scans for - malware, CSAM, copyright, policy violations
 
 Check if provider scans encrypted files
-Logic: If they can scan E2EE files, they must have access to keys
+Logic - If they can scan E2EE files, they must have access to keys
 If they say "encrypted files aren't scanned," confirm they don't make exceptions
 
 Test with a known signature
@@ -343,23 +343,23 @@ Recommendations by Threat Model
 Different cloud storage choices based on specific threats:
 
 ```
-Threat: Government surveillance
+Threat - Government surveillance
 → Use zero-knowledge provider (Proton Drive) with Tor browser
 
-Threat: Corporate espionage
+Threat - Corporate espionage
 → Use end-to-end encrypted with audit logging (iCloud Advanced Data Protection)
 
-Threat: Accidental data leakage
+Threat - Accidental data leakage
 → Use provider with strong access controls (Tresorit)
 
-Threat: Long-term privacy (journalists, researchers)
+Threat - Long-term privacy (journalists, researchers)
 → Use decentralized storage (IPFS via Filecoin) or self-hosted (Nextcloud)
 
-Threat: Compliance/regulatory
+Threat - Compliance/regulatory
 → Use provider certified for HIPAA/FedRAMP (AWS with specific configs)
 ```
 
-Implementation: Client-Side Encryption Layer
+Implementation - Client-Side Encryption Layer
 
 If you're using an unencrypted provider but need encryption:
 

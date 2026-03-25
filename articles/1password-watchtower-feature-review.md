@@ -17,7 +17,7 @@ tags: [privacy-tools-guide]
 
 1Password Watchtower is worth using: it automatically flags compromised credentials from breach databases, catches weak and reused passwords, and tracks expiring API tokens and certificates across your vaults. For developers, the real value is CLI and API access that lets you integrate vault health checks into CI/CD pipelines and automated audit scripts. to store SSH keys, TLS certificates, or API secrets, understanding what Watchtower actually evaluates helps you interpret its recommendations correctly.
 - For production applications: use dedicated secret management solutions (HashiCorp Vault, AWS Secrets Manager) alongside 1Password, since Watchtower complements but doesn't replace those tools.
-- Rotate it." # Trigger: rotation workflow else echo "Credential is $DAYS_OLD days old.
+- Rotate it." # Trigger - rotation workflow else echo "Credential is $DAYS_OLD days old.
 - Reused password detection is: straightforward: any item sharing credentials with another item gets flagged.
 - Beyond these core checks: Watchtower monitors expiration dates, particularly useful for API tokens and service accounts that often have built-in expiry windows.
 - If you previously used: a compromised password but updated it, Watchtower won't flag your history.
@@ -397,17 +397,17 @@ Credential Lifecycle Management
 Use Watchtower findings to drive credential lifecycle policies:
 
 ```
-Policy: All API keys must be rotated every 90 days
-Watchtower monitors: Creation date vs. expiration date
-Action: Generate alert at 80 days, force rotation at 90 days
+Policy - All API keys must be rotated every 90 days
+Watchtower monitors - Creation date vs. expiration date
+Action - Generate alert at 80 days, force rotation at 90 days
 
-Policy: No password can be reused across services
-Watchtower monitors: Reused password field
-Action: Flag duplicates, require unique passwords
+Policy - No password can be reused across services
+Watchtower monitors - Reused password field
+Action - Flag duplicates, require unique passwords
 
-Policy: No credential can be compromised
-Watchtower monitors: Breach database matches
-Action: Immediate rotation required, team notification
+Policy - No credential can be compromised
+Watchtower monitors - Breach database matches
+Action - Immediate rotation required, team notification
 ```
 
 Watchtower Limitations and Workarounds

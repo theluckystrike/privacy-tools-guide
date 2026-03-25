@@ -22,7 +22,7 @@ Table of Contents
 
 - [Technical Architecture of Public Surveillance Systems](#technical-architecture-of-public-surveillance-systems)
 - [Iranian Deployment Context](#iranian-deployment-context)
-- [Code Analysis: Facial Recognition System Components](#code-analysis-facial-recognition-system-components)
+- [Code Analysis - Facial Recognition System Components](#code-analysis-facial-recognition-system-components)
 - [Privacy Protection Strategies](#privacy-protection-strategies)
 - [Broader Implications](#broader-implications)
 - [Practical Tools for Users Under Surveillance](#practical-tools-for-users-under-surveillance)
@@ -37,15 +37,15 @@ Modern facial recognition surveillance networks consist of several integrated co
 
 The technical pipeline follows a multi-stage process:
 
-Capture: Cameras record video at varying resolutions, typically 2-8 megapixels for facial identification purposes. Modern systems use cameras with infrared capabilities for low-light operation, ensuring 24/7 surveillance capability.
+Capture - Cameras record video at varying resolutions, typically 2-8 megapixels for facial identification purposes. Modern systems use cameras with infrared capabilities for low-light operation, ensuring 24/7 surveillance capability.
 
-Detection: Frame extraction algorithms identify faces within video frames. This uses convolutional neural networks (CNNs) trained to detect facial landmarks, typically 68 or more key points mapping eyes, nose, mouth, and jawline.
+Detection - Frame extraction algorithms identify faces within video frames. This uses convolutional neural networks (CNNs) trained to detect facial landmarks, typically 68 or more key points mapping eyes, nose, mouth, and jawline.
 
-Normalization: Detected faces undergo preprocessing: alignment to standard orientation, scaling to uniform dimensions (typically 160×160 or 224×224 pixels), and histogram equalization to normalize lighting conditions.
+Normalization - Detected faces undergo preprocessing: alignment to standard orientation, scaling to uniform dimensions (typically 160×160 or 224×224 pixels), and histogram equalization to normalize lighting conditions.
 
-Embedding Generation: The normalized face passes through a face embedding model that converts visual features into a numerical vector, typically 128, 256, or 512 dimensions. This embedding captures unique facial characteristics while being computationally efficient for database storage and comparison.
+Embedding Generation - The normalized face passes through a face embedding model that converts visual features into a numerical vector, typically 128, 256, or 512 dimensions. This embedding captures unique facial characteristics while being computationally efficient for database storage and comparison.
 
-Matching: Generated embeddings compare against watchlists or databases using distance metrics like cosine similarity or Euclidean distance. Threshold values determine positive matches.
+Matching - Generated embeddings compare against watchlists or databases using distance metrics like cosine similarity or Euclidean distance. Threshold values determine positive matches.
 
 Iranian Deployment Context
 
@@ -60,7 +60,7 @@ Technical specifications of deployed systems remain partially classified, but an
 - Integration with national identity databases
 - Cross-referencing with social media imagery
 
-Code Analysis: Facial Recognition System Components
+Code Analysis - Facial Recognition System Components
 
 For developers studying these systems, understanding the underlying technology provides context for building privacy tools. Here's a conceptual example of how embedding generation works:
 
@@ -105,7 +105,7 @@ Obfuscation Techniques
 
 Research demonstrates that specific patterns can confuse facial recognition systems:
 
-Adversarial Patterns: Carefully crafted patterns on clothing or accessories can trigger misclassification. Studies show that printed glasses with specific patterns reduce recognition accuracy by 40-90%.
+Adversarial Patterns - Carefully crafted patterns on clothing or accessories can trigger misclassification. Studies show that printed glasses with specific patterns reduce recognition accuracy by 40-90%.
 
 ```python
 def generate_adversarial_pattern(width, height):
@@ -117,18 +117,18 @@ def generate_adversarial_pattern(width, height):
     return pattern.astype(np.uint8)
 ```
 
-Face Masking in Photos: Before sharing images publicly, applying subtle modifications can prevent accurate embedding generation. Tools like Fawkes (developed at University of Chicago) optimize pixel changes invisible to humans but effective against recognition systems.
+Face Masking in Photos - Before sharing images publicly, applying subtle modifications can prevent accurate embedding generation. Tools like Fawkes (developed at University of Chicago) optimize pixel changes invisible to humans but effective against recognition systems.
 
 Technical Countermeasures
 
-Image Stripping: Remove metadata and EXIF data from photos before upload:
+Image Stripping - Remove metadata and EXIF data from photos before upload:
 
 ```bash
 Using exiftool to strip metadata
 exiftool -all= image.jpg
 ```
 
-Blur Processing: Apply gaussian blur to faces in posted images:
+Blur Processing - Apply gaussian blur to faces in posted images:
 
 ```python
 from PIL import Image, ImageFilter
@@ -166,19 +166,19 @@ Broader Implications
 
 The proliferation of surveillance technology raises concerns beyond individual privacy. Developers working on any system handling biometric data carry responsibility for ethical implementation. Considerations include:
 
-Data Minimization: Collect only necessary data, delete promptly, avoid creating centralized databases that become targets.
+Data Minimization - Collect only necessary data, delete promptly, avoid creating centralized databases that become targets.
 
-Transparency: Users should understand when and how their data is processed.
+Transparency - Users should understand when and how their data is processed.
 
-Security: Biometric data, once compromised, cannot be changed like passwords. Protecting enrollment databases requires highest security standards.
+Security - Biometric data, once compromised, cannot be changed like passwords. Protecting enrollment databases requires highest security standards.
 
-Consent: Meaningful consent requires genuine choice, not forced acceptance as condition of services.
+Consent - Meaningful consent requires genuine choice, not forced acceptance as condition of services.
 
 Practical Tools for Users Under Surveillance
 
 For individuals in high-risk jurisdictions, specific tools provide measurable privacy improvements:
 
-Fawkes: A tool developed at University of Chicago that applies imperceptible modifications to images before posting publicly. These "fawkes shields" prevent facial recognition systems from generating accurate embeddings of your face while remaining visually identical to human observers.
+Fawkes - A tool developed at University of Chicago that applies imperceptible modifications to images before posting publicly. These "fawkes shields" prevent facial recognition systems from generating accurate embeddings of your face while remaining visually identical to human observers.
 
 ```bash
 Installing and using Fawkes
@@ -190,15 +190,15 @@ fawkes --input photo.jpg --output protected_photo.jpg --mode low
 
 The `mode` parameter controls protection strength versus imperceptibility trade-off. "Low" mode adds minimal visual noise while providing moderate protection; "high" mode provides stronger protection but slightly alters image quality.
 
-Clearview AI Opt-Out: While Clearview scraped billions of public images for facial recognition databases, they maintain an opt-out process. Submit a photo and identifying information to remove your face from their index, though the effectiveness remains contested.
+Clearview AI Opt-Out - While Clearview scraped billions of public images for facial recognition databases, they maintain an opt-out process. Submit a photo and identifying information to remove your face from their index, though the effectiveness remains contested.
 
-Digital Censoring Tools: For activists and journalists in Iran specifically, Signal and ProtonMail with carefully managed account creation provide encrypted communication channels. Create Signal accounts using VPN-routed phone numbers from privacy-focused VOIP services to avoid linking your real phone number.
+Digital Censoring Tools - For activists and journalists in Iran specifically, Signal and ProtonMail with carefully managed account creation provide encrypted communication channels. Create Signal accounts using VPN-routed phone numbers from privacy-focused VOIP services to avoid linking your real phone number.
 
 Network-Level Defenses
 
 Beyond physical appearance modifications, network security prevents the collection of identifying metadata:
 
-VPN Usage in Restricted Regions: Iran actively blocks and throttles VPN connections, but certain VPN providers maintain connectivity:
+VPN Usage in Restricted Regions - Iran actively blocks and throttles VPN connections, but certain VPN providers maintain connectivity:
 
 - Mullvad VPN: No account required; uses custom obfuscation that bypasses Iranian DPI
 - ProtonVPN: Integrates Stealth protocol for DPI resistance
@@ -206,7 +206,7 @@ VPN Usage in Restricted Regions: Iran actively blocks and throttles VPN connecti
 
 Always use VPN obfuscation protocols, standard OpenVPN or WireGuard fail against active blocking. Configure VPN to connect at boot before any traffic leaks your location.
 
-Tor Browser for Anonymous Browsing: Accessing services through Tor Exit nodes makes IP-based tracking significantly harder, though it doesn't address facial recognition from cameras.
+Tor Browser for Anonymous Browsing - Accessing services through Tor Exit nodes makes IP-based tracking significantly harder, though it doesn't address facial recognition from cameras.
 
 ```bash
 Using Tor on command line for privacy
@@ -217,7 +217,7 @@ Organizational and Legal Responses
 
 For developers and organizations, architectural approaches reduce surveillance scope:
 
-On-Device Processing Architecture: Instead of transmitting facial images to centralized servers, implement face detection and matching entirely on user devices. This prevents centralized databases that become targets.
+On-Device Processing Architecture - Instead of transmitting facial images to centralized servers, implement face detection and matching entirely on user devices. This prevents centralized databases that become targets.
 
 Example approach using client-side ML:
 
@@ -247,19 +247,19 @@ def local_face_verification(local_image_path, remote_image_path):
     return {"match": distance[0], "processed_locally": True}
 ```
 
-Data Minimization in Surveillance: If you operate systems in jurisdictions with surveillance, delete facial templates after verification rather than maintaining historical databases. This reduces the damage if databases are breached or misused.
+Data Minimization in Surveillance - If you operate systems in jurisdictions with surveillance, delete facial templates after verification rather than maintaining historical databases. This reduces the damage if databases are breached or misused.
 
-Encryption of Biometric Data: Any storage of facial encodings should use end-to-end encryption where users control decryption keys. This prevents unauthorized government access even if servers are seized.
+Encryption of Biometric Data - Any storage of facial encodings should use end-to-end encryption where users control decryption keys. This prevents unauthorized government access even if servers are seized.
 
 Understanding Threat Models
 
 Different threat actors require different defenses:
 
-Mass Surveillance: Affects broad populations indiscriminately. Physical obfuscation (masks, hats, sunglasses) and avoiding public spaces during high-risk activities provide basic protection.
+Mass Surveillance - Affects broad populations indiscriminately. Physical obfuscation (masks, hats, sunglasses) and avoiding public spaces during high-risk activities provide basic protection.
 
-Targeted Surveillance: Directed at specific individuals or groups. Beyond physical methods, you need operational security: monitoring who has access to your devices, limiting location tracking, compartmentalizing your digital presence across accounts.
+Targeted Surveillance - Directed at specific individuals or groups. Beyond physical methods, you need operational security: monitoring who has access to your devices, limiting location tracking, compartmentalizing your digital presence across accounts.
 
-Forensic Identification: After-the-fact analysis of images or footage. Destruction of metadata, avoiding distinctive clothing, and minimizing image distribution help prevent retrospective identification.
+Forensic Identification - After-the-fact analysis of images or footage. Destruction of metadata, avoiding distinctive clothing, and minimizing image distribution help prevent retrospective identification.
 
 Monitoring and Alerting Systems
 

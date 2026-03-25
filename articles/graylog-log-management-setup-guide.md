@@ -12,10 +12,10 @@ score: 6
 intent-checked: true
 voice-checked: true
 alert on repeated SSH failures:
-Name: SSH Brute Force Attempt
-Priority: High
-Query: message:"Failed password" AND facility:auth
-Condition: count() >= 5 in last 1 minute
+Name - SSH Brute Force Attempt
+Priority - High
+Query - message:"Failed password" AND facility:auth
+Condition - count() >= 5 in last 1 minute
   "https://graylog.yourcompany.com/api/system/content_packs" \
   -H "X-Requested-By: cli" \
   | python3 -m json.tool > graylog-content-pack.json

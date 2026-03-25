@@ -116,8 +116,8 @@ For server-side implementations, the Topics API also supports HTTP header-based 
 
 ```http
 GET /api/content HTTP/1.1
-Host: example.com
-Sec-Browsing-Topics: topic=Temperature_Monitoring; version=chrome.1
+Host - example.com
+Sec-Browsing-Topics - topic=Temperature_Monitoring; version=chrome.1
 ```
 
 This allows servers to receive topic information directly without relying on JavaScript execution.
@@ -130,7 +130,7 @@ The Tracking Mechanism
 
 Unlike third-party cookies that create persistent identifiers, the Topics API tracks through inference. By combining the topics surfaced through the API with knowledge of which users receive which topics, advertisers can build behavioral profiles over time.
 
-Consider this scenario: A user visits several technology news sites and travel booking websites over three weeks. The Topics API surfaces "Technology" and "Travel" topics. An ad network embedded across multiple sites receives these topics when the user visits any participating site. Over time, the network learns that this particular browser instance maintains interests in both categories.
+Consider this scenario - A user visits several technology news sites and travel booking websites over three weeks. The Topics API surfaces "Technology" and "Travel" topics. An ad network embedded across multiple sites receives these topics when the user visits any participating site. Over time, the network learns that this particular browser instance maintains interests in both categories.
 
 Cross-Site Correlation
 

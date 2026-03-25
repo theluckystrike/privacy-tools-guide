@@ -21,7 +21,7 @@ WhatsApp remains the most widely used messaging platform globally, with over 2 b
 Table of Contents
 
 - [Core Privacy Settings Configuration](#core-privacy-settings-configuration)
-- [Two-Step Verification: Your Primary Defense](#two-step-verification-your-primary-defense)
+- [Two-Step Verification - Your Primary Defense](#two-step-verification-your-primary-defense)
 - [Read Receipts and Typing Indicators](#read-receipts-and-typing-indicators)
 - [Group Privacy Controls](#group-privacy-controls)
 - [Disappearing Messages Configuration](#disappearing-messages-configuration)
@@ -68,7 +68,7 @@ tier_3_minimal:
  status: "Everyone"
 ```
 
-Two-Step Verification: Your Primary Defense
+Two-Step Verification - Your Primary Defense
 
 Two-step verification (2SV) adds a PIN that prevents unauthorized account access even if someone obtains your SIM card. This is your most critical security setting.
 
@@ -266,7 +266,7 @@ struct WhatsAppPrivacySettings {
 
 This prevents casual observers from seeing your messages when you're in public.
 
-Advanced: Limit Link Previews
+Advanced - Limit Link Previews
 
 Link previews generate server requests to fetch page metadata. Disable at Settings > Privacy > Link previews for maximum privacy.
 

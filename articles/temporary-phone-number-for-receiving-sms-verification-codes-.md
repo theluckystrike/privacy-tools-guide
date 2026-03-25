@@ -27,7 +27,7 @@ Table of Contents
 - [Privacy Implications and Limitations](#privacy-implications-and-limitations)
 - [Use Cases for Developers](#use-cases-for-developers)
 - [Building Your Own Solution](#building-your-own-solution)
-- [Temporary Phone Number Services: Comparison and Pricing](#temporary-phone-number-services-comparison-and-pricing)
+- [Temporary Phone Number Services - Comparison and Pricing](#temporary-phone-number-services-comparison-and-pricing)
 - [Selection Criteria by Use Case](#selection-criteria-by-use-case)
 - [VoIP Number Detection and Blocking](#voip-number-detection-and-blocking)
 - [Automation Framework for SMS Verification](#automation-framework-for-sms-verification)
@@ -43,13 +43,13 @@ Categories of Temporary Phone Numbers
 
 Temporary phone numbers fall into several categories, each with different trade-offs:
 
-Burner Numbers: Disposable numbers that expire after a short period, typically useful for one-time verifications. These work well for services where you don't need ongoing access.
+Burner Numbers - Disposable numbers that expire after a short period, typically useful for one-time verifications. These work well for services where you don't need ongoing access.
 
-Virtual Numbers: Long-term virtual phone numbers that can receive SMS indefinitely. These are suitable for ongoing projects, testing, or services you use regularly.
+Virtual Numbers - Long-term virtual phone numbers that can receive SMS indefinitely. These are suitable for ongoing projects, testing, or services you use regularly.
 
-VoIP Numbers: Internet-based phone numbers that may or may not support SMS. Many services explicitly block VoIP numbers for verification due to abuse concerns.
+VoIP Numbers - Internet-based phone numbers that may or may not support SMS. Many services explicitly block VoIP numbers for verification due to abuse concerns.
 
-Google Voice: Free numbers that work for many services but have limitations and require an existing Google account.
+Google Voice - Free numbers that work for many services but have limitations and require an existing Google account.
 
 Practical Approaches for Developers
 
@@ -108,50 +108,50 @@ For quick verifications without writing code, many services offer CLI tools:
 ```bash
 Example CLI usage (pseudo-command)
 temp-number get --service twilio --country US
-Returns: +1-555-123-4567
+Returns - +1-555-123-4567
 
 Wait for SMS and extract code
 temp-number wait --number +1-555-123-4567 --timeout 120
-Returns: Your verification code is 123456
+Returns - Your verification code is 123456
 ```
 
 Service Considerations
 
 When selecting a temporary phone number service, evaluate these factors:
 
-Number Persistence: Will the number work for multiple verifications, or is it one-time only? Some services provide numbers that rotate or expire quickly.
+Number Persistence - Will the number work for multiple verifications, or is it one-time only? Some services provide numbers that rotate or expire quickly.
 
-Geographic Restrictions: Some services only offer numbers from specific countries. Ensure the service supports the country codes accepted by your target service.
+Geographic Restrictions - Some services only offer numbers from specific countries. Ensure the service supports the country codes accepted by your target service.
 
-VoIP Blocking: Many major platforms (Google, Facebook, WhatsApp) actively block known VoIP numbers. If you need to verify with such services, look for services that provide non-VoIP numbers or have a good reputation.
+VoIP Blocking - Many major platforms (Google, Facebook, WhatsApp) actively block known VoIP numbers. If you need to verify with such services, look for services that provide non-VoIP numbers or have a good reputation.
 
-Cost Structure: Prices range from free (Google Voice) to several dollars per month for virtual numbers. One-time SMS reception typically costs $0.10-0.50 per message.
+Cost Structure - Prices range from free (Google Voice) to several dollars per month for virtual numbers. One-time SMS reception typically costs $0.10-0.50 per message.
 
-API Rate Limits: If you're building automation, check API rate limits. Some services limit how frequently you can poll for messages.
+API Rate Limits - If you're building automation, check API rate limits. Some services limit how frequently you can poll for messages.
 
 Privacy Implications and Limitations
 
 While temporary numbers enhance privacy, understand their limitations:
 
-Number Reuse: Services may reassign temporary numbers, meaning the next person with that number could receive your verification messages. For sensitive accounts, use numbers you control long-term.
+Number Reuse - Services may reassign temporary numbers, meaning the next person with that number could receive your verification messages. For sensitive accounts, use numbers you control long-term.
 
-Account Recovery: If you lose access to a temporary number, you lose account recovery capability. Always save backup codes or set up alternative recovery methods.
+Account Recovery - If you lose access to a temporary number, you lose account recovery capability. Always save backup codes or set up alternative recovery methods.
 
-Legal and ToS Considerations: Some services prohibit using temporary numbers for account creation. Review terms of service to avoid violations, particularly for financial or government services.
+Legal and ToS Considerations - Some services prohibit using temporary numbers for account creation. Review terms of service to avoid violations, particularly for financial or government services.
 
-Metadata Exposure: Even with a temporary number, your IP address, browsing patterns, and other metadata can still be tracked. Use additional privacy tools like VPNs for protection.
+Metadata Exposure - Even with a temporary number, your IP address, browsing patterns, and other metadata can still be tracked. Use additional privacy tools like VPNs for protection.
 
 Use Cases for Developers
 
 Temporary phone numbers serve various developer needs:
 
-Testing: Automate testing of SMS verification flows in your applications without using real phone numbers.
+Testing - Automate testing of SMS verification flows in your applications without using real phone numbers.
 
-Development Environments: Set up separate numbers for staging vs. production environments.
+Development Environments - Set up separate numbers for staging vs. production environments.
 
-Client Projects: Provide clients with temporary numbers for testing without sharing personal contact information.
+Client Projects - Provide clients with temporary numbers for testing without sharing personal contact information.
 
-Privacy: Maintain separation between personal and professional communications.
+Privacy - Maintain separation between personal and professional communications.
 
 Building Your Own Solution
 
@@ -163,9 +163,9 @@ For advanced users, running your own SMS gateway is possible but requires signif
 
 This approach gives you full control but requires ongoing maintenance and costs.
 
-Temporary Phone Number Services: Comparison and Pricing
+Temporary Phone Number Services - Comparison and Pricing
 
-OneSim ($0.99-2.00 per number): Provides numbers from US, UK, Germany, France. SMS received within 10 minutes. API access available. 1GB of messages included per number. Limited to 10 activations per day to prevent abuse.
+OneSim ($0.99-2.00 per number) - Provides numbers from US, UK, Germany, France. SMS received within 10 minutes. API access available. 1GB of messages included per number. Limited to 10 activations per day to prevent abuse.
 
 SMSActivate ($0.30-1.00 per SMS): Covers 100+ countries. Very low prices but slower delivery (5-20 minutes). No API for higher tiers. Suitable for one-time verifications only.
 
@@ -173,9 +173,9 @@ Twilio Programmable SMS ($0.0075 per inbound SMS): Higher cost but enterprise-gr
 
 TextNow (Free tier available, premium $4.99/month): Provides US numbers free with ads. Premium removes ads and includes better features. Can receive SMS indefinitely from free number. Widely supported by major platforms.
 
-Google Voice (Free): Excellent value for US numbers. Works with most services except some banks. Requires Google account. Best option for casual users.
+Google Voice (Free) - Excellent value for US numbers. Works with most services except some banks. Requires Google account. Best option for casual users.
 
-Amazon Chime ($9.99/month): US numbers only. Integrates with Amazon ecosystem. No SMS API access. Limited feature set compared to competitors.
+Amazon Chime ($9.99/month) - US numbers only. Integrates with Amazon environment. No SMS API access. Limited feature set compared to competitors.
 
 Selection Criteria by Use Case
 

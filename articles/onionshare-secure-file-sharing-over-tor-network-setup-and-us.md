@@ -40,7 +40,7 @@ brew services start tor
 
 Windows users can download the Tor Browser bundle, which includes the Tor daemon needed for OnionShare to function.
 
-Step 1: Install OnionShare
+Step 1 - Install OnionShare
 
 OnionShare provides both GUI and CLI versions. For server environments and automation, install the CLI version:
 
@@ -60,7 +60,7 @@ wget $(curl -s https://api.github.com/repos/micahflee/onionshare/releases/latest
 chmod +x OnionShare-*.AppImage
 ```
 
-Step 2: Understand the Tor Network Connection
+Step 2 - Understand the Tor Network Connection
 
 OnionShare operates by creating a temporary Tor hidden service that points to files or directories on your local machine. When you start a sharing session, the tool generates a unique `.onion` URL valid only for that transfer. The recipient connects through the Tor network, establishing an end-to-end encrypted tunnel directly to your machine.
 
@@ -71,7 +71,7 @@ This architecture provides several security advantages over traditional file sha
 - The transfer metadata is protected by Tor's circuit architecture
 - Files transfer directly between endpoints
 
-Step 3: Basic File Sharing Workflow
+Step 3 - Basic File Sharing Workflow
 
 Start a simple file share using the CLI:
 
@@ -88,7 +88,7 @@ onionshare-cli --verbose /path/to/folder/
 
 The CLI outputs a unique URL similar to `http://abcd1234567890.onion/`. Share this URL with your recipient through a secure channel (Signal, encrypted email, or). The connection remains active until either the recipient completes the download or you terminate the process.
 
-Step 4: Command-Line Options for Power Users
+Step 4 - Command-Line Options for Power Users
 
 OnionShare CLI offers numerous options for controlling transfer behavior:
 
@@ -114,7 +114,7 @@ onionshare-cli --receive /path/to/upload/directory
 
 The `--receive` mode is particularly useful for secure document collection. Recipients upload files directly to your machine through Tor, eliminating the need for third-party file upload services.
 
-Step 5: Automate OnionShare in Scripts
+Step 5 - Automate OnionShare in Scripts
 
 For regular file sharing workflows, integrate OnionShare into shell scripts:
 
@@ -153,7 +153,7 @@ Security Considerations
 
 While OnionShare provides strong anonymity guarantees, follow these best practices:
 
-Network Isolation: Consider running OnionShare from an isolated network namespace or VPN to prevent IP leaks through non-Tor traffic:
+Network Isolation - Consider running OnionShare from an isolated network namespace or VPN to prevent IP leaks through non-Tor traffic:
 
 ```bash
 Create network namespace for OnionShare
@@ -162,7 +162,7 @@ sudo ip link add veth0 type veth peer name veth1
 sudo ip link set veth1 netns onionshare
 ```
 
-File Metadata Stripping: Remove metadata from files before sharing:
+File Metadata Stripping - Remove metadata from files before sharing:
 
 ```bash
 Remove EXIF and other metadata
@@ -172,7 +172,7 @@ pip install mat2
 mat2 document.pdf
 ```
 
-Verification: Generate checksums for shared files to ensure integrity:
+Verification - Generate checksums for shared files to ensure integrity:
 
 ```bash
 Generate SHA256 checksum
@@ -207,7 +207,7 @@ mkdir -p ~/.local/share/onionshare
 chmod 700 ~/.local/share/onionshare
 ```
 
-Advanced: Tor Daemon Integration
+Advanced - Tor Daemon Integration
 
 For high-availability setups, integrate with a persistent Tor daemon rather than relying on OnionShare's built-in Tor process:
 
@@ -253,9 +253,9 @@ Related Articles
 - [Best Secure File Sharing Tools for Teams Handling.](/best-secure-file-sharing-tools-for-teams-handling-sensitive-data/)
 - [How to Set Up Secure File Sharing for Sensitive Documents](/how-to-set-up-secure-file-sharing-for-sensitive-documents/)
 - [How To Use Age Encryption For Secure File Sharing Command Li](/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
-- [Secure File Sharing Tools Comparison: E2E Encrypted.](/secure-file-sharing-tools-comparison/)
+- [Secure File Sharing Tools Comparison - E2E Encrypted.](/secure-file-sharing-tools-comparison/)
 - [Best Encrypted File Sharing Service 2026](/best-encrypted-file-sharing-service-2026/)
-- [AI Coding Assistant for Network Traffic Analysis: What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
+- [AI Coding Assistant for Network Traffic Analysis - What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
 
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -47,7 +47,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Device Hardening Fundamentals
+Step 1 - Device Hardening Fundamentals
 
 Mobile Device Security
 
@@ -58,7 +58,7 @@ First, perform a factory reset on any device you suspect may have spyware. This 
 Configure your device with these critical settings:
 
 ```bash
-Android: Disable location for all non-essential apps
+Android - Disable location for all non-essential apps
 adb shell pm revoke <package> android.permission.ACCESS_FINE_LOCATION
 adb shell pm revoke <package> android.permission.ACCESS_COARSE_LOCATION
 
@@ -83,7 +83,7 @@ Store TOTP secrets in your password manager's secure notes
 
 For accounts requiring maximum security, consider hardware security keys. YubiKeys or SoloKeys provide phishing-resistant authentication that cannot be intercepted through man-in-the-middle attacks.
 
-Step 2: Communication Channel Hardening
+Step 2 - Communication Channel Hardening
 
 Email Configuration
 
@@ -120,7 +120,7 @@ This requires your Signal PIN to register on new devices
 
 Avoid messaging platforms that store message content on servers, lack end-to-end encryption, or retain extensive metadata about your communications.
 
-Step 3: Network-Level Protection
+Step 3 - Network-Level Protection
 
 VPN Implementation
 
@@ -129,7 +129,7 @@ A reputable VPN encrypts network traffic and masks your IP address, preventing n
 Configure your VPN to activate automatically on network connection. This prevents accidental exposure if you forget to enable it:
 
 ```bash
-Linux: Auto-connect VPN with systemd
+Linux - Auto-connect VPN with systemd
 /etc/systemd/system/vpn-autoconnect.service
 [Unit]
 Description=Auto-connect VPN
@@ -160,14 +160,14 @@ FallbackDNS=9.9.9.9 8.8.8.8
 
 Alternatively, deploy a local DNS resolver like Pi-hole on a Raspberry Pi to block tracking domains at the network level.
 
-Step 4: Location Privacy
+Step 4 - Location Privacy
 
 Location Services Audit
 
 Review every application with location access. Ask yourself whether each app genuinely needs your location. Remove location access from applications that don't require it:
 
 ```bash
-Android: Check location permissions via ADB
+Android - Check location permissions via ADB
 adb shell pm list permissions -d -g | grep -i location
 
 iOS: Review in Settings > Privacy & Security > Location Services
@@ -181,7 +181,7 @@ WiFi and Bluetooth Hardening
 Avoid connecting to unfamiliar networks. Stalkers may create fake WiFi access points to capture traffic or perform man-in-the-middle attacks. Disable auto-connect to WiFi networks:
 
 ```bash
-Android: Disable auto-connect
+Android - Disable auto-connect
 Settings > Network & Internet > Internet > WiFi > WiFi preferences
 Turn off "Connect to open networks"
 
@@ -191,7 +191,7 @@ Settings > WiFi > Tap "i" on unknown networks > "Forget This Network"
 
 Disable Bluetooth when not in use. Bluetooth beacons can track device presence, and Bluetooth vulnerabilities have allowed remote code execution on millions of devices.
 
-Step 5: Data Minimization and Cleanup
+Step 5 - Data Minimization and Cleanup
 
 Reducing Digital Footprint
 
@@ -220,7 +220,7 @@ Batch processing
 for img in *.jpg; do exiftool -all= -overwrite_original "$img"; done
 ```
 
-Step 6: Monitor and Incident Response
+Step 6 - Monitor and Incident Response
 
 Account Monitoring
 

@@ -33,7 +33,7 @@ Table of Contents
 - [Understanding VPN Authentication Fundamentals](#understanding-vpn-authentication-fundamentals)
 - [Certificate-Based Authentication Explained](#certificate-based-authentication-explained)
 - [Username/Password Authentication Explained](#usernamepassword-authentication-explained)
-- [Comparative Analysis: Security Perspective](#comparative-analysis-security-perspective)
+- [Comparative Analysis - Security Perspective](#comparative-analysis-security-perspective)
 - [Performance and Connection Speed](#performance-and-connection-speed)
 - [Use Case Recommendations](#use-case-recommendations)
 - [Implementation Best Practices](#implementation-best-practices)
@@ -167,7 +167,7 @@ Password complexity guidelines
 
 Credential stuffing attacks exploit password reuse across services. When one service suffers a data breach, attackers automatically try stolen credentials against other services, including VPNs. Without additional verification layers, a single compromised password grants full network access.
 
-Comparative Analysis: Security Perspective
+Comparative Analysis - Security Perspective
 
 From a pure security standpoint, certificate authentication generally outperforms password authentication. Certificates cannot be phished through fake login pages, guessed through brute force (due to cryptographic key strength), or reused across services (each certificate is unique). The mutual authentication requirement in mTLS creates bidirectional verification that password-based systems cannot match.
 

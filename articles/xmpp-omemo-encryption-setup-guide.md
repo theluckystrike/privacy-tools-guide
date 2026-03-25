@@ -23,7 +23,7 @@ Table of Contents
 - [Prerequisites](#prerequisites)
 - [Troubleshooting Common OMEMO Issues](#troubleshooting-common-omemo-issues)
 - [Security Considerations](#security-considerations)
-- [Advanced: Server-Side Support and Protocol Requirements](#advanced-server-side-support-and-protocol-requirements)
+- [Advanced - Server-Side Support and Protocol Requirements](#advanced-server-side-support-and-protocol-requirements)
 - [Threat Model and Limitations](#threat-model-and-limitations)
 - [Troubleshooting with Network Analysis Tools](#troubleshooting-with-network-analysis-tools)
 
@@ -37,7 +37,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand OMEMO Encryption
+Step 1 - Understand OMEMO Encryption
 
 OMEMO (Optimized Messaging Key Establishment) builds on the Signal Protocol and provides several security properties that matter for sensitive communications. Each device generates its own identity key pair, meaning your encryption keys remain tied to specific devices rather than just your account.
 
@@ -45,7 +45,7 @@ The protocol offers forward secrecy, even if your long-term keys are compromised
 
 Most modern XMPP clients support OMEMO, including Conversations (Android), Gajim (desktop), Dino (Linux), and Psi+ (cross-platform).
 
-Step 2: Client Installation and Basic Setup
+Step 2 - Client Installation and Basic Setup
 
 Before configuring OMEMO, ensure you have a XMPP account with OMEMO support. You can register on servers like `xmpp.jp`, `jabber.de`, or `conversations.im`, all of which support the required XEP-0384 extension.
 
@@ -60,7 +60,7 @@ After launching Gajim, add your XMPP account through the account wizard. Navigat
 
 For Android, install Conversations from F-Droid or the Play Store. After adding your account, tap the shield icon in any chat to enable OMEMO for that conversation.
 
-Step 3: Generate Keys and First-Time Configuration
+Step 3 - Generate Keys and First-Time Configuration
 
 When you first enable OMEMO, your client generates identity keys. This process creates three key types:
 
@@ -86,7 +86,7 @@ c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9
 
 Take a screenshot or write it down. This verification step is crucial, without it, you cannot be certain you're communicating with the right person.
 
-Step 4: Manage Multiple Devices
+Step 4 - Manage Multiple Devices
 
 One of OMEMO's strengths is multi-device support. Your keys sync across devices through PEP (Personal Eventing Protocol), allowing you to read encrypted messages on any device without compromising security.
 
@@ -108,11 +108,11 @@ Messages stuck in "sending" state: This often indicates a missing pre-key. Reque
 
 "Untrusted" messages: Your client received a message from a device it hasn't verified. Ask your contact to re-send from a verified device or manually trust their new device through the fingerprint verification process.
 
-Decryption failures: Typically caused by session corruption. Both parties can resolve this by removing and re-adding each other, which forces a fresh key exchange.
+Decryption failures - Typically caused by session corruption. Both parties can resolve this by removing and re-adding each other, which forces a fresh key exchange.
 
 For advanced debugging, Gajim's plugin manager includes an OMEMO debug console. Access it through Tools → Plugins → OMEMO → Debug to view key fingerprints and session states.
 
-Step 5: Automate Key Verification
+Step 5 - Automate Key Verification
 
 For power users managing multiple contacts, manual verification becomes tedious. Some approaches help improve the process:
 
@@ -141,7 +141,7 @@ Additionally, OMEMO does not encrypt group chat metadata (who is in the room). T
 
 Regularly rotate your pre-keys through your client's settings. Most clients handle this automatically, but periodic manual verification of critical contacts remains good practice.
 
-Advanced: Server-Side Support and Protocol Requirements
+Advanced - Server-Side Support and Protocol Requirements
 
 Not all XMPP servers support OMEMO equally. Before setting up, verify your server supports required XEPs:
 
@@ -165,7 +165,7 @@ Visit https://conversejs.org/ and check your server's supported extensions
 
 If your server doesn't support PEP (XEP-0163), OMEMO cannot function because identity keys must be published to your account's private PEP storage.
 
-Step 6: Build Custom Applications with OMEMO
+Step 6 - Build Custom Applications with OMEMO
 
 Developers integrating OMEMO into custom applications should use the pyomemo or omemo-python libraries:
 
@@ -231,7 +231,7 @@ For maximum security, combine OMEMO with:
 - Tox tunnels: Route XMPP over Tor
 - Persistent master key verification: Detect accounts being compromised and re-registered
 
-Step 7: Server-Side Logging and Metadata
+Step 7 - Server-Side Logging and Metadata
 
 Even with OMEMO encryption, your XMPP server records metadata:
 
@@ -253,7 +253,7 @@ Mitigation:
 4. Audit logs: Request your server operator's logging policy
 5. Message expiration: Configure clients to delete messages after configurable period
 
-Step 8: Key Verification Automation
+Step 8 - Key Verification Automation
 
 For organizations managing multiple users, manual fingerprint verification doesn't scale. Several approaches help:
 
@@ -292,7 +292,7 @@ Publish fingerprints in JSON format
 
 Distribute this list through authenticated channels. Users can import fingerprints to automate verification.
 
-Step 9: Practical Organization Setup
+Step 9 - Practical Organization Setup
 
 For a small organization deploying XMPP + OMEMO:
 
@@ -356,7 +356,7 @@ Common issues and fixes:
 | Decryption fails | Corrupted session | Remove and re-add contact |
 | Slow delivery | Congested server | Wait or switch servers |
 
-Step 10: High-Security Setup for Activists
+Step 10 - High-Security Setup for Activists
 
 For journalists, activists, and high-risk users requiring maximum OMEMO security:
 
@@ -371,7 +371,7 @@ export ALL_PROXY=socks5://127.0.0.1:9050
 xmpp5u7z6zzq3x5r.onion (Conversations' server over Tor)
 
 3. Configure client to require OMEMO encryption for all conversations
-In Gajim: Accounts → Your Account → Encryption → OMEMO mandatory
+In Gajim - Accounts → Your Account → Encryption → OMEMO mandatory
 
 4. Disable automatic account creation
 Existing accounts only; no registration

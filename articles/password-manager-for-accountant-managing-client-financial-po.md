@@ -194,7 +194,7 @@ Implementing Vault Access Controls for Teams
 For accounting firms with multiple staff members:
 
 ```bash
-Setup: Create per-client vaults with role-based access
+Setup - Create per-client vaults with role-based access
 
 Finance director vault (full access)
 op vault create "Client-Alpha-Finance-Full"
@@ -302,7 +302,7 @@ EOF
 }
 
 Hook into 1Password to log access (requires integration)
-Every credential retrieval: log_audit_event $USER "GET" $item_name
+Every credential retrieval - log_audit_event $USER "GET" $item_name
 
 Generate compliance report
 generate_audit_report() {
@@ -310,7 +310,7 @@ generate_audit_report() {
     local end_date=$2
 
     echo "=== Credential Access Audit Report ===" > audit_report.txt
-    echo "Period: $start_date to $end_date" >> audit_report.txt
+    echo "Period - $start_date to $end_date" >> audit_report.txt
     echo "" >> audit_report.txt
 
     jq --slurpfile start <(echo "$start_date") --slurpfile end <(echo "$end_date") \

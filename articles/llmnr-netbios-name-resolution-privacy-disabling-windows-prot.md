@@ -33,7 +33,7 @@ What is LLMNR?
 
 LLMNR (Link-Local Multicast Name Resolution) is a protocol introduced in Windows Vista that allows computers to resolve hostnames without a traditional DNS server. When a Windows machine cannot reach a DNS server, it falls back to LLMNR, sending a multicast query to all devices on the local network asking "Who has this hostname?"
 
-The process works like this: your computer wants to connect to `printer-server.local` but cannot find it in DNS. Instead of failing, Windows broadcasts a multicast message to all devices on the subnet asking which one has that name. Any machine with a matching hostname responds, enabling connectivity.
+The process works like this - your computer wants to connect to `printer-server.local` but cannot find it in DNS. Instead of failing, Windows broadcasts a multicast message to all devices on the subnet asking which one has that name. Any machine with a matching hostname responds, enabling connectivity.
 
 LLMNR operates on UDP port 5355 and uses IPv4 multicast address 224.0.0.252 or IPv6 multicast group ff02::1.
 
@@ -101,7 +101,7 @@ The `TcpipNetbiosOptions` values indicate:
 
 Disabling LLMNR and NetBIOS on Windows
 
-Method 1: Group Policy Editor (Windows Pro/Enterprise)
+Method 1 - Group Policy Editor (Windows Pro/Enterprise)
 
 For systems with Group Policy support:
 
@@ -112,7 +112,7 @@ For systems with Group Policy support:
 
 For NetBIOS, you'll need to modify network adapter settings or use a startup script.
 
-Method 2: Registry Modification
+Method 2 - Registry Modification
 
 Create a `.reg` file or use PowerShell to modify the registry directly.
 
@@ -139,7 +139,7 @@ foreach ($adapter in $adapters) {
 }
 ```
 
-Method 3: PowerShell Script for Complete Disabling
+Method 3 - PowerShell Script for Complete Disabling
 
 This script disables both protocols:
 
@@ -182,7 +182,7 @@ Write-Host "`nDone. A restart may be required for changes to take full effect." 
 
 Save this as `Disable-LLMNR-NetBIOS.ps1` and execute with administrator privileges.
 
-Method 4: Disable via PowerShell Direct Commands
+Method 4 - Disable via PowerShell Direct Commands
 
 For quick one-liner execution:
 

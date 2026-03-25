@@ -22,7 +22,7 @@ Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Advanced Control Using ADB Commands](#advanced-control-using-adb-commands)
-- [Threat Model: Location Inference from Scanning](#threat-model-location-inference-from-scanning)
+- [Threat Model - Location Inference from Scanning](#threat-model-location-inference-from-scanning)
 - [Advanced Scanning Detection and Prevention](#advanced-scanning-detection-and-prevention)
 - [Troubleshooting](#troubleshooting)
 
@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Android Scanning Behavior
+Step 1 - Understand Android Scanning Behavior
 
 Android performs WiFi scanning primarily to assist GPS positioning through WiFi-based positioning systems (WPS). When your device scans for networks, it records BSSIDs (MAC addresses of access points) along with signal strength data. This information gets uploaded to Google's location services and can be used to determine your approximate location even when GPS is disabled.
 
@@ -44,7 +44,7 @@ Bluetooth scanning works similarly, detecting nearby Bluetooth devices to enable
 
 Both scanning types occur automatically in the background, often without explicit user notification. Disabling them requires a combination of system settings, developer options, and in some cases, ADB commands.
 
-Step 2: Disable WiFi Scanning Through System Settings
+Step 2 - Disable WiFi Scanning Through System Settings
 
 The most accessible method involves adjusting Android settings. On most devices running Android 10 or later, navigate to Settings > Location > WiFi Scanning and toggle the scanning option off. However, this setting alone may not completely disable all scanning behavior, as some apps can still trigger scans independently.
 
@@ -52,7 +52,7 @@ For more control, access Settings > Apps > Special app access > Location and rev
 
 On Samsung devices, additional controls exist under Settings > Connections > WiFi or Settings > Privacy, where you can disable "Improve location" and "Send WiFi diagnostic data" options.
 
-Step 3: Disable Bluetooth Scanning
+Step 3 - Disable Bluetooth Scanning
 
 Bluetooth scanning controls appear in Settings > Connections > Bluetooth on most devices. Toggle off any "Nearby device scanning" or "Bluetooth scanning" options. However, Android may still perform periodic scans for system features.
 
@@ -90,7 +90,7 @@ adb shell pm revoke com.example.app android.permission.ACCESS_FINE_LOCATION
 
 Replace `com.example.app` with the package name of the app you want to restrict.
 
-Step 4: Application-Level Solutions for Developers
+Step 4 - Application-Level Solutions for Developers
 
 If you're developing an Android app, you can implement scanning detection and prevention in your own applications. Use the following code to detect when WiFi scanning occurs:
 
@@ -120,7 +120,7 @@ if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCA
 }
 ```
 
-Step 5: Handling Location Services Alternatives
+Step 5 - Handling Location Services Alternatives
 
 Disabling WiFi scanning affects location accuracy, particularly indoors where GPS signals weaken. Consider these alternatives to maintain functionality while preserving privacy:
 
@@ -130,7 +130,7 @@ Disabling WiFi scanning affects location accuracy, particularly indoors where GP
 
 For developers building location-aware applications, consider using the Fused Location Provider, which intelligently manages power consumption and provides privacy-preserving location updates without requiring constant scanning.
 
-Step 6: Test Your Configuration
+Step 6 - Test Your Configuration
 
 After implementing changes, verify scanning behavior using apps like "WiFi Analyzer" or "Bluetooth Scanner" from trusted developers. These apps display whether your device actively scans for networks or Bluetooth devices.
 
@@ -142,17 +142,17 @@ adb logcat | grep -i "wifi_scan\|ble_scan"
 
 If scanning continues despite your settings, check for apps with aggressive background behavior or system apps that may require separate configuration.
 
-Threat Model: Location Inference from Scanning
+Threat Model - Location Inference from Scanning
 
 Understanding why scanning creates privacy risks clarifies the value of disabling it:
 
-WiFi-Based Location: When your device broadcasts WiFi scanning queries, it reveals the BSSIDs (MAC addresses) of nearby access points. Google's location services database maps these MAC addresses to physical locations with 10-50 meter accuracy. An attacker with access to your WiFi scans can infer your location without GPS.
+WiFi-Based Location - When your device broadcasts WiFi scanning queries, it reveals the BSSIDs (MAC addresses) of nearby access points. Google's location services database maps these MAC addresses to physical locations with 10-50 meter accuracy. An attacker with access to your WiFi scans can infer your location without GPS.
 
-Temporal Patterns: Regular WiFi scans at specific times and locations create movement patterns. Presence at a particular location every Tuesday at 3 PM suggests work commute or routine activity.
+Temporal Patterns - Regular WiFi scans at specific times and locations create movement patterns. Presence at a particular location every Tuesday at 3 PM suggests work commute or routine activity.
 
-Cross-Correlation with Other Data: Combining WiFi scan metadata with other information (purchase location data from retailers, cell tower triangulation) enables higher-accuracy tracking.
+Cross-Correlation with Other Data - Combining WiFi scan metadata with other information (purchase location data from retailers, cell tower triangulation) enables higher-accuracy tracking.
 
-Bluetooth MAC Address Tracking: Bluetooth devices transmit MAC addresses that don't randomize as frequently as WiFi. Persistent Bluetooth device discovery enables tracking as you move through environments.
+Bluetooth MAC Address Tracking - Bluetooth devices transmit MAC addresses that don't randomize as frequently as WiFi. Persistent Bluetooth device discovery enables tracking as you move through environments.
 
 Disabling scanning prevents this data generation entirely.
 
@@ -215,7 +215,7 @@ data class ScanningStatus(
 )
 ```
 
-Step 7: System-Level Scanning Commands Reference
+Step 7 - System-Level Scanning Commands Reference
 
 Complete ADB commands for scanning control:
 
@@ -246,9 +246,9 @@ Check location mode
 adb shell settings get secure location_mode
 ```
 
-Step 8: Blocklist Approach: Preventing Scanning Apps
+Step 8 - Blocklist Approach: Preventing Scanning Apps
 
-Alternative to system settings: block scanning at the network level.
+Alternative to system settings - block scanning at the network level.
 
 ```bash
 #!/bin/bash
@@ -270,7 +270,7 @@ for ip_range in "${GOOGLE_LOCATION_IPS[@]}"; do
     # Then create a blocking rule for the google_tracking table
 done
 
-Alternative: Block at DNS level
+Alternative - Block at DNS level
 Return NXDOMAIN for location services domains
 cat >> /etc/unbound/unbound.conf.d/location-block.conf << 'EOF'
 Block WiFi scanning and location services
@@ -281,7 +281,7 @@ local-data: "maps.googleapis.com A 0.0.0.0"
 EOF
 ```
 
-Step 9: Alternative: Fused Location Provider for Developers
+Step 9 - Alternative: Fused Location Provider for Developers
 
 For apps that need location but want minimal scanning:
 
@@ -322,7 +322,7 @@ class EfficientLocationProvider(private val context: Context) {
 
 This approach provides location data while minimizing background scanning.
 
-Step 10: Monitor Background Activity
+Step 10 - Monitor Background Activity
 
 After disabling scanning, monitor to ensure apps aren't re-enabling it:
 
@@ -360,7 +360,7 @@ while true; do
 done
 ```
 
-Step 11: Hardening: Kernel-Level Scanning Prevention
+Step 11 - Hardening: Kernel-Level Scanning Prevention
 
 For the most security-conscious users with custom ROMs:
 
@@ -377,7 +377,7 @@ Apply patches that disable background location scanning entirely
 
 This requires root and custom ROM modifications, beyond typical user capabilities.
 
-Step 12: Recovery: Re-enabling Scanning When Needed
+Step 12 - Recovery: Re-enabling Scanning When Needed
 
 Some apps genuinely need location services for legitimate purposes:
 
@@ -394,7 +394,7 @@ adb shell settings get global wifi_scan_always_enabled
 
 Consider creating device profiles: one privacy-hardened configuration for personal use, another with normal permissions for navigation or location-based apps.
 
-Step 13: Privacy vs. Functionality Trade-Offs
+Step 13 - Privacy vs. Functionality Trade-Offs
 
 Complete scanning disablement comes with costs:
 

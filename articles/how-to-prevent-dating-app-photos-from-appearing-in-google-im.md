@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How Dating App Photos End Up in Google Images
+Step 1 - How Dating App Photos End Up in Google Images
 
 Google indexes images from dating platforms through multiple pathways. Understanding these pathways helps you implement effective countermeasures.
 
@@ -44,7 +44,7 @@ User Behavior
 
 The most common vector involves users themselves. When someone downloads a photo from a dating app and shares it elsewhere, social media, messaging apps, or websites, that image enters Google's index through standard crawling. Once indexed, the connection becomes difficult to sever.
 
-Step 2: Method 1: Use Unique Photos Exclusively
+Step 2 - Method 1: Use Unique Photos Exclusively
 
 The most effective prevention strategy involves using photos that exist nowhere else on the internet. Create dedicated images specifically for dating apps.
 
@@ -70,13 +70,13 @@ def check_image_uniqueness(image_path, existing_hashes):
 
     return image_hash not in existing_hashes
 
-Usage: Maintain a database of hashes from your other online photos
+Usage - Maintain a database of hashes from your other online photos
 Only use dating photos that return True for uniqueness
 ```
 
 This Python script uses perceptual hashing to detect whether a photo resembles images already posted online. For dating profiles, aim for zero similarity to existing indexed photos.
 
-Step 3: Method 2: Apply Perceptual Transformations
+Step 3 - Method 2: Apply Perceptual Transformations
 
 When you must use a specific photo, apply transformations that alter its digital fingerprint while maintaining visual quality.
 
@@ -114,7 +114,7 @@ def transform_for_privacy(input_path, output_path):
 
 This approach produces images that appear identical to humans but register as different files to perceptual hash algorithms.
 
-Step 4: Method 3: Implement robots.txt and Image Headers
+Step 4 - Method 3: Implement robots.txt and Image Headers
 
 For developers building dating platforms or testing privacy features, configure proper headers to prevent indexing:
 
@@ -156,7 +156,7 @@ document.querySelectorAll('.profile-photo').forEach(img => {
 });
 ```
 
-Step 5: Method 4: Use Image Watermarking Strategically
+Step 5 - Method 4: Use Image Watermarking Strategically
 
 Adding subtle overlays can disrupt reverse image search while remaining imperceptible to casual viewers:
 
@@ -189,7 +189,7 @@ def add_invisible_watermark(input_path, output_path):
 
 This technique modifies pixels in ways invisible to humans but significant enough to alter perceptual hashes.
 
-Step 6: Method 5: Request Removal Through Google
+Step 6 - Method 5: Request Removal Through Google
 
 When photos already appear in search results, use Google's removal tools:
 
@@ -212,7 +212,7 @@ For images specifically:
      referrerpolicy="no-referrer">
 ```
 
-Step 7: Verification and Monitoring
+Step 7 - Verification and Monitoring
 
 Regularly check whether your dating photos appear in search results:
 
@@ -245,7 +245,7 @@ Beyond technical solutions, consider these operational security practices:
 - Use VPN: Route dating app traffic through VPN servers to reduce IP-based correlation
 - Request app privacy: Contact dating platform support to request image protection measures
 
-Step 8: Limitations and Realistic Expectations
+Step 8 - Limitations and Realistic Expectations
 
 Complete protection against image search indexing is difficult to guarantee. Once an image exists digitally, determined parties can potentially locate it through:
 

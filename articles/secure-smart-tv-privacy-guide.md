@@ -31,11 +31,11 @@ What Smart TVs Collect
 
 Automatic Content Recognition (ACR): Your TV captures screenshots of whatever is on screen. including HDMI input, streaming apps, and cable/antenna. and matches them against a database to identify what you're watching. This data is sold to advertisers and data brokers. ACR operates regardless of what you're watching; it sees your cable box, your gaming console, and your Blu-ray player just as well as it sees built-in apps.
 
-Voice data: TVs with mic-enabled remotes record voice commands. Some older Samsung TVs had always-on mics; modern ones activate on button press, but the data still goes to cloud servers for processing. The voice data is used to improve voice recognition models, and may be stored for months.
+Voice data - TVs with mic-enabled remotes record voice commands. Some older Samsung TVs had always-on mics; modern ones activate on button press, but the data still goes to cloud servers for processing. The voice data is used to improve voice recognition models, and may be stored for months.
 
-Usage metrics: App opens, viewing duration, button presses, and crashes are reported to the manufacturer. This includes timestamps of when you turn the TV on and off, which apps you use and for how long, and what buttons you press on the remote.
+Usage metrics - App opens, viewing duration, button presses, and crashes are reported to the manufacturer. This includes timestamps of when you turn the TV on and off, which apps you use and for how long, and what buttons you press on the remote.
 
-Ad identifiers: Smart TVs have persistent advertising IDs that follow you across apps and streaming services, similar to the advertising ID on a smartphone. These IDs are shared with third-party advertisers embedded in every streaming app.
+Ad identifiers - Smart TVs have persistent advertising IDs that follow you across apps and streaming services, similar to the advertising ID on a smartphone. These IDs are shared with third-party advertisers embedded in every streaming app.
 
 The FTC fined Vizio $2.2M in 2017 for collecting viewing data without consent. Vizio was capturing ACR data and selling it to data brokers without adequately disclosing this to users. Samsung, LG, and Roku have all faced similar regulatory scrutiny in various jurisdictions.
 
@@ -51,7 +51,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Samsung Smart TV
+Step 1 - Samsung Smart TV
 
 Disable ACR
 
@@ -98,7 +98,7 @@ Settings → General → External Device Manager → Device Connect Manager
 
 ---
 
-Step 2: LG Smart TV (webOS)
+Step 2 - LG Smart TV (webOS)
 
 Disable ACR
 
@@ -127,7 +127,7 @@ If you signed into a LG account on your TV, that account links your viewing data
 
 ---
 
-Step 3: Roku
+Step 3 - Roku
 
 Roku's business model is advertising, not hardware. aggressive data collection by default.
 
@@ -138,7 +138,7 @@ Settings → Privacy → Advertising → Reset Advertising Identifier
 Settings → Privacy → Microphone → ON/OFF per app (revoke all unnecessary)
 ```
 
-Roku's limitation: Even with all privacy settings disabled, Roku still collects device-level data per their privacy policy. Their 2023 privacy policy explicitly states they share "inferred data" with advertising partners even when ad tracking is limited. Network-level blocking is required for meaningful privacy.
+Roku's limitation - Even with all privacy settings disabled, Roku still collects device-level data per their privacy policy. Their 2023 privacy policy explicitly states they share "inferred data" with advertising partners even when ad tracking is limited. Network-level blocking is required for meaningful privacy.
 
 Roku also has a channel data sharing setting that is separate from the advertising settings:
 
@@ -150,7 +150,7 @@ This controls whether Roku shares your channel usage data with third parties for
 
 ---
 
-Step 4: Apple TV
+Step 4 - Apple TV
 
 ```
 Settings → Privacy → Analytics → Share Apple TV Analytics → OFF
@@ -163,7 +163,7 @@ Apple's own apps collect usage data regardless of these settings when you're sig
 
 ---
 
-Step 5: Network-Level Blocking
+Step 5 - Network-Level Blocking
 
 Settings inside the TV OS can be changed by firmware updates. manufacturers have pushed updates that quietly re-enabled tracking. DNS blocking at the router persists regardless of firmware changes.
 
@@ -201,7 +201,7 @@ Force TV Through Your DNS
 Many smart TVs hard-code fallback DNS servers (Google's 8.8.8.8) to bypass router DNS. Samsung and Roku are particularly known for this. Redirect all DNS queries from the TV's IP to Pi-hole:
 
 ```bash
-On OpenWrt: redirect all DNS queries from TV's IP to your Pi-hole
+On OpenWrt - redirect all DNS queries from TV's IP to your Pi-hole
 Replace 192.168.1.55 with your TV's IP
 
 uci add firewall redirect
@@ -234,7 +234,7 @@ This tells you exactly what your TV is contacting and lets you make informed blo
 
 ---
 
-Step 6: Isolate TV on Its Own VLAN
+Step 6 - Isolate TV on Its Own VLAN
 
 Network isolation prevents your smart TV from communicating with other devices on your local network. useful if you're concerned about lateral movement in the event the TV OS is compromised, or simply want to limit what the TV can reach.
 
@@ -242,14 +242,14 @@ Network isolation prevents your smart TV from communicating with other devices o
 Create a separate VLAN for the TV with no access to your main LAN
 Block inter-VLAN routing from TV VLAN to your main LAN VLAN
 Allow TV VLAN outbound to internet (for streaming) on whitelisted ports only
-See: Network Segmentation for IoT Devices guide for full VLAN setup
+See - Network Segmentation for IoT Devices guide for full VLAN setup
 ```
 
 With VLAN isolation, your TV can stream Netflix but cannot scan or communicate with your NAS, desktop, or other LAN devices. Combined with DNS blocking, this is the strongest practical configuration short of using a dumb TV.
 
 ---
 
-Step 7: What Can't Be Blocked
+Step 7 - What Can't Be Blocked
 
 Even with aggressive network blocking, some features stop working:
 
@@ -257,11 +257,11 @@ Even with aggressive network blocking, some features stop working:
 - Some streaming app functionality (Roku in particular requires its logging endpoints for normal function)
 - Cloud-dependent features (voice assistants, smart home integration)
 
-The cleanest solution: use a "dumb TV" (older set or commercial display without smart TV OS) connected to a streaming device you control separately. A commercial display. Philips, NEC, or Samsung's commercial monitors. has no smart TV OS, no ACR, and no telemetry. Connect it to an Apple TV, NVIDIA Shield, or a Raspberry Pi running Kodi for a privacy-respecting smart TV stack you control end-to-end.
+The cleanest solution - use a "dumb TV" (older set or commercial display without smart TV OS) connected to a streaming device you control separately. A commercial display. Philips, NEC, or Samsung's commercial monitors. has no smart TV OS, no ACR, and no telemetry. Connect it to an Apple TV, NVIDIA Shield, or a Raspberry Pi running Kodi for a privacy-respecting smart TV stack you control end-to-end.
 
 ---
 
-Step 8: Hardware-Level Mitigation: Physical Shielding
+Step 8 - Hardware-Level Mitigation: Physical Shielding
 
 For extreme threat models, consider physical modifications:
 
@@ -277,7 +277,7 @@ Audio data would appear as continuous network streams
 
 Most modern TVs lack hardware cameras. The microphone concern is legitimate for voice-remote models.
 
-Step 9: Identifying What Your TV Queries
+Step 9 - Identifying What Your TV Queries
 
 Monitor your TV's real-time DNS queries:
 
@@ -297,7 +297,7 @@ Example output:
 
 Record these queries over a week to build a blocklist.
 
-Step 10: TCPDump for Deep Packet Inspection
+Step 10 - TCPDump for Deep Packet Inspection
 
 For packet-level analysis of TV traffic:
 
@@ -322,7 +322,7 @@ This deep inspection reveals whether the TV is:
 - Exfiltrating data in large chunks (likely backups or logs)
 - Attempting connections outside your geographic region
 
-Step 11: Roku Data Collection Examples (2026)
+Step 11 - Roku Data Collection Examples (2026)
 
 Roku's privacy policy explicitly states they collect:
 - Every title you watch
@@ -346,7 +346,7 @@ connections to these domains repeatedly
 
 If privacy is critical, Roku is the worst choice among major manufacturers.
 
-Step 12: AppleTV vs Smart TVs
+Step 12 - AppleTV vs Smart TVs
 
 AppleTV avoids most smart TV tracking because:
 
@@ -356,12 +356,12 @@ AppleTV avoids most smart TV tracking because:
 3. Privacy features integrated by default
 4. Faster security updates than TV manufacturers
 
-Tradeoff: AppleTV is expensive ($99-$199 vs $200-$500 TV)
+Tradeoff - AppleTV is expensive ($99-$199 vs $200-$500 TV)
 ```
 
-For someone already in the Apple ecosystem, AppleTV replaces a smart TV entirely, just use a dumb monitor or older TV.
+For someone already in the Apple environment, AppleTV replaces a smart TV entirely, just use a dumb monitor or older TV.
 
-Step 13: Warranty and Support Implications
+Step 13 - Warranty and Support Implications
 
 Disabling device features in factory settings may void warranties:
 
@@ -372,12 +372,12 @@ Before aggressively configuring TV privacy:
 3. Understand return policies
 4. Consider whether the TV will be serviced through manufacturer
 
-In practice: Most TV warranties don't cover software configuration issues
+In practice - Most TV warranties don't cover software configuration issues
             Disabling telemetry doesn't void hardware warranty
             But keep documentation in case of disputes
 ```
 
-Step 14: Detection: Is Your TV Compromised?
+Step 14 - Detection - Is Your TV Compromised?
 
 Signs that telemetry blocking failed or malware is present:
 
@@ -395,7 +395,7 @@ Response:
 4. Re-enable network-level blocking
 ```
 
-Step 15: Commercial Display Alternative
+Step 15 - Commercial Display Alternative
 
 For maximum control, replace the smart TV with a commercial display + streaming device:
 
@@ -408,7 +408,7 @@ Setup:
 Commercial displays:
 - No ACR technology
 - No persistent telemetry
-- No app ecosystem
+- No app environment
 - Act as dumb monitors only
 - Often cheaper than high-end smart TVs
 

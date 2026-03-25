@@ -28,7 +28,7 @@ Table of Contents
 - [Maintenance Considerations](#maintenance-considerations)
 - [Use Case Recommendations](#use-case-recommendations)
 - [Combining Both Approaches](#combining-both-approaches)
-- [Library Coverage: What's Actually Cached](#library-coverage-whats-actually-cached)
+- [Library Coverage - What's Actually Cached](#library-coverage-whats-actually-cached)
 - [Implementing Local CDN with Docker](#implementing-local-cdn-with-docker)
 - [Network Traffic Comparison](#network-traffic-comparison)
 - [Size and Storage Analysis](#size-and-storage-analysis)
@@ -72,7 +72,7 @@ A local CDN refers to self-hosting static assets on infrastructure you control. 
 
 There are several implementation approaches:
 
-Option 1: Manual Download
+Option 1 - Manual Download
 
 Download libraries directly and serve them from your project's `public/assets` directory:
 
@@ -89,7 +89,7 @@ location /assets/ {
 }
 ```
 
-Option 2: Build Tool Integration
+Option 2 - Build Tool Integration
 
 Use bundlers to include libraries in your build output:
 
@@ -106,7 +106,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // No external CDN requests needed
 ```
 
-Option 3: Self-Hosted CDN Server
+Option 3 - Self-Hosted CDN Server
 
 Deploy a dedicated CDN using software like jsDelivr's open-source version or a simple Nginx cache proxy:
 
@@ -235,7 +235,7 @@ What happens to my data when using the first tool or the second tool?
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
-Library Coverage: What's Actually Cached
+Library Coverage - What's Actually Cached
 
 Decentraleyes maintains approximately 4,000 libraries, but this covers only a fraction of what's available:
 
@@ -357,25 +357,25 @@ Browser → Your Server → Browser
 
 Size and Storage Analysis
 
-Decentraleyes extension size: ~60 MB
-Maintained library set: ~4,000 files
+Decentraleyes extension size - ~60 MB
+Maintained library set - ~4,000 files
 
 Common Local CDN approaches:
 
 ```
-Approach 1: Full bundle (all common libraries)
+Approach 1 - Full bundle (all common libraries)
  Download size: ~200-400 MB
  Setup time: 1 hour
  Storage requirement: 500 MB on server
  Benefit: Maximum offline capability
 
-Approach 2: Selective caching (top 100 libraries)
+Approach 2 - Selective caching (top 100 libraries)
  Download size: ~50-100 MB
  Setup time: 30 minutes
  Storage requirement: 200 MB on server
  Benefit: Balance convenience and storage
 
-Approach 3: Dynamic caching (fetch on first request)
+Approach 3 - Dynamic caching (fetch on first request)
  Initial download: 5-10 MB
  Setup time: 15 minutes
  Storage requirement: Grows with usage
@@ -469,24 +469,24 @@ Migration Path from Decentraleyes
 If moving from Decentraleyes to Local CDN:
 
 ```
-Phase 1: Assessment (Week 1)
+Phase 1 - Assessment (Week 1)
  Audit which libraries your sites actually use
  List top 20 most-accessed libraries
  Estimate storage requirements
 
-Phase 2: Setup (Week 2)
+Phase 2 - Setup (Week 2)
  Deploy Docker container with Nginx
  Download top 100 libraries
  Configure local DNS (optional)
  Test fallbacks
 
-Phase 3: Migration (Week 3)
+Phase 3 - Migration (Week 3)
  Disable Decentraleyes extension
  Monitor site performance
  Fill cache with any missing libraries
  Enable local CDN for all traffic
 
-Phase 4: Optimization (Week 4)
+Phase 4 - Optimization (Week 4)
  Analyze cache hit rates
  Remove unused libraries (free space)
  Fine-tune caching headers
@@ -496,7 +496,7 @@ Phase 4: Optimization (Week 4)
 Related Articles
 
 - [Brave Browser Vs Edge Privacy Comparison 2026](/brave-browser-vs-edge-privacy-comparison-2026/)
-- [Tor Browser vs VPN Comparison: Which Is Better for Privacy?](/tor-browser-vs-vpn-comparison-which-is-better/)
+- [Tor Browser vs VPN Comparison - Which Is Better for Privacy?](/tor-browser-vs-vpn-comparison-which-is-better/)
 - [Privacy-Focused Web Browser Comparison 2026](/privacy-browser-comparison-2026/)
 - [Protonmail Vs Gmail Privacy Comparison](/protonmail-vs-gmail-privacy-comparison/)
 - [Tor Browser vs Epic Privacy Browser Comparison](/tor-browser-vs-epic-privacy-browser-comparison/)

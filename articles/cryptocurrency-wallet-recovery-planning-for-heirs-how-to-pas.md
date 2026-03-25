@@ -30,13 +30,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Core Problem
+Step 1 - The Core Problem
 
 A cryptocurrency private key (or seed phrase) provides unrestricted access to funds. If you store your seed phrase in a will or safe deposit box, you create vulnerability, an attacker who obtains that document gains everything. If you leave no instructions, your heirs inherit nothing despite the real value sitting on-chain.
 
 The solution requires separating knowledge of the key from access to the key. Your heirs should be able to recover funds through a process that requires multiple independent pieces of information, none of which alone is sufficient.
 
-Step 2: Method 1: Encrypted Seed Phrase with Distributed Decryption
+Step 2 - Method 1: Encrypted Seed Phrase with Distributed Decryption
 
 Encrypt your seed phrase using a key known only to your heirs collectively. This requires multiple family members to cooperate, but prevents any single person from stealing the funds.
 
@@ -51,7 +51,7 @@ This prompts for a passphrase. Share this passphrase separately.
 
 Distribute the encrypted file and the decryption passphrase through different channels. Your heirs need both to recover access. For additional security, use a secret sharing scheme to split the decryption key.
 
-Step 3: Method 2: Shamir Secret Sharing for Seed Phrases
+Step 3 - Method 2: Shamir Secret Sharing for Seed Phrases
 
 Shamir's Secret Sharing (SSS) divides a secret into multiple shares. You can configure a threshold, for example, requiring 3 of 5 shares to reconstruct the seed phrase. This provides flexibility: distribute shares to different family members, a lawyer, and a safe deposit box. No single location compromises the entire wallet.
 
@@ -85,7 +85,7 @@ Outputs the original seed phrase
 
 This approach ensures that recovering your wallet requires coordination between multiple parties. A single lost share doesn't prevent recovery, but a single compromised share doesn't grant access.
 
-Step 4: Method 3: Multi-Signature Wallets
+Step 4 - Method 3: Multi-Signature Wallets
 
 Multi-sig wallets require multiple private keys to authorize transactions. You can configure a 2-of-3 setup where any two of three designated keys can move funds. This is ideal for inheritance planning: you hold one key, a trusted family member holds another, and a third resides in secure storage.
 
@@ -107,7 +107,7 @@ contract MultiSigWallet {
 
 For Bitcoin, hardware wallet manufacturers like Ledger and Trezor support multi-sig configurations natively. The BitBox02 and Coldcard both offer multi-sig setup workflows that generate multiple seeds stored separately.
 
-Step 5: Method 4: Time-Locked Recovery
+Step 5 - Method 4: Time-Locked Recovery
 
 Time-locked recovery adds a temporal element. Your heirs can recover funds immediately with proper authorization, but if recovery is attempted after your death (or after a specified period), the wallet automatically releases control to designated beneficiaries.
 
@@ -120,7 +120,7 @@ The TOTP key is stored separately and combines with other shares
 
 The practical implementation requires a trusted third party, a lawyer, a family member, or a professional service, that can verify your status and release the additional authentication component when needed.
 
-Step 6: Method 5: Hardware Wallet with Passphrase
+Step 6 - Method 5: Hardware Wallet with Passphrase
 
 Hardware wallets support a passphrase (sometimes called a "25th word") that derives a completely separate wallet from your seed phrase. You can create two wallets:
 
@@ -143,7 +143,7 @@ Coincover ($120/year for standard coverage) insures your crypto holdings and man
 
 Each service trades off some control for convenience and professional support. Evaluate whether the added security and oversight justifies the recurring costs.
 
-Step 7: Test Your Recovery Plan
+Step 7 - Test Your Recovery Plan
 
 Regardless of which method you choose, document your setup thoroughly but securely. Create a recovery instructions document that your heirs can follow, including:
 
@@ -154,13 +154,13 @@ Regardless of which method you choose, document your setup thoroughly but secure
 
 Store this document separately from the cryptographic components. Consider using a safety deposit box at a bank for physical items (hardware wallets, written seed phrase backups) and encrypted digital storage for documentation.
 
-Step 8: Test Your Recovery Plan
+Step 8 - Test Your Recovery Plan
 
 The most critical step is testing. Create a small test wallet using your intended method, actually recover it using the procedures you've documented, and verify it works. Many estate plans fail because the methodology was never validated.
 
 After testing, drain the test wallet and destroy its keys. Then create your production setup using the same process.
 
-Step 9: Security Trade-offs
+Step 9 - Security Trade-offs
 
 Each method involves trade-offs. More complex setups (multi-sig, secret sharing) provide stronger security but increase the chance of recovery failure due to lost components. Simpler approaches (single seed phrase storage) are easier but create single points of failure.
 
@@ -169,7 +169,7 @@ Review your plan annually. Verify that share holders are still appropriate, that
 
 Planning for cryptocurrency inheritance requires thinking differently than traditional estate planning. The cryptographic nature of these assets offers possibilities that don't exist for conventional assets, but those possibilities require deliberate design. By implementing one or more of these methods, you ensure your crypto assets benefit your heirs rather than becoming permanent casualties of poor planning.
 
-Step 10: Tax and Legal Considerations
+Step 10 - Tax and Legal Considerations
 
 Inheritance planning for crypto requires coordination with your attorney and tax advisor. Different jurisdictions treat cryptocurrency inheritance differently.
 
@@ -179,7 +179,7 @@ For non-US jurisdictions, consult local tax specialists. Some countries (notably
 
 Your will should explicitly reference crypto holdings and direct your executor to work with the designated recovery contacts. Phrases like "cryptocurrency holdings are documented in the sealed envelope with XYZ family member" provide necessary guidance without exposing sensitive details in a public will.
 
-Step 11: Automated Recovery Scripts
+Step 11 - Automated Recovery Scripts
 
 For developers managing significant crypto holdings, automated recovery scripts can reduce operational friction. Here's a basic Python script that validates a multi-sig setup:
 
@@ -229,19 +229,19 @@ def document_recovery_locations(locations):
 
 Store this script in your recovery documentation alongside your shares and passphrase information.
 
-Step 12: Hardware Wallet Considerations
+Step 12 - Hardware Wallet Considerations
 
 Different hardware wallets implement inheritance features differently:
 
-Ledger Nano (Starting at $59): Does not have built-in inheritance features. Use seed phrase splitting with Shamir Secret Sharing external to the device.
+Ledger Nano (Starting at $59) - Does not have built-in inheritance features. Use seed phrase splitting with Shamir Secret Sharing external to the device.
 
 Trezor Model T (Starting at $120): Supports passphrase-based split wallets. The seed phrase provides access to basic funds, while additional passphrases (stored separately) unlock inheritance wallets.
 
-Coldcard (Starting at $120): Offers native multisig support and "Duress Passwords" that create decoy wallets if coerced. Advanced users can set up inheritance through multisig configurations directly on the device.
+Coldcard (Starting at $120) - Offers native multisig support and "Duress Passwords" that create decoy wallets if coerced. Advanced users can set up inheritance through multisig configurations directly on the device.
 
-BitBox02 (Starting at $99): Supports multi-sig configuration with backup and recovery flows designed for inheritance. Their backup tool helps sharing encrypted backups across family members.
+BitBox02 (Starting at $99) - Supports multi-sig configuration with backup and recovery flows designed for inheritance. Their backup tool helps sharing encrypted backups across family members.
 
-Step 13: Regulatory and Legal Framework
+Step 13 - Regulatory and Legal Framework
 
 Different jurisdictions treat inherited cryptocurrency differently, which affects your planning:
 
@@ -272,7 +272,7 @@ United Kingdom:
 
 Without proper documentation and jurisdiction-specific planning, your heirs may face tax penalties or lose access entirely.
 
-Step 14: Multi-Generational Planning
+Step 14 - Multi-Generational Planning
 
 For wealth transfer over multiple generations, structure your setup with future updates in mind:
 
@@ -295,40 +295,40 @@ Verification timeline:
 - Upon death: Heirs activate recovery process
 ```
 
-Step 15: Exit Strategy: Converting to Fiat
+Step 15 - Exit Strategy: Converting to Fiat
 
 Even with perfect recovery planning, your heirs still need to know how to convert crypto to usable currency:
 
 ```bash
 Documented exit strategy for heirs
 
-Step 1: Obtain the recovered private key or seed phrase
-Step 2: Choose a reputable exchange with fiat withdrawal
+Step 1 - Obtain the recovered private key or seed phrase
+Step 2 - Choose a reputable exchange with fiat withdrawal
   - Kraken ($5-26 withdrawal fees, established since 2011)
   - Coinbase ($10-25 fees, US-based, beginner-friendly)
   - Bitstamp ($15-50 fees, European, solid reputation)
 
-Step 3: Create account on chosen exchange
+Step 3 - Create account on chosen exchange
   - Requires identity verification (KYC)
   - Takes 1-3 days for approval
   - Heirs need government ID
 
-Step 4: Transfer crypto from recovered wallet to exchange
+Step 4 - Transfer crypto from recovered wallet to exchange
   - First transfer small amount ($100) to test
   - Verify it arrives correctly
   - Transfer remainder
 
-Step 5: Sell crypto on exchange
+Step 5 - Sell crypto on exchange
   - Market order for immediate sale
   - Limit order for better price (may take time)
   - Withdrawal typically completes in 3-5 business days
 
-Step 6: Handle tax reporting
+Step 6 - Handle tax reporting
   - Exchanges issue 1099-K forms (US)
   - Heirs pay capital gains tax on appreciated value
   - Keep documentation for tax filing
 
-Total process: 1-2 weeks from recovered key to fiat funds
+Total process - 1-2 weeks from recovered key to fiat funds
 ```
 
 Troubleshooting

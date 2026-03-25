@@ -215,11 +215,11 @@ Hardware Keyboard Alternative
 
 For the highest security, use an external hardware keyboard:
 
-Bluefruit EZ-Key ($40): Bluetooth keyboard with zero software requirements. No keyboard app runs on your device, eliminating all keyboard-based tracking vectors entirely.
+Bluefruit EZ-Key ($40) - Bluetooth keyboard with zero software requirements. No keyboard app runs on your device, eliminating all keyboard-based tracking vectors entirely.
 
-Seaboard Rise ($300): Premium Bluetooth keyboard with customizable firmware. Open-source firmware available for auditing network behavior.
+Seaboard Rise ($300) - Premium Bluetooth keyboard with customizable firmware. Open-source firmware available for auditing network behavior.
 
-OnBoard Virtual Keyboard over Bluetooth: Use your computer's keyboard input forwarded to mobile device via Bluetooth, eliminates mobile keyboard data transmission entirely.
+OnBoard Virtual Keyboard over Bluetooth - Use your computer's keyboard input forwarded to mobile device via Bluetooth, eliminates mobile keyboard data transmission entirely.
 
 Testing Keyboard Behavior Yourself
 

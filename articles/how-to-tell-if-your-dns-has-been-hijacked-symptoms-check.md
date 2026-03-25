@@ -29,7 +29,7 @@ Table of Contents
 - [Prerequisites](#prerequisites)
 - [Advanced Detection Methods](#advanced-detection-methods)
 - [Troubleshooting](#troubleshooting)
-- [Advanced Detection: DNSSEC Validation](#advanced-detection-dnssec-validation)
+- [Advanced Detection - DNSSEC Validation](#advanced-detection-dnssec-validation)
 
 Prerequisites
 
@@ -41,21 +41,21 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Common Symptoms of DNS Hijacking
+Step 1 - Common Symptoms of DNS Hijacking
 
 Recognizing DNS hijacking early prevents further compromise. Watch for these indicators:
 
-Unexpected Website Redirects: If typing a legitimate URL loads a different website, especially one you have never visited, your DNS queries may be redirected. Attackers often map popular domains to phishing sites that mimic the original.
+Unexpected Website Redirects - If typing a legitimate URL loads a different website, especially one you have never visited, your DNS queries may be redirected. Attackers often map popular domains to phishing sites that mimic the original.
 
-SSL Certificate Warnings: Modern browsers validate SSL certificates through DNS. If you suddenly see certificate errors on sites that previously worked correctly, the attacker may be performing a man-in-the-middle attack with forged certificates.
+SSL Certificate Warnings - Modern browsers validate SSL certificates through DNS. If you suddenly see certificate errors on sites that previously worked correctly, the attacker may be performing a man-in-the-middle attack with forged certificates.
 
-Slow Network Performance: DNS hijacking often introduces additional hops through attacker-controlled servers. If your network feels sluggish specifically when resolving domain names, investigate further.
+Slow Network Performance - DNS hijacking often introduces additional hops through attacker-controlled servers. If your network feels sluggish specifically when resolving domain names, investigate further.
 
-Blocked Access to Security Sites: Some hijacking attempts prevent you from reaching security websites, antivirus updates, or privacy tools. This blocks you from getting help or updating your defenses.
+Blocked Access to Security Sites - Some hijacking attempts prevent you from reaching security websites, antivirus updates, or privacy tools. This blocks you from getting help or updating your defenses.
 
-Inconsistent DNS Responses: Querying the same domain multiple times returns different IP addresses. Legitimate DNS responses should be consistent for the same recursive resolver.
+Inconsistent DNS Responses - Querying the same domain multiple times returns different IP addresses. Legitimate DNS responses should be consistent for the same recursive resolver.
 
-Step 2: Diagnostic Commands and Tools
+Step 2 - Diagnostic Commands and Tools
 
 Using dig for DNS Verification
 
@@ -144,7 +144,7 @@ For developers, track DNS queries on your machine:
 macOS: Monitor DNS queries via packet capture
 sudo tcpdump -i en0 -n port 53
 
-Linux: Use dnsmasq logging
+Linux - Use dnsmasq logging
 Add to /etc/dnsmasq.conf:
 log-queries
 sudo systemctl restart dnsmasq
@@ -153,7 +153,7 @@ tail -f /var/log/syslog | grep dnsmasq
 
 Unusual query patterns or unexpected DNS server contact warrant investigation.
 
-Step 3: Router-Level Hijacking
+Step 3 - Router-Level Hijacking
 
 Many DNS hijacking attacks target home routers rather than individual devices. Attackers exploit default credentials or firmware vulnerabilities to change your router's DNS settings.
 
@@ -172,7 +172,7 @@ Hardening Your Router
 - Consider installing open-source firmware like OpenWrt
 - Set static DNS servers in router rather than using ISP defaults
 
-Step 4: Scripting DNS Health Checks
+Step 4 - Scripting DNS Health Checks
 
 Automate DNS verification with a simple bash script:
 
@@ -198,7 +198,7 @@ done
 
 Run this script periodically to detect DNS hijacking early.
 
-Step 5: What To Do If Hijacked
+Step 5 - What To Do If Hijacked
 
 If you confirm DNS hijacking:
 
@@ -209,7 +209,7 @@ If you confirm DNS hijacking:
 5. Enable DNSSEC where available
 6. Consider using encrypted DNS: DoH (DNS over HTTPS) or DoT (DNS over TLS)
 
-Step 6: Prevention Strategies
+Step 6 - Prevention Strategies
 
 - Use DNS over HTTPS in browsers and operating systems
 - Configure static DNS servers on devices rather than relying on DHCP
@@ -256,7 +256,7 @@ Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-Step 7: DNS Hijacking Attack Vectors
+Step 7 - DNS Hijacking Attack Vectors
 
 Understanding how attacks happen helps you protect against them:
 
@@ -265,10 +265,10 @@ Understanding how attacks happen helps you protect against them:
 Your ISP intercepts DNS queries and redirects them:
 
 ```
-Attacker profile: ISP technician or rogue state
-Impact: All users of that ISP affected
-Detection: Your DNS server will be ISP-owned address
-Defense: Use DoH (DNS over HTTPS) to bypass ISP
+Attacker profile - ISP technician or rogue state
+Impact - All users of that ISP affected
+Detection - Your DNS server will be ISP-owned address
+Defense - Use DoH (DNS over HTTPS) to bypass ISP
 ```
 
 2. Router Compromise
@@ -306,7 +306,7 @@ cat /etc/resolv.conf | grep nameserver
 Look for unexpected DNS IPs
 ```
 
-Advanced Detection: DNSSEC Validation
+Advanced Detection - DNSSEC Validation
 
 DNSSEC cryptographically verifies DNS responses:
 
@@ -314,20 +314,20 @@ DNSSEC cryptographically verifies DNS responses:
 Test DNSSEC on your resolver
 dig +dnssec google.com | grep -E "RRSIG|ad"
 
-If you see "ad" flag: DNSSEC validation working
-If missing: Your resolver doesn't validate DNSSEC
-If RRSIG shows as "BOGUS": DNSSEC tampering detected
+If you see "ad" flag - DNSSEC validation working
+If missing - Your resolver doesn't validate DNSSEC
+If RRSIG shows as "BOGUS" - DNSSEC tampering detected
 
 Test against known bad DNSSEC
 dig +dnssec www.dnssec-failed.org
 
-Should show: status: SERVFAIL
+Should show - status: SERVFAIL
 (This domain intentionally has bad DNSSEC signature)
 ```
 
 If bad DNSSEC zones resolve successfully, your resolver is compromised.
 
-Step 8: Implementation: Continuous DNS Monitoring
+Step 8 - Implementation: Continuous DNS Monitoring
 
 ```python
 #!/usr/bin/env python3
@@ -405,7 +405,7 @@ monitor.continuous_monitor()
 
 Run this script to continuously verify DNS integrity.
 
-Step 9: DNS Leak Tests: Services and Tools
+Step 9 - DNS Leak Tests: Services and Tools
 
 ```
 Online DNS Leak Testers:
@@ -420,7 +420,7 @@ $ curl -L https://dns.google/resolve?name=example.com&type=A
 Your resolver's IP will be visible in response metadata
 ```
 
-Step 10: Plan Incident Response : If Hijacked
+Step 10 - Plan Incident Response : If Hijacked
 
 Immediate steps (before normal troubleshooting):
 
@@ -440,16 +440,16 @@ Run antivirus in safe mode
 Confirm DNS requests actually use your configured resolver
 ```
 
-Step 11: Encrypted DNS Protocols
+Step 11 - Encrypted DNS Protocols
 
 Use these to prevent DNS hijacking:
 
 DoH (DNS over HTTPS)
 ```
-Standard: RFC 8484
-Encryption: TLS 1.3
-Port: 443 (same as HTTPS)
-Advantage: Works through most firewalls
+Standard - RFC 8484
+Encryption - TLS 1.3
+Port - 443 (same as HTTPS)
+Advantage - Works through most firewalls
 Implementation:
   Firefox: Settings > Privacy > DNS over HTTPS
   Chrome: Settings > Privacy > Secure DNS
@@ -457,16 +457,16 @@ Implementation:
 
 DoT (DNS over TLS)
 ```
-Standard: RFC 7858
-Encryption: TLS 1.3
-Port: 853 (dedicated)
-Advantage: Cleaner separation from HTTP traffic
+Standard - RFC 7858
+Encryption - TLS 1.3
+Port - 853 (dedicated)
+Advantage - Cleaner separation from HTTP traffic
 Implementation:
   Android 9+: Settings > Private DNS
   OpenWrt routers: UCI configuration
 ```
 
-Step 12: Network Segregation: Router-Level Protection
+Step 12 - Network Segregation: Router-Level Protection
 
 Protect your home network:
 
@@ -485,12 +485,12 @@ nvram commit
 service dnsmasq restart
 ```
 
-Step 13: Test After Recovery
+Step 13 - Test After Recovery
 
 Verify hijacking is resolved:
 
 ```bash
-Comprehensive post-recovery test
+complete post-recovery test
 echo "=== Post-Hijacking Recovery Test ==="
 
 1. Verify configured DNS

@@ -86,11 +86,11 @@ Recommended Configuration
 
 For the best experience using ExpressVPN in Cuba, we recommend the following configuration:
 
-Protocol Selection: Use the Automatic setting or manually select OpenVPN. WireGuard, while faster in many locations, showed inconsistent behavior in our Cuba tests. The Automatic setting let ExpressVPN choose the most reliable protocol for each connection attempt.
+Protocol Selection - Use the Automatic setting or manually select OpenVPN. WireGuard, while faster in many locations, showed inconsistent behavior in our Cuba tests. The Automatic setting let ExpressVPN choose the most reliable protocol for each connection attempt.
 
-Server Selection: Start with Miami servers, then try New York if experiencing issues. These provide the lowest latency and best overall performance for Cuba connections.
+Server Selection - Start with Miami servers, then try New York if experiencing issues. These provide the lowest latency and best overall performance for Cuba connections.
 
-Kill Switch: Enable the Network Lock (ExpressVPN's kill switch) to protect your data if the VPN connection drops unexpectedly.
+Kill Switch - Enable the Network Lock (ExpressVPN's kill switch) to protect your data if the VPN connection drops unexpectedly.
 
 Connection Tips
 
@@ -112,9 +112,9 @@ While ExpressVPN performed reasonably well, you might consider these alternative
 
 - NordVPN: Our tests showed similar connection success rates but slightly slower speeds. The Meshnet feature could be useful for secure file sharing.
 
-- Mullvad: Offers excellent privacy practices and performed comparably to ExpressVPN in our tests. The simple, no-frills interface works well for technical users.
+- Mullvad - Offers excellent privacy practices and performed comparably to ExpressVPN in our tests. The simple, no-frills interface works well for technical users.
 
-- Surfshark: Provided the most consistent connections in our testing, though with lower overall speeds. Unlimited simultaneous connections make it good for groups.
+- Surfshark - Provided the most consistent connections in our testing, though with lower overall speeds. Unlimited simultaneous connections make it good for groups.
 
 VPN Performance Comparison Table
 
@@ -133,15 +133,15 @@ Users accessing internet from Cuba face multiple threat vectors requiring differ
 
 For journalists, activists, and political dissidents, this threat model demands additional protections beyond basic VPN connectivity. Consider these layered approaches:
 
-Layer 1 - Transport Encryption: ExpressVPN's OpenVPN or WireGuard protocols encrypt all traffic between your device and the VPN server, preventing ISP-level inspection.
+Layer 1 - Transport Encryption - ExpressVPN's OpenVPN or WireGuard protocols encrypt all traffic between your device and the VPN server, preventing ISP-level inspection.
 
-Layer 2 - Origin Obscuring: Connecting to servers in Miami creates the impression you're accessing the internet from the United States, frustrating content-blocking based on IP geolocation.
+Layer 2 - Origin Obscuring - Connecting to servers in Miami creates the impression you're accessing the internet from the United States, frustrating content-blocking based on IP geolocation.
 
-Layer 3 - Metadata Minimization: Enable kill switch to prevent DNS leaks that would reveal your actual IP. Disable WebRTC to prevent IP address leakage through web APIs.
+Layer 3 - Metadata Minimization - Enable kill switch to prevent DNS leaks that would reveal your actual IP. Disable WebRTC to prevent IP address leakage through web APIs.
 
-Layer 4 - Application-Level: Use end-to-end encrypted messaging (Signal), not WhatsApp which routes metadata through servers.
+Layer 4 - Application-Level - Use end-to-end encrypted messaging (Signal), not WhatsApp which routes metadata through servers.
 
-Critical consideration: VPN traffic itself can be detected and flagged by network surveillance systems that block known VPN protocols. Some reports indicate Cuba blocks OpenVPN traffic patterns. This makes protocol choice essential, WireGuard's smaller packet size and less distinctive signature may evade blocking better than OpenVPN.
+Critical consideration - VPN traffic itself can be detected and flagged by network surveillance systems that block known VPN protocols. Some reports indicate Cuba blocks OpenVPN traffic patterns. This makes protocol choice essential, WireGuard's smaller packet size and less distinctive signature may evade blocking better than OpenVPN.
 
 Testing Methodology and Verification
 
@@ -180,8 +180,8 @@ done
 Aggregate results
 for server in "miami" "newyork" "losangeles"; do
   echo "=== $server Results ==="
-  echo "Avg Latency: $(awk '{sum+=$1; count++} END {print sum/count}' latency_$server.txt) ms"
-  echo "Avg Download: $(awk -F',' '{sum+=$1; count++} END {print sum/count}' throughput_$server.txt) Mbps"
+  echo "Avg Latency - $(awk '{sum+=$1; count++} END {print sum/count}' latency_$server.txt) ms"
+  echo "Avg Download - $(awk -F',' '{sum+=$1; count++} END {print sum/count}' throughput_$server.txt) Mbps"
 done
 ```
 

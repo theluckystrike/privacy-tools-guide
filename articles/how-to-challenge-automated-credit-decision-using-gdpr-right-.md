@@ -52,7 +52,7 @@ Review the Equal Credit Opportunity Act (ECOA) notice lenders provide. This disc
 
 Step-by-Step Challenge Process
 
-Step 1: Document the Decision
+Step 1 - Document the Decision
 
 Before contacting the lender, gather all documentation:
 
@@ -61,7 +61,7 @@ Before contacting the lender, gather all documentation:
 - Record any case ID or application ID
 - Save all correspondence related to the application
 
-Step 2: Submit a Formal Human Review Request
+Step 2 - Submit a Formal Human Review Request
 
 Send this template to the lender's consumer complaints department:
 
@@ -116,7 +116,7 @@ request = generate_review_request(
 print(request)
 ```
 
-Step 3: Request Logic Explanation
+Step 3 - Request Logic Explanation
 
 Under GDPR Article 15, you can request the "meaningful information about the logic involved" in automated decisions. This helps you understand what factors hurt your application.
 
@@ -155,7 +155,7 @@ app.post('/api/gdpr/article-22-review-request', async (req, res) => {
 });
 ```
 
-Step 4: Escalate if Needed
+Step 4 - Escalate if Needed
 
 If the lender ignores your request or provides an inadequate response:
 
@@ -172,7 +172,7 @@ When you invoke Article 22, the lender must:
 - Provide meaningful information about the logic used
 - Implement appropriate safeguards such as the right to obtain human intervention
 
-For Developers: Building Compliant Credit Systems
+For Developers - Building Compliant Credit Systems
 
 If you build credit decision systems, implement these GDPR Article 22 requirements:
 

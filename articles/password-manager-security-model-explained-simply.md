@@ -20,26 +20,26 @@ Password managers protect your data through three layers: your master password i
 
 Table of Contents
 
-- [The Core Problem: Encrypting at Rest](#the-core-problem-encrypting-at-rest)
-- [Key Derivation: From Password to Key](#key-derivation-from-password-to-key)
+- [The Core Problem - Encrypting at Rest](#the-core-problem-encrypting-at-rest)
+- [Key Derivation - From Password to Key](#key-derivation-from-password-to-key)
 - [Zero-Knowledge Architecture](#zero-knowledge-architecture)
-- [Encryption Algorithms: AES-256-GCM](#encryption-algorithms-aes-256-gcm)
-- [The Unlock Flow: Putting It Together](#the-unlock-flow-putting-it-together)
+- [Encryption Algorithms - AES-256-GCM](#encryption-algorithms-aes-256-gcm)
+- [The Unlock Flow - Putting It Together](#the-unlock-flow-putting-it-together)
 - [Security Considerations for Developers](#security-considerations-for-developers)
 - [Common Misconceptions](#common-misconceptions)
-- [Real-World Implementation: How 1Password Does It](#real-world-implementation-how-1password-does-it)
-- [Key Derivation in Practice: Iterations Matter](#key-derivation-in-practice-iterations-matter)
+- [Real-World Implementation - How 1Password Does It](#real-world-implementation-how-1password-does-it)
+- [Key Derivation in Practice - Iterations Matter](#key-derivation-in-practice-iterations-matter)
 - [Attack Scenarios and Mitigations](#attack-scenarios-and-mitigations)
 - [Comparative Security Audits](#comparative-security-audits)
 - [Syncing Multiple Devices Securely](#syncing-multiple-devices-securely)
 
-The Core Problem: Encrypting at Rest
+The Core Problem - Encrypting at Rest
 
 When you save a password locally or sync it to the cloud, that data must be encrypted. The challenge is straightforward: you need to encrypt data that only you can decrypt, without storing the decryption key somewhere that could be compromised.
 
 Modern password managers solve this using derived key encryption. Instead of storing a static encryption key, your master password undergoes a transformation to produce a cryptographic key. This key then encrypts and decrypts your vault.
 
-Key Derivation: From Password to Key
+Key Derivation - From Password to Key
 
 Your master password never leaves your device. Instead, it passes through a key derivation function (KDF) to produce a cryptographic key. The most common KDFs are Argon2id, PBKDF2, and bcrypt.
 
@@ -100,7 +100,7 @@ async function encryptVault(plaintext, masterPassword) {
 }
 ```
 
-Encryption Algorithms: AES-256-GCM
+Encryption Algorithms - AES-256-GCM
 
 Most password managers use AES-256-GCM for symmetric encryption. The GCM mode provides both confidentiality (you can't read the data without the key) and authenticity (you can detect if the data was tampered with).
 
@@ -117,7 +117,7 @@ vault.encrypted = AES-256-GCM encrypt(
 )
 ```
 
-The Unlock Flow: Putting It Together
+The Unlock Flow - Putting It Together
 
 When you enter your master password to unlock your password manager, here's the complete flow:
 
@@ -156,7 +156,7 @@ A few clarifications that help when evaluating password manager security:
 
 Cloud sync does not mean the provider stores your data in plaintext, it stays encrypted on their servers. Your master password is never sent anywhere; zero-knowledge means the server never sees it. Because your encryption key is derived from your master password, a compromised master password compromises everything.
 
-Real-World Implementation: How 1Password Does It
+Real-World Implementation - How 1Password Does It
 
 1Password uses a two-layer encryption system that's worth understanding:
 
@@ -218,7 +218,7 @@ This two-key system means:
 - Even if your device is compromised, attackers cannot decrypt your vault (they lack the account key)
 - Only compromise of both your master password AND device together is catastrophic
 
-Key Derivation in Practice: Iterations Matter
+Key Derivation in Practice - Iterations Matter
 
 The number of PBKDF2 iterations directly impacts security. Here's a comparison:
 
@@ -234,7 +234,7 @@ Higher iterations increase security against brute-force attacks but slower unloc
 For critical security, you can increase iterations manually:
 
 ```python
-Bitwarden CLI: Set higher iteration count
+Bitwarden CLI - Set higher iteration count
 Edit config before vault creation
 {
     "kdf": 0,  # 0 = PBKDF2
@@ -244,7 +244,7 @@ Edit config before vault creation
 
 Attack Scenarios and Mitigations
 
-Scenario 1: Brute-Force Attack on Master Password
+Scenario 1 - Brute-Force Attack on Master Password
 
 Attacker steals encrypted vault file and attempts to guess master password:
 
@@ -258,7 +258,7 @@ With proper KDF (600,000 iterations):
 - 8-character: ~30 seconds
 - 12-character: ~30,000 years
 
-Mitigation: Use strong, unique master password (12+ characters, mixed case, numbers, symbols)
+Mitigation - Use strong, unique master password (12+ characters, mixed case, numbers, symbols)
 
 ```python
 import string
@@ -273,7 +273,7 @@ def generate_strong_master_password(length=16):
 'K@mP3x#9Lr*vQ2wL' (16 characters, entropy ~94 bits)
 ```
 
-Scenario 2: Memory Dump Attack
+Scenario 2 - Memory Dump Attack
 
 Attacker gains access to your computer while vault is unlocked and dumps RAM:
 
@@ -313,11 +313,11 @@ class SecureVault:
         self.unlock_time = None
 ```
 
-Scenario 3: Man-in-the-Middle (MITM) Attack
+Scenario 3 - Man-in-the-Middle (MITM) Attack
 
 Attacker intercepts communication between client and password manager server:
 
-Risk level: LOW (with proper HTTPS)
+Risk level - LOW (with proper HTTPS)
 
 Why this is mitigated:
 - All communication uses HTTPS/TLS (encrypted in transit)
@@ -377,14 +377,14 @@ Architecture:
 - If one device is compromised, others aren't automatically compromised
 
 ```
-Device 1 (Laptop): Encrypted Vault + Account Key
+Device 1 (Laptop) - Encrypted Vault + Account Key
         ↓
     Cloud Server: Encrypted Vault (no keys)
         ↑
-Device 2 (Phone): Encrypted Vault + Account Key
+Device 2 (Phone) - Encrypted Vault + Account Key
 ```
 
-Security consideration: If your master password is compromised, attackers can unlock all devices. If one device is fully compromised, the attacker gains:
+Security consideration - If your master password is compromised, attackers can unlock all devices. If one device is fully compromised, the attacker gains:
 - Account key (from that device's storage)
 - Decrypted vault (can be derived with account key)
 - Access to other devices if they can intercept the sync

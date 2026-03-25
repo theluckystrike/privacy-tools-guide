@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How Does Bitwarden Encryption Work Zero Knowledge"
-description: "How Does Bitwarden Encryption Work: Zero-Knowledge.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
+description: "How Does Bitwarden Encryption Work - Zero-Knowledge.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

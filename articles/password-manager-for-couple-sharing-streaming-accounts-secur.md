@@ -27,7 +27,7 @@ Table of Contents
 - [Handling Two-Factor Authentication](#handling-two-factor-authentication)
 - [Security Considerations](#security-considerations)
 - [When Relationships Change](#when-relationships-change)
-- [Advanced: Programmatic Access with CLI](#advanced-programmatic-access-with-cli)
+- [Advanced - Programmatic Access with CLI](#advanced-programmatic-access-with-cli)
 - [Streaming Service Restrictions and Account Sharing](#streaming-service-restrictions-and-account-sharing)
 - [Setting Up Emergency Access](#setting-up-emergency-access)
 - [Threat Modeling for Couples](#threat-modeling-for-couples)
@@ -126,7 +126,7 @@ Syncing Changes Across Devices
 Most password managers sync automatically, but you can verify synchronization status:
 
 ```bash
-Bitwarden: Force sync
+Bitwarden - Force sync
 bw sync
 
 1Password: Check sync status
@@ -183,7 +183,7 @@ If sharing arrangements end, immediate credential rotation becomes critical:
 
 Password managers make this process significantly faster than manually updating each service.
 
-Advanced: Programmatic Access with CLI
+Advanced - Programmatic Access with CLI
 
 For developers who want full control, CLI access enables scripting:
 
@@ -211,7 +211,7 @@ Many streaming services legally restrict account sharing. Understand the terms b
 | Disney+ | Household sharing allowed | Limited to same network | Account termination risk |
 | Spotify | Family plan cheaper than individual | Monitors concurrent streaming | Playlist privacy compromised |
 | Hulu | Official multi-profile support | 2 simultaneous streams standard | Enforcement increasing |
-| Apple TV+ | Family sharing through iCloud | Tied to Apple ecosystem | iCloud compromise affects all |
+| Apple TV+ | Family sharing through iCloud | Tied to Apple environment | iCloud compromise affects all |
 | Amazon Prime | Household sharing | Tracking geographic location | May require residence verification |
 
 Password managers make sharing convenient, but they don't change the underlying terms of service. Many services increasingly restrict sharing through technical means.
@@ -261,17 +261,17 @@ Threat Modeling for Couples
 
 Different couples face different threat models. Adjust security accordingly:
 
-Standard couple: Trusting relationship, account sharing convenience prioritized
+Standard couple - Trusting relationship, account sharing convenience prioritized
 - Biometric unlock on mobile apps (convenience)
 - Auto-sync across devices (usability)
 - Single vault password (acceptable if both trustworthy)
 
-Separate finances: Separate accounts, but need to share some services
+Separate finances - Separate accounts, but need to share some services
 - Separate password manager vaults for personal accounts
 - Shared vault for household/streaming accounts only
 - Audit logging enabled to track access
 
-High-conflict scenario: Preparing for potential separation
+High-conflict scenario - Preparing for potential separation
 - Separate vaults immediately
 - Revoke partner access to shared streaming accounts
 - Change recovery emails to non-partner accounts
@@ -322,23 +322,23 @@ If you want to switch from one password manager to another as a couple:
 #!/bin/bash
 Safe migration between password managers
 
-Step 1: Export from old manager (encrypted format if possible)
+Step 1 - Export from old manager (encrypted format if possible)
 bw export --output bitwarden_backup.json
 
-Step 2: Review all items for sensitive data
+Step 2 - Review all items for sensitive data
 grep -i "credit\|ssn\|token" bitwarden_backup.json
 
-Step 3: Import into new manager
+Step 3 - Import into new manager
 (Use appropriate tool for destination manager)
 
-Step 4: Verify all items imported correctly
+Step 4 - Verify all items imported correctly
 Count items before and after
 echo "Items in export: $(jq '.items | length' bitwarden_backup.json)"
 
-Step 5: Delete old backup securely
+Step 5 - Delete old backup securely
 shred -vfz -n 5 bitwarden_backup.json
 
-Step 6: Notify partner of migration
+Step 6 - Notify partner of migration
 Share new backup location and recovery codes
 ```
 

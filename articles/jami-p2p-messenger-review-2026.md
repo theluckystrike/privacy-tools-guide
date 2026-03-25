@@ -51,7 +51,7 @@ Jami implements end-to-end encryption using the NaCl cryptographic library. All 
 
 The security model includes perfect forward secrecy. session keys rotate regularly, limiting the impact of potential key compromise. Since there's no central server, there's no server-side metadata to harvest. Configurable message expiration removes content from devices on a schedule you control.
 
-One limitation worth noting: Jami does not support group messaging with the same security properties as one-to-one conversations. Group communication currently relies on trusted servers, which represents a trade-off from the pure P2P model.
+One limitation worth noting - Jami does not support group messaging with the same security properties as one-to-one conversations. Group communication currently relies on trusted servers, which represents a trade-off from the pure P2P model.
 
 Installation and Platform Support
 
@@ -109,11 +109,11 @@ Practical Use Cases for Developers
 
 Jami fits specific use cases where P2P communication provides advantages:
 
-Local network communication: In office or home environments, Jami devices discover each other and communicate directly without internet access. This works well for teams in connectivity-restricted environments.
+Local network communication - In office or home environments, Jami devices discover each other and communicate directly without internet access. This works well for teams in connectivity-restricted environments.
 
-Secure sensitive communications: The cryptographic design makes Jami suitable for handling sensitive information where you cannot trust centralized infrastructure.
+Secure sensitive communications - The cryptographic design makes Jami suitable for handling sensitive information where you cannot trust centralized infrastructure.
 
-Emergency communication: When internet infrastructure fails but local networks remain functional, Jami continues operating between nearby devices.
+Emergency communication - When internet infrastructure fails but local networks remain functional, Jami continues operating between nearby devices.
 
 However, Jami has limitations worth considering. The user interface lacks the polish of commercial alternatives. Feature development moves at open-source pace, meaning some features arrive later than on platforms with larger teams. The learning curve for understanding the distributed architecture requires more technical understanding than point-and-click alternatives.
 
@@ -136,7 +136,7 @@ Comparison with Alternatives
 
 When evaluating Jami against other privacy-focused messengers, consider the threat model. Signal provides stronger security guarantees for average users through its verified implementation and security audits. Telegram's MTProto offers convenience with questionable security decisions. Jami excels for users who prioritize architectural decentralization over polished interfaces.
 
-The trade-off is clear: Jami sacrifices convenience and feature richness for architectural principles that keep you in control of your communication infrastructure.
+The trade-off is clear - Jami sacrifices convenience and feature richness for architectural principles that keep you in control of your communication infrastructure.
 
 Multi-Device Challenges and Solutions
 
@@ -250,23 +250,23 @@ Known limitations:
 - Message deletion from recipient devices isn't cryptographically enforced (client-side only)
 - Offline message storage on relay servers creates metadata persistence
 
-Practical impact: For one-to-one conversations, these issues don't materially affect security. For group communication or sensitive organizational use, these limitations matter.
+Practical impact - For one-to-one conversations, these issues don't materially affect security. For group communication or sensitive organizational use, these limitations matter.
 
 Performance Testing Results
 
 Real-world testing of Jami on various network conditions:
 
-Scenario 1: Direct peer connection (LAN)
+Scenario 1 - Direct peer connection (LAN)
 - Initialization: < 1 second
 - Message delivery: 50-200ms
 - Data usage: Minimal (direct connection)
 
-Scenario 2: Wide-area network (different continents)
+Scenario 2 - Wide-area network (different continents)
 - Initialization: 2-5 seconds
 - Message delivery: 500ms-3s (depends on relay availability)
 - Data usage: 200-500 bytes per message
 
-Scenario 3: Offline recipient
+Scenario 3 - Offline recipient
 - Message queuing: Message sent to relay server
 - Delivery upon reconnection: Immediate
 - Maximum queue time: Depends on relay configuration (24h typical)
@@ -275,13 +275,13 @@ These performance characteristics make Jami acceptable for non-time-critical com
 
 Comparison with Emerging Alternatives
 
-Briar: Android-only app using Tor for anonymity. Better for truly anonymous communication but less practical for daily use.
+Briar - Android-only app using Tor for anonymity. Better for truly anonymous communication but less practical for daily use.
 
-Matrix/Element: Federated but not fully peer-to-peer. Trade-offs toward more practical features (group messaging, file sharing) vs. pure decentralization.
+Matrix/Element - Federated but not fully peer-to-peer. Trade-offs toward more practical features (group messaging, file sharing) vs. pure decentralization.
 
-Ricochet Refresh: Tor-native messenger. Maximum anonymity but minimal platform support.
+Ricochet Refresh - Tor-native messenger. Maximum anonymity but minimal platform support.
 
-Jami occupies a unique position: practical peer-to-peer communication without Tor's overhead, more feature-rich than Briar, but less polished than Element.
+Jami occupies a unique position - practical peer-to-peer communication without Tor's overhead, more feature-rich than Briar, but less polished than Element.
 
 When Jami Is the Right Choice
 

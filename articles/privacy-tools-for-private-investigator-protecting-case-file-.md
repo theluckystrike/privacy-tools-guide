@@ -148,7 +148,7 @@ Create encrypted vault (GUI application)
 Vaults can then be synced via cloud services
 ```
 
-Be cautious: cloud sync creates copies of your data on servers you do not control. For the most sensitive case files, use air-gapped physical backups rather than cloud sync, even with Cryptomator.
+Be cautious - cloud sync creates copies of your data on servers you do not control. For the most sensitive case files, use air-gapped physical backups rather than cloud sync, even with Cryptomator.
 
 Handling Surveillance Media
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Coffee Meets Bagel Data Retention Policy How Long The App"
-description: "Coffee Meets Bagel Data Retention Policy: How Long the.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
+description: "Coffee Meets Bagel Data Retention Policy - How Long the.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
@@ -73,7 +73,7 @@ Requesting permanent account deletion triggers a different process:
 3. Data removal: Profile, photos, messages, and match history are removed
 4. Residual data: Certain information may retain in backups and logs for operational purposes
 
-The key limitation: CMB's privacy policy acknowledges that some data may persist in backup systems "for a period of time" after deletion requests. This is a common practice across many platforms but worth noting for users with strict data minimization requirements.
+The key limitation - CMB's privacy policy acknowledges that some data may persist in backup systems "for a period of time" after deletion requests. This is a common practice across many platforms but worth noting for users with strict data minimization requirements.
 
 Technical Implications for Developers
 
@@ -151,8 +151,8 @@ For users seeking to reduce their CMB data footprint:
 Document your deletion request for personal records
 
 echo "Coffee Meets Bagel Account Deletion Request" > cmb_deletion_record.txt
-echo "Date: $(date)" >> cmb_deletion_record.txt
-echo "Username: [your username]" >> cmb_deletion_record.txt
+echo "Date - $(date)" >> cmb_deletion_record.txt
+echo "Username - [your username]" >> cmb_deletion_record.txt
 echo "Request ID: [if provided]" >> cmb_deletion_record.txt
 ```
 
@@ -237,7 +237,7 @@ The recipient's copy persists indefinitely
 The platform retains copies for 30-90 days before permanent deletion
 ```
 
-This is a critical distinction: you cannot control data that others have sent to you or that the platform maintains in backups.
+This is a critical distinction - you cannot control data that others have sent to you or that the platform maintains in backups.
 
 Match Metadata Retention
 
@@ -419,8 +419,8 @@ Pre-account deletion checklist script
 echo "Coffee Meets Bagel Account Deletion Checklist"
 echo "=============================================="
 
-Step 1: Delete all messages
-echo "Step 1: Delete all messages from your account"
+Step 1 - Delete all messages
+echo "Step 1 - Delete all messages from your account"
 echo "  - Open CMB app"
 echo "  - Go to Messages"
 echo "  - Swipe left on each conversation"
@@ -428,28 +428,28 @@ echo "  - Tap Delete"
 echo "  - Repeat until all messages deleted"
 read -p "Press Enter when complete"
 
-Step 2: Delete all photos
+Step 2 - Delete all photos
 echo "Step 2: Delete all profile photos"
 echo "  - Go to Settings → Profile"
 echo "  - Remove all photos"
 echo "  - Confirm removal"
 read -p "Press Enter when complete"
 
-Step 3: Verify account contents
+Step 3 - Verify account contents
 echo "Step 3: Verify no other data remains"
 echo "  - Check bio is minimal/blank"
 echo "  - Verify preferences are reset"
 echo "  - Confirm no linked accounts (Facebook, Apple ID)"
 read -p "Press Enter when complete"
 
-Step 4: Request deletion
+Step 4 - Request deletion
 echo "Step 4: Request account deletion"
 echo "  - Settings → Account → Delete Account"
 echo "  - Follow email confirmation"
 echo "  - Save email confirmation for records"
 read -p "Press Enter when complete"
 
-Step 5: Monitor and verify
+Step 5 - Monitor and verify
 echo "Step 5: Monitor for unexpected emails (30 days)"
 echo "  - You should receive deletion confirmation"
 echo "  - Any subsequent emails indicate incomplete deletion"

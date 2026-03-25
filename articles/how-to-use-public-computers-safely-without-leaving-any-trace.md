@@ -20,7 +20,7 @@ Use private browsing modes to avoid history/cache, connect through VPN or Tor to
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Advanced: Ephemeral Operating Systems](#advanced-ephemeral-operating-systems)
+- [Advanced - Ephemeral Operating Systems](#advanced-ephemeral-operating-systems)
 - [Additional Security Considerations](#additional-security-considerations)
 - [Troubleshooting](#troubleshooting)
 
@@ -34,7 +34,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Threat Model
+Step 1 - Understand the Threat Model
 
 Before implementing countermeasures, recognize what you're protecting against:
 
@@ -44,7 +44,7 @@ Before implementing countermeasures, recognize what you're protecting against:
 - Typed URLs: Browser address bar suggestions reveal your activity
 - System logs: OS-level logging captures application usage
 
-Step 2: Browser Isolation Techniques
+Step 2 - Browser Isolation Techniques
 
 Use Private/Incognito Mode Effectively
 
@@ -87,7 +87,7 @@ cd /media/usb/firefox/
 ./firefox --profile ./profile --no-remote
 ```
 
-Step 3: Network-Level Privacy
+Step 3 - Network-Level Privacy
 
 Avoid Credential Persistence
 
@@ -117,7 +117,7 @@ Verify IP change
 curl ifconfig.me
 ```
 
-Step 4: File System Hygiene
+Step 4 - File System Hygiene
 
 Temporary File Management
 
@@ -147,7 +147,7 @@ Clear Windows recent documents (run as admin)
 del /q %APPDATA%\Microsoft\Windows\Recent\*
 ```
 
-Advanced: Ephemeral Operating Systems
+Advanced - Ephemeral Operating Systems
 
 For high-risk scenarios, consider running your entire operating system from USB:
 
@@ -172,7 +172,7 @@ bwrap - unshare namespace for isolation
 bwrap --unshare-user --private /tmp --dev /dev bash
 ```
 
-Step 5: Practical Session Workflow
+Step 5 - Practical Session Workflow
 
 Follow this sequence for maximum privacy on public computers:
 
@@ -183,7 +183,7 @@ Follow this sequence for maximum privacy on public computers:
 5. Post-session: Clear all browser data, clipboard, and temporary files
 6. Verification: Check for any residual files in home directory
 
-Step 6: Limitations and Realistic Expectations
+Step 6 - Limitations and Realistic Expectations
 
 No method provides absolute anonymity. Public computers may have:
 
@@ -215,7 +215,7 @@ JavaScript and Extension Management
 Disable JavaScript for non-essential sites to reduce the attack surface:
 
 ```bash
-Firefox: Create user.js with these settings
+Firefox - Create user.js with these settings
 user_pref("javascript.enabled", false);
 user_pref("webgl.disabled", true);
 ```

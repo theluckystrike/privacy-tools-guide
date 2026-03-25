@@ -32,7 +32,7 @@ For developers managing repositories, config files, or sensitive documents, self
 - Focus on the 20%: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - Choose Syncthing for minimal overhead: Nextcloud for feature-rich collaboration, or hybrid setups combining both for maximum flexibility.
 
-Syncthing: Decentralized Peer-to-Peer Sync
+Syncthing - Decentralized Peer-to-Peer Sync
 
 Syncthing remains the top choice for developers who want serverless file synchronization. It replaces cloud storage with direct device-to-device connections using encrypted protocols.
 
@@ -80,9 +80,9 @@ curl -s -X POST http://localhost:8384/rest/db/scan?folder=documents
 
 Syncthing works well for developers syncing dotfiles, code projects, or encrypted vaults across machines.
 
-Nextcloud: Full-Featured Cloud Suite
+Nextcloud - Full-Featured Cloud Suite
 
-Nextcloud provides a Dropbox-like experience with self-hosted infrastructure. It includes file sync, collaborative editing, calendar, contacts, and more through its app ecosystem.
+Nextcloud provides a Dropbox-like experience with self-hosted infrastructure. It includes file sync, collaborative editing, calendar, contacts, and more through its app environment.
 
 Key Features
 
@@ -139,7 +139,7 @@ redis:
 
 Nextcloud suits teams that need collaboration features beyond basic file sync, such as collaborative document editing or group calendars.
 
-FileRun: Lightweight File Manager
+FileRun - Lightweight File Manager
 
 FileRun offers a simpler alternative to Nextcloud for users who primarily need file sync and sharing without the full groupware suite.
 
@@ -171,7 +171,7 @@ Configure your web server to point at the FileRun directory and complete the ins
 
 FileRun works well for users who want a straightforward file sync solution without managing a full PHP application stack.
 
-Tahoe-LAFS: Distributed Encrypted Storage
+Tahoe-LAFS - Distributed Encrypted Storage
 
 Tahoe-LAFS (Least Authority File Store) takes a different approach by distributing encrypted file fragments across multiple storage nodes. This provides built-in redundancy and privacy.
 
@@ -374,7 +374,7 @@ Self-hosted solutions need collaboration features for team effectiveness:
 Sharing Policies
 
 ```bash
-Nextcloud: Create shares with specific permissions
+Nextcloud - Create shares with specific permissions
 occ files:transfer-ownership /path/file user1 user2
 
 Set expiration dates on public links

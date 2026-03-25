@@ -31,7 +31,7 @@ What Windows Collects by Default
 
 ---
 
-Quick Win: Privacy Settings UI
+Quick Win - Privacy Settings UI
 
 Start here before the advanced steps:
 
@@ -165,7 +165,7 @@ Block Microsoft Telemetry Domains (Hosts File)
 Even with services disabled, Windows may use scheduled tasks or secondary processes to report telemetry. Block at the DNS/hosts level:
 
 ```powershell
-PowerShell: append telemetry domains to hosts file
+PowerShell - append telemetry domains to hosts file
 $hostsPath = "$env:SystemRoot\System32\drivers\etc\hosts"
 $domains = @(
     "vortex.data.microsoft.com",
@@ -196,7 +196,7 @@ foreach ($d in $domains) {
 
 ---
 
-Windows 11 Specific: Disable Recall and AI Features
+Windows 11 Specific - Disable Recall and AI Features
 
 Windows 11 24H2 introduced Copilot+ features including Recall (takes screenshots every few seconds):
 
@@ -221,14 +221,14 @@ Monitor network connections from Windows processes
 netstat -b 5 | findstr /i "microsoft"
 
 Or use Process Monitor from Sysinternals (free):
-Download: live.sysinternals.com/Procmon.exe
-Filter: Operation = TCP Connect, then filter by address contains "microsoft"
+Download - live.sysinternals.com/Procmon.exe
+Filter - Operation = TCP Connect, then filter by address contains "microsoft"
 ```
 
 Tools like Glasswire (paid) or the free Wireshark can capture and filter traffic:
 
 ```bash
-Windows Subsystem for Linux: use tshark (terminal Wireshark)
+Windows Subsystem for Linux - use tshark (terminal Wireshark)
 tshark -i "Wi-Fi" -f "host microsoft.com or host bing.com" -Y "tcp" -T fields -e ip.dst -e http.host
 ```
 

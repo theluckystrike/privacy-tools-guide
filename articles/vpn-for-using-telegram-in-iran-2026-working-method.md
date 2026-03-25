@@ -302,7 +302,7 @@ class TelegramConnectivityMonitor:
                     f.write(f" (blocked since {blocked_duration})")
                 f.write("\n")
 
-Usage: Run every 5 minutes via cron
+Usage - Run every 5 minutes via cron
 */5 * * * * python /opt/telegram_connectivity_monitor.py
 ```
 
@@ -310,15 +310,15 @@ Understanding the Cat-and-Mouse Game
 
 VPN blocking in Iran involves continuous adaptation. Understand the cycle:
 
-Week 1: You deploy WireGuard on port 443. Works perfectly.
+Week 1 - You deploy WireGuard on port 443. Works perfectly.
 
-Week 2-3: Iranian DPI systems begin identifying the WireGuard handshake pattern through traffic analysis.
+Week 2-3 - Iranian DPI systems begin identifying the WireGuard handshake pattern through traffic analysis.
 
-Week 4: Connections start failing intermittently as selective blocking begins.
+Week 4 - Connections start failing intermittently as selective blocking begins.
 
-Week 5-6: Systematic blocking of suspected WireGuard servers.
+Week 5-6 - Systematic blocking of suspected WireGuard servers.
 
-Your response: Switch to V2Ray with additional obfuscation, or change port and server.
+Your response - Switch to V2Ray with additional obfuscation, or change port and server.
 
 This cycle repeats indefinitely. The most reliable approach is:
 1. Maintain multiple protocols configured
@@ -339,7 +339,7 @@ Different protocols have different tradeoffs when used in Iran:
 | V2Ray | Fast | Very High | Complex |
 | Shadowsocks | Very fast | Medium | Simple |
 
-Practical recommendation: Start with V2Ray + WireGuard failover. If either fails, the other is immediately available.
+Practical recommendation - Start with V2Ray + WireGuard failover. If either fails, the other is immediately available.
 
 Legal and Safety Considerations
 

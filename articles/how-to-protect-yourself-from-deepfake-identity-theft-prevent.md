@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Threat ecosystem
+Step 1 - Understand the Threat environment
 
 Deepfake creation now requires as little as 30 seconds of audio or a handful of photos to generate convincing replicas. The accessibility of these tools means anyone can become a target, not just high-profile executives or public figures. Attackers use deepfakes for financial fraud, social engineering, and reputation damage.
 
 The most common attack vectors include voice cloning for phone-based fraud, video manipulation for video conferencing scams, and synthetic identity creation using combined data from multiple sources. Understanding these vectors helps you implement targeted defenses.
 
-Step 2: Technical Detection Methods
+Step 2 - Technical Detection Methods
 
 Several open-source tools exist for detecting deepfakes. While no solution is perfect, combining multiple detection methods improves your security posture.
 
@@ -88,7 +88,7 @@ def verify_voice_sample(audio_data, enrolled_voiceprint):
     }
 ```
 
-Step 3: Protective Measures for Developers
+Step 3 - Protective Measures for Developers
 
 If you develop applications that handle user identity, implement defense-in-depth strategies.
 
@@ -157,7 +157,7 @@ def embed_watermark(image_path, user_identifier):
 
 This technique allows you to prove ownership of content even if copied and manipulated.
 
-Step 4: Personal Protection Strategies
+Step 4 - Personal Protection Strategies
 
 Beyond technical measures, adopt operational security practices.
 
@@ -174,9 +174,9 @@ Establish Verification Protocols
 Create verification protocols with family members, colleagues, and friends:
 
 ```text
-VERIFICATION CODE: Create a shared secret word that is never shared digitally.
-CALLBACK PROCEDURE: If receiving unusual requests, call back using known numbers.
-TIME-LIMITED REQUESTS: Financial requests require waiting period for verification.
+VERIFICATION CODE - Create a shared secret word that is never shared digitally.
+CALLBACK PROCEDURE - If receiving unusual requests, call back using known numbers.
+TIME-LIMITED REQUESTS - Financial requests require waiting period for verification.
 ```
 
 These procedural defenses catch attacks that technical measures might miss.
@@ -185,13 +185,13 @@ Monitor for Impersonation
 
 Set up Google Alerts for your name and variations. Regularly search for your images using reverse image search tools. Early detection of misuse enables faster response.
 
-Step 5: Responding to Deepfake Attacks
+Step 5 - Responding to Deepfake Attacks
 
 If you discover someone has created deepfake content using your identity, act quickly:
 
 Document everything by taking screenshots and recording URLs. Report the content to the platform hosting it, most major platforms have policies against synthetic media. File reports with law enforcement, particularly if financial harm is involved. Consider working with cybersecurity professionals who specialize in digital identity recovery.
 
-Step 6: Emerging Defenses
+Step 6 - Emerging Defenses
 
 Several emerging technologies show promise for 2026 and beyond:
 
@@ -201,7 +201,7 @@ Blockchain-based identity systems provide decentralized verification. These syst
 
 Hardware-based authentication tokens continue to improve. Modern FIDO2 tokens support biometric enrollment locally, keeping biometric data on the device rather than transmitted over networks.
 
-Step 7: Build Your Defense Strategy
+Step 7 - Build Your Defense Strategy
 
 Protecting against deepfake identity theft requires layered defenses. Combine technical detection tools with operational security practices. Stay informed about emerging threats and defense technologies. The threat market evolves quickly, your protection measures must evolve with it.
 

@@ -37,7 +37,7 @@ How to Check a VPN Warrant Canary
 Checking a warrant canary is straightforward, but you need to do it correctly:
 
 1.
-- Locate the Transparency Page: Most privacy-focused VPNs maintain a transparency or legal page.
+- Locate the Transparency Page - Most privacy-focused VPNs maintain a transparency or legal page.
 - Open-source options can fill: some gaps if you are willing to handle setup and maintenance yourself.
 
 What Is a Warrant Canary?

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "First Party Sets Chrome Proposal How It Affects Cross Site"
-description: "First Party Sets: Chrome Proposal and Its Impact on.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
+description: "First Party Sets - Chrome Proposal and Its Impact on.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
@@ -59,7 +59,7 @@ Migration Strategies for Cross-Site Tracking
 
 Organizations currently using third-party cookies need transition plans:
 
-Phase 1: Audit Current Tracking
+Phase 1 - Audit Current Tracking
 
 Before migrating, understand your current tracking infrastructure:
 
@@ -73,7 +73,7 @@ document.querySelectorAll('script[src*="tracker"]').forEach(script => {
 console.log('IndexedDB databases:', indexedDB.databases());
 ```
 
-Phase 2: Declare First Party Sets
+Phase 2 - Declare First Party Sets
 
 Once you've identified owned properties:
 
@@ -96,7 +96,7 @@ Once you've identified owned properties:
 }
 ```
 
-Phase 3: Migrate Analytics
+Phase 3 - Migrate Analytics
 
 Transition analytics from third-party to first-party collection:
 
@@ -162,7 +162,7 @@ First Party Sets Declaration
 
 Organization
 - Primary Domain: example.com
-- Legal Entity: Example Corporation, Inc.
+- Legal Entity - Example Corporation, Inc.
 
 Associated Sites
 - shop.example.com: E-commerce platform

@@ -20,8 +20,8 @@ Table of Contents
 
 - [Understanding Signal's Verification Requirements](#understanding-signals-verification-requirements)
 - [Prerequisites](#prerequisites)
-- [Detailed Comparison: Virtual Number Providers](#detailed-comparison-virtual-number-providers)
-- [Advanced: Device Registration with Signal Server](#advanced-device-registration-with-signal-server)
+- [Detailed Comparison - Virtual Number Providers](#detailed-comparison-virtual-number-providers)
+- [Advanced - Device Registration with Signal Server](#advanced-device-registration-with-signal-server)
 - [Troubleshooting](#troubleshooting)
 
 Understanding Signal's Verification Requirements
@@ -46,7 +46,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Workarounds for SIM Registration Restrictions
+Step 1 - Workarounds for SIM Registration Restrictions
 
 1. International Numbers from Permissive Jurisdictions
 
@@ -60,7 +60,7 @@ Services to consider (research current availability):
 - local SIM cards from friend/contact in permissive country
 ```
 
-The key advantage: numbers from countries like the United States, Canada, or many EU nations typically don't require ID for SIM purchase. You receive verification codes remotely, eliminating the need for local SIM registration.
+The key advantage - numbers from countries like the United States, Canada, or many EU nations typically don't require ID for SIM purchase. You receive verification codes remotely, eliminating the need for local SIM registration.
 
 2. VoIP Numbers with Caveats
 
@@ -73,8 +73,8 @@ Signal has increasingly restricted VoIP number registration to prevent abuse. Ho
 Here's a conceptual example of the technical approach:
 
 ```python
-Conceptual: SIP-based SMS reception (advanced users only)
-Requires: SIP gateway service +iax client + configured routing
+Conceptual - SIP-based SMS reception (advanced users only)
+Requires - SIP gateway service +iax client + configured routing
 
 import subprocess
 
@@ -122,7 +122,7 @@ During Signal registration:
 4. Enter the code to complete registration
 ```
 
-The limitation: landlines cannot receive Signal messages (Signal requires mobile data), but the registered account exists and can be linked to mobile devices.
+The limitation - landlines cannot receive Signal messages (Signal requires mobile data), but the registered account exists and can be linked to mobile devices.
 
 5. Temporary Number Services (Short-Term Solutions)
 
@@ -145,7 +145,7 @@ Example workflow:
 
 These services work but carry risks: the number may be reassigned, enabling someone else to potentially claim your Signal account. Always enable Signal's registration lock PIN for security.
 
-Step 2: Implementing Signal PIN Protection
+Step 2 - Implementing Signal PIN Protection
 
 Regardless of verification method, enable Signal's registration lock:
 
@@ -164,7 +164,7 @@ This prevents:
 
 This feature protects your account even if someone obtains your verification number.
 
-Step 3: Technical Considerations for Developers
+Step 3 - Technical Considerations for Developers
 
 If you're building systems around Signal's limitations, consider these approaches:
 
@@ -186,7 +186,7 @@ async function verifySignalRegistration(phoneNumber) {
 
 Signal's internal APIs are undocumented and change without notice. Building integrations carries significant maintenance burden.
 
-Detailed Comparison: Virtual Number Providers
+Detailed Comparison - Virtual Number Providers
 
 Choosing the right virtual number service depends on several technical factors. Here's a detailed breakdown of major options:
 
@@ -201,19 +201,19 @@ Choosing the right virtual number service depends on several technical factors. 
 
 For users in SIM-registration countries, SMS-Activate or Twilio represent the most reliable options because they maintain dedicated number pools and don't reassign numbers mid-session. Receive-SMS.co is cheaper but carries higher risk of number reassignment.
 
-Step 4: Country-Specific Strategies
+Step 4 - Country-Specific Strategies
 
 Different countries present unique challenges when registering Signal:
 
-India: Mandatory SIM registration means local numbers won't work without ID. International numbers from Twilio or SMS-Activate work reliably. Combine with a VPN connecting through India to avoid geo-detection.
+India - Mandatory SIM registration means local numbers won't work without ID. International numbers from Twilio or SMS-Activate work reliably. Combine with a VPN connecting through India to avoid geo-detection.
 
-Pakistan: Similar restriction to India. Added complexity: ISP blocking may prevent Signal app downloads directly. Using Signal Desktop instead of the mobile app sidesteps some restrictions, register first with your virtual number on a different device, then use Desktop to access your account.
+Pakistan - Similar restriction to India. Added complexity: ISP blocking may prevent Signal app downloads directly. Using Signal Desktop instead of the mobile app sidesteps some restrictions, register first with your virtual number on a different device, then use Desktop to access your account.
 
-Turkey: Legal pressure on Signal combined with SIM registration. Some internet providers actively throttle or block Signal traffic. Use a VPN with Turkey-based servers along with your virtual number registration. Test the connection after registration to confirm messages sync.
+Turkey - Legal pressure on Signal combined with SIM registration. Some internet providers actively throttle or block Signal traffic. Use a VPN with Turkey-based servers along with your virtual number registration. Test the connection after registration to confirm messages sync.
 
-China: SIM registration is less of a barrier than the Great Firewall itself. Virtual numbers may work for initial registration, but Signal traffic is often blocked entirely. This requires VPN setup beforehand, and some users report Signal working only sporadically even with VPN configured.
+China - SIM registration is less of a barrier than the Great Firewall itself. Virtual numbers may work for initial registration, but Signal traffic is often blocked entirely. This requires VPN setup beforehand, and some users report Signal working only sporadically even with VPN configured.
 
-Russia: Similar to China with added complexity. Signal registration may succeed, but ISP-level blocking is common. Using Signal Desktop with the account registered on a previous device in a different country works better than mobile apps.
+Russia - Similar to China with added complexity. Signal registration may succeed, but ISP-level blocking is common. Using Signal Desktop with the account registered on a previous device in a different country works better than mobile apps.
 
 ```bash
 Testing Signal connectivity from restricted region
@@ -222,12 +222,12 @@ Run before and after VPN activation
 curl -v https://textsecure-service.whispersystems.org/v1/accounts/whoami \
   --header "Authorization: Bearer YOUR_AUTH_TOKEN"
 
-If you see 200 OK: Signal infrastructure is reachable
-If you see 403 Forbidden: Your account exists but this device isn't recognized
+If you see 200 OK - Signal infrastructure is reachable
+If you see 403 Forbidden - Your account exists but this device isn't recognized
 If you see timeout/connection refused: ISP blocking is active
 ```
 
-Advanced: Device Registration with Signal Server
+Advanced - Device Registration with Signal Server
 
 Once your account is registered through any method, you can link additional devices without re-verifying the phone number. This is the most reliable approach for maintaining access:
 
@@ -252,7 +252,7 @@ It only needs the primary device to be online during linking
 
 This method has several advantages: it's completely supported by Signal, carries no terms-of-service risk, and once linked, the secondary device functions identically to the primary. If your primary device is in a permissive jurisdiction with your virtual number, you can link secondary devices elsewhere.
 
-Step 5: Handling Registration Lock PIN Securely
+Step 5 - Handling Registration Lock PIN Securely
 
 If you're using a temporary or shared virtual number, Signal's Registration Lock becomes critical:
 
@@ -273,7 +273,7 @@ If you forget your PIN:
 
 The Registration Lock ties your account to the phone number you registered with. Even if someone obtains your verification code, they cannot claim your account without the PIN. This is your primary defense against SIM reassignment attacks.
 
-Step 6: Risk Mitigation Checklist
+Step 6 - Risk Mitigation Checklist
 
 When using a virtual number for Signal registration:
 
@@ -303,7 +303,7 @@ ONGOING:
 - [ ] Be aware that ISP-level blocking may still occur
 ```
 
-Step 7: The Fundamental Limitation
+Step 7 - The Fundamental Limitation
 
 No matter which workaround you use, understand that Signal's core design assumes phone numbers as permanent identifiers. The vulnerabilities in mandatory SIM registration countries exist because Signal's verification requires a phone number that the government can track.
 

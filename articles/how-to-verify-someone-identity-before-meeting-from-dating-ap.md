@@ -31,7 +31,7 @@ Romance scams caused over $1.1 billion in losses in the United States in 2023 ac
 
 The risks break down into three categories:
 
-- Impersonation: The person uses stolen photos and a fabricated background. Their stated name, age, job, and location may all be false.
+- Impersonation - The person uses stolen photos and a fabricated background. Their stated name, age, job, and location may all be false.
 - Partial misrepresentation: Real photos, but misleading details. a separated person presenting as single, someone much older using younger photos, a different city claimed for proximity.
 - Predatory intent: Real identity, dangerous intent. Verification helps with the first two categories but not the third. which is why physical safety practices matter regardless of identity confidence.
 
@@ -45,7 +45,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Reverse Image Search as Your First Line of Defense
+Step 1 - Reverse Image Search as Your First Line of Defense
 
 The simplest verification technique involves checking whether profile photos actually belong to the person using them. Most catfishing cases use stolen images from social media accounts, stock photo sites, or influencer profiles.
 
@@ -82,7 +82,7 @@ What Reverse Image Results Tell You
 
 A match on a stock photo site or another person's social media profile is a strong red flag. A match on the person's own public accounts (Instagram, LinkedIn) is confirming. No match at all is neutral. the person may just have limited public photos. Evaluate results in context rather than treating any outcome as definitive.
 
-Step 2: Validating Social Media Presence
+Step 2 - Validating Social Media Presence
 
 Legitimate dating profiles typically link to active social media accounts. Requesting social media verification is a standard practice that most genuine users understand.
 
@@ -131,7 +131,7 @@ result = verify_social_account('actualusername')
 print(f"Account exists: {result['exists']}")
 ```
 
-Step 3: Phone Number Verification Techniques
+Step 3 - Phone Number Verification Techniques
 
 Phone number verification adds another layer of identity confirmation. Services like Google Voice can help, but more importantly, you can use free lookup services to check number validity.
 
@@ -176,7 +176,7 @@ Requesting a Real-Time Verification
 
 Ask the person to respond to a text message that includes a randomly generated word or phrase you specify. This confirms they control the number in real time, not that they copied someone else's number. Combine with a video call for stronger confirmation.
 
-Step 4: Video Call Verification
+Step 4 - Video Call Verification
 
 The most reliable verification method is a live video call. This confirms the person matches their photos and can observe body language cues that indicate authenticity.
 
@@ -192,7 +192,7 @@ Voice Consistency
 
 If the person has sent voice messages on the app, compare vocal qualities during the video call. Voice is much harder to fake than video in real time. Significant differences in accent, cadence, or vocal register are worth noting.
 
-Step 5: Build Your Own Verification Tool
+Step 5 - Build Your Own Verification Tool
 
 For developers interested in creating a verification system, here's a conceptual framework:
 
@@ -239,7 +239,7 @@ result = verifier.verify(profile)
 print(f"Verification score: {result['overall_score']}%")
 ```
 
-Step 6: Red Flags That Override Positive Verification
+Step 6 - Red Flags That Override Positive Verification
 
 Even if most checks pass, certain behaviors should stop the process entirely:
 
@@ -251,7 +251,7 @@ Even if most checks pass, certain behaviors should stop the process entirely:
 
 Treat these as hard stops. No amount of "but they seem so real" overcomes them.
 
-Step 7: Privacy Considerations While Verifying
+Step 7 - Privacy Considerations While Verifying
 
 Verification works both ways. Protect your own information while conducting checks:
 

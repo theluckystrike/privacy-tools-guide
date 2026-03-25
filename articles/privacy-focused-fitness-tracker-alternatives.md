@@ -19,7 +19,7 @@ Fitness trackers collect some of the most sensitive personal data: your heart ra
 
 Why Commercial Fitness Apps Are Dangerous
 
-- Fitbit/Google: Google acquired Fitbit in 2021. Fitbit data is subject to US law enforcement requests
+- Fitbit/Google - Google acquired Fitbit in 2021. Fitbit data is subject to US law enforcement requests
 - Strava: The 2018 global heatmap accidentally revealed classified military base layouts from soldiers' GPS tracks
 - Garmin Connect: Data exposed in a 2020 ransomware attack; the company paid the ransom
 - Apple Health: Stays on-device with strong encryption, but iCloud sync exposes it
@@ -116,7 +116,7 @@ Device Recommendations for Privacy
 
 PineTime is fully open hardware with open-source firmware. the most privacy-respecting option, though more limited in features than commercial devices.
 
-Privacy Analysis: What Each App Collects
+Privacy Analysis - What Each App Collects
 
 Fitbit (Google):
 - Heart rate, blood oxygen, sleep (stored on Google's servers)
@@ -149,7 +149,7 @@ Apple Health:
 - Data cannot be exported easily
 - Better than cloud fitness services but still proprietary
 
-Gadgetbridge: Complete Setup Guide
+Gadgetbridge - Complete Setup Guide
 
 Gadgetbridge is a single Android app that replaces all manufacturer fitness apps. After setup, delete the original app completely.
 
@@ -220,7 +220,7 @@ Self-Hosted Fitness Data Server
 For advanced users, store fitness data on your own server:
 
 ```bash
-Option 1: Traccar (tracks GPS, shows location history)
+Option 1 - Traccar (tracks GPS, shows location history)
 wget https://www.traccar.org/download/traccar-linux-64.zip
 unzip traccar-linux-64.zip
 sudo ./traccar.run install
@@ -228,7 +228,7 @@ sudo ./traccar.run install
 Access at http://localhost:8082
 Add device UUID from Traccar Client app on your phone
 
-Option 2: Immich (photo-based activity tracking)
+Option 2 - Immich (photo-based activity tracking)
 Docker-based photo storage with timeline view
 Pairs well with OpenTracks (exports GPX files)
 ```

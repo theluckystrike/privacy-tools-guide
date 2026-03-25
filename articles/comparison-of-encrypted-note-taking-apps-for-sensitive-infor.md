@@ -30,11 +30,11 @@ Table of Contents
 - [Recommendation Matrix](#recommendation-matrix)
 - [Threat Model Considerations](#threat-model-considerations)
 - [Encryption Verification Methods](#encryption-verification-methods)
-- [Advanced Usage: Encrypted Archive Backup](#advanced-usage-encrypted-archive-backup)
+- [Advanced Usage - Encrypted Archive Backup](#advanced-usage-encrypted-archive-backup)
 - [Performance Characteristics](#performance-characteristics)
 - [Integration with Development Workflows](#integration-with-development-workflows)
 - [Cost Analysis and Selection Matrix](#cost-analysis-and-selection-matrix)
-- [Real-World Scenario: Security Researcher Workflow](#real-world-scenario-security-researcher-workflow)
+- [Real-World Scenario - Security Researcher Workflow](#real-world-scenario-security-researcher-workflow)
 - [Evaluation Checklist for Choosing Tools](#evaluation-checklist-for-choosing-tools)
 
 Evaluation Criteria
@@ -75,7 +75,7 @@ Decrypt when needed
 gpg --decrypt secret-note.md.gpg > secret-note.md
 ```
 
-Obsidian's true strength lies in its local data storage. Your vault resides on your filesystem, giving you complete control. For sensitive information, storing encrypted files in your Obsidian vault folder and decrypting them on-demand provides the flexibility developers need. The graph view, backlinks, and plugin ecosystem make complex knowledge management practical.
+Obsidian's true strength lies in its local data storage. Your vault resides on your filesystem, giving you complete control. For sensitive information, storing encrypted files in your Obsidian vault folder and decrypting them on-demand provides the flexibility developers need. The graph view, backlinks, and plugin environment make complex knowledge management practical.
 
 Tomb
 
@@ -137,13 +137,13 @@ Security Considerations
 
 When evaluating encrypted note-taking applications for sensitive information storage, consider these factors:
 
-Key derivation: Applications should use modern key derivation functions (Argon2id, scrypt, or PBKDF2) to protect against brute-force attacks. Avoid applications using weak KDFs like basic SHA-256.
+Key derivation - Applications should use modern key derivation functions (Argon2id, scrypt, or PBKDF2) to protect against brute-force attacks. Avoid applications using weak KDFs like basic SHA-256.
 
-Zero-knowledge verification: Verify that the server never receives plaintext. Review the source code or use network inspection tools to confirm client-side encryption.
+Zero-knowledge verification - Verify that the server never receives plaintext. Review the source code or use network inspection tools to confirm client-side encryption.
 
-Memory protection: Encrypted notes exist in plaintext in RAM when unlocked. For extreme security requirements, consider tools that clear memory or operate from encrypted ramdisks.
+Memory protection - Encrypted notes exist in plaintext in RAM when unlocked. For extreme security requirements, consider tools that clear memory or operate from encrypted ramdisks.
 
-Backup encryption: Ensure encrypted notes remain encrypted in backups. Many cloud sync services offer client-side encryption, but verify this explicitly.
+Backup encryption - Ensure encrypted notes remain encrypted in backups. Many cloud sync services offer client-side encryption, but verify this explicitly.
 
 Recommendation Matrix
 
@@ -161,13 +161,13 @@ Threat Model Considerations
 
 Different note-taking scenarios present different threats. A developer storing API keys faces different risks than a journalist documenting sources. Understanding your specific threat model guides tool selection.
 
-API Key and Credential Storage: These require absolute zero-knowledge encryption with offline access. Vim with GPG or Tomb provide the strongest guarantees, no cloud services, no synchronization attack surface. Standard Notes self-hosted offers a reasonable alternative if you control the infrastructure.
+API Key and Credential Storage - These require absolute zero-knowledge encryption with offline access. Vim with GPG or Tomb provide the strongest guarantees, no cloud services, no synchronization attack surface. Standard Notes self-hosted offers a reasonable alternative if you control the infrastructure.
 
-Collaborative Notes: Teams need share mechanisms. Standard Notes' extension system enables team access, while Cryptee provides encrypted folder sharing with granular permissions. Tomb and Vim with GPG lack practical team features.
+Collaborative Notes - Teams need share mechanisms. Standard Notes' extension system enables team access, while Cryptee provides encrypted folder sharing with granular permissions. Tomb and Vim with GPG lack practical team features.
 
-Offline-First Development: Developers working in high-surveillance environments or unreliable networks benefit from Obsidian's local-first approach. The offline guarantee means notes remain accessible even if cloud services are blocked or compromised.
+Offline-First Development - Developers working in high-surveillance environments or unreliable networks benefit from Obsidian's local-first approach. The offline guarantee means notes remain accessible even if cloud services are blocked or compromised.
 
-Search and Organization: Obsidian's graph view and backlinks create powerful knowledge management. This comes at the cost of not using zero-knowledge encryption, mitigate by encrypting sensitive files with GPG. Cryptee and Standard Notes provide server-side encryption of plaintext, limiting search capabilities.
+Search and Organization - Obsidian's graph view and backlinks create powerful knowledge management. This comes at the cost of not using zero-knowledge encryption, mitigate by encrypting sensitive files with GPG. Cryptee and Standard Notes provide server-side encryption of plaintext, limiting search capabilities.
 
 Encryption Verification Methods
 
@@ -191,7 +191,7 @@ For closed-source applications like Cryptee or Standard Notes, examine the sourc
 - Whether the encryption library is standard (OpenPGP, TweetNaCl, libsodium) or custom
 - Whether security audits cover the full application lifecycle
 
-Advanced Usage: Encrypted Archive Backup
+Advanced Usage - Encrypted Archive Backup
 
 For critical notes, implement immutable encrypted backups outside your primary tool:
 
@@ -212,13 +212,13 @@ Performance Characteristics
 
 For developers considering these tools for production use, understand the performance implications:
 
-Standard Notes: Web interface can feel sluggish during initial load due to cryptographic operations. Once loaded, responsiveness is acceptable. Desktop application performs better for large vaults.
+Standard Notes - Web interface can feel sluggish during initial load due to cryptographic operations. Once loaded, responsiveness is acceptable. Desktop application performs better for large vaults.
 
-Obsidian: Very fast with local storage. Encryption operations (when using GPG) add minimal overhead. Works excellently with 10,000+ notes.
+Obsidian - Very fast with local storage. Encryption operations (when using GPG) add minimal overhead. Works excellently with 10,000+ notes.
 
-Cryptee: Browser-based encryption adds noticeable latency on slower machines. Acceptable for typical use but not ideal for real-time rapid note-taking.
+Cryptee - Browser-based encryption adds noticeable latency on slower machines. Acceptable for typical use but not ideal for real-time rapid note-taking.
 
-Vim + GPG: Fastest for command-line workflows. Encryption is transparent to the user. Note: decryption requires passphrase entry on each file open unless using gpg-agent.
+Vim + GPG - Fastest for command-line workflows. Encryption is transparent to the user. Note - decryption requires passphrase entry on each file open unless using gpg-agent.
 
 Integration with Development Workflows
 
@@ -250,22 +250,22 @@ Cost Analysis and Selection Matrix
 
 For developers evaluating long-term costs:
 
-Standard Notes: Free tier includes 5 editors and limited extensions. Paid plans start at $99/year for extended functionality. For teams, pricing is per-user but extensibility justifies cost.
+Standard Notes - Free tier includes 5 editors and limited extensions. Paid plans start at $99/year for extended functionality. For teams, pricing is per-user but extensibility justifies cost.
 
-Obsidian: One-time $50 purchase includes sync and publish features. No recurring costs. Add-ons are free community contributions. Most affordable for long-term ownership.
+Obsidian - One-time $50 purchase includes sync and publish features. No recurring costs. Add-ons are free community contributions. Most affordable for long-term ownership.
 
-Cryptee: Free tier offers 100MB storage. Paid plans ($99/year) include unlimited storage, password-protected documents, and collaborative folders. Mid-range pricing.
+Cryptee - Free tier offers 100MB storage. Paid plans ($99/year) include unlimited storage, password-protected documents, and collaborative folders. Mid-range pricing.
 
-Tomb: Completely free, open-source software. Only cost is infrastructure if needed. Lowest cost for command-line developers.
+Tomb - Completely free, open-source software. Only cost is infrastructure if needed. Lowest cost for command-line developers.
 
-Vim + GPG: Completely free, zero ongoing costs. Only investment is learning time.
+Vim + GPG - Completely free, zero ongoing costs. Only investment is learning time.
 
-For individuals: Obsidian ($50 one-time) offers best value
-For small teams: Standard Notes ($99/year per user) provides extensibility and team features
-For developers: Tomb or Vim + GPG for cost-free alternatives
-For organizations: Standard Notes self-hosted minimizes long-term costs
+For individuals - Obsidian ($50 one-time) offers best value
+For small teams - Standard Notes ($99/year per user) provides extensibility and team features
+For developers - Tomb or Vim + GPG for cost-free alternatives
+For organizations - Standard Notes self-hosted minimizes long-term costs
 
-Real-World Scenario: Security Researcher Workflow
+Real-World Scenario - Security Researcher Workflow
 
 A security researcher documenting zero-day vulnerabilities needs encryption, versioning, and selective sharing. Recommended approach:
 
@@ -286,7 +286,7 @@ Workflow:
 
 gpg --encrypt --recipient collab@example.com exploit-code.c
 Send exploit-code.c.gpg to collaborator
-They decrypt with: gpg --decrypt exploit-code.c.gpg > exploit-code.c
+They decrypt with - gpg --decrypt exploit-code.c.gpg > exploit-code.c
 ```
 
 Benefits:

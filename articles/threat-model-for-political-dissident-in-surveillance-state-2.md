@@ -83,7 +83,7 @@ DNS Leak Prevention
 DNS requests leak your browsing activity even over VPN. Use DNSCrypt or DNS over HTTPS with a privacy-respecting resolver:
 
 ```python
-Python example: Verify DNS resolution doesn't leak
+Python example - Verify DNS resolution doesn't leak
 import socket
 import subprocess
 
@@ -98,7 +98,7 @@ def check_dns_leak():
     # Parse result to identify DNS server used
     return result.stdout
 
-Implement: Route ALL DNS through your protected tunnel
+Implement - Route ALL DNS through your protected tunnel
 Use a local DNS forwarder like dnsmasq or cloudflared
 ```
 

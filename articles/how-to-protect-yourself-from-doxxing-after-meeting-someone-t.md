@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Doxxing Threat Model
+Step 1 - Understand the Doxxing Threat Model
 
 Doxxing involves gathering and publicly exposing someone's personal information without their consent. In the context of online dating, this typically manifests as someone you met collecting your address, workplace, social media accounts, or other identifying details, then sharing them, often as retaliation after a relationship ends poorly or as use during a dispute.
 
@@ -41,7 +41,7 @@ The information a bad actor can collect falls into several categories:
 
 Understanding what you're protecting against helps you implement appropriate countermeasures. For developers and power users, this means thinking like an attacker conducting OSINT (Open Source Intelligence) reconnaissance.
 
-Step 2: Before Meeting: Establish Information Boundaries
+Step 2 - Before Meeting: Establish Information Boundaries
 
 The most effective defense starts before you ever meet someone in person. Set clear boundaries about what information you share and when.
 
@@ -69,13 +69,13 @@ op item create --title="Dating Account Email" \
   login.password="$(openssl rand -base64 20)"
 
 Use a unique username that doesn't match your real name
-Avoid: johnsmith1985
-Better: azurewind72
+Avoid - johnsmith1985
+Better - azurewind72
 ```
 
 This separation ensures that even if one account is compromised, your primary email, GitHub, LinkedIn, and other services remain protected.
 
-Step 3: After Meeting: Immediate Post-Meeting Security Measures
+Step 3 - After Meeting: Immediate Post-Meeting Security Measures
 
 Once you've met someone in person, assume some information has been observed. This isn't about paranoia, it's about understanding realistic threat levels and implementing proportional defenses.
 
@@ -97,7 +97,7 @@ search_me() {
   open "https://duckduckgo.com/?q=${query}"
 }
 
-Usage: search_me "yourname city"
+Usage - search_me "yourname city"
 ```
 
 This helps you understand what information is publicly accessible and can inform what additional steps you need to take.
@@ -161,7 +161,7 @@ op item get "Netflix" --format json | op item edit \
   login.password="$(openssl rand -base64 24)"
 ```
 
-Step 4: Long-Term Privacy Maintenance
+Step 4 - Long-Term Privacy Maintenance
 
 Protecting yourself from doxxing requires ongoing vigilance, not just one-time fixes.
 
@@ -196,7 +196,7 @@ Set up Google Alerts for your name and variations to catch when your information
 3. Set frequency to "As it happens"
 4. Check periodically and respond to unexpected results
 
-Step 5: Digital Footprint Cleanup Tools
+Step 5 - Digital Footprint Cleanup Tools
 
 Automate the process of finding and removing information:
 
@@ -227,9 +227,9 @@ search_digital_footprint() {
 
   # Social media
   echo "=== Social Media ==="
-  echo "Search: \"$email\" site:facebook.com"
-  echo "Search: \"$email\" site:twitter.com"
-  echo "Search: \"$name\" site:linkedin.com"
+  echo "Search - \"$email\" site:facebook.com"
+  echo "Search - \"$email\" site:twitter.com"
+  echo "Search - \"$name\" site:linkedin.com"
 }
 
 Usage
@@ -238,7 +238,7 @@ search_digital_footprint "John Smith" "john@example.com"
 
 Tools like Google's Takeout let you download all your data, then you can systematically remove it.
 
-Step 6: Responding to Doxxing
+Step 6 - Responding to Doxxing
 
 If despite your precautions, you experience doxxing, act quickly:
 
@@ -248,7 +248,7 @@ If despite your precautions, you experience doxxing, act quickly:
 4. Consider legal action: Depending on jurisdiction, doxxing may violate laws
 5. Change exposed information: Update phone numbers, emails, and addresses if necessary
 
-Step 7: Legal Response Framework
+Step 7 - Legal Response Framework
 
 Understanding your legal options depends on jurisdiction:
 
@@ -309,7 +309,7 @@ threat_models = {
 }
 ```
 
-Step 8: Counter-Surveillance Techniques
+Step 8 - Counter-Surveillance Techniques
 
 If you suspect active monitoring after meeting someone:
 
@@ -348,7 +348,7 @@ Monitor network traffic
 tcpdump -i any -n 'ip and port != 53' | head -100
 ```
 
-Step 9: Create a Safe Room Setup
+Step 9 - Create a Safe Room Setup
 
 If you need to maintain contact with someone you met while protecting privacy:
 
@@ -391,7 +391,7 @@ setup_safe_device() {
 }
 ```
 
-Step 10: Monitor Services for Exposure
+Step 10 - Monitor Services for Exposure
 
 Use automated services to alert you if your information appears:
 
@@ -428,7 +428,7 @@ monitor_breaches() {
 }
 ```
 
-Step 11: Recovery from Active Doxxing Campaign
+Step 11 - Recovery from Active Doxxing Campaign
 
 If you're currently experiencing doxxing:
 

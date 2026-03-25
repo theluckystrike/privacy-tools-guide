@@ -213,7 +213,7 @@ Hardware Security Keys and Generated Passwords
 For maximum security, combine strong passwords with hardware-based authentication:
 
 ```python
-Integration pattern: Hardware key + strong password
+Integration pattern - Hardware key + strong password
 class SecureAuthenticationFlow:
     def __init__(self, password_manager, hardware_key):
         self.pm = password_manager
@@ -320,7 +320,7 @@ Handling Legacy Systems with Weak Password Requirements
 Some systems impose ridiculous password restrictions (maximum length, no special characters, etc.):
 
 ```python
-Strategy: Generate strong password, store actual version in manager
+Strategy - Generate strong password, store actual version in manager
 def generate_for_legacy_system(system_requirements):
     """
     Generate a password that meets legacy system requirements while

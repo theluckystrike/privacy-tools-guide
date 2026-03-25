@@ -28,13 +28,13 @@ No email provider protects content exchanged with Gmail or Outlook users. those 
 
 Proton Mail (Switzerland)
 
-Encryption: End-to-end encrypted storage. Messages encrypted with your public key before storage. Proton cannot read content. Proton-to-Proton messages are E2EE by default. Subject lines encrypted since 2023.
+Encryption - End-to-end encrypted storage. Messages encrypted with your public key before storage. Proton cannot read content. Proton-to-Proton messages are E2EE by default. Subject lines encrypted since 2023.
 
-Metadata: IP addresses logged for a limited period. In the 2021 activist case, Proton provided an IP address under Swiss court order.
+Metadata - IP addresses logged for a limited period. In the 2021 activist case, Proton provided an IP address under Swiss court order.
 
-Jurisdiction: Switzerland. Requires court order for disclosure. Has cooperated with Europol requests when Swiss courts approved.
+Jurisdiction - Switzerland. Requires court order for disclosure. Has cooperated with Europol requests when Swiss courts approved.
 
-Tor access: `protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion`
+Tor access - `protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion`
 
 IMAP Bridge:
 ```bash
@@ -47,35 +47,35 @@ proton-bridge --cli
 
 Tuta (Germany)
 
-Encryption: Encrypts subject, body, and attachments using AES-128 + RSA-2048. Also encrypts calendar and contacts.
+Encryption - Encrypts subject, body, and attachments using AES-128 + RSA-2048. Also encrypts calendar and contacts.
 
-No IMAP/SMTP: Tuta does not offer IMAP/SMTP. you must use their app or webmail. This prevents handling decrypted content through third-party clients.
+No IMAP/SMTP - Tuta does not offer IMAP/SMTP. you must use their app or webmail. This prevents handling decrypted content through third-party clients.
 
-Jurisdiction: Germany (EU). GDPR protections apply but German courts can compel disclosure.
+Jurisdiction - Germany (EU). GDPR protections apply but German courts can compel disclosure.
 
-Key difference: Free tier with encryption. Does not support custom IMAP/SMTP access.
+Key difference - Free tier with encryption. Does not support custom IMAP/SMTP access.
 
 Fastmail (Australia)
 
-Encryption: No E2EE. Fastmail can read your messages. Standard hosted email with a strong privacy policy but not end-to-end encrypted.
+Encryption - No E2EE. Fastmail can read your messages. Standard hosted email with a strong privacy policy but not end-to-end encrypted.
 
-Jurisdiction: Australia (Five Eyes member). Australian authorities can compel disclosure without notifying you.
+Jurisdiction - Australia (Five Eyes member). Australian authorities can compel disclosure without notifying you.
 
-When to use: When you want reliable, ad-free email from a reputable company that doesn't monetize your data. but don't need encryption from the provider's access.
+When to use - When you want reliable, ad-free email from a reputable company that doesn't monetize your data. but don't need encryption from the provider's access.
 
 Runbox (Norway)
 
-Encryption: No E2EE by default. Supports PGP via plugins.
+Encryption - No E2EE by default. Supports PGP via plugins.
 
-Jurisdiction: Norway. Not a Five Eyes member. Strong privacy culture.
+Jurisdiction - Norway. Not a Five Eyes member. Strong privacy culture.
 
 Self-Hosted Options
 
 ```bash
-Mail-in-a-Box: full mail server in one script
+Mail-in-a-Box - full mail server in one script
 curl -s https://mailinabox.email/setup.sh | sudo bash
 
-Stalwart: modern mail server with JMAP support
+Stalwart - modern mail server with JMAP support
 Download from stalw.art
 ```
 
@@ -101,7 +101,7 @@ Verify Proton .onion is reachable via Tor
 torsocks curl -sI https://protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion/ | head -3
 ```
 
-Email Encryption: E2EE vs. Conventional
+Email Encryption - E2EE vs. Conventional
 
 The distinction between "encrypted" email providers is critical:
 
@@ -216,7 +216,7 @@ The Gmail user's view shows a link to Proton to decrypt (or plaintext if Proton 
 
 Only E2EE between matching providers ensures both sides see encrypted content.
 
-Proton Mail vs Tuta: Head-to-Head for 2026
+Proton Mail vs Tuta - Head-to-Head for 2026
 
 Choosing between them:
 
@@ -240,7 +240,7 @@ Both are excellent choices. The decision comes down to:
 - Subject encryption matters → Proton
 - Contacts/calendar encryption matters → Tuta
 
-For a one-person household: Tuta free tier is sufficient.
+For a one-person household - Tuta free tier is sufficient.
 For tech-savvy users needing flexibility: Proton Mail Plus ($4.99/month).
 
 Testing Provider Privacy Claims
@@ -248,16 +248,16 @@ Testing Provider Privacy Claims
 Don't trust marketing. Verify with tests:
 
 ```bash
-Test 1: Check Proton subject encryption
+Test 1 - Check Proton subject encryption
 Send email from Proton to Proton, view raw message source
 The subject line should be unreadable (encrypted)
 
-Test 2: Check Tuta metadata protection
+Test 2 - Check Tuta metadata protection
 Send email from Tuta to Tuta
 Wait 24 hours, request your data via Settings > Data export
 You should not see IP address logs
 
-Test 3: Verify no cloud backup of contacts
+Test 3 - Verify no cloud backup of contacts
 Add a contact in your email provider
 Check if that contact appears in Google Contacts, Apple Contacts
 It should not (provider should not share with Apple/Google)
@@ -274,7 +274,7 @@ Moving from Gmail to privacy-focused email:
  - Keep Gmail active for 6 months to catch forgotten subscriptions
 4. Update contacts gradually. no rush to tell everyone your new email
 5. Set up subaddressing on new provider (if supported):
- - Proton: `yourname+service@protonmail.com` for service-specific addresses
+ - Proton - `yourname+service@protonmail.com` for service-specific addresses
  - Tuta: Similar feature available
 6. Archive Gmail after 1 year. keep it read-only for reference
 

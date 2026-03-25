@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Threat Model
+Step 1 - Understand the Threat Model
 
 When using Tor in a country that actively blocks or criminalizes its use, you face three distinct threat categories: network-level blocking, device forensics, and behavioral detection. Each requires different countermeasures.
 
@@ -43,7 +43,7 @@ Network-level blocking involves ISP-level filtering that identifies and blocks T
 
 Effective protection requires addressing all three vectors simultaneously.
 
-Step 2: Obfs4 Bridge Configuration
+Step 2 - Obfs4 Bridge Configuration
 
 Standard Tor bridges are often blocked within days of publication in restrictive jurisdictions. Obfs4 bridges provide an additional layer of obfuscation that makes Tor traffic appear like normal TLS connections. Unlike pluggable transports that were previously popular, obfs4 has proven more resilient against automated blocking systems.
 
@@ -60,7 +60,7 @@ ClientTransportPlugin obfs4 exec /usr/local/bin/obfs4proxy
 
 The `iat-mode=2` parameter enables polymorphic traffic padding that randomizes packet sizes and timing, making traffic analysis significantly more difficult.
 
-Step 3: Pluggable Transports and Meek
+Step 3 - Pluggable Transports and Meek
 
 For environments with sophisticated filtering, the meek transport provides an additional layer. Meek works by wrapping Tor traffic inside HTTPS requests to legitimate cloud services, making it appear as normal web browsing to network observers.
 
@@ -74,7 +74,7 @@ ClientTransportPlugin meek_lite exec /usr/local/bin/meek-client --url=https://me
 
 This configuration routes your Tor traffic through Microsoft's Azure content delivery network, which is unlikely to be blocked without causing significant collateral damage to legitimate services.
 
-Step 4: Tor Browser Hardening
+Step 4 - Tor Browser Hardening
 
 Beyond network configuration, Tor Browser itself requires hardening for high-risk environments. Default settings prioritize usability over maximum security, so power users should adjust several parameters.
 
@@ -101,7 +101,7 @@ docker run --rm -it --cap-add NET_ADMIN \
   kalilinux/kali-rolling /bin/bash
 ```
 
-Step 5: Network Isolation Techniques
+Step 5 - Network Isolation Techniques
 
 Your Tor traffic can be compromised by DNS leaks, WebRTC exposure, and IPv6 leaks. Verify your configuration using the Tor Browser's built-in check at check.torproject.org, but be aware that accessing this site itself may be monitored.
 
@@ -137,7 +137,7 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1
 ```
 
-Step 6: Operational Security Practices
+Step 6 - Operational Security Practices
 
 Technical configuration alone does not ensure safety. Operational security practices are equally important in high-risk environments.
 
@@ -154,7 +154,7 @@ echo "get transport obfs4" | mail -s "get transport obfs4" bridges@torproject.or
 
 Monitor your network connections using tools like Wireshark or nethogs to ensure traffic is actually being routed through Tor. Unexpected direct connections can expose your activities.
 
-Step 7: Backup Communication Channels
+Step 7 - Backup Communication Channels
 
 In case your Tor connection fails or is detected, establish out-of-band communication channels using alternative methods. Signal, with disappearing messages enabled, provides end-to-end encryption for critical communications. For maximum security, use encrypted email with PGP through a provider that doesn't log IP addresses.
 
@@ -189,11 +189,11 @@ Advanced users can request private bridges directly from the Tor Project's commu
 
 ```bash
 Request private bridges (requires anonymized email channel)
-Contact: bridges@torproject.org with subject "get ipv6"
+Contact - bridges@torproject.org with subject "get ipv6"
 Response includes ~3 private bridge addresses
 
 These are not published anywhere, making them far more resilient
-Cost: Free, but requires careful operational security
+Cost - Free, but requires careful operational security
 ```
 
 Private bridges are significantly harder to block because they're never public. This makes them ideal for high-risk environments.
@@ -223,9 +223,9 @@ The "PublicServer 0" setting means this bridge won't be published
 Only you and your trusted contacts have the bridge information
 ```
 
-Cost: $5-20/month for a VPS. Benefit: A bridge that's completely under your control, impossible for an ISP to block without blocking your VPS provider's entire IP range.
+Cost - $5-20/month for a VPS. Benefit - A bridge that's completely under your control, impossible for an ISP to block without blocking your VPS provider's entire IP range.
 
-Step 8: Detecting and Responding to ISP Blocking
+Step 8 - Detecting and Responding to ISP Blocking
 
 Recognizing when you're being blocked is critical for adapting your strategy:
 
@@ -268,7 +268,7 @@ sudo ip link set dev eth0 mtu 1500
 If you have multiple network interfaces, add obfs4 padding
 This is already enabled in iat-mode=2, but verify:
 grep "iat-mode" /etc/tor/torrc
-Should show: iat-mode=2
+Should show - iat-mode=2
 ```
 
 Advanced Evasion Techniques
@@ -303,7 +303,7 @@ Tor Over VPN (Controversial)
 Some argue running Tor over a VPN adds a layer of obfuscation. However, this has significant downsides:
 
 ```bash
-Architecture: Your machine → VPN → ISP → Tor Network
+Architecture - Your machine → VPN → ISP → Tor Network
 
 RISKS:
 - VPN provider can see you're using Tor (problematic in restrictive countries)
@@ -320,7 +320,7 @@ but not thorough government surveillance
 
 This is controversial because it introduces a new choke point. Only use this if your ISP blocking is the primary threat and you trust your VPN provider more than your ISP.
 
-Step 9: Monitor for Detection
+Step 9 - Monitor for Detection
 
 Staying safe requires assuming you might be detected despite precautions:
 
@@ -352,7 +352,7 @@ Monitor tor logs in real-time
 tail -f /var/log/tor/log
 ```
 
-Step 10: Safe Content Consumption Over Tor
+Step 10 - Safe Content Consumption Over Tor
 
 Even with perfect technical security, behavioral patterns can reveal identity. Security researchers have demonstrated that writing style, posting times, and content interests can deanonymize users.
 
@@ -368,14 +368,14 @@ Operational Security Beyond Technology
 Creating completely separate personas for different activities
 Each with different SSH keys, VPN configurations, and behavioral patterns
 
-Persona A (whistleblowing): Check news, send documents, then disconnect
-Persona B (private research): Research-only activities, different bridge
-Persona C (personal): Never used for sensitive activities
+Persona A (whistleblowing) - Check news, send documents, then disconnect
+Persona B (private research) - Research-only activities, different bridge
+Persona C (personal) - Never used for sensitive activities
 
 Never share cookies, browser profiles, or configurations between personas
 ```
 
-Step 11: Contingency Planning
+Step 11 - Contingency Planning
 
 Assume your Tor usage will be detected at some point. Have an exit plan:
 
@@ -404,8 +404,8 @@ Tails provides by default:
 - Automatic disk wiping on shutdown
 - No persistent data stored
 
-Download: tails.boum.org
-Burn to USB: sudo dd if=tails.iso of=/dev/sda bs=4M
+Download - tails.boum.org
+Burn to USB - sudo dd if=tails.iso of=/dev/sda bs=4M
 Verify checksums before burning
 
 This means no data persists even if authorities seize the machine
@@ -413,7 +413,7 @@ This means no data persists even if authorities seize the machine
 
 Tails is recommended for anyone in truly high-risk environments.
 
-Step 12: Ongoing Security Maintenance
+Step 12 - Ongoing Security Maintenance
 
 Tor and bridge technology evolve as censors adapt. Staying safe requires regular updates:
 
@@ -432,7 +432,7 @@ Even private bridges can be discovered through correlation attacks
 echo "get transport obfs4" | mail -s "get transport obfs4" bridges@torproject.org
 ```
 
-Step 13: Privacy Considerations Beyond Tor
+Step 13 - Privacy Considerations Beyond Tor
 
 Tor protects your network routing, but it doesn't protect against:
 

@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Jitsi Meet Encryption
+Step 1 - Understand Jitsi Meet Encryption
 
 Jitsi Meet provides two layers of encryption: transport layer security (TLS) for the connection between clients and the server, and end-to-end encryption (E2EE) for the actual media streams. The distinction matters significantly for privacy-conscious deployments.
 
@@ -67,7 +67,7 @@ mkdir -p ~/jitsi/{/.jitsi-meet-cfg,/{transcripts,recordings,logs}}
 cd ~/jitsi
 ```
 
-Step 2: Docker Compose Configuration
+Step 2 - Docker Compose Configuration
 
 Create your docker-compose.yml file with production-ready settings:
 
@@ -163,7 +163,7 @@ HTTPS_PORT=443
 RESTART_POLICY=unless-stopped
 ```
 
-Step 3: Enable End-to-End Encryption
+Step 3 - Enable End-to-End Encryption
 
 Jitsi Meet's E2EE requires no additional configuration in recent versions, it activates through the UI. However, certain settings ensure optimal operation:
 
@@ -173,7 +173,7 @@ Note that E2EE has trade-offs. Screen sharing quality may decrease, and some fea
 
 For organizations requiring E2EE, communicate these limitations to users before deployment.
 
-Step 4: User Authentication Setup
+Step 4 - User Authentication Setup
 
 Internal authentication requires users to register before hosting meetings. Configure this in the Prosody configuration:
 
@@ -186,7 +186,7 @@ Host authentication prevents unauthorized users from starting meetings. Guests c
 
 For tighter control, consider LDAP or OAuth integration by modifying the prosody configuration files in `.jitsi-meet-cfg/prosody/`.
 
-Step 5: TURN Server Configuration
+Step 5 - TURN Server Configuration
 
 TURN servers enable connectivity when participants are behind restrictive firewalls or NAT. Without a TURN server, some users cannot establish peer connections.
 
@@ -215,7 +215,7 @@ TURN_SECRET=your_turn_secret
 
 Generate the secret using a random string generator and store it securely.
 
-Step 6: Network and Firewall Configuration
+Step 6 - Network and Firewall Configuration
 
 For production deployments, configure your firewall appropriately:
 
@@ -231,7 +231,7 @@ sudo ufw enable
 
 If using a cloud provider, ensure security groups permit this traffic.
 
-Step 7: SSL Certificate Management
+Step 7 - SSL Certificate Management
 
 The configuration enables Let's Encrypt automatically on first deployment. For production environments, consider using certbot for manual certificate management:
 
@@ -241,7 +241,7 @@ sudo certbot certonly --webroot -w /var/www/html -d jitsi.yourdomain.com
 
 Copy the certificates to your Jitsi configuration and update the web container environment to point to them instead of using automatic Let's Encrypt.
 
-Step 8: Starting and Testing Your Deployment
+Step 8 - Starting and Testing Your Deployment
 
 Launch the stack:
 

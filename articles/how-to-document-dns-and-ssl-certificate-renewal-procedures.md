@@ -19,13 +19,13 @@ voice-checked: true
 - Verify DNS resolution: dig +short example.com
 - Check current nameservers: dig +short NS example.com
 
-STEP 2: Communication (Immediate)
+STEP 2 - Communication (Immediate)
 --------------------------------
 - Notify: [ ] CTO [ ] DevOps Lead [ ] Security Team
 - Create incident ticket: [JIRA link]
 - Update status page: [link]
 
-STEP 3: Certificate Renewal
+STEP 3 - Certificate Renewal
 ---------------------------
 [ ] Access certificate authority portal: [URL]
 [ ] Login using credentials from: [password manager / secrets vault]
@@ -33,13 +33,13 @@ STEP 3: Certificate Renewal
 [ ] Deploy new certificate to: [server list]
 [ ] Verify installation: openssl s_client -connect example.com:443
 
-STEP 4: DNS Verification
+STEP 4 - DNS Verification
 ------------------------
 [ ] Verify all DNS records resolve correctly
 [ ] Check DNSSEC if enabled: dig +dnssec example.com
 [ ] Verify CDN propagation if applicable
 
-STEP 5: Post-Renewal Tasks
+STEP 5 - Post-Renewal Tasks
 --------------------------
 - Update certificate inventory with new expiry date
 - Close incident ticket
@@ -53,11 +53,11 @@ For scheduled renewals, use this checklist:
 ```
 DNS/SSL SCHEDULED RENEWAL CHECKLIST
 
-Certificate: [domain name]
-Current Expiry: [date]
-New Expiry: [date]
-Scheduled Date: [date]
-Assigned To: [name]
+Certificate - [domain name]
+Current Expiry - [date]
+New Expiry - [date]
+Scheduled Date - [date]
+Assigned To - [name]
 
 T-MINUS 30 DAYS
 [ ] Receive expiration alert
@@ -85,7 +85,7 @@ T-PLUS 1 DAY
 [ ] Close maintenance ticket
 ```
 
-Step 4: Documentation Maintenance
+Step 4 - Documentation Maintenance
 
 Documentation requires ongoing maintenance to remain useful.
 
@@ -119,7 +119,7 @@ git commit -m "Add new subdomain for api.example.com
 git push origin main
 ```
 
-Step 5: Tools and Automation
+Step 5 - Tools and Automation
 
 Consider these tools to improve documentation and reduce manual effort:
 

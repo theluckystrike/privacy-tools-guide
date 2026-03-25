@@ -29,7 +29,7 @@ For developers, password managers serve more than just storing website credentia
 
 The key considerations include end-to-end encryption, cross-platform availability, open-source transparency, and the ability to export your data if needed. Subscription-based models often lock advanced features behind paywalls, free alternatives can still provide full functionality without these limitations.
 
-Bitwarden: Open-Source Excellence
+Bitwarden - Open-Source Excellence
 
 Bitwarden stands out as the leading open-source password manager with a generous free tier. The free plan includes unlimited passwords, secure notes, and identity storage across all your devices. Unlike many competitors, Bitwarden's free tier doesn't restrict you to a single device type or impose sync limitations.
 
@@ -72,7 +72,7 @@ This pattern allows treating Bitwarden as a credential store for infrastructure 
 
 Bitwarden's enterprise options extend to team management. For small teams, Bitwarden Organizations provide shared password collections while maintaining individual access controls. Each team member uses their own master password, but the organization vault contains shared credentials.
 
-KeePass: Local-First Flexibility
+KeePass - Local-First Flexibility
 
 KeePass takes a different approach by emphasizing local storage. Your password database resides entirely on your machine, encrypted with your master password. No cloud sync means no external servers, and no subscription fees ever.
 
@@ -113,7 +113,7 @@ This approach allows sharing encrypted credentials across development teams whil
 
 For team collaboration, KeePass supports shared databases on network drives or cloud storage. Multiple users can access the same database, though concurrent editing can cause synchronization challenges. More sophisticated setups use dedicated password management servers that support KeePass databases.
 
-Proton Pass: Privacy-Focused Free Tier
+Proton Pass - Privacy-Focused Free Tier
 
 Proton Pass, developed by the same team behind Proton Mail, offers a free tier that includes unlimited passwords and devices. The service uses end-to-end encryption with zero-knowledge architecture, Proton itself cannot access your data.
 
@@ -128,11 +128,11 @@ alias = generateAlias('github')
 
 The free tier supports two-factor authentication codes, a feature often locked behind subscriptions in other managers. Proton's open-source background and Swiss-based infrastructure appeal to developers prioritizing data privacy.
 
-Proton Pass integrates with Proton Mail, allowing simple password and email alias management. For users building privacy infrastructure using Proton products, Pass extends that ecosystem without additional costs.
+Proton Pass integrates with Proton Mail, allowing simple password and email alias management. For users building privacy infrastructure using Proton products, Pass extends that environment without additional costs.
 
 The zero-knowledge architecture means Proton cannot see your passwords even if requested by law enforcement or compelled by court order. Proton's Swiss jurisdiction and legal commitment to user privacy complement this technical implementation. However, this also means account recovery without your master password is impossible, losing your password results in total vault loss.
 
-Standard Notes: Encrypted Notes as Password Storage
+Standard Notes - Encrypted Notes as Password Storage
 
 While primarily a notes app, Standard Notes can function as a free password manager through its encrypted notes feature. The free tier includes sync across all devices and uses end-to-end encryption.
 
@@ -173,7 +173,7 @@ retention: 30 days
 
 Standard Notes treats notes as individual encrypted objects, allowing granular access control and sharing. Unlike password managers, notes support markdown formatting and rich text organization.
 
-The downside: Standard Notes provides no specialized password management features, no autofill, no form filling, no breach notification. For pure password management, specialized managers offer better user experience. Standard Notes serves teams combining note-taking with credential storage.
+The downside - Standard Notes provides no specialized password management features, no autofill, no form filling, no breach notification. For pure password management, specialized managers offer better user experience. Standard Notes serves teams combining note-taking with credential storage.
 
 Comparing Feature Sets
 
@@ -191,13 +191,13 @@ Threat Model Considerations
 
 Choosing a password manager depends on your threat model:
 
-Low-security environment: Bitwarden Free provides adequate protection for most users. Cloud backup offers convenience, and the open-source code provides transparency.
+Low-security environment - Bitwarden Free provides adequate protection for most users. Cloud backup offers convenience, and the open-source code provides transparency.
 
-High-security environment: KeePassXC with local storage eliminates cloud infrastructure risk. You control encryption and backup procedures completely.
+High-security environment - KeePassXC with local storage eliminates cloud infrastructure risk. You control encryption and backup procedures completely.
 
-Privacy-first environment: Proton Pass or encrypted notes using Standard Notes prioritize anonymity. Zero-knowledge architecture means providers cannot access your data.
+Privacy-first environment - Proton Pass or encrypted notes using Standard Notes prioritize anonymity. Zero-knowledge architecture means providers cannot access your data.
 
-Compliance requirements: Organizations requiring audit logging and access controls might prefer Bitwarden with Organizations, which provides audit trails and role-based access.
+Compliance requirements - Organizations requiring audit logging and access controls might prefer Bitwarden with Organizations, which provides audit trails and role-based access.
 
 Evaluate your specific risk factors:
 - Are you protecting against local attackers or remote threats?
@@ -248,16 +248,16 @@ Generate secure passphrase with pwgen
 pwgen -s 20 1
 
 Or using diceware for memorable passphrases
-Word list: https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt
+Word list - https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt
 Roll dice 5 times, look up words, concatenate
 "correct horse battery staple" (4 words, 51.7 bits entropy)
 ```
 
-Master password security: Your master password should be strong enough to resist brute-force attacks but memorable enough to recall. Industry guidance suggests 128-bit entropy as adequate security. A random passphrase of 4-5 words from a large dictionary provides this level of security while remaining memorable.
+Master password security - Your master password should be strong enough to resist brute-force attacks but memorable enough to recall. Industry guidance suggests 128-bit entropy as adequate security. A random passphrase of 4-5 words from a large dictionary provides this level of security while remaining memorable.
 
 Never write your master password down, share it, or store it in your password manager. The master password is your single point of failure, if compromised, all stored credentials are exposed.
 
-Compromise scenarios: If you suspect your master password is compromised:
+Compromise scenarios - If you suspect your master password is compromised:
 
 1. Immediately change all passwords stored in the vault
 2. Change your master password

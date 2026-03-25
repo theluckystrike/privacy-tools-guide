@@ -170,7 +170,7 @@ Data Minimization
 Collect only what you need. Review your data models:
 
 ```python
-Before: Collecting excessive data
+Before - Collecting excessive data
 class User:
     name = StringField()
     email = StringField()
@@ -179,7 +179,7 @@ class User:
     browsing_history = ListField()  # Massive data collection
     precise_location = GeoPointField()  # Sensitive data
 
-After: Minimal necessary data
+After - Minimal necessary data
 class User:
     email = StringField()  # Required for account
     display_name = StringField()  # Optional, user-provided
@@ -272,7 +272,7 @@ class CCPAComplianceLogger:
 
     def log_request_received(self, request_id, request_type, consumer_id):
         logging.info(f"CCPA Request: {request_id} | Type: {request_type} | "
-                    f"Consumer: {consumer_id[:8]}... | Date: {datetime.utcnow()}")
+                    f"Consumer - {consumer_id[:8]}... | Date: {datetime.utcnow()}")
 
     def log_request_fulfilled(self, request_id, data_returned):
         logging.info(f"CCPA Fulfilled: {request_id} | "
@@ -280,7 +280,7 @@ class CCPAComplianceLogger:
 
     def log_deletion_completed(self, request_id, consumer_id, systems_affected):
         logging.info(f"CCPA Deletion: {request_id} | "
-                    f"Consumer: {consumer_id[:8]}... | Systems: {systems_affected}")
+                    f"Consumer - {consumer_id[:8]}... | Systems: {systems_affected}")
 ```
 
 Non-Compliance Consequences

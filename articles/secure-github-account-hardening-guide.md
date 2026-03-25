@@ -19,7 +19,7 @@ How to Secure Your GitHub Account
 
 GitHub accounts hold source code, credentials, deployment keys, and CI/CD pipelines. A compromised account is a supply chain attack against everyone who uses your code. This guide covers the full hardening checklist.
 
-Step 1: Enable Hardware-Key 2FA
+Step 1 - Enable Hardware-Key 2FA
 
 GitHub supports FIDO2/WebAuthn security keys (YubiKey, Google Titan). This is strictly better than TOTP apps, which are phishable.
 
@@ -39,7 +39,7 @@ gh api user/sessions --jq '.[].created_at'
 
 If you cannot use a hardware key, use an authenticator app (Aegis on Android, Raivo on iOS). Never use SMS 2FA. it is vulnerable to SIM swapping.
 
-Step 2: Audit and Rotate SSH Keys
+Step 2 - Audit and Rotate SSH Keys
 
 ```bash
 List all SSH keys on your account
@@ -72,7 +72,7 @@ ssh -T git@github.com
 
 Rotate keys at least annually. If you ever share a machine with someone else, rotate immediately.
 
-Step 3: Audit Personal Access Tokens
+Step 3 - Audit Personal Access Tokens
 
 PATs are the most common attack vector. developers create them, forget them, and they live forever.
 
@@ -97,10 +97,10 @@ gh auth refresh --scopes repo  # refresh with explicit scopes only if needed
 
 Audit your shell history for leaked tokens
 grep -E 'ghp_|github_pat_' ~/.bash_history ~/.zsh_history 2>/dev/null
-If found: rotate the token immediately, then clear history
+If found - rotate the token immediately, then clear history
 ```
 
-Step 4: Enable Secret Scanning and Push Protection
+Step 4 - Enable Secret Scanning and Push Protection
 
 Secret scanning detects committed credentials in public and private repos.
 
@@ -125,7 +125,7 @@ List detected secrets across an org
 gh api /orgs/{org}/secret-scanning/alerts --jq '.[] | "\(.secret_type) \(.state) \(.html_url)"'
 ```
 
-Step 5: Configure Branch Protection Rules
+Step 5 - Configure Branch Protection Rules
 
 Protect your main branch from force pushes and direct commits.
 
@@ -157,7 +157,7 @@ gh api /repos/{owner}/{repo}/branches/main/protection --jq '{
 }'
 ```
 
-Step 6: Audit OAuth App Access
+Step 6 - Audit OAuth App Access
 
 Third-party apps that have OAuth access to your GitHub account can read private repos.
 
@@ -174,7 +174,7 @@ gh api -X DELETE /user/installations/{installation_id}
 
 Revoke access for any app you no longer actively use.
 
-Step 7: Harden Actions Permissions
+Step 7 - Harden Actions Permissions
 
 GitHub Actions workflows that run on pull requests from forks can exfiltrate secrets if misconfigured.
 
@@ -204,7 +204,7 @@ grep -r "pull_request_target" /path/to/repo/.github/workflows/
 grep -r "ref: \${{ github.event.pull_request.head.ref }}" /path/to/repo/.github/workflows/
 ```
 
-Step 8: Configure Vigilant Mode for Commit Signing
+Step 8 - Configure Vigilant Mode for Commit Signing
 
 Vigilant mode marks any unsigned commit as "unverified" on your profile. useful for detecting spoofed commits.
 
@@ -224,7 +224,7 @@ git commit --allow-empty -m "test: verify commit signing"
 git log --show-signature -1
 ```
 
-Step 9: Regular Security Audit Script
+Step 9 - Regular Security Audit Script
 
 ```bash
 #!/bin/bash

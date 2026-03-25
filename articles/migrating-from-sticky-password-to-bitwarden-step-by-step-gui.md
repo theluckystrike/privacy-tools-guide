@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Migration Challenge
+Step 1 - Understand the Migration Challenge
 
 Sticky Password stores your data in a proprietary format, while Bitwarden supports various import formats including CSV, JSON, and KDBX (Keepass). The migration involves exporting your data from Sticky Password, converting it to a Bitwarden-compatible format, and then importing it into Bitwarden. Unlike some competitors, Bitwarden provides multiple import pathways that accommodate different use cases.
 
 Before starting the migration, ensure you have both applications installed and your Sticky Password master password available. This process requires temporary storage of your passwords in an intermediate format, so work in a secure environment and delete temporary files immediately after completing the migration.
 
-Step 2: Exporting Data from Sticky Password
+Step 2 - Exporting Data from Sticky Password
 
 Sticky Password provides an export feature that generates a CSV file containing your stored credentials. Launch the Sticky Password application and navigate to the menu options. The exact location varies slightly depending on your version, but typically you will find this under Settings or the main menu.
 
@@ -55,7 +55,7 @@ ls -la sticky-password-export.csv
 head -5 sticky-password-export.csv
 ```
 
-Step 3: Preparing Data for Bitwarden Import
+Step 3 - Preparing Data for Bitwarden Import
 
 Bitwarden accepts CSV imports directly, which simplifies the process considerably. However, you may need to adjust the column mapping to match Bitwarden's expected format. The required columns for a standard Bitwarden import include:
 
@@ -134,7 +134,7 @@ Save this script as `convert.py` and run it with your export files:
 python3 convert.py sticky-password-export.csv bitwarden-import.csv
 ```
 
-Step 4: Importing into Bitwarden
+Step 4 - Importing into Bitwarden
 
 Once your data is in the correct format, importing into Bitwarden is straightforward. You can use either the web interface, desktop application, or CLI. For developers who prefer command-line workflows, the Bitwarden CLI provides efficient batch import capabilities.
 
@@ -175,7 +175,7 @@ Using the Web Interface
 
 Alternatively, log into vault.bitwarden.com and navigate to Settings > Import Data. Select "Bitwarden (CSV)" as the format and upload your converted file. The web interface provides visual feedback during import and displays a summary of imported items.
 
-Step 5: Verify Your Migration
+Step 5 - Verify Your Migration
 
 After importing, verify the integrity of your migrated data. Check a sample of entries to confirm usernames, passwords, and URLs transferred correctly. Pay particular attention to entries with special characters in passwords, as these sometimes cause encoding issues during conversion.
 
@@ -186,7 +186,7 @@ bw list items --search "import" | head -20
 
 Review folders and favorites if you used these organizational features in Sticky Password. The mapping script may require adjustment if these did not transfer correctly.
 
-Step 6: Cleaning Up
+Step 6 - Cleaning Up
 
 Delete all temporary files containing your passwords:
 
@@ -203,7 +203,7 @@ bw lock
 bw logout
 ```
 
-Step 7: Post-Migration Considerations
+Step 7 - Post-Migration Considerations
 
 After successfully migrating, take time to update your browser extensions and ensure automatic fill functionality works correctly. You may also want to enable two-factor authentication on your Bitwarden account if you have not already done so.
 

@@ -49,7 +49,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install VeraCrypt
+Step 1 - Install VeraCrypt
 
 Ubuntu/Debian:
 
@@ -75,11 +75,11 @@ macOS (Homebrew):
 brew install --cask veracrypt
 ```
 
-Windows: Download the installer from veracrypt.fr, verify the PGP signature, run the installer.
+Windows - Download the installer from veracrypt.fr, verify the PGP signature, run the installer.
 
 ---
 
-Step 2: Identify Your USB Drive
+Step 2 - Identify Your USB Drive
 
 Before formatting, identify the correct device:
 
@@ -100,7 +100,7 @@ Encrypting the wrong device wipes it. Double-check the device name.
 
 ---
 
-Step 3: Create a Fully Encrypted USB Partition
+Step 3 - Create a Fully Encrypted USB Partition
 
 Using the VeraCrypt GUI
 
@@ -136,7 +136,7 @@ veracrypt --text -d /mnt/usb
 
 ---
 
-Step 4: Set Up a Hidden Volume
+Step 4 - Set Up a Hidden Volume
 
 A hidden volume lets you reveal a decoy passphrase under duress while protecting the real data. The outer volume contains believable but non-sensitive files. The inner hidden volume (at the end of the drive) holds the real data.
 
@@ -161,7 +161,7 @@ When you mount with passphrase A, you see decoys. With passphrase B, you see rea
 
 ---
 
-Step 5: Use Keyfiles for Stronger Authentication
+Step 5 - Use Keyfiles for Stronger Authentication
 
 A keyfile is a file (image, binary, anything) that acts as a second factor. Without it, even the correct passphrase fails.
 
@@ -179,17 +179,17 @@ Keep the keyfile separate from the USB drive. store it on your main machine or i
 
 ---
 
-Step 6: Cross-Platform Access
+Step 6 - Cross-Platform Access
 
 exFAT formatted encrypted volumes work on Linux, macOS, and Windows.
 
 ```bash
-Linux: check exFAT tools are installed
+Linux - check exFAT tools are installed
 sudo apt install exfat-fuse exfat-utils   # Debian/Ubuntu
 sudo pacman -S exfatprogs                  # Arch
 
 macOS: exFAT support is built-in
-Windows: exFAT is supported natively
+Windows - exFAT is supported natively
 
 Mount on Linux
 veracrypt --text /dev/sdb /mnt/usb
@@ -205,7 +205,7 @@ On Windows, VeraCrypt integrates as a system tray app. Use Select Device → pic
 
 ---
 
-Step 7: Traveler Mode (Windows-Only)
+Step 7 - Traveler Mode (Windows-Only)
 
 If you need to use the encrypted USB on a Windows machine without installing VeraCrypt, use Traveler mode:
 
@@ -219,7 +219,7 @@ Traveler mode requires admin rights on the target machine.
 
 ---
 
-Step 8: Perform Maintenance and Recovery
+Step 8 - Perform Maintenance and Recovery
 
 ```bash
 Change passphrase (without re-encrypting data)

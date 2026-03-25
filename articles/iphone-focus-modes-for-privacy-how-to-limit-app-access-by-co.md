@@ -20,9 +20,9 @@ Use iPhone Focus Modes to limit app notifications and access by context, create 
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Advanced: Using Shortcuts for Conditional App Access](#advanced-using-shortcuts-for-conditional-app-access)
+- [Advanced - Using Shortcuts for Conditional App Access](#advanced-using-shortcuts-for-conditional-app-access)
 - [Best Practices for Privacy-Focused Focus Modes](#best-practices-for-privacy-focused-focus-modes)
-- [Threat Model: Context-Based Information Leakage](#threat-model-context-based-information-leakage)
+- [Threat Model - Context-Based Information Leakage](#threat-model-context-based-information-leakage)
 - [Advanced Focus Mode Configurations](#advanced-focus-mode-configurations)
 - [Troubleshooting Focus Mode Privacy](#troubleshooting-focus-mode-privacy)
 
@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Focus Mode Privacy Controls
+Step 1 - Understand Focus Mode Privacy Controls
 
 Focus Modes operate at the system level on iOS, allowing you to create custom modes that filter notifications and restrict app functionality. Each Focus Mode can be configured to:
 
@@ -47,7 +47,7 @@ Focus Modes operate at the system level on iOS, allowing you to create custom mo
 
 For privacy-conscious users, the ability to create context-specific restrictions means you can prevent sensitive apps from alerting you in public or work environments while maintaining full functionality when you're in a private setting.
 
-Step 2: Create Privacy-Focused Focus Modes
+Step 2 - Create Privacy-Focused Focus Modes
 
 The native Settings app provides the interface for creating Focus Modes, but power users can use Shortcuts automation to create more sophisticated rules. Here's how to set up a basic privacy-focused Focus Mode:
 
@@ -57,7 +57,7 @@ The native Settings app provides the interface for creating Focus Modes, but pow
 4. Configure allowed apps and contacts
 5. Enable Lock Screen dimming to hide sensitive content
 
-Step 3: Automate Focus Mode Switching
+Step 3 - Automate Focus Mode Switching
 
 For developers who want programmatic control, Shortcuts provides automation capabilities. You can create automation rules that switch Focus Modes based on:
 
@@ -74,7 +74,7 @@ Then Set Focus to [Work Mode] Off
 And Set Focus to [Personal] On
 ```
 
-Advanced: Using Shortcuts for Conditional App Access
+Advanced - Using Shortcuts for Conditional App Access
 
 While iOS doesn't provide direct APIs to block app launches, you can create workflows that warn you before opening certain apps in specific contexts. Create a Shortcut that:
 
@@ -92,7 +92,7 @@ Else
 End
 ```
 
-Step 4: Focus Mode and Notification Privacy
+Step 4 - Focus Mode and Notification Privacy
 
 The most powerful privacy feature in Focus Modes is notification filtering. When properly configured, a Focus Mode can:
 
@@ -103,7 +103,7 @@ The most powerful privacy feature in Focus Modes is notification filtering. When
 
 This is particularly useful when working on sensitive projects or when you need to maintain privacy in shared spaces.
 
-Step 5: Implementing Context-Aware Notifications
+Step 5 - Implementing Context-Aware Notifications
 
 For developers building iOS apps, respecting Focus Mode settings is built into the system. However, you can enhance your app's privacy behavior by:
 
@@ -135,17 +135,17 @@ Use a "Public" mode for when you're in shared spaces, blocking apps that contain
 
 Implement a "Development" mode if you're testing apps, silencing non-essential notifications to maintain focus and prevent accidental interruption during critical workflows.
 
-Threat Model: Context-Based Information Leakage
+Threat Model - Context-Based Information Leakage
 
 Focus Modes address a specific threat: apps revealing your context (work, home, location, activity) through notifications. Consider these attack vectors:
 
-Notification Metadata: Even if content is hidden, notifications reveal which apps are active and communicating with servers, exposing your activity patterns.
+Notification Metadata - Even if content is hidden, notifications reveal which apps are active and communicating with servers, exposing your activity patterns.
 
-Lock Screen Badges: App badge counts (number of unread messages) reveal activity without explicit notifications.
+Lock Screen Badges - App badge counts (number of unread messages) reveal activity without explicit notifications.
 
-Siri Suggestions: Siri can suggest apps based on time and location, leaking context.
+Siri Suggestions - Siri can suggest apps based on time and location, leaking context.
 
-Background Sync: Apps continue syncing data in background regardless of Focus Mode, potentially uploading location data.
+Background Sync - Apps continue syncing data in background regardless of Focus Mode, potentially uploading location data.
 
 Focus Modes mitigate the notification vector but don't prevent background activity. For complete protection, combine with App Privacy Dashboard monitoring.
 
@@ -171,7 +171,7 @@ Create sophisticated privacy scenarios using multiple modes:
 - Prevents Siri from accessing health data
 - Helps avoid targeted ads based on location patterns
 
-Step 6: Shortcuts Automation Advanced Patterns
+Step 6 - Shortcuts Automation Advanced Patterns
 
 Create sophisticated automation using Shortcuts. This example monitors Focus Mode changes and logs them for verification:
 
@@ -205,7 +205,7 @@ When [User opens [RestrictedApp]]
 End When
 ```
 
-Step 7: Use Focus Filters for Application-Level Control
+Step 7 - Use Focus Filters for Application-Level Control
 
 iOS 16+ includes Focus Filters, which allow apps to adapt their behavior within a specific Focus Mode. Developers can implement:
 
@@ -246,24 +246,24 @@ func adaptUIForFocus(focusName: String?) {
 }
 ```
 
-Step 8: Limitations and Workarounds
+Step 8 - Limitations and Workarounds
 
-Limitation 1: Background App Refresh
+Limitation 1 - Background App Refresh
 Focus Modes don't stop background app refresh. Apps continue syncing data and uploading information even in restricted modes.
 
 *Workaround*: Navigate to Settings > General > Background App Refresh and disable it for specific apps that shouldn't run in background.
 
-Limitation 2: Focus Mode Bypassing
+Limitation 2 - Focus Mode Bypassing
 Some apps ignore Focus Mode settings and send critical notifications regardless.
 
 *Workaround*: Use Critical Alerts setting conservatively. Only allow critical alerts for apps where timely notification is genuinely necessary (emergency contacts, security alerts).
 
-Limitation 3: Location Services Persistence
+Limitation 3 - Location Services Persistence
 Location services continue running even in Focus Modes that should prevent location access.
 
 *Workaround*: Combine Focus Modes with location app permission settings. Use "Only While Using" instead of "Always" for location access.
 
-Step 9: Privacy Dashboard Integration
+Step 9 - Privacy Dashboard Integration
 
 Monitor what apps are accessing in real time using iOS Privacy Dashboard:
 
@@ -279,7 +279,7 @@ The Privacy Dashboard shows:
 
 Use this to refine your Focus Mode configurations. If an app frequently accesses location despite your Focus Mode, that's a signal to tighten its permissions.
 
-Step 10: Test Your Focus Mode Configuration
+Step 10 - Test Your Focus Mode Configuration
 
 Verify your privacy configuration works correctly:
 

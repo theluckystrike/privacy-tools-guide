@@ -21,18 +21,18 @@ Deploying privacy tools across multiple cloud providers requires careful coordin
 
 Table of Contents
 
-- [Phase 1: Identity and Access Management](#phase-1-identity-and-access-management)
-- [Phase 2: Encryption Infrastructure](#phase-2-encryption-infrastructure)
-- [Phase 3: Network Privacy Controls](#phase-3-network-privacy-controls)
-- [Phase 4: Data Governance](#phase-4-data-governance)
-- [Phase 5: Monitoring and Incident Response](#phase-5-monitoring-and-incident-response)
+- [Phase 1 - Identity and Access Management](#phase-1-identity-and-access-management)
+- [Phase 2 - Encryption Infrastructure](#phase-2-encryption-infrastructure)
+- [Phase 3 - Network Privacy Controls](#phase-3-network-privacy-controls)
+- [Phase 4 - Data Governance](#phase-4-data-governance)
+- [Phase 5 - Monitoring and Incident Response](#phase-5-monitoring-and-incident-response)
 - [Data Exposure Incident](#data-exposure-incident)
-- [Phase 6: Compliance Validation](#phase-6-compliance-validation)
-- [Phase 7: Third-Party Vendor Risk Assessment](#phase-7-third-party-vendor-risk-assessment)
-- [Phase 8: Cross-Cloud Data Sovereignty Controls](#phase-8-cross-cloud-data-sovereignty-controls)
+- [Phase 6 - Compliance Validation](#phase-6-compliance-validation)
+- [Phase 7 - Third-Party Vendor Risk Assessment](#phase-7-third-party-vendor-risk-assessment)
+- [Phase 8 - Cross-Cloud Data Sovereignty Controls](#phase-8-cross-cloud-data-sovereignty-controls)
 - [Deployment Go/No-Go Checklist](#deployment-gono-go-checklist)
 
-Phase 1: Identity and Access Management
+Phase 1 - Identity and Access Management
 
 Before deploying any privacy tool, establish a unified identity foundation across all cloud environments.
 
@@ -57,7 +57,7 @@ Ensure consistent attribute mapping across Azure AD and Google Workspace for uni
 Implement least-privilege access with cloud-specific IAM roles:
 
 ```python
-Terraform: Cross-cloud IAM role definition
+Terraform - Cross-cloud IAM role definition
 aws_iam_role = {
   name = "privacy_tool_deployer"
   policy = jsonencode({
@@ -77,7 +77,7 @@ aws_iam_role = {
 
 Document each cloud provider's permission boundaries, the gap between what you expect and what you get can expose data leakage paths.
 
-Phase 2: Encryption Infrastructure
+Phase 2 - Encryption Infrastructure
 
 2.1 Key Management Strategy
 
@@ -110,7 +110,7 @@ Rotate keys annually minimum, quarterly for high-sensitivity data. Store rotatio
 Audit encryption status across storage services:
 
 ```python
-Python: Check bucket encryption status across clouds
+Python - Check bucket encryption status across clouds
 def verify_encryption(clients):
     results = {}
     # AWS S3
@@ -128,14 +128,14 @@ def verify_encryption(clients):
 
 Run this quarterly. Unencrypted buckets represent compliance violations waiting to happen.
 
-Phase 3: Network Privacy Controls
+Phase 3 - Network Privacy Controls
 
 3.1 Private Networking
 
 Isolate privacy tool traffic from public networks:
 
 ```hcl
-Terraform: AWS PrivateLink for privacy tool access
+Terraform - AWS PrivateLink for privacy tool access
 resource "aws_vpc_endpoint" "privacy_service" {
   vpc_id            = var.vpc_id
   service_name      = "com.amazonaws.us-east-1.privacy-tool-service"
@@ -168,7 +168,7 @@ remote-control:
 
 Ship logs to a centralized SIEM. Configure log retention per GDPR Article 17 deletion timelines.
 
-Phase 4: Data Governance
+Phase 4 - Data Governance
 
 4.1 Classification Pipeline
 
@@ -219,7 +219,7 @@ Configure lifecycle policies matching privacy requirements:
 
 Verify deletion completion through audit logs. GDPR requires demonstrable proof that data is gone, not just scheduled for removal.
 
-Phase 5: Monitoring and Incident Response
+Phase 5 - Monitoring and Incident Response
 
 5.1 Privacy Metric Collection
 
@@ -244,7 +244,7 @@ def report_metrics(cloud, metrics):
         pass
 ```
 
-Track: encryption compliance rate, access anomalies, data classification coverage, deletion job success rate.
+Track - encryption compliance rate, access anomalies, data classification coverage, deletion job success rate.
 
 5.2 Cross-Cloud Privacy Incident Playbook
 
@@ -261,14 +261,14 @@ Data Exposure Incident
 
 Test these playbooks quarterly. Document which tools integrate with your existing incident management system.
 
-Phase 6: Compliance Validation
+Phase 6 - Compliance Validation
 
 6.1 Policy-as-Code Scanning
 
 Deploy guardrails using Open Policy Agent:
 
 ```rego
-OPA policy: Require encryption at rest
+OPA policy - Require encryption at rest
 package main
 
 deny[msg] {
@@ -307,7 +307,7 @@ gcloud kms keyrings list --location global >> compliance-report.md
 
 Package and timestamp these reports for each audit cycle. Retention periods vary by regulation, default to 7 years minimum.
 
-Phase 7: Third-Party Vendor Risk Assessment
+Phase 7 - Third-Party Vendor Risk Assessment
 
 Multi-cloud deployments inevitably involve third-party tools layered on top of native cloud services. Each vendor integration is a potential data exposure path. Formalize vendor assessment before onboarding any privacy tool into production.
 
@@ -340,7 +340,7 @@ Review this register quarterly. Vendors frequently update their sub-processor li
 Many privacy tools exfiltrate more data than their documentation describes. Deploy egress filtering to establish a baseline of expected outbound connections:
 
 ```bash
-AWS: Use VPC Flow Logs with Athena queries to detect unexpected egress
+AWS - Use VPC Flow Logs with Athena queries to detect unexpected egress
 aws logs create-log-group --log-group-name /aws/vpc/flowlogs
 
 Query for unexpected destinations
@@ -355,7 +355,7 @@ LIMIT 50;
 
 Any destination that does not appear in your vendor's published IP allowlist warrants investigation before the tool goes live with production data.
 
-Phase 8: Cross-Cloud Data Sovereignty Controls
+Phase 8 - Cross-Cloud Data Sovereignty Controls
 
 8.1 Residency Enforcement
 

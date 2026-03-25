@@ -24,7 +24,7 @@ Table of Contents
 - [Privacy Risk Vectors](#privacy-risk-vectors)
 - [Querying History Programmatically](#querying-history-programmatically)
 - [Mitigating Browser History Exposure](#mitigating-browser-history-exposure)
-- [For Developers: Building Privacy-Respecting Applications](#for-developers-building-privacy-respecting-applications)
+- [For Developers - Building Privacy-Respecting Applications](#for-developers-building-privacy-respecting-applications)
 - [Threat Modeling Browser History Exposure](#threat-modeling-browser-history-exposure)
 - [History Privacy and Legal Risk](#history-privacy-and-legal-risk)
 - [History Privacy Implementation Differences](#history-privacy-implementation-differences)
@@ -151,7 +151,7 @@ google-chrome --enable-features=AsyncDns
 
 Firefox has built-in DoH support that can be enabled in settings.
 
-For Developers: Building Privacy-Respecting Applications
+For Developers - Building Privacy-Respecting Applications
 
 If you build applications that access browser history, consider these practices:
 
@@ -179,29 +179,29 @@ Threat Modeling Browser History Exposure
 
 Different users face different risks from history exposure:
 
-Personal Device, Living Alone: Lower risk since only you access the device. Main threats: theft, forensic examination by law enforcement, malicious extensions.
+Personal Device, Living Alone - Lower risk since only you access the device. Main threats: theft, forensic examination by law enforcement, malicious extensions.
 
-Shared Personal Device: Higher risk if family members, roommates, or guests use the device. Your history becomes visible during their sessions. Kids' devices require parental controls and monitoring.
+Shared Personal Device - Higher risk if family members, roommates, or guests use the device. Your history becomes visible during their sessions. Kids' devices require parental controls and monitoring.
 
-Work Device: Employer may legally access history on devices they provision. Distinguish between work and personal browsing to avoid misunderstandings.
+Work Device - Employer may legally access history on devices they provision. Distinguish between work and personal browsing to avoid misunderstandings.
 
-Public Computer: Extreme risk. Anyone using the computer after you can access your history. Always use private mode and manually clear history after session.
+Public Computer - Extreme risk. Anyone using the computer after you can access your history. Always use private mode and manually clear history after session.
 
-Confiscated Device: If law enforcement seizes your device, detailed browsing history becomes evidence. This is one of the strongest arguments for regular history deletion.
+Confiscated Device - If law enforcement seizes your device, detailed browsing history becomes evidence. This is one of the strongest arguments for regular history deletion.
 
 History Privacy and Legal Risk
 
 Browser history can create legal problems in certain contexts:
 
-Criminal Investigations: Detailed history showing interest in certain topics (illegal drugs, weapons, hacking techniques) can be used in prosecution. Even search queries without purchases create circumstantial evidence.
+Criminal Investigations - Detailed history showing interest in certain topics (illegal drugs, weapons, hacking techniques) can be used in prosecution. Even search queries without purchases create circumstantial evidence.
 
-Civil Litigation: In lawsuits, lawyers request device history to prove knowledge or intent. Your browser history could undermine your defense.
+Civil Litigation - In lawsuits, lawyers request device history to prove knowledge or intent. Your browser history could undermine your defense.
 
-Employment: An employer subpoenaing your device during an employment dispute gains access to personal history.
+Employment - An employer subpoenaing your device during an employment dispute gains access to personal history.
 
-Insurance Claims: Insurers may request device history in fraud investigations. Searches related to your claim can be used against you.
+Insurance Claims - Insurers may request device history in fraud investigations. Searches related to your claim can be used against you.
 
-Mitigation: Regular history deletion reduces what prosecutors/litigators can obtain. Encrypted devices with full-disk encryption are harder to examine. Using privacy modes leaves no searchable history.
+Mitigation - Regular history deletion reduces what prosecutors/litigators can obtain. Encrypted devices with full-disk encryption are harder to examine. Using privacy modes leaves no searchable history.
 
 History Privacy Implementation Differences
 
@@ -240,7 +240,7 @@ Technical Methods for History Verification
 
 To verify your privacy configurations are working:
 
-SQLite Inspection: Close browsers and directly query history databases:
+SQLite Inspection - Close browsers and directly query history databases:
 
 ```bash
 Firefox history inspection (macOS)
@@ -252,23 +252,23 @@ sqlite3 ~/Library/Application\ Support/Google/Chrome/Default/History \
   "SELECT url, visit_count FROM urls WHERE url LIKE '%sensitive%';"
 ```
 
-Network Monitoring: Monitor what data is sent over the network when syncing:
+Network Monitoring - Monitor what data is sent over the network when syncing:
 
 ```bash
 Monitor Chrome sync traffic with Wireshark
 or use mitmproxy to inspect encrypted HTTPS traffic (requires proxy setup)
 
-Command-line: Monitor DNS and HTTP with tcpdump
+Command-line - Monitor DNS and HTTP with tcpdump
 sudo tcpdump -i en0 'tcp port 443' -w history-sync.pcap
 ```
 
-File System Monitoring: Check that history files are actually being deleted:
+File System Monitoring - Check that history files are actually being deleted:
 
 ```bash
 macOS: Monitor file deletions with fs_usage
 sudo fs_usage -w | grep -i history
 
-Linux: Monitor with inotify-tools
+Linux - Monitor with inotify-tools
 inotifywait -r -e delete ~/location/to/chrome/history/database
 ```
 

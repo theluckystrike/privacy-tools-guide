@@ -23,14 +23,14 @@ Table of Contents
 - [Understanding Shortcuts Data Access Permissions](#understanding-shortcuts-data-access-permissions)
 - [Personal Automation Triggers and Privacy](#personal-automation-triggers-and-privacy)
 - [Building Privacy-Conscious Shortcuts](#building-privacy-conscious-shortcuts)
-- [Practical Example: Privacy-Safe Location Reminder](#practical-example-privacy-safe-location-reminder)
-- [Sharing Shortcuts: What Recipients Should Know](#sharing-shortcuts-what-recipients-should-know)
+- [Practical Example - Privacy-Safe Location Reminder](#practical-example-privacy-safe-location-reminder)
+- [Sharing Shortcuts - What Recipients Should Know](#sharing-shortcuts-what-recipients-should-know)
 - [Security Best Practices for Developers](#security-best-practices-for-developers)
 - [Monitoring and Auditing Your Automations](#monitoring-and-auditing-your-automations)
-- [Advanced: Using Shortcuts with HomeKit and Siri](#advanced-using-shortcuts-with-homekit-and-siri)
+- [Advanced - Using Shortcuts with HomeKit and Siri](#advanced-using-shortcuts-with-homekit-and-siri)
 - [Real-World Threat Scenarios](#real-world-threat-scenarios)
-- [Practical: Auditing Your Shortcuts Library](#practical-auditing-your-shortcuts-library)
-- [Building Privacy-Safe Shortcuts: Real Example](#building-privacy-safe-shortcuts-real-example)
+- [Practical - Auditing Your Shortcuts Library](#practical-auditing-your-shortcuts-library)
+- [Building Privacy-Safe Shortcuts - Real Example](#building-privacy-safe-shortcuts-real-example)
 
 Understanding Shortcuts Data Access Permissions
 
@@ -66,21 +66,21 @@ Building Privacy-Conscious Shortcuts
 
 When constructing shortcuts, follow these principles to minimize privacy exposure:
 
-Principle 1: Minimum Data Access
+Principle 1 - Minimum Data Access
 
 Only request the permissions your shortcut genuinely needs. A simple note-taking shortcut shouldn't require Health data access, for example.
 
-Principle 2: Local Processing Over Cloud
+Principle 2 - Local Processing Over Cloud
 
 iOS Shortcuts includes actions that process data on-device: text analysis using built-in dictionaries, image manipulation without sending data externally, and file operations using local storage.
 
 Where possible, choose local actions over those requiring network requests.
 
-Principle 3: Data Minimization in Output
+Principle 3 - Data Minimization in Output
 
 When your shortcut produces output, consider what information it reveals. A shortcut that logs your daily steps shouldn't also broadcast your location along with that data.
 
-Practical Example: Privacy-Safe Location Reminder
+Practical Example - Privacy-Safe Location Reminder
 
 Here's how to build a location-triggered reminder while maintaining privacy:
 
@@ -92,9 +92,9 @@ Here's how to build a location-triggered reminder while maintaining privacy:
 5. Set trigger to run "When I Arrive" at specific location
 ```
 
-For enhanced privacy, avoid sending location data to third-party services. Keep the automation entirely within Apple's ecosystem.
+For enhanced privacy, avoid sending location data to third-party services. Keep the automation entirely within Apple's environment.
 
-Sharing Shortcuts: What Recipients Should Know
+Sharing Shortcuts - What Recipients Should Know
 
 When you share a shortcut, recipients receive the entire workflow including any embedded credentials or API keys. This creates several concerns:
 
@@ -159,7 +159,7 @@ Regularly review your shortcuts and automations to ensure they still align with 
 
 iOS provides no built-in logging of shortcut execution, so maintain your own documentation if you need to track when specific automations run.
 
-Advanced: Using Shortcuts with HomeKit and Siri
+Advanced - Using Shortcuts with HomeKit and Siri
 
 Integrating Shortcuts with HomeKit introduces additional privacy layers:
 
@@ -171,7 +171,7 @@ Real-World Threat Scenarios
 
 Understanding attack vectors helps you build safer shortcuts:
 
-Scenario 1: Shared Shortcut with Embedded API Key
+Scenario 1 - Shared Shortcut with Embedded API Key
 ```
 Attacker creates seemingly useful shortcut (weather app enhancement)
 Includes hardcoded API key for weather service
@@ -180,20 +180,20 @@ Recipient runs shortcut - their device sends data through attacker's API
 Attacker harvests location, usage patterns, and API requests
 ```
 
-Defense: Never hardcode keys. Always use Keychain.
+Defense - Never hardcode keys. Always use Keychain.
 
-Scenario 2: Permission Creep in Automation
+Scenario 2 - Permission Creep in Automation
 ```
 You create time-based automation: "At 8am, send daily summary"
 Initially requests calendar access (needed for schedule)
-Over time, other actions added: contacts check, health data, location
+Over time, other actions added - contacts check, health data, location
 Automation now accesses far more than it needs
 You forget what permissions are granted
 ```
 
-Defense: Review automations monthly. Remove unused actions immediately.
+Defense - Review automations monthly. Remove unused actions immediately.
 
-Scenario 3: Malicious Third-Party Service
+Scenario 3 - Malicious Third-Party Service
 ```
 Shortcut sends your calendar events to analysis service
 Service claims to be privacy-respecting, uses HTTPS
@@ -201,9 +201,9 @@ Actually sells aggregated location/schedule patterns to data brokers
 You have no visibility into this transfer
 ```
 
-Defense: Use only established services. Prefer on-device processing. Review actual network requests if suspicious.
+Defense - Use only established services. Prefer on-device processing. Review actual network requests if suspicious.
 
-Practical: Auditing Your Shortcuts Library
+Practical - Auditing Your Shortcuts Library
 
 Create a regular audit habit:
 
@@ -221,9 +221,9 @@ Monthly Audit Checklist:
  Check Keychain for abandoned credentials
 ```
 
-Building Privacy-Safe Shortcuts: Real Example
+Building Privacy-Safe Shortcuts - Real Example
 
-A practical example: Location-based lunch reminder
+A practical example - Location-based lunch reminder
 
 What it needs:
 - Trigger: When you arrive at a location
@@ -281,6 +281,6 @@ Related Articles
 - [Best Browser for iOS Privacy 2026: A Developer Guide](/best-browser-for-ios-privacy-2026/)
 - [Chromebook Privacy Settings for Students 2026](/chromebook-privacy-settings-for-students-2026/)
 - [macOS Privacy Settings For Remote Workers 2026](/macos-privacy-settings-for-remote-workers-2026/)
-- [AI CI/CD Pipeline Optimization: A Developer Guide](https://bestremotetools.com/ai-ci-cd-pipeline-optimization/)
+- [AI CI/CD Pipeline Optimization - A Developer Guide](https://bestremotetools.com/ai-ci-cd-pipeline-optimization/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -33,7 +33,7 @@ When you visit example.com, your device sends an unencrypted DNS query: "What is
 Without DoH:
 ```
 Your Device → (VISIBLE) → ISP DNS Server
-ISP sees: example.com, news.com, banking.com, dating.com (every site)
+ISP sees - example.com, news.com, banking.com, dating.com (every site)
 ```
 
 With DoH:
@@ -53,17 +53,17 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Cloudflare (1.1.1.1). Best for Speed and Simplicity
+Step 1 - Cloudflare (1.1.1.1). Best for Speed and Simplicity
 
 Cloudflare's 1.1.1.1 is the fastest public DoH resolver with strong privacy commitments.
 
-DoH Address: https://cloudflare-dns.com/dns-query
-Pricing: Free
-Privacy Policy: No query logging, privacy audit published annually
+DoH Address - https://cloudflare-dns.com/dns-query
+Pricing - Free
+Privacy Policy - No query logging, privacy audit published annually
 
 Windows 10/11 Setup
 
-Method 1: Settings GUI (Easiest)
+Method 1 - Settings GUI (Easiest)
 
 1. Open Settings → Network & internet → Status
 2. Scroll down → Advanced network settings
@@ -82,14 +82,14 @@ Method 1: Settings GUI (Easiest)
  - Alternate: `2606:4700:4700::1001`
 12. Click Save
 
-Verify: Open Command Prompt, run:
+Verify - Open Command Prompt, run:
 ```
 nslookup example.com 1.1.1.1
 ```
 
 Should resolve with 1.1.1.1 shown as server.
 
-Method 2: Command Line (Advanced)
+Method 2 - Command Line (Advanced)
 
 ```powershell
 Set IPv4 DNS
@@ -153,14 +153,14 @@ Manual Configuration Method:
 
 Android Setup
 
-Method 1: Android 9+ (Built-in DoH)
+Method 1 - Android 9+ (Built-in DoH)
 
 1. Settings → Network & internet → Private DNS
 2. Select "Private DNS provider hostname"
-3. Enter: `cloudflare-dns.com`
+3. Enter - `cloudflare-dns.com`
 4. Save
 
-Method 2: All Android Versions (App)
+Method 2 - All Android Versions (App)
 
 1. Download "1.1.1.1: Faster Internet" from Play Store
 2. Open app, tap "Get Started"
@@ -168,15 +168,15 @@ Method 2: All Android Versions (App)
 4. Toggle "DoH" ON
 5. Keep app running in background
 
-Verify: Open app → Status should show "Connected" with Green checkmark.
+Verify - Open app → Status should show "Connected" with Green checkmark.
 
-Step 2: NextDNS. Best for Customization and Control
+Step 2 - NextDNS. Best for Customization and Control
 
 NextDNS offers granular filtering: block ads, malware, adult content, specific domains, or entire categories.
 
-DoH Address: https://dns.nextdns.io/[YOUR_CONFIG_ID]
-Pricing: Free tier (300k queries/month); Pro at $2/month (unlimited queries, advanced features)
-Privacy: No persistent logging, configuration stored encrypted
+DoH Address - https://dns.nextdns.io/[YOUR_CONFIG_ID]
+Pricing - Free tier (300k queries/month); Pro at $2/month (unlimited queries, advanced features)
+Privacy - No persistent logging, configuration stored encrypted
 
 Setup Steps
 
@@ -189,11 +189,11 @@ Setup Steps
 2. Windows Configuration:
 
 ```
-Preferred IPv4 DNS: 45.90.28.0
-Alternate IPv4 DNS: 45.90.30.0
+Preferred IPv4 DNS - 45.90.28.0
+Alternate IPv4 DNS - 45.90.30.0
 
-Preferred IPv6 DNS: 2a07:a8c0::0
-Alternate IPv6 DNS: 2a07:a8c1::0
+Preferred IPv6 DNS - 2a07:a8c0::0
+Alternate IPv6 DNS - 2a07:a8c1::0
 ```
 
 (Replace IPv4 addresses with your NextDNS config ID. check NextDNS dashboard for exact IPs)
@@ -242,24 +242,24 @@ Cost Analysis:
 - Pro: $2/month (unlimited, advanced features, device management)
 - Typical home user: 100k-200k queries/month (1 free tier sufficient)
 
-Step 3: Quad9. Best for Security-Focused Users
+Step 3 - Quad9. Best for Security-Focused Users
 
 Quad9 emphasizes malware and phishing protection. Specifically designed for security rather than just privacy.
 
-DoH Address: https://dns.quad9.net/dns-query
-Pricing: Free
-Privacy Policy: No logging, independent security audits published
+DoH Address - https://dns.quad9.net/dns-query
+Pricing - Free
+Privacy Policy - No logging, independent security audits published
 
 Setup
 
 Windows:
 ```
-Preferred: 9.9.9.9
-Alternate: 149.112.112.112
+Preferred - 9.9.9.9
+Alternate - 149.112.112.112
 
 IPv6:
 Preferred: 2620:fe::fe
-Alternate: 2620:fe::9
+Alternate - 2620:fe::9
 ```
 
 macOS/iOS/Android:
@@ -271,13 +271,13 @@ Key Features:
 - Optional DNSSEC validation (strict mode)
 - Works worldwide with 200+ POPs
 
-Step 4: Mullvad. Best for Extreme Privacy
+Step 4 - Mullvad. Best for Extreme Privacy
 
 Mullvad runs the DoH resolver as part of their privacy-first operation. Maximum privacy.
 
-DoH Address: https://dns.mullvad.net/dns-query
-Pricing: Free (part of Mullvad VPN infrastructure)
-Privacy: Zero logging, no activity history retained
+DoH Address - https://dns.mullvad.net/dns-query
+Pricing - Free (part of Mullvad VPN infrastructure)
+Privacy - Zero logging, no activity history retained
 
 Setup
 
@@ -291,12 +291,12 @@ Simple Method (Recommended):
 
 Advanced Method (Without VPN):
 ```
-Preferred: 194.242.2.2
-Alternate: 194.242.2.3
+Preferred - 194.242.2.2
+Alternate - 194.242.2.3
 
 IPv6:
 Preferred: 2a07:e340::1
-Alternate: 2a07:e340::2
+Alternate - 2a07:e340::2
 ```
 
 Provider Comparison Table
@@ -308,9 +308,9 @@ Provider Comparison Table
 | Quad9 | Yes | Fast | None | Excellent (malware) | Excellent | Low |
 | Mullvad | Yes | Good | None | Limited | Excellent | Medium |
 
-Step 5: Verify DoH is Working
+Step 5 - Verify DoH is Working
 
-Method 1: DNS Query Tool
+Method 1 - DNS Query Tool
 
 ```bash
 Test with dig (Linux/macOS)
@@ -322,14 +322,14 @@ nslookup example.com 1.1.1.1
 Should return IP addresses, confirming DNS works
 ```
 
-Method 2: Online Test
+Method 2 - Online Test
 
 Visit https://1.1.1.1/help and check:
 - DNS Provider: Should show "Cloudflare" or your chosen provider
 - Using HTTPS: Should show "Yes"
 - DNSSEC: Should show "Yes" (validated)
 
-Method 3: Check Encryption
+Method 3 - Check Encryption
 
 ```bash
 macOS/Linux. capture DNS traffic (should be encrypted)
@@ -345,9 +345,9 @@ DoH adds minimal overhead (~1-5ms per query) but:
 - NextDNS: Varies by location, usually 10-20ms
 - Mullvad: ~20-30ms (conservative approach)
 
-Real-world impact: Unnoticeable for daily browsing. Page loads nearly identical.
+Real-world impact - Unnoticeable for daily browsing. Page loads nearly identical.
 
-Step 6: Privacy Risks Still Remaining
+Step 6 - Privacy Risks Still Remaining
 
 DoH solves ISP tracking, but consider:
 
@@ -364,29 +364,29 @@ Complete privacy requires:
 
 Troubleshooting DoH Issues
 
-Problem: Some websites won't load
+Problem - Some websites won't load
 - Solution: Add exception to blocklist (NextDNS) or switch to Cloudflare (minimal blocking)
 
-Problem: Slow performance
-- Solution: Switch to Cloudflare 1.1.1.1 (fastest) or reduce filtering in NextDNS
+Problem - Slow performance
+- Solution - Switch to Cloudflare 1.1.1.1 (fastest) or reduce filtering in NextDNS
 
-Problem: Apps stop working after enabling DoH
+Problem - Apps stop working after enabling DoH
 - Solution: Create whitelist exceptions or temporarily disable for specific apps
 
-Problem: DoH conflicts with corporate network
+Problem - DoH conflicts with corporate network
 - Solution: Use Cloudflare (corporate-friendly) or ask IT for exceptions
 
-Step 7: Recommended Configuration for Most Users
+Step 7 - Recommended Configuration for Most Users
 
 ```
-Primary DNS: Cloudflare 1.1.1.1 (speed and simplicity)
-Backup DNS: Quad9 (security, malware blocking)
-Extra layer: NextDNS Pro if concerned about tracking ($2/month)
+Primary DNS - Cloudflare 1.1.1.1 (speed and simplicity)
+Backup DNS - Quad9 (security, malware blocking)
+Extra layer - NextDNS Pro if concerned about tracking ($2/month)
 ```
 
-Cost: Free to $2/month
-Setup time: 5-15 minutes across all devices
-Privacy improvement: Eliminates ISP DNS logging (significant)
+Cost - Free to $2/month
+Setup time - 5-15 minutes across all devices
+Privacy improvement - Eliminates ISP DNS logging (significant)
 
 Related Articles
 

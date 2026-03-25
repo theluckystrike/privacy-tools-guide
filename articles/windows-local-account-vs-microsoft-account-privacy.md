@@ -27,11 +27,11 @@ Table of Contents
 - [Security Considerations](#security-considerations)
 - [Recommendations by Use Case](#recommendations-by-use-case)
 - [Advanced Privacy Hardening for Local Accounts](#advanced-privacy-hardening-for-local-accounts)
-- [Telemetry Analysis: Comparing Data Flows](#telemetry-analysis-comparing-data-flows)
+- [Telemetry Analysis - Comparing Data Flows](#telemetry-analysis-comparing-data-flows)
 - [Microsoft Account Data Endpoints](#microsoft-account-data-endpoints)
-- [BitLocker Encryption: Local vs Microsoft Account Differences](#bitlocker-encryption-local-vs-microsoft-account-differences)
-- [Multi-User Scenarios: Hybrid Approach](#multi-user-scenarios-hybrid-approach)
-- [Migration Path: Switching Safely](#migration-path-switching-safely)
+- [BitLocker Encryption - Local vs Microsoft Account Differences](#bitlocker-encryption-local-vs-microsoft-account-differences)
+- [Multi-User Scenarios - Hybrid Approach](#multi-user-scenarios-hybrid-approach)
+- [Migration Path - Switching Safely](#migration-path-switching-safely)
 - [VPN and Proxy Considerations](#vpn-and-proxy-considerations)
 
 Understanding the Two Account Types
@@ -196,7 +196,7 @@ New-NetFirewallRule -DisplayName "Allow Windows Update" -Direction Outbound -Act
 New-NetFirewallRule -DisplayName "Allow DNS" -Direction Outbound -Action Allow -Protocol UDP -RemotePort 53
 ```
 
-Telemetry Analysis: Comparing Data Flows
+Telemetry Analysis - Comparing Data Flows
 
 Local accounts send significantly less data, but not zero. Here's what each account type collects:
 
@@ -225,7 +225,7 @@ Use the computer
 netsh trace stop
 Analyze C:\ProgramData\Microsoft\Windows\INetDiag\NetTrace.etl
 
-Simpler: Monitor outbound DNS queries
+Simpler - Monitor outbound DNS queries
 Get-DnsClientCache | Select-Object Name
 ```
 
@@ -259,7 +259,7 @@ foreach ($host in $blockHosts) {
 
 This is a defensive measure if you cannot switch to a local account but want to prevent continuous data sync.
 
-BitLocker Encryption: Local vs Microsoft Account Differences
+BitLocker Encryption - Local vs Microsoft Account Differences
 
 Both account types can enable BitLocker, but Microsoft accounts enable optional cloud-based recovery:
 
@@ -274,7 +274,7 @@ Disable cloud-based recovery storage for Microsoft accounts
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\BitLocker\MixedOrganizationalEnvironments" -Name "osRecoveryPasswordNeverExpires" -Value 1
 ```
 
-Multi-User Scenarios: Hybrid Approach
+Multi-User Scenarios - Hybrid Approach
 
 For families or teams, consider a hybrid model:
 
@@ -296,7 +296,7 @@ Verify account types
 Get-LocalUser | Select-Object Name, PasswordRequired, Enabled
 ```
 
-Migration Path: Switching Safely
+Migration Path - Switching Safely
 
 If you need to switch from Microsoft to local account, ensure data preservation:
 

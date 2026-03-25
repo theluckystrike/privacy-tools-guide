@@ -186,9 +186,9 @@ On Android, configure switch access:
 
 ```
 Settings → Accessibility → Switch Access → Enable
-Assign switches: Scan forward (Switch 1), Select (Switch 2)
-Scan speed: start at 1.5s per item, adjust to user's reaction time
-Auto-select: disable initially. require deliberate selection
+Assign switches - Scan forward (Switch 1), Select (Switch 2)
+Scan speed - start at 1.5s per item, adjust to user's reaction time
+Auto-select - disable initially. require deliberate selection
 ```
 
 Switch Control works with any keyboard app, but some handle the scanning highlight better than others. AnySoftKeyboard and OpenBoard both respond correctly to accessibility scanning. Gboard and SwiftKey occasionally have scanning highlight inconsistencies due to proprietary accessibility handling.
@@ -197,8 +197,8 @@ On iOS, AssistiveTouch and Switch Control are built-in:
 
 ```
 Settings → Accessibility → Switch Control → Switches → Add New Switch
-Source: External (Bluetooth switch) or Screen (tap anywhere)
-Action: Select Item
+Source - External (Bluetooth switch) or Screen (tap anywhere)
+Action - Select Item
 ```
 
 The built-in iOS keyboard works well with Switch Control. Third-party iOS keyboards have historically had Switch Control compatibility issues because they run in an extension sandbox. the built-in keyboard remains the most reliable choice for iOS Switch Control users.
@@ -216,7 +216,7 @@ medication    100    en
 appointment   90     en
 therapy       85     en
 
-Import via: AnySoftKeyboard → Settings → Language → Add dictionary
+Import via - AnySoftKeyboard → Settings → Language → Add dictionary
 ```
 
 Presage is an open-source predictive text library available on Linux that provides next-word prediction using local n-gram models. It integrates with Fcitx5:
@@ -240,10 +240,10 @@ Settings → Accessibility → Keyboards:
 - Full Keyboard Access: Enable (navigation via hardware keyboard)
 - Key Repeat: Off (prevents unintended repeated keystrokes)
 - Sticky Keys: On (hold modifier keys without simultaneous press)
-- Slow Keys: On, Acceptance Delay: 0.50 seconds (adjust to user)
+- Slow Keys - On, Acceptance Delay: 0.50 seconds (adjust to user)
 ```
 
-Dictation as primary input: For users who can speak reliably, iOS on-device dictation (Settings → General → Keyboard → Enable Dictation, then verify that "Dictation & Privacy" shows on-device only) provides zero-cloud voice input from iOS 16 onward. The on-device dictation model processes speech locally without contacting Apple's servers.
+Dictation as primary input - For users who can speak reliably, iOS on-device dictation (Settings → General → Keyboard → Enable Dictation, then verify that "Dictation & Privacy" shows on-device only) provides zero-cloud voice input from iOS 16 onward. The on-device dictation model processes speech locally without contacting Apple's servers.
 
 Android similarly supports on-device speech recognition via `android.speech.RecognitionService` with offline models available for download in Gboard's offline settings. though Gboard has privacy implications. The privacy-respecting alternative is VOSK, an offline speech recognition library:
 
@@ -268,7 +268,7 @@ VOSK integrates with custom Android IME implementations for fully private voice-
 
 Future Considerations
 
-The accessibility keyboard ecosystem continues evolving. Emerging technologies include:
+The accessibility keyboard environment continues evolving. Emerging technologies include:
 
 - Neural keyboard prediction: On-device ML models improving prediction without cloud dependency. GGML-based language models running locally can now provide GPT-quality word prediction with zero data transmission.
 - Eye-tracking integration: Devices like the Tobii Dynavox are becoming more affordable, and both Windows (Windows 11 Eye Control) and iOS (Eye Tracking, added in iOS 18) now support gaze-based input natively without third-party software.
@@ -284,7 +284,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -296,7 +296,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 
@@ -308,7 +308,7 @@ Related Articles
 - [AI Tools for Auditing Accessible Responsive Design](https://bestremotetools.com/ai-tools-for-auditing-accessible-responsive-design-breakpoin/)
 iOS Accessibility Options
 
-iOS users face more limited choices due to Apple's walled ecosystem. However, several privacy-respecting options exist:
+iOS users face more limited choices due to Apple's walled environment. However, several privacy-respecting options exist:
 
 Stock iOS Keyboard with Accessibility Settings: While not open-source, Apple's keyboard includes:
 - Slow keys (keys must be held for specified duration)
@@ -316,7 +316,7 @@ Stock iOS Keyboard with Accessibility Settings: While not open-source, Apple's k
 - Keyboard shortcuts customization
 - On-device processing (no data sent to Apple prediction servers)
 
-SwiftKey with Privacy Mode: Microsoft's SwiftKey (now open-source on GitHub) offers:
+SwiftKey with Privacy Mode - Microsoft's SwiftKey (now open-source on GitHub) offers:
 - Predictive text that runs locally
 - Adjustable timing parameters
 - Custom dictionary support
@@ -332,7 +332,7 @@ accessibilitySettings.isStickyKeysEnabled = true
 
 Windows and macOS Considerations
 
-Windows: The built-in On-Screen Keyboard combined with accessibility focus typing provides privacy-respecting input. The keyboard operates entirely offline without telemetry when accessibility mode is enabled.
+Windows - The built-in On-Screen Keyboard combined with accessibility focus typing provides privacy-respecting input. The keyboard operates entirely offline without telemetry when accessibility mode is enabled.
 
 macOS: Native input method system respects system privacy settings. Use the macOS Privacy Dashboard (System Preferences > Security & Privacy) to verify keyboard apps have no network access.
 

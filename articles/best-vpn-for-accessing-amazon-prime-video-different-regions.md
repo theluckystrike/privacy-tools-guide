@@ -31,7 +31,7 @@ Table of Contents
 - [Essential VPN Configuration for Prime Video](#essential-vpn-configuration-for-prime-video)
 - [Testing Your VPN Connection](#testing-your-vpn-connection)
 - [Technical Considerations for Developers](#technical-considerations-for-developers)
-- [Step-by-Step: Self-Hosted WireGuard Setup](#step-by-step-self-hosted-wireguard-setup)
+- [Step-by-Step - Self-Hosted WireGuard Setup](#step-by-step-self-hosted-wireguard-setup)
 - [Common Issues and Solutions](#common-issues-and-solutions)
 - [Privacy Considerations](#privacy-considerations)
 - [Alternatives to Traditional VPNs](#alternatives-to-traditional-vpns)
@@ -40,15 +40,15 @@ How Amazon Prime Video Detects VPN Traffic
 
 Amazon employs several detection methods to identify and block VPN connections:
 
-1. IP Blacklist Database: Amazon maintains a database of known VPN IP addresses. When your exit IP matches an entry in this database, access is denied.
+1. IP Blacklist Database - Amazon maintains a database of known VPN IP addresses. When your exit IP matches an entry in this database, access is denied.
 
-2. DNS Leak Detection: If your DNS requests bypass the VPN tunnel and route through your ISP's servers, Amazon can determine your actual location.
+2. DNS Leak Detection - If your DNS requests bypass the VPN tunnel and route through your ISP's servers, Amazon can determine your actual location.
 
-3. WebRTC Leaks: Browser WebRTC implementations can expose your real IP address even when connected to a VPN.
+3. WebRTC Leaks - Browser WebRTC implementations can expose your real IP address even when connected to a VPN.
 
 4. Deep Packet Inspection (DPI): Advanced traffic analysis can identify VPN protocol signatures.
 
-5. Account Behavior Analysis: Login patterns and payment method billing addresses may trigger additional verification.
+5. Account Behavior Analysis - Login patterns and payment method billing addresses may trigger additional verification.
 
 Commercial VPN Comparison for Prime Video
 
@@ -181,7 +181,7 @@ Different VPN protocols offer varying levels of obfuscation:
 | OpenVPN TCP | Moderate | Strong | Stunnel |
 | Shadowsocks | Good | Moderate | Built-in |
 
-Step-by-Step: Self-Hosted WireGuard Setup
+Step-by-Step - Self-Hosted WireGuard Setup
 
 Self-hosting gives you a clean IP that Amazon has never seen. Here is the full setup on DigitalOcean:
 
@@ -248,7 +248,7 @@ After connecting, verify your visible IP matches the Droplet's public IP, run a 
 
 Common Issues and Solutions
 
-Error Message: "Unable to Verify Subscription"
+Error Message - "Unable to Verify Subscription"
 
 This typically indicates a DNS resolution issue. Ensure your VPN catches all DNS queries:
 

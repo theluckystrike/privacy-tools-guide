@@ -37,13 +37,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What Makes NaiveProxy Different
+Step 1 - What Makes NaiveProxy Different
 
 NaiveProxy uses a forward proxy architecture built on top of the standard HTTP CONNECT method. Unlike VPNs that create dedicated tunnels with identifiable protocols, NaiveProxy forwards traffic through a proxy server while the entire connection appears as standard HTTPS traffic to network observers.
 
 The key advantage is that your traffic looks exactly like any other HTTPS connection to a web server. The proxy server decrypts, then re-encrypts and forwards your requests to their actual destinations. This creates a layer of obfuscation that resists pattern recognition and protocol fingerprinting.
 
-Step 2: Set Up Your Own NaiveProxy Server
+Step 2 - Set Up Your Own NaiveProxy Server
 
 You will need a server outside your censored region. Any standard VPS running Linux will work.
 
@@ -80,7 +80,7 @@ bash get-naiveproxy.sh
 
 The server will automatically obtain TLS certificates from Let's Encrypt.
 
-Step 3: Configure the Client
+Step 3 - Configure the Client
 
 On your local machine, install the NaiveProxy client. The client is available for Windows, macOS, and Linux.
 
@@ -115,7 +115,7 @@ Client configuration options:
 
 The `pad` option adds random padding to requests, making traffic analysis more difficult. Enable this for additional privacy in hostile network environments.
 
-Step 4: Integrate with Your Browser
+Step 4 - Integrate with Your Browser
 
 After starting the client, configure your browser to use the SOCKS5 proxy at `127.0.0.1:1080`.
 
@@ -143,19 +143,19 @@ Security Considerations
 
 While NaiveProxy provides strong traffic obfuscation, remember these limitations:
 
-Server trust: Your proxy server sees all unencrypted traffic between your client and the internet. Only use servers you control or trust completely. Running your own server provides the strongest guarantees.
+Server trust - Your proxy server sees all unencrypted traffic between your client and the internet. Only use servers you control or trust completely. Running your own server provides the strongest guarantees.
 
-TLS inspection: In environments with TLS interception proxies, your traffic may be inspected at the network boundary. NaiveProxy cannot bypass inspection that terminates TLS connections.
+TLS inspection - In environments with TLS interception proxies, your traffic may be inspected at the network boundary. NaiveProxy cannot bypass inspection that terminates TLS connections.
 
-Network behavior: While traffic content is hidden, metadata such as connection timing and data volumes may still be observable. High-security scenarios benefit from using NaiveProxy in conjunction with Tor for layered protection.
+Network behavior - While traffic content is hidden, metadata such as connection timing and data volumes may still be observable. High-security scenarios benefit from using NaiveProxy in conjunction with Tor for layered protection.
 
 Performance Optimization
 
 NaiveProxy performance depends on several factors:
 
-Server location: Choose servers geographically close to your actual destination servers for lower latency. For global coverage, consider running multiple servers in different regions.
+Server location - Choose servers geographically close to your actual destination servers for lower latency. For global coverage, consider running multiple servers in different regions.
 
-TLS session resumption: Enable TLS ticket resumption in your configuration to reduce handshake overhead:
+TLS session resumption - Enable TLS ticket resumption in your configuration to reduce handshake overhead:
 
 ```json
 {
@@ -165,29 +165,29 @@ TLS session resumption: Enable TLS ticket resumption in your configuration to re
 }
 ```
 
-Connection multiplexing: NaiveProxy supports multiplexing multiple connections through a single tunnel, reducing overhead for browsing scenarios with many concurrent connections.
+Connection multiplexing - NaiveProxy supports multiplexing multiple connections through a single tunnel, reducing overhead for browsing scenarios with many concurrent connections.
 
 Troubleshooting Common Issues
 
 If connections fail or performance is poor, check these common problems:
 
-Certificate errors: Ensure your server has valid TLS certificates. Let's Encrypt certificates auto-renew, but verify your server's certificate chain is intact.
+Certificate errors - Ensure your server has valid TLS certificates. Let's Encrypt certificates auto-renew, but verify your server's certificate chain is intact.
 
-Port blocking: Some networks block common ports. Consider running NaiveProxy on port 443, which is almost always open since it's required for normal web browsing.
+Port blocking - Some networks block common ports. Consider running NaiveProxy on port 443, which is almost always open since it's required for normal web browsing.
 
-Client-server version mismatch: Ensure your client and server versions are compatible. Outdated versions may have protocol incompatibilities.
+Client-server version mismatch - Ensure your client and server versions are compatible. Outdated versions may have protocol incompatibilities.
 
-Step 5: Alternative Use Cases
+Step 5 - Alternative Use Cases
 
 Beyond censorship circumvention, NaiveProxy serves other legitimate purposes:
 
-Privacy enhancement: Hide your browsing behavior from local network observers who can see unencrypted traffic patterns but cannot decrypt TLS connections.
+Privacy enhancement - Hide your browsing behavior from local network observers who can see unencrypted traffic patterns but cannot decrypt TLS connections.
 
-Corporate network access: Access internal corporate resources through proxy servers when direct connections are blocked, without the visibility of VPN protocols.
+Corporate network access - Access internal corporate resources through proxy servers when direct connections are blocked, without the visibility of VPN protocols.
 
-IoT device routing: Route traffic from devices that lack VPN support through a local proxy client.
+IoT device routing - Route traffic from devices that lack VPN support through a local proxy client.
 
-Step 6: Comparing with Other Solutions
+Step 6 - Comparing with Other Solutions
 
 NaiveProxy occupies a specific niche between VPNs and Tor. Unlike VPNs, it resists protocol fingerprinting. Unlike Tor, it typically offers lower latency and simpler server infrastructure. The trade-off is that you trust a single server rather than the Tor network's distributed trust model.
 
@@ -203,7 +203,7 @@ Deploy servers in multiple geographies to provide resilience against targeted bl
 
 ```bash
 Deploy in geographically distributed regions
-Recommended: US (Oregon), Europe (Amsterdam), Asia (Singapore)
+Recommended - US (Oregon), Europe (Amsterdam), Asia (Singapore)
 
 Each region serves as failover if others are blocked
 Configure client with fallback servers:
@@ -252,7 +252,7 @@ server {
 
 Load balancing distributes traffic across multiple servers, preventing any single server from becoming a bottleneck.
 
-Step 7: Detecting and Evading Detection
+Step 7 - Detecting and Evading Detection
 
 While NaiveProxy is difficult to detect, understanding potential detection vectors helps improve your deployment.
 
@@ -296,7 +296,7 @@ Server sends requests to legitimate domain's CDN
 But SNI/Host header points to blocked site
 ```
 
-Step 8: Operational Security Practices
+Step 8 - Operational Security Practices
 
 Secure deployment requires careful operational management:
 
@@ -352,7 +352,7 @@ for cert in /etc/letsencrypt/live/*/cert.pem; do
 done
 ```
 
-Step 9: Test and Validation
+Step 9 - Test and Validation
 
 Proper testing ensures your NaiveProxy deployment actually provides the promised protection:
 

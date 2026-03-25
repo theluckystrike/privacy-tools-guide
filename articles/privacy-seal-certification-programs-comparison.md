@@ -40,7 +40,7 @@ For developers, understanding these programs helps when selecting third-party se
 
 Major Certification Programs Compared
 
-ISO 27001: Information Security Management
+ISO 27001 - Information Security Management
 
 ISO 27001 is the most widely recognized information security standard globally. It provides a systematic approach to managing sensitive company information through an Information Security Management System (ISMS).
 
@@ -54,7 +54,7 @@ Most providers publish their compliance certifications publicly
 curl -s "https://example-provider.com/compliance/iso-27001" | grep -i "certified"
 ```
 
-SOC 2: Service Organization Control
+SOC 2 - Service Organization Control
 
 SOC 2 is particularly relevant for SaaS providers and cloud services. It focuses on five trust service criteria: security, availability, processing integrity, confidentiality, and privacy.
 
@@ -106,7 +106,7 @@ Requirements include:
 
 Developers implementing data transfers should document their transfer mechanisms and consider Standard Contractual Clauses alongside Privacy Framework participation.
 
-ISO 27701: Privacy Information Management
+ISO 27701 - Privacy Information Management
 
 ISO 27701 extends ISO 27001 specifically for privacy management. It provides guidance on implementing a Privacy Information Management System (PIMS).
 

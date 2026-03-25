@@ -51,7 +51,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install ation and Initial Setup
+Step 1 - Install ation and Initial Setup
 
 The installation process differs slightly across operating systems, but the core configuration remains consistent.
 
@@ -69,11 +69,11 @@ After installing the client, sign in with your Proton account credentials. The a
 
 The configuration file location varies by platform:
 
-- Windows: `%APPDATA%\Proton Drive Bridge\settings.json`
+- Windows - `%APPDATA%\Proton Drive Bridge\settings.json`
 - macOS: `~/Library/Application Support/Proton Drive Bridge/settings.json`
 - Linux: `~/.config/Proton Drive Bridge/settings.json`
 
-Step 2: WebDAV Integration
+Step 2 - WebDAV Integration
 
 One of Bridge's most powerful features is WebDAV server support. This enables integration with applications that speak the WebDAV protocol, including many backup tools, media servers, and development environments.
 
@@ -98,7 +98,7 @@ http://localhost:8787/
 
 Windows users can map a network drive to the WebDAV endpoint through Explorer.
 
-Step 3: Command-Line Interface Usage
+Step 3 - Command-Line Interface Usage
 
 Proton Drive Bridge includes a CLI for automation scenarios. The command-line interface enables scriptable sync operations, status checks, and selective folder management.
 
@@ -126,7 +126,7 @@ proton-drive status --json | jq '.sync_state'
 
 This makes Bridge suitable for CI/CD pipelines and automated backup scripts.
 
-Step 4: Desktop Application Integration
+Step 4 - Desktop Application Integration
 
 Bridge integrates with desktop applications through standard filesystem semantics. Here are practical integration patterns.
 

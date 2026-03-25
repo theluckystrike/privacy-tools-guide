@@ -21,12 +21,12 @@ Ring, Google Nest, and Arlo sell doorbell and camera footage to law enforcement 
 Table of Contents
 
 - [Understanding Smart Doorbell Architecture](#understanding-smart-doorbell-architecture)
-- [Ring: Aggressive Law Enforcement Partnerships](#ring-aggressive-law-enforcement-partnerships)
-- [Google Nest: Balancing Security and Integration](#google-nest-balancing-security-and-integration)
-- [Arlo: Privacy-Focused, Expensive](#arlo-privacy-focused-expensive)
+- [Ring - Aggressive Law Enforcement Partnerships](#ring-aggressive-law-enforcement-partnerships)
+- [Google Nest - Balancing Security and Integration](#google-nest-balancing-security-and-integration)
+- [Arlo - Privacy-Focused, Expensive](#arlo-privacy-focused-expensive)
 - [Feature and Privacy Comparison Matrix](#feature-and-privacy-comparison-matrix)
 - [Privacy-First Alternatives](#privacy-first-alternatives)
-- [Real-World Privacy Risks: Case Studies](#real-world-privacy-risks-case-studies)
+- [Real-World Privacy Risks - Case Studies](#real-world-privacy-risks-case-studies)
 - [Protecting Your Privacy With Smart Cameras](#protecting-your-privacy-with-smart-cameras)
 - [Alternative Approaches Without Cameras](#alternative-approaches-without-cameras)
 
@@ -51,7 +51,7 @@ Permanent storage (databases on servers)
 
 Each branch has privacy risks.
 
-Ring: Aggressive Law Enforcement Partnerships
+Ring - Aggressive Law Enforcement Partnerships
 
 Ring (owned by Amazon since 2018) has the most extensive police partnerships and most generous data sharing policies.
 
@@ -95,11 +95,11 @@ In practice:
 Real example (documented):
 
 ```
-Police request: "Suspicious person on Elm Street"
-Ring response: Same day, provided video to 50+ neighboring Ring cameras
-Legal authority: None required (Ring deemed it "emergency")
-Homeowner notification: None
-Homeowner discovered: Accidentally, when someone else mentioned police interview
+Police request - "Suspicious person on Elm Street"
+Ring response - Same day, provided video to 50+ neighboring Ring cameras
+Legal authority - None required (Ring deemed it "emergency")
+Homeowner notification - None
+Homeowner discovered - Accidentally, when someone else mentioned police interview
 ```
 
 Ring Video Retention and Deletion
@@ -123,7 +123,7 @@ User-initiated deletion:
 - Deleted footage can still be recovered by law enforcement
 ```
 
-Real risk: Footage you deleted locally is still available to police.
+Real risk - Footage you deleted locally is still available to police.
 
 Ring Default Privacy Settings
 
@@ -164,7 +164,7 @@ HTTPS encrypts data in motion but:
 - No user control over encryption keys
 ```
 
-End-to-end encryption: Ring does NOT offer E2EE
+End-to-end encryption - Ring does NOT offer E2EE
 
 ```
 What users assume:
@@ -177,14 +177,14 @@ If Ring is compromised or subpoenaed:
 All historical footage accessible to attacker
 ```
 
-Google Nest: Balancing Security and Integration
+Google Nest - Balancing Security and Integration
 
 Google Nest (acquired 2018) takes middle ground: better default privacy than Ring, but still sends data to Google servers.
 
 Nest Police Data Sharing
 
 ```
-Law enforcement requests: 5,000+/year (half of Ring)
+Law enforcement requests - 5,000+/year (half of Ring)
 
 Google policy:
 - Requires valid subpoena or court order for video
@@ -248,14 +248,14 @@ Still problematic:
 - Government could compel Google to modify footage (after access granted)
 ```
 
-Arlo: Privacy-Focused, Expensive
+Arlo - Privacy-Focused, Expensive
 
 Arlo (now owned by Netgear, was independent) positions itself as privacy-first.
 
 Arlo Police Data Sharing
 
 ```
-Law enforcement requests: <2000/year (lowest of major brands)
+Law enforcement requests - <2000/year (lowest of major brands)
 
 Policy:
 - Requires valid court order or subpoena
@@ -296,7 +296,7 @@ Employees:
 - Clearer consent process than Ring
 ```
 
-Arlo weakness: Lower camera quality than Ring/Nest, fewer integrations.
+Arlo weakness - Lower camera quality than Ring/Nest, fewer integrations.
 
 Feature and Privacy Comparison Matrix
 
@@ -315,12 +315,12 @@ Feature and Privacy Comparison Matrix
 
 Privacy-First Alternatives
 
-Wyze Cam: Budget-Friendly, No Police Partnerships
+Wyze Cam - Budget-Friendly, No Police Partnerships
 
 Key features:
 
 ```
-Police partnerships: None
+Police partnerships - None
 - Wyze has NOT established police data sharing agreements
 - Provides video only with valid court order
 - Likely very low request volume
@@ -348,16 +348,16 @@ Price:
 Limitations:
 - Lower video quality than Ring/Nest
 - Fewer integrations
-- Less mature ecosystem
+- Less mature environment
 - Customer service slower
 
-Logitech Logi Circle View: Local-First Architecture
+Logitech Logi Circle View - Local-First Architecture
 
 Key features:
 
 ```
-Police partnerships: None
-Retention policy: Private (not disclosed, but only accesses what user retains locally)
+Police partnerships - None
+Retention policy - Private (not disclosed, but only accesses what user retains locally)
 
 Architecture (different from Ring/Nest):
 - Video recorded locally to HomeKit Secure Video
@@ -386,13 +386,13 @@ Tradeoffs:
 - Premium pricing
 - Best for existing Apple/HomeKit users
 
-Reolink: No Cloud, Full Local Control
+Reolink - No Cloud, Full Local Control
 
 Key features:
 
 ```
-Police partnerships: None
-Cloud storage: Optional, minimal
+Police partnerships - None
+Cloud storage - Optional, minimal
 
 Architecture:
 - Video stored on local NVR (Network Video Recorder) or PoE cameras
@@ -422,20 +422,20 @@ Tradeoffs:
 - Better for power users
 - Best privacy control, but highest barrier to entry
 
-Real-World Privacy Risks: Case Studies
+Real-World Privacy Risks - Case Studies
 
-Case 1: Ring and Innocent Person Accused
+Case 1 - Ring and Innocent Person Accused
 
 ```
 Timeline:
 Day 1: Package theft in neighborhood
-Day 2: Police request Ring footage from 12 cameras
-Day 3: Ring's ML algorithm flags "suspicious person" (false positive)
-Day 4: Police share Ring footage in Neighborhood app
-Day 5: 5000+ neighborhood residents see video, person identified by name
-Day 6: Person appears to police for interview (not arrested, just interviewed)
-Day 7: Neighborhood debate continues (innocent person publicly accused)
-Timeline ongoing: Person's reputation damaged, accused of crime they didn't commit
+Day 2 - Police request Ring footage from 12 cameras
+Day 3 - Ring's ML algorithm flags "suspicious person" (false positive)
+Day 4 - Police share Ring footage in Neighborhood app
+Day 5 - 5000+ neighborhood residents see video, person identified by name
+Day 6 - Person appears to police for interview (not arrested, just interviewed)
+Day 7 - Neighborhood debate continues (innocent person publicly accused)
+Timeline ongoing - Person's reputation damaged, accused of crime they didn't commit
 
 Outcome:
 - Ring footage had no warrant
@@ -444,20 +444,20 @@ Outcome:
 - Permanent internet record of accusation
 ```
 
-Privacy lesson: Ring's low legal threshold for police access and neighborhood sharing enables public accusations without due process.
+Privacy lesson - Ring's low legal threshold for police access and neighborhood sharing enables public accusations without due process.
 
-Case 2: Arlo User's Private Moments Captured
+Case 2 - Arlo User's Private Moments Captured
 
 ```
-Scenario: Homeowner using Arlo for security
+Scenario - Homeowner using Arlo for security
 
 Timeline:
 Day 1: Arlo enabled on front porch
-Day 30: Homeowner forgets camera is recording
-Day 31: Homeowner stands on porch in intimate moment (not criminal, just private)
-Day 32: Neighbor's child notices video in Neighborhood app, shares with friends
-Day 33: Screenshots spread in school group chat
-Day 34: Homeowner discovers, footage already distributed
+Day 30 - Homeowner forgets camera is recording
+Day 31 - Homeowner stands on porch in intimate moment (not criminal, just private)
+Day 32 - Neighbor's child notices video in Neighborhood app, shares with friends
+Day 33 - Screenshots spread in school group chat
+Day 34 - Homeowner discovers, footage already distributed
 
 Outcome:
 - Innocent private moment captured and distributed
@@ -466,17 +466,17 @@ Outcome:
 - Emotional harm to homeowner
 ```
 
-Privacy lesson: Smart camera footage captured innocently can be accessed and shared by others.
+Privacy lesson - Smart camera footage captured innocently can be accessed and shared by others.
 
-Case 3: Nest User's Account Compromise
+Case 3 - Nest User's Account Compromise
 
 ```
 Timeline:
 Day 1: Homeowner's Google account compromised (password leak)
-Day 2: Attacker logs into Google account, accesses Nest camera
-Day 3: Attacker knows when nobody home (motion patterns)
-Day 4: Attacker breaks in while at work
-Day 5: Homeowner returns, discovers burglary
+Day 2 - Attacker logs into Google account, accesses Nest camera
+Day 3 - Attacker knows when nobody home (motion patterns)
+Day 4 - Attacker breaks in while at work
+Day 5 - Homeowner returns, discovers burglary
 
 Outcome:
 - Smart camera became invasion risk, not security tool
@@ -487,11 +487,11 @@ Outcome:
 (This actually happened in documented cases)
 ```
 
-Privacy lesson: Cloud-based cameras without E2EE are security risks if account compromised.
+Privacy lesson - Cloud-based cameras without E2EE are security risks if account compromised.
 
 Protecting Your Privacy With Smart Cameras
 
-Mitigation 1: Choose Privacy-First Hardware
+Mitigation 1 - Choose Privacy-First Hardware
 
 Recommendation ranking (most private to least):
 
@@ -510,7 +510,7 @@ Tier 3 (Risky even with settings):
 
 If you own Ring, mitigate risks (see below). If choosing new camera, avoid Ring.
 
-Mitigation 2: Configure Privacy Settings Correctly
+Mitigation 2 - Configure Privacy Settings Correctly
 
 Ring (if you must use):
 
@@ -581,7 +581,7 @@ Arlo:
    - No sharing allowed (family can't re-share with others)
 ```
 
-Mitigation 3: Physical and Network Security
+Mitigation 3 - Physical and Network Security
 
 ```
 1. Position camera carefully:
@@ -602,7 +602,7 @@ Mitigation 3: Physical and Network Security
    - Prevents camera hack from accessing computer/phone
 ```
 
-Mitigation 4: Legal Documentation
+Mitigation 4 - Legal Documentation
 
 ```
 1. Understand local laws:
@@ -627,19 +627,19 @@ Alternative Approaches Without Cameras
 If you want security without surveillance risks:
 
 ```
-Option 1: Physical deterrents
+Option 1 - Physical deterrents
 - Good lighting (motion-activated)
 - Visible alarm system signs
 - Reinforced door locks
 - Gravel/alarm mat alerting to motion
 
-Option 2: Cellular alarm system
+Option 2 - Cellular alarm system
 - Monitored alarm (ADT, Vivint) without video
 - Professional monitoring without footage saved
 - No cloud storage, no police partnership
 - Monthly cost: $20-40
 
-Option 3: Local recording only (tech-forward)
+Option 3 - Local recording only (tech-forward)
 - Reolink or other local NVR
 - Air-gap network (no internet connection)
 - Physical control of all footage

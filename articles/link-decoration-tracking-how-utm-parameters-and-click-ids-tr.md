@@ -21,17 +21,17 @@ Link decoration is a tracking technique where query parameters like `utm_source`
 Table of Contents
 
 - [What Is Link Decoration?](#what-is-link-decoration)
-- [UTM Parameters: The Marketing Tracking Standard](#utm-parameters-the-marketing-tracking-standard)
-- [Click IDs: The Advertising Ecosystem's Tracking Infrastructure](#click-ids-the-advertising-ecosystems-tracking-infrastructure)
+- [UTM Parameters - The Marketing Tracking Standard](#utm-parameters-the-marketing-tracking-standard)
+- [Click IDs - The Advertising environment's Tracking Infrastructure](#click-ids-the-advertising-ecosystems-tracking-infrastructure)
 - [Identifying Link Decoration in the Wild](#identifying-link-decoration-in-the-wild)
 - [Mitigating Link Decoration Tracking](#mitigating-link-decoration-tracking)
-- [Advanced Detection: Identifying Hidden Tracking Parameters](#advanced-detection-identifying-hidden-tracking-parameters)
+- [Advanced Detection - Identifying Hidden Tracking Parameters](#advanced-detection-identifying-hidden-tracking-parameters)
 - [Server-Side Parameter Cleaning Strategies](#server-side-parameter-cleaning-strategies)
 - [Privacy-Focused Link Shortener Alternatives](#privacy-focused-link-shortener-alternatives)
 - [Browser Extension Implementation Details](#browser-extension-implementation-details)
-- [Click ID Ecosystem Deep Dive](#click-id-ecosystem-deep detailed look)
+- [Click ID environment Deep Dive](#click-id-environment-deep detailed look)
 - [Mitigating Tracking in Analytics Implementations](#mitigating-tracking-in-analytics-implementations)
-- [Documentation: Tracking Parameter Inventory](#documentation-tracking-parameter-inventory)
+- [Documentation - Tracking Parameter Inventory](#documentation-tracking-parameter-inventory)
 
 What Is Link Decoration?
 
@@ -45,7 +45,7 @@ https://example.com/product?utm_source=newsletter&utm_medium=email&utm_campaign=
 
 The parameters after the question mark are not part of the resource identifier. They are metadata added by the linking party to track referral behavior.
 
-UTM Parameters: The Marketing Tracking Standard
+UTM Parameters - The Marketing Tracking Standard
 
 UTM (Urchin Tracking Module) parameters represent the standardized framework for campaign attribution. Introduced by Urchin (later acquired by Google), they provide a consistent vocabulary for marking links across marketing channels.
 
@@ -57,7 +57,7 @@ The Five Standard UTM Parameters
 - utm_term: Captures paid search keywords (e.g., `running+shoes`)
 - utm_content: Differentiates similar content or links (e.g., `cta_button`, `text_link`)
 
-Practical Example: Building UTM-Tracked Links
+Practical Example - Building UTM-Tracked Links
 
 For developers automating link generation, constructing UTM parameters programmatically is straightforward:
 
@@ -87,7 +87,7 @@ How UTM Tracking Enables User Profiling
 
 The privacy implications become apparent when you consider how these parameters accumulate. Analytics platforms aggregate UTM data across millions of clicks, building detailed profiles of user acquisition channels, conversion paths, and behavioral patterns. When combined with cookies or device fingerprinting, UTM parameters become persistent tracking vectors.
 
-Click IDs: The Advertising Ecosystem's Tracking Infrastructure
+Click IDs - The Advertising environment's Tracking Infrastructure
 
 While UTM parameters are deliberately added by marketers, click IDs (also called click identifiers or clickthrough IDs) are automatically injected by advertising platforms, social networks, and affiliate programs.
 
@@ -148,11 +148,11 @@ Mitigating Link Decoration Tracking
 
 For Users
 
-1. Browser Extensions: Tools like Privacy Badger, uBlock Origin, or CleanURLs automatically strip tracking parameters from links.
+1. Browser Extensions - Tools like Privacy Badger, uBlock Origin, or CleanURLs automatically strip tracking parameters from links.
 
-2. Manual Parameter Removal: Before visiting a link, remove known tracking parameters from the URL. Most tracking breaks when the ID is removed.
+2. Manual Parameter Removal - Before visiting a link, remove known tracking parameters from the URL. Most tracking breaks when the ID is removed.
 
-3. Use Tracking-Free Alternatives: When sharing links, use services that strip parameters automatically (e.g., `nitter.net` for Twitter, `vxtwitter.com` for X).
+3. Use Tracking-Free Alternatives - When sharing links, use services that strip parameters automatically (e.g., `nitter.net` for Twitter, `vxtwitter.com` for X).
 
 For Developers
 
@@ -173,11 +173,11 @@ app.use((req, res, next) => {
 });
 ```
 
-2. Respect User Privacy in Analytics: Configure your analytics to automatically strip UTM parameters from stored data. Most modern analytics platforms support this.
+2. Respect User Privacy in Analytics - Configure your analytics to automatically strip UTM parameters from stored data. Most modern analytics platforms support this.
 
-3. Link Hygiene in Outbound Links: When linking to external sites, avoid appending unnecessary tracking parameters unless required for legitimate attribution.
+3. Link Hygiene in Outbound Links - When linking to external sites, avoid appending unnecessary tracking parameters unless required for legitimate attribution.
 
-Advanced Detection: Identifying Hidden Tracking Parameters
+Advanced Detection - Identifying Hidden Tracking Parameters
 
 Beyond standard UTM parameters, modern tracking systems use increasingly obscure parameter names designed to evade automatic filtering.
 
@@ -390,9 +390,9 @@ const observer = new MutationObserver(sanitizeLinks);
 observer.observe(document.body, { childList: true, subtree: true });
 ```
 
-Click ID Ecosystem Deep Dive
+Click ID environment Deep Dive
 
-Understanding how click IDs flow through the advertising ecosystem reveals the tracking chain:
+Understanding how click IDs flow through the advertising environment reveals the tracking chain:
 
 Facebook's Attribution System:
 The fbclid parameter contains an encrypted identifier that Facebook can decrypt using their server-side keys. When you visit a website with fbclid, Facebook's Pixel (if installed) sends this parameter back to Facebook, completing the tracking loop.
@@ -429,7 +429,7 @@ gtag('config', 'GA_MEASUREMENT_ID', {
 });
 ```
 
-Documentation: Tracking Parameter Inventory
+Documentation - Tracking Parameter Inventory
 
 For audit purposes, maintain documentation of all parameters your systems might generate:
 

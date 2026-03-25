@@ -255,20 +255,20 @@ Security Considerations
 
 All three tools provide encryption, but they differ in forward secrecy and authentication:
 
-- Shadowsocks: Uses symmetric encryption (AEAD). No forward secrecy by default.
+- Shadowsocks - Uses symmetric encryption (AEAD). No forward secrecy by default.
 - V2Ray VMess: Uses Time-based UUIDs with optional authentication.
 - V2Ray VLESS: No encryption by design (relies on TLS), but supports XTLS for memory encryption.
-- Trojan: Relies entirely on TLS 1.3 for encryption and forward secrecy.
+- Trojan - Relies entirely on TLS 1.3 for encryption and forward secrecy.
 
 For high-security requirements, combine V2Ray or Trojan with a reputable TLS certificate from Let's Encrypt and enable certificate pinning on the client side.
 
 Deployment Recommendations
 
-Personal Use: Trojan offers the best balance of simplicity and circumvention capability. The HTTPS imitation provides strong resistance to blocking with minimal configuration.
+Personal Use - Trojan offers the best balance of simplicity and circumvention capability. The HTTPS imitation provides strong resistance to blocking with minimal configuration.
 
-Team/Organization: V2Ray's routing capabilities make it suitable for distributing traffic across multiple servers and implementing failover.
+Team/Organization - V2Ray's routing capabilities make it suitable for distributing traffic across multiple servers and implementing failover.
 
-High-Risk Environments: V2Ray with VLESS and XTLS provides the strongest resistance to advanced detection methods.
+High-Risk Environments - V2Ray with VLESS and XTLS provides the strongest resistance to advanced detection methods.
 
 Updating and Maintenance
 

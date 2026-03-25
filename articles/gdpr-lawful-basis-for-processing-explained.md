@@ -33,7 +33,7 @@ The six bases are:
 
 Each basis suits different scenarios. Choosing incorrectly can result in regulatory fines and force you to delete legitimately collected data.
 
-Consent: The Most Common Basis for Consumer Apps
+Consent - The Most Common Basis for Consumer Apps
 
 Consent applies when you need explicit permission from users to process their data. It's the basis most consumer-facing applications use for marketing emails, analytics tracking, and personalized features.
 
@@ -95,7 +95,7 @@ function handleConsentWithdrawal(userId, purpose) {
 }
 ```
 
-Contract: Processing Required for Service Delivery
+Contract - Processing Required for Service Delivery
 
 Use this basis when processing is essential to provide your core service. The key test: without this processing, you literally cannot deliver what the user contracted for.
 
@@ -130,11 +130,11 @@ def is_processing_necessary_for_contract(service_type, operation):
     return operation in CONTRACT_NECESSARY_PROCESSING.get(service_type, [])
 ```
 
-Legal Obligation: When Law Requires Processing
+Legal Obligation - When Law Requires Processing
 
 Some processing is mandatory under other laws. When GDPR applies alongside other regulations (like tax law, anti-money laundering, or healthcare privacy rules), you can rely on legal obligation as your basis.
 
-This basis differs from others: you cannot offer users a choice, and withdrawal requests generally don't apply since you're fulfilling a legal requirement.
+This basis differs from others - you cannot offer users a choice, and withdrawal requests generally don't apply since you're fulfilling a legal requirement.
 
 ```javascript
 // Document legal obligations in your processing records
@@ -151,7 +151,7 @@ const legalObligation = {
 };
 ```
 
-Vital Interests: Emergency Situations Only
+Vital Interests - Emergency Situations Only
 
 This basis applies only when processing is necessary to protect someone's life. It's rarely used in typical application development but applies to:
 - Medical emergency systems
@@ -160,7 +160,7 @@ This basis applies only when processing is necessary to protect someone's life. 
 
 Document these cases thoroughly since the threshold is high.
 
-Legitimate Interest: The Flexible but Complex Basis
+Legitimate Interest - The Flexible but Complex Basis
 
 Legitimate interest requires balancing your organization's interests against individual privacy rights. It's the most flexible basis but demands documentation through a Legitimate Interest Assessment (LIA).
 
@@ -202,7 +202,7 @@ class LegitimateInterestAssessment {
 }
 ```
 
-Choosing the Right Basis: Practical Decision Framework
+Choosing the Right Basis - Practical Decision Framework
 
 Use this decision logic when selecting a lawful basis:
 

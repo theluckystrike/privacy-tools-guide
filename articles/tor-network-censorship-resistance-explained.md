@@ -21,11 +21,11 @@ The Tor network stands as one of the most effective tools for circumventing netw
 Table of Contents
 
 - [How Tor Provides Censorship Resistance](#how-tor-provides-censorship-resistance)
-- [Bridges: The First Line of Defense](#bridges-the-first-line-of-defense)
-- [Pluggable Transports: Beyond Basic Obfuscation](#pluggable-transports-beyond-basic-obfuscation)
+- [Bridges - The First Line of Defense](#bridges-the-first-line-of-defense)
+- [Pluggable Transports - Beyond Basic Obfuscation](#pluggable-transports-beyond-basic-obfuscation)
 - [Verifying Your Tor Connection](#verifying-your-tor-connection)
 - [Building Censorship-Resistant Applications](#building-censorship-resistant-applications)
-- [Advanced: Running Your Own Bridge](#advanced-running-your-own-bridge)
+- [Advanced - Running Your Own Bridge](#advanced-running-your-own-bridge)
 - [Security Considerations](#security-considerations)
 - [Deep Packet Inspection (DPI) and How Tor Evades It](#deep-packet-inspection-dpi-and-how-tor-evades-it)
 - [Measuring Blocking and Implementing Fallbacks](#measuring-blocking-and-implementing-fallbacks)
@@ -43,7 +43,7 @@ Tor achieves censorship resistance through several interconnected mechanisms. At
 
 The three-hop circuit represents the fundamental building block. When you connect to Tor, your traffic passes through an entry guard, a middle relay, and an exit node. Each relay only knows its predecessor and successor, never the complete path. A network observer in your country sees only encrypted traffic to your entry guard, nothing about your final destination or the content you access.
 
-Bridges: The First Line of Defense
+Bridges - The First Line of Defense
 
 Censorship systems often block Tor by maintaining lists of known relay IP addresses. Tor addresses this through bridges, unlisted relays that don't appear in the public directory. When standard relays are blocked, bridges enable connectivity.
 
@@ -72,7 +72,7 @@ Bridge obfs4 <IP>:<PORT> <FINGERPRINT> <CERT> <IAL>
 
 The `obfs4` transport provides additional obfuscation, making Tor traffic appear like random data to deep packet inspection systems.
 
-Pluggable Transports: Beyond Basic Obfuscation
+Pluggable Transports - Beyond Basic Obfuscation
 
 Pluggable transports (PTs) transform Tor traffic to bypass sophisticated filtering. These protocols run between your client and a bridge, wrapping Tor cells in generic-looking traffic.
 
@@ -162,7 +162,7 @@ Run any command through Tor
 proxychains4 curl https://api.ipify.org
 ```
 
-Advanced: Running Your Own Bridge
+Advanced - Running Your Own Bridge
 
 Contributing a bridge strengthens the network and improves your understanding of Tor's architecture:
 
@@ -206,17 +206,17 @@ Censorship systems (particularly in China, Russia, Iran) use machine learning to
 Pluggable transports defend against DPI:
 
 ```
-Pattern: Tor traffic looks like TLS
-Defense: obfs4 makes TLS look like random noise
+Pattern - Tor traffic looks like TLS
+Defense - obfs4 makes TLS look like random noise
 
-Pattern: Consistent packet sizes
-Defense: meek adds random padding to each packet
+Pattern - Consistent packet sizes
+Defense - meek adds random padding to each packet
 
-Pattern: Distinct connection patterns
-Defense: Snowflake mixes Tor traffic with WebRTC video
+Pattern - Distinct connection patterns
+Defense - Snowflake mixes Tor traffic with WebRTC video
 
-Pattern: Consensus lookups identifiable
-Defense: Use bridge authority (bridging.torproject.org) instead of hardcoded directory
+Pattern - Consensus lookups identifiable
+Defense - Use bridge authority (bridging.torproject.org) instead of hardcoded directory
 ```
 
 For developers implementing censorship resistance, understand that blocking isn't binary, it's a cat-and-mouse game of fingerprint evasion.
@@ -310,7 +310,7 @@ China:
 - Throttling known Tor relay IPs
 - DPI-based pattern matching
 
-Defense: Meek, Snowflake, or custom bridges with frequent updates
+Defense - Meek, Snowflake, or custom bridges with frequent updates
 
 ```bash
 China-specific configuration
@@ -324,14 +324,14 @@ Russia:
 - Active measurement and fingerprinting
 - Blocking directory authorities
 
-Defense: Bridges with obfs4 or snowflake
+Defense - Bridges with obfs4 or snowflake
 
 ```bash
 Russia-specific configuration
 Bridge obfs4 <IP> <FINGERPRINT> <CERT> <IAL>
 ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
 
-Alternative: Use snowflake for WebRTC-based bridging
+Alternative - Use snowflake for WebRTC-based bridging
 ```
 
 Iran:
@@ -339,10 +339,10 @@ Iran:
 - Deep packet inspection
 - Forced ISP-level filtering
 
-Defense: Only bridges outside Iran's networks; meek/snowflake necessary
+Defense - Only bridges outside Iran's networks; meek/snowflake necessary
 
 ```bash
-Iran-specific: Use international bridges exclusively
+Iran-specific - Use international bridges exclusively
 Bridges inside Iran are often already blocked
 ```
 
@@ -352,8 +352,8 @@ Tor provides strong privacy but at a performance cost. Optimize where possible:
 
 ```bash
 Increase circuit length (higher security) vs decrease (faster):
-Default: 3 hops
-More private (slower): 4-5 hops
+Default - 3 hops
+More private (slower) - 4-5 hops
 
 In torrc:
 CircuitLengthRandomly 1  # Random 2-5 hops
@@ -377,7 +377,7 @@ Traffic exits the Tor network unencrypted (unless using HTTPS). Exit node operat
 ```
 Risk level:
 HTTP traffic: HIGH (plaintext readable at exit node)
-HTTPS traffic: LOW (encrypted end-to-end)
+HTTPS traffic - LOW (encrypted end-to-end)
 HTTPS + custom header verification: VERY LOW
 
 Mitigations:
@@ -396,7 +396,7 @@ const headers = {
   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0',
   'Accept-Language': 'en-US,en;q=0.5',
   // Don't send unusual headers that identify app
-  // Avoid: 'X-App-Version', 'X-Client-ID', etc.
+  // Avoid - 'X-App-Version', 'X-Client-ID', etc.
   // Never include API tokens in headers (use POST body with HTTPS)
 };
 

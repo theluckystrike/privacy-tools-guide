@@ -32,7 +32,7 @@ Table of Contents
 - [Top Privacy-Focused RSS Readers for Visual Impairment Access](#top-privacy-focused-rss-readers-for-visual-impairment-access)
 - [Privacy Architecture Considerations](#privacy-architecture-considerations)
 - [Building an Accessible RSS Workflow](#building-an-accessible-rss-workflow)
-- [Evaluating Cloud RSS Services: What to Avoid](#evaluating-cloud-rss-services-what-to-avoid)
+- [Evaluating Cloud RSS Services - What to Avoid](#evaluating-cloud-rss-services-what-to-avoid)
 - [Screen Reader Testing Methodology](#screen-reader-testing-methodology)
 - [Feed Management for Low-Vision Workflows](#feed-management-for-low-vision-workflows)
 
@@ -48,7 +48,7 @@ Top Privacy-Focused RSS Readers for Visual Impairment Access
 
 Miniflux stands as the most capable self-hosted option for visually impaired users. It offers a clean semantic HTML structure that screen readers navigate efficiently, full keyboard navigation without requiring mouse interaction, and a minimal JavaScript footprint that reduces potential accessibility barriers.
 
-Privacy architecture: Miniflux runs entirely on your server, meaning no third party sees your feed subscriptions or reading habits. The software supports CalibreOPDS for audiobook integration, allowing integration with screen reader-friendly ebook workflows.
+Privacy architecture - Miniflux runs entirely on your server, meaning no third party sees your feed subscriptions or reading habits. The software supports CalibreOPDS for audiobook integration, allowing integration with screen reader-friendly ebook workflows.
 
 Accessibility features:
 - Complete keyboard shortcuts for all operations (j/k for navigation, r to refresh, v to view original)
@@ -95,7 +95,7 @@ def get_unread_entries(feed_id=None):
     )
     return response.json()
 
-Use with screen reader: pipe output to espeak
+Use with screen reader - pipe output to espeak
 entries = get_unread_entries()
 for entry in entries["entries"][:10]:
     print(f"{entry['title']} - {entry['url']}")
@@ -105,7 +105,7 @@ for entry in entries["entries"][:10]:
 
 NetNewsWire provides excellent VoiceOver support on Apple platforms with a completely local-first model. Unlike cloud-synced alternatives, all data remains on your device, and the application supports manual feed import/export without requiring account creation.
 
-Privacy advantages: No account required, no data collection, full OPML import/export, and synchronization via iCloud or local network only if you explicitly enable it.
+Privacy advantages - No account required, no data collection, full OPML import/export, and synchronization via iCloud or local network only if you explicitly enable it.
 
 Accessibility highlights:
 - Native VoiceOver optimization with rotor navigation
@@ -234,13 +234,13 @@ Privacy Architecture Considerations
 
 When evaluating RSS readers for accessibility, examine these privacy-critical components:
 
-Data storage location: Self-hosted solutions keep your feed subscriptions and reading history under your control. Cloud services may retain metadata even after account deletion.
+Data storage location - Self-hosted solutions keep your feed subscriptions and reading history under your control. Cloud services may retain metadata even after account deletion.
 
-Feed fetching behavior: Some aggregators send your IP address and user agent to feed servers on every request. Privacy-conscious clients offer proxy configuration or Tor integration.
+Feed fetching behavior - Some aggregators send your IP address and user agent to feed servers on every request. Privacy-conscious clients offer proxy configuration or Tor integration.
 
-Third-party dependencies: Review JavaScript included in web interfaces. Self-hosted solutions typically minimize or allow disabling non-essential scripts.
+Third-party dependencies - Review JavaScript included in web interfaces. Self-hosted solutions typically minimize or allow disabling non-essential scripts.
 
-API security: If using mobile apps or external integrations, ensure API tokens can be revoked and support for two-factor authentication exists.
+API security - If using mobile apps or external integrations, ensure API tokens can be revoked and support for two-factor authentication exists.
 
 Building an Accessible RSS Workflow
 
@@ -257,7 +257,7 @@ import subprocess
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta
 
-Privacy: use local TTS instead of cloud APIs
+Privacy - use local TTS instead of cloud APIs
 TTS_ENGINE = "espeak"  # or "say" on macOS
 
 def fetch_feed(url, tor_proxy=None):
@@ -304,7 +304,7 @@ if __name__ == "__main__":
             speak_entry(entry)
 ```
 
-Evaluating Cloud RSS Services: What to Avoid
+Evaluating Cloud RSS Services - What to Avoid
 
 Not all RSS services respect user privacy equally. Many popular cloud-based aggregators. including historical services that have since shut down. monetized reading behavior through advertising profiles built from subscription data. When evaluating any cloud-hosted option, look for explicit answers to these questions:
 
@@ -319,23 +319,23 @@ Screen Reader Testing Methodology
 
 When testing an RSS reader for screen reader compatibility, use a structured approach rather than spot-checking:
 
-NVDA on Windows: Navigate the application entirely with keyboard, verifying that every interactive element announces its role and state. Check that article lists announce item count, that focus moves predictably when marking articles read, and that no content is trapped in inaccessible custom widgets.
+NVDA on Windows - Navigate the application entirely with keyboard, verifying that every interactive element announces its role and state. Check that article lists announce item count, that focus moves predictably when marking articles read, and that no content is trapped in inaccessible custom widgets.
 
-VoiceOver on macOS: Use the VoiceOver cursor independently of keyboard focus to verify that web-view content within the reader renders with proper heading structure. RSS article content often contains deeply nested HTML. confirm that headings H1, H3 navigate correctly with VO+Command+H.
+VoiceOver on macOS - Use the VoiceOver cursor independently of keyboard focus to verify that web-view content within the reader renders with proper heading structure. RSS article content often contains deeply nested HTML. confirm that headings H1, H3 navigate correctly with VO+Command+H.
 
-JAWS on Windows: Test virtual cursor mode against application mode switching. Some Electron-based RSS readers trigger unexpected mode switches that lose context. A well-built reader stays in application mode with consistent behavior.
+JAWS on Windows - Test virtual cursor mode against application mode switching. Some Electron-based RSS readers trigger unexpected mode switches that lose context. A well-built reader stays in application mode with consistent behavior.
 
-A useful quick test: can you subscribe to a new feed, read three articles, mark them read, and export your OPML file entirely without touching a mouse? If any step requires visual interaction, the tool is not fully accessible.
+A useful quick test - can you subscribe to a new feed, read three articles, mark them read, and export your OPML file entirely without touching a mouse? If any step requires visual interaction, the tool is not fully accessible.
 
 Feed Management for Low-Vision Workflows
 
 Users with partial vision often benefit from additional organizational strategies within their RSS reader:
 
-Category organization: Group feeds into broad categories (News, Technical, Personal) and use keyboard shortcuts to navigate between categories rather than scrolling long feed lists. Both Miniflux and FreshRSS support multi-level categories.
+Category organization - Group feeds into broad categories (News, Technical, Personal) and use keyboard shortcuts to navigate between categories rather than scrolling long feed lists. Both Miniflux and FreshRSS support multi-level categories.
 
-Reading view consistency: Enable reader mode or article extraction when available. Raw feed content often includes poorly structured HTML that creates erratic screen reader behavior. Tools like Miniflux can be configured to fetch and clean full article content rather than displaying feed excerpts.
+Reading view consistency - Enable reader mode or article extraction when available. Raw feed content often includes poorly structured HTML that creates erratic screen reader behavior. Tools like Miniflux can be configured to fetch and clean full article content rather than displaying feed excerpts.
 
-Font and spacing adjustments: For low-vision users who benefit from enlarged text, self-hosted solutions allow custom CSS injection. A simple override like `body { font-size: 1.4em; line-height: 1.8; }` in your user stylesheet dramatically improves readability without requiring separate magnification software.
+Font and spacing adjustments - For low-vision users who benefit from enlarged text, self-hosted solutions allow custom CSS injection. A simple override like `body { font-size: 1.4em; line-height: 1.8; }` in your user stylesheet dramatically improves readability without requiring separate magnification software.
 
 Related Articles
 

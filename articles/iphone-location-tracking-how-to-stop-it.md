@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand iPhone Location Data
+Step 1 - Understand iPhone Location Data
 
 iOS maintains location data at three distinct levels: the system-wide location toggle, individual app permissions, and hidden system services. Each operates independently, meaning disabling one does not affect others.
 
 The Significant Locations feature deserves particular attention. This service learns your movement patterns and predicts destinations. Apple stores this data locally on your device, but the mere existence of this behavioral profiling concerns privacy-conscious users.
 
-Step 2: Disable System-Wide Location
+Step 2 - Disable System-Wide Location
 
 The first layer involves the master location switch:
 
@@ -43,7 +43,7 @@ The first layer involves the master location switch:
 
 This disables all location access across every app and service. However, certain features become unavailable, Maps navigation, Find My, location-based reminders. For most users, a more granular approach works better.
 
-Step 3: Per-App Location Controls
+Step 3 - Per-App Location Controls
 
 iOS provides four location permission levels for each app:
 
@@ -63,7 +63,7 @@ No direct CLI for iOS permission inspection exists
 
 For each app, navigate to Settings → Privacy & Security → Location Services → [App Name] and select Never or While Using based on necessity. Review apps that currently have Always access, they can track you continuously.
 
-Step 4: System Services Location Tracking
+Step 4 - System Services Location Tracking
 
 Apple embeds location functionality deep within system services. These operate independently of third-party apps:
 
@@ -99,16 +99,16 @@ Emergency Location
 
 Note that Emergency Calls and Emergency SOS require location to function properly. These should remain enabled for safety reasons.
 
-Step 5: Developer Automation with Shortcuts
+Step 5 - Developer Automation with Shortcuts
 
 For power users, Shortcuts provides programmatic control. Create automations that adjust location settings based on context:
 
 Automation to Disable Location at Home
 
 ```shortcuts
-Shortcut: Disable Location When Home
-Trigger: Arrive at Home
-Action: Set Location Services to Off (requires confirmation)
+Shortcut - Disable Location When Home
+Trigger - Arrive at Home
+Action - Set Location Services to Off (requires confirmation)
 
 iOS does not allow fully automated toggling
 due to security restrictions
@@ -151,7 +151,7 @@ func checkLocationPermission(for app: String) {
 }
 ```
 
-Step 6: Network-Level Location Blocking
+Step 6 - Network-Level Location Blocking
 
 For developers running local networks, blocking location API calls at the DNS level adds protection:
 
@@ -175,7 +175,7 @@ sudo pihole -g
 
 Note that blocking these domains may affect Find My, iCloud sync, and emergency services.
 
-Step 7: Safari and Web Location Requests
+Step 7 - Safari and Web Location Requests
 
 Safari respects system location permissions. Additionally:
 
@@ -185,7 +185,7 @@ Safari respects system location permissions. Additionally:
 
 Websites cannot request location without permission prompts, ensure Safari settings prevent persistent permissions.
 
-Step 8: Verify Your Configuration
+Step 8 - Verify Your Configuration
 
 After implementing changes, verify your location isolation:
 
@@ -204,7 +204,7 @@ Manual verification steps:
 4. Run "Find My" and verify it still works (if needed)
 ```
 
-Step 9: Practical Recommendations
+Step 9 - Practical Recommendations
 
 For maximum privacy without breaking functionality:
 

@@ -100,7 +100,7 @@ Recipient receives, decrypts with their password
          ↓
 Recipient reads plaintext
 
-Benefit: ProtonMail servers have encrypted email they cannot decrypt.
+Benefit - ProtonMail servers have encrypted email they cannot decrypt.
 If governments subpoena ProtonMail for your email, they get gibberish.
 ```
 
@@ -116,7 +116,7 @@ They enter password you shared
          ↓
 Email decrypts in their browser (ProtonMail can't read it either)
 
-Drawback: You must securely share password with recipient (not via email!)
+Drawback - You must securely share password with recipient (not via email!)
 ```
 
 Pricing
@@ -241,28 +241,28 @@ Pricing
 Comparison by Use Case
 
 If you're protecting from governments/surveillance:
-Best: Tutanota
+Best - Tutanota
 - No metadata exposure
 - Open-source
 - Zero-knowledge architecture
 - €3.99/month
 
 If you want best overall (encryption + usability):
-Best: ProtonMail Pro ($10/month)
-- Larger ecosystem (more people use it)
+Best - ProtonMail Pro ($10/month)
+- Larger environment (more people use it)
 - Better apps and integrations
 - Strong encryption
 - Pro tier worth the cost
 
 If you want privacy from advertisers but not paranoid about governments:
-Best: Fastmail ($5/month)
+Best - Fastmail ($5/month)
 - Best Gmail-like interface
 - Fast, reliable
 - Privacy commitment with legal teeth
 - IMAP support for any client
 
 If you're privacy-obsessed and willing to sacrifice convenience:
-Best: Tutanota (open-source variant)
+Best - Tutanota (open-source variant)
 - Most encrypted
 - No metadata leaks
 - Cheapest option
@@ -270,7 +270,7 @@ Best: Tutanota (open-source variant)
 
 Migration from Gmail
 
-Step 1: Create New Email Account
+Step 1 - Create New Email Account
 
 ```
 1. Sign up for new privacy email (ProtonMail/Tutanota/Fastmail)
@@ -279,7 +279,7 @@ Step 1: Create New Email Account
 4. Download/export all Gmail data first (see below)
 ```
 
-Step 2: Update Important Accounts
+Step 2 - Update Important Accounts
 
 ```
 Accounts to update immediately (high priority):
@@ -311,7 +311,7 @@ GitHub | old@gmail.com | me@protonmail.com |  |
 ...
 ```
 
-Step 3: Set Up Email Forwarding
+Step 3 - Set Up Email Forwarding
 
 Keep Gmail alive for 6 months to forward new mail to new address:
 
@@ -327,7 +327,7 @@ After 6 months, disable forwarding. Most important accounts will already
 be updated.
 ```
 
-Step 4: Export Gmail Data
+Step 4 - Export Gmail Data
 
 ```
 Before leaving Gmail, export everything:
@@ -338,7 +338,7 @@ Before leaving Gmail, export everything:
 5. Optional: Never import it (fresh start is cleaner)
 ```
 
-Step 5: Plan for Old Email Address
+Step 5 - Plan for Old Email Address
 
 ```
 Two strategies:
@@ -394,9 +394,9 @@ Best Practices with Privacy Email
  - Never share with anyone
 
 5. Create aliases for different purposes
- - Personal: you@protonmail.com
- - Shopping: shopping@protonmail.com
- - Services: services@protonmail.com
+ - Personal - you@protonmail.com
+ - Shopping - shopping@protonmail.com
+ - Services - services@protonmail.com
  - This limits exposure if one alias is breached
 
 6. Regularly review security
@@ -418,19 +418,19 @@ For true privacy, combine with VPN, use Tor browser for sensitive communications
 
 Recommendation
 
-For most people: Start with Fastmail ($5/month)
+For most people - Start with Fastmail ($5/month)
 - Best usability/privacy balance
 - Reliable, fast
 - IMAP support if you want to switch later
 - Privacy commitment without paranoia
 
-For privacy-focused: Use ProtonMail Pro ($10/month)
+For privacy-focused - Use ProtonMail Pro ($10/month)
 - Strong encryption
-- Large user ecosystem
+- Large user environment
 - Good balance of usability and security
 - Plus tier ($5) is minimum viable
 
-For maximum privacy: Choose Tutanota (€4/month)
+For maximum privacy - Choose Tutanota (€4/month)
 - Most encrypted option
 - Cheapest
 - Open-source verification

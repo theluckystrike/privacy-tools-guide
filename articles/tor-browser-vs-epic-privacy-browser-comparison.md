@@ -148,7 +148,7 @@ For developers working with either browser, understanding network behavior is cr
 
 ```bash
 Check Tor circuit status
-Visit: http://check.torproject.org
+Visit - http://check.torproject.org
 
 View Tor circuit information in Tor Browser
 Click the onion icon -> View the Network
@@ -164,15 +164,15 @@ Developers can verify privacy implementations:
 
 ```bash
 Test DNS leak protection
-Visit: https://dnsleaktest.com
+Visit - https://dnsleaktest.com
 Compare results with and without Epic
 
 Test WebRTC leaks
-Visit: https://ipleak.net
+Visit - https://ipleak.net
 Both browsers include WebRTC leak protection
 
 Test fingerprint consistency
-Visit: https://coveryourtracks.eff.org
+Visit - https://coveryourtracks.eff.org
 Tor should show randomized fingerprint
 Epic should show some protection
 ```
@@ -238,7 +238,7 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 Related Articles
 
 - [Tor Browser vs LibreWolf Privacy Comparison](/tor-browser-vs-librewolf-privacy-comparison/)
-- [Tor Browser vs VPN Comparison: Which Is Better for Privacy?](/tor-browser-vs-vpn-comparison-which-is-better/)
+- [Tor Browser vs VPN Comparison - Which Is Better for Privacy?](/tor-browser-vs-vpn-comparison-which-is-better/)
 - [Best Browser for Tor Network 2026: A Technical Guide](/best-browser-for-tor-network-2026/)
 - [Best Browser To Use With Tor Hidden Services](/best-browser-to-use-with-tor-hidden-services/)
 - [How To Use Tor Browser For Creating Anonymous Accounts Witho](/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)

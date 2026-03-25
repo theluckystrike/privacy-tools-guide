@@ -28,11 +28,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Android Permission Categories and Protection Levels
+Step 1 - Understand Android Permission Categories and Protection Levels
 
 Android organizes permissions into protection levels that determine how apps can request and obtain access to sensitive resources. The protection level system forms a hierarchy of increasingly sensitive access. Understanding these levels helps you evaluate whether an app's permission requests are legitimate.
 
-Normal Permissions (Low Risk): Cover low-risk operations like changing the wallpaper, accessing vibration settings, reading battery statistics, or enabling/disabling WiFi. Android grants these automatically without user consent during installation. Examples include:
+Normal Permissions (Low Risk) - Cover low-risk operations like changing the wallpaper, accessing vibration settings, reading battery statistics, or enabling/disabling WiFi. Android grants these automatically without user consent during installation. Examples include:
 - `android.permission.ACCESS_NETWORK_STATE`
 - `android.permission.VIBRATE`
 - `android.permission.INTERNET`
@@ -51,7 +51,7 @@ These always require explicit user approval.
 
 Android 6.0 (API level 23) introduced runtime permissions, meaning apps must request dangerous permissions at runtime rather than automatically receiving them during installation. However, apps can still request permissions they don't immediately need, and many users approve requests without careful consideration, studies show approval rates of 70%+ without reading explanations.
 
-Step 2: Use Android's Built-in Permission Manager
+Step 2 - Use Android's Built-in Permission Manager
 
 Android provides native tools for reviewing and managing permissions without requiring technical expertise. These tools provide sufficient functionality for most privacy audits.
 
@@ -66,7 +66,7 @@ Android 12 and later includes a Permissions dashboard showing recent permission 
 
 This usage log is crucial because some apps request permissions but never actually use them, misleading users about their privacy exposure.
 
-Step 3: Audit Permissions via ADB
+Step 3 - Audit Permissions via ADB
 
 For developers and power users, Android Debug Bridge (ADB) provides command-line access to detailed permission information. Enable developer options on your device, then connect via USB debugging. Install ADB on your computer:
 
@@ -96,7 +96,7 @@ adb shell pm dump packages > permissions_audit.txt
 
 This dump includes every app's requested permissions, granted permissions, and installation timestamp, useful for identifying apps that request excessive permissions during installation.
 
-Step 4: Identifying Suspicious Permission Patterns
+Step 4 - Identifying Suspicious Permission Patterns
 
 When auditing permissions, certain patterns warrant closer scrutiny. A flashlight app requesting camera access makes sense, but requesting contacts or microphone access raises concerns. A simple note-taking app should not need location or phone status permissions.
 
@@ -112,7 +112,7 @@ Build a baseline expectation for common app categories:
 
 Apps requesting permissions outside their functional category may be overreaching. Check the app's privacy policy, required by Google Play, if the permission requests seem disproportionate to the app's purpose.
 
-Step 5: Revoking Permissions Safely
+Step 5 - Revoking Permissions Safely
 
 Android allows revoking dangerous permissions for any app, regardless of whether the app targets older API versions. Use the built-in interface or ADB:
 
@@ -128,7 +128,7 @@ Revoking permissions may cause app malfunctions. If an app crashes after losing 
 
 For apps targeting Android 11 (API 30) or higher, scoped storage limits app access to shared storage. However, apps can still request broad access via the MANAGE_EXTERNAL_STORAGE permission, which Google Play restricts for most apps. If an app unnecessarily requests this permission, deny it and look for alternatives.
 
-Step 6: Automate Permission Audits
+Step 6 - Automate Permission Audits
 
 For users managing multiple devices or performing regular security audits, scripting the permission review process saves time. Here's a bash script that identifies apps with unusual permission combinations and exports detailed reports:
 
@@ -136,7 +136,7 @@ For users managing multiple devices or performing regular security audits, scrip
 #!/bin/bash
 
 Android Permission Audit Script
-Usage: ./audit-permissions.sh > permission_report.txt
+Usage - ./audit-permissions.sh > permission_report.txt
 
 echo "=== Android Permission Audit Report ==="
 echo "Generated: $(date)"
@@ -191,19 +191,19 @@ done
 
 Save as `audit-permissions.sh`, make executable with `chmod +x`, and run to generate detailed permission reports.
 
-Step 7: Understand Permission Grant Techniques
+Step 7 - Understand Permission Grant Techniques
 
 Modern apps use sophisticated techniques to escalate permission requests. Understanding these patterns helps identify problematic apps:
 
-Feature Creep Requests: Apps request permissions claiming they're for future features. A note-taking app might request calendar access "for reminders" that don't exist yet.
+Feature Creep Requests - Apps request permissions claiming they're for future features. A note-taking app might request calendar access "for reminders" that don't exist yet.
 
-Legitimacy Bundling: Developers group mandatory permissions with optional ones. A flashlight app bundles camera access (necessary) with location access (unnecessary).
+Legitimacy Bundling - Developers group mandatory permissions with optional ones. A flashlight app bundles camera access (necessary) with location access (unnecessary).
 
-Dependency Spoofing: Some apps claim system permissions are required when they're actually optional. GPS navigation might claim contacts are needed for address autocomplete, when manual entry works fine.
+Dependency Spoofing - Some apps claim system permissions are required when they're actually optional. GPS navigation might claim contacts are needed for address autocomplete, when manual entry works fine.
 
 Detecting these patterns requires checking the app's actual functionality against requested permissions. Use the Permission Manager's usage history to verify whether an app actually uses granted permissions.
 
-Step 8: Permission Grant Timestamps and Tracking
+Step 8 - Permission Grant Timestamps and Tracking
 
 Android 13+ stores permission grant timestamps in the system logs. Use these to identify when permissions were granted and track evolution:
 
@@ -217,7 +217,7 @@ adb shell pm dump com.example.app | grep -A 20 "runtime permissions:"
 
 Applications sometimes request permissions months after installation, during seemingly innocent updates. Timestamp awareness helps identify suspicious permission escalation.
 
-Step 9: System Apps and Bloatware
+Step 9 - System Apps and Bloatware
 
 Pre-installed system apps often ship with permissions that cannot be fully revoked through standard interfaces. On rooted devices, ADB provides deeper control:
 
@@ -240,33 +240,33 @@ Best Practices for Ongoing Permission Hygiene
 
 Permission management requires ongoing attention, not a one-time audit. Adopt these habits:
 
-Pre-installation audit: Review permissions before installing any app, the Play Store shows requested permissions before download. Search for user reviews mentioning unusual permission requests or data collection.
+Pre-installation audit - Review permissions before installing any app, the Play Store shows requested permissions before download. Search for user reviews mentioning unusual permission requests or data collection.
 
-Regular cleanup: Delete apps you haven't used in 30 days rather than letting them accumulate. App accumulation increases your attack surface.
+Regular cleanup - Delete apps you haven't used in 30 days rather than letting them accumulate. App accumulation increases your attack surface.
 
-Automatic reset: Enable "Permissions automatically reset" in Android 12+ settings, which revokes permissions for unused apps after 3 months of non-use.
+Automatic reset - Enable "Permissions automatically reset" in Android 12+ settings, which revokes permissions for unused apps after 3 months of non-use.
 
-Monthly reviews: Check the Permission Manager monthly for unexpected permission grants. Sometimes app updates add new permissions without user notification.
+Monthly reviews - Check the Permission Manager monthly for unexpected permission grants. Sometimes app updates add new permissions without user notification.
 
-Update discipline: Before installing app updates, check the permissions list. Updates sometimes add suspicious new permissions, defer updates if permissions seem excessive.
+Update discipline - Before installing app updates, check the permissions list. Updates sometimes add suspicious new permissions, defer updates if permissions seem excessive.
 
 For developers building Android apps, follow the principle of least privilege. Request permissions only when actually needed, explain specifically why your app needs each permission in the app store listing, and implement graceful degradation when users deny permissions. Users are more likely to grant requests from apps that transparently explain necessity.
 
-Step 10: Permission Abuse Patterns
+Step 10 - Permission Abuse Patterns
 
 Knowing how developers abuse permissions helps you identify risky apps:
 
-Unnecessary Permission Stacking: Apps request many overlapping permissions. A calendar app might request READ_CONTACTS, WRITE_CONTACTS, GET_ACCOUNTS, READ_CALENDAR, and WRITE_CALENDAR when only calendar functionality is used. Each extra permission expands attack surface.
+Unnecessary Permission Stacking - Apps request many overlapping permissions. A calendar app might request READ_CONTACTS, WRITE_CONTACTS, GET_ACCOUNTS, READ_CALENDAR, and WRITE_CALENDAR when only calendar functionality is used. Each extra permission expands attack surface.
 
-Background Execution Permissions: Permissions like WAKE_LOCK, INTERNET, and RECEIVE_BOOT_COMPLETED allow apps to run in the background and autostart after device reboot. Legitimate uses exist, but many apps use these to maintain aggressive analytics.
+Background Execution Permissions - Permissions like WAKE_LOCK, INTERNET, and RECEIVE_BOOT_COMPLETED allow apps to run in the background and autostart after device reboot. Legitimate uses exist, but many apps use these to maintain aggressive analytics.
 
-Package Visibility Escalation: Apps use QUERY_ALL_PACKAGES to see which other apps you've installed. While some features legitimately need this (password managers, app launchers), it's also used to fingerprint users based on app inventory.
+Package Visibility Escalation - Apps use QUERY_ALL_PACKAGES to see which other apps you've installed. While some features legitimately need this (password managers, app launchers), it's also used to fingerprint users based on app inventory.
 
-Device Admin Requests: Some apps request device admin privileges through the BIND_DEVICE_ADMIN permission, giving them extensive control including the ability to disable you from uninstalling them. Avoid granting device admin to any app except trusted security software.
+Device Admin Requests - Some apps request device admin privileges through the BIND_DEVICE_ADMIN permission, giving them extensive control including the ability to disable you from uninstalling them. Avoid granting device admin to any app except trusted security software.
 
 Check these patterns when evaluating new apps. The presence of multiple red flags suggests the app is designed for data harvesting rather than core functionality.
 
-Step 11: Android Privacy Distributions and Custom ROMs
+Step 11 - Android Privacy Distributions and Custom ROMs
 
 For users wanting maximum permission control, custom Android distributions provide stronger privacy:
 

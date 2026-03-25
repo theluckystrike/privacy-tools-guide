@@ -173,7 +173,7 @@ Mixing Tor with Non-Tor Activity
 A critical mistake involves using the same Tor Browser instance for both anonymous and identified activity. Once you log into your personal email, social media, or any identified account over Tor, the anonymity benefit is compromised.
 
 ```python
-Bad: Mixing identities
+Bad - Mixing identities
 browser_mistakes = {
     "same_browser_instance": {
         "activity1": "Browse news anonymously",
@@ -182,7 +182,7 @@ browser_mistakes = {
     }
 }
 
-Good: Separate instances
+Good - Separate instances
 approach = {
     "anonymous_browser": {
         "purpose": "General anonymous browsing",
@@ -224,7 +224,7 @@ problem_scenario = {
     ]
 }
 
-Solution: Mask file metadata
+Solution - Mask file metadata
 touch -d "1970-01-01" ~/Documents/downloaded-file.pdf
 Or use standard file times for downloaded files
 ```
@@ -234,17 +234,17 @@ Leaking DNS Queries
 Even with Tor, DNS queries can leak outside the encrypted tunnel if improperly configured:
 
 ```bash
-Bad: System-level DNS leaks
+Bad - System-level DNS leaks
 nslookup example.com
 Your ISP/router logs the query
 
-Good: DNS over Tor (already configured)
+Good - DNS over Tor (already configured)
 Tor Browser uses Tor's internal DNS resolver
-Verification: check about:config → network.proxy.socks_remote_dns
+Verification - check about:config → network.proxy.socks_remote_dns
 
 Verify DNS is routing through Tor:
 Use torproject.org's DNS leak test in Tor Browser
-Visit: https://www.dnsleaktest.com (behind Tor)
+Visit - https://www.dnsleaktest.com (behind Tor)
 ```
 
 Tab Correlation Attacks
@@ -266,7 +266,7 @@ tab_b = {
 }
 ```
 
-Best practice: Use a new Tor identity (New Circuit) when switching to different activities:
+Best practice - Use a new Tor identity (New Circuit) when switching to different activities:
 
 ```
 Tor Browser menu → New Circuit
@@ -308,9 +308,9 @@ vulnerable_pattern = {
     }
 }
 
-Mitigation: Add cover traffic
+Mitigation - Add cover traffic
 Tor Browser padding helps, but not foolproof
-For highest security: Use multiple Tor instances simultaneously
+For highest security - Use multiple Tor instances simultaneously
 Or add artificial network delays
 ```
 

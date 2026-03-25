@@ -22,7 +22,7 @@ Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
-- [Advanced: Programmatic Integration](#advanced-programmatic-integration)
+- [Advanced - Programmatic Integration](#advanced-programmatic-integration)
 - [Security Considerations](#security-considerations)
 
 Prerequisites
@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand ProtonMail's PGP Architecture
+Step 1 - Understand ProtonMail's PGP Architecture
 
 ProtonMail implements PGP encryption at the server level, which means your private keys never leave ProtonMail's encrypted storage. When both sender and recipient use ProtonMail, encryption happens automatically and transparently. However, when sending to external addresses, you need to handle key management manually.
 
@@ -46,7 +46,7 @@ ProtonMail supports two methods for external recipient encryption:
 
 Understanding why ProtonMail's approach differs from traditional PGP clients is helpful context. In a standard desktop PGP setup, your key management happens entirely on your machine. GPG handles the keyring, encryption, and decryption locally. ProtonMail's zero-knowledge architecture stores your private key encrypted with your account password, decrypting it only in your browser session. This means you get PGP's security guarantees without managing key files directly, but it also means external key storage (WKD, keyservers, manual exchange) must happen through ProtonMail's contact management interface.
 
-Step 2: Retrieve Your ProtonMail Public Key
+Step 2 - Retrieve Your ProtonMail Public Key
 
 Before sending encrypted emails to external recipients, ensure your public key is accessible. In ProtonMail:
 
@@ -67,11 +67,11 @@ gpg --keyserver hkps://api.protonmail.ch --search-keys your-email@protonmail.com
 gpg --keyserver hkps://api.protonmail.ch --recv-keys KEY_ID
 ```
 
-Step 3: Obtaining Recipient Public Keys
+Step 3 - Obtaining Recipient Public Keys
 
 External recipients must provide their PGP public keys. Several methods exist for key exchange:
 
-Method 1: Key Servers
+Method 1 - Key Servers
 
 Many users upload keys to public key servers:
 
@@ -80,7 +80,7 @@ gpg --keyserver keys.openpgp.org --search-keys recipient@example.com
 gpg --keyserver keys.openpgp.org --recv-keys RECIPIENT_KEY_ID
 ```
 
-Method 2: Direct Request
+Method 2 - Direct Request
 
 For sensitive communications, request keys via a verified channel:
 
@@ -89,7 +89,7 @@ echo "Please send your PGP public key" | gpg --encrypt --armor \
   --recipient recipient@example.com --output request.asc
 ```
 
-Method 3: Manual Key Blocks
+Method 3 - Manual Key Blocks
 
 Recipients can export keys directly:
 
@@ -97,7 +97,7 @@ Recipients can export keys directly:
 gpg --armor --export recipient@example.com > recipient-pubkey.asc
 ```
 
-Method 4: Web Key Directory (WKD)
+Method 4 - Web Key Directory (WKD)
 
 WKD is a modern key discovery mechanism that lets mail servers advertise public keys at a well-known URL path. Many privacy-conscious email providers support it. To check if a recipient's domain supports WKD:
 
@@ -111,7 +111,7 @@ gpg --locate-keys recipient@example.com
 
 If WKD is supported, `gpg --locate-keys` automatically downloads and imports the key. This is the most reliable automated method for key discovery when keyserver publishing is not available.
 
-Step 4: Configure ProtonMail for External Encryption
+Step 4 - Configure ProtonMail for External Encryption
 
 Once you have the recipient's public key, store it in ProtonMail:
 
@@ -123,13 +123,13 @@ Once you have the recipient's public key, store it in ProtonMail:
 
 When composing an email to this contact, ProtonMail automatically detects the stored key and offers encryption options.
 
-Step 5: Sending Encrypted Emails: Step-by-Step
+Step 5 - Sending Encrypted Emails: Step-by-Step
 
-Scenario: Sending to a Gmail User
+Scenario - Sending to a Gmail User
 
 Assume you need to send an encrypted message to `developer@gmail.com` who uses G Suite and has published their key.
 
-Step 1: Obtain the public key
+Step 1 - Obtain the public key
 
 ```bash
 gpg --keyserver keys.openpgp.org --search-keys developer@gmail.com
@@ -137,7 +137,7 @@ Note the key ID from the search results
 gpg --keyserver keys.openpgp.org --recv-keys 0x1234567890ABCDEF
 ```
 
-Step 2: Export and save to ProtonMail
+Step 2 - Export and save to ProtonMail
 
 ```bash
 gpg --armor --export 0x1234567890ABCDEF
@@ -145,7 +145,7 @@ gpg --armor --export 0x1234567890ABCDEF
 
 Copy the output and save it to the contact in ProtonMail.
 
-Step 3: Compose and encrypt
+Step 3 - Compose and encrypt
 
 When composing your email:
 - Enter the recipient address
@@ -155,7 +155,7 @@ When composing your email:
 
 The recipient receives an encrypted email. To decrypt, they need their corresponding private key and passphrase.
 
-Step 6: Technical Implementation Details
+Step 6 - Technical Implementation Details
 
 Key Verification
 
@@ -181,7 +181,7 @@ You can verify this structure manually:
 
 ```bash
 View encrypted message headers
-Look for: Content-Type: application/pgp-encrypted
+Look for - Content-Type: application/pgp-encrypted
           Content-Type: application/octet-stream (encrypted payload)
 ```
 
@@ -200,7 +200,7 @@ Encrypt file before attaching
 gpg --symmetric --cipher-algo AES256 --output document.pdf.gpg document.pdf
 ```
 
-Step 7: Signing Emails for Authenticity
+Step 7 - Signing Emails for Authenticity
 
 Encryption protects message confidentiality, but it does not prove the message came from you. Digital signatures address this. When you sign a message with your ProtonMail private key, the recipient can verify the signature using your public key. confirming the message was authored by the key holder and was not altered in transit.
 
@@ -218,7 +218,7 @@ A successful verification output looks like:
 
 ```
 gpg: Good signature from "Your Name <you@protonmail.com>"
-Primary key fingerprint: XXXX XXXX XXXX XXXX XXXX
+Primary key fingerprint - XXXX XXXX XXXX XXXX XXXX
 ```
 
 An "Unknown signature" result means the recipient has not yet imported your key. A "Bad signature" indicates the message was tampered with in transit.
@@ -254,7 +254,7 @@ Recipients may encounter problems if:
 - Passphrase is incorrect
 - Key and message were not properly exchanged
 
-Advanced: Programmatic Integration
+Advanced - Programmatic Integration
 
 For developers building automated systems:
 

@@ -27,16 +27,16 @@ The FTC took action against Flo Health in 2021 after it shared user health data 
 
 Beyond corporate data practices, US state laws have changed the risk calculus. In states where abortion is legally restricted, documented menstrual cycles and missed periods constitute evidence that prosecutors have sought via subpoena. Several fertility apps complied with these requests without notifying users.
 
-The consequence is simple: if you don't need the data stored in the cloud, don't store it there.
+The consequence is simple - if you don't need the data stored in the cloud, don't store it there.
 
-Tier 1: Local-Only, Open Source
+Tier 1 - Local-Only, Open Source
 
 Drip. Best Overall
 
-Platform: Android (F-Droid + Google Play), iOS
-Source: Open source (GitHub: bleeding182/drip)
-Data storage: Device-only, no account required
-Cost: Free
+Platform - Android (F-Droid + Google Play), iOS
+Source - Open source (GitHub: bleeding182/drip)
+Data storage - Device-only, no account required
+Cost - Free
 
 Drip tracks cycles, symptoms, and predictions entirely on-device. There is no backend, no account, and no network requests during normal use. The source code has been reviewed by independent security researchers.
 
@@ -47,14 +47,14 @@ Features:
 - Export to CSV. your data, your format
 - Available on F-Droid (no Google account needed)
 
-Threat model: Safe against corporate data sharing, data broker sales, and warrant-based law enforcement requests targeting the app provider. Data is only at risk if your device is physically seized.
+Threat model - Safe against corporate data sharing, data broker sales, and warrant-based law enforcement requests targeting the app provider. Data is only at risk if your device is physically seized.
 
 Euki. Best for High-Risk Jurisdictions
 
-Platform: Android, iOS
-Data storage: Device-only
-Organization: Ipas (reproductive health nonprofit)
-Cost: Free
+Platform - Android, iOS
+Data storage - Device-only
+Organization - Ipas (reproductive health nonprofit)
+Cost - Free
 
 Euki was specifically designed for people in legally hostile environments. It includes:
 
@@ -64,9 +64,9 @@ Euki was specifically designed for people in legally hostile environments. It in
 - Completely offline
 - Health education content included
 
-Threat model: Equivalent to Drip with additional UX protections for physical threat scenarios.
+Threat model - Equivalent to Drip with additional UX protections for physical threat scenarios.
 
-Tier 2: Open Source with Optional Self-Hosted Sync
+Tier 2 - Open Source with Optional Self-Hosted Sync
 
 Periodical (iOS)
 
@@ -167,7 +167,7 @@ Before deleting your account, export your data and submit a deletion request:
 1. Export first: Flo. Settings > My Data > Export. Clue. Settings > Export Data.
 2. Submit deletion: Use the in-app deletion option, or email their privacy team.
 3. Invoke CCPA/GDPR: State explicitly you're invoking deletion rights and want confirmation.
-4. Import into Drip: Drip supports CSV import for historical cycle data.
+4. Import into Drip - Drip supports CSV import for historical cycle data.
 
 Related Reading
 

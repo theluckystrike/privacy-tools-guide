@@ -273,7 +273,7 @@ challenger = LegitimateInterestChallenge()
 assessment = challenger.evaluate_company_claim(google_claim)
 purpose_legitimate=True, processing_necessary=False,
         balancing_test_documented=False, user_rights_preserved=False
-Conclusion: Weak claim, likely illegal under GDPR
+Conclusion - Weak claim, likely illegal under GDPR
 ```
 
 Filing DPA Complaints About Illegitimate Interest
@@ -291,10 +291,10 @@ PROCESSING_ACTIVITY="Behavioral tracking via cookies"
 cat > complaint.txt <<'EOF'
 GDPR Article 77 Complaint - Invalid Legitimate Interest Basis
 
-Data Subject: [Your name]
-Date of Complaint: [Date]
-Controller: [Company name, address]
-Data Protection Authority: [ICO/CNIL/etc]
+Data Subject - [Your name]
+Date of Complaint - [Date]
+Controller - [Company name, address]
+Data Protection Authority - [ICO/CNIL/etc]
 
 SUMMARY OF VIOLATION
 
@@ -339,11 +339,11 @@ Recent DPA Decisions on Legitimate Interest
 
 Several authorities have ruled against companies' legitimate interest claims:
 
-Meta (Facebook) - 2023 EDPB Decision: Behavioral advertising targeting not justified by legitimate interest. Users cannot "reasonably expect" behavioral profiling. Meta forced to switch to consent-based model in EU.
+Meta (Facebook) - 2023 EDPB Decision - Behavioral advertising targeting not justified by legitimate interest. Users cannot "reasonably expect" behavioral profiling. Meta forced to switch to consent-based model in EU.
 
-Google - Germany 2022: Refused to accept "service improvement" as legitimate interest for cross-site tracking. Tracking was disproportionate to stated benefit.
+Google - Germany 2022 - Refused to accept "service improvement" as legitimate interest for cross-site tracking. Tracking was disproportionate to stated benefit.
 
-LinkedIn - EDPB Opinion: Rejecting emails to non-members for marketing violated proportionality test, even if legitimate interest existed.
+LinkedIn - EDPB Opinion - Rejecting emails to non-members for marketing violated proportionality test, even if legitimate interest existed.
 
 These decisions show regulators skeptical of broad "improvement" and "analytics" justifications. Companies must prove necessity, not just convenience.
 

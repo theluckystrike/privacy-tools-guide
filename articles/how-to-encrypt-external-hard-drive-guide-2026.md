@@ -51,8 +51,8 @@ Installation and Setup:
 macOS installation
 brew install veracrypt
 
-Windows: Download from veracrypt.fr (official site)
-Linux: apt install veracrypt (Debian/Ubuntu)
+Windows - Download from veracrypt.fr (official site)
+Linux - apt install veracrypt (Debian/Ubuntu)
 ```
 
 Creating a VeraCrypt Encrypted Volume:
@@ -81,9 +81,9 @@ Key Features:
 Performance Considerations:
 
 ```
-Unencrypted SSD: 500 MB/s sequential read
-VeraCrypt encrypted SSD: 480 MB/s sequential read (4% overhead)
-VeraCrypt encrypted HDD: 110 MB/s unencrypted → 95 MB/s encrypted (14% overhead)
+Unencrypted SSD - 500 MB/s sequential read
+VeraCrypt encrypted SSD - 480 MB/s sequential read (4% overhead)
+VeraCrypt encrypted HDD - 110 MB/s unencrypted → 95 MB/s encrypted (14% overhead)
 ```
 
 Mechanical drives experience higher overhead due to encryption processing during seek operations.
@@ -95,9 +95,9 @@ Weaknesses:
 - Full drive encryption takes hours for large drives
 - Less intuitive than BitLocker/FileVault
 
-Best for: Developers sharing drives across multiple OS, organizations requiring maximum control, users valuing portability over convenience.
+Best for - Developers sharing drives across multiple OS, organizations requiring maximum control, users valuing portability over convenience.
 
-Cost: Free and open-source.
+Cost - Free and open-source.
 
 LUKS (Linux-Native, Best Integration)
 
@@ -176,9 +176,9 @@ Weaknesses:
 - No GUI application (command-line only)
 - Less forgiving than graphical tools (wrong commands erase data permanently)
 
-Best for: Linux developers, organizations standardized on Linux, maximum performance requirements.
+Best for - Linux developers, organizations standardized on Linux, maximum performance requirements.
 
-Cost: Free and open-source.
+Cost - Free and open-source.
 
 BitLocker (Windows Enterprise Only)
 
@@ -220,9 +220,9 @@ Weaknesses:
 - TPM dependency: Older computers without TPM 2.0 experience 10-20% performance degradation
 - Inflexible: Full drive encryption takes hours; cannot selectively encrypt portions
 
-Best for: Windows Pro/Enterprise users, drives staying primarily in Windows environment.
+Best for - Windows Pro/Enterprise users, drives staying primarily in Windows environment.
 
-Cost: Included with Windows Pro/Enterprise.
+Cost - Included with Windows Pro/Enterprise.
 
 FileVault (macOS Built-In)
 
@@ -267,9 +267,9 @@ Weaknesses:
 - Format lock: Drive formatted as APFS cannot be easily converted to other formats
 - Recovery key risk: Loss of recovery key + forgotten password = permanent data loss (Apple cannot recover)
 
-Best for: macOS users, drives staying primarily in macOS environment.
+Best for - macOS users, drives staying primarily in macOS environment.
 
-Cost: Included with macOS.
+Cost - Included with macOS.
 
 Encryption Tool Comparison Table
 
@@ -290,7 +290,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Password Management and Recovery
+Step 1 - Password Management and Recovery
 
 Password Strength for Encryption
 
@@ -307,11 +307,11 @@ Generation strategy:
 Generate strong password using Linux
 openssl rand -base64 32
 
-Example output: "xK8pQ2mN9vL5rJ7tF3sH6wB4dZ1eY9uC2"
+Example output - "xK8pQ2mN9vL5rJ7tF3sH6wB4dZ1eY9uC2"
 
 Or use diceware (memorable, highly secure)
-See: theworld.com/~reinhold/diceware.html
-Creates passphrases like: "correct-horse-battery-staple"
+See - theworld.com/~reinhold/diceware.html
+Creates passphrases like - "correct-horse-battery-staple"
 ```
 
 Storage:
@@ -331,8 +331,8 @@ Recovery key storage:
 
 Recovery key security:
 ```
-NEVER: Share unencrypted recovery key
-NEVER: Store recovery key on computer
+NEVER - Share unencrypted recovery key
+NEVER - Store recovery key on computer
 DO: Store recovery key physically and digitally (separately from password)
 DO: Test recovery key annually to ensure it works
 ```
@@ -342,15 +342,15 @@ Password Change Strategy
 Change encryption password annually or if you suspect compromise:
 
 ```bash
-VeraCrypt: No built-in password change
-Solution: Create new volume with new password, copy files, erase old volume
+VeraCrypt - No built-in password change
+Solution - Create new volume with new password, copy files, erase old volume
 
-LUKS: Change password
+LUKS - Change password
 sudo cryptsetup luksChangeKey /dev/sdb1
 
-BitLocker: Right-click drive > Manage BitLocker > Change Password
+BitLocker - Right-click drive > Manage BitLocker > Change Password
 
-FileVault: System Preferences > Security & Privacy > FileVault > Edit
+FileVault - System Preferences > Security & Privacy > FileVault > Edit
 ```
 
 Performance Testing
@@ -361,10 +361,10 @@ Before encrypting large drives, test performance with your hardware:
 Create small test volume (1GB) with VeraCrypt
 Run sequential read/write tests
 
-Write test: Create 5GB file
+Write test - Create 5GB file
 time dd if=/dev/zero of=test.img bs=1M count=5000
 
-Read test: Sequential read
+Read test - Sequential read
 time dd if=test.img of=/dev/null bs=1M
 
 Compare with unencrypted drive on same hardware
@@ -375,7 +375,7 @@ Expected results:
 - Older SSD: 5-10% overhead
 - Mechanical drive: 10-20% overhead
 
-Step 2: Cross-Platform Usage
+Step 2 - Cross-Platform Usage
 
 For drives used across multiple operating systems, encryption considerations change:
 
@@ -397,9 +397,9 @@ All three:
 - VeraCrypt only option for true cross-platform compatibility
 - Use exFAT file system for maximum compatibility
 
-Step 3: Disaster Recovery Procedures
+Step 3 - Disaster Recovery Procedures
 
-Scenario 1: Forgotten Encryption Password
+Scenario 1 - Forgotten Encryption Password
 
 VeraCrypt:
 - Provides recovery capability if you saved rescue disk
@@ -417,9 +417,9 @@ FileVault:
 - Use recovery key from saved location
 - If recovery key lost: Use Apple account recovery
 
-Prevention: Store recovery keys immediately after encryption setup.
+Prevention - Store recovery keys immediately after encryption setup.
 
-Scenario 2: Corrupted Drive
+Scenario 2 - Corrupted Drive
 
 ```bash
 LUKS corruption recovery
@@ -431,10 +431,10 @@ sudo e2fsck /dev/mapper/my_encrypted_drive
 
 If corruption in LUKS header
 LUKS header is at beginning of drive; copy from backup
-Before encryption: cryptsetup luksHeaderBackup /dev/sdb1 --header-backup-file header.bak
+Before encryption - cryptsetup luksHeaderBackup /dev/sdb1 --header-backup-file header.bak
 ```
 
-Prevention: Regular backups of encryption headers.
+Prevention - Regular backups of encryption headers.
 
 ```bash
 VeraCrypt header backup
@@ -447,7 +447,7 @@ FileVault backup
 Automatic recovery key saved to Apple ID
 ```
 
-Scenario 3: Computer Fails, Drive Still Has Data
+Scenario 3 - Computer Fails, Drive Still Has Data
 
 If computer dies but encrypted external drive survives:
 
@@ -474,15 +474,15 @@ Group Policy (Windows Enterprise)
 ```powershell
 Enforce BitLocker on all external drives
 gpedit.msc
-Navigate: Computer Configuration > Administrative Templates > Windows Components > BitLocker Drive Encryption
-Set: "Control use of BitLocker on removable drives" = "Deny write access"
+Navigate - Computer Configuration > Administrative Templates > Windows Components > BitLocker Drive Encryption
+Set - "Control use of BitLocker on removable drives" = "Deny write access"
 ```
 
 macOS Mobile Device Management
 
 Organizations deploy FileVault encryption via MDM profiles, enforcing encryption on all organization-owned machines.
 
-Step 4: Test Encryption Security
+Step 4 - Test Encryption Security
 
 Verify encryption actually works:
 

@@ -27,10 +27,10 @@ Table of Contents
 - [Practical Limitations](#practical-limitations)
 - [Threat Model Analysis](#threat-model-analysis)
 - [Advanced Configuration for Teams](#advanced-configuration-for-teams)
-- [Security Comparison: Tresorit vs Alternatives](#security-comparison-tresorit-vs-alternatives)
+- [Security Comparison - Tresorit vs Alternatives](#security-comparison-tresorit-vs-alternatives)
 - [Performance Benchmarking](#performance-benchmarking)
-- [Implementation Guide: Document Handling Workflow](#implementation-guide-document-handling-workflow)
-- [Cost Analysis: 3-Year TCO Calculation](#cost-analysis-3-year-tco-calculation)
+- [Implementation Guide - Document Handling Workflow](#implementation-guide-document-handling-workflow)
+- [Cost Analysis - 3-Year TCO Calculation](#cost-analysis-3-year-tco-calculation)
 - [Migration from Other Platforms](#migration-from-other-platforms)
 - [Is It Worth the Price?](#is-it-worth-the-price)
 
@@ -115,13 +115,13 @@ Practical Limitations
 
 Despite the strong security credentials, some limitations merit consideration:
 
-File size limits: Individual file uploads max out at 10GB, which works for most use cases but may constrain large media or dataset handling.
+File size limits - Individual file uploads max out at 10GB, which works for most use cases but may constrain large media or dataset handling.
 
-No native desktop app encryption: The desktop applications sync files locally in encrypted form but don't provide a generic encrypted folder outside the Tresorit ecosystem. This differs from tools like Cryptomator, which can encrypt any folder.
+No native desktop app encryption: The desktop applications sync files locally in encrypted form but don't provide a generic encrypted folder outside the Tresorit environment. This differs from tools like Cryptomator, which can encrypt any folder.
 
-Collaboration friction: Since all files remain encrypted end-to-end, real-time collaborative editing requires downloading, editing, and re-uploading, a workflow mismatch for teams expecting Google Docs-style simultaneous editing.
+Collaboration friction - Since all files remain encrypted end-to-end, real-time collaborative editing requires downloading, editing, and re-uploading, a workflow mismatch for teams expecting Google Docs-style simultaneous editing.
 
-Recovery limitations: If you lose your master password and recovery key, data becomes permanently inaccessible. There's no password reset flow because the encryption keys are irretrievable without the original credentials.
+Recovery limitations - If you lose your master password and recovery key, data becomes permanently inaccessible. There's no password reset flow because the encryption keys are irretrievable without the original credentials.
 
 Threat Model Analysis
 
@@ -173,7 +173,7 @@ Generate compliance report
 tresorit report generate --type "access-control" --output compliance-report.pdf
 ```
 
-Security Comparison: Tresorit vs Alternatives
+Security Comparison - Tresorit vs Alternatives
 
 Detailed comparison of encryption approaches:
 
@@ -200,13 +200,13 @@ Real-world performance metrics for different scenarios:
 #!/bin/bash
 benchmark-tresorit.sh - Compare performance across operations
 
-Test 1: Upload speed (100 MB file)
+Test 1 - Upload speed (100 MB file)
 time tresorit upload /tmp/test-100mb.bin
 
-Test 2: Download speed
+Test 2 - Download speed
 time tresorit download /cloud/test-100mb.bin --output /tmp/downloaded.bin
 
-Test 3: Sync latency (create file, measure time to sync)
+Test 3 - Sync latency (create file, measure time to sync)
 start_time=$(date +%s%N)
 touch ~/Tresorit/test-file.txt
 echo "test content" > ~/Tresorit/test-file.txt
@@ -216,18 +216,18 @@ end_time=$(date +%s%N)
 elapsed=$((($end_time - $start_time) / 1000000))
 echo "Sync latency: ${elapsed}ms"
 
-Test 4: Encryption overhead
+Test 4 - Encryption overhead
 Measure CPU usage during sync
 top -b -n 1 -p $(pgrep tresorit) | grep -A 1 tresorit
 
-Test 5: Throughput under concurrent access
+Test 5 - Throughput under concurrent access
 tresorit upload /tmp/concurrent-1.bin &
 tresorit upload /tmp/concurrent-2.bin &
 tresorit upload /tmp/concurrent-3.bin &
 wait
 ```
 
-Implementation Guide: Document Handling Workflow
+Implementation Guide - Document Handling Workflow
 
 For Legal Firms
 
@@ -282,7 +282,7 @@ audit_requirements:
   quarterly_review: "mandatory"
 ```
 
-Cost Analysis: 3-Year TCO Calculation
+Cost Analysis - 3-Year TCO Calculation
 
 ```
 Small Law Firm (10 users, 500 GB storage):
@@ -301,8 +301,8 @@ Sync.com:
   Total TCO: $5,850
   Cost per user: $585
 
-Premium for Tresorit: $5,790 over 3 years
-Value justification: Swiss jurisdiction, detailed audit logs, documented HIPAA compliance
+Premium for Tresorit - $5,790 over 3 years
+Value justification - Swiss jurisdiction, detailed audit logs, documented HIPAA compliance
 ```
 
 Migration from Other Platforms

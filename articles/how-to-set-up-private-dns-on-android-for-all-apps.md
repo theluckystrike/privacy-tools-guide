@@ -26,7 +26,7 @@ Table of Contents
 - [Advanced Configuration for Developers](#advanced-configuration-for-developers)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 - [Threat Model Analysis for DNS Privacy](#threat-model-analysis-for-dns-privacy)
-- [Provider Comparison: Privacy and Performance](#provider-comparison-privacy-and-performance)
+- [Provider Comparison - Privacy and Performance](#provider-comparison-privacy-and-performance)
 - [Advanced Configuration with DNS Blocking](#advanced-configuration-with-dns-blocking)
 - [Troubleshooting Unresponsive DNS Providers](#troubleshooting-unresponsive-dns-providers)
 
@@ -40,7 +40,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand DNS Privacy on Android
+Step 1 - Understand DNS Privacy on Android
 
 By default, DNS queries travel over UDP or TCP in plaintext. Anyone monitoring your network traffic can intercept these queries and build a log of every website you visit. While HTTPS encrypts the contents of your communication, the DNS resolution still reveals the domain names you connect to.
 
@@ -48,7 +48,7 @@ Private DNS solves this problem by establishing a TLS-encrypted connection betwe
 
 The key advantage for developers and power users is that this works at the operating system level. Unlike browser extensions or app-specific solutions, Private DNS protects all applications simultaneously.
 
-Step 2: Configure Private DNS on Android
+Step 2 - Configure Private DNS on Android
 
 The configuration process involves navigating to your device's network settings and specifying a Private DNS provider hostname. Android accepts three modes:
 
@@ -65,7 +65,7 @@ Step-by-Step Configuration
 5. Choose the Hostname option
 6. Enter the provider hostname
 
-Step 3: Popular Private DNS Providers
+Step 3 - Popular Private DNS Providers
 
 Several organizations operate free, privacy-respecting DNS-over-TLS services:
 
@@ -79,7 +79,7 @@ Several organizations operate free, privacy-respecting DNS-over-TLS services:
 
 For users wanting to avoid major technology companies, Quad9 provides a solid option with no logging of IP addresses. NextDNS offers customizable blocking lists, though some features require a free account.
 
-Step 4: Verify Your Private DNS Configuration
+Step 4 - Verify Your Private DNS Configuration
 
 After configuration, you should verify that DNS queries are actually encrypted. Several methods exist depending on your technical preferences.
 
@@ -152,13 +152,13 @@ Troubleshooting Common Issues
 
 Some applications or networks may experience issues with Private DNS. Common problems include:
 
-Connection Failures: Some captive portal networks interfere with DoT. Temporarily disable Private DNS if you cannot access captive portal login pages.
+Connection Failures - Some captive portal networks interfere with DoT. Temporarily disable Private DNS if you cannot access captive portal login pages.
 
-App Compatibility: Older applications using hardcoded DNS servers (bypassing Android's DNS API) won't benefit from Private DNS. This is rare but occurs in some custom applications.
+App Compatibility - Older applications using hardcoded DNS servers (bypassing Android's DNS API) won't benefit from Private DNS. This is rare but occurs in some custom applications.
 
-Network Switching: When switching between WiFi and mobile data, re-negotiation of the TLS connection may cause brief delays. This is normal behavior.
+Network Switching - When switching between WiFi and mobile data, re-negotiation of the TLS connection may cause brief delays. This is normal behavior.
 
-Step 5: Limitations of Private DNS
+Step 5 - Limitations of Private DNS
 
 Understanding what Private DNS does not protect is important for security-conscious users:
 
@@ -173,15 +173,15 @@ Threat Model Analysis for DNS Privacy
 
 Different users face different threats. Understanding your specific threat model helps determine appropriate DNS configuration.
 
-ISP Surveillance: Your internet service provider can observe DNS queries without Private DNS. Switching to Private DNS prevents ISP-level tracking.
+ISP Surveillance - Your internet service provider can observe DNS queries without Private DNS. Switching to Private DNS prevents ISP-level tracking.
 
-Network-Level Monitoring: Public WiFi networks capture plaintext DNS. Private DNS encrypts these queries from the network operator.
+Network-Level Monitoring - Public WiFi networks capture plaintext DNS. Private DNS encrypts these queries from the network operator.
 
-DNS Hijacking: Some networks redirect DNS to tracking servers. Private DNS prevents this attack by verifying the DNS provider's TLS certificate.
+DNS Hijacking - Some networks redirect DNS to tracking servers. Private DNS prevents this attack by verifying the DNS provider's TLS certificate.
 
-Geolocation via DNS: Services use DNS resolver location to infer your location. Switching DNS providers may change geo-blocking results.
+Geolocation via DNS - Services use DNS resolver location to infer your location. Switching DNS providers may change geo-blocking results.
 
-Provider Comparison: Privacy and Performance
+Provider Comparison - Privacy and Performance
 
 Choosing the right provider involves tradeoffs:
 
@@ -218,7 +218,7 @@ curl -X POST "https://api.nextdns.io/profiles" \
 
 This profile can then be used in Android's Private DNS setting.
 
-Step 6: Bypassing DNS Blocking in Restricted Networks
+Step 6 - Bypassing DNS Blocking in Restricted Networks
 
 In environments where DNS blocking prevents access to certain sites:
 
@@ -233,7 +233,7 @@ Or use DNS-over-HTTPS (DoH) instead of DoT for better obfuscation
 
 DNS-over-HTTPS may evade some network-level blocks because it uses standard HTTPS ports (443) rather than dedicated DNS ports.
 
-Step 7: Monitor DNS Configuration with ADB
+Step 7 - Monitor DNS Configuration with ADB
 
 For power users wanting verification:
 
@@ -247,7 +247,7 @@ adb shell getprop | grep dns
 
 This helps confirm Private DNS is active and reveals fallback behavior.
 
-Step 8: Integration with VPN Services
+Step 8 - Integration with VPN Services
 
 When using Private DNS alongside a VPN:
 
@@ -265,7 +265,7 @@ DNSSECNegativeTrustAnchors=
 
 This configuration forces DNS through only specified servers, preventing leaks.
 
-Step 9: DNS Privacy in Development and Testing
+Step 9 - DNS Privacy in Development and Testing
 
 For developers testing applications:
 

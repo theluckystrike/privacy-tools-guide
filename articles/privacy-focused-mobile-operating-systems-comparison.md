@@ -39,11 +39,11 @@ This guide covers five practical alternatives.
 Table of Contents
 
 - [Quick Comparison Table](#quick-comparison-table)
-- [GrapheneOS: Strongest Privacy](#grapheneos-strongest-privacy)
-- [CalyxOS: Balanced Privacy](#calyxos-balanced-privacy)
-- [LineageOS: Maximum Compatibility](#lineageos-maximum-compatibility)
+- [GrapheneOS - Strongest Privacy](#grapheneos-strongest-privacy)
+- [CalyxOS - Balanced Privacy](#calyxos-balanced-privacy)
+- [LineageOS - Maximum Compatibility](#lineageos-maximum-compatibility)
 - [/e/OS: Privacy-Respecting Interface](#eos-privacy-respecting-interface)
-- [Ubuntu Touch: Linux on Phone](#ubuntu-touch-linux-on-phone)
+- [Ubuntu Touch - Linux on Phone](#ubuntu-touch-linux-on-phone)
 - [Recommendation Matrix](#recommendation-matrix)
 - [Cost Comparison (2-Year Scenario)](#cost-comparison-2-year-scenario)
 - [Migration Path](#migration-path)
@@ -62,7 +62,7 @@ Quick Comparison Table
 
 ---
 
-GrapheneOS: Strongest Privacy
+GrapheneOS - Strongest Privacy
 
 GrapheneOS is hardened Android with kernel-level security improvements. Privacy first, usability second.
 
@@ -87,24 +87,24 @@ Additions:
 Installation
 
 ```bash
-Step 1: Get compatible phone
-Supported: Google Pixel 6a, 7, 7a, 7 Pro, 8, 8 Pro only
-Cost: $300-600
+Step 1 - Get compatible phone
+Supported - Google Pixel 6a, 7, 7a, 7 Pro, 8, 8 Pro only
+Cost - $300-600
 
-Step 2: Download GrapheneOS installer
-From: https://grapheneos.org/releases
+Step 2 - Download GrapheneOS installer
+From - https://grapheneos.org/releases
 
-Step 3: Boot into fastboot
+Step 3 - Boot into fastboot
 Power off phone
-Hold: Power + Volume Down
+Hold - Power + Volume Down
 adb reboot bootloader
 
-Step 4: Flash GrapheneOS
+Step 4 - Flash GrapheneOS
 Run installer script
 Takes 10 minutes
 Phone wipes automatically
 
-Step 5: Enable optional services
+Step 5 - Enable optional services
 Settings > Apps > Google Play Services (Sandboxed)
 Enables Google apps without stock privacy issues
 ```
@@ -175,16 +175,16 @@ Workaround for Banking Apps:
 ```
 If banking app requires Google Play Services:
 
-Option 1: Use Sandboxed Google Play
+Option 1 - Use Sandboxed Google Play
 Settings > Apps > Google Play (Sandboxed)
 Grant permission to banking app
 Works 80% of the time
 
-Option 2: Use web banking instead
+Option 2 - Use web banking instead
 Most banks support mobile web
 Slightly less convenient, still secure
 
-Option 3: Different phone (if critical)
+Option 3 - Different phone (if critical)
 Keep one regular Android for banking
 Use GrapheneOS for everything else
 ```
@@ -214,7 +214,7 @@ Weaknesses
 - Banking app support limited
 - No microSD card slot on Pixels (storage limitation)
 - Learning curve (fewer conveniences)
-- Smaller ecosystem (fewer apps available)
+- Smaller environment (fewer apps available)
 - Some enterprise apps won't work
 
 Best For
@@ -227,15 +227,15 @@ Best For
 Maintenance
 
 ```bash
-Monthly: Check for updates
+Monthly - Check for updates
 Settings > System > System Update
 Install when available
 
-Quarterly: Review app permissions
+Quarterly - Review app permissions
 Settings > Apps > Permissions
 Remove unnecessary permissions
 
-Annually: Reflash if major update available
+Annually - Reflash if major update available
 Backup data
 Wipe phone
 Install latest GrapheneOS
@@ -243,7 +243,7 @@ Install latest GrapheneOS
 
 ---
 
-CalyxOS: Balanced Privacy
+CalyxOS - Balanced Privacy
 
 CalyxOS is based on GrapheneOS but with better app compatibility. It includes MicroG (open-source Google Play replacement).
 
@@ -267,22 +267,22 @@ MicroG benefits:
 Installation
 
 ```bash
-Step 1: Download CalyxOS from https://calyxos.org
+Step 1 - Download CalyxOS from https://calyxos.org
 Supported devices:
 - Google Pixel (all recent models)
 - OnePlus 6, 6T, 7, 7 Pro, 7T
 - Fairphone 3, 3+, 4, 5
 
-Step 2: Flash using installer
+Step 2 - Flash using installer
 Same as GrapheneOS process
 Takes 15-20 minutes
 
-Step 3: First boot
+Step 3 - First boot
 Automatically installs F-Droid, Signal
 MicroG enabled by default
 ```
 
-Key Feature: MicroG Integration
+Key Feature - MicroG Integration
 
 MicroG vs Stock Google Play:
 ```
@@ -308,7 +308,7 @@ Many banking apps work with MicroG:
 - Paypal works
 - Some require Play Services validation (workaround needed)
 
-Success rate: 80%+ (much better than GrapheneOS)
+Success rate - 80%+ (much better than GrapheneOS)
 ```
 
 App Compatibility Comparison
@@ -361,25 +361,25 @@ Best For
 Real-World Setup
 
 ```bash
-Day 1: Flash CalyxOS
+Day 1 - Flash CalyxOS
 
-Day 2: Install apps
-F-Droid: Open app store (privacy apps)
-Signal: For messaging
-Nextcloud: For cloud sync
+Day 2 - Install apps
+F-Droid - Open app store (privacy apps)
+Signal - For messaging
+Nextcloud - For cloud sync
 FOSS apps from F-Droid
 
-Day 3: Enable MicroG for banking
+Day 3 - Enable MicroG for banking
 Settings > MicroG Settings
 Grant location permission (optional, faked)
 Install banking app from Play Store (via MicroG)
 
-Day 4: Set up DNS privacy
+Day 4 - Set up DNS privacy
 Settings > Network > DNS > NextDNS
 Choose blocklists
 All DNS queries encrypted
 
-Day 5: Enable Firewall
+Day 5 - Enable Firewall
 Settings > Firewall
 Block all apps from accessing internet
 Enable only those needing it (banking, messaging)
@@ -387,7 +387,7 @@ Enable only those needing it (banking, messaging)
 
 ---
 
-LineageOS: Maximum Compatibility
+LineageOS - Maximum Compatibility
 
 LineageOS is Android without Google bloat but WITH Google Play Services (optional). It prioritizes app compatibility over privacy.
 
@@ -434,23 +434,23 @@ Why matters:
 Installation Process
 
 ```bash
-Step 1: Download LineageOS for your device
+Step 1 - Download LineageOS for your device
 https://lineageos.org/devices/
 
-Step 2: Download device-specific tools
+Step 2 - Download device-specific tools
 Fastboot tool (flashing utility)
 ADB (Android Debug Bridge)
 
-Step 3: Boot into recovery
+Step 3 - Boot into recovery
 Power off > Power + Volume Up
 Choose "Recovery"
 
-Step 4: Flash LineageOS
+Step 4 - Flash LineageOS
 Via recovery menu
 Select ZIP file
 Flash process (10 minutes)
 
-Step 5: Reboot
+Step 5 - Reboot
 Phone restarts with LineageOS
 ```
 
@@ -491,7 +491,7 @@ Because LineageOS supports full Google Play Services:
 - Enterprise apps: Usually work
 - Gaming: All work
 
-Cost: Must accept Google Play to get this
+Cost - Must accept Google Play to get this
 ```
 
 Pricing
@@ -553,25 +553,25 @@ What's Different
 Installation
 
 ```bash
-Step 1: Check device support
+Step 1 - Check device support
 https://doc.e.foundation/supported-phones
 100+ devices supported
 
-Step 2: Download /e/OS
+Step 2 - Download /e/OS
 From e.foundation
 Download device-specific ROM
 
-Step 3: Flash using recovery
+Step 3 - Flash using recovery
 Similar to LineageOS process
 30-45 minutes
 
-Step 4: First boot setup
+Step 4 - First boot setup
 Configure Nextcloud (optional)
 Choose privacy settings
 Select default apps (DDG, Proton, etc.)
 ```
 
-Key Feature: Nextcloud Integration
+Key Feature - Nextcloud Integration
 
 /e/Cloud (Nextcloud):
 ```
@@ -653,7 +653,7 @@ Best For
 
 ---
 
-Ubuntu Touch: Linux on Phone
+Ubuntu Touch - Linux on Phone
 
 Ubuntu Touch ports Linux to phones. Drastically different from Android.
 
@@ -671,7 +671,7 @@ Benefits:
 - Can run server software
 
 Drawbacks:
-- Almost no app ecosystem
+- Almost no app environment
 - Banking apps don't work
 - Steep learning curve
 - Very limited device support
@@ -680,18 +680,18 @@ Drawbacks:
 Installation
 
 ```bash
-Step 1: Check device support
-Very limited: OnePlus One, OnePlus 6T, Pixel 3a
-Check: ubuntu-touch.io
+Step 1 - Check device support
+Very limited - OnePlus One, OnePlus 6T, Pixel 3a
+Check - ubuntu-touch.io
 
-Step 2: Get Ubuntu Touch installer
-From: ubuntu-touch.io/get-ubuntu-touch
+Step 2 - Get Ubuntu Touch installer
+From - ubuntu-touch.io/get-ubuntu-touch
 
-Step 3: Run installer
+Step 3 - Run installer
 Automatic flashing process
 30 minutes
 
-Step 4: First boot
+Step 4 - First boot
 Completely different UI
 No Android app drawer
 Uses Ubuntu desktop pattern
@@ -715,11 +715,11 @@ Not good for:
 - Most daily use
 ```
 
-App Ecosystem
+App environment
 
 ```
-Available apps (estimated): 500-1000
-Android apps: 2,000,000+
+Available apps (estimated) - 500-1000
+Android apps - 2,000,000+
 
 Realistic apps:
 - Telegram (messaging)
@@ -745,7 +745,7 @@ Pricing
 OnePlus 6T (used):          $150-250
 Ubuntu Touch (free):        $0
 Total annual cost:          $0
-Caveat: Not usable for normal tasks
+Caveat - Not usable for normal tasks
 ```
 
 Strengths
@@ -761,7 +761,7 @@ Weaknesses
 - Completely impractical for daily use
 - No banking apps
 - No mainstream messaging
-- Tiny app ecosystem
+- Tiny app environment
 - Very small community
 - Updates infrequent
 - Device support: 3 phones only
@@ -812,7 +812,7 @@ Cost Comparison (2-Year Scenario)
 
 Migration Path
 
-Year 1: Try with cheap device
+Year 1 - Try with cheap device
 ```
 Buy OnePlus 6T used ($200)
 Flash LineageOS + MicroG
@@ -820,7 +820,7 @@ Use for 3-6 months
 Get comfortable with F-Droid, FOSS apps
 ```
 
-Year 2: Upgrade to better privacy
+Year 2 - Upgrade to better privacy
 ```
 If satisfied with privacy, upgrade to:
 - CalyxOS (Fairphone 5: $650)

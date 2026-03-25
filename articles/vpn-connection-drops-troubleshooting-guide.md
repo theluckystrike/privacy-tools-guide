@@ -30,7 +30,7 @@ Server selection also matters.
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Advanced: Using kill switches](#advanced-using-kill-switches)
+- [Advanced - Using kill switches](#advanced-using-kill-switches)
 - [WireGuard-Specific Troubleshooting](#wireguard-specific-troubleshooting)
 - [Troubleshooting](#troubleshooting)
 
@@ -44,7 +44,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Diagnosing the Root Cause
+Step 1 - Diagnosing the Root Cause
 
 Before applying fixes, you need to identify why your VPN connection drops. Common causes include network instability, firewall interference, DNS issues, MTU mismatches, and server-side problems. Each requires a different diagnostic approach.
 
@@ -76,7 +76,7 @@ tail -f ~/Library/Logs/tunnelblick.log
 
 Look for recurring error messages such as `TLS handshake failed`, `connection reset`, or `inactivity timeout`. These patterns reveal whether the issue is authentication-related, network-related, or server-related.
 
-Step 2: Firewall and Router Configuration
+Step 2 - Firewall and Router Configuration
 
 Firewalls frequently cause VPN drops by blocking necessary ports or protocols. If you control your firewall, ensure the required ports are open.
 
@@ -102,7 +102,7 @@ sudo iptables -A FORWARD -i wg0 -j ACCEPT
 
 If you are behind a corporate firewall or NAT, consider using TCP tunneling over port 443, which most firewalls allow.
 
-Step 3: Fixing DNS Leaks and Resolution Issues
+Step 3 - Fixing DNS Leaks and Resolution Issues
 
 DNS leaks can cause connection instability and expose your traffic. Verify your DNS is properly configured:
 
@@ -122,7 +122,7 @@ echo "dhcp-option DNS 10.8.0.1" | sudo tee -a /etc/openvpn/client.conf
 sudo systemctl restart openvpn
 ```
 
-Step 4: Resolving MTU Issues
+Step 4 - Resolving MTU Issues
 
 Maximum Transmission Unit (MTU) mismatches cause fragmentation and dropped packets. A common symptom is the VPN connecting but dropping immediately when transferring data.
 
@@ -149,7 +149,7 @@ For WireGuard, adjust the `MTU` in your configuration:
 MTU = 1400
 ```
 
-Step 5: Implementing Auto-Reconnect Scripts
+Step 5 - Implementing Auto-Reconnect Scripts
 
 Rather than manually reconnecting, automate the process with a simple reconnection script:
 
@@ -202,7 +202,7 @@ sudo systemctl enable vpn-watchdog.service
 sudo systemctl start vpn-watchdog.service
 ```
 
-Step 6: Select Optimal VPN Protocols and Servers
+Step 6 - Select Optimal VPN Protocols and Servers
 
 Protocol choice significantly impacts stability. If WireGuard drops frequently, try OpenVPN in UDP mode. If UDP fails, fallback to TCP:
 
@@ -213,7 +213,7 @@ sudo openvpn --config client.conf --proto tcp
 
 Server selection also matters. Connect to servers geographically closer to your location to reduce latency and packet loss. Many VPN providers offer server load indicators, choose servers with lower load percentages.
 
-Advanced: Using kill switches
+Advanced - Using kill switches
 
 A kill switch prevents data leaks when the VPN drops by blocking all non-VPN traffic. For Linux, configure `iptables` rules:
 
@@ -259,7 +259,7 @@ PersistentKeepalive = 25
 
 The `PersistentKeepalive = 25` setting sends a keepalive packet every 25 seconds, preventing NAT translation tables from expiring.
 
-Step 7: Quick Reference: VPN Drop Diagnosis
+Step 7 - Quick Reference: VPN Drop Diagnosis
 
 | Symptom | Likely Cause | Fix |
 |---------|-------------|-----|

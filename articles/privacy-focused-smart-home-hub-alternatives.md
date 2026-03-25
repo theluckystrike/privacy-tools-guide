@@ -42,7 +42,7 @@ All three platforms retain this data for months to years and use it for advertis
 
 ---
 
-Option 1: Home Assistant (Most Flexible)
+Option 1 - Home Assistant (Most Flexible)
 
 Home Assistant is the most popular local smart home platform. 700,000+ active installations. It runs on a Raspberry Pi, dedicated mini PC, or as a Docker container. With "Home Assistant Cloud" (Nabu Casa, optional) disabled, it operates 100% locally.
 
@@ -50,7 +50,7 @@ Install on a Raspberry Pi 4:
 
 ```bash
 Flash the Home Assistant OS image (easiest method)
-Download: https://www.home-assistant.io/installation/raspberrypi
+Download - https://www.home-assistant.io/installation/raspberrypi
 Flash with balenaEtcher or rpi-imager
 Boot → access http://homeassistant.local:8123
 
@@ -129,7 +129,7 @@ All run on-device. nothing leaves your network
 
 ---
 
-Option 2: openHAB (Enterprise-Grade)
+Option 2 - openHAB (Enterprise-Grade)
 
 openHAB (Open Home Automation Bus) is Java-based and focuses on enterprise-grade stability. It supports 400+ bindings (integrations). Its declarative configuration model is more structured than Home Assistant's YAML.
 
@@ -184,7 +184,7 @@ end
 
 ---
 
-Option 3: Hubitat Elevation
+Option 3 - Hubitat Elevation
 
 Hubitat is a commercial hub (hardware device, ~$150) that processes all automations locally. Unlike SmartThings, nothing leaves the hub. There is no subscription required for local operation.
 
@@ -222,7 +222,7 @@ Choosing a Protocol (No Cloud Required)
 | Wi-Fi | Home coverage | No | Depends on device |
 | Bluetooth LE | 5, 10m | No (BLE mesh exists) | Depends |
 
-For maximum privacy: use Zigbee or Z-Wave with a local coordinator (ConBee II, HUSBZB-1). These devices talk directly to your hub without any internet requirement.
+For maximum privacy - use Zigbee or Z-Wave with a local coordinator (ConBee II, HUSBZB-1). These devices talk directly to your hub without any internet requirement.
 
 ```bash
 Zigbee2MQTT. bridges Zigbee coordinator to MQTT broker locally
@@ -246,9 +246,9 @@ Regardless of which hub you choose, isolate IoT devices on a dedicated VLAN:
 
 ```bash
 Create VLAN 30 for IoT on pfSense/OPNsense
-Rule: IoT VLAN can communicate with Hub IP only
-Rule: IoT VLAN cannot reach main LAN
-Rule: Block IoT VLAN from internet (adjust per device)
+Rule - IoT VLAN can communicate with Hub IP only
+Rule - IoT VLAN cannot reach main LAN
+Rule - Block IoT VLAN from internet (adjust per device)
 
 Home Assistant configuration for isolated IoT VLAN
 Set HA IP to 192.168.30.2 (gateway on IoT VLAN)

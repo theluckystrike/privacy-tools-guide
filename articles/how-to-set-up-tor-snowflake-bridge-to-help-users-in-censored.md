@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand How Snowflake Works
+Step 1 - Understand How Snowflake Works
 
 Snowflake operates on a simple but effective principle: volunteers run small proxy servers called "Snowflakes" that bridge users behind censoring firewalls to the Tor network. The technology uses WebRTC, a protocol designed for peer-to-peer communication in web browsers, which makes the traffic appear identical to legitimate video conferencing or VoIP calls.
 
 When a user in a censored region connects through Snowflake, their Tor client connects to a Snowflake proxy, which then relays traffic to a Tor entry node. The use of WebRTC means that to network observers, the traffic looks like a standard browser making a peer connection, extremely difficult to block without breaking legitimate web functionality.
 
-Step 2: Set Up Snowflake on Linux
+Step 2 - Set Up Snowflake on Linux
 
 The most straightforward way to run a Snowflake proxy is on a Linux server or personal computer. You'll need the Snowflake proxy software, which is written in Go and available as a standalone binary.
 
@@ -77,7 +77,7 @@ sudo systemctl enable snowflake
 sudo systemctl start snowflake
 ```
 
-Step 3: Run Snowflake with Docker
+Step 3 - Run Snowflake with Docker
 
 Docker provides an easier deployment method with better isolation. This approach works well on any system with Docker installed:
 
@@ -96,7 +96,7 @@ docker run -d \
 
 Docker simplifies updates, you simply pull the latest image and recreate the container. The container exposes both ports 443 and 8080, covering most network configurations.
 
-Step 4: Configure Snowflake for Maximum Compatibility
+Step 4 - Configure Snowflake for Maximum Compatibility
 
 Snowflake offers several configuration options that improve connectivity in different network environments. The proxy automatically handles most settings, but understanding these options helps optimize deployments.
 
@@ -119,7 +119,7 @@ For servers behind restrictive firewalls, you can bind to specific interfaces:
   -external-ip your-server-ip
 ```
 
-Step 5: Monitor Your Snowflake Bridge
+Step 5 - Monitor Your Snowflake Bridge
 
 Once your Snowflake proxy is running, monitoring its activity helps ensure proper operation and provides insight into its impact. The logs show connection events, byte counts, and any errors.
 
@@ -137,7 +137,7 @@ docker logs -f snowflake
 
 You should see messages indicating client connections. A healthy Snowflake proxy typically shows sporadic connections, users come and go as they need to access the Tor network. The volunteer-driven nature means traffic volume varies significantly based on when users need access.
 
-Step 6: Scaling Snowflake for Higher Impact
+Step 6 - Scaling Snowflake for Higher Impact
 
 A single Snowflake proxy can handle dozens of simultaneous connections, but running multiple instances increases capacity and reliability. Load balancing across multiple ports or different servers distributes the load:
 
@@ -150,7 +150,7 @@ done
 
 This approach works well for servers with multiple CPU cores. Each instance operates independently, and the Tor network handles distribution automatically.
 
-Step 7: Test Your Snowflake Deployment
+Step 7 - Test Your Snowflake Deployment
 
 After setup, verify that your Snowflake proxy is reachable. The Snowflake project provides a test page at snowflake.torproject.org, or you can test manually using a Tor client configured to use your bridge.
 
@@ -177,13 +177,13 @@ Keep the software updated. The Snowflake project releases updates that improve c
 
 Consider network implications. Your server's IP address becomes associated with the Tor network. Some organizations may block IP addresses known to run Tor infrastructure. If this is a concern, use a VPS with IP addresses you can afford to have blocked.
 
-Step 8: Sharing Your Bridge
+Step 8 - Sharing Your Bridge
 
 Unlike traditional Tor bridges that require registration, Snowflake proxies can be shared directly. Users in censored countries need your server's IP address and port (typically port 443 or 8080). They configure their Tor client to use your Snowflake as a bridge, and the connection works immediately.
 
 The Snowflake project maintains a list of public proxies at snowflake.torproject.org, but running your own ensures dedicated capacity for users who need it most. Share your proxy address carefully, consider using encrypted channels or secure paste tools when distributing to users in high-risk environments.
 
-Step 9: Monitor Bridge Health and Usage
+Step 9 - Monitor Bridge Health and Usage
 
 Once your Snowflake bridge is running, monitoring ensures it's helping users effectively:
 
@@ -232,11 +232,11 @@ check_snowflake_health() {
 }
 
 Run health check every 15 minutes
-Add to crontab: */15 * * * * /usr/local/bin/check_snowflake_health.sh
+Add to crontab - */15 * * * * /usr/local/bin/check_snowflake_health.sh
 check_snowflake_health
 ```
 
-Step 10: Scaling to Multiple Snowflake Proxies
+Step 10 - Scaling to Multiple Snowflake Proxies
 
 For higher impact, run multiple proxy instances:
 
@@ -349,7 +349,7 @@ services:
       - snowflake-2
 ```
 
-Step 11: Capacity Planning
+Step 11 - Capacity Planning
 
 Understand your bridge's capacity limits:
 
@@ -393,14 +393,14 @@ if [ "$(ps aux | grep snowflake | grep -v grep | awk '{print $3}')" -gt 80 ]; th
 fi
 ```
 
-Step 12: Registration with Tor Project (Optional)
+Step 12 - Registration with Tor Project (Optional)
 
 While not required, registering your bridge helps Tor Project track its network:
 
 Snowflake bridge registration:
 1. Your bridge operates without registration (unlike traditional Tor bridges)
 2. However, you can voluntarily share metrics
-3. Visit: https://snowflake.torproject.org to see public statistics
+3. Visit - https://snowflake.torproject.org to see public statistics
 
 Privacy considerations when running a bridge:
 - Your server's IP address becomes known as a Tor bridge
@@ -408,7 +408,7 @@ Privacy considerations when running a bridge:
 - Use a VPS where IP reputation matters less
 - Consider using bulletproof hoster if blocking is likely
 
-Step 13: Perform Maintenance and Updates
+Step 13 - Perform Maintenance and Updates
 
 Keep your bridge secure and functional:
 

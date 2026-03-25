@@ -22,9 +22,9 @@ Table of Contents
 - [Detecting ETag Tracking on Your Own Sites](#detecting-etag-tracking-on-your-own-sites)
 - [Browser Protection Against ETag Tracking](#browser-protection-against-etag-tracking)
 - [Server-Side Defense Implementation](#server-side-defense-implementation)
-- [Client-Side: Service Worker Masking](#client-side-service-worker-masking)
-- [ETag Behavior Comparison: Browsers and Technologies](#etag-behavior-comparison-browsers-and-technologies)
-- [Audit: Finding Problematic ETags](#audit-finding-problematic-etags)
+- [Client-Side - Service Worker Masking](#client-side-service-worker-masking)
+- [ETag Behavior Comparison - Browsers and Technologies](#etag-behavior-comparison-browsers-and-technologies)
+- [Audit - Finding Problematic ETags](#audit-finding-problematic-etags)
 - [Prevention Checklist for Developers](#prevention-checklist-for-developers)
 
 Who is this article written for?
@@ -52,23 +52,23 @@ Real-World ETag Tracking Example
 How a tracking network exploits ETags:
 
 ```
-Step 1: Pixel embed on 50+ websites
-Every website includes: <img src="https://tracker.com/pixel.gif" />
+Step 1 - Pixel embed on 50+ websites
+Every website includes - <img src="https://tracker.com/pixel.gif" />
 
-Step 2: First visit to Website A
-Browser requests: GET /pixel.gif
+Step 2 - First visit to Website A
+Browser requests - GET /pixel.gif
 Response includes:
   ETag: "user-12345-abc"
   Set-Cookie: track_id=user-12345
 
-Step 3: User clears cookies
+Step 3 - User clears cookies
 (thinks they've removed tracking)
 
-Step 4: Visit Website B
+Step 4 - Visit Website B
 Browser has no cookie but still has ETag cached
-Requests: GET /pixel.gif
-Includes header: If-None-Match: "user-12345-abc"
-Tracker sees: "Same user with ETag user-12345-abc visited"
+Requests - GET /pixel.gif
+Includes header - If-None-Match: "user-12345-abc"
+Tracker sees - "Same user with ETag user-12345-abc visited"
 User is re-identified even without cookies!
 ```
 
@@ -78,8 +78,8 @@ Detecting ETag Tracking on Your Own Sites
 
 ```bash
 1. View all ETags your browser has cached
-Chrome: chrome://cache
-Firefox: about:cache
+Chrome - chrome://cache
+Firefox - about:cache
 
 2. Check which sites are assigning user-specific ETags
 Open DevTools (F12) → Network tab
@@ -158,7 +158,7 @@ app.get('/resource', (req, res) => {
 });
 ```
 
-Client-Side: Service Worker Masking
+Client-Side - Service Worker Masking
 
 ```javascript
 // Service Worker: Intercept and mask ETag headers
@@ -194,7 +194,7 @@ function isTrackingDomain(url) {
 }
 ```
 
-ETag Behavior Comparison: Browsers and Technologies
+ETag Behavior Comparison - Browsers and Technologies
 
 ```
 Browser      ETag Isolation  Respawn Risk  Protection Level
@@ -211,7 +211,7 @@ Fastly       Very Low        Low
 BunnyCDN     Very Low        Low
 ```
 
-Audit: Finding Problematic ETags
+Audit - Finding Problematic ETags
 
 ```python
 Script to find ETags that might enable tracking

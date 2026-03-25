@@ -28,33 +28,33 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What Public Records Can Reveal
+Step 1 - What Public Records Can Reveal
 
 Several categories of public information can help verify a dating match:
 
-Identity Verification: Names, aliases, addresses (current and previous), dates of birth, and other identifying details. This helps confirm the person is who they claim to be.
+Identity Verification - Names, aliases, addresses (current and previous), dates of birth, and other identifying details. This helps confirm the person is who they claim to be.
 
-Criminal Records: Felony convictions, misdemeanor convictions in some jurisdictions, and court cases. Note that many states restrict access to certain records, and expunged or sealed records typically won't appear.
+Criminal Records - Felony convictions, misdemeanor convictions in some jurisdictions, and court cases. Note that many states restrict access to certain records, and expunged or sealed records typically won't appear.
 
-Professional Licenses: Doctors, lawyers, contractors, and other licensed professionals can be verified through state licensing boards.
+Professional Licenses - Doctors, lawyers, contractors, and other licensed professionals can be verified through state licensing boards.
 
-Property Ownership: Real estate records show property ownership history in most jurisdictions.
+Property Ownership - Real estate records show property ownership history in most jurisdictions.
 
-Business Registrations: If someone claims to own a business, you can verify business registrations through state secretary of state databases.
+Business Registrations - If someone claims to own a business, you can verify business registrations through state secretary of state databases.
 
-Step 2: Legal Considerations
+Step 2 - Legal Considerations
 
 Before conducting any background check, understand the legal framework:
 
-FCRA Compliance: In the United States, the Fair Credit Reporting Act regulates how background checks can be used for employment, housing, or credit decisions. Using public records for personal verification (not for hiring decisions) generally falls outside FCRA, but you should understand the distinctions.
+FCRA Compliance - In the United States, the Fair Credit Reporting Act regulates how background checks can be used for employment, housing, or credit decisions. Using public records for personal verification (not for hiring decisions) generally falls outside FCRA, but you should understand the distinctions.
 
-State Laws: Some states restrict access to certain records. California, for example, limits access to criminal history. Research your state's specific laws.
+State Laws - Some states restrict access to certain records. California, for example, limits access to criminal history. Research your state's specific laws.
 
-Intended Use: Public records checks for personal safety verification differ from commercial background checks. You're not making employment or credit decisions, you're making a personal safety decision about meeting someone.
+Intended Use - Public records checks for personal safety verification differ from commercial background checks. You're not making employment or credit decisions, you're making a personal safety decision about meeting someone.
 
-International Considerations: If your match lives in a different country, research that country's public records access laws. Many countries have different frameworks for public information.
+International Considerations - If your match lives in a different country, research that country's public records access laws. Many countries have different frameworks for public information.
 
-Step 3: Methods for Public Records Searches
+Step 3 - Methods for Public Records Searches
 
 1. County Clerk and Court Records
 
@@ -108,11 +108,11 @@ results = search_county_court(
 
 Many states maintain centralized databases for certain records:
 
-Criminal History: Most states offer statewide criminal history searches, though access may be restricted.
+Criminal History - Most states offer statewide criminal history searches, though access may be restricted.
 
-Business Records: Secretary of state websites typically provide business entity search.
+Business Records - Secretary of state websites typically provide business entity search.
 
-Professional Licenses: State licensing boards usually maintain searchable databases.
+Professional Licenses - State licensing boards usually maintain searchable databases.
 
 Pennsylvania State Police Criminal Record Check
 
@@ -130,11 +130,11 @@ For other states, typical patterns include:
 
 Some federal records are publicly accessible:
 
-Federal Court Records (PACER): Search federal civil and criminal cases at pacer.uscourts.gov. Note that there are fees for detailed searches.
+Federal Court Records (PACER) - Search federal civil and criminal cases at pacer.uscourts.gov. Note that there are fees for detailed searches.
 
-Bankruptcy Records: Search bankruptcy court records at pacer.uscourts.gov.
+Bankruptcy Records - Search bankruptcy court records at pacer.uscourts.gov.
 
-Sex Offender Registries: The Dru Sjodin National Sex Offender Public Website (nsopw.gov) allows searching registered sex offenders by name or location.
+Sex Offender Registries - The Dru Sjodin National Sex Offender Public Website (nsopw.gov) allows searching registered sex offenders by name or location.
 
 ```python
 def check_sex_offender_registry(first_name, last_name, zip_code):
@@ -170,9 +170,9 @@ Most county assessor sites follow similar patterns:
 4. View ownership history and property details
 
 Example counties with good online access:
-- Los Angeles: https://maps.assessor.lacounty.gov/
-- Cook County: https://www.cookcountyassessor.com/
-- New York City: https://www.nyc.gov/site/finance/property/property.page
+- Los Angeles - https://maps.assessor.lacounty.gov/
+- Cook County - https://www.cookcountyassessor.com/
+- New York City - https://www.nyc.gov/site/finance/property/property.page
 ```
 
 5. Social Media and Digital Verification
@@ -200,53 +200,53 @@ def verify_social_media_presence(name, location):
     return results
 ```
 
-Step 4: Practical Workflow
+Step 4 - Practical Workflow
 
 Here's a recommended approach for verifying a dating match:
 
-Step 1: Gather Basic Information
+Step 1 - Gather Basic Information
 Collect their full name, current city/area, and any other identifying details they've shared. Ask directly if needed, transparency about why you're verifying is honest and reasonable.
 
-Step 2: Start with Name Verification
+Step 2 - Start with Name Verification
 Search county court records in their stated location. Verify basic identity details match what they've told you.
 
-Step 3: Check Sex Offender Registry
+Step 3 - Check Sex Offender Registry
 Search the national sex offender database. This is particularly important before meeting in person.
 
-Step 4: Verify Professional Claims
+Step 4 - Verify Professional Claims
 If they've mentioned professional credentials, verify through appropriate licensing boards.
 
-Step 5: Property and Business Records
+Step 5 - Property and Business Records
 If they've mentioned owning property or a business, verify through county assessor records and secretary of state databases.
 
-Step 6: Cross-Reference
+Step 6 - Cross-Reference
 Check social media presence to verify consistency. Multiple unconnected data points matching increases confidence.
 
-Step 5: Limitations and Caveats
+Step 5 - Limitations and Caveats
 
-Incomplete Information: Not all records are digitized or online. Older records, certain case types, and some jurisdictions may require in-person requests.
+Incomplete Information - Not all records are digitized or online. Older records, certain case types, and some jurisdictions may require in-person requests.
 
-Name Commonality: Common names generate many false positives. Narrow searches using additional identifying information like age or location.
+Name Commonality - Common names generate many false positives. Narrow searches using additional identifying information like age or location.
 
-Time Delays: Court records may not reflect very recent cases. There's typically a delay between case filing and online availability.
+Time Delays - Court records may not reflect very recent cases. There's typically a delay between case filing and online availability.
 
-Privacy Expungements: Many jurisdictions seal certain records, particularly for minor offenses or after completion of sentences.
+Privacy Expungements - Many jurisdictions seal certain records, particularly for minor offenses or after completion of sentences.
 
-International Records: Checking records in other countries requires understanding that country's specific systems and laws.
+International Records - Checking records in other countries requires understanding that country's specific systems and laws.
 
-Step 6: Ethical Considerations
+Step 6 - Ethical Considerations
 
 Conduct background checks respectfully:
 
-- Use for Personal Safety Only: These tools exist for verifying personal safety, not for harassment or stalking.
+- Use for Personal Safety Only - These tools exist for verifying personal safety, not for harassment or stalking.
 
-- Transparency: If you explain why you're doing verification, most people understand and appreciate the caution.
+- Transparency - If you explain why you're doing verification, most people understand and appreciate the caution.
 
-- Proportionate Response: A basic verification for someone who seems trustworthy is different from extensive investigation. Match your effort to the situation.
+- Proportionate Response - A basic verification for someone who seems trustworthy is different from extensive investigation. Match your effort to the situation.
 
-- Respect Boundaries: If someone declines to share information, respect that. Not everyone has clean records, and second chances are part of human relationships.
+- Respect Boundaries - If someone declines to share information, respect that. Not everyone has clean records, and second chances are part of human relationships.
 
-Step 7: Build Your Verification Toolkit
+Step 7 - Build Your Verification Toolkit
 
 For ongoing personal safety verification, consider building a simple reference system:
 

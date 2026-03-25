@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Steganography Basics
+Step 1 - Understand Steganography Basics
 
 At its core, steganography works by exploiting redundancies in file formats. Image files, audio files, and even documents contain more data than what meets the eye, bits that can be modified without noticeably affecting the file's appearance or functionality.
 
@@ -36,7 +36,7 @@ The most common technique is least significant bit (LSB) embedding. Each byte in
 
 Steganography differs fundamentally from encryption. Encryption scrambles data so it is unreadable without a key, but its presence is visible. anyone inspecting your files knows something is hidden. Steganography conceals the very existence of hidden data. Combining both methods provides defense in depth: even if someone suspects steganographic content and extracts it, they still face an encryption layer.
 
-Step 2: Legal and Privacy Context
+Step 2 - Legal and Privacy Context
 
 Before implementing steganography, understand the legal space in your jurisdiction. In most countries, steganography itself is entirely legal. it is simply a data encoding technique. However, using it to transmit material that is already illegal remains unlawful regardless of how it is transmitted.
 
@@ -44,7 +44,7 @@ In some jurisdictions with mandatory decryption laws (such as the UK under RIPA 
 
 For journalists communicating with sources, human rights workers in repressive environments, or individuals seeking to avoid traffic analysis, steganography provides meaningful practical privacy. The technique is used in legitimate security research, watermarking for digital rights management, and covert communications in adversarial settings.
 
-Step 3: Image Steganography with Python
+Step 3 - Image Steganography with Python
 
 The Python `stegano` library provides straightforward tools for hiding data in images. Install it first:
 
@@ -122,7 +122,7 @@ def decode_image(image_path):
     return message
 ```
 
-Step 4: Audio Steganography Techniques
+Step 4 - Audio Steganography Techniques
 
 Audio files offer another viable carrier for hidden data. The `pydub` library can assist with audio manipulation, though more specialized tools exist.
 
@@ -175,7 +175,7 @@ def extract_message_from_audio(audio_file):
     return message.replace("<<<END>>>", "")
 ```
 
-Step 5: Command-Line Tools for Quick Implementation
+Step 5 - Command-Line Tools for Quick Implementation
 
 For quick implementation without writing code, several mature command-line tools exist:
 
@@ -229,7 +229,7 @@ outguess -k "passphrase" -r output.jpg recovered.txt
 
 OutGuess is the preferred tool when your carrier image will be shared publicly and you need to resist statistical detection.
 
-Step 6: Practical Considerations
+Step 6 - Practical Considerations
 
 Detection and Countermeasures
 
@@ -258,10 +258,10 @@ Combining Steganography with Encryption
 The most strong approach combines both techniques:
 
 ```bash
-Step 1: Encrypt the message
+Step 1 - Encrypt the message
 gpg --symmetric --cipher-algo AES256 -o secret.gpg plaintext.txt
 
-Step 2: Embed the encrypted file in an image
+Step 2 - Embed the encrypted file in an image
 steghide embed -cf cover.jpg -ef secret.gpg -p "steg_passphrase"
 
 Recipient's extraction process:

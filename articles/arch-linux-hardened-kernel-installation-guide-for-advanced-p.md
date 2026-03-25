@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Arch Linux Hardened Kernel Installation Guide For Advanced"
-description: "Install the Linux hardened kernel on Arch: ASLR, KPTI, and seccomp defaults. Kernel parameters, DKMS modules, and troubleshooting covered."
+description: "Install the Linux hardened kernel on Arch - ASLR, KPTI, and seccomp defaults. Kernel parameters, DKMS modules, and troubleshooting covered."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
@@ -40,7 +40,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Kernel Hardening Options
+Step 1 - Understand Kernel Hardening Options
 
 Arch Linux offers several kernel packages through the official repositories and the AUR. The primary options include:
 
@@ -84,7 +84,7 @@ Backup your current kernel configuration if you've made custom modifications:
 cp /boot/config-linux $(uname -r)-config-backup
 ```
 
-Step 2: Install the Hardened Kernel
+Step 2 - Install the Hardened Kernel
 
 Install the hardened kernel and its dependencies:
 
@@ -100,7 +100,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 If you use a different bootloader such as systemd-boot, rEFInd, or Clover, consult its documentation for adding kernel entries. You may need to manually create a boot entry pointing to `/boot/vmlinuz-linux-hardened` and `/boot/initramfs-linux-hardened.img`.
 
-Step 3: Configure Boot Parameters
+Step 3 - Configure Boot Parameters
 
 Hardened kernel features require appropriate boot parameters. Edit your GRUB configuration at `/etc/default/grub` and add the following to `GRUB_CMDLINE_LINUX_DEFAULT`:
 
@@ -124,7 +124,7 @@ After editing, regenerate the GRUB config:
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-Step 4: Verify Hardening Features
+Step 4 - Verify Hardening Features
 
 After rebooting into the new kernel, verify the hardening features are active:
 
@@ -156,7 +156,7 @@ Check the current sysctl settings related to kernel hardening:
 sysctl -a | grep -E 'kernel\.(randomize|unprivileged)'
 ```
 
-Step 5: Manage Kernel Modules
+Step 5 - Manage Kernel Modules
 
 The hardened kernel provides additional module loading controls. To restrict module loading:
 
@@ -188,7 +188,7 @@ blacklist thunderbolt
 
 These blocklists prevent specific hardware drivers from loading, which can protect against physical attacks through USB, FireWire, or Thunderbolt ports.
 
-Step 6: Systemd Hardening
+Step 6 - Systemd Hardening
 
 Extend kernel hardening with systemd security options. Edit `/etc/systemd/system.conf`:
 
@@ -217,7 +217,7 @@ ReadOnlyPaths=/bin /boot /dev /etc /lib /lib64 /opt /proc /root /sbin /sys /usr 
 
 These settings isolate services from the filesystem and prevent privilege escalation.
 
-Step 7: Boot Security with Secure Boot
+Step 7 - Boot Security with Secure Boot
 
 For systems with UEFI Secure Boot, sign the hardened kernel:
 
@@ -254,7 +254,7 @@ Common issues include:
 - Wireless drivers needing rebuilding
 - Container runtimes requiring specific kernel parameters
 
-Step 8: Perform Maintenance and Updates
+Step 8 - Perform Maintenance and Updates
 
 Keep your hardened kernel updated through regular system updates:
 

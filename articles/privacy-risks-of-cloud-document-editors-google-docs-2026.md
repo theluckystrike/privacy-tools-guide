@@ -19,14 +19,14 @@ Table of Contents
 
 - [What Notion Collects](#what-notion-collects)
 - [What Microsoft Office365 Collects](#what-microsoft-office365-collects)
-- [Comparison: What Each Platform Stores](#comparison-what-each-platform-stores)
+- [Comparison - What Each Platform Stores](#comparison-what-each-platform-stores)
 - [Privacy Risks in Practice](#privacy-risks-in-practice)
 - [What Privacy Alternatives Exist?](#what-privacy-alternatives-exist)
-- [Privacy Comparison: All Options](#privacy-comparison-all-options)
+- [Privacy Comparison - All Options](#privacy-comparison-all-options)
 - [Practical Recommendations](#practical-recommendations)
-- [Red Flags: When NOT to Use Cloud Docs](#red-flags-when-not-to-use-cloud-docs)
+- [Red Flags - When NOT to Use Cloud Docs](#red-flags-when-not-to-use-cloud-docs)
 - [Checking Your Current Exposure](#checking-your-current-exposure)
-- [Data Deletion: What Actually Happens](#data-deletion-what-actually-happens)
+- [Data Deletion - What Actually Happens](#data-deletion-what-actually-happens)
 
 Notion's privacy is worse than Google Docs in some ways.
 
@@ -51,7 +51,7 @@ Data Retention
 Notion privacy policy:
 > "We may retain information about you that we collect even if you delete your account"
 
-Translation: Even deleted docs may be retained for "legal/business purposes."
+Translation - Even deleted docs may be retained for "legal/business purposes."
 
 Integration Hell
 
@@ -106,7 +106,7 @@ Your administrator can:
 
 ---
 
-Comparison: What Each Platform Stores
+Comparison - What Each Platform Stores
 
 | Data Type | Google | Notion | Office365 |
 |-----------|--------|--------|-----------|
@@ -124,17 +124,17 @@ Comparison: What Each Platform Stores
 
 Privacy Risks in Practice
 
-Scenario 1: Sensitive Business Information
+Scenario 1 - Sensitive Business Information
 
 You're a startup founder writing pitch deck.
 
 Google Docs:
 ```
-Doc created: 2026-01-15
-Edited by: ceo@startup.com
-Content: "Raising $2M Series A at $20M valuation"
-Timing: Edited Friday afternoons (pattern = likely working from home)
-Shared with: investor@vcfirm.com
+Doc created - 2026-01-15
+Edited by - ceo@startup.com
+Content - "Raising $2M Series A at $20M valuation"
+Timing - Edited Friday afternoons (pattern = likely working from home)
+Shared with - investor@vcfirm.com
 
 Google logs show:
 - You work on fundraising (inferred from content)
@@ -143,17 +143,17 @@ Google logs show:
 - Access from home office (can narrow location to city level)
 ```
 
-Privacy leak: Competitors, hostile investors, tax authorities could all benefit from this data.
+Privacy leak - Competitors, hostile investors, tax authorities could all benefit from this data.
 
-Scenario 2: Healthcare Information
+Scenario 2 - Healthcare Information
 
 You're a patient advocate documenting health issues for a doctor appointment.
 
 Notion:
 ```
-Document: "Symptoms and concerns"
-Content: Detailed health information
-Shared with: only doctor's email
+Document - "Symptoms and concerns"
+Content - Detailed health information
+Shared with - only doctor's email
 
 Notion's database permanently stores:
 - The document content
@@ -167,16 +167,16 @@ If Notion is breached or subpoenaed:
 - Insurance companies can infer costs
 ```
 
-Risk: Data breach leaks private health info. Subpoena discloses patient records.
+Risk - Data breach leaks private health info. Subpoena discloses patient records.
 
-Scenario 3: Legal/Privileged Communications
+Scenario 3 - Legal/Privileged Communications
 
 You're documenting a contract dispute with a vendor.
 
 Office365:
 ```
-Document: "Contract dispute - timeline and emails"
-Content: Internal discussion of legal strategy
+Document - "Contract dispute - timeline and emails"
+Content - Internal discussion of legal strategy
 
 Office365 logs:
 - Administrator can read document
@@ -190,7 +190,7 @@ If litigation holds the document:
 - Metadata shows when you thought about problems
 ```
 
-Risk: Attorney-client privilege may be waived. Opposing counsel sees your legal thinking.
+Risk - Attorney-client privilege may be waived. Opposing counsel sees your legal thinking.
 
 ---
 
@@ -221,7 +221,7 @@ Limitations:
 - Fewer features (no advanced formatting)
 - Real-time collaboration works but may lag
 - Free tier limits storage
-- Smaller ecosystem (fewer integrations)
+- Smaller environment (fewer integrations)
 
 Pricing:
 - Free: 50MB storage
@@ -237,7 +237,7 @@ Not a collaborative editor, but for personal/sensitive docs:
 - Open-source
 - Available: web, desktop, mobile
 
-Use case: Personal notes, medical records, financial planning (not collaborative).
+Use case - Personal notes, medical records, financial planning (not collaborative).
 
 Pricing:
 - Free: Basic notes
@@ -265,7 +265,7 @@ How it works:
 - No mobile app
 - Fewer features than Google Docs
 
-Cost: Free software, only cost is server ($5-50/month).
+Cost - Free software, only cost is server ($5-50/month).
 
 Matrix Synapse + Element (Encrypted Collaboration)
 
@@ -292,7 +292,7 @@ Elements (client) + Synapse (server):
 
 ---
 
-Privacy Comparison: All Options
+Privacy Comparison - All Options
 
 | Tool | Encryption | Server Sees Content | Self-Hosted | Cost | Features |
 |------|-----------|-------------------|-------------|------|----------|
@@ -308,7 +308,7 @@ Privacy Comparison: All Options
 
 Practical Recommendations
 
-For Most Teams: Acceptable Compromise
+For Most Teams - Acceptable Compromise
 
 Use Google Docs/Notion/Office365 with guardrails:
 
@@ -326,13 +326,13 @@ Use Google Docs/Notion/Office365 with guardrails:
 Using Google Docs for PR strategy
 
 ```
-Bad: "Our strategy is to beat Competitor X by targeting their customers"
-Good: "We will focus on features that differentiate vs. Product Y"
+Bad - "Our strategy is to beat Competitor X by targeting their customers"
+Good - "We will focus on features that differentiate vs. Product Y"
 
-Rationale: If leaked, the second statement is less damaging
+Rationale - If leaked, the second statement is less damaging
 ```
 
-For Sensitive Work: Use CryptPad
+For Sensitive Work - Use CryptPad
 
 - Medical information
 - Legal documents
@@ -348,7 +348,7 @@ Setup:
 4. Encrypt/decrypt in browser
 5. No account needed (can remain anonymous)
 
-For Truly Sensitive Work: Self-Host
+For Truly Sensitive Work - Self-Host
 
 - Government agencies
 - Law firms
@@ -365,9 +365,9 @@ Access at http://localhost:9001
 Documents stored on your servers only
 ```
 
-Cost: $50-200/month for hosting + setup time.
+Cost - $50-200/month for hosting + setup time.
 
-For Personal/Private Notes: Use Standard Notes
+For Personal/Private Notes - Use Standard Notes
 
 - Medical journal
 - Financial records
@@ -378,7 +378,7 @@ All encrypted, no signup (optional), no ads.
 
 ---
 
-Red Flags: When NOT to Use Cloud Docs
+Red Flags - When NOT to Use Cloud Docs
 
 Don't use Google Docs, Notion, or Office365 for:
 
@@ -438,7 +438,7 @@ Check Office365 Sharing
 3. See who has access to documents
 4. Review their permissions
 
-Danger: If admin has "manage permissions", they can:
+Danger - If admin has "manage permissions", they can:
 - See the document
 - Revoke your access
 - Delete it
@@ -446,7 +446,7 @@ Danger: If admin has "manage permissions", they can:
 
 ---
 
-Data Deletion: What Actually Happens
+Data Deletion - What Actually Happens
 
 Google Docs
 
@@ -457,7 +457,7 @@ You delete a document:
 - EXCEPT: Revision history may be retained longer
 - Google reserves right to keep anonymized data
 
-Reality: Google likely keeps encrypted backup for months.
+Reality - Google likely keeps encrypted backup for months.
 
 Notion
 
@@ -466,7 +466,7 @@ You delete a document:
 - Trash cleared after 30 days
 - EXCEPT: Notion explicitly states "may retain" deleted data
 
-Reality: Notion keeps deleted data indefinitely (per their policy).
+Reality - Notion keeps deleted data indefinitely (per their policy).
 
 Office365
 
@@ -476,16 +476,16 @@ You delete a document:
 - Enterprise can configure longer retention
 - Compliance holds prevent deletion
 
-Reality: Enterprise administrators can prevent any deletion.
+Reality - Enterprise administrators can prevent any deletion.
 
-Key point: Deletion doesn't mean destruction. Assume data persists even after you delete.
+Key point - Deletion doesn't mean destruction. Assume data persists even after you delete.
 
 ---
 
 ```
-Google Docs for: Team collaborations, public projects
-CryptPad for: Sensitive content, before finalization
-Local encrypted files for: Final sensitive versions
+Google Docs for - Team collaborations, public projects
+CryptPad for - Sensitive content, before finalization
+Local encrypted files for - Final sensitive versions
 ```
 
 Don't assume cloud docs are private. Assume they're logged, analyzed, and retained.

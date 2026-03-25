@@ -21,7 +21,7 @@ Proton VPN Stealth represents one of the more sophisticated attempts at circumve
 Table of Contents
 
 - [Myanmar's Current Internet Restrictions](#myanmars-current-internet-restrictions)
-- [Proton VPN Stealth: Technical Overview](#proton-vpn-stealth-technical-overview)
+- [Proton VPN Stealth - Technical Overview](#proton-vpn-stealth-technical-overview)
 - [Testing Methodology and Results](#testing-methodology-and-results)
 - [Configuration for Myanmar](#configuration-for-myanmar)
 - [Troubleshooting Connection Issues](#troubleshooting-connection-issues)
@@ -41,7 +41,7 @@ The filtering technology employs both pattern-based detection and IP blacklistin
 
 Myanmar's filtering infrastructure relies on equipment supplied by multiple vendors, and the DPI signatures it recognizes evolve continuously. Testers in 2026 have observed that the censorship apparatus is more sophisticated than in prior years, with particular improvements in detecting obfuscated VPN traffic through timing correlation rather than pure signature matching. Traffic that mimics HTTPS is subjected to behavioral analysis, connection duration, packet inter-arrival timing, and data transfer patterns are compared against known HTTPS baseline profiles. Connections that deviate from those profiles get throttled or reset.
 
-Proton VPN Stealth: Technical Overview
+Proton VPN Stealth - Technical Overview
 
 Proton VPN Stealth uses obfsproxy-based obfuscation designed to make VPN traffic appear as normal HTTPS connections. The implementation wraps OpenVPN traffic in an additional layer that mimics standard web traffic.
 

@@ -24,7 +24,7 @@ Table of Contents
 - [Choosing Your Toolchain](#choosing-your-toolchain)
 - [Setting Up Your Environment](#setting-up-your-environment)
 - [Implementing the Complete Workflow](#implementing-the-complete-workflow)
-- [Advanced: Using OpenCV for Higher Capacity](#advanced-using-opencv-for-higher-capacity)
+- [Advanced - Using OpenCV for Higher Capacity](#advanced-using-opencv-for-higher-capacity)
 - [Practical Considerations](#practical-considerations)
 - [Complete Example Script](#complete-example-script)
 
@@ -65,7 +65,7 @@ Implementing the Complete Workflow
 
 The complete process involves three steps: encrypt the message, embed it in an image, and extract and decrypt the message.
 
-Step 1: Encrypt Your Message
+Step 1 - Encrypt Your Message
 
 Generate a symmetric key and encrypt the plaintext message:
 
@@ -87,11 +87,11 @@ def encrypt_message(message: str, key: bytes = None) -> tuple[bytes, bytes]:
 Example usage
 message = "Secret meeting at 3pm near the fountain"
 encrypted_data, key = encrypt_message(message)
-print(f"Encrypted: {encrypted_data[:20]}...")
+print(f"Encrypted - {encrypted_data[:20]}...")
 print(f"Key (share securely): {key.decode()}")
 ```
 
-Step 2: Embed Encrypted Data in an Image
+Step 2 - Embed Encrypted Data in an Image
 
 Use LSB (Least Significant Bit) steganography to hide the encrypted data within the image's pixel data. The technique works by modifying the least significant bit of each color channel:
 
@@ -129,7 +129,7 @@ embed_in_image(cover_image, encrypted_data.decode(), stego_image)
 print(f"Hidden message embedded in {stego_image}")
 ```
 
-Step 3: Extract and Decrypt
+Step 3 - Extract and Decrypt
 
 The recipient extracts the hidden data and decrypts it using the shared key:
 
@@ -155,7 +155,7 @@ if terminator_pos != -1:
     print(f"Decrypted message: {original_message}")
 ```
 
-Advanced: Using OpenCV for Higher Capacity
+Advanced - Using OpenCV for Higher Capacity
 
 For embedding larger messages, OpenCV provides more control over the embedding process:
 
@@ -245,7 +245,7 @@ import sys
 
 def main():
     if len(sys.argv) != 4:
-        print("Usage: stego_encrypt.py <image.png> <message> <output.png>")
+        print("Usage - stego_encrypt.py <image.png> <message> <output.png>")
         return
 
     image_path, message, output_path = sys.argv[1], sys.argv[2], sys.argv[3]

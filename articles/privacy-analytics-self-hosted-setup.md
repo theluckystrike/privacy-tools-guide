@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Privacy-Focused Analytics: Self-Hosted Options"
+title: "Privacy-Focused Analytics - Self-Hosted Options"
 description: "Deploy Plausible, Umami, or Matomo on your own server for GDPR-compliant analytics without sending visitor data to third parties or requiring cookie ban..."
 date: 2026-03-22
 author: theluckystrike
@@ -15,7 +15,7 @@ tags: [privacy-tools-guide, privacy]
 
 {% raw %}
 
-Privacy-Focused Analytics: Self-Hosted Options
+Privacy-Focused Analytics - Self-Hosted Options
 
 Self-hosting your analytics means visitor data never leaves your infrastructure. No third-party JavaScript on your pages, no cross-site tracking, no GDPR consent banners required (for cookie-free analytics), and no feeding behavioral data to ad networks. This guide covers deploying Plausible, Umami, and Matomo on your own server.
 
@@ -29,7 +29,7 @@ Why Self-Host vs. Cloud Analytics
 | Data ownership | Google owns it | You own it | You own it |
 | Cost | Free (you are the product) | $9+/mo | Server cost only |
 
-Option 1: Plausible (Lightweight, Cookie-Free)
+Option 1 - Plausible (Lightweight, Cookie-Free)
 
 Plausible is the simplest option: no cookies, no personal data, GDPR-compliant without a consent banner.
 
@@ -114,7 +114,7 @@ Replace your-domain.com with your actual domain as registered in Plausible
 <script defer data-domain="your-domain.com" src="https://analytics.yourdomain.com/js/script.js"></script>
 ```
 
-Option 2: Umami (Minimal, Multi-Site)
+Option 2 - Umami (Minimal, Multi-Site)
 
 Umami is a clean alternative with real-time stats, multi-user support, and a simpler stack than Plausible.
 
@@ -158,7 +158,7 @@ volumes:
 ```bash
 cd /opt/umami && docker compose up -d
 
-Default login: admin / umami. change immediately
+Default login - admin / umami. change immediately
 Access at localhost:3000 (put behind nginx/Traefik with TLS)
 ```
 
@@ -168,7 +168,7 @@ Umami tracking snippet:
 <script async src="https://analytics.yourdomain.com/script.js" data-website-id="your-website-id"></script>
 ```
 
-Option 3: Matomo (Feature-Rich, GDPR Mode)
+Option 3 - Matomo (Feature-Rich, GDPR Mode)
 
 Matomo is the closest to Google Analytics in features. It supports heatmaps, funnels, A/B testing (paid plugins), and a full GDPR consent mode.
 
@@ -266,14 +266,14 @@ server {
 Backup Your Analytics Data
 
 ```bash
-Plausible: backup PostgreSQL + ClickHouse
+Plausible - backup PostgreSQL + ClickHouse
 docker exec plausible_db pg_dump -U postgres plausible_db | gzip > /backup/plausible-pg-$(date +%Y%m%d).sql.gz
 docker exec plausible_events_db clickhouse-client --query="SELECT * FROM plausible_events_db.events FORMAT Native" | gzip > /backup/plausible-ch-$(date +%Y%m%d).gz
 
-Umami: just PostgreSQL
+Umami - just PostgreSQL
 docker exec umami-db-1 pg_dump -U umami umami | gzip > /backup/umami-$(date +%Y%m%d).sql.gz
 
-Matomo: MySQL + files
+Matomo - MySQL + files
 mysqldump -u matomo -p matomo | gzip > /backup/matomo-db-$(date +%Y%m%d).sql.gz
 tar czf /backup/matomo-files-$(date +%Y%m%d).tar.gz /var/www/html/matomo/
 ```

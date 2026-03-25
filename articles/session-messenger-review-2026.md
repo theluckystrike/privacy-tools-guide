@@ -33,7 +33,7 @@ Table of Contents
 - [Multi-Device Synchronization Architecture](#multi-device-synchronization-architecture)
 - [Performance Optimization Strategies](#performance-optimization-strategies)
 - [Known Limitations and Workarounds](#known-limitations-and-workarounds)
-- [Comparison: Session vs Self-Hosted Alternatives](#comparison-session-vs-self-hosted-alternatives)
+- [Comparison - Session vs Self-Hosted Alternatives](#comparison-session-vs-self-hosted-alternatives)
 
 Architecture Overview
 
@@ -122,11 +122,11 @@ Session's security model involves explicit trade-offs that developers should und
 
 However, Session introduces unique attack surfaces:
 
-Service Node Collusion: A coordinated majority of malicious Service Nodes could theoretically correlate sender and recipient, though this requires significant resources and would be detectable.
+Service Node Collusion - A coordinated majority of malicious Service Nodes could theoretically correlate sender and recipient, though this requires significant resources and would be detectable.
 
-Metadata Persistence: While reduced compared to alternatives, some metadata exists. Academics have published analyses suggesting certain traffic analysis remains possible.
+Metadata Persistence - While reduced compared to alternatives, some metadata exists. Academics have published analyses suggesting certain traffic analysis remains possible.
 
-Recovery Phrase Storage: If your mnemonic phrase is compromised, your entire message history becomes accessible. There is no "delete forever" capability for messages already delivered.
+Recovery Phrase Storage - If your mnemonic phrase is compromised, your entire message history becomes accessible. There is no "delete forever" capability for messages already delivered.
 
 Practical Recommendations
 
@@ -266,7 +266,7 @@ Session messages queue on Service Nodes for up to 14 days
 Tune cleanup based on user requirements
 
 2. Optimize group message handling
-Groups use broadcast model: sender sends to each member
+Groups use broadcast model - sender sends to each member
 For large groups (100+ members), use session-bots for aggregation
 
 3. Monitor Service Node performance
@@ -290,13 +290,13 @@ sqlite3 session_cache.db "CREATE TABLE messages (
 
 Known Limitations and Workarounds
 
-Limitation 1: No Web Interface
+Limitation 1 - No Web Interface
 Session's lack of web client means all communication requires dedicated apps. For team environments requiring browser access, integration with Matrix federation or custom web interfaces becomes necessary.
 
-Limitation 2: File Sharing Size Limits
-Default file sharing limited to 6MB. Workaround: Use IPFS integration or reference external encrypted storage with Session for key distribution.
+Limitation 2 - File Sharing Size Limits
+Default file sharing limited to 6MB. Workaround - Use IPFS integration or reference external encrypted storage with Session for key distribution.
 
-Limitation 3: Audio/Video Calls
+Limitation 3 - Audio/Video Calls
 Session's decentralized model creates challenges for realtime communication. Current implementation delegates to different infrastructure. For privacy-critical organizations, Matrix or Jitsi integration may be preferable.
 
 ```javascript
@@ -316,7 +316,7 @@ sessionBot.sendMessage(contactPubkey, {
 connectToJitsiWithEncryption(jitsiKey);
 ```
 
-Comparison: Session vs Self-Hosted Alternatives
+Comparison - Session vs Self-Hosted Alternatives
 
 For organizations wanting decentralized messaging:
 

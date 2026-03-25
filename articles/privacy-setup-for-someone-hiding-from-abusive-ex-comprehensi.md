@@ -33,15 +33,15 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Device Hardening
+Step 1 - Device Hardening
 
 Clean Device Installation
 
 Never continue using a device your abuser had physical access to. Purchase a new device with cash if possible. Boot into recovery mode and wipe the existing OS completely:
 
 ```bash
-On macOS: Hold Cmd+R during boot, select Disk Utility, erase the drive
-On Linux: Use a live USB to run shred or badblocks on the entire drive
+On macOS - Hold Cmd+R during boot, select Disk Utility, erase the drive
+On Linux - Use a live USB to run shred or badblocks on the entire drive
 sudo shred -v -n 3 /dev/sda
 ```
 
@@ -63,7 +63,7 @@ GrapheneOS on a Pixel device provides strong sandboxing and sensor toggles that 
 
 For desktop, Tails or Qubes OS compartmentalize your activities. Tails wipes memory on shutdown, essential for preventing forensic recovery of your location data.
 
-Step 2: Account Isolation
+Step 2 - Account Isolation
 
 Email Separation
 
@@ -83,10 +83,10 @@ Get a new SIM card from a provider that doesn't require ID registration where yo
 
 ```kotlin
 // Example: Using Tasker to route calls from unknown numbers to VoIP
-Profile: Unknown Caller
-Event: Phone Ringing
+Profile - Unknown Caller
+Event - Phone Ringing
     IF %CNUMBER !IN %MyContacts
-Task: Accept Call
+Task - Accept Call
     App Launch: VoIP App
 ```
 
@@ -103,7 +103,7 @@ bw generate --length 24 --complexity --includeNumber --includeSymbol --includeUp
 
 Enable the emergency access feature with a trusted person who understands the sensitivity, but give them instructions to delete the request if they receive it unexpectedly. This serves as a dead man's switch for your digital life.
 
-Step 3: Secure the Network
+Step 3 - Secure the Network
 
 VPN Configuration
 
@@ -155,7 +155,7 @@ webgl.disabled = true
 
 Install uBlock Origin and Privacy Badger. Create a separate browser profile for sensitive activities, bookmark the new email, the VPN status page, and your safety plan.
 
-Step 4: Operational Security
+Step 4 - Operational Security
 
 Metadata Stripping
 
@@ -194,7 +194,7 @@ curl -X DELETE https://api.example-data-broker.com/v1/profile \
   -d '{"email": "your-new-email@example.com"}'
 ```
 
-Step 5: Emergency Protocols
+Step 5 - Emergency Protocols
 
 If you suspect immediate danger:
 
@@ -253,7 +253,7 @@ Related Articles
 - [Password Manager For Shared Accounts Between Roommates](/password-manager-for-shared-accounts-between-roommates-secure-method/)
 - [Privacy Setup for Confidential Informant](/privacy-setup-for-confidential-informant-protecting-identity/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-Step 6: Ongoing Monitoring and Maintenance
+Step 6 - Ongoing Monitoring and Maintenance
 
 Security doesn't end with initial setup. Continuous monitoring catches changes:
 
@@ -296,11 +296,11 @@ run_audit() {
 
 run_audit
 
-Schedule: Add to crontab for weekly execution
+Schedule - Add to crontab for weekly execution
 0 3 * * 0 /path/to/security-audit.sh
 ```
 
-Step 7: Contact Safety Protocols
+Step 7 - Contact Safety Protocols
 
 If safe to do so, establish secure communication with trusted contacts:
 
@@ -311,7 +311,7 @@ secure-contact-setup.sh
 Create Signal account from safe device (library computer)
 Never link to old phone number
 
-Alternative: Temporary contact method
+Alternative - Temporary contact method
 1. Create burner Signal account
 2. Share ONLY with completely trusted people
 3. Meet in person to exchange contact details
@@ -352,7 +352,7 @@ Add to weekly cron job
 (crontab -l 2>/dev/null; echo "0 9 * * 0 ~/.local/share/dead-mans-switch.sh") | crontab -
 ```
 
-Step 8: Emergency Access Recovery
+Step 8 - Emergency Access Recovery
 
 Prepare for worst-case scenarios:
 
@@ -400,7 +400,7 @@ lp recovery-instructions.txt.gpg
 Store one copy separate from home
 ```
 
-Step 9: Recognition of Escalation Signs
+Step 9 - Recognition of Escalation Signs
 
 Know when technical measures may not be sufficient:
 
@@ -424,7 +424,7 @@ Technical measures are supplementary to physical safety.
 Professional help (DV advocates, law enforcement) is primary.
 ```
 
-Step 10: Long-Term Resilience
+Step 10 - Long-Term Resilience
 
 Building sustainable privacy practices for extended security:
 
@@ -467,7 +467,7 @@ Visit privacy pages of critical services
 echo "Security review complete"
 ```
 
-Step 11: Resources for Ongoing Support
+Step 11 - Resources for Ongoing Support
 
 Technical measures work best with social support:
 

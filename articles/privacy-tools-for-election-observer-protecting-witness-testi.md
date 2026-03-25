@@ -233,7 +233,7 @@ Building Custom Solutions
 For organizations needing custom tooling:
 
 ```python
-Python example: Encrypted testimony storage
+Python example - Encrypted testimony storage
 from cryptography.fernet import Fernet
 import hashlib
 import json
@@ -303,7 +303,7 @@ Know the jurisdiction's encryption laws before entering: Some countries restrict
 
 Use end-to-end encrypted channels for cross-border transmission: Sending testimony across borders via unencrypted email or commercial cloud services creates exposure to interception under national intelligence laws in transit countries. Signal, OnionShare, and GPG-encrypted email all provide end-to-end protection that limits this exposure.
 
-Minimize data collected: The safest testimony file is one that contains only what is necessary. Before transmitting, review each file and strip any fields. names, locations, timestamps. that are not required by the receiving organization. Less data means less exposure under any jurisdiction's laws.
+Minimize data collected - The safest testimony file is one that contains only what is necessary. Before transmitting, review each file and strip any fields. names, locations, timestamps. that are not required by the receiving organization. Less data means less exposure under any jurisdiction's laws.
 
 Frequently Asked Questions
 

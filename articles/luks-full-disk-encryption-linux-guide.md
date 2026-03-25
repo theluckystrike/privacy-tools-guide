@@ -30,7 +30,7 @@ cryptsetup --version
 Should show 2.x.x
 ```
 
-Step 2: Option A: Encrypt a Secondary Drive
+Step 2 - Option A: Encrypt a Secondary Drive
 
 This is the simpler case. encrypting a data drive that does not contain your OS.
 
@@ -74,7 +74,7 @@ sudo umount /mnt/secure
 sudo cryptsetup luksClose secure_data
 ```
 
-Step 3: Option B: Full System Encryption During OS Install
+Step 3 - Option B: Full System Encryption During OS Install
 
 Most Linux installers (Ubuntu, Debian, Fedora) offer full disk encryption during the setup wizard. Ubuntu calls it "Encrypt the new Ubuntu installation for security." This is the recommended path for a new system. the installer handles partition layout and bootloader integration automatically.
 
@@ -118,14 +118,14 @@ sudo mkswap /dev/vg0/swap
 sudo mkfs.ext4 /dev/vg0/root
 ```
 
-Step 4: Configure Auto-Mount via crypttab
+Step 4 - Configure Auto-Mount via crypttab
 
 To have the system prompt for a LUKS passphrase at boot and mount the drive automatically, add an entry to `/etc/crypttab`:
 
 ```bash
 Get the UUID of the encrypted partition
 sudo blkid /dev/sdb | grep UUID
-Example output: UUID="a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+Example output - UUID="a1b2c3d4-e5f6-7890-abcd-ef1234567890"
 
 Add to /etc/crypttab
 echo "secure_data UUID=a1b2c3d4-e5f6-7890-abcd-ef1234567890 none luks" \
@@ -138,7 +138,7 @@ echo "/dev/mapper/secure_data /mnt/secure ext4 defaults 0 2" \
 
 After rebooting, the system will prompt for the passphrase before mounting the drive.
 
-Step 5: Adding a Keyfile (for Convenience)
+Step 5 - Adding a Keyfile (for Convenience)
 
 A keyfile allows unlocking the container without typing a passphrase. useful for automatically mounting secondary drives while still keeping your root partition passphrase-protected.
 
@@ -158,7 +158,7 @@ secure_data UUID=... /etc/luks-keys/secure_data.key luks
 
 Keep the passphrase as a backup key slot. if the keyfile is lost or the system disk fails, you can still unlock the drive with the passphrase.
 
-Step 6: Inspecting and Managing Key Slots
+Step 6 - Inspecting and Managing Key Slots
 
 LUKS supports up to 32 key slots (LUKS2). You can have multiple passphrases, keyfiles, or recovery keys:
 
@@ -173,7 +173,7 @@ Remove a specific key slot (be careful. ensure another slot works first)
 sudo cryptsetup luksKillSlot /dev/sdb 1
 ```
 
-Step 7: Benchmarking Your Configuration
+Step 7 - Benchmarking Your Configuration
 
 Test encryption speed to ensure your parameters are practical:
 
@@ -187,7 +187,7 @@ sudo cryptsetup luksDump /dev/sdb | grep -A5 "Key Slot 0"
 
 The Argon2id settings above target ~5 seconds for key derivation. slow enough to resist brute force but fast enough not to be annoying at boot.
 
-Step 8: Backup the LUKS Header
+Step 8 - Backup the LUKS Header
 
 The LUKS header contains the key slots. If it is corrupted, all data is unrecoverable. Back it up:
 

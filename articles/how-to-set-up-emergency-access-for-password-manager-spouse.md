@@ -47,7 +47,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Emergency Access Mechanisms
+Step 1 - Understand Emergency Access Mechanisms
 
 Password managers implement emergency access through two primary methods: designated emergency contacts and vault sharing with expiration timers. Each approach offers different security trade-offs, and understanding these differences helps you choose the right configuration for your household.
 
@@ -57,21 +57,21 @@ Vault sharing with time-limited access provides more granular control. You share
 
 Both methods require the emergency contact to have their own password manager account. This requirement ensures that vault access remains tied to authenticated identities rather than shared passwords.
 
-Step 2: Set Up Emergency Access in Bitwarden
+Step 2 - Set Up Emergency Access in Bitwarden
 
 Bitwarden offers the most straightforward emergency access implementation among major password managers. The feature works across Free, Premium, and Family plans.
 
 Configuration Steps
 
-1. Access Security Settings: Navigate to Settings → Security → Emergency Access in the Bitwarden web vault.
+1. Access Security Settings - Navigate to Settings → Security → Emergency Access in the Bitwarden web vault.
 
-2. Designate a Contact: Enter your spouse's Bitwarden email address and confirm the invitation. They must accept the invitation before proceeding.
+2. Designate a Contact - Enter your spouse's Bitwarden email address and confirm the invitation. They must accept the invitation before proceeding.
 
-3. Configure Wait Time: Set the waiting period between 1 hour and 7 days. A 24-48 hour window balances security against urgency.
+3. Configure Wait Time - Set the waiting period between 1 hour and 7 days. A 24-48 hour window balances security against urgency.
 
 4. Choose Verification Type: Bitwarden supports two modes:
- - Trusted Emergency Access: Your spouse can request access after the wait period without additional notification to you.
- - Inheritance Planning: More stringent, designed for estate planning scenarios.
+ - Trusted Emergency Access - Your spouse can request access after the wait period without additional notification to you.
+ - Inheritance Planning - More stringent, designed for estate planning scenarios.
 
 Your spouse receives an email notification when they initiate an emergency access request, giving you an opportunity to deny it if you're simply unavailable but capable of responding.
 
@@ -86,7 +86,7 @@ Update annually and after any relationship status change
 VERIFICATION_CODE_EMERGENCY=your-shared-code-here
 ```
 
-Step 3: Set Up Emergency Access in 1Password
+Step 3 - Set Up Emergency Access in 1Password
 
 1Password implements emergency access through its Families and Teams plans, calling the feature "Emergency Kit" and "Family Vault Sharing."
 
@@ -108,13 +108,13 @@ Family Vault Sharing Configuration
  - Subscription services (streaming, utilities)
  - Master password documentation (for the spouse's own vault)
 
-3. Share with Family Member: Select each item → Share → Choose your spouse's account. Enable "Can view" permissions.
+3. Share with Family Member - Select each item → Share → Choose your spouse's account. Enable "Can view" permissions.
 
 4. Set Item Expiration (Premium feature): For sensitive accounts, configure items to expire after 30-90 days, requiring periodic renewal and review.
 
 Unlike Bitwarden's automatic waiting period, 1Password's sharing model provides immediate access but limits it to specific items rather than full vault access.
 
-Step 4: Implementing Custom Emergency Access Scripts
+Step 4 - Implementing Custom Emergency Access Scripts
 
 For developers seeking more control, programmatic solutions using password manager CLIs provide flexible emergency access configurations.
 
@@ -157,7 +157,7 @@ Regardless of which password manager you use, maintain an offline document listi
 
 ```markdown
 Emergency Access Documentation
-Step 5: Storage: Physical safe, not digital
+Step 5 - Storage: Physical safe, not digital
 
 Primary Access Method
 - Password Manager: [Bitwarden/1Password/LastPass]
@@ -191,17 +191,17 @@ Security Considerations and Best Practices
 
 Implementing emergency access introduces attack surface that requires careful management.
 
-Limit Shared Items: Avoid sharing your entire vault. Create a dedicated emergency vault containing only essential items. This follows the principle of least privilege, your spouse needs access to critical accounts, not every subscription and random login.
+Limit Shared Items - Avoid sharing your entire vault. Create a dedicated emergency vault containing only essential items. This follows the principle of least privilege, your spouse needs access to critical accounts, not every subscription and random login.
 
-Regular Review: Audit emergency access quarterly. Remove access for ex-spouses or relationships that have ended. Update verification codes annually or immediately after significant relationship changes.
+Regular Review - Audit emergency access quarterly. Remove access for ex-spouses or relationships that have ended. Update verification codes annually or immediately after significant relationship changes.
 
-Separate Authentication: Ensure your spouse uses their own password manager account, not a shared account. Shared accounts eliminate individual accountability and complicate revocation.
+Separate Authentication - Ensure your spouse uses their own password manager account, not a shared account. Shared accounts eliminate individual accountability and complicate revocation.
 
-Test the System: Once configured, test the emergency access process in a controlled manner. Verify the waiting period works, confirmation emails arrive, and your spouse can actually access the designated items.
+Test the System - Once configured, test the emergency access process in a controlled manner. Verify the waiting period works, confirmation emails arrive, and your spouse can actually access the designated items.
 
-Document Expiration Policies: If using time-limited sharing, maintain a calendar reminder to renew access before expiration. An expired emergency access configuration provides zero benefit during actual emergencies.
+Document Expiration Policies - If using time-limited sharing, maintain a calendar reminder to renew access before expiration. An expired emergency access configuration provides zero benefit during actual emergencies.
 
-Step 6: When Emergency Access Activates
+Step 6 - When Emergency Access Activates
 
 When you become unavailable, your spouse initiates emergency access by requesting vault access through your password manager's interface. After the waiting period elapses, they receive access to your shared items.
 
@@ -216,7 +216,7 @@ During an actual emergency, your spouse should:
 
 The emergency access system provides peace of mind that digital barriers won't prevent your family from managing critical responsibilities during difficult times.
 
-Step 7: Handling Relationship Changes and Access Revocation
+Step 7 - Handling Relationship Changes and Access Revocation
 
 Emergency access relationships change with life circumstances. Divorce, separation, estrangement, or changes in trust require immediate revocation of designated contacts. Password managers make this process straightforward, but many users neglect to update emergency access configurations during relationship transitions.
 
@@ -226,7 +226,7 @@ Some password managers allow time-limited emergency access designations. Rather 
 
 If you suspect your emergency contact has become unreliable or untrustworthy, revoke their access immediately. Create new emergency contact designations with different trusted individuals. Most password managers support multiple designated emergency contacts, providing redundancy and ensuring at least one trusted person retains access.
 
-Step 8: Emergency Access for Aging Parents and End-of-Life Planning
+Step 8 - Emergency Access for Aging Parents and End-of-Life Planning
 
 As parents age, considering their digital assets becomes part of end-of-life planning. Discuss emergency access with aging parents and help them set up appropriate designations. Adult children frequently become executors for aging parents, formal emergency access configurations simplify the process when parental incapacity occurs.
 
@@ -234,7 +234,7 @@ Some families prefer a tiered approach: adult children receive emergency access 
 
 Documentation becomes especially important for aging parents. Create detailed instructions about where emergency access credentials are stored, which family members have access rights, and what actions should be taken if the parent becomes incapacitated. Store this documentation with a copy of the will and other critical documents.
 
-Step 9: Test and Disaster Recovery
+Step 9 - Test and Disaster Recovery
 
 Emergency access systems should be tested periodically. With your designated contact's knowledge, initiate a test emergency access request. Verify that notifications arrive, waiting periods function correctly, and access actually grants the intended permissions. Better to discover problems during a test than during an actual emergency.
 

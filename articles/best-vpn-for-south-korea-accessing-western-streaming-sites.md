@@ -147,7 +147,7 @@ DNS Leak Test
 Using dig to verify DNS resolution
 dig +short netflix.com TXT
 
-Expected: Returns IP addresses associated with the target region
+Expected - Returns IP addresses associated with the target region
 ```
 
 Web-Based Testing Services
@@ -246,11 +246,11 @@ Troubleshooting Common Issues
 
 Streaming service blocks connection: Rotate to a different VPN server IP. Streaming services maintain blocklists that update regularly.
 
-Slow buffering: Test multiple server locations and protocols. WireGuard typically performs best, but try OpenVPN if WireGuard servers are blocked.
+Slow buffering - Test multiple server locations and protocols. WireGuard typically performs best, but try OpenVPN if WireGuard servers are blocked.
 
-DNS resolution fails: Verify your DNS configuration is correct and that the VPN tunnel handles DNS traffic properly.
+DNS resolution fails - Verify your DNS configuration is correct and that the VPN tunnel handles DNS traffic properly.
 
-App-specific detection: Some streaming apps use certificate pinning or device fingerprinting. In these cases, using a browser-based interface may work when the app does not.
+App-specific detection - Some streaming apps use certificate pinning or device fingerprinting. In these cases, using a browser-based interface may work when the app does not.
 
 Security Considerations
 

@@ -30,13 +30,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Start with Their Priorities, Not Yours
+Step 1 - Start with Their Priorities, Not Yours
 
 Security professionals often lead with technical arguments, entropy, hashing algorithms, credential stuffing. Your boss likely doesn't care about any of this. Instead, focus on what they do care about: business continuity, legal liability, and operational efficiency.
 
 Before your first conversation, research your company's existing compliance requirements. Are you subject to SOC 2? HIPAA? PCI-DSS? Most frameworks require some form of access control and credential management. A password manager provides documented evidence of these controls.
 
-Step 2: Build Your Case with Concrete Risks
+Step 2 - Build Your Case with Concrete Risks
 
  Instead, quantify the actual threats:
 
@@ -51,13 +51,13 @@ Frame the conversation around your company's specific vulnerabilities:
 
 These questions often reveal gaps that leadership didn't know existed.
 
-Step 3: The Cost Argument
+Step 3 - The Cost Argument
 
 Password managers aren't free for teams, but the cost is minor compared to breach costs. Most enterprise password managers cost between $3-8 per user monthly. For a 50-person company, that's roughly $2,000-5,000 annually.
 
 Compare this to the cost of a single security incident: legal fees, forensic investigation, notification costs, regulatory fines, and lost business. The math is straightforward.
 
-Step 4: Show, Don't Just Tell
+Step 4 - Show, Don't Just Tell
 
 Developers and power users respond to demonstrations. Show your boss what password manager workflows actually look like:
 
@@ -88,7 +88,7 @@ The underlying credential is never exposed in plain text
 
 These capabilities solve real operational problems while improving security.
 
-Step 5: Address Common Objections
+Step 5 - Address Common Objections
 
 "We already have a password spreadsheet"
 
@@ -108,7 +108,7 @@ Careful employees still reuse passwords. Studies consistently show that 65% of p
 
 Enterprise password managers are designed for deployment without user training. Most integrate with existing identity providers (Google Workspace, Azure AD, Okta). Users sign in once and access credentials through browser extensions or CLI tools.
 
-Step 6: Propose a Pilot Program
+Step 6 - Propose a Pilot Program
 
 Rather than asking for company-wide adoption immediately, propose a pilot:
 
@@ -120,7 +120,7 @@ Rather than asking for company-wide adoption immediately, propose a pilot:
 
 This approach reduces perceived risk for leadership while demonstrating value.
 
-Step 7: Frame the Proposal
+Step 7 - Frame the Proposal
 
 Structure your request like this:
 
@@ -131,7 +131,7 @@ Structure your request like this:
 5. Pilot plan: A low-risk implementation approach
 6. Success metrics: How you'll measure effectiveness
 
-Step 8: Security Metrics That Matter to Leadership
+Step 8 - Security Metrics That Matter to Leadership
 
 When presenting, focus on measurable outcomes:
 
@@ -143,7 +143,7 @@ When presenting, focus on measurable outcomes:
 
 A password manager provides visibility into all of these metrics.
 
-Step 9: Competitive Benchmarking by Company Size
+Step 9 - Competitive Benchmarking by Company Size
 
 Present actual costs and ROI for companies similar to yours:
 
@@ -153,19 +153,19 @@ Present actual costs and ROI for companies similar to yours:
 
 1000+ person company: $50,000+/year investment becomes trivial compared to incident response costs. Most enterprise password managers include compliance features like audit logs and session analysis.
 
-Step 10: Real-World Adoption Case Studies
+Step 10 - Real-World Adoption Case Studies
 
 When pitching, reference companies in your industry that adopted password managers successfully:
 
-Tech Companies: GitHub, Stripe, and most unicorns run password managers as standard infrastructure. This is not experimental, it's baseline.
+Tech Companies - GitHub, Stripe, and most unicorns run password managers as standard infrastructure. This is not experimental, it's baseline.
 
-Financial Services: JPMorgan, Goldman Sachs, and other financial institutions require password managers for compliance. If finance works with them, so can your company.
+Financial Services - JPMorgan, Goldman Sachs, and other financial institutions require password managers for compliance. If finance works with them, so can your company.
 
-Healthcare: HIPAA-regulated organizations increasingly mandate password managers for credential management. This sets an industry precedent.
+Healthcare - HIPAA-regulated organizations increasingly mandate password managers for credential management. This sets an industry precedent.
 
 Present one specific case study relevant to your company's industry. Your boss responds better to "Healthcare company like us implemented this" than generic statistics.
 
-Step 11: Password Manager Selection Criteria for Teams
+Step 11 - Password Manager Selection Criteria for Teams
 
 Help your boss evaluate options with specific technical criteria:
 
@@ -183,7 +183,7 @@ Bitwarden:
 - Cost: $132/user/year (teams)
 - Open source: No
 - API quality: Excellent
-- Suitable for: organizations already in Apple/Microsoft ecosystem
+- Suitable for: organizations already in Apple/Microsoft environment
 
 Dashlane:
 - Cost: $119/user/year (teams)
@@ -193,9 +193,9 @@ Dashlane:
 
 Presenting multiple options removes the "you're trying to sell us X product" objection.
 
-Step 12: Plan Incident Response Improvement
+Step 12 - Plan Incident Response Improvement
 
-One of the strongest arguments: password managers reduce incident response time by hours or days.
+One of the strongest arguments - password managers reduce incident response time by hours or days.
 
 Without a password manager:
 - Breach detected
@@ -212,18 +212,18 @@ With a password manager:
 
 This speed reduction is worth thousands in incident costs and reduces the window of vulnerability where attackers might use stolen credentials.
 
-Step 13: Build Internal Support
+Step 13 - Build Internal Support
 
 Before presenting to leadership, secure support from:
 
 1. DevOps/Infrastructure: They will appreciate centralized secret management
-2. Finance: They care about cost savings vs. breach costs
+2. Finance - They care about cost savings vs. breach costs
 3. Legal/Compliance: They understand regulatory requirements
 4. HR: They want to prevent insider threats and credential misuse
 
 Getting buy-in from these departments strengthens your pitch to leadership. When you present, you can reference "our DevOps team supports this" or "our legal team confirms it meets our compliance requirements."
 
-Step 14: Addressing the "We'll Get Hacked Anyway" Objection
+Step 14 - Addressing the "We'll Get Hacked Anyway" Objection
 
 Some managers believe that if attackers target the company, a password manager doesn't help. Respond with specifics:
 
@@ -231,7 +231,7 @@ Some managers believe that if attackers target the company, a password manager d
 
 This reframes password managers from "prevents breaches" to "limits blast radius," which is more credible.
 
-Step 15: What to Avoid
+Step 15 - What to Avoid
 
 Don't make your pitch about:
 
@@ -241,7 +241,7 @@ Don't make your pitch about:
 - Specific products without alternatives: Present options, not a sales pitch
 - Comparing to personal password manager security: Enterprise tools have different threat models
 
-Step 16: Vendor Evaluation Scorecard
+Step 16 - Vendor Evaluation Scorecard
 
 Create a structured evaluation document to guide leadership:
 
@@ -255,40 +255,40 @@ Evaluation Criteria (Weight)
 6. Vendor stability (10%): Company maturity, investment, roadmap
 7. Support tier (5%): Responsive support, SLAs
 
-Scoring: 1 (poor) to 5 (excellent)
+Scoring - 1 (poor) to 5 (excellent)
 
 Leading candidates:
 Bitwarden: 4.2 (strong security, good value)
 1Password: 4.5 (excellent integration, higher cost)
-Dashlane: 4.3 (strong compliance, smaller vendor)
+Dashlane - 4.3 (strong compliance, smaller vendor)
 ```
 
 This structured evaluation removes emotions from the decision and documents the reasoning for leadership.
 
-Step 17: Implementation Timeline Example
+Step 17 - Implementation Timeline Example
 
 Provide a concrete, lower-risk rollout plan:
 
 ```
-Month 1: Pilot with IT and DevOps teams (10 people)
+Month 1 - Pilot with IT and DevOps teams (10 people)
 - Limited scope reduces risk
 - Early adopters provide feedback
 - IT can troubleshoot integration issues
 - Measure metrics: adoption rate, support tickets
 
-Month 2: Expand to engineering teams (40 people)
+Month 2 - Expand to engineering teams (40 people)
 - Larger group validates scalability
 - Different use cases emerge
 - Documentation improves
 - Measure metrics: password reuse reduction, incident response time
 
-Month 3: Company-wide rollout
+Month 3 - Company-wide rollout
 - Infrastructure is proven
 - Team knows how to support users
 - Training materials exist
 - Measure metrics: company-wide adoption, behavior change
 
-Month 4-6: Optimization
+Month 4-6 - Optimization
 - Address feedback from early users
 - Develop advanced features (emergency access, audit logs)
 - Integrate with SSO if not already done
@@ -296,7 +296,7 @@ Month 4-6: Optimization
 
 This timeline shows you've thought through logistics, not just "let's buy this tool." Include measurement milestones to demonstrate success.
 
-Step 18: Long-term Password Manager Value
+Step 18 - Long-term Password Manager Value
 
 Frame this not as a one-time expense but as continuous infrastructure improvement:
 

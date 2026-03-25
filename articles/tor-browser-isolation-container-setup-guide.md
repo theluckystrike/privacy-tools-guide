@@ -44,7 +44,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Docker-Based Tor Browser Isolation
+Step 1 - Docker-Based Tor Browser Isolation
 
 Docker provides the most flexible container setup. You'll need Docker Desktop or the Docker Engine installed. Create a Dockerfile that builds an ephemeral Tor Browser environment:
 
@@ -102,7 +102,7 @@ docker run --rm -it \
 
 Replace `host.docker.internal` with your host IP on Linux or use `docker.for.mac.localhost` on macOS.
 
-Step 2: Firejail Sandbox Configuration
+Step 2 - Firejail Sandbox Configuration
 
 Firejail provides lightweight sandboxing without full container overhead. It works directly with your installed Tor Browser, applying seccomp filters and namespace isolation. Install Firejail from your distribution's package manager:
 
@@ -158,7 +158,7 @@ ipTables -t nat -A OUTPUT -p tcp --dport 443 -j REDIRECT --to-ports 8118
 Requires Privoxy or similar HTTP proxy running on ports 8118/8119
 ```
 
-Step 3: Network Namespace Isolation
+Step 3 - Network Namespace Isolation
 
 For advanced users, Linux network namespaces provide fine-grained control over network interfaces accessible to Tor Browser. This approach creates a separate network stack isolated from the host.
 
@@ -207,7 +207,7 @@ Container isolation significantly reduces attack surface, but consider these add
 - Disable JavaScript selectively: Consider enabling NoScript with strict policies for high-security sessions
 - Update regularly: Container images and browser versions must stay current
 
-Step 4: Verify Isolation
+Step 4 - Verify Isolation
 
 Test that your isolation works correctly. Inside your container or sandbox, verify the network configuration:
 

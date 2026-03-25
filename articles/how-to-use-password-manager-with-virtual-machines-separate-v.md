@@ -41,7 +41,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Bitwarden: Multiple Vaults with Self-Hosted Instance
+Step 1 - Bitwarden: Multiple Vaults with Self-Hosted Instance
 
 Bitwarden offers the most straightforward multi-vault architecture through its self-hosted deployment option. Running your own Vaultwarden instance allows you to create distinct organizations, each with its own vault.
 
@@ -93,7 +93,7 @@ export BW_SERVER="http://127.0.0.1:8080"
 Store master key securely, consider using a hardware token
 ```
 
-Step 2: 1Password: Multiple Vaults via CLI
+Step 2 - 1Password: Multiple Vaults via CLI
 
 1Password supports multiple vaults within a single account. While the GUI shows all vaults by default, you can restrict which vaults each VM accesses.
 
@@ -147,7 +147,7 @@ op serviceaccount create \
 
 Use service account tokens within VMs, ensuring each VM only has credentials to its designated vault.
 
-Step 3: KeePassXC: Local Vaults with File-Based Isolation
+Step 3 - KeePassXC: Local Vaults with File-Based Isolation
 
 KeePassXC provides the simplest approach, each VM gets its own `.kdbx` database file, stored locally on that VM's virtual disk.
 
@@ -202,7 +202,7 @@ keepassxc-cli unlock -k keyfile.key dev-vault-with-key.kdbx
 
 Store the key file on a separate virtual disk or USB pass-through to maintain isolation.
 
-Step 4: Vault Synchronization Strategies
+Step 4 - Vault Synchronization Strategies
 
 Keeping vault contents consistent across VMs requires careful synchronization.
 
@@ -242,7 +242,7 @@ git remote add origin git@github.com:your-private/vaults.git
 git push -u origin main
 ```
 
-Step 5: Automation Considerations
+Step 5 - Automation Considerations
 
 Automating password retrieval in VM workflows requires balancing convenience with security.
 

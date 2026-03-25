@@ -30,21 +30,21 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Privacy-First Email Analytics
+Step 1 - Understand Privacy-First Email Analytics
 
 Traditional email analytics track when users open emails, click links, and move through your website. These features rely on tracking pixels, 1x1 images loaded from your servers that reveal user behavior. Privacy-respecting alternatives focus on aggregate metrics rather than individual user tracking.
 
 Instead of tracking individual opens, consider implementing these approaches:
 
-Aggregate Open Rates: Track total emails delivered versus total opens using server-side counters, without recording individual recipient behavior.
+Aggregate Open Rates - Track total emails delivered versus total opens using server-side counters, without recording individual recipient behavior.
 
-Hash-Based Click Tracking: When users click links, use one-way hashed identifiers to measure aggregate click-through rates without building user profiles. The hash allows you to count clicks without knowing who clicked.
+Hash-Based Click Tracking - When users click links, use one-way hashed identifiers to measure aggregate click-through rates without building user profiles. The hash allows you to count clicks without knowing who clicked.
 
-Consent-Based Analytics: For users who opt into enhanced analytics, provide transparent value in exchange for their data. This might include personalized recommendations or detailed receipt tracking.
+Consent-Based Analytics - For users who opt into enhanced analytics, provide transparent value in exchange for their data. This might include personalized recommendations or detailed receipt tracking.
 
 The Apple Mail Privacy Protection feature, introduced in iOS 15 and macOS Monterey, has already made traditional open rate tracking unreliable: Apple pre-fetches email content on behalf of users, causing open rate inflation of 30-50% for lists with significant Apple Mail audiences. Privacy-first analytics that never relied on individual open tracking are inherently more accurate than traditional systems attempting to work around these protections.
 
-Step 2: Build Consent Management
+Step 2 - Build Consent Management
 
 Effective privacy-first email systems start with consent management. Users should understand what data you collect and why.
 
@@ -130,7 +130,7 @@ def confirm_subscription(token, db):
     return True
 ```
 
-Step 3: Privacy-First Email Sending Architecture
+Step 3 - Privacy-First Email Sending Architecture
 
 Build your email infrastructure with privacy as a core principle rather than an afterthought.
 
@@ -194,7 +194,7 @@ app.get('/track/click', (req, res) => {
 
 This approach provides campaign-level analytics, useful for measuring effectiveness, while avoiding individual user profiles.
 
-Step 4: Self-Hosted Infrastructure Options
+Step 4 - Self-Hosted Infrastructure Options
 
 Using a third-party email service provider means sharing your subscriber list with that provider. For organizations with strong privacy commitments, self-hosting the email sending infrastructure is the natural next step.
 
@@ -218,7 +218,7 @@ Mautic is a more feature-complete open-source marketing automation platform that
 
 For minimal-infrastructure approaches, consider using a transactional email API directly with a simple database for subscriber management. This gives complete control without the complexity of a full application.
 
-Step 5: Handling Unsubscribes Gracefully
+Step 5 - Handling Unsubscribes Gracefully
 
 Unsubscribe handling demonstrates your respect for users and often determines whether they mark you as spam or simply opt out cleanly.
 
@@ -250,7 +250,7 @@ def handle_unsubscribe(email, list_id):
 
 CAN-SPAM (US) requires honoring opt-outs within 10 business days. GDPR requires immediate processing. Implement immediate processing by default. there is no legitimate reason to delay an unsubscribe request, and the penalty for delayed processing under GDPR can reach 4% of global annual revenue.
 
-Step 6: Alternative Metrics for Success
+Step 6 - Alternative Metrics for Success
 
 Shift your success metrics from invasive tracking to privacy-respecting alternatives:
 
@@ -266,7 +266,7 @@ These alternatives still provide practical recommendations while respecting user
 
 Supplement aggregate metrics with direct subscriber feedback. A short, periodic survey ("Was this issue useful? Yes / No") embedded as a link in the email body provides signal about content quality without requiring behavioral tracking. Reply rate is another strong signal. if subscribers respond to your emails, you are delivering value.
 
-Step 7: Test Your Implementation
+Step 7 - Test Your Implementation
 
 Before deploying, verify your privacy-first system works correctly:
 

@@ -16,7 +16,7 @@ voice-checked: true
 
 {% raw %}
 
-Choose Matrix Spaces if you need self-hosting, end-to-end encryption by default, federation across servers, or data sovereignty for compliance requirements. Choose Discord servers if you prioritize polished UX, a mature bot ecosystem, easy onboarding for non-technical users, and built-in voice channels without infrastructure overhead. Below is a technical comparison of federation, encryption, API capabilities, scalability, and community management features between the two platforms.
+Choose Matrix Spaces if you need self-hosting, end-to-end encryption by default, federation across servers, or data sovereignty for compliance requirements. Choose Discord servers if you prioritize polished UX, a mature bot environment, easy onboarding for non-technical users, and built-in voice channels without infrastructure overhead. Below is a technical comparison of federation, encryption, API capabilities, scalability, and community management features between the two platforms.
 
 Table of Contents
 
@@ -31,7 +31,7 @@ Table of Contents
 - [Advanced Technical Comparisons](#advanced-technical-comparisons)
 - [Compliance and Regulatory Considerations](#compliance-and-regulatory-considerations)
 - [Performance Benchmarks](#performance-benchmarks)
-- [Cost Analysis: Long-term Ownership](#cost-analysis-long-term-ownership)
+- [Cost Analysis - Long-term Ownership](#cost-analysis-long-term-ownership)
 - [Security Incident Response](#security-incident-response)
 
 Federation and Decentralization
@@ -60,7 +60,7 @@ Response includes space children state
 }
 ```
 
-Discord provides no equivalent federation capability. Every server exists within Discord's closed ecosystem, and community migration requires exporting and re-importing data, a process that loses message history and requires all members to rejoin.
+Discord provides no equivalent federation capability. Every server exists within Discord's closed environment, and community migration requires exporting and re-importing data, a process that loses message history and requires all members to rejoin.
 
 Quick Comparison
 
@@ -139,7 +139,7 @@ API and Bot Integration
 
 Discord's bot API is extensive and well-documented, supporting complex automation, slash commands, and rich embeds. The developer experience is polished, with official libraries in multiple languages and active community resources.
 
-Matrix provides a RESTful API that, while, requires more manual implementation for advanced features. The Matrix Client-Server API and Application Service API enable bot creation and integration, but the ecosystem is less mature than Discord's.
+Matrix provides a RESTful API that, while, requires more manual implementation for advanced features. The Matrix Client-Server API and Application Service API enable bot creation and integration, but the environment is less mature than Discord's.
 
 ```python
 Simple Matrix bot using matrix-nio library
@@ -184,9 +184,9 @@ Matrix Spaces provide similar hierarchical organization through Spaces (folders 
 
 Making the Choice
 
-Choose Discord when: polish and ease of use matter most, third-party integrations are essential, and centralized data handling is acceptable.
+Choose Discord when - polish and ease of use matter most, third-party integrations are essential, and centralized data handling is acceptable.
 
-Choose Matrix Spaces when: self-hosting is required, end-to-end encryption is mandatory, federation with other communities provides value, or privacy compliance demands data isolation.
+Choose Matrix Spaces when - self-hosting is required, end-to-end encryption is mandatory, federation with other communities provides value, or privacy compliance demands data isolation.
 
 For developers building privacy-focused applications or organizations with strict data governance requirements, Matrix Spaces offer capabilities impossible to replicate on Discord's platform. The federation model, encryption defaults, and self-hosting options create a fundamentally different architectural foundation, one that prioritizes user control over convenience.
 
@@ -365,7 +365,7 @@ Matrix Export:
 ```bash
 Export room to portable format
 curl -s "https://matrix.example.com/_matrix/client/v3/rooms/!roomid/messages?dir=b&limit=10000" \
-  -H "Authorization: Bearer token" | jq '.chunk[]' > room_export.json
+  -H "Authorization - Bearer token" | jq '.chunk[]' > room_export.json
 
 Import to another Matrix homeserver
 curl -X POST "https://matrix2.example.com/_matrix/client/v3/rooms/new" \
@@ -400,9 +400,9 @@ Data Residency Requirements
 
 Regulated industries (finance, healthcare) require data to remain in specific jurisdictions.
 
-Discord: Impossible. Your data goes to Discord's infrastructure (US-based).
+Discord - Impossible. Your data goes to Discord's infrastructure (US-based).
 
-Matrix: Deploy your own homeserver in required jurisdiction:
+Matrix - Deploy your own homeserver in required jurisdiction:
 ```yaml
 Comply with Swiss data residency law
 deployment:
@@ -433,7 +433,7 @@ Performance Benchmarks
 Measuring real-world performance differences:
 
 ```
-Scenario: 5000-message room with 50 participants
+Scenario - 5000-message room with 50 participants
 
 Discord:
 - Load initial messages: 200ms
@@ -456,7 +456,7 @@ Matrix (Conduit):
 
 Discord's centralization provides measurable performance advantages. Matrix's federation introduces visible latency.
 
-Cost Analysis: Long-term Ownership
+Cost Analysis - Long-term Ownership
 
 Discord (annual cost):
 - Free tier: $0 (centralized risk)

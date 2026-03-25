@@ -47,7 +47,7 @@ if (Cookiebot.consent.marketing) {
 
 This pattern ensures you only process personal data after receiving explicit consent, as required by GDPR Article 6.
 
-Open Source: Axeptio
+Open Source - Axeptio
 
 Axeptio offers an open-source alternative with a developer-friendly API:
 
@@ -97,7 +97,7 @@ def anonymize_user_data(user):
 
 This approach preserves data utility for analytics while removing direct identifiers.
 
-JavaScript: Faker.js for Frontend Testing
+JavaScript - Faker.js for Frontend Testing
 
 For frontend development and testing, faker.js generates realistic test data:
 

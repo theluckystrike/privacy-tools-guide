@@ -209,7 +209,7 @@ Get access logs (depends on your password manager's API)
 bw list events --type ITEM_ACCESS --start 2026-01-01 --end 2026-03-01
 ```
 
-Look for anomalies: access from unfamiliar locations, after-hours logins, or excessive failed attempts.
+Look for anomalies - access from unfamiliar locations, after-hours logins, or excessive failed attempts.
 
 Use Separate Credentials Per Integration
 

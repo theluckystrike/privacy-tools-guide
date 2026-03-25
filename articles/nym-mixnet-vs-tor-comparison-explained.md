@@ -28,12 +28,12 @@ Table of Contents
 - [Practical Use Cases](#practical-use-cases)
 - [Integrating Both Systems](#integrating-both-systems)
 - [Implementation Considerations](#implementation-considerations)
-- [Setting Up Each System: Practical Comparison](#setting-up-each-system-practical-comparison)
-- [Network Analysis Resistance: Detailed Comparison](#network-analysis-resistance-detailed-comparison)
+- [Setting Up Each System - Practical Comparison](#setting-up-each-system-practical-comparison)
+- [Network Analysis Resistance - Detailed Comparison](#network-analysis-resistance-detailed-comparison)
 - [Cost/Benefit Analysis](#costbenefit-analysis)
 - [Selection Decision Tree](#selection-decision-tree)
-- [Hybrid Approaches: Combining Systems](#hybrid-approaches-combining-systems)
-- [Future Evolution: Post-Quantum Considerations](#future-evolution-post-quantum-considerations)
+- [Hybrid Approaches - Combining Systems](#hybrid-approaches-combining-systems)
+- [Future Evolution - Post-Quantum Considerations](#future-evolution-post-quantum-considerations)
 - [Real-World Usage Scenarios](#real-world-usage-scenarios)
 - [Monitoring and Logging Considerations](#monitoring-and-logging-considerations)
 
@@ -205,7 +205,7 @@ For developers building privacy applications:
 
 Both systems require careful configuration and understanding of their threat models. Neither provides perfect anonymity, but each addresses different aspects of privacy.
 
-Setting Up Each System: Practical Comparison
+Setting Up Each System - Practical Comparison
 
 Setting up Tor (quick start):
 
@@ -246,7 +246,7 @@ Setup complexity:
 - Tor: 2-3 commands, runs immediately
 - Nym: Requires Rust, credential setup, gateway selection
 
-Network Analysis Resistance: Detailed Comparison
+Network Analysis Resistance - Detailed Comparison
 
 The critical difference is how each resists traffic analysis:
 
@@ -266,7 +266,7 @@ Observer can correlate:
 - Volume: Traffic volume might match user's pattern
 - Conclusion: Client A likely accessed Target
 
-Probability of correlation: Medium (requires assumptions)
+Probability of correlation - Medium (requires assumptions)
 ```
 
 Nym's mixing defense:
@@ -285,7 +285,7 @@ Observer cannot correlate:
 - Cover traffic obscures patterns
 - Exit payload encrypted, indistinguishable
 
-Probability of correlation: Very low
+Probability of correlation - Very low
 ```
 
 Cost/Benefit Analysis
@@ -347,7 +347,7 @@ Deployment complexity tolerance?
  Can handle complex setups → Nym
 ```
 
-Hybrid Approaches: Combining Systems
+Hybrid Approaches - Combining Systems
 
 Advanced users can gain benefits of both:
 
@@ -365,8 +365,8 @@ Effect:
 - Nym hides Tor exit node from target
 - Double encryption provides defense in depth
 
-Performance impact: Significant (both systems add latency)
-Use case: Journalists accessing sensitive sources
+Performance impact - Significant (both systems add latency)
+Use case - Journalists accessing sensitive sources
 ```
 
 Configuration:
@@ -376,12 +376,12 @@ Start Tor normally
 tor
 
 Configure Nym to route through Tor
-In nym-cli config: use Tor's SOCKS5 port (9050)
+In nym-cli config - use Tor's SOCKS5 port (9050)
 
 nym-cli client --id my-client --socks5-proxy 127.0.0.1:9050
 ```
 
-Future Evolution: Post-Quantum Considerations
+Future Evolution - Post-Quantum Considerations
 
 Both systems are developing quantum-resistant variants:
 
@@ -402,7 +402,7 @@ When quantum threat matters:
 
 Real-World Usage Scenarios
 
-Scenario 1: Journalist in hostile environment
+Scenario 1 - Journalist in hostile environment
 
 ```
 Requirements:
@@ -423,7 +423,7 @@ Setup:
 4. Sources also use Nym for outbound communications
 ```
 
-Scenario 2: General privacy-conscious user
+Scenario 2 - General privacy-conscious user
 
 ```
 Requirements:
@@ -445,7 +445,7 @@ Setup:
 3. Browse normally
 ```
 
-Scenario 3: Enterprise secure communication
+Scenario 3 - Enterprise secure communication
 
 ```
 Requirements:
@@ -477,7 +477,7 @@ Verifying Tor doesn't log:
 Check Tor configuration for logging directives
 grep -i "log" /etc/tor/torrc
 
-Tor default: No persistent logging
+Tor default - No persistent logging
 Only stdout/stderr if running in foreground
 
 Verify directory has no logs

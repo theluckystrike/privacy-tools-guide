@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Encryption at Rest versus in Transit
+Step 1 - Understand Encryption at Rest versus in Transit
 
 Encryption at rest protects stored data, when someone gains physical or filesystem access to your servers or databases. Encryption in transit safeguards data moving between client applications and servers, protecting against network sniffing and man-in-the-middle attacks. Both layers work together to create defense in depth, and you should implement both rather than choosing one over the other.
 
 Many compliance frameworks require both protections. The PCI DSS standard explicitly mandates encryption for cardholder data at rest and in transit. GDPR doesn't prescribe specific encryption methods but requires "appropriate technical measures" including encryption for personal data.
 
-Step 2: Implementing Encryption at Rest
+Step 2 - Implementing Encryption at Rest
 
 Database-Level Encryption
 
@@ -124,7 +124,7 @@ sudo mount /dev/mapper/encrypted_volume /mnt/protected
 
 For cloud environments, enable encryption at rest provided by your cloud provider. AWS EBS, Azure Disk Storage, and Google Cloud Persistent Disk all offer encryption by default using KMS-managed keys.
 
-Step 3: Implementing Encryption in Transit
+Step 3 - Implementing Encryption in Transit
 
 TLS/SSL Configuration
 

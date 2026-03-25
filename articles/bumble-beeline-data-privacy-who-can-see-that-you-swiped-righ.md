@@ -21,7 +21,7 @@ Beeline shows you users who have swiped right on you, but your own swipes are ne
 Table of Contents
 
 - [What Is Bumble Beeline?](#what-is-bumble-beeline)
-- [How Beeline Works: Technical Overview](#how-beeline-works-technical-overview)
+- [How Beeline Works - Technical Overview](#how-beeline-works-technical-overview)
 - [Who Can See Your Swipes Through Beeline?](#who-can-see-your-swipes-through-beeline)
 - [Data Bumble Collects About Your Swipes](#data-bumble-collects-about-your-swipes)
 - [Practical Privacy Recommendations](#practical-privacy-recommendations)
@@ -31,7 +31,7 @@ Table of Contents
 - [Verifying Beeline Visibility Setting Changes](#verifying-beeline-visibility-setting-changes)
 - [Beeline and Search Visibility Correlation](#beeline-and-search-visibility-correlation)
 - [Profile Deletion and Data Retention](#profile-deletion-and-data-retention)
-- [Advanced: Account-Level Privacy Audit](#advanced-account-level-privacy-audit)
+- [Advanced - Account-Level Privacy Audit](#advanced-account-level-privacy-audit)
 - [Blocking and Reporting for Privacy Violations](#blocking-and-reporting-for-privacy-violations)
 - [Third-Party Data Aggregation Risk](#third-party-data-aggregation-risk)
 - [Premium vs Free User Privacy Gap](#premium-vs-free-user-privacy-gap)
@@ -42,7 +42,7 @@ Beeline is Bumble's premium feature that displays a curated list of users who ha
 
 The feature serves a dual purpose: it increases user engagement by showing immediate interest, and it creates a revenue stream for Bumble. However, this convenience comes with privacy implications that every user should understand.
 
-How Beeline Works: Technical Overview
+How Beeline Works - Technical Overview
 
 From a data structure perspective, Bumble maintains several key relationships in their matching system:
 
@@ -61,7 +61,7 @@ When User A swipes right on User B, this action gets recorded in Bumble's databa
 
 Who Can See Your Swipes Through Beeline?
 
-The core question: Who can see that you swiped right on them through Beeline?
+The core question - Who can see that you swiped right on them through Beeline?
 
 What Beeline Shows
 
@@ -82,9 +82,9 @@ Privacy Controls Available
 
 Bumble provides limited but useful privacy controls:
 
-1. Incognito Mode: If enabled, your profile won't appear in Beeline for free users, only premium users who have also liked you can see you.
+1. Incognito Mode - If enabled, your profile won't appear in Beeline for free users, only premium users who have also liked you can see you.
 
-2. Hide from Beeline: You can hide your profile from Beeline entirely, though this doesn't prevent you from seeing others who have liked you.
+2. Hide from Beeline - You can hide your profile from Beeline entirely, though this doesn't prevent you from seeing others who have liked you.
 
 3. Account-wide visibility settings: These affect both swipe visibility and Beeline display.
 
@@ -166,14 +166,14 @@ Once a match occurs through Beeline:
 
 Common Misconceptions
 
-Misconception: Beeline shows "exactly who"
-Reality: Beeline shows a subset of users who liked you, prioritized by Bumble's algorithm. Not everyone who swiped right necessarily appears in your Beeline.
+Misconception - Beeline shows "exactly who"
+Reality - Beeline shows a subset of users who liked you, prioritized by Bumble's algorithm. Not everyone who swiped right necessarily appears in your Beeline.
 
-Misconception: Premium users can see everyone who swiped
-Reality: Premium users see an expanded list, but Bumble still controls visibility based on various factors including the other user's privacy settings.
+Misconception - Premium users can see everyone who swiped
+Reality - Premium users see an expanded list, but Bumble still controls visibility based on various factors including the other user's privacy settings.
 
-Misconception: Disabling Beeline hides all swipe activity
-Reality: It only controls your appearance in others' Beeline. Your matches and regular swipe activity remain unaffected.
+Misconception - Disabling Beeline hides all swipe activity
+Reality - It only controls your appearance in others' Beeline. Your matches and regular swipe activity remain unaffected.
 
 Data Retention and Deletion
 
@@ -251,7 +251,7 @@ If you delete your Bumble account, what happens to Beeline data?
 
 Bumble's privacy notice states data is deleted within 30 days of account deletion, though backups may persist longer.
 
-Advanced: Account-Level Privacy Audit
+Advanced - Account-Level Privacy Audit
 
 Perform a complete privacy audit of your Bumble account:
 
@@ -315,7 +315,7 @@ Third-Party Data Aggregation Risk
 Be aware that matching data across dating apps creates a social graph:
 
 ```python
-Risk model: Cross-app user identification
+Risk model - Cross-app user identification
 
 def cross_app_risk_assessment():
     """

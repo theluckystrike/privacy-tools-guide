@@ -30,7 +30,7 @@ Hardware keyloggers:
 - Modified keyboards with embedded chips
 - PS/2 inline loggers
 
-Linux: Detecting Software Keyloggers
+Linux - Detecting Software Keyloggers
 
 Check for Processes Using Input Devices
 
@@ -108,7 +108,7 @@ Type some text, then analyze
 sudo tcpdump -r /tmp/capture.pcap
 ```
 
-Windows: Detecting Software Keyloggers
+Windows - Detecting Software Keyloggers
 
 Check Running Processes
 

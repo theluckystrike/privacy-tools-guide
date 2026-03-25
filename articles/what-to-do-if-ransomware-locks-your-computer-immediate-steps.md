@@ -35,7 +35,7 @@ All your documents, photos, databases, and other important files have been encry
 
 To decrypt them, you must pay 0.5 Bitcoin (approximately $25,000) within 72 hours.
 
-Send payment to: bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh
+Send payment to - bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh
 ```
 
 If you see this, stay calm and follow the steps below.
@@ -44,7 +44,7 @@ Immediate Isolation Steps
 
 The first 60 seconds after detection are critical. Ransomware spreads by encrypting files on mounted drives and network shares. Your primary goal is to stop the spread.
 
-Step 1: Disconnect from the Network
+Step 1 - Disconnect from the Network
 
 Physical disconnection is the fastest way to stop lateral movement:
 
@@ -56,7 +56,7 @@ For wired connections:
 - Unplug the Ethernet cable immediately
 - On desktops, you can also disable the network adapter via `Win + X > Network Connections > Disable`
 
-Step 2: Boot into a Safe Environment
+Step 2 - Boot into a Safe Environment
 
 Once disconnected, you need to analyze the system without letting the ransomware execute. Boot into a safe mode or live USB environment:
 
@@ -75,7 +75,7 @@ sudo dd if=/path/to/kali-live.iso of=/dev/sdX bs=4M status=progress
 
 Booting from USB allows you to mount your Windows or macOS drive and copy critical files before attempting any recovery.
 
-Step 3: Identify the Ransomware Strain
+Step 3 - Identify the Ransomware Strain
 
 Knowing the exact ransomware variant helps determine if free decryption tools exist. Take a photo of the ransom screen for reference, then check these resources:
 
@@ -87,7 +87,7 @@ If a free decryptor exists, you may be able to recover files without paying.
 
 Data Recovery Options
 
-Option 1: Restore from Backups
+Option 1 - Restore from Backups
 
 If you maintain regular backups, this is your best option. Check these locations:
 
@@ -114,18 +114,18 @@ Critical backup rules:
 - Test backup restoration on a separate system before reconnecting to your main machine
 - Ensure at least one offline backup exists (external drive stored in a different location)
 
-Option 2: Use Free Decryption Tools
+Option 2 - Use Free Decryption Tools
 
 If you identified the ransomware strain, search for free decryptors:
 
 ```bash
 Check for Clop ransomware decryptors
-Visit: https://www.nomoreransom.org/crypto-sheriff.php
+Visit - https://www.nomoreransom.org/crypto-sheriff.php
 Download the appropriate tool and run:
 ./clop_decrypt.exe --decrypt --input "C:\EncryptedFiles"
 ```
 
-Option 3: Professional Recovery Services
+Option 3 - Professional Recovery Services
 
 For critical data with no backup and no available decryptor, professional services may help:
 
@@ -143,10 +143,10 @@ Rebuilding Your System
 
 After recovering your data, you must rebuild to ensure the ransomware is completely removed:
 
-Step 1: Wipe the Drive
+Step 1 - Wipe the Drive
 
 ```powershell
-Windows: Use the built-in diskpart tool
+Windows - Use the built-in diskpart tool
 Boot from Windows installation media
 Open command prompt and run:
 diskpart
@@ -157,21 +157,21 @@ exit
 ```
 
 ```bash
-Linux: Securely wipe the drive
+Linux - Securely wipe the drive
 sudo dd if=/dev/zero of=/dev/sdX bs=4M status=progress
 ```
 
-Step 2: Fresh Installation
+Step 2 - Fresh Installation
 
 Perform a clean install of your operating system. Do NOT restore from a backup without scanning it first.
 
-Step 3: Strengthen Your Defenses
+Step 3 - Strengthen Your Defenses
 
 Implement these security measures immediately:
 
 Enable built-in protections:
 ```powershell
-Windows: Enable Windows Defender and real-time protection
+Windows - Enable Windows Defender and real-time protection
 Set-MpPreference -DisableRealtimeMonitoring $false
 Set-MpPreference -DisableBehaviorMonitoring $false
 
@@ -204,14 +204,14 @@ Create a bare git repository on an external drive for critical projects
 git clone --bare /path/to/your/project /Volumes/BackupDrive/project-backup.git
 ```
 
-Advanced Recovery: Decryption Without Paying
+Advanced Recovery - Decryption Without Paying
 
 Some ransomware variants have known decryption vulnerabilities or flaws. Before paying any ransom, check these resources exhaustively:
 
 Searching for Free Decryption Tools
 
 ```bash
-Comprehensive search across multiple decryption resources
+complete search across multiple decryption resources
 curl -s https://www.nomoreransom.org/api/victims | jq '.Ransomwares[] | {name, variants}'
 
 Download appropriate tool (e.g., GandCrab)
@@ -295,19 +295,19 @@ Recognize ransomware activity before full encryption:
 #!/bin/bash
 Monitor for ransomware indicators
 
-Signal 1: Unusual file activity
+Signal 1 - Unusual file activity
 lsof | grep -E ".encrypted|.locked|.crypto" &
 
-Signal 2: Process spawning unusual children
+Signal 2 - Process spawning unusual children
 ps -ef | grep -E "cmd.exe|powershell" | grep -v grep &
 
-Signal 3: Large amount of file write activity
+Signal 3 - Large amount of file write activity
 iotop -o -b | grep -E "W.*MB" &
 
-Signal 4: Network connections to unusual destinations
+Signal 4 - Network connections to unusual destinations
 netstat -an | grep ESTABLISHED | grep -v 192.168 | grep -v 10. &
 
-Signal 5: High CPU with system processes
+Signal 5 - High CPU with system processes
 top -n 1 | grep -E "svchost|winlogon|lsass" &
 
 If any signal detected:
@@ -348,36 +348,36 @@ Organizations should pre-plan ransomware response:
 
 ```
 INCIDENT RESPONSE RUNBOOK
-T+0 min: Detection and Isolation
+T+0 min - Detection and Isolation
   - Kill network connection
   - Notify incident commander
   - Preserve evidence (screenshots, ransom notes)
   - Do not pay anything yet
 
-T+15 min: Initial Assessment
+T+15 min - Initial Assessment
   - Identify affected systems
   - Determine impact scope
   - Check backups are intact
   - Notify stakeholders
 
-T+1 hour: Investigation Phase
+T+1 hour - Investigation Phase
   - Identify entry vector
   - Check logs for persistence mechanisms
   - Determine encryption start time
   - Estimate impact
 
-T+4 hours: Decision Point
+T+4 hours - Decision Point
   - Activate backup recovery if available
   - Contact law enforcement
   - Consult cyber insurance
   - Decide on ransom/recovery approach
 
-T+1 day: Recovery or Negotiation
+T+1 day - Recovery or Negotiation
   - Begin recovery from backups
   - Or initiate ransom negotiation
   - Prepare remediation plan
 
-T+1 week: Post-incident
+T+1 week - Post-incident
   - Patch vulnerability that enabled attack
   - Harden systems
   - Update incident response plan

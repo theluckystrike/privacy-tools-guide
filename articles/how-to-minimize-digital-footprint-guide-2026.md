@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Harden the Browser : First Line of Defense
+Step 1 - Harden the Browser : First Line of Defense
 
 Browser fingerprinting has become sophisticated enough to track users across sessions without cookies. Firefox with the arkenfox user.js configuration provides strong anti-fingerprinting protections out of the box. Install Firefox and apply the arkenfox configuration:
 
@@ -69,7 +69,7 @@ Practical container setup:
 
 This prevents the scenario where your social media tracker loads as a "like" button on a shopping site and correlates your identity across both. The Facebook container extension automates this specifically for Facebook and its properties.
 
-Step 2: Network-Level Protection
+Step 2 - Network-Level Protection
 
 Your ISP sees every domain you resolve. Running your own DNS over HTTPS (DoH) resolver blocks that observation. Pi-hole provides network-wide ad and tracker blocking while supporting DoH upstream:
 
@@ -108,7 +108,7 @@ A VPN shifts DNS and traffic visibility from your ISP to the VPN provider. This 
 
 Avoid free VPN services. Operators that offer free VPN access typically monetize through user data collection, directly contradicting the privacy purpose.
 
-Step 3: Email Privacy and Masking
+Step 3 - Email Privacy and Masking
 
 Email addresses serve as unique identifiers across services. Creating separate email aliases for different contexts reduces correlation. For developers comfortable with command-line tools, FastMail's alias system or SimpleLogin (now part of Proton) provide managed solutions.
 
@@ -116,7 +116,7 @@ For self-hosted options, use Postfix with virtual alias maps:
 
 ```bash
 /etc/postfix/virtual
-Format: alias@domain.com actual@destination.com
+Format - alias@domain.com actual@destination.com
 shopping+amazon@yourdomain.com you@realemail.com
 newsletter+medium@yourdomain.com you@realemail.com
 ```
@@ -145,12 +145,12 @@ exiftool -json photo.jpg | python3 -m json.tool
 For Office documents, metadata stripping is equally important:
 
 ```bash
-LibreOffice: strip metadata via command line
+LibreOffice - strip metadata via command line
 soffice --headless --infilter="writer8" --convert-to "odt" document.docx
 Then use exiftool on the output
 ```
 
-Step 4: Data Minimization in Development
+Step 4 - Data Minimization in Development
 
 If you build applications, implement data minimization principles. Collect only what you need, retain it for the minimum necessary time, and encrypt it at rest:
 
@@ -182,7 +182,7 @@ class DataMinimizer:
 
 Avoid logging personally identifiable information. Use structured logging with correlation IDs rather than embedding user emails or names in log files.
 
-Step 5: Device Hardening
+Step 5 - Device Hardening
 
 Modern devices collect substantial telemetry. Disable what you can through operating system settings:
 
@@ -202,7 +202,7 @@ Windows (Settings > Privacy & Security):
 - Turn off "Feedback frequency" or set to "Never"
 - Use Group Policy to disable telemetry via Computer Configuration > Administrative Templates > Windows Components > Data Collection
 
-Account Minimization: Deleting Old Accounts
+Account Minimization - Deleting Old Accounts
 
 One of the highest-impact steps you can take is requesting deletion of accounts you no longer use. Old accounts accumulate breach exposure, every service that holds your email, password hash, and profile data is a liability.
 
@@ -213,7 +213,7 @@ Automate a quarterly review:
 ```bash
 Keep a list of services in a text file
 ~/privacy/accounts.txt
-Format: service | email_used | status | last_reviewed
+Format - service | email_used | status | last_reviewed
 
 Review script
 while IFS='|' read -r service email status date; do
@@ -223,26 +223,26 @@ while IFS='|' read -r service email status date; do
 done < ~/privacy/accounts.txt
 ```
 
-Step 6: Social Media Exposure Reduction
+Step 6 - Social Media Exposure Reduction
 
 Social media platforms are the single largest voluntary data contribution most users make. Even without sharing posts publicly, your interactions, likes, follows, search behavior, and time-on-content, feed extensive behavioral profiles.
 
 Practical reduction steps that don't require abandoning social media entirely:
 
-Audit your connected apps: Most social platforms allow third-party apps to connect via OAuth. These apps often retain access indefinitely and collect data independent of your main account settings. Review and revoke access quarterly.
+Audit your connected apps - Most social platforms allow third-party apps to connect via OAuth. These apps often retain access indefinitely and collect data independent of your main account settings. Review and revoke access quarterly.
 
-On Twitter/X: Settings > Security and Account Access > Connected Apps
-On Facebook: Settings > Security and Login > Apps and Websites
-On Google: myaccount.google.com/connections
+On Twitter/X - Settings > Security and Account Access > Connected Apps
+On Facebook - Settings > Security and Login > Apps and Websites
+On Google - myaccount.google.com/connections
 
 Opt out of off-platform tracking: Facebook and Google track your activity across the web even when you're not logged in, through embedded pixels and tracking scripts. Use your account's ad settings to opt out:
 
 - Facebook: Settings > Privacy > Your Facebook Information > Off-Facebook Activity > Clear History
 - Google: myaccount.google.com/data-and-privacy > Ad personalization
 
-Pseudonymous accounts: For technical communities where you share work but want separation from your real identity, maintain distinct pseudonymous accounts using separate email addresses and browser containers. Never cross-link them from personal accounts.
+Pseudonymous accounts - For technical communities where you share work but want separation from your real identity, maintain distinct pseudonymous accounts using separate email addresses and browser containers. Never cross-link them from personal accounts.
 
-Step 7: Automation for Continuous Privacy Hygiene
+Step 7 - Automation for Continuous Privacy Hygiene
 
 Maintain your privacy posture with automated checks. Create scripts that verify your configurations:
 

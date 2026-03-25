@@ -49,7 +49,7 @@ In messaging contexts, ZKP enables:
 - Proof of payment/subscription without revealing user identity
 - Authentication without transmitting identifiers
 
-Practical Example: Private Message Retrieval
+Practical Example - Private Message Retrieval
 
 Consider a scenario where Alice wants to check if she has new messages without revealing her identity to the server:
 
@@ -224,7 +224,7 @@ Decentralized Identifier (DID) Systems
 Rather than usernames or phone numbers, ZKP-enabled systems can use decentralized identifiers:
 
 ```python
-Conceptual: Decentralized Identity with ZKP
+Conceptual - Decentralized Identity with ZKP
 class DecentralizedIdentity:
     def __init__(self):
         self.did = "did:example:12345abcdef"  # Decentralized identifier
@@ -254,7 +254,7 @@ Proof Generation Performance
 Generating zero knowledge proofs requires significant computation. On mobile devices, this creates battery and performance issues:
 
 ```python
-Benchmark: Proof generation time
+Benchmark - Proof generation time
 benchmarks = {
     "zkSNARK proof generation": "2-5 seconds",
     "Verification": "50-200 ms",

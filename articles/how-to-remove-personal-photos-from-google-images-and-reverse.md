@@ -20,14 +20,14 @@ Remove photos from Google Images using Search Console's removal tool and Google'
 Table of Contents
 
 - [Understanding How Google Images Indexes Your Photos](#understanding-how-google-images-indexes-your-photos)
-- [Step 1: Identify Where Your Photos Appear](#step-1-identify-where-your-photos-appear)
-- [Step 2: Remove Images from Google Search Results](#step-2-remove-images-from-google-search-results)
-- [Step 3: Remove from Reverse Image Search Databases](#step-3-remove-from-reverse-image-search-databases)
-- [Step 4: Prevent Future Indexing](#step-4-prevent-future-indexing)
-- [Step 5: Handle Social Media Platforms](#step-5-handle-social-media-platforms)
-- [Step 6: Automate Monitoring](#step-6-automate-monitoring)
-- [Step 7: Use Google's Personal Information Removal Policy](#step-7-use-googles-personal-information-removal-policy)
-- [Step 8: Long-Term Search Result Suppression](#step-8-long-term-search-result-suppression)
+- [Step 1 - Identify Where Your Photos Appear](#step-1-identify-where-your-photos-appear)
+- [Step 2 - Remove Images from Google Search Results](#step-2-remove-images-from-google-search-results)
+- [Step 3 - Remove from Reverse Image Search Databases](#step-3-remove-from-reverse-image-search-databases)
+- [Step 4 - Prevent Future Indexing](#step-4-prevent-future-indexing)
+- [Step 5 - Handle Social Media Platforms](#step-5-handle-social-media-platforms)
+- [Step 6 - Automate Monitoring](#step-6-automate-monitoring)
+- [Step 7 - Use Google's Personal Information Removal Policy](#step-7-use-googles-personal-information-removal-policy)
+- [Step 8 - Long-Term Search Result Suppression](#step-8-long-term-search-result-suppression)
 
 Understanding How Google Images Indexes Your Photos
 
@@ -35,7 +35,7 @@ Google Images indexes photos through multiple pathways: direct uploads to websit
 
 When someone uploads your photo to a reverse image search engine, algorithms extract visual fingerprints, unique patterns that allow matching even when the image is resized, compressed, or slightly modified. Understanding this process helps you target the root causes of unwanted indexing.
 
-Step 1: Identify Where Your Photos Appear
+Step 1 - Identify Where Your Photos Appear
 
 Before removal, locate all instances of your photos. Use reverse image search tools to find where your images have been indexed:
 
@@ -75,7 +75,7 @@ def find_similar_images(image_path):
     return results
 ```
 
-Step 2: Remove Images from Google Search Results
+Step 2 - Remove Images from Google Search Results
 
 Google provides dedicated removal tools through Search Console. If you own the content, use these methods:
 
@@ -116,7 +116,7 @@ For cached or redirected URLs:
 
 This tool works for pages that no longer exist or have been significantly modified.
 
-Step 3: Remove from Reverse Image Search Databases
+Step 3 - Remove from Reverse Image Search Databases
 
 Reverse image search engines like TinEye, Yandex, and Bing Image Match maintain their own databases. Each requires different removal approaches.
 
@@ -161,19 +161,19 @@ def remove_bing_image(image_url, bing_api_key):
     return response.status_code == 200
 ```
 
-Step 4: Prevent Future Indexing
+Step 4 - Prevent Future Indexing
 
 A. Implement Robots.txt Restrictions
 
 Prevent search engines from crawling specific directories:
 
 ```txt
-User-agent: Googlebot-Image
-Disallow: /private-images/
-Disallow: /uploads/profile-photos/
+User-agent - Googlebot-Image
+Disallow - /private-images/
+Disallow - /uploads/profile-photos/
 
-User-agent: *
-Disallow: /private/
+User-agent - *
+Disallow - /private/
 ```
 
 Place this file in your site root. Note that this is a request, not all crawlers honor it, but Google respects these directives.
@@ -224,7 +224,7 @@ Later, to prove ownership
 print(extract_watermark("photo-watermarked.jpg"))
 ```
 
-Step 5: Handle Social Media Platforms
+Step 5 - Handle Social Media Platforms
 
 Social media platforms index your photos automatically. Adjust privacy settings:
 
@@ -236,11 +236,11 @@ For platforms you don't control, use DMCA takedown requests:
 
 ```bash
 Google DMCA removal request endpoint
-Visit: https://support.google.com/legal/contact/lr_counselredact
+Visit - https://support.google.com/legal/contact/lr_counselredact
 Or use Google's Copyright Removal Form
 ```
 
-Step 6: Automate Monitoring
+Step 6 - Automate Monitoring
 
 Set up automated monitoring to detect new appearances of your photos:
 
@@ -292,7 +292,7 @@ Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-Step 7: Use Google's Personal Information Removal Policy
+Step 7 - Use Google's Personal Information Removal Policy
 
 Google's Expanded Removals Policy, updated in 2023 and refined through 2025, now covers non-consensual intimate imagery, personal identification documents, financial information, and medical records. If your photo falls into a sensitive category, you can escalate beyond standard content removal.
 
@@ -310,7 +310,7 @@ Removing Images from Google Photos Shared Albums
 
 If someone shared your image through Google Photos and it is appearing in search results, you can request removal of that specific shared album link. Contact Google via the shared album owner if you know them, or use the abuse reporting tool built into Google Photos.
 
-Step 8: Long-Term Search Result Suppression
+Step 8 - Long-Term Search Result Suppression
 
 Complete removal from all search engines takes time and is rarely total. A parallel strategy is to suppress the unwanted results by promoting preferred content about yourself.
 

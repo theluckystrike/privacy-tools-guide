@@ -36,7 +36,7 @@ Google Drive encrypts your files at rest using AES-256, but Google holds the enc
 
 Client-side encryption shifts control to you. Files leave your device encrypted, and Google only sees unreadable ciphertext. This provides genuine privacy, but requires extra steps during file management.
 
-Method 1: rclone with Encryption
+Method 1 - rclone with Encryption
 
 rclone is a powerful CLI tool that syncs files to cloud storage with built-in encryption. It handles encryption transparently, treating encrypted files like regular uploads.
 
@@ -90,7 +90,7 @@ rclone sync gdrive-encrypted:/backups /path/to/local/restored -v
 
 rclone handles encryption automatically during sync operations. The encrypted filenames appear in Google Drive as random strings, preserving some readability while protecting content.
 
-Method 2: Cryptomator
+Method 2 - Cryptomator
 
 Cryptomator provides transparent encryption through a virtual filesystem. Files are encrypted individually, allowing direct editing without full decryption.
 
@@ -124,7 +124,7 @@ The workflow becomes:
 
 Files in the synced vault folder appear as encrypted chunks in Google Drive. Each file is encrypted individually, meaning you can sync efficiently without re-uploading unchanged files.
 
-Method 3: age (Modern CLI Encryption)
+Method 3 - age (Modern CLI Encryption)
 
 For developers preferring direct control, age offers simple, modern encryption without complex key management.
 
@@ -144,7 +144,7 @@ Generate a key pair:
 
 ```bash
 age-keygen
-Output: public key and private key
+Output - public key and private key
 ```
 
 Encrypt files before manual upload:
@@ -187,7 +187,7 @@ echo "Upload to Google Drive, then delete the original securely:"
 echo "rm -P $INPUT_FILE  # DoD5220.22-M compliant deletion"
 ```
 
-Method 4: gocryptfs (FUSE-Based Encryption)
+Method 4 - gocryptfs (FUSE-Based Encryption)
 
 gocryptfs creates an encrypted filesystem mounted via FUSE, similar to Cryptomator but CLI-focused.
 
@@ -228,7 +228,7 @@ fusermount -u ~/mount-point
 
 Sync the `~/encrypted-drive` folder to Google Drive. This approach keeps your working directory separate from the encrypted storage.
 
-Method 5: EncFS (Legacy Option)
+Method 5 - EncFS (Legacy Option)
 
 EncFS offers FUSE-based encryption, though it's considered less secure than modern alternatives. Use only when other options aren't available.
 
@@ -289,7 +289,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -301,7 +301,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

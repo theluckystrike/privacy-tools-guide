@@ -37,7 +37,7 @@ def derive_key_fingerprint(public_key_bytes, auth_key):
     # Display as visual fingerprint (64 chars)
     return ' '.join([fingerprint[i:i+8] for i in range(0, 64, 8)])
 
-Example output: a1b2 c3d4 e5f6 ...
+Example output - a1b2 c3d4 e5f6 ...
 ```
 
 Security Properties of Secret Chat
@@ -46,7 +46,7 @@ Secret Chat provides several security guarantees worth understanding:
 
 Secret Chat encrypts messages end-to-end: only the sender and recipient can decrypt them, and Telegram's servers relay encrypted data without access to plaintext. Forward secrecy means each message uses a key derived from the previous one, so compromising a single key does not expose past messages.
 
-Self-Destructing Messages: Configure automatic deletion with timers (from 1 second to 1 week). The timer is enforced client-side:
+Self-Destructing Messages - Configure automatic deletion with timers (from 1 second to 1 week). The timer is enforced client-side:
 
 ```javascript
 // Telegram Bot API - setting self-destruct timer
@@ -70,7 +70,7 @@ async function sendSecretMessage(chatId, message, destructSeconds = 30) {
 }
 ```
 
-Device Binding: Secret Chats are tied to specific device instances. You cannot read a Secret Chat initiated on your phone from your desktop client.
+Device Binding - Secret Chats are tied to specific device instances. You cannot read a Secret Chat initiated on your phone from your desktop client.
 
 What Secret Chat Does NOT Protect
 
@@ -176,10 +176,10 @@ def verify_secret_chat_key(auth_key, server_salt, client_salt):
 
     return visual_id
 
-Example output: "a1:b2:c3:d4"
+Example output - "a1:b2:c3:d4"
 ```
 
-Threat Model: When Secret Chat Protects You
+Threat Model - When Secret Chat Protects You
 
 Secret Chat is effective against:
 - Passive ISP Monitoring: Your ISP cannot see message content (encrypted)
@@ -193,7 +193,7 @@ Secret Chat is NOT effective against:
 - Metadata Analysis: Communication partners and timing are visible to Telegram
 - Active MITM: Unverified fingerprints allow substitution attacks
 
-Implementation: Building Telegram Bots with Security
+Implementation - Building Telegram Bots with Security
 
 For developers building Telegram bots or integrating with Telegram's infrastructure:
 

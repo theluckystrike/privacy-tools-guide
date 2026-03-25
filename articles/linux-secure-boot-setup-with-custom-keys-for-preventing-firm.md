@@ -35,7 +35,7 @@ By replacing manufacturer keys with your own, you close this trust chain to any 
 
 Custom keys also allow you to enforce Measured Boot more meaningfully. When combined with TPM-based disk encryption, a properly configured custom Secure Boot setup ensures that the TPM will only release disk encryption keys when the exact signed boot chain is present, detecting any firmware or bootloader tampering before the OS loads.
 
-Step 1: Key Hierarchy: Understanding the Three-Tier Structure
+Step 1 - Key Hierarchy: Understanding the Three-Tier Structure
 
 The Secure Boot key hierarchy has a specific purpose for each tier:
 
@@ -70,7 +70,7 @@ Arch Linux
 sudo pacman -S sbsigntool efitools
 ```
 
-Step 2: Generate Your Custom Keys
+Step 2 - Generate Your Custom Keys
 
 Secure Boot uses RSA key pairs. public keys get enrolled in your firmware, while private keys sign your boot components. Generate a 4096-bit key set using OpenSSL for stronger security; 2048-bit is the minimum acceptable, but 4096-bit is preferred for long-lived keys:
 
@@ -105,7 +105,7 @@ chmod 600 *.key
 chmod 644 *.crt
 ```
 
-Step 3: Enrolling Keys in UEFI Firmware
+Step 3 - Enrolling Keys in UEFI Firmware
 
 This step requires accessing your system's UEFI setup utility. The exact key varies by manufacturer, common options include F2, F10, Delete, or Esc. Look for the Secure Boot configuration section.
 
@@ -136,7 +136,7 @@ For systems with limited firmware options, tools like `keytool` from the efitool
 
 Always enroll keys in order. db first, then KEK, then PK last. Enrolling the PK activates Secure Boot enforcement. If you enroll the PK before the db and KEK, you may lock yourself out of being able to add additional keys without first disabling Secure Boot and clearing all keys.
 
-Step 4: Signing Boot Components
+Step 4 - Signing Boot Components
 
 With keys enrolled, you must sign every component your system boots. This includes the bootloader, kernel, and any intermediate loaders.
 
@@ -164,7 +164,7 @@ sbsign --key ~/secureboot/keys/db.key --cert ~/secureboot/keys/db.crt \
     /boot/vmlinuz-$(uname -r)
 ```
 
-Step 5: Configure Automatic Signing
+Step 5 - Configure Automatic Signing
 
 Rebuilding and manually signing after every kernel update quickly becomes tedious. Automate this process with a kernel hook:
 
@@ -199,20 +199,20 @@ Troubleshooting Common Boot Failures
 
 Custom Secure Boot configurations can fail silently or with cryptic error messages. The most common issues:
 
-Signature verification failed: The kernel or bootloader was updated without re-signing. Boot from a live USB, mount your EFI partition, and re-sign the updated binary using your db key.
+Signature verification failed - The kernel or bootloader was updated without re-signing. Boot from a live USB, mount your EFI partition, and re-sign the updated binary using your db key.
 
 Bootloader not found after key enrollment: Some firmware implementations require a signed EFI application to be designated as the boot entry. Use `efibootmgr` to add an entry pointing to your signed bootloader after enrollment.
 
-Firmware reverts to Setup Mode: A small number of consumer laptops have buggy firmware that drops back to Setup Mode after reboot. In this case, you may need to re-enroll keys each time. Consider whether your hardware actually supports stable Secure Boot customization before investing more time.
+Firmware reverts to Setup Mode - A small number of consumer laptops have buggy firmware that drops back to Setup Mode after reboot. In this case, you may need to re-enroll keys each time. Consider whether your hardware actually supports stable Secure Boot customization before investing more time.
 
-Module loading fails: Kernel modules must also be signed when Secure Boot is active. Use `kmodsign` to sign out-of-tree modules:
+Module loading fails - Kernel modules must also be signed when Secure Boot is active. Use `kmodsign` to sign out-of-tree modules:
 
 ```bash
 kmodsign sha256 /etc/secureboot/keys/db.key /etc/secureboot/keys/db.crt \
     /path/to/module.ko
 ```
 
-Step 6: Verification and Testing
+Step 6 - Verification and Testing
 
 After completing setup, verify your configuration:
 
@@ -231,7 +231,7 @@ Successful verification produces output indicating the signature is valid.
 
 Test the setup by rebooting into your firmware settings and examining the Secure Boot status. Your custom keys should appear in the key management interface.
 
-Step 7: Recovery Planning
+Step 7 - Recovery Planning
 
 Custom Secure Boot configurations carry a risk, losing access to your keys or making enrollment mistakes can render your system unbootable. Create backup media before proceeding:
 

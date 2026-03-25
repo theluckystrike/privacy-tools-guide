@@ -21,11 +21,11 @@ Tor remains the most widely recognized anonymity network, but developers and pow
 Table of Contents
 
 - [Why Consider Tor Alternatives?](#why-consider-tor-alternatives)
-- [I2P: The Invisible Internet Project](#i2p-the-invisible-internet-project)
-- [JonDonym: Java Anon Proxy](#jondonym-java-anon-proxy)
-- [Whonix: Workstation Isolation](#whonix-workstation-isolation)
+- [I2P - The Invisible Internet Project](#i2p-the-invisible-internet-project)
+- [JonDonym - Java Anon Proxy](#jondonym-java-anon-proxy)
+- [Whonix - Workstation Isolation](#whonix-workstation-isolation)
 - [The Amnesic Incognito Live System (Tails)](#the-amnesic-incognito-live-system-tails)
-- [Nym: Next-Generation Mixnet](#nym-next-generation-mixnet)
+- [Nym - Next-Generation Mixnet](#nym-next-generation-mixnet)
 - [Comparative Analysis](#comparative-analysis)
 - [Practical Recommendations](#practical-recommendations)
 - [Advanced Configuration Patterns](#advanced-configuration-patterns)
@@ -41,7 +41,7 @@ Tor uses onion routing through volunteer relays, which creates certain character
 
 Understanding your threat model helps select the right tool. Each alternative network offers distinct tradeoffs in speed, anonymity, and ease of use.
 
-I2P: The Invisible Internet Project
+I2P - The Invisible Internet Project
 
 I2P represents the most mature Tor alternative, using garlic routing instead of onion routing. This architecture bundles multiple messages together, providing different anonymity properties than Tor.
 
@@ -82,7 +82,7 @@ The network offers several features relevant to developers:
 - I2P tunnels: Customizable inbound and outbound connections for services
 - SAM protocol: Developer API for building I2P-capable applications
 
-JonDonym: Java Anon Proxy
+JonDonym - Java Anon Proxy
 
 JonDonym, formerly known as Java Anon Proxy, offers mix cascades rather than peer-to-peer routing. This approach routes traffic through fixed server chains operated by volunteers and organizations.
 
@@ -113,7 +113,7 @@ curl https://stats.jondonym.de/status.json | jq '.cascades[] | select(.type=="ht
 
 Select cascades based on your anonymity requirements. Paid cascades offer stronger guarantees, while free cascades provide basic privacy.
 
-Whonix: Workstation Isolation
+Whonix - Workstation Isolation
 
 Whonix operates differently from other alternatives, it runs Tor within a virtual machine, isolating your entire operating system from the host network stack.
 
@@ -161,7 +161,7 @@ sudo dd if=tails-amd64-*.img of=/dev/sdX bs=4M status=progress
 
 Tails automatically torifies all network connections without individual application configuration.
 
-Nym: Next-Generation Mixnet
+Nym - Next-Generation Mixnet
 
 Nym represents emerging mixnet technology using the Sphinx packet format. The network aims to provide stronger metadata protection than Tor or I2P.
 
@@ -186,7 +186,7 @@ Use the SOCKS5 proxy for application integration:
 
 ```bash
 Configure browser to use Nym SOCKS5 proxy
-Proxy address: 127.0.0.1:1080
+Proxy address - 127.0.0.1:1080
 
 Test through Nym network
 curl -x socks5h://127.0.0.1:1080 https://nymtech.net/
@@ -319,7 +319,7 @@ Evaluate each network against specific adversaries:
 | Timing attack | Vulnerable | Resistant | Resistant | Mitigated | Resistant |
 | Endpoint compromise | Vulnerable | Vulnerable | Vulnerable | No | Vulnerable |
 
-The key insight: no single network provides perfect protection. Choose based on your specific threat model.
+The key insight - no single network provides perfect protection. Choose based on your specific threat model.
 
 Hybrid Approaches
 
@@ -403,11 +403,11 @@ Practical Selection Criteria
 
 Choose your anonymity network based on these factors:
 
-Speed-sensitive use cases: JonDonym with well-performing cascades
-Strong anonymity needed: Tor with multi-hop configuration
-Decentralized preference: I2P with eepsites
-System isolation required: Whonix with Qubes integration
-Research/development: Nym for modern mixnet technology
+Speed-sensitive use cases - JonDonym with well-performing cascades
+Strong anonymity needed - Tor with multi-hop configuration
+Decentralized preference - I2P with eepsites
+System isolation required - Whonix with Qubes integration
+Research/development - Nym for modern mixnet technology
 
 No network is universally superior. Your threat model, performance requirements, and use case determine the best choice.
 

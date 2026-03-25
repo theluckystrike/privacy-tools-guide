@@ -16,7 +16,7 @@ intent-checked: true
 
 {% raw %}
 
-Password managers are trust: you give them every password you own. If the password manager leaks, steals data, or doesn't encrypt properly, you're compromised everywhere. Most password managers are cloud-based, which means servers hold your encrypted vault.
+Password managers are trust - you give them every password you own. If the password manager leaks, steals data, or doesn't encrypt properly, you're compromised everywhere. Most password managers are cloud-based, which means servers hold your encrypted vault.
 
 This guide compares four password managers focused on actual privacy, not marketing claims. We test encryption, logging, source code, and jurisdiction.
 
@@ -37,17 +37,17 @@ Table of Contents
 
 What Makes a Password Manager Private
 
-Zero-Knowledge: Company cannot access your passwords. Even employees can't read your vault.
+Zero-Knowledge - Company cannot access your passwords. Even employees can't read your vault.
 
-End-to-End Encryption: Passwords encrypted on your device before leaving. Company stores encrypted blob they cannot decrypt.
+End-to-End Encryption - Passwords encrypted on your device before leaving. Company stores encrypted blob they cannot decrypt.
 
-Open Source: Code is public. Security researchers audit it. Bugs are found faster.
+Open Source - Code is public. Security researchers audit it. Bugs are found faster.
 
-No Logging: Company doesn't log what you access, when, or how often.
+No Logging - Company doesn't log what you access, when, or how often.
 
-Self-Hosting Option: You run the server. Company never sees your data.
+Self-Hosting Option - You run the server. Company never sees your data.
 
-Privacy Jurisdiction: Company based in country with strong privacy laws (EU, Switzerland) not weak ones (US, UK, Australia).
+Privacy Jurisdiction - Company based in country with strong privacy laws (EU, Switzerland) not weak ones (US, UK, Australia).
 
 Password managers claim privacy but don't all deliver it. Let's test the ones that actually do.
 
@@ -65,7 +65,7 @@ docker run -d --name vaultwarden \
 
 Verify the server is running
 curl -s http://localhost:8080/alive
-Expected output: {"status":"ok"}
+Expected output - {"status":"ok"}
 ```
 
 For KeePassXC users, you can sync your encrypted vault across devices using Git:
@@ -89,19 +89,19 @@ keepassxc-cli open keepass-vault/passwords.kdbx
 
 Bitwarden
 
-Price: Free, $10/year individual, $40/year family (5 people), $3/user/month teams
+Price - Free, $10/year individual, $40/year family (5 people), $3/user/month teams
 
-Privacy Score: 8/10
+Privacy Score - 8/10
 
-Encryption: AES-256 with PBKDF2 key derivation
+Encryption - AES-256 with PBKDF2 key derivation
 
-Open Source: Yes, both client and server
+Open Source - Yes, both client and server
 
-Self-Hosting: Yes, free community edition available
+Self-Hosting - Yes, free community edition available
 
-Logging: Minimal. Server logs connection, not vault access
+Logging - Minimal. Server logs connection, not vault access
 
-Jurisdiction: US-based (Virginia)
+Jurisdiction - US-based (Virginia)
 
 How Bitwarden Works
 
@@ -118,17 +118,17 @@ They cannot decrypt your vault even if they wanted to. Code is open-source, audi
 
 Real Privacy Test
 
-Hypothetical: Bitwarden gets hacked. Attackers steal the database of encrypted vaults.
+Hypothetical - Bitwarden gets hacked. Attackers steal the database of encrypted vaults.
 
 Your passwords are unreadable. Attackers have ciphertext. Without your master password, they gain nothing.
 
-Reality check: Bitwarden employees could theoretically alter the client-side code to steal passwords before encryption. But code is open-source, so malicious changes would be caught immediately.
+Reality check - Bitwarden employees could theoretically alter the client-side code to steal passwords before encryption. But code is open-source, so malicious changes would be caught immediately.
 
 Downsides
 
-US jurisdiction: If US government subpoenas Bitwarden, they must comply. They can't hand over passwords (they don't have them), but they can be forced to log future activity. Unlikely but possible.
+US jurisdiction - If US government subpoenas Bitwarden, they must comply. They can't hand over passwords (they don't have them), but they can be forced to log future activity. Unlikely but possible.
 
-Ecosystem: To use Bitwarden on every device, you need:
+environment - To use Bitwarden on every device, you need:
 - Web app (browser)
 - Desktop app (Windows/Mac/Linux)
 - Mobile app (iOS/Android)
@@ -146,19 +146,19 @@ Who Should Use Bitwarden
 
 1Password
 
-Price: $2.99/month individual, $4.99/month family (5 people), $20/user/month teams
+Price - $2.99/month individual, $4.99/month family (5 people), $20/user/month teams
 
-Privacy Score: 7/10
+Privacy Score - 7/10
 
-Encryption: AES-256 with PBKDF2 and Secret Key architecture
+Encryption - AES-256 with PBKDF2 and Secret Key architecture
 
-Open Source: No, but code is auditable via bug bounty
+Open Source - No, but code is auditable via bug bounty
 
-Self-Hosting: No
+Self-Hosting - No
 
-Logging: Minimal for access. Connection metadata only.
+Logging - Minimal for access. Connection metadata only.
 
-Jurisdiction: Canada-based (strong privacy laws)
+Jurisdiction - Canada-based (strong privacy laws)
 
 How 1Password Works (Differently)
 
@@ -172,42 +172,42 @@ Real Privacy Test
 
 Attackers steal 1Password database. They have encrypted vaults and usernames.
 
-To crack one vault: They need your master password (6 years of dictionary attacks) AND your Secret Key (only on your device, never sent to servers).
+To crack one vault - They need your master password (6 years of dictionary attacks) AND your Secret Key (only on your device, never sent to servers).
 
 Vault stays secure even if database is stolen.
 
 Downsides
 
-Closed source: You trust 1Password's implementation without being able to verify. They've been independently audited and haven't had major breaches, so trust is empirically justified.
+Closed source - You trust 1Password's implementation without being able to verify. They've been independently audited and haven't had major breaches, so trust is empirically justified.
 
-Canada vs Switzerland: Canada has decent privacy laws but less strong than Switzerland. In practice, 1Password complies with legal requests but can't hand over passwords (architecture prevents it).
+Canada vs Switzerland - Canada has decent privacy laws but less strong than Switzerland. In practice, 1Password complies with legal requests but can't hand over passwords (architecture prevents it).
 
-Price: $2.99/month adds up. $36/year vs Bitwarden's $10/year or free.
+Price - $2.99/month adds up. $36/year vs Bitwarden's $10/year or free.
 
-No self-hosting: If 1Password goes down or gets hacked, you don't control the fallback.
+No self-hosting - If 1Password goes down or gets hacked, you don't control the fallback.
 
 Who Should Use 1Password
 
 - Non-technical users: Set up and forget. Works everywhere
-- Apple ecosystem: Integrates with iCloud Keychain, Safari, Apple ID
+- Apple environment: Integrates with iCloud Keychain, Safari, Apple ID
 - Teams: Better sharing, admin controls, audit logs included
 - Budget not primary concern: $36/year extra for convenience is acceptable
 
 KeePassXC (Self-Hosted Desktop)
 
-Price: Free, open-source
+Price - Free, open-source
 
-Privacy Score: 10/10 (but with asterisks)
+Privacy Score - 10/10 (but with asterisks)
 
-Encryption: AES-256, Argon2 key derivation
+Encryption - AES-256, Argon2 key derivation
 
-Open Source: Yes, fully audited
+Open Source - Yes, fully audited
 
-Self-Hosting: Yes, fully (you are the server)
+Self-Hosting - Yes, fully (you are the server)
 
-Logging: Zero. No cloud sync at all.
+Logging - Zero. No cloud sync at all.
 
-Jurisdiction: N/A (local storage)
+Jurisdiction - N/A (local storage)
 
 How KeePassXC Works
 
@@ -227,17 +227,17 @@ KeePassXC stores nothing on remote servers. Even if you use cloud sync (Dropbox,
 
 Downsides (Serious)
 
-No sync by default: You manage sync yourself. Dropbox, OneDrive, NextCloud, Git. Extra step.
+No sync by default - You manage sync yourself. Dropbox, OneDrive, NextCloud, Git. Extra step.
 
-No mobile app (officially): KeePassXC is desktop-only. iPhone? Use companion app like KeePass2Android (unofficial, community-maintained). Adds friction.
+No mobile app (officially) - KeePassXC is desktop-only. iPhone? Use companion app like KeePass2Android (unofficial, community-maintained). Adds friction.
 
-No browser integration (easy): You can't fill passwords directly in browser like 1Password. Workaround: Copy password from KeePassXC, paste in browser. Slower.
+No browser integration (easy) - You can't fill passwords directly in browser like 1Password. Workaround - Copy password from KeePassXC, paste in browser. Slower.
 
-No sharing: Sharing passwords with family/team is manual. Extract a sub-vault, email encrypted file, they import it. Not smooth.
+No sharing - Sharing passwords with family/team is manual. Extract a sub-vault, email encrypted file, they import it. Not smooth.
 
-Backup is your job: Lost your computer? You need a backup (encrypted, obviously). No automatic cloud backup.
+Backup is your job - Lost your computer? You need a backup (encrypted, obviously). No automatic cloud backup.
 
-Learning curve: Non-technical users struggle. Requires understanding file locations, backup strategy, sync tools.
+Learning curve - Non-technical users struggle. Requires understanding file locations, backup strategy, sync tools.
 
 Who Should Use KeePassXC
 
@@ -249,19 +249,19 @@ Who Should Use KeePassXC
 
 Proton Pass
 
-Price: Free (basic), €9.99/month (ProtonPass Plus with ProtonMail)
+Price - Free (basic), €9.99/month (ProtonPass Plus with ProtonMail)
 
-Privacy Score: 8.5/10
+Privacy Score - 8.5/10
 
-Encryption: AES-256, TweetNaCL
+Encryption - AES-256, TweetNaCL
 
-Open Source: Yes, client open-source. Server partially open.
+Open Source - Yes, client open-source. Server partially open.
 
-Self-Hosting: No
+Self-Hosting - No
 
-Logging: Minimal. Proton doesn't log vault access.
+Logging - Minimal. Proton doesn't log vault access.
 
-Jurisdiction: Switzerland (strongest privacy laws globally)
+Jurisdiction - Switzerland (strongest privacy laws globally)
 
 How Proton Pass Works
 
@@ -269,7 +269,7 @@ Proton Pass is by the Proton company (ProtonMail creators), known for privacy-fi
 
 Architecture is similar to 1Password: encryption happens on your device before sync. Server stores encrypted blob.
 
-Key Advantage: Proton Ecosystem
+Key Advantage - Proton environment
 
 If you use ProtonMail:
 - Vault integrates with email
@@ -290,15 +290,15 @@ Downsides
 
 Switzerland is good but not sovereign: Swiss privacy laws are strong but Switzerland is under international pressure. If US demands data, Swiss government may comply.
 
-Closed-source server: Server code isn't fully open, though client is. You trust Proton's implementation.
+Closed-source server - Server code isn't fully open, though client is. You trust Proton's implementation.
 
-Pricing tied to email: If you don't use ProtonMail, $9.99/month for just Proton Pass seems expensive vs Bitwarden free.
+Pricing tied to email - If you don't use ProtonMail, $9.99/month for just Proton Pass seems expensive vs Bitwarden free.
 
-Younger product: Proton Pass launched recently (2023). Less battle-tested than Bitwarden or 1Password.
+Younger product - Proton Pass launched recently (2023). Less battle-tested than Bitwarden or 1Password.
 
 Who Should Use Proton Pass
 
-- ProtonMail users already: Natural addition to ecosystem
+- ProtonMail users already: Natural addition to environment
 - Proton+ subscribers: You already pay, use Pass as included service
 - Privacy + Switzerland: Want strong jurisdiction AND open-source client
 - All-in-one privacy suite: Email + VPN + password manager in one subscription
@@ -318,45 +318,45 @@ Comparison Table
 | Encryption Strength | AES-256 + PBKDF2 | AES-256 + Secret Key | AES-256 + Argon2 | AES-256 + TweetNaCL |
 | Privacy Score | 8/10 | 7/10 | 10/10 | 8.5/10 |
 | Ease of Use | Easy | Very easy | Hard | Easy |
-| Best For | Privacy budget-conscious | Non-technical users | Paranoid solo users | Proton ecosystem users |
+| Best For | Privacy budget-conscious | Non-technical users | Paranoid solo users | Proton environment users |
 
 Real-World Recommendation
 
-For most people: Bitwarden free tier. Open-source, zero-knowledge, no cost. Set up in 10 minutes.
+For most people - Bitwarden free tier. Open-source, zero-knowledge, no cost. Set up in 10 minutes.
 
-For Mac/iOS users who don't care about cost: 1Password. Integrates with Apple ecosystem. $36/year is acceptable for convenience.
+For Mac/iOS users who don't care about cost: 1Password. Integrates with Apple environment. $36/year is acceptable for convenience.
 
-For paranoid people: KeePassXC + Nextcloud self-hosting + encrypted backups. Maximum privacy, maximum effort.
+For paranoid people - KeePassXC + Nextcloud self-hosting + encrypted backups. Maximum privacy, maximum effort.
 
-For Proton users: Proton Pass as part of Proton+ subscription. Natural addition.
+For Proton users - Proton Pass as part of Proton+ subscription. Natural addition.
 
-For teams: Bitwarden at $40/user/year beats 1Password ($240/year) significantly.
+For teams - Bitwarden at $40/user/year beats 1Password ($240/year) significantly.
 
 Migration Path
 
 Most people use LastPass, Apple Keychain, or nothing (remember passwords).
 
-Leaving LastPass: LastPass had breaches, logging issues. Get out.
+Leaving LastPass - LastPass had breaches, logging issues. Get out.
 
-Step 1: Choose your manager (Bitwarden if no preference).
+Step 1 - Choose your manager (Bitwarden if no preference).
 
-Step 2: Export passwords from old manager (usually CSV).
+Step 2 - Export passwords from old manager (usually CSV).
 
-Step 2: Import into new manager.
+Step 2 - Import into new manager.
 
-Step 3: Change passwords on critical accounts (email, banking, cloud storage). This is important, old password is now in two places.
+Step 3 - Change passwords on critical accounts (email, banking, cloud storage). This is important, old password is now in two places.
 
-Step 4: Delete old password file once confirmed new manager works.
+Step 4 - Delete old password file once confirmed new manager works.
 
 This takes 2-3 hours for 100 passwords. Boring but necessary.
 
 What NOT to Do
 
-Never reuse passwords: Each account needs unique password. Manager generates random 16+ character passwords.
+Never reuse passwords - Each account needs unique password. Manager generates random 16+ character passwords.
 
-Never screenshot passwords: Screenshot ends up in backup, cloud sync, iCloud Photos.
+Never screenshot passwords - Screenshot ends up in backup, cloud sync, iCloud Photos.
 
-Never email passwords: Email is not encrypted. Emails are logged.
+Never email passwords - Email is not encrypted. Emails are logged.
 
 Never use browser's built-in manager: Chrome passwords are tied to Google account. If someone gets Google password, they get every password.
 
@@ -364,30 +364,30 @@ Never use "weak" passwords you can remember: If you're remembering passwords, th
 
 Features You Don't Need
 
-Biometric login: Fingerprint/Face ID unlock the password manager app. Nice for convenience, not security.
+Biometric login - Fingerprint/Face ID unlock the password manager app. Nice for convenience, not security.
 
-Password strength meter: All managers show this. Doesn't matter. Generate random passwords. Use manager's suggestion.
+Password strength meter - All managers show this. Doesn't matter. Generate random passwords. Use manager's suggestion.
 
-Breach monitoring: Managers notify you if passwords appear in data breaches. Useful but not critical. You'll hear about major breaches anyway.
+Breach monitoring - Managers notify you if passwords appear in data breaches. Useful but not critical. You'll hear about major breaches anyway.
 
-Passkey support: New standard replacing passwords. Bitwarden and Proton Pass support it. Not widely adopted yet (2026). Useful but not decision factor.
+Passkey support - New standard replacing passwords. Bitwarden and Proton Pass support it. Not widely adopted yet (2026). Useful but not decision factor.
 
 Cost Analysis for Privacy
 
-Bitwarden: $10/year for privacy. Cost per day: $0.03. Cheapest privacy.
+Bitwarden - $10/year for privacy. Cost per day: $0.03. Cheapest privacy.
 
-Proton Pass alone: $120/year for privacy + Switzerland. Cost per day: $0.33.
+Proton Pass alone - $120/year for privacy + Switzerland. Cost per day: $0.33.
 
-Proton Pass in Proton+: $156/year for email + VPN + Pass + storage. Cost per day: $0.43. Good if you need email.
+Proton Pass in Proton+ - $156/year for email + VPN + Pass + storage. Cost per day: $0.43. Good if you need email.
 
 1Password: $36/year for privacy. Cost per day: $0.10. Convenient middle ground.
 
-KeePassXC: $0/year but requires:
+KeePassXC - $0/year but requires:
 - Your time learning it (6 hours): Worth $100
 - Backup strategy (external hard drive, encrypted): $50
 - Sync setup (NextCloud): $5-10/month or self-hosted ($30/year)
 
-Total hidden cost: $200-300 first year, then $60-120/year ongoing. Only worth it if you're paranoid.
+Total hidden cost - $200-300 first year, then $60-120/year ongoing. Only worth it if you're paranoid.
 
 The Honest Assessment
 

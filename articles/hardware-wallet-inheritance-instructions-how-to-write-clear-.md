@@ -16,7 +16,7 @@ tags: [privacy-tools-guide]
 
 Creating clear hardware wallet inheritance instructions requires translating your technical expertise into accessible language. The effort you invest now prevents impossible confusion later. Your heirs will thank you not for teaching them cryptocurrency, but for giving them a simple path forward when it matters most.
 
-Step 6: Specific Recovery Instructions by Wallet Type
+Step 6 - Specific Recovery Instructions by Wallet Type
 
 Generic instructions don't work, your heirs need step-by-step guidance for each device.
 
@@ -31,32 +31,32 @@ What you'll need:
 - A computer with internet access
 - The recovery phrase (24 word list in envelope marked "RECOVERY")
 
-Step 1: Connect the Device
+Step 1 - Connect the Device
   1. Plug the USB cable into a computer
   2. Plug the other end into the blue Ledger device
   3. The device should show a menu screen
 
-Step 2: Follow Recovery Process
+Step 2 - Follow Recovery Process
   1. On the Ledger screen, press the right button until you see "Recover"
   2. Press both buttons together to select "Recover"
   3. The device will ask how many words (24 or 12)
   4. Press both buttons on "24" (that's what we have)
   5. The device will ask for word 1. Look at the recovery sheet.
 
-Step 3: Enter Recovery Words
+Step 3 - Enter Recovery Words
   1. Say the recovery sheet says word 1 is "abandon"
   2. Type "abandon" carefully on your computer keyboard
   3. The Ledger will show matching words
   4. Find "abandon" in the list and click it
   5. Repeat for all 24 words (takes about 30 minutes)
 
-Step 4: Create New PIN
+Step 4 - Create New PIN
   1. After entering all words, create a PIN (like a password)
   2. Any 4-6 digits work
   3. Write down this PIN somewhere safe (but separate from recovery words)
   4. Press both buttons to confirm
 
-Step 5: Access Your Money
+Step 5 - Access Your Money
   1. Download Ledger Live from ledger.com (official website only)
   2. Open Ledger Live and select "Connect existing wallet"
   3. Your Bitcoin and Ethereum balances will appear
@@ -117,7 +117,7 @@ Different wallets have different recovery complexities. When choosing a wallet, 
 
 For inheritance purposes, simpler wallets with shorter seed phrases reduce confusion.
 
-Step 7: Alternative Inheritance Approaches for Technical Users
+Step 7 - Alternative Inheritance Approaches for Technical Users
 
 Developers and advanced users have additional options beyond simple hardware wallet recovery.
 
@@ -156,7 +156,7 @@ Casa specifically offers inheritance planning tools:
 
 This reduces documentation burden on the deceased while ensuring proper inheritance procedures.
 
-Step 8: Legal Integration with Estate Planning
+Step 8 - Legal Integration with Estate Planning
 
 Technical documentation should complement formal legal documents.
 
@@ -170,7 +170,7 @@ Powers of Attorney
 
 Ensure your financial power of attorney specifically includes digital assets. Standard POAs may not provide sufficient authority over cryptocurrency accounts.
 
-Step 9: Updating Inheritance Documentation
+Step 9 - Updating Inheritance Documentation
 
 Cryptocurrency holdings change frequently. Maintain current documentation:
 
@@ -181,7 +181,7 @@ Cryptocurrency holdings change frequently. Maintain current documentation:
 
 Create calendar reminders for annual inheritance documentation reviews.
 
-Step 10: Professional Assistance and Services
+Step 10 - Professional Assistance and Services
 
 For technical or complex scenarios, professional services can help:
 

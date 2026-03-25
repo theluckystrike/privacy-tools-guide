@@ -37,7 +37,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Option 1: Bitwarden Organizations
+Step 1 - Option 1: Bitwarden Organizations
 
 Bitwarden's free organization tier supports up to two users.
 - Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.
@@ -65,7 +65,7 @@ A secure team password sharing setup should provide:
 5. Secret rotation. process for changing credentials when someone leaves
 6. No plaintext over chat. zero credentials sent via Slack, email, or SMS
 
-Step 2: Option 1: Bitwarden Organizations
+Step 2 - Option 1: Bitwarden Organizations
 
 Bitwarden's free organization tier supports up to two users. The Teams plan (~$3/user/month) supports unlimited users with advanced sharing and audit logs.
 
@@ -117,7 +117,7 @@ bw get template item | jq '.name="AWS Production Key" | .login.username="deploy"
   bw encode | bw create item --collectionids COLLECTION_ID
 ```
 
-Step 3: Option 2: 1Password Teams
+Step 3 - Option 2: 1Password Teams
 
 1Password Teams includes travel mode, item history (restore previous passwords), and document storage alongside credentials.
 
@@ -155,7 +155,7 @@ AWS_ACCESS_KEY=op://Engineering/AWS Deploy/access_key_id
 
 This pattern means secrets are never written to `.env` files in the repo.
 
-Step 4: Option 3: Passbolt (Open Source, Self-Hosted)
+Step 4 - Option 3: Passbolt (Open Source, Self-Hosted)
 
 Passbolt uses OpenPGP. each secret is encrypted with the public keys of each authorized user. Not even the server admin can read passwords.
 
@@ -188,7 +188,7 @@ When someone leaves:
 2. Rotate any credentials they had access to (Passbolt's activity log shows exactly which ones)
 3. Deactivate their account
 
-Step 5: Option 4: One-Time Secret Links for Guests
+Step 5 - Option 4: One-Time Secret Links for Guests
 
 For sharing a credential with a contractor, vendor, or client. someone who isn't on your team's password manager:
 
@@ -217,7 +217,7 @@ bw send create \
   --maxAccessCount 1
 ```
 
-Or via the web UI: Send > New Send > Text. set expiration and access count, share the link.
+Or via the web UI - Send > New Send > Text. set expiration and access count, share the link.
 
 Using curl Against a Public API (Quick Option)
 
@@ -232,7 +232,7 @@ curl -X POST https://onetimesecret.com/api/v1/share \
 
 This is a hosted service. only use for non-critical, temporary credentials.
 
-Step 6: Access Audit Workflow
+Step 6 - Access Audit Workflow
 
 Run this process when anyone leaves the organization:
 
@@ -242,7 +242,7 @@ bw list --organizationid ORG_ID \
   | jq '.[] | select(.userId == "USER_UUID")'
 ```
 
-In the Bitwarden web vault: Admin Console > Reporting > Event Logs > filter by user.
+In the Bitwarden web vault - Admin Console > Reporting > Event Logs > filter by user.
 
 Steps for offboarding:
 1. Immediately revoke organization access (don't wait)
@@ -252,7 +252,7 @@ Steps for offboarding:
 5. Update any systems using rotated credentials
 6. Document the rotation in your change log
 
-Step 7: Team Password Hygiene Rules
+Step 7 - Team Password Hygiene Rules
 
 Write these into a team security policy document:
 

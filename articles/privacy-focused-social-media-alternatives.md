@@ -38,9 +38,9 @@ This data is monetized through behavioral advertising and increasingly sold to d
 
 Mastodon (Twitter Alternative)
 
-Protocol: ActivityPub (W3C standard)
-Model: Federated. hundreds of independent servers that talk to each other
-Self-hosting: Yes (Docker or manual install)
+Protocol - ActivityPub (W3C standard)
+Model - Federated. hundreds of independent servers that talk to each other
+Self-hosting - Yes (Docker or manual install)
 
 Mastodon is the most mature and widely adopted alternative. Each instance is independently operated by a community or individual. You choose an instance based on its rules and moderation policy, but you can follow users on any other instance.
 
@@ -50,7 +50,7 @@ Privacy properties:
 - Your instance operator can read your private messages and public posts
 - Federation means your public posts are distributed to many servers
 
-What your instance admin sees: direct messages (not E2EE), your email, IP address, registration date.
+What your instance admin sees - direct messages (not E2EE), your email, IP address, registration date.
 
 ```bash
 Self-host Mastodon with Docker Compose
@@ -59,7 +59,7 @@ cd mastodon
 
 Copy and configure .env.production
 cp .env.production.sample .env.production
-Set: LOCAL_DOMAIN, DB_*, SMTP_*, SECRET_KEY_BASE, OTP_SECRET
+Set - LOCAL_DOMAIN, DB_*, SMTP_*, SECRET_KEY_BASE, OTP_SECRET
 
 Setup
 docker compose run --rm web bundle exec rake mastodon:setup
@@ -68,14 +68,14 @@ Start
 docker compose up -d
 ```
 
-Privacy improvement over Twitter: no ad tracking, no algorithmic manipulation, instance admin instead of corporation. Federation model means public posts are broadly distributed. treat them as public.
+Privacy improvement over Twitter - no ad tracking, no algorithmic manipulation, instance admin instead of corporation. Federation model means public posts are broadly distributed. treat them as public.
 
 ---
 
 Pixelfed (Instagram Alternative)
 
-Protocol: ActivityPub
-Model: Federated, photo-focused
+Protocol - ActivityPub
+Model - Federated, photo-focused
 
 Pixelfed federates with Mastodon. Mastodon users can follow Pixelfed accounts and vice versa. It focuses on photo sharing without the algorithmic engagement mechanics that make Instagram addictive.
 
@@ -86,7 +86,7 @@ Privacy properties:
 - EXIF metadata stripped on upload by default (configurable)
 
 ```bash
-Quick instance check: does the instance strip EXIF?
+Quick instance check - does the instance strip EXIF?
 curl -s https://pixelfed.instance.com/api/v1/instance | \
   python3 -c "import sys,json; d=json.load(sys.stdin); \
   print('EXIF removal:', d.get('configuration', {}).get('media_attachments', {}))"
@@ -96,8 +96,8 @@ curl -s https://pixelfed.instance.com/api/v1/instance | \
 
 Lemmy (Reddit Alternative)
 
-Protocol: ActivityPub
-Model: Federated, community/subreddit model
+Protocol - ActivityPub
+Model - Federated, community/subreddit model
 
 Lemmy communities (called "magazines" in kbin) federate across instances. A community on lemmy.ml is visible from beehaw.org and any other federated instance.
 
@@ -107,15 +107,15 @@ Privacy properties:
 - Your instance admin has access to your posts and registration data
 - No recommendation algorithm. communities are browsed, not pushed
 
-Moderation trade-off: federated platforms have inconsistent moderation. Choose an instance with moderation policies you agree with, or self-host to control it yourself.
+Moderation trade-off - federated platforms have inconsistent moderation. Choose an instance with moderation policies you agree with, or self-host to control it yourself.
 
 ---
 
 Nostr (Censorship-Resistant Alternative)
 
-Protocol: Nostr (Notes and Other Stuff Transmitted by Relays)
-Model: Decentralized, key-based identity (not federated)
-Self-hosting: Run your own relay
+Protocol - Nostr (Notes and Other Stuff Transmitted by Relays)
+Model - Decentralized, key-based identity (not federated)
+Self-hosting - Run your own relay
 
 Nostr is different from ActivityPub platforms. Your identity is a cryptographic key pair (secp256k1). You publish signed notes to relays; you follow people by adding their public key. There is no central server, no instance admin, and no account to deactivate.
 
@@ -144,17 +144,17 @@ cd strfry && make setup-dev && make
 ./strfry relay   # starts relay on ws://localhost:7777
 ```
 
-Privacy limitation: Nostr notes are public and permanently distributed. Once published, you cannot delete from all relays. NIP-09 (deletion request) asks relays to delete but relays are not obligated to comply.
+Privacy limitation - Nostr notes are public and permanently distributed. Once published, you cannot delete from all relays. NIP-09 (deletion request) asks relays to delete but relays are not obligated to comply.
 
-Best for: Permanent, censorship-resistant publishing. Not suitable for sensitive private communications (use Signal/SimpleX instead).
+Best for - Permanent, censorship-resistant publishing. Not suitable for sensitive private communications (use Signal/SimpleX instead).
 
 ---
 
 Bluesky / AT Protocol
 
-Protocol: AT Protocol
-Model: Federated via Personal Data Servers (PDS)
-Self-hosting: Yes (PDS)
+Protocol - AT Protocol
+Model - Federated via Personal Data Servers (PDS)
+Self-hosting - Yes (PDS)
 
 Bluesky uses the AT Protocol. every user's data lives on a PDS (Personal Data Server). You can self-host your PDS or use the default Bluesky infrastructure. Your data is portable: you can migrate from Bluesky's PDS to your own without losing followers.
 
@@ -202,8 +202,8 @@ Running Your Own Instance (Maximum Privacy)
 Self-hosting means you are your own instance admin. the only person with database access:
 
 ```bash
-Mastodon hardware requirements: 2 vCPU, 2 GB RAM, 20 GB SSD minimum
-Uses: Ruby on Rails, PostgreSQL, Redis, ElasticSearch (optional), Sidekiq
+Mastodon hardware requirements - 2 vCPU, 2 GB RAM, 20 GB SSD minimum
+Uses - Ruby on Rails, PostgreSQL, Redis, ElasticSearch (optional), Sidekiq
 
 Mastodon maintenance commands
 docker compose run --rm web tootctl accounts list

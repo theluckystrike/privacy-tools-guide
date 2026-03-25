@@ -16,16 +16,16 @@ voice-checked: true
 
 {% raw %}
 
-Mandatory Access Control (MAC) systems represent a critical layer of Linux security beyond the traditional Unix permission model. While Discretionary Access Control (DAC) lets users control access to their own resources, MAC systems enforce system-wide security policies that even privileged users cannot override. AppArmor and SELinux are the two dominant MAC implementations in the Linux ecosystem, each with distinct philosophies, performance characteristics, and use cases.
+Mandatory Access Control (MAC) systems represent a critical layer of Linux security beyond the traditional Unix permission model. While Discretionary Access Control (DAC) lets users control access to their own resources, MAC systems enforce system-wide security policies that even privileged users cannot override. AppArmor and SELinux are the two dominant MAC implementations in the Linux environment, each with distinct philosophies, performance characteristics, and use cases.
 
 Table of Contents
 
 - [Understanding Mandatory Access Control Fundamentals](#understanding-mandatory-access-control-fundamentals)
 - [Quick Comparison](#quick-comparison)
-- [SELinux: The Enterprise-Grade Security Framework](#selinux-the-enterprise-grade-security-framework)
-- [AppArmor: Simplicity Through Path-Based Controls](#apparmor-simplicity-through-path-based-controls)
+- [SELinux - The Enterprise-Grade Security Framework](#selinux-the-enterprise-grade-security-framework)
+- [AppArmor - Simplicity Through Path-Based Controls](#apparmor-simplicity-through-path-based-controls)
 - [Comparing Security Models](#comparing-security-models)
-- [Decision Framework: Choosing Your MAC System](#decision-framework-choosing-your-mac-system)
+- [Decision Framework - Choosing Your MAC System](#decision-framework-choosing-your-mac-system)
 - [Implementation Recommendations](#implementation-recommendations)
 - [Command-Line Privacy Audit](#command-line-privacy-audit)
 - [Filesystem Encryption Verification](#filesystem-encryption-verification)
@@ -49,7 +49,7 @@ Quick Comparison
 | Ease of Use | Moderate learning curve | Moderate learning curve |
 | Documentation | Available | Available |
 
-SELinux: The Enterprise-Grade Security Framework
+SELinux - The Enterprise-Grade Security Framework
 
 SELinux (Security-Enhanced Linux) originated from a research project at the National Security Agency and has been part of the Linux kernel since version 2.6. It implements a type enforcement model where every process and file object receives a security context (type). Policies then define relationships between these types, creating a complex but powerful access control matrix.
 
@@ -79,7 +79,7 @@ SELinux can introduce performance overhead in highly dynamic environments. The p
 
 Performance benchmarks consistently show that properly configured SELinux adds only 2-5% overhead for typical workloads. The security benefits far outweigh this minimal performance cost in most deployments.
 
-AppArmor: Simplicity Through Path-Based Controls
+AppArmor - Simplicity Through Path-Based Controls
 
 AppArmor (Application Armor) takes a fundamentally different approach to mandatory access control. Rather than labeling every system object with security contexts, AppArmor uses file path patterns to define what resources applications can access. This path-based model aligns more closely with how administrators naturally think about permissions.
 
@@ -107,7 +107,7 @@ AppArmor's path-based approach has inherent security limitations. Symbolic links
 
 The path-based model also struggles with resources that don't have stable filesystem paths. SELinux's labeling system handles device nodes, network ports, and other abstract resources more consistently. AppArmor requires workarounds for certain advanced security scenarios.
 
-The ecosystem around AppArmor remains smaller than SELinux's enterprise ecosystem. Fewer tools, less documentation, and fewer pre-built profiles mean administrators often need to create profiles from scratch. The community has made progress, but enterprise use cases favor SELinux's maturity.
+The environment around AppArmor remains smaller than SELinux's enterprise environment. Fewer tools, less documentation, and fewer pre-built profiles mean administrators often need to create profiles from scratch. The community has made progress, but enterprise use cases favor SELinux's maturity.
 
 Comparing Security Models
 
@@ -117,7 +117,7 @@ SELinux policies can contain thousands of rules governing intricate relationship
 
 AppArmor profiles typically remain smaller and more focused on individual applications. The path-based approach naturally groups permissions around the files an application uses, making profiles easier to understand at a glance. However, this simplicity means some security controls require creative profile construction.
 
-Default Deployment and Ecosystem
+Default Deployment and environment
 
 Enterprise Linux distributions, Red Hat Enterprise Linux, CentOS, AlmaLinux, Rocky Linux, Fedora, and SUSE, default to SELinux. The extensive default policies, enterprise support contracts, and documented best practices make SELinux the natural choice for organizations standardized on these platforms.
 
@@ -135,7 +135,7 @@ AppArmor integrates with containerd and Kubernetes through container runtime con
 
 Cloud environments often disable MAC systems entirely for simplicity, but this practice creates security vulnerabilities. Major cloud providers offer hardened base images with SELinux or AppArmor enabled. AWS, Google Cloud, and Azure all support custom Linux images with MAC systems pre-configured.
 
-Decision Framework: Choosing Your MAC System
+Decision Framework - Choosing Your MAC System
 
 Choose SELinux When
 
@@ -157,7 +157,7 @@ Consider Both When
 
 Hybrid environments running multiple Linux distributions might benefit from standardizing on one MAC system across platforms. This consistency simplifies administration and enables unified security policies. Evaluate the distribution with the most stringent security requirements and select that system's MAC for all hosts.
 
-If your team has no prior experience with either system, spending time learning both reveals which aligns with your mental model. Both systems provide strong security; the choice often comes down to administrative preference and ecosystem support.
+If your team has no prior experience with either system, spending time learning both reveals which aligns with your mental model. Both systems provide strong security; the choice often comes down to administrative preference and environment support.
 
 Implementation Recommendations
 
@@ -178,7 +178,7 @@ Use `aa-genprof` to generate profiles for new applications. Run the application 
 Debug AppArmor denials through `/var/log/syslog` (or `journalctl` on systemd systems) where AppArmor messages appear with the DENIED keyword. The error messages clearly identify the denied path and requested permissions, simplifying troubleshooting.
 
 ```bash
-SELinux: check status and current enforcement mode
+SELinux - check status and current enforcement mode
 getenforce
 sestatus
 
@@ -192,7 +192,7 @@ Generate a custom policy module from logged denials
 ausearch -m avc -ts recent | audit2allow -M mypolicy
 semodule -i mypolicy.pp
 
-AppArmor: check loaded profiles and their modes
+AppArmor - check loaded profiles and their modes
 aa-status
 
 Generate a new profile for an application in learning mode
@@ -246,7 +246,7 @@ lsblk -o NAME,FSTYPE,MOUNTPOINT | grep crypt
 
 Check encryption algorithm strength:
 cryptsetup luksDump /dev/sda2 | grep -E "Cipher|Key"
-Prefer: aes-xts-plain64 with 512-bit key
+Prefer - aes-xts-plain64 with 512-bit key
 
 Test that a USB drive is encrypted before storing sensitive data:
 lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT

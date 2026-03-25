@@ -25,7 +25,7 @@ Table of Contents
 - [Technical Stack Behind These Systems](#technical-stack-behind-these-systems)
 - [Privacy Implications](#privacy-implications)
 - [Protecting Your Privacy](#protecting-your-privacy)
-- [Advanced Defense: Adversarial Perturbations](#advanced-defense-adversarial-perturbations)
+- [Advanced Defense - Adversarial Perturbations](#advanced-defense-adversarial-perturbations)
 - [Federated Learning Approaches](#federated-learning-approaches)
 - [Future Directions](#future-directions)
 
@@ -150,13 +150,13 @@ Privacy Implications
 
 Understanding these mechanisms reveals significant privacy concerns:
 
-Data Persistence: Even after deleting your dating profile, your face embeddings may persist in third-party databases.
+Data Persistence - Even after deleting your dating profile, your face embeddings may persist in third-party databases.
 
-Cross-Platform Tracking: Your dating profile photos can potentially be linked to your presence on other platforms, social media, professional networks, or other dating apps.
+Cross-Platform Tracking - Your dating profile photos can potentially be linked to your presence on other platforms, social media, professional networks, or other dating apps.
 
-Re-identification: Anonymized or blurred images can sometimes be reverse-engineered to identify individuals using advanced reconstruction techniques.
+Re-identification - Anonymized or blurred images can sometimes be reverse-engineered to identify individuals using advanced reconstruction techniques.
 
-Secondary Use: Embeddings collected for matchmaking may be sold or shared with advertisers, insurance companies, or other third parties.
+Secondary Use - Embeddings collected for matchmaking may be sold or shared with advertisers, insurance companies, or other third parties.
 
 Protecting Your Privacy
 
@@ -192,12 +192,12 @@ Monitor for Profile Cloning
 
 Reverse image search your profile photos periodically to detect unauthorized use on other platforms.
 
-Advanced Defense: Adversarial Perturbations
+Advanced Defense - Adversarial Perturbations
 
 Emerging research into adversarial perturbations shows promise for defeating face recognition without obviously degrading image quality:
 
 ```python
-Concept: Adversarial patch to confuse face recognizers
+Concept - Adversarial patch to confuse face recognizers
 def generate_adversarial_face_image(base_image):
     """
     Add imperceptible perturbations to fool face recognition.

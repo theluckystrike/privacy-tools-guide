@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install GPG
+Step 1 - Install GPG
 
 ```bash
 Debian/Ubuntu
@@ -43,7 +43,7 @@ macOS (GPG Suite is easiest)
 brew install gnupg
 Or download GPG Suite from https://gpgtools.org
 
-Windows: Gpg4win from https://www.gpg4win.org
+Windows - Gpg4win from https://www.gpg4win.org
 ```
 
 Verify:
@@ -52,7 +52,7 @@ Verify:
 gpg --version
 ```
 
-Step 2: Generate Your Key Pair
+Step 2 - Generate Your Key Pair
 
 ```bash
 gpg --full-generate-key
@@ -62,7 +62,7 @@ At the prompts:
 - Key type: `(1) RSA and RSA` or `(9) ECC (sign and encrypt)`. choose ECC for modern security
 - If ECC: select `Curve 25519`
 - If RSA: use 4096 bits
-- Expiration: `2y` (2 years). shorter is better; you can extend before expiry
+- Expiration - `2y` (2 years). shorter is better; you can extend before expiry
 - Name: your real name or pseudonym
 - Email: the address you'll use for encrypted email
 - Comment: leave blank or enter "GPG key"
@@ -84,7 +84,7 @@ ssb   cv25519/FEDCBA0987654321 2026-03-21 [E]
 
 The long hex string starting with `1A2B...` is your key ID. The 40-character string is your fingerprint.
 
-Step 3: Export Your Public Key
+Step 3 - Export Your Public Key
 
 Share this with anyone who wants to send you encrypted email:
 
@@ -98,7 +98,7 @@ cat yourname-public-key.asc
 
 The public key starts with `-----BEGIN PGP PUBLIC KEY BLOCK-----`. This is safe to share publicly. post it on your website, email it to contacts, publish it to a key server.
 
-Step 4: Back Up Your Private Key
+Step 4 - Back Up Your Private Key
 
 Your private key is irreplaceable. Back it up to encrypted offline storage:
 
@@ -112,7 +112,7 @@ gpg --gen-revoke you@example.com > yourname-revoke.asc
 
 Store both files on an encrypted USB drive or in an encrypted archive. If you lose the private key, you can't decrypt old messages. If someone else gets it, they can read everything encrypted to you.
 
-Step 5: Publish Your Key to a Key Server
+Step 5 - Publish Your Key to a Key Server
 
 Publishing makes it easy for others to find your key by email address:
 
@@ -120,7 +120,7 @@ Publishing makes it easy for others to find your key by email address:
 Send to keys.openpgp.org (verifies email ownership before publishing)
 gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
 
-Alternative: Ubuntu key server
+Alternative - Ubuntu key server
 gpg --keyserver keyserver.ubuntu.com --send-keys YOUR_KEY_ID
 ```
 
@@ -131,7 +131,7 @@ You can also paste the public key directly on:
 - Your GitHub profile (`https://github.com/yourusername.gpg`)
 - Email signatures
 
-Step 6: Import Someone Else's Public Key
+Step 6 - Import Someone Else's Public Key
 
 To send an encrypted message, you need the recipient's public key.
 
@@ -163,7 +163,7 @@ Verify the fingerprint matches what the recipient told you (over a separate chan
 gpg --fingerprint recipient@example.com
 ```
 
-Step 7: Encrypt a Message
+Step 7 - Encrypt a Message
 
 ```bash
 Encrypt a file for a recipient (also sign it with your key)
@@ -172,7 +172,7 @@ gpg --recipient recipient@example.com \
     --armor \
     --encrypt message.txt
 
-Output: message.txt.asc (the encrypted message)
+Output - message.txt.asc (the encrypted message)
 ```
 
 The `--sign` flag attaches your digital signature. This proves the message came from you and hasn't been tampered with.
@@ -189,7 +189,7 @@ gpg --recipient alice@example.com \
 
 The message is encrypted separately for each recipient's key. only Alice or Bob can decrypt it.
 
-Step 8: Decrypt a Message
+Step 8 - Decrypt a Message
 
 ```bash
 Decrypt (will prompt for your passphrase)
@@ -201,7 +201,7 @@ gpg --decrypt --output message.txt message.txt.asc
 
 GPG automatically detects which private key to use based on the recipient field in the encrypted message.
 
-Step 9: Set Up Thunderbird with OpenPGP
+Step 9 - Set Up Thunderbird with OpenPGP
 
 Thunderbird 78+ has native OpenPGP support. no Enigmail required.
 
@@ -227,7 +227,7 @@ Thunderbird 78+ has native OpenPGP support. no Enigmail required.
  - Thunderbird decrypts automatically when you open the message
  - Displays "This message was encrypted and signed by..."
 
-Step 10: Sign-Only Mode (For Authenticity Without Encryption)
+Step 10 - Sign-Only Mode (For Authenticity Without Encryption)
 
 Signing without encryption lets anyone verify the message came from you, without needing to exchange keys first:
 
@@ -244,7 +244,7 @@ gpg --verify message.txt.asc
 
 This is useful for software releases, announcements, and situations where confidentiality isn't the goal but authenticity is.
 
-Step 11: Web of Trust and Key Signing
+Step 11 - Web of Trust and Key Signing
 
 The web of trust is a decentralized way to verify that a key actually belongs to the person it claims to. When you sign someone's key, you're vouching that you've verified the key belongs to them.
 
@@ -258,7 +258,7 @@ gpg --keyserver keys.openpgp.org --send-keys RECIPIENT_KEY_ID
 
 In practice, most people just verify fingerprints out-of-band rather than building formal trust chains.
 
-Step 12: Key Management Commands
+Step 12 - Key Management Commands
 
 ```bash
 List all keys in your keyring

@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Data Broker Ecosystem
+Step 1 - Understand the Data Broker environment
 
 Data brokers operate in a multi-billion dollar industry that trades in personal information. Major players like Acxiom, Experian Marketing Services, LexisNexis, and TransUnion aggregate data from public records, loyalty programs, and app permissions. They repackage this information into profiles sold to marketers, insurers, employers, and, critically, anyone conducting background checks or stalking.
 
@@ -36,7 +36,7 @@ People-search sites represent the consumer-facing arm of this industry. Sites li
 
 For developers and power users, this creates a technical challenge: systematically removing your data from services that have no financial incentive to delete it.
 
-Step 2: Manual Opt-Out Process
+Step 2 - Manual Opt-Out Process
 
 The baseline approach involves submitting opt-out requests to each broker individually. This process requires persistence but remains the most reliable method.
 
@@ -58,7 +58,7 @@ Most data brokers provide opt-out mechanisms buried in their privacy policies. C
 
 When submitting requests, provide only the minimum information required to verify your identity. State clearly that you invoke your right to deletion under applicable law. Keep records of all submissions.
 
-Step 3: Automated Opt-Out Strategies
+Step 3 - Automated Opt-Out Strategies
 
 Manual opt-outs become impractical given the hundreds of data brokers. Developers can automate parts of this process using scripts and APIs.
 
@@ -79,7 +79,7 @@ async function optOutFromBroker(browser, url, formSelector) {
     await page.click(formSelector + ' button[type="submit"]');
     console.log(`Opt-out submitted: ${url}`);
   } catch (error) {
-    console.error(`Failed: ${url} - ${error.message}`);
+    console.error(`Failed - ${url} - ${error.message}`);
   } finally {
     await context.close();
   }
@@ -120,13 +120,13 @@ def send_opt_out_email(broker_name, broker_email, your_email):
 
 Store broker email addresses in a JSON configuration file for easy updates.
 
-Step 4: Professional Removal Services
+Step 4 - Professional Removal Services
 
 When automation becomes overwhelming, commercial services handle opt-outs on your behalf. DeleteMe, OneRep, and Kanary maintain relationships with data brokers and submit opt-outs continuously. These services cost money but save significant time.
 
 For developers, evaluate whether the operational cost of self-managed removal exceeds subscription fees. Consider building internal tools if you handle removal at scale (for example, for employees or clients).
 
-Step 5: Preventing Future Data Collection
+Step 5 - Preventing Future Data Collection
 
 Removal from existing databases provides temporary relief. Preventing future collection requires ongoing effort.
 
@@ -160,7 +160,7 @@ def check_data_broker(name_query, broker_url):
 
 Schedule regular checks to identify new appearances requiring opt-out.
 
-Step 6: Legal Frameworks Supporting Removal
+Step 6 - Legal Frameworks Supporting Removal
 
 Several regulations provide legal basis for deletion requests:
 
@@ -182,7 +182,7 @@ For users with elevated threat models, additional measures reduce data broker ef
 
 These approaches involve significant effort and trade-offs. Evaluate whether your situation warrants extreme measures.
 
-Step 7: Build Your Data Broker Removal Spreadsheet
+Step 7 - Build Your Data Broker Removal Spreadsheet
 
 Create a systematic tracking document to monitor removal progress:
 
@@ -197,7 +197,7 @@ Instant Checkmate,instantcheckmate.com,Yes,2026-01-16,Pending,Email submitted
 
 Track the removal date, method used, and confirmation status. Many brokers take 30-90 days to process requests, so tracking prevents duplicate submissions.
 
-Step 8: Regulatory Rights and Legal Language
+Step 8 - Regulatory Rights and Legal Language
 
 Strengthen your opt-out requests with regulatory language:
 
@@ -228,7 +228,7 @@ Regards,
 
 Reference applicable laws in every request. CCPA, GDPR, and similar statutes carry legal weight that generic privacy requests lack.
 
-Step 9: Create an Automated Monitoring System
+Step 9 - Create an Automated Monitoring System
 
 Build a simple monitoring script to detect reappearance:
 
@@ -290,7 +290,7 @@ if __name__ == "__main__":
 
 Schedule this script to run monthly via cron or Task Scheduler.
 
-Step 10: Understand Data Broker Removal Delays
+Step 10 - Understand Data Broker Removal Delays
 
 Data brokers do not immediately comply with removal requests:
 
@@ -301,7 +301,7 @@ Data brokers do not immediately comply with removal requests:
 
 Reappearance within 6-12 months is common as brokers repopulate databases from updated sources. Plan for ongoing removal efforts rather than expecting permanent results.
 
-Step 11: State-Specific Data Broker Opt-Out Laws
+Step 11 - State-Specific Data Broker Opt-Out Laws
 
 Several states have enacted data broker-specific legislation:
 
@@ -312,7 +312,7 @@ Several states have enacted data broker-specific legislation:
 
 Check your state's privacy legislation for specific rights and deadlines.
 
-Step 12: Handling Data Brokers That Ignore Requests
+Step 12 - Handling Data Brokers That Ignore Requests
 
 Some brokers consistently ignore opt-out requests. Escalation options:
 
@@ -323,7 +323,7 @@ Some brokers consistently ignore opt-out requests. Escalation options:
 
 Document all failed removal attempts. Screenshot confirmation pages, save email responses, and timestamp everything for legal proceedings.
 
-Step 13: Long-Term Data Minimization Strategy
+Step 13 - Long-Term Data Minimization Strategy
 
 Preventing future data collection requires proactive measures:
 

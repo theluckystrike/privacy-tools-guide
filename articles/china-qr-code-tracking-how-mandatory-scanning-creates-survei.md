@@ -294,8 +294,8 @@ Decentralized Verification
 Instead of centralized government databases, distribute verification:
 
 ```
-Traditional: QR → Government Server → Database
-Alternative: QR → Local Blockchain → Distributed nodes
+Traditional - QR → Government Server → Database
+Alternative - QR → Local Blockchain → Distributed nodes
 ```
 
 Few jurisdictions will adopt decentralized systems that reduce government visibility.

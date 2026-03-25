@@ -14,7 +14,7 @@ intent-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
 
-Step 11: Privacy Controls by Facebook Feature (2026 Edition)
+Step 11 - Privacy Controls by Facebook Feature (2026 Edition)
 
 Facebook has fragmented into multiple services, each with distinct privacy concerns. Here's the complete breakdown:
 
@@ -27,7 +27,7 @@ Facebook Feed and Post Visibility
 | Who can follow you | Settings → Privacy → Who can follow you | Public follow (like Twitter) vs. friends-only | Set to "Friends" if private |
 | Who can see your friend list | Settings → Privacy → Who can see your friend list | Visibility of connections | Set to "Friends only" |
 
-Real impact: A single public post from 2015 could still be visible to strangers in 2026. Running "Limit past posts" takes 30 seconds and blocks all pre-2024 public posts.
+Real impact - A single public post from 2015 could still be visible to strangers in 2026. Running "Limit past posts" takes 30 seconds and blocks all pre-2024 public posts.
 
 Messenger Privacy
 
@@ -67,7 +67,7 @@ const messengerSettings = {
 };
 ```
 
-Critical finding: Messenger collects your location data if you allow it. Location is separate from your main Facebook privacy settings.
+Critical finding - Messenger collects your location data if you allow it. Location is separate from your main Facebook privacy settings.
 
 Instagram Integration (if linked)
 
@@ -90,7 +90,7 @@ Facebook owns Instagram. If your accounts are linked:
 
 ---
 
-Step 12: Data Request and Export for Privacy Audit
+Step 12 - Data Request and Export for Privacy Audit
 
 Understand exactly what Facebook knows about you:
 
@@ -100,10 +100,10 @@ facebook_data_audit.sh
 
 echo "=== Facebook Data Audit Script ==="
 
-Step 1: Access Facebook data download
+Step 1 - Access Facebook data download
 echo "1. Go to Settings > Your Facebook Information > Download Your Information"
 
-Step 2: Select data categories to export
+Step 2 - Select data categories to export
 echo "2. Select these minimum categories:"
 echo "   - Profile Information (name, birthdate, bio)"
 echo "   - Posts (all your posts ever)"
@@ -113,12 +113,12 @@ echo "   - Messages (Messenger history)"
 echo "   - Ads (all ads you interacted with)"
 echo "   - Cookies (tracking data)"
 
-Step 3: Choose format and initiate download
+Step 3 - Choose format and initiate download
 echo "3. Select JSON format (machine-readable)"
 echo "4. Click 'Create Download' (may take 24-48 hours)"
 
-Step 4: Download the ZIP file when ready
-Step 5: Extract and analyze
+Step 4 - Download the ZIP file when ready
+Step 5 - Extract and analyze
 
 Parse the JSON to find concerning data points
 python3 << 'PYTHON'
@@ -152,14 +152,14 @@ echo "   - Are there interests you don't recognize?"
 echo "   - Does Facebook's profile match your real interests?"
 echo "   - Are there sensitive categories you don't want targeted?"
 
-Step 6: Remove misclassified interests
+Step 6 - Remove misclassified interests
 echo "5. Go to Settings > Ads > Ad Preferences > Your Interests"
 echo "   Remove any interests you don't want to be targeted for"
 ```
 
 ---
 
-Step 13: Developer-Specific Privacy Hardening
+Step 13 - Developer-Specific Privacy Hardening
 
 If you build applications that use Facebook Login or integrate with Facebook data:
 
@@ -200,7 +200,7 @@ Revoke specific permissions without logging user out
 curl -X DELETE \
   "https://graph.facebook.com/USER_ID/permissions?permission=user_photos&access_token=YOUR_ACCESS_TOKEN"
 
-After revocation: user_photos permission is permanently revoked
+After revocation - user_photos permission is permanently revoked
 Next API call attempting to read photos will fail with permission error
 ```
 
@@ -241,7 +241,7 @@ def track_permission_changes(user_id, old_permissions, new_permissions):
 
 ---
 
-Privacy Comparison: Facebook vs. Alternatives (2026)
+Privacy Comparison - Facebook vs. Alternatives (2026)
 
 | Platform | Data Collection | Encryption | Business Model | Privacy Rating |
 |----------|-----------------|-----------|-----------------|-----------------|
@@ -251,16 +251,16 @@ Privacy Comparison: Facebook vs. Alternatives (2026)
 | WhatsApp | Minimal but owned by Meta | End-to-end encryption | Freemium (Meta) | 3/5 |
 | Mastodon | Self-hosted privacy control | HTTPS only | Open source | 4/5 |
 
-Reality check: Moving away from Facebook entirely is the most effective privacy measure. However, if you must maintain a Facebook account for social/professional reasons, aggressive privacy settings reduce (but don't eliminate) exposure.
+Reality check - Moving away from Facebook entirely is the most effective privacy measure. However, if you must maintain a Facebook account for social/professional reasons, aggressive privacy settings reduce (but don't eliminate) exposure.
 
 ---
 
-Step 14: Annual Facebook Privacy Audit Checklist
+Step 14 - Annual Facebook Privacy Audit Checklist
 
 Run this checklist once per year:
 
 ```markdown
-Step 15: Facebook Privacy Audit (Annual)
+Step 15 - Facebook Privacy Audit (Annual)
 
 - [ ] Settings > Privacy > Review post audience default (should be Friends)
 - [ ] Settings > Privacy > Run "Limit past posts" (blocks all old public posts)
@@ -274,8 +274,8 @@ Step 15: Facebook Privacy Audit (Annual)
 - [ ] Settings > Security > Enable Two-Factor Authentication if not already enabled
 - [ ] Posts > Check any public posts older than 2 years, delete or make private
 
-Time investment: 15 minutes
-Privacy improvement: Significant (60-70% reduction in data exposure)
+Time investment - 15 minutes
+Privacy improvement - Significant (60-70% reduction in data exposure)
 ```
 
 ---

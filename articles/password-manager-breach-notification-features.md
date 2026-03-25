@@ -23,9 +23,9 @@ Table of Contents
 - [API Integration Patterns](#api-integration-patterns)
 - [Practical Considerations](#practical-considerations)
 - [Beyond Password Managers](#beyond-password-managers)
-- [Comparative Feature Matrix: Breach Notification Capabilities](#comparative-feature-matrix-breach-notification-capabilities)
-- [Implementation Details: What Each Service Actually Checks](#implementation-details-what-each-service-actually-checks)
-- [Setting Up Breach Monitoring: Practical Configuration](#setting-up-breach-monitoring-practical-configuration)
+- [Comparative Feature Matrix - Breach Notification Capabilities](#comparative-feature-matrix-breach-notification-capabilities)
+- [Implementation Details - What Each Service Actually Checks](#implementation-details-what-each-service-actually-checks)
+- [Setting Up Breach Monitoring - Practical Configuration](#setting-up-breach-monitoring-practical-configuration)
 - [Responding to Breach Notifications: Workflow Best Practices](#responding-to-breach-notifications-workflow-best-practices)
 - [Avoiding False Alerts and Alert Fatigue](#avoiding-false-alerts-and-alert-fatigue)
 - [Infrastructure Credential Monitoring](#infrastructure-credential-monitoring)
@@ -159,7 +159,7 @@ Standalone services provide additional monitoring capabilities. Google Password 
 
 For developers managing infrastructure credentials, services like GitHub's credential scanning and cloud provider secret detection complement password manager features. The layered approach, password manager alerts plus infrastructure scanning, covers both user credentials and infrastructure secrets.
 
-Comparative Feature Matrix: Breach Notification Capabilities
+Comparative Feature Matrix - Breach Notification Capabilities
 
 Here's a detailed comparison of how major password managers implement breach checking:
 
@@ -175,7 +175,7 @@ Here's a detailed comparison of how major password managers implement breach che
 | User pricing | $3.99/month | Free-$13/month | $4.99/month | $34.99/year |
 | Enterprise dashboard | Yes ($3.99/user) | Yes ($2.50/user) | Yes (custom) | Yes (custom) |
 
-Implementation Details: What Each Service Actually Checks
+Implementation Details - What Each Service Actually Checks
 
 1Password Watchtower scans for:
 - Credentials matching HIBP entries
@@ -198,7 +198,7 @@ Bitwarden Breach Report checks:
 
 To manually trigger scanning:
 ```bash
-Bitwarden CLI: Check organization vault
+Bitwarden CLI - Check organization vault
 bw list items --organizationid=org-id --search breached
 ```
 
@@ -216,12 +216,12 @@ Keeper BreachWatch provides:
 - Integration with Keeper's proprietary threat intelligence
 - Admin reporting showing organizational exposure
 
-Setting Up Breach Monitoring: Practical Configuration
+Setting Up Breach Monitoring - Practical Configuration
 
 For Bitwarden users wanting to maximize breach detection:
 
 ```bash
-CLI method: Batch check all passwords
+CLI method - Batch check all passwords
 bw login your-email@example.com
 bw unlock password-here
 

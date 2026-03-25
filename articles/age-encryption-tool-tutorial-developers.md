@@ -47,7 +47,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install Age
+Step 1 - Install Age
 
 Age supports multiple platforms including macOS, Linux, and Windows. Install it using Homebrew on macOS:
 
@@ -76,23 +76,23 @@ age --version
 age v1.2.1
 ```
 
-Step 2: Understand Age's Key Pairs
+Step 2 - Understand Age's Key Pairs
 
-Age uses two types of keys: identity keys (private keys) and recipient keys (public keys). Generate a new identity key pair:
+Age uses two types of keys - identity keys (private keys) and recipient keys (public keys). Generate a new identity key pair:
 
 ```bash
 Generate identity (private key)
 age-keygen
 
 Output example:
-# created: 2026-03-15T12:00:00Z
-# public key: age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrjwfkg5vwveyq6mk9l
+created: 2026-03-15T12:00:00Z
+public key: age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrjwfkg5vwveyq6mk9l
 AGE-SECRET-KEY-1XK7Q6Z9J8V4Y2W5N3M1L6P0R8T3U9V7W4X1Y2Z5A3B6C9D0E2F4G7H8J
 ```
 
 Save this output securely. The public key (`age1ql3z...`) allows others to encrypt files for you without accessing your private key.
 
-Step 3: Encrypt Files
+Step 3 - Encrypt Files
 
 Encrypt a file for yourself using your public key:
 
@@ -115,7 +115,7 @@ For multiple recipients, specify each public key with a separate `-r` flag:
 age -r age1recipient1... -r age1recipient2... -o shared.tar.gz.age secret.tar.gz
 ```
 
-Step 4: Decrypt Files
+Step 4 - Decrypt Files
 
 Decrypt a file using your identity key:
 
@@ -135,7 +135,7 @@ This prompts for the passphrase. For automated workflows, pipe the passphrase:
 echo "your-passphrase" | age -d -i ~/age-key.txt encrypted.tar.gz.age -o decrypted.tar.gz
 ```
 
-Step 5: Use Passphrases Only
+Step 5 - Use Passphrases Only
 
 For quick symmetric encryption without key pairs, use passphrase-based encryption:
 
@@ -149,7 +149,7 @@ This creates a file encrypted with a passphrase. Decrypt using the same approach
 age -d secret.txt.age > restored_secret.txt
 ```
 
-Step 6: Implement Programmatic Integration
+Step 6 - Implement Programmatic Integration
 
 Integrate age into your Go applications using the age package:
 
@@ -216,7 +216,7 @@ Install the package:
 go get filippo.io/age
 ```
 
-Step 7: Integration with SSH Keys
+Step 7 - Integration with SSH Keys
 
 Age can derive recipient keys from existing SSH keys, making migration easier:
 
@@ -227,7 +227,7 @@ ssh-to-age < ~/.ssh/id_rsa.pub
 
 Use the resulting age public key for encryption. This approach uses your existing SSH infrastructure.
 
-Step 8: Create Shell Script Automation
+Step 8 - Create Shell Script Automation
 
 Create a reusable encryption script:
 
@@ -274,7 +274,7 @@ chmod +x encrypt.sh decrypt.sh
 ./decrypt.sh backup.tar.gz.age
 ```
 
-Step 9: Configure CI/CD Pipeline Integration
+Step 9 - Configure CI/CD Pipeline Integration
 
 Use age in automated deployment pipelines. Generate keys specifically for CI environments:
 

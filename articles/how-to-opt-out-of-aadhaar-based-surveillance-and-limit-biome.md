@@ -26,13 +26,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Aadhaar Authentication Ecosystem
+Step 1 - Understand the Aadhaar Authentication environment
 
 The Unique Identification Authority of India (UIDAI) operates the Aadhaar system. When you authenticate,  whether for banking, mobile SIM activation, or government services, you transmit biometric data to a central server. Each transaction generates an authentication log that persists indefinitely.
 
-The core problem: you cannot see who has access to your authentication history, and the system does not provide meaningful opt-out mechanisms for services you previously enrolled with. However, several controls can reduce your attack surface and limit future data collection.
+The core problem - you cannot see who has access to your authentication history, and the system does not provide meaningful opt-out mechanisms for services you previously enrolled with. However, several controls can reduce your attack surface and limit future data collection.
 
-Step 2: Locking Biometric Authentication
+Step 2 - Locking Biometric Authentication
 
 The most effective single action is locking your biometric data. When locked, fingerprint and iris authentication fails, forcing fallback to one-time passwords. This prevents unauthorized use of your biometrics and reduces the data footprint.
 
@@ -64,7 +64,7 @@ Confirm via OTP
 
 The application stores a virtual ID that masks your actual Aadhaar number during authentication, use this instead of sharing your full number when possible.
 
-Step 3: Manage Authentication History
+Step 3 - Manage Authentication History
 
 UIDAI provides limited visibility into authentication records through the "Authentication History" section. Access this to identify unexpected or unauthorized authentications.
 
@@ -78,7 +78,7 @@ Steps to check authentication history:
 
 Document any suspicious authentications. While UIDAI does not provide direct dispute resolution through this interface, you can file complaints through their grievance portal.
 
-Step 4: Revoking Service Provider Consents
+Step 4 - Revoking Service Provider Consents
 
 Many private services obtained Aadhaar authentication under questionable consent models. Unlike financial services where linkage is mandatory, many optional services collected Aadhaar data unnecessarily.
 
@@ -105,7 +105,7 @@ Telecom operators used Aadhaar for SIM verification extensively. While you canno
 - Request your operator provide authentication alternatives
 - Consider obtaining a new SIM with alternative ID if your current operator refuses
 
-Step 5: Virtual ID: A Developer's Approach
+Step 5 - Virtual ID: A Developer's Approach
 
 UIDAI introduced Virtual ID (VID) to reduce direct Aadhaar number exposure. Generate a VID that functions as a proxy for authentication without revealing your actual number.
 
@@ -122,7 +122,7 @@ Revoke and regenerate periodically:
 
 Developers building systems that interact with Aadhaar should exclusively accept VID rather than Aadhaar numbers. This shifts privacy burden away from users and demonstrates the architectural alternative UIDAI should have prioritized.
 
-Step 6: Protecting Against Downstream Data Breaches
+Step 6 - Protecting Against Downstream Data Breaches
 
 Your Aadhaar data may exist in hundreds of private databases. When these databases breach, as has happened repeatedly, your biometrics become exposed. Assume your Aadhaar data is compromised and plan accordingly.
 
@@ -158,7 +158,7 @@ Questions to ask:
 
 Services requiring Aadhaar by law include banking, telecom, and certain government benefits. Optional services, insurance policies, investment accounts, loyalty programs, may permit alternative identification.
 
-Step 7: Architectural Defenses for Developers
+Step 7 - Architectural Defenses for Developers
 
 If you build systems that interact with Aadhaar, implement privacy-preserving patterns:
 
@@ -182,7 +182,7 @@ function processAadhaarAuth(authData) {
 }
 ```
 
-Step 8: Behavioral Surveillance Through Authentication Patterns
+Step 8 - Behavioral Surveillance Through Authentication Patterns
 
 Beyond the biometric data itself, authentication patterns create a behavioral profile. Every time you authenticate, you leave a record:
 
@@ -228,7 +228,7 @@ To minimize behavioral surveillance:
 2. Vary times: If possible, authenticate at different times rather than establishing a pattern
 3. Minimize optional authentications: Use alternative ID when available for optional services
 
-Step 9: Regulatory and Legal Frameworks
+Step 9 - Regulatory and Legal Frameworks
 
 Understanding the legal field helps contextualize your options:
 
@@ -258,7 +258,7 @@ As of 2026, several court cases challenge Aadhaar's constitutionality:
 
 Track these cases through legal resource websites. If landmark rulings occur, they may provide additional opt-out opportunities.
 
-Step 10: Limitations and Realistic Expectations
+Step 10 - Limitations and Realistic Expectations
 
 Complete opt-out from Aadhaar is impossible for Indian residents. The system is woven into essential services, and many linkages have no deletion mechanism. However, significant reduction in exposure is achievable:
 
@@ -272,7 +272,7 @@ Complete opt-out from Aadhaar is impossible for Indian residents. The system is 
 
 The deeper solution requires regulatory reform: mandatory data retention limits, individual access to deletion requests, and authentication history transparency. Until then, these technical measures provide meaningful privacy improvement.
 
-Step 11: Advocacy and Policy Engagement
+Step 11 - Advocacy and Policy Engagement
 
 Beyond personal protection, consider engaging with privacy advocacy organizations:
 

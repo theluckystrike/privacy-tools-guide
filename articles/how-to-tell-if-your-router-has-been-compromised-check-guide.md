@@ -28,21 +28,21 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Signs Your Router May Be Compromised
+Step 1 - Signs Your Router May Be Compromised
 
 Router compromises often leave detectable traces, though sophisticated attackers may work to hide their presence. Watch for these warning indicators:
 
-Unexpected DNS Settings: One of the most common router attack vectors involves changing DNS servers to malicious ones. If your router's DNS settings point to unfamiliar IP addresses, particularly those you did not configure, this is a strong sign of compromise. Legitimate public DNS includes 8.8.8.8 (Google), 1.1.1.1 (Cloudflare), and 9.9.9.9 (Quad9).
+Unexpected DNS Settings - One of the most common router attack vectors involves changing DNS servers to malicious ones. If your router's DNS settings point to unfamiliar IP addresses, particularly those you did not configure, this is a strong sign of compromise. Legitimate public DNS includes 8.8.8.8 (Google), 1.1.1.1 (Cloudflare), and 9.9.9.9 (Quad9).
 
-Unknown Devices on Your Network: Unauthorized devices connected to your network may indicate that an attacker has gained access. Use network scanning tools to enumerate all connected clients.
+Unknown Devices on Your Network - Unauthorized devices connected to your network may indicate that an attacker has gained access. Use network scanning tools to enumerate all connected clients.
 
-Router Admin Interface Inaccessibility: If you cannot access your router's admin panel at its default IP address (commonly 192.168.0.1 or 192.168.1.1), or if credentials no longer work, the router may have been compromised and its firmware modified.
+Router Admin Interface Inaccessibility - If you cannot access your router's admin panel at its default IP address (commonly 192.168.0.1 or 192.168.1.1), or if credentials no longer work, the router may have been compromised and its firmware modified.
 
-Unusual Network Behavior: Frequent disconnections, significantly slower speeds, or unexpected traffic spikes can all signal compromise, though these symptoms also have legitimate causes.
+Unusual Network Behavior - Frequent disconnections, significantly slower speeds, or unexpected traffic spikes can all signal compromise, though these symptoms also have legitimate causes.
 
-New Unknown Ports Open: If port forwarding rules or firewall configurations appear that you did not create, investigate immediately.
+New Unknown Ports Open - If port forwarding rules or firewall configurations appear that you did not create, investigate immediately.
 
-Step 2: Checking Your Router for Compromise
+Step 2 - Checking Your Router for Compromise
 
 1. Verify DNS Settings
 
@@ -111,28 +111,28 @@ dig +trace example.com
 
 Examine the response to ensure your queries follow expected paths through your ISP's DNS or your chosen provider, rather than being intercepted by an unknown server.
 
-Step 3: Hardening Your Router After Detection
+Step 3 - Hardening Your Router After Detection
 
 If you discover compromise indicators, take immediate action:
 
-Factory Reset: Perform a factory reset to restore the router to known-good defaults. This removes most firmware-based malware, though some sophisticated threats may persist in flash memory.
+Factory Reset - Perform a factory reset to restore the router to known-good defaults. This removes most firmware-based malware, though some sophisticated threats may persist in flash memory.
 
-Update Firmware: After reset, immediately update to the latest firmware version from the manufacturer.
+Update Firmware - After reset, immediately update to the latest firmware version from the manufacturer.
 
-Change All Credentials: Set strong, unique passwords for both the admin interface and WiFi networks. Avoid default credentials entirely.
+Change All Credentials - Set strong, unique passwords for both the admin interface and WiFi networks. Avoid default credentials entirely.
 
-Disable Remote Management: Turn off WAN-side management interfaces unless absolutely necessary.
+Disable Remote Management - Turn off WAN-side management interfaces unless absolutely necessary.
 
-Enable WPA3 or WPA2-AES: Use strong encryption for your wireless networks. WPA2 with AES remains secure; avoid WEP and WPA-TKIP.
+Enable WPA3 or WPA2-AES - Use strong encryption for your wireless networks. WPA2 with AES remains secure; avoid WEP and WPA-TKIP.
 
-Disable UPnP: Universal Plug and Play has been exploited in numerous router attacks. Disable it unless a specific device requires it.
+Disable UPnP - Universal Plug and Play has been exploited in numerous router attacks. Disable it unless a specific device requires it.
 
 ```bash
 If your router supports SSH, generate strong keys
 ssh-keygen -t ed25519 -C "router-admin@$(hostname)"
 ```
 
-Step 4: Monitor for Future Compromise
+Step 4 - Monitor for Future Compromise
 
 Establish ongoing monitoring practices:
 
@@ -202,7 +202,7 @@ ssh root@192.168.1.1 "cat /etc/os-release"
 
 If you never installed custom firmware but find it running, this indicates compromise.
 
-Step 5: Network Reconnaissance for Suspicious Activity
+Step 5 - Network Reconnaissance for Suspicious Activity
 
 Beyond simple DNS checks, examine network behavior patterns:
 
@@ -232,7 +232,7 @@ docker run -d \
   pihole/pihole:latest
 ```
 
-Step 6: Router Model-Specific Vulnerabilities
+Step 6 - Router Model-Specific Vulnerabilities
 
 Certain router models are frequently compromised. Check your model against known CVEs:
 
@@ -241,7 +241,7 @@ Identify your router model
 curl -s http://192.168.1.1/status | grep -i "model\|version"
 
 Check against known exploits
-Visit: https://nvd.nist.gov/vuln/search
+Visit - https://nvd.nist.gov/vuln/search
 Or: https://www.exploit-db.com/
 
 Subscribe to CVE alerts for your model
@@ -250,7 +250,7 @@ Many vendors provide security advisory mailing lists
 
 Common vulnerable models from 2025-2026 include older TP-Link, D-Link, and Netgear units. If your router model appears in active CVE lists, prioritize updates.
 
-Step 7: Restoring Router Security After Compromise
+Step 7 - Restoring Router Security After Compromise
 
 If you suspect compromise:
 
@@ -291,7 +291,7 @@ Reset SSH/SFTP credentials if enabled
 ssh-keygen -t ed25519 -C "router"
 ```
 
-Step 8: Detecting Command and Control (C&C) Communication
+Step 8 - Detecting Command and Control (C&C) Communication
 
 Compromised routers often communicate with attacker infrastructure:
 
@@ -317,7 +317,7 @@ curl https://api.abuseipdb.com/api/v2/check \
   -d ipAddress=SUSPICIOUS_IP
 ```
 
-Step 9: Long-Term Monitoring Strategy
+Step 9 - Long-Term Monitoring Strategy
 
 Implement continuous monitoring rather than one-time checks:
 

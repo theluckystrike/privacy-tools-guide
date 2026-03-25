@@ -21,11 +21,11 @@ Fitness trackers collect intimate health data: heart rate, sleep patterns, menst
 Table of Contents
 
 - [Privacy Risks in Fitness Tracking](#privacy-risks-in-fitness-tracking)
-- [Tier 1: Privacy-First Design (No Cloud Sync Default)](#tier-1-privacy-first-design-no-cloud-sync-default)
-- [Tier 2: Privacy-Respecting With Caveats (Cloud Sync Default, But Transparent)](#tier-2-privacy-respecting-with-caveats-cloud-sync-default-but-transparent)
-- [Tier 3: Privacy Concerns (Owned by Large Tech, Data Sharing)](#tier-3-privacy-concerns-owned-by-large-tech-data-sharing)
-- [Tier 4: Privacy-Respecting for Specific Use Cases](#tier-4-privacy-respecting-for-specific-use-cases)
-- [Comparison Table: Privacy Scores](#comparison-table-privacy-scores)
+- [Tier 1 - Privacy-First Design (No Cloud Sync Default)](#tier-1-privacy-first-design-no-cloud-sync-default)
+- [Tier 2 - Privacy-Respecting With Caveats (Cloud Sync Default, But Transparent)](#tier-2-privacy-respecting-with-caveats-cloud-sync-default-but-transparent)
+- [Tier 3 - Privacy Concerns (Owned by Large Tech, Data Sharing)](#tier-3-privacy-concerns-owned-by-large-tech-data-sharing)
+- [Tier 4 - Privacy-Respecting for Specific Use Cases](#tier-4-privacy-respecting-for-specific-use-cases)
+- [Comparison Table - Privacy Scores](#comparison-table-privacy-scores)
 - [Selection Guide by Use Case](#selection-guide-by-use-case)
 - [Protecting Your Health Data](#protecting-your-health-data)
 - [Data Breach History (2024-2026)](#data-breach-history-2024-2026)
@@ -57,7 +57,7 @@ Real-world risks:
 - Employer surveillance: Wellness programs with data access misused
 - Data breaches: Fitbit (Google), Apple Health (mixed records)
 
-Tier 1: Privacy-First Design (No Cloud Sync Default)
+Tier 1 - Privacy-First Design (No Cloud Sync Default)
 
 These trackers prioritize on-device processing and minimal cloud transmission.
 
@@ -96,7 +96,7 @@ A healthcare worker using epix to track personal sleep quality keeps all data of
 
 Downsides:
 - Less flashy UI than Apple Watch
-- Smaller third-party app ecosystem
+- Smaller third-party app environment
 - No music streaming (storage constraints for offline privacy)
 - Less integration with other health apps
 
@@ -157,13 +157,13 @@ Best For:
 - People wanting minimal cloud dependence
 - Those prioritizing data ownership
 
-Tier 2: Privacy-Respecting With Caveats (Cloud Sync Default, But Transparent)
+Tier 2 - Privacy-Respecting With Caveats (Cloud Sync Default, But Transparent)
 
 These companies collect data but are transparent about it and respect deletion requests.
 
 Apple Watch (with caveats)
 
-Apple's privacy story is mixed: on-device processing is strong, but cloud integration is default.
+Apple's privacy story is mixed - on-device processing is strong, but cloud integration is default.
 
 Privacy Architecture:
 - Heart rate, ECG, blood oxygen processing on-device
@@ -211,9 +211,9 @@ Real-World Privacy Scenario:
 If you disable iCloud, Apple Watch still requires Wi-Fi to fully function. This creates a strong incentive to enable iCloud. Most users accept default behavior (cloud sync).
 
 Best For:
-- iPhone users (ecosystem integration is strong)
+- iPhone users (environment integration is strong)
 - Users who trust Apple's privacy stance
-- People wanting best fitness app ecosystem
+- People wanting best fitness app environment
 - Those okay with optional cloud sync
 
 Best Not For:
@@ -221,7 +221,7 @@ Best Not For:
 - People paranoid about cloud data
 - Those using Android (limited compatibility)
 
-Tier 3: Privacy Concerns (Owned by Large Tech, Data Sharing)
+Tier 3 - Privacy Concerns (Owned by Large Tech, Data Sharing)
 
 These trackers are popular but have privacy trade-offs to understand.
 
@@ -232,7 +232,7 @@ Google acquired Fitbit in 2021. Google's business model is data monetization, so
 Privacy Issues:
 - Cloud sync is mandatory (no offline-only mode)
 - Data syncs continuously to Google servers
-- Integration with Google Fit (Google's health ecosystem)
+- Integration with Google Fit (Google's health environment)
 - Google can use health data for advertising profile (officially denied, but terms allow it)
 - "Federated Learning" means data trains Google's health AI models
 - Data retention: Google keeps data indefinitely
@@ -259,7 +259,7 @@ Even if Google doesn't currently use health data for ads, the legal permission e
 Best For:
 - Users not concerned about Google having health data
 - Those wanting inexpensive tracker ($99)
-- Android users wanting ecosystem integration
+- Android users wanting environment integration
 
 Best Not For:
 - Privacy-conscious individuals
@@ -272,13 +272,13 @@ Meta (Facebook) discontinued its smartwatch in 2023 after poor sales, partly due
 
 Why it failed:
 - Users were uncomfortable with Facebook having health data
-- Limited fitness app ecosystem
+- Limited fitness app environment
 - Poor privacy perception despite contractual limits
 - Competition from Apple, Garmin
 
-Lesson: Privacy reputation matters; users rejected Meta's tracker on principle.
+Lesson - Privacy reputation matters; users rejected Meta's tracker on principle.
 
-Tier 4: Privacy-Respecting for Specific Use Cases
+Tier 4 - Privacy-Respecting for Specific Use Cases
 
 These trackers serve niche needs with strong privacy.
 
@@ -321,7 +321,7 @@ Best Not For:
 - Users needing continuous heart rate
 - Those wanting fitness tracking
 
-Comparison Table: Privacy Scores
+Comparison Table - Privacy Scores
 
 | Tracker | On-Device Processing | Cloud Default | Encryption | Data Sharing | GDPR Compliant | Overall Score |
 |---------|-------------------|---------------|-----------|-------------|----------------|---------------|
@@ -341,31 +341,31 @@ Scoring Criteria:
 
 Selection Guide by Use Case
 
-Use Case 1: Paranoid About All Cloud Data
+Use Case 1 - Paranoid About All Cloud Data
 - Best: Garmin epix, Withings ScanWatch
 - Why: These work 100% offline; cloud is optional
 - Cost: $299-499
-- Trade-off: Less ecosystem integration
+- Trade-off: Less environment integration
 
-Use Case 2: Privacy-Conscious But Practical
+Use Case 2 - Privacy-Conscious But Practical
 - Best: Apple Watch or Oura Ring
-- Why: Good privacy controls + useful ecosystem
+- Why: Good privacy controls + useful environment
 - Cost: $299-399
 - Trade-off: Cloud is default; you must actively disable it
 
-Use Case 3: Sleep-Focused Privacy
+Use Case 3 - Sleep-Focused Privacy
 - Best: Oura Ring
 - Why: Minimal data collection; sleep-optimized
 - Cost: $299 + $60/year
 - Trade-off: Not a complete fitness tracker
 
-Use Case 4: Android + Privacy
+Use Case 4 - Android + Privacy
 - Best: Garmin epix or Withings
 - Why: Android isn't supported well by Apple; Garmin/Withings work
 - Cost: $299-499
-- Trade-off: Smaller app ecosystem
+- Trade-off: Smaller app environment
 
-Use Case 5: Budget-Conscious Privacy
+Use Case 5 - Budget-Conscious Privacy
 - Best: Garmin Vivosmart (entry-level)
 - Why: Garmin privacy at lower price point ($170)
 - Cost: $170
@@ -449,7 +449,7 @@ Data Breach History (2024-2026)
 | Garmin | Ransomware (2023) | ~15M | High |
 | Withings | None reported (2024-2026) |. | None |
 
-Lesson: Even privacy-respecting trackers get breached. Assume data will leak; minimize what's collected.
+Lesson - Even privacy-respecting trackers get breached. Assume data will leak; minimize what's collected.
 
 Regulatory Space (2026)
 
@@ -459,7 +459,7 @@ Regulatory Space (2026)
 - Proposed: Multiple states considering health data privacy laws
 - UK: Online Safety Bill will include health data protections
 
-Impact: Withings (EU) and Apple (GDPR-compliant) have better legal protections than Fitbit.
+Impact - Withings (EU) and Apple (GDPR-compliant) have better legal protections than Fitbit.
 
 Frequently Asked Questions
 

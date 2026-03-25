@@ -27,7 +27,7 @@ Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Advanced Payment Anonymization](#advanced-payment-anonymization)
-- [Threat Models: Anonymity Levels](#threat-models-anonymity-levels)
+- [Threat Models - Anonymity Levels](#threat-models-anonymity-levels)
 - [Troubleshooting](#troubleshooting)
 
 Prerequisites
@@ -40,13 +40,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Challenge
+Step 1 - Understand the Challenge
 
 Mobile phones and SIM cards represent a significant privacy vulnerability because most jurisdictions require identity verification during purchase. Carriers maintain subscriber databases linking phone numbers, SIM card identifiers (ICCID), and personal information. However, several strategies can minimize or eliminate this tracking vector.
 
 The core problem involves three distinct layers: the device itself (IMEI tracking), the SIM card (ICCID and phone number registration), and the payment method (credit card or identity-linked transactions). Effective anonymous purchasing requires addressing all three layers.
 
-Step 2: Prepaid SIM Cards: The Foundation
+Step 2 - Prepaid SIM Cards: The Foundation
 
 Prepaid SIM cards remain the most accessible starting point for anonymous mobile usage. These cards require no contract and typically need minimal or no identification at purchase. However, regulations vary significantly by country and even by carrier within the same jurisdiction.
 
@@ -68,7 +68,7 @@ echo "ICCID: $(cat /proc/iccid 2>/dev/null || echo 'N/A')" >> ~/secure-notes/sim
 
 If registration is required, consider using a mail forwarding service with a business address. Some privacy-focused users maintain dedicated mailboxes specifically for this purpose, registered under an LLC or business entity rather than a personal name.
 
-Step 3: Device Acquisition Strategies
+Step 3 - Device Acquisition Strategies
 
 Burner Phones and Budget Devices
 
@@ -97,7 +97,7 @@ settings -> security -> trusted credentials
 
 For iOS devices, restore through iTunes/Finder to ensure a clean iOS installation without any MDM profiles or configuration profiles left behind.
 
-Step 4: Payment Method Anonymization
+Step 4 - Payment Method Anonymization
 
 Cash-Based Purchasing
 
@@ -132,17 +132,17 @@ Privacy-oriented mail forwarding services can help:
 - Some services offer package rejection and forwarding
 - Combine with a VPN when ordering online to avoid IP-based correlation
 
-Step 5: Operational Security After Purchase
+Step 5 - Operational Security After Purchase
 
 Acquiring hardware anonymously is only part of the equation. Operational security afterward matters equally.
 
 SIM Card Isolation
 
 ```bash
-For Android: Check which apps have phone permissions
+For Android - Check which apps have phone permissions
 adb shell pm list permissions | grep -i phone
 
-For iOS: Settings -> Privacy -> Phone to review access
+For iOS - Settings -> Privacy -> Phone to review access
 Revoke access for any apps that don't need it
 ```
 
@@ -154,7 +154,7 @@ Consider these network-level privacy measures:
 
 ```bash
 Disable WiFi calling if not needed (can expose location)
-Android: Settings -> Connections -> WiFi Calling -> Off
+Android - Settings -> Connections -> WiFi Calling -> Off
 
 Disable automatic network switching
 Settings -> Mobile Networks -> Automatic Network Selection -> Manual
@@ -163,7 +163,7 @@ Use encrypted messaging apps rather than SMS
 Signal, Session, or SimpleX for sensitive communications
 ```
 
-Step 6: Carrier-Specific Prepaid Options and Real Pricing
+Step 6 - Carrier-Specific Prepaid Options and Real Pricing
 
 Understanding specific carrier policies and pricing helps optimize anonymous acquisition:
 
@@ -201,7 +201,7 @@ For travelers or specific country selection:
 - holafly.com: Virtual numbers (esim format, requires verification)
 - skyroam.com: International portable WiFi for location-free internet
 
-Step 7: Device Acquisition Deep Dive
+Step 7 - Device Acquisition Deep Dive
 
 Budget Device Models and IMEI Considerations
 
@@ -223,7 +223,7 @@ Validating Device Cleanliness
 ```bash
 Full device validation after acquisition
 1. Check IMEI against Apple/Samsung databases for reported losses
-IMEI: Found via Settings -> About -> IMEI
+IMEI - Found via Settings -> About -> IMEI
 Lookup at IMEI24.com or manufacturer's anti-theft database
 
 2. Scan for pre-installed MDM profiles
@@ -283,7 +283,7 @@ Limited retailers accepting Monero directly:
 - Select Asian SIM providers
 ```
 
-Practical limitation: Shipping address linkage remains the core vulnerability. Cryptocurrency solves the payment trail but not the physical address leak.
+Practical limitation - Shipping address linkage remains the core vulnerability. Cryptocurrency solves the payment trail but not the physical address leak.
 
 Layered Mail Services Strategy
 
@@ -291,13 +291,13 @@ For higher operational security:
 
 ```bash
 Use nested mail forwarding
-Layer 1: Business address registered to LLC
-Layer 2: Physical mail forwarding to Layer 1
-Layer 3: Purchase shipped to Layer 2
+Layer 1 - Business address registered to LLC
+Layer 2 - Physical mail forwarding to Layer 1
+Layer 3 - Purchase shipped to Layer 2
 
 Example workflow:
 Purchase -> Ship to: [Forwarding Service Address]
-Forwarding Service forwards to: [Business LLC Address]
+Forwarding Service forwards to - [Business LLC Address]
 You retrieve from business location
 
 Tools:
@@ -316,15 +316,15 @@ Some payment methods provide better anonymity than others:
 - BitPay Cards: Crypto-linked cards with limited KYC (available in select countries)
 - Privacy.com: Virtual card numbers (US-only, requires bank account but masks real card)
 
-Most effective: Cash → Vanilla prepaid card → Online purchase → Mail forwarding service
+Most effective - Cash → Vanilla prepaid card → Online purchase → Mail forwarding service
 
-Step 8: Post-Purchase Hardening
+Step 8 - Post-Purchase Hardening
 
 Immediately after acquiring hardware, establish baseline hardening:
 
 ```bash
 1. Enable full-disk encryption
-Android 10+: Settings -> Security -> Encryption -> Encrypt Phone
+Android 10+ - Settings -> Security -> Encryption -> Encrypt Phone
 iOS: Settings -> Face ID & Passcode -> Enable (default on modern iOS)
 
 2. Disable telemetry completely
@@ -338,41 +338,41 @@ Do NOT use Google Play Store on anonymous devices
 adb shell settings put secure location_providers_allowed -gps,-network
 
 5. Use only encrypted messaging apps
-Recommended: Signal (using new account), Session (Monero-optional)
+Recommended - Signal (using new account), Session (Monero-optional)
 
 6. Mount filesystem as read-only when possible
 For ultra-high security, disable write access to /system
 adb shell mount -o ro,remount /system
 ```
 
-Threat Models: Anonymity Levels
+Threat Models - Anonymity Levels
 
-Level 1: Basic Privacy (Defending Against Commercial Tracking)
+Level 1 - Basic Privacy (Defending Against Commercial Tracking)
 - Cash purchase at retail locations
 - Standard prepaid SIM
 - Limited background checking
 
-Defense against: Carrier tracking, ISP tracking, advertising networks
+Defense against - Carrier tracking, ISP tracking, advertising networks
 
-Level 2: Enhanced Anonymity (Against Local Surveillance)
+Level 2 - Enhanced Anonymity (Against Local Surveillance)
 - Physical separation through mail forwarding service
 - Multiple device identities
 - Network isolation through VPN
 
-Defense against: Physical surveillance, location tracking, local law enforcement without warrant
+Defense against - Physical surveillance, location tracking, local law enforcement without warrant
 
-Level 3: Advanced Operational Security (Against Active Targeting)
+Level 3 - Advanced Operational Security (Against Active Targeting)
 - Nested mail forwarding (multiple hops)
 - Cryptocurrency payment through mixing
 - Air-gapped device configuration
 - Separate networks with no correlation to primary identity
 - Hardware firewall with network isolation
 
-Defense against: Sophisticated actors, organized crime investigations, state-level surveillance
+Defense against - Sophisticated actors, organized crime investigations, state-level surveillance
 
 Most users seeking reasonable privacy will benefit from Level 1-2 measures. Level 3 requires extreme discipline and attracts attention through unusual purchasing patterns.
 
-Step 9: Legal and Practical Considerations
+Step 9 - Legal and Practical Considerations
 
 Jurisdictions vary significantly in their requirements. In some countries, owning a mobile phone without registration is illegal and can result in service disconnection or fines. Research local regulations before proceeding:
 

@@ -41,7 +41,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Select the Hardware
+Step 1 - Select the Hardware
 
 For this setup, you need an affordable Android device that supports custom ROMs. The Google Pixel 4a (discontinued but available used) or newer budget devices like the Pixel 7a provide excellent support for privacy-oriented custom ROMs. Avoid iOS devices because they offer limited options for user control over app permissions and network traffic.
 
@@ -54,7 +54,7 @@ fastboot flashing get_unlock_ability
 
 If the value returns as 1, you can unlock the bootloader and install custom ROMs.
 
-Step 2: Configure the Operating System Selection
+Step 2 - Configure the Operating System Selection
 
 Stock Android includes Google Play Services, which continuously syncs data to Google's servers. For maximum privacy, install a de-Googled custom ROM. Two excellent options exist:
 
@@ -64,7 +64,7 @@ CalyxOS offers a middle ground with optional Google Play Services that you can e
 
 For dating app use specifically, CalyxOS with Google Play Services disabled by default provides the best balance. Install only the apps you need, and enable Play Services only for specific applications that refuse to work otherwise.
 
-Step 3: Initial Device Configuration
+Step 3 - Initial Device Configuration
 
 After flashing your chosen ROM, follow these hardening steps before installing any dating applications:
 
@@ -115,7 +115,7 @@ PersistentKeepalive = 25
 
 This configuration routes all traffic through your VPN, preventing your internet service provider and local network operators from observing your dating app usage.
 
-Step 4: App-Specific Privacy Configurations
+Step 4 - App-Specific Privacy Configurations
 
 Each dating platform requires individual attention to minimize data exposure.
 
@@ -152,10 +152,10 @@ A safer approach involves manually disabling location services in your phone's q
 ```bash
 Quick tile configuration:
 Settings > System > Gesture > Quick Settings
-Add tile: "Location" for one-tap disabling
+Add tile - "Location" for one-tap disabling
 ```
 
-Step 5: Operational Security for Meetups
+Step 5 - Operational Security for Meetups
 
 The privacy setup continues beyond the digital realm into physical meetups.
 
@@ -180,7 +180,7 @@ if __name__ == "__main__":
 
 This approach prevents platform correlation, if one dating service experiences a breach, your other accounts remain unlinked to your identity.
 
-Step 6: Budgeting for a Dedicated Dating Phone
+Step 6 - Budgeting for a Dedicated Dating Phone
 
 Setting up a separate device requires reasonable budget planning:
 
@@ -196,40 +196,40 @@ Service Costs:
 - Monthly data plan: $10-$30 depending on coverage needs
 - VPN subscription: $5-$15/month
 
-Total annual cost: $200-$500 including hardware, much less than the mental health cost of dating app breaches affecting your primary identity.
+Total annual cost - $200-$500 including hardware, much less than the mental health cost of dating app breaches affecting your primary identity.
 
-Step 7: Network-Level Configuration for Dating Privacy
+Step 7 - Network-Level Configuration for Dating Privacy
 
 Beyond the OS and app level, configure network protections:
 
-DNS Privacy: Configure DNS over HTTPS (DoH) to prevent ISP tracking of which domains you visit:
+DNS Privacy - Configure DNS over HTTPS (DoH) to prevent ISP tracking of which domains you visit:
 
 ```bash
 On CalyxOS or other privacy-focused ROMs
 Settings > Network & Internet > Private DNS > Select service
-Choose: 1.1.1.2 (Cloudflare) or 9.9.9.10 (Quad9)
+Choose - 1.1.1.2 (Cloudflare) or 9.9.9.10 (Quad9)
 ```
 
 These DNS providers don't log queries and prevent your ISP from observing which domains you access through dating apps.
 
-HTTPS-Only Mode: Enable strict HTTPS enforcement to prevent man-in-the-middle attacks on public WiFi:
+HTTPS-Only Mode - Enable strict HTTPS enforcement to prevent man-in-the-middle attacks on public WiFi:
 
 ```
 Enable in supported Android browsers or Settings > Security
 Ensures all traffic is encrypted end-to-end
 ```
 
-Step 8: Manage Multiple Dating Accounts Across Platforms
+Step 8 - Manage Multiple Dating Accounts Across Platforms
 
 Some people maintain separate accounts on different dating platforms. Consider these synchronization challenges:
 
-Photo Management: Store photos in a separate folder outside your main photo library. Use limited resizing to prevent cross-platform image recognition.
+Photo Management - Store photos in a separate folder outside your main photo library. Use limited resizing to prevent cross-platform image recognition.
 
-Bio and Profile Consistency: Avoid copy-pasting the same bio across platforms, distinctive phrasing creates linkable fingerprints. Write unique bios for each platform.
+Bio and Profile Consistency - Avoid copy-pasting the same bio across platforms, distinctive phrasing creates linkable fingerprints. Write unique bios for each platform.
 
-Activity Timing: If you use the dating phone for multiple accounts, vary when you're active on different apps. Synchronized activity patterns across accounts suggest they're managed by the same person.
+Activity Timing - If you use the dating phone for multiple accounts, vary when you're active on different apps. Synchronized activity patterns across accounts suggest they're managed by the same person.
 
-Step 9: Emergency Phone Setup
+Step 9 - Emergency Phone Setup
 
 Maintain an emergency plan for your dating phone:
 
@@ -246,42 +246,42 @@ If you suspect a dating app on the phone has been compromised:
 3. Check the work profile (if using Shelter) for suspicious apps
 4. Factory reset the profile or entire phone if needed
 
-Natural Upgrade: When ready to upgrade the dating phone, wipe it completely and sell it for parts or recycle responsibly. Your dating activity remains isolated to the device and never leaks to your next phone.
+Natural Upgrade - When ready to upgrade the dating phone, wipe it completely and sell it for parts or recycle responsibly. Your dating activity remains isolated to the device and never leaks to your next phone.
 
-Step 10: Long-Term Privacy Maintenance
+Step 10 - Long-Term Privacy Maintenance
 
 Maintaining privacy on your dating phone requires ongoing effort:
 
-Monthly: Review installed apps and remove those you no longer use. Check app permissions quarterly and revoke unnecessary access.
+Monthly - Review installed apps and remove those you no longer use. Check app permissions quarterly and revoke unnecessary access.
 
-Quarterly: Review your dating app settings for any privacy option changes. Dating platforms update their privacy controls regularly.
+Quarterly - Review your dating app settings for any privacy option changes. Dating platforms update their privacy controls regularly.
 
-Before Each Date: Ensure location services are disabled. Disable Bluetooth to prevent device discovery. Close messaging apps to prevent notifications revealing your presence.
+Before Each Date - Ensure location services are disabled. Disable Bluetooth to prevent device discovery. Close messaging apps to prevent notifications revealing your presence.
 
-After Deleting Profiles: Don't assume your data is deleted from platform servers. Use your generated email address information to request data deletion under privacy laws like GDPR (if in EU) or CCPA (if in California).
+After Deleting Profiles - Don't assume your data is deleted from platform servers. Use your generated email address information to request data deletion under privacy laws like GDPR (if in EU) or CCPA (if in California).
 
-Step 11: Ethical Considerations
+Step 11 - Ethical Considerations
 
 Using a separate phone for dating raises some ethical questions worth considering:
 
-Transparency: You're not obligated to tell dates about your privacy phone setup. However, if someone asks about your identity, be honest. The phone setup is about protecting your digital privacy, not deceiving people about your real identity.
+Transparency - You're not obligated to tell dates about your privacy phone setup. However, if someone asks about your identity, be honest. The phone setup is about protecting your digital privacy, not deceiving people about your real identity.
 
-Photo Ethics: Ensure all photos you use are actually you and recent. Using old photos or pictures of other people is deceptive regardless of which phone you use.
+Photo Ethics - Ensure all photos you use are actually you and recent. Using old photos or pictures of other people is deceptive regardless of which phone you use.
 
-Information Sharing: The privacy phone doesn't justify lying in your profile. Age, occupation, and relationship status should be accurate.
+Information Sharing - The privacy phone doesn't justify lying in your profile. Age, occupation, and relationship status should be accurate.
 
-Step 12: Manage Multiple Dating Personas
+Step 12 - Manage Multiple Dating Personas
 
 Some people maintain multiple dating profiles on the same platform to appeal to different audiences:
 
-Technical Approach: Create multiple user accounts, each authenticated with separate email addresses and phone numbers. Use the work profile feature to keep apps isolated:
+Technical Approach - Create multiple user accounts, each authenticated with separate email addresses and phone numbers. Use the work profile feature to keep apps isolated:
 
 ```bash
 Using Shelter to manage multiple isolated apps
 Create separate work profiles for each dating app
-Profile 1: Tinder
-Profile 2: Bumble
-Profile 3: Hinge
+Profile 1 - Tinder
+Profile 2 - Bumble
+Profile 3 - Hinge
 
 Each profile has completely separate:
 - Contact lists (can't see each other's contacts)
@@ -290,21 +290,21 @@ Each profile has completely separate:
 - Network activity (appears from same IP but different encrypted sessions)
 ```
 
-Ethical Concerns: Operating multiple personas raises authenticity questions. Be honest within each persona, if someone on your Tinder profile is your authentic self, don't represent a different person. Multiple personas should represent different aspects of your authentic self, not deceptions.
+Ethical Concerns - Operating multiple personas raises authenticity questions. Be honest within each persona, if someone on your Tinder profile is your authentic self, don't represent a different person. Multiple personas should represent different aspects of your authentic self, not deceptions.
 
-Step 13: Handling Relationship Formation and Trust
+Step 13 - Handling Relationship Formation and Trust
 
 If a connection becomes serious, transitioning from the dating phone requires planning:
 
-Gradual Integration: Rather than suddenly giving your primary phone number, gradually increase trust:
+Gradual Integration - Rather than suddenly giving your primary phone number, gradually increase trust:
 1. Initial communication: Dating phone only
 2. After several dates: Share Signal number
 3. After meeting in person multiple times: Potentially share primary contact info
 4. In established relationship: May choose to integrate into primary phone
 
-Privacy Discussion: Have explicit conversations about privacy expectations. Some people respect compartmentalization; others see it as dishonest. Clarify expectations early.
+Privacy Discussion - Have explicit conversations about privacy expectations. Some people respect compartmentalization; others see it as dishonest. Clarify expectations early.
 
-Account Deletion: When ending a dating persona, delete accounts systematically:
+Account Deletion - When ending a dating persona, delete accounts systematically:
 1. Download your data (exercising data subject access rights)
 2. Delete messages with matches
 3. Delete photos
@@ -312,23 +312,23 @@ Account Deletion: When ending a dating persona, delete accounts systematically:
 5. Wait retention period, then request permanent deletion
 6. Verify deletion through account status checks
 
-Step 14: Long-Term Privacy Maintenance on Dating Phone
+Step 14 - Long-Term Privacy Maintenance on Dating Phone
 
 Maintaining a dating phone for months requires ongoing attention:
 
-Update Schedule: Keep CalyxOS and all apps updated. Operating system updates often patch security vulnerabilities. Set monthly update reminders.
+Update Schedule - Keep CalyxOS and all apps updated. Operating system updates often patch security vulnerabilities. Set monthly update reminders.
 
-Storage Cleanup: Regularly delete old conversations and photos. Each piece of data is a potential privacy loss vector if the phone is compromised.
+Storage Cleanup - Regularly delete old conversations and photos. Each piece of data is a potential privacy loss vector if the phone is compromised.
 
-App Audit: Every 3 months, review which apps are installed. Delete dating apps you no longer use. Each app represents a potential attack surface.
+App Audit - Every 3 months, review which apps are installed. Delete dating apps you no longer use. Each app represents a potential attack surface.
 
-Password Rotation: If you reuse the dating phone for multiple apps with similar passwords, rotate them quarterly. This limits damage if any single password is compromised.
+Password Rotation - If you reuse the dating phone for multiple apps with similar passwords, rotate them quarterly. This limits damage if any single password is compromised.
 
 Advanced Operational Security
 
 For users with advanced threat models (journalists dating while covering sensitive topics, activists in oppressive regimes):
 
-Geolocation Awareness: Even with location services disabled, dating apps can infer location from:
+Geolocation Awareness - Even with location services disabled, dating apps can infer location from:
 - IP address (reveals general area)
 - Bluetooth beacon detection
 - WiFi network SSID information
@@ -339,7 +339,7 @@ Counter these by:
 - Avoiding public WiFi (use personal hotspot instead)
 - Randomizing location by varying which locations you access from
 
-Metadata Stripping: If sending photos through dating apps, strip EXIF data first:
+Metadata Stripping - If sending photos through dating apps, strip EXIF data first:
 
 ```bash
 Remove metadata from images
@@ -350,9 +350,9 @@ exiftool dating_photo.jpg | grep -i gps
 Should return no results
 ```
 
-Message Encryption: Dating app in-app messaging is not end-to-end encrypted. For sensitive conversations, suggest switching to Signal or Briar early. This establishes trust and provides security.
+Message Encryption - Dating app in-app messaging is not end-to-end encrypted. For sensitive conversations, suggest switching to Signal or Briar early. This establishes trust and provides security.
 
-Step 15: Recovery and Device Loss
+Step 15 - Recovery and Device Loss
 
 If your dating phone is lost or stolen:
 
@@ -366,7 +366,7 @@ Data Recovery After Loss:
 - Conversations with matches are gone (unavoidable with app isolation)
 - No personal identity leaked (since phone is completely separated)
 
-Access Prevention: If someone obtains the dating phone, they have access to your dating identity but nothing connecting to your primary identity. This compartmentalization provides the security value, a compromised dating phone doesn't compromise your entire digital identity.
+Access Prevention - If someone obtains the dating phone, they have access to your dating identity but nothing connecting to your primary identity. This compartmentalization provides the security value, a compromised dating phone doesn't compromise your entire digital identity.
 
 Troubleshooting
 

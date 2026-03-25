@@ -19,7 +19,7 @@ Frequently Asked Questions
 
 Table of Contents
 
-- [Implementation Comparison: Technical Approach](#implementation-comparison-technical-approach)
+- [Implementation Comparison - Technical Approach](#implementation-comparison-technical-approach)
 - [Compliance Automation and Workflow](#compliance-automation-and-workflow)
 - [Multi-Language Support and Regional Compliance](#multi-language-support-and-regional-compliance)
 - [Analytics Integration Comparison](#analytics-integration-comparison)
@@ -27,7 +27,7 @@ Table of Contents
 - [Cost-Benefit Analysis](#cost-benefit-analysis)
 - [Security Considerations](#security-considerations)
 - [Migration Path](#migration-path)
-- [Real-World Scenario: Multi-Domain Setup](#real-world-scenario-multi-domain-setup)
+- [Real-World Scenario - Multi-Domain Setup](#real-world-scenario-multi-domain-setup)
 
 Can I use the first tool and the second tool together?
 
@@ -49,7 +49,7 @@ What happens to my data when using the first tool or the second tool?
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
-Implementation Comparison: Technical Approach
+Implementation Comparison - Technical Approach
 
 CookieYes Implementation Steps
 
@@ -101,8 +101,8 @@ CookieYes Workflow
 5. Updates as cookies change
 ```
 
-Advantages: Less manual maintenance
-Disadvantages: Less control over categorization
+Advantages - Less manual maintenance
+Disadvantages - Less control over categorization
 
 Osano Workflow
 
@@ -114,8 +114,8 @@ Osano Workflow
 5. Integrate with apps
 ```
 
-Advantages: More control and customization
-Disadvantages: Requires more initial work
+Advantages - More control and customization
+Disadvantages - Requires more initial work
 
 Multi-Language Support and Regional Compliance
 
@@ -254,7 +254,7 @@ Osano → CookieYes:
 
 Migration typically takes 2-4 hours per domain.
 
-Real-World Scenario: Multi-Domain Setup
+Real-World Scenario - Multi-Domain Setup
 
 Many organizations have multiple domains needing consent:
 
@@ -271,8 +271,8 @@ Osano for multi-domain:
 - More control per property
 ```
 
-For 3-5 domains: Either works
-For 10+ domains: CookieYes easier to manage
+For 3-5 domains - Either works
+For 10+ domains - CookieYes easier to manage
 
 Related Articles
 

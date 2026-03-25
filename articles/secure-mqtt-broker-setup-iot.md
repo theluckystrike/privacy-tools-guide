@@ -97,7 +97,7 @@ sudo openssl x509 -req -days 825 -in ${DEVICE}.csr \
 Copy key and cert to the device (via SCP or similar)
 ```
 
-Repeat for each device: `thermostat-01`, `door-sensor-01`, `hub-01`, etc.
+Repeat for each device - `thermostat-01`, `door-sensor-01`, `hub-01`, etc.
 
 Step 5. Configure Mosquitto
 

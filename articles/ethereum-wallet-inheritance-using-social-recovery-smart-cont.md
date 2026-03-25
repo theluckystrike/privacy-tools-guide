@@ -125,13 +125,13 @@ Death Verification Mechanisms
 
 Determining when an owner has died presents challenges. Several approaches exist:
 
-Oracle-based verification: Integrate with death notification services like Chainlink oracles that query obituaries, death certificates, or legal documentation.
+Oracle-based verification - Integrate with death notification services like Chainlink oracles that query obituaries, death certificates, or legal documentation.
 
-Multisig guardians: Require multiple independent guardians to confirm death before initiating recovery.
+Multisig guardians - Require multiple independent guardians to confirm death before initiating recovery.
 
-Legal notification: Establish that guardians must receive formal death certificate documentation before triggering the process.
+Legal notification - Establish that guardians must receive formal death certificate documentation before triggering the process.
 
-Activity-based triggers: Implement inactivity periods, for example, if the owner doesn't interact with the contract for 12 months, heirs can initiate recovery. This approach is simpler but less secure.
+Activity-based triggers - Implement inactivity periods, for example, if the owner doesn't interact with the contract for 12 months, heirs can initiate recovery. This approach is simpler but less secure.
 
 Integration with Existing Wallets
 
@@ -199,13 +199,13 @@ Security Trade-offs
 
 Social recovery inheritance involves inherent compromises:
 
-Timelock security: Longer timelocks protect against false recovery claims but delay legitimate heir access during an actual death. A 30-90 day window balances these concerns.
+Timelock security - Longer timelocks protect against false recovery claims but delay legitimate heir access during an actual death. A 30-90 day window balances these concerns.
 
-Guardian trust: Guardians become high-value targets for social engineering. Use threshold signatures requiring multiple guardians to agree before recovery proceeds.
+Guardian trust - Guardians become high-value targets for social engineering. Use threshold signatures requiring multiple guardians to agree before recovery proceeds.
 
-Contract risk: Smart contracts can contain bugs. Use audited implementations, consider upgradeable proxies, and maintain insurance coverage for large estates.
+Contract risk - Smart contracts can contain bugs. Use audited implementations, consider upgradeable proxies, and maintain insurance coverage for large estates.
 
-Key management: Heirs must secure their own keys. Provide guidance on hardware wallets and secure storage.
+Key management - Heirs must secure their own keys. Provide guidance on hardware wallets and secure storage.
 
 Current Tools and Services
 
@@ -367,7 +367,7 @@ contract InheritanceWithLegalDocumentation {
 
 Store the actual will on decentralized storage (IPFS/Arweave) and reference it from the contract.
 
-Alternative: Established Services
+Alternative - Established Services
 
 Several projects provide turnkey inheritance solutions:
 

@@ -21,9 +21,9 @@ EXIF metadata in photos can expose your GPS coordinates, device model, serial nu
 Table of Contents
 
 - [What's Inside EXIF Data](#whats-inside-exif-data)
-- [Tool 1: ExifTool (Most )](#tool-1-exiftool-most)
-- [Tool 2: mat2 (Documents and Images)](#tool-2-mat2-documents-and-images)
-- [Tool 3: ImageMagick (If You're Already Using It)](#tool-3-imagemagick-if-youre-already-using-it)
+- [Tool 1 - ExifTool (Most )](#tool-1-exiftool-most)
+- [Tool 2 - mat2 (Documents and Images)](#tool-2-mat2-documents-and-images)
+- [Tool 3 - ImageMagick (If You're Already Using It)](#tool-3-imagemagick-if-youre-already-using-it)
 - [Automated Removal with inotifywait (Linux)](#automated-removal-with-inotifywait-linux)
 - [Automated Removal on macOS with Folder Actions](#automated-removal-on-macos-with-folder-actions)
 - [Verify Before Sharing](#verify-before-sharing)
@@ -55,7 +55,7 @@ Serial Number                   : F1TL23456789
 
 Some of this is harmless. GPS coordinates, device serial numbers, and owner names are not.
 
-Tool 1: ExifTool (Most )
+Tool 1 - ExifTool (Most )
 
 ExifTool is the most complete metadata tool available. it handles over 100 file formats.
 
@@ -123,7 +123,7 @@ exiftool photo.jpg | grep -E "GPS|Serial|Owner|Software|Device"
 Should return nothing
 ```
 
-Tool 2: mat2 (Documents and Images)
+Tool 2 - mat2 (Documents and Images)
 
 mat2 handles images but also strips metadata from PDFs, Office documents, audio files, and archives. useful when you share more than just photos.
 
@@ -164,7 +164,7 @@ for f in /path/to/files/*; do
 done
 ```
 
-Tool 3: ImageMagick (If You're Already Using It)
+Tool 3 - ImageMagick (If You're Already Using It)
 
 If you're already processing images with ImageMagick, strip metadata in the same step:
 
@@ -279,7 +279,7 @@ In Automator:
 2. Choose the target folder
 3. Add action: "Run Shell Script"
 4. Pass input "as arguments"
-5. Paste: `~/clean-exif.sh "$@"`
+5. Paste - `~/clean-exif.sh "$@"`
 
 Verify Before Sharing
 
@@ -337,23 +337,23 @@ exiftool -all= -overwrite_original photo.nef
 Strip from Sony ARW
 exiftool -all= -overwrite_original photo.arw
 
-Batch: all RAW formats in a directory
+Batch - all RAW formats in a directory
 exiftool -all= -overwrite_original -ext cr2 -ext nef -ext arw -ext dng /path/to/photos/
 ```
 
-One important caveat: stripping RAW metadata removes lens correction profiles and color calibration data that editing software uses. Strip RAW files only after editing is complete, or export a stripped JPEG/TIFF for sharing instead of the RAW file.
+One important caveat - stripping RAW metadata removes lens correction profiles and color calibration data that editing software uses. Strip RAW files only after editing is complete, or export a stripped JPEG/TIFF for sharing instead of the RAW file.
 
 What Metadata Stripping Does Not Remove
 
 Metadata stripping removes EXIF, IPTC, and XMP tags embedded in the file. It does not remove:
 
-Steganographic data: Some apps embed invisible watermarks in pixel data that survive metadata removal. These are used by stock photo agencies and some social platforms. ExifTool cannot detect or remove these.
+Steganographic data - Some apps embed invisible watermarks in pixel data that survive metadata removal. These are used by stock photo agencies and some social platforms. ExifTool cannot detect or remove these.
 
-Platform-added metadata: Some social platforms re-add metadata when you download a photo from their site. A photo you uploaded stripped of EXIF may have location data re-embedded by the platform based on your account information. Always verify after downloading from platforms.
+Platform-added metadata - Some social platforms re-add metadata when you download a photo from their site. A photo you uploaded stripped of EXIF may have location data re-embedded by the platform based on your account information. Always verify after downloading from platforms.
 
-Image content itself: If a photo shows street signs, landmarks, or recognizable locations, metadata removal doesn't help. The image content is the data.
+Image content itself - If a photo shows street signs, landmarks, or recognizable locations, metadata removal doesn't help. The image content is the data.
 
-Thumbnails embedded in EXIF: Some cameras embed a full-resolution thumbnail inside the EXIF data. ExifTool removes these by default when you strip all metadata with `-all=`, but targeted removals (like only removing GPS) may leave the thumbnail intact with its own embedded GPS:
+Thumbnails embedded in EXIF - Some cameras embed a full-resolution thumbnail inside the EXIF data. ExifTool removes these by default when you strip all metadata with `-all=`, but targeted removals (like only removing GPS) may leave the thumbnail intact with its own embedded GPS:
 
 ```bash
 Explicitly remove thumbnails when doing partial strips
@@ -366,9 +366,9 @@ Lightroom / Capture One Export
 
 Both Lightroom and Capture One can strip metadata at export time without a separate tool:
 
-In Lightroom: File → Export → Metadata section → uncheck "Include: All Metadata" → select "Copyright Only" or "Copyright & Contact Info Only"
+In Lightroom - File → Export → Metadata section → uncheck "Include: All Metadata" → select "Copyright Only" or "Copyright & Contact Info Only"
 
-In Capture One: Export → Metadata → "Strip All Metadata" or custom selection
+In Capture One - Export → Metadata → "Strip All Metadata" or custom selection
 
 This is the cleanest approach for photographers. strip at the point of export rather than as a post-processing step.
 

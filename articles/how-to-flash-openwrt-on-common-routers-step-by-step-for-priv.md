@@ -48,7 +48,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Supported Router Models
+Step 1 - Supported Router Models
 
 These popular models have well-documented flashing processes and strong community support:
 
@@ -59,7 +59,7 @@ These popular models have well-documented flashing processes and strong communit
 | Netgear R7800 | Qualcomm IPQ8065 | 256MB | 512MB | Intermediate |
 | Raspberry Pi 4 | ARM Cortex-A72 | MicroSD | 1-8GB | Beginner |
 
-Step 2: Preparation Steps
+Step 2 - Preparation Steps
 
 1. Backup Current Configuration
 
@@ -67,7 +67,7 @@ Before flashing, document your current network settings:
 
 ```bash
 Access router web interface and export configuration
-Common IP: 192.168.0.1 or 192.168.1.1
+Common IP - 192.168.0.1 or 192.168.1.1
 
 Record these settings:
 - WAN connection type (DHCP/PPPoE/static)
@@ -102,9 +102,9 @@ Verify your firmware
 sha256sum openwrt-23.05.5-ar71xx-tiny-tl-wr841n-v14-squashfs-factory.bin
 ```
 
-Step 3: Flashing Methods
+Step 3 - Flashing Methods
 
-Method 1: Web Interface Flash (Beginner)
+Method 1 - Web Interface Flash (Beginner)
 
 This method works for most consumer routers:
 
@@ -117,7 +117,7 @@ This method works for most consumer routers:
 
 Do not power off the router during this process.
 
-Method 2: TFTP Flash (Recovery)
+Method 2 - TFTP Flash (Recovery)
 
 If the web interface fails or you're bricked, use TFTP:
 
@@ -128,7 +128,7 @@ sudo ip link set eth0 up
 
 Install a TFTP client
 macOS: brew install tftp
-Ubuntu: sudo apt install tftp
+Ubuntu - sudo apt install tftp
 
 Rename firmware to match vendor requirements
 cp openwrt.bin tftp_recovery.bin
@@ -140,7 +140,7 @@ tftp> binary
 tftp> put tftp_recovery.bin
 ```
 
-Method 3: Command Line via SSH
+Method 3 - Command Line via SSH
 
 For advanced control, flash directly from the stock firmware CLI:
 
@@ -161,7 +161,7 @@ mtd -r write /tmp/openwrt-factory.bin firmware
 Router will reboot automatically
 ```
 
-Step 4: Post-Flash Configuration
+Step 4 - Post-Flash Configuration
 
 Initial Access
 
@@ -169,7 +169,7 @@ After flashing, connect to the default OpenWRT network:
 
 ```bash
 Connect via Ethernet to LAN port
-Default IP: 192.168.1.1
+Default IP - 192.168.1.1
 No password initially - set one via LuCI web interface
 
 Or connect via SSH
@@ -310,7 +310,7 @@ uci commit network firewall
 /etc/init.d/network restart
 ```
 
-Step 5: Verify Your Privacy Setup
+Step 5 - Verify Your Privacy Setup
 
 After configuration, verify your setup:
 
@@ -328,7 +328,7 @@ Check for IPv6 leaks
 Visit https://ipv6leaktest.com
 ```
 
-Step 6: Maintaining Your OpenWRT Router
+Step 6 - Maintaining Your OpenWRT Router
 
 Keep your router secure with regular maintenance:
 

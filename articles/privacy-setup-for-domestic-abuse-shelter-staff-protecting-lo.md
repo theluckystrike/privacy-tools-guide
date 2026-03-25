@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Threat Model
+Step 1 - Understand the Threat Model
 
 Location exposure in domestic abuse contexts can have severe consequences. Abusers often possess technical knowledge and may attempt to:
 
@@ -39,7 +39,7 @@ Location exposure in domestic abuse contexts can have severe consequences. Abuse
 
 Shelter staff need defense in depth. No single measure provides complete protection. The goal is raising the cost of surveillance beyond what most adversaries can sustain.
 
-Step 2: Device Hardening for Staff
+Step 2 - Device Hardening for Staff
 
 Mobile Device Configuration
 
@@ -47,8 +47,8 @@ Staff devices should disable location services by default and enable only when n
 
 ```bash
 iOS Shortcut automation concept
-When leaving shelter premises: disable location
-When arriving at shelter: enable for navigation only
+When leaving shelter premises - disable location
+When arriving at shelter - enable for navigation only
 ```
 
 For Android, Tasker or Locale apps can automate similar behavior based on geofences around the shelter. The key principle: location services should be off during sensitive communications.
@@ -70,7 +70,7 @@ Create separate containers for:
 Never mix the two in same session
 ```
 
-Step 3: Network-Level Protection
+Step 3 - Network-Level Protection
 
 DNS Configuration
 
@@ -105,7 +105,7 @@ PersistentKeepalive = 25
 
 WireGuard's minimal codebase makes auditing easier than OpenVPN alternatives.
 
-Step 4: Secure Communications
+Step 4 - Secure Communications
 
 Encrypted Messaging
 
@@ -125,14 +125,14 @@ When staff must communicate via email, enforce PGP encryption for sensitive thre
 ```bash
 Generate a dedicated work key (Ed25519 for modern compatibility)
 gpg --full-generate-key
-Key type: ECC
-Curve: Curve25519
-Expiration: 1 year (rotate regularly)
+Key type - ECC
+Curve - Curve25519
+Expiration - 1 year (rotate regularly)
 ```
 
 Store private keys on hardware tokens when possible. This prevents key extraction if devices are compromised.
 
-Step 5: Application-Level Location Protection
+Step 5 - Application-Level Location Protection
 
 Photo Metadata Scrubbing
 
@@ -179,7 +179,7 @@ def fuzz_coordinates(lat, lon, radius_meters=500):
 
 This allows general area display without exposing exact addresses.
 
-Step 6: Operational Security Patterns
+Step 6 - Operational Security Patterns
 
 Incident Response Communication
 

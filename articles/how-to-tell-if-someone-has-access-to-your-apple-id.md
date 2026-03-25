@@ -66,7 +66,7 @@ If Find My sends you notifications about device locations or removals that you d
 
 How to Check If Someone Has Access to Your Apple ID
 
-Step 1: Review Active Sessions
+Step 1 - Review Active Sessions
 
 On your iPhone, iPad, or Mac:
 
@@ -83,7 +83,7 @@ Alternatively, visit Apple's ID management page:
 4. Review all devices connected to your account
 5. Remove any devices you don't recognize by selecting them and clicking Remove from Account
 
-Step 2: Check Sign-In History
+Step 2 - Check Sign-In History
 
 Apple maintains a sign-in history that shows when and where your ID was used:
 
@@ -97,7 +97,7 @@ Pay attention to:
 - IP addresses or locations you don't recognize
 - Devices you've never owned
 
-Step 3: Check iCloud Web Access
+Step 3 - Check iCloud Web Access
 
 If someone has your Apple ID password, they might be accessing your iCloud data through iCloud.com:
 
@@ -106,7 +106,7 @@ If someone has your Apple ID password, they might be accessing your iCloud data 
 3. Look at Find My to see if unknown devices are connected
 4. Check Settings for any changes to your account information
 
-Step 4: Review Payment Methods
+Step 4 - Review Payment Methods
 
 Unauthorized payment methods added to your account could indicate compromise:
 
@@ -114,7 +114,7 @@ Unauthorized payment methods added to your account could indicate compromise:
 2. Check for unfamiliar payment methods
 3. Remove any cards you don't recognize
 
-Step 5: Check Family Sharing
+Step 5 - Check Family Sharing
 
 If you're part of a Family Sharing group, a compromised account could affect others:
 

@@ -46,7 +46,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Access Datura Firewall Settings
+Step 1 - Access Datura Firewall Settings
 
 To access the firewall configuration, navigate to Settings on your CalyxOS device, then go to Network & Internet, and finally select Datura Firewall. Alternatively, you can find it under Settings > Privacy > Firewall.
 
@@ -57,7 +57,7 @@ The interface presents three main tabs:
 
 Each app displays its icon, name, and current network permissions with visual indicators showing whether it has WiFi, mobile data, or VPN access.
 
-Step 2: Basic Firewall Configuration
+Step 2 - Basic Firewall Configuration
 
 The Datura firewall operates on a whitelist model by default, meaning all traffic is allowed unless you explicitly block an app. This approach ensures that new apps work immediately after installation while giving you granular control to restrict their network behavior.
 
@@ -77,7 +77,7 @@ adb shell dumpsys firewall
 
 This command outputs detailed information about current firewall rules, including which apps are allowed or blocked on different network interfaces.
 
-Step 3: Practical Use Cases for Power Users
+Step 3 - Practical Use Cases for Power Users
 
 Blocking Analytics and Telemetry
 
@@ -151,7 +151,7 @@ done
 
 This script demonstrates how to programmatically apply consistent firewall policies across multiple applications.
 
-Step 4: Understand Network Permission Indicators
+Step 4 - Understand Network Permission Indicators
 
 Datura uses a clear visual system to indicate network permissions:
 
@@ -191,7 +191,7 @@ Begin by reviewing all applications with network access in your Datura Firewall 
 
 The Datura firewall provides enterprise-grade network filtering without requiring root access, making CalyxOS an excellent choice for privacy-conscious users who need granular control over their device's network behavior.
 
-Step 5: Deep Dive: Netfilter Architecture on Android
+Step 5 - Deep Dive: Netfilter Architecture on Android
 
 Datura uses Linux netfilter (kernel-level packet filtering) adapted for Android. Understanding the architecture explains its power and limitations.
 
@@ -211,7 +211,7 @@ VPN/Network interface
 
 This layering allows Datura to coexist with other VPN apps. The trade-off: Datura cannot block traffic at the individual app level if a compromised or malicious app tunnels data through legitimate proxies.
 
-Step 6: Examining iptables Rules on CalyxOS
+Step 6 - Examining iptables Rules on CalyxOS
 
 Power users can inspect actual filtering rules from the kernel:
 
@@ -233,7 +233,7 @@ iptables -L OUTPUT -n | grep -i "com.example"
 
 The output shows how Datura implements rules. For each blocked app, you typically see DROP rules that discard packets matching the app's UID.
 
-Step 7: DNS Filtering Within Datura
+Step 7 - DNS Filtering Within Datura
 
 Datura can filter DNS traffic separately from data traffic. If you want to block ads network-wide, configuring Datura to block DNS to ad servers is one approach:
 
@@ -241,7 +241,7 @@ Datura can filter DNS traffic separately from data traffic. If you want to block
 View current DNS rules
 adb shell su -c "iptables -t nat -L PREROUTING -n | grep 'dns'"
 
-Common ad server DNS: 216.58.x.x (Google ads), 44.55.82.x (DoubleClick), etc.
+Common ad server DNS - 216.58.x.x (Google ads), 44.55.82.x (DoubleClick), etc.
 Blocking DNS prevents apps from resolving these domains
 ```
 
@@ -260,7 +260,7 @@ Setup:
 
 This hybrid approach provides defense in depth. Datura acts as an additional filter, preventing accidental data leakage if VPN drops.
 
-Step 8: Detecting Datura-Blocked Traffic
+Step 8 - Detecting Datura-Blocked Traffic
 
 Apps sometimes retry blocked connections repeatedly, draining battery. Monitor this:
 
@@ -285,14 +285,14 @@ try {
 }
 ```
 
-Step 9: Build Custom Firewall Policies with ADB
+Step 9 - Build Custom Firewall Policies with ADB
 
 Create scripts to apply consistent policies across devices:
 
 ```bash
 #!/bin/bash
 apply_firewall_policy.sh
-Policy: Block all non-essential apps from mobile data, allow only WiFi
+Policy - Block all non-essential apps from mobile data, allow only WiFi
 
 DEVICE=$1
 ADB_CMD="adb -s $DEVICE shell"
@@ -314,7 +314,7 @@ for app in "${WIFI_ONLY_APPS[@]}"; do
 done
 ```
 
-Step 10: IPv6 Filtering Considerations
+Step 10 - IPv6 Filtering Considerations
 
 Modern networks use both IPv4 and IPv6. Datura filters both, but misconfiguration is common:
 
@@ -334,12 +334,12 @@ For maximum privacy on networks supporting IPv6, disable IPv6 entirely:
 adb shell su -c "sysctl -w net.ipv6.conf.all.disable_ipv6=1"
 ```
 
-Step 11: Identifying Hidden Telemetry Connections
+Step 11 - Identifying Hidden Telemetry Connections
 
 Use Datura to block specific domains and apps systematically, then monitor what breaks:
 
 ```bash
-Approach: Whitelist model (block everything, then allow what's needed)
+Approach - Whitelist model (block everything, then allow what's needed)
 
 1. Block all apps except critical ones
 adb shell cmd firewall set-uid-rule <PACKAGE> both BLOCK
@@ -356,7 +356,7 @@ Use separate VPN with logging to identify required domains
 
 This approach reveals which apps need which network access, enabling precise firewall rules.
 
-Step 12: Datura Rule Persistence and Modifications
+Step 12 - Datura Rule Persistence and Modifications
 
 Firewall rules persist through reboots and app updates. However, system updates may reset Datura configuration:
 
@@ -387,22 +387,22 @@ Troubleshooting Datura Connectivity Issues
 When apps fail to connect after Datura configuration:
 
 ```bash
-Step 1: Verify app UID
+Step 1 - Verify app UID
 adb shell pm list packages -U | grep "com.example.app"
 
-Step 2: Check current rules for that UID
+Step 2 - Check current rules for that UID
 adb shell su -c "iptables -L OUTPUT -n | grep <UID>"
 
-Step 3: Monitor network events as app tries to connect
+Step 3 - Monitor network events as app tries to connect
 adb shell strace -e socket,connect -p <APP_PID>
 
-Step 4: Review app manifest for required permissions
+Step 4 - Review app manifest for required permissions
 adb shell dumpsys packages | grep -A 20 "com.example.app"
 ```
 
 These commands narrow down whether blocking is intentional (Datura rules) or accidental (permissions).
 
-Step 13: Build Firewall Policies from Network Analysis
+Step 13 - Build Firewall Policies from Network Analysis
 
 Use tcpdump to capture actual network traffic, then determine what to block:
 

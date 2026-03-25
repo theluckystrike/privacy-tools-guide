@@ -30,7 +30,7 @@ Table of Contents
 - [Practical Risk Assessment Before Travel](#practical-risk-assessment-before-travel)
 - [Device Preparation for Border Crossing](#device-preparation-for-border-crossing)
 - [Post-Border-Crossing Security](#post-border-crossing-security)
-- [The Broader Technical Ecosystem](#the-broader-technical-ecosystem)
+- [The Broader Technical environment](#the-broader-technical-environment)
 
 Understanding the Exit Ban Mechanism
 
@@ -107,7 +107,7 @@ Data Minimization
 Design your systems to collect and retain minimal user data. Every data point stored becomes a potential liability:
 
 ```python
-Bad: Store thorough user activity
+Bad - Store thorough user activity
 user_profile = {
     "search_history": [...],
     "location_history": [...],
@@ -115,7 +115,7 @@ user_profile = {
     "payment_details": [...]
 }
 
-Better: Stateless authentication, ephemeral data
+Better - Stateless authentication, ephemeral data
 session = {
     "user_id": "hashed_identifier",
     "expires_at": "2026-03-16T15:00:00Z",
@@ -362,7 +362,7 @@ Post-China device security procedures
 - Cloud services: Review device authorization
 ```
 
-The Broader Technical Ecosystem
+The Broader Technical environment
 
 The Chinese surveillance system demonstrates how metadata aggregation creates behavioral profiles without requiring access to encrypted content. For developers, this illustrates a fundamental principle: encryption protects content, but metadata often reveals more than intended.
 

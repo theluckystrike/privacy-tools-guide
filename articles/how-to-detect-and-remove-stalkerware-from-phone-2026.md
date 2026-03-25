@@ -20,14 +20,14 @@ Stalkerware (also called spy apps, spyware, monitoring software) runs silently o
 
 Table of Contents
 
-- [Understanding Stalkerware: What It Is and How It Works](#understanding-stalkerware-what-it-is-and-how-it-works)
-- [Detection Methods: How to Spot Stalkerware](#detection-methods-how-to-spot-stalkerware)
-- [Removal Methods: Step-by-Step](#removal-methods-step-by-step)
-- [Post-Removal: Securing Your Phone Going Forward](#post-removal-securing-your-phone-going-forward)
+- [Understanding Stalkerware - What It Is and How It Works](#understanding-stalkerware-what-it-is-and-how-it-works)
+- [Detection Methods - How to Spot Stalkerware](#detection-methods-how-to-spot-stalkerware)
+- [Removal Methods - Step-by-Step](#removal-methods-step-by-step)
+- [Post-Removal - Securing Your Phone Going Forward](#post-removal-securing-your-phone-going-forward)
 - [Safety Planning Resources](#safety-planning-resources)
 - [Common Mistakes to Avoid](#common-mistakes-to-avoid)
 
-Understanding Stalkerware: What It Is and How It Works
+Understanding Stalkerware - What It Is and How It Works
 
 Stalkerware is commercial spyware marketed as "parental monitoring" or "employee tracking" but used to spy on intimate partners. Unlike typical malware that steals money or data, stalkerware's purpose is control and harassment.
 
@@ -35,7 +35,7 @@ Common Stalkerware Apps (2026)
 
 Android (more vulnerable):
 - mSpy: $9.99-49.99/month. Hidden app, real-time location, text/call monitoring, photo access.
-- FlexiSPY: $24.95-199/month. Advanced: call recording, ambient recording (listens to surroundings even without active call), browser history.
+- FlexiSPY: $24.95-199/month. Advanced - call recording, ambient recording (listens to surroundings even without active call), browser history.
 - SpyBubble: $9.99/month. Location tracking, message interception, app usage monitoring.
 - PhoneSpector: $19.95/month. Activity log, GPS tracking, photo/video download.
 
@@ -75,9 +75,9 @@ Control methods:
 - Can intercept location in real-time
 - Receives alerts on specific contacts or keywords
 
-Detection Methods: How to Spot Stalkerware
+Detection Methods - How to Spot Stalkerware
 
-Method 1: Physical and Behavioral Signs
+Method 1 - Physical and Behavioral Signs
 
 Battery drain analysis:
 
@@ -122,7 +122,7 @@ Phone temperature:
 - Stalkerware processing causes warmth even when not in use
 - If warm when idle, background process running
 
-Method 2: iOS-Specific Detection
+Method 2 - iOS-Specific Detection
 
 Check iOS restrictions:
 
@@ -174,7 +174,7 @@ Monitor outbound connections when phone is idle:
 - Persistent connections when phone not in use = stalkerware
 ```
 
-Method 3: Android-Specific Detection
+Method 3 - Android-Specific Detection
 
 Check installed apps:
 
@@ -233,7 +233,7 @@ Settings → Network → Mobile Network Data:
 4. If one app using 100MB+ unexpectedly = data exfiltration
 ```
 
-Method 4: Browser-Based Detection
+Method 4 - Browser-Based Detection
 
 Check browser history and search:
 
@@ -253,14 +253,14 @@ Settings → Developer Options → Networking:
   - Generic hosting providers (Amazon AWS, Vultr, DigitalOcean)
 ```
 
-Removal Methods: Step-by-Step
+Removal Methods - Step-by-Step
 
 iOS Removal: Full Factory Reset (Most Reliable)
 
 Before resetting:
 
 ```
-CRITICAL: Gather evidence if experiencing abuse:
+CRITICAL - Gather evidence if experiencing abuse:
 
 1. Take screenshots of:
    - Threatening messages
@@ -283,67 +283,67 @@ CRITICAL: Gather evidence if experiencing abuse:
 Factory reset procedure:
 
 ```
-Step 1: Create new Apple ID with recovery email you control
+Step 1 - Create new Apple ID with recovery email you control
 - Use email address abuser doesn't know
 - Enable two-factor authentication
 - Create complex password
 - Save recovery codes in safe location (not on phone)
 
-Step 2: Back up critical data (optional if escaping safely)
+Step 2 - Back up critical data (optional if escaping safely)
 - Photos important to you
 - Contacts list
 - Notes, calendar
 
-Step 3: Perform factory reset
+Step 3 - Perform factory reset
 - Settings → General → Reset
 - Tap "Erase All Content and Settings"
 - Enter Apple ID password when prompted
 - Device will restart and return to setup screen
 
-Step 4: Set up as new iPhone
+Step 4 - Set up as new iPhone
 - Don't restore from backup (old backup may include malware)
 - Sign in with new Apple ID
 - Reinstall apps from fresh downloads
 - Don't restore from iCloud backup if abuser had access
 
-Step 5: Restore accounts from memory
+Step 5 - Restore accounts from memory
 - Add email accounts (but NOT iCloud with abuser access)
 - Create new passwords for all accounts
 - Enable two-factor authentication everywhere
 - Change passwords on all accounts from a safe device first
 ```
 
-Time required: 30-45 minutes
+Time required - 30-45 minutes
 
-Success rate: 99.9% (factory reset removes all software)
+Success rate - 99.9% (factory reset removes all software)
 
 iOS Removal: Partial Method (If Factory Reset Not Possible)
 
 If you need to keep photos/data and factory reset isn't immediately possible:
 
 ```
-Step 1: Disable iCloud
+Step 1 - Disable iCloud
 - Settings → [Your Name] → Sign Out
 - Tap "Keep on My iPhone" for data you want to save
 - Sign back in with NEW Apple ID
 
-Step 2: Check for enterprise apps
+Step 2 - Check for enterprise apps
 - Settings → General → VPN & Device Management
 - Remove any "Mobile Device Management" profiles
 - Remove any "Configuration Profiles"
 - Delete enterprise apps
 
-Step 3: Reset location services
+Step 3 - Reset location services
 - Settings → Privacy → Location Services
 - Disable location services entirely (most restrictive)
 - Check each app: disable location permission
 
-Step 4: Disable sharing and access
+Step 4 - Disable sharing and access
 - Settings → [Your Name] → Family Sharing → Remove if shared
 - Settings → [Your Name] → Password & Security → Remove unknown devices
 - Remove any unknown trusted phone numbers
 
-Step 5: Reset network settings
+Step 5 - Reset network settings
 - Settings → General → Reset → Reset Network Settings
 - This disconnects all WiFi and Bluetooth, requiring re-pairing
 - Removes any covert Bluetooth connections
@@ -351,84 +351,84 @@ Step 5: Reset network settings
 
 This method is not as thorough as factory reset. If possible, do full factory reset.
 
-Android Removal: Safe Mode Method
+Android Removal - Safe Mode Method
 
 Safest method that preserves some data:
 
 ```
-Step 1: Boot into Safe Mode
+Step 1 - Boot into Safe Mode
 - Press and hold Power button
 - Long-press "Power off"
 - Tap "Power off" and hold until "Reboot to safe mode" appears
 - Tap "Reboot to safe mode"
 - Phone restarts with only system apps running
 
-Step 2: Remove suspicious apps in Safe Mode
+Step 2 - Remove suspicious apps in Safe Mode
 - Settings → Apps
 - Sort by recently installed or install date
 - Look for unfamiliar apps
 - Tap app → Uninstall
 - Repeat for all suspicious apps
 
-Step 3: Check device admin and remove if necessary
+Step 3 - Check device admin and remove if necessary
 - Settings → Security → Device Admin Apps
 - Uncheck any app that looks suspicious
 - Tap "Deactivate" if button appears
 
-Step 4: Run antivirus scan
+Step 4 - Run antivirus scan
 - Download Malwarebytes (free) from Google Play
 - Run full system scan
 - Let Malwarebytes quarantine/remove threats
 
-Step 5: Restart normally
+Step 5 - Restart normally
 - Restart phone (it will exit Safe Mode)
 ```
 
-Limitation: Malware may reinstall itself unless app source is removed.
+Limitation - Malware may reinstall itself unless app source is removed.
 
-Android Removal: Factory Reset (Most Reliable)
+Android Removal - Factory Reset (Most Reliable)
 
 ```
-Step 1: Back up critical data (to external storage or cloud)
+Step 1 - Back up critical data (to external storage or cloud)
 - Google Photos (automatic photo backup)
 - Google Drive for documents
 - Export contacts to .vcf file
 - Back up to cloud service controlled by you
 
-Step 2: Create new Google Account or prepare existing account
+Step 2 - Create new Google Account or prepare existing account
 - Use Google account you create fresh for this process
 - Enable two-factor authentication
 - Note the account details
 
-Step 3: Perform factory reset
+Step 3 - Perform factory reset
 - Settings → System → Reset Options → Erase All Data
 - Or Settings → Privacy → Factory Reset (varies by Android version)
 - Confirm you want to erase all data
 - Phone will restart and return to setup screen
 
-Step 4: Set up Android as new
+Step 4 - Set up Android as new
 - Select your country and language
 - Skip phone setup (don't restore from previous backup)
 - Sign in with FRESH Google Account
 - Reinstall apps from Google Play (not from old backup)
 
-Step 5: Restore data selectively
+Step 5 - Restore data selectively
 - Add Google Photos, Google Drive accounts
 - Download photos from cloud backup
 - Add contacts from cloud source
 - Don't restore from system backup if abuser had access
 
-Step 6: Set strong passwords and two-factor auth
+Step 6 - Set strong passwords and two-factor auth
 - Gmail: Enable 2FA
 - All important accounts: Enable 2FA
 - Change passwords from safe device first
 ```
 
-Time required: 45-60 minutes
+Time required - 45-60 minutes
 
-Success rate: 99.9% (equivalent to iOS factory reset)
+Success rate - 99.9% (equivalent to iOS factory reset)
 
-Post-Removal: Securing Your Phone Going Forward
+Post-Removal - Securing Your Phone Going Forward
 
 After removal, implement these protections:
 
@@ -542,29 +542,29 @@ Before removing stalkerware:
 
 Common Mistakes to Avoid
 
-Mistake 1: Removing phone without safety plan
+Mistake 1 - Removing phone without safety plan
 
-Don't: Remove stalkerware without telling anyone or making exit plan
+Don't - Remove stalkerware without telling anyone or making exit plan
 Do: Contact domestic violence hotline, create safety plan, then remove
 
-Mistake 2: Using same backup/account after reset
+Mistake 2 - Using same backup/account after reset
 
-Don't: Factory reset, then sign back into iCloud or Google account with abuser's password
+Don't - Factory reset, then sign back into iCloud or Google account with abuser's password
 Do: Create fresh accounts with passwords only you know
 
-Mistake 3: Keeping old phone after removal
+Mistake 3 - Keeping old phone after removal
 
-Don't: Keep stalkerware phone and add it to family plan or shared accounts
+Don't - Keep stalkerware phone and add it to family plan or shared accounts
 Do: Destroy old phone or give to law enforcement as evidence
 
-Mistake 4: Not changing all passwords
+Mistake 4 - Not changing all passwords
 
-Don't: Remove stalkerware but keep using same email/social media passwords
+Don't - Remove stalkerware but keep using same email/social media passwords
 Do: Change passwords for all accounts from safe device
 
-Mistake 4: Not enabling two-factor authentication
+Mistake 4 - Not enabling two-factor authentication
 
-Don't: Set up new phone without 2FA on accounts
+Don't - Set up new phone without 2FA on accounts
 Do: Enable 2FA on email, phone carrier account, social media, banking
 
 Related Articles

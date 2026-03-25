@@ -23,11 +23,11 @@ Table of Contents
 
 - [How It Works](#how-it-works)
 - [Prerequisites](#prerequisites)
-- [Step 1: Create the Network Namespace](#step-1-create-the-network-namespace)
-- [Step 2: Set Up WireGuard Inside the Namespace](#step-2-set-up-wireguard-inside-the-namespace)
-- [Step 3: Run Applications Inside the Namespace](#step-3-run-applications-inside-the-namespace)
-- [Step 4: DNS Inside the Namespace](#step-4-dns-inside-the-namespace)
-- [Step 5: Automate with a Script](#step-5-automate-with-a-script)
+- [Step 1 - Create the Network Namespace](#step-1-create-the-network-namespace)
+- [Step 2 - Set Up WireGuard Inside the Namespace](#step-2-set-up-wireguard-inside-the-namespace)
+- [Step 3 - Run Applications Inside the Namespace](#step-3-run-applications-inside-the-namespace)
+- [Step 4 - DNS Inside the Namespace](#step-4-dns-inside-the-namespace)
+- [Step 5 - Automate with a Script](#step-5-automate-with-a-script)
 - [Cleanup](#cleanup)
 - [Related Reading](#related-reading)
 
@@ -52,7 +52,7 @@ Verify network namespace support
 ip netns help
 ```
 
-Step 1: Create the Network Namespace
+Step 1 - Create the Network Namespace
 
 ```bash
 Create a namespace named "vpn"
@@ -60,17 +60,17 @@ sudo ip netns add vpn
 
 Verify
 ip netns list
-Output: vpn (id: 0)
+Output - vpn (id: 0)
 
 The namespace has no network interfaces yet (except loopback)
 sudo ip netns exec vpn ip link show
-Only shows: lo (loopback, initially DOWN)
+Only shows - lo (loopback, initially DOWN)
 
 Bring up loopback inside the namespace
 sudo ip netns exec vpn ip link set lo up
 ```
 
-Step 2: Set Up WireGuard Inside the Namespace
+Step 2 - Set Up WireGuard Inside the Namespace
 
 Create a WireGuard config file at `/etc/wireguard/wg-vpn.conf`:
 
@@ -117,7 +117,7 @@ Bring both up
 sudo ip link set veth-host up
 sudo ip netns exec vpn ip link set veth-ns up
 
-Add route inside namespace: use veth for VPN handshake only
+Add route inside namespace - use veth for VPN handshake only
 Route VPN endpoint through veth, all else through wg-vpn
 VPN_ENDPOINT_IP=$(host vpn.example.com | awk '/has address/ {print $4}')
 sudo ip netns exec vpn ip route add "$VPN_ENDPOINT_IP"/32 via 10.200.200.1
@@ -138,7 +138,7 @@ sudo ip netns exec vpn curl https://api.ipify.org
 Should show the VPN's IP address
 ```
 
-Step 3: Run Applications Inside the Namespace
+Step 3 - Run Applications Inside the Namespace
 
 Any command run with `ip netns exec vpn` uses only the VPN network:
 
@@ -161,11 +161,11 @@ Run as your regular user (not root)
 The `ip netns exec` command requires root. To run applications as your normal user:
 
 ```bash
-Method 1: sudo with -u flag
+Method 1 - sudo with -u flag
 sudo ip netns exec vpn sudo -u $USER application_name
 
-Method 2: Use unshare for user namespace (more complex setup)
-Method 3: Set up a wrapper script
+Method 2 - Use unshare for user namespace (more complex setup)
+Method 3 - Set up a wrapper script
 sudo tee /usr/local/bin/vpn-run << 'EOF'
 #!/bin/bash
 exec ip netns exec vpn sudo -u $SUDO_USER "$@"
@@ -177,7 +177,7 @@ sudo vpn-run firefox
 sudo vpn-run wget https://example.com/file
 ```
 
-Step 4: DNS Inside the Namespace
+Step 4 - DNS Inside the Namespace
 
 DNS resolution inside the namespace needs to use the VPN's DNS server:
 
@@ -197,7 +197,7 @@ sudo ip netns exec vpn dig google.com
 Should resolve using VPN's DNS server (10.64.0.1 in this example)
 ```
 
-Step 5: Automate with a Script
+Step 5 - Automate with a Script
 
 ```bash
 #!/bin/bash

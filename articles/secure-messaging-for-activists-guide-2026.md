@@ -64,7 +64,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Signal
+Step 1 - Signal
 
 Signal is the most-used secure messenger. It's backed by Signal Foundation (non-profit), uses Double Ratchet encryption, and has been audited multiple times.
 
@@ -105,14 +105,14 @@ Weaknesses:
 - Doesn't work offline
 - Groups lack forward secrecy
 
-Best For: Journalists, civil rights organizations, organized activism (not clandestine)
+Best For - Journalists, civil rights organizations, organized activism (not clandestine)
 
 Phone Number Alternative:
 Use a Google Voice number (USA) or Twilio number (BYOD), but Signal may suspend accounts it suspects are burner numbers.
 
 ---
 
-Step 2: Briar
+Step 2 - Briar
 
 Briar is a decentralized peer-to-peer messenger. It works over Tor and offline (via Bluetooth/WiFi direct). No server required.
 
@@ -155,7 +155,7 @@ Weaknesses:
 - Bluetooth range limited (~30 meters)
 - WiFi mesh requires multiple Briar users nearby
 
-Best For: Dissidents, journalists in authoritarian countries, high-risk activists, decentralization advocates
+Best For - Dissidents, journalists in authoritarian countries, high-risk activists, decentralization advocates
 
 Device Seizure Scenario:
 If arrested with Briar:
@@ -165,7 +165,7 @@ If arrested with Briar:
 
 ---
 
-Step 3: Session
+Step 3 - Session
 
 Session is a fork of Signal that removes the phone number requirement. It uses Tor-based onion routing (Session Open Group Server network) instead of a central server.
 
@@ -208,14 +208,14 @@ Weaknesses:
 - JavaScript desktop client (less secure than native)
 - Session ID could theoretically be logged (if Loki node is malicious)
 
-Best For: Privacy advocates, activists in high-surveillance regions, those avoiding phone number requirement, intermediate-risk scenarios
+Best For - Privacy advocates, activists in high-surveillance regions, those avoiding phone number requirement, intermediate-risk scenarios
 
 Loki Dependency Risk:
 If Session Foundation is compromised or forced to log metadata, Session users are at risk. This is a centralization weakness compared to Briar (fully decentralized).
 
 ---
 
-Step 4: Cwtch
+Step 4 - Cwtch
 
 Cwtch (Welsh for "hug") is a decentralized messenger built on Tor. It uses mixnets (sender ambiguity) and onion routing for extreme privacy.
 
@@ -258,9 +258,9 @@ Weaknesses:
 - No official funding (volunteer project)
 - Group messaging not ready yet
 
-Best For: Academics researching privacy, extreme-risk dissidents, theoretical privacy exercises, long-form asynchronous communication
+Best For - Academics researching privacy, extreme-risk dissidents, theoretical privacy exercises, long-form asynchronous communication
 
-Use Case: Whistleblowing (slow, anonymous, deniable messages), not organizing (requires real-time)
+Use Case - Whistleblowing (slow, anonymous, deniable messages), not organizing (requires real-time)
 
 ---
 
@@ -309,7 +309,7 @@ Q: Do you need anonymity even from receiver?
 
 ---
 
-Step 5: Device Seizure Preparation
+Step 5 - Device Seizure Preparation
 
 Before Arrest (Signal):
 1. Disable "Send Read Receipts" (Settings → Privacy)
@@ -351,7 +351,7 @@ Post-Arrest (if released):
 
 ---
 
-Step 6: Real-World Scenarios
+Step 6 - Real-World Scenarios
 
 Journalist Covering Protests:
 - Primary: Signal (easy, wide user base)
@@ -379,7 +379,7 @@ Labor Organizer (Democratic Country):
 
 ---
 
-Step 7: Operational Security (OPSEC) Tips
+Step 7 - Operational Security (OPSEC) Tips
 
 1. Don't mix identities. Don't use Signal with your real phone number + Briar anonymously on same device. Use separate devices or virtualized profiles.
 
@@ -399,7 +399,7 @@ Step 7: Operational Security (OPSEC) Tips
 
 ---
 
-Step 8: Backup and Recovery
+Step 8 - Backup and Recovery
 
 Signal:
 - DON'T backup to Google Drive (breaks encryption)
@@ -423,7 +423,7 @@ Cwtch:
 
 ---
 
-Step 9: Integration with Other Tools
+Step 9 - Integration with Other Tools
 
 Signal + Dead Drops:
 - Use Signal for real-time coordination
@@ -442,7 +442,7 @@ Session + ProtonMail:
 
 ---
 
-Step 10: When NOT to Use These Tools
+Step 10 - When NOT to Use These Tools
 
 Don't use any encrypted messenger if:
 - You're being actively monitored by military-grade adversaries (assume compromise)
@@ -457,11 +457,11 @@ In those cases:
 
 ---
 
-Step 11: Bottom Line
+Step 11 - Bottom Line
 
-For general activism/organizing: Signal. Easiest to use, largest user base, sufficient security for most scenarios.
+For general activism/organizing - Signal. Easiest to use, largest user base, sufficient security for most scenarios.
 
-For high-risk/offline scenarios: Briar. No phone number, offline mesh capability, maximum decentralization.
+For high-risk/offline scenarios - Briar. No phone number, offline mesh capability, maximum decentralization.
 
 For privacy advocates avoiding phone numbers: Session. Good balance of privacy, ease-of-use, and user base.
 
@@ -473,7 +473,7 @@ Verify Signal Setup via CLI
 
 ```bash
 Signal CLI (signal-cli). send messages programmatically or verify setup
-Install: https://github.com/AsamK/signal-cli
+Install - https://github.com/AsamK/signal-cli
 
 Register a number (requires SMS verification)
 signal-cli -u +1234567890 register

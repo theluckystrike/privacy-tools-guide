@@ -105,9 +105,9 @@ Show specific register
 (gdb) print $rip
 
 Examine memory at address
-Format: x/[count][format][size] address
-Formats: x=hex, d=decimal, s=string, i=instructions
-Sizes: b=byte, h=halfword, w=word, g=giant(8bytes)
+Format - x/[count][format][size] address
+Formats - x=hex, d=decimal, s=string, i=instructions
+Sizes - b=byte, h=halfword, w=word, g=giant(8bytes)
 
 16 hex bytes at stack pointer
 (gdb) x/16xb $rsp
@@ -210,13 +210,13 @@ Set a breakpoint before a dangerous function call
 
 When stopped at strcpy, examine arguments
 (gdb) info args
-Or manually: first arg in rdi, second in rsi (x86_64 calling convention)
+Or manually - first arg in rdi, second in rsi (x86_64 calling convention)
 (gdb) x/s $rdi    # destination buffer
 (gdb) x/s $rsi    # source string
 (gdb) print (int)strlen($rsi)    # length of input
 ```
 
-Watchpoints: Monitoring Memory Changes
+Watchpoints - Monitoring Memory Changes
 
 ```bash
 Watch for writes to a specific memory address

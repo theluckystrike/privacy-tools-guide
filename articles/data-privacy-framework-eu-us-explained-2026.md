@@ -144,9 +144,9 @@ When the Framework Does Not Apply
 
 The EU-US Data Privacy Framework has specific limitations that developers must understand:
 
-Non-certified organizations: Transfers to US companies not certified under the framework require alternative legal mechanisms such as Standard Contractual Clauses (SCCs) or Binding Corporate Rules (BCRs).
+Non-certified organizations - Transfers to US companies not certified under the framework require alternative legal mechanisms such as Standard Contractual Clauses (SCCs) or Binding Corporate Rules (BCRs).
 
-Sensitive data: The framework includes additional requirements for certain categories of sensitive data. Implement additional technical safeguards for health data, biometric data, or data revealing racial or ethnic origin.
+Sensitive data - The framework includes additional requirements for certain categories of sensitive data. Implement additional technical safeguards for health data, biometric data, or data revealing racial or ethnic origin.
 
 Government surveillance concerns: If your specific use case involves data that could be targeted under US surveillance laws, additional due diligence and potentially SCCs with supplementary measures may be necessary.
 
@@ -248,11 +248,11 @@ Recent Developments and Future Considerations
 
 The EU-US data transfer market continues evolving. Understanding recent changes helps you anticipate future needs:
 
-2024 Certification Levels: The framework now includes differentiated certification levels. Organizations can certify at different stringency levels, with higher levels providing additional safeguards. Verify which certification level your providers maintain.
+2024 Certification Levels - The framework now includes differentiated certification levels. Organizations can certify at different stringency levels, with higher levels providing additional safeguards. Verify which certification level your providers maintain.
 
-Surveillance Limitation Orders: The independent Data Protection Review Court has issued orders limiting surveillance access to certain data categories. Understand these limitations if you transfer sensitive data like health information or financial records.
+Surveillance Limitation Orders - The independent Data Protection Review Court has issued orders limiting surveillance access to certain data categories. Understand these limitations if you transfer sensitive data like health information or financial records.
 
-Decoupling Risk: There's ongoing debate in EU policymaking circles about whether the framework remains sustainable. Some advocates argue that true data protection requires rejecting all US transfers. While unlikely in the near term, consider building architecture that doesn't depend exclusively on US service providers.
+Decoupling Risk - There's ongoing debate in EU policymaking circles about whether the framework remains sustainable. Some advocates argue that true data protection requires rejecting all US transfers. While unlikely in the near term, consider building architecture that doesn't depend exclusively on US service providers.
 
 Alternative Approaches to Transatlantic Data
 

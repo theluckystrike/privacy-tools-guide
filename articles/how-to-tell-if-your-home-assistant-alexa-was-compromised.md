@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Signs Your Smart Assistant May Be Compromised
+Step 1 - Signs Your Smart Assistant May Be Compromised
 
 Detecting a compromise early can prevent further intrusion. Here are the most common warning signs:
 
@@ -55,7 +55,7 @@ Network-Level Indicators
 - Increased data usage that cannot be attributed to normal operation
 - Port scans or connection attempts from your smart home hub to external addresses
 
-Step 2: How to Audit Your Amazon Alexa
+Step 2 - How to Audit Your Amazon Alexa
 
 Review Voice History
 
@@ -94,7 +94,7 @@ Check for Unrecognized Routines
  - Send notifications or emails
  - Interact with third-party services
 
-Step 3: How to Audit Your Home Assistant
+Step 3 - How to Audit Your Home Assistant
 
 Review the Logbook
 
@@ -147,7 +147,7 @@ Verify Integrations
 3. Remove any integrations you did not intentionally install
 4. Check for unofficial or fake integrations masquerading as legitimate ones
 
-Step 4: Secure Your Smart Assistants
+Step 4 - Secure Your Smart Assistants
 
 After auditing, take these steps to harden your devices:
 
@@ -181,13 +181,13 @@ General Smart Home Security
 - Monitor your network traffic for anomalies
 - Use a password manager for all smart home account credentials
 
-Step 5: Automated Monitoring Script
+Step 5 - Automated Monitoring Script
 
 For Home Assistant users who want ongoing monitoring, this shell script checks for unexpected automations and logs recent activity:
 
 ```bash
 #!/bin/bash
-Home Assistant: export recent logbook entries via API for offline review
+Home Assistant - export recent logbook entries via API for offline review
 HA_URL="http://homeassistant.local:8123"
 HA_TOKEN="your_long_lived_access_token_here"
 
@@ -210,7 +210,7 @@ for a in autos:
 "
 ```
 
-Step 6: Responding to a Confirmed Compromise
+Step 6 - Responding to a Confirmed Compromise
 
 If you determine your device was compromised:
 

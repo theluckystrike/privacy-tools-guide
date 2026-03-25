@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Challenge
+Step 1 - Understand the Challenge
 
 Smart devices store authentication credentials, personal data, and cloud connections that persist after someone passes away. Unlike traditional devices, IoT gadgets often link to cloud services, making local deletion insufficient. The primary challenges include:
 
@@ -37,7 +37,7 @@ Smart devices store authentication credentials, personal data, and cloud connect
 - Legacy access tokens: API keys and OAuth tokens may still grant access
 - Family sharing configurations: Apple's Family Sharing, Google Family Library, and similar services need proper decommissioning
 
-Step 2: Platform-Specific Removal Methods
+Step 2 - Platform-Specific Removal Methods
 
 Google/Android Devices
 
@@ -64,7 +64,7 @@ Using Google Home Graph API (requires service account)
 from google.home.graph.api import HomeGraphService
 
 def remove_user_from_home_graph(user_id: str, home_id: str):
-    """Remove a user from Google Home ecosystem"""
+    """Remove a user from Google Home environment"""
     service = HomeGraphService.from_service_account_file('service-account.json')
 
     request = {
@@ -82,7 +82,7 @@ def remove_user_from_home_graph(user_id: str, home_id: str):
 
 Apple Devices
 
-Apple's ecosystem requires a death certificate and specific documentation for account removal. The process differs for iPhones versus cloud-bound services.
+Apple's environment requires a death certificate and specific documentation for account removal. The process differs for iPhones versus cloud-bound services.
 
 iPhone/iPad removal:
 
@@ -182,7 +182,7 @@ Apple TV/TV+ removal:
 3. Choose "Remove This Account"
 4. Sign out of iCloud if applicable
 
-Step 3: Automated Bulk Removal Script
+Step 3 - Automated Bulk Removal Script
 
 For power users managing multiple devices, here's a Python script that handles multiple platforms:
 
@@ -274,7 +274,7 @@ Before proceeding with account removal, ensure you have:
 
 Most platforms require 1-4 weeks to process death-related account closures. Keep documentation for all requests submitted.
 
-Step 4: Prevention Strategies
+Step 4 - Prevention Strategies
 
 For your own digital estate planning:
 

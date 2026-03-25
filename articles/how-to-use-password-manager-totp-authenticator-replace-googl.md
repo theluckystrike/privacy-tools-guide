@@ -27,8 +27,8 @@ Table of Contents
 - [Security Considerations](#security-considerations)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 - [Advanced TOTP Implementation for Developers](#advanced-totp-implementation-for-developers)
-- [Comparison: Password Manager TOTP vs Dedicated Authenticators](#comparison-password-manager-totp-vs-dedicated-authenticators)
-- [TOTP at Scale: Enterprise Implementation](#totp-at-scale-enterprise-implementation)
+- [Comparison - Password Manager TOTP vs Dedicated Authenticators](#comparison-password-manager-totp-vs-dedicated-authenticators)
+- [TOTP at Scale - Enterprise Implementation](#totp-at-scale-enterprise-implementation)
 
 Understanding TOTP Mechanics
 
@@ -46,19 +46,19 @@ Why Migrate to Your Password Manager
 
 Password managers that support TOTP offer several advantages over standalone authenticator apps:
 
-Unified Storage: Your 2FA secrets live alongside your passwords, meaning one secure vault protects all your credentials. This eliminates the need to manage separate apps and reduces the attack surface.
+Unified Storage - Your 2FA secrets live alongside your passwords, meaning one secure vault protects all your credentials. This eliminates the need to manage separate apps and reduces the attack surface.
 
-Encrypted Backups: Unlike Google Authenticator's lack of export options, password managers provide encrypted backups of your entire vault, including TOTP secrets.
+Encrypted Backups - Unlike Google Authenticator's lack of export options, password managers provide encrypted backups of your entire vault, including TOTP secrets.
 
-Cross-Device Sync: Access your 2FA codes across desktop and mobile without manual transfer.
+Cross-Device Sync - Access your 2FA codes across desktop and mobile without manual transfer.
 
-Search and Organization: Quickly find any 2FA code using your password manager's search functionality rather than scrolling through a list of service icons.
+Search and Organization - Quickly find any 2FA code using your password manager's search functionality rather than scrolling through a list of service icons.
 
 Migrating from Google Authenticator
 
 The migration process requires exporting your secrets from Google Authenticator and importing them into your password manager. Google Authenticator stores codes in QR codes or as manual entry keys.
 
-Step 1: Export Your Google Authenticator Secrets
+Step 1 - Export Your Google Authenticator Secrets
 
 Open Google Authenticator and tap the three-dot menu. Select "Transfer accounts" then "Export accounts." The app generates QR codes containing your secrets. Scan these with another device or decode them using tools like `zbarimg`:
 
@@ -72,7 +72,7 @@ zbarimg google_auth_export.png
 
 Alternatively, manually note the secret keys displayed in Google Authenticator during setup. Each entry shows the service name and the Base32 secret.
 
-Step 2: Import into Your Password Manager
+Step 2 - Import into Your Password Manager
 
 Most password managers support TOTP import via QR scanning or manual entry. For Bitwarden, for example:
 
@@ -135,26 +135,26 @@ Security Considerations
 
 While password managers with TOTP provide excellent convenience, consider these best practices:
 
-Master Password Strength: Your master password protects all 2FA codes. Use a long, unique phrase with entropy exceeding 60 bits.
+Master Password Strength - Your master password protects all 2FA codes. Use a long, unique phrase with entropy exceeding 60 bits.
 
-Enable Biometric Unlock: Most password managers support fingerprint or Face ID for quick access without compromising security.
+Enable Biometric Unlock - Most password managers support fingerprint or Face ID for quick access without compromising security.
 
-Export Encrypted Backups: Regularly export an encrypted backup of your vault. Store this in a secure location separate from your primary device.
+Export Encrypted Backups - Regularly export an encrypted backup of your vault. Store this in a secure location separate from your primary device.
 
-Use Hardware Security Keys for Critical Accounts: For high-value accounts (cryptocurrency, primary email), consider hardware keys like YubiKey over TOTP.
+Use Hardware Security Keys for Critical Accounts - For high-value accounts (cryptocurrency, primary email), consider hardware keys like YubiKey over TOTP.
 
 Troubleshooting Common Issues
 
-Time Synchronization: TOTP requires accurate time on both device and server. If codes fail consistently, verify your system clock:
+Time Synchronization - TOTP requires accurate time on both device and server. If codes fail consistently, verify your system clock:
 
 ```bash
 Check time drift (macOS)
 sudo sntp -s time.apple.com
 ```
 
-Secret Key Format: Ensure you enter secrets in Base32 format. Some services display secrets in hexadecimal, requiring conversion.
+Secret Key Format - Ensure you enter secrets in Base32 format. Some services display secrets in hexadecimal, requiring conversion.
 
-Duplicate Entries: Some password managers create separate entries for passwords and TOTP. Verify your vault structure after import.
+Duplicate Entries - Some password managers create separate entries for passwords and TOTP. Verify your vault structure after import.
 
 Advanced TOTP Implementation for Developers
 
@@ -316,7 +316,7 @@ def export_totp_for_migration(user_id):
     return encrypted
 ```
 
-Comparison: Password Manager TOTP vs Dedicated Authenticators
+Comparison - Password Manager TOTP vs Dedicated Authenticators
 
 | Aspect | Password Manager | Google Authenticator | Authy | Hardware Key |
 |--------|------------------|----------------------|-------|--------------|
@@ -347,7 +347,7 @@ Use dedicated authenticators for:
 - Personal accounts where backup/sync matters
 - Accounts shared between devices you don't sync passwords across
 
-TOTP at Scale: Enterprise Implementation
+TOTP at Scale - Enterprise Implementation
 
 Organizations deploying TOTP should implement:
 

@@ -36,7 +36,7 @@ DigitalOcean, Linode, and Hetzner all offer suitable VPS plans starting at $5/mo
 
 One critical prerequisite that trips up most first-time setup attempts: confirm your VPS provider allows outbound port 25. Many providers block port 25 on new accounts to prevent spam. Submit a support ticket before you begin, describing your intent to host personal email. Most providers approve this within a few hours.
 
-Step 1: Initial Server Setup
+Step 1 - Initial Server Setup
 
 Connect to your server via SSH and update the system packages:
 
@@ -66,7 +66,7 @@ adduser admin
 usermod -aG sudo admin
 ```
 
-Step 2: Install Mail-in-a-Box
+Step 2 - Install Mail-in-a-Box
 
 Mail-in-a-Box provides an automated installation script that handles all configuration:
 
@@ -89,46 +89,46 @@ The installation takes 10-15 minutes and automatically configures:
 
 If the install script exits with an error about the hostname, verify that your `/etc/hosts` entry matches the hostname you set. Mail-in-a-Box is strict about this: the hostname must be a fully qualified domain name that resolves to the server's IP.
 
-Step 3: DNS Configuration
+Step 3 - DNS Configuration
 
 After installation, Mail-in-a-Box displays the DNS records you need to create. Log into your domain registrar's DNS management panel and add these records:
 
 MX Record
 ```
-Type: MX
-Host: @
-Value: mail.yourdomain.com
-Priority: 10
+Type - MX
+Host - @
+Value - mail.yourdomain.com
+Priority - 10
 ```
 
 A Record
 ```
-Type: A
-Host: mail
-Value: your-server-ip
+Type - A
+Host - mail
+Value - your-server-ip
 ```
 
 SPF Record
 ```
-Type: TXT
-Host: @
-Value: v=spf1 mx -all
+Type - TXT
+Host - @
+Value - v=spf1 mx -all
 ```
 
 DKIM Record
 Copy the DKIM key displayed after installation and create a TXT record with selector `mail`:
 
 ```
-Type: TXT
-Host: mail._domainkey
-Value: v=DKIM1; k=rsa; p=your-dkim-key-here
+Type - TXT
+Host - mail._domainkey
+Value - v=DKIM1; k=rsa; p=your-dkim-key-here
 ```
 
 DMARC Record
 ```
-Type: TXT
-Host: _dmarc
-Value: v=DMARC1; p=quarantine; rua=mailto:dmarc@yourdomain.com
+Type - TXT
+Host - _dmarc
+Value - v=DMARC1; p=quarantine; rua=mailto:dmarc@yourdomain.com
 ```
 
 Allow 24-48 hours for DNS propagation before testing email delivery. You can verify propagation with `dig MX yourdomain.com` from any machine, or use the web-based tool mxtoolbox.com to inspect all records at once. Mail-in-a-Box's admin panel also runs a self-check that flags any missing or misconfigured DNS records, run it from System > Status Checks.
@@ -137,37 +137,37 @@ PTR / Reverse DNS
 
 One record that belongs on your VPS provider's side rather than your registrar: the PTR record (reverse DNS). Many mail servers reject messages from IPs without a matching PTR record. In DigitalOcean, set it under Networking > Droplets > your droplet > rename the droplet to `mail.yourdomain.com`. On Hetzner, it is under Servers > your server > Networking > IPv4 > set PTR.
 
-Step 4: Access Your Email Server
+Step 4 - Access Your Email Server
 
 Once DNS propagates, access your Mail-in-a-Box through:
 
-- Webmail: https://mail.yourdomain.com/mail
-- Admin Panel: https://mail.yourdomain.com/admin
+- Webmail - https://mail.yourdomain.com/mail
+- Admin Panel - https://mail.yourdomain.com/admin
 
 The admin panel lets you create additional mailboxes, configure aliases, and manage DNS settings. Default credentials use the email address and password you specified during installation.
 
-Step 5: Configure Email Clients
+Step 5 - Configure Email Clients
 
 Mail-in-a-Box supports standard IMAP and SMTP protocols for any email client:
 
 IMAP Settings
 ```
-Server: mail.yourdomain.com
-Port: 993
-Encryption: SSL/TLS
+Server - mail.yourdomain.com
+Port - 993
+Encryption - SSL/TLS
 ```
 
 SMTP Settings
 ```
-Server: mail.yourdomain.com
-Port: 587
-Encryption: STARTTLS
-Authentication: Normal password
+Server - mail.yourdomain.com
+Port - 587
+Encryption - STARTTLS
+Authentication - Normal password
 ```
 
 Thunderbird, Apple Mail, and Microsoft Outlook all connect using these settings. Thunderbird's auto-discovery sometimes picks up the wrong ports, if auto-discovery fails, enter the settings manually. On mobile, FairEmail on Android is an excellent privacy-respecting client that supports IMAP IDLE for push-like notifications without polling.
 
-Step 6: Hardening Your Mail Server
+Step 6 - Hardening Your Mail Server
 
 After basic setup, implement these security improvements:
 
@@ -233,11 +233,11 @@ sudo ufw status
 Low Spam Score or Deliverability Problems
 Register your domain with Google Postmaster Tools (postmaster.google.com) and Microsoft SNDS (sendersupport.olc.protection.outlook.com). Both services show reputation metrics specific to Gmail and Outlook delivery, invaluable for diagnosing why messages land in spam at those destinations.
 
-Step 7: Adding Secondary Domains
+Step 7 - Adding Secondary Domains
 
 To host email for additional domains, navigate to Mail > External Domains in the admin panel. Enter the new domain and follow the DNS configuration steps. Mail-in-a-Box handles virtual aliasing automatically.
 
-Step 8: Automation with the API
+Step 8 - Automation with the API
 
 Mail-in-a-Box exposes a REST API for programmatic management. Generate an API key in the admin panel under System > API Keys:
 
@@ -250,7 +250,7 @@ curl -X POST https://mail.yourdomain.com/admin/mail/users \
 
 Use this for provisioning accounts in scripts or integrating with user management systems. The API also supports listing users, deleting accounts, and managing aliases, making it practical for headless administration pipelines.
 
-Step 9: Perform Maintenance and Updates
+Step 9 - Perform Maintenance and Updates
 
 Mail-in-a-Box includes an automated update mechanism. Check for updates through the admin panel or via command line:
 

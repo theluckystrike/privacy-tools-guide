@@ -24,7 +24,7 @@ Table of Contents
 - [Best Practices for Power Users](#best-practices-for-power-users)
 - [Comparison with Phone Numbers](#comparison-with-phone-numbers)
 - [Security Considerations for Developers](#security-considerations-for-developers)
-- [Privacy Threat Modeling: Usernames vs. Phone Numbers](#privacy-threat-modeling-usernames-vs-phone-numbers)
+- [Privacy Threat Modeling - Usernames vs. Phone Numbers](#privacy-threat-modeling-usernames-vs-phone-numbers)
 - [Operational Security When Using Usernames](#operational-security-when-using-usernames)
 - [Common Pitfalls](#common-pitfalls)
 
@@ -66,11 +66,11 @@ Potential Attack Vectors
 
 Developers should understand several attack surfaces:
 
-1. Username Enumeration: Attackers can test whether specific usernames exist by attempting to add them. Rate limiting on Signal's servers mitigates this.
+1. Username Enumeration - Attackers can test whether specific usernames exist by attempting to add them. Rate limiting on Signal's servers mitigates this.
 
-2. Linkage Attacks: If your username resembles other online handles you use, correlation becomes possible across platforms.
+2. Linkage Attacks - If your username resembles other online handles you use, correlation becomes possible across platforms.
 
-3. Online Status Leaks: The username system exposes online status more readily than phone-number-based contacts.
+3. Online Status Leaks - The username system exposes online status more readily than phone-number-based contacts.
 
 Configuration for Developers
 
@@ -202,7 +202,7 @@ class SignalRateLimiter:
         self.requests.append(time.time())
 ```
 
-Privacy Threat Modeling: Usernames vs. Phone Numbers
+Privacy Threat Modeling - Usernames vs. Phone Numbers
 
 Understanding why usernames matter requires thinking about realistic adversaries and how phone numbers leak across contexts. Your mobile number is frequently shared with government registries, carrier data brokers, and third-party apps that abuse contact sync permissions. When Signal was purely phone-number-based, anyone who obtained your number. a recruiter, a harasser, a data broker. could ping your Signal presence.
 

@@ -104,9 +104,9 @@ Privacy Implications
 
 The core count fingerprinting vector has several concerning implications:
 
-Cross-site tracking: Unlike cookies, hardware concurrency persists across sessions and cannot be cleared. Combined with other signals, it helps build a persistent identifier.
+Cross-site tracking - Unlike cookies, hardware concurrency persists across sessions and cannot be cleared. Combined with other signals, it helps build a persistent identifier.
 
-Device profiling: Core count reveals information about your hardware. A user with 32 cores is likely running a high-end workstation, which advertisers can use for profiling.
+Device profiling - Core count reveals information about your hardware. A user with 32 cores is likely running a high-end workstation, which advertisers can use for profiling.
 
 Fingerprint entropy accumulation: Each additional signal makes your fingerprint more unique. Even a simple value like core count contributes to the overall uniqueness calculation.
 
@@ -146,7 +146,7 @@ Object.defineProperty(navigator, 'hardwareConcurrency', {
 
 This is for testing only. Persistent modification requires browser extensions.
 
-For Developers: Building Privacy-Aware Applications
+For Developers - Building Privacy-Aware Applications
 
 If you're building web applications, consider whether you actually need hardware concurrency information:
 
@@ -287,13 +287,13 @@ Tor Browser uses extreme normalization:
 // Trade-off: Websites can detect Tor Browser by the standardized values
 ```
 
-The cost: Tor Browser itself becomes detectable as it stands out from normal browsers.
+The cost - Tor Browser itself becomes detectable as it stands out from normal browsers.
 
-Developer Considerations: Building Private Applications
+Developer Considerations - Building Private Applications
 
 If you're building web applications, avoid relying on hardware concurrency:
 
-Anti-Pattern: Core-Based Optimization
+Anti-Pattern - Core-Based Optimization
 
 ```javascript
 // DON'T DO THIS - relies on fingerprint
@@ -308,7 +308,7 @@ function initializeWorkerPool() {
 }
 ```
 
-Pattern: Progressive Enhancement
+Pattern - Progressive Enhancement
 
 ```javascript
 // DO THIS - graceful degradation

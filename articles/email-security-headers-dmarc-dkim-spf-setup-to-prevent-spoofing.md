@@ -37,13 +37,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Three Pillars of Email Authentication
+Step 1 - Understand the Three Pillars of Email Authentication
 
 Email authentication works through three complementary mechanisms. Sender Policy Framework (SPF) authorizes specific mail servers to send email on behalf of your domain. DomainKeys Identified Mail (DKIM) adds a cryptographic signature to outgoing messages. Domain-based Message Authentication, Reporting, and Conformance (DMARC) ties both together with policy enforcement and reporting.
 
 Each protocol addresses different attack vectors. SPF prevents unauthorized servers from sending mail. DKIM ensures message integrity during transit. DMARC provides visibility into who's attempting to send mail from your domain and instructs receivers what to do with unauthenticated messages.
 
-Step 2: Configure SPF (Sender Policy Framework)
+Step 2 - Configure SPF (Sender Policy Framework)
 
 SPF works through DNS TXT records that list authorized sending sources for your domain. When a receiving mail server receives a message, it checks if the connecting server is authorized according to your SPF record.
 
@@ -75,7 +75,7 @@ v=spf1 include:_spf.google.com include:servers.mcsv.net include:sendgrid.net ~al
 
 Avoid including more than 10 DNS lookups in your SPF record, as some receivers reject records that exceed this limit. Use the `-all` (hard fail) only after thoroughly testing with `~all`.
 
-Step 3: Set Up DKIM (DomainKeys Identified Mail)
+Step 3 - Set Up DKIM (DomainKeys Identified Mail)
 
 DKIM adds a digital signature to email headers using public-key cryptography. Your mail server signs outgoing messages with a private key, and receiving servers verify the signature using the public key published in your DNS.
 
@@ -109,7 +109,7 @@ dig +short TXT selector1._domainkey.yourdomain.com
 
 Look for the `DKIM-Signature` header in received emails. A valid signature shows `d=yourdomain.com` and `s=selector`.
 
-Step 4: Implementing DMARC (Domain-based Message Authentication)
+Step 4 - Implementing DMARC (Domain-based Message Authentication)
 
 DMARC builds on SPF and DKIM by defining an authentication policy and enabling reporting. A DMARC record tells receivers how to handle messages that fail authentication and provides visibility into authentication results.
 
@@ -181,7 +181,7 @@ Every service sending email on your behalf must be included in your SPF record. 
 
 Document all email-sending services and update SPF records whenever adding new tools.
 
-Step 5: Verification and Deployment Checklist
+Step 5 - Verification and Deployment Checklist
 
 Before going live with DMARC enforcement:
 
@@ -196,7 +196,7 @@ Before going live with DMARC enforcement:
 
 This systematic approach minimizes the risk of legitimate mail being blocked during the enforcement phase.
 
-Step 6: BIMI (Brand Indicators for Message Identification)
+Step 6 - BIMI (Brand Indicators for Message Identification)
 
 BIMI is an emerging standard that combines DMARC alignment with visual authentication. When properly configured, your brand logo appears alongside emails in supported clients:
 
@@ -224,7 +224,7 @@ Requirements:
 curl -v https://yourdomain.com/logo.svg | head -50
 ```
 
-Step 7: Email Authentication Monitoring and Analysis
+Step 7 - Email Authentication Monitoring and Analysis
 
 Automated analysis of authentication results helps identify configuration issues:
 
@@ -275,7 +275,7 @@ for ip, metrics in sorted(data.items()):
     print(f"IP {ip}: SPF {spf_rate:.1f}% pass rate")
 ```
 
-Step 8: Subdomain DMARC Policies
+Step 8 - Subdomain DMARC Policies
 
 Organizations with many subdomains need strategic DMARC policies:
 
@@ -309,7 +309,7 @@ Test DKIM signature
 echo "test" | openssl dgst -sha256 -sign dkim_private.pem | openssl enc -base64
 ```
 
-Step 9: Email Authentication for Different Service Types
+Step 9 - Email Authentication for Different Service Types
 
 Different service categories have unique authentication requirements:
 
@@ -335,12 +335,12 @@ Password Reset and Notification Emails
 Internal services sending from your domain should use your own DKIM key:
 
 ```bash
-Internal service example: app.yourdomain.com
+Internal service example - app.yourdomain.com
 Configure to sign with your domain's DKIM key
 Don't create separate keys for each subdomain
 ```
 
-Step 10: DMARC Forensic Reports
+Step 10 - DMARC Forensic Reports
 
 Forensic reports (ruf) provide detailed information about failed messages:
 

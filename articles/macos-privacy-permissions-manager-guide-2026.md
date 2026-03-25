@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand macOS Privacy Architecture
+Step 1 - Understand macOS Privacy Architecture
 
 macOS organizes privacy permissions into categories within System Settings. Navigate to Privacy & Security to see all available categories: Camera, Microphone, Location Services, Contacts, Calendars, Reminders, Photos, Accessibility, Automation, and Full Disk Access. Each category contains a list of applications that have requested and been granted (or denied) access.
 
 The system maintains a database of privacy decisions in the TCC (Transparency, Consent, and Control) database. This database lives at `/Library/Application Support/com.apple.TCC/TCC.db` for system-wide permissions and `~/Library/Application Support/com.apple.TCC/TCC.db` for user-level permissions. For developers, understanding how to interact with this system is valuable for testing and managing permissions at scale.
 
-Step 2: Use System Settings for Permission Management
+Step 2 - Use System Settings for Permission Management
 
 The primary interface for managing permissions remains System Settings. Open it and navigate to Privacy & Security, then select any category to see authorized applications. From here, you can toggle permissions on or off, remove specific apps, or add applications by clicking the plus button.
 
@@ -53,7 +53,7 @@ open x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibili
 
 These URL schemes are useful when scripting workflows or creating keyboard shortcuts for rapid permission management.
 
-Step 3: Command-Line Tools for Privacy Management
+Step 3 - Command-Line Tools for Privacy Management
 
 While macOS does not provide a native CLI for managing TCC permissions directly, several approaches exist for power users and developers.
 
@@ -90,7 +90,7 @@ For TCC database management, developers often use third-party utilities:
 
 These tools interact with the TCC database directly and can be valuable for auditing permissions across multiple machines or for testing scenarios.
 
-Step 4: Automate Permission Grants
+Step 4 - Automate Permission Grants
 
 For developers managing permissions across multiple machines or during automated testing, scripting permission management is essential. While Apple restricts direct TCC database modification without proper entitlements, several workarounds exist.
 
@@ -128,7 +128,7 @@ For enterprise deployments, Mobile Device Management (MDM) solutions can push pr
 </dict>
 ```
 
-Step 5: Audit Permissions with Shortcuts
+Step 5 - Audit Permissions with Shortcuts
 
 macOS Shortcuts provides a way to check and report on privacy permissions. Create a shortcut that iterates through applications and reports their permission status:
 
@@ -151,17 +151,17 @@ Provide clear usage explanations. The permission dialog displays whatever you sp
 
 Test thoroughly. Verify your app's behavior when permissions are granted, denied, and later changed during runtime. Use airplane mode to test location permission handling without a network connection.
 
-Step 6: Common Permission Categories Explained
+Step 6 - Common Permission Categories Explained
 
 Understanding each permission category helps you make informed decisions:
 
-- Camera and Microphone: Required for video calls, recording, and AR features. Always verify with a recording indicator when active.
-- Location Services: Used by maps, fitness apps, and location-based features. Choose "While Using" over "Always" when possible.
-- Contacts, Calendars, Reminders: Required for apps that sync with your personal data. Review which apps have access periodically.
-- Accessibility: The most sensitive category, grants control over other applications and system UI. Only grant to trusted applications.
-- Full Disk Access: Allows reading all files on your system. Typically required for backup utilities, file managers, and security tools.
+- Camera and Microphone - Required for video calls, recording, and AR features. Always verify with a recording indicator when active.
+- Location Services - Used by maps, fitness apps, and location-based features. Choose "While Using" over "Always" when possible.
+- Contacts, Calendars, Reminders - Required for apps that sync with your personal data. Review which apps have access periodically.
+- Accessibility - The most sensitive category, grants control over other applications and system UI. Only grant to trusted applications.
+- Full Disk Access - Allows reading all files on your system. Typically required for backup utilities, file managers, and security tools.
 
-Step 7: Regular Permission Audits
+Step 7 - Regular Permission Audits
 
 Perform quarterly audits of your privacy permissions:
 
@@ -173,7 +173,7 @@ Perform quarterly audits of your privacy permissions:
 
 This practice prevents permission creep and ensures your system maintains the minimum necessary access levels.
 
-Step 8: TCC Database Deep-Dive
+Step 8 - TCC Database Deep-Dive
 
 The TCC (Transparency, Consent, Control) database stores all privacy decisions. Understanding its structure helps with advanced management:
 
@@ -213,7 +213,7 @@ sqlite3 ~/Library/Application\ Support/com.apple.TCC/TCC.db \
     "SELECT service, client, datetime(last_modified, 'unixepoch') FROM access ORDER BY last_modified DESC LIMIT 10;"
 ```
 
-Step 9: Permission Monitoring Scripts
+Step 9 - Permission Monitoring Scripts
 
 Automated monitoring detects unwanted permission changes:
 
@@ -252,7 +252,7 @@ else
 fi
 ```
 
-Step 10: Privacy Settings via Preference Files
+Step 10 - Privacy Settings via Preference Files
 
 Some older applications store privacy settings in preference files:
 
@@ -267,7 +267,7 @@ These may reveal applications you don't remember installing
 or permissions set without your awareness
 ```
 
-Step 11: Notarization and Privacy Entitlements
+Step 11 - Notarization and Privacy Entitlements
 
 When installing applications, verify their privacy entitlements:
 
@@ -286,7 +286,7 @@ codesign -d --entitlements - /Applications/Safari.app | \
     grep -i "sandbox"
 ```
 
-Step 12: Sandboxing and Container Restrictions
+Step 12 - Sandboxing and Container Restrictions
 
 macOS's App Sandbox limits what applications can access:
 
@@ -306,7 +306,7 @@ Review Firefox's specific entitlements
 codesign -d --entitlements :- /Applications/Firefox.app
 ```
 
-Step 13: Privacy Dashboard Alerts
+Step 13 - Privacy Dashboard Alerts
 
 macOS Monterey+ shows when apps access privacy-sensitive resources:
 
@@ -325,7 +325,7 @@ These logs show:
 - Timestamp
 ```
 
-Step 14: Hardened Runtime and Privacy
+Step 14 - Hardened Runtime and Privacy
 
 Hardened Runtime provides additional protections:
 
@@ -340,7 +340,7 @@ Applications with hardened runtime:
 - Have stricter permission requirements
 ```
 
-Step 15: Privacy-Focused Application Alternatives
+Step 15 - Privacy-Focused Application Alternatives
 
 For maximum privacy control, use applications designed with privacy as a feature:
 
@@ -354,7 +354,7 @@ Photos            | Photos       | Codeshot, Simple Gallery
 Notes             | Notes        | Joplin, Obsidian
 ```
 
-Step 16: Privacy Configuration Profiles
+Step 16 - Privacy Configuration Profiles
 
 Organizations can deploy standardized privacy configurations:
 

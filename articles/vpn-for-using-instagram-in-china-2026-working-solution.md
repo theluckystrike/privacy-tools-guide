@@ -180,7 +180,7 @@ Split tunneling configuration
 AllowedIPs = 0.0.0.0/0  # Full tunnel - change for split tunneling
 
 For split tunneling, specify only Instagram's IP ranges
-Instagram CIDR: 157.240.0.0/16, 149.154.0.0/16
+Instagram CIDR - 157.240.0.0/16, 149.154.0.0/16
 AllowedIPs = 157.240.0.0/16, 149.154.0.0/16
 ```
 
@@ -349,7 +349,7 @@ Instagram IP ranges that may get blocked
 157.240.0.0/16 - Primary Instagram infrastructure
 149.154.0.0/16 - Secondary Instagram infrastructure
 
-Split tunneling: route only Instagram traffic through VPN
+Split tunneling - route only Instagram traffic through VPN
 Leave other traffic on regular connection
 
 sudo ip rule add to 157.240.0.0/16 table 100
@@ -421,7 +421,7 @@ Settings > Network & internet > VPN
 Or use WireGuard/OpenVPN apps
 Download from Google Play (may require VPN already active)
 
-Alternative: Use Tor Browser on Android
+Alternative - Use Tor Browser on Android
 Download Tor Browser APK from torproject.org
 ```
 
@@ -441,20 +441,20 @@ Troubleshooting Instagram-Specific Issues
 Common problems and solutions:
 
 ```bash
-Problem: Instagram says "couldn't refresh feed"
-Solution: Verify DNS isn't leaking
+Problem - Instagram says "couldn't refresh feed"
+Solution - Verify DNS isn't leaking
 nslookup instagram.com
 
 Should resolve through VPN DNS servers
 Not your ISP's DNS
 
-Problem: Instagram loads, but can't upload photos
-Solution: Check upload connectivity
+Problem - Instagram loads, but can't upload photos
+Solution - Check upload connectivity
 Some VPN protocols have issues with large uploads
 Try switching protocol or endpoint
 
-Problem: Instagram blocks account claiming "unusual activity"
-Solution: Reduce activity after first access
+Problem - Instagram blocks account claiming "unusual activity"
+Solution - Reduce activity after first access
 Don't change password, language, or profile immediately
 Access from same VPN endpoint consistently
 ```

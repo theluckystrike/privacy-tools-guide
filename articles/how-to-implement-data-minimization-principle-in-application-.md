@@ -27,15 +27,15 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Core Concept: Collecting Less, Not More
+Step 1 - The Core Concept: Collecting Less, Not More
 
 Data minimization starts at the requirements phase. Before storing any field, ask whether the application genuinely needs it. Every piece of personal data you collect creates liability, data that does not exist cannot be breached, leaked, or misused.
 
 Consider a user registration form. Many applications request full name, phone number, date of birth, and address. But if your application only needs an email address for account recovery, collecting additional fields violates minimization. Each unnecessary field represents a privacy risk with no corresponding business value.
 
-Step 2: Database Schema Strategies
+Step 2 - Database Schema Strategies
 
-Column Selection: Only What You Need
+Column Selection - Only What You Need
 
 Design database schemas with minimization from the start. Use nullable columns for optional data, and prefer narrow column types that match actual data requirements.
 
@@ -101,7 +101,7 @@ class UserSession(Base):
 
 Schedule this cleanup to run daily, ensuring that session tokens do not accumulate indefinitely in your database.
 
-Step 3: API Design for Minimization
+Step 3 - API Design for Minimization
 
 Request and Response Filtering
 
@@ -167,7 +167,7 @@ def get_user_logs(user_id, cursor=None, limit=50):
     }
 ```
 
-Step 4: Input Processing: Validate, Do Not Store
+Step 4 - Input Processing: Validate, Do Not Store
 
 Ephemeral Processing Patterns
 
@@ -228,7 +228,7 @@ function validateEmailForRateLimit(email) {
 }
 ```
 
-Step 5: Data Retention Policies
+Step 5 - Data Retention Policies
 
 Implement automated retention enforcement at the database level.
 
@@ -268,7 +268,7 @@ class DataRetentionPolicy:
 
 Run a daily cron job that applies these policies, ensuring no personal data lingers beyond its necessity.
 
-Step 6: Collection Logging
+Step 6 - Collection Logging
 
 When you must collect data for security purposes, minimize what you retain.
 
@@ -304,7 +304,7 @@ class PrivacyAwareLogger:
         logging.info(f"{action}: {safe_data}")
 ```
 
-Step 7: Audit Existing Data Collections
+Step 7 - Audit Existing Data Collections
 
 When joining a team with an existing codebase, the first step is mapping what personal data the application already collects. An automated schema audit gives you a starting inventory:
 
@@ -353,7 +353,7 @@ for f in findings:
 
 Run this audit and export the results to a spreadsheet. For each flagged column, document the business purpose it serves. Columns with no documented purpose are candidates for removal in the next schema migration.
 
-Step 8: Designing Registration Flows for Minimization
+Step 8 - Designing Registration Flows for Minimization
 
 Registration forms are the primary point where applications over-collect. A minimized registration should request the fewest fields needed to create a working account. Progressive disclosure. asking for additional information only when a feature that requires it is accessed. keeps the initial profile lean:
 
@@ -376,7 +376,7 @@ const billingSchema = {
 
 This pattern also reduces abandonment rates. shorter forms convert better. while simultaneously reducing your data liability.
 
-Step 9: Anonymizing Analytics Without Losing Insights
+Step 9 - Anonymizing Analytics Without Losing Insights
 
 Analytics are a common source of unnecessary personal data retention. You can capture meaningful usage metrics without storing user-identifying information:
 

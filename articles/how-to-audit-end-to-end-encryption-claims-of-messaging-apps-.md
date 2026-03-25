@@ -29,13 +29,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand End-to-End Encryption Basics
+Step 1 - Understand End-to-End Encryption Basics
 
 True end-to-end encryption means only the communicating parties can read messages, not the app provider, not servers, not anyone intercepting traffic. The encryption keys should exist only on the devices of the sender and recipient. When you audit a messaging app, you verify this property through multiple layers of investigation.
 
 Modern E2EE protocols like Signal Protocol use the Double Ratchet Algorithm combined with X3DH (Extended Triple Diffie-Hellman) key agreement. Understanding these fundamentals helps you identify what to look for during your audit.
 
-Step 2: Network Traffic Analysis
+Step 2 - Network Traffic Analysis
 
 The first practical audit step involves capturing and analyzing network traffic to confirm encryption in transit.
 
@@ -67,7 +67,7 @@ echo | openssl s_client -connect messaging-server.example.com:443 2>/dev/null | 
 
 The server should present valid certificates from trusted Certificate Authorities. Self-signed certificates or mismatched domains indicate potential security issues.
 
-Step 3: Protocol Analysis
+Step 3 - Protocol Analysis
 
 Examining App Behavior with strace and ltrace
 
@@ -97,7 +97,7 @@ otool -L /Applications/MessagingApp.app/Contents/MacOS/MessagingApp | grep -i "c
 
 Applications using established crypto libraries like OpenSSL, libsodium, or CommonCrypto demonstrate more trust than those using custom implementations.
 
-Step 4: Source Code Verification
+Step 4 - Source Code Verification
 
 Reviewing Open Source Implementations
 
@@ -128,7 +128,7 @@ Legitimate E2EE apps publish detailed protocol specifications. Look for:
 
 Signal Protocol documentation, for example, explicitly describes X3DH key agreement and Double Ratchet usage. Apps with vague or missing documentation should raise concerns.
 
-Step 5: Practical Verification Tests
+Step 5 - Practical Verification Tests
 
 Safety Number Verification
 
@@ -170,7 +170,7 @@ sudo tcpdump -i any -nn -A 'tcp' 2>/dev/null | grep -E "GET |POST |Host:"
 
 Compare the collected metadata against the app's stated practices.
 
-Step 6: Red Flags to Watch For
+Step 6 - Red Flags to Watch For
 
 Several warning signs indicate questionable encryption claims:
 
@@ -184,7 +184,7 @@ Recovery mechanisms. Features that allow password resets or account recovery oft
 
 Inconsistent encryption. Some apps encrypt messages only in certain modes (e.g., "secret chats") while default conversations remain unencrypted or server-accessible.
 
-Step 7: Build Your Audit Toolkit
+Step 7 - Build Your Audit Toolkit
 
 Essential tools for messaging app encryption audits:
 
@@ -209,7 +209,7 @@ Monitor app network traffic in real-time
 mitmproxy -p 8080 --mode regular
 
 Configure app to use proxy, then review HTTP requests/responses
-Look for: Key exchange requests, message encryption, auth tokens
+Look for - Key exchange requests, message encryption, auth tokens
 ```
 
 Check if:
@@ -242,8 +242,8 @@ for name, pattern in patterns.items():
         print(f"Found: {name}")
 ```
 
-Acceptable algorithms: AES-256-GCM, ChaCha20-Poly1305, Ed25519, Curve25519
-Red flags: DES, MD5, SHA1 (deprecated), RC4
+Acceptable algorithms - AES-256-GCM, ChaCha20-Poly1305, Ed25519, Curve25519
+Red flags - DES, MD5, SHA1 (deprecated), RC4
 
 Key Derivation Function (KDF) Testing
 
@@ -261,7 +261,7 @@ If cracking succeeds quickly, KDF is weak
 
 Strong KDFs use Argon2, bcrypt, or scrypt with appropriate cost parameters.
 
-Step 8: Encryption Audit Checklist
+Step 8 - Encryption Audit Checklist
 
 Use this checklist when evaluating any messaging app's encryption:
 
@@ -301,7 +301,7 @@ Metadata:
  Deletion is permanent, not soft-deleted
 ```
 
-Step 9: Cross-Platform Verification
+Step 9 - Cross-Platform Verification
 
 When auditing, test encryption across platforms:
 
@@ -317,7 +317,7 @@ Verify safety numbers match across platforms
 
 Inconsistent encryption between iOS and Android indicates incomplete security implementation.
 
-Step 10: Vulnerability Disclosure Pathways
+Step 10 - Vulnerability Disclosure Pathways
 
 Before publishing audit findings:
 
@@ -328,7 +328,7 @@ Before publishing audit findings:
 
 This gives developers time to respond without giving attackers zero-day information.
 
-Step 11: Build an Audit Workflow
+Step 11 - Build an Audit Workflow
 
 Create a repeatable audit process:
 

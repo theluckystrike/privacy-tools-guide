@@ -152,7 +152,7 @@ Some apps have been documented requesting location permission but actually trans
 Disabling WiFi scanning and Bluetooth when not actively used prevents these alternative tracking vectors.
 ---
 
-Deep Dive: Popular Apps and Their Location Behaviors
+Deep Dive - Popular Apps and Their Location Behaviors
 
 Real-world examples show how major applications handle background location:
 
@@ -214,7 +214,7 @@ Uber/Lyft:
 
 Audit Process
 
-Step 1: Android 12+ Privacy Dashboard Analysis
+Step 1 - Android 12+ Privacy Dashboard Analysis
 
 ```bash
 Access Privacy Dashboard programmatically
@@ -225,7 +225,7 @@ Parse for location access records
 adb shell dumpsys package | grep -A 5 "ACCESS_FINE_LOCATION"
 ```
 
-Step 2: Permission Manager Deep Inspection
+Step 2 - Permission Manager Deep Inspection
 
 For each app with location permission:
 
@@ -238,7 +238,7 @@ Apps with ACCESS_BACKGROUND_LOCATION should be manually reviewed
 adb shell settings get secure location_providers_allowed
 ```
 
-Step 3: Manifest Analysis for Third-Party Apps
+Step 3 - Manifest Analysis for Third-Party Apps
 
 If you have app source code or decompiled APK:
 
@@ -252,7 +252,7 @@ If you have app source code or decompiled APK:
 <!-- WiFi scanning enables coarse location without location permission -->
 ```
 
-Step 4: Network Traffic Analysis
+Step 4 - Network Traffic Analysis
 
 Monitor what data apps transmit after location collection:
 

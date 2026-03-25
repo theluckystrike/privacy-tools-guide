@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Email Tracking Pixels
+Step 1 - Understand Email Tracking Pixels
 
 A tracking pixel (also called a web beacon) is a tiny HTML image embedded in email content. When your email client loads the image to display the email, it makes a request to the sender's server, revealing:
 
@@ -40,7 +40,7 @@ A tracking pixel (also called a web beacon) is a tiny HTML image embedded in ema
 
 Marketing platforms like Mailchimp, HubSpot, and SendGrid commonly use these pixels. The technique is surprisingly effective, studies show that over 70% of commercial emails contain some form of tracking.
 
-Step 2: Blocking Tracking Pixels in Popular Email Clients
+Step 2 - Blocking Tracking Pixels in Popular Email Clients
 
 Apple Mail
 
@@ -70,7 +70,7 @@ Gmail automatically proxies images through Google's servers, which blocks most t
 
 For developers wanting more control, browser extensions like "Uglify" or "PixelBlock" add functionality to visualize and block tracking pixels directly.
 
-Step 3: Command-Line Solutions for Developers
+Step 3 - Command-Line Solutions for Developers
 
 For power users who prefer terminal-based workflows, several tools exist.
 
@@ -130,7 +130,7 @@ View emails with potential tracking
 notmuch search tag:has-tracking
 ```
 
-Advanced: Building a Custom Email Proxy
+Advanced - Building a Custom Email Proxy
 
 For developers wanting complete control, running a local email proxy provides the most flexibility. Using Python with a few libraries:
 
@@ -167,7 +167,7 @@ In production, integrate with your MTA or use as a milter
 
 This approach requires more setup but gives you complete visibility into what trackers attempt to collect.
 
-Step 4: Email Client Configuration for Developers
+Step 4 - Email Client Configuration for Developers
 
 Setting Up a Self-Hosted Email Solution
 
@@ -198,7 +198,7 @@ Beyond blocking tracking pixels, adopt these habits:
 4. Review email headers regularly to understand what data you're revealing
 5. Consider encrypted email with PGP or S/MIME for sensitive communications
 
-Step 5: Test Your Setup
+Step 5 - Test Your Setup
 
 Verify your protection is working:
 
@@ -209,7 +209,7 @@ Verify your protection is working:
 
 Many email tracking services offer "campaign previews" to test, sign up for a newsletter and check what data they collect before and after implementing these protections.
 
-Step 6: Understand Tracking Pixel Variants
+Step 6 - Understand Tracking Pixel Variants
 
 Modern email tracking goes far beyond simple 1×1 images. Understanding these variants helps you choose appropriate protections:
 
@@ -227,7 +227,7 @@ When your email client loads this image, the server logs:
 - User agent (email client type)
 - Device information
 
-How blocking helps: Disabling external images prevents this request entirely.
+How blocking helps - Disabling external images prevents this request entirely.
 
 Hidden Tracking Links
 
@@ -264,27 +264,27 @@ Advanced email tracking platforms embed JavaScript (where supported):
 </script>
 ```
 
-Most modern email clients disable JavaScript entirely, making this vector less effective. However, being aware of its possibility helps you understand the tracking landscape.
+Most modern email clients disable JavaScript entirely, making this vector less effective. However, being aware of its possibility helps you understand the tracking field.
 
 Metadata Extraction Without Images
 
 Even with images disabled, email servers and your email client reveal metadata:
 
 ```
-From: sender@company.com
-Date: Mon, 22 Mar 2026 10:15:00 +0000
+From - sender@company.com
+Date - Mon, 22 Mar 2026 10:15:00 +0000
 To: your@email.com
-Subject: Check out our latest article
+Subject - Check out our latest article
 
-X-Original-IP: 203.0.113.45              ← Your IP at receipt
-X-Originating-IP: [203.0.113.45]
-X-Mailer: MailChimp Version 1.0           ← Service used
-User-Agent: Mozilla/5.0                   ← Device info
+X-Original-IP - 203.0.113.45              ← Your IP at receipt
+X-Originating-IP - [203.0.113.45]
+X-Mailer - MailChimp Version 1.0           ← Service used
+User-Agent - Mozilla/5.0                   ← Device info
 ```
 
 Email headers reveal significant information. Headers are difficult to block entirely since they're essential for mail delivery, but reviewing them helps you understand what's being collected.
 
-Step 7: Set Up Network-Level Blocking
+Step 7 - Set Up Network-Level Blocking
 
 For protection, combine email client settings with network-level filtering:
 
@@ -328,7 +328,7 @@ Even if a tracking pixel loads, it will see your VPN's IP address, not your actu
 
 Firewall Rules for Email Clients
 
-Advanced setup: Configure your OS firewall to restrict what email clients can access:
+Advanced setup - Configure your OS firewall to restrict what email clients can access:
 
 ```bash
 macOS PF firewall rules for Thunderbird
@@ -342,7 +342,7 @@ pass in on utun0 proto tcp from any to any port 587  # SMTP submission
 
 This ensures email traffic never leaves your VPN connection.
 
-Step 8: Analyzing Your Email Privacy Exposure
+Step 8 - Analyzing Your Email Privacy Exposure
 
 Understand your current exposure before and after implementing protections:
 
@@ -401,7 +401,7 @@ Usage
 if __name__ == '__main__':
     import sys
     if len(sys.argv) < 2:
-        print("Usage: python3 audit-email-privacy.py <email.eml>")
+        print("Usage - python3 audit-email-privacy.py <email.eml>")
         sys.exit(1)
 
     findings = audit_email_privacy(sys.argv[1])
@@ -416,7 +416,7 @@ if __name__ == '__main__':
 
 Run this on sample emails to understand what information is being collected.
 
-Step 9: Privacy Philosophy and Trade-offs
+Step 9 - Privacy Philosophy and Trade-offs
 
 No privacy solution is perfect. Understanding the trade-offs helps you choose the right approach:
 

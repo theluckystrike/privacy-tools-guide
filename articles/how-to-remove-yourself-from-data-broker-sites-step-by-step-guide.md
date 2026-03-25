@@ -12,13 +12,13 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-Address: 123 Oak Street, Portland, OR 97201
-Phone: (503) 555-1234
-Email: patrick@example.com
-Age: 38
-Relatives: Maria Johnson (spouse), Emma Johnson (daughter)
-Vehicle: 2021 Tesla Model 3
-Employment: Software Engineer at TechCorp
+Address - 123 Oak Street, Portland, OR 97201
+Phone - (503) 555-1234
+Email - patrick@example.com
+Age - 38
+Relatives - Maria Johnson (spouse), Emma Johnson (daughter)
+Vehicle - 2021 Tesla Model 3
+Employment - Software Engineer at TechCorp
 ---
 
 Dear Equifax,
@@ -28,25 +28,25 @@ from your credit database.
 
 Personal Information:
 Name: Patrick Johnson
-Date of Birth: 01/15/1985
-SSN (last 4): 1234
-Current Address: 123 Oak Street, Portland, OR 97201
+Date of Birth - 01/15/1985
+SSN (last 4) - 1234
+Current Address - 123 Oak Street, Portland, OR 97201
 
-Reason: CCPA/GDPR removal request per my legal rights.
+Reason - CCPA/GDPR removal request per my legal rights.
 
 I am enclosing:
 - Scan of government-issued ID
 - Proof of address
 - Signed verification statement
 
-Send confirmation to: patrick@example.com
+Send confirmation to - patrick@example.com
 
 Sincerely,
 Patrick Johnson
 ---
 
-Include: Copy of ID, proof of address, signature page.
-Processing time: 30-60 days
+Include - Copy of ID, proof of address, signature page.
+Processing time - 30-60 days
 ```
 
 Experian (Credit Report Removal)
@@ -54,7 +54,7 @@ Experian (Credit Report Removal)
 ```
 Experian maintains credit history, payment records.
 
-1. Visit: https://www.experian.com/disputes/
+1. Visit - https://www.experian.com/disputes/
 2. Dispute option: "Report an error"
 3. Flag items for removal
    (Outdated items: Removed automatically after 7 years)
@@ -66,7 +66,7 @@ National Consumer Assistance Center
 P.O. Box 4500
 Allen, TX 75013
 
-Processing: 30 days
+Processing - 30 days
 ```
 
 TransUnion (Credit Report Removal)
@@ -74,7 +74,7 @@ TransUnion (Credit Report Removal)
 ```
 TransUnion is the third major credit bureau.
 
-1. Visit: https://www.transunion.com/
+1. Visit - https://www.transunion.com/
 2. Get credit report, dispute section
 3. Online removal: https://secured.transunion.com/disputes
 4. For full removal: Mail formal request to
@@ -83,21 +83,21 @@ TransUnion Consumer Dispute Center
 P.O. Box 2000
 Chester, PA 19022-2000
 
-Send: ID copy, proof of address, signed CCPA request
+Send - ID copy, proof of address, signed CCPA request
 
-Processing: 30-45 days
+Processing - 30-45 days
 ```
 
-Step 3: Automated Removal Tools (Do It Once, Tools Handle It)
+Step 3 - Automated Removal Tools (Do It Once, Tools Handle It)
 
 Manual removal works but requires 20+ emails and tracking. Automated tools send requests for you.
 
-Option 1: DeleteMe (Professional Subscription)
+Option 1 - DeleteMe (Professional Subscription)
 
 ```
 DeleteMe handles removal and monitoring automatically.
 
-Cost: $129/year for one person
+Cost - $129/year for one person
 What they do:
   → Submit opt-out requests to 200+ data brokers
   → Track removal status
@@ -112,18 +112,18 @@ Process:
   5. Receive dashboard with status of each broker
   6. Quarterly verification scans (included)
 
-Best for: People who prefer paying vs doing it manually
+Best for - People who prefer paying vs doing it manually
 
-Concern: You must provide SSN-like info, so verify DeleteMe's privacy.
+Concern - You must provide SSN-like info, so verify DeleteMe's privacy.
 They claim to delete immediately after verification.
 ```
 
-Option 2: Incogni (Subscription Service)
+Option 2 - Incogni (Subscription Service)
 
 ```
 Incogni is similar to DeleteMe.
 
-Cost: $89-149/year depending on plan
+Cost - $89-149/year depending on plan
 What they do:
   → Remove from 200+ data brokers
   → Monitor data resale
@@ -135,32 +135,32 @@ Key difference from DeleteMe:
   - Less proven track record (newer company)
 
 Process:
-  1. Visit: https://incogni.com
+  1. Visit - https://incogni.com
   2. Sign up, verify identity
   3. Connect accounts (Gmail, phone, SSN confirmation)
   4. They send removal requests
   5. Dashboard shows removal status
 
-Best for: Budget-conscious, don't mind newer company
+Best for - Budget-conscious, don't mind newer company
 ```
 
-Option 3: Free Alternative: Your Data My Data Bot (Semi-Automated)
+Option 3 - Free Alternative: Your Data My Data Bot (Semi-Automated)
 
 ```
 Semi-automated using online forms + your submission.
 
-Cost: Free (takes 2-3 hours of your time)
+Cost - Free (takes 2-3 hours of your time)
 Process:
-  1. Visit: https://www.yourdatamydata.org/opt-outs/
+  1. Visit - https://www.yourdatamydata.org/opt-outs/
   2. They provide pre-filled forms for major brokers
   3. You copy/paste into each broker's website
   4. They track which ones you've completed
 
-Best for: Privacy-conscious people, DIY preferred
-Drawback: You still manually submit each one
+Best for - Privacy-conscious people, DIY preferred
+Drawback - You still manually submit each one
 ```
 
-Step 4: Verification (Confirm Removal Actually Happened)
+Step 4 - Verification (Confirm Removal Actually Happened)
 
 Brokers sometimes claim removal without actually removing. Verify quarterly.
 
@@ -203,30 +203,30 @@ Use DeleteMe or Incogni for re-verification on data brokers
 you can't search directly.
 ```
 
-Real-World Timeline: Complete Removal (1-3 Months)
+Real-World Timeline - Complete Removal (1-3 Months)
 
 ```
-WEEK 1: Easy opt-outs (10 brokers)
+WEEK 1 - Easy opt-outs (10 brokers)
   Day 1-2: Spokeo, BeenVerified, TruthFinder, Whitepages (15 min)
   Day 3-4: MyLife, Instant Checkmate, Radaris, Intellius (15 min)
   Day 5: Send email requests to Pipl, ZoomInfo (10 min)
 
-WEEK 2-3: Credit agencies (critical)
+WEEK 2-3 - Credit agencies (critical)
   Day 8: Request removal from Equifax (online + mail)
   Day 10: Request removal from Experian (online + mail)
   Day 12: Request removal from TransUnion (online + mail)
   Mail physical letters (3 copies with ID/proof)
 
-WEEK 4: Acxiom and Epsilon (hardest)
+WEEK 4 - Acxiom and Epsilon (hardest)
   Email formal CCPA removal request (requires mail confirmation)
   Allow 30-45 days for processing
 
-WEEK 8-12: Verification
+WEEK 8-12 - Verification
   Search your name on all major brokers
   Confirm "not found" or "removed"
   Re-submit to any that reappeared
 
-MONTH 4-ONWARD: Quarterly monitoring
+MONTH 4-ONWARD - Quarterly monitoring
   Every 3 months: Re-search major brokers
   Any data reappearance: Immediately re-submit removal
 ```
@@ -236,7 +236,7 @@ Common Challenges + Solutions
 Broker Says "Identity Verification Failed"
 
 ```
-Problem: System can't find your profile despite you entering correct info.
+Problem - System can't find your profile despite you entering correct info.
 
 Solution:
 1. Try middle initial vs full middle name
@@ -255,7 +255,7 @@ If still stuck:
 Broker Requires Phone Verification You Don't Have Access To
 
 ```
-Problem: Broker says "We'll call/text this number to verify."
+Problem - Broker says "We'll call/text this number to verify."
 But you've changed your phone number since data was collected.
 
 Solution:
@@ -268,9 +268,9 @@ Solution:
 Data Reappears After 3 Months
 
 ```
-Problem: You removed it, but 6 months later it appears again.
+Problem - You removed it, but 6 months later it appears again.
 
-Cause: Broker often re-collects data from public sources.
+Cause - Broker often re-collects data from public sources.
 
 Solution:
 1. Re-submit removal request
@@ -285,7 +285,7 @@ State-Specific Laws (US)
 ```
 Different states have different removal rights.
 
-California (CCPA): Strongest removal rights
+California (CCPA) - Strongest removal rights
   → Can request deletion of all personal information
   → Broker must comply within 45 days
   → Send request to broker's privacy email
@@ -318,7 +318,7 @@ IF YOU DON'T HAVE TIME:
 MY RECOMMENDATION:
   Hybrid approach: Do credit agencies + top 10 yourself (1-2 hours).
   Use DeleteMe for the remaining 190+ brokers ($129/year).
-  Reason: Credit agencies are critical but less likely to auto-resell.
+  Reason - Credit agencies are critical but less likely to auto-resell.
   Data brokers constantly re-collect, so automation is worth the cost.
 ```
 

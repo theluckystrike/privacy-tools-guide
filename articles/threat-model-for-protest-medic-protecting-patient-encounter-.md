@@ -39,7 +39,7 @@ Before implementing protections, identify the adversaries. Protest medic data fa
 - Data brokers: Aggregating health-related information from multiple sources
 - Bad actors: Individuals who may target medics for harassment or doxxing
 
-The core principle: assume any data you create could eventually be accessed by an adversary. Design your systems accordingly.
+The core principle - assume any data you create could eventually be accessed by an adversary. Design your systems accordingly.
 
 Digital Footprint Assessment
 

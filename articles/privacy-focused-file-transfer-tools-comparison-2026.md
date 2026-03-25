@@ -16,7 +16,7 @@ intent-checked: true
 
 Four tools handle private file transfers well: OnionShare, Magic Wormhole, Croc, and Firefox Send (self-hosted). Each suits a different threat model.
 
-OnionShare creates a temporary Tor onion service on your machine. The recipient connects through Tor Browser to download files directly from your computer. No server stores anything. Files never leave your device until the recipient downloads them. Downside: transfers are slow (Tor overhead) and both parties need Tor.
+OnionShare creates a temporary Tor onion service on your machine. The recipient connects through Tor Browser to download files directly from your computer. No server stores anything. Files never leave your device until the recipient downloads them. Downside - transfers are slow (Tor overhead) and both parties need Tor.
 
 ```bash
 Install and share a file
@@ -29,7 +29,7 @@ Magic Wormhole uses a short passphrase to establish an encrypted peer-to-peer co
 ```bash
 Sender
 wormhole send secret-document.pdf
-Prints: wormhole receive 7-crossover-clockwork
+Prints - wormhole receive 7-crossover-clockwork
 
 Receiver
 wormhole receive 7-crossover-clockwork

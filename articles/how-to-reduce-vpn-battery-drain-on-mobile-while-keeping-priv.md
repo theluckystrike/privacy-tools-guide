@@ -22,7 +22,7 @@ This guide provides practical strategies and technical configurations to reduce 
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Practical Example: Mobile Workstation Configuration](#practical-example-mobile-workstation-configuration)
+- [Practical Example - Mobile Workstation Configuration](#practical-example-mobile-workstation-configuration)
 - [Advanced Tuning for Power Users](#advanced-tuning-for-power-users)
 - [Troubleshooting](#troubleshooting)
 
@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Why VPNs Drain Battery
+Step 1 - Understand Why VPNs Drain Battery
 
 Before implementing solutions, you need to understand the root causes of VPN-related battery drain.
 
@@ -48,11 +48,11 @@ Network interface switching occurs when your device constantly switches between 
 
 DNS resolution through encrypted DNS servers can introduce latency and additional processing compared to local resolution.
 
-Step 2: Protocol Selection: The Foundation of Battery Efficiency
+Step 2 - Protocol Selection: The Foundation of Battery Efficiency
 
 Your choice of VPN protocol dramatically impacts battery consumption.
 
-WireGuard: The Modern Standard
+WireGuard - The Modern Standard
 
 WireGuard has become the preferred protocol for battery-conscious users. Its codebase consists of approximately 4,000 lines compared to OpenVPN's 600,000+, resulting in minimal overhead and efficient cryptographic operations.
 
@@ -72,23 +72,23 @@ PersistentKeepalive = 25
 
 The `PersistentKeepalive` setting at 25 seconds strikes a balance between connection stability and power efficiency.
 
-IKEv2/IPsec: Built-in Support
+IKEv2/IPsec - Built-in Support
 
 IKEv2 handles network transitions smoothly, making it ideal for mobile users who frequently switch between WiFi and cellular. Most modern mobile operating systems include native IKEv2 support, eliminating the need for third-party applications.
 
 ```bash
 IKEv2 configuration parameters for strong security with lower battery impact
-Phase 1: AES-256-GCM for authentication
-Phase 2: CHACHA20-POLY1305 for encryption
-Keepalive interval: 30 seconds
-Dead peer detection: 3 retries
+Phase 1 - AES-256-GCM for authentication
+Phase 2 - CHACHA20-POLY1305 for encryption
+Keepalive interval - 30 seconds
+Dead peer detection - 3 retries
 ```
 
 Avoid Legacy Protocols
 
 OpenVPN, while versatile, generates significantly more overhead due to its TLS-based architecture. Unless specific use cases require it, stick with WireGuard or IKEv2 for mobile deployments.
 
-Step 3: Configuration Strategies for Power Users
+Step 3 - Configuration Strategies for Power Users
 
 Split Tunneling
 
@@ -130,7 +130,7 @@ VPN kill switches prevent data leaks by blocking traffic when the VPN disconnect
 
 For mobile devices, consider using the application-level kill switch rather than the system-level variant if your VPN client supports it. This approach monitors only VPN-specific traffic rather than all network activity.
 
-Step 4: Mobile-Specific Optimizations
+Step 4 - Mobile-Specific Optimizations
 
 Android Settings
 
@@ -159,7 +159,7 @@ Both Android and iOS aggressively manage background apps. To ensure your VPN rem
 - Disable Data Saver mode for the VPN application
 - Enable unrestricted background activity (Android) or disable Background App Refresh restrictions (iOS)
 
-Step 5: Network Transition Handling
+Step 5 - Network Transition Handling
 
 Mobile devices constantly switch networks, each transition potentially disrupting the VPN tunnel.
 
@@ -170,30 +170,30 @@ WiFi-cellular handoffs are more disruptive. Configure your VPN to handle these g
 ```bash
 IKEv2 configuration for smooth handoffs
 MOBIKE (RFC 4555) enables IP address changes without rekeying
-Dead peer detection: 3 attempts with 10-second intervals
-Reauthentication: Disabled (use quick mode instead)
+Dead peer detection - 3 attempts with 10-second intervals
+Reauthentication - Disabled (use quick mode instead)
 ```
 
 For WireGuard, the built-in handshake reinitiation typically handles transitions within seconds without full reconnection.
 
-Step 6: Monitor and Debugging
+Step 6 - Monitor and Debugging
 
 To verify your optimizations are working, monitor VPN battery impact:
 
 ```bash
-Android: Check battery usage via adb
+Android - Check battery usage via adb
 adb shell dumpsys batterystats --unplugged | grep -A 5 "VPN"
 
 iOS: Battery analysis in Settings > Battery
 Look for "VPN" and "VPN On Demand" percentages
 
-Linux desktop: Monitor connection stability
+Linux desktop - Monitor connection stability
 while true; do wg show wg0 latest-handshakes; sleep 10; done
 ```
 
 A healthy VPN connection should consume 2-5% of battery over 8 hours of moderate use. If you're seeing 15% or more, revisit the configuration options above.
 
-Practical Example: Mobile Workstation Configuration
+Practical Example - Mobile Workstation Configuration
 
 For developers running development servers on mobile devices while maintaining privacy:
 
@@ -214,12 +214,12 @@ PersistentKeepalive = 30
 
 This configuration routes only development-related traffic through the VPN while keeping personal traffic direct, minimizing battery impact while protecting sensitive work communications.
 
-Step 7: Measuring and Benchmarking
+Step 7 - Measuring and Benchmarking
 
 Track actual battery consumption with specific VPN configurations:
 
 ```bash
-Android: Detailed battery stats
+Android - Detailed battery stats
 adb shell dumpsys batterystats | grep -A 50 "wakelock"
 
 iOS: Power monitoring via Xcode

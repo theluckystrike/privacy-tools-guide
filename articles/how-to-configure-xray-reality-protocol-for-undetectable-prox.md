@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand How Reality Protocol Works
+Step 1 - Understand How Reality Protocol Works
 
 Traditional proxies and VPNs often fail because deep packet inspection (DPI) systems can identify their traffic signatures. Reality solves this by dynamically generating traffic that mimics normal HTTPS connections. When your client connects to a server, it performs what's called "server reality check", it queries the target destination (such as a major website) and uses the actual TLS handshake parameters from legitimate servers as its own disguise.
 
@@ -44,7 +44,7 @@ The protocol maintains a list of "fronting targets", popular websites that use H
 
 Another critical component is the "universal" mode, which allows the client to dynamically select any SNI (Server Name Indication) value, enabling true undetectability because each connection can look different.
 
-Step 2: Server-Side Configuration
+Step 2 - Server-Side Configuration
 
 First, install Xray on your server. On a Debian or Ubuntu system:
 
@@ -108,7 +108,7 @@ xray x25519
 
 The `x25519` command generates a key pair. The public key goes into your server config, and you keep the private key secure. Generate a short ID (a hex string of 8 characters) for additional fingerprinting diversity.
 
-Step 3: Client-Side Configuration
+Step 3 - Client-Side Configuration
 
 For the client, you need compatible software. The most common options include:
 
@@ -201,13 +201,13 @@ Troubleshooting Common Issues
 
 If your connection fails, check these common problems:
 
-Connection Timeout: Verify your server firewall allows outbound connections and the Reality port (typically 443) is open. Also confirm your server can reach the fronting destinations.
+Connection Timeout - Verify your server firewall allows outbound connections and the Reality port (typically 443) is open. Also confirm your server can reach the fronting destinations.
 
-TLS Handshake Errors: The most common cause is mismatched public keys. Regenerate your keys and ensure they match exactly between server and client.
+TLS Handshake Errors - The most common cause is mismatched public keys. Regenerate your keys and ensure they match exactly between server and client.
 
-Server Name Mismatch: The SNI (Server Name Indication) in your client must exactly match one of the serverNames configured on your server.
+Server Name Mismatch - The SNI (Server Name Indication) in your client must exactly match one of the serverNames configured on your server.
 
-Rotating IPs: If your server IP gets blocked, having multiple server configurations with different fronting domains helps maintain accessibility.
+Rotating IPs - If your server IP gets blocked, having multiple server configurations with different fronting domains helps maintain accessibility.
 
 Security Considerations
 
@@ -226,7 +226,7 @@ To optimize throughput:
 - Use kernel-level Xray installation (not the Docker version) for lower latency
 - Place your server geographically closer to your actual location for better speed
 
-Step 4: Test Your Reality Connection
+Step 4 - Test Your Reality Connection
 
 After configuring both server and client, verify the connection works correctly:
 
@@ -242,7 +242,7 @@ curl --proxy socks5://127.0.0.1:10808 -o /dev/null -w "%{speed_download}" \
   https://speed.cloudflare.com/__down?bytes=10000000
 ```
 
-Step 5: Choose Fronting Targets Wisely
+Step 5 - Choose Fronting Targets Wisely
 
 | Criteria | Good Target | Bad Target |
 |----------|------------|------------|
@@ -252,9 +252,9 @@ Step 5: Choose Fronting Targets Wisely
 | ALPN support | h2 and http/1.1 | http/1.1 only |
 | Geographic reach | Global CDN | Regional hosting |
 
-Recommended fronting targets: `www.microsoft.com`, `www.apple.com`, `www.amazon.com`, `www.cloudflare.com`. These sites use modern TLS configurations, have high traffic volumes, and are unlikely to be blocked due to their economic significance.
+Recommended fronting targets - `www.microsoft.com`, `www.apple.com`, `www.amazon.com`, `www.cloudflare.com`. These sites use modern TLS configurations, have high traffic volumes, and are unlikely to be blocked due to their economic significance.
 
-Step 6: Automate Server Maintenance
+Step 6 - Automate Server Maintenance
 
 ```bash
 #!/bin/bash

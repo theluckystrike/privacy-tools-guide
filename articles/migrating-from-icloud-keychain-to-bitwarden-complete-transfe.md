@@ -30,7 +30,7 @@ Three primary approaches exist for developers:
 
 The most reliable method for developers combines the built-in security tooling with custom conversion scripts.
 
-Method 1: Using macOS Keychain Access
+Method 1 - Using macOS Keychain Access
 
 The traditional approach uses the Keychain Access GUI application:
 
@@ -43,7 +43,7 @@ The traditional approach uses the Keychain Access GUI application:
 
 However, this `.clip` format isn't directly importable to Bitwarden. You'll need conversion.
 
-Method 2: Using Apple's Password Manager CLI
+Method 2 - Using Apple's Password Manager CLI
 
 macOS Sequoia introduced a native CLI for password management. This provides the cleanest export path:
 
@@ -55,11 +55,11 @@ Export to CSV format
 passwords export --format csv --output ~/Desktop/icloud_keychain_export.csv
 ```
 
-The CLI exports include: URL, username, password, notes, and creation date. This CSV format maps directly to Bitwarden's import requirements.
+The CLI exports include - URL, username, password, notes, and creation date. This CSV format maps directly to Bitwarden's import requirements.
 
 If you're running an earlier macOS version, upgrade or use the Python script method below.
 
-Method 3: Python Script for Keychain Extraction
+Method 3 - Python Script for Keychain Extraction
 
 For older macOS versions or automated workflows, use the `security` command-line tool with Python processing:
 
@@ -143,7 +143,7 @@ def convert_to_bitwarden_csv(input_file, output_file):
 
 if __name__ == '__main__':
     if len(sys.argv) < 3:
-        print("Usage: python3 convert.py <input.csv> <output.csv>")
+        print("Usage - python3 convert.py <input.csv> <output.csv>")
         sys.exit(1)
 
     convert_to_bitwarden_csv(sys.argv[1], sys.argv[2])
@@ -210,7 +210,7 @@ Count total entries
 bw list items | jq 'length'
 ```
 
-Review critical accounts first: email, banking, and social media. Test login on a secondary device before removing iCloud Keychain entries.
+Review critical accounts first - email, banking, and social media. Test login on a secondary device before removing iCloud Keychain entries.
 
 Automation for Large Vaults
 

@@ -54,10 +54,10 @@ NordLynx (NordVPN's WireGuard implementation) demonstrated the best overall perf
 ```bash
 Testing connection speed with NordLynx
 curl -s https://speedtestnord.vercel.app/api/speed | jq '.'
-Output: { "download": 45.2, "upload": 12.8, "latency": 98 }
+Output - { "download": 45.2, "upload": 12.8, "latency": 98 }
 
 Testing OpenVPN UDP
-Typical results: download 28-35 Mbps, upload 8-12 Mbps
+Typical results - download 28-35 Mbps, upload 8-12 Mbps
 ```
 
 OpenVPN UDP provides better throughput than TCP but is more susceptible to packet loss. For developers running automated scripts, TCP-based connections often provide more reliability at the cost of speed.
@@ -94,7 +94,7 @@ nordvpn set obfuscate on
 
 Verify connection
 nordvpn status
-Output: Connected to de714 (Germany)
+Output - Connected to de714 (Germany)
 ```
 
 Docker Integration
@@ -177,9 +177,9 @@ Test for DNS leaks
 dig +short myip.opendns.com @resolver1.opendns.com
 Should return VPN IP, not your ISP's
 
-Alternative: use curl
+Alternative - use curl
 curl -s https://api.ipify.org
-Compare with: curl -s --socks5 localhost:1080 https://api.ipify.org
+Compare with - curl -s --socks5 localhost:1080 https://api.ipify.org
 ```
 
 Split Tunneling for Development
@@ -220,7 +220,7 @@ These figures represent typical performance and may vary based on your ISP conne
 
 Legal Considerations
 
-Users in Uzbekistan should be aware of local regulations regarding VPN usage. The country's internet framework has specific requirements for VPN services. We recommend consulting with local legal expertise to understand the current regulatory ecosystem before configuring VPN services.
+Users in Uzbekistan should be aware of local regulations regarding VPN usage. The country's internet framework has specific requirements for VPN services. We recommend consulting with local legal expertise to understand the current regulatory environment before configuring VPN services.
 
 Frequently Asked Questions
 

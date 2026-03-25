@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: KeePass: Best for Complete Control
+Step 1 - KeePass: Best for Complete Control
 
 KeePass is open-source, offline-first, and requires no subscription.
 - Select "Families" plan ($99.99/year)
@@ -40,7 +40,7 @@ KeePass is open-source, offline-first, and requires no subscription.
 - The three strongest privacy-respecting: options are Bitwarden Organizations (cheapest), 1Password Families (most polished), and KeePass with shared file storage (most control).
 - It trades some privacy: (1Password has backup keys) for ease of use and features.
 
-Step 2: The Password Sharing Problem
+Step 2 - The Password Sharing Problem
 
 Family password sharing creates risks:
 
@@ -61,7 +61,7 @@ Trust problem:
 - A family member can reset password and lock everyone else out
 - No way to revoke access without changing password for all users
 
-Step 3: Bitwarden Organizations: Best for Privacy + Affordability
+Step 3 - Bitwarden Organizations: Best for Privacy + Affordability
 
 Bitwarden is an open-source password manager with family-friendly organizational features. For privacy-conscious families under budget constraints, it's the strongest choice.
 
@@ -99,7 +99,7 @@ Step 1: Admin Creates Account
 4. Verify email
 ```
 
-Step 2: Create Family Organization
+Step 2 - Create Family Organization
 ```
 Vault > Create Organization
 - Name: "Smith Family"
@@ -107,7 +107,7 @@ Vault > Create Organization
 - Billing Cycle: Annual ($40/year)
 ```
 
-Step 3: Invite Family Members
+Step 3 - Invite Family Members
 ```
 Organization > Members > Invite User
 - Enter family member email
@@ -117,14 +117,14 @@ Organization > Members > Invite User
 
 Family member receives email:
 ```
-Subject: You've been invited to join Smith Family on Bitwarden
+Subject - You've been invited to join Smith Family on Bitwarden
 
 [Accept Invitation Button]
 ```
 
 They click, create their own master password, join organization.
 
-Step 4: Create Collections (Shared Folders)
+Step 4 - Create Collections (Shared Folders)
 ```
 Organization > Collections > Create Collection
 - Name: "Streaming Services"
@@ -132,7 +132,7 @@ Organization > Collections > Create Collection
 - Permissions: View, Edit, Delete
 ```
 
-Step 5: Add Passwords to Collections
+Step 5 - Add Passwords to Collections
 ```
 Vault > Add Item > [Password details]
 - Name: "Netflix"
@@ -184,12 +184,12 @@ If a family member forgets their master password:
 - Their vault is inaccessible
 - You must delete their account and recreate (they lose personal vault items)
 
-Solution: Store master passwords offline:
+Solution - Store master passwords offline:
 - Print master password on paper
 - Store in safe/lockbox
 - Family member keeps copy in wallet (encrypted in phone if lost)
 
-Step 4: 1Password Families: Best for Ease and Features
+Step 4 - 1Password Families: Best for Ease and Features
 
 1Password Families is the most polished family password sharing solution. It trades some privacy (1Password has backup keys) for ease of use and features.
 
@@ -197,7 +197,7 @@ Pricing:
 - 1Password Families: $99.99/year (up to 5 people)
 - $20/person/year for 6+ people
 
-For 5-person family: $100/year = $20/person/year
+For 5-person family - $100/year = $20/person/year
 
 Why 1Password Families:
 - Automatic backup if you forget password
@@ -238,7 +238,7 @@ Enter Recovery Key
 Reset password
 ```
 
-Step 2: Add Family Members
+Step 2 - Add Family Members
 ```
 Settings > Family Members > Invite
 - Name: "Mom"
@@ -248,7 +248,7 @@ Settings > Family Members > Invite
 
 Mom receives invite email:
 ```
-Subject: You've been added to 1Password Families
+Subject - You've been added to 1Password Families
 
 1. Download 1Password from appstore
 2. Create account
@@ -256,7 +256,7 @@ Subject: You've been added to 1Password Families
 4. Join family vault
 ```
 
-Step 3: Create Shared Vaults
+Step 3 - Create Shared Vaults
 ```
 Settings > Vaults > Create New Vault
 - Name: "Streaming"
@@ -264,11 +264,11 @@ Settings > Vaults > Create New Vault
 - Type: Family Vault
 ```
 
-Step 4: Add Passwords
+Step 4 - Add Passwords
 ```
 1Password App > Streaming Vault > "+"
 - Website: netflix.com
-- Username: familyemail@gmail.com
+- Username - familyemail@gmail.com
 - Password: [generated or entered]
 - Notes: "Family account, shared login"
 ```
@@ -318,7 +318,7 @@ If you're in accident/hospitalized:
 2. Waits 2 weeks (time for you to cancel if you wake up)
 3. After 2 weeks, Mom gets full access to your account
 
-Step 5: KeePass: Best for Complete Control
+Step 5 - KeePass: Best for Complete Control
 
 KeePass is open-source, offline-first, and requires no subscription. For families who want maximum control and don't mind more setup, KeePass with shared file storage (Dropbox, OneDrive) works well.
 
@@ -339,21 +339,21 @@ KeePass Setup:
 
 Step 1: Install KeePass
 ```
-Windows: Download from keepass.info
+Windows - Download from keepass.info
 macOS: Homebrew: brew install keepass
-Linux: apt-get install keepass2
-Android/iPhone: KeePass app from app store
+Linux - apt-get install keepass2
+Android/iPhone - KeePass app from app store
 ```
 
-Step 2: Create Database
+Step 2 - Create Database
 ```
 KeePass > File > New Database
-- Location: ~/Documents/family_passwords.kdbx
+- Location - ~/Documents/family_passwords.kdbx
 - Master Password: [strong password]
 - Save
 ```
 
-Step 3: Create Groups (like Bitwarden Collections)
+Step 3 - Create Groups (like Bitwarden Collections)
 ```
 Groups > Add Group
 - Name: Streaming
@@ -363,7 +363,7 @@ Add subgroups:
   - Spotify
 ```
 
-Step 4: Add Entries
+Step 4 - Add Entries
 ```
 Entries > Add Entry
 - Title: Netflix
@@ -373,11 +373,11 @@ Entries > Add Entry
 - Notes: "Family plan, 4 screens"
 ```
 
-Step 5: Set Up Cloud Sync
+Step 5 - Set Up Cloud Sync
 
 Move the .kdbx file to Dropbox:
 ```
-1. Create: ~/Dropbox/passwords.kdbx
+1. Create - ~/Dropbox/passwords.kdbx
 2. All family members access same file
 3. Changes sync automatically
 ```
@@ -429,7 +429,7 @@ KeePass Limitations:
 - No audit log: Can't see who changed what (unless you add records manually)
 - Mobile sync requires setup: Not as smooth as 1Password
 
-Comparison Table: Password Sharing Options
+Comparison Table - Password Sharing Options
 
 | Feature | Bitwarden | 1Password | KeePass |
 |---------|-----------|-----------|---------|
@@ -444,78 +444,78 @@ Comparison Table: Password Sharing Options
 | Family Members | 6 | 5 | Unlimited |
 | Best For | Privacy + Budget | Ease of Use | Control + Free |
 
-Step 6: Practical Scenarios: Which Tool to Choose
+Step 6 - Practical Scenarios: Which Tool to Choose
 
-Scenario 1: Tech-savvy family, privacy-first
+Scenario 1 - Tech-savvy family, privacy-first
 → Use Bitwarden Organizations
 - Cost: $40/year for 6 people
 - Privacy: Zero-knowledge encryption, open source
 - Audit: Can see who accessed what
 - Complexity: Medium (worth it for privacy)
 
-Scenario 2: Non-technical family, ease matters
+Scenario 2 - Non-technical family, ease matters
 → Use 1Password Families
 - Cost: $100/year for 5 people
 - Ease: Simplest onboarding, best mobile
 - Security: Recovery key solves "forgot password"
 - Support: 1Password customer service excellent
 
-Scenario 3: Family wants complete control, no subscriptions
+Scenario 3 - Family wants complete control, no subscriptions
 → Use KeePass + Dropbox
 - Cost: $0 (or $12/month for Dropbox if you want it anyway)
 - Control: Full ownership of database
 - Privacy: You control where file is stored
 - Trade-off: Manual sync and conflict resolution
 
-Scenario 4: Elderly parents, younger kids, mixed tech comfort
+Scenario 4 - Elderly parents, younger kids, mixed tech comfort
 → Use 1Password Families
 - Parents can set recovery key (worry-free)
 - Kids add to family vault (parent manages their access)
 - Emergency access means if parent incapacitated, adult child can access financial info
 - "Watchtower" alerts if passwords compromised (automatic)
 
-Step 7: Set Up Checklist by Age Group
+Step 7 - Set Up Checklist by Age Group
 
 For College-Age Kids
 ```
-Tool: Bitwarden or 1Password Family
-Access level: View-only on shared passwords
-Their own vault: Personal passwords not shared
-Can they edit: No (prevent accidental changes)
-Emergency access: Parents can access if needed
+Tool - Bitwarden or 1Password Family
+Access level - View-only on shared passwords
+Their own vault - Personal passwords not shared
+Can they edit - No (prevent accidental changes)
+Emergency access - Parents can access if needed
 ```
 
 For Parents (Primary Users)
 ```
-Tool: Same as family choice
-Admin role: Yes (manage family members, collections)
-Master password backup: Written down, in safe
-Emergency contacts: Set up (for other parent, adult child)
-Audit logs: Check monthly (see who accessed what)
+Tool - Same as family choice
+Admin role - Yes (manage family members, collections)
+Master password backup - Written down, in safe
+Emergency contacts - Set up (for other parent, adult child)
+Audit logs - Check monthly (see who accessed what)
 ```
 
 For Elderly Grandparents
 ```
-Tool: 1Password (easier interface)
-Setup: Adult child does initial setup
-Master password: Written in large print, in safe place
-Apps: Desktop only (fewer moving parts)
-Training: Hands-on session with adult child
+Tool - 1Password (easier interface)
+Setup - Adult child does initial setup
+Master password - Written in large print, in safe place
+Apps - Desktop only (fewer moving parts)
+Training - Hands-on session with adult child
 ```
 
 For Kids (Ages 10-17)
 ```
-Tool: Shared family vault, read-only for most
-Can see: WiFi, Netflix, Spotify
-Cannot see: Financial, medical, security codes
-Can edit: No (prevent "oopsies")
-Their passwords: Personal vault they manage
-Training: Brief explanation (15 min max)
+Tool - Shared family vault, read-only for most
+Can see - WiFi, Netflix, Spotify
+Cannot see - Financial, medical, security codes
+Can edit - No (prevent "oopsies")
+Their passwords - Personal vault they manage
+Training - Brief explanation (15 min max)
 ```
 
-Step 8: Emergency Access Setup: Worst-Case Scenarios
+Step 8 - Emergency Access Setup: Worst-Case Scenarios
 
-Scenario A: Parent Hospitalized
+Scenario A - Parent Hospitalized
 
 What you need to plan for:
 - Adult child needs to access bank account to pay bills
@@ -525,9 +525,9 @@ What you need to plan for:
 Bitwarden emergency setup:
 ```
 Each parent adds adult child as "Emergency Contact"
-Select: "View only" for Financial vault
-Wait time: 2 weeks (if parent recovers, can cancel)
-After 2 weeks: Adult child gets full access
+Select - "View only" for Financial vault
+Wait time - 2 weeks (if parent recovers, can cancel)
+After 2 weeks - Adult child gets full access
 ```
 
 1Password emergency setup:
@@ -542,7 +542,7 @@ KeePass emergency setup:
 ```
 Write master password on paper
 Store in lockbox with will
-Tell adult child: "In my lockbox at home, the passwords file is on Dropbox"
+Tell adult child - "In my lockbox at home, the passwords file is on Dropbox"
 ```
 
 What to document:
@@ -552,13 +552,13 @@ What to document:
 - [ ] Who has emergency access
 - [ ] Instructions: "Open [tool], go to Emergency section"
 
-Step 9: Common Setup Mistakes
+Step 9 - Common Setup Mistakes
 
-Mistake 1: Not Backing Up Master Password or Recovery Key
+Mistake 1 - Not Backing Up Master Password or Recovery Key
 
 Scenario:
 You set up Bitwarden, create amazing master password
-Years later: You get new laptop, forget master password
+Years later - You get new laptop, forget master password
 Account locked, inaccessible, all passwords lost
 
 Prevention:
@@ -566,7 +566,7 @@ Prevention:
 - Store in safe, safety deposit box, or with attorney
 - Tell adult family member location
 
-Mistake 2: One Person Controls Everything
+Mistake 2 - One Person Controls Everything
 
 Scenario:
 Mom is the only admin in 1Password Families
@@ -578,7 +578,7 @@ Prevention:
 - Each person has their own recovery key
 - Prevents single-point-of-failure
 
-Mistake 3: Forgetting Less Common But Critical Passwords
+Mistake 3 - Forgetting Less Common But Critical Passwords
 
 Missing from most family vaults:
 - Utility company logins (electric, water, gas)
@@ -598,23 +598,23 @@ Create "Critical Access" folder:
 - Important document locations (will, deeds, etc.)
 ```
 
-Mistake 4: Using Family Password for Personal Accounts
+Mistake 4 - Using Family Password for Personal Accounts
 
 Wrong:
 ```
-Create shared family account: alice.smith@gmail.com
+Create shared family account - alice.smith@gmail.com
 Use this email for bank account, investment, medical
 Now anyone in family sees medical records
 ```
 
 Right:
 ```
-Create separate email: alice.smith.private@gmail.com
+Create separate email - alice.smith.private@gmail.com
 Use THAT email for medical, financial, sensitive accounts
 Family can see Netflix password, but not medical passwords
 ```
 
-Mistake 5: Never Updating Family Passwords
+Mistake 5 - Never Updating Family Passwords
 
 Scenario:
 Netflix password shared 3 years ago
@@ -628,7 +628,7 @@ Solution:
 - Remove their account immediately
 - Don't rely on "remove from collection"
 
-Step 10: Operational Security for Family Passwords
+Step 10 - Operational Security for Family Passwords
 
 Best practices:
 
@@ -653,7 +653,7 @@ Best practices:
    - Never email passwords or backup codes
 ```
 
-Step 11: Migration Guide: Switching Between Tools
+Step 11 - Migration Guide: Switching Between Tools
 
 From shared spreadsheet to Bitwarden (1 hour):
 ```bash
@@ -683,7 +683,7 @@ From KeePass to Bitwarden (1.5 hours):
 6. Delete KeePass file once confirmed all data imported
 ```
 
-Step 12: Annual Maintenance Calendar
+Step 12 - Annual Maintenance Calendar
 
 January:
 - [ ] Review family members with access (removed anyone?)

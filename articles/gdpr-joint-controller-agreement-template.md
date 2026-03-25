@@ -46,8 +46,8 @@ Practical Template
 ```markdown
 Joint Controller Agreement
 
-Effective Date: [DATE]
-Parties: [Organization A] and [Organization B]
+Effective Date - [DATE]
+Parties - [Organization A] and [Organization B]
 
 1. Purpose and Scope
 This agreement governs the joint processing of personal data in connection with [PRODUCT/SERVICE NAME].
@@ -93,7 +93,7 @@ Both parties commit to responding to data subject requests within 30 days. For r
 5. Breach Notification
 - Initial notification: within 24 hours of discovery
 - Full report: within 72 hours
-- Contact: [email@company.com]
+- Contact - [email@company.com]
 
 6. Term and Termination
 This agreement remains in effect for the duration of the data processing relationship. Upon termination, data must be returned or deleted within 30 days.
@@ -106,7 +106,7 @@ _________________     _________________
 [Organization A]      [Organization B]
 ```
 
-Code Example: Mapping Responsibilities
+Code Example - Mapping Responsibilities
 
 For developers building tools that generate or manage these agreements, here's a simple data structure:
 
@@ -290,19 +290,19 @@ The agreement should specify how co-controllers resolve disagreements:
 ```markdown
 Dispute Resolution (Add to Agreement)
 
-Level 1: Direct Discussion
+Level 1 - Direct Discussion
 If a dispute arises regarding interpretation or implementation:
 1. Responsible party from each organization meets within 5 business days
 2. Written summary of dispute circulated within 24 hours
 3. Good faith negotiation occurs over 10-day period
 
-Level 2: Escalation
+Level 2 - Escalation
 If unresolved after Level 1:
 1. Executive sponsors meet
 2. External mediator engaged if necessary
 3. Decision documented in writing
 
-Level 3: Regulatory Review
+Level 3 - Regulatory Review
 If parties cannot agree:
 1. Either party may request supervisory authority guidance
 2. Both parties cooperate with investigation
@@ -336,13 +336,13 @@ Regional Variations
 
 Different jurisdictions impose additional requirements:
 
-GDPR (EU): The template above covers baseline requirements.
+GDPR (EU) - The template above covers baseline requirements.
 
-UK GDPR (Post-Brexit): Nearly identical, but disputes may involve UK courts rather than CJEU.
+UK GDPR (Post-Brexit) - Nearly identical, but disputes may involve UK courts rather than CJEU.
 
-CCPA (California): US privacy law requires different contract language. "Joint controller" is not a standard term; use "co-discloser" terminology instead.
+CCPA (California) - US privacy law requires different contract language. "Joint controller" is not a standard term; use "co-discloser" terminology instead.
 
-PIPEDA (Canada): Canadian law requires explicit consent for joint processing; agreements must demonstrate opt-in consent collection.
+PIPEDA (Canada) - Canadian law requires explicit consent for joint processing; agreements must demonstrate opt-in consent collection.
 
 Adapting agreements for different jurisdictions requires legal expertise, do not attempt multi-jurisdictional agreements without counsel.
 

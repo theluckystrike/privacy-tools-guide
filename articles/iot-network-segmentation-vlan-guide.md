@@ -20,22 +20,22 @@ Smart bulbs, thermostats, cameras, and voice assistants are computers running ou
 
 Table of Contents
 
-- [Step 5: mDNS/Bonjour Forwarding (Optional)](#step-5-mdnsbonjour-forwarding-optional)
+- [Step 5 - mDNS/Bonjour Forwarding (Optional)](#step-5-mdnsbonjour-forwarding-optional)
 - [Why IoT Devices Are a Risk](#why-iot-devices-are-a-risk)
-- [Architecture: Three-Network Model](#architecture-three-network-model)
+- [Architecture - Three-Network Model](#architecture-three-network-model)
 - [Prerequisites](#prerequisites)
-- [Step 1: Create the IoT VLAN in OpenWrt](#step-1-create-the-iot-vlan-in-openwrt)
-- [Step 2: Create IoT Network Interface](#step-2-create-iot-network-interface)
-- [Step 3: Create IoT Firewall Zone](#step-3-create-iot-firewall-zone)
-- [Step 4: Create IoT WiFi SSID](#step-4-create-iot-wifi-ssid)
-- [Step 5: mDNS/Bonjour Forwarding (Optional)](#step-5-mdnsbonjour-forwarding-optional)
-- [Step 6: Assign IoT Devices to the VLAN](#step-6-assign-iot-devices-to-the-vlan)
+- [Step 1 - Create the IoT VLAN in OpenWrt](#step-1-create-the-iot-vlan-in-openwrt)
+- [Step 2 - Create IoT Network Interface](#step-2-create-iot-network-interface)
+- [Step 3 - Create IoT Firewall Zone](#step-3-create-iot-firewall-zone)
+- [Step 4 - Create IoT WiFi SSID](#step-4-create-iot-wifi-ssid)
+- [Step 5 - mDNS/Bonjour Forwarding (Optional)](#step-5-mdnsbonjour-forwarding-optional)
+- [Step 6 - Assign IoT Devices to the VLAN](#step-6-assign-iot-devices-to-the-vlan)
 - [Monitor IoT Traffic](#monitor-iot-traffic)
 - [Block IoT Telemetry at DNS Level](#block-iot-telemetry-at-dns-level)
 - [Verify the Segmentation Works](#verify-the-segmentation-works)
 - [Related Reading](#related-reading)
 
-Step 5: mDNS/Bonjour Forwarding (Optional)
+Step 5 - mDNS/Bonjour Forwarding (Optional)
 
 Some IoT ecosystems use mDNS for device discovery.
 - Mastering advanced features takes: 1-2 weeks of regular use.
@@ -52,7 +52,7 @@ Why IoT Devices Are a Risk
 
 ---
 
-Architecture: Three-Network Model
+Architecture - Three-Network Model
 
 ```
 Internet
@@ -83,7 +83,7 @@ Prerequisites
 
 ---
 
-Step 1: Create the IoT VLAN in OpenWrt
+Step 1 - Create the IoT VLAN in OpenWrt
 
 ```bash
 SSH into OpenWrt
@@ -105,7 +105,7 @@ uci commit network
 
 ---
 
-Step 2: Create IoT Network Interface
+Step 2 - Create IoT Network Interface
 
 ```bash
 Create interface for IoT VLAN
@@ -132,7 +132,7 @@ uci commit network dhcp
 
 ---
 
-Step 3: Create IoT Firewall Zone
+Step 3 - Create IoT Firewall Zone
 
 ```bash
 Add IoT zone to firewall
@@ -169,7 +169,7 @@ uci commit firewall
 
 ---
 
-Step 4: Create IoT WiFi SSID
+Step 4 - Create IoT WiFi SSID
 
 ```bash
 Add a separate SSID for IoT devices on VLAN 20
@@ -192,7 +192,7 @@ wifi reload
 
 ---
 
-Step 5: mDNS/Bonjour Forwarding (Optional)
+Step 5 - mDNS/Bonjour Forwarding (Optional)
 
 Some IoT ecosystems use mDNS for device discovery. With strict VLAN isolation, this breaks. You can selectively forward mDNS between VLANs:
 
@@ -224,9 +224,9 @@ This reflects mDNS packets between `br-lan` and `br-iot` without opening the ful
 
 ---
 
-Step 6: Assign IoT Devices to the VLAN
+Step 6 - Assign IoT Devices to the VLAN
 
-Wired IoT devices: Connect to the physical port configured for VLAN 20 (port 3 in the example).
+Wired IoT devices - Connect to the physical port configured for VLAN 20 (port 3 in the example).
 
 Wireless IoT devices:
 1. Connect the device to the "HomeIoT" SSID
@@ -275,7 +275,7 @@ log-upload.ecobee.com
 analytics.nest.com
 telemetry.simplisafe.com
 
-In Pi-hole: Groups → Add Group "IoT Devices"
+In Pi-hole - Groups → Add Group "IoT Devices"
 Add client IPs (192.168.20.0/24) to IoT group
 Assign stricter blocklists to IoT group
 ```

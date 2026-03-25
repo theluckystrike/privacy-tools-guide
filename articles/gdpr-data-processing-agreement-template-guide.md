@@ -38,24 +38,24 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Essential Clauses Every DPA Must Include
+Step 1 - Essential Clauses Every DPA Must Include
 
 Your DPA must contain specific elements to be GDPR-compliant. Here are the mandatory components:
 
 1. Processing Details
 
 ```markdown
-Step 2: 1. Subject Matter and Duration
+Step 2 - 1. Subject Matter and Duration
 This DPA governs the processing of personal data in connection with [SERVICE NAME].
-Duration: From [Start Date] until termination of the main service agreement.
+Duration - From [Start Date] until termination of the main service agreement.
 
-Step 3: 2. Nature and Purpose
+Step 3 - 2. Nature and Purpose
 The processor shall process personal data only for the following purposes:
 - Providing [specific service]
 - Supporting user authentication and account management
 - [Other specific purposes]
 
-Step 4: 3. Categories of Data
+Step 4 - 3. Categories of Data
 - Names and contact information
 - IP addresses and device identifiers
 - [Data categories specific to your service]
@@ -66,7 +66,7 @@ Step 4: 3. Categories of Data
 GDPR grants data subjects specific rights. Your DPA must address how these are handled:
 
 ```markdown
-Step 5: 4. Data Subject Rights
+Step 5 - 4. Data Subject Rights
 The processor shall assist the controller by appropriate technical and organizational
 measures, insofar as this is possible, for the fulfillment of the controller's
 obligation to respond to requests for exercising the data subject's rights:
@@ -86,7 +86,7 @@ The processor shall respond to any such request within [timeframe, typically 10 
 Specify technical and organizational measures:
 
 ```markdown
-Step 6: 5. Security Measures
+Step 6 - 5. Security Measures
 The processor implements the following security measures:
 
 Technical Measures
@@ -108,7 +108,7 @@ Organizational Measures
 If you use subprocessors, track them properly:
 
 ```markdown
-Step 7: 6. Subprocessors
+Step 7 - 6. Subprocessors
 The controller authorizes the processor to engage subprocessors for specific
 processing activities. The processor shall:
 
@@ -123,7 +123,7 @@ processing activities. The processor shall:
 GDPR requires notification within 72 hours:
 
 ```markdown
-Step 8: 7. Data Breach Notification
+Step 8 - 7. Data Breach Notification
 The processor shall notify the controller without undue delay upon becoming aware
 of any personal data breach. The notification shall include:
 
@@ -132,11 +132,11 @@ of any personal data breach. The notification shall include:
 - Likely consequences
 - Measures taken or proposed to address the breach
 
-Initial notification: within 24 hours of discovery
-Detailed report: within 72 hours
+Initial notification - within 24 hours of discovery
+Detailed report - within 72 hours
 ```
 
-Step 9: Implementing DPA Automation in Code
+Step 9 - Implementing DPA Automation in Code
 
 For developers building compliance tooling, here are patterns for handling DPA requests programmatically:
 
@@ -174,30 +174,30 @@ def generate_dpa(
 
     template = f"""# Data Processing Agreement
 
-Effective Date: {datetime.now().strftime('%Y-%m-%d')}
-Controller: {controller_name}
-Processor: {processor_name}
+Effective Date - {datetime.now().strftime('%Y-%m-%d')}
+Controller - {controller_name}
+Processor - {processor_name}
 
-Step 10: 1. Subject Matter and Duration
+Step 10 - 1. Subject Matter and Duration
 {processing.subject_matter}
-Duration: {processing.duration}
+Duration - {processing.duration}
 
-Step 11: 2. Purpose
+Step 11 - 2. Purpose
 {' '.join(f'- {p}' for p in processing.purpose)}
 
-Step 12: 3. Categories of Personal Data
+Step 12 - 3. Categories of Personal Data
 {' '.join(f'- {c}' for c in processing.data_categories)}
 
-Step 13: 4. Data Subjects
+Step 13 - 4. Data Subjects
 {' '.join(f'- {d}' for d in processing.data_subjects)}
 
-Step 14: 5. Security Measures
+Step 14 - 5. Security Measures
 - Encryption in transit: {'Yes' if security.encryption_in_transit else 'No'}
 - Encryption at rest: {'Yes' if security.encryption_at_rest else 'No'}
 - MFA for admin access: {'Yes' if security.mfa_enabled else 'No'}
 - Access controls: {security.access_controls}
 
-Step 15: 6. Subprocessors
+Step 15 - 6. Subprocessors
 {' '.join(f'- {s}' for s in subprocessors) if subprocessors else 'None currently approved'}
 """
     return template
@@ -251,7 +251,7 @@ registry.add_subprocessor(
 )
 ```
 
-Step 16: When You Need a DPA
+Step 16 - When You Need a DPA
 
 You typically need a DPA when:
 
@@ -263,7 +263,7 @@ Generic agreements that don't reflect your actual data processing are the most c
 
 Customize this template to match your architecture and update it as your data processing evolves.
 
-Step 17: DPA Lifecycle Management
+Step 17 - DPA Lifecycle Management
 
 A DPA is not a one-time document. As your technical architecture evolves, your DPA must reflect the current state of your processing. Running a DPA that describes a data model you no longer use creates legal exposure, the agreement is meant to accurately represent what you actually do.
 
@@ -314,7 +314,7 @@ class DPAVersionHistory:
 
 When a controller must approve DPA changes, common in enterprise B2B contexts, automate the notification workflow. Sending a Slack or email notification when a DPA version requires approval reduces the delay between technical changes and legal alignment.
 
-Step 18: Cross-Border Data Transfer Mechanisms
+Step 18 - Cross-Border Data Transfer Mechanisms
 
 International data transfers create specific GDPR compliance obligations. When personal data moves outside the EU/EEA to a country without an adequacy decision, your DPA must reference the legal mechanism authorizing that transfer.
 
@@ -322,14 +322,14 @@ The primary mechanisms available after the Schrems II ruling are:
 
 Standard Contractual Clauses (SCCs): The EU Commission published updated SCCs in 2021. These are the most commonly used mechanism. Your DPA should incorporate them by reference and specify which module applies (controller-to-processor, controller-to-controller, etc.).
 
-Binding Corporate Rules (BCRs): Applicable for intra-group transfers within multinational organizations. Require approval from a lead supervisory authority.
+Binding Corporate Rules (BCRs) - Applicable for intra-group transfers within multinational organizations. Require approval from a lead supervisory authority.
 
 Transfer Impact Assessments (TIAs): Required alongside SCCs when transferring to countries with surveillance laws that may undermine SCC protections. Your DPA should document that a TIA was completed and its conclusions.
 
 Structure your DPA to make the applicable mechanism explicit:
 
 ```markdown
-Step 19: 8. International Data Transfers
+Step 19 - 8. International Data Transfers
 
 Transfer Mechanisms in Use
 
@@ -345,12 +345,12 @@ The assessment concluded that the SCCs, in combination with the technical and co
 safeguards documented herein, provide an essentially equivalent level of protection to
 that guaranteed within the EU.
 
-Assessment reference: [INTERNAL-TIA-REF]
+Assessment reference - [INTERNAL-TIA-REF]
 ```
 
 Review your transfer mechanisms annually and when major changes occur in the regulatory environment. The Schrems II ruling demonstrated that previously relied-upon frameworks (Privacy Shield) can be invalidated with limited notice.
 
-Step 20: Operationalizing DPA Obligations
+Step 20 - Operationalizing DPA Obligations
 
 Having a DPA is a compliance starting point. The harder challenge is ensuring your team actually operates in accordance with its terms. DPAs commit you to specific behaviors, security measures, breach notification timelines, subprocessor management procedures, that must be reflected in your operational processes.
 

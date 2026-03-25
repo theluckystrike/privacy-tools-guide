@@ -25,7 +25,7 @@ This guide covers practical methods for creating, managing, and automating separ
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Advanced: Temporary Profiles with incognito Mode](#advanced-temporary-profiles-with-incognito-mode)
+- [Advanced - Temporary Profiles with incognito Mode](#advanced-temporary-profiles-with-incognito-mode)
 - [Security Considerations](#security-considerations)
 - [Troubleshooting](#troubleshooting)
 
@@ -39,7 +39,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Browser Profile Compartmentalization
+Step 1 - Understand Browser Profile Compartmentalization
 
 Browser profiles store cookies, local storage, extensions, bookmarks, and browsing history in isolated directories. When you create separate profiles, you effectively create separate browser identities that share nothing by default.
 
@@ -49,7 +49,7 @@ This isolation prevents:
 - Extension conflicts when testing different configurations
 - Accidental login to personal accounts during professional browsing
 
-Step 2: Create Profiles in Firefox
+Step 2 - Create Profiles in Firefox
 
 Firefox offers the most developer-friendly profile management through both GUI and CLI.
 
@@ -83,7 +83,7 @@ firefox -P "work" -no-remote
 
 The `-no-remote` flag prevents this instance from connecting to an existing Firefox process, allowing multiple profile instances simultaneously.
 
-Step 3: Create Profiles in Chrome/Chromium
+Step 3 - Create Profiles in Chrome/Chromium
 
 Chrome uses a different profile mechanism based on directory paths.
 
@@ -110,7 +110,7 @@ Common profile locations:
 - macOS: `~/Library/Application Support/Google/Chrome/`
 - Windows: `%USERPROFILE%\AppData\Local\Google\Chrome\User Data\`
 
-Step 4: Automate Profile Management
+Step 4 - Automate Profile Management
 
 For developers who frequently switch between profiles, automation saves significant time.
 
@@ -140,7 +140,7 @@ google-chrome --profile-directory="ProfileWork" --new-window "$@"
 
 Make it executable and place it in your PATH for convenient access.
 
-Advanced: Temporary Profiles with incognito Mode
+Advanced - Temporary Profiles with incognito Mode
 
 For quick identity switching without permanent profiles, use temporary browsing contexts.
 
@@ -158,7 +158,7 @@ google-chrome --incognito --temp-profile
 
 These create isolated sessions that discard all data after closing. Useful for testing or one-off browsing tasks.
 
-Step 5: Profile-Specific Browser Extensions
+Step 5 - Profile-Specific Browser Extensions
 
 Extensions enhance profile isolation when configured correctly.
 
@@ -197,7 +197,7 @@ Container Extensions
 Firefox Multi-Account Containers add another isolation layer within a single profile:
 
 ```bash
-Install via Firefox Add-ons: "Multi-Account Containers"
+Install via Firefox Add-ons - "Multi-Account Containers"
 ```
 
 Containers separate cookies and local storage within the same profile, useful for managing multiple accounts on the same service.
@@ -216,7 +216,7 @@ rm -rf ~/.config/google-chrome/ProfileWork
 
 Always back up important data before deletion.
 
-Step 6: Use Cases for Developers
+Step 6 - Use Cases for Developers
 
 Browser profiles solve common developer scenarios:
 
@@ -244,7 +244,7 @@ const puppeteer = require('puppeteer');
 
 This launches Puppeteer using your existing "work" profile, preserving your logged-in session.
 
-Step 7: Quick Reference Commands
+Step 7 - Quick Reference Commands
 
 Firefox
 | Action | Command |

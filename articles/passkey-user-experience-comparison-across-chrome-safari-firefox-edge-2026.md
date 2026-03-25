@@ -112,7 +112,7 @@ Example workflow for mobile-to-desktop transfer:
 
 Safari Passkey Experience
 
-Safari provides excellent passkey support through iCloud Keychain, making it the choice for Apple ecosystem users.
+Safari provides excellent passkey support through iCloud Keychain, making it the choice for Apple environment users.
 
 Setup Process
 
@@ -176,7 +176,7 @@ Firefox does NOT sync passkeys to the cloud by default:
 - No cross-device synchronization
 - Better privacy (no cloud dependency)
 
-Trade-off: You'll need to recreate passkeys on each device, or use a Firefox Sync account (which encrypts data locally before uploading).
+Trade-off - You'll need to recreate passkeys on each device, or use a Firefox Sync account (which encrypts data locally before uploading).
 
 Privacy Features
 
@@ -302,21 +302,21 @@ User Experience Ratings
 
 Based on testing across 2026 implementations:
 
-Chrome: 9/10
-- Excellent sync, QR code transfer works smoothly, Google ecosystem integration
+Chrome - 9/10
+- Excellent sync, QR code transfer works smoothly, Google environment integration
 - Requires Google account for sync, privacy concerns for some users
 
-Safari: 9/10
-- Best Apple ecosystem integration, iCloud Keychain is simple
+Safari - 9/10
+- Best Apple environment integration, iCloud Keychain is simple
 - Locked to Apple devices, limited cross-platform support
 
-Firefox: 7/10
+Firefox - 7/10
 - Strong privacy, no cloud sync requirement, good for security-conscious users
 - No native cross-device sync, more manual setup required
 
-Edge: 8/10
+Edge - 8/10
 - Good Windows integration, Microsoft Authenticator support
-- Less polished than Chrome, fewer passkey-enabled sites support Microsoft ecosystem
+- Less polished than Chrome, fewer passkey-enabled sites support Microsoft environment
 
 Recommendations by Use Case
 

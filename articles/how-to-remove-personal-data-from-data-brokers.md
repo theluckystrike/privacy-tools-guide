@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Data Broker Ecosystem
+Step 1 - The Data Broker environment
 
 Data brokers operate in layers:
 
@@ -44,15 +44,15 @@ Tier 1: Mega Brokers (200+ million people)
 
 These aggregate data from public records, court documents, social media, and purchase history. A single removal from a Tier 1 broker reaches millions of people.
 
-Tier 2: Niche Brokers (specific data types)
+Tier 2 - Niche Brokers (specific data types)
 - Medical records brokers, financial brokers, mortgage lead sellers
 - Data append services, email verification services
 
-Tier 3: Micro Brokers and Data Resellers
+Tier 3 - Micro Brokers and Data Resellers
 - Hundreds of small sites buying aggregated data and reselling
 - Often scrapers collecting from Tier 1 brokers
 
-Step 2: Understand Your Data Exposure
+Step 2 - Understand Your Data Exposure
 
 Before removing, understand what data exists. Check what brokers know about you:
 
@@ -79,7 +79,7 @@ What You'll Find:
 
 This information is real and used for targeted marketing, identity theft, scams, and stalking.
 
-Step 3: Manual Removal: Tier 1 Data Brokers
+Step 3 - Manual Removal: Tier 1 Data Brokers
 
 1. Spokeo
 
@@ -223,7 +223,7 @@ MyLife Specialty:
 - Reviews from people you know
 - "Life events" (marriage, divorce, bankruptcy)
 
-Step 4: Semi-Automated Removal: Mid-Tier Brokers
+Step 4 - Semi-Automated Removal: Mid-Tier Brokers
 
 For brokers not listed above, use this systematic approach:
 
@@ -266,7 +266,7 @@ Time Investment:
 - Full manual removal of 50 brokers: 40-50 hours
 - Manual removal keeps you off for 2-6 months (brokers re-add data from public records)
 
-Step 5: Automated Removal Tools
+Step 5 - Automated Removal Tools
 
 For coverage without manual work, use automation services:
 
@@ -345,13 +345,13 @@ Instead of just removing and forgetting, Kanary continuously monitors:
 Real-World Scenario:
 
 ```
-Month 1: Kanary removes you from 95 brokers
-Month 2: You receive alert "Your name reappeared on Spokeo"
-Month 2: Kanary automatically re-removes from Spokeo
-Month 3: Alert "New broker 'AnyPeopleSearch.com' is listing you"
-Month 3: Kanary researches this new broker, submits removal
-Month 4: Alert "Your email found in dark web leak (LinkedIn breach)"
-Month 4: Kanary advises password reset + credit monitoring
+Month 1 - Kanary removes you from 95 brokers
+Month 2 - You receive alert "Your name reappeared on Spokeo"
+Month 2 - Kanary automatically re-removes from Spokeo
+Month 3 - Alert "New broker 'AnyPeopleSearch.com' is listing you"
+Month 3 - Kanary researches this new broker, submits removal
+Month 4 - Alert "Your email found in dark web leak (LinkedIn breach)"
+Month 4 - Kanary advises password reset + credit monitoring
 
 This ongoing monitoring prevents surprise exposures.
 ```
@@ -448,7 +448,7 @@ Comparison Table
 | Privacy Duck | $79/yr | 250+ | Monthly | Monthly | Budget-conscious |
 | OneRep | $90/yr | 300+ | Limited | Quarterly | EU-focused |
 
-Step 6: Long-Term Prevention Strategy
+Step 6 - Long-Term Prevention Strategy
 
 Removing data today doesn't prevent re-listing tomorrow. Implement these practices:
 
@@ -521,7 +521,7 @@ Recommended Tools:
    - Most expensive services
 ```
 
-Step 7: Removal Timeline and Expectations
+Step 7 - Removal Timeline and Expectations
 
 Week 1:
 - Data removed from 3-5 major brokers
@@ -543,7 +543,7 @@ Month 6+:
 - DeleteMe/Kanary automatically handle quarterly re-removal
 - Manual approach requires manual re-removal
 
-Step 8: Special Cases
+Step 8 - Special Cases
 
 Victims of Domestic Violence:
 

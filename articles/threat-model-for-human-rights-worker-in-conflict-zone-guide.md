@@ -21,11 +21,11 @@ Human rights workers in conflict zones face nation-state and paramilitary threat
 Table of Contents
 
 - [Understanding the Threat Environment](#understanding-the-threat-environment)
-- [Step 1: Identifying Critical Assets](#step-1-identifying-critical-assets)
-- [Step 2: Identifying and Profiling Adversaries](#step-2-identifying-and-profiling-adversaries)
-- [Step 3: Analyzing Attack Vectors](#step-3-analyzing-attack-vectors)
-- [Step 4: Implementing Practical Mitigations](#step-4-implementing-practical-mitigations)
-- [Step 5: Operational Security Procedures](#step-5-operational-security-procedures)
+- [Step 1 - Identifying Critical Assets](#step-1-identifying-critical-assets)
+- [Step 2 - Identifying and Profiling Adversaries](#step-2-identifying-and-profiling-adversaries)
+- [Step 3 - Analyzing Attack Vectors](#step-3-analyzing-attack-vectors)
+- [Step 4 - Implementing Practical Mitigations](#step-4-implementing-practical-mitigations)
+- [Step 5 - Operational Security Procedures](#step-5-operational-security-procedures)
 - [Continuous Threat Model Maintenance](#continuous-threat-model-maintenance)
 - [Building a Tiered Security Approach](#building-a-tiered-security-approach)
 - [Technical Infrastructure for Sensitive Documentation](#technical-infrastructure-for-sensitive-documentation)
@@ -40,7 +40,7 @@ Conflict zone environments present threat models fundamentally different from co
 
 Before implementing any security tool or procedure, you must understand who is trying to harm you and what they want. A threat model is a document that answers three questions: What do I need to protect? Who wants it? What will they do to get it?
 
-Step 1: Identifying Critical Assets
+Step 1 - Identifying Critical Assets
 
 Begin by listing everything that, if compromised, would cause harm. For human rights workers, assets typically include:
 
@@ -63,7 +63,7 @@ assets = {
 }
 ```
 
-Step 2: Identifying and Profiling Adversaries
+Step 2 - Identifying and Profiling Adversaries
 
 Your threat model must account for specific adversaries rather than generic "hackers." In conflict zones, relevant adversaries typically include:
 
@@ -75,7 +75,7 @@ Non-state actors including criminal organizations and paramilitary groups may ha
 
 For each adversary, assess their capability (technical resources), intent (motivation to target you), and opportunity (how they might reach you). Prioritize mitigations against adversaries with high capability, high intent, and high opportunity.
 
-Step 3: Analyzing Attack Vectors
+Step 3 - Analyzing Attack Vectors
 
 With assets and adversaries defined, analyze how compromise could occur. Common attack vectors in conflict zones include:
 
@@ -83,12 +83,12 @@ Network Interception
 
 Telecommunications infrastructure is often controlled or compromised by hostile actors. Mobile networks, internet service providers, and Wi-Fi networks in conflict areas frequently perform deep packet inspection or full traffic capture.
 
-Mitigation: Use end-to-end encrypted communication tools. Implement VPN tunnels that wrap all traffic in encryption, even when accessing seemingly secure services. Consider satellite communications as an alternative when terrestrial networks are compromised.
+Mitigation - Use end-to-end encrypted communication tools. Implement VPN tunnels that wrap all traffic in encryption, even when accessing seemingly secure services. Consider satellite communications as an alternative when terrestrial networks are compromised.
 
 ```bash
 Creating an encrypted tunnel with WireGuard
-Install WireGuard: sudo apt install wireguard
-Generate keys: wg genkey | tee privatekey | wg pubkey > publickey
+Install WireGuard - sudo apt install wireguard
+Generate keys - wg genkey | tee privatekey | wg pubkey > publickey
 
 Client configuration (wg0.conf)
 [Interface]
@@ -107,7 +107,7 @@ Device Compromise
 
 Physical device seizure or remote exploitation represents a primary threat vector. Devices may be seized during travel checkpoints, raids, or through social engineering.
 
-Mitigation: Implement full disk encryption with keys derived from passphrases not stored on the device. Use ephemeral messaging systems that do not store message history locally. Prepare devices with plausible deniability using alternative operating systems.
+Mitigation - Implement full disk encryption with keys derived from passphrases not stored on the device. Use ephemeral messaging systems that do not store message history locally. Prepare devices with plausible deniability using alternative operating systems.
 
 ```bash
 Verifying full disk encryption status on Linux
@@ -120,15 +120,15 @@ Social Engineering
 
 Phishing, pretexting, and impersonation attacks target human relationships rather than technical systems. Adversaries may pose as journalists, fellow activists, or international organization staff.
 
-Mitigation: Establish out-of-band verification procedures for sensitive requests. Use dedicated communication channels for sensitive contacts. Verify identities through multiple independent channels before sharing sensitive information.
+Mitigation - Establish out-of-band verification procedures for sensitive requests. Use dedicated communication channels for sensitive contacts. Verify identities through multiple independent channels before sharing sensitive information.
 
 Supply Chain Attacks
 
 Adversaries may compromise software updates, hardware, or third-party services you rely on. This vector is particularly difficult to defend against and requires careful vendor selection.
 
-Mitigation: Use reproducible builds to verify software integrity. Acquire hardware from trusted sources in friendly jurisdictions. Minimize dependence on third-party services for sensitive operations.
+Mitigation - Use reproducible builds to verify software integrity. Acquire hardware from trusted sources in friendly jurisdictions. Minimize dependence on third-party services for sensitive operations.
 
-Step 4: Implementing Practical Mitigations
+Step 4 - Implementing Practical Mitigations
 
 Threat models are worthless without implementable mitigations. Focus on defenses that provide meaningful protection against your highest-priority adversaries while remaining usable in challenging field conditions.
 
@@ -152,7 +152,7 @@ Implement a classification system for all collected information. Document eviden
 
 ```bash
 Stripping EXIF metadata from images before transmission
-Using exiftool (install: apt install exiftool)
+Using exiftool (install - apt install exiftool)
 exiftool -all= -overwrite_original image.jpg
 Remove GPS, camera model, timestamps, and other identifying information
 ```
@@ -166,7 +166,7 @@ Prepare devices specifically for high-risk environments. This may include:
 - Using separate devices for different types of sensitive activity
 - Implementing dead man's switches that automatically wipe devices after inactivity periods
 
-Step 5: Operational Security Procedures
+Step 5 - Operational Security Procedures
 
 Technical measures fail without operational procedures that account for human factors. Document security procedures and ensure all team members understand them:
 
@@ -191,19 +191,19 @@ Building a Tiered Security Approach
 
 Not all assets require the same level of protection. A tiered approach allocates resources efficiently:
 
-Tier 1 (Maximum Protection): Source identities and raw documentation
+Tier 1 (Maximum Protection) - Source identities and raw documentation
 - Store on encrypted, air-gapped devices
 - Never transmitted over public internet
 - Backup only in secure locations controlled by trusted organizations
 - Access limited to 1-2 people maximum
 
-Tier 2 (Strong Protection): Processed analysis and reports
+Tier 2 (Strong Protection) - Processed analysis and reports
 - Encrypted at rest and in transit
 - Can be shared with trusted international organizations
 - No personally identifiable information about sources
 - Transmission via Signal, not email
 
-Tier 3 (Standard Protection): Public-facing statements and published reports
+Tier 3 (Standard Protection) - Public-facing statements and published reports
 - Standard website hosting and distribution
 - No sensitive information
 - Encrypted transport (HTTPS) only
@@ -214,7 +214,7 @@ Technical Infrastructure for Sensitive Documentation
 
 For organizations handling human rights documentation, infrastructure decisions have security implications:
 
-Cloud storage considerations: Services like Google Drive and Dropbox are convenient but create centralized targets. Compromise of a single account exposes all stored materials. Consider instead:
+Cloud storage considerations - Services like Google Drive and Dropbox are convenient but create centralized targets. Compromise of a single account exposes all stored materials. Consider instead:
 
 ```bash
 Self-hosted encrypted storage with Nextcloud
@@ -222,12 +222,12 @@ docker run -d --name nextcloud -v /data/nextcloud:/var/www/html -p 8080:80 nextc
 
 All data encrypted locally before uploading
 gpg --symmetric --cipher-algo AES256 sensitive_report.pdf
-Verify encryption: file sensitive_report.pdf.gpg
+Verify encryption - file sensitive_report.pdf.gpg
 ```
 
 Self-hosted storage using Nextcloud requires managing your own server infrastructure but eliminates a commercial vendor as a weakness. Encrypting files locally before uploading ensures even if the server is compromised, data remains protected.
 
-Off-the-grid backup strategy: Critical evidence should exist in locations completely independent of internet-connected systems. Consider:
+Off-the-grid backup strategy - Critical evidence should exist in locations completely independent of internet-connected systems. Consider:
 
 1. Encrypted hard drives in geographically distributed locations: Send encrypted drives to trusted partner organizations in different countries. Geographically dispersed backups mean seizure of one location doesn't eliminate all evidence.
 
@@ -241,11 +241,11 @@ Sophisticated state actors don't always attack directly. They apply pressure thr
 
 Visa denial and travel restriction: Journalists and human rights workers find themselves unable to travel, attend conferences, or meet with donors. This isn't a security vulnerability you can patch, it's institutional pressure requiring political response.
 
-Banking discrimination: Organizations get flagged in banking systems, making wire transfers impossible or extremely slow. International funding becomes inaccessible despite no formal sanctions.
+Banking discrimination - Organizations get flagged in banking systems, making wire transfers impossible or extremely slow. International funding becomes inaccessible despite no formal sanctions.
 
-Regulatory harassment: Governments demand documentation, threaten closure, increase compliance overhead. Legitimate but designed to exhaust resources.
+Regulatory harassment - Governments demand documentation, threaten closure, increase compliance overhead. Legitimate but designed to exhaust resources.
 
-Device interdiction: Laptops are "lost" in transit, phones go missing, equipment gets confiscated. Mitigate by:
+Device interdiction - Laptops are "lost" in transit, phones go missing, equipment gets confiscated. Mitigate by:
 - Never travel with equipment containing sensitive data
 - Use temporary devices that can be abandoned if seized
 - Carry decoys that can be surrendered to authorities
@@ -255,11 +255,11 @@ Incident Response Drills
 
 A security plan fails if no one knows how to execute it during actual crisis. Run drills quarterly:
 
-Drill 1: Device compromise scenario: Someone reports suspicious activity. Assume the device is compromised. Can you wipe it cleanly? Can you restore your communications within 2 hours? Do team members know the emergency contact procedure?
+Drill 1 - Device compromise scenario: Someone reports suspicious activity. Assume the device is compromised. Can you wipe it cleanly? Can you restore your communications within 2 hours? Do team members know the emergency contact procedure?
 
-Drill 2: Communication interception: Assume your primary communication channel is compromised. Activate backup channel. Can all team members reach you through the secondary method? Does the secondary channel actually work or was it never tested?
+Drill 2 - Communication interception: Assume your primary communication channel is compromised. Activate backup channel. Can all team members reach you through the secondary method? Does the secondary channel actually work or was it never tested?
 
-Drill 3: Arrest scenario: A team member is detained. Have you documented their recovery phrases? Can someone else access their accounts to disable them if needed? Have you prepared a legal response? (Many organizations have retainer agreements with lawyers who specialize in activist defense.)
+Drill 3 - Arrest scenario: A team member is detained. Have you documented their recovery phrases? Can someone else access their accounts to disable them if needed? Have you prepared a legal response? (Many organizations have retainer agreements with lawyers who specialize in activist defense.)
 
 Document drill results. Each drill reveals gaps in your procedures. Fix gaps before actual emergencies.
 
@@ -289,7 +289,7 @@ Track adversary capability changes: When new surveillance tools become available
 
 Adjust for organizational evolution: As your organization grows, your threat model changes. A solo researcher has different threats than a coordinated network of 50 people. Revisit your model as team size changes.
 
-Update after near-misses: If someone almost gets caught, investigate what went wrong. Did your procedures fail, or did they reveal new threat vectors? Update accordingly.
+Update after near-misses - If someone almost gets caught, investigate what went wrong. Did your procedures fail, or did they reveal new threat vectors? Update accordingly.
 
 Frequently Asked Questions
 

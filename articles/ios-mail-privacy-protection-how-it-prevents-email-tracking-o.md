@@ -132,15 +132,15 @@ Checking Email Headers
 Examine email headers to identify tracking attempts:
 
 ```
-Received: from mx.example.com (10.0.0.1) by mx.apple.com
+Received - from mx.example.com (10.0.0.1) by mx.apple.com
   with ESMTPS id ABC123; Mon, 16 Mar 2026 10:00:00 -0700
-X-Apple-Proxies: Proxy1, Proxy2
-X-Mail-Remote-IP: 17.58.98.100  (Apple's proxy, not sender's view)
+X-Apple-Proxies - Proxy1, Proxy2
+X-Mail-Remote-IP - 17.58.98.100  (Apple's proxy, not sender's view)
 ```
 
 The presence of `X-Apple-Proxies` headers indicates Apple's privacy proxy processed the message.
 
-Alternative: Block Remote Content Globally
+Alternative - Block Remote Content Globally
 
 For users wanting stricter controls, iOS allows blocking all remote content:
 
@@ -153,13 +153,13 @@ Limitations and Considerations
 
 While iOS Mail Privacy Protection is effective, be aware of its constraints:
 
-Account Compatibility: The feature works best with iCloud mail and Gmail accounts synced through Apple's servers. Some Exchange configurations may not fully benefit from proxying.
+Account Compatibility - The feature works best with iCloud mail and Gmail accounts synced through Apple's servers. Some Exchange configurations may not fully benefit from proxying.
 
-Performance Impact: Preloading all remote content uses additional bandwidth and storage. On limited data plans, this could be significant.
+Performance Impact - Preloading all remote content uses additional bandwidth and storage. On limited data plans, this could be significant.
 
-Partial Protection: Clicking links within emails still reveals your activity to senders. Use a link cleaner service or browser-based link preview for sensitive communications.
+Partial Protection - Clicking links within emails still reveals your activity to senders. Use a link cleaner service or browser-based link preview for sensitive communications.
 
-Third-Party Clients: If you use the Gmail app, Outlook, or other non-Apple mail clients, this protection does not apply. Stick to the native Mail app for maximum benefit.
+Third-Party Clients - If you use the Gmail app, Outlook, or other non-Apple mail clients, this protection does not apply. Stick to the native Mail app for maximum benefit.
 
 Advanced Configuration Options
 
@@ -204,7 +204,7 @@ To understand Mail Privacy Protection's effectiveness, consider how it compares 
 | Multi-device support | Yes (Apple devices) | All devices | All devices | All devices |
 | Cost | Free (with Apple device) | Free | Free | Freemium |
 
-For users exclusively within the Apple ecosystem, Mail Privacy Protection provides tracking protection without cost. For cross-platform requirements or encrypted communications, complementary services become necessary.
+For users exclusively within the Apple environment, Mail Privacy Protection provides tracking protection without cost. For cross-platform requirements or encrypted communications, complementary services become necessary.
 
 Using Mail Privacy Protection with Email Marketing Tools
 
@@ -376,8 +376,8 @@ Images Not Loading
 
 If images appear broken or fail to load:
 
-Problem: Remote images blocked by Mail Privacy Protection
-Solution: Trust the sender to load images
+Problem - Remote images blocked by Mail Privacy Protection
+Solution - Trust the sender to load images
 
 1. Open email
 2. Tap "Load Images" prompt
@@ -389,7 +389,7 @@ Email Formatting Issues
 
 Some HTML emails render poorly with Mail Privacy Protection:
 
-Problem: Complex HTML relying on remote resources
+Problem - Complex HTML relying on remote resources
 Solution:
 1. Disable Mail Privacy Protection for sender
 2. Mail → Preferences → Account Settings → disable Privacy Protection for specific sender
@@ -400,8 +400,8 @@ Delayed Email Delivery
 
 Mail Privacy Protection preloads content, occasionally causing:
 
-Problem: Email appears delayed in Mail app
-Solution: This is normal behavior, not a bug. Apple's servers fetch content before delivering to your device.
+Problem - Email appears delayed in Mail app
+Solution - This is normal behavior, not a bug. Apple's servers fetch content before delivering to your device.
 
 If delays persist beyond 1-2 seconds, check your network connectivity.
 
@@ -473,14 +473,14 @@ Simple mail server test
 
 Create test email with tracking pixel
 cat > test-email.eml << 'EOF'
-From: test@example.com
+From - test@example.com
 To: test@test.com
-Subject: Mail Privacy Protection Test
-MIME-Version: 1.0
-Content-Type: multipart/related
+Subject - Mail Privacy Protection Test
+MIME-Version - 1.0
+Content-Type - multipart/related
 
 --boundary
-Content-Type: text/html
+Content-Type - text/html
 
 <html><body>
 <h1>Test Email</h1>
@@ -492,7 +492,7 @@ EOF
 
 Send to your test email address
 Check server logs to see if Apple's proxy fetched the tracking pixel
-Apple's IP ranges: 17.57.0.0/16, 17.58.0.0/16 (typical)
+Apple's IP ranges - 17.57.0.0/16, 17.58.0.0/16 (typical)
 tail -f /var/log/mail.log | grep "17.57\|17.58"
 ```
 

@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand LinkedIn's Deceased Member Policy
+Step 1 - Understand LinkedIn's Deceased Member Policy
 
 LinkedIn provides two options for handling deceased members' accounts: memorialization or complete removal. Memorialization transforms the profile into a tribute page where connections can leave condolences and celebrate the person's professional legacy. Complete removal deletes the profile and associated data entirely.
 
@@ -36,7 +36,7 @@ The distinction matters for different use cases. Families often prefer memoriali
 
 LinkedIn's deceased member form serves as the official entry point for both options. The process requires documentation and varies depending on your relationship to the deceased.
 
-Step 2: How to Report a Deceased Member's Profile
+Step 2 - How to Report a Deceased Member's Profile
 
 The primary method uses LinkedIn's dedicated Deceased Member Form. You'll need to provide:
 
@@ -75,7 +75,7 @@ Usage example
 validate_linkedin_url "https://www.linkedin.com/in/john-doe-123456789/"
 ```
 
-Step 3: The Memorialization Process
+Step 3 - The Memorialization Process
 
 After submitting the deceased member form, LinkedIn's Trust and Safety team reviews the request. Processing times vary based on volume, but typically take 5-15 business days. During this period, the original profile remains visible.
 
@@ -123,7 +123,7 @@ def check_profile_status(profile_url, session):
     return {"exists": False, "error": response.text}
 ```
 
-Step 4: Bulk Requests for Organizations
+Step 4 - Bulk Requests for Organizations
 
 HR departments and organizations managing employee departures sometimes need to handle multiple profiles. LinkedIn's policy requires individual requests for each profile, but you can improve the documentation process:
 
@@ -160,17 +160,17 @@ for item in data:
 
 Maintain thorough records of all submissions, including confirmation numbers and correspondence with LinkedIn's team. This documentation matters for estate administration and legal compliance.
 
-Step 5: Alternative Request Methods
+Step 5 - Alternative Request Methods
 
 If the standard form isn't accessible or you've encountered issues, LinkedIn provides secondary contact methods:
 
-1. LinkedIn Help Community: Post in the LinkedIn Help Community under the "Managing an Account" category. Community moderators can escalate memorialization requests.
+1. LinkedIn Help Community - Post in the LinkedIn Help Community under the "Managing an Account" category. Community moderators can escalate memorialization requests.
 
-2. Legal Requests: For cases requiring immediate action or involving legal disputes, LinkedIn accepts formal legal requests through their Legal Claims page.
+2. Legal Requests - For cases requiring immediate action or involving legal disputes, LinkedIn accepts formal legal requests through their Legal Claims page.
 
-3. Premium Support: If you have a LinkedIn Premium subscription associated with the deceased's account, premium support may provide faster response times.
+3. Premium Support - If you have a LinkedIn Premium subscription associated with the deceased's account, premium support may provide faster response times.
 
-Step 6: Privacy Considerations for Developers
+Step 6 - Privacy Considerations for Developers
 
 When building systems that interact with LinkedIn data, consider these privacy-aware practices:
 
@@ -204,7 +204,7 @@ function processLinkedInProfile(profile) {
 }
 ```
 
-Step 7: What LinkedIn Does Not Allow
+Step 7 - What LinkedIn Does Not Allow
 
 Understanding limitations prevents wasted effort:
 

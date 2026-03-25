@@ -22,14 +22,14 @@ Gitea is a lightweight, fast git service written in Go. It runs on minimal hardw
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Step 1: Install Gitea](#step-1-install-gitea)
-- [Step 2: Configure Gitea as a systemd Service](#step-2-configure-gitea-as-a-systemd-service)
-- [Step 3: Set Up a Reverse Proxy with Nginx and HTTPS](#step-3-set-up-a-reverse-proxy-with-nginx-and-https)
-- [Step 4: Initial Gitea Setup](#step-4-initial-gitea-setup)
-- [Step 5: Harden Gitea Configuration](#step-5-harden-gitea-configuration)
-- [Step 6: Enable Two-Factor Authentication](#step-6-enable-two-factor-authentication)
-- [Step 7: Configure SSH Access](#step-7-configure-ssh-access)
-- [Step 8: Set Up Automated Backups](#step-8-set-up-automated-backups)
+- [Step 1 - Install Gitea](#step-1-install-gitea)
+- [Step 2 - Configure Gitea as a systemd Service](#step-2-configure-gitea-as-a-systemd-service)
+- [Step 3 - Set Up a Reverse Proxy with Nginx and HTTPS](#step-3-set-up-a-reverse-proxy-with-nginx-and-https)
+- [Step 4 - Initial Gitea Setup](#step-4-initial-gitea-setup)
+- [Step 5 - Harden Gitea Configuration](#step-5-harden-gitea-configuration)
+- [Step 6 - Enable Two-Factor Authentication](#step-6-enable-two-factor-authentication)
+- [Step 7 - Configure SSH Access](#step-7-configure-ssh-access)
+- [Step 8 - Set Up Automated Backups](#step-8-set-up-automated-backups)
 - [Setting Up Gitea Webhooks for Deployment](#setting-up-gitea-webhooks-for-deployment)
 - [Using Gitea Actions for CI/CD](#using-gitea-actions-for-cicd)
 - [Access Control and Team Management](#access-control-and-team-management)
@@ -42,7 +42,7 @@ Prerequisites
 - A domain name pointing to the server (for HTTPS)
 - Open ports: 22 (SSH), 80 (HTTP, for cert renewal), 443 (HTTPS), and optionally 3000 (if not using reverse proxy)
 
-Step 1: Install Gitea
+Step 1 - Install Gitea
 
 ```bash
 Download the latest Gitea binary
@@ -70,7 +70,7 @@ sudo chown root:git /etc/gitea
 sudo chmod 770 /etc/gitea
 ```
 
-Step 2: Configure Gitea as a systemd Service
+Step 2 - Configure Gitea as a systemd Service
 
 ```bash
 sudo tee /etc/systemd/system/gitea.service << 'EOF'
@@ -100,7 +100,7 @@ sudo systemctl enable gitea
 sudo systemctl start gitea
 ```
 
-Step 3: Set Up a Reverse Proxy with Nginx and HTTPS
+Step 3 - Set Up a Reverse Proxy with Nginx and HTTPS
 
 Install Nginx and Certbot:
 
@@ -154,7 +154,7 @@ sudo systemctl enable nginx
 sudo systemctl reload nginx
 ```
 
-Step 4: Initial Gitea Setup
+Step 4 - Initial Gitea Setup
 
 Browse to `https://git.yourdomain.com` for the setup wizard.
 
@@ -172,9 +172,9 @@ Server and Third-Party Service Settings:
 - Disable Gravatar (this sends email hashes to Gravatar's CDN. a privacy leak)
 - Uncheck "Enable Federated Avatars Lookup"
 
-Admin Account: Create your admin account here. Use a strong passphrase.
+Admin Account - Create your admin account here. Use a strong passphrase.
 
-Step 5: Harden Gitea Configuration
+Step 5 - Harden Gitea Configuration
 
 Edit `/etc/gitea/app.ini` after initial setup:
 
@@ -223,7 +223,7 @@ Apply changes:
 sudo systemctl restart gitea
 ```
 
-Step 6: Enable Two-Factor Authentication
+Step 6 - Enable Two-Factor Authentication
 
 In Gitea web interface:
 1. Click your profile → Settings → Security
@@ -233,7 +233,7 @@ In Gitea web interface:
 For all users, enforce 2FA via the admin panel:
 - Admin Panel → Users → [user] → Edit → Require 2FA: checked
 
-Step 7: Configure SSH Access
+Step 7 - Configure SSH Access
 
 Add your SSH public key for command-line git operations:
 
@@ -284,7 +284,7 @@ And update your git remote URLs accordingly:
 git remote set-url origin ssh://git@git.yourdomain.com:2222/user/repo.git
 ```
 
-Step 8: Set Up Automated Backups
+Step 8 - Set Up Automated Backups
 
 ```bash
 #!/bin/bash

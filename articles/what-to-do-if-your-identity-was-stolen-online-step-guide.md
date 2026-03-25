@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Immediate Actions: The First Hour
+Step 1 - Immediate Actions: The First Hour
 
 When you suspect identity theft, the first priority is limiting the attacker's access. Assume that any compromised credentials are actively being used against you.
 
@@ -51,11 +51,11 @@ Revoke OAuth Tokens and API Keys
 For developer accounts, attackers may have created or stolen OAuth tokens or API keys. Check your GitHub, AWS, Google Cloud, and similar services for unauthorized applications:
 
 ```bash
-GitHub: Review and revoke OAuth authorizations
+GitHub - Review and revoke OAuth authorizations
 Navigate to Settings > Applications > Authorized OAuth Apps
 Review each application and revoke suspicious ones
 
-AWS: Check for unauthorized IAM users or access keys
+AWS - Check for unauthorized IAM users or access keys
 aws iam list-users
 aws iam list-access-keys
 ```
@@ -64,7 +64,7 @@ Sign Out Everywhere
 
 Force-sign out of all sessions on compromised accounts. Most major services offer this option in security settings.
 
-Step 2: Account Recovery Process
+Step 2 - Account Recovery Process
 
 After securing immediate access, systematically work through each affected account.
 
@@ -93,7 +93,7 @@ echo "2026-03-16 10:45: Revoked OAuth tokens on GitHub" >> log.txt
 
 This documentation helps when filing reports and working with support teams.
 
-Step 3: Financial Protection
+Step 3 - Financial Protection
 
 If financial information may be compromised, act immediately to prevent monetary loss.
 
@@ -110,9 +110,9 @@ Credit Bureaus
 Place a fraud alert with major credit bureaus:
 
 ```bash
-Equifax: 1-800-525-6285
-Experian: 1-888-397-3742
-TransUnion: 1-800-680-7289
+Equifax - 1-800-525-6285
+Experian - 1-888-397-3742
+TransUnion - 1-800-680-7289
 ```
 
 A fraud alert requires lenders to verify your identity before issuing credit. For stronger protection, consider a credit freeze, which completely blocks new credit inquiries.
@@ -121,7 +121,7 @@ Review Recent Transactions
 
 Go through every transaction in your banking and credit card apps for the past 30 days. Report any unrecognized charges, no matter how small, attackers often test with small purchases before larger ones.
 
-Step 4: Digital Forensics for Developers
+Step 4 - Digital Forensics for Developers
 
 If you're a developer or sysadmin, consider what technical artifacts the attacker may have left behind.
 
@@ -168,7 +168,7 @@ Assume any credential visible on a compromised machine is burned. Rotate:
 - Database credentials
 - Encryption keys (if warranted)
 
-Step 5: Establishing Monitoring
+Step 5 - Establishing Monitoring
 
 After recovery, set up ongoing monitoring to detect future compromise.
 
@@ -178,7 +178,7 @@ Configure alerts for critical account changes:
 
 ```bash
 Use ifttt or similar to alert on account changes
-Monitor for: password changes, new device logins, OAuth grants
+Monitor for - password changes, new device logins, OAuth grants
 ```
 
 Regular Audits
@@ -186,9 +186,9 @@ Regular Audits
 Schedule periodic security reviews:
 
 ```bash
-Monthly: Review account access logs
-Quarterly: Audit OAuth permissions
-Annually: Review and rotate API keys
+Monthly - Review account access logs
+Quarterly - Audit OAuth permissions
+Annually - Review and rotate API keys
 ```
 
 Dark Web Monitoring
@@ -201,7 +201,7 @@ curl -H "hibp-api-key: YOUR_API_KEY" \
  "https://haveibeenpwned.com/api/v3/breachedaccount/your@email.com"
 ```
 
-Step 6: Prevention Strategies
+Step 6 - Prevention Strategies
 
 Recovering from identity theft teaches valuable lessons about prevention.
 
@@ -222,9 +222,9 @@ Regular Security Drills
 Periodically test your incident response capability:
 
 ```bash
-Quarterly: Update recovery phone/email
-Semi-annually: Test account recovery flows
-Annually: Full credential audit
+Quarterly - Update recovery phone/email
+Semi-annually - Test account recovery flows
+Annually - Full credential audit
 ```
 
 When to Involve Law Enforcement

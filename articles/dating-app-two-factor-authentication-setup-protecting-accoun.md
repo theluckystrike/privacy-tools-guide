@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Two-Factor Authentication Methods
+Step 1 - Understand Two-Factor Authentication Methods
 
 Before configuring 2FA, understand the security properties of each authentication method available on dating applications.
 
@@ -96,7 +96,7 @@ Hardware Security Keys
 
 For maximum security, hardware keys like YubiKey or Titan provide phishing-resistant authentication. Few dating apps currently support FIDO2/WebAuthn standards, but this is changing as major platforms adopt passwordless authentication.
 
-Step 2: Configure Two-Factor Authentication on Major Dating Platforms
+Step 2 - Configure Two-Factor Authentication on Major Dating Platforms
 
 Tinder
 
@@ -122,7 +122,7 @@ OkCupid
 
 OkCupid provides authenticator app support, making it one of the better options for security-conscious users. Navigate to Settings → Privacy → Two-Factor Authentication to configure either SMS or an authenticator app. OkCupid uses standard TOTP, allowing you to use any compatible authenticator.
 
-Step 3: Developer Integration: Adding 2FA to Dating Applications
+Step 3 - Developer Integration: Adding 2FA to Dating Applications
 
 For developers building dating platforms, implementing 2FA correctly requires careful attention to security best practices.
 
@@ -146,7 +146,7 @@ class TwoFactorAuthService:
         """
         Generate otpauth:// URI for QR code scanning.
 
-        Format: otpauth://totp/issuer:account?secret=SECRET&issuer=issuer
+        Format - otpauth://totp/issuer:account?secret=SECRET&issuer=issuer
         """
         return self.totp.provisioning_uri(
             name=account_name,
@@ -183,9 +183,9 @@ Security Considerations for 2FA Implementation
 
 When implementing 2FA, developers should consider these critical aspects:
 
-Rate Limiting: Implement rate limits on verification endpoints to prevent brute-force attacks. A common approach allows 10 attempts per hour per account.
+Rate Limiting - Implement rate limits on verification endpoints to prevent brute-force attacks. A common approach allows 10 attempts per hour per account.
 
-Backup Codes: Generate 10 single-use backup codes when 2FA is enabled. Store these securely using hashed values, never in plaintext.
+Backup Codes - Generate 10 single-use backup codes when 2FA is enabled. Store these securely using hashed values, never in plaintext.
 
 ```python
 import secrets
@@ -205,7 +205,7 @@ def generate_backup_codes(count=10, code_length=8):
     return codes
 ```
 
-Device Fingerprinting: Track trusted devices to detect suspicious login attempts from unknown devices, even when the correct 2FA code is provided.
+Device Fingerprinting - Track trusted devices to detect suspicious login attempts from unknown devices, even when the correct 2FA code is provided.
 
 Advanced Protection Strategies
 

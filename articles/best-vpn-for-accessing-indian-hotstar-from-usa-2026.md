@@ -22,7 +22,7 @@ Mullvad and Private Internet Access (PIA) are the most reliable VPNs for accessi
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - Configure your system to: use Indian DNS servers exclusively: ### Linux (systemd-resolved) ```bash # /etc/systemd/resolved.conf [Resolve] DNS=103.87.66.1 103.87.66.2 DNSOverTLS=no Domains=~.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
-- Mullvad and Private Internet: Access (PIA) are the most reliable VPNs for accessing Disney+ Hotstar from the USA by maintaining dedicated Indian IP pools and supporting obfuscated VPN protocols.
+- Mullvad and Private Internet - Access (PIA) are the most reliable VPNs for accessing Disney+ Hotstar from the USA by maintaining dedicated Indian IP pools and supporting obfuscated VPN protocols.
 - Mastering advanced features takes: 1-2 weeks of regular use.
 - Focus on the 20%: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
@@ -119,7 +119,7 @@ Verification and Troubleshooting
 
 After establishing your VPN connection, verify proper configuration:
 
-1. IP Verification: Visit ipinfo.io to confirm Indian IP assignment
+1. IP Verification - Visit ipinfo.io to confirm Indian IP assignment
 2. DNS Leak Test: Ensure DNS resolves to Indian servers
 3. WebRTC Check: Disable WebRTC in browser settings to prevent IP leaks
 4. Hotstar Test: Attempt to play a protected video
@@ -132,7 +132,7 @@ Common issues and solutions:
 | Buffering | High latency | Connect to Mumbai or Bangalore servers |
 | Authentication failure | DNS mismatch | Flush DNS cache, verify resolver configuration |
 
-Advanced: Building a Custom Streaming Proxy
+Advanced - Building a Custom Streaming Proxy
 
 For developers seeking deeper technical understanding, building a custom proxy provides maximum control:
 
@@ -260,7 +260,7 @@ function testWebRTCLeak() {
 testWebRTCLeak();
 ```
 
-Prevention: Disable WebRTC in Firefox with `media.peerconnection.enabled = false` in `about:config`. For Chrome, use a WebRTC leak prevention extension or disable all protocols except "default public interface."
+Prevention - Disable WebRTC in Firefox with `media.peerconnection.enabled = false` in `about:config`. For Chrome, use a WebRTC leak prevention extension or disable all protocols except "default public interface."
 
 Custom Streaming Proxy Implementation
 

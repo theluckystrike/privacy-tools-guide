@@ -63,7 +63,7 @@ Key commands:
 - `aa-disable`. disable a profile
 - `aa-status`. show all profiles and their mode
 
-Step 1: Generate a Profile with aa-genprof
+Step 1 - Generate a Profile with aa-genprof
 
 `aa-genprof` runs your application, watches what it does, and builds an initial profile.
 
@@ -75,13 +75,13 @@ sudo aa-genprof /usr/local/bin/myapp.py
 `aa-genprof` will prompt you to run the application in another terminal:
 
 ```bash
-Terminal 2: run the application through its normal operations
+Terminal 2 - run the application through its normal operations
 python3 /usr/local/bin/myapp.py --config /etc/myapp/config.yaml
 ```
 
 Back in terminal 1, press `S` to scan the log, then review each access and allow or deny it. At the end, press `F` to finish and save.
 
-Step 2: Write a Profile Manually
+Step 2 - Write a Profile Manually
 
 Understanding profile syntax lets you write precise rules.
 
@@ -136,7 +136,7 @@ Permission flags:
 - `rix`. read, inherit, execute (child inherits parent profile)
 - `Px`. execute with a specific profile
 
-Step 3: Profile for nginx
+Step 3 - Profile for nginx
 
 ```
 /etc/apparmor.d/usr.sbin.nginx
@@ -191,7 +191,7 @@ Step 3: Profile for nginx
 }
 ```
 
-Step 4: Load and Enforce a Profile
+Step 4 - Load and Enforce a Profile
 
 ```bash
 Parse and load a profile
@@ -218,7 +218,7 @@ sudo apparmor_parser -r /etc/apparmor.d/usr.local.bin.myapp
 sudo systemctl restart myapp
 ```
 
-Step 5: Debugging Denials
+Step 5 - Debugging Denials
 
 ```bash
 Watch for AppArmor denials in real time
@@ -241,11 +241,11 @@ When you see a denial that should be allowed, add the rule to the profile:
 
 ```bash
 sudo nano /etc/apparmor.d/usr.local.bin.myapp
-Add the missing rule, e.g.: /etc/hosts r,
+Add the missing rule, e.g. - /etc/hosts r,
 sudo apparmor_parser -r /etc/apparmor.d/usr.local.bin.myapp
 ```
 
-Step 6: AppArmor and Docker
+Step 6 - AppArmor and Docker
 
 Docker containers can have AppArmor profiles applied:
 

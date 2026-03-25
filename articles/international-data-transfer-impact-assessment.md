@@ -20,7 +20,7 @@ To conduct an international data transfer impact assessment, start by mapping ev
 
 For developers and organizations processing EU citizen data, international data transfer assessment represents not optional compliance, it's a hard requirement. The European Court of Justice invalidated the EU-US Privacy Shield in 2020 and imposed strict requirements on Standard Contractual Clauses, making transfers without thorough assessment legally risky. Regulators actively investigate data transfer compliance, and fines for inadequate assessments reach millions of euros.
 
-The core principle: personal data receives protection from data's origin jurisdiction. If GDPR data leaves the EU for processing in less-regulated jurisdictions, the organization remains responsible for maintaining equivalent protection. This responsibility cannot be delegated, you can't claim "the vendor handles it" if your assessment shows the vendor's jurisdiction lacks adequate legal protections.
+The core principle - personal data receives protection from data's origin jurisdiction. If GDPR data leaves the EU for processing in less-regulated jurisdictions, the organization remains responsible for maintaining equivalent protection. This responsibility cannot be delegated, you can't claim "the vendor handles it" if your assessment shows the vendor's jurisdiction lacks adequate legal protections.
 
 Understanding the Legal Framework
 
@@ -224,13 +224,13 @@ Real-World Assessment Examples
 
 Understanding assessment methodology through concrete examples clarifies the process. Consider a SaaS company storing EU customer data in AWS us-east-1:
 
-Identified transfers: All customer data transits to US infrastructure. Payment data transits through Stripe. Analytics data transits to Mixpanel. Support conversations transit to Zendesk. Each represents a discrete transfer requiring assessment.
+Identified transfers - All customer data transits to US infrastructure. Payment data transits through Stripe. Analytics data transits to Mixpanel. Support conversations transit to Zendesk. Each represents a discrete transfer requiring assessment.
 
-Risk assessment: Customer data sensitivity varies, contact information has lower sensitivity than payment data or usage logs that reveal business operations. Jurisdiction risk for US-based transfers depends on current legal frameworks (EU-US Data Privacy Framework vs. SCCs). Technical safeguards exist (TLS in transit, AES at rest) but key management remains US-based.
+Risk assessment - Customer data sensitivity varies, contact information has lower sensitivity than payment data or usage logs that reveal business operations. Jurisdiction risk for US-based transfers depends on current legal frameworks (EU-US Data Privacy Framework vs. SCCs). Technical safeguards exist (TLS in transit, AES at rest) but key management remains US-based.
 
-Mitigation strategy: Encrypt customer payment data at rest before transmission (customer-side encryption), reducing reliance on transfer safeguards. Implement legal agreements documenting standard contractual clauses for US transfers. Deploy EU-based backup databases for critical data, reducing dependency on single-jurisdiction infrastructure.
+Mitigation strategy - Encrypt customer payment data at rest before transmission (customer-side encryption), reducing reliance on transfer safeguards. Implement legal agreements documenting standard contractual clauses for US transfers. Deploy EU-based backup databases for critical data, reducing dependency on single-jurisdiction infrastructure.
 
-Documentation: Maintain records showing the assessment occurred, decisions made, mitigations implemented, and review dates. This documentation demonstrates good-faith compliance efforts even if regulators eventually disagree with specific decisions.
+Documentation - Maintain records showing the assessment occurred, decisions made, mitigations implemented, and review dates. This documentation demonstrates good-faith compliance efforts even if regulators eventually disagree with specific decisions.
 
 Emerging Frameworks and Future Compliance
 

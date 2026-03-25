@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install ation and Initial Setup
+Step 1 - Install ation and Initial Setup
 
 Briar is available for Android through the F-Droid repository and Google Play Store. For developers who prefer building from source, the project provides instructions for compiling the APK:
 
@@ -54,7 +54,7 @@ adb install briar-android/build/outputs/apk/debug/briar-android-debug.apk
 
 After installation, creating an identity requires establishing a strong passphrase. This passphrase encrypts your local database, protecting your messages and contacts if your device falls into unauthorized hands. Unlike cloud-based services, Briar stores everything locally by default.
 
-Step 2: Adding Contacts Offline
+Step 2 - Adding Contacts Offline
 
 Briar contact addition works entirely offline through QR codes or manual key exchange. When adding a contact, both devices generate temporary Bluetooth or Wi-Fi Direct connections to exchange cryptographic keys.
 
@@ -68,7 +68,7 @@ The process involves these steps:
 
 The contact URL contains your public key and connection metadata. You can share this URL through any channel, email, USB drive, or even printed paper. The URL itself reveals no sensitive information; only the holder can complete the pairing process.
 
-Step 3: Configure Offline Transport
+Step 3 - Configure Offline Transport
 
 Briar's offline capabilities depend on proper configuration of transport protocols. The app supports three transport mechanisms with distinct characteristics.
 
@@ -96,7 +96,7 @@ When internet connectivity exists, Tor-based transport provides anonymous routin
 
 Configure Tor settings through Settings → Connectivity → Internet. You can specify whether Briar uses internet transport automatically, on-demand, or only when Wi-Fi is available.
 
-Step 4: Mesh Networking Behavior
+Step 4 - Mesh Networking Behavior
 
 Understanding mesh propagation helps you optimize network topology for your use case. Briar uses a store-and-forward mechanism where each device stores messages until it can forward them to another connected device.
 
@@ -104,7 +104,7 @@ The protocol delivers messages even with intermittent connectivity, discovers ro
 
 When multiple devices form a mesh, messages propagate automatically. If you move through an area with Briar users, your device will sync with theirs, picking up any messages transmitted while you were out of range.
 
-Step 5: Security Tips
+Step 5 - Security Tips
 
 For enhanced security when using Briar:
 - Use a dedicated device with full-disk encryption enabled
@@ -150,7 +150,7 @@ Filter specific components
 adb logcat | grep -E "(briar|bramble)"
 ```
 
-Step 6: Integration Possibilities
+Step 6 - Integration Possibilities
 
 For developers, Briar offers integration opportunities through its API (available in beta). The messaging API allows programmatic message sending and receiving, enabling automated workflows:
 
@@ -206,7 +206,7 @@ briar-cli message list --status pending
 
 For time-sensitive communications, supplement Briar with Tor-based messaging that provides guaranteed delivery within minutes.
 
-Step 7: Use Cases and Scenarios
+Step 7 - Use Cases and Scenarios
 
 Briar excels in specific situations where connectivity is either unreliable or deliberately restricted.
 
@@ -222,7 +222,7 @@ Privacy-Conscious Communities
 
 Residential communities prioritizing communication without corporate oversight can establish permanent Briar meshes covering buildings or neighborhoods. This requires regular synchronization events but creates infrastructure independent from ISPs.
 
-Step 8: Integration with Other Privacy Tools
+Step 8 - Integration with Other Privacy Tools
 
 Combine Briar with complementary privacy tools for protection:
 
@@ -255,7 +255,7 @@ adb shell settings put secure briar.max_peers 8
 
 These adjustments trade responsiveness for battery life and CPU usage.
 
-Step 9: Archive and Export
+Step 9 - Archive and Export
 
 Briar stores all messages locally. To preserve conversations:
 
@@ -271,7 +271,7 @@ adb push ~/briar_backup.db \
 
 Note that message export in standard format is not supported, Briar intentionally avoids database migrations that would risk plaintext exposure.
 
-Step 10: Community Building and Group Coordination
+Step 10 - Community Building and Group Coordination
 
 Briar's offline capability makes it valuable for community organizing in restricted environments. Establish group protocols before deployment:
 
@@ -299,7 +299,7 @@ protocol = {
 
 Establish roles and responsibilities before crisis situations arise. Who coordinates? How are decisions made? What's the escalation path for safety issues?
 
-Step 11: Network Resilience Planning
+Step 11 - Network Resilience Planning
 
 For communities relying on Briar as critical infrastructure, plan for network failures:
 
@@ -313,7 +313,7 @@ Mesh topology for maximum resilience:
 
 This topology ensures that local network segments remain connected even if some devices leave or lose power.
 
-Step 12: Integration with Offline Media Distribution
+Step 12 - Integration with Offline Media Distribution
 
 Combine Briar with other offline media for communication:
 
@@ -351,6 +351,6 @@ Related Articles
 - [Briar Messenger Offline Communication](/briar-messenger-offline-communication-how-it-works-for-prote/)
 - [Iran Internet Shutdown Survival Guide](/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)
 - [How To Communicate During Internet Shutdown Alternative](/how-to-communicate-during-internet-shutdown-alternative-netw/)
-- [AI CI/CD Pipeline Optimization: A Developer Guide](https://bestremotetools.com/ai-ci-cd-pipeline-optimization/)
+- [AI CI/CD Pipeline Optimization - A Developer Guide](https://bestremotetools.com/ai-ci-cd-pipeline-optimization/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

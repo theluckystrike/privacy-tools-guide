@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How SSN Leaks Happen
+Step 1 - How SSN Leaks Happen
 
 Understanding the attack surface helps you know where to look. SSN exposure typically occurs through several vectors:
 
@@ -40,7 +40,7 @@ Legacy system exposures. Older systems that stored SSNs in plaintext sometimes g
 
 Phishing and social engineering. Attackers trick employees into revealing databases containing employee or customer SSNs.
 
-Step 2: Direct Monitoring Services
+Step 2 - Direct Monitoring Services
 
 Have I Been Pwned
 
@@ -65,7 +65,7 @@ The three major credit bureaus. Equifax, Experian, and TransUnion. each offer fr
 
 Equifax's myEquifax portal allows you to place a free fraud alert and offers complimentary identity theft protection enrollment following major breaches.
 
-Step 3: Dark Web Monitoring Tools
+Step 3 - Dark Web Monitoring Tools
 
 Have I Been Pwned's Dark Web Monitoring
 
@@ -99,7 +99,7 @@ curl -X POST "https://api.identityservice.com/scan" \
   -d '{"ssn": "123-45-6789", "notification_email": "you@example.com"}'
 ```
 
-Step 4: Build Your Own Monitoring Script
+Step 4 - Build Your Own Monitoring Script
 
 For developers who want custom monitoring, you can combine multiple data sources:
 
@@ -163,7 +163,7 @@ result = monitor.check_hibp_breaches("your-email@example.com")
 print(json.dumps(result, indent=2))
 ```
 
-Step 5: What To Do If Your SSN Is Found
+Step 5 - What To Do If Your SSN Is Found
 
 If monitoring reveals your SSN has been compromised, act immediately:
 
@@ -179,7 +179,7 @@ If monitoring reveals your SSN has been compromised, act immediately:
 
 6. Document everything. Keep records of all communications, police reports, and correspondence related to the identity theft.
 
-Step 6: Prevention Strategies
+Step 6 - Prevention Strategies
 
 While you can't prevent breaches at companies you do business with, you can reduce your exposure:
 
@@ -286,7 +286,7 @@ monitor = EmailBreachMonitor(
 monitor.run_check()
 ```
 
-Step 7: Credit Bureau Direct Monitoring
+Step 7 - Credit Bureau Direct Monitoring
 
 Access raw credit bureau data to detect fraudulent accounts:
 
@@ -344,7 +344,7 @@ def analyze_credit_report(credit_report_json):
     return alerts
 ```
 
-Step 8: Social Security Account Security
+Step 8 - Social Security Account Security
 
 Prevent attackers from taking over your Social Security account:
 
@@ -364,20 +364,20 @@ SSN misuse may show in employment records
 Report discrepancies to SSA immediately
 ```
 
-Step 9: Recovery Plan Preparation
+Step 9 - Recovery Plan Preparation
 
 Prepare before you need it:
 
 ```markdown
 Identity Theft Recovery Plan
 
-Step 10: Pre-Incident Preparation
+Step 10 - Pre-Incident Preparation
 - Store recovery phone numbers: Equifax, Experian, TransUnion
 - Keep copies of government IDs in secure location
 - Document all current accounts and passwords in manager
 - Prepare template identity theft report
 
-Step 11: Post-Incident Response Timeline
+Step 11 - Post-Incident Response Timeline
 - Immediately (0-24 hours):
   - Contact credit bureaus
   - Place fraud alert
@@ -403,10 +403,10 @@ Step 11: Post-Incident Response Timeline
   - Maintain identity theft file
   - Monitor credit reports quarterly
 
-Step 12: Documentation Template
+Step 12 - Documentation Template
 ```
 
-Step 13: Legal Resources for Identity Theft
+Step 13 - Legal Resources for Identity Theft
 
 If identity theft occurs, know your rights:
 
@@ -426,7 +426,7 @@ Report FCRA violations
 Contact FTC or consider consulting attorney
 ```
 
-Step 14: Long-Term Monitoring After Breach
+Step 14 - Long-Term Monitoring After Breach
 
 After discovering SSN exposure, maintain vigilance:
 

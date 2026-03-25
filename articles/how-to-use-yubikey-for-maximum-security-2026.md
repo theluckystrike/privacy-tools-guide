@@ -26,11 +26,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How to Use YubiKey for Maximum Security in 2026
+Step 1 - How to Use YubiKey for Maximum Security in 2026
 
 YubiKeys provide hardware-backed authentication and encryption protection against phishing, credential theft, and unauthorized access. This guide covers complete YubiKey setup for FIDO2, GPG, SSH, and OTP with multi-key backup and disaster recovery strategies.
 
-Step 2: YubiKey Hardware Overview
+Step 2 - YubiKey Hardware Overview
 
 YubiKey 5 Series Options:
 
@@ -42,21 +42,21 @@ YubiKey 5 Series Options:
 | YubiKey 5Ci | $85 | USB-C + Lightning (Apple) | iPhone + Mac users |
 | YubiKey 5A | $55 | FIDO2, OTP, PIV, USB-A | Desktop Linux/Windows |
 
-Recommended Setup: Purchase 3 YubiKeys:
+Recommended Setup - Purchase 3 YubiKeys:
 - Primary: USB-C (daily use)
 - Backup 1: NFC (mobile + emergency)
 - Backup 2: USB-A (secure storage)
 
-Total cost: ~$165 for maximum redundancy and recovery capability.
+Total cost - ~$165 for maximum redundancy and recovery capability.
 
-Step 3: FIDO2 Authentication Setup
+Step 3 - FIDO2 Authentication Setup
 
 What is FIDO2:
 - Passwordless authentication standard
 - Phishing-resistant (key cryptographically bound to domain)
 - Works with Google, GitHub, Microsoft, Apple, Facebook, Dropbox
 
-Step 1: Register YubiKey with Primary Services
+Step 1 - Register YubiKey with Primary Services
 
 GitHub Registration:
 
@@ -84,7 +84,7 @@ Google Account Registration:
 7. Repeat for backup keys
 ```
 
-After registration: YubiKey is required for login + recovery.
+After registration - YubiKey is required for login + recovery.
 
 Microsoft Account Registration:
 
@@ -109,9 +109,9 @@ Apple ID Registration:
 4. Name and register backup keys
 ```
 
-Step 4: GPG Key Management
+Step 4 - GPG Key Management
 
-Step 1: Generate Master GPG Key (on secure machine)
+Step 1 - Generate Master GPG Key (on secure machine)
 
 ```bash
 Generate master key (4096-bit RSA, never for signing)
@@ -119,11 +119,11 @@ gpg --full-generate-key
 
 Select:
 Key type: (1) RSA and RSA
-Keysize: 4096
-Validity: 0 (no expiration)
-Name: Your Name
-Email: your@email.com
-Passphrase: Long passphrase (40+ characters, unique)
+Keysize - 4096
+Validity - 0 (no expiration)
+Name - Your Name
+Email - your@email.com
+Passphrase - Long passphrase (40+ characters, unique)
 
 Export public key
 gpg --export --armor your@email.com > public-key.asc
@@ -132,7 +132,7 @@ Export secret key (SECURE - keep offline)
 gpg --export-secret-keys --armor your@email.com > secret-key.asc.gpg
 ```
 
-Step 2: Move Signing Key to YubiKey
+Step 2 - Move Signing Key to YubiKey
 
 ```bash
 Install YubiKey manager
@@ -144,29 +144,29 @@ ykman openpgp reset
 
 Generate key on YubiKey (takes 5-10 minutes)
 ykman openpgp generate --sig-key
-When prompted: Select YubiKey slot (Signature key)
-For subkeys: decryption, authentication
+When prompted - Select YubiKey slot (Signature key)
+For subkeys - decryption, authentication
 
 Verify key on device
 ykman openpgp info
 
 Output should show:
 OpenPGP version: 3.4
-Pin: 3/3
-Admin PIN: 3/3
-Reset Code: not set
+Pin - 3/3
+Admin PIN - 3/3
+Reset Code - not set
 Signing key [sig]:    [Key ID] (4096 bits)
-Encryption key [enc]: [Key ID]
-Authentication key [aut]: [Key ID]
+Encryption key [enc] - [Key ID]
+Authentication key [aut] - [Key ID]
 ```
 
-Step 3: Backup Encrypted Master Key
+Step 3 - Backup Encrypted Master Key
 
 ```bash
 Create encrypted backup
 gpg --symmetric secret-key.asc.gpg
 
-This creates: secret-key.asc.gpg.gpg
+This creates - secret-key.asc.gpg.gpg
 Store this file:
 - Dropbox encrypted vault (Tresorit, Sync.com)
 - Hardware wallet storage
@@ -178,9 +178,9 @@ Store passphrase separately:
 - NOT with the key file
 ```
 
-Step 5: SSH Key Setup
+Step 5 - SSH Key Setup
 
-Step 1: Enable SSH on YubiKey
+Step 1 - Enable SSH on YubiKey
 
 ```bash
 Check current SSH support
@@ -207,7 +207,7 @@ Output should show YubiKey SSH key:
 ssh-rsa AAAAB3... cardno:000...
 ```
 
-Step 2: Add SSH Key to Services
+Step 2 - Add SSH Key to Services
 
 ```bash
 Get SSH public key from YubiKey
@@ -216,14 +216,14 @@ ssh-add -L
 Add to GitHub:
 Settings > SSH and GPG keys > New SSH Key
 Paste public key from above
-Name: "YubiKey SSH - Primary"
+Name - "YubiKey SSH - Primary"
 
 Add to Servers:
 cat ~/.ssh/id_rsa.pub | ssh user@server 'cat >> .ssh/authorized_keys'
 
 Test connection (YubiKey will prompt for PIN)
 ssh user@server
-You'll see: "Please touch the Yubikey"
+You'll see - "Please touch the Yubikey"
 Touch YubiKey button
 ```
 
@@ -250,14 +250,14 @@ Host *.internal
   IdentityAgent ~/.gnupg/S.gpg-agent.ssh
 ```
 
-Step 6: One-Time Password (OTP) Setup
+Step 6 - One-Time Password (OTP) Setup
 
-Step 1: Configure OTP on YubiKey
+Step 1 - Configure OTP on YubiKey
 
 ```bash
 YubiKey 5 supports two OTP slots
-Slot 1: TOTP (Time-based OTP)
-Slot 2: HOTP (Counter-based OTP)
+Slot 1 - TOTP (Time-based OTP)
+Slot 2 - HOTP (Counter-based OTP)
 
 Install ykman
 brew install ykman
@@ -267,15 +267,15 @@ ykman otp insert 1 --totp --digits 6
 
 When prompted:
 Name: "Primary Auth"
-Key (from service): [paste secret from service]
-Digits: 6
+Key (from service) - [paste secret from service]
+Digits - 6
 
 Test OTP generation
 ykman otp yubiotp
-Output: 123456 (valid for 30 seconds)
+Output - 123456 (valid for 30 seconds)
 ```
 
-Step 2: Register OTP with Services
+Step 2 - Register OTP with Services
 
 Google Account:
 ```
@@ -306,7 +306,7 @@ Microsoft:
 6. Paste YubiKey secret
 ```
 
-Step 7: Multi-Key Backup Strategy
+Step 7 - Multi-Key Backup Strategy
 
 Backup Architecture:
 
@@ -335,29 +335,29 @@ Backup 2 (secure storage):
 Recovery Sequence:
 
 ```
-Scenario 1: Lost primary key
+Scenario 1 - Lost primary key
 1. Locate backup YubiKey (desk drawer)
 2. Continue work immediately
 3. Order replacement YubiKey
 4. Register replacement with all services
 
-Scenario 2: All keys lost
+Scenario 2 - All keys lost
 1. Use account recovery codes (stored separately)
 2. Use authenticator app backup
 3. Contact service support (GitHub, Google, etc.)
 4. Verify identity (security questions, email)
 5. Register new YubiKey after identity verified
 
-Scenario 3: Key damaged/non-functional
+Scenario 3 - Key damaged/non-functional
 1. Use backup key immediately
 2. Contact YubiKey support (lifetime warranty)
 3. Request RMA (return/replacement)
 4. Receive replacement within 2 weeks
 ```
 
-Step 8: Account Recovery Codes
+Step 8 - Account Recovery Codes
 
-Step 1: Generate Recovery Codes
+Step 1 - Generate Recovery Codes
 
 Each service provides recovery codes when you enable 2FA with YubiKey.
 
@@ -383,27 +383,27 @@ Google Backup Codes:
 Backup Code Storage Locations:
 
 ```
-Primary storage: Safe deposit box
+Primary storage - Safe deposit box
  Printed recovery codes (laminated)
  YubiKey USB-A backup
  Encrypted master GPG key (USB)
  Passphrase list (separate)
 
-Secondary storage: Home safe
+Secondary storage - Home safe
  Printed recovery codes (laminated)
  YubiKey NFC backup
  Setup notes (YubiKey pins, passphrases)
  Service usernames/emails
 ```
 
-Step 9: PIN and Password Management
+Step 9 - PIN and Password Management
 
 YubiKey PIN Settings:
 
 ```bash
 Default PINs:
 User PIN: 123456
-Admin PIN: 12345678
+Admin PIN - 12345678
 
 Change user PIN (requires current pin)
 ykman openpgp set-pin
@@ -413,47 +413,47 @@ ykman openpgp set-admin-pin
 
 Set PIN retry counts (optional)
 ykman openpgp set-pin-retries 3 3 3
-Format: user-retries admin-retries reset-retries
+Format - user-retries admin-retries reset-retries
 ```
 
 Recommended PIN Strategy:
 
 ```
-User PIN: 6 digits, unique (random)
-Admin PIN: 8 digits, unique (random)
-Storage: 1Password vault
+User PIN - 6 digits, unique (random)
+Admin PIN - 8 digits, unique (random)
+Storage - 1Password vault
 
-User PIN: 847293
-Admin PIN: 92847561
+User PIN - 847293
+Admin PIN - 92847561
 
 Memorizing PINs is NOT recommended
 Store in password manager with YubiKey serial number
 ```
 
-Step 10: Disaster Recovery Plan
+Step 10 - Disaster Recovery Plan
 
 Complete Recovery Playbook:
 
 ```
-Step 1: Verify Situation (within 1 hour)
+Step 1 - Verify Situation (within 1 hour)
  Determine which key(s) are inaccessible
  Check safe deposit box for backup
  Verify email access to recovery accounts
  Note exact time of incident
 
-Step 2: Immediate Access (within 24 hours)
+Step 2 - Immediate Access (within 24 hours)
  Use backup YubiKey (if available)
  Use recovery codes (if key truly lost)
  Contact service support (GitHub, Google)
  Change critical passwords while YubiKey unavailable
 
-Step 3: Restore Access (1-7 days)
+Step 3 - Restore Access (1-7 days)
  Receive replacement YubiKey (if ordered)
  Restore GPG key from encrypted backup
  Re-register new YubiKey with all services
  Test each service works with new key
 
-Step 4: Update Backups (1 month)
+Step 4 - Update Backups (1 month)
  Order new backup YubiKeys
  Register new YubiKeys alongside existing
  Update safe deposit box contents
@@ -463,27 +463,27 @@ Step 4: Update Backups (1 month)
 
 Common Mistakes to Avoid
 
-Mistake 1: Single YubiKey Only
+Mistake 1 - Single YubiKey Only
 - Risk: Lost key = account lockout
 - Fix: Always maintain 2+ backup keys
 
-Mistake 2: Recovery Codes Stored with YubiKey
+Mistake 2 - Recovery Codes Stored with YubiKey
 - Risk: If all keys lost, codes also lost
 - Fix: Store recovery codes separately (paper, safe)
 
-Mistake 3: Passphrase Forgotten
+Mistake 3 - Passphrase Forgotten
 - Risk: Cannot use backup keys without passphrase
 - Fix: Store all passphrases in password manager
 
-Mistake 4: No Test of Recovery
+Mistake 4 - No Test of Recovery
 - Risk: Backup fails when actually needed
 - Fix: Annually test backup YubiKey access
 
-Mistake 5: No Firmware Updates
+Mistake 5 - No Firmware Updates
 - Risk: Security vulnerabilities go unpatched
 - Fix: Update YubiKey firmware yearly (ykman firmware update)
 
-Step 11: Regular Maintenance Schedule
+Step 11 - Regular Maintenance Schedule
 
 Monthly:
 - Test YubiKey connection to primary computer

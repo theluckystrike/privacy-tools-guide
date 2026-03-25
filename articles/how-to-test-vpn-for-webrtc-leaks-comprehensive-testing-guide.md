@@ -43,9 +43,9 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Test for WebRTC Leaks
+Step 1 - Test for WebRTC Leaks
 
-Method 1: Online WebRTC Leak Testing Tools
+Method 1 - Online WebRTC Leak Testing Tools
 
 The quickest way to test for WebRTC leaks is using specialized online tools. These services perform the STUN requests directly in your browser and display any IP addresses that WebRTC reveals.
 
@@ -53,7 +53,7 @@ Start by disconnecting from your VPN and noting your real IP address. Then conne
 
 When using these tools, ensure your VPN is actually connected, some tools will warn you if they detect you're not using a VPN. Also test on multiple browsers since Chrome might leak while Firefox doesn't, depending on your configuration.
 
-Method 2: Manual Browser Console Testing
+Method 2 - Manual Browser Console Testing
 
 For a more technical verification, you can test WebRTC leaks directly in your browser's developer console. This method gives you granular control and doesn't rely on third-party services.
 
@@ -108,7 +108,7 @@ testWebRTCLeak();
 
 This script creates a test WebRTC connection and monitors which IP addresses are exposed. The `stun:stun.l.google.com:19302` server is Google's public STUN server, commonly used in WebRTC implementations. Any IP addresses that appear in the output (other than your VPN IP) indicate a potential leak.
 
-Method 3: Command-Line Testing with Python
+Method 3 - Command-Line Testing with Python
 
 For automated or repeatable testing, you can use Python with the `aiodns` and `aioice` libraries to simulate STUN requests programmatically. This approach is useful for integrating WebRTC leak testing into larger security assessment workflows.
 
@@ -148,7 +148,7 @@ if __name__ == "__main__":
 
 This script queries multiple STUN servers and reports the detected IP addresses. Run this script both with and without your VPN connected to compare results. If the reported IP changes when you connect to your VPN, your WebRTC implementation is working correctly, but remember that browser-level WebRTC can still leak even if this test passes.
 
-Step 2: Mitigating WebRTC Leaks
+Step 2 - Mitigating WebRTC Leaks
 
 Browser Extension Solutions
 
@@ -166,13 +166,13 @@ VPN-Side Protection
 
 Some VPN providers implement WebRTC leak protection on their clients. This typically involves firewall rules that block UDP traffic except through the VPN tunnel, or by intercepting and filtering STUN requests at the application level. Check if your VPN provider offers this feature, it provides protection regardless of browser configuration.
 
-Step 3: Test After Mitigation
+Step 3 - Test After Mitigation
 
 After implementing mitigation strategies, verify they work by repeating the testing methods described above. Browser extensions can sometimes be bypassed by determined attackers, and configuration settings may reset after browser updates. Make testing a regular part of your security routine, especially when using sensitive services.
 
 Test on all browsers you use, since each handles WebRTC differently. Chrome's Chromium-based browsers share similar protections, while Firefox has its own independent implementation. Mobile browsers also need testing, iOS Safari and Android Chrome both support WebRTC and may leak.
 
-Step 4: Understand the Risk
+Step 4 - Understand the Risk
 
 The severity of a WebRTC leak depends on your threat model. For average users, IP exposure might mean targeted ads or basic geographic tracking. For journalists, activists, or those bypassing censorship, a leaked IP can have serious consequences including identity exposure or physical danger.
 
@@ -198,11 +198,11 @@ tcpdump -r webrtc_capture.pcap -X | head -50
 
 This approach reveals exactly which IP addresses your device contacts, providing definitive evidence of leaks that testing tools might miss.
 
-Step 5: Test Across Different Network Conditions
+Step 5 - Test Across Different Network Conditions
 
 WebRTC behavior varies depending on network conditions. Test in multiple scenarios:
 
-Test 1: Connected VPN on Home WiFi
+Test 1 - Connected VPN on Home WiFi
 ```bash
 Connect VPN first
 vpn_status=$(systemctl status wireguard@wg0 | grep active)
@@ -211,10 +211,10 @@ Run leak test
 echo "VPN Status: $vpn_status"
 python3 test_webrtc.py
 
-Expected: Only VPN IP should appear
+Expected - Only VPN IP should appear
 ```
 
-Test 2: Mobile Hotspot (4G/5G)
+Test 2 - Mobile Hotspot (4G/5G)
 Network providers sometimes implement different blocking for cellular data. Test your VPN performance on mobile networks:
 
 ```bash
@@ -222,7 +222,7 @@ Connect to phone hotspot, then test
 Mobile carriers may have different STUN blocking characteristics
 ```
 
-Test 3: Untrusted Public WiFi
+Test 3 - Untrusted Public WiFi
 Coffee shop WiFi represents a realistic threat scenario. Test there:
 
 ```bash
@@ -230,7 +230,7 @@ Connect to public WiFi first, then VPN, then test
 Verify VPN connection quality and leak status
 ```
 
-Test 4: Corporate Network
+Test 4 - Corporate Network
 If accessing from office networks with proxies, test WebRTC behavior:
 
 ```bash
@@ -238,20 +238,20 @@ Behind corporate proxy, test whether WebRTC respects proxy settings
 Some proxies interfere with VPN/STUN interactions
 ```
 
-Step 6: Interpreting Test Results
+Step 6 - Interpreting Test Results
 
 Understanding what results mean matters as much as getting them:
 
-Pass Result: Only your VPN-assigned IP appears in tests. This indicates your WebRTC implementation is correctly routing through the VPN.
+Pass Result - Only your VPN-assigned IP appears in tests. This indicates your WebRTC implementation is correctly routing through the VPN.
 
-Fail Result: Your real IP appears alongside your VPN IP. You have a WebRTC leak requiring mitigation.
+Fail Result - Your real IP appears alongside your VPN IP. You have a WebRTC leak requiring mitigation.
 
-Incomplete Result: Some tests show your VPN IP but not your real IP. This might indicate:
+Incomplete Result - Some tests show your VPN IP but not your real IP. This might indicate:
 - Partial leak (some STUN servers reveal real IP, others don't)
 - VPN routing leak that needs VPN provider attention
 - Browser-specific behavior that differs between testing methods
 
-Step 7: Browser-Specific Testing Matrix
+Step 7 - Browser-Specific Testing Matrix
 
 Different browsers leak differently. Test fully:
 
@@ -274,15 +274,15 @@ done
 
 Record results for each browser. You may find that one browser needs different configuration than others.
 
-Step 8: WebRTC Leak Severity Assessment
+Step 8 - WebRTC Leak Severity Assessment
 
 Not all WebRTC leaks are equally severe:
 
-Severe: Your real IP is exposed while you believe you're using a VPN. This indicates the VPN itself may be misconfigured or ineffective.
+Severe - Your real IP is exposed while you believe you're using a VPN. This indicates the VPN itself may be misconfigured or ineffective.
 
-Moderate: Your real IP is exposed alongside your VPN IP. This reveals you're using a VPN (potentially suspicious to ISPs or networks) but your traffic is still encrypted through the VPN.
+Moderate - Your real IP is exposed alongside your VPN IP. This reveals you're using a VPN (potentially suspicious to ISPs or networks) but your traffic is still encrypted through the VPN.
 
-Minimal: Only your VPN IP appears, but additional analysis shows it's slightly different from your VPN's public announcement. This level of leak has minimal practical impact.
+Minimal - Only your VPN IP appears, but additional analysis shows it's slightly different from your VPN's public announcement. This level of leak has minimal practical impact.
 
 VPN Provider Comparison for WebRTC Handling
 
@@ -298,7 +298,7 @@ Some VPN providers handle WebRTC better than others:
 
 Test your specific VPN provider rather than relying on general reputation. Implementations vary.
 
-Step 9: Automate Regular WebRTC Leak Testing
+Step 9 - Automate Regular WebRTC Leak Testing
 
 Set up automated testing to catch regressions:
 

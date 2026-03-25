@@ -40,7 +40,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Downloading Your Instagram Data
+Step 1 - Downloading Your Instagram Data
 
 Instagram provides a built-in tool to download all your data. Here's how to use it:
 
@@ -67,7 +67,7 @@ The download package includes multiple JSON or HTML files:
 - `ads_interactions.json`. Advertising data
 - `profile.json`. Account settings and preferences
 
-Automation: Download via API
+Automation - Download via API
 
 For developers who need to automate data exports, you can use the Instagram Graph API with proper permissions:
 
@@ -96,7 +96,7 @@ def download_instagram_data(access_token, user_id):
 Requires Instagram Basic Display permission
 ```
 
-Step 2: Delete Your Instagram Account
+Step 2 - Delete Your Instagram Account
 
 If you've decided to leave Instagram, you have two options:
 
@@ -125,7 +125,7 @@ How to Permanently Delete Your Account
 Before deleting, consider that you cannot reuse the same username, and some content may remain in backups or on other users' devices.
 
 1. Visit the Delete Account page:
- - Desktop: [instagram.com/accounts/remove/request/permanent/](https://www.instagram.com/accounts/remove/request/permanent/)
+ - Desktop - [instagram.com/accounts/remove/request/permanent/](https://www.instagram.com/accounts/remove/request/permanent/)
  - Mobile browser required for deletion
 
 2. Select a reason from the dropdown menu
@@ -141,7 +141,7 @@ Data Retention After Deletion
 
 Even after permanent deletion, some residual data may remain in Meta's backup systems for "legal reasons, security, and system integrity purposes." This is standard practice among tech companies and is disclosed in Meta's privacy policy.
 
-Step 3: Alternatives to Full Deletion
+Step 3 - Alternatives to Full Deletion
 
 If you're concerned about privacy but aren't ready to leave entirely:
 
@@ -160,7 +160,7 @@ Consider moving to privacy-focused alternatives:
 - Mastodon with Fediverse: Decentralized social network
 - Own your data: Use self-hosted solutions like PhotoPrism for personal archives
 
-Step 4: Analyzing Your Instagram Data Download
+Step 4 - Analyzing Your Instagram Data Download
 
 Once you receive your data download, analyzing it reveals what Meta collects:
 
@@ -274,7 +274,7 @@ find ~/instagram-archive -type f | wc -l
 du -sh ~/instagram-archive
 ```
 
-Step 5: Decentralized Instagram Alternatives
+Step 5 - Decentralized Instagram Alternatives
 
 After deleting Instagram, these platforms offer similar functionality with better privacy:
 
@@ -310,7 +310,7 @@ Full control over visibility
 ```
 
 Self-Hosted Solutions
-PhotoPrism: Personal photo library with full control
+PhotoPrism - Personal photo library with full control
 
 ```bash
 docker run -d \
@@ -321,7 +321,7 @@ docker run -d \
     photoprism/photoprism:latest
 ```
 
-Step 6: Understand Instagram's Legal Basis for Retention
+Step 6 - Understand Instagram's Legal Basis for Retention
 
 Meta claims legal basis for retaining data after deletion:
 
@@ -374,7 +374,7 @@ privacy_metrics = {
 }
 ```
 
-The improvement is significant: stopping active data collection is the primary benefit.
+The improvement is significant - stopping active data collection is the primary benefit.
 
 Best Practices for Data Privacy
 

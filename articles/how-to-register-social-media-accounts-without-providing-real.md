@@ -30,13 +30,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Phone and Email Verification
+Step 1 - Understand Phone and Email Verification
 
 Platforms implement verification to reduce spam, prevent automated account creation, and comply with regulations. However, this verification links your online identity to personal data that can be sold, leaked, or misused. Phone numbers are particularly sensitive since they connect to SMS-based attacks and SIM swapping vulnerabilities.
 
 The goal is not to evade legitimate security measures but to maintain privacy while respecting platform terms of service. Use these methods responsibly and understand the legal implications in your jurisdiction.
 
-Step 2: Temporary Phone Number Services
+Step 2 - Temporary Phone Number Services
 
 Several services provide temporary phone numbers for SMS verification. These numbers receive verification codes without linking to your actual device.
 
@@ -111,7 +111,7 @@ def rent_number(service_api_key, service_id, country='0'):
 
 This pattern allows scripting account creation while maintaining privacy boundaries.
 
-Step 3: Disposable Email Addresses
+Step 3 - Disposable Email Addresses
 
 Email verification can also be bypassed using disposable email services. These services generate temporary inboxes that forward messages to your real email or display them in a web interface.
 
@@ -165,7 +165,7 @@ social-github@yourdomain.com -> yourreal@email.com
 
 This approach keeps your real email private while maintaining access to verification emails.
 
-Step 4: Virtual Phone Numbers for Long-Term Use
+Step 4 - Virtual Phone Numbers for Long-Term Use
 
 If you need phone verification for ongoing account access, consider persistent virtual numbers:
 
@@ -175,7 +175,7 @@ VoIP Services
 - TextNow - Freemium service with ad-supported free tier
 - Twilio - Programmable phone numbers with SMS capabilities
 
-Google Voice remains popular despite requiring existing Google account verification. The trade-off is acceptable for users already invested in the Google ecosystem.
+Google Voice remains popular despite requiring existing Google account verification. The trade-off is acceptable for users already invested in the Google environment.
 
 Twilio Integration Example
 
@@ -238,7 +238,7 @@ mullvad connect
 
 Password management - Use a dedicated password manager for pseudonymous accounts. Never reuse passwords across accounts with different threat models.
 
-Step 5: When These Methods Fail
+Step 5 - When These Methods Fail
 
 Certain platforms have implemented aggressive detection:
 
@@ -249,7 +249,7 @@ Certain platforms have implemented aggressive detection:
 
 For these platforms, legitimate privacy is difficult to achieve without sacrificing functionality. Assess your threat model before investing time in workarounds.
 
-Step 6: Ethical Considerations
+Step 6 - Ethical Considerations
 
 The techniques in this guide serve legitimate privacy purposes: protecting personal information from data breaches, maintaining separate professional and personal identities, enabling security research, and protecting whistleblowers. However, these same techniques can be misused for fraud or harassment.
 

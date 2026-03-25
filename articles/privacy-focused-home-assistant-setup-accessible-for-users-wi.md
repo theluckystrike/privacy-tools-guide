@@ -14,7 +14,7 @@ voice-checked: true
 
 {% raw %}
 
-Building a smart home ecosystem that respects user privacy while remaining accessible represents a significant technical challenge. Home Assistant provides an excellent foundation for privacy-conscious home automation, but implementing it in a way that works well for users with mobility limitations requires careful planning and specific configuration choices.
+Building a smart home environment that respects user privacy while remaining accessible represents a significant technical challenge. Home Assistant provides an excellent foundation for privacy-conscious home automation, but implementing it in a way that works well for users with mobility limitations requires careful planning and specific configuration choices.
 
 This guide covers a privacy-focused Home Assistant setup designed with accessibility as a primary consideration. The recommendations target developers and power users who want full control over their data while ensuring the system remains usable for everyone in the household.
 
@@ -23,7 +23,7 @@ Table of Contents
 - [Why Privacy and Accessibility Matter Together](#why-privacy-and-accessibility-matter-together)
 - [Prerequisites](#prerequisites)
 - [Conclusion](#conclusion)
-- [Advanced: Custom Integration Development](#advanced-custom-integration-development)
+- [Advanced - Custom Integration Development](#advanced-custom-integration-development)
 - [Hardware Requirements for Privacy](#hardware-requirements-for-privacy)
 
 Why Privacy and Accessibility Matter Together
@@ -42,7 +42,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Core Installation with Privacy in Mind
+Step 1 - Core Installation with Privacy in Mind
 
 Begin with a local-only installation. The Home Assistant Operating System running on dedicated hardware provides the best foundation. Avoid cloud-connected setups that default to external data processing.
 
@@ -56,7 +56,7 @@ by checking Configuration > General > External Trading
 
 During initial configuration, select "Local" as your preferred connection method for all integrations. Home Assistant will prompt you to choose between local and cloud options, always choose local when available.
 
-Step 2: Essential Privacy Configuration
+Step 2 - Essential Privacy Configuration
 
 The configuration file serves as your privacy command center. Add these settings to your `configuration.yaml` to minimize data leakage:
 
@@ -85,7 +85,7 @@ cloud:
 
 These settings ensure your instance operates entirely within your local network. The analytics disablement stops data transmission to Home Assistant's servers, while the cloud disabling prevents voice commands from being processed externally.
 
-Step 3: Accessibility Layer: Making Home Assistant Usable
+Step 3 - Accessibility Layer: Making Home Assistant Usable
 
 For users with mobility limitations, standard touchscreen interfaces often present barriers. Implementing alternative control methods transforms Home Assistant into an accessible platform.
 
@@ -162,7 +162,7 @@ automation:
 
 Users can trigger complex automations by tapping a phone or NFC card against a strategically placed tag, eliminating the need to navigate on-screen menus.
 
-Step 4: Network Isolation for Enhanced Privacy
+Step 4 - Network Isolation for Enhanced Privacy
 
 Create a dedicated network segment for your smart home devices. VLAN separation ensures that even if a device gets compromised, it cannot access your personal computers or data:
 
@@ -175,7 +175,7 @@ Block IoT-to-LAN traffic by default
 
 This isolation approach protects privacy by containing potential data leaks while also preventing compromised devices from accessing sensitive information on your main network.
 
-Step 5: Automations That Respect Privacy While Enabling Independence
+Step 5 - Automations That Respect Privacy While Enabling Independence
 
 Design automations that provide independence without sacrificing privacy. The following example creates a morning routine that operates entirely locally:
 
@@ -211,7 +211,7 @@ automation:
 
 This automation activates at a scheduled time without requiring voice commands or physical interaction, providing automatic environmental control that preserves user autonomy.
 
-Step 6: Monitor and Maintaining Privacy
+Step 6 - Monitor and Maintaining Privacy
 
 Regularly audit your system to ensure privacy settings remain intact:
 
@@ -226,7 +226,7 @@ curl -H "Authorization: Bearer YOUR_TOKEN" \
 
 Create a simple script that runs weekly to confirm no unexpected cloud connections have been enabled through updates or new integrations.
 
-Advanced: Custom Integration Development
+Advanced - Custom Integration Development
 
 Building custom integrations keeps all data internal while enabling specific accessibility features. A simple example creates an adaptive interface for users with limited dexterity:
 
@@ -303,7 +303,7 @@ Choose hardware that prioritizes local processing:
 
 For users with accessibility needs, the Intel NUC or used laptop offers the best balance of processing power and local control.
 
-Step 7: Data Isolation: Network Segregation Details
+Step 7 - Data Isolation: Network Segregation Details
 
 Implement strict network isolation to prevent smart devices from accessing sensitive data:
 
@@ -318,7 +318,7 @@ sudo ufw allow out 53  # DNS only to trusted server
 sudo ufw allow out 123 # NTP for time sync
 sudo ufw allow in from 10.0.0.0/8  # Home Assistant network
 
-On OpenWrt router: Create VLAN 20 for IoT devices
+On OpenWrt router - Create VLAN 20 for IoT devices
 and block all VLAN 20 → VLAN 1 (main network) traffic
 
 Test isolation with a device on VLAN 20
@@ -327,7 +327,7 @@ nmap -sU -p 22 10.0.1.1  # Should be blocked
 
 This ensures compromised smart home devices cannot reach your Home Assistant server or personal computers.
 
-Step 8: Backup and Disaster Recovery
+Step 8 - Backup and Disaster Recovery
 
 Maintain local backups of all Home Assistant configuration:
 
@@ -361,7 +361,7 @@ find "$BACKUP_DIR" -name "ha_config_*.tar.gz" -mtime +30 -delete
 
 Schedule daily via cron to maintain consistent recovery capability.
 
-Step 9: Test Accessibility Features
+Step 9 - Test Accessibility Features
 
 Verify accessibility features work independently of internet:
 
@@ -404,7 +404,7 @@ shell_command:
   verify_isolation: 'ping -c 1 8.8.8.8 && echo "ERROR: Internet accessible" || echo "OK: Isolated"'
 ```
 
-Step 10: User Scenarios: Real-World Configuration
+Step 10 - User Scenarios: Real-World Configuration
 
 Example setup for a user with limited upper body mobility:
 

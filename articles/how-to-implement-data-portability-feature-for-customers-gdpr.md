@@ -28,15 +28,15 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the GDPR Data Portability Requirement
+Step 1 - Understand the GDPR Data Portability Requirement
 
 Article 20 of the GDPR establishes that data subjects have the right to receive their personal data in a structured, commonly used, and machine-readable format. They also have the right to transmit those data to another controller without hindrance from the original controller. This applies specifically to personal data that the data subject has provided to a controller, where processing is based on consent or a contract, and where processing is carried out by automated means.
 
 The practical implications for your application are significant. When a customer requests their data, you must identify all personal data associated with their account, format it appropriately, and deliver it within one month of the request. Failing to comply can result in regulatory penalties and damaged customer trust.
 
-Before implementing, map your data ecosystem. Identify where personal data lives in your system, user profiles, transaction histories, content created, preferences, and any derived data. This mapping becomes the foundation for your export logic.
+Before implementing, map your data environment. Identify where personal data lives in your system, user profiles, transaction histories, content created, preferences, and any derived data. This mapping becomes the foundation for your export logic.
 
-Step 2: API Design for Data Export Endpoints
+Step 2 - API Design for Data Export Endpoints
 
 A well-designed data portability endpoint follows RESTful conventions and provides flexibility for different consumption scenarios. The endpoint should support authentication verification and allow customers to request their complete data export.
 
@@ -74,7 +74,7 @@ def request_data_export():
 
 This approach offloads the heavy processing to background jobs, preventing API timeouts when compiling large datasets.
 
-Step 3: Data Format Selection
+Step 3 - Data Format Selection
 
 The GDPR specifies "structured, commonly used, machine-readable format" but does not mandate a specific format. JSON represents the most versatile choice for web applications, while CSV works well for tabular data like transaction histories. Many organizations provide both formats to accommodate different use cases.
 
@@ -113,7 +113,7 @@ Your export should include a manifest file describing the data structure:
 
 This manifest helps recipients understand the data structure and verify completeness.
 
-Step 4: Handling Different Data Types
+Step 4 - Handling Different Data Types
 
 User data typically spans multiple categories, each requiring different export handling.
 
@@ -150,7 +150,7 @@ User-Generated Content includes posts, comments, uploads, and messages. This dat
 
 Derived and Analyzed Data presents interesting questions. If you've analyzed user behavior to create recommendations or insights, the GDPR states that data subjects should receive "their personal data, which they have provided to a controller, in a structured, commonly used and machine-readable format." Derived data may or may not fall under this requirement depending on how directly it originates from user input.
 
-Step 5: Authentication and Authorization
+Step 5 - Authentication and Authorization
 
 Data portability endpoints require authentication to prevent unauthorized access. The request must originate from the data subject themselves, not from a third party claiming to act on their behalf unless proper authorization exists.
 
@@ -191,13 +191,13 @@ Security Considerations
 
 Data exports contain sensitive information requiring protection throughout the generation and delivery process.
 
-Encryption in Transit: Always serve exports over HTTPS with strong TLS configuration. For additional security, encrypt the export file itself using AES-256 and provide the decryption key through a separate channel.
+Encryption in Transit - Always serve exports over HTTPS with strong TLS configuration. For additional security, encrypt the export file itself using AES-256 and provide the decryption key through a separate channel.
 
-Secure Storage: Store generated exports in secure, access-controlled storage. Set expiration times to automatically delete exports after a reasonable window, 24 to 72 hours is typical.
+Secure Storage - Store generated exports in secure, access-controlled storage. Set expiration times to automatically delete exports after a reasonable window, 24 to 72 hours is typical.
 
-Access Logging: Maintain detailed logs of export requests, generation, and download events. This audit trail supports compliance verification and incident investigation.
+Access Logging - Maintain detailed logs of export requests, generation, and download events. This audit trail supports compliance verification and incident investigation.
 
-Notification: Alert users when their export is ready and again when it's downloaded. This transparency helps detect unauthorized access attempts.
+Notification - Alert users when their export is ready and again when it's downloaded. This transparency helps detect unauthorized access attempts.
 
 ```python
 def notify_export_ready(user_id, export_job):
@@ -218,7 +218,7 @@ def notify_export_ready(user_id, export_job):
     )
 ```
 
-Step 6: Automated Export Scheduling
+Step 6 - Automated Export Scheduling
 
 For applications with significant data volumes, consider providing scheduled exports for users who want regular backups. This proactive approach reduces ad-hoc requests and improves user satisfaction.
 
@@ -255,17 +255,17 @@ def setup_scheduled_exports(user_id, frequency='monthly'):
     scheduler.start()
 ```
 
-Step 7: Test Your Implementation
+Step 7 - Test Your Implementation
 
 testing ensures your data portability feature works correctly and securely.
 
-Functional Testing: Verify that all data categories appear in exports with accurate, complete information. Test edge cases, accounts with no activity, users with extensive data histories, accounts scheduled for deletion.
+Functional Testing - Verify that all data categories appear in exports with accurate, complete information. Test edge cases, accounts with no activity, users with extensive data histories, accounts scheduled for deletion.
 
-Security Testing: Attempt unauthorized exports, verify token expiration handling, test injection attacks on export parameters, and confirm proper access controls.
+Security Testing - Attempt unauthorized exports, verify token expiration handling, test injection attacks on export parameters, and confirm proper access controls.
 
-Performance Testing: Measure export generation time with realistic data volumes. Large accounts should complete within the one-month regulatory window, though target completion within 24-48 hours for typical requests.
+Performance Testing - Measure export generation time with realistic data volumes. Large accounts should complete within the one-month regulatory window, though target completion within 24-48 hours for typical requests.
 
-Format Validation: Ensure exports validate against their declared schemas. JSON exports should parse without errors. CSV exports should open correctly in spreadsheet applications.
+Format Validation - Ensure exports validate against their declared schemas. JSON exports should parse without errors. CSV exports should open correctly in spreadsheet applications.
 
 Troubleshooting
 

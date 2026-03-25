@@ -138,7 +138,7 @@ DB_PASSWORD = get_secret("db_password")
 
 Native Kubernetes Secrets are base64-encoded, not encrypted. Anyone with `kubectl get secret` access can read them.
 
-Option A: Sealed Secrets (offline encryption)
+Option A - Sealed Secrets (offline encryption)
 
 ```bash
 Install kubeseal CLI
@@ -160,7 +160,7 @@ Deploy. controller decrypts and creates the real Secret
 kubectl apply -f sealed-db-creds.yaml
 ```
 
-Option B: External Secrets Operator (pulls from Vault/AWS SM)
+Option B - External Secrets Operator (pulls from Vault/AWS SM)
 
 ```yaml
 ExternalSecret. pulls from HashiCorp Vault

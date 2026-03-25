@@ -21,8 +21,8 @@ When you match with someone on a dating app, transitioning to social media feels
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Advanced: Account Compartmentalization Script](#advanced-account-compartmentalization-script)
-- [Privacy Comparison: Dating Platforms](#privacy-comparison-dating-platforms)
+- [Advanced - Account Compartmentalization Script](#advanced-account-compartmentalization-script)
+- [Privacy Comparison - Dating Platforms](#privacy-comparison-dating-platforms)
 - [Troubleshooting](#troubleshooting)
 
 Prerequisites
@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Privacy Risk of Direct Handle Exchange
+Step 1 - The Privacy Risk of Direct Handle Exchange
 
 Your social media handle is not just an identifier, it is often a key that unlocks substantial personal data. Consider what someone finds when they search your Instagram username:
 
@@ -48,7 +48,7 @@ Your social media handle is not just an identifier, it is often a key that unloc
 
 For users with elevated threat models, journalists, activists, or anyone managing sensitive information, this exposure creates genuine risk. Even for everyday users, the discomfort of granting strangers access to your personal life deserves a privacy-conscious solution.
 
-Step 2: Strategy One: Dedicated Compartmentalized Accounts
+Step 2 - Strategy One: Dedicated Compartmentalized Accounts
 
 The most approach involves creating separate social media accounts specifically for dating transitions. This compartmentalization follows the principle of least privilege: your dating contacts access only what you explicitly choose to share.
 
@@ -71,11 +71,11 @@ When creating your compartmentalized account, follow these technical configurati
 
 2. Unique username strategy: Select a handle that reveals nothing about you. Avoid birth years, nicknames others wouldn't know, or references to your profession or city. Random combinations work well: `blue_coast_847` rather than `john_sf_developer`.
 
-3. Minimal profile data: Use a profile photo that doesn't reveal your location or workplace. A pet, ecosystem, or abstract image works. Use a different bio than your main account, avoid listing your job, neighborhood, or interests that could identify you.
+3. Minimal profile data: Use a profile photo that doesn't reveal your location or workplace. A pet, environment, or abstract image works. Use a different bio than your main account, avoid listing your job, neighborhood, or interests that could identify you.
 
 4. Follower isolation: Start with zero followers. Add only the specific contacts you want to see this content. Never sync your phone contacts.
 
-Step 3: Strategy Two: Signal or Session for Handle Exchange
+Step 3 - Strategy Two: Signal or Session for Handle Exchange
 
 Encrypted messaging applications provide a safer channel for eventual handle exchange. By communicating through Signal or Session first, you maintain control over the transition timeline and can verify the person before sharing any identifiers.
 
@@ -97,7 +97,7 @@ USERNAME_STRATEGY = {
 
 The advantage here is that Signal usernames are discoverable only through direct sharing, you cannot search for users by username, preventing unsolicited contact or background checks.
 
-Step 4: Strategy Three: Temporary Redirect Services
+Step 4 - Strategy Three: Temporary Redirect Services
 
 For users who prefer maintaining a single primary account, temporary redirect services provide controlled exposure. You share a unique identifier that forwards to your real account, which you can later disable.
 
@@ -132,7 +132,7 @@ def redirect_to_social(short_code):
 
 This approach gives you visibility into who accessed your profile and allows you to revoke access by letting the link expire or manually removing the mapping.
 
-Step 5: Strategy Four: Privacy-First Social Platforms
+Step 5 - Strategy Four: Privacy-First Social Platforms
 
 Alternative social platforms with stronger privacy defaults provide another layer of protection. These platforms minimize data collection and offer better controls over profile visibility.
 
@@ -144,7 +144,7 @@ Recommended Platforms for Dating Transitions
 
 These platforms often have smaller user bases but provide substantially better privacy controls. You can set your profile to require follower approval, control who sees your posts, and in some cases, use pseudonymous identities without verification requirements.
 
-Step 6: Implementation Checklist
+Step 6 - Implementation Checklist
 
 Before exchanging handles with a dating match, complete these privacy verification steps:
 
@@ -158,7 +158,7 @@ Before exchanging handles with a dating match, complete these privacy verificati
 
 5. Consider the reverse: Ask for their handle first and review their profile before sharing yours. This gives you information about their digital hygiene and what they'd see if you share.
 
-Advanced: Account Compartmentalization Script
+Advanced - Account Compartmentalization Script
 
 For developers comfortable with automation, this Python script helps manage multiple account identities:
 
@@ -264,7 +264,7 @@ account = manager.create_account(
 print(f"Created account with ID: {account['id']}")
 ```
 
-Step 7: Red Flag Recognition Framework
+Step 7 - Red Flag Recognition Framework
 
 Before sharing any social media handles, evaluate the person for these warning signs:
 
@@ -302,7 +302,7 @@ red_flags = {
 }
 ```
 
-Privacy Comparison: Dating Platforms
+Privacy Comparison - Dating Platforms
 
 Different dating apps have different data sharing policies:
 
@@ -317,7 +317,7 @@ Different dating apps have different data sharing policies:
 
 For the most privacy-conscious approach, use privacy-focused dating platforms that support pseudonyms and don't integrate with Facebook or Google.
 
-Step 8: What to Do If Things Go Wrong
+Step 8 - What to Do If Things Go Wrong
 
 If you share a handle and later regret it:
 

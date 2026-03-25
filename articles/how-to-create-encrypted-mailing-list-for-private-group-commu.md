@@ -22,9 +22,9 @@ Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Key Management Best Practices](#key-management-best-practices)
-- [Comparison Table: Encrypted Mailing List Solutions](#comparison-table-encrypted-mailing-list-solutions)
+- [Comparison Table - Encrypted Mailing List Solutions](#comparison-table-encrypted-mailing-list-solutions)
 - [Compliance and Legal Considerations](#compliance-and-legal-considerations)
-- [Advanced: Splitting the Mailing List into Encrypted Subgroups](#advanced-splitting-the-mailing-list-into-encrypted-subgroups)
+- [Advanced - Splitting the Mailing List into Encrypted Subgroups](#advanced-splitting-the-mailing-list-into-encrypted-subgroups)
 - [Troubleshooting](#troubleshooting)
 
 Prerequisites
@@ -37,19 +37,19 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Threat Model
+Step 1 - Understand the Threat Model
 
 Before selecting tools, identify what you're protecting against. Email encryption addresses different threats than messaging app encryption. For mailing lists, consider three attack vectors: content interception (someone reading emails in transit), list compromise (an attacker gaining access to the list server), and metadata analysis (knowing who communicates with whom, even without reading content).
 
 End-to-end encryption solves the first two by ensuring only list members can decrypt messages. The list server handles message distribution but never sees plaintext. This matters because mailing list archives often become targets, once compromised, unencrypted archives expose years of communications.
 
-Step 2: Option 1: Mailman with GPG Encryption
+Step 2 - Option 1: Mailman with GPG Encryption
 
 Mailman remains the standard open-source mailing list manager. While Mailman itself doesn't encrypt, you can combine it with GPG-encrypted message processing. This approach works when all participants use GPG and configure their email clients accordingly.
 
 Setup requires installing Mailman 3, then configuring the `archiver` plugin to encrypt stored archives. Each list member publishes their GPG public key, and members encrypt outgoing messages to the list's recipient set. The list server stores encrypted messages and forwards them without decryption access.
 
-The practical limitation: GPG-protected mailing lists require every participant to manage keys, understand encryption, and configure their mail client correctly. For developer teams comfortable with command-line tools, this works. For broader groups, it creates friction that reduces adoption.
+The practical limitation - GPG-protected mailing lists require every participant to manage keys, understand encryption, and configure their mail client correctly. For developer teams comfortable with command-line tools, this works. For broader groups, it creates friction that reduces adoption.
 
 ```bash
 Generate a GPG key for the list (run on your server)
@@ -61,7 +61,7 @@ Export the public key for distribution
 gpg --armor --export list-key@yourdomain.com > list-public-key.asc
 ```
 
-Step 3: Option 2: Secure Distribution Lists with Delta Chat
+Step 3 - Option 2: Secure Distribution Lists with Delta Chat
 
 Delta Chat implements a decentralized approach using email as the transport but adding automatic GPG or E2EE encryption. It works over standard email servers but adds Chatmail protocols for improved security. Groups in Delta Chat function like mailing lists but with automatic end-to-end encryption.
 
@@ -74,7 +74,7 @@ To set up a Delta Chat group acting as a secure mailing list:
 3. Create a group and add the dedicated address
 4. Enable "Verify Vertically" in group settings for full E2EE
 
-Step 4: Option 3: Self-Hosted Listmonk with PGP Middleware
+Step 4 - Option 3: Self-Hosted Listmonk with PGP Middleware
 
 Listmonk is a modern, self-hosted newsletter and mailing list manager. While primarily designed for broadcast newsletters, you can adapt it for group communication by restricting subscriptions and adding PGP encryption middleware.
 
@@ -98,7 +98,7 @@ def encrypt_and_send(message, recipient_email):
 
 This approach gives you a polished web interface for managing subscribers while maintaining encryption. The setup complexity suits teams with DevOps capability.
 
-Step 5: Option 4: Simple GPG-Protected Archives with Mutt and Procmail
+Step 5 - Option 4: Simple GPG-Protected Archives with Mutt and Procmail
 
 For smaller groups preferring simplicity over features, use standard email tools with procmail filters to create encrypted archives. Each member sends to the list address, procmail delivers to a Maildir, and a cron job encrypts the archive using GPG symmetric encryption nightly.
 
@@ -124,7 +124,7 @@ Verify keys out-of-band. For sensitive groups, verify key fingerprints through s
 
 Maintain revocation certificates. Generate and securely store revocation certificates for all keys. If a member loses access or leaves, having revocation certificates ready prevents unauthorized future use.
 
-Step 6: Step-by-Step Setup: Mailman 3 with GPG (Recommended for Developers)
+Step 6 - Step-by-Step Setup: Mailman 3 with GPG (Recommended for Developers)
 
 For a developer team, here's a concrete implementation:
 
@@ -149,7 +149,7 @@ plugins = mailman_hyperkitty
 Store encrypted archives
 enable_hyperkitty = yes
 
-Custom: Add encryption settings
+Custom - Add encryption settings
 archive_policy = encrypted
 require_pgp = yes
 ```
@@ -169,7 +169,7 @@ gpg --edit-key list@domain.com  # Sign the key locally
 - Create filter rules that automatically decrypt incoming list messages
 - When composing, use "Write & Encrypt" for list messages
 
-Step 7: Privacy-First Community Mailing Lists
+Step 7 - Privacy-First Community Mailing Lists
 
 For activist groups, journalists, or other communities prioritizing privacy:
 
@@ -189,7 +189,7 @@ Standard Notes with Shared Vault (encrypted collaborative documents):
 - All content encrypted end-to-end
 - Members can add/edit shared documents
 
-Comparison Table: Encrypted Mailing List Solutions
+Comparison Table - Encrypted Mailing List Solutions
 
 | Solution | Setup Complexity | User Friction | Encryption | Best For |
 |----------|------------------|---------------|-----------|----------|
@@ -211,9 +211,9 @@ GDPR Compliance:
 
 HIPAA (Healthcare) or FedRAMP (Federal): Standard open-source solutions rarely meet these compliance requirements. Consider evaluated platforms if subject to these regulations.
 
-Corporate Records Retention: If your mailing list handles business-critical information, consult with legal regarding retention policies and archival. Encrypted archives complicate but don't eliminate retention obligations.
+Corporate Records Retention - If your mailing list handles business-critical information, consult with legal regarding retention policies and archival. Encrypted archives complicate but don't eliminate retention obligations.
 
-Advanced: Splitting the Mailing List into Encrypted Subgroups
+Advanced - Splitting the Mailing List into Encrypted Subgroups
 
 For very large lists with mixed security needs:
 
@@ -237,7 +237,7 @@ def route_message_to_sublist(message, sender, recipient_list):
 
 This approach allows mixed-sensitivity groups to coexist while ensuring critical communications get appropriate encryption.
 
-Step 8: Test Your Encrypted Mailing List
+Step 8 - Test Your Encrypted Mailing List
 
 Before deployment to production:
 
@@ -251,7 +251,7 @@ Before deployment to production:
 
 5. Backup and recovery: Test restoring list from backups. Ensure encrypted archives restore intact.
 
-Step 9: Migration from Unencrypted Lists
+Step 9 - Migration from Unencrypted Lists
 
 If moving an existing mailing list to encryption:
 
@@ -261,7 +261,7 @@ If moving an existing mailing list to encryption:
 4. Create new encrypted list: Don't retrofit encryption on existing list
 5. Archive old list as read-only: Keep for historical reference but migrate new discussions
 
-Step 10: Monitor and Auditing Your List
+Step 10 - Monitor and Auditing Your List
 
 Regular security practices for encrypted lists:
 
@@ -282,7 +282,7 @@ Log failed decryptions
 grep "failed to decrypt" /var/log/mailman3/mailman.log
 ```
 
-Step 11: Choose the Right Solution
+Step 11 - Choose the Right Solution
 
 For developer teams already using GPG, Mailman with GPG encryption provides the most control. For broader groups wanting friction-free encryption, Delta Chat offers the best user experience. For organizations needing a web interface, listmonk with PGP middleware balances usability with security.
 

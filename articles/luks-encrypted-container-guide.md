@@ -46,7 +46,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Create a Container File
+Step 1 - Create a Container File
 
 ```bash
 Create a 2GB container file filled with random data
@@ -65,13 +65,13 @@ To monitor the `dd` progress with the `status=progress` flag, you will see throu
 
 ---
 
-Step 2: Initialize LUKS on the Container
+Step 2 - Initialize LUKS on the Container
 
 ```bash
 Set up LUKS2 on the container file
 sudo cryptsetup luksFormat --type luks2 /home/user/vault.luks
 
-Confirm: type "YES" (uppercase) and enter a strong passphrase
+Confirm - type "YES" (uppercase) and enter a strong passphrase
 
 View the LUKS header details
 sudo cryptsetup luksDump /home/user/vault.luks
@@ -97,7 +97,7 @@ The `--key-size 512` gives you AES-256 in XTS mode (XTS splits the 512-bit key i
 
 ---
 
-Step 3: Open and Format the Container
+Step 3 - Open and Format the Container
 
 ```bash
 Map the container to a device name
@@ -106,7 +106,7 @@ Enter passphrase → creates /dev/mapper/myvault
 
 Create a filesystem inside
 sudo mkfs.ext4 /dev/mapper/myvault
-For cross-platform: sudo mkfs.exfat /dev/mapper/myvault
+For cross-platform - sudo mkfs.exfat /dev/mapper/myvault
 
 Mount it
 sudo mkdir -p /mnt/vault
@@ -130,7 +130,7 @@ The label appears in `lsblk -o NAME,LABEL,SIZE` output, making it easy to confir
 
 ---
 
-Step 4: Close the Container
+Step 4 - Close the Container
 
 ```bash
 Unmount the filesystem first
@@ -144,7 +144,7 @@ After `luksClose`, the `/dev/mapper/myvault` device disappears. The `vault.luks`
 
 ---
 
-Step 5: Convenience Scripts
+Step 5 - Convenience Scripts
 
 ```bash
 /usr/local/bin/vault-open
@@ -188,7 +188,7 @@ your_username ALL=(root) NOPASSWD: /usr/bin/cryptsetup, /usr/bin/mount, /usr/bin
 
 ---
 
-Step 6: Add Additional Passphrases (Keyslots)
+Step 6 - Add Additional Passphrases (Keyslots)
 
 LUKS2 supports up to 32 keyslots. You can add a second passphrase for backup:
 
@@ -210,7 +210,7 @@ Store a printed copy of the second passphrase in a physically secure location, s
 
 ---
 
-Step 7: Backup the LUKS Header
+Step 7 - Backup the LUKS Header
 
 The LUKS header is at the beginning of the container file. If corrupted, all data is permanently lost.
 
@@ -232,7 +232,7 @@ After any `luksAddKey` or `luksChangeKey` operation, re-export the header backup
 
 ---
 
-Step 8: Resize the Container
+Step 8 - Resize the Container
 
 ```bash
 To grow the container:
@@ -253,7 +253,7 @@ Shrinking a LUKS container is more complex and risky. you must shrink the filesy
 
 ---
 
-Step 9: Portable Use
+Step 9 - Portable Use
 
 The `vault.luks` file can be:
 - Copied to an USB drive and opened on any Linux system
@@ -283,23 +283,23 @@ dd if=/mnt/vault/largefile of=/dev/null bs=1M status=progress
 
 Results vary by CPU/drive:
 SSD + AES-NI: 5-10% overhead
-HDD + older CPU: 15-25% overhead
-SSD + ARM (no AES-NI): 30-40% overhead
+HDD + older CPU - 15-25% overhead
+SSD + ARM (no AES-NI) - 30-40% overhead
 ```
 
 Modern CPUs with AES-NI hardware acceleration make LUKS2 nearly transparent. Legacy hardware shows measurable slowdown.
 
-Step 10: Cross-Platform Container Portability
+Step 10 - Cross-Platform Container Portability
 
 LUKS containers work across Linux distributions but struggle on non-Linux systems:
 
 ```bash
-Windows: Use WinCryptFS or VeraCrypt (incompatible with LUKS2 header)
+Windows - Use WinCryptFS or VeraCrypt (incompatible with LUKS2 header)
 macOS: Mount LUKS container via Docker Linux VM
 
 For cross-platform compatibility, use VeraCrypt instead:
 VeraCrypt containers open on Windows, macOS, and Linux
-Trade-off: VeraCrypt is closed-source; LUKS is open-source Linux-first
+Trade-off - VeraCrypt is closed-source; LUKS is open-source Linux-first
 
 If you need cross-platform, create LUKS on Linux, then:
 sudo cryptsetup luksDump /home/user/vault.luks  # Export header
@@ -309,7 +309,7 @@ On macOS/Windows, VeraCrypt can convert or you use Docker
 
 True cross-platform encrypted containers require VeraCrypt or cloud-based solutions like Cryptomator.
 
-Step 11: Automate Container Mounting at Boot
+Step 11 - Automate Container Mounting at Boot
 
 For systems that should auto-mount encrypted containers:
 
@@ -333,7 +333,7 @@ sudo mount -a  # Test mount without reboot
 
 This makes the passphrase available to the boot process. For maximum security, don't auto-mount, decrypt manually when needed.
 
-Step 12: Security Hardening of LUKS Containers
+Step 12 - Security Hardening of LUKS Containers
 
 Advanced hardening techniques for threat models beyond casual attacks:
 
@@ -356,7 +356,7 @@ sudo cryptsetup luksFormat --type luks2 --pbkdf argon2id \
 
 Trade security parameters against unlock speed.
 
-Step 13: Disaster Recovery: Corrupted Containers
+Step 13 - Disaster Recovery: Corrupted Containers
 
 If a container becomes corrupted:
 
@@ -371,14 +371,14 @@ sudo e2fsck -p /dev/mapper/myvault  # -p = auto-fix simple errors
 For severe corruption, mount read-only and copy data out
 sudo mount -r /dev/mapper/myvault /mnt/vault-recover
 
-Last resort: restore from backup
+Last resort - restore from backup
 sudo cryptsetup luksHeaderRestore /home/user/vault.luks \
   --header-backup-file /home/user/vault.luks.header.bak
 ```
 
 Having backup headers makes recovery possible.
 
-Step 14: Comparing LUKS to Alternatives
+Step 14 - Comparing LUKS to Alternatives
 
 | Feature | LUKS | VeraCrypt | BitLocker | FileVault |
 |---------|------|-----------|-----------|-----------|
@@ -392,7 +392,7 @@ Step 14: Comparing LUKS to Alternatives
 
 LUKS excels in Linux; VeraCrypt for cross-platform; native OS encryption (BitLocker, FileVault) for OS integration.
 
-Step 15: Automated Backup of Encrypted Containers
+Step 15 - Automated Backup of Encrypted Containers
 
 Backing up an encrypted container file:
 

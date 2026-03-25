@@ -57,7 +57,7 @@ If you need native macOS or Linux support, KeePassXC is your only option from th
 
 Plugin Ecosystems
 
-KeePass boasts an extensive plugin ecosystem that KeePassXC cannot match:
+KeePass boasts an extensive plugin environment that KeePassXC cannot match:
 
 ```bash
 KeePass plugins directory on Windows
@@ -100,7 +100,7 @@ KeePassXC security options
 - Master password + key file combination
 ```
 
-The key security difference: KeePassXC uses Argon2id by default for new databases, which provides better resistance against GPU-based attacks compared to KeePass's default AES-KDF.
+The key security difference - KeePassXC uses Argon2id by default for new databases, which provides better resistance against GPU-based attacks compared to KeePass's default AES-KDF.
 
 CLI and Automation
 
@@ -135,9 +135,9 @@ Browser Integration
 
 Browser integration works differently in each application:
 
-KeePass: Requires KeePassHttp or KeePassNatMsg plugins plus a browser extension like chromeIPass. The setup involves configuring the plugin, installing the browser extension, and ensuring KeePass runs when needed.
+KeePass - Requires KeePassHttp or KeePassNatMsg plugins plus a browser extension like chromeIPass. The setup involves configuring the plugin, installing the browser extension, and ensuring KeePass runs when needed.
 
-KeePassXC: Includes KeePassXC-Browser which works out of the box after enabling it in settings. On Linux, it uses native messaging without requiring a running application window.
+KeePassXC - Includes KeePassXC-Browser which works out of the box after enabling it in settings. On Linux, it uses native messaging without requiring a running application window.
 
 ```javascript
 // KeePassXC-Browser configuration (settings.json)
@@ -177,7 +177,7 @@ Performance
 For large vaults, performance differs noticeably:
 
 - KeePass: Loads databases quickly but can lag with thousands of entries if plugins perform heavy operations
-- KeePassXC: Generally faster startup, better memory management with large vaults, but lacks some performance optimizations from plugin ecosystem
+- KeePassXC: Generally faster startup, better memory management with large vaults, but lacks some performance optimizations from plugin environment
 
 Development and Maintenance
 
@@ -229,7 +229,7 @@ For most developers in 2026, KeePassXC provides the better daily driver experien
 
 However, KeePass remains valuable for Windows-only users who need specific plugins or prefer the extensive customization options. The two applications are complementary, you can even use both, accessing the same vault file depending on your current platform.
 
-Your choice ultimately depends on your platform requirements and whether you need features that exist only in KeePass's plugin ecosystem.
+Your choice ultimately depends on your platform requirements and whether you need features that exist only in KeePass's plugin environment.
 
 Advanced Database Configuration
 
@@ -271,8 +271,8 @@ Makes stealing just the database file insufficient
 Database Encryption Algorithm Selection
 
 ```bash
-KeePass default: AES-256 (industry standard)
-KeePassXC also supports: ChaCha20
+KeePass default - AES-256 (industry standard)
+KeePassXC also supports - ChaCha20
 
 ChaCha20 advantages:
 - Faster on systems without AES-NI instruction set
@@ -290,15 +290,15 @@ Syncing and Multi-Device Usage
 Managing passwords across multiple devices requires careful configuration:
 
 ```bash
-Option 1: Cloud-synchronized database
+Option 1 - Cloud-synchronized database
 NOT recommended unless using encryption client
 
-Option 2: Manual sync via secure storage
+Option 2 - Manual sync via secure storage
 Copy encrypted .kdbx file to Nextcloud, Syncthing, or similar
 keepassxc-cli export -f csv /path/to/database.kdbx | \
   scp - backup@server.com:/encrypted/backup/
 
-Option 3: Git-based version control (advanced)
+Option 3 - Git-based version control (advanced)
 git init ~/.passwords
 git add Passwords.kdbx
 git -C ~/.passwords commit -m "Password backup"
@@ -321,7 +321,7 @@ Extract database credential for deployment
 password=$(keepassxc-cli show -a password ~/keys/production.kdbx "API Keys" "Deployment Service")
 
 Use password for deployment
-curl -H "Authorization: Bearer $password" https://api.example.com/deploy
+curl -H "Authorization - Bearer $password" https://api.example.com/deploy
 
 Security considerations:
 - Passwords stored in process memory (vulnerable to memory dumps)

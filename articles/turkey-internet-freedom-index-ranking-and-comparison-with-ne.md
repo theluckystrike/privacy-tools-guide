@@ -270,9 +270,9 @@ class ObfuscatedConnectionPool:
 
         # Send HTTP request with spoofed Host
         request = f"""GET / HTTP/1.1\r
-Host: {target}\r
-Connection: Upgrade\r
-Upgrade: websocket\r
+Host - {target}\r
+Connection - Upgrade\r
+Upgrade - websocket\r
 \r
 """
         ssl_sock.send(request.encode())
@@ -336,10 +336,10 @@ Common Turkish blocking mechanisms
 
 1. DNS BLOCKING (most common)
 Turkish DNS servers (.tr TLD) don't resolve blocked domains
-Test: nslookup blocked-site.com 8.8.8.8 (works)
+Test - nslookup blocked-site.com 8.8.8.8 (works)
       nslookup blocked-site.com 213.66.0.1 (Turkish DNS - fails)
 
-Solution: DNS over HTTPS
+Solution - DNS over HTTPS
 sudo tee /etc/systemd/resolved.conf.d/doh.conf > /dev/null <<EOF
 [Resolve]
 DNS=1.1.1.1#cloudflare-dns.com
@@ -349,15 +349,15 @@ sudo systemctl restart systemd-resolved
 
 2. IP BLOCKING
 Turkish authorities block IPs at backbone level
-Solution: BGP hijacking or anycast
+Solution - BGP hijacking or anycast
 
 3. DEEP PACKET INSPECTION (DPI)
 Inspect TLS certificates, HTTP Host headers
-Solution: Domain fronting, obfuscated protocols
+Solution - Domain fronting, obfuscated protocols
 
 4. TRAFFIC THROTTLING
 Deliberately slow down VPN/Tor traffic
-Solution: Protocol obfuscation that mimics regular HTTPS
+Solution - Protocol obfuscation that mimics regular HTTPS
 
 Test what's blocked
 echo "Testing connectivity..."

@@ -34,7 +34,7 @@ Table of Contents
 - [Windows Configuration for DoQ](#windows-configuration-for-doq)
 - [iOS Configuration for DoQ](#ios-configuration-for-doq)
 - [Troubleshooting DoQ Connectivity Issues](#troubleshooting-doq-connectivity-issues)
-- [Performance Comparison: DoQ vs Other Protocols](#performance-comparison-doq-vs-other-protocols)
+- [Performance Comparison - DoQ vs Other Protocols](#performance-comparison-doq-vs-other-protocols)
 - [Selecting Multiple DoQ Providers for Redundancy](#selecting-multiple-doq-providers-for-redundancy)
 - [Monitoring DoQ Usage and Performance](#monitoring-doq-usage-and-performance)
 - [Related Reading](#related-reading)
@@ -155,7 +155,7 @@ Query over DoQ
 q example.com A @quic://dns.mullvad.net
 q example.com AAAA @quic://dns.adguard-dns.com
 
-Compare latency: DoQ vs DoT vs DoH vs plain DNS
+Compare latency - DoQ vs DoT vs DoH vs plain DNS
 time q example.com @quic://dns.mullvad.net
 time q example.com @tls://dns.mullvad.net
 time q example.com @https://dns.mullvad.net/dns-query
@@ -165,7 +165,7 @@ time q example.com @1.1.1.1
 ```bash
 Or use doggo (another modern DNS CLI)
 brew install doggo   # macOS
-Linux: download from github.com/mr-karan/doggo/releases
+Linux - download from github.com/mr-karan/doggo/releases
 
 doggo example.com --type A @quic://dns.mullvad.net
 ```
@@ -188,7 +188,7 @@ In AdGuard for Android:
 For Android 9+ native Private DNS (DoT only, not DoQ):
 ```
 Settings → Network & internet → Private DNS → Private DNS provider hostname
-Enter: dns.mullvad.net
+Enter - dns.mullvad.net
 ```
 
 Router-Level DoQ (OpenWrt)
@@ -221,7 +221,7 @@ sudo tcpdump -i eth0 -n port 53 &
 curl https://example.com
 If you see UDP port 53 traffic → plaintext DNS is leaking
 
-If using DoQ correctly: you should see UDP port 784 (DoQ) or 443 (DoH)
+If using DoQ correctly - you should see UDP port 784 (DoQ) or 443 (DoH)
 sudo tcpdump -i eth0 -n udp port 784 &
 q example.com @quic://dns.mullvad.net
 Should see traffic on 784
@@ -240,10 +240,10 @@ The strongest privacy option is a DoQ resolver with:
 - Published technical audit
 
 ```
-Mullvad (Sweden): audited, no logs, strong legal framework
-AdGuard (Cyprus/international): no logs, open source clients
-NextDNS (USA): logs optional and configurable per account
-Quad9 (Switzerland): no logs, malware filtering, nonprofit
+Mullvad (Sweden) - audited, no logs, strong legal framework
+AdGuard (Cyprus/international) - no logs, open source clients
+NextDNS (USA) - logs optional and configurable per account
+Quad9 (Switzerland) - no logs, malware filtering, nonprofit
 ```
 
 macOS Configuration for DoQ
@@ -278,7 +278,7 @@ kresd -c ~/.knot-resolver/config
 
 Configure system DNS to use local resolver
 System Preferences → Network → Advanced → DNS
-Add: 127.0.0.1
+Add - 127.0.0.1
 ```
 
 Alternatively, use dnscrypt-proxy:
@@ -346,8 +346,8 @@ iOS 15+ partially supports DoQ via Private DNS (though limited):
 
 ```
 Settings → Network & Internet → Advanced → Private DNS
-Choose: Custom
-Enter: dns.mullvad.net
+Choose - Custom
+Enter - dns.mullvad.net
 ```
 
 For full DoQ support on iOS, use third-party apps:
@@ -372,14 +372,14 @@ If DoQ appears not to be working:
 ```bash
 1. Verify local DoQ proxy is listening
 ss -ulnp | grep 784
-Should show: UNCONN  0  0  0.0.0.0:784  0.0.0.0:*
+Should show - UNCONN  0  0  0.0.0.0:784  0.0.0.0:*
 
 2. Test DoQ query directly
 q example.com @quic://dns.mullvad.net -v
 
 3. Check firewall rules
 sudo ufw status | grep 784
-Add if needed: sudo ufw allow 784/udp
+Add if needed - sudo ufw allow 784/udp
 
 4. Capture traffic to verify
 sudo tcpdump -i eth0 -n 'udp port 784'
@@ -391,7 +391,7 @@ Use hotspot or mobile data to test
 openssl s_client -connect yourdns.example.com:784
 ```
 
-Performance Comparison: DoQ vs Other Protocols
+Performance Comparison - DoQ vs Other Protocols
 
 Real-world testing on various networks:
 

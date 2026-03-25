@@ -23,7 +23,7 @@ Table of Contents
 - [Prerequisites](#prerequisites)
 - [Advanced Usage Patterns](#advanced-usage-patterns)
 - [Security Considerations](#security-considerations)
-- [Practical Example: Developer Subscription Management](#practical-example-developer-subscription-management)
+- [Practical Example - Developer Subscription Management](#practical-example-developer-subscription-management)
 - [Troubleshooting](#troubleshooting)
 
 Prerequisites
@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What Privacy.com Virtual Cards Offer
+Step 1 - What Privacy.com Virtual Cards Offer
 
 Privacy.com creates card numbers that function like regular debit cards but with crucial differences:
 
@@ -47,7 +47,7 @@ Privacy.com creates card numbers that function like regular debit cards but with
 
 Unlike traditional credit cards, these virtual numbers don't contain your actual account details. When a merchant experiences a breach, your real bank account remains protected.
 
-Step 2: Set Up Your Account
+Step 2 - Set Up Your Account
 
 To use Privacy.com, you need a US bank account, currently the service only supports US-based financial institutions. The setup process:
 
@@ -58,7 +58,7 @@ To use Privacy.com, you need a US bank account, currently the service only suppo
 
 Once verified, you can create unlimited virtual cards through their web dashboard or mobile app.
 
-Step 3: Create Cards Through the Dashboard
+Step 3 - Create Cards Through the Dashboard
 
 The web interface offers straightforward card creation:
 
@@ -70,7 +70,7 @@ The web interface offers straightforward card creation:
 
 For anonymous purchases, single-use cards with no merchant lock provide the strongest privacy guarantee. The card becomes useless after one transaction, meaning even if the merchant database is compromised, there's nothing valuable to steal.
 
-Step 4: Developer Integration: The Privacy.com API
+Step 4 - Developer Integration - The Privacy.com API
 
 For power users and developers, Privacy.com offers API access that enables programmatic card generation. This proves valuable for:
 
@@ -176,7 +176,7 @@ card = create_anon_card(2500)
 print(f"Card: {card['number']} {card['exp']} CVV: {card['cvv']}")
 ```
 
-The `max_interval: "TRANSACTION"` setting ensures the card works exactly once, regardless of amount.
+The `max_interval - "TRANSACTION"` setting ensures the card works exactly once, regardless of amount.
 
 Security Considerations
 
@@ -189,7 +189,7 @@ While virtual cards enhance privacy, understand their limitations:
 
 For true anonymity, combine virtual cards with other tools like privacy-focused email aliases (addy.io, SimpleLogin) and VPN services.
 
-Practical Example: Developer Subscription Management
+Practical Example - Developer Subscription Management
 
 Here's a complete workflow for managing multiple developer tool subscriptions:
 
@@ -242,7 +242,7 @@ await manager.provisionCard('vercel-pro', 20000);      // $200 limit
 
 This approach gives you granular control over every subscription, easy cancellation if prices increase, and protection if any service is compromised.
 
-Step 5: When Virtual Cards Make Sense
+Step 5 - When Virtual Cards Make Sense
 
 Virtual cards excel in these scenarios:
 
@@ -294,7 +294,7 @@ Related Articles
 
 - [How To Protect Credit Card From Being Skimmed Online Shoppin](/how-to-protect-credit-card-from-being-skimmed-online-shoppin/)
 - [What to Do If Your Credit Card Was Used Fraudulently Online](/what-to-do-if-your-credit-card-was-used-fraudulently-online/)
-- [Business Email Privacy: How to Set Up Encrypted Email.](/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
+- [Business Email Privacy - How to Set Up Encrypted Email.](/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
 - [China Social Credit System Digital Privacy Implications What](/china-social-credit-system-digital-privacy-implications-what/)
 - [How To Use Masked Credit Cards For Online Purchases Privacy](/how-to-use-masked-credit-cards-for-online-purchases-privacy-/)
 - [Best AI Coding Tool Free Trial Longest No Credit](https://bestremotetools.com/best-ai-coding-tool-free-trial-longest-no-credit-card/)

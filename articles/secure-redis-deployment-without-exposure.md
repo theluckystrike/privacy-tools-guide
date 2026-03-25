@@ -17,7 +17,7 @@ tags: [privacy-tools-guide]
 
 Redis has no authentication by default and listens on all interfaces. Thousands of Redis instances are exposed to the internet with no password. attackers scan for them, dump their contents, and use them as launching pads for further attacks. This guide covers every layer of Redis hardening from network binding to ACLs.
 
-Step 1: Bind to Localhost Only
+Step 1 - Bind to Localhost Only
 
 The most critical setting. Open `/etc/redis/redis.conf`:
 
@@ -39,7 +39,7 @@ protected-mode yes
 
 Never set `bind 0.0.0.0` on a production Redis instance. If application servers on other machines need Redis access, use a private network interface or SSH tunnel. not public exposure.
 
-Step 2: Enable Authentication
+Step 2 - Enable Authentication
 
 Simple Password (Redis 6+ Legacy)
 
@@ -51,7 +51,7 @@ requirepass "use-a-very-long-random-password-here"
 Generate a strong password:
 ```bash
 openssl rand -base64 48
-Output: something like Xk7mP2nQ8vR3tL5sJ9wH1dF4...
+Output - something like Xk7mP2nQ8vR3tL5sJ9wH1dF4...
 ```
 
 ACL-Based Authentication (Redis 6+ Recommended)
@@ -69,10 +69,10 @@ user default off nopass nocommands
 Read-only user for monitoring
 user monitor on >monitorpassword ~* &* +INFO +MONITOR +KEYS +GET +HGET +LRANGE
 
-Application user: full key access but cannot modify server config
+Application user - full key access but cannot modify server config
 user appuser on >strongapppassword ~* &* +@read +@write +@string +@hash +@list +@set +@sortedset -CONFIG -DEBUG -SHUTDOWN -REPLICAOF -SLAVEOF
 
-Admin user: full access (use only for admin tasks)
+Admin user - full access (use only for admin tasks)
 user admin on >adminpassword allkeys allchannels allcommands
 ```
 
@@ -88,7 +88,7 @@ Or
 redis-cli AUTH appuser strongapppassword
 ```
 
-Step 3: Disable Dangerous Commands
+Step 3 - Disable Dangerous Commands
 
 Commands that can be weaponized if Redis is exposed:
 
@@ -106,7 +106,7 @@ rename-command KEYS ""       # Use SCAN instead for production
 
 If you need CONFIG in your application (some frameworks require it), rename it to a long random string instead of disabling it, and share only the renamed command with application code.
 
-Step 4: Enable TLS (Redis 6+)
+Step 4 - Enable TLS (Redis 6+)
 
 If Redis must communicate over a network (e.g., between app servers), use TLS:
 
@@ -154,14 +154,14 @@ redis-cli --tls \
   -p 6380 AUTH appuser strongapppassword
 ```
 
-Step 5: Run as a Non-Root User
+Step 5 - Run as a Non-Root User
 
 Redis should run as the `redis` system user, not root:
 
 ```bash
 Verify service user
 grep User /lib/systemd/system/redis-server.service
-Should show: User=redis
+Should show - User=redis
 
 If not, create override
 sudo systemctl edit redis-server
@@ -178,7 +178,7 @@ sudo chmod 750 /var/lib/redis
 sudo chmod 640 /etc/redis/redis.conf /etc/redis/users.acl
 ```
 
-Step 6: Memory and Resource Limits
+Step 6 - Memory and Resource Limits
 
 Prevent Redis from consuming all available memory:
 
@@ -195,7 +195,7 @@ active-expire-enabled yes
 lazyfree-lazy-eviction yes
 ```
 
-Step 7: Persistence Security
+Step 7 - Persistence Security
 
 Disable persistence if Redis is only used as a cache (reduces attack surface):
 
@@ -214,7 +214,7 @@ dbfilename dump.rdb
 appendfilename "appendonly.aof"
 ```
 
-Step 8: Network Firewall Rules
+Step 8 - Network Firewall Rules
 
 Even with `bind 127.0.0.1`, add UFW rules as defense-in-depth:
 
@@ -234,18 +234,18 @@ Verify Your Security
 ```bash
 Test that unauthenticated access is blocked
 redis-cli PING
-Should return: NOAUTH Authentication required
+Should return - NOAUTH Authentication required
 
 Test that bound interfaces are correct
 ss -tlnp | grep redis
-Should show: 127.0.0.1:6379 only
+Should show - 127.0.0.1:6379 only
 
 Check ACL list
 redis-cli AUTH admin adminpassword ACL LIST
 
 Verify CONFIG is disabled (if renamed)
 redis-cli AUTH appuser strongapppassword CONFIG GET maxmemory
-Should return: ERR unknown command 'CONFIG'
+Should return - ERR unknown command 'CONFIG'
 ```
 
 Related Reading

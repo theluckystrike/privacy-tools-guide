@@ -26,12 +26,12 @@ Table of Contents
 - [Use Case Recommendations](#use-case-recommendations)
 - [Combining Approaches](#combining-approaches)
 - [Security Considerations](#security-considerations)
-- [Protocol Comparison: Deep Technical Analysis](#protocol-comparison-deep-technical-analysis)
+- [Protocol Comparison - Deep Technical Analysis](#protocol-comparison-deep-technical-analysis)
 - [Performance Benchmarking](#performance-benchmarking)
 - [Deployment Scenarios and Tool Selection](#deployment-scenarios-and-tool-selection)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 - [Monitoring and Logging](#monitoring-and-logging)
-- [Comparison Table: Final Decision Matrix](#comparison-table-final-decision-matrix)
+- [Comparison Table - Final Decision Matrix](#comparison-table-final-decision-matrix)
 
 Understanding Traffic Obfuscation
 
@@ -178,7 +178,7 @@ Neither tool replaces proper encryption. Both obfuscation methods hide traffic p
 
 Rotate credentials periodically and monitor server logs for unusual connection patterns. Obfuscation tools can still be detected through statistical analysis of traffic timing and volume, though this requires significant resources.
 
-Protocol Comparison: Deep Technical Analysis
+Protocol Comparison - Deep Technical Analysis
 
 Understanding the technical details helps you choose the right tool for your specific threat model.
 
@@ -243,11 +243,11 @@ Sample TLS handshake comparison
 
 Normal HTTPS to amazon.com:
 TLS ClientHello → Server Name: amazon.com
-TLS ServerHello → Certificate: amazon wildcard cert
+TLS ServerHello → Certificate - amazon wildcard cert
 
 Stunnel through gateway:
 TLS ClientHello → Server Name: gateway.example.com
-TLS ServerHello → Certificate: gateway.example.com self-signed
+TLS ServerHello → Certificate - gateway.example.com self-signed
 
 Detectable patterns:
 1. Server name mismatch (gateway not matching actual destination)
@@ -326,25 +326,25 @@ Shadowsocks is extremely efficient, suitable for older devices or mobile phones.
 
 Deployment Scenarios and Tool Selection
 
-Scenario 1: Personal Browsing in Restrictive Network
+Scenario 1 - Personal Browsing in Restrictive Network
 
-Threat: Network administrator monitoring traffic
-Detection method: DPI analysis
-Solution: Stunnel
+Threat - Network administrator monitoring traffic
+Detection method - DPI analysis
+Solution - Stunnel
 
 ```bash
 Stunnel deployment for maximum obfuscation
 Appears as regular HTTPS browsing to network observer
 stunnel -f # foreground mode for debugging
-Monitor shows: TLS handshake to stunnel.example.com, then HTTPS traffic
-Administrator sees: normal encrypted HTTPS
+Monitor shows - TLS handshake to stunnel.example.com, then HTTPS traffic
+Administrator sees - normal encrypted HTTPS
 ```
 
-Scenario 2: Streaming and Media
+Scenario 2 - Streaming and Media
 
-Threat: ISP traffic shaping
-Detection method: Protocol identification
-Solution: Shadowsocks
+Threat - ISP traffic shaping
+Detection method - Protocol identification
+Solution - Shadowsocks
 
 ```bash
 Shadowsocks deployment for streaming
@@ -357,11 +357,11 @@ Benefits:
 - Compatible with streaming protocols (DASH, HLS)
 ```
 
-Scenario 3: Corporate VPN Bypass
+Scenario 3 - Corporate VPN Bypass
 
-Threat: Corporate firewall rules
-Detection method: Port-based filtering
-Solution: Stunnel on port 443 (HTTPS)
+Threat - Corporate firewall rules
+Detection method - Port-based filtering
+Solution - Stunnel on port 443 (HTTPS)
 
 ```bash
 Stunnel on standard HTTPS port
@@ -373,11 +373,11 @@ accept = 192.168.1.5:443
 connect = remote-vpn.example.com:1194
 ```
 
-Scenario 4: High-Speed Data Transfer
+Scenario 4 - High-Speed Data Transfer
 
-Threat: Volume monitoring
-Detection method: Traffic analysis
-Solution: Shadowsocks + compression
+Threat - Volume monitoring
+Detection method - Traffic analysis
+Solution - Shadowsocks + compression
 
 ```bash
 Shadowsocks with data compression
@@ -393,10 +393,10 @@ Troubleshooting Common Issues
 Shadowsocks Connection Drops
 
 ```bash
-Symptom: Connection works for 5 minutes then disconnects
-Cause: Network timeout or firewall reset
+Symptom - Connection works for 5 minutes then disconnects
+Cause - Network timeout or firewall reset
 
-Solution 1: Enable TCP_KEEPALIVE
+Solution 1 - Enable TCP_KEEPALIVE
 Edit config.json:
 {
  "server": "your-server",
@@ -407,10 +407,10 @@ Edit config.json:
  "tcp_keepalive": true
 }
 
-Solution 2: Monitor connection:
+Solution 2 - Monitor connection:
 ss-local -c config.json -v
 
-Solution 3: Use mitmproxy to debug traffic:
+Solution 3 - Use mitmproxy to debug traffic:
 mitmproxy -p 8080 # local proxy for debugging
 Configure ss-local to use this proxy
 ```
@@ -418,19 +418,19 @@ Configure ss-local to use this proxy
 Stunnel Certificate Errors
 
 ```bash
-Symptom: "certificate verify failed" errors
-Cause: Self-signed certificates without proper configuration
+Symptom - "certificate verify failed" errors
+Cause - Self-signed certificates without proper configuration
 
-Solution 1: Disable verification (insecure, use only for testing)
+Solution 1 - Disable verification (insecure, use only for testing)
 stunnel.conf:
 [client]
 verify = 0
 
-Solution 2: Use valid certificate
-Self-signed: stunnel can use it if both sides configured
-Production: use Let's Encrypt (free certificates)
+Solution 2 - Use valid certificate
+Self-signed - stunnel can use it if both sides configured
+Production - use Let's Encrypt (free certificates)
 
-Solution 3: Debug certificate issues
+Solution 3 - Debug certificate issues
 openssl s_client -connect localhost:8443 -CAfile /path/to/cert.pem
 ```
 
@@ -491,7 +491,7 @@ if __name__ == "__main__":
  monitor.start()
 ```
 
-Comparison Table: Final Decision Matrix
+Comparison Table - Final Decision Matrix
 
 | Factor | Shadowsocks | Stunnel | WireGuard | OpenVPN |
 |--------|-------------|---------|-----------|---------|
@@ -534,6 +534,6 @@ Related Articles
 - [How to Detect If Your ISP Is Throttling VPN Traffic](/how-to-detect-if-your-isp-is-throttling-vpn-traffic/)
 - [How To Use Tcpdump To Verify Vpn Traffic Is Encrypted](/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [How to Verify a VPN Is Actually Encrypting Your Traffic](/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)
-- [AI Coding Assistant for Network Traffic Analysis: What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
+- [AI Coding Assistant for Network Traffic Analysis - What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
 
 Built by theluckystrike. More at [zovo.one](https://zovo.one)

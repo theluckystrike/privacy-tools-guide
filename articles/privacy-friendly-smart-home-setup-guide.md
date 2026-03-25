@@ -43,21 +43,21 @@ Hardware Shopping List
 Table of Contents
 
 - [Hardware Shopping List](#hardware-shopping-list)
-- [Step 1: Home Assistant Installation](#step-1-home-assistant-installation)
-- [Step 2: Add Zigbee Coordinator](#step-2-add-zigbee-coordinator)
-- [Step 3: Pair Zigbee Devices](#step-3-pair-zigbee-devices)
-- [Step 4: Network Isolation (VLAN)](#step-4-network-isolation-vlan)
-- [Step 5: Pi-hole (DNS Blocking)](#step-5-pi-hole-dns-blocking)
-- [Step 6: Automation Examples](#step-6-automation-examples)
-- [Step 7: Mobile Access (Secure)](#step-7-mobile-access-secure)
-- [Privacy Comparison: Cloud vs Local](#privacy-comparison-cloud-vs-local)
+- [Step 1 - Home Assistant Installation](#step-1-home-assistant-installation)
+- [Step 2 - Add Zigbee Coordinator](#step-2-add-zigbee-coordinator)
+- [Step 3 - Pair Zigbee Devices](#step-3-pair-zigbee-devices)
+- [Step 4 - Network Isolation (VLAN)](#step-4-network-isolation-vlan)
+- [Step 5 - Pi-hole (DNS Blocking)](#step-5-pi-hole-dns-blocking)
+- [Step 6 - Automation Examples](#step-6-automation-examples)
+- [Step 7 - Mobile Access (Secure)](#step-7-mobile-access-secure)
+- [Privacy Comparison - Cloud vs Local](#privacy-comparison-cloud-vs-local)
 - [Total Cost Breakdown](#total-cost-breakdown)
 - [Backup & Restore](#backup-restore)
 - [Troubleshooting](#troubleshooting)
-- [Expansion: What's Next](#expansion-whats-next)
+- [Expansion - What's Next](#expansion-whats-next)
 - [Related Reading](#related-reading)
 
-Total Cost: ~$400-700 for complete setup
+Total Cost - ~$400-700 for complete setup
 
 Core System
 
@@ -90,7 +90,7 @@ Starter Devices:
  Smart bulbs (IKEA Tradfri, Zigbee x4) - $40
     SUBTOTAL: $135
 
-GRAND TOTAL: ~$580-700 (without UniFi router: ~$330-450)
+GRAND TOTAL - ~$580-700 (without UniFi router: ~$330-450)
 ```
 
 Individual Device Recommendations
@@ -104,7 +104,7 @@ Zigbee Coordinator (Required):
 | Zig-a-zig-ah! (DIY) | $60 | Open source | Requires soldering |
 | ConBee III | $50 | Well-supported | Expensive |
 
-Best Choice: Sonoff ZBDongle-P ($35) + external antenna extension ($5).
+Best Choice - Sonoff ZBDongle-P ($35) + external antenna extension ($5).
 
 Z-Wave Stick (Optional, if Z-Wave devices):
 
@@ -114,7 +114,7 @@ Z-Wave Stick (Optional, if Z-Wave devices):
 | Zooz Z-Stick | $40 | Adequate | Budget option |
 | Zig-a-zig-ah Z-Wave | $80 | Excellent | Open source, DIY |
 
-Budget Approach: Skip Z-Wave, use Zigbee only (better device selection).
+Budget Approach - Skip Z-Wave, use Zigbee only (better device selection).
 
 Smart Home Devices (Zigbee-compatible, no cloud required):
 
@@ -129,21 +129,21 @@ Smart Home Devices (Zigbee-compatible, no cloud required):
 | Camera | Reolink RLC-810A (local) | $80 | Good | WiFi only |
 | Thermostat | Eve Thermo | $40 | Good | Zigbee |
 
-Pro Tip: Avoid anything with "Works with Alexa" or "Google Home compatible." Those are cloud-dependent.
+Pro Tip - Avoid anything with "Works with Alexa" or "Google Home compatible." Those are cloud-dependent.
 
 ---
 
-Step 1: Home Assistant Installation
+Step 1 - Home Assistant Installation
 
 Home Assistant is the open-source hub that controls everything locally.
 
-Option A: HAOS (Recommended)
+Option A - HAOS (Recommended)
 
 HAOS = Home Assistant Operating System (purpose-built)
 
 ```bash
 Download HAOS image
-From: https://www.home-assistant.io/installation/
+From - https://www.home-assistant.io/installation/
 
 For Raspberry Pi 5 with SSD:
 1. Download haos_rpi5-64-arm64.wic.gz
@@ -158,8 +158,8 @@ Click Flash (takes 5-10 minutes)
 Insert SSD into Pi
 Power on (wait 3-5 minutes for first boot)
 
-Access at: http://homeassistant.local:8123
-Initial setup: Create admin account
+Access at - http://homeassistant.local:8123
+Initial setup - Create admin account
 ```
 
 HAOS Features:
@@ -168,7 +168,7 @@ HAOS Features:
 - Automatic updates
 - Web UI + mobile app
 
-Option B: Docker (For existing Linux server)
+Option B - Docker (For existing Linux server)
 
 ```bash
 Install Docker
@@ -195,11 +195,11 @@ EOF
 docker-compose up -d
 ```
 
-Access: http://localhost:8123
+Access - http://localhost:8123
 
 ---
 
-Step 2: Add Zigbee Coordinator
+Step 2 - Add Zigbee Coordinator
 
 Connect Hardware
 
@@ -207,7 +207,7 @@ Connect Hardware
 Plug Sonoff ZBDongle-P into USB hub
 Verify it shows up:
 ls -la /dev/ttyUSB*
-Should show: /dev/ttyUSB0
+Should show - /dev/ttyUSB0
 
 If not found:
 lsusb | grep -i zigbee
@@ -259,7 +259,7 @@ When working:
 
 ---
 
-Step 3: Pair Zigbee Devices
+Step 3 - Pair Zigbee Devices
 
 Pairing Process
 
@@ -287,8 +287,8 @@ General Steps:
 Pair Aqara Motion Sensor
 
 ```
-Device: Aqara RTCGQ11LM (Motion Sensor)
-Price: $15
+Device - Aqara RTCGQ11LM (Motion Sensor)
+Price - $15
 Steps:
 
 1. In Home Assistant:
@@ -316,8 +316,8 @@ Done. No app, no cloud, no account.
 Pair IKEA Tradfri Bulb
 
 ```
-Device: IKEA Tradfri E27 (Color bulb)
-Price: $12
+Device - IKEA Tradfri E27 (Color bulb)
+Price - $12
 Steps:
 
 1. Screw bulb into lamp
@@ -344,7 +344,7 @@ Done. Bulb now locally controllable.
 
 ---
 
-Step 4: Network Isolation (VLAN)
+Step 4 - Network Isolation (VLAN)
 
 Isolate smart home devices from your main network so they can't access personal data.
 
@@ -415,7 +415,7 @@ Outbound:
  Create
 
 Inbound (FROM LAN to IoT):
- From: Main LAN (192.168.1.0/24)
+ From - Main LAN (192.168.1.0/24)
  To: IoT VLAN (192.168.50.0/24)
  Action: Deny
  Create
@@ -449,13 +449,13 @@ When pairing Zigbee WiFi devices (some, like certain gateways):
 
 ---
 
-Step 5: Pi-hole (DNS Blocking)
+Step 5 - Pi-hole (DNS Blocking)
 
 Pi-hole blocks tracking domains at the DNS level, protecting all devices on your network.
 
 Installation
 
-Option A: HAOS Add-on (Easiest)
+Option A - HAOS Add-on (Easiest)
 
 ```
 Home Assistant Interface:
@@ -468,7 +468,7 @@ Home Assistant Interface:
  Open web UI
 ```
 
-Option B: Standalone on Raspberry Pi
+Option B - Standalone on Raspberry Pi
 
 ```bash
 Install on separate Pi (or same Pi, different port)
@@ -479,7 +479,7 @@ Follow prompts:
 - Enable blocking
 - Web interface password: Set strong password
 
-Access at: http://raspberrypi.local/admin
+Access at - http://raspberrypi.local/admin
 ```
 
 Configuration
@@ -536,7 +536,7 @@ Verify Working:
 On any device connected to WiFi:
 
 nslookup doubleclick.net
-Should return: NXDOMAIN (blocked)
+Should return - NXDOMAIN (blocked)
 Not blocked before = Pi-hole working
 
 curl https://ipinfo.io/json
@@ -545,9 +545,9 @@ Should see your home IP (not tracked by ISP)
 
 ---
 
-Step 6: Automation Examples
+Step 6 - Automation Examples
 
-Example 1: Motion-Activated Lights
+Example 1 - Motion-Activated Lights
 
 ```yaml
 configuration.yaml
@@ -577,7 +577,7 @@ automation:
         entity_id: light.tradfri_bulb_hallway
 ```
 
-Example 2: Temperature-Based Alerts
+Example 2 - Temperature-Based Alerts
 
 ```yaml
 automation:
@@ -593,7 +593,7 @@ automation:
         message: "Living room temperature is {{ states('sensor.aqara_temperature_sensor_living_room') }}°F"
 ```
 
-Example 3: Scene Control
+Example 3 - Scene Control
 
 ```yaml
 scene:
@@ -622,11 +622,11 @@ automation:
 
 ---
 
-Step 7: Mobile Access (Secure)
+Step 7 - Mobile Access (Secure)
 
 Home Assistant provides secure external access via their cloud, but that's optional. For maximum privacy, use:
 
-Option A: Tailscale (Recommended)
+Option A - Tailscale (Recommended)
 
 Tailscale = Private VPN to your home network
 
@@ -645,16 +645,16 @@ Click "Connect"
 
 Get IP:
 tailscale ip
-Returns: 100.x.x.x (Tailscale IP)
+Returns - 100.x.x.x (Tailscale IP)
 
 Access Home Assistant remotely:
 On phone: http://100.x.x.x:8123
 (Only works when connected to Tailscale VPN)
 ```
 
-Cost: Free (personal use).
+Cost - Free (personal use).
 
-Option B: WireGuard (Manual)
+Option B - WireGuard (Manual)
 
 ```bash
 Install WireGuard on Home Assistant
@@ -673,11 +673,11 @@ Open browser: http://homeassistant.local:8123
 (While connected to WireGuard)
 ```
 
-Cost: Free.
+Cost - Free.
 
 ---
 
-Privacy Comparison: Cloud vs Local
+Privacy Comparison - Cloud vs Local
 
 | Feature | Cloud (Alexa/Google) | Local (Home Assistant) |
 |---------|-------|-------|
@@ -718,8 +718,8 @@ Annual Costs:
  Internet: Already have it
  Subscriptions: $0
 
-Total Year 1: ~$650-720
-Total Year 2+: ~$15/year
+Total Year 1 - ~$650-720
+Total Year 2+ - ~$15/year
 
 vs Cloud:
 
@@ -751,9 +751,9 @@ Manual Backup:
 Home Assistant:
 Settings → System → Backups
 Click "Create backup"
-Saves to: /config/backups/
-Includes: All automations, scenes, device configs
-Size: ~500 MB - 1 GB
+Saves to - /config/backups/
+Includes - All automations, scenes, device configs
+Size - ~500 MB - 1 GB
 ```
 
 Restore (if Pi fails):
@@ -837,7 +837,7 @@ Intermittent unresponsiveness:
 
 ---
 
-Expansion: What's Next
+Expansion - What's Next
 
 After basic setup:
 

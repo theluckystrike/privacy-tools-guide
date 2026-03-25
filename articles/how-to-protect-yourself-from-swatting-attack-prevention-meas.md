@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Swatting Threat Space
+Step 1 - Understand the Swatting Threat Space
 
 Swatting attacks have become more sophisticated over the years. Attackers gather personal information through data breaches, social engineering, or OSINT (Open Source Intelligence) techniques, then use VoIP services to spoof emergency calls to local police departments. The goal is to dispatch armed tactical units to your residence based on fabricated hostage situations, bomb threats, or active shooter reports.
 
 Developers are particularly vulnerable because their public profiles often contain enough information to correlate usernames with real-world identities. GitHub profiles, blog comments, conference talks, and social media activity can all serve as starting points for attackers conducting reconnaissance.
 
-Step 2: Foundational Swatting Attack Prevention Measures
+Step 2 - Foundational Swatting Attack Prevention Measures
 
 1. Address Privacy and Data Minimization
 
@@ -43,7 +43,7 @@ The most critical swatting attack prevention measure involves protecting your ho
 ```bash
 Check what information is publicly available about you
 Use OSINT tools responsibly for reconnaissance testing
-Examples: HaveIBeenPwned, DeleteMe, malwarebo.com
+Examples - HaveIBeenPwned, DeleteMe, malwarebo.com
 ```
 
 Several services specialize in removing personal information from data broker websites. While effectiveness varies by jurisdiction, removing your information from Acxiom, LexisNexis, and similar aggregators reduces the attack surface significantly.
@@ -75,14 +75,14 @@ VoIP-based swatting relies on caller ID spoofing and social engineering of emerg
 
 Many carriers now offer free call protection services that can help identify and block spoofed calls before they reach you.
 
-Step 3: Technical Safeguards and Early Warning Systems
+Step 3 - Technical Safeguards and Early Warning Systems
 
 4. Implement Home Monitoring
 
 Developers can build cost-effective monitoring systems to detect emergency response vehicles approaching their residence:
 
 ```python
-Conceptual example: Audio-based emergency vehicle detection
+Conceptual example - Audio-based emergency vehicle detection
 Uses microphone input and frequency analysis
 
 import numpy as np
@@ -137,7 +137,7 @@ Document your outreach
 
 Many police departments now maintain "safe household" or "celebrity safety" registries specifically for individuals at elevated risk of swatting attacks. This allows officers to verify the situation beforeforce entry.
 
-Step 4: Response Protocol When Swatted
+Step 4 - Response Protocol When Swatted
 
 Despite precautions, you may still become a target. Having a response protocol in place is essential:
 
@@ -154,7 +154,7 @@ Documentation matters:
 - Follow up with the department's internal affairs or civilian oversight board
 - File reports with the FBI (IC3.gov) and local authorities
 
-Step 5: Long-Term Protection Strategies
+Step 5 - Long-Term Protection Strategies
 
 7. Audit Your Digital Footprint
 
@@ -250,7 +250,7 @@ This catches reconnaissance attempts from attackers
 Logs indicate who's probing your infrastructure
 ```
 
-Step 6: Reputation Monitoring and Incident Intelligence
+Step 6 - Reputation Monitoring and Incident Intelligence
 
 Swatting attacks often follow public incidents or harassment campaigns. Monitor your reputation across technical platforms and public databases:
 
@@ -316,19 +316,19 @@ class ReputationMonitor:
         return recommendations
 ```
 
-Step 7: Coordination with ISPs and Hosting Providers
+Step 7 - Coordination with ISPs and Hosting Providers
 
 If you host systems that could be targeted, establish emergency contact procedures with your ISP and hosting provider:
 
 ```bash
 Document your emergency escalation points
 cat > ~/.swatting-emergency-contacts << 'EOF'
-ISP Emergency: [ISP Name] - [Emergency Number] - Account #[XXXXX]
-Hosting Provider: [Provider] - [Emergency Number] - Account #[XXXXX]
-Law Enforcement: [Local Police Non-Emergency] - [Number]
-FBI Cybercrime: tips.fbi.gov or 1-800-CALL-FBI
-Local Fire Department: [Station Number] (to pre-warn about false alarms)
-Trusted Colleague: [Name] - [Phone] - [Can verify you're safe]
+ISP Emergency - [ISP Name] - [Emergency Number] - Account #[XXXXX]
+Hosting Provider - [Provider] - [Emergency Number] - Account #[XXXXX]
+Law Enforcement - [Local Police Non-Emergency] - [Number]
+FBI Cybercrime - tips.fbi.gov or 1-800-CALL-FBI
+Local Fire Department - [Station Number] (to pre-warn about false alarms)
+Trusted Colleague - [Name] - [Phone] - [Can verify you're safe]
 
 Request specific actions if emergency services arrive:
 1. Keep emergency responders outside until identity verified
@@ -341,7 +341,7 @@ chmod 600 ~/.swatting-emergency-contacts
 Share with trusted contacts and keep near front door
 ```
 
-Step 8: Psychological Resilience and Support Resources
+Step 8 - Psychological Resilience and Support Resources
 
 Swatting targets experience genuine trauma. Psychological support is as critical as technical measures:
 

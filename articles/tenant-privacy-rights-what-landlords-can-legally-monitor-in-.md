@@ -20,14 +20,14 @@ Understanding what landlords can legally monitor in rental property varies drama
 
 Table of Contents
 
-- [The Legal Framework: Landlord Access vs. Tenant Privacy](#the-legal-framework-landlord-access-vs-tenant-privacy)
+- [The Legal Framework - Landlord Access vs. Tenant Privacy](#the-legal-framework-landlord-access-vs-tenant-privacy)
 - [State-by-State Overview](#state-by-state-overview)
-- [Technical Documentation: Building Your Evidence Framework](#technical-documentation-building-your-evidence-framework)
+- [Technical Documentation - Building Your Evidence Framework](#technical-documentation-building-your-evidence-framework)
 - [Common Monitoring Technologies and Their Legal Status](#common-monitoring-technologies-and-their-legal-status)
-- [Practical Steps: Protecting Your Privacy](#practical-steps-protecting-your-privacy)
+- [Practical Steps - Protecting Your Privacy](#practical-steps-protecting-your-privacy)
 - [State-Specific Quick Reference](#state-specific-quick-reference)
 
-The Legal Framework: Landlord Access vs. Tenant Privacy
+The Legal Framework - Landlord Access vs. Tenant Privacy
 
 Landlords maintain certain rights to access rental property for maintenance, inspections, and legal compliance. However, tenant privacy rights create boundaries that vary by state. The core tension exists between a landlord's property rights and a tenant's right to quiet enjoyment of their home.
 
@@ -55,7 +55,7 @@ Landlord-Friendly States
 
 Indiana and Ohio have minimal statutory requirements for landlord notice before entry. Tenants in these states should carefully review their lease agreements, which often specify inspection rights.
 
-Technical Documentation: Building Your Evidence Framework
+Technical Documentation - Building Your Evidence Framework
 
 For developers and privacy-conscious individuals, documenting potential surveillance requires systematic approaches. Below is a Python script for timestamped evidence logging:
 
@@ -140,7 +140,7 @@ Landlord-installed security cameras in common areas are generally legal. The cri
 | Inside apartment | No | Yes |
 | Windows facing private areas | Questionable | Likely violation |
 
-Documentation strategy: Photograph camera locations, note angles, and document times when cameras appear active. Cross-reference with building management communications.
+Documentation strategy - Photograph camera locations, note angles, and document times when cameras appear active. Cross-reference with building management communications.
 
 Internet Traffic Monitoring
 
@@ -165,7 +165,7 @@ sudo netstat -tulpn | grep LISTEN
 
 Using a personal VPN adds a layer of protection against traffic monitoring, though this may violate some lease agreements in states with minimal tenant protections.
 
-Practical Steps: Protecting Your Privacy
+Practical Steps - Protecting Your Privacy
 
 Before Signing a Lease
 
@@ -228,12 +228,12 @@ mkdir -p "surveillance_evidence/${TIMESTAMP}"
 
 Capture metadata
 cat > "surveillance_evidence/${TIMESTAMP}/metadata.txt" << EOF
-Date: $(date)
-Time: $(date +%H:%M:%S)
-Location: $LOCATION
-Description: $DESCRIPTION
-Device: $(uname -a)
-Camera: $(identify --version | head -1)
+Date - $(date)
+Time - $(date +%H:%M:%S)
+Location - $LOCATION
+Description - $DESCRIPTION
+Device - $(uname -a)
+Camera - $(identify --version | head -1)
 EOF
 
 Take photo with embedded timestamp
@@ -297,7 +297,7 @@ def document_surveillance_device(device_description: str):
                 file_hash = hashlib.sha256(f.read()).hexdigest()
 
             with open(evidence_dir / "integrity.txt", "w") as f:
-                f.write(f"File: device_photo.jpg\n")
+                f.write(f"File - device_photo.jpg\n")
                 f.write(f"SHA256: {file_hash}\n")
                 f.write(f"Captured: {datetime.now().isoformat()}\n")
 
@@ -415,7 +415,7 @@ Creating an Evidence Dossier
 ```markdown
 Landlord Surveillance Violation Documentation
 
-Incident 1: Undisclosed Camera Installation
+Incident 1 - Undisclosed Camera Installation
 - Date: [YYYY-MM-DD]
 - Time: [HH:MM]
 - Location: [Specific location in unit]
@@ -431,7 +431,7 @@ Incident 1: Undisclosed Camera Installation
 - Lease Violation: Yes - Undisclosed monitoring device
 - Relevant Law: [Cite state statute]
 
-Incident 2: Unauthorized Entry Without Notice
+Incident 2 - Unauthorized Entry Without Notice
 - Date: [YYYY-MM-DD]
 - Time: [HH:MM]
 - Evidence:
@@ -439,7 +439,7 @@ Incident 2: Unauthorized Entry Without Notice
   - Notice period: [X hours before entry]
   - Statutory requirement: [X hours required]
   - Witness testimony available: Yes
-- Follow-up Action: [What you did - contacted landlord, sent certified letter, etc.]
+- Follow-up Action - [What you did - contacted landlord, sent certified letter, etc.]
 ```
 
 Frequently Asked Questions

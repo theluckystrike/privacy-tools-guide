@@ -18,19 +18,19 @@ Fitness trackers collect intimate health data: heart rate, sleep patterns, menst
 
 Table of Contents
 
-- [Data Collection: What Are You Sharing?](#data-collection-what-are-you-sharing)
+- [Data Collection - What Are You Sharing?](#data-collection-what-are-you-sharing)
 - [How Companies Use Your Health Data](#how-companies-use-your-health-data)
 - [The HIPAA Gap](#the-hipaa-gap)
 - [Privacy Gaps in Current Trackers](#privacy-gaps-in-current-trackers)
 - [Privacy-Hardened Configurations](#privacy-hardened-configurations)
-- [Alternatives: Privacy-Hardened Trackers](#alternatives-privacy-hardened-trackers)
+- [Alternatives - Privacy-Hardened Trackers](#alternatives-privacy-hardened-trackers)
 - [Risk Assessment Matrix](#risk-assessment-matrix)
 - [Practical Privacy Strategy](#practical-privacy-strategy)
 - [GDPR Rights (If EU Resident)](#gdpr-rights-if-eu-resident)
 - [Regulatory Space (2026)](#regulatory-space-2026)
 - [Red Flags in Privacy Policies](#red-flags-in-privacy-policies)
 
-Data Collection: What Are You Sharing?
+Data Collection - What Are You Sharing?
 
 Apple Watch collects:
 - Heart rate (beats per minute, irregular rhythm detection)
@@ -63,7 +63,7 @@ Samsung Galaxy Watch:
 - Samsung Health logs (medication, mood, weight)
 - Skin impedance (via ECG sensor)
 
-Data point example: Your Fitbit records 12:47am you wake up, heart rate jumps to 110bpm, data shows 47-minute wakefulness, then sleep at 1:34am. This isn't "steps and calories." It's intimate physiological data revealing medical events.
+Data point example - Your Fitbit records 12:47am you wake up, heart rate jumps to 110bpm, data shows 47-minute wakefulness, then sleep at 1:34am. This isn't "steps and calories." It's intimate physiological data revealing medical events.
 
 How Companies Use Your Health Data
 
@@ -140,7 +140,7 @@ Minimize data collection:
    Watch Settings → Privacy → Location
    → Turn OFF location services
    ```
-Downside: Outdoor workout maps won't work.
+Downside - Outdoor workout maps won't work.
 
 2. Disable Siri on lock screen:
  ```
@@ -207,7 +207,7 @@ Fitbit Premium shows detailed insights (but requires more data access).
    Fitbit App → Profile → Connected Apps
    → Google Fit → Disconnect or set to "manual sync only"
    ```
-Prevents automatic sync to Google's ecosystem.
+Prevents automatic sync to Google's environment.
 
 5. Reduce app permissions:
  ```
@@ -240,7 +240,7 @@ Minimize data collection:
    ```
 Forces manual USB sync only.
 
-Alternatives: Privacy-Hardened Trackers
+Alternatives - Privacy-Hardened Trackers
 
 Withings (Nokia Health):
 - Transparent privacy policy
@@ -261,7 +261,7 @@ Whoop Band:
 - Proprietary focus (HRV, strain, recovery metrics)
 - Data not shared with health insurance or employers
 - Whoop claims they don't sell data
-- Downside: Expensive ($30/month), proprietary ecosystem
+- Downside: Expensive ($30/month), proprietary environment
 - Cost: $30/month subscription
 
 Libre 2 (DIY glucose monitor):
@@ -269,7 +269,7 @@ Libre 2 (DIY glucose monitor):
 - Now used by biohackers for continuous glucose monitoring
 - Can break DRM and upload to open-source platforms
 - Downside: Not a general fitness tracker
-- Cost: $40/sensor (vs. $5,000/month for traditional CGM)
+- Cost - $40/sensor (vs. $5,000/month for traditional CGM)
 
 Barefoot tracker (DIY option):
 - Build your own wearable with Arduino + sensors
@@ -299,7 +299,7 @@ If you don't want to change devices:
  - Disable cloud backup
  - Use airplane mode except during workouts
 
-2. Separate health ecosystem:
+2. Separate health environment:
  - Don't link Fitbit to Google, Apple, Amazon
  - Don't participate in employer wellness programs that share individual data
  - Opt out of research studies
@@ -325,7 +325,7 @@ Even if using US companies, if you're in EU:
 
 1. Right to access: Request all data company holds on you
  ```
-   Email: privacy@fitbit.com (or Apple, Garmin)
+   Email - privacy@fitbit.com (or Apple, Garmin)
    Subject: GDPR Article 15 - Data Access Request
    Body: "Please provide all personal data you hold about me"
    → Must respond within 30 days
@@ -351,13 +351,13 @@ Even if using US companies, if you're in EU:
 
 Regulatory Space (2026)
 
-California (CPRA): Health data treated as sensitive personal information. Companies must disclose health data sharing.
+California (CPRA) - Health data treated as sensitive personal information. Companies must disclose health data sharing.
 
-New York (SHIELD Act): Biometric data (like fitness data) requires explicit consent before collection.
+New York (SHIELD Act) - Biometric data (like fitness data) requires explicit consent before collection.
 
-Federal (pending): No US health privacy law yet, but bills have been proposed (e.g., HEALTH Act) that would create national standards similar to HIPAA.
+Federal (pending) - No US health privacy law yet, but bills have been proposed (e.g., HEALTH Act) that would create national standards similar to HIPAA.
 
-Europe (GDPR): Strongest: health data is "special category" data, requires explicit consent to process.
+Europe (GDPR) - Strongest - health data is "special category" data, requires explicit consent to process.
 
 Red Flags in Privacy Policies
 

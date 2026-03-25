@@ -44,11 +44,11 @@ certtool --generate-privkey --key-type ed25519 --outfile server-key.pem
 Generate a self-signed certificate for testing
 certtool --generate-self-signed --load-privkey server-key.pem \
   --outfile server-cert.pem <<'EOF'
-Country name: US
-State: CA
-Locality: San Francisco
-Organization: Example Corp
-Common name: server.example.com
+Country name - US
+State - CA
+Locality - San Francisco
+Organization - Example Corp
+Common name - server.example.com
 Does the certificate belong to an authority? no
 Is this a TLS web server certificate? yes
 Enter the dnsName of the subject of the certificate: server.example.com
@@ -103,7 +103,7 @@ gnutls-cli --list server.example.com
 
 ---
 
-C Integration: Minimal TLS Client
+C Integration - Minimal TLS Client
 
 ```c
 /* tls_client.c. GnuTLS 3.x minimal client */
@@ -211,7 +211,7 @@ from gnutls.library.functions import *
 from gnutls.crypto import *
 import socket
 
-Simpler approach: use Python's ssl module (backed by GnuTLS on Debian/Ubuntu)
+Simpler approach - use Python's ssl module (backed by GnuTLS on Debian/Ubuntu)
 import ssl
 
 def create_gnutls_context(cafile=None, certfile=None, keyfile=None,

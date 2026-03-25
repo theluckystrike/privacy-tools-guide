@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cloud DLP for Google Workspace Guide 2026"
-description: "Deploy Google Cloud DLP across Workspace: inspection templates, de-identification configs, alerting rules, and API integration examples for 2026."
+description: "Deploy Google Cloud DLP across Workspace - inspection templates, de-identification configs, alerting rules, and API integration examples for 2026."
 date: 2026-03-20
 last_modified_at: 2026-03-20
 author: "Privacy Tools Guide"
@@ -21,7 +21,7 @@ Google Workspace administrators face increasing pressure to protect sensitive da
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Advanced Configuration: Context-Aware Rules](#advanced-configuration-context-aware-rules)
+- [Advanced Configuration - Context-Aware Rules](#advanced-configuration-context-aware-rules)
 - [Compliance Reporting](#compliance-reporting)
 - [Advanced DLP Configuration Examples](#advanced-dlp-configuration-examples)
 - [Threat Model Considerations](#threat-model-considerations)
@@ -40,19 +40,19 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Cloud DLP in Google Workspace
+Step 1 - Understand Cloud DLP in Google Workspace
 
 Cloud DLP operates as a content inspection engine that scans stored and transmitted data for sensitive information patterns. The service identifies credit card numbers, Social Security numbers, API keys, passwords, and custom regex patterns you define. Unlike traditional endpoint solutions, Cloud DLP works directly within Google's infrastructure, providing consistent coverage across all Workspace services.
 
 The system supports two primary modes: inspection rules that flag violations and automatic actions that quarantine or redact sensitive content. Administrators configure rules through the Google Admin console or programmatically via the Cloud DLP API. This dual approach enables both alerting workflows and automated protection without manual intervention.
 
-Step 2: Set Up Your First DLP Rule
+Step 2 - Set Up Your First DLP Rule
 
 Begin by accessing the Security > Data protection section in Google Admin. Create a new DLP rule and define the content types you want to detect. For credit card detection, Cloud DLP provides pre-built detectors that validate checksums and identify card formats. Custom detectors accept regular expressions for organization-specific patterns like internal project codes or employee IDs.
 
-Consider starting with detection-only rules to understand your data ecosystem before enabling remediation. This approach reduces false positive fatigue and helps refine detector accuracy. Review the incidents panel weekly during the initial deployment to tune rule sensitivity and exception lists.
+Consider starting with detection-only rules to understand your data environment before enabling remediation. This approach reduces false positive fatigue and helps refine detector accuracy. Review the incidents panel weekly during the initial deployment to tune rule sensitivity and exception lists.
 
-Step 3: Practical Configuration Examples
+Step 3 - Practical Configuration Examples
 
 Email Attachment Scanning
 
@@ -82,7 +82,7 @@ pattern: "[A-Z]{2,}-[0-9]{4,}-[A-Z0-9]{8,}"
 
 Create a rule that triggers when these patterns appear in email body text or document content. Set actions to warn users and log incidents for security team review. This detection capability extends protection beyond standard credential types to organization-specific secrets.
 
-Step 4: Integration with Existing Workflows
+Step 4 - Integration with Existing Workflows
 
 Connect Cloud DLP alerts to your incident response platform using Google Workspace Alert Center API. The API enables programmatic access to DLP violation events, allowing integration with SIEM systems or custom notification workflows. Build automated responses that trigger when specific sensitive data types are detected.
 
@@ -101,13 +101,13 @@ curl -X GET \
 
 Developers can extend this pattern to create custom dashboards, escalation workflows, or automated remediation scripts.
 
-Step 5: Tuning and Optimization
+Step 5 - Tuning and Optimization
 
 False positives plague new DLP deployments. Address this through careful detector configuration and exception management. Create exclusion lists for safe patterns like test data or sample formats. Adjust minimum match confidence thresholds to reduce low-confidence alerts that consume analyst time.
 
 Monitor detection trends weekly during the first month, then monthly thereafter. Identify categories with high alert volumes and evaluate whether rule refinement or user training addresses the root cause. Many organizations find that employee education reduces accidental sensitive data exposure more effectively than strict blocking policies.
 
-Advanced Configuration: Context-Aware Rules
+Advanced Configuration - Context-Aware Rules
 
 Context-aware DLP applies different policies based on message attributes. Combine sender, recipient, and subject line analysis with content inspection. A rule might require stronger protection for emails containing financial data sent to external domains while allowing internal financial discussions with lighter controls.
 
@@ -219,7 +219,7 @@ Cloud DLP addresses several distinct threat vectors:
 | Regex pattern disclosure | MEDIUM | Custom detector rules | Exception management |
 | Metadata correlation attacks | LOW | Activity logging | Separate audit retention |
 
-Step 6: Plan Incident Response Workflow
+Step 6 - Plan Incident Response Workflow
 
 Configure automated response workflows when DLP violations occur:
 
@@ -248,12 +248,12 @@ workflow_steps:
      timeout: "4_hours"
 ```
 
-Step 7: Rule Tuning and Optimization
+Step 7 - Rule Tuning and Optimization
 
 Initial deployments often struggle with false positive rates. Implement a systematic tuning approach:
 
 ```bash
-Week 1-2: Detection-only mode
+Week 1-2 - Detection-only mode
 Collect baseline data on detection patterns
 
 Query incident data programmatically
@@ -268,8 +268,8 @@ gcloud dlp deidentify \
   }'
 
 Analyze patterns and adjust thresholds
-Week 3-4: Enable remediation on highest-confidence patterns only
-Week 5+: Progressively expand scope based on refined thresholds
+Week 3-4 - Enable remediation on highest-confidence patterns only
+Week 5+ - Progressively expand scope based on refined thresholds
 ```
 
 Integration Patterns for Enterprise Environments

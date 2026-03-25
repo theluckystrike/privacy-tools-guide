@@ -35,31 +35,31 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What Exactly is a DNS Leak?
+Step 1 - What Exactly is a DNS Leak?
 
 Every time you visit a website, your computer needs to translate a human-readable domain name (like example.com) into an IP address. This translation happens through DNS (Domain Name System) servers. Normally, when you're not using a VPN, your device sends DNS queries to your ISP's DNS servers, giving them a complete log of every website you visit.
 
 When you connect to a VPN, the expectation is that all your DNS queries get routed through the VPN's encrypted tunnel to the VPN provider's DNS servers. Your ISP shouldn't see any of this traffic. However, due to various technical issues, your device might inadvertently send some DNS queries outside the VPN tunnel, directly to your ISP or other third-party DNS servers. This is a DNS leak.
 
-The danger is real: even with military-grade encryption on your VPN traffic, a DNS leak exposes your browsing history. Your ISP knows exactly which domains you visited, defeating the purpose of using a VPN for privacy.
+The danger is real - even with military-grade encryption on your VPN traffic, a DNS leak exposes your browsing history. Your ISP knows exactly which domains you visited, defeating the purpose of using a VPN for privacy.
 
 Why Do DNS Leaks Happen?
 
 Several factors can cause DNS leaks:
 
-IPv6 Compatibility Issues: IPv6 is the newer internet protocol, but many VPNs don't properly handle IPv6 traffic. If your device prefers IPv6 and your VPN only routes IPv4, your DNS queries for IPv6 addresses can leak outside the tunnel.
+IPv6 Compatibility Issues - IPv6 is the newer internet protocol, but many VPNs don't properly handle IPv6 traffic. If your device prefers IPv6 and your VPN only routes IPv4, your DNS queries for IPv6 addresses can leak outside the tunnel.
 
-Default Gateway Problems: Some operating systems have a default gateway configuration that doesn't properly route all traffic through the VPN. This is particularly common on Windows.
+Default Gateway Problems - Some operating systems have a default gateway configuration that doesn't properly route all traffic through the VPN. This is particularly common on Windows.
 
-Split Tunneling Misconfiguration: When only certain apps use the VPN while others bypass it, DNS queries from non-VPN apps can leak.
+Split Tunneling Misconfiguration - When only certain apps use the VPN while others bypass it, DNS queries from non-VPN apps can leak.
 
-VPN Protocol Weaknesses: Some VPN protocols have known issues that can cause leaks under certain network conditions.
+VPN Protocol Weaknesses - Some VPN protocols have known issues that can cause leaks under certain network conditions.
 
-Step 2: How to Test for DNS Leaks
+Step 2 - How to Test for DNS Leaks
 
 Testing for DNS leaks is straightforward. Here's how to do it:
 
-Method 1: Using Online DNS Leak Test Services
+Method 1 - Using Online DNS Leak Test Services
 
 The easiest approach is using dedicated DNS leak test websites:
 
@@ -67,9 +67,9 @@ The easiest approach is using dedicated DNS leak test websites:
 2. Visit a DNS leak test site like [dnsleaktest.com](https://dnsleaktest.com) or [ipleak.net](https://ipleak.net)
 3. Run the extended test
 
-What to look for: The test results should show DNS servers that belong to your VPN provider, not your ISP. If you see your ISP's servers or servers in your physical location, you have a DNS leak.
+What to look for - The test results should show DNS servers that belong to your VPN provider, not your ISP. If you see your ISP's servers or servers in your physical location, you have a DNS leak.
 
-Method 2: Manual DNS Check
+Method 2 - Manual DNS Check
 
 You can also verify which DNS servers your system is using:
 
@@ -89,7 +89,7 @@ ipconfig /all | findstr "DNS Servers"
 
 Compare the DNS servers shown with what your VPN provider advertises. If they don't match, you have a leak.
 
-Method 3: Using Terminal Commands for Detailed Analysis
+Method 3 - Using Terminal Commands for Detailed Analysis
 
 For more thorough testing, use these commands:
 
@@ -110,7 +110,7 @@ Or check current DNS configuration
 cat /etc/resolv.conf
 ```
 
-Step 3: Fixing DNS Leaks
+Step 3 - Fixing DNS Leaks
 
 If you've detected a DNS leak, here's how to fix it:
 
@@ -191,7 +191,7 @@ Some protocols are more prone to leaks than others. Try switching:
 
 Avoid PPTP or older protocols that have known security issues.
 
-Step 4: Test After Fixes
+Step 4 - Test After Fixes
 
 After implementing fixes, verify your VPN is no longer leaking:
 
@@ -202,7 +202,7 @@ After implementing fixes, verify your VPN is no longer leaking:
 
 Repeat tests at different times of day and on different networks to ensure the fix is consistent.
 
-Step 5: What to Do If Your VPN Still Leaks
+Step 5 - What to Do If Your VPN Still Leaks
 
 If you've tried everything and your VPN still leaks:
 

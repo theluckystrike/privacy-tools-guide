@@ -19,10 +19,10 @@ tags: [privacy-tools-guide, encryption]
 Table of Contents
 
 - [Introduction](#introduction)
-- [Session: Decentralized Messaging Without Identifiers](#session-decentralized-messaging-without-identifiers)
-- [SimpleX: Zero-Identifier Architecture](#simplex-zero-identifier-architecture)
-- [Matrix: Federated Control](#matrix-federated-control)
-- [Briar: Mesh-Network Messaging](#briar-mesh-network-messaging)
+- [Session - Decentralized Messaging Without Identifiers](#session-decentralized-messaging-without-identifiers)
+- [SimpleX - Zero-Identifier Architecture](#simplex-zero-identifier-architecture)
+- [Matrix - Federated Control](#matrix-federated-control)
+- [Briar - Mesh-Network Messaging](#briar-mesh-network-messaging)
 - [Comparing Metadata Resistance](#comparing-metadata-resistance)
 - [Implementation Recommendations](#implementation-recommendations)
 
@@ -32,7 +32,7 @@ Signal remains the gold standard for end-to-end encrypted messaging, but its pho
 
 This guide covers Signal alternatives that provide genuine end-to-end encryption without forcing you to surrender a phone number. We'll examine the technical architecture, security properties, and practical integration options for each platform.
 
-Session: Decentralized Messaging Without Identifiers
+Session - Decentralized Messaging Without Identifiers
 
 Session operates on the Signal Protocol but removes phone numbers entirely. Instead, it uses an onion-routing network called Lokinet and assigns users cryptographic public keys as identifiers.
 
@@ -67,7 +67,7 @@ Session has some trade-offs worth understanding:
 - Limited bot API compared to Matrix
 - No video calling yet
 
-SimpleX: Zero-Identifier Architecture
+SimpleX - Zero-Identifier Architecture
 
 SimpleX Chat takes a radical approach by eliminating persistent identifiers entirely. There are no user IDs, usernames, or any way to identify users across conversations.
 
@@ -101,9 +101,9 @@ SimpleX has grown substantially in 2025-2026:
 
 The main limitation is network effect, convincing contacts to switch requires motivation, but for privacy-sensitive communications, the architecture justifies the effort.
 
-Matrix: Federated Control
+Matrix - Federated Control
 
-Matrix offers the most developer-friendly ecosystem. While it doesn't require phone numbers, it does require choosing a homeserver, picking who hosts your data.
+Matrix offers the most developer-friendly environment. While it doesn't require phone numbers, it does require choosing a homeserver, picking who hosts your data.
 
 Setting Up a Privacy-Focused Client
 
@@ -131,7 +131,7 @@ Matrix supports end-to-end encryption via the Olm/Megolm protocol. Enable it in 
 /verify @username:server.com device-id
 ```
 
-Advanced: Integrating with External Networks
+Advanced - Integrating with External Networks
 
 Matrix excels at bridging. The community maintains bridges for:
 
@@ -156,7 +156,7 @@ client.on("room.message", (roomId, event) => {
 
 The ability to bridge multiple platforms while maintaining E2EE within Matrix makes it powerful for managing communications across services.
 
-Briar: Mesh-Network Messaging
+Briar - Mesh-Network Messaging
 
 Briar operates differently from all other options, it doesn't connect to traditional servers. Instead, it creates direct peer-to-peer connections using Wi-Fi or Bluetooth, or routes through Tor.
 
@@ -206,7 +206,7 @@ Implementation Recommendations
 For developers building privacy-focused applications:
 
 1. Use Matrix for team collaboration, federation and bridges provide the most flexibility
-2. Use Session for direct messaging where metadata resistance is paramount
+2. Use Session for direct messaging where metadata resistance is essential
 3. Use SimpleX for threat models requiring zero-identifier architecture
 4. Use Briar for scenarios requiring offline-first, mesh-network communication
 

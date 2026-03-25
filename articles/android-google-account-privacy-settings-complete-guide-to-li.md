@@ -24,7 +24,7 @@ Table of Contents
 - [Prerequisites](#prerequisites)
 - [Web and Cross-Device Activity](#web-and-cross-device-activity)
 - [Payments and Transaction Tracking](#payments-and-transaction-tracking)
-- [Going Further: Advanced Privacy Measures](#going-further-advanced-privacy-measures)
+- [Going Further - Advanced Privacy Measures](#going-further-advanced-privacy-measures)
 - [Biometric and Authentication Privacy](#biometric-and-authentication-privacy)
 - [Troubleshooting](#troubleshooting)
 
@@ -38,7 +38,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand What Google Collects
+Step 1 - Understand What Google Collects
 
 Before adjusting settings, it helps to understand the scope of data collection. Google maintains extensive records across several categories:
 
@@ -50,7 +50,7 @@ App Activity tracks how you use individual apps, including how often you open th
 
 Ad Personalization uses all this collected data to serve targeted advertisements and builds an advertising profile.
 
-Step 2: Access Your Google Account Controls
+Step 2 - Access Your Google Account Controls
 
 The primary control center for your Google privacy settings lives in your Google account. On your Android device:
 
@@ -60,7 +60,7 @@ The primary control center for your Google privacy settings lives in your Google
 
 This dashboard provides access to all the major data collection controls. Take time to review each section systematically.
 
-Step 3: Disable Location History
+Step 3 - Disable Location History
 
 Location History is one of the most invasive tracking features. When enabled, Google creates a detailed timeline of everywhere you go.
 
@@ -77,7 +77,7 @@ Even after disabling Location History, your phone still needs location access fo
 - Review which apps have location permission and restrict them to "While using" only
 - Use airplane mode when you do not need any connectivity
 
-Step 4: Manage Activity Controls
+Step 4 - Manage Activity Controls
 
 Google defaults to broad activity tracking. You can disable most of it:
 
@@ -99,7 +99,7 @@ Voice Recording allows Google to store voice commands.
 2. Review and delete existing recordings
 3. Turn off storage if you do not need voice assistant functionality
 
-Step 5: Manage Contacts and People Suggestions
+Step 5 - Manage Contacts and People Suggestions
 
 Google's People and Contacts services create detailed social graphs linking you to other users. This data informs recommendations, suggests connections, and tracks your social relationships.
 
@@ -112,9 +112,9 @@ To limit People suggestions:
 
 When you sync contacts with Google, every contact in your phone becomes part of Google's social network database. Each contact is analyzed for patterns, communication frequency, and shared interests. If your contact also uses Google services, Google knows you have a relationship with them.
 
-Step 6: Control Ad Personalization
+Step 6 - Control Ad Personalization
 
-Google's advertising ecosystem profits from your data, but you can opt out of personalized ads:
+Google's advertising environment profits from your data, but you can opt out of personalized ads:
 
 1. Go to Ad settings in your Google account
 2. Toggle off Ad personalization
@@ -122,7 +122,7 @@ Google's advertising ecosystem profits from your data, but you can opt out of pe
 
 This does not stop Google from collecting data, but it prevents that data from being used to serve targeted advertisements. You will still see ads, but they will be less relevant to your interests. Keep in mind that advertisers still know about your account; this just reduces behavioral targeting specifically.
 
-Step 7: Gmail Scanning and Conversation Analysis
+Step 7 - Gmail Scanning and Conversation Analysis
 
 Google analyzes your Gmail conversations to understand your interests and build profiles. This extends beyond individual recipients to full conversation content analysis.
 
@@ -133,7 +133,7 @@ To reduce email scanning:
 3. Review Gmail Settings > History & Search to understand what's been indexed
 4. Understand that email encryption (S/MIME) prevents Google from reading content, but metadata (sender, recipient, timing) is still visible
 
-Step 8: Review Third-Party App Permissions
+Step 8 - Review Third-Party App Permissions
 
 Many apps request access to your Google data during installation. Over time, you may have granted more access than intended.
 
@@ -145,7 +145,7 @@ To review app permissions:
 
 Pay particular attention to apps that have access to your location data, contacts, or drive files. Revoke permissions for apps that do not need them.
 
-Step 9: Use Google's Data Export and Deletion Tools
+Step 9 - Use Google's Data Export and Deletion Tools
 
 Google provides tools to see what data they have collected and to request deletion:
 
@@ -166,7 +166,7 @@ Delete outdated services removes data from services you no longer use:
 1. Find this option in your account settings
 2. Review and delete data from old services like Google+ or Play Music
 
-Step 10: Android-Specific Privacy Settings
+Step 10 - Android-Specific Privacy Settings
 
 Beyond your Google account, your Android device has additional privacy controls:
 
@@ -215,7 +215,7 @@ To reduce transaction tracking:
 
 Keep in mind that even deleted transaction records may exist in Google's backup systems for compliance purposes, but your account won't reference them.
 
-Step 11: Network and Bandwidth Optimization Features
+Step 11 - Network and Bandwidth Optimization Features
 
 Google uses Analytics Collection Services to improve network performance. While beneficial for users, this feature also reveals your bandwidth patterns.
 
@@ -228,7 +228,7 @@ To disable network analytics:
 
 This step requires caution because overly restrictive permissions may break legitimate functionality.
 
-Going Further: Advanced Privacy Measures
+Going Further - Advanced Privacy Measures
 
 For users who want additional privacy layers beyond the standard settings:
 
@@ -256,7 +256,7 @@ To manage biometric data:
 
 Biometric templates are particularly sensitive because they cannot be changed like passwords. Once compromised, your biometric is permanently exposed.
 
-Step 12: Ambient Content Recognition
+Step 12 - Ambient Content Recognition
 
 Android devices analyze surrounding sounds and images without explicit user action. This "ambient recognition" powers features like Now Playing (identifies songs playing nearby).
 
@@ -269,7 +269,7 @@ To disable ambient recognition:
 
 This feature runs continuously in the background, even when you're not actively using your phone. Disabling it improves both privacy and battery life.
 
-Step 13: Monitor Your Privacy Progress
+Step 13 - Monitor Your Privacy Progress
 
 After implementing these settings, periodically verify your privacy posture:
 
@@ -287,7 +287,7 @@ adb shell dumpsys activity processes | grep "google"
 
 Use these checks quarterly to ensure privacy settings haven't reset. Android updates sometimes reset custom privacy configurations, so verification matters. Create a baseline after initial configuration, then compare quarterly to detect unexpected changes.
 
-Step 14: YouTube and Video Consumption Privacy
+Step 14 - YouTube and Video Consumption Privacy
 
 YouTube's video recommendation algorithm collects extensive data about your viewing patterns, watch duration, rewatches, and searches. This data builds psychological profiles beyond simple interest modeling.
 
@@ -346,6 +346,6 @@ Related Articles
 - [Use Android Without Google Play Services](/how-to-use-android-without-google-play-services-alternative-stores/)
 - [Tinder Privacy Settings What Personal Data The App Collects](/tinder-privacy-settings-what-personal-data-the-app-collects-/)
 - [Notion AI vs Google Docs AI: Complete Writing Features](https://bestremotetools.com/notion-ai-writing-features-vs-google-docs-ai-compared/)
-The settings in this guide represent the most impactful changes you can make without abandoning Google services entirely. For those seeking even greater privacy, alternatives to Google's ecosystem exist, but they come with significant trade-offs in convenience and functionality. The key is understanding the trade-offs and making deliberate choices rather than accepting Google's defaults passively.
+The settings in this guide represent the most impactful changes you can make without abandoning Google services entirely. For those seeking even greater privacy, alternatives to Google's environment exist, but they come with significant trade-offs in convenience and functionality. The key is understanding the trade-offs and making deliberate choices rather than accepting Google's defaults passively.
 
 Built by theluckystrike. More at [zovo.one](https://zovo.one)

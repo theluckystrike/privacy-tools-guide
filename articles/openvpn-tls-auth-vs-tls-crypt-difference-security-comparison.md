@@ -19,7 +19,7 @@ Choose `tls-crypt` if you need maximum security -- it encrypts and authenticates
 
 Table of Contents
 
-- [Understanding the Baseline: TLS Encryption in OpenVPN](#understanding-the-baseline-tls-encryption-in-openvpn)
+- [Understanding the Baseline - TLS Encryption in OpenVPN](#understanding-the-baseline-tls-encryption-in-openvpn)
 - [What is tls-auth?](#what-is-tls-auth)
 - [What is tls-crypt?](#what-is-tls-crypt)
 - [Security Comparison](#security-comparison)
@@ -36,7 +36,7 @@ Table of Contents
 - [Integration with Modern TLS](#integration-with-modern-tls)
 - [Operational Recommendations](#operational-recommendations)
 
-Understanding the Baseline: TLS Encryption in OpenVPN
+Understanding the Baseline - TLS Encryption in OpenVPN
 
 OpenVPN uses TLS for key exchange and authentication by default. The TLS protocol provides confidentiality and integrity through symmetric encryption (typically AES-256-GCM or AES-256-CBC) and digital signatures. However, the default TLS implementation in OpenVPN has a vulnerability: an attacker can perform TLS fingerprinting, denial-of-service attacks, or attempt to exploit TLS implementation bugs without establishing a full connection.
 
@@ -206,8 +206,8 @@ Capture traffic with tls-crypt
 sudo tcpdump -i any -n 'port 1194' -w tls-crypt.pcap
 
 Analyze in Wireshark
-With tls-auth: Can see TLS record structure, cipher suites
-With tls-crypt: See only encrypted payload, no TLS signatures
+With tls-auth - Can see TLS record structure, cipher suites
+With tls-crypt - See only encrypted payload, no TLS signatures
 ```
 
 Packet Structure Comparison
@@ -221,7 +221,7 @@ tls-auth packet:
 
  TLS Extensions       Visible version info
 
-Network observer can: Identify OpenVPN, determine TLS version, find exploits
+Network observer can - Identify OpenVPN, determine TLS version, find exploits
 
 tls-crypt packet:
 
@@ -229,7 +229,7 @@ tls-crypt packet:
 
  Authentication Tag   Poly1305 (8 bytes)
 
-Network observer sees: Random-looking data, cannot determine protocol
+Network observer sees - Random-looking data, cannot determine protocol
 ```
 
 Denial-of-Service Protection Mechanics
@@ -261,10 +261,10 @@ Quantifying the difference:
 CPU cycles required
 tls-auth verification: ~1000 cycles (HMAC-SHA256)
 tls-crypt verification: ~100 cycles (ChaCha20 validation)
-Full TLS handshake: ~1,000,000 cycles
+Full TLS handshake - ~1,000,000 cycles
 
-With tls-auth: Attacker can trigger 1000s of TLS handshakes/sec
-With tls-crypt: Server rejects 10,000s of invalid packets/sec
+With tls-auth - Attacker can trigger 1000s of TLS handshakes/sec
+With tls-crypt - Server rejects 10,000s of invalid packets/sec
 ```
 
 Static Key Rotation Strategy
@@ -364,7 +364,7 @@ Real-world performance comparison:
 #!/bin/bash
 Benchmark OpenVPN modes
 
-Test setup: 10 Gbps network, Intel Xeon processor
+Test setup - 10 Gbps network, Intel Xeon processor
 
 benchmarks() {
     for mode in "none" "tls-auth" "tls-crypt"; do

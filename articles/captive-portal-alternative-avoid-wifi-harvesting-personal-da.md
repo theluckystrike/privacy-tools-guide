@@ -21,12 +21,12 @@ Every time you connect to public WiFi at airports, hotels, or coffee shops, you 
 Table of Contents
 
 - [Understanding Captive Portal Data Collection](#understanding-captive-portal-data-collection)
-- [Method 1: Pre-Authentication Probe](#method-1-pre-authentication-probe)
-- [Method 2: DNS Tunneling](#method-2-dns-tunneling)
-- [Method 3: HTTPS Tunnel with Port 443](#method-3-https-tunnel-with-port-443)
-- [Method 4: HTTP/3 (QUIC) Bypass](#method-4-http3-quic-bypass)
-- [Method 5: Mobile Hotspot from Another Device](#method-5-mobile-hotspot-from-another-device)
-- [Method 6: VPN with Obfuscation](#method-6-vpn-with-obfuscation)
+- [Method 1 - Pre-Authentication Probe](#method-1-pre-authentication-probe)
+- [Method 2 - DNS Tunneling](#method-2-dns-tunneling)
+- [Method 3 - HTTPS Tunnel with Port 443](#method-3-https-tunnel-with-port-443)
+- [Method 4 - HTTP/3 (QUIC) Bypass](#method-4-http3-quic-bypass)
+- [Method 5 - Mobile Hotspot from Another Device](#method-5-mobile-hotspot-from-another-device)
+- [Method 6 - VPN with Obfuscation](#method-6-vpn-with-obfuscation)
 - [Defending Against WiFi Tracking](#defending-against-wifi-tracking)
 - [Selecting the Right Method](#selecting-the-right-method)
 - [Advanced Captive Portal Detection and Evasion](#advanced-captive-portal-detection-and-evasion)
@@ -44,7 +44,7 @@ The business model behind "free" public WiFi increasingly relies on monetizing u
 
 For developers and power users, the challenge is obtaining network access without creating a data trail. The following methods provide practical alternatives.
 
-Method 1: Pre-Authentication Probe
+Method 1 - Pre-Authentication Probe
 
 Many captive portals only activate for HTTP traffic on port 80. HTTPS connections on port 443 sometimes bypass the interception entirely, allowing access to services that support TLS. This works because captive portals typically perform transparent HTTP proxying but cannot easily intercept encrypted traffic without breaking TLS certificates, which would trigger browser warnings.
 
@@ -52,13 +52,13 @@ Test this method by attempting to access an HTTPS endpoint directly:
 
 ```bash
 Test if HTTPS bypasses captive portal
-curl -I https://1.1.1.1/dns-query -H "Host: cloudflare-dns.com"
+curl -I https://1.1.1.1/dns-query -H "Host - cloudflare-dns.com"
 curl -I https://dns.google/resolve -H "Host: dns.google"
 ```
 
 If these requests succeed without captive portal interception, you can use encrypted DNS over HTTPS or VPN protocols that tunnel through port 443. The DNS queries above use DoH (DNS over HTTPS) which many networks fail to block.
 
-Method 2: DNS Tunneling
+Method 2 - DNS Tunneling
 
 DNS tunneling encapsulates traffic within DNS queries and responses. Since DNS must work for basic network functionality, networks rarely block all DNS traffic. Tools like dnscat2 and iodine create tunnels that bypass captive portals entirely.
 
@@ -89,7 +89,7 @@ Connect to your server
 
 Once connected, you can tunnel SSH, HTTP, or any TCP traffic through the DNS channel. The network only sees DNS queries, which it cannot easily block without preventing all internet access.
 
-Method 3: HTTPS Tunnel with Port 443
+Method 3 - HTTPS Tunnel with Port 443
 
 Many captive portals fail to inspect traffic on port 443 because deep packet inspection adds latency and complexity. By running your own HTTPS server or using established protocols that use port 443, you can often bypass captive portal restrictions.
 
@@ -119,7 +119,7 @@ ssh -D 1080 -N -f user@your-server.com -p 443
 Configure system or browser to use localhost:1080 as SOCKS proxy
 ```
 
-Method 4: HTTP/3 (QUIC) Bypass
+Method 4 - HTTP/3 (QUIC) Bypass
 
 HTTP/3 uses QUIC protocol over UDP instead of TCP, and many captive portals written for TCP interception cannot handle QUIC traffic. If a network blocks QUIC, it risks breaking legitimate services, causing support issues that networks want to avoid.
 
@@ -135,7 +135,7 @@ HTTP/3 is enabled by default in Chrome. Verify at `chrome://quic-internals`.
 
 Once enabled, attempt to access websites that support HTTP/3. Cloudflare-enabled sites and Google services typically support this protocol, potentially allowing access without captive portal interaction.
 
-Method 5: Mobile Hotspot from Another Device
+Method 5 - Mobile Hotspot from Another Device
 
 Using a mobile phone as a hotspot provides the most reliable bypass of captive portals. Your cellular connection has no splash page or data harvesting, though you should verify your mobile carrier's privacy policy regarding location data and usage patterns.
 
@@ -158,7 +158,7 @@ The device typically appears as usb0 or rndis0
 
 Mobile hotspots consume cellular data but provide complete bypass of network-level data harvesting.
 
-Method 6: VPN with Obfuscation
+Method 6 - VPN with Obfuscation
 
 Standard VPN protocols (OpenVPN, WireGuard) often get blocked on public networks because networks identify VPN traffic through DPI (deep packet inspection). Obfuscated VPN protocols disguise VPN traffic as regular HTTPS, making detection and blocking significantly harder.
 
@@ -227,7 +227,7 @@ http://www.apple.com/captive
 
 Windows uses:
 http://www.msftncsi.com/ncsi.txt
-Expected response: "Microsoft NCSI"
+Expected response - "Microsoft NCSI"
 ```
 
 Custom captive portal detection can be bypassed by intercepting these requests at the network level.
@@ -261,27 +261,27 @@ If the certificate check fails, the captive portal is attempting MITM, route aro
 
 Captive Portal Threat Models
 
-Threat Model 1: Data Collection
+Threat Model 1 - Data Collection
 
-Attack: Captive portal requests email, phone number, or social media login
+Attack - Captive portal requests email, phone number, or social media login
 
 Protection:
 - Use HTTPS bypass methods
 - Provide false credentials (test@test.com, 555-1234)
 - Use temporary email services (temp-mail.org, 10minutemail.com)
 
-Threat Model 2: Location Tracking
+Threat Model 2 - Location Tracking
 
-Attack: WiFi network owner logs MAC addresses and timestamps to track repeat visitors
+Attack - WiFi network owner logs MAC addresses and timestamps to track repeat visitors
 
 Protection:
 - Enable MAC address randomization (Android 6+, iOS 8+)
 - Use a separate device for public WiFi access
 - Rotate between multiple VPN providers
 
-Threat Model 3: Network-Level Surveillance
+Threat Model 3 - Network-Level Surveillance
 
-Attack: Captive portal network monitors traffic for credentials, payment info
+Attack - Captive portal network monitors traffic for credentials, payment info
 
 Protection:
 - All traffic through VPN or DNS tunnel

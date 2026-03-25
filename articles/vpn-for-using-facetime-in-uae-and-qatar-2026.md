@@ -267,7 +267,7 @@ class LatencyMonitor:
             avg_latency = sum(self.latencies) / len(self.latencies)
 
             if avg_latency > self.threshold_ms:
-                print(f"Warning: High latency ({avg_latency:.0f}ms)")
+                print(f"Warning - High latency ({avg_latency:.0f}ms)")
                 self.switch_server()  # Try different VPN server
             else:
                 print(f"Latency OK: {avg_latency:.0f}ms")

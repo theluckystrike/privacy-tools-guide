@@ -28,7 +28,7 @@ Table of Contents
 - [What To Do If Your Rights Are Violated](#what-to-do-if-your-rights-are-violated)
 - [Verifying VPN Leak Protection](#verifying-vpn-leak-protection)
 - [Split Tunneling Configuration](#split-tunneling-configuration)
-- [Threat Model Analysis: Library Privacy Risks](#threat-model-analysis-library-privacy-risks)
+- [Threat Model Analysis - Library Privacy Risks](#threat-model-analysis-library-privacy-risks)
 - [State-Level Privacy Protections](#state-level-privacy-protections)
 - [Legal Recourse and Advocacy Resources](#legal-recourse-and-advocacy-resources)
 - [Creating a Minimal Digital Footprint at Libraries](#creating-a-minimal-digital-footprint-at-libraries)
@@ -93,13 +93,13 @@ Practical Examples
 
 Consider these scenarios illustrating how library privacy actually works:
 
-Scenario 1: A warrant for circulation records
+Scenario 1 - A warrant for circulation records
 Police investigating a crime believe a suspect checked out materials related to the offense. They obtain a warrant from a judge. The library must comply and turn over the specific circulation records requested. The warrant typically limits the scope to particular dates and materials.
 
-Scenario 2: A subpoena for registration info
+Scenario 2 - A subpoena for registration info
 A civil lawsuit involves a patron who left a negative review of a business. The business serves a subpoena on the library seeking the patron's registration information. The library may challenge this in court or simply respond with the basic information required.
 
-Scenario 3: Subpoena quashing
+Scenario 3 - Subpoena quashing
 California patrons have successfully quashed subpoenas for their library records, arguing the requests were overly broad or violated state law. Libraries in states with strong privacy laws may fight on behalf of patron privacy.
 
 Protecting Your Library Privacy
@@ -210,33 +210,33 @@ nmcli connection modify "VPN-Name"   ipv4.routes "10.0.0.0/8"   ipv4.never-defau
 ```
 
 Use split tunneling for high-bandwidth streaming while keeping your browser and messaging apps tunneled. Never split-tunnel password managers or banking apps.
-Threat Model Analysis: Library Privacy Risks
+Threat Model Analysis - Library Privacy Risks
 
 Different user groups face different library privacy risks:
 
-Journalists and Researchers: Law enforcement may seek to identify sources or research targets. The most sensitive risk involves NSLs where you receive no notice. Best practices: use pseudonymous library cards, access research through secure library sessions, consider using Tor through library computers.
+Journalists and Researchers - Law enforcement may seek to identify sources or research targets. The most sensitive risk involves NSLs where you receive no notice. Best practices: use pseudonymous library cards, access research through secure library sessions, consider using Tor through library computers.
 
-Political Activists: Government surveillance may target reading patterns to identify organizers or movement participants. Library records showing interest in activism topics create evidence. Mitigation: use guest computer access, avoid placing holds on sensitive materials, use VPN tunneling through library WiFi.
+Political Activists - Government surveillance may target reading patterns to identify organizers or movement participants. Library records showing interest in activism topics create evidence. Mitigation - use guest computer access, avoid placing holds on sensitive materials, use VPN tunneling through library WiFi.
 
-Medical Privacy: Seeking health information may reveal conditions you prefer to keep private. If accessed from a monitored device or account, this creates a documented health profile. Solution: use anonymous library computer access, use VPN to mask queries, consider requesting materials directly from medical professionals rather than through libraries.
+Medical Privacy - Seeking health information may reveal conditions you prefer to keep private. If accessed from a monitored device or account, this creates a documented health profile. Solution - use anonymous library computer access, use VPN to mask queries, consider requesting materials directly from medical professionals rather than through libraries.
 
-Vulnerable Populations: Homeless individuals using libraries for internet access may have their location and activities documented. Immigration enforcement agents have targeted libraries. Marginalized communities should understand what library records might reveal about them.
+Vulnerable Populations - Homeless individuals using libraries for internet access may have their location and activities documented. Immigration enforcement agents have targeted libraries. Marginalized communities should understand what library records might reveal about them.
 
-High-Profile Individuals: Public figures maintaining privacy may use libraries for research. Their library activity could become public through subpoena or leaks. Consider: using completely anonymous access, researching sensitive topics through other channels.
+High-Profile Individuals - Public figures maintaining privacy may use libraries for research. Their library activity could become public through subpoena or leaks. Consider - using completely anonymous access, researching sensitive topics through other channels.
 
 State-Level Privacy Protections
 
 Several states have enacted privacy laws stronger than federal protections:
 
-California: Library records explicitly protected from disclosure without warrant or court order. Even subpoenas may be challengeable. Libraries must notify patrons when possible.
+California - Library records explicitly protected from disclosure without warrant or court order. Even subpoenas may be challengeable. Libraries must notify patrons when possible.
 
-Connecticut: One of the strongest protections, libraries cannot disclose records even with subpoena in many cases without specific court findings.
+Connecticut - One of the strongest protections, libraries cannot disclose records even with subpoena in many cases without specific court findings.
 
-New York: Libraries must fight overly broad requests and notify patrons of disclosure requests when possible.
+New York - Libraries must fight overly broad requests and notify patrons of disclosure requests when possible.
 
-Illinois: Libraries must have written policies on data retention and clearly communicate these to patrons.
+Illinois - Libraries must have written policies on data retention and clearly communicate these to patrons.
 
-Washington State: Protects both circulation and computer usage records.
+Washington State - Protects both circulation and computer usage records.
 
 Researchers and activists should understand their state's specific protections. Some states provide little additional protection beyond federal ECPA requirements.
 
@@ -249,7 +249,7 @@ American Library Association (ALA) Resources:
 - Freedom to Read Foundation: Provides legal resources and support
 - Library Bill of Rights: Establishes intellectual freedom principles
 
-State Library Associations: Each state has a library association advocacy group that:
+State Library Associations - Each state has a library association advocacy group that:
 - Monitors state legislation affecting library privacy
 - Provides model privacy policies
 - Offers training on privacy best practices
@@ -265,7 +265,7 @@ Legal Action Options:
 - Private lawsuits for damages (requires attorney)
 - Civil rights organizations may take on cases pro bono
 
-Document any privacy violations: dates, what information was disclosed, to whom, under what legal process. Detailed documentation strengthens any legal action.
+Document any privacy violations - dates, what information was disclosed, to whom, under what legal process. Detailed documentation strengthens any legal action.
 
 Creating a Minimal Digital Footprint at Libraries
 
@@ -302,16 +302,16 @@ Digital Tools for Enhanced Library Privacy
 
 Several tools provide additional privacy layers for library research:
 
-Tor Browser: If libraries permit, Tor Browser provides maximum anonymity for all web research conducted through library computers:
+Tor Browser - If libraries permit, Tor Browser provides maximum anonymity for all web research conducted through library computers:
 ```bash
 Verify Tor connection is working
-Visit: https://check.torproject.org/
+Visit - https://check.torproject.org/
 Should show "Congratulations" confirming Tor usage
 ```
 
-Temporary Operating Systems: Live USB distributions like Tails leave no persistent data on the library computer and automatically route all traffic through Tor.
+Temporary Operating Systems - Live USB distributions like Tails leave no persistent data on the library computer and automatically route all traffic through Tor.
 
-VPN Services: A quality VPN masks your IP address from library logs and provides additional encryption. Providers like Mullvad, ProtonVPN, and Windscribe are privacy-focused:
+VPN Services - A quality VPN masks your IP address from library logs and provides additional encryption. Providers like Mullvad, ProtonVPN, and Windscribe are privacy-focused:
 ```bash
 Connect to VPN before accessing library WiFi
 Verify VPN is working
@@ -319,7 +319,7 @@ curl https://ipleak.net/
 Should show VPN provider's IP, not your real IP
 ```
 
-Encrypted Note-Taking: If researching sensitive topics, use encrypted note applications (Standard Notes, Joplin with encryption) to keep notes private, even if accessed from library computers.
+Encrypted Note-Taking - If researching sensitive topics, use encrypted note applications (Standard Notes, Joplin with encryption) to keep notes private, even if accessed from library computers.
 
 Advocating for Better Library Privacy
 

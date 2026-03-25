@@ -28,17 +28,17 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Threat ecosystem
+Step 1 - Understand the Threat environment
 
 Elderly users face unique vulnerabilities. Many are unfamiliar with how websites authenticate, making fake login pages nearly indistinguishable from legitimate ones. Tech support scams remain prevalent, with scammers calling to be from Microsoft or Apple and convincing users to download remote access software. Investment fraud and lottery scams continue to drain savings from unsuspecting victims.
 
 The challenge lies in implementing protections without making technology unusable. Overly restrictive controls lead to frustration and defeat the purpose. The goal is defense in depth: multiple layers of protection that catch threats at different stages.
 
-Step 2: DNS-Level Filtering: Your First Line of Defense
+Step 2 - DNS-Level Filtering: Your First Line of Defense
 
 DNS filtering blocks requests to known malicious domains before they ever reach the browser. This approach works at the network level, protecting all devices without requiring individual configuration on each machine.
 
-Pi-hole: Network-Wide Ad and Tracker Blocking
+Pi-hole - Network-Wide Ad and Tracker Blocking
 
 Pi-hole acts as a DNS sinkhole, returning NXDOMAIN for requests to blocked lists. For elderly users, this blocks malicious domains and reduces clutter from advertising networks that often host scam content.
 
@@ -55,7 +55,7 @@ https://v.firebog.net/hosts/Prig-AI.txt
 https://v.firebog.net/hosts/Prig-CS.txt
 ```
 
-NextDNS: Cloud-Based Alternative
+NextDNS - Cloud-Based Alternative
 
 For users without local hardware, NextDNS provides cloud-based DNS filtering with similar capabilities. Create a free account, configure the blocking lists, and change the DNS servers on the target device:
 
@@ -66,7 +66,7 @@ networksetup -setdnsservers "Wi-Fi" 45.90.28.0 45.90.30.0
 
 NextDNS provides logs that show which domains were blocked, useful for identifying new threats targeting your family member.
 
-Step 3: Harden the Browser : Chromium-Based Browsers
+Step 3 - Harden the Browser : Chromium-Based Browsers
 
 For elderly users who primarily browse on desktop, hardening the browser configuration prevents many common attack vectors. Chrome, Edge, and Brave share similar configuration mechanisms through policies.
 
@@ -101,7 +101,7 @@ Configure uBlock Origin in "hard mode" by enabling "my filters" and adding rules
 ||*.xyz^$third-party
 ```
 
-Step 4: Scripting Automated Checks
+Step 4 - Scripting Automated Checks
 
 Automation can catch issues before they cause harm. The following scripts run as cron jobs to check for common problems.
 
@@ -169,7 +169,7 @@ if [ -d "$EXTENSIONS_DIR" ]; then
 fi
 ```
 
-Step 5: Remote Access and Monitoring
+Step 5 - Remote Access and Monitoring
 
 Sometimes elderly users need help, and providing controlled remote access is safer than giving them your password or walking them through complex steps.
 
@@ -202,7 +202,7 @@ Microsoft Family Safety and Apple Family Sharing provide parental control featur
 
 Configure these through family.microsoft.com or Apple ID family sharing settings.
 
-Step 6: Communication and Education
+Step 6 - Communication and Education
 
 Technical solutions work best combined with ongoing education. Set up regular conversations about online safety.
 
@@ -226,7 +226,7 @@ Create a family protocol for verifying unexpected requests:
 
 Write these protocols and tape them near the phone or computer for easy reference.
 
-Step 7: Build Your Protection Stack
+Step 7 - Build Your Protection Stack
 
 Layer your defenses based on your family member's technical comfort level:
 

@@ -22,13 +22,13 @@ Table of Contents
 
 - [Understanding Safety Numbers](#understanding-safety-numbers)
 - [Accessing Safety Numbers](#accessing-safety-numbers)
-- [Verifying Safety Numbers: The Process](#verifying-safety-numbers-the-process)
+- [Verifying Safety Numbers - The Process](#verifying-safety-numbers-the-process)
 - [Automating Verification for Power Users](#automating-verification-for-power-users)
 - [Understanding Attack Scenarios](#understanding-attack-scenarios)
 - [When to Verify](#when-to-verify)
 - [Common Pitfalls](#common-pitfalls)
 - [Troubleshooting Mismatches](#troubleshooting-mismatches)
-- [Advanced: Fingerprint Comparison](#advanced-fingerprint-comparison)
+- [Advanced - Fingerprint Comparison](#advanced-fingerprint-comparison)
 
 Understanding Safety Numbers
 
@@ -71,27 +71,27 @@ signal-cli -o json receive | jq '.[] | select(.type == "typing")'
 
 The Desktop client displays safety numbers in the same location as mobile: conversation header → "View safety number."
 
-Verifying Safety Numbers: The Process
+Verifying Safety Numbers - The Process
 
 Verification involves comparing the safety number through an independent channel, one that can't be intercepted by the same attacker targeting your Signal traffic.
 
-Step 1: Obtain the Safety Number
+Step 1 - Obtain the Safety Number
 
 Get the safety number from your device as shown above. Both parties need to do this.
 
-Step 2: Choose Your Verification Channel
+Step 2 - Choose Your Verification Channel
 
 Select a channel that provides authentication independent of Signal:
 
-In-person verification: Meet physically and compare numbers on each other's devices. This provides the highest security because the attacker would need to be physically present.
+In-person verification - Meet physically and compare numbers on each other's devices. This provides the highest security because the attacker would need to be physically present.
 
-Voice call (non-Signal): Call your contact on a regular phone or a different encrypted platform. Voice verification has limitations, call interception is possible but requires different capabilities than Signal traffic analysis.
+Voice call (non-Signal) - Call your contact on a regular phone or a different encrypted platform. Voice verification has limitations, call interception is possible but requires different capabilities than Signal traffic analysis.
 
-Another encrypted messenger: Use a different end-to-end encrypted platform to exchange safety numbers. This assumes the alternative platform isn't also compromised.
+Another encrypted messenger - Use a different end-to-end encrypted platform to exchange safety numbers. This assumes the alternative platform isn't also compromised.
 
-SMS with PGP: For the paranoid, exchange safety numbers signed with PGP. This creates a verifiable paper trail.
+SMS with PGP - For the paranoid, exchange safety numbers signed with PGP. This creates a verifiable paper trail.
 
-Step 3: Compare and Confirm
+Step 3 - Compare and Confirm
 
 Both parties read their safety numbers aloud (in-person) or type them out (text-based channels). If the numbers match, your connection is secure, no MITM attacker has compromised the key exchange.
 
@@ -164,7 +164,7 @@ Create a script that monitors for safety number changes:
 ```bash
 #!/bin/bash
 monitor-safety.sh
-Usage: ./monitor-safety.sh <phone-number>
+Usage - ./monitor-safety.sh <phone-number>
 
 CONTACT="$1"
 DB_PATH="$HOME/.config/Signal/sql/db.sqlite"
@@ -233,11 +233,11 @@ Common Pitfalls
 
 Relying only on "verified" badges: Signal marks contacts as verified if you've previously confirmed safety numbers. If those numbers change, Signal alerts you, but only if you notice.
 
-Ignoring warnings: Signal shows prominent warnings when safety numbers change. Don't dismiss these.
+Ignoring warnings - Signal shows prominent warnings when safety numbers change. Don't dismiss these.
 
-Verifying through Signal: Don't verify safety numbers through Signal itself. Use an independent channel.
+Verifying through Signal - Don't verify safety numbers through Signal itself. Use an independent channel.
 
-Weak verification channels: Avoid verifying through email or unencrypted SMS, these can be intercepted.
+Weak verification channels - Avoid verifying through email or unencrypted SMS, these can be intercepted.
 
 Troubleshooting Mismatches
 
@@ -248,7 +248,7 @@ When safety numbers don't match:
 3. Re-establish verification: After confirming legitimacy, verify the new safety numbers
 4. Document the change: In high-security contexts, log when and why keys changed
 
-Advanced: Fingerprint Comparison
+Advanced - Fingerprint Comparison
 
 For maximum security, compare identity key fingerprints rather than just safety numbers. This provides cryptographic certainty:
 

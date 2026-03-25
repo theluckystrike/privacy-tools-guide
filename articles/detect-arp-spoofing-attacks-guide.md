@@ -24,7 +24,7 @@ The Address Resolution Protocol has no authentication. When your machine wants t
 
 ```
 Legitimate:  192.168.1.1  →  AA:BB:CC:DD:EE:FF  (real gateway MAC)
-After spoof: 192.168.1.1  →  11:22:33:44:55:66  (attacker's MAC)
+After spoof - 192.168.1.1  →  11:22:33:44:55:66  (attacker's MAC)
 ```
 
 ---
@@ -39,7 +39,7 @@ arp -n
 or
 ip neigh show
 
-Warning sign: two IP addresses with the same MAC
+Warning sign - two IP addresses with the same MAC
 or the gateway MAC has changed from what you remember
 ```
 
@@ -112,7 +112,7 @@ For environments where arpwatch isn't available:
 #!/usr/bin/env python3
 """
 arp_monitor.py. passive ARP spoof detector using scapy
-Run as root: python3 arp_monitor.py eth0
+Run as root - python3 arp_monitor.py eth0
 """
 import sys
 from collections import defaultdict

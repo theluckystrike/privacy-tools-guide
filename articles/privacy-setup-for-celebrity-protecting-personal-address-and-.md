@@ -23,7 +23,7 @@ Table of Contents
 - [Prerequisites](#prerequisites)
 - [Troubleshooting](#troubleshooting)
 - [Advanced Techniques for High-Profile Individuals](#advanced-techniques-for-high-profile-individuals)
-- [Incident Response: If Your Address Is Exposed](#incident-response-if-your-address-is-exposed)
+- [Incident Response - If Your Address Is Exposed](#incident-response-if-your-address-is-exposed)
 - [Working with Security Professionals](#working-with-security-professionals)
 - [Ongoing Monitoring Systems](#ongoing-monitoring-systems)
 - [Balancing Privacy with Necessary Exposure](#balancing-privacy-with-necessary-exposure)
@@ -38,13 +38,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Threat Environment
+Step 1 - Understand the Threat Environment
 
 Public personal information accumulates across dozens of data broker sites, social media platforms, public records databases, and leaked breach datasets. A single search can reveal home addresses, family member names, phone numbers, and even property ownership details. For celebrities, this creates physical security risks including stalking, swatting, and unwanted contact.
 
 The solution requires a layered approach: removing existing data from broker sites, preventing future exposure, hardening digital accounts, and implementing technical barriers against information aggregation.
 
-Step 2: Remove Data from People Search Sites
+Step 2 - Remove Data from People Search Sites
 
 Data broker sites like Spokeo, Whitepages, BeenVerified, and Acxiom maintain detailed profiles on nearly everyone. These profiles include addresses, phone numbers, family members, and past locations. Removing this data requires either manual opt-out requests or automated tools.
 
@@ -97,7 +97,7 @@ class DataBrokerRemover:
 
 For production use, consider services like DeleteMe, Optery, or Incogni, which automate these requests at scale.
 
-Step 3: Secure Property Records
+Step 3 - Secure Property Records
 
 Property records are public information in most jurisdictions, making home addresses particularly difficult to hide. However, several strategies reduce exposure:
 
@@ -121,7 +121,7 @@ Many counties allow property owners to request address suppression for safety re
 
 Contact your county recorder's office to determine available options in your area.
 
-Step 4: Hardening Digital Accounts
+Step 4 - Hardening Digital Accounts
 
 Digital account security directly impacts physical privacy. A compromised email account can lead to address exposure through order confirmations, shipping notifications, and password reset requests.
 
@@ -131,10 +131,10 @@ Creating email aliases for different purposes prevents cross-referencing of your
 
 ```bash
 Using FastMail alias system
-Primary: john.doe@gmail.com
-Property: prop-johndoe@privaterelay.com
-Shopping: shop-johndoe@privaterelay.com
-Medical: med-johndoe@privaterelay.com
+Primary - john.doe@gmail.com
+Property - prop-johndoe@privaterelay.com
+Shopping - shop-johndoe@privaterelay.com
+Medical - med-johndoe@privaterelay.com
 ```
 
 Services like FastMail, Proton Mail, and SimpleLogin provide alias functionality. Each alias can be routed to your primary inbox or used independently. When a data breach exposes a shopping site alias, your personal email remains protected.
@@ -156,7 +156,7 @@ echo "enable-ssh-support" >> ~/.gnupg/gpg-agent.conf
 
 Hardware keys like YubiKeys or Titan Security Keys require physical possession to authenticate, eliminating remote takeover attacks. Register multiple keys, one kept at home, another in a safe deposit box, for recovery purposes.
 
-Step 5: Protecting Family Members
+Step 5 - Protecting Family Members
 
 Family members often become attack vectors for information gathering. Children and relatives may not maintain the same privacy practices, creating exposure points.
 
@@ -188,7 +188,7 @@ def setup_family_monitoring(family_members):
 
 Services like Google Alerts, Mention, and social monitoring tools can detect when family information appears online, enabling rapid response.
 
-Step 6: Phone Number Protection
+Step 6 - Phone Number Protection
 
 Phone numbers serve as keys to personal information. Through reverse lookup services, anyone can obtain addresses, family members, and associated accounts from a phone number.
 
@@ -214,7 +214,7 @@ Call 611 or visit a store to enable:
 - Port-out authorization requirement
 ```
 
-Step 7: Implementation Priority
+Step 7 - Implementation Priority
 
 Implementing everything simultaneously overwhelms most people. Prioritize in this order:
 
@@ -245,10 +245,10 @@ Advanced Techniques for High-Profile Individuals
 Decoy addresses and burner domains. Create multiple addresses associated with your name that aren't your real home:
 
 ```
-Primary residence: [secured through LLC]
-Decoy address 1: PO Box in major city (links to your name)
-Decoy address 2: Family business address (diverts inquiries)
-Decoy address 3: Old address (creates data confusion)
+Primary residence - [secured through LLC]
+Decoy address 1 - PO Box in major city (links to your name)
+Decoy address 2 - Family business address (diverts inquiries)
+Decoy address 3 - Old address (creates data confusion)
 ```
 
 When someone searches your name, they find three addresses, none of which is home. Data brokers and public records now contain conflicting information that makes the real address harder to identify.
@@ -256,9 +256,9 @@ When someone searches your name, they find three addresses, none of which is hom
 Domain privacy and business use. Separate your personal domain from professional presence:
 
 ```
-Personal: first-last-name.com (WHOIS private)
-Public: firstname-lastname-media.com (professional, searchable)
-Business: businessname.com (LLC registered, privacy registered)
+Personal - first-last-name.com (WHOIS private)
+Public - firstname-lastname-media.com (professional, searchable)
+Business - businessname.com (LLC registered, privacy registered)
 ```
 
 Never use your personal domain for professional purposes. A single leaked email or business contact can expose your personal identity on that domain.
@@ -267,9 +267,9 @@ Trust establishment for communications. For interviews, media inquiries, or busi
 
 ```bash
 Setup secure contact system
-Contact email: [random-handle]@protonmail.com (not tied to name)
-Signal number: Dedicated phone (never tied to personal number)
-Personal assistant: Use their contact info instead of yours
+Contact email - [random-handle]@protonmail.com (not tied to name)
+Signal number - Dedicated phone (never tied to personal number)
+Personal assistant - Use their contact info instead of yours
 ```
 
 When interviews need your location or personal information, have your management company handle that through secure channels that verify their identity before sharing anything.
@@ -286,15 +286,15 @@ This prevents a single breach (Equifax-style) from exposing your residential add
 Travel and logistics privacy. High-profile individuals traveling frequently creates exposure:
 
 ```
-Flights: Book through travel agency (business name)
-Hotels: Register under business name with business email
-Rental cars: Same approach
-Deliveries: Route through mailbox service
+Flights - Book through travel agency (business name)
+Hotels - Register under business name with business email
+Rental cars - Same approach
+Deliveries - Route through mailbox service
 ```
 
 Every interaction is an opportunity for address exposure. Using business identities for logistics prevents personal location tracking across travel patterns.
 
-Incident Response: If Your Address Is Exposed
+Incident Response - If Your Address Is Exposed
 
 If your private address becomes public despite precautions:
 
@@ -382,10 +382,10 @@ Balancing Privacy with Necessary Exposure
 Complete privacy is impossible if you're public-facing. Media appearances, social media, interviews, all create some exposure. The goal isn't zero exposure but controlled exposure:
 
 ```
-Unknown to public: Your home address, family location, daily routines
-Known to vetted people: Your management, security, closest family
-Occasionally public: Professional achievements, business addresses
-Never public: Children's information, vulnerabilities, habits
+Unknown to public - Your home address, family location, daily routines
+Known to vetted people - Your management, security, closest family
+Occasionally public - Professional achievements, business addresses
+Never public - Children's information, vulnerabilities, habits
 ```
 
 This segmentation lets you maintain public presence while protecting genuine security needs. A public figure can do interviews and maintain social media without exposing home location.

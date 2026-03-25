@@ -157,7 +157,7 @@ Use Media Store API for accessing shared media. On modern Android versions, you 
 
 Implement photo picker for selecting user media. This approach provides the best user experience, requires no permissions, and clearly communicates what data your app accesses.
 
-Test across Android versions using the `maxSdkVersion` attribute in permission declarations to ensure smooth behavior across the Android ecosystem.
+Test across Android versions using the `maxSdkVersion` attribute in permission declarations to ensure smooth behavior across the Android environment.
 
 Implications for Users
 
@@ -165,7 +165,7 @@ Modern storage permissions give users more control over their data. Users can se
 
 Reviewing app permissions regularly and understanding that "storage access" no longer means "access everything" helps users maintain better privacy hygiene on their devices.
 
-Deep Dive: Scoped Storage Implementation
+Deep Dive - Scoped Storage Implementation
 
 Understanding how scoped storage works internally helps developers make better decisions and users understand what's actually protected.
 
@@ -198,7 +198,7 @@ Each permission level grants different capabilities:
 - READ_EXTERNAL_STORAGE: All media files, deprecated Android 12+
 - MANAGE_EXTERNAL_STORAGE: File manager access, restricted use
 
-Access Patterns: What Apps Can Actually Do
+Access Patterns - What Apps Can Actually Do
 
 Different access patterns have different security implications:
 
@@ -483,7 +483,7 @@ mdm_policy = {
 
 This policy ensures managed devices maintain privacy standards while allowing necessary functionality.
 
-The Future: Further Granularity
+The Future - Further Granularity
 
 Google continues reducing app permissions:
 

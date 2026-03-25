@@ -25,7 +25,7 @@ Table of Contents
 - [Techniques to Mitigate Screen Fingerprinting](#techniques-to-mitigate-screen-fingerprinting)
 - [Practical Implications for Developers](#practical-implications-for-developers)
 - [Quantifying Fingerprinting Effectiveness](#quantifying-fingerprinting-effectiveness)
-- [Fingerprinting Countermeasures: Technical Deep-Dive](#fingerprinting-countermeasures-technical-deep detailed look)
+- [Fingerprinting Countermeasures - Technical Deep-Dive](#fingerprinting-countermeasures-technical-deep detailed look)
 - [Browser-Specific Privacy Configurations](#browser-specific-privacy-configurations)
 - [The Bigger Picture](#the-bigger-picture)
 
@@ -52,11 +52,11 @@ Browser fingerprinting poses significant privacy risks because it works without 
 
 The tracking works through several mechanisms:
 
-Persistent Identifiers: Your screen resolution, combined with other metrics, creates a fingerprint that persists across sessions. Unlike cookies, users cannot easily reset this identifier.
+Persistent Identifiers - Your screen resolution, combined with other metrics, creates a fingerprint that persists across sessions. Unlike cookies, users cannot easily reset this identifier.
 
-Device Uniqueness: Research shows that screen resolution data alone can identify a significant percentage of users. When combined with installed fonts, hardware concurrency, and other metrics, the combination becomes nearly unique.
+Device Uniqueness - Research shows that screen resolution data alone can identify a significant percentage of users. When combined with installed fonts, hardware concurrency, and other metrics, the combination becomes nearly unique.
 
-Evasion Difficulty: Unlike cookies which users can delete, screen resolution fingerprinting relies on hardware characteristics that are difficult to change without visible side effects.
+Evasion Difficulty - Unlike cookies which users can delete, screen resolution fingerprinting relies on hardware characteristics that are difficult to change without visible side effects.
 
 Consider this example of a fingerprinting script collecting display data:
 
@@ -227,7 +227,7 @@ from the 30+ bit category to 20-30 bits,
 reducing fingerprintability by ~1000x
 ```
 
-Fingerprinting Countermeasures: Technical Deep-Dive
+Fingerprinting Countermeasures - Technical Deep-Dive
 
 Content Security Policy for Fingerprinting Protection
 
@@ -373,7 +373,7 @@ console.log(navigator.hardwareConcurrency); // Always 4
 
 The Bigger Picture
 
-Screen resolution fingerprinting represents just one piece of the broader fingerprinting ecosystem. Other vectors include:
+Screen resolution fingerprinting represents just one piece of the broader fingerprinting environment. Other vectors include:
 
 - Canvas rendering differences
 - Audio context signatures

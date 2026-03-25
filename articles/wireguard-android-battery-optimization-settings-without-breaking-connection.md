@@ -29,7 +29,7 @@ Table of Contents
 - [Managing Always-On VPN Effectively](#managing-always-on-vpn-effectively)
 - [Practical Testing and Optimization](#practical-testing-and-optimization)
 - [Advanced Configuration File Examples](#advanced-configuration-file-examples)
-- [Threat Model: Understanding WireGuard Battery Consumption](#threat-model-understanding-wireguard-battery-consumption)
+- [Threat Model - Understanding WireGuard Battery Consumption](#threat-model-understanding-wireguard-battery-consumption)
 - [Detailed Testing Methodology](#detailed-testing-methodology)
 - [Network Condition Detection](#network-condition-detection)
 - [Android Version-Specific Optimizations](#android-version-specific-optimizations)
@@ -186,19 +186,19 @@ AllowedIPs = 0.0.0.0/0
 PersistentKeepalive = 120
 ```
 
-Threat Model: Understanding WireGuard Battery Consumption
+Threat Model - Understanding WireGuard Battery Consumption
 
 Understanding why WireGuard uses battery helps you make informed optimization choices:
 
-Keepalive Mechanism: WireGuard periodically sends packets to the server to keep NAT mappings alive. Every packet causes the Android CPU to wake from sleep state, process the packet, and return to sleep. More frequent packets = more CPU wake cycles = more battery drain.
+Keepalive Mechanism - WireGuard periodically sends packets to the server to keep NAT mappings alive. Every packet causes the Android CPU to wake from sleep state, process the packet, and return to sleep. More frequent packets = more CPU wake cycles = more battery drain.
 
-Network Interface Activity: The physical radio (WiFi or cellular) must activate to send keepalive packets. Radio activation has significant power overhead beyond the packet transmission itself.
+Network Interface Activity - The physical radio (WiFi or cellular) must activate to send keepalive packets. Radio activation has significant power overhead beyond the packet transmission itself.
 
-Tunnel Establishment: Each network change (switching between WiFi and cellular, or between WiFi networks) requires re-establishing the tunnel and re-authenticating, which consumes additional battery.
+Tunnel Establishment - Each network change (switching between WiFi and cellular, or between WiFi networks) requires re-establishing the tunnel and re-authenticating, which consumes additional battery.
 
-DNS Resolution: If you route DNS through the VPN tunnel, each DNS query requires processing through the encrypted tunnel rather than being cached locally. More DNS queries = more battery.
+DNS Resolution - If you route DNS through the VPN tunnel, each DNS query requires processing through the encrypted tunnel rather than being cached locally. More DNS queries = more battery.
 
-Device Idle State Conflicts: Android's aggressive battery optimization may conflict with VPN packet processing, causing retries and increased power consumption.
+Device Idle State Conflicts - Android's aggressive battery optimization may conflict with VPN packet processing, causing retries and increased power consumption.
 
 Detailed Testing Methodology
 
@@ -230,8 +230,8 @@ Measuring Results:
 ```
 Calculation Example:
 Baseline: Started at 100%, ended at 96% over 30 min = 4% drain / 30 min = 0.13% per minute
-Test 1: Started at 100%, ended at 98.5% = 1.5% drain / 30 min = 0.05% per minute
-Test 2: Started at 100%, ended at 97% = 3% drain / 30 min = 0.1% per minute
+Test 1 - Started at 100%, ended at 98.5% = 1.5% drain / 30 min = 0.05% per minute
+Test 2 - Started at 100%, ended at 97% = 3% drain / 30 min = 0.1% per minute
 
 Test 1 with 120-second keepalive is optimal, Test 2 with 25-second is middle ground
 ```

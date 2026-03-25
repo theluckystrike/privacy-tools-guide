@@ -35,7 +35,7 @@ Table of Contents
 - [Handling Suspicious Activity Alerts](#handling-suspicious-activity-alerts)
 - [Pre-Travel Checklist](#pre-travel-checklist)
 - [Troubleshooting Common Problems](#troubleshooting-common-problems)
-- [Alternative: Remote Desktop to Home Computer](#alternative-remote-desktop-to-home-computer)
+- [Alternative - Remote Desktop to Home Computer](#alternative-remote-desktop-to-home-computer)
 - [Long-Term VPN Maintenance](#long-term-vpn-maintenance)
 
 Why Banks Block Foreign Connections
@@ -146,9 +146,9 @@ Alternative Approaches
 
 Beyond traditional VPNs, consider these alternatives for banking access:
 
-Remote Desktop Solutions: Using a remote desktop service (like Guacamole or a personal machine at home accessed via RustDesk) provides a familiar browsing environment. Your bank's fraud detection sees your home IP address and consistent device fingerprint.
+Remote Desktop Solutions - Using a remote desktop service (like Guacamole or a personal machine at home accessed via RustDesk) provides a familiar browsing environment. Your bank's fraud detection sees your home IP address and consistent device fingerprint.
 
-Browser Profiles: Some power users maintain separate browser profiles with cookies and fingerprints from their home country, accessed via remote desktop rather than VPN.
+Browser Profiles - Some power users maintain separate browser profiles with cookies and fingerprints from their home country, accessed via remote desktop rather than VPN.
 
 Practical Recommendations
 
@@ -179,7 +179,7 @@ Mullvad ($5/mo) or IVPN ($6/mo) for users prioritizing privacy without high cost
 
 Step-by-Step VPN Setup for Banking
 
-Option 1: Self-Hosted WireGuard (Recommended for Power Users)
+Option 1 - Self-Hosted WireGuard (Recommended for Power Users)
 
 Server Setup on DigitalOcean
 
@@ -187,35 +187,35 @@ Server Setup on DigitalOcean
 #!/bin/bash
 Complete WireGuard server setup script
 
-Step 1: Create DigitalOcean Droplet
+Step 1 - Create DigitalOcean Droplet
 - Image: Ubuntu 20.04 LTS
 - Size: $5/month basic (sufficient for personal use)
 - Region: Your home country
 - Save IP address and root password
 
-Step 2: Connect to server via SSH
+Step 2 - Connect to server via SSH
 ssh root@YOUR_SERVER_IP
 
-Step 3: Update system
+Step 3 - Update system
 apt update
 apt upgrade -y
 
-Step 4: Install WireGuard
+Step 4 - Install WireGuard
 apt install wireguard wireguard-tools -y
 
-Step 5: Enable IP forwarding
+Step 5 - Enable IP forwarding
 echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
 sysctl -p
 
-Step 6: Generate server keys
+Step 6 - Generate server keys
 cd /etc/wireguard
 umask 077
 wg genkey | tee server_private.key | wg pubkey > server_public.key
 
-Step 7: Generate client keys
+Step 7 - Generate client keys
 wg genkey | tee client_private.key | wg pubkey > client_public.key
 
-Step 8: Create wg0.conf
+Step 8 - Create wg0.conf
 cat > /etc/wireguard/wg0.conf << 'EOF'
 [Interface]
 PrivateKey = $(cat server_private.key)
@@ -230,11 +230,11 @@ AllowedIPs = 10.0.0.2/32
 PersistentKeepalive = 25
 EOF
 
-Step 9: Enable WireGuard
+Step 9 - Enable WireGuard
 systemctl enable wg-quick@wg0
 systemctl start wg-quick@wg0
 
-Step 10: Verify running
+Step 10 - Verify running
 wg show
 
 echo "Server setup complete!"
@@ -247,12 +247,12 @@ Client Configuration on Your Local Machine
 #!/bin/bash
 Client-side WireGuard setup
 
-Step 1: Install WireGuard client
+Step 1 - Install WireGuard client
 macOS: brew install wireguard-tools
-Linux: apt install wireguard
-Windows: Download from wireguard.com
+Linux - apt install wireguard
+Windows - Download from wireguard.com
 
-Step 2: Create client config
+Step 2 - Create client config
 mkdir -p ~/.config/wireguard
 cat > ~/.config/wireguard/banking.conf << 'EOF'
 [Interface]
@@ -267,56 +267,56 @@ AllowedIPs = 0.0.0.0/0
 PersistentKeepalive = 25
 EOF
 
-Step 3: Test connection
+Step 3 - Test connection
 wg-quick up banking
 
-Step 4: Verify you're on server's IP
+Step 4 - Verify you're on server's IP
 curl https://ifconfig.me
 Should return your server's public IP, not your local IP
 
-Step 5: Test DNS leak
+Step 5 - Test DNS leak
 nslookup google.com
 Should return 1.1.1.1 or 8.8.8.8, not your ISP's DNS
 
-Step 6: Disconnect (when done banking)
+Step 6 - Disconnect (when done banking)
 wg-quick down banking
 ```
 
-Option 2: Commercial VPN (Mullvad)
+Option 2 - Commercial VPN (Mullvad)
 
 ```bash
 #!/bin/bash
 Mullvad VPN setup for banking
 
-Step 1: Download and install
+Step 1 - Download and install
 macOS: brew install mullvad-vpn
-Linux: sudo apt install mullvad-vpn
-Windows: Download from mullvad.net
+Linux - sudo apt install mullvad-vpn
+Windows - Download from mullvad.net
 
-Step 2: Configure for banking
+Step 2 - Configure for banking
 Open Mullvad VPN app
 - Select country: Your home country
 - Select specific city: Closest to your home region
 - Enable "Quantum-resistant tunnel" for extra security
 - Enable "Block all IPv6" to prevent leaks
 
-Step 3: Connect
+Step 3 - Connect
 Click "Connect" button
 Wait for "Connected" status
 
-Step 4: Verify connection
+Step 4 - Verify connection
 Visit mullvad.net in browser
 Should show your home country's IP
 Should show "Mullvad DNS" in results
 
-Step 5: Test for leaks
+Step 5 - Test for leaks
 Visit dnsleaktest.com
 Should show only Mullvad DNS, no ISP DNS
 
-Step 6: Access your bank
+Step 6 - Access your bank
 Once verified, open banking app/website
 
-Step 7: Disconnect when done
+Step 7 - Disconnect when done
 Click "Disconnect" button
 ```
 
@@ -328,7 +328,7 @@ Even with a VPN connected, WebRTC can reveal your real IP:
 
 ```bash
 Check for WebRTC leaks
-Visit: https://www.browserleaks.com/webrtc
+Visit - https://www.browserleaks.com/webrtc
 
 If leaks detected, disable WebRTC:
 
@@ -453,8 +453,8 @@ Pre-travel banking setup checklist (7 days before)
 echo "7-Day Pre-Travel Banking Checklist"
 echo "==================================="
 
-Day 1: Contact your bank
-echo "Day 1: Contact your bank"
+Day 1 - Contact your bank
+echo "Day 1 - Contact your bank"
 echo "  [ ] Call bank's main line"
 echo "  [ ] Inform them you'll be traveling"
 echo "  [ ] Specify dates and countries"
@@ -462,15 +462,15 @@ echo "  [ ] Ask about restrictions"
 echo "  [ ] Request emergency contact numbers"
 read -p "Press Enter to continue"
 
-Day 2: Test VPN access
-echo "Day 2: Test VPN access"
+Day 2 - Test VPN access
+echo "Day 2 - Test VPN access"
 echo "  [ ] Set up your VPN (self-hosted or commercial)"
 echo "  [ ] Test connection from home"
 echo "  [ ] Verify IP is in home country"
 echo "  [ ] Document the setup"
 read -p "Press Enter to continue"
 
-Day 3: Test banking access through VPN
+Day 3 - Test banking access through VPN
 echo "Day 3: Test banking through VPN"
 echo "  [ ] Connect to VPN"
 echo "  [ ] Attempt login to your bank"
@@ -478,7 +478,7 @@ echo "  [ ] Complete any MFA challenges"
 echo "  [ ] Perform a test transaction if possible"
 read -p "Press Enter to continue"
 
-Day 4: Configure MFA
+Day 4 - Configure MFA
 echo "Day 4: Configure authenticator app"
 echo "  [ ] Install Google Authenticator or Authy"
 echo "  [ ] Set up 2FA on your bank account"
@@ -486,7 +486,7 @@ echo "  [ ] Save backup codes in secure location"
 echo "  [ ] Test 2FA login"
 read -p "Press Enter to continue"
 
-Day 5: Document everything
+Day 5 - Document everything
 echo "Day 5: Document your setup"
 echo "  [ ] Write down VPN server details"
 echo "  [ ] Save bank's emergency number"
@@ -494,7 +494,7 @@ echo "  [ ] Document your home country's country code"
 echo "  [ ] Create emergency contact list"
 read -p "Press Enter to continue"
 
-Day 6: Test from abroad (if possible)
+Day 6 - Test from abroad (if possible)
 echo "Day 6: Final testing"
 echo "  [ ] Test VPN connection one more time"
 echo "  [ ] Test banking login with MFA"
@@ -502,7 +502,7 @@ echo "  [ ] Verify no issues remain"
 echo "  [ ] Do NOT make any transactions yet"
 read -p "Press Enter to continue"
 
-Day 7: Final preparation
+Day 7 - Final preparation
 echo "Day 7: Final checks"
 echo "  [ ] Ensure VPN is properly configured"
 echo "  [ ] Verify all documents are available"
@@ -515,10 +515,10 @@ echo "Pre-travel checklist complete!"
 
 Troubleshooting Common Problems
 
-Problem: "Invalid Certificate" Error
+Problem - "Invalid Certificate" Error
 
 ```bash
-Cause: VPN is intercepting HTTPS
+Cause - VPN is intercepting HTTPS
 
 Solution:
 1. Ensure your VPN has DNS leak protection enabled
@@ -533,10 +533,10 @@ If incorrect, set it:
 sudo date -s "2026-03-20 15:30:00"
 ```
 
-Problem: Connection Drops During Banking Session
+Problem - Connection Drops During Banking Session
 
 ```bash
-Cause: VPN timeout or stability issue
+Cause - VPN timeout or stability issue
 
 Solution for self-hosted:
 Increase keepalive timeout in WireGuard config
@@ -555,32 +555,32 @@ Then through VPN
 Both should show consistent latency with minimal packet loss
 ```
 
-Problem: Bank Blocks Access from VPN
+Problem - Bank Blocks Access from VPN
 
 ```bash
 Some banks detect and block VPN usage
 
-Solution 1: Use residential VPN
+Solution 1 - Use residential VPN
 Services like Luminati or Oxylabs provide residential IPs
-Cost: $10-50/month
-Benefit: Appear as normal home internet, harder to detect
+Cost - $10-50/month
+Benefit - Appear as normal home internet, harder to detect
 
-Solution 2: Contact bank
+Solution 2 - Contact bank
 Ask for whitelist of your VPN IP
 Some banks allow this for business customers
 
-Solution 3: Use remote desktop to bank
+Solution 3 - Use remote desktop to bank
 Instead of VPN, use RustDesk or similar:
 ssh user@your-home-computer.com
 Then browse banking site from home computer
 Your IP appears as your home ISP from bank's perspective
 
-Solution 4: Different VPN provider
+Solution 4 - Different VPN provider
 Try IVPN or Mullvad
 Different providers have different detection signatures
 ```
 
-Alternative: Remote Desktop to Home Computer
+Alternative - Remote Desktop to Home Computer
 
 For users who want maximum compatibility, running a remote desktop to your home computer provides ideal conditions:
 
@@ -612,8 +612,8 @@ Disadvantages:
 - Requires stable internet at home
 ```
 
-Cost: Free (RustDesk is open-source)
-Reliability: Very high (banks treat it like normal home access)
+Cost - Free (RustDesk is open-source)
+Reliability - Very high (banks treat it like normal home access)
 
 Long-Term VPN Maintenance
 
@@ -622,29 +622,29 @@ Once you've set up your banking VPN, maintain it properly:
 ```bash
 Monthly maintenance schedule
 
-Week 1: Test connection
+Week 1 - Test connection
 [ ] Connect to VPN
 [ ] Verify IP location
 [ ] Check DNS leaks
 [ ] Confirm no disconnections
 
-Week 2: Update software
+Week 2 - Update software
 [ ] Update VPN client to latest version
 [ ] Check for OS security updates
 [ ] Verify firewall rules are still in place
 
-Week 3: Review security
+Week 3 - Review security
 [ ] Verify kill switch is enabled
 [ ] Check firewall logs for anomalies
 [ ] Confirm certificate is valid
 
-Week 4: Test banking access
+Week 4 - Test banking access
 [ ] Connect through VPN
 [ ] Successfully login to bank
 [ ] Verify no new alerts or blocks
 [ ] Document any issues
 
-Quarterly: Deep review
+Quarterly - Deep review
 [ ] Verify VPN provider hasn't changed policies
 [ ] Check for security incidents at provider
 [ ] Review payment method and billing

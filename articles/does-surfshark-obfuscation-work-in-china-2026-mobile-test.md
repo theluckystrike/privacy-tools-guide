@@ -68,7 +68,7 @@ Endpoint = cn-gd.prod.surfshark.com:51820
 AllowedIPs = 0.0.0.0/0
 ```
 
-Success rate: 12% overall. WireGuard connections held for an average of 47 seconds before being terminated. The protocol works briefly during off-peak hours but becomes unreliable during business hours.
+Success rate - 12% overall. WireGuard connections held for an average of 47 seconds before being terminated. The protocol works briefly during off-peak hours but becomes unreliable during business hours.
 
 OpenVPN with Obfuscation
 
@@ -87,7 +87,7 @@ persist-key
 persist-tun
 ```
 
-Success rate: 67% on first attempt, 89% after retry. The `scramble` option uses XOR obfuscation, which adds minimal overhead but effectively masks the OpenVPN packet signature.
+Success rate - 67% on first attempt, 89% after retry. The `scramble` option uses XOR obfuscation, which adds minimal overhead but effectively masks the OpenVPN packet signature.
 
 IKEv2/IPSec
 
@@ -105,7 +105,7 @@ conn surfshark-ikev2
     auto=start
 ```
 
-Success rate: 71% with automatic reconnection enabled. IKEv2 handles network transitions (WiFi to cellular) better than other protocols.
+Success rate - 71% with automatic reconnection enabled. IKEv2 handles network transitions (WiFi to cellular) better than other protocols.
 
 Mobile-Specific Findings
 
@@ -192,7 +192,7 @@ Network Environment Matters
 
 Not all networks inside China behave the same way. Our testing revealed three distinct categories:
 
-Tier 1. High-scrutiny networks: These include government buildings, airports, and major train stations. VPN success rates dropped to below 20% on all protocols. These networks appear to use more aggressive DPI with pattern matching updated frequently.
+Tier 1. High-scrutiny networks - These include government buildings, airports, and major train stations. VPN success rates dropped to below 20% on all protocols. These networks appear to use more aggressive DPI with pattern matching updated frequently.
 
 Tier 2. Standard commercial networks: Hotel WiFi and business broadband showed moderate blocking, consistent with the aggregate figures above. Obfuscated OpenVPN and IKEv2 both performed reliably here.
 
@@ -204,9 +204,9 @@ Optimizing Surfshark App Settings for China
 
 Before traveling, configure the Surfshark app for maximum resilience:
 
-1. Enable Kill Switch: Settings > VPN Settings > Kill Switch. Without this, any dropped connection exposes your real IP.
+1. Enable Kill Switch - Settings > VPN Settings > Kill Switch. Without this, any dropped connection exposes your real IP.
 2. Set Protocol to IKEv2 or OpenVPN: Disable automatic selection and manually choose IKEv2 as your primary. If it fails three times, switch to OpenVPN.
-3. Enable NoBorders Mode: This setting in Surfshark's app specifically activates obfuscation features for restrictive regions. It's separate from standard obfuscation and adds an extra masking layer.
+3. Enable NoBorders Mode - This setting in Surfshark's app specifically activates obfuscation features for restrictive regions. It's separate from standard obfuscation and adds an extra masking layer.
 4. Disable IPv6: Many VPNs leak IPv6 traffic even when the tunnel is active. Go to Settings > Advanced and disable IPv6.
 5. Pre-download server configs: If using manual OpenVPN configs, download configuration files before entering China. Surfshark's website may be blocked inside the country.
 
@@ -235,13 +235,13 @@ Common Mistakes That Lead to Failed Connections
 
 Even with the right protocol selected, several configuration errors cause unnecessary failures:
 
-Using port 1194 on OpenVPN: This is the most commonly blocked port. Always configure OpenVPN to run on port 443 or 80 if using a manual config. Surfshark's app handles this automatically, but manually imported profiles often default to 1194.
+Using port 1194 on OpenVPN - This is the most commonly blocked port. Always configure OpenVPN to run on port 443 or 80 if using a manual config. Surfshark's app handles this automatically, but manually imported profiles often default to 1194.
 
-Not enabling NoBorders Mode: Many users have obfuscation-capable protocols selected but forget to enable NoBorders. The obfuscation layer only activates when NoBorders is explicitly turned on.
+Not enabling NoBorders Mode - Many users have obfuscation-capable protocols selected but forget to enable NoBorders. The obfuscation layer only activates when NoBorders is explicitly turned on.
 
 Connecting to the nearest server: Counterintuitively, servers geographically close to China (Hong Kong, Singapore) are often more aggressively blocked than servers in Europe or North America. Try US or Netherlands servers if Asian servers consistently fail.
 
-Ignoring DNS leaks: Even a working tunnel can leak DNS queries if the app is not configured to use Surfshark's DNS servers. Verify your DNS server address through a tool like dnsleaktest.com after connecting.
+Ignoring DNS leaks - Even a working tunnel can leak DNS queries if the app is not configured to use Surfshark's DNS servers. Verify your DNS server address through a tool like dnsleaktest.com after connecting.
 
 Frequently Asked Questions
 

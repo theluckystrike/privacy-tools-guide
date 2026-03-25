@@ -25,7 +25,7 @@ Table of Contents
 - [Local Storage Alternatives for Security Cameras](#local-storage-alternatives-for-security-cameras)
 - [Recommended Privacy-First Security Camera Systems](#recommended-privacy-first-security-camera-systems)
 - [How to Configure Eufy Cameras for Maximum Privacy](#how-to-configure-eufy-cameras-for-maximum-privacy)
-- [Advanced: Capturing RTSP Streams with Wireshark](#advanced-capturing-rtsp-streams-with-wireshark)
+- [Advanced - Capturing RTSP Streams with Wireshark](#advanced-capturing-rtsp-streams-with-wireshark)
 - [Privacy Camera Comparison Table](#privacy-camera-comparison-table)
 - [Setting Up IP Whitelisting](#setting-up-ip-whitelisting)
 - [Network Segmentation for Smart Home](#network-segmentation-for-smart-home)
@@ -199,7 +199,7 @@ if __name__ == "__main__":
 
 ```
 
-Advanced: Capturing RTSP Streams with Wireshark
+Advanced - Capturing RTSP Streams with Wireshark
 
 To verify what data Eufy cameras actually transmit, capture and analyze network traffic directly:
 
@@ -275,11 +275,11 @@ Isolate all IoT devices from your main network:
 
 ```bash
 Create VLAN 100 for cameras (example with OpenWrt)
-In LuCI: Network > Interfaces > Create Interface
-Name: cameras
-Protocol: Static Address
-IPv4 address: 10.0.100.1
-Netmask: 255.255.255.0
+In LuCI - Network > Interfaces > Create Interface
+Name - cameras
+Protocol - Static Address
+IPv4 address - 10.0.100.1
+Netmask - 255.255.255.0
 
 Block inter-VLAN traffic
 Network > Firewall > General Settings

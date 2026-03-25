@@ -20,10 +20,10 @@ Your phone broadcasts your location through dozens of channels simultaneously. M
 The Location Tracking Stack
 
 ```
-GPS               → 1–3m accuracy; requires permission
-Cell Tower        → 100m–10km accuracy; always active (carrier sees this)
-Wi-Fi Positioning → 5–20m accuracy; active even with Wi-Fi off (MAC probes)
-Bluetooth Beacons → 0.1–10m accuracy; retail/venue tracking
+GPS               → 1, 3m accuracy; requires permission
+Cell Tower        → 100m, 10km accuracy; always active (carrier sees this)
+Wi-Fi Positioning → 5, 20m accuracy; active even with Wi-Fi off (MAC probes)
+Bluetooth Beacons → 0.1, 10m accuracy; retail/venue tracking
 IP Geolocation    → City-level; every website you visit
 Sensor Fusion     → Accelerometer + gyroscope + barometer infer floor level
 ```
@@ -37,13 +37,13 @@ An adversary with access to multiple data layers can triangulate your location w
 The most visible tracking vector. Apps request "Precise Location" (GPS, <3m) or "Approximate Location" (~3km). Until Android 12 / iOS 14, "while in use" permission was often silently upgraded to "always" through dark UX.
 
 ```bash
-Android: audit which apps have background location
+Android - audit which apps have background location
 Settings > Location > App permissions > See all with "All the time"
 
 iOS: Settings > Privacy & Security > Location Services
 Audit every app showing "Always". downgrade to "While Using"
 
-Android: use ADB to bulk-audit location permissions
+Android - use ADB to bulk-audit location permissions
 adb shell pm list packages | while read pkg; do
   pkg=$(echo $pkg | cut -d: -f2)
   has_bg=$(adb shell dumpsys package "$pkg" 2>/dev/null \
@@ -68,7 +68,7 @@ Your phone constantly connects to the nearest cell tower. even when in airplane 
 
 Carriers in most countries retain this data for 6, 24 months and provide it to law enforcement on subpoena. In the US, carriers also historically sold this data commercially (AT&T, T-Mobile, Sprint were fined by the FCC for selling real-time location to third parties).
 
-IMSI Catchers (Stingrays): Law enforcement devices that impersonate cell towers, forcing nearby phones to connect. This reveals your precise location and phone identifier without carrier cooperation. IMSI catchers are in widespread use by police in the US, EU, and authoritarian states.
+IMSI Catchers (Stingrays) - Law enforcement devices that impersonate cell towers, forcing nearby phones to connect. This reveals your precise location and phone identifier without carrier cooperation. IMSI catchers are in widespread use by police in the US, EU, and authoritarian states.
 
 ```
 There is no software-only defense against IMSI catchers.
@@ -84,20 +84,20 @@ The only effective mitigation is:
 
 When your phone searches for known networks, it broadcasts probe requests containing your device's MAC address and sometimes the names of previously connected networks. This happens even when you're not connected to Wi-Fi.
 
-Retail tracking: companies like Euclid Analytics (acquired by WeWork), Path Intelligence, and RetailNext place sensors in stores that log probe requests to track shopper movement and dwell time.
+Retail tracking - companies like Euclid Analytics (acquired by WeWork), Path Intelligence, and RetailNext place sensors in stores that log probe requests to track shopper movement and dwell time.
 
 ```bash
 Android 10+ and iOS 8+ randomize MAC addresses per network
 Check if randomization is enabled:
-Android: Settings > Wi-Fi > [network name] > Privacy > Use randomized MAC
+Android - Settings > Wi-Fi > [network name] > Privacy > Use randomized MAC
 iOS: randomization is on by default for new networks
 
 Disable Wi-Fi when not needed (reduces probe broadcasts)
-Android: Settings > Network & internet > Wi-Fi > Wi-Fi preferences
+Android - Settings > Network & internet > Wi-Fi > Wi-Fi preferences
          Enable "Turn on Wi-Fi automatically" but use "Only for saved networks"
 ```
 
-Limitation of MAC randomization: iOS and Android still use persistent randomized MACs per network. connecting to the same network repeatedly reveals the same random MAC, allowing tracking across visits to the same venue.
+Limitation of MAC randomization - iOS and Android still use persistent randomized MACs per network. connecting to the same network repeatedly reveals the same random MAC, allowing tracking across visits to the same venue.
 
 ---
 
@@ -111,7 +111,7 @@ Apple iBeacon and Google Eddystone are the two main protocols. Retailers use the
 - Linking in-store behavior to loyalty card and purchase history
 
 ```bash
-Android: disable Bluetooth when not in use
+Android - disable Bluetooth when not in use
 Settings > Connected devices > Bluetooth > Off
 
 iOS: Settings > Bluetooth > Off
@@ -119,7 +119,7 @@ fully disabling from Control Center doesn't kill background Bluetooth
 use Settings > Bluetooth for full disable
 
 Check which apps have Bluetooth permission:
-Android: Settings > Apps > [app] > Permissions > Nearby devices
+Android - Settings > Apps > [app] > Permissions > Nearby devices
 iOS: Settings > Privacy & Security > Bluetooth
 ```
 
@@ -139,8 +139,8 @@ Check what your IP reveals
 curl -s https://ipinfo.io/json | python3 -m json.tool
 
 Use a VPN or Tor to replace your IP
-VPN: replaces your IP with the VPN provider's IP (trust shifts to VPN)
-Tor: routes through 3 hops; exit node IP used for geolocation
+VPN - replaces your IP with the VPN provider's IP (trust shifts to VPN)
+Tor - routes through 3 hops; exit node IP used for geolocation
 ```
 
 ---
@@ -155,7 +155,7 @@ Even without explicit location permissions, apps can infer your location:
 - Ultrasonic audio beacons: inaudible tones played by TV ads, websites, or retail stores; if your phone's microphone picks them up, the vendor knows which ad you watched and where
 
 ```python
-Android example: request ACCESS_WIFI_STATE to see nearby networks
+Android example - request ACCESS_WIFI_STATE to see nearby networks
 This doesn't require location permission on Android <10
 but effectively provides location via WiGLE BSSID lookup
 
@@ -174,7 +174,7 @@ Location data from GPS, Wi-Fi, and cellular sources is sold to brokers who build
 - X.Mode (Outlogic): supplied location data to US military contractors (documented by Motherboard/Vice, 2020)
 - Near.com: claims 1.6 billion device profiles globally
 
-Opt-out: Most data brokers have opt-out pages, but effectiveness is limited. SafeGraph opt-out: safegraph.com/opt-out. X.Mode: optout.xmode.io.
+Opt-out - Most data brokers have opt-out pages, but effectiveness is limited. SafeGraph opt-out: safegraph.com/opt-out. X.Mode: optout.xmode.io.
 
 ---
 
@@ -201,7 +201,7 @@ GrapheneOS (Android 13+) provides the strongest software-level location privacy:
 - Storage Scopes (prevents correlating files across apps)
 
 ```bash
-GrapheneOS: revoke sensor access for untrusted apps
+GrapheneOS - revoke sensor access for untrusted apps
 Settings > Apps > [app] > Sensors > Blocked
 ```
 

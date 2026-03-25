@@ -32,7 +32,7 @@ Table of Contents
 - [Advanced microG Configuration](#advanced-microg-configuration)
 - [Testing Specific Google APIs](#testing-specific-google-apis)
 - [Handling App Compatibility Issues](#handling-app-compatibility-issues)
-- [Comparison: microG vs Google Play Services](#comparison-microg-vs-google-play-services)
+- [Comparison - microG vs Google Play Services](#comparison-microg-vs-google-play-services)
 - [Building a Privacy-Optimized Stack](#building-a-privacy-optimized-stack)
 - [Remote Testing and ADB Best Practices](#remote-testing-and-adb-best-practices)
 - [Long-term Maintenance](#long-term-maintenance)
@@ -47,7 +47,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Architecture
+Step 1 - Understand the Architecture
 
 Before examining the setup, understanding how microG works helps with troubleshooting. Google Play Services consists of several components: GCM (Google Cloud Messaging) for push notifications, the Google Play Store for app distribution, Location Services, and various APIs that apps use to access Google's infrastructure.
 
@@ -55,7 +55,7 @@ MicroG implements these APIs with a different backend approach. It connects to G
 
 The key component enabling this compatibility is signature spoofing. Google Play Services verifies that incoming requests originate from apps signed with Google's official certificate. MicroGspoofs this signature, convincing apps that they're communicating with genuine Play Services.
 
-Step 2: Install ation Methods
+Step 2 - Install ation Methods
 
 CalyxOS offers two primary approaches for enabling microG: the built-in microG installer and manual installation through F-Droid.
 
@@ -81,7 +81,7 @@ For more control, install microG manually through F-Droid:
 
 This approach gives you version control and the ability to audit the installed packages.
 
-Step 3: Configure Signature Spoofing
+Step 3 - Configure Signature Spoofing
 
 Signature spoofing is essential for apps that verify Google's certificate. CalyxOS includes this functionality, but you must enable it in the microG settings.
 
@@ -94,7 +94,7 @@ adb shell dumpsys package com.google.android.gms | grep -i signature
 
 If signature spoofing shows as "denied" or unavailable, certain apps may fail to initialize properly. Restart your device after enabling it to ensure the changes take effect.
 
-Step 4: Set Up Push Notifications
+Step 4 - Set Up Push Notifications
 
 Push notifications require additional configuration. MicroG supports two notification backends: Google's native FCM (Firebase Cloud Messaging) and UnifiedPush.
 
@@ -122,7 +122,7 @@ Available options include:
 
 Configure your applications to use the UnifiedPush distributor in their settings. This works with many open-source applications and provides real-time notifications without Google infrastructure.
 
-Step 5: Install Google Apps
+Step 5 - Install Google Apps
 
 With microG configured, you can install Google apps through various methods.
 
@@ -149,7 +149,7 @@ adb install /path/to/app.apk
 
 This approach works for apps like Google Maps, YouTube, and other Google-first applications.
 
-Step 6: Test Your Setup
+Step 6 - Test Your Setup
 
 After configuration, verify everything works correctly:
 
@@ -275,16 +275,16 @@ grep "ERROR\|Exception\|FAILED" microg_debug.log
 Common Log Errors and Solutions
 
 ```
-E/GmsCore: Signature check failed
+E/GmsCore - Signature check failed
   → Solution: Enable signature spoofing in microG Settings
 
-E/GmsCore: Device not registered
+E/GmsCore - Device not registered
   → Solution: Re-register device in microG Self-Check
 
-E/GmsCore: Network error
+E/GmsCore - Network error
   → Solution: Check firewall rules, ensure apps have network permission
 
-E/GmsCore: com.android.vending not available
+E/GmsCore - com.android.vending not available
   → Solution: Ensure Google Play Services mock is installed and enabled
 ```
 
@@ -365,23 +365,23 @@ Handling App Compatibility Issues
 Some apps have specific requirements that cause issues with microG:
 
 ```
-Issue: App requires Google Play Certification
+Issue - App requires Google Play Certification
   → Solution: Use Aurora Store with device ID spoofing
 
-Issue: App requires hardware attestation
+Issue - App requires hardware attestation
   → Solution: Use GrapheneOS (better hardware attestation)
   or set attestation mode to 'disabled' in microG
 
-Issue: In-app purchases don't work
+Issue - In-app purchases don't work
   → Solution: Use alternative payment methods
   or accept that IAP won't work
 
-Issue: Real-time notification delay
+Issue - Real-time notification delay
   → Solution: Use UnifiedPush-compatible apps instead
   or increase FCM check frequency
 ```
 
-Comparison: microG vs Google Play Services
+Comparison - microG vs Google Play Services
 
 | Feature | microG | Official GMS |
 |---------|--------|------------|
@@ -449,7 +449,7 @@ If app updates break compatibility, check microG changelog
 
 Report issues
 microG GitHub: github.com/microg/GmsCore
-CalyxOS bugtracker: dev.calyxos.org
+CalyxOS bugtracker - dev.calyxos.org
 ```
 
 Related Articles

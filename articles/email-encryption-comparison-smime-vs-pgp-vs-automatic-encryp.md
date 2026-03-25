@@ -16,9 +16,9 @@ tags: [privacy-tools-guide, comparison, encryption]
 
 {% raw %}
 
-S/MIME uses certificate-based encryption, integrates with most email clients natively, but requires certificate authorities; PGP offers superior privacy and key control but requires manual key management and recipient adoption. Automatic encryption services like ProtonMail handle encryption transparently but lock you into their ecosystem. Choose S/MIME for enterprise requiring certificates, PGP for developers needing maximum privacy and control, or ProtonMail/Tutanota for users wanting transparent encryption without complexity.
+S/MIME uses certificate-based encryption, integrates with most email clients natively, but requires certificate authorities; PGP offers superior privacy and key control but requires manual key management and recipient adoption. Automatic encryption services like ProtonMail handle encryption transparently but lock you into their environment. Choose S/MIME for enterprise requiring certificates, PGP for developers needing maximum privacy and control, or ProtonMail/Tutanota for users wanting transparent encryption without complexity.
 
-Menu: Edit > Preferences > Privacy & Security > Certificates > Your Certificates > Import
+Menu - Edit > Preferences > Privacy & Security > Certificates > Your Certificates > Import
 Select smime.p12 and enter password
 
 4.
@@ -29,8 +29,8 @@ Select smime.p12 and enter password
 Table of Contents
 
 - [Understanding Email Encryption Fundamentals](#understanding-email-encryption-fundamentals)
-- [S/MIME: Certificate-Based Encryption](#smime-certificate-based-encryption)
-- [PGP/GPG: Web of Trust Encryption](#pgpgpg-web-of-trust-encryption)
+- [S/MIME - Certificate-Based Encryption](#smime-certificate-based-encryption)
+- [PGP/GPG - Web of Trust Encryption](#pgpgpg-web-of-trust-encryption)
 - [Automatic Encryption Solutions](#automatic-encryption-solutions)
 - [Comparison Matrix](#comparison-matrix)
 - [Choosing the Right Solution](#choosing-the-right-solution)
@@ -44,7 +44,7 @@ Understanding Email Encryption Fundamentals
 
 Email encryption protects message content from interception during transit and at rest. The three primary approaches, S/MIME, PGP, and automatic encryption, differ significantly in key management, implementation complexity, and interoperability.
 
-S/MIME: Certificate-Based Encryption
+S/MIME - Certificate-Based Encryption
 
 S/MIME (Secure/Multipurpose Internet Mail Extensions) relies on X.509 certificates issued by Certificate Authorities (CAs), similar to how HTTPS works. This approach integrates natively with major email clients including Apple Mail, Microsoft Outlook, and Thunderbird.
 
@@ -75,7 +75,7 @@ Disadvantages of S/MIME
 - Limited client support on mobile: Some mobile email clients lack full S/MIME implementation
 - Single point of trust: Compromised CA affects all certificates issued by that authority
 
-PGP/GPG: Web of Trust Encryption
+PGP/GPG - Web of Trust Encryption
 
 PGP (Pretty Good Privacy) and its open-source implementation GPG (GNU Privacy Guard) use a decentralized key management model. Users generate and manage their own keypairs, exchanging keys directly or through key servers.
 
@@ -86,7 +86,7 @@ PGP uses a hybrid approach combining asymmetric encryption for key exchange with
 ```bash
 Generate a GPG keypair (Ed25519 for modern security)
 gpg --full-generate-key
-Select: (1) RSA and RSA, 4096 bits, 0 = key does not expire
+Select - (1) RSA and RSA, 4096 bits, 0 = key does not expire
 
 List your keys
 gpg --list-secret-keys
@@ -217,11 +217,11 @@ openssl pkcs12 -export -out smime.p12 \
   -password pass:YOUR_PASSWORD
 
 3. Import into Thunderbird
-Menu: Edit > Preferences > Privacy & Security > Certificates > Your Certificates > Import
+Menu - Edit > Preferences > Privacy & Security > Certificates > Your Certificates > Import
 Select smime.p12 and enter password
 
 4. Configure Outlook (Windows)
-Settings: File > Options > Trust Center > Trust Center Settings > Email Security
+Settings - File > Options > Trust Center > Trust Center Settings > Email Security
 Click "Import/Export" and select smime.p12
 
 5. Send encrypted email
@@ -241,13 +241,13 @@ When prompted:
 - Key size: 4096
 - Expiration: 2 years (supports key rotation)
 - Real name: Your Name
-- Email: your@email.com
+- Email - your@email.com
 - Passphrase: Use strong passphrase, 20+ characters
 
 2. List generated key
 gpg --list-secret-keys your@email.com
 
-Output shows: [full key fingerprint]
+Output shows - [full key fingerprint]
 
 3. Export public key for sharing
 gpg --armor --export your@email.com > my-public-key.asc
@@ -257,7 +257,7 @@ gpg --keyserver keys.openpgp.org --send-key YOUR_KEY_ID
 
 5. Integrate with Thunderbird
 Download Thunderbird Enigmail extension (now built-in as OpenPGP)
-Menu: Edit > Preferences > End-to-End Encryption
+Menu - Edit > Preferences > End-to-End Encryption
 Click "Add Key" and import your private key
 
 6. Encrypt outbound mail
@@ -311,7 +311,7 @@ Use PGP if:
   - Maximum cryptographic flexibility needed
 
 Use Automatic Encryption if:
-  - Usability is paramount concern
+  - Usability is essential concern
   - Users don't want to manage keys
   - Vendor lock-in acceptable
   - Entire organization using single provider

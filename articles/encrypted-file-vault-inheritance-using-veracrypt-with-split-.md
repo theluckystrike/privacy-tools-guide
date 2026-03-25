@@ -26,7 +26,7 @@ Table of Contents
 - [Implementing Shamir's Secret Sharing](#implementing-shamirs-secret-sharing)
 - [Recovery and Succession Planning](#recovery-and-succession-planning)
 - [Testing Your Setup](#testing-your-setup)
-- [Advanced Scenarios: Multiple Inheritance Layers](#advanced-scenarios-multiple-inheritance-layers)
+- [Advanced Scenarios - Multiple Inheritance Layers](#advanced-scenarios-multiple-inheritance-layers)
 - [Implementing Time-Based Access Control](#implementing-time-based-access-control)
 - [Documenting Vault Access Procedures](#documenting-vault-access-procedures)
 - [Quick Start](#quick-start)
@@ -190,7 +190,7 @@ Verify container integrity without mounting
 veracrypt --text --verify /path/to/volume.vc
 ```
 
-Advanced Scenarios: Multiple Inheritance Layers
+Advanced Scenarios - Multiple Inheritance Layers
 
 For complex inheritance scenarios, implement layered vaults:
 
@@ -198,12 +198,12 @@ For complex inheritance scenarios, implement layered vaults:
 #!/bin/bash
 Multi-layer inheritance vault setup
 
-Layer 1: Executor-accessible vault (immediate documents)
+Layer 1 - Executor-accessible vault (immediate documents)
 veracrypt --text --create outer_volume.vc \
     --size 2G --encryption AES-256 --hash SHA-512 \
     --filesystem NTFS
 
-Layer 2: Attorney-accessible vault (conditional documents)
+Layer 2 - Attorney-accessible vault (conditional documents)
 Mount Layer 1, then create hidden volume inside
 
 veracrypt --text --mount outer_volume.vc /media/outer \
@@ -215,7 +215,7 @@ veracrypt --text --create /media/outer/inner_hidden.vc \
     --outer-password "executor_password" \
     --hidden-password "attorney_password"
 
-Layer 3: Cold storage backup (encrypted backup of all)
+Layer 3 - Cold storage backup (encrypted backup of all)
 Encrypted external drive with both passphrases documented separately
 ```
 
@@ -309,7 +309,7 @@ Prerequisites
 Mounting Instructions
 1. Insert USB drive containing vault file
 2. Open terminal/command prompt
-3. Run: `veracrypt --mount /path/to/vault.vc /mnt/inheritance`
+3. Run - `veracrypt --mount /path/to/vault.vc /mnt/inheritance`
 4. Provide EXECUTOR password when prompted
 5. Run again with --mount to access hidden volume
 6. Provide ATTORNEY password when prompted
@@ -419,26 +419,26 @@ Annual vault key rotation
 
 echo "Starting annual vault security review..."
 
-Step 1: Mount current vault
+Step 1 - Mount current vault
 veracrypt --text --mount old_vault.vc /mnt/old --stdin
 
-Step 2: Create new vault with fresh passwords
+Step 2 - Create new vault with fresh passwords
 echo "Enter NEW executor password:"
 read -s new_exec_pass
 
 echo "Enter NEW attorney password:"
 read -s new_atty_pass
 
-Step 3: Copy contents to new vault
+Step 3 - Copy contents to new vault
 cp -r /mnt/old/* /mnt/new/
 
-Step 4: Unmount old vault
+Step 4 - Unmount old vault
 veracrypt --text --dismount /mnt/old
 
-Step 5: Archive old vault
+Step 5 - Archive old vault
 mv old_vault.vc old_vault.vc.bak.$(date +%Y%m%d)
 
-Step 6: Securely delete old vault
+Step 6 - Securely delete old vault
 This requires secure deletion (shred, srm, etc.)
 shred -vfz -n 5 old_vault.vc.bak.*
 

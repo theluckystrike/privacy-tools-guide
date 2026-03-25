@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Location Tracking Vectors Explained
+Step 1 - Location Tracking Vectors Explained
 
 Modern smartphones expose location data through four primary mechanisms, each with distinct technical characteristics and mitigation strategies.
 
@@ -71,9 +71,9 @@ Bluetooth Low Energy (BLE) Beacons
 
 Retail stores, airports, and smart cities deploy BLE beacons for location tracking. Your phone detects these beacons for indoor navigation and proximity marketing.
 
-Step 2: Systematic Countermeasure Implementation
+Step 2 - Systematic Countermeasure Implementation
 
-Phase 1: Permission Audit and Revocation
+Phase 1 - Permission Audit and Revocation
 
 Review all apps with location permissions. Many request unnecessary access.
 
@@ -90,7 +90,7 @@ iOS Implementation:
 Settings → Privacy & Security → Location Services
 Disable access for non-essential apps. Set to "While Using" instead of "Always" where possible.
 
-Phase 2: System Service Configuration
+Phase 2 - System Service Configuration
 
 Both platforms include location-related services requiring attention.
 
@@ -104,7 +104,7 @@ iOS System Services:
 - Location-Based Apple Ads: Settings → Privacy & Security → Apple Advertising (disable Personalized Ads)
 - HomeKit: Disable Location for each accessory
 
-Phase 3: Network-Level Protection
+Phase 3 - Network-Level Protection
 
 Protecting location requires securing all network traffic.
 
@@ -131,7 +131,7 @@ Use privacy-resolving DNS to prevent location-based query leakage:
 
 Configure via Network Settings → Private DNS on Android or DNS Settings on iOS.
 
-Phase 4: Advanced Mobile Configuration
+Phase 4 - Advanced Mobile Configuration
 
 Custom ROM Consideration:
 Installing privacy-focused ROMs like GrapheneOS or CalyxOS provides granular permission control unavailable in stock firmware. These ROMs include:
@@ -150,7 +150,7 @@ only truly disconnects with powered-off state
 Technical Reality Check:
 Airplane mode on most devices does NOT disable GPS (which is receive-only). GPS itself transmits nothing. However, apps can still record GPS coordinates while airplane mode is active and transmit when reconnected.
 
-Phase 5: Monitoring and Detection
+Phase 5 - Monitoring and Detection
 
 Verify your countermeasures with active testing.
 
@@ -170,7 +170,7 @@ Third-Party Verification:
 - Privacy Tester apps simulate tracking scenarios
 - Network analysis tools (Wireshark, Packet Capture) reveal location data transmission
 
-Step 3: Platform-Specific Recommendations
+Step 3 - Platform-Specific Recommendations
 
 Android Users
 
@@ -198,7 +198,7 @@ Digital countermeasures fail without physical device security:
 - Encrypted Storage: Full-disk encryption is default on modern devices but verify in settings
 - Secure Boot: Ensure your device verifies software integrity on each boot
 
-Step 4: Special Use Cases
+Step 4 - Special Use Cases
 
 Journalists and Activists:
 Standard countermeasures are insufficient. Consider:

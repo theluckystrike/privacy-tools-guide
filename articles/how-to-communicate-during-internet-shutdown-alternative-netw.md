@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Problem Space
+Step 1 - Understand the Problem Space
 
 Internet shutdowns typically affect connectivity at the ISP level, disrupting DNS resolution, blocking traffic at network borders, or completely severing physical links. However, local network infrastructure often remains functional. This creates opportunities for alternative communication methods that operate independently of wide-area networks.
 
@@ -45,7 +45,7 @@ Quick Comparison
 | Pricing | See current pricing | See current pricing |
 | Ease of Use | Moderate learning curve | Moderate learning curve |
 
-Step 2: Mesh Networking with IBSS/MANET
+Step 2 - Mesh Networking with IBSS/MANET
 
 One of the most solutions involves creating ad-hoc networks between devices using IBSS (Independent Basic Service Set) or MANET (Mobile Ad-hoc Networking) protocols. Linux supports this natively through iw and wpa_supplicant.
 
@@ -80,7 +80,7 @@ sudo ip link set bat0 up
 
 B.A.T.M.A.N. handles packet routing automatically, allowing nodes to enter and leave the mesh dynamically. This scales well for neighborhood-sized deployments where devices can reach each other through multi-hop paths.
 
-Step 3: Offline Messaging Applications
+Step 3 - Offline Messaging Applications
 
 Several applications provide store-and-forward messaging without internet connectivity. These typically use Bluetooth, Wi-Fi Direct, or local network scanning to discover nearby devices.
 
@@ -139,13 +139,13 @@ class OfflineMessageServer:
             client, addr = server.accept()
             self.handle_client(client)
 
-Usage: Run on each device on the same local network
+Usage - Run on each device on the same local network
 Clients connect and receive messages via TCP
 ```
 
 This serves as a starting point. Production implementations should include encryption (consider using the `cryptography` library with X25519 key exchange), message persistence, and automatic peer discovery via UDP broadcast on port 45678.
 
-Step 4: Packet Radio and LoRa Communication
+Step 4 - Packet Radio and LoRa Communication
 
 For longer-range scenarios where Wi-Fi reach is insufficient, amateur radio techniques and LoRa (Long Range) modules provide viable alternatives.
 
@@ -190,7 +190,7 @@ interface.close()
 
 These settings maximize range at the expense of data rate, appropriate for short text messages but not suitable for file transfers.
 
-Step 5: Satellite-Based Emergency Communication
+Step 5 - Satellite-Based Emergency Communication
 
 When local infrastructure fails completely, satellite-based solutions provide global connectivity independent of terrestrial networks.
 
@@ -239,7 +239,7 @@ iridium.send_message("STATUS: All clear, using backup communication")
 
 This approach works anywhere with sky visibility but carries associated hardware and service costs.
 
-Step 6: Build a Redundant Communication Strategy
+Step 6 - Build a Redundant Communication Strategy
 
 For developers responsible maintaining communication capabilities, implement defense in depth:
 

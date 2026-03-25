@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Legal Framework
+Step 1 - The Legal Framework
 
 The General Data Protection Regulation (GDPR) applies to any organization processing personal data of EU residents. For email marketing, this translates to specific technical requirements:
 
@@ -39,7 +39,7 @@ The General Data Protection Regulation (GDPR) applies to any organization proces
 
 Non-compliance can result in fines up to €20 million or 4% of annual global turnover.
 
-Step 2: Implementing Double Opt-In
+Step 2 - Implementing Double Opt-In
 
 Single opt-in does not satisfy GDPR requirements for most use cases. Double opt-in (confirmed opt-in) provides documented proof of consent. Here's a practical implementation:
 
@@ -115,7 +115,7 @@ Example compliant consent text:
 
 Avoid pre-checked boxes. The consent must be an affirmative action.
 
-Step 3: Build a Consent Audit Log
+Step 3 - Build a Consent Audit Log
 
 Regulators may request proof of your consent practices. Maintain an audit trail:
 
@@ -150,7 +150,7 @@ class ConsentAuditLog:
         }
 ```
 
-Step 4: Handling Data Subject Requests
+Step 4 - Handling Data Subject Requests
 
 GDPR grants users the right to access, correct, delete, and port their data. Automate these responses:
 
@@ -199,7 +199,7 @@ class DataSubjectRequestHandler:
         return data
 ```
 
-Step 5: Email List Hygiene and Management
+Step 5 - Email List Hygiene and Management
 
 Maintain compliance through ongoing list management:
 
@@ -219,7 +219,7 @@ def cleanup_inactive_subscribers(db, days_inactive: int = 547):
     return result.rowcount
 ```
 
-Step 6: Third-Party Integrations
+Step 6 - Third-Party Integrations
 
 When using email marketing services, ensure they meet GDPR requirements:
 
@@ -234,7 +234,7 @@ Verify your email service provider offers:
 - Automated data subject request handling
 - Audit logging capabilities
 
-Step 7: Implementation Checklist
+Step 7 - Implementation Checklist
 
 Before launching your email marketing system, verify:
 
@@ -268,7 +268,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 Frequently Asked Questions
 
-How long does it take to 2026: a developer?
+How long does it take to 2026 - a developer?
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 

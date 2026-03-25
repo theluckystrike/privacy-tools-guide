@@ -37,13 +37,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Digital Dead Drops
+Step 1 - Understand Digital Dead Drops
 
 Traditional communication requires simultaneous presence, both parties must be online at the same time. Dead drops break this requirement by separating the upload and download actions. The sender leaves encrypted data at a predetermined location; the recipient retrieves it later using a shared key or authentication mechanism.
 
 Legitimate use cases include secure tip lines, investigative journalism communications, incident response coordination, and any scenario where metadata minimization matters. The key security property is temporal separation: sender and receiver never directly communicate.
 
-Step 2: Method 1: GPG-Encrypted File Drops
+Step 2 - Method 1: GPG-Encrypted File Drops
 
 The simplest approach uses GPG encryption with a shared drop location. This method requires minimal infrastructure, a simple file server or even cloud storage.
 
@@ -100,7 +100,7 @@ Security Considerations
 
 This method provides confidentiality through GPG encryption but offers no anonymity by default. Server logs reveal upload and download patterns. For enhanced anonymity, combine with Tor Browser or a VPN.
 
-Step 3: Method 2: Tor Onion Service Dead Drops
+Step 3 - Method 2: Tor Onion Service Dead Drops
 
 Onion services provide inherent encryption and can be configured for anonymity. This approach creates a dedicated .onion address that accepts encrypted submissions.
 
@@ -184,7 +184,7 @@ Distribute your GPG public key through the onion service:
 
 Senders download the key, encrypt their message locally, then paste the encrypted content into the submission form.
 
-Step 4: Method 3: Custom Implementation with Access Codes
+Step 4 - Method 3: Custom Implementation with Access Codes
 
 For more control, implement a system with expiring access codes. This adds authentication without requiring GPG.
 
@@ -259,7 +259,7 @@ File deletion should be automatic. Implement cron jobs or background processes t
 
 Transport encryption remains essential. Even with onion services, use HTTPS/TLS for any web interface. Let's Encrypt provides free certificates.
 
-Step 5: Deploy ment Considerations
+Step 5 - Deploy ment Considerations
 
 For production deployments, consider additional hardening:
 

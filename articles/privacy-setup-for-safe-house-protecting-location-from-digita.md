@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Location Data Sources
+Step 1 - Understand Location Data Sources
 
 Before implementing protections, you need to understand where location data originates. Modern devices expose location through multiple channels:
 
@@ -44,7 +44,7 @@ Before implementing protections, you need to understand where location data orig
 
 Each vector requires different mitigation strategies.
 
-Step 2: Device-Level Location Hardening
+Step 2 - Device-Level Location Hardening
 
 iOS Privacy Settings
 
@@ -68,7 +68,7 @@ Android offers similar controls through Settings → Location → App permission
 
 For developers, Android's `ACCESS_COARSE_LOCATION` permission provides sufficient accuracy for most apps while preserving privacy.
 
-Step 3: Network-Level Location Protection
+Step 3 - Network-Level Location Protection
 
 VPN Configuration
 
@@ -107,7 +107,7 @@ When location-privacy is critical, Tor provides strong anonymity by routing traf
 
 This significantly reduces the fingerprinting surface but requires accepting reduced functionality.
 
-Step 4: Address Privacy for Physical Locations
+Step 4 - Address Privacy for Physical Locations
 
 USPS Informed Delivery Opt-Out
 
@@ -129,7 +129,7 @@ County assessor websites often publish detailed property information. Many juris
 
 Consult a local attorney familiar with asset protection for jurisdiction-specific advice.
 
-Step 5: Hardening Smart Home Devices
+Step 5 - Hardening Smart Home Devices
 
 Smart home devices frequently report location data to cloud services. Consider these hardening steps:
 
@@ -152,19 +152,19 @@ Device-Specific Hardening
 - Thermostats: Disable geofencing features
 - Smart bulbs: Use local-control options like Home Assistant instead of cloud-dependent services
 
-Step 6: Application Permission Auditing
+Step 6 - Application Permission Auditing
 
 Regularly audit which applications have location access:
 
 ```bash
 iOS: No CLI available, requires Settings UI
-Android: Check via ADB
+Android - Check via ADB
 adb shell pm list permissions -d | grep "ACCESS_FINE_LOCATION\|ACCESS_COARSE_LOCATION"
 ```
 
 Remove location permissions from apps that don't genuinely need them, a flashlight app has no legitimate reason to track your location.
 
-Step 7: Wireless Environment Awareness
+Step 7 - Wireless Environment Awareness
 
 WiFi Probe Requests
 
@@ -177,7 +177,7 @@ Bluetooth Discovery
 
 Disable Bluetooth when not in use. Bluetooth beacons can track device presence in retail environments and smart home contexts. For Bluetooth-enabled devices you must keep, minimize discoverability mode duration.
 
-Step 8: Practical Implementation Checklist
+Step 8 - Practical Implementation Checklist
 
 Implement these steps in order of impact:
 
@@ -199,7 +199,7 @@ GPS Spoofing on Mobile Devices
 Android and iOS can be configured to report false GPS coordinates:
 
 ```bash
-Android: Using mock location apps
+Android - Using mock location apps
 adb shell settings put secure allow_mock_location 1
 
 Set mock location provider
@@ -269,13 +269,13 @@ class LocationVariation:
             'timestamp': datetime.now().isoformat()
         }
 
-Usage: Generate locations within 100 meters of actual address
+Usage - Generate locations within 100 meters of actual address
 locator = LocationVariation(40.7128, -74.0060)  # NYC
 for _ in range(5):
     print(locator.generate_varied_location())
 ```
 
-Step 9: Data Broker Opt-Out Automation
+Step 9 - Data Broker Opt-Out Automation
 
 Systematically remove yourself from location databases:
 
@@ -335,7 +335,7 @@ opt_out = DataBrokerOptOut()
 opt_out.remove_from_all_brokers()
 ```
 
-Step 10: Metadata Stripping from Documents
+Step 10 - Metadata Stripping from Documents
 
 Remove location metadata before sharing documents:
 
@@ -383,7 +383,7 @@ stripper.strip_image_exif("photo.jpg", "photo_clean.jpg")
 stripper.strip_pdf_metadata("document.pdf", "document_clean.pdf")
 ```
 
-Step 11: ISP-Level Location Tracking Prevention
+Step 11 - ISP-Level Location Tracking Prevention
 
 Configure routers and network devices to minimize ISP visibility:
 
@@ -409,7 +409,7 @@ echo "send host-name = none;" | sudo tee -a /etc/dhcp/dhclient.conf > /dev/null
 Configure OpenVPN in router /etc/config/openvpn
 ```
 
-Step 12: Emergency Location Deletion
+Step 12 - Emergency Location Deletion
 
 When location privacy is compromised, initiate rapid data removal:
 
@@ -443,7 +443,7 @@ Contact provider for immediate IP rotation
 echo "Location data removal completed"
 ```
 
-Step 13: Threat-Specific Location Protection
+Step 13 - Threat-Specific Location Protection
 
 Customize protection based on threat model:
 

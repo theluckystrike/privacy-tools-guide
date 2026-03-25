@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: 2FA Methods Ranked by Security
+Step 1 - 2FA Methods Ranked by Security
 
 From strongest to weakest:
 
@@ -42,7 +42,7 @@ From strongest to weakest:
 
 If a service only offers SMS 2FA, it's better than nothing. but push for TOTP or hardware key support.
 
-Step 2: Method 1: TOTP Apps
+Step 2 - Method 1: TOTP Apps
 
 TOTP (Time-based One-Time Password) apps generate a fresh 6-digit code every 30 seconds using a shared secret.
 
@@ -97,12 +97,12 @@ brew install zbar             # macOS
 
 Decode a QR image
 zbarimg --raw totp-qr.png
-Outputs: otpauth://totp/Example:user@example.com?secret=JBSWY3DPEHPK3PXP&issuer=Example
+Outputs - otpauth://totp/Example:user@example.com?secret=JBSWY3DPEHPK3PXP&issuer=Example
 ```
 
 The `secret=` value is what you need to store.
 
-Step 3: Method 2: Hardware Security Keys
+Step 3 - Method 2: Hardware Security Keys
 
 FIDO2/WebAuthn keys are the strongest form of 2FA. They're cryptographic devices. even if a phishing site captures your password, it can't use the hardware key response because the key only responds to the legitimate domain.
 
@@ -158,7 +158,7 @@ ykman oath accounts code "GitHub:user@example.com"
 
 This stores TOTP seeds on the hardware key rather than your phone. they can't be phished or exported without physical access.
 
-Step 4: Method 3: Passkeys
+Step 4 - Method 3: Passkeys
 
 Passkeys are FIDO2 credentials stored in your device's secure enclave (Secure Enclave on Apple, TPM on Windows, OS keystore on Android). They replace passwords entirely for supported sites.
 
@@ -185,7 +185,7 @@ bw list items --search "passkey" | jq '.[] | select(.type == 7)'
 1Password supports passkey creation and storage via browser extension
 ```
 
-Step 5: Backup Codes: The Safety Net
+Step 5 - Backup Codes: The Safety Net
 
 Every service that offers 2FA also provides backup codes. single-use codes for account recovery if you lose your 2FA device.
 
@@ -199,7 +199,7 @@ How to handle backup codes:
 
 Backup codes are not a shortcut. they're a recovery mechanism for genuine emergencies. If you're reaching for backup codes regularly, something is wrong with your 2FA setup.
 
-Step 6: Enable 2FA on Critical Accounts
+Step 6 - Enable 2FA on Critical Accounts
 
 Priority order:
 
@@ -213,7 +213,7 @@ Priority order:
 
 Check which accounts have 2FA enabled (and which don't) at `https://2fa.directory`.
 
-Step 7: Common Mistakes
+Step 7 - Common Mistakes
 
 Using SMS as a fallback. If you enable TOTP but keep SMS as a fallback, attackers can SIM swap and bypass your TOTP. Remove SMS fallback after enabling a stronger method.
 

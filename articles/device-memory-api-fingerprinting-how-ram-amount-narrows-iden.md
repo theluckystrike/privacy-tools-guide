@@ -25,11 +25,11 @@ Table of Contents
 - [Browser Support and Availability](#browser-support-and-availability)
 - [Detecting Device Memory API Usage](#detecting-device-memory-api-usage)
 - [Mitigation Strategies](#mitigation-strategies)
-- [The Bigger Picture: Defense in Depth](#the-bigger-picture-defense-in-depth)
-- [Advanced: Fingerprinting with Memory as Part of a Larger Dataset](#advanced-fingerprinting-with-memory-as-part-of-a-larger-dataset)
-- [Memory API Fingerprinting: Real-World Scenarios](#memory-api-fingerprinting-real-world-scenarios)
+- [The Bigger Picture - Defense in Depth](#the-bigger-picture-defense-in-depth)
+- [Advanced - Fingerprinting with Memory as Part of a Larger Dataset](#advanced-fingerprinting-with-memory-as-part-of-a-larger-dataset)
+- [Memory API Fingerprinting - Real-World Scenarios](#memory-api-fingerprinting-real-world-scenarios)
 - [Browser Extension Implementation: Memory Spoofing](#browser-extension-implementation-memory-spoofing)
-- [Statistical Analysis: How Much Does Memory Contribute to Fingerprinting Uniqueness?](#statistical-analysis-how-much-does-memory-contribute-to-fingerprinting-uniqueness)
+- [Statistical Analysis - How Much Does Memory Contribute to Fingerprinting Uniqueness?](#statistical-analysis-how-much-does-memory-contribute-to-fingerprinting-uniqueness)
 - [Detection Tools and Testing](#detection-tools-and-testing)
 - [Prevention at the Platform Level](#prevention-at-the-platform-level)
 
@@ -175,15 +175,15 @@ Object.defineProperty(navigator, 'deviceMemory', {
 
 4. Use browser fingerprinting protection tools like Canvas Blocker, Privacy Badger, or uBlock Origin, which include rules against known fingerprinting scripts.
 
-The Bigger Picture: Defense in Depth
+The Bigger Picture - Defense in Depth
 
 The Device Memory API exemplifies how seemingly harmless web APIs can combine into powerful tracking mechanisms. No single data point creates a unique identifier, but the combination of memory category, screen properties, hardware capabilities, and behavioral signals builds increasingly accurate profiles.
 
 For developers building privacy-respecting applications, understanding these APIs helps create more transparent user experiences. For users and privacy professionals, awareness of these fingerprinting vectors enables better defensive choices.
 
-The key principle remains: minimize exposed information, randomize what must be exposed, and layer multiple protection mechanisms rather than relying on any single solution.
+The key principle remains - minimize exposed information, randomize what must be exposed, and layer multiple protection mechanisms rather than relying on any single solution.
 
-Advanced: Fingerprinting with Memory as Part of a Larger Dataset
+Advanced - Fingerprinting with Memory as Part of a Larger Dataset
 
 The true danger of the Device Memory API emerges when combined with other hardware-level APIs. Modern browsers expose numerous APIs that collectively create a nearly impossible-to-spoof device signature. Consider this expanded fingerprinting function that demonstrates how memory becomes just one piece of a much larger puzzle:
 
@@ -238,17 +238,17 @@ function getWebGLRenderer() {
 
 This example shows how device memory, when combined with GPU information, screen resolution, and timing characteristics, narrows the identity space exponentially. A user's combination of "8GB memory + Intel HD Graphics + 1920x1080 + 8 CPU cores" becomes far more identifiable than any single metric alone.
 
-Memory API Fingerprinting: Real-World Scenarios
+Memory API Fingerprinting - Real-World Scenarios
 
 Third-party analytics providers regularly collect this data. Here's what a realistic tracking scenario looks like:
 
-Scenario 1: Analytics Provider Baseline
+Scenario 1 - Analytics Provider Baseline
 An analytics script loads on Page An and collects device memory. The user has 4GB RAM. This is stored in a profile database. When the same user visits Page B three weeks later, the analytics provider (present on both sites through shared tracking pixels) again collects device memory. The match on 4GB combined with matching screen resolution, timezone, and browser type confirms the same user across sessions.
 
-Scenario 2: Device Upgrade Tracking
+Scenario 2 - Device Upgrade Tracking
 A user replaces their laptop, which had 8GB RAM, with a new one with 16GB RAM. Analytics providers tracking them across months notice the memory bucket changed from "8+" to "Infinity" (16GB+). This creates a new fingerprint category but can still be linked to previous activity through other persistent identifiers like email.
 
-Scenario 3: Demographic Classification
+Scenario 3 - Demographic Classification
 Budget device users typically report 1-2GB RAM. Premium device users typically report 8GB or higher. Ad networks use these categories to segment users for targeted advertising, high-memory devices may receive different ad campaigns than low-memory devices, assuming different purchasing power.
 
 Browser Extension Implementation: Memory Spoofing
@@ -300,7 +300,7 @@ This approach has several advantages over naive implementations:
 3. Logs when you're visiting known fingerprinting test sites
 4. Handles console output that might reveal the actual value
 
-Statistical Analysis: How Much Does Memory Contribute to Fingerprinting Uniqueness?
+Statistical Analysis - How Much Does Memory Contribute to Fingerprinting Uniqueness?
 
 Research from fingerprinting studies shows that device memory contributes approximately 4-6 bits of entropy to a fingerprinting vector. To contextualize this:
 
@@ -319,7 +319,7 @@ const possibleCombinations = memoryBuckets.length;
 const bitsOfEntropy = Math.log2(possibleCombinations);
 
 console.log(`Memory API entropy: ${bitsOfEntropy.toFixed(2)} bits`);
-// Output: Memory API entropy: 2.81 bits
+// Output - Memory API entropy: 2.81 bits
 
 // However, in combination with other factors:
 const screenResolutionOptions = 1000; // Common resolutions
@@ -327,7 +327,7 @@ const browserOptions = 50;
 const gpuOptions = 200;
 const combined = screenResolutionOptions * browserOptions * gpuOptions * memoryBuckets.length;
 console.log(`Combined entropy: ${Math.log2(combined).toFixed(2)} bits`);
-// Output: Combined entropy: 31.93 bits (enough to identify 4+ billion unique combinations)
+// Output - Combined entropy: 31.93 bits (enough to identify 4+ billion unique combinations)
 ```
 
 Detection Tools and Testing

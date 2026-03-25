@@ -58,7 +58,7 @@ Privacy properties:
 - Forward secrecy: ephemeral ECDH keys per session (Curve25519)
 - Handshake is encrypted but recognizable: fixed UDP port, specific packet size patterns
 
-WireGuard IP privacy limitation: WireGuard stores allowed peer IPs in kernel tables. If you disconnect and reconnect, your IP is logged. Mulvad and Proton VPN implement "roaming" workarounds, but a stock WireGuard server logs connection IPs.
+WireGuard IP privacy limitation - WireGuard stores allowed peer IPs in kernel tables. If you disconnect and reconnect, your IP is logged. Mulvad and Proton VPN implement "roaming" workarounds, but a stock WireGuard server logs connection IPs.
 
 ```bash
 Install WireGuard
@@ -85,7 +85,7 @@ sudo wg-quick up wg0
 wg show   # verify connection
 ```
 
-DPI fingerprinting: WireGuard's initial handshake has a specific structure (4-byte message type, 4-byte sender index, 32-byte Curve25519 key, 16-byte MAC). Firewalls in China, Russia, and Iran identify and block it. Obfuscated WireGuard tunnels (AmneziaWG) exist but are not standardized.
+DPI fingerprinting - WireGuard's initial handshake has a specific structure (4-byte message type, 4-byte sender index, 32-byte Curve25519 key, 16-byte MAC). Firewalls in China, Russia, and Iran identify and block it. Obfuscated WireGuard tunnels (AmneziaWG) exist but are not standardized.
 
 ---
 
@@ -108,7 +108,7 @@ tls-version-min 1.2
 tls-cipher TLS-ECDHE-RSA-WITH-AES-256-GCM-SHA384
 ```
 
-DPI fingerprinting: OpenVPN's TLS hello is identifiable. specific TLS extensions, packet sizes, and behavior patterns. `--tls-crypt-v2` randomizes the first packet but deep packet inspection systems at the session level still identify it. Running on TCP port 443 helps evade naive port-based blocking but not DPI.
+DPI fingerprinting - OpenVPN's TLS hello is identifiable. specific TLS extensions, packet sizes, and behavior patterns. `--tls-crypt-v2` randomizes the first packet but deep packet inspection systems at the session level still identify it. Running on TCP port 443 helps evade naive port-based blocking but not DPI.
 
 ---
 
@@ -120,7 +120,7 @@ Shadowsocks was created in China to circumvent the Great Firewall. It wraps traf
 Shadowsocks server (Python)
 pip3 install shadowsocks
 
-Server config: /etc/shadowsocks/config.json
+Server config - /etc/shadowsocks/config.json
 {
     "server": "0.0.0.0",
     "server_port": 8388,
@@ -137,13 +137,13 @@ sslocal -s vpn.example.com -p 8388 -l 1080 \
   -k strong_password -m chacha20-ietf-poly1305 -d 8.8.8.8
 ```
 
-Privacy limitation: Shadowsocks has no forward secrecy. if the password is compromised, all past traffic is decryptable. Use strong passwords and rotate them. Modern implementations (Shadowsocks-libev, Outline) use AEAD (AES-256-GCM or ChaCha20-Poly1305) which provides authentication and integrity.
+Privacy limitation - Shadowsocks has no forward secrecy. if the password is compromised, all past traffic is decryptable. Use strong passwords and rotate them. Modern implementations (Shadowsocks-libev, Outline) use AEAD (AES-256-GCM or ChaCha20-Poly1305) which provides authentication and integrity.
 
 ---
 
 VLESS + XTLS-Reality (2024+)
 
-VLESS is a protocol in the Xray/V2Ray ecosystem designed for maximum censorship resistance. XTLS-Reality takes this further by stealing a real TLS certificate fingerprint from a target domain (e.g., google.com), making the traffic cryptographically indistinguishable from HTTPS to google.com.
+VLESS is a protocol in the Xray/V2Ray environment designed for maximum censorship resistance. XTLS-Reality takes this further by stealing a real TLS certificate fingerprint from a target domain (e.g., google.com), making the traffic cryptographically indistinguishable from HTTPS to google.com.
 
 ```bash
 Server setup (Xray)
@@ -171,9 +171,9 @@ Server setup (Xray)
 }
 ```
 
-Privacy properties: Full TLS 1.3 forward secrecy. Server impersonates a real domain's TLS parameters. DPI sees a TLS 1.3 connection to google.com. indistinguishable from normal HTTPS traffic.
+Privacy properties - Full TLS 1.3 forward secrecy. Server impersonates a real domain's TLS parameters. DPI sees a TLS 1.3 connection to google.com. indistinguishable from normal HTTPS traffic.
 
-Privacy limitation: Centralized in the Xray/V2Ray Chinese developer community; less audited than WireGuard. Trust model is weaker for non-technical users.
+Privacy limitation - Centralized in the Xray/V2Ray Chinese developer community; less audited than WireGuard. Trust model is weaker for non-technical users.
 
 ---
 

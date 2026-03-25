@@ -21,9 +21,9 @@ Signal requires a phone number for registration, tying your identity to a carrie
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Advanced: Signal with a VPN](#advanced-signal-with-a-vpn)
+- [Advanced - Signal with a VPN](#advanced-signal-with-a-vpn)
 - [Security Considerations](#security-considerations)
-- [Advanced: Username-Based Registration (Future)](#advanced-username-based-registration-future)
+- [Advanced - Username-Based Registration (Future)](#advanced-username-based-registration-future)
 - [Threat Modeling Signal Privacy](#threat-modeling-signal-privacy)
 - [Troubleshooting](#troubleshooting)
 
@@ -37,7 +37,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Signal's Phone Number Requirement
+Step 1 - Understand Signal's Phone Number Requirement
 
 When you register with Signal, your phone number becomes your unique identifier. This design choice simplifies contact discovery, Signal checks your address book against other users who have registered with the same number. However, this creates several privacy concerns:
 
@@ -45,7 +45,7 @@ Your phone number becomes publicly associated with your Signal usage, allowing a
 
 Signal does allow you to hide your number from contacts who haven't saved your contact info, but the underlying phone number requirement remains.
 
-Step 2: Workaround 1: Using VoIP Numbers
+Step 2 - Workaround 1: Using VoIP Numbers
 
 The most common approach for privacy-conscious users involves using a VoIP (Voice over IP) number instead of a primary phone number. Services like Google Voice, Twilio, or Burner provide secondary numbers that forward SMS to your primary device.
 
@@ -83,7 +83,7 @@ Limitations of VoIP Numbers
 
 Signal's terms of service don't explicitly prohibit VoIP numbers, but the service may flag accounts using non-carrier numbers. Additionally, some features like calling may have degraded quality. Consider these trade-offs before relying on a VoIP number as your primary Signal identity.
 
-Step 3: Workaround 2: Dedicated SIM Card Strategy
+Step 3 - Workaround 2: Dedicated SIM Card Strategy
 
 For maximum separation between your Signal identity and real-world identity, consider using a dedicated SIM card registered under an anonymous or secondary identity. This approach provides:
 
@@ -99,7 +99,7 @@ If using a separate device for Signal:
 
 This approach requires additional hardware and ongoing costs but provides the strongest isolation between your Signal activity and your documented identity.
 
-Step 4: Workaround 3: Signal Without Phone Number (Limited Options)
+Step 4 - Workaround 3: Signal Without Phone Number (Limited Options)
 
 As of early 2026, Signal does not officially support phone-number-less registration. However, the project has discussed this feature, and the technical architecture exists for future implementation. Currently, your practical options remain the VoIP and dedicated SIM approaches described above.
 
@@ -122,7 +122,7 @@ async function registerWithUsername(username, password) {
 }
 ```
 
-Step 5: Workaround 4: Signal Privacy Settings
+Step 5 - Workaround 4: Signal Privacy Settings
 
 Regardless of which number you use, Signal provides several settings to enhance your privacy:
 
@@ -153,11 +153,11 @@ Block List Management
 Regularly review and manage your blocked contacts to prevent persistent contact attempts that could be used for behavioral analysis:
 
 ```bash
-Signal CLI: List blocked numbers
+Signal CLI - List blocked numbers
 signal-cli -u +1234567890 blocked
 ```
 
-Advanced: Signal with a VPN
+Advanced - Signal with a VPN
 
 For additional privacy, route your Signal traffic through a VPN. While Signal encrypts message contents end-to-end, metadata (connection timing, IP addresses) can still reveal usage patterns:
 
@@ -179,7 +179,7 @@ Regardless of which workaround you implement, consider these additional security
 - Keep Signal updated: security patches address discovered vulnerabilities
 - Review linked devices: regularly audit and remove unused linked devices
 
-Step 6: Platform-Specific VoIP Solutions
+Step 6 - Platform-Specific VoIP Solutions
 
 Different VoIP providers offer different trade-offs for Signal registration:
 
@@ -221,7 +221,7 @@ Limitations:
 
 Pricing and Setup:
 ```bash
-Twilio pricing: ~$1/month for number + SMS costs
+Twilio pricing - ~$1/month for number + SMS costs
 API-based verification
 from twilio.rest import Client
 
@@ -243,7 +243,7 @@ Limitations:
 - Highest cost per number ($4.99/month)
 - May not retain number for extended Signal use
 
-Step 7: Phone Number Privacy Architecture
+Step 7 - Phone Number Privacy Architecture
 
 Understanding Signal's architecture helps understand phone number privacy:
 
@@ -262,7 +262,7 @@ This prevents Signal from knowing most phone numbers (they only see hashes), but
 - Someone doing bulk verification can identify all Signal users in their contact list
 - Your number becomes the permanent link to your Signal account
 
-Advanced: Username-Based Registration (Future)
+Advanced - Username-Based Registration (Future)
 
 Signal has discussed implementing username-based registration, though this remains in development. Here's what that would look like:
 
@@ -302,7 +302,7 @@ async function lookupContact(targetUsername) {
 
 While this isn't available yet, monitoring Signal's GitHub for username-based registration discussions shows the team recognizing this limitation.
 
-Step 8: Metadata Minimization Beyond Phone Numbers
+Step 8 - Metadata Minimization Beyond Phone Numbers
 
 Even with number privacy, Signal still transmits metadata:
 
@@ -337,22 +337,22 @@ Threat Modeling Signal Privacy
 
 Different users have different threat models:
 
-Scenario 1: Law Enforcement Surveillance
+Scenario 1 - Law Enforcement Surveillance
 - Threat: Investigators identify you as Signal user
 - Protection: Use VoIP number, avoid linking to real identity
 - Risk: VoIP numbers may be flagged as privacy-focused, attracting scrutiny
 
-Scenario 2: Employer Monitoring
+Scenario 2 - Employer Monitoring
 - Threat: Employer links your Signal number to corporate network
 - Protection: Use separate SIM card or device
 - Risk: Expensive, difficult to maintain separate identity
 
-Scenario 3: Social Engineering
+Scenario 3 - Social Engineering
 - Threat: Someone uses your number to register Signal on their device (SIM swap)
 - Protection: Registration lock (requires PIN for re-registration)
 - Risk: PIN must be strong and memorable
 
-Scenario 4: Intimate Partner Violence
+Scenario 4 - Intimate Partner Violence
 - Threat: Abuser uses your number to verify you use Signal
 - Protection: Use completely separate number/device, avoid linking to primary identity
 - Risk: Highest protection requires maximum separation

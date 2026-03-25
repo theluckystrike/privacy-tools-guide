@@ -22,12 +22,12 @@ Table of Contents
 
 - [Understanding Incident Response Phases](#understanding-incident-response-phases)
 - [Building Your Incident Response Team](#building-your-incident-response-team)
-- [Step 1: Document Detection Procedures](#step-1-document-detection-procedures)
-- [Step 2: Define Containment Procedures](#step-2-define-containment-procedures)
-- [Step 3: Create Evidence Preservation Protocols](#step-3-create-evidence-preservation-protocols)
-- [Step 4: Define Notification Requirements](#step-4-define-notification-requirements)
+- [Step 1 - Document Detection Procedures](#step-1-document-detection-procedures)
+- [Step 2 - Define Containment Procedures](#step-2-define-containment-procedures)
+- [Step 3 - Create Evidence Preservation Protocols](#step-3-create-evidence-preservation-protocols)
+- [Step 4 - Define Notification Requirements](#step-4-define-notification-requirements)
 - [Data Breach Notification Template](#data-breach-notification-template)
-- [Step 5: Establish Recovery Procedures](#step-5-establish-recovery-procedures)
+- [Step 5 - Establish Recovery Procedures](#step-5-establish-recovery-procedures)
 - [Testing Your Plan](#testing-your-plan)
 - [Maintaining Your Plan](#maintaining-your-plan)
 
@@ -49,7 +49,7 @@ Before writing procedures, identify who responds when an incident occurs. A typi
 
 Create a contact roster with multiple contact methods, including out-of-band channels that don't depend on compromised systems.
 
-Step 1: Document Detection Procedures
+Step 1 - Document Detection Procedures
 
 Detection is often the slowest phase. Establish multiple detection channels:
 
@@ -90,7 +90,7 @@ fi
 
 This script represents a simplified detection mechanism. Production environments should integrate with SIEM solutions, intrusion detection systems, and automated alerting platforms.
 
-Step 2: Define Containment Procedures
+Step 2 - Define Containment Procedures
 
 Once a breach is confirmed, containment becomes the priority. Separate your containment procedures into short-term (immediate) and long-term (sustained) actions.
 
@@ -148,7 +148,7 @@ Long-term Containment
 
 Long-term containment involves systematic analysis and remediation while maintaining business operations. This includes patching vulnerable systems, resetting credentials across affected infrastructure, and implementing additional monitoring controls.
 
-Step 3: Create Evidence Preservation Protocols
+Step 3 - Create Evidence Preservation Protocols
 
 Preserving evidence is critical for both internal investigation and potential legal proceedings. Establish a chain of custody:
 
@@ -176,9 +176,9 @@ sha256sum $EVIDENCE_DIR/* > $EVIDENCE_DIR/evidence_manifest.txt
 Generate chain of custody document
 cat > $EVIDENCE_DIR/chain_of_custody.txt << EOF
 Evidence Collection Record
-Date: $(date)
-Collector: $(whoami)
-Incident ID: $1
+Date - $(date)
+Collector - $(whoami)
+Incident ID - $1
 
 Evidence Items:
 $(ls -la $EVIDENCE_DIR)
@@ -190,7 +190,7 @@ EOF
 echo "Evidence collected in: $EVIDENCE_DIR"
 ```
 
-Step 4: Define Notification Requirements
+Step 4 - Define Notification Requirements
 
 Data breach notification laws vary by jurisdiction. Maintain a matrix of requirements:
 
@@ -228,7 +228,7 @@ For More Information
 This notice is being provided in accordance with [applicable law].
 ```
 
-Step 5: Establish Recovery Procedures
+Step 5 - Establish Recovery Procedures
 
 Recovery involves restoring systems to normal operation while ensuring the attacker cannot re-enter. Key steps include:
 

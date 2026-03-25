@@ -16,7 +16,7 @@ voice-checked: true
 
 {% raw %}
 
-End-to-end encryption has become the gold standard for protecting sensitive data in transit, but many users assume this protection extends automatically to all their digital assets. Calendar events and contact lists often contain equally sensitive information, meeting topics, business relationships, personal schedules, yet these frequently remain unencrypted or poorly protected. Tutanota, the Germany-based encrypted email service, extends its end-to-end encryption model to calendar and contacts, providing a unified encrypted ecosystem. Understanding how this encryption works helps developers and power users make informed decisions about their privacy infrastructure.
+End-to-end encryption has become the gold standard for protecting sensitive data in transit, but many users assume this protection extends automatically to all their digital assets. Calendar events and contact lists often contain equally sensitive information, meeting topics, business relationships, personal schedules, yet these frequently remain unencrypted or poorly protected. Tutanota, the Germany-based encrypted email service, extends its end-to-end encryption model to calendar and contacts, providing a unified encrypted environment. Understanding how this encryption works helps developers and power users make informed decisions about their privacy infrastructure.
 
 Table of Contents
 
@@ -27,10 +27,10 @@ Table of Contents
 - [Practical Implications for Developers](#practical-implications-for-developers)
 - [Comparison with Alternatives](#comparison-with-alternatives)
 - [Detailed Encryption Comparison](#detailed-encryption-comparison)
-- [Advanced: Implementing Encrypted Calendar in Your Application](#advanced-implementing-encrypted-calendar-in-your-application)
+- [Advanced - Implementing Encrypted Calendar in Your Application](#advanced-implementing-encrypted-calendar-in-your-application)
 - [Calendar Sharing and Access Control](#calendar-sharing-and-access-control)
 - [Metadata Leakage and What Tutanota Cannot Hide](#metadata-leakage-and-what-tutanota-cannot-hide)
-- [Practical Setup: Tutanota for Teams](#practical-setup-tutanota-for-teams)
+- [Practical Setup - Tutanota for Teams](#practical-setup-tutanota-for-teams)
 - [Backup and Recovery Strategy](#backup-and-recovery-strategy)
 - [Performance Implications of End-to-End Encryption](#performance-implications-of-end-to-end-encryption)
 - [Compliance and Jurisdictional Considerations](#compliance-and-jurisdictional-considerations)
@@ -142,11 +142,11 @@ Practical Implications for Developers
 
 For developers integrating Tutanota's encrypted features, several practical considerations emerge:
 
-API Access: Tutanota provides a REST API for programmatic access. Authentication uses your email and password, with the client deriving encryption keys locally. The API returns encrypted data that your application must decrypt.
+API Access - Tutanota provides a REST API for programmatic access. Authentication uses your email and password, with the client deriving encryption keys locally. The API returns encrypted data that your application must decrypt.
 
-Key Management: Tutanota supports encrypted mailboxes (mail, calendar, contacts) but currently limits some features. The calendar and contacts encryption is, but be aware of synchronization limitations with third-party clients.
+Key Management - Tutanota supports encrypted mailboxes (mail, calendar, contacts) but currently limits some features. The calendar and contacts encryption is, but be aware of synchronization limitations with third-party clients.
 
-Backup Strategies: Export your encrypted data regularly. Tutanota allows exporting all your data, preserving encryption. Store backups in secure locations.
+Backup Strategies - Export your encrypted data regularly. Tutanota allows exporting all your data, preserving encryption. Store backups in secure locations.
 
 Comparison with Alternatives
 
@@ -168,7 +168,7 @@ Detailed Encryption Comparison
 | Multi-Device Sync | Encrypted sync | Encrypted sync | Encrypted sync | Plain sync |
 | Cross-Platform Support | iOS, Android, Web | iOS, Android, Web | iOS, Android, Web | Universal |
 
-Advanced: Implementing Encrypted Calendar in Your Application
+Advanced - Implementing Encrypted Calendar in Your Application
 
 For developers building privacy-first applications with encrypted calendar functionality, Tutanota's model provides valuable lessons:
 
@@ -282,33 +282,33 @@ Example attack:
 ```
 Attacker monitoring Tutanota:
 Day 1: User accesses calendar 8 times between 9am-5pm (normal work pattern)
-Day 2: User accesses calendar 15 times between 6pm-11pm (unusual pattern)
-Day 3: User shares new calendar with contact "Jane Doe"
-Inference: Possible late-night project or collaboration shift
+Day 2 - User accesses calendar 15 times between 6pm-11pm (unusual pattern)
+Day 3 - User shares new calendar with contact "Jane Doe"
+Inference - Possible late-night project or collaboration shift
 ```
 
 Tutanota doesn't hide these patterns, only the content itself.
 
-Practical Setup: Tutanota for Teams
+Practical Setup - Tutanota for Teams
 
 For small teams using Tutanota's encrypted calendar and contacts:
 
-Step 1: Create Shared Calendar
+Step 1 - Create Shared Calendar
 - Calendar owner goes to Calendar settings
 - Toggles "Allow others to view" and sets participants
 - Participants receive invite with encrypted calendar access
 
-Step 2: Configure Reminders
+Step 2 - Configure Reminders
 - Reminders encrypt locally; server never sees reminder settings
 - Set up to 1 hour before event (some limitations on very early reminders)
 - Push notifications work across all platforms
 
-Step 3: Recurring Events
+Step 3 - Recurring Events
 - Tutanota handles recurrence rules (RFC 5545 compliance)
 - Modifications to single instances create new encrypted entries
 - Attendees see modifications in real-time through encrypted sync
 
-Step 4: Contact Integration
+Step 4 - Contact Integration
 - Share contacts separately from calendar
 - Each contact creates individual encrypted entry
 - Batch operations (import contacts) encrypt each entry independently
@@ -324,17 +324,17 @@ What Tutanota provides:
 
 Recovery scenarios:
 ```
-Scenario 1: Lost password
+Scenario 1 - Lost password
 - Cannot recover encrypted data without backup
 - Must delete account and create new one
 - Previous calendar/contacts inaccessible
 
-Scenario 2: Device compromise
+Scenario 2 - Device compromise
 - Attacker has access to cached encrypted data
 - Cannot decrypt without master password
 - Two-factor authentication still provides account protection
 
-Scenario 3: Want to switch services
+Scenario 3 - Want to switch services
 - Export calendar as standard .ics file
 - Export contacts as VCard format
 - Both formats lose end-to-end encryption properties in other services
@@ -378,17 +378,17 @@ For users in jurisdictions with aggressive data access laws, Tutanota's model pr
 
 Integration Limitations and Workarounds
 
-Limitation 1: No CalDAV/CardDAV Support
+Limitation 1 - No CalDAV/CardDAV Support
 - Cannot sync to non-Tutanota clients
 - Workaround: Export .ics regularly for backup
 - Alternative: Use ProtonMail calendar with CalDAV support
 
-Limitation 2: Limited Search Functionality
+Limitation 2 - Limited Search Functionality
 - Cannot search encrypted event descriptions
 - Only title fields are partially searchable
 - Workaround: Maintain separate plaintext notes
 
-Limitation 3: Third-Party Calendar Apps
+Limitation 3 - Third-Party Calendar Apps
 - iOS/Android calendar apps cannot access Tutanota
 - Must use Tutanota's mobile apps
 - Workaround: Duplicate events in local calendar for non-sensitive items

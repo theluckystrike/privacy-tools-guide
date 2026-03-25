@@ -46,7 +46,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Core Compartmentalization Strategies
+Step 1 - Core Compartmentalization Strategies
 
 1. Email Identity Separation
 
@@ -98,13 +98,13 @@ Firefox's Multi-Account Containers extension takes this further: within a single
 Use your password manager's organization features to segment credentials:
 
 ```bash
-Bitwarden: Create separate organizations
+Bitwarden - Create separate organizations
 1. Main vault: Personal accounts
 2. Work organization: Professional credentials
 3. Finance folder: Banking and investment logins
 4. Sensitive folder: High-value targets with extra protection
 
-KeePass: Separate database files
+KeePass - Separate database files
 personal.kdbx    # General accounts
 finance.kdbx     # Banking (additional encryption)
 work.kdbx        # Professional credentials
@@ -149,21 +149,21 @@ DNSPort 5353
 
 Configure VPN kill switches per identity to prevent traffic leaks.
 
-Step 2: Implementing Progressive Compartmentalization
+Step 2 - Implementing Progressive Compartmentalization
 
 Start with basic separation and increase isolation based on your threat model:
 
-Level 1: Basic Separation
+Level 1 - Basic Separation
 - Separate email addresses per domain
 - Different passwords for important accounts
 - Browser profile separation
 
-Level 2: Enhanced Isolation
+Level 2 - Enhanced Isolation
 - Dedicated password manager vaults
 - Separate browsers with different configurations
 - VPN usage for sensitive activities
 
-Level 3: Maximum Separation
+Level 3 - Maximum Separation
 - Dedicated devices per identity
 - Network-level routing controls
 - Air-gapped storage for critical credentials
@@ -172,13 +172,13 @@ Threat Model Alignment
 
 The right level depends on your actual risk. A freelancer protecting their privacy from data brokers needs Level 1. A journalist communicating with confidential sources needs Level 3 and possibly additional operational security measures beyond what any software tool can provide. Be honest about your threat model. over-engineering your setup leads to mistakes caused by friction, which introduce the very vulnerabilities you were trying to avoid.
 
-Step 3: Manage Identity Transitions
+Step 3 - Manage Identity Transitions
 
 When moving between identities:
 
 ```bash
 Clear browser state between contexts
-Firefox: Close and reopen browser
+Firefox - Close and reopen browser
 Clear history, cookies, cache
 
 Network switch verification
@@ -190,9 +190,9 @@ ip addr show tun0  # For OpenVPN
 wg show            # For WireGuard
 ```
 
-A practical habit: before starting any sensitive session, open a new private window, navigate to a neutral IP-check service, and verify you're connecting through the expected network. This thirty-second check catches configuration mistakes before you expose your identity.
+A practical habit - before starting any sensitive session, open a new private window, navigate to a neutral IP-check service, and verify you're connecting through the expected network. This thirty-second check catches configuration mistakes before you expose your identity.
 
-Step 4: Common Compartmentalization Mistakes
+Step 4 - Common Compartmentalization Mistakes
 
 Avoiding Cross-Contamination
 
@@ -222,7 +222,7 @@ prepaid_card      # High-risk merchants
 cryptocurrency    # Sensitive purchases
 ```
 
-Step 5: Username and Username Pattern Discipline
+Step 5 - Username and Username Pattern Discipline
 
 A compartment is only as strong as its weakest identifier. If you use the same username pattern across compartments. say, "mike_k_1985" for personal and "mike_k_dev" for professional. a data broker or determined researcher can link them through the shared pattern. Use genuinely distinct usernames for each compartment, generated without reference to your real name or any other compartment.
 
@@ -230,7 +230,7 @@ Password managers can help here too. Generate a random memorable phrase as your 
 
 Profile photos are another cross-compartment linkage risk. Using the same profile photo (or similar photos) across compartments makes visual correlation trivial. Use distinct, AI-generated avatars for compartments where a profile photo is required but your real face is not appropriate.
 
-Step 6: Recovery Planning
+Step 6 - Recovery Planning
 
 Each identity should have independent recovery paths:
 
@@ -255,7 +255,7 @@ finance:
 
 Store these recovery documents in encrypted storage that is itself compartmentalized. your personal identity's recovery document should not be accessible from your financial compartment's device.
 
-Step 7: Tools for Managing Multiple Identities
+Step 7 - Tools for Managing Multiple Identities
 
 | Tool | Purpose | Compartmentalization Use |
 |------|---------|--------------------------|

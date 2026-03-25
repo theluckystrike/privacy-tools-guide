@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand EXIF Data in Photos
+Step 1 - Understand EXIF Data in Photos
 
 EXIF (Exchangeable Image File Format) metadata sits inside your image files. When you take a photo with a smartphone, the camera automatically embeds information that can include:
 
@@ -40,7 +40,7 @@ EXIF (Exchangeable Image File Format) metadata sits inside your image files. Whe
 
 Dating apps may display this data to other users, or the platform itself may store and use it for purposes you didn't intend. In worst-case scenarios, malicious actors could extract this metadata to track your location or gather device fingerprints.
 
-Step 2: Method 1: Using exiftool (Command Line)
+Step 2 - Method 1: Using exiftool (Command Line)
 
 The most powerful and flexible tool for metadata manipulation is exiftool, written by Phil Harvey. It works on Linux, macOS, and Windows.
 
@@ -95,7 +95,7 @@ exiftool photo.jpg
 
 A clean file will show minimal or no EXIF output.
 
-Step 3: Method 2: Python Script for Developers
+Step 3 - Method 2: Python Script for Developers
 
 For developers building applications that handle user-uploaded images, Python provides excellent libraries for metadata manipulation.
 
@@ -190,7 +190,7 @@ Usage
 batch_strip_metadata("./uploads", "./clean_uploads")
 ```
 
-Step 4: Method 3: Using ImageMagick
+Step 4 - Method 3: Using ImageMagick
 
 ImageMagick provides another command-line option that's widely available on servers.
 
@@ -224,7 +224,7 @@ For more control, use the mogrify tool:
 mogrify -strip *.jpg
 ```
 
-Step 5: Method 4: Mobile Solutions
+Step 5 - Method 4: Mobile Solutions
 
 For users who need to process photos directly on their phones, several options exist.
 
@@ -257,7 +257,7 @@ Remove metadata
 exiftool -all= -overwrite_original ~/storage/dcim/Camera/*.jpg
 ```
 
-Step 6: Automate the Workflow
+Step 6 - Automate the Workflow
 
 For power users who want automatic processing, consider these approaches:
 
@@ -301,7 +301,7 @@ Create an Automator workflow that runs an exiftool shell command on imported pho
 3. Paste: `for f in "$@"; do exiftool -all= -overwrite_original "$f"; done`
 4. Save and attach to your Screenshots or Photos folder
 
-Step 7: Verification and Testing
+Step 7 - Verification and Testing
 
 After stripping metadata, verify your results:
 

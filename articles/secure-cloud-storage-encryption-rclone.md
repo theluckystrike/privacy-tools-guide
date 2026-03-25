@@ -56,7 +56,7 @@ Windows
 
 Download the installer from rclone.org/downloads/
 
-Step 1: Configure Your Cloud Provider Remote
+Step 1 - Configure Your Cloud Provider Remote
 
 First set up the base remote (the actual cloud storage). Rclone has interactive setup:
 
@@ -73,7 +73,7 @@ rclone ls gdrive:                    # List files on Google Drive
 rclone about gdrive:                 # Show storage quota
 ```
 
-Step 2: Create an Encrypted Remote
+Step 2 - Create an Encrypted Remote
 
 Add a crypt remote layered on top of your cloud remote:
 
@@ -96,7 +96,7 @@ The configuration is stored in `~/.config/rclone/rclone.conf`. protect this file
 chmod 600 ~/.config/rclone/rclone.conf
 ```
 
-Step 3: Sync and Decrypt
+Step 3 - Sync and Decrypt
 
 All rclone commands work identically with the crypt remote:
 
@@ -135,7 +135,7 @@ documents/
   contract-draft.docx
 ```
 
-Step 4: Automate Backups
+Step 4 - Automate Backups
 
 Create a backup script:
 
@@ -169,10 +169,10 @@ Schedule with cron:
 ```bash
 chmod +x /usr/local/bin/backup-encrypted
 crontab -e
-Add: 0 2 * * * /usr/local/bin/backup-encrypted
+Add - 0 2 * * * /usr/local/bin/backup-encrypted
 ```
 
-Step 5: Mount Encrypted Storage as a Local Filesystem
+Step 5 - Mount Encrypted Storage as a Local Filesystem
 
 rclone can mount your encrypted cloud storage as a local directory, making it appear as a normal folder:
 
@@ -221,7 +221,7 @@ systemctl --user enable rclone-gdrive
 systemctl --user start rclone-gdrive
 ```
 
-Step 6: Back Up the Encryption Password
+Step 6 - Back Up the Encryption Password
 
 Your rclone crypt configuration and password are the only way to decrypt your data. If you lose both, the data is unrecoverable.
 

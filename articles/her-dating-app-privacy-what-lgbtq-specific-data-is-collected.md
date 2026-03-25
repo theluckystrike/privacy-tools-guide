@@ -143,7 +143,7 @@ Her's privacy policy indicates data sharing with:
 - Legal authorities (when legally required)
 - Potential acquirers (in merger or acquisition scenarios)
 
-Developers reviewing this ecosystem should note that LGBTQ+-specific data may be included in these shared datasets, potentially reaching parties with less stringent privacy commitments.
+Developers reviewing this environment should note that LGBTQ+-specific data may be included in these shared datasets, potentially reaching parties with less stringent privacy commitments.
 
 Technical Privacy Considerations
 

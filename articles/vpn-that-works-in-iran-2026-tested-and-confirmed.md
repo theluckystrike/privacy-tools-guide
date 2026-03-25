@@ -24,11 +24,11 @@ Table of Contents
 - [WireGuard with Obfuscation](#wireguard-with-obfuscation)
 - [Outline VPN (Shadowsocks-Based)](#outline-vpn-shadowsocks-based)
 - [Self-Hosted OpenVPN with TCP Port 443](#self-hosted-openvpn-with-tcp-port-443)
-- [V2Ray and Xray: Advanced Traffic Routing](#v2ray-and-xray-advanced-traffic-routing)
+- [V2Ray and Xray - Advanced Traffic Routing](#v2ray-and-xray-advanced-traffic-routing)
 - [Domain Fronted CDNs](#domain-fronted-cdns)
 - [VPN Provider Comparison for Iran](#vpn-provider-comparison-for-iran)
 - [Choosing the Right VPS Location for Self-Hosted Solutions](#choosing-the-right-vps-location-for-self-hosted-solutions)
-- [Iran Blocking Patterns: What Changes and When](#iran-blocking-patterns-what-changes-and-when)
+- [Iran Blocking Patterns - What Changes and When](#iran-blocking-patterns-what-changes-and-when)
 - [Recommended Workflow for 2026](#recommended-workflow-for-2026)
 - [Testing Your Configuration](#testing-your-configuration)
 - [Security and Legal Considerations](#security-and-legal-considerations)
@@ -108,7 +108,7 @@ verb 3
 
 The TCP443 configuration helps traffic blend with normal web requests. Adding compression can sometimes improve connectivity but may introduce security concerns.
 
-V2Ray and Xray: Advanced Traffic Routing
+V2Ray and Xray - Advanced Traffic Routing
 
 V2Ray and its fork Xray support multiple protocols with built-in obfuscation. These tools can route traffic through WebSocket connections over TLS, making detection extremely difficult.
 
@@ -209,17 +209,17 @@ Recommended providers and regions based on connectivity testing:
 
 When selecting a VPS, choose the cheapest tier. you need minimal compute for a personal VPN, and being able to destroy and redeploy quickly (with a new IP) is more valuable than raw performance.
 
-Iran Blocking Patterns: What Changes and When
+Iran Blocking Patterns - What Changes and When
 
 Iran's DPI enforcement is not constant. Several patterns emerge from long-term observation:
 
-Political events: During protests, elections, or civil unrest, blocking becomes dramatically more aggressive. Connection success rates across all protocols drop 40-60% during these periods. Having a Psiphon backup installed before such events is critical.
+Political events - During protests, elections, or civil unrest, blocking becomes dramatically more aggressive. Connection success rates across all protocols drop 40-60% during these periods. Having a Psiphon backup installed before such events is critical.
 
-Time of day: Blocking is generally lighter between midnight and 6 AM local time. Automated scripts that run during these windows have a significantly higher success rate.
+Time of day - Blocking is generally lighter between midnight and 6 AM local time. Automated scripts that run during these windows have a significantly higher success rate.
 
-Ramadan: Historically, some technical restrictions ease during Ramadan. This is not reliable but has been observed across multiple years.
+Ramadan - Historically, some technical restrictions ease during Ramadan. This is not reliable but has been observed across multiple years.
 
-Post-event normalization: After a major blocking event, restrictions typically relax over 2-4 weeks but rarely return to pre-event baseline. Each crackdown tends to permanently block more IP ranges.
+Post-event normalization - After a major blocking event, restrictions typically relax over 2-4 weeks but rarely return to pre-event baseline. Each crackdown tends to permanently block more IP ranges.
 
 Recommended Workflow for 2026
 

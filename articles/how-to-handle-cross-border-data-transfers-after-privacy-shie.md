@@ -34,13 +34,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Current Legal Framework
+Step 1 - Understand the Current Legal Framework
 
 The EU-US Data Privacy Framework (DPF) emerged as the successor to Privacy Shield, but organizations cannot rely solely on this certification. Additional technical and organizational measures are often required to supplement the framework. The key mechanisms available include Standard Contractual Clauses (SCCs), Binding Corporate Rules (BCRs), and supplementary measures such as end-to-end encryption.
 
 Standard Contractual Clauses remain the most commonly implemented solution. The European Commission adopted new SCCs in 2021 that account for the Schrems II requirements, including the requirement to conduct Transfer Impact Assessments (TIAs). These clauses must be accompanied by technical safeguards that ensure equivalent protection to EU data protection standards.
 
-Step 2: Implementing Standard Contractual Clauses
+Step 2 - Implementing Standard Contractual Clauses
 
 When using SCCs, organizations must execute the clauses between the data exporter (typically your EU entity) and the data importer (your US entity or service provider). The implementation requires several technical components.
 
@@ -71,7 +71,7 @@ const dataProcessingAddendum = {
 
 Second, conduct a Transfer Impact Assessment. This evaluation examines the legal environment in the destination country and determines what supplementary measures are necessary. For US transfers, assess whether US surveillance laws could access the data and implement encryption that renders the data unreadable to US authorities.
 
-Step 3: Encryption as a Supplementary Measure
+Step 3 - Encryption as a Supplementary Measure
 
 End-to-end encryption provides the strongest supplementary measure for cross-border transfers. When you encrypt data before transmission and maintain control of the decryption keys, the data remains protected regardless of where it resides or who accesses it.
 
@@ -121,7 +121,7 @@ class CrossBorderEncryption:
 
 This approach ensures that even if data passes through US infrastructure, it remains encrypted with keys held only by the EU entity.
 
-Step 4: Pseudonymization Techniques
+Step 4 - Pseudonymization Techniques
 
 Pseudonymization reduces the risk associated with cross-border transfers by replacing direct identifiers with artificial identifiers. Unlike encryption, pseudonymization is reversible through a separate key or mapping table.
 
@@ -145,13 +145,13 @@ pseudonymizationKeys.set('user_id_123', {
 
 Keep the mapping database in the EU while the pseudonymized data can flow to US systems. This creates technical separation that supports your compliance argument.
 
-Step 5: Technical Architecture for Compliant Transfers
+Step 5 - Technical Architecture for Compliant Transfers
 
 Design your architecture to minimize data exposure during cross-border transfers. Consider the following approaches:
 
-Regional Data Processing: Process personal data within the EU whenever possible. Only transfer data to the US when functionally necessary, and implement automatic routing that keeps data within its origin region.
+Regional Data Processing - Process personal data within the EU whenever possible. Only transfer data to the US when functionally necessary, and implement automatic routing that keeps data within its origin region.
 
-Proxy Architecture: Route data through EU-based proxy servers that handle encryption and decryption. US-based services then only receive encrypted payloads.
+Proxy Architecture - Route data through EU-based proxy servers that handle encryption and decryption. US-based services then only receive encrypted payloads.
 
 ```nginx
 Nginx configuration for EU-based termination
@@ -174,7 +174,7 @@ server {
 }
 ```
 
-Data Minimization: Implement automatic field-level filtering that removes unnecessary personal data before transfer. Only transmit the minimum data required for the specific purpose.
+Data Minimization - Implement automatic field-level filtering that removes unnecessary personal data before transfer. Only transmit the minimum data required for the specific purpose.
 
 Monitoring and Documentation Requirements
 
@@ -218,13 +218,13 @@ Verification and Compliance Testing
 
 Regularly test your cross-border transfer controls to ensure they remain effective. Key verification activities include:
 
-1. Encryption Verification: Confirm that data remains encrypted throughout the transfer path and that decryption keys are not exposed to US infrastructure.
+1. Encryption Verification - Confirm that data remains encrypted throughout the transfer path and that decryption keys are not exposed to US infrastructure.
 
-2. Access Control Audits: Review who can access transferred data and verify that access is limited to what's necessary.
+2. Access Control Audits - Review who can access transferred data and verify that access is limited to what's necessary.
 
-3. Legal Review Updates: Monitor changes in US surveillance laws and update your Transfer Impact Assessments accordingly.
+3. Legal Review Updates - Monitor changes in US surveillance laws and update your Transfer Impact Assessments accordingly.
 
-4. Breach Response Testing: Simulate scenarios where data is accessed inappropriately and verify your response procedures.
+4. Breach Response Testing - Simulate scenarios where data is accessed inappropriately and verify your response procedures.
 
 Troubleshooting
 

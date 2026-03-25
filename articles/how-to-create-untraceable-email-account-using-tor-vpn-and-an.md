@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Email Tracking Mechanisms
+Step 1 - Understand Email Tracking Mechanisms
 
 Email services collect multiple data points that can identify users:
 
@@ -44,7 +44,7 @@ What Email Headers Reveal About You
 
 Even after creating an account anonymously, every email you send carries metadata in its headers. The `Received` chain shows each mail server that handled the message. If you send from a webmail interface over Tor, only the sending mail server's IP appears. your Tor exit node. But if you use a mail client like Thunderbird connected over IMAP, your client's IP (or exit node IP) appears in the headers too. Services like ProtonMail strip identifying IP information from outbound headers by default. Tutanota also strips this. Gmail does not. it embeds your IP in `X-Originating-IP` or `X-Forwarded-To` headers. This alone is a strong reason to choose a privacy-first provider.
 
-Step 2: Set Up Your Anonymous Environment
+Step 2 - Set Up Your Anonymous Environment
 
 Using Tor Browser for Network Isolation
 
@@ -60,11 +60,11 @@ Configure Tor Browser with the highest security settings:
 - Disable JavaScript where possible
 - Use the "New Circuit for this Site" option frequently
 
-Tails OS: The Stronger Starting Point
+Tails OS - The Stronger Starting Point
 
 For the highest level of protection, use Tails OS rather than Tor Browser on your regular operating system. Tails boots from an USB drive, routes all traffic through Tor by default, and leaves no trace on the host machine. Every session starts clean. This matters because your operating system can leak identifying information through font rendering, timezone settings, and installed software versions. all components of browser fingerprinting.
 
-To boot Tails: download the ISO from tails.boum.org, verify the signature with GPG, write it to an USB drive with Balena Etcher, and boot from USB. You do not need to modify your primary system.
+To boot Tails - download the ISO from tails.boum.org, verify the signature with GPG, write it to an USB drive with Balena Etcher, and boot from USB. You do not need to modify your primary system.
 
 VPN as a Complementary Layer
 
@@ -79,7 +79,7 @@ iptables -A OUTPUT -o eth0 -j DROP
 
 Chain Tor over VPN or VPN over Tor depending on your threat model. For email registration, Tor alone typically suffices.
 
-Step 3: Anonymous Registration Strategies
+Step 3 - Anonymous Registration Strategies
 
 Email Services That Accept Anonymous Registration
 
@@ -109,7 +109,7 @@ If you need an account that cannot be linked to you, create a completely separat
 
 ```bash
 Generate a random identity using command line tools
-echo "Name: $(shuf -n1 first-names.txt) $(shuf -n1 last-names.txt)"
+echo "Name - $(shuf -n1 first-names.txt) $(shuf -n1 last-names.txt)"
 echo "Birthday: $(shuf -i 1970-2000 -n 1)-$(shuf -i 1-12 -n 1)-$(shuf -i 1-28 -n 1)"
 ```
 
@@ -122,7 +122,7 @@ openssl rand -base64 32
 
 Never reuse passwords across your anonymous and regular accounts.
 
-Step 4: Technical Implementation
+Step 4 - Technical Implementation
 
 Browser Fingerprint Randomization
 
@@ -187,7 +187,7 @@ gpg --encrypt --armor --recipient recipient@example.com message.txt
 
 Never generate PGP keys tied to your anonymous identity on a machine that is also used for your real identity. The key generation process records the system clock, which may correlate with other activity.
 
-Step 5: Operational Security Practices
+Step 5 - Operational Security Practices
 
 Maintaining Anonymity Over Time
 
@@ -214,7 +214,7 @@ openssl s_client -connect protonmail.com:993 -quiet
 
 Avoid including any identifying information in email content or subject lines.
 
-Step 6: Compartmentalizing Your Anonymous Email Use
+Step 6 - Compartmentalizing Your Anonymous Email Use
 
 A single anonymous account becomes less anonymous over time if you use it carelessly. Compartmentalization means creating distinct accounts for distinct purposes rather than one catch-all anonymous address:
 

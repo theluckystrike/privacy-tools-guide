@@ -67,11 +67,11 @@ Weaknesses:
 Installation:
 - macOS: `brew install exiftool`
 - Linux (Debian): `sudo apt-get install libimage-exiftool-perl`
-- Windows: Download `.exe` from official source (or `choco install exiftool`)
+- Windows - Download `.exe` from official source (or `choco install exiftool`)
 
-Cost: Free
+Cost - Free
 
-Best For: Developers, journalists, power users, security researchers
+Best For - Developers, journalists, power users, security researchers
 
 ---
 
@@ -139,9 +139,9 @@ Installation:
 - macOS/Linux: `pip install mat2`
 - Debian: `sudo apt-get install mat2`
 
-Cost: Free
+Cost - Free
 
-Best For: Privacy-conscious non-technical users, Linux activists, simple batch operations
+Best For - Privacy-conscious non-technical users, Linux activists, simple batch operations
 
 ---
 
@@ -178,11 +178,11 @@ Weaknesses:
 - No automation API
 - Limited customization options
 
-Installation: Download `.exe` or `.dmg` from GitHub releases
+Installation - Download `.exe` or `.dmg` from GitHub releases
 
-Cost: Free
+Cost - Free
 
-Best For: Non-technical users, simple one-off cleaning, journalists, activists
+Best For - Non-technical users, simple one-off cleaning, journalists, activists
 
 ---
 
@@ -216,11 +216,11 @@ Weaknesses:
 - No batch automation (GUI only)
 - Smaller community than ExifTool/MAT2
 
-Installation: Download from App Store or metaphoapp.com
+Installation - Download from App Store or metaphoapp.com
 
-Cost: $14.99 one-time purchase
+Cost - $14.99 one-time purchase
 
-Best For: macOS photographers, privacy-conscious creatives, paid-tool users
+Best For - macOS photographers, privacy-conscious creatives, paid-tool users
 
 ---
 
@@ -257,11 +257,11 @@ Weaknesses:
 - Cannot selectively preserve tags
 - Cannot edit metadata (removal only)
 
-Installation: Download from F-Droid or Google Play Store
+Installation - Download from F-Droid or Google Play Store
 
-Cost: Free
+Cost - Free
 
-Best For: Android users, smartphone photographers, activists sharing photos online
+Best For - Android users, smartphone photographers, activists sharing photos online
 
 ---
 
@@ -373,27 +373,27 @@ Metadata Leakage Examples
 
 Before cleaning:
 ```
-ExifTool Version: 12.16
-File Name: DSC_0001.JPG
-File Size: 3.2 MB
-Date/Time: 2026-03-15 14:23:45
-Camera Make: Canon
-Camera Model: Canon EOS R5
-Lens Model: RF100mm f/2.8L IS USM
-GPS Latitude: 37.7749° N
-GPS Longitude: -122.4194° W  ← Location revealed!
-GPS Altitude: 45 meters
-ISO Speed: 3200
-Aperture: f/2.8
-Shutter Speed: 1/250
-Author: John Doe              ← Name revealed!
-Copyright: John Doe
+ExifTool Version - 12.16
+File Name - DSC_0001.JPG
+File Size - 3.2 MB
+Date/Time - 2026-03-15 14:23:45
+Camera Make - Canon
+Camera Model - Canon EOS R5
+Lens Model - RF100mm f/2.8L IS USM
+GPS Latitude - 37.7749° N
+GPS Longitude - -122.4194° W  ← Location revealed!
+GPS Altitude - 45 meters
+ISO Speed - 3200
+Aperture - f/2.8
+Shutter Speed - 1/250
+Author - John Doe              ← Name revealed!
+Copyright - John Doe
 ```
 
 After ExifTool removal:
 ```
-File Name: DSC_0001.JPG
-File Size: 3.2 MB
+File Name - DSC_0001.JPG
+File Size - 3.2 MB
 (No metadata visible)
 ```
 
@@ -472,7 +472,7 @@ Verification (How to Confirm Metadata Removal)
 Using ExifTool:
 ```bash
 exiftool cleaned-photo.jpg | wc -l
-Should output: 1
+Should output - 1
 (Only "ExifTool Version" line, no metadata)
 ```
 
@@ -488,15 +488,15 @@ Using macOS Preview:
 
 Bottom Line
 
-For developers/automation: ExifTool. Most powerful, fully scriptable, most formats.
+For developers/automation - ExifTool. Most powerful, fully scriptable, most formats.
 
-For privacy-conscious users: MAT2 (CLI) or ExifCleaner (GUI). Simple, reliable, auditable.
+For privacy-conscious users - MAT2 (CLI) or ExifCleaner (GUI). Simple, reliable, auditable.
 
-For macOS photographers: Metapho ($14.99). Polished native app, selective removal.
+For macOS photographers - Metapho ($14.99). Polished native app, selective removal.
 
-For Android users: Scrambled Exif. One-tap removal before sharing.
+For Android users - Scrambled Exif. One-tap removal before sharing.
 
-For journalists/activists: ExifTool + automated verification workflow. Highest confidence, scriptable.
+For journalists/activists - ExifTool + automated verification workflow. Highest confidence, scriptable.
 
 Metadata removal is a core privacy practice. The right tool depends on your platform, workflow, and threat model. ExifTool is the universal standard; use it for critical work.
 

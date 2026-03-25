@@ -34,9 +34,9 @@ When you grant location permission to a dating app, you're typically agreeing to
 
 Location Permission Types
 
-Always: This permission allows an app to request your location at any time, regardless of whether the app is in use. Dating apps with this permission can track your location continuously, even when the app displays no active interface.
+Always - This permission allows an app to request your location at any time, regardless of whether the app is in use. Dating apps with this permission can track your location continuously, even when the app displays no active interface.
 
-While Using: This restricts location requests to times when the app is actively displayed on screen. However, many apps exploit system behaviors to extend this period beyond obvious usage.
+While Using - This restricts location requests to times when the app is actively displayed on screen. However, many apps exploit system behaviors to extend this period beyond obvious usage.
 
 When In Use (iOS) / Only allow while using the app (Android): The operating system theoretically limits location access to active sessions, but background execution capabilities complicate this boundary.
 
@@ -119,7 +119,7 @@ Beyond raw coordinates, algorithms infer additional information:
 
 Third-Party Data Sharing
 
-Location data represents a premium commodity in the data broker ecosystem. Dating app privacy policies frequently reveal extensive sharing arrangements:
+Location data represents a premium commodity in the data broker environment. Dating app privacy policies frequently reveal extensive sharing arrangements:
 
 ```text
 Data shared with:
@@ -163,7 +163,7 @@ iOS provides detailed location access reporting through the Privacy Dashboard:
 
 The dashboard shows when apps accessed your location and whether background tracking occurred.
 
-Android: Privacy Dashboard
+Android - Privacy Dashboard
 
 Android's equivalent feature provides similar insights:
 
@@ -190,7 +190,7 @@ iOS Focus modes can restrict location access for specific app categories:
 2. Configure to allow limited notifications
 3. Test that location access properly restricts
 
-Android: Permission Manager API
+Android - Permission Manager API
 
 Developers can implement their own permission management:
 

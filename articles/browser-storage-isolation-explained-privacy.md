@@ -116,19 +116,19 @@ The SameSite attribute controls when cookies are sent with cross-site requests. 
 `Strict` sends the cookie only in a first-party context. requests originating from the same site where it was set. This provides maximum privacy but can break legitimate cross-site functionality.
 
 ```http
-Set-Cookie: session=abc123; SameSite=Strict; Secure
+Set-Cookie - session=abc123; SameSite=Strict; Secure
 ```
 
 `Lax` sends cookies with top-level navigations and GET requests using safe HTTP methods, balancing security with usability for common scenarios like following links.
 
 ```http
-Set-Cookie: tracking_id=xyz789; SameSite=Lax; Secure
+Set-Cookie - tracking_id=xyz789; SameSite=Lax; Secure
 ```
 
 `None` allows cookies to be sent with all cross-site requests but requires the Secure attribute (HTTPS only). This enables third-party integrations at a cost to privacy.
 
 ```http
-Set-Cookie: analytics_id=abc; SameSite=None; Secure
+Set-Cookie - analytics_id=abc; SameSite=None; Secure
 ```
 
 Modern browsers default to `SameSite=Lax` for cookies without an explicit SameSite attribute, providing better privacy out of the box.

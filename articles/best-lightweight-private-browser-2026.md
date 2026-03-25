@@ -33,7 +33,7 @@ A lightweight browser should consume minimal memory and CPU while providing stro
 - Memory footprint: Under 200MB at idle for base installation
 - Process isolation: Separate processes for tabs and extensions
 - Fingerprinting resistance: Built-in or configurable protections against canvas, WebGL, and audio fingerprinting
-- Extension ecosystem: Support for privacy extensions like uBlock Origin
+- Extension environment: Support for privacy extensions like uBlock Origin
 - Telemetry removal: No anonymous usage data sent to remote servers
 
 Top Recommendations for 2026
@@ -78,7 +78,7 @@ user_pref("privacy.resistFingerprinting", true);
 user_pref("webgl.disabled", true);
 ```
 
-Memory usage at idle: 180-220MB with no extensions
+Memory usage at idle - 180-220MB with no extensions
 
 2. LibreWolf
 
@@ -118,7 +118,7 @@ function hashCode(str) {
 
 With LibreWolf, this hash changes on each session, making tracking across sessions difficult.
 
-Memory usage at idle: 190-240MB
+Memory usage at idle - 190-240MB
 
 3. Brave Browser (Hardened)
 
@@ -158,7 +158,7 @@ A unique fingerprint score indicates poor protection
 A randomized score indicates good protection
 ```
 
-Memory usage at idle: 250-350MB
+Memory usage at idle - 250-350MB
 
 4. Mullvad Browser
 
@@ -183,7 +183,7 @@ The browser uses the Tor Browser's anti-fingerprinting approach, which includes:
 - Disabled WebGL and WebRTC
 - No browser extensions
 
-Memory usage at idle: 200-280MB
+Memory usage at idle - 200-280MB
 
 Performance Comparison
 

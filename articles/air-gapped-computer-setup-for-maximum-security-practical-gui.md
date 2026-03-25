@@ -21,7 +21,7 @@ To set up an air-gapped computer for maximum security, you need dedicated hardwa
 
 - Use a separate admin: account with a strong, unique password for system modifications.
 - This guide provides practical: implementation steps for developers and power users who require serious security without complete functional loss.
-- However: an air-gapped system eliminates the most common attack surface: network connectivity.
+- However - an air-gapped system eliminates the most common attack surface: network connectivity.
 - Data transfer requires deliberate: action, software updates demand manual intervention, and the system cannot use cloud services.
 - Store the machine in a secure location: use a chassis lock or locked case, and establish procedures for access control.
 - Verification Export public keys: or signed artifacts back to the main workstation via read-only media 5.
@@ -42,7 +42,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Select and Prepare Hardware
+Step 1 - Select and Prepare Hardware
 
 The foundation of a secure air-gapped setup begins with hardware. Avoid refurbished machines from unknown sources, as these may contain hardware-level compromises. Purchase a dedicated machine from a reputable vendor, ideally with all wireless capabilities removed or disabled.
 
@@ -56,7 +56,7 @@ A typical air-gapped workstation configuration includes:
 
 Before first boot, verify the machine's integrity. Inspect all cables and components for tampering indicators. Update the BIOS firmware from a trusted source using a verified medium before proceeding with OS installation.
 
-Step 2: Harden the Operating System
+Step 2 - Harden the Operating System
 
 For an air-gapped system, choose an operating system that minimizes attack surface and supports encryption. Linux distributions like Qubes OS or Debian with the hardened kernel provide excellent baselines. Alternatively, Windows with BitLocker and rigorous group policies works for enterprise environments.
 
@@ -101,7 +101,7 @@ gsettings set org.gnome.desktop.session idle-delay 300
 gsettings set org.gnome.screensaver lock-enabled true
 ```
 
-Step 3: Set Up Encrypted Storage and Partitions
+Step 3 - Set Up Encrypted Storage and Partitions
 
 Full-disk encryption protects data if the physical machine is stolen. For Linux systems, LUKS (Linux Unified Key Setup) provides encryption:
 
@@ -121,7 +121,7 @@ sudo mount /dev/mapper/secure_volume /mnt/secure
 
 Store the LUKS header backup on separate, secure media. The header contains the master key, losing it means losing access to all data.
 
-Step 4: Set Up Data Transfer Methods
+Step 4 - Set Up Data Transfer Methods
 
 Transferring data to and from an air-gapped system requires deliberate, controlled mechanisms. The method chosen depends on security requirements and convenience tolerance.
 
@@ -161,7 +161,7 @@ zbarimg data.png
 
 This method creates an air gap at the data transfer level, no physical media enters both systems.
 
-Step 5: Perform Maintenance and Updates
+Step 5 - Perform Maintenance and Updates
 
 Keeping an air-gapped system secure requires different update procedures than connected machines.
 
@@ -190,7 +190,7 @@ The air-gapped system's physical security is as important as its network isolati
 
 Document all access to the machine. Any physical interaction with the system, software updates, data transfers, hardware maintenance, should be logged with timestamp and purpose.
 
-Practical Example: Secure Development Workflow
+Practical Example - Secure Development Workflow
 
 A developer working with sensitive cryptographic keys might structure their workflow as follows:
 
@@ -265,7 +265,7 @@ sudo mount /dev/mapper/secure_volume /mnt/secure
 
 The keyfile must be transferred to the air-gapped system via secure media.
 
-Step 6: Package Verification Procedures
+Step 6 - Package Verification Procedures
 
 When installing software on an air-gapped system, verify signatures:
 
@@ -295,7 +295,7 @@ sha256sum package.tar.gz
 Compare on all systems before proceeding
 ```
 
-Step 7: Secure Deletion on Air-Gapped Systems
+Step 7 - Secure Deletion on Air-Gapped Systems
 
 Data deleted normally can be recovered. On air-gapped systems, use secure deletion:
 
@@ -314,7 +314,7 @@ Destroy the drive entirely if it contains private keys
 sudo dd if=/dev/zero of=/dev/sdX bs=1M status=progress
 ```
 
-Step 8: Access Logging for Physical Security
+Step 8 - Access Logging for Physical Security
 
 Document all access to the air-gapped system:
 
@@ -423,7 +423,7 @@ Typical air-gapped setup costs:
 | Total first year | $355-555 |
 | Maintenance (annual) | $75-100 |
 
-Time investment: 4-6 hours initial setup, 1-2 hours monthly maintenance.
+Time investment - 4-6 hours initial setup, 1-2 hours monthly maintenance.
 
 Troubleshooting
 

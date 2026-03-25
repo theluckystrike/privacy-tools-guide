@@ -43,7 +43,7 @@ Recommended Privacy Extensions
 
 uBlock Origin remains the most compatible privacy extension for screen reader users. It blocks network requests without modifying page content, preserving DOM semantics that assistive technologies depend on.
 
-Installation: Search "uBlock Origin" in Firefox Add-ons or visit the official GitHub repository at github.com/gorhill/uBlock.
+Installation - Search "uBlock Origin" in Firefox Add-ons or visit the official GitHub repository at github.com/gorhill/uBlock.
 
 Recommended configuration for accessibility:
 
@@ -71,11 +71,11 @@ If cosmetic filters cause issues, open the uBlock Origin dashboard and check "Di
 
 Privacy Badger from the Electronic Frontier Foundation learns to block invisible trackers based on tracking behavior rather than predefined lists. Its DOM-preserving approach works well with screen readers.
 
-Installation: Available through Firefox Add-ons or at eff.org/privacybadger.
+Installation - Available through Firefox Add-ons or at eff.org/privacybadger.
 
 Privacy Badger starts in learning mode and blocks trackers only after detecting cross-site tracking behavior. This adaptive approach means it rarely blocks resources that legitimate accessibility services need, because accessibility infrastructure does not typically engage in cross-site tracking patterns.
 
-Verification: Test that Privacy Badger does not interfere with screen readers by navigating to a page with dynamic content and confirming that live region announcements still work. The EFF provides a tracker test page at coveryourtracks.eff.org that you can use to confirm the extension is functioning.
+Verification - Test that Privacy Badger does not interfere with screen readers by navigating to a page with dynamic content and confirming that live region announcements still work. The EFF provides a tracker test page at coveryourtracks.eff.org that you can use to confirm the extension is functioning.
 
 3. ClearURLs
 
@@ -203,17 +203,17 @@ When testing production deployments, enable privacy extensions and verify:
 
 Troubleshooting Common Issues
 
-Issue: Screen Reader Announces Blocked Content
+Issue - Screen Reader Announces Blocked Content
 
 Some extensions replace blocked content with placeholder text. Configure extensions to completely remove tracking elements rather than replacing them with notices.
 
 In uBlock Origin, enable "Disable cosmetic filtering" temporarily if screen reader announcements become confusing.
 
-Issue: Focus Lost After Navigation
+Issue - Focus Lost After Navigation
 
 Some privacy extensions interfere with Firefox's focus management. If focus issues occur, disable extensions one at a time to identify the culprit, then adjust filter rules to exclude problematic domains.
 
-Issue: ARIA Live Regions Not Working
+Issue - ARIA Live Regions Not Working
 
 Ensure extensions are not blocking the services that power ARIA live region updates. Add these domains to your allowlist:
 
@@ -223,7 +223,7 @@ Ensure extensions are not blocking the services that power ARIA live region upda
 @@||firebase.com^$third-party
 ```
 
-Issue: Form Autocomplete Broken
+Issue - Form Autocomplete Broken
 
 If autofill or autocomplete stops working after enabling a privacy extension, the extension may be blocking the autocomplete endpoint. Check the browser console for blocked network requests and add exceptions for your autocomplete service.
 

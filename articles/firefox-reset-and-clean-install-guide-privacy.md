@@ -72,9 +72,9 @@ for root, dirs, files in os.walk(profile_path):
 EOF
 ```
 
-Security note: These exported files contain sensitive data. Encrypt them before storing or transfer them to a secure password manager.
+Security note - These exported files contain sensitive data. Encrypt them before storing or transfer them to a secure password manager.
 
-Method 1: Firefox Reset (Built-in Refresh)
+Method 1 - Firefox Reset (Built-in Refresh)
 
 Firefox's built-in reset feature refreshes the browser while attempting to preserve essential data:
 
@@ -91,11 +91,11 @@ This process:
 
 The reset preserves your sync account data, so bookmarks and preferences sync back after signing in again. However, this method may retain some tracking data embedded in site permissions and exceptions.
 
-Method 2: Clean Install (Complete Profile Removal)
+Method 2 - Clean Install (Complete Profile Removal)
 
 A true clean install removes all profile data. This provides the strongest privacy baseline but requires manual data restoration.
 
-Step 1: Completely Close Firefox
+Step 1 - Completely Close Firefox
 
 Ensure Firefox isn't running in the background:
 
@@ -107,7 +107,7 @@ Verify no processes remain
 pgrep -f firefox && echo "Firefox still running" || echo "Firefox stopped"
 ```
 
-Step 2: Remove Firefox Profile Data
+Step 2 - Remove Firefox Profile Data
 
 ```bash
 Navigate to Firefox profile directory
@@ -122,7 +122,7 @@ rm -rf *.default-release
 
 This permanently deletes all data in that profile. Ensure backups exist first.
 
-Step 3: Reinstall Firefox
+Step 3 - Reinstall Firefox
 
 For privacy-sensitive usage, consider Firefox's specialized builds:
 
@@ -138,7 +138,7 @@ sudo apt update
 sudo apt install firefox-esr
 ```
 
-Step 4: Post-Install Privacy Configuration
+Step 4 - Post-Install Privacy Configuration
 
 After clean install, apply privacy hardening immediately before browsing:
 

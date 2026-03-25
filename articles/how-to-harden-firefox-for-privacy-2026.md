@@ -32,13 +32,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Phase 1: Built-in Privacy Settings
+Step 1 - Phase 1: Built-in Privacy Settings
 
 Open Firefox Preferences (about:preferences).
 
 Permissions
 
-Location: Preferences > Privacy & Security > Permissions
+Location - Preferences > Privacy & Security > Permissions
 
 - Location: Deny unless you explicitly allow per-site
 - Camera: Deny unless you explicitly allow per-site
@@ -50,9 +50,9 @@ Set autoplay to "Block Audio and Video". Websites autoplay videos and audio ads 
 
 Tracking and Fingerprinting
 
-Location: Preferences > Privacy & Security > Enhanced Tracking Protection
+Location - Preferences > Privacy & Security > Enhanced Tracking Protection
 
-Select: Strict
+Select - Strict
 
 Strict mode blocks:
 - Trackers & ads: Known tracking scripts (Google Analytics, Facebook Pixel, etc.)
@@ -63,11 +63,11 @@ Fingerprinting is underrated. If a tracker script learns your screen resolution,
 
 Cookies
 
-Location: Preferences > Privacy & Security > Cookies and Site Data
+Location - Preferences > Privacy & Security > Cookies and Site Data
 
-Select: Cookies and site data for visited sites only
+Select - Cookies and site data for visited sites only
 
-Or more paranoid: Cookies and site data (delete when Firefox is closed)
+Or more paranoid - Cookies and site data (delete when Firefox is closed)
 
 The first option accepts cookies from sites you visit but deletes them on browser close. Third-party cookies (ads, trackers) are blocked by default.
 
@@ -75,21 +75,21 @@ The second option never stores cookies. Extreme but effective. You'll need to re
 
 I recommend "visited sites only." It's practical but still secure.
 
-Check: Delete cookies and site data when Firefox is closed - Yes
+Check - Delete cookies and site data when Firefox is closed - Yes
 
-Check: Send websites a "Do Not Track" signal - Yes
+Check - Send websites a "Do Not Track" signal - Yes
 
 DNT is ignored by most sites, but it costs nothing and some privacy-conscious sites honor it.
 
-Step 2: Phase 2: DNS over HTTPS
+Step 2 - Phase 2: DNS over HTTPS
 
 DNS leaks expose your browsing history. When you visit example.com, your ISP's DNS server logs the query. They know you visited example.com (even if traffic is HTTPS-encrypted).
 
 Firefox supports DNS over HTTPS (DoH). Your DNS queries are encrypted and sent to a trusted provider instead of your ISP.
 
-Location: Preferences > Privacy & Security > DNS over HTTPS
+Location - Preferences > Privacy & Security > DNS over HTTPS
 
-Select: Enabled (Max Protection)
+Select - Enabled (Max Protection)
 
 This uses Firefox's preferred DoH provider (Cloudflare by default).
 
@@ -105,7 +105,7 @@ To select a custom provider, choose "Max Protection" and configure a specific IP
 
 For most users, Cloudflare's DoH is fine. They explicitly log nothing.
 
-Step 3: Phase 3: about:config Tweaks
+Step 3 - Phase 3: about:config Tweaks
 
 This is where real hardening happens. about:config is Firefox's deep settings.
 
@@ -127,7 +127,7 @@ Essential Privacy Tweaks
 | `dom.disable_beforeunload` | true | Prevent pages from blocking navigation with "unsaved changes" popups. |
 | `browser.sessionstore.max_tabs_undo` | 3 | Limit undo/restore history to 3 tabs (privacy: don't leak closed tab URLs). |
 
-Most critical: `privacy.firstparty.isolate` and `network.cookie.cookieBehavior = 4`.
+Most critical - `privacy.firstparty.isolate` and `network.cookie.cookieBehavior = 4`.
 
 First-party isolation means each website gets a separate cookie jar. If you visit both google.com and facebook.com, they don't share cookies. Prevents cross-site tracking.
 
@@ -170,7 +170,7 @@ Firefox collects usage data (what features you use, crash reports). Disable if p
 
 These are optional. Mozilla's telemetry is privacy-respecting (no personally identifying information). But if you want zero data sharing, disable them.
 
-Step 4: Phase 4: Extensions
+Step 4 - Phase 4: Extensions
 
 uBlock Origin (Essential)
 
@@ -207,7 +207,7 @@ Privacy Badger detects trackers that uBlock misses. It learns over time.
 
 Install from addons.mozilla.org. No configuration needed. Leave it on.
 
-Difference from uBlock: Privacy Badger uses heuristics (behavioral analysis). If a script loads on 20+ different sites, it's probably a tracker. uBlock uses known filter lists.
+Difference from uBlock - Privacy Badger uses heuristics (behavioral analysis). If a script loads on 20+ different sites, it's probably a tracker. uBlock uses known filter lists.
 
 Together, they cover each other's blind spots.
 
@@ -219,7 +219,7 @@ This prevents ISP/network snooping of page content. Combined with DoH, your enti
 
 Install from addons.mozilla.org. No configuration needed.
 
-Step 5: Phase 5: Container Tabs (Multi-Account Containers)
+Step 5 - Phase 5: Container Tabs (Multi-Account Containers)
 
 Container Tabs isolate cookies by container. Each container is a separate browsing context.
 
@@ -259,7 +259,7 @@ Workflow:
 
 This is more powerful than incognito mode. Incognito is temporary (cleared on close). Containers are persistent per-container.
 
-Step 6: Phase 6: Arkenfox user.js (Advanced)
+Step 6 - Phase 6: Arkenfox user.js (Advanced)
 
 Arkenfox is a Firefox hardening project. They maintain a `user.js` file with 500+ security settings.
 
@@ -273,7 +273,7 @@ Install:
 
 1. Download user.js from github.com/arkenfox/user.js
 2. Place in Firefox profile directory:
- - Windows: `C:\Users\[username]\AppData\Roaming\Mozilla\Firefox\Profiles\[profile.default]\`
+ - Windows - `C:\Users\[username]\AppData\Roaming\Mozilla\Firefox\Profiles\[profile.default]\`
  - macOS: `~/Library/Application Support/Firefox/Profiles/[profile.default]/`
  - Linux: `~/.mozilla/firefox/[profile.default]/`
 3. Restart Firefox
@@ -302,7 +302,7 @@ Not for most users. The about:config tweaks in Phase 3 cover 95% of hardening. A
 
 If you use online banking, shopping, streaming, Arkenfox will break things. The Phase 3 tweaks are more practical.
 
-Step 7: Phase 7: Verification and Testing
+Step 7 - Phase 7: Verification and Testing
 
 After hardening, verify your setup works:
 
@@ -326,13 +326,13 @@ Test Site Functionality
 
 Visit a few regular sites (Gmail, Twitter, YouTube). If they work, your hardening is compatible.
 
-Step 8: Common Breakage and Fixes
+Step 8 - Common Breakage and Fixes
 
-Issue: Site won't load
+Issue - Site won't load
 
 Often caused by blocking JavaScript or disabling a feature the site needs.
 
-Fix: Temporarily add site to uBlock's whitelist (click uBlock icon, press spacebar). Refresh. If it loads, the site needs ads/trackers.
+Fix - Temporarily add site to uBlock's whitelist (click uBlock icon, press spacebar). Refresh. If it loads, the site needs ads/trackers.
 
 Add to uBlock custom filters:
 ```
@@ -340,23 +340,23 @@ Add to uBlock custom filters:
 @@||example.com^
 ```
 
-Issue: Login fails
+Issue - Login fails
 
 Often caused by first-party isolation or strict cookie settings.
 
-Fix: Disable first-party isolation for that site:
+Fix - Disable first-party isolation for that site:
 
 In about:config, add to `privacy.firstparty.isolate.restrict_opener_access` an exception (advanced).
 
 Or temporarily disable `privacy.firstparty.isolate`, test, re-enable.
 
-Issue: Video won't play
+Issue - Video won't play
 
 Often caused by disabling WebRTC or DRM (Encrypted Media Extensions).
 
-Fix: Check if site uses DRM (Netflix, Disney+, Amazon Prime). Temporarily enable `media.eme.enabled`. Refresh.
+Fix - Check if site uses DRM (Netflix, Disney+, Amazon Prime). Temporarily enable `media.eme.enabled`. Refresh.
 
-Step 9: Recommended Setup (Practical)
+Step 9 - Recommended Setup (Practical)
 
 For most users, this setup balances privacy and usability:
 
@@ -390,9 +390,9 @@ This setup achieves:
 - Isolates cookies by site
 - Enables multi-account browsing
 
-Setup time: 30 minutes. Ongoing maintenance: 0 hours.
+Setup time - 30 minutes. Ongoing maintenance: 0 hours.
 
-Step 10: Desktop vs Mobile
+Step 10 - Desktop vs Mobile
 
 Firefox Desktop (above) supports all tweaks.
 

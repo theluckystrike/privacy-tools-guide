@@ -23,8 +23,8 @@ Table of Contents
 - [Understanding Confidential Transactions](#understanding-confidential-transactions)
 - [The Mimblewimble Cut-Through Mechanism](#the-mimblewimble-cut-through-mechanism)
 - [History and Motivation Behind Mimblewimble](#history-and-motivation-behind-mimblewimble)
-- [Grin: The Rust Implementation](#grin-the-rust-implementation)
-- [Beam: The Commercial Implementation](#beam-the-commercial-implementation)
+- [Grin - The Rust Implementation](#grin-the-rust-implementation)
+- [Beam - The Commercial Implementation](#beam-the-commercial-implementation)
 - [Practical Use Cases and Limitations](#practical-use-cases-and-limitations)
 - [Mining and Emission Differences](#mining-and-emission-differences)
 - [Comparing Grin and Beam](#comparing-grin-and-beam)
@@ -59,14 +59,14 @@ One of Mimblewimble's most innovative features is cut-through, which dramaticall
 In a traditional blockchain, every historical transaction remains verifiable forever. In Mimblewimble, when two transactions are chained (transaction B spends output from transaction A), the intermediate values can be eliminated:
 
 ```
-Transaction A: Input X → Output Y + Output Z
-Transaction B: Input Y → Output W
+Transaction A - Input X → Output Y + Output Z
+Transaction B - Input Y → Output W
 ```
 
 Through cut-through, these become:
 
 ```
-Combined: Input X → Output Z + Output W
+Combined - Input X → Output Z + Output W
 ```
 
 The intermediate output Y cancels out, leaving only the net transaction. This means:
@@ -79,13 +79,13 @@ History and Motivation Behind Mimblewimble
 
 Mimblewimble was introduced anonymously in 2016 via a whitepaper posted to a Bitcoin research mailing list. The paper wasn't signed, but the design was so elegant that the cryptographic community began implementing it immediately.
 
-The key motivation: Bitcoin's transparency creates permanent privacy vulnerabilities. Every transaction ever made is visible forever. As transaction analysis techniques improve, even old Bitcoin transactions become linkable to identities.
+The key motivation - Bitcoin's transparency creates permanent privacy vulnerabilities. Every transaction ever made is visible forever. As transaction analysis techniques improve, even old Bitcoin transactions become linkable to identities.
 
 Mimblewimble solves this by making transaction amounts and relationship cryptographically hidden from the start. This isn't just a privacy overlay, it's fundamental to how transactions validate.
 
 The name "Mimblewimble" is a Harry Potter reference (a spell that prevents speech), suggesting that the protocol prevents transaction surveillance.
 
-Grin: The Rust Implementation
+Grin - The Rust Implementation
 
 Grin is the original Mimblewimble implementation, written in Rust with a focus on simplicity and accessibility. Grin uses the Mimblewimble protocol as designed, with several key characteristics:
 
@@ -94,8 +94,8 @@ Linear Transaction Model
 Grin uses an interactive transaction building process where the sender and receiver communicate to create a transaction. Unlike Bitcoin's static UTXO model, Grin transactions require:
 
 ```
-Sender creates: tx_kernel (contains excess, signature, lock_height)
-Receiver creates: output commitment + rangeproof
+Sender creates - tx_kernel (contains excess, signature, lock_height)
+Receiver creates - output commitment + rangeproof
 ```
 
 Bulletproofs
@@ -118,14 +118,14 @@ No Addresses
 Grin doesn't use addresses in the traditional sense. Instead, outputs are directed to a public key that only the recipient can spend, using Diffie-Hellman key exchange during transaction building:
 
 ```
-Sender sends: (v * G + r * H) + Epilogue
-Recipient computes: r' = hash(sender_pubkey * r)
-Recipient can spend using: (r', v)
+Sender sends - (v * G + r * H) + Epilogue
+Recipient computes - r' = hash(sender_pubkey * r)
+Recipient can spend using - (r', v)
 ```
 
 This eliminates address reuse entirely, as every transaction creates a new destination.
 
-Beam: The Commercial Implementation
+Beam - The Commercial Implementation
 
 Beam is another Mimblewimble implementation, written in C++, with a more feature-rich approach and explicit focus on auditability options.
 
@@ -142,13 +142,13 @@ ViewKey audit_key = wallet.derive_view_key();
 
 This makes Beam attractive for enterprise use cases while maintaining individual privacy by default.
 
-SBBS: Secure Bulletin Board System
+SBBS - Secure Bulletin Board System
 
 Beam implements SBBS for transaction initiation, acting as an encrypted message board where senders can post transaction offers:
 
 ```
-Sender posts: Encrypted(tx_offer) → SBBS
-Recipient retrieves: Decrypts → Builds response → Posts encrypted(response)
+Sender posts - Encrypted(tx_offer) → SBBS
+Recipient retrieves - Decrypts → Builds response → Posts encrypted(response)
 ```
 
 This enables asynchronous transaction building without direct real-time communication.
@@ -175,9 +175,9 @@ Compare this to Monero, which has wider adoption and more mobile wallets, despit
 
 Mining and Emission Differences
 
-Grin's Emission Model: Linear supply of 1 GRIN per second forever. This means Grin's supply never caps, but the inflation rate continuously decreases relative to total supply. A simplified economic model designed for simplicity rather than scarcity.
+Grin's Emission Model - Linear supply of 1 GRIN per second forever. This means Grin's supply never caps, but the inflation rate continuously decreases relative to total supply. A simplified economic model designed for simplicity rather than scarcity.
 
-Beam's Emission Model: Decreasing supply with halving events similar to Bitcoin. Early blocks produce 100 BEAM, then halvings reduce emissions. Total supply cap of 262 million BEAM.
+Beam's Emission Model - Decreasing supply with halving events similar to Bitcoin. Early blocks produce 100 BEAM, then halvings reduce emissions. Total supply cap of 262 million BEAM.
 
 These differences affect long-term economics. Grin's unlimited supply may pressure the price long-term but ensures fee markets develop naturally. Beam's capped supply provides scarcity but requires careful transition to a fee-based economy.
 
@@ -230,9 +230,9 @@ Performance Characteristics and Blockchain Size
 
 One major advantage of Mimblewimble over other privacy coins:
 
-Bitcoin blockchain: ~600 GB (2026)
-Monero blockchain: ~180+ GB (larger due to ring signatures and decoys)
-Grin blockchain: ~25-30 GB with aggressive pruning
+Bitcoin blockchain - ~600 GB (2026)
+Monero blockchain - ~180+ GB (larger due to ring signatures and decoys)
+Grin blockchain - ~25-30 GB with aggressive pruning
 
 The cut-through mechanism works because many intermediate transactions cancel out. While this provides privacy and storage benefits, it also means historical transaction analysis becomes impossible, you cannot trace a transaction from 2023 if it was spent before 2024. This is actually a feature for privacy, but a limitation for forensic analysis.
 
@@ -253,35 +253,35 @@ privacy_level = {
 
 Practical Considerations for Using Grin or Beam
 
-For Individual Privacy: Both Grin and Beam provide superior privacy compared to Bitcoin or even Monero's optional privacy features. The privacy is default and mandatory.
+For Individual Privacy - Both Grin and Beam provide superior privacy compared to Bitcoin or even Monero's optional privacy features. The privacy is default and mandatory.
 
-Custody and Storage: Neither Grin nor Beam are as accessible as Monero. Fewer exchanges support trading, fewer wallets exist, and fewer merchants accept them. This limits practical usability despite superior privacy.
+Custody and Storage - Neither Grin nor Beam are as accessible as Monero. Fewer exchanges support trading, fewer wallets exist, and fewer merchants accept them. This limits practical usability despite superior privacy.
 
-CPU Requirements: Mimblewimble's Bulletproofs are computationally expensive. Running a full node requires more CPU than Bitcoin but less than Monero. Phones or older devices may struggle.
+CPU Requirements - Mimblewimble's Bulletproofs are computationally expensive. Running a full node requires more CPU than Bitcoin but less than Monero. Phones or older devices may struggle.
 
-Regulatory Status: Grin and Beam face regulatory scrutiny similar to Monero. Some exchanges have delisted them, and several countries have expressed concern about privacy coins. This regulatory uncertainty affects practical adoption.
+Regulatory Status - Grin and Beam face regulatory scrutiny similar to Monero. Some exchanges have delisted them, and several countries have expressed concern about privacy coins. This regulatory uncertainty affects practical adoption.
 
 Technical Audit Considerations
 
 For developers evaluating Mimblewimble implementations:
 
-Formal Verification: Both projects have undergone security audits, but formal verification of the complete protocol remains incomplete. The cryptographic primitives (Pedersen commitments, range proofs) have been formally verified; the protocol composition has not.
+Formal Verification - Both projects have undergone security audits, but formal verification of the complete protocol remains incomplete. The cryptographic primitives (Pedersen commitments, range proofs) have been formally verified; the protocol composition has not.
 
-Bulletproof Vulnerabilities: Range proofs are critical to Mimblewimble security. Any vulnerability in Bulletproofs affects all Mimblewimble chains. Monitor the cryptography literature for potential issues.
+Bulletproof Vulnerabilities - Range proofs are critical to Mimblewimble security. Any vulnerability in Bulletproofs affects all Mimblewimble chains. Monitor the cryptography literature for potential issues.
 
-Recent Consensus Issues: In 2023, Grin discovered a consensus bug that could have allowed inflation. The bug was caught during code review but demonstrates why Mimblewimble's complexity warrants ongoing scrutiny.
+Recent Consensus Issues - In 2023, Grin discovered a consensus bug that could have allowed inflation. The bug was caught during code review but demonstrates why Mimblewimble's complexity warrants ongoing scrutiny.
 
 Comparison with Other Privacy Coin Approaches
 
 Different privacy coins use fundamentally different cryptography:
 
-Monero (Ring Signatures): Every transaction rings together multiple inputs, providing plausible deniability about which input was spent. Privacy is default but the blockchain remains large.
+Monero (Ring Signatures) - Every transaction rings together multiple inputs, providing plausible deniability about which input was spent. Privacy is default but the blockchain remains large.
 
-Zcash (Zk-SNARKs): Allows optional privacy. Transactions can either be transparent or shielded. The optional nature affects adoption, most Zcash transactions remain on the transparent chain.
+Zcash (Zk-SNARKs) - Allows optional privacy. Transactions can either be transparent or shielded. The optional nature affects adoption, most Zcash transactions remain on the transparent chain.
 
 Mimblewimble (Pedersen + Bulletproofs): Mandatory privacy by design. Smaller blockchain due to cut-through. Strong privacy but less transaction flexibility.
 
-For developers: choose based on your specific requirements. Monero if you need proven adoption and extensive wallet support. Zcash if you need optional auditability. Mimblewimble (Grin/Beam) if you prioritize blockchain efficiency and mandatory privacy.
+For developers - choose based on your specific requirements. Monero if you need proven adoption and extensive wallet support. Zcash if you need optional auditability. Mimblewimble (Grin/Beam) if you prioritize blockchain efficiency and mandatory privacy.
 
 Frequently Asked Questions
 

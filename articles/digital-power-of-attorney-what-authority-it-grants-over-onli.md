@@ -255,7 +255,7 @@ Best Practices for Implementation
 2. Document everything: Maintain a secure, encrypted inventory of all digital assets
 3. Test access: Ensure your agents can actually access what they've been granted
 4. Coordinate with platforms: Some services have their own legacy/transfer features
-5. Educate your agents: Ensure they understand your digital ecosystem
+5. Educate your agents: Ensure they understand your digital environment
 6. Store securely: Keep the DPOA document with your will in a safe deposit box
 7. Distribute copies: Give your agents copies with signed notarization
 

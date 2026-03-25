@@ -20,7 +20,7 @@ Separate your professional and personal identities completely: use dedicated dev
 
 4.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
-- Payment methods leave trails: that can be subpoenaed or exploited: ```bash # Payment method isolation # # Recommended hierarchy (by privacy level): # 1.
+- Payment methods leave trails: that can be subpoenaed or exploited: ```bash # Payment method isolation # Recommended hierarchy (by privacy level): # 1.
 - Mastering advanced features takes: 1-2 weeks of regular use.
 - Focus on the 20%: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
@@ -45,7 +45,7 @@ Adversaries vary by threat model:
 - Platform risks: Payment processors, social media companies, and websites that may leak or share user data
 - Physical threats: Individuals seeking your location for confrontation or violence
 
-The core principle: separate your professional persona entirely from your personal identity. This means different phone numbers, email addresses, payment methods, devices, and physical locations for work activities.
+The core principle - separate your professional persona entirely from your personal identity. This means different phone numbers, email addresses, payment methods, devices, and physical locations for work activities.
 
 Identity Separation Architecture
 
@@ -58,13 +58,13 @@ Use dedicated devices for work activities:
 ```bash
 Physical device separation strategy
 #
-Device 1: Personal
+Device 1 - Personal
 - Personal email, banking, social media
 - Home IP address
 - GPS location enabled
 - Standard phone number
 #
-Device 2: Professional (Work Only)
+Device 2 - Professional (Work Only)
 - Dedicated work email (anonymous)
 - VoIP numbers only (Signal, etc.)
 - VPN always connected
@@ -197,17 +197,17 @@ For shipping physical goods or receiving payments:
 ```bash
 Address protection strategies
 #
-Option 1: Private mailbox (CMRA)
+Option 1 - Private mailbox (CMRA)
 - Rent a box at USPS or private service
 - Use as shipping address for work
 - Pick up packages with ID
 #
-Option 2: Mail forwarding services
+Option 2 - Mail forwarding services
 - Services like Traveling Mailbox
 - Scans envelopes, forwards packages
 - Creates layer of separation
 #
-Option 3: Virtual mailbox
+Option 3 - Virtual mailbox
 - Provides street address (not PO Box)
 - Accepts packages from all carriers
 - Forwards or holds based on preference

@@ -42,7 +42,7 @@ This isolation works at the Android user profile level, which means:
 
 How to Activate Guest Mode
 
-Method 1: Quick Settings Tiles
+Method 1 - Quick Settings Tiles
 
 The fastest way to switch to Guest Mode on most Android devices:
 
@@ -51,7 +51,7 @@ The fastest way to switch to Guest Mode on most Android devices:
 3. Tap the avatar to open the user switcher
 4. Select "Add guest" or "Switch to guest"
 
-Method 2: Settings Menu
+Method 2 - Settings Menu
 
 For more control or if Quick Settings tiles are customized:
 
@@ -61,7 +61,7 @@ For more control or if Quick Settings tiles are customized:
 4. Tap "Add user" and select "Guest"
 5. The device switches to Guest Mode automatically
 
-Method 3: ADB Command-Line Activation
+Method 3 - ADB Command-Line Activation
 
 For developers who want to script or automate this process:
 
@@ -85,10 +85,10 @@ Automating Guest Mode with Tasker
 
 Power users can automate Guest Mode switching for convenience. Here's a Tasker profile example:
 
-Profile: Auto-Switch to Guest on Lock Screen
+Profile - Auto-Switch to Guest on Lock Screen
 
 ```
-Event: Display Cleared
+Event - Display Cleared
    - From: On (keyguard becomes hidden)
 
 Enter Task:

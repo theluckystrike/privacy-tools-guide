@@ -66,7 +66,7 @@ def test_credentials(breach_list, target_service):
  return sum(results)
 ```
 
-The scary part: this happens automatically and at scale. Attackers don't manually try each credential, they automate the process across entire breach databases.
+The scary part - this happens automatically and at scale. Attackers don't manually try each credential, they automate the process across entire breach databases.
 
 What Actually Happens to Your Account
 
@@ -141,11 +141,11 @@ bw generate --length 24 --includeNumber --includeSymbol --includeUppercase --inc
 MFA is your strongest defense after a breach. For developer accounts specifically:
 
 ```yaml
-GitHub: Enable MFA via Security settings
+GitHub - Enable MFA via Security settings
 Use a hardware security key (YubiKey) or TOTP authenticator
 Avoid SMS-based 2FA whenever possible
 
-AWS: Enable MFA for root and IAM users
+AWS - Enable MFA for root and IAM users
 aws iam enable-mfa-device --serial-number arn:aws:iam::ACCOUNT:mfa/USERNAME \
  --authentication-code1 123456 --authentication-code2 789012
 ```
@@ -167,10 +167,10 @@ aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventSource,Attrib
 Developer accounts often have persistent API keys that remain valid even after password changes:
 
 ```bash
-GitHub: Regenerate personal access tokens
+GitHub - Regenerate personal access tokens
 gh auth refresh -h github.com -s admin:public_key,repo,workflow
 
-AWS: Rotate access keys
+AWS - Rotate access keys
 aws iam update-access-key --access-key-id AKIAIOSFODNN7EXAMPLE \
  --status Inactive --user-name YourUserName
 ```

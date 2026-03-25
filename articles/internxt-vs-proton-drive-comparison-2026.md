@@ -27,7 +27,7 @@ Table of Contents
 - [Performance and Sync Behavior](#performance-and-sync-behavior)
 - [Security Features Comparison](#security-features-comparison)
 - [When to Choose Each Service](#when-to-choose-each-service)
-- [Automation Example: Encrypted Backup Script](#automation-example-encrypted-backup-script)
+- [Automation Example - Encrypted Backup Script](#automation-example-encrypted-backup-script)
 
 Architecture and Encryption Models
 
@@ -73,7 +73,7 @@ const protonAuth = async () => {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      Username: 'your-email@protonmail.com',
+      Username - 'your-email@protonmail.com',
       Password: 'your-password'
     })
   });
@@ -202,9 +202,9 @@ Both services provide zero-knowledge encryption, but their approaches to key rec
 
 When to Choose Each Service
 
-Proton Drive suits users already in the Proton ecosystem (ProtonMail, ProtonVPN), those for whom Swiss jurisdiction matters, and anyone who needs email integrated with storage or prefers a longer-established provider. Internxt is the better fit if CLI automation is a priority, the larger free tier matters for testing, XChaCha20 performance is relevant to your platform, or you prefer one-time lifetime pricing over a subscription.
+Proton Drive suits users already in the Proton environment (ProtonMail, ProtonVPN), those for whom Swiss jurisdiction matters, and anyone who needs email integrated with storage or prefers a longer-established provider. Internxt is the better fit if CLI automation is a priority, the larger free tier matters for testing, XChaCha20 performance is relevant to your platform, or you prefer one-time lifetime pricing over a subscription.
 
-Automation Example: Encrypted Backup Script
+Automation Example - Encrypted Backup Script
 
 Here's a practical example comparing both services for automated backups:
 

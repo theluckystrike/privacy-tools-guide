@@ -28,8 +28,8 @@ Table of Contents
 - [Checking Your Current Privacy Exposure](#checking-your-current-privacy-exposure)
 - [Feature and Privacy Comparison](#feature-and-privacy-comparison)
 - [Data Subpoena and Law Enforcement Precedent](#data-subpoena-and-law-enforcement-precedent)
-- [Jurisdiction Lookup: Your Abortion Legal Risk](#jurisdiction-lookup-your-abortion-legal-risk)
-- [Practical Data Protection: Three Threat Models](#practical-data-protection-three-threat-models)
+- [Jurisdiction Lookup - Your Abortion Legal Risk](#jurisdiction-lookup-your-abortion-legal-risk)
+- [Practical Data Protection - Three Threat Models](#practical-data-protection-three-threat-models)
 - [Forced Data Deletion Checklist](#forced-data-deletion-checklist)
 - [Making Your Choice](#making-your-choice)
 
@@ -50,7 +50,7 @@ Period tracking generates sensitive reproductive and behavioral data: menstrual 
 
 Historically, this data seemed low-risk. Tracking apps were marketing channels, not criminal evidence. Companies collected data to sell targeted ads and conduct research. Privacy risks were financial and commercial.
 
-After Dobbs v. Jackson (June 2022), legal landscape shifted. Abortion is now prosecutable in 21+ US states with penalties up to life imprisonment. Prosecutors are actively subpoenaing period tracking data as evidence. In Texas, women have been investigated based on period tracking app data showing pregnancy. In Mississippi, prosecutors requested Flo user data (Flo refused). Miscarriage is now suspicious, requires investigation to rule out abortion.
+After Dobbs v. Jackson (June 2022), legal field shifted. Abortion is now prosecutable in 21+ US states with penalties up to life imprisonment. Prosecutors are actively subpoenaing period tracking data as evidence. In Texas, women have been investigated based on period tracking app data showing pregnancy. In Mississippi, prosecutors requested Flo user data (Flo refused). Miscarriage is now suspicious, requires investigation to rule out abortion.
 
 Period tracking data is effectively criminal evidence. In a jurisdiction criminalizing abortion, owning a period tracking record showing regular cycles then sudden gap (pregnancy + miscarriage, or abortion) is circumstantial evidence of crime.
 
@@ -135,7 +135,7 @@ Data protection:
 
 ```
 Sample Flo data law enforcement might request:
-User ID: 12345
+User ID - 12345
 Cycle dates: 
   Jan 2 - Jan 8 (regular)
   Feb 1 - Feb 8 (regular)
@@ -143,10 +143,10 @@ Cycle dates:
   Mar 4 - (no more entries)
 Sexual activity: 
   Mar 2, Mar 3
-Health search: "miscarriage symptoms"
+Health search - "miscarriage symptoms"
 
-Interpretation: User likely pregnant (end of March expected, given Feb 1 cycle start).
-Mar 4 start + sudden stop: possible miscarriage or abortion.
+Interpretation - User likely pregnant (end of March expected, given Feb 1 cycle start).
+Mar 4 start + sudden stop - possible miscarriage or abortion.
 This data alone becomes criminal evidence.
 ```
 
@@ -154,40 +154,40 @@ Known Law Enforcement Access and Legal Precedents
 
 Since 2022, at least 3 documented cases of law enforcement requesting period tracking data:
 
-Case 1 (Texas, 2023): Woman investigated for potential abortion based on period tracking data showing pregnancy. App company forced to produce data by warrant. User arrested and charged. (Outcome: Charges dropped due to insufficient evidence, but data was discoverable.)
+Case 1 (Texas, 2023) - Woman investigated for potential abortion based on period tracking data showing pregnancy. App company forced to produce data by warrant. User arrested and charged. (Outcome - Charges dropped due to insufficient evidence, but data was discoverable.)
 
-Case 2 (Mississippi, 2023): Prosecutors requested Flo user data for women whose cycles showed pregnancy. Flo refused claiming privacy policy, but Mississippi prosecution continued with other evidence. (Outcome: Flo maintained refusal, but legal precedent established that apps can be compelled.)
+Case 2 (Mississippi, 2023) - Prosecutors requested Flo user data for women whose cycles showed pregnancy. Flo refused claiming privacy policy, but Mississippi prosecution continued with other evidence. (Outcome - Flo maintained refusal, but legal precedent established that apps can be compelled.)
 
-Case 3 (FBI, 2024): Period tracking data was included in a broader health data subpoena to a dating app. Dating app stored period information shared by users. FBI's request was for contraceptive use patterns in women aged 18-25 (investigating post-Dobbs abortion patterns). (Outcome: Dating app disclosed data; period information was included.)
+Case 3 (FBI, 2024) - Period tracking data was included in a broader health data subpoena to a dating app. Dating app stored period information shared by users. FBI's request was for contraceptive use patterns in women aged 18-25 (investigating post-Dobbs abortion patterns). (Outcome - Dating app disclosed data; period information was included.)
 
-Legal authority: Courts recognize period tracking data as discoverable evidence via warrant, subpoena, or legal request. No US law specifically protects period tracking data from law enforcement. Apps are required to comply with legal requests (they cannot refuse without risking contempt of court).
+Legal authority - Courts recognize period tracking data as discoverable evidence via warrant, subpoena, or legal request. No US law specifically protects period tracking data from law enforcement. Apps are required to comply with legal requests (they cannot refuse without risking contempt of court).
 
 Secure Alternatives
 
-Option 1: Track locally on your device (zero cloud data):
+Option 1 - Track locally on your device (zero cloud data):
 - Apple Health: Cycle tracking built-in, stored only on your device (encrypted with device passcode), not synced to iCloud
 - Menstrual Cycle Tracker (Clue's privacy fork): Open-source, all data stored locally, no internet connection required
 - Trackle: Open-source, stores data locally, no cloud sync
 - Ovulation calendar spreadsheet: Track on your device in a spreadsheet app, never backed up to cloud
 
-Advantage: Data never leaves your device. No subpoena risk if app company has no data to provide.
-Limitation: You carry risk of device theft or physical access; data on device can still be subpoenaed if device is seized
+Advantage - Data never leaves your device. No subpoena risk if app company has no data to provide.
+Limitation - You carry risk of device theft or physical access; data on device can still be subpoenaed if device is seized
 
-Option 2: Zero-knowledge apps (encrypted client-side, company cannot access):
-- Drip: All data encrypted on your device, never decrypted by company servers. Even if subpoenaed, company has only encrypted blobs they cannot decrypt
+Option 2 - Zero-knowledge apps (encrypted client-side, company cannot access):
+- Drip - All data encrypted on your device, never decrypted by company servers. Even if subpoenaed, company has only encrypted blobs they cannot decrypt
 - Menstrual (open-source): Client-side encryption, company sees only encrypted data
 - Euki (Switzerland-based): Strong privacy, encrypted data storage
 
-Advantage: Law enforcement can subpoena company but receives only encrypted data they cannot read. Legal protection from prosecution based on period tracking is stronger.
-Limitation: If government compromises your device or demands your encryption password, data is exposed
+Advantage - Law enforcement can subpoena company but receives only encrypted data they cannot read. Legal protection from prosecution based on period tracking is stronger.
+Limitation - If government compromises your device or demands your encryption password, data is exposed
 
-Option 3: No digital tracking (destroy evidence):
+Option 3 - No digital tracking (destroy evidence):
 - Track on paper or in your head, destroy records immediately
 - Don't create digital evidence at all
 - Use period tracking apps but delete all data regularly (but note: deleted app data may be recoverable from device backups)
 
-Advantage: No data exists to subpoena. Law enforcement cannot request what the company never stored.
-Limitation: Loss of health tracking benefits; no data for your own medical decision-making
+Advantage - No data exists to subpoena. Law enforcement cannot request what the company never stored.
+Limitation - Loss of health tracking benefits; no data for your own medical decision-making
 
 Checking Your Current Privacy Exposure
 
@@ -223,10 +223,10 @@ Sample risk assessment:
 Low legal risk: Living in a state with legal abortion access, using app for health tracking only, no intent to seek abortion
 - Action: Switch to local tracking anyway (precautionary); request deletion from current app
 
-Medium legal risk: Living in state with limited abortion access, concerned about future legal changes
+Medium legal risk - Living in state with limited abortion access, concerned about future legal changes
 - Action: Immediately switch to zero-knowledge app (Drip) or local-only tracking; request full data deletion from current app
 
-High legal risk: Living in state criminalizing abortion, has used period tracking to plan pregnancy or contraception, concerned about legal exposure
+High legal risk - Living in state criminalizing abortion, has used period tracking to plan pregnancy or contraception, concerned about legal exposure
 - Action: Consult attorney; delete all cloud-based period tracking; consider legal strategy for data already provided to apps
 
 Feature and Privacy Comparison
@@ -244,31 +244,31 @@ Data Subpoena and Law Enforcement Precedent
 
 How subpoenas work for period tracking apps:
 
-Step 1: Prosecutor suspects abortion or crime
+Step 1 - Prosecutor suspects abortion or crime
 - Woman seeks abortion, reports miscarriage, searches "abortion pills" online
 - Pregnancy status visible to hospital (if D&C procedure performed)
 - Prosecutor wants evidence to prosecute
 
-Step 2: Law enforcement identifies data holder
+Step 2 - Law enforcement identifies data holder
 - Apps like Flo are known to contain period tracking data
 - Prosecutor files subpoena to app company for all user records
 
-Step 3: App company receives subpoena
+Step 3 - App company receives subpoena
 - Court order forces app company to produce data
 - Company can argue under 4th Amendment, but must comply
 - Flo has refused some subpoenas (public stance), but legally cannot refuse indefinitely
 
-Step 4: Data is provided to prosecutor
+Step 4 - Data is provided to prosecutor
 - All cycle data, pregnancy tests, search history provided
 - App company may provide only "deidentified" data claiming privacy
 - But if prosecution knows the user, "deidentified" data becomes immediately re-identified
 
-Step 5: Data used as evidence
+Step 5 - Data used as evidence
 - Timeline matching: "User's cycle data shows pregnancy starting March 1. Hospital records show D&C (abortion indicator) March 28. Searches for 'abortion pills' March 22-27."
 - Circumstantial but powerful evidence
 - User prosecuted for abortion or conspiracy
 
-Jurisdiction Lookup: Your Abortion Legal Risk
+Jurisdiction Lookup - Your Abortion Legal Risk
 
 Reproductive privacy varies dramatically by location:
 
@@ -291,27 +291,27 @@ States with uncertain laws (rapidly changing):
 - Check abortion.com or reproductiverights.org for current status
 - Laws change; what's legal today may be illegal next year
 
-Practical step: Enter your state at reproductiverights.org, understand your current legal exposure, adjust privacy practices accordingly.
+Practical step - Enter your state at reproductiverights.org, understand your current legal exposure, adjust privacy practices accordingly.
 
-Practical Data Protection: Three Threat Models
+Practical Data Protection - Three Threat Models
 
-Threat model 1: Not pregnant, no abortion risk, just want period tracking
+Threat model 1 - Not pregnant, no abortion risk, just want period tracking
 - Motivation: Health tracking, period prediction, fertility awareness
 - Solution: Use any local app (Apple Health, Drip, spreadsheet)
 - Encryption: Device-local encryption sufficient
 - Data risk: Low (no incriminating data exists)
 
-Threat model 2: Live in abortion-restrictive state, might need abortion access
+Threat model 2 - Live in abortion-restrictive state, might need abortion access
 - Motivation: health tracking, potential pregnancy tracking, contraceptive monitoring
 - Solution: Use zero-knowledge app (Drip) or no tracking
 - Encryption: Client-side encryption mandatory (company cannot decrypt)
 - Data risk: Medium (partial data created; encrypted backup safer than no backup)
 
-Threat model 3: Live in abortion-ban state, have experienced pregnancy loss or abortion
+Threat model 3 - Live in abortion-ban state, have experienced pregnancy loss or abortion
 - Motivation: Health continuity, prevent future legal exposure
 - Solution: Delete all existing data, never create new digital records
 - Encryption: Not applicable (no data to encrypt)
-- Data risk: High (existing data may be discoverable; preventing new evidence is paramount)
+- Data risk: High (existing data may be discoverable; preventing new evidence is essential)
 
 If you fall in threat model 3, consult an attorney immediately. Data deletion is urgent but may not erase server backups. Professional advice is essential.
 
@@ -352,15 +352,15 @@ If you decide to leave an app:
  - Note date and time of deletion request
  - Store documentation for attorney if needed
 
-Why this matters: Prosecutors can demand data from cloud providers, email backups, and old device backups. Thorough deletion reduces likelihood of recovery.
+Why this matters - Prosecutors can demand data from cloud providers, email backups, and old device backups. Thorough deletion reduces likelihood of recovery.
 
 Making Your Choice
 
-If you value your privacy and live in a state criminalizing abortion (or concerned about future legal changes): Use Drip (zero-knowledge app) or Apple Health (local-only tracking). Cost: $0-5/month. Privacy assurance: Company cannot access your data and cannot provide to law enforcement.
+If you value your privacy and live in a state criminalizing abortion (or concerned about future legal changes): Use Drip (zero-knowledge app) or Apple Health (local-only tracking). Cost - $0-5/month. Privacy assurance: Company cannot access your data and cannot provide to law enforcement.
 
 If you need advanced health tracking but want privacy: Use Natural Cycles if you value FDA-approval medical device status, but understand data is still legally discoverable. Otherwise use Drip for equivalent tracking with stronger encryption.
 
-If using Flo or Clue currently: Request account deletion, export your data to verify what was retained, and switch to local tracking app. The marginal benefit of cloud synchronization and third-party health insights does not justify legal exposure.
+If using Flo or Clue currently - Request account deletion, export your data to verify what was retained, and switch to local tracking app. The marginal benefit of cloud synchronization and third-party health insights does not justify legal exposure.
 
 If you cannot delete from current app or have past data concerns: Consult a reproductive rights attorney or privacy attorney in your state. Data already provided to apps may be legally discoverable, but an attorney can advise on options specific to your jurisdiction and situation.
 

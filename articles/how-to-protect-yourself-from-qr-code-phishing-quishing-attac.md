@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Quishing Attacks
+Step 1 - Understand Quishing Attacks
 
 Quishing combines "QR code" with "phishing." Attackers embed malicious URLs in QR codes that redirect users to credential-harvesting pages, malware download sites, or fake login portals. The attack succeeds because QR codes bypass traditional email filters and appear innocuous when printed on physical materials.
 
@@ -40,7 +40,7 @@ Attack vectors include:
 
 For developers building applications that generate or scan QR codes, understanding these attack surfaces is essential for building secure systems.
 
-Step 2: How QR Codes Enable Attacks
+Step 2 - How QR Codes Enable Attacks
 
 A QR code simply encodes text, typically a URL. When scanned, the phone's camera or a dedicated app interprets this text and acts on it. The critical security gap: users cannot determine a QR code's destination without scanning it first.
 
@@ -61,7 +61,7 @@ img.save("qr_code.png")
 
 The URL uses a technique called "typosquatting", replacing legitimate characters with similar-looking ones to deceive users.
 
-Step 3: Detecting Malicious QR Codes
+Step 3 - Detecting Malicious QR Codes
 
 Several techniques help identify potentially dangerous QR codes before scanning:
 
@@ -127,7 +127,7 @@ Physical QR codes often show signs of tampering:
 - Codes in unusual locations (e.g., on parking meters, elevator buttons)
 - Codes that are too large or poorly aligned
 
-Step 4: Build QR Security into Applications
+Step 4 - Build QR Security into Applications
 
 For developers creating applications that handle QR codes, implement these defensive measures:
 
@@ -219,19 +219,19 @@ print(f"Actual destination: {final_url}")
 
 This technique reveals shortened URLs but introduces privacy considerations, ensure your implementation complies with applicable privacy regulations and organizational policies.
 
-Step 5: Protecting Your Organization
+Step 5 - Protecting Your Organization
 
 Beyond individual awareness, organizations should implement these measures:
 
-Employee Training: Conduct regular security awareness sessions specifically covering quishing. Show examples of physical and digital quishing attempts targeting your industry.
+Employee Training - Conduct regular security awareness sessions specifically covering quishing. Show examples of physical and digital quishing attempts targeting your industry.
 
-Technical Controls: Deploy email security gateways that analyze QR codes within emails. Implement network-level URL filtering to block known malicious domains.
+Technical Controls - Deploy email security gateways that analyze QR codes within emails. Implement network-level URL filtering to block known malicious domains.
 
-Reporting Mechanisms: Create clear channels for employees to report suspicious QR codes. Quick reporting enables faster response to emerging threats.
+Reporting Mechanisms - Create clear channels for employees to report suspicious QR codes. Quick reporting enables faster response to emerging threats.
 
-Physical Security: Regularly audit physical spaces for tampered QR codes. Include QR code inspection in security checklists for offices, retail locations, and public areas.
+Physical Security - Regularly audit physical spaces for tampered QR codes. Include QR code inspection in security checklists for offices, retail locations, and public areas.
 
-Step 6: Responding to Quishing Incidents
+Step 6 - Responding to Quishing Incidents
 
 If you or your organization encounters a quishing attempt:
 

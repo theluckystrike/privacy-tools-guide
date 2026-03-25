@@ -51,7 +51,7 @@ A proper privacy due diligence process begins with understanding what data the t
 
 Developers should examine the target's data infrastructure with specific attention to:
 
-Database Schema Analysis: Review database schemas to identify personal data storage patterns. Look for tables containing customer information, employee records, and any data that might qualify as personally identifiable information (PII) under applicable regulations.
+Database Schema Analysis - Review database schemas to identify personal data storage patterns. Look for tables containing customer information, employee records, and any data that might qualify as personally identifiable information (PII) under applicable regulations.
 
 ```sql
 -- Example query to identify potential PII columns
@@ -65,9 +65,9 @@ WHERE column_name LIKE '%email%'
    OR column_name LIKE '%dob%';
 ```
 
-Data Flow Mapping: Trace how personal data moves through the system. This includes API endpoints, inter-service communications, and data transfers to third parties. Document any encryption in transit and at rest.
+Data Flow Mapping - Trace how personal data moves through the system. This includes API endpoints, inter-service communications, and data transfers to third parties. Document any encryption in transit and at rest.
 
-Retention Policies: Check whether the target company has documented data retention policies and, more importantly, whether those policies are actually implemented in code. Orphaned data tables or forgotten backup files frequently become compliance liabilities.
+Retention Policies - Check whether the target company has documented data retention policies and, more importantly, whether those policies are actually implemented in code. Orphaned data tables or forgotten backup files frequently become compliance liabilities.
 
 Compliance Verification Checklist
 
@@ -161,11 +161,11 @@ Integration Planning Considerations
 
 Once you've completed the privacy due diligence assessment, integrate your findings into the overall acquisition planning. Key considerations include:
 
-Remediation Timeline: Identify privacy gaps that require fixing before closing versus issues that can be addressed post-integration. Prioritize items with regulatory exposure or potential for significant fines.
+Remediation Timeline - Identify privacy gaps that require fixing before closing versus issues that can be addressed post-integration. Prioritize items with regulatory exposure or potential for significant fines.
 
-Integration Architecture: Plan how to consolidate data systems while maintaining compliance. This often requires careful mapping of consent records, retention schedules, and data subject rights capabilities across both organizations.
+Integration Architecture - Plan how to consolidate data systems while maintaining compliance. This often requires careful mapping of consent records, retention schedules, and data subject rights capabilities across both organizations.
 
-Resource Allocation: Ensure the combined entity has sufficient privacy engineering resources to handle increased complexity. This includes staff for data subject rights requests, privacy impact assessments, and ongoing compliance monitoring.
+Resource Allocation - Ensure the combined entity has sufficient privacy engineering resources to handle increased complexity. This includes staff for data subject rights requests, privacy impact assessments, and ongoing compliance monitoring.
 
 Documenting Findings for Legal Review
 

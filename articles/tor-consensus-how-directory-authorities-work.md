@@ -52,13 +52,13 @@ Here's how the process works:
 Step 1: Relay Publication
 Every Tor relay periodically publishes a server descriptor containing its identity key, exit policy, bandwidth, and other configuration details. Relays also publish extra-info documents containing additional statistics.
 
-Step 2: Authority Collection
+Step 2 - Authority Collection
 Directory authorities continuously fetch these descriptors from all known relays. Each authority builds its own view of the network based on what it has collected.
 
-Step 3: Voting and Consensus
+Step 3 - Voting and Consensus
 Once per hour, each authority publishes its vote, a signed document listing all relays the authority believes are valid. Authorities exchange votes with each other and compute a consensus by applying a weighted voting algorithm. Relays must meet certain criteria (uptime, bandwidth, proper configuration) to receive flags like "Fast", "Stable", or "Guard".
 
-Step 4: Distribution
+Step 4 - Distribution
 The final consensus document is signed by at least 5 of 9 authorities (a quorum requirement). This signature threshold ensures that no single compromised authority can manipulate the network state. Clients and relays download the signed consensus and verify the signatures before accepting it.
 
 Practical Examples for Developers
@@ -306,7 +306,7 @@ The consensus includes each relay's exit policy. Understanding how to parse thes
 ```python
 def parse_exit_policy(policy_line):
     """Parse Tor exit policy (simplified)"""
-    # Format: accept/reject ip:port[, ...]
+    # Format - accept/reject ip:port[, ...]
 
     # Special cases:
     # "accept *:80, accept *:443, reject *:*" = web traffic only
@@ -354,9 +354,9 @@ Historical Consensus Issues
 
 Understanding past problems helps operators maintain integrity:
 
-- 2013 - Directory Authority Attacks: Attackers attempted to publish false consensus. Signature verification prevented compromise
-- 2018 - Consensus Bandwidth Inflation: Some authorities over-weighted certain relays. Improved measurement corrected this
-- 2022 - Authority Availability: Extended downtime of one authority reduced signature count. Network degraded gracefully
+- 2013 - Directory Authority Attacks - Attackers attempted to publish false consensus. Signature verification prevented compromise
+- 2018 - Consensus Bandwidth Inflation - Some authorities over-weighted certain relays. Improved measurement corrected this
+- 2022 - Authority Availability - Extended downtime of one authority reduced signature count. Network degraded gracefully
 
 The consensus mechanism's redundancy and cryptography have held against sustained attacks for 17+ years.
 

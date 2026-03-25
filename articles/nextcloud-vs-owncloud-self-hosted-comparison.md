@@ -14,11 +14,11 @@ intent-checked: true
 voice-checked: true
 ---
 
-Nextcloud forked from ownCloud in 2016 and has since pulled ahead in features, community size, and ecosystem. OwnCloud still exists but has shifted toward enterprise licensing. For most self-hosters, Nextcloud is the better choice.
+Nextcloud forked from ownCloud in 2016 and has since pulled ahead in features, community size, and environment. OwnCloud still exists but has shifted toward enterprise licensing. For most self-hosters, Nextcloud is the better choice.
 
 Nextcloud provides file sync, calendar, contacts, email, video calls (Talk), office editing (Collabora/OnlyOffice), and hundreds of community apps. The server runs on PHP with MySQL/PostgreSQL. Docker deployment takes under 10 minutes. E2E encryption is available but optional and limited to specific folders.
 
-OwnCloud focuses on file sync and sharing with fewer bundled features. The open-source edition (ownCloud Infinite Scale, written in Go) is lighter weight. Enterprise features require a paid license. The app ecosystem is smaller than Nextcloud's.
+OwnCloud focuses on file sync and sharing with fewer bundled features. The open-source edition (ownCloud Infinite Scale, written in Go) is lighter weight. Enterprise features require a paid license. The app environment is smaller than Nextcloud's.
 
 | Feature | Nextcloud | ownCloud |
 |---------|-----------|----------|
@@ -27,7 +27,7 @@ OwnCloud focuses on file sync and sharing with fewer bundled features. The open-
 | E2E Encryption | Yes (folder-level) | Yes (enterprise) |
 | Video Calls | Nextcloud Talk | No (third-party) |
 | Office Editing | Collabora / OnlyOffice | Enterprise only |
-| App Ecosystem | 400+ apps | ~50 apps |
+| App environment | 400+ apps | ~50 apps |
 | Docker Setup | Official images | Official images |
 | RAM Usage | 512 MB minimum | 256 MB minimum (OCIS) |
 | Active Contributors | 2,000+ | ~200 |

@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Your Digital Footprint
+Step 1 - Understand Your Digital Footprint
 
 Your digital footprint consists of:
 - Intentional data: Social media profiles, public websites, registrations
@@ -39,7 +39,7 @@ Your digital footprint consists of:
 
 The goal of this audit is to find what's publicly accessible and either delete it or accept the exposure.
 
-Step 2: OSINT Tools for Personal Auditing
+Step 2 - OSINT Tools for Personal Auditing
 
 Google Alerts
 
@@ -229,12 +229,12 @@ Check GitHub (if you've committed with email)
 
 Once you've found all emails associated with you, run each through HIBP to find breach exposure.
 
-Step 3: Build an OSINT Dashboard
+Step 3 - Build an OSINT Dashboard
 
 Create a spreadsheet tracking your digital footprint:
 
 ```
-Google Sheet: "Digital Footprint Audit"
+Google Sheet - "Digital Footprint Audit"
 
 Data Point | Found Where | Status | Action | Date Removed---
 --------|------------|--------|--------|-------------
@@ -261,11 +261,11 @@ Files like PDFs and Word docs contain metadata (author, creation date, edits):
 
 ```bash
 exiftool photo.jpg
-Shows: Camera model, GPS coordinates, creation time
+Shows - Camera model, GPS coordinates, creation time
 
 For PDFs:
 pdfinfo document.pdf
-Shows: Title, author, subject, creation date
+Shows - Title, author, subject, creation date
 
 Cleanup:
 Remove metadata from photos before sharing online
@@ -323,30 +323,30 @@ These services:
 - Cost money but save massive time
 ```
 
-Step 4: Privacy Response Plan
+Step 4 - Privacy Response Plan
 
 After auditing, develop a response strategy:
 
 ```
-Tier 1: High Risk (take action immediately)
+Tier 1 - High Risk (take action immediately)
 - Email in breached password databases → Change password everywhere
 - Home address public → Consider data broker removal
 - Phone number public → Data broker removal, contact privacy
 - SSN exposed → Credit freeze + fraud monitoring
 
-Tier 2: Moderate Risk (plan removal)
+Tier 2 - Moderate Risk (plan removal)
 - Social media profile details → Reduce visibility
 - Old blog posts with personal info → Delete or privatize
 - Photos with metadata → Remove metadata before resharing
 - LinkedIn/professional profiles → Limit visibility
 
-Tier 3: Acceptable Exposure (ongoing monitoring)
+Tier 3 - Acceptable Exposure (ongoing monitoring)
 - Public social profiles → These are intentional
 - Professional websites → Assume permanent
 - Old Google cached pages → Monitor for new exposure
 ```
 
-Step 5: Ongoing Monitoring
+Step 5 - Ongoing Monitoring
 
 Set up monthly audit reminders:
 
@@ -377,7 +377,7 @@ Tools Summary
 | Wayback Machine | Find old content | Free | 5 min per search |
 | exiftool | Strip metadata | Free | 1 min per file |
 
-Step 6: Expectations
+Step 6 - Expectations
 
 Completely removing yourself from the internet is unrealistic. Your goal is:
 1. Knowing what's exposed (this audit)

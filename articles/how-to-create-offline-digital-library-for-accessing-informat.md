@@ -42,7 +42,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Essential Tools for Offline Content
+Step 1 - Essential Tools for Offline Content
 
 Several open-source tools excel at downloading and organizing web content for offline use.
 
@@ -62,7 +62,7 @@ httrack "https://example.com" -O ./offline-copy "+example.com/*" -v
 
 SingleFile browser extension captures web pages as self-contained HTML files, inlining all CSS, images, and JavaScript. This approach works well for preserving individual articles or tutorials you reference frequently.
 
-Step 2: Build Your Library Structure
+Step 2 - Build Your Library Structure
 
 Organizing content systematically improves retrieval when you need information urgently. Consider creating directories by category: reference materials, technical documentation, educational content, news archives, and entertainment.
 
@@ -88,15 +88,15 @@ For a practical folder structure on Linux or macOS:
 
 Naming conventions matter when searching offline. Use descriptive filenames with dates for news content, version numbers for software documentation, and consistent categorization across your library.
 
-Step 3: Practical Implementation Steps
+Step 3 - Practical Implementation Steps
 
 Start building your offline library with these concrete actions:
 
-Step 1: Assess your storage needs. Calculate available space on hard drives or external storage. An offline library requires significant capacity, budget at least 500GB for a reasonably complete collection.
+Step 1 - Assess your storage needs. Calculate available space on hard drives or external storage. An offline library requires significant capacity, budget at least 500GB for a reasonably complete collection.
 
-Step 2: Prioritize essential content. Begin with information you'd need during emergencies: first aid guides, government contact information, local news archives, and educational materials for children. Technical documentation for tools you use daily deserves high priority.
+Step 2 - Prioritize essential content. Begin with information you'd need during emergencies: first aid guides, government contact information, local news archives, and educational materials for children. Technical documentation for tools you use daily deserves high priority.
 
-Step 3: Download Wikipedia collections. Visit kiwix.org and select the ZIM files matching your needs. The English Wikipedia runs around 90GB, while smaller language editions or specialized collections like "Science" or "History" offer smaller footprints.
+Step 3 - Download Wikipedia collections. Visit kiwix.org and select the ZIM files matching your needs. The English Wikipedia runs around 90GB, while smaller language editions or specialized collections like "Science" or "History" offer smaller footprints.
 
 ```bash
 Download Kiwix command-line tools for automation
@@ -104,7 +104,7 @@ wget https://download.kiwix.org/release/kiwix-tools/kiwix-tools_linux-x64.tar.gz
 tar -xzf kiwix-tools_linux-x64.tar.gz
 ```
 
-Step 4: Automate updates. Create cron jobs or scripts that periodically refresh your offline content:
+Step 4 - Automate updates. Create cron jobs or scripts that periodically refresh your offline content:
 
 ```bash
 #!/bin/bash
@@ -112,9 +112,9 @@ update-library.sh - Update offline content weekly
 httrack "https://your-priority-site.com" -O "./docs/your-priority-site" "+your-priority-site.com/*" --update
 ```
 
-Step 5: Verify integrity. Periodically test that your offline content remains accessible. Corrupted downloads or outdated links become apparent only when you attempt to use them.
+Step 5 - Verify integrity. Periodically test that your offline content remains accessible. Corrupted downloads or outdated links become apparent only when you attempt to use them.
 
-Step 4: Device Considerations
+Step 4 - Device Considerations
 
 Different devices serve different purposes in your offline strategy. A dedicated laptop with large storage works as your primary research station. External SSDs attached to this machine hold the bulkier collections.
 
@@ -185,7 +185,7 @@ Create a Zotero library and sync it locally
 Access Settings > Sync to configure offline libraries
 ```
 
-Step 5: Backup and Redundancy Strategies
+Step 5 - Backup and Redundancy Strategies
 
 A digital library is only valuable if you can still access it during emergencies:
 
@@ -209,7 +209,7 @@ Unmount when finished
 veracrypt --text --dismount /path/to/library.vc
 ```
 
-Step 6: Specialized Content Collections
+Step 6 - Specialized Content Collections
 
 Beyond Wikipedia and general websites:
 
@@ -238,7 +238,7 @@ Educational Content:
 - LibreTexts (free textbook content)
 - Open Courseware from major universities
 
-Step 7: Build a Kiwix Server
+Step 7 - Build a Kiwix Server
 
 For households with multiple devices, run Kiwix as a server:
 
@@ -254,7 +254,7 @@ Access from any device on network at http://localhost:8080
 
 This allows all devices in your home to access the offline library without storing copies on each device.
 
-Step 8: Perform Maintenance and Updates
+Step 8 - Perform Maintenance and Updates
 
 Creating an update schedule:
 
@@ -298,7 +298,7 @@ When downloading content for offline storage:
 - Metadata removal: Use exiftool to strip identifying metadata from sensitive documents
 - Encrypted storage: Store sensitive content in encrypted containers, especially if using cloud backup
 
-Step 9: Test Your Offline Setup
+Step 9 - Test Your Offline Setup
 
 Before relying on your offline library:
 
@@ -325,7 +325,7 @@ Before committing storage:
 
 A well-curated offline library for a household typically requires 200-500GB of storage.
 
-Step 10: Practical Scenario: Using Your Offline Library
+Step 10 - Practical Scenario: Using Your Offline Library
 
 During an internet outage:
 1. Power on offline laptop or device with local library

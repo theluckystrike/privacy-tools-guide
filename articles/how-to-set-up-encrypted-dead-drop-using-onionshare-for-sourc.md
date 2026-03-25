@@ -28,7 +28,7 @@ Before setting up your dead drop, ensure you have:
 
 For a persistent dead drop that remains available around the clock, a VPS is more reliable than a laptop that gets closed or rebooted. DigitalOcean's $6/month Droplet running Ubuntu 22.04 is sufficient. OnionShare supports headless operation through its CLI, making server deployment practical.
 
-Step 2: Step-by-Step Setup
+Step 2 - Step-by-Step Setup
 
 1. Install OnionShare
 
@@ -77,8 +77,8 @@ The `--no-autostop-sharing` flag keeps the service running indefinitely rather t
 Configure the receive behavior in the settings:
 
 ```text
-Maximum file size: 50MB (adjust based on your needs)
-Receive length: 0 (unlimited, sources can submit anytime)
+Maximum file size - 50MB (adjust based on your needs)
+Receive length - 0 (unlimited, sources can submit anytime)
 ```
 
 You can also add a custom welcome message that sources see when they visit your onion service. Keep this message minimal, instructions to use Tor Browser, an assurance that no logs are kept, and a contact method for questions if needed.
@@ -139,14 +139,14 @@ drop.encrypt_file('uploaded_file.bin', 'YOUR_KEY_ID')
 
 This ensures that even if someone compromises your server, they cannot read the submitted content without your private GPG key.
 
-A practical workflow: configure a filesystem watcher (inotifywait on Linux) to trigger the GPG encryption script automatically whenever a new file appears in the OnionShare receive directory. This way, submitted files are encrypted within seconds of arrival, minimizing the window during which they exist in plaintext.
+A practical workflow - configure a filesystem watcher (inotifywait on Linux) to trigger the GPG encryption script automatically whenever a new file appears in the OnionShare receive directory. This way, submitted files are encrypted within seconds of arrival, minimizing the window during which they exist in plaintext.
 
 ```bash
 Watch for new files and auto-encrypt
 inotifywait -m ~/OnionShare/drops -e create |
 while read path action file; do
     python3 /usr/local/bin/encrypt-drop.py "$path$file" YOUR_GPG_KEY_ID
-    echo "Encrypted: $file at $(date)" >> ~/OnionShare/log.txt
+    echo "Encrypted - $file at $(date)" >> ~/OnionShare/log.txt
 done
 ```
 
@@ -204,7 +204,7 @@ Close Tor Browser after submission to protect your session.
 Do not reuse this session for other browsing.
 ```
 
-Step 3: Sharing the Dead Drop Address
+Step 3 - Sharing the Dead Drop Address
 
 When providing the onion address to sources, use multiple channels:
 

@@ -18,7 +18,7 @@ tags: [privacy-tools-guide, browser-security, extension-audit, privacy]
 
 Browser extensions are powerful and dangerous. They run with high privileges in your browser, access your browsing history, can read everything you type, and contact external servers. A malicious or poorly-designed extension can steal your passwords, inject ads, monitor your activity, or sell your data.
 
-The problem: most people install extensions without understanding the risks. You see an extension with millions of downloads and think it's safe. But downloads don't guarantee privacy. Facebook's official extension was collecting data; Microsoft's LinkedIn extension was doing the same.
+The problem - most people install extensions without understanding the risks. You see an extension with millions of downloads and think it's safe. But downloads don't guarantee privacy. Facebook's official extension was collecting data; Microsoft's LinkedIn extension was doing the same.
 
 This guide shows you how to audit extensions before installing them. You'll learn what permissions to question, how to read manifest files, how to detect suspicious behavior, and what tools reveal hidden data exfiltration.
 
@@ -32,7 +32,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Browser Extension Permissions
+Step 1 - Understand Browser Extension Permissions
 
 When you install an extension, it asks for permissions. Most users click through without reading. This is a mistake.
 
@@ -52,9 +52,9 @@ Common permissions and what they actually mean:
 
 "Make changes to search settings" - Modify your default search engine, search suggestions. Sketchy extensions often ask for this to inject advertising.
 
-The key principle: an extension should ask for the minimum permissions to do its job. If an extension asks for more than necessary, that's a red flag. If you can't articulate why an extension needs a permission, don't grant it.
+The key principle - an extension should ask for the minimum permissions to do its job. If an extension asks for more than necessary, that's a red flag. If you can't articulate why an extension needs a permission, don't grant it.
 
-Step 2: Use CRXcavator to Analyze Extensions
+Step 2 - Use CRXcavator to Analyze Extensions
 
 CRXcavator is a free tool that analyzes Chrome extensions for suspicious behavior and risky permissions.
 
@@ -72,9 +72,9 @@ Go to crxcavator.io. Search for an extension by name. CRXcavator shows:
 
 6. Manifest analysis: Details from the extension's manifest.json file, which defines what it can do.
 
-A real example: searching for "Google Analytics" extensions on CRXcavator shows risk scores ranging from 30 (low risk) to 95 (very high risk). The high-risk ones request broad permissions like "access all websites" and have vague permission descriptions. The low-risk ones are limited to Google Analytics properties and clearly describe what they do.
+A real example - searching for "Google Analytics" extensions on CRXcavator shows risk scores ranging from 30 (low risk) to 95 (very high risk). The high-risk ones request broad permissions like "access all websites" and have vague permission descriptions. The low-risk ones are limited to Google Analytics properties and clearly describe what they do.
 
-Step 3: Reading manifest.json for Privacy Risks
+Step 3 - Reading manifest.json for Privacy Risks
 
 The manifest.json file controls what an extension can do. You can view it even if you don't have the extension installed yet.
 
@@ -123,11 +123,11 @@ This extension runs only on Gmail and stores local data. Much more limited.
 
 "update_url" - Where the extension gets updates. Most extensions use Google's update service. If this is a custom domain, be cautious (though some legitimate extensions do this).
 
-Step 4: Detecting Data Exfiltration
+Step 4 - Detecting Data Exfiltration
 
 How can you tell if an extension is sending your data to external servers? Browser developer tools help.
 
-Method 1: Network Monitor
+Method 1 - Network Monitor
 
 1. Open an extension's options page or activate its main feature
 2. Open Developer Tools (right-click, Inspect)
@@ -136,14 +136,14 @@ Method 1: Network Monitor
 
 Watch what domains the extension contacts. If you see calls to analytics services, ad networks, or data brokers, that's data exfiltration.
 
-Real example: A "productivity" extension claims to help you stay focused. When you activate it, the Network tab shows requests to:
+Real example - A "productivity" extension claims to help you stay focused. When you activate it, the Network tab shows requests to:
 - `api.analytics-company.com` - Analytics
 - `ads.network.com` - Ad serving
 - `tracking.databroker.com` - Data tracking
 
 This extension is exfiltrating data. The developer is selling information about your productivity habits.
 
-Method 2: Request Headers
+Method 2 - Request Headers
 
 In the Network tab, click a request. Look at the Request Headers section. Check for:
 
@@ -153,7 +153,7 @@ In the Network tab, click a request. Look at the Request Headers section. Check 
 
 If an extension sends your data to external services with identifying tokens, it's exfiltrating data.
 
-Method 3: Storage Inspector
+Method 3 - Storage Inspector
 
 Open Developer Tools, go to Application > Storage. Check what the extension stores:
 
@@ -169,7 +169,7 @@ Look for suspicious stored data:
 
 Legitimate extensions store minimal data. Sketchy extensions store copies of your browsing history, your location, or your search queries.
 
-Step 5: Permissions Worth Questioning
+Step 5 - Permissions Worth Questioning
 
 "All websites" permission
 
@@ -191,7 +191,7 @@ Storage permissions
 
 Most extensions need storage to save settings. This is low-risk. But check what they're storing (use the Storage Inspector).
 
-Step 6: Red Flags in Extension Behavior
+Step 6 - Red Flags in Extension Behavior
 
 If you install an extension and notice:
 
@@ -207,59 +207,59 @@ If you install an extension and notice:
 
 6. Downloaded to an unexpected location - Check your Downloads folder. Some extensions download additional binaries. This is extremely suspicious.
 
-Step 7: Comparing Popular Extensions
+Step 7 - Comparing Popular Extensions
 
 Gmail Client Extensions
 
 Gmail Offline (Google) - Made by Google. Runs only on mail.google.com. Stores encrypted local copies for offline access. Permissions: Minimal. Risk score: 25. Safe.
 
-Simple Gmail Notes (third-party) - Runs on Gmail, adds notes capability. Permissions: Moderate (Gmail access, storage). Contacts: Notes to Google's servers for sync. Risk score: 45. Acceptable but monitor.
+Simple Gmail Notes (third-party) - Runs on Gmail, adds notes capability. Permissions - Moderate (Gmail access, storage). Contacts - Notes to Google's servers for sync. Risk score: 45. Acceptable but monitor.
 
-Gmail Tracker (third-party) - Claims to track email opens. Requests: All websites, webRequest, history. Contacts: Analytics servers, ad networks. Risk score: 92. Avoid.
+Gmail Tracker (third-party) - Claims to track email opens. Requests - All websites, webRequest, history. Contacts - Analytics servers, ad networks. Risk score: 92. Avoid.
 
 Productivity Extensions
 
-Todoist - Official client. Runs on multiple sites (Todoist plus email integration). Permissions: Moderate. Contacts: Todoist's own servers for sync. Risk score: 35. Safe.
+Todoist - Official client. Runs on multiple sites (Todoist plus email integration). Permissions: Moderate. Contacts - Todoist's own servers for sync. Risk score: 35. Safe.
 
-Evernote Clipper - Official client. Captures web pages to Evernote. Permissions: Broad (all websites). Contacts: Evernote servers. Risk score: 50. Acceptable (necessary for capturing).
+Evernote Clipper - Official client. Captures web pages to Evernote. Permissions - Broad (all websites). Contacts - Evernote servers. Risk score: 50. Acceptable (necessary for capturing).
 
-Honey (coupon addon) - Shows coupon codes while shopping. Requests: All websites, webRequest. Contacts: Honey's affiliate servers, PayPal. Risk score: 70. Privacy concern (tracks your shopping).
+Honey (coupon addon) - Shows coupon codes while shopping. Requests - All websites, webRequest. Contacts - Honey's affiliate servers, PayPal. Risk score: 70. Privacy concern (tracks your shopping).
 
-Step 8: Steps to Audit an Extension Before Installing
+Step 8 - Steps to Audit an Extension Before Installing
 
-Step 1: Check CRXcavator
+Step 1 - Check CRXcavator
 
 Search for the extension. If risk score > 70, reconsider installing.
 
-Step 2: Read Recent Reviews
+Step 2 - Read Recent Reviews
 
 Go to the Chrome Web Store. Sort reviews by "Newest." Read them. If you see multiple complaints about ads, slowness, or unwanted behavior, avoid it.
 
-Step 3: Check Update History
+Step 3 - Check Update History
 
 Look at the extension's update frequency. No updates in 1+ year? The extension may be abandoned and vulnerable. Frequent updates (weekly or monthly) are good.
 
-Step 4: Review Permissions
+Step 4 - Review Permissions
 
 Look at the permissions the extension asks for. Does each permission make sense for the extension's stated purpose? If you can't justify a permission, don't install it.
 
-Step 5: Verify Developer Identity
+Step 5 - Verify Developer Identity
 
 Check who the developer is. Official extensions from Google, Microsoft, Slack, etc. are more trustworthy than fly-by-night developers.
 
-Step 6: Search for Privacy Concerns
+Step 6 - Search for Privacy Concerns
 
 Google "[extension name] privacy" or "[extension name] data collection." See if there are known issues.
 
-Step 7: Install and Monitor
+Step 7 - Install and Monitor
 
 If you decide to install, monitor it. Open Developer Tools once a week and check the Network tab. See what it's doing.
 
-Step 8: Review Periodically
+Step 8 - Review Periodically
 
 Every month, re-check CRXcavator for your installed extensions. Update frequency changes, new permissions might be requested, or the risk score might increase.
 
-Step 9: What To Do If You Find a Risky Extension
+Step 9 - What To Do If You Find a Risky Extension
 
 If you discover an extension you installed is privacy-invasive:
 

@@ -20,8 +20,8 @@ Standard push notifications expose sender information and message metadata to Go
 Table of Contents
 
 - [The Privacy Problem With Traditional Push Notifications](#the-privacy-problem-with-traditional-push-notifications)
-- [Signal's Solution: Sealed Sender and Encrypted Payloads](#signals-solution-sealed-sender-and-encrypted-payloads)
-- [Implementation Details: How Signal Encrypts Push Content](#implementation-details-how-signal-encrypts-push-content)
+- [Signal's Solution - Sealed Sender and Encrypted Payloads](#signals-solution-sealed-sender-and-encrypted-payloads)
+- [Implementation Details - How Signal Encrypts Push Content](#implementation-details-how-signal-encrypts-push-content)
 - [Practical Implications for Developers](#practical-implications-for-developers)
 - [Limitations and Considerations](#limitations-and-considerations)
 - [Enabling Signal's Privacy Features](#enabling-signals-privacy-features)
@@ -44,11 +44,11 @@ This architecture means Google and Apple can see:
 
 For most users, this might seem acceptable. However, for users requiring strong privacy guarantees, journalists, activists, or anyone discussing sensitive matters, this metadata exposure represents a meaningful attack surface.
 
-Signal's Solution: Sealed Sender and Encrypted Payloads
+Signal's Solution - Sealed Sender and Encrypted Payloads
 
 Signal implements two complementary mechanisms to protect push notification content: Sealed Sender and encrypted payload delivery.
 
-Sealed Sender: Removing Sender Information
+Sealed Sender - Removing Sender Information
 
 Traditional push notifications include the sender's identifier in the payload. Signal's Sealed Sender removes this information, allowing the server to deliver a notification without knowing who sent it.
 
@@ -77,7 +77,7 @@ Encrypted Payload Delivery
 
 Sealed Sender alone doesn't protect the notification content. To solve this, Signal encrypts the notification payload itself. The device receives an opaque blob that only the Signal app can decrypt.
 
-Implementation Details: How Signal Encrypts Push Content
+Implementation Details - How Signal Encrypts Push Content
 
 The actual implementation uses a multi-layer encryption approach:
 
@@ -210,7 +210,7 @@ docker run -d \
 
 UnifiedPush allows applications to send encrypted notifications through your own infrastructure without relying on Google or Apple. Applications supporting UnifiedPush include K-9 Mail, Telegram, and others.
 
-Hybrid Approach: Fallback Notifications
+Hybrid Approach - Fallback Notifications
 
 Most privacy-conscious applications use this strategy:
 

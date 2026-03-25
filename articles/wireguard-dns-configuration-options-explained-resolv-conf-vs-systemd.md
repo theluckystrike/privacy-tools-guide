@@ -30,9 +30,9 @@ Configuring DNS properly with WireGuard is essential for privacy and functionali
 Table of Contents
 
 - [Why DNS Configuration Matters with WireGuard](#why-dns-configuration-matters-with-wireguard)
-- [Method 1: Using wg-quick with the DNS Directive](#method-1-using-wg-quick-with-the-dns-directive)
-- [Method 2: Direct /etc/resolv.conf Configuration](#method-2-direct-etcresolvconf-configuration)
-- [Method 3: systemd-resolved Integration](#method-3-systemd-resolved-integration)
+- [Method 1 - Using wg-quick with the DNS Directive](#method-1-using-wg-quick-with-the-dns-directive)
+- [Method 2 - Direct /etc/resolv.conf Configuration](#method-2-direct-etcresolvconf-configuration)
+- [Method 3 - systemd-resolved Integration](#method-3-systemd-resolved-integration)
 - [Comparing resolv.conf and systemd-resolved](#comparing-resolvconf-and-systemd-resolved)
 - [DNS Configuration for Mobile and Router Setups](#dns-configuration-for-mobile-and-router-setups)
 - [Troubleshooting DNS Leaks](#troubleshooting-dns-leaks)
@@ -44,7 +44,7 @@ WireGuard operates at the kernel level, handling encrypted tunnel traffic effici
 
 Configuring DNS to work with WireGuard ensures that all your DNS queries also travel through the encrypted tunnel. This prevents DNS leaks and maintains consistent privacy regardless of which applications you're using. The method you choose depends on your Linux distribution, network setup, and whether you're running systemd.
 
-Method 1: Using wg-quick with the DNS Directive
+Method 1 - Using wg-quick with the DNS Directive
 
 The simplest approach for most users is using WireGuard's built-in `wg-quick` tool, which handles DNS configuration automatically through the tunnel interface settings. This method works on most Linux distributions and is the recommended approach for desktop and laptop configurations.
 
@@ -70,7 +70,7 @@ DNS = 1.1.1.1 1.0.0.1
 
 This method handles DNS configuration at the interface level, making it work system-wide once the tunnel is active. The DNS setting persists only while the tunnel is up, which is the desired behavior for most use cases.
 
-Method 2: Direct /etc/resolv.conf Configuration
+Method 2 - Direct /etc/resolv.conf Configuration
 
 The traditional method involves directly editing `/etc/resolv.conf`, which is the primary configuration file for DNS resolvers on most Unix-like systems. This file contains nameserver entries that define which DNS servers your system uses.
 
@@ -111,7 +111,7 @@ Save as /usr/local/bin/vpn-dns-down
 cp /etc/resolv.conf.backup /etc/resolv.conf
 ```
 
-Method 3: systemd-resolved Integration
+Method 3 - systemd-resolved Integration
 
 Modern Linux distributions using systemd include systemd-resolved, which manages DNS configuration through a local stub resolver. This approach integrates cleanly with NetworkManager and provides benefits like DNS caching and split-tunneling support.
 

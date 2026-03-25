@@ -86,8 +86,8 @@ Iubenda
 
 For developers, their GTM cookie consent solution integrates with generated policies, creating a unified compliance system. The generated policies include granular cookie categories matching your actual implementation.
 
-Strengths: Multi-jurisdiction coverage, cookie scanner integration, API access
-Considerations: Subscription required for full features; pricing scales with page views
+Strengths - Multi-jurisdiction coverage, cookie scanner integration, API access
+Considerations - Subscription required for full features; pricing scales with page views
 
 Cookiebot
 
@@ -103,8 +103,8 @@ Cookiebot
 
 This alignment between documented and actual tracking reduces liability from inaccurate policies, a genuine problem with static generators.
 
-Strengths: Automated scanning keeps policy current, blocks non-compliant cookies
-Considerations: Requires ongoing subscription; primarily cookie-focused
+Strengths - Automated scanning keeps policy current, blocks non-compliant cookies
+Considerations - Requires ongoing subscription; primarily cookie-focused
 
 Key Evaluation Criteria
 
@@ -139,7 +139,7 @@ Common Pitfalls to Avoid
 
 Over-reliance on "GDPR compliant" labels: A generator claiming compliance doesn't guarantee your specific implementation meets requirements. The tool cannot audit your actual data flows.
 
-Static policies: If your app evolves, your policy must too. Automated monitoring outperforms annual manual reviews.
+Static policies - If your app evolves, your policy must too. Automated monitoring outperforms annual manual reviews.
 
 Missing technical implementations: A policy claiming you honor deletion requests means nothing without actual deletion functionality in your systems.
 
@@ -177,7 +177,7 @@ Detailed Tool Comparison and Pricing
 
 Iubenda Deep Dive
 
-Pricing Model: Free basic, Pro at €99-299/year for sites with advertising
+Pricing Model - Free basic, Pro at €99-299/year for sites with advertising
 
 Strengths:
 - Geolocation-aware (GDPR, CCPA, LGPD support in same policy)
@@ -216,7 +216,7 @@ async function updatePrivacyPolicy(companyId, newDataProcessing) {
 
 Cookiebot Deep Dive
 
-Pricing Model: Pay-per-site, starting €38/month
+Pricing Model - Pay-per-site, starting €38/month
 
 Strengths:
 - Automatic cookie scanning (actively crawls your site)
@@ -252,7 +252,7 @@ gtag('consent', 'default', {
 <script async src="https://www.googletagmanager.com/gtag/js?id=GA_ID"></script>
 ```
 
-Open Source: Docassemble Privacy Policy
+Open Source - Docassemble Privacy Policy
 
 For developers wanting complete control:
 

@@ -165,11 +165,11 @@ Interpreting rkhunter Warnings
 ```
 [10:30:45]   Checking for suspicious (large) shared memory segments  [ None found ]
 [10:30:47]   Checking for hidden files and directories               [ Warning ]
-[10:30:47] Warning: Hidden directory found: /dev/.udev
+[10:30:47] Warning - Hidden directory found: /dev/.udev
 
 [10:30:49]   Checking for SSH configuration file                     [ Found ]
 [10:30:49]   Checking if SSH root access is allowed                  [ Warning ]
-[10:30:49] Warning: The SSH and rkhunter SSH configuration options are different.
+[10:30:49] Warning - The SSH and rkhunter SSH configuration options are different.
 [10:30:49]          SSH configuration option 'PermitRootLogin': prohibit-password
 [10:30:49]          Rkhunter configuration option 'ALLOW_SSH_ROOT_USER': no
 ```
@@ -234,19 +234,19 @@ If a Rootkit Is Found
 Do not trust any tool on the compromised system. Assume the rootkit has modified `ls`, `ps`, `netstat`, and the kernel itself.
 
 ```bash
-Step 1: Isolate the system (block outbound connections)
+Step 1 - Isolate the system (block outbound connections)
 sudo iptables -P OUTPUT DROP
 
-Step 2: Take a memory dump if possible (rootkit may be in RAM only)
+Step 2 - Take a memory dump if possible (rootkit may be in RAM only)
 Boot from external media for this
 
-Step 3: Capture disk image for forensics
+Step 3 - Capture disk image for forensics
 dd if=/dev/sda bs=4096 | gzip > /media/external/disk-image.gz
 
-Step 4: Do NOT attempt to clean. rebuild from a known-good image
+Step 4 - Do NOT attempt to clean. rebuild from a known-good image
 Cleaning a rootkit infection is unreliable
 
-Step 5: Investigate how the rootkit got in
+Step 5 - Investigate how the rootkit got in
 Check auth logs, web server logs, package logs
 ```
 

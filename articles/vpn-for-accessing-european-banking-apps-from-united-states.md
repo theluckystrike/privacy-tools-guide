@@ -301,7 +301,7 @@ Banking-Specific Protocols
 Some European banks have implemented additional verification when accessed from non-EU IPs. Familiarize yourself with:
 
 - Revised Payment Services Directive (PSD2): Mandates strong customer authentication. You may see additional verification screens.
-- 3D Secure: Extra verification step for card transactions. Have your authenticator app ready.
+- 3D Secure - Extra verification step for card transactions. Have your authenticator app ready.
 - Session anomaly detection: Banks flag unusual login patterns. Use consistent access times if possible.
 
 Troubleshooting Connection Issues
@@ -309,17 +309,17 @@ Troubleshooting Connection Issues
 Common problems and solutions:
 
 ```bash
-Problem: Connection works but banking app shows "service unavailable"
-Solution: Check for IPv6 leaks
+Problem - Connection works but banking app shows "service unavailable"
+Solution - Check for IPv6 leaks
 curl -6 https://ipv6.ipleak.net
 
-Problem: Session timeouts after 15 minutes
-Solution: Increase PersistentKeepalive or reduce VPN rekey interval
+Problem - Session timeouts after 15 minutes
+Solution - Increase PersistentKeepalive or reduce VPN rekey interval
 In wg0.conf:
 PersistentKeepalive = 15  # Try 15 seconds instead of 25
 
-Problem: Slow data transfer speeds
-Solution: Switch to UDP protocol instead of TCP, or change endpoint
+Problem - Slow data transfer speeds
+Solution - Switch to UDP protocol instead of TCP, or change endpoint
 Test multiple endpoints:
 for endpoint in nl1.example.com nl2.example.com de1.example.com; do
   ping -c 1 $endpoint | grep time

@@ -24,8 +24,8 @@ https://remote-server.com/remote.php/dav/files/username/
 
 3.
 - Provide credentials or use: an app password 4.
-- S3 authentication failures: Confirm credentials are correct and the IAM user has s3:GetObject and s3:PutObject permissions for the specific bucket.
-- Configure the hostname for: MinIO or other S3-compatible services: ```bash # MinIO configuration example Hostname: minio.example.com Port: 9000 ``` 4.
+- S3 authentication failures - Confirm credentials are correct and the IAM user has s3:GetObject and s3:PutObject permissions for the specific bucket.
+- Configure the hostname for: MinIO or other S3-compatible services: ```bash # MinIO configuration example Hostname - minio.example.com Port - 9000 ``` 4.
 - Configure the remote subfolder: if needed WebDAV mounts support both basic authentication and OAuth2, depending on your server configuration.
 - What are the most: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
@@ -40,7 +40,7 @@ Before configuring external storage, ensure you have:
 
 To verify the external storage app is enabled, navigate to Apps > Your apps in the Nextcloud admin interface and confirm "External storage support" is active.
 
-Step 1: Adding External Storage via the Web Interface
+Step 1 - Adding External Storage via the Web Interface
 
 The simplest method uses Nextcloud's web interface. Log in as an administrator and navigate to Settings > Administration > External storage.
 
@@ -77,8 +77,8 @@ For AWS S3, MinIO, Backblaze B2, or other S3-compatible providers:
 
 ```bash
 MinIO configuration example
-Hostname: minio.example.com
-Port: 9000
+Hostname - minio.example.com
+Port - 9000
 ```
 
 4. Enable "SSL" for production deployments
@@ -103,7 +103,7 @@ https://remote-server.com/remote.php/dav/files/username/
 
 WebDAV mounts support both basic authentication and OAuth2, depending on your server configuration.
 
-Step 2: Command-Line Configuration
+Step 2 - Command-Line Configuration
 
 For automated deployments or scripted setups, use the Nextcloud `occ` command:
 
@@ -130,7 +130,7 @@ occ files_external:local \
 
 The `occ files_external:applicable` command controls which users or groups can access specific mounts.
 
-Step 3: Implement Programmatic Access with the WebDAV API
+Step 3 - Implement Programmatic Access with the WebDAV API
 
 Once external storage is mounted, access files programmatically using Nextcloud's WebDAV endpoint:
 
@@ -194,20 +194,20 @@ When configuring external storage, follow these security practices:
 
 Troubleshooting Common Issues
 
-Permission denied errors: Verify the web server user has filesystem access to local mounts. Check SELinux or AppArmor policies on Linux systems.
+Permission denied errors - Verify the web server user has filesystem access to local mounts. Check SELinux or AppArmor policies on Linux systems.
 
-S3 authentication failures: Confirm credentials are correct and the IAM user has s3:GetObject and s3:PutObject permissions for the specific bucket.
+S3 authentication failures - Confirm credentials are correct and the IAM user has s3:GetObject and s3:PutObject permissions for the specific bucket.
 
-Slow performance: Enable caching, check network latency to the storage backend, and consider mounting only necessary subdirectories rather than entire buckets.
+Slow performance - Enable caching, check network latency to the storage backend, and consider mounting only necessary subdirectories rather than entire buckets.
 
-Mount not appearing: Clear the Nextcloud cache and verify the mount configuration is saved:
+Mount not appearing - Clear the Nextcloud cache and verify the mount configuration is saved:
 
 ```bash
 occ files_external:verify 1
 occ maintenance:repair
 ```
 
-Step 4: Use Cases for Developers
+Step 4 - Use Cases for Developers
 
 External storage excels in several developer-focused scenarios:
 

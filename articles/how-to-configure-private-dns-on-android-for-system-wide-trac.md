@@ -51,11 +51,11 @@ Before configuring Private DNS, ensure your device meets these requirements:
 
 Configuring Private DNS on Android
 
-Step 1: Access Network Settings
+Step 1 - Access Network Settings
 
 Open your Android device's Settings app and navigate to Network & Internet (or Connections on Samsung devices). Tap on Internet or Wi-Fi, then tap the gear icon next to your connected network.
 
-Step 2: Configure Private DNS
+Step 2 - Configure Private DNS
 
 Scroll down to the Private DNS option. By default, it's set to "Automatic" (or "Provider's hostname"). Tap on it to reveal the available options:
 
@@ -104,15 +104,15 @@ Verifying Your Configuration
 
 After configuring Private DNS, verify that it's working correctly. Several methods exist:
 
-Method 1: Use a DNS Leak Test
+Method 1 - Use a DNS Leak Test
 
 Visit [dns leak test](https://dnsleaktest.com) or [dnscheck.tools](https://dnscheck.tools) to verify your DNS queries are being routed through your chosen provider. These tools analyze the DNS servers responding to your queries.
 
-Method 2: Check with Browser Developer Tools
+Method 2 - Check with Browser Developer Tools
 
 Open Chrome, navigate to `chrome://inspect/#network`, or use developer tools to monitor network requests. For a more detailed view, you can configure your app to log DNS queries if you're developing Android applications.
 
-Method 3: Test Tracker Blocking
+Method 3 - Test Tracker Blocking
 
 Visit a website known to contain heavy tracking (such as news sites with ad networks) and observe whether trackers are blocked. You should see fewer network requests and faster page loads.
 

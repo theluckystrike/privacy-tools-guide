@@ -39,17 +39,17 @@ When Does Your Business Need a DPO?
 
 Under GDPR Article 37, you must appoint a DPO in these scenarios:
 
-1. Core Activities Involve Regular Monitoring: If your business systematically monitors data subjects on a large scale, for example, tracking user behavior, profiling, or processing sensitive data, you need a DPO.
+1. Core Activities Involve Regular Monitoring - If your business systematically monitors data subjects on a large scale, for example, tracking user behavior, profiling, or processing sensitive data, you need a DPO.
 
-2. Large-Scale Processing: Processing large volumes of personal data systematically falls under this requirement. This includes:
+2. Large-Scale Processing - Processing large volumes of personal data systematically falls under this requirement. This includes:
  - Social media platforms
  - E-commerce platforms with customer databases
  - Healthcare applications
  - Financial services
 
-3. Public Authority: Government agencies and public authorities always require a DPO.
+3. Public Authority - Government agencies and public authorities always require a DPO.
 
-4. Special Category Data: If you process biometric data, health data, or political opinions, you likely need a DPO regardless of company size.
+4. Special Category Data - If you process biometric data, health data, or political opinions, you likely need a DPO regardless of company size.
 
 The phrase "large scale" lacks a precise numerical definition in GDPR, which is intentional, supervisory authorities apply it contextually. Guidance from the Article 29 Working Party (now the European Data Protection Board) points to several factors: the number of data subjects affected, the volume of data, geographic extent, and processing duration. A regional healthcare app processing records for 50,000 patients qualifies. A local gym with 200 member records does not. When in doubt, conduct a formal assessment and document your reasoning, the documentation itself demonstrates good-faith compliance.
 
@@ -57,7 +57,7 @@ Real-World Examples for Developers
 
 Consider these scenarios where a DPO becomes necessary:
 
-Example 1: Analytics Platform
+Example 1 - Analytics Platform
 ```javascript
 // If your application tracks user sessions, monitors behavior,
 // and stores personal identifiers, you may need a DPO
@@ -71,7 +71,7 @@ const trackUserEvent = (userId, event) => {
 };
 ```
 
-Example 2: User Profiling System
+Example 2 - User Profiling System
 ```python
 Recommendation engines that profile users require DPO oversight
 def build_user_profile(user_id):
@@ -140,7 +140,7 @@ The DPO's most effective interventions happen early in the design phase. A DPO r
 
 Implementing DPO Responsibilities in Your Organization
 
-Step 1: Conduct a Data Mapping Exercise
+Step 1 - Conduct a Data Mapping Exercise
 
 Before appointing a DPO, document what data you collect:
 
@@ -155,7 +155,7 @@ Data inventory checklist
 
 A complete data map should capture: what data is collected, the source of the data, the legal basis for processing, where data is stored (including cloud regions), who has access, how long it is retained, and whether it is shared with third parties. Most organizations discover gaps they did not know existed when they conduct this exercise for the first time.
 
-Step 2: Assess Processing Activities
+Step 2 - Assess Processing Activities
 
 Create a record of processing activities (ROPA) that includes:
 
@@ -167,7 +167,7 @@ Create a record of processing activities (ROPA) that includes:
 
 GDPR Article 30 requires the ROPA to be maintained in writing (which includes electronic form) and to be made available to supervisory authorities on request. The ROPA is not a one-time document, it must be updated whenever processing activities change. Treat it as a living artifact with version control, not a static PDF.
 
-Step 3: Establish Reporting Structures
+Step 3 - Establish Reporting Structures
 
 The DPO should report directly to leadership:
 
@@ -188,7 +188,7 @@ const escalateDataBreach = (incident) => {
 
 The 72-hour breach notification window under GDPR Article 33 starts from when the organization becomes aware of the breach, not when it is confirmed. "Aware" means a reasonable degree of certainty that a breach has occurred, not definitive proof. Engineering on-call teams must understand this timeline and escalate potential breaches to the DPO immediately, even when investigation is still ongoing.
 
-Step 4: Integrate Privacy by Design
+Step 4 - Integrate Privacy by Design
 
 Build privacy into your development workflow:
 
@@ -205,7 +205,7 @@ class UserData:
         self.schedule_deletion(user_id, self.retention_period)
 ```
 
-Step 5: Document DPO Contact Details
+Step 5 - Document DPO Contact Details
 
 GDPR requires you to publish the DPO's contact details and communicate them to your supervisory authority. In practice this means:
 
@@ -219,11 +219,11 @@ Options for Small Businesses and Startups
 
 If you're not legally required to appoint a DPO, you still benefit from:
 
-1. Designated Privacy Lead: Assign someone to handle privacy matters without the full DPO overhead.
+1. Designated Privacy Lead - Assign someone to handle privacy matters without the full DPO overhead.
 
-2. External DPO Services: Many organizations offer part-time or outsourced DPO services, useful for small teams. External DPOs typically charge on a retainer basis and handle multiple clients simultaneously. Verify that your external DPO has capacity to respond within your incident notification windows before signing.
+2. External DPO Services - Many organizations offer part-time or outsourced DPO services, useful for small teams. External DPOs typically charge on a retainer basis and handle multiple clients simultaneously. Verify that your external DPO has capacity to respond within your incident notification windows before signing.
 
-3. Automated Compliance Tools: Privacy management platforms can handle many DPO responsibilities for smaller operations, including DSAR intake, consent logging, and retention enforcement. These tools supplement but do not replace the judgment function a DPO provides.
+3. Automated Compliance Tools - Privacy management platforms can handle many DPO responsibilities for smaller operations, including DSAR intake, consent logging, and retention enforcement. These tools supplement but do not replace the judgment function a DPO provides.
 
 Consequences of Non-Compliance
 

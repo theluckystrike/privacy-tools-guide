@@ -34,7 +34,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand LibreWolf's Default Configuration
+Step 1 - Understand LibreWolf's Default Configuration
 
 LibreWolf ships with several privacy features that differ from vanilla Firefox:
 
@@ -118,7 +118,7 @@ network.trr.bootstrapAddress = 192.168.1.10
 
 This keeps all DNS resolution within your local network and avoids leaking query metadata to Cloudflare or NextDNS.
 
-Step 2: Compatibility Tuning
+Step 2 - Compatibility Tuning
 
 1. Managing Tracking Protection
 
@@ -169,7 +169,7 @@ general.useragent.override = Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0)
 
 Use this only as a last resort since it weakens fingerprinting resistance. The container-based approach described above is preferable for site-specific compatibility.
 
-Step 3: Essential Extensions for Power Users
+Step 3 - Essential Extensions for Power Users
 
 While LibreWolf includes strong built-in protection, these extensions enhance functionality:
 
@@ -202,7 +202,7 @@ privacy.userContext.extensionEnabled = true
 
 Install "Firefox Multi-Account Containers" for managing separate identities.
 
-Step 4: Hardware Acceleration
+Step 4 - Hardware Acceleration
 
 Enable hardware acceleration for smoother rendering:
 
@@ -226,7 +226,7 @@ media.hardware-video-decoding.force-enabled = true
 
 This is particularly impactful for video-heavy workflows, reducing CPU usage by 40-60% compared to software decoding.
 
-Step 5: Manage Memory Usage
+Step 5 - Manage Memory Usage
 
 For systems with limited RAM, tune memory management:
 
@@ -300,7 +300,7 @@ browser.performance.max-resource-entries = 1000
 
 Speedometer 3.0 (accessible at browserbench.org) provides a consistent JavaScript performance benchmark. Run it before and after configuration changes to quantify the impact of your tweaks.
 
-Step 6: Recommended Configuration Preset
+Step 6 - Recommended Configuration Preset
 
 For developers who need a balance of privacy and compatibility:
 

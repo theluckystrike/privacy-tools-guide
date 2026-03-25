@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Little Snitch's Architecture
+Step 1 - Understand Little Snitch's Architecture
 
 Little Snitch operates as a kernel-level network filter, sitting between your applications and the network stack. Unlike basic firewall solutions that operate at the port or IP level, Little Snitch makes decisions based on the specific application attempting to make a connection. This application-centric approach allows you to understand exactly which programs are communicating with the outside world.
 
@@ -44,7 +44,7 @@ When you first install Little Snitch, it runs in *monitor mode*, simply logging 
 
 After installing Little Snitch, you'll need to grant it Full Disk Access in System Preferences > Security & Privacy > Privacy > Full Disk Access. Without this permission, the application cannot monitor connections from all processes running on your system.
 
-Step 2: Initial Network Audit
+Step 2 - Initial Network Audit
 
 Before blocking any connections, perform a thorough audit of your network traffic. Launch Little Snitch and let it run for at least 24-48 hours under normal usage conditions. During this period, avoid changing your typical workflow, the goal is to capture a representative sample of how you use your machine.
 
@@ -60,7 +60,7 @@ Take notes during this phase. Create a list distinguishing between:
 2. Acceptable connections. non-essential but harmless (update checks, crash reporting with minimal data)
 3. Unnecessary connections. telemetry, ads, tracking, or services you never use
 
-Step 3: Create Connection Rules
+Step 3 - Create Connection Rules
 
 Once you've completed your audit, it's time to create rules that implement your blocking strategy. Little Snitch uses a rule-based system where rules are evaluated in order from top to bottom. The first matching rule determines the connection's fate.
 
@@ -79,10 +79,10 @@ Many applications include telemetry functionality that sends usage data back to 
 For a more systematic approach, you can create rules that block entire categories of tracking:
 
 ```
-Domain: *.doubleclick.net
-Domain: *.google-analytics.com
-Domain: *.facebook.com/tr/
-Domain: *.appsflyer.com
+Domain - *.doubleclick.net
+Domain - *.google-analytics.com
+Domain - *.facebook.com/tr/
+Domain - *.appsflyer.com
 ```
 
 Managing Application-Specific Rules
@@ -91,23 +91,23 @@ For each application you want to control, create specific rules that reflect you
 
 ```
 Allow Git operations for all executables
-Process: /usr/bin/git
-Action: Allow
-Direction: Outgoing
+Process - /usr/bin/git
+Action - Allow
+Direction - Outgoing
 
 Allow package managers
-Domain: *.npmjs.org
-Domain: *.pypi.org
-Domain: crates.io
-Action: Allow
+Domain - *.npmjs.org
+Domain - *.pypi.org
+Domain - crates.io
+Action - Allow
 
 Block unnecessary browser connections
-Process: /Applications/Safari.app
-Domain: *.ad-server.com
-Action: Deny
+Process - /Applications/Safari.app
+Domain - *.ad-server.com
+Action - Deny
 ```
 
-Step 4: Implementing Connection Groups
+Step 4 - Implementing Connection Groups
 
 For complex configurations, use Little Snitch's *Connection Groups* feature to organize rules logically. This becomes valuable when managing multiple similar applications or when you want to toggle entire categories of rules simultaneously.
 
@@ -118,7 +118,7 @@ To create a connection group:
 
 Connection groups allow you to disable entire categories of rules with a single click, useful when you need to temporarily allow blocked connections for troubleshooting.
 
-Step 5: Use the Silent Mode Strategy
+Step 5 - Use the Silent Mode Strategy
 
 Little Snitch's *Silent Mode* is particularly powerful for power users. When enabled, it suppresses all connection alerts while applying your existing rules. This is ideal after you've refined your rule set and want to run without interruption.
 
@@ -129,7 +129,7 @@ However, a more proactive approach involves using *Silent Mode with Rules*. Conf
 
 This three-tier approach creates a self-documenting system. Each time an unknown application attempts a connection, Little Snitch prompts you to make a decision. Your choice is saved as a permanent rule, gradually building a policy.
 
-Step 6: Automation with Scheduled Rules
+Step 6 - Automation with Scheduled Rules
 
 Advanced users can use Little Snitch's scheduling capabilities to create time-based rules. This is useful for:
 
@@ -139,7 +139,7 @@ Advanced users can use Little Snitch's scheduling capabilities to create time-ba
 
 Create a scheduled rule by selecting *Add with Schedule* when creating a new rule. Define the time range and days of the week when the rule should be active.
 
-Step 7: Monitor and Maintenance
+Step 7 - Monitor and Maintenance
 
 Your rule set requires ongoing maintenance. New applications, system updates, and changing online services all introduce new connection patterns. Schedule quarterly reviews of your Little Snitch rules to:
 
@@ -184,17 +184,17 @@ Priority Groups for Complex Setups
 
 When managing dozens of rules, organize them into logical groups with clear precedence:
 
-Tier 1 - System Security: Rules blocking known malware domains and exploit kits. Highest priority, never allow exceptions.
+Tier 1 - System Security - Rules blocking known malware domains and exploit kits. Highest priority, never allow exceptions.
 
-Tier 2 - Privacy Core: Rules blocking major ad networks and tracking domains that apply universally across all applications.
+Tier 2 - Privacy Core - Rules blocking major ad networks and tracking domains that apply universally across all applications.
 
-Tier 3 - Application-Specific: Allow/block rules for individual applications like Slack, VS Code, or development tools.
+Tier 3 - Application-Specific - Allow/block rules for individual applications like Slack, VS Code, or development tools.
 
-Tier 4 - Default Policy: Catch-all rules (ASK for unknown, ALLOW for system processes, DENY for untrusted apps).
+Tier 4 - Default Policy - Catch-all rules (ASK for unknown, ALLOW for system processes, DENY for untrusted apps).
 
 This hierarchy ensures security-critical rules never get overridden by accident.
 
-Step 8: Real-World Configuration Examples
+Step 8 - Real-World Configuration Examples
 
 Developer Environment
 
@@ -250,26 +250,26 @@ Application-specific tracking
 Process /Applications/Mail.app TO *.mail.ru = ALLOW
 Process /Applications/Mail.app TO *.google-analytics.com = DENY
 
-Default: Ask for everything else
+Default - Ask for everything else
 Process any TO any = ASK
 ```
 
 This approach creates maximum visibility into what applications are doing, at the cost of frequent prompts for new applications.
 
-Step 9: Integration with System Monitoring Tools
+Step 9 - Integration with System Monitoring Tools
 
 Combine Little Snitch with other macOS monitoring tools for security visibility:
 
-Little Snitch + Activity Monitor: Use Activity Monitor to identify which processes are making suspicious connections that Little Snitch flags. Sort by network activity to find unexpected traffic.
+Little Snitch + Activity Monitor - Use Activity Monitor to identify which processes are making suspicious connections that Little Snitch flags. Sort by network activity to find unexpected traffic.
 
-Little Snitch + DTrace: Developers can use DTrace to trace system calls from processes and correlate them with Little Snitch's blocked connections:
+Little Snitch + DTrace - Developers can use DTrace to trace system calls from processes and correlate them with Little Snitch's blocked connections:
 
 ```bash
 Monitor system calls for a specific process
 sudo dtrace -p $(pgrep -x "ApplicationName") -n 'syscall:::entry { @[execname] = count(); }'
 ```
 
-Little Snitch + Wireshark: For deep analysis of blocked connections, run Wireshark alongside Little Snitch to capture traffic and understand the protocol-level details of what applications are attempting to do.
+Little Snitch + Wireshark - For deep analysis of blocked connections, run Wireshark alongside Little Snitch to capture traffic and understand the protocol-level details of what applications are attempting to do.
 
 These combinations provide forensic-level visibility into your system's network behavior.
 
@@ -287,7 +287,7 @@ Disable unnecessary logging. While monitoring, keep the Network Monitor running 
 
 Most users report negligible (<2%) performance impact with well-optimized configurations.
 
-Step 10: Automated Rule Updates
+Step 10 - Automated Rule Updates
 
 Keep your rules current without manual maintenance:
 

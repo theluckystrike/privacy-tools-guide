@@ -24,16 +24,16 @@ Table of Contents
 
 - [What to Evaluate in Encrypted File Sync](#what-to-evaluate-in-encrypted-file-sync)
 - [Quick Comparison](#quick-comparison)
-- [SyncThing: Open-Source, Self-Hosted, Free](#syncthing-open-source-self-hosted-free)
-- [Tresorit: Zero-Knowledge Enterprise Sync](#tresorit-zero-knowledge-enterprise-sync)
-- [SpiderOak: Cross-Platform Enterprise Sync](#spideroak-cross-platform-enterprise-sync)
+- [SyncThing - Open-Source, Self-Hosted, Free](#syncthing-open-source-self-hosted-free)
+- [Tresorit - Zero-Knowledge Enterprise Sync](#tresorit-zero-knowledge-enterprise-sync)
+- [SpiderOak - Cross-Platform Enterprise Sync](#spideroak-cross-platform-enterprise-sync)
 - [Nextcloud with Encryption App](#nextcloud-with-encryption-app)
 - [Practical Recommendation](#practical-recommendation)
 - [Network Architecture Considerations](#network-architecture-considerations)
-- [Implementation Guide: SyncThing for Teams](#implementation-guide-syncthing-for-teams)
+- [Implementation Guide - SyncThing for Teams](#implementation-guide-syncthing-for-teams)
 - [Bandwidth and Performance Tuning](#bandwidth-and-performance-tuning)
 - [Team-Specific Scenarios](#team-specific-scenarios)
-- [Encryption Deep Dive: Key Derivation](#encryption-deep detailed look-key-derivation)
+- [Encryption Deep Dive - Key Derivation](#encryption-deep detailed look-key-derivation)
 - [Conflict Resolution Strategies](#conflict-resolution-strategies)
 - [Compliance and Audit Requirements](#compliance-and-audit-requirements)
 - [Disaster Recovery and Business Continuity](#disaster-recovery-and-business-continuity)
@@ -62,15 +62,15 @@ Quick Comparison
 | Jurisdiction | Check provider | Check provider |
 | Self-Hosting | Check availability | Check availability |
 
-SyncThing: Open-Source, Self-Hosted, Free
+SyncThing - Open-Source, Self-Hosted, Free
 
 SyncThing is an open-source, decentralized file synchronization program that operates without a central server. It uses peer-to-peer connections, making it ideal for teams that want complete control over their infrastructure.
 
-Encryption: SyncThing uses TLS encryption for data in transit. At rest on each device, files remain in plaintext unless you implement additional encryption layers. However, SyncThing does not provide end-to-end encryption in the traditional sense, it trusts the devices participating in the sync cluster.
+Encryption - SyncThing uses TLS encryption for data in transit. At rest on each device, files remain in plaintext unless you implement additional encryption layers. However, SyncThing does not provide end-to-end encryption in the traditional sense, it trusts the devices participating in the sync cluster.
 
-Self-hosting: SyncThing can run on any device that supports it, Linux servers, NAS devices, Raspberry Pis. Since it uses peer-to-peer discovery via broadcast or configured relay servers, you don't need a central server, though you can configure a static device as a "relay" if needed.
+Self-hosting - SyncThing can run on any device that supports it, Linux servers, NAS devices, Raspberry Pis. Since it uses peer-to-peer discovery via broadcast or configured relay servers, you don't need a central server, though you can configure a static device as a "relay" if needed.
 
-CLI and scripting: SyncThing provides a powerful CLI called `syncthing`. You can configure devices, manage folders, and monitor status programmatically.
+CLI and scripting - SyncThing provides a powerful CLI called `syncthing`. You can configure devices, manage folders, and monitor status programmatically.
 
 ```bash
 Install on Linux
@@ -86,17 +86,17 @@ Add a new folder to sync
 syncthing cli config folders add --id "team-docs" --path "/home/user/team-docs"
 ```
 
-Team features: SyncThing lacks built-in sharing links or permission controls found in commercial solutions. For team collaboration, you'd manage device approvals manually and set up shared folders between trusted devices.
+Team features - SyncThing lacks built-in sharing links or permission controls found in commercial solutions. For team collaboration, you'd manage device approvals manually and set up shared folders between trusted devices.
 
-Tresorit: Zero-Knowledge Enterprise Sync
+Tresorit - Zero-Knowledge Enterprise Sync
 
 Tresorit is a Swiss-based solution built for enterprise teams requiring zero-knowledge encryption. All encryption and decryption happen client-side, and Tresorit's servers never access plaintext data.
 
-Encryption: AES-256 encryption at rest, TLS 1.3 for transit. Tresorit uses a unique encryption key per file and wraps these in a user key that is protected by your password. The service cannot access your data because it never receives your password or master key.
+Encryption - AES-256 encryption at rest, TLS 1.3 for transit. Tresorit uses a unique encryption key per file and wraps these in a user key that is protected by your password. The service cannot access your data because it never receives your password or master key.
 
-Self-hosting: Tresorit is a fully managed service. There is no self-hosted option, which may be a limitation for teams requiring on-premises data residency.
+Self-hosting - Tresorit is a fully managed service. There is no self-hosted option, which may be a limitation for teams requiring on-premises data residency.
 
-CLI: Tresorit offers a CLI called `tresorit`, though its functionality is more limited than competitors. You can upload, download, and manage files, but advanced scripting requires using their REST API.
+CLI - Tresorit offers a CLI called `tresorit`, though its functionality is more limited than competitors. You can upload, download, and manage files, but advanced scripting requires using their REST API.
 
 ```bash
 Login to Tresorit
@@ -109,17 +109,17 @@ Download shared files
 tresorit download --workspace "Engineering" --path ./downloads
 ```
 
-Team features: Tresorit excels here with built-in admin controls, user management, granular permissions, and audit logs. Sharing links can be configured with expiration dates and password protection.
+Team features - Tresorit excels here with built-in admin controls, user management, granular permissions, and audit logs. Sharing links can be configured with expiration dates and password protection.
 
-SpiderOak: Cross-Platform Enterprise Sync
+SpiderOak - Cross-Platform Enterprise Sync
 
 SpiderOak has a longer history in encrypted backup and sync. Its "Zero-Knowledge" policy means it cannot access your data, but it operates more like traditional cloud storage than peer-to-peer solutions.
 
-Encryption: SpiderOak uses client-side AES-256 encryption. Keys are derived from your password using PBKDF2. Like Tresorit, SpiderOak follows a zero-knowledge model.
+Encryption - SpiderOak uses client-side AES-256 encryption. Keys are derived from your password using PBKDF2. Like Tresorit, SpiderOak follows a zero-knowledge model.
 
-Self-hosting: SpiderOak is a managed service only. No self-hosted option is available.
+Self-hosting - SpiderOak is a managed service only. No self-hosted option is available.
 
-CLI: SpiderOak provides a command-line tool called `spideroak` with basic sync and backup commands. It's less developer-friendly than SyncThing's CLI.
+CLI - SpiderOak provides a command-line tool called `spideroak` with basic sync and backup commands. It's less developer-friendly than SyncThing's CLI.
 
 ```bash
 Initialize SpiderOak
@@ -132,17 +132,17 @@ Run backup/sync
 spideroak --backup
 ```
 
-Team features: SpiderOak offers team workspaces, sharing features, and administrative controls, though the interface feels dated compared to newer competitors.
+Team features - SpiderOak offers team workspaces, sharing features, and administrative controls, though the interface feels dated compared to newer competitors.
 
 Nextcloud with Encryption App
 
 Nextcloud is a self-hosted cloud platform that, when combined with the Encryption app, provides team file sync with server-side encryption. However, this is not true end-to-end encryption, the server can decrypt files when configured this way.
 
-Encryption: Nextcloud's Encryption app can operate in two modes: server-side (where the server holds keys) or external (where you manage keys externally). For true E2EE, you need the `end-to-end-encryption` app, which encrypts files before upload.
+Encryption - Nextcloud's Encryption app can operate in two modes: server-side (where the server holds keys) or external (where you manage keys externally). For true E2EE, you need the `end-to-end-encryption` app, which encrypts files before upload.
 
-Self-hosting: Nextcloud is fully self-hosted. You control the server, storage, and encryption configuration.
+Self-hosting - Nextcloud is fully self-hosted. You control the server, storage, and encryption configuration.
 
-CLI: Nextcloud provides the `occ` command for administrative tasks and a webDAV interface for file operations. Developers can mount Nextcloud as a filesystem or use the webDAV API for scripting.
+CLI - Nextcloud provides the `occ` command for administrative tasks and a webDAV interface for file operations. Developers can mount Nextcloud as a filesystem or use the webDAV API for scripting.
 
 ```bash
 List files via webDAV
@@ -152,7 +152,7 @@ Upload file via webDAV
 curl -u "user:password" -T localfile.txt https://your-nextcloud.com/remote.php/dav/files/user/
 ```
 
-Team features: Nextcloud offers team collaboration: file sharing,, calendar, contacts, and collaborative editing via OnlyOffice or Collabora.
+Team features - Nextcloud offers team collaboration: file sharing,, calendar, contacts, and collaborative editing via OnlyOffice or Collabora.
 
 Practical Recommendation
 
@@ -168,11 +168,11 @@ Network Architecture Considerations
 
 File sync operates at the network level, and understanding connection patterns matters for security.
 
-Centralized vs. Decentralized: Tresorit and SpiderOak use centralized servers (which simplifies backups and recovery but creates a single point of failure). SyncThing's peer-to-peer architecture means files sync directly between devices, more resilient but requires stable device connectivity.
+Centralized vs. Decentralized - Tresorit and SpiderOak use centralized servers (which simplifies backups and recovery but creates a single point of failure). SyncThing's peer-to-peer architecture means files sync directly between devices, more resilient but requires stable device connectivity.
 
-WAN vs. LAN: SyncThing can sync files across both wide-area networks (the internet) and local networks. Configuring LAN-only sync increases speed and reduces bandwidth usage for teams in the same office.
+WAN vs. LAN - SyncThing can sync files across both wide-area networks (the internet) and local networks. Configuring LAN-only sync increases speed and reduces bandwidth usage for teams in the same office.
 
-Implementation Guide: SyncThing for Teams
+Implementation Guide - SyncThing for Teams
 
 For technical teams adopting SyncThing, here's a practical implementation workflow:
 
@@ -227,39 +227,39 @@ syncthing cli config options maxSendKbps 1000
 
 Team-Specific Scenarios
 
-Scenario 1: Distributed Development Teams
+Scenario 1 - Distributed Development Teams
 
-Requirements: Fast sync across continents, efficient bandwidth, collaborative editing support.
+Requirements - Fast sync across continents, efficient bandwidth, collaborative editing support.
 
-Solution: Nextcloud with WebDAV. Host in a geographically central region (AWS Europe for EU/US teams). Enable end-to-end encryption for sensitive projects.
+Solution - Nextcloud with WebDAV. Host in a geographically central region (AWS Europe for EU/US teams). Enable end-to-end encryption for sensitive projects.
 
-Scenario 2: Regulated Finance Team
+Scenario 2 - Regulated Finance Team
 
-Requirements: Audit logs, data residency compliance, role-based access control.
+Requirements - Audit logs, data residency compliance, role-based access control.
 
-Solution: Tresorit on-premises or Tresorit managed with Swiss hosting. The audit logs satisfy compliance requirements.
+Solution - Tresorit on-premises or Tresorit managed with Swiss hosting. The audit logs satisfy compliance requirements.
 
-Scenario 3: Open-Source Project Community
+Scenario 3 - Open-Source Project Community
 
-Requirements: Low cost, ease of contribution, no centralized infrastructure required.
+Requirements - Low cost, ease of contribution, no centralized infrastructure required.
 
-Solution: SyncThing or GitHub/GitLab for code, IPFS for binary artifacts. Both support distributed contribution.
+Solution - SyncThing or GitHub/GitLab for code, IPFS for binary artifacts. Both support distributed contribution.
 
-Scenario 4: Agency Handling Client Files
+Scenario 4 - Agency Handling Client Files
 
-Requirements: Compartmentalization (separate folder per client), granular sharing, revocation.
+Requirements - Compartmentalization (separate folder per client), granular sharing, revocation.
 
-Solution: Nextcloud with per-client folders and sharing tokens that expire. Or Tresorit workspaces with per-client access controls.
+Solution - Nextcloud with per-client folders and sharing tokens that expire. Or Tresorit workspaces with per-client access controls.
 
-Encryption Deep Dive: Key Derivation
+Encryption Deep Dive - Key Derivation
 
 Understanding how encryption keys are generated and managed helps evaluate security.
 
-SyncThing: Uses TLS certificates for device authentication and trust. Files are encrypted using the device-to-device connection security, not an additional encryption layer. Files on disk are plaintext.
+SyncThing - Uses TLS certificates for device authentication and trust. Files are encrypted using the device-to-device connection security, not an additional encryption layer. Files on disk are plaintext.
 
-Tresorit: Uses PBKDF2 with a work factor of 600,000 iterations and SHA-256 to derive encryption keys from your password. This protects against brute-force attacks on your master password.
+Tresorit - Uses PBKDF2 with a work factor of 600,000 iterations and SHA-256 to derive encryption keys from your password. This protects against brute-force attacks on your master password.
 
-SpiderOak: Similar password-based key derivation with PBKDF2. Additionally supports hardware security keys for stored credentials.
+SpiderOak - Similar password-based key derivation with PBKDF2. Additionally supports hardware security keys for stored credentials.
 
 For teams handling extremely sensitive data, prefer solutions where key derivation involves hardware security keys or multi-party computation rather than password-only derivation.
 
@@ -267,11 +267,11 @@ Conflict Resolution Strategies
 
 When multiple team members edit the same file simultaneously, sync tools handle conflicts differently.
 
-SyncThing: Keeps both versions, renaming conflicting files with `.sync-conflict-` suffix. Humans must review and merge manually. This prevents data loss but requires active conflict management.
+SyncThing - Keeps both versions, renaming conflicting files with `.sync-conflict-` suffix. Humans must review and merge manually. This prevents data loss but requires active conflict management.
 
-Nextcloud: Can use collaborative editing plugins (OnlyOffice, Collabora) that handle simultaneous editing natively, preventing conflicts.
+Nextcloud - Can use collaborative editing plugins (OnlyOffice, Collabora) that handle simultaneous editing natively, preventing conflicts.
 
-Tresorit: Implements versioning, allowing rollback to previous versions without losing concurrent edits.
+Tresorit - Implements versioning, allowing rollback to previous versions without losing concurrent edits.
 
 Teams sharing code or structured data files need strong conflict resolution. Teams sharing documents benefit from real-time collaborative editing. Choose based on your file types.
 
@@ -279,10 +279,10 @@ Compliance and Audit Requirements
 
 Organizations in regulated industries need specific audit capabilities:
 
-- Tresorit: Full audit logs including who accessed which files, when, and from which IP. SOC 2 certified.
+- Tresorit - Full audit logs including who accessed which files, when, and from which IP. SOC 2 certified.
 - SpiderOak: Basic access logs. Good for HIPAA compliance.
 - SyncThing: No centralized audit capability. For compliance, use filesystem-level audit tools.
-- Nextcloud: activity logs available through admin panel. Can integrate with external logging systems (ELK, Splunk).
+- Nextcloud - activity logs available through admin panel. Can integrate with external logging systems (ELK, Splunk).
 
 Document your chosen solution's audit capabilities and ensure they match regulatory requirements.
 
@@ -332,25 +332,25 @@ Advanced Feature Comparison
 
 Beyond the four main tools, consider these specialized features:
 
-Delta Sync: Only changes are transmitted, saving bandwidth
+Delta Sync - Only changes are transmitted, saving bandwidth
 - SyncThing: YES (efficient block-based delta)
 - Nextcloud: YES (file-level delta)
 - Tresorit: YES (block-level)
 - SpiderOak: YES (block-level)
 
-Compression: Reduces transmission size
+Compression - Reduces transmission size
 - SyncThing: YES (optional, improves bandwidth)
 - Nextcloud: YES (configurable per folder)
 - Tresorit: YES (transparent)
 - SpiderOak: YES (configurable)
 
-Selective Sync: Sync only specific folders, leave others local
+Selective Sync - Sync only specific folders, leave others local
 - SyncThing: YES (powerful folder configuration)
 - Nextcloud: YES (webDAV selective mounting)
 - Tresorit: NO (all data syncs)
 - SpiderOak: LIMITED (backup-focused, not sync)
 
-Bandwidth Throttling: Control sync speed during business hours
+Bandwidth Throttling - Control sync speed during business hours
 - SyncThing: YES (explicit limits configurable)
 - Nextcloud: LIMITED (depends on webDAV client)
 - Tresorit: YES (app setting)
@@ -362,7 +362,7 @@ Team Governance and Access Control
 
 How tools handle permissions affects team structure:
 
-SyncThing: Device-centric permissions (each device must be trusted, folder sharing configured per device pair)
+SyncThing - Device-centric permissions (each device must be trusted, folder sharing configured per device pair)
 
 Example configuration:
 ```bash
@@ -372,7 +372,7 @@ No granular file-level permissions within folder
 All-or-nothing sharing model
 ```
 
-Nextcloud: User-centric permissions (fine-grained file/folder permissions)
+Nextcloud - User-centric permissions (fine-grained file/folder permissions)
 
 ```bash
 Alice creates /Engineering/Project-A
@@ -382,16 +382,16 @@ Granular per-file/folder permissions
 Enforced server-side
 ```
 
-Tresorit: Workspace-based (workspaces with assigned members)
+Tresorit - Workspace-based (workspaces with assigned members)
 
 ```bash
 Create workspace "Client-XYZ"
 Assign team members with specific roles
-Roles: Admin, Editor, Viewer, Uploader
+Roles - Admin, Editor, Viewer, Uploader
 Workspace-level granularity
 ```
 
-SpiderOak: Less focused on team features (designed for backup, not collaboration)
+SpiderOak - Less focused on team features (designed for backup, not collaboration)
 
 For growing teams, Nextcloud's granular permissions scale better. For small teams, SyncThing's simplicity suffices.
 
@@ -424,9 +424,9 @@ curl -X POST "https://nextcloud.example.com/ocs/v2.php/apps/webhooks/api/v1/webh
   -d "url=https://ci.example.com/trigger"
 ```
 
-Tresorit: Limited CI integration (no webhooks, must poll for changes)
+Tresorit - Limited CI integration (no webhooks, must poll for changes)
 
-SpiderOak: Designed for backup, not CI/CD integration
+SpiderOak - Designed for backup, not CI/CD integration
 
 For development teams, SyncThing or Nextcloud are essential. SpiderOak is unsuitable for build automation.
 

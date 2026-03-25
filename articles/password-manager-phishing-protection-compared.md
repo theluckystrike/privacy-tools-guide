@@ -21,7 +21,7 @@ For the strongest phishing protection, choose 1Password for its TLS certificate 
 Table of Contents
 
 - [How Password Managers Detect Phishing Attempts](#how-password-managers-detect-phishing-attempts)
-- [Practical Examples: Testing Protection Mechanisms](#practical-examples-testing-protection-mechanisms)
+- [Practical Examples - Testing Protection Mechanisms](#practical-examples-testing-protection-mechanisms)
 - [Limitations and Attack Vectors](#limitations-and-attack-vectors)
 - [Homograph and Visual Spoofing Attacks](#homograph-and-visual-spoofing-attacks)
 - [Advanced Phishing Detection Techniques](#advanced-phishing-detection-techniques)
@@ -37,7 +37,7 @@ Password managers protect against phishing through several technical mechanisms.
 
 Leading password managers maintain domain association lists linked to each stored credential. When you visit a login page, the browser extension or app compares the current URL's hostname against this list. A match triggers autofill; a mismatch prevents credential exposure.
 
-Bitwarden: Open Source Approach
+Bitwarden - Open Source Approach
 
 Bitwarden's autofill behavior is configurable through browser extension settings. By default, the extension checks domain matching before offering to fill credentials. The implementation uses exact domain matching with support for subdomain wildcards in premium accounts.
 
@@ -65,13 +65,13 @@ Bitwarden's open-source nature means you can audit the domain-matching logic dir
 
 The browser extension shows a filled vault icon only on verified domains. Domain checks happen locally without sending URLs to 1Password servers. Copied passwords clear from clipboard after 90 seconds.
 
-Dashlane: Real-Time Phishing Detection
+Dashlane - Real-Time Phishing Detection
 
 Dashlane takes a more active approach with real-time phishing site detection. Their browser extension analyzes page content and URL patterns against a continuously updated phishing database. While effective, this requires sending URL data to Dashlane's servers for checking, a trade-off worth understanding.
 
-The practical implication: Dashlane may offer stronger detection of novel phishing sites, but at the cost of some privacy. Your browsing patterns potentially traverse external servers.
+The practical implication - Dashlane may offer stronger detection of novel phishing sites, but at the cost of some privacy. Your browsing patterns potentially traverse external servers.
 
-Practical Examples: Testing Protection Mechanisms
+Practical Examples - Testing Protection Mechanisms
 
 Here's how to verify your password manager's behavior:
 
@@ -133,11 +133,11 @@ Homograph and Visual Spoofing Attacks
 
 Despite domain protection, visual spoofing attacks remain effective. Attackers register domains using:
 
-Punycode domains: International domain names using homoglyphs
+Punycode domains - International domain names using homoglyphs
 - `xn--pple-43d.com` (displays as "аpple.com" with Cyrillic 'а')
 - `xn--go0gle-qo8b.com` (displays as "gооgle.com" with Cyrillic 'o')
 
-Legitimate-looking subdomains: `admin.evil.com.verify-github-account.com`
+Legitimate-looking subdomains - `admin.evil.com.verify-github-account.com`
 
 ```javascript
 // Detecting homoglyph attacks
@@ -174,11 +174,11 @@ Advanced Phishing Detection Techniques
 
 Modern phishing uses sophisticated techniques beyond simple domain mismatches:
 
-TypeSquatting: Registering domains one keystroke away
+TypeSquatting - Registering domains one keystroke away
 - `gtihub.com` vs `github.com`
 - `amaz0n.com` vs `amazon.com`
 
-Semantic Phishing: Exploiting legitimate trust relationships
+Semantic Phishing - Exploiting legitimate trust relationships
 - Attacker registers `github.io-verify.com`
 - User associates "github.io" with legitimacy
 - Actual domain is attacker-controlled
@@ -248,28 +248,28 @@ Create these test scenarios to verify protection:
 #!/bin/bash
 Password Manager Phishing Defense Testing Kit
 
-Test 1: Domain Mismatch
+Test 1 - Domain Mismatch
 Store credentials for "github.com"
-Visit "github.con" (note: .con not .com)
-Expected: Autofill should not trigger
+Visit "github.con" (note - .con not .com)
+Expected - Autofill should not trigger
 
-Test 2: Subdomain Attack
-Store: "github.com"
-Visit: "admin.github.com.attacker.com"
-Expected: Should not fill (domain mismatch)
+Test 2 - Subdomain Attack
+Store - "github.com"
+Visit - "admin.github.com.attacker.com"
+Expected - Should not fill (domain mismatch)
 
-Test 3: Homograph Attack
-Create a domain using punycode: xn--go0gle-qo8b.com
+Test 3 - Homograph Attack
+Create a domain using punycode - xn--go0gle-qo8b.com
 Store credentials for "google.com"
 Visit punycode domain
-Expected: Should not fill despite visual similarity
+Expected - Should not fill despite visual similarity
 
-Test 4: Self-Signed Certificate
+Test 4 - Self-Signed Certificate
 Host phishing site with self-signed HTTPS certificate
 Test if password manager verifies certificate chain
-Expected: 1Password should warn; others may still fill
+Expected - 1Password should warn; others may still fill
 
-Test 5: Timing Analysis
+Test 5 - Timing Analysis
 Measure how quickly autofill responds to domain check
 Slow responses indicate server-side domain verification
 Fast responses indicate local domain matching

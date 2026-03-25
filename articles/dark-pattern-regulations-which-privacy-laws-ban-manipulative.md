@@ -25,7 +25,7 @@ Table of Contents
 - [Implementing Compliant Consent Systems](#implementing-compliant-consent-systems)
 - [Enforcement and Penalties](#enforcement-and-penalties)
 - [Dark Pattern Case Studies from 2025-2026](#dark-pattern-case-studies-from-2025-2026)
-- [Technical Audit: Measuring Dark Pattern Severity](#technical-audit-measuring-dark-pattern-severity)
+- [Technical Audit - Measuring Dark Pattern Severity](#technical-audit-measuring-dark-pattern-severity)
 - [Accessibility and Dark Patterns Overlap](#accessibility-and-dark-patterns-overlap)
 - [Future Regulations Expected in 2026-2027](#future-regulations-expected-in-2026-2027)
 - [Compliance Testing Checklist](#compliance-testing-checklist)
@@ -53,7 +53,7 @@ Under GDPR, valid consent requires:
 - Informed (clear language about what is being consented to)
 - Unambiguous (affirmative action, not silence)
 
-Code Example: GDPR-Compliant Consent Interface
+Code Example - GDPR-Compliant Consent Interface
 
 ```javascript
 //  VIOLATES GDPR: Pre-checked checkboxes
@@ -211,31 +211,31 @@ Dark Pattern Case Studies from 2025-2026
 
 Real-world enforcement actions show what regulators are targeting:
 
-Case: Amazon 2025
+Case - Amazon 2025
 
-FTC action: Amazon made it hard to cancel Prime subscription. Button to subscribe was large/prominent; button to cancel was small/hidden behind multiple clicks.
+FTC action - Amazon made it hard to cancel Prime subscription. Button to subscribe was large/prominent; button to cancel was small/hidden behind multiple clicks.
 
-Fine: $25 million settlement
+Fine - $25 million settlement
 
-Lesson: Cancellation must be as easy as signup. Intentional friction is a dark pattern.
+Lesson - Cancellation must be as easy as signup. Intentional friction is a dark pattern.
 
-Case: Meta (Facebook) 2024-2025
+Case - Meta (Facebook) 2024-2025
 
-GDPR fine: €405 million (after previous €25 million fine)
+GDPR fine - €405 million (after previous €25 million fine)
 
-Violation: Pre-checked boxes for data sharing, tracking on non-Facebook sites (pixel), using consent where legal bases existed (contract).
+Violation - Pre-checked boxes for data sharing, tracking on non-Facebook sites (pixel), using consent where legal bases existed (contract).
 
-Lesson: Consent boxes cannot default to "yes." Unconsented tracking is dark pattern.
+Lesson - Consent boxes cannot default to "yes." Unconsented tracking is dark pattern.
 
-Case: TikTok 2026 (Emerging)
+Case - TikTok 2026 (Emerging)
 
-FTC targeting: Youth privacy protections. Making it difficult for users under 13 to opt out of data sharing.
+FTC targeting - Youth privacy protections. Making it difficult for users under 13 to opt out of data sharing.
 
-Likely violation: Dark patterns targeting minors.
+Likely violation - Dark patterns targeting minors.
 
-Pattern: Regulators increasingly punish interfaces that make privacy-protective choices harder than privacy-invasive choices.
+Pattern - Regulators increasingly punish interfaces that make privacy-protective choices harder than privacy-invasive choices.
 
-Technical Audit: Measuring Dark Pattern Severity
+Technical Audit - Measuring Dark Pattern Severity
 
 For developers implementing consent systems:
 
@@ -336,13 +336,13 @@ Paradoxically, WCAG compliance helps GDPR/CCPA compliance.
 
 Future Regulations Expected in 2026-2027
 
-European Union: AI Act Enforcement
+European Union - AI Act Enforcement
 
 The AI Act explicitly targets dark patterns in recommendation systems:
 - Algorithmic ranking cannot use dark patterns
 - Disclosure required when algorithm prioritizes engagement over accuracy
 
-United States: Potential "Deceptive Design Act"
+United States - Potential "Deceptive Design Act"
 
 Proposed federal legislation (not yet passed) would:
 - Create explicit dark pattern prohibition

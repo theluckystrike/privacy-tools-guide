@@ -22,12 +22,12 @@ Table of Contents
 
 - [Understanding Data Subject Rights Under GDPR](#understanding-data-subject-rights-under-gdpr)
 - [Top Data Subject Rights Automation Tools in 2026](#top-data-subject-rights-automation-tools-in-2026)
-- [Implementing DSAR Automation: A Practical Approach](#implementing-dsar-automation-a-practical-approach)
-- [Code Example: Basic DSAR Request Handler](#code-example-basic-dsar-request-handler)
-- [Advanced Implementation: Custom DSAR Workflow](#advanced-implementation-custom-dsar-workflow)
+- [Implementing DSAR Automation - A Practical Approach](#implementing-dsar-automation-a-practical-approach)
+- [Code Example - Basic DSAR Request Handler](#code-example-basic-dsar-request-handler)
+- [Advanced Implementation - Custom DSAR Workflow](#advanced-implementation-custom-dsar-workflow)
 - [DSAR Compliance Verification Script](#dsar-compliance-verification-script)
 - [Tool Feature Comparison Matrix](#tool-feature-comparison-matrix)
-- [Regulatory Context: GDPR vs CCPA vs DPDP](#regulatory-context-gdpr-vs-ccpa-vs-dpdp)
+- [Regulatory Context - GDPR vs CCPA vs DPDP](#regulatory-context-gdpr-vs-ccpa-vs-dpdp)
 
 Understanding Data Subject Rights Under GDPR
 
@@ -67,15 +67,15 @@ DataGrail emphasizes real-time data mapping and continuous compliance monitoring
 
 The platform includes pre-built integrations with over 300 applications, including CRM systems, marketing platforms, HR systems, and cloud storage. This breadth of integration significantly reduces the technical effort required to implement DSAR automation. DataGrail's AI assistant helps privacy teams manage request volumes by suggesting responses and flagging potential issues.
 
-Implementing DSAR Automation: A Practical Approach
+Implementing DSAR Automation - A Practical Approach
 
-Successful implementation of data subject rights automation requires careful planning and cross-functional collaboration. Begin by documenting your current data processing activities and identifying all systems that store personal data. This data inventory forms the foundation for automated discovery and request fulfillment. Many organizations underestimate the complexity of their data landscape, leading to incomplete responses and compliance gaps.
+Successful implementation of data subject rights automation requires careful planning and cross-functional collaboration. Begin by documenting your current data processing activities and identifying all systems that store personal data. This data inventory forms the foundation for automated discovery and request fulfillment. Many organizations underestimate the complexity of their data field, leading to incomplete responses and compliance gaps.
 
 Next, evaluate your request volume and identify bottlenecks in your current process. Organizations receiving fewer than 50 requests monthly may manage manually, but those exceeding 100 requests typically benefit significantly from automation. Consider the total cost of ownership, including implementation, training, and ongoing maintenance, when comparing tools. The cheapest solution may require more manual intervention, negating efficiency gains.
 
 Identity verification remains a critical challenge in DSAR automation. Automated systems must balance user experience with security requirements. Implement multi-factor verification for high-risk requests, such as erasure or data portability, while simplifying verification for lower-risk scenarios. Document your verification process as it constitutes a key element of regulatory demonstration.
 
-Code Example: Basic DSAR Request Handler
+Code Example - Basic DSAR Request Handler
 
 For organizations building custom solutions, understanding the underlying logic helps in tool selection and customization. This JavaScript example demonstrates the basic structure of a DSAR request handler:
 
@@ -125,7 +125,7 @@ class DSARProcessor {
 
 This simplified example illustrates how automated systems aggregate data from multiple sources, verify identity, and compile responses in standardized formats.
 
-Advanced Implementation: Custom DSAR Workflow
+Advanced Implementation - Custom DSAR Workflow
 
 Organizations with unique architectures often need custom solutions. This extended example shows a production-ready DSAR processor with error handling and audit logging:
 
@@ -342,7 +342,7 @@ class DSARComplianceChecker:
         compliance_rate = (passed / total) * 100
 
         print(f"\n=== DSAR Compliance Report ===")
-        print(f"Overall Compliance: {compliance_rate:.1f}%\n")
+        print(f"Overall Compliance - {compliance_rate:.1f}%\n")
 
         for check, passed in self.checklist.items():
             status = " PASS" if passed else " FAIL"
@@ -376,15 +376,15 @@ Selecting the right DSAR automation tool depends on your infrastructure and volu
 | Cost Entry Point | $15K/yr | $20K+/yr | €99/mo | Custom | $10K+/yr |
 | Identity Verification | Built-in | Limited | Built-in | Customizable | Built-in |
 
-Regulatory Context: GDPR vs CCPA vs DPDP
+Regulatory Context - GDPR vs CCPA vs DPDP
 
 Different regulations impose different requirements:
 
-GDPR (EU): 30-day response deadline, data portability required in structured format, right to erasure broadly defined.
+GDPR (EU) - 30-day response deadline, data portability required in structured format, right to erasure broadly defined.
 
-CCPA (California): 45-day response deadline, similar data access rights, weaker erasure provisions (businesses can retain for legitimate purposes).
+CCPA (California) - 45-day response deadline, similar data access rights, weaker erasure provisions (businesses can retain for legitimate purposes).
 
-DPDP (India): 30-day deadline, focuses on transparency over data portability, emerging compliance field.
+DPDP (India) - 30-day deadline, focuses on transparency over data portability, emerging compliance field.
 
 Automation tools must handle these variations. Ethyca and DataGrail handle multi-regulation workflows well.
 

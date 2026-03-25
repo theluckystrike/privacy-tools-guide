@@ -23,8 +23,8 @@ Table of Contents
 - [Prerequisites](#prerequisites)
 - [Security Considerations](#security-considerations)
 - [Troubleshooting SSH Tunnels](#troubleshooting-ssh-tunnels)
-- [Advanced Pattern: Recursive Tunneling](#advanced-pattern-recursive-tunneling)
-- [Threat Model: SSH Tunneling Security Assumptions](#threat-model-ssh-tunneling-security-assumptions)
+- [Advanced Pattern - Recursive Tunneling](#advanced-pattern-recursive-tunneling)
+- [Threat Model - SSH Tunneling Security Assumptions](#threat-model-ssh-tunneling-security-assumptions)
 
 Prerequisites
 
@@ -36,13 +36,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand SSH Tunnels
+Step 1 - Understand SSH Tunnels
 
 An SSH tunnel forwards network traffic through an encrypted SSH connection. The SSH protocol already encrypts your terminal session, tunneling extends that encryption to arbitrary ports and services. This means any service using TCP can be secured without modifying its configuration.
 
 The machine running the SSH client initiates the tunnel. The SSH server acts as the middleman, forwarding traffic between your client and the destination service. Both ends need SSH access, but the destination service itself doesn't require any changes.
 
-Step 2: Local Port Forwarding
+Step 2 - Local Port Forwarding
 
 Local port forwarding binds a port on your local machine that, when connected to, forwards traffic through the SSH server to a destination. This is useful when the destination service exists on the remote network but isn't directly accessible to you.
 
@@ -68,7 +68,7 @@ ssh -L 8080:10.0.0.50:80 user@jump-server
 
 Access the internal webapp at `http://localhost:8080`. This pattern works with any TCP service, Redis, PostgreSQL, custom APIs.
 
-Step 3: Remote Port Forwarding
+Step 3 - Remote Port Forwarding
 
 Remote port forwarding does the opposite: it makes a local service accessible through the SSH server. This is valuable when you need someone else to access a service on your machine, or when your local machine can't receive incoming connections but can initiate outbound SSH.
 
@@ -86,7 +86,7 @@ ssh -R 8080:localhost:3000 user@public-server
 
 Your colleague visits `http://public-server:8080`, and the request routes through the SSH server to your local port 3000. This works without opening firewall ports on your end.
 
-A practical use case: running a webhook receiver locally during development. Many services require a public URL for callbacks. Instead of deploying to a server, forward a public port:
+A practical use case - running a webhook receiver locally during development. Many services require a public URL for callbacks. Instead of deploying to a server, forward a public port:
 
 ```bash
 ssh -R 80:localhost:3000 user@tunnel-server
@@ -94,7 +94,7 @@ ssh -R 80:localhost:3000 user@tunnel-server
 
 Now configure your webhook URL to point to your tunnel server. Traffic arrives at your local development environment.
 
-Step 4: Dynamic Port Forwarding
+Step 4 - Dynamic Port Forwarding
 
 Dynamic port forwarding turns your SSH client into a SOCKS proxy. Unlike local forwarding, which targets a single destination, dynamic forwarding lets you route traffic to any destination through the SSH server. This functions like a minimal VPN.
 
@@ -119,7 +119,7 @@ export ALL_PROXY="socks5://localhost:1080"
 curl https://example.com
 ```
 
-Step 5: Persisting Tunnels
+Step 5 - Persisting Tunnels
 
 SSH tunnels close when the SSH session ends. For persistent tunnels, use autossh or systemd:
 
@@ -206,12 +206,12 @@ curl -x socks5://localhost:1080 https://example.com -v
 Should show "* SOCKS 5 connect"
 ```
 
-Advanced Pattern: Recursive Tunneling
+Advanced Pattern - Recursive Tunneling
 
 For multi-hop scenarios (access server A through server B through server C):
 
 ```bash
-Connection chain: local → server_b → server_a → internal_service
+Connection chain - local → server_b → server_a → internal_service
 First establish tunnel from local to server_b
 ssh -L 3307:server_a:3306 user@server_b
 
@@ -227,7 +227,7 @@ Single command equivalent
 ssh -J user@server_b user@server_a -L 3306:internal_server:3306
 ```
 
-Threat Model: SSH Tunneling Security Assumptions
+Threat Model - SSH Tunneling Security Assumptions
 
 SSH tunneling provides encryption but has limitations:
 
@@ -249,7 +249,7 @@ Risk scenarios:
 
 For high-security scenarios, use VPN or tor instead. For standard privacy protection, SSH tunneling to a trusted server works well.
 
-Step 6: Production-Ready SSH Tunnel Wrapper
+Step 6 - Production-Ready SSH Tunnel Wrapper
 
 For real deployments, wrap SSH tunneling in a management script:
 
@@ -311,7 +311,7 @@ Usage:
 ./ssh-tunnel-manager.sh stop
 ```
 
-Step 7: Quick Reference
+Step 7 - Quick Reference
 
 | Tunnel Type | Use Case | Command |
 |-------------|----------|---------|

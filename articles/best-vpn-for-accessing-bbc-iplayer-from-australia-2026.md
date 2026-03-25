@@ -115,21 +115,21 @@ Troubleshooting Common Issues
 
 Even with correct configuration, you may encounter issues. Here are solutions for the most common problems:
 
-Issue: "BBC iPlayer not available in your location"
+Issue - "BBC iPlayer not available in your location"
 
 This typically indicates a DNS leak or WebRTC exposure. Check:
 - Your browser's WebRTC settings (disable in about:config for Firefox)
 - Ensure all DNS traffic routes through your VPN tunnel
 - Clear browser cookies and cache, as BBC stores location data
 
-Issue: Video playback starts but buffers continuously
+Issue - Video playback starts but buffers continuously
 
 Solutions:
 - Switch to a less congested server
 - Change from OpenVPN to WireGuard protocol
 - Enable kill switch to prevent IP leaks during network fluctuations
 
-Issue: Service works on desktop but not mobile
+Issue - Service works on desktop but not mobile
 
 Mobile apps may use different APIs or have stricter verification:
 - Ensure your VPN provider has a dedicated iOS/Android app
@@ -143,7 +143,7 @@ When accessing geo-restricted content, keep these privacy principles in mind:
 - BBC iPlayer requires a TV license to stream content legally in the UK
 - Some VPN providers maintain "stealth" or "obfuscated" servers that mask VPN usage, useful in regions with network-level VPN blocking
 
-Configuration Example: WireGuard
+Configuration Example - WireGuard
 
 For developers preferring manual configuration, here's a WireGuard example:
 
@@ -270,17 +270,17 @@ Comparing VPN providers specifically for BBC iPlayer access in 2026:
 Provider-specific optimizations:
 
 ```bash
-NordVPN: SmartDNS feature for streaming
+NordVPN - SmartDNS feature for streaming
 When using UK server, SmartDNS automatically resolves BBC domains through UK servers
 nordvpn login
 nordvpn set obfuscate on
 nordvpn set dns 1.1.1.1 8.8.8.8
 
-ExpressVPN: Optimize for streaming
+ExpressVPN - Optimize for streaming
 expressvpn preferences set send_crash_reports false
 expressvpn preferences set network_lock false  # Not needed with killswitch
 
-Surfshark: Multi-hop support
+Surfshark - Multi-hop support
 surfshark-cli multi-hop enable
 surfshark-cli connect UK-London
 ```
@@ -515,7 +515,7 @@ Optimize for consistent playback without buffering:
 
 ```bash
 Increase buffer size for streaming
-Linux: Adjust socket buffer sizes
+Linux - Adjust socket buffer sizes
 sysctl -w net.core.rmem_max=134217728
 sysctl -w net.core.wmem_max=134217728
 sysctl -w net.ipv4.tcp_rmem="4096 87380 67108864"

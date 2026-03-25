@@ -64,7 +64,7 @@ wget https://protonmail.com/download/bridge/protonmail-bridge_1.8.5_amd64.deb
 dpkg -i protonmail-bridge_1.8.5_amd64.deb
 ```
 
-Step 1: Initial Configuration
+Step 1 - Initial Configuration
 
 Launch ProtonMail Bridge and complete the initial setup:
 
@@ -75,7 +75,7 @@ Launch ProtonMail Bridge and complete the initial setup:
 
 The Bridge application runs in your system tray, managing IMAP and SMTP connections on ports 1143 (IMAP) and 1025 (SMTP) by default. You can modify these ports in the Bridge settings if they conflict with existing services.
 
-Step 2: Desktop Client Configuration
+Step 2 - Desktop Client Configuration
 
 Thunderbird Configuration
 
@@ -87,17 +87,17 @@ Thunderbird offers the most complete integration with ProtonMail Bridge. Here's 
 4. Thunderbird should auto-detect settings, verify the configuration:
 
 ```
-Incoming Server: localhost
-Port: 1143
-SSL: SSL/TLS
-Authentication: Normal password
-Username: your@protonmail.com
+Incoming Server - localhost
+Port - 1143
+SSL - SSL/TLS
+Authentication - Normal password
+Username - your@protonmail.com
 
-Outgoing Server: localhost
-Port: 1025
-SSL: STARTTLS
-Authentication: Normal password
-Username: your@protonmail.com
+Outgoing Server - localhost
+Port - 1025
+SSL - STARTTLS
+Authentication - Normal password
+Username - your@protonmail.com
 ```
 
 Click "Re-test" to verify connectivity before proceeding.
@@ -113,13 +113,13 @@ For macOS users with Apple Mail:
 5. Configure manually:
 
 ```
-Incoming Mail Server: localhost
-Port: 1143 (with SSL) or 1143 (without SSL)
-Authentication: Password
+Incoming Mail Server - localhost
+Port - 1143 (with SSL) or 1143 (without SSL)
+Authentication - Password
 
-Outgoing Mail Server: localhost
-Port: 1025 (with SSL) or 1025 (without SSL)
-Authentication: Password
+Outgoing Mail Server - localhost
+Port - 1025 (with SSL) or 1025 (without SSL)
+Authentication - Password
 ```
 
 Outlook Configuration
@@ -134,13 +134,13 @@ Microsoft Outlook requires additional steps due to its tighter security model:
 ```
 Incoming (IMAP):
 Server: localhost
-Port: 1143
-Encryption: SSL
+Port - 1143
+Encryption - SSL
 
 Outgoing (SMTP):
 Server: localhost
-Port: 1025
-Encryption: STARTTLS
+Port - 1025
+Encryption - STARTTLS
 ```
 
 Security Considerations
@@ -210,7 +210,7 @@ tail -f ~/.local/share/protonmail/bridge/logs/bridge.log
 
 Common issues include incorrect authentication credentials, port conflicts, and expired session tokens. Check the logs first, they typically reveal the exact failure point.
 
-Step 3: Automation Integration
+Step 3 - Automation Integration
 
 Developers can interface with ProtonMail Bridge programmatically:
 

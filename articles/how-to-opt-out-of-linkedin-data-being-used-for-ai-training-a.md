@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand LinkedIn's AI Data Usage
+Step 1 - Understand LinkedIn's AI Data Usage
 
 LinkedIn's privacy policy outlines several ways the platform uses user data, including for "research and development" purposes. While the company has introduced some opt-out mechanisms, the implementation has been inconsistent, and many users remain unaware that their data may be contributing to AI model training.
 
@@ -40,7 +40,7 @@ The types of data potentially used include:
 - Profile views and search activity
 - Endorsements and recommendations
 
-Step 2: The Official Opt-Out Method
+Step 2 - The Official Opt-Out Method
 
 LinkedIn provides a privacy setting to control data usage for AI training. Here's how to access it:
 
@@ -55,7 +55,7 @@ This setting controls whether your content and data can be used to train LinkedI
 - Historical data collected before you enabled the opt-out may still be retained
 - The opt-out doesn't affect data already processed or used in models
 
-Step 3: Implement Programmatic Verification of Your Settings
+Step 3 - Implement Programmatic Verification of Your Settings
 
 For developers who want to verify their privacy settings programmatically, LinkedIn provides limited API access. You can check your account settings through the LinkedIn API:
 
@@ -87,7 +87,7 @@ def check_ai_training_optout(access_token):
 
 Note that LinkedIn's API access is restricted and requires approval for most use cases. This example demonstrates the concept rather than providing working code.
 
-Step 4: Data Portability and Deletion Requests
+Step 4 - Data Portability and Deletion Requests
 
 Beyond the AI training opt-out, you can request a copy of your data or deletion under various privacy regulations. LinkedIn provides these options through their settings:
 
@@ -101,7 +101,7 @@ To submit a deletion request:
 
 For EU users, GDPR provides additional rights. You can submit a formal request through LinkedIn's GDPR portal, which typically requires a 30-day response timeline.
 
-Step 5: Automate Data Export with Selenium
+Step 5 - Automate Data Export with Selenium
 
 For power users who want data backups, you can automate the export process using Selenium:
 
@@ -140,7 +140,7 @@ def download_linkedin_data(email, password):
 
 This script requires the Selenium WebDriver and should be used responsibly, respecting LinkedIn's terms of service.
 
-Step 6: Hardening Your LinkedIn Profile
+Step 6 - Hardening Your LinkedIn Profile
 
 While you cannot completely prevent LinkedIn from collecting data, you can minimize what appears on your profile:
 
@@ -154,7 +154,7 @@ Content restrictions:
 - Keep work history generalized rather than detailed
 - Remove unnecessary personal information from your profile
 
-Step 7: Monitor Third-Party App Permissions
+Step 7 - Monitor Third-Party App Permissions
 
 LinkedIn integrates with numerous third-party applications that may have their own data practices:
 
@@ -165,7 +165,7 @@ LinkedIn integrates with numerous third-party applications that may have their o
 
 Many third-party LinkedIn apps have been discovered collecting data beyond their stated purposes, so regular audits are essential.
 
-Step 8: API-Based Privacy Automation
+Step 8 - API-Based Privacy Automation
 
 For developers building privacy-focused applications, you can monitor LinkedIn privacy settings using browser automation tools. This example uses Playwright to check privacy settings:
 
@@ -200,7 +200,7 @@ async function checkPrivacySettings(credentials) {
 }
 ```
 
-Step 9: Legal Options and Regulatory recourse
+Step 9 - Legal Options and Regulatory recourse
 
 If you're located in certain jurisdictions, you have additional legal options:
 

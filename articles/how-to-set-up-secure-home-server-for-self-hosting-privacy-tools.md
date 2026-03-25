@@ -28,7 +28,7 @@ Third-party password managers, file storage, and VPN services trust companies no
 - Complete encryption control
 - Audit every line of code running on your server
 
-The tradeoff: You're responsible for updates, backups, and security.
+The tradeoff - You're responsible for updates, backups, and security.
 
 Prerequisites
 
@@ -40,22 +40,22 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Select Hardware
+Step 1 - Select Hardware
 
 Minimum Specs for Home Privacy Server
 
 ```
-CPU: 2-4 cores (Intel N100, AMD Ryzen 5 PRO, or ARM-based)
-RAM: 8-16 GB (allows multiple containerized services)
-Storage: 500GB-2TB SSD (for system + encrypted backups)
-Power: Low-wattage (30-65W) to run 24/7
-Networking: 1Gbps Ethernet (Wi-Fi unreliable for server)
-Form factor: Small enough to hide, not a full desktop tower
+CPU - 2-4 cores (Intel N100, AMD Ryzen 5 PRO, or ARM-based)
+RAM - 8-16 GB (allows multiple containerized services)
+Storage - 500GB-2TB SSD (for system + encrypted backups)
+Power - Low-wattage (30-65W) to run 24/7
+Networking - 1Gbps Ethernet (Wi-Fi unreliable for server)
+Form factor - Small enough to hide, not a full desktop tower
 ```
 
 Recommended Hardware Options
 
-Option 1: Raspberry Pi 4 or 5 ($75-150)
+Option 1 - Raspberry Pi 4 or 5 ($75-150)
 
 ```
 Specs:
@@ -70,10 +70,10 @@ Limitations:
 - Some services lack ARM binaries (research before buying)
 - USB latency (use high-quality SSD enclosure)
 
-Best for: Minimal setup, password manager + VPN
+Best for - Minimal setup, password manager + VPN
 ```
 
-Option 2: Intel NUC ($200-400)
+Option 2 - Intel NUC ($200-400)
 
 ```
 Specs:
@@ -83,13 +83,13 @@ Specs:
 - 24/7 safe (fanless models available)
 - Full x86 compatibility (all software works)
 
-Best for: Running 3+ services simultaneously, guaranteed compatibility
+Best for - Running 3+ services simultaneously, guaranteed compatibility
 ```
 
-Option 3: Used Mini PC ($150-300)
+Option 3 - Used Mini PC ($150-300)
 
 ```
-Examples: Lenovo ThinkCentre M90, Dell OptiPlex 3050
+Examples - Lenovo ThinkCentre M90, Dell OptiPlex 3050
 Specs:
 - i5-7th gen equivalent
 - 8-16GB RAM (often upgradeable)
@@ -97,10 +97,10 @@ Specs:
 - 24/7 capable
 - x86 full compatibility
 
-Best for: Budget-conscious, maximum power per dollar
+Best for - Budget-conscious, maximum power per dollar
 ```
 
-Step 2: Network Setup: Safe Remote Access
+Step 2 - Network Setup: Safe Remote Access
 
 Never expose your home IP directly. Use a VPN for remote access:
 
@@ -110,7 +110,7 @@ Device (outside home)
     → Internal privacy apps (password manager, etc.)
 ```
 
-Option 1: WireGuard VPN (Recommended)
+Option 1 - WireGuard VPN (Recommended)
 
 ```
 Setup:
@@ -158,7 +158,7 @@ PublicKey = [contents of client_public.key]
 AllowedIPs = 10.0.0.2/32
 ```
 
-Option 2: Reverse SSH Tunnel (Lightweight)
+Option 2 - Reverse SSH Tunnel (Lightweight)
 
 For minimal setup, SSH tunnel provides encrypted access without dedicated VPN software:
 
@@ -170,12 +170,12 @@ ssh -R 5000:localhost:3000 \
   -N -T
 
 Port 5000 on remote server tunnels to port 3000 on home server
-Access home app from anywhere: ssh://remote_server:5000
+Access home app from anywhere - ssh://remote_server:5000
 ```
 
-Limitation: Requires remote VPS (adds cost and third-party dependency)
+Limitation - Requires remote VPS (adds cost and third-party dependency)
 
-Step 3: OS Hardening
+Step 3 - OS Hardening
 
 Your home server should be as locked-down as a production server.
 
@@ -201,10 +201,10 @@ sudo ufw allow 443/tcp   # HTTPS for web apps
 
 4. SSH hardening
 sudo nano /etc/ssh/sshd_config
-Set: PermitRootLogin no
-Set: PasswordAuthentication no
-Set: PubkeyAuthentication yes
-Set: Port 2222 (non-standard)
+Set - PermitRootLogin no
+Set - PasswordAuthentication no
+Set - PubkeyAuthentication yes
+Set - Port 2222 (non-standard)
 
 sudo systemctl restart ssh
 
@@ -217,10 +217,10 @@ sudo aa-enabled  # Check AppArmor status
 
 7. Disable IPv6 if not using
 sudo nano /etc/sysctl.conf
-Add: net.ipv6.conf.all.disable_ipv6 = 1
+Add - net.ipv6.conf.all.disable_ipv6 = 1
 ```
 
-Step 4: Containerized Privacy Tools
+Step 4 - Containerized Privacy Tools
 
 Use Docker for isolated, easy-to-update services.
 
@@ -232,7 +232,7 @@ sudo sh get-docker.sh
 sudo usermod -aG docker $USER
 ```
 
-Step 5: Docker Compose Stack: Privacy Tools
+Step 5 - Docker Compose Stack: Privacy Tools
 
 Create `/home/user/privacy-stack/docker-compose.yml`:
 
@@ -338,7 +338,7 @@ networks:
         - subnet: 172.20.0.0/16
 ```
 
-Step 6: TLS Certificates (HTTPS)
+Step 6 - TLS Certificates (HTTPS)
 
 Self-signed certificates for internal access:
 
@@ -354,7 +354,7 @@ Store in /home/user/privacy-stack/certs/
 mv privacy-tools.* ./certs/
 ```
 
-Step 7: Backup Strategy
+Step 7 - Backup Strategy
 
 Self-hosted servers are useless without backups.
 
@@ -389,10 +389,10 @@ Run daily via cron:
 
 ```bash
 crontab -e
-Add: 2 3 * * * /home/user/privacy-stack/backup.sh
+Add - 2 3 * * * /home/user/privacy-stack/backup.sh
 ```
 
-Step 8: Monitor and Maintenance
+Step 8 - Monitor and Maintenance
 
 ```bash
 Check container health
@@ -412,7 +412,7 @@ Monitor from outside
 Set up Prometheus + Grafana in same stack
 ```
 
-Step 9: Security Checklist
+Step 9 - Security Checklist
 
 - [ ] Firewall configured (ufw enabled, unnecessary ports closed)
 - [ ] SSH hardened (key-based auth only, non-standard port)

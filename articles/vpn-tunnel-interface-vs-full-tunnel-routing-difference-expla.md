@@ -200,7 +200,7 @@ Advanced Routing Policy Management
 For complex network scenarios, policy-based routing provides granular control:
 
 ```bash
-Linux: Advanced policy routing beyond basic tunnel/full tunnel
+Linux - Advanced policy routing beyond basic tunnel/full tunnel
 Add multiple routing tables for different traffic classes
 
 Define routing tables
@@ -262,7 +262,7 @@ For systems requiring no DNS leaks regardless of application misconfiguration:
 #!/bin/bash
 Strict tunnel interface firewall rules
 
-Default: drop all traffic
+Default - drop all traffic
 iptables -P INPUT DROP
 iptables -P FORWARD DROP
 iptables -P OUTPUT DROP

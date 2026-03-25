@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Credential Stuffing Attacks
+Step 1 - Understand Credential Stuffing Attacks
 
 Credential stuffing operates on a simple premise. Attackers obtain username and password pairs from data breaches, which are readily available on underground forums. They then use automated bots to attempt logins across hundreds or thousands of websites simultaneously. The success rate typically ranges from 0.1% to 2% per site, but when scaled across numerous targets, even a small success rate yields significant results.
 
@@ -45,7 +45,7 @@ Why These Attacks Succeed
 
 The primary reason credential stuffing succeeds is password reuse. Studies consistently show that a substantial percentage of users employ the same password across multiple services. When one service suffers a breach, those credentials become valuable ammunition for attacks on other platforms. Additionally, many applications lack adequate defenses against automated attacks, making the barrier to entry low for attackers.
 
-Step 2: Protecting Yourself as a User
+Step 2 - Protecting Yourself as a User
 
 Use Unique, Generated Passwords
 
@@ -71,7 +71,7 @@ Implement Passkeys When Available
 
 Passkeys represent the future of authentication, eliminating passwords entirely through cryptographic key pairs. Because passkeys are unique to each service and resistant to phishing, they are immune to credential stuffing. Major platforms including Google, Apple, and Microsoft support passkeys, with adoption accelerating across the industry.
 
-Step 3: Protecting Your Applications as a Developer
+Step 3 - Protecting Your Applications as a Developer
 
 If you build applications that accept user credentials, implementing proper defenses reduces the impact of credential stuffing on your users.
 
@@ -188,11 +188,11 @@ Developers and users should understand the broader threat field:
 
 Attack Sophistication Levels
 
-Script Kiddie Level: Uses pre-built tools, no customization. High detection rates, minimal success.
+Script Kiddie Level - Uses pre-built tools, no customization. High detection rates, minimal success.
 
-Professional Syndicates: Sophisticated proxy rotation, custom botnet infrastructure, carrier phase evasion. Success rates 0.5-2% per site.
+Professional Syndicates - Sophisticated proxy rotation, custom botnet infrastructure, carrier phase evasion. Success rates 0.5-2% per site.
 
-Nation-State Actors: Government-level resources. May target specific individuals rather than bulk attacks.
+Nation-State Actors - Government-level resources. May target specific individuals rather than bulk attacks.
 
 Credential Stuffing Economics
 
@@ -210,12 +210,12 @@ Revenue if 0.1% success on 10 million targets:
 - Average account value: $50-$500 (credentials, personal data)
 - Expected revenue: $500,000-$5,000,000
 
-ROI: Extremely favorable for attackers
+ROI - Extremely favorable for attackers
 ```
 
 This is why credential stuffing remains endemic, the economics are overwhelmingly favorable.
 
-Step 4: Zero-Knowledge Proof Authentication
+Step 4 - Zero-Knowledge Proof Authentication
 
 The future of authentication uses cryptographic proofs instead of passwords:
 
@@ -245,12 +245,12 @@ class ZKPasswordAuth:
         return ZKProof.verify(proof, challenge)
 ```
 
-Step 5: Hardware-Based Authentication Security
+Step 5 - Hardware-Based Authentication Security
 
 For highest security, use hardware authenticators:
 
 ```bash
-YubiKey: Hardware security key
+YubiKey - Hardware security key
 Setup FIDO2 authentication
 
 Test FIDO2 support
@@ -265,7 +265,7 @@ Common hardware authenticators:
 
 Hardware keys are phishing-resistant because authentication is tied to specific domain names cryptographically.
 
-Step 6: Behavioral Biometrics Implementation
+Step 6 - Behavioral Biometrics Implementation
 
 Advanced applications use behavioral analysis for continuous authentication:
 
@@ -313,7 +313,7 @@ document.addEventListener('keydown',
 );
 ```
 
-Step 7: Geographic Velocity Analysis
+Step 7 - Geographic Velocity Analysis
 
 Detecting impossible travel patterns:
 
@@ -345,7 +345,7 @@ def detect_impossible_travel(login_events):
             }
 ```
 
-Step 8: Credential Rotation Strategies
+Step 8 - Credential Rotation Strategies
 
 Organizations should implement regular credential rotation:
 
@@ -383,7 +383,7 @@ for account in $(list_accounts); do
 done
 ```
 
-Step 9: Account Linkage Detection
+Step 9 - Account Linkage Detection
 
 Identify when multiple breaches expose the same person:
 

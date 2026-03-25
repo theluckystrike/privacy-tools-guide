@@ -29,13 +29,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Blocking Mechanism
+Step 1 - Understand the Blocking Mechanism
 
 Iran's internet filtering operates at multiple levels. The Telecommunications Infrastructure Company (TIC) blocks access to Telegram's IP addresses and domain names through DNS manipulation and deep packet inspection. The filtering system uses a combination of IP range blocking, SNI inspection, and keyword-based traffic analysis to identify and block encrypted messaging traffic.
 
 For developers building applications that need to function in Iran, understanding these mechanisms is essential. The blocking is not monolithic, it varies by region, internet service provider, and time of day. This variability means that solutions must be adaptable and resilient.
 
-Step 2: VPN Solutions for Developers
+Step 2 - VPN Solutions for Developers
 
 A properly configured VPN remains the most reliable method for accessing blocked services. For developers, the choice of VPN protocol matters significantly.
 
@@ -76,7 +76,7 @@ socks-proxy-retry
 
 This configuration runs OpenVPN through a SOCKS proxy that obfsproxy manages, making traffic appear as random obfuscated data rather than VPN traffic.
 
-Step 3: Protocol-Specific Workarounds
+Step 3 - Protocol-Specific Workarounds
 
 MTProxy for Telegram
 
@@ -128,7 +128,7 @@ server {
 
 This technique makes traffic appear to be legitimate HTTPS requests to Cloudflare-protected domains, bypassing SNI-based filtering.
 
-Step 4: Build Custom Relay Infrastructure
+Step 4 - Build Custom Relay Infrastructure
 
 For organizations requiring reliable access, self-hosted relay solutions provide the most control.
 
@@ -195,7 +195,7 @@ docker run -d \
 
 Users inside Iran can then connect to Signal through `https://your-proxy-server:8080`.
 
-Step 5: Network-Level Implementation
+Step 5 - Network-Level Implementation
 
 For developers managing multiple users or devices, network-level solutions provide centralized control.
 
@@ -218,7 +218,7 @@ PreUp = "iptables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACC
 
 Setting MTU to 1280 ensures packets work with fragmented connections commonly seen on Iranian infrastructure.
 
-Step 6: Emergency Communication Plans
+Step 6 - Emergency Communication Plans
 
 Developers should implement offline fallback systems:
 

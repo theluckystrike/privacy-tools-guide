@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the People Search Ecosystem
+Step 1 - Understand the People Search environment
 
 Data brokers like Acxiom, LexisNexis, Experian, and smaller players collect information from public records, warranty registrations, magazine subscriptions, and online activities. People search sites such as Whitepages, BeenVerified, Instant Checkmate, and TruthFinder compile this data into searchable databases accessible to anyone willing to pay a small fee, or sometimes for free.
 
 The first step toward removal is understanding what these sites know about you. You can query your own data using services like Have I Been Pwned (for breach data) and manual searches on major people search sites. Create a systematic list of all sites showing your information, this becomes your removal checklist.
 
-Step 2: Automated Data Discovery
+Step 2 - Automated Data Discovery
 
 For developers, writing scripts to discover where your data appears is more efficient than manual searching. Here's a Python script that automates initial data discovery:
 
@@ -69,7 +69,7 @@ for term in SEARCH_TERMS:
 
 This script provides a baseline for discovering where your data exists. Modify `SEARCH_TERMS` with your actual information to build your personal removal queue.
 
-Step 3: Systematic Opt-Out Workflow
+Step 3 - Systematic Opt-Out Workflow
 
 Each people search site has an opt-out mechanism, though the process varies. The general workflow involves:
 
@@ -80,7 +80,7 @@ Each people search site has an opt-out mechanism, though the process varies. The
 
 Major sites follow predictable patterns. Whitepages requires creating an account and manually removing each listing. BeenVerified uses an online form but requires precise URL matching. Spokeo accepts email requests with identity verification.
 
-Step 4: Implement Programmatic Removal Scripts
+Step 4 - Implement Programmatic Removal Scripts
 
 For developers managing removal across multiple sites, creating reusable scripts accelerates the process:
 
@@ -130,7 +130,7 @@ remover.remove_whitepages("https://www.whitepages.com/people/name")
 
 This framework requires customization per site as opt-out mechanisms change. Always test against a single listing before bulk operations.
 
-Step 5: Use the Removal API Pattern
+Step 5 - Use the Removal API Pattern
 
 Some privacy-focused services provide APIs for systematic removal. While no universal API exists for all people search sites, you can build a personal API using serverless functions:
 
@@ -174,7 +174,7 @@ async function submitOptOut(site, url, email) {
 
 Deploy this as a Cloudflare Worker to automate removal requests while respecting per-site rate limits.
 
-Step 6: Tracking Your Removal Status
+Step 6 - Tracking Your Removal Status
 
 Maintaining a removal tracking system helps ensure complete coverage:
 
@@ -217,7 +217,7 @@ for site, url in removals:
 
 This database tracks submission dates, status, and completion times for each removal request. Query it periodically to identify sites requiring follow-up.
 
-Step 7: Ongoing Maintenance
+Step 7 - Ongoing Maintenance
 
 Data brokers continuously repopulate information from public records. Plan for recurring removal cycles:
 
@@ -227,13 +227,13 @@ Data brokers continuously repopulate information from public records. Plan for r
 
 For developers, consider building automated monitoring that alerts you when your information reappears. RSS feeds from monitoring services or Google Alerts for your name and address provide early warning systems.
 
-Step 8: Legal Considerations
+Step 8 - Legal Considerations
 
 For California residents, the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA) provide legally enforceable opt-out rights. European users benefit from GDPR Article 17 (right to erasure). These laws compel data brokers to respond within specific timeframes, typically 45 days under CCPA.
 
 When automated and self-service options fail, formal legal requests citing these regulations often produce results. Several services specialize in automated legal-grade requests if manual efforts prove insufficient.
 
-The process of removing yourself from people search sites requires persistence and systematic tracking. For developers, building automation around discovery, submission, and tracking transforms a tedious process into a manageable workflow. While complete removal from all data brokers remains difficult given the fragmented ecosystem, consistent effort significantly reduces your digital footprint.
+The process of removing yourself from people search sites requires persistence and systematic tracking. For developers, building automation around discovery, submission, and tracking transforms a tedious process into a manageable workflow. While complete removal from all data brokers remains difficult given the fragmented environment, consistent effort significantly reduces your digital footprint.
 
 Troubleshooting
 

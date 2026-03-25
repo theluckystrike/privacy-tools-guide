@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Viewing Recent Activity Through the Web Interface
+Step 1 - Viewing Recent Activity Through the Web Interface
 
 The most straightforward method uses Netflix's built-in "Viewing Activity" feature. Log into your Netflix account on a desktop browser and navigate to your profile icon, then select "Account." Under the "Profile & Parental Controls" section, click the profile you want to check, then select "Viewing activity."
 
@@ -36,13 +36,13 @@ This page shows every title played, the date and time it was watched, and the de
 
 The viewing activity page has limitations. It shows only the past several months of data and lumps multiple episodes into single entries. However, it provides the quickest way to identify obvious unauthorized usage without technical tools.
 
-Step 2: Checking Connected Devices
+Step 2 - Checking Connected Devices
 
 Netflix displays all devices currently using your account through the "Manage Access Devices" page. Access this by going to Account, then "Sign out of all devices" under the profile section. This page does not list individual devices by name, but it does force every device to re-authenticate. After using this option, only devices with your current password will remain connected.
 
 For more detailed device information, inspect the playback data in your account. Every stream request includes device metadata that Netflix stores. While the web interface does not expose this directly, developers can access Netflix's API to retrieve more granular data about stream sessions.
 
-Step 3: Monitor with Python and the Netflix API
+Step 3 - Monitor with Python and the Netflix API
 
 Power users can programmatically monitor account activity using Python. Netflix does not provide a public API for personal account data, but you can simulate session monitoring by tracking authentication events.
 
@@ -93,7 +93,7 @@ def analyze_activity_for_anomalies(activities):
 
 This script demonstrates the concept of anomaly detection for streaming activity. The actual Netflix API requires authentication tokens that are difficult to obtain programmatically due to their anti-automation measures.
 
-Step 4: IP Address Monitoring via Router Logs
+Step 4 - IP Address Monitoring via Router Logs
 
 Your router often contains valuable information about network traffic. If your router supports logging, you can identify devices accessing Netflix by IP address. Most home routers do not log detailed traffic by default, but you can enable this or use a Raspberry Pi running Pi-hole with logging enabled.
 
@@ -116,7 +116,7 @@ curl -s http://router.local/api/dhcp/leases | python3 -m json.tool
 
 This approach requires router compatibility and configuration, but provides device-level visibility that Netflix's own interface lacks.
 
-Step 5: Set Up Alerts with Home Assistant
+Step 5 - Set Up Alerts with Home Assistant
 
 Home Assistant users can create automation to monitor Netflix usage through network-level detection. By tracking when Netflix domains are accessed, you can receive notifications about unexpected activity.
 
@@ -139,13 +139,13 @@ automation:
 
 This automation requires network integration, typically through a network scanner or Pi-hole integration. The exact implementation depends on your home network setup.
 
-Step 6: Netflix Password and Security Settings
+Step 6 - Netflix Password and Security Settings
 
 Beyond monitoring, securing your account prevents unauthorized access in the first place. Netflix offers two-factor authentication through your linked email provider. If your email password is compromised, attackers can reset your Netflix password and lock you out while using your account.
 
 Change your Netflix password regularly, especially if you notice suspicious activity. Use a unique password that you do not reuse across services. Netflix's "Sign out of all devices" option, found in Account settings under "Sign out of all devices," immediately revokes all active sessions. Use this after any security concern or when stopping shared access.
 
-Step 7: Browser Extensions for Activity Tracking
+Step 7 - Browser Extensions for Activity Tracking
 
 Several browser extensions claim to provide Netflix usage statistics. These typically work by observing playback events through the Netflix web player. While convenient, these extensions require significant permissions to function and may pose privacy risks. Review any extension's privacy policy before installation.
 
@@ -168,19 +168,19 @@ javascript:(function(){
 
 This bookmarklet extracts viewing data from the current page without sending information to third parties.
 
-Step 8: What to Do If You Find Unauthorized Access
+Step 8 - What to Do If You Find Unauthorized Access
 
 If you discover someone using your Netflix account without permission, take immediate action. First, change your Netflix password to something unique and strong. Second, use the "Sign out of all devices" option to force re-authentication everywhere. Third, check your linked email for any password change notifications you did not initiate, if your email is compromised, Netflix security alone will not protect you.
 
 If you cannot access your account because the attacker changed the password, use Netflix's account recovery process through your original email. This requires access to the email on file. After recovering, enable two-factor authentication on your email provider before resetting your Netflix password.
 
-Step 9: Prevention Strategies
+Step 9 - Prevention Strategies
 
 Preventing unauthorized access requires more than just a strong Netflix password. Use a password manager to generate and store unique passwords for every service. Enable two-factor authentication wherever available, particularly on your email provider since that serves as the recovery mechanism for most online accounts.
 
 Consider limiting account sharing by creating individual profiles if family members have different viewing preferences. While this does not prevent password sharing, it makes unauthorized use more visible through the viewing activity feature.
 
-Advanced Detection: Network Traffic Analysis
+Advanced Detection - Network Traffic Analysis
 
 For technical users, monitor Netflix's actual network traffic to identify concurrent sessions:
 
@@ -231,22 +231,22 @@ for session, stats in analyze_netflix_sessions('netflix_capture.pcap').items():
     print(f"Session {session[0]} → {session[1]}: {stats['bytes']} bytes")
 ```
 
-Step 10: Device Fingerprinting and Forensic Analysis
+Step 10 - Device Fingerprinting and Forensic Analysis
 
 Netflix devices are uniquely identifiable through Device ID tokens stored locally. If you have access to multiple devices on your network:
 
 ```bash
 Find Netflix Device IDs in browser storage
-Chrome: ~/.config/google-chrome/Default/Local Storage/
+Chrome - ~/.config/google-chrome/Default/Local Storage/
 sqlite3 ~/.config/google-chrome/Default/Local\ Storage/chrome-extension_ajeacbhkfhlrnmkfcpinajkkokcgiinm_0.leveldb/MANIFEST-1
 
 Each device has unique identifiers
-Search for patterns like: "deviceId", "deviceToken", "licensingToken"
+Search for patterns like - "deviceId", "deviceToken", "licensingToken"
 ```
 
 Devices are tied to accounts at Netflix's backend. If your Device IDs appear with a device type you don't own (e.g., "Samsung SmartTV" when you only own an iPhone), that's unauthorized access.
 
-Step 11: Implement Programmatic Account Security Auditing
+Step 11 - Implement Programmatic Account Security Auditing
 
 Create a script to audit your account periodically:
 
@@ -345,7 +345,7 @@ if __name__ == "__main__":
         print(json.dumps(account_audit, indent=2))
 ```
 
-Step 12: Browser Extension for Continuous Monitoring
+Step 12 - Browser Extension for Continuous Monitoring
 
 Build a browser extension that monitors your Netflix activity in real-time:
 
@@ -422,7 +422,7 @@ function isUnexpectedDevice(device) {
 }
 ```
 
-Step 13: Automated Account Recovery Workflow
+Step 13 - Automated Account Recovery Workflow
 
 If you suspect unauthorized access, automate the recovery process:
 
@@ -430,16 +430,16 @@ If you suspect unauthorized access, automate the recovery process:
 #!/bin/bash
 netflix_account_recovery.sh
 
-Step 1: Generate alert
+Step 1 - Generate alert
 ALERT_TIME=$(date)
 echo "Account recovery initiated at $ALERT_TIME" > netflix_recovery.log
 
-Step 2: Change password with strong random string
+Step 2 - Change password with strong random string
 NEW_PASSWORD=$(openssl rand -base64 32)
 echo "Netflix account reset - password changed at $ALERT_TIME" | \
   mail -s "Netflix Account Security" your@email.com
 
-Step 3: Sign out all devices
+Step 3 - Sign out all devices
 This requires manual action via Netflix web interface
 Provide instructions in email
 cat >> netflix_recovery.log << EOF
@@ -453,11 +453,11 @@ Manual steps required:
 Device access log:
 EOF
 
-Step 4: Document for investigation
+Step 4 - Document for investigation
 echo "Recovery process documented in netflix_recovery.log"
 ```
 
-Step 14: Monitor Third-Party Access
+Step 14 - Monitor Third-Party Access
 
 Some apps or smart home integrations request Netflix access. Monitor permissions:
 
@@ -473,19 +473,19 @@ Each app shows:
 
 For technical users, check OAuth tokens
 curl -s "https://www.netflix.com/account/api/connected-apps" \
-  -H "Cookie: netflix_session=..." | jq '.connected_apps'
+  -H "Cookie - netflix_session=..." | jq '.connected_apps'
 ```
 
 Revoke access to any apps you don't actively use. Netflix does not display all connected apps in the UI, but they show in API responses.
 
-Step 15: Escalation to Netflix Support
+Step 15 - Escalation to Netflix Support
 
 If you confirm unauthorized access:
 
 ```
 Email netflix support:
 To: support@netflix.com
-Subject: Unauthorized Account Access - Account Recovery Needed
+Subject - Unauthorized Account Access - Account Recovery Needed
 
 Body:
 - Account email: [your email]
@@ -501,7 +501,7 @@ Netflix typically responds within 24-48 hours with:
 - Recommendations for account hardening
 ```
 
-Step 16: Prevention: Accounts Vs Household Sharing
+Step 16 - Prevention: Accounts Vs Household Sharing
 
 Netflix's "Paid Sharing" feature (some regions) allows authorized household members:
 
@@ -521,7 +521,7 @@ Netflix Paid Sharing:
 
 For privacy-conscious households, use separate accounts with split billing instead.
 
-Step 17: Analytics-Based Detection Using Flow Data
+Step 17 - Analytics-Based Detection Using Flow Data
 
 For users with access to network flow data (via enterprise firewall logs or Pi-hole), you can build analytics around streaming patterns that expose unauthorized usage:
 
@@ -536,7 +536,7 @@ High-frequency access patterns during impossible times
 (e.g., watching from two continents simultaneously) indicates sharing
 ```
 
-Step 18: Understand Bumps in Viewing Patterns
+Step 18 - Understand Bumps in Viewing Patterns
 
 Netflix's recommendation system changes when viewing patterns shift. If your recommendations suddenly include content you wouldn't watch, an unauthorized user may be exploring your profile. While Netflix's algorithm is opaque, clustering analysis can reveal unusual patterns:
 
@@ -577,7 +577,7 @@ def cluster_viewing_habits(activity_data):
     return anomalies
 ```
 
-Step 19: Coordinating with Family Members
+Step 19 - Coordinating with Family Members
 
 If you suspect account sharing but the unauthorized user might be a family member, take a measured approach:
 
@@ -590,7 +590,7 @@ For shared accounts where you want to maintain family access while protecting pr
 - Review profiles monthly for unfamiliar viewing history
 - Communicate expected usage patterns
 
-Step 20: Device-Level Detection Without Direct Access
+Step 20 - Device-Level Detection Without Direct Access
 
 If you don't have access to a device that's actively streaming, you can infer unauthorized usage through account behavior:
 

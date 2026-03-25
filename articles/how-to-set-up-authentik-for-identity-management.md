@@ -13,7 +13,7 @@ voice-checked: true
 tags: [privacy-tools-guide]
 ---
 
-Step 9: Backup and Restore Authentik
+Step 9 - Backup and Restore Authentik
 
 Authentik stores everything in PostgreSQL. Back it up with `pg_dump`:
 

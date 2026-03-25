@@ -20,7 +20,7 @@ Jitsi Meet is the best secure video calling app in 2026 for developers who want 
 
 
 - Jitsi Meet is the: best secure video calling app in 2026 for developers who want a self-hosted, open-source solution with an embeddable iframe API and solid call quality.
-- Below: we compare each option with deployment configs and integration code so you can pick the right fit for your threat model.
+- Below - we compare each option with deployment configs and integration code so you can pick the right fit for your threat model.
 - Google Meet free tier: has no E2EE.
 - If you need federation: across servers and tight integration with encrypted chat, Matrix video rooms offer E2EE calls built on the MLS protocol.
 - It offers a complete: stack that you can self-host or use via public instances.
@@ -32,7 +32,7 @@ True secure video calling goes beyond TLS encryption. You need to understand wha
 
 End-to-end encryption (E2EE) means video and audio streams are encrypted on the sender's device and only decryptable by recipients, the server should never possess the keys. Clients must be independently auditable with reproducible builds. Even when content is encrypted, call metadata (who called whom, when, for how long) reveals significant information, so metadata minimization matters. Running your own infrastructure through self-hosting eliminates trust in third-party providers. And open protocols allow independent verification that proprietary alternatives cannot match.
 
-Jitsi Meet: The Open-Source Standard
+Jitsi Meet - The Open-Source Standard
 
 Jitsi Meet has established itself as the leading open-source video conferencing solution. It offers a complete stack that you can self-host or use via public instances.
 
@@ -109,7 +109,7 @@ The Element client provides the interface:
 // The room automatically becomes a video room
 ```
 
-Signal: When Privacy Is Non-Negotiable
+Signal - When Privacy Is Non-Negotiable
 
 Signal remains the gold standard for privacy, and its video calling extends that guarantee. While primarily a mobile-first application, Signal Desktop now supports video calls.
 
@@ -123,7 +123,7 @@ Signal uses the Double Ratchet algorithm combined with X3DH (Extended Triple Dif
 
 Signal video calls inherit these properties. The trade-off is that Signal doesn't offer self-hosting, you're placing trust in the Signal Foundation. However, their security audit transparency and open-source client make this a calculated trust decision.
 
-BigBlueButton: Self-Hosted for Education and Teams
+BigBlueButton - Self-Hosted for Education and Teams
 
 BigBlueButton provides a complete virtual classroom solution optimized for interactive teaching and collaboration. It runs entirely self-hosted.
 
@@ -251,7 +251,7 @@ This metadata alone reveals:
 - Time zone
 - Device types in use
 
-Defense: Use VPN + Tor for metadata privacy
+Defense - Use VPN + Tor for metadata privacy
          Combined with E2EE for content privacy
 ```
 
@@ -264,12 +264,12 @@ Video calls are often recorded. Check if recordings include encryption:
 ```bash
 Jitsi recording configurations
 
-Option 1: Server-side recording (provider can see content)
+Option 1 - Server-side recording (provider can see content)
 JIBRI_RECORDINGS_ENABLED=true
 RECORDING_FOLDER=/recordings
 
-Option 2: Client-side recording (only you have access)
-Browser extension: ScreenFlow, OBS
+Option 2 - Client-side recording (only you have access)
+Browser extension - ScreenFlow, OBS
 Records to your device, not server
 Provides end-to-end privacy for recordings
 
@@ -318,16 +318,16 @@ End-to-End Encryption Algorithm Comparison
 
 Signal's Double Ratchet is the strongest for privacy. Jitsi's SRTP provides good encryption but metadata still visible.
 
-Threat Model: Who Should Use What
+Threat Model - Who Should Use What
 
 ```
-Threat: Corporate espionage → Use Jitsi self-hosted
-Threat: Government surveillance → Use Signal + Tor
-Threat: Casual eavesdropping → Use BigBlueButton
-Threat: Zero-day vulnerabilities → Use Matrix (federation reduces impact)
-Threat: App store manipulation → Use web-based (Jitsi in browser)
-Threat: ISP monitoring → Use Jitsi + VPN or Signal + Tor
-Threat: Hardware compromise → No software solution helps; physical inspection needed
+Threat - Corporate espionage → Use Jitsi self-hosted
+Threat - Government surveillance → Use Signal + Tor
+Threat - Casual eavesdropping → Use BigBlueButton
+Threat - Zero-day vulnerabilities → Use Matrix (federation reduces impact)
+Threat - App store manipulation → Use web-based (Jitsi in browser)
+Threat - ISP monitoring → Use Jitsi + VPN or Signal + Tor
+Threat - Hardware compromise → No software solution helps; physical inspection needed
 ```
 
 Different threats require different tools.
@@ -345,7 +345,7 @@ Maximum quality = Lower privacy
 - No VPN/Tor (ISP sees activity)
 - Unencrypted streams (provider sees content)
 
-Best balance: Jitsi with local TURN + standard encryption
+Best balance - Jitsi with local TURN + standard encryption
 - Content E2EE (privacy)
 - Server relay (quality)
 - Moderate metadata exposure
@@ -369,10 +369,10 @@ Answer these questions:
 
 Do these tools work for large conference calls?
 
-Signal: No (limited to ~8 people)
-Jitsi: Yes (50+ participants, quality degrades)
-BigBlueButton: Yes (hundreds, education-focused)
-Matrix: Yes (federation allows unlimited)
+Signal - No (limited to ~8 people)
+Jitsi - Yes (50+ participants, quality degrades)
+BigBlueButton - Yes (hundreds, education-focused)
+Matrix - Yes (federation allows unlimited)
 
 Can I switch between tools mid-call?
 

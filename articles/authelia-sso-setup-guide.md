@@ -37,7 +37,7 @@ Prerequisites
 - Traefik v2+ running (or nginx as an alternative)
 - Docker and Docker Compose
 
-Step 1: Docker Compose Setup
+Step 1 - Docker Compose Setup
 
 ```yaml
 docker-compose.yml
@@ -79,7 +79,7 @@ networks:
     external: true
 ```
 
-Step 2: Authelia Configuration
+Step 2 - Authelia Configuration
 
 ```yaml
 authelia/configuration.yml
@@ -168,13 +168,13 @@ notifier:
   #   filename: /config/notification.txt
 ```
 
-Step 3: Create Users
+Step 3 - Create Users
 
 ```bash
 Generate a password hash
 docker run --rm authelia/authelia:latest \
   authelia hash-password 'your-secure-password'
-Digest: $argon2id$v=19$m=65536,t=3,p=4$...
+Digest - $argon2id$v=19$m=65536,t=3,p=4$...
 ```
 
 ```yaml
@@ -199,7 +199,7 @@ users:
       - users
 ```
 
-Step 4: Protect a Service with Traefik
+Step 4 - Protect a Service with Traefik
 
 ```yaml
 Add these labels to any service you want protected:
@@ -212,7 +212,7 @@ labels:
   - "traefik.http.routers.grafana.middlewares=authelia@docker"
 ```
 
-Step 5: nginx ForwardAuth Alternative
+Step 5 - nginx ForwardAuth Alternative
 
 If using nginx instead of Traefik:
 
@@ -249,7 +249,7 @@ server {
 }
 ```
 
-Step 6: Configure TOTP 2FA
+Step 6 - Configure TOTP 2FA
 
 After first login, users are prompted to register a TOTP device:
 
@@ -264,7 +264,7 @@ Verify Authelia is running and can send emails
 docker logs authelia --tail 50 | grep -i "notification\|email\|smtp"
 ```
 
-Step 7: Check Access Logs
+Step 7 - Check Access Logs
 
 ```bash
 Watch authentication attempts in real time

@@ -38,7 +38,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Threat Model
+Step 1 - Understand the Threat Model
 
 Before implementing any privacy setup, you must understand what you're protecting against. Adversaries range from local surveillance to sophisticated state-level actors with access to ISP records, device exploits, and metadata analysis capabilities. Your threat model determines which tools and techniques are necessary.
 
@@ -48,7 +48,7 @@ Key threats include:
 - Social engineering: Reconnaissance through your digital footprint
 - Traffic analysis: Pattern recognition on network traffic
 
-Step 2: Device Isolation and Air-Gapping
+Step 2 - Device Isolation and Air-Gapping
 
 The foundation of any privacy setup for confidential informant protection is separating your sensitive activities from your daily driver devices. Air-gapping means keeping a dedicated device offline for any work involving identifying information.
 
@@ -65,7 +65,7 @@ sudo systemctl mask wpa_supplicant.service
 
 This device never connects to any network. Transfer files using encrypted USB drives with fresh formatting between uses. Label these devices ambiguously to avoid attracting attention during travel.
 
-Step 3: Secure Operating System Configuration
+Step 3 - Secure Operating System Configuration
 
 For devices that must remain online, use a privacy-focused distribution with hardened defaults. Qubes OS provides strong isolation through its Xen-based virtualization, allowing you to run separate domains for different activities.
 
@@ -88,7 +88,7 @@ echo -e "[Resolve]\nDNSOverTLS=opportunistic" | sudo tee /etc/systemd/resolved.c
 sudo systemctl restart systemd-resolved
 ```
 
-Step 4: Encrypted Communications
+Step 4 - Encrypted Communications
 
 When communicating with handlers or contacts, use end-to-end encrypted platforms with forward secrecy. Signal remains the gold standard for secure messaging, but verify registration keys through a separate channel.
 
@@ -116,18 +116,18 @@ pre_key_bundle = {
 
 Implement disappearing messages with short timers, and verify session fingerprints out-of-band.
 
-Step 5: Metadata Protection
+Step 5 - Metadata Protection
 
 Metadata often reveals more than content. Your phone routinely logs cell tower connections, WiFi networks, and GPS coordinates. Disable these features:
 
 ```bash
-Android: Disable location services via ADB
+Android - Disable location services via ADB
 adb shell settings put secure location_mode 0
 
 iOS: Disable significant Locations
 Settings > Privacy > Location Services > System Services > Significant Locations = Off
 
-Linux: Prevent WiFi geolocation
+Linux - Prevent WiFi geolocation
 sudo systemctl mask geoclue.service
 sudo chmod -x /usr/libexec/geoclue-2.0/demo/agent
 ```
@@ -143,7 +143,7 @@ git config --global http.proxy socks5h://localhost:9050
 git config --global https.proxy socks5h://localhost:9050
 ```
 
-Step 6: Digital Footprint Management
+Step 6 - Digital Footprint Management
 
 Your existing digital presence can compromise your privacy setup. Conduct an audit:
 
@@ -161,7 +161,7 @@ find ./photos -type f -exec exiftool -all= {} \;
 
 Create completely separate identities with no linked information. Use distinct email addresses, phone numbers (burner SIMs), and payment methods. Never cross-contaminate these identities.
 
-Step 7: Operational Security Habits
+Step 7 - Operational Security Habits
 
 Technical tools fail without consistent operational practices:
 
@@ -177,7 +177,7 @@ echo 3 | sudo tee /proc/sys/vm/drop_caches
 sudo cryptsetup luksClose encrypted_volume
 ```
 
-Step 8: Plan Incident Response Plan
+Step 8 - Plan Incident Response Plan
 
 Despite precautions, compromise may occur. Prepare:
 
@@ -249,30 +249,30 @@ threat = model.assess_threat_level("federal_agency")
 print(f"Mitigations: {threat['mitigation']}")
 ```
 
-Step 9: Multi-Device Isolation Strategy
+Step 9 - Multi-Device Isolation Strategy
 
 Implement strict compartmentalization:
 
 ```bash
-Device 1: Air-gapped writing device
+Device 1 - Air-gapped writing device
 - Debian on offline laptop
 - No WiFi/Bluetooth hardware
 - External USB keyboard (no internal input devices)
 - Used only for drafting sensitive documents
 
-Device 2: Tor communication device
+Device 2 - Tor communication device
 - Live USB running Tails OS
 - Reboots fresh on each session
 - Pre-loaded with Signal configuration
 - Only connects through Tor + VPN chain
 
-Device 3: Clean device for public activities
+Device 3 - Clean device for public activities
 - Android phone with minimal apps
 - Regular web browsing, email
 - Completely separate identity
 - Never used for sensitive communications
 
-Device 4: Backup recovery device
+Device 4 - Backup recovery device
 - Encrypted recovery keys for all other devices
 - Stored in physically secure location
 - Accessed only in emergency
@@ -327,7 +327,7 @@ sudo systemctl disable cups
 sudo systemctl disable avahi-daemon
 ```
 
-Step 10: Dead Drop Communication Protocols
+Step 10 - Dead Drop Communication Protocols
 
 Implement truly offline communication channels:
 
@@ -335,7 +335,7 @@ Implement truly offline communication channels:
 #!/bin/bash
 Dead drop setup for critical CI communications
 
-Physical dead drop: Pre-arranged location for message exchange
+Physical dead drop - Pre-arranged location for message exchange
 1. Pick obscure but accessible location
 2. Use signal items (chalk mark, stone placement) to indicate new message
 3. Messages in sealed envelope, coded if necessary
@@ -354,14 +354,14 @@ Digital dead drop using compromised accounts
 5. Credentials provided out-of-band (spoken, written, memorized)
 
 Example Gmail dead drop
-Username: observer.field.report@gmail.com
-Use: Settings > Forwarding and POP/IMAP > Disable forwarding
+Username - observer.field.report@gmail.com
+Use - Settings > Forwarding and POP/IMAP > Disable forwarding
 Creates draft messages
 CI handler and CI both access same account from secure networks
 Review drafts, delete after reading
 ```
 
-Step 11: Counter-Surveillance Awareness
+Step 11 - Counter-Surveillance Awareness
 
 Operational security extends beyond technology:
 
@@ -398,7 +398,7 @@ Financial security
 - [ ] Maintain separate bank account for handler payments (if applicable)
 ```
 
-Step 12: Evidence Preservation and Legal Protection
+Step 12 - Evidence Preservation and Legal Protection
 
 Document your security practices for legal proceedings:
 
@@ -407,7 +407,7 @@ Document your security practices for legal proceedings:
 Security practice documentation
 
 cat > ~/ci-security-practices.txt <<'EOF'
-Date Documented: $(date)
+Date Documented - $(date)
 
 SECURITY PRACTICES IMPLEMENTED:
 1. Device isolation
@@ -445,7 +445,7 @@ shred -vfz -n 10 ~/ci-security-practices.txt
 chmod 600 ~/ci-security-practices.txt.gpg
 ```
 
-Step 13: Malware Detection and Response
+Step 13 - Malware Detection and Response
 
 Identify if your systems have been compromised:
 
@@ -488,7 +488,7 @@ Check for unauthorized sudo entries
 - Notify handler through alternative channel
 ```
 
-Step 14: Recovery and Continuity Planning
+Step 14 - Recovery and Continuity Planning
 
 Prepare for worst-case scenarios:
 

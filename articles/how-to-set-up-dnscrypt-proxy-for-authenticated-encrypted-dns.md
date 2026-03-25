@@ -22,7 +22,7 @@ Table of Contents
 
 - [What is DNSCrypt?](#what-is-dnscrypt)
 - [Prerequisites](#prerequisites)
-- [Advanced Configuration: Authentication](#advanced-configuration-authentication)
+- [Advanced Configuration - Authentication](#advanced-configuration-authentication)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 
 What is DNSCrypt?
@@ -41,7 +41,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install DNSCrypt Proxy
+Step 1 - Install DNSCrypt Proxy
 
 Most Linux distributions include DNSCrypt Proxy in their package managers. On Debian-based systems:
 
@@ -70,7 +70,7 @@ curl -sL https://github.com/DNSCrypt/dnscrypt-proxy/releases/latest/download/dns
 
 Replace `arm64` with `x86_64` for 64-bit Intel/AMD systems.
 
-Step 2: Configure DNSCrypt Proxy
+Step 2 - Configure DNSCrypt Proxy
 
 The default configuration works out of the box for many use cases, but for authenticated encrypted DNS queries, you'll want to customize the setup. The main configuration file is typically located at `/etc/dnscrypt-proxy/dnscrypt-proxy.toml` on installations via package managers, or `dnscrypt-proxy.toml` in the same directory as the binary for manual installations.
 
@@ -117,11 +117,11 @@ cache_max_ttl = 86400
 
 The cache stores DNS responses locally, reducing round trips to the upstream resolver for frequently accessed domains.
 
-Step 3: Switching Your System to Use DNSCrypt
+Step 3 - Switching Your System to Use DNSCrypt
 
 Once DNSCrypt Proxy is running, you need to direct your system's DNS queries to it. The method depends on your Linux distribution and setup.
 
-Method 1: Modify /etc/resolv.conf
+Method 1 - Modify /etc/resolv.conf
 
 The simplest approach is to point your system DNS to the local DNSCrypt Proxy:
 
@@ -131,7 +131,7 @@ sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolv.conf'
 
 For persistent configuration on systemd-resolved systems, you might need to create a symlink or modify the systemd configuration.
 
-Method 2: Using systemd-resolved
+Method 2 - Using systemd-resolved
 
 If your system uses systemd-resolved, create a drop-in configuration:
 
@@ -142,7 +142,7 @@ echo "DNS=127.0.0.1" | sudo tee -a /etc/systemd/resolved.conf.d/dnscrypt.conf
 sudo systemctl restart systemd-resolved
 ```
 
-Method 3: NetworkManager Configuration
+Method 3 - NetworkManager Configuration
 
 For NetworkManager-managed connections, you can set the DNS server directly:
 
@@ -153,7 +153,7 @@ sudo nmcli connection down <connection-name> && sudo nmcli connection up <connec
 
 Replace `<connection-name>` with your active network connection name (use `nmcli connection` to list them).
 
-Step 4: Starting and Enabling the Service
+Step 4 - Starting and Enabling the Service
 
 With systemd:
 
@@ -174,7 +174,7 @@ If you installed manually, you can run DNSCrypt Proxy directly:
 sudo ./dnscrypt-proxy -config dnscrypt-proxy.toml
 ```
 
-Step 5: Verify Your Setup
+Step 5 - Verify Your Setup
 
 After configuration, verify that DNS queries are actually going through DNSCrypt.
 
@@ -202,13 +202,13 @@ Verify DNSCrypt Protocol
 
 Some online tools can verify DNSCrypt functionality. The DNSCrypt resolver's website provides testing methods, or you can query the DNS stamp of your resolver to confirm the protocol in use.
 
-Advanced Configuration: Authentication
+Advanced Configuration - Authentication
 
 For maximum security, configure DNSCrypt Proxy to use resolvers that support client authentication. This requires obtaining or generating client credentials:
 
 ```toml
 [client_auth]
-Authentication method: tls, http, dns, or none
+Authentication method - tls, http, dns, or none
 auth_method = 'none'
 
 If your resolver requires authentication:
@@ -219,13 +219,13 @@ Some enterprise or privacy-focused resolvers require registration. Follow their 
 
 Troubleshooting Common Issues
 
-DNS queries fail: Check that no other service is using port 53 (`sudo lsof -i :53`). Stop conflicting services or change DNSCrypt Proxy's listening port.
+DNS queries fail - Check that no other service is using port 53 (`sudo lsof -i :53`). Stop conflicting services or change DNSCrypt Proxy's listening port.
 
-Slow resolution: Enable the cache settings and consider using a resolver geographically closer to you.
+Slow resolution - Enable the cache settings and consider using a resolver geographically closer to you.
 
-Systemd-resolved conflicts: Ensure systemd-resolved isn't also trying to handle DNS on the same port.
+Systemd-resolved conflicts - Ensure systemd-resolved isn't also trying to handle DNS on the same port.
 
-Logs: Check journalctl for DNSCrypt Proxy logs:
+Logs - Check journalctl for DNSCrypt Proxy logs:
 
 ```bash
 sudo journalctl -u dnscrypt-proxy -f

@@ -35,13 +35,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Data Ethics Fundamentals
+Step 1 - Understand Data Ethics Fundamentals
 
 Data ethics goes beyond legal compliance. It encompasses the moral obligations surrounding data collection, storage, processing, and sharing. The core principles remain consistent across jurisdictions: minimize harm, maximize consent, ensure transparency, and maintain accountability.
 
 The distinction between legal compliance and ethical practice matters significantly. Following GDPR or CCPA technically does not guarantee ethical data handling. Anonymized datasets might still enable re-identification attacks. Aggregated analytics might inadvertently expose sensitive patterns. Ethical data practice requires proactive thinking about potential harms, not just checking regulatory boxes.
 
-Step 2: Practical Data Collection Frameworks
+Step 2 - Practical Data Collection Frameworks
 
 When building data collection systems, implement consent mechanisms that are granular and revocable. Users should understand exactly what data you collect and how you use it.
 
@@ -77,7 +77,7 @@ class ConsentManager:
 
 This pattern ensures you can demonstrate consent compliance during audits while providing users genuine control over their data.
 
-Step 3: Privacy-Preserving Data Storage
+Step 3 - Privacy-Preserving Data Storage
 
 Storage decisions directly impact your ethical posture. Encryption at rest protects against physical theft, but semantic security requires additional layers.
 
@@ -112,7 +112,7 @@ class DataRetentionPolicy:
         return deleted
 ```
 
-Step 4: Anonymization Techniques for Research Data
+Step 4 - Anonymization Techniques for Research Data
 
 Anonymization remains one of the most challenging aspects of ethical data handling. Simple pseudonymization often fails against modern re-identification attacks.
 
@@ -140,7 +140,7 @@ print(f"Differentially private count: {estimated_count}")
 
 For datasets requiring statistical analysis, consider k-anonymity implementations that ensure each record is indistinguishable from at least k-1 other records.
 
-Step 5: Ethical Data Processing Pipelines
+Step 5 - Ethical Data Processing Pipelines
 
 Build ethics checks into your processing pipelines rather than treating them as afterthoughts:
 
@@ -178,7 +178,7 @@ class EthicalDataProcessor:
         })
 ```
 
-Step 6: Documentation and Transparency
+Step 6 - Documentation and Transparency
 
 Maintain data ethics documentation that evolves with your project:
 
@@ -190,7 +190,7 @@ Maintain data ethics documentation that evolves with your project:
 ```markdown
 Research Data Ethics Manifest
 
-Step 7: Dataset: User Behavior Research 2026
+Step 7 - Dataset: User Behavior Research 2026
 - Purpose: Understanding application usage patterns
 - Legal basis: Explicit consent
 - Retention period: 12 months
@@ -205,7 +205,7 @@ While this researcher data ethics guide focuses on ethical frameworks, awareness
 
 Implement privacy impact assessments for new data collection initiatives. Document your ethical reasoning. When uncertain, err on the side of collecting less data and retaining it for shorter periods.
 
-Step 8: Build an Ethical Data Culture
+Step 8 - Build an Ethical Data Culture
 
 Technical tools support ethical practice, but organizational culture determines success. Establish clear guidelines, train team members, and create channels for reporting concerns. Make ethical considerations part of code reviews for data-handling systems.
 
@@ -213,7 +213,7 @@ The researcher data ethics guide for 2026 emphasizes practical implementation ov
 
 Start with your next data project by auditing what you collect, why you collect it, and how long you retain it. Every improvement reduces risk and builds trust.
 
-Step 9: Data Minimization Strategies
+Step 9 - Data Minimization Strategies
 
 Collect only what you actually need:
 
@@ -262,7 +262,7 @@ auditor = DataMinimizationAuditor()
 print(auditor.generate_minimization_report())
 ```
 
-Step 10: Privacy Impact Assessment Template
+Step 10 - Privacy Impact Assessment Template
 
 Conduct systematic PIAs before data collection:
 
@@ -336,7 +336,7 @@ class PrivacyImpactAssessment:
         }
 ```
 
-Step 11: Consent Management at Scale
+Step 11 - Consent Management at Scale
 
 Manage user consent for large-scale research:
 
@@ -408,7 +408,7 @@ class ScalableConsentManager:
             })
 ```
 
-Step 12: Third-Party Sharing Controls
+Step 12 - Third-Party Sharing Controls
 
 If you share data with partners, implement controls:
 
@@ -502,7 +502,7 @@ Pre-Launch Data Ethics Checklist:
     - [ ] Security training scheduled
 ```
 
-Step 13: Measuring Privacy Maturity
+Step 13 - Measuring Privacy Maturity
 
 Assess your organization's privacy maturity level:
 
@@ -517,7 +517,7 @@ class PrivacyMaturityModel:
     }
 
     def assess_organization(self):
-        """Comprehensive privacy maturity assessment"""
+        """complete privacy maturity assessment"""
         return {
             'governance': self._assess_governance(),
             'processes': self._assess_processes(),
@@ -530,7 +530,7 @@ class PrivacyMaturityModel:
         """Privacy governance maturity"""
         return {
             'dpo_role': 'Do you have a dedicated DPO?',
-            'privacy_policy': 'Is your policy current and comprehensive?',
+            'privacy_policy': 'Is your policy current and complete?',
             'board_oversight': 'Does leadership oversee privacy?',
             'budget': 'Is privacy adequately funded?',
             'level': self._determine_level()
@@ -551,7 +551,7 @@ class PrivacyMaturityModel:
         return {
             'encryption': 'Encryption in transit and at rest?',
             'access_controls': 'Role-based access implemented?',
-            'audit_logs': 'Comprehensive logging enabled?',
+            'audit_logs': 'complete logging enabled?',
             'data_mapping': 'Data flow documented?',
             'level': self._determine_level()
         }

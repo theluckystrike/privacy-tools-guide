@@ -40,7 +40,7 @@ Before selecting tools, activists must identify what they are protecting against
 
 The best tool depends on which threats matter most. No single solution handles everything perfectly.
 
-Signal: The Gold Standard for Usability
+Signal - The Gold Standard for Usability
 
 Signal remains the most widely trusted end-to-end encrypted messenger. It uses the Signal Protocol (Double Ratchet algorithm), which provides forward secrecy and break-in recovery, critical properties for communications that may be intercepted today but decrypted later through key compromise.
 
@@ -63,7 +63,7 @@ curl http://localhost:8080/v1/accounts/phone-number/available/+15551234567
 
 Signal's primary limitation is phone number requirement. Phone numbers link directly to identity, making them problematic for activists in authoritarian contexts where SIM registration is mandatory or SIM swapping is common.
 
-Session: Decentralized and Phone-Number-Free
+Session - Decentralized and Phone-Number-Free
 
 Session offers a compelling alternative with no phone number requirement. It routes messages through a decentralized network of onion-routed nodes, providing strong metadata protection. Messages bounce through multiple nodes before reaching recipients, making traffic analysis significantly harder.
 
@@ -78,7 +78,7 @@ Session doesn't have an official CLI, but you can interact with its API
 For developers building tools around Session:
 
 Session's API endpoints (unofficial, for research)
-Base URL: https://api.getsession.org
+Base URL - https://api.getsession.org
 
 Check if a Session ID exists (public key)
 curl "https://api.getsession.org/key_server/v1/get_users/PUBLIC_KEY"
@@ -89,7 +89,7 @@ to avoid leaking your IP address
 
 The trade-off is that Session's network has fewer users than Signal, and its Android app has faced security audits with mixed results. The iOS app is more mature.
 
-Matrix: Self-Hosted and Federated
+Matrix - Self-Hosted and Federated
 
 Matrix provides the most flexible architecture for groups requiring full control. As a federated protocol, anyone can run a Matrix server, and servers can communicate with each other, like email but for real-time chat. This prevents vendor lock-in and enables complete infrastructure ownership.
 
@@ -101,7 +101,7 @@ For activist organizations with technical capacity, self-hosting Matrix provides
 
 ```bash
 Setting up a minimal Matrix server (Synapse) for testing
-Requires: Docker, 2GB RAM minimum
+Requires - Docker, 2GB RAM minimum
 
 Create the configuration
 mkdir -p matrix-synapse
@@ -139,7 +139,7 @@ Key considerations for Matrix deployment:
 - SSL certificates: Use Let's Encrypt or proper certificate management
 - Backup encryption keys: Store recovery keys securely offline
 
-Briar: Offline-First and Mesh-Networking
+Briar - Offline-First and Mesh-Networking
 
 Briar represents a different approach, messages can sync over Wi-Fi or Bluetooth without internet connectivity. This makes it ideal for scenarios where internet access is restricted, monitored, or unavailable.
 
@@ -155,22 +155,22 @@ For testing Briar's reliability in mesh scenarios:
 4. Test message delivery in airplane mode with multiple devices
 
 Briar also supports Tor integration for remote contacts
-Configure in: Settings > Network > Use Tor
+Configure in - Settings > Network > Use Tor
 ```
 
-The limitation is clear: Briar requires physical proximity or Tor connectivity for remote contacts, and the user base is small.
+The limitation is clear - Briar requires physical proximity or Tor connectivity for remote contacts, and the user base is small.
 
 Practical Deployment Strategy
 
 For activist organizations, a layered approach works best:
 
-Tier 1 (Primary): Signal for day-to-day coordination among trusted contacts who already use it. Accept the phone number tradeoff.
+Tier 1 (Primary) - Signal for day-to-day coordination among trusted contacts who already use it. Accept the phone number tradeoff.
 
-Tier 2 (Sensitive): Session for communications where phone number linkage is unacceptable. Accept the smaller user base.
+Tier 2 (Sensitive) - Session for communications where phone number linkage is unacceptable. Accept the smaller user base.
 
-Tier 3 (Critical): Self-hosted Matrix with E2EE for organizational infrastructure. Accept the technical complexity.
+Tier 3 (Critical) - Self-hosted Matrix with E2EE for organizational infrastructure. Accept the technical complexity.
 
-Tier 4 (Contingency): Briar for scenarios where internet is unavailable or actively blocked.
+Tier 4 (Contingency) - Briar for scenarios where internet is unavailable or actively blocked.
 
 This redundancy ensures communications survive various failure modes.
 
@@ -186,7 +186,7 @@ Encryption alone does not guarantee security. Implement these complementary prac
 
 ```bash
 Verify your Signal encryption key fingerprint with contacts
-In Signal: Settings > Privacy > View safety numbers
+In Signal - Settings > Privacy > View safety numbers
 Compare via a separate, verified channel (in-person, not digital)
 
 For Matrix, verify E2EE fingerprints:
@@ -241,18 +241,18 @@ Real-World Deployment Examples
 
 Different threat environments call for different tool stacks:
 
-Scenario 1: Democratic country activist (protest coordination)
+Scenario 1 - Democratic country activist (protest coordination)
 - Primary: Signal for day-to-day organizing
 - Backup: Telegram groups (not E2EE by default, but accessible)
 - Philosophy: Usability prioritized; government not expected to execute targeted decryption
 
-Scenario 2: Authoritarian context (government surveillance active)
+Scenario 2 - Authoritarian context (government surveillance active)
 - Primary: Session (phone number independence)
 - Secondary: Self-hosted Matrix for organizational infrastructure
 - Fallback: Briar for offline mesh when internet blocked
 - Philosophy: Assume adversary may break encryption; focus on metadata protection
 
-Scenario 3: Underground network (actual persecution)
+Scenario 3 - Underground network (actual persecution)
 - No single message platform; compartmentalized approaches
 - In-person meetings for sensitive information
 - Written notes destroyed after reading
@@ -331,22 +331,22 @@ Tool Combinations for Maximum Resilience
 The strongest approach uses multiple tools as failsafes:
 
 ```
-Primary: Signal for general coordination
+Primary - Signal for general coordination
  Works for 95% of activist work
  High usability, everyone has it
  Metadata exposed to Signal
 
-Secondary: Session for sensitive discussions
+Secondary - Session for sensitive discussions
  Used when phone linkage is unacceptable
  Lower user base (coordinate out-of-band first)
  Slower delivery, stronger metadata protection
 
-Tertiary: Matrix for organizational infrastructure
+Tertiary - Matrix for organizational infrastructure
  Used for group coordination, publishing
  Requires technical setup and maintenance
  Complete control, but operational complexity
 
-Emergency: Briar for internet-blocked scenarios
+Emergency - Briar for internet-blocked scenarios
  Mesh networking over Bluetooth/WiFi
  Android-only, small user base
  Completely different communication model
@@ -372,16 +372,16 @@ Practical Deployment Examples
 Small Activist Cell (5-10 People)
 
 ```
-Primary: Signal for day-to-day coordination
+Primary - Signal for day-to-day coordination
 - Create group chat for all members
 - Set disappearing messages to 1 week
 - Members verify each other's safety numbers in-person
 
-Backup: Session for members in countries with heavy censorship
+Backup - Session for members in countries with heavy censorship
 - Same group chat structure
 - No phone numbers required (important in some jurisdictions)
 
-Contingency: Briar for scenarios where internet is blocked
+Contingency - Briar for scenarios where internet is blocked
 - Install on all members' phones
 - Exchange keys via in-person QR code scanning
 - Mesh network activates if internet goes down
@@ -390,16 +390,16 @@ Contingency: Briar for scenarios where internet is blocked
 Larger Organization (50+ People)
 
 ```
-Tier 1: Self-hosted Matrix server
+Tier 1 - Self-hosted Matrix server
 - Full control over infrastructure
 - Enables secure group communication
 - Supports encrypted file sharing and voice
 
-Tier 2: Signal for quick coordination
+Tier 2 - Signal for quick coordination
 - Faster than Matrix for urgent messages
 - Better mobile UX for spontaneous communication
 
-Tier 3: Offline backup system
+Tier 3 - Offline backup system
 - Written codebook for shutdown scenarios
 - Pre-arranged meeting locations
 - No digital component (cannot be intercepted)
@@ -448,19 +448,19 @@ Metadata Minimization
 Create aliases that don't reveal identity:
 
 ```
-Signal: Avoid real names. Use "gardener1" or similar
-Session: Generate new ID periodically
-Matrix: Use different username than other platforms
-Briar: Select random username, don't reuse across contacts
+Signal - Avoid real names. Use "gardener1" or similar
+Session - Generate new ID periodically
+Matrix - Use different username than other platforms
+Briar - Select random username, don't reuse across contacts
 ```
 
 Contact Verification
 
 ```
-Signal safety numbers: Exchange in-person or via secure video call
-Session: Exchange QR codes in-person
-Matrix: Verify device fingerprints in Settings > Security
-Briar: Exchange contact details via QR code scanning
+Signal safety numbers - Exchange in-person or via secure video call
+Session - Exchange QR codes in-person
+Matrix - Verify device fingerprints in Settings > Security
+Briar - Exchange contact details via QR code scanning
 ```
 
 All methods require out-of-band verification (not through the same app).

@@ -54,7 +54,7 @@ Key Comparison Factors
 
 Before examining specific devices, understand what matters for developer use cases:
 
-Protocol support matters most: FIDO2/WebAuthn provides the broadest compatibility, while U2F (Universal 2nd Factor) is older but still widely supported. Some keys also support OpenPGP, PIV, or TOTP, useful if you need smart card functionality.
+Protocol support matters most - FIDO2/WebAuthn provides the broadest compatibility, while U2F (Universal 2nd Factor) is older but still widely supported. Some keys also support OpenPGP, PIV, or TOTP, useful if you need smart card functionality.
 
 Form factor choices include USB-A, USB-C, NFC (for mobile), or Lightning (iOS). Consider which devices you actually use daily.
 
@@ -128,7 +128,7 @@ Titan keys lack advanced protocols like OpenPGP or TOTP. They function purely as
 
 Cryptnox
 
-Cryptnox ($30-40) offers budget-friendly keys with FIDO2 and basic TOTP. These work for basic 2FA but lack the polish and ecosystem integration of premium options.
+Cryptnox ($30-40) offers budget-friendly keys with FIDO2 and basic TOTP. These work for basic 2FA but lack the polish and environment integration of premium options.
 
 ```bash
 Basic FIDO2 registration works across supported services
@@ -161,7 +161,7 @@ Password Manager Integration
 Both Bitwarden and 1Password support hardware keys as the primary 2FA method:
 
 ```bash
-Bitwarden: Enable "Require Vault Unlock" with security key
+Bitwarden - Enable "Require Vault Unlock" with security key
 Web vault > Settings > Security > Two-step Login > Manage
 
 1Password: Add security key to account
@@ -174,8 +174,8 @@ Hardware keys introduce a single point of failure, lose the key and lose account
 
 ```bash
 Register primary and backup keys
-Service A: Primary = YubiKey, Backup = Solokey
-Service B: Primary = Solokey, Backup = YubiKey
+Service A - Primary = YubiKey, Backup = Solokey
+Service B - Primary = Solokey, Backup = YubiKey
 ```
 
 Store backup keys in secure locations (safe deposit box, trusted family member). Some services like Google and GitHub support multiple registered keys.
@@ -199,16 +199,16 @@ Register at least two keys per critical account:
 ```bash
 GitHub account with hardware 2FA
 
-Primary Key: YubiKey 5 NFC
-Register at: github.com/settings/security/two_factor_authentication
-Physical location: On your keychain (daily use)
+Primary Key - YubiKey 5 NFC
+Register at - github.com/settings/security/two_factor_authentication
+Physical location - On your keychain (daily use)
 
-Backup Key: SoloKey
-Register at: Same location
-Physical location: Safe deposit box (emergency access only)
+Backup Key - SoloKey
+Register at - Same location
+Physical location - Safe deposit box (emergency access only)
 
-Tertiary: Recovery codes
-Save at: Password manager (encrypted)
+Tertiary - Recovery codes
+Save at - Password manager (encrypted)
 Use only if both keys are lost
 ```
 
@@ -226,7 +226,7 @@ Recovery code security
 - Share one code copy with trusted family member (for true emergencies)
 
 Example structure in password manager:
-Entry: GitHub Recovery Codes
+Entry - GitHub Recovery Codes
 - Code 1: xxxx-xxxx-xxxx-xxxx [USED]
 - Code 2: xxxx-xxxx-xxxx-xxxx [AVAILABLE]
 - Code 3: xxxx-xxxx-xxxx-xxxx [AVAILABLE]
@@ -293,8 +293,8 @@ ykman list
 
 3. Generate GPG key on YubiKey
 gpg --edit-key your-key-id
-Command: addkey
-Choose: (13) Existing key
+Command - addkey
+Choose - (13) Existing key
 
 4. Configure Git to use the key
 git config --global gpg.program gpg
@@ -307,7 +307,7 @@ git log --show-signature
 
 6. Add to GitHub
 Settings > SSH and GPG Keys > Add GPG Key
-Paste output of: gpg --armor --export KEY_ID
+Paste output of - gpg --armor --export KEY_ID
 ```
 
 AWS with Hardware 2FA
@@ -316,16 +316,16 @@ AWS with Hardware 2FA
 AWS doesn't directly support hardware keys for console login
 but supports them through third-party tools
 
-Option 1: Use DUO Security as U2F bridge
+Option 1 - Use DUO Security as U2F bridge
 1. Enable DUO in AWS IAM
 2. Register YubiKey in DUO portal
 3. DUO becomes the 2FA provider for AWS
 
-Option 2: Use Okta + Hardware Keys
+Option 2 - Use Okta + Hardware Keys
 If your organization uses Okta for SSO
 Okta supports hardware keys → AWS federation
 
-Option 3: AWS CLI with temporary credentials
+Option 3 - AWS CLI with temporary credentials
 aws sts get-session-token --serial-number "arn:aws:iam::ACCOUNT:mfa/device-name" --token-code 123456
 
 Hardware keys don't generate TOTP, use a backup TOTP device for AWS CLI
@@ -439,7 +439,7 @@ Hardware key adoption is increasing among major platforms. Expect:
 - Passkeys becoming primary: WebAuthn/passkeys reducing reliance on passwords entirely
 - Biometric integration: Face ID and fingerprint combined with keys for layered authentication
 - NFC/Bluetooth standardization: Better mobile integration reducing USB-dependent friction
-- Enterprise ecosystem maturity: Better integration with SSO, MDM, and infrastructure tools
+- Enterprise environment maturity: Better integration with SSO, MDM, and infrastructure tools
 
 The best time to start using hardware keys is today, as support improves and convenience increases. Early adoption also means you're already familiar with the technology as it becomes standard.
 

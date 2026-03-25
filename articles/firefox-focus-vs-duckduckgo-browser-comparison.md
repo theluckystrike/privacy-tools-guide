@@ -87,7 +87,7 @@ console.log('Canvas fingerprint:', canvasHash);
 
 Firefox Focus applies basic canvas randomization, adding noise to canvas reads. DuckDuckGo Browser implements more aggressive fingerprinting protection, including full canvas API protection and WebGL parameter randomization.
 
-Extension Ecosystem
+Extension environment
 
 Firefox Focus supports a limited subset of Firefox extensions, primarily those focused on privacy. You can install uBlock Origin for enhanced blocking:
 
@@ -178,8 +178,8 @@ Test Firefox Focus tracker blocking
 Which trackers load? Count successful requests
 
 Compare results
-Firefox Focus: ~40-60% of trackers blocked
-DuckDuckGo: ~60-80% of trackers blocked
+Firefox Focus - ~40-60% of trackers blocked
+DuckDuckGo - ~60-80% of trackers blocked
 ```
 
 Tracker categories blocked:
@@ -218,8 +218,8 @@ Monitor CPU usage
 adb shell top | grep -E "firefox|duckduckgo"
 
 Typical results on mid-range device (4GB RAM):
-Firefox Focus: 45-65 MB at idle, 120-180 MB with tabs
-DuckDuckGo: 30-50 MB at idle, 90-130 MB with tabs
+Firefox Focus - 45-65 MB at idle, 120-180 MB with tabs
+DuckDuckGo - 30-50 MB at idle, 90-130 MB with tabs
 ```
 
 HTTPS Enforcement Testing
@@ -229,7 +229,7 @@ Both browsers claim automatic HTTPS upgrade:
 ```bash
 Test HTTPS enforcement
 1. Try to access http://example.com (without SSL)
-Expected: Browser automatically uses https://example.com
+Expected - Browser automatically uses https://example.com
 
 Test the actual implementation
 curl -I http://www.bbc.co.uk
@@ -265,7 +265,7 @@ StartPage https://www.startpage.com/sp/search?query=%s
 Ecosia https://www.ecosia.org/search?q=%s
 Qwant https://www.qwant.com/?q=%s&t=web
 
-DuckDuckGo Browser: No option
+DuckDuckGo Browser - No option
 Permanently locked to DuckDuckGo
 ```
 
@@ -338,11 +338,11 @@ DNS Over HTTPS Configuration
 Privacy-preserving DNS handling:
 
 ```bash
-Firefox Focus: DoH is enabled by default (Cloudflare)
+Firefox Focus - DoH is enabled by default (Cloudflare)
 Can configure alternative DoH providers:
 Settings > Privacy > DNS over HTTPS
 
-DuckDuckGo: Uses DuckDuckGo's DNS by default
+DuckDuckGo - Uses DuckDuckGo's DNS by default
 No option to change DNS provider
 ```
 
@@ -374,9 +374,9 @@ DuckDuckGo clearing (app-initiated)
 Settings > Clear Data > Clear All
 ```
 
-Key difference: Firefox Focus clears everything by default on exit. DuckDuckGo requires manual clearing.
+Key difference - Firefox Focus clears everything by default on exit. DuckDuckGo requires manual clearing.
 
-Extension Ecosystem Deep Dive
+Extension environment Deep Dive
 
 Firefox Focus extension availability (2026):
 
@@ -387,7 +387,7 @@ Installable Firefox Mobile Extensions:
 - HTTPS Everywhere (built-in equivalent)
 - CookieAutoDelete (browser clear on exit achieves similar effect)
 
-DuckDuckGo Browser: No extension support whatsoever
+DuckDuckGo Browser - No extension support whatsoever
 All functionality must be built into the browser
 ```
 
@@ -446,8 +446,8 @@ Sites to test:
 4. E-commerce (Amazon)
 5. Social media (Reddit, Twitter)
 
-Firefox Focus: ~98% compatibility
-DuckDuckGo: ~95% compatibility (stricter blocking can break some sites)
+Firefox Focus - ~98% compatibility
+DuckDuckGo - ~95% compatibility (stricter blocking can break some sites)
 ```
 
 Battery Impact on Mobile Devices
@@ -458,8 +458,8 @@ Important consideration for mobile users:
 Monitor battery drain
 adb shell "dumpsys batterystats | grep -A 50 'Per-PID Summary'"
 
-Firefox Focus: ~5-8% battery drain per hour of browsing
-DuckDuckGo: ~4-6% battery drain per hour of browsing
+Firefox Focus - ~5-8% battery drain per hour of browsing
+DuckDuckGo - ~4-6% battery drain per hour of browsing
 (Lighter engine uses less CPU)
 ```
 

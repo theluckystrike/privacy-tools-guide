@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Password Vault Auditing
+Step 1 - Understand Password Vault Auditing
 
 Password managers store credentials in encrypted vaults, but they cannot automatically detect when you use weak or reused passwords. A weak password lacks entropy, complexity that makes brute-force attacks impractical. Duplicate passwords mean a single breach compromises multiple accounts. Auditing your vault periodically surfaces these issues so you can remediate them before attackers exploit them.
 
 Most password managers provide built-in security dashboards. However, these tools often lack customization, export capabilities, or integration with automation workflows. Using CLI tools and scripts gives you deeper insight and the ability to build custom auditing pipelines.
 
-Step 2: Exporting Your Vault for Analysis
+Step 2 - Exporting Your Vault for Analysis
 
 Before auditing, you need to export your vault data. Most password managers support encrypted exports that you can process locally. The exact method depends on your password manager, but the general approach involves authenticating and requesting a structured export.
 
@@ -58,7 +58,7 @@ keepassx-cli info database.kdbx
 
 Handle exported data carefully. These files contain sensitive credentials in plaintext. Process them in an ephemeral environment, delete them immediately after auditing, and never commit them to version control.
 
-Step 3: Detecting Weak Passwords
+Step 3 - Detecting Weak Passwords
 
 Weak password detection requires analyzing entropy and checking against known weak patterns. Several approaches exist: using dedicated tools, calculating entropy mathematically, or comparing against wordlists.
 
@@ -134,7 +134,7 @@ def calculate_entropy(password):
     entropy = len(password) * math.log2(charset_size) if charset_size > 0 else 0
     return round(entropy, 2)
 
-Entropy thresholds: below 40 bits is weak, above 60 is strong
+Entropy thresholds - below 40 bits is weak, above 60 is strong
 ENTROPY_THRESHOLD = 40
 
 with open('vault_export.json') as f:
@@ -146,7 +146,7 @@ weak = [item for item in vault
 print(f"Found {len(weak)} passwords below {ENTROPY_THRESHOLD} bits entropy")
 ```
 
-Step 4: Finding Duplicate and Reused Passwords
+Step 4 - Finding Duplicate and Reused Passwords
 
 Duplicate detection is straightforward: group passwords by their hash or value and identify groups with more than one entry.
 
@@ -175,7 +175,7 @@ for password, titles in duplicates.items():
 
 This script identifies every password appearing more than once. For each duplicate, review whether sharing a password across accounts is necessary or whether you should generate unique passwords for each service.
 
-Step 5: Automate the Audit Pipeline
+Step 5 - Automate the Audit Pipeline
 
 Build a complete auditing script that combines all checks into a single report:
 
@@ -272,7 +272,7 @@ if __name__ == '__main__':
 
 Run this script against your exported vault to generate a report. Schedule regular runs to track improvements over time.
 
-Step 6: Interpreting Results and Taking Action
+Step 6 - Interpreting Results and Taking Action
 
 After auditing, prioritize remediation based on risk. Accounts with reused passwords tied to high-value services, email, banking, or code repositories, require immediate attention. Generate new passwords using your password manager's built-in generator, targeting at least 16 characters with a mix of character types.
 
@@ -280,7 +280,7 @@ For weak passwords, either strengthen them if the service allows or switch to a 
 
 Document your audit findings if working within an organization. Track remediation progress and set recurring audit schedules, monthly for high-security environments, quarterly for personal use.
 
-Step 7: Secure the Audit Process
+Step 7 - Secure the Audit Process
 
 Never store vault exports permanently. Create them in a temporary directory, process them, then delete immediately:
 

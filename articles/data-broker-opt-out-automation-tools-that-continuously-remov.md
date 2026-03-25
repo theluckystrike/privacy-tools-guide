@@ -20,7 +20,7 @@ Data broker websites compile and sell personal information without your consent.
 
 This guide covers building automated opt-out workflows, existing open-source tools, and practical strategies for maintaining privacy at scale.
 
-Understanding the Data Broker Ecosystem
+Understanding the Data Broker environment
 
 Data brokers operate in several categories: people-search sites (Acxiom, LexisNexis, Whitepages), marketing data aggregators (Experian, Oracle Data Cloud), and background check services (TruthFinder, BeenVerified). Each platform has different opt-out mechanisms, some require email verification, others demand faxed requests or postal mail.
 

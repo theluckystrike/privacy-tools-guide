@@ -34,7 +34,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Data Model for Consent Receipts
+Step 1 - Data Model for Consent Receipts
 
 The foundation of any consent receipt system is a well-structured data model. Here's a practical example:
 
@@ -94,7 +94,7 @@ def hash_user_id(user_id: str) -> str:
 
 This model captures the essential elements: what was consented, when, and under what version of your privacy notice. The verification hash allows you to prove the receipt hasn't been tampered with.
 
-Step 2: Store Consent Receipts
+Step 2 - Store Consent Receipts
 
 For production systems, you need durable storage that supports both quick retrieval and audit requirements. Consider this PostgreSQL schema:
 
@@ -124,7 +124,7 @@ CREATE TABLE user_consent_map (
 
 This schema separates the encrypted user identifier from the pseudonymous hash, adding an extra layer of privacy while maintaining the ability to retrieve consent records.
 
-Step 3: Capturing Consent in Your Application
+Step 3 - Capturing Consent in Your Application
 
 When a user updates their privacy preferences, you need to capture consent at the point of choice. Here's a Flask example:
 
@@ -180,7 +180,7 @@ def get_purpose_for_consent(consent_type: str) -> str:
 
 This endpoint accepts a user's consent preferences and generates a receipt for each choice. The response includes the full receipt data so users can immediately verify what was recorded.
 
-Step 4: Build the User Consent Dashboard
+Step 4 - Build the User Consent Dashboard
 
 Users need a way to view their consent history. Build a simple retrieval endpoint:
 
@@ -202,7 +202,7 @@ def get_consent_history():
 
 Pair this with a frontend that displays each consent type, its current status, and the timestamp of the last change. Allow users to export their full consent history as JSON or PDF for their records.
 
-Step 5: Verify Consent Receipts
+Step 5 - Verify Consent Receipts
 
 For audit purposes or regulatory requests, you need to verify a receipt's authenticity:
 
@@ -220,7 +220,7 @@ def verify_receipt(receipt_json: dict) -> bool:
 
 This verification ensures the receipt hasn't been modified after generation. Store the original receipt data immutably, append-only logs work well for this.
 
-Step 6: Practical Considerations
+Step 6 - Practical Considerations
 
 When implementing consent receipts, keep these points in mind:
 

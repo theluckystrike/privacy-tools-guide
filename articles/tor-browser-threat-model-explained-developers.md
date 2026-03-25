@@ -18,7 +18,7 @@ voice-checked: true
 
 Understanding Tor Browser's threat model requires moving beyond marketing claims into actual security guarantees. This article provides a technical breakdown of what Tor Browser protects against, where it falls short, and how developers should think about integrating it into their security architecture.
 
-The Core Guarantee: Network-Level Anonymity
+The Core Guarantee - Network-Level Anonymity
 
 Tor Browser's primary function is providing anonymity at the network layer. When you connect through Tor, your traffic traverses three relays: an entry node (guard), a middle relay, and an exit node. Each relay only knows the previous and next hop in the circuit.
 

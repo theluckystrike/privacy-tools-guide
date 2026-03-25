@@ -23,9 +23,9 @@ This guide focuses on what actually matters for day-to-day safe Tor usage.
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Tails OS: Better Than Tor Browser Alone](#tails-os-better-than-tor-browser-alone)
+- [Tails OS - Better Than Tor Browser Alone](#tails-os-better-than-tor-browser-alone)
 - [Tor Browser Security Level Practical Comparison](#tor-browser-security-level-practical-comparison)
-- [Advanced: Using Tails OS for Tor](#advanced-using-tails-os-for-tor)
+- [Advanced - Using Tails OS for Tor](#advanced-using-tails-os-for-tor)
 - [Onion Site Access Best Practices](#onion-site-access-best-practices)
 - [Troubleshooting](#troubleshooting)
 
@@ -39,7 +39,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Download and Verify Tor Browser
+Step 1 - Download and Verify Tor Browser
 
 Always download from the official source: `https://www.torproject.org/download/`
 
@@ -60,7 +60,7 @@ gpg: Good signature from "Tor Browser Developers (signing key) <torbrowser@torpr
 
 Do not skip verification. Fake Tor Browser downloads exist and contain malware.
 
-Step 2: First Launch: Choose the Right Security Level
+Step 2 - First Launch: Choose the Right Security Level
 
 After installing, set the security level before browsing:
 
@@ -72,7 +72,7 @@ Shield icon (top-right) > Change > choose one:
 
 Most users should start at Safer. Switch to Safest if you're accessing sensitive material or sites that might try to exploit browser vulnerabilities.
 
-Step 3: Connection: Bridges and Censorship Circumvention
+Step 3 - Connection: Bridges and Censorship Circumvention
 
 In countries where Tor is blocked (China, Russia, Iran, etc.), use bridges. unlisted relays that don't appear in the public Tor directory.
 
@@ -88,7 +88,7 @@ For custom bridges (obtained from `https://bridges.torproject.org`):
 1. Request bridges (solve CAPTCHA or use email request)
 2. Enter them in "Provide a bridge I know"
 
-Step 4: What Tor Protects and What It Doesn't
+Step 4 - What Tor Protects and What It Doesn't
 
 Tor protects:
 - Your IP address from the destination website
@@ -105,7 +105,7 @@ Tor does NOT protect:
 - Your identity if you share personal details in the browser
 - Metadata in files you upload (EXIF, document properties)
 
-Step 5: The Golden Rules for Tor Usage
+Step 5 - The Golden Rules for Tor Usage
 
 1. Never log into personal accounts
 
@@ -123,7 +123,7 @@ Open PDFs in a sandboxed viewer (Tails OS does this automatically)
 Or open files offline after disconnecting from the network
 ```
 
-If you must download files: turn off networking before opening them.
+If you must download files - turn off networking before opening them.
 
 3. Never use Tor for BitTorrent
 
@@ -141,7 +141,7 @@ Extensions change your browser fingerprint. Tor Browser already includes uBlock 
 
 Exit nodes can read unencrypted HTTP traffic. Always use HTTPS. look for the padlock. Tor Browser includes HTTPS-Everywhere to enforce this, but check manually for sensitive sites.
 
-Step 6: Manage Circuits
+Step 6 - Manage Circuits
 
 Tor assigns you a circuit (path through three relays) per tab. You can view and change circuits:
 
@@ -154,13 +154,13 @@ This shows your three relay hops. If a site is slow or blocked by the exit node'
 
 Use "New Identity" between different browsing sessions (e.g., between researching Topic An and Topic B) to prevent circuit correlation.
 
-Step 7: Guard Nodes and Anonymity
+Step 7 - Guard Nodes and Anonymity
 
 Tor uses a "guard" (entry) node that stays fixed for 2-3 months. This is intentional. changing the entry node frequently increases the chance that an adversary who controls entry and exit nodes can correlate your traffic.
 
 Don't worry about your guard node. Don't try to change it manually. The Tor Project's research shows this design improves anonymity over time.
 
-Step 8: Use Tor Browser on Mobile
+Step 8 - Use Tor Browser on Mobile
 
 The official Tor Browser for Android is available on Google Play and as an APK from the Tor Project website.
 
@@ -171,7 +171,7 @@ Key differences from desktop:
 - Downloads handled differently. be more careful about opening files
 - Same rules apply: no logging in, no window resizing (less of an issue on mobile)
 
-Tails OS: Better Than Tor Browser Alone
+Tails OS - Better Than Tor Browser Alone
 
 If your threat model requires strong anonymity:
 
@@ -188,7 +188,7 @@ curl -O https://download.tails.net/tails/stable/tails-amd64-6.2/tails-amd64-6.2.
 Verify via https://tails.net/install/download/
 ```
 
-Step 9: Common Mistakes and How to Avoid Them
+Step 9 - Common Mistakes and How to Avoid Them
 
 | Mistake | Why It's a Problem | Fix |
 |---------|-------------------|-----|
@@ -199,7 +199,7 @@ Step 9: Common Mistakes and How to Avoid Them
 | Discussing unique personal details | Content deanonymizes you | Keep browsing impersonal |
 | Running Tor in a VM on a shared host | Host can monitor VM traffic | Not sufficient for high-risk use |
 
-Step 10: Fingerprinting and Circuit Isolation
+Step 10 - Fingerprinting and Circuit Isolation
 
 Browser fingerprinting exploits unique characteristics to identify users. Tor Browser resists this, but understanding the mechanics helps you use Tor more effectively:
 
@@ -278,7 +278,7 @@ Set security level via torrc configuration
 user_pref('extensions.torbutton.security_level', 2);  # 0=Standard, 1=Safer, 2=Safest
 ```
 
-Advanced: Using Tails OS for Tor
+Advanced - Using Tails OS for Tor
 
 For maximum security, use Tails (The Amnesic Incognito Live System):
 
@@ -298,7 +298,7 @@ Verify with GPG
 gpg --verify SHA256SUMS.asc SHA256SUMS
 sha256sum -c SHA256SUMS
 
-Write to USB (WARNING: destroys data)
+Write to USB (WARNING - destroys data)
 sudo dd if=tails-amd64-6.2.img of=/dev/sdX bs=4M status=progress oflag=sync
 sync
 
@@ -311,7 +311,7 @@ Tails advantages for Tor usage:
 - Built-in tools for document analysis (metadata removal)
 - Amnesic: leaves no traces on host computer
 
-Step 11: Monitor Your Tor Connection Health
+Step 11 - Monitor Your Tor Connection Health
 
 Verify Tor is functioning correctly:
 
@@ -398,7 +398,7 @@ Never access onion sites from clearnet sources
 tor --version
 ```
 
-Step 12: Build Tor from Source for Maximum Security
+Step 12 - Build Tor from Source for Maximum Security
 
 For users concerned about binary distribution integrity:
 
@@ -426,7 +426,7 @@ Verify installation
 tor --version
 ```
 
-Step 13: Emergency Procedures
+Step 13 - Emergency Procedures
 
 If you suspect your Tor session is compromised:
 

@@ -39,7 +39,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Use Age for File Encryption
+Step 1 - Use Age for File Encryption
 
 Age is a modern, minimal encryption tool that excels at single-file encryption. It's designed for simplicity without sacrificing security, using ChaCha20-Poly1305 for symmetric encryption and X25519 for key exchange.
 
@@ -98,7 +98,7 @@ Or with a specific key file:
 age -d -i ~/.age-keys/my-key -o document.pdf document.pdf.age
 ```
 
-Step 2: Encrypt Directories with Gocryptfs
+Step 2 - Encrypt Directories with Gocryptfs
 
 Gocryptfs provides transparent filesystem encryption, making it ideal for cloud-synced directories. Files are encrypted individually, so synchronization remains efficient.
 
@@ -130,7 +130,7 @@ cp ~/Documents/important.pdf ~/cloud-encrypt/
 
 The actual encrypted files in the backing directory
 ls ~/encrypted-cloud/
-Shows: important.pdf.crypt
+Shows - important.pdf.crypt
 ```
 
 When finished:
@@ -150,7 +150,7 @@ instead of ~/cloud-encrypt
 
 This way, only encrypted files ever leave your device.
 
-Step 3: Use OpenSSL for Manual Encryption
+Step 3 - Use OpenSSL for Manual Encryption
 
 OpenSSL provides low-level encryption primitives for those who need maximum control or integration with existing systems.
 
@@ -189,7 +189,7 @@ openssl enc -aes-256-gcm -salt -pbkdf2 -iter 100000 \
 
 Store `encryption.key` securely, losing it means losing access to your files.
 
-Step 4: Automate Encryption Workflows
+Step 4 - Automate Encryption Workflows
 
 For regular backups or CI/CD pipelines, automation is essential.
 
@@ -241,7 +241,7 @@ jobs:
 
 Store your public key as a GitHub secret (`PUBLIC_KEY`), and keep your private key offline or in a secure secrets manager.
 
-Step 5: Choose the Right Tool
+Step 5 - Choose the Right Tool
 
 | Tool | Best For | Key Features |
 |------|----------|---------------|
@@ -253,10 +253,10 @@ For most use cases, age provides the best balance of security and simplicity. If
 
 Security Considerations
 
-- Key Management: Never lose your private key or passphrase. Without it, your encrypted files are unrecoverable.
-- Strong Passphrases: Use a password generator. A 20+ character passphrase with high entropy is recommended.
-- Verify Decryption: Always test decryption after encrypting critical files.
-- Secure Deletion: After encrypting and uploading, securely delete original files using `shred` or similar tools.
+- Key Management - Never lose your private key or passphrase. Without it, your encrypted files are unrecoverable.
+- Strong Passphrases - Use a password generator. A 20+ character passphrase with high entropy is recommended.
+- Verify Decryption - Always test decryption after encrypting critical files.
+- Secure Deletion - After encrypting and uploading, securely delete original files using `shred` or similar tools.
 
 Troubleshooting
 

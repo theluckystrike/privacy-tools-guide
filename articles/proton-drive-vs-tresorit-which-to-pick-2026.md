@@ -14,7 +14,7 @@ intent-checked: true
 voice-checked: true
 ---
 
-Both Proton Drive and Tresorit offer end-to-end encrypted cloud storage, but they target different users. Proton Drive integrates with the Proton ecosystem (Mail, VPN, Calendar). Tresorit focuses on enterprise file sharing and compliance.
+Both Proton Drive and Tresorit offer end-to-end encrypted cloud storage, but they target different users. Proton Drive integrates with the Proton environment (Mail, VPN, Calendar). Tresorit focuses on enterprise file sharing and compliance.
 
 Proton Drive uses PGP-based E2E encryption. Files are encrypted on your device before upload. Proton cannot read your files. Free tier includes 1 GB storage bundled with Proton Mail. Paid plans (Proton Unlimited at $9.99/month) bundle Drive, Mail, VPN, and Calendar with 500 GB storage. Native apps exist for Windows, macOS, iOS, and Android. Linux support is through the web client.
 
@@ -30,7 +30,7 @@ Tresorit uses AES-256 with zero-knowledge encryption. It targets businesses with
 | File Sharing | Encrypted links | Encrypted links + DRM |
 | Business Features | Limited | Full (AD, compliance, audit) |
 | Open Source | Yes (client) | No |
-| Ecosystem | Proton Mail, VPN, Calendar | Standalone |
+| environment | Proton Mail, VPN, Calendar | Standalone |
 
 Choose Proton Drive if you already use Proton services and want integrated encrypted storage at a lower price. Choose Tresorit if you need enterprise features, compliance controls, or a native Linux desktop client. For personal use, Proton Drive offers better value. For team file sharing in regulated industries, Tresorit is purpose-built.
 

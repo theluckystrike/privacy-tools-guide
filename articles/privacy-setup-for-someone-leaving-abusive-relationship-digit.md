@@ -32,7 +32,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Immediate Threat Assessment
+Step 1 - Immediate Threat Assessment
 
 Before implementing any security measures, understand the common attack vectors in abusive situations:
 
@@ -44,7 +44,7 @@ Before implementing any security measures, understand the common attack vectors 
 
 The goal is creating immediate separation while building longer-term security posture. Start with the highest-impact changes first.
 
-Step 2: Device Hardening
+Step 2 - Device Hardening
 
 Removing Tracker Access
 
@@ -84,7 +84,7 @@ New Device Procurement
 
 If possible, obtain a fresh device using cash or a separate payment method. When this isn't feasible, thoroughly reset existing devices. The key principle: assume compromise until proven otherwise.
 
-Step 3: Account Security Implementation
+Step 3 - Account Security Implementation
 
 Email Account Isolation
 
@@ -127,12 +127,12 @@ Move beyond SMS-based 2FA whenever possible. SIM swapping remains a viable attac
 1. Hardware security keys (YubiKey, Titan) - highest security
 2. Authenticator apps (Bitwarden Authenticator, Aegis for Android)
 3. Backup codes (print, store in safe location)
-AVOID: SMS verification for any security-critical account
+AVOID - SMS verification for any security-critical account
 ```
 
 For accounts that only support SMS, contact support to see if alternative 2FA methods are available. Some banks and financial institutions can add additional security layers.
 
-Step 4: Phone Number Security
+Step 4 - Phone Number Security
 
 Obtaining a New Number
 
@@ -159,7 +159,7 @@ Audit accounts linked to the old number:
 
 Create a systematic checklist and methodically work through each service.
 
-Step 5: Secure Communications
+Step 5 - Secure Communications
 
 Messaging Platform Selection
 
@@ -195,7 +195,7 @@ Pre-arranged safety protocol:
 
 Document this plan in a secure location, not on devices that might be compromised.
 
-Step 6: Data Protection
+Step 6 - Data Protection
 
 Photo and File Security
 
@@ -211,7 +211,7 @@ convert input.jpg -strip output.jpg
 For sensitive documents:
 
 ```python
-Python example: Encrypt sensitive files before storage
+Python example - Encrypt sensitive files before storage
 from cryptography.fernet import Fernet
 
 Generate key (store securely, separately from files)
@@ -239,7 +239,7 @@ Cloud service audit checklist:
 5. Family sharing schemes - exit all shared arrangements
 ```
 
-Step 7: Ongoing Maintenance
+Step 7 - Ongoing Maintenance
 
 Security isn't a one-time configuration. Establish regular review habits:
 

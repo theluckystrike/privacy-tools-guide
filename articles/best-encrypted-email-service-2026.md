@@ -45,7 +45,7 @@ Automated Encryption in Workflows
 Developers can automate encryption in deployment pipelines:
 
 ```python
-Python example: Send encrypted notification from CI/CD pipeline
+Python example - Send encrypted notification from CI/CD pipeline
 import gnupg
 import smtplib
 from email.mime.text import MIMEText
@@ -142,7 +142,7 @@ Migrating to encrypted email without losing contacts or messages:
 
 ```bash
 #!/bin/bash
-Step 1: Export all messages from old email
+Step 1 - Export all messages from old email
 Using Gmail as example
 Get app password from your Gmail settings
 imapbench -d gmail \
@@ -150,18 +150,18 @@ imapbench -d gmail \
   -p "your-app-password" \
   -o messages.mbox
 
-Step 2: Setup new encrypted email account
+Step 2 - Setup new encrypted email account
 Create account on chosen provider
 
-Step 3: Import messages to new account
+Step 3 - Import messages to new account
 Most providers offer import tools
 Or use IMAP import if supported
 
-Step 4: Publish new email address
+Step 4 - Publish new email address
 Update contacts gradually
 Use email forwarding to catch stragglers
 
-Step 5: Transition communications
+Step 5 - Transition communications
 Move sensitive discussions to encrypted email
 Keep less sensitive on old account temporarily
 ```
@@ -214,12 +214,12 @@ For individuals serious about encrypted email, develop a key strategy:
 ```bash
 Create detailed key with multiple subkeys
 gpg --gen-key-command << EOF
-Key-Type: RSA
-Key-Length: 4096
-Name-Real: Your Name
-Name-Email: your@email.com
-Expire-Date: 2y
-Sign-Key: <master-key-id>
+Key-Type - RSA
+Key-Length - 4096
+Name-Real - Your Name
+Name-Email - your@email.com
+Expire-Date - 2y
+Sign-Key - <master-key-id>
 EOF
 ```
 

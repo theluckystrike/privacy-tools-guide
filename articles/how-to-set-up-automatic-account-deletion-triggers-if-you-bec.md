@@ -23,9 +23,9 @@ This guide walks you through practical methods to configure automatic account de
 Table of Contents
 
 - [Understanding the Problem](#understanding-the-problem)
-- [Method 1: Cron-Based Dead Man's Switch](#method-1-cron-based-dead-mans-switch)
-- [Method 2: Cloud Function with External Heartbeat](#method-2-cloud-function-with-external-heartbeat)
-- [Method 3: Time-Locked Encryption with Social Recovery](#method-3-time-locked-encryption-with-social-recovery)
+- [Method 1 - Cron-Based Dead Man's Switch](#method-1-cron-based-dead-mans-switch)
+- [Method 2 - Cloud Function with External Heartbeat](#method-2-cloud-function-with-external-heartbeat)
+- [Method 3 - Time-Locked Encryption with Social Recovery](#method-3-time-locked-encryption-with-social-recovery)
 - [Practical Implementation Steps](#practical-implementation-steps)
 - [Additional Considerations](#additional-considerations)
 
@@ -35,7 +35,7 @@ When you die or become incapacitated, your digital accounts don't automatically 
 
 The solution involves creating automated triggers that detect your absence and execute deletion scripts. These mechanisms range from simple cron-based solutions to sophisticated dead man's switch architectures using cloud functions.
 
-Method 1: Cron-Based Dead Man's Switch
+Method 1 - Cron-Based Dead Man's Switch
 
 The simplest approach uses a cron job that checks for a signal at regular intervals. If the signal disappears, the system initiates account deletion.
 
@@ -77,7 +77,7 @@ fi
 
 This approach requires a system you regularly access to update the timestamp.
 
-Method 2: Cloud Function with External Heartbeat
+Method 2 - Cloud Function with External Heartbeat
 
 Cloud functions provide better reliability and don't require maintaining your own server. This method uses an external service to confirm you're still active.
 
@@ -121,7 +121,7 @@ Configure the health check service to:
 2. Send notifications after 30 days of silence
 3. Provide your emergency contact with instructions to trigger deletion
 
-Method 3: Time-Locked Encryption with Social Recovery
+Method 3 - Time-Locked Encryption with Social Recovery
 
 A more sophisticated approach combines encryption with time-locked keys. This method ensures your data becomes inaccessible without requiring external services.
 
@@ -164,7 +164,7 @@ This approach requires careful key management, you provide the encrypted data an
 
 Practical Implementation Steps
 
-Step 1: Inventory Your Accounts
+Step 1 - Inventory Your Accounts
 
 List all accounts you want to include in automatic deletion:
 - Email providers (Gmail, Outlook, ProtonMail)
@@ -173,11 +173,11 @@ List all accounts you want to include in automatic deletion:
 - Development platforms (GitHub, GitLab, npm)
 - Financial services (PayPal, Stripe connected accounts)
 
-Step 2: Document Credentials
+Step 2 - Document Credentials
 
 Store credentials securely using a password manager with emergency access features. 1Password, Bitwarden, and other managers offer "digital legacy" features that grant access to your designated after a waiting period.
 
-Step 3: Create Deletion Scripts
+Step 3 - Create Deletion Scripts
 
 For each service, create a script that handles deletion:
 
@@ -199,7 +199,7 @@ curl -X POST \
   https://api.twitter.com/1.1/account/remove_from_device.json
 ```
 
-Step 4: Test Your System
+Step 4 - Test Your System
 
 Regularly test your deletion scripts in a controlled environment. Verify that:
 - Scripts execute without errors
@@ -207,7 +207,7 @@ Regularly test your deletion scripts in a controlled environment. Verify that:
 - Emergency contacts receive notifications
 - Documentation remains current
 
-Step 5: Document Instructions
+Step 5 - Document Instructions
 
 Create a clear document for your emergency contact or executor:
 - List of accounts and their deletion order
@@ -217,11 +217,11 @@ Create a clear document for your emergency contact or executor:
 
 Additional Considerations
 
-Legal Validity: Include digital asset instructions in your will or estate planning. Laws regarding digital inheritance vary by jurisdiction, but documented wishes carry weight.
+Legal Validity - Include digital asset instructions in your will or estate planning. Laws regarding digital inheritance vary by jurisdiction, but documented wishes carry weight.
 
-Service Limitations: Many services don't offer programmatic deletion APIs. Some require manual confirmation via email or SMS. Factor this into your timeline.
+Service Limitations - Many services don't offer programmatic deletion APIs. Some require manual confirmation via email or SMS. Factor this into your timeline.
 
-Partial Solutions: Even if you can't automate everything, creating an inventory and documented process significantly reduces the burden on your family.
+Partial Solutions - Even if you can't automate everything, creating an inventory and documented process significantly reduces the burden on your family.
 
 Frequently Asked Questions
 

@@ -58,7 +58,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Update Virus Definitions
+Step 1 - Update Virus Definitions
 
 ClamAV's detection effectiveness depends entirely on current signatures. The `freshclam` utility handles downloading updates from the ClamAV mirror network.
 
@@ -94,7 +94,7 @@ NotifyClamd /etc/clamav/clamd.conf
 
 ---
 
-Step 2: Basic Scanning
+Step 2 - Basic Scanning
 
 ```bash
 Scan a single file
@@ -122,7 +122,7 @@ The `--infected` flag suppresses output for clean files and shows only detection
 
 ---
 
-Step 3: Configure the ClamAV Daemon (clamd)
+Step 3 - Configure the ClamAV Daemon (clamd)
 
 The daemon loads virus definitions into memory and accepts scan requests. much faster than clamscan for each file.
 
@@ -151,7 +151,7 @@ sudo systemctl enable --now clamav-daemon
 
 Verify daemon is running
 echo "PING" | nc -U /var/run/clamav/clamd.ctl
-Response: PONG
+Response - PONG
 
 Scan using daemon (faster)
 clamdscan -r /home/user/Downloads/
@@ -163,7 +163,7 @@ clamdscan -r /home/user/Downloads/
 
 ---
 
-Step 4: On-Access Scanning (Real-Time)
+Step 4 - On-Access Scanning (Real-Time)
 
 `clamonacc` provides real-time scanning of files as they're accessed:
 
@@ -206,7 +206,7 @@ tail -f /var/log/clamav/clamonacc.log
 
 ---
 
-Step 5: Scheduled Scans
+Step 5 - Scheduled Scans
 
 ```bash
 sudo nano /etc/cron.weekly/clamav-scan
@@ -242,7 +242,7 @@ If your system does not have a mail transport agent configured, replace the `mai
 
 ---
 
-Step 6: Quarantine Management
+Step 6 - Quarantine Management
 
 ```bash
 Create quarantine directory
@@ -258,20 +258,20 @@ Quarantined files retain their original filenames. Before deleting, you may want
 
 ---
 
-Step 7: Verify ClamAV Is Working
+Step 7 - Verify ClamAV Is Working
 
 ```bash
 Test with EICAR test file (harmless detection test string)
 echo 'X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*' > /tmp/eicar-test.com
 
 clamscan /tmp/eicar-test.com
-Expected: /tmp/eicar-test.com: Eicar-Signature FOUND
+Expected - /tmp/eicar-test.com: Eicar-Signature FOUND
 
 rm /tmp/eicar-test.com
 
 Check definitions are current
 freshclam --version
-Shows: ClamAV X.Y.Z/NNNNN/date
+Shows - ClamAV X.Y.Z/NNNNN/date
 ```
 
 The EICAR test string is an industry-standard harmless detection test. Every conformant antivirus engine detects it as `Eicar-Signature`. If ClamAV does not flag it, your installation has a problem. either the daemon is not loaded, signatures are not current, or the socket path is wrong.
@@ -280,7 +280,7 @@ After a production deployment, run this check monthly and pipe the result into y
 
 ---
 
-Step 8: Scanning Email Attachments (Postfix Integration)
+Step 8 - Scanning Email Attachments (Postfix Integration)
 
 ```bash
 sudo apt install clamav-milter
@@ -304,7 +304,7 @@ sudo systemctl restart postfix clamav-milter
 
 ---
 
-Step 9: Tuning Scan Performance
+Step 9 - Tuning Scan Performance
 
 For systems scanning large file trees, several options reduce ClamAV's resource footprint without sacrificing coverage:
 

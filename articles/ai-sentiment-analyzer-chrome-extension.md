@@ -114,7 +114,7 @@ Advanced Configuration for Developers
 
 For developers who want to modify or customize sentiment analysis behavior, many local-first extensions expose configuration options:
 
-TensorFlow.js Model Customization: Extensions using TensorFlow.js models can often load custom-trained models. If you've trained a sentiment model on domain-specific language (technical writing, customer support tickets, medical documentation), you can import it:
+TensorFlow.js Model Customization - Extensions using TensorFlow.js models can often load custom-trained models. If you've trained a sentiment model on domain-specific language (technical writing, customer support tickets, medical documentation), you can import it:
 
 ```javascript
 // Load a custom TensorFlow.js model
@@ -131,7 +131,7 @@ async function analyzeSentiment(text, model) {
 }
 ```
 
-Local API Server Setup: Tech-savvy users can run their own sentiment analysis API locally using Python:
+Local API Server Setup - Tech-savvy users can run their own sentiment analysis API locally using Python:
 
 ```python
 from transformers import pipeline
@@ -174,7 +174,7 @@ pip install mitmproxy
 Run as proxy
 mitmproxy -p 8080
 
-Configure Chrome to use proxy: localhost:8080
+Configure Chrome to use proxy - localhost:8080
 Analyze text and watch all network traffic in mitmproxy console
 ```
 
@@ -184,13 +184,13 @@ Integration with Communication Tools
 
 Popular sentiment analyzer extensions integrate with major communication platforms:
 
-Gmail Integration: Select email text directly in Gmail, and the extension displays sentiment analysis overlay. Use this before sending important emails to avoid accidentally harsh tones.
+Gmail Integration - Select email text directly in Gmail, and the extension displays sentiment analysis overlay. Use this before sending important emails to avoid accidentally harsh tones.
 
-Slack/Teams Integration: Some extensions analyze chat messages as you type, helping you catch problematic language before posting. Configuration is usually required through extension settings.
+Slack/Teams Integration - Some extensions analyze chat messages as you type, helping you catch problematic language before posting. Configuration is usually required through extension settings.
 
-Google Docs Integration: Analyze document sentiment in real-time as you write. Useful for journalists, writers, and customer service teams drafting responses.
+Google Docs Integration - Analyze document sentiment in real-time as you write. Useful for journalists, writers, and customer service teams drafting responses.
 
-Custom Integrations: Advanced users can build custom integrations by accessing the extension's API through content scripts.
+Custom Integrations - Advanced users can build custom integrations by accessing the extension's API through content scripts.
 
 Performance Optimization
 
@@ -202,31 +202,31 @@ Local sentiment analysis models can consume CPU and memory. Optimize performance
 
 - Model compression: Some extensions offer lighter model variants. If you don't need high accuracy, use the "lite" or "fast" model option.
 
-- Caching: Enable result caching if your extension supports it, so repeated text doesn't require re-analysis.
+- Caching - Enable result caching if your extension supports it, so repeated text doesn't require re-analysis.
 
 Limitations and Realistic Expectations
 
 Sentiment analysis technology has inherent limitations users should understand:
 
-Context sensitivity: Sarcasm and irony often get classified incorrectly. "That's just great" about a failure gets flagged as positive when context indicates negativity.
+Context sensitivity - Sarcasm and irony often get classified incorrectly. "That's just great" about a failure gets flagged as positive when context indicates negativity.
 
-Language limitations: Most models trained on English data perform poorly on other languages. Check documentation for supported languages before relying on analysis for multilingual communications.
+Language limitations - Most models trained on English data perform poorly on other languages. Check documentation for supported languages before relying on analysis for multilingual communications.
 
-Cultural differences: Sentiment expressions vary by culture. A neutral tone in some cultures reads as cold in others. Extensions trained on English social media data may misinterpret non-English communication patterns.
+Cultural differences - Sentiment expressions vary by culture. A neutral tone in some cultures reads as cold in others. Extensions trained on English social media data may misinterpret non-English communication patterns.
 
-Nuance loss: Detailed emotions like "cautiously optimistic" get reduced to "positive." For detailed emotional assessment, extensions provide initial guidance but human review remains valuable.
+Nuance loss - Detailed emotions like "cautiously optimistic" get reduced to "positive." For detailed emotional assessment, extensions provide initial guidance but human review remains valuable.
 
 Alternatives to Chrome Extensions
 
 If Chrome extensions don't meet your privacy requirements, consider these alternatives:
 
-Desktop applications: Standalone apps like ToneLib or Vocaltrainer process text locally with potentially more sophisticated models. The trade-off is inconvenience, you can't analyze text across websites.
+Desktop applications - Standalone apps like ToneLib or Vocaltrainer process text locally with potentially more sophisticated models. The trade-off is inconvenience, you can't analyze text across websites.
 
-Self-hosted solutions: Technical users can deploy their own sentiment analysis API using open-source models like BERT or RoBERTa on a local server. This provides cloud-level accuracy with complete data control.
+Self-hosted solutions - Technical users can deploy their own sentiment analysis API using open-source models like BERT or RoBERTa on a local server. This provides cloud-level accuracy with complete data control.
 
-Built-in browser features: Some privacy-focused browsers like Brave or Firefox are beginning to incorporate local NLP features. As these mature, they may provide sentiment analysis without third-party extensions.
+Built-in browser features - Some privacy-focused browsers like Brave or Firefox are beginning to incorporate local NLP features. As these mature, they may provide sentiment analysis without third-party extensions.
 
-Command-line tools: For developers, CLI tools offer maximum control:
+Command-line tools - For developers, CLI tools offer maximum control:
 
 ```bash
 Using open-source Python sentiment analysis

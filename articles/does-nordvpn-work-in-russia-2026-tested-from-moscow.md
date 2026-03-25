@@ -28,12 +28,12 @@ Table of Contents
 - [Alternative Approaches](#alternative-approaches)
 - [VPN Apps vs. Manual Configuration](#vpn-apps-vs-manual-configuration)
 - [Staying Compliant With Russian Law](#staying-compliant-with-russian-law)
-- [DPI Fingerprinting: How Russia Detects VPN Traffic](#dpi-fingerprinting-how-russia-detects-vpn-traffic)
+- [DPI Fingerprinting - How Russia Detects VPN Traffic](#dpi-fingerprinting-how-russia-detects-vpn-traffic)
 - [Building Obfuscated Tunnels Manually](#building-obfuscated-tunnels-manually)
 - [Timing Attack Mitigation](#timing-attack-mitigation)
 - [Testing VPN Connectivity in Real-Time](#testing-vpn-connectivity-in-real-time)
 - [Failover Strategy for Blocked Connections](#failover-strategy-for-blocked-connections)
-- [Threat Assessment: Current Russia Environment (March 2026)](#threat-assessment-current-russia-environment-march-2026)
+- [Threat Assessment - Current Russia Environment (March 2026)](#threat-assessment-current-russia-environment-march-2026)
 
 Understanding the Current Restrictions
 
@@ -103,11 +103,11 @@ NordVPN Connection Results
 
 During testing in March 2026, the following observations were recorded using NordVPN from Moscow:
 
-NordLynx Protocol: This is NordVPN's WireGuard-based implementation. Connection success rate hovered around 40-60% depending on time of day. Peak hours (9-11 AM and 6-9 PM local time) showed significantly lower success rates due to increased DPI activity.
+NordLynx Protocol - This is NordVPN's WireGuard-based implementation. Connection success rate hovered around 40-60% depending on time of day. Peak hours (9-11 AM and 6-9 PM local time) showed significantly lower success rates due to increased DPI activity.
 
-OpenVPN (UDP): Traditional OpenVPN connections succeeded approximately 25% of the time. The protocol's fixed headers make it easily identifiable by DPI systems.
+OpenVPN (UDP) - Traditional OpenVPN connections succeeded approximately 25% of the time. The protocol's fixed headers make it easily identifiable by DPI systems.
 
-OpenVPN (TCP 443): Tunneling OpenVPN over TCP port 443 (obfuscation mode) improved success rates to approximately 70%. This configuration wraps VPN traffic in what appears to be standard HTTPS traffic.
+OpenVPN (TCP 443) - Tunneling OpenVPN over TCP port 443 (obfuscation mode) improved success rates to approximately 70%. This configuration wraps VPN traffic in what appears to be standard HTTPS traffic.
 
 Protocol Success Rates at a Glance
 
@@ -177,9 +177,9 @@ Alternative Approaches
 
 Developers should consider additional tools for redundancy:
 
-Shadowsocks: A SOCKS5 proxy that can tunnel traffic through obfuscated connections. Configure on a personal VPS for best results. Shadowsocks is widely used in high-censorship environments and has a strong track record of evading DPI.
+Shadowsocks - A SOCKS5 proxy that can tunnel traffic through obfuscated connections. Configure on a personal VPS for best results. Shadowsocks is widely used in high-censorship environments and has a strong track record of evading DPI.
 
-Tor Network: While slower, Tor provides reliable connectivity from within Russia. Use Tor Browser or configure Tor as a proxy:
+Tor Network - While slower, Tor provides reliable connectivity from within Russia. Use Tor Browser or configure Tor as a proxy:
 
 ```
 /etc/tor/torrc
@@ -187,7 +187,7 @@ SOCKSPort 9050
 ControlPort 9051
 ```
 
-Self-Hosted VPN: Running a personal VPN on a VPS outside Russian jurisdiction provides the most reliable option. WireGuard configurations remain difficult to detect:
+Self-Hosted VPN - Running a personal VPN on a VPS outside Russian jurisdiction provides the most reliable option. WireGuard configurations remain difficult to detect:
 
 ```bash
 WireGuard server configuration (wg0.conf)
@@ -216,14 +216,14 @@ Staying Compliant With Russian Law
 
 Use of VPN services to access blocked content falls into a legal grey area under Russian law. Roskomnadzor has required VPN providers to connect to a state registry of banned sites since 2019. NordVPN, like most international providers, does not comply with this requirement, which means the service itself occupies an uncertain legal position within Russia. This guide documents technical behavior, not legal advice. Users should consult local legal counsel regarding their specific circumstances.
 
-DPI Fingerprinting: How Russia Detects VPN Traffic
+DPI Fingerprinting - How Russia Detects VPN Traffic
 
 Understanding detection mechanisms helps optimize avoidance:
 
 ```python
 #!/usr/bin/env python3
 dpi-detection-analysis.py
-Educational: Shows how TSPU analyzes traffic
+Educational - Shows how TSPU analyzes traffic
 
 class DPIFingerprinting:
     """Analyze VPN traffic fingerprints visible to DPI"""
@@ -264,7 +264,7 @@ class DPIFingerprinting:
             'detectability': 'Low - indistinguishable from HTTPS'
         }
 
-The key insight: Obfuscation makes traffic statistically identical
+The key insight - Obfuscation makes traffic statistically identical
 to legitimate web traffic, defeating DPI analysis
 ```
 
@@ -276,7 +276,7 @@ For users needing maximum control over obfuscation:
 #!/bin/bash
 manual-openvpn-obfuscation.sh
 
-Setup: XOR obfuscation for OpenVPN
+Setup - XOR obfuscation for OpenVPN
 Adds extra encryption layer to defeat DPI
 
 apt-get install openvpn openssl
@@ -429,7 +429,7 @@ Test multiple protocols
 for proto in "nordlynx" "obfuscated" "tcp"; do
     if test_vpn_status "$proto"; then
         # Check speed
-        curl -o /dev/null -s -w "Speed: %{speed_download} bytes/sec\n" https://www.google.com | tee -a "$LOG_FILE"
+        curl -o /dev/null -s -w "Speed - %{speed_download} bytes/sec\n" https://www.google.com | tee -a "$LOG_FILE"
     fi
 
     sleep 10
@@ -501,7 +501,7 @@ if ! connect_with_failover; then
 fi
 ```
 
-Threat Assessment: Current Russia Environment (March 2026)
+Threat Assessment - Current Russia Environment (March 2026)
 
 Updated assessment based on March 2026 observations:
 

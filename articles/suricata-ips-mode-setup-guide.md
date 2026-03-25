@@ -133,11 +133,11 @@ sudo kill -USR2 $(cat /var/run/suricata.pid)
 5. Start Suricata in IPS Mode
 
 ```bash
-IPS mode: -q 0 = NFQUEUE 0
+IPS mode - -q 0 = NFQUEUE 0
 sudo suricata -c /etc/suricata/suricata.yaml -q 0 --pidfile /var/run/suricata.pid -D
 
 sudo tail -f /var/log/suricata/suricata.log
-Look for: "All threads are running"
+Look for - "All threads are running"
 ```
 
 Systemd service for IPS mode:
@@ -186,7 +186,7 @@ Test with a known-bad signature:
 ```bash
 EICAR test string. triggers AV/IPS rules
 curl -s http://www.eicar.org/download/eicar.com 2>&1 || echo "Blocked"
-If IPS is working: connection refused or empty response
+If IPS is working - connection refused or empty response
 ```
 
 ---
@@ -212,7 +212,7 @@ drop icmp any any -> $HOME_NET any \
   (msg:"IPS: DROP large ICMP"; dsize:>1000; \
    sid:9100003; rev:1;)
 
-Rate-limit SSH: drop if >10 SYNs in 30s from same source
+Rate-limit SSH - drop if >10 SYNs in 30s from same source
 drop tcp any any -> $HOME_NET 22 \
   (msg:"IPS: SSH brute force drop"; flags:S; \
    threshold:type threshold, track by_src, count 10, seconds 30; \
@@ -278,7 +278,7 @@ Multi-Queue Performance Scaling
 For high-throughput (>1 Gbps) networks:
 
 ```bash
-Use multiple NFQUEUE queues (0–3) with load balancing
+Use multiple NFQUEUE queues (0, 3) with load balancing
 sudo iptables -I FORWARD -j NFQUEUE --queue-balance 0:3 --queue-bypass
 
 Start Suricata with 4 workers

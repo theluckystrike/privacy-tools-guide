@@ -22,7 +22,7 @@ Table of Contents
 - [Understanding Performance Impact Metrics](#understanding-performance-impact-metrics)
 - [Extension Rankings by Performance Impact](#extension-rankings-by-performance-impact)
 - [Optimizing Extension Performance](#optimizing-extension-performance)
-- [Implementation Example: Measuring Extension Impact](#implementation-example-measuring-extension-impact)
+- [Implementation Example - Measuring Extension Impact](#implementation-example-measuring-extension-impact)
 - [Recommendations by Use Case](#recommendations-by-use-case)
 - [Threat Model Analysis](#threat-model-analysis)
 - [Advanced Extension Configurations](#advanced-extension-configurations)
@@ -45,7 +45,7 @@ For this analysis, we tested extensions in Chrome and Firefox using a standardiz
 
 Extension Rankings by Performance Impact
 
-Tier 1: Minimal Impact (Under 50ms additional load time)
+Tier 1 - Minimal Impact (Under 50ms additional load time)
 
 uBlock Origin remains the gold standard for performance-conscious privacy extensions. Its efficient filter engine uses native browser APIs rather than injecting heavy JavaScript, resulting in an average page load overhead of just 12-35ms.
 
@@ -61,7 +61,7 @@ The extension processes filter lists at the network level before content scripts
 
 Privacy Badger from the Electronic Frontier Foundation uses machine learning to detect trackers automatically. Its adaptive approach means it learns from browsing behavior, with typical overhead of 25-45ms after the learning phase. The extension doesn't rely on pre-compiled filter lists, instead building a unique tracker database per user.
 
-Tier 2: Low Impact (50-150ms additional load time)
+Tier 2 - Low Impact (50-150ms additional load time)
 
 Decentraleyes simulates Content Delivery Networks locally to reduce third-party connections. By serving common JavaScript libraries from local storage, it blocks approximately 40% of third-party requests while adding 50-100ms to page loads. This extension is particularly valuable for developers who need to test applications without external dependencies.
 
@@ -78,7 +78,7 @@ Decentraleyes simulates Content Delivery Networks locally to reduce third-party 
 
 HTTPZ provides HTTPS enforcement with minimal overhead (60-120ms). Unlike older HTTPS-enforcing extensions, HTTPZ uses a lightweight approach that doesn't interfere with modern TLS handshakes. It's particularly useful for developers who frequently work with mixed-content sites.
 
-Tier 3: Moderate Impact (150-300ms additional load time)
+Tier 3 - Moderate Impact (150-300ms additional load time)
 
 NoScript Security Suite offers the highest level of script control but at a cost. Its JavaScript blocking adds 180-280ms overhead due to the complexity of its rule engine and default-deny approach. However, for security-conscious users, the trade-off is worthwhile.
 
@@ -93,7 +93,7 @@ example.net:TEMP
 
 uMatrix provides granular control over requests by type (script, image, stylesheet, etc.) and origin. The overhead of 200-300ms comes from its request interception. Developers appreciate its ability to test how pages behave with specific resource types blocked.
 
-Tier 4: Higher Impact (Over 300ms additional load time)
+Tier 4 - Higher Impact (Over 300ms additional load time)
 
 Ghostery has improved significantly in recent versions but still adds 300-450ms to page loads. Its extensive tracker database and detailed analytics come at a performance cost. The extension works well for users who want tracker reporting alongside blocking.
 
@@ -132,7 +132,7 @@ example.com##+js(noeval)
 example.com##+js(trusted-done)
 ```
 
-Implementation Example: Measuring Extension Impact
+Implementation Example - Measuring Extension Impact
 
 For developers who want to measure extension impact on their own projects, here's a basic benchmarking approach:
 
@@ -159,11 +159,11 @@ Compare results with and without extensions enabled to understand the actual imp
 
 Recommendations by Use Case
 
-For Developers: uBlock Origin with minimal filter lists, combined with Decentraleyes for local CDN simulation. This combination provides excellent blocking while maintaining near-native performance.
+For Developers - uBlock Origin with minimal filter lists, combined with Decentraleyes for local CDN simulation. This combination provides excellent blocking while maintaining near-native performance.
 
-For Security Researchers: NoScript or uMatrix offer the most control, despite higher overhead. The detailed request blocking capabilities are essential for security analysis.
+For Security Researchers - NoScript or uMatrix offer the most control, despite higher overhead. The detailed request blocking capabilities are essential for security analysis.
 
-For General Users: uBlock Origin alone provides the best balance of privacy protection and performance. Adding Privacy Badger can supplement detection without significant additional overhead.
+For General Users - uBlock Origin alone provides the best balance of privacy protection and performance. Adding Privacy Badger can supplement detection without significant additional overhead.
 
 Threat Model Analysis
 

@@ -21,7 +21,7 @@ The question of whether your employer can read your personal email on a work com
 Table of Contents
 
 - [The Basic Legal Framework](#the-basic-legal-framework)
-- [Technical Reality: What Employers Can Actually See](#technical-reality-what-employers-can-actually-see)
+- [Technical Reality - What Employers Can Actually See](#technical-reality-what-employers-can-actually-see)
 - [Practical Recommendations for Developers and Power Users](#practical-recommendations-for-developers-and-power-users)
 - [What Your Employer Cannot Do (Generally)](#what-your-employer-cannot-do-generally)
 - [Quick Reference by Jurisdiction](#quick-reference-by-jurisdiction)
@@ -69,7 +69,7 @@ The Privacy Act and relevant state laws require employers to:
 - Notify employees about monitoring practices
 - Handle personal information responsibly
 
-Technical Reality: What Employers Can Actually See
+Technical Reality - What Employers Can Actually See
 
 Understanding the technical capabilities helps you assess your actual exposure. Here are the common monitoring methods:
 
@@ -125,8 +125,8 @@ The most effective strategy is to maintain strict separation:
 
 ```bash
 Use a separate browser profile for personal email
-Firefox: Profiles are stored in ~/.mozilla/firefox/
-Chrome: Profiles are stored in ~/.config/google-chrome/
+Firefox - Profiles are stored in ~/.mozilla/firefox/
+Chrome - Profiles are stored in ~/.config/google-chrome/
 
 Better yet, use a dedicated browser on a personal device for personal email
 Only access personal email on your personal machine
@@ -178,7 +178,7 @@ metadata = {
 If you're unsure about your employer's policies, ask in writing:
 
 ```
-Subject: Clarification on Personal Device/Email Usage
+Subject - Clarification on Personal Device/Email Usage
 
 Hi [IT/HR],
 

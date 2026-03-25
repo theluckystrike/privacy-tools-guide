@@ -22,20 +22,20 @@ This guide walks you through finding and deleting forgotten accounts systematica
 
 Table of Contents
 
-- [Step 1: Audit Your Email](#step-1-audit-your-email)
-- [Step 2: Cross-Reference with Password Manager](#step-2-cross-reference-with-password-manager)
-- [Step 3: Use Account Deletion Services](#step-3-use-account-deletion-services)
-- [Step 4: Manual Deletion Process](#step-4-manual-deletion-process)
-- [Step 5: Handle Difficult Deletions](#step-5-handle-difficult-deletions)
-- [Step 6: Track Deletions](#step-6-track-deletions)
-- [Step 7: Prevent Future Accumulation](#step-7-prevent-future-accumulation)
+- [Step 1 - Audit Your Email](#step-1-audit-your-email)
+- [Step 2 - Cross-Reference with Password Manager](#step-2-cross-reference-with-password-manager)
+- [Step 3 - Use Account Deletion Services](#step-3-use-account-deletion-services)
+- [Step 4 - Manual Deletion Process](#step-4-manual-deletion-process)
+- [Step 5 - Handle Difficult Deletions](#step-5-handle-difficult-deletions)
+- [Step 6 - Track Deletions](#step-6-track-deletions)
+- [Step 7 - Prevent Future Accumulation](#step-7-prevent-future-accumulation)
 - [Special Cases](#special-cases)
 - [Timeline](#timeline)
 - [Privacy Benefits](#privacy-benefits)
 - [Tools Summary](#tools-summary)
 - [Final Checklist](#final-checklist)
 
-Step 1: Audit Your Email
+Step 1 - Audit Your Email
 
 Your email is the master key to finding accounts. You received a confirmation email when you signed up.
 
@@ -79,7 +79,7 @@ Finder tools that aggregate signup emails:
 
 These don't tell you which accounts you own, but they tell you which services got compromised. Useful for prioritizing deletions (breached service = delete first).
 
-Step 2: Cross-Reference with Password Manager
+Step 2 - Cross-Reference with Password Manager
 
 If you use a password manager (1Password, Bitwarden, LastPass), search it for old entries.
 
@@ -100,46 +100,46 @@ Use the LastPass generator history (if you generated a password when signing up)
 
 Your password manager is often more complete than email search because you saved passwords for sites you cared about.
 
-Step 3: Use Account Deletion Services
+Step 3 - Use Account Deletion Services
 
 Several tools scan for your accounts and guide you to deletion pages:
 
 JustDelete.me
 
-URL: justdeleteme.xyz
+URL - justdeleteme.xyz
 
-What it does: Searchable directory of 300+ services with direct links to their account deletion pages. For each service, it rates deletion difficulty (green = easy, red = difficult/requires support request).
+What it does - Searchable directory of 300+ services with direct links to their account deletion pages. For each service, it rates deletion difficulty (green = easy, red = difficult/requires support request).
 
 Example entries:
 ```
-Netflix: Green (easy) - settings > Account > Delete Account
-Quora: Red (hard) - requires contacting support
-Medium: Green (easy) - settings > Delete Account
-Spotify: Green (easy) - settings > Close Account
-Reddit: Green (easy) - user settings > Delete Account
+Netflix - Green (easy) - settings > Account > Delete Account
+Quora - Red (hard) - requires contacting support
+Medium - Green (easy) - settings > Delete Account
+Spotify - Green (easy) - settings > Close Account
+Reddit - Green (easy) - user settings > Delete Account
 ```
 
 Search for each service you identified in steps 1-2. Click the link to go to their deletion page.
 
 AccountKiller
 
-URL: accountkiller.com
+URL - accountkiller.com
 
-What it does: Similar to JustDeleteMe but includes video tutorials for some services. Shows deletion difficulty.
+What it does - Similar to JustDeleteMe but includes video tutorials for some services. Shows deletion difficulty.
 
 Use if JustDeleteMe doesn't list the service.
 
 Optery
 
-URL: optery.com
+URL - optery.com
 
-What it does: Scans the web for your email and personal info. Shows where your data appears. Provides direct links to data removal pages.
+What it does - Scans the web for your email and personal info. Shows where your data appears. Provides direct links to data removal pages.
 
-Cost: Free version shows results; paid tier ($99/year) automates removal.
+Cost - Free version shows results; paid tier ($99/year) automates removal.
 
 Better for finding accounts you completely forgot about than for bulk deletion.
 
-Step 4: Manual Deletion Process
+Step 4 - Manual Deletion Process
 
 For each account, follow this process:
 
@@ -188,7 +188,7 @@ Wait for confirmation. Take a screenshot. Move on.
 
 Once deleted, remove the entry from your password manager. No point keeping a login for a deleted account.
 
-Step 5: Handle Difficult Deletions
+Step 5 - Handle Difficult Deletions
 
 Some services make deletion deliberately hard (looking at you, Meta).
 
@@ -224,7 +224,7 @@ Use JustDeleteMe or:
 3. If not found, contact support: "I want to permanently delete my account [email]. Please confirm deletion."
 4. Take screenshot of their response
 
-Step 6: Track Deletions
+Step 6 - Track Deletions
 
 Use a spreadsheet:
 
@@ -238,7 +238,7 @@ GitHub | user@gmail.com | 2014-06-15 | 2026-03-21 | Yes | Email confirmation rec
 
 Check "Confirmed?" only when you've received confirmation from the service (email, screen, etc).
 
-Step 7: Prevent Future Accumulation
+Step 7 - Prevent Future Accumulation
 
 Going forward:
 
@@ -254,13 +254,13 @@ Special Cases
 
 Social Media Accounts
 
-Twitter/X, Mastodon, Bluesky, Threads: These are places where you posted content. Before deleting, decide:
+Twitter/X, Mastodon, Bluesky, Threads - These are places where you posted content. Before deleting, decide:
 - Do you want a copy of your tweets/posts? (Use service export or ArchiveBox)
 - Will anyone else be using this account? (E.g., business account, transfer admin first)
 
 Email Addresses
 
-Old Gmail/Outlook accounts: If you still have access, consider keeping at least one for:
+Old Gmail/Outlook accounts - If you still have access, consider keeping at least one for:
 - Password recovery on other accounts
 - Historical emails
 - Contact list
@@ -269,22 +269,22 @@ Only delete if you're certain no other accounts depend on it.
 
 Work Accounts
 
-GitHub, Slack, JIRA: If you left a company, the company should delete these. If not, ask them to or take it down yourself if you still have access.
+GitHub, Slack, JIRA - If you left a company, the company should delete these. If not, ask them to or take it down yourself if you still have access.
 
 Financial Accounts
 
-PayPal, Stripe, Square: Only delete after:
+PayPal, Stripe, Square - Only delete after:
 - All funds are withdrawn
 - All active subscriptions/recurring charges are cancelled
 - Tax records are downloaded (if you used for business)
 
 Timeline
 
-Fast deletion: 5 dormant accounts per hour
+Fast deletion - 5 dormant accounts per hour
 - 20 accounts = 4 hours
 - 50 accounts = 10 hours
 
-With difficult services: Add 2-3 hours for support responses.
+With difficult services - Add 2-3 hours for support responses.
 
 Plan for a weekend if you have 50+ old accounts.
 
@@ -296,7 +296,7 @@ Deleting old accounts:
 - Prevents SPAM on old email addresses
 - Simplifies your digital life
 
-Expected outcome: Start with 50-100 forgotten accounts. Delete 80-90% within a month. Keep only services you actively use.
+Expected outcome - Start with 50-100 forgotten accounts. Delete 80-90% within a month. Keep only services you actively use.
 
 Tools Summary
 

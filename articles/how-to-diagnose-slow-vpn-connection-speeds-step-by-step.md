@@ -42,7 +42,7 @@ The main factors affecting VPN speed include:
 
 Understanding these factors helps you interpret your diagnostic results and choose appropriate fixes.
 
-Step 1: Establish Your Baseline Speed
+Step 1 - Establish Your Baseline Speed
 
 The first step in diagnosing VPN slowdowns is establishing what your speeds should be. You need to know your base internet performance without the VPN to compare against.
 
@@ -76,7 +76,7 @@ Now connect to your VPN and run the same tests. Use the same server location eac
 
 A healthy VPN connection typically retains 60-80% of your base speed on nearby servers. If you're seeing less than 30%, there's likely an identifiable issue.
 
-Step 2: Test Multiple Server Locations
+Step 2 - Test Multiple Server Locations
 
 Server selection significantly impacts VPN performance. A server across the world will always be slower than a nearby one, but some servers may also be overcrowded or poorly maintained.
 
@@ -109,8 +109,8 @@ for server in servers:
         'upload': result['upload']['bandwidth'] / 125000,
         'ping': result['ping']['latency']
     })
-    print(f" Download: {results[-1]['download']:.2f} Mbps")
-    print(f" Ping: {results[-1]['ping']:.2f} ms")
+    print(f" Download - {results[-1]['download']:.2f} Mbps")
+    print(f" Ping - {results[-1]['ping']:.2f} ms")
 
 Find the best server
 best = min(results, key=lambda x: x['ping'])
@@ -122,7 +122,7 @@ Look for servers with:
 - Highest throughput
 - Consistent results across multiple tests
 
-Step 3: Analyze Protocol Performance
+Step 3 - Analyze Protocol Performance
 
 Different VPN protocols offer different speed/ security tradeoffs. Testing multiple protocols can reveal significant performance differences.
 
@@ -154,7 +154,7 @@ speedtest-cli
 
 Record the results. If one protocol is significantly faster, consider using it for everyday tasks while switching to more secure protocols when needed.
 
-Step 4: Check for Packet Loss and Latency Issues
+Step 4 - Check for Packet Loss and Latency Issues
 
 Packet loss and high latency can severely degrade VPN performance, especially for real-time applications like video calls or gaming.
 
@@ -186,7 +186,7 @@ traceroute -I [VPN_SERVER_IP]
 
 This shows each hop between you and the VPN server. If one hop shows significantly increased latency, that's likely the bottleneck, either network congestion or poor routing.
 
-Step 5: Monitor Bandwidth and Throttling
+Step 5 - Monitor Bandwidth and Throttling
 
 Some ISPs throttle VPN traffic when they detect encrypted connections. If your VPN is slow but your base speed is fine, throttling might be the cause.
 
@@ -219,7 +219,7 @@ If you notice consistent slowdown regardless of server distance or protocol, ISP
 - Changing to TCP port 443 (same as HTTPS)
 - Using protocols that mimic regular HTTPS traffic
 
-Step 6: Optimize Your VPN Configuration
+Step 6 - Optimize Your VPN Configuration
 
 Once you've identified the problem, here are specific optimizations:
 
@@ -310,7 +310,7 @@ Related Articles
 - [VPN Connection Drops Troubleshooting Guide](/vpn-connection-drops-troubleshooting-guide/)
 - [VPN Connection Timeout Troubleshooting](/vpn-connection-timeout-troubleshooting-tcp-handshake-failure/)
 - [VPN for Remote Desktop Connection from Hotel WiFi Safely](/vpn-for-remote-desktop-connection-from-hotel-wifi-safely/)
-- [VPN MSS Clamping Explained: Fixing Packet Size Related.](/vpn-mss-clamping-explained-fixing-packet-size-related-connection-issues/)
+- [VPN MSS Clamping Explained - Fixing Packet Size Related.](/vpn-mss-clamping-explained-fixing-packet-size-related-connection-issues/)
 
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 

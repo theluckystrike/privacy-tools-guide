@@ -100,7 +100,7 @@ Incident Detection and Tracking
 First, implement logging and monitoring to detect potential breaches:
 
 ```python
-Python: Incident detection data structure
+Python - Incident detection data structure
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import List, Optional
@@ -248,11 +248,11 @@ Common Pitfalls to Avoid
 
 Many organizations struggle with these areas:
 
-Starting the clock too early: The 72-hour timer begins at confirmation, not detection. Document your confirmation process carefully.
+Starting the clock too early - The 72-hour timer begins at confirmation, not detection. Document your confirmation process carefully.
 
 Incomplete jurisdiction tracking: You need to know where affected users reside. Implement geographic data collection from signup.
 
-Missing documentation: Every decision must be documented. What you did, why you did it, and when.
+Missing documentation - Every decision must be documented. What you did, why you did it, and when.
 
 Inadequate incident response plans: Having a plan on paper isn't enough. Practice your response through tabletop exercises.
 

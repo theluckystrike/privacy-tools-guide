@@ -31,7 +31,7 @@ sudo apt update && sudo apt install elasticsearch
 Do NOT start yet. configure security first
 ```
 
-Step 1: Configure elasticsearch.yml
+Step 1 - Configure elasticsearch.yml
 
 ```yaml
 cluster.name: production-cluster
@@ -64,7 +64,7 @@ xpack.security.audit.logfile.events.include: >
   authentication_success,authentication_failed,access_denied,connection_denied
 ```
 
-Step 2: Generate TLS Certificates
+Step 2 - Generate TLS Certificates
 
 ```bash
 Generate CA
@@ -83,7 +83,7 @@ sudo chmod 640 /etc/elasticsearch/certs/*.p12
 sudo chown elasticsearch:elasticsearch /etc/elasticsearch/certs/*.p12
 ```
 
-Step 3: Set Passwords for Built-In Users
+Step 3 - Set Passwords for Built-In Users
 
 ```bash
 sudo systemctl start elasticsearch
@@ -96,7 +96,7 @@ Test authentication
 curl -k -u elastic:YOUR_PASSWORD https://127.0.0.1:9200/
 ```
 
-Step 4: Role-Based Access Control
+Step 4 - Role-Based Access Control
 
 ```bash
 Read-only role
@@ -132,7 +132,7 @@ curl -k -u elastic:YOUR_PASSWORD \
   }'
 ```
 
-Step 5: Network Isolation with UFW
+Step 5 - Network Isolation with UFW
 
 ```bash
 sudo ufw deny 9200/tcp
@@ -144,7 +144,7 @@ sudo ufw allow from 10.0.0.5 to any port 9200 proto tcp
 sudo ufw reload
 ```
 
-Step 6: Monitor Audit Logs
+Step 6 - Monitor Audit Logs
 
 ```bash
 tail -f /var/log/elasticsearch/*.audit.json | \
@@ -252,7 +252,7 @@ Always enable:
 
 Preventing Common Elasticsearch Breaches
 
-Breach Pattern 1: Unauthenticated Access
+Breach Pattern 1 - Unauthenticated Access
 
 Public ES instances have been compromised thousands of times. Always:
 
@@ -261,7 +261,7 @@ xpack.security.enabled: true
 network.host: 127.0.0.1  # Never 0.0.0.0
 ```
 
-Breach Pattern 2: Default Credentials
+Breach Pattern 2 - Default Credentials
 
 Elasticsearch comes with default passwords. Always:
 
@@ -271,7 +271,7 @@ Elasticsearch comes with default passwords. Always:
 
 This generates random passwords for built-in users.
 
-Breach Pattern 3: Privilege Escalation
+Breach Pattern 3 - Privilege Escalation
 
 Users with read access to one index shouldn't read all indexes:
 
@@ -299,7 +299,7 @@ curl -k -u elastic:YOUR_PASSWORD \
 
 Logstash now reads only `logs-*` indices, cannot access user data or configuration.
 
-Breach Pattern 4: Insufficient Audit Logging
+Breach Pattern 4 - Insufficient Audit Logging
 
 Configure detailed auditing:
 

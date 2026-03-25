@@ -28,15 +28,15 @@ Table of Contents
 - [Security Best Practices](#security-best-practices)
 - [Use Cases for Different Privacy Levels](#use-cases-for-different-privacy-levels)
 - [Installation and Setup Best Practices](#installation-and-setup-best-practices)
-- [Practical Example: Setting Up FileStash](#practical-example-setting-up-filestash)
-- [Handling Sensitive Data: Additional Layers](#handling-sensitive-data-additional-layers)
+- [Practical Example - Setting Up FileStash](#practical-example-setting-up-filestash)
+- [Handling Sensitive Data - Additional Layers](#handling-sensitive-data-additional-layers)
 - [Common Mistakes to Avoid](#common-mistakes-to-avoid)
 - [Mobile Considerations](#mobile-considerations)
 - [Regulatory Compliance](#regulatory-compliance)
 - [Building Your Own File Sharing Extension](#building-your-own-file-sharing-extension)
 - [Extension Performance Benchmarks](#extension-performance-benchmarks)
 - [Enterprise Considerations](#enterprise-considerations)
-- [Advanced Threat Model: Supply Chain](#advanced-threat-model-supply-chain)
+- [Advanced Threat Model - Supply Chain](#advanced-threat-model-supply-chain)
 - [Testing Before Production](#testing-before-production)
 - [Regulatory Compliance Quick Start](#regulatory-compliance-quick-start)
 - [Incident Response](#incident-response)
@@ -90,13 +90,13 @@ Quick Upload Features That Matter
 
 When evaluating file sharing extensions, prioritize these functionality aspects:
 
-Transfer speed: Look for extensions that use optimized upload protocols and nearest-server routing to minimize transfer times. Some services offer premium acceleration features for large files.
+Transfer speed - Look for extensions that use optimized upload protocols and nearest-server routing to minimize transfer times. Some services offer premium acceleration features for large files.
 
-Link customization: The ability to customize shareable URLs improves usability and allows creating memorable links for frequently shared files or folders.
+Link customization - The ability to customize shareable URLs improves usability and allows creating memorable links for frequently shared files or folders.
 
-Cross-platform sharing: Ensure recipients don't need Chrome or specific software to access your files. Universal access through standard browsers maximizes convenience.
+Cross-platform sharing - Ensure recipients don't need Chrome or specific software to access your files. Universal access through standard browsers maximizes convenience.
 
-Transfer confirmation: Extensions that notify you when files are downloaded help confirm successful delivery, especially important for time-sensitive communications.
+Transfer confirmation - Extensions that notify you when files are downloaded help confirm successful delivery, especially important for time-sensitive communications.
 
 Security Best Practices
 
@@ -110,11 +110,11 @@ Regardless of which extension you choose, follow these practices:
 
 Use Cases for Different Privacy Levels
 
-Casual sharing: For non-sensitive files like vacation photos or general documents, quick upload extensions with standard encryption provide good convenience-to-security ratios.
+Casual sharing - For non-sensitive files like vacation photos or general documents, quick upload extensions with standard encryption provide good convenience-to-security ratios.
 
-Work communications: Business files benefit from extensions with audit trails, password protection, and corporate compliance certifications.
+Work communications - Business files benefit from extensions with audit trails, password protection, and corporate compliance certifications.
 
-Sensitive documents: Legal, medical, or financial documents warrant the highest privacy protections, consider OnionShare or self-hosted solutions for maximum security.
+Sensitive documents - Legal, medical, or financial documents warrant the highest privacy protections, consider OnionShare or self-hosted solutions for maximum security.
 
 Installation and Setup Best Practices
 
@@ -130,7 +130,7 @@ When installing a file sharing extension, follow these steps to maximize both se
 
 5. Test with non-sensitive files first: Before uploading confidential documents, test the extension's workflow with throwaway files to understand the process and verify that shared links work as expected.
 
-Practical Example: Setting Up FileStash
+Practical Example - Setting Up FileStash
 
 Here's a step-by-step walkthrough of configuring FileStash for secure file sharing:
 
@@ -149,11 +149,11 @@ Here's a step-by-step walkthrough of configuring FileStash for secure file shari
 
 FileStash generates a sharing link that includes embedded decryption keys. Recipients don't need an account, they paste the link into any browser and the file decrypts locally in their browser.
 
-Handling Sensitive Data: Additional Layers
+Handling Sensitive Data - Additional Layers
 
 For highly confidential files (legal documents, trade secrets, medical records), consider these additional protections beyond extension encryption:
 
-Pre-encryption: Use 7-Zip or VeraCrypt to create encrypted archives before uploading through the extension. This creates two encryption layers, one from your encryption tool and one from the extension. Even if the extension's encryption has a vulnerability, your underlying data remains protected.
+Pre-encryption - Use 7-Zip or VeraCrypt to create encrypted archives before uploading through the extension. This creates two encryption layers, one from your encryption tool and one from the extension. Even if the extension's encryption has a vulnerability, your underlying data remains protected.
 
 ```bash
 Create password-protected 7-Zip archive on macOS/Linux
@@ -163,7 +163,7 @@ The -p flag prompts for password
 The -mhe=on flag encrypts filenames in addition to contents
 ```
 
-Metadata stripping: Tools like ExifTool can remove metadata from files before sharing:
+Metadata stripping - Tools like ExifTool can remove metadata from files before sharing:
 
 ```bash
 Remove all EXIF data from an image
@@ -175,7 +175,7 @@ exiftool -All= document.pdf
 
 This prevents accidental leakage of creation dates, author information, or location data that metadata might contain.
 
-Verification of integrity: For critical files, generate and share a checksum so recipients can verify they received the exact file you sent:
+Verification of integrity - For critical files, generate and share a checksum so recipients can verify they received the exact file you sent:
 
 ```bash
 Generate SHA-256 checksum on macOS/Linux
@@ -336,10 +336,10 @@ Enterprise Considerations
 
 For organizations, evaluate these factors:
 
-SOC 2 Compliance: Look for service providers with SOC 2 Type II certification
-Data Residency: Confirm data stays in your country/region
-Audit Logging: Full logs of who accessed what, when
-HIPAA/GDPR Readiness: Business Associate Agreements (BAAs) in place
+SOC 2 Compliance - Look for service providers with SOC 2 Type II certification
+Data Residency - Confirm data stays in your country/region
+Audit Logging - Full logs of who accessed what, when
+HIPAA/GDPR Readiness - Business Associate Agreements (BAAs) in place
 
 ```bash
 Check if extension provider has required certifications
@@ -350,7 +350,7 @@ Visit their security/compliance page for:
 - Third-party audit results
 ```
 
-Advanced Threat Model: Supply Chain
+Advanced Threat Model - Supply Chain
 
 File sharing extensions can be compromised through:
 

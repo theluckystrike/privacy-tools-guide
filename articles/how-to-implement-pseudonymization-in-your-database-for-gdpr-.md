@@ -27,7 +27,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Pseudonymization Under GDPR
+Step 1 - Understand Pseudonymization Under GDPR
 
 GDPR explicitly recognizes pseudonymization in Article 4(5) as a processing safeguard. The regulation distinguishes between pseudonymized data (still considered personal data) and truly anonymized data (no longer personal data). This distinction matters because pseudonymized data remains subject to GDPR requirements, but the Article 32 security measures become significantly easier to satisfy.
 
@@ -51,7 +51,7 @@ Lawful Basis Implications
 
 Using pseudonymization can broaden what you are permitted to do with data. Recital 29 of GDPR states that applying pseudonymization to personal data can reduce the risks to the data subjects and help controllers and processors meet their data protection obligations. Practically, this means pseudonymized data is more defensible when used for secondary purposes such as internal analytics, fraud detection model training, or cross-team data sharing.
 
-Step 2: Database-Level Pseudonymization Techniques
+Step 2 - Database-Level Pseudonymization Techniques
 
 Column-Level Encryption with Application Keys
 
@@ -136,19 +136,19 @@ ADD COLUMN email_salt VARCHAR(32);
 
 Note that hash-based pseudonymization is one-way without the salt. If you need to look up a user by their original email (for login, for example), you must either retain the salt and recompute the hash for comparison, or store the token mapping separately. Hash-based approaches work best for analytics use cases where you want to count or group by a pseudonymous identifier without ever needing to resolve it back to the original.
 
-Step 3: Key Management Considerations
+Step 3 - Key Management Considerations
 
 Effective pseudonymization relies on proper key management. Keys should never be stored alongside encrypted data. Consider these practices:
 
-Key Hierarchy: Use master keys to encrypt key-encrypting keys (KEKs), which then encrypt data-encryption keys (DEKs). This allows key rotation without re-encrypting entire databases.
+Key Hierarchy - Use master keys to encrypt key-encrypting keys (KEKs), which then encrypt data-encryption keys (DEKs). This allows key rotation without re-encrypting entire databases.
 
-Key Rotation: Implement automated key rotation schedules. Most security frameworks recommend rotating encryption keys annually at minimum, with more frequent rotation for highly sensitive data.
+Key Rotation - Implement automated key rotation schedules. Most security frameworks recommend rotating encryption keys annually at minimum, with more frequent rotation for highly sensitive data.
 
-Key Storage: Store keys in dedicated hardware security modules (HSMs) or key management services such as AWS KMS, Google Cloud KMS, or HashiCorp Vault. Never commit keys to version control or store them in configuration files.
+Key Storage - Store keys in dedicated hardware security modules (HSMs) or key management services such as AWS KMS, Google Cloud KMS, or HashiCorp Vault. Never commit keys to version control or store them in configuration files.
 
-Key Separation Across Environments: Use entirely separate keys in development, staging, and production environments. Production keys must never exist in development environments. This prevents accidental exposure through developer tooling and log aggregation systems.
+Key Separation Across Environments - Use entirely separate keys in development, staging, and production environments. Production keys must never exist in development environments. This prevents accidental exposure through developer tooling and log aggregation systems.
 
-Step 4: Implementation Patterns
+Step 4 - Implementation Patterns
 
 On-Insert Pseudonymization
 
@@ -200,7 +200,7 @@ def pseudonymize_existing_users(db_connection):
 
 Run batch jobs during low-traffic windows and monitor for lock contention on large tables. On PostgreSQL, consider using `SELECT ... FOR UPDATE SKIP LOCKED` to safely parallelize the batch job across multiple workers.
 
-Step 5: Handling the Right to Erasure
+Step 5 - Handling the Right to Erasure
 
 GDPR Article 17 grants data subjects the right to request erasure of their personal data. Pseudonymization makes this significantly easier to implement technically: delete the mapping entry (or the encryption key) and the pseudonymized data in your main tables becomes effectively unresolvable.
 
@@ -218,11 +218,11 @@ DELETE FROM token_mapping WHERE token_id = (
 
 Document this erasure pattern in your Records of Processing Activities (RoPA) required under GDPR Article 30. Data protection authorities expect to see a clear procedure for handling erasure requests, and a pseudonymization-based approach is straightforward to describe and audit.
 
-Step 6: Test Your Implementation
+Step 6 - Test Your Implementation
 
 Verify pseudonymization effectiveness through these validation steps:
 
-Data Integrity: Confirm that original values can be recovered when using the correct key:
+Data Integrity - Confirm that original values can be recovered when using the correct key:
 
 ```python
 def verify_pseudonymization(user_id):
@@ -233,9 +233,9 @@ def verify_pseudonymization(user_id):
     return original_email is not None
 ```
 
-Security Testing: Attempt re-identification using compromised credentials or database access to ensure pseudonymized values remain protected. Specifically, test what an attacker who has read access to the main `users` table but not the `token_mapping` table can learn. They should see only UUIDs with no path to the original PII.
+Security Testing - Attempt re-identification using compromised credentials or database access to ensure pseudonymized values remain protected. Specifically, test what an attacker who has read access to the main `users` table but not the `token_mapping` table can learn. They should see only UUIDs with no path to the original PII.
 
-Audit Logging Verification: Confirm that access to the token mapping table is logged. Any query against the mapping table represents a de-pseudonymization event and should appear in your audit trail for later review.
+Audit Logging Verification - Confirm that access to the token mapping table is logged. Any query against the mapping table represents a de-pseudonymization event and should appear in your audit trail for later review.
 
 Troubleshooting
 

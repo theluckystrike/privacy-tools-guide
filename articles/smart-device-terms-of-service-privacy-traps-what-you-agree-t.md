@@ -28,7 +28,7 @@ Table of Contents
 - [Building Privacy-Conscious Habits](#building-privacy-conscious-habits)
 - [Advanced Monitoring for Developer-Level Protections](#advanced-monitoring-for-developer-level-protections)
 - [When to Reconsider Device Purchases](#when-to-reconsider-device-purchases)
-- [Real-World Example: Comparing Two Smart Thermostat ToS](#real-world-example-comparing-two-smart-thermostat-tos)
+- [Real-World Example - Comparing Two Smart Thermostat ToS](#real-world-example-comparing-two-smart-thermostat-tos)
 - [Updating Devices and Policy Changes](#updating-devices-and-policy-changes)
 
 The Reality of Smart Device Data Collection
@@ -51,7 +51,7 @@ Common Privacy Traps in Terms of Service
 
 Many ToS documents contain language that permits sharing user data with "affiliates," "partners," and "third parties" for purposes ranging from "improving services" to "marketing." This phrasing creates catch-all permissions that encompass data brokers and advertising networks.
 
-A typical clause might read: "We may share anonymized data with trusted partners for research and development purposes." The term "anonymized" provides false comfort, researchers have repeatedly demonstrated that anonymized datasets can often be re-identified when combined with other data sources.
+A typical clause might read - "We may share anonymized data with trusted partners for research and development purposes." The term "anonymized" provides false comfort, researchers have repeatedly demonstrated that anonymized datasets can often be re-identified when combined with other data sources.
 
 2. Automatic Voice Recording Storage
 
@@ -267,9 +267,9 @@ Some devices present such unfavorable privacy terms that alternatives warrant co
 
 The device market increasingly includes privacy-conscious alternatives. Before accepting privacy-invasive ToS, compare with competitors offering stronger guarantees.
 
-Real-World Example: Comparing Two Smart Thermostat ToS
+Real-World Example - Comparing Two Smart Thermostat ToS
 
-Device A (Major Manufacturer): "We collect temperature data, occupancy patterns, and weather preferences. This data may be shared with affiliated companies for marketing purposes. We retain data indefinitely and may use it for developing AI models."
+Device A (Major Manufacturer) - "We collect temperature data, occupancy patterns, and weather preferences. This data may be shared with affiliated companies for marketing purposes. We retain data indefinitely and may use it for developing AI models."
 
 Device B (Privacy-Focused Alternative): "We collect only temperature and occupancy data necessary for device function. Local processing means no cloud transmission required. Users can request data deletion at any time, and we commit to deletion within 30 days. Data is never shared with third parties."
 

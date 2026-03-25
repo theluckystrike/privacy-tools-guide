@@ -59,7 +59,7 @@ This installs:
 
 Open `https://<your-server-ip>` in a browser. Accept the self-signed certificate warning and log in with:
 - Username: `admin`
-- Password: (printed at the end of installation, also retrievable with `sudo tar -O -xvf wazuh-install-files.tar wazuh-install-files/wazuh-passwords.txt`)
+- Password - (printed at the end of installation, also retrievable with `sudo tar -O -xvf wazuh-install-files.tar wazuh-install-files/wazuh-passwords.txt`)
 
 ---
 
@@ -101,7 +101,7 @@ Check agent status by ID
 sudo /var/ossec/bin/agent_control -s -u 001
 ```
 
-Or in the Dashboard: Agents > verify the agent appears and shows "Active".
+Or in the Dashboard - Agents > verify the agent appears and shows "Active".
 
 ---
 
@@ -277,7 +277,7 @@ Check indexer disk usage
 curl -sk -u admin:<password> https://localhost:9200/_cat/indices?v
 
 Delete old indices (retention management)
-In Dashboard: Index Management > Indices > filter by date > delete
+In Dashboard - Index Management > Indices > filter by date > delete
 
 Update Wazuh
 sudo apt upgrade wazuh-manager wazuh-indexer wazuh-dashboard

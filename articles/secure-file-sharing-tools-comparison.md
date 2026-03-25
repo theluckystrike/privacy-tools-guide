@@ -50,7 +50,7 @@ onionshare-cli --auto-start share /path/to/secret-document.pdf
 
 Output:
 OnionShare 2.6 | https://[onionaddress].onion/share/[code]
-Password: [random]
+Password - [random]
 
 Configure options
 onionshare-cli --auto-start \
@@ -64,7 +64,7 @@ onionshare-cli --auto-start share file1.pdf file2.docx file3.zip
 
 Receive files (reverse share)
 onionshare-cli --auto-start receive
-Output: https://[onionaddress].onion/receive/[code]
+Output - https://[onionaddress].onion/receive/[code]
 ```
 
 Workflow Example:
@@ -72,8 +72,8 @@ Workflow Example:
 ```bash
 Sender
 onionshare-cli --auto-start share contract.pdf
-Output: https://abc123def456.onion/share/abc123
-Password: secure_random_password
+Output - https://abc123def456.onion/share/abc123
+Password - secure_random_password
 
 Recipient (copy URL and password)
 1. Open Tor Browser
@@ -205,7 +205,7 @@ wormhole send /path/to/secret.pdf
 Output:
 Sending 1.2 MB file named 'secret.pdf'
 On the other computer, please run: wormhole receive
-Wormhole code is: 7-saturn-giddy
+Wormhole code is - 7-saturn-giddy
 (Run Ctrl-C to cancel)
 
 Recipient (on different machine)
@@ -224,7 +224,7 @@ Advanced Examples:
 ```bash
 Send and specify filename
 wormhole send --text "my secret data"
-Output: Wormhole code: 7-saturn-giddy
+Output - Wormhole code: 7-saturn-giddy
 
 Receive text instead of file
 wormhole receive 7-saturn-giddy
@@ -247,12 +247,12 @@ Sender (Terminal 1):
 $ wormhole send contract.pdf
 Sending 0.3 MB file named 'contract.pdf'
 On the other computer, please run: wormhole receive
-Wormhole code is: 3-boil-muffin
+Wormhole code is - 3-boil-muffin
 (Run Ctrl-C to cancel)
 
 Recipient (Terminal 2):
 $ wormhole receive
-Enter receive wormhole code: 3-boil-muffin
+Enter receive wormhole code - 3-boil-muffin
 Receiving file (0.3 MB) named 'contract.pdf' from sender
 ok? (Y/n): Y
 Received file written to ./contract.pdf
@@ -282,7 +282,7 @@ Firefox Send Alternatives
 
 Firefox Send shut down in 2020, but similar E2E encrypted services emerged. We compare top alternatives.
 
-Best Alternative: CryptDrop
+Best Alternative - CryptDrop
 
 CryptDrop is a privacy-focused file sharing service (uses Mozilla's older Firefox Send code).
 
@@ -324,7 +324,7 @@ Transfer.sh Example (CLI):
 ```bash
 Upload with encryption (client-side)
 curl --upload-file ./document.pdf https://transfer.sh/document.pdf
-Output: https://transfer.sh/[id]/document.pdf
+Output - https://transfer.sh/[id]/document.pdf
 
 Delete after 14 days (default)
 Or specify retention:
@@ -381,15 +381,15 @@ Before using any file sharing service:
 
 Practical Workflow Examples
 
-Scenario 1: Lawyer sharing legal document with client
+Scenario 1 - Lawyer sharing legal document with client
 
 Option 1 (Most Secure):
 ```bash
 Lawyer's computer
 onionshare-cli --auto-start --timer 86400 share contract.pdf
-Gives: URL + password
+Gives - URL + password
 
-Phone call: "Go to [URL], password is [word-word-word]"
+Phone call - "Go to [URL], password is [word-word-word]"
 Client downloads via Tor Browser
 Document deleted after 24 hours or download
 ```
@@ -403,20 +403,20 @@ Option 2 (More Convenient):
 5. Email link with password in separate message
 ```
 
-Scenario 2: Developer sharing config file with remote team
+Scenario 2 - Developer sharing config file with remote team
 
 ```bash
-Option 1: Wormhole (fastest, no setup)
+Option 1 - Wormhole (fastest, no setup)
 wormhole send config.yml
 Sends code to team member
-Team member runs: wormhole receive [code]
+Team member runs - wormhole receive [code]
 
-Option 2: Transfer.sh (one-liner)
+Option 2 - Transfer.sh (one-liner)
 curl --upload-file config.yml https://transfer.sh/config.yml
 Returns URL for sharing
 ```
 
-Scenario 3: Journalist sharing source files with editor (ultra-confidential)
+Scenario 3 - Journalist sharing source files with editor (ultra-confidential)
 
 ```bash
 OnionShare only (most anonymous)
@@ -428,15 +428,15 @@ Tor-only access, no logs, no account needed
 
 Key Recommendation
 
-For maximum privacy: OnionShare (Tor, local server, no registration)
+For maximum privacy - OnionShare (Tor, local server, no registration)
 
-For convenience: Tresorit Send (web interface, reliable)
+For convenience - Tresorit Send (web interface, reliable)
 
-For power users: Wormhole (CLI, fast, flexible)
+For power users - Wormhole (CLI, fast, flexible)
 
-For compliance: Tresorit Send (audit logs, retention policies)
+For compliance - Tresorit Send (audit logs, retention policies)
 
-For one-off sharing: CryptDrop or Transfer.sh (minimal setup)
+For one-off sharing - CryptDrop or Transfer.sh (minimal setup)
 
 Start with Wormhole if you're technical. Start with Tresorit Send if you prioritize ease of use. Upgrade to OnionShare for legally sensitive documents.
 

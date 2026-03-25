@@ -34,7 +34,7 @@ STRIDE maps threat categories to security properties:
 | Denial of Service | Availability | Attacker floods the endpoint |
 | Elevation of Privilege | Authorization | Regular user accesses admin function |
 
-Step 1: Draw a Data Flow Diagram
+Step 1 - Draw a Data Flow Diagram
 
 A DFD shows where data comes from, where it goes, and what transforms it. You need:
 - External entities (users, third-party services). rectangles
@@ -53,9 +53,9 @@ A DFD shows where data comes from, where it goes, and what transforms it. You ne
                          [Message Queue] > [Worker Service]
 ```
 
-The key insight from a DFD: every arrow that crosses a trust boundary is a potential attack surface.
+The key insight from a DFD - every arrow that crosses a trust boundary is a potential attack surface.
 
-Step 2: Enumerate Threats Systematically
+Step 2 - Enumerate Threats Systematically
 
 For each element in your diagram, apply STRIDE. Use a spreadsheet or a simple text file.
 
@@ -94,19 +94,19 @@ python3 threat-model.py > threats.txt
 Work through threats.txt, marking each as: mitigated / accepted / deferred
 ```
 
-Step 3: Rate Each Threat. DREAD or CVSS Lite
+Step 3 - Rate Each Threat. DREAD or CVSS Lite
 
 DREAD scores let you prioritize which threats to fix first.
 
 ```
 DREAD scoring (1-3 each):
   Damage:          How severe is the impact?
-  Reproducibility: How easy is it to reproduce?
+  Reproducibility - How easy is it to reproduce?
   Exploitability:  How easy is it to exploit?
   Affected users:  How many users are affected?
-  Discoverability: How easy is it to find?
+  Discoverability - How easy is it to find?
 
-Total: 5–15. 12+ = critical, 8–11 = high, 5–7 = medium, <5 = low.
+Total - 5, 15. 12+ = critical, 8, 11 = high, 5, 7 = medium, <5 = low.
 ```
 
 ```python
@@ -131,10 +131,10 @@ score, rating = dread_score(
     discoverability=2   # scanners find it
 )
 print(f"SQL injection: {score}/15 ({rating})")
-SQL injection: 13/15 (CRITICAL)
+SQL injection - 13/15 (CRITICAL)
 ```
 
-Step 4: Document Mitigations
+Step 4 - Document Mitigations
 
 For each threat, write the control. Be specific. "use authentication" is useless, "enforce JWT validation on every route using middleware at the gateway level" is actionable.
 
@@ -210,7 +210,7 @@ Key threats:
 ```bash
 Pin GitHub Actions to SHA (not tag) to prevent supply chain attacks
 Bad:  uses: actions/checkout@v4
-Good: uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+Good - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
 Verify image signatures before deploy
 cosign verify \
@@ -247,10 +247,10 @@ GRANT SELECT, INSERT, UPDATE ON TABLE events TO write_service;
 Quick Threat Model Template
 
 ```markdown
-Threat Model: [System Name]
-Date: YYYY-MM-DD
-Author: [Name]
-Scope: [What is included / excluded]
+Threat Model - [System Name]
+Date - YYYY-MM-DD
+Author - [Name]
+Scope - [What is included / excluded]
 
 Assets (what are we protecting?)
 - User PII stored in Postgres

@@ -24,7 +24,7 @@ Prerequisites
 - Ports 80 and 443 open (Caddy needs both for ACME HTTP-01 challenge)
 - Ubuntu 20.04 or later
 
-Step 1: Install Caddy
+Step 1 - Install Caddy
 
 ```bash
 Install from the official Caddy repository
@@ -45,7 +45,7 @@ v2.8.x
 
 Caddy installs as a systemd service and starts listening on port 80 immediately. It serves a placeholder page until you configure your Caddyfile.
 
-Step 2: Basic Caddyfile
+Step 2 - Basic Caddyfile
 
 The Caddyfile lives at `/etc/caddy/Caddyfile`. Edit it:
 
@@ -79,7 +79,7 @@ Check certificate:
 curl -vI https://example.com 2>&1 | grep -A2 "SSL certificate\|subject:\|issuer:"
 ```
 
-Step 3: Reverse Proxy to a Backend
+Step 3 - Reverse Proxy to a Backend
 
 The most common use case. proxying to an application running on localhost:
 
@@ -116,7 +116,7 @@ Wildcard cert (requires DNS challenge. see below)
 }
 ```
 
-Step 4: Security Headers
+Step 4 - Security Headers
 
 Add security headers globally using the `header` directive:
 
@@ -143,7 +143,7 @@ example.com {
 
 The `-Server` and `-X-Powered-By` lines remove those response headers entirely to reduce fingerprinting.
 
-Step 5: Rate Limiting
+Step 5 - Rate Limiting
 
 Caddy's rate limit module is not built-in but available as a plugin. For basic protection, use the `respond` directive to block excessive requests, or deploy the `caddy-ratelimit` plugin:
 
@@ -170,7 +170,7 @@ example.com {
 }
 ```
 
-Step 6: Basic Authentication
+Step 6 - Basic Authentication
 
 Protect an internal service with an username/password:
 
@@ -189,7 +189,7 @@ private.example.com {
 }
 ```
 
-Step 7: Logging
+Step 7 - Logging
 
 Enable structured JSON access logs for security analysis:
 
@@ -222,7 +222,7 @@ Show 404s
 cat /var/log/caddy/access.log | jq 'select(.status == 404) | {uri: .request.uri, ip: .request.remote_ip}'
 ```
 
-Step 8: DNS Challenge for Wildcard Certificates
+Step 8 - DNS Challenge for Wildcard Certificates
 
 Wildcard certs (`*.example.com`) require DNS-01 challenge, which means Caddy needs API access to your DNS provider. Install the appropriate DNS module:
 

@@ -86,11 +86,11 @@ Storage Vulnerabilities
 
 Browser autofill data storage has multiple attack vectors:
 
-Local Access: If someone gains physical or remote access to your machine, browser autofill data is often recoverable. On Windows, Chrome's Web Data SQLite database can be opened with tools like DB Browser for SQLite. Without a master password (Firefox) or OS-level encryption, this data sits in relatively accessible files.
+Local Access - If someone gains physical or remote access to your machine, browser autofill data is often recoverable. On Windows, Chrome's Web Data SQLite database can be opened with tools like DB Browser for SQLite. Without a master password (Firefox) or OS-level encryption, this data sits in relatively accessible files.
 
-Extension Overreach: Browser extensions with broad permissions can read autofill data. Extensions you install for one purpose may have the capability to access form data across all websites you visit.
+Extension Overreach - Browser extensions with broad permissions can read autofill data. Extensions you install for one purpose may have the capability to access form data across all websites you visit.
 
-Memory Handling: After autofill populates a field, the data remains in DOM memory and can be accessed through JavaScript. While this is intended functionality for form processing, it also means any script running on the page can capture the autofilled values.
+Memory Handling - After autofill populates a field, the data remains in DOM memory and can be accessed through JavaScript. While this is intended functionality for form processing, it also means any script running on the page can capture the autofilled values.
 
 Security Implications for Developers
 

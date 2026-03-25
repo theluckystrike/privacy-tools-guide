@@ -17,7 +17,7 @@ tags: [privacy-tools-guide, privacy]
 
 Chrome extensions are one of the most dangerous vectors for browser privacy violations. Extensions run inside your browser with access to every page you visit, every form you fill, and in many cases your clipboard and cookies. Poorly reviewed extensions. including ones with millions of users and high ratings. have been caught stealing passwords, injecting ads, exfiltrating browsing history, and silently installing additional malware.
 
-The fundamental problem: the Chrome Web Store's vetting process is cursory. Malicious extensions have repeatedly made it through the review process, accumulated millions of installs, and operated for months before detection. Users assume published extensions have been evaluated; most haven't. High user counts and positive ratings provide no assurance of safety, malicious developers generate fake reviews and install counts through botnets.
+The fundamental problem - the Chrome Web Store's vetting process is cursory. Malicious extensions have repeatedly made it through the review process, accumulated millions of installs, and operated for months before detection. Users assume published extensions have been evaluated; most haven't. High user counts and positive ratings provide no assurance of safety, malicious developers generate fake reviews and install counts through botnets.
 
 This guide gives you the tools and process to evaluate extensions before installing them and audit ones already installed. The core principle: never trust an extension's store listing or user reviews. Always verify permissions independently and understand what data an extension can access.
 
@@ -65,7 +65,7 @@ The most dangerous permissions
 
 `nativeMessaging`. Can communicate with applications installed on your computer. Very rarely needed legitimately.
 
-Step 1: Audit Installed Extensions
+Step 1 - Audit Installed Extensions
 
 Open `chrome://extensions` and enable "Developer mode" (top right toggle). This shows extension IDs and enables additional inspection options.
 
@@ -94,7 +94,7 @@ ls ~/.config/google-chrome/Default/Extensions/
 cat ~/.config/google-chrome/Default/Extensions/EXTENSION_ID/VERSION/manifest.json
 ```
 
-Step 2: Monitor Network Requests from Extensions
+Step 2 - Monitor Network Requests from Extensions
 
 Extensions can exfiltrate data to external servers at any time. Use Chrome's built-in network inspector to watch what they send:
 
@@ -118,7 +118,7 @@ google-chrome --remote-debugging-port=9222 --user-data-dir=/tmp/chrome-debug
 
 Then open `http://localhost:9222` to access the remote debugging interface, which shows all active pages and extensions as inspectable targets.
 
-Step 3: Read the Source Code
+Step 3 - Read the Source Code
 
 Extensions installed from the Chrome Web Store are stored locally as ZIP files (with a `.crx` extension under the hood). You can read all the JavaScript:
 
@@ -163,7 +163,7 @@ document.addEventListener('keydown', function(e) {
 });
 ```
 
-Step 4: Evaluate the Extension's Provenance
+Step 4 - Evaluate the Extension's Provenance
 
 Beyond the code itself, evaluate the broader trust signals:
 
@@ -178,7 +178,7 @@ Review the privacy policy:
 
 Check for news about the extension:
 ```
-Search: "extension name" site:arstechnica.com OR site:bleepingcomputer.com OR site:krebsonsecurity.com
+Search - "extension name" site:arstechnica.com OR site:bleepingcomputer.com OR site:krebsonsecurity.com
 ```
 
 Many malicious extensions are eventually reported by security researchers.
@@ -188,7 +188,7 @@ Track the user count and update history:
 - Extensions that haven't been updated in 2+ years may have known vulnerabilities
 - Very new extensions with many installs may be using fake reviews
 
-Step 5: Use CRXcavator or Similar Tools
+Step 5 - Use CRXcavator or Similar Tools
 
 CRXcavator (crxcavator.io) automatically analyzes Chrome extensions and scores them on risk factors including permissions, content security policy, dependencies, and web store metadata. Enter the extension ID to get a report.
 
@@ -208,15 +208,15 @@ Extension Risk Assessment Methodology
 
 Beyond examining code, apply a structured risk assessment framework. Rate extensions on these dimensions:
 
-Necessity: Does this extension solve a problem that no browser feature handles? If the browser provides native functionality, the extension adds risk without benefit. HTTPS enforcement, dark mode, and many utility features are now built into modern browsers.
+Necessity - Does this extension solve a problem that no browser feature handles? If the browser provides native functionality, the extension adds risk without benefit. HTTPS enforcement, dark mode, and many utility features are now built into modern browsers.
 
-Scope justification: Does the requested permission level match the extension's stated purpose? A screenshot tool requesting `<all_urls>` and clipboard access has excessive permissions. An ad blocker requiring full page access can be justified.
+Scope justification - Does the requested permission level match the extension's stated purpose? A screenshot tool requesting `<all_urls>` and clipboard access has excessive permissions. An ad blocker requiring full page access can be justified.
 
-Developer reputation: Is the developer a known organization with a track record? Extensions from established security companies (EFF, Tor Project, Signal) carry less risk than anonymous publishers. Google, Mozilla, and Microsoft regularly audit their published extensions, third-party extensions lack this oversight.
+Developer reputation - Is the developer a known organization with a track record? Extensions from established security companies (EFF, Tor Project, Signal) carry less risk than anonymous publishers. Google, Mozilla, and Microsoft regularly audit their published extensions, third-party extensions lack this oversight.
 
-Review pattern: Read recent user reviews carefully. Sudden drops in ratings often signal a problematic update. Consistent negative reviews mentioning data collection are red flags even if current code appears clean.
+Review pattern - Read recent user reviews carefully. Sudden drops in ratings often signal a problematic update. Consistent negative reviews mentioning data collection are red flags even if current code appears clean.
 
-Update frequency: Extensions that receive regular updates indicate active maintenance. Abandoned extensions with infrequent updates may harbor unpatched vulnerabilities. Check the last update date in the Chrome Web Store.
+Update frequency - Extensions that receive regular updates indicate active maintenance. Abandoned extensions with infrequent updates may harbor unpatched vulnerabilities. Check the last update date in the Chrome Web Store.
 
 Minimum Viable Extension List
 
@@ -229,7 +229,7 @@ The safest approach is to minimize installed extensions:
 | HTTPS enforcement | Handled by browsers natively now | Not needed in 2026 |
 | Privacy Badger | EFF Privacy Badger | Reputable org, open source |
 
-For every other extension, ask: can I accomplish this without an extension? A browser extension with `<all_urls>` access is a keylogger that you're choosing to install.
+For every other extension, ask - can I accomplish this without an extension? A browser extension with `<all_urls>` access is a keylogger that you're choosing to install.
 
 Removing Malicious Extensions
 
@@ -238,9 +238,9 @@ If you discover a malicious extension, immediate removal is critical. Don't just
 ```bash
 After removing the extension from settings, clear any traces
 Clear browser cache and cookies related to the extension
-Browser: Settings > Privacy and Security > Clear browsing data
-Select: Cookies and other site data, Cached images and files
-Time range: All time
+Browser - Settings > Privacy and Security > Clear browsing data
+Select - Cookies and other site data, Cached images and files
+Time range - All time
 ```
 
 After removal, reset your passwords for critical accounts (email, banking, social media) since the extension may have captured them. Check your browser's homepage, search engine, and new tab settings to verify they weren't modified. Some malicious extensions make persistent changes that survive uninstallation, resetting these settings to Chrome defaults ensures clean removal.

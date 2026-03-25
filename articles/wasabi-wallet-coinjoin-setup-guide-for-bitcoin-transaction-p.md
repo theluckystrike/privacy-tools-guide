@@ -22,7 +22,7 @@ Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
-- [Advanced: Command-Line Interface](#advanced-command-line-interface)
+- [Advanced - Command-Line Interface](#advanced-command-line-interface)
 - [Performance and Scalability Considerations](#performance-and-scalability-considerations)
 - [Troubleshooting Advanced Issues](#troubleshooting-advanced-issues)
 - [Security Considerations](#security-considerations)
@@ -37,13 +37,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Avoiding On-Chain Deanonymization After Mixing
+Step 1 - Avoiding On-Chain Deanonymization After Mixing
 
 Mixing is just the first step.
 - Wasabi Wallet typically charges: between 0.3% and 0.5% per mixing round for the coordination service.
 - This is significantly cheaper: than centralized mixing services, which charge 1-5% but provide no transparency regarding coin handling.
 
-Step 2: Understand CoinJoin Fundamentals
+Step 2 - Understand CoinJoin Fundamentals
 
 CoinJoin combines multiple Bitcoin transactions from different users into a single transaction, making it difficult to determine which inputs correspond to which outputs. Wasabi Wallet uses the WabiSabi protocol, which provides anonymity set improvements without requiring a centralized coordinator to trust the mixing process.
 
@@ -51,7 +51,7 @@ When you initiate a CoinJoin round, your wallet coordinates with other participa
 
 The privacy gains depend on the number of participants in each round. Larger anonymity sets provide stronger guarantees, as distinguishing your output from others becomes computationally infeasible.
 
-Step 3: Install and Initializing Wasabi Wallet
+Step 3 - Install and Initializing Wasabi Wallet
 
 Download Wasabi Wallet from the official repository at [wasabiwallet.io](https://wasabiwallet.io). The software is open-source and available for Windows, macOS, and Linux. Verify the GPG signatures before installation to ensure authenticity.
 
@@ -64,7 +64,7 @@ gpg --verify wasabi-2.0.0.msi.asc wasabi-2.0.0.msi
 
 Store your seed phrase offline in a secure location. Hardware wallet integration provides additional security by keeping private keys isolated from your computer.
 
-Step 4: Funding Your Wallet and Preparing for CoinJoin
+Step 4 - Funding Your Wallet and Preparing for CoinJoin
 
 Transfer Bitcoin to your Wasabi Wallet using the receive tab. Generate a new address for each transaction to prevent address reuse, which compromises privacy. Wasabi automatically generates fresh addresses for every incoming payment.
 
@@ -72,7 +72,7 @@ For CoinJoin to be effective, you need a sufficient number of coins to participa
 
 Before mixing, consider the coins' history. Coins with known association to your identity through KYC exchanges or on-chain analytics should be mixed separately from coins you want to maintain privacy for. This separation prevents cross-contamination of privacy levels.
 
-Step 5: Configure CoinJoin Settings
+Step 5 - Configure CoinJoin Settings
 
 Wasabi Wallet provides granular control over CoinJoin parameters through the settings menu. Access these options by clicking the settings icon in the toolbar.
 
@@ -80,11 +80,11 @@ CoinJoin Round Parameters
 
 The key settings include:
 
-- Target Anonymity Set: Controls the desired number of participants in each CoinJoin. Higher values increase privacy but extend coordination time. Values between 8 and 50 provide reasonable privacy for most use cases.
+- Target Anonymity Set - Controls the desired number of participants in each CoinJoin. Higher values increase privacy but extend coordination time. Values between 8 and 50 provide reasonable privacy for most use cases.
 
 - Auto-Start CoinJoin: Enables automatic mixing when your wallet receives funds. Configure this to ensure continuous privacy improvements without manual intervention.
 
-- Remix Threshold: Determines whether previously mixed coins should participate in additional rounds. Higher thresholds improve privacy by mixing coins through multiple rounds.
+- Remix Threshold - Determines whether previously mixed coins should participate in additional rounds. Higher thresholds improve privacy by mixing coins through multiple rounds.
 
 ```json
 // Wasabi configuration file (~/.wasabi/WalletWasabi.Client/settings.json)
@@ -97,7 +97,7 @@ The key settings include:
 
 The configuration file location varies by operating system. On macOS, it's in `~/Library/Application Support/WalletWasabi.Client/`. Modify these settings to match your privacy requirements and tolerance for coordination delays.
 
-Step 6: Executing CoinJoin Transactions
+Step 6 - Executing CoinJoin Transactions
 
 Open the CoinJoin tab in Wasabi Wallet to begin mixing. The interface displays your unmixed coins and the current round status. Select the coins you want to mix and click "Start CoinJoin."
 
@@ -112,7 +112,7 @@ bitcoin-cli gettransaction <txid> | jq '.details[] | select(.vout == 0)'
 
 After mixing completes, your coins appear in the "Mixed" tab. These coins now carry improved privacy characteristics. You can verify the anonymity set achieved by checking the transaction on a block explorer.
 
-Step 7: Spending Mixed Coins
+Step 7 - Spending Mixed Coins
 
 When spending mixed Bitcoin, Wasabi automatically selects coins from the mixed pool to maintain your privacy. The wallet implements coin selection algorithms that prioritize privacy while minimizing fees.
 
@@ -127,7 +127,7 @@ const selected = coins.filter(c => c.amount >= targetAmount);
 
 Wasabi supports integration with hardware wallets for signing transactions. This keeps your private keys offline while allowing you to participate in CoinJoin rounds, combining hardware security with mixing privacy.
 
-Step 8: Network and Tor Configuration
+Step 8 - Network and Tor Configuration
 
 Wasabi routes all network traffic through Tor by default, preventing IP address leakage that could compromise your privacy. Verify your Tor configuration in the settings menu to ensure proper operation.
 
@@ -147,7 +147,7 @@ Insufficient funds can also prevent CoinJoin participation. Ensure you meet the 
 
 For users experiencing coordination delays, consider adjusting the target anonymity set downward. Lower values achieve mixing faster but provide less privacy. Finding the right balance depends on your specific threat model.
 
-Advanced: Command-Line Interface
+Advanced - Command-Line Interface
 
 Developers can interact with Wasabi through its built-in RPC interface. This enables programmatic control over mixing operations and integration with automated workflows.
 
@@ -162,13 +162,13 @@ curl -s --data-binary '{"jsonrpc":"2.0","method":"listcoins","params":[]}' \
 
 The RPC interface provides access to wallet operations including coin listing, transaction building, and broadcasting. Documentation for these endpoints appears in Wasabi's GitHub repository.
 
-Step 9: Cost Analysis and Fee Structure
+Step 9 - Cost Analysis and Fee Structure
 
 CoinJoin fees depend on the mixing round size and coordinator settings. Wasabi Wallet typically charges between 0.3% and 0.5% per mixing round for the coordination service. This is significantly cheaper than centralized mixing services, which charge 1-5% but provide no transparency regarding coin handling.
 
 For example, mixing 0.1 BTC at current rates (approximately $4,300 per BTC) would cost roughly $1.30-$2.15 per round using Wasabi, plus standard Bitcoin network fees (typically $0.50-$5.00 depending on network congestion). Compare this to centralized services like CoinJoin mixers that charge flat $50-$100 per transaction without refund mechanisms if coins are compromised.
 
-Step 10: Understand Anonymity Set Limitations
+Step 10 - Understand Anonymity Set Limitations
 
 The anonymity set represents how many participants mixed with you in a single transaction round. An anonymity set of 50 means 50 people contributed inputs to the same transaction. However, this doesn't guarantee complete anonymity, chain analysis firms employ sophisticated heuristics to attempt deanonymization.
 
@@ -185,7 +185,7 @@ To mitigate these risks:
 - Avoid consolidating mixed coins with unmixed coins
 - Consider mixing in different time zones using Tor to avoid timing correlations
 
-Step 11: Integration with Hardware Wallets: Trezor and Ledger
+Step 11 - Integration with Hardware Wallets: Trezor and Ledger
 
 Both Trezor and Ledger hardware wallets integrate with Wasabi, allowing you to perform CoinJoin without exposing your private keys to your computer.
 
@@ -217,7 +217,7 @@ During peak network times (Bitcoin fee surges during bull markets), CoinJoin rou
 - Scheduling mixing during off-peak hours (late night UTC)
 - Pre-mixing coins before expected network congestion
 
-Step 12: Real-World Example: Privacy-Focused Bitcoin Workflow
+Step 12 - Real-World Example: Privacy-Focused Bitcoin Workflow
 
 Here's a practical workflow for a developer maintaining privacy while using Bitcoin:
 
@@ -251,7 +251,7 @@ Common causes of coordination failures:
 - Wallet synchronization lag (ensure blockchain is fully synced)
 - Firewall blocking coordinator connections (enable Tor bridge mode)
 
-Step 13: Comparing CoinJoin Implementations: Wasabi vs Competitors
+Step 13 - Comparing CoinJoin Implementations: Wasabi vs Competitors
 
 Wasabi isn't the only CoinJoin option. Here's how it compares:
 
@@ -265,7 +265,7 @@ Wasabi Wallet:
 
 JoinMarket:
 - Protocol: Market-based (takers/makers)
-- Fee: Variable (0.1-1% depending on counterparties)
+- Fee - Variable (0.1-1% depending on counterparties)
 - Anonymity Set: Lower (typically 5-10)
 - Supported Assets: Bitcoin only
 - Platforms: Command-line, advanced users
@@ -295,13 +295,13 @@ Cost comparison for 0.1 BTC at $4,300/BTC:
 - Wasabi: $1.30-$2.15 + network fee (~$2-$3)
 - JoinMarket: $4.30-$43 + network fee (highly variable)
 - Samourai: $2.15 + network fee
-- Zcash: Just network fee (~$0.10)
+- Zcash - Just network fee (~$0.10)
 
-Step 14: Understand WabiSabi Protocol Technical Details
+Step 14 - Understand WabiSabi Protocol Technical Details
 
 The WabiSabi protocol improves upon original CoinJoin by eliminating the coordinator's ability to learn which outputs belong to which inputs:
 
-Key Innovation: Blinded Output Registration
+Key Innovation - Blinded Output Registration
 
 In original CoinJoin:
 1. Coordinator sees all inputs → knows which belong to whom
@@ -317,16 +317,16 @@ In WabiSabi:
 ```
 Traditional CoinJoin:
 User A input: 1 BTC → Coordinator → (sees it's User A)
-User A output: 1 BTC ← Coordinator → (could track)
+User A output - 1 BTC ← Coordinator → (could track)
 
 WabiSabi CoinJoin:
 User A input: 1 BTC encrypted → Coordinator → (doesn't know it's A)
-User A output: 1 BTC blinded → Coordinator → (no linkage possible)
+User A output - 1 BTC blinded → Coordinator → (no linkage possible)
 ```
 
 This means even if the Wasabi coordinator is compromised or turns hostile, they cannot deanonymize your mixing activity.
 
-Step 15: Optimal CoinJoin Strategies by Bitcoin Amount
+Step 15 - Optimal CoinJoin Strategies by Bitcoin Amount
 
 Different strategies work best depending on how much Bitcoin you're mixing:
 
@@ -360,7 +360,7 @@ Very Large Amounts (1+ BTC / $4300+):
 - Cost: $50-$150 in fees
 - Time: Multiple days to weeks
 
-Step 16: Avoiding On-Chain Deanonymization After Mixing
+Step 16 - Avoiding On-Chain Deanonymization After Mixing
 
 Mixing is just the first step. Post-mix behavior can undo all privacy gains:
 
@@ -377,9 +377,9 @@ Post-mix workflow:
 
 Day 1: Mix coins (anonymity set 50+)
  ↓
-Days 2-3: Wait (avoid immediate spending pattern)
+Days 2-3 - Wait (avoid immediate spending pattern)
  ↓
-Day 4+: Spend only 1-2 mixed outputs per transaction
+Day 4+ - Spend only 1-2 mixed outputs per transaction
  Never consolidate mixed outputs
  Never mix with unmixed coins later
  Use Tor when checking address status
@@ -395,10 +395,10 @@ torify curl -s https://blockstream.info/api/address/your-mixed-address | \
 But DON'T check from your regular IP
 And DON'T check frequently (monitoring is suspicious)
 
-Instead: Trust that mixing worked and move on
+Instead - Trust that mixing worked and move on
 ```
 
-Step 17: Regulatory and Legal Considerations
+Step 17 - Regulatory and Legal Considerations
 
 CoinJoin legality varies by jurisdiction. This is critical:
 

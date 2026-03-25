@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best Privacy Focused Wiki for Recording Penetration Test ..."
-description: "A comprehensive guide to the best privacy-focused wiki platforms for security professionals to document penetration test findings with end-to-end encryp..."
+description: "A complete guide to the best privacy-focused wiki platforms for security professionals to document penetration test findings with end-to-end encryp..."
 date: 2026-03-22
 author: "theluckystrike"
 permalink: /best-privacy-focused-wiki-for-recording-penetration-test-findings-securely-2026/

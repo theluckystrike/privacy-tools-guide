@@ -35,13 +35,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Client Portfolio Data Sensitivity
+Step 1 - Understand Client Portfolio Data Sensitivity
 
 Client portfolio data includes personally identifiable information (PII), financial account numbers, investment holdings, transaction history, and wealth statements. This data falls under various regulatory frameworks depending on your jurisdiction, including GDPR, CCPA, and financial sector specific regulations like SEC Rule 17a-4 or MiFID II.
 
 Before implementing any privacy controls, identify where client data flows through your systems. Map data stores, API endpoints, and backup locations. This data inventory forms the foundation for your protection strategy.
 
-Step 2: Encryption at Rest
+Step 2 - Encryption at Rest
 
 The first line of defense involves encrypting stored data. For financial advisor applications, use AES-256 encryption for database fields containing sensitive client information.
 
@@ -79,7 +79,7 @@ encrypted_account = portfolio_enc.encrypt_field("1234567890")
 
 Store the master encryption key separately from your application, preferably in a hardware security module (HSM) or dedicated secrets manager. Never commit encryption keys to source control.
 
-Step 3: Database-Level Protection
+Step 3 - Database-Level Protection
 
 For PostgreSQL databases, enable pgcrypto extension for column-level encryption:
 
@@ -105,7 +105,7 @@ GENERATED ALWAYS AS (
 
 This approach ensures that even database administrators cannot read sensitive values without the encryption key.
 
-Step 4: Access Control Implementation
+Step 4 - Access Control Implementation
 
 Implement role-based access control (RBAC) to restrict data access based on advisor-client relationships. Each advisor should only access their assigned client portfolios.
 
@@ -205,7 +205,7 @@ def get_client_holdings(client_id):
 
 Configure your logging system to write audit entries to a tamper-evident storage system, such as Write-Once-Read-Many (WORM) drives or a dedicated audit logging service with integrity verification.
 
-Step 5: Data Minimization and Retention
+Step 5 - Data Minimization and Retention
 
 Implement automatic data retention policies to reduce your exposure surface. Client data should only be stored as long as necessary for business purposes and regulatory requirements.
 
@@ -216,7 +216,7 @@ from sqlalchemy.engine import Engine
 
 @event.listens_for(Engine, "before_cursor_execute")
 def apply_retention_policy(conn, statement, parameters, context, executemany):
-    """Example: Automatically archive client data older than retention period."""
+    """Example - Automatically archive client data older than retention period."""
     retention_days = 2555  # 7 years for financial records
 
     # This would be implemented as a scheduled job, not on every query
@@ -238,7 +238,7 @@ class RetentionPolicy:
         self._delete_from_active(table, record_id)
 ```
 
-Step 6: Secure the Network and Transport
+Step 6 - Secure the Network and Transport
 
 Ensure all data transmission uses TLS 1.3 or higher. Configure your web server to enforce secure connections:
 
@@ -300,7 +300,7 @@ GDPR and CCPA apply when you serve clients in the EU or California. Both regulat
 
 Before building any system, identify which regulations apply to your advisory practice and document how your technical implementation satisfies each requirement. This documentation becomes evidence during regulatory examinations.
 
-Step 7: Multi-Factor Authentication and Session Management
+Step 7 - Multi-Factor Authentication and Session Management
 
 Financial advisor applications require strong authentication controls. Passwords alone are insufficient given the sensitivity of portfolio data and the value of these accounts to attackers.
 
@@ -361,7 +361,7 @@ class SessionManager:
 
 Enforce MFA enrollment during onboarding. Advisors who bypass enrollment at signup rarely complete it later. Make MFA mandatory at the application layer, not optional in a settings menu.
 
-Step 8: Client Data Sharing and Third-Party Integration Controls
+Step 8 - Client Data Sharing and Third-Party Integration Controls
 
 Financial advisors frequently share client data with custodians, portfolio analysis platforms, and compliance systems. Each integration is a potential privacy exposure. Implement a structured approach to third-party data sharing that limits what each integration receives.
 

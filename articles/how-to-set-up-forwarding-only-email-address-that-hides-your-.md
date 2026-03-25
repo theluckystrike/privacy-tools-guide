@@ -20,7 +20,7 @@ Every developer knows the pain of exposing their primary email address across th
 
 3.
 - When you use a forwarding-only address: messages sent to the disposable alias arrive at your real inbox automatically.
-- First: use unique addresses for each service or purpose.
+- First - use unique addresses for each service or purpose.
 - Replacement: Create a new address for future use with that service
 6.
 
@@ -51,7 +51,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Set Up Forwarding with Popular Email Providers
+Step 1 - Set Up Forwarding with Popular Email Providers
 
 Gmail and Google Workspace
 
@@ -62,8 +62,8 @@ For developers who prefer programmatic control, Gmail's filters provide powerful
 Here's an example filter configuration for forwarding newsletters:
 
 ```
-Matches: subject:(newsletter OR updates OR weekly)
-Actions: Forward to your-real-email@example.com, Delete it
+Matches - subject:(newsletter OR updates OR weekly)
+Actions - Forward to your-real-email@example.com, Delete it
 ```
 
 Fastmail
@@ -80,7 +80,7 @@ To set this up, purchase a domain from any registrar, then configure the DNS rec
 
 For example, if you own `myprivacy.dev`, you could use addresses like `github@myprivacy.dev`, `twitter@myprivacy.dev`, or `newsletter@myprivacy.dev`. All messages sent to these addresses forward automatically to your primary inbox.
 
-Step 2: Automate Forwarding with Custom Scripts
+Step 2 - Automate Forwarding with Custom Scripts
 
 For advanced use cases, you can set up custom forwarding scripts using email handling libraries. Here's a Python example using the `imaplib` module to fetch and forward emails:
 
@@ -154,18 +154,18 @@ Setting up email forwarding on a custom domain:
 
 Add MX record to your DNS:
 Type: MX
-Priority: 10
-Value: mail.forwardemail.net
+Priority - 10
+Value - mail.forwardemail.net
 
 Add TXT record for SPF (allows forwarding service to send emails)
-Type: TXT
-Name: @
-Value: v=spf1 include:forwardemail.net ~all
+Type - TXT
+Name - @
+Value - v=spf1 include:forwardemail.net ~all
 
 Add DKIM record for signed emails
-Type: TXT
-Name: default._domainkey
-Value: [provided by forwarding service]
+Type - TXT
+Name - default._domainkey
+Value - [provided by forwarding service]
 
 Verify domain setup
 dig yourdomain.com MX
@@ -190,7 +190,7 @@ This approach is superior to email alias services because:
 3. You can migrate forwarding services without changing addresses
 4. You can receive replies (some services block this)
 
-Step 3: Forwarding with Proton Mail and ProtonPlus
+Step 3 - Forwarding with Proton Mail and ProtonPlus
 
 Proton Mail offers a particularly privacy-friendly forwarding setup through ProtonPlus subscription. Unlike consumer email services that track your behavior, Proton doesn't log IP addresses or build behavioral profiles.
 
@@ -207,7 +207,7 @@ forwarding address → encrypted to your main Proton inbox
 
 For maximum security, consider using Proton Mail's forwarding combined with their VPN to mask your location when accessing the forwarding inbox.
 
-Step 4: Spam Filtering and List Management
+Step 4 - Spam Filtering and List Management
 
 A critical challenge with forwarding-only addresses is that they become spam targets. Implement aggressive filtering at multiple levels:
 
@@ -262,20 +262,20 @@ class ForwardingSpamFilter:
 Implement these rules at the forwarding service level before they reach your real inbox:
 
 ```bash
-Gmail filter example: Block common spam patterns
-Create a filter matching: from:(@payday-loans.ru OR @crypto-wallet.io)
-Action: Delete it
+Gmail filter example - Block common spam patterns
+Create a filter matching - from:(@payday-loans.ru OR @crypto-wallet.io)
+Action - Delete it
 
-Fastmail rule example: Block based on sender reputation
-Create rule: If message has SPAM_SCORE > 0.8
-Then: Delete it, Skip inbox
+Fastmail rule example - Block based on sender reputation
+Create rule - If message has SPAM_SCORE > 0.8
+Then - Delete it, Skip inbox
 
-Custom domain forwarding: Use service's advanced rules
-Block if: Sender not in whitelist AND List-Unsubscribe header missing
-Action: Archive to spam folder
+Custom domain forwarding - Use service's advanced rules
+Block if - Sender not in whitelist AND List-Unsubscribe header missing
+Action - Archive to spam folder
 ```
 
-Step 5: Monitor and Auditing Forwarding Activity
+Step 5 - Monitor and Auditing Forwarding Activity
 
 Keep detailed records of which services have which forwarding addresses. This helps you identify which company sold or leaked your information when spam targeting increases:
 
@@ -352,7 +352,7 @@ print(tracker.identify_leaky_services())
 
 Use this tracker to inform your decisions about which services deserve your real contact information and which are too risky.
 
-Step 6: Recovery and Deletion Procedures
+Step 6 - Recovery and Deletion Procedures
 
 When a forwarding address is compromised, having a clear recovery procedure minimizes damage:
 
@@ -390,7 +390,7 @@ echo "Update your account at service.com to use: $NEW_ADDRESS"
 echo "Monitoring for leaked address abuse..."
 ```
 
-Step 7: Integration with Password Managers
+Step 7 - Integration with Password Managers
 
 Store your forwarding email setup in a password manager alongside service credentials. This provides:
 
@@ -410,7 +410,7 @@ Store your forwarding email setup in a password manager alongside service creden
 }
 ```
 
-Step 8: Forwarding vs. Email Aliasing: When to Use Each
+Step 8 - Forwarding vs. Email Aliasing: When to Use Each
 
 Use forwarding addresses when:
 - You want to hide your real email from the service

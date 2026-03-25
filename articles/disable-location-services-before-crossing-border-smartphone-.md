@@ -21,13 +21,13 @@ Crossing international borders with a smartphone exposes your location history, 
 Table of Contents
 
 - [Why Disable Location Services Before Border Crossing](#why-disable-location-services-before-border-crossing)
-- [Android: Location Disabling Methods](#android-location-disabling-methods)
+- [Android - Location Disabling Methods](#android-location-disabling-methods)
 - [iOS: Location Services Control Methods](#ios-location-services-control-methods)
 - [Additional Privacy Measures](#additional-privacy-measures)
 - [Verification Steps](#verification-steps)
 - [After Crossing the Border](#after-crossing-the-border)
 - [Technical Considerations for Developers](#technical-considerations-for-developers)
-- [Network Location Data: The Hidden Exposure](#network-location-data-the-hidden-exposure)
+- [Network Location Data - The Hidden Exposure](#network-location-data-the-hidden-exposure)
 - [Pre-Border Data Cleaning Procedures](#pre-border-data-cleaning-procedures)
 - [Customs Authority Data Seizure Preparedness](#customs-authority-data-seizure-preparedness)
 - [Regional Variations in Location Privacy](#regional-variations-in-location-privacy)
@@ -46,9 +46,9 @@ The primary risks include:
 
 Taking proactive steps to minimize location data before crossing borders reduces your digital footprint and protects your privacy.
 
-Android: Location Disabling Methods
+Android - Location Disabling Methods
 
-Method 1: System-Level Location Toggle
+Method 1 - System-Level Location Toggle
 
 The most straightforward approach uses Android's built-in location controls:
 
@@ -58,7 +58,7 @@ The most straightforward approach uses Android's built-in location controls:
 
 This disables GPS, Wi-Fi scanning, and Bluetooth location for all apps. However, some system services may still collect location data.
 
-Method 2: Per-App Location Permission Revocation
+Method 2 - Per-App Location Permission Revocation
 
 For developers who need certain apps functional while blocking others:
 
@@ -81,7 +81,7 @@ for package in $(adb shell pm list packages -3 | cut -d: -f2); do
 done
 ```
 
-Method 3: Disable Location Services at the System Level
+Method 3 - Disable Location Services at the System Level
 
 For devices with root access, you can disable the location service entirely:
 
@@ -95,7 +95,7 @@ su -c "settings put secure location_mode 0"
 
 This prevents any application from accessing location data, including system services.
 
-Method 4: Developer Options - Mock Location
+Method 4 - Developer Options - Mock Location
 
 Prevent apps from detecting mock locations while ensuring genuine location services remain off:
 
@@ -105,7 +105,7 @@ Prevent apps from detecting mock locations while ensuring genuine location servi
 
 iOS: Location Services Control Methods
 
-Method 1: System-Wide Location Services Toggle
+Method 1 - System-Wide Location Services Toggle
 
 iOS provides granular control over location services:
 
@@ -115,7 +115,7 @@ iOS provides granular control over location services:
 
 This disables location for all apps. Note that some system features (Emergency SOS, Find My) may still function with limited location capabilities.
 
-Method 2: Individual App Location Control
+Method 2 - Individual App Location Control
 
 For users who want to allow certain apps while blocking others:
 
@@ -123,7 +123,7 @@ For users who want to allow certain apps while blocking others:
 2. Review the list of apps with location access
 3. Set each app to "Never" or "While Using" as appropriate
 
-Method 3: Significant Locations and System Services
+Method 3 - Significant Locations and System Services
 
 iOS maintains "Significant Locations" data that requires separate clearing:
 
@@ -168,7 +168,7 @@ Verification Steps
 After disabling location services, verify your device isn't leaking location data:
 
 ```bash
-Android: Check location providers status
+Android - Check location providers status
 adb shell settings get secure location_providers_allowed
 
 Verify GPS is disabled
@@ -210,11 +210,11 @@ async function checkLocationPermission() {
 
 For server-side applications processing border-crossing data, implement data minimization principles, only collect location data when explicitly necessary, and implement automatic deletion policies.
 
-Network Location Data: The Hidden Exposure
+Network Location Data - The Hidden Exposure
 
 Beyond GPS, your device leaks location through multiple channels:
 
-Wi-Fi Scanning Data: Even with location services disabled, Android continuously scans for nearby Wi-Fi networks. Each Wi-Fi network has a unique MAC address, and combined with signal strength, creates a fingerprint of your location:
+Wi-Fi Scanning Data - Even with location services disabled, Android continuously scans for nearby Wi-Fi networks. Each Wi-Fi network has a unique MAC address, and combined with signal strength, creates a fingerprint of your location:
 
 ```bash
 On Android, Wi-Fi scanning runs independently
@@ -227,7 +227,7 @@ adb shell settings put secure wifi_scan_always_enabled 0
 
 Airports, hotels, and border crossings all have distinctive Wi-Fi signatures. A customs agent with access to your device's recent Wi-Fi scans can reconstruct your travel movements.
 
-Cellular Tower Information: Your SIM card registers with nearby cell towers. This data lives in:
+Cellular Tower Information - Your SIM card registers with nearby cell towers. This data lives in:
 - Your carrier's records (they keep 12-36 months of tower location data)
 - Device logs (MDN, IMEI, IMSI numbers)
 
@@ -235,12 +235,12 @@ Removing the SIM card before crossing borders prevents this registration. Many t
 
 ```
 iOS: Settings → Cellular → Select SIM → Turn Off
-Android: Settings → Network → SIM cards → Disable [SIM name]
+Android - Settings → Network → SIM cards → Disable [SIM name]
 ```
 
 Then re-enable after clearing borders.
 
-Bluetooth Beacons: Some areas use BLE (Bluetooth Low Energy) beacons for location tracking and analytics. Your device continuously scans for these:
+Bluetooth Beacons - Some areas use BLE (Bluetooth Low Energy) beacons for location tracking and analytics. Your device continuously scans for these:
 
 ```bash
 Disable Bluetooth entirely (most effective)
@@ -249,7 +249,7 @@ adb shell settings put secure bluetooth_on 0
 Or use airplane mode with selective radios off
 ```
 
-Protocol Analysis: Even if you disable location services, apps may infer location by analyzing your usage patterns. A dating app used at consistent times and places reveals pattern-of-life information. Delete apps that track location implicitly (dating, social media, fitness tracking) before crossing borders.
+Protocol Analysis - Even if you disable location services, apps may infer location by analyzing your usage patterns. A dating app used at consistent times and places reveals pattern-of-life information. Delete apps that track location implicitly (dating, social media, fitness tracking) before crossing borders.
 
 Pre-Border Data Cleaning Procedures
 
@@ -335,11 +335,11 @@ Location services disabled provides NO protection against physical examination. 
 
 Practical Preparedness:
 
-1. Create Secondary Device Persona: Use a separate device with minimal apps and data. Cross borders with this "clean" device while leaving your main device with a trusted person or at home.
+1. Create Secondary Device Persona - Use a separate device with minimal apps and data. Cross borders with this "clean" device while leaving your main device with a trusted person or at home.
 
-2. Encrypted Containers: Use tools like VeraCrypt (Android via Termux) or cryptomator to create encrypted data vaults. Keep sensitive documents in encrypted containers with strong passwords.
+2. Encrypted Containers - Use tools like VeraCrypt (Android via Termux) or cryptomator to create encrypted data vaults. Keep sensitive documents in encrypted containers with strong passwords.
 
-3. Cloud-First Architecture: Store sensitive documents in encrypted cloud storage (ProtonDrive, Tresorit) rather than on-device. Delete local copies 24 hours before border crossing.
+3. Cloud-First Architecture - Store sensitive documents in encrypted cloud storage (ProtonDrive, Tresorit) rather than on-device. Delete local copies 24 hours before border crossing.
 
 4. Legal Preparation:
  - Memorize your unlock passcode (don't rely on biometric that authorities can force)
@@ -387,7 +387,7 @@ Post-Border Forensic Check
 After clearing customs, verify your device wasn't compromised:
 
 ```bash
-Android: Check for unexpected apps installed
+Android - Check for unexpected apps installed
 adb shell pm list packages -3  # Third-party apps
 Compare against your baseline list
 

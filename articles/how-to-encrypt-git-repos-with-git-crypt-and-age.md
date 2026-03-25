@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install git-crypt
+Step 1 - Install git-crypt
 
 ```bash
 macOS
@@ -41,7 +41,7 @@ Verify
 git-crypt --version
 ```
 
-Step 2: Initialize git-crypt in a Repository
+Step 2 - Initialize git-crypt in a Repository
 
 ```bash
 cd /path/to/your-repo
@@ -54,7 +54,7 @@ git-crypt export-key ~/backup/git-crypt-key.bin
 chmod 600 ~/backup/git-crypt-key.bin
 ```
 
-Step 3: Configure Which Files Get Encrypted
+Step 3 - Configure Which Files Get Encrypted
 
 Edit or create .gitattributes in the repo root:
 
@@ -88,16 +88,16 @@ git show HEAD:secrets/api-keys.json  # Shows encrypted binary
 git-crypt status                      # Shows which files are encrypted
 ```
 
-Step 4: Add Team Members via GPG Keys
+Step 4 - Add Team Members via GPG Keys
 
 git-crypt multi-user model uses GPG: each team member GPG public key can unlock the repo.
 
 ```bash
-Each team member: generate or export their GPG public key
+Each team member - generate or export their GPG public key
 gpg --gen-key
 gpg --export --armor alice@example.com > alice.pub
 
-Repo admin: import the key and add them
+Repo admin - import the key and add them
 gpg --import alice.pub
 git-crypt add-gpg-user alice@example.com
 
@@ -116,22 +116,22 @@ git-crypt unlock  # Uses her GPG private key automatically
 cat secrets/api-keys.json  # Now readable
 ```
 
-Step 5: GPG-Free Workflow: Use a Shared Key File
+Step 5 - GPG-Free Workflow: Use a Shared Key File
 
 For teams that want to avoid GPG complexity, share the symmetric key via a secrets manager:
 
 ```bash
-Repo admin: export key and store in 1Password / Vault / AWS Secrets Manager
+Repo admin - export key and store in 1Password / Vault / AWS Secrets Manager
 git-crypt export-key - | base64 > /tmp/git-crypt-key.b64
 Store this base64 string in your secrets manager
 
-Team member: retrieve and unlock
+Team member - retrieve and unlock
 your-secrets-tool get git-crypt-key | base64 -d > /tmp/git-crypt-key.bin
 git-crypt unlock /tmp/git-crypt-key.bin
 shred -u /tmp/git-crypt-key.bin
 ```
 
-Step 6: Configure CI/CD Integration
+Step 6 - Configure CI/CD Integration
 
 Store the git-crypt key as a base64 CI secret and unlock during the pipeline:
 
@@ -173,7 +173,7 @@ unlock_and_deploy:
     - ./deploy.sh
 ```
 
-Step 7: Encrypt Individual Files with age
+Step 7 - Encrypt Individual Files with age
 
 For files you want to keep out of the repo entirely, encrypt them with age before committing:
 
@@ -184,7 +184,7 @@ or: go install filippo.io/age/cmd/age@latest
 
 Generate a key pair
 age-keygen -o ~/.age/key.txt
-Public key printed to stdout: age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5sfn9aqmcac8p
+Public key printed to stdout - age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5sfn9aqmcac8p
 
 Encrypt a secrets file
 age -r age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5sfn9aqmcac8p \
@@ -200,7 +200,7 @@ Decrypt
 age -d -i ~/.age/key.txt -o secrets/prod-env.txt secrets/prod-env.age
 ```
 
-Step 8: Multi-Recipient age Encryption for Teams
+Step 8 - Multi-Recipient age Encryption for Teams
 
 Encrypt to multiple recipients -- anyone with their private key can decrypt:
 
@@ -233,25 +233,25 @@ age $(grep -v '^#' recipients.txt | sed 's/^/-r /') \
     -o secrets/prod-env.age secrets/prod-env.txt
 ```
 
-Step 9: Audit and Rotate Keys
+Step 9 - Audit and Rotate Keys
 
 ```bash
 List all git-crypt encrypted files
 git-crypt status -e | head -20
 
-For age: stop including the departing user's key in future encryptions
+For age - stop including the departing user's key in future encryptions
 Re-encrypt existing files with new recipient list
 age -r age1alice... -r age1bob... \
     -o secrets/prod-env.age \
     <(age -d -i ~/.age/key.txt secrets/prod-env.age.bak)
 
-Rotate git-crypt key: remove user's key blob and reinitialize
+Rotate git-crypt key - remove user's key blob and reinitialize
 rm -rf .git-crypt/keys/default/0/<removed-user-key-id>/
 git-crypt init
 All remaining users must re-add themselves
 ```
 
-Step 10: Preventing Accidental Plaintext Commits
+Step 10 - Preventing Accidental Plaintext Commits
 
 The biggest failure mode for git-crypt is committing a secret file before adding the filter attribute to `.gitattributes`. Once the plaintext is in history, you need a history rewrite. expensive and disruptive. Add a pre-commit hook to catch this before it happens:
 
@@ -297,29 +297,29 @@ Migrating Existing Secrets into git-crypt
 If secrets are already in your repository history in plaintext, you need to purge them before adding encryption. The safest approach:
 
 ```bash
-Step 1: Rotate the actual secrets first. assume they are compromised
+Step 1 - Rotate the actual secrets first. assume they are compromised
 (change API keys, rotate certs, generate new passwords)
 
-Step 2: Remove the file from history using git-filter-repo
+Step 2 - Remove the file from history using git-filter-repo
 pip install git-filter-repo
 git filter-repo --path secrets/api-keys.json --invert-paths
 
-Step 3: Add git-crypt attributes
+Step 3 - Add git-crypt attributes
 echo 'secrets/api-keys.json filter=git-crypt diff=git-crypt' >> .gitattributes
 git-crypt init
 git-crypt export-key ~/backup/git-crypt-key.bin
 
-Step 4: Add the new (rotated) secret file and commit
+Step 4 - Add the new (rotated) secret file and commit
 git add .gitattributes secrets/api-keys.json
 git commit -m "Encrypt api-keys.json with git-crypt"
 
-Step 5: Force push the rewritten history
+Step 5 - Force push the rewritten history
 git push --force-with-lease origin main
 ```
 
 Alert all collaborators to re-clone after a history rewrite. Any stale clones can re-introduce the purged files if pushed again.
 
-Step 11: Use age-plugin-yubikey for Hardware Key Protection
+Step 11 - Use age-plugin-yubikey for Hardware Key Protection
 
 For higher-assurance environments, the `age-plugin-yubikey` plugin lets you store age private keys on a YubiKey rather than on disk:
 
@@ -329,7 +329,7 @@ cargo install age-plugin-yubikey
 
 Initialize a new age identity on the YubiKey
 age-plugin-yubikey --generate --slot 1
-Outputs recipient: age1yubikey1q...
+Outputs recipient - age1yubikey1q...
 
 Encrypt to the YubiKey recipient
 age -r age1yubikey1q... -o secrets/prod.age secrets/prod.txt
@@ -340,7 +340,7 @@ age -d -i age-plugin-yubikey: secrets/prod.age
 
 YubiKey-backed age identities are particularly useful for repository administrators who hold the master encryption key. Day-to-day CI pipelines use the shared symmetric git-crypt key, while the YubiKey-secured age identity protects the key export itself.
 
-Step 12: Team Offboarding: Revoking Access Without Rekeying
+Step 12 - Team Offboarding: Revoking Access Without Rekeying
 
 When a team member leaves, git-crypt has no native revocation. you cannot simply remove their GPG key and have them locked out of future commits, because they already have a copy of the decrypted history. The correct procedure:
 
@@ -349,7 +349,7 @@ When a team member leaves, git-crypt has no native revocation. you cannot simply
 ```bash
 Find their GPG key fingerprint
 gpg --list-keys departing@example.com
-FINGERPRINT: ABCD1234...
+FINGERPRINT - ABCD1234...
 
 Remove their key blob
 rm .git-crypt/keys/default/0/ABCD1234.gpg

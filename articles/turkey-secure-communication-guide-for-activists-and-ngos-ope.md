@@ -32,7 +32,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: End-to-End Encrypted Messaging
+Step 1 - End-to-End Encrypted Messaging
 
 Signal remains the gold standard for encrypted messaging. Unlike WhatsApp, Signal's protocol is open-source and audited, with minimal metadata retention. However, Signal requires a phone number, which creates identification risk.
 
@@ -93,7 +93,7 @@ location / {
 }
 ```
 
-Step 2: Network Resilience: Tor and Mesh Networks
+Step 2 - Network Resilience: Tor and Mesh Networks
 
 Tor Onion Services
 
@@ -158,7 +158,7 @@ sudo apt install shadowsocks-libev
 
 Port 443 with TLS obfuscation is the most resilient option, blocking it would disable standard HTTPS traffic, which carries severe economic and political costs for any government.
 
-Step 3: Secure File Transfer and Storage
+Step 3 - Secure File Transfer and Storage
 
 Onion-Share for Sensitive Document Transfer
 
@@ -180,7 +180,7 @@ Avoid US-based cloud services with questionable data disclosure policies. Tresor
 
 For self-hosted alternatives, Nextcloud with end-to-end encrypted folders provides fine-grained control. Deploy on a server outside Turkey and access through a Tor onion service address for maximum resistance to blocking.
 
-Step 4: Operational Security Practices
+Step 4 - Operational Security Practices
 
 Device Security Fundamentals
 
@@ -234,7 +234,7 @@ Also enable HSTS to prevent SSL stripping attacks, which can expose onion servic
 add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
 ```
 
-Step 5: Emergency Protocols
+Step 5 - Emergency Protocols
 
 Communication Contingency Planning
 

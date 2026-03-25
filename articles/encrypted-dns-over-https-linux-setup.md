@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Method 1: systemd-resolved with DoH
+Step 1 - Method 1: systemd-resolved with DoH
 
 Most modern Debian/Ubuntu and Fedora systems already use `systemd-resolved`. Check:
 
@@ -73,9 +73,9 @@ resolvectl status | grep -E "(DNS Server|DNS over TLS|DNSSEC)"
 
 Expected output:
 ```
-Current DNS Server: 1.1.1.1#cloudflare-dns.com
-DNS over TLS setting: yes
-DNSSEC setting: yes
+Current DNS Server - 1.1.1.1#cloudflare-dns.com
+DNS over TLS setting - yes
+DNSSEC setting - yes
 ```
 
 Test a lookup and confirm it works:
@@ -95,7 +95,7 @@ dig example.com
 
 You should see no port 53 traffic if DoH is working correctly. All queries should appear on port 443.
 
-Step 2: Method 2: dnscrypt-proxy
+Step 2 - Method 2: dnscrypt-proxy
 
 `dnscrypt-proxy` supports DoH, DNSCrypt, and ODoH (Oblivious DoH). It runs as a local resolver on `127.0.0.1:53` and proxies queries through encrypted channels.
 
@@ -194,7 +194,7 @@ Check which server is actually being used:
 dnscrypt-proxy -resolve example.com
 ```
 
-Step 3: Method 3: AdGuard Home (Self-Hosted)
+Step 3 - Method 3: AdGuard Home (Self-Hosted)
 
 AdGuard Home is a DNS server with DoH support, ad blocking, and a web interface. Good for households or small networks.
 
@@ -241,7 +241,7 @@ Lock the file against NetworkManager overwrites:
 sudo chattr +i /etc/resolv.conf
 ```
 
-Step 4: Choose a DoH Provider
+Step 4 - Choose a DoH Provider
 
 | Provider | Logs | DNSSEC | Filtering | Notes |
 |----------|------|--------|-----------|-------|
@@ -252,7 +252,7 @@ Step 4: Choose a DoH Provider
 
 Avoid using your ISP's or Google's DNS for privacy. they log queries.
 
-Step 5: Verify the Full Setup
+Step 5 - Verify the Full Setup
 
 Check DNS resolution is working:
 
@@ -277,7 +277,7 @@ DNS Resolution Fails After Configuration
 If you lose DNS resolution after enabling DoH, the most likely cause is a configuration syntax error:
 
 ```bash
-Temporary fix: use a direct DNS server
+Temporary fix - use a direct DNS server
 echo "nameserver 1.1.1.1" | sudo tee /etc/resolv.conf
 
 Then review your configuration files for typos
@@ -306,9 +306,9 @@ NetworkManager frequently overwrites `/etc/resolv.conf`. Prevent this:
 dns=systemd-resolved
 ```
 
-Then restart: `sudo systemctl restart NetworkManager`
+Then restart - `sudo systemctl restart NetworkManager`
 
-Performance Comparison: DoH vs Standard DNS
+Performance Comparison - DoH vs Standard DNS
 
 | Metric | Standard DNS (UDP 53) | DNS over TLS | DNS over HTTPS |
 |--------|----------------------|--------------|----------------|

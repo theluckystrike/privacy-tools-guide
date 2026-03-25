@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Network Discovery for Camera Detection
+Step 1 - Network Discovery for Camera Detection
 
 Modern IP cameras and smart devices frequently broadcast on your local network. Scanning your network reveals connected devices that may include hidden cameras.
 
@@ -64,7 +64,7 @@ The `arp-scan` tool provides an alternative method for discovering network devic
 sudo arp-scan --localnet | grep -i camera
 ```
 
-Step 2: Detecting Wireless Cameras with RF Analysis
+Step 2 - Detecting Wireless Cameras with RF Analysis
 
 Hidden wireless cameras transmit RF signals. Software-defined radio (SDR) tools help identify these transmissions.
 
@@ -77,7 +77,7 @@ Install gqrx
 brew install gqrx
 
 Scan for common camera frequencies
-Typical wireless camera bands: 1.2 GHz, 2.4 GHz, 5.8 GHz
+Typical wireless camera bands - 1.2 GHz, 2.4 GHz, 5.8 GHz
 ```
 
 Using inspectrum for Signal Analysis
@@ -90,7 +90,7 @@ Analyze captured RTL-SDR samples
 inspectrum recording.iq -s 2.4e6
 ```
 
-Step 3: Microphone Detection Methods
+Step 3 - Microphone Detection Methods
 
 Detecting hidden microphones requires different approaches depending on their power source and transmission method.
 
@@ -159,7 +159,7 @@ Use tcpdump to capture DNS queries (devices often use DNS to ping home)
 sudo tcpdump -i en0 -n | grep -E "(amazon|google|apple)"
 ```
 
-Step 4: Thermal Imaging Detection
+Step 4 - Thermal Imaging Detection
 
 Active electronic devices generate heat. Hidden cameras and microphones produce thermal signatures visible through thermal imaging cameras:
 
@@ -180,7 +180,7 @@ Analyze temperature differences in the image
 Hotspots may indicate hidden electronics
 ```
 
-Step 5: Physical Inspection Checklist
+Step 5 - Physical Inspection Checklist
 
 Technical tools complement physical searches. Perform these checks:
 
@@ -190,7 +190,7 @@ Technical tools complement physical searches. Perform these checks:
 4. Light fixtures: Examine bulbs and fixtures
 5. Books and decorations: Small lenses may hide in unexpected places
 
-Step 6: Build a Detection Toolkit
+Step 6 - Build a Detection Toolkit
 
 Create a portable detection kit:
 
@@ -206,7 +206,7 @@ RTL-SDR tools
 brew install rtl-sdr cubicsdr
 ```
 
-Step 7: Detecting Cameras with Lens Reflection Scanning
+Step 7 - Detecting Cameras with Lens Reflection Scanning
 
 Hidden camera lenses reflect light in a distinctive way. Camera lenses are made of glass with a specific refractive index that reflects a small amount of incoming light back toward the source, even when the device is turned off. This optical property makes cameras detectable with a bright light source even when they have no network presence and emit no RF signal.
 
@@ -251,7 +251,7 @@ log_room_scan("hotel_room_214", positions)
 
 Systematic documentation is useful when staying in accommodations repeatedly, or when a concern needs to be reported to a property manager or law enforcement with specific locations noted.
 
-Step 8: Hardening Against Smart Device Surveillance
+Step 8 - Hardening Against Smart Device Surveillance
 
 Many homes now contain dozens of connected devices: smart TVs, voice assistants, robot vacuums, baby monitors, and security cameras. These devices present a different challenge from covert surveillance equipment, they are openly installed but may be collecting more data than their owners realize.
 
@@ -265,7 +265,7 @@ First, identify device IP from your router's DHCP table
 sudo tcpdump -i eth0 host 192.168.1.87 -n -v 2>/dev/null |   grep -E "(amazon|alexa|google|siri|microsoft)" |   head -50
 
 Use Wireshark for more detailed analysis
-Filter: ip.addr == 192.168.1.87 && tcp
+Filter - ip.addr == 192.168.1.87 && tcp
 ```
 
 Segment smart devices onto a separate VLAN to limit their access to other devices and your main network:
@@ -286,7 +286,7 @@ VLAN 20 - IoT/Smart devices
 
 This network segmentation means a compromised smart device cannot access your computer's file shares, your NAS, or your other trusted devices, even if it is actively running surveillance software.
 
-Step 9: What to Do if You Find a Device
+Step 9 - What to Do if You Find a Device
 
 Discovering a hidden surveillance device in a rented space (hotel room, Airbnb, rental property) requires specific steps. How you handle the discovery affects both your ability to pursue legal remedies and the safety of any evidence.
 

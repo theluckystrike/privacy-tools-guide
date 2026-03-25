@@ -60,13 +60,13 @@ Your hardened network will have:
                  Trusted VLAN    - Updates only
 ```
 
-Architecture Decision: Hardware Requirements
+Architecture Decision - Hardware Requirements
 
-Option A: Dedicated Router (Recommended for Most)
+Option A - Dedicated Router (Recommended for Most)
 
-Hardware: Used enterprise router (Ubiquiti EdgeRouter X, Netgate SG-2100) or mini PC (Intel NUC, Raspberry Pi 4 with cooling)
+Hardware - Used enterprise router (Ubiquiti EdgeRouter X, Netgate SG-2100) or mini PC (Intel NUC, Raspberry Pi 4 with cooling)
 
-Cost: $150, 500 (used) or $300, 800 (new)
+Cost - $150, 500 (used) or $300, 800 (new)
 
 - Full control over all traffic
 - Can run Pi-hole + pfSense together
@@ -78,11 +78,11 @@ Cost: $150, 500 (used) or $300, 800 (new)
 - Moderate learning curve
 - Need to manage two pieces of hardware (modem + router)
 
-Option B: ISP Router with Pi-hole Only
+Option B - ISP Router with Pi-hole Only
 
-Hardware: Keep ISP router + add Raspberry Pi 4 ($50)
+Hardware - Keep ISP router + add Raspberry Pi 4 ($50)
 
-Cost: $50, 100 (if buying Pi-hole only)
+Cost - $50, 100 (if buying Pi-hole only)
 
 - Minimal setup, Pi-hole is simple
 - Least disruptive to existing network
@@ -95,14 +95,14 @@ Cost: $50, 100 (if buying Pi-hole only)
 Option an if you have technical skills. Option B if you want quick wins without major network redesign.
 ---
 
-Component 1: Pi-hole (DNS Filtering & Blocking)
+Component 1 - Pi-hole (DNS Filtering & Blocking)
 
 Table of Contents
 
-- [Component 1: Pi-hole (DNS Filtering & Blocking)](#component-1-pi-hole-dns-filtering-blocking)
-- [Component 2: pfSense or OPNsense (Firewall + VLAN Control)](#component-2-pfsense-or-opnsense-firewall-vlan-control)
-- [Component 3: WireGuard Home VPN (Access Home Network Remotely + Encrypt Upstream)](#component-3-wireguard-home-vpn-access-home-network-remotely-encrypt-upstream)
-- [Component 4: WiFi Access Point Configuration](#component-4-wifi-access-point-configuration)
+- [Component 1 - Pi-hole (DNS Filtering & Blocking)](#component-1-pi-hole-dns-filtering-blocking)
+- [Component 2 - pfSense or OPNsense (Firewall + VLAN Control)](#component-2-pfsense-or-opnsense-firewall-vlan-control)
+- [Component 3 - WireGuard Home VPN (Access Home Network Remotely + Encrypt Upstream)](#component-3-wireguard-home-vpn-access-home-network-remotely-encrypt-upstream)
+- [Component 4 - WiFi Access Point Configuration](#component-4-wifi-access-point-configuration)
 - [Complete Network Diagram (Final Configuration)](#complete-network-diagram-final-configuration)
 - [Monitoring & Maintenance](#monitoring-maintenance)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
@@ -114,13 +114,13 @@ Pi-hole intercepts all DNS queries from your network and blocks trackers before 
 
 Installation
 
-Hardware: Raspberry Pi 4 (4GB RAM minimum), 8GB microSD card
+Hardware - Raspberry Pi 4 (4GB RAM minimum), 8GB microSD card
 
-Cost: ~$50
+Cost - ~$50
 
-Setup Time: 30 minutes
+Setup Time - 30 minutes
 
-Step 1: Download and Flash Operating System
+Step 1 - Download and Flash Operating System
 
 ```bash
 On your laptop, download Raspberry Pi Imager
@@ -128,11 +128,11 @@ https://www.raspberrypi.com/software/
 
 Flash a 64-bit Raspberry Pi OS (Lite version, no GUI needed)
 Insert microSD card into imager
-Select: Raspberry Pi 4 → OS: Raspberry Pi OS (64-bit)
+Select - Raspberry Pi 4 → OS: Raspberry Pi OS (64-bit)
 Write and wait ~5 minutes
 ```
 
-Step 2: Headless Setup (No Monitor Needed)
+Step 2 - Headless Setup (No Monitor Needed)
 
 ```bash
 Create empty file on microSD card's boot partition
@@ -152,7 +152,7 @@ network={
 EOF
 ```
 
-Step 3: Install Pi-hole
+Step 3 - Install Pi-hole
 
 ```bash
 Boot Raspberry Pi with microSD card
@@ -174,23 +174,23 @@ During installation, you'll be prompted for:
 - Upstream DNS servers (see below for recommendations)
 - Database installation (yes, needed for query logging)
 
-Step 4: Configure Upstream DNS
+Step 4 - Configure Upstream DNS
 
 Pi-hole needs upstream DNS servers to query. Use privacy-respecting options:
 
-Option 1: Quad9 (Recommended)
+Option 1 - Quad9 (Recommended)
 - Primary: 9.9.9.9
 - Secondary: 149.112.112.112
 - Blocks malware/phishing automatically
 - Zero-logging, GDPR compliant
 
-Option 2: Cloudflare (1.1.1.1)
+Option 2 - Cloudflare (1.1.1.1)
 - Primary: 1.1.1.1
 - Secondary: 1.0.0.1
 - Faster for most users
 - Blocks CCPA opt-out selling
 
-Option 3: Mullvad DNS
+Option 3 - Mullvad DNS
 - 194.242.2.3
 - Ultra-privacy focused
 - Slower than Quad9/Cloudflare but strongest privacy
@@ -205,7 +205,7 @@ Add:
 Save and restart DNS resolver
 ```
 
-Step 5: Configure DNS Over HTTPS (DoH)
+Step 5 - Configure DNS Over HTTPS (DoH)
 
 By default, Pi-hole queries upstream DNS over unencrypted UDP. ISP can't see what Pi-hole queries specifically, but can infer from traffic patterns.
 
@@ -239,29 +239,29 @@ pihole -q "query.log" | tail -20
 Should show upstream queries via HTTPS tunnel
 ```
 
-Step 6: Point Your Router's DHCP to Pi-hole
+Step 6 - Point Your Router's DHCP to Pi-hole
 
 Now devices need to use Pi-hole as their DNS server. Two approaches:
 
-Approach 1: DHCP Server on Router (Preferred)
+Approach 1 - DHCP Server on Router (Preferred)
 
 In your router's DHCP settings:
 ```
 DHCP → DNS Servers
-Primary: 192.168.1.50 (Pi-hole IP)
-Secondary: 9.9.9.9 (fallback if Pi-hole down)
+Primary - 192.168.1.50 (Pi-hole IP)
+Secondary - 9.9.9.9 (fallback if Pi-hole down)
 ```
 
 This ensures all devices automatically use Pi-hole.
 
-Approach 2: Manual per Device
+Approach 2 - Manual per Device
 
 If router doesn't support custom DHCP DNS:
 - iPhone: Settings → WiFi → Network Info → DNS: Manual, add 192.168.1.50
-- Windows: Settings → Network → Change adapter options → DNS: 192.168.1.50
-- Mac: System Preferences → Network → Advanced → DNS: 192.168.1.50
+- Windows - Settings → Network → Change adapter options → DNS: 192.168.1.50
+- Mac - System Preferences → Network → Advanced → DNS: 192.168.1.50
 
-Step 7: Add Blocklists to Pi-hole
+Step 7 - Add Blocklists to Pi-hole
 
 Pi-hole ships with basic blocklists. For privacy, add aggressive blocklists:
 
@@ -289,7 +289,7 @@ https://v.firebog.net/hosts/static/w3kbl.txt
 
 Too many blocklists cause false positives (legitimate sites blocked). Start with 3, 4, monitor your web traffic for a week, then add more.
 
-Step 8: Check Pi-hole Dashboard
+Step 8 - Check Pi-hole Dashboard
 
 Access the web admin interface:
 
@@ -306,9 +306,9 @@ Dashboard shows:
 
 Example healthy dashboard:
 ```
-Total queries: 2,500
-Blocked: 450 (18%)
-Gravity list domains: 500,000
+Total queries - 2,500
+Blocked - 450 (18%)
+Gravity list domains - 500,000
 
 Top blocked domains:
 - ads.google.com (143 blocks)
@@ -318,27 +318,27 @@ Top blocked domains:
 
 ---
 
-Component 2: pfSense or OPNsense (Firewall + VLAN Control)
+Component 2 - pfSense or OPNsense (Firewall + VLAN Control)
 
 Pi-hole handles DNS filtering. Now add network-level controls: firewall rules, VLAN segmentation, and encrypted DNS to WAN.
 
 Hardware Selection
 
-Option A: Netgate SG-2100 (Commercial, Recommended)
+Option A - Netgate SG-2100 (Commercial, Recommended)
 - Cost: $500
 - Performance: Good for home networks
 - Specs: 2-core ARM, 4GB RAM
 - Support: Warranty + professional support available
 - Pre-installed: pfSense
-- Link: https://www.netgate.com/products/SG-2100
+- Link - https://www.netgate.com/products/SG-2100
 
-Option B: Used Netgate Box (Budget)
+Option B - Used Netgate Box (Budget)
 - Cost: $100, 300 used (eBay, Reddit r/homelabsales)
 - SG-1100 ($150), APU2c4 ($200)
 - Slightly older hardware but runs pfSense fine
 - No warranty but 10x cheaper
 
-Option C: Mini PC Running pfSense
+Option C - Mini PC Running pfSense
 - Cost: $300, 600
 - Intel NUC with 8GB RAM
 - Most flexible (can run other services)
@@ -348,7 +348,7 @@ For this guide, I'll assume Netgate SG-2100 or equivalent pfSense box.
 
 pfSense Initial Setup
 
-Step 1: Physical Setup
+Step 1 - Physical Setup
 
 ```
 ISP Modem → pfSense WAN Port
@@ -356,18 +356,18 @@ pfSense LAN Port → WiFi Access Point
               → Ethernet switches (for wired devices)
 ```
 
-Step 2: Web Interface Setup
+Step 2 - Web Interface Setup
 
 ```
 Connect to pfSense via Ethernet
-Open browser: https://192.168.1.1
-Default credentials: admin / pfsense
+Open browser - https://192.168.1.1
+Default credentials - admin / pfsense
 
 Change password immediately:
 System → User Manager → admin → Edit → Set new password
 ```
 
-Step 3: Configure WAN Interface
+Step 3 - Configure WAN Interface
 
 ```
 Interfaces → WAN
@@ -375,14 +375,14 @@ Set to DHCP (gets IP from ISP modem)
 Save
 ```
 
-Step 4: Configure LAN Interface
+Step 4 - Configure LAN Interface
 
 ```
 Interfaces → LAN
-IPv4 Address: 192.168.1.1 (or your preferred subnet)
-Subnet Mask: 255.255.255.0
-Enable DHCP: Yes
-DHCP Range: 192.168.1.10 to 192.168.1.254
+IPv4 Address - 192.168.1.1 (or your preferred subnet)
+Subnet Mask - 255.255.255.0
+Enable DHCP - Yes
+DHCP Range - 192.168.1.10 to 192.168.1.254
 Save
 ```
 
@@ -390,45 +390,45 @@ Setting Up VLANs (Network Segmentation)
 
 VLANs separate devices so untrusted devices (guests, smart TVs) can't access your computers.
 
-Step 1: Create VLANs
+Step 1 - Create VLANs
 
 ```
 Interfaces → Assignments → VLANs
 
-VLAN 1: Trusted (192.168.1.0/24)
+VLAN 1 - Trusted (192.168.1.0/24)
   - Computers, phones, NAS
-VLAN 2: Guests (192.168.2.0/24)
+VLAN 2 - Guests (192.168.2.0/24)
   - Visitor WiFi, temporary access
-VLAN 3: IoT (192.168.3.0/24)
+VLAN 3 - IoT (192.168.3.0/24)
   - Smart home devices (can't talk to other VLANs)
 ```
 
-Step 2: Assign VLAN to Interfaces
+Step 2 - Assign VLAN to Interfaces
 
 ```
 Interfaces → OPT1 (for Guest VLAN)
-Enable: Yes
-IPv4 Address: 192.168.2.1
-Subnet Mask: 255.255.255.0
-Enable DHCP: Yes
-DHCP Range: 192.168.2.10–254
+Enable - Yes
+IPv4 Address - 192.168.2.1
+Subnet Mask - 255.255.255.0
+Enable DHCP - Yes
+DHCP Range - 192.168.2.10, 254
 
 Interfaces → OPT2 (for IoT VLAN)
-Enable: Yes
-IPv4 Address: 192.168.3.1
-Subnet Mask: 255.255.255.0
-Enable DHCP: Yes
-DHCP Range: 192.168.3.10–254
+Enable - Yes
+IPv4 Address - 192.168.3.1
+Subnet Mask - 255.255.255.0
+Enable DHCP - Yes
+DHCP Range - 192.168.3.10, 254
 ```
 
-Step 3: Create Firewall Rules Between VLANs
+Step 3 - Create Firewall Rules Between VLANs
 
 ```
 Firewall → Rules → LAN
 
 Add Rule:
   Protocol: Any
-  Source: LAN subnet (192.168.1.0/24)
+  Source - LAN subnet (192.168.1.0/24)
   Destination: any
   Action: Pass (Trusted devices can talk to anyone)
 
@@ -489,22 +489,22 @@ This is advanced and requires DOH proxy setup, see WireGuard section below for s
 
 ---
 
-Component 3: WireGuard Home VPN (Access Home Network Remotely + Encrypt Upstream)
+Component 3 - WireGuard Home VPN (Access Home Network Remotely + Encrypt Upstream)
 
 WireGuard is a modern VPN protocol much faster and simpler than OpenVPN. Install it on pfSense to:
 1. Access your home network remotely while encrypted
 2. Encrypt all traffic destined to ISP (no ISP monitoring of your sites)
 
-Step 1: Install WireGuard on pfSense
+Step 1 - Install WireGuard on pfSense
 
 ```
 System → Package Manager → Available Packages
 
-Search: WireGuard
+Search - WireGuard
 Install
 ```
 
-Step 2: Configure WireGuard Interface
+Step 2 - Configure WireGuard Interface
 
 ```
 VPN → WireGuard → Tunnels
@@ -514,13 +514,13 @@ Add Tunnel:
   Description: Home VPN
   Listen Port: 51820
   Interface Keys: Generate (auto)
-  Enable: Yes
+  Enable - Yes
   Save
 
 Copy Public Key (you'll need this for clients)
 ```
 
-Step 3: Create WireGuard Peers (Clients)
+Step 3 - Create WireGuard Peers (Clients)
 
 Each device that connects to your VPN needs a peer entry:
 
@@ -533,7 +533,7 @@ Add Peer:
   Allowed IPs: 10.0.0.2/32
   Generate Keypair: Yes
   Description: iPhone
-  Enable: Yes
+  Enable - Yes
 
 Add Peer:
   Tunnel: WireGuard
@@ -551,7 +551,7 @@ For each peer, click QR Code icon
 Scan with phone or save config file for laptop
 ```
 
-Step 4: Create Firewall Rules for WireGuard
+Step 4 - Create Firewall Rules for WireGuard
 
 ```
 Firewall → Rules → WireGuard (new interface)
@@ -571,7 +571,7 @@ Add Rule:
   Description: WireGuard clients can access internet
 ```
 
-Step 5: Configure Dynamic DNS (for Changing ISP IP)
+Step 5 - Configure Dynamic DNS (for Changing ISP IP)
 
 Your ISP assigns you a dynamic IP that changes weekly. WireGuard clients need a static hostname:
 
@@ -584,12 +584,12 @@ Dynamic DNS Provider:
 pfSense Configuration:
 Services → Dynamic DNS → Add
   Service Type: No-IP or DuckDNS
-  Username/Token: (from noip.com)
+  Username/Token - (from noip.com)
   Hostname: myhome.noip.com
-  Enable: Yes
+  Enable - Yes
 ```
 
-Step 6: Configure WireGuard Client on iPhone
+Step 6 - Configure WireGuard Client on iPhone
 
 ```
 Install WireGuard app (App Store)
@@ -618,7 +618,7 @@ When connected:
 
 ---
 
-Component 4: WiFi Access Point Configuration
+Component 4 - WiFi Access Point Configuration
 
 Your pfSense router should have WiFi, or connect a separate AP (access point) to it.
 
@@ -648,15 +648,15 @@ If using Ubiquiti UniFi:
 ```
 UniFi Controller → Networks
 
-Create Network 1: Trusted
+Create Network 1 - Trusted
   VLAN ID: 1
   Subnet: 192.168.1.0/24
 
-Create Network 2: Guests
+Create Network 2 - Guests
   VLAN ID: 2
   Subnet: 192.168.2.0/24
 
-Create Network 3: IoT
+Create Network 3 - IoT
   VLAN ID: 3
   Subnet: 192.168.3.0/24
 
@@ -667,12 +667,12 @@ Create SSID: "MyHome"
   Security: WPA3
   Password: [strong]
 
-Create SSID: "Guests"
+Create SSID - "Guests"
   Network: Guests (VLAN 2)
   Security: WPA3
   Password: [separate]
 
-Create SSID: "IoT-Devices"
+Create SSID - "IoT-Devices"
   Network: IoT (VLAN 3)
   Security: WPA3
   Password: [separate]
@@ -767,33 +767,33 @@ Update blocklists in Pi-hole
 
 Troubleshooting Common Issues
 
-Problem: Website loads but images don't
-Solution: Blocklist is too aggressive. Whitelist in Pi-hole:
+Problem - Website loads but images don't
+Solution - Blocklist is too aggressive. Whitelist in Pi-hole:
 ```
 Pi-hole Admin → Whitelist → Add domain
 ```
 
-Problem: Smart TV won't connect
-Solution: TV needs firmware access. Allow IoT VLAN:
+Problem - Smart TV won't connect
+Solution - TV needs firmware access. Allow IoT VLAN:
 ```
 Firewall → Rules → OPT2 (IoT)
-Add rule: Destination port 443, Allow
+Add rule - Destination port 443, Allow
 ```
 
-Problem: WireGuard won't connect
-Solution: Check dynamic DNS:
+Problem - WireGuard won't connect
+Solution - Check dynamic DNS:
 ```
 Services → Dynamic DNS
-Verify domain resolves: ping myhome.noip.com
+Verify domain resolves - ping myhome.noip.com
 Check firewall passes port 51820 (UDP)
 ```
 
-Problem: Guests can't connect to WiFi
-Solution: DHCP not running on Guest VLAN:
+Problem - Guests can't connect to WiFi
+Solution - DHCP not running on Guest VLAN:
 ```
 Interfaces → OPT1
 Verify DHCP enabled
-Restart DHCP: Services → DHCP Server
+Restart DHCP - Services → DHCP Server
 ```
 
 ---
@@ -861,6 +861,6 @@ Related Articles
 - [Privacy-Friendly Smart Home Setup Guide 2026: Home](/privacy-friendly-smart-home-setup-guide-2026/)
 - [How to Secure Smart Home Devices Privacy Guide 2026](/how-to-secure-smart-home-devices-privacy-guide-2026/)
 - [How to Check if Your Smart Home Devices Are Compromised](/how-to-check-if-your-smart-home-devices-are-compromised/)
-- [AI Coding Assistant for Network Traffic Analysis: What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
+- [AI Coding Assistant for Network Traffic Analysis - What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

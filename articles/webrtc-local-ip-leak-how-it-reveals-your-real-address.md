@@ -82,11 +82,11 @@ Practical Implications for Privacy
 
 The implications extend beyond simple identification. Here are concrete scenarios where WebRTC leaks pose risks:
 
-VPN Circumvention: Even with an active VPN, your real public IP remains visible. This undermines the fundamental privacy protection that VPNs provide, particularly concerning for users in restrictive jurisdictions.
+VPN Circumvention - Even with an active VPN, your real public IP remains visible. This undermines the fundamental privacy protection that VPNs provide, particularly concerning for users in restrictive jurisdictions.
 
-Network Topology Exposure: Local IP addresses reveal information about your network structure, whether you're on a corporate network, home network, or mobile hotspot. This information aids fingerprinting and targeted attacks.
+Network Topology Exposure - Local IP addresses reveal information about your network structure, whether you're on a corporate network, home network, or mobile hotspot. This information aids fingerprinting and targeted attacks.
 
-Bypassing NAT: Attackers can use leaked local IPs to perform NAT punching attacks or identify devices behind network address translation.
+Bypassing NAT - Attackers can use leaked local IPs to perform NAT punching attacks or identify devices behind network address translation.
 
 Detecting WebRTC Leaks
 
@@ -115,9 +115,9 @@ Mitigation Strategies
 
 Browser Configuration
 
-Firefox: Enter `about:config` in the address bar and set `media.peerconnection.enabled` to `false`. Alternatively, use the `media.peerconnection` boolean preference to disable WebRTC entirely.
+Firefox - Enter `about:config` in the address bar and set `media.peerconnection.enabled` to `false`. Alternatively, use the `media.peerconnection` boolean preference to disable WebRTC entirely.
 
-Chromium-based browsers: WebRTC management varies by browser. Brave Browser includes WebRTC leak protection by default. For Chrome, extensions like "WebRTC Control" can block leaks, though their effectiveness varies.
+Chromium-based browsers - WebRTC management varies by browser. Brave Browser includes WebRTC leak protection by default. For Chrome, extensions like "WebRTC Control" can block leaks, though their effectiveness varies.
 
 Extension-Based Solutions
 
@@ -145,13 +145,13 @@ Development Considerations
 
 For developers building applications that use WebRTC, consider these privacy-conscious practices:
 
-Media Device Enumeration: Limit the information your application exposes. Only request necessary permissions and avoid enumerating all available devices unless essential.
+Media Device Enumeration - Limit the information your application exposes. Only request necessary permissions and avoid enumerating all available devices unless essential.
 
-STUN/TURN Server Configuration: Use controlled STUN servers and implement TURN servers for relaying traffic when direct peer connections are impossible. This prevents exposure of direct IP addresses to peer clients.
+STUN/TURN Server Configuration - Use controlled STUN servers and implement TURN servers for relaying traffic when direct peer connections are impossible. This prevents exposure of direct IP addresses to peer clients.
 
-Connection Metadata Handling: Be mindful of what connection metadata your application logs. ICE candidates contain valuable network information that may persist in server logs.
+Connection Metadata Handling - Be mindful of what connection metadata your application logs. ICE candidates contain valuable network information that may persist in server logs.
 
-User Notification: Inform users when WebRTC is active and what information it may expose. Transparency builds trust and allows privacy-conscious users to make informed decisions.
+User Notification - Inform users when WebRTC is active and what information it may expose. Transparency builds trust and allows privacy-conscious users to make informed decisions.
 
 Testing Your Protection
 
@@ -219,7 +219,7 @@ Use your VPN provider's DNS exclusively
 
 Configure your system DNS
 macOS: networksetup -setdnsservers "Wi-Fi" 1.1.1.1 1.0.0.1
-Linux: echo "nameserver 1.1.1.1" | sudo tee /etc/resolv.conf
+Linux - echo "nameserver 1.1.1.1" | sudo tee /etc/resolv.conf
 ```
 
 VPN Provider Comparison for WebRTC Protection

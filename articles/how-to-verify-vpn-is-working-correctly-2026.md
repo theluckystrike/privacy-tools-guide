@@ -22,20 +22,20 @@ This guide walks through eight verification tests you can run right now to confi
 
 Table of Contents
 
-- [Test 1: DNS Leak Detection (Most Common)](#test-1-dns-leak-detection-most-common)
-- [VPN Security Model: What You're Testing](#vpn-security-model-what-youre-testing)
+- [Test 1 - DNS Leak Detection (Most Common)](#test-1-dns-leak-detection-most-common)
+- [VPN Security Model - What You're Testing](#vpn-security-model-what-youre-testing)
 - [Prerequisites](#prerequisites)
-- [Advanced: Monitoring VPN Leaks (Automated)](#advanced-monitoring-vpn-leaks-automated)
+- [Advanced - Monitoring VPN Leaks (Automated)](#advanced-monitoring-vpn-leaks-automated)
 - [Troubleshooting](#troubleshooting)
 
-Test 1: DNS Leak Detection (Most Common)
+Test 1 - DNS Leak Detection (Most Common)
 
-What it tests: Whether DNS queries go through the VPN or leak to ISP.
-- On Mac: System Preferences > Network > IPv6 > Off.
+What it tests - Whether DNS queries go through the VPN or leak to ISP.
+- On Mac - System Preferences > Network > IPv6 > Off.
 - Better alternative (no download): 1.
 - - Use only servers: where kill switch verified.
 
-VPN Security Model: What You're Testing
+VPN Security Model - What You're Testing
 
 A VPN tunnels all traffic through an encrypted pipe to a VPN server, which forwards requests to the internet. Your ISP sees encrypted data; your ISP cannot see what sites you visit.
 
@@ -59,9 +59,9 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Test 1: DNS Leak Detection (Most Common)
+Step 1: Test 1 - DNS Leak Detection (Most Common)
 
-What it tests: Whether DNS queries go through the VPN or leak to ISP.
+What it tests - Whether DNS queries go through the VPN or leak to ISP.
 
 How to test:
 
@@ -79,17 +79,17 @@ How to test:
 - PASS
 
 If you see a leak:
-- On Windows: Settings > Network > VPN > Advanced > DNS settings. Disable NRPT (Name Resolution Policy Table) or use manual DNS.
-- On Mac: System Preferences > Network > VPN > Advanced > DNS. Ensure VPN DNS is listed first.
-- On Linux: Edit `/etc/resolv.conf` to use VPN DNS, or use `resolvectl` to override system DNS.
+- On Windows - Settings > Network > VPN > Advanced > DNS settings. Disable NRPT (Name Resolution Policy Table) or use manual DNS.
+- On Mac - System Preferences > Network > VPN > Advanced > DNS. Ensure VPN DNS is listed first.
+- On Linux - Edit `/etc/resolv.conf` to use VPN DNS, or use `resolvectl` to override system DNS.
 
 ipleak.net verification: Free, no signup. Takes 30 seconds.
 
 ---
 
-Step 2: Test 2: WebRTC Leak Detection (Browser Vulnerability)
+Step 2 - Test 2: WebRTC Leak Detection (Browser Vulnerability)
 
-What it tests: Whether browser's WebRTC protocol leaks your real IP address even with VPN connected.
+What it tests - Whether browser's WebRTC protocol leaks your real IP address even with VPN connected.
 
 How to test:
 
@@ -107,18 +107,18 @@ How to test:
 - PASS
 
 If you see a leak:
-- Chrome/Brave: Disable WebRTC in chrome://flags (search "webrtc", toggle to disabled). May break video conferencing.
-- Firefox: Enter about:config, search "media.peerconnection.enabled", set to false.
-- Safari: WebRTC leaks are common in Safari; disable if privacy is critical, use Firefox instead.
+- Chrome/Brave - Disable WebRTC in chrome://flags (search "webrtc", toggle to disabled). May break video conferencing.
+- Firefox - Enter about:config, search "media.peerconnection.enabled", set to false.
+- Safari - WebRTC leaks are common in Safari; disable if privacy is critical, use Firefox instead.
 - Electron apps (Discord, Slack): No direct WebRTC control; these apps are at risk. Consider using web versions instead.
 
  test: ipleak.net has a more thorough WebRTC test. Click "Show my IPv4 + IPv6 + DNS + WebRTC leak status". but slower.
 
 ---
 
-Step 3: Test 3: IPv6 Leak Detection
+Step 3 - Test 3: IPv6 Leak Detection
 
-What it tests: Whether you're leaking an IPv6 address outside the VPN tunnel.
+What it tests - Whether you're leaking an IPv6 address outside the VPN tunnel.
 
 How to test:
 
@@ -138,14 +138,14 @@ How to test:
 
 If you see a leak:
 - Most VPNs don't properly route IPv6. Solutions:
- - Disable IPv6 on your system (simplest). On Windows: Device Manager > Network adapters > IPv6 > disable. On Mac: System Preferences > Network > IPv6 > Off. On Linux: `echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6`.
+ - Disable IPv6 on your system (simplest). On Windows - Device Manager > Network adapters > IPv6 > disable. On Mac - System Preferences > Network > IPv6 > Off. On Linux - `echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6`.
  - Use VPN kill switch: If VPN doesn't fully support IPv6, kill switch should block all IPv6 traffic.
 
 ---
 
-Step 4: Test 4: Real IP Address Leak (IP Geolocation Check)
+Step 4 - Test 4: Real IP Address Leak (IP Geolocation Check)
 
-What it tests: Whether your real IP address and location are visible.
+What it tests - Whether your real IP address and location are visible.
 
 How to test:
 
@@ -171,9 +171,9 @@ If you see your real IP:
 
 ---
 
-Step 5: Test 5: Kill Switch Verification (Critical Test)
+Step 5 - Test 5: Kill Switch Verification (Critical Test)
 
-What it tests: Whether your kill switch actually blocks all traffic if VPN disconnects.
+What it tests - Whether your kill switch actually blocks all traffic if VPN disconnects.
 
 This test temporarily breaks your internet connection. Save your work first.
 
@@ -201,8 +201,8 @@ While VPN is connected:
 ping 8.8.8.8
 
 Stop VPN suddenly and observe ping output
-Kill switch ON: Ping fails immediately
-Kill switch OFF: Ping continues with high latency (real IP)
+Kill switch ON - Ping fails immediately
+Kill switch OFF - Ping continues with high latency (real IP)
 ```
 
 If kill switch fails:
@@ -213,9 +213,9 @@ If kill switch fails:
 
 ---
 
-Step 6: Test 6: VPN Disconnection Detection (Browser Leak Test)
+Step 6 - Test 6: VPN Disconnection Detection (Browser Leak Test)
 
-What it tests: Whether your browser is aware of VPN disconnection.
+What it tests - Whether your browser is aware of VPN disconnection.
 
 How to test:
 
@@ -226,7 +226,7 @@ How to test:
  - If kill switch works, page won't load (internet is blocked).
  - If kill switch fails, page loads and shows your real IP. Leak.
 
-Alternative: Use BrowserLeaks.com for leak testing. It tests:
+Alternative - Use BrowserLeaks.com for leak testing. It tests:
 - IP address
 - WebRTC
 - DNS
@@ -236,9 +236,9 @@ All in one test. Very reliable.
 
 ---
 
-Step 7: Test 7: DNS Leak Over Time (Passive Test)
+Step 7 - Test 7: DNS Leak Over Time (Passive Test)
 
-What it tests: Whether DNS leaks occur intermittently.
+What it tests - Whether DNS leaks occur intermittently.
 
 How to test:
 
@@ -264,13 +264,13 @@ dig @8.8.8.8 google.com
  - Consistent fast response: Likely going through VPN DNS cache.
  - Intermittent slow response: Possible fallback to ISP DNS.
 
-Advanced: Use Wireshark (packet sniffer) to monitor DNS traffic. If you see DNS queries to non-VPN addresses, you have a leak. Requires technical knowledge; ipleak.net is simpler.
+Advanced - Use Wireshark (packet sniffer) to monitor DNS traffic. If you see DNS queries to non-VPN addresses, you have a leak. Requires technical knowledge; ipleak.net is simpler.
 
 ---
 
-Step 8: Test 8: Kill Switch Test with Multiple VPN Servers
+Step 8 - Test 8: Kill Switch Test with Multiple VPN Servers
 
-What it tests: Whether kill switch works across all VPN servers.
+What it tests - Whether kill switch works across all VPN servers.
 
 How to test:
 
@@ -280,7 +280,7 @@ How to test:
 4. Repeat kill switch test.
 5. Try a third server.
 
-Why: Some VPNs have server-specific issues. Kill switch might work on US servers but fail on Japanese servers.
+Why - Some VPNs have server-specific issues. Kill switch might work on US servers but fail on Japanese servers.
 
 If you see variance:
 - Contact VPN support with specific server locations.
@@ -288,7 +288,7 @@ If you see variance:
 
 ---
 
-Step 9: VPN Brands: Known Leak Issues (2026)
+Step 9 - VPN Brands: Known Leak Issues (2026)
 
 Generally safe (rare leaks):
 - Mullvad VPN (independent audit, IPv6 support)
@@ -305,7 +305,7 @@ Always verify your specific VPN. Don't trust brand reputation alone.
 
 ---
 
-Step 10: Quick Test: 5-Minute Verification
+Step 10 - Quick Test: 5-Minute Verification
 
 If you only have 5 minutes:
 
@@ -320,21 +320,21 @@ That's 90% of VPN verification in 5 minutes.
 
 ---
 
-Advanced: Monitoring VPN Leaks (Automated)
+Advanced - Monitoring VPN Leaks (Automated)
 
 If you want continuous monitoring:
 
-Option 1: CyberGhost's leak test (desktop app):
+Option 1 - CyberGhost's leak test (desktop app):
 - Built-in leak test in CyberGhost VPN app.
 - Runs automatically on connect.
 - Shows results in app dashboard.
 
-Option 2: VPN leak monitoring service:
+Option 2 - VPN leak monitoring service:
 - VPN Leak Test API (vpnleaktest.com/api)
 - Automated checks via cron job.
 - Alerts if leak detected.
 
-Option 3: Custom monitoring (Linux):
+Option 3 - Custom monitoring (Linux):
 ```bash
 #!/bin/bash
 Monitor for DNS leaks hourly
@@ -348,7 +348,7 @@ done
 
 ---
 
-Step 11: Verdict: Trust But Verify
+Step 11 - Verdict: Trust But Verify
 
 VPN providers are not adversarial, but they're also not immune to mistakes. A DNS leak, WebRTC leak, or kill switch failure is a single bug away.
 

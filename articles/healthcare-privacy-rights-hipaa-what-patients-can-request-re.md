@@ -36,25 +36,25 @@ What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-HIPAA Violations: Case Studies and Outcomes
+HIPAA Violations - Case Studies and Outcomes
 
 Understanding real enforcement helps you know what rights you have:
 
 ```
-Case: Cambridge Hospital (2019)
-Violation: Inadequate access controls
-Outcome: $1.5M settlement
-Patient Impact: 1,000+ patients' data accessed without authorization
+Case - Cambridge Hospital (2019)
+Violation - Inadequate access controls
+Outcome - $1.5M settlement
+Patient Impact - 1,000+ patients' data accessed without authorization
 
-Case: UCLA Medical Center (2015)
-Violation: Unauthorized access/snooping
-Outcome: $865K settlement + 10 employees disciplined
-Patient Impact: 450+ patients' data accessed by staff
+Case - UCLA Medical Center (2015)
+Violation - Unauthorized access/snooping
+Outcome - $865K settlement + 10 employees disciplined
+Patient Impact - 450+ patients' data accessed by staff
 
-Case: Memorial Medical Center (2018)
-Violation: Breach disclosure failure
-Outcome: $3M settlement
-Patient Impact: 64K patients' data compromised
+Case - Memorial Medical Center (2018)
+Violation - Breach disclosure failure
+Outcome - $3M settlement
+Patient Impact - 64K patients' data compromised
 ```
 
 These cases show enforcement happens. Patients can request accounting of these disclosures.
@@ -66,8 +66,8 @@ If your PHI is breached, you have the right to notification:
 ```
 Timeline:
 Day 1: Breach discovered
-Days 1-30: Covered entity investigates
-Day 60: Notifications sent to you (worst case)
+Days 1-30 - Covered entity investigates
+Day 60 - Notifications sent to you (worst case)
 
 Required notification includes:
 - Description of breach
@@ -147,14 +147,14 @@ Check your state's health privacy laws, they might exceed HIPAA.
 
 Requesting Corrections Example
 
-Scenario: Your medical record shows a medication you're allergic to:
+Scenario - Your medical record shows a medication you're allergic to:
 
 ```
 Formal Amendment Request:
 
 TO: Privacy Officer, [Hospital Name]
-FROM: [Your Name], DOB: [Your DOB]
-DATE: [Date]
+FROM - [Your Name], DOB: [Your DOB]
+DATE - [Date]
 
 RE: Request for Amendment to Medical Record
 
@@ -177,7 +177,7 @@ Please respond within 60 days with:
 [ ] Amendment denied (with written reason)
 [ ] My statement of disagreement attached to record
 
-Signed: [Your Signature]
+Signed - [Your Signature]
 ```
 
 Bringing Records to Another Provider
@@ -212,7 +212,7 @@ Building a Personal Health Record
 To minimize dependence on provider record systems:
 
 ```python
-Python: Create encrypted personal health record
+Python - Create encrypted personal health record
 
 import hashlib
 from cryptography.fernet import Fernet
@@ -275,22 +275,22 @@ Enforcement Mechanism
 If your HIPAA rights are violated:
 
 ```
-Step 1: Informal resolution (14 days)
+Step 1 - Informal resolution (14 days)
 - Contact provider's privacy officer
 - Request meeting to discuss issue
 
-Step 2: Formal complaint filing (OCR)
+Step 2 - Formal complaint filing (OCR)
 - Visit hhs.gov/ocr/privacy/hipaa/complaints
 - File complaint (no fee)
 - OCR investigates (30-90 days typical)
 
-Step 3: Escalation
+Step 3 - Escalation
 - If OCR finds violation, provider may face:
   - Corrective action plan
   - Fines (up to $1.5M per violation category)
   - Consent decrees (federal court oversight)
 
-Step 4: Private right of action (some violations)
+Step 4 - Private right of action (some violations)
 - Some breaches allow civil lawsuits
 - For willful neglect violations
 - Damages: $100-$50,000 per person per violation

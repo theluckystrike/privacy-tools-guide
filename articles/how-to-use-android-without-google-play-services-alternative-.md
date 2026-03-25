@@ -16,7 +16,7 @@ voice-checked: true
 
 {% raw %}
 
-Many Android users seek alternatives to Google Play Services for privacy, security, or philosophical reasons. This guide covers practical methods for running a functional Android device without Google's ecosystem, focusing on alternative app stores and sideloading techniques suitable for developers and power users.
+Many Android users seek alternatives to Google Play Services for privacy, security, or philosophical reasons. This guide covers practical methods for running a functional Android device without Google's environment, focusing on alternative app stores and sideloading techniques suitable for developers and power users.
 
 Prerequisites
 
@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Google Play Services Dependency
+Step 1 - Understand Google Play Services Dependency
 
 Before removing Google Play Services, identify which apps depend on them. Common dependencies include:
 
@@ -39,7 +39,7 @@ Before removing Google Play Services, identify which apps depend on them. Common
 
 Apps using these features will not function properly without workarounds. Use tools like `adb shell pm list packages -3` to enumerate third-party apps, then test each after removing Google Play Services.
 
-Step 2: Remove Google Play Services
+Step 2 - Remove Google Play Services
 
 For devices running stock Android, you can disable Google Play Services through ADB:
 
@@ -53,7 +53,7 @@ adb shell pm hide com.google.android.gms
 
 For deeper removal, custom ROMs like GrapheneOS, CalyxOS, or DivestOS ship without any Google components. These ROMs provide a degoogled experience while maintaining full Android functionality.
 
-Step 3: F-Droid: The Open Source App Store
+Step 3 - F-Droid: The Open Source App Store
 
 F-Droid serves as the primary alternative store for open source applications. It hosts thousands of privacy-respecting apps without proprietary components or tracking.
 
@@ -79,7 +79,7 @@ F-Droid supports multiple repositories beyond the main one. Add specialized repo
 
 Common additional repositories:
 
-- Guardian Project: `https://guardianproject.info/fdroid/repo`
+- Guardian Project - `https://guardianproject.info/fdroid/repo`
 - IzzyOnDroid: `https://android.izzysoft.de/fdroid/repo`
 
 Automating Updates
@@ -97,7 +97,7 @@ Build from source
 fdroid build -l
 ```
 
-Step 4: Aurora Store: Google Play Without Google
+Step 4 - Aurora Store: Google Play Without Google
 
 Aurora Store provides access to Google Play apps without requiring a Google account or Google Play Services. It downloads APKs directly from Google's servers while respecting user privacy.
 
@@ -121,7 +121,7 @@ Aurora Store supports anonymous downloads without authentication:
 
 For developers who need to test Google Play functionality without Google dependencies, Aurora Store serves as an effective solution.
 
-Step 5: Sideloading: Direct APK Installation
+Step 5 - Sideloading: Direct APK Installation
 
 Sideloading allows direct APK installation without any app store. This method provides maximum control over app sources.
 
@@ -134,7 +134,7 @@ Enable installation from unknown sources (per-app)
 adb shell pm grant com.example.app android.permission.REQUEST_INSTALL_PACKAGES
 ```
 
-Or via Settings: Settings → Security → Install unknown apps
+Or via Settings - Settings → Security → Install unknown apps
 
 Using wget/curl for Batch Installation
 
@@ -164,7 +164,7 @@ Verify against known good signature
 apksigner verify --key-reference /path/to/cert.pem app.apk
 ```
 
-Step 6: Manage Push Notifications Without GCM
+Step 6 - Manage Push Notifications Without GCM
 
 Push notifications require alternatives to Google Cloud Messaging. Several solutions exist:
 
@@ -209,7 +209,7 @@ def send_push():
     return {"status": "sent"}
 ```
 
-Step 7: App Compatibility Considerations
+Step 7 - App Compatibility Considerations
 
 Test your critical apps before fully removing Google Play Services. Common compatibility issues:
 
@@ -232,7 +232,7 @@ For developer testing, use custom ROMs with microG
 microG provides SafetyNet-compatible implementations
 ```
 
-Step 8: microG: A Drop-In Replacement for Google Play Services
+Step 8 - microG: A Drop-In Replacement for Google Play Services
 
 For users who need some Google-dependent apps to function but still want to avoid proprietary Google components, microG provides a free-software reimplementation of Google Play Services. It implements the key APIs that apps call at runtime, including device attestation stubs, push messaging, and location services, without reporting back to Google.
 
@@ -244,7 +244,7 @@ On CalyxOS, microG comes pre-installed. On LineageOS for microG builds, install 
 
 ```bash
 Add microG repository to F-Droid
-Repository URL: https://microg.org/fdroid/repo
+Repository URL - https://microg.org/fdroid/repo
 
 Required microG packages (install in order):
 1. GmsCore (com.google.android.gms)
@@ -263,7 +263,7 @@ After installation, open the microG Settings app and configure each module:
 
 Test by launching an app that previously required Google Play Services. If it loads and receives notifications, microG is working.
 
-Step 9: Manage Background Data Without Google
+Step 9 - Manage Background Data Without Google
 
 One underappreciated benefit of removing Google Play Services is the elimination of Google's background data collection. However, you must configure remaining services to avoid creating new data collection points.
 
@@ -277,7 +277,7 @@ Most stock Android firmware uses Google's DNS by default. After degoogling, expl
 
 For apps that bypass system DNS, install RethinkDNS from F-Droid. It runs as a local VPN, intercepting all DNS traffic and routing it through your chosen resolver so no app can circumvent system-level DNS.
 
-Step 10: Custom ROM Selection Guide
+Step 10 - Custom ROM Selection Guide
 
 Choosing the right custom ROM depends on your threat model and how much convenience you are willing to trade.
 
@@ -294,9 +294,9 @@ CalyxOS includes the Mozilla Location Service as a Google Location alternative a
 
 Always verify a custom ROM image before flashing by checking the SHA-256 checksum against the official release page. a tampered image can silently install spyware with root-level access.
 
-Step 11: Recommended App Stack for De-Googled Android
+Step 11 - Recommended App Stack for De-Googled Android
 
-Build a privacy-respecting app ecosystem:
+Build a privacy-respecting app environment:
 
 - Browser: Firefox (with uBlock Origin), Brave, or Mullvad Browser
 - Keyboard: AnySoftKeyboard or FlorisBoard

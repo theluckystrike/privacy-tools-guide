@@ -24,7 +24,7 @@ Table of Contents
 - [Best Practices for Minimal Detection Exposure](#best-practices-for-minimal-detection-exposure)
 - [Operational Security Considerations](#operational-security-considerations)
 - [Advanced Obfuscation Techniques](#advanced-obfuscation-techniques)
-- [Threat Model: Who Is Actually at Risk?](#threat-model-who-is-actually-at-risk)
+- [Threat Model - Who Is Actually at Risk?](#threat-model-who-is-actually-at-risk)
 - [Troubleshooting](#troubleshooting)
 
 Prerequisites
@@ -37,7 +37,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Legal Framework and Risks
+Step 1 - Legal Framework and Risks
 
 Iran's cybersecurity laws have evolved significantly, with the Countering Cybercrimes Act and subsequent amendments establishing strict controls on circumvention tools. Using or distributing VPN services without government approval can result in penalties ranging from fines to imprisonment. The regulatory environment continues to tighten, with the Communications Regulatory Authority (CRA) actively blocking known VPN protocols and servers.
 
@@ -49,7 +49,7 @@ The primary risks include:
 
 Power users must weigh these risks against their operational needs. For many developers, the question is not whether to use privacy tools, but how to minimize detection exposure while understanding the technical and legal implications.
 
-Step 2: Network-Level Detection Methods
+Step 2 - Network-Level Detection Methods
 
 Understanding how detection works helps in developing effective countermeasures. Iranian internet infrastructure uses multiple detection methods:
 
@@ -65,7 +65,7 @@ Server Blocklisting
 
 The CRA maintains blocklists of known VPN server IP addresses. This list is continuously updated based on traffic analysis and international cooperation with other jurisdictions.
 
-Step 3: Technical Countermeasures
+Step 3 - Technical Countermeasures
 
 Obfuscated VPN Configurations
 
@@ -184,7 +184,7 @@ dig +short myip.opendns.com @resolver1.opendns.com
 Compare with and without VPN active
 ```
 
-Step 4: Real-World VPN Pricing and Tools (2026)
+Step 4 - Real-World VPN Pricing and Tools (2026)
 
 Understanding your options helps make informed choices:
 
@@ -194,7 +194,7 @@ Commercial VPN Services (with obfuscation support):
 - ProtonVPN: $9.99/month (open source, based in Switzerland)
 - Mullvad: $5/month (paid account optional, no logs, no registration)
 
-Cost-benefit note: In Iran, using commercial VPN services may actually increase visibility if the service is blocklisted. Open-source alternatives you run on your own infrastructure may provide better protection.
+Cost-benefit note - In Iran, using commercial VPN services may actually increase visibility if the service is blocklisted. Open-source alternatives you run on your own infrastructure may provide better protection.
 
 Open-Source VPN Tools:
 - OpenVPN: Free, mature, requires configuration
@@ -204,7 +204,7 @@ Open-Source VPN Tools:
 
 For Iran specifically, V2Ray has better reputation for evading DPI than standard VPN protocols.
 
-Step 5: Legal World Evolution
+Step 5 - Legal World Evolution
 
 Iran's approach to VPN enforcement has evolved:
 
@@ -268,7 +268,7 @@ All other traffic uses default gateway
 
 This creates less suspicious traffic patterns than constant VPN usage.
 
-Threat Model: Who Is Actually at Risk?
+Threat Model - Who Is Actually at Risk?
 
 Understanding your actual threat level helps determine appropriate tools:
 
@@ -289,7 +289,7 @@ High Risk:
 
 For high-risk scenarios, consult with organizations like Committee to Protect Journalists or Access Now who provide regional guidance. Consumer VPN services alone are insufficient for individuals facing serious state opposition.
 
-Step 6: Operational Security Beyond VPN
+Step 6 - Operational Security Beyond VPN
 
 Technical tools are only part of OpSec:
 
@@ -341,7 +341,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 Related Articles
 
-- [China VPN Crackdown: Penalties and Consequences for.](/china-vpn-crackdown-penalties-what-happens-if-caught-using-unauthorized-vpn-service/)
+- [China VPN Crackdown - Penalties and Consequences for.](/china-vpn-crackdown-penalties-what-happens-if-caught-using-unauthorized-vpn-service/)
 - [VPN for Using Telegram in Iran 2026: Working Methods](/vpn-for-using-telegram-in-iran-2026-working-method/)
 - [Vpn That Works In Iran 2026 Tested And Confirmed](/vpn-that-works-in-iran-2026-tested-and-confirmed/)
 - [Bitwarden Custom Fields Usage Guide](/bitwarden-custom-fields-usage-guide/)

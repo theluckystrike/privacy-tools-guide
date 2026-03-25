@@ -41,8 +41,8 @@ The desktop app loads significantly faster after initial authentication. Once sy
 Consider a scenario where you need to search through hundreds of entries multiple times daily:
 
 ```bash
-Desktop app: Instant local search after initial sync
-Web vault: Network-dependent queries
+Desktop app - Instant local search after initial sync
+Web vault - Network-dependent queries
 ```
 
 The desktop app also handles large vaults more efficiently. Users with thousands of entries report smoother performance compared to browser-based access.
@@ -107,21 +107,21 @@ Choose the web vault if:
 - Your browser's security model meets your requirements
 - Quick browser-based access outweighs other factors
 
-Practical Example: Managing Development Credentials
+Practical Example - Managing Development Credentials
 
 Consider a developer maintaining credentials across multiple environments:
 
 ```
-Production API: api.production.example.com
-Staging API: api.staging.example.com
-Development API: api.dev.example.com
+Production API - api.production.example.com
+Staging API - api.staging.example.com
+Development API - api.dev.example.com
 ```
 
 In the desktop app, you can organize these in a dedicated folder, use custom fields for API keys, and access them instantly via keyboard shortcuts or tray search. The web vault requires more navigation, though browser extension autofill mitigates this for website logins.
 
 For CLI-based deployments, the desktop app's session management proves more reliable, especially when running automated scripts that authenticate periodically throughout the day.
 
-Advanced Configuration: Desktop App with CLI
+Advanced Configuration - Desktop App with CLI
 
 Power users can maximize the Bitwarden desktop app through command-line integration:
 
@@ -389,14 +389,14 @@ gpg --detach-sign vault-backup-*.json.enc
 echo "Backup signed: $(ls -lh vault-backup-*.json.enc*)"
 
 3. Store in multiple locations
-Location 1: Home encrypted disk
+Location 1 - Home encrypted disk
 cp vault-backup-*.json.enc* ~/secure-backups/
 
-Location 2: Cloud-encrypted storage (Tresorit/Sync.com)
+Location 2 - Cloud-encrypted storage (Tresorit/Sync.com)
 tresorit upload vault-backup-*.json.enc* \
   --path "/backup/bitwarden/"
 
-Location 3: USB drive (physically secured)
+Location 3 - USB drive (physically secured)
 cp vault-backup-*.json.enc* /Volumes/encrypted-usb/
 
 4. Recovery test (monthly)

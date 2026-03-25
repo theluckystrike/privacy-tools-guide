@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Phone Number Spoofing
+Step 1 - Understand Phone Number Spoofing
 
 Spoofing works because the traditional telephone network was built on trust. The Caller ID system (CNAM) relies on the calling party to provide accurate information, and there's no built-in verification in legacy SS7 protocols. Modern VoIP systems make it trivial to forge the originating number.
 
 The consequences of having your number spoofed include unwanted calls appearing to come from your number, potential reputation damage with carriers, and in severe cases, your number being blocked by spam filters or call protection services.
 
-Step 2: Method 1: Monitor Incoming Call Patterns
+Step 2 - Method 1: Monitor Incoming Call Patterns
 
 The first indicator of spoofing is unusual activity on your number. If you receive calls or text messages asking "Why did you call me?" when you didn't, your number may have been cloned.
 
@@ -61,7 +61,7 @@ if __name__ == "__main__":
 
 While this won't prevent spoofing, it helps establish a baseline. If you suddenly receive callbacks or SMS replies to calls you never made, that's a red flag.
 
-Step 3: Method 2: Use Carrier Lookup APIs
+Step 3 - Method 2: Use Carrier Lookup APIs
 
 Several services provide phone number validation and reputation data. These APIs can help detect if your number has been flagged as a source of spam or spoofed calls.
 
@@ -95,14 +95,14 @@ print(f"Carrier: {carrier_name}")
 
 Get number type
 num_type = number_type(phone_number)
-print(f"Type: {num_type}")  # 0=fixed, 1=mobile, 2=FIXED_LINE_OR_MOBILE, etc.
+print(f"Type - {num_type}")  # 0=fixed, 1=mobile, 2=FIXED_LINE_OR_MOBILE, etc.
 
 Get geographic location
 location = geocoder.description_for_number(phone_number, "en")
 print(f"Location: {location}")
 ```
 
-Step 4: Method 3: Check STIR/SHAKEN Authentication
+Step 4 - Method 3: Check STIR/SHAKEN Authentication
 
 STIR (Secure Telephony Identity Revisited) and SHAKEN (Signature-based Handling of Asserted information using toKENs) are protocols designed to combat spoofing by verifying caller identity. While not yet universal, major carriers have implemented these standards.
 
@@ -111,7 +111,7 @@ Contact your carrier to ask:
 - Whether any failed authentication events have been logged for your number
 - Whether your number has been flagged in their spam database
 
-Step 5: Method 4: Monitor Call Detail Records
+Step 5 - Method 4: Monitor Call Detail Records
 
 Request your call detail records (CDR) from your carrier. Look for:
 - Calls you didn't make, especially to premium rate numbers
@@ -134,7 +134,7 @@ def analyze_cdr(cdr_data):
     return suspicious
 ```
 
-Step 6: Method 5: Set Up Number Monitoring Services
+Step 6 - Method 5: Set Up Number Monitoring Services
 
 Several services can alert you when your number appears in suspicious contexts:
 
@@ -147,7 +147,7 @@ Apps like Truecaller, Hiya, and Nomorobo maintain databases of reported spoofed 
 CNAM Lookup
 The Caller ID Name database can show what name displays when your number is called. Inconsistent CNAM information may indicate spoofing issues.
 
-Step 7: Prevention and Mitigation
+Step 7 - Prevention and Mitigation
 
 Once you've confirmed spoofing, take these steps:
 
@@ -157,7 +157,7 @@ Once you've confirmed spoofing, take these steps:
 4. Document everything - Keep logs of suspicious calls for potential law enforcement reports
 5. Register on Do Not Call list - The National Do Not Call Registry won't stop spoofers but may reduce legitimate telemarketing
 
-Step 8: For Developers: Building Spoof-Resistant Systems
+Step 8 - For Developers: Building Spoof-Resistant Systems
 
 If you're building applications that rely on phone verification:
 
@@ -181,7 +181,7 @@ def verify_call_signature(timestamp, caller_number, signature, shared_secret):
 
 Implement proper phone number validation, require multi-factor authentication for phone-based operations, and log all verification attempts for fraud analysis.
 
-Step 9: Investigating Caller ID Spoofing: Technical Deep Dive
+Step 9 - Investigating Caller ID Spoofing: Technical Deep Dive
 
 Phone spoofing works at the protocol level. Understanding the mechanics helps identify when it's happening:
 
@@ -191,7 +191,7 @@ Vulnerable to spoofing because it was designed on trust
 
 When a call comes in, your carrier receives:
 INVITE sip:+15551234567@carrier.com SIP/2.0
-From: "Caller Name" <sip:+15559876543@attacker.com>
+From - "Caller Name" <sip:+15559876543@attacker.com>
 To: <sip:+15551234567@you.com>
 
 The "From" header contains the spoofed number
@@ -199,7 +199,7 @@ Your phone displays whatever is in the From header
 No verification occurs
 
 Modern STIR/SHAKEN adds cryptographic signature:
-P-Asserted-Identity: <sip:+15559876543@verified-carrier.com>;alg=RS256;ppt=shaken;iat=timestamp
+P-Asserted-Identity - <sip:+15559876543@verified-carrier.com>;alg=RS256;ppt=shaken;iat=timestamp
 
 This signature proves the calling carrier verified the number
 But only if both carriers support STIR/SHAKEN
@@ -302,9 +302,9 @@ for pattern in suspicious:
 
 These patterns, combined with CDR data, strongly indicate active spoofing.
 
-Step 10: SIM Swapping vs Number Spoofing
+Step 10 - SIM Swapping vs Number Spoofing
 
-Important distinction: SIM swapping is different from spoofing:
+Important distinction - SIM swapping is different from spoofing:
 
 ```
 NUMBER SPOOFING:
@@ -322,12 +322,12 @@ SIM SWAPPING:
 
 RESPONSE:
 Spoofing: Change Netflix password, add 2FA to email
-SIM Swap: Contact carrier immediately, file police report, change ALL passwords, enable account locks
+SIM Swap - Contact carrier immediately, file police report, change ALL passwords, enable account locks
 ```
 
 SIM swapping is much more serious and requires immediate carrier intervention.
 
-Step 11: Carrier Cooperation and Reporting
+Step 11 - Carrier Cooperation and Reporting
 
 Your carrier has tools to investigate spoofing:
 
@@ -356,7 +356,7 @@ Request from your carrier (speak to fraud department):
 
 These steps give carriers ability to protect your number.
 
-Step 12: Personal Network Notification Protocol
+Step 12 - Personal Network Notification Protocol
 
 If your number is being spoofed, notify your contacts:
 
@@ -393,7 +393,7 @@ Thanks,
 
 Preemptive notification prevents scammers from successfully impersonating you.
 
-For Developers: Phone Verification Best Practices
+For Developers - Phone Verification Best Practices
 
 If you're implementing phone-based verification:
 

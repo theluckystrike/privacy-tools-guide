@@ -27,7 +27,7 @@ Table of Contents
 - [Prerequisites](#prerequisites)
 - [Limitations and Considerations](#limitations-and-considerations)
 - [Troubleshooting](#troubleshooting)
-- [Advanced Configuration: DevOps Perspective](#advanced-configuration-devops-perspective)
+- [Advanced Configuration - DevOps Perspective](#advanced-configuration-devops-perspective)
 - [Privacy Trade-offs Summary](#privacy-trade-offs-summary)
 
 What Are Masked Credit Cards?
@@ -69,7 +69,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Implement Programmatic Virtual Card Generation
+Step 1 - Implement Programmatic Virtual Card Generation
 
 Several providers offer APIs for generating masked cards programmatically. This enables developers to build applications that create disposable cards on demand.
 
@@ -138,7 +138,7 @@ async function createVirtualCard() {
 
 The Stripe approach works well for applications managing multiple virtual cards for different purposes.
 
-Step 2: Practical Privacy Strategies
+Step 2 - Practical Privacy Strategies
 
 Beyond basic generation, strategic use of masked cards significantly reduces your financial fingerprint.
 
@@ -201,7 +201,7 @@ Masked cards improve privacy but have constraints:
 
 Evaluate your threat model. For most users, virtual cards provide substantial privacy improvements over using raw card numbers everywhere.
 
-Step 3: Implementation Checklist
+Step 3 - Implementation Checklist
 
 Before deploying masked cards in your workflow:
 
@@ -252,7 +252,7 @@ Where can I get help if I run into issues?
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-Step 4: Comparing Virtual Card Providers: Decision Table
+Step 4 - Comparing Virtual Card Providers: Decision Table
 
 | Provider | API Access | Per-Transaction Limits | Monthly Limits | Merchant Locking | Cost |
 |----------|-----------|----------------------|-----------------|------------------|------|
@@ -262,9 +262,9 @@ Step 4: Comparing Virtual Card Providers: Decision Table
 | Stripe Issuing | Yes | Yes | Yes | Yes | Custom Pricing |
 | Bank Native | Varies | Some | Varies | Some | Included |
 
-Step 5: Case Study: Preventing Data Breach Exposure
+Step 5 - Case Study: Preventing Data Breach Exposure
 
-Consider a real scenario: A user shops at 50 different e-commerce sites monthly. Rather than exposing their real card to 50 potential data breaches, they use masked cards:
+Consider a real scenario - A user shops at 50 different e-commerce sites monthly. Rather than exposing their real card to 50 potential data breaches, they use masked cards:
 
 - eBay → Card expires after $200 purchase
 - Amazon → Separate card limited to $100/month
@@ -278,7 +278,7 @@ If one retailer experiences a breach, only that specific virtual card number is 
 
 The user's real card remains pristine, and switching to a new virtual card takes seconds.
 
-Advanced Configuration: DevOps Perspective
+Advanced Configuration - DevOps Perspective
 
 For teams managing SaaS infrastructure, integrate masked card generation into your payment workflows:
 
@@ -339,7 +339,7 @@ Masked cards are not a complete anonymity solution. Evaluate your specific needs
 
 The optimal strategy for most users combines masked cards (for merchant isolation) with other tools (VPN for ISP hiding, cryptocurrency for provider independence, or cash for true anonymity).
 
-Step 6: Future of Virtual Cards: Emerging Trends
+Step 6 - Future of Virtual Cards: Emerging Trends
 
 Industry movement toward virtual cards continues:
 

@@ -22,10 +22,10 @@ Table of Contents
 
 - [Why WireGuard on iPhone](#why-wireguard-on-iphone)
 - [Prerequisites](#prerequisites)
-- [Advanced Configuration: On-Demand Rules](#advanced-configuration-on-demand-rules)
+- [Advanced Configuration - On-Demand Rules](#advanced-configuration-on-demand-rules)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 - [Security Considerations](#security-considerations)
-- [Advanced Networking: Dual Tunnels and Chaining](#advanced-networking-dual-tunnels-and-chaining)
+- [Advanced Networking - Dual Tunnels and Chaining](#advanced-networking-dual-tunnels-and-chaining)
 - [Performance Tuning for Different Network Types](#performance-tuning-for-different-network-types)
 - [Troubleshooting Connection Issues](#troubleshooting-connection-issues)
 - [Related Reading](#related-reading)
@@ -49,7 +49,7 @@ Before starting, ensure you have:
 
 If you need to set up a WireGuard server first, you can use a VPS with Ubuntu or Debian and follow the standard WireGuard installation process. Many managed VPN services also offer WireGuard configuration files for their servers.
 
-Step 1: Install and Configuring the WireGuard App
+Step 1 - Install and Configuring the WireGuard App
 
 Search for "WireGuard" in the App Store and install the official application developed by the WireGuard team. The app is free and does not require any account creation or subscription.
 
@@ -64,7 +64,7 @@ Manual Configuration Parameters
 
 If you need to configure manually, gather these details from your server:
 
-- Interface: Your client's private key and an assigned IP address (e.g., 10.0.0.2/24)
+- Interface - Your client's private key and an assigned IP address (e.g., 10.0.0.2/24)
 - Peer: The server's public key, endpoint (domain or IP:port), and allowed IPs
 
 Here's what a typical peer configuration looks like in the WireGuard app:
@@ -84,7 +84,7 @@ PersistentKeepalive = 25
 
 The `PersistentKeepalive` setting sends periodic packets every 25 seconds to maintain the connection through NAT and firewalls. For mobile networks where connection state may change frequently, this parameter ensures your tunnel remains active.
 
-Step 2: Enable Always-On VPN
+Step 2 - Enable Always-On VPN
 
 The key feature for privacy-conscious users is the always-on VPN, which encrypts all your traffic by default without manual intervention. To enable this in iOS:
 
@@ -109,7 +109,7 @@ For maximum privacy, enable both WiFi and Cellular connections and set the VPN t
 
 The "Disconnected" option maintains the VPN connection even when your iPhone sleeps, which is important for continuous protection. However, this may increase battery consumption slightly.
 
-Step 3: Optimizing for Battery Life
+Step 3 - Optimizing for Battery Life
 
 Always-on VPNs do consume battery, but WireGuard's efficiency minimizes this impact compared to older protocols. To optimize battery performance:
 
@@ -121,7 +121,7 @@ Always-on VPNs do consume battery, but WireGuard's efficiency minimizes this imp
 
 4. WiFi Scanning - Disable "Ask to Join Networks" and auto-joining for open networks to prevent unexpected disconnections and reconnections that cycle your VPN.
 
-Step 4: Test Your Always-On Configuration
+Step 4 - Test Your Always-On Configuration
 
 After configuration, verify that the VPN activates properly:
 
@@ -132,7 +132,7 @@ After configuration, verify that the VPN activates properly:
 
 You can also test DNS leak protection by visiting dnsleaktest.com. A properly configured VPN should show DNS servers from your VPN provider, not your ISP.
 
-Advanced Configuration: On-Demand Rules
+Advanced Configuration - On-Demand Rules
 
 For users who want granular control, iOS supports On-Demand rules that determine VPN behavior based on network context. Access these through Settings → General → VPN & Device Management → VPN → Your Tunnel → Connect On Demand → Add Rule.
 
@@ -145,17 +145,17 @@ Common On-Demand configurations include:
 An example On-Demand rule configuration would connect automatically when not on your trusted network list:
 
 ```
-Rule Type: Disconnect
-When: WiFi
-SSID: MyHomeNetwork, MyOfficeNetwork
+Rule Type - Disconnect
+When - WiFi
+SSID - MyHomeNetwork, MyOfficeNetwork
 ```
 
 Then add a second rule:
 
 ```
-Rule Type: Connect
-When: WiFi
-SSID: Any other network
+Rule Type - Connect
+When - WiFi
+SSID - Any other network
 ```
 
 This creates a hybrid approach where the VPN engages automatically on untrusted networks while remaining optional on networks you control.
@@ -180,21 +180,21 @@ While WireGuard provides strong encryption, remember that VPN protection is only
 
 Also ensure your iPhone's remaining security settings are appropriate for your threat model: enable Face ID or a strong passcode, keep iOS updated, and review app permissions regularly.
 
-Advanced Networking: Dual Tunnels and Chaining
+Advanced Networking - Dual Tunnels and Chaining
 
 For additional privacy layers, advanced users can run multiple VPNs simultaneously:
 
 Chaining VPNs (VPN over VPN):
 
 ```
-Configuration 1: VPN → Tor
+Configuration 1 - VPN → Tor
 - Connect to WireGuard VPN first
 - Then connect to Tor Browser on top
 - Traffic encrypted twice, routed through VPN then Tor
 - Advantage: ISP only sees VPN connection, not Tor
 - Disadvantage: Performance penalty from double encryption
 
-Configuration 2: Tor → VPN
+Configuration 2 - Tor → VPN
 - Connect to Tor Browser first
 - Then use Tor to connect to VPN provider
 - VPN provider doesn't know your real IP
@@ -205,13 +205,13 @@ Implementing dual VPN on iOS:
 iOS doesn't natively support multiple simultaneous VPN connections. However:
 
 ```
-Workaround: Use split tunneling
+Workaround - Use split tunneling
 - Route web traffic through WireGuard
 - Route specific apps through regular connection
 - Not true chaining, but privacy for most traffic
 ```
 
-Step 5: Connecting to Self-Hosted WireGuard Servers
+Step 5 - Connecting to Self-Hosted WireGuard Servers
 
 If you host your own VPN server, additional configuration is needed:
 
@@ -231,7 +231,7 @@ iOS Configuration:
 3. Enable always-on VPN
 
 iOS always routes through your home network
-Use case: Access files on home network securely while traveling
+Use case - Access files on home network securely while traveling
 ```
 
 Dynamic DNS for mobile compatibility:
@@ -261,10 +261,10 @@ if [ "$current_ip" != "$previous_ip" ]; then
     # Distribute new config to iOS devices
 fi
 
-Add to crontab: */10 * * * * /path/to/ddns-update.sh
+Add to crontab - */10 * * * * /path/to/ddns-update.sh
 ```
 
-Step 6: DNS and IPv6 Configuration
+Step 6 - DNS and IPv6 Configuration
 
 Proper DNS configuration prevents leaks:
 
@@ -287,8 +287,8 @@ IPv6 considerations:
 Modern networks have IPv6, but many VPNs only tunnel IPv4:
 
 ```
-Problem: All IPv6 traffic bypasses VPN
-Solution: Disable IPv6 on iPhone when using VPN
+Problem - All IPv6 traffic bypasses VPN
+Solution - Disable IPv6 on iPhone when using VPN
 
 Settings → General → VPN & Device Management → [Your Tunnel]
 Look for IPv6 settings and disable if available
@@ -367,7 +367,7 @@ Issue: "VPN not connecting, stuck on 'Connecting'
 ```
 1. Check internet connectivity (WiFi or cellular working?)
 2. Verify WireGuard endpoint is correct and reachable
-   - In Terminal: nslookup vpn.example.com
+   - In Terminal - nslookup vpn.example.com
    - Should resolve to an IP address
 
 3. Check port is reachable
@@ -385,7 +385,7 @@ Issue: "VPN not connecting, stuck on 'Connecting'
    - Attempt connection
 ```
 
-Issue: Connected but no internet access
+Issue - Connected but no internet access
 
 ```
 1. Verify AllowedIPs includes all traffic:
@@ -406,7 +406,7 @@ Issue: Connected but no internet access
    - If unreachable, firewall or network blocking connection
 ```
 
-Issue: High battery drain with always-on VPN
+Issue - High battery drain with always-on VPN
 
 ```
 1. Disable VPN on trusted home network
@@ -426,7 +426,7 @@ Issue: High battery drain with always-on VPN
    - Disable on cellular to save battery
 ```
 
-Step 7: Integration with Privacy Services
+Step 7 - Integration with Privacy Services
 
 Enhance WireGuard with other privacy tools:
 
@@ -454,7 +454,7 @@ Security model:
 4. ProtonVPN can't see iPhone IP
 5. VPN provider can't see your server IP
 
-Drawback: Significant performance impact
+Drawback - Significant performance impact
 Recommended only if high threat model justifies it
 ```
 

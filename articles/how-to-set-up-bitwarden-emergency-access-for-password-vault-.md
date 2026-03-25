@@ -28,7 +28,7 @@ Before configuring emergency access, ensure both parties meet the technical requ
 
 For developers managing organizational credentials, consider whether emergency access should point to a personal account or a dedicated service account owned by the organization.
 
-Step 2: Step-by-Step Configuration
+Step 2 - Step-by-Step Configuration
 
 Initiating Emergency Access Designation
 
@@ -42,9 +42,9 @@ Configuring Access Parameters
 
 After the contact accepts, you control two critical parameters:
 
-Waiting Period: Set between 1 hour and 7 days. For estate planning, a 7-day window provides adequate time for legitimate emergencies while preventing rapid unauthorized access. Developers might consider shorter periods for time-sensitive scenarios.
+Waiting Period - Set between 1 hour and 7 days. For estate planning, a 7-day window provides adequate time for legitimate emergencies while preventing rapid unauthorized access. Developers might consider shorter periods for time-sensitive scenarios.
 
-Verification Type: Choose between Trusted or Inheritance mode. Inheritance mode includes additional confirmation steps designed for posthumous scenarios.
+Verification Type - Choose between Trusted or Inheritance mode. Inheritance mode includes additional confirmation steps designed for posthumous scenarios.
 
 The verification code appears after setup. document this code physically alongside your estate planning documents. Do not store it digitally.
 
@@ -92,7 +92,7 @@ Add to crontab for hourly monitoring
 0 * * * * /path/to/emergency-access-monitor.sh >> /var/log/bw-emergency.log 2>&1
 ```
 
-Step 3: Integrate with Digital Estate Planning
+Step 3 - Integrate with Digital Estate Planning
 
 Vault inheritance works best when integrated into a broader digital estate strategy. Consider the following complementary measures:
 
@@ -102,15 +102,15 @@ Maintain a physical or air-gapped digital document that includes:
 
 ```
 Digital Estate Access Guide
-Step 4: Password Manager Emergency Access
+Step 4 - Password Manager Emergency Access
 
 - Primary: Bitwarden
-- Account: user@example.com
-- Emergency Contact: trusted-person@example.com
+- Account - user@example.com
+- Emergency Contact - trusted-person@example.com
 - Waiting Period: 7 days
 - Verification Code: [SHARED_CODE_HERE]
 
-Step 5: Vault Inheritance Priority
+Step 5 - Vault Inheritance Priority
 
 1. Financial Accounts (banks, investments, crypto wallets)
 2. Business Infrastructure (cloud consoles, server access)
@@ -118,7 +118,7 @@ Step 5: Vault Inheritance Priority
 4. Subscriptions and recurring services
 5. Personal data (photos, documents)
 
-Step 6: Secondary Access Methods
+Step 6 - Secondary Access Methods
 
 - Hardware wallet location: [PHYSICAL_LOCATION]
 - Safe combination: [COMBINATION]
@@ -137,15 +137,15 @@ Security Considerations
 
 Emergency access introduces attack surface that requires careful management:
 
-Access Scope: Unlike vault sharing which allows granular item selection, emergency access provides complete vault access. Create a dedicated emergency vault containing only critical items if you need granular control.
+Access Scope - Unlike vault sharing which allows granular item selection, emergency access provides complete vault access. Create a dedicated emergency vault containing only critical items if you need granular control.
 
-Verification Code Handling: The verification code provides your only protection against unauthorized emergency access during your lifetime. Store it separately from your master password. Consider a physical safe or safety deposit box.
+Verification Code Handling - The verification code provides your only protection against unauthorized emergency access during your lifetime. Store it separately from your master password. Consider a physical safe or safety deposit box.
 
-Relationship Changes: Remove emergency access immediately upon relationship changes (divorce, separation, estrangement). The waiting period provides protection, but proactive revocation eliminates risk.
+Relationship Changes - Remove emergency access immediately upon relationship changes (divorce, separation, estrangement). The waiting period provides protection, but proactive revocation eliminates risk.
 
-Regular Audits: Review your emergency access configuration quarterly. Verify the contact's email remains valid and their account remains active.
+Regular Audits - Review your emergency access configuration quarterly. Verify the contact's email remains valid and their account remains active.
 
-Step 7: When Emergency Access Activates
+Step 7 - When Emergency Access Activates
 
 Upon your death or incapacitation, the emergency access process unfolds as follows:
 
@@ -262,7 +262,7 @@ audit = manager.audit_emergency_access()
 print(json.dumps(audit, indent=2))
 ```
 
-Step 8: Vault Encryption and Rotation
+Step 8 - Vault Encryption and Rotation
 
 Understanding the cryptographic properties of emergency access:
 
@@ -285,15 +285,15 @@ bw export --format csv > vault_backup_$(date +%Y%m%d).csv
 bw export --format json > vault_backup_$(date +%Y%m%d).json
 ```
 
-Step 9: Organizational Emergency Access Configuration
+Step 9 - Organizational Emergency Access Configuration
 
 For businesses managing shared credentials:
 
 ```yaml
 Organizational hierarchy for emergency access
-Tier 1: Finance accounts (CFO + Treasurer)
-Tier 2: Infrastructure accounts (CTO + DevOps Lead)
-Tier 3: Communications accounts (CEO + Communications Director)
+Tier 1 - Finance accounts (CFO + Treasurer)
+Tier 2 - Infrastructure accounts (CTO + DevOps Lead)
+Tier 3 - Communications accounts (CEO + Communications Director)
 
 Configure per-tier access
 ---
@@ -343,7 +343,7 @@ jq --arg now "$(date -d '30 days ago' +%Y-%m-%dT%H:%M:%S)" \
  wc -l
 ```
 
-Step 10: Test Emergency Access Procedure
+Step 10 - Test Emergency Access Procedure
 
 Validate your configuration works before an actual emergency:
 
@@ -355,7 +355,7 @@ Test emergency access without actual activation
 This simulates what happens in an actual emergency
 
 2. Verify waiting period shows correctly
-Expected: Shows countdown until access granted
+Expected - Shows countdown until access granted
 
 3. Cancel request (to prevent actual vault access)
 Contact admin to initiate cancellation
@@ -368,21 +368,21 @@ echo "Cancellation process: PASS"
 
 5. Create incident report
 cat > emergency_access_test_$(date +%Y%m%d).txt <<EOF
-Date: $(date)
-Participants: [List actual participants]
+Date - $(date)
+Participants - [List actual participants]
 Test Objectives:
 - Verify notification delivery
 - Confirm waiting period countdown
 - Validate cancellation process
 - Assess usability for non-technical users
 
-Results: [PASS/FAIL]
-Issues Identified: [None/List issues]
-Corrective Actions: [None/List actions]
+Results - [PASS/FAIL]
+Issues Identified - [None/List issues]
+Corrective Actions - [None/List actions]
 EOF
 ```
 
-Step 11: Physical Inheritance Planning Integration
+Step 11 - Physical Inheritance Planning Integration
 
 Connect emergency access to broader estate planning:
 
@@ -393,14 +393,14 @@ Digital estate document template
 cat > digital_estate_plan.md <<'EOF'
 Digital Estate Plan
 
-Step 12: Password Manager Access (Bitwarden)
-- Primary Account: [email@example.com]
-- Emergency Contact: [spouse@example.com]
+Step 12 - Password Manager Access (Bitwarden)
+- Primary Account - [email@example.com]
+- Emergency Contact - [spouse@example.com]
 - Waiting Period: 7 days
 - Verification Code: [CODE_IN_SEPARATE_SECURE_LOCATION]
 - Last Updated: [DATE]
 
-Step 13: Account Access Sequence
+Step 13 - Account Access Sequence
 1. Emergency contact initiates Bitwarden emergency access request
 2. Wait 7 days for access grant
 3. Access vault and locate:
@@ -409,7 +409,7 @@ Step 13: Account Access Sequence
  - Utility access
  - Email accounts
 
-Step 14: Critical Accounts Priority
+Step 14 - Critical Accounts Priority
 1. Bank accounts (within first 24 hours)
 2. Email account (grants access to password resets)
 3. Investment accounts
@@ -417,17 +417,17 @@ Step 14: Critical Accounts Priority
 5. Property accounts
 6. Social media accounts
 
-Step 15: Document Locations
+Step 15 - Document Locations
 - Paper copy of this plan: [Safe deposit box location]
 - Encrypted digital copy: [Cloud storage location]
 - USB backup: [Physical safe location]
 
-Step 16: Contact Information
+Step 16 - Contact Information
 - Family lawyer: [Phone/Email]
 - Financial advisor: [Phone/Email]
 - Insurance agent: [Phone/Email]
 
-Step 17: Annual Review Checklist
+Step 17 - Annual Review Checklist
 - [ ] Verify emergency contact email still active
 - [ ] Confirm all critical accounts remain in vault
 - [ ] Update account access priority if needed
@@ -438,7 +438,7 @@ EOF
 echo "Digital estate plan created: $(date)"
 ```
 
-Step 18: Recovery Procedures If Emergency Contact Dies
+Step 18 - Recovery Procedures If Emergency Contact Dies
 
 Plan for scenarios where the emergency contact predeceases you:
 
@@ -460,19 +460,19 @@ check_emergency_contact_status() {
 2. If emergency contact becomes unavailable
 Procedure to update designated contact:
 
-Step 1: Log into Bitwarden as primary owner
+Step 1 - Log into Bitwarden as primary owner
 bw login
 
-Step 2: Remove old contact
+Step 2 - Remove old contact
 bw remove-emergency-contact [old-contact-id]
 
-Step 3: Add new contact
+Step 3 - Add new contact
 bw add-emergency-contact "new-contact@example.com"
 
-Step 4: Notify all stakeholders
-Send email: "Emergency access configuration has been updated"
+Step 4 - Notify all stakeholders
+Send email - "Emergency access configuration has been updated"
 
-Step 5: Log event for compliance
+Step 5 - Log event for compliance
 echo "Emergency contact updated: $(date)" >> /var/log/digital-estate.log
 ```
 

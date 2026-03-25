@@ -29,7 +29,7 @@ Quick Setup Overview
 
 3. Client Setup (Linux/Mac)
 
-Step 1: Generate Client Keys
+Step 1 - Generate Client Keys
 
 On your client device (not VPS):
 
@@ -38,7 +38,7 @@ umask 077
 wg genkey | tee client1_privatekey | wg pubkey > client1_publickey
 ```
 
-Step 2: Add Client to Server
+Step 2 - Add Client to Server
 
 Back on VPS, add client to wg0.conf:
 
@@ -59,10 +59,10 @@ wg-quick down wg0 && wg-quick up wg0
 Verify client is listed:
 ```bash
 wg show
-Expected: [Peer] section with client public key and 10.0.0.2
+Expected - [Peer] section with client public key and 10.0.0.2
 ```
 
-Step 3: Create Client Config
+Step 3 - Create Client Config
 
 On client machine, create `/etc/wireguard/wg0.conf`:
 
@@ -88,12 +88,12 @@ Key fields:
 - `AllowedIPs = 0.0.0.0/0`: Route ALL traffic through VPN
 - `PersistentKeepalive = 25`: Keep connection alive every 25 seconds (important for mobile)
 
-Step 4: Connect on Linux/Mac
+Step 4 - Connect on Linux/Mac
 
 ```bash
 Install WireGuard (if not already)
-Ubuntu: sudo apt install wireguard
-Mac: brew install wireguard-tools
+Ubuntu - sudo apt install wireguard
+Mac - brew install wireguard-tools
 
 Create client config (copy content from Step 3)
 sudo nano /etc/wireguard/wg0.conf
@@ -113,11 +113,11 @@ curl icanhazip.com
 
 4. Client Setup (Windows)
 
-Step 1: Download WireGuard
+Step 1 - Download WireGuard
 
 Go to wireguard.com/install, download Windows installer.
 
-Step 2: Create Configuration File
+Step 2 - Create Configuration File
 
 Create a file `client1.conf` with content:
 
@@ -134,7 +134,7 @@ AllowedIPs = 0.0.0.0/0, ::/0
 PersistentKeepalive = 25
 ```
 
-Step 3: Import in WireGuard App
+Step 3 - Import in WireGuard App
 
 1. Open WireGuard application
 2. "Add Tunnel" → "Import tunnel(s) from file"
@@ -187,9 +187,9 @@ ISP sees your browsing, VPN doesn't
 - ISP sees you visited example.com
 ```
 
-Solution: Force VPN-specific DNS servers.
+Solution - Force VPN-specific DNS servers.
 
-Method 1: Configure in WireGuard Config (Recommended)
+Method 1 - Configure in WireGuard Config (Recommended)
 
 Already done in step 3 above:
 ```
@@ -205,12 +205,12 @@ nslookup google.com
 
 Output should show:
 Server: 1.1.1.1
-Not: Your ISP's nameserver (e.g., 192.168.1.1)
+Not - Your ISP's nameserver (e.g., 192.168.1.1)
 ```
 
-Online test: dnsleaktest.com (after connecting VPN, should show Cloudflare/Google, not ISP)
+Online test - dnsleaktest.com (after connecting VPN, should show Cloudflare/Google, not ISP)
 
-Method 2: System-Wide (Linux)
+Method 2 - System-Wide (Linux)
 
 If WireGuard DNS isn't working:
 
@@ -222,7 +222,7 @@ If not using VPN DNS, manually set:
 resolvectl dns wg0 1.1.1.1 8.8.8.8
 ```
 
-Method 3: pfSense/Router Level
+Method 3 - pfSense/Router Level
 
 If VPN server is router:
 1. Set DNS upstream to 1.1.1.1, 8.8.8.8
@@ -294,7 +294,7 @@ wg-quick down wg0 && wg-quick up wg0
 
 Verify
 wg show
-Expected: 2 peers listed
+Expected - 2 peers listed
 ```
 
 Create client config with AllowedIPs = 10.0.0.3/32 and connect.
@@ -361,7 +361,7 @@ Monitor VPN usage:
 ```bash
 Real-time traffic
 wg show wg0
-Shows: received/sent bytes per peer
+Shows - received/sent bytes per peer
 
 Example output:
 interface: wg0
@@ -395,11 +395,11 @@ Connection Hangs
 ```bash
 Check server is listening
 netstat -ulpn | grep 51820
-Expected: udp 0 0 0.0.0.0:51820 0.0.0.0:* LISTEN
+Expected - udp 0 0 0.0.0.0:51820 0.0.0.0:* LISTEN
 
 Check firewall allows port
 ufw status | grep 51820
-Expected: 51820/udp ALLOW
+Expected - 51820/udp ALLOW
 ```
 
 Client Can't Reach Server
@@ -410,8 +410,8 @@ ping your.vps.ip
 Should work (simple ICMP)
 
 Test UDP connectivity to port 51820
-On server: nc -u -l 51820
-On client: echo "test" | nc -u your.vps.ip 51820
+On server - nc -u -l 51820
+On client - echo "test" | nc -u your.vps.ip 51820
 Should see "test" on server
 ```
 
@@ -423,7 +423,7 @@ sudo resolvectl dns wg0 1.1.1.1 8.8.8.8
 
 Verify
 cat /etc/resolv.conf
-Should show: nameserver 1.1.1.1, nameserver 8.8.8.8
+Should show - nameserver 1.1.1.1, nameserver 8.8.8.8
 ```
 
 Slow Speed
@@ -435,7 +435,7 @@ iperf3 -c your.vps.ip  # On client
 
 WireGuard typical speeds:
 Gigabit connection: 600-800 Mbps through VPN (expected, not max)
-Slow connection: Check server CPU (may be maxed)
+Slow connection - Check server CPU (may be maxed)
 ```
 
 Can't Access Local Network
@@ -444,8 +444,8 @@ If you want to reach local devices through VPN (not internet):
 
 ```bash
 In client config, change AllowedIPs:
-Instead of: AllowedIPs = 0.0.0.0/0
-Use: AllowedIPs = 192.168.1.0/24, 10.0.0.0/24
+Instead of - AllowedIPs = 0.0.0.0/0
+Use - AllowedIPs = 192.168.1.0/24, 10.0.0.0/24
 
 This routes only local networks through VPN
 Other traffic goes through normal internet
@@ -505,9 +505,9 @@ Commercial VPN:
 - Annual cost: $60-180
 ```
 
-Break-even: 3-6 months of usage.
+Break-even - 3-6 months of usage.
 
-Long-term savings: Self-hosted is 50-70% cheaper.
+Long-term savings - Self-hosted is 50-70% cheaper.
 
 ---
 
@@ -535,7 +535,7 @@ Disable root login
 sed -i 's/PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
 
 Use SSH keys only (no passwords)
-Generate: ssh-keygen -t ed25519
+Generate - ssh-keygen -t ed25519
 Upload public key to ~/.ssh/authorized_keys
 
 Restart SSH

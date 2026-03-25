@@ -32,7 +32,7 @@ Bitwarden operates as a zero-knowledge password manager with cloud synchronizati
 
 KeePassXC takes a fundamentally different approach. It's a local password database that never contacts any server by default. Your vault file (.kdbx) stays on your devices, and you control exactly where it lives. KeePassXC uses Argon2id as the default key derivation function (with PBKDF2 as a fallback), which provides better resistance against GPU-based brute force attacks compared to PBKDF2 alone.
 
-For threat models: if you're concerned about server-side breaches or mass surveillance, KeePassXC's offline-first design has a smaller attack surface. If you want cross-device sync without manually managing vault files, Bitwarden's architecture is more convenient.
+For threat models - if you're concerned about server-side breaches or mass surveillance, KeePassXC's offline-first design has a smaller attack surface. If you want cross-device sync without manually managing vault files, Bitwarden's architecture is more convenient.
 
 Feature Comparison at a Glance
 
@@ -168,8 +168,8 @@ To use KeePassXC with SSH:
 
 ```bash
 Add SSH key to KeeAgent
-In KeePassXC: Tools > KeeAgent > Add existing key
-Or generate new: Tools > KeeAgent > Generate
+In KeePassXC - Tools > KeeAgent > Add existing key
+Or generate new - Tools > KeeAgent > Generate
 
 Configure SSH_AUTH_SOCK
 export SSH_AUTH_SOCK=/path/to/KeeAgent.socket
@@ -190,7 +190,7 @@ For organizations subject to compliance requirements such as SOC 2, ISO 27001, o
 
 Mobile and Cross-Platform Support
 
-| Platform | Bitwarden | KeePassXC / KeePass ecosystem |
+| Platform | Bitwarden | KeePassXC / KeePass environment |
 |---|---|---|
 | Linux | Yes (AppImage, Snap, Flatpak) | Yes (native) |
 | macOS | Yes | Yes |
@@ -230,21 +230,21 @@ Migration Between Tools
 Switching from Bitwarden to KeePassXC is straightforward: export a CSV from the Bitwarden web vault and import it into a new KeePassXC database. Review the exported file immediately and delete it after import. it contains all your passwords in plain text. Going the other direction, KeePassXC can export CSV or XML that Bitwarden accepts.
 
 Before migrating, generate SHA-256 checksums of your exported files and record them alongside the migration date. This documents the integrity of the transfer should questions arise later.
-Advanced KeePassXC Setup: Syncthing Integration
+Advanced KeePassXC Setup - Syncthing Integration
 
 For developers wanting local-first password management with sync across devices, combining KeePassXC with Syncthing provides privacy-respecting synchronization without any cloud:
 
 ```bash
-Step 1: Install Syncthing on all devices
+Step 1 - Install Syncthing on all devices
 brew install syncthing  # macOS
 sudo apt-get install syncthing  # Linux
 Download from https://syncthing.net for Windows
 
-Step 2: Start Syncthing background service
+Step 2 - Start Syncthing background service
 syncthing -home ~/.config/syncthing &
 
-Step 3: Add your KeePassXC database directory to sync
-Web UI: http://localhost:8384/
+Step 3 - Add your KeePassXC database directory to sync
+Web UI - http://localhost:8384/
 Create new folder, select /path/to/passwords.kdbx location
 ```
 
@@ -255,15 +255,15 @@ Bitwarden Self-Hosting Deep Dive
 For teams wanting Bitwarden's convenience with full data control, self-hosting is viable:
 
 ```bash
-Step 1: Clone the official self-hosted deployment
+Step 1 - Clone the official self-hosted deployment
 git clone https://github.com/bitwarden/self-host.git
 cd self-host
 
-Step 2: Download and configure installation
+Step 2 - Download and configure installation
 curl -s https://bitwarden.com/download/
 ./bitwarden.sh install
 
-Step 3: Edit .env_override for your setup
+Step 3 - Edit .env_override for your setup
 cat > .env_override << 'EOF'
 DOMAIN=vault.yourdomain.com
 MAIL_FROM=noreply@vault.yourdomain.com
@@ -272,14 +272,14 @@ MAIL_SMTP_PORT=587
 MAIL_SMTP_SSL=true
 EOF
 
-Step 4: Generate or install SSL certificates
+Step 4 - Generate or install SSL certificates
 Using Let's Encrypt (requires DNS validation)
 sudo certbot certonly --manual --preferred-challenges dns -d vault.yourdomain.com
 
-Step 5: Start the stack
+Step 5 - Start the stack
 ./bitwarden.sh start
 
-Step 6: Access via web
+Step 6 - Access via web
 https://vault.yourdomain.com
 ```
 
@@ -303,23 +303,23 @@ For security-conscious developers, understand the cryptographic differences:
 
 KeePassXC's use of Argon2id provides better resistance against GPU-based brute force attacks. If your threat model includes well-resourced attackers (state actors, law enforcement), KeePassXC's key derivation is technically superior.
 
-Migration Path: Switching Between Managers
+Migration Path - Switching Between Managers
 
 If you start with Bitwarden and later decide to switch to KeePassXC:
 
 ```bash
-Step 1: Export from Bitwarden (encrypted format)
+Step 1 - Export from Bitwarden (encrypted format)
 bw export --format csv
 
-Step 2: Import into KeePassXC
+Step 2 - Import into KeePassXC
 Open KeePassXC > Database > Import > CSV
 Map CSV columns to KeePassXC fields
 
-Step 3: Clean up sensitive fields
+Step 3 - Clean up sensitive fields
 Review all entries for metadata that doesn't need migration
 Delete temporary export file securely: shred -vfz export.csv
 
-Step 4: Verify all entries migrated correctly
+Step 4 - Verify all entries migrated correctly
 Check particularly multi-factor authentication codes
 ```
 

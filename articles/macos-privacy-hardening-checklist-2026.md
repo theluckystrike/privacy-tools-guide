@@ -21,7 +21,7 @@ Work through each section. Many of these settings are buried in submenus that mo
 
 Table of Contents
 
-- [System Settings: Privacy and Security](#system-settings-privacy-and-security)
+- [System Settings - Privacy and Security](#system-settings-privacy-and-security)
 - [Network Privacy Settings](#network-privacy-settings)
 - [iCloud Settings](#icloud-settings)
 - [Software and Updates](#software-and-updates)
@@ -31,7 +31,7 @@ Table of Contents
 - [Audit Installed Apps and Login Items](#audit-installed-apps-and-login-items)
 - [Related Reading](#related-reading)
 
-System Settings: Privacy and Security
+System Settings - Privacy and Security
 
 Open System Settings → Privacy & Security and work through each category:
 
@@ -75,14 +75,14 @@ App Permissions Audit
 In Privacy & Security, review each category:
 - Camera and Microphone: Remove any app you don't recognize or don't actively use for video/audio
 - Contacts, Calendars, Reminders: Limit to apps that genuinely need sync
-- Full Disk Access: Remove anything unexpected here. this grants access to all files
+- Full Disk Access - Remove anything unexpected here. this grants access to all files
 - Accessibility: High-risk permission; every app listed can control your entire Mac
 
 Network Privacy Settings
 
 iCloud Private Relay
 
-If you have an iCloud+ subscription, enable iCloud Private Relay: System Settings → Apple ID → iCloud → Private Relay.
+If you have an iCloud+ subscription, enable iCloud Private Relay - System Settings → Apple ID → iCloud → Private Relay.
 
 Private Relay routes Safari traffic through two separate internet relay servers. Apple sees your IP but not your destination, the relay operator sees the destination but not your IP. It only applies to Safari and does not protect other apps.
 
@@ -127,14 +127,14 @@ System Settings → Apple ID → iCloud → Show All:
 
 Advanced Data Protection
 
-If you use iCloud, enable Advanced Data Protection: Apple ID → iCloud → Advanced Data Protection. This expands end-to-end encryption to cover iCloud Backup, Photos, Notes, and most other iCloud data. Apple Support cannot read this data even with a legal request.
+If you use iCloud, enable Advanced Data Protection - Apple ID → iCloud → Advanced Data Protection. This expands end-to-end encryption to cover iCloud Backup, Photos, Notes, and most other iCloud data. Apple Support cannot read this data even with a legal request.
 
 Software and Updates
 
 Automatic Updates
 
 System Settings → General → Software Update → Automatic Updates:
-- Enable all automatic updates. Prompt: "won't this phone home?". yes, but running outdated software with known vulnerabilities is a worse trade-off.
+- Enable all automatic updates. Prompt - "won't this phone home?". yes, but running outdated software with known vulnerabilities is a worse trade-off.
 
 Gatekeeper and Notarization
 
@@ -182,7 +182,7 @@ Disable Wake for Network Access
 sudo pmset -a womp 0
 
 Clear Siri voice and text history via System Settings
-Also delete via: ~/Library/Application Support/com.apple.assistant.support/
+Also delete via - ~/Library/Application Support/com.apple.assistant.support/
 
 Disable Spotlight from indexing external drives
 sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"

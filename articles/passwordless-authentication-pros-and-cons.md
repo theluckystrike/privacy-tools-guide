@@ -334,13 +334,13 @@ Poor user education causes support costs to spike when users forget recovery cod
 
 Passwordless Implementation Timeline
 
-Phase 1 (Months 1-2): Build WebAuthn support, test with security keys and platform authenticators
+Phase 1 (Months 1-2) - Build WebAuthn support, test with security keys and platform authenticators
 
-Phase 2 (Months 3-4): Launch optional passwordless (users can choose to try it), collect feedback
+Phase 2 (Months 3-4) - Launch optional passwordless (users can choose to try it), collect feedback
 
-Phase 3 (Months 5-6): Improve recovery flows based on real-world usage patterns
+Phase 3 (Months 5-6) - Improve recovery flows based on real-world usage patterns
 
-Phase 4 (Months 7+): Make passwordless the default for new signups while maintaining password fallback for existing users
+Phase 4 (Months 7+) - Make passwordless the default for new signups while maintaining password fallback for existing users
 
 This phased approach prevents locking out users while you learn what works.
 
@@ -348,13 +348,13 @@ Threat Model for Passwordless Systems
 
 Consider these attacks:
 
-Social engineering: Users tricked into allowing unauthorized WebAuthn confirmation. Mitigation: Show relying party identity prominently during authentication.
+Social engineering: Users tricked into allowing unauthorized WebAuthn confirmation. Mitigation - Show relying party identity prominently during authentication.
 
-Authenticator loss: User loses the only registered security key. Mitigation: Mandate backup codes and at least two authenticators.
+Authenticator loss - User loses the only registered security key. Mitigation - Mandate backup codes and at least two authenticators.
 
-Credential stuffing attacks: No longer possible (no passwords to steal), but attackers can still compromise accounts via recovery codes. Mitigation: Rotate recovery codes regularly.
+Credential stuffing attacks - No longer possible (no passwords to steal), but attackers can still compromise accounts via recovery codes. Mitigation - Rotate recovery codes regularly.
 
-Phishing: Reduced because WebAuthn binds to origin, but URL spoofing still works. Mitigation: Use HTTPS only, implement domain verification, use certificate pinning.
+Phishing - Reduced because WebAuthn binds to origin, but URL spoofing still works. Mitigation - Use HTTPS only, implement domain verification, use certificate pinning.
 
 Passwordless Authentication Decision Matrix
 
@@ -395,7 +395,7 @@ Related Articles
 - [Dkim Spf Dmarc Email Authentication How They Protect Against](/dkim-spf-dmarc-email-authentication-how-they-protect-against/)
 - [GDPR Compliant User Authentication Design](/gdpr-compliant-user-authentication-design/)
 - [ProtonMail Two-Factor Authentication Guide](/protonmail-two-factor-authentication-guide/)
-- [AI CI/CD Pipeline Optimization: A Developer Guide](https://bestremotetools.com/ai-ci-cd-pipeline-optimization/)
+- [AI CI/CD Pipeline Optimization - A Developer Guide](https://bestremotetools.com/ai-ci-cd-pipeline-optimization/)
 
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -163,13 +163,13 @@ This script monitors the WireGuard handshake timestamp, logging connection statu
 
 Common Issues and Troubleshooting
 
-Session timeouts: Banks may terminate sessions after periods of inactivity. Configure your VPN's keepalive settings and consider setting up automatic reconnection scripts.
+Session timeouts - Banks may terminate sessions after periods of inactivity. Configure your VPN's keepalive settings and consider setting up automatic reconnection scripts.
 
-Fraud alerts: Even with VPN, unusual activity patterns trigger alerts. Notify your bank of travel plans and enable push notifications for account activity.
+Fraud alerts - Even with VPN, unusual activity patterns trigger alerts. Notify your bank of travel plans and enable push notifications for account activity.
 
-Certificate errors: If your bank uses certificate pinning, ensure your system clock is accurate. Certificate validation failures can lock you out of mobile banking applications.
+Certificate errors - If your bank uses certificate pinning, ensure your system clock is accurate. Certificate validation failures can lock you out of mobile banking applications.
 
-Split tunneling risks: Avoid configurations that route banking traffic outside the VPN tunnel. Verify with:
+Split tunneling risks - Avoid configurations that route banking traffic outside the VPN tunnel. Verify with:
 
 ```bash
 Verify all traffic routes through VPN
@@ -258,7 +258,7 @@ Server Infrastructure:
 
 Multi-Hop Routing:
 ```bash
-Advanced: Chain multiple VPNs for banking
+Advanced - Chain multiple VPNs for banking
 VPN1 (home) -> VPN2 (exit point visible to bank)
 Reduces VPN provider's ability to log banking activity
 
@@ -376,10 +376,10 @@ Settings > VPN & Device Management > Add VPN Configuration
 Use IKEv2 protocol for better mobile performance
 Enable "Connect on Demand" for automatic reconnection
 
-Android: Split tunneling (if your VPN supports it)
+Android - Split tunneling (if your VPN supports it)
 Route only banking app through VPN
 Keep other traffic on direct connection for speed
-Requires: VPN provider app with split tunnel support
+Requires - VPN provider app with split tunnel support
 
 Monitor mobile VPN stability
 adb logcat | grep -i "vpn\|network"

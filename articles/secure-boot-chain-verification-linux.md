@@ -29,20 +29,20 @@ UEFI Firmware
 
 Each stage can be measured and its hash recorded in the TPM's PCRs (Platform Configuration Registers). A change to any stage produces a different PCR value.
 
-Step 1: Check Secure Boot Status
+Step 1 - Check Secure Boot Status
 
 ```bash
 mokutil --sb-state
 SecureBoot enabled
 
 bootctl status 2>/dev/null | grep "Secure Boot"
-Secure Boot: enabled (user)
+Secure Boot - enabled (user)
 
 Check which keys are enrolled
 mokutil --list-enrolled | grep Subject
 ```
 
-Step 2: Check TPM Status
+Step 2 - Check TPM Status
 
 ```bash
 ls /dev/tpm*
@@ -55,22 +55,22 @@ sudo apt install tpm2-tools
 tpm2_getcap properties-fixed | grep -A2 TPM_PT_FIRMWARE
 ```
 
-Step 3: Read Current PCR Values
+Step 3 - Read Current PCR Values
 
 ```bash
 Read all PCR values
 tpm2_pcrread
 
 Common PCR assignments (SHA-256):
-PCR 0: UEFI firmware code
-PCR 4: Bootloader
-PCR 7: Secure Boot state and certificates
-PCR 11: systemd-boot entries
+PCR 0 - UEFI firmware code
+PCR 4 - Bootloader
+PCR 7 - Secure Boot state and certificates
+PCR 11 - systemd-boot entries
 
 tpm2_pcrread sha256:0,4,7,11
 ```
 
-Step 4: Record a Known-Good Baseline
+Step 4 - Record a Known-Good Baseline
 
 After a fresh trusted installation:
 
@@ -84,7 +84,7 @@ diff /root/pcr-baseline-*.txt /tmp/pcr-current.txt
 
 Any difference indicates a change to the measured component.
 
-Step 5: Check Bootloader Signatures
+Step 5 - Check Bootloader Signatures
 
 ```bash
 GRUB
@@ -98,7 +98,7 @@ Verify kernel signature
 pesign --show-signature --in /boot/vmlinuz-$(uname -r)
 ```
 
-Step 6: Kernel Module Signature Verification
+Step 6 - Kernel Module Signature Verification
 
 ```bash
 Check module signing enforcement
@@ -114,7 +114,7 @@ for mod in $(lsmod | awk 'NR>1 {print $1}'); do
 done
 ```
 
-Step 7: TPM-Based Disk Encryption
+Step 7 - TPM-Based Disk Encryption
 
 Bind LUKS disk encryption to TPM PCR values. the disk only auto-unlocks if the boot chain matches:
 
@@ -133,7 +133,7 @@ sudo systemd-cryptenroll --wipe-slot=tpm2 /dev/sda3
 sudo systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+4+7 /dev/sda3
 ```
 
-Step 8: Remote Attestation
+Step 8 - Remote Attestation
 
 Remote attestation lets a server verify that a client's boot chain is trustworthy before granting access:
 

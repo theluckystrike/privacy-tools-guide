@@ -23,11 +23,11 @@ Table of Contents
 - [Why Collabora Office with Nextcloud](#why-collabora-office-with-nextcloud)
 - [Prerequisites](#prerequisites)
 - [Architecture Overview](#architecture-overview)
-- [Step 1: Deploy Collabora Online via Docker](#step-1-deploy-collabora-online-via-docker)
-- [Step 2: Configure nginx Reverse Proxy](#step-2-configure-nginx-reverse-proxy)
-- [Step 3: Install and Configure the Nextcloud App](#step-3-install-and-configure-the-nextcloud-app)
-- [Step 4: Security Hardening](#step-4-security-hardening)
-- [Step 5: Verify the Integration](#step-5-verify-the-integration)
+- [Step 1 - Deploy Collabora Online via Docker](#step-1-deploy-collabora-online-via-docker)
+- [Step 2 - Configure nginx Reverse Proxy](#step-2-configure-nginx-reverse-proxy)
+- [Step 3 - Install and Configure the Nextcloud App](#step-3-install-and-configure-the-nextcloud-app)
+- [Step 4 - Security Hardening](#step-4-security-hardening)
+- [Step 5 - Verify the Integration](#step-5-verify-the-integration)
 - [Multi-User and Team Configuration](#multi-user-and-team-configuration)
 - [Backup and Update Strategy](#backup-and-update-strategy)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
@@ -61,7 +61,7 @@ Understanding the communication flow between components helps during troubleshoo
 
 This architecture means Collabora and Nextcloud must be able to reach each other over the network, either on the same Docker network or via your public hostnames. Placing them on a shared Docker network is more efficient and avoids hairpin NAT issues on some hosting environments.
 
-Step 1: Deploy Collabora Online via Docker
+Step 1 - Deploy Collabora Online via Docker
 
 Create a Docker Compose file for Collabora. The official Collabora image includes everything needed for the office suite.
 
@@ -120,7 +120,7 @@ Verify the container is running:
 docker ps | grep collabora
 ```
 
-Step 2: Configure nginx Reverse Proxy
+Step 2 - Configure nginx Reverse Proxy
 
 Set up nginx to forward HTTPS requests to the Collabora container. This separates the office backend from your main Nextcloud URL while maintaining SSL termination.
 
@@ -171,7 +171,7 @@ nginx -t
 systemctl reload nginx
 ```
 
-Step 3: Install and Configure the Nextcloud App
+Step 3 - Install and Configure the Nextcloud App
 
 Install the Collabora Online app through the Nextcloud web interface or via occ:
 
@@ -194,7 +194,7 @@ occ config:app:set richdocuments wopi_url --value="https://office.yourdomain.com
 occ config:app:set richdocuments disable_certificate_verification --value="yes"
 ```
 
-Step 4: Security Hardening
+Step 4 - Security Hardening
 
 For production deployments, apply these security measures:
 
@@ -255,7 +255,7 @@ ufw allow in on lo to any port 9980
 
 If you run nginx on the same host as Docker, use `127.0.0.1:9980` as the proxy target rather than `0.0.0.0:9980` in Docker's port binding. This prevents the Docker daemon from opening the port on the public interface, which can bypass UFW rules on some configurations.
 
-Step 5: Verify the Integration
+Step 5 - Verify the Integration
 
 Test your setup by:
 

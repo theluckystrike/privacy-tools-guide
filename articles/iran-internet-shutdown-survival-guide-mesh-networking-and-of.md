@@ -27,7 +27,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Mesh Networking Fundamentals
+Step 1 - Understand Mesh Networking Fundamentals
 
 Mesh networking creates interconnected networks where each node can communicate directly with nearby nodes, forming a resilient web of communication that doesn't require internet access. Unlike traditional client-server models, mesh networks are decentralized, no single point of failure can bring down the entire system.
 
@@ -39,7 +39,7 @@ There are three primary mesh networking topologies:
 
 For practical emergency communication, partial mesh networks using Wi-Fi Direct and Bluetooth Low Energy (BLE) offer the best balance of range, battery efficiency, and device compatibility.
 
-Step 2: Briar: Mesh Messaging for Android
+Step 2 - Briar: Mesh Messaging for Android
 
 Briar stands as the most mature offline mesh messaging application available. It creates encrypted peer-to-peer connections over Bluetooth, Wi-Fi Direct, and Tor hidden services, enabling communication without any internet connectivity.
 
@@ -67,11 +67,11 @@ For community organizers, the recommended approach involves:
 3. Establishing "message courier" nodes at strategic locations
 4. Using forums for broadcast announcements to all connected peers
 
-Step 3: Serval Mesh: Mesh Networking for Multiple Platforms
+Step 3 - Serval Mesh: Mesh Networking for Multiple Platforms
 
 Serval Mesh offers cross-platform support including Android, iOS, and dedicated mesh hardware. Unlike Briar's focus on messaging, Serval emphasizes voice communication and file sharing over mesh networks.
 
-Mesh Potato: Dedicated Hardware
+Mesh Potato - Dedicated Hardware
 
 The Mesh Potato project combines mesh networking with voice capability in a dedicated device. While primarily designed for development regions, these devices work excellently for local community networks:
 
@@ -91,7 +91,7 @@ voice=enabled
 
 The Rhizome protocol ensures data eventually reaches its destination through store-and-forward mechanisms, even when direct paths don't exist.
 
-Step 4: Build Custom Mesh Networks with Python
+Step 4 - Build Custom Mesh Networks with Python
 
 For developers wanting to build custom solutions, the `meshshake` library provides Python tools for experimental mesh networking:
 
@@ -126,7 +126,7 @@ def handle_incoming(msg, sender):
     print(f"Received from {sender}: {msg.content}")
 ```
 
-Step 5: Syncthing: Offline File Synchronization
+Step 5 - Syncthing: Offline File Synchronization
 
 When internet is unavailable but local networks exist, Syncthing provides decentralized file synchronization across devices without cloud dependencies:
 
@@ -157,11 +157,11 @@ Key advantages for emergency scenarios:
 - Selective synchronization (only needed folders)
 - Works over Wi-Fi Direct on Android
 
-Step 6: Offline Maps and Navigation
+Step 6 - Offline Maps and Navigation
 
 Internet shutdowns often disrupt navigation and mapping services. Pre-cached offline maps become essential:
 
-OsmAnd: Offline GPS Navigation
+OsmAnd - Offline GPS Navigation
 
 ```bash
 OsmAnd can be installed from F-Droid
@@ -175,7 +175,7 @@ Supports:
 
 For community coordination, exporting custom maps with marked meeting points, safe houses, and medical facilities enables navigation without connectivity.
 
-Step 7: Implementing Mesh VPN for Network Extension
+Step 7 - Implementing Mesh VPN for Network Extension
 
 When some community members maintain internet access (via satellite, international borders, or cached content), mesh VPN solutions can extend connectivity:
 
@@ -200,7 +200,7 @@ This allows traffic to flow between mesh nodes
 extending network access to all connected devices
 ```
 
-Step 8: Practical Preparation Checklist
+Step 8 - Practical Preparation Checklist
 
 Technical preparation before an emergency involves:
 
@@ -211,7 +211,7 @@ Technical preparation before an emergency involves:
 - Hardware redundancy: Multiple devices with different capabilities
 - Practice sessions: Regular mesh network testing within community
 
-Step 9: Limitations and Threat Considerations
+Step 9 - Limitations and Threat Considerations
 
 Mesh networking provides resilience but comes with constraints:
 

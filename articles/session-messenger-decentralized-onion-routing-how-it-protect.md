@@ -83,7 +83,7 @@ Understanding the actual message flow helps developers appreciate Session's priv
 5. Final Delivery: The exit node delivers the remaining encrypted payload to Bob
 6. Retrieval: Bob's client, when online, retrieves messages from the exit node and decrypts them locally
 
-The crucial detail: at no point does any Service Node possess enough information to link Alice to Bob. Even if all three nodes in a path collude, they would need to share information they don't systematically collect.
+The crucial detail - at no point does any Service Node possess enough information to link Alice to Bob. Even if all three nodes in a path collude, they would need to share information they don't systematically collect.
 
 Code-Level Implementation Details
 
@@ -118,7 +118,7 @@ Limitations and Considerations
 
 Onion routing in Session provides strong metadata protection, but understanding limitations matters for appropriate threat modeling:
 
-- Latency: Multi-hop routing introduces delays. Messages may take seconds to minutes for delivery, depending on network conditions
+- Latency - Multi-hop routing introduces delays. Messages may take seconds to minutes for delivery, depending on network conditions
 - Service Node availability: If all three nodes in a randomly selected path are offline, the message fails and must be retried
 - Metadata at rest: Messages queue on Service Nodes until recipients retrieve them. While encrypted, the existence of queued messages could theoretically be observed
 - Network traffic analysis: Sophisticated adversaries with traffic correlation capabilities might still identify communication patterns, though this requires significant resources
@@ -207,19 +207,19 @@ Hybrid Threat Scenarios
 
 Real-world adversaries use multiple surveillance techniques. Understanding Session's limitations in combined threat scenarios:
 
-Scenario 1: ISP + ISP Passive Observation
+Scenario 1 - ISP + ISP Passive Observation
 - Both sender and recipient ISPs observe Session connections
 - Service Node routing prevents ISPs from determining who talks to whom
 - ISPs see "user an uses Session" and "user B uses Session" but not "A talks to B"
 - Mitigation: Still privacy-protective for metadata
 
-Scenario 2: Sophisticated Timing Correlation
+Scenario 2 - Sophisticated Timing Correlation
 - Adversary controls multiple Service Nodes
 - Adversary correlates message arrival times
 - Adversary may be able to guess sender-recipient pairing
 - Mitigation: Session's random path selection and queueing delays make this harder than on centralized systems
 
-Scenario 3: Malicious Service Nodes
+Scenario 3 - Malicious Service Nodes
 - Adversary operates 1 of 3 nodes in a message path
 - That node sees encrypted onion layers but not the full plaintext
 - Mitigation: Would require controlling 2+ nodes for successful attack
@@ -239,7 +239,7 @@ Initial Send → Service Node A → Node B → Node C → Recipient Offline
 
 If the recipient doesn't come online within the queue window, the message is lost. The sender retries, creating visible traffic patterns.
 
-Developer consideration: Applications relying on Session should implement application-level delivery confirmation:
+Developer consideration - Applications relying on Session should implement application-level delivery confirmation:
 
 ```python
 Session messenger reliable delivery pattern

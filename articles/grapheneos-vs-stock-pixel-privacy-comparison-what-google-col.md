@@ -44,7 +44,7 @@ Common endpoints you will observe communicating with Google's servers include:
 
 Even with all Google apps disabled or removed through ADB, the core Android system continues attempting to contact these endpoints.
 
-GrapheneOS: Privacy Through Architecture
+GrapheneOS - Privacy Through Architecture
 
 GrapheneOS is an open-source privacy-focused operating system based on AOSP (Android Open Source Project) that eliminates Google Play Services entirely. The project maintains full compatibility with standard Android apps while removing the telemetry infrastructure present in stock Android.
 
@@ -151,7 +151,7 @@ class GmsChecker {
 
 Applications that gracefully handle GMS unavailability provide better user experience across both platforms.
 
-What Google Collects: Technical Breakdown
+What Google Collects - Technical Breakdown
 
 On unmodified Android, Google's data collection operates at multiple system levels:
 
@@ -203,7 +203,7 @@ For those building privacy-conscious applications or evaluating mobile security 
 
 *
 
-Installing GrapheneOS: Technical Walkthrough
+Installing GrapheneOS - Technical Walkthrough
 
 For Pixel devices (supported models), installation is straightforward:
 
@@ -215,7 +215,7 @@ Prerequisites
 - adb and fastboot tools
 
 1. Download official GrapheneOS installer
-Visit: https://grapheneos.org/install/
+Visit - https://grapheneos.org/install/
 Use web-based installer (easiest for most users)
 
 2. Unlock bootloader (erases device)
@@ -235,7 +235,7 @@ Configure biometrics, PIN, etc.
 
 5. Verify installation
 adb shell getprop ro.build.fingerprint
-Should show: GrapheneOS version info
+Should show - GrapheneOS version info
 ```
 
 Network observation on GrapheneOS:
@@ -245,7 +245,7 @@ On GrapheneOS fresh install, monitor network
 adb shell tcpdump -i any -n 2>&1 | grep -v '^No such device'
 
 Almost no external connections
-Only: NTP (time sync), DNS queries, no Google services
+Only - NTP (time sync), DNS queries, no Google services
 
 Compare to Stock Pixel:
 adb shell dumpsys netpolicy
@@ -263,7 +263,7 @@ Aurora Store (Google Play Mirror)
 
 ```bash
 Install Aurora Store APK
-Download from: auroraoss.com
+Download from - auroraoss.com
 
 adb install Aurora-Store.apk
 
@@ -276,7 +276,7 @@ F-Droid (Open Source Apps)
 
 ```bash
 Install F-Droid
-Download from: f-droid.org
+Download from - f-droid.org
 
 adb install F-Droid.apk
 
@@ -315,7 +315,7 @@ This provides:
 - Can be disabled instantly
 - Cannot access device resources
 
-Tradeoff: Accepts some Google telemetry
+Tradeoff - Accepts some Google telemetry
 But isolated in container, not system-wide
 ```
 
@@ -328,11 +328,11 @@ Honest assessment of GrapheneOS challenges:
 | No FCM push notifications | No real-time updates | Use WebSocket-based apps |
 | Some banking apps fail | Financial access issues | Use web version or Sandboxed Play |
 | Google Assistant unavailable | No voice assistant | Use Termux + offline voice tools |
-| Limited app ecosystem | Fewer apps available | Build with F-Droid alternatives |
+| Limited app environment | Fewer apps available | Build with F-Droid alternatives |
 | Setup complexity | Steeper learning curve | Refer to official docs |
 | Device-dependent | Only Pixel phones | Different ROM for other brands |
 
-Performance Metrics: Privacy vs User Experience
+Performance Metrics - Privacy vs User Experience
 
 CPU and battery comparison:
 
@@ -342,23 +342,23 @@ Compare system load between GrapheneOS and Stock
 
 On GrapheneOS
 adb shell top -n 1 | head -20
-System processes: ~3-5 active, ~2-3% CPU idle
-Power consumption: ~5mW idle
+System processes - ~3-5 active, ~2-3% CPU idle
+Power consumption - ~5mW idle
 
 On Stock Pixel
 adb shell top -n 1 | head -20
-System processes: ~20-30 active, ~8-12% CPU idle
-Power consumption: ~15-25mW idle (3-5x higher)
+System processes - ~20-30 active, ~8-12% CPU idle
+Power consumption - ~15-25mW idle (3-5x higher)
 
 Storage comparison
 adb shell df -h | grep -E "^/data|^/system"
-GrapheneOS: ~3GB /system, more free /data
-Stock Pixel: ~5GB /system, less free /data
+GrapheneOS - ~3GB /system, more free /data
+Stock Pixel - ~5GB /system, less free /data
 
 GrapheneOS is lightweight, boots faster, uses less battery
 ```
 
-Migration: From Stock Pixel to GrapheneOS
+Migration - From Stock Pixel to GrapheneOS
 
 Data transfer workflow:
 
@@ -408,7 +408,7 @@ Not ideal for:
 
 Stock Pixel acceptable for:
 - Users with low surveillance risk
-- Those fully in Google ecosystem
+- Those fully in Google environment
 - Users prioritizing convenience
 - Non-sensitive use cases
 

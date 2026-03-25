@@ -175,17 +175,17 @@ Choose Custom mode when you need to maintain specific site functionality while s
 
 The optimal configuration depends on your threat model and workflow. Most power users benefit from a Custom setup that enables cross-site cookie blocking and fingerprinting protection while allowing exceptions for development and critical web applications.
 
-Deep-Dive: Tracker List Management
+Deep-Dive - Tracker List Management
 
 Firefox's tracking protection relies on Disconnect.me's curated blocklists. Understanding these lists helps you make informed choices:
 
 Blocklist Categories
 
-Advertising: Third-party ad networks (Google Ads, Facebook Pixel, AdRoll). These track you across sites to build behavioral profiles and target ads.
+Advertising - Third-party ad networks (Google Ads, Facebook Pixel, AdRoll). These track you across sites to build behavioral profiles and target ads.
 
-Analytics: Tracking services collecting visitor behavior (Google Analytics, Mixpanel, Heap). Even if you disable ads, these services analyze how you use websites.
+Analytics - Tracking services collecting visitor behavior (Google Analytics, Mixpanel, Heap). Even if you disable ads, these services analyze how you use websites.
 
-Social Media: Embedded social widgets (Facebook Like button, Twitter Share, LinkedIn Tracking). These send information back to social networks even without interaction.
+Social Media - Embedded social widgets (Facebook Like button, Twitter Share, LinkedIn Tracking). These send information back to social networks even without interaction.
 
 Content Delivery Networks (CDNs): Some CDNs bundle tracking. Blocking these breaks content delivery; this is why exceptions matter.
 
@@ -230,7 +230,7 @@ Visit fingerprinting test websites
 Check results before/after enabling protection
 firefox about:config
 
-Search for: privacy.resistFingerprinting
+Search for - privacy.resistFingerprinting
 Toggle true/false and revisit test sites
 ```
 
@@ -391,7 +391,7 @@ Related Articles
 - [Android Custom ROM Privacy Comparison 2026](/android-custom-rom-privacy-comparison-2026/)
 - [Bitwarden Custom Fields Usage Guide](/bitwarden-custom-fields-usage-guide/)
 - [Linux Secure Boot Setup with Custom Keys for Preventing.](/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
-- [ChatGPT Enterprise vs Custom Support Bot: A Practical](https://bestremotetools.com/chatgpt-enterprise-vs-custom-support-bot/)
+- [ChatGPT Enterprise vs Custom Support Bot - A Practical](https://bestremotetools.com/chatgpt-enterprise-vs-custom-support-bot/)
 
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 ```

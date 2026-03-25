@@ -22,7 +22,7 @@ Encrypted DNS protocols, primarily DNS-over-HTTPS (DoH) and DNS-over-TLS (DoT), 
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Advanced: Obfsproxy for Additional Obfuscation](#advanced-obfsproxy-for-additional-obfuscation)
+- [Advanced - Obfsproxy for Additional Obfuscation](#advanced-obfsproxy-for-additional-obfuscation)
 - [Limitations and Considerations](#limitations-and-considerations)
 - [Troubleshooting](#troubleshooting)
 
@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand DNS Poisoning
+Step 1 - Understand DNS Poisoning
 
 Traditional DNS queries travel in plaintext across the network. Anyone in the communication path, your ISP, government surveillance systems, or WiFi hotspot operators, can intercept these packets and modify the responses. This technique, called DNS cache poisoning or DNS spoofing, works by injecting false records into the DNS resolver's cache.
 
@@ -48,7 +48,7 @@ In practice, DNS poisoning manifests as:
 
 Countries with extensive internet censorship, including China, Iran, Russia, and Turkey, actively employ DNS poisoning alongside other filtering techniques. TheEncrypting your DNS queries prevents this interception by ensuring only your chosen DNS resolver can see and respond to your requests.
 
-Step 2: DNS-over-HTTPS (DoH) Configuration
+Step 2 - DNS-over-HTTPS (DoH) Configuration
 
 DoH wraps DNS queries in HTTPS traffic, making them indistinguishable from regular web browsing. This provides both encryption and obfuscation, network observers cannot even tell you're performing DNS lookups.
 
@@ -99,7 +99,7 @@ Navigate to Settings → Network & Internet → Wi-Fi → Hardware Properties �
 - Preferred: `1.1.1.1` (Cloudflare)
 - Alternate: `8.8.8.8` (Google)
 
-Step 3: DNS-over-TLS (DoT) Configuration
+Step 3 - DNS-over-TLS (DoT) Configuration
 
 DoT uses TLS encryption directly on port 853, creating a dedicated encrypted channel for DNS queries. While slightly less obfuscated than DoH (the TLS handshake is visible on the wire), DoT offers broader compatibility with existing DNS infrastructure.
 
@@ -119,7 +119,7 @@ Using the getent utility:
 
 ```bash
 Install getent with DoT support
-On Debian/Ubuntu: sudo apt install dnsutils
+On Debian/Ubuntu - sudo apt install dnsutils
 
 Query using DoT
 dig @dns.google +tls +short example.com A
@@ -162,7 +162,7 @@ result = query_dot('example.com')
 print(f"Response length: {len(result)} bytes")
 ```
 
-Step 4: Choose Your DNS Resolver
+Step 4 - Choose Your DNS Resolver
 
 Selecting a trustworthy DNS resolver matters significantly. Your chosen resolver sees all your DNS queries, so opt for providers with strong privacy policies.
 
@@ -175,7 +175,7 @@ Selecting a trustworthy DNS resolver matters significantly. Your chosen resolver
 
 For maximum privacy, consider running your own DoH resolver using technologies like AdGuard Home or Pi-hole, which can be deployed on a Raspberry Pi or cloud VPS.
 
-Advanced: Obfsproxy for Additional Obfuscation
+Advanced - Obfsproxy for Additional Obfuscation
 
 In extremely restrictive environments where DoH itself might be blocked, additional obfuscation layers help. The obfsproxy project wraps traffic in obfuscation protocols:
 
@@ -193,7 +193,7 @@ obfs4proxy -nodeID 0000000000000000000000000000000000000000 \
 
 This runs an obfs4 bridge accepting connections on port 443, making encrypted DNS traffic appear as random noise to deep packet inspection systems.
 
-Step 5: Verify Your Configuration
+Step 5 - Verify Your Configuration
 
 After configuration, verify your DNS queries are actually encrypted:
 

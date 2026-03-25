@@ -27,7 +27,7 @@ Table of Contents
 - [Performance and User Experience](#performance-and-user-experience)
 - [Limitations and Considerations](#limitations-and-considerations)
 - [Comparison with Alternatives](#comparison-with-alternatives)
-- [Advanced: ProtonMail Bridge Setup for Development](#advanced-protonmail-bridge-setup-for-development)
+- [Advanced - ProtonMail Bridge Setup for Development](#advanced-protonmail-bridge-setup-for-development)
 - [Email Filtering and Rule Configuration](#email-filtering-and-rule-configuration)
 - [Calendar and Contact Synchronization](#calendar-and-contact-synchronization)
 - [Offline Email Access and Sync](#offline-email-access-and-sync)
@@ -145,7 +145,7 @@ ProtonMail offers a balance of features, community trust, and mobile functionali
 
 For teams requiring encrypted email with cross-platform mobile support, ProtonMail's open-standards foundation and active development keep it a mature option in 2026.
 
-Advanced: ProtonMail Bridge Setup for Development
+Advanced - ProtonMail Bridge Setup for Development
 
 Developers frequently need programmatic email access for testing, backup scripts, or system integration. ProtonMail Bridge solves this by providing an IMAP/SMTP gateway on your local machine.
 
@@ -247,10 +247,10 @@ The calendar supports iCalendar format through the Bridge, enabling integration 
 ```bash
 Sync ProtonCalendar to CalDAV client through Bridge
 Configure your CalDAV client with:
-Server: localhost:1143
-Protocol: CalDAV (through Bridge)
-Username: your@protonmail.com
-Password: bridge-app-password
+Server - localhost:1143
+Protocol - CalDAV (through Bridge)
+Username - your@protonmail.com
+Password - bridge-app-password
 ```
 
 This enables using ProtonCalendar alongside other encrypted productivity tools in your workflow.
@@ -286,7 +286,7 @@ What ProtonMail cannot protect:
 - Information about which emails you receive (frequency, volume, patterns)
 - Metadata about communications with external, non-Proton users
 
-For maximum privacy, combine ProtonMail with VPN access when accessing the web interface, use GPG encryption for subjects and metadata when needed, and understand that no email system provides perfect privacy for recipients outside the Proton ecosystem.
+For maximum privacy, combine ProtonMail with VPN access when accessing the web interface, use GPG encryption for subjects and metadata when needed, and understand that no email system provides perfect privacy for recipients outside the Proton environment.
 
 Performance Optimization for Mobile
 

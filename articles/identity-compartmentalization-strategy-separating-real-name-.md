@@ -27,7 +27,7 @@ Table of Contents
 - [Operational Security Practices](#operational-security-practices)
 - [Implementation Checklist](#implementation-checklist)
 - [Metadata Correlation Attacks](#metadata-correlation-attacks)
-- [Advanced: State Inference Attacks](#advanced-state-inference-attacks)
+- [Advanced - State Inference Attacks](#advanced-state-inference-attacks)
 - [Monitoring Compartmentalization Integrity](#monitoring-compartmentalization-integrity)
 - [Compartmentalization Failure Recovery](#compartmentalization-failure-recovery)
 
@@ -210,9 +210,9 @@ Check what IP addresses reveal about you
 curl -s https://ifconfig.me  # Returns your IP
 
 Use different VPNs/proxies for each persona
-Persona 1: ProtonVPN Singapore
-Persona 2: Mullvad Amsterdam
-Persona 3: Local network only (no VPN)
+Persona 1 - ProtonVPN Singapore
+Persona 2 - Mullvad Amsterdam
+Persona 3 - Local network only (no VPN)
 
 Verify complete IP isolation
 for i in 1 2 3; do
@@ -257,7 +257,7 @@ persona2_card="Cash-purchased gift card, address B"
 persona3_payment="Monero to CoinJoin to merchant"
 ```
 
-Advanced: State Inference Attacks
+Advanced - State Inference Attacks
 
 Sophisticated attackers infer connections between personas through behavioral patterns:
 
@@ -268,7 +268,7 @@ Activities at unusual times can link personas:
 ```
 Persona A posts on Reddit at 3 AM EST (unusual for USA)
 Persona B posts on Twitter at 4 AM EST (same unusual time)
-Analyst: Likely same person, timezone UTC
+Analyst - Likely same person, timezone UTC
 ```
 
 Vary your activity times across personas. If your real work is 9-5 EST, have Persona An active during those hours, Persona B in opposite hours.
@@ -282,16 +282,16 @@ Linguistic analysis can identify authors even across anonymous accounts:
 - Vocabulary sophistication level
 - Grammar quirks
 
-Mitigation: Write differently for each persona. Use grammar checking tools to vary style. If you have a distinctive writing voice, exaggerate that for one persona and adopt a different style for others.
+Mitigation - Write differently for each persona. Use grammar checking tools to vary style. If you have a distinctive writing voice, exaggerate that for one persona and adopt a different style for others.
 
 Content Correlation
 
 Your interests link personas:
 
 ```
-Persona A: Posts about Solidity smart contracts
-Persona B: Posts about Ethereum scaling solutions
-Analyst: Same person (specialized interest overlap unlikely)
+Persona A - Posts about Solidity smart contracts
+Persona B - Posts about Ethereum scaling solutions
+Analyst - Same person (specialized interest overlap unlikely)
 ```
 
 Intentionally diversify interests across personas. If you're a crypto developer, have one persona focused on crypto, another on completely different topics.
@@ -316,7 +316,7 @@ for device in work-laptop personal-laptop anonymous-pi; do
 done
 
 echo "=== Checking Password Isolation ==="
-Bitwarden CLI: count separate vaults
+Bitwarden CLI - count separate vaults
 bw list items | jq '.[] | .organizationId' | sort -u | wc -l
 
 echo "=== Checking Payment Methods ==="

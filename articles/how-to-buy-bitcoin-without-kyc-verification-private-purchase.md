@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the KYC Market
+Step 1 - Understand the KYC Market
 
 Most centralized cryptocurrency exchanges require identity verification before allowing fiat-to-crypto transactions. This requirement stems from anti-money laundering (AML) regulations that mandate financial institutions to verify customer identities. The threshold for KYC varies by jurisdiction, some exchanges require ID for any purchase, while others mandate verification only above certain transaction limits.
 
 For privacy-conscious individuals, the core challenge involves obtaining Bitcoin through channels that do not require identity linking. The methods discussed below each present different tradeoffs between privacy, convenience, and regulatory risk.
 
-Step 2: Peer-to-Peer Platforms
+Step 2 - Peer-to-Peer Platforms
 
 Peer-to-peer (P2P) marketplaces connect buyers and sellers directly, enabling Bitcoin purchases without intermediary verification. These platforms help trades between individuals using various payment methods, including cash, bank transfers, and online payment services.
 
@@ -42,7 +42,7 @@ Platform Selection
 
 Several P2P platforms operate without requiring user identity verification:
 
-- Bisq: A decentralized, non-custodial exchange running as a desktop application. Bisq uses a peer-to-peer network with atomic swaps for Bitcoin trading.
+- Bisq - A decentralized, non-custodial exchange running as a desktop application. Bisq uses a peer-to-peer network with atomic swaps for Bitcoin trading.
 - HodlHodl: A global P2P Bitcoin trading platform that does not hold user funds and does not require identity verification.
 - LocalBitcoins: One of the oldest P2P marketplaces, though user verification is now required for certain features.
 
@@ -68,7 +68,7 @@ When using P2P platforms:
 3. Communicate only through platform channels to maintain evidence trails
 4. Prefer face-to-face cash transactions for maximum privacy
 
-Step 3: Bitcoin ATMs
+Step 3 - Bitcoin ATMs
 
 Bitcoin ATMs (BTMs) allow cash purchases of Bitcoin without bank accounts or identity verification in many jurisdictions. These machines connect to exchanges or operate as their own order books.
 
@@ -94,7 +94,7 @@ When using Bitcoin ATMs:
 - Avoid cameras where possible (wearing sunglasses and hats provides minimal protection)
 - Consider the on-ramp operator's data retention policies
 
-Step 4: Decentralized Exchanges
+Step 4 - Decentralized Exchanges
 
 Decentralized exchanges (DEXs) help cryptocurrency trading without central authority involvement. While most DEXs trade ERC-20 tokens, several allow direct Bitcoin trading through atomic swaps or wrapped tokens.
 
@@ -125,7 +125,7 @@ Uniswap, Curve, and other AMMs support wrapped Bitcoin (WBTC, renBTC). While the
 2. Wrap ETH to WBTC or use a DEX to swap directly
 3. Optionally unwrap to receive native Bitcoin (requires Ethereum gas)
 
-Step 5: In-Person Trades
+Step 5 - In-Person Trades
 
 Face-to-face Bitcoin purchases offer the highest level of privacy since no digital record links the transaction to your identity.
 
@@ -158,7 +158,7 @@ NEVER reuse addresses for privacy
 3. Verify the transaction on-chain before completing cash handover
 4. Start with small amounts when testing a new counterparty
 
-Step 6: Regulatory Considerations
+Step 6 - Regulatory Considerations
 
 The legal status of KYC-free Bitcoin purchases varies significantly by jurisdiction:
 
@@ -189,13 +189,13 @@ Network-Level Protection
 - Use a VPN that does not keep logs
 - Avoid mobile data for sensitive transactions (cell towers create location records)
 
-Step 7: Coinjoin and Privacy-Enhanced Transactions
+Step 7 - Coinjoin and Privacy-Enhanced Transactions
 
 After acquiring Bitcoin, enhance privacy through mixing services. CoinJoin consolidates transactions from multiple users, breaking the blockchain analysis link between inputs and outputs:
 
 ```bash
 Using Wasabi Wallet for CoinJoin
-Download: https://www.wasabiwallet.io/
+Download - https://www.wasabiwallet.io/
 
 Or command-line using Mix-to approach
 ./coinJoinCLI.py \
@@ -207,7 +207,7 @@ Or command-line using Mix-to approach
 
 CoinJoin rounds increase privacy at the cost of time and small fees. Three rounds provides good privacy against transaction analysis for most threat models.
 
-Step 8: Cold Storage and Self-Custody
+Step 8 - Cold Storage and Self-Custody
 
 Non-custodial storage prevents exchanges from holding your Bitcoin:
 
@@ -242,7 +242,7 @@ Sign transaction on device (key never leaves device)
 signature = btc.sign_tx(client, "Bitcoin", [txdata], [private_key])
 ```
 
-Step 9: Tax Implications and Record Keeping
+Step 9 - Tax Implications and Record Keeping
 
 Different jurisdictions have varying tax treatment of Bitcoin purchases. Maintain detailed records:
 
@@ -311,7 +311,7 @@ Privacy-focused wallets manage address rotation and coin selection to prevent an
 Using Sparrow Wallet with Tor
 java -jar sparrow.jar --network tor
 
-In Sparrow: Tools > Provider > Enable Tor
+In Sparrow - Tools > Provider > Enable Tor
 This routes all blockchain queries through Tor
 ```
 
@@ -320,10 +320,10 @@ Transaction Timing and Amount Variation
 Avoid patterns that link multiple transactions:
 
 ```python
-WRONG: Regular purchases of same amount
+WRONG - Regular purchases of same amount
 purchases = [0.5, 0.5, 0.5, 0.5]  # Obvious pattern
 
-CORRECT: Varied amounts, irregular timing
+CORRECT - Varied amounts, irregular timing
 purchases = [0.47, 0.53, 0.49, 0.51]  # Similar amounts, no obvious pattern
 purchases_dates = [
     "2026-01-15",
@@ -333,7 +333,7 @@ purchases_dates = [
 ]  # Varied intervals
 ```
 
-Step 10: Lightning Network for Transaction Privacy
+Step 10 - Lightning Network for Transaction Privacy
 
 The Lightning Network provides payment channel privacy without on-chain footprint:
 
@@ -350,7 +350,7 @@ lightning-cli close <channel_id>
 
 Lightning payments don't appear on the blockchain, providing superior transaction privacy for frequent trading or spending.
 
-Step 11: Bridge Liquidity and Cross-Chain Privacy
+Step 11 - Bridge Liquidity and Cross-Chain Privacy
 
 Some acquisition methods require bridging between different blockchains:
 
@@ -370,7 +370,7 @@ const swap = await thorswap.swap({
 // No KYC required, atomic swap ensures trustlessness
 ```
 
-Step 12: Long-Term Privacy Maintenance
+Step 12 - Long-Term Privacy Maintenance
 
 After acquiring Bitcoin, maintain privacy over time:
 
@@ -381,16 +381,16 @@ Rotate receiving addresses frequently
 Consolidate coins carefully to avoid clustering
 
 Example address lifecycle
-Address 1: First purchase (receive)
-Address 2: Privacy enhancement (send via CoinJoin)
-Address 3: Long-term storage (hardware wallet)
+Address 1 - First purchase (receive)
+Address 2 - Privacy enhancement (send via CoinJoin)
+Address 3 - Long-term storage (hardware wallet)
 
 Never link addresses publicly
 Use Tor for all blockchain queries
 Consider VPN + Tor stacking for additional network privacy
 ```
 
-Step 13: Regulatory Space for Non-KYC Bitcoin
+Step 13 - Regulatory Space for Non-KYC Bitcoin
 
 The regulatory environment continues to evolve. Stay informed about changes:
 
@@ -400,7 +400,7 @@ The regulatory environment continues to evolve. Stay informed about changes:
 
 Non-KYC methods remain legal in most jurisdictions for personal use, but regulatory scrutiny is increasing. Use these techniques responsibly and understand your local legal environment.
 
-Step 14: Opsec Reminder
+Step 14 - Opsec Reminder
 
 Throughout Bitcoin acquisition:
 

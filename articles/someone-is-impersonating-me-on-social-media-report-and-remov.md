@@ -20,7 +20,7 @@ Social media impersonation occurs when someone creates an account using your nam
 
 Table of Contents
 
-- [Identifying Impersonation: Technical and Visual Signs](#identifying-impersonation-technical-and-visual-signs)
+- [Identifying Impersonation - Technical and Visual Signs](#identifying-impersonation-technical-and-visual-signs)
 - [Reporting on Major Platforms](#reporting-on-major-platforms)
 - [Developer-Specific Platforms](#developer-specific-platforms)
 - [Automating Documentation](#automating-documentation)
@@ -29,7 +29,7 @@ Table of Contents
 - [Platform-Specific Escalation Paths](#platform-specific-escalation-paths)
 - [Prevention Strategies](#prevention-strategies)
 
-Identifying Impersonation: Technical and Visual Signs
+Identifying Impersonation - Technical and Visual Signs
 
 Impersonation manifests in several forms. The most obvious is a direct clone, someone copying your profile photo, username, and bio to deceive others. More sophisticated attacks involve subtle variations: slightly modified usernames, accounts that mimic your writing style, or bots that amplify fake content.
 
@@ -278,7 +278,7 @@ LinkedIn Legal Department
 701 First Ave
 Sunnyvale, CA 94089
 
-Attn: Intellectual Property Department
+Attn - Intellectual Property Department
 ```
 
 Include your complaint number and detailed timeline with your formal letter.
@@ -348,6 +348,6 @@ Related Articles
 - [How To Safely Exchange Social Media Handles With Dating](/how-to-safely-exchange-social-media-handles-with-dating-matc/)
 - [Register Social Media Accounts Without Providing Real Phone](/how-to-register-social-media-accounts-without-providing-real/)
 - [Verify Someone's Identity Before Meeting from a Dating App](/how-to-verify-someone-identity-before-meeting-from-dating-ap/)
-- [AI Tools for Social Media Analytics: A Practical Guide](https://bestremotetools.com/ai-tools-for-social-media-analytics/)
+- [AI Tools for Social Media Analytics - A Practical Guide](https://bestremotetools.com/ai-tools-for-social-media-analytics/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

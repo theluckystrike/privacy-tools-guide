@@ -40,7 +40,7 @@ Before implementing failover, gather the following:
 - Basic familiarity with terminal commands and cron scheduling
 - Root or sudo access on your Linux system
 
-Step 1: Set Up Your Primary and Secondary VPN Tunnels
+Step 1 - Set Up Your Primary and Secondary VPN Tunnels
 
 First, establish both VPN connections on your Linux machine. This example uses WireGuard, but the principles apply to any protocol.
 
@@ -108,7 +108,7 @@ sudo wg-quick up wg0
 sudo wg-quick up wg1
 ```
 
-Step 2: Implementing the Failover Script
+Step 2 - Implementing the Failover Script
 
 The core of your failover system is a monitoring script that checks connectivity through each tunnel and switches routes when needed.
 
@@ -192,7 +192,7 @@ Make the script executable:
 sudo chmod +x /usr/local/bin/vpn-failover.sh
 ```
 
-Step 3: Run the Failover Monitor
+Step 3 - Run the Failover Monitor
 
 Start the failover script as a systemd service for reliability. Create the service file:
 
@@ -225,7 +225,7 @@ sudo systemctl enable vpn-failover
 sudo systemctl start vpn-failover
 ```
 
-Step 4: Test Your Failover System
+Step 4 - Test Your Failover System
 
 Verify the failover mechanism works before relying on it in production.
 
@@ -261,15 +261,15 @@ The script will detect recovery and switch back, or you can configure it to rema
 
 Additional Considerations
 
-Routing Policy: Modify the script to prioritize specific traffic through either tunnel based on destination, source IP, or application requirements using `ip rule` tables.
+Routing Policy - Modify the script to prioritize specific traffic through either tunnel based on destination, source IP, or application requirements using `ip rule` tables.
 
-Health Check Frequency: Adjust the `CHECK_INTERVAL` based on your tolerance for downtime. A 10-second interval balances responsiveness with system overhead.
+Health Check Frequency - Adjust the `CHECK_INTERVAL` based on your tolerance for downtime. A 10-second interval balances responsiveness with system overhead.
 
-Multiple Failures: Extend the script to support additional VPN providers by adding more interfaces and corresponding checks.
+Multiple Failures - Extend the script to support additional VPN providers by adding more interfaces and corresponding checks.
 
-Logging: Monitor the log file regularly or integrate with a log aggregation system for production environments.
+Logging - Monitor the log file regularly or integrate with a log aggregation system for production environments.
 
-Step 5: Policy Routing for Split Traffic
+Step 5 - Policy Routing for Split Traffic
 
 Use `ip rule` with named routing tables to send specific traffic through each tunnel independently of the default route:
 

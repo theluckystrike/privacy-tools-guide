@@ -36,15 +36,15 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Bitwarden Export Options
+Step 1 - Understand Bitwarden Export Options
 
 Bitwarden offers three primary export formats: JSON (unencrypted), CSV (unencrypted), and encrypted JSON. The format you choose depends on your threat model and recovery requirements.
 
 The JSON export contains your complete vault structure including folder assignments, custom fields, and login URIs. CSV exports flatten this data into spreadsheet-compatible format but lose folder hierarchy and custom field information. The encrypted JSON option wraps your data in your master password-derived key, making it safe for cold storage.
 
-One important caveat: none of the standard export formats includes file attachments. If you store documents, SSH keys, or other binary files as Bitwarden attachments, you must handle those separately. The CLI's `bw get attachment` command retrieves individual attachments, and you can script a loop over all items to pull them down before running your main export.
+One important caveat - none of the standard export formats includes file attachments. If you store documents, SSH keys, or other binary files as Bitwarden attachments, you must handle those separately. The CLI's `bw get attachment` command retrieves individual attachments, and you can script a loop over all items to pull them down before running your main export.
 
-Step 2: Exporting via Bitwarden CLI
+Step 2 - Exporting via Bitwarden CLI
 
 The Bitwarden CLI provides the most flexible export capabilities. Install it first if you haven't already:
 
@@ -117,7 +117,7 @@ bw export --output ./vault-backup.csv --format csv
 
 The CSV output includes folder, favorite, item name, username, password, URL, notes, and custom fields as columns. Be aware that multi-value custom fields get concatenated.
 
-Step 3: Exporting via Web Interface
+Step 3 - Exporting via Web Interface
 
 If you prefer the web vault, export from Settings > Export Vault:
 
@@ -129,7 +129,7 @@ If you prefer the web vault, export from Settings > Export Vault:
 
 The web interface offers the same three formats but requires manual download each time. For automated backups, use the CLI approach.
 
-Step 4: Exporting Organization Vaults
+Step 4 - Exporting Organization Vaults
 
 If you manage a Bitwarden Organizations account, the personal vault export does not include shared items stored in organization collections. Export organization vaults separately with admin privileges:
 
@@ -143,7 +143,7 @@ bw export --organizationid YOUR_ORG_ID --format json --output org-backup.json
 
 Only organization Owners and Admins can export the organization vault. Members and Managers cannot, which is by design for access control. If you run automated org backups, use a dedicated service account with the minimum required role and store its credentials in a secrets manager like HashiCorp Vault or AWS Secrets Manager rather than in the cron script itself.
 
-Step 5: Automated Backup Scripts
+Step 5 - Automated Backup Scripts
 
 For reliable disaster recovery, automate your exports with cron jobs. Here's a practical bash script:
 
@@ -196,7 +196,7 @@ sha256sum --check "$BACKUP_DIR/vault-$DATE.sha256"
 
 Pair this with a monitoring alert (via a cron status mailer or a tool like Healthchecks.io) so you get notified if the backup job fails silently.
 
-Step 6: Restore from Backup
+Step 6 - Restore from Backup
 
 When disaster strikes, Bitwarden CLI can restore your exported data:
 
@@ -258,7 +258,7 @@ rclone copy "$BACKUP_DIR/vault-$DATE.enc.json" encrypted-remote:bitwarden-backup
 
 Supported providers include Backblaze B2, Wasabi, S3-compatible storage, and self-hosted solutions like MinIO. Since the file is already encrypted with your master password, the rclone crypt layer is optional but adds defense in depth.
 
-Step 7: Exporting Specific Items
+Step 7 - Exporting Specific Items
 
 For large vaults, export just what you need using filters:
 
@@ -272,7 +272,7 @@ bw list items --favorite true > favorites-backup.json
 
 These targeted exports help when migrating specific services or creating limited backup sets.
 
-Step 8: Bitwarden Send for Sensitive Sharing
+Step 8 - Bitwarden Send for Sensitive Sharing
 
 For sharing individual credentials securely, Bitwarden Send complements your backup strategy:
 

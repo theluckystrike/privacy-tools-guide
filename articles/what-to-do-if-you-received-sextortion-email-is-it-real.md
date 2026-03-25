@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "What to Do If You Received Sextortion Email: Is It Real?"
+title: "What to Do If You Received Sextortion Email - Is It Real?"
 description: "Learn how to identify and handle sextortion emails. Technical analysis, verification steps, and actionable advice for developers and power users"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -28,7 +28,7 @@ Use a password manager to generate unique passwords
 Table of Contents
 
 - [Understanding Sextortion Email Scams](#understanding-sextortion-email-scams)
-- [Technical Analysis: Why Most Sextortion Emails Are Fake](#technical-analysis-why-most-sextortion-emails-are-fake)
+- [Technical Analysis - Why Most Sextortion Emails Are Fake](#technical-analysis-why-most-sextortion-emails-are-fake)
 - [Verifying Email Authenticity](#verifying-email-authenticity)
 - [What To Do If You Receive a Sextortion Email](#what-to-do-if-you-receive-a-sextortion-email)
 - [Prevention Strategies for Developers and Power Users](#prevention-strategies-for-developers-and-power-users)
@@ -42,9 +42,9 @@ A typical sextortion email claims that hackers have compromised your device, rec
 Here's what a typical sextortion email looks like:
 
 ```
-Subject: Your device has been compromised
+Subject - Your device has been compromised
 
-I know your password is: YourSecretPass123
+I know your password is - YourSecretPass123
 
 I infected your operating system with malware through a website you visited.
 I have access to your camera and microphone. I recorded you watching adult content.
@@ -57,7 +57,7 @@ If you don't pay, I will send this video to all your contacts.
 
 The psychological pressure these emails create is intentional. However, understanding the technical reality behind these claims helps you assess the actual threat level.
 
-Technical Analysis: Why Most Sextortion Emails Are Fake
+Technical Analysis - Why Most Sextortion Emails Are Fake
 
 Passwords Are Often From Data Breaches
 
@@ -105,7 +105,7 @@ DKIM, SPF, and DMARC
 Legitimate emails include proper authentication headers. Sextortion scammers frequently fail to configure these correctly:
 
 ```
-Authentication-Results: mx.google.com;
+Authentication-Results - mx.google.com;
  dkim=fail header.i=@sender.com header.s=selector1 header.b=ABC123;
  spf=softfail (google.com: domain of threat@malicious.com does not designate 192.0.2.1 as permitted sender) smtp.mailfrom=threat@malicious.com;
  dmarc=fail (p=REJECT sp=REJECT dis=NONE) header.from=sender.com
@@ -299,11 +299,11 @@ Detailed post-breach security audit
 Use a password manager to generate unique passwords
 
 2. Enable 2FA everywhere
-Start with: email, banking, social media
+Start with - email, banking, social media
 
 3. Monitor for account creation attempts
 Most email providers allow notification for new login attempts
-Gmail: https://myaccount.google.com/security-checkup
+Gmail - https://myaccount.google.com/security-checkup
 
 4. Consider an identity theft monitoring service
 Experian, Equifax, or services like LifeLock

@@ -30,7 +30,7 @@ Before configuring DeltaChat, ensure you have access to an email account that su
 
 For developers seeking maximum privacy, consider running a personal email server. A minimal Postfix and Dovecot setup on a VPS provides complete control over your communication infrastructure.
 
-Step 2: Configure DeltaChat with Your Email Provider
+Step 2 - Configure DeltaChat with Your Email Provider
 
 Desktop Client Setup
 
@@ -50,12 +50,12 @@ sudo pacman -S deltachat
 Launch the application and navigate to the account configuration. Select "Connect Email Account" and choose your provider from the list, or manually configure using these settings:
 
 ```
-IMAP Server: yourmail.example.com
-IMAP Port: 993
-IMAP Security: SSL/TLS
-SMTP Server: yourmail.example.com
-SMTP Port: 587
-SMTP Security: STARTTLS
+IMAP Server - yourmail.example.com
+IMAP Port - 993
+IMAP Security - SSL/TLS
+SMTP Server - yourmail.example.com
+SMTP Port - 587
+SMTP Security - STARTTLS
 ```
 
 For Gmail users, you'll need to generate an App Password since DeltaChat cannot use your primary Google credentials. Navigate to your Google Account security settings, enable 2-Step Verification, and create an App Password specifically for DeltaChat.
@@ -66,7 +66,7 @@ Mobile users can install DeltaChat from F-Droid (recommended for privacy-conscio
 
 For advanced users configuring custom servers, tap the three-dot menu and select "Manual Settings" to access advanced configuration options.
 
-Step 3: Verify Encryption Setup
+Step 3 - Verify Encryption Setup
 
 After initial configuration, DeltaChat generates encryption keys automatically. To verify your setup is functioning correctly:
 
@@ -146,7 +146,7 @@ Message Delivery Delays
 
 DeltaChat checks for new messages periodically. You can reduce latency by adjusting the sync interval in settings, though more frequent checks increase server load and battery consumption on mobile devices.
 
-Step 4: Autocrypt Key Management Deep Dive
+Step 4 - Autocrypt Key Management Deep Dive
 
 DeltaChat implements the Autocrypt standard, which automatically manages encryption keys without user intervention:
 
@@ -173,11 +173,11 @@ For paranoid users, verify fingerprints through an independent channel:
 
 ```bash
 Export your public key for out-of-band verification
-In DeltaChat: Settings → Encryption → Export Public Key
+In DeltaChat - Settings → Encryption → Export Public Key
 Share fingerprint via voice call or in-person meeting
 ```
 
-Step 5: Integration with Self-Hosted Email Infrastructure
+Step 5 - Integration with Self-Hosted Email Infrastructure
 
 For maximum control, run DeltaChat against self-hosted mail servers:
 
@@ -213,7 +213,7 @@ echo "user@example.com:$(openssl passwd -crypt password)" | sudo tee -a /etc/dov
 Connect to mail.example.com:993 (IMAP) and mail.example.com:587 (SMTP)
 ```
 
-Step 6: Multi-Device DeltaChat Setup
+Step 6 - Multi-Device DeltaChat Setup
 
 Managing DeltaChat across multiple devices requires careful key synchronization:
 
@@ -238,13 +238,13 @@ device_setup = {
 Export your backup code immediately after setup:
 
 ```bash
-In DeltaChat: Settings → Encryption → Backup
+In DeltaChat - Settings → Encryption → Backup
 Write down the 11-word backup code
 Store in secure location separate from devices
 Can be used to restore if device is lost
 ```
 
-Step 7: Comparing DeltaChat to Alternatives
+Step 7 - Comparing DeltaChat to Alternatives
 
 When evaluating encrypted messaging solutions:
 
@@ -260,7 +260,7 @@ When evaluating encrypted messaging solutions:
 
 DeltaChat stands out for its use of existing email infrastructure, you can access conversations from any email client, even if DeltaChat is unavailable.
 
-Step 8: Practical DeltaChat Workflows
+Step 8 - Practical DeltaChat Workflows
 
 For Journalists
 
@@ -285,7 +285,7 @@ Team communication setup
 For Privacy-Conscious Developers
 
 ```python
-Integration example: Send encrypted DeltaChat message
+Integration example - Send encrypted DeltaChat message
 import subprocess
 import os
 

@@ -45,7 +45,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What Data Mobile Apps Collect for Fingerprinting
+Step 1 - What Data Mobile Apps Collect for Fingerprinting
 
 Mobile apps have access to an extensive range of data points that contribute to device fingerprinting. Understanding what information your device reveals is the first step toward protecting yourself.
 
@@ -101,7 +101,7 @@ Beyond static identifiers, apps also track behavioral patterns:
 - Location history and movement patterns
 - Sensor patterns during specific activities
 
-Step 2: How to Prevent Mobile App Fingerprinting
+Step 2 - How to Prevent Mobile App Fingerprinting
 
 While achieving complete fingerprinting prevention on mobile devices is challenging due to the deep system access apps require, you can significantly reduce your fingerprint surface through a combination of OS settings, app choices, and privacy tools.
 
@@ -202,7 +202,7 @@ Signal provides excellent privacy with minimal metadata:
 
 Proton Apps
 
-Proton's privacy-focused ecosystem includes:
+Proton's privacy-focused environment includes:
 
 - Proton Mail: Encrypted email
 - Proton Drive: Encrypted cloud storage
@@ -231,7 +231,7 @@ Implement DNS-level blocking to prevent tracking domains:
 
 Restrict App Installation
 
-Limit your app ecosystem to minimize fingerprinting surface:
+Limit your app environment to minimize fingerprinting surface:
 
 - Install only essential apps
 - Regularly audit and remove unused applications
@@ -247,7 +247,7 @@ Android's Work Profile creates a separate, sandboxed environment:
 3. Use personal profile for everyday apps
 4. Disable work profile when not needed
 
-Step 3: Checking Your Fingerprinting Exposure
+Step 3 - Checking Your Fingerprinting Exposure
 
 To understand your current exposure, you can test how trackable your device is:
 

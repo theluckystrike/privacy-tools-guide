@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Documenting VPN Access
+Step 1 - Documenting VPN Access
 
 When preparing VPN credentials for transfer, you need to consider whether you're using a commercial VPN service or a self-hosted solution like WireGuard, OpenVPN, or Outline.
 
@@ -80,7 +80,7 @@ PersistentKeepalive = 25
 
 Store this configuration securely, preferably in a password manager or encrypted storage that your family member can access.
 
-Step 2: Password Manager Emergency Access
+Step 2 - Password Manager Emergency Access
 
 Most password managers have built-in emergency access or vault inheritance features. This is the single most important security tool to prepare for transfer.
 
@@ -118,7 +118,7 @@ For KeePassXC users, the database file itself needs to be transferred along with
 - Optional: Children can have restricted access
 ```
 
-Step 3: Two-Factor Authentication Backup Transfer
+Step 3 - Two-Factor Authentication Backup Transfer
 
 2FA is critical for security, but it creates a single point of failure if not properly documented. When transferring 2FA access, you have several options depending on the authenticator app used.
 
@@ -163,7 +163,7 @@ If you use hardware security keys like YubiKeys for 2FA, you need to register a 
 
 Register a backup YubiKey to your important accounts and document its location separately from your primary key.
 
-Step 4: Self-Hosted Security Tools
+Step 4 - Self-Hosted Security Tools
 
 If you run security tools on your own infrastructure, Pi-hole for DNS filtering, a self-hosted VPN, or a firewall configuration, document the administrative access thoroughly.
 
@@ -210,7 +210,7 @@ sudo journalctl -u wg-quick@wg0 -n 50 --no-pager
 
 Store this runbook alongside your other documentation, and walk your family member through the basics before they need to use it.
 
-Step 5: Structured Credential Handoff
+Step 5 - Structured Credential Handoff
 
 Rather than scattering credentials across password managers, text files, and USB drives, create a structured handoff document. Use age-encryption or GPG to encrypt the document, then store it in a location your family member can access:
 
@@ -224,7 +224,7 @@ VPN Configuration:
 
 Password Manager:
 - Service: Bitwarden
-- Emergency Contact: family-member@email.com
+- Emergency Contact - family-member@email.com
 
 2FA Backup:
 - TOTP Seeds: See encrypted seeds.json
@@ -232,11 +232,11 @@ Password Manager:
 
 Server Access:
 - SSH Key Location: USB drive in filing cabinet
-- Management Script: See family-vpn-management.sh
+- Management Script - See family-vpn-management.sh
 EOF
 ```
 
-Step 6: Test the Handoff
+Step 6 - Test the Handoff
 
 Before you need the transfer to work, test it. Have your family member attempt to:
 
@@ -289,7 +289,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 Related Articles
 
 - [Vpn Authentication Methods Compared Certificate Vs.](/vpn-authentication-methods-compared-certificate-vs-username-password-security/)
-- [VPN Provider Annual Audit Results: Independent Security.](/vpn-provider-annual-audit-results-independent-security-verified/)
+- [VPN Provider Annual Audit Results - Independent Security.](/vpn-provider-annual-audit-results-independent-security-verified/)
 - [Vpn Shared Ip Vs Dedicated Ip Privacy Security Tradeoffs Exp](/vpn-shared-ip-vs-dedicated-ip-privacy-security-tradeoffs-exp/)
 - [How To Create Sealed Envelope With Digital Credentials For E](/how-to-create-sealed-envelope-with-digital-credentials-for-e/)
 - [Set Up a Dead Man's Switch Email That Sends Credentials If](/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)

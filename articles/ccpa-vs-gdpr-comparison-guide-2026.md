@@ -16,7 +16,7 @@ tags: [privacy-tools-guide, comparison]
 
 {% raw %}
 
-GDPR is broader and stricter: it applies to any organization with EU users regardless of size, requires explicit opt-in consent, mandates 72-hour breach notification, and carries fines up to 4% of global revenue. CCPA is narrower: it only applies to for-profit businesses exceeding $25 million in revenue (or meeting other thresholds), defaults to opt-out rather than opt-in, and imposes penalties of $2,500-$7,500 per violation. For developers, implementing GDPR compliance first covers most CCPA requirements -- the key additions for CCPA are the "Do Not Sell" opt-out mechanism and the 45-day response window for data requests.
+GDPR is broader and stricter - it applies to any organization with EU users regardless of size, requires explicit opt-in consent, mandates 72-hour breach notification, and carries fines up to 4% of global revenue. CCPA is narrower: it only applies to for-profit businesses exceeding $25 million in revenue (or meeting other thresholds), defaults to opt-out rather than opt-in, and imposes penalties of $2,500-$7,500 per violation. For developers, implementing GDPR compliance first covers most CCPA requirements -- the key additions for CCPA are the "Do Not Sell" opt-out mechanism and the 45-day response window for data requests.
 
 Table of Contents
 
@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Scope and Applicability
+Step 1 - Scope and Applicability
 
 GDPR applies to any organization processing personal data of EU residents, regardless of where the organization is located. The threshold is straightforward: if you have users in the EU, GDPR likely applies to you. The regulation defines personal data broadly, covering anything that can identify an individual directly or indirectly.
 
@@ -54,7 +54,7 @@ Quick Comparison
 | Ease of Use | Moderate learning curve | Moderate learning curve |
 | Documentation | Available | Available |
 
-Step 2: Data Subject Rights
+Step 2 - Data Subject Rights
 
 Both regulations grant individuals rights over their personal data, but the specifics differ significantly.
 
@@ -64,7 +64,7 @@ GDPR provides six primary rights: the right to access, rectification, erasure, r
 
 CCPA Rights
 
-CCPA provides four rights: the right to know, delete, opt-out of sale, and non-discrimination. The right to know allows users to request categories and specific pieces of personal information collected. You must respond within 45 days, which cannot be extended.
+CCPA provides four rights - the right to know, delete, opt-out of sale, and non-discrimination. The right to know allows users to request categories and specific pieces of personal information collected. You must respond within 45 days, which cannot be extended.
 
 Here's how you might implement a data subject request handler:
 
@@ -203,19 +203,19 @@ class ConsentManager {
 }
 ```
 
-Step 3: Data Breach Notification
+Step 3 - Data Breach Notification
 
 GDPR requires notification within 72 hours of becoming aware of a breach that likely results in risk to individuals' rights and freedoms. If the breach is likely to result in high risk, you must also communicate it to affected individuals without undue delay.
 
 CCPA requires notification "in the most expedient time possible" but does not specify a fixed timeframe. California law requires notification if the breach involves SSN, driver's license number, or financial information.
 
-Step 4: Enforcement and Penalties
+Step 4 - Enforcement and Penalties
 
 GDPR penalties can reach €20 million or 4% of annual global turnover, whichever is higher. Enforcement is by Data Protection Authorities in each EU member state.
 
 CCPA penalties are $2,500 per unintentional violation and $7,500 per intentional violation, enforced by the California Attorney General. There's no private right of action for most violations, though users can sue for data breaches involving unencrypted or unredacted personal information.
 
-Step 5: Implementation Checklist
+Step 5 - Implementation Checklist
 
 For developers building applications that must comply with both regulations, here's a practical checklist:
 
@@ -233,7 +233,7 @@ For developers building applications that must comply with both regulations, her
 
 7. Document your breach notification procedures and test them regularly.
 
-Step 6: Practical Takeaways
+Step 6 - Practical Takeaways
 
 For most developers, implementing GDPR compliance covers most CCPA requirements. The key differences to remember are the 72-hour breach notification for GDPR, the specific opt-out mechanism for CCPA sales, and the different response timeframes for data requests.
 

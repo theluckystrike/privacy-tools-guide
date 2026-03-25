@@ -47,8 +47,8 @@ Table of Contents
 - [Operating System-Specific Troubleshooting](#operating-system-specific-troubleshooting)
 - [Performance Optimization](#performance-optimization)
 - [API Alternative for Developers](#api-alternative-for-developers)
-- [Comparison: Web Voice vs API Transcription](#comparison-web-voice-vs-api-transcription)
-- [Prevention: Maintaining Voice Mode Health](#prevention-maintaining-voice-mode-health)
+- [Comparison - Web Voice vs API Transcription](#comparison-web-voice-vs-api-transcription)
+- [Prevention - Maintaining Voice Mode Health](#prevention-maintaining-voice-mode-health)
 
 Common Causes of ChatGPT Voice Mode Issues
 
@@ -121,9 +121,9 @@ Ideally, latency should be under 100ms. If you experience lag:
 
 Ensure you're running the latest browser version:
 
-Chrome: Settings → Help → About Google Chrome → Check for updates
-Firefox: Menu → Help → About Firefox → Check for updates
-Safari: App Store → Updates (macOS) or Settings → Safari → About (iOS)
+Chrome - Settings → Help → About Google Chrome → Check for updates
+Firefox - Menu → Help → About Firefox → Check for updates
+Safari - App Store → Updates (macOS) or Settings → Safari → About (iOS)
 
 6. Verify Your Subscription Status
 
@@ -318,7 +318,7 @@ traceroute api.openai.com
 
 3. Test specific voice model endpoint
 curl -X OPTIONS https://api.openai.com/v1/audio/speech \
- -H "Origin: https://chat.openai.com" \
+ -H "Origin - https://chat.openai.com" \
  -H "Access-Control-Request-Method: POST"
 ```
 
@@ -336,7 +336,7 @@ system_profiler SPAudioDataType
 Repair audio permissions (may require reboot)
 defaults write com.google.Chrome EnableMediaStream -bool true
 
-Safari specific: Enable microphone access
+Safari specific - Enable microphone access
 System Preferences > Security & Privacy > Microphone > Check Safari
 ```
 
@@ -450,7 +450,7 @@ def stream_microphone_to_whisper(api_key, duration_seconds=10):
  return transcribe_voice_to_text('temp.wav', api_key)
 ```
 
-Comparison: Web Voice vs API Transcription
+Comparison - Web Voice vs API Transcription
 
 | Aspect | Web Voice Mode | Whisper API |
 |--------|---|---|
@@ -461,7 +461,7 @@ Comparison: Web Voice vs API Transcription
 | Offline | No | No |
 | Custom Language | Limited | Excellent |
 
-Prevention: Maintaining Voice Mode Health
+Prevention - Maintaining Voice Mode Health
 
 Once working, keep it working:
 

@@ -20,16 +20,16 @@ Working remotely from Bali presents unique connectivity challenges. Internet inf
 
 This guide focuses on technical implementation for developers and power users who need more than basic browser extensions. Generic VPN guides won't cut it, Bali's network environment, Indonesian regulations, and digital nomad-specific challenges require specialized knowledge.
 
-Why standard VPN advice fails in Indonesia: Most VPN guides assume stable internet connectivity, standard corporate firewalls, and unrestricted access to services. Bali's mobile networks use carrier-grade NAT, some VPN ports may be throttled, and certain development resources face intermittent access issues. This requires protocol selection and configuration that generic guides skip.
+Why standard VPN advice fails in Indonesia - Most VPN guides assume stable internet connectivity, standard corporate firewalls, and unrestricted access to services. Bali's mobile networks use carrier-grade NAT, some VPN ports may be throttled, and certain development resources face intermittent access issues. This requires protocol selection and configuration that generic guides skip.
 
 
-- Intermediate users: Deploy Algo VPN on DigitalOcean Singapore (approximately $5/month) for a personal server with full control.
+- Intermediate users - Deploy Algo VPN on DigitalOcean Singapore (approximately $5/month) for a personal server with full control.
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - Here's a practical breakdown: ### WireGuard
 
 WireGuard has become the preferred protocol for most scenarios.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
-- Why standard VPN advice: fails in Indonesia: Most VPN guides assume stable internet connectivity, standard corporate firewalls, and unrestricted access to services.
+- Why standard VPN advice: fails in Indonesia - Most VPN guides assume stable internet connectivity, standard corporate firewalls, and unrestricted access to services.
 - Mobile data networks have: expanded significantly, with 4G coverage reaching most tourist areas and major population centers.
 
 Understanding Bali's Internet Environment
@@ -190,7 +190,7 @@ Security Considerations
 
 When using VPN services in Indonesia:
 
-- Verify no-logging policies if privacy is paramount. Some providers maintain connection logs even with no-logging claims.
+- Verify no-logging policies if privacy is essential. Some providers maintain connection logs even with no-logging claims.
 - Enable multi-factor authentication on your VPN provider accounts.
 - Use dedicated IPs if available to avoid blacklisting issues from shared IP abuse.
 - Keep client software updated to patch security vulnerabilities.
@@ -201,11 +201,11 @@ Quick Setup Recommendations
 
 For rapid deployment, consider these approaches based on your technical comfort level:
 
-Beginner developers: Use an established provider like Mullvad, ProtonVPN, or NordVPN. All support WireGuard, offer Singapore servers, and have native applications for major platforms.
+Beginner developers - Use an established provider like Mullvad, ProtonVPN, or NordVPN. All support WireGuard, offer Singapore servers, and have native applications for major platforms.
 
-Intermediate users: Deploy Algo VPN on DigitalOcean Singapore (approximately $5/month) for a personal server with full control.
+Intermediate users - Deploy Algo VPN on DigitalOcean Singapore (approximately $5/month) for a personal server with full control.
 
-Advanced developers: Build a custom WireGuard mesh using Tailscale or netbird, allowing you to connect devices directly and access home or office networks securely.
+Advanced developers - Build a custom WireGuard mesh using Tailscale or netbird, allowing you to connect devices directly and access home or office networks securely.
 
 Test multiple configurations to find what works best in your specific location. Speed and reliability vary significantly across Bali, so what works in Canggu may underperform in Uluwatu.
 
@@ -215,43 +215,43 @@ Coworking Space Integration
 
 Many Bali digital nomads work from coworking spaces with shared internet. VPN behavior changes in shared network environments:
 
-Split Tunneling in Coworking: Configure split tunneling to use the coworking's fast local network for non-sensitive traffic while routing company traffic through VPN. This preserves bandwidth and reduces latency for local services while protecting sensitive data.
+Split Tunneling in Coworking - Configure split tunneling to use the coworking's fast local network for non-sensitive traffic while routing company traffic through VPN. This preserves bandwidth and reduces latency for local services while protecting sensitive data.
 
-DNS Leaks in Shared Networks: Corporate coworking spaces often monitor DNS queries. Ensure your VPN configuration uses the VPN provider's DNS servers, not the coworking's DNS. Test with dnsleaktest.com to verify no leaks.
+DNS Leaks in Shared Networks - Corporate coworking spaces often monitor DNS queries. Ensure your VPN configuration uses the VPN provider's DNS servers, not the coworking's DNS. Test with dnsleaktest.com to verify no leaks.
 
-Bandwidth Fairness: Some coworking spaces throttle VPN traffic to prevent hoarding. If you notice consistent underperformance, test with and without VPN to determine if the space is actively restricting it. If so, consider an alternative space or hours.
+Bandwidth Fairness - Some coworking spaces throttle VPN traffic to prevent hoarding. If you notice consistent underperformance, test with and without VPN to determine if the space is actively restricting it. If so, consider an alternative space or hours.
 
 ISP Throttling and Bandwidth Management
 
 Bali ISPs sometimes throttle international traffic, especially during peak hours. Mitigate this:
 
-Traffic Shaping: Compress data where possible. Enable compression in your VPN client (if supported). Use gzip compression on HTTP requests. Video calls in particular consume bandwidth, disable camera during calls requiring only voice.
+Traffic Shaping - Compress data where possible. Enable compression in your VPN client (if supported). Use gzip compression on HTTP requests. Video calls in particular consume bandwidth, disable camera during calls requiring only voice.
 
-Time-Based Strategy: Schedule bandwidth-intensive tasks (code uploads, dependency downloads) during off-peak hours. 6-8am is typically quieter than evening hours.
+Time-Based Strategy - Schedule bandwidth-intensive tasks (code uploads, dependency downloads) during off-peak hours. 6-8am is typically quieter than evening hours.
 
-Multi-Connection Failover: Configure your system to automatically fallback to mobile hotspot if primary ISP connection drops. This keeps you online even during ISP outages.
+Multi-Connection Failover - Configure your system to automatically fallback to mobile hotspot if primary ISP connection drops. This keeps you online even during ISP outages.
 
 Emergency Access and Backup Plans
 
 Remote work from Bali carries connectivity risks. Plan for emergencies:
 
-Mobile Hotspot Backup: Always maintain a mobile SIM with sufficient data. Different carriers have varying coverage, use both Telkomsel and Indosat for redundancy.
+Mobile Hotspot Backup - Always maintain a mobile SIM with sufficient data. Different carriers have varying coverage, use both Telkomsel and Indosat for redundancy.
 
-VPN Provider Redundancy: Don't rely on a single VPN provider. Configure your system with two providers (e.g., Mullvad + ProtonVPN) so if one experiences issues, you switch to the other.
+VPN Provider Redundancy - Don't rely on a single VPN provider. Configure your system with two providers (e.g., Mullvad + ProtonVPN) so if one experiences issues, you switch to the other.
 
-Local Offline Capability: Maintain local copies of essential files and documentation. You may not always have internet, but you can work on something offline then sync when connectivity returns.
+Local Offline Capability - Maintain local copies of essential files and documentation. You may not always have internet, but you can work on something offline then sync when connectivity returns.
 
-Communication Plan: If you go offline unexpectedly, ensure clients/managers know you're in an area with unreliable connectivity. Set expectations about response time and have an emergency contact protocol.
+Communication Plan - If you go offline unexpectedly, ensure clients/managers know you're in an area with unreliable connectivity. Set expectations about response time and have an emergency contact protocol.
 
 Testing and Validation
 
 Before declaring your VPN setup production-ready:
 
-Speed Testing: Use speedtest.net and compare results with and without VPN. Expect 10-30% speed reduction with VPN. Larger drops (50%+) indicate poor server choice or protocol mismatch.
+Speed Testing - Use speedtest.net and compare results with and without VPN. Expect 10-30% speed reduction with VPN. Larger drops (50%+) indicate poor server choice or protocol mismatch.
 
-Latency Testing: Run ping tests to your primary servers (GitHub, API services, cloud provider). Acceptable latency for remote work is <150ms. Test from both coworking and residential locations.
+Latency Testing - Run ping tests to your primary servers (GitHub, API services, cloud provider). Acceptable latency for remote work is <150ms. Test from both coworking and residential locations.
 
-DNS Resolution: Verify DNS works correctly from your VPN:
+DNS Resolution - Verify DNS works correctly from your VPN:
 
 ```bash
 Test DNS resolution through VPN
@@ -260,9 +260,9 @@ nslookup github.com
 Verify returned IP addresses are not leaking your location
 ```
 
-Reliability Testing: Run your VPN for 24+ hours and monitor for disconnections. The PersistentKeepalive setting should prevent drops, but verify this matches your real-world usage pattern.
+Reliability Testing - Run your VPN for 24+ hours and monitor for disconnections. The PersistentKeepalive setting should prevent drops, but verify this matches your real-world usage pattern.
 
-Geographic Verification: Confirm your VPN exit IP shows the expected country (Singapore, not Bali). Visit ipleak.net to verify.
+Geographic Verification - Confirm your VPN exit IP shows the expected country (Singapore, not Bali). Visit ipleak.net to verify.
 
 Weather and Power Considerations
 
@@ -272,9 +272,9 @@ Bali's monsoon season (October-April) creates connectivity challenges beyond nor
 Monitor power and connectivity status
 Create backup internet failover system
 
-Primary: Fiber from coworking space
-Secondary: Mobile 4G hotspot
-Tertiary: Backup power bank for mobile access
+Primary - Fiber from coworking space
+Secondary - Mobile 4G hotspot
+Tertiary - Backup power bank for mobile access
 
 Automatic failover script
 #!/bin/bash
@@ -314,7 +314,7 @@ cd algo
 ./algo --provider digitalocean --region sgp1
 
 Generates client configs + WireGuard configs
-Cost: $5/month for unlimited bandwidth and complete control
+Cost - $5/month for unlimited bandwidth and complete control
 ```
 
 Self-hosting gives you infrastructure independence if a commercial VPN service blocks Bali IPs.
@@ -323,9 +323,9 @@ Indonesian Internet Regulations and VPN Status
 
 Understanding the regulatory environment prevents surprises:
 
-VPN legality (2026): Indonesia doesn't explicitly ban VPNs, but the government restricts certain services through content blocking. The government has periodically threatened VPN bans but hasn't fully enforced them. Remote workers typically face no issues.
+VPN legality (2026) - Indonesia doesn't explicitly ban VPNs, but the government restricts certain services through content blocking. The government has periodically threatened VPN bans but hasn't fully enforced them. Remote workers typically face no issues.
 
-What gets blocked: Gambling, adult content, and some social media features. Development resources (GitHub, Stack Overflow, npm) are accessible. Company communication tools (Slack, Teams) work normally.
+What gets blocked - Gambling, adult content, and some social media features. Development resources (GitHub, Stack Overflow, npm) are accessible. Company communication tools (Slack, Teams) work normally.
 
 Provider recommendations for Indonesia:
 - Mullvad: No registration, strongest no-log claims, frequent location updates

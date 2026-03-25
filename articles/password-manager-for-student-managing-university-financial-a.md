@@ -386,10 +386,10 @@ Store this offline (printed, not digital):
 ```
 FINANCIAL ACCOUNT RECOVERY GUIDE
 
-Master Password: [written copy, encrypted]
-Account Recovery Codes: [list of recovery codes]
-Emergency Contact: [name and contact info]
-Password Manager Type: [e.g., Bitwarden]
+Master Password - [written copy, encrypted]
+Account Recovery Codes - [list of recovery codes]
+Emergency Contact - [name and contact info]
+Password Manager Type - [e.g., Bitwarden]
 
 ACCOUNT LIST:
 1. FAFSA - https://fafsa.gov - [username]

@@ -247,13 +247,13 @@ Choosing the Right Solution
 
 When selecting a privacy-respecting analytics alternative, evaluate these factors:
 
-Data Collection Scope: Determine what data you actually need. Some solutions track aggregate statistics only, while others provide individual session details. Choose based on your analytical requirements.
+Data Collection Scope - Determine what data you actually need. Some solutions track aggregate statistics only, while others provide individual session details. Choose based on your analytical requirements.
 
-Self-Hosted vs. Cloud: Self-hosted solutions give you complete data ownership but require maintenance. Cloud platforms offer convenience but require trusting a third party with your data.
+Self-Hosted vs. Cloud - Self-hosted solutions give you complete data ownership but require maintenance. Cloud platforms offer convenience but require trusting a third party with your data.
 
-Compliance Requirements: If you operate in heavily regulated industries, self-hosted solutions with minimal data collection simplify compliance. Document your data handling practices regardless of platform choice.
+Compliance Requirements - If you operate in heavily regulated industries, self-hosted solutions with minimal data collection simplify compliance. Document your data handling practices regardless of platform choice.
 
-Integration Capabilities: Consider whether you need API access, custom dashboards, or integration with existing tools. Some platforms offer extensive customization while others prioritize simplicity.
+Integration Capabilities - Consider whether you need API access, custom dashboards, or integration with existing tools. Some platforms offer extensive customization while others prioritize simplicity.
 
 Implementation Best Practices
 

@@ -306,7 +306,7 @@ def delete_virginia_user_data(user_id, deletion_reason):
     }
 ```
 
-Key difference from CPA/TDPSA: VCDPA requires a 45-day response period (vs 15 days for CPA). Plan infrastructure accordingly.
+Key difference from CPA/TDPSA - VCDPA requires a 45-day response period (vs 15 days for CPA). Plan infrastructure accordingly.
 - [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://bestremotetools.com/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 - [Cursor AI Privacy Mode How to Use AI Features](https://bestremotetools.com/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 

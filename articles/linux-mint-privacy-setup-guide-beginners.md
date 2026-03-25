@@ -34,7 +34,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: First Steps: System Updates and Repository Configuration
+Step 1 - First Steps: System Updates and Repository Configuration
 
 Before applying privacy changes, ensure your system runs current packages:
 
@@ -55,7 +55,7 @@ sudo apt remove --purge thunderbird transmission-gtk
 sudo apt autoremove
 ```
 
-Step 2: Firewall Configuration with UFW
+Step 2 - Firewall Configuration with UFW
 
 Linux Mint includes UFW (Uncomplicated Firewall) but does not enable it by default. Activate it with sensible defaults:
 
@@ -90,7 +90,7 @@ sudo apt install gufw
 
 GUFW provides the same UFW rules through a point-and-click interface, useful for users less comfortable with the command line.
 
-Step 3: Disk Encryption with LUKS
+Step 3 - Disk Encryption with LUKS
 
 Full disk encryption protects data if your machine is lost or stolen. During installation, Linux Mint offers LUKS encryption. select it if performing a fresh install. For existing installations, encrypting home directories provides a practical alternative:
 
@@ -123,7 +123,7 @@ lsblk -f
 
 If swap sits outside the encrypted volume, disable it temporarily or redirect it to an encrypted location.
 
-Step 4: Firefox Privacy Hardening
+Step 4 - Firefox Privacy Hardening
 
 Firefox ships with telemetry enabled. Disable it through `about:config` and preferences:
 
@@ -159,7 +159,7 @@ xdg-open "https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/"
 
 Consider also installing the Multi-Account Containers extension, which isolates cookies and storage by domain category. This prevents advertisers from tracking your activity across sites even when you have a shared browsing session.
 
-Step 5: AppArmor for Application Sandboxing
+Step 5 - AppArmor for Application Sandboxing
 
 AppArmor restricts applications to specified resources. Linux Mint includes AppArmor profiles but loads them in complain mode (logging violations without blocking). Enforce stricter profiles for sensitive applications:
 
@@ -200,7 +200,7 @@ sudo journalctl -f | grep apparmor
 
 Denied operations that break legitimate application behavior need corresponding rule additions. Complain mode gives you a record of what a profile would block before you enforce it.
 
-Step 6: Network Privacy: DNS and SSH Hardening
+Step 6 - Network Privacy: DNS and SSH Hardening
 
 Replace your ISP's DNS with privacy-respecting alternatives:
 
@@ -245,7 +245,7 @@ ssh-keygen -t ed25519 -C "your@email.com"
 ssh-copy-id -i ~/.ssh/id_ed25519.pub user@server
 ```
 
-Step 7: Package Management Security
+Step 7 - Package Management Security
 
 Verify package integrity using apt's signature verification:
 
@@ -266,7 +266,7 @@ sudo debsums -ca
 
 This detects any modified system files. a useful check after installing software from untrusted sources.
 
-Step 8: Reducing Telemetry and Data Collection
+Step 8 - Reducing Telemetry and Data Collection
 
 Linux Mint is not a significant telemetry sender by default, but a few services still reach out to external hosts:
 
@@ -276,13 +276,13 @@ sudo timedatectl set-ntp false
 
 Or point it at a server you trust:
 sudo nano /etc/systemd/timesyncd.conf
-Add: NTP=time.cloudflare.com
+Add - NTP=time.cloudflare.com
 sudo systemctl restart systemd-timesyncd
 ```
 
 The Update Manager checks for updates by pinging Mint servers. This behavior is expected and benign, but users with strict network privacy requirements can proxy this traffic through a local caching proxy or VPN.
 
-Step 9: VPN Integration
+Step 9 - VPN Integration
 
 A VPN tunnels your traffic through a remote server, masking your IP address from the websites you visit and your internet activity from your ISP. Linux Mint supports VPN configurations through NetworkManager:
 
@@ -307,7 +307,7 @@ sudo systemctl enable wg-quick@wg0
 
 A VPN does not replace other hardening steps. It shifts trust from your ISP to your VPN provider. Combine it with DNS-over-HTTPS, tracker blocking, and application sandboxing for layered protection.
 
-Step 10: Verify Your Configuration
+Step 10 - Verify Your Configuration
 
 After completing the hardening steps, verify they took effect:
 

@@ -30,9 +30,9 @@ FIDO2 (WebAuthn + CTAP) generates a unique keypair per service. The private key 
 | Recovery | Backup codes or seed | Multiple keys or backup codes |
 | Cost | Free | $25-70 per key |
 
-When to use TOTP: Low-risk accounts, services that do not support FIDO2, or situations where you cannot carry a hardware key. TOTP is better than no second factor.
+When to use TOTP - Low-risk accounts, services that do not support FIDO2, or situations where you cannot carry a hardware key. TOTP is better than no second factor.
 
-When to use FIDO2: High-value accounts (email, cloud infrastructure, source code repos, banking). Any account where a phishing attack would cause serious damage. FIDO2 eliminates the entire class of phishing-based credential theft.
+When to use FIDO2 - High-value accounts (email, cloud infrastructure, source code repos, banking). Any account where a phishing attack would cause serious damage. FIDO2 eliminates the entire class of phishing-based credential theft.
 
 For developers implementing authentication: support both. Offer FIDO2 as the recommended option and TOTP as a fallback. Use the WebAuthn API for FIDO2 and a standard TOTP library like `pyotp` or `otplib`.
 

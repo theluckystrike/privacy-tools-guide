@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Federated Learning Cohorts: FLoC Replacement Explained"
-description: "Federated Learning Cohorts: FLoC Replacement Explained. privacy guide covering tools, techniques, and best practices to protect your data and digital"
+description: "Federated Learning Cohorts - FLoC Replacement Explained. privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
@@ -67,19 +67,19 @@ Build a testing environment to measure Privacy Sandbox API performance:
 
     <div id="topics-status">
         <h3>Topics API</h3>
-        <p>Status: <span id="topics-available">Checking...</span></p>
-        <p>Current Topics: <span id="current-topics">Loading...</span></p>
+        <p>Status - <span id="topics-available">Checking...</span></p>
+        <p>Current Topics - <span id="current-topics">Loading...</span></p>
     </div>
 
     <div id="protected-audiences-status">
         <h3>Protected Audiences</h3>
-        <p>Status: <span id="pa-available">Checking...</span></p>
-        <p>Interest Groups: <span id="interest-groups">Loading...</span></p>
+        <p>Status - <span id="pa-available">Checking...</span></p>
+        <p>Interest Groups - <span id="interest-groups">Loading...</span></p>
     </div>
 
     <div id="attribution-status">
         <h3>Attribution Reporting</h3>
-        <p>Status: <span id="attr-available">Checking...</span></p>
+        <p>Status - <span id="attr-available">Checking...</span></p>
     </div>
 </div>
 

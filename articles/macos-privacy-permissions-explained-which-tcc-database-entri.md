@@ -69,7 +69,7 @@ Revoking TCC Entries for Security
 
 Removing TCC entries forces apps to re-request permission on next launch. This is useful when you want to reset permissions for an app you no longer trust, or to remove access for applications you've uninstalled.
 
-Method 1: Using tccutil (Limited)
+Method 1 - Using tccutil (Limited)
 
 Apple provides `tccutil` to reset permissions, but it only works for certain services and clears all entries:
 
@@ -81,7 +81,7 @@ Reset all calendar permissions
 tccutil reset Calendar
 ```
 
-Method 2: Direct SQLite Manipulation
+Method 2 - Direct SQLite Manipulation
 
 For granular control, modify the TCC database directly:
 
@@ -95,13 +95,13 @@ sqlite3 ~/Library/Application Support/com.apple.TCC/TCC.db "DELETE FROM access W
 
 For system-wide entries, use the sudo prefix and the system database path.
 
-Method 3: Using Third-Party Tools
+Method 3 - Using Third-Party Tools
 
 Tools like TCC Tracker or Privacy Generator provide GUI interfaces for browsing and revoking TCC permissions. These are particularly useful for users uncomfortable with command-line operations.
 
 Practical Examples
 
-Example 1: Revoke Screen Recording from a Specific App
+Example 1 - Revoke Screen Recording from a Specific App
 
 If you notice that a rarely-used utility has screen recording permission, revoke it:
 
@@ -110,14 +110,14 @@ sqlite3 ~/Library/Application Support/com.apple.TCC/TCC.db \
 "DELETE FROM access WHERE service = 'kTCCServiceScreenCapture' AND client LIKE '%com.example.screenrecorder%';"
 ```
 
-Example 2: Check Which Apps Have Microphone Access
+Example 2 - Check Which Apps Have Microphone Access
 
 ```bash
 sqlite3 ~/Library/Application Support/com.apple.TCC/TCC.db \
 "SELECT client FROM access WHERE service = 'kTCCServiceMicrophone' AND auth_value = 2;"
 ```
 
-Example 3: Reset All Permissions for an Uninstalled App
+Example 3 - Reset All Permissions for an Uninstalled App
 
 Even after removing an app, TCC entries may persist. Clean them up:
 

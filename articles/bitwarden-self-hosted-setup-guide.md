@@ -26,14 +26,14 @@ This guide walks through deploying Bitwarden on a Linux server using Docker, con
 - For very small deployments (1-5 users) with limited hardware, Vaultwarden as an alternative requires only a single container and under 100MB RAM: a meaningful difference if running on a 1GB VPS.
 - Is self-hosted Bitwarden free?: The community edition is free for unlimited users.
 - Unless you intend to: run a shared service, restrict registration to invited users only via the admin panel toggle.
-- Uses Microsoft SQL Server: by default (or SQLite for simpler setups), is backed by Bitwarden Inc., and receives official support.
+- Uses Microsoft SQL Server - by default (or SQLite for simpler setups), is backed by Bitwarden Inc., and receives official support.
 - Memory usage is higher: (approximately 1-2GB at idle) because it runs multiple microservices.
 
 Why Self-Host Bitwarden?
 
 The cloud-hosted Bitwarden service is solid, but self-hosting offers distinct advantages. You decide where data resides, who accesses it, and when upgrades happen. Organizations with compliance requirements often need on-premises solutions. Developers may want to test integrations without production data.
 
-The trade-off is clear: you accept responsibility for backups, updates, and server maintenance. If that trade-off suits your needs, read on.
+The trade-off is clear - you accept responsibility for backups, updates, and server maintenance. If that trade-off suits your needs, read on.
 
 Privacy Implications of Cloud vs. Self-Hosted
 
@@ -43,7 +43,7 @@ Self-hosting removes that dependency entirely. Your encrypted vault never leaves
 
 For individuals, self-hosting provides assurance that a Bitwarden data breach or service discontinuation cannot expose your vault data. If Bitwarden were to suffer a server-side compromise, self-hosted users would be unaffected.
 
-Step 1: Self-Hosted vs. Vaultwarden: Understanding the Options
+Step 1 - Self-Hosted vs. Vaultwarden: Understanding the Options
 
 Before proceeding, it is worth understanding the two main self-hosting paths:
 
@@ -64,7 +64,7 @@ Before beginning, ensure you have:
 
 For production deployments serving teams, 4GB RAM and 2 CPU cores are recommended minimum specifications.
 
-Step 2: Install Docker and Docker Compose
+Step 2 - Install Docker and Docker Compose
 
 If Docker is not yet installed, set it up first:
 
@@ -86,7 +86,7 @@ docker compose version
 
 Reboot or log out for group membership to take effect.
 
-Step 3: Deploy Bitwarden
+Step 3 - Deploy Bitwarden
 
 The official Bitwarden deployment uses a simplified installation script. Run these commands on your server:
 
@@ -124,7 +124,7 @@ Check service status:
 
 All containers should show as "running." Access your vault at `https://your-domain.com`.
 
-Step 4: Initial Configuration
+Step 4 - Initial Configuration
 
 Create your first user account through the web interface. This account becomes the organization owner with full administrative capabilities.
 
@@ -139,7 +139,7 @@ From the admin panel, you can:
 
 Disable open registration immediately. By default, anyone who reaches your domain can create an account. Unless you intend to run a shared service, restrict registration to invited users only via the admin panel toggle.
 
-Step 5: Configure SMTP for Email
+Step 5 - Configure SMTP for Email
 
 Self-hosted Bitwarden requires SMTP configuration to send invitation emails and password reset links. Add these settings to your environment:
 
@@ -167,13 +167,13 @@ Restart services to apply changes:
 
 For privacy-conscious deployments, consider using a transactional email provider that does not scan email content, such as Mailgun or Postmark, rather than a consumer Gmail SMTP relay.
 
-Step 6: Two-Factor Authentication Setup
+Step 6 - Two-Factor Authentication Setup
 
 Self-hosted Bitwarden supports multiple 2FA methods. For organizational deployments, duo and email-based 2FA are available on free tiers. TOTP (authenticator app) 2FA is supported for individual accounts.
 
 For administrative access, strongly consider using a hardware security key. Configure this through your account settings after logging in. See the [Best Hardware Security Key for Developers guide](/best-hardware-security-key-for-developers/) for hardware selection advice.
 
-Step 7: Backup Strategy
+Step 7 - Backup Strategy
 
 Your Bitwarden data lives in the `./bwdata` directory. Critical components include:
 
@@ -206,7 +206,7 @@ Schedule this script with cron to run daily. The backup archive itself contains 
 
 For offsite backup, use a self-hosted solution like Syncthing to replicate backups to a second location without involving a cloud provider. This maintains your privacy posture while ensuring redundancy.
 
-Step 8: Updating Your Instance
+Step 8 - Updating Your Instance
 
 Bitwarden releases updates regularly. Update your self-hosted instance with:
 
@@ -230,7 +230,7 @@ The default installation uses about 1GB RAM at idle. Performance scales reasonab
 
 For very small deployments (1-5 users) with limited hardware, Vaultwarden as an alternative requires only a single container and under 100MB RAM. a meaningful difference if running on a 1GB VPS.
 
-Step 9: Security Hardening
+Step 9 - Security Hardening
 
 After initial setup, implement these hardening measures:
 

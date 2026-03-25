@@ -53,7 +53,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Signal: Best Default Choice
+Step 1 - Signal: Best Default Choice
 
 Signal provides:
 - End-to-end encryption (Signal Protocol, open standard)
@@ -94,13 +94,13 @@ Disappearing messages default:
 ```
 Signal Settings → Privacy → Default Timer for New Chats → 1 week
 
-Individual conversation: press timer icon → set per your source's needs
-For high-risk sources: 1 day or 1 hour
+Individual conversation - press timer icon → set per your source's needs
+For high-risk sources - 1 day or 1 hour
 ```
 
 ---
 
-Step 2: Signal's Sealed Sender
+Step 2 - Signal's Sealed Sender
 
 Standard messaging reveals sender identity to the service provider (even for E2EE). Signal's sealed sender encrypts the sender's identity. Signal servers can verify that the message came from a Signal user but not which one.
 
@@ -113,13 +113,13 @@ This is enabled by default for existing contacts. "Allow from anyone" lets sourc
 
 ---
 
-Step 3: Briar: Peer-to-Peer, Works Without Internet
+Step 3 - Briar: Peer-to-Peer, Works Without Internet
 
 Briar is a messaging app that routes messages over Tor and can work over Bluetooth or WiFi when internet is unavailable. useful in situations where network surveillance is likely or connectivity is cut.
 
 ```bash
 Install Briar
-Android: F-Droid → search Briar, or:
+Android - F-Droid → search Briar, or:
 https://briarproject.org/apk/briar.apk
 
 Desktop (Linux/Windows/macOS):
@@ -129,7 +129,7 @@ chmod +x briar-desktop-linux-x64.AppImage
 ./briar-desktop-linux-x64.AppImage
 ```
 
-Briar's key advantage over Signal: No phone number required. Add contacts by:
+Briar's key advantage over Signal - No phone number required. Add contacts by:
 1. Scanning a QR code in person (most secure)
 2. Exchanging a link over any channel
 3. Physical proximity (Bluetooth/WiFi if no internet)
@@ -144,14 +144,14 @@ Briar setup:
 
 ---
 
-Step 4: SecureDrop: Whistleblower Submission System
+Step 4 - SecureDrop: Whistleblower Submission System
 
 SecureDrop is for initial contact from anonymous sources, not ongoing conversation. Sources access it via Tor Browser. they never reveal their identity.
 
 ```bash
 SecureDrop requires a dedicated server
-Minimum: two air-gapped servers (App Server + Monitor Server)
-Full installation guide: docs.securedrop.org
+Minimum - two air-gapped servers (App Server + Monitor Server)
+Full installation guide - docs.securedrop.org
 
 For journalists using an existing SecureDrop installation:
 Your organization's SecureDrop .onion address is published on your website
@@ -177,14 +177,14 @@ You receive files without the source revealing identity
 
 ---
 
-Step 5: PGP for Email
+Step 5 - PGP for Email
 
 When sources prefer email, PGP provides content encryption. Metadata (sender, recipient, timestamp) remains visible to email providers.
 
 ```bash
 Generate a PGP key pair
 gpg --full-generate-key
-Choose: RSA 4096, expires 2 years
+Choose - RSA 4096, expires 2 years
 
 Export public key for sources
 gpg --armor --export you@email.com > public-key.asc
@@ -211,11 +211,11 @@ Enable encryption by default for new messages
 
 ---
 
-Step 6: Device Hygiene for Source Communications
+Step 6 - Device Hygiene for Source Communications
 
 Separate Device
 
-The strongest approach: dedicate a device (phone or laptop) exclusively to source communication. This device:
+The strongest approach - dedicate a device (phone or laptop) exclusively to source communication. This device:
 
 - Never logs into personal accounts
 - Uses a non-personal SIM or WiFi only
@@ -243,7 +243,7 @@ Set timer so it auto-deletes
 
 ---
 
-Step 7: Metadata Protection: What Each Tool Leaks
+Step 7 - Metadata Protection: What Each Tool Leaks
 
 | Tool | Content | Who you talked to | When | How often |
 |------|---------|------------------|------|----------|
@@ -254,18 +254,18 @@ Step 7: Metadata Protection: What Each Tool Leaks
 | SecureDrop | E2EE | Nothing | Nothing | Nothing |
 | PGP email | Content only | To email provider | To email provider | To email provider |
 
-For high-risk sources: Briar or SecureDrop are the only options that approach true metadata protection.
+For high-risk sources - Briar or SecureDrop are the only options that approach true metadata protection.
 
 ---
 
-Step 8: Legal Considerations
+Step 8 - Legal Considerations
 
 In the US, journalists may have limited shield law protection for source identity. but this varies by state and is not absolute. Federal investigations often override state shield laws.
 
 ```
 Practical implications:
 - If your device is seized, what does it reveal?
-  → Test: open Signal, what's visible without the PIN?
+  → Test - open Signal, what's visible without the PIN?
   → Enable Screen Security and PIN lock
 
 - If Signal/Briar is compelled to turn over data:

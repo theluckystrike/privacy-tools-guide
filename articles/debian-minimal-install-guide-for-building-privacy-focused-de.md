@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Downloading and Preparing the Installer
+Step 1 - Downloading and Preparing the Installer
 
 Start by downloading the Debian netinst image from the official website. The netinst (network installer) is approximately 400MB and downloads packages during installation. This keeps the ISO small while still providing the complete installer.
 
@@ -55,7 +55,7 @@ sudo dd if=debian-testing-amd64-netinst.iso of=/dev/sdX bs=4M status=progress
 
 Replace `/dev/sdX` with your actual USB device path. Check `lsblk` to identify the correct device.
 
-Step 2: The Minimal Installation Process
+Step 2 - The Minimal Installation Process
 
 Boot from the USB and select "Advanced options" then "Expert install." This gives you granular control over every installation decision.
 
@@ -79,7 +79,7 @@ When asked about software to install, deselect everything. You want:
 
 This gives you a command-line base system of approximately 700MB. The installer finishes in minutes rather than the hours a full installation requires.
 
-Step 3: Initial System Configuration
+Step 3 - Initial System Configuration
 
 After the first boot, update the package lists and upgrade existing packages:
 
@@ -111,7 +111,7 @@ sudo ufw enable
 
 This blocks all incoming connections while allowing outgoing traffic. Adjust rules based on your specific needs.
 
-Step 4: Privacy Hardening Steps
+Step 4 - Privacy Hardening Steps
 
 Network Configuration
 
@@ -158,7 +158,7 @@ sudo systemctl disable cups.service
 sudo systemctl mask cups.service
 ```
 
-Step 5: Install a Privacy-Respecting Desktop
+Step 5 - Install a Privacy-Respecting Desktop
 
 Window Manager vs Desktop Environment
 
@@ -176,19 +176,19 @@ Essential Privacy Applications
 
 Install tools that respect your privacy from the start:
 
-Browser: Firefox with privacy extensions or Brave browser. Configure `about:config` to disable telemetry and fingerprinting resistance.
+Browser - Firefox with privacy extensions or Brave browser. Configure `about:config` to disable telemetry and fingerprinting resistance.
 
-Password Manager: Bitwarden or KeePassXC for managing credentials securely.
+Password Manager - Bitwarden or KeePassXC for managing credentials securely.
 
-Messaging: Signal or Element for encrypted communication.
+Messaging - Signal or Element for encrypted communication.
 
-Email: Thunderbird with OpenPGP support or a web-based solution like ProtonMail through Tor.
+Email - Thunderbird with OpenPGP support or a web-based solution like ProtonMail through Tor.
 
-File Encryption: VeraCrypt for encrypted containers and GPG for file encryption.
+File Encryption - VeraCrypt for encrypted containers and GPG for file encryption.
 
 Configure these applications to store all data locally when possible. Cloud sync introduces attack surface and trust dependencies.
 
-Step 6: Automated Security Updates
+Step 6 - Automated Security Updates
 
 Configure unattended security upgrades:
 
@@ -199,7 +199,7 @@ sudo dpkg-reconfigure -plow unattended-upgrades
 
 This ensures critical security patches apply automatically without manual intervention.
 
-Step 7: Verification and Maintenance
+Step 7 - Verification and Maintenance
 
 After setup, verify your system's privacy posture:
 
@@ -224,7 +224,7 @@ Monthly security audit
 sudo apt autoremove -y
 ```
 
-Step 8: Build on This Foundation
+Step 8 - Build on This Foundation
 
 With a minimal Debian base, you have complete control over your computing environment. Every component gets installed deliberately, every network connection gets made consciously, and every piece of data stays where you decide.
 

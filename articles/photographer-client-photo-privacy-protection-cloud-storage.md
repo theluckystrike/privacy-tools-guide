@@ -14,7 +14,7 @@ intent-checked: true
 voice-checked: true
 ---
 
-How to Protect Client Photos: Privacy Best Practices for Photographers Using Cloud Storage
+How to Protect Client Photos - Privacy Best Practices for Photographers Using Cloud Storage
 
 Protect client photos by using zero-knowledge encrypted cloud storage (Proton Drive, Tresorit, Filen), stripping EXIF metadata before sharing, implementing two-factor authentication, and creating shareable links with expiration dates. Store backups using the 3-2-1 rule: active working copy plus encrypted cloud backup plus offline encrypted external drive. Establish clear data handling agreements with clients and respond to deletion requests within 30 days per GDPR requirements.
 
@@ -42,13 +42,13 @@ Choosing Privacy-Focused Cloud Storage for Photography
 
 Not all cloud storage services offer equal privacy protections. Here's how to evaluate your options:
 
-Zero-Knowledge Encryption: The Gold Standard
+Zero-Knowledge Encryption - The Gold Standard
 
 Zero-knowledge (or end-to-end) encryption means only you and your clients can view the photos. The cloud provider itself cannot access your files because encryption happens before upload, and only you hold the decryption keys.
 
 Recommended zero-knowledge cloud storage for photographers:
 
-- Proton Drive: Swiss-based, zero-knowledge encryption, integrates with Proton ecosystem
+- Proton Drive: Swiss-based, zero-knowledge encryption, integrates with Proton environment
 - Tresorit: Enterprise-grade zero-knowledge, excellent for professional use
 - Filen: Affordable zero-knowledge option with good mobile apps
 - Internxt: Budget-friendly with strong privacy focus
@@ -161,7 +161,7 @@ Strip EXIF Metadata Before Delivery
 
 ```bash
 Strip all EXIF metadata from photos before sharing with clients
-Install: brew install exiftool  or  apt install libimage-exiftool-perl
+Install - brew install exiftool  or  apt install libimage-exiftool-perl
 
 Preview what metadata exists in a file
 exiftool photo.jpg | grep -E "GPS|Location|Camera|Serial"
@@ -175,7 +175,7 @@ exiftool -all= -r ./client-deliverables/
 Verify metadata was removed
 exiftool photo.jpg | wc -l   # should be near zero meaningful fields
 
-For extra assurance: re-encode the image (removes embedded thumbnails too)
+For extra assurance - re-encode the image (removes embedded thumbnails too)
 convert photo.jpg -strip cleaned-photo.jpg    # requires ImageMagick
 ```
 
@@ -187,7 +187,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -199,7 +199,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 

@@ -29,7 +29,7 @@ Table of Contents
 - [Recommendations for Privacy-Conscious Users](#recommendations-for-privacy-conscious-users)
 - [Advanced Privacy Auditing for Dating Features](#advanced-privacy-auditing-for-dating-features)
 - [Privacy by Regulation](#privacy-by-regulation)
-- [Comparison: Facebook Dating vs Dedicated Apps](#comparison-facebook-dating-vs-dedicated-apps)
+- [Comparison - Facebook Dating vs Dedicated Apps](#comparison-facebook-dating-vs-dedicated-apps)
 - [Data Portability and Deletion](#data-portability-and-deletion)
 
 How Facebook Dating Works
@@ -54,11 +54,11 @@ When you use Facebook Dating, Meta collects:
 - Device data: Location, device type, connection quality
 - Cross-platform data: Activity from Instagram if accounts are linked
 
-The collection scope differs from standard Facebook browsing. A 2025 Meta transparency report indicated that Dating data receives separate treatment in their data classification system, though it remains within the broader Meta ecosystem.
+The collection scope differs from standard Facebook browsing. A 2025 Meta transparency report indicated that Dating data receives separate treatment in their data classification system, though it remains within the broader Meta environment.
 
 Does Dating Activity Influence Ad Targeting?
 
-The direct answer: Meta does not use Facebook Dating activity to target ads on Facebook or Instagram. This policy has remained consistent since Dating's launch and was reinforced in their 2025 Privacy Center updates.
+The direct answer - Meta does not use Facebook Dating activity to target ads on Facebook or Instagram. This policy has remained consistent since Dating's launch and was reinforced in their 2025 Privacy Center updates.
 
 However, understanding why requires examining Meta's advertising architecture:
 
@@ -128,12 +128,12 @@ If you're building applications that integrate with Facebook's APIs, the Graph A
 ```bash
 Check current permissions for Dating-related data
 GET /v18.0/me/permissions HTTP/1.1
-Host: graph.facebook.com
+Host - graph.facebook.com
 
 Request specific data deletion (GDPR/CCPA)
 POST /v18.0/me/data_deletion HTTP/1.1
-Host: graph.facebook.com
-Content-Type: application/json
+Host - graph.facebook.com
+Content-Type - application/json
 
 {
   "data": ["dating_profile", "dating_preferences"],
@@ -217,7 +217,7 @@ Record all outbound requests
 tcpdump -i any -n 'host graph.facebook.com or host gateway.facebook.com' \
   -A > facebook_dating_traffic.pcap
 
-Alternative: Use Firefox Developer Tools
+Alternative - Use Firefox Developer Tools
 Settings > Network > Filter > graph.facebook.com
 
 Analyze requests
@@ -238,7 +238,7 @@ Common Facebook Dating API endpoints
 
 1. Get user's dating profile
 GET /v18.0/me/dating_profile
-Payloads: preferences, location, photos
+Payloads - preferences, location, photos
 
 2. Get dating matches/recommendations
 GET /v18.0/me/dating_matches
@@ -246,7 +246,7 @@ Reveals ranking algorithm inputs
 
 3. Update dating preferences
 POST /v18.0/me/dating_profile
-Data: age range, gender, location, interests
+Data - age range, gender, location, interests
 
 4. Get dating conversations
 GET /v18.0/me/dating_conversations
@@ -265,46 +265,46 @@ Different regulatory frameworks provide specific Dating privacy rights:
 GDPR (EU Users)
 
 ```bash
-Right to access: Article 15 GDPR
+Right to access - Article 15 GDPR
 Request all your Dating data
 
 curl -X POST "https://www.facebook.com/dsar/request" \
-  -H "Content-Type: application/json" \
+  -H "Content-Type - application/json" \
   -d '{
     "request_type": "data_access",
     "scope": ["dating_profile", "dating_preferences", "dating_messages"],
     "format": "portable_format"
   }'
 
-Right to rectification: Article 16 GDPR
+Right to rectification - Article 16 GDPR
 Correct inaccurate Dating data
 
-Right to erasure: Article 17 GDPR
+Right to erasure - Article 17 GDPR
 Delete all Dating data specifically
 
-Right to restrict processing: Article 18 GDPR
+Right to restrict processing - Article 18 GDPR
 Stop processing for Dating purposes without deletion
 ```
 
 CCPA (California Users)
 
 ```bash
-Right to know: Business must disclose:
+Right to know - Business must disclose:
 - Categories of personal information collected
 - Sources of collection
 - Purpose of collection
 - Recipients of data
 
-Right to delete: Can request deletion of Dating data
+Right to delete - Can request deletion of Dating data
 Meta must comply within 45 days
 
-Right to opt-out: Can prevent sale of Dating information
+Right to opt-out - Can prevent sale of Dating information
 Send "Do Not Sell My Personal Information" request
 
-Right to non-discrimination: Cannot be penalized for exercising rights
+Right to non-discrimination - Cannot be penalized for exercising rights
 ```
 
-Comparison: Facebook Dating vs Dedicated Apps
+Comparison - Facebook Dating vs Dedicated Apps
 
 Understanding how Facebook Dating's data flows differ from traditional dating apps:
 
@@ -317,7 +317,7 @@ Understanding how Facebook Dating's data flows differ from traditional dating ap
 | Third-party sharing | Limited (claimed) | Multiple | Multiple |
 | Account deletion | Requires full account | Dating-specific | Dating-specific |
 
-The key difference: Facebook Dating data ultimately sits in Meta's ecosystem with its history of secondary uses.
+The key difference - Facebook Dating data ultimately sits in Meta's environment with its history of secondary uses.
 
 Data Portability and Deletion
 

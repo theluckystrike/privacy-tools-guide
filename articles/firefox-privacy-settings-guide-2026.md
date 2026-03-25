@@ -34,13 +34,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Access Advanced Settings
+Step 1 - Access Advanced Settings
 
 The about:config interface exposes Firefox's internal configuration. Type `about:config` in your address bar and press Enter. You will see a warning. accept it to proceed. The search bar at the top makes finding specific preferences straightforward.
 
 Changes made through about:config persist across sessions but can be reset to defaults by right-clicking a preference and selecting "Reset." This makes experimentation low-risk.
 
-Step 2: Core Privacy Preferences
+Step 2 - Core Privacy Preferences
 
 Several settings form the foundation of Firefox's privacy posture. Start with these critical preferences:
 
@@ -72,7 +72,7 @@ Hyperlink ping tracking allows sites to notify a third-party URL when you click 
 browser.send_pings = false
 ```
 
-Step 3: Network and Connection Settings
+Step 3 - Network and Connection Settings
 
 Network-related settings control how Firefox communicates with servers:
 
@@ -124,7 +124,7 @@ Also disable DNS prefetching:
 network.dns.disablePrefetch = true
 ```
 
-Step 4: WebGL and Canvas Protection
+Step 4 - WebGL and Canvas Protection
 
 WebGL and HTML Canvas APIs can leak hardware information:
 
@@ -146,7 +146,7 @@ canvas.privacy.image_cipher = true
 
 Canvas fingerprinting works by rendering an invisible image and reading back the pixel values, which differ slightly based on GPU drivers and rendering engines. Adding noise makes these values less unique.
 
-Step 5: Referrer and Header Control
+Step 5 - Referrer and Header Control
 
 Control what information Firefox sends to websites:
 
@@ -176,7 +176,7 @@ privacy.reduceTimerPrecision = true
 
 High-precision timers enable Spectre-class side-channel attacks and allow fingerprinting through performance measurement. Reducing precision degrades these attack vectors without noticeable impact on normal browsing.
 
-Step 6: DNS and HTTPS Settings
+Step 6 - DNS and HTTPS Settings
 
 Modern DNS and HTTPS configurations improve privacy:
 
@@ -211,7 +211,7 @@ Enforce minimum TLS version:
 security.tls.version.min = 3  # TLS 1.2 minimum
 ```
 
-Step 7: Telemetry and Data Collection
+Step 7 - Telemetry and Data Collection
 
 Firefox collects usage telemetry by default. Disable it:
 
@@ -225,9 +225,9 @@ browser.crashReports.unsubmittedCheck.autoSubmit2 = false
 
 These settings stop Firefox from sending usage data to Mozilla. The `toolkit.telemetry.server` value is set to a data URI to prevent any accidental connections to telemetry endpoints.
 
-Step 8: Extension Recommendations
+Step 8 - Extension Recommendations
 
-Beyond about:config, Firefox's extension ecosystem enhances privacy:
+Beyond about:config, Firefox's extension environment enhances privacy:
 
 uBlock Origin blocks advertisements and trackers at the network level. Install from addons.mozilla.org and enable built-in filter lists including EasyList, EasyPrivacy, and uBlock Filters. The "Medium mode" blocking profile is recommended for users comfortable with occasional site breakage. it blocks all third-party scripts by default.
 
@@ -244,7 +244,7 @@ Each container has its own cookie jar, local storage, and IndexedDB. A tracker t
 
 LocalCDN replaces requests to CDNs (Google Fonts, jQuery CDN, Bootstrap CDN) with locally served copies. This prevents CDN providers from tracking which sites you visit based on resource requests.
 
-Step 9: Persisting Settings with user.js
+Step 9 - Persisting Settings with user.js
 
 Settings entered through about:config survive browser restarts but can be overwritten by Firefox updates. A `user.js` file in your profile directory applies settings at every startup:
 
@@ -277,7 +277,7 @@ user_pref("datareporting.healthreport.uploadEnabled", false);
 
 The Arkenfox project maintains an extensively commented `user.js` that covers additional preferences not included here. It is worth reviewing for users who want a community-maintained hardening baseline.
 
-Step 10: Automation and Profiles
+Step 10 - Automation and Profiles
 
 Developers often need multiple browser configurations. Firefox profiles solve this:
 
@@ -294,7 +294,7 @@ firefox --ProfileManager
 
 Each profile maintains separate settings, extensions, and cookies. Create dedicated profiles for development (looser privacy settings, DevTools access), general browsing (hardened settings, uBlock Origin), and sensitive browsing (maximum hardening, no extensions that could exfiltrate data).
 
-Step 11: Verification and Testing
+Step 11 - Verification and Testing
 
 After configuring settings, verify they work:
 

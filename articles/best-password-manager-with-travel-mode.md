@@ -34,7 +34,7 @@ tags: [privacy-tools-guide, best-of]
 - NordPass's travel mode is: less documented in security literature, but it appears to use a similar client-side filtering approach to 1Password.
 - The best implementations let: you mark individual items or entire vaults as travel-safe without requiring complex organizational restructuring.
 - Test travel mode on: every device and platform you use before relying on it.
-- For Bitwarden: the CLI tool (`bw`) also works with vault-level access restrictions.
+- For Bitwarden - the CLI tool (`bw`) also works with vault-level access restrictions.
 
 Understanding Travel Mode
 
@@ -66,14 +66,14 @@ Implementing Travel Mode in Your Workflow
 
 Before international travel, establish a systematic approach to managing your credentials:
 
-Step 1: Audit Your Vaults
+Step 1 - Audit Your Vaults
 
 Review all stored credentials and categorize them by sensitivity level:
 
 - Travel-safe items: Work accounts you need access to, basic email, non-sensitive service accounts
 - Sensitive items: Production database credentials, API keys for critical services, master passwords for important platforms
 
-Step 2: Configure Vault Access
+Step 2 - Configure Vault Access
 
 In supported password managers, designate which vaults sync during travel. This typically involves:
 
@@ -82,7 +82,7 @@ In supported password managers, designate which vaults sync during travel. This 
 3. Selecting specific vaults for travel access
 4. Enabling travel mode before departure
 
-Step 3: Verify Before Crossing Borders
+Step 3 - Verify Before Crossing Borders
 
 Test that travel mode functions correctly before your trip:
 
@@ -96,11 +96,11 @@ op item get "work-email" --vault "Travel"
 
 If you encounter access issues, troubleshoot before your departure to avoid being stuck with unusable credentials at a foreign airport.
 
-Step 4: Maintain Decentralized Recovery Options
+Step 4 - Maintain Decentralized Recovery Options
 
 Create offline recovery mechanisms that don't rely on your password manager while traveling. Print hardcopy backup codes for critical services that support them. Store these recovery codes separately from your device in an encrypted envelope or secure location at your hotel. For services like Google, Microsoft, and GitHub that provide recovery codes, these physical backups can restore access if your device is lost or confiscated.
 
-Step 5: Test Travel Mode on Non-Critical Trip First
+Step 5 - Test Travel Mode on Non-Critical Trip First
 
 Before taking travel mode on a production deployment or high-stakes trip, test it on a shorter, lower-risk journey. This gives you confidence in the feature's reliability and helps you identify workflow disruptions before they become critical.
 
@@ -192,7 +192,7 @@ Bitwarden's vault segmentation works differently. It relies on organizational va
 
 NordPass's travel mode is less documented in security literature, but it appears to use a similar client-side filtering approach to 1Password. The implementation is designed for consumer simplicity rather than advanced developer use cases. NordPass does not provide detailed security documentation about how travel mode prevents credential access at the protocol level.
 
-Server-Side Trust Implications: All travel mode implementations require trusting your password manager provider. If the company is compromised or legally coerced to disable travel mode, your non-travel credentials may become accessible. This is a fundamental limitation of any travel mode system. For maximum security against this threat, use architectures like Bitwarden's self-hosted option, where you control both the client and server components.
+Server-Side Trust Implications - All travel mode implementations require trusting your password manager provider. If the company is compromised or legally coerced to disable travel mode, your non-travel credentials may become accessible. This is a fundamental limitation of any travel mode system. For maximum security against this threat, use architectures like Bitwarden's self-hosted option, where you control both the client and server components.
 
 Security Trade-offs
 
@@ -236,13 +236,13 @@ Alternative and Complementary Approaches
 
 Travel mode is one defensive layer among several options. Consider these alternatives based on your threat model:
 
-Air-Gapped Device: Carry a separate device with only travel-essential credentials. This device never connects to your production systems or sensitive networks. If confiscated, the damage is limited to travel accounts only. This approach works well for high-risk environments but adds logistical complexity.
+Air-Gapped Device - Carry a separate device with only travel-essential credentials. This device never connects to your production systems or sensitive networks. If confiscated, the damage is limited to travel accounts only. This approach works well for high-risk environments but adds logistical complexity.
 
-Hardware Security Keys: Store critical credentials on a hardware security key (Yubikey, Titan Key) that cannot be extracted through software. These devices support encrypted credential storage and can be kept physically separate from your primary device. The disadvantage is that hardware keys don't support all credential types.
+Hardware Security Keys - Store critical credentials on a hardware security key (Yubikey, Titan Key) that cannot be extracted through software. These devices support encrypted credential storage and can be kept physically separate from your primary device. The disadvantage is that hardware keys don't support all credential types.
 
-Credential Regeneration: Instead of storing long-lived credentials, generate temporary credentials immediately before travel with built-in expiration. Upon returning home, revoke the temporary credentials and restore your normal setup. This approach eliminates the need for travel mode but requires more pre-trip preparation.
+Credential Regeneration - Instead of storing long-lived credentials, generate temporary credentials immediately before travel with built-in expiration. Upon returning home, revoke the temporary credentials and restore your normal setup. This approach eliminates the need for travel mode but requires more pre-trip preparation.
 
-Distributed Credentials: Use your team's secret management system (HashiCorp Vault, AWS Secrets Manager) to retrieve credentials on-demand rather than storing them locally. When traveling, you request temporary credentials from the remote system. This requires infrastructure but provides maximum flexibility.
+Distributed Credentials - Use your team's secret management system (HashiCorp Vault, AWS Secrets Manager) to retrieve credentials on-demand rather than storing them locally. When traveling, you request temporary credentials from the remote system. This requires infrastructure but provides maximum flexibility.
 
 Prevention Best Practices
 

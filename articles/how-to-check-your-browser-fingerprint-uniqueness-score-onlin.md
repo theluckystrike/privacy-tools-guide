@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Key Fingerprinting Vectors
+Step 1 - Key Fingerprinting Vectors
 
 Before testing, understand which attributes contribute most to your fingerprint:
 
@@ -57,7 +57,7 @@ Behavioral Signals
 - Timezone and language settings
 - Canvas and WebGL rendering differences
 
-Step 2: Use Online Fingerprinting Tools
+Step 2 - Use Online Fingerprinting Tools
 
 EFF Cover Your Tracks
 
@@ -83,7 +83,7 @@ BrowserLeaks
 
 [BrowserLeaks](https://browserleaks.com/) offers testing across multiple fingerprinting vectors including canvas, WebGL, audio context, and WebGL2. This tool is particularly useful for developers because it shows exactly what each API reveals.
 
-Step 3: Build a Custom Fingerprint Tester
+Step 3 - Build a Custom Fingerprint Tester
 
 For developers who want deeper control, build your own fingerprint collector:
 
@@ -191,7 +191,7 @@ collector.collect().then(fingerprint => {
 
 This collector gathers the most significant fingerprinting vectors and generates a hash you can use for comparison.
 
-Step 4: Calculating Your Uniqueness Score
+Step 4 - Calculating Your Uniqueness Score
 
 To calculate an uniqueness score, you need a reference dataset. The simplest approach compares your fingerprint against a sample population:
 
@@ -215,21 +215,21 @@ function calculateUniquenessScore(yourFingerprint, referenceDataset) {
 
 In practice, reference datasets from projects like AmIUnique contain millions of fingerprints. For accurate scores, use their online tools rather than building your own comparison database.
 
-Step 5: Interpreting Your Results
+Step 5 - Interpreting Your Results
 
 After testing, you'll receive an uniqueness score. Here's how to interpret the results:
 
-Below 10%: Your browser blends in well. You're difficult to track using fingerprinting alone.
+Below 10% - Your browser blends in well. You're difficult to track using fingerprinting alone.
 
 10-50%: Some identifying features, but not uniquely distinguishable.
 
 50-90%: Moderately unique. Advertisers can likely track you across sites.
 
-Above 90%: Highly identifiable. Your browser configuration stands out significantly.
+Above 90% - Highly identifiable. Your browser configuration stands out significantly.
 
-Above 99%: Extremely unique. You can be fingerprinted and tracked reliably without any cookies.
+Above 99% - Extremely unique. You can be fingerprinted and tracked reliably without any cookies.
 
-Step 6: Hardening Your Browser
+Step 6 - Hardening Your Browser
 
 Once you know your score, take steps to reduce your uniqueness:
 

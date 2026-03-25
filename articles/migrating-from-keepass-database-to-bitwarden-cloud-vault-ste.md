@@ -22,11 +22,11 @@ Table of Contents
 
 - [Why Migrate From KeePass to Bitwarden](#why-migrate-from-keepass-to-bitwarden)
 - [Prerequisites](#prerequisites)
-- [Step 1: Export Your KeePass Database](#step-1-export-your-keepass-database)
-- [Step 2: Authenticate with Bitwarden CLI](#step-2-authenticate-with-bitwarden-cli)
-- [Step 3: Import Entries to Bitwarden](#step-3-import-entries-to-bitwarden)
-- [Step 4: Automate the Full Migration](#step-4-automate-the-full-migration)
-- [Step 5: Verify and Clean Up](#step-5-verify-and-clean-up)
+- [Step 1 - Export Your KeePass Database](#step-1-export-your-keepass-database)
+- [Step 2 - Authenticate with Bitwarden CLI](#step-2-authenticate-with-bitwarden-cli)
+- [Step 3 - Import Entries to Bitwarden](#step-3-import-entries-to-bitwarden)
+- [Step 4 - Automate the Full Migration](#step-4-automate-the-full-migration)
+- [Step 5 - Verify and Clean Up](#step-5-verify-and-clean-up)
 - [Handling Edge Cases](#handling-edge-cases)
 - [Security Considerations](#security-considerations)
 
@@ -57,11 +57,11 @@ sudo apt install bitwarden
 Or download from https://github.com/bitwarden/cli/releases
 ```
 
-Step 1: Export Your KeePass Database
+Step 1 - Export Your KeePass Database
 
 KeePass provides a built-in export feature, but for programmatic access, you have two reliable options.
 
-Option A: Using KeePassXC CLI
+Option A - Using KeePassXC CLI
 
 KeePassXC includes `keepassxc-cli` for command-line operations:
 
@@ -72,7 +72,7 @@ keepassxc-cli export -o keepass_export.xml your_database.kdbx
 
 You'll be prompted for your master password. The XML output contains all entries with fields like username, password, URL, notes, and custom attributes.
 
-Option B: Using Python with pykeepass
+Option B - Using Python with pykeepass
 
 For more control, use the `pykeepass` library:
 
@@ -106,7 +106,7 @@ with open('keepass_export.json', 'w') as f:
 
 This approach preserves custom fields and allows selective migration based on tags or folders.
 
-Step 2: Authenticate with Bitwarden CLI
+Step 2 - Authenticate with Bitwarden CLI
 
 Initialize the Bitwarden CLI and log in:
 
@@ -133,7 +133,7 @@ The CLI returns a session key, store this securely. You can also use the `BW_SES
 export BW_SESSION="your_session_key"
 ```
 
-Step 3: Import Entries to Bitwarden
+Step 3 - Import Entries to Bitwarden
 
 Bitwarden supports CSV import, which works well for most migrations. Generate a CSV from your export:
 
@@ -168,7 +168,7 @@ bw import bitwarden_import.csv --formats keepass
 
 The `--formats keepass` flag tells Bitwarden to map KeePass fields correctly.
 
-Step 4: Automate the Full Migration
+Step 4 - Automate the Full Migration
 
 For a complete automation solution, here's a consolidated Python script:
 
@@ -267,7 +267,7 @@ Run the migration:
 python migrate.py your_database.kdbx "your_master_password" ./migration_output
 ```
 
-Step 5: Verify and Clean Up
+Step 5 - Verify and Clean Up
 
 After migration, verify your entries in the Bitwarden web vault or desktop app:
 
@@ -288,11 +288,11 @@ shred -u keepass_export.json bitwarden_import.csv
 
 Handling Edge Cases
 
-Two-Factor Authentication: KeePass doesn't store TOTP seeds in the standard entry fields. If you used a separate TOTP authenticator, you'll need to re-add 2FA to your Bitwarden entries manually or export from your TOTP app if supported.
+Two-Factor Authentication - KeePass doesn't store TOTP seeds in the standard entry fields. If you used a separate TOTP authenticator, you'll need to re-add 2FA to your Bitwarden entries manually or export from your TOTP app if supported.
 
-Custom Attributes: KeePass allows arbitrary key-value pairs on entries. Bitwarden's custom fields support this, but the Python script handles basic custom properties. Review entries with complex custom fields after import.
+Custom Attributes - KeePass allows arbitrary key-value pairs on entries. Bitwarden's custom fields support this, but the Python script handles basic custom properties. Review entries with complex custom fields after import.
 
-Database Merging: If you have multiple KeePass databases, run the migration script for each and import the resulting CSVs sequentially. Bitwarden handles duplicates based on title and username.
+Database Merging - If you have multiple KeePass databases, run the migration script for each and import the resulting CSVs sequentially. Bitwarden handles duplicates based on title and username.
 
 Security Considerations
 

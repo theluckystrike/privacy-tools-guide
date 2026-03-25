@@ -35,11 +35,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Core Challenge
+Step 1 - The Core Challenge
 
 Traditional verification methods often require you to reveal information first, you might ask for a video call (exposing your phone number) or search social media (tying your identity to your curiosity). The techniques in this guide flip this approach: verify before you engage, using tools and methods that protect your privacy.
 
-Step 2: Reverse Image Search Techniques
+Step 2 - Reverse Image Search Techniques
 
 The most effective initial verification uses reverse image search, but executing this without revealing your own identity requires specific tools and workflows.
 
@@ -97,7 +97,7 @@ print(f"Result: {message}")
 
 This script maintains a local database of known fake profile images. When you encounter a suspicious profile, you hash the image and compare it against your database without ever transmitting the image externally.
 
-Step 3: Browser Fingerprinting and Detection
+Step 3 - Browser Fingerprinting and Detection
 
 Sophisticated fake profiles often use stolen photos. You can detect inconsistencies through browser fingerprinting analysis.
 
@@ -147,7 +147,7 @@ def cross_reference_profile(photo_url, platforms=['tinder', 'bumble', 'hinge']):
 
 This approach lets you check whether the same photo appears on multiple platforms, a strong indicator the images are stolen.
 
-Step 4: Network-Level Verification
+Step 4 - Network-Level Verification
 
 For advanced users, network analysis provides additional verification vectors.
 
@@ -177,7 +177,7 @@ Analyze captured traffic for profile metadata
 
 This technique helps identify profiles that may be generated or managed programmatically rather than by real individuals.
 
-Step 5: Practical Verification Workflow
+Step 5 - Practical Verification Workflow
 
 Combine these techniques into a systematic verification process:
 
@@ -188,7 +188,7 @@ Combine these techniques into a systematic verification process:
 5. Cross-reference platforms - Run the cross-reference script
 6. Document findings - Add confirmed fakes to your local database
 
-Step 6: Privacy Considerations
+Step 6 - Privacy Considerations
 
 Throughout this process, maintain these operational security practices:
 
@@ -198,13 +198,13 @@ Throughout this process, maintain these operational security practices:
 - Store all investigation data in an encrypted local database
 - Clear browser cookies and local storage between investigations
 
-Step 7: Limitations and Ethical Considerations
+Step 7 - Limitations and Ethical Considerations
 
 These techniques have boundaries. They help identify obvious fakes and stolen photos, but they cannot verify someone identity with certainty. A determined scammer with access to stolen legitimate photos can defeat many of these methods.
 
 Use these skills responsibly. These tools protect your privacy, they should not enable harassment or surveillance of others. Verify profiles to protect yourself from scams, not to invade others privacy.
 
-Step 8: Identifying Common Scam Patterns
+Step 8 - Identifying Common Scam Patterns
 
 Fake profiles exhibit recurring behavioral patterns beyond photo analysis:
 
@@ -272,7 +272,7 @@ Behavioral Verification
 Beyond photos, legitimate people exhibit consistent behavior:
 
 ```markdown
-Step 9: Behavioral Authenticity Checklist
+Step 9 - Behavioral Authenticity Checklist
 
 Conversation patterns:
 - Asks follow-up questions about your life (shows interest in YOU, not your wallet)
@@ -377,14 +377,14 @@ def assess_social_media_presence(profile_data):
     }
 ```
 
-Remember: absence of social media may indicate privacy-conscious, not fake. Don't penalize legitimate privacy choices.
+Remember - absence of social media may indicate privacy-conscious, not fake. Don't penalize legitimate privacy choices.
 
-Step 10: If You Encounter a Scam
+Step 10 - If You Encounter a Scam
 
 Response protocol:
 
 ```markdown
-Step 11: Scam Response Procedure
+Step 11 - Scam Response Procedure
 
 Immediately:
 1. Stop all communication
@@ -423,10 +423,10 @@ Once you've identified a scammer, the only rational action is disengagement.
 
 Privacy-Respecting Verification Summary
 
-The core principle: verify before vulnerability, in ways that protect your own privacy.
+The core principle - verify before vulnerability, in ways that protect your own privacy.
 
 ```markdown
-Step 12: Your Verification Toolkit (Ranked by Privacy Impact)
+Step 12 - Your Verification Toolkit (Ranked by Privacy Impact)
 
 Lower Privacy Risk:
 1. Reverse image search (anonymous, read-only)
@@ -447,7 +447,7 @@ Higher Privacy Risk (Avoid These):
 
 Stick to the lower risk tier. Anything requiring you to spy crosses ethical lines.
 
-The fundamental approach: if someone won't verify authenticity to you through standard methods (photos, video chat, social media), they may not be worth your time. The right person will understand your caution and respect it.
+The fundamental approach - if someone won't verify authenticity to you through standard methods (photos, video chat, social media), they may not be worth your time. The right person will understand your caution and respect it.
 
 Troubleshooting
 

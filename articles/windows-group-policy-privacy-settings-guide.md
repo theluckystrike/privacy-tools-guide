@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What Group Policy Actually Controls
+Step 1 - What Group Policy Actually Controls
 
 Group Policy is a Windows infrastructure that lets administrators enforce configuration on one or more machines. It writes values to the Windows registry under `HKLM:\SOFTWARE\Policies\` and `HKCU:\SOFTWARE\Policies\`, but unlike manual registry edits, it enforces those values and reapplies them after changes. This makes it more reliable than one-off tweaks.
 
@@ -42,13 +42,13 @@ For privacy, Group Policy controls:
 
 On Home editions of Windows, `gpedit.msc` is not available. You can apply the same settings directly through the registry with PowerShell. Enterprise and Pro editions have access to the full Group Policy editor.
 
-Step 2: Access Group Policy Editor
+Step 2 - Access Group Policy Editor
 
 Press `Win + R`, type `gpedit.msc`, and press Enter. The Local Group Policy Editor opens with two main sections: Computer Configuration and User Configuration. Most privacy settings reside under Administrative Templates within each section.
 
 For domain-joined machines, `gpedit.msc` connects to local policy. Enterprise environments often deploy these settings through Active Directory Group Policy Objects (GPOs), which override local policy. If you are configuring a standalone workstation, local policy is what you want.
 
-Step 3: Disable Telemetry and Diagnostics
+Step 3 - Disable Telemetry and Diagnostics
 
 Navigate to Computer Configuration → Administrative Templates → Windows Components → Data Collection and Preview Builds. Locate "Allow Telemetry" and set it to Disabled for maximum privacy. Alternatively, set to 0 for Enterprise, Education, and earlier versions.
 
@@ -61,7 +61,7 @@ For Windows 11, additional telemetry resides under Settings → Privacy & securi
 
 What telemetry level 0 actually stops: Required diagnostic data (crash reports, device compatibility data, error reports) continues even at level 0 on some editions. Only Enterprise and Education editions can fully disable required telemetry. On Pro, level 0 is still labeled "Security" but Microsoft documents that some data continues to flow. Setting the policy is still worthwhile. it reduces the volume significantly.
 
-Step 4: Manage Connected User Experiences
+Step 4 - Manage Connected User Experiences
 
 Under Windows Components → Cloud Content, disable "Turn off Microsoft consumer experiences" to prevent suggestions and ads in the Start menu:
 
@@ -78,7 +78,7 @@ Additional cloud content settings worth disabling:
 - Do not suggest third-party content in Windows Spotlight: Prevents targeted suggestions based on usage patterns
 - Turn off all Windows Spotlight features: The nuclear option. disables all dynamic content from Microsoft's servers
 
-Step 5: Control Activity History
+Step 5 - Control Activity History
 
 Windows collects activity history to provide timeline functionality. Disable this under Privacy & security → Activity history:
 
@@ -92,7 +92,7 @@ For developers, this prevents Windows from syncing application usage data to Mic
 
 The Timeline feature (showing what you worked on across days) requires activity history. If you do not use Timeline, disabling this has no functional cost. Even with Timeline enabled, the upload setting can be disabled to keep data local.
 
-Step 6: Limiting Advertising ID
+Step 6 - Limiting Advertising ID
 
 The Advertising ID provides cross-app targeting capabilities. Disable it under User Configuration → Administrative Templates → System → User Profiles:
 
@@ -105,7 +105,7 @@ This setting prevents apps from accessing your advertising identifier, reducing 
 
 The Advertising ID is similar to Apple's IDFA on iOS. Apps that access it can build a profile of your activity across multiple applications. Disabling it does not prevent apps from tracking you through other means (login, fingerprinting, IP), but it removes a specific persistent identifier that enables cross-app correlation.
 
-Step 7: Blocking Feedback and Tailored Experiences
+Step 7 - Blocking Feedback and Tailored Experiences
 
 Under Windows Components → Feedback Hub, configure multiple settings:
 
@@ -118,7 +118,7 @@ Disable feedback prompts
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "DoNotShowFeedbackNotifications" -Value 1
 ```
 
-Step 8: Control App Permissions via Group Policy
+Step 8 - Control App Permissions via Group Policy
 
 Beyond telemetry, Group Policy controls what hardware apps can access. These are under Computer Configuration → Administrative Templates → Windows Components → App Privacy:
 
@@ -140,7 +140,7 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -N
 
 Value `2` means "Force Deny". no app can request access regardless of user consent. Use this on machines where you are confident the hardware is not needed by any app.
 
-Step 9: Disable Windows Search Cloud Features
+Step 9 - Disable Windows Search Cloud Features
 
 Windows Search by default queries Bing for suggestions and can index content in OneDrive. Turn this off under Computer Configuration → Administrative Templates → Windows Components → Search:
 
@@ -158,7 +158,7 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search
 
 This keeps search results local only. What you type in the Start menu search box no longer goes to Bing.
 
-Step 10: Manage Windows Update Settings
+Step 10 - Manage Windows Update Settings
 
 Configure update behavior under Computer Configuration → Administrative Templates → Windows Components → Windows Update:
 
@@ -171,7 +171,7 @@ Disable auto-restart for updates
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name "NoAutoRebootWithLoggedOnUsers" -Value 1
 ```
 
-Step 11: Hardening Network Settings
+Step 11 - Hardening Network Settings
 
 Under Network and Internet in Group Policy:
 
@@ -181,7 +181,7 @@ Under Network and Internet in Group Policy:
 
 These settings prevent unexpected network switches and reduce network probing.
 
-Step 12: Scripted Deployment
+Step 12 - Scripted Deployment
 
 For developers managing multiple machines, use this PowerShell script to apply privacy settings:
 
@@ -231,7 +231,7 @@ Write-Host "Privacy settings applied successfully"
 
 Run this script with Administrator privileges. Some settings require a restart to take effect.
 
-Step 13: Verification and Maintenance
+Step 13 - Verification and Maintenance
 
 After applying settings, verify configurations using:
 
@@ -245,7 +245,7 @@ For enterprise deployments, consider using Group Policy Results (gpresult /r) to
 
 Windows Updates can override Group Policy settings. After major feature updates (the twice-yearly Windows releases), verify that privacy settings are still in place. Microsoft has a history of resetting user preferences on major updates.
 
-Step 14: Limitations and What Group Policy Cannot Do
+Step 14 - Limitations and What Group Policy Cannot Do
 
 Group Policy gives significant control, but it has limits:
 

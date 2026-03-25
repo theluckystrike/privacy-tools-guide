@@ -18,14 +18,14 @@ intent-checked: true
 
 Table of Contents
 
-- [How Turkey Blocks Social Media: Technical Overview](#how-turkey-blocks-social-media-technical-overview)
+- [How Turkey Blocks Social Media - Technical Overview](#how-turkey-blocks-social-media-technical-overview)
 - [DNS-Level Blocking](#dns-level-blocking)
 - [IP Address Blocking](#ip-address-blocking)
 - [Deep Packet Inspection and SNI Filtering](#deep-packet-inspection-and-sni-filtering)
 - [Content Delivery Network Blocking](#content-delivery-network-blocking)
 - [Current State in 2026](#current-state-in-2026)
 
-How Turkey Blocks Social Media: Technical Overview
+How Turkey Blocks Social Media - Technical Overview
 
 Turkey maintains one of the most sophisticated internet censorship systems in the Western world, with the Information and Communication Technologies Authority (BTK) blocking access to major social media platforms. The blocking methods include DNS hijacking, IP address blocking, deep packet inspection (DPI), and SNI (Server Name Indication) filtering. This guide explains each blocking technique and provides practical workarounds for developers and power users who need to access blocked services.
 
@@ -90,14 +90,14 @@ Deep Packet Inspection and SNI Filtering
 The most sophisticated blocking method uses deep packet inspection to analyze encrypted TLS connections. When you connect to a website, the TLS ClientHello message contains the Server Name Indication (SNI), which specifies the target domain. Turkish firewalls can filter based on SNI even when the connection is encrypted:
 
 ```python
-Python: SNI is visible in TLS ClientHello
+Python - SNI is visible in TLS ClientHello
 This is what the Turkish firewall inspects:
 
 import socket
 import ssl
 
 When you connect to twitter.com:443, the TLS ClientHello contains:
-SNI: twitter.com
+SNI - twitter.com
 This is sent BEFORE encryption is established
 Turkish DPI can block based on this plaintext field
 
@@ -116,7 +116,7 @@ To bypass SNI filtering, you need obfuscation techniques that hide the target do
 Domain fronting uses a CDN or cloud provider as an intermediary. The visible SNI shows a different domain (like a cloudflare.com subdomain) while the actual destination is different:
 
 ```python
-Python: Domain fronting example with requests
+Python - Domain fronting example with requests
 import requests
 
 The visible connection goes to cdn.example.com
@@ -167,7 +167,7 @@ Using Alternative DNS Providers
 Set your system to use DoH-compatible DNS resolvers:
 
 ```bash
-Linux: Configure systemd-resolved for DoH
+Linux - Configure systemd-resolved for DoH
 sudo mkdir -p /etc/systemd/resolved.conf.d
 sudo tee /etc/systemd/resolved.conf.d/doh.conf << EOF
 [Resolve]
@@ -231,7 +231,7 @@ The most reliable workarounds remain:
 For developers building applications that must work in Turkey, implementing multiple fallback mechanisms and detecting blocking states programmatically ensures resilience:
 
 ```python
-Python: Detect if connection is being blocked
+Python - Detect if connection is being blocked
 import socket
 import requests
 
@@ -294,6 +294,6 @@ Related Articles
 - [Social Media Privacy For Teenagers Guide 2026](/social-media-privacy-for-teenagers-guide-2026/)
 - [Social Media Will What Legal Authority Executor Has Over](/social-media-will-what-legal-authority-executor-has-over-you/)
 - [How to Block Social Media Share Button Tracking on Websites](/how-to-block-social-media-share-button-tracking-on-websites/)
-- [AI Tools for Social Media Analytics: A Practical Guide](https://bestremotetools.com/ai-tools-for-social-media-analytics/)
+- [AI Tools for Social Media Analytics - A Practical Guide](https://bestremotetools.com/ai-tools-for-social-media-analytics/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

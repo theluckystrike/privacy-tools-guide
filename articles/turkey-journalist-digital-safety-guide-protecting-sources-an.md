@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Threat Model
+Step 1 - Understand the Threat Model
 
 Turkish authorities employ deep packet inspection (DPI), mandatory data retention laws, and periodic social media restrictions. Internet service providers (ISPs) collaborate with government requests, and journalists have been prosecuted based on communication metadata. Your threat model must account for:
 
@@ -38,7 +38,7 @@ Turkish authorities employ deep packet inspection (DPI), mandatory data retentio
 - Social media platform subpoenas and account takeovers
 - Phishing campaigns targeting journalists
 
-Step 2: Secure Communications Architecture
+Step 2 - Secure Communications Architecture
 
 End-to-End Encrypted Messaging
 
@@ -79,7 +79,7 @@ gpg --encrypt --recipient source@secure-email.com --armor sensitive-document.asc
 
 Sources should generate their own GPG keys. Never store private keys on devices that could be seized, use YubiKey or similar hardware security modules.
 
-Step 3: Network-Level Protection
+Step 3 - Network-Level Protection
 
 Tor and Obfs4 Bridges
 
@@ -121,7 +121,7 @@ sudo systemctl restart systemd-resolved
 
 For mobile devices, use private DNS (DoH) with a provider like Quad9 or Cloudflare's 1.1.1.1.
 
-Step 4: Device Security and Seizure Protection
+Step 4 - Device Security and Seizure Protection
 
 Full Disk Encryption
 
@@ -146,7 +146,7 @@ Store highly sensitive documents on air-gapped machines:
 3. Transfer documents via encrypted USB using LUKS
 4. Wipe the USB after transfer using `shred -v /dev/sdX`
 
-Step 5: Metadata Stripping and Verification
+Step 5 - Metadata Stripping and Verification
 
 Document Sanitization
 
@@ -180,7 +180,7 @@ Verify integrity
 sha256sum -c screenshot.sha256
 ```
 
-Step 6: Operational Security Habits
+Step 6 - Operational Security Habits
 
 Separation of Identities
 
@@ -203,7 +203,7 @@ shred -v -n 35 sensitive-file.pdf
 Wipe free space
 dd if=/dev/zero of=/tmp/wipefile bs=1M
 rm /tmp/wipefile
-Or use: cat /dev/zero > /tmp/wipe; rm /tmp/wipe
+Or use - cat /dev/zero > /tmp/wipe; rm /tmp/wipe
 
 For SSD/flash storage, use hdparm or manufacturer tools
 SSDs with TRIM may not allow secure deletion
@@ -219,7 +219,7 @@ Implement monthly security reviews:
 4. Review and revoke unnecessary OAuth permissions
 5. Update all software to latest versions
 
-Step 7: Emergency Protocols
+Step 7 - Emergency Protocols
 
 Prepare for potential device seizure:
 

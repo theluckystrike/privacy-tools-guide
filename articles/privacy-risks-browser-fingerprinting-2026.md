@@ -53,7 +53,7 @@ Individually, these attributes are not unique. Combined, they create a fingerpri
 
 ---
 
-Technique 1: Canvas Fingerprinting
+Technique 1 - Canvas Fingerprinting
 
 The HTML5 Canvas API renders text and shapes. Rendering differences caused by GPU, OS fonts, anti-aliasing, and sub-pixel rendering produce pixel-level differences that are stable per device:
 
@@ -84,11 +84,11 @@ fetch('/fingerprint', {
 });
 ```
 
-Resistance: Firefox randomizes canvas output (adds imperceptible noise per site). Brave blocks canvas by default. Chrome has no protection.
+Resistance - Firefox randomizes canvas output (adds imperceptible noise per site). Brave blocks canvas by default. Chrome has no protection.
 
 ---
 
-Technique 2: WebGL Fingerprinting
+Technique 2 - WebGL Fingerprinting
 
 WebGL exposes GPU vendor, renderer string, and shader capabilities:
 
@@ -103,11 +103,11 @@ const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
 // Combined with other attributes, this uniquely identifies most devices
 ```
 
-Resistance: Brave blocks `WEBGL_debug_renderer_info`. Firefox (with privacy.resistFingerprinting) returns a generic string.
+Resistance - Brave blocks `WEBGL_debug_renderer_info`. Firefox (with privacy.resistFingerprinting) returns a generic string.
 
 ---
 
-Technique 3: Audio Context Fingerprinting
+Technique 3 - Audio Context Fingerprinting
 
 The AudioContext API processes a generated tone. Hardware differences in the audio stack produce numerically different floating-point outputs:
 
@@ -137,11 +137,11 @@ function getAudioFingerprint() {
 }
 ```
 
-Resistance: Firefox with `privacy.resistFingerprinting` returns a constant value. Brave adds deterministic noise.
+Resistance - Firefox with `privacy.resistFingerprinting` returns a constant value. Brave adds deterministic noise.
 
 ---
 
-Technique 4: Font Enumeration via CSS
+Technique 4 - Font Enumeration via CSS
 
 Browsers can be probed for installed fonts by measuring text rendering width and height. If a font is not installed, the browser falls back to a default. a measurable difference:
 
@@ -172,7 +172,7 @@ Font lists are OS-specific and reveal whether you're on Windows, macOS, or Linux
 
 ---
 
-Technique 5: TLS Fingerprinting (JA3)
+Technique 5 - TLS Fingerprinting (JA3)
 
 JA3 fingerprints the TLS handshake from the network layer. not the browser. Your TLS client hello message includes cipher suites, extensions, and elliptic curves in a specific order. This order is determined by your browser and OS, not by any setting you can change.
 
@@ -186,7 +186,7 @@ JA3 is used to:
 - Track users across Tor exit nodes and VPNs (same browser = same JA3)
 ```
 
-Resistance: No browser allows changing the cipher suite order through UI. The only mitigation is using a browser that varies TLS parameters (Tor Browser does this by design) or using a TLS termination proxy.
+Resistance - No browser allows changing the cipher suite order through UI. The only mitigation is using a browser that varies TLS parameters (Tor Browser does this by design) or using a TLS termination proxy.
 
 ---
 
@@ -222,7 +222,7 @@ Firefox `privacy.resistFingerprinting`:
 about:config → privacy.resistFingerprinting = true
 ```
 
-This sets: uniform canvas, uniform timezone (UTC), uniform screen resolution (1000x900), generic language header. It breaks some sites.
+This sets - uniform canvas, uniform timezone (UTC), uniform screen resolution (1000x900), generic language header. It breaks some sites.
 
 ---
 
@@ -238,7 +238,7 @@ Effective Countermeasures
 | IP address correlation | Tor or trusted VPN | Yes |
 | User-agent uniformity | Tor Browser (all users same UA) | Yes |
 
-The most effective single step: use Tor Browser for sensitive sessions and a hardened Firefox with `privacy.resistFingerprinting` for daily browsing.
+The most effective single step - use Tor Browser for sensitive sessions and a hardened Firefox with `privacy.resistFingerprinting` for daily browsing.
 
 Adding extensions (uBlock Origin, Privacy Badger) helps with first-party tracking but does not help with fingerprinting. the extension list itself becomes part of your fingerprint.
 

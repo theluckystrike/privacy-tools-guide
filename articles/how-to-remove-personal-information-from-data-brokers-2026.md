@@ -28,7 +28,7 @@ Table of Contents
 - [CCPA, GDPR, and Legal Rights](#ccpa-gdpr-and-legal-rights)
 - [Opt-Out Automation Tools](#opt-out-automation-tools)
 - [Cost-Benefit Analysis](#cost-benefit-analysis)
-- [Prevention: Stop Future Data Collection](#prevention-stop-future-data-collection)
+- [Prevention - Stop Future Data Collection](#prevention-stop-future-data-collection)
 
 Your personal data is sold by hundreds of data brokers: Whitepages, PeopleFinders, Spokeo, BeenVerified, and dozens more. These companies aggregate and resell your phone number, address, email, age, and financial information. Removing your data requires systematic effort, but it's doable. This guide covers finding data brokers, submitting removal requests, and monitoring for re-listing.
 
@@ -70,7 +70,7 @@ List of Major Data Brokers (2026)
 
 Step-by-Step Removal Process
 
-Step 1: Verify Your Presence (Find Yourself First)
+Step 1 - Verify Your Presence (Find Yourself First)
 
 Before removing, identify which brokers have your data.
 
@@ -85,11 +85,11 @@ Paid check:
 - Experian SafeGuard: Shows data brokers + credit inquiries
 - ReputationDefender: Professional audit
 
-Expected result: You'll likely find yourself on 10, 20 major brokers.
+Expected result - You'll likely find yourself on 10, 20 major brokers.
 
-Step 2: Bulk Opt-Out Services (Fastest Path)
+Step 2 - Bulk Opt-Out Services (Fastest Path)
 
-Option A: Automated Services ($15, $60 one-time)
+Option A - Automated Services ($15, $60 one-time)
 
 DeleteMe by Abine
 - Website: abine.com/deleteme
@@ -103,7 +103,7 @@ Subscription cost breakdown:
 - Plus (higher priority): $199/year → $16.50/month
 - Family plan (5 people): $399/year → $33/month
 
-Option B: Manual but Free (4, 8 hours)
+Option B - Manual but Free (4, 8 hours)
 
 Go to each broker directly, submit opt-out request.
 
@@ -117,7 +117,7 @@ Spokeo removal (example):
 
 Repeat for 15, 20 major brokers (4, 6 hours of work).
 
-Step 3: Individual Removal Requests (For Resistant Brokers)
+Step 3 - Individual Removal Requests (For Resistant Brokers)
 
 Some brokers require extra steps:
 
@@ -133,10 +133,10 @@ Intelius (requires account login):
 
 ZoomInfo (B2B, needs email):
 ```
-Email: privacy@zoominfo.com
-Subject: "Remove My Profile"
-Body: Include your name + email address appearing in their database
-Expect: Response in 3–5 business days
+Email - privacy@zoominfo.com
+Subject - "Remove My Profile"
+Body - Include your name + email address appearing in their database
+Expect - Response in 3, 5 business days
 Follow up if no response
 ```
 
@@ -148,10 +148,10 @@ MyLife (appeals required):
 4. MyLife may refuse, citing "public interest"
 5. Appeal: mylife.com/support → "Privacy Request"
 6. State: "My information is outdated/incorrect"
-7. Wait 7–10 days; they often comply after appeal
+7. Wait 7, 10 days; they often comply after appeal
 ```
 
-Step 4: Legal Removal Requests (Last Resort)
+Step 4 - Legal Removal Requests (Last Resort)
 
 For persistent brokers, send formal letter:
 
@@ -172,10 +172,10 @@ Dear [Broker] Privacy Team,
 
 I request removal of my personal information from your database effective immediately.
 
-Name: [Legal Name]
-Phone: [Your Phone]
-Email: [Your Email]
-Address: [Your Address]
+Name - [Legal Name]
+Phone - [Your Phone]
+Email - [Your Email]
+Address - [Your Address]
 
 This request is submitted under CCPA (California), GDPR (if applicable), or LGPD (if applicable). 
 I am a resident of [State/Country] and am entitled to deletion.
@@ -196,16 +196,16 @@ Monitoring for Re-Listing
 
 Data brokers often re-list removed profiles. Monitor quarterly:
 
-Method 1: Automated Monitoring (Easiest)
+Method 1 - Automated Monitoring (Easiest)
 - Use DeleteMe's continuous removal feature ($199/year includes monitoring)
 - They automatically re-submit opt-outs if you're re-listed
 
-Method 2: Manual Monitoring (Free)
+Method 2 - Manual Monitoring (Free)
 1. Every 3 months, Google your name
 2. Check 3, 5 brokers you previously removed from
 3. If re-listed, resubmit removal request with note: "Already removed [date], re-listed without consent"
 
-Method 3: Google Alert
+Method 3 - Google Alert
 ```
 Set up Google Alerts for:
 - "John Smith" + "phone number"
@@ -240,7 +240,7 @@ For Technical Users:
 
 Privacy.com's API Removal (if available):
 ```bash
-Pseudo-code: would require broker API access
+Pseudo-code - would require broker API access
 curl -X POST https://api.privacy.com/remove \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -d '{
@@ -250,7 +250,7 @@ curl -X POST https://api.privacy.com/remove \
   }'
 ```
 
-Status: Most brokers don't expose removal APIs; manual submission required.
+Status - Most brokers don't expose removal APIs; manual submission required.
 
 DIY Script (Browser Automation):
 ```javascript
@@ -285,7 +285,7 @@ Cost-Benefit Analysis
 - First-time: Use DeleteMe ($129) or spend 4 hours on manual removal
 - Ongoing: Let DeleteMe monitor OR set quarterly reminders to check 5 brokers
 
-Prevention: Stop Future Data Collection
+Prevention - Stop Future Data Collection
 
 Stop the leaks:
 1. Don't use your real phone/email on free sites (use temp email: tempmail.com, protonmail.com)

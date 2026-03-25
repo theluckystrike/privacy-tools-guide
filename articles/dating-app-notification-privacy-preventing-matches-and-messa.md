@@ -22,7 +22,7 @@ Table of Contents
 
 - [Understanding Lock Screen Notification Channels](#understanding-lock-screen-notification-channels)
 - [iOS: Notification Privacy Settings](#ios-notification-privacy-settings)
-- [Android: Lock Screen and Notification Channels](#android-lock-screen-and-notification-channels)
+- [Android - Lock Screen and Notification Channels](#android-lock-screen-and-notification-channels)
 - [Custom ROM and LineageOS Considerations](#custom-rom-and-lineageos-considerations)
 - [Developer APIs for Notification Control](#developer-apis-for-notification-control)
 - [Automating Privacy Based on Context](#automating-privacy-based-on-context)
@@ -47,11 +47,11 @@ Apple provides granular notification controls through the Settings app. Navigate
 
 Critical Settings for Lock Screen Privacy
 
-Show Previews: Set this to "Never" or "When Unlocked" to prevent message content from appearing. When set to "Never," the notification shows only that you received a message, without any preview text.
+Show Previews - Set this to "Never" or "When Unlocked" to prevent message content from appearing. When set to "Never," the notification shows only that you received a message, without any preview text.
 
-Notification Grouping: iOS automatically groups notifications by app. For dating apps, ensure group summarization is enabled so individual messages don't spill over to the lock screen.
+Notification Grouping - iOS automatically groups notifications by app. For dating apps, ensure group summarization is enabled so individual messages don't spill over to the lock screen.
 
-Programmatic Approach: UNNotificationSettings
+Programmatic Approach - UNNotificationSettings
 
 For users with Shortcuts app access, you can create automation to adjust settings based on time or location:
 
@@ -68,7 +68,7 @@ center.getNotificationSettings { settings in
 
 This Swift code queries current notification permissions, useful for verifying your privacy configuration.
 
-Android: Lock Screen and Notification Channels
+Android - Lock Screen and Notification Channels
 
 Android offers notification channels, allowing users to control different notification types separately. Dating apps typically create multiple channels: Messages, Matches, Likes, and System Notifications.
 
@@ -113,7 +113,7 @@ Via ADB, enable privacy restrictions
 pm grant com.datingapp android.permission.READ_CONTACTS
 
 In Privacy Guard log, block notification events
-Check: /data/system/privacy_permission_global.xml
+Check - /data/system/privacy_permission_global.xml
 ```
 
 Developer APIs for Notification Control
@@ -136,7 +136,7 @@ content.apnsCollapseId = "match-\(UUID().uuidString)"
 
 The critical property is `apnsCollapseId`, which prevents notification stacking that reveals individual messages.
 
-Android: NotificationChannel and Builder
+Android - NotificationChannel and Builder
 
 ```kotlin
 val matchChannel = NotificationChannel(
@@ -167,7 +167,7 @@ Power users can automate notification control using context-aware automation app
 iOS Shortcut Example
 
 Create a Personal Automation in Shortcuts:
-1. Trigger: Time of Day (e.g., 9 PM) or Arrive/Leave Location
+1. Trigger - Time of Day (e.g., 9 PM) or Arrive/Leave Location
 2. Action: Set Notification Visibility for [Dating App] to "Private"
 
 This automatically hides dating app content during sensitive times.
@@ -175,8 +175,8 @@ This automatically hides dating app content during sensitive times.
 Tasker Profile for Android
 
 ```
-Profile: Dating Privacy
-Context: Time 09:00-21:00
+Profile - Dating Privacy
+Context - Time 09:00-21:00
 Action:  Notification Policy - Allow Priority Only
          HTTP Post: Disable notification sound for dating apps
 ```
@@ -195,13 +195,13 @@ Security Considerations
 
 While locking down notifications improves privacy, consider these trade-offs:
 
-Missed Communications: Aggressive notification blocking may cause you to miss time-sensitive messages.
+Missed Communications - Aggressive notification blocking may cause you to miss time-sensitive messages.
 
-Notification History: Some apps store notification history internally even when lock screen is protected. Clear app data regularly.
+Notification History - Some apps store notification history internally even when lock screen is protected. Clear app data regularly.
 
-Backup Exposure: Device backups may contain notification settings. Encrypt backups and avoid storing them unencrypted in cloud services.
+Backup Exposure - Device backups may contain notification settings. Encrypt backups and avoid storing them unencrypted in cloud services.
 
-Companion Apps: Some dating platforms have companion apps or browser extensions that may expose notifications differently. Audit all connected services.
+Companion Apps - Some dating platforms have companion apps or browser extensions that may expose notifications differently. Audit all connected services.
 
 Debugging Notification Issues
 

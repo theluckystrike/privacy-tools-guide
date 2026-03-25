@@ -22,13 +22,13 @@ This guide covers the privacy-relevant use cases: finding unexpected connections
 Table of Contents
 
 - [Installation](#installation)
-- [Step 1: Capture Traffic on Your Interface](#step-1-capture-traffic-on-your-interface)
-- [Step 2: Filter for Interesting Traffic](#step-2-filter-for-interesting-traffic)
-- [Step 3: Identify Unexpected Connections](#step-3-identify-unexpected-connections)
-- [Step 4: Verify VPN Tunnel Encryption](#step-4-verify-vpn-tunnel-encryption)
-- [Step 5: Detect Unencrypted Data Transmission](#step-5-detect-unencrypted-data-transmission)
-- [Step 6: Inspect TLS Certificates](#step-6-inspect-tls-certificates)
-- [Step 7: Analyze a Mobile Device](#step-7-analyze-a-mobile-device)
+- [Step 1 - Capture Traffic on Your Interface](#step-1-capture-traffic-on-your-interface)
+- [Step 2 - Filter for Interesting Traffic](#step-2-filter-for-interesting-traffic)
+- [Step 3 - Identify Unexpected Connections](#step-3-identify-unexpected-connections)
+- [Step 4 - Verify VPN Tunnel Encryption](#step-4-verify-vpn-tunnel-encryption)
+- [Step 5 - Detect Unencrypted Data Transmission](#step-5-detect-unencrypted-data-transmission)
+- [Step 6 - Inspect TLS Certificates](#step-6-inspect-tls-certificates)
+- [Step 7 - Analyze a Mobile Device](#step-7-analyze-a-mobile-device)
 - [Using tshark for Command-Line Analysis](#using-tshark-for-command-line-analysis)
 - [Related Reading](#related-reading)
 
@@ -64,7 +64,7 @@ Windows
 
 Download the official installer from wireshark.org. It includes Npcap (the Windows packet capture driver).
 
-Step 1: Capture Traffic on Your Interface
+Step 1 - Capture Traffic on Your Interface
 
 Launch Wireshark. The opening screen shows all available network interfaces and a live preview of traffic on each.
 
@@ -77,7 +77,7 @@ Click the shark fin button or double-click the interface to start capturing.
 
 Stop the capture after 60 seconds. even idle systems generate a lot of traffic. Save the capture file (File → Save As → `.pcapng`) before analyzing.
 
-Step 2: Filter for Interesting Traffic
+Step 2 - Filter for Interesting Traffic
 
 The display filter bar at the top is where Wireshark's power lies. Filters narrow the captured packets to what you care about.
 
@@ -95,7 +95,7 @@ Traffic to or from a specific IP
 ip.addr == 93.184.216.34
 
 Traffic to or from a specific domain (requires DNS resolution)
-First find the IP via: host example.com
+First find the IP via - host example.com
 Then filter by IP
 
 All outbound traffic from your machine (replace with your IP)
@@ -111,7 +111,7 @@ Unencrypted HTTP POST requests (potential data exfiltration)
 http.request.method == "POST"
 ```
 
-Step 3: Identify Unexpected Connections
+Step 3 - Identify Unexpected Connections
 
 This is the core privacy use case. After capturing 60 seconds of idle traffic, filter for outbound connections to external IPs:
 
@@ -137,7 +137,7 @@ Common unexpected connections to investigate:
 - Connections immediately after startup before you've opened any apps (OS telemetry)
 - Periodic connections every few minutes (background sync or telemetry beacons)
 
-Step 4: Verify VPN Tunnel Encryption
+Step 4 - Verify VPN Tunnel Encryption
 
 When connected to a VPN, all external traffic should appear encrypted and routed through the VPN endpoint.
 
@@ -165,7 +165,7 @@ Right-click any packet → Follow → TCP Stream
 Look for readable text in the stream content
 ```
 
-Step 5: Detect Unencrypted Data Transmission
+Step 5 - Detect Unencrypted Data Transmission
 
 Any packet transmitted over HTTP (not HTTPS) carries its content in plaintext. In Wireshark, follow the TCP stream of any HTTP connection to see exactly what was transmitted:
 
@@ -182,11 +182,11 @@ http.request.method == "POST"
 
 Follow the stream on each result to inspect the posted content.
 
-Step 6: Inspect TLS Certificates
+Step 6 - Inspect TLS Certificates
 
 For HTTPS connections, you can verify the certificate being used without decrypting the traffic:
 
-Filter: `tls.handshake.type == 2` (ServerHello messages)
+Filter - `tls.handshake.type == 2` (ServerHello messages)
 
 Right-click a packet → Follow → TLS Stream. Scroll to find the certificate details.
 
@@ -204,14 +204,14 @@ visible even in encrypted TLS traffic
 
 The SNI field reveals the hostname of every HTTPS connection, even though the content is encrypted. This is a known privacy limitation of TLS. only Encrypted Client Hello (ECH) hides the SNI.
 
-Step 7: Analyze a Mobile Device
+Step 7 - Analyze a Mobile Device
 
 To inspect traffic from a phone or other device on your network, you need to capture at the router level or use ARP spoofing to route the device's traffic through your capture machine.
 
-The simpler approach: set up your laptop as a Wi-Fi hotspot that the phone connects to, then capture on the hotspot interface.
+The simpler approach - set up your laptop as a Wi-Fi hotspot that the phone connects to, then capture on the hotspot interface.
 
 ```bash
-Linux: create hotspot via nmcli
+Linux - create hotspot via nmcli
 nmcli device wifi hotspot ifname wlan0 ssid CaptureHotspot password "testpass123"
 
 Start Wireshark on the hotspot interface
@@ -245,7 +245,7 @@ Related Articles
 - [macOS Network Privacy Settings Complete Guide 2026](/macos-network-privacy-settings-complete-guide/)
 - [Mobile Fitness Tracker Privacy](/mobile-fitness-tracker-privacy-what-health-apps-share-with-t/)
 - [Lightning Network Privacy Risks](/lightning-network-privacy-risks-what-information-channel-partners-can-see-about-you/)
-- [AI Coding Assistant for Network Traffic Analysis: What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
+- [AI Coding Assistant for Network Traffic Analysis - What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 Frequently Asked Questions

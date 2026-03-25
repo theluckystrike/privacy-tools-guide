@@ -297,9 +297,9 @@ Decision Documentation
 Document contentious discussions directly in the PR:
 
 ```markdown
-Design Decision: Why OAuth2 over JWT
+Design Decision - Why OAuth2 over JWT
 
-Question raised: Why not continue with JWT tokens?
+Question raised - Why not continue with JWT tokens?
 
 Reasoning:
 - OAuth2 provides better token lifecycle management
@@ -311,7 +311,7 @@ Alternatives considered:
 - SAML 2.0: Overkill for our use case
 - OpenID Connect: Built on OAuth2, adds complexity
 
-Decision: OAuth2 is our standard for new auth systems.
+Decision - OAuth2 is our standard for new auth systems.
 ```
 
 Performance Implications of Large PRs

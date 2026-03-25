@@ -104,7 +104,7 @@ API Access and Developer Controls
 If you use Twitter X for development or automation, carefully manage your API keys and access tokens. Create separate tokens for different applications rather than sharing credentials across projects.
 
 ```python
-Python example: Rotating Twitter API credentials securely
+Python example - Rotating Twitter API credentials securely
 import os
 import time
 from datetime import datetime, timedelta
@@ -235,7 +235,7 @@ Monitoring Account Activity
 
 Track login sessions and account activity to detect unauthorized access early:
 
-- Sessions: Settings → Apps and sessions → Sessions shows all active sessions with device and location data. Terminate any sessions you do not recognize.
+- Sessions - Settings → Apps and sessions → Sessions shows all active sessions with device and location data. Terminate any sessions you do not recognize.
 - Login history: Review the login history periodically for unexpected locations or devices.
 - Email notifications: Enable "Email me when there's a new login" under Settings → Security → Additional password protection.
 
@@ -245,11 +245,11 @@ Reducing Your Attack Surface Long-Term
 
 Beyond individual settings, consider a broader approach to your Twitter X privacy posture:
 
-Use a dedicated email address: The email address linked to your Twitter X account should not be the same address you use for other services. A breach or phishing attack targeting one account is less likely to cascade to the other if they use separate inboxes.
+Use a dedicated email address - The email address linked to your Twitter X account should not be the same address you use for other services. A breach or phishing attack targeting one account is less likely to cascade to the other if they use separate inboxes.
 
 Avoid linking your phone number unnecessarily: Twitter X prompts users to add phone numbers for account recovery. However, phone numbers can be used to identify you across services and are susceptible to SIM-swapping. Only link a phone number if you have exhausted other recovery options and accept the associated risks.
 
-Set a strong, unique password: Reusing passwords across services is one of the most common causes of account compromise. Use a password manager to generate and store a unique, random password for Twitter X. Credentials from breaches at other services are routinely tested against social media accounts in automated credential stuffing attacks.
+Set a strong, unique password - Reusing passwords across services is one of the most common causes of account compromise. Use a password manager to generate and store a unique, random password for Twitter X. Credentials from breaches at other services are routinely tested against social media accounts in automated credential stuffing attacks.
 
 Be cautious with third-party login: If you log into other services using "Sign in with X," you are sharing your Twitter X identity with those services. Where possible, create independent accounts rather than relying on social login, which creates a dependency. if your Twitter X account is suspended or compromised, all services linked to it through social login become inaccessible.
 

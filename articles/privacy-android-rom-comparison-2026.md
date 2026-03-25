@@ -61,7 +61,7 @@ Security features that stand out:
 - Auto-reboot after configurable idle timeout
 - Duress PIN/password to wipe device
 
-Supported devices (as of 2026): Pixel 6 through Pixel 9 series (including Pro and Fold variants). Older Pixels are dropped when Google stops providing security patches.
+Supported devices (as of 2026) - Pixel 6 through Pixel 9 series (including Pro and Fold variants). Older Pixels are dropped when Google stops providing security patches.
 
 Installation (requires unlockable bootloader. only available on US carrier-unlocked or direct Google models):
 
@@ -72,7 +72,7 @@ CLI method shown here
 Install fastboot (Linux)
 sudo apt install android-tools-fastboot
 
-Enable OEM unlocking on device: Settings → Developer options → OEM unlocking
+Enable OEM unlocking on device - Settings → Developer options → OEM unlocking
 Connect device, unlock bootloader
 fastboot flashing unlock
 
@@ -101,7 +101,7 @@ Key differences from GrapheneOS:
 - Mozilla location services instead of Google location
 - Less aggressive memory hardening than GrapheneOS
 
-Supported devices: Pixel 6, 9, Fairphone 4 and 5, Motorola Moto G32/G42/G52 (limited).
+Supported devices - Pixel 6, 9, Fairphone 4 and 5, Motorola Moto G32/G42/G52 (limited).
 
 ```bash
 CalyxOS installation via CLI
@@ -192,7 +192,7 @@ Disable NFC if unused (attack surface)
 adb shell svc nfc disable
 
 Review auto-start permissions after install
-GrapheneOS: Settings → Apps → [App] → Notifications (auto-start is implicit)
+GrapheneOS - Settings → Apps → [App] → Notifications (auto-start is implicit)
 ```
 
 Verifying Your ROM Build
@@ -240,20 +240,20 @@ Threat Model Alignment
 
 Choosing a ROM depends on your specific threat model:
 
-Threat: Stock OEM Data Collection
-Best defense: Any privacy ROM. All four alternatives eliminate OEM bloatware and telemetry. GrapheneOS provides the most aggressive hardening, but CalyxOS, DivestOS, and LineageOS all remove carrier/OEM tracking.
+Threat - Stock OEM Data Collection
+Best defense - Any privacy ROM. All four alternatives eliminate OEM bloatware and telemetry. GrapheneOS provides the most aggressive hardening, but CalyxOS, DivestOS, and LineageOS all remove carrier/OEM tracking.
 
-Threat: Compromised Apps
-Best defense: GrapheneOS with Sandboxed Google Play. The per-app isolation prevents compromised apps from accessing other app data or system resources.
+Threat - Compromised Apps
+Best defense - GrapheneOS with Sandboxed Google Play. The per-app isolation prevents compromised apps from accessing other app data or system resources.
 
-Threat: Malware from App Stores
-Best defense: DivestOS (no Play Store, manual APK review) or GrapheneOS (auditable Sandboxed Play).
+Threat - Malware from App Stores
+Best defense - DivestOS (no Play Store, manual APK review) or GrapheneOS (auditable Sandboxed Play).
 
-Threat: Law Enforcement Access
-Best defense: GrapheneOS. The verified boot chain and hardware attestation make forensic extraction harder. The duress PIN provides plausible deniability in some jurisdictions (check your local laws).
+Threat - Law Enforcement Access
+Best defense - GrapheneOS. The verified boot chain and hardware attestation make forensic extraction harder. The duress PIN provides plausible deniability in some jurisdictions (check your local laws).
 
-Threat: Compromised Device Access
-Best defense: CalyxOS with Datura Firewall set to whitelist mode. This requires explicit app-by-app permission for network access, preventing silent data exfiltration.
+Threat - Compromised Device Access
+Best defense - CalyxOS with Datura Firewall set to whitelist mode. This requires explicit app-by-app permission for network access, preventing silent data exfiltration.
 
 Flashing Verification Commands
 

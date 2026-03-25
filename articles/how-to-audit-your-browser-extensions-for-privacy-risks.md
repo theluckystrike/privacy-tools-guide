@@ -25,9 +25,9 @@ This guide teaches you to audit your extensions yourself. You'll learn to read p
 Table of Contents
 
 - [What Permissions Actually Mean](#what-permissions-actually-mean)
-- [Step 1: Audit Your Current Extensions](#step-1-audit-your-current-extensions)
-- [Step 2: Monitor Network Traffic](#step-2-monitor-network-traffic)
-- [Step 3: Analyze the Source Code (Advanced)](#step-3-analyze-the-source-code-advanced)
+- [Step 1 - Audit Your Current Extensions](#step-1-audit-your-current-extensions)
+- [Step 2 - Monitor Network Traffic](#step-2-monitor-network-traffic)
+- [Step 3 - Analyze the Source Code (Advanced)](#step-3-analyze-the-source-code-advanced)
 - [Privacy-Safe Alternatives to Common Risky Extensions](#privacy-safe-alternatives-to-common-risky-extensions)
 - [Ongoing Monitoring](#ongoing-monitoring)
 - [Privacy Extensions Worth Considering](#privacy-extensions-worth-considering)
@@ -40,71 +40,71 @@ Permission Categories
 
 `<all_urls>` or `*://*/*`
 
-Means: "See every website you visit, modify page content, intercept requests."
+Means - "See every website you visit, modify page content, intercept requests."
 
-Red flag: This is the highest-privilege permission. A password manager needs this (to fill passwords on any site). An ad blocker might need it, but probably doesn't. A "notification reminder" or "to-do list" extension that requests this is suspicious.
+Red flag - This is the highest-privilege permission. A password manager needs this (to fill passwords on any site). An ad blocker might need it, but probably doesn't. A "notification reminder" or "to-do list" extension that requests this is suspicious.
 
-Real risk: Rogue extensions with this permission can steal credentials, insert ads, modify forms before submission, or log browsing history.
+Real risk - Rogue extensions with this permission can steal credentials, insert ads, modify forms before submission, or log browsing history.
 
 `tabs`
 
-Means: "Read the URL of every open tab, see the page title."
+Means - "Read the URL of every open tab, see the page title."
 
-What it doesn't mean: "Access the page content." (That requires `<all_urls>` or `content_scripts`.)
+What it doesn't mean - "Access the page content." (That requires `<all_urls>` or `content_scripts`.)
 
-Red flag: Why does a calculator app need to know what sites you visit? If an extension requests `tabs` but isn't tab-management-related, question it.
+Red flag - Why does a calculator app need to know what sites you visit? If an extension requests `tabs` but isn't tab-management-related, question it.
 
-Real risk: Browsing history exfiltration. A rogue extension with just `tabs` can build a complete history of sites you visit and sell it.
+Real risk - Browsing history exfiltration. A rogue extension with just `tabs` can build a complete history of sites you visit and sell it.
 
 `history`
 
-Means: "Read and modify your browsing history."
+Means - "Read and modify your browsing history."
 
 This is invasive. Only your browser should see your full history. Even your antivirus shouldn't have this.
 
-Red flag: Almost no legitimate extension needs `history`. If you see this, uninstall.
+Red flag - Almost no legitimate extension needs `history`. If you see this, uninstall.
 
-Real risk: Complete history theft, including deleted history and timestamps.
+Real risk - Complete history theft, including deleted history and timestamps.
 
 `storage`
 
-Means: "Store persistent data locally on your device."
+Means - "Store persistent data locally on your device."
 
 Not inherently risky (used for caching, settings), but combined with other permissions, it's how extensions build detailed profiles of you.
 
 `cookies`
 
-Means: "Read and modify cookies (including authentication cookies for any site)."
+Means - "Read and modify cookies (including authentication cookies for any site)."
 
-Red flag: Very few extensions need this. Password managers don't. Cookie editors do, but you shouldn't install those unless you specifically need them for development.
+Red flag - Very few extensions need this. Password managers don't. Cookie editors do, but you shouldn't install those unless you specifically need them for development.
 
-Real risk: Session hijacking, cookie theft, ability to modify your accounts.
+Real risk - Session hijacking, cookie theft, ability to modify your accounts.
 
 `webRequest` or `declarativeNetRequest` (Chrome)
 
-Means: "Intercept all HTTP requests your browser makes."
+Means - "Intercept all HTTP requests your browser makes."
 
-This is powerful: extensions can see URLs (even encrypted ones, before HTTPS), request bodies, headers, everything in flight.
+This is powerful - extensions can see URLs (even encrypted ones, before HTTPS), request bodies, headers, everything in flight.
 
-Red flag: Ad blockers, VPN services, and malware all need this permission. It's necessary for many tools but also highly sensitive. Only trust extensions from vendors with strong reputation.
+Red flag - Ad blockers, VPN services, and malware all need this permission. It's necessary for many tools but also highly sensitive. Only trust extensions from vendors with strong reputation.
 
-Real risk: Complete traffic interception, ability to modify requests, see form submissions before encryption.
+Real risk - Complete traffic interception, ability to modify requests, see form submissions before encryption.
 
 `clipboardRead` or `clipboardWrite`
 
-Means: "Read or modify your clipboard."
+Means - "Read or modify your clipboard."
 
-Red flag: Why does a weather widget need your clipboard? Super suspicious.
+Red flag - Why does a weather widget need your clipboard? Super suspicious.
 
-Real risk: Password theft (you copy a password; extension reads it before you paste). Data exfiltration (extension copies your clipboard and sends it to a server).
+Real risk - Password theft (you copy a password; extension reads it before you paste). Data exfiltration (extension copies your clipboard and sends it to a server).
 
 `location`
 
-Means: "See your GPS location (if you've granted permission)."
+Means - "See your GPS location (if you've granted permission)."
 
-Red flag: Almost never legitimate for a browser extension.
+Red flag - Almost never legitimate for a browser extension.
 
-Real risk: Location tracking, exposure of home address.
+Real risk - Location tracking, exposure of home address.
 
 How to Check an Extension's Permissions
 
@@ -148,7 +148,7 @@ Look for the `permissions` array:
 
 Each entry is what we described above.
 
-Step 1: Audit Your Current Extensions
+Step 1 - Audit Your Current Extensions
 
 Do this now. You probably have 5, 15 installed and forgot about half of them.
 
@@ -185,7 +185,7 @@ For each, ask:
 3. Are permissions proportional? A password manager legitimately needs `<all_urls>` and `cookies`. A to-do list doesn't.
 4. Is the extension maintained? If the last update was 2 years ago, it might have known vulnerabilities. Uninstall.
 
-Red Flags: High-Risk Extensions
+Red Flags - High-Risk Extensions
 
 Uninstall immediately if you find:
 
@@ -205,9 +205,9 @@ These are widely trusted and security-audited:
 - Decentraleyes (privacy). no tracking, open-source
 - HTTPS Everywhere (security). made by EFF, audited
 
-Most others: research before installing.
+Most others - research before installing.
 
-Step 2: Monitor Network Traffic
+Step 2 - Monitor Network Traffic
 
 Permissions tell you what an extension *could* do. Network monitoring tells you what it *actually* does.
 
@@ -252,19 +252,19 @@ Safe patterns:
 - Requests to the extension's official domain only
 - No requests if the extension is dormant
 
-Real Example: News Feed Eradicator
+Real Example - News Feed Eradicator
 
 We audited this popular extension (removes social media feeds to fight doom-scrolling).
 
-Permission manifest: `<all_urls>`, `storage`, `activeTab`
+Permission manifest - `<all_urls>`, `storage`, `activeTab`
 
-Network traffic: On page load, the extension makes a request to `tracking-api.com/event?user=xyz&site=facebook.com`.
+Network traffic - On page load, the extension makes a request to `tracking-api.com/event?user=xyz&site=facebook.com`.
 
 The extension is exfiltrating your browsing history, tying your visits to a tracking API. Even though it's open-source (you can verify the code), the behavior is creepy.
 
-Replace with: uBlock Origin (no tracking) or just delete your social media accounts.
+Replace with - uBlock Origin (no tracking) or just delete your social media accounts.
 
-Step 3: Analyze the Source Code (Advanced)
+Step 3 - Analyze the Source Code (Advanced)
 
 If an extension is open-source (e.g., on GitHub), you can read the code to verify it's not doing something sketchy.
 
@@ -318,51 +318,51 @@ Privacy-Safe Alternatives to Common Risky Extensions
 
 Instead of Random Password Managers → Use Bitwarden
 
-Risky: Password managers with unknown publishers, closed-source code, or no security audits.
+Risky - Password managers with unknown publishers, closed-source code, or no security audits.
 
-Safe: Bitwarden (open-source, independently audited, zero-knowledge encryption).
+Safe - Bitwarden (open-source, independently audited, zero-knowledge encryption).
 
-Cost: Free tier (unlimited passwords, 1 device), or $10/year (premium, multiple devices).
+Cost - Free tier (unlimited passwords, 1 device), or $10/year (premium, multiple devices).
 
 Instead of Built-in Antivirus Extensions → Use Your OS Built-in
 
-Risky: "Antivirus" extensions promising to protect you. Most are fake or adware.
+Risky - "Antivirus" extensions promising to protect you. Most are fake or adware.
 
-Safe: Windows Defender (Windows), built-in scanning (Mac), or nothing if you're careful.
+Safe - Windows Defender (Windows), built-in scanning (Mac), or nothing if you're careful.
 
 Extensions can't protect you from viruses anyway (viruses run outside the browser). These are just surveillance.
 
 Instead of Generic Ad Blockers → Use uBlock Origin
 
-Risky: Rand ad blockers with vague names, no source code visibility.
+Risky - Rand ad blockers with vague names, no source code visibility.
 
-Safe: uBlock Origin (open-source, fast, no telemetry).
+Safe - uBlock Origin (open-source, fast, no telemetry).
 
-Cost: Free.
+Cost - Free.
 
 Instead of VPN Extensions → Use a VPN App
 
-Risky: VPN "extensions" claiming to protect you. Extensions can't truly VPN (they can only proxy HTTPS traffic through their server, not your entire connection). Many are malware.
+Risky - VPN "extensions" claiming to protect you. Extensions can't truly VPN (they can only proxy HTTPS traffic through their server, not your entire connection). Many are malware.
 
-Safe: Use a proper VPN app (Wireguard, OpenVPN, Mullvad).
+Safe - Use a proper VPN app (Wireguard, OpenVPN, Mullvad).
 
-Cost: $5, 15/month (varies by provider).
+Cost - $5, 15/month (varies by provider).
 
 Instead of Generic "Optimizer" Extensions → Delete Them
 
-Risky: Extensions claiming to speed up your browser, clean cache, optimize memory. These are scams; they do nothing or make things worse.
+Risky - Extensions claiming to speed up your browser, clean cache, optimize memory. These are scams; they do nothing or make things worse.
 
-Safe: Use Chrome's built-in settings (Settings → Privacy and Security → Clear browsing data).
+Safe - Use Chrome's built-in settings (Settings → Privacy and Security → Clear browsing data).
 
-Cost: Free (already in Chrome).
+Cost - Free (already in Chrome).
 
 Instead of Sketchy Productivity Extensions → Use Purpose-Built Apps
 
-Risky: Browser extensions for to-do lists, note-taking, time tracking. They're usually ad-supported or data-mining.
+Risky - Browser extensions for to-do lists, note-taking, time tracking. They're usually ad-supported or data-mining.
 
-Safe: Dedicated apps (Todoist for to-do lists, Obsidian for notes, Toggl for time tracking). You pay for them, so they're incentivized to protect your data.
+Safe - Dedicated apps (Todoist for to-do lists, Obsidian for notes, Toggl for time tracking). You pay for them, so they're incentivized to protect your data.
 
-Cost: $0, 15/month (varies).
+Cost - $0, 15/month (varies).
 
 Ongoing Monitoring
 
@@ -389,7 +389,7 @@ Extensions are sometimes acquired and repurposed. If an extension you trusted go
 - Check if the privacy policy changed
 - Read reviews for signs of degradation
 
-Real example: Norton (antivirus company) acquired a privacy-focused VPN extension. After acquisition, the VPN started logging traffic (despite privacy promises). Users complained; some uninstalled.
+Real example - Norton (antivirus company) acquired a privacy-focused VPN extension. After acquisition, the VPN started logging traffic (despite privacy promises). Users complained; some uninstalled.
 
 4. Stay Updated
 

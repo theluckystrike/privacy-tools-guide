@@ -183,7 +183,7 @@ Content-Security-Policy:
   frame-ancestors 'none';
 ```
 
-Alternative: Manual Copy-Paste
+Alternative - Manual Copy-Paste
 
 For high-security applications, consider requiring manual copy-paste instead of autofill:
 

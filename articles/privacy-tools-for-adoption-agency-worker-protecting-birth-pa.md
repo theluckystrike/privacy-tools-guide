@@ -24,7 +24,7 @@ Birth parent data faces unique risks. Unlike corporate trade secrets or financia
 
 The primary threats include unauthorized internal access, external hackers seeking valuable personal data, accidental exposure through misconfigured systems, and physical theft of devices. Effective protection requires addressing each threat vector with appropriate technical controls.
 
-Encryption: Your First Line of Defense
+Encryption - Your First Line of Defense
 
 Full-Disk Encryption
 

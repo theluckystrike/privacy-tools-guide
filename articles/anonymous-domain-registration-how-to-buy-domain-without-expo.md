@@ -19,7 +19,7 @@ tags: [privacy-tools-guide]
 Domain registration privacy requires enabling WHOIS protection through registrars like Namecheap or Cloudflare, using privacy-focused registrars with built-in protections, or combining anonymous email (Proton Mail), VPN/Tor routing, and cryptocurrency payment. Proxy services like Njalla act as intermediaries so the domain registers under their legal name while forwarding communications to you. For maximum privacy, combine registrar-provided WHOIS protection with DNS privacy via Cloudflare to hide origin server IPs, and monitor WHOIS regularly to confirm protection remains active.
 
 
-- Mitigation: Use CoinJoin mixing service before paying for domain (increases cost by 1-2%).
+- Mitigation - Use CoinJoin mixing service before paying for domain (increases cost by 1-2%).
 - Domain type: Use .com or .io (fewest privacy restrictions)
 6.
 - Create an account with: a privacy-focused registrar 2.
@@ -39,7 +39,7 @@ whois example.com
 
 Without protection, your registration details appear in plain text. Privacy concerns extend beyond spam, competitors can identify your infrastructure, domain portfolio, or physical location. Attackers can use WHOIS data for social engineering or targeted attacks.
 
-Method 1: Registrar-Provided Privacy Protection
+Method 1 - Registrar-Provided Privacy Protection
 
 Most domain registrars offer free or paid privacy protection as an add-on service. This feature replaces your personal information with the registrar's proxy details in WHOIS results.
 
@@ -59,7 +59,7 @@ Popular registrars providing this service include:
 
 After enabling privacy protection, WHOIS queries return the registrar's privacy service contact information instead of yours. Legitimate legal requests can still reach you through the proxy, but casual lookups see generic details.
 
-Method 2: Privacy-Focused Registrars
+Method 2 - Privacy-Focused Registrars
 
 Certain registrars build privacy as a core feature rather than an add-on. These services typically:
 
@@ -75,11 +75,11 @@ Setting Up a Privacy-First Domain Purchase
 3. Select privacy protection during checkout
 4. Use cryptocurrency or other anonymous payment methods if available
 
-Method 3: Anonymous Registration with Proton Mail and VPN
+Method 3 - Anonymous Registration with Proton Mail and VPN
 
 For maximum privacy, combine multiple services:
 
-Step 1: Create an Anonymous Email
+Step 1 - Create an Anonymous Email
 
 Use Proton Mail or similar encrypted email services. Create an account without linking to your real identity:
 
@@ -88,7 +88,7 @@ Proton Mail CLI example (requires protonmail-bridge)
 protonmail-cli create user@protonmail.example
 ```
 
-Step 2: Route Your Traffic Through Tor or VPN
+Step 2 - Route Your Traffic Through Tor or VPN
 
 When registering domains, use Tor Browser or a trusted VPN to prevent IP address logging:
 
@@ -98,14 +98,14 @@ curl https://icanhazip.com/
 Compare with Tor exit node IP
 ```
 
-Step 3: Use Anonymous Payment Methods
+Step 3 - Use Anonymous Payment Methods
 
 Consider these payment options for maximum privacy:
 - Privacy.com (single-use virtual cards)
 - Cryptocurrency (Bitcoin via payment processors)
 - Prepaid gift cards (with cash purchase)
 
-Method 4: Domain Proxy Services
+Method 4 - Domain Proxy Services
 
 Independent privacy proxy services act as an intermediary between you and ICANN. These services:
 
@@ -145,7 +145,7 @@ DNS Configuration While Maintaining Privacy
 After registering with privacy protection, configure your DNS records:
 
 ```bash
-Cloudflare API: Adding DNS records
+Cloudflare API - Adding DNS records
 curl -X POST "https://api.cloudflare.com/client/v4/zones/ZONE_ID/dns_records" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json" \
@@ -215,18 +215,18 @@ Detailed analysis of privacy-focused registrars:
 
 Detailed Registrar Comparison
 
-Tier 1: Privacy-Focused Registrars (Highest Privacy)
+Tier 1 - Privacy-Focused Registrars (Highest Privacy)
 
 Njalla (njal.la)
 - Jurisdiction: Nevis (privacy-favorable)
 - WHOIS privacy: Automatic (no opt-in required)
 - Payment methods: Cryptocurrency (Bitcoin, Monero), no credit card
 - Domain proxy: Yes, registrants under Njalla's legal name
-- Price: Standard (.com $9/year, .net $10.50/year)
+- Price - Standard (.com $9/year, .net $10.50/year)
 - Features: Full CNAME customization for DNS without exposing origin IP
 - Audit trail: Minimal logging (privacy-first policy)
 
-Key advantage: No payment trail when using cryptocurrency. Only Njalla's infrastructure is logged.
+Key advantage - No payment trail when using cryptocurrency. Only Njalla's infrastructure is logged.
 
 Configuration after registration:
 ```bash
@@ -236,42 +236,42 @@ curl -X POST https://njal.la/api/v1/dns/example.com \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
-Tier 1.5: Privacy-Included Registrars
+Tier 1.5 - Privacy-Included Registrars
 
 Cloudflare Registrars (registrar.cloudflare.com)
 - WHOIS privacy: Automatic for all domains
 - Payment methods: Credit card only (non-anonymous)
 - Registrant info: Proxied through Cloudflare
-- Price: Transfer costs only, no renewal markup (.com free after transfer)
+- Price - Transfer costs only, no renewal markup (.com free after transfer)
 - DNS: Cloudflare nameservers mandatory (free DNSSEC)
 - Advantage: Zero-cost ongoing (only registration/transfer fees)
 
-Perfect for: Developers already on Cloudflare who accept minimal privacy loss through payment trail.
+Perfect for - Developers already on Cloudflare who accept minimal privacy loss through payment trail.
 
 Namecheap
 - WHOIS privacy: $1.88/year add-on
 - Payment methods: Credit card, PayPal, cryptocurrency (Bitcoin)
 - Registrant info: Replaced with Namecheap proxy details
-- Price: Competitive (.com $8.88 first year, then $8.88/year with privacy)
+- Price - Competitive (.com $8.88 first year, then $8.88/year with privacy)
 - Promo codes: Frequently offers 50% off first year
 - Support: 24/7 chat support
 
-Perfect for: Beginners wanting privacy without complexity.
+Perfect for - Beginners wanting privacy without complexity.
 
-Tier 2: Privacy-Capable (Privacy Via Add-On)
+Tier 2 - Privacy-Capable (Privacy Via Add-On)
 
 Gandi.net
 - Jurisdiction: France (GDPR-compliant, privacy-friendly)
 - WHOIS privacy: Included standard on most TLDs
 - Payment methods: Credit card, PayPal, wire transfer
-- Price: Premium ($11.99/year for .com, but includes privacy)
+- Price - Premium ($11.99/year for .com, but includes privacy)
 - Features: Included email forwarding, no upsell pressure
 - Support: Responsive, French-German-English
 - Slower website, less feature-rich UI
 
-Perfect for: Europeans comfortable with EU jurisdiction.
+Perfect for - Europeans comfortable with EU jurisdiction.
 
-Tier 3: Privacy Problematic (Avoid)
+Tier 3 - Privacy Problematic (Avoid)
 
 GoDaddy. Known for aggressive privacy monetization, separate $1-2 fees
 NameBright. Privacy requires extra payment, not transparent
@@ -288,13 +288,13 @@ Network Solutions. Corporate ownership, minimal privacy by default
 | Bluehost | $2.99 (promo) | $14.99 | $2.49 | $34.46 |
 | GoDaddy | $0.99 (promo) | $17.95 | $2.49 | $41.33 |
 
-Real cost calculation: Njalla's $27 over 3 years ($9/year) is cheapest and most private. Cloudflare is free if already migrated. Namecheap offers best mainstream balance.
+Real cost calculation - Njalla's $27 over 3 years ($9/year) is cheapest and most private. Cloudflare is free if already migrated. Namecheap offers best mainstream balance.
 
 Payment Methods and Anonymity Comparison
 
 Cryptocurrency (Bitcoin)
 
-Anonymity level: High (with proper precautions)
+Anonymity level - High (with proper precautions)
 Providers accepting Bitcoin:
 - Njalla: Yes, direct Bitcoin payment
 - Namecheap: Yes via payment processor
@@ -313,13 +313,13 @@ docker run -d --name btcpay \
   btcpayserver/btcpayserver
 ```
 
-Risks: Bitcoin transactions are pseudonymous, not anonymous. Chain analysis can sometimes link addresses to exchanges where you converted fiat to crypto.
+Risks - Bitcoin transactions are pseudonymous, not anonymous. Chain analysis can sometimes link addresses to exchanges where you converted fiat to crypto.
 
-Mitigation: Use CoinJoin mixing service before paying for domain (increases cost by 1-2%).
+Mitigation - Use CoinJoin mixing service before paying for domain (increases cost by 1-2%).
 
 Privacy.com Virtual Cards
 
-Anonymity level: Medium (transaction still processed through Payment Processor)
+Anonymity level - Medium (transaction still processed through Payment Processor)
 
 How it works:
 1. Create Privacy.com account (requires ID verification)
@@ -328,8 +328,8 @@ How it works:
 4. Registrar sees Privacy card, not your real card
 5. Transaction attributed to Privacy.com, not you
 
-Cost: Free tier includes 1 card/month (sufficient for 1 domain registration)
-Best for: Registrars requiring credit card but wanting to hide real card
+Cost - Free tier includes 1 card/month (sufficient for 1 domain registration)
+Best for - Registrars requiring credit card but wanting to hide real card
 
 ```bash
 Generate Privacy card via CLI
@@ -341,15 +341,15 @@ privacy-cli generate-card \
 
 Prepaid Gift Cards
 
-Anonymity level: High (if purchased with cash)
+Anonymity level - High (if purchased with cash)
 
 Approach:
 1. Buy prepaid Visa/Mastercard at grocery store with cash
 2. Register domain using card
 3. No linkage to real identity
 
-Risk: Gift card value >$500 triggers cash reporting in some countries
-Best for: Domains <$50 where gift card overhead is acceptable
+Risk - Gift card value >$500 triggers cash reporting in some countries
+Best for - Domains <$50 where gift card overhead is acceptable
 
 Additional Anonymization Layers
 
@@ -359,10 +359,10 @@ Domain admin communication should not reveal your identity:
 
 ```bash
 Use SimpleLogin (open-source email alias service)
-Create alias: mynewdomain@mynewdomain.simplelogin.com
+Create alias - mynewdomain@mynewdomain.simplelogin.com
 Forwards to your real email (provider never sees your address)
 
-Self-hosted alternative: mxroute + mail forwarding
+Self-hosted alternative - mxroute + mail forwarding
 Configure MX records to forward admin emails to encrypted mailbox
 ```
 
@@ -476,7 +476,7 @@ Recommended Workflow for Maximum Privacy (2026 Updated)
 
 1. Registrar choice: Njalla for crypto-friendly, or Cloudflare if already using services
 2. Email setup: Create alias via SimpleLogin (forward to separate privacy email account)
-3. Payment: Bitcoin (with CoinJoin mixing) or Privacy.com card
+3. Payment - Bitcoin (with CoinJoin mixing) or Privacy.com card
 4. DNS provider: Cloudflare (hide origin IP from WHOIS)
 5. Domain type: Use .com or .io (fewest privacy restrictions)
 6. Management: Use VPN for all domain settings access

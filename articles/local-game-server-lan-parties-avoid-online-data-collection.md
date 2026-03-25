@@ -22,7 +22,7 @@ Table of Contents
 - [Self-Hosted Alternatives to Popular Online Games](#self-hosted-alternatives-to-popular-online-games)
 - [Configuring Games for Offline Play](#configuring-games-for-offline-play)
 - [Security Best Practices for LAN Parties](#security-best-practices-for-lan-parties)
-- [Practical Setup: Valheim Server](#practical-setup-valheim-server)
+- [Practical Setup - Valheim Server](#practical-setup-valheim-server)
 - [Finding Privacy-Respecting Games](#finding-privacy-respecting-games)
 
 Why Online Gaming Collects Your Data
@@ -163,7 +163,7 @@ For in-person LAN parties:
 - Don't allow untrusted devices on the network
 - Consider using a separate internet connection for any necessary online access
 
-Practical Setup: Valheim Server
+Practical Setup - Valheim Server
 
 Valheim demonstrates modern self-hosted gaming perfectly. The game runs dedicated Linux servers with excellent performance.
 
@@ -217,7 +217,7 @@ Look for these characteristics when selecting games for private LAN parties:
 
 The open-source game community provides excellent alternatives to most commercial titles, often with better mod support and completely free of data collection concerns.
 
-Advanced: Game Server Deployment with Docker
+Advanced - Game Server Deployment with Docker
 
 Containerized game servers provide consistent, reproducible deployments:
 
@@ -298,7 +298,7 @@ Verify network quality
 iperf3 -s  # On server
 iperf3 -c 192.168.1.100 -P 4 -t 30  # From client
 
-Expected LAN performance: >900 Mbps, <1ms latency
+Expected LAN performance - >900 Mbps, <1ms latency
 ```
 
 Game Selection and Testing Matrix

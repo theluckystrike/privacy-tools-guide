@@ -19,7 +19,7 @@ tags: [privacy-tools-guide, best-of]
 Journalists face unique security challenges. Source protection, secure communication, and metadata resistance are not optional, they define whether sources trust you with sensitive information. This guide evaluates encrypted messaging solutions from a technical perspective, focusing on the tools that matter for developer-savvy journalists and those building secure communication workflows.
 
 
-- Document evidence # Power: on (with external storage only) # Run forensic tools sudo apt install foremost sleuthkit sudo tsk_recover /dev/sda recovered_files/ # 5.
+- Document evidence # Power - on (with external storage only) # Run forensic tools sudo apt install foremost sleuthkit sudo tsk_recover /dev/sda recovered_files/ # 5.
 - It doesn't require a phone number: users are identified by public keys only.
 - Use dedicated devices for: sensitive communications 2.
 - Use disappearing messages for: time-sensitive communications 5.
@@ -37,7 +37,7 @@ Before evaluating tools, understand what you're protecting against. The primary 
 
 Different tools address different threats. No single solution covers everything perfectly.
 
-Signal: The Gold Standard for Convenience
+Signal - The Gold Standard for Convenience
 
 Signal remains the baseline recommendation for most journalists. Its implementation of the Signal Protocol (Double Ratchet algorithm) provides forward secrecy and post-compromise security.
 
@@ -58,9 +58,9 @@ In Signal Desktop, go to Settings > Privacy > Verify Safety Numbers
 Scan the source's QR code in person
 ```
 
-The limitation: Signal requires a phone number, which creates metadata. While Signal doesn't store message content, it knows who registers and when they communicate.
+The limitation - Signal requires a phone number, which creates metadata. While Signal doesn't store message content, it knows who registers and when they communicate.
 
-Matrix: Federation for Editorial Teams
+Matrix - Federation for Editorial Teams
 
 Matrix excels for news organizations needing self-hosted infrastructure. The federated architecture lets you run your own homeserver while maintaining interoperability with the broader Matrix network.
 
@@ -101,7 +101,7 @@ bridges:
 
 This approach gives organizations full control over their communication metadata while enabling workflows with sources who use other platforms.
 
-Session: Metadata Resistance
+Session - Metadata Resistance
 
 Session, built on the Loki network, prioritizes metadata protection. It doesn't require a phone number, users are identified by public keys only.
 
@@ -127,7 +127,7 @@ const message = await client.sendMessage({
 
 For journalists handling sensitive sources, Session's lack of phone number requirements means less metadata to expose your identity.
 
-SimpleX: Zero-Identity Architecture
+SimpleX - Zero-Identity Architecture
 
 SimpleX takes a different approach entirely, eliminating persistent user identifiers. Each conversation has unique, disposable addresses.
 
@@ -200,7 +200,7 @@ def verify_safety_number(local_identity_key, remote_identity_key):
     return ' '.join(groups)
 ```
 
-Out-of-Band Verification: Exchange safety numbers through a completely separate channel:
+Out-of-Band Verification - Exchange safety numbers through a completely separate channel:
 - In-person QR code scan (strongest)
 - Phone call with audio verification (good)
 - Previously trusted contact as intermediary (acceptable)
@@ -344,9 +344,9 @@ gpg --symmetric --cipher-algo AES256 \
     ~/encrypted-backup-$(date +%Y%m%d).tar.gz
 
 Store securely
-Option 1: USB key in safe deposit box
-Option 2: Cold storage encrypted external drive
-Option 3: Cloud storage with zero-knowledge encryption
+Option 1 - USB key in safe deposit box
+Option 2 - Cold storage encrypted external drive
+Option 3 - Cloud storage with zero-knowledge encryption
 
 Verify integrity periodically
 gpg --verify ~/encrypted-backup-20260321.tar.gz.gpg
@@ -358,7 +358,7 @@ If a device is compromised:
 
 ```bash
 #!/bin/bash
-Emergency protocol: Device compromise detected
+Emergency protocol - Device compromise detected
 
 1. Immediate actions
 Kill all messaging applications

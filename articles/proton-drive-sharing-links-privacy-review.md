@@ -39,8 +39,8 @@ Sharing Link Architecture
 When you generate a sharing link in Proton Drive, the system creates a unique URL that allows recipients to access the shared file or folder. The underlying mechanism differs significantly from mainstream cloud providers:
 
 ```
-Standard Cloud Storage: Share URL → Server validates → Server decrypts (has keys) → File served
-Proton Drive: Share URL → Server validates (no decryption keys) → Encrypted file served
+Standard Cloud Storage - Share URL → Server validates → Server decrypts (has keys) → File served
+Proton Drive - Share URL → Server validates (no decryption keys) → Encrypted file served
 ```
 
 This architecture means Proton's servers act only as a relay, they cannot read the file contents because encryption happens client-side before upload. The sharing link contains an embedded encryption key that the recipient's browser uses to decrypt the file locally.
@@ -240,11 +240,11 @@ Threat Models and Risk Assessment
 
 Different use cases carry different threat models when using Proton Drive sharing:
 
-Corporate Confidential: For business-sensitive files, password protection is minimum. Additionally, implement offline document encryption before uploading to Proton, this adds a second encryption layer. If Proton's infrastructure is compromised (unlikely but theoretically possible), your files remain protected.
+Corporate Confidential - For business-sensitive files, password protection is minimum. Additionally, implement offline document encryption before uploading to Proton, this adds a second encryption layer. If Proton's infrastructure is compromised (unlikely but theoretically possible), your files remain protected.
 
-Medical/Legal Records: These files warrant maximum protection. Use password-protected shares with short expiration windows (24 hours). Document who accessed shares through your own logging system, since Proton provides limited access tracking.
+Medical/Legal Records - These files warrant maximum protection. Use password-protected shares with short expiration windows (24 hours). Document who accessed shares through your own logging system, since Proton provides limited access tracking.
 
-Personal Sensitive Content: Friends and family scenarios allow more relaxed controls, though time-limited shares still prevent indefinite exposure if a link is leaked.
+Personal Sensitive Content - Friends and family scenarios allow more relaxed controls, though time-limited shares still prevent indefinite exposure if a link is leaked.
 
 Comparing Proton Drive to Alternatives
 
@@ -267,35 +267,35 @@ Security Best Practices for Share Links
 
 Beyond platform features, operational practices significantly impact security when sharing sensitive files:
 
-Recipient Verification: Before sharing sensitive files, verify the recipient's identity through a separate channel. Confirm they're expecting the file and can receive it through Proton's system. This prevents accidentally sharing confidential information with the wrong person if an email address is mistyped.
+Recipient Verification - Before sharing sensitive files, verify the recipient's identity through a separate channel. Confirm they're expecting the file and can receive it through Proton's system. This prevents accidentally sharing confidential information with the wrong person if an email address is mistyped.
 
-Granular Content Sharing: Share only the minimum necessary. Instead of sharing entire project folders, create specific shares for individual files or subset folders. This limits exposure if a share link is compromised.
+Granular Content Sharing - Share only the minimum necessary. Instead of sharing entire project folders, create specific shares for individual files or subset folders. This limits exposure if a share link is compromised.
 
-Post-Share Communication: After sending a share link, communicate the password through a completely separate channel (phone call, in-person meeting, Signal message). This separation ensures an attacker needs to compromise multiple channels to access shared content.
+Post-Share Communication - After sending a share link, communicate the password through a completely separate channel (phone call, in-person meeting, Signal message). This separation ensures an attacker needs to compromise multiple channels to access shared content.
 
-Audit and Cleanup: Periodically review your Proton Drive shares and delete those no longer needed. Set a calendar reminder to review active shares quarterly, you may have forgotten about time-limited shares that are still active.
+Audit and Cleanup - Periodically review your Proton Drive shares and delete those no longer needed. Set a calendar reminder to review active shares quarterly, you may have forgotten about time-limited shares that are still active.
 
-Key Rotation: For shares accessed by multiple team members, regenerate and redistribute passwords periodically. This limits the window where stolen or leaked credentials provide access.
+Key Rotation - For shares accessed by multiple team members, regenerate and redistribute passwords periodically. This limits the window where stolen or leaked credentials provide access.
 
 Mobile and Cross-Platform Considerations
 
 Sharing links through mobile requires attention to different threat vectors:
 
-Mobile Browser Security: When accessing share links on mobile devices, ensure you're using the latest browser version with security patches. Mobile browsers have different WebRTC and fingerprinting behaviors than desktop versions.
+Mobile Browser Security - When accessing share links on mobile devices, ensure you're using the latest browser version with security patches. Mobile browsers have different WebRTC and fingerprinting behaviors than desktop versions.
 
-App-Based Sharing: Proton Drive's mobile app provides encryption for network traffic between your device and Proton's servers. However, sharing links created on mobile remain subject to the same risks as desktop-generated links.
+App-Based Sharing - Proton Drive's mobile app provides encryption for network traffic between your device and Proton's servers. However, sharing links created on mobile remain subject to the same risks as desktop-generated links.
 
-Platform Differences: iOS and Android handle permissions differently when accessing Proton's shared files. Android apps can request broader permissions than iOS allows, potentially affecting how safely shared files are handled by the platform.
+Platform Differences - iOS and Android handle permissions differently when accessing Proton's shared files. Android apps can request broader permissions than iOS allows, potentially affecting how safely shared files are handled by the platform.
 
 Compliance and Legal Considerations
 
 Organizations using Proton Drive for regulated data face specific compliance requirements:
 
-GDPR Compliance: Proton Drive's zero-knowledge architecture aligns with GDPR data minimization principles. However, document your sharing procedures to demonstrate compliance during audits. Retention policies should specify how long shares remain active.
+GDPR Compliance - Proton Drive's zero-knowledge architecture aligns with GDPR data minimization principles. However, document your sharing procedures to demonstrate compliance during audits. Retention policies should specify how long shares remain active.
 
-HIPAA (US Healthcare): While Proton Drive provides encryption, HIPAA requires specific audit logging for healthcare data. Proton's limited audit capabilities may require supplementary logging through your own systems.
+HIPAA (US Healthcare) - While Proton Drive provides encryption, HIPAA requires specific audit logging for healthcare data. Proton's limited audit capabilities may require supplementary logging through your own systems.
 
-PCI-DSS (Payment Card Industry): Sharing payment card information through any cloud service violates PCI-DSS. Don't use Proton Drive (or any cloud service) for this data class, maintain offline encryption or use specialized PCI-compliant solutions.
+PCI-DSS (Payment Card Industry) - Sharing payment card information through any cloud service violates PCI-DSS. Don't use Proton Drive (or any cloud service) for this data class, maintain offline encryption or use specialized PCI-compliant solutions.
 
 Frequently Asked Questions
 

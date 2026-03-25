@@ -37,7 +37,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How DoT Compares to DoH
+Step 1 - How DoT Compares to DoH
 
 Both protocols encrypt DNS, but they differ in deployment:
 
@@ -50,7 +50,7 @@ Both protocols encrypt DNS, but they differ in deployment:
 
 DoT on port 853 is easier for network administrators to identify and optionally block. If you're in a restrictive environment where port 853 is blocked, DoH is the better choice. For most privacy use cases (ISP snooping prevention, protecting queries on public Wi-Fi), DoT is simpler and sufficient.
 
-Step 2: Choose a DoT Resolver
+Step 2 - Choose a DoT Resolver
 
 Your encrypted queries still end up at a resolver that can see them. Choose carefully:
 
@@ -64,7 +64,7 @@ Your encrypted queries still end up at a resolver that can see them. Choose care
 
 For most users, Quad9 provides a good balance: no logging, malware blocking, and operated by a non-profit. Cloudflare offers better performance in many regions but retains some logs for up to 24 hours. If you use Mullvad VPN, their resolver is the most privacy-preserving option since it operates entirely within their no-log infrastructure.
 
-Step 3: Linux: systemd-resolved Configuration
+Step 3 - Linux: systemd-resolved Configuration
 
 `systemd-resolved` is the default DNS resolver on Ubuntu 20.04+, Fedora, Arch, and most modern Linux distributions.
 
@@ -89,7 +89,7 @@ Use Quad9 as primary, Cloudflare as fallback
 DNS=9.9.9.9 149.112.112.112 1.1.1.1 1.0.0.1
 DoT hostnames for certificate validation
 DNSOverTLS=yes
-Optional: also set fallback in case DoT fails
+Optional - also set fallback in case DoT fails
 FallbackDNS=9.9.9.9 149.112.112.112
 Enable DNSSEC validation
 DNSSEC=yes
@@ -133,7 +133,7 @@ For privacy, always use `yes`. The `opportunistic` mode silently falls back to u
 ```bash
 Verify your setting is enforced
 sudo grep DNSOverTLS /etc/systemd/resolved.conf
-Should output: DNSOverTLS=yes
+Should output - DNSOverTLS=yes
 ```
 
 Using Stubby for More Control
@@ -200,7 +200,7 @@ sudo resolvectl dns wg0 9.9.9.9
 sudo resolvectl dnsovertls wg0 yes
 ```
 
-Step 4: Android: Built-In Private DNS
+Step 4 - Android: Built-In Private DNS
 
 Android 9 (Pie) and later include native DoT support called "Private DNS."
 
@@ -208,9 +208,9 @@ Settings → Network & internet → Advanced → Private DNS:
 - Select "Private DNS provider hostname"
 - Enter the hostname of your DoT resolver
 
-Quad9: `dns.quad9.net`
-Cloudflare: `1dot1dot1dot1.cloudflare-dns.com`
-NextDNS (use your account ID): `[id].dns.nextdns.io`
+Quad9 - `dns.quad9.net`
+Cloudflare - `1dot1dot1dot1.cloudflare-dns.com`
+NextDNS (use your account ID) - `[id].dns.nextdns.io`
 
 Android will attempt to connect to port 853 on this hostname using TLS. If the connection fails, it falls back to your regular DNS unless you set "Private DNS" to strict mode via ADB:
 
@@ -228,9 +228,9 @@ The Private DNS setting is easy to configure but easy to get wrong. Many users s
 2. Visit dnsleaktest.com → "Extended Test". the responding server should be your chosen resolver
 3. Run a packet capture using Android's built-in VPN feature with a packet capture app (PCAPdroid is open source) and look for traffic on port 853
 
-One common failure mode: some carrier APN configurations intercept DNS traffic at the network level. In these cases, Private DNS may appear to be set correctly but queries are intercepted before reaching port 853. If dnsleaktest.com consistently shows your carrier's DNS despite correct Private DNS configuration, you may need a VPN to bypass this interception.
+One common failure mode - some carrier APN configurations intercept DNS traffic at the network level. In these cases, Private DNS may appear to be set correctly but queries are intercepted before reaching port 853. If dnsleaktest.com consistently shows your carrier's DNS despite correct Private DNS configuration, you may need a VPN to bypass this interception.
 
-NextDNS for Android: Per-Device Filtering and Logging Control
+NextDNS for Android - Per-Device Filtering and Logging Control
 
 NextDNS deserves special mention for Android users who want both DoT privacy and DNS-level content filtering. After creating a free NextDNS account:
 
@@ -241,7 +241,7 @@ NextDNS deserves special mention for Android users who want both DoT privacy and
 
 This gives you per-device DNS filtering without requiring a separate DNS server or VPN, all running through standard Android DoT.
 
-Step 5: Limitations of DoT
+Step 5 - Limitations of DoT
 
 DoT encrypts DNS queries but not the SNI (Server Name Indication) in TLS connections. When you connect to an HTTPS site, the hostname is visible in the TLS ClientHello even if DNS is encrypted. Encrypted Client Hello (ECH) addresses this but is not yet universally deployed.
 
@@ -256,7 +256,7 @@ For power users wanting additional hardening beyond basic setup:
 
 Certificate Pinning for DoT
 
-Instead of trusting the entire certificate authority ecosystem, pin specific resolver certificates:
+Instead of trusting the entire certificate authority environment, pin specific resolver certificates:
 
 ```bash
 Extract certificate from DoT resolver and pin it
@@ -334,8 +334,8 @@ DNS=127.0.0.1
 DNSOverTLS=yes
 
 4. All DNS queries now route through Tor exit nodes
-Privacy: Your resolver cannot identify you
-Tradeoff: Slower due to Tor overhead
+Privacy - Your resolver cannot identify you
+Tradeoff - Slower due to Tor overhead
 ```
 
 Performance Monitoring
@@ -348,11 +348,11 @@ Compare DoT vs standard DNS performance
 
 echo "=== DNS Query Performance Comparison ==="
 
-Baseline: Standard DNS
+Baseline - Standard DNS
 echo "Standard DNS (port 53):"
 time dig @8.8.8.8 +noall +answer example.com
 
-Test: DoT performance
+Test - DoT performance
 echo ""
 echo "DoT (port 853):"
 time dig @9.9.9.9 -p 853 +tls +noall +answer example.com
@@ -370,7 +370,7 @@ echo "Note: DoT adds ~10-50ms typically, offset by privacy gains"
 
 Troubleshooting DoT Issues
 
-Symptom: DNS Queries Still Unencrypted
+Symptom - DNS Queries Still Unencrypted
 
 Verify actual protocol usage:
 
@@ -386,7 +386,7 @@ Force DoT retry with verbose logging
 SYSTEMD_LOG_LEVEL=debug resolvectl query example.com
 ```
 
-Symptom: Some Domains Won't Resolve
+Symptom - Some Domains Won't Resolve
 
 Certain malformed domains or rare cases fail on DoT-only:
 
@@ -403,7 +403,7 @@ dig @9.9.9.9 +tls problematic-domain.example
 dig @9.9.9.9 problematic-domain.example  # Compare without TLS
 ```
 
-Symptom: VPN Conflicts with DoT
+Symptom - VPN Conflicts with DoT
 
 Some VPNs override DNS settings or block port 853:
 
@@ -421,7 +421,7 @@ For better DoT + VPN compatibility:
 3. Or use separate network namespace for DoT
 ```
 
-Step 6: Monitor DNS Queries
+Step 6 - Monitor DNS Queries
 
 Log which sites are being resolved for privacy audits:
 
@@ -439,7 +439,7 @@ sudo systemctl restart systemd-resolved
 View query logs
 journalctl -u systemd-resolved -f | grep "query"
 
-Analysis: Extract queried domains
+Analysis - Extract queried domains
 journalctl -u systemd-resolved | grep "query" | \
   sed 's/.*query //' | \
   sort | uniq -c | sort -rn | head -20

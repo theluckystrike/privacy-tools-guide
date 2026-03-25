@@ -34,7 +34,7 @@ Table of Contents
 - [Debugging Connection Issues](#debugging-connection-issues)
 - [Application-Level Configuration Examples](#application-level-configuration-examples)
 - [Performance Optimization](#performance-optimization)
-- [Threat Model: SOCKS vs VPN vs Tor](#threat-model-socks-vs-vpn-vs-tor)
+- [Threat Model - SOCKS vs VPN vs Tor](#threat-model-socks-vs-vpn-vs-tor)
 - [Security Hardening for Production](#security-hardening-for-production)
 - [Troubleshooting DNS Leaks with SOCKS5](#troubleshooting-dns-leaks-with-socks5)
 - [Related Reading](#related-reading)
@@ -109,7 +109,7 @@ proxies = {
     "https": "socks5h://127.0.0.1:1080",
 }
 
-Requires: pip install requests[socks]
+Requires - pip install requests[socks]
 response = requests.get("https://api.ipify.org", proxies=proxies)
 print(response.text)  # Should show your server's IP
 ```
@@ -396,7 +396,7 @@ Typical latencies:
 
 For real-time applications (gaming, video), 200ms+ becomes noticeable.
 
-Threat Model: SOCKS vs VPN vs Tor
+Threat Model - SOCKS vs VPN vs Tor
 
 Choose the right solution for your threat model:
 
@@ -411,11 +411,11 @@ Choose the right solution for your threat model:
 | Cost | Server cost | $5-15/mo | Free |
 | App-level control | Yes | No | Browser only |
 
-Choose SSH SOCKS5 if: You control both endpoints or trust your proxy host, need low latency, and want app-level control.
+Choose SSH SOCKS5 if - You control both endpoints or trust your proxy host, need low latency, and want app-level control.
 
-Choose VPN if: You need "set and forget" system-wide encryption without managing infrastructure.
+Choose VPN if - You need "set and forget" system-wide encryption without managing infrastructure.
 
-Choose Tor if: You need maximum anonymity and don't mind latency overhead.
+Choose Tor if - You need maximum anonymity and don't mind latency overhead.
 
 Security Hardening for Production
 

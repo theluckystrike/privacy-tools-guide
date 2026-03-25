@@ -50,7 +50,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Option 1: VirtualBox (Easiest)
+Step 1 - Option 1: VirtualBox (Easiest)
 
 Download and Import
 
@@ -103,14 +103,14 @@ VBoxManage startvm "Whonix-Workstation" --type gui
 
 ---
 
-Step 2: Option 2: KVM/QEMU (Better Performance, Linux Only)
+Step 2 - Option 2: KVM/QEMU (Better Performance, Linux Only)
 
 ```bash
 Install KVM and libvirt
 sudo apt install qemu-kvm libvirt-daemon-system virt-manager
 
 Download Whonix KVM images (qcow2 format)
-From: whonix.org/wiki/KVM
+From - whonix.org/wiki/KVM
 
 Import Gateway
 sudo virsh define Whonix-Gateway-*.xml
@@ -127,7 +127,7 @@ sudo virsh start Whonix-Workstation-XFCE
 
 ---
 
-Step 3: First Boot Configuration
+Step 3 - First Boot Configuration
 
 Gateway First Boot
 
@@ -169,7 +169,7 @@ Workstation First Boot
 
 ---
 
-Step 4: Verify Anonymity
+Step 4 - Verify Anonymity
 
 ```bash
 From Workstation terminal. check your apparent IP
@@ -188,7 +188,7 @@ NOT your real gateway
 
 ---
 
-Step 5: Use Applications in Whonix
+Step 5 - Use Applications in Whonix
 
 Pre-Installed Tools
 
@@ -217,7 +217,7 @@ Whonix routes different applications through different Tor circuits by default, 
 
 ```bash
 Each application uses a separate SocksPort
-Tor Browser: port 9150
+Tor Browser - port 9150
 apt: port 9104
 curl/wget (default): port 9050
 
@@ -228,12 +228,12 @@ torsocks curl https://example.com   # Wrapper that routes through Tor
 
 ---
 
-Step 6: Bridges for Censored Networks
+Step 6 - Bridges for Censored Networks
 
 If Tor is blocked (China, Russia, Iran):
 
 ```bash
-On Gateway: configure bridges
+On Gateway - configure bridges
 sudo nano /etc/tor/torrc
 
 Add bridge lines (get from bridges.torproject.org):
@@ -248,12 +248,12 @@ Or use the GUI bridge configurator:
 
 ```
 Gateway → Anon Connection Wizard → Tor → Configure bridges
-Choose: obfs4 bridges (automatically fetched) or paste your own
+Choose - obfs4 bridges (automatically fetched) or paste your own
 ```
 
 ---
 
-Step 7: Security Practices in Whonix
+Step 7 - Security Practices in Whonix
 
 Do:
 - Use Tor Browser inside Whonix for the strongest anonymity (layered)
@@ -268,7 +268,7 @@ Avoid:
 
 ---
 
-Step 8: Taking Snapshots for Clean State
+Step 8 - Taking Snapshots for Clean State
 
 ```bash
 VirtualBox snapshot (preserve clean state)
@@ -287,7 +287,7 @@ sudo virsh snapshot-revert Whonix-Workstation-XFCE clean-state
 
 ---
 
-Step 9: Updating Whonix Safely
+Step 9 - Updating Whonix Safely
 
 Keeping Whonix current is critical. security patches are released regularly. Both VMs must be updated independently.
 
@@ -318,19 +318,19 @@ If `whonixcheck` reports a clock skew of more than a few minutes, do not use Who
 
 ---
 
-Step 10: Persistent vs. Non-Persistent Workstation
+Step 10 - Persistent vs. Non-Persistent Workstation
 
 The Workstation can be used in two modes:
 
-Persistent mode (default): Files and settings survive reboots. Useful for ongoing projects, but any malware or compromise also persists.
+Persistent mode (default) - Files and settings survive reboots. Useful for ongoing projects, but any malware or compromise also persists.
 
-Amnesic mode (snapshot-based): Take a clean snapshot after initial setup, then revert to it after each session. This is the closest Whonix gets to Tails-style amnesic operation.
+Amnesic mode (snapshot-based) - Take a clean snapshot after initial setup, then revert to it after each session. This is the closest Whonix gets to Tails-style amnesic operation.
 
 ```bash
-VirtualBox: revert to clean snapshot after each session
+VirtualBox - revert to clean snapshot after each session
 VBoxManage snapshot "Whonix-Workstation" restore "clean-2026-03-22"
 
-KVM: revert to named snapshot
+KVM - revert to named snapshot
 sudo virsh snapshot-revert Whonix-Workstation-XFCE clean-state --running
 ```
 
@@ -338,7 +338,7 @@ For the highest-risk work, use amnesic mode. For everyday anonymous browsing whe
 
 ---
 
-Step 11: Whonix vs. Tails: When to Use Which
+Step 11 - Whonix vs. Tails: When to Use Which
 
 Both tools provide anonymity, but they suit different threat models:
 
@@ -354,7 +354,7 @@ If your host OS is untrusted, Tails is the better choice because it runs from US
 
 ---
 
-Step 12: Common Mistakes That Break Anonymity
+Step 12 - Common Mistakes That Break Anonymity
 
 Using Whonix Workstation without the Gateway running. The Workstation's network interface points to the Gateway's internal IP. If the Gateway is down, network connections will fail. not silently route around Tor. Verify Gateway is running and connected before starting the Workstation.
 

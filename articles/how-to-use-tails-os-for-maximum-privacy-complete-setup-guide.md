@@ -24,7 +24,7 @@ Table of Contents
 - [Hardware Requirements](#hardware-requirements)
 - [Security Considerations and Limitations](#security-considerations-and-limitations)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
-- [Getting Started: The Checklist](#getting-started-the-checklist)
+- [Getting Started - The Checklist](#getting-started-the-checklist)
 
 Prerequisites
 
@@ -36,11 +36,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What Tails OS Actually Does
+Step 1 - What Tails OS Actually Does
 
 Tails is a Debian-based Linux distribution with three core features:
 
-1. Forces all traffic through Tor: Every internet connection is automatically routed through the Tor network, anonymizing your traffic even before it leaves your computer.
+1. Forces all traffic through Tor - Every internet connection is automatically routed through the Tor network, anonymizing your traffic even before it leaves your computer.
 
 2. Live operating system: Tails runs entirely from USB and leaves no persistent data on your computer unless you explicitly enable persistent storage. Shutdown the computer, remove the USB, and your computer is unaware Tails existed.
 
@@ -66,14 +66,14 @@ Tails works on most laptops and desktops. Older Macs (2012 and earlier) have com
 Why specs matter:
 Tails with Tor routing can feel slow, especially on older hardware. With 4GB RAM and 2+ year old processor, browsing feels laggy. With 8GB+ RAM and modern processor, it's acceptable. Performance improves significantly with SSD boot vs. mechanical USB drives.
 
-Step 2: Create Tails USB: Step by Step
+Step 2 - Create Tails USB: Step by Step
 
 You need:
 1. Computer with USB port (the computer you'll use to create the USB, not the computer you'll use Tails on)
 2. USB drive 16GB+ (dual-use Tails + persistent storage)
 3. Tails ISO downloaded from https://tails.boum.org/
 
-Option 1: Using Tails Installer (Easiest)
+Option 1 - Using Tails Installer (Easiest)
 
 On any computer (Windows, Mac, Linux):
 
@@ -97,7 +97,7 @@ gpg --verify tails-amd64-X.X.X.iso.sig tails-amd64-X.X.X.iso
 
 If the signature is valid, you'll see: `Good signature from "Tails developers"`
 
-Option 2: Using DD (Command Line, All Operating Systems)
+Option 2 - Using DD (Command Line, All Operating Systems)
 
 For advanced users, dd is reliable and works everywhere:
 
@@ -121,7 +121,7 @@ diskutil eject /dev/diskN
 
 Using the wrong device in dd can destroy your entire hard drive. Triple-check the device name before running the command.
 
-Step 3: Booting Into Tails
+Step 3 - Booting Into Tails
 
 1. Insert USB drive into the computer where you want to run Tails
 2. Restart the computer
@@ -142,7 +142,7 @@ You'll see the Tails splash screen, then be presented with boot options:
 
 Select the appropriate option.
 
-First Time Boot: Greeter
+First Time Boot - Greeter
 
 When Tails boots for the first time, you'll see the Greeter (welcome screen):
 
@@ -154,11 +154,11 @@ When Tails boots for the first time, you'll see the Greeter (welcome screen):
 4. Startup Passphrase (Optional):
  - Creates encrypted persistent storage (recommended)
  - You'll choose the passphrase here
-5. Additional Settings: Timezone, etc.
+5. Additional Settings - Timezone, etc.
 
 After clicking "Start Tails", the system boots into the desktop (~30-60 seconds more).
 
-Step 4: Tor Network Connection
+Step 4 - Tor Network Connection
 
 Tails connects to Tor automatically on boot. The connection process:
 
@@ -174,7 +174,7 @@ If connection fails:
 Understanding exit nodes:
 Every website you visit sees you connecting from a Tor exit node (an IP address that isn't yours). This IP rotates, and other Tor users share the same exit node. This anonymity is the core of Tor protection.
 
-Step 5: Persistent Storage: Saving Files
+Step 5 - Persistent Storage: Saving Files
 
 By default, Tails doesn't save anything. Shutdown and restart, everything is gone. This is by design, it prevents data leaks. However, you often want to keep certain files (GPG keys, documents, bookmarks).
 
@@ -208,13 +208,13 @@ Accessing Persistent Files
 
 When Tails boots, your persistent storage is automatically unlocked. Files in Persistent folder are saved across reboots.
 
-Location: `/home/amnesia/Persistent/`
+Location - `/home/amnesia/Persistent/`
 
-Best practice: Store sensitive files only in Persistent, download temporary files to Downloads (which is wiped on shutdown unless you made Downloads persistent).
+Best practice - Store sensitive files only in Persistent, download temporary files to Downloads (which is wiped on shutdown unless you made Downloads persistent).
 
-Step 6: Common Workflows
+Step 6 - Common Workflows
 
-Workflow 1: Secure Anonymous Browsing
+Workflow 1 - Secure Anonymous Browsing
 
 1. Boot Tails
 2. Open Tor Browser (already configured, in applications menu)
@@ -224,7 +224,7 @@ Workflow 1: Secure Anonymous Browsing
 
 Tor Browser looks like Firefox because it is Firefox, modified for Tor. It prevents JavaScript tracking, protects against browser fingerprinting, and disables plugins that could leak your IP.
 
-Workflow 2: Secure Email with GPG
+Workflow 2 - Secure Email with GPG
 
 First time setup:
 
@@ -248,7 +248,7 @@ Receiving encrypted email:
 
 GPG encryption means even the email provider can't read your email content.
 
-Workflow 3: Securely Transfer Files
+Workflow 3 - Securely Transfer Files
 
 Use OnionShare (included in Tails) for anonymous file transfer:
 
@@ -261,7 +261,7 @@ Use OnionShare (included in Tails) for anonymous file transfer:
 
 The recipient can't see your IP address. You can disable sharing immediately after they download. No intermediary server stores the file.
 
-Workflow 4: Securely Delete Files
+Workflow 4 - Securely Delete Files
 
 Delete (shift+delete) only overwrites with zeros once, not secure against forensic recovery.
 
@@ -277,7 +277,7 @@ Securely shred a file (multiple overwrites, then delete)
 shred -vfz -n 35 filename.pdf
 ```
 
-Step 7: Bridges: Accessing Tor in Censored Networks
+Step 7 - Bridges: Accessing Tor in Censored Networks
 
 Some networks (China, Iran, corporate) block known Tor entry points. Bridges are relays that hide the fact that you're connecting to Tor.
 
@@ -303,16 +303,16 @@ What Tails Protects Against
 
 What Tails Does NOT Protect Against
 
-Physical access to computer: If someone has physical access while Tails is running, they can:
+Physical access to computer - If someone has physical access while Tails is running, they can:
 - Extract RAM (Tails uses RAM for key data; physical attack can recover keys)
 - Observe screen (obviously)
 - Install malware to the host computer
 
-Malware on host computer: If your computer has BIOS-level malware, Tails can't protect you. Tails is software-level; it can't protect against compromised hardware.
+Malware on host computer - If your computer has BIOS-level malware, Tails can't protect you. Tails is software-level; it can't protect against compromised hardware.
 
-Behavioral correlation: If you use Tails to access your real identity (logging into your Facebook account, emailing from your real address), you've linked yourself to the Tor traffic. Anonymity is defeated.
+Behavioral correlation - If you use Tails to access your real identity (logging into your Facebook account, emailing from your real address), you've linked yourself to the Tor traffic. Anonymity is defeated.
 
-Endpoint attacks: Malware specifically targeting Tails could deanonymize you. Tails mitigates this through:
+Endpoint attacks - Malware specifically targeting Tails could deanonymize you. Tails mitigates this through:
 - Automatic updates
 - Conservative software choices
 - Minimalist design (less code = fewer bugs)
@@ -330,44 +330,44 @@ Best Practices
 
 Troubleshooting Common Issues
 
-Issue: Tails doesn't boot
+Issue - Tails doesn't boot
 
-Cause: Computer not set to boot from USB first
-Fix: Enter boot menu (Esc, F2, F12, etc.) and select USB drive
+Cause - Computer not set to boot from USB first
+Fix - Enter boot menu (Esc, F2, F12, etc.) and select USB drive
 
-Issue: Tor connection hangs or fails
+Issue - Tor connection hangs or fails
 
-Cause: Network blocking Tor, or Tor bridge issues
+Cause - Network blocking Tor, or Tor bridge issues
 Fix:
 - Wait 3-5 minutes (Tor can be slow to connect)
 - Configure bridges
 - Try different network (some networks block Tor)
 
-Issue: Very slow performance
+Issue - Very slow performance
 
-Cause: Older hardware, mechanical USB drive
+Cause - Older hardware, mechanical USB drive
 Fix:
 - Use newer/faster USB drive
 - Boot from SSD external drive if possible
 - Close unnecessary applications
 
-Issue: Persistent storage not working
+Issue - Persistent storage not working
 
-Cause: Passphrase not set, or persistent storage not enabled
+Cause - Passphrase not set, or persistent storage not enabled
 Fix:
 - Boot into Greeter, check "Persistent Storage"
 - Make sure you set a passphrase
 - Unlock on next boot (you'll be prompted)
 
-Issue: Can't access persistent files
+Issue - Can't access persistent files
 
-Cause: Persistent storage locked
+Cause - Persistent storage locked
 Fix:
 - Click Files > Persistent
 - Enter your persistent storage passphrase
 - Files now accessible
 
-Step 8: Practical Use Cases
+Step 8 - Practical Use Cases
 
 For journalists:
 - Research sensitive sources anonymously
@@ -389,14 +389,14 @@ For security researchers:
 - Communicate with security community anonymously
 - Research malware in sandboxed Tails
 
-Step 9: Getting Help and Updates
+Step 9 - Getting Help and Updates
 
 - Official site: https://tails.boum.org/
-- Support: https://tails.boum.org/support/
+- Support - https://tails.boum.org/support/
 - Security advisories: Check official site for updates
-- Community: https://tails.boum.org/about/contact/
+- Community - https://tails.boum.org/about/contact/
 
-Getting Started: The Checklist
+Getting Started - The Checklist
 
 1. [ ] Download Tails ISO from official website
 2. [ ] Verify the digital signature

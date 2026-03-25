@@ -134,7 +134,7 @@ PCR Banks That Matter
 
 TPM-Based Disk Auto-Unlock (systemd-cryptenroll)
 
-The most practical use of TPM on Linux: automatically decrypt your LUKS disk at boot without typing a passphrase, but only when the system hasn't been tampered with (PCRs match).
+The most practical use of TPM on Linux - automatically decrypt your LUKS disk at boot without typing a passphrase, but only when the system hasn't been tampered with (PCRs match).
 
 ```bash
 Install systemd (version 248+ required)
@@ -198,7 +198,7 @@ sudo sbctl create-keys
 
 Enroll keys (keeps Microsoft keys for compatibility, or --microsoft to skip)
 sudo sbctl enroll-keys --microsoft
-Without --microsoft: only your keys trusted
+Without --microsoft - only your keys trusted
 
 Sign bootloader and kernel
 sudo sbctl sign /boot/vmlinuz-linux
@@ -251,7 +251,7 @@ sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file \
   /path/to/db.crt \
   /lib/modules/$(uname -r)/updates/nvidia.ko
 
-Alternatively: enroll a MOK (Machine Owner Key) for module signing
+Alternatively - enroll a MOK (Machine Owner Key) for module signing
 sudo mokutil --import db.crt
 Reboot → MOK enrollment screen appears → confirm
 ```

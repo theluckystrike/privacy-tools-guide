@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Social Engineering Attack Vectors
+Step 1 - Understand Social Engineering Attack Vectors
 
 Social engineering attacks come in multiple forms, each exploiting different aspects of human behavior:
 
@@ -44,23 +44,23 @@ Vishing (voice phishing) uses phone calls rather than written communication. Att
 
 SIM swapping is a targeted attack where the attacker convinces a mobile carrier to transfer your phone number to their SIM card. Once they control your number, they can intercept SMS-based two-factor authentication codes and reset account passwords. Protect yourself by registering a PIN or passphrase with your carrier and switching to app-based or hardware-key 2FA wherever possible.
 
-Step 2: Recognizing Psychological Manipulation Tactics
+Step 2 - Recognizing Psychological Manipulation Tactics
 
 Understanding these tactics helps you identify and resist attacks:
 
-1. Urgency and Fear: Attackers create false time pressure, "Your account will be suspended in 24 hours", to force hasty decisions bypassing critical thinking.
+1. Urgency and Fear - Attackers create false time pressure, "Your account will be suspended in 24 hours", to force hasty decisions bypassing critical thinking.
 
-2. Authority Impersonation: Messages claiming to be from executives, IT departments, or legal entities use our tendency to comply with perceived authority.
+2. Authority Impersonation - Messages claiming to be from executives, IT departments, or legal entities use our tendency to comply with perceived authority.
 
-3. Social Proof: Fake testimonials, follower counts, or "everyone is doing it" messaging exploits our desire to conform.
+3. Social Proof - Fake testimonials, follower counts, or "everyone is doing it" messaging exploits our desire to conform.
 
-4. Scarcity: Limited-time offers or exclusive access create FOMO (fear of missing out) that drives impulsive actions.
+4. Scarcity - Limited-time offers or exclusive access create FOMO (fear of missing out) that drives impulsive actions.
 
-5. Trust Building: Attackers invest time in relationship development before making requests, particularly relevant in long-running scams or spear-phishing campaigns.
+5. Trust Building - Attackers invest time in relationship development before making requests, particularly relevant in long-running scams or spear-phishing campaigns.
 
-6. Reciprocity: Attackers offer something helpful first. a useful piece of information, a small favour. to create a sense of obligation. The victim then feels compelled to provide something in return, such as answering a seemingly harmless question that becomes the foothold the attacker needs.
+6. Reciprocity - Attackers offer something helpful first. a useful piece of information, a small favour. to create a sense of obligation. The victim then feels compelled to provide something in return, such as answering a seemingly harmless question that becomes the foothold the attacker needs.
 
-Step 3: Practical Defense Strategies for Developers
+Step 3 - Practical Defense Strategies for Developers
 
 Email Verification at the Code Level
 
@@ -184,7 +184,7 @@ if not rate_limit(user_id, "password_reset", max_requests=3, window_seconds=3600
 
 Apply rate limiting to password resets, email changes, MFA disabling, API key generation, and bulk data export operations. These are the actions attackers take immediately after gaining access, and unusually high request rates are a reliable detection signal.
 
-Step 4: Protecting Personal Information
+Step 4 - Protecting Personal Information
 
 Data Minimization Practices
 
@@ -231,7 +231,7 @@ Limit your digital footprint to reduce attack surface:
 
 Social engineering attackers typically begin with open source intelligence (OSINT) gathering. Tools like Maltego, theHarvester, and basic LinkedIn searches can reveal your employer, colleagues, job title, and technical stack within minutes. The more information that is publicly available about you, the more convincing a pretext an attacker can construct. Regularly audit your own public footprint from the perspective of an attacker. search your name, email address, and username combinations to see what a stranger can find about you.
 
-Step 5: Build a Security-First Mindset
+Step 5 - Build a Security-First Mindset
 
 Effective social engineering defense requires developing critical skepticism without becoming paranoid:
 
@@ -249,7 +249,7 @@ The "Slow Down" Rule
 
 The single most effective personal defense against social engineering is pausing when you feel urgency. Attackers manufacture urgency deliberately because it bypasses careful thinking. Any request that demands an immediate response. click this now, confirm your password before your account is closed, transfer funds before the deadline. should be treated as suspicious by default.
 
-Train yourself to pause for 60 seconds when you feel urgency. Ask: did I initiate this interaction, or did it arrive unexpectedly? Legitimate services rarely demand immediate action under threat of loss. When a request involves credentials, money, or sensitive data, the cost of a one-hour verification delay is near zero. The cost of acting on a fraudulent request can be severe and irreversible.
+Train yourself to pause for 60 seconds when you feel urgency. Ask - did I initiate this interaction, or did it arrive unexpectedly? Legitimate services rarely demand immediate action under threat of loss. When a request involves credentials, money, or sensitive data, the cost of a one-hour verification delay is near zero. The cost of acting on a fraudulent request can be severe and irreversible.
 
 Security Culture on Development Teams
 
@@ -260,7 +260,7 @@ Individual awareness is necessary but not sufficient. Developers with admin acce
 - Running regular phishing simulations to measure team susceptibility and identify people who need additional training
 - Keeping a shared record of social engineering attempts so the whole team benefits from each individual's experience
 
-Step 6: Response Protocol for Suspected Attacks
+Step 6 - Response Protocol for Suspected Attacks
 
 When you suspect a social engineering attempt:
 

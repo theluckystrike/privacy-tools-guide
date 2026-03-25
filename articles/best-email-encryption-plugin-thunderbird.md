@@ -36,7 +36,7 @@ Use Thunderbird's built-in OpenPGP support (integrated since Thunderbird 115+) f
 - Choose an email account: and accept the default RSA 4096-bit key size 4.
 - Enterprise deployments often use: internal certificate authorities that integrate with Active Directory.
 
-Understanding the Encryption ecosystem in Thunderbird
+Understanding the Encryption environment in Thunderbird
 
 Thunderbird includes built-in support for both OpenPGP and S/MIME standards through its Enigmail successor, now integrated directly into Thunderbird 115+. The OpenPGP standard uses a web-of-trust model where users validate each other's keys through direct signatures or trusted introducers. S/MIME, by contrast, relies on a hierarchical Public Key Infrastructure (PKI) with certificate authorities.
 
@@ -160,7 +160,7 @@ Always verify before trusting. Verify key fingerprints through independent chann
 
 Common Pitfalls and Troubleshooting
 
-Many users encounter issues when first implementing email encryption. Missing recipients' public keys prevents encryption; the error message clearly indicates which keys are unavailable. Solution: request keys from correspondents or locate them on keyserver networks.
+Many users encounter issues when first implementing email encryption. Missing recipients' public keys prevents encryption; the error message clearly indicates which keys are unavailable. Solution - request keys from correspondents or locate them on keyserver networks.
 
 Expired keys cause decryption failures. Maintain awareness of expiration dates and renew keys proactively. Set calendar reminders before key expiration.
 

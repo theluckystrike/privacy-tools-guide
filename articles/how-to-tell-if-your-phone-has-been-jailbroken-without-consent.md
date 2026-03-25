@@ -37,7 +37,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Different Types of Jailbreaking
+Step 1 - The Different Types of Jailbreaking
 
 Understanding jailbreak categories helps you recognize which type of compromise you face. Intentional jailbreaking (which you perform) creates predictable security impacts you understand. Unauthorized jailbreaking falls into distinct categories with different implications.
 
@@ -55,7 +55,7 @@ Why Unauthorized Jailbreaking Matters
 
 Jailbreaking removes the security restrictions imposed by Apple (iOS) or Google (Android) operating systems. While some users jailbreak their own devices intentionally to customize their experience or install apps outside official stores, an unauthorized jailbreak means someone else has compromised your device without permission. This creates serious security risks including vulnerability to malware, exposure of personal data, inability to receive security updates, and potential tracking or surveillance.
 
-Step 2: Warning Signs Your Phone May Be Jailbroken
+Step 2 - Warning Signs Your Phone May Be Jailbroken
 
 Unexpected App Behavior
 
@@ -71,7 +71,7 @@ Network and Connectivity Changes
 
 Pay attention to unusual network behavior. Unexpected data usage spikes can indicate that malicious apps are transmitting data from your device. Strange network connections, unknown processes actively communicating over the network, or unusual server connections visible in your firewall logs all warrant investigation.
 
-Step 3: Distinguishing Jailbreak Symptoms from Legitimate Problems
+Step 3 - Distinguishing Jailbreak Symptoms from Legitimate Problems
 
 Jailbroken devices share symptoms with simply degraded or aging devices. A slow phone could be jailbroken or just overloaded with apps. Battery drain could indicate jailbreak malware or simply battery wear. Distinguishing legitimate device aging from actual compromise requires methodical investigation.
 
@@ -83,7 +83,7 @@ Ask these diagnostic questions:
 
 These questions don't definitively prove jailbreak, but they help prioritize which investigation methods matter most. If symptom onset coincided with someone borrowing your phone, focus on physical jailbreak indicators. If symptoms appeared spontaneously, focus on remote exploitation pathways.
 
-Step 4: Behavioral Signs of Compromise
+Step 4 - Behavioral Signs of Compromise
 
 Beyond obvious performance issues, behavioral changes indicate potential compromise. Apps that previously worked reliably may crash or hang. System features like Face ID or fingerprint authentication may stop functioning reliably, jailbreaks sometimes interfere with biometric security layers.
 
@@ -106,7 +106,7 @@ The output should show "valid on disk" for legitimate apps. Invalid signatures i
 
 Firewall and DNS configurations often change on compromised devices. Jailbreakers sometimes modify DNS settings to prevent security software from functioning or to intercept network traffic. Check your device's network settings for unexpected custom DNS servers.
 
-Step 5: Technical Verification Methods
+Step 5 - Technical Verification Methods
 
 Checking for Jailbreak Indicators on iOS
 
@@ -168,7 +168,7 @@ attention.addOnSuccessListener { response ->
 }
 ```
 
-Step 6: Checking for Remote Access Tools
+Step 6 - Checking for Remote Access Tools
 
 Signs of Remote Administration Tools
 
@@ -189,21 +189,21 @@ netstat -an | grep :22
 lsof -i -P | grep LISTEN
 ```
 
-Step 7: Detecting Sophisticated Attacks
+Step 7 - Detecting Sophisticated Attacks
 
 Advanced attackers use techniques that escape simple detection. Mobile spyware like Pegasus or similar tools operate at the operating system level, making them nearly invisible to users. These tools intercept communications, activate cameras and microphones without indication, and access your location history.
 
 Some indicators of sophisticated attacks include:
 
-Unusual permissions: Apps requesting permissions they don't need represent red flags. A flashlight app requesting microphone access, or a calendar app requesting camera permission, indicates malicious behavior. Audit app permissions through your privacy settings regularly.
+Unusual permissions - Apps requesting permissions they don't need represent red flags. A flashlight app requesting microphone access, or a calendar app requesting camera permission, indicates malicious behavior. Audit app permissions through your privacy settings regularly.
 
-Background app activity: Monitor apps that consume network bandwidth even when not actively used. Apps running suspicious background tasks may be exfiltrating your data. Many phones allow setting restrictions on background app activity, review these settings and restrict unnecessary background access.
+Background app activity - Monitor apps that consume network bandwidth even when not actively used. Apps running suspicious background tasks may be exfiltrating your data. Many phones allow setting restrictions on background app activity, review these settings and restrict unnecessary background access.
 
-Encrypted analytics data: Legitimate apps send analytics data, but this data should be encrypted in transit (HTTPS). Watch for apps sending data without encryption, visible in network monitoring tools. This could indicate malicious data exfiltration.
+Encrypted analytics data - Legitimate apps send analytics data, but this data should be encrypted in transit (HTTPS). Watch for apps sending data without encryption, visible in network monitoring tools. This could indicate malicious data exfiltration.
 
-Fake security warnings: Compromised devices often display fake security alerts encouraging installation of additional malware. These warnings appear legitimate but originate from malicious apps. Genuine security warnings come from your OS vendor or known security software, not random ads.
+Fake security warnings - Compromised devices often display fake security alerts encouraging installation of additional malware. These warnings appear legitimate but originate from malicious apps. Genuine security warnings come from your OS vendor or known security software, not random ads.
 
-Step 8: Protective Measures
+Step 8 - Protective Measures
 
 Immediate Actions If Compromised
 
@@ -217,7 +217,7 @@ Protecting your device from unauthorized jailbreaking requires a proactive appro
 
 For additional security, consider using a security app that monitors for device integrity changes. Many reputable mobile security applications can detect common jailbreak indicators and alert you to potential compromises.
 
-Step 9: Recovery and Verification After Restoration
+Step 9 - Recovery and Verification After Restoration
 
 After restoring your device to factory settings, verify the restoration was complete. Don't simply restore your backup immediately, set up your phone fresh and gradually reinstall apps. This approach allows you to:
 
@@ -231,7 +231,7 @@ For iOS devices, you can verify restoration completeness by checking your iOS ve
 
 For Android, verify the security patch level matches the current month. Go to Settings > About Phone > Android Version and check the security patch date. If it's older than the current month, you may not be fully updated despite the factory reset.
 
-Step 10: Investigating How Your Device Was Jailbroken
+Step 10 - Investigating How Your Device Was Jailbroken
 
 Understanding how your device was compromised helps prevent future incidents. Jailbreaking requires either physical access or remote exploitation. Physical access involves someone connecting your phone to a computer or manually installing software while having your device. Remote exploitation involves tricking you into installing malicious software disguised as legitimate apps or installing through compromised WiFi networks.
 
@@ -241,7 +241,7 @@ Physical jailbreaking typically requires USB debugging enabled or specific hardw
 
 Remote jailbreaking often follows credential compromise. If your Apple ID or Google account was compromised, attackers may have installed malicious profiles or device management configurations without your knowledge. Check your account security settings and review connected devices. Revoke authorization for any unrecognized devices.
 
-Step 11: Supporting Yourself After Compromise
+Step 11 - Supporting Yourself After Compromise
 
 Device compromise can be psychologically distressing. You may feel violated knowing someone could access your private information. This is a normal reaction to a legitimate security incident.
 

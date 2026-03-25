@@ -37,7 +37,7 @@ Table of Contents
 - [Building a Breach Documentation Package](#building-a-breach-documentation-package)
 - [Timing Your Complaint](#timing-your-complaint)
 - [Post-Filing Actions](#post-filing-actions)
-- [Advanced: CFAA (Computer Fraud and Abuse Act) Angle](#advanced-cfaa-computer-fraud-and-abuse-act-angle)
+- [Advanced - CFAA (Computer Fraud and Abuse Act) Angle](#advanced-cfaa-computer-fraud-and-abuse-act-angle)
 - [using Class Actions](#using-class-actions)
 - [Prevention and Monitoring After Filing](#prevention-and-monitoring-after-filing)
 
@@ -66,9 +66,9 @@ Document the timeline of events
 Note any communications from the company
 
 Log the breach notification email headers
-echo "Received: from company.com (209.85.220.41)" > breach-notes.md
-echo "Date: $(date)" >> breach-notes.md
-echo "Subject: Important Security Notice" >> breach-notes.md
+echo "Received - from company.com (209.85.220.41)" > breach-notes.md
+echo "Date - $(date)" >> breach-notes.md
+echo "Subject - Important Security Notice" >> breach-notes.md
 
 Document the company's response to your inquiry
 curl -X POST https://api.company.com/support/ticket \
@@ -115,11 +115,11 @@ This documentation becomes critical if the FTC pursues action or if you pursue s
 
 Filing the FTC Complaint
 
-Step 1: Access the Complaint Portal
+Step 1 - Access the Complaint Portal
 
 Navigate to the FTC's complaint assistant at [ftc.gov/complaint](https://ftc.gov/complaint). Select "Privacy & Identity" as the category, then choose "Data Breach" or "Impersonation/Identity Theft" depending on your situation.
 
-Step 2: Complete the Complaint Form
+Step 2 - Complete the Complaint Form
 
 Provide factual information without speculation:
 
@@ -129,7 +129,7 @@ Provide factual information without speculation:
 - Damages: Financial losses, identity theft, or other harms
 - Documentation: Reference your documented evidence
 
-Step 3: Submit Additional Evidence
+Step 3 - Submit Additional Evidence
 
 The FTC accepts attachments. Submit:
 - Redacted copies of breach notifications
@@ -339,7 +339,7 @@ Post-Filing Checklist:
     - Document if company repeats negligent behavior
 ```
 
-Advanced: CFAA (Computer Fraud and Abuse Act) Angle
+Advanced - CFAA (Computer Fraud and Abuse Act) Angle
 
 For sophisticated breaches involving system compromise:
 

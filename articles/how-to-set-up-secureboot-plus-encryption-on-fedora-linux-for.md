@@ -28,12 +28,12 @@ Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Understanding the Security Architecture](#understanding-the-security-architecture)
-- [Step 1: Preparing Fedora Installation with Encryption](#step-1-preparing-fedora-installation-with-encryption)
-- [Step 2: Enrolling SecureBoot Keys](#step-2-enrolling-secureboot-keys)
-- [Step 3: Signing Custom Kernels and Bootloaders](#step-3-signing-custom-kernels-and-bootloaders)
-- [Step 4: Configuring TPM2-Based Unlocking](#step-4-configuring-tpm2-based-unlocking)
-- [Step 5: Verifying Your Security Configuration](#step-5-verifying-your-security-configuration)
-- [Step 6: Implementing Additional Hardening](#step-6-implementing-additional-hardening)
+- [Step 1 - Preparing Fedora Installation with Encryption](#step-1-preparing-fedora-installation-with-encryption)
+- [Step 2 - Enrolling SecureBoot Keys](#step-2-enrolling-secureboot-keys)
+- [Step 3 - Signing Custom Kernels and Bootloaders](#step-3-signing-custom-kernels-and-bootloaders)
+- [Step 4 - Configuring TPM2-Based Unlocking](#step-4-configuring-tpm2-based-unlocking)
+- [Step 5 - Verifying Your Security Configuration](#step-5-verifying-your-security-configuration)
+- [Step 6 - Implementing Additional Hardening](#step-6-implementing-additional-hardening)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 - [Maintenance and Recovery](#maintenance-and-recovery)
 - [Related Reading](#related-reading)
@@ -57,7 +57,7 @@ SecureBoot operates at the firmware level, verifying cryptographic signatures of
 
 This approach protects against bootkits, ransomware targeting the boot process, and physical theft of storage devices.
 
-SecureBoot vs. Encryption: Complementary Protections
+SecureBoot vs. Encryption - Complementary Protections
 
 SecureBoot and LUKS encryption address different threat vectors. SecureBoot prevents an attacker with brief physical access from swapping in a malicious bootloader or kernel, the so-called "evil maid" attack scenario. LUKS encryption prevents an attacker who steals your drive from reading your data offline. Neither layer alone is sufficient: a stolen drive bypasses SecureBoot entirely, while a replaced bootloader can silently capture your LUKS passphrase before encryption even initializes.
 
@@ -67,7 +67,7 @@ TPM2 and the Chain of Trust
 
 TPM2 (Trusted Platform Module version 2) strengthens this model by binding decryption keys to measured boot state. Platform Configuration Registers (PCRs) record cryptographic hashes of each boot stage. If any component is modified, firmware, bootloader, or kernel, PCR values change and the TPM refuses to release the decryption key, keeping the drive locked against unauthorized boot paths.
 
-Step 1: Preparing Fedora Installation with Encryption
+Step 1 - Preparing Fedora Installation with Encryption
 
 During Fedora installation, select the "Advanced Custom" partitioning option to configure encryption properly:
 
@@ -98,7 +98,7 @@ Replace `YOUR_SECURE_PASSPHRASE` with a strong passphrase meeting these criteria
 
 For production systems, use a randomly generated passphrase from a password manager and store it in a hardware security key or offline vault. Splitting a long passphrase across two physical locations, a safe deposit box and a sealed envelope with a trusted contact, reduces single-point-of-failure risk.
 
-Step 2: Enrolling SecureBoot Keys
+Step 2 - Enrolling SecureBoot Keys
 
 After installation, enroll the Fedora SecureBoot keys through mokutil:
 
@@ -136,7 +136,7 @@ cert-to-efi-sig-list DB.crt DB.esl
 
 Enrolling custom keys requires putting your firmware into Setup Mode first, which clears all existing Secure Boot variables. Only do this if you are prepared to sign every boot component yourself, including shim, grub, and the kernel. This approach suits high-security deployments and air-gapped systems.
 
-Step 3: Signing Custom Kernels and Bootloaders
+Step 3 - Signing Custom Kernels and Bootloaders
 
 For developers who compile custom kernels, signing becomes essential:
 
@@ -184,7 +184,7 @@ fi
 
 Make it executable with `chmod +x` and store signing keys in `/etc/secureboot/` with permissions `600`. This hook runs automatically on each `dnf upgrade` that installs a new kernel, keeping your chain of trust intact without manual intervention.
 
-Step 4: Configuring TPM2-Based Unlocking
+Step 4 - Configuring TPM2-Based Unlocking
 
 TPM2 integration allows automatic decryption without compromising security:
 
@@ -227,14 +227,14 @@ For most threat models, PCRs `0+4+7` provides solid protection with minimal disr
 
 This setup provides multi-factor authentication: the TPM must confirm system integrity, and your passphrase unlocks the key if TPM verification fails.
 
-Step 5: Verifying Your Security Configuration
+Step 5 - Verifying Your Security Configuration
 
 After configuration, verify each component:
 
 ```bash
 Confirm SecureBoot is enabled
 mokutil --sb-state
-Expected output: SecureBoot enabled
+Expected output - SecureBoot enabled
 
 Check LUKS encryption status
 sudo cryptsetup luksDump /dev/nvme0n1p3 | grep -i "Encrypted"
@@ -248,7 +248,7 @@ Test TPM unlock (requires manual reboot)
 sudo systemd-cryptsetup attach data /dev/nvme0n1p3 "tpm2-device=auto"
 ```
 
-Step 6: Implementing Additional Hardening
+Step 6 - Implementing Additional Hardening
 
 Strengthen your configuration with these optional measures:
 

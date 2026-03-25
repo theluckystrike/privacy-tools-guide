@@ -21,7 +21,7 @@ ChatGPT has become a daily tool for developers, but many users operate under a f
 Table of Contents
 
 - [What OpenAI Actually Stores](#what-openai-actually-stores)
-- [Technical Deep Dive: Data Flow](#technical-deep detailed look-data-flow)
+- [Technical Deep Dive - Data Flow](#technical-deep detailed look-data-flow)
 - [What Developers Need to Know](#what-developers-need-to-know)
 - [Privacy Controls Available](#privacy-controls-available)
 - [What Stays Private (And What Doesn't)](#what-stays-private-and-what-doesnt)
@@ -63,7 +63,7 @@ Training Data Retention
 
 Perhaps the most concerning aspect: your conversations may be used to train future models. According to OpenAI's [Privacy Policy](https://openai.com/policies/privacy/), users can opt out of having their data used for training, but the opt-out process is buried in settings.
 
-Technical Deep Dive: Data Flow
+Technical Deep Dive - Data Flow
 
 Here's what happens when you send a request to the ChatGPT API:
 
@@ -101,13 +101,13 @@ Your API key grants access to your account's usage patterns. Anyone with your ke
 
 ```bash
 NEVER commit API keys to version control
-Bad: hardcoded in source
+Bad - hardcoded in source
 OPENAI_API_KEY="sk-xxxxx"
 
-Better: environment variable
+Better - environment variable
 export OPENAI_API_KEY="sk-xxxxx"
 
-Best: use a secrets manager
+Best - use a secrets manager
 source /secrets/openai.env
 ```
 
@@ -207,7 +207,7 @@ Code-Specific Privacy Concerns
 Developers frequently paste code into ChatGPT for refactoring, debugging, or learning. This creates specific privacy risks:
 
 ```python
-DANGEROUS: Never paste production code like this
+DANGEROUS - Never paste production code like this
 def authenticate_user(username, password):
     # Your actual database validation logic
     if username == "admin" and password == "SecurePassword123":
@@ -246,13 +246,13 @@ Alternative Language Models and Privacy
 
 Several alternatives to ChatGPT offer better privacy characteristics:
 
-Claude (via API): Anthropic explicitly states they don't train on API inputs by default. This makes Claude a better choice for sensitive work. Pricing is competitive with OpenAI ($0.003 per 1K input tokens, $0.015 per 1K output tokens).
+Claude (via API) - Anthropic explicitly states they don't train on API inputs by default. This makes Claude a better choice for sensitive work. Pricing is competitive with OpenAI ($0.003 per 1K input tokens, $0.015 per 1K output tokens).
 
-Ollama: Runs language models locally using your machine's GPU. Models like Llama 2 7B or Mistral run entirely on your infrastructure with zero cloud storage. The tradeoff is that local models are typically smaller and less capable than GPT-4.
+Ollama - Runs language models locally using your machine's GPU. Models like Llama 2 7B or Mistral run entirely on your infrastructure with zero cloud storage. The tradeoff is that local models are typically smaller and less capable than GPT-4.
 
-Hugging Face Inference API: Provides hosted model endpoints with data processing agreements. You can run proprietary model instances that never share data with other users.
+Hugging Face Inference API - Provides hosted model endpoints with data processing agreements. You can run proprietary model instances that never share data with other users.
 
-Self-hosted options: Deploy models like Llama 2 13B, Mistral 7B, or open-source ORCA on your own infrastructure using vLLM or similar frameworks. This provides maximum control but requires infrastructure management.
+Self-hosted options - Deploy models like Llama 2 13B, Mistral 7B, or open-source ORCA on your own infrastructure using vLLM or similar frameworks. This provides maximum control but requires infrastructure management.
 
 Here's a quick comparison of data retention for major providers:
 
@@ -319,11 +319,11 @@ Legal and Compliance Considerations
 
 Different regulations impose different requirements:
 
-GDPR (EU): Users have the right to know what data is stored, request deletion, and understand how it's used. OpenAI's processing agreements may not fully satisfy GDPR requirements for some use cases.
+GDPR (EU) - Users have the right to know what data is stored, request deletion, and understand how it's used. OpenAI's processing agreements may not fully satisfy GDPR requirements for some use cases.
 
-HIPAA (Healthcare): Sensitive health information cannot be processed by ChatGPT at all without explicit BAA agreements that OpenAI doesn't provide to individual developers.
+HIPAA (Healthcare) - Sensitive health information cannot be processed by ChatGPT at all without explicit BAA agreements that OpenAI doesn't provide to individual developers.
 
-FedRAMP (Government): Government contractors cannot use commercial ChatGPT without special arrangements.
+FedRAMP (Government) - Government contractors cannot use commercial ChatGPT without special arrangements.
 
 For any use case handling regulated data, consult a privacy attorney before involving third-party AI services.
 

@@ -45,7 +45,7 @@ If you deploy either without configuration changes on a server with a public IP,
 
 Redis Security
 
-Step 1: Bind to Localhost or Specific IP
+Step 1 - Bind to Localhost or Specific IP
 
 ```bash
 /etc/redis/redis.conf (Debian/Ubuntu) or /etc/redis.conf (RHEL)
@@ -63,12 +63,12 @@ protected-mode yes
 ```bash
 Verify binding
 ss -tlnp | grep 6379
-Should show: 127.0.0.1:6379, NOT 0.0.0.0:6379
+Should show - 127.0.0.1:6379, NOT 0.0.0.0:6379
 
 sudo systemctl restart redis
 ```
 
-Step 2: Enable Authentication
+Step 2 - Enable Authentication
 
 ```bash
 Generate a strong password
@@ -85,12 +85,12 @@ aclfile /etc/redis/users.acl
 
 ```bash
 /etc/redis/users.acl
-Syntax: user <name> [flags] [passwords] [commands] [keys]
+Syntax - user <name> [flags] [passwords] [commands] [keys]
 
 Disable the default user (catches unauthenticated access)
 user default off nopass nocommands nokeys
 
-Application user: full access to app-specific keys only
+Application user - full access to app-specific keys only
 user appuser on >StrongPassword123! ~app:* +@all
 
 Read-only monitoring user
@@ -106,13 +106,13 @@ redis-cli -a AdminPassword456! ACL LOAD
 
 Test authentication
 redis-cli -a StrongPassword123! PING
-Expected: PONG
+Expected - PONG
 
 redis-cli PING
-Expected: NOAUTH Authentication required
+Expected - NOAUTH Authentication required
 ```
 
-Step 3: Disable Dangerous Commands
+Step 3 - Disable Dangerous Commands
 
 ```bash
 /etc/redis/redis.conf
@@ -127,9 +127,9 @@ rename-command DEBUG ""
 rename-command EVAL ""     # Disable if Lua scripting not needed
 ```
 
-Why `CONFIG` is dangerous: An attacker with Redis access can use `CONFIG SET dir /home/user/.ssh` + `CONFIG SET dbfilename authorized_keys` + `SAVE` to write their SSH key to the server, gaining shell access.
+Why `CONFIG` is dangerous - An attacker with Redis access can use `CONFIG SET dir /home/user/.ssh` + `CONFIG SET dbfilename authorized_keys` + `SAVE` to write their SSH key to the server, gaining shell access.
 
-Step 4: Enable TLS (Redis 6+)
+Step 4 - Enable TLS (Redis 6+)
 
 ```bash
 Generate TLS certificates
@@ -160,7 +160,7 @@ redis-cli --tls \
   -a StrongPassword123! PING
 ```
 
-Step 5: Persistence and File Permissions
+Step 5 - Persistence and File Permissions
 
 ```bash
 /etc/redis/redis.conf
@@ -177,14 +177,14 @@ chown redis:redis /var/lib/redis
 
 Verify Redis runs as redis user, not root
 ps aux | grep redis
-Should show: redis   ... redis-server
+Should show - redis   ... redis-server
 ```
 
 ---
 
 MongoDB Security
 
-Step 1: Enable Authentication
+Step 1 - Enable Authentication
 
 ```yaml
 /etc/mongod.conf
@@ -229,10 +229,10 @@ mongosh --username admin --password --authenticationDatabase admin
 Should prompt for password and connect
 
 mongosh --username wronguser --password badpass
-Should fail: Authentication failed
+Should fail - Authentication failed
 ```
 
-Step 2: Create Role-Based Users
+Step 2 - Create Role-Based Users
 
 ```javascript
 // Connect as admin: mongosh -u admin -p --authenticationDatabase admin
@@ -266,7 +266,7 @@ db.createUser({
 })
 ```
 
-Step 3: Enable TLS for MongoDB
+Step 3 - Enable TLS for MongoDB
 
 ```bash
 Generate MongoDB certificate (combined key + cert PEM)
@@ -300,7 +300,7 @@ mongosh --tls \
   "mongodb://localhost:27017/"
 ```
 
-Step 4: Enable Audit Logging (Enterprise) or mongocryptd
+Step 4 - Enable Audit Logging (Enterprise) or mongocryptd
 
 For Community Edition, enable operation logging:
 
@@ -353,19 +353,19 @@ Verify Your Hardening
 ```bash
 Test Redis from external IP (should fail)
 redis-cli -h your.server.ip PING
-Expected: Could not connect / Connection refused
+Expected - Could not connect / Connection refused
 
 Test MongoDB from external (should fail)
 mongosh "mongodb://your.server.ip:27017"
-Expected: Connection refused or timeout
+Expected - Connection refused or timeout
 
 Scan your own server for exposed ports
 nmap -p 6379,27017 your.public.ip
-Expected: filtered or closed for both
+Expected - filtered or closed for both
 
 Check Redis ACL is working
 redis-cli -h 127.0.0.1 KEYS "*"
-Expected: NOAUTH or permission denied (without credentials)
+Expected - NOAUTH or permission denied (without credentials)
 ```
 
 ---

@@ -57,7 +57,7 @@ Windows
 
 Download Gpg4win from https://gpg4win.org/. it includes Kleopatra, a GUI frontend, and the gpg command-line tool.
 
-Step 1: Obtain the Developer's Public Key
+Step 1 - Obtain the Developer's Public Key
 
 You need the correct public key before you can verify anything. Sources in order of trustworthiness:
 
@@ -85,7 +85,7 @@ gpg --fingerprint 0x4E2C6E8793298290
 
 The fingerprint must be verified out-of-band. check the project's official site, their GitHub profile, or a signed announcement. Never trust a keyserver fingerprint alone.
 
-Step 2: Download the Software and Signature File
+Step 2 - Download the Software and Signature File
 
 You need both the file you want to verify and its signature. The signature file typically has the same name with `.sig` or `.asc` appended:
 
@@ -101,7 +101,7 @@ wget https://example-project.org/downloads/SHA256SUMS
 wget https://example-project.org/downloads/SHA256SUMS.gpg
 ```
 
-Step 3: Verify the Signature
+Step 3 - Verify the Signature
 
 Direct signature on the file
 
@@ -117,7 +117,7 @@ gpg:                using RSA key 4E2C6E8793298290
 gpg: Good signature from "Alice Developer <alice@example-project.org>" [unknown]
 gpg: WARNING: This key is not certified with a trusted signature!
 gpg:          There is no indication that the signature belongs to the owner.
-Primary key fingerprint: A490 D0F4 D311 A412 3456  789A 4E2C 6E87 9329 8290
+Primary key fingerprint - A490 D0F4 D311 A412 3456  789A 4E2C 6E87 9329 8290
 ```
 
 The "Good signature" line is what matters. The warning about trust is expected unless you've explicitly set a trust level for that key.
@@ -153,7 +153,7 @@ gpg: Can't check signature: No public key
 
 Key expired. the key has an expiry date that has passed. Check whether the project has published a new key:
 ```
-gpg: Note: This key has expired!
+gpg: Note - This key has expired!
 ```
 
 Setting Key Trust Level

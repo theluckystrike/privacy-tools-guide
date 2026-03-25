@@ -40,7 +40,7 @@ tor --version
 
 You'll also need a mail transfer agent. Postfix is a solid choice for this setup due to its flexibility and Tor integration capabilities.
 
-Step 2: Configure Tor as a Hidden Service
+Step 2 - Configure Tor as a Hidden Service
 
 Edit your Tor configuration file to enable hidden service functionality for SMTP:
 
@@ -80,7 +80,7 @@ sudo cat /var/lib/tor/mail_hidden_service/hostname
 
 This command outputs something like `abcdef1234567890.onion`, share this address with correspondents who want to reach you via your hidden service.
 
-Step 3: Set Up Postfix for Tor Integration
+Step 3 - Set Up Postfix for Tor Integration
 
 Configure Postfix to listen on localhost and work with Tor. Edit your Postfix configuration:
 
@@ -131,13 +131,13 @@ Restart Postfix:
 sudo systemctl restart postfix
 ```
 
-Step 4: Client Configuration for Onion Email
+Step 4 - Client Configuration for Onion Email
 
 Configure your email client to route mail through the Tor network. Most clients support SOCKS proxy configuration.
 
 For Thunderbird, go to Account Settings, select your outgoing server, and configure:
 
-- Server: your-onion-address.onion
+- Server - your-onion-address.onion
 - Port: 587
 - Connection security: STARTTLS
 - Authentication method: Normal password
@@ -155,7 +155,7 @@ curl --socks5-hostname 127.0.0.1:9050 \
   smtp://mail.onion-service.com:25/
 ```
 
-Step 5: Verify Your Setup
+Step 5 - Verify Your Setup
 
 Test that your hidden service is reachable:
 

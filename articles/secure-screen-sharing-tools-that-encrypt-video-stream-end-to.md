@@ -23,19 +23,19 @@ This guide covers secure screen sharing tools that encrypt video streams end-to-
 Table of Contents
 
 - [Understanding End-to-End Encryption in Screen Sharing](#understanding-end-to-end-encryption-in-screen-sharing)
-- [Jitsi Meet: Self-Hosted E2EE Screen Sharing](#jitsi-meet-self-hosted-e2ee-screen-sharing)
-- [Signal: Maximum Security for Sensitive Screen Sharing](#signal-maximum-security-for-sensitive-screen-sharing)
-- [Matrix (Element): Federation with E2EE Screen Sharing](#matrix-element-federation-with-e2ee-screen-sharing)
-- [Jami: Decentralized E2EE Screen Sharing](#jami-decentralized-e2ee-screen-sharing)
+- [Jitsi Meet - Self-Hosted E2EE Screen Sharing](#jitsi-meet-self-hosted-e2ee-screen-sharing)
+- [Signal - Maximum Security for Sensitive Screen Sharing](#signal-maximum-security-for-sensitive-screen-sharing)
+- [Matrix (Element) - Federation with E2EE Screen Sharing](#matrix-element-federation-with-e2ee-screen-sharing)
+- [Jami - Decentralized E2EE Screen Sharing](#jami-decentralized-e2ee-screen-sharing)
 - [Practical Recommendations by Use Case](#practical-recommendations-by-use-case)
 - [Verifying Your Screen Share Remains Encrypted](#verifying-your-screen-share-remains-encrypted)
 - [Technical Verification of E2EE in Screen Sharing](#technical-verification-of-e2ee-in-screen-sharing)
-- [Performance Comparison: E2EE vs Standard Screen Sharing](#performance-comparison-e2ee-vs-standard-screen-sharing)
+- [Performance Comparison - E2EE vs Standard Screen Sharing](#performance-comparison-e2ee-vs-standard-screen-sharing)
 - [Privacy During Key Exchange](#privacy-during-key-exchange)
 - [Measuring Privacy During Screen Sharing](#measuring-privacy-during-screen-sharing)
 - [Self-Hosted Screen Sharing with E2EE](#self-hosted-screen-sharing-with-e2ee)
-- [Privacy Comparison Table: All Screen Sharing Tools](#privacy-comparison-table-all-screen-sharing-tools)
-- [Legal Implications: Recording Encrypted Streams](#legal-implications-recording-encrypted-streams)
+- [Privacy Comparison Table - All Screen Sharing Tools](#privacy-comparison-table-all-screen-sharing-tools)
+- [Legal Implications - Recording Encrypted Streams](#legal-implications-recording-encrypted-streams)
 - [Troubleshooting E2EE Connection Issues](#troubleshooting-e2ee-connection-issues)
 - [Best Practices for Sensitive Screen Sharing](#best-practices-for-sensitive-screen-sharing)
 
@@ -47,7 +47,7 @@ True E2EE for screen sharing requires several technical components working toget
 
 The security guarantee breaks down if any participant lacks E2EE support, ensure all viewers in your session use compatible clients.
 
-Jitsi Meet: Self-Hosted E2EE Screen Sharing
+Jitsi Meet - Self-Hosted E2EE Screen Sharing
 
 Jitsi Meet provides true end-to-end encryption for screen sharing when properly configured. The project uses the WebRTC Insertable Streams API to encrypt video frames in the browser before transmission.
 
@@ -72,7 +72,7 @@ const options = {
 const api = new JitsiMeetExternalAPI(domain, options);
 ```
 
-The `e2ee.enabled: true` setting activates the double-ratchet encryption for all media streams including screen shares. Each participant's key is derived locally and never transmitted. You'll see a shield icon indicating active E2EE when all participants have compatible clients.
+The `e2ee.enabled - true` setting activates the double-ratchet encryption for all media streams including screen shares. Each participant's key is derived locally and never transmitted. You'll see a shield icon indicating active E2EE when all participants have compatible clients.
 
 Verifying E2EE Active
 
@@ -88,7 +88,7 @@ api.addListener('videoConferenceJoined', () => {
 
 Jitsi's E2EE implementation uses the libsodium library for cryptographic operations, providing strong security guarantees. However, E2EE disables certain features like recording and transcription since the server cannot access unencrypted content.
 
-Signal: Maximum Security for Sensitive Screen Sharing
+Signal - Maximum Security for Sensitive Screen Sharing
 
 Signal provides the strongest end-to-end encryption available for any communication medium, including screen sharing in its desktop and mobile clients. The Signal Protocol (Double Ratchet with HMAC) guarantees forward secrecy and post-compromise security.
 
@@ -105,7 +105,7 @@ The encryption architecture remains consistent: Signal servers relay encrypted p
 
 Signal's source code is independently auditable, and the project provides reproducible builds for verification. For developers building applications requiring Signal's security guarantees, the Signal Android and iOS SDKs support custom encrypted media streaming.
 
-Matrix (Element): Federation with E2EE Screen Sharing
+Matrix (Element) - Federation with E2EE Screen Sharing
 
 Matrix provides end-to-end encrypted video rooms through Element clients, supporting screen sharing within encrypted rooms. The protocol uses the Olm and Megolm encryption mechanisms, with MLS (Messaging Layer Security) replacing older implementations in newer deployments.
 
@@ -144,9 +144,9 @@ asyncio.run(create_encrypted_screen_share_room())
 
 Matrix's approach enables federation, participants can join from different servers while maintaining E2EE. This distributed architecture reduces single-point-of-trust compared to centralized services. Screen sharing in Matrix rooms encrypts content using the same Megolm group encryption, allowing multiple viewers without per-stream key management overhead.
 
-Jami: Decentralized E2EE Screen Sharing
+Jami - Decentralized E2EE Screen Sharing
 
-Jami offers a unique approach: truly peer-to-peer screen sharing with end-to-end encryption, no central servers, and complete anonymity. Built on the GNUnet framework's libjami, it provides distributed key exchange without directory services.
+Jami offers a unique approach - truly peer-to-peer screen sharing with end-to-end encryption, no central servers, and complete anonymity. Built on the GNUnet framework's libjami, it provides distributed key exchange without directory services.
 
 Jami Screen Sharing Implementation
 
@@ -169,13 +169,13 @@ Practical Recommendations by Use Case
 
 Different scenarios require different approaches to secure screen sharing:
 
-Developer Code Reviews: Self-hosted Jitsi provides the best balance of security, features, and integration capability. Embed it directly into your development tools and maintain full control over the infrastructure.
+Developer Code Reviews - Self-hosted Jitsi provides the best balance of security, features, and integration capability. Embed it directly into your development tools and maintain full control over the infrastructure.
 
-Sensitive Business Discussions: Signal offers the strongest trust model, no infrastructure to compromise, independent security audits, and proven cryptographic design. Use it when discussing proprietary code, security vulnerabilities, or confidential client matters.
+Sensitive Business Discussions - Signal offers the strongest trust model, no infrastructure to compromise, independent security audits, and proven cryptographic design. Use it when discussing proprietary code, security vulnerabilities, or confidential client matters.
 
-Cross-Organization Collaboration: Matrix federation allows secure screen sharing across organizations without central coordination. Each organization maintains its own server while participants from other domains join encrypted rooms.
+Cross-Organization Collaboration - Matrix federation allows secure screen sharing across organizations without central coordination. Each organization maintains its own server while participants from other domains join encrypted rooms.
 
-Maximum Threat Model: Jami provides the strongest guarantees against infrastructure compromise. Use it when facing sophisticated adversaries with capability to compel service provider cooperation.
+Maximum Threat Model - Jami provides the strongest guarantees against infrastructure compromise. Use it when facing sophisticated adversaries with capability to compel service provider cooperation.
 
 Verifying Your Screen Share Remains Encrypted
 
@@ -239,7 +239,7 @@ function checkSDPForLeaks(sdp) {
 
 This verification ensures E2EE is actually implemented.
 
-Performance Comparison: E2EE vs Standard Screen Sharing
+Performance Comparison - E2EE vs Standard Screen Sharing
 
 Real-world performance impact of E2EE:
 
@@ -269,30 +269,30 @@ E2EE requires key exchange, which itself must be secure:
 ```python
 Common key exchange vulnerabilities in screen sharing
 
-VULNERABILITY 1: Unencrypted key transmission
+VULNERABILITY 1 - Unencrypted key transmission
 If initial key exchange happens unencrypted:
 - Observer can intercept keys
 - All subsequent "encrypted" traffic compromised
 
-DEFENSE: Use TLS for key exchange
+DEFENSE - Use TLS for key exchange
 Initial handshake must use authenticated TLS
 Key derivation uses strong algorithms (ECDH with curve25519)
 
-VULNERABILITY 2: Key reuse
+VULNERABILITY 2 - Key reuse
 If same key used across multiple sessions:
 - One compromised session = all sessions compromised
 - No forward secrecy
 
-DEFENSE: Per-session keys with ratcheting
+DEFENSE - Per-session keys with ratcheting
 Keys advance after each frame
 Compromise only affects current/future frames
 
-VULNERABILITY 3: Weak key agreement
+VULNERABILITY 3 - Weak key agreement
 If key agreement uses weak parameters:
 - Brute force attacks possible
 - Backdoors in algorithm possible
 
-DEFENSE: Use modern, audited algorithms
+DEFENSE - Use modern, audited algorithms
 - Curve25519 (ECDH)
 - Signal Protocol (double ratchet)
 - Not custom implementations
@@ -308,7 +308,7 @@ Test what information leaks despite E2EE:
 #!/bin/bash
 Privacy leak testing during screen sharing
 
-Test 1: Metadata leakage
+Test 1 - Metadata leakage
 Start screen share and monitor network
 sudo tcpdump -i any -w screen_share.pcap -n '(host 192.168.1.100)'
 
@@ -322,13 +322,13 @@ What you'll find:
 - Number of packets (correlates with screen complexity)
 - Bandwidth usage patterns
 
-Test 2: Side-channel analysis
+Test 2 - Side-channel analysis
 Even with E2EE, attacker can infer:
 - When you're typing (small packets)
 - When you're viewing static content (low bandwidth)
 - When you're scrolling (periodic bursts)
 
-Test 3: Device fingerprinting
+Test 3 - Device fingerprinting
 Extract from encrypted traffic:
 - Operating system (from TCP window size)
 - Browser version (from WebRTC patterns)
@@ -375,7 +375,7 @@ curl https://your.domain.com/config.js | grep -i e2ee
 
 Self-hosting ensures no one but you controls the encryption.
 
-Privacy Comparison Table: All Screen Sharing Tools
+Privacy Comparison Table - All Screen Sharing Tools
 
  comparison for different privacy levels:
 
@@ -394,7 +394,7 @@ Whereby | Optional | No | No | Optional | Server-logged |
 
 Jitsi/Jami offer best privacy. Zoom/Teams should be avoided for sensitive content.
 
-Legal Implications: Recording Encrypted Streams
+Legal Implications - Recording Encrypted Streams
 
 Be aware of recording laws:
 
@@ -406,7 +406,7 @@ California | Two-party | Felony | E2EE doesn't change law |
 UK | Awareness (implied consent) | Civil | E2EE doesn't change law |
 EU/GDPR | Explicit consent | GDPR fines | E2EE doesn't affect requirement |
 
-Key point: E2EE doesn't exempt you from recording consent laws
+Key point - E2EE doesn't exempt you from recording consent laws
 - If you record a screen share, you may need consent
 - Consent laws don't care if stream was encrypted
 - Decryption on recorder's device = has content

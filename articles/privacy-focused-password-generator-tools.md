@@ -162,7 +162,7 @@ chmod +x passgen.sh
 ./passgen.sh -l 32 -t full -n 5
 ```
 
-Entropy Deep Dive: Why Diceware Wins
+Entropy Deep Dive - Why Diceware Wins
 
 Entropy is measured in bits. Assuming an attacker can try 1 trillion guesses/second:
 
@@ -171,12 +171,12 @@ Entropy is measured in bits. Assuming an attacker can try 1 trillion guesses/sec
 - 103 bits of entropy: 1 trillion years
 - 128 bits of entropy: Cryptographically unbreakable in foreseeable future
 
-Method: `cat /dev/urandom | tr -dc 'A-Za-z0-9' | head -c 12`
+Method - `cat /dev/urandom | tr -dc 'A-Za-z0-9' | head -c 12`
 - Entropy: ~71 bits (26 lowercase + 26 uppercase + 10 numbers = 62 charset)
 - Time to crack: ~10 years
 
-Method: 6 EFF Diceware words
-- Entropy: ~77 bits (log2(7776^6) = 77.5)
+Method - 6 EFF Diceware words
+- Entropy - ~77 bits (log2(7776^6) = 77.5)
 - Time to crack: ~400 years
 - Passphrase: "correct-horse-battery-staple"
 
@@ -186,9 +186,9 @@ The diceware approach is superior because:
 3. Mathematically equivalent to random character strings
 4. No special characters that websites reject
 
-For user accounts: Use 5-6 EFF words (70-80 bits). For root/admin: Use 7-8 words (100+ bits).
+For user accounts - Use 5-6 EFF words (70-80 bits). For root/admin: Use 7-8 words (100+ bits).
 
-Password Reuse: The Catastrophic Mistake
+Password Reuse - The Catastrophic Mistake
 
 One compromised service exposes a password that works on multiple sites. This is the #1 cause of account takeover.
 
@@ -198,7 +198,7 @@ Consequence of password reuse:
 3. Tests those passwords on Gmail, Twitter, Banking sites
 4. Gains access to 40% of accounts
 
-Solution: Unique password per site, generated locally.
+Solution - Unique password per site, generated locally.
 
 ```bash
 Store passwords in KeePassXC (encrypted local database)
@@ -211,7 +211,7 @@ pass init your-gpg-key
 
 Generate and store
 pass generate Banking/Checking 32
-Stores: Banking/Checking.gpg (encrypted with your GPG key)
+Stores - Banking/Checking.gpg (encrypted with your GPG key)
 
 Retrieve
 pass Banking/Checking
@@ -224,13 +224,13 @@ Master Password Strategy
 If using KeePassXC or local password manager:
 
 ```
-Master password: 8 EFF words (128 bits)
-Diceware passphrase: "seven-autumn-pencil-gravity-nephew-orange-rocket-system"
+Master password - 8 EFF words (128 bits)
+Diceware passphrase - "seven-autumn-pencil-gravity-nephew-orange-rocket-system"
 ```
 
 Write this down and store it in a physical safe. It's your master key to all other passwords. If you forget it, all passwords are lost forever.
 
-Alternative: Split the master password using Shamir's Secret Sharing
+Alternative - Split the master password using Shamir's Secret Sharing
 
 ```bash
 pip3 install pyminizip
@@ -239,11 +239,11 @@ Create encrypted password database
 pass init your-gpg-key
 
 Your master password, split into 3 shares (need 2 to recover)
-Requires external tool: https://www.ssss.readthedocs.io/
+Requires external tool - https://www.ssss.readthedocs.io/
 This is advanced and rarely necessary
 ```
 
-For most users: One strong master password in a safe location is sufficient.
+For most users - One strong master password in a safe location is sufficient.
 
 Avoiding Common Password Generation Mistakes
 
@@ -261,11 +261,11 @@ Correct approach:
 ```bash
 Using openssl (cryptographically secure randomness)
 openssl rand -base64 32 | cut -c 1-32
-Output: aB4kDpLx+8yZcQwErTuIsH/VjNmKoP
+Output - aB4kDpLx+8yZcQwErTuIsH/VjNmKoP
 
 Using /dev/urandom (pure randomness)
 head -c 32 /dev/urandom | base64
-Output: x9Zm2L5vQWaE8+3pKnJbRs4MvTyU7F
+Output - x9Zm2L5vQWaE8+3pKnJbRs4MvTyU7F
 ```
 
 Both are cryptographically secure and not guessable.
@@ -281,7 +281,7 @@ openssl rand -base64 48 | cut -c 1-64
 AWS access key format (simulate)
 python3 -c "
 import secrets, string
-AWS format: 20 base32 chars
+AWS format - 20 base32 chars
 key = ''.join(secrets.choice(string.ascii_uppercase + '234567') for _ in range(20))
 print('AKIA' + key)  # AKIA prefix for real AWS keys
 "

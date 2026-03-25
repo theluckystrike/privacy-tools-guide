@@ -22,8 +22,8 @@ Table of Contents
 
 - [Testing Methodology](#testing-methodology)
 - [Tested Privacy-Focused Browsers](#tested-privacy-focused-browsers)
-- [Results: Memory Usage](#results-memory-usage)
-- [Results: CPU Usage](#results-cpu-usage)
+- [Results - Memory Usage](#results-memory-usage)
+- [Results - CPU Usage](#results-cpu-usage)
 - [Practical Implications for Developers](#practical-implications-for-developers)
 - [Recommendations by Use Case](#recommendations-by-use-case)
 - [Optimization Tips](#optimization-tips)
@@ -31,7 +31,7 @@ Table of Contents
 - [Advanced Profiling Techniques](#advanced-profiling-techniques)
 - [Memory Fragmentation and Long-Running Sessions](#memory-fragmentation-and-long-running-sessions)
 - [Network Performance Implications](#network-performance-implications)
-- [Developer Extension Ecosystem](#developer-extension-ecosystem)
+- [Developer Extension environment](#developer-extension-environment)
 - [Long-Term Performance Trends](#long-term-performance-trends)
 - [Making an Informed Decision](#making-an-informed-decision)
 - [Practical Migration Path](#practical-migration-path)
@@ -54,7 +54,7 @@ The following privacy-focused browsers were included in our benchmark:
 
 For comparison, we also included Google Chrome (version 134.x) as a baseline reference.
 
-Results: Memory Usage
+Results - Memory Usage
 
 Memory efficiency remains a critical factor for power users managing dozens of tabs. The following measurements represent average RAM consumption after a five-minute idle period with ten tabs open (including Gmail, GitHub, YouTube, and several news sites).
 
@@ -69,7 +69,7 @@ Memory efficiency remains a critical factor for power users managing dozens of t
 
 Brave and Ungoogled Chromium demonstrated the lowest memory footprint, largely due to their Chromium foundation with aggressive tab sleeping mechanisms. Firefox-based browsers showed slightly higher memory usage but remained competitive. Mullvad Browser's higher consumption stems from its additional privacy features that modify network request handling.
 
-Results: CPU Usage
+Results - CPU Usage
 
 CPU consumption directly impacts battery life on laptops and system responsiveness during intensive tasks. We measured CPU usage during JavaScript-heavy page interactions using the Speedometer 3.0 benchmark suite.
 
@@ -118,7 +118,7 @@ Use the Performance API to benchmark your web applications against these browser
 ```javascript
 const performanceMark = (name) => {
   performance.mark(name);
-  console.log(`[${name}] Memory: ${(performance.memory?.usedJSHeapSize / 1048576).toFixed(2)} MB`);
+  console.log(`[${name}] Memory - ${(performance.memory?.usedJSHeapSize / 1048576).toFixed(2)} MB`);
 };
 
 // Use before and after operations
@@ -132,13 +132,13 @@ Recommendations by Use Case
 
 Choose based on your primary workflow:
 
-For general productivity: Brave offers the best balance of privacy, extension compatibility, and resource efficiency. Its ad blocker also reduces page load times significantly.
+For general productivity - Brave offers the best balance of privacy, extension compatibility, and resource efficiency. Its ad blocker also reduces page load times significantly.
 
-For maximum privacy: Mullvad Browser or LibreWolf provide harder privacy guarantees at the cost of slightly higher resource usage. These are ideal for sensitive browsing sessions.
+For maximum privacy - Mullvad Browser or LibreWolf provide harder privacy guarantees at the cost of slightly higher resource usage. These are ideal for sensitive browsing sessions.
 
-For development work: Ungoogled Chromium gives the closest experience to Chrome with full DevTools support while removing Google integration. Memory efficiency makes it excellent for tab-heavy workflows.
+For development work - Ungoogled Chromium gives the closest experience to Chrome with full DevTools support while removing Google integration. Memory efficiency makes it excellent for tab-heavy workflows.
 
-For legacy system testing: Firefox remains essential for cross-browser compatibility testing and supports unique developer features like the Firefox Profiler and WebAssembly debugger.
+For legacy system testing - Firefox remains essential for cross-browser compatibility testing and supports unique developer features like the Firefox Profiler and WebAssembly debugger.
 
 Optimization Tips
 
@@ -249,7 +249,7 @@ echo | openssl s_client -connect example.com:443 2>/dev/null | \
 
 Privacy-focused browsers often disable certain performance optimizations like QUIC optimization or connection pooling to prevent fingerprinting. This can reduce throughput by 5-15% on high-latency connections.
 
-Developer Extension Ecosystem
+Developer Extension environment
 
 Different browsers offer varying levels of extension support for development tools:
 
@@ -286,7 +286,7 @@ For security-sensitive development: LibreWolf or Mullvad, despite higher overhea
 
 For resource-constrained systems: Brave on older laptops (2GB RAM) remains functional, whereas Mullvad becomes sluggish.
 
-For multi-user systems: Firefox's profile isolation and per-profile memory management prevent one user's browsing from impacting another's.
+For multi-user systems - Firefox's profile isolation and per-profile memory management prevent one user's browsing from impacting another's.
 
 Practical Migration Path
 

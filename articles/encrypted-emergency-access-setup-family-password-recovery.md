@@ -28,9 +28,9 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Problem: The Inaccessible Digital Estate
+Step 1 - The Problem: The Inaccessible Digital Estate
 
-Scenario: You die. Your spouse discovers:
+Scenario - You die. Your spouse discovers:
 - Bank account locked (you were the sole manager)
 - Investment accounts: No access (two-factor auth on your phone)
 - Cryptocurrency wallet: Lost forever (seed phrase in your encrypted safe)
@@ -39,11 +39,11 @@ Scenario: You die. Your spouse discovers:
 
 Even with a will, it takes months to get court orders to access accounts. Cryptocurrency is lost permanently. Time-sensitive accounts (autopay, property taxes) lapse. Your family inherits financial chaos.
 
-Solution: Pre-authorize emergency access encrypted at rest, but accessible to trusted family under clear conditions.
+Solution - Pre-authorize emergency access encrypted at rest, but accessible to trusted family under clear conditions.
 
-Step 2: The Three Approaches
+Step 2 - The Three Approaches
 
-Approach 1: Password Manager Emergency Access (Easiest)
+Approach 1 - Password Manager Emergency Access (Easiest)
 
 Password managers like 1Password and Bitwarden have built-in emergency access.
 
@@ -62,7 +62,7 @@ Why this design:
 - Wait period protects against hasty decisions
 - Both gives family access AND protects your privacy
 
-Approach 2: Encrypted Document Vault (Most Private)
+Approach 2 - Encrypted Document Vault (Most Private)
 
 Store passwords in encrypted document (not shared with anyone).
 
@@ -81,7 +81,7 @@ Why this works:
 - No company/government has access
 - Can update anytime (just tell spouse about new envelope location)
 
-Approach 3: Legal Fiduciary Access (Most Formal)
+Approach 3 - Legal Fiduciary Access (Most Formal)
 
 Use lawyer + legal power of attorney structure.
 
@@ -100,14 +100,14 @@ Why this works:
 - No ambiguity about who can access what
 - Backup for password manager (if company fails)
 
-Step 3: Method 1: 1Password Emergency Access (Easiest for Most People)
+Step 3 - Method 1: 1Password Emergency Access (Easiest for Most People)
 
 1Password has built-in "emergency contact" system. This is the simplest path.
 
-Setup Process: 10 Minutes
+Setup Process - 10 Minutes
 
 ```
-Step 1: Create family vault in 1Password (not personal vault)
+Step 1 - Create family vault in 1Password (not personal vault)
   1Password home → Settings → Vaults → Create new vault
   Name: "Family Shared"
   Purpose: Critical accounts only (not every password)
@@ -125,7 +125,7 @@ Step 1: Create family vault in 1Password (not personal vault)
   - Work account passwords (employer owns them)
   - Social media passwords (revoke after death)
 
-Step 2: Grant emergency contact access
+Step 2 - Grant emergency contact access
   1Password home → Settings → Emergency Access
   Click: "Add emergency contact"
 
@@ -141,12 +141,12 @@ Step 2: Grant emergency contact access
     (After 90 days passes, emergency contact can request.
      You have 14 days to deny. If you don't respond, access granted.)
 
-Step 3: Test the setup
+Step 3 - Test the setup
   Have your spouse log into 1Password
   Show them they can see "Family Shared" vault is being protected
   (She sees "Emergency access pending" or similar)
 
-Step 4: Update your will
+Step 4 - Update your will
   Include in will: "1Password emergency access set up under [spouse name].
   All critical accounts in 'Family Shared' vault."
 ```
@@ -168,32 +168,32 @@ Spouse clicks [CLAIM ACCESS]
 Risks With 1Password Emergency Access
 
 ```
-Risk 1: You get kidnapped/injured, now incapacitated
+Risk 1 - You get kidnapped/injured, now incapacitated
   Problem: Must wait 90 days before spouse can access anything
   Solution: Also give spouse sealed envelope with 1Password master
             password (she can use it immediately if you're hospitalized)
 
-Risk 2: 1Password company goes out of business / shuts down
+Risk 2 - 1Password company goes out of business / shuts down
   Problem: Loss of access to vault
   Solution: Keep backup copy of critical info in encrypted file
 
-Risk 3: Spouse doesn't know master password
+Risk 3 - Spouse doesn't know master password
   Problem: Can't use 1Password even if emergency access granted
   Solution: Store master password in sealed envelope (see below)
 
-Risk 4: Email is compromised
+Risk 4 - Email is compromised
   Problem: Attacker could approve/deny emergency access
   Solution: Use 1Password login with biometric, not email password
 ```
 
-Step 4: Method 2: Bitwarden Emergency Access (Free Alternative)
+Step 4 - Method 2: Bitwarden Emergency Access (Free Alternative)
 
 Bitwarden is free and has emergency access similar to 1Password.
 
-Setup: 10 Minutes
+Setup - 10 Minutes
 
 ```
-Step 1: Create organization vault (Bitwarden Premium required: $10/year)
+Step 1 - Create organization vault (Bitwarden Premium required: $10/year)
   Bitwarden → Organizations → Create new organization
   Name: "Family Emergency Vault"
 
@@ -204,17 +204,17 @@ Step 1: Create organization vault (Bitwarden Premium required: $10/year)
   - Cryptocurrency seed phrase
   - 2FA recovery codes (!)
 
-Step 2: Grant emergency access to spouse
+Step 2 - Grant emergency access to spouse
   Settings → Emergency Access → Add emergency contact
 
-  Email: spouse@example.com
+  Email - spouse@example.com
   Role: Manager (can access vault)
   Access to: "Critical Accounts" collection only
 
   Activation delay: 90 days
   Confirmation delay: 14 days
 
-Step 3: Spouse accepts in her Bitwarden account
+Step 3 - Spouse accepts in her Bitwarden account
   She receives email invite to emergency access
   Clicks link, accepts
   Shows in her account as "waiting for activation"
@@ -227,21 +227,21 @@ Cost Comparison
 Bitwarden:      $10/year premium (for organization features)
                 + free option with workarounds
 
-Cost winner: Bitwarden (but fewer features)
-Convenience winner: 1Password (better UI, more options)
+Cost winner - Bitwarden (but fewer features)
+Convenience winner - 1Password (better UI, more options)
 
-Best value: Bitwarden for pure emergency access
-Best experience: 1Password for daily use + emergency access
+Best value - Bitwarden for pure emergency access
+Best experience - 1Password for daily use + emergency access
 ```
 
-Step 5: Method 3: Sealed Envelope System (Backup + Privacy)
+Step 5 - Method 3: Sealed Envelope System (Backup + Privacy)
 
 For maximum privacy and no company dependency, use encrypted document + sealed envelope.
 
-Setup: 30 Minutes
+Setup - 30 Minutes
 
 ```
-Step 1: Create encrypted document
+Step 1 - Create encrypted document
   Use: Google Docs, Word, or Notes app
   Content:
   
@@ -279,11 +279,11 @@ Step 1: Create encrypted document
 
   
 
-Step 2: Encrypt the document
+Step 2 - Encrypt the document
   If using Google Docs: Download as PDF
 
   Use: Password-protected PDF tool
-  Tool: PDFtk (free, open source) or Smallpdf.com
+  Tool - PDFtk (free, open source) or Smallpdf.com
 
   Terminal command (Mac/Linux):
   pdftk original.pdf output encrypted.pdf user_pw "MyStrongPassphrase123!"
@@ -292,7 +292,7 @@ Step 2: Encrypt the document
   Upload PDF, set password: "MyStrongPassphrase123!"
   Download encrypted PDF
 
-Step 3: Create sealed envelope with encryption password
+Step 3 - Create sealed envelope with encryption password
   On paper: Write password clearly
   "MyStrongPassphrase123!"
 
@@ -303,7 +303,7 @@ Step 3: Create sealed envelope with encryption password
   Give sealed envelope to spouse
   Instruct: "Don't open unless something happens"
 
-Step 4: Store encrypted document
+Step 4 - Store encrypted document
   Where: Safe deposit box at bank (secure, accessible by spouse via will)
   OR: Home safe, tell spouse combination
   OR: Parent's house with trusted sibling
@@ -311,7 +311,7 @@ Step 4: Store encrypted document
   Backup: Email to spouse as attachment
   (Encrypted PDF, password in sealed envelope she holds)
 
-Step 5: Write in will
+Step 5 - Write in will
   "My spouse holds a sealed envelope with encryption password
   to my emergency vault. The vault is stored in [location].
   This document contains all critical account information."
@@ -320,29 +320,29 @@ Step 5: Write in will
 What This Protects Against
 
 ```
-Scenario 1: Your email is hacked
+Scenario 1 - Your email is hacked
    Attacker can't access bank accounts
    Attacker can't decrypt emergency vault (password is sealed envelope)
    Password manager shows emergency access pending (not approved)
 
-Scenario 2: Someone breaks into your house
+Scenario 2 - Someone breaks into your house
    Safe with passwords isn't found
    Even if found, it's encrypted
    Spouse has password in sealed envelope, not visible
 
-Scenario 3: 1Password or password manager goes down
+Scenario 3 - 1Password or password manager goes down
    Sealed envelope backup still works
    Can manually access all accounts using info in vault
 
-Scenario 4: You're in accident, need account access immediately
+Scenario 4 - You're in accident, need account access immediately
    Spouse has sealed envelope
    Can decrypt vault immediately (doesn't have to wait 90 days)
    Can access all critical accounts within 30 minutes
 ```
 
-Step 6: 2FA Problem: Recovery Codes
+Step 6 - 2FA Problem: Recovery Codes
 
-Here's a critical security gap: 2FA codes. Even with password, can't access account if 2FA phone is lost.
+Here's a critical security gap - 2FA codes. Even with password, can't access account if 2FA phone is lost.
 
 Save 2FA Recovery Codes
 
@@ -351,9 +351,9 @@ Every account has recovery codes (backup codes) for 2FA. Save these.
 ```
 In 1Password Emergency Vault, add:
 
-Account: Chase Bank
-Login: patrick.j
-Password: [in 1Password]
+Account - Chase Bank
+Login - patrick.j
+Password - [in 1Password]
 
 2FA Recovery Codes:
   12345-67890
@@ -361,22 +361,22 @@ Password: [in 1Password]
   39384-29384
   [8 more codes]
 
-How to use: If you're incapacitated, spouse can
+How to use - If you're incapacitated, spouse can
 use recovery code to bypass 2FA phone requirement.
 ```
 
 Where to Find Recovery Codes
 
 ```
-Gmail: Settings → Security → 2FA Backup codes → Show codes
+Gmail - Settings → Security → 2FA Backup codes → Show codes
       (Codes start with format: XXXX XXXX XXXX)
 
-Chase Bank: Customer service, request backup codes
+Chase Bank - Customer service, request backup codes
            Must do in person or security call
 
-Apple: iCloud.com → Account settings → Recovery codes
+Apple - iCloud.com → Account settings → Recovery codes
 
-AWS: Account settings → Security → Multi-factor authentication
+AWS - Account settings → Security → Multi-factor authentication
 ```
 
 Create Backup Recovery Code Document
@@ -385,7 +385,7 @@ Create Backup Recovery Code Document
 1Password emergency vault item:
 
 ACCOUNT RECOVERY CODES
-Updated: March 20, 2026
+Updated - March 20, 2026
 
 Gmail recovery codes:
   1234 5678 9012
@@ -406,14 +406,14 @@ These are single-use. Once used, mark as consumed.
 Print a physical copy and keep with sealed envelope.
 ```
 
-Step 7: The 1Password Master Password Problem
+Step 7 - The 1Password Master Password Problem
 
 1Password vault is encrypted. If spouse has vault access but doesn't know master password, she still can't log in.
 
-Solution: Store master password securely.
+Solution - Store master password securely.
 
 ```
-Option 1: Sealed envelope (best)
+Option 1 - Sealed envelope (best)
   Write master password on paper
   Put in sealed envelope: "1Password Master Password - Emergency Use Only"
   Spouse keeps this separate from regular passwords
@@ -421,7 +421,7 @@ Option 1: Sealed envelope (best)
   Risk: Spouse must protect password (don't tell anyone)
   Benefit: Can use immediately if needed, no waiting
 
-Option 2: 1Password Trusted Contact Feature (easier)
+Option 2 - 1Password Trusted Contact Feature (easier)
   1Password: Settings → Trusted contacts
   Add spouse as trusted contact
   Can request access to vault immediately
@@ -429,7 +429,7 @@ Option 2: 1Password Trusted Contact Feature (easier)
   She doesn't see passwords until you approve or 90 days pass
   No master password needed
 
-Option 3: Write it down + lawyer
+Option 3 - Write it down + lawyer
   Give sealed envelope to lawyer
   In will: "Give this sealed envelope to my spouse if I'm incapacitated"
   Lawyer holds it securely
@@ -437,7 +437,7 @@ Option 3: Write it down + lawyer
 
 Use 1Password's built-in Trusted Contact feature (Option 2). It's designed exactly for this.
 
-Step 8: Real Implementation: A Complete Setup
+Step 8 - Real Implementation: A Complete Setup
 
 ```
 PATRICK'S SETUP (married, 2 kids, age 38)
@@ -477,11 +477,11 @@ His plan:
  - Executor can use legal authority with banks       
 
 
-Time to set up: 2 hours
-Peace of mind: Invaluable
+Time to set up - 2 hours
+Peace of mind - Invaluable
 ```
 
-Step 9: Annual Maintenance
+Step 9 - Annual Maintenance
 
 ```
 Every January:
@@ -493,7 +493,7 @@ Every January:
   6. Test: Have spouse see she still has emergency access
 ```
 
-Step 10: Warning: What NOT to Do
+Step 10 - Warning: What NOT to Do
 
 ```
  Don't use same password for everything
@@ -518,7 +518,7 @@ Step 10: Warning: What NOT to Do
  DO update will to reference emergency setup
 ```
 
-Step 11: Final Checklist
+Step 11 - Final Checklist
 
 ```
 Setup complete when you can answer YES to:

@@ -69,11 +69,11 @@ Key facts:
 - Supports export to CSV for backup
 - Available on F-Droid (Android) for accountless install
 
-Privacy verdict: Excellent. Drip is the go-to recommendation for anyone in a high-risk legal jurisdiction.
+Privacy verdict - Excellent. Drip is the go-to recommendation for anyone in a high-risk legal jurisdiction.
 
 Euki (Android/iOS)
 
-Euki is built by a reproductive health advocacy organization explicitly focused on user privacy in the post-Dobbs landscape. It includes a PIN lock and a "quick exit" button that closes the app and wipes recent session data.
+Euki is built by a reproductive health advocacy organization explicitly focused on user privacy in the post-Dobbs field. It includes a PIN lock and a "quick exit" button that closes the app and wipes recent session data.
 
 Key facts:
 - No data collected or transmitted to servers
@@ -82,7 +82,7 @@ Key facts:
 - Includes pregnancy information and symptom tracking
 - Free, no ads
 
-Privacy verdict: Excellent. Designed specifically for people concerned about legal exposure.
+Privacy verdict - Excellent. Designed specifically for people concerned about legal exposure.
 
 What to Avoid
 
@@ -99,7 +99,7 @@ Hardening a Mainstream App If You Must Use One
 If your OB or midwife requires a specific app that isn't privacy-friendly, apply these mitigations:
 
 ```bash
-Android: Use a work profile to isolate the app
+Android - Use a work profile to isolate the app
 Install Shelter from F-Droid to create a work profile
 
 Revoke unnecessary permissions via adb
@@ -133,12 +133,12 @@ Requesting Data Deletion
 Most apps in the US and EU must honor data deletion requests under CCPA and GDPR. Template message:
 
 ```
-Subject: Data Deletion Request. [Your Username or Email]
+Subject - Data Deletion Request. [Your Username or Email]
 
 I am requesting immediate deletion of all personal data associated
 with my account under [CCPA / GDPR Article 17].
 
-This includes: all profile data, tracked health events, location
+This includes - all profile data, tracked health events, location
 data, usage logs, and any derived inferences. Please confirm
 deletion within the required timeframe.
 ```

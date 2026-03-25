@@ -49,11 +49,11 @@ df -h
 
 AdGuard Home requires approximately 100MB of storage. If your device has limited space, consider using an USB drive for additional storage.
 
-Step 1: Install AdGuard Home on GL-Inet
+Step 1 - Install AdGuard Home on GL-Inet
 
 GL-Inet routers running firmware version 3.x or later include application support through the web interface. The simplest installation method uses the built-in plugin system.
 
-Method 1: Web Interface Installation
+Method 1 - Web Interface Installation
 
 1. Access your router's admin panel at `192.168.8.1` (default)
 2. Navigate to Applications → AdGuard Home
@@ -61,7 +61,7 @@ Method 1: Web Interface Installation
 4. Configure the listening interface (typically `0.0.0.0` for all interfaces)
 5. Set the upstream DNS servers (see configuration section below)
 
-Method 2: Command-Line Installation
+Method 2 - Command-Line Installation
 
 For advanced users preferring terminal access:
 
@@ -79,7 +79,7 @@ Configure initialization
 
 After installation, access the AdGuard Home web interface at `192.168.8.1:3000` (or the port you configured during setup).
 
-Step 2: Configure Upstream DNS Servers
+Step 2 - Configure Upstream DNS Servers
 
 AdGuard Home requires upstream DNS resolvers to forward legitimate queries. For privacy-conscious users, consider these options:
 
@@ -108,7 +108,7 @@ https://dns.cloudflare.com/dns-query
 https://dns.quad9.net/dns-query
 ```
 
-Step 3: Configure Client DNS
+Step 3 - Configure Client DNS
 
 After setting up AdGuard Home, configure your router to use it for all DHCP-assigned DNS. In the GL-Inet web interface:
 
@@ -118,7 +118,7 @@ After setting up AdGuard Home, configure your router to use it for all DHCP-assi
 
 This configuration ensures all devices connected to your router use the local DNS resolver for their queries.
 
-Step 4: Manage Block Lists
+Step 4 - Manage Block Lists
 
 AdGuard Home ships with default block lists, but you can add more lists for better coverage. Navigate to Filters → DNS Blocklists and add these reputable sources:
 
@@ -136,7 +136,7 @@ Update your block lists regularly by clicking Update in the web interface or run
 adguardhome --update
 ```
 
-Step 5: Set Up Pi-hole on Separate Hardware
+Step 5 - Set Up Pi-hole on Separate Hardware
 
 For users seeking more filtering or running additional network services, Pi-hole provides a mature alternative. Install Pi-hole on a Raspberry Pi or virtual machine, then configure your GL-Inet router to use it.
 
@@ -165,7 +165,7 @@ nslookup doubleclick.net 192.168.8.1
 
 A blocked response shows the NXDOMAIN status. In AdGuard Home, check the Query Log to see blocked requests in real-time.
 
-Step 6: Use Encrypted DNS
+Step 6 - Use Encrypted DNS
 
 For complete privacy, configure your DNS resolver to use encrypted protocols. AdGuard Home supports DNS-over-HTTPS (DoH), DNS-over-TLS (DoT), and DNS-over-QUIC.
 
@@ -204,7 +204,7 @@ Ensure your router has internet connectivity and can reach the block list URLs. 
 curl -I https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
 ```
 
-Step 7: Practical Applications for Travel Routers
+Step 7 - Practical Applications for Travel Routers
 
 Deploying DNS blocking on a travel router provides consistent protection across all your devices. When staying at hotels or using public WiFi, connect your laptop, phone, and tablet to your personal travel router instead of the venue's network. Your DNS queries remain private, and advertising domains get blocked regardless of the upstream network's configuration.
 
@@ -227,7 +227,7 @@ Benchmark DNS query time
 Before/after adding lists
 dig @192.168.8.1 google.com +stats
 
-Expected overhead: <50ms per query with large filter lists
+Expected overhead - <50ms per query with large filter lists
 ```
 
 Very large filter lists (millions of rules) can introduce latency. Select lists balancing coverage and performance.
@@ -244,7 +244,7 @@ Block Instagram tracking infrastructure
 0.0.0.0 instagram.com
 0.0.0.0 *.instagram.com
 
-Block TikTok ecosystem
+Block TikTok environment
 0.0.0.0 tiktok.com
 0.0.0.0 *.tiktok.com
 0.0.0.0 bytedance.com
@@ -261,7 +261,7 @@ Custom lists let you block services specific to your organization or threat mode
 
 Multi-Device Configuration and Testing
 
-DNS filtering effectiveness depends on proper device configuration. Test across your device ecosystem:
+DNS filtering effectiveness depends on proper device configuration. Test across your device environment:
 
 Device-Specific DNS Settings
 
@@ -277,7 +277,7 @@ EOF
 
 Android - Private DNS (system-wide)
 Settings → System → Advanced → Private DNS
-Server hostname: router.local (or IP)
+Server hostname - router.local (or IP)
 
 iOS - DNS over HTTPS configuration
 Settings → Wi-Fi → Info icon → DNS → Configure DNS
@@ -318,8 +318,8 @@ Dual DNS Resolver Setup
 
 ```bash
 Configure secondary DNS resolver on different host
-Primary: 192.168.8.1 (AdGuard on router)
-Secondary: 192.168.8.100 (Pi-hole on Raspberry Pi)
+Primary - 192.168.8.1 (AdGuard on router)
+Secondary - 192.168.8.100 (Pi-hole on Raspberry Pi)
 
 Router DHCP configuration
 uci set dhcp.@dnsmasq[0].server='192.168.8.1'

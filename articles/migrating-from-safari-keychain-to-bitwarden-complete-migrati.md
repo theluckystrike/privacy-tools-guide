@@ -30,7 +30,7 @@ For developers comfortable with command-line tools, several approaches exist:
 2. Python scripts for parsing Keychain exports
 3. CSV conversion workflows for Bitwarden import
 
-Method 1: Using the macOS Security Command
+Method 1 - Using the macOS Security Command
 
 The `security` command provides access to Keychain data programmatically. Create a script to extract all Safari passwords:
 
@@ -57,7 +57,7 @@ done
 
 This script queries the login Keychain for Safari credentials and formats them as CSV.
 
-Method 2: Python-Based Extraction with Keyring
+Method 2 - Python-Based Extraction with Keyring
 
 For more reliable extraction, use Python with the `keyring` library:
 
@@ -131,7 +131,7 @@ Install dependencies with:
 pip install keyring
 ```
 
-Method 3: Using Brett Terpstra's Export Script
+Method 3 - Using Brett Terpstra's Export Script
 
 Many macOS users rely on Brett Terpstra's [Safari Password Exporter](https://github.com/tmestd/Safari-Password-Exporter) script, which provides a GUI for Keychain extraction. For command-line enthusiasts, the underlying mechanism works similarly.
 

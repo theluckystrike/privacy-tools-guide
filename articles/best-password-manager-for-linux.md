@@ -34,7 +34,7 @@ As a developer, you also need to consider how your password manager integrates w
 
 Top Password Manager Options for Linux
 
-Bitwarden: Best Cross-Platform Solution
+Bitwarden - Best Cross-Platform Solution
 
 Bitwarden offers one of the most complete Linux experiences among cloud-based password managers. The official desktop application provides a native experience, or you can use the CLI tool for terminal-based workflows.
 
@@ -85,7 +85,7 @@ services:
       - DOMAIN=https://your-domain.com
 ```
 
-KeePassXC: Best Offline Option
+KeePassXC - Best Offline Option
 
 If you prefer local storage without cloud synchronization, KeePassXC remains the gold standard for Linux. It stores everything in an encrypted database file that you control completely.
 

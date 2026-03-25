@@ -78,7 +78,7 @@ options {
     dir_perm(0750);
 };
 
-TLS source: receive logs from remote clients
+TLS source - receive logs from remote clients
 source s_tls_clients {
     syslog(
         transport("tls")
@@ -97,7 +97,7 @@ source s_local {
     internal();
 };
 
-Destination: separate file per remote host
+Destination - separate file per remote host
 destination d_remote_host {
     file(
         "/var/log/remote/${HOST}/${YEAR}-${MONTH}-${DAY}.log"
@@ -108,7 +108,7 @@ destination d_remote_host {
     );
 };
 
-Destination: JSON output for log analysis
+Destination - JSON output for log analysis
 destination d_json {
     file(
         "/var/log/remote/all-json/${YEAR}-${MONTH}-${DAY}.json"
@@ -182,7 +182,7 @@ Verify logs are arriving
 tail -f /var/log/remote/web01/$(date +%Y-%m-%d).log
 ```
 
-Advanced: Pattern Database
+Advanced - Pattern Database
 
 syslog-ng can classify log messages using pattern databases:
 

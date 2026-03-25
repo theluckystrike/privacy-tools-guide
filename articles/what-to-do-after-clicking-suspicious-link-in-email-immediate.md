@@ -246,7 +246,7 @@ rm -rf ~/Library/Application\ Support/Google/Chrome/Default/Local\ Storage/
 
 Reset Browser Settings
 
-Restore browser settings to defaults to remove any injected scripts or modified configurations. In Chrome: Settings → Reset and cleanup → Restore settings to their original defaults.
+Restore browser settings to defaults to remove any injected scripts or modified configurations. In Chrome - Settings → Reset and cleanup → Restore settings to their original defaults.
 
 Update All Software
 
@@ -260,8 +260,8 @@ Linux (Debian/Ubuntu)
 sudo apt update && sudo apt upgrade -y
 
 Update browser
-Chrome: Visit chrome://settings/help
-Firefox: Visit about:support
+Chrome - Visit chrome://settings/help
+Firefox - Visit about:support
 ```
 
 Prevention for the Future

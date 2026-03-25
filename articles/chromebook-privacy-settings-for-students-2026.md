@@ -25,9 +25,9 @@ Table of Contents
 - [Network-Level Privacy](#network-level-privacy)
 - [Extension Permission Management](#extension-permission-management)
 - [Management Console Policies (For IT Administrators)](#management-console-policies-for-it-administrators)
-- [Advanced: Command-Line Privacy Tools](#advanced-command-line-privacy-tools)
+- [Advanced - Command-Line Privacy Tools](#advanced-command-line-privacy-tools)
 - [Privacy Checklist for Students](#privacy-checklist-for-students)
-- [Application-Level Privacy: Going Deeper](#application-level-privacy-going-deeper)
+- [Application-Level Privacy - Going Deeper](#application-level-privacy-going-deeper)
 - [Advanced Privacy with Linux Container](#advanced-privacy-with-linux-container)
 - [Privacy Monitoring Script](#privacy-monitoring-script)
 
@@ -164,7 +164,7 @@ These settings disable usage statistics, crash reporting, and variation experime
 
 Students using personal Chromebooks can verify applied policies at `chrome://policy`. Look for "Policy forcing" entries that cannot be overridden.
 
-Advanced: Command-Line Privacy Tools
+Advanced - Command-Line Privacy Tools
 
 Power users can use ChromeOS's Linux container for additional privacy tooling.
 
@@ -207,7 +207,7 @@ Review these settings periodically:
 - [ ] Disable "Make searches and browsing better"
 - [ ] Review site permissions (camera, microphone, location)
 
-Application-Level Privacy: Going Deeper
+Application-Level Privacy - Going Deeper
 
 Beyond browser and OS settings, student workflows often involve third-party web applications that collect data independently. Managing privacy at the application level requires strategic choices.
 
@@ -233,7 +233,7 @@ These indicate data collection for analytics or profiling
 For mandatory academic applications you cannot avoid, implement isolation strategies:
 
 ```bash
-Chrome: Create separate profile for sensitive academic work
+Chrome - Create separate profile for sensitive academic work
 Settings → Profiles → Add Profile
 Use separate profile specifically for:
 - Learning management system login
@@ -250,19 +250,19 @@ Building a Privacy-First Workflow
 
 Students balancing convenience with privacy can adopt tiered strategies:
 
-Tier 1: Maximum Privacy (for sensitive work)
+Tier 1 - Maximum Privacy (for sensitive work)
 - Separate Chrome profile
 - Isolated from other browsing
 - No auto-fill, no saved passwords
 - VPN required for access
 
-Tier 2: Standard Privacy (for general browsing)
+Tier 2 - Standard Privacy (for general browsing)
 - Default Chrome settings with hardening
 - Blocks third-party cookies
 - Custom DNS configured
 - Extensions audited
 
-Tier 3: Minimal Privacy (for services requiring it)
+Tier 3 - Minimal Privacy (for services requiring it)
 - Separate profile for services that refuse privacy settings
 - Canvas LMS, legacy systems that demand Flash
 - Isolated from main work
@@ -273,13 +273,13 @@ Example workflow configuration:
 #!/bin/bash
 Setup multiple Chrome profiles with different privacy levels
 
-Profile 1: Secure Academic Work
+Profile 1 - Secure Academic Work
 mkdir -p ~/.config/chrome/ProfileSecure
 
-Profile 2: General Browsing
+Profile 2 - General Browsing
 mkdir -p ~/.config/chrome/ProfileGeneral
 
-Profile 3: Required Services
+Profile 3 - Required Services
 mkdir -p ~/.config/chrome/ProfileRequired
 
 Launch Chrome with specific profile:
@@ -358,12 +358,12 @@ Setting Up a Local Privacy Proxy
 A proxy running on your Chromebook can inspect and block requests:
 
 ```bash
-Install mitmproxy: intercept all HTTPS traffic for inspection
+Install mitmproxy - intercept all HTTPS traffic for inspection
 sudo apt install -y mitmproxy
 
 Configure Chrome to use localhost proxy:
 Settings → Advanced → System → Open your computer's proxy settings
-Set HTTP proxy: 127.0.0.1:8080
+Set HTTP proxy - 127.0.0.1:8080
 
 Launch mitmproxy
 mitmproxy -p 8080

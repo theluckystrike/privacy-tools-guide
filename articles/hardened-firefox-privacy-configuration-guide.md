@@ -16,7 +16,7 @@ intent-checked: true
 
 {% raw %}
 
-Firefox is the only major browser where privacy hardening is practical and effective. Unlike Chrome (owned by ad company Google) or Safari (locked to Apple ecosystem), Firefox is:
+Firefox is the only major browser where privacy hardening is practical and effective. Unlike Chrome (owned by ad company Google) or Safari (locked to Apple environment), Firefox is:
 
 1. Open-source: Community audits the code
 2. Private by default: No forced Google sync, no ads
@@ -43,7 +43,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Privacy Baseline: What Firefox Leaks by Default
+Step 1 - Privacy Baseline: What Firefox Leaks by Default
 
 Test your default Firefox at [browserleaks.com](https://browserleaks.com):
 
@@ -55,7 +55,7 @@ Default Firefox reveals:
 - Referrer headers: Sites you came from
 - Third-party cookies: Trackers follow you across web
 
-Step 2: Part 1: Essential about:config Settings
+Step 2 - Part 1: Essential about:config Settings
 
 Open Firefox. Type `about:config` in address bar. Press Enter.
 
@@ -111,7 +111,7 @@ network.cookie.cookieBehavior = 4
 
 (Values: 0=allow all, 1=third-party only, 2=none, 3=no tracking cookies, 4=third-party except visited)
 
-Set to value 4: Block third-party cookies except those on sites you've visited.
+Set to value 4 - Block third-party cookies except those on sites you've visited.
 
 Disable cookie tracking in private mode:
 
@@ -133,7 +133,7 @@ This:
 - Disables WebGL fingerprinting
 - Standardizes user-agent across sites
 
-Downside: Some websites break (especially financial sites). Accept this tradeoff for privacy.
+Downside - Some websites break (especially financial sites). Accept this tradeoff for privacy.
 
 Disable WebGL (GPU fingerprinting):
 
@@ -226,13 +226,13 @@ privacy.clearOnShutdown.cookies = true
 privacy.clearOnShutdown.history = true
 ```
 
-Step 3: Part 2: Essential Extensions
+Step 3 - Part 2: Essential Extensions
 
 Firefox extensions are the second layer of privacy hardening.
 
 1. uBlock Origin (Essential)
 
-What it does: Ad and tracker blocker. Blocks ads, malware sites, and tracking domains using curated filter lists.
+What it does - Ad and tracker blocker. Blocks ads, malware sites, and tracking domains using curated filter lists.
 
 Installation:
 
@@ -272,9 +272,9 @@ no-strict3p-exception: youtube.com|youtu.be
 
 2. Privacy Badger (Essential)
 
-What it does: Auto-learns which trackers follow you and blocks them.
+What it does - Auto-learns which trackers follow you and blocks them.
 
-Installation: [addons.mozilla.org/privacy-badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/)
+Installation - [addons.mozilla.org/privacy-badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/)
 
 Configuration:
 
@@ -286,19 +286,19 @@ Privacy Badger learns from your browsing. Over 1-2 weeks, it identifies trackers
 
 3. Decentraleyes (Recommended)
 
-What it does: Prevents Content Delivery Networks (CDNs) from tracking you by hosting common libraries locally.
+What it does - Prevents Content Delivery Networks (CDNs) from tracking you by hosting common libraries locally.
 
 Facebook Pixel is loaded on thousands of websites via Cloudflare CDN. CDN logs your IP, identifies you across sites. Decentraleyes serves Pixel locally instead.
 
-Installation: [addons.mozilla.org/decentraleyes](https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/)
+Installation - [addons.mozilla.org/decentraleyes](https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/)
 
-Configuration: Default settings are fine. No setup needed.
+Configuration - Default settings are fine. No setup needed.
 
 4. NoScript (Advanced Users)
 
-What it does: Blocks JavaScript by default. You whitelist trusted sites.
+What it does - Blocks JavaScript by default. You whitelist trusted sites.
 
-Installation: [addons.mozilla.org/noscript](https://addons.mozilla.org/en-US/firefox/addon/noscript/)
+Installation - [addons.mozilla.org/noscript](https://addons.mozilla.org/en-US/firefox/addon/noscript/)
 
 Many websites require JavaScript. This is a power-user tool.
 
@@ -317,9 +317,9 @@ Tracker domain → Block (never whitelist)
 
 5. HTTPS Everywhere (Fallback)
 
-What it does: Forces HTTPS on websites that support it.
+What it does - Forces HTTPS on websites that support it.
 
-Installation: [addons.mozilla.org/https-everywhere](https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/)
+Installation - [addons.mozilla.org/https-everywhere](https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/)
 
 Modern Firefox has HTTPS-Only mode (about:config setting above). This is redundant but doesn't hurt.
 
@@ -329,7 +329,7 @@ Extensions to AVOID
 - Ghostery: Corporate tracking company
 - Avast/AVG extensions: Privacy-invasive VPN providers
 
-Step 4: Part 3: arkenfox user.js
+Step 4 - Part 3: arkenfox user.js
 
 arkenfox is a community-maintained user.js file, a hardening profile that applies 100+ privacy and security settings at once.
 
@@ -339,7 +339,7 @@ A `user.js` file in your Firefox profile applies settings automatically on start
 
 Installation
 
-Step 1: Find your Firefox profile folder
+Step 1 - Find your Firefox profile folder
 
 On macOS:
 
@@ -359,7 +359,7 @@ On Windows:
 %APPDATA%\Mozilla\Firefox\Profiles\RANDOMSTRING.default-release\
 ```
 
-Step 2: Download arkenfox
+Step 2 - Download arkenfox
 
 Visit [github.com/arkenfox/user.js](https://github.com/arkenfox/user.js)
 
@@ -367,11 +367,11 @@ Click "Code" → "Download ZIP"
 
 Unzip. Open the folder.
 
-Step 3: Copy user.js to Firefox profile
+Step 3 - Copy user.js to Firefox profile
 
 Copy the `user.js` file from the downloaded arkenfox folder into your Firefox profile folder (found in Step 1).
 
-Step 4: Restart Firefox
+Step 4 - Restart Firefox
 
 Close and reopen Firefox.
 
@@ -416,26 +416,26 @@ After installation, test privacy at [browserleaks.com](https://browserleaks.com)
 Before arkenfox:
 
 ```
-Canvas fingerprint: Unique ID
-WebGL fingerprint: Unique ID
-IP address: Real IP
-User-Agent: Windows 10, Firefox 124
-Timezone: EST
+Canvas fingerprint - Unique ID
+WebGL fingerprint - Unique ID
+IP address - Real IP
+User-Agent - Windows 10, Firefox 124
+Timezone - EST
 ```
 
 After arkenfox:
 
 ```
-Canvas fingerprint: Randomized (different each page load)
-WebGL fingerprint: Disabled
-IP address: No WebRTC leak (VPN IP if using VPN)
-User-Agent: Standardized (all look identical)
-Timezone: UTC
+Canvas fingerprint - Randomized (different each page load)
+WebGL fingerprint - Disabled
+IP address - No WebRTC leak (VPN IP if using VPN)
+User-Agent - Standardized (all look identical)
+Timezone - UTC
 ```
 
-Step 5: Part 4: DNS Privacy
+Step 5 - Part 4: DNS Privacy
 
-Default DNS: Your ISP's DNS server logs all domains you visit.
+Default DNS - Your ISP's DNS server logs all domains you visit.
 
 You visit `medical-clinic.com` → ISP logs it → Can be subpoenaed in legal cases.
 
@@ -460,7 +460,7 @@ network.trr.uri = https://mozilla.cloudflare-dns.com/dns-query
 
 NextDNS (Recommended)
 
-Cost: Free tier (300k queries/month); $1.99/month unlimited
+Cost - Free tier (300k queries/month); $1.99/month unlimited
 
 What it does:
 
@@ -484,7 +484,7 @@ network.trr.mode = 2
 
 6. Test at [nextdns.io/dash](https://nextdns.io/dash) → see blocked queries
 
-Step 6: Part 5: VPN Integration (Optional)
+Step 6 - Part 5: VPN Integration (Optional)
 
 Firefox doesn't have built-in VPN. For IP privacy, use a VPN + Firefox together.
 
@@ -501,7 +501,7 @@ Setup:
 3. Firefox traffic routes through VPN automatically
 4. Test IP at [ipleak.net](https://ipleak.net) → Should show VPN IP, not real IP
 
-Step 7: Part 6: Hardened Profile Checklist
+Step 7 - Part 6: Hardened Profile Checklist
 
 Use this checklist to verify your Firefox is hardened:
 
@@ -544,17 +544,17 @@ Verify Privacy:
 - [ ] WebGL: Disabled or randomized
 - [ ] WebRTC leak: None
 
-Step 8: Real-World Performance Impact
+Step 8 - Real-World Performance Impact
 
 After hardening, expect:
 
-- Speed: 5-10% slower (minor). Ad/tracker blocking saves time loading ads.
+- Speed - 5-10% slower (minor). Ad/tracker blocking saves time loading ads.
 - Breakage: 10-15% of websites have issues
  - Some banking sites require JavaScript
  - Solution: Whitelist in NoScript
 - Memory usage: 10-15% higher (more extensions)
 
-Step 9: Perform Maintenance
+Step 9 - Perform Maintenance
 
 Monthly:
 
@@ -566,7 +566,7 @@ Weekly:
 - Review [nextdns.io/dash](https://nextdns.io/dash) for blocked domains
 - Adjust if legitimate sites blocked
 
-Step 10: Limitations
+Step 10 - Limitations
 
 Firefox hardening prevents *tracking*, but doesn't prevent:
 
@@ -575,7 +575,7 @@ Firefox hardening prevents *tracking*, but doesn't prevent:
 - Account-based tracking: If logged into Gmail/Facebook, Google/Facebook track you regardless
 - JavaScript exploits: JavaScript can still extract information
 
-Step 11: Recommendations
+Step 11 - Recommendations
 
 1. Start small: Set about:config privacy options first (easiest)
 2. Add extensions: Install uBlock + Privacy Badger (no breaking changes)
@@ -583,9 +583,9 @@ Step 11: Recommendations
 4. Use DNS encryption: NextDNS Free tier (no cost, high value)
 5. VPN optional: Add VPN if ISP privacy is concern
 
-For average user: Steps 1 + 2 + 4 = 80% privacy gain with minimal breakage.
+For average user - Steps 1 + 2 + 4 = 80% privacy gain with minimal breakage.
 
-For privacy-focused user: All steps = maximum privacy, accept breakage, whitelist sites as needed.
+For privacy-focused user - All steps = maximum privacy, accept breakage, whitelist sites as needed.
 
 Troubleshooting
 

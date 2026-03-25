@@ -65,7 +65,7 @@ auth SHA256
 
 The TCP port 443 configuration often succeeds where other ports fail, as it mimics standard HTTPS traffic and passes through most corporate firewalls.
 
-DNS Configuration: The Often-Overlooked Factor
+DNS Configuration - The Often-Overlooked Factor
 
 Healthcare portals frequently validate DNS resolution alongside IP addresses. Your VPN must handle DNS correctly to avoid leaks that reveal your actual location.
 
@@ -245,7 +245,7 @@ If you're traveling and need urgent healthcare access, some portals support temp
 
 Alternatively, keep a backup access method, authenticating through a mobile app (often less strict than web portals) or requesting temporary password resets valid from any location.
 
-Advanced Troubleshooting: Certificate Pinning
+Advanced Troubleshooting - Certificate Pinning
 
 Some advanced healthcare systems implement certificate pinning, they validate not just that a certificate is valid, but that it's specifically the certificate they expect. VPN tunneling can break certificate pinning by introducing intermediate proxies.
 

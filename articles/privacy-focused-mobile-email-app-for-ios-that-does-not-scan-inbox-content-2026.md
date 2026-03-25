@@ -20,15 +20,15 @@ Most mainstream email apps scan your inbox content to serve targeted advertiseme
 Table of Contents
 
 - [Why Email App Privacy Matters](#why-email-app-privacy-matters)
-- [Proton Mail: Zero-Access Encryption Pioneer](#proton-mail-zero-access-encryption-pioneer)
-- [Tutanota: German Precision for Privacy](#tutanota-german-precision-for-privacy)
-- [Hey Email: Privacy with Premium Features](#hey-email-privacy-with-premium-features)
-- [Canary Mail: Feature-Rich Privacy](#canary-mail-feature-rich-privacy)
+- [Proton Mail - Zero-Access Encryption Pioneer](#proton-mail-zero-access-encryption-pioneer)
+- [Tutanota - German Precision for Privacy](#tutanota-german-precision-for-privacy)
+- [Hey Email - Privacy with Premium Features](#hey-email-privacy-with-premium-features)
+- [Canary Mail - Feature-Rich Privacy](#canary-mail-feature-rich-privacy)
 - [Comparing Privacy-Focused iOS Email Apps](#comparing-privacy-focused-ios-email-apps)
 - [Additional Privacy-Focused Options](#additional-privacy-focused-options)
 - [Making Your Choice](#making-your-choice)
 - [Implementation Tips](#implementation-tips)
-- [Technical Deep Dive: Zero-Access Encryption Architecture](#technical-deep detailed look-zero-access-encryption-architecture)
+- [Technical Deep Dive - Zero-Access Encryption Architecture](#technical-deep detailed look-zero-access-encryption-architecture)
 - [Email Metadata Privacy Considerations](#email-metadata-privacy-considerations)
 - [Migration Checklist](#migration-checklist)
 
@@ -40,7 +40,7 @@ The problem is more widespread than most users realize. Many popular email apps 
 
 Choosing an email app that doesn't scan your inbox means your communications remain private. The apps recommended in this guide either don't include advertising at all, operate under strict privacy policies, or are built on encryption-first principles that make content scanning technically impossible.
 
-Proton Mail: Zero-Access Encryption Pioneer
+Proton Mail - Zero-Access Encryption Pioneer
 
 Proton Mail stands as one of the most trusted names in privacy-focused email. Based in Switzerland, the service operates under some of the world's strongest privacy laws and has built its entire reputation on user privacy.
 
@@ -61,9 +61,9 @@ For iOS, the Proton Mail app provides a clean, intuitive interface that doesn't 
 
 Considerations
 
-While Proton Mail offers exceptional privacy, free accounts have limited storage. The premium plans provide additional features and storage. Additionally, the encrypted ecosystem means non-Proton recipients may find password-protected emails slightly less convenient to access.
+While Proton Mail offers exceptional privacy, free accounts have limited storage. The premium plans provide additional features and storage. Additionally, the encrypted environment means non-Proton recipients may find password-protected emails slightly less convenient to access.
 
-Tutanota: German Precision for Privacy
+Tutanota - German Precision for Privacy
 
 Tutanota is another excellent privacy-focused email service based in Germany, operating under strict EU privacy regulations including GDPR. The service has built a dedicated following among privacy enthusiasts who appreciate its commitment to transparency and security.
 
@@ -86,7 +86,7 @@ Trade-offs to Consider
 
 Tutanota's interface differs from mainstream email clients, which may require a slight learning curve. Their search functionality works differently than Gmail or Outlook because content is encrypted on their servers, you can only search emails that have been synced to your device.
 
-Hey Email: Privacy with Premium Features
+Hey Email - Privacy with Premium Features
 
 Hey Email takes a different approach to privacy. Rather than positioning itself primarily as a security tool, Hey emphasizes a premium email experience while maintaining strong privacy commitments.
 
@@ -107,7 +107,7 @@ The Privacy Balance
 
 Hey operates from the United States, which means it's subject to different legal frameworks than Swiss or German services. However, the company has strong privacy policies and has proven willing to resist government requests when appropriate. For users who want privacy without fully embracing encrypted email ecosystems, Hey represents a balanced choice.
 
-Canary Mail: Feature-Rich Privacy
+Canary Mail - Feature-Rich Privacy
 
 Canary Mail positions itself as a privacy-focused email app that doesn't sacrifice features. It offers end-to-end encryption support across multiple email providers while maintaining a modern, full-featured interface.
 
@@ -153,9 +153,9 @@ Desktop Considerations
 
 For developers and power users who need email on multiple devices, consider:
 
-Thunderbird with Enigmail: Thunderbird is open source and works with any IMAP provider. The Enigmail extension adds OpenPGP encryption, allowing encrypted communication with any OpenPGP-compatible recipient.
+Thunderbird with Enigmail - Thunderbird is open source and works with any IMAP provider. The Enigmail extension adds OpenPGP encryption, allowing encrypted communication with any OpenPGP-compatible recipient.
 
-Evolution (GNOME): Open source GNOME email client with native OpenPGP support and no built-in tracking.
+Evolution (GNOME) - Open source GNOME email client with native OpenPGP support and no built-in tracking.
 
 Making Your Choice
 
@@ -190,7 +190,7 @@ When switching to a privacy-focused email app, consider these practical steps:
 
 Making the transition takes time, but the privacy benefits are well worth the effort. Your inbox contains some of your most sensitive information, protecting it should be a priority, and these apps make it possible without sacrificing the convenience of mobile email access.
 
-Technical Deep Dive: Zero-Access Encryption Architecture
+Technical Deep Dive - Zero-Access Encryption Architecture
 
 For developers and power users understanding how zero-access encryption actually works:
 

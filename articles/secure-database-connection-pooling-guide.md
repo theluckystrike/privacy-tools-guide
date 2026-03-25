@@ -26,7 +26,7 @@ Why Pooler Security Matters
 
 ---
 
-Part 1: PgBouncer Setup
+Part 1 - PgBouncer Setup
 
 Install PgBouncer
 
@@ -189,7 +189,7 @@ database | user | cl_active | cl_waiting | sv_active | sv_idle | maxwait
 
 ---
 
-Part 2: HikariCP (Java/Spring Boot)
+Part 2 - HikariCP (Java/Spring Boot)
 
 HikariCP is the default connection pool for Spring Boot since 2.0.
 
@@ -257,7 +257,7 @@ public class DataSourceConfig {
 
 ---
 
-Part 3: Connection Limit Enforcement at PostgreSQL
+Part 3 - Connection Limit Enforcement at PostgreSQL
 
 Even with a pooler, set limits at the database layer:
 

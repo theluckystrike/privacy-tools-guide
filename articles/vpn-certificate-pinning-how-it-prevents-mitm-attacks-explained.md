@@ -103,7 +103,7 @@ openssl x509 -in server.crt -noout -pubkey > server_pubkey.pem
 
 Generate SHA256 hash of the public key
 openssl pkey -pubin -in server_pubkey.pem -outform DER | openssl dgst -sha256 -hex
-Output: (stdin)= a1b2c3d4e5f6... (this is your pin)
+Output - (stdin)= a1b2c3d4e5f6... (this is your pin)
 ```
 
 Add the pin to your OpenVPN client configuration:
@@ -164,7 +164,7 @@ Attempt connection with forged certificate
 openssl s_client -connect localhost:1194 \
     -cert test_cert.pem -key test_key.pem
 
-Expected result: connection rejected with certificate verification error
+Expected result - connection rejected with certificate verification error
 ```
 
 For production testing, use tools like mitmproxy in a controlled environment:
@@ -228,20 +228,20 @@ Run this monitoring script as a daily cron job to detect if any unauthorized cer
 
 Common Certificate Pinning Mistakes
 
-Mistake 1: Pinning to the end-entity certificate
+Mistake 1 - Pinning to the end-entity certificate
 If you pin to the actual server certificate and rotate certificates annually, your VPN will break after rotation. Instead, pin to the intermediate CA certificate or the public key, which may remain constant across certificate rotations.
 
-Mistake 2: Not updating pins during certificate rotation
+Mistake 2 - Not updating pins during certificate rotation
 Even if you pin to the intermediate CA, you must update your client applications when the CA changes. Distribute updates before certificate expiration to prevent service disruption.
 
-Mistake 3: Using weak hash algorithms
+Mistake 3 - Using weak hash algorithms
 Always use SHA-256 or stronger for certificate hashes. SHA-1 is cryptographically broken and should not be used for security-critical applications.
 
 Test your VPN's security periodically. Tools and techniques exist to verify that your VPN properly validates server certificates and rejects invalid connections, helping ensure the pinning is actually functioning as expected.
 
 ---
 
-Disclaimer: This article is for informational purposes only and does not constitute security advice. Security practices should be evaluated based on your specific threat model and requirements.
+Disclaimer - This article is for informational purposes only and does not constitute security advice. Security practices should be evaluated based on your specific threat model and requirements.
 
 
 Frequently Asked Questions

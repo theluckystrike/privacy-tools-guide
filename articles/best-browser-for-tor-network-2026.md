@@ -30,16 +30,16 @@ Use Tor Browser for the most secure and recommended option with integrated priva
 
 Table of Contents
 
-- [Tor Browser: The Official Implementation](#tor-browser-the-official-implementation)
+- [Tor Browser - The Official Implementation](#tor-browser-the-official-implementation)
 - [Using the Tor SOCKS Proxy with Other Browsers](#using-the-tor-socks-proxy-with-other-browsers)
 - [Verifying Tor Connectivity Programmatically](#verifying-tor-connectivity-programmatically)
 - [Onion Services and Hidden Web Applications](#onion-services-and-hidden-web-applications)
 - [Performance Considerations](#performance-considerations)
-- [Advanced: Tor Control Protocol Integration](#advanced-tor-control-protocol-integration)
+- [Advanced - Tor Control Protocol Integration](#advanced-tor-control-protocol-integration)
 - [Security Recommendations](#security-recommendations)
 - [Related Reading](#related-reading)
 
-Tor Browser: The Official Implementation
+Tor Browser - The Official Implementation
 
 Tor Browser remains the most recommended option for accessing the Tor network. It is built on Firefox ESR with privacy-hardened configurations and includes the Tor daemon (tor) integrated directly into the application.
 
@@ -70,7 +70,7 @@ Security Settings for Developers
 Tor Browser includes several security levels accessible through the shield icon. For maximum security, use the "Safest" setting, which disables JavaScript and prevents certain API access:
 
 ```
-Security Level: Safest
+Security Level - Safest
 - JavaScript disabled by default
 - SVG rendering blocked
 - WebGL disabled
@@ -119,7 +119,7 @@ Install and configure proxychains
 sudo apt install proxychains4
 
 Edit /etc/proxychains4.conf
-Set: socks5 127.0.0.1 9050
+Set - socks5 127.0.0.1 9050
 
 Use with any command-line tool
 proxychains4 curl https://check.torproject.org/api/ip
@@ -224,7 +224,7 @@ SocksPort 9051 IsolateClientAddr
 
 Assigning each application to its own SOCKS port with isolation flags means that connections to different destinations use different Tor circuits, even if they happen at the same time.
 
-Advanced: Tor Control Protocol Integration
+Advanced - Tor Control Protocol Integration
 
 For advanced use cases, interact with Tor programmatically using the control protocol:
 
@@ -318,5 +318,5 @@ Related Articles
 - [How to Use Tor Browser Safely](/tor-browser-safe-usage-guide)
 - [Tor Browser Captcha Issues Workarounds 2026](/tor-browser-captcha-issues-workarounds-2026/)
 - [Tor Browser for Journalists Safety Guide 2026](/tor-browser-for-journalists-safety-guide-2026/)
-- [AI Coding Assistant for Network Traffic Analysis: What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
+- [AI Coding Assistant for Network Traffic Analysis - What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)

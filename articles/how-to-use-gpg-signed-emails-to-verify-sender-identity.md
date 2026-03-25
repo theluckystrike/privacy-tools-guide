@@ -57,7 +57,7 @@ Verify the installation:
 gpg --version
 ```
 
-Step 1: Generate Your GPG Key Pair
+Step 1 - Generate Your GPG Key Pair
 
 If you don't already have a GPG key, generate one specifically for email use:
 
@@ -75,7 +75,7 @@ gpg --list-secret-keys
 
 Note the key ID (the hexadecimal string after `sec rsa4096/`). You'll need this for configuration.
 
-Step 2: Configure Your Email Client
+Step 2 - Configure Your Email Client
 
 Thunderbird
 
@@ -101,7 +101,7 @@ Apple Mail
 
 Apple Mail requires the GPG Suite plugin. After installation, enable signing in Preferences → GPG Suite. You can also set default behavior to always sign.
 
-Step 3: Signing Outgoing Emails
+Step 3 - Signing Outgoing Emails
 
 Once configured, signing happens automatically for outgoing messages. You can also sign manually in clients that support it.
 
@@ -114,7 +114,7 @@ echo "Your message content here" | gpg --clearsign --local-user 0xYOURKEYID > si
 
 For actual email sending, most clients handle the signing transparently after initial configuration.
 
-Step 4: Verify Incoming Signed Emails
+Step 4 - Verify Incoming Signed Emails
 
 Verification is where GPG provides real value. When you receive a signed email, your client checks the signature against the sender's public key.
 
@@ -155,7 +155,7 @@ Thunderbird Verification
 
 Thunderbird displays a verification icon next to signed messages. A green checkmark indicates a valid signature. Clicking the icon shows signature details, including the key used and any warnings.
 
-Step 5: Handling Signature Failures
+Step 5 - Handling Signature Failures
 
 When verification fails, investigate the cause:
 
@@ -173,7 +173,7 @@ gpg --fingerprint sender@example.com
 
 Confirm the fingerprint via a different communication channel (phone, in-person) before marking the key as trusted.
 
-Step 6: Automate Verification in Scripts
+Step 6 - Automate Verification in Scripts
 
 For automated workflows, verify PGP signatures in shell scripts:
 
@@ -208,9 +208,9 @@ Backup your secret key: Export to a secure location, preferably encrypted:
 gpg --export-secret-keys 0xYOURKEYID | gpg --armor --output backup.asc
 ```
 
-Use subkeys for daily signing: Create subkeys for signing and encryption while keeping your master key offline. This limits damage if a subkey is compromised.
+Use subkeys for daily signing - Create subkeys for signing and encryption while keeping your master key offline. This limits damage if a subkey is compromised.
 
-Revoke certificates: Generate a revocation certificate when you create your key:
+Revoke certificates - Generate a revocation certificate when you create your key:
 
 ```bash
 gpg --gen-revoke 0xYOURKEYID > revocation_cert.asc
@@ -218,7 +218,7 @@ gpg --gen-revoke 0xYOURKEYID > revocation_cert.asc
 
 Store this securely. If you lose access to your key, the revocation certificate notifies others not to trust messages signed with that key.
 
-Step 7: Integrate with Git
+Step 7 - Integrate with Git
 
 Many developers use the same GPG key for Git commits. Configure Git to use your signing key:
 

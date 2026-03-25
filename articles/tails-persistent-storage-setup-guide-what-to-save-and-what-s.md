@@ -38,7 +38,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How Persistent Storage Works in Tails
+Step 1 - How Persistent Storage Works in Tails
 
 When you activate persistent storage, Tails creates an encrypted partition alongside the operating system on your USB stick. This partition uses LUKS (Linux Unified Key Setup) encryption, protected by a passphrase you choose during setup. The encryption key is derived from your passphrase using PBKDF2, making it resistant to brute-force attacks.
 
@@ -52,7 +52,7 @@ ls -la /home/amnesia/Persistent
 
 If the folder exists and contains your files after a restart, your persistent storage is working correctly.
 
-Step 2: Set Up Persistent Storage
+Step 2 - Set Up Persistent Storage
 
 Setting up persistent storage requires administrative access within Tails and takes approximately 10-15 minutes. Follow these steps:
 
@@ -75,7 +75,7 @@ The configuration tool offers these persistent directory options:
 
 Enable only the directories you need. Each enabled directory increases your attack surface if the USB is compromised.
 
-Step 3: What Belongs in Persistent Storage
+Step 3 - What Belongs in Persistent Storage
 
 Certain data should survive reboots because recreating it manually each session is impractical or impossible. For developers and power users, these categories make sense in persistent storage:
 
@@ -129,7 +129,7 @@ cd /home/amnesia/Persistent
 git clone git@github.com:yourusername/project.git
 ```
 
-Step 4: What Must Remain Ephemeral
+Step 4 - What Must Remain Ephemeral
 
 Some data should never persist for security reasons. Understanding what Tails intentionally wipes protects your anonymity.
 
@@ -154,7 +154,7 @@ Check swap status
 swapon --show
 ```
 
-If swap is active, disable it: `swapoff -a`
+If swap is active, disable it - `swapoff -a`
 
 Security Trade-offs and Best Practices
 
@@ -223,7 +223,7 @@ Verify permissions
 ls -la /home/amnesia/Persistent/
 ```
 
-Step 5: Monitor Persistent Storage Usage
+Step 5 - Monitor Persistent Storage Usage
 
 Track how much persistent storage you're using to avoid filling the USB drive:
 
@@ -294,7 +294,7 @@ threat_models = {
 }
 ```
 
-Step 6: Backup Strategy for Persistent Storage
+Step 6 - Backup Strategy for Persistent Storage
 
 While Tails provides no internet by default, backups of persistent storage are essential:
 
@@ -329,7 +329,7 @@ openssl enc -aes-256-cbc -d -salt \
     tar -xzf - -C /home/amnesia/
 ```
 
-Step 7: Recovery Scenarios and Persistent Storage
+Step 7 - Recovery Scenarios and Persistent Storage
 
 Understanding recovery options helps inform your persistent storage decisions:
 

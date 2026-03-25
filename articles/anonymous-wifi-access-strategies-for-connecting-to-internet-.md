@@ -34,7 +34,7 @@ Modern operating systems attempt MAC address randomization, but the implementati
 
 At layer 3, your device hostname (sent via DHCP) can reveal your identity, and your IP address allocation can be correlated across sessions. At layer 7, browser fingerprinting and application-level identifiers compound the exposure.
 
-Strategy 1: MAC Address Randomization
+Strategy 1 - MAC Address Randomization
 
 The foundation of anonymous WiFi access begins with MAC address randomization. On Linux, you have several approaches:
 
@@ -110,7 +110,7 @@ if [[ "$INTERFACE" == "wlan0" && "$ACTION" == "up" ]]; then
 fi
 ```
 
-Strategy 2: Network Segmentation with Separate Network Namespaces
+Strategy 2 - Network Segmentation with Separate Network Namespaces
 
 For advanced isolation, Linux network namespaces provide complete network stack separation. This prevents even kernel-level identifiers from leaking between connections:
 
@@ -139,7 +139,7 @@ ip netns exec anonymous firefox --private-window
 
 This approach creates complete network isolation, ensuring that DNS queries, MAC addresses, and network configuration from your anonymous namespace cannot correlate with your primary system.
 
-Strategy 3: Tor Integration for Exit Node Anonymity
+Strategy 3 - Tor Integration for Exit Node Anonymity
 
 Once you've randomized your layer 2 identity, routing traffic through Tor provides additional anonymity at layer 3:
 
@@ -187,7 +187,7 @@ Run applications through proxy chain
 proxychains4 nmap -sT -PN scanme.nmap.org
 ```
 
-Strategy 4: VPN Layering for Traffic Correlation Resistance
+Strategy 4 - VPN Layering for Traffic Correlation Resistance
 
 Combining VPN services with Tor or using multiple VPN hops adds defense in depth:
 
@@ -228,7 +228,7 @@ PersistentKeepalive = 25
 
 This creates a multi-hop configuration where each VPN provider only sees the previous hop, preventing single-point correlation attacks.
 
-Strategy 5: DHCP and DNS Privacy
+Strategy 5 - DHCP and DNS Privacy
 
 Your DHCP requests and DNS queries can leak identifying information:
 
@@ -327,7 +327,7 @@ Related Articles
 
 - [India Internet Shutdown Tracker Which States Restrict Access](/india-internet-shutdown-tracker-which-states-restrict-access/)
 - [Vpn For Remote Workers Connecting To Us Office From Asia](/vpn-for-remote-workers-connecting-to-us-office-from-asia/)
-- [CalyxOS Datura Firewall Setup: Controlling Per-App.](/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
+- [CalyxOS Datura Firewall Setup - Controlling Per-App.](/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
 - [Captive Portal Alternative Avoid WiFi Harvesting.](/captive-portal-alternative-avoid-wifi-harvesting-personal-da/)
 - [Complete Guide To Removing Yourself From Internet Databases](/complete-guide-to-removing-yourself-from-internet-databases-/)
 

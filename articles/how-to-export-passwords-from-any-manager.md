@@ -41,7 +41,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: 1Password Export Methods
+Step 1 - 1Password Export Methods
 
 1Password offers several export pathways depending on your plan and preferences.
 
@@ -75,7 +75,7 @@ Exporting from the 1Password Web App
 
 Navigate to your vault in the web interface, select items, and choose "Export" from the actions menu. You can select CSV or 1PIF (1Password Interchange Format) as output formats. The CSV option provides broader compatibility, while 1PIF preserves more metadata.
 
-Step 2: Bitwarden Export Options
+Step 2 - Bitwarden Export Options
 
 Bitwarden's open-source nature makes export straightforward.
 
@@ -112,7 +112,7 @@ bw unlock --passwordenv BW_PASSWORD
 
 The exported JSON includes login items, secure notes, identities, and cards, each with full field data.
 
-Step 3: LastPass Export Procedures
+Step 3 - LastPass Export Procedures
 
 LastPass provides export functionality through its web interface and CLI tools.
 
@@ -137,7 +137,7 @@ lpass export --json > passwords.json
 
 Note that LastPass requires your master password for export. Some enterprise accounts may have export disabled by administrators.
 
-Step 4: KeePass and KeePassXC Export
+Step 4 - KeePass and KeePassXC Export
 
 As open-source, local password managers, KeePass variants offer the most direct access to your data.
 
@@ -181,7 +181,7 @@ with open('export.json', 'w') as f:
 
 This approach gives you complete control over the export format and allows filtering or transformation before saving.
 
-Step 5: Dashlane Export
+Step 5 - Dashlane Export
 
 Dashlane provides export through its web interface and desktop applications.
 
@@ -210,7 +210,7 @@ Regardless of which manager you export from, handle the exported file carefully:
 
 Encrypt the exported file immediately, convert CSV output to GPG or a password-protected ZIP before storing it anywhere. Remove the plaintext file from disk after transferring to secure storage, and never send an unencrypted password export over an unencrypted channel. After migrating, generate new passwords for critical accounts and confirm that the export contains all expected entries before deleting source data.
 
-Step 6: Automate Regular Backups
+Step 6 - Automate Regular Backups
 
 For developers wanting automated exports, create a scheduled script:
 

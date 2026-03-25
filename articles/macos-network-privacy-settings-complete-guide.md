@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand macOS Network Architecture
+Step 1 - Understand macOS Network Architecture
 
 macOS provides multiple layers of network privacy controls:
 
@@ -40,7 +40,7 @@ macOS provides multiple layers of network privacy controls:
 - Network Extensions. VPN clients, content filters, and DNS proxies installed by apps
 - System services. location, Bonjour, AirDrop, and diagnostic uploads
 
-Step 2: Built-in Firewall Configuration
+Step 2 - Built-in Firewall Configuration
 
 Application Firewall
 
@@ -79,7 +79,7 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall on
 
 This blocks everything except basic internet browsing (outbound connections you initiate). Essential services like file sharing and remote login will not work, making it ideal for coffee shop or airport WiFi sessions.
 
-Step 3: DNS Configuration for Privacy
+Step 3 - DNS Configuration for Privacy
 
 Why Default DNS Is a Privacy Problem
 
@@ -121,7 +121,7 @@ NextDNS for Logging Control
 
 NextDNS gives you detailed control over DNS logging, retention, and custom blocklists. Its free tier supports up to 300,000 queries per month. Configure it via the macOS app or by installing their signed configuration profile.
 
-Step 4: Network Extensions and Privacy
+Step 4 - Network Extensions and Privacy
 
 Managing Extensions
 
@@ -182,7 +182,7 @@ pass in proto tcp from 192.168.1.0/24 to any port 22
 
 Always test pf rules carefully. Use a second terminal session or recovery plan before applying restrictive inbound rules.
 
-Step 5: Monitor Network Activity
+Step 5 - Monitor Network Activity
 
 Using Little Snitch or Lulu
 
@@ -210,7 +210,7 @@ log show --predicate 'subsystem == "com.apple.network"' --last 1h
 
 Use `netstat -rn` to inspect your routing table and confirm VPN traffic is properly routed through the tunnel interface.
 
-Step 6: WiFi Privacy Considerations
+Step 6 - WiFi Privacy Considerations
 
 Preventing Auto-Joining Networks
 
@@ -230,7 +230,7 @@ macOS supports Private WiFi Address (MAC randomization) per network since macOS 
 
 Rotating mode changes your MAC address on a schedule, further reducing the ability of network operators to track your device across sessions.
 
-Step 7: System Services Network Access
+Step 7 - System Services Network Access
 
 Location Services and Networking
 
@@ -256,7 +256,7 @@ Confirm diagnostics submission daemon is not running
 launchctl list | grep diagnostic
 ```
 
-Step 8: Comparing Third-Party Firewall Tools
+Step 8 - Comparing Third-Party Firewall Tools
 
 | Tool | Price | Outbound Control | Logging | Open Source |
 |------|-------|-----------------|---------|-------------|
@@ -295,6 +295,6 @@ Related Articles
 - [macOS Privacy Hardening Checklist 2026](/macos-privacy-hardening-checklist-2026/)
 - [Harden macOS Sequoia Privacy Settings Beyond Default](/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
 - [Facebook Privacy Settings 2026 Complete Guide](/facebook-privacy-settings-2026-complete-guide/)
-- [AI Coding Assistant for Network Traffic Analysis: What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
+- [AI Coding Assistant for Network Traffic Analysis - What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

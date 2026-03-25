@@ -18,14 +18,14 @@ intent-checked: true
 
 Google tracks everything. Your searches, watched videos, visited websites, location history, and device activity are stored indefinitely. Google Takeout lets you export this data, and the Activity dashboard lets you delete it, but it's fragmented across multiple dashboards and settings. This guide walks through complete deletion in 30 minutes, with verification steps to confirm Google complies.
 
-Part 1: Backup Your Data (Optional but Recommended)
+Part 1 - Backup Your Data (Optional but Recommended)
 
 Before deleting, export a copy via Google Takeout.
-- Toggle OFF This stops: Google from logging: - Your Google searches - Websites you visit (if Chrome synced) - Apps you use - All Google services activity ### Step 2: Disable YouTube History 1.
+- Toggle OFF This stops: Google from logging: - Your Google searches - Websites you visit (if Chrome synced) - Apps you use - All Google services activity ### Step 2 - Disable YouTube History 1.
 - 
 ---
 
-Part 7: Chrome Sync & Data Deletion
+Part 7 - Chrome Sync & Data Deletion
 
 If you use Chrome, it syncs browsing history, passwords, and extensions to Google.
 - Use privacy-focused browser (Firefox: DuckDuckGo, Brave)
@@ -47,33 +47,33 @@ Google collects:
 All feeds into Google's ad targeting engine. Deleting it is both practical (reclaim privacy) and strategic (stop ad profiling).
 ---
 
-Part 1: Backup Your Data (Optional but Recommended)
+Part 1 - Backup Your Data (Optional but Recommended)
 
 Table of Contents
 
-- [Part 1: Backup Your Data (Optional but Recommended)](#part-1-backup-your-data-optional-but-recommended)
-- [Part 2: Delete Search & Web Activity](#part-2-delete-search-web-activity)
-- [Part 3: Delete YouTube History](#part-3-delete-youtube-history)
-- [Part 4: Delete Location History](#part-4-delete-location-history)
-- [Part 5: Disable Ad Personalization](#part-5-disable-ad-personalization)
-- [Part 6: Google Account Settings (Ongoing Privacy)](#part-6-google-account-settings-ongoing-privacy)
-- [Part 7: Chrome Sync & Data Deletion](#part-7-chrome-sync-data-deletion)
-- [Part 8: Verification & Confirmation](#part-8-verification-confirmation)
-- [Part 9: Ongoing Privacy (Best Practices)](#part-9-ongoing-privacy-best-practices)
-- [Alternative: Delete Google Account Entirely](#alternative-delete-google-account-entirely)
+- [Part 1 - Backup Your Data (Optional but Recommended)](#part-1-backup-your-data-optional-but-recommended)
+- [Part 2 - Delete Search & Web Activity](#part-2-delete-search-web-activity)
+- [Part 3 - Delete YouTube History](#part-3-delete-youtube-history)
+- [Part 4 - Delete Location History](#part-4-delete-location-history)
+- [Part 5 - Disable Ad Personalization](#part-5-disable-ad-personalization)
+- [Part 6 - Google Account Settings (Ongoing Privacy)](#part-6-google-account-settings-ongoing-privacy)
+- [Part 7 - Chrome Sync & Data Deletion](#part-7-chrome-sync-data-deletion)
+- [Part 8 - Verification & Confirmation](#part-8-verification-confirmation)
+- [Part 9 - Ongoing Privacy (Best Practices)](#part-9-ongoing-privacy-best-practices)
+- [Alternative - Delete Google Account Entirely](#alternative-delete-google-account-entirely)
 - [Troubleshooting](#troubleshooting)
 - [Privacy After Google Deletion](#privacy-after-google-deletion)
 
 Before deleting, export a copy via Google Takeout. This is your evidence that data existed and proof of deletion.
 
-Step 1: Access Google Takeout
+Step 1 - Access Google Takeout
 
 1. Go to https://takeout.google.com
 2. Log into your Google account (if not already logged in)
 3. Click "Select none" (deselect all products)
 4. Scroll to and select only: Activity (expands to show sub-options)
 
-Step 2: Choose What to Export
+Step 2 - Choose What to Export
 
 Under "Activity," you'll see:
 - [ ] Chrome Search History
@@ -85,14 +85,14 @@ Under "Activity," you'll see:
 
 Select all (click checkbox next to each).
 
-Step 3: Choose Delivery Format
+Step 3 - Choose Delivery Format
 
 - File type: Keep as JSON (most complete format)
 - Frequency: "Send download link once" (you don't need recurring exports)
 - Size: "All data in one archive" (easier to manage than split files)
 - Storage location: Google Drive is fine (you're just exporting, not keeping on Google's servers for long)
 
-Step 4: Create Export
+Step 4 - Create Export
 
 Click "Create export"
 
@@ -104,21 +104,21 @@ Store this zip file locally (on USB drive, external hard drive, or encrypted clo
 
 ---
 
-Part 2: Delete Search & Web Activity
+Part 2 - Delete Search & Web Activity
 
-Step 1: Open Activity Dashboard
+Step 1 - Open Activity Dashboard
 
 1. Go to https://myactivity.google.com
 2. Log in
 3. You'll see all your Google searches and web activity (likely thousands)
 
-Step 2: Delete All Search Activity
+Step 2 - Delete All Search Activity
 
 On the left sidebar, click "Delete activity by"
 
 Select:
 - Date range: All time
-- Products: All Products (or manually select: Search, Chrome, etc.)
+- Products - All Products (or manually select: Search, Chrome, etc.)
 
 Click "Delete"
 
@@ -126,37 +126,37 @@ Google will ask for confirmation: "This action is permanent. Activities will be 
 
 Click "Delete" again to confirm.
 
-Timeline: 15 minutes to 24 hours (usually immediate, but Google processes in batches)
+Timeline - 15 minutes to 24 hours (usually immediate, but Google processes in batches)
 
-Step 3: Verify Deletion
+Step 3 - Verify Deletion
 
 Refresh myactivity.google.com. You should see "No data to display" or "your activity will appear here."
 
 ---
 
-Part 3: Delete YouTube History
+Part 3 - Delete YouTube History
 
 YouTube history is separate from search activity.
 
-Step 1: Access YouTube History
+Step 1 - Access YouTube History
 
 1. Go to https://www.youtube.com
 2. Log in
 3. Click your profile icon (top right) → History
 4. On left sidebar, click "History" → "Clear all watch history"
 
-A popup asks: "This will clear all watch history on this account. Continue?"
+A popup asks - "This will clear all watch history on this account. Continue?"
 
 Click "Clear"
 
-Step 2: Delete YouTube Search History
+Step 2 - Delete YouTube Search History
 
 1. Still in YouTube
 2. On left sidebar, click "Search history"
 3. Click "Clear all search history" (appears as a link or button)
 4. Confirm
 
-Step 3: Delete YouTube Likes/Playlist
+Step 3 - Delete YouTube Likes/Playlist
 
 1. Go to your profile → "Playlists" or "Liked videos"
 2. For each playlist: Click the three-dot menu → Delete playlist
@@ -164,27 +164,27 @@ Step 3: Delete YouTube Likes/Playlist
 
 ---
 
-Part 4: Delete Location History
+Part 4 - Delete Location History
 
 Location history is stored separately and requires explicit deletion.
 
-Step 1: Access Location Settings
+Step 1 - Access Location Settings
 
 1. Go to https://myactivity.google.com
 2. On left sidebar, click "Location" (or go directly to https://www.google.com/maps/timeline)
 3. You'll see a timeline of everywhere Google tracked you
 
-Step 2: Delete All Locations
+Step 2 - Delete All Locations
 
-Option A: Delete from Google Maps Timeline
+Option A - Delete from Google Maps Timeline
 
 1. Go to https://www.google.com/maps/timeline
 2. Click Settings (gear icon, bottom left)
 3. Click Delete all Location History
-4. Confirm: "This will permanently delete your Location History."
+4. Confirm - "This will permanently delete your Location History."
 5. Click "Delete"
 
-Option B: Delete from Activity
+Option B - Delete from Activity
 
 1. Go to https://myactivity.google.com
 2. Click "Delete activity by"
@@ -193,7 +193,7 @@ Option B: Delete from Activity
  - Products: Location
 4. Click "Delete" → Confirm
 
-Step 3: Disable Location Tracking
+Step 3 - Disable Location Tracking
 
 Deletion is one-time. To prevent future tracking:
 
@@ -210,25 +210,25 @@ This also disables:
 
 ---
 
-Part 5: Disable Ad Personalization
+Part 5 - Disable Ad Personalization
 
 Even after deleting activity, Google profiles you based on inferred interests.
 
-Step 1: Access Ad Settings
+Step 1 - Access Ad Settings
 
 1. Go to https://adssettings.google.com/authenticated
 2. Log in if prompted
 3. You'll see "Your ads personalization is ON"
 
-Step 2: Turn Off Ad Personalization
+Step 2 - Turn Off Ad Personalization
 
 Click the toggle next to "Ads personalization" to turn it OFF.
 
-Google will ask: "Are you sure? Ads will be less relevant to you, but Google will still show ads based on your current search, your location, and other non-personalized factors."
+Google will ask - "Are you sure? Ads will be less relevant to you, but Google will still show ads based on your current search, your location, and other non-personalized factors."
 
 Click "Turn Off"
 
-Step 3: Verify & Remove Interests
+Step 3 - Verify & Remove Interests
 
 1. Scroll down to "Your interests" (this is what Google inferred about you)
 2. Click on each interest to remove it (e.g., "Technology," "Finance")
@@ -238,11 +238,11 @@ This prevents Google from showing ads based on your profile.
 
 ---
 
-Part 6: Google Account Settings (Ongoing Privacy)
+Part 6 - Google Account Settings (Ongoing Privacy)
 
 Now that you've deleted everything, set defaults to prevent future accumulation.
 
-Step 1: Disable Auto-save Web & App Activity
+Step 1 - Disable Auto-save Web & App Activity
 
 1. Go to https://myaccount.google.com/activitycontrols
 2. Click "Web & App Activity"
@@ -254,14 +254,14 @@ This stops Google from logging:
 - Apps you use
 - All Google services activity
 
-Step 2: Disable YouTube History
+Step 2 - Disable YouTube History
 
 1. Go to https://myactivity.google.com
 2. On left sidebar, click "YouTube and YouTube Music Activity"
 3. Click "Manage settings"
 4. Toggle OFF "Youtube Search History" and "Youtube Watch History"
 
-Step 3: Disable Location History
+Step 3 - Disable Location History
 
 1. Go to https://myaccount.google.com/
 2. Click "Data & Privacy"
@@ -269,7 +269,7 @@ Step 3: Disable Location History
 4. Click "Manage Location Settings"
 5. Toggle OFF "Location history"
 
-Step 4: Manage Third-Party Apps
+Step 4 - Manage Third-Party Apps
 
 1. Go to https://myaccount.google.com/permissions
 2. Review connected apps (apps with access to your Google data)
@@ -279,11 +279,11 @@ Apps like Spotify, Twitter, etc. often request access to your Google account. Re
 
 ---
 
-Part 7: Chrome Sync & Data Deletion
+Part 7 - Chrome Sync & Data Deletion
 
 If you use Chrome, it syncs browsing history, passwords, and extensions to Google.
 
-Step 1: Disable Chrome Sync
+Step 1 - Disable Chrome Sync
 
 1. Open Chrome → Click your profile icon (top right)
 2. Click "Sync and Google services" (or Chrome menu → Settings → Sync and Google services)
@@ -294,16 +294,16 @@ Step 1: Disable Chrome Sync
  - [ ] Extensions
  - [ ] Settings
 
-Step 2: Clear Local Chrome Data
+Step 2 - Clear Local Chrome Data
 
 1. Chrome menu → Settings → Privacy and security
 2. Click "Clear browsing data" (or Cmd+Shift+Delete on Mac)
 3. Select:
  - Time range: All time
- - Checkboxes: Select all (Cookies, history, cached images, etc.)
+ - Checkboxes - Select all (Cookies, history, cached images, etc.)
 4. Click "Clear data"
 
-Step 3: Turn Off Chrome Sync Completely
+Step 3 - Turn Off Chrome Sync Completely
 
 1. Chrome Settings → Sync and Google services
 2. Click "Manage your Google Account"
@@ -313,40 +313,40 @@ Step 3: Turn Off Chrome Sync Completely
 
 ---
 
-Part 8: Verification & Confirmation
+Part 8 - Verification & Confirmation
 
 Verify that Google has deleted your data:
 
-Check 1: Visit My Activity
+Check 1 - Visit My Activity
 
 1. Go to https://myactivity.google.com
 2. Should show "No data to display" or empty timeline
 
 If you see old activity, wait 24 hours (Google processes deletions asynchronously).
 
-Check 2: Check Location History
+Check 2 - Check Location History
 
 1. Go to https://www.google.com/maps/timeline
 2. Should be empty or show only recent dates (after deletion request)
 
-Check 3: Check YouTube
+Check 3 - Check YouTube
 
 1. Go to https://www.youtube.com/feed/history
 2. Should be empty ("This tab has nothing to show")
 
-Check 4: Confirm Web & App Activity is OFF
+Check 4 - Confirm Web & App Activity is OFF
 
 1. Go to https://myactivity.google.com
 2. Look for message: "Web & App Activity is off"
 
-Check 5: Ad Personalization Status
+Check 5 - Ad Personalization Status
 
 1. Go to https://adssettings.google.com/authenticated
 2. Should show "Ads personalization is OFF"
 
 ---
 
-Part 9: Ongoing Privacy (Best Practices)
+Part 9 - Ongoing Privacy (Best Practices)
 
 Once deleted, prevent re-accumulation:
 
@@ -367,18 +367,18 @@ Quarterly
 
 ---
 
-Alternative: Delete Google Account Entirely
+Alternative - Delete Google Account Entirely
 
 If you want to completely remove yourself from Google:
 
-Step 1: Export All Data
+Step 1 - Export All Data
 
 1. Go to https://takeout.google.com
 2. Select "All products"
 3. Create export
 4. Download when ready
 
-Step 2: Delete Google Account
+Step 2 - Delete Google Account
 
 1. Go to https://myaccount.google.com/
 2. Click "Delete your account and data" (or "Data & privacy" → "Delete your Google Account")
@@ -389,15 +389,15 @@ Step 2: Delete Google Account
 
 This is permanent. Gmail address becomes inactive, you lose access to Play Store purchases, etc.
 
-Timeline: 30 days grace period. During those 30 days, you can reactivate by logging back in.
+Timeline - 30 days grace period. During those 30 days, you can reactivate by logging back in.
 
 ---
 
 Troubleshooting
 
-Problem: Data Still Shows After Deletion
+Problem - Data Still Shows After Deletion
 
-Cause: Delayed processing or browser cache.
+Cause - Delayed processing or browser cache.
 
 Solution:
 1. Wait 24 hours
@@ -405,25 +405,25 @@ Solution:
 3. Try incognito window
 4. Refresh myactivity.google.com
 
-Problem: Can't Find Location History
+Problem - Can't Find Location History
 
-Cause: May be disabled or in different location.
+Cause - May be disabled or in different location.
 
 Solution:
 1. Go directly to https://www.google.com/maps/timeline
 2. Or: Google Account → Data & Privacy → Location settings
 
-Problem: YouTube History Still Shows
+Problem - YouTube History Still Shows
 
-Cause: YouTube and search activity are separate deletion processes.
+Cause - YouTube and search activity are separate deletion processes.
 
 Solution:
 1. Go to https://www.youtube.com → Profile → History
 2. Click "Clear all watch history" (separate from search deletion)
 
-Problem: Ads Still Personalized After Turning Off
+Problem - Ads Still Personalized After Turning Off
 
-Cause: Local cookies, other tracking.
+Cause - Local cookies, other tracking.
 
 Solution:
 1. Clear browser cookies entirely

@@ -26,7 +26,7 @@ Table of Contents
 - [Prerequisites for Per App VPN](#prerequisites-for-per-app-vpn)
 - [Configuring Per App VPN Using Android's Built-in Settings](#configuring-per-app-vpn-using-androids-built-in-settings)
 - [Using VPN Apps with Built-in Per-App Features](#using-vpn-apps-with-built-in-per-app-features)
-- [Advanced: Using Sharik for Android Network Sharing](#advanced-using-sharik-for-android-network-sharing)
+- [Advanced - Using Sharik for Android Network Sharing](#advanced-using-sharik-for-android-network-sharing)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 - [Security Considerations](#security-considerations)
 - [Which Apps Should Use VPN?](#which-apps-should-use-vpn)
@@ -39,13 +39,13 @@ Why Use Per App VPN?
 
 There are several practical reasons to configure per-app VPN:
 
-Bandwidth Conservation: Streaming services like YouTube or Netflix consume massive bandwidth. By excluding them from the VPN, you can save your VPN data allowance and reduce buffering.
+Bandwidth Conservation - Streaming services like YouTube or Netflix consume massive bandwidth. By excluding them from the VPN, you can save your VPN data allowance and reduce buffering.
 
-Local Network Access: Smart home devices, printers, and NAS storage often require direct local network access. A full-device VPN can break this connectivity.
+Local Network Access - Smart home devices, printers, and NAS storage often require direct local network access. A full-device VPN can break this connectivity.
 
-Performance Optimization: Some apps don't need encryption and work faster with direct connections. Gaming apps and real-time trading applications often perform better outside VPN tunnels.
+Performance Optimization - Some apps don't need encryption and work faster with direct connections. Gaming apps and real-time trading applications often perform better outside VPN tunnels.
 
-Split Tunneling by App: You can route banking apps through the VPN for security while allowing other apps to connect directly.
+Split Tunneling by App - You can route banking apps through the VPN for security while allowing other apps to connect directly.
 
 Prerequisites for Per App VPN
 
@@ -59,7 +59,7 @@ Configuring Per App VPN Using Android's Built-in Settings
 
 Here's how to set up per-app VPN on your Android device:
 
-Step 1: Set Up Your VPN App First
+Step 1 - Set Up Your VPN App First
 
 First, install and configure your preferred VPN app from the Google Play Store. Popular options include:
 
@@ -71,7 +71,7 @@ First, install and configure your preferred VPN app from the Google Play Store. 
 
 Configure the VPN app normally and ensure it connects successfully before proceeding.
 
-Step 2: Access VPN Settings
+Step 2 - Access VPN Settings
 
 Navigate to your Android settings:
 
@@ -85,7 +85,7 @@ Or on some devices:
 Settings → Connections → VPN
 ```
 
-Step 3: Configure Per-App VPN
+Step 3 - Configure Per-App VPN
 
 For Android 11 and above:
 
@@ -101,7 +101,7 @@ For Android 10 and earlier:
 2. Select "Configure per-app VPN" or "Split tunneling"
 3. Choose apps to include or exclude
 
-Step 4: Test Your Configuration
+Step 4 - Test Your Configuration
 
 After configuring:
 
@@ -154,7 +154,7 @@ Configure which apps connect through VPN
 Set different rules for each profile
 ```
 
-Advanced: Using Sharik for Android Network Sharing
+Advanced - Using Sharik for Android Network Sharing
 
 For advanced users who want more control, Sharik is an open-source tool that can help:
 
@@ -244,7 +244,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 Related Articles
 
-- [CalyxOS Datura Firewall Setup: Controlling Per-App.](/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
+- [CalyxOS Datura Firewall Setup - Controlling Per-App.](/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
 - [Configure Private DNS on Android for System-Wide Tracker](/how-to-configure-private-dns-on-android-for-system-wide-trac/)
 - [Configure Firefox for Maximum Privacy Without Breaking](/how-to-configure-firefox-maximum-privacy-without-breaking-sites/)
 - [Audit Android App Permissions with ADB](/android-adb-app-permissions-audit)

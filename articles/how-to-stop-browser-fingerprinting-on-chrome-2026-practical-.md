@@ -37,7 +37,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Browser Fingerprinting
+Step 1 - Understand Browser Fingerprinting
 
 Browser fingerprinting works by collecting various attributes of your browser and system. These attributes combine to create a unique signature that tracks you across websites without storing anything on your device.
 
@@ -56,7 +56,7 @@ The data points collected include:
 
 When combined, these attributes create a highly unique identifier. Research shows that over 90% of users can be uniquely identified using fingerprinting, even when using incognito mode.
 
-Step 2: Chrome Settings for Basic Protection
+Step 2 - Chrome Settings for Basic Protection
 
 Chrome provides several built-in settings that reduce fingerprinting surface area.
 
@@ -74,8 +74,8 @@ Manage Third-Party Cookies
 While not directly related to fingerprinting, blocking third-party cookies reduces tracking:
 
 ```
-Navigate to: chrome://settings/cookies
-Enable: "Block third-party cookies"
+Navigate to - chrome://settings/cookies
+Enable - "Block third-party cookies"
 ```
 
 Disable JavaScript (Selective)
@@ -90,7 +90,7 @@ chrome://flags/#automatic-tab-discarding
 
 However, many sites require JavaScript to function. Consider using extensions like ScriptSafe for per-site control.
 
-Step 3: Use Extensions for Fingerprint Protection
+Step 3 - Use Extensions for Fingerprint Protection
 
 Several extensions modify your fingerprint to make it less unique.
 
@@ -119,7 +119,7 @@ Extensions like User-Agent Switcher modify your reported user agent:
 ```bash
 Example user agent strings:
 Default: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
-Spoofed: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+Spoofed - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 ```
 
 However, spoofing without matching other attributes can make you more identifiable, a technique called "counter-fashion."
@@ -189,7 +189,7 @@ While you're focused on Chrome, Firefox has superior built-in fingerprinting pro
 
 ```javascript
 // Firefox resistFingerprinting configuration (about:config)
-Firefox: privacy.resistFingerprinting = true
+Firefox - privacy.resistFingerprinting = true
 // This normalizes:
 // - Screen resolution to common values
 // - Canvas and WebGL fingerprinting
@@ -199,7 +199,7 @@ Firefox: privacy.resistFingerprinting = true
 
 If you need Chrome-specific solutions, consider running both browsers with different profiles.
 
-Step 4: Network-Level Protection
+Step 4 - Network-Level Protection
 
 For protection, consider network-level solutions.
 
@@ -212,8 +212,8 @@ Install Pi-hole
 curl -sSL https://install.pi-hole.net | bash
 
 Add fingerprinting blocklists
-In Pi-hole UI: Group Management → Adlists
-Add: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+In Pi-hole UI - Group Management → Adlists
+Add - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
 ```
 
 DNS-Based Tracking Protection
@@ -222,12 +222,12 @@ Use encrypted DNS with tracking protection:
 
 ```bash
 Configure DoH (DNS over HTTPS) in Chrome
-Navigate to: chrome://settings/security
-Enable: "Use secure DNS"
-Select provider: Cloudflare (1.1.1.1) or NextDNS
+Navigate to - chrome://settings/security
+Enable - "Use secure DNS"
+Select provider - Cloudflare (1.1.1.1) or NextDNS
 ```
 
-Step 5: Test Your Fingerprint
+Step 5 - Test Your Fingerprint
 
 After implementing protections, verify their effectiveness:
 
@@ -237,7 +237,7 @@ After implementing protections, verify their effectiveness:
 
 A well-protected browser should show "your browser has fingerprintable characteristics" rather than "unique among millions tested."
 
-Step 6: Build Fingerprint-Resistant Applications
+Step 6 - Build Fingerprint-Resistant Applications
 
 If you're a developer, consider these practices:
 
@@ -258,7 +258,7 @@ const hasWebGL = !!document.createElement('canvas').getContext('webgl');
 // Don't expose specific renderer strings
 ```
 
-Step 7: Limitations and Reality Check
+Step 7 - Limitations and Reality Check
 
 Complete fingerprinting prevention is challenging. Some points to consider:
 

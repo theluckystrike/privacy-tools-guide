@@ -36,7 +36,7 @@ AWS IAM allows two access keys per user simultaneously. This enables overlap: cr
 #!/usr/bin/env python3
 """
 rotate_iam_key.py. Zero-downtime IAM key rotation.
-Usage: python3 rotate_iam_key.py <iam-username>
+Usage - python3 rotate_iam_key.py <iam-username>
 """
 import boto3, time, json, sys, subprocess
 from datetime import datetime, timezone

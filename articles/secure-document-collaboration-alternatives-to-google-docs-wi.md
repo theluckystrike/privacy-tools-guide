@@ -23,9 +23,9 @@ End-to-end encryption (E2EE) solves this problem. With E2EE, data is encrypted o
 Table of Contents
 
 - [What Makes Document Collaboration Truly Secure](#what-makes-document-collaboration-truly-secure)
-- [CryptPad: Real-Time Collaboration with E2EE](#cryptpad-real-time-collaboration-with-e2ee)
-- [Standard Notes: Encrypted Notes with Extensibility](#standard-notes-encrypted-notes-with-extensibility)
-- [Self-Hosted Solutions: Total Control](#self-hosted-solutions-total-control)
+- [CryptPad - Real-Time Collaboration with E2EE](#cryptpad-real-time-collaboration-with-e2ee)
+- [Standard Notes - Encrypted Notes with Extensibility](#standard-notes-encrypted-notes-with-extensibility)
+- [Self-Hosted Solutions - Total Control](#self-hosted-solutions-total-control)
 - [Implementing E2EE in Your Own Tools](#implementing-e2ee-in-your-own-tools)
 - [Choosing Your Alternative](#choosing-your-alternative)
 - [Advanced Cryptography Implementation for Teams](#advanced-cryptography-implementation-for-teams)
@@ -42,7 +42,7 @@ True E2EE requires several properties that many popular tools lack. First, encry
 
 Many services marketed as "secure" actually use encryption at rest or transport-layer security (TLS). These protect data from eavesdroppers during transmission and from physical theft of storage media, but they allow the service operator to read your content. For genuine privacy, you need client-side E2EE with keys that never touch the server.
 
-CryptPad: Real-Time Collaboration with E2EE
+CryptPad - Real-Time Collaboration with E2EE
 
 CryptPad is an open-source collaborative office suite that provides real-time document editing with end-to-end encryption. The project offers documents, spreadsheets, presentations, and a kanban board, all encrypted in the browser using JavaScript.
 
@@ -80,7 +80,7 @@ docker-compose up -d
 
 The self-hosted option gives you complete control over your data while maintaining the same E2EE guarantees. CryptPad's code is open-source and has undergone security audits, making it suitable for handling moderately sensitive documentation.
 
-Standard Notes: Encrypted Notes with Extensibility
+Standard Notes - Encrypted Notes with Extensibility
 
 Standard Notes takes a different approach, focusing on long-form writing and note-taking rather than real-time spreadsheet collaboration. However, it provides the strongest E2EE implementation in the consumer space, with features specifically designed for developers.
 
@@ -110,7 +110,7 @@ const encrypted = await encryption.encrypt(
 
 Standard Notes offers a free tier with basic features and paid plans for extended sync and advanced editors. For developers, the ability to create custom editors makes it powerful for documenting code, writing technical specifications, and maintaining encrypted development notes.
 
-Self-Hosted Solutions: Total Control
+Self-Hosted Solutions - Total Control
 
 For organizations with strict compliance requirements, self-hosted solutions provide the ultimate in data control. Two standout options combine E2EE with self-hosting capabilities.
 

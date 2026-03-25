@@ -58,7 +58,7 @@ Securing your primary devices forms the foundation of location and identity prot
 Disable location services at the system level when not actively needed. On iOS, use the Control Center to quickly toggle location off. On Android, system-level location toggles are available in quick settings. This simple habit prevents background location tracking by apps between uses.
 
 ```bash
-Android: Disable location via ADB (permanent until re-enabled)
+Android - Disable location via ADB (permanent until re-enabled)
 adb shell settings put secure location_mode 0
 
 iOS: Shortcut to toggle location services
@@ -129,7 +129,7 @@ Technology alone cannot protect you if your behavior undermines your technical m
 
 Power on your sensitive device only in safe locations. The moment a phone powers on, it connects to cellular networks and begins broadcasting its IMEI and location. Avoid powering on devices in locations you need to keep private.
 
-Know your threat model. The protections that matter most depend entirely on who you are protecting against. A technologically sophisticated adversary requires different defenses than a data broker scraping app APIs. Adjust your security measures to match your actual threat ecosystem.
+Know your threat model. The protections that matter most depend entirely on who you are protecting against. A technologically sophisticated adversary requires different defenses than a data broker scraping app APIs. Adjust your security measures to match your actual threat environment.
 
 Building Your Protection Stack
 
@@ -248,7 +248,7 @@ Using rfkill to verify wireless is truly disabled on Linux
 rfkill list
 
 Output should show "Soft blocked: yes" for all wireless
-If "Soft blocked: no", wireless is still active
+If "Soft blocked - no", wireless is still active
 rfkill block all  # Block all wireless hardware
 
 Verify no cellular/GPS/Bluetooth signals active
@@ -262,25 +262,25 @@ Creating separate digital identities for different activities reduces the risk t
 Identity tier structure:
 
 ```
-Tier 1: Highly Sensitive (location-protecting)
+Tier 1 - Highly Sensitive (location-protecting)
   - Separate phone number (Google Voice with prepaid card)
   - VPN/Tor for all access
   - No linking to other identities
   - Use case: Immigration support networks, legal advocacy
 
-Tier 2: Medium Sensitivity (identity-protecting)
+Tier 2 - Medium Sensitivity (identity-protecting)
   - Anonymous email (ProtonMail)
   - VPN for access
   - Limited real-name exposure
   - Use case: Job searching, housing applications
 
-Tier 3: Lower Risk (normal operations)
+Tier 3 - Lower Risk (normal operations)
   - Standard email
   - Normal internet access
   - Acceptable identity exposure
   - Use case: Banking, official documents
 
-Tier 4: Honeypot (decoy)
+Tier 4 - Honeypot (decoy)
   - Deliberately compromised accounts
   - Creates false trails
   - Monitors for active surveillance
@@ -378,7 +378,7 @@ class MetadataRemover:
             print(f"Document metadata removal failed: {e}")
             return False
 
-Usage: Always remove metadata before sharing files
+Usage - Always remove metadata before sharing files
 remover = MetadataRemover()
 remover.remove_image_metadata('sensitive_photo.jpg')
 remover.check_pdf_metadata('document.pdf')
@@ -398,19 +398,19 @@ Advanced Threat Scenarios and Responses
 
 Different threats require different responses:
 
-Scenario: Law enforcement checkpoint stop
+Scenario - Law enforcement checkpoint stop
 - Minimal phone activation unless required to comply with ID check
 - Have scripted responses prepared
 - Know your rights in your jurisdiction regarding phone searches
 - Consider having emergency contact information memorized, not in phone
 
-Scenario: Border crossing with electronics
+Scenario - Border crossing with electronics
 - Consider leaving sensitive electronics at home
 - Use travel-specific device with minimal data
 - Know encryption rights in target country
 - Backup sensitive data to cloud before border crossing
 
-Scenario: Detecting active surveillance
+Scenario - Detecting active surveillance
 - Change daily routine and location patterns
 - Vary communication timing and methods
 - Increase physical counter-surveillance awareness
@@ -418,7 +418,7 @@ Scenario: Detecting active surveillance
 
 Integration with Legal Resources
 
-Digital privacy is important, but legal protection is paramount. Integrate your threat model with legal support:
+Digital privacy is important, but legal protection is essential. Integrate your threat model with legal support:
 
 1. Pre-arrange legal counsel. Know which attorneys handle immigration and digital privacy
 2. Document your setup. Keep records of your security practices to demonstrate good-faith protection efforts

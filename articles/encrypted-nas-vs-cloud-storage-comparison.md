@@ -44,9 +44,9 @@ NAS Encryption Approaches
 
 Most enterprise NAS devices support encryption at rest using AES-256. The critical distinction is where the encryption key lives:
 
-Hardware-encrypted NAS: The encryption key is stored on a dedicated security chip or TPM module. The NAS automatically encrypts and decrypts data as it's written or read. This protects against physical theft of the drives, but the system remains vulnerable if an attacker gains network access while the NAS is powered on.
+Hardware-encrypted NAS - The encryption key is stored on a dedicated security chip or TPM module. The NAS automatically encrypts and decrypts data as it's written or read. This protects against physical theft of the drives, but the system remains vulnerable if an attacker gains network access while the NAS is powered on.
 
-Software-encrypted NAS: Encryption is handled by the operating system, typically using LUKS (Linux Unified Key Setup) on Linux-based NAS systems like TrueNAS or OpenMediaVault. You manage the passphrase directly, giving you explicit control over when data becomes accessible.
+Software-encrypted NAS - Encryption is handled by the operating system, typically using LUKS (Linux Unified Key Setup) on Linux-based NAS systems like TrueNAS or OpenMediaVault. You manage the passphrase directly, giving you explicit control over when data becomes accessible.
 
 A practical software encryption setup using LUKS on a Linux NAS:
 
@@ -78,9 +78,9 @@ Cloud Storage Encryption Models
 
 Cloud providers typically offer encryption in one of three models:
 
-Provider-managed encryption: The cloud provider handles encryption and key management. Your data is encrypted at rest, but the provider holds the keys. This protects against external attackers and physical drive theft, but the provider's employees can theoretically access your data.
+Provider-managed encryption - The cloud provider handles encryption and key management. Your data is encrypted at rest, but the provider holds the keys. This protects against external attackers and physical drive theft, but the provider's employees can theoretically access your data.
 
-Customer-managed encryption: You provide encryption keys to the provider, who uses them to encrypt your data. The provider cannot read your data without your key, but you must securely manage and back up the key yourself.
+Customer-managed encryption - You provide encryption keys to the provider, who uses them to encrypt your data. The provider cannot read your data without your key, but you must securely manage and back up the key yourself.
 
 Zero-knowledge (client-side) encryption: Your data is encrypted before it leaves your device. The cloud provider never sees your plaintext data or encryption keys. Services like Tresorit, Sync.com, and Proton Drive offer this model.
 
@@ -91,7 +91,7 @@ Configure rclone with crypt backend
 rclone config
 
 Create encrypted remote
-In interactive config: New remote > type "crypt" >
+In interactive config - New remote > type "crypt" >
 remote "gdrive:" > encryption "standard" >
 password "your-strong-password" > confirm
 
@@ -324,7 +324,7 @@ zfs set dedup=on pool/data
 Monitor deduplication ratio
 zpool status pool/data | grep "dedup"
 
-Alternative: Block-level deduplication with rclone
+Alternative - Block-level deduplication with rclone
 rclone sync --compare-dest previous_backup ~/data cloud:backup
 Only uploads changed blocks
 ```
@@ -338,12 +338,12 @@ Recovery Time Objective (RTO) Testing
 For each backup strategy, verify actual recovery time:
 
 ```bash
-Test: Recover 100GB from each backup source
+Test - Recover 100GB from each backup source
 time rclone copy proton:backup/test ~/test-restore
 
-Measure: How long does recovery take?
-Peak bandwidth: How much network is consumed?
-Document: Issues encountered, manual steps required
+Measure - How long does recovery take?
+Peak bandwidth - How much network is consumed?
+Document - Issues encountered, manual steps required
 ```
 
 Knowing recovery time prevents surprises during actual disasters.
@@ -405,6 +405,6 @@ Related Articles
 - [Best Encrypted Cloud Storage Free Tier 2026](/best-encrypted-cloud-storage-free-tier-2026/)
 - [Self Hosted Cloud Storage Comparison Nextcloud vs](/self-hosted-cloud-storage-comparison-nextcloud-vs-seafile-vs-syncthing/)
 - [Encrypted Cloud Storage for Small Business 2026](/encrypted-cloud-storage-for-small-business-2026/)
-- [AI Data Labeling Tools Comparison: A Developer Guide](https://bestremotetools.com/ai-data-labeling-tools-comparison/)
+- [AI Data Labeling Tools Comparison - A Developer Guide](https://bestremotetools.com/ai-data-labeling-tools-comparison/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

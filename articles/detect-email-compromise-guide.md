@@ -23,13 +23,13 @@ This guide gives you concrete methods to detect compromise, investigate the exte
 Table of Contents
 
 - [Signs Your Email May Be Compromised](#signs-your-email-may-be-compromised)
-- [Step 1: Check Breach Databases](#step-1-check-breach-databases)
-- [Step 2: Review Active Sessions](#step-2-review-active-sessions)
-- [Step 3: Check for Email Forwarding Rules](#step-3-check-for-email-forwarding-rules)
-- [Step 4: Check Connected Apps and OAuth Grants](#step-4-check-connected-apps-and-oauth-grants)
-- [Step 5: Examine Recent Account Activity](#step-5-examine-recent-account-activity)
-- [Step 6: Check for Credential Leaks on Paste Sites](#step-6-check-for-credential-leaks-on-paste-sites)
-- [Step 7: Secure the Account](#step-7-secure-the-account)
+- [Step 1 - Check Breach Databases](#step-1-check-breach-databases)
+- [Step 2 - Review Active Sessions](#step-2-review-active-sessions)
+- [Step 3 - Check for Email Forwarding Rules](#step-3-check-for-email-forwarding-rules)
+- [Step 4 - Check Connected Apps and OAuth Grants](#step-4-check-connected-apps-and-oauth-grants)
+- [Step 5 - Examine Recent Account Activity](#step-5-examine-recent-account-activity)
+- [Step 6 - Check for Credential Leaks on Paste Sites](#step-6-check-for-credential-leaks-on-paste-sites)
+- [Step 7 - Secure the Account](#step-7-secure-the-account)
 - [Ongoing Monitoring](#ongoing-monitoring)
 
 Signs Your Email May Be Compromised
@@ -44,7 +44,7 @@ Signs Your Email May Be Compromised
 
 Any single one of these warrants immediate investigation.
 
-Step 1: Check Breach Databases
+Step 1 - Check Breach Databases
 
 Start with publicly known breaches. Your credentials may have been leaked from a third-party service you used the same password on.
 
@@ -78,7 +78,7 @@ Returns hash suffixes and how many times they appeared in breaches
 
 If your full SHA-1 hash suffix appears in the results with a non-zero count, change that password immediately.
 
-Step 2: Review Active Sessions
+Step 2 - Review Active Sessions
 
 Every major email provider lets you view active sessions. Check these first.
 
@@ -115,7 +115,7 @@ Failed IMAP logins
 sudo grep "imap-login" /var/log/dovecot.log | grep "Aborted login\|Disconnected" | tail -50
 ```
 
-Step 3: Check for Email Forwarding Rules
+Step 3 - Check for Email Forwarding Rules
 
 Attackers frequently set up silent forwarding rules so they keep receiving your email even after you change your password.
 
@@ -154,7 +154,7 @@ for f in filters.get('filter', []):
     print(f)
 ```
 
-Step 4: Check Connected Apps and OAuth Grants
+Step 4 - Check Connected Apps and OAuth Grants
 
 A compromised account may have authorized malicious third-party apps that maintain access even after you change your password.
 
@@ -175,7 +175,7 @@ For any suspicious OAuth app:
 2. Note what data the app had access to (mail, contacts, calendar)
 3. Assume that data has been copied
 
-Step 5: Examine Recent Account Activity
+Step 5 - Examine Recent Account Activity
 
 Gmail Activity Log
 
@@ -185,7 +185,7 @@ Download Your Data
 
 Request a complete export of your account data to check what's there:
 
-- Gmail: `https://takeout.google.com`
+- Gmail - `https://takeout.google.com`
 - Proton: Settings > Account > Account data export
 
 This gives you a baseline of what an attacker could have accessed.
@@ -194,10 +194,10 @@ Check Sent Folder
 
 ```bash
 If using Thunderbird or similar with local storage, search for unauthorized sent mail
-grep -r "From: your@email.com" ~/.thunderbird/*/Mail/*/Sent* | tail -50
+grep -r "From - your@email.com" ~/.thunderbird/*/Mail/*/Sent* | tail -50
 ```
 
-Step 6: Check for Credential Leaks on Paste Sites
+Step 6 - Check for Credential Leaks on Paste Sites
 
 Credentials sometimes appear on paste sites like Pastebin before they're indexed by HIBP.
 
@@ -210,7 +210,7 @@ site:rentry.co "your@email.com"
 
 Also search your username, not just email address.
 
-Step 7: Secure the Account
+Step 7 - Secure the Account
 
 Once you've identified a compromise:
 

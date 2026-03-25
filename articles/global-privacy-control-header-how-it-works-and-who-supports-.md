@@ -33,7 +33,7 @@ How the GPC Header Works
 When a user enables privacy protections in their browser, every HTTP request includes the GPC header. The header value is straightforward:
 
 ```
-Sec-GPC: 1
+Sec-GPC - 1
 ```
 
 The `Sec-` prefix indicates this is a fetch metadata header, providing additional security context about the request.
@@ -152,7 +152,7 @@ Major Platforms
 - Google: Honors GPC for California users through AdSettings
 - Meta: Respects GPC for covered jurisdictions
 - Amazon: Implements GPC for advertising personalization
-- Microsoft: Applies GPC across its advertising ecosystem
+- Microsoft: Applies GPC across its advertising environment
 
 Ad Networks and Trackers
 
@@ -173,11 +173,11 @@ Implementing GPC on Your Website
 
 If you run a website, here's how to properly handle GPC:
 
-Step 1: Detect the Signal
+Step 1 - Detect the Signal
 
 Add server-side logic to check for the `Sec-GPC` header on incoming requests.
 
-Step 2: Disable Tracking
+Step 2 - Disable Tracking
 
 When GPC is detected, ensure you:
 
@@ -186,7 +186,7 @@ When GPC is detected, ensure you:
 - Don't share data with third parties
 - Don't sell user data
 
-Step 3: Communicate Compliance
+Step 3 - Communicate Compliance
 
 Add a notice in your privacy policy acknowledging GPC support:
 
@@ -207,7 +207,7 @@ Verify your GPC handling works correctly:
 
 ```bash
 Test with curl
-curl -H "Sec-GPC: 1" https://yourwebsite.com
+curl -H "Sec-GPC - 1" https://yourwebsite.com
 
 Check response headers for proper processing
 Verify no tracking cookies are set

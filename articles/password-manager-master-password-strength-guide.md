@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Master Password Entropy
+Step 1 - Understand Master Password Entropy
 
 Entropy measures the randomness of your password in bits. Higher entropy means more possible combinations an attacker must enumerate. For master passwords, target at least 80 bits of entropy, this provides sufficient security against offline attacks even if your password database is compromised.
 
@@ -69,10 +69,10 @@ def calculate_entropy(password: str) -> float:
 
 Example
 password = "Tr0ub4dor&3HorseBattery"
-print(f"Entropy: {calculate_entropy(password):.1f} bits")
+print(f"Entropy - {calculate_entropy(password):.1f} bits")
 ```
 
-Step 2: Set Up Passphrase s: The Practical Approach
+Step 2 - Set Up Passphrase s: The Practical Approach
 
 Random words from a dictionary (EFF wordlists are popular) provide better usability than character jumbles while maintaining security. A 6-word passphrase typically achieves 70-80 bits of entropy, suitable when paired with a strong key derivation function.
 
@@ -97,7 +97,7 @@ The EFF large wordlist (7,776 words) is specifically designed for passphrase gen
 - Memorable, concrete words
 - Consistent entropy: log2(7776^n) bits per word
 
-For a 6-word EFF passphrase: log2(7776^6) ≈ 77.5 bits. For 7 words: ≈ 90.5 bits. Seven words is the recommended minimum when passphrases are your only factor.
+For a 6-word EFF passphrase - log2(7776^6) ≈ 77.5 bits. For 7 words: ≈ 90.5 bits. Seven words is the recommended minimum when passphrases are your only factor.
 
 ```bash
 Download EFF wordlist and generate passphrase
@@ -115,7 +115,7 @@ print(f"Word count: 7 | Entropy: ~90.5 bits")
 EOF
 ```
 
-Step 3: Key Derivation Functions: Why They Matter
+Step 3 - Key Derivation Functions: Why They Matter
 
 Password managers don't store your master password directly. Instead, they derive an encryption key using a key derivation function (KDF). This process is intentionally slow to hinder brute-force attacks.
 
@@ -182,7 +182,7 @@ This means a 70-bit entropy passphrase would take:
 
 The memory-hardness of Argon2id matters because GPU-based attacks depend on parallelism. Requiring 64MB per hash attempt limits the number of simultaneous attacks a GPU can run, degrading GPU advantage dramatically.
 
-Step 4: What Makes a Master Password Vulnerable
+Step 4 - What Makes a Master Password Vulnerable
 
 Even with high entropy, certain patterns weaken master passwords:
 
@@ -227,19 +227,19 @@ print(estimate_crack_time("Tr0ub4dor&3", 1000))  # With Argon2
 print(estimate_crack_time("Tr0ub4dor&3", 100e9))  # With fast hash
 ```
 
-Step 5: Memorization Strategies for Strong Passwords
+Step 5 - Memorization Strategies for Strong Passwords
 
 A common objection to long random passphrases is memorability. Structured memorization techniques make 7-word passphrases reliable:
 
-Method of loci (memory palace): Associate each word with a location in a familiar mental space, your home, for example. Walk through the rooms in order, placing a vivid mental image of each word's meaning in each room. With practice, a 7-word passphrase becomes retrievable in seconds.
+Method of loci (memory palace) - Associate each word with a location in a familiar mental space, your home, for example. Walk through the rooms in order, placing a vivid mental image of each word's meaning in each room. With practice, a 7-word passphrase becomes retrievable in seconds.
 
-Spaced repetition: After generating your passphrase, test yourself at increasing intervals: immediately, 1 hour later, 24 hours later, 1 week later, then monthly. Free tools like Anki can automate this schedule. Most people achieve reliable recall after 5-7 retrieval sessions.
+Spaced repetition - After generating your passphrase, test yourself at increasing intervals: immediately, 1 hour later, 24 hours later, 1 week later, then monthly. Free tools like Anki can automate this schedule. Most people achieve reliable recall after 5-7 retrieval sessions.
 
-Chunking: Break the passphrase into 2-3 word groups and associate a mini-story with each group. "correct horse battery" becomes a mental image of a horse correctly jumping over a battery. The narrative structure reduces working memory load.
+Chunking - Break the passphrase into 2-3 word groups and associate a mini-story with each group. "correct horse battery" becomes a mental image of a horse correctly jumping over a battery. The narrative structure reduces working memory load.
 
 For character-based passwords, consider storing a hint (not the password itself) in your vault: a cryptic clue that helps you reconstruct the pattern without exposing the actual credential to someone who reads the hint.
 
-Step 6: Password Manager Security Architecture
+Step 6 - Password Manager Security Architecture
 
 Understanding how your password manager processes your master password clarifies what you're protecting against.
 
@@ -256,7 +256,7 @@ This architecture means that even a complete server breach exposes only encrypte
 
 Bitwarden's open-source implementation demonstrates this pattern and can be self-audited. LastPass's 2022 breach illustrated what happens when this architecture fails, their key derivation used insufficient iterations (PBKDF2 at 100,001 iterations client-side, with some accounts at much lower values), allowing attackers to crack vaults offline.
 
-Step 7: Practical Recommendations
+Step 7 - Practical Recommendations
 
 For developers implementing password manager features:
 

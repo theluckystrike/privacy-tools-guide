@@ -28,10 +28,10 @@ Table of Contents
 - [Mobile-Specific Considerations](#mobile-specific-considerations)
 - [Alternative Approaches for Developers](#alternative-approaches-for-developers)
 - [Practical Recommendations](#practical-recommendations)
-- [Deep Protocol Analysis: Why IKEv2 Succeeds in Vietnam](#deep-protocol-analysis-why-ikev2-succeeds-in-vietnam)
+- [Deep Protocol Analysis - Why IKEv2 Succeeds in Vietnam](#deep-protocol-analysis-why-ikev2-succeeds-in-vietnam)
 - [Real-World Performance Under Different Conditions](#real-world-performance-under-different-conditions)
 - [Cellular Network Specific Considerations](#cellular-network-specific-considerations)
-- [Advanced Configuration: Custom Protocol Wrapping](#advanced-configuration-custom-protocol-wrapping)
+- [Advanced Configuration - Custom Protocol Wrapping](#advanced-configuration-custom-protocol-wrapping)
 - [Android-Specific Considerations](#android-specific-considerations)
 - [iOS-Specific Considerations](#ios-specific-considerations)
 - [Monitoring and Alerting Strategy](#monitoring-and-alerting-strategy)
@@ -122,7 +122,7 @@ import NetworkExtension
 let vpnManager = NEVPNManager.shared()
 vpnManager.loadFromPreferences { error in
     if let connection = vpnManager.connection as? NEVPNConnectionIKEv2 {
-        print("IKEv2 Status: \(connection.status)")
+        print("IKEv2 Status - \(connection.status)")
     }
 }
 ```
@@ -148,15 +148,15 @@ For developers building applications for users in Vietnam, implement connection 
 
 Users requiring maximum reliability should consider maintaining multiple VPN services as backups and evaluate the specific threat model relevant to their situation before selecting a single solution.
 
-Deep Protocol Analysis: Why IKEv2 Succeeds in Vietnam
+Deep Protocol Analysis - Why IKEv2 Succeeds in Vietnam
 
 IKEv2's success rate (75%) in Vietnam reveals important security architecture insights:
 
-IPSec Foundation: IKEv2 uses IPSec as underlying encryption, which cellular carriers actively support for enterprise VPN (business users on Viettel networks use IPSec for banking). The protocol is recognized as legitimate traffic rather than flagged as suspicious.
+IPSec Foundation - IKEv2 uses IPSec as underlying encryption, which cellular carriers actively support for enterprise VPN (business users on Viettel networks use IPSec for banking). The protocol is recognized as legitimate traffic rather than flagged as suspicious.
 
-Packet Pattern Recognition: Deep Packet Inspection scans for characteristic signatures of known VPN protocols. IKEv2 packets contain standard IPSec headers that blend into normal enterprise traffic. WireGuard, by contrast, uses a distinctive handshake pattern that DPI systems have learned to identify and block.
+Packet Pattern Recognition - Deep Packet Inspection scans for characteristic signatures of known VPN protocols. IKEv2 packets contain standard IPSec headers that blend into normal enterprise traffic. WireGuard, by contrast, uses a distinctive handshake pattern that DPI systems have learned to identify and block.
 
-Connection Establishment: IKEv2 establishes connections through standard IKE protocol exchanges (proposals, key exchange, authentication). This mimics legitimate enterprise VPN setup, bypassing heuristic blocking.
+Connection Establishment - IKEv2 establishes connections through standard IKE protocol exchanges (proposals, key exchange, authentication). This mimics legitimate enterprise VPN setup, bypassing heuristic blocking.
 
 ```python
 Analyzing IKEv2 packet structure helps understand why it succeeds
@@ -178,11 +178,11 @@ Real-World Performance Under Different Conditions
 
 Beyond the summary table, actual performance varies significantly by time of day:
 
-Peak hours (6-9 PM): Network congestion increases DPI overhead. IKEv2 success rates drop to approximately 50-60% as firewalls become more aggressive with rate limiting. WireGuard connections experience more frequent disconnections (average duration 2-3 minutes before requiring reconnection).
+Peak hours (6-9 PM) - Network congestion increases DPI overhead. IKEv2 success rates drop to approximately 50-60% as firewalls become more aggressive with rate limiting. WireGuard connections experience more frequent disconnections (average duration 2-3 minutes before requiring reconnection).
 
-Off-peak hours (2-6 AM): Less DPI filtering overhead. IKEv2 success rates improve to 80-85%. WireGuard becomes more reliable, with longer stable connections (10-15 minutes average).
+Off-peak hours (2-6 AM) - Less DPI filtering overhead. IKEv2 success rates improve to 80-85%. WireGuard becomes more reliable, with longer stable connections (10-15 minutes average).
 
-Weekend vs. weekday: Weekends show marginally better VPN performance (5-10% improvement), suggesting routing optimization during weekday business hours.
+Weekend vs. weekday - Weekends show marginally better VPN performance (5-10% improvement), suggesting routing optimization during weekday business hours.
 
 Geographic Variations Within Vietnam
 
@@ -198,7 +198,7 @@ Cellular Network Specific Considerations
 
 Mobile VPN usage differs from fixed broadband in subtle ways:
 
-Network switching: Mobile devices switch between cell towers, WiFi, and 4G/5G. Each network change can interrupt VPN connections.
+Network switching - Mobile devices switch between cell towers, WiFi, and 4G/5G. Each network change can interrupt VPN connections.
 
 ```swift
 // iOS: Handling network changes during VPN session
@@ -225,11 +225,11 @@ class VPNMonitor {
 }
 ```
 
-Radio efficiency: Cellular modems optimize power consumption. VPN overhead increases battery drain. Users should configure VPNs to reconnect quickly (PersistentKeepalive) rather than maintaining constant connections.
+Radio efficiency - Cellular modems optimize power consumption. VPN overhead increases battery drain. Users should configure VPNs to reconnect quickly (PersistentKeepalive) rather than maintaining constant connections.
 
-Carrier throttling: Some carriers detect VPN usage and throttle. This appears as legitimate throughput (packets flow, but slowly). Symptoms: connection succeeds but appears frozen. Configure short timeout values to trigger reconnection attempts.
+Carrier throttling - Some carriers detect VPN usage and throttle. This appears as legitimate throughput (packets flow, but slowly). Symptoms - connection succeeds but appears frozen. Configure short timeout values to trigger reconnection attempts.
 
-Advanced Configuration: Custom Protocol Wrapping
+Advanced Configuration - Custom Protocol Wrapping
 
 For developers with server access outside Vietnam, wrapping VPN traffic in another protocol provides additional obfuscation:
 
@@ -252,17 +252,17 @@ Run Shadowsocks locally on port 1080
 ss-local -c config.json -v
 
 Configure VPN to use SOCKS proxy through Shadowsocks
-OpenVPN: socks-proxy 127.0.0.1 1080
-WireGuard: Not directly compatible, requires separate tunnel configuration
+OpenVPN - socks-proxy 127.0.0.1 1080
+WireGuard - Not directly compatible, requires separate tunnel configuration
 ```
 
 This approach makes traffic appear as standard SOCKS proxy usage (common for legitimate purposes) while encapsulating VPN traffic.
 
 Android-Specific Considerations
 
-Android testing (device: Google Pixel 6) revealed platform-specific behaviors:
+Android testing (device - Google Pixel 6) revealed platform-specific behaviors:
 
-VPN app restrictions: Android 12+ restricts background VPN access. The Surfshark app only maintains connection while screen is on or with specific integration. Users need to enable "Always-on VPN" in Settings → Network & Internet → VPN.
+VPN app restrictions - Android 12+ restricts background VPN access. The Surfshark app only maintains connection while screen is on or with specific integration. Users need to enable "Always-on VPN" in Settings → Network & Internet → VPN.
 
 ```bash
 Verify always-on VPN is enabled
@@ -270,15 +270,15 @@ adb shell settings get global vpn_require_lockdown
 Should return "1" (enabled)
 ```
 
-Data saver interference: Android's Data Saver restricts background app activity, potentially interrupting VPN connections. Disable for the VPN app in Settings → Network & Internet → Data Saver.
+Data saver interference - Android's Data Saver restricts background app activity, potentially interrupting VPN connections. Disable for the VPN app in Settings → Network & Internet → Data Saver.
 
-Kill switch limitations: Android's kill switch prevents traffic leaks only while the VPN is active. Unlike desktop implementations, Android kill switches don't prevent application startup before VPN activation. For privacy-critical scenarios, this represents a weakness.
+Kill switch limitations - Android's kill switch prevents traffic leaks only while the VPN is active. Unlike desktop implementations, Android kill switches don't prevent application startup before VPN activation. For privacy-critical scenarios, this represents a weakness.
 
 iOS-Specific Considerations
 
 iOS testing (device: iPhone 14) showed different behaviors:
 
-VPN On Demand: iOS allows automatic VPN activation based on network conditions. Configure in Settings → VPN & Device Management → VPN → Automatic VPN:
+VPN On Demand - iOS allows automatic VPN activation based on network conditions. Configure in Settings → VPN & Device Management → VPN → Automatic VPN:
 
 ```xml
 <!-- iOS VPN On Demand configuration -->
@@ -301,7 +301,7 @@ VPN On Demand: iOS allows automatic VPN activation based on network conditions. 
 
 iCloud Private Relay interference: Apple's iCloud Private Relay sometimes conflicts with VPN apps. Disable iCloud settings → [Name] → iCloud → Private Relay for consistent VPN-only traffic routing.
 
-DNS over HTTPS: iOS prefers DNS over HTTPS (DoH) which can bypass VPN DNS settings. Configure VPN to override DNS for reliability.
+DNS over HTTPS - iOS prefers DNS over HTTPS (DoH) which can bypass VPN DNS settings. Configure VPN to override DNS for reliability.
 
 Monitoring and Alerting Strategy
 

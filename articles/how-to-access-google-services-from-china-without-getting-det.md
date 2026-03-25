@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Firewall Detection Mechanisms
+Step 1 - Understand Firewall Detection Mechanisms
 
 The GFW uses several complementary techniques to identify and block access to restricted services. DNS filtering returns incorrect IP addresses for domain lookups of Google domains, effectively making services unreachable even if the underlying connection could work. IP blocking targets specific Google IP ranges that are known to host search, mail, and other services. Deep packet inspection analyzes encrypted traffic for patterns that reveal the nature of the communication, even when using TLS.
 
 For developers, understanding these mechanisms matters because each counter-measure addresses different detection vectors. A solution that only changes DNS may fail when the firewall inspects SNI (Server Name Indication) fields in TLS handshakes. Similarly, simple VPN connections often get blocked because the firewall recognizes VPN protocol signatures.
 
-Step 2: Method 1: Self-Hosted VPN with Obfuscation
+Step 2 - Method 1: Self-Hosted VPN with Obfuscation
 
 Self-hosting a VPN gives you control over server configuration and traffic patterns. This approach requires a virtual private server (VPS) located outside China, preferably in a nearby region like Hong Kong, Japan, or Singapore for lower latency.
 
@@ -74,7 +74,7 @@ chmod +x /usr/local/bin/wg-obfuscate.sh
 
 This simple UDP proxy normalizes packet sizes and adds random timing variations that make DPI more difficult.
 
-Step 3: Method 2: DNS over HTTPS with Encrypted SNI
+Step 3 - Method 2: DNS over HTTPS with Encrypted SNI
 
 For users who need simpler setups, DNS-over-HTTPS (DoH) combined with encrypted Server Name Indication (ESNI) provides a reasonable alternative. While this doesn't encrypt the full connection path to Google, it does prevent DNS-based blocking and SNI-based filtering.
 
@@ -104,7 +104,7 @@ network.trr.mode = 3
 network.trr.bootstrapAddress = 1.1.1.1
 ```
 
-Step 4: Method 3: Self-Hosted Shadowsocks with AEAD Encryption
+Step 4 - Method 3: Self-Hosted Shadowsocks with AEAD Encryption
 
 Shadowsocks remains effective because it was designed specifically to mimic regular HTTPS traffic. The SOCKS5 proxy protocol, when properly configured with AEAD encryption, produces traffic patterns nearly identical to normal web browsing.
 
@@ -151,7 +151,7 @@ Configuration for client
 
 Configure your system or browser to use the local SOCKS5 proxy at 127.0.0.1:1080.
 
-Step 5: Method 4: Domain Fronting with CDNs
+Step 5 - Method 4: Domain Fronting with CDNs
 
 Domain fronting exploits the way content delivery networks handle requests. The actual destination is hidden inside HTTPS requests, allowing you to tunnel traffic through services like Cloudflare or Azure while appearing to access legitimate CDN content.
 
@@ -185,7 +185,7 @@ async function handleRequest(request) {
 
 This approach makes your traffic appear to be connecting to a Cloudflare domain while actually reaching Google servers.
 
-Step 6: Operational Security Recommendations
+Step 6 - Operational Security Recommendations
 
 Regardless of which method you choose, follow these operational security practices:
 

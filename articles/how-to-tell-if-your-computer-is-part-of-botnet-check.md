@@ -25,7 +25,7 @@ Table of Contents
 - [How to Check If Your Computer Is in a Botnet](#how-to-check-if-your-computer-is-in-a-botnet)
 - [What to Do If Your Computer Is in a Botnet](#what-to-do-if-your-computer-is-in-a-botnet)
 - [Advanced Detection Techniques Using Command Line Tools](#advanced-detection-techniques-using-command-line-tools)
-- [Behavioral Analysis: What Botnets Actually Do](#behavioral-analysis-what-botnets-actually-do)
+- [Behavioral Analysis - What Botnets Actually Do](#behavioral-analysis-what-botnets-actually-do)
 - [Forensic Collection if You Suspect Infection](#forensic-collection-if-you-suspect-infection)
 - [Botnet C2 Communication Patterns](#botnet-c2-communication-patterns)
 - [Post-Infection Recovery Checklist](#post-infection-recovery-checklist)
@@ -88,11 +88,11 @@ Some botnets and malware modify your browser settings, changing your homepage or
 
 How to Check If Your Computer Is in a Botnet
 
-Step 1: Run an Antivirus or Anti-Malware Scan
+Step 1 - Run an Antivirus or Anti-Malware Scan
 
 The first step in botnet detection is running a security scan. Update your antivirus definitions and run a full system scan. Use reputable security software such as Windows Defender, Malwarebytes, or Bitdefender. Schedule scans to run automatically to catch infections early.
 
-Step 2: Check for Suspicious Processes
+Step 2 - Check for Suspicious Processes
 
 Open your system's process monitor and look for unfamiliar processes. Research any process you don't recognize:
 
@@ -107,7 +107,7 @@ Common signs of botnet processes include:
 - Processes consuming bandwidth without your knowledge
 - Processes hiding in system directories
 
-Step 3: Analyze Network Traffic
+Step 3 - Analyze Network Traffic
 
 Use network analysis tools to monitor outgoing connections. Wireshark is a powerful packet analyzer that can help identify suspicious traffic patterns. Look for:
 
@@ -115,17 +115,17 @@ Use network analysis tools to monitor outgoing connections. Wireshark is a power
 - Connections on non-standard ports
 - Data exfiltration attempts
 
-Step 4: Check DNS Settings
+Step 4 - Check DNS Settings
 
 Botnets sometimes modify your DNS settings to redirect traffic or intercept communications. Verify your DNS settings haven't been changed:
 
 - Windows: `ipconfig /all` and check DNS servers
 - macOS: `networksetup -getdnsservers Wi-Fi`
-- Linux: Check `/etc/resolv.conf`
+- Linux - Check `/etc/resolv.conf`
 
 Ensure your DNS servers are from legitimate providers like Google (8.8.8.8) or Cloudflare (1.1.1.1).
 
-Step 5: Use Online Botnet Checking Tools
+Step 5 - Use Online Botnet Checking Tools
 
 Several websites offer free botnet detection services. These tools check if your IP address appears on known botnet lists or has been flagged for malicious activity. Examples include:
 
@@ -173,7 +173,7 @@ Advanced Detection Techniques Using Command Line Tools
 Monitoring Outbound Connections with Netstat
 
 ```bash
-Windows: Real-time monitoring of new connections
+Windows - Real-time monitoring of new connections
 netstat -b -o 1
 
 macOS/Linux: Show all connections with process names
@@ -209,7 +209,7 @@ Get-EventLog -LogName Security -Newest 1000 | \
   Format-Table TimeGenerated, EventID, Message
 ```
 
-Behavioral Analysis: What Botnets Actually Do
+Behavioral Analysis - What Botnets Actually Do
 
 Understanding botnet behavior helps identify infections:
 
@@ -263,17 +263,17 @@ Botnets communicate with command servers in recognizable patterns:
 HTTP Beacon Pattern
 ```
 GET /update.php?id=botnet123&version=1.0 HTTP/1.1
-Host: c2-server.example.com
-User-Agent: Mozilla/5.0
+Host - c2-server.example.com
+User-Agent - Mozilla/5.0
 ```
 
 Periodic requests to the same server at fixed intervals indicate C2 communication.
 
 DNS Tunnel Pattern
 ```
-Frequent DNS queries to: sub1.c2server.com, sub2.c2server.com, etc.
-Unusual: Queries for non-existent domains
-Pattern: Burst queries followed by silence, then repeat
+Frequent DNS queries to - sub1.c2server.com, sub2.c2server.com, etc.
+Unusual - Queries for non-existent domains
+Pattern - Burst queries followed by silence, then repeat
 ```
 
 DNS tunneling encodes commands in DNS query responses.

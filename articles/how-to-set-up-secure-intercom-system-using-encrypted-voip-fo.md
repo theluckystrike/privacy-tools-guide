@@ -50,11 +50,11 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Architectural Components
+Step 1 - Architectural Components
 
 A self-hosted intercom system consists of four main components:
 
-1. VoIP Server: Handles call routing, authentication, and registration (e.g., Asterisk, FreeSWITCH, or a lightweight SIP proxy)
+1. VoIP Server - Handles call routing, authentication, and registration (e.g., Asterisk, FreeSWITCH, or a lightweight SIP proxy)
 2. Client Devices: IP phones, softphones, or dedicated intercom hardware at each entry point
 3. Network Infrastructure: Local network with VLAN segmentation for security isolation
 4. Encryption Layer: TLS for SIP signaling and SRTP for audio streams
@@ -67,7 +67,7 @@ Asterisk is the more widely documented option and has a larger community, making
 
 Kamailio is a third option worth knowing, it functions as a pure SIP proxy/registrar without media handling. Pairing Kamailio with RTPengine for media relay gives you a highly scalable setup, but for a residential or small commercial intercom system, the added complexity is unnecessary.
 
-Step 2: Choose VoIP Protocols and Encryption Standards
+Step 2 - Choose VoIP Protocols and Encryption Standards
 
 SIP with TLS Transport
 
@@ -129,7 +129,7 @@ chown asterisk:asterisk /etc/asterisk/asterisk.pem
 
 If using Let's Encrypt, install `certbot` and create a deploy hook that copies the renewed certificate to Asterisk's config directory and restarts the service.
 
-Step 3: Set Up a Lightweight SIP Proxy
+Step 3 - Set Up a Lightweight SIP Proxy
 
 For building intercom applications where full telephony features are unnecessary, a lightweight SIP proxy like SIP.js or Kamailio provides sufficient functionality with lower resource requirements.
 
@@ -180,7 +180,7 @@ networks:
     driver: bridge
 ```
 
-Step 4: Client Implementation Patterns
+Step 4 - Client Implementation Patterns
 
 Hardware Intercom Devices
 
@@ -243,7 +243,7 @@ rtpend=10100
 
 Narrowing the range to 10000-10100 limits your firewall exposure while still supporting up to 50 simultaneous calls. Adjust the upper bound based on your expected concurrent call volume, each active call consumes two ports (one for audio, one for RTCP).
 
-Step 5: Test Encryption
+Step 5 - Test Encryption
 
 After deployment, verify that encryption is properly configured. Use tools like `sngrep` to capture SIP traffic and confirm TLS is active:
 
@@ -265,7 +265,7 @@ sudo tcpdump -i eth0 -w /tmp/sip-capture.pcap port 5061 or udp portrange 10000-1
 
 Open the capture in Wireshark and check that the SIP signaling on port 5061 shows as TLS-encrypted (you will not be able to decode the contents without the key, which is a good sign). The UDP media packets should not decode as RTP if SRTP is active correctly.
 
-Step 6: Dial Plan Configuration
+Step 6 - Dial Plan Configuration
 
 Configure Asterisk's extensions.conf to route door unit calls to residents:
 
@@ -282,7 +282,7 @@ exten => door_release,n,Hangup()
 
 Many door stations support a relay output that can be triggered by sending a DTMF tone during the call. The Asterisk dial plan above can be extended to detect DTMF tones and invoke a script that calls the door station's HTTP API to release the lock.
 
-Step 7: Perform Maintenance and Monitoring
+Step 7 - Perform Maintenance and Monitoring
 
 Regular maintenance ensures continued security:
 

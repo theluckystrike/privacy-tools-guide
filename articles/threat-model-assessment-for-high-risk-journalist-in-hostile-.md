@@ -18,7 +18,7 @@ Create a threat model by assessing your adversaries' capabilities (state surveil
 
 Table of Contents
 
-- [Understanding the Threat ecosystem](#understanding-the-threat-ecosystem)
+- [Understanding the Threat environment](#understanding-the-threat-environment)
 - [Building Your Threat Model](#building-your-threat-model)
 - [Practical Countermeasures](#practical-countermeasures)
 - [Incident Response Planning](#incident-response-planning)
@@ -29,7 +29,7 @@ Table of Contents
 - [Long-Term Operational Sustainability](#long-term-operational-sustainability)
 - [Resources and Support](#resources-and-support)
 
-Understanding the Threat ecosystem
+Understanding the Threat environment
 
 Journalists operating in hostile countries face adversaries with significant resources, including state-level actors, intelligence agencies, and coordinated non-state groups. Your threat model must account for adversaries capable of:
 
@@ -42,7 +42,7 @@ Unlike corporate security, you cannot rely on perimeter defense. Your threat mod
 
 Building Your Threat Model
 
-Step 1: Asset Identification
+Step 1 - Asset Identification
 
 List everything an adversary might want to access:
 
@@ -59,7 +59,7 @@ assets = {
 
 For each asset, assign a criticality rating. Source communications typically warrant the highest protection, followed by drafts and notes containing sensitive information.
 
-Step 2: Adversary Profiling
+Step 2 - Adversary Profiling
 
 Identify who might target you and what capabilities they possess:
 
@@ -71,7 +71,7 @@ Identify who might target you and what capabilities they possess:
 
 State-level adversaries deserve the most conservative assumptions. If your adversary can compel cooperation from major tech companies or compromise undersea cables, assume standard encryption may not suffice.
 
-Step 3: Attack Vector Analysis
+Step 3 - Attack Vector Analysis
 
 Map how adversaries might access your assets:
 

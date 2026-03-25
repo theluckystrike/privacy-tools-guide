@@ -62,7 +62,7 @@ SMS-Receive
 
 SMS-Receive provides free temporary numbers for verification code receipt. The service operates on an ad-supported model, making it suitable for occasional use.
 
-Limitations: Numbers are shared among users, meaning some services reject them. Messages typically expire quickly, and the service works best for services with immediate delivery.
+Limitations - Numbers are shared among users, meaning some services reject them. Messages typically expire quickly, and the service works best for services with immediate delivery.
 
 Receive-SMS
 

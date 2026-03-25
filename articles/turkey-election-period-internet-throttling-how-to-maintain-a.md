@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How Turkey Implements Election-Period Internet Restrictions
+Step 1 - How Turkey Implements Election-Period Internet Restrictions
 
 The Turkish government uses several technical mechanisms to throttle and restrict internet access during sensitive periods:
 
@@ -40,7 +40,7 @@ The Turkish government uses several technical mechanisms to throttle and restric
 
 During the 2023 elections, reports indicated increased DPI activity targeting protocols and VPN ports. The Blocking mechanisms often target specific protocols (OpenVPN on port 1194, WireGuard on port 51820) while leaving others functional.
 
-Step 2: Preparing Your Infrastructure
+Step 2 - Preparing Your Infrastructure
 
 DNS Configuration
 
@@ -120,7 +120,7 @@ Shadowsocks Configuration:
 }
 ```
 
-Step 3: Network-Level Solutions
+Step 3 - Network-Level Solutions
 
 Router Configuration for Automatic Failover
 
@@ -157,7 +157,7 @@ ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
 
 The `iat-mode=2` parameter enables randomized padding that makes traffic analysis more difficult.
 
-Step 4: Application-Level Defenses
+Step 4 - Application-Level Defenses
 
 Browser Configuration
 
@@ -195,7 +195,7 @@ docker run -d \
   signalfx/signaling-proxy
 ```
 
-Step 5: Monitor Connection Quality
+Step 5 - Monitor Connection Quality
 
 Implement basic monitoring to detect throttling:
 
@@ -224,11 +224,11 @@ def measure_latency(host, count=10):
 
 Test baseline and compare
 baseline = measure_latency('8.8.8.8')
-print(f"Baseline: {statistics.median(baseline)}ms")
-print(f"Jitter: {statistics.stdev(baseline) if len(baseline) > 1 else 0}")
+print(f"Baseline - {statistics.median(baseline)}ms")
+print(f"Jitter - {statistics.stdev(baseline) if len(baseline) > 1 else 0}")
 ```
 
-Step 6: Emergency Preparedness Checklist
+Step 6 - Emergency Preparedness Checklist
 
 Before election periods, verify these items:
 
@@ -240,7 +240,7 @@ Before election periods, verify these items:
 6. Proxy lists: Maintain working proxy server list
 7. Critical contacts: Establish out-of-band communication methods
 
-Step 7: Detecting Active Throttling vs Complete Blocking
+Step 7 - Detecting Active Throttling vs Complete Blocking
 
 Understanding whether you are facing bandwidth throttling or outright blocking determines which countermeasure to apply. Throttling slows connections while keeping them functional; blocking drops packets entirely.
 
@@ -314,7 +314,7 @@ Psiphon is specifically designed for circumvention in high-censorship environmen
 
 Download from `psiphon3.com` or request a copy via `get@psiphon3.com`. email distribution is designed for situations where the website is blocked. Psiphon needs no configuration: install, launch, connect.
 
-Step 8: Preparing a Resilience Kit Before Election Periods
+Step 8 - Preparing a Resilience Kit Before Election Periods
 
 Turkey's restrictions historically activate within hours of polls closing. Preparation must happen before filtering starts. you may not be able to download tools once blocking is active.
 
@@ -333,22 +333,22 @@ Pre-Configure Multiple Server Profiles
 Configure at least three WireGuard or OpenVPN profiles pointing to servers in different jurisdictions and ports:
 
 ```ini
-Profile 1: Frankfurt, port 443
+Profile 1 - Frankfurt, port 443
 [Peer]
 Endpoint = de1.yourvpn.com:443
 
-Profile 2: Netherlands, port 8443
+Profile 2 - Netherlands, port 8443
 [Peer]
 Endpoint = nl1.yourvpn.com:8443
 
-Profile 3: Singapore via TCP 80 (often unfiltered for HTTP traffic)
+Profile 3 - Singapore via TCP 80 (often unfiltered for HTTP traffic)
 [Peer]
 Endpoint = sg1.yourvpn.com:80
 ```
 
 Test all profiles before the election period. Ports 443 and 80 are the last ports ISPs will block, since blocking them breaks ordinary web browsing for all users.
 
-Step 9: Legal and Safety Considerations
+Step 9 - Legal and Safety Considerations
 
 VPN usage in Turkey is not criminalized, but circumvention tools should be used responsibly. Documentation of censorship. OONI Probe exports, speed test logs, screenshots. is valuable to advocacy organizations like Freedom House and Article 19.
 

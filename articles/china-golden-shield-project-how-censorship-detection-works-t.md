@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "China Golden Shield Project How Censorship Detection Works"
-description: "China Golden Shield Project: How Censorship Detection.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
+description: "China Golden Shield Project - How Censorship Detection.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
@@ -240,7 +240,7 @@ def create_obfuscated_connection(target, port):
 Protocol layering adds more layers of indirection:
 
 ```python
-V2Ray style: WebSocket over TLS over TCP
+V2Ray style - WebSocket over TLS over TCP
 The traffic looks like normal HTTPS web browsing
 But timing and other metadata can still reveal it
 ```

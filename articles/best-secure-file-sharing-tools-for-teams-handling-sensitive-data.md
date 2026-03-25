@@ -22,7 +22,7 @@ Table of Contents
 
 - [Why Consumer Tools Fail for Sensitive Data](#why-consumer-tools-fail-for-sensitive-data)
 - [Enterprise Secure File Sharing Platforms](#enterprise-secure-file-sharing-platforms)
-- [Comparison Table: Secure File Sharing Platforms](#comparison-table-secure-file-sharing-platforms)
+- [Comparison Table - Secure File Sharing Platforms](#comparison-table-secure-file-sharing-platforms)
 - [Compliance Recommendations by Industry](#compliance-recommendations-by-industry)
 - [Implementation Best Practices](#implementation-best-practices)
 - [Footer](#footer)
@@ -80,9 +80,9 @@ Audit Trail Example:
   access-revoked: true
 ```
 
-Cost: $12/user/month for team plan. Individual plans from $10/month.
+Cost - $12/user/month for team plan. Individual plans from $10/month.
 
-Best For: Teams prioritizing encryption over integration simplicity.
+Best For - Teams prioritizing encryption over integration simplicity.
 
 Box Enterprise
 
@@ -100,9 +100,9 @@ Key Features:
 Compliance Configuration Example:
 
 ```yaml
-Box DLP Policy: Prevent Sensitive Data Extraction
-Policy: "Medical Records Protection"
-Classification: "Patient PHI"
+Box DLP Policy - Prevent Sensitive Data Extraction
+Policy - "Medical Records Protection"
+Classification - "Patient PHI"
 Rules:
   - Action: Block download to non-corporate network
   - Action: Require 2FA before access
@@ -110,8 +110,8 @@ Rules:
   - Action: Watermark on screen (prevents screenshots)
   - Expiration: 30-day automatic access revocation
 
-File: patient-records-2025.xlsx
-Classification: Patient PHI (tagged automatically)
+File - patient-records-2025.xlsx
+Classification - Patient PHI (tagged automatically)
 Access Rules:
   - Only internal medical team
   - View only (no download)
@@ -125,9 +125,9 @@ Admin Dashboard Capabilities:
 - Retention policies (auto-delete after X days)
 - Geo-blocking (restrict access from certain countries)
 
-Cost: $6-15/user/month + setup fees. Minimum 5 users typically.
+Cost - $6-15/user/month + setup fees. Minimum 5 users typically.
 
-Best For: Organizations needing fine-grained administrative control and advanced DLP.
+Best For - Organizations needing fine-grained administrative control and advanced DLP.
 
 Sync.com
 
@@ -168,9 +168,9 @@ sync-cli share create financial.xlsx \
   --download-limit=3
 ```
 
-Cost: $8/month individual, $20/user/month for teams.
+Cost - $8/month individual, $20/user/month for teams.
 
-Best For: Organizations requiring Canadian data residency or prioritizing North American privacy laws.
+Best For - Organizations requiring Canadian data residency or prioritizing North American privacy laws.
 
 Nextcloud (Self-Hosted)
 
@@ -202,7 +202,7 @@ sudo -u www-data php occ ldap:create-empty-config
 sudo -u www-data php occ ldap:set-config s01 ldapHost ldap.company.com
 
 4. Configure sharing policies
-File: /var/www/nextcloud/config/config.php
+File - /var/www/nextcloud/config/config.php
 'sharing.allowed_groups' => ['finance_team', 'legal_team'],
 'sharing.force_password_protection' => true,
 'share_folder' => '/Shared',
@@ -230,11 +230,11 @@ Audit Log Output:
   share_id: 4521 | recipient: auditor@external.com | revoked: true
 ```
 
-Cost: Free (open source) + infrastructure costs ($50-200/month for cloud hosting).
+Cost - Free (open source) + infrastructure costs ($50-200/month for cloud hosting).
 
-Best For: Organizations with IT infrastructure, technical teams, or strict data residency requirements.
+Best For - Organizations with IT infrastructure, technical teams, or strict data residency requirements.
 
-Comparison Table: Secure File Sharing Platforms
+Comparison Table - Secure File Sharing Platforms
 
 | Feature | Tresorit | Box | Sync.com | Nextcloud |
 |---------|----------|-----|---------|-----------|
@@ -304,7 +304,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -316,6 +316,6 @@ Most modern tools support asynchronous workflows that work well across time zone
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 {% endraw %}

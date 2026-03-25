@@ -137,7 +137,7 @@ eval $(op run --env-file=.env -- my-app)
 ```json
 // 1Password Connect API example
 GET /v1/vaults/{vault_id}/items/{item_id}
-Authorization: Bearer {api_token}
+Authorization - Bearer {api_token}
 ```
 
 Keeper CLI

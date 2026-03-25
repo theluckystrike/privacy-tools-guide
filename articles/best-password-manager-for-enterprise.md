@@ -90,7 +90,7 @@ Security Architecture
 
 1Password uses AES-256 encryption with a zero-knowledge architecture. Your encryption keys never leave your devices, and even 1Password's servers cannot access your vault data. The key derivation uses PBKDF2 with 100,000 iterations for master password protection.
 
-Bitwarden: Open Source and Self-Hosted Flexibility
+Bitwarden - Open Source and Self-Hosted Flexibility
 
 Bitwarden offers the most flexible deployment options in the enterprise space. You can use their hosted service, or deploy Bitwarden on your own infrastructure. This makes it particularly attractive for organizations with strict data residency requirements.
 
@@ -153,7 +153,7 @@ class BitwardenClient:
         return response.json()
 ```
 
-Keeper: Security-First Enterprise Architecture
+Keeper - Security-First Enterprise Architecture
 
 Keeper Security emphasizes defense-in-depth with features particularly suited to highly regulated industries. Its architecture separates encryption keys from encrypted data, providing additional security layers.
 
@@ -196,7 +196,7 @@ Generate compliance report
 report --audit-logs --start-date 2026-01-01 --output compliance.json
 ```
 
-Vaultwarden: Self-Hosted Bitwarden Alternative
+Vaultwarden - Self-Hosted Bitwarden Alternative
 
 For smaller teams that want self-hosted Bitwarden-compatible storage without the resource requirements of official Bitwarden self-host, Vaultwarden (formerly bitwarden_rs) is a lightweight Rust implementation:
 

@@ -73,13 +73,13 @@ Location Data Points Exposed Through Passport
 
 When you activate Tinder Passport, multiple data points become accessible or are generated:
 
-Precise GPS Coordinates: Your device's actual location remains stored in Tinder's backend, even when you manually select a different city. The app continues collecting GPS data in the background to verify if you've actually moved to the Passport location.
+Precise GPS Coordinates - Your device's actual location remains stored in Tinder's backend, even when you manually select a different city. The app continues collecting GPS data in the background to verify if you've actually moved to the Passport location.
 
-IP Address Geolocation: Tinder associates your account with the IP address you use while the app is active. If you select Tokyo as your Passport location but connect through a US IP address, this discrepancy gets logged.
+IP Address Geolocation - Tinder associates your account with the IP address you use while the app is active. If you select Tokyo as your Passport location but connect through a US IP address, this discrepancy gets logged.
 
-Timestamp Correlation: Each location change generates a timestamp. By analyzing when you changed locations and how far apart those changes occurred, Tinder (or anyone with access to this data) can infer your actual travel patterns.
+Timestamp Correlation - Each location change generates a timestamp. By analyzing when you changed locations and how far apart those changes occurred, Tinder (or anyone with access to this data) can infer your actual travel patterns.
 
-Device Location History: The app continues collecting background location data regardless of Passport status. This creates a complete location history that includes:
+Device Location History - The app continues collecting background location data regardless of Passport status. This creates a complete location history that includes:
 
 ```javascript
 // Background location collection continues even with Passport active
@@ -103,10 +103,10 @@ Server-Side Data Retention
 
 Tinder's servers store your location data in multiple databases. Understanding this architecture helps developers building privacy-focused applications recognize similar patterns:
 
-User Profile Database: Stores both passport location and last known device location
-Event Stream: Records every location-related event with timestamps
-Analytics Pipeline: Aggregates location data for advertising targeting
-Log Files: Raw server logs contain IP addresses and location API responses
+User Profile Database - Stores both passport location and last known device location
+Event Stream - Records every location-related event with timestamps
+Analytics Pipeline - Aggregates location data for advertising targeting
+Log Files - Raw server logs contain IP addresses and location API responses
 
 The following table summarizes what location data Tinder retains:
 
@@ -119,19 +119,19 @@ The following table summarizes what location data Tinder retains:
 
 Privacy Implications for Different Threat Models
 
-For Travelers: Using Passport while physically traveling creates a consistent location narrative. However, your actual device location continues being collected, creating a discrepancy that could be relevant in legal proceedings or account investigations.
+For Travelers - Using Passport while physically traveling creates a consistent location narrative. However, your actual device location continues being collected, creating a discrepancy that could be relevant in legal proceedings or account investigations.
 
-For Privacy Advocates: The dual-location system (Passport + actual) means you cannot effectively hide your real location from Tinder. The company always knows where you actually are, regardless of what profile location you display.
+For Privacy Advocates - The dual-location system (Passport + actual) means you cannot effectively hide your real location from Tinder. The company always knows where you actually are, regardless of what profile location you display.
 
-For Developers: The Passport implementation demonstrates how mobile apps can maintain shadow location data. When building location-aware applications, consider whether storing original coordinates alongside manual selections creates unnecessary privacy liability.
+For Developers - The Passport implementation demonstrates how mobile apps can maintain shadow location data. When building location-aware applications, consider whether storing original coordinates alongside manual selections creates unnecessary privacy liability.
 
 Technical Methods to Limit Location Exposure
 
 Several approaches can reduce location data exposure when using Passport:
 
-VPN Usage: While Tinder detects VPN connections, using a stable IP address in your Passport region reduces IP-based location discrepancies. The app still collects GPS data, so this only addresses IP-based exposure.
+VPN Usage - While Tinder detects VPN connections, using a stable IP address in your Passport region reduces IP-based location discrepancies. The app still collects GPS data, so this only addresses IP-based exposure.
 
-Location Permission Revocation: On iOS and Android, you can revoke Tinder's location permission while using Passport. The app will rely solely on your manual selection, though this may limit certain features.
+Location Permission Revocation - On iOS and Android, you can revoke Tinder's location permission while using Passport. The app will rely solely on your manual selection, though this may limit certain features.
 
 ```javascript
 // Pseudocode for minimal location mode
@@ -143,7 +143,7 @@ const minimalLocationConfig = {
 };
 ```
 
-Flight Mode Before Activation: Some users enable airplane mode before activating Passport, then select the desired location. This prevents GPS collection during the transition but requires the app to be opened without network connectivity initially.
+Flight Mode Before Activation - Some users enable airplane mode before activating Passport, then select the desired location. This prevents GPS collection during the transition but requires the app to be opened without network connectivity initially.
 
 What Tinder Sees Versus What You Expect
 
@@ -214,7 +214,7 @@ Related Articles
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Data Retention and Cross-Platform Sharing
 
-Tinder's parent company Match Group owns numerous dating platforms and shares data across them. Understanding this ecosystem is critical:
+Tinder's parent company Match Group owns numerous dating platforms and shares data across them. Understanding this environment is critical:
 
 Match Group Data Sharing
 
@@ -241,12 +241,12 @@ Data Retention Periods
 Tinder retains location data longer than you'd expect:
 
 ```
-Data Type: Retention Period
-GPS coordinates: 3+ years
-IP address logs: 2+ years
-Location change events: Indefinite
-Account creation location: Indefinite
-Last known location: Until account deletion
+Data Type - Retention Period
+GPS coordinates - 3+ years
+IP address logs - 2+ years
+Location change events - Indefinite
+Account creation location - Indefinite
+Last known location - Until account deletion
 ```
 
 This means location data persists long after you stop using Passport.
@@ -278,14 +278,14 @@ Combining Tinder Passport with payment data creates complete identification:
 
 Even without your real name, this travel pattern + payment zip creates a trackable identity.
 
-Threat Model: Law Enforcement
+Threat Model - Law Enforcement
 
 In certain jurisdictions, Tinder location data could be subpoenaed:
 
 ```
-Scenario: Investigation of crimes in specific region
-Authority: Subpoenas Tinder for all users near crime location at time X
-Tinder response: Provides:
+Scenario - Investigation of crimes in specific region
+Authority - Subpoenas Tinder for all users near crime location at time X
+Tinder response - Provides:
   - User IDs present at location
   - Account creation IP addresses
   - Device information
@@ -295,19 +295,19 @@ Tinder response: Provides:
 
 This is not hypothetical, law enforcement has successfully requested location data from dating apps.
 
-Threat Model: Targeted Harassment
+Threat Model - Targeted Harassment
 
 Stalkers can use Passport movement patterns to track individuals:
 
 ```
 Attacker observes:
 Week 1: Victim's Passport location = "San Francisco"
-Week 2: Victim's Passport location = "Los Angeles"
-Week 3: Victim's Passport location = "San Diego"
+Week 2 - Victim's Passport location = "Los Angeles"
+Week 3 - Victim's Passport location = "San Diego"
 
-Attacker infers: Victim driving south along I-5 corridor
-Attacker predicts: Likely in Las Vegas by week 4
-Attacker positions: Themselves in Las Vegas with fake profile
+Attacker infers - Victim driving south along I-5 corridor
+Attacker predicts - Likely in Las Vegas by week 4
+Attacker positions - Themselves in Las Vegas with fake profile
 ```
 
 Movement patterns create predictability exploitable by determined attackers.
@@ -388,7 +388,7 @@ Data Export and GDPR Requests
 When you request your data from Tinder under GDPR:
 
 ```
-Request: "I want all location data Tinder has collected on me"
+Request - "I want all location data Tinder has collected on me"
 
 Tinder Response:
 {
@@ -437,18 +437,18 @@ Alternatives to Passport
 
 For users wanting location flexibility without Passport's privacy issues:
 
-Approach 1: Regional Accounts
+Approach 1 - Regional Accounts
 Create separate Tinder accounts per region with different identities. More work but stronger privacy boundaries.
 
-Approach 2: Privacy-Focused Apps
+Approach 2 - Privacy-Focused Apps
 ```
-Hinge: Less aggressive location tracking
-Bumble: Better privacy controls
-OkCupid: Option to hide location entirely
-Tinder-alternative: Feeld (encrypted profiles)
+Hinge - Less aggressive location tracking
+Bumble - Better privacy controls
+OkCupid - Option to hide location entirely
+Tinder-alternative - Feeld (encrypted profiles)
 ```
 
-Approach 3: Manual Location Privacy
+Approach 3 - Manual Location Privacy
 Instead of Passport, interact only on secure platforms where location remains private.
 
 Recommendations for Different Threat Models

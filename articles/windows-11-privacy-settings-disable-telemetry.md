@@ -21,11 +21,11 @@ Reduce Windows 11 telemetry by changing diagnostic data from Enhanced/Full to Ba
 Table of Contents
 
 - [Understanding Windows 11 Telemetry Levels](#understanding-windows-11-telemetry-levels)
-- [Method 1: Using Settings App (Basic)](#method-1-using-settings-app-basic)
-- [Method 2: Using Group Policy Editor (Recommended for Pro/Enterprise)](#method-2-using-group-policy-editor-recommended-for-proenterprise)
-- [Method 3: Registry Modifications (All Editions)](#method-3-registry-modifications-all-editions)
-- [Method 4: PowerShell Automation Script](#method-4-powershell-automation-script)
-- [Method 5: Using Windows Spy Block or Similar Tools](#method-5-using-windows-spy-block-or-similar-tools)
+- [Method 1 - Using Settings App (Basic)](#method-1-using-settings-app-basic)
+- [Method 2 - Using Group Policy Editor (Recommended for Pro/Enterprise)](#method-2-using-group-policy-editor-recommended-for-proenterprise)
+- [Method 3 - Registry Modifications (All Editions)](#method-3-registry-modifications-all-editions)
+- [Method 4 - PowerShell Automation Script](#method-4-powershell-automation-script)
+- [Method 5 - Using Windows Spy Block or Similar Tools](#method-5-using-windows-spy-block-or-similar-tools)
 - [Additional Privacy Settings to Consider](#additional-privacy-settings-to-consider)
 - [Verifying Your Configuration](#verifying-your-configuration)
 - [Telemetry Service Hardening](#telemetry-service-hardening)
@@ -42,7 +42,7 @@ Windows 11 offers four telemetry levels: Security, Basic, Enhanced, and Full. Th
 
 To check your current telemetry level, open Settings → Privacy & security → Windows security → Diagnostics & feedback. However, accessing this through the GUI limits your control. Power users prefer programmatic methods for repeatable, auditable configurations.
 
-Method 1: Using Settings App (Basic)
+Method 1 - Using Settings App (Basic)
 
 The simplest approach uses the Windows Settings application:
 
@@ -53,7 +53,7 @@ The simplest approach uses the Windows Settings application:
 
 While this method works for average users, it does not fully disable telemetry. Microsoft still collects essential diagnostic data required for security updates.
 
-Method 2: Using Group Policy Editor (Recommended for Pro/Enterprise)
+Method 2 - Using Group Policy Editor (Recommended for Pro/Enterprise)
 
 Windows 11 Pro and Enterprise users can use Group Policy for more control. This method requires administrative privileges.
 
@@ -67,7 +67,7 @@ Locate "Allow Telemetry" and set it to Disabled. This disables all telemetry exc
 
 For more granular control, you can set it to "1 - Basic" for minimal data collection while maintaining compatibility with enterprise management tools.
 
-Method 3: Registry Modifications (All Editions)
+Method 3 - Registry Modifications (All Editions)
 
 For Windows 11 Home users who cannot access Group Policy, direct Registry modifications provide equivalent functionality. This method requires creating a backup before making changes.
 
@@ -88,7 +88,7 @@ reg import disable-telemetry.reg
 
 This sets telemetry to the minimum level (0), equivalent to the Security level.
 
-Method 4: PowerShell Automation Script
+Method 4 - PowerShell Automation Script
 
 For developers who manage multiple machines or want reproducible configurations, PowerShell provides the most flexible approach. Here's a script:
 
@@ -126,7 +126,7 @@ Save this script and execute it with elevated privileges:
 .\Disable-WindowsTelemetry.ps1
 ```
 
-Method 5: Using Windows Spy Block or Similar Tools
+Method 5 - Using Windows Spy Block or Similar Tools
 
 Several open-source tools automate these configurations. Windows Spy Block (available on GitHub) applies privacy-preserving settings across multiple categories including telemetry, search, and cloud integration.
 
@@ -136,13 +136,13 @@ Additional Privacy Settings to Consider
 
 Beyond telemetry, several related settings affect data collection:
 
-Activity History: Navigate to Settings → Privacy & security → Activity history and disable "Send my activity history to Microsoft." This prevents syncing of app usage and timeline data.
+Activity History - Navigate to Settings → Privacy & security → Activity history and disable "Send my activity history to Microsoft." This prevents syncing of app usage and timeline data.
 
-Location: Disable location services at Settings → Privacy & security → Location if not required. Many apps request location access unnecessarily.
+Location - Disable location services at Settings → Privacy & security → Location if not required. Many apps request location access unnecessarily.
 
-Tailored Experiences: Disable personalized recommendations at Settings → Privacy & security → Diagnostics & feedback. This setting uses your diagnostic data to provide targeted suggestions.
+Tailored Experiences - Disable personalized recommendations at Settings → Privacy & security → Diagnostics & feedback. This setting uses your diagnostic data to provide targeted suggestions.
 
-Search Permissions: In Settings → Privacy & security → Search permissions, disable "Cloud search" and limit search history retention.
+Search Permissions - In Settings → Privacy & security → Search permissions, disable "Cloud search" and limit search history retention.
 
 Verifying Your Configuration
 
@@ -159,7 +159,7 @@ Telemetry Service Hardening
 Beyond Registry and Group Policy changes, several background services collect telemetry. Disabling these services provides additional privacy:
 
 ```powershell
-DiagTrack: Connected User Experience and Telemetry Service
+DiagTrack - Connected User Experience and Telemetry Service
 This is one of the most aggressive telemetry services
 Stop-Service DiagTrack -NoWait
 Set-Service DiagTrack -StartupType Disabled
@@ -169,7 +169,7 @@ Pushes configuration and telemetry to devices
 Stop-Service dmwappushservice -NoWait
 Set-Service dmwappushservice -StartupType Disabled
 
-OneSyncSvc: Microsoft account synchronization
+OneSyncSvc - Microsoft account synchronization
 Syncs settings, app data, and browsing history to Microsoft account
 Stop-Service OneSyncSvc -NoWait
 Set-Service OneSyncSvc -StartupType Disabled
@@ -179,7 +179,7 @@ Get-Service DiagTrack, dmwappushservice, OneSyncSvc | Select Status
 Output should show all as Stopped
 ```
 
-Caution: Disabling services can affect functionality. DiagTrack in particular may be required for Windows Update in some scenarios. If you encounter issues, re-enable with `Set-Service ServiceName -StartupType Manual`.
+Caution - Disabling services can affect functionality. DiagTrack in particular may be required for Windows Update in some scenarios. If you encounter issues, re-enable with `Set-Service ServiceName -StartupType Manual`.
 
 Firewall Rules for Telemetry Endpoints
 
@@ -239,20 +239,20 @@ Application-Level Privacy Settings
 
 Beyond OS-level telemetry, individual Windows apps collect data:
 
-Windows Update: Settings → Update & security → Advanced options
+Windows Update - Settings → Update & security → Advanced options
 - Disable "Get the latest updates as soon as they're available"
 - Disable "Optional diagnostics data"
 
-Microsoft Edge: Settings → Privacy → Clear browsing data
+Microsoft Edge - Settings → Privacy → Clear browsing data
 - Disable "Save browsing history"
 - Disable "Allow sites to check if you have payment methods saved"
 - Disable "Improve your browsing experience"
 
-Windows Defender: Windows security → Virus & threat protection
+Windows Defender - Windows security → Virus & threat protection
 - Disable "Cloud-delivered protection" if you use alternative antivirus
 - However, many users rely on Defender, disabling requires alternative solution
 
-OneDrive: Settings → Cloud sync options
+OneDrive - Settings → Cloud sync options
 - Uncheck "Automatically save screenshots"
 - Uncheck "Automatically save things I copy"
 
@@ -262,13 +262,13 @@ Verifying Privacy Settings with Third-Party Tools
 
 Several tools help audit Windows privacy settings:
 
-W10Privacy: Open-source tool that visualizes privacy settings and allows batch changes. Available on GitHub.
+W10Privacy - Open-source tool that visualizes privacy settings and allows batch changes. Available on GitHub.
 
-PrivateZilla: Similar to W10Privacy but with cleaner UI. Also open-source.
+PrivateZilla - Similar to W10Privacy but with cleaner UI. Also open-source.
 
-O&O ShutUp++: Commercial tool (paid) with privacy auditing and recommendations.
+O&O ShutUp++ - Commercial tool (paid) with privacy auditing and recommendations.
 
-PolicyPlus: Group Policy administration tool for Home edition users. Less intuitive but .
+PolicyPlus - Group Policy administration tool for Home edition users. Less intuitive but .
 
 Use these tools to audit settings after manual configuration. They help identify missed settings or services that still have telemetry enabled.
 
@@ -276,15 +276,15 @@ Impact on Windows Features
 
 Disabling telemetry has side effects. Understanding them helps make informed decisions:
 
-Windows Update: Relies on diagnostic data to troubleshoot update failures. Severe telemetry disabling may prevent rollback on failed updates.
+Windows Update - Relies on diagnostic data to troubleshoot update failures. Severe telemetry disabling may prevent rollback on failed updates.
 
-Windows Defender: Cloud-based threat intelligence requires diagnostic data. Disabling may reduce threat detection effectiveness. Consider using alternative antivirus (Bitdefender, Kaspersky) with better privacy practices.
+Windows Defender - Cloud-based threat intelligence requires diagnostic data. Disabling may reduce threat detection effectiveness. Consider using alternative antivirus (Bitdefender, Kaspersky) with better privacy practices.
 
-Game Bar and Xbox integration: Heavily integrated with telemetry. Disabling telemetry may break these features.
+Game Bar and Xbox integration - Heavily integrated with telemetry. Disabling telemetry may break these features.
 
-Cortana: The voice assistant relies extensively on telemetry. Disable if privacy is priority.
+Cortana - The voice assistant relies extensively on telemetry. Disable if privacy is priority.
 
-Windows Store Apps: First-party apps (Mail, Photos, Weather) require telemetry for core functionality. Consider using third-party alternatives (Thunderbird for email, VLC for media).
+Windows Store Apps - First-party apps (Mail, Photos, Weather) require telemetry for core functionality. Consider using third-party alternatives (Thunderbird for email, VLC for media).
 
 Trade-offs to Consider
 

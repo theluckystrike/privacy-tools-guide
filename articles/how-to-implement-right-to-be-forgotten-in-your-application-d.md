@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Scope of Data Deletion
+Step 1 - Understand the Scope of Data Deletion
 
 Before writing any deletion code, you must identify all locations where user data exists. A complete implementation requires removing data from:
 
@@ -41,7 +41,7 @@ Before writing any deletion code, you must identify all locations where user dat
 
 Create a data inventory by auditing your application's data flow. This prevents incomplete deletions that leave residual data.
 
-Step 2: SQL Database Deletion Patterns
+Step 2 - SQL Database Deletion Patterns
 
 For relational databases, the challenge lies in maintaining referential integrity while deleting user data. Use cascading deletes where appropriate, or implement soft deletes for audit requirements.
 
@@ -74,7 +74,7 @@ WHERE id = 'user-uuid-here';
 
 This approach preserves aggregate data for analytics while removing personally identifiable information.
 
-Step 3: MongoDB Deletion Patterns
+Step 3 - MongoDB Deletion Patterns
 
 MongoDB's flexible schema requires a different approach. Use bulk operations for efficient deletion across collections:
 
@@ -100,7 +100,7 @@ async function deleteUserData(userId) {
 }
 ```
 
-Step 4: Implementing the Deletion Request Handler
+Step 4 - Implementing the Deletion Request Handler
 
 Create a dedicated endpoint to handle deletion requests. This endpoint should:
 
@@ -145,7 +145,7 @@ async def delete_user_data_async(user_id):
     await notify_third_party_services(user_id)
 ```
 
-Step 5: Handling Cascade Deletes
+Step 5 - Handling Cascade Deletes
 
 User data rarely exists in isolation. Implement a cascade deletion service that tracks relationships:
 
@@ -166,7 +166,7 @@ async def delete_user_data_async(user_id):
     await db.users.delete_one({'_id': user_id})
 ```
 
-Step 6: Verify Complete Deletion
+Step 6 - Verify Complete Deletion
 
 After deletion, verify that all user data has been removed:
 
@@ -210,7 +210,7 @@ DATA_CLASSIFICATION = {
 
 For non-deletable data, implement anonymization that preserves analytical value while removing personal identifiers.
 
-Step 7: Test Your Implementation
+Step 7 - Test Your Implementation
 
 Thoroughly test your deletion implementation:
 

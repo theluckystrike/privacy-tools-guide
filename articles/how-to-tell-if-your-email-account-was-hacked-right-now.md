@@ -23,7 +23,7 @@ Table of Contents
 - [ What To Do IMMEDIATELY If Your Email Is Hacked](#what-to-do-immediately-if-your-email-is-hacked)
 - [ Prevention: Protecting Your Email Going Forward](#prevention-protecting-your-email-going-forward)
 - [Check Gmail for Hidden Forwarding Rules](#check-gmail-for-hidden-forwarding-rules)
-- [Quick Reference: How to Check Your Email Provider](#quick-reference-how-to-check-your-email-provider)
+- [Quick Reference - How to Check Your Email Provider](#quick-reference-how-to-check-your-email-provider)
 
  Critical Warning Signs Your Email Has Been Hacked
 
@@ -45,7 +45,7 @@ How to check:
 
 If you're suddenly locked out of your account or receive a password reset notification you didn't request, this is a major red flag. Hackers often change the password immediately after gaining access to lock you out.
 
-Immediate action: If you can still access your account, change your password NOW. If you're locked out, use the account recovery options.
+Immediate action - If you can still access your account, change your password NOW. If you're locked out, use the account recovery options.
 
 3. Sent Messages You Didn't Write
 
@@ -56,7 +56,7 @@ Check your Sent folder (and Sent Trash) for emails you didn't send. Hackers ofte
 - Run advance-fee scams
 - Promote illegal products or services
 
-How to check: Scroll through your Sent folder and look for messages with suspicious subject lines or recipients you don't know.
+How to check - Scroll through your Sent folder and look for messages with suspicious subject lines or recipients you don't know.
 
 4. Deleted Emails You Didn't Remove
 
@@ -123,7 +123,7 @@ Many email services offer login notifications. If you receive alerts for:
 
  What To Do IMMEDIATELY If Your Email Is Hacked
 
-Step 1: Disconnect All Other Sessions
+Step 1 - Disconnect All Other Sessions
 
 Gmail:
 1. Go to your Google Account
@@ -135,7 +135,7 @@ Outlook:
 1. Go to Settings → Privacy and accounts
 2. Under "Where you're signed in," review and remove unfamiliar devices
 
-Step 2: Change Your Password Immediately
+Step 2 - Change Your Password Immediately
 
 Create a strong, unique password:
 - At least 16 characters
@@ -143,7 +143,7 @@ Create a strong, unique password:
 - No personal information (birthdays, names, common words)
 - Use a password generator if needed
 
-Step 3: Enable Two-Factor Authentication (2FA)
+Step 3 - Enable Two-Factor Authentication (2FA)
 
 This is critical. Enable 2FA using:
 - Authenticator app (more secure than SMS)
@@ -152,28 +152,28 @@ This is critical. Enable 2FA using:
 
 Avoid SMS-based 2FA if possible, SIM swapping attacks can bypass it.
 
-Step 4: Review and Remove Unknown Devices
+Step 4 - Review and Remove Unknown Devices
 
 Check every device with access:
 - Remove unrecognized phones, computers, tablets
 - Revoke access to suspicious third-party apps
 - Check for unknown browser extensions with email access
 
-Step 5: Scan for Malware
+Step 5 - Scan for Malware
 
 Run scans on all your devices:
 - Use reputable antivirus software
 - Check for keyloggers, trojans, and spyware
 - Consider using Malwarebytes in addition to your regular antivirus
 
-Step 6: Review Email Filters and Forwarding
+Step 6 - Review Email Filters and Forwarding
 
 1. Check all filters for rules you didn't create
 2. Remove any forwarding addresses you don't recognize
 3. Delete any auto-responders you didn't set up
 4. Verify your signature hasn't been modified
 
-Step 7: Check Linked Accounts
+Step 7 - Check Linked Accounts
 
 Your email is likely linked to:
 - Banking and financial services
@@ -183,13 +183,13 @@ Your email is likely linked to:
 - Cryptocurrency exchanges
 - Work accounts
 
-Immediate action: Change passwords for these accounts, especially if you use the same password.
+Immediate action - Change passwords for these accounts, especially if you use the same password.
 
-Step 8: Alert Your Contacts
+Step 8 - Alert Your Contacts
 
 Notify people in your contact list that your email was compromised. Warn them not to click any suspicious links from your address during this period.
 
-Step 9: Check for Identity Theft
+Step 9 - Check for Identity Theft
 
 Monitor these areas:
 - Credit reports (look for unfamiliar accounts)
@@ -199,7 +199,7 @@ Monitor these areas:
 
 Consider placing a credit freeze or fraud alert.
 
-Step 10: Report the Compromise
+Step 10 - Report the Compromise
 
 Report to:
 - FTC: [identitytheft.gov](https://identitytheft.gov)
@@ -276,9 +276,9 @@ curl -s -H "Authorization: Bearer ${ACCESS_TOKEN}" \
   | python3 -m json.tool
 ```
 
-Or check manually: Gmail Settings → See all settings → Filters tab, then check the Forwarding and POP/IMAP tab.
+Or check manually - Gmail Settings → See all settings → Filters tab, then check the Forwarding and POP/IMAP tab.
 
-Quick Reference: How to Check Your Email Provider
+Quick Reference - How to Check Your Email Provider
 
 | Provider | Login History Location | Security Settings |
 |----------|----------------------|-------------------|

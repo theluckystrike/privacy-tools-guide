@@ -42,9 +42,9 @@ The Four Main Alternatives
 
 1. Plausible Analytics
 
-Website: `https://plausible.io`
-Model: Hosted (~$9/month) or self-hosted (free)
-Privacy: No cookies, no personal data, GDPR/CCPA compliant by default
+Website - `https://plausible.io`
+Model - Hosted (~$9/month) or self-hosted (free)
+Privacy - No cookies, no personal data, GDPR/CCPA compliant by default
 
 Plausible's script is 45x smaller than Google Analytics (< 1KB vs ~45KB). It doesn't track individuals. metrics are aggregated.
 
@@ -87,9 +87,9 @@ Less granular segmentation than GA, no session replay, paid hosted plan
 
 2. Umami
 
-Website: `https://umami.is`
-Model: Hosted (free tier available) or self-hosted (free, MIT license)
-Privacy: No cookies by default, no PII collected
+Website - `https://umami.is`
+Model - Hosted (free tier available) or self-hosted (free, MIT license)
+Privacy - No cookies by default, no PII collected
 
 Umami is open source and the most popular self-hosted option. It supports multiple sites from one installation with a clean multi-site dashboard.
 
@@ -128,7 +128,7 @@ volumes:
 docker compose up -d
 ```
 
-Default login: `admin` / `umami`. Change immediately.
+Default login - `admin` / `umami`. Change immediately.
 
 Add tracking script:
 
@@ -147,9 +147,9 @@ Requires database maintenance, less polished than Plausible
 
 3. Matomo (Formerly Piwik)
 
-Website: `https://matomo.org`
-Model: Self-hosted (free) or cloud (~$23/month)
-Privacy: Configurable. can match or exceed GA privacy controls
+Website - `https://matomo.org`
+Model - Self-hosted (free) or cloud (~$23/month)
+Privacy - Configurable. can match or exceed GA privacy controls
 
 Matomo is the most feature-complete alternative. It has session recordings, heatmaps, A/B testing, and goal funnels. It can import Google Analytics data during migration. It's also the heaviest option.
 
@@ -192,9 +192,9 @@ Complex setup, resource intensive, requires ongoing maintenance
 
 4. Fathom Analytics
 
-Website: `https://usefathom.com`
-Model: Hosted only (~$14/month)
-Privacy: No cookies, no personal data, EU-isolated servers available
+Website - `https://usefathom.com`
+Model - Hosted only (~$14/month)
+Privacy - No cookies, no personal data, EU-isolated servers available
 
 Fathom is the simplest option. hosted only, no self-hosting. It routes traffic through EU servers to avoid Schrems II issues for European visitors. The script is 2.3KB.
 

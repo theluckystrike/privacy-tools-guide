@@ -20,8 +20,8 @@ tags: [privacy-tools-guide, best-of, security]
 | Firefox (hardened) | Very high with user.js | Process isolation | Built-in + uBlock Origin | Privacy + banking |
 | Brave | High | Chromium sandbox | Built-in shields | General secure browsing |
 | Chrome | High (with extensions) | Best-in-class sandbox | Google Safe Browsing | Maximum site compatibility |
-| Safari | High | WebKit process isolation | Intelligent Tracking Prevention | Apple ecosystem banking |
-| Edge | High | Chromium sandbox | SmartScreen filter | Microsoft ecosystem |
+| Safari | High | WebKit process isolation | Intelligent Tracking Prevention | Apple environment banking |
+| Edge | High | Chromium sandbox | SmartScreen filter | Microsoft environment |
 
 
 {% raw %}
@@ -208,10 +208,10 @@ Practical Banking Browser Setup
 Create a dedicated banking profile with these steps:
 
 ```bash
-Firefox: Create dedicated banking profile
+Firefox - Create dedicated banking profile
 firefox -P "banking" --no-remote
 
-Brave: New window with strict shields
+Brave - New window with strict shields
 Open brave://settings/shields and set to "Strict" for banking sites
 ```
 

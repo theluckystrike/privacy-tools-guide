@@ -21,7 +21,7 @@ Yes, Windscribe works in Pakistan as of March 2026. The Stealth protocol deliver
 Table of Contents
 
 - [Understanding Pakistan's Internet Regulatory Environment](#understanding-pakistans-internet-regulatory-environment)
-- [Testing Windscribe in Pakistan: March 2026 Results](#testing-windscribe-in-pakistan-march-2026-results)
+- [Testing Windscribe in Pakistan - March 2026 Results](#testing-windscribe-in-pakistan-march-2026-results)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 - [Server Recommendations for Pakistan Users](#server-recommendations-for-pakistan-users)
 - [Alternative Considerations](#alternative-considerations)
@@ -39,7 +39,7 @@ The Pakistan Telecommunications Authority (PTA) maintains a blocking system that
 
 The blocking market in Pakistan covers social media platforms (subject to periodic restrictions), VoIP services (certain protocols may be throttled), news websites (occasionally blocked during political events), and gaming platforms (subject to bandwidth restrictions).
 
-Testing Windscribe in Pakistan: March 2026 Results
+Testing Windscribe in Pakistan - March 2026 Results
 
 Testing was conducted throughout March 2026 from multiple locations within Pakistan using various connection methods. The results provide a practical reference for users evaluating Windscribe as a connectivity solution.
 
@@ -124,7 +124,7 @@ Troubleshooting Common Issues
 
 Users in Pakistan may encounter specific connection challenges. Here are practical solutions:
 
-Issue: Connection Drops After Initial Success
+Issue - Connection Drops After Initial Success
 
 The PTA occasionally performs deep packet inspection (DPI) that identifies VPN signatures. Solutions include:
 
@@ -132,7 +132,7 @@ The PTA occasionally performs deep packet inspection (DPI) that identifies VPN s
 2. Switch to Stealth protocol immediately upon connection drop
 3. Change server location to one with less traffic congestion
 
-Issue: Slow Speeds Despite Successful Connection
+Issue - Slow Speeds Despite Successful Connection
 
 Bandwidth throttling may affect VPN connections. Mitigation strategies:
 
@@ -144,14 +144,14 @@ Or use the configuration file:
 Add to windscribe config: force-port 443
 ```
 
-Issue: DNS Leaks
+Issue - DNS Leaks
 
 DNS leaks can expose browsing activity. Windscribe includes built-in DNS leak protection:
 
 ```bash
 Verify DNS settings after connection
  windscribe status
-Look for "DNS: Secure" in the output
+Look for "DNS - Secure" in the output
 ```
 
 For manual verification:
@@ -191,13 +191,13 @@ DPI Detection Methods
 
 The PTA uses several techniques to identify VPN traffic:
 
-Pattern Matching: Recognizes known VPN signatures (certificate fingerprints, protocol headers). Most VPN tools leak identifying information in their initial handshakes.
+Pattern Matching - Recognizes known VPN signatures (certificate fingerprints, protocol headers). Most VPN tools leak identifying information in their initial handshakes.
 
-Entropy Analysis: Detects the randomness pattern of encrypted traffic. Encrypted data appears as high-entropy bytestreams, distinguishing it from legitimate traffic.
+Entropy Analysis - Detects the randomness pattern of encrypted traffic. Encrypted data appears as high-entropy bytestreams, distinguishing it from legitimate traffic.
 
-Behavioral Analysis: Identifies VPN-like traffic patterns: constant bitrate, unnatural packet sizes, regular keepalive heartbeats.
+Behavioral Analysis - Identifies VPN-like traffic patterns: constant bitrate, unnatural packet sizes, regular keepalive heartbeats.
 
-IP-level Blocking: Maintains lists of known VPN provider IP addresses, blocking entire subnets.
+IP-level Blocking - Maintains lists of known VPN provider IP addresses, blocking entire subnets.
 
 Stealth Protocol Deep Dive
 
@@ -205,9 +205,9 @@ Windscribe's Stealth protocol wraps OpenVPN in a TLS layer, making it appear as 
 
 ```bash
 Windscribe Stealth packet structure
-Layer 1: TLS (looks like normal HTTPS)
-Layer 2: OpenVPN protocol (encrypted inside TLS)
-Layer 3: User data (doubly encrypted)
+Layer 1 - TLS (looks like normal HTTPS)
+Layer 2 - OpenVPN protocol (encrypted inside TLS)
+Layer 3 - User data (doubly encrypted)
 
 Configure Stealth with custom parameters
 cat > ~/.windscribe/windscribe.conf << 'EOF'
@@ -240,7 +240,7 @@ VPN Kill Switch Implementation
 A kill switch prevents data leaks if the VPN disconnects unexpectedly. Windscribe implements this via routing rules:
 
 ```bash
-Linux: Manual kill switch implementation
+Linux - Manual kill switch implementation
 Block all traffic except VPN tunnel
 
 Get VPN interface name

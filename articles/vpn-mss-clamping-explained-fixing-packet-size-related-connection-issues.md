@@ -26,7 +26,7 @@ Table of Contents
 - [Diagnosing MSS Issues](#diagnosing-mss-issues)
 - [PMTUD Black Hole Problem](#pmtud-black-hole-problem)
 - [Common Configuration Values](#common-configuration-values)
-- [Advanced: IPv6 Considerations](#advanced-ipv6-considerations)
+- [Advanced - IPv6 Considerations](#advanced-ipv6-considerations)
 - [Troubleshooting Checklist](#troubleshooting-checklist)
 - [Advanced Diagnostic Tools and Techniques](#advanced-diagnostic-tools-and-techniques)
 - [Wireshark Analysis for MTU Problems](#wireshark-analysis-for-mtu-problems)
@@ -43,7 +43,7 @@ When data travels over a network, it gets broken down into smaller chunks called
 
 The Maximum Segment Size is the largest amount of data that can be carried in a single TCP segment, excluding the TCP and IP headers. By default, MSS is set to 1460 bytes (1500 - 20 bytes IP header - 20 bytes TCP header).
 
-The Problem: VPN Tunnel Overhead
+The Problem - VPN Tunnel Overhead
 
 When you connect to a VPN, your original packets get encapsulated inside new packets. This adds overhead:
 
@@ -64,7 +64,7 @@ TCP MSS values are set during the three-way handshake (SYN, SYN-ACK, ACK packets
 
 Implementing MSS Clamping
 
-Option 1: Server-Side MSS Clamping with iptables
+Option 1 - Server-Side MSS Clamping with iptables
 
 On your VPN server, you can use iptables to automatically clamp MSS:
 
@@ -78,7 +78,7 @@ iptables -A FORWARD -i wg0 -o eth0 -p tcp -m tcp --tcp-flags SYN,RST SYN -m tcpm
 
 The `--clamp-mss-to-pmtu` option automatically calculates the correct MSS based on the path MTU discovery.
 
-Option 2: Client-Side Clamping
+Option 2 - Client-Side Clamping
 
 If you control the client configuration, you can set MSS directly:
 
@@ -87,7 +87,7 @@ Using iptables on client
 iptables -A OUTPUT -p tcp --tcp-flags SYN,RST SYN -m tcpmss --mss 1400:1500 -j TCPMSS --clamp-mss-to-pmtu
 ```
 
-Option 3: OpenVPN Configuration
+Option 3 - OpenVPN Configuration
 
 In your OpenVPN server configuration, you can enable MSS clamping:
 
@@ -98,7 +98,7 @@ mssfix 1400
 
 This automatically clamps MSS for all TCP connections through the VPN.
 
-Option 4: WireGuard Configuration
+Option 4 - WireGuard Configuration
 
 WireGuard doesn't have built-in MSS clamping, but you can combine it with iptables:
 
@@ -155,7 +155,7 @@ PMTUD Black Hole Problem
 
 Path MTU Discovery (PMTUD) sometimes fails due to blocking of ICMP "packet too big" messages. This creates a "black hole" where the sender never learns about the smaller path MTU.
 
-Solution: Enable MSS Clamping
+Solution - Enable MSS Clamping
 
 The most reliable solution is to always clamp MSS to a safe value (typically 1400 bytes) rather than relying on PMTUD:
 
@@ -174,7 +174,7 @@ Common Configuration Values
 | IPsec | 1350-1400 | Depends on encryption |
 | PPTP | 1460 | Minimal overhead |
 
-Advanced: IPv6 Considerations
+Advanced - IPv6 Considerations
 
 If you're running IPv6 over your VPN, you need separate rules:
 
@@ -218,7 +218,7 @@ Capture traffic through VPN tunnel
 wireshark -i tun0 &
 
 Apply display filter to find fragmented packets
-In Wireshark filter bar: ip.flags.mf == 1 or ip.flags.rf == 1
+In Wireshark filter bar - ip.flags.mf == 1 or ip.flags.rf == 1
 
 Look for:
 - Packets larger than interface MTU
@@ -232,24 +232,24 @@ MTU Discovery and Configuration by VPN Type
 
 Different VPN protocols handle MTU differently:
 
-WireGuard: The most modern approach
+WireGuard - The most modern approach
 - Minimal overhead (32 bytes)
 - Automatic PMTUD if supported
 - Recommended MSS: 1420
 - Configuration: automatic via `--mss` or firewall rules
 
-OpenVPN: Flexible but requires attention
+OpenVPN - Flexible but requires attention
 - Can use TCP or UDP
 - TCP mode: higher overhead (54+ bytes)
 - UDP mode: lower overhead (28+ bytes)
 - Built-in mssfix parameter simplifies setup
 
-IPsec: Complex but powerful
+IPsec - Complex but powerful
 - Adds 50-70 bytes depending on algorithms
 - Requires separate MSS clamping
 - Benefits from hardware acceleration on some platforms
 
-PPTP: Legacy, avoid when possible
+PPTP - Legacy, avoid when possible
 - Minimal overhead (4-12 bytes)
 - Poor security, deprecated
 - Only use if no alternatives exist
@@ -348,8 +348,8 @@ Test with VPN and MSS clamping
 iperf3 -c 8.8.8.8 -t 60 -B [vpn-interface-ip]
 
 Results comparison
-Without VPN: baseline (e.g., 100 Mbps)
-With VPN + clamping: slightly reduced (e.g., 95-98 Mbps)
+Without VPN - baseline (e.g., 100 Mbps)
+With VPN + clamping - slightly reduced (e.g., 95-98 Mbps)
 If much lower (e.g., 50 Mbps), increase MSS or investigate other issues
 ```
 

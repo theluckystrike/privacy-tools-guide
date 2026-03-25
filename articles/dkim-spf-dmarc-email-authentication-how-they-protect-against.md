@@ -21,14 +21,14 @@ Email spoofing is one of the most common attack vectors used by spammers, phishe
 Table of Contents
 
 - [Understanding Email Spoofing](#understanding-email-spoofing)
-- [SPF: Sender Policy Framework](#spf-sender-policy-framework)
-- [DKIM: DomainKeys Identified Mail](#dkim-domainkeys-identified-mail)
-- [DMARC: Domain-Based Message Authentication](#dmarc-domain-based-message-authentication)
+- [SPF - Sender Policy Framework](#spf-sender-policy-framework)
+- [DKIM - DomainKeys Identified Mail](#dkim-domainkeys-identified-mail)
+- [DMARC - Domain-Based Message Authentication](#dmarc-domain-based-message-authentication)
 - [How These Protocols Work Together](#how-these-protocols-work-together)
 - [Testing Your Configuration](#testing-your-configuration)
 - [Common Pitfalls](#common-pitfalls)
 - [Authentication Flow Diagrams](#authentication-flow-diagrams)
-- [Advanced Configuration: Subdomain Policy](#advanced-configuration-subdomain-policy)
+- [Advanced Configuration - Subdomain Policy](#advanced-configuration-subdomain-policy)
 - [Forensic Reports and DMARC Debugging](#forensic-reports-and-dmarc-debugging)
 - [Real-World Failure Scenarios](#real-world-failure-scenarios)
 - [Monitoring Tools and Services](#monitoring-tools-and-services)
@@ -43,7 +43,7 @@ Email protocols were designed in the early days of the internet when trust was a
 
 When you configure your domain's email authentication, you're creating a cryptographic verification system that tells receiving mail servers: "Emails claiming to come from my domain should only come from my authorized servers, and I can prove it."
 
-SPF: Sender Policy Framework
+SPF - Sender Policy Framework
 
 SPF operates at the DNS level and specifies which mail servers are authorized to send email on behalf of your domain. When a receiving server gets an email, it looks up the SPF DNS record for the sending domain and checks if the connecting server's IP address is listed.
 
@@ -67,7 +67,7 @@ Common SPF Mistakes
 
 A frequent error is having multiple SPF records for the same domain, which causes authentication failures. Only one TXT record with your SPF policy should exist. Also, avoid overly permissive setups like `v=spf1 ip4:0.0.0.0/0 ~all`, this authorizes every IP address and provides no security benefit.
 
-DKIM: DomainKeys Identified Mail
+DKIM - DomainKeys Identified Mail
 
 While SPF verifies the "envelope sender" (the server sending the mail), DKIM verifies that the email content hasn't been tampered with during transit. DKIM uses public-key cryptography to sign email headers and body content.
 
@@ -85,7 +85,7 @@ selector1._domainkey.example.com IN TXT "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BA
 
 The "selector" allows you to rotate keys by publishing multiple DKIM records with different selectors. Your mail server specifies which selector to use in the email's DKIM-Signature header.
 
-DMARC: Domain-Based Message Authentication
+DMARC - Domain-Based Message Authentication
 
 DMARC builds on SPF and DKIM by adding a policy layer. It tells receiving servers what to do when authentication fails and provides reporting so you can monitor who's sending email on your behalf.
 
@@ -181,7 +181,7 @@ Email arrives at receiving server
 
 This alignment requirement is critical. Your email can pass SPF but fail DMARC if the SPF-passing domain doesn't match the From address domain. Similarly, DKIM can pass authentication but fail DMARC alignment if the signing domain doesn't match the From domain.
 
-Advanced Configuration: Subdomain Policy
+Advanced Configuration - Subdomain Policy
 
 For organizations with multiple subdomains sending email, the `sp` parameter provides subdomain-specific policies:
 
@@ -211,24 +211,24 @@ The `fo` parameter controls forensic report generation:
 
 Real-World Failure Scenarios
 
-Scenario 1: Third-Party Email Service
-Your marketing team uses Mailchimp. Emails pass DKIM (Mailchimp signs them) but SPF fails because Mailchimp's servers aren't in your SPF record. Solution: Update SPF to `include:_spf.mailchimp.com`.
+Scenario 1 - Third-Party Email Service
+Your marketing team uses Mailchimp. Emails pass DKIM (Mailchimp signs them) but SPF fails because Mailchimp's servers aren't in your SPF record. Solution - Update SPF to `include:_spf.mailchimp.com`.
 
-Scenario 2: Email Forwarding
+Scenario 2 - Email Forwarding
 Someone forwards your email to a mailing list. The forwarding service re-sends it with its own envelope sender (Return-Path), breaking SPF alignment. The DKIM signature usually survives forwarding, allowing DMARC to pass. This is why DKIM is essential for organizations whose mail gets forwarded.
 
-Scenario 3: Acquired Company
-You acquire a company that sends mail from domain.acquired.com but uses your mail servers. The SPF passes, but DKIM and DMARC may not align. Solution: Have the acquired domain's DMARC policy point to your aggregate report address, or ensure their mail servers have appropriate DNS records.
+Scenario 3 - Acquired Company
+You acquire a company that sends mail from domain.acquired.com but uses your mail servers. The SPF passes, but DKIM and DMARC may not align. Solution - Have the acquired domain's DMARC policy point to your aggregate report address, or ensure their mail servers have appropriate DNS records.
 
 Monitoring Tools and Services
 
 Beyond manual DNS checks, several platforms help monitor authentication health:
 
-MXToolbox: Provides free SPF/DKIM/DMARC record validation and displays current policy settings. The visual interface makes it easy to spot misconfigurations.
+MXToolbox - Provides free SPF/DKIM/DMARC record validation and displays current policy settings. The visual interface makes it easy to spot misconfigurations.
 
 250ok: Commercial DMARC monitoring with detailed visualization of aggregate reports and forensic insights. Particularly useful for large organizations with complex email flows.
 
-Valimail: Enterprise DMARC management with account takeover protection. Automatically manages authentication policies as email services change.
+Valimail - Enterprise DMARC management with account takeover protection. Automatically manages authentication policies as email services change.
 
 dmarcian: Smaller organizations often prefer dmarcian for its balance of features and pricing. It simplifies DMARC report analysis and suggests policy changes.
 
@@ -258,18 +258,18 @@ Automatic Policy Escalation Strategy
 Implement DMARC policy strengthening gradually across time:
 
 ```bash
-Week 1: Deploy SPF and DKIM
+Week 1 - Deploy SPF and DKIM
 Monitor for legitimate mail sources
 
-Week 2-4: Set DMARC p=none
+Week 2-4 - Set DMARC p=none
 Collect baseline data
 Identify all legitimate sending sources
 
-Week 5-8: Set DMARC p=quarantine
+Week 5-8 - Set DMARC p=quarantine
 Monitor bounce rates
 Ensure legitimate services authenticate properly
 
-Week 9+: Set DMARC p=reject
+Week 9+ - Set DMARC p=reject
 Only when you're confident about legitimate sources
 ```
 
@@ -279,18 +279,18 @@ Email Forwarding and DMARC Alignment
 
 Many organizations use email forwarding services (forwarding a work address to personal email). These break DMARC alignment:
 
-Problem: User's email forwarded from company.com to personal Gmail. Gmail's servers re-send with Gmail as the envelope sender. DMARC alignment fails because the forwarding server's SPF domain (Gmail) doesn't match the From address domain (company.com).
+Problem - User's email forwarded from company.com to personal Gmail. Gmail's servers re-send with Gmail as the envelope sender. DMARC alignment fails because the forwarding server's SPF domain (Gmail) doesn't match the From address domain (company.com).
 
-Solution 1: Use authenticated forwarding (companies that preserve DMARC alignment):
+Solution 1 - Use authenticated forwarding (companies that preserve DMARC alignment):
 - Forwarding services like Dynu preserve SPF/DMARC alignment
 - Configure with specific CNAME records for your domain
 
-Solution 2: Allow forwarders in SPF:
+Solution 2 - Allow forwarders in SPF:
 ```
 v=spf1 include:_spf.google.com include:spf.protection.outlook.com ~all
 ```
 
-Solution 3: Accept DMARC quarantine for forwarded mail:
+Solution 3 - Accept DMARC quarantine for forwarded mail:
 ```
 v=DMARC1; p=quarantine; pct=80; sp=none
 (pct=80 means apply policy to 80% of traffic, allowing some flexibility for forwarders)

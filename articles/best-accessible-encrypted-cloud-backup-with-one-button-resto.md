@@ -33,7 +33,7 @@ Table of Contents
 - [What Makes a Backup Solution Accessible and Secure](#what-makes-a-backup-solution-accessible-and-secure)
 - [Top Contenders for Simple Encrypted Cloud Backup](#top-contenders-for-simple-encrypted-cloud-backup)
 - [Implementation Patterns for Developers](#implementation-patterns-for-developers)
-- [Duplicacy: Version Control for Backups](#duplicacy-version-control-for-backups)
+- [Duplicacy - Version Control for Backups](#duplicacy-version-control-for-backups)
 - [Threat Model Considerations](#threat-model-considerations)
 - [Verification Testing Procedure](#verification-testing-procedure)
 - [Disaster Recovery Time Objective](#disaster-recovery-time-objective)
@@ -116,7 +116,7 @@ Start the service
 duplicati-server --webservice-port=8200
 
 Access at http://localhost:8200
-Configure: destination → Backblaze B2 → encryption → AES-256
+Configure - destination → Backblaze B2 → encryption → AES-256
 Set schedule → Save → Run now
 ```
 
@@ -226,7 +226,7 @@ The encryption password is the only thing protecting your backup from anyone who
 
 For team or organizational backups, consider using a secrets manager like HashiCorp Vault or AWS Secrets Manager to store the passphrase, with access controlled by IAM policies.
 
-Duplicacy: Version Control for Backups
+Duplicacy - Version Control for Backups
 
 Duplicacy bridges the gap between rsync-style incremental backups and cloud efficiency through its unique deduplication approach. Rather than storing redundant blocks, Duplicacy identifies identical chunks across multiple backups, even across different machines, and stores only one copy per unique chunk.
 
@@ -295,23 +295,23 @@ Verification Testing Procedure
 Before relying on any backup system in production:
 
 ```bash
-Test 1: Create a small directory with test files
+Test 1 - Create a small directory with test files
 mkdir -p ~/backup-test-source
 echo "Critical file $(date)" > ~/backup-test-source/test.txt
 dd if=/dev/urandom of=~/backup-test-source/binary.bin bs=1M count=10
 
-Test 2: Run backup
+Test 2 - Run backup
 restic -r b2:your-bucket:/ backup ~/backup-test-source
 SNAPSHOT_ID=$(restic snapshots -r b2:your-bucket:/ | tail -1 | awk '{print $1}')
 
-Test 3: Delete original files
+Test 3 - Delete original files
 rm -rf ~/backup-test-source
 
-Test 4: Restore from backup
+Test 4 - Restore from backup
 mkdir -p ~/backup-test-restore
 restic -r b2:your-bucket:/ restore $SNAPSHOT_ID --target ~/backup-test-restore
 
-Test 5: Verify file integrity
+Test 5 - Verify file integrity
 diff -r ~/backup-test-restore/home/user/backup-test-source ~/backup-test-source
 md5sum ~/backup-test-restore/home/user/backup-test-source/binary.bin
 ```
@@ -330,7 +330,7 @@ Example calculation:
 - Decrypt AES-256: 5-10 minutes
 - Restore to filesystem: 15-30 minutes
 - Verify critical files: 10 minutes
-Total RTO: 60-150 minutes
+Total RTO - 60-150 minutes
 
 Actual RTO varies based on backup size, internet speed, and destination drive speed
 ```
@@ -346,17 +346,17 @@ Measure backup performance for your setup
 
 1. Small files (source code repos)
 time restic -r b2:bucket:/ backup ~/Projects --verbose
-Expected: 2-15 minutes for 10GB of mostly small files
-Speed: Varies by file count (more small files = slower)
+Expected - 2-15 minutes for 10GB of mostly small files
+Speed - Varies by file count (more small files = slower)
 
 2. Large files (video, databases)
 time restic -r b2:bucket:/ backup ~/Videos --verbose
-Expected: 5-20 minutes for 100GB of large files
-Speed: Varies by upload bandwidth
+Expected - 5-20 minutes for 100GB of large files
+Speed - Varies by upload bandwidth
 
 3. Incremental backup (only changed files)
 time restic -r b2:bucket:/ backup ~/Projects --verbose
-Expected: <1 minute if only 100MB changed
+Expected - <1 minute if only 100MB changed
 Deduplication makes incremental nearly instant
 
 Factors affecting speed:
@@ -373,7 +373,7 @@ Combining Backup Solutions
 The most resilient approach combines multiple backup strategies:
 
 ```bash
-Strategy 1: Local encrypted external drive (fast, physically controlled)
+Strategy 1 - Local encrypted external drive (fast, physically controlled)
 sudo cryptsetup luksFormat --type luks2 /dev/external-drive
 sudo cryptsetup luksOpen /dev/external-drive backup-drive
 sudo mount /dev/mapper/backup-drive /mnt/backup
@@ -382,10 +382,10 @@ Daily local backup script
 #!/bin/bash
 restic -r /mnt/backup backup ~/Projects --verbose
 
-Strategy 2: Cloud backup to encrypted B2 (offsite, provider-independent)
+Strategy 2 - Cloud backup to encrypted B2 (offsite, provider-independent)
 restic -r b2:bucket:/ backup ~/Projects
 
-Strategy 3: Versioning using snapshot timestamps
+Strategy 3 - Versioning using snapshot timestamps
 Both local and cloud backups tagged with dates
 Allows rollback to specific points in time
 ```

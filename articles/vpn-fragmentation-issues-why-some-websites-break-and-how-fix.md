@@ -137,7 +137,7 @@ If smaller packets work but larger ones fail, you likely have a MTU issue.
 
 Fixing VPN Fragmentation Issues
 
-Solution 1: Set Correct MTU on VPN Interface
+Solution 1 - Set Correct MTU on VPN Interface
 
 ```bash
 Linux - set MTU on WireGuard interface
@@ -152,7 +152,7 @@ Add to /etc/wireguard/wg0.conf:
 MTU = 1420
 ```
 
-Solution 2: Clamp MSS in Firewall Rules
+Solution 2 - Clamp MSS in Firewall Rules
 
 Add iptables rules to clamp the Maximum Segment Size:
 
@@ -166,7 +166,7 @@ sudo ip6tables -A FORWARD -i wg0 -o eth0 -p tcp -m tcp --tcp-flags SYN,RST SYN -
 
 Windows Server and routers can configure similar rules.
 
-Solution 3: Enable Fragmentation in VPN Config
+Solution 3 - Enable Fragmentation in VPN Config
 
 WireGuard
 
@@ -205,7 +205,7 @@ charon {
 }
 ```
 
-Solution 4: Switch VPN Protocol
+Solution 4 - Switch VPN Protocol
 
 If fragmentation persists, try a different protocol:
 
@@ -213,7 +213,7 @@ If fragmentation persists, try a different protocol:
 - Try WireGuard if available (handles fragmentation better)
 - Use IKEv2 as an alternative
 
-Solution 5: Reduce Packet Size Globally
+Solution 5 - Reduce Packet Size Globally
 
 Set a conservative MTU that works across most networks:
 
@@ -229,7 +229,7 @@ iface eth0 inet static
     mtu 1400
 ```
 
-Solution 6: Handle Specific Problematic Services
+Solution 6 - Handle Specific Problematic Services
 
 For services that consistently fail:
 
@@ -315,9 +315,9 @@ Sometimes DNS contributes to fragmentation:
 
 ```bash
 Use DNS with lower packet sizes
-Cloudflare: 1.1.1.1
-Google: 8.8.8.8
-Quad9: 9.9.9.9
+Cloudflare - 1.1.1.1
+Google - 8.8.8.8
+Quad9 - 9.9.9.9
 
 Configure in WireGuard:
 [Interface]
@@ -372,7 +372,7 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 Related Articles
 
 - [How VPN Subnet Conflicts Happen and How to Fix Them](/how-vpn-subnet-conflicts-happen-and-how-to-fix-them/)
-- [VPN MSS Clamping Explained: Fixing Packet Size Related.](/vpn-mss-clamping-explained-fixing-packet-size-related-connection-issues/)
+- [VPN MSS Clamping Explained - Fixing Packet Size Related.](/vpn-mss-clamping-explained-fixing-packet-size-related-connection-issues/)
 - [VPN for Accessing US Pharmacy Websites from Europe Safely](/vpn-for-accessing-us-pharmacy-websites-from-europe-safely/)
 - [VPN IPv6 Leak Explained: Why Most VPNs Still Fail the Test](/vpn-ipv6-leak-explained-why-most-vpns-still-fail-test/)
 - [VPN Warrant Canary: What It Means and Why It Matters](/vpn-warrant-canary-what-it-means/)

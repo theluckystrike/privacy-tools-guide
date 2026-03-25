@@ -26,7 +26,7 @@ Table of Contents
 - [SimpleLogin (Industry Leader)](#simplelogin-industry-leader)
 - [AnonAddy (Open Source, Transparent)](#anonaddy-open-source-transparent)
 - [Firefox Relay (Mozilla-Backed)](#firefox-relay-mozilla-backed)
-- [Apple Hide My Email (Ecosystem-Specific)](#apple-hide-my-email-ecosystem-specific)
+- [Apple Hide My Email (environment-Specific)](#apple-hide-my-email-environment-specific)
 - [Fastmail Masks (Email Provider Feature)](#fastmail-masks-email-provider-feature)
 - [Comparison Table](#comparison-table)
 - [Implementation Strategy](#implementation-strategy)
@@ -54,7 +54,7 @@ Features:
 - Alias grouping (organize aliases by purpose: banking, shopping, services)
 - Forwarding to multiple email addresses
 - Photo Upload Anonymization: removes metadata from photos before forwarding
-- Integrated with Proton ecosystem (ProtonMail users get discounts)
+- Integrated with Proton environment (ProtonMail users get discounts)
 
 Encryption and Security:
 - End-to-end encrypted forwarding (emails encrypted in transit)
@@ -87,7 +87,7 @@ Browser extension available for Chrome, Firefox, Safari. Click the icon to gener
 - Catch-all on custom domains requires DNS setup knowledge
 - Paid tier only supports 10 custom domains (limiting for domain collectors)
 
-Best for: Privacy-conscious professionals, security researchers, anyone valuing control. Worth the cost for serious privacy advocates.
+Best for - Privacy-conscious professionals, security researchers, anyone valuing control. Worth the cost for serious privacy advocates.
 
 AnonAddy (Open Source, Transparent)
 
@@ -135,7 +135,7 @@ Browser extension for Chrome, Firefox available. Clean dashboard interface showi
 - Fewer integrations with password managers
 - Server-side encryption means AnonAddy technically could read your emails
 
-Best for: Budget-conscious privacy advocates, developers, self-hosting enthusiasts.
+Best for - Budget-conscious privacy advocates, developers, self-hosting enthusiasts.
 
 Firefox Relay (Mozilla-Backed)
 
@@ -182,11 +182,11 @@ Simplest interface of all options. Click Firefox icon, "Generate new alias" butt
 - No API access
 - Limited to Firefox browser (Safari, Chrome users excluded)
 
-Best for: Casual Firefox users who want simplicity over advanced features.
+Best for - Casual Firefox users who want simplicity over advanced features.
 
-Apple Hide My Email (Ecosystem-Specific)
+Apple Hide My Email (environment-Specific)
 
-Apple's Hide My Email is integrated into iCloud+ subscription, available only to Apple ecosystem users. It's a "walled garden" offering, but excellent within that ecosystem.
+Apple's Hide My Email is integrated into iCloud+ subscription, available only to Apple environment users. It's a "walled garden" offering, but excellent within that environment.
 
 Features:
 - Generate aliases for iCloud accounts
@@ -196,7 +196,7 @@ Features:
 - Aliases work across iPhone, iPad, Mac, Web automatically
 
 Encryption and Security:
-- Encrypted within Apple ecosystem
+- Encrypted within Apple environment
 - Apple's end-to-end encryption for Mail+ subscribers
 - Apple privacy policy includes privacy policy guarantees
 - Hardware-level security in Apple devices
@@ -207,7 +207,7 @@ Pricing:
 - Unlimited aliases included with any iCloud+ tier
 
 Self-Hosting:
-No self-hosting. Exclusive to Apple ecosystem.
+No self-hosting. Exclusive to Apple environment.
 
 Ease of Use:
  integrated into iOS, macOS, and iCloud web. Siri can generate aliases. Safari autofill suggests aliases when creating accounts. For Apple users, this is the path of least resistance.
@@ -223,12 +223,12 @@ Ease of Use:
 - Locked to Apple devices (useless if you use Android or Windows)
 - No custom domain support
 - No self-hosting
-- Aliases specific to Apple ecosystem (less portable than independent services)
+- Aliases specific to Apple environment (less portable than independent services)
 - Younger service; fewer audits and track record than alternatives
 - No API access
 - Single alias domain (@iCloud.com)
 
-Best for: Apple ecosystem users who want integrated, frictionless alias management. Excellent if you're already paying for iCloud+.
+Best for - Apple environment users who want integrated, frictionless alias management. Excellent if you're already paying for iCloud+.
 
 Fastmail Masks (Email Provider Feature)
 
@@ -268,13 +268,13 @@ Integrated into Fastmail webmail and apps. Creating masks directly within your e
 
 - $5+/month required to get masks feature
 - Locked into Fastmail as primary email provider
-- Smaller ecosystem than SimpleLogin
+- Smaller environment than SimpleLogin
 - No open-source option
 - Fewer integrations with password managers
 - Less focused on privacy than dedicated services
 - Requires signing up for full email service
 
-Best for: Users already considering Fastmail as primary email provider. Excellent if consolidating to one privacy-focused email vendor.
+Best for - Users already considering Fastmail as primary email provider. Excellent if consolidating to one privacy-focused email vendor.
 
 Comparison Table
 
@@ -295,35 +295,35 @@ Comparison Table
 
 Implementation Strategy
 
-Start minimal: Use Firefox Relay if you use Firefox and want simplicity. It requires zero setup and covers basic alias needs.
+Start minimal - Use Firefox Relay if you use Firefox and want simplicity. It requires zero setup and covers basic alias needs.
 
-Upgrade to SimpleLogin if: You need custom domains, 2-way replies, or unlimited aliases. The $2.99/month cost is negligible relative to privacy gained.
+Upgrade to SimpleLogin if - You need custom domains, 2-way replies, or unlimited aliases. The $2.99/month cost is negligible relative to privacy gained.
 
-Choose AnonAddy if: You're budget-conscious, want open source, or prefer transparent pricing.
+Choose AnonAddy if - You're budget-conscious, want open source, or prefer transparent pricing.
 
-Use Apple Hide My Email if: You're in Apple ecosystem and already pay for iCloud+ storage.
+Use Apple Hide My Email if - You're in Apple environment and already pay for iCloud+ storage.
 
 Switch primary email to Fastmail if: You want consolidated privacy: primary email + aliases in one service.
 
 Best Practices for Email Alias Management
 
-Domain-per-category: If using custom domains, create separate domains for banking, shopping, and services. If one domain is compromised, attackers don't access other categories.
+Domain-per-category - If using custom domains, create separate domains for banking, shopping, and services. If one domain is compromised, attackers don't access other categories.
 
-Aliases per service: Create unique aliases for each service signup. Amazon gets amazon@yourdomain.com, Netflix gets netflix@yourdomain.com. This reveals exactly which companies sold your data.
+Aliases per service - Create unique aliases for each service signup. Amazon gets amazon@yourdomain.com, Netflix gets netflix@yourdomain.com. This reveals exactly which companies sold your data.
 
-Catch-all carefully: Catch-all addresses (@yourdomain.com) forward all mail to your inbox. Enable for trusted domains only; disable for unknown domains to prevent spam.
+Catch-all carefully - Catch-all addresses (@yourdomain.com) forward all mail to your inbox. Enable for trusted domains only; disable for unknown domains to prevent spam.
 
-Disable proactively: When a service becomes spammy, disable the alias immediately. All subsequent mail from that service is rejected, protecting your inbox.
+Disable proactively - When a service becomes spammy, disable the alias immediately. All subsequent mail from that service is rejected, protecting your inbox.
 
-Export regularly: Most services allow exporting alias lists. Export annually as backup, in case you need to migrate services.
+Export regularly - Most services allow exporting alias lists. Export annually as backup, in case you need to migrate services.
 
-Password manager integration: Link your alias service to your password manager. When creating new accounts, generate alias + password together.
+Password manager integration - Link your alias service to your password manager. When creating new accounts, generate alias + password together.
 
 Manage Email Aliases via CLI
 
 ```bash
 SimpleLogin CLI. create and manage aliases from the terminal
-Install: pip install simple-login
+Install - pip install simple-login
 
 Authenticate
 sl login --email you@example.com
@@ -337,7 +337,7 @@ sl alias list | head -20
 Disable a leaking alias immediately
 sl alias disable abc123@simplelogin.com
 
-Self-hosted: check your SimpleLogin instance health
+Self-hosted - check your SimpleLogin instance health
 curl -s http://localhost:7777/health | jq .
 ```
 

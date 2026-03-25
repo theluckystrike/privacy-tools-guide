@@ -23,8 +23,8 @@ Set up an application performance monitoring (APM) workflow by instrumenting you
 - This guide covers metric: collection strategies, alerting best practices, tracing implementation, and building a monitoring culture that balances observability with user privacy.
 - Track several percentiles: p50 (median), p95, p99, and p999, to understand both typical and worst-case performance.
 - Without proper monitoring, you're flying blind: unable to detect degraded performance, understand root causes of incidents, or make data-driven decisions about optimization investments.
-- First: it enables rapid incident detection so your team can resolve issues before they impact users.
-- Second: it provides the data needed for root cause analysis when problems occur.
+- First - it enables rapid incident detection so your team can resolve issues before they impact users.
+- Second - it provides the data needed for root cause analysis when problems occur.
 
 Why Application Performance Monitoring Matters
 
@@ -44,7 +44,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Core Metrics to Monitor
+Step 1 - Core Metrics to Monitor
 
 Request Latency
 
@@ -87,7 +87,7 @@ Resource Utilization
 
 Monitor CPU usage, memory consumption, disk I/O, and network bandwidth. These system-level metrics help identify infrastructure constraints that affect application performance. Set thresholds that trigger alerts before resources are exhausted.
 
-Step 2: Set Up Distributed Tracing
+Step 2 - Set Up Distributed Tracing
 
 Distributed tracing follows a request as it travels through multiple services, enabling you to pinpoint where delays occur in complex microservice architectures.
 
@@ -96,7 +96,7 @@ Trace Context Propagation
 When a request enters your system, generate an unique trace ID. Pass this ID through all subsequent service calls, typically via HTTP headers. Each service adds its own span data, creating a complete picture of the request journey.
 
 ```javascript
-// Example: Trace context propagation in Node.js
+// Example - Trace context propagation in Node.js
 const { trace, context } = require('@opentelemetry/api');
 
 function handleRequest(req, res) {
@@ -163,7 +163,7 @@ Alert noise erodes team confidence in monitoring systems. Combat this by:
 - Requiring alerts to persist for several minutes before firing (avoid transient spikes)
 - Creating runbooks for each alert explaining investigation steps and potential resolutions
 
-Step 3: Privacy Considerations in Monitoring
+Step 3 - Privacy Considerations in Monitoring
 
 Monitoring systems often collect sensitive data. Implement privacy-preserving practices:
 
@@ -203,7 +203,7 @@ Access Controls
 
 Restrict access to monitoring dashboards and raw logs. Grant permissions based on role, engineers need debugging access while management may only need aggregated metrics.
 
-Step 4: Build a Monitoring Culture
+Step 4 - Build a Monitoring Culture
 
 Establish On-Call Practices
 
@@ -237,7 +237,7 @@ Post-Incident Analysis
 
 After significant incidents, analyze monitoring data to understand what happened and whether alerts fired appropriately. Update alerting rules, add new metrics, or improve dashboards based on lessons learned.
 
-Step 5: Tools and Technologies
+Step 5 - Tools and Technologies
 
 Open Source Options
 
@@ -255,7 +255,7 @@ Commercial Platforms
 
 Choose tools that integrate with your existing infrastructure and provide the specific capabilities your team needs.
 
-Step 6: Implementation Roadmap
+Step 6 - Implementation Roadmap
 
 Start with foundational monitoring before adding complexity:
 

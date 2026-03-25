@@ -24,23 +24,23 @@ echo "-----BEGIN AGE ENCRYPTED FILE-----
 YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUx..." | age -d -i ~/.age/key.txt
 ```
 
-Step 7: Age Encryption with Passphrase (No Keys)
+Step 7 - Age Encryption with Passphrase (No Keys)
 
 age can encrypt with just a passphrase (no public keys needed). Useful for personal backups.
 
 ```bash
 Encrypt
 age -p backup.tar.gz > backup.tar.gz.age
-Prompts: Enter passphrase
+Prompts - Enter passphrase
 
 Decrypt
 age -d -i - backup.tar.gz.age > backup.tar.gz
-Prompts: Enter passphrase
+Prompts - Enter passphrase
 ```
 
 The `-p` flag means "use passphrase instead of keys." This is simpler than GPG for backups (no key management), but less secure if the passphrase is weak.
 
-Step 8: Integration with Other Tools
+Step 8 - Integration with Other Tools
 
 SSH Key Import
 
@@ -57,7 +57,7 @@ Decrypt using SSH key
 age -d -i ~/.ssh/id_ed25519 file.txt.age
 ```
 
-This is powerful: share SSH public keys instead of age public keys.
+This is powerful - share SSH public keys instead of age public keys.
 
 Encrypt within scripts
 
@@ -112,7 +112,7 @@ Apply secret (decrypt in CI pipeline before kubectl apply)
 age -d -i ~/.age/key.txt secret.yaml.age | kubectl apply -f -
 ```
 
-Step 9: Rotate Keys and Revocation
+Step 9 - Rotate Keys and Revocation
 
 Rotate to a new key
 
@@ -138,7 +138,7 @@ If a key is compromised:
 
 age doesn't have a revocation system (like GPG), so manual rotation is necessary.
 
-Comparison: Age vs GPG for Different Use Cases
+Comparison - Age vs GPG for Different Use Cases
 
 Use age for:
 - File sharing between colleagues.
@@ -157,14 +157,14 @@ For most modern workflows, age is the better choice.
 
 Troubleshooting
 
-Error: "could not decrypt: wrong passphrase"
+Error - "could not decrypt: wrong passphrase"
 - You're using the wrong secret key. Check `-i ~/.age/key.txt` path.
 - Or the file wasn't encrypted for your public key.
 
-Error: "unknown recipient"
+Error - "unknown recipient"
 - The public key in `-r` is invalid. Check the format (should start with `age1`).
 
-Error: "secret key is invalid"
+Error - "secret key is invalid"
 - The key file is corrupted. Check `~/.age/key.txt` exists and is readable.
 
 File won't decrypt

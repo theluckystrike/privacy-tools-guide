@@ -25,7 +25,7 @@ Quick Setup Steps
 3. Self-sign the certificate: `openssl x509 -req -days 365 -in smime.csr -signkey smime-key.pem -out smime-cert.pem`
 4. Export to PKCS#12 format: `openssl pkcs12 -export -in smime-cert.pem -inkey smime-key.pem -out smime.p12`
 5. Import into Thunderbird: Settings > Account Settings > End-to-End Encryption > S/MIME > Manage S/MIME Certificates
-6. Import into Apple Mail: double-click the .p12 file to add it to Keychain Access
+6. Import into Apple Mail - double-click the .p12 file to add it to Keychain Access
 7. Send a signed test email to yourself to verify the certificate works
 8. Exchange public certificates with recipients by sending them a signed email
 9. Verify encryption by checking for the lock icon on received encrypted messages
@@ -35,7 +35,7 @@ Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Security Considerations](#security-considerations)
-- [Advanced: Certificate Automation with ACME](#advanced-certificate-automation-with-acme)
+- [Advanced - Certificate Automation with ACME](#advanced-certificate-automation-with-acme)
 - [Email Client Configuration Comparison](#email-client-configuration-comparison)
 - [Troubleshooting S/MIME Issues](#troubleshooting-smime-issues)
 - [Migrating from PGP to S/MIME](#migrating-from-pgp-to-smime)
@@ -51,13 +51,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand S/MIME Fundamentals
+Step 1 - Understand S/MIME Fundamentals
 
 S/MIME relies on X.509 certificates to provide authentication, encryption, and digital signatures. Unlike PGP's web-of-trust model, S/MIME uses a hierarchical Public Key Infrastructure (PKI) with certificate authorities. This means you can obtain certificates from trusted CAs or generate self-signed certificates for internal use.
 
 The protocol supports both encryption (confidentiality) and digital signatures (authenticity and integrity). When you sign an email, recipients can verify that the message originated from you and wasn't modified in transit. When you encrypt an email, only the intended recipient can read its contents.
 
-Step 2: Generate Your S/MIME Certificate
+Step 2 - Generate Your S/MIME Certificate
 
 For production use, obtain certificates from a trusted CA like DigiCert, Comodo, or Let's Encrypt (when they offer S/MIME). For testing or internal deployment, generate a self-signed certificate using OpenSSL.
 
@@ -97,7 +97,7 @@ openssl pkcs12 -in smime.p12 -nokeys -out smime-cer.pem
 openssl pkcs12 -in smime.p12 -nocerts -nodes -out smime-key.pem
 ```
 
-Step 3: Configure Thunderbird for S/MIME
+Step 3 - Configure Thunderbird for S/MIME
 
 Mozilla Thunderbird has native S/MIME support with a straightforward configuration interface.
 
@@ -119,7 +119,7 @@ After importing, configure your default encryption behavior:
 
 Thunderbird will automatically attach your public certificate to signed emails, allowing recipients to import it and send encrypted replies.
 
-Step 4: Apple Mail Configuration
+Step 4 - Apple Mail Configuration
 
 Apple Mail integrates S/MIME through the macOS Keychain, enabling encryption across Apple devices without additional configuration.
 
@@ -138,7 +138,7 @@ Enabling in Apple Mail
 
 For iOS devices, transfer the certificate via AirDrop or email, then install the profile in Settings → General → VPN & Device Management.
 
-Step 5: Configure Microsoft Outlook
+Step 5 - Configure Microsoft Outlook
 
 Outlook supports S/MIME through Windows Certificate Store or imported certificate files.
 
@@ -155,7 +155,7 @@ For Exchange environments without auto-enrollment:
 1. Go to File → Options → Mail → Signatures
 2. Create a new signature and attach your certificate via Select Certificate
 
-Step 6: Verify Your Setup
+Step 6 - Verify Your Setup
 
 Test your configuration by sending an encrypted email to yourself or a colleague who also has S/MIME configured.
 
@@ -176,13 +176,13 @@ openssl x509 -in smime.crt -noout -dates
 
 Troubleshooting Common Issues
 
-Certificate not trusted: Ensure the recipient has your root CA certificate or use a certificate from a public CA.
+Certificate not trusted - Ensure the recipient has your root CA certificate or use a certificate from a public CA.
 
 Encryption fails for some recipients: Recipients must have a valid S/MIME certificate. You cannot encrypt to recipients without certificates.
 
-Signature verification fails: Recipients need your public certificate. Always sign your emails so others can reply encrypted.
+Signature verification fails - Recipients need your public certificate. Always sign your emails so others can reply encrypted.
 
-Expired certificates: S/MIME certificates typically expire after 1-3 years. Plan for renewal and keep your private key secure.
+Expired certificates - S/MIME certificates typically expire after 1-3 years. Plan for renewal and keep your private key secure.
 
 Security Considerations
 
@@ -190,7 +190,7 @@ Your private key protects all encrypted communication. Follow these practices:
 
 Never share your private key or PFX file. Store keys on hardware tokens (YubiKey, SmartCards) for production use. Use strong passwords on PKCS#12 exports, back them up securely, and revoke immediately if compromised.
 
-Advanced: Certificate Automation with ACME
+Advanced - Certificate Automation with ACME
 
 For organizations deploying S/MIME at scale, automate certificate issuance using ACME (Automated Certificate Management Environment). Services like Smallstep and Step-CA provide ACME servers that integrate with Let's Encrypt-style certificate issuance.
 
@@ -262,7 +262,7 @@ openssl pkcs12 -in /path/to/smime.p12 -noout -info
 echo -e "\n=== End Diagnostics ==="
 ```
 
-Step 7: Distributing Certificates to Team Members
+Step 7 - Distributing Certificates to Team Members
 
 For organization-wide S/MIME deployment, establish a certificate distribution pipeline:
 
@@ -349,8 +349,8 @@ IMPORTANT SECURITY NOTES:
 
 Import Instructions:
 - Thunderbird: Settings → Privacy & Security → Certificates → Import
-- Apple Mail: Double-click the .p12 file and import via Keychain
-- Outlook: Double-click the .p12 file and follow the wizard
+- Apple Mail - Double-click the .p12 file and import via Keychain
+- Outlook - Double-click the .p12 file and follow the wizard
 
 If you have trouble importing, contact IT support.
 
@@ -432,7 +432,7 @@ employees = [
 distributor.bulk_distribute_certificates(employees)
 ```
 
-Step 8: Interoperability Testing
+Step 8 - Interoperability Testing
 
 Before rolling out S/MIME org-wide, test interoperability with external recipients:
 
@@ -446,25 +446,25 @@ TEST_EMAIL="test@example.com"
 
 echo "=== S/MIME Interoperability Testing ==="
 
-Test 1: Create a signed message
+Test 1 - Create a signed message
 echo -e "\n1. Creating S/MIME signed message..."
 echo "Test message body" | openssl smime -sign -signer $CERT_FILE -inkey $KEY_FILE \
   -to $TEST_EMAIL -subject "S/MIME Test - Signed" > test_signed.eml
 
-Test 2: Create an encrypted message (requires recipient's certificate)
+Test 2 - Create an encrypted message (requires recipient's certificate)
 echo -e "\n2. Creating S/MIME encrypted message..."
 You would need the recipient's public certificate for this:
 openssl smime -encrypt -in message.txt -out message.eml recipient_cert.pem
 
-Test 3: Verify the signature on a received S/MIME message
+Test 3 - Verify the signature on a received S/MIME message
 echo -e "\n3. Verifying received S/MIME signature..."
 openssl smime -verify -in received_signed.eml -signer - | grep -E "Verification|subject="
 
-Test 4: Decrypt a received S/MIME message
+Test 4 - Decrypt a received S/MIME message
 echo -e "\n4. Decrypting received S/MIME message..."
 openssl smime -decrypt -in received_encrypted.eml -inkey $KEY_FILE -recip $CERT_FILE
 
-Test 5: Check for common compatibility issues
+Test 5 - Check for common compatibility issues
 echo -e "\n5. Compatibility checklist..."
 echo "- Is certificate from trusted CA? $(openssl verify $CERT_FILE > /dev/null 2>&1 && echo 'Yes' || echo 'No')"
 echo "- Is certificate within validity period? $(openssl x509 -in $CERT_FILE -noout -dates | grep -q "notAfter" && echo 'Yes' || echo 'No')"
@@ -520,7 +520,7 @@ const emailEncryptionConfig = {
 // Usage
 const encryptFor = emailEncryptionConfig.selectEncryptionMethod('alice@company.com');
 console.log(`Encrypting for alice@company.com using: ${encryptFor}`);
-// Output: Encrypting for alice@company.com using: smime
+// Output - Encrypting for alice@company.com using: smime
 
 const params = emailEncryptionConfig.getEncryptionParameters('bob@company.com');
 console.log(params);

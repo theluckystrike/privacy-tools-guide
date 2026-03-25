@@ -38,7 +38,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Apple's Digital Legacy Architecture
+Step 1 - Understand Apple's Digital Legacy Architecture
 
 Apple's approach to digital inheritance differs fundamentally from simple password sharing. When you designate a legacy contact, Apple generates an unique access key that your contact can use to decrypt your data. This maintains end-to-end encryption while providing a legal mechanism for data transfer.
 
@@ -48,7 +48,7 @@ The system requires two components:
 
 Your legacy contact receives an access key they must retain (preferably in a secure location like a password manager). When the time comes, they submit a death certificate through Apple's Digital Legacy Portal, and Apple verifies the claim before granting access.
 
-Step 2: Adding a Legacy Contact via iPhone or iPad
+Step 2 - Adding a Legacy Contact via iPhone or iPad
 
 On iOS 18 and later, you configure legacy contacts through Settings:
 
@@ -59,7 +59,7 @@ On iOS 18 and later, you configure legacy contacts through Settings:
 
 Select someone from your contacts or enter their details manually. You can add multiple legacy contacts if needed.
 
-Step 3: Adding a Legacy Contact via macOS
+Step 3 - Adding a Legacy Contact via macOS
 
 For desktop power users, macOS provides the same functionality:
 
@@ -68,7 +68,7 @@ For desktop power users, macOS provides the same functionality:
 3. Select Legacy Contact
 4. Add your designated contact
 
-Step 4: Generate and Storing the Recovery Key
+Step 4 - Generate and Storing the Recovery Key
 
 After adding a legacy contact, Apple prompts you to generate a Recovery Key. This 28-character code serves as a backup mechanism. Your legacy contact needs either:
 
@@ -91,7 +91,7 @@ Legacy Contact Setup Reference:
 - Legacy access key location: [PHYSICAL LOCATION]
 ```
 
-Step 5: Technical Details for Developers
+Step 5 - Technical Details for Developers
 
 For developers integrating digital legacy awareness into applications, Apple's implementation uses the following endpoints conceptually:
 
@@ -116,7 +116,7 @@ const legacyContactSchema = {
 
 Apple stores encrypted legacy contact references on their servers. The actual decryption happens only after manual verification by Apple staff when a claim is filed through their Digital Legacy Portal.
 
-Step 6: Manage Legacy Contacts Programmatically
+Step 6 - Manage Legacy Contacts Programmatically
 
 While Apple doesn't provide a public API for managing legacy contacts, you can verify the current configuration through your Apple ID security settings. For enterprise deployments managing multiple Apple IDs, document the following for each device:
 
@@ -126,11 +126,11 @@ Script to extract device info (run locally on each Mac)
 system_profiler SPHardwareDataType | grep -E "Model Name|Serial Number"
 ```
 
-Step 7: Important Limitations
+Step 7 - Important Limitations
 
 Before configuring legacy contacts, understand these constraints:
 
-- Data Scope: Only iCloud data is accessible. Local device data requires direct device access
+- Data Scope - Only iCloud data is accessible. Local device data requires direct device access
 - Passwords: Legacy contacts can access iCloud Keychain only if you explicitly enable this during setup
 - Subscription Data: Purchased music, apps, and subscriptions are not transferable
 - Verification Time: Apple states verification may take several weeks after claim submission
@@ -159,7 +159,7 @@ For recovery key issues:
 - Apple provides only one recovery key, if lost, you must reconfigure the entire setup
 - Print multiple copies and store in separate secure locations
 
-Step 8: Cryptographic Architecture of Legacy Access
+Step 8 - Cryptographic Architecture of Legacy Access
 
 Apple's legacy contact system uses public-key encryption to ensure data remains encrypted while enabling recovery contact access:
 
@@ -181,7 +181,7 @@ const legacyEncryption = {
 
 This architecture maintains end-to-end encryption throughout, Apple never holds decryption keys for either the user or legacy contact.
 
-Step 9: Regional Availability and Limitations
+Step 9 - Regional Availability and Limitations
 
 Apple Digital Legacy Program availability varies by country. As of March 2026, available regions include:
 
@@ -200,28 +200,28 @@ For users outside supported regions, consider alternative approaches:
 - Use third-party digital estate planning services
 - Document iCloud credentials separately (less secure but available)
 
-Step 10: Integrate Legacy Planning with Password Managers
+Step 10 - Integrate Legacy Planning with Password Managers
 
 Power users often integrate Apple's legacy program with password manager workflows:
 
 ```markdown
 Digital Estate Planning Checklist
 
-Step 11: iCloud & Apple Services
+Step 11 - iCloud & Apple Services
 - [ ] Configured legacy contact in iCloud
 - [ ] Generated and stored recovery key
 - [ ] Documented location of recovery key
 - [ ] Specified which family members can access Keychain
 - [ ] Enabled/disabled subscription transfers
 
-Step 12: Password Manager Integration
+Step 12 - Password Manager Integration
 - [ ] Stored Apple ID in password manager
 - [ ] Designated password manager legacy contact
 - [ ] Documented master password recovery process
 - [ ] Listed all devices and their purposes
 - [ ] Specified which data should be deleted vs. transferred
 
-Step 13: Device Inventory
+Step 13 - Device Inventory
 - [ ] iPhone models and serial numbers
 - [ ] Mac computers and serial numbers
 - [ ] iPad devices
@@ -230,12 +230,12 @@ Step 13: Device Inventory
 
 Store this checklist both digitally (encrypted) and physically (paper backup).
 
-Step 14: Family Sharing and Legacy Planning
+Step 14 - Family Sharing and Legacy Planning
 
 For families with multiple Apple IDs, Apple Family Sharing coordinates with legacy planning:
 
 ```javascript
-// Family hierarchy in Apple ecosystem
+// Family hierarchy in Apple environment
 const familyStructure = {
   organizer: "primary-family-member@icloud.com",
   members: [
@@ -255,7 +255,7 @@ const familyStructure = {
 
 The family organizer should establish legacy contacts separately from child accounts. This prevents a child's death from triggering account recovery for the organizer's account.
 
-Step 15: iCloud+ Subscribers and Extended Features
+Step 15 - iCloud+ Subscribers and Extended Features
 
 iCloud+ subscribers receive additional legacy planning benefits:
 
@@ -266,7 +266,7 @@ iCloud+ subscribers receive additional legacy planning benefits:
 
 Document these extras specifically, as they require different recovery procedures.
 
-Step 16: Backup and Export Workflows
+Step 16 - Backup and Export Workflows
 
 Before designating legacy contacts, export critical data:
 
@@ -275,14 +275,14 @@ macOS: Export iCloud data using terminal
 Get list of iCloud-synced folders
 ls -la ~/Library/Mobile\ Documents/
 
-On iOS/macOS: Export data through settings
+On iOS/macOS - Export data through settings
 Settings → [Apple ID] → iCloud
 For each category, verify settings are correct
 ```
 
 This ensures you have local copies of critical data independent of the legacy recovery process.
 
-Step 17: Legal Considerations and Death Certificate Verification
+Step 17 - Legal Considerations and Death Certificate Verification
 
 Apple's verification process for legacy claims requires:
 
@@ -291,7 +291,7 @@ Apple's verification process for legacy claims requires:
 3. Proof of relationship to deceased account holder
 4. Submission through Apple's official Digital Legacy Portal
 
-Processing times: Apple states 2-4 weeks minimum for verification. In practice, delays often extend longer.
+Processing times - Apple states 2-4 weeks minimum for verification. In practice, delays often extend longer.
 
 For organizations or institutions with multiple Apple accounts:
 
@@ -323,7 +323,7 @@ Organizations using Apple Business Manager can integrate legacy planning:
 
 Deploy this through Mobile Device Management (MDM) configuration profiles.
 
-Step 18: Edge Cases and Special Situations
+Step 18 - Edge Cases and Special Situations
 
 What happens if:
 - Legacy contact dies before account owner: The recovery contact becomes invalid. User should update or designate new contact.
@@ -340,18 +340,18 @@ Comparison with Other Digital Legacy Services
 | Facebook Legacy Contact | Facebook only | Death certificate | Free | Easy |
 | Specialized services | All digital assets | Varies | $50-500 | Hard |
 
-Apple's program is for iCloud ecosystem but limited to Apple services. For complete digital estate planning, use multiple services.
+Apple's program is for iCloud environment but limited to Apple services. For complete digital estate planning, use multiple services.
 
-Step 19: Documentation Template
+Step 19 - Documentation Template
 
 ```markdown
 Digital Legacy Plan. [Your Name]
 
-Date Created: [DATE]
-Last Reviewed: [DATE]
-Reviewed By: [TRUSTED PERSON]
+Date Created - [DATE]
+Last Reviewed - [DATE]
+Reviewed By - [TRUSTED PERSON]
 
-Step 20: Apple ID Legacy Contact
+Step 20 - Apple ID Legacy Contact
 
 - Primary Contact: [NAME], [EMAIL], [PHONE]
 - Backup Contact: [NAME], [EMAIL], [PHONE]
@@ -360,10 +360,10 @@ Step 20: Apple ID Legacy Contact
 - iCloud Data to Transfer: Photos, iCloud Drive, Keychain, Mail
 - Subscriptions to Cancel: [LIST]
 
-Step 21: Implementation Date
-This plan was configured on: [DATE]
+Step 21 - Implementation Date
+This plan was configured on - [DATE]
 
-Step 22: Change Log
+Step 22 - Change Log
 - [DATE]: Initial setup
 - [DATE]: Updated recovery key location
 ```

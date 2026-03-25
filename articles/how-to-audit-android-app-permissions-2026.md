@@ -16,11 +16,11 @@ intent-checked: true
 
 {% raw %}
 
-Step 1: How to Audit Android App Permissions (2026)
+Step 1 - How to Audit Android App Permissions (2026)
 
 Android permissions control what data applications can access: location, contacts, camera, microphone, files, and more. Most users blindly grant permissions during installation, unaware of the privacy implications. This technical guide walks through auditing which permissions apps have, identifying risky configurations, and restricting permissions to minimize data exposure.
 
-Step 2: Android Permission Model Overview
+Step 2 - Android Permission Model Overview
 
 Android 6.0+ (API 23+) uses runtime permissions. Apps can't access sensitive data without explicit user consent. Understanding permission categories helps identify privacy risks.
 
@@ -78,7 +78,7 @@ Normal Permissions (auto-granted, less privacy risk):
 - WAKE_LOCK
 - These don't require explicit consent
 
-Prerequisites: Set Up ADB
+Prerequisites - Set Up ADB
 
 Android Debug Bridge (adb) is the command-line tool for interacting with Android devices.
 
@@ -121,7 +121,7 @@ List of attached devices
 ABC123XYZ  device
 ```
 
-Step 3: Method 1: Using adb to View All Permissions
+Step 3 - Method 1: Using adb to View All Permissions
 
 List All Installed Packages
 
@@ -176,7 +176,7 @@ Output shows:
 - Permissions denied
 ```
 
-Step 4: Method 2: Automated Permission Audit Script
+Step 4 - Method 2: Automated Permission Audit Script
 
 Create an audit of all apps and their permissions:
 
@@ -239,7 +239,7 @@ chmod +x audit-permissions.sh
 ./audit-permissions.sh > audit_report.txt
 ```
 
-Step 5: Method 3: Using Android Studio
+Step 5 - Method 3: Using Android Studio
 
 For developers, Android Studio provides GUI tools:
 
@@ -248,9 +248,9 @@ For developers, Android Studio provides GUI tools:
 3. Open `com.whatsapp.xml` (or any app)
 4. View permission grants in XML format
 
-Step 6: Real-World Examples: Permission Analysis
+Step 6 - Real-World Examples: Permission Analysis
 
-Example 1: Messaging App (WhatsApp)
+Example 1 - Messaging App (WhatsApp)
 
 ```bash
 adb shell dumpsys package com.whatsapp | grep "Permissions:" -A 30
@@ -264,11 +264,11 @@ android.permission.ACCESS_FINE_LOCATION ? (May be requested but not granted)
 android.permission.WRITE_EXTERNAL_STORAGE  (File sharing)
 ```
 
-Risk assessment: CAMERA + MICROPHONE + CONTACTS = Very high data access. Messenger apps legitimately need these.
+Risk assessment - CAMERA + MICROPHONE + CONTACTS = Very high data access. Messenger apps legitimately need these.
 
 Grant, but monitor camera/mic access.
 
-Example 2: Weather App
+Example 2 - Weather App
 
 ```bash
 adb shell dumpsys package com.weather.app | grep "Permissions:" -A 15
@@ -279,11 +279,11 @@ android.permission.ACCESS_COARSE_LOCATION  (Network location for weather)
 android.permission.ACCESS_FINE_LOCATION ? (Don't need GPS precision)
 ```
 
-Risk assessment: FINE_LOCATION not necessary for weather.
+Risk assessment - FINE_LOCATION not necessary for weather.
 
 Deny ACCESS_FINE_LOCATION, allow ACCESS_COARSE_LOCATION only.
 
-Example 3: Social Media App (Instagram)
+Example 3 - Social Media App (Instagram)
 
 ```bash
 adb shell dumpsys package com.instagram.android | grep "Permissions:" -A 20
@@ -299,11 +299,11 @@ android.permission.BODY_SENSORS
 android.permission.ACCESS_BACKGROUND_LOCATION 
 ```
 
-Risk assessment: Excessive permissions (especially CALENDAR, BODY_SENSORS, BACKGROUND_LOCATION) for a photo-sharing app. Each permission represents data leakage risk.
+Risk assessment - Excessive permissions (especially CALENDAR, BODY_SENSORS, BACKGROUND_LOCATION) for a photo-sharing app. Each permission represents data leakage risk.
 
 Deny calendar, body sensors, and background location.
 
-Step 7: Revoke Permissions via ADB
+Step 7 - Revoke Permissions via ADB
 
 After identifying risky permissions, revoke them.
 
@@ -338,7 +338,7 @@ done
 echo "Done. Verify in Settings > Apps > $PACKAGE > Permissions"
 ```
 
-Step 8: Permission Monitoring: Know When Apps Request Permissions
+Step 8 - Permission Monitoring: Know When Apps Request Permissions
 
 Once revoked, monitor when apps try to use revoked permissions.
 
@@ -359,7 +359,7 @@ Some apps repeatedly request permissions you've denied. Using a logcat filter:
 adb logcat | grep "startActivityForResult\|onActivityResult"
 ```
 
-Step 9: Complete Audit Checklist
+Step 9 - Complete Audit Checklist
 
 Use this checklist for regular privacy audits:
 
@@ -406,7 +406,7 @@ Quarterly App Removal
 - [ ] Remove apps with excessive permissions
 - [ ] Document reason for keeping apps with high permissions
 
-Step 10: Permission Risk Scoring
+Step 10 - Permission Risk Scoring
 
 Quantify privacy risk by app:
 
@@ -422,7 +422,7 @@ WhatsApp
 - MICROPHONE: 1 point
 - CONTACTS: 1 point
 - STORAGE: 1 point
-Total: 4 points = MEDIUM risk (justified for messaging app)
+Total - 4 points = MEDIUM risk (justified for messaging app)
 
 Instagram
 - CAMERA: 1 point
@@ -433,7 +433,7 @@ Instagram
 - CALENDAR: 1 point
 - BODY_SENSORS: 1 point
 - STORAGE: 1 point
-Total: 10 points = HIGH risk (not justified for photo app)
+Total - 10 points = HIGH risk (not justified for photo app)
 
 Risk categories:
 0-3 points: LOW risk
@@ -455,7 +455,7 @@ Best Practices Summary
 9. Regular audits: Monthly quick review, quarterly detailed audit
 10. Document decisions: Keep notes on why you granted certain permissions
 
-Step 11: Recommended Permissions by App Type
+Step 11 - Recommended Permissions by App Type
 
 Messaging Apps (WhatsApp, Signal, Telegram):
 - CAMERA 

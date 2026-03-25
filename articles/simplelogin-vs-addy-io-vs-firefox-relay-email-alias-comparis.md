@@ -39,7 +39,7 @@ Service Overview
 
 SimpleLogin
 
-SimpleLogin was acquired by Proton in 2022 and now integrates with the Proton ecosystem. It offers both free and paid tiers, with premium features including unlimited aliases and custom domains. The service supports catch-all domains, SMTP forwarding, and PGP encryption. The Proton integration means SimpleLogin accounts can share authentication with Proton Mail, Proton VPN, and Proton Drive, giving privacy-conscious users a consolidated account management experience.
+SimpleLogin was acquired by Proton in 2022 and now integrates with the Proton environment. It offers both free and paid tiers, with premium features including unlimited aliases and custom domains. The service supports catch-all domains, SMTP forwarding, and PGP encryption. The Proton integration means SimpleLogin accounts can share authentication with Proton Mail, Proton VPN, and Proton Drive, giving privacy-conscious users a consolidated account management experience.
 
 The free plan allows 10 aliases with basic forwarding. The premium plan, priced at around $30 per year, lifts the alias cap, adds custom domains, catch-all addressing, and API access. PGP encryption is available at both tiers, which distinguishes SimpleLogin from its competitors.
 
@@ -51,7 +51,7 @@ Pricing starts around $12 per year for the Lite plan and $36 per year for the Pr
 
 Firefox Relay
 
-Mozilla's Firefox Relay offers a free tier with 5 aliases and a paid Relay Premium at $0.99/month for unlimited aliases and phone number masking. It integrates naturally with Firefox but works across all browsers. The service focuses on simplicity rather than advanced features, making it the lowest-friction option for users already within the Mozilla ecosystem.
+Mozilla's Firefox Relay offers a free tier with 5 aliases and a paid Relay Premium at $0.99/month for unlimited aliases and phone number masking. It integrates naturally with Firefox but works across all browsers. The service focuses on simplicity rather than advanced features, making it the lowest-friction option for users already within the Mozilla environment.
 
 Firefox Relay lacks custom domains, SMTP sending, API access for advanced workflows, and self-hosting capability. It is a sensible choice for casual users who want basic alias functionality without configuration overhead.
 
@@ -230,7 +230,7 @@ Different threat models call for different tools:
 
 - Casual spam prevention: Firefox Relay covers this with minimal setup. You do not need API access or custom domains to keep spam out of your inbox.
 - Developer automation: Addy.io's free-tier API access makes it the practical choice for scripted alias creation in CI/CD pipelines, integration tests, or tooling.
-- Proton ecosystem users: SimpleLogin integrates cleanly if you already use Proton Mail, letting you manage aliases directly from your inbox.
+- Proton environment users: SimpleLogin integrates cleanly if you already use Proton Mail, letting you manage aliases directly from your inbox.
 - Maximum privacy / no third-party trust: Self-hosted Addy.io eliminates external dependencies entirely. You control the infrastructure, the logs, and the retention policy.
 
 Frequently Asked Questions
@@ -249,7 +249,7 @@ SimpleLogin operates under Swiss law (similar in many respects to GDPR). Addy.io
 
 Which Service Should You Choose
 
-SimpleLogin suits Proton ecosystem users and those who need PGP encryption. Addy.io is the right call for developers who want API access without a premium subscription, or anyone willing to self-host. Firefox Relay is best for non-technical users who want simple alias management integrated into their browser with minimal friction.
+SimpleLogin suits Proton environment users and those who need PGP encryption. Addy.io is the right call for developers who want API access without a premium subscription, or anyone willing to self-host. Firefox Relay is best for non-technical users who want simple alias management integrated into their browser with minimal friction.
 
 Related Articles
 

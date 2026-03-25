@@ -64,7 +64,7 @@ Internxt's CLI supports file encryption verification:
 ```bash
 Verify encryption status
 inx file status filename.txt
-Output: Encrypted: true, Algorithm: AES-256
+Output - Encrypted: true, Algorithm: AES-256
 ```
 
 The free tier includes all core features: file sharing, folder sync, and multi-device access. The main limitation is storage quantity, 10GB fills quickly with development projects.

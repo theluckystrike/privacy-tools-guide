@@ -35,13 +35,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Blockchain Transparency
+Step 1 - Understand Blockchain Transparency
 
 Bitcoin, Ethereum, and most cryptocurrencies operate on public ledgers. Each transaction broadcasts the sending address, receiving address, amount, and timestamp to the entire network. Blockchain explorers allow anyone to trace funds between addresses, creating a permanent record that can be analyzed to identify spending patterns, business relationships, or personal identities.
 
 The level of traceability depends on how addresses are used. If you receive Bitcoin to an address linked to your identity (through an exchange KYC process, a public donation address, or a transaction with a known entity), all funds flowing from that address become potentially traceable through various heuristics and chain analysis tools.
 
-Step 2: Privacy-Focused Cryptocurrencies
+Step 2 - Privacy-Focused Cryptocurrencies
 
 The most effective approach to transaction privacy involves using cryptocurrencies designed with privacy by default.
 
@@ -75,7 +75,7 @@ const shieldedPayment = new Payment({
 
 The privacy guarantees depend on using shielded addresses exclusively. Transactions between transparent addresses remain fully visible.
 
-Step 3: CoinJoin and Bitcoin Mixing
+Step 3 - CoinJoin and Bitcoin Mixing
 
 For users preferring to stay with Bitcoin, CoinJoin combines multiple transactions into a single broadcast, breaking the deterministic link between input and output addresses.
 
@@ -101,7 +101,7 @@ Starting Wasabi from command line (requires Wine on Linux)
 
 Wasabi's built-in Tor integration provides network-level privacy by default.
 
-Step 4: Avoiding Address Reuse
+Step 4 - Avoiding Address Reuse
 
 Address reuse is one of the most common privacy failures. Each address should ideally be used for a single transaction. HD (Hierarchical Deterministic) wallets generate new addresses from a seed phrase, making it easy to use unique addresses for every transaction.
 
@@ -122,7 +122,7 @@ print(f"New address: {address}")
 
 Most modern wallets automatically generate new addresses for each transaction. Verify your wallet settings to ensure this feature is enabled.
 
-Step 5: Run Your Own Full Node
+Step 5 - Run Your Own Full Node
 
 Using third-party nodes (such as block explorers or light wallets) exposes your addresses to those services. Running your own full node ensures your wallet communicates directly with the network without trusted intermediaries.
 
@@ -136,7 +136,7 @@ bitcoin-cli getnetworkinfo | grep -A 5 "onion"
 
 Full nodes download and verify the entire blockchain locally, providing complete transaction history without sharing addresses with external services.
 
-Step 6: Network-Level Privacy with Tor
+Step 6 - Network-Level Privacy with Tor
 
 Connecting to cryptocurrency networks through Tor obscures your IP address from network observers. Both Bitcoin and Monero support Tor connections natively.
 
@@ -155,7 +155,7 @@ monerod --proxy-type socks5 --proxy 127.0.0.1:9050
 
 Using a dedicated machine for cryptocurrency operations further reduces fingerprinting risks.
 
-Step 7: Air-Gapped and Hardware Wallets
+Step 7 - Air-Gapped and Hardware Wallets
 
 Air-gapped computers never connect to the internet, making them immune to network-based attacks. Hardware wallets provide secure key storage with display confirmation for transactions.
 
@@ -166,7 +166,7 @@ gpg --gen-random 2 32 | hexdump -v -e '/1 "%02X"'
 
 Combine hardware wallets with air-gapped transaction signing for maximum security. Generate the unsigned transaction on an online machine, transfer it to the hardware wallet via QR code or USB, sign it offline, and broadcast from an air-gapped device.
 
-Step 8: Exchange and KYC Considerations
+Step 8 - Exchange and KYC Considerations
 
 Know Your Customer (KYC) requirements at exchanges directly link your identity to cryptocurrency addresses. The moment you withdraw funds from a KYC exchange to a wallet, those addresses become associated with your identity.
 
@@ -176,7 +176,7 @@ Solutions include:
 - In-person trades with cash
 - Mining directly to private wallets
 
-Step 9: Operational Security Practices
+Step 9 - Operational Security Practices
 
 Technical solutions fail without operational security. Consider these practices:
 
@@ -240,16 +240,16 @@ wasabi-cli mix --wallet MixedWallet --rounds 10
 Each round breaks one UTXO clustering heuristic
 10 rounds provides strong privacy
 
-Alternative: Use Monero exclusively (no UTXO model)
+Alternative - Use Monero exclusively (no UTXO model)
 ```
 
-Step 10: Transaction Graph Analysis
+Step 10 - Transaction Graph Analysis
 
 Investigators map flows through the blockchain:
 
 ```
 Alice → (Mixing Service) → Bob
-Analyst views as: Many inputs → Mixing address → Many outputs
+Analyst views as - Many inputs → Mixing address → Many outputs
 ```
 
 De-mixing analyzes probabilistic flows through mixers:
@@ -271,7 +271,7 @@ def analyze_mixer_outputs(mixer_transaction):
                 # Likely belongs to same user
                 yield (input, output)
 
-Counter: Use random change amounts, split coins unpredictably
+Counter - Use random change amounts, split coins unpredictably
 ```
 
 Privacy Coin Technical Comparison
@@ -285,7 +285,7 @@ Ring signature mechanism:
 - Mathematically impossible to separate
 
 10-input ring
-[Real Input: 2 XMR, Decoy 1: 2 XMR, Decoy 2: 2 XMR, ...]
+[Real Input - 2 XMR, Decoy 1: 2 XMR, Decoy 2: 2 XMR, ...]
 Observer knows one is real but cannot determine which
 
 Ring size of 16 is standard (2024), providing strong privacy
@@ -307,7 +307,7 @@ Example transaction:
 - No visible amounts or addresses
 ```
 
-Step 11: Exchange Deanonymization
+Step 11 - Exchange Deanonymization
 
 The critical vulnerability in private crypto:
 
@@ -323,7 +323,7 @@ Solutions:
 3. Mining: Generate crypto without KYC interaction
 4. P2P lending: Borrow crypto using collateral instead of trading
 
-Step 12: Lightning Network for Privacy
+Step 12 - Lightning Network for Privacy
 
 Layer 2 payment channels provide transaction privacy:
 
@@ -337,7 +337,7 @@ Setup:
 2. Make unlimited payments within channel
 3. Close channel (appears as 1 transaction on-chain)
 
-Privacy benefit: 100 transactions appear as 2 on-chain
+Privacy benefit - 100 transactions appear as 2 on-chain
 ```
 
 Configuration:
@@ -353,7 +353,7 @@ Make private payments
 lncli sendpayment payment_request
 ```
 
-Step 13: Timing Attack Mitigation
+Step 13 - Timing Attack Mitigation
 
 Transaction timing reveals spending patterns:
 
@@ -392,13 +392,13 @@ class PrivacyTimingManager:
         return base_amount + variance
 ```
 
-Step 14: Mining for Private Cryptocurrency
+Step 14 - Mining for Private Cryptocurrency
 
 Generate crypto without exchange KYC:
 
 ```bash
 Solo mining (low probability but no pool)
-Benefits: All rewards are yours, no pool operator records
+Benefits - All rewards are yours, no pool operator records
 
 CPU mining for Monero (RandomX algorithm)
 monerod  # Run full node
@@ -406,8 +406,8 @@ xmrig --cpu-affinity 0 -t $(nproc)  # Mine with all cores
 
 Cost analysis:
 CPU cost: Negligible
-Electricity: ~$0.10-0.50 per day
-Monthly yield: Highly variable (pool mining is more stable)
+Electricity - ~$0.10-0.50 per day
+Monthly yield - Highly variable (pool mining is more stable)
 ```
 
 Troubleshooting

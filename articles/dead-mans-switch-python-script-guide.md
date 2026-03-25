@@ -66,7 +66,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Core DMS Script
+Step 1 - Core DMS Script
 
 ```python
 #!/usr/bin/env python3
@@ -202,7 +202,7 @@ def run_check():
                 f"DMS: Encrypted payload from {CONFIG['owner_email']}",
                 f"No check-in received for {hours_since:.0f} hours. Releasing encrypted payload.\n\n"
                 f"The attached file is encrypted. Decryption instructions were given to you separately.\n"
-                f"Use: gpg --decrypt payload.enc",
+                f"Use - gpg --decrypt payload.enc",
                 attachment_path=CONFIG["payload_file"]
             )
         state["payload_released"] = True
@@ -216,7 +216,7 @@ if __name__ == "__main__":
 
 ---
 
-Step 2: Check-In Server (Simple HTTP Endpoint)
+Step 2 - Check-In Server (Simple HTTP Endpoint)
 
 ```python
 #!/usr/bin/env python3
@@ -228,7 +228,7 @@ from pathlib import Path
 app = Flask(__name__)
 
 Set your check-in token (share only with yourself)
-Generate: python3 -c "import secrets; print(secrets.token_urlsafe(32))"
+Generate - python3 -c "import secrets; print(secrets.token_urlsafe(32))"
 VALID_TOKEN = "YOUR_SECRET_CHECK_IN_TOKEN"
 CHECK_IN_FILE = "/var/dms/last_checkin.json"
 
@@ -264,7 +264,7 @@ gunicorn -b 127.0.0.1:5000 checkin_server:app
 
 ---
 
-Step 3: Encrypt the Payload
+Step 3 - Encrypt the Payload
 
 ```bash
 Create your payload (credentials, instructions, etc.)
@@ -290,7 +290,7 @@ shred -uz /tmp/dms-payload.txt
 
 ---
 
-Step 4: Crontab Setup
+Step 4 - Crontab Setup
 
 ```bash
 Create DMS directory with restricted permissions
@@ -306,7 +306,7 @@ Add:
 
 ---
 
-Step 5: Check-In from Anywhere
+Step 5 - Check-In from Anywhere
 
 ```bash
 Check in via curl (save this as a shell alias)
@@ -321,7 +321,7 @@ curl "https://yourserver.com/dms/checkin?token=YOUR_TOKEN"
 
 ---
 
-Step 6: Reset After Release
+Step 6 - Reset After Release
 
 If the DMS fires and you're fine:
 
@@ -335,11 +335,11 @@ echo "{}" > /var/dms/state.json
 Contact trusted contacts to confirm you're OK
 ```
 
-Step 7: Hardening the Check-In Server
+Step 7 - Hardening the Check-In Server
 
 The simple Flask check-in server works for personal use, but a production deployment on an internet-facing server needs additional hardening to prevent the token from being brute-forced or the server from being disrupted.
 
-Rate limiting: Add rate limiting to the check-in endpoint to prevent brute-force token guessing. With a 32-character random token, brute force is computationally infeasible, but rate limiting reduces noise in your logs and prevents your server from being used as part of a larger scanning campaign:
+Rate limiting - Add rate limiting to the check-in endpoint to prevent brute-force token guessing. With a 32-character random token, brute force is computationally infeasible, but rate limiting reduces noise in your logs and prevents your server from being used as part of a larger scanning campaign:
 
 ```python
 from flask import Flask, request, jsonify, abort
@@ -381,7 +381,7 @@ def checkin():
     # ... rest of check-in logic
 ```
 
-Nginx authentication layer: Put nginx in front of the Flask server with an additional IP allowlist if you always check in from known locations:
+Nginx authentication layer - Put nginx in front of the Flask server with an additional IP allowlist if you always check in from known locations:
 
 ```nginx
 location /dms/checkin {
@@ -395,16 +395,16 @@ location /dms/checkin {
 }
 ```
 
-This provides defense-in-depth: even if your token is compromised, attackers from unknown IPs cannot use it to reset the DMS state.
+This provides defense-in-depth - even if your token is compromised, attackers from unknown IPs cannot use it to reset the DMS state.
 
-Step 8: Distributing DMS Across Multiple Servers
+Step 8 - Distributing DMS Across Multiple Servers
 
 A single-server DMS has a significant failure mode: if that server goes down, due to payment lapse, infrastructure failure, or targeted attack, the DMS stops checking and either fires prematurely or fails to fire at all. For high-assurance use cases, distribute the check-in across multiple independent servers.
 
 The simplest approach runs the same DMS script on two servers from different providers (e.g., Hetzner and Vultr). Both receive check-ins. The payload releases only when both servers agree the threshold has been exceeded:
 
 ```python
-Distributed check-in: sends the check-in token to multiple servers simultaneously
+Distributed check-in - sends the check-in token to multiple servers simultaneously
 import requests
 import concurrent.futures
 

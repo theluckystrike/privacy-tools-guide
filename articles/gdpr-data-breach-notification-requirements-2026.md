@@ -40,7 +40,7 @@ A personal data breach is defined as a security incident resulting in accidental
 
 Not every security incident requires notification. Minor incidents with no risk to individuals can be documented internally without formal reporting. Your organization should establish a triage process to evaluate each incident against the risk threshold.
 
-The 72-Hour Timeline: Technical Considerations
+The 72-Hour Timeline - Technical Considerations
 
 The 72-hour clock presents practical challenges for technical teams. Your incident response process must account for:
 
@@ -60,7 +60,7 @@ When reporting to supervisory authorities, your notification must include:
 Here's a practical data structure for organizing breach information:
 
 ```python
-Python example: Breach report data structure
+Python example - Breach report data structure
 from dataclasses import dataclass
 from datetime import datetime
 from typing import List, Optional

@@ -28,20 +28,20 @@ Quick Comparison Table
 | Lokinet | Moderate (15-40 Mbps) | Very good (decentralized) | 10 min | Network-routed | Private messaging & file share |
 ---
 
-VPN: Weakest Anonymity (But Useful)
+VPN - Weakest Anonymity (But Useful)
 
 Table of Contents
 
-- [VPN: Weakest Anonymity (But Useful)](#vpn-weakest-anonymity-but-useful)
-- [Tor: Maximum Anonymity (Slow)](#tor-maximum-anonymity-slow)
-- [I2P: Peer-to-Peer Anonymity (Faster Than Tor)](#i2p-peer-to-peer-anonymity-faster-than-tor)
-- [Lokinet: Decentralized VPN Alternative](#lokinet-decentralized-vpn-alternative)
-- [Performance Comparison: Real Numbers](#performance-comparison-real-numbers)
+- [VPN - Weakest Anonymity (But Useful)](#vpn-weakest-anonymity-but-useful)
+- [Tor - Maximum Anonymity (Slow)](#tor-maximum-anonymity-slow)
+- [I2P - Peer-to-Peer Anonymity (Faster Than Tor)](#i2p-peer-to-peer-anonymity-faster-than-tor)
+- [Lokinet - Decentralized VPN Alternative](#lokinet-decentralized-vpn-alternative)
+- [Performance Comparison - Real Numbers](#performance-comparison-real-numbers)
 - [Anonymity vs Speed Tradeoff](#anonymity-vs-speed-tradeoff)
 - [Threat Model Decision Tree](#threat-model-decision-tree)
-- [Real-World Setup: Multi-Layer Approach](#real-world-setup-multi-layer-approach)
+- [Real-World Setup - Multi-Layer Approach](#real-world-setup-multi-layer-approach)
 - [DNS Leak Prevention (All Methods)](#dns-leak-prevention-all-methods)
-- [Comparison: Tor vs I2P vs Lokinet](#comparison-tor-vs-i2p-vs-lokinet)
+- [Comparison - Tor vs I2P vs Lokinet](#comparison-tor-vs-i2p-vs-lokinet)
 - [Related Reading](#related-reading)
 
 A VPN (Virtual Private Network) masks your IP address by routing traffic through a provider's server. That's it. It does NOT provide anonymity.
@@ -163,7 +163,7 @@ Bad For:
 
 ---
 
-Tor: Maximum Anonymity (Slow)
+Tor - Maximum Anonymity (Slow)
 
 Tor (The Onion Router) routes traffic through multiple independent nodes, with no single party knowing your identity.
 
@@ -187,7 +187,7 @@ What Tor Does NOT Protect Against:
 Tor Network Architecture
 
 ```
-Your Computer (Identity: Unknown)
+Your Computer (Identity - Unknown)
     ↓
 Entry Guard Node (chooses your Tor node, encrypted)
 [Your IP → Guard IP, unknown to Guard]
@@ -201,10 +201,10 @@ Exit Node (doesn't know your source)
 Destination Website
      Sees Exit node IP (not yours)
 
-Total: 3-hop encryption. Each hop peels back one layer of encryption.
+Total - 3-hop encryption. Each hop peels back one layer of encryption.
 ```
 
-Attack Example: ISP vs Tor
+Attack Example - ISP vs Tor
 
 ```
 ISP perspective:
@@ -222,21 +222,21 @@ To de-anonymize, ISP would need to:
 
 Tor Setup (5 minutes)
 
-Option 1: Tor Browser (Easiest)
+Option 1 - Tor Browser (Easiest)
 
 ```bash
 macOS
 brew install tor-browser
 
 Or download from torproject.org
-Extract and run: Tor Browser.app
+Extract and run - Tor Browser.app
 
 Verify working
 curl --socks5 localhost:9050 https://ipinfo.io/json
 Should show different IP, likely in different country
 ```
 
-Option 2: Full Tor Installation (Linux)
+Option 2 - Full Tor Installation (Linux)
 
 ```bash
 Install Tor daemon
@@ -246,7 +246,7 @@ Edit config
 sudo nano /etc/tor/torrc
 
 Enable SOCKS proxy
-Uncomment: SocksPort 9050
+Uncomment - SocksPort 9050
 
 Restart Tor
 sudo systemctl restart tor
@@ -317,8 +317,8 @@ Your IP address is completely hidden
 
 Famous Onion Services:
 - ProPublica Onion: p53lf57qovvgc6ev (news, leaked documents)
-- New York Times Onion: nytimes443w4dh76.onion (news)
-- CIA Onion: ciadotgov4ssqmio.onion (official CIA)
+- New York Times Onion - nytimes443w4dh76.onion (news)
+- CIA Onion - ciadotgov4ssqmio.onion (official CIA)
 
 Tor Use Cases
 
@@ -337,7 +337,7 @@ Not Good For:
 
 ---
 
-I2P: Peer-to-Peer Anonymity (Faster Than Tor)
+I2P - Peer-to-Peer Anonymity (Faster Than Tor)
 
 I2P (Invisible Internet Project) is less known but faster than Tor. It's optimized for internal peer-to-peer communication, not external browsing.
 
@@ -358,7 +358,7 @@ Inbound Tunnel (6 hops back to you)
 ← ← ← ← ← ←
 
 Each tunnel uses different path, different nodes.
-No single entity knows: your IP → destination IP
+No single entity knows - your IP → destination IP
 ```
 
 I2P Threat Model
@@ -380,7 +380,7 @@ Installation:
 
 ```bash
 Download I2P
-From: geti2p.net/en/
+From - geti2p.net/en/
 
 macOS
 brew install i2p
@@ -399,10 +399,10 @@ Start daemon (runs in background)
 i2prouter start
 
 Access console
-Open browser: http://127.0.0.1:7657/
+Open browser - http://127.0.0.1:7657/
 
 Wait for network integration (5-10 minutes on first start)
-Status shows: "Network: OK" when ready
+Status shows - "Network: OK" when ready
 ```
 
 Configure I2P for Web Browsing:
@@ -423,7 +423,7 @@ Browse I2P Sites:
 ```bash
 Configure browser proxy (or use Firefox with:
 Settings → Network Settings → Manual proxy configuration
-SOCKS Host: 127.0.0.1, Port: 4444
+SOCKS Host - 127.0.0.1, Port: 4444
 
 Accessible I2P sites:
 - tracker2.postman.i2p (torrent tracker)
@@ -431,7 +431,7 @@ Accessible I2P sites:
 - wiki.i2p (I2P documentation)
 - Planet.i2p (I2P blogs)
 
-Access via: http://tracker2.postman.i2p/
+Access via - http://tracker2.postman.i2p/
 ```
 
 I2P Performance
@@ -440,8 +440,8 @@ I2P Performance
 I2P Network Test:
 
 Download Speed: 15-30 Mbps (faster than Tor)
-Upload Speed: 8-15 Mbps
-Latency: 500-1000 ms (faster than Tor's 2000+ ms)
+Upload Speed - 8-15 Mbps
+Latency - 500-1000 ms (faster than Tor's 2000+ ms)
 
 Why Faster:
 - Fewer hops (4-6 vs Tor's 3 minimum)
@@ -465,14 +465,14 @@ Not Good For:
 
 ---
 
-Lokinet: Decentralized VPN Alternative
+Lokinet - Decentralized VPN Alternative
 
 Lokinet is a newer network using Monero's Loki blockchain infrastructure. It combines VPN-like simplicity with decentralized anonymity.
 
 Lokinet Architecture
 
 ```
-Differs from Tor/I2P: Uses blockchain-based exit routing
+Differs from Tor/I2P - Uses blockchain-based exit routing
 
 User Device
     ↓
@@ -487,7 +487,7 @@ Exit via Service Node or Service Node Operator
 Destination Website
      Sees Service Node operator's IP (different each session)
 
-Blockchain tracks: Service node reputation (prevents sybil attacks)
+Blockchain tracks - Service node reputation (prevents sybil attacks)
 ```
 
 Lokinet Setup (10 minutes)
@@ -516,9 +516,9 @@ Should show Service Node IP, not your real IP
 Lokinet Performance
 
 ```
-Speed: 20-40 Mbps (faster than Tor, similar to I2P)
-Latency: 600-1200 ms (comparable to I2P)
-Reliability: Good (blockchain-backed node reputation)
+Speed - 20-40 Mbps (faster than Tor, similar to I2P)
+Latency - 600-1200 ms (comparable to I2P)
+Reliability - Good (blockchain-backed node reputation)
 ```
 
 Lokinet Use Cases
@@ -527,7 +527,7 @@ Good For:
 - Private messaging (SNApps = Lokinet apps)
 - Decentralized file sharing
 - Avoiding ISP snooping (easier than Tor)
-- Communities using Monero ecosystem
+- Communities using Monero environment
 
 Not Good For:
 - Mass adoption (niche)
@@ -536,9 +536,9 @@ Not Good For:
 
 ---
 
-Performance Comparison: Real Numbers
+Performance Comparison - Real Numbers
 
-Test Scenario: Download 100 MB file from random server
+Test Scenario - Download 100 MB file from random server
 
 | Network | Time | Speed | Latency | Reliability |
 |---------|------|-------|---------|-------------|
@@ -548,7 +548,7 @@ Test Scenario: Download 100 MB file from random server
 | I2P (I2Psnapshot) | 45 seconds | 18 Mbps | 800 ms | 95% |
 | Lokinet | 32 seconds | 25 Mbps | 600 ms | 97% |
 
-Winner: Direct (obviously), but for anonymity: I2P/Lokinet (best speed-to-anonymity tradeoff).
+Winner - Direct (obviously), but for anonymity: I2P/Lokinet (best speed-to-anonymity tradeoff).
 
 ---
 
@@ -596,27 +596,27 @@ Do you need anonymity?
 
 ---
 
-Real-World Setup: Multi-Layer Approach
+Real-World Setup - Multi-Layer Approach
 
-Threat Level: Moderate (avoiding ISP tracking)
+Threat Level - Moderate (avoiding ISP tracking)
 
 ```
-Best Approach: VPN only
+Best Approach - VPN only
 
 Setup:
 1. Install Mullvad VPN
 2. Enable automatic connection on startup
 3. Daily use: VPN on, all traffic routed through provider
 
-Security: ISP cannot see traffic; website sees VPN IP.
-Speed: Excellent (80 Mbps+)
-Complexity: 2 minutes setup
+Security - ISP cannot see traffic; website sees VPN IP.
+Speed - Excellent (80 Mbps+)
+Complexity - 2 minutes setup
 ```
 
-Threat Level: High (government surveillance)
+Threat Level - High (government surveillance)
 
 ```
-Best Approach: Tor Browser for sensitive work
+Best Approach - Tor Browser for sensitive work
 
 Setup:
 1. Download Tor Browser from torproject.org
@@ -626,15 +626,15 @@ Setup:
 5. Don't maximize browser window (fingerprinting protection)
 6. Never use existing passwords/usernames
 
-Security: Maximum anonymity
-Speed: Slow (but adequate for text)
-Complexity: 10 minutes setup
+Security - Maximum anonymity
+Speed - Slow (but adequate for text)
+Complexity - 10 minutes setup
 ```
 
-Threat Level: Maximum (whistleblowing)
+Threat Level - Maximum (whistleblowing)
 
 ```
-Best Approach: Tails OS + Tor + SecureDrop
+Best Approach - Tails OS + Tor + SecureDrop
 
 Tails OS (The Amnesic Incognito Live System):
 - Live OS that leaves no trace
@@ -652,29 +652,29 @@ Setup:
 6. Upload encrypted documents
 7. Shut down (all traces erased)
 
-Security: Maximum anonymity, forensically resistant
-Speed: Adequate for document submission
-Complexity: 1 hour initial setup
-Recommended for: Journalists, whistleblowers, activists
+Security - Maximum anonymity, forensically resistant
+Speed - Adequate for document submission
+Complexity - 1 hour initial setup
+Recommended for - Journalists, whistleblowers, activists
 ```
 
 ---
 
 DNS Leak Prevention (All Methods)
 
-DNS Leak: The Problem
+DNS Leak - The Problem
 
 ```
-Setup: "Using Tor to hide activity"
-Reality: Tor encrypts traffic, but DNS requests go to ISP
+Setup - "Using Tor to hide activity"
+Reality - Tor encrypts traffic, but DNS requests go to ISP
 
 curl --socks5 localhost:9050 https://example.com
 
-Your ISP still sees: "Device requested DNS for example.com"
-ISP learns: You're visiting example.com (regardless of Tor)
+Your ISP still sees - "Device requested DNS for example.com"
+ISP learns - You're visiting example.com (regardless of Tor)
 ```
 
-Prevention: Use Tor's Built-in DNS
+Prevention - Use Tor's Built-in DNS
 
 ```bash
 Tor Browser (automatic) - no setup needed
@@ -691,7 +691,7 @@ sudo networksetup -setdnsservers Wi-Fi 127.0.0.1
 Verify No DNS Leak:
 
 ```bash
-Visit: dnsleaktest.com
+Visit - dnsleaktest.com
 Should NOT show ISP DNS
 Should show Tor network DNS
 
@@ -702,7 +702,7 @@ Should resolve through Tor (if configured correctly)
 
 ---
 
-Comparison: Tor vs I2P vs Lokinet
+Comparison - Tor vs I2P vs Lokinet
 
 | Feature | Tor | I2P | Lokinet |
 |---------|-----|-----|---------|
@@ -730,7 +730,7 @@ Related Reading
 Related Articles
 
 - [VPN over Tor vs Tor over VPN: A Technical Comparison](/vpn-over-tor-vs-tor-over-vpn/)
-- [Tor Browser vs VPN Comparison: Which Is Better for Privacy?](/tor-browser-vs-vpn-comparison-which-is-better/)
+- [Tor Browser vs VPN Comparison - Which Is Better for Privacy?](/tor-browser-vs-vpn-comparison-which-is-better/)
 - [I2P vs Tor: Anonymous Network Comparison 2026](/i2p-vs-tor-anonymous-network-comparison-2026/)
 - [How to Use the I2P Anonymous Network](/i2p-anonymous-network-setup-guide/)
 - [Tor Browser vs LibreWolf Privacy Comparison](/tor-browser-vs-librewolf-privacy-comparison/)

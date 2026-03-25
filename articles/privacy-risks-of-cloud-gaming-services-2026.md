@@ -63,7 +63,7 @@ If you pause for 45 minutes playing a specific story beat in "The Witcher 3," NV
 - Your skill level (used for matchmaking in multiplayer)
 - Your free time patterns (work schedule inference)
 
-Xbox Cloud Gaming (Game Pass Ultimate). Microsoft Ecosystem Integration
+Xbox Cloud Gaming (Game Pass Ultimate). Microsoft environment Integration
 
 Collected Data:
 - Controller input (buttons, timing, analog stick position)
@@ -91,7 +91,7 @@ This cross-service linking is more invasive than NVIDIA. Microsoft knows:
 - Your employment (via LinkedIn)
 - Your calendar patterns
 
-Real-World Risk: Your cloud gaming patterns could influence:
+Real-World Risk - Your cloud gaming patterns could influence:
 - Insurance quotes (sedentary lifestyle inference)
 - Employment screenings ("Time-wasting on games during business hours")
 - Credit scoring algorithms (behavioral risk profiling)
@@ -126,9 +126,9 @@ Keystroke Timing Analysis:
 These patterns are logged and stored server-side indefinitely.
 ```
 
-Keystroke Timing Uniqueness: Researchers can identify individuals by keystroke rhythm (how fast you type, pause patterns). Cloud gaming services capture enough data to build keystroke profiles.
+Keystroke Timing Uniqueness - Researchers can identify individuals by keystroke rhythm (how fast you type, pause patterns). Cloud gaming services capture enough data to build keystroke profiles.
 
-Controller Input Patterns: Your gameplay style (aggressive vs. cautious, rushing vs. methodical) is captured in controller input data. This behavioral data is valuable for:
+Controller Input Patterns - Your gameplay style (aggressive vs. cautious, rushing vs. methodical) is captured in controller input data. This behavioral data is valuable for:
 - Matching you with games you'll enjoy (recommendation algorithms)
 - Estimating your skill level for competitive matchmaking
 - Behavioral profiling for marketing
@@ -277,7 +277,7 @@ What you can't disable:
 
 Privacy-Conscious Cloud Gaming Alternatives
 
-Option 1: Play Locally (Lowest Privacy Risk)
+Option 1 - Play Locally (Lowest Privacy Risk)
 
 If privacy is primary concern, play on local hardware:
 
@@ -288,11 +288,11 @@ Local Console/PC Gaming:
 - Data stays on your device
 - Your ISP can see you're gaming, but not specifics
 
-Cost: $300-500 hardware + $60-70 per game
-Privacy: High (except ISP-level visibility)
+Cost - $300-500 hardware + $60-70 per game
+Privacy - High (except ISP-level visibility)
 ```
 
-Option 2: Self-Hosted Game Streaming
+Option 2 - Self-Hosted Game Streaming
 
 Stream games from your own PC to your TV/phone:
 
@@ -308,12 +308,12 @@ Setup:
 2. Install Moonlight client (on other devices)
 3. Stream locally over local network
 
-Cost: $0 (software) + existing gaming PC
-Privacy: Excellent (no third-party involvement)
-Limitation: Requires high-end GPU, local network only
+Cost - $0 (software) + existing gaming PC
+Privacy - Excellent (no third-party involvement)
+Limitation - Requires high-end GPU, local network only
 ```
 
-Option 3: Privacy-Respecting Clouds (Emerging)
+Option 3 - Privacy-Respecting Clouds (Emerging)
 
 Some providers (Utomik, Vortex Cloud) claim privacy-first approaches:
 
@@ -372,7 +372,7 @@ Gaming history may persist in aggregated analytics.
 
 Real-World Privacy Scenarios
 
-Scenario 1: Insurance Inquiry
+Scenario 1 - Insurance Inquiry
 
 Future health insurance provider requests data from cloud gaming services about your activity patterns. They infer you're sedentary (5+ hours/day gaming detected during work hours) and charge you higher premiums for health insurance.
 
@@ -381,7 +381,7 @@ Mitigation:
 - Assume your play time is being logged and shared
 - Consider privacy implications before signing up
 
-Scenario 2: Employment Screening
+Scenario 2 - Employment Screening
 
 Employer asks for social media data and discovers you played video games during work hours (via cloud gaming session timestamps). They use this in hiring decisions.
 
@@ -390,7 +390,7 @@ Mitigation:
 - Play in off-hours only if concerned about profiling
 - Assume employers can and will access cloud gaming data
 
-Scenario 3: Behavioral Profiling for Loans
+Scenario 3 - Behavioral Profiling for Loans
 
 Loan companies partner with data brokers who access cloud gaming session data. Your gaming patterns indicate risk:
 - You frequently rage-quit (emotional instability marker)

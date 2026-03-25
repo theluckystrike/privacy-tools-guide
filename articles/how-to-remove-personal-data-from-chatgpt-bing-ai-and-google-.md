@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand What Data AI Companies Collect
+Step 1 - Understand What Data AI Companies Collect
 
 Before removing your data, understand what's actually stored:
 
@@ -38,7 +38,7 @@ Under GDPR (for EU residents), CCPA (California), and similar privacy regulation
 
 OpenAI provides two methods for controlling your data: account settings and direct API deletion requests.
 
-Method 1: Disable Training in ChatGPT Settings
+Method 1 - Disable Training in ChatGPT Settings
 
 If you use the web interface, navigate to Settings → Data Controls and toggle off "Improve the model for everyone." This prevents future conversations from being used in training.
 
@@ -49,7 +49,7 @@ If you use the web interface, navigate to Settings → Data Controls and toggle 
 // Disable "Improve the model for everyone"
 ```
 
-Method 2: Delete Conversation History
+Method 2 - Delete Conversation History
 
 Delete specific conversations to remove them from your active history. Note that this doesn't guarantee removal from already-trained models, but prevents future training.
 
@@ -73,7 +73,7 @@ def delete_chatgpt_conversation(conversation_id: str, api_key: str) -> dict:
     return response.json()
 ```
 
-Method 3: Submit a Data Deletion Request
+Method 3 - Submit a Data Deletion Request
 
 For complete removal from training data, submit a formal request to OpenAI:
 
@@ -96,11 +96,11 @@ curl -X POST "https://api.openai.com/v1/privacy/delete" \
   }'
 ```
 
-Step 3: Remove Your Data From Microsoft Copilot (Bing AI)
+Step 3 - Remove Your Data From Microsoft Copilot (Bing AI)
 
 Microsoft provides privacy controls through your Microsoft account and explicit opt-out mechanisms.
 
-Method 1: Disable AI Training in Microsoft Privacy Settings
+Method 1 - Disable AI Training in Microsoft Privacy Settings
 
 Navigate to https://account.microsoft.com/privacy and adjust the following:
 
@@ -108,7 +108,7 @@ Navigate to https://account.microsoft.com/privacy and adjust the following:
 - Turn off "Tailored experiences based on your choices"
 - Turn off "Search and Bing customization"
 
-Method 2: Clear Bing/Copilot History
+Method 2 - Clear Bing/Copilot History
 
 ```python
 Clear Bing search history via Microsoft Privacy API
@@ -136,7 +136,7 @@ def clear_microsoft_search_history(access_token: str) -> bool:
     return True
 ```
 
-Method 3: Submit GDPR Deletion Request
+Method 3 - Submit GDPR Deletion Request
 
 For EU residents or California residents:
 
@@ -173,18 +173,18 @@ async function deleteCopilotData(accessToken) {
 }
 ```
 
-Step 4: Remove Your Data From Google Gemini (Bard)
+Step 4 - Remove Your Data From Google Gemini (Bard)
 
 Google provides data controls through your Google Account and My Activity dashboard.
 
-Method 1: Delete Gemini Activity
+Method 1 - Delete Gemini Activity
 
 1. Visit https://myactivity.google.com/product/gemini
 2. Select "Delete activity by"
 3. Choose time range or specific conversations
 4. Confirm deletion
 
-Method 2: Configure Auto-Delete
+Method 2 - Configure Auto-Delete
 
 Set Google to automatically delete AI activity:
 
@@ -213,7 +213,7 @@ def configure_gemini_autodelete(credentials, days: int = 3):
     return result
 ```
 
-Method 3: Submit Data Deletion Request
+Method 3 - Submit Data Deletion Request
 
 Google requires specific requests for model training removal:
 
@@ -293,7 +293,7 @@ def sanitize_for_ai(prompt: str, user_preferences: UserAIPreferences) -> str:
     return sanitized
 ```
 
-Step 5: What Companies Actually Delete
+Step 5 - What Companies Actually Delete
 
 Be realistic about what these deletion requests accomplish:
 

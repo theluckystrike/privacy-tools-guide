@@ -21,7 +21,7 @@ Table of Contents
 - [Privacy Risks of Grocery Store Loyalty Programs in 2026](#privacy-risks-of-grocery-store-loyalty-programs-in-2026)
 - [What Major Grocers Collect](#what-major-grocers-collect)
 - [How Purchase Data Flows](#how-purchase-data-flows)
-- [Data Broker Ecosystem](#data-broker-ecosystem)
+- [Data Broker environment](#data-broker-environment)
 - [Specific Risk Categories](#specific-risk-categories)
 - [Practical Opt-Out Strategies](#practical-opt-out-strategies)
 - [Grocery Stores Without Aggressive Data Harvesting](#grocery-stores-without-aggressive-data-harvesting)
@@ -63,7 +63,7 @@ Financial data:
 - Couponing behavior
 ```
 
-Data retention: Kroger retains detailed purchase history for 7+ years per their privacy policy. Available to third-party data brokers unless opted out.
+Data retention - Kroger retains detailed purchase history for 7+ years per their privacy policy. Available to third-party data brokers unless opted out.
 
 Safeway/Albertsons (Safeway, Albertsons, Vons, Pavilions)
 
@@ -135,11 +135,11 @@ Two identical households, identical purchases:
 - Household B (from profile): "Budget shopper"
   → Charged discounted price: $72.30 for same groceries
 
-Price difference enabled by: Purchase history analysis
-Margin difference: $13.20 per week = $686/year
+Price difference enabled by - Purchase history analysis
+Margin difference - $13.20 per week = $686/year
 ```
 
-Data Broker Ecosystem
+Data Broker environment
 
 Major Data Brokers Selling Grocery Data:
 
@@ -169,7 +169,7 @@ Process:
 
 Specific Risk Categories
 
-Risk 1: Health Surveillance
+Risk 1 - Health Surveillance
 
 Data collected:
 - Prescriptions picked up
@@ -200,11 +200,11 @@ Data sold to:
 - Health insurance (for rate adjustment)
 - Political campaigns (fertility tracking)
 
-Timeline: Companies contacted customer before she told family
-Source: ProPublica investigation (2018)
+Timeline - Companies contacted customer before she told family
+Source - ProPublica investigation (2018)
 ```
 
-Risk 2: Financial Discrimination
+Risk 2 - Financial Discrimination
 
 Purchase patterns reveal:
 - Income level (from shopping patterns)
@@ -226,12 +226,12 @@ Safeway's "Just for U" program:
 - Offered different discounts to different customers
 - Same product: $8.99 vs. $5.99 based on customer profile
 
-Discovery: Customers noticed different prices on receipts
-Outcome: Class action lawsuit, Safeway settled for $4.8M
-Current status: Practice continues, harder to detect
+Discovery - Customers noticed different prices on receipts
+Outcome - Class action lawsuit, Safeway settled for $4.8M
+Current status - Practice continues, harder to detect
 ```
 
-Risk 3: Pharmaceutical Targeting
+Risk 3 - Pharmaceutical Targeting
 
 Purchase data triggers targeting:
 - Prescription fill patterns
@@ -259,15 +259,15 @@ Data sold to:
 - HVAC companies
 
 Targeted ads in email, social, direct mail
-Cost to advertiser: ~$1 per ad
-Your data value: ~$0.50-2.00
+Cost to advertiser - ~$1 per ad
+Your data value - ~$0.50-2.00
 
-Profit margin: Grocer keeps 10-30% of data sales
+Profit margin - Grocer keeps 10-30% of data sales
 ```
 
 Practical Opt-Out Strategies
 
-Strategy 1: Use Cash Only
+Strategy 1 - Use Cash Only
 
 Eliminate purchase tracking entirely:
 
@@ -277,15 +277,15 @@ Implementation:
 - Pay with cash for all purchases
 - Loyalty account used for coupons only
 
-Effectiveness: 100% (no payment method linked)
-Inconvenience: Moderate (need to carry cash)
-Cost: Potentially higher (miss digital coupons)
+Effectiveness - 100% (no payment method linked)
+Inconvenience - Moderate (need to carry cash)
+Cost - Potentially higher (miss digital coupons)
 
-Limitation: Stores still see purchases via loyalty number
+Limitation - Stores still see purchases via loyalty number
 (If you provide loyalty card at checkout)
 ```
 
-Strategy 2: Don't Register Loyalty Program
+Strategy 2 - Don't Register Loyalty Program
 
 Eliminate data collection entirely:
 
@@ -295,15 +295,15 @@ How:
 - Shop without loyalty card
 - Miss all targeted promotions
 
-Effectiveness: 100% (no data collected)
-Cost: Significant (lose all discounts)
-Feasibility: Varies by store
+Effectiveness - 100% (no data collected)
+Cost - Significant (lose all discounts)
+Feasibility - Varies by store
 
-Limitation: Some stores now make loyalty ID mandatory
+Limitation - Some stores now make loyalty ID mandatory
 for certain discounts (Kroger, Target)
 ```
 
-Strategy 3: Separate Identities
+Strategy 3 - Separate Identities
 
 Limit data aggregation:
 
@@ -323,12 +323,12 @@ Method:
    - Safeway: Work address
    - Target: Another address
 
-Effectiveness: 90% (limits data aggregation)
-Inconvenience: High (manage multiple identities)
-Cost: Minimal
+Effectiveness - 90% (limits data aggregation)
+Inconvenience - High (manage multiple identities)
+Cost - Minimal
 ```
 
-Strategy 4: Data Broker Opt-Out
+Strategy 4 - Data Broker Opt-Out
 
 Remove yourself from broker databases:
 
@@ -350,9 +350,9 @@ Tools to use:
    - Tracks removal status
 
 4. Free manual process:
-   - Acxiom: https://iseekyou.acxiom.com/optout
-   - Epsilon: https://www.epsilon.com/personal/data-deletion
-   - Experian: https://optout.experian.com/optout/
+   - Acxiom - https://iseekyou.acxiom.com/optout
+   - Epsilon - https://www.epsilon.com/personal/data-deletion
+   - Experian - https://optout.experian.com/optout/
 ```
 
 Effectiveness per method:
@@ -484,20 +484,20 @@ How to exercise rights:
 
 ```
 Kroger (California):
-1. Visit: https://www.kroger.com/privacy
+1. Visit - https://www.kroger.com/privacy
 2. Click: "California Consumer Privacy Act"
 3. Submit: Access/delete request with ID proof
 4. Response: 45 days (must comply)
 5. Cost: Free
 
 Safeway/Albertsons:
-1. Visit: https://www.safeway.com/customer-service
+1. Visit - https://www.safeway.com/customer-service
 2. Contact: Data access request
 3. Verify identity (driver's license scan)
 4. Response: 30-45 days
 
 Target:
-1. Visit: https://www.target.com/privacy
+1. Visit - https://www.target.com/privacy
 2. Submit: Privacy request
 3. Proof of identity required
 4. Response: 30 days

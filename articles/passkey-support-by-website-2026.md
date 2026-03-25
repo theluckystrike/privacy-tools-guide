@@ -205,7 +205,7 @@ If you're adopting passkeys as your primary authentication method:
 
 5. Test regularly. Verify you can authenticate from different devices before you need to
 
-The passkey ecosystem in 2026 offers security for most use cases. While some edge cases still require password fallback, the majority of users can operate with passkeys as their primary authentication method across major platforms.
+The passkey environment in 2026 offers security for most use cases. While some edge cases still require password fallback, the majority of users can operate with passkeys as their primary authentication method across major platforms.
 
 Passkey Storage and Syncing Architecture
 
@@ -218,7 +218,7 @@ iOS/macOS (iCloud Keychain):
 - Private keys: Encrypted on device, synced via iCloud
 - Server: Apple's secure enclave processors
 - Cross-device: Yes (iCloud sync)
-- Portability: Limited (Apple ecosystem only)
+- Portability: Limited (Apple environment only)
 ```
 
 Android (Google Password Manager):
@@ -264,9 +264,9 @@ async function authenticate1Password() {
 
 Threat Models for Passkey Deployment
 
-Threat Model 1: Device Loss or Theft
+Threat Model 1 - Device Loss or Theft
 
-Risk: Attacker gains access to device with passkey storage
+Risk - Attacker gains access to device with passkey storage
 
 Protection Levels:
 - Basic: Device biometric lock (Face ID, Touch ID)
@@ -286,9 +286,9 @@ const assertion = await navigator.credentials.get({
 });
 ```
 
-Threat Model 2: Phishing
+Threat Model 2 - Phishing
 
-Risk: User tricked into using passkey on attacker's website
+Risk - User tricked into using passkey on attacker's website
 
 Protection:
 - Origin binding (passkey only works for registered origin)
@@ -310,9 +310,9 @@ def verify_passkey(assertion, expected_origin):
     return verification.user_verified
 ```
 
-Threat Model 3: Account Recovery Failure
+Threat Model 3 - Account Recovery Failure
 
-Risk: User loses passkey (device damage, loss) and cannot recover account
+Risk - User loses passkey (device damage, loss) and cannot recover account
 
 Protections:
 - Backup passkeys stored elsewhere
@@ -357,7 +357,7 @@ Industries with high-value accounts (banking, tech platforms) lead adoption. Pub
 
 Troubleshooting Common Passkey Issues
 
-Issue 1: Passkey Not Appearing During Registration
+Issue 1 - Passkey Not Appearing During Registration
 
 Diagnosis:
 ```javascript
@@ -378,11 +378,11 @@ Solutions:
 - Ensure OS supports passkeys (iOS 16+, Android 9+, Windows 11+)
 - Try alternative authenticator (security key, password manager)
 
-Issue 2: Cross-Browser Syncing Complications
+Issue 2 - Cross-Browser Syncing Complications
 
-Problem: Passkey registered in Chrome doesn't work in Safari
+Problem - Passkey registered in Chrome doesn't work in Safari
 
-Solution: Use cross-platform syncing via:
+Solution - Use cross-platform syncing via:
 - iCloud Keychain (Apple devices)
 - Google Account passkeys (Android + Chrome)
 - Password manager syncing (1Password, Bitwarden)
@@ -401,7 +401,7 @@ const credential = await navigator.credentials.create({
 });
 ```
 
-Issue 3: Mobile App Passkey Integration
+Issue 3 - Mobile App Passkey Integration
 
 Android implementation:
 ```kotlin

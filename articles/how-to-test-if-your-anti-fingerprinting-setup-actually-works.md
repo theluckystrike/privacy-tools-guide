@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Browser Fingerprinting
+Step 1 - Understand Browser Fingerprinting
 
 Browser fingerprinting works by collecting various browser properties and combining them into a unique hash. The technique relies on attributes such as user agent strings, screen resolution, installed fonts, WebGL renderer information, canvas fingerprinting, and hundreds of other signals. When you visit a website, the server can generate a fingerprint from these attributes and use it to track you across sessions, even without cookies.
 
 Anti-fingerprinting tools like privacy browsers, browser extensions, or configuration changes attempt to either standardize these values across all users or introduce controlled randomness to make consistent tracking impossible. However, misconfigurations or incomplete coverage can leave gaps that fingerprinting scripts exploit.
 
-Step 2: Basic Testing with Online Tools
+Step 2 - Basic Testing with Online Tools
 
 The quickest way to verify your setup is using established fingerprinting test sites. These services analyze your browser and report which identifying attributes are exposed.
 
@@ -46,7 +46,7 @@ FingerprintJS offers a commercial-grade fingerprinting library, and their demo p
 
 Run these tests in your regular browser first to establish a baseline, then repeat them with your anti-fingerprinting measures enabled to compare results.
 
-Step 3: Test with Command Line Tools
+Step 3 - Test with Command Line Tools
 
 For developers who want more controlled testing, command-line tools provide deeper insights. The `curl` command with specific headers can reveal what your browser transmits.
 
@@ -66,7 +66,7 @@ curl -s https://ipleak.net/json/
 
 A properly configured setup should either block WebRTC or route it through your VPN.
 
-Step 4: Implement Programmatic Fingerprinting Tests
+Step 4 - Implement Programmatic Fingerprinting Tests
 
 For testing, write a simple script that extracts the same data fingerprinting libraries collect. Create an HTML file with JavaScript:
 
@@ -137,7 +137,7 @@ document.getElementById('output').textContent = JSON.stringify(data, null, 2);
 
 Open this file in your browser and examine the output. Look for inconsistencies or identifying information. A working anti-fingerprinting setup should either block access to sensitive APIs, return generic values, or introduce controlled randomness that changes between sessions.
 
-Step 5: Test Specific Protections
+Step 5 - Test Specific Protections
 
 Canvas Fingerprinting
 
@@ -155,7 +155,7 @@ Audio Context Fingerprinting
 
 AudioContext fingerprinting analyzes how your system processes audio signals. Check whether audio processing produces consistent or randomized results. Some privacy tools add noise to audio processing to prevent fingerprinting.
 
-Step 6: Automate Tests with Headless Browsers
+Step 6 - Automate Tests with Headless Browsers
 
 For developers building privacy tools, automated testing is essential. Use headless browsers with anti-fingerprinting capabilities to verify protections programmatically:
 
@@ -191,7 +191,7 @@ puppeteer.use(pluginStealth);
 
 This approach allows you to run consistent tests across different configurations and verify that protections remain active.
 
-Step 7: Verify Consistency
+Step 7 - Verify Consistency
 
 A working anti-fingerprinting setup should produce consistent results when you want it to and different results when you expect variation. Test the following scenarios:
 
@@ -201,7 +201,7 @@ A working anti-fingerprinting setup should produce consistent results when you w
 
 3. Context isolation: Test in normal and private/incognito windows. The best setups maintain consistent identities within each context type while keeping contexts separate from each other.
 
-Step 8: Common Pitfalls
+Step 8 - Common Pitfalls
 
 Several issues often undermine anti-fingerprinting efforts:
 

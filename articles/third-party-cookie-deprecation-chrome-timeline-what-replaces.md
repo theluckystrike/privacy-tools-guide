@@ -27,7 +27,7 @@ Table of Contents
 
 Different browsers implement privacy changes differently:
 
-Chrome: Privacy Sandbox APIs
+Chrome - Privacy Sandbox APIs
 
 Chrome fully deprecates third-party cookies in 2026, replacing them with Privacy Sandbox APIs that preserve functionality while limiting tracking:
 
@@ -45,7 +45,7 @@ Object.entries(supportedAPIs).forEach(([name, supported]) => {
 });
 ```
 
-Safari: Intelligent Tracking Prevention (ITP)
+Safari - Intelligent Tracking Prevention (ITP)
 
 Safari eliminated third-party cookies in 2020 and continues strengthening restrictions:
 
@@ -57,7 +57,7 @@ Safari cookie handling (2026):
 - ITP 2.3+: Even first-party cookies limited to 24 hours in top frame
 ```
 
-Firefox: Enhanced Tracking Protection
+Firefox - Enhanced Tracking Protection
 
 Firefox blocks third-party cookies by default:
 
@@ -208,9 +208,9 @@ Users browsing with multiple browsers will have different experiences:
 
 ```
 User experience by browser (2026):
-- Chrome: Privacy Sandbox APIs available
+- Chrome - Privacy Sandbox APIs available
 - Safari: Cookies limited, no Privacy Sandbox
-- Firefox: Enhanced Tracking Protection, no Privacy Sandbox
+- Firefox - Enhanced Tracking Protection, no Privacy Sandbox
 - Edge: Same as Chrome (Chromium-based)
 ```
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Hinge Connected Friends Feature Privacy Risk"
-description: "Hinge Connected Friends Feature Privacy Risk: How Mutual Contacts Can Identify Your Profile. privacy guide covering tools, techniques, and best"
+description: "Hinge Connected Friends Feature Privacy Risk - How Mutual Contacts Can Identify Your Profile. privacy guide covering tools, techniques, and best"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
@@ -112,7 +112,7 @@ https://hinge.co/settings/privacy
 
 After submitting a data access request, you receive a breakdown of stored information, including contacts uploaded, Facebook connections, and interaction history. This transparency helps users understand their exact exposure level.
 
-Technical Mechanisms: Phone Number Hashing and Matching
+Technical Mechanisms - Phone Number Hashing and Matching
 
 Understanding exactly how Hinge's contact matching operates helps you evaluate your exposure level. The application hashes phone numbers using deterministic algorithms (likely SHA-256 or MD5), creating fixed output values that appear identical each time the same number is hashed.
 
@@ -165,7 +165,7 @@ Extract and examine /data/data/com.hinge.android/databases/
 
 On iOS, the system permission model is more restrictive, but Hinge can still access all contacts you've previously synced. The key phrase is "previously synced", even if you revoke contact access in Settings, any contacts Hinge previously downloaded remain cached locally and can be reprocessed.
 
-Privacy Risk Escalation: Cross-Platform Linking
+Privacy Risk Escalation - Cross-Platform Linking
 
 Hinge's integration with other apps and services creates additional profile identification vectors beyond just mutual contacts:
 
@@ -181,7 +181,7 @@ Building a Privacy-Protecting Dating App Architecture
 
 For developers designing dating applications with genuine privacy considerations, several architectural patterns minimize identification risks:
 
-On-device contact matching: Instead of uploading contacts to servers, implement contact matching entirely on the user's device. The server never learns which contacts exist:
+On-device contact matching - Instead of uploading contacts to servers, implement contact matching entirely on the user's device. The server never learns which contacts exist:
 
 ```javascript
 // Pseudocode for on-device matching
@@ -230,7 +230,7 @@ def generate_privacy_preserving_notification(new_users_count):
     # "About 12 people" instead of "Sarah, Mike, and Alex joined"
 ```
 
-User-directed discovery only: Rather than automatic connection detection, require users to explicitly search for contacts they choose to identify:
+User-directed discovery only - Rather than automatic connection detection, require users to explicitly search for contacts they choose to identify:
 
 ```javascript
 // Privacy-respecting pattern: Search by name

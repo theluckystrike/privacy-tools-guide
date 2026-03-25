@@ -42,7 +42,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand VPN Server Ownership Models
+Step 1 - Understand VPN Server Ownership Models
 
 VPN providers use different server ownership models, and each carries distinct trust implications. The most transparent providers own and operate their entire server network themselves, maintaining physical control over hardware and configuration. These providers can verify that servers run their approved software, implement proper physical security, and follow their stated privacy policies.
 
@@ -50,7 +50,7 @@ Many VPN services rent servers from third-party data centers, which introduces a
 
 A small number of providers use virtual server locations, where a server physically located in one country appears to have an IP address from another. This arrangement can mask the actual location of your data or create jurisdictional advantages, but it also means you have less certainty about where your traffic actually traverses. Understanding whether your VPN uses physical or virtual servers helps you assess the actual privacy protection provided.
 
-Step 2: Jurisdiction and Legal Environment
+Step 2 - Jurisdiction and Legal Environment
 
 The legal jurisdiction where VPN servers operate directly impacts what data the provider can be compelled to surrender. Countries with mandatory data retention laws can force VPN providers to log connection metadata, IP addresses, or bandwidth usage, regardless of what the provider's privacy policy claims. Five Eyes, Nine Eyes, and Fourteen Eyes alliance members share intelligence, meaning a provider headquartered in one member country may face pressure to cooperate with agencies from others.
 
@@ -58,7 +58,7 @@ Providers incorporated in privacy-friendly jurisdictions like Switzerland, Panam
 
 Evaluate whether the provider publishes transparency reports showing how many government data requests they receive and how they respond. Providers that can legally refuse requests from hostile jurisdictions but lack the legal standing to resist their home country's courts highlight the importance of where the company is incorporated versus where servers operate.
 
-Step 3: Server Hardware and Network Security
+Step 3 - Server Hardware and Network Security
 
 Physical server security prevents unauthorized access to hardware that handles your encrypted traffic. Quality providers use dedicated hardware without unnecessary components like physical storage media that could be removed and analyzed. Server racks in professional data centers require biometric access, security cameras, and audit logs tracking who accessed which server and when.
 
@@ -66,7 +66,7 @@ Network-level security measures indicate how seriously a provider takes traffic 
 
 DNS security matters even when using a VPN, your device still makes DNS queries that can leak browsing activity. Quality providers operate their own DNS servers or use DNS-over-HTTPS within the encrypted tunnel, preventing DNS queries from escaping the VPN protection. Some providers implement IPv6 leak protection, blocking IPv6 traffic that might bypass the VPN tunnel.
 
-Step 4: Transparency and Audit Indicators
+Step 4 - Transparency and Audit Indicators
 
 Third-party security audits provide independent verification of provider claims. Look for audits that examine server configuration, logging practices, and encryption implementation rather than just client applications. Audit reports from firms like Cure53, Deloitte, or VerSprite appearing on the provider's website demonstrate commitment to transparency.
 
@@ -74,7 +74,7 @@ The provider's bug bounty program or responsible disclosure policy indicates how
 
 Check whether the provider has undergone legal challenges that tested their no-logging claims. When authorities have requested data and found nothing to surrender, this practical test provides stronger assurance than policy statements alone. Providers that have successfully resisted compelled logging in court demonstrate the technical reality of their privacy claims.
 
-Step 5: What to Look for in Provider Infrastructure
+Step 5 - What to Look for in Provider Infrastructure
 
 Evaluating VPN server infrastructure involves examining several key factors. The provider should clearly state whether they own, lease, or co-locate servers, ideally providing data center partner information. Server locations should include countries where you actually need connectivity, with consideration for whether those jurisdictions provide legal protection for user data.
 
@@ -132,15 +132,15 @@ Run this script to gather baseline infrastructure information about any VPN prov
 
 Specific Provider Infrastructure Comparison
 
-ProtonVPN: Owns and operates all servers, publishes detailed transparency reports showing zero government data requests historically, maintains servers only in neutral jurisdictions, implements dedicated network infrastructure with DDoS protection. Servers use RAM-only configurations where possible.
+ProtonVPN - Owns and operates all servers, publishes detailed transparency reports showing zero government data requests historically, maintains servers only in neutral jurisdictions, implements dedicated network infrastructure with DDoS protection. Servers use RAM-only configurations where possible.
 
-Mullvad: Operates all infrastructure directly, published audits of every server location available on website, uses OpenVPN and WireGuard protocols with published source code, implements memory-based routing without persistent logs. Company uses anonymous company registration to prevent legal entity targeting.
+Mullvad - Operates all infrastructure directly, published audits of every server location available on website, uses OpenVPN and WireGuard protocols with published source code, implements memory-based routing without persistent logs. Company uses anonymous company registration to prevent legal entity targeting.
 
-NordVPN: Uses mix of owned and leased infrastructure, publishes transparency reports, maintains third-party security audits annually, implements no-logs policy with technical limitations (providers admit they have less control over leased infrastructure than owned servers).
+NordVPN - Uses mix of owned and leased infrastructure, publishes transparency reports, maintains third-party security audits annually, implements no-logs policy with technical limitations (providers admit they have less control over leased infrastructure than owned servers).
 
-ExpressVPN: Primarily leased infrastructure through tier-1 data centers, publishes transparency reports, has undergone public no-logs validation, implements TrustedServer technology that boots from RAM on every restart, preventing any persistent data storage.
+ExpressVPN - Primarily leased infrastructure through tier-1 data centers, publishes transparency reports, has undergone public no-logs validation, implements TrustedServer technology that boots from RAM on every restart, preventing any persistent data storage.
 
-Step 6: Making an Informed Choice
+Step 6 - Making an Informed Choice
 
 Your threat model determines which infrastructure characteristics matter most. Users concerned about legal compulsion should prioritize providers in privacy-friendly jurisdictions with proven no-logging track records. Those worried about technical attacks benefit from providers using diskless servers, dedicated network infrastructure, and regular third-party security audits.
 
@@ -150,19 +150,19 @@ Due Diligence Questions to Ask
 
 Before committing to a provider, verify these specific points:
 
-1. Ownership Structure: Does the provider own its servers or lease them? If leasing, which data center partners? Can they provide documentation?
+1. Ownership Structure - Does the provider own its servers or lease them? If leasing, which data center partners? Can they provide documentation?
 
-2. Jurisdiction Testing: Have any governmental bodies successfully compelled data disclosure? Search news archives for "VPN provider" + "government request" + provider name.
+2. Jurisdiction Testing - Have any governmental bodies successfully compelled data disclosure? Search news archives for "VPN provider" + "government request" + provider name.
 
-3. Technical Validation: Has an independent security firm audited the infrastructure? Request links to published audits and review the audit scope carefully.
+3. Technical Validation - Has an independent security firm audited the infrastructure? Request links to published audits and review the audit scope carefully.
 
-4. No-Logs Verification: Has the provider been tested in a legal proceeding? Companies with court-validated claims have stronger assurance than policy statements alone.
+4. No-Logs Verification - Has the provider been tested in a legal proceeding? Companies with court-validated claims have stronger assurance than policy statements alone.
 
-5. Update Transparency: How quickly does the provider patch vulnerabilities? Check security advisories and disclosure timelines.
+5. Update Transparency - How quickly does the provider patch vulnerabilities? Check security advisories and disclosure timelines.
 
 The most trustworthy VPN providers combine multiple transparency mechanisms: published audits, transparency reports, bug bounty programs, court-validated no-logging claims, and open-source components. No single indicator guarantees privacy, but providers that stack multiple trust layers demonstrate commitment to protecting user data rather than just marketing privacy-focused messaging.
 
-Step 7: Verify Server Ownership and Location Claims
+Step 7 - Verify Server Ownership and Location Claims
 
 VPN providers make claims about server ownership and jurisdiction. Verify these claims through independent methods.
 
@@ -230,7 +230,7 @@ IP_ADDRESS="1.2.3.4"
 
 MaxMind GeoIP
 curl -s "https://geoip.maxmind.com/geoip/v2.1/enterprise/$IP_ADDRESS" \
- -H "Authorization: Bearer YOUR_API_KEY" | jq '.location'
+ -H "Authorization - Bearer YOUR_API_KEY" | jq '.location'
 
 IP Quality Score
 curl -s "https://ipqualityscore.com/api/json/ip/$IP_ADDRESS?strictness=0" | \
@@ -246,7 +246,7 @@ Discrepancies between claimed locations and geolocation data indicate:
 - Outdated geolocation databases (legitimate but unverifiable)
 - Deliberate misrepresentation (major red flag)
 
-Step 8: Financial Accountability and Funding Sources
+Step 8 - Financial Accountability and Funding Sources
 
 Understanding who funds a VPN provider reveals potential conflicts of interest.
 
@@ -289,7 +289,7 @@ Investigate who invested in the company:
 
 Evaluate each funding source for alignment with privacy principles.
 
-Step 9: Analyzing Technical Implementation
+Step 9 - Analyzing Technical Implementation
 
 Beyond infrastructure, examine the technical details of how VPN actually works.
 
@@ -339,7 +339,7 @@ What requires technical infrastructure to avoid:
 
 Review provider's technical architecture documentation to verify claims.
 
-Step 10: Real-World Incident Response Assessment
+Step 10 - Real-World Incident Response Assessment
 
 How a provider responds to security incidents reveals actual commitment to privacy.
 
@@ -367,8 +367,8 @@ curl -s "https://$PROVIDER-vpn.com/security-advisories"
 
 Evaluate incident response:
 - Disclosure timeline: Did they announce quickly or hide?
-- Transparency: What details did they provide?
-- Remediation: How did they fix the issue?
+- Transparency - What details did they provide?
+- Remediation - How did they fix the issue?
 - No-repeat assurance: What changes prevented recurrence?
 
 A provider that publicly acknowledges and addresses vulnerabilities demonstrates accountability.
@@ -377,18 +377,18 @@ Court Case History
 
 VPN providers that have faced legal challenges provide real-world validation:
 
-Best case: Provider claims no logs, authorities request data, provider has nothing to provide. Court validates no-logging claim.
+Best case - Provider claims no logs, authorities request data, provider has nothing to provide. Court validates no-logging claim.
 
-Acceptable case: Provider claims no logs, authorities request data, provider disputes request based on jurisdiction. Case resolved (provider didn't compromise user privacy).
+Acceptable case - Provider claims no logs, authorities request data, provider disputes request based on jurisdiction. Case resolved (provider didn't compromise user privacy).
 
-Bad case: Provider forced to turn over user data despite no-logs claims. Indicates either logging or jurisdiction vulnerability.
+Bad case - Provider forced to turn over user data despite no-logs claims. Indicates either logging or jurisdiction vulnerability.
 
 Search court records for:
 - Provider name + "subpoena"
 - Provider name + "government request"
 - Provider name + "legal challenge"
 
-Step 11: Practical Selection Process
+Step 11 - Practical Selection Process
 
 Synthesize all evaluation criteria into selection:
 
@@ -474,7 +474,7 @@ Evaluate multiple providers using consistent criteria:
 | Cost | $9.99/mo | $5/mo | $3.99/mo | $6.67/mo |
 | No-Log Track Record | 15+ years | 8+ years | 10+ years | 10+ years |
 
-Step 12: Common Mistakes in VPN Provider Evaluation
+Step 12 - Common Mistakes in VPN Provider Evaluation
 
 Avoid these evaluation pitfalls:
 

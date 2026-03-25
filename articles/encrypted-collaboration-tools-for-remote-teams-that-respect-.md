@@ -23,10 +23,10 @@ This guide examines encrypted collaboration tools that give teams zero-knowledge
 Table of Contents
 
 - [Understanding Zero-Knowledge Architecture](#understanding-zero-knowledge-architecture)
-- [Matrix: Decentralized Chat with E2EE Support](#matrix-decentralized-chat-with-e2ee-support)
-- [CryptPad: Collaborative Documents with Zero Knowledge](#cryptpad-collaborative-documents-with-zero-knowledge)
-- [Silo: Purpose-Built Encrypted Workspace](#silo-purpose-built-encrypted-workspace)
-- [Session: Metadata-Resistant Messaging](#session-metadata-resistant-messaging)
+- [Matrix - Decentralized Chat with E2EE Support](#matrix-decentralized-chat-with-e2ee-support)
+- [CryptPad - Collaborative Documents with Zero Knowledge](#cryptpad-collaborative-documents-with-zero-knowledge)
+- [Silo - Purpose-Built Encrypted Workspace](#silo-purpose-built-encrypted-workspace)
+- [Session - Metadata-Resistant Messaging](#session-metadata-resistant-messaging)
 - [Implementation Considerations](#implementation-considerations)
 - [Setting Up a Private Matrix Server](#setting-up-a-private-matrix-server)
 - [Choosing the Right Tool](#choosing-the-right-tool)
@@ -48,7 +48,7 @@ For remote teams, this architecture provides legal and operational benefits. Eve
 
 Practical implementation uses client-side encryption. Before any data leaves a user's device, it gets encrypted with keys derived from user credentials. The server stores only encrypted blobs and cannot perform meaningful analysis or indexing on the content.
 
-Matrix: Decentralized Chat with E2EE Support
+Matrix - Decentralized Chat with E2EE Support
 
 Matrix is an open protocol for real-time communication that supports end-to-end encryption through the Olm and Megolm cryptographic protocols. Organizations can run their own Matrix servers (homeservers) while interconnecting with the broader Matrix network.
 
@@ -75,7 +75,7 @@ The Element client provides a polished interface for Matrix. Enable E2EE in room
 
 Cross-signing allows team members to verify each other's devices without trusting a central authority. This addresses the key verification problem in distributed teams.
 
-CryptPad: Collaborative Documents with Zero Knowledge
+CryptPad - Collaborative Documents with Zero Knowledge
 
 CryptPad offers real-time collaborative editing, documents, spreadsheets, presentations, and kanban boards, where all encryption happens in the browser. The server never sees plaintext content.
 
@@ -104,13 +104,13 @@ docker-compose up -d
 
 This approach keeps all document content within your infrastructure while using the same encryption model as the hosted version.
 
-Silo: Purpose-Built Encrypted Workspace
+Silo - Purpose-Built Encrypted Workspace
 
 Silo provides encrypted workspace functionality with a focus on data sovereignty. It offers secure document management, task tracking, and communication with the encryption key derived from user passwords, never exposed to the server.
 
 For teams in regulated industries, Silo's architecture allows you to maintain compliance by ensuring plaintext data never traverses infrastructure you don't control. The service operates on a zero-knowledge model regardless of whether you use their cloud or deploy on-premises.
 
-Session: Metadata-Resistant Messaging
+Session - Metadata-Resistant Messaging
 
 Session focuses on minimizing metadata collection. Unlike traditional messaging where sender, recipient, and timestamp are always visible to the server, Session routes messages through onion-routing to obscure metadata.
 
@@ -122,13 +122,13 @@ Implementation Considerations
 
 When evaluating encrypted collaboration tools for your remote team, consider these practical factors:
 
-Key management complexity: E2EE tools require teams to manage keys or trust the platform's key distribution. Matrix's cross-signing solves this but requires user education. Consider tools with recovery options, otherwise, losing a device means losing access to archived conversations.
+Key management complexity - E2EE tools require teams to manage keys or trust the platform's key distribution. Matrix's cross-signing solves this but requires user education. Consider tools with recovery options, otherwise, losing a device means losing access to archived conversations.
 
 Search functionality limitations: Zero-knowledge platforms cannot server-side search encrypted content. This means either accepting limited search or implementing client-side search indexing that brings its own considerations.
 
-Performance tradeoffs: Client-side encryption adds computation overhead. For large teams handling significant message volumes, benchmark tools under realistic loads before committing.
+Performance tradeoffs - Client-side encryption adds computation overhead. For large teams handling significant message volumes, benchmark tools under realistic loads before committing.
 
-Compliance requirements: If your industry requires data residency in specific jurisdictions, self-hosting becomes essential. Cloud-hosted zero-knowledge still means data exists somewhere, verify the geographic location of storage infrastructure.
+Compliance requirements - If your industry requires data residency in specific jurisdictions, self-hosting becomes essential. Cloud-hosted zero-knowledge still means data exists somewhere, verify the geographic location of storage infrastructure.
 
 Setting Up a Private Matrix Server
 
@@ -158,9 +158,9 @@ The optimal encrypted collaboration platform depends on your team's specific con
 - Metadata protection: Session provides resistance against traffic analysis
 - Document collaboration: CryptPad's real-time editing with zero knowledge
 
-For most developer teams, Matrix provides the best balance, open protocol with multiple client options, mature E2EE implementation, and a growing ecosystem of integrations.
+For most developer teams, Matrix provides the best balance, open protocol with multiple client options, mature E2EE implementation, and a growing environment of integrations.
 
-Start with a small pilot: configure a self-hosted server, onboard five team members, and run it parallel to your existing tools. Measure adoption friction, key management challenges, and compliance satisfaction before expanding.
+Start with a small pilot - configure a self-hosted server, onboard five team members, and run it parallel to your existing tools. Measure adoption friction, key management challenges, and compliance satisfaction before expanding.
 
 Advanced Encryption Key Management
 
@@ -294,7 +294,7 @@ Advanced Self-Hosting Architecture
 Teams confident in infrastructure management can deploy complex setups:
 
 ```yaml
-Docker Compose: Complete encrypted collaboration stack
+Docker Compose - Complete encrypted collaboration stack
 version: '3.8'
 
 services:

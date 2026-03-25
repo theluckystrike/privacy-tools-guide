@@ -122,11 +122,11 @@ Security Model Analysis
 
 Briar implements end-to-end encryption using the Signal protocol, providing forward secrecy and deniable authentication. However, several security aspects require careful consideration:
 
-Metadata Protection: While message content remains encrypted, connection metadata (who connected to whom, when, for how long) remains visible to observers on the same network segment. This represents a fundamental limitation of any mesh architecture.
+Metadata Protection - While message content remains encrypted, connection metadata (who connected to whom, when, for how long) remains visible to observers on the same network segment. This represents a fundamental limitation of any mesh architecture.
 
-Device Authentication: Contact verification relies on short authentication strings displayed during connection establishment. Users must visually confirm these match, which becomes challenging in scenarios with many contacts.
+Device Authentication - Contact verification relies on short authentication strings displayed during connection establishment. Users must visually confirm these match, which becomes challenging in scenarios with many contacts.
 
-Key Management: Briar stores keys locally without cloud backup. Device loss means losing all contacts and messages, a significant usability trade-off for the security gained.
+Key Management - Briar stores keys locally without cloud backup. Device loss means losing all contacts and messages, a significant usability trade-off for the security gained.
 
 Performance Characteristics
 
@@ -144,13 +144,13 @@ Deployment Scenarios
 
 Briar's mesh capability excels in several practical scenarios:
 
-Emergency Response: When cellular infrastructure fails or becomes overloaded, mesh-enabled devices can maintain communication within a localized area. First responders can coordinate without depending on central systems.
+Emergency Response - When cellular infrastructure fails or becomes overloaded, mesh-enabled devices can maintain communication within a localized area. First responders can coordinate without depending on central systems.
 
-Protest and Civil Disobedience: In environments where network access is restricted or monitored, mesh communication provides an alternative channel that resists surveillance and censorship.
+Protest and Civil Disobedience - In environments where network access is restricted or monitored, mesh communication provides an alternative channel that resists surveillance and censorship.
 
-Remote Operations: Field researchers, travelers in remote areas, or individuals in regions with unreliable connectivity can maintain communication with their network.
+Remote Operations - Field researchers, travelers in remote areas, or individuals in regions with unreliable connectivity can maintain communication with their network.
 
-Privacy Preservation: Users who wish to minimize their digital footprint can operate partially or fully offline, reducing exposure to network-level tracking.
+Privacy Preservation - Users who wish to minimize their digital footprint can operate partially or fully offline, reducing exposure to network-level tracking.
 
 Limitations and Constraints
 

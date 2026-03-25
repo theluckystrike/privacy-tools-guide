@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Data Minimization in CRM Design
+Step 1 - Understand Data Minimization in CRM Design
 
 Data minimization means collecting only the personal data strictly necessary for your specific, explicit, and legitimate purposes. For a CRM, this typically means contact information required for communication, transaction data needed for service delivery, and interaction history that improves customer support.
 
@@ -42,7 +42,7 @@ Core Principles for Privacy-First CRM Architecture
 4. Provide customer portability. Store data in formats customers can export easily
 5. Log access transparently. Maintain audit trails that customers can review
 
-Step 2: Build a Minimal-Data CRM with Python and PostgreSQL
+Step 2 - Build a Minimal-Data CRM with Python and PostgreSQL
 
 For developers who want full control, building a privacy-focused CRM from scratch provides the most flexibility. Here's a practical implementation using Python (Django) and PostgreSQL with encryption.
 
@@ -186,7 +186,7 @@ class DataRetentionManager:
             customer.save()
 ```
 
-Step 3: Configure Existing CRMs for Privacy
+Step 3 - Configure Existing CRMs for Privacy
 
 If you prefer using existing CRM platforms, most can be configured for better privacy. Here are key settings to adjust in popular platforms.
 
@@ -262,7 +262,7 @@ public class PrivacyControls {
 }
 ```
 
-Step 4: Customer Data Inventory Template
+Step 4 - Customer Data Inventory Template
 
 Maintain a clear inventory of what customer data you collect, why, and how long you keep it:
 
@@ -274,7 +274,7 @@ Maintain a clear inventory of what customer data you collect, why, and how long 
 | IP address | Fraud prevention | Legitimate interest | 90 days | Not stored |
 | Browser data | Analytics | Consent | None | N/A |
 
-Step 5: Practical Steps to Minimize Collection
+Step 5 - Practical Steps to Minimize Collection
 
 1. Audit your forms. Remove non-essential fields from intake forms
 2. Disable third-party integrations. Many CRMs auto-sync with analytics platforms

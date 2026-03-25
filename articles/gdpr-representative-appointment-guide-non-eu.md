@@ -43,7 +43,7 @@ The representative's responsibilities include maintaining records of processing 
 
 Practical Implementation Steps
 
-Step 1: Document Your Processing Activities
+Step 1 - Document Your Processing Activities
 
 Before appointing a representative, audit your data processing to determine which EU residents you serve and what data you collect. Create a processing record that includes:
 
@@ -73,7 +73,7 @@ records = [
 ]
 ```
 
-Step 2: Select and Formalize the Representative Relationship
+Step 2 - Select and Formalize the Representative Relationship
 
 Draft a contract or appointment letter that defines the representative's role, responsibilities, and limitations. The representative should have sufficient authority and resources to fulfill their obligations.
 
@@ -82,7 +82,7 @@ Representative Appointment Agreement (Template)
 
 This agreement appoints [Representative Name/Organization] as the GDPR Representative for [Your Company Name].
 
-Scope: Processing activities affecting data subjects in the following EU member states: [list countries]
+Scope - Processing activities affecting data subjects in the following EU member states: [list countries]
 
 Responsibilities:
 1. Maintain processing activity records per Article 30
@@ -90,12 +90,12 @@ Responsibilities:
 3. Respond to data subject inquiries within EU business hours
 4. Cooperate with the lead supervisory authority
 
-Duration: This appointment remains in effect until terminated with 30 days written notice.
+Duration - This appointment remains in effect until terminated with 30 days written notice.
 
-Compensation: [Fee arrangement]
+Compensation - [Fee arrangement]
 ```
 
-Step 3: Update Your Privacy Documentation
+Step 3 - Update Your Privacy Documentation
 
 Add your representative's contact information to your privacy policy and data processing agreements. Include their name, address, and a dedicated contact point (email address).
 
@@ -108,13 +108,13 @@ Add your representative's contact information to your privacy policy and data pr
     <strong>DataRep Europe GmbH</strong><br>
     Friedrichstraße 123<br>
     10117 Berlin, Germany<br>
-    Email: eu-representative@example.com<br>
+    Email - eu-representative@example.com<br>
     Phone: +49 30 12345678
   </address>
 </section>
 ```
 
-Step 4: Implement Contact Handling
+Step 4 - Implement Contact Handling
 
 Set up systems to route GDPR-related inquiries to your representative. If you use a support ticketing system, create routing rules or dedicated channels.
 
@@ -234,7 +234,7 @@ Contact Information
 
 Scope of Processing
 - EU Member States Served: [List countries]
-- Data Subject Categories: [Employees, Customers, etc.]
+- Data Subject Categories - [Employees, Customers, etc.]
 - Data Categories: [Names, emails, behavioral data]
 ```
 

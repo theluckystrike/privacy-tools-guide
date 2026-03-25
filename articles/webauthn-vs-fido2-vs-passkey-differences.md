@@ -275,22 +275,22 @@ Migration Strategies from Passwords
 
 Moving existing users to passwordless authentication requires thoughtful planning:
 
-Phase 1: Add passkey registration alongside password login
+Phase 1 - Add passkey registration alongside password login
 - Users can register passkeys but still use passwords
 - No pressure to migrate
 - Collect feedback on implementation
 
-Phase 2: Require passkey + password
+Phase 2 - Require passkey + password
 - Both methods required for authentication
 - Transition period (30-60 days) while users register passkeys
 - Reduces password exposure while maintaining fallback
 
-Phase 3: Passkey primary, password secondary
+Phase 3 - Passkey primary, password secondary
 - Passkey is primary authentication
 - Passwords available for account recovery
 - Deprecated passwords on longer timescales
 
-Phase 4: Passwordless only
+Phase 4 - Passwordless only
 - Passkeys exclusively for authentication
 - Password recovery through alternative means (email, phone)
 - Only after >95% user adoption of passkeys
@@ -345,13 +345,13 @@ Standards Roadmap for 2026 and Beyond
 
 The passwordless authentication field continues evolving:
 
-Conditional UI: Native Android and iOS support for passkey auto-fill without explicit user interaction. This improves UX while maintaining security.
+Conditional UI - Native Android and iOS support for passkey auto-fill without explicit user interaction. This improves UX while maintaining security.
 
-Cross-Origin Mediation: Allow users to authenticate across different domains using the same passkey. Still being standardized but will improve single-sign-on experiences.
+Cross-Origin Mediation - Allow users to authenticate across different domains using the same passkey. Still being standardized but will improve single-sign-on experiences.
 
-Multi-Device Flows: Authenticate on one device using another device's passkey (cross-device authentication). Useful when primary device is unavailable.
+Multi-Device Flows - Authenticate on one device using another device's passkey (cross-device authentication). Useful when primary device is unavailable.
 
-Batch Operations: Register/update multiple credentials in single flows, improving UX for managing multiple accounts.
+Batch Operations - Register/update multiple credentials in single flows, improving UX for managing multiple accounts.
 
 Developers implementing WebAuthn/FIDO2 in 2026 should monitor these developments and plan for eventual migration when standards stabilize.
 
@@ -384,5 +384,5 @@ Related Articles
 - [Best Hardware Security Key for Developers: A Practical Guide](/best-hardware-security-key-for-developers/)
 - [Passkey Support By Website 2026](/passkey-support-by-website-2026/)
 - [Passwordless Authentication Pros and Cons: A Developer Guide](/passwordless-authentication-pros-and-cons/)
-- [Switching from ChatGPT Search to Perplexity Pro: Explained](https://bestremotetools.com/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [Switching from ChatGPT Search to Perplexity Pro - Explained](https://bestremotetools.com/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)

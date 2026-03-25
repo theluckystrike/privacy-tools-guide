@@ -95,7 +95,7 @@ Application-Specific Routing
 Route only your banking application through the VPN while other traffic uses your local connection. This requires more complex configuration but optimizes performance.
 
 ```bash
-Linux: Route specific application through VPN using iptables
+Linux - Route specific application through VPN using iptables
 sudo iptables -A OUTPUT -p tcp --dport 443 -m owner --uid-owner banking_user -j ACCEPT
 sudo iptables -A OUTPUT -p tcp --dport 443 -j REJECT
 ```
@@ -119,7 +119,7 @@ Quick verification script
 #!/bin/bash
 echo "=== VPN Security Check ==="
 echo "Public IP: $(curl -s ifconfig.me)"
-echo "DNS Server: $(cat /etc/resolv.conf | grep nameserver)"
+echo "DNS Server - $(cat /etc/resolv.conf | grep nameserver)"
 echo "VPN Interface: $(ip addr show | grep tun0)"
 ```
 
@@ -270,7 +270,7 @@ Mobile Tethering:
 - Verify your phone's security settings before using as hotspot source
 - Mobile data uses carrier networks, safer than WiFi but still vulnerable to interception with older devices
 
-Strategy: Use mobile tethering as primary connection when available, reserve public WiFi for non-sensitive activities.
+Strategy - Use mobile tethering as primary connection when available, reserve public WiFi for non-sensitive activities.
 
 Post-Travel Account Review
 

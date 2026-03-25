@@ -49,8 +49,8 @@ Why Three Relays?
 
 Using three hops rather than more provides several advantages:
 
-- Performance: Each hop adds latency. Three hops keep latency manageable (typically 100-500ms additional delay).
-- Anonymity: No single relay knows both where your traffic originated and where it's going.
+- Performance - Each hop adds latency. Three hops keep latency manageable (typically 100-500ms additional delay).
+- Anonymity - No single relay knows both where your traffic originated and where it's going.
 - Attack surface reduction: An adversary controlling fewer nodes has lower probability of compromising the entire circuit.
 
 Circuit Construction Process

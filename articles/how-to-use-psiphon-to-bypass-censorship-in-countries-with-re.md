@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Psiphon's Architecture
+Step 1 - Understand Psiphon's Architecture
 
 Psiphon operates on a client-server model with three primary components: the client, the server, and the tunnel. The Psiphon server runs on machines outside censored regions and acts as the gateway to the unrestricted internet. The client, which can be installed on various platforms including Windows, Android, and iOS, establishes encrypted connections to these servers.
 
@@ -46,7 +46,7 @@ The tunnel mechanism is particularly interesting from a technical standpoint. Ps
 - VPN mode: Creates a virtual network interface for full-device tunneling
 - HTTP proxy mode: Routes HTTP requests through the Psiphon server
 
-Step 2: Install ation and Initial Setup
+Step 2 - Install ation and Initial Setup
 
 For desktop environments, you can download Psiphon clients from the official repository. On Linux systems, you may need to compile from source or use community-provided packages. The following example shows how to verify the client binary on Linux:
 
@@ -60,7 +60,7 @@ gpg --verify psiphon-tunnel-core_linux_amd64.tar.gz.sig
 
 After extraction, you'll find the core binary. Unlike the user-friendly GUI applications available for Windows and macOS, the Linux version requires manual configuration through a JSON configuration file.
 
-Step 3: Configuration for Power Users
+Step 3 - Configuration for Power Users
 
 Psiphon's configuration system uses JSON files that define server endpoints, tunnel parameters, and authentication settings. Create a configuration file to customize your setup:
 
@@ -80,7 +80,7 @@ Psiphon's configuration system uses JSON files that define server endpoints, tun
 
 This configuration optimizes several parameters: the tunnel pool size determines how many server connections are maintained simultaneously, and the timeout values control how aggressively the client reconnects when connections fail. Setting `RotateServerOnPortForwardFailure` to true ensures resilience in environments where specific server IPs are blocked.
 
-Step 4: Implement Programmatic Access with the Psiphon API
+Step 4 - Implement Programmatic Access with the Psiphon API
 
 For developers building applications that need to route traffic through Psiphon, the tunnel core library provides a programmatic API. Here's a basic example in Go:
 
@@ -121,7 +121,7 @@ func main() {
 
 This programmatic approach allows you to integrate Psiphon directly into your applications rather than running a separate client process. The API provides access to the underlying tunnel, enabling custom routing logic and traffic analysis.
 
-Step 5: Deploy ment Strategies for High-Availability
+Step 5 - Deploy ment Strategies for High-Availability
 
 In enterprise or high-stakes environments where constant connectivity is critical, consider deploying a dedicated Psiphon infrastructure. You can run your own Psiphon servers using the open-source server implementation:
 
@@ -166,15 +166,15 @@ Protocol Obfuscation Strategies
 
 Psiphon's obfuscation layer makes the VPN tunnel appear as normal HTTPS web traffic. Advanced censorship systems use deep packet inspection (DPI) to identify VPN signatures even within HTTPS. Psiphon counters this through several techniques:
 
-SSH Protocol Obfuscation: The SSH tunnel is wrapped in HTTPS traffic so network observers cannot distinguish it from regular web browsing:
+SSH Protocol Obfuscation - The SSH tunnel is wrapped in HTTPS traffic so network observers cannot distinguish it from regular web browsing:
 
 ```
 [HTTPS wrapper] → [SSH tunnel] → [Your traffic]
-Observer sees: HTTPS to normal server
-Actually carries: SSH to Psiphon server
+Observer sees - HTTPS to normal server
+Actually carries - SSH to Psiphon server
 ```
 
-HTTP Proxy Mode: Some networks allow HTTP proxies but block direct VPN connections. Psiphon can route through HTTP proxies:
+HTTP Proxy Mode - Some networks allow HTTP proxies but block direct VPN connections. Psiphon can route through HTTP proxies:
 
 ```json
 {
@@ -184,7 +184,7 @@ HTTP Proxy Mode: Some networks allow HTTP proxies but block direct VPN connectio
 }
 ```
 
-Meek Protocol: Uses a legitimate CDN (Amazon CloudFront, Azure) as the VPN endpoint. The actual server address is obfuscated within HTTPS requests to the CDN:
+Meek Protocol - Uses a legitimate CDN (Amazon CloudFront, Azure) as the VPN endpoint. The actual server address is obfuscated within HTTPS requests to the CDN:
 
 ```
 Client → CloudFront (appears as normal web traffic)
@@ -215,7 +215,7 @@ Configure Psiphon to automatically choose the best protocol based on network con
 
 The "AddNoiseTraffic" option sends dummy packets to make traffic analysis harder. Analysts cannot distinguish real traffic from padding.
 
-Step 6: Deploy ment in Restricted Environments
+Step 6 - Deploy ment in Restricted Environments
 
 Organizations operating in highly censored countries need deployment strategies that survive aggressive blocking attempts.
 
@@ -257,8 +257,8 @@ Domain Fronting Resilience
 Domain fronting uses legitimate domains to mask VPN server addresses:
 
 ```
-Request to: cdn.example.com (appears legitimate)
-Actually reaches: hidden-psiphon-server (via SNI hiding)
+Request to - cdn.example.com (appears legitimate)
+Actually reaches - hidden-psiphon-server (via SNI hiding)
 ```
 
 Maintain a list of fronting domains and automatically rotate them:
@@ -275,7 +275,7 @@ Maintain a list of fronting domains and automatically rotate them:
 }
 ```
 
-Step 7: Integration with Other Circumvention Tools
+Step 7 - Integration with Other Circumvention Tools
 
 Psiphon works synergistically with other privacy tools to create layered protection.
 
@@ -379,7 +379,7 @@ func SelectOptimalServer(servers []Server) Server {
 }
 ```
 
-Step 8: Logging and Debugging
+Step 8 - Logging and Debugging
 
 When Psiphon fails to connect, systematic debugging identifies the issue.
 
@@ -421,7 +421,7 @@ ping -I tun0 8.8.8.8
 
 If only HTTP proxy succeeds, configure Psiphon to use that mode exclusively.
 
-Step 9: Perform Maintenance and Updates
+Step 9 - Perform Maintenance and Updates
 
 Keep Psiphon current and functional with regular maintenance:
 
@@ -450,7 +450,7 @@ if [ $? -ne 0 ]; then
 fi
 ```
 
-Step 10: Legal Considerations and Risk Assessment
+Step 10 - Legal Considerations and Risk Assessment
 
 Using circumvention tools carries legal risks in some jurisdictions. Before deploying:
 

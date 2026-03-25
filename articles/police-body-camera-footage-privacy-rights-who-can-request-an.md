@@ -19,7 +19,7 @@ Police body camera footage is generally public record but with significant state
 
 Body cameras represent one of the most contested public records in modern policing. Advocates argue that public transparency improves officer accountability. Police departments argue that releasing footage violates officer privacy and investigation integrity. Courts have split on balancing these interests, creating uncertainty about what footage actually counts as public record in specific circumstances.
 
-The practical reality: most public records requests for body camera footage get denied, at least initially. Agencies cite pending investigations, juvenile protection, confidential informant safety, and officer privacy as justifications. These exemptions, while sometimes legitimate, are frequently invoked to prevent public scrutiny. Understanding your jurisdiction's specific standards and pushing back on overbroad denials becomes essential for actually obtaining footage.
+The practical reality - most public records requests for body camera footage get denied, at least initially. Agencies cite pending investigations, juvenile protection, confidential informant safety, and officer privacy as justifications. These exemptions, while sometimes legitimate, are frequently invoked to prevent public scrutiny. Understanding your jurisdiction's specific standards and pushing back on overbroad denials becomes essential for actually obtaining footage.
 
 Table of Contents
 
@@ -40,9 +40,9 @@ Body camera footage classification as public record stems from general public re
 
 However, several statutory exemptions create legitimate grounds for restriction:
 
-Ongoing investigation exemption: Information that would interfere with active investigations can be withheld. This exemption exists because releasing evidence can obstruct investigations. However, once investigations conclude or charges are filed, this exemption typically expires. Agencies sometimes cite this exemption months or years after incidents to prevent disclosure.
+Ongoing investigation exemption - Information that would interfere with active investigations can be withheld. This exemption exists because releasing evidence can obstruct investigations. However, once investigations conclude or charges are filed, this exemption typically expires. Agencies sometimes cite this exemption months or years after incidents to prevent disclosure.
 
-Privacy exemptions: Third-party privacy interests (bystanders, minors, victims) can justify redactions even when officers' conduct is visible. This exemption creates necessary friction, you can't always get unredacted footage because others' privacy matters too.
+Privacy exemptions - Third-party privacy interests (bystanders, minors, victims) can justify redactions even when officers' conduct is visible. This exemption creates necessary friction, you can't always get unredacted footage because others' privacy matters too.
 
 Law enforcement method exemptions: Techniques that work because of secrecy (surveillance methods, undercover operations) can be protected. This exemption rarely applies to patrol body camera footage but matters for specialized operations.
 
@@ -155,13 +155,13 @@ When processing obtained footage, implement appropriate safeguards:
 
 Practical Examples
 
-Example 1: Filing a California Request
+Example 1 - Filing a California Request
 
 California's SB 1421 provides enhanced access to certain categories of footage. A request might look like:
 
 ```
 To: [Police Department Records Unit]
-Subject: Public Records Request - Body Camera Footage
+Subject - Public Records Request - Body Camera Footage
 
 I am requesting body camera footage from incident on [date] at [location].
 This request falls under California Penal Code 832.18 and SB 1421,
@@ -171,7 +171,7 @@ I request footage from all officers present at the scene during the incident.
 Please provide the footage in its original format or a standard video format.
 ```
 
-Example 2: Building a Request Tracking System
+Example 2 - Building a Request Tracking System
 
 For developers creating tools to track request status across multiple jurisdictions:
 

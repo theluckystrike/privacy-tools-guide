@@ -185,7 +185,7 @@ Set CPU to performance mode
 sudo cpupower frequency-set -g performance
 
 Or use the kernel command line for always-on performance
-Add: processor.max_cstates=1
+Add - processor.max_cstates=1
 ```
 
 Network Path Optimization

@@ -23,11 +23,11 @@ Table of Contents
 - [Why Emergency Access Matters](#why-emergency-access-matters)
 - [The Security Tradeoff](#the-security-tradeoff)
 - [Best Password Managers With Emergency Access](#best-password-managers-with-emergency-access)
-- [Comparison Table: Emergency Access Features](#comparison-table-emergency-access-features)
+- [Comparison Table - Emergency Access Features](#comparison-table-emergency-access-features)
 - [Building Your Emergency Access Plan](#building-your-emergency-access-plan)
-- [Real-World Scenario: Using Emergency Access](#real-world-scenario-using-emergency-access)
+- [Real-World Scenario - Using Emergency Access](#real-world-scenario-using-emergency-access)
 - [Legal Considerations](#legal-considerations)
-- [Checklist: Emergency Access Setup](#checklist-emergency-access-setup)
+- [Checklist - Emergency Access Setup](#checklist-emergency-access-setup)
 
 Why Emergency Access Matters
 
@@ -54,7 +54,7 @@ Best Password Managers With Emergency Access
 
 1Bitwarden/Vaultwarden ($0-40/year)
 
-Best for: Privacy-conscious, self-hosted, lowest cost
+Best for - Privacy-conscious, self-hosted, lowest cost
 
 Bitwarden includes emergency access, and you can host it yourself (Vaultwarden).
 
@@ -87,7 +87,7 @@ Emergency Contact Setup:
 2. Settings → Emergency Access
 3. Add contact:
    Name: "Alice (wife)"
-   Email: alice@example.com
+   Email - alice@example.com
    Wait time: 30 days (gives time to revoke)
    Access: Full vault (alternative: grantable = user must approve each password)
 4. Contact receives email with acceptance link
@@ -97,7 +97,7 @@ Emergency Contact Setup:
 Testing your setup:
 
 ```
-Scenario: You're in hospital, can't access email
+Scenario - You're in hospital, can't access email
 
 Contact's perspective:
 1. Receives email: "Set up emergency access from your email address"
@@ -107,12 +107,12 @@ Contact's perspective:
 5. After 30 days, full vault access granted
 6. Can change master password, add new contacts, etc.
 
-Security benefit: 30-day window prevents abuse (you could revoke if conscious)
+Security benefit - 30-day window prevents abuse (you could revoke if conscious)
 ```
 
 1Password ($2.99-5.99/month)
 
-Best for: Non-tech users, integrates with family plan, Apple ecosystem
+Best for - Non-tech users, integrates with family plan, Apple environment
 
 1Password includes Emergency Access for individuals and family plans ($99.99/year).
 
@@ -161,7 +161,7 @@ Contact's process:
 
 Keeper ($34.99-299.99/year)
 
-Best for: Business users, compliance-heavy, zero-knowledge proof
+Best for - Business users, compliance-heavy, zero-knowledge proof
 
 Keeper offers emergency access called "Authorized Contacts" with legal partnership verification.
 
@@ -188,7 +188,7 @@ LastPass ($2.99-8.99/month)
 
 LastPass does NOT have emergency access. They discontinued it after 2022 security breaches. If emergency access is critical, avoid LastPass.
 
-Comparison Table: Emergency Access Features
+Comparison Table - Emergency Access Features
 
 | Feature | Bitwarden | 1Password | Keeper | Dashlane | Password Safe |
 |---------|-----------|-----------|--------|----------|---------------|
@@ -204,7 +204,7 @@ Comparison Table: Emergency Access Features
 
 Building Your Emergency Access Plan
 
-Step 1: Choose Password Manager
+Step 1 - Choose Password Manager
 
 Use this decision tree:
 
@@ -220,7 +220,7 @@ Use this decision tree:
 "I want free, local storage, no cloud"
 → KeePass (no emergency access, but maximum control)
 
-Step 2: Document Your Accounts
+Step 2 - Document Your Accounts
 
 Create a spreadsheet (encrypted) with:
 
@@ -232,7 +232,7 @@ Crypto       | Bitwarden | Alice        | Hardware wallet backup in safe
 Insurance    | 1Password | Alice        | Critical for claims
 ```
 
-Step 3: Communicate With Emergency Contacts
+Step 3 - Communicate With Emergency Contacts
 
 Have an explicit conversation. Don't just add them without warning.
 
@@ -256,7 +256,7 @@ Don't use this for:
 - Accessing my personal accounts while I'm alive
 - Looking at medical records just out of curiosity"
 
-Step 4: Store Recovery Information Safely
+Step 4 - Store Recovery Information Safely
 
 Write down (on paper, not digital):
 - Master password for your vault
@@ -272,7 +272,7 @@ Do NOT:
 - Store in cloud documents
 - Share with emergency contacts unless they need it immediately
 
-Step 5: Test It
+Step 5 - Test It
 
 Quarterly:
 1. Verify emergency contact email address is current
@@ -284,9 +284,9 @@ Annual:
 2. Review vault contents (ensure sensitive info is in there)
 3. Update documents if account list changed
 
-Real-World Scenario: Using Emergency Access
+Real-World Scenario - Using Emergency Access
 
-Context: User has heart attack, hospitalized, unconscious for 2 weeks
+Context - User has heart attack, hospitalized, unconscious for 2 weeks
 
 Day 1-7 (hospitalization):
 - Family knows to check email for emergency access notice
@@ -306,15 +306,15 @@ Day 38 (you don't wake):
  - Insurance (files claims for medical expenses)
  - Cryptocurrency (if present, transfers to family)
 
-Benefit: Family has access within 5 weeks instead of 3-6 months through legal processes.
+Benefit - Family has access within 5 weeks instead of 3-6 months through legal processes.
 
 Legal Considerations
 
-Death verification: Most password managers don't require proof of death (relies on contact honor system). If security is critical:
+Death verification - Most password managers don't require proof of death (relies on contact honor system). If security is critical:
 - Use Keeper (legal verification required)
 - Or manually document in your will who gets access
 
-Digital assets in will: Emergency access is separate from your legal will. Consider both:
+Digital assets in will - Emergency access is separate from your legal will. Consider both:
 - Will: Executor gets physical/legal access (after 6 months-2 years)
 - Emergency access: Contacts get digital access (within 14-30 days)
 
@@ -323,7 +323,7 @@ Cryptocurrency and hardware wallets: Password managers can't access hardware wal
 - Private notes in emergency contact document
 - Hardware wallet at home (accessible by your will executor or emergency contact)
 
-Checklist: Emergency Access Setup
+Checklist - Emergency Access Setup
 
 - [ ] Chosen password manager with emergency access
 - [ ] Designated 1-3 emergency contacts (spouse, adult child, sibling)

@@ -24,7 +24,7 @@ Table of Contents
 - [Required Documentation for Death-Related Transfers](#required-documentation-for-death-related-transfers)
 - [Step-by-Step Transfer Process](#step-by-step-transfer-process)
 - [Hosting Account Transfers](#hosting-account-transfers)
-- [Prevention: Setting Up Transfers Before Death](#prevention-setting-up-transfers-before-death)
+- [Prevention - Setting Up Transfers Before Death](#prevention-setting-up-transfers-before-death)
 - [Transfer Checklist for Executors](#transfer-checklist-for-executors)
 - [Registrar-Specific Procedures](#registrar-specific-procedures)
 - [Email and DNS Impact During Transfer](#email-and-dns-impact-during-transfer)
@@ -64,7 +64,7 @@ Contact the registrar's legal or customer support department before gathering do
 
 Step-by-Step Transfer Process
 
-Step 1: Locate Account Credentials
+Step 1 - Locate Account Credentials
 
 Before any transfer can occur, you need access to or information about the deceased's registrar account. This includes:
 
@@ -74,7 +74,7 @@ Before any transfer can occur, you need access to or information about the decea
 
 If the deceased used a password manager, check there first. Many developers store registrar credentials alongside other service credentials. If no password manager exists, the registrar may require additional identity verification.
 
-Step 2: Contact the Registrar
+Step 2 - Contact the Registrar
 
 Email or call the registrar's support team explaining the situation. Use a subject line like "Death Transfer Request - [Domain Name]" and include:
 
@@ -85,13 +85,13 @@ Email or call the registrar's support team explaining the situation. Use a subje
 
 Most registrars have dedicated processes for death-related transfers. GoDaddy calls this a "Trust/Estate" transfer request. Namecheap handles these through their legal department. Cloudflare requires court documentation.
 
-Step 3: Submit Required Documentation
+Step 3 - Submit Required Documentation
 
 After initial contact, the registrar will specify what documents they need. Send certified copies rather than originals, they typically don't return documents. Keep copies for your records.
 
 Expect a processing time of 2-4 weeks for documentation review. Some registrars expedite this for active businesses, but estate transfers rarely receive priority treatment.
 
-Step 4: Complete the Technical Transfer
+Step 4 - Complete the Technical Transfer
 
 Once documentation clears, the registrar will guide you through the technical transfer:
 
@@ -144,9 +144,9 @@ For developers using AWS, Google Cloud, or similar providers:
 
 - AWS: Requires a death certificate and legal documentation. The process goes through AWS Trust & Safety. You may need to create a new account and rebuild resources, as direct account transfers aren't supported.
 
-- Google Cloud: Similar requirements. Contact Google Cloud Support with documentation proving your authority over the estate.
+- Google Cloud - Similar requirements. Contact Google Cloud Support with documentation proving your authority over the estate.
 
-- DigitalOcean/Vultr/Linode: These providers typically allow account access transfers with proper documentation. Open a support ticket explaining the situation.
+- DigitalOcean/Vultr/Linode - These providers typically allow account access transfers with proper documentation. Open a support ticket explaining the situation.
 
 SSL Certificate Considerations
 
@@ -169,7 +169,7 @@ SSL certificates are tied to specific domains and may include the organization n
 
 New certificates take effect immediately and avoid transfer complications with organization-validated certificates.
 
-Prevention: Setting Up Transfers Before Death
+Prevention - Setting Up Transfers Before Death
 
 The easiest transfer is one planned in advance. Developers and power users can take several proactive steps:
 
@@ -201,9 +201,9 @@ Transfer Checklist for Executors
 When handling domain transfers after death, use this checklist:
 
 ```
-Domain: __________________________
-Registrar: ______________________
-Transfer Status: ________________
+Domain - __________________________
+Registrar - ______________________
+Transfer Status - ________________
 
 Documentation:
  Death certificate (certified copy)
@@ -237,13 +237,13 @@ Post-Transfer:
 
 Registrar-Specific Procedures
 
-GoDaddy: Requires notarized letter of testamentary and certified death certificate. Processing time: 2-3 weeks. Contact their Estate & Trust department.
+GoDaddy - Requires notarized letter of testamentary and certified death certificate. Processing time: 2-3 weeks. Contact their Estate & Trust department.
 
-Namecheap: Accepts letters of administration. Can usually process in 1-2 weeks. Requires scan of government-issued ID plus estate documentation.
+Namecheap - Accepts letters of administration. Can usually process in 1-2 weeks. Requires scan of government-issued ID plus estate documentation.
 
-Cloudflare: Stricter requirements. Requires full probate documentation and court order. May require 4+ weeks for processing.
+Cloudflare - Stricter requirements. Requires full probate documentation and court order. May require 4+ weeks for processing.
 
-Google Domains: Recently acquired by Squarespace. Check current procedures via their registrar support, as policies may change.
+Google Domains - Recently acquired by Squarespace. Check current procedures via their registrar support, as policies may change.
 
 Email and DNS Impact During Transfer
 

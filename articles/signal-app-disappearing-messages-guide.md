@@ -21,7 +21,7 @@ Personnel matters | 1 day
 Security incidents | 1 hour
 Financial/legal | 30 minutes
 
-Step 10: Implementation
+Step 10 - Implementation
 
 1. All team members should know these guidelines
 2. Respect the timer duration for each conversation type
@@ -51,7 +51,7 @@ If your team sends thousands of messages daily:
 - 1-hour or 1-day timers balance privacy and performance
 - Avoid 30-second timers at scale (deletion process stresses device)
 
-Step 11: Signal's Threat Model Assumptions
+Step 11 - Signal's Threat Model Assumptions
 
 Understanding what disappearing messages do and don't protect:
 

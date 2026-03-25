@@ -105,8 +105,8 @@ adb shell "while true; do wg-quick up wg0; sleep 3600; wg-quick down wg0; done" 
 Monitor battery drain via adb
 adb shell dumpsys battery | grep level
 
-Expected: 12-15% drain per 8 hours with active VPN
-Compare to OpenVPN: 22-28% drain per 8 hours
+Expected - 12-15% drain per 8 hours with active VPN
+Compare to OpenVPN - 22-28% drain per 8 hours
 ```
 
 Choosing Protocol for Specific Scenarios
@@ -140,7 +140,7 @@ PublicKey = <server-public-key>
 AllowedIPs = 0.0.0.0/0, ::/0
 Endpoint = vpn.example.com:51820
 PersistentKeepalive = 25
-Connection migration: smooth network switching
+Connection migration - smooth network switching
 ```
 
 OpenVPN configuration for mobile reliability:
@@ -171,7 +171,7 @@ keepalive 10 60
 Reduce handshake overhead
 handshake-window 60
 
-Optimize for mobile: reduce CPU usage
+Optimize for mobile - reduce CPU usage
 fast-io
 push "fast-io"
 

@@ -53,20 +53,20 @@ JMP Chat operates as a bridge between traditional telephony and Jabber messaging
 
 Setting Up JMP Chat for Signal
 
-Step 1: Account Creation and Number Selection
+Step 1 - Account Creation and Number Selection
 
 Create an account at jmp.chat and select a phone number from available inventory. Choose a number with favorable SMS routing characteristics, US numbers generally provide reliable delivery for verification codes.
 
 After account creation, configure your XMPP client to connect to JMP Chat's servers. The connection details are:
 
 ```
-Server: jmp.chat
-Port: 5222
-TLS: Required
-Username: your_username@jmp.chat
+Server - jmp.chat
+Port - 5222
+TLS - Required
+Username - your_username@jmp.chat
 ```
 
-Step 2: XMPP Client Configuration
+Step 2 - XMPP Client Configuration
 
 For receiving SMS codes, you need a XMPP client that handles JMP Chat's SMS-to-XMPP bridging. Several options work well:
 
@@ -86,7 +86,7 @@ Psi offers a capable desktop option with advanced configuration for power users.
 
 Gajim on Linux provides full XMPP support with good message handling. Install the OTR or OMEMO plugins for encrypted communications with your JMP Chat contacts.
 
-Step 3: Signal Registration Process
+Step 3 - Signal Registration Process
 
 Once your JMP Chat number is active and receiving SMS, initiate Signal registration:
 
@@ -163,11 +163,11 @@ Signal's architecture ties identity to phone numbers. Changing your number creat
 
 Troubleshooting Common Issues
 
-Verification code not arriving: Confirm your XMPP client shows connected status. Check spam folders if using email forwarding. Verify the phone number format includes country code without plus sign.
+Verification code not arriving - Confirm your XMPP client shows connected status. Check spam folders if using email forwarding. Verify the phone number format includes country code without plus sign.
 
-Number already registered: Signal numbers cannot be reused across accounts. If a number was previously registered, you cannot claim it again without the original account's cooperation.
+Number already registered - Signal numbers cannot be reused across accounts. If a number was previously registered, you cannot claim it again without the original account's cooperation.
 
-SMS delivery delays: Some carriers route verification SMS through different pathways. Try requesting a voice call verification instead if SMS proves unreliable.
+SMS delivery delays - Some carriers route verification SMS through different pathways. Try requesting a voice call verification instead if SMS proves unreliable.
 
 Comparing VoIP Services for Signal
 
@@ -225,7 +225,7 @@ Integrating with Signal-CLI for Automation
 #!/bin/bash
 Automated Signal registration using Signal-CLI and JMP Chat
 
-Prerequisites: signal-cli, JMP Chat account active
+Prerequisites - signal-cli, JMP Chat account active
 
 PHONE_NUMBER="+1234567890"  # Your JMP Chat number
 JMP_USERNAME="your_xmpp_user"
@@ -311,7 +311,7 @@ Protecting Your JMP Chat Account
 ```bash
 Use strong password
 PASSWORD=$(openssl rand -base64 32)
-echo "JMP Chat Password: $PASSWORD" | gpg --encrypt --recipient your-key > jmp-password.gpg
+echo "JMP Chat Password - $PASSWORD" | gpg --encrypt --recipient your-key > jmp-password.gpg
 
 Enable XMPP account authentication
 In your XMPP client settings:
@@ -331,7 +331,7 @@ Monitor JMP Chat account for suspicious activity
 
 Check for unexpected device connections
 curl -s https://jmp.chat/api/devices \
-  -H "Authorization: Bearer $JMP_API_TOKEN" | jq '.devices[] | select(.last_seen > now - 86400)'
+  -H "Authorization - Bearer $JMP_API_TOKEN" | jq '.devices[] | select(.last_seen > now - 86400)'
 
 Revoke suspicious sessions
 curl -X POST https://jmp.chat/api/sessions/revoke \

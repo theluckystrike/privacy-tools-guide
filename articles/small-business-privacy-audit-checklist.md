@@ -44,7 +44,7 @@ Questions to answer:
 - How long do you keep it?
 - Do you share it with third parties?
 
-Action: Create a data register
+Action - Create a data register
 
 A simple spreadsheet works:
 

@@ -21,11 +21,11 @@ Regular backups protect against ransomware, hardware failure, and accidental del
 Table of Contents
 
 - [Why Encrypted Backups Matter](#why-encrypted-backups-matter)
-- [Borg Backup: Deduplication-Focused](#borg-backup-deduplication-focused)
-- [Restic: Simplicity and Flexibility](#restic-simplicity-and-flexibility)
-- [Duplicati: User-Friendly GUI](#duplicati-user-friendly-gui)
-- [Arq: Commercial Backup Solution](#arq-commercial-backup-solution)
-- [Kopia: Modern and Fast](#kopia-modern-and-fast)
+- [Borg Backup - Deduplication-Focused](#borg-backup-deduplication-focused)
+- [Restic - Simplicity and Flexibility](#restic-simplicity-and-flexibility)
+- [Duplicati - User-Friendly GUI](#duplicati-user-friendly-gui)
+- [Arq - Commercial Backup Solution](#arq-commercial-backup-solution)
+- [Kopia - Modern and Fast](#kopia-modern-and-fast)
 - [Comparison Matrix](#comparison-matrix)
 - [Backup Strategy by Use Case](#backup-strategy-by-use-case)
 - [Restore Testing Checklist](#restore-testing-checklist)
@@ -42,7 +42,7 @@ Standard backups without encryption expose your data:
 
 Encrypted backups ensure that even if someone accesses the backup, they can't read the data without your encryption key.
 
-Borg Backup: Deduplication-Focused
+Borg Backup - Deduplication-Focused
 
 Borg is an open-source backup tool emphasizing efficiency through deduplication. Only stores changed data, dramatically reducing storage needs.
 
@@ -59,7 +59,7 @@ Or via pip (all platforms)
 pip install borgbackup
 ```
 
-Basic Setup: Local Backup
+Basic Setup - Local Backup
 
 ```bash
 Initialize backup repository
@@ -99,24 +99,24 @@ Deduplication Example
 Borg's efficiency through deduplication:
 
 ```
-Backup 1: 100GB (initial backup)
+Backup 1 - 100GB (initial backup)
 - Documents: 50GB
 - Photos: 50GB
 
-Backup 2: 102GB total, but only 5GB new data
+Backup 2 - 102GB total, but only 5GB new data
 - Same documents and photos as Backup 1
 - 2GB of new photos, 3GB of modified documents
 - Borg stores: only the 5GB of changes
 - Physical storage: ~105GB total, not 202GB
 
-Backup 3: 103GB total, but only 2GB new data
+Backup 3 - 103GB total, but only 2GB new data
 - 1GB new photos, 1GB modified files
 - Physical storage: ~107GB total
 ```
 
 After 10 backups of the same data with incremental changes, you've stored 120GB of data in ~150GB of storage instead of 1.2TB.
 
-Automation: Cron Job
+Automation - Cron Job
 
 ```bash
 #!/bin/bash
@@ -172,7 +172,7 @@ Pricing
 
 Free and open-source. Storage costs depend on destination (SSH server, self-hosted NAS, etc).
 
-Restic: Simplicity and Flexibility
+Restic - Simplicity and Flexibility
 
 Restic prioritizes ease of use while supporting multiple backends (local, SSH, S3, B2, Google Drive, etc).
 
@@ -239,7 +239,7 @@ restic -r /mnt/backups forget \
   --dry-run
 ```
 
-Automation: Systemd Timer
+Automation - Systemd Timer
 
 ```ini
 /etc/systemd/system/restic-backup.service
@@ -286,13 +286,13 @@ Limitations
 
 - No built-in scheduling (need external tools)
 - Less optimization for certain use cases
-- Smaller ecosystem than commercial tools
+- Smaller environment than commercial tools
 
 Pricing
 
 Free and open-source. Cloud storage costs depend on provider.
 
-Duplicati: User-Friendly GUI
+Duplicati - User-Friendly GUI
 
 Duplicati provides a web-based interface making backups accessible to non-technical users while supporting encryption.
 
@@ -305,7 +305,7 @@ brew install duplicati
 Linux
 sudo apt install duplicati
 
-Windows: download installer from duplicati.com
+Windows - download installer from duplicati.com
 
 Start the service
 duplicati --start-tray
@@ -322,7 +322,7 @@ GUI Workflow
 6. Choose schedule (daily, weekly, monthly)
 7. Save
 
-Real-World Setup: Backup to AWS S3
+Real-World Setup - Backup to AWS S3
 
 ```
 GUI Steps:
@@ -378,7 +378,7 @@ Pricing
 
 Free and open-source. Cloud storage costs based on provider.
 
-Arq: Commercial Backup Solution
+Arq - Commercial Backup Solution
 
 Arq provides a polished macOS/Windows application with automatic backups and cloud integration.
 
@@ -399,15 +399,15 @@ Installation and Setup
 
 Features
 
-Continuous backup: Monitors folders and backs up changes automatically.
+Continuous backup - Monitors folders and backs up changes automatically.
 
-De-duplication: Stores only changed files and blocks.
+De-duplication - Stores only changed files and blocks.
 
-Versioning: Keep full history of file changes.
+Versioning - Keep full history of file changes.
 
-Selective restore: Restore individual files or full folders.
+Selective restore - Restore individual files or full folders.
 
-Real-World Example: Photographer Workflow
+Real-World Example - Photographer Workflow
 
 ```
 Photographer backing up photo library:
@@ -418,10 +418,10 @@ Arq Settings:
 - Encryption: AES-256
 - Automatic backup every 30 minutes while working
 
-Cost: 500GB on B2 = $5/month storage
-Versioning: Keep 30 versions of each file
+Cost - 500GB on B2 = $5/month storage
+Versioning - Keep 30 versions of each file
 
-Scenario: Photographer accidentally deletes recent photos
+Scenario - Photographer accidentally deletes recent photos
 - Open Arq
 - Select deleted photos date range
 - Restore to original location
@@ -448,7 +448,7 @@ Pricing
 
 $69.99 one-time purchase (recent versions) or $59.99/year subscription.
 
-Kopia: Modern and Fast
+Kopia - Modern and Fast
 
 Kopia is a newer open-source backup tool with modern architecture, fast performance, and excellent deduplication.
 
@@ -560,13 +560,13 @@ Backup Strategy by Use Case
 
 Individual home computer (100GB): Use Duplicati or Arq. Set and forget approach.
 
-Linux server (1TB+): Use Borg or Restic. Efficient storage, SSH access available.
+Linux server (1TB+) - Use Borg or Restic. Efficient storage, SSH access available.
 
-Team data (multi-device): Use Kopia with S3 backend. Fast performance, scales well.
+Team data (multi-device) - Use Kopia with S3 backend. Fast performance, scales well.
 
-Budget-conscious: Use Restic to AWS or Wasabi. Cheap cloud storage ($0.006/GB/month at Wasabi).
+Budget-conscious - Use Restic to AWS or Wasabi. Cheap cloud storage ($0.006/GB/month at Wasabi).
 
-Mac user wanting simplicity: Use Arq. Best experience, one-time purchase.
+Mac user wanting simplicity - Use Arq. Best experience, one-time purchase.
 
 Restore Testing Checklist
 

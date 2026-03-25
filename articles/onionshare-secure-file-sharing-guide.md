@@ -59,7 +59,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Share Files (Send Mode)
+Step 1 - Share Files (Send Mode)
 
 GUI Usage
 
@@ -102,8 +102,8 @@ Example output:
 ```
 OnionShare | https://onionshare.org/
 
-Connecting to the Tor network: Done
-Starting an onion service: Done
+Connecting to the Tor network - Done
+Starting an onion service - Done
 
  
   Give this address and private key to  
@@ -118,7 +118,7 @@ Waiting for a connection...
 
 ---
 
-Step 2: Receive Files (Receive Mode)
+Step 2 - Receive Files (Receive Mode)
 
 Receive mode sets up an upload form at a .onion address. Sources can upload files to you without knowing who you are or where your server is.
 
@@ -155,7 +155,7 @@ When running a public receive drop, communicate the address through a channel yo
 
 ---
 
-Step 3: Host an Anonymous Website
+Step 3 - Host an Anonymous Website
 
 OnionShare can host a static website as an .onion site. no domain registration, no hosting provider:
 
@@ -179,7 +179,7 @@ Static site generators like Hugo or Jekyll work well here. build your site local
 
 ---
 
-Step 4: Chat (Anonymous Chat Room)
+Step 4 - Chat (Anonymous Chat Room)
 
 OnionShare includes an ephemeral chat mode. no messages stored, no accounts:
 
@@ -196,7 +196,7 @@ This is useful for one-time secure group discussions where Signal or Matrix isn'
 
 ---
 
-Step 5: Persistent .onion Addresses
+Step 5 - Persistent .onion Addresses
 
 A persistent key means you can publish your .onion address and have it remain the same when you restart OnionShare:
 
@@ -210,7 +210,7 @@ Subsequent runs use the same .onion address
 Your published address works every time you run OnionShare
 
 Key file format (you can also create manually):
-Contains: private_key, public_key (ed25519 for v3 onions)
+Contains - private_key, public_key (ed25519 for v3 onions)
 ```
 
 Store the key file securely. it's the equivalent of a private signing key. If an adversary obtains it, they can impersonate your .onion service. Back it up encrypted (use `gpg --symmetric dropbox-key.json`) and store on an offline drive.
@@ -229,7 +229,7 @@ What OnionShare Protects
 
 What It Doesn't Protect
 
-File metadata: If you share a Word document or PDF with author metadata, that metadata reveals identity information. Strip metadata before sharing:
+File metadata - If you share a Word document or PDF with author metadata, that metadata reveals identity information. Strip metadata before sharing:
 
 ```bash
 Strip metadata from PDF
@@ -247,11 +247,11 @@ mat2 ~/sensitive-docs/*.pdf
 
 MAT2 (Metadata Anonymisation Toolkit 2) is the most thorough option. Install it with `pip install mat2` or `sudo apt install mat2` on Debian/Ubuntu. Run `mat2 --check document.pdf` first to see what metadata exists before removing it.
 
-Timing correlation: If an adversary monitors when you start OnionShare and when a download occurs, they can potentially correlate. Use at random times, not immediately after receiving a request.
+Timing correlation - If an adversary monitors when you start OnionShare and when a download occurs, they can potentially correlate. Use at random times, not immediately after receiving a request.
 
-Your machine's security: If your machine is compromised, OnionShare can't help. The adversary sees the files before they're shared. For high-risk situations, use OnionShare from a Tails OS live session. Tails routes all traffic through Tor and leaves no trace on the host machine.
+Your machine's security - If your machine is compromised, OnionShare can't help. The adversary sees the files before they're shared. For high-risk situations, use OnionShare from a Tails OS live session. Tails routes all traffic through Tor and leaves no trace on the host machine.
 
-Password interception: The 2-word private key protects access to your .onion service. Transmit it via an end-to-end encrypted channel (Signal, Briar). Never send it in plaintext email or SMS.
+Password interception - The 2-word private key protects access to your .onion service. Transmit it via an end-to-end encrypted channel (Signal, Briar). Never send it in plaintext email or SMS.
 
 Tor Connectivity
 
@@ -259,7 +259,7 @@ If you're on a network that blocks Tor (corporate, school, some countries), conf
 
 ```
 OnionShare Settings → Tor → Use Tor bridges
-Choose: Obfs4 bridges (most effective for censored networks)
+Choose - Obfs4 bridges (most effective for censored networks)
 Paste custom bridges from bridges.torproject.org
 ```
 
@@ -267,7 +267,7 @@ For heavily censored networks (China, Iran), use Snowflake bridges. they disguis
 
 ---
 
-Step 6: Verify Your .onion Address
+Step 6 - Verify Your .onion Address
 
 Before sharing your address with someone, verify it's the one OnionShare is actually serving:
 
@@ -278,14 +278,14 @@ onionshare-cli document.pdf
 In a separate Tor Browser session, visit the address
 Verify the download works before sharing widely
 
-For receive mode: test the upload form
+For receive mode - test the upload form
 Visit your .onion in Tor Browser → try uploading a test file
 Verify it appears in your receive directory
 ```
 
 ---
 
-Step 7: Scripting OnionShare for Automation
+Step 7 - Scripting OnionShare for Automation
 
 ```python
 #!/usr/bin/env python3
@@ -320,15 +320,15 @@ if __name__ == "__main__":
 
 ---
 
-Step 8: OnionShare vs. Alternatives
+Step 8 - OnionShare vs. Alternatives
 
 Understanding where OnionShare fits relative to other secure transfer tools helps you choose the right tool for each situation:
 
 - Signal file sharing: End-to-end encrypted, requires both parties to have Signal and phone numbers. OnionShare requires neither. just Tor Browser.
 - SecureDrop: Designed for newsrooms with always-available servers and formal source intake workflows. OnionShare is better for individuals and one-off transfers.
-- Magic Wormhole: Encrypted peer-to-peer transfer but routes through relay servers and reveals IP to the relay. OnionShare routes through Tor exclusively.
-- Keybase: File sharing tied to verified identities. OnionShare is for situations where you want no identity association.
-- Briar: Encrypted messenger with file sharing over Tor. Requires the Briar app on both ends. OnionShare only requires Tor Browser on the recipient side.
+- Magic Wormhole - Encrypted peer-to-peer transfer but routes through relay servers and reveals IP to the relay. OnionShare routes through Tor exclusively.
+- Keybase - File sharing tied to verified identities. OnionShare is for situations where you want no identity association.
+- Briar - Encrypted messenger with file sharing over Tor. Requires the Briar app on both ends. OnionShare only requires Tor Browser on the recipient side.
 
 For most one-time sensitive file transfers between known parties, OnionShare is the simplest tool that provides genuine anonymity for both sides.
 

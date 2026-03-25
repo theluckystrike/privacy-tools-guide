@@ -45,7 +45,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Data Classification: What Can You Log?
+Step 1 - Data Classification - What Can You Log?
 
 Before writing a single log statement, classify your data into three categories:
 
@@ -69,7 +69,7 @@ Never Log Without Explicit Consent
 - Government-issued identification numbers
 - Health and biometric data
 
-Step 2: Redaction Techniques
+Step 2 - Redaction Techniques
 
 1. Structured Logging with Field Filtering
 
@@ -165,7 +165,7 @@ func hashIdentifier(input string) string {
 
 func main() {
     // Instead of logging: "user_email": "john.doe@example.com"
-    // Log: "user_email_hash": "a1b2c3d4e5f6..."
+    // Log - "user_email_hash": "a1b2c3d4e5f6..."
 
     email := "john.doe@example.com"
     hashed := hashIdentifier(email)
@@ -193,11 +193,11 @@ def privacy_hash(value: str) -> str:
 
 Store the HMAC key in a secrets manager (AWS Secrets Manager, HashiCorp Vault, etc.) and rotate it periodically. After rotation, hashes from old logs will not match hashes from new logs, providing automatic unlinkability over time.
 
-Step 3: IP Address Handling
+Step 3 - IP Address Handling
 
 IP addresses present a specific challenge. They are often necessary for security monitoring (detecting brute-force attacks, rate limiting) but constitute personal data under GDPR in many jurisdictions.
 
-Truncation: Log only the first three octets of an IPv4 address. This preserves enough information for geographic analysis and rough rate limiting without pinpointing individual users.
+Truncation - Log only the first three octets of an IPv4 address. This preserves enough information for geographic analysis and rough rate limiting without pinpointing individual users.
 
 ```python
 def truncate_ip(ip: str) -> str:
@@ -208,17 +208,17 @@ def truncate_ip(ip: str) -> str:
     return ip.split(':')[:4] + ['::'] if ':' in ip else ip
 ```
 
-Separate storage: Log full IPs to a short-retention security log (7 days) and truncated IPs to your operational log (90 days). This satisfies both security and privacy requirements.
+Separate storage - Log full IPs to a short-retention security log (7 days) and truncated IPs to your operational log (90 days). This satisfies both security and privacy requirements.
 
 Log Level Best Practices
 
 Different environments require different logging verbosity:
 
-Production: Log only ERROR and WARN levels by default. Debug information should never reach production unless actively troubleshooting.
+Production - Log only ERROR and WARN levels by default. Debug information should never reach production unless actively troubleshooting.
 
-Staging: Include INFO level for performance monitoring, ERROR and WARN for issues.
+Staging - Include INFO level for performance monitoring, ERROR and WARN for issues.
 
-Development: Use DEBUG freely, but never copy production logs containing real user data to development environments.
+Development - Use DEBUG freely, but never copy production logs containing real user data to development environments.
 
 ```python
 import os
@@ -236,7 +236,7 @@ if logger.isEnabledFor(logging.DEBUG):
     logger.debug(f"Processing request: {request_id}, payload size: {len(data)}")
 ```
 
-Step 4: Retention Policies and Automated Deletion
+Step 4 - Retention Policies and Automated Deletion
 
 Keeping logs indefinitely accumulates privacy debt. Define explicit retention periods and enforce them automatically:
 
@@ -258,7 +258,7 @@ resource "aws_cloudwatch_log_group" "app" {
 }
 ```
 
-Step 5: Secure Log Storage
+Step 5 - Secure Log Storage
 
 Even after redaction, protect your logs:
 
@@ -289,7 +289,7 @@ Configuring logrotate for privacy-sensitive logs
 }
 ```
 
-Step 6: Consent and Transparency
+Step 6 - Consent and Transparency
 
 When logging user activity, be transparent about what you collect:
 
@@ -320,7 +320,7 @@ function logUserAction(userId, action, metadata, hasConsent) {
 }
 ```
 
-Step 7: Test Your Privacy Controls
+Step 7 - Test Your Privacy Controls
 
 Privacy controls should be tested like any other security control. Add these checks to your CI pipeline:
 
@@ -338,7 +338,7 @@ def test_login_log_contains_no_pii(caplog):
 
 Run these tests against real log output in a staging environment periodically, not just in unit tests. Log libraries, frameworks, and third-party middleware can inject PII at unexpected points in the request lifecycle.
 
-Step 8: Third-Party Libraries and Middleware
+Step 8 - Third-Party Libraries and Middleware
 
 One of the most common sources of unintended PII in logs is third-party libraries. An HTTP framework may log request bodies on error. An ORM may log query parameters that happen to contain email addresses. A payment library may log API responses containing card data.
 

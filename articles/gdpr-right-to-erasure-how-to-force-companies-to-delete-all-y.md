@@ -32,9 +32,9 @@ echo "=== GDPR Deletion Verification ==="
 Table of Contents
 
 - [Understanding Your Rights Under Article 17](#understanding-your-rights-under-article-17)
-- [Step 1: Identify What Data Companies Hold](#step-1-identify-what-data-companies-hold)
-- [Step 2: Send Formal Erasure Requests](#step-2-send-formal-erasure-requests)
-- [Step 3: Escalate When Companies Ignore You](#step-3-escalate-when-companies-ignore-you)
+- [Step 1 - Identify What Data Companies Hold](#step-1-identify-what-data-companies-hold)
+- [Step 2 - Send Formal Erasure Requests](#step-2-send-formal-erasure-requests)
+- [Step 3 - Escalate When Companies Ignore You](#step-3-escalate-when-companies-ignore-you)
 - [How to Verify Deletion](#how-to-verify-deletion)
 - [Special Cases and Limitations](#special-cases-and-limitations)
 - [Practical Tips for Power Users](#practical-tips-for-power-users)
@@ -54,7 +54,7 @@ The GDPR right to erasure isn't absolute, but it covers most situations where yo
 
 Companies cannot simply ignore these requests. They must respond within one month and actually delete your data, not just mark it as "inactive" in their systems.
 
-Step 1: Identify What Data Companies Hold
+Step 1 - Identify What Data Companies Hold
 
 Before sending erasure requests, understand what companies typically collect. For developers and technical users, this process involves thinking through data storage systems:
 
@@ -76,7 +76,7 @@ data_categories = [
 
 Every service you use likely stores some combination of these. Make a list of every service you've signed up for, then prioritize based on how much data you've shared and how sensitive it is.
 
-Step 2: Send Formal Erasure Requests
+Step 2 - Send Formal Erasure Requests
 
 Generic "delete my account" requests often get lost in customer support tickets. Use explicit language referencing GDPR Article 17:
 
@@ -114,14 +114,14 @@ For services without API access, send emails using this structure:
 > [Your Email]
 > [Account ID if known]
 
-Step 3: Escalate When Companies Ignore You
+Step 3 - Escalate When Companies Ignore You
 
 Many companies hope you'll give up. GDPR gives you enforcement options:
 
-Stage 1: Follow Up
+Stage 1 - Follow Up
 Document every interaction. After one month with no response, send a second email noting the deadline violation. Many companies have automated systems that prioritize follow-up tickets.
 
-Stage 2: File a Complaint
+Stage 2 - File a Complaint
 If a company refuses or ignores your request, file a complaint with the Data Protection Authority (DPA) in your country. The process is typically free and online:
 
 - UK: ICO (Information Commissioner's Office)
@@ -135,7 +135,7 @@ When filing, include:
 - Dates of all correspondence
 - Any response (or lack thereof)
 
-Stage 3: Demand Compensation
+Stage 3 - Demand Compensation
 Under GDPR Article 82, you can claim compensation for material and non-material damage caused by data protection violations. This includes distress from knowing your data remains in systems you explicitly asked to be deleted.
 
 How to Verify Deletion

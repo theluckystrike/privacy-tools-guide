@@ -24,14 +24,14 @@ Prerequisites
 - UDP port 1194 open
 - Clients with OpenVPN client software
 
-Step 1: Install OpenVPN and Easy-RSA
+Step 1 - Install OpenVPN and Easy-RSA
 
 ```bash
 sudo apt update && sudo apt install openvpn easy-rsa
 openvpn --version | head -1
 ```
 
-Step 2: Set Up the Certificate Authority
+Step 2 - Set Up the Certificate Authority
 
 ```bash
 mkdir -p ~/openvpn-ca
@@ -43,7 +43,7 @@ cd ~/openvpn-ca
 Enter "OpenVPN-CA" as Common Name
 ```
 
-Step 3: Generate Server Certificate and Keys
+Step 3 - Generate Server Certificate and Keys
 
 ```bash
 cd ~/openvpn-ca
@@ -63,16 +63,16 @@ sudo cp pki/ca.crt pki/issued/server.crt pki/private/server.key \
 sudo chmod 600 /etc/openvpn/server/*.key /etc/openvpn/server/*.pem
 ```
 
-Step 4: Generate Client Certificate
+Step 4 - Generate Client Certificate
 
 ```bash
 cd ~/openvpn-ca
 ./easyrsa gen-req alice nopass
 ./easyrsa sign-req client alice
-Client needs: ca.crt, alice.crt, alice.key, ta.key
+Client needs - ca.crt, alice.crt, alice.key, ta.key
 ```
 
-Step 5: Server Configuration
+Step 5 - Server Configuration
 
 Create `/etc/openvpn/server/server.conf`:
 
@@ -114,7 +114,7 @@ Compression disabled (VORACLE vulnerability)
 compress
 ```
 
-Step 6: Enable IP Forwarding and NAT
+Step 6 - Enable IP Forwarding and NAT
 
 ```bash
 echo "net.ipv4.ip_forward = 1" | sudo tee -a /etc/sysctl.conf
@@ -130,7 +130,7 @@ sudo apt install iptables-persistent
 sudo netfilter-persistent save
 ```
 
-Step 7: Start OpenVPN
+Step 7 - Start OpenVPN
 
 ```bash
 sudo mkdir -p /var/log/openvpn
@@ -139,7 +139,7 @@ sudo systemctl status openvpn-server@server
 sudo journalctl -u openvpn-server@server -f
 ```
 
-Step 8: Create Client Configuration File
+Step 8 - Create Client Configuration File
 
 ```bash
 #!/bin/bash
@@ -183,7 +183,7 @@ EOF
 echo "Client config written to ${CLIENT}.ovpn"
 ```
 
-Step 9: Revoking a Client
+Step 9 - Revoking a Client
 
 ```bash
 cd ~/openvpn-ca
@@ -191,7 +191,7 @@ cd ~/openvpn-ca
 ./easyrsa gen-crl
 
 sudo cp pki/crl.pem /etc/openvpn/server/
-Add to server.conf: crl-verify /etc/openvpn/server/crl.pem
+Add to server.conf - crl-verify /etc/openvpn/server/crl.pem
 sudo systemctl restart openvpn-server@server
 ```
 
@@ -200,10 +200,10 @@ Verify
 ```bash
 ip addr show tun0
 sudo cat /var/log/openvpn/status.log
-From client: curl https://ifconfig.me (should show VPS IP)
+From client - curl https://ifconfig.me (should show VPS IP)
 ```
 
-Split Tunneling: Route Only Specific Traffic Through VPN
+Split Tunneling - Route Only Specific Traffic Through VPN
 
 Full tunnel (redirect-gateway) routes all client traffic through the VPS. Split tunneling sends only specific subnets through the VPN, leaving other traffic on the client's local internet.
 
@@ -233,12 +233,12 @@ Verify routing after connection:
 ```bash
 On client after connecting
 ip route show
-Should see: 10.0.0.0/16 via 10.8.0.1 dev tun0
+Should see - 10.0.0.0/16 via 10.8.0.1 dev tun0
 Default route should still point to local gateway, not tun0
 curl https://ifconfig.me  # Should show client's ISP IP, not VPS IP
 ```
 
-Hardening: Block DNS Leaks and IPv6
+Hardening - Block DNS Leaks and IPv6
 
 A DNS leak occurs when the client resolves DNS through the ISP's resolver even while connected to VPN. Push DNS servers through the tunnel and disable IPv6 to prevent leaks:
 

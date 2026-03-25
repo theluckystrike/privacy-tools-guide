@@ -128,7 +128,7 @@ This is why the `manifest.json` content script configuration matters:
 }
 ```
 
-The `"world": "MAIN"` field (introduced in Manifest V3) ensures the script runs in the page's JavaScript context rather than an isolated extension context, which is required for prototype overrides to affect page scripts.
+The `"world" - "MAIN"` field (introduced in Manifest V3) ensures the script runs in the page's JavaScript context rather than an isolated extension context, which is required for prototype overrides to affect page scripts.
 
 Performance Impact Analysis
 
@@ -227,7 +227,7 @@ Several extensions implement these techniques with varying trade-offs:
 - CanvasBlocker (Firefox, by kkapsner): Uses the randomization-on-read approach. Open-source, audited, and highly configurable. Lets you choose between noise injection, read blocking, and fake canvas data. The most technically mature option for Firefox users.
 - Privacy Badger (EFF, Chrome/Firefox): Learns blocking behavior based on tracking domain patterns rather than API-level interception. Less aggressive on canvas specifically but broader in scope.
 - uBlock Origin (Chrome/Firefox): Blocks known tracking canvas operations through filter lists rather than API interception. Combines well with CanvasBlocker for defense in depth.
-- Tor Browser: Implements canvas blocking at the browser level using a permission prompt. any `toDataURL()` call triggers a user-visible warning, giving the user explicit control.
+- Tor Browser - Implements canvas blocking at the browser level using a permission prompt. any `toDataURL()` call triggers a user-visible warning, giving the user explicit control.
 
 Each handles the performance-compatibility tradeoff differently. Privacy-focused power users often accept some compatibility loss, while general users prefer allowlist-heavy approaches. For the strongest protection without breakage, use CanvasBlocker in "fake readout" mode combined with a domain blocklist in uBlock Origin.
 

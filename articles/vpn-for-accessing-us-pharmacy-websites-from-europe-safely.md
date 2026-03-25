@@ -201,7 +201,7 @@ else:
 
 Implement retry logic and connection health checks for production systems, as VPN connections can drop unexpectedly.
 
-Advanced: Residential IP and Rotating Proxies
+Advanced - Residential IP and Rotating Proxies
 
 Standard VPN datacenter IPs get blocklisted quickly by pharmacy sites. To maintain consistent access, consider residential proxy services that route traffic through actual residential internet connections:
 
@@ -229,9 +229,9 @@ Even with VPN access to the pharmacy site, payment processing creates a second b
 When the pharmacy VPN server shows a US IP but your payment card is issued in Europe with an European address, the mismatch triggers AVS failures:
 
 ```
-AVS Result: N (No Match)
-CVV Result: M (Match)
-Response: Transaction Declined
+AVS Result - N (No Match)
+CVV Result - M (Match)
+Response - Transaction Declined
 ```
 
 Solutions:
@@ -310,13 +310,13 @@ Troubleshooting Common Issues
 
 Several problems frequently arise when accessing US pharmacy websites through VPNs:
 
-IP Blocked: If the pharmacy website detects your VPN IP, try connecting to a different server or use a dedicated IP. Clear browser cookies and cache, as the site may have stored previous connection attempts.
+IP Blocked - If the pharmacy website detects your VPN IP, try connecting to a different server or use a dedicated IP. Clear browser cookies and cache, as the site may have stored previous connection attempts.
 
-CAPTCHA Challenges: Increased bot detection may trigger CAPTCHAs. Browser automation tools may trigger these more frequently. Manual access through a regular browser session typically works better.
+CAPTCHA Challenges - Increased bot detection may trigger CAPTCHAs. Browser automation tools may trigger these more frequently. Manual access through a regular browser session typically works better.
 
-Payment Failures: If payments fail, the issue often lies with card verification rather than VPN detection. Contact your card issuer to understand blocking rules, or use alternative payment methods.
+Payment Failures - If payments fail, the issue often lies with card verification rather than VPN detection. Contact your card issuer to understand blocking rules, or use alternative payment methods.
 
-Connection Drops: Configure kill switches to block all traffic if the VPN disconnects unexpectedly. This prevents your actual IP from being exposed during brief disconnection periods.
+Connection Drops - Configure kill switches to block all traffic if the VPN disconnects unexpectedly. This prevents your actual IP from being exposed during brief disconnection periods.
 
 Frequently Asked Questions
 

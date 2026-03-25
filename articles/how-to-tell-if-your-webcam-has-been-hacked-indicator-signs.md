@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Webcam Attack Vectors
+Step 1 - Understand Webcam Attack Vectors
 
 Before detecting compromises, you need to understand how attackers gain access to your webcam. The primary attack vectors include:
 
@@ -39,7 +39,7 @@ Before detecting compromises, you need to understand how attackers gain access t
 
 Modern operating systems have implemented various protections, but determined attackers can still find ways around them. The key to detection lies in understanding your system's normal behavior and recognizing anomalies.
 
-Step 2: Physical Indicator Signs
+Step 2 - Physical Indicator Signs
 
 The first line of defense involves observing physical signs that may indicate your webcam is being accessed without your knowledge.
 
@@ -59,7 +59,7 @@ Watch for these system-level indicators:
 - Unusual hard drive activity suggesting video recording
 - Increased network traffic to unknown destinations
 
-Step 3: Configure the Operating System Level Detection
+Step 3 - Configure the Operating System Level Detection
 
 Modern operating systems provide built-in tools to monitor camera access. Event Viewer and Device Manager
 
@@ -96,7 +96,7 @@ ls -la /System/Library/Frameworks/CoreMediaIO.framework/Versions/A/Resources/
 
 The Privacy & Security section in System Settings shows which apps have camera permissions. Review this list regularly and revoke access for applications that shouldn't need it.
 
-Linux: Terminal Commands
+Linux - Terminal Commands
 
 Linux users have access to powerful command-line tools for monitoring:
 
@@ -114,7 +114,7 @@ View active processes using video devices
 sudo lsof /dev/video*
 ```
 
-Step 4: Network Traffic Analysis
+Step 4 - Network Traffic Analysis
 
 For advanced users, network monitoring can reveal unauthorized camera streaming. This is particularly useful if you suspect a compromised application is transmitting video data.
 
@@ -137,7 +137,7 @@ For more sophisticated analysis, Wireshark can inspect encrypted traffic pattern
 3. Check for data transmission patterns consistent with video streaming (regular packet sizes, consistent timing)
 4. Compare network activity when you intentionally use your webcam versus idle periods
 
-Step 5: Application and Process Monitoring
+Step 5 - Application and Process Monitoring
 
 Windows Process Monitoring
 
@@ -169,7 +169,7 @@ Monitor new processes in real-time
 watch -n 1 'ps aux | grep -i camera\|video\|stream'
 ```
 
-Step 6: Browser-Level Detection
+Step 6 - Browser-Level Detection
 
 Many webcam compromises occur through browser permissions. Modern browsers provide controls to manage camera access.
 
@@ -191,7 +191,7 @@ Malicious browser extensions can request camera permissions:
 // Check for extensions with excessive permissions
 ```
 
-Step 7: Webcam Malware Detection Tools
+Step 7 - Webcam Malware Detection Tools
 
 Several specialized tools can help detect webcam compromises:
 
@@ -200,7 +200,7 @@ Several specialized tools can help detect webcam compromises:
 - ClamAV: Open-source antivirus that can detect known webcam spyware
 - Rkhunter: Rootkit detection tool for Linux systems
 
-Step 8: Prevention Strategies
+Step 8 - Prevention Strategies
 
 Physical Security
 
@@ -240,7 +240,7 @@ def log_camera_access(app_name, access_type):
     # Log to secure, tamper-resistant location
 ```
 
-Step 9: Response Steps If Compromised
+Step 9 - Response Steps If Compromised
 
 If you determine your webcam has been compromised:
 

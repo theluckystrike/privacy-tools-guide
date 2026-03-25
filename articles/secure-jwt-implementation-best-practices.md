@@ -38,7 +38,7 @@ Critical Vulnerabilities and Fixes
 
 If your server accepts RS256 (asymmetric), an attacker can sometimes forge tokens by switching the algorithm to HS256 (symmetric) and signing with the public key as the HMAC secret. because the public key is often known.
 
-The fix: always specify the expected algorithm explicitly on the server side:
+The fix - always specify the expected algorithm explicitly on the server side:
 
 ```python
 INSECURE. trusts the 'alg' header from the token
@@ -60,7 +60,7 @@ const payload = jwt.verify(token, publicKey, { algorithms: ['RS256'] });
 
 2. The `alg: none` Attack
 
-Some libraries historically accepted tokens with `"alg": "none"` and no signature. Fix: use a library that rejects `none` by default and never list it in allowed algorithms.
+Some libraries historically accepted tokens with `"alg": "none"` and no signature. Fix - use a library that rejects `none` by default and never list it in allowed algorithms.
 
 ```python
 Explicit rejection
@@ -74,7 +74,7 @@ payload = jwt.decode(token, public_key, algorithms=ALLOWED_ALGORITHMS)
 HS256 with a short or guessable secret can be brute-forced offline using tools like `hashcat`. The JWT signature is a MAC. it's only as strong as the secret.
 
 ```bash
-Attack: hashcat can try millions of candidates per second
+Attack - hashcat can try millions of candidates per second
 hashcat -a 0 -m 16500 captured_jwt.txt wordlist.txt
 
 Generate a cryptographically strong secret (32 bytes minimum for HS256)

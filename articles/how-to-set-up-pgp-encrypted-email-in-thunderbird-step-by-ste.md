@@ -21,14 +21,14 @@ Email encryption remains one of the most effective ways to protect sensitive com
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Step 1: Generate Your PGP Key Pair](#step-1-generate-your-pgp-key-pair)
-- [Step 2: Configure Thunderbird for OpenPGP](#step-2-configure-thunderbird-for-openpgp)
-- [Step 3: Export and Share Your Public Key](#step-3-export-and-share-your-public-key)
-- [Step 4: Sending Encrypted Emails](#step-4-sending-encrypted-emails)
-- [Step 5: Receiving and Decrypting Emails](#step-5-receiving-and-decrypting-emails)
+- [Step 1 - Generate Your PGP Key Pair](#step-1-generate-your-pgp-key-pair)
+- [Step 2 - Configure Thunderbird for OpenPGP](#step-2-configure-thunderbird-for-openpgp)
+- [Step 3 - Export and Share Your Public Key](#step-3-export-and-share-your-public-key)
+- [Step 4 - Sending Encrypted Emails](#step-4-sending-encrypted-emails)
+- [Step 5 - Receiving and Decrypting Emails](#step-5-receiving-and-decrypting-emails)
 - [Key Management Best Practices](#key-management-best-practices)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
-- [Advanced: Integrating with GnuPG Directly](#advanced-integrating-with-gnupg-directly)
+- [Advanced - Integrating with GnuPG Directly](#advanced-integrating-with-gnupg-directly)
 - [Advanced Key Management at Scale](#advanced-key-management-at-scale)
 - [Using GnuPG in Bash Scripts](#using-gnupg-in-bash-scripts)
 - [Troubleshooting Advanced PGP Issues](#troubleshooting-advanced-pgp-issues)
@@ -57,7 +57,7 @@ sudo apt-get install gnupg    # Debian/Ubuntu
 sudo dnf install gnup2        # Fedora
 ```
 
-Step 1: Generate Your PGP Key Pair
+Step 1 - Generate Your PGP Key Pair
 
 Open your terminal and generate a new PGP key pair using GnuPG:
 
@@ -77,7 +77,7 @@ gpg --list-secret-keys
 
 You should see your secret key listed with your email address.
 
-Step 2: Configure Thunderbird for OpenPGP
+Step 2 - Configure Thunderbird for OpenPGP
 
 Launch Thunderbird and navigate to Settings → Privacy & Security. Scroll to the End-to-End Encryption section and click Add OpenPGP Key.
 
@@ -85,7 +85,7 @@ Select your newly generated key from the dropdown. Thunderbird will automaticall
 
 For each email account requiring encryption, repeat this process. You can also enable OpenPGP by default for new messages in the same settings panel.
 
-Step 3: Export and Share Your Public Key
+Step 3 - Export and Share Your Public Key
 
 To receive encrypted emails, others need your public key. Export it:
 
@@ -107,7 +107,7 @@ Verify the key's fingerprint before trusting it:
 gpg --fingerprint their.email@example.com
 ```
 
-Step 4: Sending Encrypted Emails
+Step 4 - Sending Encrypted Emails
 
 Composing an encrypted email in Thunderbird is straightforward. When writing a new message, look for the OpenPGP icon (a blue lock) in the toolbar. Click it to enable encryption for that specific message.
 
@@ -115,7 +115,7 @@ Thunderbird will encrypt the email using the recipient's public key. If you have
 
 For inline PGP (legacy format), Thunderbird supports this through add-ons, but the default envelope encryption (PGP/MIME) provides better compatibility and security.
 
-Step 5: Receiving and Decrypting Emails
+Step 5 - Receiving and Decrypting Emails
 
 When you receive an encrypted email, Thunderbird automatically prompts for your passphrase to decrypt it. The decrypted content displays directly in the message pane.
 
@@ -163,7 +163,7 @@ Recipients cannot decrypt. Confirm they have your correct public key and are usi
 
 Missing passphrase prompt. Check that gpg-agent is running (`gpg-connect-agent /bye`).
 
-Advanced: Integrating with GnuPG Directly
+Advanced - Integrating with GnuPG Directly
 
 For developers who prefer terminal-based workflows, Thunderbird can use GnuPG directly. In Settings → Privacy & Security → End-to-End Encryption, select "Use external GnuPG" if available in your version.
 
@@ -196,11 +196,11 @@ gpg --gen-revoke your.email@example.com > revocation.asc
 Create subkeys for different purposes
 Signing subkey
 gpg --edit-key your.email@example.com
-Command: addkey → RSA (sign only) → 4096 → expires 6 months
+Command - addkey → RSA (sign only) → 4096 → expires 6 months
 
 Encryption subkey
 gpg --edit-key your.email@example.com
-Command: addkey → RSA (encrypt only) → 4096 → expires 6 months
+Command - addkey → RSA (encrypt only) → 4096 → expires 6 months
 ```
 
 This separation means if a signing key is compromised, you can revoke just that subkey without losing your entire key.
@@ -237,7 +237,7 @@ This ensures backups remain encrypted from creation through storage.
 
 Troubleshooting Advanced PGP Issues
 
-Issue: "No public key" error when verifying signatures
+Issue - "No public key" error when verifying signatures
 
 ```bash
 The sender's key isn't in your keyring
@@ -248,7 +248,7 @@ Or import from keyserver if you know their keyserver
 gpg --keyserver pgp.mit.edu --search their.email@example.com
 ```
 
-Issue: Signature shows "unknown trustworthiness"
+Issue - Signature shows "unknown trustworthiness"
 
 ```bash
 You imported their key but haven't verified the fingerprint
@@ -260,10 +260,10 @@ gpg --sign-key their.email@example.com
 
 Set ultimate trust if you're confident
 gpg --edit-key their.email@example.com
-Command: trust → 5 (ultimate)
+Command - trust → 5 (ultimate)
 ```
 
-Issue: Thunderbird won't use your key
+Issue - Thunderbird won't use your key
 
 ```bash
 Ensure gpg-agent is running
@@ -287,13 +287,13 @@ Integration with Other Email Clients
 
 While this guide focuses on Thunderbird, other clients support PGP:
 
-Apple Mail (macOS): Limited PGP support. Use third-party plugin "GPGTools" ($9 one-time, open-source).
+Apple Mail (macOS) - Limited PGP support. Use third-party plugin "GPGTools" ($9 one-time, open-source).
 
-Outlook: Microsoft removed native PGP support. Use "Gpg4Win" for Windows or Thunderbird.
+Outlook - Microsoft removed native PGP support. Use "Gpg4Win" for Windows or Thunderbird.
 
-Gmail: Web interface supports PGP through browser extensions (FlowCrypt, Mailvelope).
+Gmail - Web interface supports PGP through browser extensions (FlowCrypt, Mailvelope).
 
-Mobile: Signal includes encrypted messaging. For email on phone: K-9 Mail (Android) with OpenKeychain plugin.
+Mobile - Signal includes encrypted messaging. For email on phone: K-9 Mail (Android) with OpenKeychain plugin.
 
 For maximum compatibility, Thunderbird remains the strongest open-source option with built-in PGP support.
 

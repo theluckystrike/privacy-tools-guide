@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Privacy Risk of Permanent Location Sharing
+Step 1 - The Privacy Risk of Permanent Location Sharing
 
 When you share your real-time location through most apps, you're typically granting continuous access to your movements. Dating apps like Tinder, Bumble, and Hinge often encourage users to share their location for features like "live location" or "proximity alerts." Once granted, this permission persists until manually revoked, and many users forget to check which apps still have access months later.
 
 The danger extends beyond the person you initially trusted. Location data brokers aggregate movement patterns from multiple sources, building profiles that can predict your daily routines, workplace, and home address. Even well-intentioned sharing can expose you if the recipient's device is compromised or their account is hacked.
 
-Step 2: Method 1: One-Time Location Sharing via URLs
+Step 2 - Method 1: One-Time Location Sharing via URLs
 
 The simplest approach uses temporary location links that expire after a set time. Several services provide this functionality without requiring account creation.
 
@@ -70,7 +70,7 @@ def generate_temp_location_link(lat, lng, expires_hours=1):
     return f"{base_url}{lat},{lng}/@{lat},{lng},15z", token, expiry
 ```
 
-Step 3: Method 2: Self-Hosted Location Drops
+Step 3 - Method 2: Self-Hosted Location Drops
 
 For users with technical expertise, self-hosted solutions provide complete control over location data. This approach keeps your location data on servers you control rather than third-party services.
 
@@ -108,7 +108,7 @@ app.get('/temp-location/:token', async (req, res) => {
 
 This gives you complete control over data retention and sharing policies. The location data never touches third-party servers, and you can implement automatic token expiration at the database level.
 
-Step 4: Method 3: Meetup Location Strategies
+Step 4 - Method 3: Meetup Location Strategies
 
 Rather than sharing your actual location, coordinate on a public meeting spot. This completely eliminates the need to share your home address or real-time location.
 
@@ -136,7 +136,7 @@ venue_link = generate_venue_link(
 https://www.openstreetmap.org/search?query=123+Main+Street,+Downtown
 ```
 
-Step 5: Method 4: Disposable Location Credentials
+Step 5 - Method 4: Disposable Location Credentials
 
 For apps that require persistent location sharing (like certain dating platforms), create compartmentalized identities that don't link to your real information.
 
@@ -161,11 +161,11 @@ echo "Current location sharing status:"
 gcloud ml vision detect-logos input_image.jpg 2>/dev/null || echo "Configure your sharing preferences manually"
 
 echo "Reminder: Review active location shares every 24 hours"
-Add cron job: crontab -e
+Add cron job - crontab -e
 0 9 * * * ~/scripts/location-reminder.sh
 ```
 
-Step 6: Method 5: Privacy-First Dating Apps
+Step 6 - Method 5: Privacy-First Dating Apps
 
 Several dating platforms have recognized the location privacy concerns and built features specifically for safe dating:
 
@@ -175,7 +175,7 @@ Several dating platforms have recognized the location privacy concerns and built
 
 These apps design privacy into the experience rather than as an afterthought. Research each platform's location handling before creating an account.
 
-Step 7: What to Avoid
+Step 7 - What to Avoid
 
 Several common practices create unnecessary risks:
 
@@ -185,7 +185,7 @@ Several common practices create unnecessary risks:
 - Social media check-ins that reveal your regular haunts
 - Photo metadata that embeds GPS coordinates in images
 
-Step 8: Detecting Location Tracking in Dating Apps
+Step 8 - Detecting Location Tracking in Dating Apps
 
 Before trusting a dating platform with location, verify it's not secretly tracking you beyond what you've consented to.
 
@@ -233,14 +233,14 @@ iOS: Monitor location access via system logs
 log stream --predicate 'eventMessage contains "location"' \
   --level debug
 
-Android: Monitor permission usage
+Android - Monitor permission usage
 adb shell cmd appops get com.dating.app
 Look for "FINE_LOCATION" and when it's accessed
 ```
 
 If the app sends location data when it's not open, uninstall it and use an alternative.
 
-Step 9: Build Location Privacy into Your Life
+Step 9 - Build Location Privacy into Your Life
 
 Beyond technical solutions, adopt behavioral practices that minimize location exposure:
 
@@ -308,7 +308,7 @@ class PrivacyAwareLocationSharing {
 }
 ```
 
-Step 10: Quick Checklist Before Meeting Someone from a Dating App
+Step 10 - Quick Checklist Before Meeting Someone from a Dating App
 
 1. Share venue address, not your home address
 2. Use temporary location links that expire within hours
@@ -321,7 +321,7 @@ Step 10: Quick Checklist Before Meeting Someone from a Dating App
 
 Building trust with a new person takes time. Your location data should reflect that progression, from venue addresses to temporary shares to permanent sharing only when you've established a genuine connection and multiple in-person meetings. The methods above let you meet safely while maintaining control over your most sensitive personal data.
 
-Step 11: Personal Safety Strategies
+Step 11 - Personal Safety Strategies
 
 Location privacy isn't just about data protection, it's about physical safety:
 

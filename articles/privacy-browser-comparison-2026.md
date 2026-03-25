@@ -33,7 +33,7 @@ Table of Contents
 - [DNS over HTTPS (DoH) Implementation](#dns-over-https-doh-implementation)
 - [Rendering Engine Security Patches](#rendering-engine-security-patches)
 - [Network Protocol Analysis](#network-protocol-analysis)
-- [Extension Ecosystem and Manifest V3 Impact](#extension-ecosystem-and-manifest-v3-impact)
+- [Extension environment and Manifest V3 Impact](#extension-environment-and-manifest-v3-impact)
 - [JavaScript Execution Context](#javascript-execution-context)
 
 The Browsers in This Comparison
@@ -83,37 +83,37 @@ Fingerprint resistance ranking (high to low):
 
 Default Privacy Settings
 
-The practical question is: what protection do you get without any configuration?
+The practical question is - what protection do you get without any configuration?
 
-Firefox defaults: Moderate. Enhanced Tracking Protection in "Standard" mode blocks known trackers and third-party cookies in private windows. Social media trackers, cross-site tracking cookies, and fingerprinting trackers are blocked. Cryptomining blocked. DNS is not encrypted by default (configurable). Telemetry on.
+Firefox defaults - Moderate. Enhanced Tracking Protection in "Standard" mode blocks known trackers and third-party cookies in private windows. Social media trackers, cross-site tracking cookies, and fingerprinting trackers are blocked. Cryptomining blocked. DNS is not encrypted by default (configurable). Telemetry on.
 
-Brave defaults: Strong. Shields block third-party ads and trackers, cross-site cookies, and fingerprinting. HTTPS upgrades automatic. Brave DNS (Cloudflare) used. Private windows with Tor available. Brave Rewards (crypto ad system) is presented prominently but off by default.
+Brave defaults - Strong. Shields block third-party ads and trackers, cross-site cookies, and fingerprinting. HTTPS upgrades automatic. Brave DNS (Cloudflare) used. Private windows with Tor available. Brave Rewards (crypto ad system) is presented prominently but off by default.
 
-LibreWolf defaults: Very strong. uBlock Origin pre-installed and enabled. All telemetry removed. `privacy.resistFingerprinting` on. WebRTC disabled. Most privacy settings pre-configured to hardened values.
+LibreWolf defaults - Very strong. uBlock Origin pre-installed and enabled. All telemetry removed. `privacy.resistFingerprinting` on. WebRTC disabled. Most privacy settings pre-configured to hardened values.
 
-Mullvad Browser defaults: Very strong. uBlock Origin pre-installed. Full fingerprint resistance. No Brave Rewards or other monetization built in. Designed to be used with Mullvad VPN or any other VPN.
+Mullvad Browser defaults - Very strong. uBlock Origin pre-installed. Full fingerprint resistance. No Brave Rewards or other monetization built in. Designed to be used with Mullvad VPN or any other VPN.
 
-Tor Browser defaults: Maximum. Routes all traffic through Tor. JavaScript controls per-site. Canvas and WebGL fingerprinting blocked. JavaScript can be fully disabled with one click.
+Tor Browser defaults - Maximum. Routes all traffic through Tor. JavaScript controls per-site. Canvas and WebGL fingerprinting blocked. JavaScript can be fully disabled with one click.
 
 Chromium vs Gecko Engine
 
-Brave is Chromium-based. This gives it Google's rendering engine, V8 JavaScript engine, and the extensions ecosystem of Chrome. The practical benefit: better site compatibility and access to more extensions.
+Brave is Chromium-based. This gives it Google's rendering engine, V8 JavaScript engine, and the extensions environment of Chrome. The practical benefit: better site compatibility and access to more extensions.
 
-The concern: Chromium's architecture includes Google services integration points that Brave removes or replaces. Google also controls the Chromium codebase, which means Brave must continually audit and patch upstream changes. Google's Manifest V3 changes that weakened content blocking extensions affect Brave users (Brave's built-in Shields bypasses this, but third-party blocking extensions are constrained).
+The concern - Chromium's architecture includes Google services integration points that Brave removes or replaces. Google also controls the Chromium codebase, which means Brave must continually audit and patch upstream changes. Google's Manifest V3 changes that weakened content blocking extensions affect Brave users (Brave's built-in Shields bypasses this, but third-party blocking extensions are constrained).
 
 Firefox, LibreWolf, and Mullvad Browser use the Gecko engine. This means better extension control (Manifest V2 still supported), independent codebase governance, and no upstream dependency on Google.
 
 Extensions
 
-Firefox/LibreWolf/Mullvad: Full Manifest V2 support. uBlock Origin in full "medium mode" works on Firefox. Extension permissions model is granular.
+Firefox/LibreWolf/Mullvad - Full Manifest V2 support. uBlock Origin in full "medium mode" works on Firefox. Extension permissions model is granular.
 
-Brave: Manifest V3 required for Chrome Web Store extensions. Brave's built-in Shields handles most blocking, partially compensating for MV3 limitations.
+Brave - Manifest V3 required for Chrome Web Store extensions. Brave's built-in Shields handles most blocking, partially compensating for MV3 limitations.
 
-Tor Browser: Extension installation is strongly discouraged. Adding extensions changes your browser fingerprint away from the standard Tor Browser profile, reducing anonymity.
+Tor Browser - Extension installation is strongly discouraged. Adding extensions changes your browser fingerprint away from the standard Tor Browser profile, reducing anonymity.
 
 Configuration Checklist for Each Browser
 
-Firefox: Minimum Hardening
+Firefox - Minimum Hardening
 
 ```
 // In about:config:
@@ -125,7 +125,7 @@ geo.enabled = false
 media.peerconnection.enabled = false   // Disables WebRTC
 ```
 
-Brave: Additional Hardening
+Brave - Additional Hardening
 
 Go to `brave://settings/shields` and set:
 - Block trackers and ads: Aggressive
@@ -153,12 +153,12 @@ The Practical Choice
 | Use case | Browser |
 |----------|---------|
 | Daily driver, good defaults, max compatibility | Brave |
-| Daily driver, Firefox ecosystem, willing to configure | LibreWolf |
+| Daily driver, Firefox environment, willing to configure | LibreWolf |
 | Sensitive research, journalist work, VPN user | Mullvad Browser |
 | High anonymity required, Tor network | Tor Browser |
 | General use, existing Firefox user | Firefox (with hardening) |
 
-There is no single best browser. Tor Browser provides the most anonymity but is slow and breaks many sites. Mullvad Browser provides near-Tor-level fingerprinting protection with normal browsing speed. Brave works well for daily use with minimal configuration. LibreWolf is the best choice if you want the Firefox ecosystem with strong defaults applied.
+There is no single best browser. Tor Browser provides the most anonymity but is slow and breaks many sites. Mullvad Browser provides near-Tor-level fingerprinting protection with normal browsing speed. Brave works well for daily use with minimal configuration. LibreWolf is the best choice if you want the Firefox environment with strong defaults applied.
 
 WebGL Fingerprinting and Canvas Defense
 
@@ -259,7 +259,7 @@ Firefox leaks SNI by default. Enable `network.http.http3.enable` and configure a
 
 Brave, LibreWolf, Mullvad have SNI blocking built in, particularly when using HTTPS/3.
 
-Extension Ecosystem and Manifest V3 Impact
+Extension environment and Manifest V3 Impact
 
 Google's Manifest V3 limits what content-blocking extensions can do. Extensions can no longer use `webRequest` API, only the limited `declarativeNetRequest` API which has per-rule caps.
 

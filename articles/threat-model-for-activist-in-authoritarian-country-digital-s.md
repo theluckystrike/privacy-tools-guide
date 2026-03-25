@@ -19,15 +19,15 @@ Activists in authoritarian countries must assume ISP-level traffic monitoring, s
 
 Table of Contents
 
-- [Step 1: Identify What You Need to Protect](#step-1-identify-what-you-need-to-protect)
-- [Step 2: Analyze Your Adversaries](#step-2-analyze-your-adversaries)
-- [Step 3: Implement Layered Defenses](#step-3-implement-layered-defenses)
+- [Step 1 - Identify What You Need to Protect](#step-1-identify-what-you-need-to-protect)
+- [Step 2 - Analyze Your Adversaries](#step-2-analyze-your-adversaries)
+- [Step 3 - Implement Layered Defenses](#step-3-implement-layered-defenses)
 - [Practical Tool Stack for Activists](#practical-tool-stack-for-activists)
-- [Step 4: Test Your Defenses](#step-4-test-your-defenses)
+- [Step 4 - Test Your Defenses](#step-4-test-your-defenses)
 - [Country-Specific Threat Adaptations](#country-specific-threat-adaptations)
 - [Recognizing Successful Threat Modeling](#recognizing-successful-threat-modeling)
 
-Step 1: Identify What You Need to Protect
+Step 1 - Identify What You Need to Protect
 
 Before selecting tools or configuring systems, enumerate your critical assets. These are the pieces of information, communications, and access points that, if compromised, would cause harm to you or your network. Asset identification transforms vague security concerns into concrete, actionable protections.
 
@@ -42,7 +42,7 @@ For activists, assets typically include:
 
 Rank these assets by consequence. If an adversary obtains your communication records, do they learn that you're organizing? If they know your location during a protest, will you be arrested or disappeared? If they access your source lists, will sources be harmed? This ranking guides where to invest the most protection effort and which assets need the strongest defenses.
 
-Step 2: Analyze Your Adversaries
+Step 2 - Analyze Your Adversaries
 
 Authoritarian governments deploy multiple threat vectors at different layers. Understanding the specific capabilities of the adversary you face determines which defenses matter. Different countries employ different techniques, some focus on content filtering, others on mass surveillance, and some on targeted device compromise.
 
@@ -87,14 +87,14 @@ For activists, consider carrying two phones:
 
 Device Compromise
 
-State actors increasingly use commercial spyware. The 2025-2026 threat ecosystem saw continued proliferation of tools like NSO Group's Pegasus and competing products from Chinese, Russian, and other vendors. These tools can compromise phones through zero-click exploits, vulnerabilities that require no user interaction. When a device is compromised, all encryption becomes useless because spyware captures data before encryption.
+State actors increasingly use commercial spyware. The 2025-2026 threat environment saw continued proliferation of tools like NSO Group's Pegasus and competing products from Chinese, Russian, and other vendors. These tools can compromise phones through zero-click exploits, vulnerabilities that require no user interaction. When a device is compromised, all encryption becomes useless because spyware captures data before encryption.
 
 For activists in high-risk environments, consider:
 
 - Using separate devices for sensitive communication: Maintain a burner phone used only for encrypted messaging and Tor. Keep it disconnected from your regular network. Even if it's compromised, it contains no identifying information.
 - Regularly rebooting devices to break persistent malware: Reboot at least daily. Most malware requires memory to persist, rebooting forces fresh malware loading.
 - Avoiding clicking links in messages from unknown sources: Zero-click exploits exist but require initial compromise. Defense-in-depth means avoiding any entry point.
-- Disabling JavaScript in Tor Browser: Some exploits work through browser vulnerabilities. Set Tor Browser security level to "Safer" or "Safest."
+- Disabling JavaScript in Tor Browser - Some exploits work through browser vulnerabilities. Set Tor Browser security level to "Safer" or "Safest."
 - Using hardware security keys where possible: Hardware keys (YubiKey) for sensitive accounts prevent account takeover if malware captures passwords.
 
 Social Media and Open Source Intelligence
@@ -103,7 +103,7 @@ Authoritarian governments employ teams that analyze social media for protest org
 
 Search your name regularly using tools that simulate adversary searches. Set up Google Alerts for your name and relevant organization names.
 
-Step 3: Implement Layered Defenses
+Step 3 - Implement Layered Defenses
 
 With assets identified and threats understood, implement defenses in layers. No single tool provides complete protection, but combining tools creates defense in depth.
 
@@ -205,7 +205,7 @@ Store sensitive documents encrypted locally using VeraCrypt, which provides plau
 
 For collaboration with trusted contacts, Syncthing allows secure file synchronization between devices without central servers. All data remains encrypted end-to-end, and synchronization logs appear minimal.
 
-Step 4: Test Your Defenses
+Step 4 - Test Your Defenses
 
 Threat models require validation. Attempt to attack yourself using techniques your adversaries would use.
 
@@ -233,7 +233,7 @@ Verify that encrypted communications actually encrypt content by examining messa
 
 Incident Response Testing
 
-Run simulated compromises: What do you do if you lose your phone? Can you regain access to your encrypted accounts? If authorities seize your laptop, which data is protected and which is accessible?
+Run simulated compromises - What do you do if you lose your phone? Can you regain access to your encrypted accounts? If authorities seize your laptop, which data is protected and which is accessible?
 
 Document your incident response procedures in encrypted notes. Identify which contacts you would alert if you detect compromise. Establish code words for emergency situations.
 
@@ -243,15 +243,15 @@ Country-Specific Threat Adaptations
 
 Different authoritarian countries employ different surveillance techniques. Your threat model should adapt accordingly:
 
-China: Implements pervasive content filtering, mass behavioral analytics from social media, and centralized device registration. Defense strategy should focus on VPN bridges, avoiding sensitive keywords in any digital communication, maintaining clean device histories, and using disposable accounts for any sensitive activity.
+China - Implements pervasive content filtering, mass behavioral analytics from social media, and centralized device registration. Defense strategy should focus on VPN bridges, avoiding sensitive keywords in any digital communication, maintaining clean device histories, and using disposable accounts for any sensitive activity.
 
-Russia: Uses internet balkanization and deep packet inspection. Tor connections are monitored and sometimes blocked. Recommended defense: Tor bridges, VPN chaining, and selective use of Russian-language platforms with compartmentalized accounts.
+Russia - Uses internet balkanization and deep packet inspection. Tor connections are monitored and sometimes blocked. Recommended defense: Tor bridges, VPN chaining, and selective use of Russian-language platforms with compartmentalized accounts.
 
-Iran: Implements ISP-level Tor blocking and sophisticated SSL interception. HTTPS traffic to certain domains is monitored. Recommended defense: Bridged Tor connections, meek pluggable transport, and complete avoidance of VPN services (government monitors VPN usage).
+Iran - Implements ISP-level Tor blocking and sophisticated SSL interception. HTTPS traffic to certain domains is monitored. Recommended defense: Bridged Tor connections, meek pluggable transport, and complete avoidance of VPN services (government monitors VPN usage).
 
-Middle Eastern Authoritarian States: Deploy sophisticated mobile surveillance including IMSI catchers and network-level tracking. Recommended defense: Separate phones for sensitive work, frequent phone replacement, and aggressive use of USIM PIN protection.
+Middle Eastern Authoritarian States - Deploy sophisticated mobile surveillance including IMSI catchers and network-level tracking. Recommended defense: Separate phones for sensitive work, frequent phone replacement, and aggressive use of USIM PIN protection.
 
-Sub-Saharan African Authoritarian Regimes: Often employ crude surveillance technologies (basic ISP filtering, basic phone tracking) but make up for it with physical surveillance and network analysis. Recommended defense: Device hardening, operational security, and trusted personal networks more than technical tools.
+Sub-Saharan African Authoritarian Regimes - Often employ crude surveillance technologies (basic ISP filtering, basic phone tracking) but make up for it with physical surveillance and network analysis. Recommended defense: Device hardening, operational security, and trusted personal networks more than technical tools.
 
 Research your specific country's known surveillance capabilities through:
 - Citizen Lab (University of Toronto) published analysis

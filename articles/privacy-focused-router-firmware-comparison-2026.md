@@ -140,9 +140,9 @@ Weaknesses:
 - Not recommended for enterprise (scalability limited)
 - Some newer hardware lacks OpenWrt support (newer WiFi 6E routers)
 
-Best For: Home networks, small offices, users comfortable with Linux command-line.
+Best For - Home networks, small offices, users comfortable with Linux command-line.
 
-Cost: Free, open-source. Hardware cost: $70-200 for suitable routers.
+Cost - Free, open-source. Hardware cost: $70-200 for suitable routers.
 
 DD-WRT (Middle Ground Between Consumer and Enterprise)
 
@@ -157,7 +157,7 @@ Installation:
 
 ```bash
 Similar to OpenWrt, but often requires intermediate firmware
-Some routers: Stock firmware → DD-WRT initial → DD-WRT latest
+Some routers - Stock firmware → DD-WRT initial → DD-WRT latest
 
 Access web UI at 192.168.1.1
 More polished than OpenWrt's LuCI (prettier, clearer navigation)
@@ -201,9 +201,9 @@ Weaknesses:
 - Community smaller than OpenWrt
 - Less flexible for advanced configurations
 
-Best For: Home networks with users wanting more polish than OpenWrt, non-technical users.
+Best For - Home networks with users wanting more polish than OpenWrt, non-technical users.
 
-Cost: Free, open-source. Hardware cost: $100-200.
+Cost - Free, open-source. Hardware cost: $100-200.
 
 pfSense (Enterprise-Grade Firewall)
 
@@ -280,9 +280,9 @@ Weaknesses:
 - More complex than consumer router replacement
 - Overkill for most home networks
 
-Best For: Small office networks, enthusiasts, organizations needing professional firewall.
+Best For - Small office networks, enthusiasts, organizations needing professional firewall.
 
-Cost: Free software, requires hardware ($100-300).
+Cost - Free software, requires hardware ($100-300).
 
 OPNsense (Modern pfSense Alternative)
 
@@ -348,9 +348,9 @@ Weaknesses:
 - Hardware compatibility slightly more limited (some mini PCs have issues)
 - Less commercial support available
 
-Best For: Organizations wanting pfSense-like capabilities with modern features, security-conscious deployments.
+Best For - Organizations wanting pfSense-like capabilities with modern features, security-conscious deployments.
 
-Cost: Free software, requires hardware ($100-300).
+Cost - Free software, requires hardware ($100-300).
 
 Router Firmware Selection Guide
 
@@ -402,7 +402,7 @@ Enable DNS over HTTPS/TLS:
 Guest Network Configuration
 
 ```
-WiFi Network: Guest Network
+WiFi Network - Guest Network
 - Separate from main network (different subnet)
 - No access to local network (file shares, printers)
 - Limited bandwidth (prevent guest from saturating connection)
@@ -412,19 +412,19 @@ WiFi Network: Guest Network
 Firmware Updates
 
 ```
-OpenWrt: Manual updates monthly (check openwrt.org)
-DD-WRT: Manual updates quarterly (check dd-wrt.com)
+OpenWrt - Manual updates monthly (check openwrt.org)
+DD-WRT - Manual updates quarterly (check dd-wrt.com)
 pfSense: Automatic updates enabled, major versions yearly
-OPNsense: Automatic monthly updates recommended
+OPNsense - Automatic monthly updates recommended
 ```
 
 Troubleshooting Common Issues
 
-WiFi disconnects: Reduce TX power (high power causes interference), change WiFi channel (1, 6, 11 on 2.4GHz for non-overlapping), upgrade to 5GHz.
+WiFi disconnects - Reduce TX power (high power causes interference), change WiFi channel (1, 6, 11 on 2.4GHz for non-overlapping), upgrade to 5GHz.
 
-Internet disconnects: Restart modem, verify WAN configuration, check WAN IP assignment (should not be 192.168.x.x).
+Internet disconnects - Restart modem, verify WAN configuration, check WAN IP assignment (should not be 192.168.x.x).
 
-Can't access router web UI: Ensure ethernet-connected, ping 192.168.1.1, reboot router if unreachable.
+Can't access router web UI - Ensure ethernet-connected, ping 192.168.1.1, reboot router if unreachable.
 
 Device can't reach other local devices: Check firewall rules, verify device on same subnet, disable guest network isolation if needed.
 

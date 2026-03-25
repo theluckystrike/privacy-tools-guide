@@ -37,7 +37,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand What Facebook Marketplace Exposes
+Step 1 - Understand What Facebook Marketplace Exposes
 
 When you list an item on Facebook Marketplace, the platform makes several data points visible to potential buyers:
 
@@ -51,7 +51,7 @@ When you list an item on Facebook Marketplace, the platform makes several data p
 
 This integration differs significantly from platforms like Craigslist or OfferUp, where listings are largely anonymous. The connected nature of Facebook Marketplace means your buying and selling activity becomes part of your broader social presence.
 
-Step 2: Profile-Level Privacy Controls
+Step 2 - Profile-Level Privacy Controls
 
 The foundation of Marketplace privacy starts with your Facebook profile settings. Navigate to Settings & Privacy > Settings > Profile and Tagging to access controls that affect your Marketplace experience.
 
@@ -73,7 +73,7 @@ Your Marketplace profile automatically uses your current Facebook profile pictur
 - Avoid images that reveal your workplace, neighborhood markers, or family members
 - Ensure the image doesn't contain metadata with location information
 
-Step 3: Marketplace-Specific Settings
+Step 3 - Marketplace-Specific Settings
 
 Facebook provides some settings directly within the Marketplace interface. Access these via the Marketplace icon > your profile icon > Settings.
 
@@ -89,7 +89,7 @@ Manage who can contact you through Marketplace:
 
 All messages initially arrive in "Message Requests" rather than your inbox, giving you screening ability. Enable offer filters for minimum price or specific categories to reduce unwanted inquiries. Maintain a block list for persistent unwanted contacts.
 
-Step 4: Technical Considerations for Developers
+Step 4 - Technical Considerations for Developers
 
 For developers building applications that interact with Facebook Marketplace or analyzing privacy implications, several API and data points are relevant.
 
@@ -161,7 +161,7 @@ Regularly audit your Marketplace presence:
 
 Use an alternate account to search for yourself and see what buyers see. Review your listing history. past listings remain visible for some time. Search `site:facebook.com/marketplace yourname` periodically to check Google indexing. Note which friends appear as mutual connections on your Marketplace profile.
 
-Step 5: Reporting and Dispute Resolution
+Step 5 - Reporting and Dispute Resolution
 
 When privacy violations occur, use Facebook's built-in reporting mechanisms:
 
@@ -170,14 +170,14 @@ When privacy violations occur, use Facebook's built-in reporting mechanisms:
 - Use Facebook's Safety Center for resources on digital safety
 - For serious threats, consider legal remedies and law enforcement contact
 
-Step 6: Set Up Email Encryption with GPG
+Step 6 - Set Up Email Encryption with GPG
 
 End-to-end encryption ensures only the intended recipient can read your messages.
 
 ```bash
 Generate a GPG key pair:
 gpg --full-generate-key
-Choose: RSA and RSA, 4096 bits, 2 years expiry
+Choose - RSA and RSA, 4096 bits, 2 years expiry
 
 Export your public key to share with contacts:
 gpg --armor --export you@example.com > my_public_key.asc
@@ -194,7 +194,7 @@ gpg --armor --sign --encrypt --recipient recipient@example.com message.txt
 
 Publish your public key to keys.openpgp.org or attach it to your email signature. Key servers make it easy for contacts to verify your identity.
 
-Step 7: Email Aliasing for Privacy
+Step 7 - Email Aliasing for Privacy
 
 Email aliases let you give each service a unique address, making it easy to identify and block sources of spam.
 
@@ -202,31 +202,31 @@ Email aliases let you give each service a unique address, making it easy to iden
 SimpleLogin CLI (self-hosted or SaaS):
 pip install simple-login
 sl alias create --note "Shopping sites"
-Returns: randomstring@simplelogin.co
+Returns - randomstring@simplelogin.co
 
 AnonAddy self-hosted setup (Docker):
 docker run -d   -e APP_KEY=$(openssl rand -base64 32)   -e DB_HOST=localhost   -p 8080:80   anonaddy/anonaddy:latest
 
 Generate alias via API:
-curl -X POST https://app.anonaddy.com/api/v1/aliases   -H "Authorization: Bearer YOUR_API_KEY"   -H "Content-Type: application/json"   -d '{"domain":"anonaddy.me","description":"Newsletter signup"}'
+curl -X POST https://app.anonaddy.com/api/v1/aliases   -H "Authorization - Bearer YOUR_API_KEY"   -H "Content-Type: application/json"   -d '{"domain":"anonaddy.me","description":"Newsletter signup"}'
 ```
 
 Use a unique alias for every service signup. When an alias starts receiving spam, delete it immediately to cut off that leak without affecting your primary address.
-Step 8: Account Security for Marketplace
+Step 8 - Account Security for Marketplace
 
 Beyond privacy, protecting your Marketplace account from compromise is critical:
 
-Enable Two-Factor Authentication: Navigate to Settings & Privacy > Settings > Security and enable login alerts and two-factor authentication. This prevents unauthorized access to your account even if someone obtains your password.
+Enable Two-Factor Authentication - Navigate to Settings & Privacy > Settings > Security and enable login alerts and two-factor authentication. This prevents unauthorized access to your account even if someone obtains your password.
 
-Use a Dedicated Email: Consider using a separate email address for your Marketplace account distinct from your primary Facebook account. If the email is compromised, it limits exposure to your main account.
+Use a Dedicated Email - Consider using a separate email address for your Marketplace account distinct from your primary Facebook account. If the email is compromised, it limits exposure to your main account.
 
-Review Active Sessions: Periodically check active login sessions:
+Review Active Sessions - Periodically check active login sessions:
 1. Go to Settings > Security > Where you're logged in
 2. Review all active sessions
 3. Log out of unrecognized locations
 4. Note any unusual login locations that suggest compromise
 
-Security Checkup: Use Facebook's Security Checkup tool monthly:
+Security Checkup - Use Facebook's Security Checkup tool monthly:
 - Review email addresses associated with your account
 - Check password strength
 - Review app permissions
@@ -260,37 +260,37 @@ Payment Handling:
 - Count and verify payment before handing over items
 - Never accept personal checks or unusual payment methods
 
-Step 9: Marketplace Scam Prevention
+Step 9 - Marketplace Scam Prevention
 
 Understanding common Marketplace scams helps you avoid becoming a victim:
 
-Overpayment Scams: Buyer sends payment exceeding agreed price, asks for refund of difference (which clears before initial payment bounces). Mitigation: Only accept exact payment amounts.
+Overpayment Scams - Buyer sends payment exceeding agreed price, asks for refund of difference (which clears before initial payment bounces). Mitigation - Only accept exact payment amounts.
 
-Item Switch Scams: Buyer receives item, claims something different/damaged was sent, initiates chargeback. Mitigation: Take detailed photos and videos before handing over items, keep copies.
+Item Switch Scams - Buyer receives item, claims something different/damaged was sent, initiates chargeback. Mitigation - Take detailed photos and videos before handing over items, keep copies.
 
-Fake Shipping Labels: Buyer creates fraudulent shipping label showing delivery, item never arrives. Mitigation: Use Marketplace's integrated shipping, not third-party services.
+Fake Shipping Labels - Buyer creates fraudulent shipping label showing delivery, item never arrives. Mitigation - Use Marketplace's integrated shipping, not third-party services.
 
-Rental Scams: Scammer rents properties or vehicles, posts listings with fake prices. Mitigation: Verify you own what you're selling, provide proof of ownership if necessary.
+Rental Scams - Scammer rents properties or vehicles, posts listings with fake prices. Mitigation - Verify you own what you're selling, provide proof of ownership if necessary.
 
 Threat Model Analysis for Marketplace Sellers
 
 Understanding your threat model helps prioritize which privacy measures matter most. Different sellers face different risks:
 
-Personal Safety Threat: Someone using Marketplace information to locate or track you. Mitigating this requires limiting location precision, avoiding photos that reveal your home, and using meetup locations far from your residence. Meeting in commercial public spaces (malls, coffee shops) with clearly visible security cameras provides strongest protection.
+Personal Safety Threat - Someone using Marketplace information to locate or track you. Mitigating this requires limiting location precision, avoiding photos that reveal your home, and using meetup locations far from your residence. Meeting in commercial public spaces (malls, coffee shops) with clearly visible security cameras provides strongest protection.
 
-Identity Theft Threat: Buyers using information to commit fraud or impersonation. Your Facebook name, profile picture, and friend list become tools for creating convincing fake accounts. Mitigation involves using a distinct name for Marketplace and monitoring for accounts impersonating you.
+Identity Theft Threat - Buyers using information to commit fraud or impersonation. Your Facebook name, profile picture, and friend list become tools for creating convincing fake accounts. Mitigation involves using a distinct name for Marketplace and monitoring for accounts impersonating you.
 
-Financial Fraud Threat: Marketplace buyers using your personal data for payment fraud or chargebacks. Protecting against this requires maintaining detailed records of all transactions, using Marketplace's payment system rather than alternative payment methods, and documenting item conditions with photos and timestamps.
+Financial Fraud Threat - Marketplace buyers using your personal data for payment fraud or chargebacks. Protecting against this requires maintaining detailed records of all transactions, using Marketplace's payment system rather than alternative payment methods, and documenting item conditions with photos and timestamps.
 
-Data Collection Threat: Aggregators scraping Marketplace data for profile building or verification purposes. Facebook's ToS prohibits automated scraping, but enforcement remains inconsistent. Using generic descriptions and avoiding identifiable information in listings reduces what aggregators can collect about you.
+Data Collection Threat - Aggregators scraping Marketplace data for profile building or verification purposes. Facebook's ToS prohibits automated scraping, but enforcement remains inconsistent. Using generic descriptions and avoiding identifiable information in listings reduces what aggregators can collect about you.
 
 Advanced Privacy Configuration for High-Risk Users
 
 For journalists, activists, or others in high-risk situations, additional hardening is necessary:
 
-Separate Browser Profile: Create a dedicated Firefox or Chrome profile used solely for Marketplace activity. Keep this profile isolated from your daily browsing profile. This prevents tracking cookies or compromised extensions from connecting your Marketplace activity to other profiles.
+Separate Browser Profile - Create a dedicated Firefox or Chrome profile used solely for Marketplace activity. Keep this profile isolated from your daily browsing profile. This prevents tracking cookies or compromised extensions from connecting your Marketplace activity to other profiles.
 
-Metadata Stripping for Photos: Use ImageMagick or ExifTool to remove all metadata from listing photos:
+Metadata Stripping for Photos - Use ImageMagick or ExifTool to remove all metadata from listing photos:
 
 ```bash
 Remove all EXIF data from images before uploading
@@ -303,25 +303,25 @@ Verify metadata removal
 exiftool stripped-photo.jpg
 ```
 
-Scheduled Account Deletion: Consider treating Marketplace accounts as temporary. Create accounts specifically for selling seasons, then delete them afterward. This limits the historical data Facebook maintains on your activity.
+Scheduled Account Deletion - Consider treating Marketplace accounts as temporary. Create accounts specifically for selling seasons, then delete them afterward. This limits the historical data Facebook maintains on your activity.
 
-Parallel Marketplace Alternatives: For maximum privacy, consider OfferUp, Craigslist, or Nextdoor instead of Facebook Marketplace for transactions. These platforms require less personal information and provide more anonymity during the transaction process.
+Parallel Marketplace Alternatives - For maximum privacy, consider OfferUp, Craigslist, or Nextdoor instead of Facebook Marketplace for transactions. These platforms require less personal information and provide more anonymity during the transaction process.
 
-Step 10: Privacy Tools Integration
+Step 10 - Privacy Tools Integration
 
 Several privacy tools integrate with Marketplace usage:
 
-VPN for Browsing: While a VPN won't hide from Marketplace (Facebook accounts themselves are the identifier), it prevents ISP-level observation of your Marketplace activity patterns. Route your Marketplace browsing through a VPN provider with verified no-log policies.
+VPN for Browsing - While a VPN won't hide from Marketplace (Facebook accounts themselves are the identifier), it prevents ISP-level observation of your Marketplace activity patterns. Route your Marketplace browsing through a VPN provider with verified no-log policies.
 
-Email Privacy Services: For Marketplace communications, consider using email forwarding services (SimpleLogin, AnonAddy, or Proton Mail's email forwarding) instead of your primary email. This creates a throwaway contact point that doesn't expose your main email address.
+Email Privacy Services - For Marketplace communications, consider using email forwarding services (SimpleLogin, AnonAddy, or Proton Mail's email forwarding) instead of your primary email. This creates a throwaway contact point that doesn't expose your main email address.
 
-Phone Number Privacy: Use a secondary phone number for Marketplace communications. Google Voice or Twilio numbers provide temporary contact points that you can discard after the transaction completes.
+Phone Number Privacy - Use a secondary phone number for Marketplace communications. Google Voice or Twilio numbers provide temporary contact points that you can discard after the transaction completes.
 
-Step 11: Marketplace for Developers and Technical Users
+Step 11 - Marketplace for Developers and Technical Users
 
 Developers building tools that interact with Marketplace should understand privacy implications. The Marketplace API exposes structured data that organizations may collect at scale.
 
-Data Collection Risks: Researchers have documented automated Marketplace data collection for:
+Data Collection Risks - Researchers have documented automated Marketplace data collection for:
 - Price monitoring across sellers
 - Inventory tracking of competitors
 - Demographic profiling based on listings
@@ -329,12 +329,12 @@ Data Collection Risks: Researchers have documented automated Marketplace data co
 
 While Facebook's ToS prohibits automation, enforcement remains inconsistent. Users should assume their listing data may be collected.
 
-Privacy Tool Integration: Several privacy tools work with Marketplace:
+Privacy Tool Integration - Several privacy tools work with Marketplace:
 - VPN services mask IP address during listings and browsing
 - Email masking services (SimpleLogin, AnonAddy) hide primary email in disputes
 - Password managers with username generation create unique credentials for Marketplace
 
-Monitoring Your Listing: Periodically audit what information is visible about your listings:
+Monitoring Your Listing - Periodically audit what information is visible about your listings:
 
 ```bash
 Use curl or wget to download your listing as it appears to others
@@ -344,7 +344,7 @@ Or use a privacy extension to see what trackers/pixels load when viewing your li
 Ghostery, Privacy Badger, or uBlock Origin will show third-party requests
 ```
 
-Data Deletion: After selling an item, remove the listing promptly. Old listings create permanent data points that aggregators may archive. Request deletion within Facebook's settings to ensure removal from search engines.
+Data Deletion - After selling an item, remove the listing promptly. Old listings create permanent data points that aggregators may archive. Request deletion within Facebook's settings to ensure removal from search engines.
 
 Troubleshooting
 

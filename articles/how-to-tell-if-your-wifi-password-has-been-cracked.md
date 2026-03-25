@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand WiFi Authentication Basics
+Step 1 - Understand WiFi Authentication Basics
 
 WiFi networks protected with WPA2 or WPA3 use four-way handshake authentication. When a device connects, it exchanges cryptographic messages with the router that prove the device possesses the correct password, without actually transmitting the password over the air. A cracked password means someone has captured and processed this handshake to extract the credential.
 
 The cracking process typically involves two approaches: brute force (trying every possible password combination) or dictionary attacks (testing common passwords or leaked credentials). Once cracked, attackers can access your network and everything connected to it.
 
-Step 2: Monitor Connected Devices
+Step 2 - Monitor Connected Devices
 
 The most straightforward detection method involves reviewing devices on your network. Your router maintains a table of connected clients with MAC addresses, IP assignments, and connection times.
 
@@ -48,7 +48,7 @@ arp -a | grep "$router_ip" -B 1
 
 Compare the current device list against your inventory. Unknown devices with manufacturer identifiers matching common device types (particularly smartphones or laptops) warrant investigation. Remember that MAC addresses can be spoofed, so this method catches casual intruders but not sophisticated attackers.
 
-Step 3: Analyzing Router Logs
+Step 3 - Analyzing Router Logs
 
 Routers maintain logs that record connection attempts, authentication successes, and errors. Access these through the administrative panel, typically under "System Log," "Security Log," or "Advanced > Logs."
 
@@ -82,7 +82,7 @@ with open('router.log', 'r') as f:
     print(f"Unknown MACs: {results['new_devices']}")
 ```
 
-Step 4: Network Traffic Analysis
+Step 4 - Network Traffic Analysis
 
 For deeper inspection, analyze network traffic flowing through your router. Tools like Wireshark or `tcpdump` on a monitoring interface can reveal patterns indicating unauthorized use.
 
@@ -121,7 +121,7 @@ print("High traffic destinations:", anomalies)
 
 This approach detects bandwidth-heavy activities like large downloads, streaming, or data transfers, activities you didn't initiate.
 
-Step 5: Checking for Handshake Capture
+Step 5 - Checking for Handshake Capture
 
 If attackers are actively attempting to crack your password, they must capture the four-way handshake. Some modern routers and access points log when handshakes are captured by external monitoring tools.
 
@@ -141,7 +141,7 @@ sudo airodump-ng mon0
 
 Deauthentication frames, legitimate parts of 802.11 but abused by attackers to force device reconnection and trigger new handshakes, appear in monitoring mode as repeated disassociation events.
 
-Step 6: Monitor DNS and Internet Activity
+Step 6 - Monitor DNS and Internet Activity
 
 Unusual DNS queries or internet traffic patterns reveal unauthorized network use. Set up Pi-hole as a local DNS server to log all queries:
 
@@ -158,7 +158,7 @@ After installation, review query logs for domains you don't recognize, particula
 
 Similarly, monitor your bandwidth usage through your ISP's portal or router statistics. Sudden spikes in data usage, particularly upload traffic, may indicate someone using your network for activities ranging from file sharing to hosting illicit services.
 
-Step 7: Practical Defense Strategies
+Step 7 - Practical Defense Strategies
 
 Detection works alongside prevention. Implement these measures to reduce your attack surface:
 
@@ -169,7 +169,7 @@ Detection works alongside prevention. Implement these measures to reduce your at
 5. Segment your network: Create a guest network for IoT devices and visitors
 6. Enable router notifications: Many modern routers alert you to new device connections
 
-Advanced Detection: Behavioral Analysis
+Advanced Detection - Behavioral Analysis
 
 Beyond simple device counting, sophisticated detection analyzes network behavior patterns that indicate compromise:
 
@@ -278,7 +278,7 @@ EOF
 
 Queries to Tor exit nodes, VPN services, or piracy sites indicate unauthorized network use.
 
-Step 8: Detecting Specific Attack Vectors
+Step 8 - Detecting Specific Attack Vectors
 
 Different cracking methods leave different forensic traces:
 
@@ -322,7 +322,7 @@ Attackers attempting to crack WPA passwords must capture handshakes:
 
 Deauthentication attacks (forcing device disconnections) in the logs indicate someone actively capturing handshakes.
 
-Step 9: Recovery Steps After Compromise
+Step 9 - Recovery Steps After Compromise
 
 If you've confirmed unauthorized access:
 
@@ -372,7 +372,7 @@ Default telnet access is insecure
 If you need remote access, use OpenVPN, not direct router access
 ```
 
-Step 10: Estimating Damage from Compromise
+Step 10 - Estimating Damage from Compromise
 
 If unauthorized access occurred, understand what attackers accessed:
 
@@ -388,7 +388,7 @@ If unauthorized access occurred, understand what attackers accessed:
 
 The seriousness depends on what data was actually transmitted over the compromised network.
 
-Step 11: Professional Network Audits
+Step 11 - Professional Network Audits
 
 For high-value networks, consider professional audits:
 

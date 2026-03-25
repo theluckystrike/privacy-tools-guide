@@ -29,7 +29,7 @@ Table of Contents
 - [Establishing Trust After Compromise](#establishing-trust-after-compromise)
 - [Monitoring for Secondary Compromise](#monitoring-for-secondary-compromise)
 - [Linked Account Compromise Audit](#linked-account-compromise-audit)
-- [Long-Term Protection: Password Manager Strategy](#long-term-protection-password-manager-strategy)
+- [Long-Term Protection - Password Manager Strategy](#long-term-protection-password-manager-strategy)
 - [Credit and Financial Monitoring Post-Hack](#credit-and-financial-monitoring-post-hack)
 - [Automation for Ongoing Protection](#automation-for-ongoing-protection)
 
@@ -48,7 +48,7 @@ Check your account's Login & Security page directly at [amazon.com/gp/css/home.h
 
 Immediate Recovery Actions
 
-Step 1: Attempt Standard Account Recovery
+Step 1 - Attempt Standard Account Recovery
 
 Visit Amazon's [password recovery page](https://www.amazon.com/gp/forgot-password) and attempt to reset your password. If the attacker changed your email address, use the "Need more help?" option to verify your identity through:
 
@@ -56,7 +56,7 @@ Visit Amazon's [password recovery page](https://www.amazon.com/gp/forgot-passwor
 - Credit card verification: You may be asked to enter the last four digits of the payment method on file
 - Order history verification: Confirm details of a recent order
 
-Step 2: Contact Amazon Customer Support Directly
+Step 2 - Contact Amazon Customer Support Directly
 
 If self-service recovery fails, contact Amazon through their [official support channels](https://www.amazon.com/gp/help/customer/contact-us/). Select "Account Settings" → "Prime or account" → "Something else" to reach a human agent. Be prepared to verify your identity with:
 
@@ -66,7 +66,7 @@ If self-service recovery fails, contact Amazon through their [official support c
 
 Request that the agent place a hold on your account while you complete the recovery process.
 
-Step 3: Secure Your Email Account First
+Step 3 - Secure Your Email Account First
 
 Before proceeding further, ensure your email account associated with Amazon is secure. Attackers frequently compromise Amazon accounts through email takeovers. Change your email password immediately, enable two-factor authentication, and review active sessions.
 
@@ -250,17 +250,17 @@ Once your Amazon account is secure, rebuild authentication carefully:
 Multi-factor authentication setup timeline:
 
 ```
-Day 1: Password reset
+Day 1 - Password reset
   ↓
-Day 2: Enable 2FA with authenticator app
+Day 2 - Enable 2FA with authenticator app
   ↓
-Day 3: Register new device as trusted (don't mark immediately)
+Day 3 - Register new device as trusted (don't mark immediately)
   ↓
-Day 7: Remove old/compromised devices from trusted list
+Day 7 - Remove old/compromised devices from trusted list
   ↓
-Day 14: Review all connected services (Prime, Audible, Twitch, etc.)
+Day 14 - Review all connected services (Prime, Audible, Twitch, etc.)
   ↓
-Day 30: Verify no new payment methods added since recovery
+Day 30 - Verify no new payment methods added since recovery
 ```
 
 Authenticator app setup for Amazon:
@@ -344,7 +344,7 @@ AWS account compromise (if you use AWS):
 - Review S3 buckets for unauthorized access logs
 - Check CloudTrail for API calls from unknown IPs
 
-Long-Term Protection: Password Manager Strategy
+Long-Term Protection - Password Manager Strategy
 
 After recovery, optimize your password management:
 
@@ -374,17 +374,17 @@ Credit and Financial Monitoring Post-Hack
 If attacker had access to payment methods:
 
 ```bash
-Month 1: Active monitoring
+Month 1 - Active monitoring
 - Check credit card statements daily (automated alerts)
 - Check bank accounts for unauthorized transfers
 - Place fraud alert with credit bureaus (1 year)
 
-Month 3: Extended monitoring
+Month 3 - Extended monitoring
 - Run credit report checks (freeze if necessary)
 - Check for new accounts opened in your name
 - Monitor for unusual credit inquiries
 
-Year 1: Ongoing vigilance
+Year 1 - Ongoing vigilance
 - Monitor credit reports quarterly
 - Review bank statements monthly
 - Set calendar reminders for password rotation
@@ -397,15 +397,15 @@ US credit bureaus (free fraud alert):
 
 Equifax:
 Phone: 1-888-378-4329
-Online: equifax.com/personal/credit-report-services
+Online - equifax.com/personal/credit-report-services
 
 Experian:
 Phone: 1-888-397-3742
-Online: experian.com/fraud
+Online - experian.com/fraud
 
 TransUnion:
 Phone: 1-888-909-8872
-Online: transunion.com/fraud-alert
+Online - transunion.com/fraud-alert
 
 A fraud alert lasts 1 year (renewable)
 Credit freeze lasts indefinitely (must request removal)

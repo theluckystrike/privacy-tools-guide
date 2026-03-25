@@ -39,13 +39,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Data Requests
+Step 1 - Understand Data Requests
 
 Most social media platforms provide two types of data access: self-service downloads through account settings and formal data requests under privacy regulations. Self-service downloads typically include your posts, media, and basic account information. Formal requests under GDPR Article 15 or CCPA can yield more data, including algorithmic predictions, behavioral profiles, and inferred attributes.
 
 The distinction matters for developers. Self-service downloads use web interfaces or APIs you can access with standard authentication. Formal requests go through legal or privacy teams and may take 30-45 days to fulfill.
 
-Step 2: Platform-Specific Data Request Methods
+Step 2 - Platform-Specific Data Request Methods
 
 Facebook/Meta
 
@@ -102,7 +102,7 @@ Note that X's API access requires approval through their developer portal. Free 
 
 Instagram
 
-Instagram shares the Meta ecosystem, so data requests route through Facebook's framework. For API-based access, you'll need an Instagram Basic Display API token:
+Instagram shares the Meta environment, so data requests route through Facebook's framework. For API-based access, you'll need an Instagram Basic Display API token:
 
 {% highlight python %}
 import requests
@@ -175,7 +175,7 @@ def get_reddit_data(username):
  return submissions
 {% endhighlight %}
 
-Step 3: Automate Cross-Platform Data Collection
+Step 3 - Automate Cross-Platform Data Collection
 
 For developers managing data across multiple platforms, a unified approach helps:
 
@@ -222,12 +222,12 @@ SocialDataConfig("reddit", rd_token, ["submissions"])
 
  return all_data
 
-Run with: asyncio.run(main())
+Run with - asyncio.run(main())
 {% endhighlight %}
 
 Best Practices for Data Downloads
 
-1. Token Security: Store access tokens in environment variables or secure vaults. Never commit tokens to version control:
+1. Token Security - Store access tokens in environment variables or secure vaults. Never commit tokens to version control:
 
 {% highlight bash %}
 Use .env files with dotenv
@@ -235,7 +235,7 @@ export FACEBOOK_TOKEN="your_token_here"
 export TWITTER_BEARER="your_bearer_token"
 {% endhighlight %}
 
-2. Rate Limiting: Respect platform rate limits. Implement exponential backoff:
+2. Rate Limiting - Respect platform rate limits. Implement exponential backoff:
 
 {% highlight python %}
 import time
@@ -256,7 +256,7 @@ def retry_with_backoff(max_retries=3, base_delay=1):
  return decorator
 {% end %}
 
-3. Data Storage: Store downloaded data locally with encryption. Use formats like JSON or CSV for interoperability:
+3. Data Storage - Store downloaded data locally with encryption. Use formats like JSON or CSV for interoperability:
 
 {% highlight python %}
 import json
@@ -276,14 +276,14 @@ def save_data_secure(data, filename, encryption_key=None):
  return {"path": str(filepath), "checksum": checksum}
 {% endhighlight %}
 
-4. Regular Sync: Schedule periodic downloads to maintain current archives. Use cron jobs or CI/CD pipelines:
+4. Regular Sync - Schedule periodic downloads to maintain current archives. Use cron jobs or CI/CD pipelines:
 
 {% highlight bash %}
 Cron job for weekly data sync
 0 2 * * 0 cd /path/to/project && python sync_social_data.py >> /var/log/data_sync.log 2>&1
 {% endhighlight %}
 
-Step 4: Legal Considerations
+Step 4 - Legal Considerations
 
 When collecting data through formal privacy requests, platforms typically provide ZIP archives containing all data they hold. These archives can include:
 - Account activity logs
@@ -299,13 +299,13 @@ Download and Inspect Your Social Media Data
 ```bash
 Request your data archive from major platforms via their official APIs
 
-Twitter/X: request archive (triggers email with download link)
+Twitter/X - request archive (triggers email with download link)
 curl -X POST "https://api.twitter.com/2/users/:id/tweets"               -H "Authorization: Bearer $TWITTER_BEARER_TOKEN"
 
-LinkedIn: request data export (REST API, requires OAuth)
-curl -s "https://api.linkedin.com/v2/me"               -H "Authorization: Bearer $LINKEDIN_ACCESS_TOKEN" | jq .
+LinkedIn - request data export (REST API, requires OAuth)
+curl -s "https://api.linkedin.com/v2/me"               -H "Authorization - Bearer $LINKEDIN_ACCESS_TOKEN" | jq .
 
-Facebook: download your data via Graph API
+Facebook - download your data via Graph API
 curl -s "https://graph.facebook.com/me?fields=id,name,email"               -d "access_token=$FB_ACCESS_TOKEN" | jq .
 
 Parse downloaded JSON archive to count data categories

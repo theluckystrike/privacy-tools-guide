@@ -42,8 +42,8 @@ Table of Contents
 - [Integration with Development Workflows](#integration-with-development-workflows)
 - [Security Considerations](#security-considerations)
 - [Use Cases Where Each Excels](#use-cases-where-each-excels)
-- [Advanced Configuration: Cryptomator Command-Line Options](#advanced-configuration-cryptomator-command-line-options)
-- [Advanced Configuration: VeraCrypt Scripting and Automation](#advanced-configuration-veracrypt-scripting-and-automation)
+- [Advanced Configuration - Cryptomator Command-Line Options](#advanced-configuration-cryptomator-command-line-options)
+- [Advanced Configuration - VeraCrypt Scripting and Automation](#advanced-configuration-veracrypt-scripting-and-automation)
 - [Cryptomator Vault Structure and Metadata Leakage](#cryptomator-vault-structure-and-metadata-leakage)
 - [VeraCrypt Container Management at Scale](#veracrypt-container-management-at-scale)
 - [Performance and Resource Considerations](#performance-and-resource-considerations)
@@ -82,10 +82,10 @@ veracrypt -c my-secure-container.hc
 
 Select options:
 Volume type: Normal
-Encryption algorithm: AES-256
-Hash algorithm: SHA-512
-Filesystem: exFAT (better for cross-platform cloud compatibility)
-Size: 10GB
+Encryption algorithm - AES-256
+Hash algorithm - SHA-512
+Filesystem - exFAT (better for cross-platform cloud compatibility)
+Size - 10GB
 
 Mount the container
 veracrypt my-secure-container.hc
@@ -153,7 +153,7 @@ Choose VeraCrypt when:
 - Offline storage on physical media is your primary concern
 - You need encryption compatible with legacy TrueCrypt containers
 
-Advanced Configuration: Cryptomator Command-Line Options
+Advanced Configuration - Cryptomator Command-Line Options
 
 For developers who prefer CLI workflows, Cryptomator integrates with command-line tools through its auto-unlock feature:
 
@@ -174,7 +174,7 @@ Unmount when done
 cryptomator-cli vault unmount --vault /path/to/vault
 ```
 
-Advanced Configuration: VeraCrypt Scripting and Automation
+Advanced Configuration - VeraCrypt Scripting and Automation
 
 For teams requiring automated VeraCrypt operations, batch processing and key management are achievable:
 
@@ -274,17 +274,17 @@ For developers implementing cloud encryption, consider a layered approach. Use C
 For teams, implement this workflow:
 
 ```bash
-Daily work: Cryptomator vault
+Daily work - Cryptomator vault
 alias work="cryptomator-cli vault mount --vault ~/Dropbox/work-vault"
 
-Weekly backups: VeraCrypt container
+Weekly backups - VeraCrypt container
 backup_script() {
   veracrypt --mount weekly-backup.hc /mnt/backup
   tar -czf /mnt/backup/week-$(date +%V).tar.gz /home/user/important-data/
   veracrypt --dismount /mnt/backup
 }
 
-Sensitive archive: Hidden VeraCrypt volume
+Sensitive archive - Hidden VeraCrypt volume
 Requires additional authentication step
 ```
 

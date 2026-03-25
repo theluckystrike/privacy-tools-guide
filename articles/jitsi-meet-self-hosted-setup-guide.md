@@ -42,7 +42,7 @@ sudo systemctl enable docker
 sudo systemctl start docker
 ```
 
-Step 1: Docker Deployment
+Step 1 - Docker Deployment
 
 The Jitsi project maintains official Docker images that simplify deployment significantly. Create a directory for your installation:
 
@@ -153,7 +153,7 @@ docker-compose up -d
 
 After startup completes, access your instance at `https://meet.yourdomain.com`. The first visit initializes the SSL certificates through Let's Encrypt automatically.
 
-Step 2: Essential Configuration Options
+Step 2 - Essential Configuration Options
 
 Jitsi Meet provides extensive customization through environment variables. These settings belong in your `.env` file or the web service configuration.
 
@@ -199,7 +199,7 @@ Enable local recording (note: recording requires authentication):
 ENABLE_RECORDING=1
 ```
 
-Step 3: STUN and TURN Configuration
+Step 3 - STUN and TURN Configuration
 
 For connections through restrictive firewalls or NAT, configure TURN servers. The default Jitsi Meet deployment includes STUN, but production deployments benefit from dedicated TURN infrastructure:
 
@@ -216,7 +216,7 @@ TURNS_PORT=443
 
 Deploying your own Coturn server improves connectivity for users behind corporate firewalls and symmetric NAT.
 
-Step 4: Security Hardening
+Step 4 - Security Hardening
 
 After basic installation, implement these security measures:
 
@@ -255,7 +255,7 @@ sudo ufw allow 10000/udp # JVB media
 sudo ufw enable
 ```
 
-Step 5: Scaling Considerations
+Step 5 - Scaling Considerations
 
 Single-server deployments support approximately 20-30 simultaneous participants depending on available bandwidth. For larger deployments, scale horizontally by deploying additional JVB (Video Bridge) instances:
 

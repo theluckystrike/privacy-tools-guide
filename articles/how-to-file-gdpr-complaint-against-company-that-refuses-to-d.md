@@ -23,7 +23,7 @@ Table of Contents
 - [Follow-ups Required](#follow-ups-required)
 - [Legal Framework Deep Dive](#legal-framework-deep detailed look)
 - [Building Escalation Strategy](#building-escalation-strategy)
-- [Case Study: Real Company Responses](#case-study-real-company-responses)
+- [Case Study - Real Company Responses](#case-study-real-company-responses)
 
 Automation Tools and Open-Source Solutions
 
@@ -76,7 +76,7 @@ Dear {row['company_name']} Privacy Officer,
 
 I am requesting deletion of my personal data under GDPR Article 17.
 This request was submitted on {datetime.now().strftime('%Y-%m-%d')}.
-Request ID: {uuid.uuid4()}
+Request ID - {uuid.uuid4()}
 
 I expect your response within 30 days as required by GDPR Article 17(3).
 
@@ -136,15 +136,15 @@ Valid refusal reasons:
 
 International Jurisdiction Considerations
 
-EU Member States: File with your DPA (Datenschutzbehörde, CNIL, ICO, etc.)
+EU Member States - File with your DPA (Datenschutzbehörde, CNIL, ICO, etc.)
 
-UK (post-Brexit): File with Information Commissioner's Office (ICO)
+UK (post-Brexit) - File with Information Commissioner's Office (ICO)
 
-Switzerland: File with FDPIC (Federal Data Protection and Information Commissioner)
+Switzerland - File with FDPIC (Federal Data Protection and Information Commissioner)
 
-California (CCPA): File with California Attorney General or private right of action
+California (CCPA) - File with California Attorney General or private right of action
 
-Canada (PIPEDA): File with Office of the Privacy Commissioner
+Canada (PIPEDA) - File with Office of the Privacy Commissioner
 
 Most DPAs have expedited processes for "urgent" matters where companies clearly violate rights.
 
@@ -152,18 +152,18 @@ Building Escalation Strategy
 
 Three-Tier Escalation Framework
 
-Tier 1: Direct Company Contact (30 days)
+Tier 1 - Direct Company Contact (30 days)
 - Send deletion request to privacy@company.com
 - Keep timestamped copy
 - Request read receipt confirmation
 
-Tier 2: Formal Escalation (30 days)
+Tier 2 - Formal Escalation (30 days)
 - Escalate to Data Protection Officer or Legal
 - Reference GDPR articles specifically
 - Set 30-day response deadline
 - Warn of DPA complaint intent
 
-Tier 3: Regulatory Complaint (submit to DPA)
+Tier 3 - Regulatory Complaint (submit to DPA)
 - File with appropriate supervisory authority
 - Include all previous correspondence
 - Provide evidence of company's refusal
@@ -172,7 +172,7 @@ Tier 3: Regulatory Complaint (submit to DPA)
 Template Escalation Email
 
 ```
-Subject: GDPR Article 17 Escalation - Request ID: [REFERENCE]
+Subject - GDPR Article 17 Escalation - Request ID: [REFERENCE]
 
 To the Data Protection Officer:
 
@@ -197,21 +197,21 @@ Regards,
 [Account ID if applicable]
 ```
 
-Case Study: Real Company Responses
+Case Study - Real Company Responses
 
 Common Company Refusal Patterns
 
-Pattern 1: Vague Legal Basis
+Pattern 1 - Vague Legal Basis
 - Company claim: "We must retain for legal compliance"
 - Reality: They haven't identified specific law
 - Response: Demand they cite the specific regulation
 
-Pattern 2: Contractual Retention
+Pattern 2 - Contractual Retention
 - Company claim: "Data retention is required by contract"
 - Reality: Their internal contract with you (terms of service)
 - Response: Terms of service cannot override GDPR rights
 
-Pattern 3: Legitimate Interest Claim
+Pattern 3 - Legitimate Interest Claim
 - Company claim: "Our legitimate business interest requires retention"
 - Reality: They haven't balanced your privacy rights against their interest
 - Response: Demand impact assessment (DPIA) showing why their interest outweighs yours

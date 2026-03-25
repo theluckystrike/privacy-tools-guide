@@ -220,7 +220,7 @@ Signal's current implementation includes post-quantum support on newer versions.
 ```bash
 Check Signal's protocol version
 Signal displays protocol information in chat info screens
-Look for: "Additional security notifications"
+Look for - "Additional security notifications"
 
 For developers, inspect Signal's network traffic
 tcpdump -i any 'tcp port 443' -w signal-traffic.pcap
@@ -301,8 +301,8 @@ def benchmark_pq_crypto():
 
         print(f"{alg}:")
         print(f"  Keypair gen: {keygen_time*1000:.2f}ms")
-        print(f"  Encapsulate: {encap_time*1000:.2f}ms")
-        print(f"  Decapsulate: {decap_time*1000:.2f}ms")
+        print(f"  Encapsulate - {encap_time*1000:.2f}ms")
+        print(f"  Decapsulate - {decap_time*1000:.2f}ms")
 
 benchmark_pq_crypto()
 ```
@@ -428,9 +428,9 @@ EU: eIDAS Regulation (Electronic Identification and Trust Services) is being upd
 
 US: NIST SP 800-131B recommends transitioning to post-quantum cryptography by 2030.
 
-Russia, China: Unknown post-quantum cipher requirements, may mandate local algorithms.
+Russia, China - Unknown post-quantum cipher requirements, may mandate local algorithms.
 
-Financial sector: PCI DSS and bank regulators will likely mandate post-quantum migration for payment systems.
+Financial sector - PCI DSS and bank regulators will likely mandate post-quantum migration for payment systems.
 
 Frequently Asked Questions
 

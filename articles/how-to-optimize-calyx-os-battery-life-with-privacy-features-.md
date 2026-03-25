@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand CalyxOS Power Architecture
+Step 1 - Understand CalyxOS Power Architecture
 
 Unlike stock Android distributions, CalyxOS removes Google Play Services (GPS) entirely. This single change eliminates a significant source of background processing, the constant sync operations, location polling, and push notification services that GPS performs. However, this also means you lose some battery optimization features that Google built into their Play Services.
 
@@ -47,7 +47,7 @@ The privacy features in CalyxOS that affect battery consumption include:
 - Firewall rules - CalyxOS includes NetGuard or a similar firewall that monitors all network traffic, adding slight overhead.
 - Location masking - Using fuzzy location instead of precise GPS reduces battery but still requires some location services.
 
-Step 2: First Steps: Basic Battery Optimization
+Step 2 - First Steps: Basic Battery Optimization
 
 Before diving into advanced techniques, ensure you've configured the fundamentals:
 
@@ -125,7 +125,7 @@ Disable NFC
 settings put secure nfc_enabled 0
 ```
 
-Step 3: Sleep Mode and Battery Optimization
+Step 3 - Sleep Mode and Battery Optimization
 
 Implementing Aggressive Doze
 
@@ -158,7 +158,7 @@ When battery saver activates, it will:
 - Disable location services for most apps
 - Reduce network sync frequency
 
-Step 4: App-Specific Optimization Strategies
+Step 4 - App-Specific Optimization Strategies
 
 Identifying Battery-Draining Apps
 
@@ -196,7 +196,7 @@ F-Droid apps typically:
 - Often use less battery due to simpler architectures
 ```
 
-Step 5: Privacy Feature Trade-offs
+Step 5 - Privacy Feature Trade-offs
 
 Location Privacy vs Battery
 
@@ -227,7 +227,7 @@ If using VPN, consider:
 - Split tunneling to exclude low-risk apps
 ```
 
-Step 6: Monitor and Maintenance
+Step 6 - Monitor and Maintenance
 
 Regular Battery Health Checks
 

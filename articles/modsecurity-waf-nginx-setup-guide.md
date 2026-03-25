@@ -250,7 +250,7 @@ CRS uses an anomaly score threshold rather than blocking on individual rules. Ea
 
 ```apache
 In crs/crs-setup.conf
-Inbound anomaly threshold: 5 = strict, 10 = moderate, 20 = lenient
+Inbound anomaly threshold - 5 = strict, 10 = moderate, 20 = lenient
 SecAction \
   "id:900110, \
    phase:1, \

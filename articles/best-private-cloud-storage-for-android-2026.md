@@ -99,7 +99,7 @@ The Android app supports fingerprint unlock, automatic photo backup, offline fil
 
 The free tier includes 5GB of storage, with paid plans starting at affordable rates. Unlike self-hosted options, Proton handles infrastructure, so you get remote access without maintaining a server.
 
-The privacy trade-off: you trust Proton with your encrypted data. While they cannot read your files, they store the encrypted blobs and manage your account.
+The privacy trade-off - you trust Proton with your encrypted data. While they cannot read your files, they store the encrypted blobs and manage your account.
 
 Best for users wanting encrypted cloud storage without self-hosting complexity.
 
@@ -191,27 +191,27 @@ Before deploying any solution, test performance characteristics:
 #!/bin/bash
 android-cloud-test.sh - Benchmark cloud storage on Android
 
-Test 1: Sync speed (MB/s)
+Test 1 - Sync speed (MB/s)
 Upload 100MB file to each service, measure time
 adb shell "time dd if=/dev/zero of=/sdcard/test_100mb.bin bs=1M count=100"
 
-Test 2: Battery drain (mA/hour)
+Test 2 - Battery drain (mA/hour)
 Enable cloud sync, run for 1 hour, check battery consumption
 adb shell "dumpsys battery | grep current"
 
-Test 3: Network traffic (bytes)
+Test 3 - Network traffic (bytes)
 Monitor data usage during sync
 adb shell "cat /proc/net/dev | grep rmnet"
 
-Test 4: CPU usage during encryption
+Test 4 - CPU usage during encryption
 Monitor CPU load during file upload
 adb shell "top -n 1 | grep [cloud-app]"
 
 Results summary:
 Syncthing: Low CPU, low battery drain, high network efficiency
-Nextcloud: Medium CPU, medium battery drain, good efficiency
-Proton Drive: Medium CPU, medium battery drain, moderate efficiency
-Filen: Low CPU, low battery drain, good efficiency
+Nextcloud - Medium CPU, medium battery drain, good efficiency
+Proton Drive - Medium CPU, medium battery drain, moderate efficiency
+Filen - Low CPU, low battery drain, good efficiency
 ```
 
 These measurements help determine which solution best fits your device and usage patterns.
@@ -329,7 +329,7 @@ Troubleshooting Common Sync Issues
 Resolve sync problems on Android:
 
 ```bash
-Problem: Files not syncing
+Problem - Files not syncing
 Solutions:
 1. Check WiFi connection
 adb shell "netstat -rn | grep default"
@@ -343,13 +343,13 @@ adb shell "pm clear com.nextcloud.client"
 4. Check available storage
 adb shell "df -h /sdcard"
 
-Problem: High battery drain
+Problem - High battery drain
 Solutions:
 1. Reduce sync frequency
 2. Disable continuous sync, use scheduled sync
 3. Move to WiFi-only sync
 
-Problem: Slow upload speeds
+Problem - Slow upload speeds
 Solutions:
 1. Test WiFi connection speed
 adb shell "ping -c 10 8.8.8.8"
@@ -375,7 +375,7 @@ Self-hosted solutions have higher upfront costs but lower ongoing expenses. Mana
 
 Migration from Google Drive to Private Cloud Storage
 
-Safely transition from Google's ecosystem:
+Safely transition from Google's environment:
 
 ```bash
 #!/bin/bash

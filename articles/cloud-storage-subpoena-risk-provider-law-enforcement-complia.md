@@ -22,7 +22,7 @@ When you store data in the cloud, you trust a provider to keep it secure. But th
 Table of Contents
 
 - [How Cloud Providers Respond to Legal Requests](#how-cloud-providers-respond-to-legal-requests)
-- [Legal Mechanisms: Subpoenas vs. Warrants vs. Court Orders](#legal-mechanisms-subpoenas-vs-warrants-vs-court-orders)
+- [Legal Mechanisms - Subpoenas vs. Warrants vs. Court Orders](#legal-mechanisms-subpoenas-vs-warrants-vs-court-orders)
 - [Technical Countermeasures for Developers](#technical-countermeasures-for-developers)
 - [What This Means for Your Users](#what-this-means-for-your-users)
 - [Practical Steps Developers Should Take](#practical-steps-developers-should-take)
@@ -38,7 +38,7 @@ What Providers Can Disclose
 
 The critical factor is who holds the encryption keys. Consider these scenarios:
 
-Provider-Managed Encryption: When you use built-in encryption where the provider holds keys (like default Google Drive or Dropbox encryption), the provider can technically access your data. They can comply with subpoenas by decrypting and producing:
+Provider-Managed Encryption - When you use built-in encryption where the provider holds keys (like default Google Drive or Dropbox encryption), the provider can technically access your data. They can comply with subpoenas by decrypting and producing:
 
 - File metadata (access times, IP logs, device information)
 - File content stored on their servers
@@ -67,7 +67,7 @@ Provider cannot produce if using E2E encryption:
 e2e_excluded = ["decrypted_content", "encryption_keys", "plaintext_files"]
 ```
 
-Legal Mechanisms: Subpoenas vs. Warrants vs. Court Orders
+Legal Mechanisms - Subpoenas vs. Warrants vs. Court Orders
 
 Not all legal requests carry the same weight or require the same level of scrutiny. Understanding these distinctions matters for both providers and developers building privacy-conscious applications.
 
@@ -75,7 +75,7 @@ Subpoenas
 
 Subpoenas are the weakest legal mechanism. They often come without judicial review and simply request information. Providers may push back on overly broad subpoenas, particularly those seeking content rather than metadata.
 
-What typically happens: The provider receives the subpoena, evaluates whether it requests metadata or content, and may negotiate scope or challenge validity.
+What typically happens - The provider receives the subpoena, evaluates whether it requests metadata or content, and may negotiate scope or challenge validity.
 
 Search Warrants
 
@@ -273,7 +273,7 @@ Later, download and decrypt locally
 decrypted = storage.decrypt_file(encrypted)
 ```
 
-The critical principle: The provider stores encrypted blobs and has zero cryptographic capability to decrypt them, even under court order.
+The critical principle - The provider stores encrypted blobs and has zero cryptographic capability to decrypt them, even under court order.
 
 Transparency Report Analysis
 

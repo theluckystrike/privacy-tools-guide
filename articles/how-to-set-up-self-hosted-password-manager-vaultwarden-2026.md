@@ -20,16 +20,16 @@ Table of Contents
 
 - [Why Self-Host Vaultwarden?](#why-self-host-vaultwarden)
 - [Prerequisites](#prerequisites)
-- [Step 1: Set Up VPS and SSH](#step-1-set-up-vps-and-ssh)
-- [Step 2: Create Vaultwarden Docker Compose](#step-2-create-vaultwarden-docker-compose)
-- [Step 3: Configure Reverse Proxy (Caddy)](#step-3-configure-reverse-proxy-caddy)
-- [Step 4: Launch Vaultwarden](#step-4-launch-vaultwarden)
-- [Step 5: Access Admin Panel](#step-5-access-admin-panel)
-- [Step 6: Add First User](#step-6-add-first-user)
-- [Step 7: Enable SMTP for Email Invitations](#step-7-enable-smtp-for-email-invitations)
-- [Step 8: Automated Backups](#step-8-automated-backups)
-- [Step 9: Enable Two-Factor Authentication (2FA)](#step-9-enable-two-factor-authentication-2fa)
-- [Step 10: Configure Organization (Optional)](#step-10-configure-organization-optional)
+- [Step 1 - Set Up VPS and SSH](#step-1-set-up-vps-and-ssh)
+- [Step 2 - Create Vaultwarden Docker Compose](#step-2-create-vaultwarden-docker-compose)
+- [Step 3 - Configure Reverse Proxy (Caddy)](#step-3-configure-reverse-proxy-caddy)
+- [Step 4 - Launch Vaultwarden](#step-4-launch-vaultwarden)
+- [Step 5 - Access Admin Panel](#step-5-access-admin-panel)
+- [Step 6 - Add First User](#step-6-add-first-user)
+- [Step 7 - Enable SMTP for Email Invitations](#step-7-enable-smtp-for-email-invitations)
+- [Step 8 - Automated Backups](#step-8-automated-backups)
+- [Step 9 - Enable Two-Factor Authentication (2FA)](#step-9-enable-two-factor-authentication-2fa)
+- [Step 10 - Configure Organization (Optional)](#step-10-configure-organization-optional)
 - [Client Setup](#client-setup)
 - [Monitoring and Maintenance](#monitoring-and-maintenance)
 - [Troubleshooting](#troubleshooting)
@@ -50,9 +50,9 @@ Tradeoffs:
 - You manage backups, updates, and security
 - No company customer support
 - Single point of failure (if your server fails, you manage recovery)
-- Small ecosystem (community-maintained, not commercial)
+- Small environment (community-maintained, not commercial)
 
-Best for: Developers, privacy-conscious individuals, teams wanting complete control. Not for non-technical users.
+Best for - Developers, privacy-conscious individuals, teams wanting complete control. Not for non-technical users.
 
 Prerequisites
 
@@ -61,9 +61,9 @@ Prerequisites
 - SSH access to VPS
 - Basic Linux command-line comfort
 
-Estimated cost: $5/month hosting + $10/year domain = $70/year total
+Estimated cost - $5/month hosting + $10/year domain = $70/year total
 
-Step 1: Set Up VPS and SSH
+Step 1 - Set Up VPS and SSH
 
 Using DigitalOcean as example (Ubuntu 24.04):
 
@@ -82,7 +82,7 @@ Verify Docker installed
 docker --version
 ```
 
-Step 2: Create Vaultwarden Docker Compose
+Step 2 - Create Vaultwarden Docker Compose
 
 Create `/root/vaultwarden/docker-compose.yml`:
 
@@ -135,7 +135,7 @@ networks:
     driver: bridge
 ```
 
-Step 3: Configure Reverse Proxy (Caddy)
+Step 3 - Configure Reverse Proxy (Caddy)
 
 Create `/root/vaultwarden/Caddyfile`:
 
@@ -167,7 +167,7 @@ vault.yourdomain.com {
 }
 ```
 
-Step 4: Launch Vaultwarden
+Step 4 - Launch Vaultwarden
 
 ```bash
 cd /root/vaultwarden
@@ -196,7 +196,7 @@ vaultwarden | Rocket has launched from http://0.0.0.0:80
 caddy | caddy started successfully
 ```
 
-Step 5: Access Admin Panel
+Step 5 - Access Admin Panel
 
 Open browser to `https://vault.yourdomain.com/admin`
 
@@ -214,7 +214,7 @@ Disable logins to admin panel after setup:
 Edit docker-compose.yml
 Add environment variable:
 ADMIN_DISABLE_2FA: "true"
-ADMIN_SESSION_LIFETIME: 5  # Session expires after 5 minutes
+ADMIN_SESSION_LIFETIME - 5  # Session expires after 5 minutes
 ```
 
 Restart:
@@ -222,7 +222,7 @@ Restart:
 docker compose restart vaultwarden
 ```
 
-Step 6: Add First User
+Step 6 - Add First User
 
 Two options:
 
@@ -233,13 +233,13 @@ Option A: Admin panel (easiest)
 4. Enter email, set temporary password
 5. Share link with user
 
-Option B: Manual command (if admin panel fails)
+Option B - Manual command (if admin panel fails)
 ```bash
 docker compose exec -it vaultwarden \
   /vaultwarden hash --preset owasp --input yourpassword
 ```
 
-Step 7: Enable SMTP for Email Invitations
+Step 7 - Enable SMTP for Email Invitations
 
 Edit `docker-compose.yml`:
 
@@ -267,7 +267,7 @@ Restart:
 docker compose restart vaultwarden
 ```
 
-Step 8: Automated Backups
+Step 8 - Automated Backups
 
 Create backup script `/root/vaultwarden/backup.sh`:
 
@@ -318,7 +318,7 @@ Check results
 ls -la /root/vaultwarden/backups/
 ```
 
-Step 9: Enable Two-Factor Authentication (2FA)
+Step 9 - Enable Two-Factor Authentication (2FA)
 
 In admin panel:
 1. Settings → Authentication
@@ -335,7 +335,7 @@ environment:
   TWOFACTOR_REMEMBER_EXPIRES_IN: 30
 ```
 
-Step 10: Configure Organization (Optional)
+Step 10 - Configure Organization (Optional)
 
 If you want to share passwords with family/team:
 
@@ -347,7 +347,7 @@ If you want to share passwords with family/team:
 
 Example org structure:
 ```
-Organization: MyFamily
+Organization - MyFamily
  Collection: Banking (shared with spouse)
  Collection: Streaming (shared with all)
  Collection: Personal (only me)

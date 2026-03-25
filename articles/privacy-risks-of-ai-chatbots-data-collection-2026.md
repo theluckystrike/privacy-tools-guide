@@ -54,14 +54,14 @@ When you ask ChatGPT "What are the side effects of metformin?", OpenAI logs:
 
 Data Retention
 
-Free ChatGPT: Messages are retained indefinitely. OpenAI states "we retain chat history to improve our models and services."
+Free ChatGPT - Messages are retained indefinitely. OpenAI states "we retain chat history to improve our models and services."
 
-ChatGPT Plus ($20/month): Same data collection, same indefinite retention.
+ChatGPT Plus ($20/month) - Same data collection, same indefinite retention.
 
 OpenAI's privacy policy explicitly states:
 > "We use the information we collect to improve our Services, train and improve our AI models, and for other purposes described in this privacy policy. Notably, we use conversations to train our models, including subsequent versions of ChatGPT."
 
-Translation: Your conversations are used to train future versions of ChatGPT, unless you explicitly opt out.
+Translation - Your conversations are used to train future versions of ChatGPT, unless you explicitly opt out.
 
 Opt-Out
 
@@ -72,7 +72,7 @@ OpenAI has a data deletion process:
 
 But this only deletes the visible history. OpenAI's backup systems may retain copies.
 
-Better: Opt out of training data usage:
+Better - Opt out of training data usage:
 
 1. Settings > Data Controls > Chat history & training
 2. Toggle OFF: "Improve model for everyone"
@@ -100,7 +100,7 @@ OpenAI offers "ChatGPT Enterprise" with different terms:
 - No access by OpenAI employees
 - SOC 2 Type II compliance
 
-Cost: $30/user/month (minimum 30 users).
+Cost - $30/user/month (minimum 30 users).
 
 For sensitive data (medical records, legal documents, financial plans), ChatGPT Enterprise is necessary.
 
@@ -108,11 +108,11 @@ ChatGPT standard tier is not suitable for sensitive data.
 
 Risks
 
-Data Breach: OpenAI has had incidents. In 2023, a bug exposed chat history of 1% of users (about 100,000 people). Your conversations could be exposed.
+Data Breach - OpenAI has had incidents. In 2023, a bug exposed chat history of 1% of users (about 100,000 people). Your conversations could be exposed.
 
-Model Training Data: Your conversations improve OpenAI's models, which they sell to enterprise customers. You're generating unpaid training data for a $1+ billion company.
+Model Training Data - Your conversations improve OpenAI's models, which they sell to enterprise customers. You're generating unpaid training data for a $1+ billion company.
 
-Third-Party Access: OpenAI shares data with law enforcement (with subpoena) and other government agencies. If you discuss legal strategies or political organizing, it's logged.
+Third-Party Access - OpenAI shares data with law enforcement (with subpoena) and other government agencies. If you discuss legal strategies or political organizing, it's logged.
 
 Claude (Anthropic)
 
@@ -126,7 +126,7 @@ Claude collects:
 
 Data Retention
 
-Free Claude (web interface): Conversations are stored indefinitely.
+Free Claude (web interface) - Conversations are stored indefinitely.
 
 Anthropic's privacy policy states:
 > "We use the information we collect to provide, improve, and develop our Services."
@@ -190,12 +190,12 @@ Gemini is integrated into Google's surveillance infrastructure.
 
 Data Retention
 
-Free Gemini: Conversations are retained indefinitely and used for training and improvement.
+Free Gemini - Conversations are retained indefinitely and used for training and improvement.
 
 Google's privacy policy states:
 > "We use information we collect to provide, maintain, and improve our services."
 
-Translation: Your conversations train Google's AI models.
+Translation - Your conversations train Google's AI models.
 
 Training Data Usage
 
@@ -222,7 +222,7 @@ For Google Workspace (enterprise Gmail, Drive, Docs):
 - 30-day data retention
 - HIPAA, FedRAMP, SOC 2 compliant
 
-Cost: $30/user/month for Gemini Business add-on.
+Cost - $30/user/month for Gemini Business add-on.
 
 Like OpenAI, Google restricts data usage for enterprise customers but not consumers.
 
@@ -243,7 +243,7 @@ Comparison Table
 | Enterprise Privacy | Excellent (separate infrastructure) | Good (same privacy, self-hosting option) | Excellent if Workspace (separate) |
 | Opt-Out Possible | Partial (no training) | No (but no training) | No |
 | IP Logging | Yes | Yes | Yes |
-| Profile Integration | Limited | None | Extreme (Google ecosystem) |
+| Profile Integration | Limited | None | Extreme (Google environment) |
 
 Self-Hosted Alternatives
 
@@ -262,9 +262,9 @@ Type prompts. Model runs locally. Zero data leaves your computer.
 
 Models available:
 - Llama 2 (Meta): 7B, 13B, 70B parameters. Free.
-- Mistral: 7B parameters. Fast.
-- Phi: 3B parameters. Tiny but capable.
-- Neural Chat: 7B parameters. Good instruction-following.
+- Mistral - 7B parameters. Fast.
+- Phi - 3B parameters. Tiny but capable.
+- Neural Chat - 7B parameters. Good instruction-following.
 
 Performance depends on your hardware:
 - 8GB RAM: Run Llama 2 7B (fast)
@@ -298,13 +298,13 @@ LocalGPT / PrivateGPT
 
 These projects bundle open-source models with user-friendly interfaces:
 
-LocalGPT: Focus on privacy. Runs entirely offline. Upload PDFs, ask questions, get answers, data never leaves your computer.
+LocalGPT - Focus on privacy. Runs entirely offline. Upload PDFs, ask questions, get answers, data never leaves your computer.
 
-PrivateGPT: Similar. Add documents, chat with them, complete privacy.
+PrivateGPT - Similar. Add documents, chat with them, complete privacy.
 
 Both support local embeddings (converting text to searchable vectors) without external APIs.
 
-Comparison: Local vs Cloud
+Comparison - Local vs Cloud
 
 | Feature | ChatGPT | Claude | Gemini | Ollama |
 |---------|---------|--------|--------|--------|
@@ -321,19 +321,19 @@ Sensitive Data (Medical, Legal, Financial)
 
 Use ChatGPT Enterprise or Claude Enterprise. They guarantee no training use and shorter retention.
 
-Cost: $30/user/month.
+Cost - $30/user/month.
 
 General Use with Privacy Preference
 
 Use Claude (free or Pro). Conversations aren't used for training, though data is retained.
 
-Cost: $20/month for Pro, or free tier.
+Cost - $20/month for Pro, or free tier.
 
 Maximum Privacy (Zero Data Transmission)
 
 Use Ollama or LocalGPT with local models.
 
-Cost: $0/month. Requires decent hardware (8GB+ RAM).
+Cost - $0/month. Requires decent hardware (8GB+ RAM).
 
 Setup:
 
@@ -391,11 +391,11 @@ If you must use cloud AI, treat it like speaking to a stranger. Only share what 
 
 Legal Context
 
-GDPR (EU): Requires explicit opt-in for data retention. If you're in the EU, you have stronger rights. Request data deletion under "right to erasure."
+GDPR (EU) - Requires explicit opt-in for data retention. If you're in the EU, you have stronger rights. Request data deletion under "right to erasure."
 
-CCPA (California): Gives right to request data deletion and know what data is collected. ChatGPT/Claude/Gemini must provide this info.
+CCPA (California) - Gives right to request data deletion and know what data is collected. ChatGPT/Claude/Gemini must provide this info.
 
-HIPAA (Healthcare): Prohibits sending health information to cloud AI unless it's BAA-compliant (signed Business Associate Agreement). ChatGPT Enterprise and Claude Enterprise support HIPAA, but you must sign the BAA.
+HIPAA (Healthcare) - Prohibits sending health information to cloud AI unless it's BAA-compliant (signed Business Associate Agreement). ChatGPT Enterprise and Claude Enterprise support HIPAA, but you must sign the BAA.
 
 Frequently Asked Questions
 

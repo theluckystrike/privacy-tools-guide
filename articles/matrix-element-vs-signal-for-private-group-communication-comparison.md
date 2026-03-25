@@ -22,18 +22,18 @@ Table of Contents
 
 - [Core Architectural Differences](#core-architectural-differences)
 - [Feature Comparison](#feature-comparison)
-- [End-to-End Encryption: Implementation Details](#end-to-end-encryption-implementation-details)
-- [Metadata Privacy: Detailed Comparison](#metadata-privacy-detailed-comparison)
-- [Self-Hosting: Practical Setup](#self-hosting-practical-setup)
+- [End-to-End Encryption - Implementation Details](#end-to-end-encryption-implementation-details)
+- [Metadata Privacy - Detailed Comparison](#metadata-privacy-detailed-comparison)
+- [Self-Hosting - Practical Setup](#self-hosting-practical-setup)
 - [Use Cases and Recommendations](#use-cases-and-recommendations)
 - [Detailed Cost Comparison](#detailed-cost-comparison)
-- [Real-World Comparison: Team of 10 Remote Workers](#real-world-comparison-team-of-10-remote-workers)
+- [Real-World Comparison - Team of 10 Remote Workers](#real-world-comparison-team-of-10-remote-workers)
 - [Security Considerations](#security-considerations)
-- [Migration Path: Signal to Matrix](#migration-path-signal-to-matrix)
+- [Migration Path - Signal to Matrix](#migration-path-signal-to-matrix)
 
 Core Architectural Differences
 
-Signal: Centralized, Phone-Number-Based
+Signal - Centralized, Phone-Number-Based
 
 How it works:
 - Requires phone number to create account
@@ -42,7 +42,7 @@ How it works:
 - Servers do not store message content (end-to-end encrypted)
 - Open-source client and server code
 
-Trust model: You trust Signal Foundation to not misuse metadata. The company is structured as a 501(c)(3) nonprofit, reducing financial incentives to monetize data.
+Trust model - You trust Signal Foundation to not misuse metadata. The company is structured as a 501(c)(3) nonprofit, reducing financial incentives to monetize data.
 
 Metadata exposed:
 - Your phone number to everyone in your contacts
@@ -51,7 +51,7 @@ Metadata exposed:
 - When messages were sent
 - Which group contains which members (for group messages)
 
-Matrix: Decentralized, User-ID-Based
+Matrix - Decentralized, User-ID-Based
 
 How it works:
 - No phone number required; create account on any public homeserver (matrix.org, example.com) or self-host
@@ -60,7 +60,7 @@ How it works:
 - Content encrypted end-to-end with optional server-side encryption
 - Open-source clients (Element, Fluffychat) and servers (Synapse, Dendrite)
 
-Trust model: You trust the homeserver operator. If you self-host, you manage all metadata. If using public server, operator sees metadata.
+Trust model - You trust the homeserver operator. If you self-host, you manage all metadata. If using public server, operator sees metadata.
 
 Metadata exposed:
 - User ID (@username:homeserver.com) visible to everyone you message
@@ -90,9 +90,9 @@ Feature Comparison
 | Mobile apps | iOS, Android | iOS, Android, F-Droid |
 | Account recovery | Phone number is recovery method | Recovery codes (self-hosted) |
 
-End-to-End Encryption: Implementation Details
+End-to-End Encryption - Implementation Details
 
-Signal: Double Ratchet Algorithm (Strongest for 1:1)
+Signal - Double Ratchet Algorithm (Strongest for 1:1)
 
 How it works:
 - Signal Protocol (developed by Signal Foundation)
@@ -106,9 +106,9 @@ Group messaging in Signal:
 - Each recipient's client decrypts with their own key
 - Sender's client verifies it has keys for all members before sending
 
-Security: 10/10 for encryption strength
+Security - 10/10 for encryption strength
 
-Matrix: Megolm + Olm (Flexible, but Weaker for Groups)
+Matrix - Megolm + Olm (Flexible, but Weaker for Groups)
 
 How it works:
 - Olm: Similar to Signal Protocol for 1:1 verification
@@ -122,9 +122,9 @@ Group messaging in Matrix:
 - All members use same key to decrypt messages
 - Compromised member key = compromised past room messages (forward secrecy loss)
 
-Security: 8/10 for encryption strength (adequate for group, weaker if member compromised)
+Security - 8/10 for encryption strength (adequate for group, weaker if member compromised)
 
-Metadata Privacy: Detailed Comparison
+Metadata Privacy - Detailed Comparison
 
 Signal Metadata Exposure
 
@@ -164,15 +164,15 @@ User A (@alice:example.com Messaging Server)
  Rooms joined: [!room1:example.com, !room2:example.com]
  Online status: online/offline
  Last activity: 2026-03-20 14:32:10 UTC
- Profile: name=Alice, avatar=/avatar.png
+ Profile - name=Alice, avatar=/avatar.png
  Device IDs: [ABCDE, FGHIJ]
 ```
 
 What federating servers know (when joining a room):
 ```
-Room: !private-group:alice-server.com
+Room - !private-group:alice-server.com
  Joined from: alice-server.com
- Members: @bob:bob-server.com, @carol:carol-server.com
+ Members - @bob:bob-server.com, @carol:carol-server.com
  Last message: 2026-03-20 14:30:00
  Messages (encrypted): [content hidden]
  Read receipts: @bob read at 14:30:05, @carol at 14:30:10
@@ -193,9 +193,9 @@ Metadata privacy risk:
 Real-world example:
 Activist using Matrix with self-hosted homeserver. Your homeserver sees which political organizing rooms you join, but your ISP only sees you connect to your server (not which rooms). Content stays encrypted even if ISP intercepts traffic.
 
-Self-Hosting: Practical Setup
+Self-Hosting - Practical Setup
 
-Signal: Not Recommended
+Signal - Not Recommended
 
 Signal provides server code but explicitly discourages self-hosting:
 
@@ -211,7 +211,7 @@ Possible only with:
 
 Self-hosted Signal is not practical.
 
-Matrix/Element: Excellent Self-Hosting
+Matrix/Element - Excellent Self-Hosting
 
 Minimal setup (Synapse homeserver + Element client):
 
@@ -237,7 +237,7 @@ Users can then:
 4. All metadata stays on your server
 ```
 
-Setup time: 1-2 hours (with Docker), including DNS, SSL, Nginx reverse proxy.
+Setup time - 1-2 hours (with Docker), including DNS, SSL, Nginx reverse proxy.
 
 Maintenance:
 - Database backups (Postgres)
@@ -273,7 +273,7 @@ Use Signal If:
  - Strong transparency reports
  - Regular security audits
 
-Real example: Lawyer with sensitive 1:1 client consultations. Signal's strength in pair communication, simplicity, and legal precedent (Signal is defendant choice in US legal system) makes it ideal.
+Real example - Lawyer with sensitive 1:1 client consultations. Signal's strength in pair communication, simplicity, and legal precedent (Signal is defendant choice in US legal system) makes it ideal.
 
 Use Matrix/Element If:
 
@@ -297,12 +297,12 @@ Use Matrix/Element If:
  - Webhooks and integrations
  - White-label deployments for teams
 
-5. Metadata privacy is paramount
+5. Metadata privacy is essential
  - Use self-hosted server + encrypted rooms
  - Control who sees your room memberships
  - Hide metadata from service provider
 
-Real example: NGO in authoritarian regime. Self-hosted Matrix on secure infrastructure hides room memberships (what the org discusses) from government surveillance while keeping message content encrypted even if they raid the server.
+Real example - NGO in authoritarian regime. Self-hosted Matrix on secure infrastructure hides room memberships (what the org discusses) from government surveillance while keeping message content encrypted even if they raid the server.
 
 Detailed Cost Comparison
 
@@ -337,36 +337,36 @@ Matrix (Managed)
 | Midnight.com | $15-30/month | Managed Matrix + Element |
 | Annual cost | $120-360/year | Convenience vs. self-hosting |
 
-Real-World Comparison: Team of 10 Remote Workers
+Real-World Comparison - Team of 10 Remote Workers
 
-Scenario: Privacy-focused software company, 10 employees, multiple communication channels (announcements, engineering, design, company-wide).
+Scenario - Privacy-focused software company, 10 employees, multiple communication channels (announcements, engineering, design, company-wide).
 
 Using Signal:
 
 ```
-Setup time: 30 min (everyone downloads, creates account)
-Messaging: Works fine for 1:1, awkward for group announcements
-Groups: Create separate groups for each channel (Announcements, Engineering, Design)
-Problem: No thread organization; 50+ messages/day becomes hard to follow
-Integration: Cannot integrate bots, no automations
-Annual cost: $0
-Metadata exposure: Signal servers know you're all communicating
-Maintenance: None
-Best for: Company-wide announcements via group, 1:1 design feedback
+Setup time - 30 min (everyone downloads, creates account)
+Messaging - Works fine for 1:1, awkward for group announcements
+Groups - Create separate groups for each channel (Announcements, Engineering, Design)
+Problem - No thread organization; 50+ messages/day becomes hard to follow
+Integration - Cannot integrate bots, no automations
+Annual cost - $0
+Metadata exposure - Signal servers know you're all communicating
+Maintenance - None
+Best for - Company-wide announcements via group, 1:1 design feedback
 ```
 
 Using Matrix (Self-Hosted):
 
 ```
-Setup time: 4-6 hours (deploy Synapse, configure Element, train users)
-Messaging: Excellent for organized channels
-Rooms: #announcements, #engineering, #design, #watercooler
-Features: Threads per message, topic organization, pinned messages
-Integration: RSS bot posts news, GitHub bot notifies on PRs, alert bot for incidents
-Annual cost: $85 (VPS $60 + domain $15 + backups $10)
-Metadata exposure: Your server (you control who sees)
-Maintenance: 1 hour/month (backups, updates)
-Best for: All team communication, integrated workflows
+Setup time - 4-6 hours (deploy Synapse, configure Element, train users)
+Messaging - Excellent for organized channels
+Rooms - #announcements, #engineering, #design, #watercooler
+Features - Threads per message, topic organization, pinned messages
+Integration - RSS bot posts news, GitHub bot notifies on PRs, alert bot for incidents
+Annual cost - $85 (VPS $60 + domain $15 + backups $10)
+Metadata exposure - Your server (you control who sees)
+Maintenance - 1 hour/month (backups, updates)
+Best for - All team communication, integrated workflows
 ```
 
 Matrix wins for team use due to organization, integrations, and self-hosting cost advantage ($85/year vs. relying on Signal's free servers which offer no team features).
@@ -380,56 +380,56 @@ Signal metadata risks:
 - Contact list exposure if your phone is compromised
 - Law enforcement correlation of metadata patterns
 
-Mitigation: Use Signal for sensitive conversations but accept metadata is visible to Signal.
+Mitigation - Use Signal for sensitive conversations but accept metadata is visible to Signal.
 
 Matrix metadata risks:
 - Self-hosted: You're single point of failure (compromise homeserver = all metadata)
 - Public server: Operator sees all metadata
 - Federation: Other servers see you're in shared rooms
 
-Mitigation: Use self-hosted Matrix + Tor for server access, or accept public server metadata.
+Mitigation - Use self-hosted Matrix + Tor for server access, or accept public server metadata.
 
 Encryption Strength
 
-Signal: 9/10
+Signal - 9/10
 - Strongest encryption for 1:1 and group
 - Perfect forward secrecy even if device is stolen
 - No known practical attacks
 
-Matrix: 7/10 for groups, 9/10 for 1:1
+Matrix - 7/10 for groups, 9/10 for 1:1
 - Group messages vulnerable if one member's key is compromised
 - 1:1 Olm is as strong as Signal
 - Trade-off: decentralization vs. encryption strength
 
-Migration Path: Signal to Matrix
+Migration Path - Signal to Matrix
 
 If your team uses Signal and wants to move to Matrix:
 
-Step 1: Self-host Matrix homeserver
+Step 1 - Self-host Matrix homeserver
 ```bash
 Deploy Synapse with Docker (1 hour)
 docker-compose up -d
 ```
 
-Step 2: Create Matrix rooms corresponding to Signal groups
+Step 2 - Create Matrix rooms corresponding to Signal groups
 ```
 Signal group "Engineering" → Matrix room #engineering:your-domain.com
 Signal group "Design" → Matrix room #design:your-domain.com
 ```
 
-Step 3: Invite users to create Matrix accounts
+Step 3 - Invite users to create Matrix accounts
 ```
 User creates @alice:your-domain.com
 Logs in to Element (web or app)
 Joins rooms
 ```
 
-Step 4: Gradually move conversations
+Step 4 - Gradually move conversations
 - Announcement in Signal: "Moving to Matrix for better organization"
 - Copy pinned messages and important context to Matrix
 - Set Signal to "archived" but keep for reference
 
-Time commitment: 6-8 hours total setup + user training.
+Time commitment - 6-8 hours total setup + user training.
 
 Frequently Asked Questions
 

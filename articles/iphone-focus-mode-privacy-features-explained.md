@@ -29,15 +29,15 @@ Table of Contents
 - [Comparison with Do Not Disturb](#comparison-with-do-not-disturb)
 - [Best Practices for Privacy](#best-practices-for-privacy)
 - [Troubleshooting Focus Mode Privacy](#troubleshooting-focus-mode-privacy)
-- [Threat Model: What Focus Mode Protects Against](#threat-model-what-focus-mode-protects-against)
+- [Threat Model - What Focus Mode Protects Against](#threat-model-what-focus-mode-protects-against)
 - [Advanced Focus Configuration Examples](#advanced-focus-configuration-examples)
-- [Technical Deep Dive: How Focus Affects iOS Internals](#technical-deep detailed look-how-focus-affects-ios-internals)
+- [Technical Deep Dive - How Focus Affects iOS Internals](#technical-deep detailed look-how-focus-affects-ios-internals)
 - [Shortcuts Automation for Enhanced Privacy](#shortcuts-automation-for-enhanced-privacy)
 - [Focus Status Sharing Implications](#focus-status-sharing-implications)
 - [Common Focus Configuration Mistakes](#common-focus-configuration-mistakes)
 - [Real-World Focus Mode Scenarios](#real-world-focus-mode-scenarios)
 - [Comparison with Similar Privacy Features on Android](#comparison-with-similar-privacy-features-on-android)
-- [Verification: Testing Your Focus Setup](#verification-testing-your-focus-setup)
+- [Verification - Testing Your Focus Setup](#verification-testing-your-focus-setup)
 - [Related Reading](#related-reading)
 
 What Is Focus Mode and Why It Matters for Privacy
@@ -128,19 +128,19 @@ If Focus Mode isn't protecting your privacy as expected:
 - Ensure Shortcuts automation isn't overriding Focus settings
 - Confirm iOS is updated to the latest version
 
-Threat Model: What Focus Mode Protects Against
+Threat Model - What Focus Mode Protects Against
 
 Understanding attack scenarios helps you configure Focus appropriately:
 
-Shoulder Surfing: Someone standing behind you sees notifications on your lock screen showing message previews, email subjects, or app alerts. Focus Mode with hidden notification previews prevents this exposure.
+Shoulder Surfing - Someone standing behind you sees notifications on your lock screen showing message previews, email subjects, or app alerts. Focus Mode with hidden notification previews prevents this exposure.
 
-Physical Device Access: Someone momentarily picks up your unlocked phone and sees sensitive notifications. Focus Mode suppresses notification badges and reduces visible information on home screen.
+Physical Device Access - Someone momentarily picks up your unlocked phone and sees sensitive notifications. Focus Mode suppresses notification badges and reduces visible information on home screen.
 
-Behavioral Analysis: Attackers observe when you receive notifications (patterns reveal routine). Focus Mode eliminates notification sounds and visual indicators.
+Behavioral Analysis - Attackers observe when you receive notifications (patterns reveal routine). Focus Mode eliminates notification sounds and visual indicators.
 
-App Activity Exposure: Apps displaying notification badges reveal apps you use and frequency. Focus Mode removes badges for non-allowed apps.
+App Activity Exposure - Apps displaying notification badges reveal apps you use and frequency. Focus Mode removes badges for non-allowed apps.
 
-Automatic Screen Display: Notifications cause device to wake with potentially sensitive information visible. Focus Mode prevents this automatic wake.
+Automatic Screen Display - Notifications cause device to wake with potentially sensitive information visible. Focus Mode prevents this automatic wake.
 
 Advanced Focus Configuration Examples
 
@@ -256,7 +256,7 @@ Usage:
 - No app badges showing account activity
 ```
 
-Technical Deep Dive: How Focus Affects iOS Internals
+Technical Deep Dive - How Focus Affects iOS Internals
 
 Focus-Based Entitlements:
 
@@ -302,12 +302,12 @@ Create sophisticated privacy automations using Shortcuts:
 Automatic Focus Activation on App Launch:
 
 ```
-Trigger: When specific app opens (e.g., banking app)
-Action 1: Enable Personal Focus
-Action 2: Hide home screen pages (except financial)
-Action 3: Enable low power mode
-Action 4: Disable screen sharing
-Action 5: Turn off WiFi (if internet not needed)
+Trigger - When specific app opens (e.g., banking app)
+Action 1 - Enable Personal Focus
+Action 2 - Hide home screen pages (except financial)
+Action 3 - Enable low power mode
+Action 4 - Disable screen sharing
+Action 5 - Turn off WiFi (if internet not needed)
 
 Opening banking app automatically enables privacy mode
 ```
@@ -315,42 +315,42 @@ Opening banking app automatically enables privacy mode
 Schedule-Based Privacy Transitions:
 
 ```
-Trigger: Daily at 6 PM
-Action 1: Disable Work Focus
-Action 2: Enable Personal Focus
-Action 3: Show all home screen pages
-Action 4: Resume normal notifications
-Action 5: Turn on WiFi
+Trigger - Daily at 6 PM
+Action 1 - Disable Work Focus
+Action 2 - Enable Personal Focus
+Action 3 - Show all home screen pages
+Action 4 - Resume normal notifications
+Action 5 - Turn on WiFi
 
-Trigger: Daily at 9 AM
-Action 1: Disable Personal Focus
-Action 2: Enable Work Focus
-Action 3: Hide personal pages
+Trigger - Daily at 9 AM
+Action 1 - Disable Personal Focus
+Action 2 - Enable Work Focus
+Action 3 - Hide personal pages
 ```
 
 Location-Based Focus Activation:
 
 ```
-Trigger: Arriving at home location
-Action 1: Disable Work Focus
-Action 2: Enable Personal Focus
-Action 3: Connect to WiFi if not already
-Action 4: Share Focus status with family
+Trigger - Arriving at home location
+Action 1 - Disable Work Focus
+Action 2 - Enable Personal Focus
+Action 3 - Connect to WiFi if not already
+Action 4 - Share Focus status with family
 
-Trigger: Leaving home location
-Action 1: Disable Personal Focus
-Action 2: Enable Work Focus
-Action 3: Prepare for work notifications
+Trigger - Leaving home location
+Action 1 - Disable Personal Focus
+Action 2 - Enable Work Focus
+Action 3 - Prepare for work notifications
 ```
 
 Emergency Override Automation:
 
 ```
-Trigger: Receive call from Emergency contact list
-Action 1: Temporarily disable Focus mode
-Action 2: Allow notifications from caller
-Action 3: Send location to emergency contact
-Action 4: Record call information
+Trigger - Receive call from Emergency contact list
+Action 1 - Temporarily disable Focus mode
+Action 2 - Allow notifications from caller
+Action 3 - Send location to emergency contact
+Action 4 - Record call information
 
 Even in strict Focus, emergency contacts can reach you
 ```
@@ -376,29 +376,29 @@ Best Practices:
 
 Common Focus Configuration Mistakes
 
-Mistake 1: Adding Too Many Contacts/Apps:
+Mistake 1 - Adding Too Many Contacts/Apps:
 - Focus mode becomes ineffective (everything notifies)
 - Solution: Keep contact list to <5 people, app list to <10 apps
 
-Mistake 2: Forgetting to Set Home Screen Page Filtering:
+Mistake 2 - Forgetting to Set Home Screen Page Filtering:
 - Sensitive apps still visible on lock screen
 - Solution: Always hide home screen pages for sensitive Focus modes
 
-Mistake 3: Not Disabling Focus Status Sharing:
+Mistake 3 - Not Disabling Focus Status Sharing:
 - Reveals when you're in Focus, when you use Focus
 - Solution: Disable for personal/sleep, enable for work only
 
-Mistake 4: Conflicting Automation Rules:
+Mistake 4 - Conflicting Automation Rules:
 - Conflicting Focus modes activate simultaneously
 - Solution: Test all automation rules, ensure no overlapping schedules
 
-Mistake 5: Not Testing Notification Behavior:
+Mistake 5 - Not Testing Notification Behavior:
 - Critical notifications missed, or too many notifications get through
 - Solution: Test each Focus mode by having friends message/call you
 
 Real-World Focus Mode Scenarios
 
-Scenario 1: Corporate Privacy:
+Scenario 1 - Corporate Privacy:
 
 Worker needs to prevent personal notifications during presentations:
 
@@ -413,7 +413,7 @@ Setup:
 No personal notifications visible during presentation, no notification sounds, only essential functions remain
 ```
 
-Scenario 2: Sleep Preservation:
+Scenario 2 - Sleep Preservation:
 
 User wants genuine sleep without interruptions:
 
@@ -428,7 +428,7 @@ Setup:
 Complete notification silence except genuine emergencies, device feels offline, genuine rest achieved
 ```
 
-Scenario 3: Relationship Privacy:
+Scenario 3 - Relationship Privacy:
 
 User with privacy-sensitive relationship wants to hide communications:
 
@@ -455,7 +455,7 @@ Comparison with Similar Privacy Features on Android
 | Password/biometric lock per focus | No | No |
 | App launch blocking | No | Available via launcher |
 
-Verification: Testing Your Focus Setup
+Verification - Testing Your Focus Setup
 
 Notification Testing Protocol:
 

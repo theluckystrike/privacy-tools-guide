@@ -38,7 +38,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Configure Network-Layer Anonymity
+Step 1 - Configure Network-Layer Anonymity
 
 The foundation of anonymous browsing starts at the network level. Your IP address remains the most immediate identifier, and routing traffic through an intermediary obscures your origin.
 
@@ -149,7 +149,7 @@ public class AnonymousVpnService extends VpnService {
 }
 ```
 
-Step 2: Harden the Browser for Mobile
+Step 2 - Harden the Browser for Mobile
 
 Your choice of mobile browser and its configuration determines what information leaks through browser fingerprinting and tracking scripts.
 
@@ -202,7 +202,7 @@ HTMLCanvasElement.prototype.toDataURL = function(type, ...args) {
 
 This technique adds minimal, imperceptible noise that defeats fingerprinting while maintaining visual fidelity.
 
-Step 3: Configure the Operating System Privacy Settings
+Step 3 - Configure the Operating System Privacy Settings
 
 Mobile operating systems themselves introduce tracking identifiers that persist across browsing sessions.
 
@@ -254,7 +254,7 @@ fun observeSensorPrivacy(): Flow<Set<SensorPrivacyType>> = callbackFlow {
 }
 ```
 
-Step 4: Practical Anonymous Browsing Workflow
+Step 4 - Practical Anonymous Browsing Workflow
 
 Combining these techniques creates a defense-in-depth approach to mobile anonymity:
 

@@ -63,17 +63,17 @@ The process involves creating a Limited Liability Company in a state that permit
 Creating an anonymous LLC structure
 This is pseudocode illustrating the concept
 
-Step 1: Choose a privacy-friendly state
+Step 1 - Choose a privacy-friendly state
 STATES_WITH_ANONYMOUS_LLC=("Wyoming" "Delaware" "New Mexico" "Nevada")
 
-Step 2: Form LLC with registered agent
+Step 2 - Form LLC with registered agent
 The LLC owns the vehicle, not you personally
 Your name appears only in internal company documents,
 not on the vehicle registration
 
-Step 3: Register vehicle under LLC name
-DMV records show: "ACME TRANSPORT LLC" as owner
-NOT: "John Doe, 123 Main Street"
+Step 3 - Register vehicle under LLC name
+DMV records show - "ACME TRANSPORT LLC" as owner
+NOT - "John Doe, 123 Main Street"
 ```
 
 This approach provides meaningful privacy because most vehicle record searches will return the LLC name rather than your personal information. However, there are important considerations:
@@ -106,7 +106,7 @@ Verification and Legal Considerations
 Before using any privacy registration service, verify their legitimacy and understand the legal implications:
 
 ```python
-Pseudocode: Due diligence checklist for registration services
+Pseudocode - Due diligence checklist for registration services
 
 def verify_privacy_registration_service(service):
     checks = {
@@ -188,7 +188,7 @@ func VerifyVehicleForService(plate string, serviceID string) (VehicleVerificatio
     })
 
     return VehicleVerification{
-        Valid: err == nil && record != nil,
+        Valid - err == nil && record != nil,
         VehicleDetails: record.Details, // Make, model, year only
         // Address information intentionally excluded
     }, err
@@ -223,9 +223,9 @@ Creating an LLC specifically for vehicle ownership requires careful structuring 
 
 ```bash
 #!/bin/bash
-Pseudocode: Multi-state LLC structure for maximum privacy
+Pseudocode - Multi-state LLC structure for maximum privacy
 
-Step 1: Create parent LLC in Delaware (strongest privacy laws)
+Step 1 - Create parent LLC in Delaware (strongest privacy laws)
 Delaware doesn't require disclosure of member names in public filings
 create_delaware_llc() {
   PARENT_LLC="APEX Holdings LLC"  # Delaware registered
@@ -235,7 +235,7 @@ create_delaware_llc() {
   # Privacy benefit: No member names in public records
 }
 
-Step 2: Create subsidiary LLC in Wyoming for actual vehicle registration
+Step 2 - Create subsidiary LLC in Wyoming for actual vehicle registration
 Wyoming allows anonymous ownership and has strong LLC privacy statutes
 create_wyoming_llc() {
   SUBSIDIARY_LLC="APEX Automotive LLC"  # Wyoming registered
@@ -246,7 +246,7 @@ create_wyoming_llc() {
   # Privacy benefit: Only parent LLC appears in public records
 }
 
-Step 3: Register vehicle under Wyoming LLC
+Step 3 - Register vehicle under Wyoming LLC
 register_vehicle_under_llc() {
   # Title and registration lists "APEX Automotive LLC" as owner
   # Public DMV searches reveal company, not your personal information
@@ -269,7 +269,7 @@ Business auto insurance policies (rather than personal auto) accommodate LLC own
 - Proof of LLC ownership (title documentation)
 - Proof that you maintain control and operational responsibility of the vehicle
 
-Alternative: Some states allow the LLC to obtain the insurance policy with you as an authorized operator. This maintains anonymity in public records while satisfying insurance requirements. Verify this arrangement with your insurer before finalizing LLC registration.
+Alternative - Some states allow the LLC to obtain the insurance policy with you as an authorized operator. This maintains anonymity in public records while satisfying insurance requirements. Verify this arrangement with your insurer before finalizing LLC registration.
 
 Tracking Prevention and Toll Management
 

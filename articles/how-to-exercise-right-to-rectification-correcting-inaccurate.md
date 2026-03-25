@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Legal Basis and Scope
+Step 1 - Legal Basis and Scope
 
 GDPR Article 16 establishes your right to have inaccurate personal data corrected without undue delay. You can also require incomplete data be completed, either through direct or by providing a supplementary statement. The key term "inaccurate" covers factual errors, outdated information, and data that misrepresents your current circumstances.
 
@@ -36,7 +36,7 @@ This right applies to any organization processing your personal data that falls 
 
 Companies must respond to your request within one month, with possible two-month extension for complex requests. Failure to comply triggers regulatory complaints and potential fines.
 
-Step 2: Identifying What Data Companies Hold
+Step 2 - Identifying What Data Companies Hold
 
 Before requesting corrections, you need visibility into what data exists. Exercise your GDPR access right (Article 15) first, submit a subject access request asking for "all personal data held about me in readable format." Most companies provide data exports through privacy dashboards or formal request portals.
 
@@ -51,7 +51,7 @@ For developers and technical users, this data export reveals:
 
 Review this export systematically. Look for discrepancies between what the company records and your actual current information. Common inaccuracies include outdated addresses, former names, incorrect birth dates, stale employment details, or miscategorized purchase history.
 
-Step 3: Drafting Your Rectification Request
+Step 3 - Drafting Your Rectification Request
 
 A legally compliant rectification request should be explicit, specific, and reference the applicable law. Structure your request with these elements:
 
@@ -64,7 +64,7 @@ A legally compliant rectification request should be explicit, specific, and refe
 Here's a template request:
 
 ```
-Subject: GDPR Article 16 Rectification Request - [Your Account/ID Number]
+Subject - GDPR Article 16 Rectification Request - [Your Account/ID Number]
 
 I am exercising my right to rectification under GDPR Article 16. The following personal data you hold is inaccurate:
 
@@ -87,7 +87,7 @@ If this request is not fulfilled, I will file a complaint with my local Data Pro
 [Date]
 ```
 
-Step 4: Submitting the Request Effectively
+Step 4 - Submitting the Request Effectively
 
 Where you submit matters. Most companies have dedicated privacy request portals, find these in settings pages, privacy policies, or footer links. Common portals include:
 
@@ -98,7 +98,7 @@ Where you submit matters. Most companies have dedicated privacy request portals,
 
 Document everything. Send requests via email with read receipts, or use portals that generate confirmation tickets. Note the submission date to track the one-month deadline.
 
-Step 5: Automate Requests at Scale
+Step 5 - Automate Requests at Scale
 
 For developers managing multiple accounts or conducting systematic data audits, automating GDPR requests increases efficiency. Here's a Python script template for submitting rectification requests to multiple services:
 
@@ -155,7 +155,7 @@ msg = send_rectification_request('privacy@company.com', 'Company Name', inaccura
 
 This script generates properly structured requests. You can extend it with integration into request tracking systems or CRM platforms for managing follow-ups.
 
-Step 6: Handling Company Responses
+Step 6 - Handling Company Responses
 
 Companies may respond in several ways:
 
@@ -167,18 +167,18 @@ Partial correction. Company corrects some fields but disputes others. Ask for wr
 
 Refusal or no response. After one month with no satisfactory resolution, escalate to your Data Protection Authority. File a complaint through your local DPA's website, the process is typically online and free.
 
-Step 7: Escalation and Regulatory Complaints
+Step 7 - Escalation and Regulatory Complaints
 
 If a company ignores your request or refuses correction without valid grounds, file a complaint with your local Data Protection Authority. EU residents can file with any DPA where the company operates, typically your country's authority:
 
-- Ireland: Data Protection Commission (dpc.ie)
+- Ireland - Data Protection Commission (dpc.ie)
 - UK: Information Commissioner's Office (ico.org.uk)
-- Germany: Bundesbeauftragte für den Datenschutz (bfdi.bund.de)
-- France: CNIL (cnil.fr)
+- Germany - Bundesbeauftragte für den Datenschutz (bfdi.bund.de)
+- France - CNIL (cnil.fr)
 
 Provide documentation of your original request, the company's response (or lack thereof), and evidence supporting the needed corrections. DPAs can issue warnings, order compliance, impose fines, and require companies to make specific corrections.
 
-Step 8: Practical Tips for Success
+Step 8 - Practical Tips for Success
 
 Keep these strategies in mind when exercising your rectification rights:
 
@@ -194,7 +194,7 @@ Escalate systematically. Regulatory complaints work. Companies receiving DPA inq
 
 Exercising your right to rectification requires persistence and precision. The legal framework exists to enable you, understanding how to use it effectively transforms abstract rights into practical data control.
 
-Step 9: Multi-Jurisdiction Rectification Strategies
+Step 9 - Multi-Jurisdiction Rectification Strategies
 
 If a company operates globally, understand which privacy laws apply:
 
@@ -208,7 +208,7 @@ If a company operates globally, understand which privacy laws apply:
 
 For companies operating in multiple jurisdictions, file requests under the strongest applicable law. A GDPR request triggers compliance obligations even for US companies serving EU customers.
 
-Step 10: Coordinated Mass Rectification
+Step 10 - Coordinated Mass Rectification
 
 If you discover systematic inaccuracies affecting multiple people (e.g., a service's price scraping is recording wrong address formats), coordinate rectification:
 
@@ -240,7 +240,7 @@ for company in companies_to_contact:
 
 Public rectification campaigns increase pressure on companies to respond. Media attention accelerates compliance.
 
-Step 11: Build Legal Evidence Files
+Step 11 - Build Legal Evidence Files
 
 For regulatory complaints, maintain detailed documentation:
 
@@ -284,7 +284,7 @@ tar -czf rectification_evidence.tar.gz "$EVIDENCE_DIR"
 
 Data Protection Authorities expect this evidence structure. Organized, dated documentation increases your case credibility.
 
-Step 12: Technical Verification After Correction
+Step 12 - Technical Verification After Correction
 
 Confirm the company actually made changes:
 

@@ -35,13 +35,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Instagram's Viewing Activity Visibility
+Step 1 - Understand Instagram's Viewing Activity Visibility
 
 When you view someone's Instagram story, your username appears in their viewers list. This visibility works bidirectionally, when others view your stories, you see exactly who checked out your content. However, Instagram provides limited controls over this visibility, and the platform's approach to viewing activity remains somewhat opaque compared to other social networks.
 
 The key distinction to understand is between story viewers and activity status. Your presence in someone else's story viewers list depends on their account privacy settings and your relationship with that account. Unlike LinkedIn's viewing profiles feature, Instagram hasn't provided a straightforward "private mode" for story viewing.
 
-Step 2: Control Your Story Viewers List
+Step 2 - Control Your Story Viewers List
 
 Your own story viewers list operates under straightforward rules based on your account privacy:
 
@@ -57,7 +57,7 @@ Removing Story Viewers
 
 Instagram allows you to remove followers, which prevents them from seeing future stories. Navigate to your profile, tap followers, and remove specific accounts. This action blocks future story visibility but does not notify the removed user.
 
-Step 3: Manage Your Viewing Activity Footprint
+Step 3 - Manage Your Viewing Activity Footprint
 
 The more complex privacy challenge involves controlling what others see when you view their content. Here's what you need to know:
 
@@ -69,11 +69,11 @@ Activity Status and Online Indicators
 
 Instagram shows when you're active or recently active. To manage this:
 
-1. Disable Activity Status: Go to Settings → Messages and Story Replies → Show Activity Status, and toggle it off. This prevents others from seeing when you were last active, though it also hides your ability to see others' activity status.
+1. Disable Activity Status - Go to Settings → Messages and Story Replies → Show Activity Status, and toggle it off. This prevents others from seeing when you were last active, though it also hides your ability to see others' activity status.
 
-2. Close Friends List: Use the Close Friends feature strategically. Stories shared exclusively with Close Friends remain visible only to that selected group, giving you finer control over content distribution.
+2. Close Friends List - Use the Close Friends feature strategically. Stories shared exclusively with Close Friends remain visible only to that selected group, giving you finer control over content distribution.
 
-Step 4: Developer Considerations: Instagram API Limitations
+Step 4 - Developer Considerations: Instagram API Limitations
 
 For developers building privacy-focused tools or integrations, the Instagram Graph API provides limited access to viewing activity data. Here's what the API currently supports:
 
@@ -104,7 +104,7 @@ Instagram enforces strict rate limits on API endpoints:
 - Review process: Apps require Facebook review before accessing any story-related data
 - Consent requirements: Users must explicitly authorize data access
 
-Step 5: Power User Strategies for 2026
+Step 5 - Power User Strategies for 2026
 
 Strategic Account Management
 
@@ -149,7 +149,7 @@ async function safeViewStory(viewer, targetUser) {
 
 Automated tools face significant restrictions, and Instagram actively detects and penalizes accounts using unauthorized automation.
 
-Step 6: Limitations and Platform Constraints
+Step 6 - Limitations and Platform Constraints
 
 It's essential to understand what Instagram does not allow:
 
@@ -166,19 +166,19 @@ Three-Account Architecture
 
 Design your Instagram presence around three distinct accounts:
 
-Account 1: Primary Social Account
+Account 1 - Primary Social Account
 - Real name and verified identity
 - Close friends and family only (private account)
 - Stories shared only with Close Friends
 - Followers: ~50-100 trusted contacts
 
-Account 2: Professional/Public Account
+Account 2 - Professional/Public Account
 - Professional focus or pseudonym
 - Public account for networking
 - Minimal personal content
 - Followers: Colleagues and industry contacts
 
-Account 3: Consumption Account
+Account 3 - Consumption Account
 - Pseudonym or generic name
 - Username without your real identity
 - No followers, minimal followers only
@@ -212,7 +212,7 @@ Account 3 (Consumption):
 
 These patterns make correlation analysis more difficult if all accounts are discovered.
 
-Step 7: Detecting If You're Being Tracked Through Stories
+Step 7 - Detecting If You're Being Tracked Through Stories
 
 Power users should understand signals indicating they might be tracked through story viewing.
 
@@ -250,7 +250,7 @@ If all your accounts access Instagram from the same IP address, sophisticated tr
 
 Use VPN for Account 3 (consumption account) to obscure IP address linking.
 
-Step 8: Automation Tools and Account Linking Detection
+Step 8 - Automation Tools and Account Linking Detection
 
 Instagram actively detects and penalizes account linking attempts. Understanding detection mechanisms prevents account bans.
 
@@ -301,7 +301,7 @@ Multiple accounts technically violate Instagram's terms, which state "You agree.
 - Hundreds of accounts for coordination purposes trigger enforcement
 - Modest multi-accounting (2-3 accounts) is tolerated if not obviously coordinated
 
-Step 9: Monitor Third-Party Story Analytics
+Step 9 - Monitor Third-Party Story Analytics
 
 Third-party tools claiming to provide story analytics or viewer information should be treated with suspicion.
 
@@ -328,7 +328,7 @@ Only Instagram's native analytics for creator/business accounts provide reliable
 
 These metrics don't identify viewers, only aggregate statistics. No legitimate tool identifies specific viewers on personal accounts.
 
-Step 10: Privacy-Focused Content Alternatives to Instagram Stories
+Step 10 - Privacy-Focused Content Alternatives to Instagram Stories
 
 Users requiring strong privacy guarantees might consider alternatives to Instagram entirely.
 
@@ -341,7 +341,7 @@ Telegram offers ephemeral stories with privacy controls:
 - Disappearing message support
 - Uses Telegram's encrypted infrastructure
 
-Trade-offs: Much smaller user base, content reach is limited compared to Instagram.
+Trade-offs - Much smaller user base, content reach is limited compared to Instagram.
 
 Signal Stories
 
@@ -352,7 +352,7 @@ Signal added stories feature with strong privacy defaults:
 - Viewers list always visible within Signal
 - No advertising or tracking
 
-Trade-offs: Requires everyone you know to use Signal.
+Trade-offs - Requires everyone you know to use Signal.
 
 BeReal
 
@@ -363,7 +363,7 @@ BeReal emphasizes authentic sharing without metrics or viewing lists:
 - Ephemeral content (auto-deletes after 24 hours)
 - Decentralized friend network
 
-Trade-offs: Different purpose (time-based rather than topical), smaller network.
+Trade-offs - Different purpose (time-based rather than topical), smaller network.
 
 Troubleshooting
 

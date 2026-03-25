@@ -103,8 +103,8 @@ Benchmark Methodology
 openvpn_benchmark.sh - Detailed DCO performance testing
 
 Prerequisites
-Server: OpenVPN with DCO enabled/disabled config
-Client: iperf3 installed
+Server - OpenVPN with DCO enabled/disabled config
+Client - iperf3 installed
 
 SERVER_IP="10.8.0.1"
 ITERATIONS=3
@@ -138,7 +138,7 @@ run_iperf_test() {
     echo "$avg"
 }
 
-Test 1: DCO Disabled (baseline)
+Test 1 - DCO Disabled (baseline)
 echo ">>> Test 1: DCO Disabled (Baseline)"
 dco_disabled=$(run_iperf_test "dco-disabled")
 
@@ -146,8 +146,8 @@ Switch to DCO-enabled config on server
 (requires SSH access to server)
 ssh user@vpn-server "systemctl restart openvpn"
 
-Test 2: DCO Enabled
-echo ">>> Test 2: DCO Enabled"
+Test 2 - DCO Enabled
+echo ">>> Test 2 - DCO Enabled"
 dco_enabled=$(run_iperf_test "dco-enabled")
 
 Calculate improvement
@@ -168,7 +168,7 @@ openvpn_latency_benchmark.sh - Measure VPN latency with/without DCO
 echo "=== OpenVPN DCO Latency Benchmark ==="
 echo ""
 
-Method 1: Simple ping test
+Method 1 - Simple ping test
 test_ping_latency() {
     local target=$1
     local label=$2
@@ -182,14 +182,14 @@ test_ping_latency() {
 Test through VPN connection
 test_ping_latency "10.8.0.1" "DCO-Enabled"
 
-Method 2: iperf3 latency test
+Method 2 - iperf3 latency test
 echo ""
 echo "Packet Rate Test (simulates many small packets):"
 
 iperf3 -c 10.8.0.1 -t 30 -b 1M -R --json 2>/dev/null | \
     jq '.start.timestamp, .intervals[0].streams[0].rtt' | head -5
 
-Method 3: DNS query latency (practical metric)
+Method 3 - DNS query latency (practical metric)
 echo ""
 echo "DNS Query Latency Through VPN:"
 
@@ -209,14 +209,14 @@ openvpn_realworld_benchmark.sh - Test common use cases
 echo "=== Real-World DCO Performance Testing ==="
 echo ""
 
-Test 1: Large file download
+Test 1 - Large file download
 echo "Test 1: Large File Download (1GB)"
 dd if=/dev/zero bs=1M count=1000 2>/dev/null | \
     ssh vpn_user@vpn_server "dd of=/tmp/testfile bs=1M" 2>/dev/null
 
 echo "Download speed: $(du -sh /tmp/testfile)"
 
-Test 2: Video streaming simulation
+Test 2 - Video streaming simulation
 echo ""
 echo "Test 2: Video Streaming Simulation (4K @ 25Mbps)"
 
@@ -224,14 +224,14 @@ ffmpeg -f lavfi -i testsrc=duration=60:size=3840x2160:rate=30 \
     -c:v libx265 -b:v 25M -f mpegts pipe: 2>/dev/null | \
     pv -r > /dev/null  # pv shows throughput
 
-Test 3: Real-time communication (VoIP simulation)
+Test 3 - Real-time communication (VoIP simulation)
 echo ""
 echo "Test 3: VoIP Quality Test"
 
 Use G.711 codec (typical VoIP)
 Test requires VoIP endpoints
 
-Test 4: Database sync (small frequent packets)
+Test 4 - Database sync (small frequent packets)
 echo ""
 echo "Test 4: Database Sync Simulation"
 

@@ -23,7 +23,7 @@ Table of Contents
 - [The Fingerprinting Mechanism](#the-fingerprinting-mechanism)
 - [Real-World Fingerprinting Techniques](#real-world-fingerprinting-techniques)
 - [Privacy Implications](#privacy-implications)
-- [HTTP/3 and QUIC: Does It Change the Threat?](#http3-and-quic-does-it-change-the-threat)
+- [HTTP/3 and QUIC - Does It Change the Threat?](#http3-and-quic-does-it-change-the-threat)
 - [Cross-Origin Fingerprinting via Shared Resources](#cross-origin-fingerprinting-via-shared-resources)
 - [Mitigation Strategies](#mitigation-strategies)
 - [Testing Your Application's Fingerprint Surface](#testing-your-applications-fingerprint-surface)
@@ -213,7 +213,7 @@ This fingerprinting method is particularly dangerous because:
 3. Works across domains: Using shared CDNs or embedded resources
 4. No cookies required: Identifies users without storing any state
 
-HTTP/3 and QUIC: Does It Change the Threat?
+HTTP/3 and QUIC - Does It Change the Threat?
 
 HTTP/3 replaces TCP with QUIC (an UDP-based transport protocol), which changes, but does not eliminate, the connection fingerprinting surface. QUIC introduces connection IDs that can persist across IP address changes, creating a new tracking vector even when users switch networks.
 
@@ -230,7 +230,7 @@ tshark -i eth0 -f "udp port 443" -Y "quic" \
   -e quic.initial_packet -w quic_capture.pcap
 ```
 
-The practical takeaway: migrating to HTTP/3 does not provide a privacy improvement for fingerprinting resistance. It shifts the attack surface rather than eliminating it.
+The practical takeaway - migrating to HTTP/3 does not provide a privacy improvement for fingerprinting resistance. It shifts the attack surface rather than eliminating it.
 
 Cross-Origin Fingerprinting via Shared Resources
 
@@ -359,5 +359,5 @@ Related Articles
 - [Browser Fingerprinting Protection Techniques](/browser-fingerprint-protection-guide)
 - [Tor Browser Fingerprinting Protection How It Makes Everyone](/tor-browser-fingerprinting-protection-how-it-makes-everyone-/)
 - [Browser Fingerprinting How It Works and How to Prevent It](/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
-- [AI Coding Assistant for Network Traffic Analysis: What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
+- [AI Coding Assistant for Network Traffic Analysis - What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)

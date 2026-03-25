@@ -38,7 +38,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand How Data Brokers Collect Your Information
+Step 1 - Understand How Data Brokers Collect Your Information
 
 Before removing your data, understanding how these platforms acquire it helps you address the root source. Data brokers collect information from:
 
@@ -47,9 +47,9 @@ Before removing your data, understanding how these platforms acquire it helps yo
 - Data sharing agreements: Companies that sell user data to brokers
 - Online directories: Business listings, professional networks, and subscription services
 
-Each time you provide information to a service, there's a chance it flows into the data broker ecosystem. Removing yourself from these sites provides immediate relief, but new data can appear as brokers continuously update their databases.
+Each time you provide information to a service, there's a chance it flows into the data broker environment. Removing yourself from these sites provides immediate relief, but new data can appear as brokers continuously update their databases.
 
-Step 2: Remove Your Data from TruePeopleSearch
+Step 2 - Remove Your Data from TruePeopleSearch
 
 TruePeopleSearch offers a free people search service that displays personal information prominently. Their opt-out process requires submitting a manual request through their removal form.
 
@@ -63,7 +63,7 @@ Manual Opt-Out Steps
 
 The removal typically takes effect within 24-72 hours, though you may need to repeat this process if your information reappears.
 
-Step 3: Remove Your Data from Instant Checkmate
+Step 3 - Remove Your Data from Instant Checkmate
 
 Instant Checkmate operates as a background check service and maintains extensive records. Their opt-out process follows a formal request pattern.
 
@@ -77,7 +77,7 @@ Manual Opt-Out Steps
 
 Instant Checkmate states that removals are processed within 48 hours, but the site may retain records for legal and compliance purposes.
 
-Step 4: Remove Your Data from Radaris
+Step 4 - Remove Your Data from Radaris
 
 Radaris functions as both a people search engine and a data broker that supplies information to other services. Their opt-out requires account deletion.
 
@@ -90,7 +90,7 @@ Manual Opt-Out Steps
 
 Radaris also offers a batch removal process for multiple records, which is useful if your information appears under several variations.
 
-Step 5: Automate Data Removal with Scripts
+Step 5 - Automate Data Removal with Scripts
 
 For developers managing removal requests across multiple sites, Python scripts can automate parts of this process. The following example demonstrates a structured approach to tracking opt-out requests:
 
@@ -152,7 +152,7 @@ tracker.add_request("Radaris", "https://radaris.com/page/remove")
 
 This script creates a JSON-based tracking system for managing multiple removal requests. You can extend it with automated email notifications using the `smtplib` library to remind yourself to verify completed removals.
 
-Step 6: Use Batch Removal Services
+Step 6 - Use Batch Removal Services
 
 For users with extensive digital footprints, manual removal across hundreds of data broker sites becomes impractical. Several services automate this process:
 
@@ -162,7 +162,7 @@ For users with extensive digital footprints, manual removal across hundreds of d
 
 While these services require subscription fees, they handle the tedious process of monitoring and re-removing your data as brokers repopulate their databases.
 
-Step 7: Verify Your Removal
+Step 7 - Verify Your Removal
 
 After submitting opt-out requests, verify effectiveness through periodic checks:
 
@@ -171,8 +171,8 @@ Check if your data appears on a site
 curl -s "https://www.truepeoplesearch.com/results?name=YourName&city=YourCity" | grep -i "yourphone" && echo "Still indexed" || echo "Removed"
 
 Use Google Alerts to monitor new appearances
-Set up at: https://www.google.com/alerts
-Monitor: "Your Name" "Your City" "Your Phone Number"
+Set up at - https://www.google.com/alerts
+Monitor - "Your Name" "Your City" "Your Phone Number"
 ```
 
 Create a simple cron job to run these checks weekly:
@@ -441,7 +441,7 @@ if __name__ == '__main__':
         print(f"  {broker}: {details['scheduled_check']}")
 ```
 
-Step 8: Browser-Based Removal Workflow
+Step 8 - Browser-Based Removal Workflow
 
 Use Selenium to automate removal on sites with interactive interfaces:
 
@@ -547,7 +547,7 @@ for result in results:
 bot.cleanup()
 ```
 
-Step 9: Legal Rights for Data Removal
+Step 9 - Legal Rights for Data Removal
 
 In many jurisdictions, you have statutory rights to demand data removal:
 
@@ -604,9 +604,9 @@ This is a formal request for deletion of personal data under {jurisdiction_info.
 
 Personal Details:
 Name: {firstname} {lastname}
-Email: {email}
-Jurisdiction: {jurisdiction}
-Request Date: {datetime.now().isoformat()}
+Email - {email}
+Jurisdiction - {jurisdiction}
+Request Date - {datetime.now().isoformat()}
 
 I request immediate deletion of all personal data associated with the above information from your database.
 This request includes but is not limited to:

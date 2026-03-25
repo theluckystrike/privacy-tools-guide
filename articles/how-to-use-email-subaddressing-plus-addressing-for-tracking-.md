@@ -28,9 +28,9 @@ Cloudflare Email Routing (free) setup example
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Advanced: Custom Domain Subaddressing](#advanced-custom-domain-subaddressing)
-- [Advanced: Automated Leak Detection System](#advanced-automated-leak-detection-system)
-- [Service-Level Comparison: Which Services Leak Most](#service-level-comparison-which-services-leak-most)
+- [Advanced - Custom Domain Subaddressing](#advanced-custom-domain-subaddressing)
+- [Advanced - Automated Leak Detection System](#advanced-automated-leak-detection-system)
+- [Service-Level Comparison - Which Services Leak Most](#service-level-comparison-which-services-leak-most)
 - [Troubleshooting](#troubleshooting)
 
 Prerequisites
@@ -43,13 +43,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Email Subaddressing
+Step 1 - Understand Email Subaddressing
 
 Most email providers support a simple syntax: anything after a plus sign (`+`) in your email address gets ignored during delivery but gets preserved in the recipient metadata. If your primary email is `developer@example.com`, you can use `developer+github@example.com` for GitHub registrations. Both addresses deliver to the same inbox, but the recipient sees the full address.
 
 This RFC 5233 compliant feature works with Gmail, Outlook, iCloud, Proton Mail, and most modern email services. The key advantage is that you can create unique addresses for every service without managing multiple accounts.
 
-Step 2: Set Up Subaddressing for Tracking
+Step 2 - Set Up Subaddressing for Tracking
 
 Create a systematic approach to tracking email usage across services. Generate aliases using a consistent format that identifies the service name:
 
@@ -75,19 +75,19 @@ console.log(serviceEmails.aws);      // developer+aws@example.com
 
 This script generates predictable aliases that you can document in a password manager or dedicated tracking system. When you sign up for a new service, create a subaddress that clearly identifies the service name.
 
-Step 3: Detecting Address Leaks
+Step 3 - Detecting Address Leaks
 
 Once you've been using subaddresses for a while, detecting leaks becomes straightforward. Create a dedicated email filter that labels incoming mail by the alias used:
 
 ```bash
 Gmail filter example - create filters for each service
-Match: to:(developer+github@example.com)
-Action: Add label "service/github", never mark as spam
+Match - to:(developer+github@example.com)
+Action - Add label "service/github", never mark as spam
 ```
 
 When `developer+github@example.com` starts receiving spam from unrelated domains, you know GitHub either experienced a breach or shared your data with third parties. Similarly, if your `linkedin+newsletter@example.com` address suddenly receives promotional emails about insurance, LinkedIn's data sharing practices are now affecting your inbox.
 
-Advanced: Custom Domain Subaddressing
+Advanced - Custom Domain Subaddressing
 
 For maximum control, pair subaddressing with a custom domain. This approach provides additional benefits:
 
@@ -108,7 +108,7 @@ Cloudflare Email Routing (free) setup example
 
 Services like Cloudflare Email Routing, Forward Email, and ImprovMX offer free catch-all forwarding. Combined with a privacy-respecting inbox provider, you gain full control over incoming mail.
 
-Step 4: Identifying Service Data Breaches
+Step 4 - Identifying Service Data Breaches
 
 When a service you registered with experiences a breach, attackers often obtain email addresses. If you're using subaddresses, you can identify the compromised service immediately:
 
@@ -143,7 +143,7 @@ function detectLeak(serviceName) {
 }
 ```
 
-Step 5: Practical Implementation Strategy
+Step 5 - Practical Implementation Strategy
 
 Start with these steps to build your tracking system:
 
@@ -158,7 +158,7 @@ When you notice a leak, you have options:
 - Contact the service to request data removal
 - Use the alias for targeted spam filtering in your email client
 
-Step 6: Common Pitfalls to Avoid
+Step 6 - Common Pitfalls to Avoid
 
 Some services don't accept plus addresses due to poor validation. Workarounds include:
 
@@ -168,7 +168,7 @@ Some services don't accept plus addresses due to poor validation. Workarounds in
 
 Avoid using easily guessable patterns like sequential numbers (`user+1@example.com`, `user+2@example.com`) as these can be trivially stripped by spam systems.
 
-Step 7: Automate Alias Management
+Step 7 - Automate Alias Management
 
 For power users managing many services, automate the process:
 
@@ -205,7 +205,7 @@ class EmailAliasManager {
 
 This approach creates discoverable aliases that include service name, purpose, and a timestamp for uniqueness while remaining readable.
 
-Step 8: Domain-Based Aliasing for Professional Separation
+Step 8 - Domain-Based Aliasing for Professional Separation
 
 For developers and power users managing separate professional identities, custom domain aliases provide stronger separation than plus addressing:
 
@@ -221,7 +221,7 @@ curl -X POST https://api.mailgun.net/v3/mg.yourdomain.com/routes \
 
 This approach scales better than plus addressing and provides professional aliases for different personas (dev@yourdomain.com, security@yourdomain.com, etc.).
 
-Step 9: Integrate with Password Managers for Tracking
+Step 9 - Integrate with Password Managers for Tracking
 
 Store subaddresses in your password manager with metadata tags to correlate with leak detection:
 
@@ -245,7 +245,7 @@ Store subaddresses in your password manager with metadata tags to correlate with
 
 When you receive unexpected mail to `developer+github@example.com`, look up the entry in your password manager to immediately identify the source.
 
-Advanced: Automated Leak Detection System
+Advanced - Automated Leak Detection System
 
 Build a tracking system that monitors aliases in real-time:
 
@@ -332,7 +332,7 @@ detector.detect_leaks()
 detector.report_leaks()
 ```
 
-Service-Level Comparison: Which Services Leak Most
+Service-Level Comparison - Which Services Leak Most
 
 Track which services expose your address to unexpected senders:
 
@@ -367,7 +367,7 @@ leak_rate = (leaked_services / total_services) * 100
 print(f"Leak rate: {leak_rate}% of services ({leaked_services}/{total_services})")
 ```
 
-Step 10: Gmail-Specific Advanced Filters
+Step 10 - Gmail-Specific Advanced Filters
 
 Gmail's powerful filter system enables sophisticated leak detection without third-party tools:
 
@@ -394,7 +394,7 @@ services/
       unexpected
 ```
 
-Step 11: Preventing Cross-Service Correlation
+Step 11 - Preventing Cross-Service Correlation
 
 When aliases are leaked and sold to data brokers, multiple services can correlate your activity. Mitigate this by:
 

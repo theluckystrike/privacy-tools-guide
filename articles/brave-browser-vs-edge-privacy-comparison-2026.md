@@ -46,7 +46,7 @@ Table of Contents
 
 Tracking Protection Mechanisms
 
-Brave Browser: Aggressive Blocking by Default
+Brave Browser - Aggressive Blocking by Default
 
 Brave ships with Shields enabled by default, blocking trackers, ads, and fingerprinting attempts at the network level. The browser uses multiple blocklists compiled byDisconnect, including over 40,000 tracker domains. You can view blocked requests in real-time:
 
@@ -64,7 +64,7 @@ The blocking operates at the DNS level for known malicious domains, providing pr
 // Strict mode modifies: canvas, audio, WebGL, fonts
 ```
 
-Microsoft Edge: Balance Mode
+Microsoft Edge - Balance Mode
 
 Edge uses Microsoft Defender SmartScreen and Tracking Prevention with three tiers: Basic, Strict, and Balanced. The default Balanced mode blocks known trackers while maintaining site compatibility:
 
@@ -130,8 +130,8 @@ Brave rewrites URLs to strip tracking parameters automatically:
 
 ```javascript
 // URL tracking parameter stripping example
-// Input: https://example.com/article?utm_source=newsletter&fb_id=12345
-// Output: https://example.com/article
+// Input - https://example.com/article?utm_source=newsletter&fb_id=12345
+// Output - https://example.com/article
 // Stripped: utm_source, fb_id, gclid, msclkid
 ```
 

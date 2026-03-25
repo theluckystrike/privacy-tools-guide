@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Firefox Containers
+Step 1 - Understand Firefox Containers
 
 Firefox containers create isolated browsing contexts that persist cookies, local storage, and site data separately. Unlike incognito mode, containers maintain state across sessions, your logged-in state remains when you reopen the container. Each container has its own cookie jar, meaning you can be simultaneously logged into the same service with different accounts.
 
@@ -39,7 +39,7 @@ The Multi-Account Containers extension (or built-in container support in newer F
 - Test web applications with clean state
 - Separate development environments from personal browsing
 
-Step 2: Install and Configuring Containers
+Step 2 - Install and Configuring Containers
 
 If you're running Firefox 115 or later, container support is built in. For earlier versions or additional features, install the Multi-Account Containers extension from Mozilla Add-ons:
 
@@ -66,7 +66,7 @@ pref("privacy.userContext.work.color", "#107c10");
 pref("privacy.userContext.development.color", "#d83b01");
 ```
 
-Step 3: Practical Development Workflows
+Step 3 - Practical Development Workflows
 
 Isolating Development Environments
 
@@ -198,7 +198,7 @@ For high-security workflows, combine containers with:
 - The resistFingerprinting setting in about:config
 - HTTPS-only mode for all connections
 
-Step 4: Automate Container Tasks
+Step 4 - Automate Container Tasks
 
 You can script container operations using the Firefox Container API or browser automation tools:
 

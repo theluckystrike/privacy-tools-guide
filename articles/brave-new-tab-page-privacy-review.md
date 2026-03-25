@@ -29,11 +29,11 @@ Table of Contents
 - [Inspecting Your Installation](#inspecting-your-installation)
 - [Configuration Recommendations](#configuration-recommendations)
 - [Network Monitoring Methodology](#network-monitoring-methodology)
-- [Threat Model: What NTP Data Leaks Reveal](#threat-model-what-ntp-data-leaks-reveal)
+- [Threat Model - What NTP Data Leaks Reveal](#threat-model-what-ntp-data-leaks-reveal)
 - [Advanced Hardening Configuration](#advanced-hardening-configuration)
 - [Custom New Tab Page Implementation](#custom-new-tab-page-implementation)
-- [Privacy Comparison: Brave NTP vs Alternatives](#privacy-comparison-brave-ntp-vs-alternatives)
-- [Verification: Check Current NTP Settings](#verification-check-current-ntp-settings)
+- [Privacy Comparison - Brave NTP vs Alternatives](#privacy-comparison-brave-ntp-vs-alternatives)
+- [Verification - Check Current NTP Settings](#verification-check-current-ntp-settings)
 - [Troubleshooting NTP Privacy Issues](#troubleshooting-ntp-privacy-issues)
 - [Related Reading](#related-reading)
 
@@ -55,11 +55,11 @@ Data Collection Mechanisms
 
 Brave's new tab page implements several data collection mechanisms that privacy-conscious users should understand:
 
-Local Storage and IndexedDB: The NTP stores preferences, viewed tiles, and interaction history in browser-local storage. This data remains on your machine and doesn't transmit to Brave's servers unless you enable sync.
+Local Storage and IndexedDB - The NTP stores preferences, viewed tiles, and interaction history in browser-local storage. This data remains on your machine and doesn't transmit to Brave's servers unless you enable sync.
 
-Usage Statistics: Brave collects anonymous usage data through its telemetry system. Users can disable this in settings under `Privacy and security > Help improve Brave`. Even when enabled, this data is aggregated and cannot be traced to individual users.
+Usage Statistics - Brave collects anonymous usage data through its telemetry system. Users can disable this in settings under `Privacy and security > Help improve Brave`. Even when enabled, this data is aggregated and cannot be traced to individual users.
 
-New Tab Metrics: The NTP reports anonymized metrics about which tiles users interact with, how long they view certain sections, and which customization options they select. Developers can examine these requests by filtering network traffic for domains ending in `brave.com` with `/ntp-metrics` in the path.
+New Tab Metrics - The NTP reports anonymized metrics about which tiles users interact with, how long they view certain sections, and which customization options they select. Developers can examine these requests by filtering network traffic for domains ending in `brave.com` with `/ntp-metrics` in the path.
 
 Custom Tiles and Third-Party Content
 
@@ -86,11 +86,11 @@ Privacy-Focused Alternatives
 
 Developers who find Brave's new tab page too feature-rich have several alternatives:
 
-Extensions: Privacy-focused NTP extensions exist that provide speed dial functionality without telemetry. Extensions like "StartPage" or custom-built solutions using the WebExtensions API can replace the default experience entirely.
+Extensions - Privacy-focused NTP extensions exist that provide speed dial functionality without telemetry. Extensions like "StartPage" or custom-built solutions using the WebExtensions API can replace the default experience entirely.
 
-Browser Settings: Navigate to `brave://settings/newTab` to disable most NTP features. You can reduce the page to a simple search box with minimal tracking.
+Browser Settings - Navigate to `brave://settings/newTab` to disable most NTP features. You can reduce the page to a simple search box with minimal tracking.
 
-Custom HTML: Advanced users can create a custom new tab page using the `chrome://newtab` override feature available in some Chromium derivatives. This requires modifying browser files or using specialized extensions.
+Custom HTML - Advanced users can create a custom new tab page using the `chrome://newtab` override feature available in some Chromium derivatives. This requires modifying browser files or using specialized extensions.
 
 Inspecting Your Installation
 
@@ -123,7 +123,7 @@ mitmproxy -p 8080
 
 Configure Brave to use mitmproxy as a proxy
 Brave Settings → Advanced → System → Open Proxy Settings
-Set HTTP Proxy: localhost:8080
+Set HTTP Proxy - localhost:8080
 
 Open a new tab and observe all network requests in mitmproxy
 Look for domains containing "brave.com", "cdn.jsdelivr.net", or news provider domains
@@ -145,19 +145,19 @@ Expected Network Requests:
 - News feed endpoints if enabled
 - Metrics collection endpoints (may contain anonymized usage data)
 
-Threat Model: What NTP Data Leaks Reveal
+Threat Model - What NTP Data Leaks Reveal
 
 Understanding the privacy implications of different NTP configurations:
 
-IP Address Leakage: Every request to Brave's servers or third-party content loads reveals your IP address (or proxy IP). Network observers can correlate multiple new tab openings to track your active browsing periods.
+IP Address Leakage - Every request to Brave's servers or third-party content loads reveals your IP address (or proxy IP). Network observers can correlate multiple new tab openings to track your active browsing periods.
 
-Usage Pattern Profiling: When you open new tabs multiple times per minute, Brave's servers might log this frequency, creating an usage pattern profile even if the NTP itself doesn't load content.
+Usage Pattern Profiling - When you open new tabs multiple times per minute, Brave's servers might log this frequency, creating an usage pattern profile even if the NTP itself doesn't load content.
 
-Geography Fingerprinting: Your IP address reveals your approximate location. If Brave serves location-specific news or content, they can infer your location from NTP requests.
+Geography Fingerprinting - Your IP address reveals your approximate location. If Brave serves location-specific news or content, they can infer your location from NTP requests.
 
-Tile Preferences: If you sync NTP tiles across devices, Brave can profile your interests based on your bookmark choices and tile organization patterns.
+Tile Preferences - If you sync NTP tiles across devices, Brave can profile your interests based on your bookmark choices and tile organization patterns.
 
-Session Identification: If requests include session IDs or user tokens, Brave can correlate multiple NTP opens to the same session, building session-level usage profiles.
+Session Identification - If requests include session IDs or user tokens, Brave can correlate multiple NTP opens to the same session, building session-level usage profiles.
 
 Advanced Hardening Configuration
 
@@ -298,7 +298,7 @@ Configuration Steps:
 2. Configure as Brave NTP via a custom NTP extension or manual configuration
 3. All bookmarks and preferences remain local, no network requests
 
-Privacy Comparison: Brave NTP vs Alternatives
+Privacy Comparison - Brave NTP vs Alternatives
 
 | Feature | Brave NTP | Edge NTP | Chrome NTP |
 |---------|-----------|----------|-----------|
@@ -310,7 +310,7 @@ Privacy Comparison: Brave NTP vs Alternatives
 | Third-Party Content | Minimal | Extensive | Extensive |
 | Privacy Controls | Good | Fair | Poor |
 
-Verification: Check Current NTP Settings
+Verification - Check Current NTP Settings
 
 Verify your Brave NTP configuration:
 

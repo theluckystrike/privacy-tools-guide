@@ -91,9 +91,9 @@ package = google_request.prepare_request(
 
 Key providers and their processes:
 
-- Google: Requires a Death Notification Form and court documents. Google will either provide access or export data to the executor.
-- Microsoft: Uses their Next of Kin process, requiring death certificate, proof of identity, and court letters.
-- Yahoo: Similar process but often more restrictive with older accounts.
+- Google - Requires a Death Notification Form and court documents. Google will either provide access or export data to the executor.
+- Microsoft - Uses their Next of Kin process, requiring death certificate, proof of identity, and court letters.
+- Yahoo - Similar process but often more restrictive with older accounts.
 
 European Union (GDPR-Based)
 

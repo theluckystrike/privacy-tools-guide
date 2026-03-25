@@ -41,9 +41,9 @@ Choosing the Right VPN Server Location
 
 Not all US VPN servers perform equally for sports streaming. Geographic placement within the US matters for two reasons: latency and content rights.
 
-Latency considerations: A server in New York adds roughly 80-100ms round-trip time from Western Europe. A server on the US West Coast adds 150-180ms. For live sports, buffering affects perceived quality more than raw latency, but lower latency connections recover faster from packet loss.
+Latency considerations - A server in New York adds roughly 80-100ms round-trip time from Western Europe. A server on the US West Coast adds 150-180ms. For live sports, buffering affects perceived quality more than raw latency, but lower latency connections recover faster from packet loss.
 
-Blackout considerations: MLB, NBA, and NHL games frequently impose regional blackouts within the US itself. A VPN server in a market that carries the local broadcast rights may actually trigger a blackout you would not experience with a neutral market server. The Dallas-Fort Worth area is particularly affected for MLB games involving the Texas Rangers. When choosing a server, opt for mid-sized US markets without major league teams when possible.
+Blackout considerations - MLB, NBA, and NHL games frequently impose regional blackouts within the US itself. A VPN server in a market that carries the local broadcast rights may actually trigger a blackout you would not experience with a neutral market server. The Dallas-Fort Worth area is particularly affected for MLB games involving the Texas Rangers. When choosing a server, opt for mid-sized US markets without major league teams when possible.
 
 Protocol Selection and Configuration
 
@@ -109,7 +109,7 @@ Split DNS Implementation
 Configure split DNS to ensure DNS queries for US services route through your VPN tunnel:
 
 ```bash
-Linux: systemd-resolved configuration
+Linux - systemd-resolved configuration
 sudo mkdir -p /etc/systemd/resolved.conf.d
 cat << EOF | sudo tee /etc/systemd/resolved.conf.d/streaming.conf
 [Resolve]
@@ -159,7 +159,7 @@ Streaming services create unique canvas fingerprints by rendering hidden text an
 Matching the timezone is particularly important. If your VPN exit node is in New York but your browser reports an UTC+1 timezone, the inconsistency is a strong signal that you are using a VPN. Change your system timezone to match your VPN server location before connecting to a streaming service:
 
 ```bash
-Linux: set timezone to match US East Coast VPN server
+Linux - set timezone to match US East Coast VPN server
 timedatectl set-timezone America/New_York
 ```
 
@@ -195,8 +195,8 @@ For additional privacy, configure multi-hop VPN chains:
 
 ```bash
 UK exit node, then US exit node
-First hop: connect to UK server
-Second hop: connect through UK to US server
+First hop - connect to UK server
+Second hop - connect through UK to US server
 sudo openvpn --config chain-config.ovpn
 ```
 

@@ -62,7 +62,7 @@ spec:
  claimName: mumble-data
 ```
 
-Step 8: Monitor and Security Auditing
+Step 8 - Monitor and Security Auditing
 
 Set up logging and monitoring:
 
@@ -107,7 +107,7 @@ echo "Database Size:"
 du -h /var/lib/murmur/murmur.sqlite
 ```
 
-Step 9: Client-Side Security Hardening
+Step 9 - Client-Side Security Hardening
 
 Configure clients for maximum security:
 
@@ -171,7 +171,7 @@ hardener = MumbleClientHardener(os.path.expanduser('~/.config/Mumble'))
 hardener.generate_config()
 ```
 
-Step 10: Backup and Disaster Recovery
+Step 10 - Backup and Disaster Recovery
 
 Implement automated backup strategy:
 

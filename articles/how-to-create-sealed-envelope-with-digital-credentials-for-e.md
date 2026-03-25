@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Sealed Envelope Concept
+Step 1 - Understand the Sealed Envelope Concept
 
 A sealed envelope in digital terms is encrypted content that remains inaccessible until specific conditions are met. For estate lawyers, this typically means:
 
@@ -39,7 +39,7 @@ A sealed envelope in digital terms is encrypted content that remains inaccessibl
 
 The technical implementation involves encryption with either time-based release mechanisms or multi-party authorization requirements.
 
-Step 2: Use Age for Sealed Envelope Creation
+Step 2 - Use Age for Sealed Envelope Creation
 
 The `age` encryption tool provides a modern, simple approach to creating sealed envelopes. Unlike PGP, age has no key server dependencies and uses modern encryption primitives.
 
@@ -53,8 +53,8 @@ age-keygen
 
 Output example:
 age1ql3z7hjy54pw3hykk5s3uj7cjnp5s3uy9p56n9xx7kcgd4c7cypszk9w7
-# The private key - keep this secure
-SYMMETRIC-KEY: [32-byte key displayed here]
+The private key - keep this secure
+SYMMETRIC-KEY - [32-byte key displayed here]
 ```
 
 For a safe deposit box scenario, create two key pairs, one for the lawyer and one for the executor or trusted party.
@@ -93,7 +93,7 @@ Or with passphrase
 age -d -p sealed-envelope.age > decrypted-documents.tar.gz
 ```
 
-Step 3: Time-Locked Envelopes with GPG
+Step 3 - Time-Locked Envelopes with GPG
 
 For envelopes that should remain sealed until a specific date, GPG provides time-based encryption capabilities through the `gpg-agent` configuration.
 
@@ -137,11 +137,11 @@ age -r recipient1.pub -r recipient2.pub -r recipient3.pub \
 Any two recipients can collaborate to decrypt
 ```
 
-Step 4: Digital Credential Storage Patterns
+Step 4 - Digital Credential Storage Patterns
 
 For a safe deposit box scenario, consider this layered approach:
 
-Layer 1: Physical Security
+Layer 1 - Physical Security
 
 Store the decryption keys in the safe deposit box alongside physical documents:
 
@@ -151,7 +151,7 @@ age-keygen -y > paper-key.txt
 Print and store in physical safe deposit box
 ```
 
-Layer 2: Distributed Key Storage
+Layer 2 - Distributed Key Storage
 
 Distribute key shares across multiple locations:
 
@@ -164,11 +164,11 @@ Create encrypted envelope
 echo "$MASTER_KEY" | age -r age1lawyerpub --passphrase \
     -o envelope.age documents.tar.gz
 
-Store key separately: lawyer has one share,
+Store key separately - lawyer has one share,
 executor has another, third party has third
 ```
 
-Layer 3: Emergency Access Protocol
+Layer 3 - Emergency Access Protocol
 
 Implement a dead man's switch pattern:
 
@@ -190,7 +190,7 @@ if [ $DIFF -gt 2592000 ]; then
 fi
 ```
 
-Step 5: Practical Implementation for Estate Lawyers
+Step 5 - Practical Implementation for Estate Lawyers
 
 Document Organization Structure
 
@@ -276,7 +276,7 @@ When implementing sealed envelopes for estate documents:
 4. Access Protocols: Document clear procedures for authorized access
 5. Legal Compliance: Ensure your approach meets jurisdiction-specific requirements
 
-Step 6: Verification and Testing
+Step 6 - Verification and Testing
 
 Regularly verify envelope integrity:
 

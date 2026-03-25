@@ -23,10 +23,10 @@ Table of Contents
 - [The Shutdown Spectrum](#the-shutdown-spectrum)
 - [What Actually Happens to Your Data](#what-actually-happens-to-your-data)
 - [Critical Mitigation Strategies](#critical-mitigation-strategies)
-- [Technical Deep Dive: Encryption and Data Ownership](#technical-deep detailed look-encryption-and-data-ownership)
+- [Technical Deep Dive - Encryption and Data Ownership](#technical-deep detailed look-encryption-and-data-ownership)
 - [Real-World Examples](#real-world-examples)
 - [Building Your Contingency Plan](#building-your-contingency-plan)
-- [Code Example: Automated Backup Script](#code-example-automated-backup-script)
+- [Code Example - Automated Backup Script](#code-example-automated-backup-script)
 - [Auditing Your Password Vault](#auditing-your-password-vault)
 - [Generating Strong Passphrases](#generating-strong-passphrases)
 
@@ -100,7 +100,7 @@ Maintain written documentation of your password manager setup, including:
 - Export file locations
 - Self-hosted infrastructure access details
 
-Technical Deep Dive: Encryption and Data Ownership
+Technical Deep Dive - Encryption and Data Ownership
 
 Understanding the cryptography behind password managers illuminates why you should be concerned about company closures.
 
@@ -117,11 +117,11 @@ Some services use zero-knowledge architecture, ensuring the company genuinely ca
 
 Real-World Examples
 
-LastPass: Experienced multiple ownership changes and significant service disruptions. Users who maintained local backups recovered quickly; those relying solely on cloud access faced extended outages.
+LastPass - Experienced multiple ownership changes and significant service disruptions. Users who maintained local backups recovered quickly; those relying solely on cloud access faced extended outages.
 
-Dashlane: Implemented emergency access features allowing designated contacts to retrieve vault data under specific conditions.
+Dashlane - Implemented emergency access features allowing designated contacts to retrieve vault data under specific conditions.
 
-RememBear: Discontinued service, providing users ample time to export data before shutdown.
+RememBear - Discontinued service, providing users ample time to export data before shutdown.
 
 These cases demonstrate that advance preparation determines outcomes more than the specific company's policies.
 
@@ -129,17 +129,17 @@ Building Your Contingency Plan
 
 Develop a written contingency plan for password manager failures:
 
-1. Audit Current Setup: Identify all services storing credentials, including those embedded in browser extensions, mobile apps, and CLI tools.
+1. Audit Current Setup - Identify all services storing credentials, including those embedded in browser extensions, mobile apps, and CLI tools.
 
-2. Test Exports Monthly: Verify export functionality works before you need it. Corrupted or outdated exports are useless during emergencies.
+2. Test Exports Monthly - Verify export functionality works before you need it. Corrupted or outdated exports are useless during emergencies.
 
-3. Maintain Offline Copies: Store encrypted exports on multiple devices and physical media (external drives, encrypted USB devices).
+3. Maintain Offline Copies - Store encrypted exports on multiple devices and physical media (external drives, encrypted USB devices).
 
-4. Document Everything: Create a secure reference document listing vault locations, master password hints (not the password itself), and recovery procedures.
+4. Document Everything - Create a secure reference document listing vault locations, master password hints (not the password itself), and recovery procedures.
 
-5. Exercise Recovery: Periodically test restoring from backups to ensure they work and that you remember the process.
+5. Exercise Recovery - Periodically test restoring from backups to ensure they work and that you remember the process.
 
-Code Example: Automated Backup Script
+Code Example - Automated Backup Script
 
 Create a simple backup script using cron:
 

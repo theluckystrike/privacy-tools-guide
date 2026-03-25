@@ -41,9 +41,9 @@ Your Files → Encrypted in transit → Stored on servers
               ↓
 Provider has decryption keys
               ↓
-Can access: All your files
-Can provide to: Government (subpoena), hackers (breach), advertisers
-Risk level: High (unencrypted backup)
+Can access - All your files
+Can provide to - Government (subpoena), hackers (breach), advertisers
+Risk level - High (unencrypted backup)
 ```
 
 Dropbox 2011 breach exposed millions of files. Google Drive flagged user files to police. iCloud unlocks devices for FBI.
@@ -55,12 +55,12 @@ Your Files → Encrypted locally (you control key) → Transmitted encrypted
               ↓
 Provider cannot access files
               ↓
-Cannot access: Any files (literally impossible)
-Cannot provide to: Anyone (key not held)
-Risk level: Low (encryption impenetrable)
+Cannot access - Any files (literally impossible)
+Cannot provide to - Anyone (key not held)
+Risk level - Low (encryption impenetrable)
 ```
 
-Difference: You hold encryption keys. Provider is dumb pipe.
+Difference - You hold encryption keys. Provider is dumb pipe.
 
 Encryption Standards Explained
 
@@ -90,8 +90,8 @@ RSA-2048/4096 (Key Exchange)
 
 End-to-End vs Zero-Knowledge
 
-End-to-End: Data encrypted before leaving your device.
-Zero-Knowledge: Provider cannot decrypt even if trying.
+End-to-End - Data encrypted before leaving your device.
+Zero-Knowledge - Provider cannot decrypt even if trying.
 
 In practice, top services do both:
 - AES-256 encryption (end-to-end)
@@ -106,7 +106,7 @@ Pricing:
 - Basic: 5GB free
 - Personal: 2TB $8/month ($96/year)
 - Plus: 3TB $11.50/month ($138/year)
-- Family: 1TB per person (up to 5) $19.99/month ($240/year)
+- Family - 1TB per person (up to 5) $19.99/month ($240/year)
 
 Encryption:
 - Algorithm: AES-256-GCM
@@ -143,9 +143,9 @@ Disadvantages:
 - iOS app limited features
 - Fewer integrations than competitors
 
-Real cost: $8-19.99/month (2TB-1TB per person)
+Real cost - $8-19.99/month (2TB-1TB per person)
 
-Best for: Privacy-first users willing to pay, Canadian data residency preferred.
+Best for - Privacy-first users willing to pay, Canadian data residency preferred.
 
 2. Tresorit (Enterprise Grade)
 
@@ -153,7 +153,7 @@ Pricing:
 - Free: 5GB
 - Tresor: 500GB $9.99/month ($120/year)
 - TresorPlus: 3TB $17.99/month ($216/year)
-- Family: 2TB per person (5 members) $29.99/month ($360/year)
+- Family - 2TB per person (5 members) $29.99/month ($360/year)
 
 Encryption:
 - Algorithm: AES-256
@@ -190,17 +190,17 @@ Disadvantages:
 - Hungarian company (less known than Sync)
 - Syncing can be slow
 
-Real cost: $9.99-29.99/month
+Real cost - $9.99-29.99/month
 
-Best for: EU users, teams, unlimited version history needed, GDPR requirement.
+Best for - EU users, teams, unlimited version history needed, GDPR requirement.
 
-3. Proton Drive (Ecosystem Play)
+3. Proton Drive (environment Play)
 
 Pricing:
 - Free: 5GB
 - Plus: 200GB $4.99/month ($60/year)
 - Professional: 3TB $19.99/month ($240/year)
-- Family: 3TB per person (up to 6) $24.99/month ($300/year)
+- Family - 3TB per person (up to 6) $24.99/month ($300/year)
 
 Encryption:
 - Algorithm: AES-256
@@ -217,7 +217,7 @@ Features:
 - Versioning: 30-day history
 - Sharing: Password-protected encrypted links
 - Collaboration: Limited (Docs being added)
-- Integration: Proton Mail ecosystem
+- Integration: Proton Mail environment
 - Desktop: Windows, macOS
 - Mobile: iOS, Android
 - API: Limited
@@ -235,9 +235,9 @@ Disadvantages:
 - Collaboration weak (vs Sync/Tresorit)
 - Linux client basic
 
-Real cost: $4.99-24.99/month
+Real cost - $4.99-24.99/month
 
-Best for: Budget users, Proton Mail users, Swiss privacy preference.
+Best for - Budget users, Proton Mail users, Swiss privacy preference.
 
 4. Tresorit Alternatives (Other Options)
 
@@ -362,15 +362,15 @@ Encryption Verification
 Verify files encrypted:
 
 ```bash
-Linux/macOS: Check Sync folder contents
+Linux/macOS - Check Sync folder contents
 ls -la ~/Sync/
-Should see: Normal filenames (encrypted at transmission, not at rest)
+Should see - Normal filenames (encrypted at transmission, not at rest)
 
-Check file properties: File size won't change
+Check file properties - File size won't change
 Encrypted files appear normal size (encryption metadata minimal)
 
-On server: Intercept HTTP traffic
-Files in transmission show: Binary gibberish (unreadable)
+On server - Intercept HTTP traffic
+Files in transmission show - Binary gibberish (unreadable)
 ```
 
 For paranoid verification:
@@ -381,51 +381,51 @@ For paranoid verification:
 
 Real-World Scenarios
 
-Scenario 1: Backing Up Medical Records
+Scenario 1 - Backing Up Medical Records
 
-Files: PDFs with health history (sensitive)
-Requirements: Encryption + government-proof
+Files - PDFs with health history (sensitive)
+Requirements - Encryption + government-proof
 
-Solution: Tresorit (EU)
+Solution - Tresorit (EU)
 - Reason: GDPR protection prevents government access
 - Encryption: AES-256 (unbreakable)
 - Versioning: Unlimited (recover accidental deletions)
 - Cost: $17.99/month
 
-Alternative: Proton Drive ($4.99/month, Swiss law)
+Alternative - Proton Drive ($4.99/month, Swiss law)
 
-Scenario 2: Freelancer Backing Up Client Projects
+Scenario 2 - Freelancer Backing Up Client Projects
 
-Files: Client project files (breach = liability)
-Requirements: Encryption + sharing capability
+Files - Client project files (breach = liability)
+Requirements - Encryption + sharing capability
 
-Solution: Sync.com
+Solution - Sync.com
 - Reason: Encrypted sharing (link with password)
 - Versioning: 30 days (recover client files)
 - Sharing: Recipient-specific encryption
 - Cost: $8/month (2TB)
 
-Alternative: Tresorit (better sharing features)
+Alternative - Tresorit (better sharing features)
 
-Scenario 3: Large Photo Archive (5+ TB)
+Scenario 3 - Large Photo Archive (5+ TB)
 
-Files: 10,000+ family photos over 20 years
-Requirements: Affordable storage + encryption
+Files - 10,000+ family photos over 20 years
+Requirements - Affordable storage + encryption
 
-Solution: Wasabi ($7/month unlimited)
+Solution - Wasabi ($7/month unlimited)
 - Reason: Unlimited storage (no file limit)
 - Cost: $7/month (vs $20/month for Sync/Tresorit)
 - Encryption: AES-256 (client-side)
 - Limitation: US jurisdiction (acceptable for photos, not medical data)
 
-Alternative: Mega (5TB for $180/year)
+Alternative - Mega (5TB for $180/year)
 
-Scenario 4: Small Business Team (5 people)
+Scenario 4 - Small Business Team (5 people)
 
-Files: Team documents, financial records
-Requirements: Collaboration + encryption + admin control
+Files - Team documents, financial records
+Requirements - Collaboration + encryption + admin control
 
-Solution: Tresorit
+Solution - Tresorit
 - Reason: Team workspaces (shared encrypted folders)
 - Versioning: Unlimited (track all changes)
 - Admin: User management, access revocation
@@ -433,15 +433,15 @@ Solution: Tresorit
 
 Threat Model Analysis
 
-Threat: Hacker Breach of Provider
+Threat - Hacker Breach of Provider
 
-Risk: Attacker downloads encrypted backups
+Risk - Attacker downloads encrypted backups
 Zero-Knowledge Defense:  Safe
 - Hacker gets ciphertext only
 - No decryption key on server
 - Attack useless (cannot decrypt)
 
-Threat: Government Subpoena
+Threat - Government Subpoena
 
 US Jurisdiction:  Not safe
 - FISA warrant allows seizure
@@ -455,13 +455,13 @@ EU Jurisdiction:  Safe
 
 Use EU provider (Tresorit) for data government might target.
 
-Threat: Quantum Computer Decryption
+Threat - Quantum Computer Decryption
 
-Current Timeline: 2035+ (quantum computers mature)
+Current Timeline - 2035+ (quantum computers mature)
 AES-256 Status:  Safe (NSA approves for top-secret through 2035)
 RSA-2048 Status:  Vulnerable (switch to lattice-based cryptography)
 
-Your protection: Providers already planning post-quantum cryptography.
+Your protection - Providers already planning post-quantum cryptography.
 
 Backup Best Practices
 
@@ -472,11 +472,11 @@ Protect data with multiple copies:
 ```
 Original data (your device)
   ↓
-Copy 1: Local backup (external drive, encrypted)
-Copy 2: Cloud backup (Tresorit, offsite)
-Copy 3: Second provider (Sync.com, geographic diversity)
+Copy 1 - Local backup (external drive, encrypted)
+Copy 2 - Cloud backup (Tresorit, offsite)
+Copy 3 - Second provider (Sync.com, geographic diversity)
 
-Redundancy: If 1 fails, 2 others intact
+Redundancy - If 1 fails, 2 others intact
 ```
 
 Encryption at Each Layer
@@ -517,11 +517,11 @@ What NOT to Backup
  Application installations (will reinstall)
  Temporary files (internet cache, downloads)
 
-Reason: Cloud storage charged per GB. Backup only irreplaceable data.
+Reason - Cloud storage charged per GB. Backup only irreplaceable data.
 
 Restoration Testing
 
-Critical: Test restores before needing them.
+Critical - Test restores before needing them.
 
 Test procedure (monthly):
 
@@ -538,7 +538,7 @@ sha256sum ~/Downloads/test_file.zip
 Calculate hash of original
 sha256sum ~/backup_location/test_file.zip
 
-Should match: Backup integrity confirmed
+Should match - Backup integrity confirmed
 ```
 
 Frequently Asked Questions

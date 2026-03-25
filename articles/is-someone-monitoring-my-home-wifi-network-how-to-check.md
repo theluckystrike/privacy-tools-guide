@@ -21,7 +21,7 @@ Detecting unauthorized access to your home network requires a combination of rou
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Practical Example: Full Network Audit Script](#practical-example-full-network-audit-script)
+- [Practical Example - Full Network Audit Script](#practical-example-full-network-audit-script)
 - [Advanced Network Monitoring with Wireshark](#advanced-network-monitoring-with-wireshark)
 - [Troubleshooting](#troubleshooting)
 
@@ -35,13 +35,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Check Your Router's Connected Devices List
+Step 1 - Check Your Router's Connected Devices List
 
 The first step is reviewing what devices are connected to your network. Access your router's admin interface, typically at `192.168.0.1` or `192.168.1.1`, and look for a "Connected Devices," "DHCP Clients," or "Wireless Clients" section. Most modern routers display device names, MAC addresses, and IP addresses.
 
 Compare the listed devices against your known devices. Unrecognized MAC addresses or devices with generic names like "android-xyz" or unknown vendor names warrant investigation. Router interfaces vary significantly between manufacturers, so consult your specific model's documentation if you cannot locate the device list.
 
-Step 2: Scan Your Network with arp-scan
+Step 2 - Scan Your Network with arp-scan
 
 For command-line enthusiasts, `arp-scan` provides a faster alternative to router interfaces. Install it via Homebrew on macOS:
 
@@ -57,7 +57,7 @@ sudo arp-scan --localnet
 
 The tool sends ARP requests to all addresses in your subnet and displays responding devices. On a typical home network (192.168.1.0/24), this covers addresses 192.168.1.1 through 192.168.1.254. Look for devices you don't recognize, the MAC address vendor prefix can help identify manufacturers.
 
-Step 3: Use nmap for Discovery
+Step 3 - Use nmap for Discovery
 
 The Network Mapper (`nmap`) offers deeper introspection. It not only discovers devices but also identifies open ports and sometimes guesses operating systems.
 
@@ -74,7 +74,7 @@ nmap -O 192.168.1.0/24
 
 The `-O` flag attempts operating system detection. Results show each live host, its latency, and potential OS match. An unexpected device responding on your network is the first red flag.
 
-Step 4: Analyze Network Traffic with tcpdump
+Step 4 - Analyze Network Traffic with tcpdump
 
 If you suspect monitoring, examine actual network traffic. The `tcpdump` command captures packets on your network interface:
 
@@ -91,7 +91,7 @@ Look for unusual traffic patterns. Excessive traffic to unfamiliar IP addresses,
 
 For encrypted traffic (which modern HTTPS provides), you won't see content, but you can identify destinations. Unexpected connections to IP addresses in foreign countries warrant concern.
 
-Step 5: Check for ARP Spoofing
+Step 5 - Check for ARP Spoofing
 
 ARP (Address Resolution Protocol) maps IP addresses to MAC addresses. Attackers can poison ARP caches to intercept traffic, a technique called ARP spoofing. The `arp` command displays your current ARP table:
 
@@ -111,7 +111,7 @@ Run (requires root)
 sudo arpwatch -i en0
 ```
 
-Step 6: Examine Router Logs
+Step 6 - Examine Router Logs
 
 Router logs often reveal connection attempts, authentication failures, and device associations. Access them through the admin panel, look for "System Log," "Security Log," or "Advanced > Logs."
 
@@ -129,7 +129,7 @@ Then listen with:
 sudo tcpdump -i en0 port 514
 ```
 
-Step 7: Monitor DNS Queries
+Step 7 - Monitor DNS Queries
 
 Your DNS queries reveal significant information about your network activity. Run a DNS query monitor to see which domains your devices contact:
 
@@ -142,7 +142,7 @@ sudo brew services start dnsmasq
 
 Configure your router or device to use 127.0.0.1 as DNS, then monitor `/usr/local/var/log/dnsmasq.log`. Unknown domains, especially those resolving to external IPs, may indicate compromised devices or monitoring software beaconing home.
 
-Practical Example: Full Network Audit Script
+Practical Example - Full Network Audit Script
 
 Combine these techniques into a single bash script for routine checks:
 
@@ -171,7 +171,7 @@ nmap -sT -p 22,23,80,443,8080,3389 192.168.1.0/24 2>/dev/null | grep "Ports"
 
 Run this periodically to establish a baseline and detect anomalies.
 
-Step 8: Signs You Should Take Action
+Step 8 - Signs You Should Take Action
 
 Immediate action is warranted if you discover:
 - Devices you don't own on your network
@@ -180,7 +180,7 @@ Immediate action is warranted if you discover:
 - Unusual data usage spikes
 - DNS queries to domains you never visit
 
-Step 9: Secure Your Network
+Step 9 - Secure Your Network
 
 If you've detected unauthorized access, take these steps immediately:
 
@@ -193,11 +193,11 @@ If you've detected unauthorized access, take these steps immediately:
 
 Regular network audits, weekly or monthly, help maintain visibility over your home network. The techniques in this guide apply to any local network, making them valuable for securing home offices and small business environments alike.
 
-Step 10: Understand Common Unauthorized Network Access Scenarios
+Step 10 - Understand Common Unauthorized Network Access Scenarios
 
 Unauthorized network access falls into several categories, each requiring different detection and remediation:
 
-Scenario 1: Neighbor Stealing WiFi
+Scenario 1 - Neighbor Stealing WiFi
 Weakest encryption (WEP), no password, or shared WiFi password. Neighbors or passersby connect and use bandwidth. Usually low risk for data theft, but creates network congestion and exposes you to their traffic.
 
 Detection:
@@ -205,7 +205,7 @@ Detection:
 - Devices with generic manufacturer names ("Huawei-12345") when everyone uses Apple/Windows
 - Bandwidth hogging to random IP addresses outside normal home traffic
 
-Scenario 2: Malware-Infected Device on Network
+Scenario 2 - Malware-Infected Device on Network
 One device in your home (TV, smart speaker, camera) got compromised and now serves as a pivot point for attacks on other devices.
 
 Detection:
@@ -213,7 +213,7 @@ Detection:
 - High bandwidth usage when device should be idle
 - Unusual port activity on device (incoming connections on port 3389 = Windows Remote Desktop)
 
-Scenario 3: Professional Monitoring (Family Member or Employer)
+Scenario 3 - Professional Monitoring (Family Member or Employer)
 Spouse installed monitoring software on shared network. Employer deployed monitoring on a loaner laptop. Usually visible as active monitoring tool traffic.
 
 Detection:
@@ -221,7 +221,7 @@ Detection:
 - Regular beacons to cloud monitoring services
 - DNS queries to monitoring service domains
 
-Scenario 4: Network Mirroring / Man-in-the-Middle (MITM)
+Scenario 4 - Network Mirroring / Man-in-the-Middle (MITM)
 Attacker on the same network intercepts traffic. This is technically sophisticated but possible with tools like Bettercap or mitmproxy.
 
 Detection:
@@ -244,16 +244,16 @@ wireshark  # GUI opens, select en0 or relevant interface
 In Wireshark, set filters to focus on suspicious activity:
 
 ```
-Filter 1: Show all outbound traffic to non-private IPs
+Filter 1 - Show all outbound traffic to non-private IPs
 ip.dst != 192.168.0.0/16 and ip.dst != 10.0.0.0/8
 
-Filter 2: Show unencrypted HTTP traffic (no HTTPS)
+Filter 2 - Show unencrypted HTTP traffic (no HTTPS)
 http
 
-Filter 3: Show DNS queries
+Filter 3 - Show DNS queries
 dns
 
-Filter 4: Show potential reverse shells
+Filter 4 - Show potential reverse shells
 tcp.dstport == 4444 or tcp.dstport == 5555 or tcp.dstport == 6666
 ```
 
@@ -264,7 +264,7 @@ A 30-minute Wireshark capture shows your actual network patterns. Run it:
 
 Interpreting Wireshark output requires networking knowledge, but unusual patterns become obvious: unencrypted login attempts, massive outbound data transfers, or connections to known malware C&C servers.
 
-Step 11: Checking for Rogue Access Points
+Step 11 - Checking for Rogue Access Points
 
 A sophisticated attacker might create a fake WiFi network mimicking your router's name (Evil Twin attack). Your devices connect to the fake network instead of your real one, and the attacker intercepts all traffic.
 
@@ -287,7 +287,7 @@ Prevention:
 - Use 5GHz WiFi when possible (shorter range, harder to spoof)
 - Enable hidden SSID on your router (fewer rogue networks will match)
 
-Step 12: Monitor with a Network TAP (Hardware Approach)
+Step 12 - Monitor with a Network TAP (Hardware Approach)
 
 For serious network monitoring, a network TAP (Terminal Access Point) lets you mirror traffic to a monitoring device without affecting normal traffic.
 
@@ -300,15 +300,15 @@ Connected to a Raspberry Pi running tcpdump and analysis tools
 Example setup with basic TP-Link switch (some models support port mirroring)
 Enable port mirroring on switch:
 Port 1: Internet uplink
-Port 2: Router
-Port 3: Monitoring port (destination)
+Port 2 - Router
+Port 3 - Monitoring port (destination)
 Configure to mirror all traffic to port 3
 Connect Raspberry Pi to port 3, run persistent tcpdump analysis
 ```
 
 A Raspberry Pi TAP setup costs ~$50 and runs 24/7 monitoring, logging all network activity to local storage for forensic review.
 
-Step 13: Router-Level Monitoring Tools
+Step 13 - Router-Level Monitoring Tools
 
 Modern routers support logging and monitoring. Access these features in admin panel (usually 192.168.1.1):
 
@@ -334,7 +334,7 @@ Example router log revealing suspicious activity:
 
 These logs show an unauthorized device, login attempts, and suspicious outbound traffic.
 
-Step 14: Comparing Network Monitoring Tools
+Step 14 - Comparing Network Monitoring Tools
 
 Different tools serve different purposes. Here's what each excels at:
 
@@ -348,13 +348,13 @@ Different tools serve different purposes. Here's what each excels at:
 | Ubiquiti UniFi | $150-500 | Professional home/small business | Medium |
 | Glass WiFi | $15/month | Managed WiFi monitoring | Low |
 
-For non-technical users: Use your router's built-in logs + device count check.
+For non-technical users - Use your router's built-in logs + device count check.
 
-For developers: Wireshark + nmap combination covers 95% of detection scenarios.
+For developers - Wireshark + nmap combination covers 95% of detection scenarios.
 
-For paranoid users: Dedicated hardware TAP + Raspberry Pi + persistent logging.
+For paranoid users - Dedicated hardware TAP + Raspberry Pi + persistent logging.
 
-Step 15: Post-Detection: Response Procedures
+Step 15 - Post-Detection: Response Procedures
 
 If you find evidence of unauthorized access:
 
@@ -383,7 +383,7 @@ Long-term (ongoing):
 3. Update router firmware when available
 4. Implement network segmentation (guest network for IoT, main network for computers)
 
-Step 16: Home Network Architecture for Better Security
+Step 16 - Home Network Architecture for Better Security
 
 Restructuring your network can prevent monitoring threats from spreading:
 
@@ -458,6 +458,6 @@ Related Articles
 - [Create Separate Network Segment for Smart Home Isolating](/how-to-create-separate-network-segment-for-smart-home-isolat/)
 - [Suricata Home Network IDS Setup Guide](/suricata-home-network-ids-setup/)
 - [How to Secure Smart Home Devices Privacy Guide 2026](/how-to-secure-smart-home-devices-privacy-guide-2026/)
-- [AI Coding Assistant for Network Traffic Analysis: What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
+- [AI Coding Assistant for Network Traffic Analysis - What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

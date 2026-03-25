@@ -23,7 +23,7 @@ Table of Contents
 - [Why PGP Still Matters in 2026](#why-pgp-still-matters-in-2026)
 - [Prerequisites](#prerequisites)
 - [Security Best Practices](#security-best-practices)
-- [Advanced: Subkeys and Hardware Security](#advanced-subkeys-and-hardware-security)
+- [Advanced - Subkeys and Hardware Security](#advanced-subkeys-and-hardware-security)
 - [Troubleshooting Common PGP Problems](#troubleshooting-common-pgp-problems)
 
 Why PGP Still Matters in 2026
@@ -42,7 +42,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install GPG
+Step 1 - Install GPG
 
 Most Linux distributions include GPG by default. On macOS, install via Homebrew:
 
@@ -60,7 +60,7 @@ gpg --version
 
 You should see output indicating GPG version 2.4 or higher.
 
-Step 2: Generate Your PGP Key Pair
+Step 2 - Generate Your PGP Key Pair
 
 Create a new key pair with a 4096-bit RSA key:
 
@@ -79,7 +79,7 @@ Follow the prompts:
 
 The key generation process may take several minutes as GPG generates entropy. For faster results on servers, install `haveged` to provide additional entropy.
 
-Step 3: Manage Your Keys
+Step 3 - Manage Your Keys
 
 Listing Keys
 
@@ -121,7 +121,7 @@ gpg --armor --gen-revoke your-key-id > revocation.asc
 
 If your key is compromised, this certificate tells others your key is no longer valid.
 
-Step 4: Configure Your Email Client
+Step 4 - Configure Your Email Client
 
 Thunderbird (Enigmail/Built-in)
 
@@ -152,7 +152,7 @@ set crypt_autosign = yes
 set crypt_autoencrypt = yes
 ```
 
-Step 5: Practical Usage Examples
+Step 5 - Practical Usage Examples
 
 Encrypting a Message
 
@@ -197,7 +197,7 @@ gpg --decrypt encrypted-message.asc
 
 GPG prompts for your passphrase and outputs the plaintext.
 
-Step 6: Key Servers and Key Management
+Step 6 - Key Servers and Key Management
 
 Publishing Your Public Key
 
@@ -235,7 +235,7 @@ Security Best Practices
 5. Use subkeys: Separate encryption and signing keys for daily use
 6. Keep software updated: GPG updates fix security vulnerabilities
 
-Advanced: Subkeys and Hardware Security
+Advanced - Subkeys and Hardware Security
 
 For maximum security, use subkeys stored on YubiKey or similar hardware tokens. This keeps your master key offline in secure storage while using a derived key for daily operations.
 
@@ -306,7 +306,7 @@ save
 
 Note that you can only extend expiry on keys you own. For others' keys, the extension must come from the key owner.
 
-Step 7: PGP for Git Commit Signing
+Step 7 - PGP for Git Commit Signing
 
 Beyond email, PGP is widely used to sign Git commits, providing cryptographic proof that commits came from a specific key holder. Configure Git to sign commits automatically:
 

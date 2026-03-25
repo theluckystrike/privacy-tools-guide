@@ -25,8 +25,8 @@ Table of Contents
 - [NAT Traversal Techniques for VPNs](#nat-traversal-techniques-for-vpns)
 - [Practical VPN Implementation](#practical-vpn-implementation)
 - [Troubleshooting NAT Traversal Issues](#troubleshooting-nat-traversal-issues)
-- [Advanced Troubleshooting: Building a NAT Diagnostic Tool](#advanced-troubleshooting-building-a-nat-diagnostic-tool)
-- [Performance Optimization: Reducing Latency](#performance-optimization-reducing-latency)
+- [Advanced Troubleshooting - Building a NAT Diagnostic Tool](#advanced-troubleshooting-building-a-nat-diagnostic-tool)
+- [Performance Optimization - Reducing Latency](#performance-optimization-reducing-latency)
 
 Understanding NAT and Its Impact on VPNs
 
@@ -206,7 +206,7 @@ Check if your ISP blocks common VPN ports
 nmap -p 500,4500,1701,51820 -sU your-isp-gateway
 ```
 
-Advanced Troubleshooting: Building a NAT Diagnostic Tool
+Advanced Troubleshooting - Building a NAT Diagnostic Tool
 
 Developers can build automated NAT detection to help users configure VPNs properly:
 
@@ -217,7 +217,7 @@ import time
 
 class NATDiagnostic:
     """
-    Comprehensive NAT detection and diagnosis for VPN troubleshooting.
+    complete NAT detection and diagnosis for VPN troubleshooting.
     """
 
     def __init__(self, stun_servers=None):
@@ -291,7 +291,7 @@ class NATDiagnostic:
 
     def generate_report(self):
         """
-        Generate comprehensive NAT diagnostic report.
+        Generate complete NAT diagnostic report.
         """
         nat_type = self.detect_nat_type()
         is_cgnat, private_ip = self.check_cgnat()
@@ -361,7 +361,7 @@ print(f"VPN Recommendations: {report['vpn_feasibility']}")
 
 This diagnostic tool helps developers build better VPN client UX by automatically detecting network conditions and suggesting optimal VPN protocols.
 
-Performance Optimization: Reducing Latency
+Performance Optimization - Reducing Latency
 
 When using TURN relays, latency increases because traffic is routed through intermediate servers. Optimize by selecting geographically close TURN servers:
 

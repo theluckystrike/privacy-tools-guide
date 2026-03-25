@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Email Traceability
+Step 1 - Understand Email Traceability
 
 Every email leaves traces. Even when you use a "fake" email address, the underlying transport layer reveals information:
 
@@ -41,7 +41,7 @@ Reporters and investigative journalists often receive tips through secure channe
 
 Most people assume that registering a new email account with a fake name provides sufficient anonymity. It does not. The webmail interface logs your browser fingerprint, the registration IP address is recorded and often subpoenaed, and if you access the account from the same network where you check personal email, traffic correlation makes de-anonymization trivial. True operational security requires layering multiple protections simultaneously.
 
-Step 2: Use Tor for Network Anonymity
+Step 2 - Use Tor for Network Anonymity
 
 The first layer of protection involves routing your traffic through Tor to hide your IP address. Never access email services directly from your regular internet connection.
 
@@ -79,9 +79,9 @@ Route any command through Tor
 torify wget -qO- https://check.torproject.org/api/ip
 ```
 
-A critical point: never mix Tor and non-Tor traffic in the same session. If you open your personal Gmail in one tab and your anonymous email in another tab of the same browser, both sessions can be correlated by timing analysis. Use the Tor Browser in a dedicated virtual machine or on Tails OS, completely separated from your regular workflow.
+A critical point - never mix Tor and non-Tor traffic in the same session. If you open your personal Gmail in one tab and your anonymous email in another tab of the same browser, both sessions can be correlated by timing analysis. Use the Tor Browser in a dedicated virtual machine or on Tails OS, completely separated from your regular workflow.
 
-Step 3: Create Isolated Email Infrastructure
+Step 3 - Create Isolated Email Infrastructure
 
 Separate your anonymous identity from your regular digital life. This means:
 
@@ -105,13 +105,13 @@ relay:
     destinations:
       - "tips@investigative-news.org"
     headers:
-      From: "anonymous <noreply@anonymous.example>"
+      From - "anonymous <noreply@anonymous.example>"
       Reply-To: "reply@anonymous.example"
 ```
 
 When creating accounts over Tor, avoid services that require phone number verification. Phone numbers are strongly tied to real identity, even a prepaid SIM purchased with cash is often trackable through tower geolocation at the time of purchase. Services like ProtonMail, Disroot, and RiseUp allow registration over Tor without phone verification, though ProtonMail sometimes requires it for new accounts during periods of high abuse.
 
-Step 4: Implementing GPG Encryption
+Step 4 - Implementing GPG Encryption
 
 Encryption protects message content but metadata remains visible. Combine GPG encryption with onion-routed delivery for defense in depth.
 
@@ -140,7 +140,7 @@ Share your public key through secure channels. Reporters should verify fingerpri
 
 When generating keys for anonymous use, be precise about what information you embed. The default GPG key generation embeds a name and email address that you choose, use names completely unrelated to your real identity. Do not upload the key to public keyservers, because keyserver entries are permanent and timestamped, providing a historical record that can later be correlated with your activity. Instead, share the armored public key directly with the journalist through a secure channel.
 
-Step 5: Hardening Your Email Client
+Step 5 - Hardening Your Email Client
 
 Configure your email client to minimize metadata leakage:
 
@@ -186,7 +186,7 @@ strip_metadata = true
 
 Most email clients, including Thunderbird and Mutt, send detailed headers about the client version and operating system. On Tails OS, the Tor Browser's built-in webmail approach avoids this problem by presenting a uniform browser fingerprint. If you must use a local client, Thunderbird with the "Header modification" extension allows you to strip or replace identifying headers before messages leave your machine.
 
-Step 6: Practical Tip Submission Workflow
+Step 6 - Practical Tip Submission Workflow
 
 A complete workflow for submitting anonymous tips:
 
@@ -241,7 +241,7 @@ Verify metadata is gone
 mat2 --show sensitive-document.pdf
 ```
 
-Step 7: Verification and Testing
+Step 7 - Verification and Testing
 
 Test your anonymous setup before submitting real tips:
 
@@ -250,7 +250,7 @@ Verify Tor is working
 curl --socks5 localhost:9050 https://ipleak.net
 
 Check for WebRTC leaks (disable in browser)
-Visit: https://ipleak.net/webrtc
+Visit - https://ipleak.net/webrtc
 
 Test GPG encryption
 echo "test" | gpg --encrypt --armor --recipient test@test.com

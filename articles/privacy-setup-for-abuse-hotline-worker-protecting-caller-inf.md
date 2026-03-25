@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Threat Field
+Step 1 - Understand the Threat Field
 
 Abuse hotline environments present unique privacy challenges. Callers may be monitored by abusers through shared devices, compromised accounts, or physical surveillance. The information hotline workers collect, phone numbers, addresses, device identifiers, call metadata, becomes a liability if mishandled.
 
@@ -41,7 +41,7 @@ Key attack vectors include:
 
 The goal is implementing defense in depth: multiple independent layers of protection so that compromising one layer doesn't expose caller information.
 
-Step 2: Secure Communication Channels
+Step 2 - Secure Communication Channels
 
 End-to-End Encrypted Messaging
 
@@ -68,7 +68,7 @@ VoIP Considerations
 
 If hotline operations use VoIP, avoid providers that retain call recordings without explicit consent. Self-hosted solutions like Asterisk or FreeSWITCH allow full control over call handling and metadata retention policies.
 
-Step 3: Metadata Protection Strategies
+Step 3 - Metadata Protection Strategies
 
 Metadata can be more revealing than content. Phone numbers, call duration, and timing patterns reveal caller habits and potential locations. Implement these mitigations:
 
@@ -86,14 +86,14 @@ Provide callers with guidance on masking their number:
 - Mobile users should disable caller ID forwarding in carrier settings
 - Burner phones for sensitive communications provide additional separation
 
-Step 4: Device Hardening for Hotline Workers
+Step 4 - Device Hardening for Hotline Workers
 
 Worker devices require rigorous security configurations beyond typical personal use.
 
 Mobile Device Configuration
 
 ```bash
-Android: Disable WiFi scanning
+Android - Disable WiFi scanning
 Settings > Network & Internet > WiFi > WiFi scanning
 Set to "Disabled" to prevent probe requests revealing location
 
@@ -107,7 +107,7 @@ Application Auditing
 Review all installed applications quarterly:
 
 ```bash
-Android: Check permissions via ADB
+Android - Check permissions via ADB
 adb shell dumpsys package | grep -E "permission|packageName"
 
 iOS: Review Privacy Nutrition Labels
@@ -130,7 +130,7 @@ mount /dev/mapper/secure_notes /mnt/secure
 
 For cross-platform compatibility, VeraCrypt provides portable encrypted containers that work across operating systems without installation.
 
-Step 5: Data Minimization Practices
+Step 5 - Data Minimization Practices
 
 Collect only information necessary for crisis response. This reduces both liability and attack surface.
 
@@ -152,7 +152,7 @@ Run daily at 3am
 find /secure/notes -type f -mtime +7 -delete
 ```
 
-Step 6: Secure the Network
+Step 6 - Secure the Network
 
 Hotline workers often handle calls from various locations. Network security becomes critical when working remotely.
 
@@ -183,16 +183,16 @@ DNS Security
 Configure devices to use encrypted DNS to prevent query logging by ISPs:
 
 ```bash
-Android: Private DNS
+Android - Private DNS
 Settings > Network & Internet > Private DNS
-Set to: dns.example.com (use your provider's hostname)
+Set to - dns.example.com (use your provider's hostname)
 
 iOS: DNS Settings
 Settings > WiFi > (info) > Configure DNS
 Select "Automatic" with a privacy DNS service
 ```
 
-Step 7: Documentation and Training
+Step 7 - Documentation and Training
 
 Technical measures fail without proper procedures. Develop documentation covering:
 
@@ -203,7 +203,7 @@ Technical measures fail without proper procedures. Develop documentation coverin
 
 Regular training ensures all workers understand both the threats and mitigations. Conduct tabletop exercises simulating device confiscation or data breach scenarios.
 
-Step 8: Secure Case Note Management System
+Step 8 - Secure Case Note Management System
 
 For hotline organizations handling high call volumes:
 
@@ -240,7 +240,7 @@ CREATE TABLE sensitive_data_audit (
 
 All sensitive caller data should be stored separately from searchable fields and accessible only through decryption requiring additional authentication.
 
-Step 9: Physical Device Security for Hotline Workers
+Step 9 - Physical Device Security for Hotline Workers
 
 Devices handling caller information require hardened security:
 
@@ -305,7 +305,7 @@ Settings hardening:
    - Never sync personal social media accounts
 ```
 
-Step 10: Call Recording and Retention Policies
+Step 10 - Call Recording and Retention Policies
 
 Many jurisdictions require explicit consent for call recording. Implement legal compliance:
 
@@ -348,17 +348,17 @@ done
 
 Recordings should be encrypted immediately after conclusion, then automatically deleted after retention period expires.
 
-Step 11: Multi-Factor Authentication for Hotline Systems
+Step 11 - Multi-Factor Authentication for Hotline Systems
 
 Require multiple factors for access to caller databases:
 
 ```bash
 Setup Google Authenticator + YubiKey for hotline system access
 
-Step 1: Employee device (password + biometric)
-Step 2: Organization network or VPN
-Step 3: TOTP code from Google Authenticator
-Step 4: Hardware YubiKey (optional for super-users)
+Step 1 - Employee device (password + biometric)
+Step 2 - Organization network or VPN
+Step 3 - TOTP code from Google Authenticator
+Step 4 - Hardware YubiKey (optional for super-users)
 
 No single factor compromise exposes caller data
 ```
@@ -375,7 +375,7 @@ Host hotline-db
     # Prompts for TOTP after SSH key verification
 ```
 
-Step 12: Plan Incident Response Procedures
+Step 12 - Plan Incident Response Procedures
 
 Prepare for device compromise or unauthorized access:
 
@@ -406,8 +406,8 @@ revoke_tokens() {
 4. Document timeline
 log_incident() {
     cat > /var/log/incident_$(date +%s).txt <<EOF
-Time: $(date)
-Type: Potential device compromise
+Time - $(date)
+Type - Potential device compromise
 Actions taken:
 - Account disabled
 - API tokens revoked
@@ -444,7 +444,7 @@ Never assume hotline infrastructure can protect caller identity
 if there is imminent physical threat. Prioritize safety.
 ```
 
-Step 13: Test Security Controls
+Step 13 - Test Security Controls
 
 Regular security testing ensures controls remain effective:
 

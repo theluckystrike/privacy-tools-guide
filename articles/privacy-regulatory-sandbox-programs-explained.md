@@ -149,7 +149,7 @@ Advanced Documentation for Sandbox Applications
 
 Beyond simple data flow diagrams, successful sandbox applications include implementation specifications that demonstrate technical sophistication. Include details like:
 
-Data lifecycle specifications: Exactly how long each data category exists in storage, which systems access it, and how deletion is triggered and verified:
+Data lifecycle specifications - Exactly how long each data category exists in storage, which systems access it, and how deletion is triggered and verified:
 
 ```json
 {

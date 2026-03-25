@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Android Permission Architecture
+Step 1 - Understand Android Permission Architecture
 
 Android permissions operate through permission groups. Apps declare required permissions in their manifest; Android groups related permissions together. When an app requests camera access, you can grant or deny it. Unlike older Android versions, you can revoke permissions after installation without uninstalling the app.
 
@@ -46,11 +46,11 @@ Key permission groups:
 
 Each group contains related permissions. Granting "Camera" permission grants both CAMERA and associated image recording permissions.
 
-Step 2: Method 1: Using Android Settings (Manual)
+Step 2 - Method 1: Using Android Settings (Manual)
 
 The graphical approach works for systematic audits of all installed apps.
 
-Step 1: Access Permission Manager
+Step 1 - Access Permission Manager
 
 ```
 Settings → Privacy and safety → Permissions → Permission Manager
@@ -62,7 +62,7 @@ This shows all permission groups. On some Android versions:
 Settings → Apps → Permissions → [Permission name]
 ```
 
-Step 2: Review Each Permission Group
+Step 2 - Review Each Permission Group
 
 For each permission (Location, Camera, Microphone, Contacts, SMS):
 
@@ -70,7 +70,7 @@ For each permission (Location, Camera, Microphone, Contacts, SMS):
 2. See which apps have access
 3. Evaluate if each app actually needs that permission
 
-Real-world example: Location permissions
+Real-world example - Location permissions
 
 ```
 Settings → Privacy → Permission Manager → Location
@@ -88,22 +88,22 @@ Action:
 - Verify banking app actually uses location: contact support if unclear
 ```
 
-Step 3: Deny Unnecessary Permissions
+Step 3 - Deny Unnecessary Permissions
 
 For apps that don't need a permission, change from "Allow" to "Don't allow" or "Allow only while using the app."
 
 Android permission levels:
 
 ```
-Allow all the time (always): App can access even when you're not using it
-Allow only while using the app: App loses access when you switch apps
-Ask every time: System prompts each access attempt
-Don't allow: Complete denial
+Allow all the time (always) - App can access even when you're not using it
+Allow only while using the app - App loses access when you switch apps
+Ask every time - System prompts each access attempt
+Don't allow - Complete denial
 ```
 
 For most apps, "Allow only while using the app" is the safest middle ground.
 
-Step 3: Method 2: Using ADB (Android Debug Bridge)
+Step 3 - Method 2: Using ADB (Android Debug Bridge)
 
 ADB provides command-line access to detailed permission information and control.
 
@@ -184,7 +184,7 @@ Verify the change
 adb shell dumpsys package com.instagram.android | grep "FINE_LOCATION"
 ```
 
-Step 4: Method 3: Permission Audit Script
+Step 4 - Method 3: Permission Audit Script
 
 Automate permission auditing with a shell script:
 
@@ -248,7 +248,7 @@ Review report
 cat permissions_report.txt
 ```
 
-Step 5: Method 4: Using Exodus Privacy
+Step 5 - Method 4: Using Exodus Privacy
 
 Exodus Privacy is a web tool that analyzes APK files and shows which permissions apps request and why.
 
@@ -263,15 +263,15 @@ How it works:
 Example analysis for Spotify:
 
 ```
-App: Spotify
-Version: Latest
+App - Spotify
+Version - Latest
 
 Permissions:
 - ACCESS_FINE_LOCATION: Music recommendations (claimed by Spotify)
 - RECORD_AUDIO: Playing music through microphone (unnecessary)
 - READ_CONTACTS: Sharing playlists with contacts (legitimate)
 
-Trackers: 12 identified
+Trackers - 12 identified
 - Google Analytics
 - Facebook SDK
 - Adjust (analytics)
@@ -280,7 +280,7 @@ Trackers: 12 identified
 Revoke RECORD_AUDIO, monitor trackers
 ```
 
-Step 6: Recommended Permission Strategy by App Type
+Step 6 - Recommended Permission Strategy by App Type
 
 Social media apps (Instagram, TikTok, Snapchat):
 - Camera: Allow while using app 
@@ -322,7 +322,7 @@ Fitness apps (Strava, MyFitnessPal):
 - Health/fitness data: Allow 
 - Contacts: Don't allow 
 
-Step 7: Detecting Permission Abuse
+Step 7 - Detecting Permission Abuse
 
 Apps sometimes request suspicious permissions. Signs of abuse:
 
@@ -341,7 +341,7 @@ Example red flags:
 - App claiming to need contacts for "improving search" (suspicious)
 - App using multiple trackers beyond necessity
 
-Step 8: Automated Permission Monitoring
+Step 8 - Automated Permission Monitoring
 
 Enable Google Play Protect:
 
@@ -351,7 +351,7 @@ Settings → Security → Google Play Protect → Enable
 
 Google Play Protect automatically scans apps for malicious behavior and permission abuse. It won't catch all issues but provides baseline protection.
 
-Step 9: Complete Permission Audit Checklist
+Step 9 - Complete Permission Audit Checklist
 
 [ ] Install ADB and connect phone
 [ ] Run permission audit script or manual review

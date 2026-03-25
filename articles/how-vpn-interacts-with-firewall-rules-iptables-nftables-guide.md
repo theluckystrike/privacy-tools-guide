@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the VPN Traffic Flow Through Firewalls
+Step 1 - Understand the VPN Traffic Flow Through Firewalls
 
 When you establish a VPN connection, your traffic follows a specific path through the network stack, and firewall rules apply at different stages of this journey. The key concept to understand is that VPN traffic typically enters your system in two forms: the encrypted VPN tunnel traffic (which appears as a single connection to the firewall) and the decrypted traffic that emerges from the tunnel (which your applications actually use).
 
@@ -43,7 +43,7 @@ On Linux systems, iptables and nftables filter traffic at the kernel level using
 
 For a typical VPN client running on your machine, the decrypted traffic exiting the VPN tunnel will pass through the OUTPUT and INPUT chains if it's destined for local applications. For VPN servers or routing configurations where traffic passes through to other machines, the FORWARD chain becomes critical. This distinction matters because it determines which rules actually apply to your VPN traffic and in what order.
 
-Step 2: Configure iptables for VPN Traffic
+Step 2 - Configure iptables for VPN Traffic
 
 Basic iptables Setup for VPN Clients
 
@@ -102,7 +102,7 @@ iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j SNAT --to-source YOUR_S
 
 The MASQUERADE target automatically uses the IP address of the specified outgoing interface, which is useful for dynamic IPs. The SNAT target is more explicit and slightly more efficient for static IPs.
 
-Step 3: Configure nftables for VPN Traffic
+Step 3 - Configure nftables for VPN Traffic
 
 Modern nftables Approach
 
@@ -155,9 +155,9 @@ nft add rule ip nat postrouting ip saddr 10.8.0.0/24 oifname "eth0" masquerade
 
 One advantage of nftables is that rules persist more reliably across reboots when saved and restored using the `nft list ruleset > /etc/nftables.conf` command and loaded at startup.
 
-Step 4: Common Firewall VPN Issues and Solutions
+Step 4 - Common Firewall VPN Issues and Solutions
 
-Problem: VPN Connection Establishes But No Traffic Flows
+Problem - VPN Connection Establishes But No Traffic Flows
 
 This common issue typically occurs when firewall rules block the decrypted traffic exiting the VPN tunnel. Check that your INPUT and OUTPUT rules allow traffic on the VPN interface (tun0, tun1, wg0, etc.):
 
@@ -174,7 +174,7 @@ iptables -F  # Warning: only for testing
 
 If traffic flows after flushing rules, gradually add back your firewall rules to identify which one is blocking VPN traffic.
 
-Problem: Split Tunneling Conflicts with Firewall
+Problem - Split Tunneling Conflicts with Firewall
 
 When using split tunneling (where only some traffic goes through the VPN), firewall rules can become complex. You need to ensure that both the VPN tunnel traffic and the non-VPN direct traffic are properly handled:
 
@@ -190,7 +190,7 @@ Default drop
 iptables -P OUTPUT DROP
 ```
 
-Problem: DNS Leaks Through Firewall
+Problem - DNS Leaks Through Firewall
 
 DNS requests can leak past VPN tunnels if your firewall doesn't properly route DNS traffic. Ensure DNS queries go through the VPN or are explicitly allowed only to trusted servers:
 
@@ -249,7 +249,7 @@ Drop everything else
 iptables -P OUTPUT DROP
 ```
 
-Step 5: Manage Persistent Firewall Rules
+Step 5 - Manage Persistent Firewall Rules
 
 Saving iptables Rules
 
@@ -282,7 +282,7 @@ nft list ruleset > /etc/nftables.conf
 Ensure it's loaded at boot (systemd service or init script)
 ```
 
-Step 6: Test Your VPN Firewall Configuration
+Step 6 - Test Your VPN Firewall Configuration
 
 After configuring your firewall rules, thorough testing is essential:
 
@@ -343,7 +343,7 @@ Related Reading
 
 - [Configure Firewall Rules on OPNsense to Block Known](/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
 - [Vpn Port Selection Which Ports Bypass Most Firewall.](/vpn-port-selection-which-ports-bypass-most-firewall-restrictions/)
-- [CalyxOS Datura Firewall Setup: Controlling Per-App.](/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
+- [CalyxOS Datura Firewall Setup - Controlling Per-App.](/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
 - [How To Bypass China Great Firewall Using Shadowsocks With Ob](/how-to-bypass-china-great-firewall-using-shadowsocks-with-ob/)
 - [MacOS Firewall Configuration for Privacy](/macos-firewall-configuration-for-privacy/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)

@@ -21,7 +21,7 @@ Disable all iOS tracking by turning off the advertising identifier (IDFA), locat
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Advanced: Shortcuts for Privacy Automation](#advanced-shortcuts-for-privacy-automation)
+- [Advanced - Shortcuts for Privacy Automation](#advanced-shortcuts-for-privacy-automation)
 - [Lockdown Mode for Extreme Threat Models](#lockdown-mode-for-extreme-threat-models)
 - [Troubleshooting](#troubleshooting)
 
@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: System-Wide Tracking Disables
+Step 1 - System-Wide Tracking Disables
 
 Apple Advertising Identifier
 
@@ -87,7 +87,7 @@ Background App Refresh allows apps to update content when you're not using them.
 
 Social media apps are the most aggressive users of background refresh for analytics purposes. Disabling refresh for apps like Instagram or TikTok prevents passive profile-building while your phone sits idle.
 
-Step 2: Safari and Web Tracking
+Step 2 - Safari and Web Tracking
 
 Intelligent Tracking Prevention
 
@@ -111,7 +111,7 @@ Settings → Safari → Clear History and Website Data
 For automated cleanup, create a Shortcut:
 
 ```shortcuts
-Shortcut: Clear Tracking Data
+Shortcut - Clear Tracking Data
 1. Clear History and Website Data from Safari
 2. Clear All Notifications
 ```
@@ -125,7 +125,7 @@ iOS 17 introduced Link Tracking Protection, which strips tracking parameters fro
 
 Common tracking parameters removed include `fbclid`, `gclid`, `utm_source`, `utm_medium`, `utm_campaign`, and `msclkid`. These parameters allow advertisers to correlate your clicks across sessions. With Link Tracking Protection active, URLs shared between apps lose this correlation data before they are opened.
 
-Step 3: App Privacy Labels and Data Collection
+Step 3 - App Privacy Labels and Data Collection
 
 Analyzing App Data Collection
 
@@ -162,7 +162,7 @@ Or use Charles Proxy for traffic analysis:
 3. Configure device to use Charles as HTTP proxy
 ```
 
-Step 4: iCloud and Apple Services Tracking
+Step 4 - iCloud and Apple Services Tracking
 
 Disable iCloud Analytics
 
@@ -195,7 +195,7 @@ Siri Suggestions learns from your behavior across apps. when you open apps, whic
 
 Disabling Suggestions in Search and Suggestions in Look Up prevents Apple from sending your search queries to its Spotlight Suggestions backend when you use Search. These queries include partial search terms typed in real time.
 
-Advanced: Shortcuts for Privacy Automation
+Advanced - Shortcuts for Privacy Automation
 
 Create automations to enforce privacy settings:
 
@@ -211,7 +211,7 @@ This forces apps to re-request permissions
 and clears cached location data
 ```
 
-Step 5: Universal Links and URL Scheme Protection
+Step 5 - Universal Links and URL Scheme Protection
 
 For developers implementing deep links, understand tracking vectors:
 
@@ -253,7 +253,7 @@ If you face targeted surveillance rather than passive data collection, iOS inclu
 
 Lockdown Mode severely restricts the attack surface: it blocks most message attachment types, disables wired connections to computers when the phone is locked, blocks link previews in Messages, disables certain web technologies (WebAssembly, JIT compilation), and prevents configuration profiles from being installed. It is designed for journalists, activists, and human rights workers under active threat. not for everyday privacy hardening. The tradeoffs in usability are significant, but so is the reduction in exploitable surface area.
 
-Step 6: Quick Reference: Privacy Settings Checklist
+Step 6 - Quick Reference: Privacy Settings Checklist
 
 | Category | Setting | Recommended State |
 |----------|---------|-------------------|

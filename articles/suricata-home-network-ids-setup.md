@@ -21,9 +21,9 @@ This guide sets up Suricata in IDS (Intrusion Detection System) mode on a Linux 
 
 Architecture Options
 
-Inline mode (IPS): Suricata sits in the traffic path and can drop packets. Requires the machine to be a router or bridge device.
+Inline mode (IPS) - Suricata sits in the traffic path and can drop packets. Requires the machine to be a router or bridge device.
 
-Passive/sniffing mode (IDS): Suricata listens on a network interface and analyzes a copy of traffic. Cannot block but generates alerts. Suitable for any machine on your network.
+Passive/sniffing mode (IDS) - Suricata listens on a network interface and analyzes a copy of traffic. Cannot block but generates alerts. Suitable for any machine on your network.
 
 This guide covers passive mode. the safer starting point. You see what's happening without risking network disruption from misconfigured drop rules.
 
@@ -54,7 +54,7 @@ tar -xzf suricata-7.0.x.tar.gz && cd suricata-7.0.x
 make && sudo make install-conf
 ```
 
-Step 1: Configure Suricata
+Step 1 - Configure Suricata
 
 The main configuration file is `/etc/suricata/suricata.yaml`. Key sections to configure:
 
@@ -119,7 +119,7 @@ outputs:
             enabled: no
 ```
 
-Step 2: Install Rule Sets
+Step 2 - Install Rule Sets
 
 Suricata needs rule files to detect threats. Use `suricata-update` to manage rules:
 
@@ -144,17 +144,17 @@ ls /var/lib/suricata/rules/
 
 The Emerging Threats Open ruleset contains over 35,000 rules covering known malware, C2 communication, exploit attempts, and suspicious behavior patterns.
 
-Step 3: Test the Configuration
+Step 3 - Test the Configuration
 
 ```bash
 Test configuration file for syntax errors
 sudo suricata -T -c /etc/suricata/suricata.yaml
 
-If output shows: "Configuration provided was successfully loaded."
+If output shows - "Configuration provided was successfully loaded."
 the configuration is valid.
 ```
 
-Step 4: Start Suricata
+Step 4 - Start Suricata
 
 ```bash
 Start in IDS mode on your interface
@@ -170,10 +170,10 @@ sudo tail -f /var/log/suricata/fast.log
 
 You should see something like:
 ```
-03/21/2026-14:23:01.123456  [] [1:2001219:20] ET SCAN Potential SSH Scan [] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.1.50:52341 -> 93.184.216.34:22
+03/21/2026-14:23:01.123456  [] [1:2001219:20] ET SCAN Potential SSH Scan [] [Classification - Attempted Information Leak] [Priority: 2] {TCP} 192.168.1.50:52341 -> 93.184.216.34:22
 ```
 
-Step 5: Test with a Known-Bad Signature
+Step 5 - Test with a Known-Bad Signature
 
 Trigger a test rule to verify detection is working:
 
@@ -186,7 +186,7 @@ Check for the alert
 sudo grep "2100498" /var/log/suricata/fast.log
 ```
 
-Step 6: Analyze Alerts with jq
+Step 6 - Analyze Alerts with jq
 
 The EVE JSON log is machine-readable and can be analyzed with `jq`:
 
@@ -209,7 +209,7 @@ sudo jq 'select(.event_type=="tls" and .dest_port!=443)' \
   /var/log/suricata/eve.json | jq '{timestamp, src_ip, dest_ip, dest_port, tls}'
 ```
 
-Step 7: Suppress False Positives
+Step 7 - Suppress False Positives
 
 New Suricata installations generate many false positives. Suppress rules that are noisy and irrelevant to your environment:
 
@@ -231,7 +231,7 @@ Reference this file in `suricata.yaml`:
 threshold-file: /etc/suricata/threshold.conf
 ```
 
-Step 8: Automate Rule Updates
+Step 8 - Automate Rule Updates
 
 ```bash
 Set up daily rule updates via cron

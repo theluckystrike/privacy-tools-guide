@@ -24,15 +24,15 @@ Table of Contents
 - [Metadata Resistance in Practice](#metadata-resistance-in-practice)
 - [Encryption Implementation](#encryption-implementation)
 - [Practical Deployment Considerations](#practical-deployment-considerations)
-- [Code Example: Message Flow Comparison](#code-example-message-flow-comparison)
+- [Code Example - Message Flow Comparison](#code-example-message-flow-comparison)
 - [Threat Model Suitability](#threat-model-suitability)
 - [Technical Limitations of Cwtch](#technical-limitations-of-cwtch)
 - [Installation and Configuration](#installation-and-configuration)
 - [Practical Threat Model Examples](#practical-threat-model-examples)
 - [Forensic Resilience and Data Destruction](#forensic-resilience-and-data-destruction)
 - [Performance Characteristics and Scaling](#performance-characteristics-and-scaling)
-- [Building on Cwtch: Developers and Integrations](#building-on-cwtch-developers-and-integrations)
-- [Comparison Matrix: Cwtch vs Signal vs Other Options](#comparison-matrix-cwtch-vs-signal-vs-other-options)
+- [Building on Cwtch - Developers and Integrations](#building-on-cwtch-developers-and-integrations)
+- [Comparison Matrix - Cwtch vs Signal vs Other Options](#comparison-matrix-cwtch-vs-signal-vs-other-options)
 
 Fundamental Architectural Differences
 
@@ -77,11 +77,11 @@ Cwtch's Metadata Minimization
 
 Cwtch addresses metadata through several mechanisms:
 
-No Identity Requirements: Cwtch does not require phone numbers, email addresses, or usernames. Users identify each other through Tor hidden service addresses, cryptographic identifiers that reveal no personal information.
+No Identity Requirements - Cwtch does not require phone numbers, email addresses, or usernames. Users identify each other through Tor hidden service addresses, cryptographic identifiers that reveal no personal information.
 
-Onion Routing: Every message traverses multiple Tor nodes, each, preventing any single node from knowing both sender and receiver.
+Onion Routing - Every message traverses multiple Tor nodes, each, preventing any single node from knowing both sender and receiver.
 
-Continuous Mix: Cwtch implements continuous mixing of traffic, introducing dummy messages and varying timing to prevent traffic analysis.
+Continuous Mix - Cwtch implements continuous mixing of traffic, introducing dummy messages and varying timing to prevent traffic analysis.
 
 Encryption Implementation
 
@@ -124,7 +124,7 @@ Cwtch Advantages
 - Metadata resistance: Designed from ground up for anonymity
 - Censorship resistance: No central servers to block
 
-Code Example: Message Flow Comparison
+Code Example - Message Flow Comparison
 
 Understanding the technical differences becomes clearer through message flow comparison:
 
@@ -169,7 +169,7 @@ Cwtch's focus on metadata resistance introduces trade-offs:
 - Battery consumption: Continuous Tor operation drains mobile batteries
 - Network reliability: Peer-to-peer nature means less reliability than centralized systems
 - User experience: No phone number discovery means manual address exchange
-- Ecosystem size: Smaller user base limits practical communication options
+- environment size: Smaller user base limits practical communication options
 
 Installation and Configuration
 
@@ -225,21 +225,21 @@ Practical Threat Model Examples
 
 Journalist Communicating with Sources
 
-Signal threat model: Journalists want confidential messages, but authorities can see who communicated with whom through metadata analysis.
+Signal threat model - Journalists want confidential messages, but authorities can see who communicated with whom through metadata analysis.
 
-Cwtch advantage: Metadata resistance prevents authorities from establishing that a journalist and source communicated at all. Even if one party is compromised, traffic analysis cannot trace connections backward.
+Cwtch advantage - Metadata resistance prevents authorities from establishing that a journalist and source communicated at all. Even if one party is compromised, traffic analysis cannot trace connections backward.
 
 Political Dissident in Repressive Regime
 
-Signal limitation: Centralized servers store which devices are active; authorities can correlate online times with location data.
+Signal limitation - Centralized servers store which devices are active; authorities can correlate online times with location data.
 
-Cwtch advantage: Distributed peer-to-peer routing eliminates central observation point. No service provider exists to compel cooperation or leak metadata.
+Cwtch advantage - Distributed peer-to-peer routing eliminates central observation point. No service provider exists to compel cooperation or leak metadata.
 
 Corporate Insider Reporting Misconduct
 
-Signal consideration: Messages are encrypted end-to-end, but delivery receipts and device information still flow through Signal's servers.
+Signal consideration - Messages are encrypted end-to-end, but delivery receipts and device information still flow through Signal's servers.
 
-Cwtch feature: Every message transits through multiple Tor relays with padding and cover traffic. No metadata about message timing is observable.
+Cwtch feature - Every message transits through multiple Tor relays with padding and cover traffic. No metadata about message timing is observable.
 
 Forensic Resilience and Data Destruction
 
@@ -277,7 +277,7 @@ Signal Performance Profile
 
 For real-time communication, Signal's speed advantage is substantial. For asynchronous scenarios, Cwtch's privacy advantages may justify slower delivery.
 
-Building on Cwtch: Developers and Integrations
+Building on Cwtch - Developers and Integrations
 
 Cwtch's open-source protocol enables custom applications:
 
@@ -309,7 +309,7 @@ func main() {
 
 Developers can build privacy-preserving applications using Cwtch's underlying protocol, bypassing limitations of the default UI.
 
-Comparison Matrix: Cwtch vs Signal vs Other Options
+Comparison Matrix - Cwtch vs Signal vs Other Options
 
 | Feature | Cwtch | Signal | Wire | Session |
 |---------|-------|--------|------|---------|

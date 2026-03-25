@@ -21,7 +21,7 @@ Removing yourself from the internet requires a systematic approach. Most people 
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Advanced: Data Breach Sanitization](#advanced-data-breach-sanitization)
+- [Advanced - Data Breach Sanitization](#advanced-data-breach-sanitization)
 - [Website Scrubbing Services Comparison](#website-scrubbing-services-comparison)
 - [Troubleshooting](#troubleshooting)
 
@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Your Digital Footprint
+Step 1 - Understand Your Digital Footprint
 
 Before taking action, you need to understand what data exists about you online. Your digital footprint includes social media profiles, forum accounts, data broker listings, cached search results, and data stored in breached databases.
 
@@ -49,7 +49,7 @@ curl -H "hibp-api-key: YOUR_API_KEY" \
 
 Create an inventory of all accounts tied to your identity. Search your name in major search engines and note every result.
 
-Step 2: Data Broker Removal
+Step 2 - Data Broker Removal
 
 Data brokers compile and sell personal information without consent. These companies operate background check services, people-search directories, and marketing profiling systems. Removing yourself requires submitting opt-out requests to each broker individually.
 
@@ -58,24 +58,24 @@ Major data brokers include Acxiom, LexisNexis, Experian, CoreLogic, and Spokeo. 
 ```bash
 Send opt-out request via email (customize per broker)
 echo "Please remove my personal information from your database.
-Email: your@email.com
-Full Name: Your Name
-Address: Your Address" | mail -s "Privacy Opt-Out Request" privacy@spokeo.com
+Email - your@email.com
+Full Name - Your Name
+Address - Your Address" | mail -s "Privacy Opt-Out Request" privacy@spokeo.com
 ```
 
 For automated removal, consider tools like [DeleteMe](https://www.abine.com/deleteme/) or [OneRep](https://onerep.com/), which handle the process for you. If you prefer a hands-on approach, maintain a spreadsheet tracking each broker's opt-out status and renewal requirements, as some require annual re-submission.
 
-Step 3: Social Media Account Deletion
+Step 3 - Social Media Account Deletion
 
 Social media platforms retain your data even after account deactivation. True deletion requires understanding the difference between deactivation and permanent deletion.
 
-Twitter/X: Settings → Settings and privacy → Your account → Deactivate your account → Deactivate
+Twitter/X - Settings → Settings and privacy → Your account → Deactivate your account → Deactivate
 
-Facebook: Settings → Your Facebook information → Deactivation and deletion → Delete account (note: Facebook may retain some data for legal reasons)
+Facebook - Settings → Your Facebook information → Deactivation and deletion → Delete account (note: Facebook may retain some data for legal reasons)
 
-Instagram: Settings → About → Delete your account
+Instagram - Settings → About → Delete your account
 
-LinkedIn: Settings & Privacy → Close account
+LinkedIn - Settings & Privacy → Close account
 
 For developers, use platform APIs to bulk-delete content before account deletion:
 
@@ -97,30 +97,30 @@ def delete_all_tweets(bearer_token, user_id):
         requests.delete(delete_url, headers=headers)
 ```
 
-Step 4: Email and Account Cleanup
+Step 4 - Email and Account Cleanup
 
 Your email address connects most online accounts. Review all services sending emails to your inbox and systematically close unused accounts.
 
 Create a filter to identify accounts you no longer use:
 
 ```bash
-Gmail: Search for accounts created with your email
+Gmail - Search for accounts created with your email
 from:(registration OR signup OR confirm OR welcome) newer_than:1y
 ```
 
 For Gmail users, Google's [Inactive Account Manager](https://myaccount.google.com/activitycontrols) allows you to set automatic data deletion after inactivity periods.
 
-Step 5: Search Engine Result Removal
+Step 5 - Search Engine Result Removal
 
 Google and Bing cache versions of webpages that may contain your personal information. Use official removal tools to request delisting:
 
-Google: Use the [Remove Outdated Content](https://search.google.com/search-console/remove-outdated-content) tool and [Personal Information Removal Request](https://support.google.com/websearch/answer/9673730) form
+Google - Use the [Remove Outdated Content](https://search.google.com/search-console/remove-outdated-content) tool and [Personal Information Removal Request](https://support.google.com/websearch/answer/9673730) form
 
-Bing: Submit removal requests via their [Content Removal](https://www.bing.com/webmasters/tools/contentremoval) portal
+Bing - Submit removal requests via their [Content Removal](https://www.bing.com/webmasters/tools/contentremoval) portal
 
 For cached pages on sites you control, update the content and request recrawling. For third-party sites, contact webmasters directly requesting removal.
 
-Step 6: Remove Yourself from People Search Sites
+Step 6 - Remove Yourself from People Search Sites
 
 People search engines aggregate public records and display addresses, phone numbers, and relatives. Common sites include:
 
@@ -132,7 +132,7 @@ People search engines aggregate public records and display addresses, phone numb
 
 Submit opt-out requests directly through their privacy policy pages. This process often requires email verification and may take 48-72 hours for processing.
 
-Advanced: Data Breach Sanitization
+Advanced - Data Breach Sanitization
 
 If your data appeared in breaches, consider using breach notification services to monitor exposure. While you cannot remove data from breached databases, awareness helps you change affected passwords and enable two-factor authentication.
 
@@ -159,7 +159,7 @@ for email in "${EMAILS[@]}"; do
 done
 ```
 
-Step 7: Public Records and Background Check Sites
+Step 7 - Public Records and Background Check Sites
 
 Beyond data brokers, public records databases compile courthouse data, property records, and voter registration information. These sites often have separate opt-out procedures:
 
@@ -253,7 +253,7 @@ remover.submit_removal("Spokeo", "https://www.spokeo.com/optout")
 remover.save_removal_log()
 ```
 
-Step 8: Monitor Your Digital Absence
+Step 8 - Monitor Your Digital Absence
 
 After removing yourself, verify the removal worked:
 
@@ -282,24 +282,24 @@ for email in "${EMAILS[@]}"; do
 done
 ```
 
-Step 9: Handling Cached and Archived Content
+Step 9 - Handling Cached and Archived Content
 
 Google Cache and Archive.org sometimes retain deleted content:
 
 ```bash
 Request removal from Google Cache
-Visit: https://search.google.com/search-console/remove-outdated-content
+Visit - https://search.google.com/search-console/remove-outdated-content
 
 Request removal from Archive.org (Wayback Machine)
-Visit: https://archive.org/about/exclude.php
+Visit - https://archive.org/about/exclude.php
 
 Use robots.txt to prevent future archiving
 Add to your domain's /robots.txt:
-User-agent: ia_archiver
-Disallow: /
+User-agent - ia_archiver
+Disallow - /
 ```
 
-Step 10: Maintaining Privacy Going Forward
+Step 10 - Maintaining Privacy Going Forward
 
 After reducing your footprint, adopt privacy-preserving practices:
 

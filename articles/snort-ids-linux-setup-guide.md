@@ -190,7 +190,7 @@ smtp = {}
 ssh = {}
 dns = {}
 
--- Logging verbosity (0–5)
+-- Logging verbosity (0, 5)
 -- trace = { modules = { detection = { rule_engine = 1 } } }
 ```
 
@@ -237,7 +237,7 @@ include $RULE_PATH/local.rules
 sudo snort -c /etc/snort/snort.lua --plugin-path /usr/local/lib/snort \
   --warn-all -T
 
-Expected: "Snort successfully validated the configuration"
+Expected - "Snort successfully validated the configuration"
 ```
 
 ---
@@ -304,7 +304,7 @@ A typical fast alert line looks like:
 
 ```
 03/22-14:22:01.001234 [] [1:9000003:1] "SSH brute force attempt" [] \
-[Priority: 2] {TCP} 203.0.113.5:54321 -> 192.168.1.10:22
+[Priority - 2] {TCP} 203.0.113.5:54321 -> 192.168.1.10:22
 ```
 
 ---
@@ -315,7 +315,7 @@ A typical fast alert line looks like:
 Install PulledPork 3 (Python-based)
 pip3 install pulledpork3
 
-Configure: edit /etc/pulledpork/pulledpork.conf
+Configure - edit /etc/pulledpork/pulledpork.conf
 Set oinkcode, rule_path, snort_path, and pid_path
 
 Run update (add to daily cron)
@@ -331,7 +331,7 @@ Tuning Tips
 - Rate limiting: The `threshold` keyword prevents alert floods from a single source.
 - VLAN tagging: Add `--daq-var snaplen=65535` if monitoring a trunked interface.
 - Memory limits: Set `--max-packet-threads` to match your CPU cores without exhausting RAM.
-- Integration: Forward `/var/log/snort/unified2` output to Splunk, ELK, or Wazuh using `barnyard2` or the unified2 reader.
+- Integration - Forward `/var/log/snort/unified2` output to Splunk, ELK, or Wazuh using `barnyard2` or the unified2 reader.
 
 ---
 

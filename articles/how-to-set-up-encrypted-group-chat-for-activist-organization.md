@@ -16,14 +16,14 @@ voice-checked: true
 
 {% raw %}
 
-For activist organizations, Matrix with Synapse (self-hosted) provides the best balance of security, privacy, and coordination features, it's decentralized, supports end-to-end encryption, offers strong access controls, and gives you complete infrastructure control. Alternative: use Signal's Group Messaging if preferring managed simplicity over self-hosting, though Signal doesn't allow self-hosting. Configure your chosen platform with mandatory end-to-end encryption, strong access controls, and regular security audits.
+For activist organizations, Matrix with Synapse (self-hosted) provides the best balance of security, privacy, and coordination features, it's decentralized, supports end-to-end encryption, offers strong access controls, and gives you complete infrastructure control. Alternative - use Signal's Group Messaging if preferring managed simplicity over self-hosting, though Signal doesn't allow self-hosting. Configure your chosen platform with mandatory end-to-end encryption, strong access controls, and regular security audits.
 
 Table of Contents
 
 - [Threat Modeling for Group Communications](#threat-modeling-for-group-communications)
 - [Prerequisites](#prerequisites)
 - [Key Management Best Practices](#key-management-best-practices)
-- [Advanced: Using Matrix for Sensitive Operations](#advanced-using-matrix-for-sensitive-operations)
+- [Advanced - Using Matrix for Sensitive Operations](#advanced-using-matrix-for-sensitive-operations)
 - [Troubleshooting](#troubleshooting)
 
 Threat Modeling for Group Communications
@@ -50,7 +50,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Self-Hosted Option: Matrix with Synapse
+Step 1 - Self-Hosted Option: Matrix with Synapse
 
 Matrix provides the most flexible option for organizations wanting infrastructure control. The protocol supports end-to-end encryption (E2EE) via the Olm and Megolm encryption protocols.
 
@@ -115,7 +115,7 @@ Once Element (the Matrix client) connects to your homeserver, create rooms with 
 For sensitive rooms, implement the following room configuration:
 
 ```
-Advanced: Set via Admin API
+Advanced - Set via Admin API
 POST /_matrix/client/r0/admin/rooms/{room_id}/state/m.room.encryption
 {
   "algorithm": "m.megolm.v1.aes-sha2",
@@ -143,7 +143,7 @@ gpg --symmetric --cipher-algo AES256 synapse_backup_$(date +%Y%m%d).sql
 
 Store encrypted backups at a location independent of your primary server. If the server is seized or goes offline, having recent backups means you can restore to a new instance quickly.
 
-Step 2: Signal Group Chats
+Step 2 - Signal Group Chats
 
 For organizations preferring managed solutions, Signal provides group encryption. Each group uses Sender Keys, allowing efficient many-to-many communication without the overhead of pairwise encryption.
 
@@ -157,7 +157,7 @@ Signal Group Security Features
 Configure disappearing messages via the UI or for organizations managing multiple devices, use the Signal API:
 
 ```python
-Signal API: Update disappearing messages timer
+Signal API - Update disappearing messages timer
 import signal_api
 
 client = signal_api.Client("+1234567890", "your-registration-id")
@@ -169,7 +169,7 @@ client.update_group_timer(group_id, duration_seconds)
 
 Signal's limitation for organizations is that it requires a phone number for registration, which creates a link between your communications identity and your phone account. In jurisdictions where carriers cooperate with authorities, this can be a meaningful risk factor.
 
-Step 3: Session Messenger: Decentralized Alternative
+Step 3 - Session Messenger: Decentralized Alternative
 
 Session operates on the Signal protocol but routes traffic through onion nodes, providing metadata resistance without requiring phone numbers.
 
@@ -182,7 +182,7 @@ Session Group Setup
 
 Session's routing through Lokinet provides anonymity properties unavailable in traditional messaging apps. The trade-off is slightly higher latency and no phone-number-based contact discovery. For new members joining your organization, this means you need an out-of-band way to share your Session ID. a meeting in person or through a separate secure channel.
 
-Step 4: Briar: Offline-First Encrypted Messaging
+Step 4 - Briar: Offline-First Encrypted Messaging
 
 For organizations operating in connectivity-restricted environments, Briar provides mesh networking via Bluetooth and Wi-Fi Direct.
 
@@ -213,7 +213,7 @@ Key Rotation Schedule
 Implement regular key rotation:
 
 ```bash
-Matrix: Manual key export/rotate via Admin API
+Matrix - Manual key export/rotate via Admin API
 curl -X POST "https://chat.yourorg.org/_matrix/client/r0/room/{room_id}/send/m.room.key_request" \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -d '{"action": "request", "room_id": "{room_id}"}'
@@ -230,7 +230,7 @@ If a member leaves the organization, immediately remove their devices from all s
 
 Recovery Planning
 
-Critical: Establish account recovery procedures before they're needed.
+Critical - Establish account recovery procedures before they're needed.
 
 For Matrix:
 1. Note the 4S (Secure Secret Storage) recovery key
@@ -246,27 +246,27 @@ Onboarding New Members Securely
 
 The weakest point in most organization's communication security is the onboarding process. New members need to receive credentials over a channel that is already secure, which creates a bootstrapping problem.
 
-A practical approach: conduct initial onboarding in person when possible. Exchange device verification codes face-to-face, verify safety numbers together, and establish shared secrets that can be used to authenticate future communications. If in-person onboarding is not possible, use multiple independent channels to verify identity before granting access to sensitive rooms.
+A practical approach - conduct initial onboarding in person when possible. Exchange device verification codes face-to-face, verify safety numbers together, and establish shared secrets that can be used to authenticate future communications. If in-person onboarding is not possible, use multiple independent channels to verify identity before granting access to sensitive rooms.
 
-Step 5: Infrastructure and Hosting Decisions
+Step 5 - Infrastructure and Hosting Decisions
 
 Where you host your Synapse server matters as much as how you configure it. Consider these factors when selecting a hosting provider:
 
-Jurisdiction: Servers hosted in jurisdictions with strong privacy laws are harder for foreign governments to compel through legal process. However, no jurisdiction is immune. data retained on your server can always be sought through legal channels by the hosting country's authorities.
+Jurisdiction - Servers hosted in jurisdictions with strong privacy laws are harder for foreign governments to compel through legal process. However, no jurisdiction is immune. data retained on your server can always be sought through legal channels by the hosting country's authorities.
 
-Payment anonymity: If your threat model includes hiding the existence of your organization's communications infrastructure, paying for hosting anonymously matters. Cryptocurrency payments through privacy-focused exchanges, combined with hosting in privacy-friendly jurisdictions, reduce the paper trail linking you to the server.
+Payment anonymity - If your threat model includes hiding the existence of your organization's communications infrastructure, paying for hosting anonymously matters. Cryptocurrency payments through privacy-focused exchanges, combined with hosting in privacy-friendly jurisdictions, reduce the paper trail linking you to the server.
 
-Physical security: Colocated servers you physically own are harder to access without your knowledge than virtual machines running on shared infrastructure. For most activist organizations, a reputable VPS provider with a strong privacy track record is a reasonable compromise.
+Physical security - Colocated servers you physically own are harder to access without your knowledge than virtual machines running on shared infrastructure. For most activist organizations, a reputable VPS provider with a strong privacy track record is a reasonable compromise.
 
-Incident response: Before you need it, know what you will do if your server is seized or compromised. Have a documented procedure for alerting members, migrating to a new server, and rotating all credentials. Test this procedure at least once per year.
+Incident response - Before you need it, know what you will do if your server is seized or compromised. Have a documented procedure for alerting members, migrating to a new server, and rotating all credentials. Test this procedure at least once per year.
 
 For most organizations, a VPS from a provider with a no-logs policy, encrypted storage, and a history of resisting government requests is sufficient. Run your Synapse instance with full-disk encryption enabled at the OS level, and ensure the decryption key is not stored on the server itself. this prevents offline analysis of seized disks.
 
-Step 6: Comparing Communication Needs Across Org Types
+Step 6 - Comparing Communication Needs Across Org Types
 
 Different activist contexts require different communication infrastructure:
 
-Local protest coordination: Needs fast, ephemeral, peer-to-peer communication. Signal groups or Briar work better than self-hosted infrastructure. Assume phones may be seized, so minimize message history. Enable disappearing messages on 1-hour timers.
+Local protest coordination - Needs fast, ephemeral, peer-to-peer communication. Signal groups or Briar work better than self-hosted infrastructure. Assume phones may be seized, so minimize message history. Enable disappearing messages on 1-hour timers.
 
 International human rights documentation: Requires reliable, archivable communication with long history. Matrix self-hosted with persistent storage makes sense. Coordinate with international partners who may use less secure systems, focus on preventing internal compromise rather than protecting against foreign governments.
 
@@ -274,38 +274,38 @@ Decentralized autonomous networks: Participants separated geographically with mi
 
 Advocacy organization with public-facing work: Mix of public (website, social media) and private (board communications, sensitive campaigns) channels. Use Matrix for internal communications, separate Signal groups for time-sensitive operational coordination.
 
-Step 7: Disaster Recovery: When Infrastructure Fails
+Step 7 - Disaster Recovery: When Infrastructure Fails
 
 Your communications system will eventually fail. Be prepared:
 
-Scenario 1: Server seized
+Scenario 1 - Server seized
 - Impact: All encrypted messages still encrypted (attacker only gets ciphertext)
 - Impact: Member list exposed (unless you didn't store it)
 - Recovery: Migrate members to new server within 4 hours, reset all encryption keys
-- Prevention: Keep member list encrypted. Backup member roster separately from server.
+- Prevention - Keep member list encrypted. Backup member roster separately from server.
 
-Scenario 2: Hosting provider terminates service
+Scenario 2 - Hosting provider terminates service
 - Impact: Server goes offline, members lose access
 - Recovery: Migrate to backup hosting provider within 2 hours
 - Prevention: Keep backup VPS account at different provider, pre-configured with replica of your server
 
-Scenario 3: Ransomware infection
+Scenario 3 - Ransomware infection
 - Impact: Database encrypted, all messages inaccessible even to members
 - Recovery: Restore from clean backup
-- Prevention: Keep offline backups not connected to live server. Test restore procedures quarterly.
+- Prevention - Keep offline backups not connected to live server. Test restore procedures quarterly.
 
-Scenario 4: Losing admin credentials
+Scenario 4 - Losing admin credentials
 - Impact: No one can manage the server, add members, reset permissions
 - Recovery: Boot into recovery mode, reset admin passwords
-- Prevention: Document recovery procedures. Store in encrypted form with trusted contact outside organization.
+- Prevention - Document recovery procedures. Store in encrypted form with trusted contact outside organization.
 
 Run at least one disaster recovery drill annually. Test server migration to a backup provider. Test member communication during service downtime. Each drill reveals gaps in your documented procedures.
 
-Advanced: Using Matrix for Sensitive Operations
+Advanced - Using Matrix for Sensitive Operations
 
 For organizations coordinating across multiple locations or time zones with high-security needs:
 
-Room-level access control: Create separate Matrix rooms by operational need:
+Room-level access control - Create separate Matrix rooms by operational need:
 - `#general` - broadcast announcements, open to all
 - `#coordinating-committee` - strategic decisions, 5 people
 - `#operations-wednesday-march-22` - time-limited room for specific action, expires/archives after operation
@@ -331,7 +331,7 @@ audit_log: enabled  # Track who accessed room
 audit_retention: 90  # Keep audit logs 90 days
 ```
 
-Time-limited operations rooms: Create rooms for specific operations that self-delete after the operation concludes. This prevents the room becoming a permanent archive of sensitive tactical information if the server is later compromised.
+Time-limited operations rooms - Create rooms for specific operations that self-delete after the operation concludes. This prevents the room becoming a permanent archive of sensitive tactical information if the server is later compromised.
 
 ```python
 Create ephemeral operation room
@@ -358,7 +358,7 @@ def create_operation_room(matrix_server, access_token, operation_name, duration_
 Room automatically deletes after 7 days
 ```
 
-Step 8: Monitor for Compromise Indicators
+Step 8 - Monitor for Compromise Indicators
 
 Even encrypted infrastructure can be compromised. Watch for these warning signs:
 
@@ -370,19 +370,19 @@ Even encrypted infrastructure can be compromised. Watch for these warning signs:
 
 If compromise is suspected, treat it as urgent. Initiate immediate credential rotation, alert all members, consider server migration. Document the incident for post-action analysis.
 
-Step 9: Scaling: Beyond 50 People
+Step 9 - Scaling: Beyond 50 People
 
 As your organization grows, communication becomes more complex. Some guidance:
 
 Split into geographic or functional subgroups: Don't have all 200 members in single chat room. Create subgroups, use higher-level coordination rooms sparingly.
 
-Implement role-based access: Not everyone needs access to everything. Coordinating committee has different room access than general members.
+Implement role-based access - Not everyone needs access to everything. Coordinating committee has different room access than general members.
 
 Introduce formal quorum/decision procedures: With 200 asynchronous voices, clear decision-making procedures prevent endless discussion.
 
 Separate operational and strategic communication: Real-time tactical coordination uses one system, strategic planning uses different channel with asynchronous discussion.
 
-Regular audit of access: As org grows, review who has access to what rooms. Remove departed members immediately.
+Regular audit of access - As org grows, review who has access to what rooms. Remove departed members immediately.
 
 Troubleshooting
 

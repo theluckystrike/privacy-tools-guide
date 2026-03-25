@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Inventorying SSH Keys and Access Points
+Step 1 - Inventorying SSH Keys and Access Points
 
 Before you can document anything, you need to know what exists. Start by creating a complete inventory of every system that requires SSH access.
 
@@ -83,7 +83,7 @@ server:
 
 Create a master spreadsheet or YAML file that tracks all servers, their purpose, who has access, and the authentication method used.
 
-Step 2: Documenting Authentication Methods
+Step 2 - Documenting Authentication Methods
 
 SSH access typically relies on several authentication mechanisms. Document each one thoroughly.
 
@@ -122,7 +122,7 @@ If any systems use password authentication (which we recommend avoiding), docume
 
 Never store actual passwords in plain text. Instead, reference your password manager and document the vault structure.
 
-Step 3: Create Access Runbooks
+Step 3 - Create Access Runbooks
 
 Documentation is only useful if others can understand it. Create clear runbooks for common access scenarios.
 
@@ -145,10 +145,10 @@ Jump Host and Bastion Access
 Many organizations use bastion hosts or jump servers. Document the complete chain:
 
 ```bash
-First hop: bastion
+First hop - bastion
 ssh -i ~/.ssh/bastion_key admin@bastion.example.com
 
-Second hop: internal server (from bastion)
+Second hop - internal server (from bastion)
 ssh -i ~/.ssh/internal_key webserver@10.0.1.25
 ```
 
@@ -178,7 +178,7 @@ Document what to do when normal access fails. Include:
 - Procedure for requesting new SSH keys
 - Recovery options if SSH config is broken
 
-Step 4: Secure Storage and Access Control
+Step 4 - Secure Storage and Access Control
 
 Your documentation itself becomes a high-value target. Protect it accordingly.
 
@@ -210,7 +210,7 @@ documentation_meta:
   maintained_by: platform-team@example.com
 ```
 
-Step 5: Transition Checklist
+Step 5 - Transition Checklist
 
 When actual handover occurs, use this checklist to ensure nothing is missed:
 

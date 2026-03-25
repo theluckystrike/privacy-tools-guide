@@ -35,7 +35,7 @@ Before looking at configuration, it's worth understanding why uBlock Origin stan
 - Dynamic filtering: Unlike most blockers, uBlock Origin supports per-site dynamic rules that give you firewall-level control over which domains load scripts, frames, and media.
 - Scriptlet injection: uBlock Origin can inject short JavaScript programs to neutralize tracking code that runs even when its network requests are blocked.
 
-Important note for 2026: Manifest V3 (MV3) changes in Chrome and Edge have significantly limited extension blocking capabilities in those browsers. The legacy Manifest V2 uBlock Origin continues to function in Firefox, and Mozilla has committed to maintaining MV2 support. If you use Chrome or Edge for privacy-sensitive browsing, consider switching to Firefox paired with uBlock Origin for the full feature set.
+Important note for 2026 - Manifest V3 (MV3) changes in Chrome and Edge have significantly limited extension blocking capabilities in those browsers. The legacy Manifest V2 uBlock Origin continues to function in Firefox, and Mozilla has committed to maintaining MV2 support. If you use Chrome or Edge for privacy-sensitive browsing, consider switching to Firefox paired with uBlock Origin for the full feature set.
 
 Prerequisites
 
@@ -47,7 +47,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand uBlock Origin's Filtering Architecture
+Step 1 - Understand uBlock Origin's Filtering Architecture
 
 uBlock Origin uses filter lists as its core mechanism. These are collections of rules that determine what gets blocked. The extension ships with default lists optimized for broad compatibility, but privacy-focused users should expand these significantly.
 
@@ -65,7 +65,7 @@ Enable these pre-built lists in the dashboard for enhanced protection:
 
 Under the "Annoyances" category, enabling uBlock filters, Annoyances also removes cookie consent banners, which often include embedded tracking scripts.
 
-Step 2: Implementing Advanced Anti-Fingerprinting
+Step 2 - Implementing Advanced Anti-Fingerprinting
 
 Traditional blocking stops requests to known trackers, but fingerprinting operates differently. It collects browser characteristics. screen resolution, installed fonts, WebGL capabilities, audio context timing. to create unique identifiers that persist even without cookies.
 
@@ -94,7 +94,7 @@ Websites detect installed fonts by measuring text width differences. Restricting
 
 Note that blocking Google Fonts will break the visual design of sites that depend on them. Create per-site exceptions for sites where appearance matters using the popup interface.
 
-Step 3: Configure Dynamic Filtering Rules
+Step 3 - Configure Dynamic Filtering Rules
 
 Dynamic filtering gives you per-site control over blocking behavior. Access it by clicking the uBlock Origin icon and expanding the panel (click the left/right arrows to show the full panel). This is particularly valuable for developers who need to test how sites behave without trackers.
 
@@ -120,7 +120,7 @@ Example custom filter rules for the "My filters" tab:
 
 This configuration blocks roughly 90%+ of third-party trackers while maintaining usability on most sites. You will need to occasionally unblock a domain when a site breaks, which is an intentional design. it trains you to notice what each site loads.
 
-Step 4: Scriptlet Injection for Advanced Blocking
+Step 4 - Scriptlet Injection for Advanced Blocking
 
 uBlock Origin supports scriptlets. short JavaScript programs that run in the page context to modify behavior before tracking code can execute. These are powerful tools for anti-tracking that work even when the tracker is hosted on the same domain as the site.
 
@@ -148,7 +148,7 @@ The `rm-params` scriptlet automatically strips UTM parameters, Facebook fbclid, 
 
 This prevents analytics platforms from attributing your visit to a specific ad campaign, reducing your trackability across sites even when you click shared links.
 
-Step 5: Network-Level Request Management
+Step 5 - Network-Level Request Management
 
 For maximum control, use the "Logger" tab in the dashboard to analyze traffic patterns:
 
@@ -159,7 +159,7 @@ For maximum control, use the "Logger" tab in the dashboard to analyze traffic pa
 
 The logger shows every network request, DNS lookup, and cosmetic filter applied during the page load. This is particularly useful for identifying first-party tracking. where sites host their own analytics scripts rather than using third-party services. which bypasses standard domain-based filters.
 
-Step 6: Browser-Specific Hardening
+Step 6 - Browser-Specific Hardening
 
 uBlock Origin works best when paired with browser privacy settings:
 
@@ -182,7 +182,7 @@ Chrome/Chromium Configuration (MV2 still available)
 - Disable third-party cookies under Privacy and Security
 - Consider switching to ungoogled-chromium or Firefox for sustained privacy-focused browsing
 
-Step 7: Comparing Browser Privacy Extensions
+Step 7 - Comparing Browser Privacy Extensions
 
 | Extension | Blocking Method | Dynamic Rules | Scriptlets | Memory Use | Paid Allowlist |
 |-----------|----------------|--------------|-----------|------------|---------------|
@@ -218,7 +218,7 @@ Cosmetic filters hide page elements that ads/trackers use, without blocking netw
 
 The dashboard shows "Cosmetic filtering" status under "Filter lists" tab. Enabling cosmetic filtering increases CPU usage slightly but significantly improves privacy.
 
-Step 8: Practical Real-World Filter Configurations
+Step 8 - Practical Real-World Filter Configurations
 
 For news sites that track heavily:
 ```
@@ -234,7 +234,7 @@ For financial sites where you want privacy but full functionality:
 @@||youtube.com^$script (allow video if embedded)
 ```
 
-Step 9: Verification and Testing
+Step 9 - Verification and Testing
 
 After configuration, verify your protection:
 
@@ -244,21 +244,21 @@ After configuration, verify your protection:
 
 Your goal is reducing the "entropy" of your browser fingerprint. the total amount of information that makes you uniquely identifiable. Perfect entropy elimination is not achievable without breaking most websites, but meaningful reduction is realistic with the configuration above.
 
-Step 10: Common Problems and Solutions
+Step 10 - Common Problems and Solutions
 
-Problem: Site breaks with uBlock enabled
-Solution: Temporarily allow third-party frames for that domain in the dynamic filtering panel. Click the domain and toggle third-party frames from red to yellow. Test the site. If it works, save the rule.
+Problem - Site breaks with uBlock enabled
+Solution - Temporarily allow third-party frames for that domain in the dynamic filtering panel. Click the domain and toggle third-party frames from red to yellow. Test the site. If it works, save the rule.
 
-Problem: Video players won't load
-Solution: Many video CDNs are overly blocked. Common fix: whitelist cloudflare videos with `@@||cloudflare.com^$script`
+Problem - Video players won't load
+Solution - Many video CDNs are overly blocked. Common fix: whitelist cloudflare videos with `@@||cloudflare.com^$script`
 
-Problem: Login pages don't work
-Solution: Login forms often load from different domains. In the logger, find the blocked domain responsible for login form rendering and whitelist it specifically: `@@||auth-cdn.example.com^$script`
+Problem - Login pages don't work
+Solution - Login forms often load from different domains. In the logger, find the blocked domain responsible for login form rendering and whitelist it specifically: `@@||auth-cdn.example.com^$script`
 
-Problem: "uBlock Origin is preventing my website from working properly" message
-Solution: Site is detecting the extension. Some sites refuse to load with ad blockers active. Options: 1) Accept the limitation, 2) Use a secondary browser without uBlock for that site, 3) File a complaint with the site owner.
+Problem - "uBlock Origin is preventing my website from working properly" message
+Solution - Site is detecting the extension. Some sites refuse to load with ad blockers active. Options - 1) Accept the limitation, 2) Use a secondary browser without uBlock for that site, 3) File a complaint with the site owner.
 
-Step 11: Final Optimization Checklist
+Step 11 - Final Optimization Checklist
 
 Before deploying your uBlock Origin configuration:
 

@@ -25,13 +25,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Autofill Privacy Problem
+Step 1 - The Autofill Privacy Problem
 
 Browser autofill (for passwords, credit cards, addresses) is convenient but dangerous. Malicious websites can trick your browser into auto-filling sensitive data into invisible form fields, leaking your information without clicking submit. This guide explains the risks and how to disable risky autofill features.
 
-Step 2: How Autofill Attacks Work
+Step 2 - How Autofill Attacks Work
 
-Scenario: Email harvesting attack
+Scenario - Email harvesting attack
 
 A malicious website contains this code:
 
@@ -56,7 +56,7 @@ setTimeout(() => {
 
 The browser auto-fills your email address (from saved passwords or contacts) into the hidden field. JavaScript reads it and sends it to the attacker. You never notice.
 
-Scenario: Credit card harvesting attack
+Scenario - Credit card harvesting attack
 
 Similar approach, but for credit card fields:
 
@@ -79,7 +79,7 @@ setTimeout(() => {
 
 Your credit card details leak to the attacker without you interacting.
 
-Step 3: Attack Variations
+Step 3 - Attack Variations
 
 Invisible input fields:
 ```html
@@ -112,7 +112,7 @@ setTimeout(() => {
 
 Browsers often auto-fill the login password for saved accounts. This attack captures it.
 
-Step 4: Which Data is at Risk?
+Step 4 - Which Data is at Risk?
 
 High Risk (disable autofill):
 - Passwords
@@ -134,7 +134,7 @@ Low Risk (safe to autofill):
 - Postal code (alone, not with other data)
 - Website URL
 
-Step 5: Browser Autofill Settings
+Step 5 - Browser Autofill Settings
 
 Chrome/Chromium
 
@@ -157,7 +157,7 @@ document.querySelectorAll('[autocomplete]').forEach(el => {
 });
 ```
 
-Better: Edit Chrome config (advanced)
+Better - Edit Chrome config (advanced)
 
 1. Chrome menu → Settings → Advanced
 2. Privacy and security → Manage your Google Account
@@ -189,7 +189,7 @@ Disable address autofill:
 
 Firefox about:config tweaks:
 
-Type in address bar: `about:config`
+Type in address bar - `about:config`
 
 Set these:
 ```
@@ -222,7 +222,7 @@ Edge
 3. Settings → Autofill → Manage autofill settings
 4. "Passwords", "Payment info", "Addresses". All OFF
 
-Step 6: Use Password Manager Instead
+Step 6 - Use Password Manager Instead
 
 Browser autofill is convenient but insecure. Use a dedicated password manager instead:
 
@@ -244,7 +244,7 @@ Why password managers are safer:
 
 Setup Bitwarden (free, open-source):
 
-1. Download: https://bitwarden.com
+1. Download - https://bitwarden.com
 2. Create account (use strong master password)
 3. Install browser extension
 4. Save first password: right-click form → Bitwarden → Save
@@ -252,7 +252,7 @@ Setup Bitwarden (free, open-source):
 
 Bitwarden is safer than browser autofill because it requires explicit user action (click the icon) rather than auto-filling silently.
 
-Step 7: Prevent Autofill Abuse (For Website Developers)
+Step 7 - Prevent Autofill Abuse (For Website Developers)
 
 If you own a website, prevent autofill abuse:
 
@@ -268,7 +268,7 @@ Disable autocomplete on sensitive fields:
 </form>
 ```
 
-Better: Use specific autocomplete values:
+Better - Use specific autocomplete values:
 
 ```html
 <!-- Legitimate password field -->
@@ -293,9 +293,9 @@ Use Content Security Policy (CSP):
 
 This prevents attackers from running JavaScript that steals form data.
 
-Step 8: Disable JavaScript to Prevent Attacks
+Step 8 - Disable JavaScript to Prevent Attacks
 
-The nuclear option: disable JavaScript on untrusted websites.
+The nuclear option - disable JavaScript on untrusted websites.
 
 Browser Extensions:
 
@@ -310,7 +310,7 @@ Example uBlock Origin filter:
 
 This blocks all scripts from attacker.com.
 
-Step 9: Form Field Inspection
+Step 9 - Form Field Inspection
 
 Check if a website has hidden form fields:
 
@@ -342,13 +342,13 @@ document.querySelectorAll('input').forEach(el => {
 
 Output:
 ```
-Hidden field found: {name: "email", type: "email", value: "[VALUE PRESENT]"}
-Hidden field found: {name: "tracking_id", type: "hidden", value: "[VALUE PRESENT]"}
+Hidden field found - {name: "email", type: "email", value: "[VALUE PRESENT]"}
+Hidden field found - {name: "tracking_id", type: "hidden", value: "[VALUE PRESENT]"}
 ```
 
 If you find hidden fields with values, the website is likely harvesting data.
 
-Step 10: Check Saved Passwords
+Step 10 - Check Saved Passwords
 
 Regularly audit what the browser has saved:
 
@@ -367,7 +367,7 @@ Look for:
 - Multiple passwords for the same site (old ones should be deleted)
 - Phishing sites that saved your real password
 
-Step 11: Mobile Considerations
+Step 11 - Mobile Considerations
 
 iOS Autofill Risks:
 
@@ -394,7 +394,7 @@ iOS Alternative: Use 1Password autofill:
 
 1Password requires explicit taps to autofill, preventing silent harvesting.
 
-Step 12: Website Hardening Checklist
+Step 12 - Website Hardening Checklist
 
 If building a web app, implement:
 
@@ -429,7 +429,7 @@ This prevents:
 - External scripts (limits attack surface)
 - Forms submitting to other domains (no data exfiltration)
 
-Step 13: Monitor Your Autofill
+Step 13 - Monitor Your Autofill
 
 Track what data browsers are saving:
 
@@ -468,7 +468,7 @@ Create a test page (for your own devices):
 
 Open this on your own computer. If autofill populates sensitive fields, disable it.
 
-Step 14: Final Recommendations
+Step 14 - Final Recommendations
 
 Immediate Actions:
 1. Disable browser autofill (password + payment methods)

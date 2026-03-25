@@ -40,7 +40,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Exporting Your Vault Data
+Step 1 - Exporting Your Vault Data
 
 The first step in any audit is getting your vault data into a format you can analyze. Most password managers support encrypted exports that maintain your data's security during the audit process.
 
@@ -86,7 +86,7 @@ Using keepassxc-cli
 keepassxc-cli export --format csv database.kdbx -o vault-export.csv
 ```
 
-Step 2: Analyzing Password Strength
+Step 2 - Analyzing Password Strength
 
 Once you have your vault data exported, the next step is analyzing password strength. You can write custom scripts or use existing tools to identify weak passwords.
 
@@ -175,7 +175,7 @@ def audit_vault(json_file: str):
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print("Usage: python audit_vault.py <exported-json-file>")
+        print("Usage - python audit_vault.py <exported-json-file>")
         sys.exit(1)
     audit_vault(sys.argv[1])
 ```
@@ -186,7 +186,7 @@ Run this script against your exported vault:
 python3 audit_vault.py ~/vault-export.json
 ```
 
-Step 3: Identifying Reused Passwords
+Step 3 - Identifying Reused Passwords
 
 Password reuse is one of the most common security vulnerabilities. A data breach at one service exposes all accounts using the same password.
 
@@ -225,7 +225,7 @@ def find_reused_passwords(vault_data: Dict) -> List[Dict]:
 
 This identifies which passwords appear multiple times in your vault, allowing you to prioritize updating these credentials.
 
-Step 4: Checking for Compromised Passwords
+Step 4 - Checking for Compromised Passwords
 
 Beyond analyzing password strength, you should check whether your passwords have appeared in known data breaches. The Have I Been Pwned API provides this functionality through a k-anonymity model that protects your actual passwords.
 
@@ -282,7 +282,7 @@ def audit_compromised(vault_file: str):
 
 Use this carefully, while the k-anonymity model protects your passwords, you're still sending partial hashes to an external service. For maximum security, consider running this check only on an offline machine.
 
-Step 5: Create an Audit Workflow
+Step 5 - Create an Audit Workflow
 
 Rather than performing manual audits, establish a regular workflow using your password manager's built-in features combined with custom scripts.
 
@@ -321,15 +321,15 @@ Additional Audit Areas
 
 Beyond passwords, review these vault components:
 
-Two-Factor Authentication: Check which accounts still rely on less secure 2FA methods like SMS. Identify accounts without any two-factor enabled.
+Two-Factor Authentication - Check which accounts still rely on less secure 2FA methods like SMS. Identify accounts without any two-factor enabled.
 
-Secure Notes: Audit sensitive information stored in secure notes. Ensure nothing critical is stored without protection.
+Secure Notes - Audit sensitive information stored in secure notes. Ensure nothing critical is stored without protection.
 
-Shared Items: Review items shared with family or team members. Remove access for people who no longer need it.
+Shared Items - Review items shared with family or team members. Remove access for people who no longer need it.
 
-Recovery Options: Verify your recovery email and phone number are current. Check that backup codes are stored securely.
+Recovery Options - Verify your recovery email and phone number are current. Check that backup codes are stored securely.
 
-Attachments: Review large files stored in your vault. Consider moving these to dedicated encrypted storage solutions.
+Attachments - Review large files stored in your vault. Consider moving these to dedicated encrypted storage solutions.
 
 Troubleshooting
 

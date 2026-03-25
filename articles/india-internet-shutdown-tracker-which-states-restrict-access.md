@@ -180,7 +180,7 @@ Timeline:
 - Impact: Education, business, health services severely disrupted
 ```
 
-Current pattern (2025-2026): Short intermittent shutdowns (12-48 hours) during anniversaries and sensitive dates, typically from August 5-15.
+Current pattern (2025-2026) - Short intermittent shutdowns (12-48 hours) during anniversaries and sensitive dates, typically from August 5-15.
 
 Rajasthan Examination Shutdowns
 
@@ -192,10 +192,10 @@ Pattern:
 - July-August: Entrance exams → shutdowns
 - November-December: University exams → shutdowns
 
-Duration: Typically 24-72 hours during exam periods
-Affected: Jaipur, Udaipur, Jodhpur, Kota
+Duration - Typically 24-72 hours during exam periods
+Affected - Jaipur, Udaipur, Jodhpur, Kota
 
-Strategy: Predictable timing allows for preparation
+Strategy - Predictable timing allows for preparation
 ```
 
 The Internet Freedom Foundation maintains calendars predicting these shutdowns with 80%+ accuracy.
@@ -206,8 +206,8 @@ Most volatile state with unpredictable patterns:
 
 ```
 2024-2025 incidents: 18 shutdowns averaging 3-5 days
-Triggers: Communal tensions, police actions, protest responses
-Duration: Can extend unexpectedly beyond announced periods
+Triggers - Communal tensions, police actions, protest responses
+Duration - Can extend unexpectedly beyond announced periods
 ```
 
 Manipur lacks predictability, requiring continuous monitoring rather than calendar-based planning.
@@ -425,7 +425,7 @@ Financial Impact Tracking
 Internet shutdowns have measurable economic costs:
 
 ```
-Rajasthan 2025: 42 shutdown incidents
+Rajasthan 2025 - 42 shutdown incidents
 - Average duration: 18 hours
 - Affected population: ~10 million
 - Estimated cost: $2-5 per person daily

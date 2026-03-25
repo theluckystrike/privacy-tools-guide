@@ -34,7 +34,7 @@ Table of Contents
 - [Filter List Comparison](#filter-list-comparison)
 - [Browser-Specific Blocking Capabilities](#browser-specific-blocking-capabilities)
 - [Fingerprinting Detection Beyond Blocking](#fingerprinting-detection-beyond-blocking)
-- [Developer Integration: Custom Blocking Rules](#developer-integration-custom-blocking-rules)
+- [Developer Integration - Custom Blocking Rules](#developer-integration-custom-blocking-rules)
 - [Testing Your Own Websites](#testing-your-own-websites)
 - [Measurement Challenges and Methodology](#measurement-challenges-and-methodology)
 - [Real-World Tracker Analysis](#real-world-tracker-analysis)
@@ -336,7 +336,7 @@ const fingerprintingIndicators = [
 
 When Privacy Badger detects these patterns, it blocks the entire domain even if not previously flagged.
 
-Developer Integration: Custom Blocking Rules
+Developer Integration - Custom Blocking Rules
 
 If you maintain a website, declare which tracking you use:
 
@@ -424,8 +424,8 @@ Create organizational or personal filter lists:
 
 ```
 ! Title: Custom Privacy Protection
-! Homepage: https://example.com/privacy-filters
-! License: https://creativecommons.org/licenses/by-sa/4.0/
+! Homepage - https://example.com/privacy-filters
+! License - https://creativecommons.org/licenses/by-sa/4.0/
 
 ! Block custom tracking domains
 ||mycompany-analytics.internal^

@@ -56,13 +56,13 @@ Instagram requires different proof depending on your relationship to the decease
 
 The Memorialization Request Process
 
-Method 1: Legacy Contact Request
+Method 1 - Legacy Contact Request
 
 If the deceased designated you as a legacy contact before passing, you have an improved path:
 
 ```bash
 Instagram Legacy Contact Memorialization Flow
-1. Visit: https://help.instagram.com/264154560391752
+1. Visit - https://help.instagram.com/264154560391752
 2. Select "Memorialize an account for a deceased person"
 3. Choose "I'm a legacy contact"
 4. Provide:
@@ -74,7 +74,7 @@ Instagram Legacy Contact Memorialization Flow
 
 Instagram typically responds within 24-72 hours.
 
-Method 2: Family Member Request
+Method 2 - Family Member Request
 
 Family members must demonstrate relationship:
 
@@ -98,7 +98,7 @@ def verify_family_relationship(requester, deceased):
     return {"status": "pending_review"}
 ```
 
-Method 3: Legal Representative Request
+Method 3 - Legal Representative Request
 
 Attorneys or estate executors must provide:
 
@@ -133,7 +133,7 @@ Direct messages undergo significant changes:
 3. Message deletion remains possible for conversation participants
 4. Instagram cannot release message contents to family members
 
-This is a critical limitation: family members cannot access direct message history through memorialization. The messages persist on recipients' devices and Instagram's servers, but Instagram maintains message confidentiality.
+This is a critical limitation - family members cannot access direct message history through memorialization. The messages persist on recipients' devices and Instagram's servers, but Instagram maintains message confidentiality.
 
 API and Data Access Implications
 
@@ -179,8 +179,8 @@ Before requesting memorialization, consider downloading data first:
 ```python
 Instagram Data Download Request (via Instagram app)
 Settings > Your Activity > Download your information
-Select: JSON format
-Date range: All time
+Select - JSON format
+Date range - All time
 
 The download includes:
 - profile_information.json
@@ -211,7 +211,7 @@ class InstagramEstateHandler:
     def request_data_preservation(self, death_certificate):
         """Request data hold before memorialization"""
         # Instagram doesn't publicly offer this
-        # Contact: https://help.instagram.com/contact/282079222292260
+        # Contact - https://help.instagram.com/contact/282079222292260
         pass
 
     def document_legacy_contact(self, user_id, contact_username):
@@ -291,7 +291,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 Related Articles
 
-- [Twitter X Account After Death: How to Request.](/twitter-x-account-after-death-how-to-request-memorialization/)
+- [Twitter X Account After Death - How to Request.](/twitter-x-account-after-death-how-to-request-memorialization/)
 - [How To Prepare Social Media Accounts For Memorialization Com](/how-to-prepare-social-media-accounts-for-memorialization-com/)
 - [Async Code Review Process Without Zoom Calls Step By Step](/async-code-review-process-without-zoom-calls-step-by-step/)
 - [Data Breach Notification Requirements Timeline And Process F](/data-breach-notification-requirements-timeline-and-process-f/)

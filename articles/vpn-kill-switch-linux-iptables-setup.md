@@ -29,9 +29,9 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How a Kill Switch Works
+Step 1 - How a Kill Switch Works
 
-The logic is simple: allow traffic only through the VPN tunnel interface. Block everything else.
+The logic is simple - allow traffic only through the VPN tunnel interface. Block everything else.
 
 With this rule set:
 - Before connecting to VPN: no external traffic is allowed
@@ -49,7 +49,7 @@ ip link show
 ip route show
 ```
 
-Step 2: Method 1: iptables Kill Switch
+Step 2 - Method 1: iptables Kill Switch
 
 Basic kill switch rules
 
@@ -68,7 +68,7 @@ Flush existing rules
 iptables -F
 iptables -X
 
-Default policies: DROP everything
+Default policies - DROP everything
 iptables -P INPUT DROP
 iptables -P OUTPUT DROP
 iptables -P FORWARD DROP
@@ -129,7 +129,7 @@ Rules are automatically loaded on boot by the netfilter-persistent service
 sudo systemctl enable netfilter-persistent
 ```
 
-Step 3: Method 2: nftables Kill Switch (Modern Linux Systems)
+Step 3 - Method 2: nftables Kill Switch (Modern Linux Systems)
 
 nftables is the replacement for iptables on modern Linux distributions. Debian 10+, Ubuntu 20.04+, Fedora 32+, and Arch all prefer nftables.
 
@@ -200,12 +200,12 @@ Apply the rules:
 ```bash
 sudo nft -f /etc/nftables-killswitch.conf
 
-To persist: enable nftables service
+To persist - enable nftables service
 sudo systemctl enable nftables
 sudo cp /etc/nftables-killswitch.conf /etc/nftables.conf
 ```
 
-Step 4: Method 3: NetworkManager Kill Switch (for Desktop Users)
+Step 4 - Method 3: NetworkManager Kill Switch (for Desktop Users)
 
 If you use NetworkManager and a VPN that supports it:
 
@@ -239,33 +239,33 @@ esac
 sudo chmod +x /etc/NetworkManager/dispatcher.d/99-vpn-killswitch
 ```
 
-Step 5: Test the Kill Switch
+Step 5 - Test the Kill Switch
 
 ```bash
-Step 1: Enable kill switch but do NOT connect to VPN
+Step 1 - Enable kill switch but do NOT connect to VPN
 sudo ./vpn-killswitch.sh
 
-Step 2: Try to reach the internet. should fail
+Step 2 - Try to reach the internet. should fail
 curl -s --max-time 5 https://api.ipify.org
 Should time out or return an error
 
-Step 3: Connect to VPN
+Step 3 - Connect to VPN
 wg-quick up wg0   # For WireGuard
 or: openvpn --config client.ovpn
 
-Step 4: Verify connectivity through VPN
+Step 4 - Verify connectivity through VPN
 curl -s https://api.ipify.org
 Should return VPN server's IP, not yours
 
-Step 5: Simulate VPN drop
+Step 5 - Simulate VPN drop
 sudo ip link set wg0 down
 
-Step 6: Verify traffic is blocked again
+Step 6 - Verify traffic is blocked again
 curl -s --max-time 5 https://api.ipify.org
 Should fail. kill switch working correctly
 ```
 
-Step 6: IPv6 Leak Prevention
+Step 6 - IPv6 Leak Prevention
 
 IPv6 traffic can bypass IPv4 kill switch rules. Block it explicitly:
 

@@ -296,7 +296,7 @@ VPN Kill Switch Configuration
 Prevent traffic leaks if VPN disconnects unexpectedly:
 
 ```bash
-Linux: iptables-based kill switch
+Linux - iptables-based kill switch
 Block all outbound traffic except VPN tunnel
 
 sudo iptables -P INPUT DROP

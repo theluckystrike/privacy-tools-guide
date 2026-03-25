@@ -34,7 +34,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Access Contact Poster Settings
+Step 1 - Access Contact Poster Settings
 
 Navigate to Settings → Contacts → Contact Poster to access the primary configuration interface. Alternatively, open the Phone app, select your own contact card, and tap "Edit" to reveal poster customization options.
 
@@ -56,7 +56,7 @@ Share During Calls Setting
 
 A separate toggle controls whether your contact information shares during active calls. This setting affects both cellular and FaceTime calls. When disabled, your caller receives your phone number or email without associated name or photo data, even if they have your contact card saved.
 
-Step 2: Technical Implementation Details
+Step 2 - Technical Implementation Details
 
 For developers working with iOS contact integration, understanding how Contact Poster data flows through the system matters for building privacy-respecting applications.
 
@@ -85,13 +85,13 @@ func fetchContactPoster(for identifier: String) -> (name: String, hasPoster: Boo
 
 The example above demonstrates checking poster availability without accessing the actual image data, which requires requesting the more sensitive `CNContactImageDataKey` descriptor.
 
-Step 3: Third-Party App Considerations
+Step 3 - Third-Party App Considerations
 
 Several categories of iOS applications interact with Contact Poster data beyond the native Phone and FaceTime apps. Messaging applications like WhatsApp and Telegram may display your poster when initiating calls. VoIP applications using CallKit integrate with the same poster system. Business communication platforms often expose poster information within their contact directories.
 
 Before granting any third-party app Contacts access, evaluate whether the application's functionality genuinely requires this permission. Some apps request full contact access when they only need limited poster display capabilities. In iOS 18 and later, you can grant "Partial Access" to specific contact groups, limiting which contacts, and their associated posters, the application can read.
 
-Step 4: Strategic Configuration Recommendations
+Step 4 - Strategic Configuration Recommendations
 
 For maximum privacy without sacrificing usability, use a layered approach to your Contact Poster configuration.
 
@@ -101,13 +101,13 @@ Reserve your actual name and personal photo for a secondary poster configuration
 
 Disable automatic poster sharing during calls if you frequently receive unwanted calls. This prevents your information from propagating to unknown parties who might harvest contact details for marketing or malicious purposes.
 
-Step 5: Manage Poster Changes Across Devices
+Step 5 - Manage Poster Changes Across Devices
 
 iOS synchronizes Contact Poster changes across your devices through your Apple ID. Modifying your poster on iPhone automatically updates the display on your iPad and Mac, provided all devices sign into the same Apple ID with Contacts sync enabled.
 
 When you change your poster, any contact who has your information saved receives the updated display on subsequent calls. This synchronization works bidirectionally, contacts who have updated their posters appear with new information when they call you.
 
-Automation: Managing Multiple Contact Posters
+Automation - Managing Multiple Contact Posters
 
 For users managing many contacts or frequently changing posters, automation reduces friction. Here's a practical example using Apple Shortcuts:
 
@@ -242,7 +242,7 @@ echo "=== Contact Poster Privacy Audit (Quarterly) ==="
 echo "Date: $(date)"
 echo ""
 
-Check 1: Primary poster settings
+Check 1 - Primary poster settings
 echo "1. PRIMARY POSTER REVIEW"
 echo "   Go to: Settings > Contacts > Contact Poster"
 echo "    Verify name is appropriate (full name, nickname, pseudonym?)"
@@ -250,27 +250,27 @@ echo "    Verify photo matches current identity"
 echo "    Check Share During Calls toggle"
 echo ""
 
-Check 2: Per-contact customization
+Check 2 - Per-contact customization
 echo "2. PER-CONTACT CUSTOMIZATION REVIEW"
 echo "    Do your closest contacts have appropriate custom posters?"
 echo "    Have any contacts been added that need custom settings?"
 echo ""
 
-Check 3: Device sync
+Check 3 - Device sync
 echo "3. DEVICE SYNCHRONIZATION REVIEW"
 echo "    Check iPad > Settings > Contacts > Contact Poster"
 echo "    Check Mac > Contacts > Edit Your Contact Card"
 echo "    Verify all devices show consistent information"
 echo ""
 
-Check 4: Unwanted sharing
+Check 4 - Unwanted sharing
 echo "4. RECENT CALLS REVIEW"
 echo "    Review recent calls in Phone app"
 echo "    Check if poster info was visible to unknown callers"
 echo "    If shared with unwanted parties, update poster immediately"
 echo ""
 
-Check 5: Third-party app exposure
+Check 5 - Third-party app exposure
 echo "5. THIRD-PARTY APP PERMISSIONS"
 echo "   Go to: Settings > [App Name] > Contacts"
 echo "    Review which apps have Contacts access"

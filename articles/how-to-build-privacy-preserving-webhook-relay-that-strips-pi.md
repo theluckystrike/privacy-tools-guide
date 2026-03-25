@@ -43,7 +43,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Architecture Overview
+Step 1 - Architecture Overview
 
 The relay operates as middleware between webhook providers and your endpoints. It receives POST requests, applies transformation rules, and forwards the cleaned payload to your destination.
 
@@ -56,7 +56,7 @@ The relay needs three core components:
 - A rule engine to define which fields to strip
 - A forwarding mechanism to send transformed payloads
 
-Step 2: Build the Relay in Node.js
+Step 2 - Build the Relay in Node.js
 
 Here's a complete implementation using Express:
 
@@ -120,7 +120,7 @@ app.listen(3000, () => {
 });
 ```
 
-Step 3: Configuration Options for Power Users
+Step 3 - Configuration Options for Power Users
 
 The basic implementation works, but you'll want more control. Extend the relay with configurable rules:
 
@@ -180,7 +180,7 @@ function setNestedValue(obj, path, value) {
 }
 ```
 
-Step 4: Handling Edge Cases
+Step 4 - Handling Edge Cases
 
 Real-world webhooks have nested structures and arrays. The implementation above handles recursion, but you need to consider a few scenarios.
 
@@ -218,7 +218,7 @@ app.post('/relay', (req, res) => {
 });
 ```
 
-Step 5: Deploy ment Considerations
+Step 5 - Deploy ment Considerations
 
 Run the relay as a separate service with its own authentication. Don't expose it directly to the internet, your webhook providers should send to your relay, which then forwards internally.
 
@@ -249,7 +249,7 @@ app.post('/relay', async (req, res) => {
 });
 ```
 
-Step 6: Test and Monitoring
+Step 6 - Test and Monitoring
 
 Implement testing to ensure the relay works correctly:
 

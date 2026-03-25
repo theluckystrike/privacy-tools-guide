@@ -24,7 +24,7 @@ Business analytics increasingly relies on sensitive customer data, transaction h
 
 Regulations like GDPR, CCPA, and emerging AI-specific laws (EU AI Act, US state AI laws) mandate data minimization and purpose limitation. Beyond compliance, customers increasingly expect their data handled responsibly. Implementing privacy-preserving ML demonstrates commitment to user privacy as a competitive advantage.
 
-Differential Privacy: Adding Mathematical Privacy Guarantees
+Differential Privacy - Adding Mathematical Privacy Guarantees
 
 Differential privacy (DP) provides a mathematical framework guaranteeing that individual records cannot be reverse-engineered from model outputs or aggregates. The core mechanism adds calibrated noise to computations, ensuring the presence or absence of any single record doesn't significantly affect results.
 
@@ -78,9 +78,9 @@ model, optimizer, data_loader = privacy_engine.make_private(
 )
 ```
 
-Key parameters: `epsilon` controls privacy strength (typically 0.1-10), `noise_multiplier` affects privacy-utility tradeoff, and `max_grad_norm` clips gradients to bound sensitivity.
+Key parameters - `epsilon` controls privacy strength (typically 0.1-10), `noise_multiplier` affects privacy-utility tradeoff, and `max_grad_norm` clips gradients to bound sensitivity.
 
-Federated Learning: Training Without Centralizing Data
+Federated Learning - Training Without Centralizing Data
 
 Federated learning enables model training across distributed data sources without raw data leaving local devices or servers. Each participant trains locally, and only model updates (gradients or weights) are shared and aggregated.
 
@@ -165,7 +165,7 @@ For more complex analytics, explore MP-SPDZ, a SMPC framework supporting various
 
 Practical Implementation Strategy
 
-Step 1: Audit Your Data Pipeline
+Step 1 - Audit Your Data Pipeline
 
 Before implementing privacy techniques, map all data flows:
 - What data do you collect?
@@ -173,7 +173,7 @@ Before implementing privacy techniques, map all data flows:
 - Who has access?
 - What regulations apply?
 
-Step 2: Choose Appropriate Techniques
+Step 2 - Choose Appropriate Techniques
 
 | Use Case | Recommended Technique |
 |----------|----------------------|
@@ -182,7 +182,7 @@ Step 2: Choose Appropriate Techniques
 | Multi-company collaboration | Secure Multi-Party Computation |
 | Data residency requirements | On-premise + encryption |
 
-Step 3: Start Small and Iterate
+Step 3 - Start Small and Iterate
 
 Begin with a pilot project:
 1. Implement DP on non-critical metrics
@@ -190,7 +190,7 @@ Begin with a pilot project:
 3. Gradually expand to more sensitive data
 4. Document privacy guarantees for compliance
 
-Step 4: Validate Privacy Guarantees
+Step 4 - Validate Privacy Guarantees
 
 Test your implementations:
 - Membership inference attacks: Can an attacker determine if their data was in training set?

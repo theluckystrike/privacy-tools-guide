@@ -22,7 +22,7 @@ Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Air-Gapped Security Considerations](#air-gapped-security-considerations)
-- [Advanced: Multi-Signature Integration](#advanced-multi-signature-integration)
+- [Advanced - Multi-Signature Integration](#advanced-multi-signature-integration)
 - [Physical Share Storage Best Practices](#physical-share-storage-best-practices)
 - [Troubleshooting](#troubleshooting)
 
@@ -36,13 +36,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Mathematics Behind SSS
+Step 1 - Understand the Mathematics Behind SSS
 
 The mathematical foundation relies on polynomial interpolation over a finite field. To create K shares from a secret, you construct a random polynomial of degree K-1 where the constant term equals your seed phrase (encoded as a number). Evaluating this polynomial at K different points produces the shares. Any K points uniquely determine the polynomial, while K-1 or fewer points remain information-theoretically secure.
 
 This property makes SSS particularly valuable for inheritance scenarios: you might create a 3-of-5 scheme where any three family members together can recover the seed, but two share holders alone cannot access the funds. The cryptographic guarantees are provable, you cannot shortcut the security without obtaining sufficient shares.
 
-Step 2: Implementing SSS with the Python SSS Library
+Step 2 - Implementing SSS with the Python SSS Library
 
 The Python `ssss` library provides a straightforward implementation. Install it:
 
@@ -90,8 +90,8 @@ def combine_shares(share_hex_list):
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Usage: python sss_split.py <seed_hex> <threshold> <shares>")
-        print("Example: python sss_split.py a1b2c3d4... 3 5")
+        print("Usage - python sss_split.py <seed_hex> <threshold> <shares>")
+        print("Example - python sss_split.py a1b2c3d4... 3 5")
         sys.exit(1)
 
     seed = sys.argv[1]
@@ -111,7 +111,7 @@ Run the script:
 python sss_split.py a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6 3 5
 ```
 
-Step 3: Converting BIP39 Seed Phrases to Hex
+Step 3 - Converting BIP39 Seed Phrases to Hex
 
 Your cryptocurrency wallet likely uses BIP39 seed phrases (12 or 24 words). Convert these to hex for SSS processing:
 
@@ -149,7 +149,7 @@ if __name__ == "__main__":
     print(f"Hex seed: {hex_seed}")
 ```
 
-Step 4: Practical Inheritance Planning: The 2-of-3 Strategy
+Step 4 - Practical Inheritance Planning: The 2-of-3 Strategy
 
 For inheritance planning, a common and secure configuration uses three shares with a two-share threshold. This provides redundancy (losing one share doesn't lock you out) while requiring collaboration to access funds.
 
@@ -179,7 +179,7 @@ python3 sss_split.py <your-hex-seed> 2 3
 
 Disconnect your machine from all networks before entering seed phrases. Use a hardware wallet to generate your seed initially, then export it in hex format for SSS processing. Some hardware wallets like Ledger and Trezor now include native SSS support, verify your model supports this before purchasing.
 
-Step 5: Integrate with Existing Wallets
+Step 5 - Integrate with Existing Wallets
 
 After recovering your seed from shares, import it into your wallet software:
 
@@ -197,13 +197,13 @@ For Ethereum and EVM-compatible chains, use Metamask or similar wallets:
 
 Always verify the recovered wallet shows your expected balance before transferring any significant funds.
 
-Step 6: Alternative: Multi-Sig Wallets
+Step 6 - Alternative: Multi-Sig Wallets
 
 Shamir Secret Sharing isn't your only option for inheritance planning. Multi-signature wallets require multiple private keys to authorize transactions, different from SSS in that the blockchain itself enforces the requirement rather than cryptographic splitting.
 
 Consider multi-sig for larger estates where you want ongoing control requiring multiple approvals for large transactions. SSS works better when you want a one-time backup that becomes active only after triggering conditions (death, incapacity).
 
-Step 7: Security Trade-offs and Risks
+Step 7 - Security Trade-offs and Risks
 
 Weigh these considerations before implementing SSS for inheritance:
 
@@ -215,7 +215,7 @@ Estate coordination requires clear documentation. Your will or trust should spec
 
 Legal frameworks vary by jurisdiction. Consult with an estate planning attorney familiar with cryptocurrency to ensure your arrangement complies with local laws and your wishes will be honored.
 
-Step 8: Implementing Time-Locked Recovery
+Step 8 - Implementing Time-Locked Recovery
 
 Add time-locked conditions to prevent premature access:
 
@@ -265,7 +265,7 @@ class TimeLockedSSS:
         return current_time >= self.unlock_date
 ```
 
-Advanced: Multi-Signature Integration
+Advanced - Multi-Signature Integration
 
 Combine SSS with multi-signature wallets for additional security:
 
@@ -289,7 +289,7 @@ Combine benefits:
 
 This creates a system where both key recovery AND transaction signing require multiple parties.
 
-Step 9: Test Your SSS Setup
+Step 9 - Test Your SSS Setup
 
 Before relying on SSS for production, thoroughly test recovery:
 
@@ -304,19 +304,19 @@ def test_sss_recovery():
     # Generate shares
     shares = split_seed_phrase(original_seed, shares=5, threshold=3)
 
-    # Test: Can we recover with exactly 3 shares?
+    # Test - Can we recover with exactly 3 shares?
     test_shares = random.sample(shares, 3)
     recovered = combine_shares(test_shares)
 
     assert recovered == original_seed, "Recovery failed!"
 
-    # Test: Can we recover with 4 shares? (should still work)
+    # Test - Can we recover with 4 shares? (should still work)
     test_shares = random.sample(shares, 4)
     recovered = combine_shares(test_shares)
 
     assert recovered == original_seed, "4-share recovery failed!"
 
-    # Test: Can we recover with 2 shares? (should fail)
+    # Test - Can we recover with 2 shares? (should fail)
     test_shares = random.sample(shares, 2)
     try:
         recovered = combine_shares(test_shares)
@@ -355,7 +355,7 @@ Storage Medium Considerations:
 - Encrypted USB drives: vulnerable if lost, needs backup
 - Avoid: unencrypted digital storage, cloud services with SSS shares
 
-Step 10: Verify Share Integrity
+Step 10 - Verify Share Integrity
 
 Over time, shares might become damaged or altered. Implement verification:
 
@@ -393,7 +393,7 @@ class ShareVerification:
         return report
 ```
 
-Step 11: Comparing SSS with Hardware Wallets
+Step 11 - Comparing SSS with Hardware Wallets
 
 Modern hardware wallets offer native SSS support:
 
@@ -408,7 +408,7 @@ Modern hardware wallets offer native SSS support:
 
 Consider using a hardware wallet's native SSS if you prioritize ease of use. DIY SSS provides more transparency but requires careful implementation.
 
-Step 12: Post-Recovery Key Management
+Step 12 - Post-Recovery Key Management
 
 After recovering your seed from shares:
 

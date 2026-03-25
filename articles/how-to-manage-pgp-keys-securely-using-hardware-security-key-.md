@@ -47,7 +47,7 @@ sudo apt install gnupg
 
 On Windows, download Gpg4win from the official GnuPG website.
 
-Step 2: Initializing Your Hardware Security Key
+Step 2 - Initializing Your Hardware Security Key
 
 The first step involves configuring the OpenPGP application on your YubiKey. This process sets up the card with your preferences and creates three slots for different key types.
 
@@ -75,7 +75,7 @@ name (enter your name)
 lang (your language code, e.g., en)
 ```
 
-Step 3: Generate Keys Directly on the YubiKey
+Step 3 - Generate Keys Directly on the YubiKey
 
 For maximum security, generate your encryption and signing keys directly on the hardware device. This ensures the private key material never exists in software memory.
 
@@ -118,7 +118,7 @@ gpg --delete-secret-keys your@email.com
 
 Keep a paper backup of your revocation certificate in a secure location before deleting software keys.
 
-Step 4: Use Your Hardware-Protected Keys
+Step 4 - Use Your Hardware-Protected Keys
 
 Once your keys are on the YubiKey, using them works similarly to software keys, with one important difference: every operation requires physical touch confirmation.
 
@@ -151,7 +151,7 @@ admin
 forcesignature
 ```
 
-Step 5: Manage Multiple Keys and Backups
+Step 5 - Manage Multiple Keys and Backups
 
 For professional use, consider a backup strategy. Generate a revocation certificate before transferring keys:
 
@@ -177,13 +177,13 @@ The private key remains on your YubiKey, portable between any computer with GnuP
 
 Troubleshooting Common Issues
 
-YubiKey not detected by GnuPG: Ensure the OpenPGP application is enabled. Use YubiKey Manager to check:
+YubiKey not detected by GnuPG - Ensure the OpenPGP application is enabled. Use YubiKey Manager to check:
 
 ```bash
 ykman openpgp info
 ```
 
-PIN blocked: After 3 failed attempts, the User PIN blocks. Use the Admin PIN to unblock:
+PIN blocked - After 3 failed attempts, the User PIN blocks. Use the Admin PIN to unblock:
 
 ```bash
 gpg --card-edit
@@ -193,7 +193,7 @@ passwd
 
 Select option 2 to unblock the PIN.
 
-Key operations fail silently: Some YubiKey models require touch policy configuration. Verify:
+Key operations fail silently - Some YubiKey models require touch policy configuration. Verify:
 
 ```bash
 gpg --card-status

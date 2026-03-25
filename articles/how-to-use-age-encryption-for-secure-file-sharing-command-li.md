@@ -37,7 +37,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install AGE
+Step 1 - Install AGE
 
 The installation process varies by operating system, but most developers can install age with a single command. On macOS, use Homebrew:
 
@@ -59,7 +59,7 @@ age --version
 
 You should see version information confirming a successful installation.
 
-Step 2: Generate Encryption Keys
+Step 2 - Generate Encryption Keys
 
 Before encrypting files, you need to generate a keypair. AGE supports two types of keys: identity files (password-protected) and SSH keys. For most use cases, generating a dedicated identity file provides the best balance of security and convenience.
 
@@ -85,7 +85,7 @@ age-keygen -y ~/.ssh/id_ed25519
 
 This outputs the age-format public key derived from your SSH private key, allowing you to use existing credentials for age encryption.
 
-Step 3: Encrypt Files
+Step 3 - Encrypt Files
 
 With your keypair ready, encrypting files becomes straightforward. The basic syntax uses `age` with the `-p` flag for password-based encryption, or the `-r` flag for recipient-based encryption using public keys.
 
@@ -118,7 +118,7 @@ For encrypting directories, combine age with tar:
 tar czf - /path/to/directory | age -p -o backup.tar.gz.age
 ```
 
-Step 4: Decrypt Files
+Step 4 - Decrypt Files
 
 Decryption requires the corresponding private key or the correct passphrase. The `age-decrypt` command handles both recipient-based and password-based encrypted files.
 
@@ -142,7 +142,7 @@ age-decrypt -p -o original-file.txt encrypted-file.txt.age
 
 The `-p` flag prompts for the passphrase used during encryption.
 
-Step 5: Automation Patterns
+Step 5 - Automation Patterns
 
 Integrating age into scripts and workflows requires understanding how to pass keys securely. Avoid hardcoding keys in scripts. Instead, use environment variables or file references with appropriate permissions.
 
@@ -187,7 +187,7 @@ Developers familiar with GPG might wonder why age exists. Age prioritizes simpli
 
 For teams already using SSH, age's SSH key compatibility reduces the credential management burden. You can encrypt files using keys you already use for server authentication.
 
-Step 6: Age Cryptography Deep-Dive
+Step 6 - Age Cryptography Deep-Dive
 
 Understanding age's cryptographic foundation ensures proper security assumptions:
 
@@ -196,13 +196,13 @@ ChaCha20-Poly1305 Algorithm
 Age uses ChaCha20-Poly1305, a modern AEAD cipher providing both confidentiality and authenticity:
 
 ```
-ChaCha20: Stream cipher providing confidentiality
+ChaCha20 - Stream cipher providing confidentiality
 - 256-bit key
 - 96-bit nonce (unique per encryption)
 - Faster on CPUs without AES hardware acceleration
 - No known practical cryptanalysis attacks
 
-Poly1305: Polynomial authentication
+Poly1305 - Polynomial authentication
 - 128-bit authentication tag
 - Detects any bit manipulation of ciphertext
 - Timing-safe implementation (resistant to timing attacks)
@@ -227,14 +227,14 @@ These defaults resist GPU attacks while remaining fast on modern hardware.
 For public-key encryption, age uses Curve25519 for key agreement:
 
 ```
-X25519: Elliptic curve Diffie-Hellman
+X25519 - Elliptic curve Diffie-Hellman
 - 256-bit security level
 - Montgomery form (efficient point operations)
 - No cofactor issues
 - Widely considered cryptographically sound
 ```
 
-Step 7: Batch Encryption Operations
+Step 7 - Batch Encryption Operations
 
 For processing many files:
 
@@ -268,7 +268,7 @@ Create manifest of encrypted files
 find "$OUTPUT_DIR" -type f -exec sha256sum {} \; > "$OUTPUT_DIR/manifest.sha256"
 ```
 
-Step 8: Integration with Backup Tools
+Step 8 - Integration with Backup Tools
 
 Age integrates with backup workflows:
 
@@ -316,7 +316,7 @@ List recent backups
 ls -lh "$BACKUP_ROOT"/incremental-*.age | tail -5
 ```
 
-Step 9: Secure Key Sharing Protocols
+Step 9 - Secure Key Sharing Protocols
 
 Distributing keys securely is critical:
 
@@ -326,11 +326,11 @@ Out-of-Band Verification
 #!/bin/bash
 Share key through multiple channels
 
-Primary: encrypted email
+Primary - encrypted email
 echo "Your age public key: age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5eu9rq" | \
     mail -s "Your encryption key" recipient@example.com
 
-Secondary: SMS with fingerprint (short form)
+Secondary - SMS with fingerprint (short form)
 FINGERPRINT=$(echo "age1ql3z7hjy54pw3hyww5ayyfg7zqgvc7w3j2elw8zmrj2kg5eu9rq" | \
     sha256sum | cut -c1-16)
 echo "Key fingerprint: $FINGERPRINT" | sms recipient
@@ -368,17 +368,17 @@ Age handles large-scale encryption efficiently:
 Performance testing
 Age on 1GB file (modern CPU)
 time age -r "$KEY" -o file.1gb.age file.1gb
-Typical: 0.5-1.5 seconds
+Typical - 0.5-1.5 seconds
 
 Parallel encryption of many files
 find data -type f | \
     parallel age -r "$KEY" -o {}.age {}
 
-Memory usage: Minimal (~10MB regardless of file size)
+Memory usage - Minimal (~10MB regardless of file size)
 This is because age streams data rather than loading entirely
 ```
 
-Step 10: Decryption in Restricted Environments
+Step 10 - Decryption in Restricted Environments
 
 Recovering files when tools are limited:
 
@@ -394,7 +394,7 @@ This would require implementing full age format parsing
 For production, always compile/install proper age binary
 ```
 
-Step 11: Integration with Git for Encrypted Repositories
+Step 11 - Integration with Git for Encrypted Repositories
 
 Store sensitive config in git with age encryption:
 
@@ -474,7 +474,7 @@ Related Articles
 - [Best Secure File Sharing Tools for Teams Handling.](/best-secure-file-sharing-tools-for-teams-handling-sensitive-data/)
 - [How to Set Up Secure File Sharing for Sensitive Documents](/how-to-set-up-secure-file-sharing-for-sensitive-documents/)
 - [Onionshare Secure File Sharing Over Tor Network Setup And Us](/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
-- [Secure File Sharing Tools Comparison: E2E Encrypted.](/secure-file-sharing-tools-comparison/)
+- [Secure File Sharing Tools Comparison - E2E Encrypted.](/secure-file-sharing-tools-comparison/)
 - [Age Encryption Tool Tutorial for Developers](/age-encryption-tool-tutorial-developers/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 

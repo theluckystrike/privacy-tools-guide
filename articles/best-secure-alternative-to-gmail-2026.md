@@ -21,7 +21,7 @@ Proton Mail is the best secure Gmail alternative in 2026 for most developers and
 
 - Content scanning: Gmail scans email content for ad targeting, even on free accounts
 2.
-- They are based in Australia: subject to FISA-equivalent legislation, which limits their appeal for high-sensitivity use cases.
+- They are based in Australia - subject to FISA-equivalent legislation, which limits their appeal for high-sensitivity use cases.
 - Choose MBOX format for: easy import # 4.
 - Use a password manager: for credentials 3.
 - API restrictions: Google increasingly limits third-party access
@@ -68,9 +68,9 @@ Using Proton Mail Bridge with a desktop client
 
 Thunderbird configuration:
 IMAP Server: 127.0.0.1
-IMAP Port: 1143
-SMTP Server: 127.0.0.1
-SMTP Port: 1025
+IMAP Port - 1143
+SMTP Server - 127.0.0.1
+SMTP Port - 1025
 ```
 
 Proton Mail offers a REST API for developers on paid plans, enabling programmatic email management. The bridge application runs locally, providing standard IMAP/SMTP access while maintaining encryption.
@@ -129,7 +129,7 @@ Fastmail does not offer end-to-end encryption, but it deserves mention for devel
 
 If your threat model is primarily about avoiding ad targeting and data monetization rather than state-level surveillance, Fastmail is a reasonable middle ground. They are based in Australia, subject to FISA-equivalent legislation, which limits their appeal for high-sensitivity use cases.
 
-Self-Hosted Solutions: Maximum Control
+Self-Hosted Solutions - Maximum Control
 
 For developers who want complete ownership, self-hosted email remains the gold standard. This approach requires more setup but provides full control over data and infrastructure.
 

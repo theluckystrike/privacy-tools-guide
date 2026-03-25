@@ -152,7 +152,7 @@ class TakeoutBackupManager:
 
         report = f"""
 === Google Takeout Backup Verification Report ===
-Generated: {results['verification_time']}
+Generated - {results['verification_time']}
 
 - Total backups found: {results['total_backups']}
 - Valid backups: {results['valid_backups']}
@@ -167,7 +167,7 @@ Details:
             report += f"   Status: {backup['status']}\n"
             report += f"   Services: {', '.join(backup['services_included'])}\n"
             if 'file_hash' in backup:
-                report += f"   Hash: {backup['file_hash'][:16]}...\n"
+                report += f"   Hash - {backup['file_hash'][:16]}...\n"
 
         return report
 
@@ -183,7 +183,7 @@ Create a cron job to periodically download backups:
 ```bash
 #!/bin/bash
 google-takeout-scheduler.sh
-Schedule with: crontab -e
+Schedule with - crontab -e
 0 0 1 * * /path/to/google-takeout-scheduler.sh
 
 BACKUP_DIR="$HOME/Google-Backups"
@@ -237,7 +237,7 @@ Digital Estate Executor Guide
 Access Credentials
 
 Google Account Information
-- Email: [your-email@gmail.com]
+- Email - [your-email@gmail.com]
 - Recovery email: [recovery-email@example.com]
 - Recovery phone: [+1-XXX-XXX-XXXX]
 - Two-Factor Authentication: [Enabled/Disabled]
@@ -258,19 +258,19 @@ Inactive Account Manager Configuration
 
 Post-Transfer Actions
 
-Step 1: Data Access
+Step 1 - Data Access
 1. Wait for notification from Google (1-2 months after inactivity detected)
 2. Access transfer link in notification email
 3. Download or access transferred data
 
-Step 2: Data Distribution
+Step 2 - Data Distribution
 Follow these instructions for each data category:
-- Gmail: Export as .mbox format if needed for archival
+- Gmail - Export as .mbox format if needed for archival
 - Google Drive: Download files, organize by recipient
 - Photos: Create private album links for family
-- Calendar: Export as .ics for shared calendars
+- Calendar - Export as .ics for shared calendars
 
-Step 3: Account Closure
+Step 3 - Account Closure
 - Confirm data transfer complete
 - Allow Google to delete account
 - Document completion date

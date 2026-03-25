@@ -59,7 +59,7 @@ PURPOSES = {
 
 2. Necessity Verification
 
-Ask: could you achieve this purpose without personal data? If yes, you likely can't rely on legitimate interest. Document your reasoning:
+Ask - could you achieve this purpose without personal data? If yes, you likely can't rely on legitimate interest. Document your reasoning:
 
 ```python
 def assess_necessity(purpose, data_requested):
@@ -202,7 +202,7 @@ def handle_data_subject_objection(user_id, processing_type):
         notify_user_of_legitimate_basis(user_id)
 ```
 
-Practical Example: Security Logging
+Practical Example - Security Logging
 
 Consider implementing security monitoring. You process IP addresses and access timestamps to detect brute-force attacks. Here's how to document legitimate interest:
 

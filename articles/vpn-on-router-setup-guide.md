@@ -54,7 +54,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Flash OpenWrt (if needed)
+Step 1 - Flash OpenWrt (if needed)
 
 ```bash
 Check your router model at https://openwrt.org/toh
@@ -66,13 +66,13 @@ Wait 3-5 minutes. do not power off
 
 After reboot, SSH in:
 ssh root@192.168.1.1
-Default: no password, set one immediately:
+Default - no password, set one immediately:
 passwd
 ```
 
 ---
 
-Step 2: Install WireGuard on OpenWrt
+Step 2 - Install WireGuard on OpenWrt
 
 ```bash
 SSH into your router
@@ -87,13 +87,13 @@ wg genkey | tee /etc/wireguard/router_private.key | wg pubkey > /etc/wireguard/r
 chmod 600 /etc/wireguard/router_private.key
 
 Display keys
-echo "Private: $(cat /etc/wireguard/router_private.key)"
+echo "Private - $(cat /etc/wireguard/router_private.key)"
 echo "Public:  $(cat /etc/wireguard/router_public.key)"
 ```
 
 ---
 
-Step 3: Configure WireGuard Client (Connecting to VPN Provider)
+Step 3 - Configure WireGuard Client (Connecting to VPN Provider)
 
 This example uses Mullvad, but works with any WireGuard VPN provider. Download your provider's WireGuard config file and extract the values.
 
@@ -135,7 +135,7 @@ uci commit network
 
 ---
 
-Step 4: Configure Firewall and Routing
+Step 4 - Configure Firewall and Routing
 
 ```bash
 Add WireGuard interface to WAN firewall zone
@@ -162,7 +162,7 @@ chmod +x /etc/hotplug.d/iface/30-vpn-route
 
 ---
 
-Step 5: Verify the VPN Tunnel
+Step 5 - Verify the VPN Tunnel
 
 ```bash
 Check WireGuard status from the router
@@ -195,7 +195,7 @@ peer: SERVER_PUBLIC_KEY
 
 ---
 
-Step 6: Split Tunneling (Exclude Specific Devices)
+Step 6 - Split Tunneling (Exclude Specific Devices)
 
 You may want some devices (like a gaming console) to bypass the VPN:
 
@@ -213,7 +213,7 @@ This device uses the normal WAN, others go through VPN
 
 ---
 
-Step 7: OpenVPN Fallback (Older Routers)
+Step 7 - OpenVPN Fallback (Older Routers)
 
 If your router doesn't support WireGuard:
 
@@ -234,7 +234,7 @@ OpenVPN is slower than WireGuard (especially on underpowered routers). expect 20
 
 ---
 
-Step 8: Kill Switch (Prevent Traffic if VPN Drops)
+Step 8 - Kill Switch (Prevent Traffic if VPN Drops)
 
 ```bash
 Block all WAN traffic if WireGuard interface goes down
@@ -256,7 +256,7 @@ uci commit firewall
 
 ---
 
-Step 9: DNS Leak Prevention
+Step 9 - DNS Leak Prevention
 
 Even with the VPN tunnel active, DNS queries can bypass the tunnel and reveal your browsing activity to your ISP. This is the most common privacy failure in router VPN setups.
 
@@ -293,7 +293,7 @@ uci commit https-dns-proxy
 /etc/init.d/https-dns-proxy restart
 ```
 
-Step 10: Choose a VPN Provider for Router Use
+Step 10 - Choose a VPN Provider for Router Use
 
 Not every VPN provider works well at the router level. Key requirements:
 
@@ -344,7 +344,7 @@ If CPU hits 100% during transfer, hardware is the limit
 
 For high-throughput setups, the PC-based pfSense or OPNsense approach with an AES-NI capable CPU and WireGuard provides near-wire speeds regardless of ISP bandwidth.
 
-Step 11: Maintaining the VPN Configuration
+Step 11 - Maintaining the VPN Configuration
 
 Router VPN configurations require periodic maintenance:
 

@@ -31,7 +31,7 @@ borg --version
 borg 1.4.x
 ```
 
-Step 1: Initialize an Encrypted Repository
+Step 1 - Initialize an Encrypted Repository
 
 A Borg repository is a directory (local or remote) that stores all backup data.
 
@@ -51,7 +51,7 @@ You will be prompted to set a passphrase. store this in a password manager
 borg key export /mnt/backup/myrepo ~/borg-key-backup.txt
 ```
 
-Step 2: Create Your First Backup
+Step 2 - Create Your First Backup
 
 ```bash
 borg create \
@@ -64,7 +64,7 @@ borg create \
   ~/Pictures
 ```
 
-Common compression options: `lz4` (fast), `zstd,3` (better ratio), `none` (pre-compressed files).
+Common compression options - `lz4` (fast), `zstd,3` (better ratio), `none` (pre-compressed files).
 
 Exclude patterns:
 
@@ -81,7 +81,7 @@ borg create \
   /home/user
 ```
 
-Step 3: List and Browse Archives
+Step 3 - List and Browse Archives
 
 ```bash
 List all archives
@@ -94,7 +94,7 @@ Search for a specific file
 borg list /mnt/backup/myrepo --glob-archives '*' | head -20
 ```
 
-Step 4: Restore Files
+Step 4 - Restore Files
 
 ```bash
 Restore an entire archive
@@ -109,7 +109,7 @@ Dry run
 borg extract --dry-run --list /mnt/backup/myrepo::backup-2026-03-22
 ```
 
-Step 5: Prune Old Archives
+Step 5 - Prune Old Archives
 
 ```bash
 borg prune \
@@ -126,7 +126,7 @@ Compact to reclaim disk space
 borg compact /mnt/backup/myrepo
 ```
 
-Step 6: Automate with a Shell Script
+Step 6 - Automate with a Shell Script
 
 ```bash
 #!/bin/bash
@@ -180,7 +180,7 @@ echo "0 2 * * * root /usr/local/bin/borg-backup.sh" | \
   sudo tee /etc/cron.d/borg-backup
 ```
 
-Step 7: Remote Backup SSH Setup
+Step 7 - Remote Backup SSH Setup
 
 Create a dedicated SSH key and restrict it on the backup server:
 
@@ -194,7 +194,7 @@ command="borg serve --restrict-to-path /backups/myhost",restrict ssh-ed25519 AAA
 EOF
 ```
 
-Step 8: Verify Backup Integrity
+Step 8 - Verify Backup Integrity
 
 ```bash
 Check repository consistency
@@ -267,7 +267,7 @@ curl https://rclone.org/install.sh | sudo bash
 
 Configure B2 backend
 rclone config
-Type: b2, account ID: your_key_id, key: your_application_key
+Type - b2, account ID: your_key_id, key: your_application_key
 
 Sync the Borg repo directory to B2
 rclone sync /mnt/backup/myrepo \
@@ -286,7 +286,7 @@ Borg's data blocks are already AES-256 encrypted before rclone uploads them. Bac
 - Offsite encrypted copy in B2 for disaster recovery
 - B2 versioning enabled at the bucket level for additional snapshot retention
 
-Keep B2 costs low: enable B2's lifecycle rules to delete files older than your longest retention period.
+Keep B2 costs low - enable B2's lifecycle rules to delete files older than your longest retention period.
 
 Related Articles
 

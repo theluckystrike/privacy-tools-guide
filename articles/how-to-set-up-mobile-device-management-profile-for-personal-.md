@@ -35,18 +35,18 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand MDM Profiles
+Step 1 - Understand MDM Profiles
 
 An MDM profile is a configuration file that, when installed on your device, instructs the operating system to enforce specific policies. On iOS, these are known as Configuration Profiles. On Android, Enterprise Device Management APIs serve a similar purpose through device owner or profile owner modes.
 
 The key distinction for personal use involves understanding what these profiles can actually control:
 
-- iOS Configuration Profiles: Can manage VPN settings, certificate authorities, app restrictions, network configurations, and MDM enrollment itself.
-- Android Device Owner/Profile Owner: Provides far more extensive control including app installations, device settings, and work profile management.
+- iOS Configuration Profiles - Can manage VPN settings, certificate authorities, app restrictions, network configurations, and MDM enrollment itself.
+- Android Device Owner/Profile Owner - Provides far more extensive control including app installations, device settings, and work profile management.
 
 For personal privacy, the goal is not enterprise surveillance but rather self-imposed restrictions that prevent data leakage, limit tracking, and harden the device against unauthorized access.
 
-Step 2: iOS: Creating and Installing a Configuration Profile
+Step 2 - iOS: Creating and Installing a Configuration Profile
 
 Apple devices support Configuration Profiles through the Settings app. You can create one programmatically using a property list (plist) file or manually through Apple's Configurator tool.
 
@@ -109,7 +109,7 @@ Consider these specific restrictions for personal privacy hardening:
 
 Note that some restrictions require the device to be "supervised" through Apple Configurator, which erases the device during setup. For personal use without supervision, many restrictions remain available through standard Configuration Profiles.
 
-Step 3: Android: Device Owner and Work Profile Setup
+Step 3 - Android: Device Owner and Work Profile Setup
 
 Android provides more flexibility through its Enterprise APIs. The two primary approaches for personal privacy are:
 
@@ -149,9 +149,9 @@ if (dpm.isProfileOwnerApp(adminComponent.getPackageName())) {
 }
 ```
 
-The critical advantage: Work Profile policies do not affect personal apps, giving you isolation without full device control.
+The critical advantage - Work Profile policies do not affect personal apps, giving you isolation without full device control.
 
-Step 4: Automate Profile Deployment
+Step 4 - Automate Profile Deployment
 
 For developers managing multiple personal devices, automation simplifies profile deployment across iOS and Android.
 
@@ -206,13 +206,13 @@ android {
 }
 ```
 
-Step 5: Manage and Removing Profiles
+Step 5 - Manage and Removing Profiles
 
 Both platforms allow profile inspection and removal through settings:
 
 iOS: Settings → General → VPN & Device Management → Select Profile → Remove Profile
 
-Android: Settings → Security → Device Admin Apps (for Device Owner) or Work Profile settings
+Android - Settings → Security → Device Admin Apps (for Device Owner) or Work Profile settings
 
 For ongoing privacy maintenance, periodically audit installed profiles. Malicious profiles can restrict device functionality or exfiltrate data, so only install profiles from trusted sources.
 

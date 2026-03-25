@@ -25,7 +25,7 @@ Table of Contents
 - [Implementing with Bitwarden](#implementing-with-bitwarden)
 - [Advanced Techniques for High-Volume Management](#advanced-techniques-for-high-volume-management)
 - [Security Considerations](#security-considerations)
-- [Advanced: Automation with Password Manager APIs](#advanced-automation-with-password-manager-apis)
+- [Advanced - Automation with Password Manager APIs](#advanced-automation-with-password-manager-apis)
 - [Carrier Portal Credential Patterns](#carrier-portal-credential-patterns)
 - [MFA Management for Multiple Portals](#mfa-management-for-multiple-portals)
 - [Handling Password Changes Across Portals](#handling-password-changes-across-portals)
@@ -194,7 +194,7 @@ Consider complementing your password manager with:
 
 For teams, consider Bitwarden Organizations or 1Password Business to manage shared carrier credentials with appropriate access controls and audit logging.
 
-Advanced: Automation with Password Manager APIs
+Advanced - Automation with Password Manager APIs
 
 For high-volume management, integrate your password manager with business tools:
 
@@ -450,7 +450,7 @@ jq '.[] | select(.type == "Access") | {date: .date, user: .user, resource: .reso
 Monthly compliance report
 echo "=== CREDENTIAL ACCESS AUDIT ==="
 echo "Period: $(date +'%B %Y')"
-echo "Total Access Events: $(jq 'length' audit_log.json)"
+echo "Total Access Events - $(jq 'length' audit_log.json)"
 echo "Unique Users: $(jq -r '.[].user' audit_log.json | sort -u | wc -l)"
 echo "Portals Accessed: $(jq -r '.[].resource' audit_log.json | sort -u)"
 ```

@@ -57,9 +57,9 @@ Table of Contents
 
 - [YubiKey Hardware Options](#yubikey-hardware-options)
 - [SSH Authentication Modes](#ssh-authentication-modes)
-- [Part 1: Setup FIDO2-Based SSH](#part-1-setup-fido2-based-ssh)
-- [Part 2: Backup Key Strategy](#part-2-backup-key-strategy)
-- [Part 3: GPG-Based SSH (Alternative)](#part-3-gpg-based-ssh-alternative)
+- [Part 1 - Setup FIDO2-Based SSH](#part-1-setup-fido2-based-ssh)
+- [Part 2 - Backup Key Strategy](#part-2-backup-key-strategy)
+- [Part 3 - GPG-Based SSH (Alternative)](#part-3-gpg-based-ssh-alternative)
 - [Server-Side Configuration](#server-side-configuration)
 - [Troubleshooting](#troubleshooting)
 - [Security Best Practices](#security-best-practices)
@@ -67,7 +67,7 @@ Table of Contents
 
 YubiKey 5 Series
 
-Cost: $45-60
+Cost - $45-60
 
 Recommended for most users. Supports:
 - FIDO2 (U2F)
@@ -76,37 +76,37 @@ Recommended for most users. Supports:
 - Smart Card (CCID with OpenPGP)
 - Supports USB-An only (need USB-C adapter for modern laptops)
 
-Best For: Linux engineers, macOS developers, Windows users with backward compatibility needs.
+Best For - Linux engineers, macOS developers, Windows users with backward compatibility needs.
 
 ---
 
 YubiKey 5 Nano
 
-Cost: $50-65
+Cost - $50-65
 
 Same functionality as YubiKey 5, smaller form factor (fits in USB slot without extending beyond laptop edge).
 
-Best For: Users wanting minimal visual footprint, frequent travel.
+Best For - Users wanting minimal visual footprint, frequent travel.
 
 ---
 
 YubiKey 5C
 
-Cost: $55-70
+Cost - $55-70
 
 USB-C only (no USB-An adapter needed). Same functionality as YubiKey 5.
 
-Best For: Modern USB-C only laptops (MacBook Pro, newer Linux machines), tablet authentication.
+Best For - Modern USB-C only laptops (MacBook Pro, newer Linux machines), tablet authentication.
 
 ---
 
 YubiKey 5C NFC
 
-Cost: $65-80
+Cost - $65-80
 
 USB-C with NFC support. Authentication via USB-C or near-field communication (iPhone, Android with NFC support).
 
-Best For: Mobile-first workflows, iOS/Android authentication, USB-C devices.
+Best For - Mobile-first workflows, iOS/Android authentication, USB-C devices.
 
 ---
 
@@ -114,7 +114,7 @@ SSH Authentication Modes
 
 YubiKey supports multiple SSH authentication methods:
 
-Mode 1: FIDO2 (Recommended for SSH)
+Mode 1 - FIDO2 (Recommended for SSH)
 
 How it works:
 1. SSH server stores FIDO2 credential
@@ -136,7 +136,7 @@ Disadvantages:
 
 ---
 
-Mode 2: GPG-Based SSH
+Mode 2 - GPG-Based SSH
 
 How it works:
 1. YubiKey stores OpenPGP private keys
@@ -159,15 +159,15 @@ Disadvantages:
 
 ---
 
-Mode 3: Backup FIDO2 Keys
+Mode 3 - Backup FIDO2 Keys
 
-Best Practice: Register both FIDO2 primary key AND a backup hardware key on all SSH servers. This prevents lockout if primary key is lost/broken.
+Best Practice - Register both FIDO2 primary key AND a backup hardware key on all SSH servers. This prevents lockout if primary key is lost/broken.
 
 ---
 
-Part 1: Setup FIDO2-Based SSH
+Part 1 - Setup FIDO2-Based SSH
 
-Step 1: Check OpenSSH Version
+Step 1 - Check OpenSSH Version
 
 ```bash
 ssh -V
@@ -188,7 +188,7 @@ sudo apt update
 sudo apt upgrade openssh-client openssh-server
 ```
 
-Step 2: Generate FIDO2 Key on YubiKey
+Step 2 - Generate FIDO2 Key on YubiKey
 
 ```bash
 Generate new ED25519-SK key on YubiKey
@@ -223,7 +223,7 @@ Your identification has been saved in ~/.ssh/id_ed25519_sk_yubikey
 Your public key has been saved in ~/.ssh/id_ed25519_sk_yubikey.pub
 ```
 
-Step 3: Verify Key Was Created
+Step 3 - Verify Key Was Created
 
 ```bash
 cat ~/.ssh/id_ed25519_sk_yubikey.pub
@@ -234,13 +234,13 @@ ssh-keygen -l -f ~/.ssh/id_ed25519_sk_yubikey
 Verify fingerprint
 ```
 
-Step 4: Add Public Key to SSH Server
+Step 4 - Add Public Key to SSH Server
 
 ```bash
-Option A: Use ssh-copy-id
+Option A - Use ssh-copy-id
 ssh-copy-id -i ~/.ssh/id_ed25519_sk_yubikey user@server.example.com
 
-Option B: Manual append
+Option B - Manual append
 cat ~/.ssh/id_ed25519_sk_yubikey.pub | \
   ssh user@server.example.com \
   "cat >> ~/.ssh/authorized_keys"
@@ -252,7 +252,7 @@ ssh -i ~/.ssh/id_ed25519_sk_yubikey user@server.example.com
 Welcome to server.example.com
 ```
 
-Step 5: Configure SSH Client (Optional)
+Step 5 - Configure SSH Client (Optional)
 
 For convenience, configure SSH to automatically use YubiKey:
 
@@ -269,7 +269,7 @@ Now you can ssh user@server.example.com
 and it automatically uses YubiKey
 ```
 
-Step 6: Test and Verify
+Step 6 - Test and Verify
 
 ```bash
 ssh user@server.example.com
@@ -279,16 +279,16 @@ ssh user@server.example.com
 
 View server logs to confirm
 ssh user@server.example.com "tail -20 /var/log/auth.log | grep sshd"
-Should show: sshd: Accepted publickey for user from X.X.X.X
+Should show - sshd: Accepted publickey for user from X.X.X.X
 ```
 
 ---
 
-Part 2: Backup Key Strategy
+Part 2 - Backup Key Strategy
 
 Register Backup YubiKey
 
-Best practice: Always have a backup hardware key (same model or different brand).
+Best practice - Always have a backup hardware key (same model or different brand).
 
 Generate on second YubiKey:
 ```bash
@@ -350,11 +350,11 @@ rm /tmp/id_ed25519_emergency
 
 ---
 
-Part 3: GPG-Based SSH (Alternative)
+Part 3 - GPG-Based SSH (Alternative)
 
 For users who also use GPG for signing commits and email encryption:
 
-Step 1: Initialize YubiKey for GPG
+Step 1 - Initialize YubiKey for GPG
 
 ```bash
 Install GPG
@@ -363,45 +363,45 @@ or apt install gnupg2  # Ubuntu
 
 Check YubiKey is recognized
 gpg --card-status
-Should show: Name, Serial Number, PIN status, etc.
+Should show - Name, Serial Number, PIN status, etc.
 
-Change PIN (default: 123456)
+Change PIN (default - 123456)
 gpg --card-edit
-Type: admin
-Type: passwd
-Change User PIN: option 1
-Change Admin PIN: option 3
+Type - admin
+Type - passwd
+Change User PIN - option 1
+Change Admin PIN - option 3
 quit
 ```
 
-Step 2: Generate Master Key
+Step 2 - Generate Master Key
 
 ```bash
 gpg --full-generate-key
-Select: RSA and RSA
-Key size: 4096
-Expiry: 1 year
-Name: Your Name
-Email: your.email@example.com
+Select - RSA and RSA
+Key size - 4096
+Expiry - 1 year
+Name - Your Name
+Email - your.email@example.com
 
 Copy key ID (40-char hex string)
 gpg --list-keys --keyid-format long
-Key ID is shown as: rsa4096/XXXXXXXXXXXXXXXX 2026-03-21
+Key ID is shown as - rsa4096/XXXXXXXXXXXXXXXX 2026-03-21
 ```
 
-Step 3: Generate Subkeys on YubiKey
+Step 3 - Generate Subkeys on YubiKey
 
 ```bash
 gpg --edit-key YOUR_KEY_ID
-Type: addkey
-Select: RSA (4096)
-For key usage: Encryption
+Type - addkey
+Select - RSA (4096)
+For key usage - Encryption
 Repeat for another RSA subkey with Sign usage
 Repeat for RSA (3072) for Authentication usage
-Type: save
+Type - save
 ```
 
-Step 4: Configure GPG for SSH
+Step 4 - Configure GPG for SSH
 
 ```bash
 Enable SSH support in gpg-agent
@@ -414,7 +414,7 @@ Configure GPG SSH key
 gpg --export-ssh-key YOUR_KEY_ID >> ~/.ssh/authorized_keys
 ```
 
-Step 5: Test GPG-Based SSH
+Step 5 - Test GPG-Based SSH
 
 ```bash
 Start gpg-agent
@@ -435,7 +435,7 @@ Welcome to server.example.com
 
 Server-Side Configuration
 
-Best Practice: Force Key-Based Auth Only
+Best Practice - Force Key-Based Auth Only
 
 On servers, disable password authentication:
 
@@ -465,7 +465,7 @@ LogLevel VERBOSE
 
 View logs
 tail -f /var/log/auth.log | grep sshd
-Shows: sshd: Accepted publickey for user from 203.0.113.45 port 54321
+Shows - sshd: Accepted publickey for user from 203.0.113.45 port 54321
 ```
 
 Certificate-Based SSH (Advanced)
@@ -484,18 +484,18 @@ ssh-keygen -s our_org_ca -n user -V +52w user_key.pub
 
 user_key-cert.pub (certificate)
 No need to add individual keys to authorized_keys
-Just trust the CA: echo 'cert-authority ... ' >> authorized_keys
+Just trust the CA - echo 'cert-authority ... ' >> authorized_keys
 ```
 
 ---
 
 Troubleshooting
 
-Issue: "Agent refused operation"
+Issue - "Agent refused operation"
 
 ```bash
-Problem: gpg-agent not running or socket error
-Solution: Restart agent
+Problem - gpg-agent not running or socket error
+Solution - Restart agent
 gpg-connect-agent killagent /bye
 gpg-connect-agent /bye
 
@@ -503,20 +503,20 @@ Or check if agent socket exists
 ls -la ~/.gnupg/S.gpg-agent*
 ```
 
-Issue: "No such file or directory" on SSH
+Issue - "No such file or directory" on SSH
 
 ```bash
-Problem: SSH key file permissions wrong
-Solution: Fix permissions
+Problem - SSH key file permissions wrong
+Solution - Fix permissions
 chmod 600 ~/.ssh/id_ed25519_sk_yubikey
 chmod 644 ~/.ssh/id_ed25519_sk_yubikey.pub
 ```
 
-Issue: "Permission denied (publickey)"
+Issue - "Permission denied (publickey)"
 
 ```bash
-Problem: YubiKey key not registered on server
-Solution: Verify key is in authorized_keys
+Problem - YubiKey key not registered on server
+Solution - Verify key is in authorized_keys
 ssh user@server.example.com cat ~/.ssh/authorized_keys | grep ed25519
 
 If not present, add it:
@@ -524,7 +524,7 @@ cat ~/.ssh/id_ed25519_sk_yubikey.pub | \
   ssh user@server.example.com "cat >> ~/.ssh/authorized_keys"
 ```
 
-Issue: YubiKey Not Recognized
+Issue - YubiKey Not Recognized
 
 ```bash
 Check if YubiKey is visible

@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Security Model: Compartmentalization Over Antivirus
+Step 1 - Security Model: Compartmentalization Over Antivirus
 
 Traditional security relies on detecting malware: antivirus scans for known signatures, sandbox tools detect suspicious behavior. This fails when malware is novel or when a legitimate app is compromised (browser zero-day leaking your passwords).
 
-Qubes OS inverts the model: assume applications will be compromised, design the system so compromise of one app cannot reach others. Each application runs in its own virtual machine. A compromised browser cannot read your password manager qube. A compromised email client cannot access your banking qube. Your private GPG key exists only in an isolated qube never touched directly by applications.
+Qubes OS inverts the model - assume applications will be compromised, design the system so compromise of one app cannot reach others. Each application runs in its own virtual machine. A compromised browser cannot read your password manager qube. A compromised email client cannot access your banking qube. Your private GPG key exists only in an isolated qube never touched directly by applications.
 
-This requires discipline: assign qubes to specific purposes, never mix contexts. But the security guarantee is strong: even if your browser is fully owned by an attacker, they gain only temporary access to that qube's temporary data, not your passwords, SSH keys, or other qubes' files.
+This requires discipline - assign qubes to specific purposes, never mix contexts. But the security guarantee is strong: even if your browser is fully owned by an attacker, they gain only temporary access to that qube's temporary data, not your passwords, SSH keys, or other qubes' files.
 
 Hardware requirements:
 - Minimum 16GB RAM (32GB recommended for smooth experience)
@@ -42,9 +42,9 @@ Hardware requirements:
 - 100GB+ SSD for qubes and templates
 - Laptop or desktop model verified on Qubes HCL (Hardware Compatibility List)
 
-Supported computers: ThinkPad X1/X390, Dell Latitude, System76 laptops, and others. Check https://qubes-os.org/hcl/ before purchasing.
+Supported computers - ThinkPad X1/X390, Dell Latitude, System76 laptops, and others. Check https://qubes-os.org/hcl/ before purchasing.
 
-Step 2: Install ation and Initial Setup
+Step 2 - Install ation and Initial Setup
 
 Installation Process
 
@@ -90,7 +90,7 @@ sudo apt update && sudo apt dist-upgrade  # Debian-based
 sudo dnf upgrade  # Fedora-based
 ```
 
-Step 3: Create and Managing Qubes
+Step 3 - Create and Managing Qubes
 
 Qube Templates
 
@@ -103,7 +103,7 @@ In dom0
 qvm-ls -k Template
 ```
 
-Default templates: fedora-39 (lightweight, default), debian-12 (stable, larger).
+Default templates - fedora-39 (lightweight, default), debian-12 (stable, larger).
 
 Create specialized templates:
 
@@ -171,7 +171,7 @@ qvm-prefs untrusted memory 512
 
 Adjust based on available RAM and qube purpose. Memory is the most precious resource in Qubes.
 
-Step 4: Networking and Firewalling
+Step 4 - Networking and Firewalling
 
 Network Isolation
 
@@ -200,12 +200,12 @@ qvm-firewall work rule add action=drop
 qvm-firewall work rule add action=accept dsthost=github.com
 qvm-firewall work rule add action=accept dsthost=jira.company.internal
 
-Personal qube: allow all HTTP/HTTPS
+Personal qube - allow all HTTP/HTTPS
 qvm-firewall personal rule add action=accept service=http
 qvm-firewall personal rule add action=accept service=https
 qvm-firewall personal rule drop  # Default deny
 
-Banking qube: no network
+Banking qube - no network
 qvm-firewall banking rule add action=drop
 ```
 
@@ -237,7 +237,7 @@ sudo dnf install tor
 Configure Tor as DNS resolver via dnsmasq
 ```
 
-Step 5: USB Device Handling and Isolation
+Step 5 - USB Device Handling and Isolation
 
 sys-usb Qube
 
@@ -284,7 +284,7 @@ Whitelist specific USB device for work qube
 qvm-prefs work devices '[("sys-usb", "1-2-KINGSTON:0000:0000")]'
 ```
 
-Step 6: Disposable VMs (Disposables)
+Step 6 - Disposable VMs (Disposables)
 
 Disposables are temporary qubes created on-demand, used once, then destroyed. Ideal for opening suspicious files, testing software, or one-time tasks.
 
@@ -338,7 +338,7 @@ Use disposables for:
 - Temporary development environments
 - File conversions or format inspection
 
-Step 7: Split-GPG: Isolated Cryptographic Operations
+Step 7 - Split-GPG: Isolated Cryptographic Operations
 
 GPG private keys are the crown jewels of cryptography, if compromised, an attacker can forge your signature, decrypt your messages, and impersonate you.
 
@@ -423,7 +423,7 @@ This triggers:
 
 Private key never enters work qube. Attacker compromising work qube cannot extract GPG key.
 
-Step 8: Inter-Qube File Transfer
+Step 8 - Inter-Qube File Transfer
 
 Transfer files between qubes securely:
 
@@ -471,7 +471,7 @@ Changes synced back to files qube
 
 Be cautious with shared directories, they bypass some isolation protections.
 
-Step 9: Qubes Manager GUI
+Step 9 - Qubes Manager GUI
 
 Most operations can be performed via Qubes Manager (graphical interface):
 
@@ -494,7 +494,7 @@ Right-click on qube:
 
 For most users, Qubes Manager suffices. Advanced users use command-line tools (qvm-*) for automation and scripting.
 
-Step 10: Common Workflows
+Step 10 - Common Workflows
 
 Secure Email Workflow
 
@@ -577,7 +577,7 @@ Instead of fedora-39 (heavy), use fedora-39-minimal
 qvm-clone fedora-39-minimal tpl-lightweight
 ```
 
-Step 11: Backup Strategy
+Step 11 - Backup Strategy
 
 Qubes stores everything in `/var/lib/qubes/` including all qube filesystems. Regular backups are critical:
 

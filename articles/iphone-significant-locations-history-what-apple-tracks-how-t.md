@@ -26,7 +26,7 @@ Table of Contents
 - [How to Delete Significant Locations History](#how-to-delete-significant-locations-history)
 - [Understanding the Privacy Implications](#understanding-the-privacy-implications)
 - [Wi-Fi and Bluetooth Assisted Location](#wi-fi-and-bluetooth-assisted-location)
-- [Advanced: Exporting Your Data](#advanced-exporting-your-data)
+- [Advanced - Exporting Your Data](#advanced-exporting-your-data)
 - [Location Privacy Best Practices](#location-privacy-best-practices)
 - [Long-Term Privacy Strategy](#long-term-privacy-strategy)
 
@@ -124,7 +124,7 @@ How to Delete Significant Locations History
 
 Deleting your Significant Locations history requires a multi-step approach since Apple does not provide a single "delete all" button. Here are the methods available:
 
-Method 1: Disable Significant Locations Entirely
+Method 1 - Disable Significant Locations Entirely
 
 The most thorough approach disables the feature completely:
 
@@ -134,7 +134,7 @@ The most thorough approach disables the feature completely:
 
 This stops future tracking but does not erase existing data. The existing history remains stored on your device until you reset location-related settings.
 
-Method 2: Clear Location History via Reset
+Method 2 - Clear Location History via Reset
 
 To remove stored Significant Locations data:
 
@@ -153,7 +153,7 @@ This reset is and irreversible. It clears not just Significant Locations but als
 
 Understand that this reset may impact location accuracy for a short period as iOS recalibrates location services.
 
-Method 3: Individual Location Card Deletion
+Method 3 - Individual Location Card Deletion
 
 For granular control over specific locations:
 
@@ -167,7 +167,7 @@ This removes individual entries from your Maps history but does not affect the S
 
 Note that frequently deleting individual locations may interfere with location-based features. If you delete your work location from Maps history, iOS may not recognize your work location for reminders and traffic predictions until you establish a new work pattern.
 
-Method 4: iCloud Location Data Management
+Method 4 - iCloud Location Data Management
 
 If you use iCloud to sync location data across devices:
 
@@ -212,7 +212,7 @@ Beyond Significant Locations, many third-party apps collect location data for an
 
 Review location permissions for every installed app. Many apps request location access but don't strictly need it for core functionality. For example, a coffee shop app needs your location once to show nearby stores, but doesn't need continuous background location access. Restrict apps to `when in use` unless they have legitimate reasons for `always` access.
 
-Advanced: Exporting Your Data
+Advanced - Exporting Your Data
 
 Apple allows you to download a copy of all data associated with your Apple ID, which may include some location-related information. Visit [privacy.apple.com](https://privacy.apple.com) and request a data copy. The export includes:
 - Apple Maps search history
@@ -252,7 +252,7 @@ Managing location privacy is not a one-time task but an ongoing practice. Quarte
 
 As iOS evolves, Apple introduces more granular controls. iOS 17 introduced the ability to limit location precision per app, and future versions may offer additional privacy options. Stay updated on iOS privacy features by reviewing release notes for new iOS versions.
 
-The fundamental principle: location data is one of the most sensitive data types you generate. It reveals intimate details about your life, relationships, and routines. Protecting it deserves the same attention you give to passwords and financial information.
+The fundamental principle - location data is one of the most sensitive data types you generate. It reveals intimate details about your life, relationships, and routines. Protecting it deserves the same attention you give to passwords and financial information.
 
 Frequently Asked Questions
 

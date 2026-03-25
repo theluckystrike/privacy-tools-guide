@@ -30,7 +30,7 @@ op signin my.1password.com
 Prompts for:
 - Master password
 - Secret key (from emergency kit)
-Returns: session token for subsequent operations
+Returns - session token for subsequent operations
 ```
 
 All vault items use AES-256 encryption, with the key derived using PBKDF2-HMAC-SHA256 with 100,000+ iterations. The architecture follows zero-knowledge principles, servers store only encrypted data, and the decryption key never leaves your local device.
@@ -45,7 +45,7 @@ Dashlane uses AES-256 encryption with a master password that never transmits to 
 // Local key encrypts all data client-side before sync
 ```
 
-A key difference: Dashlane includes Smart Spaces architecture, allowing you to organize credentials into separate encrypted partitions. This proves useful for developers managing personal versus work credentials.
+A key difference - Dashlane includes Smart Spaces architecture, allowing you to organize credentials into separate encrypted partitions. This proves useful for developers managing personal versus work credentials.
 
 Developer CLI Tools
 

@@ -41,7 +41,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Option 1: Direct Network Share (SMB/CIFS)
+Step 1 - Option 1: Direct Network Share (SMB/CIFS)
 
 The simplest approach uses your existing network infrastructure. Most modern IP cameras support writing directly to network shares via SMB/CIFS protocol.
 
@@ -91,7 +91,7 @@ Access your camera's web interface and navigate to storage settings. Configure t
 
 This approach works well for cameras from manufacturers like Amcrest, Reolink, and many Dahua devices. The footage writes directly to your server, bypassing any cloud dependency.
 
-Step 2: Option 2: RTSP Stream Recording with Dedicated Software
+Step 2 - Option 2: RTSP Stream Recording with Dedicated Software
 
 For greater control and compatibility with more camera models, use RTSP streaming with dedicated recording software.
 
@@ -143,7 +143,7 @@ Create a storage plan in Shinobi's dashboard. Set up different retention periods
 
 This configuration enables motion-triggered recording, immediately saving clips when movement is detected.
 
-Step 3: Option 3: Raspberry Pi with MotionEyeOS
+Step 3 - Option 3: Raspberry Pi with MotionEyeOS
 
 For smaller deployments or edge storage, Raspberry Pi combined with MotionEyeOS provides an excellent solution.
 
@@ -177,7 +177,7 @@ Storage Configuration
 Mount external storage for extended recording capacity:
 
 ```bash
-Format external drive (warning: erases all data)
+Format external drive (warning - erases all data)
 sudo mkfs.ext4 -L CameraStorage /dev/sdX1
 
 Mount permanently
@@ -187,7 +187,7 @@ sudo mount /dev/sdX1 /mnt/cameras
 
 Configure MotionEye to use this mount point for recordings through the storage settings in the web interface.
 
-Step 4: Option 4: Containerized Recording with Docker
+Step 4 - Option 4: Containerized Recording with Docker
 
 For developers preferring containerized deployments, combine FFmpeg with Docker for flexible recording.
 
@@ -251,7 +251,7 @@ cameras:
         mode: motion
 ```
 
-Step 5: Secure Your Local Storage
+Step 5 - Secure Your Local Storage
 
 Regardless of which method you choose, implement these security practices:
 
@@ -261,9 +261,9 @@ Place cameras on a separate VLAN from your main devices:
 
 ```bash
 Example VLAN configuration on many routers
-Camera Network: 192.168.50.0/24
-Main Network: 192.168.1.0/24
-Storage Server: 192.168.50.10
+Camera Network - 192.168.50.0/24
+Main Network - 192.168.1.0/24
+Storage Server - 192.168.50.10
 ```
 
 Access Controls
@@ -280,14 +280,14 @@ Encryption at Rest
 For sensitive installations, encrypt the storage drive:
 
 ```bash
-Encrypt partition (warning: data loss if password forgotten)
+Encrypt partition (warning - data loss if password forgotten)
 sudo cryptsetup luksFormat /dev/sdX1
 sudo cryptsetup luksOpen /dev/sdX1 camera_storage
 sudo mkfs.ext4 /dev/mapper/camera_storage
 sudo mount /dev/mapper/camera_storage /srv/camera-storage
 ```
 
-Step 6: Monitor and Maintenance
+Step 6 - Monitor and Maintenance
 
 Implement basic monitoring to ensure continuous operation:
 
@@ -299,7 +299,7 @@ Monitor recording directory size by camera
 du -sh /srv/camera-storage/*
 
 Set up simple health check cron job
-*/5 * * * * df -h /srv/camera-storage | awk 'NR==2 {print "Storage: " $5 " used"}' >> /var/log/camera-health.log
+*/5 * * * * df -h /srv/camera-storage | awk 'NR==2 {print "Storage - " $5 " used"}' >> /var/log/camera-health.log
 ```
 
 Regular maintenance tasks include:

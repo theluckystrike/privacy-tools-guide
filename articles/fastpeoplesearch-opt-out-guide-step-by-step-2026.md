@@ -30,15 +30,15 @@ Before beginning the opt-out process, gather the following information:
 
 Manual Opt-Out Process
 
-Step 1: Find Your Listing
+Step 1 - Find Your Listing
 
 Navigate to [fastpeoplesearch.com](https://fastpeoplesearch.com) and search for yourself using your name and city. If you have a common name, add additional details like age or former city to narrow results.
 
-Step 2: Access the Opt-Out Form
+Step 2 - Access the Opt-Out Form
 
 Once you locate your profile page, scroll to the bottom and click "Do Not Sell My Personal Information" or look for the opt-out link in the site footer. FastPeopleSearch requires this link under CCPA compliance.
 
-Step 3: Submit Your Removal Request
+Step 3 - Submit Your Removal Request
 
 The opt-out form typically requires:
 - Full name as it appears on the listing
@@ -103,11 +103,11 @@ Handling Verification Challenges
 
 FastPeopleSearch occasionally requires additional verification. Common scenarios include:
 
-Email Verification: Most opt-outs require clicking a link in a verification email. Ensure your email client can receive messages from FastPeopleSearch's domain. Check spam folders if you don't receive the verification email within a few hours.
+Email Verification - Most opt-outs require clicking a link in a verification email. Ensure your email client can receive messages from FastPeopleSearch's domain. Check spam folders if you don't receive the verification email within a few hours.
 
-Phone Verification: Some requests require a verification code sent via SMS. Use a dedicated number or temporary phone service if you prefer not to expose your primary number.
+Phone Verification - Some requests require a verification code sent via SMS. Use a dedicated number or temporary phone service if you prefer not to expose your primary number.
 
-Form Errors: The opt-out form may reject submissions with validation errors. Double-check that all fields match exactly how your information appears on the profile. Even minor differences like abbreviations in addresses can cause failures.
+Form Errors - The opt-out form may reject submissions with validation errors. Double-check that all fields match exactly how your information appears on the profile. Even minor differences like abbreviations in addresses can cause failures.
 
 Multi-Broker Opt-Out Strategy
 
@@ -239,7 +239,7 @@ Data Broker Removal Strategy
 
 Creating a systematic approach to data broker removal prevents gaps in coverage. Different brokers collect information from different sources, removing from FastPeopleSearch alone leaves you exposed on a dozen other platforms.
 
-Phase 1: Identify Your Exposure
+Phase 1 - Identify Your Exposure
 Start by auditing where your information exists:
 
 ```bash
@@ -252,7 +252,7 @@ for broker in fastpeoplesearch beenverified spokeo whitepages truthfinder; do
 done
 ```
 
-Phase 2: Batch Opt-Out Processing
+Phase 2 - Batch Opt-Out Processing
 Create a tracking spreadsheet documenting each opt-out:
 
 ```
@@ -273,11 +273,11 @@ Troubleshooting Common Issues
 - Initials only
 - Middle name included/excluded
 
-Opt-out form not loading: Clear browser cookies and cache, or try a different browser. Some users report issues with browser extensions interfering with form submission. Disable uBlock Origin, Privacy Badger, and other extensions when testing forms.
+Opt-out form not loading - Clear browser cookies and cache, or try a different browser. Some users report issues with browser extensions interfering with form submission. Disable uBlock Origin, Privacy Badger, and other extensions when testing forms.
 
-Removal reverted: If your information reappears, it likely came from updated public records. Submit another opt-out request and consider using a monitoring service for ongoing removal. Data brokers automatically reindex public records periodically (weekly to monthly), so your information may reappear even after removal.
+Removal reverted - If your information reappears, it likely came from updated public records. Submit another opt-out request and consider using a monitoring service for ongoing removal. Data brokers automatically reindex public records periodically (weekly to monthly), so your information may reappear even after removal.
 
-Advanced: Using Removal Services vs. Manual Opt-Out
+Advanced - Using Removal Services vs. Manual Opt-Out
 
 For significant privacy investment, paid removal services handle the repetitive work:
 

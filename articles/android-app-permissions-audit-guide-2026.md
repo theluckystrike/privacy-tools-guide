@@ -22,7 +22,7 @@ This guide covers practical methods for auditing Android app permissions using b
 
 
 - Use "While Using" restrictions: Prefer "Allow only while using" over "Allow all the time" for location and camera 3.
-- Remove unused apps Uninstall: applications no longer in use rather than leaving them installed 6.
+- Remove unused apps Uninstall - applications no longer in use rather than leaving them installed 6.
 - Modern Android versions display: permission indicators in the status bar when apps actively use sensitive capabilities.
 - What are the most: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Android Permission System Overview
+Step 1 - Android Permission System Overview
 
 Android organizes permissions into three protection levels that determine how users and developers interact with them:
 
@@ -46,7 +46,7 @@ Android organizes permissions into three protection levels that determine how us
 
 Android 14 and the 2026 platform updates have added new permission categories including `READ_MEDIA_VISUAL_USER_SELECTED` for more granular photo access and improved `NEARBY_WIFI_DEVICES` permission for device discovery without location dependency.
 
-Step 2: Audit Permissions via Settings
+Step 2 - Audit Permissions via Settings
 
 The most straightforward method for reviewing permissions uses Android's Settings interface. Navigate to Settings > Apps, select any application, and tap Permissions to see a complete list of requested permissions grouped by category.
 
@@ -54,7 +54,7 @@ For an overview of all apps with dangerous permissions, access Settings > Privac
 
 Modern Android versions display permission indicators in the status bar when apps actively use sensitive capabilities. A persistent camera or microphone icon warrants immediate investigation.
 
-Step 3: Use ADB for Audits
+Step 3 - Use ADB for Audits
 
 The Android Debug Bridge (ADB) provides powerful command-line capabilities for auditing permissions at scale. Enable developer options and USB debugging on your device, then connect via USB or wireless debugging.
 
@@ -79,7 +79,7 @@ Generate a complete permission inventory for analysis:
 adb shell pm list packages -3 -u > packages.txt
 while read pkg; do
   pkg_trimmed=${pkg#package:}
-  echo "Package: $pkg_trimmed" >> permissions_report.txt
+  echo "Package - $pkg_trimmed" >> permissions_report.txt
   adb shell dumpsys package "$pkg_trimmed" | \
     grep -E "runtime" | \
     grep "permission" >> permissions_report.txt
@@ -102,7 +102,7 @@ Note that some system apps may ignore revocations. You can also reset all permis
 adb shell pm reset-permissions com.example.app
 ```
 
-Step 4: Implement Programmatic Permission Auditing
+Step 4 - Implement Programmatic Permission Auditing
 
 For developers building security tools or implementing automated audits, Android provides the `PackageManager` API for inspecting permissions programmatically.
 
@@ -147,7 +147,7 @@ val dangerousPermissions = mapOf(
 
 Granting any permission within a group typically grants access to the entire group's data. For instance, `READ_CONTACTS` provides access to all contacts.
 
-Step 5: Automate Permission Reviews
+Step 5 - Automate Permission Reviews
 
 Creating a scheduled audit process helps maintain ongoing security. This Python script generates permission reports:
 
@@ -210,7 +210,7 @@ if __name__ == "__main__":
 
 Run this weekly via cron or systemd timers to track permission changes over time.
 
-Step 6: Interpreting Permission Requests
+Step 6 - Interpreting Permission Requests
 
 Not all permissions indicate malicious intent. When auditing, consider the app's legitimate functionality:
 

@@ -89,7 +89,7 @@ The primary analytics toggle sits in Settings:
 ```bash
 This requires manual configuration on device
 Settings → Privacy & Security → Analytics & Improvements
-Toggle OFF: Share iPhone Analytics
+Toggle OFF - Share iPhone Analytics
 ```
 
 This setting controls most device-level analytics transmission. However, some data continues collecting locally even when disabled.
@@ -100,7 +100,7 @@ Apple's advertising identifier provides marketers with device-specific tracking:
 
 ```bash
 Settings → Privacy & Security → Apple Advertising
-Toggle OFF: Personalized Ads
+Toggle OFF - Personalized Ads
 ```
 
 Additionally, reset the advertising identifier periodically:
@@ -201,7 +201,7 @@ Privacy settings require ongoing attention as iOS updates introduce new features
 3. Audit installed apps for unnecessary permissions
 4. Review connected third-party services in Apple ID settings
 
-This proactive approach ensures you maintain control over your data as Apple's ecosystem evolves.
+This proactive approach ensures you maintain control over your data as Apple's environment evolves.
 
 Detailed Privacy Settings Walkthrough
 
@@ -237,7 +237,7 @@ Siri transmits voice data to Apple:
 
 ```
 Settings → Siri & Search → Siri History
-Toggle OFF: "Improve Siri & Dictation"
+Toggle OFF - "Improve Siri & Dictation"
 ```
 
 This prevents voice interactions from being analyzed for improvement.

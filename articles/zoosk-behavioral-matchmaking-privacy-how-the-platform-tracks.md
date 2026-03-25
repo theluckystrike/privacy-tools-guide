@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Zoosk Behavioral Matchmaking Privacy How The Platform"
-description: "Zoosk Behavioral Matchmaking Privacy: How the Platform.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
+description: "Zoosk Behavioral Matchmaking Privacy - How the Platform.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
@@ -244,9 +244,9 @@ The algorithmic profiling aspect is particularly relevant. Under GDPR Article 22
 
 ```bash
 GDPR Subject Access Request template
-Send to: privacy@zoosk.com
+Send to - privacy@zoosk.com
 
-Subject: Data Subject Access Request - GDPR Article 15
+Subject - Data Subject Access Request - GDPR Article 15
 
 Body:
 "I am requesting all personal data processed by Zoosk concerning my account
@@ -334,12 +334,12 @@ openssl rand -base64 24  # Generate: gS3x+1qW8/zVPm4nL7rJ5kD2hF=
 Zoosk > Settings > Security > Two-Factor Authentication
 
 3. Use a dedicated email address (separate from work/primary)
-Create: dating-app@domain.com
+Create - dating-app@domain.com
 Use only for this platform
 
 4. Avoid linking to social profiles unnecessarily
 Don't use "Sign up with Facebook" or "Sign up with Google"
-Instead: Create account with email + password
+Instead - Create account with email + password
 
 5. Monitor for account access
 Regularly review Settings > Active Sessions

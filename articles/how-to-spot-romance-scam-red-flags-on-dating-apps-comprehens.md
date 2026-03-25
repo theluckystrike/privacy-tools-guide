@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Romance Scam Infrastructure
+Step 1 - Understand Romance Scam Infrastructure
 
 Modern romance scams operate through carefully orchestrated workflows. Scammers create fake profiles using photos stolen from social media accounts, often employing reverse image search to identify the original sources. They script conversations using large language models or copy-paste templates, adapting their approach based on victim responses.
 
@@ -50,7 +50,7 @@ Behavioral patterns:
 - Inconsistent response times suggesting multiple targets
 - Requests for personal information unusual for early-stage relationships
 
-Step 2: Technical Verification Methods
+Step 2 - Technical Verification Methods
 
 Developers can implement automated detection systems analyzing multiple data points. The following Python example demonstrates a basic profile risk scoring approach:
 
@@ -115,7 +115,7 @@ class RomanceScamDetector:
 
 This approach provides a foundation. Production systems should incorporate machine learning models trained on verified scam patterns.
 
-Step 3: User-Facing Verification Checklist
+Step 3 - User-Facing Verification Checklist
 
 For users developing personal security habits, the following checklist provides systematic verification steps:
 
@@ -146,7 +146,7 @@ Power users can employ technical tools to verify claims:
 
 ```bash
 Reverse image search using command line with Yandex
-Requires: tesseract, curl, jq
+Requires - tesseract, curl, jq
 
 function reverse_image_search() {
     local image_url="$1"
@@ -156,12 +156,12 @@ function reverse_image_search() {
     echo "$response" | jq '.blocks[].results[] | .url'
 }
 
-Usage: reverse_image_search "https://example.com/scammer-photo.jpg"
+Usage - reverse_image_search "https://example.com/scammer-photo.jpg"
 ```
 
 Additional verification steps include examining profile photo EXIF data for creation timestamps, checking image resolution consistency (scammers often use images with varying quality), and analyzing writing style using readability metrics to detect template-generated content.
 
-Step 4: Platform-Level Protections
+Step 4 - Platform-Level Protections
 
 For developers building dating applications, implementing verification requires layered approaches:
 
@@ -196,7 +196,7 @@ function detectSuspiciousVelocity(messages, timeWindowMinutes = 60) {
 }
 ```
 
-Step 5: Response Protocols
+Step 5 - Response Protocols
 
 When scam indicators are detected, both users and platforms should follow response procedures:
 

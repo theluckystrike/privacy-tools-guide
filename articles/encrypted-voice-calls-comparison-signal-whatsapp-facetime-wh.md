@@ -21,9 +21,9 @@ When evaluating privacy-focused communication tools, the encryption itself is on
 Table of Contents
 
 - [Understanding Metadata in Voice Calls](#understanding-metadata-in-voice-calls)
-- [Signal: Minimal Metadata Architecture](#signal-minimal-metadata-architecture)
-- [WhatsApp: Substantial Metadata Collection](#whatsapp-substantial-metadata-collection)
-- [FaceTime: Apple's Ecosystem Approach](#facetime-apples-ecosystem-approach)
+- [Signal - Minimal Metadata Architecture](#signal-minimal-metadata-architecture)
+- [WhatsApp - Substantial Metadata Collection](#whatsapp-substantial-metadata-collection)
+- [FaceTime - Apple's environment Approach](#facetime-apples-environment-approach)
 - [Comparative Analysis](#comparative-analysis)
 - [Practical Recommendations for Developers](#practical-recommendations-for-developers)
 - [Real-World Metadata Collection Examples](#real-world-metadata-collection-examples)
@@ -44,7 +44,7 @@ Before examining specific platforms, it is useful to understand what metadata ac
 
 This metadata can be used to build communication patterns, identify relationships, and potentially correlate activities across different platforms.
 
-Signal: Minimal Metadata Architecture
+Signal - Minimal Metadata Architecture
 
 Signal has positioned itself as the gold standard for privacy, and its metadata practices reflect this priority.
 
@@ -80,7 +80,7 @@ Signal does collect some metadata for operational purposes:
 
 These limitations are minimal compared to industry standards, but they exist.
 
-WhatsApp: Substantial Metadata Collection
+WhatsApp - Substantial Metadata Collection
 
 WhatsApp, owned by Meta, collects significantly more metadata than Signal, despite offering end-to-end encryption for call content.
 
@@ -113,9 +113,9 @@ Business Implications
 
 For developers recommending tools to privacy-conscious users or organizations, WhatsApp's data sharing with Meta represents a significant concern. The business model relies on data collection, which directly conflicts with minimal metadata principles.
 
-FaceTime: Apple's Ecosystem Approach
+FaceTime - Apple's environment Approach
 
-FaceTime operates within Apple's ecosystem and presents a different metadata profile.
+FaceTime operates within Apple's environment and presents a different metadata profile.
 
 What FaceTime Collects
 
@@ -213,7 +213,7 @@ The same call over WhatsApp reveals more:
 - Meta servers: Logs the call happened, duration, both parties' phone numbers, device information, IP addresses.
 - Network observer: Sees encrypted traffic but Meta can still analyze patterns.
 - Bob's phone: Call logged plus metadata syncs to WhatsApp backups (stored in Google Drive or iCloud).
-- WhatsApp backups: Encrypted locally but subject to device backup ecosystem policies.
+- WhatsApp backups: Encrypted locally but subject to device backup environment policies.
 
 This metadata can be subpoenaed by law enforcement in most jurisdictions.
 

@@ -61,7 +61,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Have I Been Pwned (HIBP)
+Step 1 - Have I Been Pwned (HIBP)
 
 HIBP is the most reliable public breach index, operated by Troy Hunt. It indexes breaches and lets you check without exposing your full password.
 
@@ -73,7 +73,7 @@ API access (free with rate limiting, or paid for higher limits)
 Check if email is in any breach:
 curl -s "https://haveibeenpwned.com/api/v3/breachedaccount/you@example.com" \
   -H "hibp-api-key: YOUR_API_KEY" \
-  -H "User-Agent: YourMonitoringScript/1.0" | python3 -m json.tool
+  -H "User-Agent - YourMonitoringScript/1.0" | python3 -m json.tool
 ```
 
 Check Password Hashes (k-Anonymity)
@@ -188,7 +188,7 @@ if __name__ == "__main__":
 
 ---
 
-Step 2: DeHashed (Paid, More Detail)
+Step 2 - DeHashed (Paid, More Detail)
 
 DeHashed indexes breach data including plaintext passwords, IP addresses, names, and phone numbers. more detailed than HIBP but costs money.
 
@@ -196,7 +196,7 @@ DeHashed indexes breach data including plaintext passwords, IP addresses, names,
 API access requires subscription (from $5/month)
 curl -s "https://api.dehashed.com/search?query=email%3Ayou%40example.com" \
   -H "Authorization: Basic $(echo -n 'youremail:your-api-key' | base64)" \
-  -H "Content-Type: application/json" | python3 -m json.tool
+  -H "Content-Type - application/json" | python3 -m json.tool
 ```
 
 DeHashed response includes:
@@ -207,7 +207,7 @@ DeHashed response includes:
 
 ---
 
-Step 3: Self-Hosted Breach Monitoring
+Step 3 - Self-Hosted Breach Monitoring
 
 For maximum control, download HIBP's password database locally:
 
@@ -228,7 +228,7 @@ Much faster than per-query API and completely offline
 
 ---
 
-Step 4: Monitor Paste Sites
+Step 4 - Monitor Paste Sites
 
 Attackers often dump credentials on Pastebin and similar sites before selling on dark web markets:
 
@@ -266,7 +266,7 @@ check_pastebin_for_domain("yourdomain.com")
 
 ---
 
-Step 5: What to Do When You Find Your Data
+Step 5 - What to Do When You Find Your Data
 
 The priority order matters. act quickly:
 
@@ -298,7 +298,7 @@ The priority order matters. act quickly:
 
 ---
 
-Step 6: Automated Monitoring Setup
+Step 6 - Automated Monitoring Setup
 
 ```bash
 Add to crontab to run weekly

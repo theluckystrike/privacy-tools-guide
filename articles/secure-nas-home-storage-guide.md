@@ -46,7 +46,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Section 1: Account and Authentication
+Step 1 - Section 1: Account and Authentication
 
 Disable the Default Admin Account
 
@@ -80,18 +80,18 @@ Credentials → Users → edit user → Authentication → OTP Secret → Genera
 Strong Password Policy
 
 ```
-Synology: Control Panel → User → Advanced → Password Strength Rules
+Synology - Control Panel → User → Advanced → Password Strength Rules
   - Minimum 16 characters
   - Require uppercase, lowercase, numbers, special characters
   - Exclude username from password
   - Password history: 5
 
-QNAP: Control Panel → Security → Password Policy
+QNAP - Control Panel → Security → Password Policy
 ```
 
 ---
 
-Step 2: Section 2: Enable Disk Encryption
+Step 2 - Section 2: Enable Disk Encryption
 
 Disk encryption protects data if the NAS is physically stolen. Without it, drives pulled from the chassis are fully readable.
 
@@ -116,7 +116,7 @@ QNAP Volume Encryption
 ```
 QNAP QTS:
 Storage & Snapshots → Storage → create pool → Enable Encryption
-Key management: QNAP key manager (AES-256)
+Key management - QNAP key manager (AES-256)
 
 Lock volumes manually:
 Storage & Snapshots → Storage → Secure → Lock
@@ -126,9 +126,9 @@ Requires unlock key on next boot
 TrueNAS (ZFS Encryption)
 
 ```bash
-TrueNAS SCALE: enable dataset encryption via UI
+TrueNAS SCALE - enable dataset encryption via UI
 Storage → Pools → Add Dataset → Encryption: Enabled
-Encryption Type: Key (recommended), or Passphrase
+Encryption Type - Key (recommended), or Passphrase
 
 Via CLI:
 zfs create -o encryption=on -o keyformat=passphrase -o keylocation=prompt pool/encrypted-dataset
@@ -143,7 +143,7 @@ zfs mount pool/encrypted-dataset
 
 ---
 
-Step 3: Section 3: Network Hardening
+Step 3 - Section 3: Network Hardening
 
 Firewall Rules
 
@@ -151,7 +151,7 @@ Firewall Rules
 Synology DSM:
 Control Panel → Security → Firewall → Enable Firewall
   Create rules:
-  - Allow: specific LAN IPs that need NAS access (e.g., 192.168.1.0/24)
+  - Allow - specific LAN IPs that need NAS access (e.g., 192.168.1.0/24)
   - Allow: your management IP only for port 5000/5001 (web UI)
   - Deny: all other inbound connections
 
@@ -186,44 +186,44 @@ Disable UPnP
 UPnP lets devices automatically open ports on your router. including your NAS. Disable at both the NAS and router level:
 
 ```
-Synology: Control Panel → External Access → Router Configuration → Disable UPnP
-QNAP: Control Panel → Network Services → Service Binding → disable UPnP
-Router: Admin interface → disable UPnP (varies by router)
+Synology - Control Panel → External Access → Router Configuration → Disable UPnP
+QNAP - Control Panel → Network Services → Service Binding → disable UPnP
+Router - Admin interface → disable UPnP (varies by router)
 ```
 
 ---
 
-Step 4: Section 4: Disable Cloud Relay Features
+Step 4 - Section 4: Disable Cloud Relay Features
 
 QuickConnect (Synology) and myQNAPcloud create persistent tunnels to manufacturer servers, making your NAS reachable from the internet through their relay. Disable unless you specifically need remote access.
 
 ```
-Synology: Control Panel → QuickConnect → Disable QuickConnect
-QNAP: myQNAPcloud App → disable or unpublish services
+Synology - Control Panel → QuickConnect → Disable QuickConnect
+QNAP - myQNAPcloud App → disable or unpublish services
 ```
 
 For legitimate remote access, use a VPN instead:
 
 ```
-Synology: VPN Server package → WireGuard or OpenVPN
-QNAP: VPN Client/Server → WireGuard
-TrueNAS: Services → OpenVPN/WireGuard → configure
+Synology - VPN Server package → WireGuard or OpenVPN
+QNAP - VPN Client/Server → WireGuard
+TrueNAS - Services → OpenVPN/WireGuard → configure
 ```
 
 ---
 
-Step 5: Section 5: Enable Audit Logging
+Step 5 - Section 5: Enable Audit Logging
 
 ```
 Synology DSM:
 Log Center → install from Package Center
 Settings → Log Center → Archive rules → enable
-View: Log Center → Connection → all login attempts, file accesses
+View - Log Center → Connection → all login attempts, file accesses
 
 QNAP:
 System Logs → enable
 Event Logs → enable
-Security level: High (logs all access)
+Security level - High (logs all access)
 
 TrueNAS:
 System → Audit → enable all audit categories
@@ -247,22 +247,22 @@ Control Panel → Security → IP Access Protection
 
 ---
 
-Step 6: Section 6: Backup and Snapshots
+Step 6 - Section 6: Backup and Snapshots
 
 A compromised or ransomware-hit NAS is only recoverable if you have backups it can't reach:
 
 ```bash
-TrueNAS: ZFS snapshots (immutable, ransomware-resistant)
+TrueNAS - ZFS snapshots (immutable, ransomware-resistant)
 Periodic Snapshot Tasks → create hourly/daily/weekly tasks
 Snapshots can't be deleted by the OS. only from TrueNAS admin
 
-Synology: Snapshot Replication package
+Synology - Snapshot Replication package
 Package Center → Snapshot Replication → install
-Set schedule: daily, retain 30 days
+Set schedule - daily, retain 30 days
 
 External backup (2nd copy, off-NAS)
 Synology Hyper Backup → backup to external USB or remote
-Target: encrypted external drive (kept offline)
+Target - encrypted external drive (kept offline)
 
 Verify backups work
 Restore a test file from a 30-day-old snapshot monthly
@@ -270,43 +270,43 @@ Restore a test file from a 30-day-old snapshot monthly
 
 ---
 
-Step 7: Section 7: Keep Firmware Updated
+Step 7 - Section 7: Keep Firmware Updated
 
 ```bash
-Synology: Control Panel → Update & Restore → Check for updates
-Enable: Automatically install important updates
+Synology - Control Panel → Update & Restore → Check for updates
+Enable - Automatically install important updates
 
-QNAP: System → Firmware Update → Check for Updates
+QNAP - System → Firmware Update → Check for Updates
 QNAP has had critical vulnerabilities exploited in the wild (2021, 2022)
 Keep firmware current. this is not optional
 
-TrueNAS: System → Update → Check for Updates
+TrueNAS - System → Update → Check for Updates
 
 Verify update signatures (TrueNAS):
 TrueNAS verifies update packages automatically
-Check: System → General → Version
+Check - System → General → Version
 ```
 
 ---
 
-Step 8: Verify Your Hardening
+Step 8 - Verify Your Hardening
 
 ```bash
 From an external machine on your LAN, port scan your NAS
 nmap -sV 192.168.1.x
-Expected: only ports you intentionally opened should respond
+Expected - only ports you intentionally opened should respond
 
 Check for NAS exposed to internet (if you have a firewall/router)
 nmap -sV your.public.ip.address
 Nothing from your NAS should appear here
 
-Test 2FA: log out, attempt login, verify OTP prompt appears
+Test 2FA - log out, attempt login, verify OTP prompt appears
 
-Test account lockout: enter wrong password 5+ times
+Test account lockout - enter wrong password 5+ times
 Verify the account locks as configured
 
 Review audit log for any unexpected access
-Look for: access from unexpected IPs, after-hours access, bulk file reads
+Look for - access from unexpected IPs, after-hours access, bulk file reads
 ```
 
 ---

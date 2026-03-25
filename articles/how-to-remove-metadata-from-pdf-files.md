@@ -32,22 +32,22 @@ exiftool document.pdf
 
 Typical output reveals:
 ```
-File Name           : document.pdf
-Creator             : Microsoft Word
-Author              : Jane Smith
-Company             : Acme Corp
-Create Date         : 2026-01-15 09:32:14+01:00
-Modify Date         : 2026-03-20 14:55:02+01:00
-Producer            : Adobe PDF Library 15.0
-Document ID         : uuid:4a7b2c1d-...
-Instance ID         : uuid:9f3e1a8b-...
-GPS Latitude        : 51° 30' 26.54" N
-GPS Longitude       : 0° 7' 39.41" W
+File Name            - document.pdf
+Creator              - Microsoft Word
+Author               - Jane Smith
+Company              - Acme Corp
+Create Date          - 2026-01-15 09:32:14+01:00
+Modify Date          - 2026-03-20 14:55:02+01:00
+Producer             - Adobe PDF Library 15.0
+Document ID          - uuid:4a7b2c1d-...
+Instance ID          - uuid:9f3e1a8b-...
+GPS Latitude         - 51° 30' 26.54" N
+GPS Longitude        - 0° 7' 39.41" W
 ```
 
 The GPS coordinates here came from a PDF created on an iPhone. The Author and Company fields expose the creator's identity.
 
-Method 1: exiftool (Recommended for Scripting)
+Method 1 - exiftool (Recommended for Scripting)
 
 ```bash
 Remove all metadata from a single file
@@ -69,7 +69,7 @@ exiftool document.pdf | grep -v "^File\|^Directory\|^MIME\|^PDF Version\|^Linear
 
 After running `exiftool -all=`, check that `Author`, `Creator`, `GPS*`, and `Document ID` fields are gone.
 
-Method 2: qpdf (Preserves PDF Structure)
+Method 2 - qpdf (Preserves PDF Structure)
 
 qpdf is a C++ library and command-line tool for structural PDF manipulation. It preserves PDF integrity better than some other tools when dealing with encrypted or form-containing PDFs.
 
@@ -96,7 +96,7 @@ exiftool -all= -overwrite_original temp.pdf && \
 mv temp.pdf cleaned.pdf
 ```
 
-Method 3: Ghostscript (Nuclear Option)
+Method 3 - Ghostscript (Nuclear Option)
 
 Ghostscript re-renders the entire PDF, stripping metadata, embedded fonts metadata, and JavaScript:
 
@@ -119,7 +119,7 @@ gs \
 
 Ghostscript can slightly change the visual rendering of complex PDFs. Test on a sample page before processing important documents. It also strips embedded fonts (and re-embeds them from system fonts), which can change the appearance of custom-font documents.
 
-Method 4: mat2 (GUI and CLI, Thorough)
+Method 4 - mat2 (GUI and CLI, Thorough)
 
 `mat2` is designed specifically for metadata removal and handles dozens of file types including PDFs, images, Office documents, and audio files.
 

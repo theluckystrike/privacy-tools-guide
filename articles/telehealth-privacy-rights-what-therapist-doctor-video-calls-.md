@@ -20,7 +20,7 @@ Telehealth has transformed how we access healthcare, connecting patients with th
 
 Table of Contents
 
-- [The Legal Framework: HIPAA and State Laws](#the-legal-framework-hipaa-and-state-laws)
+- [The Legal Framework - HIPAA and State Laws](#the-legal-framework-hipaa-and-state-laws)
 - [What Healthcare Providers Can Legally Record](#what-healthcare-providers-can-legally-record)
 - [Understanding Telehealth Consent Forms](#understanding-telehealth-consent-forms)
 - [Your Rights Regarding Telehealth Recordings](#your-rights-regarding-telehealth-recordings)
@@ -32,7 +32,7 @@ Table of Contents
 - [Data Minimization in Clinical Workflows](#data-minimization-in-clinical-workflows)
 - [Patient Rights Documentation Template](#patient-rights-documentation-template)
 
-The Legal Framework: HIPAA and State Laws
+The Legal Framework - HIPAA and State Laws
 
 The Health Insurance Portability and Accountability Act (HIPAA) governs how healthcare providers handle your protected health information (PHI). This includes video recordings from telehealth sessions. Under HIPAA, video recordings qualify as PHI when they contain identifiable health information.
 
@@ -93,13 +93,13 @@ Your Rights Regarding Telehealth Recordings
 
 As a patient, you maintain several important rights:
 
-Right to Access: You can request copies of any recordings made during your sessions. Healthcare providers must provide these within 30 days under HIPAA's right of access provision.
+Right to Access - You can request copies of any recordings made during your sessions. Healthcare providers must provide these within 30 days under HIPAA's right of access provision.
 
-Right to Request Deletion: In certain circumstances, you can request that recordings be deleted. However, providers may retain records required for legal, regulatory, or treatment purposes.
+Right to Request Deletion - In certain circumstances, you can request that recordings be deleted. However, providers may retain records required for legal, regulatory, or treatment purposes.
 
-Right to Revoke Consent: You can withdraw recording consent at any time. Providers must stop recording for future sessions, though they may retain recordings made before revocation.
+Right to Revoke Consent - You can withdraw recording consent at any time. Providers must stop recording for future sessions, though they may retain recordings made before revocation.
 
-Right to Inspect: Before consenting to recording, you can request to hear or view the recording to understand what will be maintained.
+Right to Inspect - Before consenting to recording, you can request to hear or view the recording to understand what will be maintained.
 
 Technical Implementation for Developers
 
@@ -158,15 +158,15 @@ Protecting Your Privacy in Telehealth Sessions
 
 Whether you're a patient or provider, several practices enhance telehealth privacy:
 
-Use secure networks: Avoid public WiFi for telehealth sessions. Your home network with WPA2/WPA3 encryption provides better protection than coffee shop connections.
+Use secure networks - Avoid public WiFi for telehealth sessions. Your home network with WPA2/WPA3 encryption provides better protection than coffee shop connections.
 
-Verify the platform: Confirm your provider uses HIPAA-compliant platforms with end-to-end encryption. Look for security certifications and BAA availability.
+Verify the platform - Confirm your provider uses HIPAA-compliant platforms with end-to-end encryption. Look for security certifications and BAA availability.
 
-Check your environment: Ensure you're in a private space where conversations won't be overheard. Visual backgrounds should not reveal sensitive information.
+Check your environment - Ensure you're in a private space where conversations won't be overheard. Visual backgrounds should not reveal sensitive information.
 
-Review session metadata: Ask providers about what metadata they collect, session duration, connection quality logs, and IP addresses all constitute data that requires protection.
+Review session metadata - Ask providers about what metadata they collect, session duration, connection quality logs, and IP addresses all constitute data that requires protection.
 
-Understand data retention: Request information about how long recordings (if any) will be stored and the deletion process.
+Understand data retention - Request information about how long recordings (if any) will be stored and the deletion process.
 
 What Happens If Privacy Is Violated
 
@@ -421,8 +421,8 @@ TELEHEALTH PATIENT PRIVACY RIGHTS ACKNOWLEDGMENT
     If there's a data breach, I will be notified within 60 days
     The provider has a documented breach response plan
 
-Patient Signature: ________________  Date: ________
-Provider Signature: ________________  Date: ________
+Patient Signature - ________________  Date: ________
+Provider Signature - ________________  Date: ________
 ```
 
 Frequently Asked Questions
@@ -454,6 +454,6 @@ Related Articles
 - [Healthcare Privacy Rights Hipaa What Patients Can Request](/healthcare-privacy-rights-hipaa-what-patients-can-request-re/)
 - [Chromebook Privacy Settings for Students 2026](/chromebook-privacy-settings-for-students-2026/)
 - [macOS Privacy Settings For Remote Workers 2026](/macos-privacy-settings-for-remote-workers-2026/)
-- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](https://bestremotetools.com/cursor-ai-making-too-many-api-calls-fix/)
+- [Cursor AI Making Too Many API Calls Fix - Troubleshooting](https://bestremotetools.com/cursor-ai-making-too-many-api-calls-fix/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

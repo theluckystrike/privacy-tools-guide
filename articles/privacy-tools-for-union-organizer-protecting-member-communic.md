@@ -21,9 +21,9 @@ Union organizers face unique challenges when protecting member communications. U
 Table of Contents
 
 - [Understanding the Threat Environment](#understanding-the-threat-environment)
-- [Encrypted Messaging: Signal and Matrix](#encrypted-messaging-signal-and-matrix)
+- [Encrypted Messaging - Signal and Matrix](#encrypted-messaging-signal-and-matrix)
 - [Secure File Sharing for Membership Data](#secure-file-sharing-for-membership-data)
-- [Email Encryption: OpenPGP Implementation](#email-encryption-openpgp-implementation)
+- [Email Encryption - OpenPGP Implementation](#email-encryption-openpgp-implementation)
 - [Network-Level Protection](#network-level-protection)
 - [Device Security Fundamentals](#device-security-fundamentals)
 - [Implementing Incident Response](#implementing-incident-response)
@@ -44,7 +44,7 @@ Before selecting tools, organizers must understand what they are protecting agai
 
 The tool selection below addresses these threats through defense-in-depth strategies.
 
-Encrypted Messaging: Signal and Matrix
+Encrypted Messaging - Signal and Matrix
 
 Signal remains the gold standard for secure messaging due to its rigorous implementation of the Signal Protocol. For union organizers, Signal provides:
 
@@ -110,7 +110,7 @@ onionshare --verbose --public \
 
 OnionShare generates a unique Tor hidden service URL that recipients can access through the Tor Browser, providing anonymity for both sender and receiver.
 
-Email Encryption: OpenPGP Implementation
+Email Encryption - OpenPGP Implementation
 
 For formal communications requiring verifiable authenticity, OpenPGP email encryption remains valuable. However, usability challenges make it essential to provide member support during adoption:
 
@@ -245,7 +245,7 @@ Information Compartmentalization
 Knowledge compartmentalization ensures that if one person is compromised, the entire organizing campaign doesn't collapse:
 
 ```
-Structure: Pyramid model
+Structure - Pyramid model
 - Core committee (5 people): Know full strategy, member list, timeline
 - District leads (20 people): Know their regional members, overall goals
 - Shop stewards (100+ people): Know their workplace members only
@@ -267,23 +267,23 @@ Deniable Communications Patterns
 For organizing in hostile environments, even encrypted messaging leaves metadata: Who communicated with whom, when. Experienced organizers use multiple communication channels with explicit deniability:
 
 ```
-Layer 1: Public/semi-public channels
+Layer 1 - Public/semi-public channels
   - Union Facebook group (open community discussions)
   - Official union email lists (public record already)
   Purpose: Appear normal, build public organizing narrative
 
-Layer 2: Encrypted but traceable
+Layer 2 - Encrypted but traceable
   - Signal group chats (organized with names visible)
   Purpose: Sensitive coordination, but admits organizational ties
 
-Layer 3: Ephemeral, anonymous
+Layer 3 - Ephemeral, anonymous
   - Burner phones with cash-purchased SIM cards
   - Signal registrations on new devices
   - Group conversations with pseudonyms
   Purpose: Sensitive operational planning (strike dates, walkout timing)
   Destroyed after campaign phase completes
 
-Layer 4: Offline channels
+Layer 4 - Offline channels
   - In-person meetings (no digital record)
   - Handwritten notes (destroyed after reading)
   Purpose: Highest-sensitivity decisions
@@ -296,7 +296,7 @@ Incident Response Protocols
 Preparation for compromise is critical. Establish these procedures before they're needed:
 
 ```
-Scenario 1: Organizer's phone is seized by employer security
+Scenario 1 - Organizer's phone is seized by employer security
   ↓
 Immediate (< 30 minutes):
   1. Call union legal (pre-arranged signal: leave specific voicemail)
@@ -316,7 +316,7 @@ Weeks 2-4:
   10. Document incident for legal defense
   11. Evaluate whether campaign continues or adapts
 
-Scenario 2: Email account compromised (password reset)
+Scenario 2 - Email account compromised (password reset)
   ↓
   Same 48-hour lockdown + immediate password reset
   + Security audit of other accounts
@@ -356,17 +356,17 @@ Threat Model Specifics for Union Organizing
 Different employer types pose different threats. Tailor your tool selection:
 
 ```
-Type 1: Tech startup (low threat environment)
+Type 1 - Tech startup (low threat environment)
   Threat: Employer monitors company Slack, email
   Tool stack: Signal for sensitive + Proton Mail account
   Reasoning: Basic encryption sufficient, employer unlikely to deploy surveillance
 
-Type 2: Large manufacturing (medium threat)
+Type 2 - Large manufacturing (medium threat)
   Threat: Security team, HR monitoring, legal threats
   Tool stack: Signal + VPN + dedicated hardware
   Reasoning: More sophisticated employer, need network protection
 
-Type 3: Union-hostile corporation (high threat)
+Type 3 - Union-hostile corporation (high threat)
   Threat: Undercover agents, device seizure, legal harassment
   Tool stack: All above + Matrix self-hosted + air-gapped device for sensitive planning
   Reasoning: Expect sophisticated adversary, compartmentalize aggressively
@@ -379,24 +379,24 @@ Member Training and Adoption
 The strongest technical security fails if members don't use it correctly:
 
 ```
-Week 1: Introduction
+Week 1 - Introduction
   - Explain why this matters (retaliation risk for organizers)
   - Show Signal on their phone (15 minutes, hands-on)
   - Create group chat with all members
   - Send 2-3 test messages (members reply, build confidence)
 
-Week 2-3: Normalize usage
+Week 2-3 - Normalize usage
   - All organizing updates go Signal-only (no email)
   - Organizers actively use for scheduling, news
   - Answer member questions immediately
   - Celebrate early adopters
 
-Week 4: Deepen practice
+Week 4 - Deepen practice
   - Introduce disappearing messages (2-hour expiry for sensitive announcements)
   - Show how to verify contact security (check "safety numbers")
   - Test member reactions to sensitivity (who shares, who deletes properly?)
 
-Month 2: Maintenance
+Month 2 - Maintenance
   - Monitor for security lapses (members forward Signal screenshots to email)
   - Reinforce protocols (no metadata about who's in organizing)
   - Address concerns as they arise

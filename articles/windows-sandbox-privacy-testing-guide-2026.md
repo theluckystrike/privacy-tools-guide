@@ -37,7 +37,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Enable Windows Sandbox
+Step 1 - Enable Windows Sandbox
 
 Windows Sandbox requires Windows 10 Pro, Enterprise, or Windows 11 Pro/Enterprise. It uses hardware virtualization (Intel VT-x or AMD-V) with Second Level Address Translation (SLAT). Before enabling, verify your processor supports these features.
 
@@ -188,7 +188,7 @@ host 172.16.x.x
 
 Check for unencrypted HTTP transmissions, DNS lookups to tracking domains, and TLS connections to IP ranges associated with advertising networks (IAB Tech Lab publishes a list of known ad infrastructure IP ranges).
 
-Step 2: Interpreting Registry Modifications
+Step 2 - Interpreting Registry Modifications
 
 Process Monitor captures every registry read and write. The volume of events is overwhelming without filters. Use these ProcMon filter presets to focus on privacy-relevant activity:
 
@@ -207,7 +207,7 @@ After analysis period:
 procmon.exe /OpenLog C:\logs\analysis.pml /SaveAs C:\logs\results.csv
 ```
 
-Step 3: Automate Sandbox Tests
+Step 3 - Automate Sandbox Tests
 
 For repeated testing scenarios, automate Sandbox launch and teardown using PowerShell scripts:
 
@@ -272,7 +272,7 @@ Comparing Sandbox to Hyper-V VMs for Privacy Testing
 
 Use Sandbox for routine privacy evaluation of commercial software and browser extensions. Reserve Hyper-V VMs (or VMware Workstation) for analyzing samples you suspect carry privilege escalation or kernel exploits.
 
-Step 4: Build a Repeatable Testing Library
+Step 4 - Build a Repeatable Testing Library
 
 Once you have established workflows for common test types, document them as reusable `.wsb` templates. Maintain a library structured by purpose:
 

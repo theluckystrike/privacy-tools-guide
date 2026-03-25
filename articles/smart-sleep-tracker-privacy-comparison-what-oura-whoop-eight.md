@@ -22,14 +22,14 @@ This guide examines the data collection practices of three popular sleep tracker
 
 Table of Contents
 
-- [Oura Ring: Biometric Data Collection](#oura-ring-biometric-data-collection)
-- [Whoop 4.0: Continuous Monitoring Architecture](#whoop-40-continuous-monitoring-architecture)
-- [Eight Sleep: Smart Mattress Data Collection](#eight-sleep-smart-mattress-data-collection)
+- [Oura Ring - Biometric Data Collection](#oura-ring-biometric-data-collection)
+- [Whoop 4.0 - Continuous Monitoring Architecture](#whoop-40-continuous-monitoring-architecture)
+- [Eight Sleep - Smart Mattress Data Collection](#eight-sleep-smart-mattress-data-collection)
 - [Privacy Considerations for Developers](#privacy-considerations-for-developers)
 - [Comparing Data Retention Policies](#comparing-data-retention-policies)
 - [Recommendations for Privacy-Conscious Users](#recommendations-for-privacy-conscious-users)
 
-Oura Ring: Biometric Data Collection
+Oura Ring - Biometric Data Collection
 
 The Oura Ring captures biometric data through infrared sensors, red LED lights, and temperature sensors embedded in the titanium housing. The device continuously monitors heart rate, heart rate variability (HRV), skin temperature, and blood oxygen saturation.
 
@@ -70,7 +70,7 @@ print(sleep_data["data"][0]["score"])
 
 Developers integrating Oura data should note that the API returns processed scores rather than raw sensor data. This design choice limits granular access to underlying biometric measurements.
 
-Whoop 4.0: Continuous Monitoring Architecture
+Whoop 4.0 - Continuous Monitoring Architecture
 
 Whoop implements a continuous monitoring approach, capturing physiological data throughout the day and night. The wrist-worn device uses photoplethysmography (PPG) sensors to measure blood volume changes, deriving heart rate and HRV from these readings.
 
@@ -119,7 +119,7 @@ function parseWhoopExport(filePath) {
 
 The export does not include raw sensor data, only processed daily metrics. This limitation affects developers seeking granular physiological signals for custom analysis.
 
-Eight Sleep: Smart Mattress Data Collection
+Eight Sleep - Smart Mattress Data Collection
 
 Eight Sleep takes a fundamentally different approach by embedding sensors within a mattress cover rather than a wearable device. This positioning enables continuous monitoring without requiring user adherence to wearing a device throughout the night.
 
@@ -171,7 +171,7 @@ def sync_eight_sleep_to_health(eight_sleep_token, health_token):
         )
 ```
 
-Users connecting Eight Sleep to Apple Health should understand that data then resides in Apple's ecosystem, subject to Apple's privacy policies alongside Eight Sleep's own practices.
+Users connecting Eight Sleep to Apple Health should understand that data then resides in Apple's environment, subject to Apple's privacy policies alongside Eight Sleep's own practices.
 
 Privacy Considerations for Developers
 

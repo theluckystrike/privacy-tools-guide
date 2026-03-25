@@ -180,7 +180,7 @@ Comparing Keeper to other enterprise solutions helps organizations choose approp
 - Stronger focus on workflows over security features
 - Good support for small-to-medium teams
 
-Trade-off: 1Password prioritizes usability over advanced security features like Secrets Manager. Organizations requiring strong DevOps integration may prefer Keeper.
+Trade-off - 1Password prioritizes usability over advanced security features like Secrets Manager. Organizations requiring strong DevOps integration may prefer Keeper.
 
 Bitwarden ($34/user/year for enterprise)
 
@@ -191,7 +191,7 @@ Bitwarden offers open-source infrastructure and transparent security:
 - Lower cost than Keeper
 - Strong privacy-focused development team
 
-Trade-off: Bitwarden's Secrets Manager is less mature than Keeper's. Organizations with simple credential sharing needs may prefer Bitwarden; those with complex secrets orchestration prefer Keeper.
+Trade-off - Bitwarden's Secrets Manager is less mature than Keeper's. Organizations with simple credential sharing needs may prefer Bitwarden; those with complex secrets orchestration prefer Keeper.
 
 Dashlane Business ($0.99/month promotional)
 
@@ -202,7 +202,7 @@ Dashlane focuses on consumer-friendly interface with business features:
 - VPN and password breach monitoring included
 - Strong mobile experience
 
-Trade-off: Dashlane's developer-focused features lag behind Keeper. Organizations with significant DevOps integration requirements will find Keeper superior.
+Trade-off - Dashlane's developer-focused features lag behind Keeper. Organizations with significant DevOps integration requirements will find Keeper superior.
 
 CyberArk ($80-200/month minimum)
 
@@ -213,7 +213,7 @@ CyberArk targets enterprise infrastructure and privileged access management:
 - Sophisticated policy engine
 - High cost, complex implementation
 
-Trade-off: CyberArk targets different market segment (enterprises with 1000+ employees). Overkill for most organizations; Keeper is better for mid-market.
+Trade-off - CyberArk targets different market segment (enterprises with 1000+ employees). Overkill for most organizations; Keeper is better for mid-market.
 
 Technical Architecture Deep Dive
 
@@ -224,7 +224,7 @@ Client-Side Encryption Implementation
 Keeper implements zero-knowledge encryption where the server cannot access plaintext data:
 
 ```
-User Password: "MySecurePassword123"
+User Password - "MySecurePassword123"
                     ↓
             PBKDF2-SHA256 (100,000 iterations)
                     ↓
@@ -308,7 +308,7 @@ Example 100-person organization:
 - Base: $4,500/year
 - Secrets Manager: $3,000/year
 - Breach Watch: $1,000/year
-- Total: $8,500/year (~$8.50/user/month)
+- Total - $8,500/year (~$8.50/user/month)
 
 Cost Comparison
 
@@ -327,43 +327,43 @@ ROI emerges from:
 3. Operational efficiency: Automated password distribution saves IT time
 4. User productivity: No forgotten passwords = fewer support tickets
 
-Conservative estimate: 50-100 person organization saves $10,000-20,000 annually through reduced incidents and IT support costs.
+Conservative estimate - 50-100 person organization saves $10,000-20,000 annually through reduced incidents and IT support costs.
 
 Implementation Timeline and Change Management
 
 Deploying Keeper across an organization requires careful planning.
 
-Phase 1: Pilot (Weeks 1-4)
+Phase 1 - Pilot (Weeks 1-4)
 
 Select 10-20 power users for testing:
 
 ```
-Week 1: Training and setup
-Week 2: Initial usage and feedback
-Week 3: Adjustment and optimization
-Week 4: Rollout planning based on feedback
+Week 1 - Training and setup
+Week 2 - Initial usage and feedback
+Week 3 - Adjustment and optimization
+Week 4 - Rollout planning based on feedback
 ```
 
-Phase 2: Rollout (Weeks 5-8)
+Phase 2 - Rollout (Weeks 5-8)
 
 Deploy to organization in waves:
 
 ```
-Week 5: Department 1 (IT and Finance)
-Week 6: Department 2 (Operations)
-Week 7: Department 3 (Marketing/Sales)
-Week 8: Remaining departments
+Week 5 - Department 1 (IT and Finance)
+Week 6 - Department 2 (Operations)
+Week 7 - Department 3 (Marketing/Sales)
+Week 8 - Remaining departments
 ```
 
-Phase 3: Hardening (Weeks 9-12)
+Phase 3 - Hardening (Weeks 9-12)
 
 Implement security policies after team familiarity:
 
 ```
-Week 9: Enable MFA requirements
-Week 10: Activate password expiration policies
-Week 11: Implement breach watch monitoring
-Week 12: Audit and ongoing management
+Week 9 - Enable MFA requirements
+Week 10 - Activate password expiration policies
+Week 11 - Implement breach watch monitoring
+Week 12 - Audit and ongoing management
 ```
 
 Rushing hardening causes user resistance. Allow familiarity before enforcement.

@@ -64,7 +64,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Option 1: Self-Hosted. Immich
+Step 1 - Option 1: Self-Hosted. Immich
 
 Immich is the most actively developed self-hosted Google Photos alternative. Face recognition, map view, timeline, mobile backup. feature parity with Google Photos without the surveillance. The project has grown from a side project to a dedicated team with over 40,000 GitHub stars as of 2026.
 
@@ -93,9 +93,9 @@ docker compose up -d
 Check all services are running
 docker compose ps
 
-Access: http://your-server:2283
+Access - http://your-server:2283
 Create admin account on first login
-Set up mobile app: immich.app → download iOS/Android client
+Set up mobile app - immich.app → download iOS/Android client
 Enter server address → log in → enable automatic backup
 ```
 
@@ -145,7 +145,7 @@ If you don't want a public DNS record, run Immich over Tailscale. assign a Tails
 
 ---
 
-Step 2: Option 2: Self-Hosted. PhotoPrism
+Step 2 - Option 2: Self-Hosted. PhotoPrism
 
 PhotoPrism is more privacy-conservative in its AI features. you control which analysis runs. It's optimized for browsing large libraries and works well as a read-heavy archive viewer rather than a live backup target.
 
@@ -185,16 +185,16 @@ PhotoPrism requires a MariaDB or SQLite database for its index. For large librar
 
 ---
 
-Step 3: Option 3: Ente Photos (Zero-Knowledge Cloud)
+Step 3 - Option 3: Ente Photos (Zero-Knowledge Cloud)
 
 Ente Photos is a cloud service with zero-knowledge encryption. your photos are encrypted on your device before upload. Ente cannot see your photos, and this is verifiable because the client is open source (`github.com/ente-io/ente`).
 
 ```bash
-Ente Photos: ente.io
+Ente Photos - ente.io
 Plans from $2/month for 50GB
 
-Android/iOS: download from app stores
-Desktop: available for Linux, macOS, Windows
+Android/iOS - download from app stores
+Desktop - available for Linux, macOS, Windows
 
 The key difference from Google Photos:
 - Photos encrypted with your master key before upload
@@ -217,13 +217,13 @@ ente download --album "Album Name" /local/path
 
 Ente's encryption uses libsodium (ChaCha20-Poly1305 for content, XSalsa20-Poly1305 for key derivation). The master key is derived from your password client-side using Argon2. Ente's servers never see the password or the master key.
 
-Trade-off: Ente lacks advanced search and organization features compared to Google Photos. No object search or automatic location tagging (these would require server-side analysis). The mobile app is well-polished and supports automatic backup from camera roll. The desktop app and CLI are suitable for bulk uploads from existing photo libraries.
+Trade-off - Ente lacks advanced search and organization features compared to Google Photos. No object search or automatic location tagging (these would require server-side analysis). The mobile app is well-polished and supports automatic backup from camera roll. The desktop app and CLI are suitable for bulk uploads from existing photo libraries.
 
 Ente also offers an open-source self-hosted backend (`ente-server`) with your own storage, but the server setup is complex. For most users, Ente's paid cloud is the practical choice.
 
 ---
 
-Step 4: Option 4: Encrypted Sync with Cryptomator
+Step 4 - Option 4: Encrypted Sync with Cryptomator
 
 Keep photos in any cloud provider (Dropbox, S3, Backblaze) but encrypt them first:
 
@@ -240,17 +240,17 @@ Set a strong password (20+ characters, random)
 Mount the vault → drag photos in
 Dropbox/cloud syncs the encrypted files
 
-On mobile: Cryptomator iOS/Android app unlocks vault
+On mobile - Cryptomator iOS/Android app unlocks vault
 Thumbnails are NOT generated server-side (provider sees only ciphertext)
 ```
 
 Cryptomator encrypts both file contents and file names. Dropbox sees files with names like `6IQFHU4APB3MSNB.c9r` rather than `vacation-2025.jpg`. This prevents the cloud provider from inferring anything about your library structure.
 
-The main limitation is browsing: you can only view photos while the vault is mounted on a device with Cryptomator installed. There is no web interface for browsing your encrypted photos remotely, and no server-side search or organization tools.
+The main limitation is browsing - you can only view photos while the vault is mounted on a device with Cryptomator installed. There is no web interface for browsing your encrypted photos remotely, and no server-side search or organization tools.
 
 ---
 
-Step 5: Strip EXIF Metadata Before Sharing
+Step 5 - Strip EXIF Metadata Before Sharing
 
 Photos contain metadata that reveals: GPS location, camera model, date/time, sometimes even software used. Before sharing photos publicly or with services that might retain metadata, strip it.
 
@@ -287,14 +287,14 @@ mat2 --inplace photo.jpg   # overwrite original
 
 ---
 
-Step 6: Backup Strategy for Self-Hosted Photos
+Step 6 - Backup Strategy for Self-Hosted Photos
 
 Self-hosted photos require a separate backup strategy. the server itself can fail.
 
 ```bash
 3-2-1 backup rule: 3 copies, 2 different media, 1 offsite
 
-Immich: backup the originals directory and database
+Immich - backup the originals directory and database
 Database backup (run as cron job):
 docker exec immich_postgres pg_dump -U postgres immich > ~/backup/immich-db-$(date +%Y%m%d).sql
 

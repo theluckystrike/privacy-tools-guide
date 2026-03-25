@@ -23,10 +23,10 @@ This guide covers how Android sensor permissions work, what data these sensors p
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - Both sensors operate at the hardware level and can sample data at high frequencies: typically 50-200 Hz on most devices, though some support rates exceeding 1000 Hz.
-- Implement rate limiting Use: lower sampling rates when high precision is unnecessary 4.
+- Implement rate limiting Use - lower sampling rates when high precision is unnecessary 4.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
 - Provide disclosure Clearly explain: sensor usage in your privacy policy For users concerned about motion sensor tracking: 1.
-- Use security-focused ROMs Some: privacy-oriented Android distributions offer sensor access controls 3.
+- Use security-focused ROMs Some - privacy-oriented Android distributions offer sensor access controls 3.
 
 Understanding Android Motion Sensors
 
@@ -310,9 +310,9 @@ risky_apps = defense.filter_suspicious_apps([
 print(f"Risky apps: {risky_apps}")
 ```
 
-Threat Model: Sensor-Based Attacks
+Threat Model - Sensor-Based Attacks
 
-Comprehensive matrix of sensor exploitation risks:
+complete matrix of sensor exploitation risks:
 
 | Attack | Required Sensors | Detection Difficulty | Impact |
 |---|---|---|---|
@@ -331,7 +331,7 @@ For GrapheneOS and other hardened Android:
 
 ```bash
 GrapheneOS provides granular sensor controls via toggle
-Available in: Settings → Sensors
+Available in - Settings → Sensors
 
 Disable sensors system-wide
 adb shell svc sensors disable

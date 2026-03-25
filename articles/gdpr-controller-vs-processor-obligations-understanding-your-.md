@@ -30,7 +30,7 @@ Processors act on the controller's instructions. Your email service provider (Ma
 | Records of processing | Required | Required |
 | Fines (maximum) | 4% annual revenue / 20M EUR | 4% annual revenue / 20M EUR |
 
-For developers: if you build a SaaS product, you are typically the processor for your customers' data and the controller for your own user account data. You need Data Processing Agreements (DPAs) with every sub-processor you use (cloud hosting, analytics, payment providers). Map your data flows to identify every controller-processor relationship in your stack.
+For developers - if you build a SaaS product, you are typically the processor for your customers' data and the controller for your own user account data. You need Data Processing Agreements (DPAs) with every sub-processor you use (cloud hosting, analytics, payment providers). Map your data flows to identify every controller-processor relationship in your stack.
 
 A single entity can be both controller and processor for different data sets. This is common and expected. Document each role clearly.
 

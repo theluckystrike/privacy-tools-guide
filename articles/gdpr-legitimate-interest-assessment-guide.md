@@ -43,7 +43,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Three-Part Legitimate Interest Test
+Step 1 - The Three-Part Legitimate Interest Test
 
 GDPR doesn't define legitimate interest precisely, but the ICO (Information Commissioner's Office) established a three-part test that courts and regulators recognize:
 
@@ -53,7 +53,7 @@ GDPR doesn't define legitimate interest precisely, but the ICO (Information Comm
 
 Each component is examined below with developer-focused examples.
 
-Step 2: Implementing the Assessment in Code
+Step 2 - Implementing the Assessment in Code
 
 Create a structured assessment system that documents your legitimate interest reasoning:
 
@@ -112,7 +112,7 @@ class LegitimateInterestAssessment {
 }
 ```
 
-Practical Example: Analytics Processing
+Practical Example - Analytics Processing
 
 Consider implementing website analytics under legitimate interest. Here's how to structure the assessment:
 
@@ -165,7 +165,7 @@ analyticsLIA.addSafeguard({
 });
 ```
 
-Step 3: Common Application Scenarios
+Step 3 - Common Application Scenarios
 
 Legitimate interest commonly applies to these development scenarios:
 
@@ -226,7 +226,7 @@ const marketingLIA = {
 };
 ```
 
-Step 4: When Legitimate Interest Doesn't Apply
+Step 4 - When Legitimate Interest Doesn't Apply
 
 Certain processing scenarios are problematic under legitimate interest:
 
@@ -264,7 +264,7 @@ function generateLIARecord(assessment) {
 
 Store these records with your data processing agreements. Regulators will request them during audits.
 
-Step 5: Build Assessment Into Your Application
+Step 5 - Build Assessment Into Your Application
 
 Integrate legitimate interest assessments into your development workflow:
 

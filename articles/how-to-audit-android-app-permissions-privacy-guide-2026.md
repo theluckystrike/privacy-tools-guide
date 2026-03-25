@@ -20,7 +20,7 @@ Why Android Permissions Audit Matters
 
 Android apps request permissions silently. Your weather app requests location. Your notes app requests camera. Most users tap "Allow" without reading what they're granting. This guide shows you how to audit which apps have which permissions, revoke suspicious ones, and monitor for new requests.
 
-Android Permissions: The Surveillance Surface
+Android Permissions - The Surveillance Surface
 
 Android apps request permissions at install time. Most users tap "Allow" on all of them. This is a security failure that manufacturers and app developers exploit.
 
@@ -46,14 +46,14 @@ This guide shows you how to:
 Table of Contents
 
 - [Why Android Permissions Audit Matters](#why-android-permissions-audit-matters)
-- [Android Permissions: The Surveillance Surface](#android-permissions-the-surveillance-surface)
+- [Android Permissions - The Surveillance Surface](#android-permissions-the-surveillance-surface)
 - [Prerequisites](#prerequisites)
-- [Part 1: Manual Permission Audit](#part-1-manual-permission-audit)
-- [Part 2: Restrict Permissions](#part-2-restrict-permissions)
-- [Part 3: Verify Restricted Apps Work](#part-3-verify-restricted-apps-work)
-- [Part 4: Automate Permission Monitoring](#part-4-automate-permission-monitoring)
-- [Part 5: Decision Framework](#part-5-decision-framework)
-- [Part 6: Automation via Device Policy](#part-6-automation-via-device-policy)
+- [Part 1 - Manual Permission Audit](#part-1-manual-permission-audit)
+- [Part 2 - Restrict Permissions](#part-2-restrict-permissions)
+- [Part 3 - Verify Restricted Apps Work](#part-3-verify-restricted-apps-work)
+- [Part 4 - Automate Permission Monitoring](#part-4-automate-permission-monitoring)
+- [Part 5 - Decision Framework](#part-5-decision-framework)
+- [Part 6 - Automation via Device Policy](#part-6-automation-via-device-policy)
 - [Dangerous Permission Categories Explained](#dangerous-permission-categories-explained)
 - [Troubleshooting Restricted Apps](#troubleshooting-restricted-apps)
 - [Privacy Best Practices Summary](#privacy-best-practices-summary)
@@ -69,9 +69,9 @@ Optional:
 - Frida (dynamic instrumentation framework)
 - logcat (built into ADB)
 
-Part 1: Manual Permission Audit
+Part 1 - Manual Permission Audit
 
-Step 1: Understand Permission Categories
+Step 1 - Understand Permission Categories
 
 Android groups permissions into categories. Dangerous permissions are the ones to restrict:
 
@@ -96,7 +96,7 @@ Special Permissions (require Settings access):
 - INSTALL_UNKNOWN_APPS
 - ACCESS_USAGE_STATS (monitor all app usage)
 
-Step 2: Check App Permissions via Settings
+Step 2 - Check App Permissions via Settings
 
 On your Android device:
 1. Settings → Apps
@@ -106,7 +106,7 @@ On your Android device:
 
 This shows what the app *currently* has. But doesn't show what it's *requesting* (permissions in the manifest).
 
-Step 3: View Full Permission Manifest (ADB Method)
+Step 3 - View Full Permission Manifest (ADB Method)
 
 Connect device to computer. In terminal:
 
@@ -134,7 +134,7 @@ $ adb shell dumpsys package com.weather.app | grep "permission"
 
 This shows the app requested all these permissions in its manifest, even if you haven't granted them.
 
-Step 4: Identify Suspicious Permissions
+Step 4 - Identify Suspicious Permissions
 
 For each app, ask:
 - Does this app need location? (weather, maps: yes; note-taking, flashlight: no)
@@ -148,9 +148,9 @@ Red flags:
 - Game requesting camera and microphone
 - Photo gallery requesting SMS access
 
-Part 2: Restrict Permissions
+Part 2 - Restrict Permissions
 
-Method 1: Manual Restriction via Settings
+Method 1 - Manual Restriction via Settings
 
 On your device:
 1. Settings → Apps → [App Name] → Permissions
@@ -163,7 +163,7 @@ On your device:
 - Maps: Keep location ON (essential)
 - Twitter: Disable location (tweet text doesn't need location)
 
-Method 2: Bulk Restriction via ADB
+Method 2 - Bulk Restriction via ADB
 
 ```bash
 Revoke a specific permission
@@ -181,7 +181,7 @@ for perm in ACCESS_FINE_LOCATION READ_CONTACTS RECORD_AUDIO READ_CALENDAR; do
 done
 ```
 
-Method 3: Permission Manager Tools
+Method 3 - Permission Manager Tools
 
 App-based permission managers:
 - Permission Dogs (F-Droid): Shows which apps accessed what, when
@@ -192,7 +192,7 @@ Device-based management:
 - LineageOS Custom ROM: Fine-grained permission control (per-app groups)
 - GrapheneOS (Pixel phones): Enhanced permission isolation
 
-Part 3: Verify Restricted Apps Work
+Part 3 - Verify Restricted Apps Work
 
 After revoking permissions, test app functionality:
 
@@ -206,16 +206,16 @@ Test app behavior:
 - Gmail: Send email (should work without camera)
 - Maps: Search address (may work with coarse location; test without fine location)
 
-Part 4: Automate Permission Monitoring
+Part 4 - Automate Permission Monitoring
 
-Tool 1: Exodus Privacy Analyzer
+Tool 1 - Exodus Privacy Analyzer
 
 Exodus Privacy is a service that scans app APKs and reports:
 - What permissions are requested
 - What trackers are included (Google Analytics, Firebase, etc.)
 - Privacy rating (1-5 stars)
 
-Web version: https://exodus-privacy.eu.org/
+Web version - https://exodus-privacy.eu.org/
 
 Use it to assess apps before installing:
 1. Search app name
@@ -225,10 +225,10 @@ Use it to assess apps before installing:
 
 Example results (Facebook):
 - Permissions: 13 (many unnecessary)
-- Trackers: 8 (Google Analytics, Facebook SDK, Adjust, etc.)
+- Trackers - 8 (Google Analytics, Facebook SDK, Adjust, etc.)
 - Privacy: 2/5 stars (poor)
 
-Tool 2: ADB Automation Script
+Tool 2 - ADB Automation Script
 
 Create a script to audit all apps:
 
@@ -261,7 +261,7 @@ com.twitter.android: 8 dangerous permissions
 com.whatsapp: 6 dangerous permissions
 ```
 
-Tool 3: Monitor Actual Permission Usage
+Tool 3 - Monitor Actual Permission Usage
 
 Use `strace` or `Frida` to see which permissions an app actually uses at runtime:
 
@@ -286,7 +286,7 @@ Java.perform(function() {
 
 This logs every permission check the app makes, showing which permissions it *actually* uses vs. just requests.
 
-Part 5: Decision Framework
+Part 5 - Decision Framework
 
 For each app, apply this framework:
 
@@ -311,7 +311,7 @@ Example decisions:
 | Flashlight | Microphone | DENY | Flashlight turns on |
 | Photos | Microphone | DENY | Can view/edit photos |
 
-Part 6: Automation via Device Policy
+Part 6 - Automation via Device Policy
 
 For enterprises or advanced users:
 
@@ -342,37 +342,37 @@ Dangerous Permission Categories Explained
 Location (FINE_LOCATION, COARSE_LOCATION)
 - What it reveals: Home address, work location, frequented places, travel patterns
 - Who wants it: Google, Facebook, location-based ads, dating apps
-- Mitigation: Grant only to Maps, Weather. Disable otherwise. Use approximate location (coarse) when possible.
+- Mitigation - Grant only to Maps, Weather. Disable otherwise. Use approximate location (coarse) when possible.
 
 Contacts (READ_CONTACTS)
 - What it reveals: Social graph, phone numbers, email addresses
 - Who wants it: Facebook, LinkedIn, messaging apps
-- Mitigation: Grant only to messaging/phone apps. Deny to utilities.
+- Mitigation - Grant only to messaging/phone apps. Deny to utilities.
 
 Microphone (RECORD_AUDIO)
 - What it reveals: Conversations, background sounds, voice data
 - Who wants it: Video apps, voice assistants, call recording
-- Mitigation: Grant only to video/call apps. Deny to non-communication apps. Disable when not in use.
+- Mitigation - Grant only to video/call apps. Deny to non-communication apps. Disable when not in use.
 
 Camera (CAMERA)
 - What it reveals: Visual data of your environment
 - Who wants it: Video apps, video calls, photo apps
-- Mitigation: Grant only to intentional camera apps. Check for apps requesting it unnecessarily.
+- Mitigation - Grant only to intentional camera apps. Check for apps requesting it unnecessarily.
 
 Calendar (READ_CALENDAR)
 - What it reveals: Schedule, meetings, travel plans, social commitments
 - Who wants it: Google, Microsoft, advertising networks
-- Mitigation: Grant only to calendar apps. Deny to utilities and games.
+- Mitigation - Grant only to calendar apps. Deny to utilities and games.
 
 Call Logs (READ_CALL_LOG, CALL_PHONE)
 - What it reveals: Who you call, how often, duration of calls
 - Who wants it: Social networks, advertising networks, malware
-- Mitigation: Grant only to phone app and your carrier. Deny to all others.
+- Mitigation - Grant only to phone app and your carrier. Deny to all others.
 
 SMS (READ_SMS, SEND_SMS)
 - What it reveals: Text message content, two-factor authentication codes, banking notifications
 - Who wants it: Messaging apps, security software
-- Mitigation: Avoid granting to third-party apps. Use native SMS app only. Consider not storing sensitive 2FA via SMS.
+- Mitigation - Avoid granting to third-party apps. Use native SMS app only. Consider not storing sensitive 2FA via SMS.
 
 Troubleshooting Restricted Apps
 

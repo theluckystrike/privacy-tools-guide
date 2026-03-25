@@ -21,7 +21,7 @@ Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Additional Protective Measures](#additional-protective-measures)
-- [Advanced: Perceptual Hash Resistance Testing](#advanced-perceptual-hash-resistance-testing)
+- [Advanced - Perceptual Hash Resistance Testing](#advanced-perceptual-hash-resistance-testing)
 - [Troubleshooting](#troubleshooting)
 
 Prerequisites
@@ -34,7 +34,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How Reverse Image Search Works
+Step 1 - How Reverse Image Search Works
 
 Understanding the technical foundation helps you defend against it effectively. Search engines extract visual fingerprints from images using perceptual hashing algorithms. These algorithms generate unique identifiers based on color distribution, edge patterns, and texture features.
 
@@ -42,7 +42,7 @@ When you upload a photo, the engine computes its hash and compares it against a 
 
 Dating platforms typically compress and resize uploaded images, which can alter the hash slightly but rarely enough to prevent matching. The real vulnerability emerges when your dating profile photo resembles photos linked to your professional presence, social media accounts, or family gatherings, anything indexed by search engines and associated with your name.
 
-Step 2: Method 1: Strip Image Metadata
+Step 2 - Method 1: Strip Image Metadata
 
 Every digital photo contains metadata (EXIF data) that reveals information like the device used, GPS coordinates, and timestamps. While this data often gets stripped during upload to most platforms, some dating services preserve certain tags or re-embed data that could aid identification.
 
@@ -73,17 +73,17 @@ exiftool -all= dating_profile.jpg
 
 This creates a copy with all metadata removed. The original file remains unchanged, so work on copies.
 
-Step 3: Method 2: Apply Visual Transformations
+Step 3 - Method 2: Apply Visual Transformations
 
 Perceptual hashes aren't completely immutable. Applying specific transformations changes the hash while preserving enough visual similarity for a normal viewer. However, note that sophisticated algorithms can sometimes account for these modifications.
 
 Effective transformations include:
 
-Crop and resize: Change the aspect ratio and dimensions significantly. A square Instagram-style crop differs substantially from a landscape photo.
+Crop and resize - Change the aspect ratio and dimensions significantly. A square Instagram-style crop differs substantially from a field photo.
 
-Color adjustments: Shift the hue, saturation, or brightness substantially. Converting to black-and-white or applying a color filter alters the visual fingerprint.
+Color adjustments - Shift the hue, saturation, or brightness substantially. Converting to black-and-white or applying a color filter alters the visual fingerprint.
 
-Add subtle noise: Introduce slight random noise that humans barely notice but affects hash computation.
+Add subtle noise - Introduce slight random noise that humans barely notice but affects hash computation.
 
 Here's a Python script applying multiple transformations:
 
@@ -131,7 +131,7 @@ transform_for_privacy('original.jpg', 'dating_photo.jpg')
 
 This script produces a version that looks similar to humans but has a different perceptual hash.
 
-Step 4: Method 3: Use Dedicated Dating Photos
+Step 4 - Method 3: Use Dedicated Dating Photos
 
 The most effective strategy involves using photos exclusively for dating platforms, images that never appear anywhere else online. This creates a complete barrier since there's nothing for reverse search engines to match against.
 
@@ -144,7 +144,7 @@ When creating dedicated photos:
 
 If you've already used a photo elsewhere, stop using it immediately. Even if you've applied transformations, sophisticated matching algorithms improve continuously, and the connection might still be discoverable.
 
-Step 5: Method 4: Use Image Similarity Checkers
+Step 5 - Method 4: Use Image Similarity Checkers
 
 Before uploading to a dating platform, verify your photo isn't easily discoverable. Run your intended profile photo through reverse image search yourself to see what matches appear.
 
@@ -171,7 +171,7 @@ def check_image_visibility(image_path):
 check_image_visibility('my_dating_photo.jpg')
 ```
 
-Step 6: Method 5: Use Platform Privacy Settings
+Step 6 - Method 5: Use Platform Privacy Settings
 
 Some dating platforms offer privacy controls that affect how your photos can be discovered:
 
@@ -185,15 +185,15 @@ Additional Protective Measures
 
 Beyond image modifications, consider these complementary strategies:
 
-Separate phone numbers: Use a dedicated phone number for dating apps that isn't connected to your real identity. Services like Google Voice provide free secondary numbers.
+Separate phone numbers - Use a dedicated phone number for dating apps that isn't connected to your real identity. Services like Google Voice provide free secondary numbers.
 
-Unique email addresses: Create an email specifically for dating that doesn't include your real name or personal information.
+Unique email addresses - Create an email specifically for dating that doesn't include your real name or personal information.
 
-VPN usage: Access dating platforms through a VPN to prevent IP address logging that could link activity to your primary internet connection.
+VPN usage - Access dating platforms through a VPN to prevent IP address logging that could link activity to your primary internet connection.
 
-Regular photo rotation: Change your profile photo periodically. This limits the window for someone to successfully link your dating and real identities.
+Regular photo rotation - Change your profile photo periodically. This limits the window for someone to successfully link your dating and real identities.
 
-Step 7: Test Your Privacy
+Step 7 - Test Your Privacy
 
 After applying these methods, verify your protections work:
 
@@ -204,7 +204,7 @@ After applying these methods, verify your protections work:
 
 This testing should be an ongoing practice, not a one-time check. Search engine indexing and matching capabilities evolve constantly.
 
-Advanced: Perceptual Hash Resistance Testing
+Advanced - Perceptual Hash Resistance Testing
 
 For developers wanting to validate image transformation effectiveness, compute perceptual hashes:
 
@@ -244,7 +244,7 @@ def compare_image_hashes(original_path, transformed_path):
 compare_image_hashes('original.jpg', 'transformed.jpg')
 ```
 
-Step 8: Face Recognition Bypass Techniques
+Step 8 - Face Recognition Bypass Techniques
 
 Beyond perceptual hashing, modern reverse image search uses facial recognition. Transformations that fool hashing may not fool face recognition:
 
@@ -273,7 +273,7 @@ curl -X POST \
 
 If the API still detects a face, further transformation is needed.
 
-Step 9: Legal Considerations for Dating Privacy
+Step 9 - Legal Considerations for Dating Privacy
 
 Depending on your jurisdiction, dating profile privacy involves different legal risks:
 
@@ -286,7 +286,7 @@ Depending on your jurisdiction, dating profile privacy involves different legal 
 
 Understand your local laws before uploading. In many jurisdictions, uploading intimate photos creates legal liability even if consensual.
 
-Step 10: Continuous Monitoring
+Step 10 - Continuous Monitoring
 
 Implement ongoing monitoring for unauthorized photo use:
 

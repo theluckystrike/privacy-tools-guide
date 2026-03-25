@@ -32,7 +32,7 @@ Before selecting a storage solution, define your threat model. Academic research
 
 End-to-end encryption (E2EE) shifts this balance. When you control the encryption keys, the storage provider sees only opaque ciphertext. This matters for research involving proprietary data, unpublished findings, or any dataset where accidental exposure could compromise competitive advantage or participant privacy.
 
-Self-Hosted Solutions: Maximum Control
+Self-Hosted Solutions - Maximum Control
 
 Nextcloud
 
@@ -79,10 +79,10 @@ For researchers requiring maximum decentralization, InterPlanetary File System (
 Initialize IPFS node and add research dataset
 ipfs init
 ipfs add -r /path/to/research-data
-Returns: QmHashOfYourData
+Returns - QmHashOfYourData
 
 Share via content-addressable hash
-Other researchers can retrieve: ipfs get QmHashOfYourData
+Other researchers can retrieve - ipfs get QmHashOfYourData
 ```
 
 IPFS requires technical management but suits research workflows where long-term data availability matters more than traditional cloud convenience. Data pinning services like Pinata provide persistence guarantees without centralizing control.
@@ -136,7 +136,7 @@ Set-OrganizationConfig -CustomerKeyStatus "Enabled"
 
 These integrations simplify authentication via single sign-on but require careful key management configuration to maintain zero-knowledge properties.
 
-Open-Source Alternatives: Seafile
+Open-Source Alternatives - Seafile
 
 Seafile provides a middle ground between full self-hosting complexity and commercial cloud dependency. It combines desktop sync with server-side encryption where you manage encryption keys independently of the platform provider.
 

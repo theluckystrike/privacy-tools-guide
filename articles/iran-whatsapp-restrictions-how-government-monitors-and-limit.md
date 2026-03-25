@@ -24,7 +24,7 @@ The Iranian government operates one of the most internet filtering systems in th
 
 Unlike simple IP blocking, Iran's approach to WhatsApp restriction uses flow-based filtering that analyzes traffic patterns rather than just destination addresses. This makes traditional VPN solutions less effective, as the system can detect encrypted tunnel signatures.
 
-Deep Packet Inspection: The Technical Foundation
+Deep Packet Inspection - The Technical Foundation
 
 Deep Packet Inspection examines the actual content of network packets, not just headers. For WhatsApp traffic, Iranian ISPs deploy DPI systems that identify specific characteristics:
 
@@ -55,8 +55,8 @@ Server Name Indication (SNI) in TLS handshakes provides a plaintext indicator of
 Example SNI extraction from TLS ClientHello
 Wireshark dissection shows:
 Handshake Type: Client Hello (1)
-Version: TLS 1.2
-Extension: server_name (0x0000)
+Version - TLS 1.2
+Extension - server_name (0x0000)
   Server Name: whatsapp.net
   Server Name: whatsapp.com
 ```
@@ -263,8 +263,8 @@ The DPI sees traffic to public-cdn.example.com
 But traffic actually goes to hidden-service.onion
 
 Client sends:
-Host: hidden-service.onion
-SNI: public-cdn.example.com
+Host - hidden-service.onion
+SNI - public-cdn.example.com
 
 DPI inspection sees:
 - Connection to public-cdn.example.com (appears innocent)
@@ -293,8 +293,8 @@ Lightweight circumvention tool providing VPN-like access:
 
 ```bash
 Install Psiphon (if available)
-Advantages: Works in high-censorship environments
-Disadvantages: Slower than commercial VPNs
+Advantages - Works in high-censorship environments
+Disadvantages - Slower than commercial VPNs
 
 Configuration for Iran:
 Use bridges (if available)

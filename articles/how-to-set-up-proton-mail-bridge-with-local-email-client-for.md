@@ -45,7 +45,7 @@ Before starting, ensure you have:
 
 Download Bridge from the Proton website or install via your system's package manager. The application is available for macOS, Windows, and Linux.
 
-Step 1: Install Proton Mail Bridge
+Step 1 - Install Proton Mail Bridge
 
 On macOS with Homebrew:
 
@@ -62,24 +62,24 @@ sudo dpkg -i ProtonMailBridge-3.0.0.deb
 
 After installation, launch the Bridge application. You'll be prompted to log in with your Proton Mail credentials.
 
-Step 2: Configure Bridge for First Use
+Step 2 - Configure Bridge for First Use
 
 Open Proton Mail Bridge and sign in with your Proton Mail email and password. The application will generate IMAP and SMTP credentials specifically for your email client.
 
 The Bridge interface displays connection details in this format:
 
 ```
-IMAP Host: 127.0.0.1
-IMAP Port: 1143
-SMTP Host: 127.0.0.1
-SMTP Port: 1025
-Username: your-email@protonmail.com
-Password: [Bridge-generated password]
+IMAP Host - 127.0.0.1
+IMAP Port - 1143
+SMTP Host - 127.0.0.1
+SMTP Port - 1025
+Username - your-email@protonmail.com
+Password - [Bridge-generated password]
 ```
 
 These credentials are separate from your Proton Mail password. The Bridge application manages them, and you can regenerate them at any time through the Bridge interface if needed.
 
-Step 3: Set Up Apple Mail
+Step 3 - Set Up Apple Mail
 
 For macOS users preferring Apple Mail over the Proton Mail web interface:
 
@@ -97,7 +97,7 @@ For macOS users preferring Apple Mail over the Proton Mail web interface:
 
 Click Sign In and Apple Mail will connect through Bridge to Proton Mail.
 
-Step 4: Set Up Mozilla Thunderbird
+Step 4 - Set Up Mozilla Thunderbird
 
 Thunderbird provides excellent customization options for power users:
 
@@ -115,7 +115,7 @@ Thunderbird provides excellent customization options for power users:
 
 Thunderbird will attempt automatic configuration, but manually entering these values ensures proper connection through Bridge.
 
-Step 5: Set Up Neomutt for Terminal Users
+Step 5 - Set Up Neomutt for Terminal Users
 
 For developers who prefer terminal-based workflows, Neomutt works smoothly with Proton Mail Bridge:
 
@@ -165,7 +165,7 @@ Slave :proton-mail:
 
 Run `mbsync proton` to synchronize your mail locally, then configure Neomutt to read from the local Maildir.
 
-Step 6: Enable Two-Factor Authentication for Bridge
+Step 6 - Enable Two-Factor Authentication for Bridge
 
 For additional security, Bridge supports two-factor authentication through TOTP:
 
@@ -176,7 +176,7 @@ For additional security, Bridge supports two-factor authentication through TOTP:
 
 Your email client will now require both the Bridge password and a current TOTP code to connect.
 
-Step 7: Manage Multiple Accounts
+Step 7 - Manage Multiple Accounts
 
 Bridge supports multiple Proton Mail accounts simultaneously. Click the + button in the Bridge interface to add additional accounts. Each account receives its own IMAP/SMTP credentials.
 
@@ -195,18 +195,18 @@ Troubleshooting Connection Issues
 
 If your email client fails to connect through Bridge, verify these common issues:
 
-Port conflicts: Ensure no other service is using ports 1143 (IMAP) or 1025 (SMTP). Check with:
+Port conflicts - Ensure no other service is using ports 1143 (IMAP) or 1025 (SMTP). Check with:
 
 ```bash
 lsof -i :1143
 lsof -i :1025
 ```
 
-Bridge not running: Bridge must remain open for your email client to connect. Consider launching Bridge at system startup.
+Bridge not running - Bridge must remain open for your email client to connect. Consider launching Bridge at system startup.
 
-Credential expiration: Bridge credentials can expire or become invalid. Open Bridge and check the account status, regenerate credentials if needed.
+Credential expiration - Bridge credentials can expire or become invalid. Open Bridge and check the account status, regenerate credentials if needed.
 
-Firewall settings: Some system firewalls may block local connections to Bridge. Verify that your firewall permits connections to 127.0.0.1 on the specified ports.
+Firewall settings - Some system firewalls may block local connections to Bridge. Verify that your firewall permits connections to 127.0.0.1 on the specified ports.
 
 Security Considerations
 
@@ -225,14 +225,14 @@ For users with large mailboxes, consider these optimizations:
 
 Enable caching in your email client: Thunderbird and Apple Mail can store local copies of messages, reducing Bridge overhead.
 
-Use offlineimap or isync: Synchronize mail periodically rather than maintaining a live connection:
+Use offlineimap or isync - Synchronize mail periodically rather than maintaining a live connection:
 
 ```bash
 Add to crontab for periodic sync
 */15 * * * * /usr/local/bin/mbsync proton
 ```
 
-Limit synchronized folders: Configure your client to sync only essential folders, excluding large folders like Sent or Archive if unnecessary.
+Limit synchronized folders - Configure your client to sync only essential folders, excluding large folders like Sent or Archive if unnecessary.
 
 Getting Started
 

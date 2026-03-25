@@ -195,11 +195,11 @@ Which is Safest?
 
 The answer depends entirely on your threat model:
 
-For privacy protection: Temp Mail offers the best privacy with private inboxes. However, even private disposable email services have limitations, they should never be used for sensitive communications, financial accounts, or anything requiring real security.
+For privacy protection - Temp Mail offers the best privacy with private inboxes. However, even private disposable email services have limitations, they should never be used for sensitive communications, financial accounts, or anything requiring real security.
 
-For developer testing: Mailinator and Guerrilla Mail both excel. Mailinator's official API and faster message delivery make it superior for automated testing pipelines.
+For developer testing - Mailinator and Guerrilla Mail both excel. Mailinator's official API and faster message delivery make it superior for automated testing pipelines.
 
-For security research: Use a fresh address from any service for one-time interactions. Assume any message sent to a disposable address may eventually be seen by others.
+For security research - Use a fresh address from any service for one-time interactions. Assume any message sent to a disposable address may eventually be seen by others.
 
 Security Best Practices
 

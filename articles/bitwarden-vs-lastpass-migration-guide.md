@@ -60,7 +60,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Preparing for Migration
+Step 1 - Preparing for Migration
 
 Before starting, ensure you have:
 
@@ -77,7 +77,7 @@ Verify installation
 bw --version
 ```
 
-Step 2: Exporting Data from LastPass
+Step 2 - Exporting Data from LastPass
 
 LastPass provides CSV export through their browser extension or CLI. For programmatic control, use the LastPass CLI:
 
@@ -109,7 +109,7 @@ TOTP secrets typically appear as base32 strings
 grep -oP '(?<=TOTP: )[A-Z2-7]+=*' lastpass-export.csv > totp-seeds.txt
 ```
 
-Step 3: Importing into Bitwarden
+Step 3 - Importing into Bitwarden
 
 Bitwarden's CLI handles imports directly:
 
@@ -136,14 +136,14 @@ Migrating TOTP Authenticators
 
 LastPass stores TOTP secrets in a separate format. For full migration:
 
-Method 1: Manual Export via Browser Extension
+Method 1 - Manual Export via Browser Extension
 
 1. Open LastPass browser extension
 2. Navigate to Account Settings → Export
 3. Export "Export Generic CSV"
 4. Extract the "One-Time Password" column
 
-Method 2: Using a Python Script
+Method 2 - Using a Python Script
 
 ```python
 #!/usr/bin/env python3
@@ -196,7 +196,7 @@ Update with TOTP (requires premium for TOTP)
 bw edit item <item-id> --totp "JBSWY3DPEHPK3PXP"
 ```
 
-Step 4: Bulk Operations with Bitwarden CLI
+Step 4 - Bulk Operations with Bitwarden CLI
 
 For large vaults, use scripting for efficiency:
 
@@ -212,7 +212,7 @@ Export Bitwarden vault for backup
 bw export --format json --output ./bitwarden-backup.json
 ```
 
-Step 5: Folder Organization
+Step 5 - Folder Organization
 
 LastPass uses folders; Bitwarden uses collections for organizations and folders for personal vaults. Import automatically creates folders:
 
@@ -224,7 +224,7 @@ Reorganize using CLI
 bw move <item-id> <folder-name>
 ```
 
-Step 6: Self-Hosting Bitwarden with Vaultwarden
+Step 6 - Self-Hosting Bitwarden with Vaultwarden
 
 One of the most compelling reasons to migrate from LastPass to Bitwarden is the ability to self-host your vault using Vaultwarden, a lightweight Rust implementation of the Bitwarden server API. This eliminates reliance on Bitwarden's cloud infrastructure entirely and gives you complete control over your password data.
 
@@ -270,7 +270,7 @@ server {
 
 Self-hosting eliminates the risk of a cloud provider breach. the LastPass breach of 2022, which exposed encrypted vaults to attackers, is the clearest argument for keeping your vault under your own control.
 
-Step 7: Verification Checklist
+Step 7 - Verification Checklist
 
 After migration, verify your data:
 
@@ -285,7 +285,7 @@ Verify specific entry
 bw get item "GitHub" | jq '{username, password, totp, notes}'
 ```
 
-Step 8: Automate Continuous Migration
+Step 8 - Automate Continuous Migration
 
 For team migrations, script the process:
 
@@ -308,7 +308,7 @@ function migrateEntry(entry) {
 }
 ```
 
-Step 9: Post-Migration Password Hygiene
+Step 9 - Post-Migration Password Hygiene
 
 The migration process itself is a good opportunity to address password quality across your vault. LastPass and Bitwarden both offer password health reports, but Bitwarden's Vault Health Reports (available to premium subscribers) are particularly actionable:
 
@@ -332,7 +332,7 @@ Generate a passphrase (easier to type, still strong)
 bw generate --passphrase --words 5 --separator "-"
 ```
 
-Step 10: Set Up Emergency Access
+Step 10 - Set Up Emergency Access
 
 Bitwarden Premium and Families plans include an Emergency Access feature that LastPass does not offer in a comparable form. This allows you to designate trusted contacts who can request access to your vault in case of emergency, with a configurable waiting period during which you can deny the request.
 

@@ -22,8 +22,8 @@ Table of Contents
 
 - [Why Signal for Journalism](#why-signal-for-journalism)
 - [Prerequisites](#prerequisites)
-- [Advanced: Note to Self for Secure Storage](#advanced-note-to-self-for-secure-storage)
-- [Advanced: Multi-Device Configuration](#advanced-multi-device-configuration)
+- [Advanced - Note to Self for Secure Storage](#advanced-note-to-self-for-secure-storage)
+- [Advanced - Multi-Device Configuration](#advanced-multi-device-configuration)
 - [Signal Requirements](#signal-requirements)
 - [Device Requirements](#device-requirements)
 - [Troubleshooting](#troubleshooting)
@@ -44,13 +44,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Initial Setup and Phone Number Privacy
+Step 1 - Initial Setup and Phone Number Privacy
 
 The first security consideration involves phone number visibility. By default, Signal links your account to your phone number, which creates an immediate identification vector. While complete phone number removal requires SMS verification during registration, several privacy settings mitigate exposure.
 
 After installing Signal from the official app store, navigate to Settings > Privacy. The critical settings to enable include:
 
-- Sealed Sender: Enable "Allow Sealed Sender deliveries". this hides metadata about message sender/recipient relationships from Signal servers
+- Sealed Sender - Enable "Allow Sealed Sender deliveries". this hides metadata about message sender/recipient relationships from Signal servers
 - Typing Indicators: Disable for sensitive conversations
 - Read Receipts: Disable to prevent confirmation of message delivery timing
 - Screen Lock: Enable with a short timeout to prevent physical access
@@ -63,7 +63,7 @@ All settings must be configured through the mobile application
 However, Signal does support backup export for migration purposes
 ```
 
-Step 2: Disappearing Messages Configuration
+Step 2 - Disappearing Messages Configuration
 
 Disappearing messages represent a foundational source protection mechanism. When enabled, messages automatically delete from both devices after a configurable duration, reducing the evidence surface if a device is compromised or seized.
 
@@ -77,7 +77,7 @@ Server does not store message content, only the expiration configuration
 
 Disappearing messages only affect new messages after activation. Existing messages remain visible unless manually deleted from both devices. Develop a protocol for source contacts to delete historical conversations before enabling disappearing messages.
 
-Step 3: Registration Lock and Account Security
+Step 3 - Registration Lock and Account Security
 
 Signal's registration lock feature prevents unauthorized account transfers. When enabled, any attempt to register your number on a new device requires your registration lock PIN, a 6-20 digit number you set during activation.
 
@@ -100,13 +100,13 @@ Settings > Security > Encryption > Encrypt Phone
 Ensure full disk encryption is enabled before handling sensitive conversations
 ```
 
-Step 4: Screen Security and Screenshot Prevention
+Step 4 - Screen Security and Screenshot Prevention
 
 Signal includes screen security features that prevent screenshots and screen recording on Android. Enable this in Settings > Privacy > Screen Security. This prevents malware on your device from capturing conversation content and blocks unauthorized screen recording.
 
 iOS users should note that screen security is more limited. While Signal attempts to prevent screenshots, the operating system permits screen recording in certain scenarios. Disable screen recording permissions for Signal in iOS Settings > Signal > Screen Recording.
 
-Step 5: Manage Contact Discovery
+Step 5 - Manage Contact Discovery
 
 Signal's sync process can inadvertently expose your contacts to Signal's servers. During initial setup, Signal queries your contact list to identify other Signal users. This creates a mapping between phone numbers and Signal accounts that persists on Signal's infrastructure.
 
@@ -118,7 +118,7 @@ To minimize this exposure:
 
 For sources using Signal, recommend they create accounts with dedicated phone numbers that are not publicly associated with their identity. Voice-over-IP numbers from services like Google Voice or dedicated VoIP providers can serve this purpose, though consider that some jurisdictions may require ID verification for VoIP registration.
 
-Step 6: Verification and Key Fingerprints
+Step 6 - Verification and Key Fingerprints
 
 Establishing verification for source communications requires comparing Signal safety numbers. These numbers derive from the cryptographic keys exchanged during the initial conversation, providing cryptographic proof that you communicate with the intended party.
 
@@ -135,17 +135,17 @@ Document verified safety numbers for future reference. A change in the safety nu
 Safety number derivation (conceptual)
 Signal combines identity keys and session keys
 The resulting fingerprint is displayed as 60-digit number
-Format: XXX-XXX-XXX-XXX-XXX-XXX-XXX-XXX-XXX-XXX
+Format - XXX-XXX-XXX-XXX-XXX-XXX-XXX-XXX-XXX-XXX
 Verify all 60 digits through independent channel
 ```
 
-Advanced: Note to Self for Secure Storage
+Advanced - Note to Self for Secure Storage
 
 Signal's Note to Self feature provides an encrypted scratchpad accessible only from your own devices. While not a replacement for dedicated password managers, this feature offers secure storage for sensitive information like source details, interview notes, or encryption keys.
 
 The Note to Self conversation supports all Signal features including disappearing messages, file attachments, and voice messages. Use this for temporary storage of sensitive information that you would rather not store in cloud-synced notes applications.
 
-Step 7: Device Hygiene and Operational Security
+Step 7 - Device Hygiene and Operational Security
 
 Technical configuration alone does not guarantee security. Operational practices complement Signal's encryption:
 
@@ -161,30 +161,30 @@ Settings > Notifications > Notification Content > "Hide"
 This displays "New message" instead of message text in notifications
 ```
 
-Advanced: Multi-Device Configuration
+Advanced - Multi-Device Configuration
 
 For high-risk journalists, maintain multiple phone numbers and devices:
 
 ```yaml
-Device 1: Work phone
-Phone: +1-555-WORK-001 (public-facing)
-Uses: Professional contacts, non-sensitive calls
-Signal: Standard configuration
+Device 1 - Work phone
+Phone - +1-555-WORK-001 (public-facing)
+Uses - Professional contacts, non-sensitive calls
+Signal - Standard configuration
 
-Device 2: Source phone
-Phone: +1-555-SOURCE-001 (private number)
-Uses: Source communications only
-Signal: Maximum privacy configuration
+Device 2 - Source phone
+Phone - +1-555-SOURCE-001 (private number)
+Uses - Source communications only
+Signal - Maximum privacy configuration
   - Sealed sender enabled
   - Disappearing messages: 24 hours
   - Screen lock enabled
   - Regular wipe schedule: Every 30 days
   - Backup: Disabled
 
-Device 3: Backup device
-Phone: +1-555-BACKUP-001 (in safe)
-Uses: Emergency communications only
-Signal: Registered, configured, kept offline
+Device 3 - Backup device
+Phone - +1-555-BACKUP-001 (in safe)
+Uses - Emergency communications only
+Signal - Registered, configured, kept offline
   - Activated only in crisis scenarios
   - Contains backup contacts list
   - Separate registration lock PIN
@@ -192,7 +192,7 @@ Signal: Registered, configured, kept offline
 
 Store backup phone in a safe deposit box or secure location inaccessible to people who might seize devices.
 
-Step 8: Jurisdictional Considerations
+Step 8 - Jurisdictional Considerations
 
 Different regions apply different laws to encrypted communications:
 
@@ -215,7 +215,7 @@ Authoritarian Jurisdictions
 
 Research your jurisdiction's laws before handling sensitive sources. Consult with a lawyer familiar with press freedom in your region.
 
-Step 9: Technical Verification Against Compromise
+Step 9 - Technical Verification Against Compromise
 
 If you suspect your device is compromised:
 
@@ -242,7 +242,7 @@ Settings > Apps > [Signal]
 
 If you detect compromise, physically destroy the device rather than attempting cleanup. Sophisticated malware is resistant to removal.
 
-Step 10: Documentation and Evidence Preservation
+Step 10 - Documentation and Evidence Preservation
 
 Maintain secure documentation of your security practices:
 
@@ -263,29 +263,29 @@ This demonstrates good faith security practices
 
 If questioned by law enforcement or courts about source protection, documentation of your security practices supports attorney-client and source-journalist privilege claims.
 
-Step 11: Source Onboarding Process
+Step 11 - Source Onboarding Process
 
 When bringing a new source onto Signal:
 
 ```
-Step 1: Provide phone number through verified channel
+Step 1 - Provide phone number through verified channel
   - In-person conversation preferred
   - Alternative: Verified phone call (not Signal yet)
   - Never: Email, social media DMs
 
-Step 2: Source installs Signal from official app store
+Step 2 - Source installs Signal from official app store
   - iOS: App Store (not TestFlight)
-  - Android: Google Play or signal.org
+  - Android - Google Play or signal.org
 
-Step 3: You and source verify phone numbers
+Step 3 - You and source verify phone numbers
   - This prevents man-in-the-middle registration
 
-Step 4: Compare safety numbers in person
+Step 4 - Compare safety numbers in person
   - Bring QR code to in-person meeting
   - Source scans QR code on their device
   - Confirms safety number matches
 
-Step 5: Establish communication protocols
+Step 5 - Establish communication protocols
   - Disappearing message duration (24 hours recommended)
   - Response time expectations
   - Emergency contact procedures
@@ -294,7 +294,7 @@ Step 5: Establish communication protocols
 
 This process takes 30-45 minutes but provides strong verification that you're actually communicating with your intended source.
 
-Step 12: Signal vs Alternatives for Journalists
+Step 12 - Signal vs Alternatives for Journalists
 
 | Messenger | Encryption | Metadata | Logging | Best For |
 |-----------|-----------|----------|---------|----------|
@@ -305,7 +305,7 @@ Step 12: Signal vs Alternatives for Journalists
 
 Signal remains the best balance for journalists. Session provides stronger anonymity if phone number registration is unacceptable risk.
 
-Step 13: Red Flags for Source Safety
+Step 13 - Red Flags for Source Safety
 
 During Signal communication, watch for:
 
@@ -317,7 +317,7 @@ During Signal communication, watch for:
 
 These patterns suggest potential law enforcement manipulation or coordinated source attack. Consult with your news organization's legal and security teams before proceeding.
 
-Step 14: Create a Journalist Security Policy
+Step 14 - Create a Journalist Security Policy
 
 Organizations should establish written policies:
 
@@ -336,12 +336,12 @@ Device Requirements
 - No jailbreak/root allowed for journalists
 - Biometric unlock required
 
-Step 15: Verification Process
+Step 15 - Verification Process
 - All new sources: In-person safety number verification
 - Existing sources: Re-verify quarterly
 - Documentation stored in secure vault
 
-Step 16: Plan Incident Response
+Step 16 - Plan Incident Response
 - Suspected compromise: Immediately notify security team
 - Device theft: Remote wipe via Find My / Find My Device
 - Law enforcement approach: Refer to legal team

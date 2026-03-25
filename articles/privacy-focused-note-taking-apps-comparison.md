@@ -21,11 +21,11 @@ Most note-taking apps (Evernote, OneNote, Notion) sync your notes to cloud serve
 Table of Contents
 
 - [Understanding End-to-End Encryption for Notes](#understanding-end-to-end-encryption-for-notes)
-- [Standard Notes: Best for Simplicity and Security](#standard-notes-best-for-simplicity-and-security)
-- [Joplin: Best for Privacy + Features](#joplin-best-for-privacy-features)
-- [Notesnook: Best for Modern UX + Security](#notesnook-best-for-modern-ux-security)
-- [Obsidian with E2E Sync: Best for Power Users](#obsidian-with-e2e-sync-best-for-power-users)
-- [Cryptee: Best for Rich Media Privacy](#cryptee-best-for-rich-media-privacy)
+- [Standard Notes - Best for Simplicity and Security](#standard-notes-best-for-simplicity-and-security)
+- [Joplin - Best for Privacy + Features](#joplin-best-for-privacy-features)
+- [Notesnook - Best for Modern UX + Security](#notesnook-best-for-modern-ux-security)
+- [Obsidian with E2E Sync - Best for Power Users](#obsidian-with-e2e-sync-best-for-power-users)
+- [Cryptee - Best for Rich Media Privacy](#cryptee-best-for-rich-media-privacy)
 - [Comparison Table](#comparison-table)
 - [Export and Portability](#export-and-portability)
 - [Decision Matrix](#decision-matrix)
@@ -58,7 +58,7 @@ Does the app use E2E encryption?
 - Can company decrypt your notes if they want? → Not E2E encrypted
 - Is encryption toggle optional? → Weak E2E (should be mandatory)
 
-Standard Notes: Best for Simplicity and Security
+Standard Notes - Best for Simplicity and Security
 
 Standard Notes is a minimalist note app focused entirely on privacy. It uses industry-standard E2E encryption and has a thorough security model.
 
@@ -73,7 +73,7 @@ Pricing:
 - Standard: $120/year (unlimited items, customizable themes, extensions)
 - Professional: $200/year (includes offline access, advanced exports)
 
-Best For: Privacy-conscious users wanting simplicity and audited security.
+Best For - Privacy-conscious users wanting simplicity and audited security.
 
 Features:
 - Clean, distraction-free interface
@@ -132,7 +132,7 @@ Security Model Summary:
 | Open Source | 90% (core open, extensions proprietary) |
 | Master Password Recovery | Not possible (by design) |
 
-Joplin: Best for Privacy + Features
+Joplin - Best for Privacy + Features
 
 Joplin is open-source and focused on privacy. It offers more features than Standard Notes while maintaining E2E encryption.
 
@@ -147,7 +147,7 @@ Pricing:
 - Pro: $49/year (optional, adds cloud sync support)
 - Storage: Bring your own (Dropbox, OneDrive, NextCloud, or Joplin Cloud)
 
-Best For: Budget-conscious users, advanced note takers, teams wanting open-source.
+Best For - Budget-conscious users, advanced note takers, teams wanting open-source.
 
 Features:
 - Nested folders with unlimited depth
@@ -170,21 +170,21 @@ Setup Process:
 Sync Configuration Example:
 
 ```
-Option 1: Dropbox Sync
+Option 1 - Dropbox Sync
 - Notes stored in encrypted form in Dropbox
 - Dropbox cannot read notes (only see encrypted blobs)
 - Sync across devices: Login to same Dropbox account
 - Free, reliable, large storage
 - Trusting Dropbox security
 
-Option 2: NextCloud Sync (Self-Hosted)
+Option 2 - NextCloud Sync (Self-Hosted)
 - Notes stored in your own NextCloud server
 - You control all infrastructure
 - Completely private sync
 - Maximum control, private
 - Requires managing server
 
-Option 3: Joplin Cloud
+Option 3 - Joplin Cloud
 - Official cloud service
 - Encrypted sync to Joplin's servers
 - Joplin cannot read encrypted notes
@@ -227,7 +227,7 @@ Joplin Weaknesses:
 - UI less polished than Standard Notes
 - Memory usage high on large note collections (1000+ notes)
 
-Notesnook: Best for Modern UX + Security
+Notesnook - Best for Modern UX + Security
 
 Notesnook is a newer entrant with excellent user experience and strong privacy practices.
 
@@ -242,7 +242,7 @@ Pricing:
 - Premium: $99.99/year (unlimited notes, all features)
 - Family: $149.99/year (6 users, each with premium features)
 
-Best For: Users wanting modern design with strong privacy, family sharing.
+Best For - Users wanting modern design with strong privacy, family sharing.
 
 Features:
 - Clean, modern interface (better than Joplin, rivals Standard Notes)
@@ -317,11 +317,11 @@ Notesnook Strengths:
 - Web version works well
 
 Notesnook Weaknesses:
-- Smaller ecosystem than Joplin (fewer community extensions)
+- Smaller environment than Joplin (fewer community extensions)
 - Family plan pricing higher than competitors
 - Web version requires browser login (not app-only like Standard Notes)
 
-Obsidian with E2E Sync: Best for Power Users
+Obsidian with E2E Sync - Best for Power Users
 
 Obsidian is a powerful note-taking app for knowledge management. The core app is local-first, but Obsidian Sync adds E2E encrypted cloud sync.
 
@@ -336,12 +336,12 @@ Pricing:
 - Obsidian Sync: $10.99/month (E2E encrypted sync, 100GB storage)
 - Obsidian Publish: $14.99/month (publish notes as website)
 
-Best For: Knowledge workers, writers, power users with complex note systems.
+Best For - Knowledge workers, writers, power users with complex note systems.
 
 Features:
 - Local-first (notes live on your device by default)
 - Backlinks and graph visualization (excellent for knowledge networks)
-- Plugins ecosystem (100+ community plugins)
+- Plugins environment (100+ community plugins)
 - Themes and customization
 - LaTeX support (for mathematical notes)
 - Outliner capabilities
@@ -399,7 +399,7 @@ Export Options:
 Obsidian Strengths:
 - Most powerful for knowledge management
 - Local-first means notes accessible without internet
-- Plugin ecosystem for customization
+- Plugin environment for customization
 - Excellent for writers and researchers
 
 Obsidian Weaknesses:
@@ -409,7 +409,7 @@ Obsidian Weaknesses:
 - Steeper learning curve than competitors
 - E2E sync auditing less transparent than competitors
 
-Cryptee: Best for Rich Media Privacy
+Cryptee - Best for Rich Media Privacy
 
 Cryptee is specifically designed for storing photos, documents, and files with privacy. More focused on multimedia than text notes.
 
@@ -424,7 +424,7 @@ Pricing:
 - Premium: $99.99/year (100GB storage)
 - Family: $199.99/year (500GB shared)
 
-Best For: Storing sensitive documents, photos, and files securely.
+Best For - Storing sensitive documents, photos, and files securely.
 
 Features:
 - Document storage with OCR (searchable PDFs)
@@ -445,7 +445,7 @@ Setup Process:
 Real-World Use Case:
 
 ```
-Scenario: Storing sensitive medical records
+Scenario - Storing sensitive medical records
 
 Traditional approach:
 - Store PDF on Google Drive/Dropbox
@@ -546,19 +546,19 @@ I'm storing sensitive documents and media:
 
 Implementation Guide
 
-Week 1: Choose your app based on comparison above
+Week 1 - Choose your app based on comparison above
 
-Week 2: Migrate existing notes
+Week 2 - Migrate existing notes
 - Export from Evernote/OneNote/Notion
 - Import into your privacy app
 - Verify all notes migrated completely
 
-Week 3: Set up on all devices
+Week 3 - Set up on all devices
 - Install on phone, tablet, computer
 - Configure sync
 - Test on offline mode
 
-Week 4: Practice with new workflows
+Week 4 - Practice with new workflows
 - Learn search features
 - Organize with folders/tags
 - Set up web clipper if available

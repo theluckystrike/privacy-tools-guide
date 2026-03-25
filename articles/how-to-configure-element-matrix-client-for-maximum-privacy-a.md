@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Initial Account Hardening
+Step 1 - Initial Account Hardening
 
 Before configuring client settings, review your account-level privacy options. Access your homeserver's user settings panel (typically at `https://your-homeserver.org/_matrix/client/r0/account/whoami`).
 
@@ -56,7 +56,7 @@ Your presence state (online, offline, typing) broadcasts to contacts. Disable pr
 2. Uncheck "Share my online status on this device"
 3. Set "Who can see my online status" to "Never"
 
-Step 2: Session and Device Management
+Step 2 - Session and Device Management
 
 Matrix's device-based encryption means each device operates as a separate security context. Regular session review prevents unauthorized access.
 
@@ -68,7 +68,7 @@ Use the Matrix API to enumerate and revoke sessions:
 Query active devices via curl
 curl -X GET \
   "https://matrix.org/_matrix/client/r0/devices" \
-  -H "Authorization: Bearer $ACCESS_TOKEN" | jq '.devices[] | {device_id, last_seen_ip, last_seen_ts}'
+  -H "Authorization - Bearer $ACCESS_TOKEN" | jq '.devices[] | {device_id, last_seen_ip, last_seen_ts}'
 ```
 
 The response shows all connected devices with timestamps and IP addresses. Revoke unfamiliar sessions immediately:
@@ -91,7 +91,7 @@ Cross-signing links your devices under a single identity, allowing you to verify
 
 Cross-signing enables the "Verified" green checkmark on devices you control, making tampering obvious.
 
-Step 3: Encryption Configuration
+Step 3 - Encryption Configuration
 
 Element supports end-to-end encryption (E2EE) by default in direct messages and optionally in rooms. However, several settings require attention.
 
@@ -125,7 +125,7 @@ const backupManager = new BackupManager({
 });
 ```
 
-Step 4: Metadata Minimization
+Step 4 - Metadata Minimization
 
 Even with encryption, metadata reveals communication patterns. Reduce exposure through these strategies.
 
@@ -180,7 +180,7 @@ Homeservers can auto-delete old messages. Add a retention policy to your room:
 
 This deletes messages older than 30 days while keeping at least 1 day of history.
 
-Step 5: Network-Level Privacy
+Step 5 - Network-Level Privacy
 
 Client configuration extends beyond Element itself. Consider these network-level measures.
 
@@ -245,7 +245,7 @@ Use Element Without JavaScript
 
 For extremely security-conscious users, matrix-puppet-bridge provides a CLI-based Matrix client. While impractical for daily use, it demonstrates the principle that less client-side code reduces attack surface.
 
-Step 6: Perform Maintenance and Monitoring
+Step 6 - Perform Maintenance and Monitoring
 
 Security requires ongoing attention.
 

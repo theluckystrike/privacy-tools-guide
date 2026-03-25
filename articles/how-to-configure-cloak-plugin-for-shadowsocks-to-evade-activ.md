@@ -30,13 +30,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Active Probing
+Step 1 - Understand Active Probing
 
 When a censor performs active probing, they send packets designed to trigger specific responses from known circumvention protocols. Shadowsocks servers respond in ways that reveal the protocol, enabling censors to identify and block the connection even when encryption prevents content inspection. Cloak addresses this by multiplexing Shadowsocks traffic over a TLS tunnel that looks indistinguishable from regular HTTPS traffic.
 
 The plugin operates at the transport layer, meaning your Shadowsocks configuration remains unchanged. Cloak handles the obfuscation transparently, creating a dual-layer architecture where the outer TLS connection resists classification while the inner Shadowsocks connection provides the actual proxy functionality.
 
-Step 2: Install Cloak
+Step 2 - Install Cloak
 
 Cloak is written in Go and compiles to a single binary. The installation process varies by operating system, but the general approach involves downloading the compiled binary or building from source.
 
@@ -62,7 +62,7 @@ Verify the installation:
 ck-server -version
 ```
 
-Step 3: Server-Side Configuration
+Step 3 - Server-Side Configuration
 
 Cloak requires a configuration file in JSON format. Create `/etc/cloak.json` on your server with the following structure:
 
@@ -99,7 +99,7 @@ sudo touch /var/lib/cloak/users.json
 
 The database stores user credentials and connection statistics. Each user entry includes their UID, data transfer limits, and connection parameters.
 
-Step 4: Configure Shadowsocks with Cloak
+Step 4 - Configure Shadowsocks with Cloak
 
 Your Shadowsocks configuration needs modification to work with Cloak. Edit your Shadowsocks server configuration (typically in `/etc/shadowsocks-libev/config.json`):
 
@@ -132,7 +132,7 @@ sudo systemctl enable cloak
 sudo systemctl start cloak
 ```
 
-Step 5: Client-Side Configuration
+Step 5 - Client-Side Configuration
 
 On client machines, you need both a Shadowsocks client and the Cloak plugin. Install Cloak using the same method as the server, then configure your client.
 
@@ -162,7 +162,7 @@ Configure your Shadowsocks client to use the Cloak plugin. In many clients, this
 
 When the client connects, it performs a TLS handshake using the server's domain name. The connection appears identical to legitimate HTTPS traffic to external observers. The inner Shadowsocks protocol only activates after the TLS tunnel is established.
 
-Step 6: Manage Users
+Step 6 - Manage Users
 
 Cloak includes a command-line tool for user management. Add a new user:
 
@@ -194,7 +194,7 @@ Production Considerations
 
 For production deployments, consider these additional measures:
 
-TLS Certificate: Use a valid TLS certificate from Let's Encrypt. Cloak's TLS tunneling relies on proper certificate validation to establish trust.
+TLS Certificate - Use a valid TLS certificate from Let's Encrypt. Cloak's TLS tunneling relies on proper certificate validation to establish trust.
 
 ```bash
 sudo certbot certonly -d your-domain.com
@@ -202,9 +202,9 @@ sudo cp /etc/letsencrypt/live/your-domain.com/fullchain.pem /etc/cloak/tls.crt
 sudo cp /etc/letsencrypt/live/your-domain.com/privkey.pem /etc/cloak/tls.key
 ```
 
-Obfuscated Servers: Cloak works best when hosted on IP addresses that aren't already flagged. Consider using dedicated IPs for your Shadowsocks-Cloak setup rather than shared hosting.
+Obfuscated Servers - Cloak works best when hosted on IP addresses that aren't already flagged. Consider using dedicated IPs for your Shadowsocks-Cloak setup rather than shared hosting.
 
-Firewall Configuration: Ensure only port 443 is exposed externally. Shadowsocks on port 8443 should bind only to localhost.
+Firewall Configuration - Ensure only port 443 is exposed externally. Shadowsocks on port 8443 should bind only to localhost.
 
 Troubleshooting
 

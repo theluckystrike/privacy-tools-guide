@@ -221,7 +221,7 @@ test-kill-switch-realistic.sh
 echo "Kill Switch Verification Suite"
 echo "==============================="
 
-Test 1: Unexpected VPN disconnection
+Test 1 - Unexpected VPN disconnection
 echo -e "\nTest 1: Simulating connection drop..."
 ping -i 0.2 8.8.8.8 > /tmp/ping.log 2>&1 &
 PING_PID=$!
@@ -245,7 +245,7 @@ fi
 
 kill $PING_PID 2>/dev/null
 
-Test 2: DNS leak during VPN failure
+Test 2 - DNS leak during VPN failure
 echo -e "\nTest 2: Checking for DNS leaks..."
 
 Create a unique subdomain
@@ -266,7 +266,7 @@ else
     cat /tmp/dns_query.log
 fi
 
-Test 3: IPv6 leak potential
+Test 3 - IPv6 leak potential
 echo -e "\nTest 3: Checking IPv6 handling..."
 
 Attempt IPv6 connection
@@ -278,7 +278,7 @@ else
     echo "WARNING: IPv6 connections may bypass kill switch"
 fi
 
-Test 4: WebRTC leak (indicates IP exposure)
+Test 4 - WebRTC leak (indicates IP exposure)
 echo -e "\nTest 4: Checking for WebRTC leaks..."
 
 This requires Node.js + npm package 'webrtc-detect'
@@ -435,7 +435,7 @@ if __name__ == '__main__':
         ks.stop()
 ```
 
-Run with: `sudo python3 universal-kill-switch.py`
+Run with - `sudo python3 universal-kill-switch.py`
 
 Frequently Asked Questions
 

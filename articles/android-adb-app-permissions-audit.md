@@ -184,7 +184,7 @@ Revoke Permissions via ADB
 Revoke a specific permission without uninstalling the app:
 
 ```bash
-Syntax: adb shell pm revoke <package> <permission>
+Syntax - adb shell pm revoke <package> <permission>
 
 Revoke location from a weather app
 adb shell pm revoke com.weather.example android.permission.ACCESS_FINE_LOCATION
@@ -293,7 +293,7 @@ When finished:
 Disconnect ADB
 adb disconnect
 
-On phone: Settings > Developer Options > Disable USB debugging
+On phone - Settings > Developer Options > Disable USB debugging
 Or: Settings > Developer Options (toggle off entirely)
 ```
 

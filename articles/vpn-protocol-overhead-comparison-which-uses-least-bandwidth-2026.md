@@ -128,7 +128,7 @@ Accurate overhead measurement requires controlled testing:
 
 ```bash
 #!/bin/bash
-Comprehensive protocol overhead testing script
+complete protocol overhead testing script
 
 test_protocol() {
   local protocol=$1

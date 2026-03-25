@@ -44,7 +44,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Install Briar on Android
+Step 1 - Install Briar on Android
 
 Briar is available exclusively on Android through F-Droid and Google Play. For maximum privacy, install from F-Droid, which provides reproducible builds and eliminates Google Play tracking.
 
@@ -57,7 +57,7 @@ Installation steps:
 
 The initial setup takes approximately two minutes. You'll need to remember your passphrase, there's no password recovery mechanism since Briar operates without cloud infrastructure.
 
-Step 2: Set Up Peer-to-Peer Communication
+Step 2 - Set Up Peer-to-Peer Communication
 
 Briar offers two primary connection methods for adding contacts without internet access: Bluetooth and Wi-Fi Direct. Each has distinct advantages depending on your situation.
 
@@ -84,7 +84,7 @@ To add a contact via Wi-Fi Direct:
 3. Wait for discovery to find nearby contacts
 4. Select the contact and confirm on both devices
 
-Step 3: Connecting Without Physical Proximity
+Step 3 - Connecting Without Physical Proximity
 
 During internet blackouts, you may need to connect with contacts you've never met in person. Two methods solve this challenge:
 
@@ -112,7 +112,7 @@ For scenarios where visual exchange is possible, QR codes provide a quick method
 
 This method works well at protest gatherings, community meetings, or any situation where participants can see each other.
 
-Step 4: Message Propagation Across the Mesh
+Step 4 - Message Propagation Across the Mesh
 
 Once connected to even one other Briar user, your messages can reach surprising distances through message propagation. When your contact's device connects to another device, your messages sync automatically, no action required from you.
 
@@ -120,19 +120,19 @@ This creates remarkable resilience. In a protest scenario with many participants
 
 The propagation continues as long as devices remain online. Even if you power down your phone, messages queue and sync when you reconnect to any mesh peer.
 
-Step 5: Practical Considerations for Iran
+Step 5 - Practical Considerations for Iran
 
 For users in Iran specifically, several factors improve Briar effectiveness:
 
-Device distribution: The more people running Briar, the stronger the mesh network. Encourage trusted contacts, family members, and protest organizers to install the app before connectivity is restricted.
+Device distribution - The more people running Briar, the stronger the mesh network. Encourage trusted contacts, family members, and protest organizers to install the app before connectivity is restricted.
 
-Multiple contact circles: Create separate contact groups for different purposes, a family circle, an organizational circle, and a broader community circle. This limits exposure if any single contact's device is compromised.
+Multiple contact circles - Create separate contact groups for different purposes, a family circle, an organizational circle, and a broader community circle. This limits exposure if any single contact's device is compromised.
 
-Offline message composition: You can write messages while disconnected; they send automatically when any mesh connection becomes available. Compose important messages in advance during periods of connectivity.
+Offline message composition - You can write messages while disconnected; they send automatically when any mesh connection becomes available. Compose important messages in advance during periods of connectivity.
 
-Battery management: Bluetooth and Wi-Fi Direct consume significant power. Carry portable chargers when expecting extended blackout periods.
+Battery management - Bluetooth and Wi-Fi Direct consume significant power. Carry portable chargers when expecting extended blackout periods.
 
-Step 6: Limitations to Understand
+Step 6 - Limitations to Understand
 
 Briar cannot solve every communication challenge. Consider these constraints:
 
@@ -142,7 +142,7 @@ Briar cannot solve every communication challenge. Consider these constraints:
 - No voice or video calls, text and images only
 - Requires Android device; iOS version remains under development
 
-Step 7: Security Architecture
+Step 7 - Security Architecture
 
 Briar's security model deserves understanding. All messages use end-to-end encryption based on the Signal protocol. Keys are generated locally and never leave your device unless you explicitly share them.
 
@@ -150,7 +150,7 @@ The application stores all data locally, not on remote servers. This eliminates 
 
 Importantly, Briar's peer-to-peer nature makes traffic analysis extremely difficult. Unlike server-based messaging where metadata reveals who communicates with whom, mesh networks create ambiguous communication patterns that resist surveillance.
 
-Step 8: Build Your Communication Plan
+Step 8 - Build Your Communication Plan
 
 Effective crisis communication requires preparation:
 
@@ -167,7 +167,7 @@ Having Briar operational before internet restrictions begin gives you the best c
 Install Briar on Android via ADB when app stores are unavailable
 Download the APK from briarproject.org while internet is accessible
 
-Enable USB debugging: Settings -> Developer Options -> USB debugging
+Enable USB debugging - Settings -> Developer Options -> USB debugging
 adb devices
 adb install -r briar.apk
 
@@ -183,7 +183,7 @@ Advanced Briar Configurations for Maximum Reach
 
 Once the basics are working, advanced configurations extend Briar's capabilities:
 
-Bridge Mode for Extended Range: If you have access to a more stable network location, you can establish a Briar instance that acts as a bridge for others:
+Bridge Mode for Extended Range - If you have access to a more stable network location, you can establish a Briar instance that acts as a bridge for others:
 
 ```bash
 On a device with reliable network access
@@ -195,25 +195,25 @@ Keep this device powered on to relay messages
 It acts as infrastructure supporting the mesh network
 ```
 
-Offline Message Composition and Queuing: Briar queues messages when recipients aren't available. Take advantage of this:
+Offline Message Composition and Queuing - Briar queues messages when recipients aren't available. Take advantage of this:
 
 1. Compose important messages during periods of connectivity
 2. Send them even if recipients are offline
 3. Messages will sync when both devices are in range
 4. This allows asynchronous communication without real-time availability
 
-Step 9: Community Coordination Using Briar
+Step 9 - Community Coordination Using Briar
 
 Briar's peer-to-peer nature enables new forms of community coordination:
 
-Forum Creation: Briar supports private forums for group communication:
+Forum Creation - Briar supports private forums for group communication:
 
 1. Creator establishes a forum in Briar
 2. Shares forum link with trusted contacts
 3. Forum members can discuss topics without central moderation
 4. All members receive all messages (high bandwidth but reliable)
 
-Blog Functionality: Briar includes blog features for information dissemination:
+Blog Functionality - Briar includes blog features for information dissemination:
 
 1. Create a blog as an individual user
 2. Share your blog with Briar contacts
@@ -226,20 +226,20 @@ Use these features for coordination during blackouts:
 - Spread information about safe locations
 - Organize translations of important information
 
-Step 10: Briar for Other Offline Scenarios
+Step 10 - Briar for Other Offline Scenarios
 
 Beyond Iran internet blackouts, Briar applies to other scenarios:
 
-Natural Disaster Communication: When earthquake, hurricane, or flood damages infrastructure:
+Natural Disaster Communication - When earthquake, hurricane, or flood damages infrastructure:
 - Cellular networks overloaded
 - Internet backbones damaged
 - Briar enables communication when centralized systems fail
 
-Infrastructure Failure: Extended power outages or network infrastructure failures:
+Infrastructure Failure - Extended power outages or network infrastructure failures:
 - Briar works with portable battery packs
 - Communication continues as long as Bluetooth/WiFi hardware functions
 
-Authoritarian Regimes: Any government attempting to control communication:
+Authoritarian Regimes - Any government attempting to control communication:
 - Briar's decentralized design resists censorship
 - No servers to block or seize
 
@@ -247,28 +247,28 @@ Security Considerations During Use
 
 While using Briar in crisis situations, maintain security awareness:
 
-Device Seizure Risk: In oppressive regimes, your device containing Briar might be seized. Since Briar stores encrypted message databases locally:
+Device Seizure Risk - In oppressive regimes, your device containing Briar might be seized. Since Briar stores encrypted message databases locally:
 
 1. Set a strong passphrase during initial setup
 2. Understand that the passphrase is your only protection if device is seized
 3. Consider using plausible deniability, an innocuous passphrase that opens a decoy profile
 4. Know that forensic techniques might eventually compromise encrypted data
 
-Contact Identification Risk: Adding contacts reveals their identities to you. In crisis scenarios:
+Contact Identification Risk - Adding contacts reveals their identities to you. In crisis scenarios:
 
 1. Use nicknames rather than real names for contacts
 2. Avoid maintaining a master list of contact-to-identity mappings
 3. Know which individuals operate which devices by device firmware
 4. If compromised, this information cannot be extracted from Briar
 
-Metadata Analysis: While Briar encrypts message content, communication patterns can reveal information:
+Metadata Analysis - While Briar encrypts message content, communication patterns can reveal information:
 
 1. Time of communication might reveal participant location
 2. Frequency of communication might reveal relationships
 3. Unusual communication patterns might draw attention
 4. Use communication inconsistently to avoid patterns
 
-Step 11: Integrate Briar Into Crisis Planning
+Step 11 - Integrate Briar Into Crisis Planning
 
 Organizations preparing for potential blackouts should plan Briar integration:
 
@@ -291,7 +291,7 @@ Post-Crisis:
 3. Review what worked and what didn't
 4. Improve procedures for future scenarios
 
-Step 12: Limitations You Should Know
+Step 12 - Limitations You Should Know
 
 Briar isn't a complete communication replacement. Understand what it can't do:
 
@@ -304,7 +304,7 @@ Briar isn't a complete communication replacement. Understand what it can't do:
 
 For critical operations, supplement Briar with other communication methods you can access during blackouts.
 
-Step 13: Success Stories and Lessons
+Step 13 - Success Stories and Lessons
 
 Briar proved itself during internet blackouts in multiple contexts:
 
@@ -312,7 +312,7 @@ During Hong Kong 2019-2020 protests, activists used Briar to coordinate despite 
 
 During Iran 2022 protests, Briar enabled communication when cellular networks were blocked. Participants traveled to public squares with Briar running on phones, messages synced through the gathering crowd enabling real-time coordination.
 
-The key lesson: infrastructure independence is powerful. When you remove dependency on centralized servers, you gain resilience that oppressive systems cannot easily suppress.
+The key lesson - infrastructure independence is powerful. When you remove dependency on centralized servers, you gain resilience that oppressive systems cannot easily suppress.
 
 Troubleshooting
 

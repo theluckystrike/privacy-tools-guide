@@ -39,14 +39,14 @@ HIPAA's Security Rule requires encryption of PHI at rest. Both iOS and Android p
 
 iOS Configuration
 
-On iOS, verify encryption is enabled by navigating to Settings > Face ID & Passcode and ensuring a passcode is set. Enable Data Protection by checking that all sensitive apps show "Data Protection: Enabled" in their info panels. For additional security, enable Erase Data after 10 failed passcode attempts to prevent brute-force access.
+On iOS, verify encryption is enabled by navigating to Settings > Face ID & Passcode and ensuring a passcode is set. Enable Data Protection by checking that all sensitive apps show "Data Protection - Enabled" in their info panels. For additional security, enable Erase Data after 10 failed passcode attempts to prevent brute-force access.
 
 ```bash
 Verify iOS encryption status (requires MDM or Apple Configurator)
 This shows the data protection class for health apps
-Class C: Complete Protection - highest security
-Class B: Protected Unless Open
-Class A: Protected After First Unlock
+Class C - Complete Protection - highest security
+Class B - Protected Unless Open
+Class A - Protected After First Unlock
 ```
 
 Android Configuration
@@ -115,11 +115,11 @@ Look for these indicators when evaluating apps:
 
 Essential Apps for Nurse Practitioners
 
-Secure Messaging: Signal provides end-to-end encryption for practitioner-to-practitioner communication. While not designed specifically for healthcare, its encryption exceeds what most mainstream messaging platforms offer.
+Secure Messaging - Signal provides end-to-end encryption for practitioner-to-practitioner communication. While not designed specifically for healthcare, its encryption exceeds what most mainstream messaging platforms offer.
 
-Note-Taking: Standard cloud-synced note apps often fail HIPAA requirements. Encrypted alternatives like Standard Notes or locally-hosted solutions provide better protection for clinical notes.
+Note-Taking - Standard cloud-synced note apps often fail HIPAA requirements. Encrypted alternatives like Standard Notes or locally-hosted solutions provide better protection for clinical notes.
 
-Two-Factor Authentication: Enable 2FA on all healthcare accounts. Hardware keys like YubiKey provide the strongest authentication, while authenticator apps like Aegis (Android) or Raivo OTP (iOS) offer practical alternatives.
+Two-Factor Authentication - Enable 2FA on all healthcare accounts. Hardware keys like YubiKey provide the strongest authentication, while authenticator apps like Aegis (Android) or Raivo OTP (iOS) offer practical alternatives.
 
 Network Security Configuration
 
@@ -191,15 +191,15 @@ Common HIPAA Violations and How to Prevent Them
 
 Real-world HIPAA breaches often stem from preventable mistakes:
 
-Unsecured messaging: Using unencrypted SMS or email for patient communication. Prevention: Use only HIPAA-compliant messaging apps (Signal with BAA, or dedicated healthcare platforms) and disable iMessage/email notifications on lock screen.
+Unsecured messaging - Using unencrypted SMS or email for patient communication. Prevention - Use only HIPAA-compliant messaging apps (Signal with BAA, or dedicated healthcare platforms) and disable iMessage/email notifications on lock screen.
 
-Unencrypted screen content: Patient information visible on device screen in public. Prevention: Enable auto-lock (5 minutes max), disable lock screen notifications, use privacy screen protectors for clinical settings.
+Unencrypted screen content - Patient information visible on device screen in public. Prevention - Enable auto-lock (5 minutes max), disable lock screen notifications, use privacy screen protectors for clinical settings.
 
-Shared devices: Multiple practitioners using one device without proper isolation. Prevention: Each practitioner gets a dedicated device enrolled in MDM with unique credentials. Never share devices.
+Shared devices - Multiple practitioners using one device without proper isolation. Prevention - Each practitioner gets a dedicated device enrolled in MDM with unique credentials. Never share devices.
 
-Unvetted applications: Installing convenience apps that may exfiltrate PHI. Prevention: Only install apps with written Business Associate Agreements. Pre-approve all apps through your practice's information security officer.
+Unvetted applications - Installing convenience apps that may exfiltrate PHI. Prevention - Only install apps with written Business Associate Agreements. Pre-approve all apps through your practice's information security officer.
 
-Unencrypted backups: Cloud backups of healthcare data without encryption. Prevention: Disable cloud backup services (iCloud backup, Google backup) entirely. Use only on-device encrypted storage or encrypted enterprise backups.
+Unencrypted backups - Cloud backups of healthcare data without encryption. Prevention - Disable cloud backup services (iCloud backup, Google backup) entirely. Use only on-device encrypted storage or encrypted enterprise backups.
 
 Network Security for Mobile Healthcare Workflows
 

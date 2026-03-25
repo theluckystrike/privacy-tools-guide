@@ -16,19 +16,19 @@ tags: [privacy-tools-guide, best-of, privacy]
 
 Quad9 9.9.9.9 (Best Free Option for Blocking)
 
-Use if: You want ad/malware blocking without paying, or need security-first approach
+Use if - You want ad/malware blocking without paying, or need security-first approach
 
 DNS addresses:
 ```
 Standard (Blocks malware):
 IPv4: 9.9.9.9
-IPv4 Secondary: 149.112.112.112
+IPv4 Secondary - 149.112.112.112
 
-IPv6: 2620:fe::fe
-IPv6 Secondary: 2620:fe::9
+IPv6 - 2620:fe::fe
+IPv6 Secondary - 2620:fe::9
 
 DNSSEC (blocks malware + enforces DNSSEC):
-IPv4: 9.9.9.10
+IPv4 - 9.9.9.10
 ```
 
 Privacy analysis:
@@ -48,7 +48,7 @@ Quad9:
 - Europe: 15-35ms
 - Asia: 40-60ms
 - Australia: 50-100ms
-Average: 45ms globally
+Average - 45ms globally
 (Slower than Cloudflare due to security checks)
 ```
 
@@ -69,8 +69,8 @@ Settings → Network & Internet → Advanced Network Settings →
 Change Adapter Options → Right-click Wi-Fi → Properties →
 Internet Protocol Version 4 (TCP/IPv4) → Properties →
 Use the following DNS server addresses:
-Preferred: 9.9.9.9
-Alternate: 149.112.112.112
+Preferred - 9.9.9.9
+Alternate - 149.112.112.112
 
 OK → Apply
 ```
@@ -89,16 +89,16 @@ Limitations:
 
 NextDNS (Best for Control and Customization)
 
-Use if: You want granular per-device blocking, family filtering, or detailed usage analytics
+Use if - You want granular per-device blocking, family filtering, or detailed usage analytics
 
 DNS addresses (standard plan):
 ```
-IPv4: 45.90.28.0 → 45.90.31.255
-IPv6: 2a05:dfc0::/32
+IPv4 - 45.90.28.0 → 45.90.31.255
+IPv6 - 2a05:dfc0::/32
 
 (Specific endpoints change per-user, must log in to get them)
 
-DoH: https://dns.nextdns.io
+DoH - https://dns.nextdns.io
 ```
 
 Privacy analysis:
@@ -118,7 +118,7 @@ NextDNS (variable by load):
 - Europe: 20-40ms
 - Asia: 35-65ms
 - Australia: 45-110ms
-Average: 50ms globally
+Average - 50ms globally
 ```
 
 Blocking capabilities:
@@ -175,25 +175,25 @@ Limitations:
 
 AdGuard 94.140.14.14 (Best for Ad Blocking + Privacy)
 
-Use if: You want aggressive ad/tracker blocking without account creation
+Use if - You want aggressive ad/tracker blocking without account creation
 
 DNS addresses:
 ```
 Standard (Blocks ads, trackers, malware):
-IPv4: 94.140.14.14
-IPv4 Secondary: 94.140.15.15
+IPv4 - 94.140.14.14
+IPv4 Secondary - 94.140.15.15
 
 Safe search (adds SafeSearch enforcement):
-IPv4: 94.140.14.15
+IPv4 - 94.140.14.15
 
 Family protection (blocks adult content):
-IPv4: 94.140.14.16
+IPv4 - 94.140.14.16
 
 No filtering (privacy only):
-IPv4: 94.140.14.140
-IPv4 Secondary: 94.140.14.141
+IPv4 - 94.140.14.140
+IPv4 Secondary - 94.140.14.141
 
-IPv6: 2a10:50c0::ad1:ff
+IPv6 - 2a10:50c0::ad1:ff
 ```
 
 Privacy analysis:
@@ -218,7 +218,7 @@ AdGuard:
 - Europe: 12-28ms
 - Asia: 35-55ms
 - Australia: 50-100ms
-Average: 42ms globally
+Average - 42ms globally
 ```
 
 What AdGuard blocks:
@@ -242,7 +242,7 @@ Configuration (Android):
 
 Alternative (for older Android):
 Settings → Network & Internet → Wi-Fi → Wi-Fi network →
-Modify → Advanced → DHCP → DNS1: 94.140.14.14
+Modify → Advanced → DHCP → DNS1 - 94.140.14.14
 ```
 
 Best for:
@@ -256,7 +256,7 @@ Limitations:
 - Less detailed usage analytics
 - Newer service (fewer independent audits than Quad9)
 
-Performance Comparison: Real-World Benchmarks
+Performance Comparison - Real-World Benchmarks
 
 Testing with thousands of queries (March 2026):
 
@@ -269,9 +269,9 @@ DNS query response time (99th percentile):
 | NextDNS | 60 | 12 | 85% |
 | AdGuard | 45 | 7 | 90% |
 
-Winner for speed: Cloudflare (no security filtering overhead)
+Winner for speed - Cloudflare (no security filtering overhead)
 
-Winner for balance: AdGuard (good speed despite filtering)
+Winner for balance - AdGuard (good speed despite filtering)
 
 Blocking Effectiveness
 
@@ -285,7 +285,7 @@ Testing against common ad/tracker domains:
 | amazon associates | No | No | Yes (custom) | Yes |
 | Effectiveness | 0% | 50% | 95% | 90% |
 
-Winner for blocking: NextDNS (most customizable)
+Winner for blocking - NextDNS (most customizable)
 
 Which Resolver Should You Choose?
 
@@ -310,31 +310,31 @@ Recommended Configurations by User Type
 
 Privacy Advocate (Maximum Privacy):
 ```
-Primary: Quad9 9.9.9.9 (non-profit, no logging, warrant canary)
-Secondary: AdGuard 94.140.14.14 (no account required)
-Rationale: Minimal data collection, transparent, audited
+Primary - Quad9 9.9.9.9 (non-profit, no logging, warrant canary)
+Secondary - AdGuard 94.140.14.14 (no account required)
+Rationale - Minimal data collection, transparent, audited
 ```
 
 Average User (Balance):
 ```
-Primary: Cloudflare 1.1.1.1 (fastest, simple)
-Secondary: AdGuard 94.140.14.14 (fallback)
-Rationale: Fast, easy setup, good privacy without configuration
+Primary - Cloudflare 1.1.1.1 (fastest, simple)
+Secondary - AdGuard 94.140.14.14 (fallback)
+Rationale - Fast, easy setup, good privacy without configuration
 ```
 
 Families (Parental Control):
 ```
-Primary: NextDNS (detailed per-child filtering)
-Cost: $4/month for up to 5 devices
-Rationale: Granular control, usage visibility, per-device rules
+Primary - NextDNS (detailed per-child filtering)
+Cost - $4/month for up to 5 devices
+Rationale - Granular control, usage visibility, per-device rules
 ```
 
 Enterprise/Teams:
 ```
-Primary: NextDNS (organizational dashboard)
-Secondary: Quad9 (malware protection baseline)
-Cost: Contact NextDNS for team pricing
-Rationale: Visibility, team management, security-first
+Primary - NextDNS (organizational dashboard)
+Secondary - Quad9 (malware protection baseline)
+Cost - Contact NextDNS for team pricing
+Rationale - Visibility, team management, security-first
 ```
 
 Configuration Examples for All Platforms
@@ -363,27 +363,27 @@ Right-click your network → Properties →
 Internet Protocol Version 4 (TCP/IPv4) → Properties →
 
 Use the following DNS server addresses:
-Preferred: 1.1.1.1
-Alternate: 1.0.0.1
+Preferred - 1.1.1.1
+Alternate - 1.0.0.1
 
 OK → Apply
 ```
 
 iOS (App or Profile)
 
-Option 1: Using 1.1.1.1 app (Easiest)
+Option 1 - Using 1.1.1.1 app (Easiest)
 ```
-App Store → Download "1.1.1.1: Faster Internet"
+App Store → Download "1.1.1.1 - Faster Internet"
 Open → Toggle "VPN" to ON
 (Works system-wide for DNS)
 ```
 
-Option 2: System DNS (for Cloudflare)
+Option 2 - System DNS (for Cloudflare)
 ```
 Settings → General → VPN & Device Management →
 DNS over HTTPS
 
-Select: 1.1.1.1
+Select - 1.1.1.1
 Done
 ```
 
@@ -394,7 +394,7 @@ Native (Android 9+):
 Settings → Network & Internet → Advanced → Private DNS →
 Select "Private DNS provider hostname"
 
-Enter: dns.cloudflare.com
+Enter - dns.cloudflare.com
 (or dns.quad9.net, dns.nextdns.io)
 ```
 
@@ -402,7 +402,7 @@ Legacy (Android 6-8):
 ```
 Settings → Wi-Fi → Long-press network →
 Modify → Show Advanced Options →
-DHCP → DNS1: 1.1.1.1
+DHCP → DNS1 - 1.1.1.1
 
 Save
 ```

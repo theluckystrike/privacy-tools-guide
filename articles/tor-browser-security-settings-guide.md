@@ -20,7 +20,7 @@ Tor Browser works out of the box. Its default settings protect most users in mos
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Advanced Configuration: The Torrc File](#advanced-configuration-the-torrc-file)
+- [Advanced Configuration - The Torrc File](#advanced-configuration-the-torrc-file)
 - [Troubleshooting Tor Browser Issues](#troubleshooting-tor-browser-issues)
 - [Related Reading](#related-reading)
 
@@ -34,7 +34,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Three Security Levels
+Step 1 - The Three Security Levels
 
 Tor Browser's most important control is the Security Level, accessible from the shield icon next to the address bar, or from Settings → Privacy & Security → Security Level.
 
@@ -42,25 +42,25 @@ Standard
 
 JavaScript enabled. All browser features available. Recommended for: browsing news, Wikipedia, and general sites where functionality matters and de-anonymization risk is lower.
 
-What's on: Full JavaScript, WebGL, video/audio codecs, all CSS features.
+What's on - Full JavaScript, WebGL, video/audio codecs, all CSS features.
 
-Risk: JavaScript is the most common vector for browser exploits and fingerprinting techniques that can de-anonymize Tor Browser users. A zero-day JavaScript exploit can potentially reveal your real IP or identity.
+Risk - JavaScript is the most common vector for browser exploits and fingerprinting techniques that can de-anonymize Tor Browser users. A zero-day JavaScript exploit can potentially reveal your real IP or identity.
 
 Safer
 
 Disables JavaScript on non-HTTPS sites. Disables some mathematical operations used for certain attacks. Disables audio and video content.
 
-What's on: JavaScript only on HTTPS sites. HTML5 media requires click-to-play.
+What's on - JavaScript only on HTTPS sites. HTML5 media requires click-to-play.
 
-Recommended for: Most serious use cases. journalism, political activity in restrictive countries, general sensitive research. The trade-off in usability is modest; most important content is on HTTPS.
+Recommended for - Most serious use cases. journalism, political activity in restrictive countries, general sensitive research. The trade-off in usability is modest; most important content is on HTTPS.
 
 Safest
 
 JavaScript disabled everywhere. Only HTTPS content rendered. Plain HTML and CSS only.
 
-What's on: Static content only. Many websites are partially or completely broken.
+What's on - Static content only. Many websites are partially or completely broken.
 
-Recommended for: Maximum threat scenarios. accessing hidden services, communicating in high-risk environments, situations where a browser exploit could be life-threatening.
+Recommended for - Maximum threat scenarios. accessing hidden services, communicating in high-risk environments, situations where a browser exploit could be life-threatening.
 
 ```
 Standard   → general browsing, lower risk
@@ -68,7 +68,7 @@ Safer      → sensitive work, recommended default for most users
 Safest     → maximum threat, activist/journalist in hostile environment
 ```
 
-Step 2: Circuit Controls
+Step 2 - Circuit Controls
 
 Each tab in Tor Browser uses a circuit: a path through three Tor relays (guard → middle → exit). The exit relay is the one that communicates with the destination website.
 
@@ -85,13 +85,13 @@ New Identity
 
 Click the menu (hamburger) → New Identity, or press Ctrl+Shift+U.
 
-This is the nuclear option: closes all tabs, clears all state (cookies, session storage, cache), and establishes entirely new circuits including a new guard relay position.
+This is the nuclear option - closes all tabs, clears all state (cookies, session storage, cache), and establishes entirely new circuits including a new guard relay position.
 
 Use this when you want to break the connection between your current browsing session and any future browsing. This is the correct way to switch between "personas" in Tor Browser.
 
 Do not use New Identity frequently during a single sensitive task. the act of requesting new circuits repeatedly can itself be a pattern observable to relay operators.
 
-Step 3: The No-Extensions Rule
+Step 3 - The No-Extensions Rule
 
 Do not install extensions in Tor Browser. This is one of the most critical rules.
 
@@ -104,7 +104,7 @@ The same principle applies to:
 - Modifying `about:config` settings that affect fingerprint
 - Installing language packs beyond what Tor Browser ships with
 
-Step 4: JavaScript and NoScript
+Step 4 - JavaScript and NoScript
 
 When Security Level is set to Safer or Safest, NoScript controls which sites can run JavaScript. With Safer:
 
@@ -118,7 +118,7 @@ To temporarily enable JavaScript on a specific HTTP site (if necessary):
 
 Never click "Trust all domains". this disables the entire point of NoScript.
 
-Step 5: Handling Downloads
+Step 5 - Handling Downloads
 
 Downloads are a significant risk in Tor Browser. Downloaded files can contain content that your operating system opens automatically. PDFs, documents, videos. and some of these may make network connections that bypass Tor, revealing your real IP.
 
@@ -137,31 +137,31 @@ Heed this warning. For sensitive downloads:
 3. Use a read-only sandbox (like Dangerzone for documents)
 4. For PDFs: use a text extractor rather than a PDF viewer
 
-Step 6: Tor Browser on Windows vs Linux vs macOS
+Step 6 - Tor Browser on Windows vs Linux vs macOS
 
 Tor Project's security is strongest when running on a minimal Linux system:
 
-Windows: Microsoft telemetry, Windows Defender integration, and system services create more attack surface and more potential for de-anonymizing metadata.
+Windows - Microsoft telemetry, Windows Defender integration, and system services create more attack surface and more potential for de-anonymizing metadata.
 
 macOS: Better than Windows but still includes Apple telemetry and network agents.
 
-Linux: Preferred. Minimal system daemons, no mandatory telemetry, more transparent system behavior.
+Linux - Preferred. Minimal system daemons, no mandatory telemetry, more transparent system behavior.
 
-Tails OS: Best option for maximum anonymity. the entire operating system is designed around anonymity, running from RAM with no persistent storage by default, and all connections go through Tor at the system level (not just Tor Browser).
+Tails OS - Best option for maximum anonymity. the entire operating system is designed around anonymity, running from RAM with no persistent storage by default, and all connections go through Tor at the system level (not just Tor Browser).
 
-Step 7: Common Mistakes That Undermine Tor Browser
+Step 7 - Common Mistakes That Undermine Tor Browser
 
-Logging into personal accounts: If you log into your real Google, Facebook, or email account inside Tor Browser, the site operator knows who you are. Tor hides your IP from the site, but your account credentials defeat that. Never mix identity with anonymity.
+Logging into personal accounts - If you log into your real Google, Facebook, or email account inside Tor Browser, the site operator knows who you are. Tor hides your IP from the site, but your account credentials defeat that. Never mix identity with anonymity.
 
 Using Tor Browser at home for sensitive tasks, then regular browsing: If you use Tor Browser for anonymous research and then immediately search for your own name in another tab, those sessions should not overlap. Use Tor Browser exclusively for sensitive tasks, not mixed with regular browsing.
 
-Resizing the browser window: Tor Browser opens at a specific window size. Resizing creates a unique window dimensions fingerprint. Always use Tor Browser at its default window size or fullscreen (Tor 12+ handles this better with letterboxing).
+Resizing the browser window - Tor Browser opens at a specific window size. Resizing creates a unique window dimensions fingerprint. Always use Tor Browser at its default window size or fullscreen (Tor 12+ handles this better with letterboxing).
 
-Allowing location access: Never grant location permission to any site inside Tor Browser. Even a coarse location request can reveal which country's Tor exit node you're using.
+Allowing location access - Never grant location permission to any site inside Tor Browser. Even a coarse location request can reveal which country's Tor exit node you're using.
 
 Using HTTP sites for sensitive work: Tor protects against your ISP and network observers. An exit relay can see HTTP traffic in plaintext. Always use HTTPS for sensitive sites. check the address bar for the padlock.
 
-Step 8: Bridges for Censored Regions
+Step 8 - Bridges for Censored Regions
 
 If Tor is blocked in your country, configure bridges in Tor Browser:
 
@@ -171,10 +171,10 @@ Obfs4 bridges obfuscate Tor traffic to look like random HTTPS traffic. Snowflake
 
 ```bash
 Request bridges via email (works when the website is blocked)
-Send empty email to: bridges@torproject.org
+Send empty email to - bridges@torproject.org
 ```
 
-Advanced Configuration: The Torrc File
+Advanced Configuration - The Torrc File
 
 For developers and power users, Tor Browser allows direct configuration through `torrc` files. Access the Tor Browser data directory and edit configuration directly:
 
@@ -217,7 +217,7 @@ UseEntryGuards 1
 NumEntryGuards 3
 ```
 
-Step 9: Test Tor Browser Configuration
+Step 9 - Test Tor Browser Configuration
 
 After configuration changes, verify your anonymity:
 
@@ -248,7 +248,7 @@ Should show only Tor exit node IP
 If shows your ISP IP, WebRTC is leaking
 ```
 
-Step 10: Tor Browser Fingerprinting Risks
+Step 10 - Tor Browser Fingerprinting Risks
 
 Tor Browser specifically minimizes browser fingerprinting, but users often accidentally re-enable it:
 
@@ -267,7 +267,7 @@ Common fingerprinting mistakes:
 
 5. Using multiple profiles - Each profile is a separate fingerprint. Tor Browser intentionally uses one profile per instance.
 
-Step 11: Timing Attack Mitigation
+Step 11 - Timing Attack Mitigation
 
 Tor protects against IP leaks but not against traffic analysis by powerful network observers:
 
@@ -280,7 +280,7 @@ Observer notes:
 - Your home IP disconnects at 14:24:15
 - Tor exit disconnects at 14:24:18
 
-Observer correlates: Your timing matches the exit node timing.
+Observer correlates - Your timing matches the exit node timing.
 ```
 
 Mitigation:
@@ -302,7 +302,7 @@ Now perform your Tor activity
 torsocks curl https://example.com
 ```
 
-Step 12: Use Tails with Tor Browser
+Step 12 - Use Tails with Tor Browser
 
 Tails OS (The Amnesic Incognito Live System) combines Tor Browser with system-level protections:
 
@@ -326,7 +326,7 @@ On shutdown, Tails clears all RAM
 No evidence of activity remains
 ```
 
-Step 13: When Tor Browser Is Not Enough
+Step 13 - When Tor Browser Is Not Enough
 
 Recognize when additional protections are needed:
 
@@ -340,7 +340,7 @@ Tor Browser plus email setup:
 ```bash
 ProtonMail in Tor Browser for additional email privacy
 1. Install Tor Browser
-2. Access: https://protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion/
+2. Access - https://protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion/
    (ProtonMail's .onion address - only accessible via Tor)
 3. Create account with security questions only (no recovery email)
 4. Enable two-factor authentication
@@ -349,7 +349,7 @@ ProtonMail in Tor Browser for additional email privacy
 
 Troubleshooting Tor Browser Issues
 
-Issue: Tor Browser won't connect
+Issue - Tor Browser won't connect
 ```bash
 Check if Tor service is running
 ps aux | grep tor
@@ -362,12 +362,12 @@ Check torrc for syntax errors:
 tor --validate-config -f /etc/tor/torrc
 ```
 
-Issue: Very slow connections
+Issue - Very slow connections
 - Try New Circuit (may help with congested relay)
 - Use obfuscated bridges (meek, snowflake) which may have better capacity
 - Test at different times (relay capacity varies by hour)
 
-Issue: Websites blocking Tor traffic
+Issue - Websites blocking Tor traffic
 - Some sites block known Tor exit nodes
 - Use obfuscated bridges to disguise Tor traffic
 - Contact site operators to request Tor support (many major sites now support it)

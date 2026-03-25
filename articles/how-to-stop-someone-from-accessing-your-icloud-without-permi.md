@@ -37,7 +37,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand iCloud Access Vectors
+Step 1 - Understand iCloud Access Vectors
 
 Before implementing security measures, understanding how iCloud can be accessed is essential. Apple provides multiple access points to your iCloud data:
 
@@ -49,7 +49,7 @@ Before implementing security measures, understanding how iCloud can be accessed 
 
 Each of these vectors represents a potential attack surface. Securing your account requires addressing each one thoroughly.
 
-Step 2: Enable Two-Factor Authentication for Apple ID
+Step 2 - Enable Two-Factor Authentication for Apple ID
 
 The single most effective step you can take is enabling two-factor authentication (2FA) for your Apple ID. This adds a second layer of protection beyond your password.
 
@@ -70,7 +70,7 @@ Via the Web
 
 Once enabled, any new device attempting to access your account will require approval from a trusted device or a verification code sent to your phone number.
 
-Step 3: Audit Active Sessions and Devices
+Step 3 - Audit Active Sessions and Devices
 
 Regularly reviewing active sessions helps you identify unauthorized access early. Apple provides a session management interface that shows all devices currently signed into your iCloud account.
 
@@ -91,7 +91,7 @@ Programmatic Session Review (Advanced)
 
 While Apple does not provide a public API for session management, you can use Apple's System Preferences or Settings to view device status. For enterprise environments managing multiple Apple IDs, consider using Mobile Device Management (MDM) solutions that integrate with Apple Business Manager for centralized oversight.
 
-Step 4: Revoke Third-Party App Access
+Step 4 - Revoke Third-Party App Access
 
 Many third-party applications request access to your iCloud data for functionality like calendar synchronization, contact management, or cloud storage. Regularly auditing and revoking unnecessary access reduces your attack surface.
 
@@ -117,7 +117,7 @@ Review and remove any associated iCloud containers
 that are no longer in use
 ```
 
-Step 5: Implement a Recovery Key
+Step 5 - Implement a Recovery Key
 
 Standard account recovery relies on trusted phone numbers and devices. For enhanced security, you can generate a recovery key that serves as a backup authentication method.
 
@@ -130,7 +130,7 @@ Setting Up a Recovery Key
 
 Store this recovery key in a secure location, preferably in a password manager or physical safe. Without the recovery key, Apple cannot help you recover your account if you lose access to all trusted devices.
 
-Step 6: Monitor Account Activity
+Step 6 - Monitor Account Activity
 
 Apple provides limited but useful activity logging. Check your account periodically for any suspicious activity.
 
@@ -147,7 +147,7 @@ Look for:
 
 If you notice suspicious activity, change your password immediately and regenerate your recovery key.
 
-Step 7: Secure Your Associated Email Address
+Step 7 - Secure Your Associated Email Address
 
 Your Apple ID is typically tied to an email address. Ensure that email account is equally secure, as password reset requests for your Apple ID will be sent there.
 
@@ -155,7 +155,7 @@ Your Apple ID is typically tied to an email address. Ensure that email account i
 - Use a strong, unique password
 - Consider using a dedicated email address for critical accounts
 
-Step 8: Use Separate Email for Apple ID
+Step 8 - Use Separate Email for Apple ID
 
 If your current Apple ID email has been compromised in a data breach, creating a new Apple ID with a fresh email address provides a clean security slate.
 
@@ -165,7 +165,7 @@ If your current Apple ID email has been compromised in a data breach, creating a
 4. Gradually transition devices to the new account
 5. Delete or secure the old account
 
-Step 9: Emergency Response Procedure
+Step 9 - Emergency Response Procedure
 
 If you believe someone currently has access to your account:
 
@@ -175,7 +175,7 @@ If you believe someone currently has access to your account:
 4. Generate a new recovery key
 5. Contact Apple Support if you cannot regain access
 
-Step 10: Understand iCloud Attack Vectors and Prevention
+Step 10 - Understand iCloud Attack Vectors and Prevention
 
 iCloud security threats evolve constantly. Understanding specific attack methods helps you implement targeted defenses.
 
@@ -193,14 +193,14 @@ Weak or Reused Passwords
 
 If your iCloud password is identical to your Netflix password, and Netflix is breached, attackers can try the same password on iCloud.
 
-Check your passwords: Use haveibeenpwned.com to see if your email appears in known breaches. This doesn't scan private data, only publicly known breaches.
+Check your passwords - Use haveibeenpwned.com to see if your email appears in known breaches. This doesn't scan private data, only publicly known breaches.
 
 ```bash
 Command-line check (no transmission of sensitive data)
 curl -s "https://haveibeenpwned.com/api/v3/breachedaccount/your@email.com" \
   -H "User-Agent: Mozilla/5.0" || echo "Not in known breaches"
 
-Better: Check via Apple ID under Sign-In & Security
+Better - Check via Apple ID under Sign-In & Security
 ```
 
 Compromised Recovery Contacts
@@ -228,7 +228,7 @@ Detection and prevention:
 
 Any device removed from your account immediately loses iCloud access.
 
-Step 11: Responding to Suspected Unauthorized Access
+Step 11 - Responding to Suspected Unauthorized Access
 
 If you suspect someone has accessed your account:
 
@@ -289,7 +289,7 @@ If you cannot reset your password and someone else clearly has control:
  - Dispute any fraudulent charges with Apple Support
  - Monitor for unexpected subscriptions or app purchases
 
-Step 12: Developer Considerations
+Step 12 - Developer Considerations
 
 For developers integrating with iCloud:
 
@@ -375,7 +375,7 @@ func syncWithiCloud(completion: @escaping (Result<Void, SyncError>) -> Void) {
 }
 ```
 
-Advanced: Using Find My Network for Account Recovery
+Advanced - Using Find My Network for Account Recovery
 
 If your device was stolen and you enabled Find My Device:
 

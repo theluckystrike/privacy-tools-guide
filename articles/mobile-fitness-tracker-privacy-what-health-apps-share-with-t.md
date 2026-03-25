@@ -25,7 +25,7 @@ Table of Contents
 - [API Security Considerations for Developers](#api-security-considerations-for-developers)
 - [Regulatory Environment in 2026](#regulatory-environment-in-2026)
 - [Practical Steps for Protecting Your Health Data](#practical-steps-for-protecting-your-health-data)
-- [Network Traffic Analysis: See What Your Fitness App Sends](#network-traffic-analysis-see-what-your-fitness-app-sends)
+- [Network Traffic Analysis - See What Your Fitness App Sends](#network-traffic-analysis-see-what-your-fitness-app-sends)
 - [Privacy-First Fitness App Recommendations](#privacy-first-fitness-app-recommendations)
 
 What Data Do Fitness Apps Collect?
@@ -129,12 +129,12 @@ Data Minimization in API Responses
 Send only necessary data to clients:
 
 ```python
-Bad: Exposing all health data
+Bad - Exposing all health data
 @app.get("/health-data/workouts")
 async def get_workouts(user_id: str):
     return await db.workouts.find({"user_id": user_id}).to_list()
 
-Better: Filtering sensitive fields
+Better - Filtering sensitive fields
 @app.get("/health-data/workouts")
 async def get_workouts(user_id: str):
     projection = {
@@ -166,7 +166,7 @@ Audit App Permissions
 Regularly review what permissions your fitness apps request:
 
 ```bash
-Android: Check app permissions via ADB
+Android - Check app permissions via ADB
 adb shell dumpsys package com.example.fitnessapp | grep -A 50 "android.permission"
 
 iOS: Review in Settings > Privacy & Security > Health
@@ -203,7 +203,7 @@ curl -X POST "https://api.fitnessapp.com/v1/data/export" \
   -d '{"format": "json", "data_types": ["workouts", "heart_rate", "sleep"]}'
 ```
 
-Network Traffic Analysis: See What Your Fitness App Sends
+Network Traffic Analysis - See What Your Fitness App Sends
 
 Inspect exactly what data your fitness app transmits by routing traffic through a proxy:
 
@@ -216,7 +216,7 @@ mitmweb --listen-port 8080
 
 Configure your phone to use your computer as HTTP proxy
 iOS: Settings > WiFi > Configure Proxy > Manual > Your IP:8080
-Android: Settings > WiFi > Modify Network > Proxy > Manual
+Android - Settings > WiFi > Modify Network > Proxy > Manual
 ```
 
 After setting up the proxy, open your fitness app and perform typical actions. Look for GPS coordinates in workout sync requests, heart rate data sent to analytics endpoints, and advertising IDs included in API calls.
@@ -234,7 +234,7 @@ Gadgetbridge replaces proprietary companion apps for Amazfit, Xiaomi Mi Band, an
 
 ```bash
 Install Gadgetbridge from F-Droid (privacy-respecting app store)
-F-Droid: https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/
+F-Droid - https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/
 ```
 
 Frequently Asked Questions

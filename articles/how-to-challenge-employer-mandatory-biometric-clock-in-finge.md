@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Biometric Data Laws
+Step 1 - Understand Biometric Data Laws
 
 Biometric information is uniquely personal. Unlike a password that can be changed if compromised, your fingerprint or facial geometry cannot be regenerated. Several jurisdictions have enacted specific laws governing how employers can collect and store this sensitive data.
 
@@ -46,7 +46,7 @@ California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA) 
 
 EU employees are protected under GDPR Article 9, which classifies biometric data as "special category" data requiring explicit consent and stronger safeguards.
 
-Step 2: Steps to Challenge Mandatory Biometric Clock-In
+Step 2 - Steps to Challenge Mandatory Biometric Clock-In
 
 1. Document Everything
 
@@ -66,7 +66,7 @@ Right to Know Request (CCPA/CPRA):
 Email template for California employees
 cat << 'EOF' > right_to_know_request.txt
 To: HR Department
-Subject: CCPA Right to Know Request - Biometric Data
+Subject - CCPA Right to Know Request - Biometric Data
 
 I am requesting disclosure of:
 1. All biometric data collected about me
@@ -109,7 +109,7 @@ If your employer refuses alternatives or violates privacy laws:
 - EU: File with your national Data Protection Authority
 - General: Submit FTC complaints for deceptive practices if consent was obtained through misleading information
 
-Step 3: Technical Considerations for Developers
+Step 3 - Technical Considerations for Developers
 
 If you're building systems or evaluating employer tools, understand the technical space:
 
@@ -147,11 +147,11 @@ Security Questions to Ask
 
 When evaluating your employer's system, consider:
 
-- Storage: Is biometric data stored locally on the device or transmitted to external servers?
-- Encryption: Is data encrypted at rest and in transit? What encryption standards?
+- Storage - Is biometric data stored locally on the device or transmitted to external servers?
+- Encryption - Is data encrypted at rest and in transit? What encryption standards?
 - Third parties: Who operates the biometric system? Is data shared with vendors?
-- Retention: What happens to biometric data when employment ends?
-- Deletion: Can you request permanent deletion of your biometric template?
+- Retention - What happens to biometric data when employment ends?
+- Deletion - Can you request permanent deletion of your biometric template?
 
 Privacy-Preserving Alternatives
 
@@ -188,7 +188,7 @@ This approach:
 - Hashes data server-side so raw identifiers aren't stored
 - Allows legitimate time tracking without biometric collection
 
-Step 4: When Legal Action Makes Sense
+Step 4 - When Legal Action Makes Sense
 
 Consider pursuing legal action when:
 
@@ -200,7 +200,7 @@ Consider pursuing legal action when:
 
 Document all communications with HR regarding your concerns. Emails and written responses serve as evidence if you pursue complaints or litigation.
 
-Step 5: Protecting Yourself Going Forward
+Step 5 - Protecting Yourself Going Forward
 
 While challenging employer policies, protect your own interests:
 

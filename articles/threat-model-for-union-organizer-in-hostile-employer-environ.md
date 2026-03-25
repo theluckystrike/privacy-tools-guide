@@ -47,7 +47,7 @@ Building Your Threat Model
 
 A practical threat model uses the STRIDE framework adapted for organizing contexts: Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, and Elevation of Privilege.
 
-Step 1: Asset Identification
+Step 1 - Asset Identification
 
 Identify what you need to protect. For union organizers, this typically includes:
 
@@ -80,7 +80,7 @@ assets = {
 }
 ```
 
-Step 2: Threat Actor Analysis
+Step 2 - Threat Actor Analysis
 
 Document specific threats using a severity matrix:
 
@@ -91,7 +91,7 @@ Document specific threats using a severity matrix:
 | Social engineering | High | Medium | Training, verification protocols |
 | Physical surveillance | Medium | Medium | OPSEC procedures, counter-surveillance |
 
-Step 3: Attack Vector Mapping
+Step 3 - Attack Vector Mapping
 
 Consider how each adversary might access your assets:
 
@@ -128,8 +128,8 @@ For sensitive discussions, consider layered encryption:
 
 ```python
 Use multiple encryption layers for sensitive communications
-Layer 1: Signal (transport encryption)
-Layer 2: PGP for additional protection on stored messages
+Layer 1 - Signal (transport encryption)
+Layer 2 - PGP for additional protection on stored messages
 
 from cryptography.fernet import Fernet
 import base64

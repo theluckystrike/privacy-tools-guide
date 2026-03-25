@@ -42,7 +42,7 @@ Practical implementation:
 Check balance on many prepaid cards via phone or web
 No account creation required for basic cards
 Some cards charge activation fees ($3-10)
-Average reloadable card: $500-$5,000 limits
+Average reloadable card - $500-$5,000 limits
 ```
 
 Limitations apply. Many online services decline prepaid cards due to fraud prevention measures. Cards often carry lower spending limits compared to traditional credit cards. Some services specifically exclude prepaid instruments.
@@ -226,7 +226,7 @@ What is the learning curve like?
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-Advanced Tracking Prevention: Payment Correlation
+Advanced Tracking Prevention - Payment Correlation
 
 When using multiple payment methods, prevent merchants from correlating your identities:
 
@@ -234,18 +234,18 @@ Payment Correlation Attack
 
 ```
 You use same laptop to purchase via prepaid card and virtual card
-Merchant A: Sees prepaid card + IP 192.168.1.50 + Browser fingerprint X
-Merchant B: Sees virtual card + IP 192.168.1.50 + Browser fingerprint X
+Merchant A - Sees prepaid card + IP 192.168.1.50 + Browser fingerprint X
+Merchant B - Sees virtual card + IP 192.168.1.50 + Browser fingerprint X
 
-Both merchants can deduce: "Same person made both purchases"
+Both merchants can deduce - "Same person made both purchases"
 ```
 
 Prevention Strategies
 
 ```bash
 1. Use VPN + different accounts for different payment methods
-Payment via prepaid card: VPN location A, Fresh browser profile
-Payment via virtual card: VPN location B, Different browser profile
+Payment via prepaid card - VPN location A, Fresh browser profile
+Payment via virtual card - VPN location B, Different browser profile
 
 2. Temporal separation
 Don't make prepaid and virtual card purchases within hours of each other
@@ -366,7 +366,7 @@ class PrivacyPaymentProcessor:
 
 Merchant Dispute Resolution for Anonymous Payments
 
-Problem: If using anonymous payment method, disputing fraudulent charges is difficult.
+Problem - If using anonymous payment method, disputing fraudulent charges is difficult.
 
 Solution:
 
@@ -377,7 +377,7 @@ Solution:
 4. For privacy services: Verify the service has dispute processes before paying
 ```
 
-Regulatory Landscape Changes (2024-2026)
+Regulatory field Changes (2024-2026)
 
 Payment privacy is tightening:
 

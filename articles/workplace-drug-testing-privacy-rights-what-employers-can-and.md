@@ -181,7 +181,7 @@ Results
 
 Employee Acknowledgment
 I acknowledge receipt of test result: ___________
-Date: ___________
+Date - ___________
 ```
 
 State-Specific Dispute Procedures
@@ -209,7 +209,7 @@ echo "  - Demand letter to employer"
 echo ""
 echo "Resources:"
 echo "- CA DLSE: https://www.dir.ca.gov/dlse/"
-echo "- AB 2776 Text: https://leginfo.legislature.ca.gov/"
+echo "- AB 2776 Text - https://leginfo.legislature.ca.gov/"
 ```
 
 New York Dispute Process

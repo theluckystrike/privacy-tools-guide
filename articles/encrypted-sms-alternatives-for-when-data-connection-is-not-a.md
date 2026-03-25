@@ -21,7 +21,7 @@ When data connectivity is unavailable, traveling without cellular data, in netwo
 Table of Contents
 
 - [The Core Challenge](#the-core-challenge)
-- [Carrier-Based Solutions: S/MIME and Rich Communication Services](#carrier-based-solutions-smime-and-rich-communication-services)
+- [Carrier-Based Solutions - S/MIME and Rich Communication Services](#carrier-based-solutions-smime-and-rich-communication-services)
 - [Application-Layer SMS Encryption](#application-layer-sms-encryption)
 - [Mesh Networking Applications](#mesh-networking-applications)
 - [Offline Message Queuing Strategies](#offline-message-queuing-strategies)
@@ -34,7 +34,7 @@ Standard SMS operates independently of data networks, but it lacks encryption by
 
 Three primary approaches address this gap: carrier-supported encryption through IMS (IP Multimedia Subsystem), application-layer encryption embedded in SMS payloads, and mesh networking protocols that use SMS as a transport medium for encrypted content.
 
-Carrier-Based Solutions: S/MIME and Rich Communication Services
+Carrier-Based Solutions - S/MIME and Rich Communication Services
 
 Modern cellular networks increasingly support encrypted messaging through RCS (Rich Communication Services). While RCS requires data for initial negotiation, some implementations cache encryption keys for limited offline operation.
 
@@ -43,7 +43,7 @@ S/MIME for Enterprise SMS
 S/MIME (Secure/Multipurpose Internet Mail Extensions) provides certificate-based encryption for email and can extend to messaging in enterprise environments. The protocol uses asymmetric encryption where each participant possesses a public/private key pair.
 
 ```python
-Python example: S/MIME message creation structure
+Python example - S/MIME message creation structure
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
 import base64
@@ -138,7 +138,7 @@ The encryption implementation involves:
 4. Routing through intermediate nodes without decryption
 
 ```python
-Python example: Simplified mesh message routing concept
+Python example - Simplified mesh message routing concept
 import hashlib
 import os
 
@@ -173,7 +173,7 @@ For developers building custom solutions, implementing an offline message queue 
 Implementation Architecture
 
 ```python
-Python example: Offline message queue with encryption
+Python example - Offline message queue with encryption
 import sqlite3
 import json
 from datetime import datetime
@@ -249,7 +249,7 @@ The most resilient strategy combines multiple methods:
 For developers, implementing this hybrid system involves creating an abstraction layer that selects transmission methods based on available connectivity:
 
 ```python
-Python example: Adaptive message transmission
+Python example - Adaptive message transmission
 class AdaptiveMessenger:
     def __init__(self, config):
         self.config = config

@@ -37,7 +37,7 @@ Traditional conference call services collect varying amounts of participant data
 
 For developers building privacy-conscious applications or individuals requiring secure communications, understanding these risks is essential before selecting a service.
 
-Signal Private Messenger: Voice and Video Calls
+Signal Private Messenger - Voice and Video Calls
 
 Signal provides end-to-end encrypted voice and video calls through its established messaging platform. While primarily known for text messaging, Signal's calling functionality offers strong privacy guarantees.
 
@@ -62,7 +62,7 @@ npm install libsignal
 
 Signal works best when all participants are willing to install the application and create accounts. The privacy trade-off is that you trust Signal's infrastructure while gaining strong encryption and minimal metadata.
 
-Jitsi Meet: Self-Hosted Conference Solutions
+Jitsi Meet - Self-Hosted Conference Solutions
 
 Jitsi Meet offers an open-source video conferencing platform that you can self-host. When you run your own Jitsi instance, you control all data, including what gets logged.
 
@@ -100,7 +100,7 @@ JITSI_LOGGER_STORAGEdestination=
 
 When self-hosting Jitsi, configure your server to not log participant IP addresses or session data. Use authentication mechanisms like JWT tokens for controlled access without exposing participant identities.
 
-Wickr: Enterprise-Grade Secure Communications
+Wickr - Enterprise-Grade Secure Communications
 
 Wickr provides secure communication services designed for enterprise use with strong privacy protections. The platform has undergone security audits and offers configurable data retention policies.
 
@@ -117,7 +117,7 @@ Limitations:
 
 Wickr's professional tier offers secure conference calling suitable for organizations requiring compliance with privacy regulations. The administrative console allows fine-grained control over what data gets stored.
 
-Element (Matrix Protocol): Decentralized Communications
+Element (Matrix Protocol) - Decentralized Communications
 
 Element is a secure messaging and calling client built on the Matrix open standard. The decentralized nature means no single company controls all the data.
 
@@ -142,7 +142,7 @@ enable_registration: false (for private rooms)
 
 Element supports group video calls with end-to-end encryption. The Matrix protocol's federation architecture means you can communicate with users on other servers while maintaining control over your own data.
 
-Practical Implementation: Building Anonymous Conference Links
+Practical Implementation - Building Anonymous Conference Links
 
 For developers who want to generate anonymous conference links without exposing personal information, consider combining services:
 

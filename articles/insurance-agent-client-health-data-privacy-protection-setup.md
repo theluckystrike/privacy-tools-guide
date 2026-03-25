@@ -31,14 +31,14 @@ Protect client health data by implementing AES-256 encryption for all stored dat
 
 Table of Contents
 
-- [Understanding the Stakes: Why Health Data Protection Matters](#understanding-the-stakes-why-health-data-protection-matters)
+- [Understanding the Stakes - Why Health Data Protection Matters](#understanding-the-stakes-why-health-data-protection-matters)
 - [Building Your Health Data Privacy Infrastructure](#building-your-health-data-privacy-infrastructure)
-- [Practical Implementation: Day-to-Day Operations](#practical-implementation-day-to-day-operations)
+- [Practical Implementation - Day-to-Day Operations](#practical-implementation-day-to-day-operations)
 - [Technology Solutions for Health Data Protection](#technology-solutions-for-health-data-protection)
 - [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
 - [Measuring Your Privacy Protection Maturity](#measuring-your-privacy-protection-maturity)
 
-Understanding the Stakes: Why Health Data Protection Matters
+Understanding the Stakes - Why Health Data Protection Matters
 
 When clients share their medical histories, prescription medications, or chronic conditions with you, they're placing tremendous trust in your organization. This health data falls under the strictest categories of protected information, and for good reason.
 
@@ -58,7 +58,7 @@ State Privacy Laws add another layer of requirements. California (CCPA/CPRA), Vi
 
 Building Your Health Data Privacy Infrastructure
 
-Step 1: Conduct a Data Inventory
+Step 1 - Conduct a Data Inventory
 
 Before you can protect client health data, you need to understand exactly what you're collecting, where it's stored, and who has access to it.
 
@@ -72,7 +72,7 @@ Create a data map that documents:
 
 This inventory becomes the foundation for your privacy protection program and demonstrates compliance efforts to regulators if ever questioned.
 
-Step 2: Implement Technical Safeguards
+Step 2 - Implement Technical Safeguards
 
 Technical safeguards form the backbone of your data protection strategy:
 
@@ -88,7 +88,7 @@ Segment your network to isolate systems containing health data from general busi
 Endpoint Protection
 Ensure all devices that access client health data, computers, tablets, smartphones, run current security software, operating systems, and applications. Enable remote wipe capabilities for mobile devices in case of loss or theft.
 
-Step 3: Establish Administrative Policies
+Step 3 - Establish Administrative Policies
 
 Technical measures alone aren't sufficient. Your organization needs policies that govern how employees handle health data:
 
@@ -101,7 +101,7 @@ Define clear timeframes for retaining client health data and establish secure de
 Incident Response Plan
 Develop and document procedures for responding to potential data breaches, including immediate containment steps, notification requirements, and remediation procedures.
 
-Step 4: Physical Security Measures
+Step 4 - Physical Security Measures
 
 Don't overlook physical security, especially if you maintain paper records or have on-premises servers:
 
@@ -110,7 +110,7 @@ Don't overlook physical security, especially if you maintain paper records or ha
 - Implement clean desk policies requiring employees to secure all documents when away from their workstations
 - Ensure backup storage locations have equivalent security measures
 
-Step 5: Third-Party Vendor Management
+Step 5 - Third-Party Vendor Management
 
 Insurance agents often rely on third-party services for CRM systems, email marketing, cloud storage, and other tools. These vendors become potential points of data exposure:
 
@@ -123,7 +123,7 @@ Execute Business Associate Agreements (BAAs) with vendors where required, and in
 Ongoing Monitoring
 Regularly review vendor security practices and maintain awareness of any breaches or security incidents affecting your service providers.
 
-Practical Implementation: Day-to-Day Operations
+Practical Implementation - Day-to-Day Operations
 
 Secure Client Communication
 

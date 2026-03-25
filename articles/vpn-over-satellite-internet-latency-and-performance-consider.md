@@ -120,7 +120,7 @@ WireGuard interface MTU in config
 [Interface]
 MTU = 1420
 
-Alternative: Adjust system-wide for all VPN traffic
+Alternative - Adjust system-wide for all VPN traffic
 sudo ip link set dev wg0 mtu 1420
 ```
 
@@ -155,7 +155,7 @@ Modern processors handle AES-256 with minimal overhead, but the key exchange met
 WireGuard uses ChaCha20-Poly1305 by default
 For maximum performance, this is already optimized
 
-OpenVPN: prefer CHACHA20-POLY1305 over AES
+OpenVPN - prefer CHACHA20-POLY1305 over AES
 cipher CHACHA20-POLY1305
 auth SHA256
 ```
@@ -165,7 +165,7 @@ Compression Trade-offs
 Avoid compression over satellite links unless you specifically need to trade CPU for bandwidth:
 
 ```
-OpenVPN: disable compression for satellite
+OpenVPN - disable compression for satellite
 compress lz4-v2
 
 Or disable entirely (recommended for security)
@@ -186,7 +186,7 @@ Split Tunneling
 Route only necessary traffic through the VPN to reduce latency:
 
 ```bash
-WireGuard: only route specific networks through VPN
+WireGuard - only route specific networks through VPN
 [Peer]
 AllowedIPs = 10.0.0.0/8, 192.168.100.0/24
 Internet traffic goes direct (bypasses VPN)

@@ -50,7 +50,7 @@ The ClientHello Message
 
 The ClientHello is the first message in the TLS handshake. It contains the core information used for fingerprinting:
 
-- TLS Version: The highest TLS version the client supports (TLS 1.2 or TLS 1.3)
+- TLS Version - The highest TLS version the client supports (TLS 1.2 or TLS 1.3)
 - Cipher Suites: A list of cipher suites the client is willing to use, in preference order
 - Extensions: Additional parameters like Server Name Indication (SNI), Application-Layer Protocol Negotiation (ALPN), and supported versions
 - Elliptic Curve Groups: For TLS 1.2 and earlier, which elliptic curves the client supports
@@ -98,23 +98,23 @@ Real-World Applications
 
 TLS fingerprinting serves both defensive and offensive purposes:
 
-Bot Detection: Security systems use JA3 fingerprints to identify automated traffic. Bots often use libraries like Python requests, Go's crypto/tls, or curl, which have distinctive fingerprints different from mainstream browsers. If a client claims to be a browser but has a bot-like fingerprint, it gets flagged.
+Bot Detection - Security systems use JA3 fingerprints to identify automated traffic. Bots often use libraries like Python requests, Go's crypto/tls, or curl, which have distinctive fingerprints different from mainstream browsers. If a client claims to be a browser but has a bot-like fingerprint, it gets flagged.
 
-Traffic Classification: Network monitoring tools use TLS fingerprints to identify applications without decrypting traffic. Identifying which applications generate traffic helps with capacity planning and policy enforcement.
+Traffic Classification - Network monitoring tools use TLS fingerprints to identify applications without decrypting traffic. Identifying which applications generate traffic helps with capacity planning and policy enforcement.
 
-Censorship and Blocking: Some firewalls and censorship systems block specific browser fingerprints they consider undesirable. This is why the Tor Browser randomizes its TLS parameters, to resist fingerprinting-based blocking.
+Censorship and Blocking - Some firewalls and censorship systems block specific browser fingerprints they consider undesirable. This is why the Tor Browser randomizes its TLS parameters, to resist fingerprinting-based blocking.
 
-Fraud Prevention: E-commerce platforms use TLS fingerprints alongside other signals to detect account takeover attempts. A login from a device with a new fingerprint may trigger additional verification.
+Fraud Prevention - E-commerce platforms use TLS fingerprints alongside other signals to detect account takeover attempts. A login from a device with a new fingerprint may trigger additional verification.
 
 Defending Against TLS Fingerprinting
 
 If you want to make your traffic less identifiable, several approaches help:
 
-Use Standard Configurations: Browsers like Tor Browser aim to blend in with the crowd by using common TLS parameters. However, even then, other factors like timing, packet sizes, and behavior create fingerprints.
+Use Standard Configurations - Browsers like Tor Browser aim to blend in with the crowd by using common TLS parameters. However, even then, other factors like timing, packet sizes, and behavior create fingerprints.
 
-Randomize Parameters: Some privacy tools randomize cipher suite order and extension lists. This makes fingerprinting harder but can cause interoperability issues with servers that have strict TLS requirements.
+Randomize Parameters - Some privacy tools randomize cipher suite order and extension lists. This makes fingerprinting harder but can cause interoperability issues with servers that have strict TLS requirements.
 
-HTTP/3 and QUIC: Newer protocols like HTTP/3 use QUIC, which has different handshake characteristics. These protocols are still being fingerprintable but add complexity for fingerprinters.
+HTTP/3 and QUIC - Newer protocols like HTTP/3 use QUIC, which has different handshake characteristics. These protocols are still being fingerprintable but add complexity for fingerprinters.
 
 ```python
 Checking if your TLS library exposes a unique fingerprint
@@ -178,25 +178,25 @@ Limitations and Considerations
 TLS fingerprinting is not foolproof. Several factors reduce its effectiveness:
 
 - TLS 1.3 Obscures Data: TLS 1.3 reduces the information available in the handshake, though extensions still provide fingerprintable data. The version negotiation, supported signature algorithms, and key share groups remain visible.
-- Network Middleboxes: Proxies, CDNs, and load balancers can modify or strip TLS parameters, replacing client fingerprints with their own. Some corporate proxies terminate TLS connections and re-originate them, eliminating fingerprinting ability.
-- Library Updates: Applications updating their TLS libraries change their fingerprints, requiring continuous fingerprint database maintenance. This creates operational challenges for services relying on fingerprinting.
-- False Positives: Legitimate users behind corporate proxies may share fingerprints with bots if their traffic passes through the same TLS-terminating proxy, causing legitimate users to be misclassified.
+- Network Middleboxes - Proxies, CDNs, and load balancers can modify or strip TLS parameters, replacing client fingerprints with their own. Some corporate proxies terminate TLS connections and re-originate them, eliminating fingerprinting ability.
+- Library Updates - Applications updating their TLS libraries change their fingerprints, requiring continuous fingerprint database maintenance. This creates operational challenges for services relying on fingerprinting.
+- False Positives - Legitimate users behind corporate proxies may share fingerprints with bots if their traffic passes through the same TLS-terminating proxy, causing legitimate users to be misclassified.
 
 Verifying Your Browser's TLS Fingerprint
 
 To determine your actual TLS fingerprint, use these tools:
 
 ```bash
-Method 1: Using tshark (Wireshark command line)
+Method 1 - Using tshark (Wireshark command line)
 Capture traffic and analyze ClientHello
 tshark -i en0 -f "tcp port 443" -Y "tls.handshake.type == 1" -T fields \
   -e tls.handshake.version -e tls.handshake.cipher_suites
 
-Method 2: Using ja3-fingerprinter Python library
+Method 2 - Using ja3-fingerprinter Python library
 pip install ja3
 python -m ja3 https://example.com
 
-Method 3: Online service that returns your JA3
+Method 3 - Online service that returns your JA3
 curl https://ja3er.com/json
 ```
 
@@ -204,11 +204,11 @@ The output shows your exact fingerprint. Compare it against known browser finger
 
 Industry Applications of TLS Fingerprinting
 
-CDN and Load Balancing: Content delivery networks use TLS fingerprints to identify client types and apply optimized routing. Different device types (IoT, mobile, desktop) receive different content strategies based on fingerprint patterns.
+CDN and Load Balancing - Content delivery networks use TLS fingerprints to identify client types and apply optimized routing. Different device types (IoT, mobile, desktop) receive different content strategies based on fingerprint patterns.
 
-Threat Intelligence: Security operations centers maintain fingerprint databases of malware and botnet command-and-control infrastructure. When a server exhibits a known malicious fingerprint, alerts trigger automatically.
+Threat Intelligence - Security operations centers maintain fingerprint databases of malware and botnet command-and-control infrastructure. When a server exhibits a known malicious fingerprint, alerts trigger automatically.
 
-Academic Research: Privacy researchers use fingerprinting to evaluate anonymity claims. Studies have shown that even with Tor Browser running, users can be uniquely identified when combining TLS fingerprints with other network-level signals.
+Academic Research - Privacy researchers use fingerprinting to evaluate anonymity claims. Studies have shown that even with Tor Browser running, users can be uniquely identified when combining TLS fingerprints with other network-level signals.
 
 Building Fingerprint-Resistant Applications
 
@@ -342,7 +342,7 @@ openssl s_client -connect example.com:443 \
   -tls1_2 < /dev/null | grep -A5 "Cipher"
 
 Expected output for all Tor Browser users:
-Cipher: ECDHE-ECDSA-AES256-GCM-SHA384
+Cipher - ECDHE-ECDSA-AES256-GCM-SHA384
 (This consistency is intentional for crowd anonymity)
 ```
 
@@ -370,16 +370,16 @@ ISP-Level Fingerprinting:
 
 ```bash
 Check if your ISP is passively monitoring TLS handshakes
-Test using: https://mlab.mlab.ned.us/neubot/
+Test using - https://mlab.mlab.ned.us/neubot/
 
 If your TLS fingerprint matches a known device type,
 your ISP likely has a device profile on you
 
-Mitigation: VPN usage obscures TLS from ISP
+Mitigation - VPN usage obscures TLS from ISP
 However, VPN provider sees your TLS fingerprint
 ```
 
-This creates a trust trade-off: by using a VPN to hide from ISP fingerprinting, you now reveal the same fingerprint to the VPN provider.
+This creates a trust trade-off - by using a VPN to hide from ISP fingerprinting, you now reveal the same fingerprint to the VPN provider.
 
 Frequently Asked Questions
 

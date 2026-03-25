@@ -33,7 +33,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Cross-Device Synchronization
+Step 1 - Understand Cross-Device Synchronization
 
 Most modern password managers sync your vault across all devices where you install the application. This synchronization typically works through cloud-based infrastructure that encrypts your data before transmitting it. When you add a password on your work laptop, it appears on your personal phone within seconds.
 
@@ -41,11 +41,11 @@ The synchronization process involves several layers. First, your local vault enc
 
 For developers working across multiple machines, understanding this flow helps troubleshoot sync issues. If a password isn't appearing on a specific device, checking network connectivity and ensuring the vault unlocked successfully usually resolves the problem.
 
-Step 2: Implementing Vault Separation Strategies
+Step 2 - Implementing Vault Separation Strategies
 
 Keeping work and personal credentials separate requires deliberate architecture. There are three primary approaches to achieve this separation while maintaining convenience.
 
-Method One: Separate Vaults with Distinct Accounts
+Method One - Separate Vaults with Distinct Accounts
 
 Many password managers support multiple vault files or allow creating separate accounts. Bitwarden, for example, lets you maintain multiple free accounts, each with its own vault. This approach provides complete isolation between work and personal credentials.
 
@@ -62,7 +62,7 @@ Each config file points to different account
 
 This method works well when your organization provides a managed password manager instance. You log into the company vault on work devices while maintaining a personal vault for non-work accounts.
 
-Method Two: Collections and Folders Organization
+Method Two - Collections and Folders Organization
 
 If you use a single vault, organizing items into collections or folders prevents mixing contexts. Most password managers support tagging, folders, or collections that let you categorize credentials without duplicating accounts.
 
@@ -80,7 +80,7 @@ bw create item login --collectionId COLLECTION_ID \
 
 Developers can then filter their vault view to show only relevant collections, reducing cognitive load when searching for specific credentials.
 
-Method Three: Using Organizations for Team Sharing
+Method Three - Using Organizations for Team Sharing
 
 For development teams requiring shared credentials, password manager organizations provide secure sharing mechanisms. These work differently from personal vaults because administrators can manage access and revoke permissions centrally.
 
@@ -99,14 +99,14 @@ op item create --vault "Production API Keys" \
 
 Team vaults ensure that when someone leaves the organization, administrators can remove their access without affecting personal accounts.
 
-Step 3: Automate Credential Access
+Step 3 - Automate Credential Access
 
 Power users benefit from CLI integration that improves workflow. Rather than switching between applications, you can pipe credentials directly into other tools.
 
 Using CLI Output for Automation
 
 ```bash
-Bitwarden: Pipe password directly to SSH
+Bitwarden - Pipe password directly to SSH
 ssh user@server $(bw get password work-server)
 
 Or use expect-like scripts for automated login
@@ -137,7 +137,7 @@ export DB_PASSWORD=$(bw get password production-db)
 docker-compose up -d
 ```
 
-Step 4: Manage Device-Specific Access
+Step 4 - Manage Device-Specific Access
 
 Different devices have different security characteristics. A desktop workstation might warrant always-available vault access, while a mobile device requires additional verification.
 
@@ -172,7 +172,7 @@ Or configure automatic lock via environment
 export BW_SESSION_TIMEOUT=600  # Lock after 10 minutes
 ```
 
-Step 5: Choose the Right Approach
+Step 5 - Choose the Right Approach
 
 Your specific situation determines the best strategy. Freelancers with single-person operations often prefer a single vault with organized folders. Corporate employees should respect their organization's security policies and use provided tools for work credentials. Developers managing both personal projects and client work benefit from multiple accounts or collections.
 
@@ -232,7 +232,7 @@ End-to-End Encryption in Transit and at Rest
 Most modern managers use AES-256 encryption with a key derived from your master password:
 
 ```
-Master Password: "MyP@ssw0rdPhrase"
+Master Password - "MyP@ssw0rdPhrase"
         ↓
 Key Derivation (PBKDF2/Argon2)
         ↓
@@ -285,14 +285,14 @@ Conflict Resolution During Sync
 When you modify a password on two devices simultaneously, password managers implement conflict resolution:
 
 ```
-Device A: Changes AWS password at 14:32:01 UTC
-Device B: Changes AWS password at 14:32:03 UTC
+Device A - Changes AWS password at 14:32:01 UTC
+Device B - Changes AWS password at 14:32:03 UTC
         ↓
 Both sync to server within seconds
         ↓
 Server timestamps both edits
         ↓
-Resolution: Later timestamp wins (Device B's version)
+Resolution - Later timestamp wins (Device B's version)
         ↓
 Device A receives conflict notice
         ↓
@@ -330,7 +330,7 @@ Instead of uploading your entire vault on every change, modern managers use delt
 
 This reduces bandwidth and speeds up sync, especially on mobile networks.
 
-Step 6: Device-Specific Configuration Patterns
+Step 6 - Device-Specific Configuration Patterns
 
 Enterprise Device with MDM
 
@@ -369,7 +369,7 @@ if [ "$WIFI_SSID" != "HomeNetwork" ]; then
 fi
 ```
 
-Step 7: Build Custom Sync Infrastructure
+Step 7 - Build Custom Sync Infrastructure
 
 For teams that cannot use commercial password managers, self-hosted solutions allow custom sync logic:
 
@@ -416,7 +416,7 @@ class CustomVaultSync:
         return response.json()
 ```
 
-Step 8: Access Control Patterns for Shared Credentials
+Step 8 - Access Control Patterns for Shared Credentials
 
 When multiple team members need access to shared passwords, implement role-based access:
 
@@ -461,7 +461,7 @@ class CredentialSharePolicy:
         self.rotate_credential()
 ```
 
-Step 9: Handling Master Password Recovery
+Step 9 - Handling Master Password Recovery
 
 The strongest master password protection also means greatest recovery difficulty. Plan for recovery scenarios:
 

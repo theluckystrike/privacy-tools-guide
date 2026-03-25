@@ -28,7 +28,7 @@ Prerequisites
 
 Do not lock yourself out. Before making changes, open a second terminal session and keep it connected until you verify the new config works.
 
-Step 1: Generate a SSH Key Pair
+Step 1 - Generate a SSH Key Pair
 
 If you don't have a key pair:
 
@@ -48,7 +48,7 @@ ssh -i ~/.ssh/id_ed25519 user@your-server-ip
 
 Why Ed25519 over RSA? Ed25519 uses elliptic curve cryptography on Curve25519. The keys are 256 bits, produce 64-byte signatures, and are significantly faster to verify than RSA-2048. Ed25519 is also resistant to side-channel attacks that affect RSA implementations. If you must use RSA for compatibility with older systems, use RSA-4096 at minimum.
 
-Step 2: Back Up the Default Config
+Step 2 - Back Up the Default Config
 
 ```bash
 sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
@@ -61,7 +61,7 @@ sudo cp /etc/ssh/sshd_config.bak /etc/ssh/sshd_config
 sudo systemctl restart sshd
 ```
 
-Step 3: The Hardened sshd_config
+Step 3 - The Hardened sshd_config
 
 Open the file:
 
@@ -147,7 +147,7 @@ The `etm` suffix on MAC algorithms stands for Encrypt-Then-MAC, which is the cor
 
 The `KexAlgorithms` list removes `diffie-hellman-group14-sha256` and all `diffie-hellman-group1` or `group14` with SHA-1. Group 14 uses 2048-bit DH which is borderline acceptable, but groups 16 (4096-bit) and 18 (8192-bit) with SHA-512 are definitively modern. The `curve25519` options are preferred when both sides support them. they are faster and resist attacks that target traditional finite-field DH.
 
-Step 4: Verify from a New Terminal
+Step 4 - Verify from a New Terminal
 
 Before closing your existing session, open a new one and test:
 
@@ -157,7 +157,7 @@ ssh -p 2222 -i ~/.ssh/id_ed25519 user@your-server-ip
 
 If it connects, the hardened config is working. If not, restore the backup from your existing session.
 
-Step 5: Update Your Firewall
+Step 5 - Update Your Firewall
 
 If you changed the port, update your firewall rules:
 
@@ -173,7 +173,7 @@ sudo firewall-cmd --permanent --remove-service=ssh
 sudo firewall-cmd --reload
 ```
 
-Step 6: Add a Legal Warning Banner
+Step 6 - Add a Legal Warning Banner
 
 Create the banner file:
 
@@ -190,7 +190,7 @@ Unauthorized access will be prosecuted.
 
 The `Banner` directive in `sshd_config` already points to this file.
 
-Step 7: Install and Configure fail2ban
+Step 7 - Install and Configure fail2ban
 
 fail2ban blocks IPs after repeated failed login attempts:
 
@@ -249,7 +249,7 @@ maxretry = 3
 
 You can also use `bantime.increment = true` with `bantime.factor = 2` to double ban duration on repeat offenders. a useful escalating deterrent for persistent scanners.
 
-Step 8: Restrict SSH Access by IP (Optional but Effective)
+Step 8 - Restrict SSH Access by IP (Optional but Effective)
 
 If you connect from a known static IP, restrict access at the firewall level:
 
@@ -262,7 +262,7 @@ sudo ufw reload
 
 For dynamic IPs, use a VPN or jump host instead.
 
-Step 9: Use SSH Certificates Instead of Authorized Keys
+Step 9 - Use SSH Certificates Instead of Authorized Keys
 
 For environments with multiple servers and multiple users, per-user `authorized_keys` files become difficult to manage. SSH certificates offer a more scalable alternative.
 
@@ -298,7 +298,7 @@ sudo cp ~/.ssh/ca_key.pub /etc/ssh/ca.pub
 
 This approach means revoking access requires only removing the user from valid principals at certificate signing time. no need to touch individual server `authorized_keys` files.
 
-Step 10: Audit Current Connections
+Step 10 - Audit Current Connections
 
 View active SSH sessions:
 
@@ -313,7 +313,7 @@ Check recent authentication attempts:
 sudo journalctl -u sshd --since "24 hours ago" | grep -E "(Failed|Accepted|Invalid)"
 ```
 
-Step 11: SSH Key Management
+Step 11 - SSH Key Management
 
 List authorized keys on the server:
 
@@ -329,7 +329,7 @@ ssh-keygen -lf ~/.ssh/authorized_keys
 
 For servers with many users, consider `AuthorizedKeysCommand` to fetch keys from a central directory service rather than per-user files.
 
-Step 12: Periodic Config Audit
+Step 12 - Periodic Config Audit
 
 Run `ssh-audit` (a Python tool) monthly to check your server configuration against current recommendations:
 
@@ -340,7 +340,7 @@ ssh-audit localhost -p 2222
 
 The tool outputs a color-coded report of algorithms, highlighting deprecated entries and suggesting replacements. It tests both server-side configuration and the actual negotiated algorithms. catching cases where sshd_config looks correct but system-level defaults override individual settings.
 
-Step 13: Hardening Checklist
+Step 13 - Hardening Checklist
 
 - Root login disabled (`PermitRootLogin no`)
 - Password authentication disabled

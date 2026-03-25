@@ -191,7 +191,7 @@ Dashlane's Approach:
 
 For teams storing credentials for critical infrastructure (AWS root keys, production database passwords), Keeper's complete zero-knowledge approach provides stronger theoretical guarantees.
 
-Implementation: Risk Assessment Framework
+Implementation - Risk Assessment Framework
 
 ```python
 Evaluate password manager security posture

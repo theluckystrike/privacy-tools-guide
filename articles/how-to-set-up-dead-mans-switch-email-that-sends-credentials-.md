@@ -41,7 +41,7 @@ The system consists of three components:
 
 You host these scripts on an always-online machine: a VPS, a home server, or even a Raspberry Pi connected to reliable power and internet.
 
-Step 1: Prepare Encrypted Credential Payload
+Step 1 - Prepare Encrypted Credential Payload
 
 Never store plaintext credentials in your scripts. Instead, create an encrypted file that only your recipient can decrypt.
 
@@ -58,19 +58,19 @@ Your credential file might contain:
 
 ```
 === Personal Accounts ===
-Email: your-email@example.com
-Password: (use a password manager to generate)
+Email - your-email@example.com
+Password - (use a password manager to generate)
 
 === Server Access ===
-SSH Key: /home/user/.ssh/id_ed25519
-VPS Root Password: (generated password)
+SSH Key - /home/user/.ssh/id_ed25519
+VPS Root Password - (generated password)
 
 === Recovery Phrases ===
-Bitcoin Wallet: (your 12-word seed)
-Trezor PIN: (4-digit PIN)
+Bitcoin Wallet - (your 12-word seed)
+Trezor PIN - (4-digit PIN)
 ```
 
-Step 2: Create the Check-in Script
+Step 2 - Create the Check-in Script
 
 The check-in script updates a timestamp file. When you run it, it signals that you are still active.
 
@@ -94,7 +94,7 @@ chmod +x checkin.sh
 
 Run this script manually (or automate it) whenever you want to reset the dead man's switch. Many users run it from their phone using Termux, or from their desktop on a weekly basis.
 
-Step 3: Create the Monitor Script
+Step 3 - Create the Monitor Script
 
 The monitor script runs on a schedule (via cron) and compares the current time against the last check-in timestamp. If the difference exceeds your threshold, it triggers the delivery.
 
@@ -126,7 +126,7 @@ if [ "$DIFF_DAYS" -ge "$INACTIVITY_DAYS" ]; then
 
 Your contact has been inactive for $DIFF_DAYS days.
 The attached file contains their encrypted credentials.
-Use their GPG key to decrypt: gpg --decrypt credentials.gpg
+Use their GPG key to decrypt - gpg --decrypt credentials.gpg
 
 This is an automated message from their dead man's switch system.
 EOF
@@ -147,7 +147,7 @@ brew install mutt
 
 Configure mutt with your SMTP settings or use a local mail transfer agent.
 
-Step 4: Set Up Cron Jobs
+Step 4 - Set Up Cron Jobs
 
 Schedule the monitor script to run daily:
 
@@ -163,7 +163,7 @@ Add this line:
 
 This runs the check every day at 9:00 AM. Adjust the timing based on your needs.
 
-Step 5: Add Redundancy with Multiple Check-in Methods
+Step 5 - Add Redundancy with Multiple Check-in Methods
 
 A single check-in method creates a single point of failure. Consider adding:
 

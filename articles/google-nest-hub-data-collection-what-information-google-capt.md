@@ -55,7 +55,7 @@ The Nest Hub acts as a Matter controller and Thread border router for connected 
 - Real-time device state information
 - Usage patterns for each connected device
 
-This data enables features like occupancy-based automation but also creates a map of your home's connected ecosystem. The Google Home app stores this information, and it syncs to cloud infrastructure for remote access capabilities.
+This data enables features like occupancy-based automation but also creates a map of your home's connected environment. The Google Home app stores this information, and it syncs to cloud infrastructure for remote access capabilities.
 
 For Matter devices specifically, the Nest Hub maintains:
 
@@ -129,13 +129,13 @@ Mitigation Strategies for Privacy-Conscious Users
 
 Several approaches reduce data exposure while maintaining functionality:
 
-Local processing limitations: Some commands execute locally, but voice processing predominantly occurs in Google's cloud. This architectural constraint means voice data inherently leaves your network.
+Local processing limitations - Some commands execute locally, but voice processing predominantly occurs in Google's cloud. This architectural constraint means voice data inherently leaves your network.
 
-Network-level filtering: You can route Nest Hub traffic through a VPN or firewall that blocks specific endpoints. This breaks certain features but limits cloud exposure.
+Network-level filtering - You can route Nest Hub traffic through a VPN or firewall that blocks specific endpoints. This breaks certain features but limits cloud exposure.
 
-Separate account usage: Create a dedicated Google Account specifically for Nest Hub devices. This isolates smart home data from your primary account's search history and advertising profile.
+Separate account usage - Create a dedicated Google Account specifically for Nest Hub devices. This isolates smart home data from your primary account's search history and advertising profile.
 
-Review and disable features: Within the Google Home app, disable features like personalized recommendations, voice match, and sleep sensing if you don't use them.
+Review and disable features - Within the Google Home app, disable features like personalized recommendations, voice match, and sleep sensing if you don't use them.
 
 What Developers Need to Know
 
@@ -145,9 +145,9 @@ The Google Home Web SDK offers web-based control but requires cloud connectivity
 
 Key API endpoints for developers include:
 
-- Device Management: `/v1/devices`. list and control connected devices
-- Structure Information: `/v1/structures`. home/room organization data
-- Execution Commands: `/v1/devices/{id}:execute`. send commands to devices
+- Device Management - `/v1/devices`. list and control connected devices
+- Structure Information - `/v1/structures`. home/room organization data
+- Execution Commands - `/v1/devices/{id}:execute`. send commands to devices
 
 Authentication requires OAuth 2.0 flow with appropriate scopes for smart home control.
 
@@ -211,15 +211,15 @@ class NestHubInspector:
 addons = [NestHubInspector()]
 ```
 
-Run with: `mitmproxy -s nest_hub_filter.py --listen-host 192.168.1.xxx`
+Run with - `mitmproxy -s nest_hub_filter.py --listen-host 192.168.1.xxx`
 
-Threat Model: What Nest Hub Exposure Means
+Threat Model - What Nest Hub Exposure Means
 
 Understanding your threat model helps decide if these mitigations are necessary:
 
-Consumer/Home User: Default Google data collection is acceptable in exchange for convenience. Risk: Google builds advertising profile, uses data for targeting.
+Consumer/Home User - Default Google data collection is acceptable in exchange for convenience. Risk - Google builds advertising profile, uses data for targeting.
 
-Privacy-Conscious User: Network isolation is worthwhile. Risk: Data still reaches Google, but you limit information about other devices and activities.
+Privacy-Conscious User - Network isolation is worthwhile. Risk - Data still reaches Google, but you limit information about other devices and activities.
 
 High-Privacy Requirement (Journalist, Activist, Executive): Avoid Nest Hub entirely. Use open-source alternatives like Home Assistant with local processing only.
 
@@ -245,7 +245,7 @@ shell_command:
 
 Mycroft (Open source, optional cloud): Provides voice assistant with local wake word detection. Can run entirely offline or use optional cloud services.
 
-Snips (Lightweight): Single-board computer voice assistant. Acquired by Sonos but original code remains open source.
+Snips (Lightweight) - Single-board computer voice assistant. Acquired by Sonos but original code remains open source.
 
 Understanding the Tradeoffs
 

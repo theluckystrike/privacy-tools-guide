@@ -22,7 +22,7 @@ Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [What is FIDO2?](#what-is-fido2)
-- [Security Comparison: Passkeys vs Passwords](#security-comparison-passkeys-vs-passwords)
+- [Security Comparison - Passkeys vs Passwords](#security-comparison-passkeys-vs-passwords)
 - [When to Use Passkeys vs Passwords](#when-to-use-passkeys-vs-passwords)
 - [Troubleshooting](#troubleshooting)
 
@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Fundamental Difference: Public Key vs Shared Secret
+Step 1 - The Fundamental Difference: Public Key vs Shared Secret
 
 Passwords are shared secrets:
 
@@ -85,7 +85,7 @@ User Authentication:
 8. User logged in
 ```
 
-Step 2: Passkeys: Practical Security
+Step 2 - Passkeys: Practical Security
 
 A passkey is a FIDO2 credential stored on your device (phone, laptop, hardware key). Each passkey is unique to the service, you can't accidentally reuse the same passkey for multiple services (unlike password reuse).
 
@@ -104,7 +104,7 @@ Passkey types:
  - More secure (compromised device doesn't compromise key)
  - Cost: $20-70 per key
 
-Real example: Apple passkey registration
+Real example - Apple passkey registration
 
 You create an Apple ID with passkey:
 
@@ -116,7 +116,7 @@ You create an Apple ID with passkey:
 
 Next time you log in, just Face ID/Touch ID. No password required.
 
-Step 3: Platform Support for Passkeys (2026)
+Step 3 - Platform Support for Passkeys (2026)
 
 Full passkey support (good):
 - macOS 13.3+: Keychain passkeys, iCloud syncing
@@ -160,7 +160,7 @@ if (window.PublicKeyCredential) {
 }
 ```
 
-Security Comparison: Passkeys vs Passwords
+Security Comparison - Passkeys vs Passwords
 
 | Attack Vector | Passwords | Passkeys |
 |---------------|-----------|----------|
@@ -173,9 +173,9 @@ Security Comparison: Passkeys vs Passwords
 | Account recovery | Easy (reset password via email) | Hard (requires backup passkeys or recovery codes) |
 | Device theft | Passwords still work elsewhere | Passkeys on device are locked (biometric required) |
 
-Step 4: Real-World Attack Prevention: Examples
+Step 4 - Real-World Attack Prevention: Examples
 
-Scenario 1: Phishing attack
+Scenario 1 - Phishing attack
 
 Attacker sends email pretending to be your bank: "Click here to verify your account."
 
@@ -191,7 +191,7 @@ With passkey:
 4. Passkey refuses to activate (browser sees mismatch)
 5. Login fails, you're safe
 
-Scenario 2: Data breach
+Scenario 2 - Data breach
 
 Attacker hacks service.com database, steals password hashes.
 
@@ -207,7 +207,7 @@ With passkey:
 3. Passkey remains secure on your device
 4. Account remains locked down
 
-Step 5: WebAuthn Implementation Details
+Step 5 - WebAuthn Implementation Details
 
 For developers, here's how passkey registration and authentication work:
 
@@ -316,19 +316,19 @@ verified_auth = verify_authentication_response(
 User authenticated!
 ```
 
-Step 6: Migration Strategy: Passwords to Passkeys
+Step 6 - Migration Strategy: Passwords to Passkeys
 
 You don't need to force passkeys immediately. A practical migration:
 
-Phase 1 (Now): Offer passkeys as optional
+Phase 1 (Now) - Offer passkeys as optional
 
 Users keep passwords. Passkey option available for security-conscious users.
 
-Phase 2 (6 months): Passkey default
+Phase 2 (6 months) - Passkey default
 
 New users registered with passkey by default. Existing users offered passkey upgrade.
 
-Phase 3 (12 months): Passwords deprecated
+Phase 3 (12 months) - Passwords deprecated
 
 Passwords still work but deprecated. Push existing password users to migrate.
 
@@ -359,23 +359,23 @@ function promptPasskeyUpgrade() {
 }
 ```
 
-Step 7: Account Recovery Without Passwords
+Step 7 - Account Recovery Without Passwords
 
 Passkeys complicate account recovery (can't reset password). Solutions:
 
-Option 1: Backup passkeys
+Option 1 - Backup passkeys
 
 Users create 2-3 backup passkeys (stored in different locations):
 
 ```
-Primary passkey: iPhone Face ID
-Backup passkey 1: iPad Touch ID
-Backup passkey 2: Security key (in safe)
+Primary passkey - iPhone Face ID
+Backup passkey 1 - iPad Touch ID
+Backup passkey 2 - Security key (in safe)
 ```
 
 If primary passkey unavailable, use backup.
 
-Option 2: Recovery codes
+Option 2 - Recovery codes
 
 Generate unique, one-time recovery codes when passkey is created:
 
@@ -388,7 +388,7 @@ GHIJ-KLMN-OPQR-STUV
 
 User stores these safely. If all passkeys lost, recovery code regains access (one-time use).
 
-Option 3: Email recovery + temporary password
+Option 3 - Email recovery + temporary password
 
 User initiates account recovery:
 
@@ -414,7 +414,7 @@ Keep passwords for:
 - Services requiring WCAG accessibility compliance
 - Hybrid approaches (passkeys optional, passwords fallback)
 
-Step 8: Real-World Examples (2026)
+Step 8 - Real-World Examples (2026)
 
 Google Account (Gmail, Drive, etc):
 - Passkey support:  Full
@@ -438,7 +438,7 @@ GitHub:
 - Password: Still primary for developer accounts
 - Passkey available for high-security access
 
-Step 9: Future of Authentication
+Step 9 - Future of Authentication
 
 By 2027-2028, expect:
 - Passkeys becoming standard on all major services

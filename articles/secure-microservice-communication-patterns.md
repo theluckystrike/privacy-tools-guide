@@ -18,7 +18,7 @@ Secure Microservice Communication Patterns
 
 In a microservice architecture, the network between services is as much an attack surface as the internet-facing edge. A compromised service can pivot to any other service on the same network unless you enforce authentication and authorization between them. This guide covers four patterns from basic to production-grade zero trust.
 
-The Problem: Flat Internal Networks
+The Problem - Flat Internal Networks
 
 In a default Kubernetes cluster or Docker network, all pods can reach all other pods on any port. If attacker code runs in any service. via a supply chain attack, SSRF, or RCE. they have unfettered access to every database, internal API, and message queue.
 
@@ -31,7 +31,7 @@ Without isolation:
 
 ---
 
-Pattern 1: mTLS (Mutual TLS)
+Pattern 1 - mTLS (Mutual TLS)
 
 mTLS requires both client and server to present certificates. A service without a valid certificate cannot connect to another service. even within the same cluster.
 
@@ -107,11 +107,11 @@ func newMTLSClient() *http.Client {
 }
 ```
 
-Certificate issuance for mTLS: each service needs a cert. At scale, automate with cert-manager (Kubernetes) or SPIFFE/SPIRE.
+Certificate issuance for mTLS - each service needs a cert. At scale, automate with cert-manager (Kubernetes) or SPIFFE/SPIRE.
 
 ---
 
-Pattern 2: SPIFFE/SPIRE (Identity Framework)
+Pattern 2 - SPIFFE/SPIRE (Identity Framework)
 
 SPIFFE (Secure Production Identity Framework for Everyone) assigns cryptographic identities to workloads, not to machines. A service running on pod X gets a SPIFFE ID like `spiffe://cluster.local/ns/payments/sa/payment-service`.
 
@@ -153,7 +153,7 @@ tlsConfig := tlsconfig.MTLSServerConfig(source, source,
 
 ---
 
-Pattern 3: Service Mesh (Istio/Linkerd)
+Pattern 3 - Service Mesh (Istio/Linkerd)
 
 A service mesh injects a sidecar proxy (Envoy for Istio, ultra-lightweight proxy for Linkerd) into every pod. The sidecar handles mTLS transparently. application code does not need to implement TLS at all.
 
@@ -204,7 +204,7 @@ spec:
 
 ---
 
-Pattern 4: Service-to-Service JWT
+Pattern 4 - Service-to-Service JWT
 
 When mTLS infrastructure is too heavy, use short-lived JWTs for service identity. Each service has an asymmetric key pair; it signs JWTs and presents them to downstream services.
 

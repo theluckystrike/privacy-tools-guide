@@ -20,7 +20,7 @@ Android privacy indicators provide real-time visual feedback when apps access yo
 
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- Use per-app permissions Android: 12+ supports granular microphone and camera permissions.
+- Use per-app permissions Android - 12+ supports granular microphone and camera permissions.
 - Indicators only show active use: Apps granted permission can theoretically access sensors without indicator
 2.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
@@ -38,7 +38,7 @@ The indicators appear in two locations:
 
 These visual cues work alongside the privacy dashboard, introduced in Android 12, which provides a historical log of sensor access. Users can navigate to Settings → Privacy → Privacy Dashboard to review which apps accessed camera or microphone and when.
 
-Technical Implementation: How Android Tracks Sensor Access
+Technical Implementation - How Android Tracks Sensor Access
 
 The privacy indicator system relies on Android's `ActivityManager` and `AppOpsManager` APIs. When an app requests camera or microphone access through standard permission channels, the system logs this event and triggers the corresponding indicator. This happens at the system server level, before the app receives the actual hardware handle.
 
@@ -156,50 +156,50 @@ Privacy indicators have specific limitations that users should understand:
 
 For maximum privacy, combine indicator awareness with regular permission audits, app reviews, and security scanning. Privacy indicators represent one layer of defense in Android's security model, but they work best as part of a broader privacy strategy.
 
-Specific App Analysis: Which Apps Legitimately Use Camera and Microphone
+Specific App Analysis - Which Apps Legitimately Use Camera and Microphone
 
 Understanding which apps genuinely need access versus which are suspicious helps you make informed decisions about permissions.
 
 Legitimate Sensor Access
 
-Video Calling Apps: Signal, WhatsApp, Google Meet, Zoom
+Video Calling Apps - Signal, WhatsApp, Google Meet, Zoom
 - Use: Real-time video transmission
 - Expected: Indicator appears only during active calls
 - Concern: If indicator appears while app is backgrounded, investigate
 
-Video Recording Apps: Google Recorder, Otter.ai
+Video Recording Apps - Google Recorder, Otter.ai
 - Use: Voice recording and transcription
 - Expected: Indicator appears when you initiate recording
 - Concern: Background recording without user action indicates misuse
 
-Photography Apps: Google Camera, Adobe Lightroom
+Photography Apps - Google Camera, Adobe Lightroom
 - Use: Capturing images and videos
 - Expected: Indicator appears when taking photos
 - Concern: Persistent indicators when app isn't actively being used
 
-Voice Assistant Apps: Google Assistant, Voice Recorder
+Voice Assistant Apps - Google Assistant, Voice Recorder
 - Use: Voice command processing and recording
 - Expected: Indicator during active listening
 - Concern: Microphone access without user requesting voice input
 
 Suspicious Sensor Access
 
-Social Media Apps: Instagram, TikTok, Snapchat
+Social Media Apps - Instagram, TikTok, Snapchat
 - Legitimate need: Video recording for stories/content
 - Warning sign: Microphone access for regular feed browsing (not recording)
 - Investigation: Check if app requires camera/mic for features you use
 
-Navigation Apps: Google Maps, Apple Maps
+Navigation Apps - Google Maps, Apple Maps
 - Legitimate need: None for camera/microphone
 - Warning sign: Any camera or microphone indicator
 - Action: Revoke both permissions
 
-Financial Apps: Banking apps, PayPal, Venmo
+Financial Apps - Banking apps, PayPal, Venmo
 - Legitimate need: Camera only for document scanning or video verification
 - Warning sign: Microphone access for any purpose
 - Action: Revoke microphone permission
 
-Fitness Apps: MyFitnessPal, Strava
+Fitness Apps - MyFitnessPal, Strava
 - Legitimate need: None for camera or microphone
 - Warning sign: Any indicator during normal use
 - Action: Investigate in app settings; revoke if unexplained

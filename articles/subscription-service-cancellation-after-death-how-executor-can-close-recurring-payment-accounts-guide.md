@@ -29,7 +29,7 @@ Executors face several obstacles when managing subscription services:
 
 The average person has 12-15 active subscriptions, ranging from streaming services to software tools. Without proper documentation, tracking these becomes time-consuming.
 
-Step 1: Gathering Access Credentials
+Step 1 - Gathering Access Credentials
 
 Before attempting cancellations, you'll need to gather login credentials. Several approaches exist depending on the deceased's digital organization.
 
@@ -37,7 +37,7 @@ Password Manager Recovery
 
 If the deceased used a password manager, recovery options vary:
 
-- Bitwarden: Emergency access can be set up beforehand. If configured, the designated emergency contact receives access after a waiting period.
+- Bitwarden - Emergency access can be set up beforehand. If configured, the designated emergency contact receives access after a waiting period.
 - 1Password: Offers inheritance features through their Emergency Kit.
 - LastPass: Has a legacy contact feature for account access.
 
@@ -52,7 +52,7 @@ Browser Credential Access
 
 For Chrome or Firefox users, credentials may be synced to Google Account or Firefox Account. Legal representatives can request account access through Google's Inactive Account Manager or similar services.
 
-Step 2: Discovering Active Subscriptions
+Step 2 - Discovering Active Subscriptions
 
 Finding all subscriptions requires multiple approaches:
 
@@ -112,7 +112,7 @@ Focus on domains like:
 - `amazon.com` (Prime memberships)
 - `github.com`, `gitlab.com`, `jetbrains.com` (developer tools)
 
-Step 3: Account Cancellation Methods
+Step 3 - Account Cancellation Methods
 
 Different services have varying cancellation procedures:
 
@@ -167,7 +167,7 @@ class SubscriptionCanceler:
 
 Most major services require account login for cancellation. Automated cancellation scripts often violate Terms of Service and may be blocked by CAPTCHAs or rate limiting.
 
-Step 4: Payment Method Cancellation
+Step 4 - Payment Method Cancellation
 
 When direct account access isn't possible, blocking payments prevents continued billing:
 
@@ -195,7 +195,7 @@ PayPal and Payment Apps
 - Venmo: Contact customer support with death certificate
 - Stripe-powered services: Each merchant must be contacted individually
 
-Step 5: Documentation and Estate Protection
+Step 5 - Documentation and Estate Protection
 
 Maintain records for all cancellation attempts:
 
@@ -248,7 +248,7 @@ Several legal frameworks affect subscription cancellation:
 - Survivor rights: Some jurisdictions allow survivors to cancel contracts on behalf of the deceased
 - Digital Asset Laws: The Revised Uniform Fiduciary Access to Digital Assets Act (RUFADAA) in the US provides executors with authority over digital accounts
 
-Proactive Measures: Digital Estate Planning
+Proactive Measures - Digital Estate Planning
 
 Encourage loved ones to maintain a subscription inventory:
 

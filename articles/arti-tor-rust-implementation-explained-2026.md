@@ -28,7 +28,7 @@ Table of Contents
 - [Directory Authority Interaction](#directory-authority-interaction)
 - [Working with Hidden Services](#working-with-hidden-services)
 - [Performance Considerations](#performance-considerations)
-- [Arti vs C Tor: Key Differences](#arti-vs-c-tor-key-differences)
+- [Arti vs C Tor - Key Differences](#arti-vs-c-tor-key-differences)
 - [Security Best Practices](#security-best-practices)
 - [Error Handling Patterns](#error-handling-patterns)
 - [Related Reading](#related-reading)
@@ -212,17 +212,17 @@ cache_dir = "/var/cache/arti"
 state_dir = "/var/lib/arti"
 ```
 
-Arti vs C Tor: Key Differences
+Arti vs C Tor - Key Differences
 
 Arti is not a drop-in replacement in all scenarios. Key differences to consider:
 
-Performance: Arti and C Tor are comparable for typical workloads. Arti has a slight edge in concurrent stream handling thanks to Tokio's async runtime, while C Tor may perform better in relay mode (Arti does not currently support relay operation).
+Performance - Arti and C Tor are comparable for typical workloads. Arti has a slight edge in concurrent stream handling thanks to Tokio's async runtime, while C Tor may perform better in relay mode (Arti does not currently support relay operation).
 
-API surface: C Tor exposes a control port protocol. Arti provides a native Rust API and a compatible control port implementation, but some advanced control port commands are not yet implemented.
+API surface - C Tor exposes a control port protocol. Arti provides a native Rust API and a compatible control port implementation, but some advanced control port commands are not yet implemented.
 
-Relay mode: As of 2026, Arti does not support running as a Tor relay or bridge. If you need to run a relay, continue using C Tor for that role while using Arti for client applications.
+Relay mode - As of 2026, Arti does not support running as a Tor relay or bridge. If you need to run a relay, continue using C Tor for that role while using Arti for client applications.
 
-Pluggable transports: Arti supports pluggable transports (Snowflake, obfs4) for censorship-circumvention scenarios, matching C Tor's capability in this area.
+Pluggable transports - Arti supports pluggable transports (Snowflake, obfs4) for censorship-circumvention scenarios, matching C Tor's capability in this area.
 
 Security Best Practices
 

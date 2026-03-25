@@ -267,13 +267,13 @@ Common Failure Points
 
 Real-world dead man switch implementations fail for predictable reasons:
 
-Forgotten credentials: Dead man switches lose effectiveness if beneficiaries cannot access recovery instructions. Store documentation in a physical safe with the beneficiary named as authorized access party.
+Forgotten credentials - Dead man switches lose effectiveness if beneficiaries cannot access recovery instructions. Store documentation in a physical safe with the beneficiary named as authorized access party.
 
-Technological obsolescence: Services you rely on may shut down (Mt. Gox proved this). Build redundancy by testing recovery procedures annually.
+Technological obsolescence - Services you rely on may shut down (Mt. Gox proved this). Build redundancy by testing recovery procedures annually.
 
-Human error in setup: Typos in beneficiary addresses or incorrect smart contract parameters are permanent. Have an independent reviewer verify all configurations.
+Human error in setup - Typos in beneficiary addresses or incorrect smart contract parameters are permanent. Have an independent reviewer verify all configurations.
 
-Regulatory changes: Cryptocurrency regulations evolve. What's legal inheritance planning today may face compliance challenges tomorrow. Consult with estate planning attorneys familiar with crypto.
+Regulatory changes - Cryptocurrency regulations evolve. What's legal inheritance planning today may face compliance challenges tomorrow. Consult with estate planning attorneys familiar with crypto.
 
 Monitoring and Maintenance
 

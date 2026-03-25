@@ -52,7 +52,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Secure Practice Management Software
+Step 1 - Secure Practice Management Software
 
 Modern veterinary practices rely heavily on practice management software for scheduling, medical records, billing, and client communication. Selecting and configuring this software correctly forms the foundation of your data protection strategy.
 
@@ -86,7 +86,7 @@ IP Address Restrictions Limit access to the practice network or known VPN addres
 
 Data Retention Policies Configure automatic deletion of data beyond your retention requirements. Most states require retaining medical records for three to seven years after last treatment, but billing data may have different requirements.
 
-Step 2: Secure the Network for Veterinary Practices
+Step 2 - Secure the Network for Veterinary Practices
 
 The network connecting your computers, servers, and internet connection represents a critical attack surface. Criminals increasingly target small businesses, including veterinary practices, because they often lack the security resources of larger organizations.
 
@@ -126,7 +126,7 @@ Split Tunneling Control Configure whether remote users' internet traffic routes 
 
 Kill Switch Ensure the VPN includes a kill switch that blocks all network traffic if the VPN connection drops unexpectedly. This prevents data leakage during connection failures.
 
-Step 3: Encrypt Client Communications
+Step 3 - Encrypt Client Communications
 
 Client communication often contains sensitive information. Email, text messages, and client portals require encryption to protect this data in transit and often at rest.
 
@@ -158,7 +158,7 @@ Automatic Logout Configure portal sessions to expire after brief periods of inac
 
 Message Retention Policies Configure automatic deletion of messages older than your data retention policy. Portals should not become permanent storage for sensitive information.
 
-Step 4: Implement Physical Security Measures
+Step 4 - Implement Physical Security Measures
 
 Digital security gets most attention, but physical security is equally important. A stolen laptop or unlocked computer provides attackers easy access to everything.
 
@@ -188,7 +188,7 @@ Security Cameras IP security cameras provide monitoring and documentation of act
 
 After-Hours Security Ensure alarms are activated and all entry points are secured when the practice closes. Consider professional security monitoring for after-hours intrusion detection.
 
-Step 5: Train Staff and Policies
+Step 5 - Train Staff and Policies
 
 Technology alone cannot protect your practice. Staff members are both your greatest asset and potential vulnerability. training and clear policies create a security-conscious culture.
 
@@ -222,13 +222,13 @@ Device Policy Addresses personal devices (BYOD), company-issued devices, and pro
 
 Review and update policies annually. Have staff acknowledge they've read and understood policies, and maintain records of acknowledgments.
 
-Step 6: Set Up Data Backup and Recovery
+Step 6 - Set Up Data Backup and Recovery
 
 Backup systems protect against data loss from hardware failures, natural disasters, and ransomware attacks. However, backups themselves can become attack vectors if not properly secured.
 
 Backup Strategy
 
-Implement the 3-2-1 backup rule: maintain three copies of data, on two different types of media, with one copy stored offsite:
+Implement the 3-2-1 backup rule - maintain three copies of data, on two different types of media, with one copy stored offsite:
 
 Local Backup Use external hard drives or network-attached storage (NAS) for quick restoration. NAS devices with RAID configuration provide redundancy against single drive failures. Connect backup drives only during backup operations to minimize ransomware exposure.
 
@@ -246,7 +246,7 @@ Annual Full Restore Drills Conduct complete restoration from backup to ensure re
 
 Backup Verification Software Use tools that automatically verify backup integrity. Many backup solutions include verification features that check data can be successfully restored.
 
-Step 7: Create an Incident Response Plan
+Step 7 - Create an Incident Response Plan
 
 Despite best precautions, security incidents may occur. Having a documented response plan minimizes damage and enables rapid recovery.
 
@@ -286,7 +286,7 @@ Forensic Experts Identify third-party forensic firms that can assist with invest
 
 Law Enforcement Know how to contact FBI field offices, Secret Service, and local law enforcement for cybercrimes. Reporting helps law enforcement and may assist in recovery.
 
-Step 8: Conduct Regular Security Audits
+Step 8 - Conduct Regular Security Audits
 
 Ongoing assessment ensures security measures remain effective as threats evolve.
 

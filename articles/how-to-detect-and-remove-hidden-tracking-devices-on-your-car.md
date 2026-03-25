@@ -21,17 +21,17 @@ Hidden tracking devices on vehicles represent a significant privacy concern for 
 Table of Contents
 
 - [Understanding GPS Tracking Devices](#understanding-gps-tracking-devices)
-- [Physical Inspection: The First Line of Defense](#physical-inspection-the-first-line-of-defense)
+- [Physical Inspection - The First Line of Defense](#physical-inspection-the-first-line-of-defense)
 - [Technical Detection Methods](#technical-detection-methods)
 - [Using Detection Apps](#using-detection-apps)
 - [Removing Tracking Devices](#removing-tracking-devices)
 - [Preventive Measures](#preventive-measures)
 - [Understanding Hardwired Tracker Installation](#understanding-hardwired-tracker-installation)
-- [Advanced Detection: RF Analysis Tools](#advanced-detection-rf-analysis-tools)
+- [Advanced Detection - RF Analysis Tools](#advanced-detection-rf-analysis-tools)
 - [Legal Implications of Detection and Removal](#legal-implications-of-detection-and-removal)
 - [Documented Removal Procedures](#documented-removal-procedures)
 - [Preventing Future Tracking](#preventing-future-tracking)
-- [Case Study: Professional Debugging Report](#case-study-professional-debugging-report)
+- [Case Study - Professional Debugging Report](#case-study-professional-debugging-report)
 - [When to Seek Professional Help](#when-to-seek-professional-help)
 
 Understanding GPS Tracking Devices
@@ -40,7 +40,7 @@ Modern tracking devices fall into several categories, each with different detect
 
 Active cellular-based trackers represent the most common threat because they operate on GSM, LTE, or 5G networks and can be monitored remotely. These devices typically transmit every 30 seconds to several minutes, consuming power from the vehicle's battery or an internal rechargeable battery.
 
-Physical Inspection: The First Line of Defense
+Physical Inspection - The First Line of Defense
 
 Before deploying technical tools, perform a thorough physical inspection of your vehicle. Tracking devices are typically installed in accessible locations that provide power and remain hidden from casual observation.
 
@@ -149,14 +149,14 @@ Before removing any device, photograph its location and connections. If the devi
 
 Physical Removal Steps
 
-For OBD-II devices: Simply unplug the device from the port. No tools required.
+For OBD-II devices - Simply unplug the device from the port. No tools required.
 
-For hardwired devices: These may be connected to the vehicle's power system or integrated with factory wiring. If you're not comfortable with automotive electrical work, consult a professional mechanic. Hardwired devices often use:
+For hardwired devices - These may be connected to the vehicle's power system or integrated with factory wiring. If you're not comfortable with automotive electrical work, consult a professional mechanic. Hardwired devices often use:
 - T-taps for splice-in connections
 - Direct battery connections
 - Integration with existing antenna systems
 
-For magnetic mounts: Disengage the magnet and carefully remove the device. Check for adhesive residues.
+For magnetic mounts - Disengage the magnet and carefully remove the device. Check for adhesive residues.
 
 Post-Removal Verification
 
@@ -204,7 +204,7 @@ Look for:
 
 Professional installation requires knowledge of vehicle wiring diagrams. Without this, attempting removal could cause electrical damage or trigger airbag systems.
 
-Advanced Detection: RF Analysis Tools
+Advanced Detection - RF Analysis Tools
 
 For serious threat assessments, RF detection goes beyond basic RF meters. Professional-grade spectrum analyzers cost $5,000-15,000 but provide definitive detection of active transmitters.
 
@@ -237,13 +237,13 @@ Legal Implications of Detection and Removal
 
 Before removing any device, understand the legal implications:
 
-Ownership ambiguity: If the vehicle is financed or leased, the financer or lessor might legally own it and have placed the tracker. Removing their property could violate contract terms.
+Ownership ambiguity - If the vehicle is financed or leased, the financer or lessor might legally own it and have placed the tracker. Removing their property could violate contract terms.
 
-Divorce and custody situations: Some trackers are placed by estranged spouses. Removing them may violate court orders in custody disputes.
+Divorce and custody situations - Some trackers are placed by estranged spouses. Removing them may violate court orders in custody disputes.
 
-Criminal investigation: Law enforcement may place tracking devices. Removing them could constitute obstruction of justice.
+Criminal investigation - Law enforcement may place tracking devices. Removing them could constitute obstruction of justice.
 
-Employment vehicles: Employers may track company vehicles through legal means. Your employment contract may explicitly permit this.
+Employment vehicles - Employers may track company vehicles through legal means. Your employment contract may explicitly permit this.
 
 Consult a lawyer before removing any device, particularly if the vehicle ownership is complex or you suspect legal implications.
 
@@ -251,7 +251,7 @@ Documented Removal Procedures
 
 If you've confirmed ownership and legal status, follow proper removal procedures:
 
-Step 1: Documentation
+Step 1 - Documentation
 ```bash
 Create detailed records before removal
 Photograph device from multiple angles
@@ -262,7 +262,7 @@ Record removal date and time
 Store all documentation (may be needed for legal proceedings)
 ```
 
-Step 2: Safe Disconnection
+Step 2 - Safe Disconnection
 
 For hardwired devices, safety is critical:
 
@@ -276,7 +276,7 @@ For hardwired devices, safety is critical:
 8. Carefully remove the device
 9. Reconnect all existing wiring in reverse order
 
-Step 3: Verification
+Step 3 - Verification
 
 After removal, verify the device is no longer transmitting:
 
@@ -317,15 +317,15 @@ Vehicle modifications for protection:
 - Shield antenna systems if vulnerable
 - Add metallic shielding in critical areas
 
-Case Study: Professional Debugging Report
+Case Study - Professional Debugging Report
 
 A professional counter-surveillance report typically includes:
 
 ```
 VEHICLE COUNTER-SURVEILLANCE REPORT
-Vehicle: 2022 Toyota Camry, VIN XXX
-Inspection Date: March 15, 2026
-Inspector: Certified TSCM Professional
+Vehicle - 2022 Toyota Camry, VIN XXX
+Inspection Date - March 15, 2026
+Inspector - Certified TSCM Professional
 
 FINDINGS:
 - No active RF transmitters detected (0-6 GHz sweep)
@@ -334,7 +334,7 @@ FINDINGS:
 - No Bluetooth LE beacons detected
 - No GPS passively logging detected
 
-RISK ASSESSMENT: Low
+RISK ASSESSMENT - Low
 No evidence of current tracking
 Vehicle appears to be secure
 
@@ -344,7 +344,7 @@ RECOMMENDATIONS:
 - Monitor battery drain
 - Document baseline RF signature
 
-Next inspection recommended: March 2027
+Next inspection recommended - March 2027
 ```
 
 This professional verification provides documented evidence that your vehicle is clean, valuable if you're concerned about surveillance claims or need this for legal purposes.

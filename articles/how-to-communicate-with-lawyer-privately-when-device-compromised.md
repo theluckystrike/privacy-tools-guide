@@ -33,7 +33,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Immediate Actions Before Communicating with Your Attorney
+Step 1 - Immediate Actions Before Communicating with Your Attorney
 
 Before reaching out to your lawyer, take these critical steps to prevent further exposure:
 
@@ -45,7 +45,7 @@ Before reaching out to your lawyer, take these critical steps to prevent further
 
 If you have no access to a clean device, visit a library computer, a friend's phone, or a public computer. Document what happened and preserve evidence if the compromise relates to legal matters.
 
-Step 2: Secure Email Options for Attorney Communication
+Step 2 - Secure Email Options for Attorney Communication
 
 Proton Mail
 
@@ -75,7 +75,7 @@ gpg --encrypt --armor --recipient attorney@lawfirm.com --output encrypted_messag
 
 Share your public key securely, ideally in person or through a verified channel. Your attorney will need their own PGP setup to reply securely.
 
-Step 3: Encrypted Messaging Alternatives
+Step 3 - Encrypted Messaging Alternatives
 
 Signal
 
@@ -99,7 +99,7 @@ Session offers messenger-style communication without requiring a phone number. T
 
 Session does not collect phone numbers or require personal information, making it suitable for high-sensitivity communication.
 
-Step 4: Secure File Sharing for Legal Documents
+Step 4 - Secure File Sharing for Legal Documents
 
 When sharing sensitive documents with your attorney, avoid standard file sharing services:
 
@@ -126,7 +126,7 @@ Tresorit provides encrypted cloud storage with end-to-end encryption:
 
 This service works well for ongoing legal matters requiring document sharing.
 
-Step 5: Physical Methods for Maximum Security
+Step 5 - Physical Methods for Maximum Security
 
 For the most sensitive communications, consider methods that don't involve digital transmission:
 
@@ -142,7 +142,7 @@ In-Person Meetings
 
 Whenever possible, meet your attorney in person. Choose locations without surveillance cameras if possible. Turn off phones before the meeting and leave them in your car or a faraday bag.
 
-Step 6: What to Avoid
+Step 6 - What to Avoid
 
 Several common communication methods pose unacceptable risks after device compromise:
 
@@ -152,7 +152,7 @@ Several common communication methods pose unacceptable risks after device compro
 - Video calls on standard platforms: Can be recorded, metadata collected
 - Messaging apps requiring phone number linkage: Metadata exposes relationships
 
-Step 7: Preserving Attorney-Client Privilege
+Step 7 - Preserving Attorney-Client Privilege
 
 Beyond secure communication channels, protect privilege through careful practices:
 
@@ -164,7 +164,7 @@ Beyond secure communication channels, protect privilege through careful practice
 
 Your attorney should understand device compromise scenarios and have their own recommendations. Many law firms now offer secure client portals specifically designed for sensitive communications.
 
-Step 8: Legal Tool Recommendations and Setup
+Step 8 - Legal Tool Recommendations and Setup
 
 Proton Mail Enterprise for Law Firms
 
@@ -179,7 +179,7 @@ Setup:
 5. Disable forwarding to prevent leaks
 ```
 
-Cost: Free for basic setup, €4/month for paid features
+Cost - Free for basic setup, €4/month for paid features
 
 Tresorit Secure Sharing for Documents
 
@@ -193,10 +193,10 @@ For larger case files or document exchanges:
 5. Set expiration dates on sensitive documents
 6. Revoke access when case concludes
 
-Cost: €15-30/month depending on storage needs
+Cost - €15-30/month depending on storage needs
 ```
 
-Benefits: No centralized server stores unencrypted data. Tresorit cannot access contents even if subpoenaed.
+Benefits - No centralized server stores unencrypted data. Tresorit cannot access contents even if subpoenaed.
 
 SecureSafe for Ongoing Communication
 
@@ -210,10 +210,10 @@ Alternative with higher privacy focus:
 5. All data encrypted end-to-end
 6. Automatic expiration available
 
-Cost: CHF 50-250/year depending on storage
+Cost - CHF 50-250/year depending on storage
 ```
 
-Step 9: Threat Assessment Decision Tree
+Step 9 - Threat Assessment Decision Tree
 
 Use this to decide what tools you need:
 
@@ -242,7 +242,7 @@ How time-critical is the communication?
  Standard (2+ weeks): In-person meeting preferred
 ```
 
-Step 10: Privilege and Waiver Avoidance
+Step 10 - Privilege and Waiver Avoidance
 
 Maintaining attorney-client privilege requires careful practices:
 
@@ -258,39 +258,39 @@ What Waives Privilege
 - Discussing with your spouse or friends
 - Forwarding to someone who isn't your attorney
 
-Critical: If your attorney instructs you to use a specific communication method, follow those instructions. Courts recognize attorney's judgment about what maintains privilege.
+Critical - If your attorney instructs you to use a specific communication method, follow those instructions. Courts recognize attorney's judgment about what maintains privilege.
 
-Step 11: Example: Complete Threat Response Workflow
+Step 11 - Example: Complete Threat Response Workflow
 
-Scenario: Your laptop appears to have malware. You need to discuss this with your criminal attorney immediately.
+Scenario - Your laptop appears to have malware. You need to discuss this with your criminal attorney immediately.
 
 ```
-MINUTE 1: Recognize the threat
+MINUTE 1 - Recognize the threat
 - System behaving oddly (slow, crashes, unexpected programs)
 - Assume device is compromised
 
-MINUTE 5: Take immediate action
+MINUTE 5 - Take immediate action
 - Disconnect from internet
 - Do not log into any accounts from this device again
 - Do not use this device for attorney communication
 
-MINUTE 15: Move to safe device
+MINUTE 15 - Move to safe device
 - Find alternative: friend's phone, library computer
 - Bring your attorney's contact information (phone number)
 
-MINUTE 30: Call attorney
+MINUTE 30 - Call attorney
 - Use phone from safe device
 - Provide summary of situation
 - Establish secure communication method
 - Arrange in-person meeting if possible
 
-MINUTE 60: Follow up in writing
+MINUTE 60 - Follow up in writing
 - Use attorney's recommended secure method
 - Send written summary of phone conversation
 - Include: What happened, when, what data might be affected
 - Preserve everything for privilege
 
-HOUR 2: Device handling
+HOUR 2 - Device handling
 - If attorney recommends: bring device to law office
 - Attorney may have forensics expert examine it
 - If irreplaceable: back up to clean drive first (if attorney approves)
@@ -298,15 +298,15 @@ HOUR 2: Device handling
 
 This workflow minimizes exposure while preserving privilege.
 
-Step 12: Documenting Your Security Measures
+Step 12 - Documenting Your Security Measures
 
 For privilege protection, document that you took reasonable security precautions:
 
 ```
 SECURITY LOG FOR ATTORNEY COMMUNICATIONS
-Matter: [Your Case Name]
-Date Started: [Date]
-Communication Methods Used: [List]
+Matter - [Your Case Name]
+Date Started - [Date]
+Communication Methods Used - [List]
 
 Device Security:
 - Operating System: [macOS 14.2 / Windows 11]
@@ -327,7 +327,7 @@ Communication Tools:
 This documentation demonstrates good faith security practices if privilege is challenged in court.
 ```
 
-Step 13: Work with Your Attorney on Security
+Step 13 - Work with Your Attorney on Security
 
 Coordinate security practices with your legal team:
 
@@ -353,7 +353,7 @@ Coordinate security practices with your legal team:
 
 A good attorney will have thought through these issues already.
 
-Step 14: Red Flags: When to Get a Different Attorney
+Step 14 - Red Flags: When to Get a Different Attorney
 
 If your attorney:
 - Refuses to use encrypted communication for sensitive matters

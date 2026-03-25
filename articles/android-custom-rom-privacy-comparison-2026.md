@@ -16,10 +16,10 @@ tags: [privacy-tools-guide, privacy]
 
 {% raw %}
 
-Choosing a privacy-focused custom ROM requires understanding the technical tradeoffs between security hardening, Google dependency, and ecosystem compatibility. This guide compares the leading options for developers and power users who prioritize data minimization without sacrificing usability.
+Choosing a privacy-focused custom ROM requires understanding the technical tradeoffs between security hardening, Google dependency, and environment compatibility. This guide compares the leading options for developers and power users who prioritize data minimization without sacrificing usability.
 
 
-- Choosing a privacy-focused custom: ROM requires understanding the technical tradeoffs between security hardening, Google dependency, and ecosystem compatibility.
+- Choosing a privacy-focused custom: ROM requires understanding the technical tradeoffs between security hardening, Google dependency, and environment compatibility.
 - GrapheneOS only supports devices: with verified boot andTitan M/M2 co-processors (Pixel 6 and newer).
 - Users can install the: sandboxed Google Play compatibility layer and still run banking apps while maintaining a verified boot chain.
 - If your threat model: includes not advertising that you run a custom ROM to services you use, GrapheneOS on a Pixel is currently the only viable option.
@@ -219,9 +219,9 @@ Apps that work without any Google services: Most open-source apps, F-Droid catal
 
 Apps that partially work with microG: Many popular apps that use Firebase Cloud Messaging for notifications, basic location services, and some SafetyNet checks. Email clients, most social apps, and navigation apps typically fall into this category.
 
-Apps that require full Google Play Services: Apps using hardware-backed SafetyNet with CTS profile checks, apps using the DRM Widevine L1 for HD streaming, and some banking apps with aggressive rooting/unlocked bootloader detection.
+Apps that require full Google Play Services - Apps using hardware-backed SafetyNet with CTS profile checks, apps using the DRM Widevine L1 for HD streaming, and some banking apps with aggressive rooting/unlocked bootloader detection.
 
-For GrapheneOS users who need broad app compatibility, the sandboxed Google Play approach is pragmatic. Google Play Services runs in a normal app sandbox with no special system privileges. it cannot access hardware identifiers or bypass permission controls the way it does on stock Android. This is a genuinely novel architecture that provides Google ecosystem compatibility without granting Google services the elevated access they expect.
+For GrapheneOS users who need broad app compatibility, the sandboxed Google Play approach is pragmatic. Google Play Services runs in a normal app sandbox with no special system privileges. it cannot access hardware identifiers or bypass permission controls the way it does on stock Android. This is a genuinely novel architecture that provides Google environment compatibility without granting Google services the elevated access they expect.
 
 Telemetry Comparison by Default Settings
 

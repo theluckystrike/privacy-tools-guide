@@ -35,7 +35,7 @@ ls /tmp/restic-mount/snapshots/latest/
 
 Mounting is useful for browsing old versions of files without committing to a full restore. It requires FUSE on Linux (`fuse` package) and macOS (`macFUSE`).
 
-Step 9: Restore Files
+Step 9 - Restore Files
 
 Restore a single file or directory from the latest snapshot:
 
@@ -57,7 +57,7 @@ restic -r /mnt/backup/restic-repo restore latest --target /
 
 Test your restore process at least quarterly. A backup you have never tested is a backup you cannot trust. A practical habit: once a month, restore a random file from a 30-day-old snapshot and verify its contents.
 
-Step 10: Snapshot Retention Policy
+Step 10 - Snapshot Retention Policy
 
 Keeping every snapshot forever wastes storage. Set a retention policy:
 
@@ -75,9 +75,9 @@ This keeps:
 - 6 monthly snapshots
 - Removes data no longer referenced by any kept snapshot (`--prune`)
 
-For compliance with data retention regulations (GDPR, HIPAA, SOC 2), adjust these numbers to match your requirements. GDPR's right to erasure applies to backups too. if you delete a user's data from production and need to honor an erasure request, your backup policy must account for this. Short retention windows (30–90 days) reduce the window where deleted data persists in backups.
+For compliance with data retention regulations (GDPR, HIPAA, SOC 2), adjust these numbers to match your requirements. GDPR's right to erasure applies to backups too. if you delete a user's data from production and need to honor an erasure request, your backup policy must account for this. Short retention windows (30, 90 days) reduce the window where deleted data persists in backups.
 
-Step 11: Automate with systemd
+Step 11 - Automate with systemd
 
 Create a systemd service:
 
@@ -133,7 +133,7 @@ systemctl list-timers restic-backup.timer
 
 `RandomizedDelaySec=1h` spreads backup start times across a hour window, which prevents thundering-herd issues if you run the same timer on many machines.
 
-Step 12: Alerting on Backup Failures
+Step 12 - Alerting on Backup Failures
 
 Silent backup failures are worse than no backups at all. you discover the problem only when you need to restore. Add failure alerting to the service:
 
@@ -152,7 +152,7 @@ ExecStartPost=/usr/bin/curl -fsS --retry 3 https://hc-ping.com/YOUR-UUID
 
 If the ping does not arrive, Healthchecks.io sends you an email or webhook alert. This pattern works with restic running in any environment. local, VPS, or container.
 
-Step 13: Verify Repository Integrity
+Step 13 - Verify Repository Integrity
 
 Run this regularly to detect data corruption:
 
@@ -170,7 +170,7 @@ This is slow on large repos but confirms backup integrity end to end.
 
 A lighter approach for large repositories: use `--read-data-subset=5%` to sample 5% of pack files on each run. Rotate the subset over weeks to get full coverage without a single long-running check.
 
-Step 14: Rotate Keys
+Step 14 - Rotate Keys
 
 To change the repository password:
 

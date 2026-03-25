@@ -21,8 +21,8 @@ Build modern Underground Railroad infrastructure using Tor for anonymous movemen
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Threat Model: Know What You Are Defending Against](#threat-model-know-what-you-are-defending-against)
-- [Advanced: Building Your Privacy Stack](#advanced-building-your-privacy-stack)
+- [Threat Model - Know What You Are Defending Against](#threat-model-know-what-you-are-defending-against)
+- [Advanced - Building Your Privacy Stack](#advanced-building-your-privacy-stack)
 - [Troubleshooting](#troubleshooting)
 - [Related Reading](#related-reading)
 
@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Parallel: From Escape Routes to Encryption Tunnels
+Step 1 - The Parallel: From Escape Routes to Encryption Tunnels
 
 The Underground Railroad succeeded because it was decentralized, used coded communications, and moved information through trusted networks. No single point of failure could bring it down. Modern digital privacy tools work the same way:
 
@@ -46,7 +46,7 @@ The Underground Railroad succeeded because it was decentralized, used coded comm
 
 The operational discipline required by conductors and station masters translates directly into digital opsec: need-to-know information sharing, compartmentalized roles, and strict communication protocols. Understanding this parallel helps frame why each tool in this stack matters.
 
-Threat Model: Know What You Are Defending Against
+Threat Model - Know What You Are Defending Against
 
 Before deploying any tools, define your threat model explicitly. The appropriate countermeasures depend on who your adversary is:
 
@@ -59,7 +59,7 @@ Before deploying any tools, define your threat model explicitly. The appropriate
 
 For most activists, journalists, and at-risk individuals, the threat sits between stalker-level and local law enforcement. This guide covers that range with practical mitigations that do not require nation-state budgets.
 
-Step 2: Core Privacy Tools: Your Digital Safe Houses
+Step 2 - Core Privacy Tools: Your Digital Safe Houses
 
 1. Tor: The Modern "Station Master" Network
 
@@ -212,7 +212,7 @@ Send encrypted messages
 signal-cli send --message "Your route is clear" +1234567890
 ```
 
-Step 3: Tool Selection by Scenario
+Step 3 - Tool Selection by Scenario
 
 | Scenario | Recommended Tool | Why |
 |----------|-----------------|-----|
@@ -223,7 +223,7 @@ Step 3: Tool Selection by Scenario
 | Bypassing sophisticated censorship | Tor + obfs4 bridges | Traffic looks like random noise |
 | Developer automation | Raw Tor daemon | Scriptable SOCKS5 proxy |
 
-Advanced: Building Your Privacy Stack
+Advanced - Building Your Privacy Stack
 
 For maximum protection, layer these tools:
 
@@ -231,19 +231,19 @@ For maximum protection, layer these tools:
 #!/bin/bash
 privacy-stack.sh - Start multiple privacy layers
 
-Layer 1: Tor proxy
+Layer 1 - Tor proxy
 tor &  # SOCKS proxy on 9050
 
-Layer 2: Connect through Tor to I2P
+Layer 2 - Connect through Tor to I2P
 (I2P can be accessed via Tor)
 socat TCP-LISTEN:4444,bind=127.0.0.1,fork SOCKS:127.0.0.1:9050,i2p://localhost:4444
 
-Layer 3: VPN through the chain
+Layer 3 - VPN through the chain
 (Your VPN sees only Tor exit, not your IP)
 openvpn --config privacy.ovpn --socks-proxy 127.0.0.1 9050
 ```
 
-Step 4: Physical Operational Security
+Step 4 - Physical Operational Security
 
 Digital tools alone are insufficient. The Underground Railroad's conductors knew that a careless slip in the physical world could unravel an otherwise sound operation. The same applies today:
 
@@ -252,7 +252,7 @@ Digital tools alone are insufficient. The Underground Railroad's conductors knew
 - Meeting protocol: When in-person meetings are necessary, leave phones at home. Phones reveal location data even when powered off in some configurations.
 - Dead man's switches: Use tools like Cryptolock or custom scripts to release information or wipe devices if a check-in does not occur within a defined interval. This mirrors the Underground Railroad practice of ensuring information would reach its destination even if the carrier was intercepted.
 
-Step 5: Network Diagnostics: Verifying Your Protection
+Step 5 - Network Diagnostics: Verifying Your Protection
 
 Always verify your protection is working:
 
@@ -269,7 +269,7 @@ RTCPeerConnection.createDataChannel should use relay server
 
 Run these checks before every sensitive session. A single DNS leak can reveal your real IP even while Tor is active.
 
-Step 6: Perform Maintenance and Operational Security
+Step 6 - Perform Maintenance and Operational Security
 
 Privacy tools require ongoing attention:
 
@@ -279,7 +279,7 @@ Privacy tools require ongoing attention:
 - Air-gapped backups: Keep sensitive keys on devices without network interfaces
 - Compartmentalize roles: Assign each participant in a network the minimum information needed for their role. No single person should hold the complete map of the network.
 
-Step 7: Common Pitfalls
+Step 7 - Common Pitfalls
 
 Even technically sound setups fail through operational errors:
 

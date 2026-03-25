@@ -29,7 +29,7 @@ Table of Contents
 - [Measuring Extension Permission Footprint](#measuring-extension-permission-footprint)
 - [Content Security Policy Enforcement](#content-security-policy-enforcement)
 - [Sandboxing Strategy for High-Value Credentials](#sandboxing-strategy-for-high-value-credentials)
-- [Extension Development: Security Best Practices](#extension-development-security-best-practices)
+- [Extension Development - Security Best Practices](#extension-development-security-best-practices)
 
 Understanding the Extension Attack Surface
 
@@ -146,7 +146,7 @@ If you develop password management tools or browser extensions handling sensitiv
 
 Request only the minimum permissions necessary for functionality. Every additional permission increases potential attack surface.
 
-Content security policies: Implement strict CSP headers to limit what the extension can execute:
+Content security policies - Implement strict CSP headers to limit what the extension can execute:
 
 ```json
 {
@@ -166,7 +166,7 @@ Bitwarden ($2.99/month premium, open-source): Source code publicly available on 
 
 LastPass ($3/month family plan, proprietary): Suffered multiple security incidents between 2015-2023. Extension remains widely installed despite past vulnerabilities. Slower security patch deployment compared to competitors.
 
-KeePass (Free, open-source): Browser extensions vary in quality. Desktop-first approach reduces attack surface. No cloud synchronization by default. Requires self-hosting sync infrastructure.
+KeePass (Free, open-source) - Browser extensions vary in quality. Desktop-first approach reduces attack surface. No cloud synchronization by default. Requires self-hosting sync infrastructure.
 
 Dashlane ($4.99/month, proprietary): Requires extensive permissions including clipboard access. Cloud-first architecture means passwords are constantly synchronized. High dependency on Dashlane's servers for full functionality.
 
@@ -227,13 +227,13 @@ Sandboxing Strategy for High-Value Credentials
 
 For banking, investment accounts, and other high-value targets, implement a multi-browser strategy:
 
-Browser 1: Credential Storage Only
+Browser 1 - Credential Storage Only
 - Install password manager extension only
 - No other extensions
 - No browsing activity
 - Used only to copy credentials to clipboard
 
-Browser 2: Web Browsing
+Browser 2 - Web Browsing
 - No password manager installed
 - Manually type credentials from clipboard
 - All malware executed here doesn't have direct access to vault
@@ -251,10 +251,10 @@ firefox -CreateProfile "browsing" 2>/dev/null
 Disable network access for vault browser
 (Implementation varies by OS)
 macOS: Use Little Snitch or similar to block vault-browser network except to password manager cloud
-Linux: Use iptables to restrict network access
+Linux - Use iptables to restrict network access
 ```
 
-Extension Development: Security Best Practices
+Extension Development - Security Best Practices
 
 If building password manager extensions or similar security-critical tools:
 
@@ -271,7 +271,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
   // 2. Never expose sensitive data in responses
   if (request.action === 'getPassword') {
-    // Wrong: return vault.getPassword(request.id);
+    // Wrong - return vault.getPassword(request.id);
     // Right: copy to clipboard and return only hash
     const password = vault.getPassword(request.id);
     clipboard.write(password);
@@ -322,6 +322,6 @@ Related Articles
 - [Browser Password Manager Vs Dedicated](/browser-password-manager-vs-dedicated-app/)
 - [Privacy Implications of Browser Extensions](/privacy-implications-browser-extensions/)
 - [Protect Yourself from Browser Extension Malware Installed](/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
-- [AI Tab Organizer Chrome Extension: Managing Browser Tabs](https://bestremotetools.com/ai-tab-organizer-chrome-extension/)
+- [AI Tab Organizer Chrome Extension - Managing Browser Tabs](https://bestremotetools.com/ai-tab-organizer-chrome-extension/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

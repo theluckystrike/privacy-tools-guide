@@ -20,14 +20,14 @@ Automated decision-making systems increasingly influence significant aspects of 
 
 Table of Contents
 
-- [Legal Framework: Your Right to Human Review](#legal-framework-your-right-to-human-review)
+- [Legal Framework - Your Right to Human Review](#legal-framework-your-right-to-human-review)
 - [How to Submit a Human Review Request](#how-to-submit-a-human-review-request)
-- [Technical Implementation: Building Request Handling Systems](#technical-implementation-building-request-handling-systems)
+- [Technical Implementation - Building Request Handling Systems](#technical-implementation-building-request-handling-systems)
 - [Common Scenarios and How to Handle Them](#common-scenarios-and-how-to-handle-them)
 - [What Organizations Must Provide](#what-organizations-must-provide)
 - [Building This Into Your Applications](#building-this-into-your-applications)
 
-Legal Framework: Your Right to Human Review
+Legal Framework - Your Right to Human Review
 
 Under GDPR Article 22, individuals have the right not to be subject to decisions based solely on automated processing that produce legal or similarly significant effects. This includes decisions made through profiling. Similar protections exist in CCPA/CPRA (California), VCDPA (Virginia), and other privacy regulations worldwide.
 
@@ -45,7 +45,7 @@ This right triggers when an automated decision:
 
 How to Submit a Human Review Request
 
-Step 1: Identify the Decision-Maker
+Step 1 - Identify the Decision-Maker
 
 First, determine which organization made the automated decision. This might be:
 - A bank or lender
@@ -54,27 +54,27 @@ First, determine which organization made the automated decision. This might be:
 - A government agency
 - A housing provider
 
-Step 2: Locate the Privacy Policy
+Step 2 - Locate the Privacy Policy
 
 Check the organization's privacy policy for:
 - Their designated privacy or data protection officer
 - Their process for handling rights requests
 - Any specific form they require
 
-Step 3: Submit Your Request
+Step 3 - Submit Your Request
 
 Use this template to submit your human review request:
 
 ```markdown
-Subject: Request for Human Review of Automated Decision
+Subject - Request for Human Review of Automated Decision
 
 To: [Organization Privacy Officer / Data Protection Officer]
 
 I am writing to request human review of an automated decision that affects me.
 
-Decision in question: [Describe the decision - e.g., credit application denial, job application rejection, insurance premium increase]
+Decision in question - [Describe the decision - e.g., credit application denial, job application rejection, insurance premium increase]
 
-Date of decision: [Date you became aware of the decision]
+Date of decision - [Date you became aware of the decision]
 
 I am exercising my right under [GDPR Article 22 / CCPA Section 1798.130 / applicable regulation] to request:
 1. Human intervention in the decision-making process
@@ -89,8 +89,8 @@ Please provide:
 
 My contact information:
 Name: [Your name]
-Email: [Your email]
-Account/Application reference: [If applicable]
+Email - [Your email]
+Account/Application reference - [If applicable]
 
 Please confirm receipt of this request and provide a timeline for response as required by applicable data protection law.
 
@@ -98,7 +98,7 @@ Please confirm receipt of this request and provide a timeline for response as re
 [Date]
 ```
 
-Technical Implementation: Building Request Handling Systems
+Technical Implementation - Building Request Handling Systems
 
 For developers implementing human review request workflows, here are practical patterns.
 

@@ -16,7 +16,7 @@ voice-checked: true
 
 {% raw %}
 
-HSTS supercookies exploit the browser's HSTS preload list (which persists locally) to encode tracking identifiers: a site sends HSTS headers that instruct the browser to remember dozens of related domains, and the pattern of which domains are recorded in HSTS creates a unique fingerprint. This persists across private browsing, cookie deletion, and even browser resets. Mitigation: regularly clear your HSTS cache (though most modern browsers reset it in private mode), use privacy extensions that block HSTS state storage, or switch to Tor Browser which isolates HSTS per-session.
+HSTS supercookies exploit the browser's HSTS preload list (which persists locally) to encode tracking identifiers: a site sends HSTS headers that instruct the browser to remember dozens of related domains, and the pattern of which domains are recorded in HSTS creates a unique fingerprint. This persists across private browsing, cookie deletion, and even browser resets. Mitigation - regularly clear your HSTS cache (though most modern browsers reset it in private mode), use privacy extensions that block HSTS state storage, or switch to Tor Browser which isolates HSTS per-session.
 
 Table of Contents
 
@@ -40,7 +40,7 @@ How HSTS Supercookies Work
 HSTS works through a header that servers send to browsers:
 
 ```
-Strict-Transport-Security: max-age=31536000; includeSubDomains
+Strict-Transport-Security - max-age=31536000; includeSubDomains
 ```
 
 When a browser receives this header, it records the domain in its HSTS preload list for the specified duration. The critical privacy implication: browsers store this information persistently, and the presence or absence of HSTS for a domain can encode binary information.
@@ -77,7 +77,7 @@ function setHSTSForUserId(userId) {
   for (let i = 0; i < 32; i++) {
     const bit = (userId >> i) & 1;
     if (bit === 1) {
-      subdomains.push(`Strict-Transport-Security: max-age=31536000; includeSubDomains`);
+      subdomains.push(`Strict-Transport-Security - max-age=31536000; includeSubDomains`);
     }
   }
   return subdomains;
@@ -98,9 +98,9 @@ Detecting HSTS Supercookies
 
 Power users can inspect HSTS state in their browsers:
 
-Chrome: Navigate to `chrome://net-internals/#hsts`
+Chrome - Navigate to `chrome://net-internals/#hsts`
 
-Firefox: Type `about:networking` in the address bar and check the HSTS section
+Firefox - Type `about:networking` in the address bar and check the HSTS section
 
 Command-line verification:
 
@@ -185,8 +185,8 @@ When implementing HSTS in your applications, consider using shorter max-age valu
 ```nginx
 Nginx configuration for HSTS
 add_header Strict-Transport-Security "max-age=3600; includeSubDomains" always;
-Development: short max-age
-Production: max-age=31536000; includeSubDomains; preload
+Development - short max-age
+Production - max-age=31536000; includeSubDomains; preload
 ```
 
 Practical Supercookie Detection
@@ -206,7 +206,7 @@ const hstsDomains = [
 
 // In browser console (limited access due to SOP)
 // Legitimate use: cdn.example.com, api.example.com
-// Suspicious: dozens of track-*.example.com subdomains
+// Suspicious - dozens of track-*.example.com subdomains
 
 // Use Firefox > about:networking to inspect HSTS entries
 // Report suspicious patterns to site authors
@@ -220,24 +220,24 @@ Different browsers store HSTS state differently:
 
 Chrome/Edge:
 ```bash
-Navigate to: chrome://net-internals/#hsts
+Navigate to - chrome://net-internals/#hsts
 Type domain name in "Delete domain security policies" field
 Click "Delete" to remove single domain
-For full reset: Clear browsing data > All time > Cookies > Clear data
+For full reset - Clear browsing data > All time > Cookies > Clear data
 ```
 
 Firefox:
 ```bash
 HSTS data stored in SiteSecurityServiceState.txt
-Location: ~/.mozilla/firefox/[profile]/
+Location - ~/.mozilla/firefox/[profile]/
 Delete file to clear all HSTS state
-Or navigate to: about:networking > View HSTS state (limited interface)
+Or navigate to - about:networking > View HSTS state (limited interface)
 ```
 
 Safari:
 ```bash
 HSTS state stored in ~/Library/Safari/LocalStorage/
-Clear via: Settings > Privacy > Manage Website Data > Remove All
+Clear via - Settings > Privacy > Manage Website Data > Remove All
 Less granular than Chrome/Firefox
 ```
 
@@ -299,13 +299,13 @@ Future Browser Protections
 
 Modern browsers are implementing mitigations:
 
-Chrome 125+: Discussions about randomizing HSTS behavior or requiring explicit user consent for supercookie-like techniques.
+Chrome 125+ - Discussions about randomizing HSTS behavior or requiring explicit user consent for supercookie-like techniques.
 
-Firefox: Privacy Badger and similar extensions partially mitigate by clearing HSTS state frequently.
+Firefox - Privacy Badger and similar extensions partially mitigate by clearing HSTS state frequently.
 
-Safari: iCloud Private Relay and cookie isolation provide defense-in-depth against tracking.
+Safari - iCloud Private Relay and cookie isolation provide defense-in-depth against tracking.
 
-The fundamental tension remains: HSTS is necessary for security, but its persistent nature enables tracking. Until browsers redesign HSTS with privacy-first principles, users must actively clear HSTS state and use privacy extensions.
+The fundamental tension remains - HSTS is necessary for security, but its persistent nature enables tracking. Until browsers redesign HSTS with privacy-first principles, users must actively clear HSTS state and use privacy extensions.
 
 Frequently Asked Questions
 

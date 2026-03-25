@@ -105,7 +105,7 @@ The Bitwarden CLI provides more control over the import process:
 ```bash
 Install Bitwarden CLI
 macOS: brew install bitwarden-cli
-Linux: sudo apt install bitwarden
+Linux - sudo apt install bitwarden
 
 Log in to Bitwarden
 bw login your@email.com
@@ -169,7 +169,7 @@ For bulk TOTP migration, use this CLI approach:
 
 ```bash
 Extract TOTP secrets from NordPass export (manual process)
-Format expected: base32 secret key
+Format expected - base32 secret key
 
 Add TOTP to multiple items via script
 while read line; do
@@ -221,24 +221,24 @@ BITWARDEN_EMAIL="your@email.com"
 
 echo "Starting NordPass to Bitwarden migration..."
 
-Step 1: Export from NordPass (assumes CLI is installed)
+Step 1 - Export from NordPass (assumes CLI is installed)
 echo "[1/5] Exporting from NordPass..."
 np export --format csv --output $EXPORT_FILE
 
-Step 2: Log into Bitwarden
+Step 2 - Log into Bitwarden
 echo "[2/5] Logging into Bitwarden..."
 bw login $BITWARDEN_EMAIL
 export BW_SESSION=$(bw unlock --raw)
 
-Step 3: Import data
+Step 3 - Import data
 echo "[3/5] Importing vault data..."
 bw import csv $EXPORT_FILE
 
-Step 4: Sync to ensure data is on server
+Step 4 - Sync to ensure data is on server
 echo "[4/5] Syncing vault..."
 bw sync
 
-Step 5: Verify import
+Step 5 - Verify import
 echo "[5/5] Verifying import..."
 ITEM_COUNT=$(bw list items | jq 'length')
 echo "Migration complete. Vault contains $ITEM_COUNT items."
@@ -291,24 +291,24 @@ history -c
 
 Troubleshooting Common Issues
 
-Issue: CSV import fails with encoding errors
+Issue - CSV import fails with encoding errors
 
-Solution: Ensure the CSV uses UTF-8 encoding:
+Solution - Ensure the CSV uses UTF-8 encoding:
 ```bash
 iconv -f ISO-8859-1 -t UTF-8 nordpass-export.csv > nordpass-utf8.csv
 ```
 
-Issue: Custom fields not appearing
+Issue - Custom fields not appearing
 
-Solution: Manually add via CLI or web interface, as CSV custom field support varies
+Solution - Manually add via CLI or web interface, as CSV custom field support varies
 
-Issue: Duplicate entries after import
+Issue - Duplicate entries after import
 
-Solution: Use Bitwarden's deduplication feature or import to a fresh vault first, then merge
+Solution - Use Bitwarden's deduplication feature or import to a fresh vault first, then merge
 
-Issue: TOTP codes not working
+Issue - TOTP codes not working
 
-Solution: Verify the secret key format, Bitwarden requires base32, not otpauth:// URIs
+Solution - Verify the secret key format, Bitwarden requires base32, not otpauth:// URIs
 
 Frequently Asked Questions
 

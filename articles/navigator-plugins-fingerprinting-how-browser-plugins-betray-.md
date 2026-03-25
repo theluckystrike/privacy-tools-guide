@@ -24,7 +24,7 @@ Table of Contents
 - [Why Plugin Lists Create Unique Fingerprints](#why-plugin-lists-create-unique-fingerprints)
 - [Browser Implementation Differences](#browser-implementation-differences)
 - [Mitigation Strategies for Developers](#mitigation-strategies-for-developers)
-- [Thearms Race: Browser Changes and Evasion Techniques](#thearms-race-browser-changes-and-evasion-techniques)
+- [Thearms Race - Browser Changes and Evasion Techniques](#thearms-race-browser-changes-and-evasion-techniques)
 - [Practical Implications for Privacy](#practical-implications-for-privacy)
 - [Quantifying Plugin Fingerprint Entropy](#quantifying-plugin-fingerprint-entropy)
 - [Extension Privacy Fingerprinting Services](#extension-privacy-fingerprinting-services)
@@ -65,7 +65,7 @@ Why Plugin Lists Create Unique Fingerprints
 
 The effectiveness of plugin fingerprinting stems from the combinatorial explosion of possible plugin configurations. Consider a user with the following extensions: uBlock Origin, LastPass, React Developer Tools, JSON Viewer, Dark Reader, and Privacy Badger. Another user might have Adblock Plus, 1Password, Vue.js devtools, Postman, HTTPS Everywhere, and NoScript.
 
-The probability of two random users sharing identical plugin sets approaches zero as the extension ecosystem grows. Research from the University of California and other institutions consistently demonstrates that plugin fingerprints achieve entropy exceeding 20 bits, comparable to or exceeding what cookies provide for tracking purposes.
+The probability of two random users sharing identical plugin sets approaches zero as the extension environment grows. Research from the University of California and other institutions consistently demonstrates that plugin fingerprints achieve entropy exceeding 20 bits, comparable to or exceeding what cookies provide for tracking purposes.
 
 Real-World Fingerprinting Example
 
@@ -140,7 +140,7 @@ const pdfSupported = 'pdf' in navigator.mimeTypes;
 
 This approach respects user privacy while still detecting actual capabilities.
 
-Thearms Race: Browser Changes and Evasion Techniques
+Thearms Race - Browser Changes and Evasion Techniques
 
 Browser vendors continuously modify plugin API behavior in response to privacy concerns. Modern browsers increasingly return empty or generic plugin arrays by default, pushing fingerprinters toward alternative techniques:
 
@@ -182,7 +182,7 @@ Assume 10,000 total extensions available
 Average user has 8 extensions installed
 entropy = calculate_fingerprint_entropy(10000, 8)
 print(f"Fingerprint entropy: {entropy:.1f} bits")
-Output: Fingerprint entropy: 60.5 bits (identifies 1 user in ~1 trillion)
+Output - Fingerprint entropy: 60.5 bits (identifies 1 user in ~1 trillion)
 
 Real browsers report ~5-20 extensions average
 for num_extensions in range(3, 21):
@@ -242,11 +242,11 @@ privacy.resistFingerprinting.letterboxing = true
 ```
 With this enabled, Firefox returns a generic plugin list regardless of actual installations.
 
-Brave Browser ($0, default): Ships with aggressive fingerprinting prevention enabled by default. Plugin information returns generic values in "Aggressive" privacy mode.
+Brave Browser ($0, default) - Ships with aggressive fingerprinting prevention enabled by default. Plugin information returns generic values in "Aggressive" privacy mode.
 
-Tor Browser ($0): Returns standardized plugin lists to all users, making individual fingerprints meaningless for tracking. Most effective approach but incompatible with many websites.
+Tor Browser ($0) - Returns standardized plugin lists to all users, making individual fingerprints meaningless for tracking. Most effective approach but incompatible with many websites.
 
-Edge Privacy Mode ($0): Can be configured to block fingerprinting scripts similar to Firefox's resistFingerprinting feature.
+Edge Privacy Mode ($0) - Can be configured to block fingerprinting scripts similar to Firefox's resistFingerprinting feature.
 
 Real-World Fingerprinting Example in the Wild
 

@@ -36,7 +36,7 @@ This approach serves several practical scenarios:
 - Cross-platform consistency: The same browser instance works across different operating systems
 - Incident isolation: Easy to remove all traces by simply unplugging the drive
 
-The tradeoff is straightforward: USB drives can be lost or stolen, and their performance depends on the drive's speed and the machine's USB port version.
+The tradeoff is straightforward - USB drives can be lost or stolen, and their performance depends on the drive's speed and the machine's USB port version.
 
 Prerequisites
 
@@ -48,7 +48,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Downloading and Verifying the Package
+Step 1 - Downloading and Verifying the Package
 
 Always download Tor Browser directly from the official project. For portable use, you need the archive format, not the installer.
 
@@ -71,7 +71,7 @@ Using PowerShell to download
 Invoke-WebRequest -Uri "https://www.torproject.org/dist/torbrowser/14.0.4/torbrowser-install-14.0.4_en-US.exe" -OutFile "tor-browser-portable.exe"
 ```
 
-Step 2: Set Up on the USB Drive
+Step 2 - Set Up on the USB Drive
 
 Create a dedicated folder on your USB drive and extract the contents there. Organize the drive to separate the Tor Browser folder from any personal files:
 
@@ -92,11 +92,11 @@ Launch Tor Browser from the USB drive. On first run, the configuration wizard ap
 
 1. Connection Type: Choose "Connect" for standard usage, or "Configure" if you're on a censored network requiring bridges
 2. Bridges: If connecting throughobfs4 bridges or snowflake proxies, enter your bridge addresses here
-3. Data Directory: Confirm the default `./TorBrowser/Data` path, this keeps everything on the USB
+3. Data Directory - Confirm the default `./TorBrowser/Data` path, this keeps everything on the USB
 
 Avoid changing the Data Directory to a system location, which defeats the portable purpose.
 
-Step 3: Security Hardening for Portable Use
+Step 3 - Security Hardening for Portable Use
 
 The default Tor Browser configuration provides solid baseline protection, but portable usage benefits from additional hardening.
 
@@ -136,7 +136,7 @@ privacy.resistFingerprinting.forceSeparator = true
 
 This prevents correlation attacks where the same entry guard sees multiple connections to different services.
 
-Step 4: Practical Automation Examples
+Step 4 - Practical Automation Examples
 
 Developers can integrate portable Tor Browser into automated workflows using the control port.
 
@@ -216,7 +216,7 @@ def test_tor_connection():
     driver.quit()
 ```
 
-Step 5: Perform Maintenance and Recovery
+Step 5 - Perform Maintenance and Recovery
 
 Portable Tor Browser requires the same update cadence as installed versions. The updater works normally when launched from the USB drive.
 
@@ -225,7 +225,7 @@ Backup Strategy
 Your USB drive can fail. Establish a backup routine:
 
 ```bash
-Linux: rsync with exclude patterns
+Linux - rsync with exclude patterns
 rsync -av --exclude='TorBrowser/Data/Tor' \
        --exclude='TorBrowser/Data/Browser/Cache' \
        /media/usb/tor-browser/ ~/backups/tor-portable/
@@ -242,7 +242,7 @@ If the USB drive becomes corrupted or lost:
 3. Your previous identities and bookmarks cannot be recovered without the original `TorBrowser/Data` folder
 4. Consider exporting bookmarks periodically to an encrypted location
 
-Step 6: Common Pitfalls
+Step 6 - Common Pitfalls
 
 Several mistakes undermine portable security:
 

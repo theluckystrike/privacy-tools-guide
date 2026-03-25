@@ -36,11 +36,11 @@ Most backup utilities, including cloud sync services, Time Machine, and even ded
 
 The other failure mode is the reverse: backing up keys alongside the encrypted messages in the same location. If an attacker gains access to your archive, they get everything they need to read it. Separation of archive and key material is the foundational principle of this guide.
 
-Method 1: Local MBOX Archive with Key Management
+Method 1 - Local MBOX Archive with Key Management
 
 The most straightforward approach involves exporting your email to MBOX format while maintaining a separate, encrypted key backup.
 
-Step 1: Export Email Using Python and IMAP
+Step 1 - Export Email Using Python and IMAP
 
 ```python
 import imaplib
@@ -81,7 +81,7 @@ mail.login('your@email.com', 'app-password')
 export_encrypted_emails(mail, './archive/2026-emails')
 ```
 
-Step 2: Backup Your Private Keys
+Step 2 - Backup Your Private Keys
 
 Never store private keys in plain text. Use a dedicated encrypted container:
 
@@ -98,7 +98,7 @@ gpg -d email-keys-backup-20260315.tar.gz.gpg | tar -tzf -
 
 Store this encrypted key backup on separate media, ideally offline storage in a secure location.
 
-Step 3: Document Key Metadata
+Step 3 - Document Key Metadata
 
 Before archiving, export a plain-text list of your key fingerprints and expiration dates. This metadata file lets you audit your archive without decrypting it:
 
@@ -110,7 +110,7 @@ gpg --clearsign --default-key your@email.com key-metadata.txt
 
 Store `key-metadata.txt.asc` alongside your archive index. When you return to this archive years later, the signed metadata tells you exactly which key ID corresponds to each message range.
 
-Method 2: GPG-Mailroom for Systematic Archiving
+Method 2 - GPG-Mailroom for Systematic Archiving
 
 For power users managing multiple accounts, gpg-mailroom provides an automated solution that handles encryption, signing, and storage rotation.
 
@@ -164,7 +164,7 @@ key_rotation:
 
 With `auto_reencrypt` enabled, the tool will re-encrypt archived messages with your new key before the old one expires. This prevents the common scenario where old archives become unreadable after key rotation.
 
-Method 3: Maildir with Per-Message Encryption
+Method 3 - Maildir with Per-Message Encryption
 
 For developers who prefer filesystem-level control, storing emails in Maildir format with individually encrypted files provides maximum flexibility.
 
@@ -347,6 +347,6 @@ Related Articles
 - [Best Encrypted Email for Business 2026: A Technical Guide](/best-encrypted-email-for-business-2026/)
 - [How To Set Up Pgp Encrypted Email In Thunderbird Step](/how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/)
 - [Best Encrypted Backup Solution For Developers](/best-encrypted-backup-solution-for-developers/)
-- [AI CI/CD Pipeline Optimization: A Developer Guide](https://bestremotetools.com/ai-ci-cd-pipeline-optimization/)
+- [AI CI/CD Pipeline Optimization - A Developer Guide](https://bestremotetools.com/ai-ci-cd-pipeline-optimization/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

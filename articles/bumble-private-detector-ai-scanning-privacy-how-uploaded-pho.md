@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Bumble Private Detector AI Scanning Privacy How Uploaded"
-description: "Bumble Private Detector: How AI Scans Your Uploaded.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
+description: "Bumble Private Detector - How AI Scans Your Uploaded.. privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
@@ -402,8 +402,8 @@ Set up Google Alerts for your images
 google-alerts add "YourImage.jpg"
 
 5. File complaint if needed
-FTC: ftc.gov/complaint
-State AG: state-specific agency
+FTC - ftc.gov/complaint
+State AG - state-specific agency
 ```
 
 Transparency and Accountability

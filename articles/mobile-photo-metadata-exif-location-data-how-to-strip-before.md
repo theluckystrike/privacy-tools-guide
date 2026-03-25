@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand EXIF Location Data
+Step 1 - Understand EXIF Location Data
 
 EXIF data lives inside image files themselves, added automatically by your phone's camera application. Location data appears as GPS coordinates stored in specific EXIF tags: GPSLatitude, GPSLongitude, GPSAltitude, and related fields. When you share a photo directly from your phone's gallery, you may inadvertently transmit this embedded location information to recipients or third-party platforms.
 
 The implications extend beyond simple privacy concerns. Metadata can reveal your home address, workplace, travel patterns, and the exact times you visit specific locations. Social media platforms, messaging apps, and cloud storage services may retain this metadata even after you upload images, creating lasting records of your movements.
 
-Step 2: Inspecting EXIF Metadata
+Step 2 - Inspecting EXIF Metadata
 
 Before removing metadata, you should understand what information your photos contain. Several tools allow you to examine EXIF data from the command line.
 
@@ -87,7 +87,7 @@ gps_data = get_exif_data("photo.jpg")
 print(gps_data)
 ```
 
-Step 3: Stripping EXIF Data with Command-Line Tools
+Step 3 - Stripping EXIF Data with Command-Line Tools
 
 Once you identify the metadata, removing it requires several approaches depending on your workflow.
 
@@ -173,7 +173,7 @@ def strip_exif_efficient(input_path, output_path=None):
         image.save(output_path, save_kwargs)
 ```
 
-Step 4: Platform-Specific Solutions
+Step 4 - Platform-Specific Solutions
 
 Android
 
@@ -226,7 +226,7 @@ func stripEXIF(from url: URL) -> Data? {
 }
 ```
 
-Step 5: Automate the Workflow
+Step 5 - Automate the Workflow
 
 For developers who frequently share photos, automation scripts improve the process. A simple shell script processes incoming images:
 

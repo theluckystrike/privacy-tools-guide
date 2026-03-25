@@ -22,7 +22,7 @@ What Is the GrapheneOS Travel Profile
 
 GrapheneOS is a privacy-focused Android operating system that hardening the platform against exploitation. Among its advanced features is the Profile system, which allows you to maintain completely separate user profiles on a single device. The Travel Profile uses this architecture to create an isolated environment with minimal personal data.
 
-The core principle is simple: when you approach a border checkpoint, you switch to a clean profile that contains only essential apps and data. This profile appears as a fresh device to inspection tools, while your actual data remains protected in your primary profile.
+The core principle is simple - when you approach a border checkpoint, you switch to a clean profile that contains only essential apps and data. This profile appears as a fresh device to inspection tools, while your actual data remains protected in your primary profile.
 
 Setting Up Your Travel Profile
 
@@ -50,13 +50,13 @@ Minimal Data Principles
 
 Your Travel Profile should follow these strict guidelines:
 
-No Personal Photos: Remove all personal images from the travel profile. Border agents frequently examine photo galleries for evidence of protest activity, relationships, or other criteria.
+No Personal Photos - Remove all personal images from the travel profile. Border agents frequently examine photo galleries for evidence of protest activity, relationships, or other criteria.
 
-No Email Clients: Email contains metadata that can be used to build a profile of your activities, contacts, and interests.
+No Email Clients - Email contains metadata that can be used to build a profile of your activities, contacts, and interests.
 
-Minimal Messaging: If you need communication, use Signal with a dedicated travel number. Configure it to automatically delete messages after 24 hours.
+Minimal Messaging - If you need communication, use Signal with a dedicated travel number. Configure it to automatically delete messages after 24 hours.
 
-No Cloud Sync: Disable all cloud sync services. Your Google, Apple, or third-party cloud data should never be accessible from the travel profile.
+No Cloud Sync - Disable all cloud sync services. Your Google, Apple, or third-party cloud data should never be accessible from the travel profile.
 
 Network Isolation Strategies
 
@@ -78,8 +78,8 @@ Using a Dedicated eSIM
 Consider acquiring a local SIM card or eSIM specifically for travel. This separates your primary phone number from your travel activities:
 
 ```
-Primary number: Keep active only in your main profile
-Travel number: Use only in the travel profile
+Primary number - Keep active only in your main profile
+Travel number - Use only in the travel profile
 ```
 
 This prevents correlation between your identity and your travel patterns.
@@ -117,11 +117,11 @@ Limitations and Considerations
 
 While GrapheneOS provides strong privacy protections, understand its limitations:
 
-Metadata Exposure: Even with a clean profile, your device's MAC address, IMEI, and other hardware identifiers can be recorded. GrapheneOS randomizes MAC addresses by default, but some inspection systems can still track your device.
+Metadata Exposure - Even with a clean profile, your device's MAC address, IMEI, and other hardware identifiers can be recorded. GrapheneOS randomizes MAC addresses by default, but some inspection systems can still track your device.
 
-Physical Access: Agents with sophisticated tools and unlimited time may find ways to extract information. The Travel Profile makes this significantly harder but doesn't make your device immune to advanced forensic analysis.
+Physical Access - Agents with sophisticated tools and unlimited time may find ways to extract information. The Travel Profile makes this significantly harder but doesn't make your device immune to advanced forensic analysis.
 
-Legal Variations: Border search laws vary significantly by country. Some jurisdictions allow agents to compel biometric unlock, while others require a warrant for password disclosure. Research the specific laws of your destination.
+Legal Variations - Border search laws vary significantly by country. Some jurisdictions allow agents to compel biometric unlock, while others require a warrant for password disclosure. Research the specific laws of your destination.
 
 Advanced Profile Isolation Techniques
 
@@ -219,11 +219,11 @@ Threat Model Analysis
 
 Understanding who you're defending against matters. Your threat model determines how aggressive your travel profile configuration should be:
 
-Low Threat Model: Crossing into Western European countries with standard customs screening. A basic travel profile with a few essential apps suffices.
+Low Threat Model - Crossing into Western European countries with standard customs screening. A basic travel profile with a few essential apps suffices.
 
-Medium Threat Model: Business travel to countries with active surveillance or known aggressive customs screening (Russia, China, certain US ports). Implement the full isolation protocol with airplane mode during crossing.
+Medium Threat Model - Business travel to countries with active surveillance or known aggressive customs screening (Russia, China, certain US ports). Implement the full isolation protocol with airplane mode during crossing.
 
-High Threat Model: Travel to authoritarian regimes, being a known activist or journalist, or having sensitive professional credentials. Consider leaving your primary device behind entirely and using a dedicated cheap phone as your travel device, potentially cheaper than the risk of compromise.
+High Threat Model - Travel to authoritarian regimes, being a known activist or journalist, or having sensitive professional credentials. Consider leaving your primary device behind entirely and using a dedicated cheap phone as your travel device, potentially cheaper than the risk of compromise.
 
 Technical Verification Commands
 

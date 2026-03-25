@@ -47,7 +47,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Morning Warm-Up Routine (5 Minutes)
+Step 1 - Morning Warm-Up Routine (5 Minutes)
 
 Start your workday with these activation stretches to prepare your body for hours of sitting:
 
@@ -68,7 +68,7 @@ Wake up your spine with gentle movements
 
 Complete each movement slowly, breathing deeply. Do not bounce or force any stretch, gentle tension is sufficient.
 
-Step 2: Hourly Desk Stretches (2-3 Minutes)
+Step 2 - Hourly Desk Stretches (2-3 Minutes)
 
 Set a timer to remind yourself every hour. These stretches require no equipment and can be performed while seated:
 
@@ -84,7 +84,7 @@ Extend your arms forward and make fists. Rotate your wrists in circles, 10 clock
 Seated Spinal Twist
 While seated, place your right hand on the outside of your left knee and twist your torso to the left, looking over your left shoulder. Hold for 20 seconds, then repeat on the other side. This rotation maintains spine mobility.
 
-Step 3: End-of-Day Deep Stretches (10 Minutes)
+Step 3 - End-of-Day Deep Stretches (10 Minutes)
 
 Before finishing work, dedicate 10 minutes to deeper stretches that address chronic tightness:
 
@@ -107,7 +107,7 @@ pigeon pose (seated version)
 
 These deeper stretches require consistency. You will not feel immediate relief after one session, but daily practice over two weeks typically yields noticeable improvements in mobility.
 
-Step 4: Configure Break Reminders
+Step 4 - Configure Break Reminders
 
 Rather than relying on memory, use your terminal to set regular reminders:
 
@@ -121,12 +121,12 @@ while true; do
 done
 
 Or use the free 'BreakTimer' application
-Available via Homebrew: brew install breaktimer
+Available via Homebrew - brew install breaktimer
 ```
 
 Consistent reminders transform stretching from an afterthought into a sustainable habit.
 
-Step 5: Create a Stretching Schedule
+Step 5 - Create a Stretching Schedule
 
 Block stretching time on your calendar just like meetings. Treat it as non-negotiable, it prevents the injuries that ultimately cost more time than prevention. Many developers use the Pomodoro Technique, stretching during each fifth break:
 
@@ -144,7 +144,7 @@ Pomodoro Schedule with Stretching:
 
 This cycle maintains focus while ensuring adequate movement throughout your workday.
 
-Step 6: Tracking Your Progress
+Step 6 - Tracking Your Progress
 
 Create a simple tracking system to maintain accountability:
 
@@ -178,17 +178,17 @@ For developers experiencing persistent pain, consider these tools:
 
 Physical therapists who specialize in desk ergonomics can provide personalized routines based on your specific posture patterns and problems. Do not ignore persistent pain, early intervention prevents chronic issues.
 
-Step 7: Build Long-Term Habits
+Step 7 - Build Long-Term Habits
 
 The best stretching routine is one you actually follow. Start with just 5 minutes per day, preferably at the same time each morning. Once this becomes automatic, gradually add the hourly desk stretches. Use your current workflow as cues, stretch right after your morning coffee, or right before your lunch break.
 
 Technology should support your wellness, not compete with it. Configure your tools once, then forget about them while they quietly remind you to move throughout the day.
 
-Step 8: Stretching Modification for Different Fitness Levels
+Step 8 - Stretching Modification for Different Fitness Levels
 
 The stretches described work for most people, but modifications account for different fitness levels:
 
-Stiff/Sedentary Developers: Start with gentle ranges of motion. Don't force stretches. Pain is a signal to stop. Progress gradually as flexibility improves over weeks:
+Stiff/Sedentary Developers - Start with gentle ranges of motion. Don't force stretches. Pain is a signal to stop. Progress gradually as flexibility improves over weeks:
 
 ```bash
 Modified stretches for stiff developers
@@ -201,7 +201,7 @@ Modified stretches for stiff developers
 3. Avoid ballistic stretching: No bouncing, only gentle static holds
 ```
 
-Active/Flexible Developers: Increase difficulty and duration:
+Active/Flexible Developers - Increase difficulty and duration:
 
 ```bash
 Advanced modifications
@@ -216,7 +216,7 @@ Advanced modifications
    Creates movement flow similar to light yoga
 ```
 
-Developers with Injuries: Work with physical therapist before aggressive stretching. Modified ranges allow maintenance without aggravation:
+Developers with Injuries - Work with physical therapist before aggressive stretching. Modified ranges allow maintenance without aggravation:
 
 ```bash
 Injury-aware stretching
@@ -225,7 +225,7 @@ Injury-aware stretching
 3. Wrist pain: Avoid forceful rotations, do gentle circular movements
 ```
 
-Step 9: Stretching Routine for Different Ergonomic Issues
+Step 9 - Stretching Routine for Different Ergonomic Issues
 
 Not all developers need the same stretches. Tailor your routine to your specific problems:
 
@@ -255,41 +255,41 @@ Hip and Leg Tightness:
 
 Identify which areas give you pain, then prioritize stretches targeting those areas. Even 2 minutes of focused stretching for your problem areas beats 10 minutes of generic stretching.
 
-Step 10: Ergonomic Assessment for Remote Work Setup
+Step 10 - Ergonomic Assessment for Remote Work Setup
 
 Beyond stretching, your workspace configuration significantly impacts injury prevention. Poor ergonomics can't be overcome by stretching alone:
 
-Monitor Height: Position monitor so the top of the screen is at eye level when sitting normally. Too-low monitors force you to look down, creating neck strain:
+Monitor Height - Position monitor so the top of the screen is at eye level when sitting normally. Too-low monitors force you to look down, creating neck strain:
 
 ```bash
 DIY monitor stand adjustment
 If monitor is too low, elevate with books or monitor riser
-Target: Top of monitor at or slightly below eye level
-Distance: 20-26 inches from eyes (arm's length)
+Target - Top of monitor at or slightly below eye level
+Distance - 20-26 inches from eyes (arm's length)
 ```
 
-Keyboard and Mouse Placement: Your elbows should be at roughly 90 degrees when typing. Keyboard should be at elbow height or slightly below:
+Keyboard and Mouse Placement - Your elbows should be at roughly 90 degrees when typing. Keyboard should be at elbow height or slightly below:
 
 ```
 Good setup:
 Elbow angle: ~90°
-Wrist position: Neutral (not bent up or down)
-Mouse: Close to keyboard, not reaching
+Wrist position - Neutral (not bent up or down)
+Mouse - Close to keyboard, not reaching
 
 Bad setup:
 Keyboard too high: Wrist extension, shoulder strain
-Keyboard too low: Forward head posture
-Mouse far away: Constant reaching
+Keyboard too low - Forward head posture
+Mouse far away - Constant reaching
 ```
 
-Chair Setup: An adequate office chair with lumbar support prevents lower back pain. Key adjustments:
+Chair Setup - An adequate office chair with lumbar support prevents lower back pain. Key adjustments:
 - Seat height: Feet flat on floor, knees at ~90°
 - Backrest: Support the natural curve of your spine
 - Armrests: Elbows at ~90° when typing (or remove if they prevent proper positioning)
 
-Desk Organization: Keep frequently used items within arm's reach. Items requiring reaching (phone, files) outside normal work area should be accessed during intentional breaks.
+Desk Organization - Keep frequently used items within arm's reach. Items requiring reaching (phone, files) outside normal work area should be accessed during intentional breaks.
 
-Step 11: Recognizing Repetitive Strain Injury Warning Signs
+Step 11 - Recognizing Repetitive Strain Injury Warning Signs
 
 Early intervention prevents chronic issues. Watch for:
 
@@ -307,43 +307,43 @@ These symptoms suggest inflammation. Stretching alone may not resolve underlying
 
 Physical therapists specializing in occupational health can perform ergonomic assessments and identify movement patterns causing strain.
 
-Step 12: Mental Benefits of Movement Breaks
+Step 12 - Mental Benefits of Movement Breaks
 
 Beyond physical health, stretching provides mental benefits:
 
-Breaks Improve Focus: Research shows that taking movement breaks every 60-90 minutes improves subsequent focus and productivity. The break doesn't need to be long, 2-3 minutes of activity suffices.
+Breaks Improve Focus - Research shows that taking movement breaks every 60-90 minutes improves subsequent focus and productivity. The break doesn't need to be long, 2-3 minutes of activity suffices.
 
-Reduces Stress: Stretching activates the parasympathetic nervous system, reducing cortisol and improving mood. A quick stretch during stressful moments provides immediate calming.
+Reduces Stress - Stretching activates the parasympathetic nervous system, reducing cortisol and improving mood. A quick stretch during stressful moments provides immediate calming.
 
-Prevents Brain Fog: Sedentary behavior reduces blood flow to the brain. Movement increases circulation, improving cognitive function and alertness.
+Prevents Brain Fog - Sedentary behavior reduces blood flow to the brain. Movement increases circulation, improving cognitive function and alertness.
 
-Workflow Rhythm: Incorporating movement creates natural work rhythms that prevent burnout. Your brain gets periodic rest from intense focus.
+Workflow Rhythm - Incorporating movement creates natural work rhythms that prevent burnout. Your brain gets periodic rest from intense focus.
 
-Step 13: Integrate Movement Into Development Workflow
+Step 13 - Integrate Movement Into Development Workflow
 
 Rather than viewing stretching as separate from work, integrate it into your development cycle:
 
-During Code Review: While reviewing pull requests, stand and stretch. This diversifies your activities and prevents fatigue while reading code.
+During Code Review - While reviewing pull requests, stand and stretch. This diversifies your activities and prevents fatigue while reading code.
 
-During Builds: While code compiles, stretch instead of checking social media. Use compiler wait time productively.
+During Builds - While code compiles, stretch instead of checking social media. Use compiler wait time productively.
 
-During Meetings: Take walking meetings when possible. Even short 10-minute walking discussions improve creativity and meeting quality.
+During Meetings - Take walking meetings when possible. Even short 10-minute walking discussions improve creativity and meeting quality.
 
-Between Meetings: The 5 minutes between calendar items is perfect for quick stretches rather than scrambling to the next meeting.
+Between Meetings - The 5 minutes between calendar items is perfect for quick stretches rather than scrambling to the next meeting.
 
-Pomodoro Stretching: Combine the Pomodoro Technique with stretching. Every fifth break includes deeper stretching rather than just screen-free time.
+Pomodoro Stretching - Combine the Pomodoro Technique with stretching. Every fifth break includes deeper stretching rather than just screen-free time.
 
-Step 14: Automated Stretch Suggestions
+Step 14 - Automated Stretch Suggestions
 
 For those who forget manual reminders, several tools provide guided stretching:
 
-Mac: Visit https://stretchtimer.com (free web-based timer with stretch suggestions)
+Mac - Visit https://stretchtimer.com (free web-based timer with stretch suggestions)
 
-Linux: Use `notify-send` with a cron job to display stretch reminders with notifications
+Linux - Use `notify-send` with a cron job to display stretch reminders with notifications
 
 iOS/Android: Apps like "Stretching Pro" or "Daily Yoga" provide timed stretching routines with video demonstrations
 
-VS Code Extension: The "Pomodoro" extension includes built-in stretch recommendations during breaks
+VS Code Extension - The "Pomodoro" extension includes built-in stretch recommendations during breaks
 
 Setting up one of these automated systems removes the "willpower" requirement and makes stretching automatic.
 

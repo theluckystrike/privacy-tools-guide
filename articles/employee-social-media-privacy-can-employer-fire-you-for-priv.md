@@ -57,7 +57,7 @@ Many states add additional protected categories, including political affiliation
 
 Courts have found anti-discrimination protection applies even to posts not explicitly about protected characteristics if they create a hostile work environment. A 2023 case established that social media posts discussing mental health accommodations triggered disability law protections, even though the employer initially claimed the termination was unrelated.
 
-Private vs. Public Posts: Does Privacy Matter?
+Private vs. Public Posts - Does Privacy Matter?
 
 A common misconception is that private social media posts are somehow more protected than public ones. Legally, this distinction matters less than you might think.
 
@@ -92,13 +92,13 @@ Several states have passed laws providing additional social media protections:
 
 Check your state's specific laws. Some states protect broader categories of off-duty conduct, including political activity and recreational activities.
 
-Case Examples: What Gets People Fired vs. What Doesn't
+Case Examples - What Gets People Fired vs. What Doesn't
 
-Case 1 - Protected Activity: A software engineer at a fintech company posted about unfair commission structures affecting multiple engineers. The company fired them citing "insubordination." The NLRB ruled this was protected concerted activity discussing working conditions and ordered reinstatement with back pay.
+Case 1 - Protected Activity - A software engineer at a fintech company posted about unfair commission structures affecting multiple engineers. The company fired them citing "insubordination." The NLRB ruled this was protected concerted activity discussing working conditions and ordered reinstatement with back pay.
 
-Case 2 - Unprotected Activity: Another engineer posted harsh personal criticism of their direct manager's leadership style without reference to broader workplace conditions. Termination was upheld because this was personal griping, not concerted activity.
+Case 2 - Unprotected Activity - Another engineer posted harsh personal criticism of their direct manager's leadership style without reference to broader workplace conditions. Termination was upheld because this was personal griping, not concerted activity.
 
-Case 3 - Anti-Discrimination Protection: A developer posted about needing flexibility for autoimmune disease management. When fired shortly after, courts found disability discrimination despite the employer claiming budget cuts drove the termination.
+Case 3 - Anti-Discrimination Protection - A developer posted about needing flexibility for autoimmune disease management. When fired shortly after, courts found disability discrimination despite the employer claiming budget cuts drove the termination.
 
 These patterns show the distinction hinges on whether your speech addresses collective workplace issues (protected) or personal frustration (not protected), and whether protected characteristics are implicated.
 
@@ -283,7 +283,7 @@ Related Articles
 - [How to Block Social Media Share Button Tracking on Websites](/how-to-block-social-media-share-button-tracking-on-websites/)
 - [How To Delete Old Social Media Accounts](/how-to-delete-old-social-media-accounts/)
 - [Can Employer Read Your Personal Email On Work Computer Legal](/can-employer-read-your-personal-email-on-work-computer-legal/)
-- [AI Tools for Social Media Analytics: A Practical Guide](https://bestremotetools.com/ai-tools-for-social-media-analytics/)
+- [AI Tools for Social Media Analytics - A Practical Guide](https://bestremotetools.com/ai-tools-for-social-media-analytics/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 Frequently Asked Questions

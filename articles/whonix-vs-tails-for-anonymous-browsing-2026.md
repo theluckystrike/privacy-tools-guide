@@ -41,11 +41,11 @@ Table of Contents
 - [Advanced Network Configuration for Privacy](#advanced-network-configuration-for-privacy)
 - [Comparison of Threat Models and Use Cases](#comparison-of-threat-models-and-use-cases)
 - [Hardware and Performance Considerations](#hardware-and-performance-considerations)
-- [Hybrid Approach: Using Both Systems](#hybrid-approach-using-both-systems)
+- [Hybrid Approach - Using Both Systems](#hybrid-approach-using-both-systems)
 
 Architecture Overview
 
-Whonix: Isolation Through Virtualization
+Whonix - Isolation Through Virtualization
 
 Whonix runs as two virtual machines: a "Gateway" that routes all traffic through Tor, and a "Workstation" where your browsing and applications operate. This isolation means the workstation has no direct internet access, everything must pass through the Tor network via the gateway.
 
@@ -64,7 +64,7 @@ Whonix runs as two virtual machines: a "Gateway" that routes all traffic through
 
 The workstation's lack of a public IP address provides strong protection against IP leaks, even if malware executes on the system. An attacker compromising the workstation cannot discover the user's real IP without also compromising the gateway.
 
-Tails: Amnesic Live System
+Tails - Amnesic Live System
 
 Tails operates as a live USB or DVD that boots into a stateless Debian-based operating system. Nothing persists across reboots by default, all changes are stored in RAM and wiped when you shut down. This "amnesic" design protects against forensic analysis on the physical machine.
 
@@ -216,9 +216,9 @@ EOF
 systemctl restart tor
 
 Configure applications to use different ports
-Firefox: 127.0.0.1:9050 (general browsing)
-Thunderbird: 127.0.0.1:9051 (email)
-Bitcoin client: 127.0.0.1:9052 (financial)
+Firefox - 127.0.0.1:9050 (general browsing)
+Thunderbird - 127.0.0.1:9051 (email)
+Bitcoin client - 127.0.0.1:9052 (financial)
 
 Each application now uses separate Tor circuits
 Correlating behavior between apps becomes harder
@@ -249,7 +249,7 @@ torify curl https://check.torproject.org
 
 Comparison of Threat Models and Use Cases
 
-Matrix: When to Use Which System
+Matrix - When to Use Which System
 
 ```
 
@@ -295,7 +295,7 @@ Tails Resource Profile:
 Performance Optimization
 
 ```bash
-Whonix: Optimize VM disk performance
+Whonix - Optimize VM disk performance
 Use SSD for VM storage, not mechanical HDD
 Enable VT-x/AMD-V virtualization extensions in BIOS
 
@@ -303,7 +303,7 @@ Check if virtualization is enabled
 kvm-ok # Linux
 system_profiler SPHardwareDataType | grep Virtualization # macOS
 
-Tails: Optimize USB performance
+Tails - Optimize USB performance
 Use USB 3.0 drive for fastest boot times
 Format with optimal block size
 
@@ -314,12 +314,12 @@ Disable journaling for better USB wear characteristics
 tune2fs -O ^has_journal /dev/sdX1
 ```
 
-Hybrid Approach: Using Both Systems
+Hybrid Approach - Using Both Systems
 
 Some threat models benefit from combined Whonix+Tails usage:
 
 ```bash
-Scenario: Journalist protecting critical sources
+Scenario - Journalist protecting critical sources
 
 Tier 1 - Public work (no anonymity needed):
 Regular system with basic privacy (VPN)

@@ -47,21 +47,21 @@ Available Client Hints Headers
 Chrome exposes numerous hints that websites can request:
 
 ```
-Sec-CH-UA: "Chrome"; v="120", "Not(A:Brand"; v="8"
-Sec-CH-UA-Mobile: ?0
-Sec-CH-UA-Platform: "Windows"
-Sec-CH-UA-Platform-Version: "15.0.0"
-Sec-CH-UA-Arch: "x86"
-Sec-CH-UA-Bitness: "64"
-Sec-CH-UA-Model: "Galaxy S21"
-Sec-CH-UA-WOW64: ?0
-Sec-CH-Prefers-Color-Scheme: "dark"
-Sec-CH-Prefers-Reduced-Motion: "no-preference"
-Viewport-Width: 1920
-Device-Memory: 8
-Downlink: 10.85
-ECT: 4g
-RTT: 50
+Sec-CH-UA - "Chrome"; v="120", "Not(A:Brand"; v="8"
+Sec-CH-UA-Mobile - ?0
+Sec-CH-UA-Platform - "Windows"
+Sec-CH-UA-Platform-Version - "15.0.0"
+Sec-CH-UA-Arch - "x86"
+Sec-CH-UA-Bitness - "64"
+Sec-CH-UA-Model - "Galaxy S21"
+Sec-CH-UA-WOW64 - ?0
+Sec-CH-Prefers-Color-Scheme - "dark"
+Sec-CH-Prefers-Reduced-Motion - "no-preference"
+Viewport-Width - 1920
+Device-Memory - 8
+Downlink - 10.85
+ECT - 4g
+RTT - 50
 ```
 
 Each header reveals specific information about your device and preferences. The `Sec-CH-UA-*` headers expose detailed browser and platform information, while `Device-Memory` reveals available RAM, and network-related hints like `Downlink` and `ECT` characterize your connection quality.
@@ -74,7 +74,7 @@ Here's a practical example of how a site might implement hint-based fingerprinti
 
 ```javascript
 // Server sends this response header to request Client Hints
-Accept-CH: Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Platform,
+Accept-CH - Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Platform,
            Sec-CH-UA-Model, Device-Memory, Downlink
 
 // JavaScript can also access hints via the Permissions API
@@ -100,7 +100,7 @@ A user with a specific Chrome version, on a particular device model, running Win
 
 Practical Fingerprinting Example
 
-Consider this scenario: a website wants to build a fingerprint:
+Consider this scenario - a website wants to build a fingerprint:
 
 ```python
 Server-side example (Python/Flask)
@@ -182,7 +182,7 @@ The Broader Privacy Sandbox Context
 
 Client Hints exist within Google's larger Privacy Sandbox framework, which includes APIs like Topics, Attribution Reporting, and FLEDGE. While marketed as privacy improvements, these APIs create new tracking mechanisms that operate without traditional cookies.
 
-The fundamental tension: Chrome positions Client Hints as a privacy-respecting alternative to fingerprinting, while the API itself enables fingerprinting at scale.
+The fundamental tension - Chrome positions Client Hints as a privacy-respecting alternative to fingerprinting, while the API itself enables fingerprinting at scale.
 
 Frequently Asked Questions
 
@@ -247,7 +247,7 @@ def calculate_fingerprint_entropy(hints: dict) -> float:
             print(f"{hint}: {entropy:.1f} bits")
 
     print(f"\nTotal fingerprint entropy: {total_entropy:.1f} bits")
-    print(f"Uniqueness: 1 in {2total_entropy:,.0f} browsers")
+    print(f"Uniqueness - 1 in {2total_entropy:,.0f} browsers")
 
     return total_entropy
 
@@ -324,7 +324,7 @@ This creates a persistent identifier that survives:
 
 Cross-Site Tracking with Client Hints
 
-The dangerous part: Hints are sent to EVERY website you visit:
+The dangerous part - Hints are sent to EVERY website you visit:
 
 ```
 User visits site1.com
@@ -389,7 +389,7 @@ chrome://settings/privacy
 → "Send Do Not Track" - Adds header but doesn't block hints
 → No Client Hints specific controls
 
-Solution: Use extensions to block or modify hints
+Solution - Use extensions to block or modify hints
 ```
 
 If using Chrome, install uBlock Origin with custom rules.

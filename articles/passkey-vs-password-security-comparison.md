@@ -23,7 +23,7 @@ Table of Contents
 - [Backend Implementation for Hybrid Authentication](#backend-implementation-for-hybrid-authentication)
 - [Database Schema for Passkey Support](#database-schema-for-passkey-support)
 - [Testing Passkey Implementation](#testing-passkey-implementation)
-- [Migration Path: Adding Passkeys to Existing Password System](#migration-path-adding-passkeys-to-existing-password-system)
+- [Migration Path - Adding Passkeys to Existing Password System](#migration-path-adding-passkeys-to-existing-password-system)
 - [Real-World Limitations](#real-world-limitations)
 
 Can I use the first tool and the second tool together?
@@ -196,7 +196,7 @@ curl -X POST https://yourdomain.com/api/auth/register/complete \
   }'
 ```
 
-Migration Path: Adding Passkeys to Existing Password System
+Migration Path - Adding Passkeys to Existing Password System
 
 For services with millions of existing password users:
 

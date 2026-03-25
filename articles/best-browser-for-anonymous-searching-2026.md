@@ -34,7 +34,7 @@ When you type a query into a search engine, multiple tracking mechanisms come in
 
 Effective anonymous searching must address all these vectors simultaneously. The browsers and configurations below provide layered defenses against each tracking method.
 
-Tor Browser: Maximum Anonymity
+Tor Browser - Maximum Anonymity
 
 The Tor Browser remains the gold standard for anonymous web browsing. It routes your traffic through the Tor network, a series of relays that anonymize your IP address by bouncing your connection through multiple nodes worldwide. Each relay only knows the previous and next hop, making it extremely difficult to trace traffic back to its origin.
 
@@ -140,7 +140,7 @@ For isolating search activities from regular browsing, Firefox Multi-Account Con
 
 This isolation prevents search activity from being linked to your regular browsing profile.
 
-Brave Browser: Built-In Privacy
+Brave Browser - Built-In Privacy
 
 Brave Browser offers strong privacy features out of the box with minimal configuration. Its Shields system blocks trackers and ads by default, and the browser includes Tor-based private windows for enhanced anonymity.
 
@@ -176,7 +176,7 @@ Brave Search is built into the browser and provides genuinely private search res
 2. Select Brave Search as the default engine
 3. Disable "Show search suggestions" to prevent query leakage
 
-Advanced: Browser Fingerprint Mitigation
+Advanced - Browser Fingerprint Mitigation
 
 Beyond basic configuration, advanced users should consider fingerprinting resistance. Browser fingerprinting collects details like installed fonts, canvas rendering output, WebGL capabilities, and timing information to create unique identifiers.
 
@@ -213,7 +213,7 @@ For developers needing anonymous search capabilities, combine these tools into a
 1. Casual research: Use Brave with Shields at strict level and Brave Search
 2. Sensitive queries: Use Tor Browser at Safest security level
 3. Development work: Use hardened Firefox with containers for isolated testing
-4. Verification: Check your fingerprint atcovery.com or amiunique.org periodically
+4. Verification - Check your fingerprint atcovery.com or amiunique.org periodically
 
 Each approach balances usability against anonymity. Choose the appropriate level based on your threat model and the sensitivity of your searches.
 

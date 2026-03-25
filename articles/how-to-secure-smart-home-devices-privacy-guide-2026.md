@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Smart Home Privacy Problem
+Step 1 - The Smart Home Privacy Problem
 
 Smart home devices collect continuous data: voice recordings (Amazon Echo, Google Home), video feeds (Wyze, Ring), location data (smart thermostats, door locks), and detailed usage patterns (when you're home, temperature preferences). Manufacturers claim they encrypt data and respect privacy. However:
 
@@ -39,9 +39,9 @@ Smart home devices collect continuous data: voice recordings (Amazon Echo, Googl
 
 The only solution is physical isolation: keep smart devices away from your personal data, disable cloud features you don't need, and monitor what they try to contact.
 
-Step 2: Network Isolation: Guest Network vs VLAN
+Step 2 - Network Isolation: Guest Network vs VLAN
 
-Easy Approach: WiFi Guest Network
+Easy Approach - WiFi Guest Network
 
 Most home routers (mesh networks from Eero, UniFi, Linksys) support guest networks. Create a separate 5GHz guest network for smart home devices. Guests on this network cannot access your main computers, printers, or NAS.
 
@@ -70,27 +70,27 @@ Devices that stay on main network:
 Limitation of guest network approach:
 Guest networks prevent devices from seeing your computers, but devices can still access the internet and reach cloud servers. This solves the lateral movement problem but not the cloud data harvesting problem.
 
-Better Approach: VLAN (Virtual LAN) with Access Control
+Better Approach - VLAN (Virtual LAN) with Access Control
 
 A VLAN (Virtual Local Area Network) is a network within your network. Your smart devices sit in a separate VLAN and can access the internet but cannot reach devices on your main VLAN. Advanced routers (Ubiquiti UniFi, Firewalla) support VLANs with firewall rules.
 
 VLAN segmentation example:
 
 ```
-Main Network (VLAN 10): 192.168.1.0/24
+Main Network (VLAN 10) - 192.168.1.0/24
   - Laptop
   - Phone
   - NAS
   - Printers
 
-IoT Network (VLAN 20): 192.168.10.0/24
+IoT Network (VLAN 20) - 192.168.10.0/24
   - Smart speakers
   - Cameras
   - Thermostats
   - Lights
   - Door locks
 
-Firewall rule: Block VLAN 20 → VLAN 10 (one-way isolation)
+Firewall rule - Block VLAN 20 → VLAN 10 (one-way isolation)
 Allow VLAN 20 → Internet (devices can call home to cloud)
 ```
 
@@ -116,9 +116,9 @@ UniFi requires a dream machine or controller ($99-299). Setup takes 45 minutes.
 4. Create wireless network on that VLAN
 5. Set firewall rule: Deny IoT → Home, Allow IoT → WAN
 
-Step 3: Device-Specific Privacy Settings
+Step 3 - Device-Specific Privacy Settings
 
-Smart Speakers: Amazon Echo and Google Home
+Smart Speakers - Amazon Echo and Google Home
 
 Amazon Alexa privacy settings:
 
@@ -152,9 +152,9 @@ Physical privacy controls:
 - Mute button on top of speaker
 - Disable microphone in Google Home app if not actively using voice commands
 
-Cost savings: Most people don't need a smart speaker. If you don't use voice commands, delete it. One less tracking device in your home.
+Cost savings - Most people don't need a smart speaker. If you don't use voice commands, delete it. One less tracking device in your home.
 
-Smart Cameras: Wyze, Ring, Arlo
+Smart Cameras - Wyze, Ring, Arlo
 
 Camera privacy checklist:
 
@@ -179,7 +179,7 @@ Wyze app → Camera settings
 - Notifications → Disable non-critical alerts
 ```
 
-Alternative: Local NVR systems
+Alternative - Local NVR systems
 
 If you need cameras but don't trust cloud services, use a local NVR (Network Video Recorder):
 
@@ -189,7 +189,7 @@ If you need cameras but don't trust cloud services, use a local NVR (Network Vid
 
 Local recording is more private but requires maintaining hardware yourself.
 
-Smart Thermostats: Nest, Ecobee
+Smart Thermostats - Nest, Ecobee
 
 Thermostat privacy settings:
 
@@ -212,7 +212,7 @@ Privacy-focused alternative:
 - Ecobee SmartThermostat ($249): Same features as Nest, but data handled by Ecobee (smaller company, fewer data practices)
 - Non-smart thermostat ($100-200): Mechanical or simple digital; no WiFi, no tracking
 
-Smart Locks: Level Lock, August
+Smart Locks - Level Lock, August
 
 Lock privacy settings:
 
@@ -233,9 +233,9 @@ Minimize data collection:
 - Don't use remote unlock feature (only local app access)
 - Use mechanical backup key when possible
 
-Step 4: Network Monitoring: Pi-hole and Firewalla
+Step 4 - Network Monitoring: Pi-hole and Firewalla
 
-Pi-hole: Block Tracking Domains at Network Level
+Pi-hole - Block Tracking Domains at Network Level
 
 Pi-hole intercepts DNS requests from your devices and blocks known tracking domains before they load. It's like ad-blocking for your entire network.
 
@@ -254,7 +254,7 @@ Download and run Pi-hole installer
 curl -sSL https://install.pi-hole.net | bash
 
 Follow prompts to set admin password
-Access admin panel: http://raspberrypi.local/admin
+Access admin panel - http://raspberrypi.local/admin
 ```
 
 Configuration:
@@ -279,11 +279,11 @@ See every DNS request from every device:
 
 If a tracking domain is blocked, the device cannot reach it. Prevents data exfiltration at the network level.
 
-Firewalla: Network Appliance with Built-in Monitoring
+Firewalla - Network Appliance with Built-in Monitoring
 
 Firewalla combines router, firewall, and monitoring in one device. It shows which domains every device tries to contact and lets you block them.
 
-Cost: $79-199 depending on model
+Cost - $79-199 depending on model
 
 Monitoring example (Firewalla app):
 
@@ -300,14 +300,14 @@ Home → Devices → Smart Speaker
   You can block each domain individually
 ```
 
-Step 5: Firmware Update Schedule
+Step 5 - Firmware Update Schedule
 
 Smart device manufacturers release security patches monthly or quarterly. Create a calendar reminder to check for updates.
 
 Monthly firmware check:
 
 ```
-Set recurring calendar event: "Smart home firmware updates"
+Set recurring calendar event - "Smart home firmware updates"
   - Amazon devices: Alexa app → Devices → device settings → Device Software Version
   - Google Home: Google Home app → Settings → About → Check for updates
   - Wyze cameras: Wyze app → Device Info → Firmware
@@ -317,7 +317,7 @@ Set recurring calendar event: "Smart home firmware updates"
 
 Most devices auto-update at night if enabled. Verify the version monthly and manually update if auto-update failed.
 
-Step 6: Privacy-First Smart Home Setup
+Step 6 - Privacy-First Smart Home Setup
 
 Minimum viable secure setup:
 
@@ -326,7 +326,7 @@ Minimum viable secure setup:
 3. Set monthly firmware update reminder
 4. Install Pi-hole ($35 one-time) to monitor tracking attempts
 
-Cost: $35-50 + your time
+Cost - $35-50 + your time
 
 More setup:
 
@@ -336,7 +336,7 @@ More setup:
 4. Replace smart thermostat with non-connected model
 5. Remove smart locks or disable remote access
 
-Cost: $200-500 + hardware refresh
+Cost - $200-500 + hardware refresh
 
 Troubleshooting
 

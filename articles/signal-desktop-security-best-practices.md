@@ -30,23 +30,23 @@ These settings and practices close those gaps.
 
 Table of Contents
 
-- [Step 1: Enable Screen Lock in Signal Desktop](#step-1-enable-screen-lock-in-signal-desktop)
-- [Step 2: Configure Notification Privacy](#step-2-configure-notification-privacy)
-- [Step 3: Audit Linked Devices](#step-3-audit-linked-devices)
-- [Step 4: Protect the Local Signal Database](#step-4-protect-the-local-signal-database)
-- [Step 5: Use Signal Over a Proxy](#step-5-use-signal-over-a-proxy)
-- [Step 6: Note Permissions and Prevent Data Leaks](#step-6-note-permissions-and-prevent-data-leaks)
-- [Step 7: Keep Signal Desktop Updated](#step-7-keep-signal-desktop-updated)
-- [Step 8: Disappearing Messages Default](#step-8-disappearing-messages-default)
-- [Step 9: Monitor Signal Desktop for Updates Manually](#step-9-monitor-signal-desktop-for-updates-manually)
-- [Step 10: Network-Level Logging Considerations](#step-10-network-level-logging-considerations)
-- [Step 11: Backup and Export Considerations](#step-11-backup-and-export-considerations)
-- [Step 12: Disappearing Messages Timing](#step-12-disappearing-messages-timing)
-- [Step 13: Threat Modeling for Desktop Usage](#step-13-threat-modeling-for-desktop-usage)
-- [Step 14: Audit Your Signal Desktop Security Checklist](#step-14-audit-your-signal-desktop-security-checklist)
+- [Step 1 - Enable Screen Lock in Signal Desktop](#step-1-enable-screen-lock-in-signal-desktop)
+- [Step 2 - Configure Notification Privacy](#step-2-configure-notification-privacy)
+- [Step 3 - Audit Linked Devices](#step-3-audit-linked-devices)
+- [Step 4 - Protect the Local Signal Database](#step-4-protect-the-local-signal-database)
+- [Step 5 - Use Signal Over a Proxy](#step-5-use-signal-over-a-proxy)
+- [Step 6 - Note Permissions and Prevent Data Leaks](#step-6-note-permissions-and-prevent-data-leaks)
+- [Step 7 - Keep Signal Desktop Updated](#step-7-keep-signal-desktop-updated)
+- [Step 8 - Disappearing Messages Default](#step-8-disappearing-messages-default)
+- [Step 9 - Monitor Signal Desktop for Updates Manually](#step-9-monitor-signal-desktop-for-updates-manually)
+- [Step 10 - Network-Level Logging Considerations](#step-10-network-level-logging-considerations)
+- [Step 11 - Backup and Export Considerations](#step-11-backup-and-export-considerations)
+- [Step 12 - Disappearing Messages Timing](#step-12-disappearing-messages-timing)
+- [Step 13 - Threat Modeling for Desktop Usage](#step-13-threat-modeling-for-desktop-usage)
+- [Step 14 - Audit Your Signal Desktop Security Checklist](#step-14-audit-your-signal-desktop-security-checklist)
 - [Related Reading](#related-reading)
 
-Step 1: Enable Screen Lock in Signal Desktop
+Step 1 - Enable Screen Lock in Signal Desktop
 
 Signal Desktop has a built-in screen lock that requires your system password after a period of inactivity. This is separate from your OS screen saver.
 
@@ -65,7 +65,7 @@ dbus-send --session --dest=org.freedesktop.ScreenSaver \
   org.freedesktop.ScreenSaver.Lock
 ```
 
-Step 2: Configure Notification Privacy
+Step 2 - Configure Notification Privacy
 
 By default, Signal Desktop shows message previews in system notifications. this means your message content appears in the notification center even when Signal is locked.
 
@@ -77,7 +77,7 @@ On macOS, also check System Settings → Notifications → Signal:
 - Set "Show previews" to "Never"
 - Disable "Show on Lock Screen" if you're in a shared environment
 
-Step 3: Audit Linked Devices
+Step 3 - Audit Linked Devices
 
 Every Signal Desktop installation is a "linked device" attached to your phone's Signal account. Anyone who had access to your phone at any point could have linked an additional device. including Signal Desktop installations you no longer use.
 
@@ -89,11 +89,11 @@ On Signal mobile (iOS or Android):
 On Signal Desktop, your device name is visible to you. You can change it:
 Settings → General → Device Name
 
-Step 4: Protect the Local Signal Database
+Step 4 - Protect the Local Signal Database
 
 Signal Desktop stores your message history in a SQLite database on disk, encrypted with a locally-generated key. On macOS and Windows, this key is stored in the OS keychain. On Linux, the key is stored in a configuration file unless you configure a keyring.
 
-Linux: Configure encrypted keyring
+Linux - Configure encrypted keyring
 
 Without a keyring configured, Signal Desktop on Linux falls back to an unencrypted passphrase for the database key. Fix this:
 
@@ -108,20 +108,20 @@ eval $(gnome-keyring-daemon --start --components=pkcs11,secrets)
 export SSH_AUTH_SOCK
 ```
 
-All platforms: Database location
+All platforms - Database location
 
 Signal Desktop database is stored here:
 
 ```
 macOS:   ~/Library/Application Support/Signal/
-Windows: %APPDATA%\Signal\
+Windows - %APPDATA%\Signal\
 Linux:   ~/.config/Signal/
 ```
 
 The key file:
 ```
 macOS/Windows: Stored in OS keychain
-Linux:         ~/.config/Signal/config.json (contains encrypted key)
+Linux -         ~/.config/Signal/config.json (contains encrypted key)
 ```
 
 The SQLite database file:
@@ -142,7 +142,7 @@ Check database size (approximates stored message history)
 du -sh ~/.config/Signal/sql/db.sqlite
 ```
 
-Step 5: Use Signal Over a Proxy
+Step 5 - Use Signal Over a Proxy
 
 If your threat model includes network-level surveillance or you're in a country where Signal access is restricted, route Signal Desktop traffic through a proxy or Tor.
 
@@ -153,14 +153,14 @@ Settings → Privacy → Advanced → Use proxy:
 For Tor integration via Orbot or a local Tor SOCKS proxy:
 
 ```
-Proxy type: SOCKS5
-Server: 127.0.0.1
-Port: 9050  (default Tor SOCKS port)
+Proxy type - SOCKS5
+Server - 127.0.0.1
+Port - 9050  (default Tor SOCKS port)
 ```
 
 Signal's certificate pinning and sealed sender feature continue to operate through a proxy. The proxy provides network-layer anonymity but does not change Signal's encryption behavior.
 
-Step 6: Note Permissions and Prevent Data Leaks
+Step 6 - Note Permissions and Prevent Data Leaks
 
 Minimize clipboard exposure
 
@@ -185,12 +185,12 @@ Memory considerations
 Signal message content exists in plaintext in RAM while Signal is running. On systems with hibernation enabled, RAM contents can be written to disk. For sensitive environments:
 
 ```bash
-Linux: disable hibernation/swap to prevent RAM-to-disk
+Linux - disable hibernation/swap to prevent RAM-to-disk
 sudo swapoff -a
 Or encrypt swap with LUKS (best practice for encrypted systems)
 ```
 
-Step 7: Keep Signal Desktop Updated
+Step 7 - Keep Signal Desktop Updated
 
 Signal Desktop updates automatically on macOS and Windows through Squirrel. On Linux, the Snap or Flatpak versions also auto-update.
 
@@ -204,7 +204,7 @@ Verify you're on the current release: `signal-desktop --version`
 
 Check Signal's release notes for security-relevant changes: https://github.com/signalapp/Signal-Desktop/releases
 
-Step 8: Disappearing Messages Default
+Step 8 - Disappearing Messages Default
 
 Set a default disappearing message timer for all new conversations so that message history does not accumulate indefinitely:
 
@@ -212,7 +212,7 @@ Settings → Chats → Default Timer for New Chats: 1 week or 1 month
 
 This applies only to new conversations. For existing conversations, open each one and set the timer via the conversation name at the top.
 
-Step 9: Monitor Signal Desktop for Updates Manually
+Step 9 - Monitor Signal Desktop for Updates Manually
 
 On Linux with Snap installations, monitor for updates in the snap listing:
 
@@ -227,7 +227,7 @@ flatpak update --app org.signal.Signal
 flatpak info --show org.signal.Signal | grep Version
 ```
 
-Step 10: Network-Level Logging Considerations
+Step 10 - Network-Level Logging Considerations
 
 Signal Desktop may leak metadata about your Signal usage through DNS and traffic patterns. Even with Signal's minimal server logging, analyzing traffic volume and frequency can reveal communication patterns. For maximum privacy:
 
@@ -251,7 +251,7 @@ EOF
 sudo systemctl restart systemd-resolved
 ```
 
-Step 11: Backup and Export Considerations
+Step 11 - Backup and Export Considerations
 
 Signal Desktop stores your entire message history locally. Before reinstalling or switching devices:
 
@@ -260,7 +260,7 @@ Signal Desktop stores your entire message history locally. Before reinstalling o
 - Create a new linked device on the new computer rather than attempting to transfer the database
 - The local database will not follow to the new machine, though message history will sync from Signal's servers for conversation participants you message post-migration
 
-Step 12: Disappearing Messages Timing
+Step 12 - Disappearing Messages Timing
 
 Beyond setting a default, understand how Signal's disappearing message timer works on Desktop:
 
@@ -271,26 +271,26 @@ Beyond setting a default, understand how Signal's disappearing message timer wor
 To manually delete conversation history on Desktop:
 
 ```bash
-Linux: Clear local message cache
+Linux - Clear local message cache
 rm -rf ~/.config/Signal/sql/
 
 This will require re-downloading recent conversation history
 Do NOT do this unless you want to lose local message history permanently
 ```
 
-Step 13: Threat Modeling for Desktop Usage
+Step 13 - Threat Modeling for Desktop Usage
 
 Signal Desktop introduces vulnerabilities that don't exist on mobile:
 
-Physical access threats: Anyone with access to an unlocked desktop can read Signal messages without knowing your password if the screen lock is disabled. Screen lock timeout of 5 minutes means brief absences risk exposure.
+Physical access threats - Anyone with access to an unlocked desktop can read Signal messages without knowing your password if the screen lock is disabled. Screen lock timeout of 5 minutes means brief absences risk exposure.
 
-Shared computer threats: Family members or colleagues on the same computer can access Signal if your user account isn't logged out. Set strong OS passwords and ensure Signal locks on logout.
+Shared computer threats - Family members or colleagues on the same computer can access Signal if your user account isn't logged out. Set strong OS passwords and ensure Signal locks on logout.
 
-Malware threats: Desktop malware with user-level access can read Signal messages from RAM or the database before encryption. This is the most serious practical threat to Signal Desktop security.
+Malware threats - Desktop malware with user-level access can read Signal messages from RAM or the database before encryption. This is the most serious practical threat to Signal Desktop security.
 
 For high-threat scenarios, consider Signal Mobile only, accessed through a dedicated device kept physically secure.
 
-Step 14: Audit Your Signal Desktop Security Checklist
+Step 14 - Audit Your Signal Desktop Security Checklist
 
 Run through this quarterly:
 
@@ -320,7 +320,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -332,6 +332,6 @@ AI tools generate queries well for common patterns, but always test generated qu
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 {% endraw %}

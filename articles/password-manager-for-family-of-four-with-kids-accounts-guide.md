@@ -53,7 +53,7 @@ The second model scales better as children grow and need more privacy. Most mode
 
 Implementation Steps
 
-Step 1: Set Up the Family Plan
+Step 1 - Set Up the Family Plan
 
 Most password managers offer family plans that include multiple vaults and admin features. After subscribing, create the organizational structure:
 
@@ -74,7 +74,7 @@ Family/
      Social (age-appropriate)
 ```
 
-Step 2: Configure Kid-Safe Settings
+Step 2 - Configure Kid-Safe Settings
 
 When creating accounts for children under 13, configure these protective measures:
 
@@ -84,7 +84,7 @@ When creating accounts for children under 13, configure these protective measure
 
 Most password managers provide family-specific settings in the admin console. Check the documentation for your chosen solution to enable these protections.
 
-Step 3: Automate Credential Rotation
+Step 3 - Automate Credential Rotation
 
 For shared accounts that don't support passkeys yet, automate password rotation using CLI tools. Here's an example using Bitwarden's CLI:
 
@@ -106,7 +106,7 @@ bw sync
 
 Run this weekly via cron or a GitHub Actions workflow to ensure compromised credentials have limited exposure windows.
 
-Step 4: Set Up Emergency Access
+Step 4 - Set Up Emergency Access
 
 Configure emergency access for both parents. This ensures that if one parent becomes incapacitated, the other can access critical accounts:
 
@@ -117,7 +117,7 @@ bw get organization "Family Vault" | jq '.emergencyAccess = ["emergency@email.co
 
 Specify a waiting period (typically 72 hours) before emergency access activates. This prevents unauthorized access while still providing a practical recovery path.
 
-Step 5: Monitor Security Status
+Step 5 - Monitor Security Status
 
 Use the password manager's reporting features to track family security health:
 
@@ -154,11 +154,11 @@ Teaching Kids Password Hygiene
 
 Beyond technical setup, children need education. Use these practical approaches:
 
-For ages 6-10: Explain passwords as "secret keys" that open digital doors. Have them create passwords for their first accounts using passphrases they can remember, like `blue-dog-jumps-high`.
+For ages 6-10 - Explain passwords as "secret keys" that open digital doors. Have them create passwords for their first accounts using passphrases they can remember, like `blue-dog-jumps-high`.
 
-For ages 11-13: Introduce the concept of password managers. Show them how to save and autofill credentials. Discuss why sharing passwords with friends is risky.
+For ages 11-13 - Introduce the concept of password managers. Show them how to save and autofill credentials. Discuss why sharing passwords with friends is risky.
 
-For ages 14+: Teach them to generate random passwords, enable 2FA on their accounts, and recognize phishing attempts. By this age, they should understand the security implications of credential reuse.
+For ages 14+ - Teach them to generate random passwords, enable 2FA on their accounts, and recognize phishing attempts. By this age, they should understand the security implications of credential reuse.
 
 Common Pitfalls to Avoid
 
@@ -209,7 +209,7 @@ Setting Up on Windows/Mac
 ```
 Install via official channels
 macOS: brew install 1password or bitwarden-cli
-Windows: Direct download from vendor website
+Windows - Direct download from vendor website
 
 1. Install on parent device(s) first
 2. Create family vault structure
@@ -230,7 +230,7 @@ Document this in writing if possible, especially if relationship status changes 
 
 Age-Specific Account Management Examples
 
-Ages 5-8: Managed Accounts Only
+Ages 5-8 - Managed Accounts Only
 
 Create accounts for Netflix, YouTube, gaming platforms but share credentials with strict access:
 
@@ -238,14 +238,14 @@ Create accounts for Netflix, YouTube, gaming platforms but share credentials wit
 Netflix kids account
 [Shared Vault: Family Services]
 - Netflix
-  - Username: family@email.com
+  - Username - family@email.com
   - Password: [strong random]
   - Kids use kids profile (requires parental PIN)
 ```
 
 Child never sees the password. They access via profile selection, which you manage.
 
-Ages 9-12: Hybrid Model
+Ages 9-12 - Hybrid Model
 
 Some owned accounts, some shared:
 
@@ -263,9 +263,9 @@ Shared vault they access but can't edit
 - Home WiFi
 ```
 
-Set permission: "View Only" for family shared items.
+Set permission - "View Only" for family shared items.
 
-Ages 13-17: Mostly Independent
+Ages 13-17 - Mostly Independent
 
 Their vault, with parental monitoring:
 
@@ -283,7 +283,7 @@ Parents can see vault summary without seeing passwords
 
 Establish trust but maintain visibility. The goal is teaching responsibility before legal adulthood.
 
-Ages 18+: Independence
+Ages 18+ - Independence
 
 Transfer to their own accounts. Keep family-shared vault for:
 - Streaming services they contribute to
@@ -309,9 +309,9 @@ Demonstrate a real breach incident using HaveIBeenPwned:
 
 ```bash
 Show them their email in breaches (read-only)
-Visit: https://haveibeenpwned.com
+Visit - https://haveibeenpwned.com
 Search their email address
-Explain: "This is why strong, unique passwords matter"
+Explain - "This is why strong, unique passwords matter"
 ```
 
 Passkey Migration for Family Accounts
@@ -319,14 +319,14 @@ Passkey Migration for Family Accounts
 As services adopt passwordless passkeys, update family accounts progressively:
 
 ```bash
-Current state: passwords everywhere
-Services: Netflix, Disney+, Gmail, GitHub, Apple ID
+Current state - passwords everywhere
+Services - Netflix, Disney+, Gmail, GitHub, Apple ID
 
-Phase 1: Core services get passkeys (Q2 2026)
+Phase 1 - Core services get passkeys (Q2 2026)
 - Apple ID: passkey via family approved device
 - Google Account: passkey via family approved device
 
-Phase 2: Streaming services (Q3 2026)
+Phase 2 - Streaming services (Q3 2026)
 - Netflix: passkey replaces password
 - Disney+: passkey replaces password
 

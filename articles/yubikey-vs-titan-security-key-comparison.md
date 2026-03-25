@@ -126,8 +126,8 @@ Platform Compatibility
 Modern operating systems and browsers support both keys through standard WebAuthn and U2F APIs. However, some edge cases differ:
 
 - macOS: Both keys work via USB and NFC (with appropriate readers). YubiKey 5Ci Lightning works with iOS/iPadOS directly.
-- Linux: Both keys work with standard FIDO2 support. YubiKey may require the ykman utility for configuration.
-- Windows: Both keys work with Windows Hello and standard WebAuthn. Titan requires Google Play Services for BLE on Android.
+- Linux - Both keys work with standard FIDO2 support. YubiKey may require the ykman utility for configuration.
+- Windows - Both keys work with Windows Hello and standard WebAuthn. Titan requires Google Play Services for BLE on Android.
 - iOS/iPadOS: YubiKey 5Ci provides native Lightning support. Titan requires the dedicated app and BLE connection.
 
 OATH-TOTP Configuration for Multi-Factor Authentication
@@ -200,15 +200,15 @@ Implementation Comparison Table
 
 Real-World Integration Scenarios
 
-Scenario 1: Developer with GitHub/GitLab SSH + 2FA
+Scenario 1 - Developer with GitHub/GitLab SSH + 2FA
 
 YubiKey provides the better fit. Use OpenPGP for SSH key management and OATH for GitHub's TOTP backup codes. GitLab, GitHub, and Gitea all support WebAuthn directly, allowing you to use the same key for multiple authentication methods.
 
-Scenario 2: Enterprise Google Workspace Organization
+Scenario 2 - Enterprise Google Workspace Organization
 
 Titan Security Key is purpose-built for this scenario. Google designed Titan specifically for Workspace deployments. The lower cost and simpler feature set reduce support burden for non-technical users. If your organization has no requirement for SSH keys or complex TOTP workflows, Titan eliminates unnecessary complexity.
 
-Scenario 3: Traveling Developer with Mixed Devices
+Scenario 3 - Traveling Developer with Mixed Devices
 
 YubiKey 5Ci with Lightning support provides flexibility. Carry one key that works with your iPhone, Mac, and USB-an equipped computers abroad. The multiple connector options and OATH support enable offline authentication regardless of device type.
 
@@ -312,7 +312,7 @@ ykman oath accounts list # Verify all keys have same accounts
 Titan backup approach:
 
 ```bash
-Google recommends: 2 Titan keys + 1 backup phone number
+Google recommends - 2 Titan keys + 1 backup phone number
 This hybrid approach uses key for primary 2FA, phone for recovery
 Keys provide stronger security, phone provides fallback if both keys lost
 ```

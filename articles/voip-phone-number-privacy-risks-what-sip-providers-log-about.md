@@ -40,11 +40,11 @@ When your SIP client registers with a provider, it sends a REGISTER request cont
 
 ```
 REGISTER sip:sipprovider.com SIP/2.0
-Via: SIP/2.0/UDP 192.168.1.100:5060;rport;branch=z9hG4bK
-From: <sip:1234567890@sipprovider.com>;tag=as7f3d9b2
+Via - SIP/2.0/UDP 192.168.1.100:5060;rport;branch=z9hG4bK
+From - <sip:1234567890@sipprovider.com>;tag=as7f3d9b2
 To: <sip:1234567890@sipprovider.com>
-Contact: <sip:1234567890@192.168.1.100:5060>
-Expires: 3600
+Contact - <sip:1234567890@192.168.1.100:5060>
+Expires - 3600
 ```
 
 This single registration message reveals your phone number (in the SIP URI), your device's IP address, and with basic traffic analysis, your approximate physical location. Providers typically retain registration history for months or years.
@@ -79,7 +79,7 @@ def extract_sip_metadata(pcap_file):
                     from_email = re.search(r'From: <sip:([^@]+)@', sip_data)
                     to_email = re.search(r'To: <sip:([^@]+)@', sip_data)
                     call_id = re.search(r'Call-ID: ([^\s]+)', sip_data)
-                    print(f"From: {from_email.group(1) if from_email else 'Unknown'}")
+                    print(f"From - {from_email.group(1) if from_email else 'Unknown'}")
                     print(f"To: {to_email.group(1) if to_email else 'Unknown'}")
                     print(f"Call-ID: {call_id.group(1) if call_id else 'Unknown'}")
             except:
@@ -196,7 +196,7 @@ def sanitize_cdr_for_privacy(db_path='/var/log/asterisk/cdr.db',
 
     print(f"Deleted {deleted} CDR records older than {keep_days} days")
 
-Run daily via cron: 0 3 * * * /usr/bin/python3 /path/to/sanitize_cdr.py
+Run daily via cron - 0 3 * * * /usr/bin/python3 /path/to/sanitize_cdr.py
 ```
 
 Evaluating Third-Party SIP Providers

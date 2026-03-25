@@ -23,10 +23,10 @@ Table of Contents
 - [Why End-to-End Cloud Encryption Matters](#why-end-to-end-cloud-encryption-matters)
 - [What Cryptomator Does (And Doesn't)](#what-cryptomator-does-and-doesnt)
 - [Installation (All Platforms)](#installation-all-platforms)
-- [Step 1: Create Your First Vault](#step-1-create-your-first-vault)
-- [Step 2: Set Your Vault Password](#step-2-set-your-vault-password)
-- [Step 3: Mount and Use Your Vault](#step-3-mount-and-use-your-vault)
-- [Step 4: Sync Across Devices](#step-4-sync-across-devices)
+- [Step 1 - Create Your First Vault](#step-1-create-your-first-vault)
+- [Step 2 - Set Your Vault Password](#step-2-set-your-vault-password)
+- [Step 3 - Mount and Use Your Vault](#step-3-mount-and-use-your-vault)
+- [Step 4 - Sync Across Devices](#step-4-sync-across-devices)
 - [Real-World Vault Organization](#real-world-vault-organization)
 - [Mobile Access (iOS/Android)](#mobile-access-iosandroid)
 - [Advanced Configuration](#advanced-configuration)
@@ -63,12 +63,12 @@ Installation (All Platforms)
 
 macOS Installation
 
-Option 1: Homebrew (Easiest)
+Option 1 - Homebrew (Easiest)
 ```bash
 brew install cryptomator
 ```
 
-Option 2: Direct Download
+Option 2 - Direct Download
 1. Visit https://cryptomator.org/downloads/
 2. Download "Cryptomator 1.6.2 for macOS"
 3. Drag to Applications folder
@@ -76,13 +76,13 @@ Option 2: Direct Download
 
 Windows Installation
 
-Option 1: Installer
+Option 1 - Installer
 1. Download Cryptomator from https://cryptomator.org/downloads/
 2. Run CryptomatorInstaller.exe
 3. Choose installation location (default: C:\Program Files)
 4. Complete installation
 
-Option 2: Portable (No Installation)
+Option 2 - Portable (No Installation)
 1. Download portable version
 2. Extract ZIP file
 3. Run Cryptomator.exe directly (no admin needed)
@@ -111,7 +111,7 @@ flatpak run org.cryptomator.Cryptomator
 
 ---
 
-Step 1: Create Your First Vault
+Step 1 - Create Your First Vault
 
 A vault is an encrypted folder that lives in your cloud storage.
 
@@ -137,7 +137,7 @@ The folder name on cloud storage is random (d/), not "Personal Files". Cloud pro
 
 ---
 
-Step 2: Set Your Vault Password
+Step 2 - Set Your Vault Password
 
 This password protects your vault. Cryptomator uses it to decrypt the masterkey file.
 
@@ -158,7 +158,7 @@ After Setting Password:
 
 ---
 
-Step 3: Mount and Use Your Vault
+Step 3 - Mount and Use Your Vault
 
 Mounting a vault means decrypting and accessing files.
 
@@ -188,7 +188,7 @@ After You Lock Vault:
 
 ---
 
-Step 4: Sync Across Devices
+Step 4 - Sync Across Devices
 
 Since vault files are encrypted blobs in Dropbox, they sync like any other Dropbox files.
 
@@ -203,7 +203,7 @@ Laptop Setup:
 5. Unlock → vault accessible on laptop
 ```
 
-Key Point: Same vault password works on all devices. The encrypted files sync through Dropbox automatically.
+Key Point - Same vault password works on all devices. The encrypted files sync through Dropbox automatically.
 
 Sync Speed:
 - First sync: ~2-5 minutes per 1GB (depends on file count)
@@ -279,7 +279,7 @@ Using on iPhone:
 - Lock vault when done (automatic after 5 minutes)
 ```
 
-Limitation: Free tier limited to 1 vault. Upgrade ($5/month) for unlimited vaults.
+Limitation - Free tier limited to 1 vault. Upgrade ($5/month) for unlimited vaults.
 
 Android Setup
 
@@ -288,9 +288,9 @@ Installation:
 Google Play Store → Search "Cryptomator" → Install
 ```
 
-Workflow: Similar to iOS. Add Dropbox connection, unlock vault, access files through Files app.
+Workflow - Similar to iOS. Add Dropbox connection, unlock vault, access files through Files app.
 
-Known Limitation: Android requires SD card to save decrypted files temporarily (security model).
+Known Limitation - Android requires SD card to save decrypted files temporarily (security model).
 
 ---
 
@@ -301,7 +301,7 @@ Vault Settings
 Auto-lock After Inactivity:
 ```
 Cryptomator Settings → Vaults → [Your Vault] → Advanced
-Set: Lock vault after 5 minutes of inactivity
+Set - Lock vault after 5 minutes of inactivity
 This prevents accidental unencrypted data if you forget to lock
 ```
 
@@ -312,7 +312,7 @@ Keep vault unlocked during work session:
 2. Leave Cryptomator running
 3. Work normally with decrypted files
 4. Manually lock when done
-Alternative: Set auto-lock to 30 minutes instead of 5
+Alternative - Set auto-lock to 30 minutes instead of 5
 ```
 
 Performance Tuning
@@ -380,7 +380,7 @@ Q: Can I change vault password later?
 A: Yes. Cryptomator Settings → Vault → Change Password. Takes 5 seconds.
 
 Q: What happens if I lose my vault folder?
-A: If you deleted from Dropbox permanently, unencrypted backups are lost. Restore from backup drive. Lesson: Always backup vault folder.
+A: If you deleted from Dropbox permanently, unencrypted backups are lost. Restore from backup drive. Lesson - Always backup vault folder.
 
 ---
 

@@ -18,7 +18,7 @@ voice-checked: true
 
 Deep packet inspection (DPI) detects VPN traffic by analyzing port numbers, protocol fingerprints, packet timing, and payload patterns, even encrypted data has recognizable signatures. Defend against DPI by using port 443 (HTTPS), obfuscation layers, protocol randomization, or stealth VPN modes that disguise traffic as normal HTTPS connections.
 
-Visit: https://tlsfingerprint.io/
+Visit - https://tlsfingerprint.io/
 Compare with other users on same VPN
 
 2.
@@ -36,7 +36,7 @@ Table of Contents
 - [Behavioral Analysis Defenses](#behavioral-analysis-defenses)
 - [Traffic Pattern Analysis Detection](#traffic-pattern-analysis-detection)
 - [VPN Providers That Successfully Evade DPI](#vpn-providers-that-successfully-evade-dpi)
-- [Protecting Yourself: Complete Strategy](#protecting-yourself-complete-strategy)
+- [Protecting Yourself - Complete Strategy](#protecting-yourself-complete-strategy)
 - [Legal and Ethical Considerations](#legal-and-ethical-considerations)
 - [Related Reading](#related-reading)
 
@@ -134,11 +134,11 @@ Practical Implications
 
 Understanding DPI matters for several practical reasons:
 
-Network Restrictions: Many workplaces and schools implement DPI to block VPN connections, often to enforce acceptable use policies or prevent unauthorized network access.
+Network Restrictions - Many workplaces and schools implement DPI to block VPN connections, often to enforce acceptable use policies or prevent unauthorized network access.
 
-Censorship: Authoritarian governments use DPI extensively to identify and block VPN traffic, limiting citizens' access to the open internet.
+Censorship - Authoritarian governments use DPI extensively to identify and block VPN traffic, limiting citizens' access to the open internet.
 
-Privacy: Even in countries where VPN use is legal, ISPs may use DPI for purposes beyond network management, potentially sharing data with third parties.
+Privacy - Even in countries where VPN use is legal, ISPs may use DPI for purposes beyond network management, potentially sharing data with third parties.
 
 Measuring DPI Detection Risk
 
@@ -320,20 +320,20 @@ Based on 2026 implementations:
 | ProtonVPN | Protocol obfuscation | Very good (Swiss-based) | $4.99-24/mo |
 | Wireguard Protocol | Port flexibility | Emerging (less established) | Varies |
 
-Protecting Yourself: Complete Strategy
+Protecting Yourself - Complete Strategy
 
 If you need to evade DPI:
 
 1. Choose Appropriate VPN Protocol
 
 ```bash
-OpenVPN: Most flexible, good obfuscation support
+OpenVPN - Most flexible, good obfuscation support
 openvpn --proto tcp --port 443 --cipher AES-256-GCM
 
-Wireguard: Faster, but unique fingerprint
+Wireguard - Faster, but unique fingerprint
 Use with obfuscation wrapper for DPI evasion
 
-IKEv2: Less common, harder to DPI-detect
+IKEv2 - Less common, harder to DPI-detect
 Configuration for IKEv2 with obfuscation
 strongswan up vpnconnection
 ```
@@ -399,7 +399,7 @@ def reconnect_vpn(port):
 Test if your VPN passes DPI checks
 
 1. Check TLS fingerprint
-Visit: https://tlsfingerprint.io/
+Visit - https://tlsfingerprint.io/
 Compare with other users on same VPN
 
 2. Monitor packet patterns
@@ -407,11 +407,11 @@ tcpdump -i eth0 -w vpn-traffic.pcap 'proto gre or proto esp or port 1194'
 Analyze with Wireshark for patterns
 
 3. Check DNS leaks
-Visit: https://dnsleaktest.com/
+Visit - https://dnsleaktest.com/
 Ensure DNS queries go through VPN
 
 4. WebRTC leak test
-Visit: https://ipleak.net/
+Visit - https://ipleak.net/
 Verify no real IP leakage
 
 5. Advanced: Check behavioral analysis

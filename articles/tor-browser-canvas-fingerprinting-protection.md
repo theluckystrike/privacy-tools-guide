@@ -27,7 +27,7 @@ Table of Contents
 - [Best Practices for 2026](#best-practices-for-2026)
 - [Advanced Canvas Protection Techniques](#advanced-canvas-protection-techniques)
 - [Fingerprinting Attack Detection](#fingerprinting-attack-detection)
-- [Comparison: Tor Browser vs Firefox with Extensions](#comparison-tor-browser-vs-firefox-with-extensions)
+- [Comparison - Tor Browser vs Firefox with Extensions](#comparison-tor-browser-vs-firefox-with-extensions)
 - [Testing Canvas Protection Across Sessions](#testing-canvas-protection-across-sessions)
 - [Canvas Protection in Tor Browser v2026](#canvas-protection-in-tor-browser-v2026)
 - [Best Practices for 2026](#best-practices-for-2026)
@@ -231,7 +231,7 @@ fingerprinting_libraries = {
     }
 }
 
-Detection: Check browser console for requests to fingerprinting domains
+Detection - Check browser console for requests to fingerprinting domains
 ```
 
 To identify if a website is fingerprinting you:
@@ -242,7 +242,7 @@ To identify if a website is fingerprinting you:
 4. Search for requests to known fingerprinting domains
 5. If found, assume you're being tracked
 
-Comparison: Tor Browser vs Firefox with Extensions
+Comparison - Tor Browser vs Firefox with Extensions
 
 Some users mix Tor Browser with privacy extensions on regular Firefox. This is a mistake:
 

@@ -85,7 +85,7 @@ console.log(JSON.stringify(auditCookies(), null, 2));
 Check server-side cookie attributes during your audit. Secure cookies should have `HttpOnly`, `Secure`, and `SameSite` flags set. Missing `SameSite` defaults vary by browser and create CSRF exposure:
 
 ```python
-Flask example: correct cookie security settings
+Flask example - correct cookie security settings
 response.set_cookie(
     'session_id',
     value=session_token,

@@ -32,16 +32,16 @@ Signal is the safer choice if privacy is your primary concern: it uses end-to-en
 
 Table of Contents
 
-- [Encryption Architecture: The Fundamental Difference](#encryption-architecture-the-fundamental-difference)
+- [Encryption Architecture - The Fundamental Difference](#encryption-architecture-the-fundamental-difference)
 - [Cryptographic Implementation Details](#cryptographic-implementation-details)
-- [Metadata Collection: What Gets Logged](#metadata-collection-what-gets-logged)
-- [Code Verification: Testing Encryption Claims](#code-verification-testing-encryption-claims)
+- [Metadata Collection - What Gets Logged](#metadata-collection-what-gets-logged)
+- [Code Verification - Testing Encryption Claims](#code-verification-testing-encryption-claims)
 - [Group Chat Security](#group-chat-security)
 - [Developer Considerations](#developer-considerations)
 - [Making Your Choice](#making-your-choice)
 - [Related Reading](#related-reading)
 
-Encryption Architecture: The Fundamental Difference
+Encryption Architecture - The Fundamental Difference
 
 The core distinction between Telegram and Signal lies in their encryption approaches.
 
@@ -89,7 +89,7 @@ Telegram's custom MTProto protocol handles encryption differently:
 - Server authentication uses RSA-2048
 - Secret Chats use the same encryption but with additional client-client layer
 
-The critical issue: Telegram's encryption has faced criticism due to its custom design and closed-source server implementation. Security researchers have identified vulnerabilities in MTProto's implementation.
+The critical issue - Telegram's encryption has faced criticism due to its custom design and closed-source server implementation. Security researchers have identified vulnerabilities in MTProto's implementation.
 
 ```javascript
 // Telegram's encryption verification
@@ -105,7 +105,7 @@ const keyDerivation = (password, salt) => {
 };
 ```
 
-Metadata Collection: What Gets Logged
+Metadata Collection - What Gets Logged
 
 Even with strong encryption, metadata can reveal significant information about your communications.
 
@@ -151,7 +151,7 @@ const messageObject = {
 };
 ```
 
-Code Verification: Testing Encryption Claims
+Code Verification - Testing Encryption Claims
 
 Developers can verify encryption behavior through API inspection and network analysis.
 
@@ -253,7 +253,7 @@ bot.on('message', (msg) => {
 
 Making Your Choice
 
-The answer to "Telegram vs Signal: which is actually safer?" depends on your threat model:
+The answer to "Telegram vs Signal - which is actually safer?" depends on your threat model:
 
 Choose Signal if:
 - Maximum privacy is your priority

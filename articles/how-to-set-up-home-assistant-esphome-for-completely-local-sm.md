@@ -28,7 +28,7 @@ Table of Contents
 
 Why ESPHome for Local Sensors
 
-ESPHome is an ecosystem that converts ESP32 and ESP8266 microcontrollers into smart devices through declarative YAML configurations. Unlike commercial smart sensors that require cloud accounts, ESPHome devices communicate directly with your local Home Assistant instance over MQTT or the native ESPHome API.
+ESPHome is an environment that converts ESP32 and ESP8266 microcontrollers into smart devices through declarative YAML configurations. Unlike commercial smart sensors that require cloud accounts, ESPHome devices communicate directly with your local Home Assistant instance over MQTT or the native ESPHome API.
 
 The advantages of this approach include zero recurring costs, complete data sovereignty, offline operation during internet outages, and minimal latency for real-time monitoring. You also gain flexibility to create custom sensors tailored to specific needs.
 
@@ -46,7 +46,7 @@ Before starting, ensure you have the following components:
 
 For hardware, the ESP32 is generally preferred over the ESP8266 due to its dual-core processor, more GPIO pins, and built-in support for Bluetooth alongside WiFi. Common ESP32 development boards like the DOIT DevKit V1 or the Wemos D1 Mini32 cost under $5 and are widely available.
 
-Step 1: Install the ESPHome Addon
+Step 1 - Install the ESPHome Addon
 
 Open Home Assistant and navigate to Settings → Add-ons → Add-on Store. Search for "ESPHome" and install the official addon. After installation, click Start and enable Show in sidebar for convenient access.
 
@@ -64,7 +64,7 @@ docker run --rm --privileged \
 
 This exposes the ESPHome dashboard on port 6052 and mounts a local directory for configurations.
 
-Step 2: Create Your First ESPHome Device
+Step 2 - Create Your First ESPHome Device
 
 From the ESPHome dashboard, click + NEW DEVICE. Enter a name for your device (use lowercase letters and hyphens only). Connect your ESP32 or ESP8266 via USB, or select Skip to create a configuration file for later flashing.
 
@@ -102,7 +102,7 @@ sensor:
 
 Replace the WiFi credentials and passwords with your own values. Save this configuration in the ESPHome dashboard and click INSTALL to flash the firmware to your device.
 
-Step 3: Configure Home Assistant Integration
+Step 3 - Configure Home Assistant Integration
 
 After the device connects to your network, Home Assistant automatically detects it if you enabled discovery in your configuration. Navigate to Settings → Devices & Services to find the new sensor entity.
 
@@ -129,7 +129,7 @@ wifi:
     subnet: 255.255.255.0
 ```
 
-Step 4: Adding More Sensor Types
+Step 4 - Adding More Sensor Types
 
 ESPHome supports numerous sensor types. Below are common configurations for expanding your local sensor network.
 
@@ -211,7 +211,7 @@ Common ESPHome Sensor Platform Comparison
 | BH1750 | I2C | ±20% | Low | Ambient light |
 | MCP9808 | I2C | ±0.0625°C | Low-medium | Precision temperature |
 
-Step 5: Automate with Home Assistant
+Step 5 - Automate with Home Assistant
 
 With sensors reporting locally, create automations that respond to sensor events without cloud connectivity. Example automation that turns on lights when motion is detected:
 
@@ -247,17 +247,17 @@ Because everything runs locally, this automation fires even when your internet c
 
 Troubleshooting Common Issues
 
-Device not connecting to WiFi: Verify your WiFi credentials and ensure the ESP device is within range. Check the ESPHome logs for connection error messages.
+Device not connecting to WiFi - Verify your WiFi credentials and ensure the ESP device is within range. Check the ESPHome logs for connection error messages.
 
 Sensor returning invalid readings: Confirm wiring connections match the pin configuration in your YAML. Some sensors require specific libraries, ensure you include the required `library` declarations.
 
 Home Assistant not discovering the device: Confirm both devices are on the same network subnet. Verify the API password matches between your ESPHome configuration and Home Assistant ESPHome integration settings.
 
-OTA updates failing: If over-the-air updates fail repeatedly, re-flash via USB to restore connectivity. Ensure the OTA password in your YAML matches the one stored in the Home Assistant ESPHome integration entry. Firewall rules blocking UDP port 3232 can also interfere with OTA.
+OTA updates failing - If over-the-air updates fail repeatedly, re-flash via USB to restore connectivity. Ensure the OTA password in your YAML matches the one stored in the Home Assistant ESPHome integration entry. Firewall rules blocking UDP port 3232 can also interfere with OTA.
 
-High CPU usage on the ESP: Polling sensors too frequently can overwhelm the microcontroller. Start with `update_interval: 60s` for most sensors and reduce only if you genuinely need faster updates. The BME680 in particular benefits from intervals of 30 seconds or longer to allow the gas sensor to stabilize.
+High CPU usage on the ESP - Polling sensors too frequently can overwhelm the microcontroller. Start with `update_interval: 60s` for most sensors and reduce only if you genuinely need faster updates. The BME680 in particular benefits from intervals of 30 seconds or longer to allow the gas sensor to stabilize.
 
-Step 6: Secure Your Local Network
+Step 6 - Secure Your Local Network
 
 Even though your sensors operate locally, implement basic security practices:
 

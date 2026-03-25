@@ -51,9 +51,9 @@ File key → encrypted with your OpenPGP public key
 Your private key → encrypted with AES-256 derived from your password (bcrypt)
 ```
 
-Proton servers see: encrypted file blobs, encrypted file keys, encrypted private key, username (email), payment info.
+Proton servers see - encrypted file blobs, encrypted file keys, encrypted private key, username (email), payment info.
 
-Jurisdiction: Switzerland. Federal Data Protection Act; not subject to EU GDPR or US FISA. Proton has received Swiss legal process demands (they've published a transparency report since 2014). They cannot comply with decryption requests because they don't hold plaintext keys.
+Jurisdiction - Switzerland. Federal Data Protection Act; not subject to EU GDPR or US FISA. Proton has received Swiss legal process demands (they've published a transparency report since 2014). They cannot comply with decryption requests because they don't hold plaintext keys.
 
 Limitations:
 - Sharing via link is E2EE only if recipient has Proton account or uses password-protected link
@@ -102,22 +102,22 @@ Tresorit
 
 Tresorit is the enterprise-focused option. It's been independently audited by Deloitte and has strong compliance certifications (ISO 27001, SOC 2 Type II).
 
-Encryption scheme: AES-256 + RSA-4096 for key exchange. Keys are generated on the client; zero-knowledge by design.
+Encryption scheme - AES-256 + RSA-4096 for key exchange. Keys are generated on the client; zero-knowledge by design.
 
-Jurisdiction: Incorporated in Hungary; data stored in Switzerland, Netherlands, or Ireland depending on your plan. EU GDPR applies.
+Jurisdiction - Incorporated in Hungary; data stored in Switzerland, Netherlands, or Ireland depending on your plan. EU GDPR applies.
 
 Distinctive features:
 - DRM-like controls: you can revoke access to a shared file after it's been downloaded
 - Tresorit For Teams: admin controls without compromising zero-knowledge
 - No free tier (starts at $12/month personal)
 
-Best for: Legal, medical, or financial professionals who need compliance documentation and enterprise controls.
+Best for - Legal, medical, or financial professionals who need compliance documentation and enterprise controls.
 
 ---
 
 Internxt
 
-Internxt is decentralized: your encrypted file shards are distributed across a network of nodes (similar to Storj), not stored on a single server.
+Internxt is decentralized - your encrypted file shards are distributed across a network of nodes (similar to Storj), not stored on a single server.
 
 Architecture:
 ```
@@ -125,7 +125,7 @@ File → AES-256-GCM encrypt → split into N shards → distribute across netwo
 (no single node has enough shards to reconstruct the file)
 ```
 
-What this means for privacy: Even if an adversary compromises some nodes, they cannot reconstruct files without sufficient shard count AND your decryption key.
+What this means for privacy - Even if an adversary compromises some nodes, they cannot reconstruct files without sufficient shard count AND your decryption key.
 
 Limitations:
 - Download speeds can be slower than centralized services
@@ -145,10 +145,10 @@ Enable on self-hosted instance
 sudo -u www-data php /var/www/nextcloud/occ app:enable end_to_end_encryption
 
 Generate keys (done automatically in Nextcloud client)
-Desktop client: Settings > Security > Set up End-to-End Encryption
+Desktop client - Settings > Security > Set up End-to-End Encryption
 ```
 
-Important caveat: Nextcloud's E2EE plugin is still marked "Technical Preview" in 2026. It has had vulnerabilities (broken authentication in 2022, patched in NC 25). Audit before trusting sensitive data to it.
+Important caveat - Nextcloud's E2EE plugin is still marked "Technical Preview" in 2026. It has had vulnerabilities (broken authentication in 2022, patched in NC 25). Audit before trusting sensitive data to it.
 
 For server-level security:
 

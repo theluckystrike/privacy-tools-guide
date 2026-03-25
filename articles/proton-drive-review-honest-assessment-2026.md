@@ -38,11 +38,11 @@ Table of Contents
 
 Pricing and Value Proposition
 
-Proton Drive offers a tiered pricing structure that aligns with Proton's ecosystem approach. The free tier provides 5GB of storage, which is sufficient for basic document storage but quickly becomes limiting for developers working with code repositories or project files. The Plus plan at €4.99/month (approximately $5.50 USD) expands storage to 200GB and adds features like advanced sharing options and priority support.
+Proton Drive offers a tiered pricing structure that aligns with Proton's environment approach. The free tier provides 5GB of storage, which is sufficient for basic document storage but quickly becomes limiting for developers working with code repositories or project files. The Plus plan at €4.99/month (approximately $5.50 USD) expands storage to 200GB and adds features like advanced sharing options and priority support.
 
 For teams, Proton Drive offers a Business plan starting at €12/user/month with 500GB storage per user. This pricing sits competitively with other encrypted storage solutions like Tresorit, though it's more expensive than standard cloud storage like Google Drive or Dropbox. The price premium reflects the encryption overhead and Proton's commitment to zero-knowledge architecture.
 
-One notable aspect is the bundle option,  Proton subscribers with existing Proton Mail or Proton VPN subscriptions can add Drive storage at discounted rates. If you're already invested in Proton's ecosystem, this integrated pricing makes financial sense.
+One notable aspect is the bundle option,  Proton subscribers with existing Proton Mail or Proton VPN subscriptions can add Drive storage at discounted rates. If you're already invested in Proton's environment, this integrated pricing makes financial sense.
 
 Encryption and Security Architecture
 
@@ -86,9 +86,9 @@ You can access files via WebDAV, which provides basic file operations:
 ```xml
 <!-- WebDAV PROPFIND request for listing files -->
 PROPFIND /remote.php/dav/files/username/ HTTP/1.1
-Host: protonmail.com
-Authorization: Basic base64(username:password)
-Depth: 1
+Host - protonmail.com
+Authorization - Basic base64(username:password)
+Depth - 1
 ```
 
 This WebDAV access enables basic scripting but lacks the API features that developers typically expect, version control, conflict resolution hooks, or custom metadata handling. If your workflow requires deep programmatic integration, you'll need to build custom solutions around WebDAV or consider alternative storage solutions.
@@ -99,7 +99,7 @@ Sharing functionality works well for the intended use case. You can generate enc
 
 The sharing interface allows setting view-only or download permissions, and you can revoke access at any time. For teams, folder sharing works smoothly, though real-time collaborative editing remains outside Proton Drive's current capabilities.
 
-One limitation worth noting: shared links cannot exceed 10GB, and there's no way to share folders as a single archive. This constraint affects users who need to transfer large project directories.
+One limitation worth noting - shared links cannot exceed 10GB, and there's no way to share folders as a single archive. This constraint affects users who need to transfer large project directories.
 
 Performance Considerations
 
@@ -303,13 +303,13 @@ To contextualize Proton Drive's value proposition:
 
 *Nextcloud E2E encryption available but optional
 
-Tresorit wins on features but costs more and has smaller ecosystem.
+Tresorit wins on features but costs more and has smaller environment.
 
 Nextcloud self-hosted offers maximum control but requires server administration.
 
 Sync.com provides good features at competitive pricing but is less well-known.
 
-Proton Drive excels if you want integration with Proton's ecosystem and don't need version history or extensive API access.
+Proton Drive excels if you want integration with Proton's environment and don't need version history or extensive API access.
 
 Practical Migration Paths
 

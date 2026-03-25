@@ -35,15 +35,15 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Mesh Networking Fundamentals
+Step 1 - Understand Mesh Networking Fundamentals
 
 Traditional network topologies rely on central servers or access points. If the central node fails, the entire network becomes unreachable. Mesh networks eliminate this single point of failure by allowing every device to connect to multiple peers. When one path becomes unavailable, the network automatically routes traffic through alternative routes.
 
-Two primary categories exist: full mesh, where every device connects directly to every other device, and partial mesh, where devices connect to nearby neighbors while maintaining redundancy. Partial mesh implementations scale better for larger networks and remain practical for typical use cases.
+Two primary categories exist - full mesh, where every device connects directly to every other device, and partial mesh, where devices connect to nearby neighbors while maintaining redundancy. Partial mesh implementations scale better for larger networks and remain practical for typical use cases.
 
 The communication range depends on the hardware and frequency band. Wi-Fi-based mesh typically covers 100-200 meters between nodes, while radio-based solutions using devices like LoRa modules can extend to several kilometers.
 
-Step 2: Protocol Options for Mesh Networking
+Step 2 - Protocol Options for Mesh Networking
 
 Several protocols cater to different use cases:
 
@@ -99,7 +99,7 @@ Join an existing network using a secret key
 meshbird join -secret "YOUR_NETWORK_SECRET"
 ```
 
-Step 3: Practical Implementation with ESP32 Devices
+Step 3 - Practical Implementation with ESP32 Devices
 
 For hardware-based mesh networks, ESP32 microcontrollers offer an excellent balance of capability and cost. The ESP-MESH protocol from Espressif handles routing automatically.
 
@@ -177,7 +177,7 @@ void broadcastMessage(const char* message) {
 }
 ```
 
-Step 4: Build a Mesh Network with Raspberry Pi and Wi-Fi
+Step 4 - Build a Mesh Network with Raspberry Pi and Wi-Fi
 
 A practical approach uses Raspberry Pi devices with multiple wireless adapters.
 
@@ -258,7 +258,7 @@ Network Segmentation
 
 Isolate mesh networks from production networks using VLANs or separate physical interfaces.
 
-Step 5: Practical Use Cases
+Step 5 - Practical Use Cases
 
 1. Emergency Communications: When infrastructure fails during disasters, mesh networks provide essential communication channels
 2. Remote Property Networks: Connect buildings across large properties without trenching cables

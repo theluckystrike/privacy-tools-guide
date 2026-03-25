@@ -205,7 +205,7 @@ Developer-Focused API Privacy Auditing
 
 For developers and security professionals, iOS provides diagnostic tools to audit privacy configurations programmatically. The App Privacy Report data can be extracted and analyzed:
 
-App Privacy Report API: iOS 17+ provides an Activity API that allows your own apps to check privacy permissions:
+App Privacy Report API - iOS 17+ provides an Activity API that allows your own apps to check privacy permissions:
 
 ```swift
 import AppKit
@@ -232,7 +232,7 @@ case .notDetermined:
 }
 ```
 
-Examining Network Privacy: Monitor DNS and VPN usage on your device:
+Examining Network Privacy - Monitor DNS and VPN usage on your device:
 
 ```bash
 On macOS, check active VPN profiles
@@ -249,14 +249,14 @@ Privacy Hardening for High-Risk Scenarios
 
 Standard settings provide good privacy for most users. For journalists, activists, or high-risk users, additional hardening is necessary:
 
-Disable iCloud Sync Entirely: Navigate to Settings > [Your Name] > iCloud and turn off syncing for:
+Disable iCloud Sync Entirely - Navigate to Settings > [Your Name] > iCloud and turn off syncing for:
 - iCloud Keychain (handle passwords locally)
 - Health data
 - Photos
 - Notes
 - Siri data
 
-Enable Advanced Data Protection: Available in Settings > [Your Name] > iCloud > Advanced Data Protection. This provides end-to-end encryption for sensitive data:
+Enable Advanced Data Protection - Available in Settings > [Your Name] > iCloud > Advanced Data Protection. This provides end-to-end encryption for sensitive data:
 
 ```
 - Notes and memos
@@ -267,7 +267,7 @@ Enable Advanced Data Protection: Available in Settings > [Your Name] > iCloud > 
 - Reminders
 ```
 
-Use Airplane Mode + Cellular: For maximum privacy during sensitive work, enable Airplane Mode, then selectively re-enable Cellular only when needed. This prevents background WiFi connectivity and location triangulation:
+Use Airplane Mode + Cellular - For maximum privacy during sensitive work, enable Airplane Mode, then selectively re-enable Cellular only when needed. This prevents background WiFi connectivity and location triangulation:
 
 ```bash
 iOS WiFi scan enumeration prevention
@@ -275,13 +275,13 @@ Settings > WiFi > Turn WiFi completely off, not just "disconnect"
 This prevents passive WiFi beacon scanning
 ```
 
-Restrict Bluetooth: Bluetooth enables proximity tracking. Disable it except when actively using Bluetooth devices:
+Restrict Bluetooth - Bluetooth enables proximity tracking. Disable it except when actively using Bluetooth devices:
 
 ```
 Settings > Bluetooth > Turn completely off
 ```
 
-Photo Privacy: Strip EXIF data from photos before sharing:
+Photo Privacy - Strip EXIF data from photos before sharing:
 
 ```bash
 On macOS connected to iPhone, use ImageMagick to strip metadata

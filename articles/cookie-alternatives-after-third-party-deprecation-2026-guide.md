@@ -52,7 +52,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Alternative 1: First-Party Cookies with Explicit Consent
+Step 1 - Alternative 1: First-Party Cookies with Explicit Consent
 
 The simplest migration path involves moving functionality to first-party cookies. Since first-party cookies still work across page loads on your domain, you can maintain session state and user preferences without cross-site tracking.
 
@@ -72,7 +72,7 @@ function setConsentCookie(userId, preferences) {
 
 This approach works for session persistence, theme preferences, and logged-in state. The key constraint is that these cookies stay within your domain, you cannot track users across unrelated sites.
 
-Step 2: Alternative 2: The Storage Access API
+Step 2 - Alternative 2: The Storage Access API
 
 For sites that genuinely need cross-site functionality (such as embedded content from related properties), the Storage Access API provides a standards-based way to request access to first-party storage on another origin.
 
@@ -95,7 +95,7 @@ async function requestCrossSiteStorage() {
 
 This API requires user interaction (a click or gesture) to trigger the permission request. It works in Safari, Firefox, and Chrome. The user sees a browser prompt deciding whether to grant access.
 
-Step 3: Alternative 3: Server-Side Session Management
+Step 3 - Alternative 3: Server-Side Session Management
 
 Moving session management to your server eliminates client-side cookie dependencies entirely. Your server maintains user state, and the client only holds a session identifier.
 
@@ -129,7 +129,7 @@ def login():
 
 Server-side sessions provide more control over data retention and enable exact compliance with privacy regulations. You decide when and how to delete user data.
 
-Step 4: Alternative 4: Privacy-Preserving APIs
+Step 4 - Alternative 4: Privacy-Preserving APIs
 
 Several new browser APIs emerged specifically to address post-third-party-cookie use cases while maintaining user privacy.
 
@@ -166,7 +166,7 @@ fetch('/api/register-conversion', {
 
 These APIs require thoughtful implementation and may not suit all use cases, but they represent the direction the web platform is moving.
 
-Step 5: Alternative 5: Client-Side Storage APIs
+Step 5 - Alternative 5: Client-Side Storage APIs
 
 Modern browsers offer several client-side storage mechanisms beyond cookies:
 
@@ -193,15 +193,15 @@ Privacy and Compliance Implications
 
 Third-party cookie removal triggers important privacy compliance updates:
 
-GDPR changes: Without third-party tracking, your data processing significantly changes. You're no longer collecting data for partners, you control the data entirely. Update your privacy policy to accurately reflect what data you collect, how long you retain it, and which parties access it.
+GDPR changes - Without third-party tracking, your data processing significantly changes. You're no longer collecting data for partners, you control the data entirely. Update your privacy policy to accurately reflect what data you collect, how long you retain it, and which parties access it.
 
-CCPA and state privacy laws: Data that was shared with third-party analytics providers no longer is. This may reduce your CCPA consumer disclosure obligations. Review your data sharing agreements and update privacy policies accordingly.
+CCPA and state privacy laws - Data that was shared with third-party analytics providers no longer is. This may reduce your CCPA consumer disclosure obligations. Review your data sharing agreements and update privacy policies accordingly.
 
-Essential services exception: Authentication and first-party analytics don't always require explicit consent under privacy regulations. Document which activities fall under "legitimate interest" vs which require affirmative consent.
+Essential services exception - Authentication and first-party analytics don't always require explicit consent under privacy regulations. Document which activities fall under "legitimate interest" vs which require affirmative consent.
 
 Consult privacy counsel if handling sensitive data categories (healthcare, financial info, children's data). Third-party cookie removal changes your compliance baseline.
 
-Step 6: Choose the Right Approach
+Step 6 - Choose the Right Approach
 
 The best alternative depends on your specific use case:
 
@@ -215,7 +215,7 @@ The best alternative depends on your specific use case:
 
 Most applications will combine multiple approaches. A typical implementation might use server-side sessions for authentication, localStorage for UI preferences, and the Attribution Reporting API for marketing measurement.
 
-Step 7: Implementation Checklist
+Step 7 - Implementation Checklist
 
 1. Audit existing third-party cookie usage in your application
 2. Identify which features require migration versus retirement
@@ -224,25 +224,25 @@ Step 7: Implementation Checklist
 5. Test across target browsers (Safari, Firefox, Chrome)
 6. Update privacy policies to reflect new data practices
 
-Step 8: Debugging Third-Party Cookie Removal
+Step 8 - Debugging Third-Party Cookie Removal
 
 When you remove third-party cookie dependencies, expect debugging challenges. Here's how to identify issues:
 
-Browser DevTools Inspection: Modern DevTools show which cookies are being blocked or restricted. In Chrome DevTools > Application > Cookies, third-party cookies display with restriction warnings.
+Browser DevTools Inspection - Modern DevTools show which cookies are being blocked or restricted. In Chrome DevTools > Application > Cookies, third-party cookies display with restriction warnings.
 
-Network Monitoring: Use DevTools Network tab to identify outgoing requests to third-party domains. Any domain that differs from your main site's domain warrants review. Requests that previously succeeded with cookies may now fail with 401 or 403 errors.
+Network Monitoring - Use DevTools Network tab to identify outgoing requests to third-party domains. Any domain that differs from your main site's domain warrants review. Requests that previously succeeded with cookies may now fail with 401 or 403 errors.
 
-Console Error Messages: Browsers log when they block storage access. Search console output for "Access to localstorage has been blocked by CORS policy" or similar messages to pinpoint failures.
+Console Error Messages - Browsers log when they block storage access. Search console output for "Access to localstorage has been blocked by CORS policy" or similar messages to pinpoint failures.
 
-Cross-Browser Testing: Test your application in Safari, Firefox, and Chrome. Each browser's privacy implementation differs slightly. Safari's Intelligent Tracking Prevention is more aggressive than Chrome's gradual rollout. A feature working in Chrome may break in Safari.
+Cross-Browser Testing - Test your application in Safari, Firefox, and Chrome. Each browser's privacy implementation differs slightly. Safari's Intelligent Tracking Prevention is more aggressive than Chrome's gradual rollout. A feature working in Chrome may break in Safari.
 
-Step 9: Analytics and Tracking Alternatives
+Step 9 - Analytics and Tracking Alternatives
 
 Most third-party cookie removal affects analytics. Here's how to maintain insight without third-party tracking:
 
-First-Party Analytics: Migrate to analytics tools that use server-side tracking. Tools like Plausible and Fathom capture data through your own server instead of relying on client-side cookies. This improves data accuracy and privacy compliance.
+First-Party Analytics - Migrate to analytics tools that use server-side tracking. Tools like Plausible and Fathom capture data through your own server instead of relying on client-side cookies. This improves data accuracy and privacy compliance.
 
-Event-Based Analytics: Instead of tracking page views with cookies, send structured events from your application:
+Event-Based Analytics - Instead of tracking page views with cookies, send structured events from your application:
 
 ```javascript
 // Send analytics events server-side
@@ -259,13 +259,13 @@ fetch('/api/analytics/event', {
 
 Server-side events aren't blocked by browser restrictions and provide better data integrity.
 
-Aggregate Reporting: For ad performance measurement, use the Attribution Reporting API to get aggregate conversion data without exposing individual user journeys. This satisfies marketing measurement needs while respecting privacy.
+Aggregate Reporting - For ad performance measurement, use the Attribution Reporting API to get aggregate conversion data without exposing individual user journeys. This satisfies marketing measurement needs while respecting privacy.
 
-Step 10: Real-World Migration Example
+Step 10 - Real-World Migration Example
 
 Here's a concrete example migrating a SaaS application from third-party cookies to alternatives:
 
-Before: Analytics pixel from google-analytics.com tracked users across multiple SaaS apps. Sign-in flow relied on third-party session cookies from auth service (auth.service.com).
+Before - Analytics pixel from google-analytics.com tracked users across multiple SaaS apps. Sign-in flow relied on third-party session cookies from auth service (auth.service.com).
 
 After:
 - Move analytics to server-side implementation using internal /api/analytics endpoint

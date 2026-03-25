@@ -36,13 +36,13 @@ Understanding Geo-Blocking Mechanisms
 
 UK licensed betting sites employ multiple layers of detection to enforce geographic restrictions mandated by the UK Gambling Commission. The primary methods include:
 
-1. IP Address Geolocation: The outermost layer checks your IP address against geographic databases. UK betting sites maintain lists of known VPN IP ranges and data center IPs, blocking connections that originate from exit nodes commonly associated with VPN services.
+1. IP Address Geolocation - The outermost layer checks your IP address against geographic databases. UK betting sites maintain lists of known VPN IP ranges and data center IPs, blocking connections that originate from exit nodes commonly associated with VPN services.
 
-2. DNS Resolution: When your device resolves a domain like `bet365.com` or `betway.com`, the DNS request reveals your true geographic location. Many VPNs fail this test by routing DNS queries through local servers rather than tunneling them through the VPN.
+2. DNS Resolution - When your device resolves a domain like `bet365.com` or `betway.com`, the DNS request reveals your true geographic location. Many VPNs fail this test by routing DNS queries through local servers rather than tunneling them through the VPN.
 
-3. WebRTC Leaks: WebRTC (Web Real-Time Communication) can expose your real IP address even when connected to a VPN. Betting sites actively probe for WebRTC leaks to detect users attempting to mask their location.
+3. WebRTC Leaks - WebRTC (Web Real-Time Communication) can expose your real IP address even when connected to a VPN. Betting sites actively probe for WebRTC leaks to detect users attempting to mask their location.
 
-4. Browser Fingerprinting: Advanced fingerprinting techniques analyze your browser's timezone, language settings, and canvas rendering to identify inconsistencies between your claimed location and actual configuration.
+4. Browser Fingerprinting - Advanced fingerprinting techniques analyze your browser's timezone, language settings, and canvas rendering to identify inconsistencies between your claimed location and actual configuration.
 
 VPN Configuration Requirements
 
@@ -160,7 +160,7 @@ async function checkWebRTC() {
 checkWebRTC();
 ```
 
-Advanced: Custom DNS withHosts File
+Advanced - Custom DNS withHosts File
 
 For users wanting granular control, modifying the hosts file provides an additional layer:
 
@@ -206,8 +206,8 @@ expressvpn connect uk-london-4  # Residential IP server
 expressvpn get-status | grep -i "virtual\|dns"
 ```
 
-Pricing: $99.95/year (billed annually) or $12.95/month
-Success rate on major operators: 87% (Bet365, Betway, William Hill)
+Pricing - $99.95/year (billed annually) or $12.95/month
+Success rate on major operators - 87% (Bet365, Betway, William Hill)
 
 Nordvpn (Tier 1)
 
@@ -224,8 +224,8 @@ nordvpn connect UnitedKingdom --obfuscate
 nordvpn set dns on  # Ensure DNS routing through VPN
 ```
 
-Pricing: $3.99/month (2-year plan) or $11.99/month (monthly)
-Success rate: 84%
+Pricing - $3.99/month (2-year plan) or $11.99/month (monthly)
+Success rate - 84%
 
 CyberGhost (Tier 2)
 
@@ -234,9 +234,9 @@ Strengths:
 - Automatic server selection algorithm
 - Dedicated streaming/betting server configurations
 
-Limitations: More easily detected than Tier 1 options
-Pricing: $2.75/month (2-year plan)
-Success rate: 72%
+Limitations - More easily detected than Tier 1 options
+Pricing - $2.75/month (2-year plan)
+Success rate - 72%
 
 Windscribe (Tier 2)
 
@@ -245,9 +245,9 @@ Strengths:
 - Highly configurable (protocol selection, port customization)
 - Free tier available (10 GB/month, limited UK servers)
 
-Limitations: UK server IP ranges flagged by some operators
-Pricing: CAD $4.08/month (annual) or free with limitations
-Success rate: 71%
+Limitations - UK server IP ranges flagged by some operators
+Pricing - CAD $4.08/month (annual) or free with limitations
+Success rate - 71%
 
 Advanced VPN Configuration for Maximum Reliability
 
@@ -269,7 +269,7 @@ scutil --dns | grep -A2 "nameserver"
 
 3. Disable WebRTC leaks
 macOS: Safari doesn't support WebRTC, Firefox must be configured
-Firefox: about:config > media.peerconnection.enabled = false
+Firefox - about:config > media.peerconnection.enabled = false
 
 4. Clear browser state
 Open betting site in fresh incognito/private window
@@ -359,17 +359,17 @@ done
 
 Results (example, 2026):
 ExpressVPN: 650 Mbps download, 45ms latency
-NordVPN: 520 Mbps download, 52ms latency
-CyberGhost: 380 Mbps download, 68ms latency
+NordVPN - 520 Mbps download, 52ms latency
+CyberGhost - 380 Mbps download, 68ms latency
 ```
 
-Key insight: For betting platforms, anything >10 Mbps is sufficient. VPN latency (45-100ms) is negligible for betting site access but becomes relevant for streaming.
+Key insight - For betting platforms, anything >10 Mbps is sufficient. VPN latency (45-100ms) is negligible for betting site access but becomes relevant for streaming.
 
 Troubleshooting Persistent Blocks
 
 If you've tried everything and still can't access:
 
-Step 1: Verify actual connectivity
+Step 1 - Verify actual connectivity
 
 ```bash
 Test if VPN is actually connected
@@ -381,7 +381,7 @@ curl -s https://ifconfig.me/
 curl -s -6 ifconfig.me  # IPv6 - should fail or show VPN IP
 ```
 
-Step 2: Browser forensics
+Step 2 - Browser forensics
 
 ```javascript
 // Run in browser console to detect blocking mechanisms
@@ -403,20 +403,20 @@ const fingerprint = canvas.toDataURL();
 console.log('Canvas fingerprint:', fingerprint);
 ```
 
-Step 3: Protocol switching
+Step 3 - Protocol switching
 
 If WireGuard fails, try OpenVPN:
 
 ```bash
 Switch from WireGuard to OpenVPN
-In most VPN apps: Settings > Protocol > Change to OpenVPN
+In most VPN apps - Settings > Protocol > Change to OpenVPN
 Add TCP port 443 for better obfuscation
 
 Manual OpenVPN test
 openvpn --config uk-london.ovpn --proto tcp --remote bet365.com 443
 ```
 
-Cost Comparison: 2026 VPN Pricing
+Cost Comparison - 2026 VPN Pricing
 
 | Provider | Monthly | Annual | Residential IP | Best for |
 |----------|---------|--------|----------------|----------|

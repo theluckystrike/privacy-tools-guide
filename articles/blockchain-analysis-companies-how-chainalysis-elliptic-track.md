@@ -99,7 +99,7 @@ addressRiskCheck('0x742d35Cc6634C0532925a3b844Bc9e7595f8fEaa')
   .then(result => console.log(result));
 ```
 
-Chainalysis: Enterprise Blockchain Intelligence
+Chainalysis - Enterprise Blockchain Intelligence
 
 Chainalysis operates as the largest blockchain analysis provider, serving government agencies and major financial institutions. Their platform offers real-time transaction monitoring and historical investigation tools.
 
@@ -140,7 +140,7 @@ Limitations and Gaps
 
 Chainalysis primarily monitors established blockchains with sufficient trading volume. Smaller or privacy-focused cryptocurrencies may lack comparable coverage. Additionally, their database depends on voluntary exchange cooperation and public attribution efforts, addresses not associated with compliant services remain anonymous.
 
-Elliptic: Blockchain Analytics and Compliance
+Elliptic - Blockchain Analytics and Compliance
 
 Elliptic offers similar blockchain analysis services with a focus on financial compliance. Their differentiation lies in supporting a broader range of tokens and providing more granular risk scoring.
 
@@ -241,7 +241,7 @@ maxconnections=15
 
 The Reality of On-Chain Tracking
 
-Public blockchains fundamentally cannot provide sender privacy without additional protocols. Every transaction broadcasts to the entire network, creating permanent records that analysis companies can and do examine. This reality shapes the broader cryptocurrency privacy ecosystem.
+Public blockchains fundamentally cannot provide sender privacy without additional protocols. Every transaction broadcasts to the entire network, creating permanent records that analysis companies can and do examine. This reality shapes the broader cryptocurrency privacy environment.
 
 Privacy-focused cryptocurrencies like Monero, Zcash, and Grin implement cryptographic techniques, ring signatures, zero-knowledge proofs, and confidential transactions, to obscure transaction details. These provide meaningful privacy improvements but often trade usability or require specific operational knowledge.
 

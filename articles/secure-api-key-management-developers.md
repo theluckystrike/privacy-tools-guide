@@ -19,7 +19,7 @@ Secure API Key Management for Developers
 
 Leaked API keys cause real breaches. GitHub's secret scanning detects millions of exposed credentials per year. Most of them are committed accidentally in `.env` files, hardcoded in source, or left in shell history. This guide covers how to handle keys properly from development through production.
 
-The Core Rule: Never Store Keys in Code
+The Core Rule - Never Store Keys in Code
 
 API keys do not belong in:
 - Source code files
@@ -66,7 +66,7 @@ Pre-commit Hook to Block Accidental Commits
 ```bash
 #!/bin/bash
 .git/hooks/pre-commit. runs before every commit
-Install: cp this file to .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+Install - cp this file to .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
 
 Patterns that look like API keys
 PATTERNS=(
@@ -90,7 +90,7 @@ for pattern in "${PATTERNS[@]}"; do
   fi
 done
 
-Simpler but effective: check for known key prefixes
+Simpler but effective - check for known key prefixes
 if git diff --cached --unified=0 | grep -E "^\+" | grep -qE "(AKIA|sk_live_|sk_test_|SG\.|ghp_|xoxb-|AIza)"; then
   echo "ERROR: Possible API key detected. Aborting commit."
   git diff --cached | grep -E "(AKIA|sk_live_|sk_test_|SG\.|ghp_|xoxb-|AIza)"
@@ -289,8 +289,8 @@ Key Permission Scoping
 Create keys with the minimum required permissions.
 
 ```bash
-Bad: full-access key stored in .env
-Good: scoped key that can only read from one S3 bucket
+Bad - full-access key stored in .env
+Good - scoped key that can only read from one S3 bucket
 
 aws iam create-policy \
   --policy-name MyAppS3ReadOnly \

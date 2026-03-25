@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Anonymity Stack
+Step 1 - Understand the Anonymity Stack
 
 Email sender anonymity involves hiding multiple identifiers: your IP address, your email provider account, and any links between your identity and the message. Tor masks your IP address by routing traffic through three or more relays, but metadata still reveals information to email providers and observers.
 
@@ -36,9 +36,9 @@ End-to-end encryption with PGP protects message content but does not hide sender
 
 The critical insight is that you need both layers. Using encrypted email without Tor still reveals your IP address to mail servers. Using Tor without encryption allows observers to read message content at exit nodes.
 
-Step 2: Set Up Tor for Email Traffic
+Step 2 - Set Up Tor for Email Traffic
 
-You have two primary options for routing email through Tor: the Tor Browser's built-in SOCKS proxy or the Tor daemon with a SOCKS port.
+You have two primary options for routing email through Tor - the Tor Browser's built-in SOCKS proxy or the Tor daemon with a SOCKS port.
 
 Using Tor Browser's SOCKS Proxy
 
@@ -47,13 +47,13 @@ Tor Browser exposes a SOCKS5 proxy on `127.0.0.1:9150`. Configure your email cli
 In Thunderbird, navigate to Account Settings > Outgoing Server (SMTP) and add a new server configuration:
 
 ```
-SMTP Server: mail.example.com
-Port: 465
-Connection Security: SSL/TLS
-Authentication Method: Normal password
-Username: your-email@provider.com
-SOCKS Host: 127.0.0.1
-SOCKS Port: 9150
+SMTP Server - mail.example.com
+Port - 465
+Connection Security - SSL/TLS
+Authentication Method - Normal password
+Username - your-email@provider.com
+SOCKS Host - 127.0.0.1
+SOCKS Port - 9150
 ```
 
 Test the connection by sending a test message. Monitor the Tor Browser circuit display to confirm traffic routes through Tor.
@@ -75,7 +75,7 @@ tor &
 
 The daemon exposes a SOCKS proxy on `127.0.0.1:9050`. Configure your system or application to route mail traffic through this proxy.
 
-Step 3: Connecting to Email Providers via Onion Services
+Step 3 - Connecting to Email Providers via Onion Services
 
 Onion services provide direct encrypted connections to email servers without exiting to the clearnet. This eliminates the risk of traffic analysis at Tor exit nodes.
 
@@ -84,11 +84,11 @@ ProtonMail Onion Service
 ProtonMail operates an onion service at `protonmailrmez3lot.onion`. Configure Thunderbird to connect via this address:
 
 ```
-Incoming Server: protonmailrmez3lot.onion
-IMAP Port: 1143
-SMTP Server: protonmailrmez3lot.onion
-SMTP Port: 1025
-Connection Security: STARTTLS
+Incoming Server - protonmailrmez3lot.onion
+IMAP Port - 1143
+SMTP Server - protonmailrmez3lot.onion
+SMTP Port - 1025
+Connection Security - STARTTLS
 ```
 
 Note that the ProtonMail onion service requires you to use their bridge for full functionality. The bridge connects to their servers through Tor while providing standard IMAP access.
@@ -114,7 +114,7 @@ sudo cat /var/lib/tor/mail_onion/hostname
 
 This generates a `.onion` address that accepts connections only from the Tor network.
 
-Step 4: Implementing PGP Encryption
+Step 4 - Implementing PGP Encryption
 
 With Tor hiding your network identity, add PGP encryption to protect message content from end-to-end.
 
@@ -163,7 +163,7 @@ message = "Your anonymous message here"
 encrypted = encrypt_message("recipient@example.com", message)
 ```
 
-The critical practice: never sign messages when sender anonymity is required. Digital signatures link messages to your key, defeating the anonymity provided by Tor.
+The critical practice - never sign messages when sender anonymity is required. Digital signatures link messages to your key, defeating the anonymity provided by Tor.
 
 Operational Security Considerations
 
@@ -191,13 +191,13 @@ Create completely separate environments for anonymous communications:
 - PGP key generated in that environment only
 - Access only through Tor
 
-Step 5: Verify Your Setup
+Step 5 - Verify Your Setup
 
 Test that your configuration actually provides the anonymity you expect:
 
-1. IP Leak Test: Visit a site like `ip.me` from your email client to confirm it shows a Tor exit node IP, not your real address.
+1. IP Leak Test - Visit a site like `ip.me` from your email client to confirm it shows a Tor exit node IP, not your real address.
 
-2. Onion Service Test: Verify you can connect to email provider onion services without errors.
+2. Onion Service Test - Verify you can connect to email provider onion services without errors.
 
 3. Encryption Verification: Send a test message and confirm it's encrypted by examining the raw SMTP transaction:
 
@@ -208,9 +208,9 @@ STARTTLS
 Verify TLS negotiation succeeds
 ```
 
-4. Metadata Inspection: Check email headers of sent messages to ensure no revealing information leaks through.
+4. Metadata Inspection - Check email headers of sent messages to ensure no revealing information leaks through.
 
-Step 6: Common Pitfalls to Avoid
+Step 6 - Common Pitfalls to Avoid
 
 Several mistakes undermine the anonymity these tools provide:
 

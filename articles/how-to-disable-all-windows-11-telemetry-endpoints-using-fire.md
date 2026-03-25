@@ -28,7 +28,7 @@ Before implementing firewall rules, ensure you have:
 - Administrator privileges
 - Understanding that some Windows features may require connectivity
 
-Step 2: Method 1: Using PowerShell to Create Firewall Rules
+Step 2 - Method 1: Using PowerShell to Create Firewall Rules
 
 The most efficient method uses PowerShell to create outbound firewall rules that block known telemetry endpoints. This approach works across all Windows 11 editions.
 
@@ -108,7 +108,7 @@ foreach ($ipRange in $MicrosoftIPRanges) {
 
 Be cautious with IP range blocking, as it may affect legitimate Microsoft services. The endpoint-based approach provides more precise control.
 
-Step 3: Method 2: Using Windows Defender Firewall Advanced Security
+Step 3 - Method 2: Using Windows Defender Firewall Advanced Security
 
 For users who prefer the graphical interface or need more granular control:
 
@@ -129,7 +129,7 @@ C:\Windows\WindowsUpdate\*.exe
 8. Apply to all profiles (Domain, Private, Public)
 9. Name the rule appropriately
 
-Step 4: Blocking Specific Telemetry Services
+Step 4 - Blocking Specific Telemetry Services
 
 Windows 11 runs several services that transmit telemetry. While you can disable these services through other means, blocking their network access provides an additional layer:
 
@@ -161,7 +161,7 @@ New-NetFirewallRule -DisplayName "Block-CompatTelRunner" `
     -Profile Any
 ```
 
-Step 5: Verify Your Firewall Rules
+Step 5 - Verify Your Firewall Rules
 
 After implementing the rules, verify they work correctly:
 
@@ -184,7 +184,7 @@ Test-NetConnection -ComputerName "vortex.data.microsoft.com" -Port 443 -WarningA
 
 If the firewall rule is working, you should see `TcpTestSucceeded : False` for blocked endpoints.
 
-Step 6: Manage Exceptions
+Step 6 - Manage Exceptions
 
 Some Windows features require telemetry connectivity. Create exceptions for specific scenarios:
 
@@ -199,7 +199,7 @@ $updateRule = New-NetFirewallRule -DisplayName "Allow-WindowsUpdate" `
     -Profile Any
 ```
 
-Step 7: Remove Rules
+Step 7 - Remove Rules
 
 To remove all telemetry blocking rules:
 
@@ -213,7 +213,7 @@ Get-NetFirewallRule | Where-Object {
 Write-Host "All telemetry blocking rules removed."
 ```
 
-Step 8: Considerations and Trade-offs
+Step 8 - Considerations and Trade-offs
 
 Blocking telemetry at the firewall level has implications:
 
@@ -225,7 +225,7 @@ Blocking telemetry at the firewall level has implications:
 
 For development environments, this level of blocking is often acceptable. For production systems, consider which features your workflow actually requires.
 
-Step 9: Automation Script for Complete Setup
+Step 9 - Automation Script for Complete Setup
 
 Here's a consolidated script that combines all methods:
 

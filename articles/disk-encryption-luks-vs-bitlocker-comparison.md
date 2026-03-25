@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Disk Encryption Comparison: LUKS vs BitLocker"
+title: "Disk Encryption Comparison - LUKS vs BitLocker"
 description: "Compare LUKS and BitLocker for full disk encryption: security model, key management, TPM integration, recovery options, and performance benchmarks"
 date: 2026-03-22
 author: theluckystrike
@@ -15,7 +15,7 @@ tags: [privacy-tools-guide, comparison, encryption]
 
 {% raw %}
 
-Disk Encryption Comparison: LUKS vs BitLocker
+Disk Encryption Comparison - LUKS vs BitLocker
 
 Both LUKS (Linux Unified Key Setup) and BitLocker protect data at rest by encrypting the entire disk volume. A stolen laptop with either enabled reveals nothing without the key. But they differ significantly in how they manage keys, what trust they place in hardware, and what happens when you need to recover data.
 
@@ -28,8 +28,8 @@ Table of Contents
 - [Performance](#performance)
 - [Header Backup and Recovery](#header-backup-and-recovery)
 - [Side-by-Side Summary](#side-by-side-summary)
-- [Practical Setup Walkthrough: LUKS on Ubuntu](#practical-setup-walkthrough-luks-on-ubuntu)
-- [BitLocker on Windows: Full Setup](#bitlocker-on-windows-full-setup)
+- [Practical Setup Walkthrough - LUKS on Ubuntu](#practical-setup-walkthrough-luks-on-ubuntu)
+- [BitLocker on Windows - Full Setup](#bitlocker-on-windows-full-setup)
 - [Real-World Disaster Recovery Scenarios](#real-world-disaster-recovery-scenarios)
 - [When to Use LUKS vs BitLocker](#when-to-use-luks-vs-bitlocker)
 - [Related Reading](#related-reading)
@@ -146,7 +146,7 @@ Performance
 The performance difference is small on modern hardware with AES-NI instruction support (present in nearly all CPUs since 2012).
 
 ```bash
-LUKS: benchmark ciphers on your hardware
+LUKS - benchmark ciphers on your hardware
 sudo cryptsetup benchmark
 
 Typical output on a modern system:
@@ -164,7 +164,7 @@ On NVMe SSDs, encryption overhead with AES-NI is under 5% for most workloads. Wi
 
 Header Backup and Recovery
 
-LUKS headers are at risk: a corrupted or overwritten header means the data is gone even if you have the passphrase.
+LUKS headers are at risk - a corrupted or overwritten header means the data is gone even if you have the passphrase.
 
 ```bash
 Back up the LUKS header. store in a safe, separate location
@@ -191,14 +191,14 @@ Side-by-Side Summary
 | Recovery | Passphrase / key file | Recovery password / recovery key |
 | Header backup | Manual | N/A (recovery key serves this) |
 
-Practical Setup Walkthrough: LUKS on Ubuntu
+Practical Setup Walkthrough - LUKS on Ubuntu
 
 For Linux users, setting up LUKS2 from scratch on a new partition:
 
 ```bash
 1. Identify your device (BE CAREFUL - verify with lsblk)
 lsblk
-Output: sdb is your new drive
+Output - sdb is your new drive
 
 2. Create partition if needed (or use existing partition)
 sudo parted /dev/sdb mklabel gpt
@@ -245,7 +245,7 @@ Then add to /etc/fstab:
 On reboot, systemd will prompt for passphrase before mounting
 ```
 
-BitLocker on Windows: Full Setup
+BitLocker on Windows - Full Setup
 
 For Windows 10/11 Pro, Enterprise, or Education:
 
@@ -275,7 +275,7 @@ Get-BitLockerVolume -MountPoint "C:" | Select-Object -Property VolumeStatus, Enc
 
 Real-World Disaster Recovery Scenarios
 
-Scenario 1: Forgotten LUKS Passphrase
+Scenario 1 - Forgotten LUKS Passphrase
 
 If you have a backup key slot:
 
@@ -294,10 +294,10 @@ You must either:
 2. Use the header backup (if you made one)
 3. Accept the data is lost
 
-Prevention: Always set up multiple key slots
+Prevention - Always set up multiple key slots
 ```
 
-Scenario 2: BitLocker Disabled, But Forgot PIN
+Scenario 2 - BitLocker Disabled, But Forgot PIN
 
 If you can still boot Windows:
 

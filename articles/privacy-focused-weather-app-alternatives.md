@@ -33,15 +33,15 @@ Fully open-source fork of Geometric Weather with no tracking, available on F-Dro
 - No account required, no analytics, no ads
 - Supports Open-Meteo (no API key, EU-hosted), MET Norway, Pirate Weather
 
-Setup: Install from F-Droid → Settings > Weather Sources → Select Open-Meteo → Set location manually by city name (not GPS).
+Setup - Install from F-Droid → Settings > Weather Sources → Select Open-Meteo → Set location manually by city name (not GPS).
 
 Organic Maps and Climate Apps
 
-Clima (Android, F-Droid): Uses OpenWeatherMap API. Open-source, no telemetry. Requires a free OpenWeatherMap API key.
+Clima (Android, F-Droid) - Uses OpenWeatherMap API. Open-source, no telemetry. Requires a free OpenWeatherMap API key.
 
 Meteo by Alec Saunders (iOS, paid): No tracking, no ads, uses Apple WeatherKit. One-time purchase.
 
-Apple Weather (iOS): Uses WeatherKit. Apple does not share location with advertisers. Better than AccuWeather.
+Apple Weather (iOS) - Uses WeatherKit. Apple does not share location with advertisers. Better than AccuWeather.
 
 Query Weather Without an App
 
@@ -53,7 +53,7 @@ curl wttr.in/London
 
 Short one-line format
 curl "wttr.in/Berlin?format=3"
-Output: Berlin: +12°C
+Output - Berlin: +12°C
 
 JSON output
 curl "wttr.in/Tokyo?format=j1" | jq '.current_condition[0] | {temp_C, weatherDesc}'
@@ -232,7 +232,7 @@ Most weather apps claim location isn't tracked but still send it to analytics ba
 
 ```bash
 On a network with Pi-hole installed:
-Block domains: analytics.*, ads.*, track.*
+Block domains - analytics.*, ads.*, track.*
 This prevents app-level tracking even if the app tries to send data
 ```
 

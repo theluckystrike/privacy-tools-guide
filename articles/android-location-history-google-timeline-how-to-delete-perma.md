@@ -38,7 +38,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Google Timeline Data Storage
+Step 1 - Understand Google Timeline Data Storage
 
 Google Timeline stores location data across multiple services. The primary repository is your Google Account's Location History, which powers the Timeline feature in Google Maps. This data includes:
 
@@ -50,7 +50,7 @@ Google Timeline stores location data across multiple services. The primary repos
 
 Before attempting deletion, recognize that Google maintains backups and may retain certain data for legal or operational reasons. Complete removal from all Google's systems cannot be guaranteed, but you can significantly reduce your footprint.
 
-Step 2: Manual Deletion Through Google Account
+Step 2 - Manual Deletion Through Google Account
 
 The standard approach uses Google's web interface:
 
@@ -62,7 +62,7 @@ The standard approach uses Google's web interface:
 
 This interface provides date range selection but lacks batch operations for large datasets. Power users managing years of data find this impractical.
 
-Step 3: Implement Programmatic Deletion Using Google Takeout
+Step 3 - Implement Programmatic Deletion Using Google Takeout
 
 Google Takeout exports all your data, but deletion requires a different approach. For automated or bulk operations, the Google Maps Platform offers limited programmatic access to Timeline data through the Location History API (available to enterprise customers with appropriate billing).
 
@@ -72,7 +72,7 @@ For individual users, the most practical programmatic solution involves browser 
 #!/usr/bin/env python3
 """
 Google Timeline Bulk Delete Helper
-Requires: pip install selenium webdriver-manager
+Requires - pip install selenium webdriver-manager
 """
 
 import time
@@ -111,7 +111,7 @@ if __name__ == "__main__":
 
 This approach has limitations. Google frequently updates the Timeline interface, breaking selectors. Additionally, aggressive automation may trigger account restrictions.
 
-Step 4: Use the Google Maps SDK for Android
+Step 4 - Use the Google Maps SDK for Android
 
 For developers building Android applications, understanding how location data flows helps in creating privacy-focused alternatives:
 
@@ -135,7 +135,7 @@ val privacyLocationRequest = LocationRequest.create().apply {
 
 Android's location permissions alone don't prevent Google from collecting Timeline data. You must disable Location History in your Google Account settings.
 
-Step 5: Disable Location History Completely
+Step 5 - Disable Location History Completely
 
 The most effective strategy prevents data collection rather than removing it after the fact:
 
@@ -153,7 +153,7 @@ Through Google Account (Web)
 
 This stops future recording but doesn't remove existing data.
 
-Step 6: Automate Data Export Before Deletion
+Step 6 - Automate Data Export Before Deletion
 
 Before wiping Timeline data, export it for your records:
 
@@ -191,7 +191,7 @@ def analyze_location_history(json_file):
 analyze_location_history("Location History.json")
 ```
 
-Step 7: Alternative: Local-Only Location Tracking
+Step 7 - Alternative: Local-Only Location Tracking
 
 For developers requiring location data without cloud exposure, consider self-hosted alternatives:
 
@@ -201,7 +201,7 @@ For developers requiring location data without cloud exposure, consider self-hos
 
 These solutions keep location data on your device or your own servers, eliminating Google Timeline entirely.
 
-Step 8: Verify Deletion
+Step 8 - Verify Deletion
 
 After deletion attempts, verify results:
 

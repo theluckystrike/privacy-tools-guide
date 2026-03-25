@@ -98,7 +98,7 @@ Adversarial t-shirts and hoodies:
 - Effective against some person-detection networks (YOLO variants)
 ```
 
-Effectiveness is limited: video analysis can extract clean frames between distorted ones, and adversarial patterns effective against one model may fail against another.
+Effectiveness is limited - video analysis can extract clean frames between distorted ones, and adversarial patterns effective against one model may fail against another.
 
 Technical Opt-Out from Photo Platforms
 
@@ -123,7 +123,7 @@ In the EU and California, you have the right to request deletion of biometric da
 ```python
 Template for GDPR Article 17 erasure request (EU)
 EMAIL_TEMPLATE = """
-Subject: GDPR Article 17 - Right to Erasure - Biometric Data
+Subject - GDPR Article 17 - Right to Erasure - Biometric Data
 
 To whom it may concern,
 
@@ -134,8 +134,8 @@ inferences.
 
 My identifying information:
 Name: [YOUR NAME]
-Email used on your platform: [YOUR EMAIL]
-Any user IDs or profile URLs: [IDs]
+Email used on your platform - [YOUR EMAIL]
+Any user IDs or profile URLs - [IDs]
 
 I request:
 1. Confirmation that all biometric data has been deleted

@@ -41,7 +41,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Bitwarden: CLI-Based SSH Key Management
+Step 1 - Bitwarden: CLI-Based SSH Key Management
 
 Bitwarden offers a capable CLI that integrates well with automation. This approach works best if you already use Bitwarden or prefer open-source solutions.
 
@@ -155,7 +155,7 @@ mv ~/.ssh/id_ed25519_new.pub ~/.ssh/id_ed25519.pub
 echo "Key rotated and Bitwarden updated"
 ```
 
-Step 2: 1Password: SSH Agent Integration
+Step 2 - 1Password: SSH Agent Integration
 
 1Password provides deeper SSH integration through its agent, making key retrieval during normal SSH usage.
 
@@ -210,7 +210,7 @@ ssh user@home-server
 
 The first time you connect, 1Password asks to associate this key with the server. Future connections authenticate automatically.
 
-Step 3: KeePassXC: Local Password Manager Approach
+Step 3 - KeePassXC: Local Password Manager Approach
 
 KeePassXC works well for completely local, offline key management without cloud dependencies.
 
@@ -265,7 +265,7 @@ chmod 600 "$KEY_FILE"
 echo "Key available at $KEY_FILE"
 ```
 
-Step 4: Comparing the Approaches
+Step 4 - Comparing the Approaches
 
 | Feature | Bitwarden | 1Password | KeePassXC |
 |---------|------------|------------|-----------|

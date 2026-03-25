@@ -20,7 +20,7 @@ Bitcoin's pseudonymous nature provides a layer of privacy, but that pseudonymity
 
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- Instead: they rely on the fact that most wallet software will automatically consolidate dust UTXOs with larger transactions when users spend from their wallets.
+- Instead - they rely on the fact that most wallet software will automatically consolidate dust UTXOs with larger transactions when users spend from their wallets.
 - How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
 - Mastering advanced features takes: 1-2 weeks of regular use.
@@ -36,11 +36,11 @@ How Dust Attacks Deanonymize Wallets
 
 Bitcoin's UTXO (Unspent Transaction Output) model means every transaction consumes previous outputs and creates new ones. When you spend Bitcoin, your wallet typically selects multiple UTXOs to fund the transaction. Here's where privacy breaks down:
 
-1. Address Clustering: When your wallet combines multiple UTXOs in a single transaction, it reveals that all those addresses belong to the same wallet. An attacker sending dust to dozens of addresses you control creates multiple "breadcrumb" UTXOs waiting to be consolidated.
+1. Address Clustering - When your wallet combines multiple UTXOs in a single transaction, it reveals that all those addresses belong to the same wallet. An attacker sending dust to dozens of addresses you control creates multiple "breadcrumb" UTXOs waiting to be consolidated.
 
-2. Common Input Ownership Heuristic: Blockchain analysts use the assumption that if multiple inputs are signed in one transaction, they all belong to the same entity. Dust attacks exploit this by creating scenarios where you'll eventually combine the dust with your main holdings.
+2. Common Input Ownership Heuristic - Blockchain analysts use the assumption that if multiple inputs are signed in one transaction, they all belong to the same entity. Dust attacks exploit this by creating scenarios where you'll eventually combine the dust with your main holdings.
 
-3. Change Address Detection: Modern analysis tools are sophisticated enough to identify change addresses (the address receiving the remainder of spent funds). When dust UTXOs appear as inputs alongside your main UTXOs, the analysis becomes trivial.
+3. Change Address Detection - Modern analysis tools are sophisticated enough to identify change addresses (the address receiving the remainder of spent funds). When dust UTXOs appear as inputs alongside your main UTXOs, the analysis becomes trivial.
 
 A practical example illustrates this:
 
@@ -209,9 +209,9 @@ Dust attacks are particularly concerning in these scenarios:
 
 
 
-Advanced: Blockchain Analysis Resistance
+Advanced - Blockchain Analysis Resistance
 
-Sophisticated attackers combine dust attacks with other heuristics. Build comprehensive defense:
+Sophisticated attackers combine dust attacks with other heuristics. Build complete defense:
 
 ```python
 #!/usr/bin/env python3
@@ -351,7 +351,7 @@ EOF
 
 echo "Configuration saved to electrum-privacy.conf"
 
-Alternative: Bitcoin Core wallet with privacy settings
+Alternative - Bitcoin Core wallet with privacy settings
 bitcoin-cli -named createwallet \
   wallet_name="privacy_wallet" \
   disable_private_keys=false \
@@ -366,7 +366,7 @@ bitcoin-cli -named setwallet \
 
 Real-World Dust Attack Scenarios
 
-Case study: How dust attacks were used to track criminal transactions:
+Case study - How dust attacks were used to track criminal transactions:
 
 ```
 2023 Dust Attack Campaign:
@@ -460,7 +460,7 @@ if dust:
         print(f"  {d['value']} sats in {d['txid']}")
 ```
 
-Privacy Comparison: Bitcoin vs Alternatives
+Privacy Comparison - Bitcoin vs Alternatives
 
 When Bitcoin dust attacks matter, consider alternatives:
 

@@ -52,9 +52,9 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Core Communication Stack
+Step 1 - Core Communication Stack
 
-Primary Channel: Signal
+Primary Channel - Signal
 
 Signal provides the strongest balance of security and usability for real-time coordination. Its implementation of the Signal protocol offers:
 
@@ -71,7 +71,7 @@ For strike organizing, configure Signal with these settings:
 4. Use group chats rather than broadcast lists for coordination
 5. Verify safety numbers with core organizing committee members
 
-Secondary Channel: Session Messenger
+Secondary Channel - Session Messenger
 
 Session provides an alternative that operates without phone numbers, routing traffic through onion nodes for metadata resistance. This matters when phone numbers could link participants to their real identities.
 
@@ -82,7 +82,7 @@ Session operates on the Signal protocol but routes through LokiNET, providing:
 
 Deploy Session as a backup channel when Signal becomes unavailable or when participants need additional anonymity.
 
-Offline Coordination: Briar
+Offline Coordination - Briar
 
 When internet access becomes restricted, whether through network blocks, shutdowns, or physical displacement, Briar provides mesh networking via Bluetooth and Wi-Fi Direct. Devices can synchronize messages when within range without any internet connection.
 
@@ -92,7 +92,7 @@ Briar deployment strategy:
 3. Create dedicated "contact groups" for different organizing functions
 4. Designate runners who can physically carry messages between locations
 
-Step 2: Self-Hosted Infrastructure
+Step 2 - Self-Hosted Infrastructure
 
 For organizations wanting greater control, self-hosted options provide infrastructure independence.
 
@@ -140,7 +140,7 @@ POST /_matrix/client/r0/admin/rooms/{room_id}/state/m.room.encryption
 }
 ```
 
-Encrypted Video: Jitsi Self-Hosted
+Encrypted Video - Jitsi Self-Hosted
 
 For video coordination meetings, self-hosted Jitsi provides encrypted calls without relying on third-party services:
 
@@ -164,7 +164,7 @@ services:
 
 Configure lobby mode to require explicit admission for sensitive meetings.
 
-Step 3: Choose Devices for Organizing
+Step 3 - Choose Devices for Organizing
 
 Hardware choices matter as much as software. Where budget allows, use dedicated devices for organizing. phones and laptops that never touch employer-managed accounts, networks, or MDM systems.
 
@@ -182,7 +182,7 @@ Laptops:
 - Configure the firewall to block all inbound connections
 - Use a privacy screen filter in public spaces
 
-Step 4: Operational Security Practices
+Step 4 - Operational Security Practices
 
 Technical tools require operational discipline to be effective.
 
@@ -209,7 +209,7 @@ Communication Discipline
 - Assume all non-encrypted communications may be intercepted
 - Delete sensitive messages after action items are completed
 
-Step 5: Compartmentalization Strategy
+Step 5 - Compartmentalization Strategy
 
 Not every organizer needs access to every channel. Compartmentalizing information limits damage from infiltration or device seizure.
 
@@ -222,7 +222,7 @@ Recommended structure:
 
 Assign different people as administrators for each tier. If one tier is compromised, the others remain intact.
 
-Step 6: Backup and Recovery
+Step 6 - Backup and Recovery
 
 Establish recovery procedures before operational need:
 
@@ -231,13 +231,13 @@ Establish recovery procedures before operational need:
 3. Session: Record recovery phrase in secure location
 4. All: Designate trusted contacts for emergency access
 
-Step 7: Handling Key Management and Credential Handoff
+Step 7 - Handling Key Management and Credential Handoff
 
 Strike organizing requires planning for leadership transitions. If an organizer is removed, resigns, or is unavailable, access to shared channels must transfer smoothly without exposing credentials.
 
-Signal groups: Signal group admin rights can be transferred by any current admin. Designate at least two admins per group. never a single point of failure.
+Signal groups - Signal group admin rights can be transferred by any current admin. Designate at least two admins per group. never a single point of failure.
 
-Matrix homeserver: Store the admin credentials in a shared password manager (Bitwarden or Vaultwarden self-hosted) accessible to two or more trusted organizers with hardware key 2FA.
+Matrix homeserver - Store the admin credentials in a shared password manager (Bitwarden or Vaultwarden self-hosted) accessible to two or more trusted organizers with hardware key 2FA.
 
 Jitsi and other self-hosted services: Document server credentials and SSH keys in an encrypted file stored offline with a designated backup administrator. Use a break-glass procedure: the backup credentials envelope is opened only when the primary admin is unavailable.
 

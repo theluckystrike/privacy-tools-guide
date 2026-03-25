@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How Dating Apps Monetize Your Data
+Step 1 - How Dating Apps Monetize Your Data
 
 Dating platforms generate revenue through multiple channels beyond subscription fees. The primary monetization strategy involves aggregating user data and sharing it with third-party brokers who specialize in audience targeting, advertising optimization, and profile enrichment.
 
@@ -43,7 +43,7 @@ Common data points shared include:
 - Social media connections
 - Photos and facial recognition templates
 
-Step 2: Network Traffic Analysis
+Step 2 - Network Traffic Analysis
 
 The most direct method for detecting data sharing involves analyzing network traffic between the dating app and external servers. This approach requires intercepting HTTPS traffic to observe which endpoints receive your data.
 
@@ -87,7 +87,7 @@ def request(flow: http.HTTPFlow):
         print(f"Body: {flow.request.get_text(strict=False)}")
 ```
 
-Step 3: APK Analysis and SDK Auditing
+Step 3 - APK Analysis and SDK Auditing
 
 For Android devices, extracting and analyzing the app's APK reveals embedded SDKs and libraries that handle data sharing. This method works without network interception and provides a complete picture of potential data distribution channels.
 
@@ -127,7 +127,7 @@ cat extracted/assets/*analytics*.json
 
 Modern dating apps frequently bundle multiple advertising and analytics SDKs. Each SDK typically includes its own data collection mechanisms that operate independently of the app's primary functionality.
 
-Step 4: Privacy Policy Analysis
+Step 4 - Privacy Policy Analysis
 
 While privacy policies often contain dense legal language, they reveal important information about data sharing practices. Look for specific sections discussing "third-party partners," "data brokers," "advertising partners," and "analytics providers."
 
@@ -140,7 +140,7 @@ Key phrases indicating data selling include:
 
 Under regulations like GDPR and CCPA, you have the right to know exactly who receives your data. Send a formal inquiry to the app's privacy team requesting a complete list of third-party data recipients. Companies must respond within 30-45 days depending on jurisdiction.
 
-Step 5: Exercising Your Regulatory Rights
+Step 5 - Exercising Your Regulatory Rights
 
 Multiple privacy regulations provide tools to compel transparency from dating apps.
 
@@ -149,7 +149,7 @@ GDPR Data Subject Access Request
 If the app serves EU residents, submit a Subject Access Request under GDPR Article 15. This entitles you to receive a complete copy of all personal data held about you, including information shared with third parties.
 
 ```email
-Subject: Data Subject Access Request - [Your Account Email]
+Subject - Data Subject Access Request - [Your Account Email]
 
 To: privacy@[datingapp].com
 
@@ -173,7 +173,7 @@ CCPA "Do Not Sell" Opt-Out
 California residents can invoke CCPA to opt out of data selling. Many apps include a "Do Not Sell My Personal Information" link in their settings or privacy policy. If unavailable, send a direct opt-out request:
 
 ```email
-Subject: CCPA Do Not Sell Request
+Subject - CCPA Do Not Sell Request
 
 To: privacy@[datingapp].com
 
@@ -188,7 +188,7 @@ Please cease selling my personal data to third parties and confirm within 45 day
 [California Address]
 ```
 
-Step 6: Interpreting Network Analysis Results
+Step 6 - Interpreting Network Analysis Results
 
 When analyzing network traffic, understanding what you're seeing matters:
 
@@ -234,19 +234,19 @@ When examining mitmproxy captures, look for these data patterns:
 
 The difference is whether the data preserves identity. Personal identifiers (names, locations, explicit interests) should never flow to marketing networks.
 
-Step 7: Understand Data Broker Techniques
+Step 7 - Understand Data Broker Techniques
 
 Data brokers employ sophisticated collection methods:
 
-Append Services: Brokers buy email addresses from one source and append phone numbers, home addresses, and other attributes from different sources. This creates full profiles.
+Append Services - Brokers buy email addresses from one source and append phone numbers, home addresses, and other attributes from different sources. This creates full profiles.
 
-Inference Services: Brokers use machine learning to infer sensitive attributes (income level, political affiliation, health conditions) from observed behavior.
+Inference Services - Brokers use machine learning to infer sensitive attributes (income level, political affiliation, health conditions) from observed behavior.
 
-Identity Resolution: Multiple profiles (online and offline) are linked using probabilistic matching techniques.
+Identity Resolution - Multiple profiles (online and offline) are linked using probabilistic matching techniques.
 
 If a dating app sells your email to brokers, expect your complete profile across all platforms to become known to advertisers within weeks.
 
-Step 8: Build a Personal Data Audit Trail
+Step 8 - Build a Personal Data Audit Trail
 
 For power users wanting thorough visibility:
 
@@ -280,7 +280,7 @@ fi
 
 Run this script after app updates to identify new data collection vectors.
 
-Step 9: Practical Countermeasures
+Step 9 - Practical Countermeasures
 
 While complete data protection requires avoiding dating apps entirely, several measures reduce exposure:
 
@@ -298,7 +298,7 @@ While complete data protection requires avoiding dating apps entirely, several m
 
 7. Consider a dedicated email: Create a separate email address used only for dating apps. If this email appears in data broker databases, you know the source.
 
-Step 10: Long-Term Data Tracking
+Step 10 - Long-Term Data Tracking
 
 For serious privacy advocates, implement ongoing monitoring:
 

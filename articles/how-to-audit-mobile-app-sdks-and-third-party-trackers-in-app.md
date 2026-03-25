@@ -32,7 +32,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Static Analysis: Examining App Binaries
+Step 1 - Static Analysis: Examining App Binaries
 
 Static analysis involves examining the compiled app without running it. This approach reveals what SDKs are present in the app bundle.
 
@@ -86,7 +86,7 @@ strings Payload/MyApp.app/MyApp | grep -i "appsflyer\|adjust\|branch\|mixpanel"
 
 The `Info.plist` file contains declared permissions and URL schemes that reveal tracker integrations.
 
-Step 2: Identifying Common Tracker SDKs
+Step 2 - Identifying Common Tracker SDKs
 
 Several SDKs appear frequently in mobile apps for tracking purposes. Recognizing these helps you understand what data flows where.
 
@@ -117,7 +117,7 @@ iOS - check for IDFA access frameworks
 otool -L Payload/MyApp.app/MyApp | grep -i "advertising\|identifier"
 ```
 
-Step 3: Dynamic Analysis: Runtime Monitoring
+Step 3 - Dynamic Analysis: Runtime Monitoring
 
 Static analysis shows what SDKs exist, but dynamic analysis reveals what they actually do at runtime.
 
@@ -144,7 +144,7 @@ In mitmproxy, filter by domain
 set view.filter = "~d adjust.com | ~d appsflyer.com"
 ```
 
-Android: Using Logcat
+Android - Using Logcat
 
 Android's logcat reveals SDK behavior at runtime. Filter for specific SDKs:
 
@@ -180,11 +180,11 @@ Interceptor.attach(Module.findExportByName("libAdjust.so", "Java_com_adjust_sdk_
 });
 ```
 
-Step 4: Code-Level Auditing: Examining SDK Integration
+Step 4 - Code-Level Auditing: Examining SDK Integration
 
 When you have access to the app's source code, examine how SDKs are initialized and used.
 
-Android: Check Application Class
+Android - Check Application Class
 
 In Android apps, SDKs often initialize in the Application class:
 
@@ -239,7 +239,7 @@ ATTrackingManager.requestTrackingAuthorization { status in
 }
 ```
 
-Step 5: Build an Audit Checklist
+Step 5 - Build an Audit Checklist
 
 When auditing an app, work through this checklist:
 
@@ -250,7 +250,7 @@ When auditing an app, work through this checklist:
 5. Check for data sharing. Identify if data leaves the app or stays local
 6. Document findings. Create a report of all trackers and their purposes
 
-Step 6: Automate SDK Detection
+Step 6 - Automate SDK Detection
 
 For large-scale analysis, automate SDK detection. The AppCensus and Exodus projects maintain databases of known trackers:
 
@@ -259,7 +259,7 @@ For large-scale analysis, automate SDK detection. The AppCensus and Exodus proje
 
 You can also build your own detection using the Mobile SDK Registry from the AppCensus project, which maps SDK package names to tracker categories.
 
-Step 7: Reducing Tracker Impact
+Step 7 - Reducing Tracker Impact
 
 After identifying trackers, consider mitigation strategies:
 
@@ -274,7 +274,7 @@ Begin by auditing an app you frequently use. Start with static analysis to ident
 
 The methods in this guide apply to both iOS and Android, though specific tools differ. As you gain experience, you'll recognize tracker signatures quickly and understand what data flows where. This knowledge helps you build more privacy-respecting apps and make informed choices about the software you use.
 
-Regular auditing of mobile apps reveals the constantly evolving tracking ecosystem. New SDKs emerge, and existing ones change their behavior. Staying current requires ongoing analysis, but the fundamentals, examining binaries, monitoring networks, and reviewing code, remain consistent.
+Regular auditing of mobile apps reveals the constantly evolving tracking environment. New SDKs emerge, and existing ones change their behavior. Staying current requires ongoing analysis, but the fundamentals, examining binaries, monitoring networks, and reviewing code, remain consistent.
 
 Troubleshooting
 

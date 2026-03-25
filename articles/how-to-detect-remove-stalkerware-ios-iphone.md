@@ -22,16 +22,16 @@ Table of Contents
 
 - [Why iOS Stalkerware Is Different](#why-ios-stalkerware-is-different)
 - [Diagnostic Checklist](#diagnostic-checklist)
-- [Step 1: Check Your iCloud Account Security](#step-1-check-your-icloud-account-security)
-- [Step 2: Check for MDM Profiles](#step-2-check-for-mdm-profiles)
-- [Step 3: Check Location Services Settings](#step-3-check-location-services-settings)
-- [Step 4: Analyze Cellular and Wi-Fi Usage](#step-4-analyze-cellular-and-wi-fi-usage)
-- [Step 5: Check for Jailbreak Indicators](#step-5-check-for-jailbreak-indicators)
-- [Step 6: Check iCloud Backup Contents](#step-6-check-icloud-backup-contents)
-- [Step 7: Verify No Hidden Accessibility Features](#step-7-verify-no-hidden-accessibility-features)
-- [Step 8: Factory Reset (Nuclear Option)](#step-8-factory-reset-nuclear-option)
-- [Step 9: Secure Your Passwords After Suspected Compromise](#step-9-secure-your-passwords-after-suspected-compromise)
-- [Prevention: Stop Future Stalkerware](#prevention-stop-future-stalkerware)
+- [Step 1 - Check Your iCloud Account Security](#step-1-check-your-icloud-account-security)
+- [Step 2 - Check for MDM Profiles](#step-2-check-for-mdm-profiles)
+- [Step 3 - Check Location Services Settings](#step-3-check-location-services-settings)
+- [Step 4 - Analyze Cellular and Wi-Fi Usage](#step-4-analyze-cellular-and-wi-fi-usage)
+- [Step 5 - Check for Jailbreak Indicators](#step-5-check-for-jailbreak-indicators)
+- [Step 6 - Check iCloud Backup Contents](#step-6-check-icloud-backup-contents)
+- [Step 7 - Verify No Hidden Accessibility Features](#step-7-verify-no-hidden-accessibility-features)
+- [Step 8 - Factory Reset (Nuclear Option)](#step-8-factory-reset-nuclear-option)
+- [Step 9 - Secure Your Passwords After Suspected Compromise](#step-9-secure-your-passwords-after-suspected-compromise)
+- [Prevention - Stop Future Stalkerware](#prevention-stop-future-stalkerware)
 - [Trusted Contacts for Remote Assistance](#trusted-contacts-for-remote-assistance)
 - [When to Involve Law Enforcement](#when-to-involve-law-enforcement)
 - [Related Reading](#related-reading)
@@ -65,7 +65,7 @@ Before looking at technical checks, answer these:
 
 If you answered YES to any, follow the detection steps below.
 
-Step 1: Check Your iCloud Account Security
+Step 1 - Check Your iCloud Account Security
 
 Compromised iCloud credentials are the #1 vector for iOS surveillance.
 
@@ -104,7 +104,7 @@ If you suspect account compromise:
 6. Click "Sign out of all sessions"
    (This forces logout everywhere, requires re-authentication)
 
-Consequence: You'll need to re-sign into iCloud on this device
+Consequence - You'll need to re-sign into iCloud on this device
 and any other devices (15-30 minutes total)
 ```
 
@@ -120,7 +120,7 @@ Toggle ON
 
 2FA prevents attackers from logging into your account remotely, even if they have your password.
 
-Step 2: Check for MDM Profiles
+Step 2 - Check for MDM Profiles
 
 MDM (Mobile Device Management) profiles are how companies manage corporate iPhones. Stalkerware exploits this by creating a fake MDM profile that captures all activity.
 
@@ -163,7 +163,7 @@ If a profile won't remove:
 4. If unknown, consider a full factory reset (see below)
 ```
 
-Step 3: Check Location Services Settings
+Step 3 - Check Location Services Settings
 
 Stalkerware loves exploiting Location Services. Review which apps have access:
 
@@ -175,7 +175,7 @@ Enable "Location Services Precision Warnings":
 
 ```
 Settings → Privacy → Location Services →
-Scroll to bottom: "Precise Location Warnings"
+Scroll to bottom - "Precise Location Warnings"
 Toggle ON
 ```
 
@@ -203,7 +203,7 @@ Check that only your personal iCloud account is listed.
 Remove unknown email accounts.
 ```
 
-Step 4: Analyze Cellular and Wi-Fi Usage
+Step 4 - Analyze Cellular and Wi-Fi Usage
 
 Stalkerware transmits data to remote servers. Unusual data usage can indicate surveillance:
 
@@ -229,7 +229,7 @@ Jailbroken devices or those with MDM can intercept network traffic. To check:
    - Domain registrars with privacy protection
 ```
 
-Step 5: Check for Jailbreak Indicators
+Step 5 - Check for Jailbreak Indicators
 
 Jailbroken iPhones can run arbitrary surveillance apps. Check if your device is jailbroken:
 
@@ -270,7 +270,7 @@ Remove jailbreak:
 5. Restore from backup ONLY if you trust the backup source
 ```
 
-Step 6: Check iCloud Backup Contents
+Step 6 - Check iCloud Backup Contents
 
 Your iCloud backup might contain stalkerware data or be accessed by an attacker. Review what's being backed up:
 
@@ -297,7 +297,7 @@ This removes any stalkerware data that was backed up.
 New backup contains only current device state.
 ```
 
-Step 7: Verify No Hidden Accessibility Features
+Step 7 - Verify No Hidden Accessibility Features
 
 Stalkerware sometimes enables Accessibility features without your knowledge:
 
@@ -321,7 +321,7 @@ Toggle OFF:
 - Guided Access (unless using for specific purpose)
 ```
 
-Step 8: Factory Reset (Nuclear Option)
+Step 8 - Factory Reset (Nuclear Option)
 
 If you suspect sophisticated stalkerware, factory reset is the most reliable removal method:
 
@@ -345,20 +345,20 @@ Factory Reset Process:
 Restore data safely after reset:
 
 ```
-Option 1: Restore from backup selectively
+Option 1 - Restore from backup selectively
 - Set up device as new
 - Manually re-download apps from App Store
 - Restore data from backup one category at a time
 - Review each restoration for suspicious changes
 
-Option 2: Start completely fresh
+Option 2 - Start completely fresh
 - Don't restore from backup
 - Manually download essential apps
 - Recreate accounts in apps
 - This takes longer but is most secure
 ```
 
-Step 9: Secure Your Passwords After Suspected Compromise
+Step 9 - Secure Your Passwords After Suspected Compromise
 
 If someone had access to your iCloud account, they may have accessed passwords:
 
@@ -377,12 +377,12 @@ Change critical passwords:
 Enable alerts for suspicious activity:
 
 ```
-Banking apps: Enable transaction alerts
-Email: Monitor login activity at mail provider
-Social media: Check login locations
+Banking apps - Enable transaction alerts
+Email - Monitor login activity at mail provider
+Social media - Check login locations
 ```
 
-Prevention: Stop Future Stalkerware
+Prevention - Stop Future Stalkerware
 
 1. Use a Strong, Unique iCloud Password
 
@@ -407,7 +407,7 @@ Attackers gain access through breached websites, then try the same password on i
 ```
 Settings → [Your Name] → Password & Security → Apps using your Apple ID
 
-Quarterly review: Remove apps you no longer use
+Quarterly review - Remove apps you no longer use
 ```
 
 4. Disable App-Specific Passwords (If You're Not Using Them)

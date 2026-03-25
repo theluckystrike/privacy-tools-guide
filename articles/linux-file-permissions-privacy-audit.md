@@ -22,14 +22,14 @@ This guide walks through auditing your Linux system for permission-related priva
 Table of Contents
 
 - [Understanding Linux Permissions](#understanding-linux-permissions)
-- [Step 1: Audit Home Directory Permissions](#step-1-audit-home-directory-permissions)
-- [Step 2: Find World-Writable Files](#step-2-find-world-writable-files)
-- [Step 3: Audit SUID and SGID Binaries](#step-3-audit-suid-and-sgid-binaries)
-- [Step 4: Check SSH Key Permissions](#step-4-check-ssh-key-permissions)
-- [Step 5: Audit Configuration File Permissions](#step-5-audit-configuration-file-permissions)
-- [Step 6: Check Web Server File Permissions](#step-6-check-web-server-file-permissions)
-- [Step 7: Audit Cron Job Files](#step-7-audit-cron-job-files)
-- [Step 8: Generate a Permissions Baseline](#step-8-generate-a-permissions-baseline)
+- [Step 1 - Audit Home Directory Permissions](#step-1-audit-home-directory-permissions)
+- [Step 2 - Find World-Writable Files](#step-2-find-world-writable-files)
+- [Step 3 - Audit SUID and SGID Binaries](#step-3-audit-suid-and-sgid-binaries)
+- [Step 4 - Check SSH Key Permissions](#step-4-check-ssh-key-permissions)
+- [Step 5 - Audit Configuration File Permissions](#step-5-audit-configuration-file-permissions)
+- [Step 6 - Check Web Server File Permissions](#step-6-check-web-server-file-permissions)
+- [Step 7 - Audit Cron Job Files](#step-7-audit-cron-job-files)
+- [Step 8 - Generate a Permissions Baseline](#step-8-generate-a-permissions-baseline)
 - [Automated Auditing Tools](#automated-auditing-tools)
 - [Related Reading](#related-reading)
 
@@ -44,7 +44,7 @@ Every file and directory has three permission sets: owner, group, and others. Ea
        ^^^ ← others: read only
 ```
 
-In octal: `754`
+In octal - `754`
 
 The most dangerous permissions:
 - `777`. anyone can read, write, execute
@@ -52,7 +52,7 @@ The most dangerous permissions:
 - `o+r` on sensitive files. anyone can read private data
 - SUID bit (`4xxx`) on unusual executables. runs as file owner (often root)
 
-Step 1: Audit Home Directory Permissions
+Step 1 - Audit Home Directory Permissions
 
 Other users on the system should not be able to browse your home directory:
 
@@ -61,7 +61,7 @@ Check permissions on all home directories
 ls -la /home/
 
 Correct permission for a home directory: 700 (owner only) or 750 (owner + group)
-Incorrect: 755 (others can list and read world-readable files)
+Incorrect - 755 (others can list and read world-readable files)
 
 Fix permissions on your home directory
 chmod 700 /home/$USER
@@ -73,7 +73,7 @@ Check for world-readable directories
 find /home/$USER -perm /o+r -type d 2>/dev/null | head -20
 ```
 
-Step 2: Find World-Writable Files
+Step 2 - Find World-Writable Files
 
 World-writable files can be modified by any user on the system. a vector for privilege escalation if the file is executed by a higher-privileged user:
 
@@ -93,7 +93,7 @@ find / \( -path /proc -o -path /sys -o -path /dev -o -path /tmp \) -prune -o \
 
 Any world-writable file outside of `/tmp` and `/var/tmp` is unusual and should be investigated.
 
-Step 3: Audit SUID and SGID Binaries
+Step 3 - Audit SUID and SGID Binaries
 
 SUID binaries run as the file owner (usually root) regardless of who executes them. Legitimate SUID binaries include `passwd`, `sudo`, and `ping`. Unknown SUID binaries are red flags:
 
@@ -107,7 +107,7 @@ find / \( -path /proc -o -path /sys -o -path /dev \) -prune -o \
   -perm -2000 -type f -print 2>/dev/null
 
 Legitimate SUID files (vary by distro. learn your baseline)
-Common: /usr/bin/passwd, /usr/bin/sudo, /usr/bin/su, /bin/ping
+Common - /usr/bin/passwd, /usr/bin/sudo, /usr/bin/su, /bin/ping
 
 Compare against known-good list
 find /usr/bin /usr/sbin /bin /sbin -perm -4000 -type f | sort
@@ -115,7 +115,7 @@ find /usr/bin /usr/sbin /bin /sbin -perm -4000 -type f | sort
 
 If you find unexpected SUID binaries. particularly in `/tmp`, home directories, or non-standard paths. investigate immediately. These are common persistence mechanisms for attackers.
 
-Step 4: Check SSH Key Permissions
+Step 4 - Check SSH Key Permissions
 
 SSH requires strict key file permissions. Keys with loose permissions are rejected by ssh:
 
@@ -141,7 +141,7 @@ find /home -name "id_rsa" -o -name "id_ed25519" -o -name "*.pem" 2>/dev/null | \
   xargs ls -la 2>/dev/null | grep -v "^-rw-------"
 ```
 
-Step 5: Audit Configuration File Permissions
+Step 5 - Audit Configuration File Permissions
 
 Configuration files often contain credentials. database passwords, API keys, tokens:
 
@@ -165,7 +165,7 @@ grep -r "password\s*=" /etc/ --include="*.conf" --include="*.ini" 2>/dev/null | 
   done | grep "^[67]" # Flag if owner can't read (unusual) or group/other readable
 ```
 
-Step 6: Check Web Server File Permissions
+Step 6 - Check Web Server File Permissions
 
 If you run a web server, world-readable configuration files or uploaded content can expose credentials:
 
@@ -183,7 +183,7 @@ find /var/www -name "database.php" -o -name "db_config.php" 2>/dev/null | \
   xargs ls -la 2>/dev/null | grep "r--"
 ```
 
-Step 7: Audit Cron Job Files
+Step 7 - Audit Cron Job Files
 
 Cron jobs executed by privileged users that call world-writable scripts are privilege escalation vectors:
 
@@ -200,7 +200,7 @@ Check root's cron jobs reference files with safe permissions
 sudo crontab -l 2>/dev/null | awk '{print $NF}' | xargs -I{} ls -la {} 2>/dev/null
 ```
 
-Step 8: Generate a Permissions Baseline
+Step 8 - Generate a Permissions Baseline
 
 Create a snapshot of current SUID binaries and sensitive file permissions for future comparison:
 

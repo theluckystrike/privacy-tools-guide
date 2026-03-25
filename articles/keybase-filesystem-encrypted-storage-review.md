@@ -32,7 +32,7 @@ Table of Contents
 - [Threat Model Analysis](#threat-model-analysis)
 - [Cryptographic Implementation Details](#cryptographic-implementation-details)
 - [Comparison with Alternative Solutions](#comparison-with-alternative-solutions)
-- [Advanced: Multi-Device Key Synchronization](#advanced-multi-device-key-synchronization)
+- [Advanced - Multi-Device Key Synchronization](#advanced-multi-device-key-synchronization)
 - [KBFS Integration with Development Workflow](#kbfs-integration-with-development-workflow)
 - [Disaster Recovery Procedures](#disaster-recovery-procedures)
 
@@ -348,7 +348,7 @@ Team Pricing (5 users)     Free               ~$75/month      ~$40/month      ~$
 Zero-Knowledge Proof       Published          Audited         Claimed         Not applicable
 ```
 
-Advanced: Multi-Device Key Synchronization
+Advanced - Multi-Device Key Synchronization
 
 Securely sync keys across devices:
 
@@ -356,7 +356,7 @@ Securely sync keys across devices:
 #!/bin/bash
 sync-keys-secure.sh - Multi-device KBFS setup
 
-Device 1: Primary (generate keys)
+Device 1 - Primary (generate keys)
 keybase device add --name "primary-laptop"
 keybase pgp gen --push  # Generate PGP key
 
@@ -370,7 +370,7 @@ rm primary-device.key
 Store encrypted backup in Tresorit/Sync.com
 tresorit upload primary-device.key.enc
 
-Device 2: Secondary (import keys)
+Device 2 - Secondary (import keys)
 Download and decrypt
 tresorit download primary-device.key.enc
 openssl enc -d -aes-256-cbc -in primary-device.key.enc -out primary-device.key
@@ -428,21 +428,21 @@ Plan for worst-case scenarios:
 #!/bin/bash
 disaster-recovery-plan.sh - KBFS recovery procedures
 
-Scenario 1: Lost master password
-Recovery: Use account recovery keys (set up during signup)
+Scenario 1 - Lost master password
+Recovery - Use account recovery keys (set up during signup)
 keybase account recover
 
-Scenario 2: Device lost/stolen
-Response: Revoke device immediately
+Scenario 2 - Device lost/stolen
+Response - Revoke device immediately
 keybase device revoke --device-id [lost-device-id]
 
-Scenario 3: Account compromised
-Response: Reset account and re-add devices
+Scenario 3 - Account compromised
+Response - Reset account and re-add devices
 keybase account reset # Nuclear option - resets everything
-Then: keybase device add from trusted devices
+Then - keybase device add from trusted devices
 
-Scenario 4: Verify backup accessibility
-Test quarterly: Can you decrypt archived files?
+Scenario 4 - Verify backup accessibility
+Test quarterly - Can you decrypt archived files?
 test_backup_recovery() {
  local backup_dir="/secure/backup/kbfs-snapshot"
  local test_file="$backup_dir/encrypted-test.tar.enc"

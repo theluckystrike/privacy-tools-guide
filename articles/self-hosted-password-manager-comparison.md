@@ -21,10 +21,10 @@ Self-hosting a password manager keeps your credentials off someone else's server
 Table of Contents
 
 - [The Four Options at a Glance](#the-four-options-at-a-glance)
-- [Option 1: Vaultwarden](#option-1-vaultwarden)
-- [Option 2: KeePassXC](#option-2-keepassxc)
-- [Option 3: Passbolt](#option-3-passbolt)
-- [Option 4: Padloc](#option-4-padloc)
+- [Option 1 - Vaultwarden](#option-1-vaultwarden)
+- [Option 2 - KeePassXC](#option-2-keepassxc)
+- [Option 3 - Passbolt](#option-3-passbolt)
+- [Option 4 - Padloc](#option-4-padloc)
 - [Security Considerations for All Options](#security-considerations-for-all-options)
 - [Which to Choose](#which-to-choose)
 
@@ -40,11 +40,11 @@ The Four Options at a Glance
 | Setup difficulty | Medium | Low | Medium-High | Medium |
 | License | GPLv3 | GPL | AGPLv3 | GPLv3 |
 
-Option 1: Vaultwarden
+Option 1 - Vaultwarden
 
 Vaultwarden is an unofficial Bitwarden-compatible server written in Rust. It's the most popular self-hosted option because it unlocks all Bitwarden premium features (TOTP, encrypted attachments, organizations) without a subscription.
 
-- Full compatibility with the Bitwarden ecosystem (apps, browser extensions)
+- Full compatibility with the Bitwarden environment (apps, browser extensions)
 - TOTP codes, secure notes, encrypted file attachments
 - Organization and collection sharing
 - Emergency access feature
@@ -78,9 +78,9 @@ vault.yourdomain.com {
 
 After first-user signup, set `SIGNUPS_ALLOWED=false` and `INVITATIONS_ALLOWED=false` to prevent public registration.
 
-Best for: Individuals or small families who want the full Bitwarden feature set without a subscription, and are comfortable managing a VPS or home server.
+Best for - Individuals or small families who want the full Bitwarden feature set without a subscription, and are comfortable managing a VPS or home server.
 
-Option 2: KeePassXC
+Option 2 - KeePassXC
 
 KeePassXC is a local database encrypted with AES-256 or ChaCha20. There is no server. the `.kdbx` file is your vault. You sync it yourself via cloud storage, Syncthing, or a network share.
 
@@ -116,9 +116,9 @@ Sync with Syncthing (recommended):
 
 Install Syncthing on both devices and share the folder containing `vault.kdbx`. Set conflict resolution to "keep both". KeePassXC handles merge conflicts with its own mechanism.
 
-Best for: Security-conscious individuals who prefer zero network exposure and are comfortable with manual sync. Also good for air-gapped environments.
+Best for - Security-conscious individuals who prefer zero network exposure and are comfortable with manual sync. Also good for air-gapped environments.
 
-Option 3: Passbolt
+Option 3 - Passbolt
 
 Passbolt is built for teams. It uses OpenPGP for end-to-end encryption. each password is encrypted with the public keys of people who have access. Even the server admin can't read your passwords.
 
@@ -185,9 +185,9 @@ docker compose exec passbolt su -m -c "/var/www/passbolt/bin/cake \
   -r admin" -s /bin/sh www-data
 ```
 
-Best for: Small development teams or organizations that need proper sharing controls and can manage a more complex setup.
+Best for - Small development teams or organizations that need proper sharing controls and can manage a more complex setup.
 
-Option 4: Padloc
+Option 4 - Padloc
 
 Padloc is a newer option with a clean UI and E2E encryption. The server is optional. the client runs in the browser or as a desktop app with local storage.
 
@@ -215,14 +215,14 @@ docker run -d \
   padloc/server:latest
 ```
 
-Best for: Users who want a modern interface and are fine with a smaller ecosystem.
+Best for - Users who want a modern interface and are fine with a smaller environment.
 
 Security Considerations for All Options
 
 Regardless of which option you pick:
 
-- Backups: Schedule automated backups of your vault/database to a separate encrypted location. Test restores quarterly.
-- Updates: Self-hosted means you manage patches. Set up unattended security updates or at minimum check monthly.
+- Backups - Schedule automated backups of your vault/database to a separate encrypted location. Test restores quarterly.
+- Updates - Self-hosted means you manage patches. Set up unattended security updates or at minimum check monthly.
 - Network exposure: If your server is internet-facing, put it behind a reverse proxy with TLS. Consider restricting access by IP or requiring VPN.
 - Audit logs: Passbolt and Vaultwarden both provide audit logs for organization access. Enable them.
 

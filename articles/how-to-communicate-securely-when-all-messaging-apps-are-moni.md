@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Threat Model
+Step 1 - Understand the Threat Model
 
 Before implementing any solution, define what you are protecting against. Different adversaries require different approaches:
 
@@ -41,7 +41,7 @@ Before implementing any solution, define what you are protecting against. Differ
 
 For most developers and power users, the practical approach combines end-to-end encryption (E2EE) with self-hosted infrastructure and good operational security practices.
 
-Step 2: Implementing End-to-End Encryption
+Step 2 - Implementing End-to-End Encryption
 
 The foundation of secure messaging is ensuring only the intended recipients can decrypt messages. This means the service provider never sees plaintext.
 
@@ -94,13 +94,13 @@ For secure email communication, GPG remains the standard. Here is a practical wo
 ```bash
 Generate a new key with no passphrase for automated use (or use gpg-agent for interactive)
 gpg --batch --generate-key <<EOF
-Key-Type: RSA
-Key-Length: 4096
-Subkey-Type: RSA
-Subkey-Length: 4096
-Name-Real: Your Name
-Name-Email: you@example.com
-Expire-Date: 0
+Key-Type - RSA
+Key-Length - 4096
+Subkey-Type - RSA
+Subkey-Length - 4096
+Name-Real - Your Name
+Name-Email - you@example.com
+Expire-Date - 0
 %no-protection
 EOF
 
@@ -117,7 +117,7 @@ gpg --decrypt message.asc
 
 The key management challenge is real: you need to verify key fingerprints through a separate channel and maintain a web of trust or use a keyserver with verified signatures.
 
-Step 3: Self-Hosted Messaging Infrastructure
+Step 3 - Self-Hosted Messaging Infrastructure
 
 When you cannot trust third-party services, hosting your own infrastructure gives you control over the encryption pipeline.
 
@@ -161,7 +161,7 @@ Key rotation intervals, session expiry, etc.
 
 This requires significant infrastructure investment but removes dependence on Signal's hosted service.
 
-Step 4: Operational Security Beyond Encryption
+Step 4 - Operational Security Beyond Encryption
 
 Encryption only protects message content. Metadata and communication patterns reveal significant information.
 
@@ -208,7 +208,7 @@ gpg --fingerprint recipient@example.com
 For Signal, exchange safety numbers in person or via verified channel
 ```
 
-Step 5: Practical Recommendations
+Step 5 - Practical Recommendations
 
 For most developers and power users, the implementation hierarchy is:
 

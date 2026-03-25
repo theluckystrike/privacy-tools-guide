@@ -21,7 +21,7 @@ Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Combining Both Layers](#combining-both-layers)
-- [Advanced: DNS over Tor](#advanced-dns-over-tor)
+- [Advanced - DNS over Tor](#advanced-dns-over-tor)
 - [Common Mistakes to Avoid](#common-mistakes-to-avoid)
 - [Performance Considerations](#performance-considerations)
 - [Troubleshooting](#troubleshooting)
@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Privacy Gaps
+Step 1 - Understand the Privacy Gaps
 
 DNS queries reveal your browsing activity even when you use HTTPS. Every time your device resolves a domain name, it sends a request that can be logged, analyzed, or intercepted. Traditional DNS uses plaintext UDP on port 53, making it trivial for network observers to build a complete picture of your internet usage.
 
@@ -44,7 +44,7 @@ Encrypted DNS protocols, DoH (DNS over HTTPS) and DoT (DNS over TLS), encrypt th
 
 Secure messaging apps encrypt the content of your communications, but they often leak metadata: who you contacted, when, and how frequently. Combining both technologies addresses different threat vectors simultaneously.
 
-Step 2: Layer 1: Encrypted DNS Configuration
+Step 2 - Layer 1: Encrypted DNS Configuration
 
 Setting up encrypted DNS requires choosing a provider and configuring your system or application. For developers, configuring at the application level provides granular control.
 
@@ -113,7 +113,7 @@ Recommended providers for privacy-focused users:
 
 For maximum privacy, self-hosting an encrypted DNS resolver using software like Unbound with DoH support eliminates reliance on any third-party.
 
-Step 3: Layer 2: Secure Messaging Configuration
+Step 3 - Layer 2: Secure Messaging Configuration
 
 Encrypted DNS protects your DNS queries, but your communication metadata still needs protection. Signal provides strong encryption with minimal metadata retention.
 
@@ -135,7 +135,7 @@ To enable sealed sender for all contacts (including those you haven't establishe
 
 Navigate to Signal Settings > Privacy > Advanced > "Allow from Anyone". This allows sealed sender from contacts not in your address book, improving your anonymity set.
 
-Alternative: Matrix with E2EE
+Alternative - Matrix with E2EE
 
 For self-hosted options, Matrix with end-to-end encryption provides comparable security:
 
@@ -224,7 +224,7 @@ Understanding which threat each layer addresses helps you invest effort appropri
 
 No single layer solves all problems. Defense-in-depth means accepting that each layer has gaps and layering controls to cover each other's weaknesses.
 
-Advanced: DNS over Tor
+Advanced - DNS over Tor
 
 For maximum privacy, route your DNS queries through Tor. This adds latency but prevents DNS leaks entirely.
 
@@ -264,7 +264,7 @@ Configuration alone isn't sufficient. Regularly test your setup using tools like
 DoH relies on TLS, which relies on certificate trust. Be aware that corporate firewalls often perform TLS inspection using a trusted root CA installed on your device, negating DoH encryption for that observer. Check for unexpected CAs in your trust store:
 
 ```bash
-Linux: List trusted CAs
+Linux - List trusted CAs
 ls /etc/ssl/certs/
 
 macOS: List system trust store

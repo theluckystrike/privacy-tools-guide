@@ -30,7 +30,7 @@ Table of Contents
 - [Interaction Tracking Beyond Opens](#interaction-tracking-beyond-opens)
 - [Implementation Guidelines for Email Service Providers](#implementation-guidelines-for-email-service-providers)
 - [Compliance and Privacy Implications](#compliance-and-privacy-implications)
-- [Technical Deep-Dive: How Apple's Proxy Works](#technical-deep detailed look-how-apples-proxy-works)
+- [Technical Deep-Dive - How Apple's Proxy Works](#technical-deep detailed look-how-apples-proxy-works)
 - [Future of Email Privacy](#future-of-email-privacy)
 
 What is Mail Privacy Protection?
@@ -115,7 +115,7 @@ When testing email templates, you should now account for two recipient categorie
 
 Consider how your analytics handle the artificial opens from Apple's preloading. Some email service providers now offer "privacy-aware" analytics that filter these false positives.
 
-Code Example: Detecting Apple Proxy Requests
+Code Example - Detecting Apple Proxy Requests
 
 If you run email tracking servers, you might observe requests from Apple's proxy infrastructure. The IP ranges used by Apple's content proxy are documented and can be identified:
 
@@ -275,10 +275,10 @@ Clicking links in emails still reveals information:
 5. Device information from click request
 
 ```
-Open tracking: Compromised by Mail Privacy Protection
-Link tracking: Still works, shows real engagement
-Reply activity: Indicates high engagement
-Forward activity: Indicates sharing/advocacy
+Open tracking - Compromised by Mail Privacy Protection
+Link tracking - Still works, shows real engagement
+Reply activity - Indicates high engagement
+Forward activity - Indicates sharing/advocacy
 ```
 
 This shift means email marketers increasingly rely on click and reply tracking rather than open rates.
@@ -355,11 +355,11 @@ Compliance and Privacy Implications
 
 Mail Privacy Protection creates interesting legal scenarios:
 
-GDPR Compliance: In the EU, measuring open rates through tracking pixels may require explicit consent due to GDPR. Mail Privacy Protection provides de facto compliance by making pixel tracking ineffective.
+GDPR Compliance - In the EU, measuring open rates through tracking pixels may require explicit consent due to GDPR. Mail Privacy Protection provides de facto compliance by making pixel tracking ineffective.
 
-CASL (Canada): Similar to GDPR, CASL requires compliance with electronic marketing laws. Mail Privacy Protection helps here by preventing unauthorized tracking.
+CASL (Canada) - Similar to GDPR, CASL requires compliance with electronic marketing laws. Mail Privacy Protection helps here by preventing unauthorized tracking.
 
-CAN-SPAM (USA): CAN-SPAM requires unsubscribe links and legitimate business identification but doesn't forbid tracking. Mail Privacy Protection doesn't change CAN-SPAM compliance requirements.
+CAN-SPAM (USA) - CAN-SPAM requires unsubscribe links and legitimate business identification but doesn't forbid tracking. Mail Privacy Protection doesn't change CAN-SPAM compliance requirements.
 
 Organizations should consider Mail Privacy Protection as an opportunity to build better email practices rather than fighting the technology:
 
@@ -368,7 +368,7 @@ Organizations should consider Mail Privacy Protection as an opportunity to build
 - Implement preference centers so users control email frequency
 - Segment audiences based on explicit preferences, not pixel tracking
 
-Technical Deep-Dive: How Apple's Proxy Works
+Technical Deep-Dive - How Apple's Proxy Works
 
 Understanding the technical details helps developers make better decisions:
 
@@ -403,8 +403,8 @@ Caching Strategy
 Apple caches fetched images for performance:
 
 ```
-First fetch of image: 2 seconds (full proxy process)
-Subsequent fetches: <100ms (Apple cache hit)
+First fetch of image - 2 seconds (full proxy process)
+Subsequent fetches - <100ms (Apple cache hit)
 ```
 
 This means frequently-used images (company logos, social icons) load from Apple's cache, not the original server. Tracking pixel refreshes become pointless.

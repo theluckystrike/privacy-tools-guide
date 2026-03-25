@@ -34,7 +34,7 @@ WireGuard is the best VPN protocol for Linux desktops in 2026. It runs natively 
 WireGuard is the best VPN protocol for most Linux desktop users in 2026, delivering modern cryptography, minimal overhead, and native kernel integration that outperforms OpenVPN in both latency and throughput. For maximum control, self-host with Algo VPN or a WireGuard instance on a VPS; for convenience, choose a provider offering WireGuard, split tunneling, and a proper kill switch. This guide walks through protocol options, provider evaluation criteria, and complete setup instructions for developers.
 
 
-- Instead: you can choose from multiple protocols and open-source tools that integrate cleanly with your existing workflow.
+- Instead - you can choose from multiple protocols and open-source tools that integrate cleanly with your existing workflow.
 - Most major VPN providers: now support WireGuard, and you can set it up natively using `wireguard-tools`.
 - Run application in namespace: sudo ip netns exec vpn_only firefox & ``` Now Firefox runs entirely through the VPN while other apps use your normal connection.
 - For maximum control: self-host with Algo VPN or a WireGuard instance on a VPS; for convenience, choose a provider offering WireGuard, split tunneling, and a proper kill switch.
@@ -45,7 +45,7 @@ Why Linux Users Need a VPN
 
 Linux users often have different privacy and security needs than mainstream desktop users. Many developers work with sensitive APIs, access cloud infrastructure, or handle proprietary code. A VPN adds a critical layer of protection when working from cafes, conferences, or hotels.
 
-The Linux desktop ecosystem offers excellent VPN client support. Unlike some platforms, you won't be forced into using proprietary apps with limited functionality. Instead, you can choose from multiple protocols and open-source tools that integrate cleanly with your existing workflow.
+The Linux desktop environment offers excellent VPN client support. Unlike some platforms, you won't be forced into using proprietary apps with limited functionality. Instead, you can choose from multiple protocols and open-source tools that integrate cleanly with your existing workflow.
 
 Protocol Options for Linux
 
@@ -125,7 +125,7 @@ Evaluating VPN Providers for Development Work
 
 When selecting a VPN service, developers should consider several technical factors:
 
-Protocol flexibility matters: can you choose between WireGuard, OpenVPN, and IPSec? Provider lock-in to a single protocol limits your options.
+Protocol flexibility matters - can you choose between WireGuard, OpenVPN, and IPSec? Provider lock-in to a single protocol limits your options.
 
 Split tunneling lets you route only specific traffic through the VPN while keeping local development resources accessible:
 
@@ -248,16 +248,16 @@ WireGuard:
 ```bash
 Compare codebase sizes
 wc -l /usr/src/wireguard-linux-compat/src/*.c
-Total: ~4,000 lines
+Total - ~4,000 lines
 
 dpkg -L openvpn | xargs wc -l | tail -1
-Total: ~120,000+ lines
+Total - ~120,000+ lines
 ```
 
 Handshake Performance
 
-OpenVPN TLS handshake: 2-3 round trips, 10-100ms
-WireGuard Noise handshake: 1 round trip, 1-5ms
+OpenVPN TLS handshake - 2-3 round trips, 10-100ms
+WireGuard Noise handshake - 1 round trip, 1-5ms
 
 For mobile devices switching between networks frequently, WireGuard's minimal handshake dramatically improves reconnection speed.
 
@@ -266,11 +266,11 @@ Memory Footprint
 ```bash
 Running OpenVPN process
 ps aux | grep openvpn | awk '{print $6}'
-Typical: 8-12 MB
+Typical - 8-12 MB
 
 Running WireGuard
 ps aux | grep wg-quick | awk '{print $6}'
-Typical: 2-4 MB
+Typical - 2-4 MB
 ```
 
 WireGuard uses 50-75% less memory, important for resource-constrained devices.
@@ -383,8 +383,8 @@ Disconnect VPN
 sudo wg-quick down wg0
 
 Check if any traffic leaked
-Real kill switch: no packets sent
-Broken kill switch: DNS, DHCP, or other packets visible
+Real kill switch - no packets sent
+Broken kill switch - DNS, DHCP, or other packets visible
 ```
 
 DNS Leak Testing

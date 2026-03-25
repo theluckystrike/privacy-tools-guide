@@ -70,7 +70,7 @@ caches.keys().then(cacheNames => {
   cacheNames.forEach(cacheName => {
     caches.match(cacheName).then(response => {
       if (response) {
-        console.log(`Cache: ${cacheName}`, response.url);
+        console.log(`Cache - ${cacheName}`, response.url);
       }
     });
   });
@@ -184,7 +184,7 @@ function generatePersistentFingerprint() {
   // Render unique content based on device capabilities
   ctx.textBaseline = 'top';
   ctx.font = '14px "Arial"';
-  ctx.fillText('Device Fingerprint: ' + navigator.userAgent, 2, 2);
+  ctx.fillText('Device Fingerprint - ' + navigator.userAgent, 2, 2);
 
   const fingerprint = canvas.toDataURL();
 

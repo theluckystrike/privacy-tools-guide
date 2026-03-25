@@ -39,7 +39,7 @@ Additional concerns for developers:
 
 The best private alternative to Google Drive 2026 options prioritize three key principles: you own the data, you control the encryption, and you can automate everything via command-line interfaces.
 
-Syncthing: Decentralized P2P File Synchronization
+Syncthing - Decentralized P2P File Synchronization
 
 Syncthing stands out as a powerful peer-to-peer alternative that eliminates the need for centralized servers. Your files sync directly between devices you control, using encrypted TLS connections authenticated by device certificates. There is no cloud intermediary, no account required, and no data leaving your machines unless you explicitly configure it.
 
@@ -91,9 +91,9 @@ docker run -d --name syncthing-relay \
   syncthing/relaysrv
 ```
 
-Nextcloud: Full-Featured Self-Hosted Cloud
+Nextcloud - Full-Featured Self-Hosted Cloud
 
-Nextcloud offers the most feature-complete replacement for Google Drive, including file sync, collaborative editing via Collabora Online or OnlyOffice integration, calendar and contacts sync, and an app ecosystem with 200+ plugins.
+Nextcloud offers the most feature-complete replacement for Google Drive, including file sync, collaborative editing via Collabora Online or OnlyOffice integration, calendar and contacts sync, and an app environment with 200+ plugins.
 
 Deploying Nextcloud with Docker
 
@@ -180,7 +180,7 @@ rclone copy gdrive: nextcloud: --transfers 8
 
 After migration, run `occ files:scan --all` to index transferred files so Nextcloud's web interface reflects the new content.
 
-Seafile: High-Performance Storage with Encrypted Libraries
+Seafile - High-Performance Storage with Encrypted Libraries
 
 Seafile differentiates itself through block-level synchronization. only changed file portions transfer, making it ideal for large files or frequent updates. Per-library encryption is Seafile's strongest feature: each library can be encrypted with a password you set, and the server stores only ciphertext.
 
@@ -215,7 +215,7 @@ seaf-cli create-encrypted -n "Sensitive Docs" \
   --enc-version 2 --enc-password libpassword
 ```
 
-Cryptomator: Client-Side Encryption for Any Backend
+Cryptomator - Client-Side Encryption for Any Backend
 
 Cryptomator adds transparent encryption on top of any existing storage. Nextcloud, a local server, or any cloud provider. It creates encrypted vaults mounted as local filesystems:
 
@@ -242,7 +242,7 @@ Choosing the Right Solution
 
 Choose Syncthing for personal backups and developer machines with no server infrastructure required. Ideal for 2-5 devices with direct connections.
 
-Choose Nextcloud for a full Google Drive replacement with collaboration, calendar sync, and a rich app ecosystem. Suitable for teams of 2-50 users.
+Choose Nextcloud for a full Google Drive replacement with collaboration, calendar sync, and a rich app environment. Suitable for teams of 2-50 users.
 
 Choose Seafile when per-library encryption and efficient large-file handling are priorities, especially with untrusted hosting environments.
 
@@ -265,7 +265,7 @@ Standard Nextcloud uses server-side encryption where the server holds keys. The 
 
 Can I migrate existing Google Drive files?
 
-Yes. Use `rclone copy gdrive: nextcloud: --transfers 8`. Export Google Docs to standard formats (DOCX, XLSX) first. Google Docs' proprietary format requires conversion to open in LibreOffice.
+Yes. Use `rclone copy gdrive - nextcloud: --transfers 8`. Export Google Docs to standard formats (DOCX, XLSX) first. Google Docs' proprietary format requires conversion to open in LibreOffice.
 
 What happens if my self-hosted server goes offline?
 

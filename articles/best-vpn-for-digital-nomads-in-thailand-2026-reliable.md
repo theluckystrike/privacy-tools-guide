@@ -173,15 +173,15 @@ Practical Recommendations
 
 For digital nomads in Thailand, the optimal solution depends on your technical comfort level:
 
-Quick setup (less technical): Commercial WireGuard-supported providers with Singapore/Hong Kong servers offer the best balance of reliability and ease. Look for those offering:
+Quick setup (less technical) - Commercial WireGuard-supported providers with Singapore/Hong Kong servers offer the best balance of reliability and ease. Look for those offering:
 - WireGuard protocol
 - Singapore server presence
 - No-log policy independently audited
 - Kill switch functionality
 
-Maximum control (technical): Self-hosted WireGuard or Outline on a Singapore VPS. This provides consistent performance and eliminates subscription costs after initial setup.
+Maximum control (technical) - Self-hosted WireGuard or Outline on a Singapore VPS. This provides consistent performance and eliminates subscription costs after initial setup.
 
-Hybrid approach: Run a self-hosted primary VPN with a commercial backup. This ensures continuous connectivity even during provider outages.
+Hybrid approach - Run a self-hosted primary VPN with a commercial backup. This ensures continuous connectivity even during provider outages.
 
 Connection Reliability Checklist
 
@@ -278,7 +278,7 @@ This setup caches frequently accessed resources, reducing VPN bandwidth usage by
 
 Troubleshooting Thailand-Specific Issues
 
-Issue: ISP Throttling VPN Connections
+Issue - ISP Throttling VPN Connections
 
 ```bash
 Detect throttling with iperf3
@@ -289,7 +289,7 @@ Results:
 10-20 Mbps = likely throttling
 <10 Mbps = severe throttling
 
-Workaround: Use obfuscation
+Workaround - Use obfuscation
 For OpenVPN:
 obfs4proxy --managed
 
@@ -297,7 +297,7 @@ For Shadowsocks (if supported):
 ss-redir -c /path/to/config.json
 ```
 
-Issue: Connection Drops During Peak Hours
+Issue - Connection Drops During Peak Hours
 
 ```bash
 Monitor connection stability
@@ -311,7 +311,7 @@ Track success rate during peak hours (6-10pm Bangkok time)
 If <95% success rate, switch to different protocol or provider
 ```
 
-Issue: Banking/Payment Sites Block VPN IP
+Issue - Banking/Payment Sites Block VPN IP
 
 ```bash
 Test IP reputation

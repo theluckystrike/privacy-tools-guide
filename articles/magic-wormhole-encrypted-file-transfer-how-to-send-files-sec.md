@@ -37,13 +37,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How Magic Wormhole Works
+Step 1 - How Magic Wormhole Works
 
 Magic Wormhole implements the SPAKE2 algorithm to establish an encrypted channel between two parties. When you initiate a transfer, the tool generates a short, human-readable code (such as `7-abc-def`). The recipient enters this code on their end, and the Wormhole protocol handles key exchange, encryption, and file transfer automatically.
 
 The encryption ensures that only the intended recipient can decrypt the files. Even if someone intercepts the wormhole code, they cannot access the transferred data without also having access to the receiving machine.
 
-Step 2: Install ation
+Step 2 - Install ation
 
 Magic Wormhole requires Python 3.7 or later. Install it using pip:
 
@@ -63,7 +63,7 @@ Verify the installation by checking the version:
 wormhole --version
 ```
 
-Step 3: Sending Files
+Step 3 - Sending Files
 
 The basic syntax for sending a file involves the `wormhole send` command followed by the file path:
 
@@ -81,7 +81,7 @@ On the other computer, please run: wormhole receive 7-abc-def
 
 Share this code with the recipient through a separate channel (ideally not the same network or method you're using for the transfer).
 
-Step 4: Receiving Files
+Step 4 - Receiving Files
 
 On the receiving end, the recipient runs:
 
@@ -92,14 +92,14 @@ wormhole receive
 The command prompts for the wormhole code:
 
 ```
-Enter receive wormhole code: 7-abc-def
-Receiving 1 file (1.2KB) into: file.txt
-Received file written to: file.txt
+Enter receive wormhole code - 7-abc-def
+Receiving 1 file (1.2KB) into - file.txt
+Received file written to - file.txt
 ```
 
 The file transfers automatically once both parties have entered the correct code.
 
-Step 5: Transferring Directories
+Step 5 - Transferring Directories
 
 Magic Wormhole handles directories by packaging them into a tar archive automatically. Send a directory with the same command used for files:
 
@@ -109,7 +109,7 @@ wormhole send /path/to/project-folder/
 
 The receiving party receives the contents as a folder with the same name.
 
-Step 6: Text Transfer
+Step 6 - Text Transfer
 
 For quick text snippets, use the `--text` flag to transfer content without creating a file:
 
@@ -163,11 +163,11 @@ Security Considerations
 
 Magic Wormhole provides several security guarantees:
 
-End-to-end encryption: All data transfers use the SPAKE2 key agreement protocol with Curve25519 elliptic curve cryptography. The server mediating the wormhole never sees the encryption keys or file contents.
+End-to-end encryption - All data transfers use the SPAKE2 key agreement protocol with Curve25519 elliptic curve cryptography. The server mediating the wormhole never sees the encryption keys or file contents.
 
-One-time codes: Each wormhole code expires after the transfer completes. A new code generates for every transfer attempt.
+One-time codes - Each wormhole code expires after the transfer completes. A new code generates for every transfer attempt.
 
-No authentication required: The security model relies on the code being shared through a separate channel. If an attacker guesses the code before the legitimate recipient, they could intercept the transfer.
+No authentication required - The security model relies on the code being shared through a separate channel. If an attacker guesses the code before the legitimate recipient, they could intercept the transfer.
 
 For highly sensitive transfers, consider:
 - Using a code relay channel different from your primary communication method
@@ -176,23 +176,23 @@ For highly sensitive transfers, consider:
 
 Common Troubleshooting
 
-Connection timeouts: The default timeout is 90 seconds. Increase it with `--timeout`:
+Connection timeouts - The default timeout is 90 seconds. Increase it with `--timeout`:
 
 ```bash
 wormhole receive --timeout 300
 ```
 
-Large file transfers: Magic Wormhole works well for files up to a few gigabytes. For larger transfers, consider splitting the archive or using alternative tools designed for massive data transfer.
+Large file transfers - Magic Wormhole works well for files up to a few gigabytes. For larger transfers, consider splitting the archive or using alternative tools designed for massive data transfer.
 
-Firewall issues: Both machines need outbound HTTPS access (port 443) to connect to the wormhole relay server. Corporate firewalls may block this connection.
+Firewall issues - Both machines need outbound HTTPS access (port 443) to connect to the wormhole relay server. Corporate firewalls may block this connection.
 
-Python version errors: Ensure you're using Python 3.7 or later. Check with:
+Python version errors - Ensure you're using Python 3.7 or later. Check with:
 
 ```bash
 python3 --version
 ```
 
-Step 7: Integration Examples
+Step 7 - Integration Examples
 
 Scripted Transfers
 

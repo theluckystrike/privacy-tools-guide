@@ -21,14 +21,14 @@ Firefox is the only major browser developed by a non-profit. It's the best priva
 Table of Contents
 
 - [The Privacy Problem Firefox Solves](#the-privacy-problem-firefox-solves)
-- [The Balance: Privacy vs. Breakage](#the-balance-privacy-vs-breakage)
-- [Step 1: Firefox Settings (about:preferences)](#step-1-firefox-settings-aboutpreferences)
-- [Step 2: about:config Advanced Settings](#step-2-aboutconfig-advanced-settings)
-- [Step 3: Privacy Extensions (Minimal Set)](#step-3-privacy-extensions-minimal-set)
+- [The Balance - Privacy vs. Breakage](#the-balance-privacy-vs-breakage)
+- [Step 1 - Firefox Settings (about:preferences)](#step-1-firefox-settings-aboutpreferences)
+- [Step 2 - about:config Advanced Settings](#step-2-aboutconfig-advanced-settings)
+- [Step 3 - Privacy Extensions (Minimal Set)](#step-3-privacy-extensions-minimal-set)
 - [Testing Your Configuration](#testing-your-configuration)
 - [Avoiding Fingerprinting While Maintaining Functionality](#avoiding-fingerprinting-while-maintaining-functionality)
-- [Site Breakage: Troubleshooting](#site-breakage-troubleshooting)
-- [Advanced: Container Tabs](#advanced-container-tabs)
+- [Site Breakage - Troubleshooting](#site-breakage-troubleshooting)
+- [Advanced - Container Tabs](#advanced-container-tabs)
 - [Privacy Maintenance Checklist](#privacy-maintenance-checklist)
 
 The Privacy Problem Firefox Solves
@@ -42,7 +42,7 @@ Firefox is built by Mozilla, a nonprofit. They don't sell your data. But they us
 
 This guide locks Firefox down while keeping sites functional.
 
-The Balance: Privacy vs. Breakage
+The Balance - Privacy vs. Breakage
 
 Aggressive privacy settings break ~5% of sites:
 - Video players that require Flash (obsolete, already broken)
@@ -52,25 +52,25 @@ Aggressive privacy settings break ~5% of sites:
 
 This guide targets 95%+ functionality. If you want 99.9% privacy, you'll lose some sites.
 
-Step 1: Firefox Settings (about:preferences)
+Step 1 - Firefox Settings (about:preferences)
 
 Privacy & Security → Enhanced Tracking Protection
 
 ```
-Current setting: Standard
-Better setting: Strict
-Effect: Blocks known trackers, requires site whitelisting for breakage
-Breakage: <1%
+Current setting - Standard
+Better setting - Strict
+Effect - Blocks known trackers, requires site whitelisting for breakage
+Breakage - <1%
 ```
 
-Click: Settings → Privacy & Security → Enhanced Tracking Protection → Strict
+Click - Settings → Privacy & Security → Enhanced Tracking Protection → Strict
 
 Cookies and Site Data
 
 ```
-Current: "Allow all cookies"
-Better: "Only from sites you visit"
-Best: "Block all cookies" (requires whitelisting)
+Current - "Allow all cookies"
+Better - "Only from sites you visit"
+Best - "Block all cookies" (requires whitelisting)
 "Only from sites you visit"
 ```
 
@@ -83,10 +83,10 @@ Firefox → Preferences → Privacy → Cookies and Site Data → "Only from sit
 Site Permissions
 
 ```
-Location: Block by default
-Microphone: Block by default
-Camera: Block by default
-Notification: Block always
+Location - Block by default
+Microphone - Block by default
+Camera - Block by default
+Notification - Block always
 ```
 
 Firefox → Preferences → Privacy → Permissions
@@ -96,17 +96,17 @@ You'll manually grant permissions to sites that need them (rare).
 DNS over HTTPS
 
 ```
-Current: Off
-Better: On (with Cloudflare or Mozilla)
-Effect: ISP can't see which sites you visit
-Breakage: <0.1%
+Current - Off
+Better - On (with Cloudflare or Mozilla)
+Effect - ISP can't see which sites you visit
+Breakage - <0.1%
 ```
 
 Firefox → Preferences → Privacy & Security → DNS over HTTPS → Enable with Cloudflare
 
-Why this matters: Without DNS over HTTPS, your ISP sees every site you visit (sold to advertisers). With it, only Cloudflare sees (and Cloudflare has a better privacy policy than ISPs).
+Why this matters - Without DNS over HTTPS, your ISP sees every site you visit (sold to advertisers). With it, only Cloudflare sees (and Cloudflare has a better privacy policy than ISPs).
 
-Step 2: about:config Advanced Settings
+Step 2 - about:config Advanced Settings
 
 Enter `about:config` in address bar and confirm you'll be careful.
 
@@ -193,13 +193,13 @@ privacy.partition.network_state_isolation = true
 security.OCSP.enabled = 0  // Value 0 disables OCSP
 ```
 
-Step 3: Privacy Extensions (Minimal Set)
+Step 3 - Privacy Extensions (Minimal Set)
 
 Avoid extension bloat (each extension is an attack surface). Use only 3-4:
 
 uBlock Origin (Ad/Tracker Blocking)
 
-Install from: addons.mozilla.org
+Install from - addons.mozilla.org
 
 Configuration:
 1. Click uBlock icon → Dashboard
@@ -223,7 +223,7 @@ Why uBlock Origin:
 
 Bitwarden (Password Manager)
 
-Install from: addons.mozilla.org
+Install from - addons.mozilla.org
 
 Bitwarden reduces password reuse (biggest security problem). Each site gets unique password.
 
@@ -234,7 +234,7 @@ Configuration:
 
 Decentraleyes (CDN Privacy)
 
-Install from: addons.mozilla.org
+Install from - addons.mozilla.org
 
 Blocks requests to centralized CDNs (Cloudflare, Google Fonts, Bootstrap). Replaces with local versions.
 
@@ -243,15 +243,15 @@ Effect:
 - Google can't track font requests
 - Minimal breakage (<0.5%)
 
-Configuration: Zero setup required; works silently.
+Configuration - Zero setup required; works silently.
 
 SimpleLogin (Email Masking)
 
-Install from: addons.mozilla.org (optional, only if you care about email privacy)
+Install from - addons.mozilla.org (optional, only if you care about email privacy)
 
 Creates alias email addresses for every site signup. Forwards to your real email, preventing trackers from connecting your email across sites.
 
-Cost: $99/year (alternative: use email provider's alias feature)
+Cost - $99/year (alternative: use email provider's alias feature)
 
 When to use:
 - Signing up for new services (use alias)
@@ -262,32 +262,32 @@ When to skip:
 - Close contacts (use real email)
 - Email accounts themselves (can't use alias for the email you own)
 
-Why it matters: Advertisers buy email lists and cross-reference to build profiles. Aliases prevent this linking.
+Why it matters - Advertisers buy email lists and cross-reference to build profiles. Aliases prevent this linking.
 
 Testing Your Configuration
 
-Test 1: Check Tracker Blocking
+Test 1 - Check Tracker Blocking
 
-Visit: https://cookiepedia.co.uk/
+Visit - https://cookiepedia.co.uk/
 
-Expected: Site should show you're blocking most trackers. Compare to default browser.
+Expected - Site should show you're blocking most trackers. Compare to default browser.
 
-Test 2: Check DNS over HTTPS
+Test 2 - Check DNS over HTTPS
 
-Visit: https://1.1.1.1/dns/
+Visit - https://1.1.1.1/dns/
 
-Expected: Shows "DNS over HTTPS working" (green).
+Expected - Shows "DNS over HTTPS working" (green).
 
-Test 3: Check Fingerprinting Resistance
+Test 3 - Check Fingerprinting Resistance
 
-Visit: https://browserleaks.com/
+Visit - https://browserleaks.com/
 
 Expected:
 -  Blocks WebRTC leak
 -  Blocks canvas fingerprinting
 -  Minor fingerprinting possible (acceptable)
 
-Test 4: Common Sites Still Work
+Test 4 - Common Sites Still Work
 
 ```
  Gmail / Yahoo Mail
@@ -326,11 +326,11 @@ privacy.reduceTimerPrecision = true    // Reduced timing attack surface
 
 Browser fingerprinting is complex. Truly defeating it requires tools like Tor Browser, which is slower. For normal browsing, the above balance is good.
 
-Site Breakage: Troubleshooting
+Site Breakage - Troubleshooting
 
-Scenario 1: Login Page Doesn't Work
+Scenario 1 - Login Page Doesn't Work
 
-Cause: HTTPS only mode or strict cookies
+Cause - HTTPS only mode or strict cookies
 
 Fix:
 1. Temporarily disable HTTPS only mode for that domain:
@@ -339,11 +339,11 @@ Fix:
    ```
 2. Or whitelist in uBlock Origin
 
-Permanent fix: Report to site (HTTPS not working is their bug)
+Permanent fix - Report to site (HTTPS not working is their bug)
 
-Scenario 2: Video Won't Play
+Scenario 2 - Video Won't Play
 
-Cause: uBlock Origin blocking ad/tracking scripts
+Cause - uBlock Origin blocking ad/tracking scripts
 
 Fix:
 1. Click uBlock icon
@@ -351,9 +351,9 @@ Fix:
 3. Reload
 4. Click icon again, check "Media" and "Scripts" categories
 
-Scenario 3: Payment Page Errors
+Scenario 3 - Payment Page Errors
 
-Cause: Overly aggressive privacy preventing form submission
+Cause - Overly aggressive privacy preventing form submission
 
 Fix:
 1. Enable HTTPS only mode OFF for that domain
@@ -363,12 +363,12 @@ Fix:
 
 Legitimate payment sites should work with your privacy settings. If they don't, they have trust/security problems.
 
-Advanced: Container Tabs
+Advanced - Container Tabs
 
 For maximum privacy, use Firefox Containers (separate cookie jars per domain):
 
 ```
-Install: Multi-Account Containers extension
+Install - Multi-Account Containers extension
 Configuration:
 - Create containers: Work, Personal, Banking, Shopping
 - Assign sites to containers
@@ -379,7 +379,7 @@ Effect:
 - Amazon can't track you on other sites (different container)
 - Facebook can't see your banking activity (different container)
 
-Tradeoff: Slightly inconvenient (must remember container assignments)
+Tradeoff - Slightly inconvenient (must remember container assignments)
 
 Privacy Maintenance Checklist
 

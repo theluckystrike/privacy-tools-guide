@@ -28,14 +28,14 @@ To implement domain fronting, you need:
 - A domain you control (for the frontend)
 - Target services that use the same CDN
 
-Step 3: Implementation with cURL
+Step 3 - Implementation with cURL
 
 The simplest way to demonstrate domain fronting is using cURL with the `--resolve` flag:
 
 ```bash
 curl -v \
   --resolve blocked-service.com:443:123.45.67.89 \
-  -H "Host: blocked-service.com" \
+  -H "Host - blocked-service.com" \
   https://trusted-cdn-frontend.com/api/data
 ```
 
@@ -44,7 +44,7 @@ This command:
 - Sends the TLS handshake with SNI for `trusted-cdn-frontend.com`
 - Sends HTTP Host header pointing to the blocked service
 
-Step 4: Implementation in Python
+Step 4 - Implementation in Python
 
 For more complex scenarios, here's a Python implementation using the `requests` library:
 
@@ -99,7 +99,7 @@ result = domain_fronted_request(
 print(result.status_code, result.json())
 ```
 
-Step 5: Use Domain Fronting with Tor
+Step 5 - Use Domain Fronting with Tor
 
 For enhanced privacy, combine domain fronting with Tor's Pluggable Transport system. The `meek` connector uses Amazon's content delivery infrastructure:
 
@@ -116,7 +116,7 @@ tor -f ~/.torrc.meek
 
 This approach routes your Tor traffic through Microsoft's Azure CDN, with the SNI showing `meek.azureedge.net` while the actual traffic targets Tor's bridges.
 
-Step 6: Finding Working Frontends
+Step 6 - Finding Working Frontends
 
 Not all CDN domains support domain fronting. Here's how to find working frontends:
 
@@ -146,7 +146,7 @@ def check_domain_fronting_works(front_domain, back_domain):
             return b"200" in response or b"403" in response
 ```
 
-Step 7: Limitations and Countermeasures
+Step 7 - Limitations and Countermeasures
 
 Domain fronting has faced increased scrutiny and significant restrictions since 2018:
 
@@ -155,7 +155,7 @@ Domain fronting has faced increased scrutiny and significant restrictions since 
 - Deep packet inspection: Advanced censorship systems operated by nation-states can analyze traffic patterns, timing, and payload characteristics beyond simple header inspection.
 - CDN policy enforcement: Providers increasingly scan for mismatched Host headers and terminate connections that violate their acceptable use policies.
 
-Step 8: Comparing Censorship Circumvention Methods
+Step 8 - Comparing Censorship Circumvention Methods
 
 | Method | Ease of Use | Detection Resistance | Infrastructure Cost | Maintained |
 |--------|-------------|---------------------|---------------------|-----------|
@@ -168,7 +168,7 @@ Step 8: Comparing Censorship Circumvention Methods
 
 For users in high-censorship environments today, Tor Browser with obfs4 bridges or a commercial VPN with obfuscation (Mullvad, Proton VPN) typically provide better reliability than raw domain fronting. Domain fronting remains valuable as a component within larger tools like meek, but building a standalone implementation from scratch faces increasing friction from CDN policy changes.
 
-Step 9: Legal and Ethical Considerations
+Step 9 - Legal and Ethical Considerations
 
 The legality of domain fronting varies by jurisdiction:
 

@@ -69,12 +69,12 @@ ls -lh /tmp/memory.lime
 
 From a running Windows system (authorized investigation only):
 
-Use WinPmem: `winpmem_mini_x64.exe memory.raw`
+Use WinPmem - `winpmem_mini_x64.exe memory.raw`
 
 From a VM snapshot:
 
 VirtualBox: `VBoxManage debugvm <vmname> dumpvmcore --filename memory.elf`
-VMware: The `.vmem` file in the VM directory is the raw memory dump.
+VMware - The `.vmem` file in the VM directory is the raw memory dump.
 
 ---
 
@@ -255,8 +255,8 @@ Automated Triage Script
 ```python
 #!/usr/bin/env python3
 """
-Quick triage: run key Volatility plugins and save output.
-Usage: python3 triage.py memory.raw /tmp/triage_output/
+Quick triage - run key Volatility plugins and save output.
+Usage - python3 triage.py memory.raw /tmp/triage_output/
 """
 import subprocess, sys, os
 

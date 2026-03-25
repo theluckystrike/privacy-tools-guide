@@ -80,7 +80,7 @@ Large File Upload Performance
 
 Large files benefit from streaming encryption, reducing memory overhead but still adding latency.
 
-Test Results: 100MB Single File Upload
+Test Results - 100MB Single File Upload
 
 | Service | Raw Upload | Encrypted Upload | Overhead |
 |---------|-----------|------------------|----------|
@@ -92,7 +92,7 @@ Test Results: 100MB Single File Upload
 
 Icedrive surprised with the lowest overhead, using an improved encryption pipeline that minimizes context switching.
 
-Test Results: 10 × 100MB Files (Parallel Upload)
+Test Results - 10 × 100MB Files (Parallel Upload)
 
 ```bash
 Testing parallel upload capability
@@ -105,8 +105,8 @@ wait
 
 Results:
 Filen: 82s total (efficient parallel handling)
-Proton: 95s total (serialized due to queue)
-Tresorit: 88s total (parallel with limits)
+Proton - 95s total (serialized due to queue)
+Tresorit - 88s total (parallel with limits)
 ```
 
 Folder Synchronization Speed
@@ -150,10 +150,10 @@ async def benchmark_upload(service, file_size_mb=50):
     return elapsed
 
 Results (50MB file, 5 runs average):
-Filen API: 6.2s
-Tresorit API: 7.8s
-Proton API: 9.4s
-Icedrive API: 5.8s
+Filen API - 6.2s
+Tresorit API - 7.8s
+Proton API - 9.4s
+Icedrive API - 5.8s
 ```
 
 Concurrent Operation Limits
@@ -171,10 +171,10 @@ Mobile devices face additional constraints: limited CPU for encryption, battery 
 
 Battery Impact (30-minute sync session)
 
-- Proton Drive: 18% battery drain. high due to continuous AES encryption
-- Filen: 12% battery drain. optimized ChaCha20 implementation
-- Tresorit: 14% battery drain. business client optimizations
-- Icedrive: 10% battery drain. efficient streaming encryption
+- Proton Drive - 18% battery drain. high due to continuous AES encryption
+- Filen - 12% battery drain. optimized ChaCha20 implementation
+- Tresorit - 14% battery drain. business client optimizations
+- Icedrive - 10% battery drain. efficient streaming encryption
 
 Mobile Upload Resume Capability
 

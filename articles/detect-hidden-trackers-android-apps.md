@@ -24,12 +24,12 @@ Most users have no idea this happens. The official permission system doesn't dis
 Table of Contents
 
 - [Why Trackers Matter and What They Collect](#why-trackers-matter-and-what-they-collect)
-- [Method 1: Exodus Privacy. Static Analysis](#method-1-exodus-privacy-static-analysis)
-- [Method 2: TrackerControl. Runtime Analysis](#method-2-trackercontrol-runtime-analysis)
-- [Method 3: ADB Permission Audit](#method-3-adb-permission-audit)
-- [Method 4: Network Traffic Capture](#method-4-network-traffic-capture)
-- [Method 5: ClassyShark3xodus. On-Device Static Analysis](#method-5-classyshark3xodus-on-device-static-analysis)
-- [Interpreting Results: What to Do About Trackers](#interpreting-results-what-to-do-about-trackers)
+- [Method 1 - Exodus Privacy. Static Analysis](#method-1-exodus-privacy-static-analysis)
+- [Method 2 - TrackerControl. Runtime Analysis](#method-2-trackercontrol-runtime-analysis)
+- [Method 3 - ADB Permission Audit](#method-3-adb-permission-audit)
+- [Method 4 - Network Traffic Capture](#method-4-network-traffic-capture)
+- [Method 5 - ClassyShark3xodus. On-Device Static Analysis](#method-5-classyshark3xodus-on-device-static-analysis)
+- [Interpreting Results - What to Do About Trackers](#interpreting-results-what-to-do-about-trackers)
 - [Removing and Blocking Identified Trackers](#removing-and-blocking-identified-trackers)
 - [Building Your Own Tracker Detection Workflow](#building-your-own-tracker-detection-workflow)
 - [Related Reading](#related-reading)
@@ -48,9 +48,9 @@ Crash reporting (Firebase Crashlytics, Sentry) collects diagnostic data when app
 
 Push notification services (Firebase Cloud Messaging, Braze) collect data about when you receive notifications and whether you click them. This creates engagement metrics used to optimize notification timing and content, they're learning your notification responsiveness.
 
-The cumulative effect: most popular apps track you through multiple services simultaneously. A single app might be sending device fingerprints to Facebook, usage events to Firebase, install source to Adjust, and crash data to Crashlytics. The intersection of these datasets creates detailed profiles of your technology usage.
+The cumulative effect - most popular apps track you through multiple services simultaneously. A single app might be sending device fingerprints to Facebook, usage events to Firebase, install source to Adjust, and crash data to Crashlytics. The intersection of these datasets creates detailed profiles of your technology usage.
 
-Method 1: Exodus Privacy. Static Analysis
+Method 1 - Exodus Privacy. Static Analysis
 
 Exodus Privacy (exodus-privacy.eu.org) maintains a database of known Android tracking SDKs. Their scanner analyzes APK files without running them and identifies embedded trackers by matching code signatures.
 
@@ -74,7 +74,7 @@ pip3 install exodus-standalone
 Download an APK (use APKPure, APKMirror, or extract from device)
 Or extract from a device already running the app:
 adb shell pm path com.example.app
-Returns: package:/data/app/com.example.app-1/base.apk
+Returns - package:/data/app/com.example.app-1/base.apk
 
 adb pull /data/app/com.example.app-1/base.apk
 
@@ -84,7 +84,7 @@ exodus-standalone -i base.apk
 Output shows trackers, permissions, and URLs
 ```
 
-Method 2: TrackerControl. Runtime Analysis
+Method 2 - TrackerControl. Runtime Analysis
 
 TrackerControl is an Android app that monitors all network traffic from every installed app in real time, without rooting your device. It works by creating a local VPN that routes all traffic through itself for inspection.
 
@@ -108,7 +108,7 @@ After running for 24-48 hours, check the "Activity" tab. You'll typically find:
 - Braze. push notification and analytics platform with persistent device IDs
 - Crashlytics. crash reporting (lower risk, but still exfiltrates data)
 
-Method 3: ADB Permission Audit
+Method 3 - ADB Permission Audit
 
 ADB (Android Debug Bridge) lets you inspect what permissions each app has been granted, including permissions the app holds but doesn't display in its own settings:
 
@@ -146,7 +146,7 @@ Background location (apps that can track you when not in use)
 adb shell dumpsys location | grep "background"
 ```
 
-Method 4: Network Traffic Capture
+Method 4 - Network Traffic Capture
 
 The most thorough method is capturing network traffic from the phone itself. This shows you actual data being transmitted, not just potential capability.
 
@@ -185,15 +185,15 @@ tshark -r capture.pcap -T fields -e dns.qry.name | sort -u > captured_domains.tx
 comm -12 <(sort domains.txt) <(sort captured_domains.txt)
 ```
 
-Method 5: ClassyShark3xodus. On-Device Static Analysis
+Method 5 - ClassyShark3xodus. On-Device Static Analysis
 
 ClassyShark3xodus is an Android app that scans APKs installed on your device and reports embedded trackers, similar to Exodus but running locally:
 
-Available on F-Droid: https://f-droid.org/packages/com.oF2pks.classyshark3xodus/
+Available on F-Droid - https://f-droid.org/packages/com.oF2pks.classyshark3xodus/
 
 Launch it, point it at any installed app, and it generates a report of found trackers using the Exodus database. all without sending the APK to a remote server.
 
-Interpreting Results: What to Do About Trackers
+Interpreting Results - What to Do About Trackers
 
 Not all trackers are equally bad. A rough hierarchy:
 
@@ -215,7 +215,7 @@ Actions to take:
 Reset your Advertising ID (limits cross-app tracking correlation)
 Settings → Google → Ads → Reset advertising ID
 
-For Android 12+: opt out entirely
+For Android 12+ - opt out entirely
 Settings → Privacy → Ads → Delete advertising ID
 
 Revoke permissions for apps that don't need them

@@ -205,7 +205,7 @@ Set up regular checks to ensure only authorized devices are connected:
 Simple network monitoring script
 
 Get current timestamp
-echo "=== Network Scan: $(date) ===" >> network_log.txt
+echo "=== Network Scan - $(date) ===" >> network_log.txt
 
 Scan network and save results
 arp-scan --localnet | grep -v "Starting" | grep -v "packets" >> network_log.txt

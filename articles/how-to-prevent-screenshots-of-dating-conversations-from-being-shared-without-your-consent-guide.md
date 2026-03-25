@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Reality of Screenshot Prevention
+Step 1 - The Reality of Screenshot Prevention
 
 The fundamental challenge with screenshot prevention is that the recipient ultimately controls their device. Once content displays on someone's screen, they can photograph it with another device, use screen recording software, or simply remember the information. No technical solution provides complete protection against someone determined to share your conversations.
 
 That said, several platform-level and app-level protections reduce casual screenshot sharing. These measures work against accidental or opportunistic sharing but won't stop someone committed to leaking your conversations.
 
-Step 2: Platform-Level Protections
+Step 2 - Platform-Level Protections
 
 iOS (Secure Screen API)
 
@@ -90,7 +90,7 @@ Platform Comparison
 | WhatsApp | No | Limited | Third-party apps |
 | Signal | No | Limited | Screen recording |
 
-Step 3: App-Level Protections
+Step 3 - App-Level Protections
 
 Android FLAG_SECURE
 
@@ -127,19 +127,19 @@ const messageConfig = {
 
 Signal's philosophy acknowledges that perfect screenshot prevention is impossible. Instead, they minimize the value of screenshots by reducing what persists on devices.
 
-Step 4: What Popular Dating Apps Actually Do
+Step 4 - What Popular Dating Apps Actually Do
 
 Most dating apps provide minimal screenshot protection:
 
-Tinder: No screenshot prevention. Bumble and Hinge similarly allow screenshots within the app. These platforms prioritize user experience over restrictive controls.
+Tinder - No screenshot prevention. Bumble and Hinge similarly allow screenshots within the app. These platforms prioritize user experience over restrictive controls.
 
-Snapchat: Implements screenshot detection for certain content but allows screen recording. The app notifies users when screenshots occur but cannot prevent them.
+Snapchat - Implements screenshot detection for certain content but allows screen recording. The app notifies users when screenshots occur but cannot prevent them.
 
-Instagram DMs: Similar approach, users can screenshot or screen record, though Instagram may notify the sender in some cases.
+Instagram DMs - Similar approach, users can screenshot or screen record, though Instagram may notify the sender in some cases.
 
 This world means you cannot rely on app-level protections alone for sensitive dating conversations.
 
-Step 5: Build Privacy-Conscious Messaging
+Step 5 - Build Privacy-Conscious Messaging
 
 For developers building dating or messaging features, consider these implementation strategies:
 
@@ -206,7 +206,7 @@ Content Warning Overlays
 </style>
 ```
 
-Step 6: Practical Steps for Protection
+Step 6 - Practical Steps for Protection
 
 For users concerned about dating conversation screenshots:
 
@@ -220,7 +220,7 @@ For users concerned about dating conversation screenshots:
 
 5. Request mutual privacy agreements: Communicating expectations with matches about privacy builds trust and reduces incentive to screenshot.
 
-Step 7: Legal Considerations
+Step 7 - Legal Considerations
 
 While technical solutions are limited, some jurisdictions have laws addressing non-consensual intimate image sharing. These laws typically cover intimate photos, not text conversations, but evolve as technology changes. Consult legal resources specific to your jurisdiction for current protections.
 

@@ -21,13 +21,13 @@ Installing a VPN creates a false sense of security if you don't verify it's actu
 Table of Contents
 
 - [What VPN Leaks Actually Mean](#what-vpn-leaks-actually-mean)
-- [Step 1: Verify Your Public IP Has Changed](#step-1-verify-your-public-ip-has-changed)
-- [Step 2: Test for DNS Leaks](#step-2-test-for-dns-leaks)
-- [Step 3: Test for WebRTC Leaks](#step-3-test-for-webrtc-leaks)
-- [Step 4: Check Encryption Status](#step-4-check-encryption-status)
+- [Step 1 - Verify Your Public IP Has Changed](#step-1-verify-your-public-ip-has-changed)
+- [Step 2 - Test for DNS Leaks](#step-2-test-for-dns-leaks)
+- [Step 3 - Test for WebRTC Leaks](#step-3-test-for-webrtc-leaks)
+- [Step 4 - Check Encryption Status](#step-4-check-encryption-status)
 - [VPN Verification Checklist](#vpn-verification-checklist)
 - [VPN Configuration Best Practices](#vpn-configuration-best-practices)
-- [Comparison Table: VPN Testing Methods](#comparison-table-vpn-testing-methods)
+- [Comparison Table - VPN Testing Methods](#comparison-table-vpn-testing-methods)
 - [Footer](#footer)
 - [Related Reading](#related-reading)
 
@@ -35,29 +35,29 @@ What VPN Leaks Actually Mean
 
 A VPN leak occurs when traffic destined for encrypted tunneling bypasses the tunnel and travels on your regular network connection. Three main leak types affect different layers:
 
-DNS Leaks: Your DNS queries (website lookups) bypass the VPN and go to your ISP's DNS servers, revealing what sites you're visiting even though HTTP traffic is encrypted.
+DNS Leaks - Your DNS queries (website lookups) bypass the VPN and go to your ISP's DNS servers, revealing what sites you're visiting even though HTTP traffic is encrypted.
 
-IP Leaks: Your real public IP address gets exposed in HTTP headers, WebRTC connections, or other protocols, defeating the anonymity purpose of a VPN.
+IP Leaks - Your real public IP address gets exposed in HTTP headers, WebRTC connections, or other protocols, defeating the anonymity purpose of a VPN.
 
-WebRTC Leaks: Real-time communication protocols used by browsers can leak your local and real IP addresses even through a VPN connection.
+WebRTC Leaks - Real-time communication protocols used by browsers can leak your local and real IP addresses even through a VPN connection.
 
 Detecting these requires testing at each layer of the network stack, which is why a single online test isn't sufficient for verification.
 
-Step 1: Verify Your Public IP Has Changed
+Step 1 - Verify Your Public IP Has Changed
 
 This is the most basic test. Before connecting to VPN, note your real IP address:
 
 ```bash
 Check your current public IP
 curl https://icanhazip.com
-Output: 203.0.113.42 (your real IP)
+Output - 203.0.113.42 (your real IP)
 
 Alternative methods
 curl https://ipinfo.io
-Returns: {"ip":"203.0.113.42","city":"San Francisco",...}
+Returns - {"ip":"203.0.113.42","city":"San Francisco",...}
 
 curl https://api.ipify.org
-Output: 203.0.113.42
+Output - 203.0.113.42
 ```
 
 After connecting to your VPN, run the same command:
@@ -65,24 +65,24 @@ After connecting to your VPN, run the same command:
 ```bash
 After VPN connection
 curl https://icanhazip.com
-Output: 198.51.100.50 (VPN server IP)
+Output - 198.51.100.50 (VPN server IP)
 ```
 
 If the IP is identical before and after VPN connection, your VPN client is not routing traffic through the tunnel. This indicates a complete connection failure.
 
-Step 2: Test for DNS Leaks
+Step 2 - Test for DNS Leaks
 
 DNS leaks are the most common and often go undetected. Your traffic might be encrypted, but DNS queries reveal which websites you're visiting.
 
-Method 1: Using dnsleaktest.com
+Method 1 - Using dnsleaktest.com
 
 Visit [https://www.dnsleaktest.com/](https://www.dnsleaktest.com/) while connected to your VPN and click "Extended test." Results show which DNS servers are handling your queries.
 
-Expected result: DNS servers should belong to your VPN provider (e.g., "ProtonVPN DNS," "ExpressVPN DNS"), not your ISP.
+Expected result - DNS servers should belong to your VPN provider (e.g., "ProtonVPN DNS," "ExpressVPN DNS"), not your ISP.
 
-Failure case: If you see your ISP's DNS servers (e.g., "Comcast DNS," "Verizon DNS"), your DNS queries are leaking.
+Failure case - If you see your ISP's DNS servers (e.g., "Comcast DNS," "Verizon DNS"), your DNS queries are leaking.
 
-Method 2: CLI-based DNS Testing
+Method 2 - CLI-based DNS Testing
 
 For programmatic verification:
 
@@ -99,13 +99,13 @@ nslookup google.com 8.8.8.8
 Run from terminal while connected to VPN
 
 Expected output with VPN:
-Server: [VPN DNS server, e.g., 10.8.0.1]
-Address: [VPN DNS server address]
+Server - [VPN DNS server, e.g., 10.8.0.1]
+Address - [VPN DNS server address]
 
-Failure: If "Server" shows your ISP's server, DNS is leaking
+Failure - If "Server" shows your ISP's server, DNS is leaking
 ```
 
-Method 3: Compare DNS Servers Before and After
+Method 3 - Compare DNS Servers Before and After
 
 ```bash
 Before VPN connection
@@ -118,19 +118,19 @@ Should show VPN provider's DNS servers
 If identical to before, DNS is misconfigured
 ```
 
-Step 3: Test for WebRTC Leaks
+Step 3 - Test for WebRTC Leaks
 
 WebRTC (Web Real-Time Communication) used for video/audio calls can leak your real IP address. Many browsers expose local network IPs through WebRTC regardless of VPN status.
 
-Method 1: Online WebRTC Leak Test
+Method 1 - Online WebRTC Leak Test
 
 Visit [https://browserleaks.com/webrtc](https://browserleaks.com/webrtc) while connected to your VPN.
 
-Expected result: "No WebRTC leaks detected" or only shows VPN IP addresses in the results.
+Expected result - "No WebRTC leaks detected" or only shows VPN IP addresses in the results.
 
-Failure case: Shows your real public IP or local private IP (192.168.x.x, 10.0.0.x).
+Failure case - Shows your real public IP or local private IP (192.168.x.x, 10.0.0.x).
 
-Method 2: JavaScript Console Test
+Method 2 - JavaScript Console Test
 
 Open browser developer console (F12) and run:
 
@@ -159,11 +159,11 @@ function findIP(onNewIP) {
 findIP(ip => console.log('Your IPs:', ip));
 ```
 
-Expected result: Only shows IPs belonging to your VPN provider.
+Expected result - Only shows IPs belonging to your VPN provider.
 
-Failure result: Shows 192.168.x.x or 10.0.0.x (local network) or your real public IP.
+Failure result - Shows 192.168.x.x or 10.0.0.x (local network) or your real public IP.
 
-Step 4: Check Encryption Status
+Step 4 - Check Encryption Status
 
 Verify that traffic is actually encrypted by inspecting packet headers.
 
@@ -198,7 +198,7 @@ All packets encrypted, no readable content
 Without VPN:
 Plaintext HTTP visible:
 GET /page HTTP/1.1
-Host: example.com
+Host - example.com
 ```
 
 VPN Verification Checklist
@@ -263,7 +263,7 @@ Disable IPv6 if only IPv6 is available:
 
 Some VPN clients only tunnel IPv4 traffic, leaving IPv6 exposed. Check in privacy settings.
 
-Comparison Table: VPN Testing Methods
+Comparison Table - VPN Testing Methods
 
 | Test | Method | Difficulty | Reliability | Time |
 |------|--------|-----------|------------|------|

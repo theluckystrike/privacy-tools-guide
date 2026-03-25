@@ -27,7 +27,7 @@ Table of Contents
 - [Automating MTU Discovery at Connection Time](#automating-mtu-discovery-at-connection-time)
 - [Performance Verification](#performance-verification)
 - [Troubleshooting Black Hole Connections](#troubleshooting-black-hole-connections)
-- [Threat Model: MTU-Based Information Leakage](#threat-model-mtu-based-information-leakage)
+- [Threat Model - MTU-Based Information Leakage](#threat-model-mtu-based-information-leakage)
 - [Real-World Performance Optimization Case Study](#real-world-performance-optimization-case-study)
 - [Diagnosing Fragmentation Issues](#diagnosing-fragmentation-issues)
 - [MTU Configuration for Mobile VPN Clients](#mtu-configuration-for-mobile-vpn-clients)
@@ -213,7 +213,7 @@ Host vpn.example.com
     MTU 1280
 ```
 
-Threat Model: MTU-Based Information Leakage
+Threat Model - MTU-Based Information Leakage
 
 Unusual MTU values can reveal VPN usage:
 
@@ -226,8 +226,8 @@ Check your current MTU on all interfaces
 ip link | grep -A1 "mtu"
 
 Different MTU by direction is a VPN indicator
-Normal traffic: 1500 in, 1500 out
-VPN traffic: 1400 in, 1500 out
+Normal traffic - 1500 in, 1500 out
+VPN traffic - 1400 in, 1500 out
 ```
 
 To reduce fingerprinting, some sophisticated VPNs dynamically adjust MTU to match typical values.
@@ -273,19 +273,19 @@ VPN_SERVER="$1"
 echo "=== Fragmentation Diagnosis ==="
 echo "Target: $VPN_SERVER"
 
-Test 1: Baseline throughput
-echo -e "\nTest 1: Baseline throughput (before MTU fix)..."
+Test 1 - Baseline throughput
+echo -e "\nTest 1 - Baseline throughput (before MTU fix)..."
 iperf3 -c "$VPN_SERVER" -t 10 | grep sender
 
-Test 2: Look for packet loss
+Test 2 - Look for packet loss
 echo -e "\nTest 2: Checking for packet loss..."
 mtr -c 100 --no-dns "$VPN_SERVER" | tail -5
 
-Test 3: Monitor fragmentation
+Test 3 - Monitor fragmentation
 echo -e "\nTest 3: Monitoring fragmentation..."
 watch -n 1 "netstat -s | grep -i fragment"
 
-Test 4: Check for ICMP black holes
+Test 4 - Check for ICMP black holes
 echo -e "\nTest 4: Testing PMTUD black hole..."
 ping -M do -s 1472 -c 10 "$VPN_SERVER" | grep -c "0 received"
 
@@ -432,6 +432,6 @@ Related Articles
 - [Vpn Fragmentation Issues Why Some Websites Break And How](/vpn-fragmentation-issues-why-some-websites-break-and-how-fix/)
 - [Vpn For Remote Workers Connecting To Us Office](/vpn-for-remote-workers-connecting-to-us-office-from-asia/)
 - [Verify That Your VPN Is Actually Working and Not Leaking](/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
-- [AI CI/CD Pipeline Optimization: A Developer Guide](https://bestremotetools.com/ai-ci-cd-pipeline-optimization/)
+- [AI CI/CD Pipeline Optimization - A Developer Guide](https://bestremotetools.com/ai-ci-cd-pipeline-optimization/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

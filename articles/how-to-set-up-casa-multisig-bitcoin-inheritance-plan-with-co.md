@@ -26,14 +26,14 @@ Table of Contents
 - [Security Considerations](#security-considerations)
 - [Verification and Testing](#verification-and-testing)
 - [Advanced Configurations](#advanced-configurations)
-- [Real-World Casa Setup: Complete Walkthrough](#real-world-casa-setup-complete-walkthrough)
+- [Real-World Casa Setup - Complete Walkthrough](#real-world-casa-setup-complete-walkthrough)
 - [Collaborative Custody Best Practices](#collaborative-custody-best-practices)
 - [Handling Key Holder Incapacity or Death](#handling-key-holder-incapacity-or-death)
 - [Verifying Casa's Security Model](#verifying-casas-security-model)
-- [Cost-Benefit Analysis: Self-Hosted vs Casa](#cost-benefit-analysis-self-hosted-vs-casa)
+- [Cost-Benefit Analysis - Self-Hosted vs Casa](#cost-benefit-analysis-self-hosted-vs-casa)
 - [Integration with Legal Estate Planning](#integration-with-legal-estate-planning)
 - [Bitcoin Inheritance Plan](#bitcoin-inheritance-plan)
-- [Advanced: Custom Smart Contract Integration](#advanced-custom-smart-contract-integration)
+- [Advanced - Custom Smart Contract Integration](#advanced-custom-smart-contract-integration)
 - [Monitoring and Annual Maintenance](#monitoring-and-annual-maintenance)
 
 Understanding Casa Multisig Architecture
@@ -48,19 +48,19 @@ Collaborative Custody Model for Inheritance
 
 Collaborative custody in this context means distributing signing authority across multiple trusted parties who can work together to manage the wallet and execute inheritance transfers. The model involves several key participants:
 
-Primary Owner: The original Bitcoin holder who establishes the wallet and defines the inheritance terms.
+Primary Owner - The original Bitcoin holder who establishes the wallet and defines the inheritance terms.
 
-Successor(s): Designated recipients who will receive Bitcoin upon triggering of inheritance conditions.
+Successor(s) - Designated recipients who will receive Bitcoin upon triggering of inheritance conditions.
 
-Trusted Advisors: Attorneys, family members, or financial advisors who can assist with key management and ensure inheritance terms are followed.
+Trusted Advisors - Attorneys, family members, or financial advisors who can assist with key management and ensure inheritance terms are followed.
 
-Casa as Coordination Platform: Casa helps the multi-signature process but cannot access funds or override key holder decisions.
+Casa as Coordination Platform - Casa helps the multi-signature process but cannot access funds or override key holder decisions.
 
 This distributed model prevents any single party from unilaterally accessing funds while ensuring legitimate inheritance transfers can proceed when proper authorization exists.
 
 Implementation Steps
 
-Step 1: Wallet Creation and Key Distribution
+Step 1 - Wallet Creation and Key Distribution
 
 Begin by creating a Casa account and establishing a multisig vault. The setup process guides users through generating cryptographic keys that will be distributed to different key holders.
 
@@ -77,7 +77,7 @@ For a 3-of-5 inheritance setup, generate five separate keys. Distribute these to
 - Trusted advisor or family member (1 key)
 - Cold storage backup (1 key)
 
-Step 2: Defining Inheritance Conditions
+Step 2 - Defining Inheritance Conditions
 
 Establish clear conditions that trigger the inheritance transfer. Casa allows configuring time-locks and multi-signature thresholds that govern when Bitcoin can move.
 
@@ -100,7 +100,7 @@ const inheritanceConfig = {
 
 Document these conditions separately in a legal will or trust document that key holders can reference.
 
-Step 3: Key Ceremony and Security Hardening
+Step 3 - Key Ceremony and Security Hardening
 
 For maximum security, conduct a key ceremony where all key holders generate their keys in a secure environment. Each key holder should:
 
@@ -115,7 +115,7 @@ Send small amount (e.g., 0.001 BTC) to vault
 Confirm all required keys can sign successfully
 ```
 
-Step 4: Configuring Casa Inheritance Features
+Step 4 - Configuring Casa Inheritance Features
 
 Casa provides built-in inheritance tools that integrate with their multi-signature platform. Access these through the Casa dashboard:
 
@@ -127,7 +127,7 @@ Casa provides built-in inheritance tools that integrate with their multi-signatu
 
 The timelock period is critical, it provides a window where the original owner can cancel any suspicious inheritance attempt while still alive and competent.
 
-Step 5: Documentation and Key Holder Coordination
+Step 5 - Documentation and Key Holder Coordination
 
 Create documentation that all key holders understand:
 
@@ -145,13 +145,13 @@ Security Considerations
 
 When implementing collaborative custody inheritance planning, several security factors require attention:
 
-Key Security: Each key holder bears responsibility for securing their individual key. Compromised keys can lead to fund theft. Recommend hardware wallets for all key holders.
+Key Security - Each key holder bears responsibility for securing their individual key. Compromised keys can lead to fund theft. Recommend hardware wallets for all key holders.
 
-Social Engineering: Attackers may attempt to manipulate key holders into signing fraudulent inheritance claims. Establish verification protocols requiring multiple channels of communication.
+Social Engineering - Attackers may attempt to manipulate key holders into signing fraudulent inheritance claims. Establish verification protocols requiring multiple channels of communication.
 
-Geographic Distribution: Distribute keys across different geographic locations to prevent localized disasters (fire, theft, natural disasters) from compromising multiple keys simultaneously.
+Geographic Distribution - Distribute keys across different geographic locations to prevent localized disasters (fire, theft, natural disasters) from compromising multiple keys simultaneously.
 
-Legal Clarity: Ensure inheritance documents clearly establish key holder authority and successor rights. Consult with estate planning attorneys familiar with cryptocurrency.
+Legal Clarity - Ensure inheritance documents clearly establish key holder authority and successor rights. Consult with estate planning attorneys familiar with cryptocurrency.
 
 Verification and Testing
 
@@ -189,7 +189,7 @@ for key_holder in required_signers:
 
 This API access enables integration with broader estate planning systems and custom workflows.
 
-Real-World Casa Setup: Complete Walkthrough
+Real-World Casa Setup - Complete Walkthrough
 
 Step-by-step implementation for a practical 2-of-3 inheritance setup:
 
@@ -204,7 +204,7 @@ echo "  - Primary owner's key"
 echo "  - ONE of: Successor's key OR Trusted advisor's key"
 echo ""
 
-Step 1: Account Creation
+Step 1 - Account Creation
 echo "Step 1: Create Casa Account"
 echo "  - Visit casa.io"
 echo "  - Sign up with email address"
@@ -212,26 +212,26 @@ echo "  - Complete KYC verification"
 echo "  - Note Casa Account ID"
 CASA_ACCOUNT_ID="read from dashboard"
 
-Step 2: Vault Setup
+Step 2 - Vault Setup
 echo "Step 2: Create Multisig Vault"
 echo "  - Click 'Create Vault'"
 echo "  - Select '2 of 3 multisig'"
 echo "  - Name: 'Bitcoin Inheritance - [Your Name]'"
 
-Step 3: Key Generation (offline recommended)
+Step 3 - Key Generation (offline recommended)
 echo "Step 3: Generate Cryptographic Keys"
 echo "  Keys location:"
 echo "    Key 1: Keep with primary owner (safety deposit box)"
 echo "    Key 2: Give to successor (separate safety deposit box)"
 echo "    Key 3: Give to trusted advisor/attorney (secure location)"
 
-Step 4: Initial Funding Test
+Step 4 - Initial Funding Test
 echo "Step 4: Test with small amount (0.001 BTC)"
 echo "  - Send 0.001 BTC to generated address"
 echo "  - Test 2-of-3 signature requirement"
 echo "  - Verify all keys function correctly"
 
-Step 5: Document Configuration
+Step 5 - Document Configuration
 cat > inheritance_config.json << 'EOF'
 {
   "vault_type": "multisig_2_of_3",
@@ -331,15 +331,15 @@ Design for scenarios where a keyholder becomes unavailable:
 #!/bin/bash
 Key holder succession procedures
 
-Scenario 1: Primary owner dies (most common inheritance case)
-Solution: Successor + Advisor can recover wallet
+Scenario 1 - Primary owner dies (most common inheritance case)
+Solution - Successor + Advisor can recover wallet
 - Successor uses their key
 - Advisor uses their key
 - Together they can execute any transaction
 
-Scenario 2: Key holder loses access (forgot location, death)
-Problem: Need 2-of-3, but only 2 keys available
-Solution: Implement recovery address
+Scenario 2 - Key holder loses access (forgot location, death)
+Problem - Need 2-of-3, but only 2 keys available
+Solution - Implement recovery address
 
 Create recovery address owned by only 2 parties:
 Create 2-of-2 address with Successor + Advisor
@@ -350,8 +350,8 @@ In inheritance planning:
 - 2-of-2 recovery vault contains backup (10-20% of total)
 - If any keyholder becomes unavailable, recovery vault accessible
 
-Scenario 3: Key compromise (one key stolen/hacked)
-Solution: Implement spending limits
+Scenario 3 - Key compromise (one key stolen/hacked)
+Solution - Implement spending limits
 
 A 2-of-3 wallet with spending limits:
 - Small transactions (< 0.1 BTC) require 2-of-3
@@ -402,7 +402,7 @@ Verification resources:
 
 Verification ensures Casa is genuinely non-custodial.
 
-Cost-Benefit Analysis: Self-Hosted vs Casa
+Cost-Benefit Analysis - Self-Hosted vs Casa
 
 Compare custody approaches:
 
@@ -429,9 +429,9 @@ SELF-HOSTED MULTISIG:
   - You responsible for key security
   - UI/UX less polished
 
-Casa: For non-technical users, inheritance primary purpose
-Self-hosted: For developers, or multi-use (trading + inheritance)
-Hybrid: Use Casa as UI layer, but compatible with self-hosted backup
+Casa - For non-technical users, inheritance primary purpose
+Self-hosted - For developers, or multi-use (trading + inheritance)
+Hybrid - Use Casa as UI layer, but compatible with self-hosted backup
 ```
 
 Casa offers simplicity at the cost of monthly fees.
@@ -441,14 +441,14 @@ Integration with Legal Estate Planning
 Link Bitcoin inheritance to will:
 
 ```markdown
-Will Excerpt: Digital Assets
+Will Excerpt - Digital Assets
 
 Bitcoin Inheritance Plan
 
 The testator holds Bitcoin in a 2-of-3 multisig wallet with the following terms:
 
 Wallet Details
-- Platform: Casa (casa.io)
+- Platform - Casa (casa.io)
 - Address: [main vault address]
 - Approximate value: $X,XXX (updated annually)
 - Custodial method: Non-custodial (Casa does not hold keys)
@@ -482,7 +482,7 @@ This method ensures:
 
 Legal documentation ensures proper execution of Bitcoin inheritance.
 
-Advanced: Custom Smart Contract Integration
+Advanced - Custom Smart Contract Integration
 
 For maximum control, implement smart contract inheritance:
 
@@ -515,28 +515,28 @@ Annual Bitcoin inheritance plan maintenance
 
 REVIEW_DATE="2026-03-20"
 
-Task 1: Verify all key holders still accessible
+Task 1 - Verify all key holders still accessible
 echo "Contacting key holders for accessibility confirmation..."
-Email: "Please confirm you still have access to your Bitcoin inheritance key"
+Email - "Please confirm you still have access to your Bitcoin inheritance key"
 
-Task 2: Test wallet with small transaction
+Task 2 - Test wallet with small transaction
 echo "Testing 2-of-3 signing..."
 Send 0.0001 BTC from vault to test address
 Requires primary owner + successor signature
 Confirm functionality
 
-Task 3: Update documentation
+Task 3 - Update documentation
 echo "Updating inheritance plan documentation..."
 Check if any key holders changed roles
 Update contact information
 Verify addresses still valid
 
-Task 4: Review market value
+Task 4 - Review market value
 echo "Bitcoin current value: $(check_btc_price)"
 Update estimated inheritance value in will
 Notify heirs if significant change
 
-Task 5: Backup verification
+Task 5 - Backup verification
 echo "Verifying backup keys in physical locations..."
 Physically inspect key storage
 Verify no degradation (paper fading, etc.)

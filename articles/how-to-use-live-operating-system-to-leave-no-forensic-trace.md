@@ -68,7 +68,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Popular Live Operating Systems for Privacy
+Step 1 - Popular Live Operating Systems for Privacy
 
 Tails (The Amnesic Incognito Live System)
 
@@ -151,13 +151,13 @@ Check Tor connection
 curl -s https://check.torproject.org | grep -i "congratulations"
 
 Disable JavaScript globally (for maximum security)
-In Tor Browser: Settings > Security > Safest
+In Tor Browser - Settings > Security > Safest
 
 Use Tails' persistent storage only if necessary
-Configure from: Applications > Tails > Configure persistent volume
+Configure from - Applications > Tails > Configure persistent volume
 ```
 
-Step 2: Practical Use Cases
+Step 2 - Practical Use Cases
 
 Using a Library Computer
 
@@ -203,9 +203,9 @@ Using Multiple Live OSes for Different Contexts
 Create separate boot media for different threat contexts:
 
 ```
-USB 1: Tails (general privacy, Tor routing)
-USB 2: Kali Linux (security auditing, technical work)
-USB 3: Qubes OS (if hardware supports virtualization)
+USB 1 - Tails (general privacy, Tor routing)
+USB 2 - Kali Linux (security auditing, technical work)
+USB 3 - Qubes OS (if hardware supports virtualization)
 ```
 
 Verifying No Traces Remain
@@ -238,7 +238,7 @@ Known forensic artifacts:
 
 Use computers where you have physical access to clear CMOS if concerned about boot order logs.
 
-Step 3: Limitations of Live Systems
+Step 3 - Limitations of Live Systems
 
 Live operating systems aren't foolproof:
 

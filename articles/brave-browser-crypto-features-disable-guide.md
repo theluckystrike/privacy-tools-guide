@@ -19,7 +19,7 @@ tags: [privacy-tools-guide]
 To disable Brave's crypto features, go to `brave://settings`, toggle off Brave Rewards and Brave Wallet, then visit `brave://flags` and set IPFS, Brave Wallet, Native Wallet, and Solana Wallet to "Disabled." For persistent enforcement on managed devices, deploy registry policies (Windows), plist configurations (macOS), or JSON policies (Linux) that set `BraveWalletAllowed` and `BraveRewardsAllowed` to false. This guide covers five methods from simple GUI toggles to custom compiled builds, each with different tradeoffs between ease and permanence.
 
 
-- Use policy enforcement (Method: 4) for persistent configuration or command line arguments (Method 3) for scripted deployments.
+- Use policy enforcement (Method - 4) for persistent configuration or command line arguments (Method 3) for scripted deployments.
 - Features may reappear after: browser updates or can be re-enabled by users with access to the settings panel.
 - The machine-wide configurations take: precedence over per-user settings and require administrative privileges to modify.
 - Disabling these features eliminates: blockchain-related metadata leakage including wallet addresses, transaction patterns, and IPFS content hashes that could be correlated with user activity.
@@ -36,20 +36,20 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Brave's Crypto Features
+Step 1 - Understand Brave's Crypto Features
 
 Brave includes the following crypto-related components by default:
 
 - Brave Wallet: Built-in Ethereum and Solana wallet functionality supporting hardware wallet integration
 - IPFS Support: Integrated InterPlanetary File System node capabilities for decentralized content
-- Wallet Settings: DNS resolution for blockchain domains including .eth and .crypto TLDs
+- Wallet Settings - DNS resolution for blockchain domains including .eth and .crypto TLDs
 - Brave Rewards: Cryptocurrency-based advertising rewards system using Basic Attention Tokens
 - NFT Support: Native NFT visualization and management within the browser
 - Solana Integration: Full Solana blockchain support including SPL token management
 
 Each of these can be disabled individually through configuration. The level of control depends on your technical access and deployment scenario.
 
-Step 2: Method 1: Disable via Brave Settings (GUI)
+Step 2 - Method 1: Disable via Brave Settings (GUI)
 
 The easiest approach uses Brave's internal settings panel without requiring administrative access:
 
@@ -61,7 +61,7 @@ The easiest approach uses Brave's internal settings panel without requiring admi
 
 This handles basic disabling but leaves residual code in the browser executable. Features may reappear after browser updates or can be re-enabled by users with access to the settings panel.
 
-Step 3: Method 2: Disable via Configuration Flags
+Step 3 - Method 2: Disable via Configuration Flags
 
 For granular control beyond the standard settings, Brave provides experimental flags accessible at `brave://flags`. These offer deeper control over individual features:
 
@@ -73,7 +73,7 @@ For granular control beyond the standard settings, Brave provides experimental f
 
 These flags apply immediately and persist across sessions. However, they may reset with major browser updates and require re-application.
 
-Step 4: Method 3: Disable via Command Line Arguments
+Step 4 - Method 3: Disable via Command Line Arguments
 
 For deployment scenarios, automated setups, or enterprise deployments, use launch arguments applied at runtime:
 
@@ -92,7 +92,7 @@ Windows
 
 The `--disable-features` flag accepts comma-separated feature names from Brave's Chromium implementation. For permanent application on Linux systems, create a wrapper script or desktop entry that includes these arguments automatically.
 
-Method 4: Configure via Policies (Enterprise/IT)
+Method 4 - Configure via Policies (Enterprise/IT)
 
 System administrators managing multiple workstations can deploy registry or plist configurations that override user settings and prevent re-enabling through the UI:
 
@@ -137,7 +137,7 @@ Linux (distributed via /etc/chromium/policies/managed/brave.json):
 
 These policies override user settings and prevent re-enabling through the UI. The machine-wide configurations take precedence over per-user settings and require administrative privileges to modify.
 
-Step 5: Method 5: Compile Custom Build
+Step 5 - Method 5: Compile Custom Build
 
 For maximum control and minimal attack surface, build Brave from source with crypto features disabled entirely:
 
@@ -173,7 +173,7 @@ ninja -C out/Default brave
 
 This approach requires significant build infrastructure including approximately 100GB of disk space and build dependencies. The resulting binary contains no crypto functionality, making it ideal for security research or high-security deployments.
 
-Step 6: Verification: Confirming Disabled Status
+Step 6 - Verification: Confirming Disabled Status
 
 After applying your chosen method, verify the features are properly disabled:
 
@@ -213,9 +213,9 @@ However, consider the tradeoffs before disabling everything. IPFS, for instance,
 
 Troubleshooting Common Issues
 
-Settings revert after restart: User-level configurations may not persist. Use policy enforcement (Method 4) for persistent configuration or command line arguments (Method 3) for scripted deployments.
+Settings revert after restart - User-level configurations may not persist. Use policy enforcement (Method 4) for persistent configuration or command line arguments (Method 3) for scripted deployments.
 
-Features re-enable after update: Brave updates frequently reset feature flags and may re-enable components. Maintain deployment scripts that reapply settings after each update cycle.
+Features re-enable after update - Brave updates frequently reset feature flags and may re-enable components. Maintain deployment scripts that reapply settings after each update cycle.
 
 Cannot access brave://flags: Enterprise installations may have flags locked via group policy. Contact your system administrator for access or use policy-based configuration instead.
 

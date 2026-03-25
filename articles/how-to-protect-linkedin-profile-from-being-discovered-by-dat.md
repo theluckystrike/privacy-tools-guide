@@ -60,7 +60,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: LinkedIn Privacy Settings to Protect Your Profile
+Step 1 - LinkedIn Privacy Settings to Protect Your Profile
 
 Controlling Profile Visibility
 
@@ -79,7 +79,7 @@ Navigate to LinkedIn's Settings & Privacy > Visibility to configure:
 - Profile discovery by other members - Control who can find you via name/email
 - Connection discovery - Determine if others can see your connections
 
-Step 2: Remove Yourself from People Search Sites
+Step 2 - Remove Yourself from People Search Sites
 
 Major People Search Sites to Opt-Out
 
@@ -118,7 +118,7 @@ Consider these services for continuous monitoring:
 - Reputation Defender - monitoring and removal ($299/year)
 - OneRep - Budget-friendly option with decent coverage ($80/year)
 
-Step 3: Hardening Your LinkedIn Profile
+Step 3 - Hardening Your LinkedIn Profile
 
 Minimum Information Principle
 
@@ -166,13 +166,13 @@ Requires a free HIBP API key from https://haveibeenpwned.com/API/Key
 EMAIL="your@email.com"
 curl -s "https://haveibeenpwned.com/api/v3/breachedaccount/${EMAIL}" \
   -H "hibp-api-key: YOUR_KEY" \
-  -H "User-Agent: LinkedInPrivacyCheck" | python3 -m json.tool
+  -H "User-Agent - LinkedInPrivacyCheck" | python3 -m json.tool
 
 Search for your name on data broker sites via Google
-Paste into browser: "Your Name" site:spokeo.com OR site:whitepages.com OR site:beenverified.com
+Paste into browser - "Your Name" site:spokeo.com OR site:whitepages.com OR site:beenverified.com
 ```
 
-Step 4: Legal Protections and Rights
+Step 4 - Legal Protections and Rights
 
 CCPA and State Privacy Laws
 
@@ -192,7 +192,7 @@ EU residents can invoke GDPR protections:
 - Right to erasure ("right to be forgotten")
 - Right to data portability
 
-Step 5: What to Do If Your Information Is Misused
+Step 5 - What to Do If Your Information Is Misused
 
 Reporting Data Broker Violations
 
@@ -213,7 +213,7 @@ If LinkedIn data is being used to stalk or harass you:
 - Consider restraining orders if applicable
 - Consult with an attorney specializing in privacy law
 
-Step 6: Maintaining Long-Term Protection
+Step 6 - Maintaining Long-Term Protection
 
 Regular Privacy Audits
 

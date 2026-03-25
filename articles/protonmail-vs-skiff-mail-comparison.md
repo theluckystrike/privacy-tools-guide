@@ -38,7 +38,7 @@ Both services offer end-to-end encryption, but their approaches differ significa
 
 ProtonMail uses a dual-layer encryption model. Messages between ProtonMail users are automatically encrypted with sender-recipient key pairs. For external communication, you can enable PGP encryption or use Proton's zero-access encryption where the server never sees plaintext. Their encryption library is open-source, and they've undergone independent security audits.
 
-Skiff Mail positions itself as a privacy-first workspace with end-to-end encryption as a default. Their encryption covers not just emails but also files, pages, and calendar events within their ecosystem. Skiff uses a slightly different key derivation model based on user credentials, which affects how keys are managed during password resets.
+Skiff Mail positions itself as a privacy-first workspace with end-to-end encryption as a default. Their encryption covers not just emails but also files, pages, and calendar events within their environment. Skiff uses a slightly different key derivation model based on user credentials, which affects how keys are managed during password resets.
 
 For developers, the practical difference matters: ProtonMail has a longer track record with published security audits and a more mature key management system. Skiff's approach is newer and simpler but has faced scrutiny around key handling during account recovery flows.
 
@@ -70,7 +70,7 @@ gpg --import proton-public-key.asc
 gpg --list-keys your@email.com
 ```
 
-Skiff Mail does not currently support PGP/OpenPGP. Their encryption is proprietary and contained within their ecosystem. This simplifies the user experience but creates friction if you need to exchange encrypted messages with PGP-using correspondents or integrate with existing cryptographic workflows.
+Skiff Mail does not currently support PGP/OpenPGP. Their encryption is proprietary and contained within their environment. This simplifies the user experience but creates friction if you need to exchange encrypted messages with PGP-using correspondents or integrate with existing cryptographic workflows.
 
 For teams with PGP requirements, ProtonMail is the clear winner here.
 
@@ -82,11 +82,11 @@ ProtonMail provides SMTP/IMAP access through ProtonMail Bridge, a desktop applic
 
 ```yaml
 ProtonMail Bridge configuration for Thunderbird
-Server: 127.0.0.1
-IMAP Port: 1143
-SMTP Port: 1025
-Username: your@protonmail.com
-Password: Bridge app password (not your account password)
+Server - 127.0.0.1
+IMAP Port - 1143
+SMTP Port - 1025
+Username - your@protonmail.com
+Password - Bridge app password (not your account password)
 ```
 
 Skiff Mail does not currently offer IMAP or SMTP access. You're limited to their web interface and mobile apps. This is a significant constraint for developers who need to:
@@ -161,13 +161,13 @@ Configure in ~/.gitconfig
     smtpPort = 1025
 Requires ProtonMail Bridge running
 
-Skiff: Not compatible
+Skiff - Not compatible
 No SMTP access means git send-email won't work
 ```
 
-Password manager integration: Both services support standard 2FA via TOTP. ProtonMail additionally supports U2F/YubiKey, which developers often prefer for hardware-backed authentication.
+Password manager integration - Both services support standard 2FA via TOTP. ProtonMail additionally supports U2F/YubiKey, which developers often prefer for hardware-backed authentication.
 
-Email filtering and rules: ProtonMail offers strong filtering and labeling. Skiff's filtering is more basic but improving.
+Email filtering and rules - ProtonMail offers strong filtering and labeling. Skiff's filtering is more basic but improving.
 
 Privacy Policy and Jurisdiction
 
@@ -254,6 +254,6 @@ Related Articles
 - [Protonmail Vs Gmail Privacy Comparison](/protonmail-vs-gmail-privacy-comparison/)
 - [How To Use Pgp Encrypted Email With Protonmail To Non](/how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/)
 - [ProtonMail Security Model Explained: A Technical Deep-Dive](/protonmail-security-model-explained/)
-- [AtScale vs Cube AI Semantic Layer: A Developer Comparison](https://bestremotetools.com/atscale-vs-cube-ai-semantic-layer/)
+- [AtScale vs Cube AI Semantic Layer - A Developer Comparison](https://bestremotetools.com/atscale-vs-cube-ai-semantic-layer/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

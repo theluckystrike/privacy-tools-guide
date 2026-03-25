@@ -32,7 +32,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Strategic Approach
+Step 1 - Strategic Approach
 
 Before modifying accounts, establish a prioritization framework. Focus on high-exposure platforms first, those with public profiles, search engine indexing, or data broker aggregation. Create a spreadsheet or use a script to track your accounts:
 
@@ -63,7 +63,7 @@ done
 
 This baseline helps you systematically work through each account without missing any.
 
-Step 2: Platform-Specific Modifications
+Step 2 - Platform-Specific Modifications
 
 Developer Platforms
 
@@ -134,7 +134,7 @@ echo "Whitepages | 2026-03-16 | Pending | Identity verification required" >> rem
 
 Many states have laws requiring data broker removal upon request. California's CCPA and Virginia's VCDPA provide legal frameworks for these requests.
 
-Step 3: Handling Accounts That Cannot Be Changed
+Step 3 - Handling Accounts That Cannot Be Changed
 
 Some platforms require real-name verification. In these cases, consider:
 
@@ -142,7 +142,7 @@ Some platforms require real-name verification. In these cases, consider:
 2. Dedicated devices: Maintain a separate device for accounts requiring real identity
 3. Legal name changes: In extreme cases, legal name changes provide a fresh start, though this has significant implications
 
-Step 4: Verification and Maintenance
+Step 4 - Verification and Maintenance
 
 After modifying accounts, verify your changes:
 
@@ -151,14 +151,14 @@ Check GitHub commit history visibility
 curl -s "https://api.github.com/users/YOUR_USERNAME/events" | jq '.[].commits[].author.name'
 
 Verify search engine indexing
-Use site: search operators to check if your name appears
+Use site - search operators to check if your name appears
 site:github.com "your real name"
 site:twitter.com "your real name"
 ```
 
 Set calendar reminders quarterly to audit new accounts and verify existing pseudonymity remains intact. New platform signups are the most common source of real-name re-exposure.
 
-Step 5: Payment Methods and Transaction History
+Step 5 - Payment Methods and Transaction History
 
 Payment methods often leak real names through transaction records:
 
@@ -182,10 +182,10 @@ Use Monero for truly private transactions (if legal in your jurisdiction)
 Monero provides built-in privacy without third-party analysis
 
 Or use coin mixing services to break transaction trails
-Remember: tumbling services aren't foolproof against advanced analysis
+Remember - tumbling services aren't foolproof against advanced analysis
 ```
 
-Step 6: Email Address Pseudonymization
+Step 6 - Email Address Pseudonymization
 
 Your email address often reveals identity patterns. Systematically replace email addresses:
 
@@ -203,7 +203,7 @@ stackoverflow-myname@simplelogin.co
 All forward to your real email without revealing it
 ```
 
-Costs: ~$30/year for unlimited aliases with custom domain forwarding.
+Costs - ~$30/year for unlimited aliases with custom domain forwarding.
 
 Self-Hosted Email Forwarding
 
@@ -219,9 +219,9 @@ github-account@mydomain.com → forward to real@email.com
 twitter-account@mydomain.com → forward to real@email.com
 ```
 
-Cost: Domain registration ($10-15/year) + hosting ($5-10/month) = minimal cost for full control.
+Cost - Domain registration ($10-15/year) + hosting ($5-10/month) = minimal cost for full control.
 
-Step 7: Data Broker Removal at Scale
+Step 7 - Data Broker Removal at Scale
 
 Removing yourself from hundreds of data brokers requires systematic automation:
 
@@ -280,7 +280,7 @@ for broker in "${BROKERS[@]}"; do
 done
 ```
 
-Step 8: Search Engine De-indexing
+Step 8 - Search Engine De-indexing
 
 After removing accounts, request search engine de-indexing:
 
@@ -293,13 +293,13 @@ Google Search Console de-listing
 Directly request removal
 curl -X DELETE "https://www.google.com/webmasters/tools/url-removal?entry=https://old-account-url.com"
 
-Alternative: Robots.txt blocking
+Alternative - Robots.txt blocking
 Add to robots.txt:
 User-agent: *
-Disallow: /old-profile-page/
+Disallow - /old-profile-page/
 ```
 
-Step 9: Document and Track Changes
+Step 9 - Document and Track Changes
 
 Create persistent documentation of your pseudonymization:
 
@@ -310,12 +310,12 @@ Create master tracking document
 cat > pseudonym-changes.md << 'EOF'
 Pseudonym Migration Log
 
-Step 10: Timeline
+Step 10 - Timeline
 - 2026-03-01: Started systematic pseudonymization
 - 2026-03-15: Completed GitHub migration
 - 2026-03-20: Removed from Spokeo and Whitepages
 
-Step 11: Account Status
+Step 11 - Account Status
 
 | Platform | Real Name Status | Pseudonym | Date Changed |
 |----------|-----------------|-----------|--------------|
@@ -324,7 +324,7 @@ Step 11: Account Status
 | LinkedIn |  Required | professional-name | N/A |
 | Data Brokers |  Removed | N/A | 2026-03-20 |
 
-Step 12: Ongoing Verification
+Step 12 - Ongoing Verification
 
 - [ ] Monthly search audit for real-name leakage
 - [ ] Quarterly data broker opt-outs
@@ -336,7 +336,7 @@ Keep this document secure
 gpg --encrypt --recipient your-key pseudonym-changes.md
 ```
 
-Step 13: Handling Account Linking and Login Federations
+Step 13 - Handling Account Linking and Login Federations
 
 Modern accounts often use "Login with Google," "Login with GitHub," etc. These linked services can leak real names:
 
@@ -369,7 +369,7 @@ npm config get email
 docker login --username pseudonym
 ```
 
-Step 14: Quarterly Maintenance Schedule
+Step 14 - Quarterly Maintenance Schedule
 
 Pseudonymization isn't one-time, maintain ongoing:
 

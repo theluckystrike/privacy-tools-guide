@@ -28,7 +28,7 @@ Configure in desktop client settings:
 Table of Contents
 
 - [Prerequisites and Server Requirements](#prerequisites-and-server-requirements)
-- [Practical Example: Encrypting a Development Directory](#practical-example-encrypting-a-development-directory)
+- [Practical Example - Encrypting a Development Directory](#practical-example-encrypting-a-development-directory)
 - [Troubleshooting Common Issues](#troubleshooting-common-issues)
 - [Advanced Key Recovery and Backup Strategies](#advanced-key-recovery-and-backup-strategies)
 - [Performance Optimization for Large Encrypted Vaults](#performance-optimization-for-large-encrypted-vaults)
@@ -56,7 +56,7 @@ sudo -u www-data php occ app:list | grep encryption
 
 The server does not perform encryption, it merely stores encrypted blobs and manages metadata. All cryptographic operations happen on your clients, which is the fundamental security guarantee.
 
-Step 1: Enable End-to-End Encryption Globally
+Step 1 - Enable End-to-End Encryption Globally
 
 After installing the app, enable E2EE at the administrative level. Navigate to Settings → Security in your Nextcloud web interface and enable end-to-end encryption. However, this global setting affects all users, which may not suit mixed environments where some users need standard encryption.
 
@@ -75,7 +75,7 @@ sudo -u www-data php occ end-to-end-encryption:status
 
 This approach gives administrators flexibility while maintaining the security model where the server cannot decrypt user data.
 
-Step 2: Client-Side Setup and Key Management
+Step 2 - Client-Side Setup and Key Management
 
 E2EE in Nextcloud relies on the WebDAV protocol and client-side encryption libraries. The desktop clients (Windows, macOS, Linux) and mobile apps handle encryption automatically once enabled for your account.
 
@@ -105,7 +105,7 @@ Nextcloud E2EE uses a three-layer key system:
 
 This architecture means password recovery is impossible without your original password, the server stores only encrypted keys. Document your recovery key immediately after setup.
 
-Step 3: Create a Recovery Key
+Step 3 - Create a Recovery Key
 
 During first E2EE setup, the client prompts you to save a recovery key. This 64-character hexadecimal string is the only way to recover access if you lose your device:
 
@@ -119,7 +119,7 @@ sudo -u www-data php occ end-to-end-encryption:recovery-key export
 
 Store this recovery key in a secure location, preferably an encrypted USB drive or hardware security module. Losing both your device and recovery key means permanent data loss.
 
-Step 4: Verify Encryption Status
+Step 4 - Verify Encryption Status
 
 Confirm E2EE is functioning correctly before trusting it with critical data:
 
@@ -134,7 +134,7 @@ Ensure you're running client 3.0+ for proper E2EE support
 
 On the web interface, encrypted folders display a lock icon. Files within remain encrypted even during server-side backups, the server stores only Base64-encoded ciphertext.
 
-Practical Example: Encrypting a Development Directory
+Practical Example - Encrypting a Development Directory
 
 A common use case is synchronizing development secrets across machines without exposing them to the server:
 
@@ -155,7 +155,7 @@ What the server actually stores (decrypted for display):
 U2FsdGVkX1+8Z7YvK9mNpQ3wX4hJ6RtY8sL2dE5fG1h=
 ```
 
-Step 5: Limitations and Known Constraints
+Step 5 - Limitations and Known Constraints
 
 E2EE in Nextcloud has trade-offs to consider:
 
@@ -212,7 +212,7 @@ rm recovery.txt
 
 Never store the recovery key in plaintext. Treat it as the master key to all encrypted data.
 
-Step 6: Multi-Device E2EE Synchronization
+Step 6 - Multi-Device E2EE Synchronization
 
 Setting up E2EE across multiple devices requires careful key management:
 
@@ -222,9 +222,9 @@ Generate keys during first E2EE setup
 Save recovery key
 
 Device 2 (add to E2EE)
-Option A: Use the same account password
+Option A - Use the same account password
   Desktop client automatically derives same keys
-Option B: Use recovery key if Device 1 is unavailable
+Option B - Use recovery key if Device 1 is unavailable
   Go to account settings and "Recover with key"
 
 Verify synchronization works
@@ -254,7 +254,7 @@ For servers with many users:
 - Monitor database query times (E2EE adds metadata overhead)
 ```
 
-Step 7: Test E2EE Functionality Before Production
+Step 7 - Test E2EE Functionality Before Production
 
 Validate E2EE works correctly before moving critical data:
 
@@ -277,14 +277,14 @@ Verify files re-download and decrypt correctly
 Old encrypted keys should remain accessible
 ```
 
-Step 8: Sharing Encrypted Files with Other Users
+Step 8 - Sharing Encrypted Files with Other Users
 
 E2EE complicates file sharing because each user needs their own copy encrypted with their key:
 
 ```bash
 Public sharing (workaround)
 Create unencrypted folder > share publicly > download link
-Downside: files not E2EE during download
+Downside - files not E2EE during download
 
 Internal user sharing (preferred)
 Right-click encrypted folder > Share > select user
@@ -317,7 +317,7 @@ Which devices accessed encrypted data
 
 This logging doesn't compromise encryption (server never sees plaintext) but provides audit trails for compliance.
 
-Step 9: Integration with Nextcloud Groupware
+Step 9 - Integration with Nextcloud Groupware
 
 E2EE has specific limitations with Nextcloud's groupware (calendar, contacts):
 
@@ -363,7 +363,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 Related Articles
 
 - [End-to-End Encryption Explained Simply: A Developer's Guide](/end-to-end-encryption-explained-simply/)
-- [Nextcloud App Ecosystem: Best Privacy Apps for 2026](/nextcloud-app-ecosystem-best-privacy-apps-2026/)
+- [Nextcloud App environment: Best Privacy Apps for 2026](/nextcloud-app-environment-best-privacy-apps-2026/)
 - [Privacy Setup For Psychologist Telehealth Sessions Encrypted](/privacy-setup-for-psychologist-telehealth-sessions-encrypted/)
 - [Xmpp Omemo Encryption Setup Guide](/xmpp-omemo-encryption-setup-guide/)
 - [Nextcloud Collabora Office Setup Guide](/nextcloud-collabora-office-setup-guide/)

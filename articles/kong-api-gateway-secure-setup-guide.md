@@ -26,7 +26,7 @@ Client → Nginx (TLS) → Kong (8000) → Upstream Services
             Kong Admin (8001, localhost-only)
 ```
 
-Kong handles: JWT validation, rate limiting, IP allowlisting, request logging. Nginx handles: certificate renewal, HTTPS, and hiding Kong's admin port.
+Kong handles - JWT validation, rate limiting, IP allowlisting, request logging. Nginx handles: certificate renewal, HTTPS, and hiding Kong's admin port.
 
 ---
 
@@ -131,14 +131,14 @@ curl -s $ADMIN/services | python3 -m json.tool
 Protect backend services from brute-force and DoS:
 
 ```bash
-Global rate limiting: 100 requests per minute per IP
+Global rate limiting - 100 requests per minute per IP
 curl -s -X POST $ADMIN/plugins \
   -d name=rate-limiting \
   -d config.minute=100 \
   -d config.policy=local \
   -d config.hide_client_headers=false
 
-Per-service rate limiting: stricter limit for sensitive endpoint
+Per-service rate limiting - stricter limit for sensitive endpoint
 curl -s -X POST $ADMIN/services/my-api/plugins \
   -d name=rate-limiting \
   -d config.minute=30 \
@@ -174,7 +174,7 @@ Response includes:
 }
 ```
 
-Clients must include the JWT in the `Authorization: Bearer <token>` header. Generate tokens in your application:
+Clients must include the JWT in the `Authorization - Bearer <token>` header. Generate tokens in your application:
 
 ```python
 import jwt, time
@@ -303,7 +303,7 @@ Add to prometheus.yml:
   metrics_path: /metrics
 ```
 
-Key metrics: `kong_http_requests_total`, `kong_latency_bucket`, `kong_bandwidth_bytes_total`.
+Key metrics - `kong_http_requests_total`, `kong_latency_bucket`, `kong_bandwidth_bytes_total`.
 
 ---
 

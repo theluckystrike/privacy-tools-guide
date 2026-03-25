@@ -19,7 +19,7 @@ How to Audit npm Packages for Security
 
 The average Node.js project pulls in hundreds of transitive dependencies. Any one of them can introduce a vulnerability, or worse, malicious code designed to steal credentials or environment variables. This guide covers the full audit workflow from basic npm audit to CI automation.
 
-Step 1: npm audit
+Step 1 - npm audit
 
 The built-in audit command checks your installed packages against the npm advisory database.
 
@@ -42,7 +42,7 @@ npm audit --json | jq '.vulnerabilities | to_entries[] | {
 }'
 ```
 
-Step 2: Fix Vulnerabilities
+Step 2 - Fix Vulnerabilities
 
 ```bash
 Automatically fix vulnerabilities where a compatible update exists
@@ -70,7 +70,7 @@ npm install lodash@4.17.21
 npm test
 ```
 
-Step 3: Socket.dev for Supply Chain Analysis
+Step 3 - Socket.dev for Supply Chain Analysis
 
 `npm audit` only checks known CVEs. Supply chain attacks (malicious code injected into a package) often appear before a CVE is filed. [Socket](https://socket.dev) analyzes package behavior.
 
@@ -99,7 +99,7 @@ colors@1.4.0: WARNING. install script detected
 faker@5.5.3: CRITICAL. obfuscated code, network access
 ```
 
-Step 4: Snyk for Vulnerability Scanning
+Step 4 - Snyk for Vulnerability Scanning
 
 Snyk maintains its own vulnerability database and catches issues npm audit misses.
 
@@ -127,7 +127,7 @@ snyk test --severity-threshold=high
 Exit code 1 if high or critical vulns found
 ```
 
-Step 5: Detect Malicious Package Patterns
+Step 5 - Detect Malicious Package Patterns
 
 Beyond scanners, know what to look for manually:
 
@@ -151,7 +151,7 @@ Inspect for obfuscated code patterns
 grep -r "eval\|atob\|Buffer.from.*base64\|String.fromCharCode" node_modules/suspicious-pkg/ | head -20
 ```
 
-Step 6: Lockfile Integrity
+Step 6 - Lockfile Integrity
 
 The `package-lock.json` file is your first line of defense. Commit it and verify it.
 
@@ -182,7 +182,7 @@ Integrity hashes are stored in `package-lock.json`:
 
 npm verifies this hash on every install. If a package is modified after publish, the hash will not match.
 
-Step 7: CI Integration
+Step 7 - CI Integration
 
 ```yaml
 .github/workflows/security.yml
@@ -228,7 +228,7 @@ jobs:
           args: --severity-threshold=high
 ```
 
-Step 8: Dependency Review for Pull Requests
+Step 8 - Dependency Review for Pull Requests
 
 GitHub's dependency review action blocks PRs that introduce vulnerable packages:
 
@@ -250,7 +250,7 @@ jobs:
           deny-licenses: GPL-3.0, AGPL-3.0   # optional license policy
 ```
 
-Auditing Existing Projects: Quick Script
+Auditing Existing Projects - Quick Script
 
 ```bash
 #!/bin/bash

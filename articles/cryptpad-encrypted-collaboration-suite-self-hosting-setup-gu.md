@@ -29,7 +29,7 @@ Before starting, ensure you have:
 - A domain pointing to your server (for TLS certificates)
 - Basic familiarity with the command line
 
-Step 1: Install CryptPad with Docker
+Step 1 - Install CryptPad with Docker
 
 The recommended approach uses Docker for isolated deployment and simplified updates. Create a directory for your installation:
 
@@ -95,7 +95,7 @@ cryptpad.yourdomain.com {
 }
 ```
 
-Step 2: Understand CryptPad's Encryption Model
+Step 2 - Understand CryptPad's Encryption Model
 
 CryptPad employs a unique encryption architecture worth understanding before production deployment. Each document generates a random 256-bit key locally. The URL itself contains the encryption key, sharing a document URL grants decryption access. This design means your server stores only encrypted blobs; even with full server access, administrators cannot read user content.
 
@@ -103,7 +103,7 @@ User accounts use a different mechanism. When users create accounts, CryptPad de
 
 Document types in CryptPad include CryptDrive (file manager), Pad (rich text), Code (code editor), Slide (presentations), Sheet (spreadsheets), Kanban, and Form. Each document type shares the same zero-knowledge guarantee. When a user opens a shared document link, the decryption key in the URL fragment never gets sent to the server because browsers do not transmit the fragment portion of a URL in HTTP requests.
 
-Step 3: Configuration and Customization
+Step 3 - Configuration and Customization
 
 CryptPad stores configuration in `/var/cryptpad/customize` when using Docker. Key files include:
 
@@ -149,7 +149,7 @@ docker exec cryptpad cp -r /var/cryptpad/customize.dist/. /var/cryptpad/customiz
 
 Then edit `customize/application_config.js` to set your organization name and logo path. The `customize/pages.js` file controls landing page content. These changes survive container updates because the customize directory is mounted as a volume.
 
-Step 4: Security Hardening
+Step 4 - Security Hardening
 
 Production deployments require attention to several security areas:
 
@@ -210,7 +210,7 @@ server {
 
 This blocks brute-force login attempts and API abuse without affecting normal use patterns.
 
-Step 5: Team User Management
+Step 5 - Team User Management
 
 Self-hosted CryptPad offers several user management strategies:
 
@@ -258,7 +258,7 @@ Teams Feature:
 
 CryptPad's Teams functionality lets groups share a common drive with role-based permissions. Create a team from within the web interface by clicking your avatar and selecting "New Team." Teams have separate storage quotas from individual users and support Owner, Admin, Member, and Viewer roles. This makes CryptPad suitable for department-level document management without exposing individual drives.
 
-Step 6: Backup and Recovery
+Step 6 - Backup and Recovery
 
 Implement regular backups of the CryptPad data volume:
 
@@ -317,7 +317,7 @@ docker stats cryptpad --no-stream
 
 If CPU usage spikes during peak hours, increase the Node.js worker pool by setting `UV_THREADPOOL_SIZE=16` in your compose environment block. Memory pressure usually indicates too many concurrent document sessions; raising your server to 4GB RAM resolves most scaling issues up to 200 concurrent users.
 
-Step 7: Updating CryptPad
+Step 7 - Updating CryptPad
 
 Pull the latest image and restart to apply updates:
 

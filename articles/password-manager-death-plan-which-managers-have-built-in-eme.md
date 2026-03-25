@@ -23,12 +23,12 @@ Table of Contents
 - [Legal Considerations for Emergency Access](#legal-considerations-for-emergency-access)
 - [Automated Emergency Access Testing](#automated-emergency-access-testing)
 - [Recovery Instructions Document](#recovery-instructions-document)
-- [Step 1: Initiate Emergency Access Request](#step-1-initiate-emergency-access-request)
-- [Step 2: Wait for Automatic Grant](#step-2-wait-for-automatic-grant)
-- [Step 3: Access the Vault](#step-3-access-the-vault)
-- [Step 4: Access Critical Accounts](#step-4-access-critical-accounts)
+- [Step 1 - Initiate Emergency Access Request](#step-1-initiate-emergency-access-request)
+- [Step 2 - Wait for Automatic Grant](#step-2-wait-for-automatic-grant)
+- [Step 3 - Access the Vault](#step-3-access-the-vault)
+- [Step 4 - Access Critical Accounts](#step-4-access-critical-accounts)
 - [Important Notes](#important-notes)
-- [Scenario: What If the Password Manager Company Ceases Operations?](#scenario-what-if-the-password-manager-company-ceases-operations)
+- [Scenario - What If the Password Manager Company Ceases Operations?](#scenario-what-if-the-password-manager-company-ceases-operations)
 
 Digital inheritance laws vary by jurisdiction:
 
@@ -119,26 +119,26 @@ Emergency Contact Instructions for [Your Name]'s Vault
 If you receive this document, [name] is incapacitated or deceased.
 These instructions allow you to access critical accounts.
 
-Step 1: Initiate Emergency Access Request
-Manager: [1Password / Bitwarden / Other]
-Date configured: [date]
+Step 1 - Initiate Emergency Access Request
+Manager - [1Password / Bitwarden / Other]
+Date configured - [date]
 
 1. Go to [password manager login page]
 2. Click "Emergency Access"
 3. Enter your email: [emergency contact email]
 4. Click "Request Access"
 
-Step 2: Wait for Automatic Grant
+Step 2 - Wait for Automatic Grant
 Access will be automatically granted after [X days] of waiting period.
 
-Step 3: Access the Vault
+Step 3 - Access the Vault
 Once access is granted:
 1. Log in with your own credentials
 2. View shared vault
 3. Look for file named "ACCOUNT_RECOVERY.txt"
 4. Follow account-specific recovery steps
 
-Step 4: Access Critical Accounts
+Step 4 - Access Critical Accounts
 
 Banking Access
 - Bank name: [bank]
@@ -164,12 +164,12 @@ Contact information if you have questions: [lawyer/executor contact]
 
 Store this document in a secure physical location, a lawyer's office, safe deposit box, or trusted family member's home.
 
-Scenario: What If the Password Manager Company Ceases Operations?
+Scenario - What If the Password Manager Company Ceases Operations?
 
 Emergency access features depend on company infrastructure:
 
 ```
-Worst case: Company shuts down and servers are powered off
+Worst case - Company shuts down and servers are powered off
 → Emergency access no longer functions
 
 Mitigation strategies:
@@ -190,7 +190,7 @@ Mitigation strategies:
    - Lawyer opens envelope if death is confirmed
 ```
 
-Extreme paranoia: use low-tech backups alongside high-tech emergency access.
+Extreme paranoia - use low-tech backups alongside high-tech emergency access.
 
 Frequently Asked Questions
 

@@ -21,10 +21,10 @@ Achieving genuine anonymity in cryptocurrency transactions requires understandin
 
 - Before using any wallet: review its network code or use open-source implementations where you can verify no telemetry exists.
 - Generate Fresh Address ```bash: # Generate new address bitcoin-cli getnewaddress "anonymous-receive" # Don't reuse this address ``` 3.
-- Receive Funds via Monero: Atomic Swap (if available) ```bash # Atomic swap Bitcoin to Monero # Using tools like XMR-Monero-Atomic-Swap for better privacy ``` 4.
+- Receive Funds via Monero - Atomic Swap (if available) ```bash # Atomic swap Bitcoin to Monero # Using tools like XMR-Monero-Atomic-Swap for better privacy ``` 4.
 - Use Monero for final: transactions if privacy requirements are extreme 3.
-- Use Tails or Whonix: as your operating system 5.
-- Verify your node is using Tor: ```bash
+- Use Tails or Whonix - as your operating system 5.
+- Verify your node is using Tor - ```bash
 bitcoin-cli getnetworkinfo | grep -A 5 "addr"
 ```
 
@@ -40,7 +40,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Threat Model
+Step 1 - Understand the Threat Model
 
 Cryptocurrency transactions are not inherently anonymous. Public blockchains record every transaction with wallet addresses, amounts, and timestamps. Blockchain analysis firms track the flow of funds by clustering addresses, analyzing timing patterns, and correlating on-chain data with external information like IP addresses, exchange KYC data, and social media activity.
 
@@ -48,7 +48,7 @@ The Tor network provides anonymity by routing your traffic through multiple encr
 
 However, Tor integration alone does not guarantee complete anonymity. Metadata, behavioral patterns, and implementation flaws can still compromise your privacy. This guide covers both the implementation and the limitations.
 
-Step 2: Configure Tor for Cryptocurrency Wallets
+Step 2 - Configure Tor for Cryptocurrency Wallets
 
 Most cryptocurrency wallets can be configured to use Tor through either SOCKS5 proxy or control port settings. The method varies by wallet, but the general principle remains consistent.
 
@@ -94,7 +94,7 @@ and set `daemon_ssl` to use Tor
 
 Running your own Electrum server ensures that no third party can log which addresses you query. Combine this with a pruned Bitcoin node running exclusively over Tor for a complete setup.
 
-Step 3: Run a Tor Hidden Service for Your Node
+Step 3 - Run a Tor Hidden Service for Your Node
 
 Exposing your cryptocurrency node as a Tor hidden service allows other nodes to connect to you without revealing your IP address. This increases the network's decentralization while protecting your privacy.
 
@@ -127,7 +127,7 @@ This produces an address like `example.onion`. Share this with peers who want to
 addnode=example.onion
 ```
 
-Step 4: Privacy Coin Considerations
+Step 4 - Privacy Coin Considerations
 
 While Bitcoin with Tor provides reasonable privacy for most users, blockchain analysis can still de-anonymize transactions through pattern analysis, especially for multiple related transactions. Privacy-focused cryptocurrencies like Monero implement stronger defaults.
 
@@ -152,7 +152,7 @@ Configure your wallet to connect to localhost rather than remote nodes:
 monero-wallet-cli --wallet-file yourwallet --daemon-address 127.0.0.1:18081
 ```
 
-Step 5: Operational Security Fundamentals
+Step 5 - Operational Security Fundamentals
 
 Technical implementation matters only within a broader operational security context. Weaknesses in your practices can undermine all technical protections.
 
@@ -184,7 +184,7 @@ Logging and telemetry in wallet software can expose your IP address despite Tor.
 
 Chain analysis companies maintain databases of known addresses associated with exchanges, darknet markets, and other services. Any coins passing through these addresses inherit their association. "Coin mixing" or "tumbling" services claim to break these links, but many are scams or operated by law enforcement.
 
-Step 6: Verification and Testing
+Step 6 - Verification and Testing
 
 After implementing Tor integration, verify it works correctly:
 
@@ -198,7 +198,7 @@ bitcoin-cli getpeerinfo | grep -E "addronnet.*onion"
 
 Confirm your node accepts only onion connections and that your visible IP differs from your actual IP.
 
-Step 7: CoinJoin and Mixing Services for Additional Privacy
+Step 7 - CoinJoin and Mixing Services for Additional Privacy
 
 While Tor provides IP anonymity, blockchain analysis can still trace transaction patterns. CoinJoin implementations add a layer of transaction-level privacy by mixing multiple inputs from different users into a single transaction, breaking the input-output relationship that analysts rely on.
 
@@ -234,7 +234,7 @@ python jmclient/jmclient_launcher.py
 
 This approach avoids centralized services entirely, though it requires more technical knowledge to operate effectively.
 
-Step 8: Practical Workflow: Complete Anonymous Transaction
+Step 8 - Practical Workflow: Complete Anonymous Transaction
 
 Here's a step-by-step workflow combining all elements:
 
@@ -273,13 +273,13 @@ Limitations and Honest Assessment
 
 Tor provides excellent IP-level anonymity, but several limitations remain:
 
-Timing Attacks: If someone controls both Tor entry and exit nodes, they can correlate timing patterns to link activity. For maximum protection, use multiple VPNs alongside Tor (with caution about deanonymization).
+Timing Attacks - If someone controls both Tor entry and exit nodes, they can correlate timing patterns to link activity. For maximum protection, use multiple VPNs alongside Tor (with caution about deanonymization).
 
-UTXO Clustering: Bitcoin addresses naturally cluster together in wallet software. Transferring between your addresses creates on-chain evidence of common ownership.
+UTXO Clustering - Bitcoin addresses naturally cluster together in wallet software. Transferring between your addresses creates on-chain evidence of common ownership.
 
-Exchange Integration: When cashing out to fiat, KYC requirements at exchanges create the weakest link. Consider peer-to-peer cash transactions or LocalBitcoins.
+Exchange Integration - When cashing out to fiat, KYC requirements at exchanges create the weakest link. Consider peer-to-peer cash transactions or LocalBitcoins.
 
-Long-Term Metadata: Even perfect transaction privacy doesn't help if your email, phone number, or device fingerprint identifies you to the exchange.
+Long-Term Metadata - Even perfect transaction privacy doesn't help if your email, phone number, or device fingerprint identifies you to the exchange.
 
 Defense-in-Depth for Serious Privacy
 

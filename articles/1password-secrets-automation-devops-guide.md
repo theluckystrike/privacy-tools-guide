@@ -36,7 +36,7 @@ spec:
 
 This approach automatically synchronizes secrets from 1Password into Kubernetes, refreshing them periodically without manual intervention.
 
-Step 5: GitLab CI/CD Implementation
+Step 5 - GitLab CI/CD Implementation
 
 GitLab CI/CD integrates smoothly with 1Password using the service account token:
 

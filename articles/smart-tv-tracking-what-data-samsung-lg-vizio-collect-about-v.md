@@ -15,11 +15,11 @@ voice-checked: true
 ---
 
 
-Smart TV Brand Comparison: Data Collection and Privacy (2026)
+Smart TV Brand Comparison - Data Collection and Privacy (2026)
 
 Table of Contents
 
-- [Smart TV Brand Comparison: Data Collection and Privacy (2026)](#smart-tv-brand-comparison-data-collection-and-privacy-2026)
+- [Smart TV Brand Comparison - Data Collection and Privacy (2026)](#smart-tv-brand-comparison-data-collection-and-privacy-2026)
 - [Real-World Network Traffic Analysis](#real-world-network-traffic-analysis)
 - [Network Isolation Implementation Guide](#network-isolation-implementation-guide)
 - [Smart TV Data Minimization Alternatives](#smart-tv-data-minimization-alternatives)
@@ -38,7 +38,7 @@ Not all smart TVs track equally. Here's a detailed breakdown of current privacy 
 | Apple TV 4K | No | No | Encrypted | None | 5/5 |
 | Hisense | Yes | Yes | Yes | High | 1/5 |
 
-Key finding: Apple TV 4K provides the best privacy, but costs $129-199. Older Roku models (2015-2018) had less aggressive tracking than current models.
+Key finding - Apple TV 4K provides the best privacy, but costs $129-199. Older Roku models (2015-2018) had less aggressive tracking than current models.
 
 ---
 
@@ -61,9 +61,9 @@ Smart TV app queries:
 pservice.interpark.com              # Korean shopping service (Samsung owns Interpark)
 api.smartthings.samsung.com         # IoT device coordination
 
-Frequency: Every 15-30 minutes, continuously
-Data size: 50-500KB per query (depends on what you're watching)
-Pattern: Follows TV usage, more queries when TV is on
+Frequency - Every 15-30 minutes, continuously
+Data size - 50-500KB per query (depends on what you're watching)
+Pattern - Follows TV usage, more queries when TV is on
 ```
 
 LG Smart TV Network Footprint
@@ -73,15 +73,15 @@ LG webOS tracking infrastructure
 
 Primary trackers:
 logv2.xLGlog.com                    # LG's central logging server
-lggedge.lgthinq.com                 # LG ThinQ ecosystem integration
+lggedge.lgthinq.com                 # LG ThinQ environment integration
 lgtvsdp.lgthinq.com                 # LG TV Smart Device Protocol
 
 Behavioral tracking:
 tracking.webos.lgtvsdp.com          # WebOS behavior tracking
 personalization.lgthinq.com         # Profile building
 
-Frequency: Every 10-20 minutes when connected
-Pattern: Sends data even when TV app is not in focus
+Frequency - Every 10-20 minutes when connected
+Pattern - Sends data even when TV app is not in focus
 ```
 
 Vizio SmartCast Network Behavior
@@ -99,9 +99,9 @@ Demographic enrichment:
 epix.vizio.com                      # Premium content partnerships
 infonetics.vizio.com                # Data broker partnerships
 
-Frequency: Continuous (even when idle)
-Data size: 2-10MB per hour when watching
-Special behavior: Collects data from HDMI devices (Google Chromecast, Roku sticks)
+Frequency - Continuous (even when idle)
+Data size - 2-10MB per hour when watching
+Special behavior - Collects data from HDMI devices (Google Chromecast, Roku sticks)
 ```
 
 ---
@@ -110,14 +110,14 @@ Network Isolation Implementation Guide
 
 For technical users, complete network isolation is the nuclear option:
 
-Method 1: Separate VLAN (Requires Managed Switch or Advanced Router)
+Method 1 - Separate VLAN (Requires Managed Switch or Advanced Router)
 
 ```bash
 #!/bin/bash
 Configure isolated VLAN for smart TV
-Requires: UniFi controller or similar managed network
+Requires - UniFi controller or similar managed network
 
-Step 1: Create isolated network in router
+Step 1 - Create isolated network in router
 OpenWrt example:
 uci add network interface tv_vlan
 uci set network.tv_vlan=interface
@@ -129,7 +129,7 @@ uci set network.tv_vlan.ipaddr=192.168.100.1
 uci set network.tv_vlan.netmask=255.255.255.0
 uci commit network
 
-Step 2: Configure firewall to block VLAN ↔ Main network communication
+Step 2 - Configure firewall to block VLAN ↔ Main network communication
 uci add firewall zone
 uci set firewall.@zone[-1].name=tv_zone
 uci set firewall.@zone[-1].input=REJECT
@@ -138,14 +138,14 @@ uci set firewall.@zone[-1].forward=REJECT
 uci set firewall.@zone[-1].network=tv_vlan
 uci commit firewall
 
-Step 3: Connect TV to isolated VLAN
-TV settings: WiFi > Connect to "Guest Network" or VLAN SSID
+Step 3 - Connect TV to isolated VLAN
+TV settings - WiFi > Connect to "Guest Network" or VLAN SSID
 
 TV cannot see or access any device on your main network
 TV can still reach internet, but cannot reach your computers, phones, etc.
 ```
 
-Method 2: IP Route Isolation (Linux Router)
+Method 2 - IP Route Isolation (Linux Router)
 
 ```bash
 #!/bin/bash
@@ -173,9 +173,9 @@ Smart TV Data Minimization Alternatives
 
 If you want a connected TV experience with minimal tracking:
 
-Option 1: External Media Device + Dumb TV
+Option 1 - External Media Device + Dumb TV
 
-Cost: $150-250 additional upfront, no recurring fees
+Cost - $150-250 additional upfront, no recurring fees
 
 ```bash
 Recommended setup:
@@ -195,9 +195,9 @@ Downsides:
 - Upfront cost higher, but privacy benefit significant
 ```
 
-Option 2: Disable Smart Features Entirely
+Option 2 - Disable Smart Features Entirely
 
-Cost: $0 upfront, requires discipline
+Cost - $0 upfront, requires discipline
 
 ```bash
 For any smart TV:
@@ -234,7 +234,7 @@ monthly_tv_audit.sh - Verify tracking is actually blocked
 
 echo "=== Monthly Smart TV Privacy Audit ==="
 
-Test 1: Verify DNS blocking is active
+Test 1 - Verify DNS blocking is active
 echo ""
 echo "Test 1: DNS Blocking"
 echo "Query Samsung tracking domain..."
@@ -245,14 +245,14 @@ else
     echo " Samsung domain blocked"
 fi
 
-Test 2: Monitor firewall blocks
+Test 2 - Monitor firewall blocks
 echo ""
 echo "Test 2: Firewall Rules"
 echo "Checking iptables rules..."
 iptables -L FORWARD -n -v | grep -i "drop" | head -5
 echo "If no results, firewall rules may not be configured"
 
-Test 3: Check Pi-hole admin panel
+Test 3 - Check Pi-hole admin panel
 echo ""
 echo "Test 3: Pi-hole Statistics"
 echo "Visit http://raspberrypi.local/admin"
@@ -260,14 +260,14 @@ echo "Check 'DNS Queries' tab:"
 echo "  - Should show 0 queries to Samsung/LG/Vizio domains"
 echo "  - If > 0, tracker domains are not blocked"
 
-Test 4: Monitor bandwidth patterns
+Test 4 - Monitor bandwidth patterns
 echo ""
 echo "Test 4: Background Bandwidth"
 echo "Turn off TV for 2 hours, monitor traffic..."
 echo "Expected: <50MB background traffic"
 echo "Actual: [Run 'nethogs' or 'iftop' and observe]"
 
-Test 5: Analyze network captures
+Test 5 - Analyze network captures
 echo ""
 echo "Test 5: Recent Network Capture"
 echo "If you have tcpdump logs, check for:"

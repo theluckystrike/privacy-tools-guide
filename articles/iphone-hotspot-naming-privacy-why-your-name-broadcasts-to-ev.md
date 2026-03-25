@@ -25,7 +25,7 @@ Table of Contents
 - [Real-World Privacy Risks Beyond the Obvious](#real-world-privacy-risks-beyond-the-obvious)
 - [Changing Your iPhone Device Name](#changing-your-iphone-device-name)
 - [Additional Privacy Hardening Beyond the Name](#additional-privacy-hardening-beyond-the-name)
-- [Technical Deep Dive: iOS Personal Hotspot Architecture](#technical-deep detailed look-ios-personal-hotspot-architecture)
+- [Technical Deep Dive - iOS Personal Hotspot Architecture](#technical-deep detailed look-ios-personal-hotspot-architecture)
 - [Developer Considerations](#developer-considerations)
 - [Best Practices Summary](#best-practices-summary)
 - [Advanced Detection and Testing](#advanced-detection-and-testing)
@@ -106,17 +106,17 @@ Most guides stop at "change your hotspot name" without explaining why the risk m
 
 Domestic violence and stalking situations: If someone is attempting to locate or surveil you, your hotspot SSID appearing in their Wi-Fi scan reveals your presence in a location. Tools that log nearby Wi-Fi networks are trivially available and can be used to confirm you were at a specific location at a specific time.
 
-Sensitive professional contexts: Lawyers, doctors, journalists, and investigators who work in locations where opposing parties may be present. courthouses, mediations, industry conferences. inadvertently announce their identity through their hotspot name to everyone nearby with a smartphone.
+Sensitive professional contexts - Lawyers, doctors, journalists, and investigators who work in locations where opposing parties may be present. courthouses, mediations, industry conferences. inadvertently announce their identity through their hotspot name to everyone nearby with a smartphone.
 
-Political and activist contexts: At demonstrations or organizing events, anyone with a Wi-Fi scanner can collect all hotspot SSIDs in range, building a list of personally identified participants without anyone consenting to that identification.
+Political and activist contexts - At demonstrations or organizing events, anyone with a Wi-Fi scanner can collect all hotspot SSIDs in range, building a list of personally identified participants without anyone consenting to that identification.
 
-Corporate situations: At trade shows and conferences, competitors scanning nearby Wi-Fi networks can identify which employees of rival companies are present, even if those employees are trying to attend quietly.
+Corporate situations - At trade shows and conferences, competitors scanning nearby Wi-Fi networks can identify which employees of rival companies are present, even if those employees are trying to attend quietly.
 
 Changing Your iPhone Device Name
 
 To modify the name your iPhone broadcasts:
 
-Method 1: Settings App
+Method 1 - Settings App
 
 1. Open Settings → General → About
 2. Tap Name
@@ -125,11 +125,11 @@ Method 1: Settings App
 
 Choose a generic name that doesn't identify you: "iPhone", "iPhone 15", or a random string like "Device-4821" all work well. Avoid anything that includes your real name, an username you use elsewhere, or other personally identifying terms.
 
-Method 2: Via Finder/iTunes (More Control)
+Method 2 - Via Finder/iTunes (More Control)
 
 Connect your iPhone to a Mac and rename through Finder for the same effect with a larger keyboard. useful if you want to type a longer random string without fighting autocorrect on a phone keyboard.
 
-Method 3: MDM Deployment (Enterprise)
+Method 3 - MDM Deployment (Enterprise)
 
 For organizations managing multiple devices:
 
@@ -180,7 +180,7 @@ wlan.addr contains "iPhone" || wlan.ssid contains "iPhone"
 
 Running these tools against your own device from a separate machine reveals exactly what nearby observers can see. This is a useful exercise to confirm your name change took effect and to understand what other information your device is broadcasting.
 
-Technical Deep Dive: iOS Personal Hotspot Architecture
+Technical Deep Dive - iOS Personal Hotspot Architecture
 
 When you enable personal hotspot, iOS creates several network interfaces that explain why your name appears in so many places simultaneously:
 
@@ -259,7 +259,7 @@ Launch with capture interface
 open /Applications/Wireshark.app
 
 Filter for your device's SSID in beacon frames
-Display filter: (wlan.fc.type_subtype == 8) && (wlan.ssid == "yourSSID")
+Display filter - (wlan.fc.type_subtype == 8) && (wlan.ssid == "yourSSID")
 ```
 
 Beacon frames transmit every 100 milliseconds when hotspot is enabled. Verify your changed name appears correctly and that no additional identifiers leak through beacon content.

@@ -22,7 +22,7 @@ What Is a Subnet Conflict?
 
 A subnet conflict occurs when two or more networks assign the same IP address range to different interfaces or VPN tunnels. When your operating system cannot determine which route to use, packets get dropped, misruled, or trapped in endless loops.
 
-Consider this scenario: Your home network uses `192.168.1.0/24`, your corporate VPN uses `192.168.1.0/24`, and your split-tunnel VPN also uses `192.168.1.0/24`. All three claim the same address space. Your machine simply cannot distinguish between them.
+Consider this scenario - Your home network uses `192.168.1.0/24`, your corporate VPN uses `192.168.1.0/24`, and your split-tunnel VPN also uses `192.168.1.0/24`. All three claim the same address space. Your machine simply cannot distinguish between them.
 
 Prerequisites
 
@@ -34,7 +34,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How VPN Subnet Conflicts Happen
+Step 1 - How VPN Subnet Conflicts Happen
 
 1. Multiple Simultaneous VPN Connections
 
@@ -52,7 +52,7 @@ VPN providers configure their server pools with specific subnets. Many providers
 
 Your home router likely uses `192.168.1.0/24` or `192.168.0.0/24`. Many VPN clients default to the same ranges for their virtual interfaces. The result: your VPN tunnel claims the same addresses your local network already uses.
 
-Step 2: Detecting Subnet Conflicts
+Step 2 - Detecting Subnet Conflicts
 
 First, identify the conflict. On Linux or macOS, check your routing table:
 
@@ -81,9 +81,9 @@ route print
 
 Check for identical destination networks under "IPv4 Route Table."
 
-Step 3: Practical Solutions
+Step 3 - Practical Solutions
 
-Solution 1: Use Split Tunneling
+Solution 1 - Use Split Tunneling
 
 Split tunneling sends only specific traffic through the VPN while letting other traffic use your regular connection. Most VPN clients support this. Configure your VPN to route only necessary subnets.
 
@@ -105,7 +105,7 @@ AllowedIPs = 10.0.0.0/8, 172.16.0.0/12
 Endpoint = vpn.example.com:51820
 ```
 
-Solution 2: Change VPN Client Address Ranges
+Solution 2 - Change VPN Client Address Ranges
 
 If your VPN client allows custom tunnel addresses, assign it a range that does not conflict with your local network. Common non-overlapping ranges include:
 
@@ -130,13 +130,13 @@ Address = 10.200.0.2/24
 ListenPort = 51820
 ```
 
-Solution 3: Adjust Your Local Network
+Solution 3 - Adjust Your Local Network
 
 If possible, change your home router or office network to use an uncommon subnet. Many routers default to `192.168.1.0/24` or `192.168.0.0/24`. Switching to something like `10.99.0.0/24` or `172.31.100.0/24` reduces conflict probability.
 
 Access your router's admin panel and find the LAN settings. Change the DHCP range to something less common.
 
-Solution 4: Use Metric Configuration (Windows)
+Solution 4 - Use Metric Configuration (Windows)
 
 On Windows, you can assign metrics to prioritize routes. Lower metrics take precedence. Force your VPN to use a higher metric so your local network takes priority for local addresses:
 
@@ -150,7 +150,7 @@ Find your interface names with:
 netsh interface ipv4 show interfaces
 ```
 
-Solution 5: Implement Route Tables Manually
+Solution 5 - Implement Route Tables Manually
 
 For advanced control, manually manage your routing table. On Linux:
 
@@ -164,7 +164,7 @@ sudo ip route add 10.50.0.0/16 via 10.8.0.1 dev tun0
 
 Create persistent routes by adding to `/etc/sysconfig/network-scripts/route-eth0` (RHEL/CentOS) or `/etc/network/interfaces` (Debian).
 
-Solution 6: Use a VPN Kill Switch with Routing Policy
+Solution 6 - Use a VPN Kill Switch with Routing Policy
 
 Some VPN clients include policy-based routing. Configure kill switches to only route traffic matching specific criteria:
 
@@ -182,7 +182,7 @@ iptables -A OUTPUT -o eth0 -d 10.0.0.0/8 -j REJECT
 
 This ensures only properly routed traffic escapes, preventing leaks that cause conflicts.
 
-Step 4: Preventing Future Conflicts
+Step 4 - Preventing Future Conflicts
 
 - Document your networks: Keep a record of every subnet you use, home, office, every VPN you connect to.
 - Audit regularly: Periodically review `ip route show` or `netstat -nr` to catch new conflicts early.
@@ -190,18 +190,18 @@ Step 4: Preventing Future Conflicts
 - Prefer WireGuard: WireGuard's simple design makes configuration clearer and conflicts easier to spot.
 - Avoid 0.0.0.0/0 routes: Unless necessary, use split tunneling to avoid overriding your entire routing table.
 
-Step 5: Diagnosing Conflicts with Advanced Tools
+Step 5 - Diagnosing Conflicts with Advanced Tools
 
 When basic route inspection shows conflicts, use specialized tools:
 
 ```bash
-Linux: Use netstat with verbose output
+Linux - Use netstat with verbose output
 netstat -rne | sort -k1
 
 macOS: Detailed route information
 netstat -nr | awk '{print $1}' | sort | uniq -c | grep -v "1 "
 
-Windows: Route with gateway information
+Windows - Route with gateway information
 route print -4 | findstr /C:"0.0.0.0"
 
 Check MTU compatibility
@@ -262,7 +262,7 @@ def parse_routing_table():
 parse_routing_table()
 ```
 
-Step 6: Dynamic Conflict Resolution
+Step 6 - Dynamic Conflict Resolution
 
 Create a script that automatically detects and fixes conflicts:
 
@@ -272,7 +272,7 @@ auto-fix-vpn-conflicts.sh
 
 CONFLICT_DETECTED=0
 
-Function: Check for routing conflicts
+Function - Check for routing conflicts
 check_conflicts() {
     echo "Checking for routing conflicts..."
 
@@ -289,7 +289,7 @@ check_conflicts() {
     fi
 }
 
-Function: Resolve conflicts
+Function - Resolve conflicts
 resolve_conflicts() {
     if [ $CONFLICT_DETECTED -eq 0 ]; then
         return
@@ -315,7 +315,7 @@ check_conflicts
 resolve_conflicts
 ```
 
-Step 7: Windows-Specific Subnet Conflict Resolution
+Step 7 - Windows-Specific Subnet Conflict Resolution
 
 Windows handles routing differently than Linux. Use these Windows-specific commands:
 
@@ -337,7 +337,7 @@ Verify routes
 route print | find "10.0.0.0"
 ```
 
-Step 8: Multi-VPN Management Framework
+Step 8 - Multi-VPN Management Framework
 
 For users connecting to multiple VPNs simultaneously (corporate + privacy VPN):
 
@@ -422,7 +422,7 @@ manager.assign_non_overlapping_subnets()
 manager.generate_config()
 ```
 
-Step 9: Test Subnet Conflict Fixes
+Step 9 - Test Subnet Conflict Fixes
 
 After implementing fixes, verify connectivity:
 

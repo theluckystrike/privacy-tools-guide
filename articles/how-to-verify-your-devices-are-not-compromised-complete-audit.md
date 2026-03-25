@@ -28,15 +28,15 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Starting Point: Document Your Baseline
+Step 1 - Starting Point: Document Your Baseline
 
 Before detecting anomalies, establish what "normal" looks like for your system. Create a baseline snapshot during a known-clean state:
 
 ```bash
-Linux/macOS: Export running processes
+Linux/macOS - Export running processes
 ps aux > ~/baseline_processes_$(date +%Y%m%d).txt
 
-Linux: Record installed packages
+Linux - Record installed packages
 dpkg -l > ~/baseline_packages_$(date +%Y%m%d).txt  # Debian/Ubuntu
 rpm -qa > ~/baseline_packages_$(date +%Y%m%d).txt  # RHEL/CentOS
 
@@ -46,7 +46,7 @@ ls /Applications > ~/baseline_apps_$(date +%Y%m%d).txt
 
 Store these baselines securely, preferably offline or in encrypted storage. Compare current system state against these snapshots during audits.
 
-Step 2: Process Analysis
+Step 2 - Process Analysis
 
 Unfamiliar processes often indicate compromise. Start by listing all running processes and checking for suspicious entries.
 
@@ -94,7 +94,7 @@ Search for known malware process names
 Get-Process | Where-Object {$_.Name -match 'cryptominer|coinhive|minerd'}
 ```
 
-Step 3: Network Connection Audit
+Step 3 - Network Connection Audit
 
 Compromised devices often maintain unauthorized network connections for command-and-control (C2) communication or data exfiltration.
 
@@ -133,7 +133,7 @@ Get-NetTCPConnection | Select-Object OwningProcess, LocalAddress, RemoteAddress 
 }
 ```
 
-Step 4: System Integrity Verification
+Step 4 - System Integrity Verification
 
 Verify that critical system files remain unmodified. Rootkits and malware often replace core system binaries.
 
@@ -177,7 +177,7 @@ Review system log for code signature failures
 log show --predicate 'eventMessage contains "code signature"' --last 1h
 ```
 
-Step 5: Authentication and Access Review
+Step 5 - Authentication and Access Review
 
 Compromised credentials enable unauthorized access. Audit user accounts and authentication logs.
 
@@ -221,7 +221,7 @@ Audit login items
 ls -la ~/Library/Application\ Support/com.apple.backgroundtaskmanagementagent/
 ```
 
-Step 6: Log Analysis
+Step 6 - Log Analysis
 
 System and application logs reveal historical anomalies. Focus on authentication, privilege escalation, and error events.
 
@@ -251,7 +251,7 @@ Review install and removal events
 log show --predicate 'eventMessage contains "install"' --last 7d | grep -i "pkg\|app"
 ```
 
-Step 7: Storage and Persistence Check
+Step 7 - Storage and Persistence Check
 
 Malware often establishes persistence through startup items, cron jobs, or scheduled tasks.
 
@@ -299,7 +299,7 @@ List services
 Get-Service | Select-Object Name, Status, StartType
 ```
 
-Step 8: Practical Audit Workflow
+Step 8 - Practical Audit Workflow
 
 Execute a systematic audit using this sequence:
 
@@ -323,7 +323,7 @@ Some findings require immediate escalation beyond personal investigation:
 
 In these cases, isolate the affected system from the network, preserve forensic evidence, and consider engaging security professionals.
 
-Step 9: Build Audit Habits
+Step 9 - Build Audit Habits
 
 Perform device audits regularly, monthly for development machines handling sensitive work, quarterly for general systems. Automate baseline comparisons using tools like AIDE or OSSEC for continuous monitoring. Document your expected network topology and compare actual connections against it during each audit.
 
@@ -370,7 +370,7 @@ Related Articles
 
 - [Verify Your Devices Are Not Compromised](/how-to-verify-your-devices-are-not-compromised-complete-audit/)
 - [How to Check if Your Smart Home Devices Are Compromised](/how-to-check-if-your-smart-home-devices-are-compromised/)
-- [Cloud Storage Security Breach History: Compromised.](/cloud-storage-security-breach-history-compromised-services-t/)
+- [Cloud Storage Security Breach History - Compromised.](/cloud-storage-security-breach-history-compromised-services-t/)
 - [How to Detect if Your Email Is Compromised](/detect-email-compromise-guide)
 - [Communicate with Lawyer Privately When Device is Compromised](/how-to-communicate-with-lawyer-privately-when-device-compromised/)
 - [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)

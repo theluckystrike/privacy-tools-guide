@@ -19,13 +19,13 @@ Secure Shell Hardening Beyond SSH Config
 
 SSH configuration (`/etc/ssh/sshd_config`) is the first step. key-only auth, no root login, specific ciphers. But the session that follows SSH authentication has its own attack surface. This guide covers what happens after the connection is established: PAM controls, sudo hardening, session logging, and reducing SSH exposure entirely.
 
-PAM: Restrict Who Can Log In
+PAM - Restrict Who Can Log In
 
 PAM (Pluggable Authentication Modules) controls authentication and session setup.
 
 ```bash
 /etc/security/access.conf. allow only specific users/groups
-Format: permission : user/group : origin
+Format - permission : user/group : origin
 Deny all except members of the sshusers group
 
 /etc/pam.d/sshd. add this line near the top:
@@ -60,7 +60,7 @@ Limit SSH access to business hours using PAM time:
 
 ```bash
 /etc/security/time.conf
-Format: service;tty;users;time
+Format - service;tty;users;time
 Deny SSH for contractor account on weekends
 
 sshd;*;contractor;!Sa-Su0000-2400
@@ -88,7 +88,7 @@ These are in sshd_config, not profile. but document both
 ```bash
 Lock screen on inactivity using vlock (for console sessions)
 sudo apt install vlock
-Users can run: vlock -a  to lock all virtual consoles
+Users can run - vlock -a  to lock all virtual consoles
 
 For remote sessions, TMOUT in /etc/profile.d/ is the primary control
 ```
@@ -97,7 +97,7 @@ sudo Hardening
 
 ```bash
 /etc/sudoers.d/hardened. do not edit /etc/sudoers directly
-Always: sudo visudo -f /etc/sudoers.d/hardened
+Always - sudo visudo -f /etc/sudoers.d/hardened
 
 Require password every time (disable sudo timestamp caching)
 Defaults        timestamp_timeout=0
@@ -115,7 +115,7 @@ Defaults        !visiblepw
 Defaults        always_set_home
 Defaults        env_reset
 
-Per-user: allow specific commands only, no shell
+Per-user - allow specific commands only, no shell
 alice   ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart nginx, /usr/bin/systemctl reload nginx
 bob     ALL=(ALL) PASSWD: /usr/bin/apt-get update, /usr/bin/apt-get upgrade
 ```
@@ -236,7 +236,7 @@ Manually unban an IP
 sudo fail2ban-client set sshd unbanip 1.2.3.4
 ```
 
-Port Knocking: Hide SSH from Scanners
+Port Knocking - Hide SSH from Scanners
 
 Port knocking keeps port 22 closed until a correct sequence of connection attempts unlocks it. Effective against automated scanners.
 

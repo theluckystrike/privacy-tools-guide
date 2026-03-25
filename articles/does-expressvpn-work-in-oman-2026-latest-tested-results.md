@@ -280,8 +280,8 @@ speedtest-cli --simple
 
 Output example:
 Ping: 52 ms
-Download: 48.23 Mbit/s
-Upload: 22.11 Mbit/s
+Download - 48.23 Mbit/s
+Upload - 22.11 Mbit/s
 ```
 
 March 2026 testing from Muscat via Lightway UDP showed consistent download speeds between 35-55 Mbps. more than sufficient for standard development tasks, video calls, and accessing cloud services. TCP mode showed roughly 20% lower throughput due to TCP-over-TCP overhead, but remained usable for most workflows.

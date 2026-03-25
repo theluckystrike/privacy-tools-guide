@@ -43,7 +43,7 @@ Before you begin, ensure you have:
 
 For the VPS, providers like DigitalOcean, Linode, Hetzner, and AWS Lightsail all offer suitable options. A server with 1GB RAM and 1 vCPU is sufficient for personal use.
 
-Step 1: Set Up the VPS (Server-Side)
+Step 1 - Set Up the VPS (Server-Side)
 
 First, connect to your VPS via SSH and update the package lists:
 
@@ -116,7 +116,7 @@ Verify the interface is running:
 wg show wg0
 ```
 
-Step 2: Set Up the Client
+Step 2 - Set Up the Client
 
 Now configure your local machine to connect to the VPN. The process is similar but reversed.
 
@@ -165,7 +165,7 @@ sudo wg-quick up ~/wg0.conf
 
 On macOS, install the WireGuard app from the App Store and import the configuration. On Windows, use the official WireGuard client.
 
-Step 3: Test Your VPN Connection
+Step 3 - Test Your VPN Connection
 
 After connecting, verify the connection is working:
 
@@ -196,14 +196,14 @@ On the server, add the new peer
 wg set wg0 peer DEVICE2_PUBLIC_KEY allowed-ips 10.0.0.3/32
 ```
 
-Assign sequential IPs: 10.0.0.2 (device 1), 10.0.0.3 (device 2), etc. This makes it easy to identify which device is connected.
+Assign sequential IPs - 10.0.0.2 (device 1), 10.0.0.3 (device 2), etc. This makes it easy to identify which device is connected.
 
 Persisting Client Configurations
 
 WireGuard writes active configurations to `/etc/wireguard/wg0.conf` but you can preserve a backup:
 
 ```bash
-On server: backup configuration
+On server - backup configuration
 cp /etc/wireguard/wg0.conf /etc/wireguard/wg0.conf.bak
 
 To view current active config after modifications:
@@ -252,7 +252,7 @@ echo "Client config saved to ${PEER_NAME}-client.conf"
 wg show wg0
 ```
 
-Step 4: Manage Persistent Connections
+Step 4 - Manage Persistent Connections
 
 To ensure your VPN reconnects automatically after reboots, enable the service on the client:
 
@@ -304,7 +304,7 @@ Bandwidth Testing
 After setup, verify actual throughput:
 
 ```bash
-On server: iperf3 server
+On server - iperf3 server
 iperf3 -s
 
 On client (through VPN)
@@ -378,7 +378,7 @@ wg-quick up wg0
 echo "Keys rotated on $TIMESTAMP"
 ```
 
-Then add to crontab: `0 0 1 * * /root/rotate-wireguard-keys.sh`
+Then add to crontab - `0 0 1 * * /root/rotate-wireguard-keys.sh`
 
 Troubleshooting Common Issues
 

@@ -25,9 +25,9 @@ Table of Contents
 - [Evaluating Privacy Policies](#evaluating-privacy-policies)
 - [Privacy-Preserving Alternatives](#privacy-preserving-alternatives)
 - [Implementation Recommendations](#implementation-recommendations)
-- [Advanced Implementation: Distributed Testing Network](#advanced-implementation-distributed-testing-network)
-- [Threat Model: Speed Test Data Exposure](#threat-model-speed-test-data-exposure)
-- [Performance Comparison: Tools Tested](#performance-comparison-tools-tested)
+- [Advanced Implementation - Distributed Testing Network](#advanced-implementation-distributed-testing-network)
+- [Threat Model - Speed Test Data Exposure](#threat-model-speed-test-data-exposure)
+- [Performance Comparison - Tools Tested](#performance-comparison-tools-tested)
 - [Building Measurement Dashboards](#building-measurement-dashboards)
 - [Speed Test Accuracy and Limitations](#speed-test-accuracy-and-limitations)
 - [Regulatory Compliance and Data Protection](#regulatory-compliance-and-data-protection)
@@ -117,15 +117,15 @@ Evaluating Privacy Policies
 
 When selecting a speed test tool, examine these key factors:
 
-1. Data Retention: How long are test results stored? Look for providers with explicit retention policies of 24 hours or less.
+1. Data Retention - How long are test results stored? Look for providers with explicit retention policies of 24 hours or less.
 
-2. Third-Party Sharing: Does the provider share data with advertisers, analytics services, or data brokers? This is the primary privacy concern with commercial solutions.
+2. Third-Party Sharing - Does the provider share data with advertisers, analytics services, or data brokers? This is the primary privacy concern with commercial solutions.
 
-3. Geographic Data: Does the service collect precise location data? Some tools record your exact coordinates, which can be used to identify specific households.
+3. Geographic Data - Does the service collect precise location data? Some tools record your exact coordinates, which can be used to identify specific households.
 
-4. Account Requirements: Does the service require registration? Mandatory accounts create permanent user profiles linked to test history.
+4. Account Requirements - Does the service require registration? Mandatory accounts create permanent user profiles linked to test history.
 
-5. Source Code Availability: Open-source tools allow independent security audits. Review the codebase before trusting any tool with your network metadata.
+5. Source Code Availability - Open-source tools allow independent security audits. Review the codebase before trusting any tool with your network metadata.
 
 Privacy-Preserving Alternatives
 
@@ -144,7 +144,7 @@ Developers integrating speed tests into applications should consider these pract
 
 For organizations requiring compliance with data protection regulations, self-hosted solutions remain the only option that provides complete control over user data. This approach requires technical investment but eliminates third-party data handling entirely.
 
-Advanced Implementation: Distributed Testing Network
+Advanced Implementation - Distributed Testing Network
 
 For teams running multiple speed tests across different geographic locations, a distributed architecture captures network behavior more accurately. Deploy lightweight testing agents on multiple VPSs:
 
@@ -204,7 +204,7 @@ for result in results:
 
 This approach reveals network conditions across multiple paths without centralizing data collection.
 
-Threat Model: Speed Test Data Exposure
+Threat Model - Speed Test Data Exposure
 
 Understanding what data gets exposed during testing helps you choose the right tool:
 
@@ -217,7 +217,7 @@ Understanding what data gets exposed during testing helps you choose the right t
 | Device fingerprint | Low-Medium | Browser hardening reduces risk |
 | Test frequency | Medium | Patterns reveal work/life schedule |
 
-Performance Comparison: Tools Tested
+Performance Comparison - Tools Tested
 
 Tests conducted March 2026 measuring consistency and accuracy across five speed test solutions:
 
@@ -287,13 +287,13 @@ No speed test is perfectly accurate. Understanding measurement limitations helps
 
 Factors Affecting Accuracy
 
-Time of day: Internet congestion varies throughout the day. Testing at 3 AM yields different results than noon. For consistent measurements, test at the same time daily.
+Time of day - Internet congestion varies throughout the day. Testing at 3 AM yields different results than noon. For consistent measurements, test at the same time daily.
 
-Server load: The test server's capacity affects results. Overloaded servers show artificially slow speeds. M-Lab and LibreSpeed distribute load across nodes to minimize this.
+Server load - The test server's capacity affects results. Overloaded servers show artificially slow speeds. M-Lab and LibreSpeed distribute load across nodes to minimize this.
 
-Network variability: Your actual connection varies microsecond-by-microsecond. A single test captures one moment. Run multiple tests and average the results.
+Network variability - Your actual connection varies microsecond-by-microsecond. A single test captures one moment. Run multiple tests and average the results.
 
-Application overhead: The testing tool itself consumes resources, which can artificially lower speeds on resource-constrained devices.
+Application overhead - The testing tool itself consumes resources, which can artificially lower speeds on resource-constrained devices.
 
 When Speed Tests Are Misleading
 
@@ -342,7 +342,7 @@ echo "   - Document your privacy practices"
 
 For organizations deploying speed testing infrastructure, these compliance considerations are essential.
 
-The privacy-focused speed test ecosystem continues evolving as awareness grows. By choosing tools that align with your privacy values and understanding how network measurements work, you can maintain accurate performance monitoring without compromising user data.
+The privacy-focused speed test environment continues evolving as awareness grows. By choosing tools that align with your privacy values and understanding how network measurements work, you can maintain accurate performance monitoring without compromising user data.
 
 Related Articles
 

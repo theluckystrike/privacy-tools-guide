@@ -31,12 +31,12 @@ Conceptual Diffie-Hellman key exchange
 Both parties agree on public parameters (g, p)
 Each generates an ephemeral key pair
 
-Alice generates: private_a, public_a = g^private_a mod p
-Bob generates: private_b, public_b = g^private_b mod p
+Alice generates - private_a, public_a = g^private_a mod p
+Bob generates - private_b, public_b = g^private_b mod p
 
 They exchange public keys and compute the shared secret:
-Alice: shared_secret = public_b^private_a mod p
-Bob: shared_secret = public_a^private_b mod p
+Alice - shared_secret = public_b^private_a mod p
+Bob - shared_secret = public_a^private_b mod p
 
 Both have the same shared_secret without ever
 transmitting the private components
@@ -44,7 +44,7 @@ transmitting the private components
 
 The critical property is that even if an attacker intercepts both public keys and later compromises one of the private keys, they cannot compute the shared secret because Diffie-Hellman provides security under the assumption that discrete logarithm computation is computationally infeasible.
 
-The Double Ratchet: Achieving Both Forward and Future Secrecy
+The Double Ratchet - Achieving Both Forward and Future Secrecy
 
 Modern messaging apps use a more sophisticated construction called the Double Ratchet Algorithm, which Signal pioneered and now powers applications like Signal, WhatsApp, and Facebook Messenger's secret conversations.
 
@@ -108,7 +108,7 @@ Not all messaging apps provide genuine forward secrecy. Here's a practical compa
 | WhatsApp (backup) | No | Keys stored in cloud backups |
 | Standard SMS/MMS | No | No encryption |
 
-A critical distinction: most apps only apply end-to-end encryption (and forward secrecy) to the "secret" or "private" conversation mode. Regular cloud backups often strip these protections. WhatsApp's backup encryption, for instance, stores keys alongside encrypted messages in iCloud or Google Drive, creating a significant attack surface.
+A critical distinction - most apps only apply end-to-end encryption (and forward secrecy) to the "secret" or "private" conversation mode. Regular cloud backups often strip these protections. WhatsApp's backup encryption, for instance, stores keys alongside encrypted messages in iCloud or Google Drive, creating a significant attack surface.
 
 Implementation Details Developers Should Know
 
@@ -132,10 +132,10 @@ Session State Management
 The biggest implementation challenge is secure session state handling:
 
 ```python
-BAD: Storing session keys long-term
+BAD - Storing session keys long-term
 session_store.save(user_id, session_key)  # Never do this
 
-GOOD: Deriving keys on-demand, clearing immediately
+GOOD - Deriving keys on-demand, clearing immediately
 def process_message(stored_state, ciphertext):
     # Reconstruct ephemeral state from minimal stored data
     session = reconstruct_session(stored_state)
@@ -174,29 +174,29 @@ What to Do Today
 
 Forward secrecy is not a feature you can add after the fact, it must be architected into the protocol from the beginning. Understanding these mechanisms helps you make informed choices about which tools deserve your sensitive communications.
 
-Practical Verification: Testing Forward Secrecy Claims
+Practical Verification - Testing Forward Secrecy Claims
 
 Don't trust marketing claims alone. Here's how to verify an app actually implements forward secrecy:
 
-Test 1: Device compromise simulation
+Test 1 - Device compromise simulation
 
 ```bash
 #!/bin/bash
 Simulate forward secrecy verification for Signal
 
-Step 1: Send message via Signal
+Step 1 - Send message via Signal
 (Message: "Test message 1" sent at 12:00)
 
-Step 2: Extract Signal's session keys (requires app permissions)
+Step 2 - Extract Signal's session keys (requires app permissions)
 Signal stores session keys in encrypted database:
-Linux: ~/.local/share/signal/sql/
+Linux - ~/.local/share/signal/sql/
 macOS: ~/Library/Application\ Support/Signal/sql/
-Android: /data/data/org.signal.android/databases/
+Android - /data/data/org.signal.android/databases/
 
-Step 3: Compromise device and obtain old keys
-Attacker extracts: signal.db, keystore files
+Step 3 - Compromise device and obtain old keys
+Attacker extracts - signal.db, keystore files
 
-Step 4: Attempt decryption of old messages
+Step 4 - Attempt decryption of old messages
 With Signal Protocol + Forward Secrecy:
 OLD MESSAGE KEY DESTROYED = Cannot decrypt message 1
 
@@ -206,7 +206,7 @@ OLD MESSAGE KEY = KNOWN = Can decrypt all messages
 This test proves forward secrecy is implemented correctly
 ```
 
-Test 2: WhatsApp backup analysis
+Test 2 - WhatsApp backup analysis
 
 ```python
 #!/usr/bin/env python3
@@ -250,7 +250,7 @@ def check_whatsapp_forward_secrecy():
 check_whatsapp_forward_secrecy()
 ```
 
-Test 3: Telegram secret chat inspection
+Test 3 - Telegram secret chat inspection
 
 ```bash
 #!/bin/bash
@@ -280,11 +280,11 @@ echo "   Changed = Forward secrecy working"
 echo "   Same = No forward secrecy"
 ```
 
-Breaking Forward Secrecy: Attack Scenarios
+Breaking Forward Secrecy - Attack Scenarios
 
 Understanding how forward secrecy fails helps you deploy it correctly:
 
-Scenario 1: Poor key deletion
+Scenario 1 - Poor key deletion
 
 ```python
 Insecure implementation (don't do this):
@@ -306,29 +306,29 @@ class InsecureMessageEncryption:
         return plaintext
 ```
 
-Scenario 2: Clock skew attacks
+Scenario 2 - Clock skew attacks
 
 If two parties' clocks are out of sync, they may derive the same key repeatedly:
 
 ```python
-Vulnerable: Timestamp-based key derivation without proper synchronization
+Vulnerable - Timestamp-based key derivation without proper synchronization
 def derive_message_key(timestamp):
     # If Alice and Bob's clocks differ by 1 minute
     # They derive the same key for that minute
     # Every message in that minute window uses same key
     return hash(master_key + timestamp)
 
-Better: Use monotonic counters instead of timestamps
+Better - Use monotonic counters instead of timestamps
 def derive_message_key(counter):
     # Counter increments every message
     # If synchronized, same counter = same key = guaranteed uniqueness
     return hash(master_key + counter)
 ```
 
-Scenario 3: Session key reuse across conversations
+Scenario 3 - Session key reuse across conversations
 
 ```python
-Vulnerable: Same key for multiple conversations
+Vulnerable - Same key for multiple conversations
 session_key = derive_key()
 for conversation in conversations:
     for message in conversation:
@@ -336,7 +336,7 @@ for conversation in conversations:
         # Single key protects all messages across all conversations
         # If that key is leaked, entire conversation history exposed
 
-Correct: Fresh key material per conversation
+Correct - Fresh key material per conversation
 for conversation in conversations:
     conversation_key = derive_key(conversation_id)  # Fresh key per conversation
     for message in conversation:

@@ -341,7 +341,7 @@ Beyond login itself, session cookies can reveal account information.
 Session Token Analysis
 
 ```python
-Vulnerable: Predictable or revealing session token format
+Vulnerable - Predictable or revealing session token format
 def create_session(user):
     # Token format: USER_ID|TIMESTAMP|HASH
     user_id_encoded = base64.b64encode(str(user.id).encode())
@@ -358,7 +358,7 @@ Tokens containing readable user information leak account details when captured.
 Secure Session Implementation
 
 ```python
-Better approach: Opaque random tokens
+Better approach - Opaque random tokens
 import secrets
 import json
 

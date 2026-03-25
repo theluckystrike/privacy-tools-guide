@@ -29,7 +29,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand the Problem Space
+Step 1 - Understand the Problem Space
 
 Private photo leaks typically occur through several vectors: account breaches at cloud storage services, social media platform vulnerabilities, device compromises, or social engineering attacks. Once images are online, they can be indexed by search engines, shared on image boards, or appear in data breach compilations.
 
@@ -37,7 +37,7 @@ The challenge lies in detection, you cannot monitor every platform manually. Ins
 
 Understanding where leaks commonly surface helps prioritize your search. High-risk destinations include image hosting boards like Imgur, adult content aggregators, Telegram channels focused on leaked content, dark web paste sites, and Discord servers. Each requires a different detection approach since not all are indexed by mainstream search engines.
 
-Step 2: Reverse Image Search Methods
+Step 2 - Reverse Image Search Methods
 
 Using Google Images
 
@@ -96,7 +96,7 @@ Do not overlook Bing Visual Search and Yandex Images, both maintain separate ind
 
 To use Yandex reverse image search: navigate to yandex.com/images, click the camera icon, and upload your file. The results page groups visually similar images and shows pages that contain them. For systematic checking, you can integrate multiple search engines into a single workflow rather than relying on Google alone.
 
-Step 3: HaveIBeenPwned and Data Breach Monitoring
+Step 3 - HaveIBeenPwned and Data Breach Monitoring
 
 While HaveIBeenPwned focuses on email addresses and passwords, its API can help identify if your accounts were compromised, often the vector for photo leaks.
 
@@ -127,7 +127,7 @@ Beyond HIBP, several specialized services track image-specific breaches. StopNCI
 
 The Cyber Civil Rights Initiative (CCRI) also maintains a resource list of removal services specific to non-consensual intimate image sharing, which goes beyond general data breach monitoring.
 
-Step 4: Build Your Own Monitoring System
+Step 4 - Build Your Own Monitoring System
 
 For continuous monitoring, you can build a system that periodically checks for your images:
 
@@ -183,7 +183,7 @@ def images_are_similar(hash1, hash2, threshold=10):
 
 Store hashes for all your sensitive photos locally, then compare against hashes extracted from suspected matches. A difference score below 10 typically indicates the same image, while scores under 20 suggest a modified version.
 
-Step 5: Platform-Specific Detection
+Step 5 - Platform-Specific Detection
 
 Social Media Monitoring
 
@@ -191,7 +191,7 @@ Many platforms allow content removal requests but detecting violations first is 
 
 - Twitter/X: Search for your username or handle
 - Instagram: Check for unauthorized accounts using your photos
-- Reddit: Use search operators like `site:reddit.com "your-username"`
+- Reddit - Use search operators like `site:reddit.com "your-username"`
 
 Google Alerts for Metadata
 
@@ -219,9 +219,9 @@ Dark Web and Telegram Monitoring
 
 Standard search engines do not index Telegram channels or dark web sites. For Telegram monitoring, tools like Telepathy (an open-source OSINT tool) can search across public channels. For dark web monitoring, services like Flare or DarkBeast aggregate content from .onion sites and dark web forums. These commercial services are expensive but thorough.
 
-A more accessible approach: dark web exposure can sometimes be identified indirectly by monitoring whether your personal identifiers (username, phone number, email) appear in breach data dumps posted to paste sites. Tools like Dehashed aggregate this data and allow email or username searches across leaked databases.
+A more accessible approach - dark web exposure can sometimes be identified indirectly by monitoring whether your personal identifiers (username, phone number, email) appear in breach data dumps posted to paste sites. Tools like Dehashed aggregate this data and allow email or username searches across leaked databases.
 
-Step 6: Prevention Strategies
+Step 6 - Prevention Strategies
 
 Detection is only half the battle. Implement these preventive measures:
 
@@ -243,7 +243,7 @@ Detection is only half the battle. Implement these preventive measures:
 
 5. Watermark sensitive images invisibly: Invisible watermarking embeds a unique identifier that survives basic editing. If a leak is detected, the watermark identifies which copy was distributed, helping narrow down the source of the breach.
 
-Step 7: Taking Action
+Step 7 - Taking Action
 
 If you discover leaked photos:
 

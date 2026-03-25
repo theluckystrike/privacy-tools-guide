@@ -25,7 +25,7 @@ Table of Contents
 - [Federal Privacy Regulations (Emerging)](#federal-privacy-regulations-emerging)
 - [How to Disable Telematics (Full Guide)](#how-to-disable-telematics-full-guide)
 - [What Data Brokers Buy From Automakers](#what-data-brokers-buy-from-automakers)
-- [Real Example: Privacy-First Driving Setup](#real-example-privacy-first-driving-setup)
+- [Real Example - Privacy-First Driving Setup](#real-example-privacy-first-driving-setup)
 
 What Modern Cars Collect
 
@@ -81,7 +81,7 @@ Who Collects What? By Manufacturer
 
 Tesla
 
-Data collected: Everything. Tesla collects more per vehicle than any other manufacturer.
+Data collected - Everything. Tesla collects more per vehicle than any other manufacturer.
 
 What they track:
 - GPS coordinates every 1-5 seconds (when vehicle is on)
@@ -91,7 +91,7 @@ What they track:
 - Cabin camera footage (if autopilot is active)
 - Thermal imaging (to detect occupants)
 
-Real example: If you're in Autopilot, Tesla logs:
+Real example - If you're in Autopilot, Tesla logs:
 - Your exact GPS coordinates
 - How many times you took manual control (and from where)
 - Speed when you did
@@ -115,11 +115,11 @@ Settings > Connectivity > Data Sharing > Disable
 
 You can't fully disable telematics. Even with data sharing off, vehicle sends: location, diagnostics, status to Tesla servers for service alerts.
 
-Annual data volume: ~1-2 GB per vehicle (depending on driving habits)
+Annual data volume - ~1-2 GB per vehicle (depending on driving habits)
 
 General Motors (OnStar)
 
-Data collected: Location, diagnostics, emergency details
+Data collected - Location, diagnostics, emergency details
 
 What they track (OnStar-connected vehicles):
 - Real-time GPS location (sent to OnStar servers every 30-60 seconds)
@@ -129,7 +129,7 @@ What they track (OnStar-connected vehicles):
 - Emergency location data (for crash response)
 - Driver behavior (harsh braking, rapid acceleration)
 
-Scary part: OnStar tracks you EVEN WHEN THE VEHICLE IS OFF
+Scary part - OnStar tracks you EVEN WHEN THE VEHICLE IS OFF
 
 If your vehicle has OnStar and an active cellular connection, GM can locate you any time (with your phone's permission). This is designed for roadside assistance but can be abused.
 
@@ -139,7 +139,7 @@ Data sharing:
 - Shares with third-party location brokers (with opt-out available, but hard to find)
 - Location history retained for 3+ years
 
-Real lawsuit: In 2023, GM settled a privacy lawsuit for $$$M because it sold customer location data despite opt-out requests being difficult to process.
+Real lawsuit - In 2023, GM settled a privacy lawsuit for $$$M because it sold customer location data despite opt-out requests being difficult to process.
 
 How to disable:
 ```
@@ -152,11 +152,11 @@ How to disable:
    - Permanently stops data transmission
 ```
 
-Alternative: Switch to a cellular disabler device (Faraday pouch for key fob) but this affects regular operations.
+Alternative - Switch to a cellular disabler device (Faraday pouch for key fob) but this affects regular operations.
 
 Toyota
 
-Data collected: Location, diagnostics, emergency info
+Data collected - Location, diagnostics, emergency info
 
 Connected Services (Toyota Safety Sense):
 - Real-time GPS location
@@ -184,7 +184,7 @@ How to disable:
 
 BMW, Mercedes, Audi (Luxury Segment)
 
-Data collected: location, diagnostics, usage patterns
+Data collected - location, diagnostics, usage patterns
 
 What they track:
 - Real-time GPS with precision driving dynamics
@@ -195,13 +195,13 @@ What they track:
 
 Data sharing:
 - BMW: Sells aggregated driving behavior data to insurance companies
-- Mercedes: Shares with external partners via MBUX ecosystem (Android automotive)
+- Mercedes: Shares with external partners via MBUX environment (Android automotive)
 - Audi: Connected Services shares location with third-party vendors
 
 How to disable:
 BMW: Settings > iDrive > Driver Assistance > Ambient Data > Off
-Mercedes: Settings > Digital Services > Data Collection > Off
-Audi: MMI > Settings > Privacy > Data Collection > Off
+Mercedes - Settings > Digital Services > Data Collection > Off
+Audi - MMI > Settings > Privacy > Data Collection > Off
 
 Insurance Companies & Usage-Based Pricing
 
@@ -221,7 +221,7 @@ Real example (2024-2025 data):
 - Insurance adjusts rate: discount drops to 10%, premium increases 5%
 - New annual cost: $200+ more
 
-Worst case: Insurer uses telematics data to deny coverage entirely.
+Worst case - Insurer uses telematics data to deny coverage entirely.
 
 Insurance companies using telematics:
 - Geico (Driveeasier)
@@ -237,25 +237,25 @@ Cost comparison:
 
 How to Avoid Insurance Telematics
 
-Option 1: Don't install their app or device
+Option 1 - Don't install their app or device
 - Most states don't require it
 - You lose potential discount (15-30% savings)
 - Your rate doesn't increase (stays normal)
 - You pay the standard premium
 
-Option 2: Use telematics selectively
+Option 2 - Use telematics selectively
 - Install for 6 months (get discount)
 - Uninstall before rates "adjust"
 - Rates lock in at discounted level (in some states)
 - Risk: Company can refuse renewal
 
-Option 3: Request data deletion
+Option 3 - Request data deletion
 - Contact insurer, request all telematics data be deleted
 - Some comply (California CCPA requires it)
 - Most don't (they claim it's business necessity)
 - File complaint with state insurance commissioner if denied
 
-Option 4: Switch to insurers that don't offer it
+Option 4 - Switch to insurers that don't offer it
 - Liability-only carriers (less common)
 - Some regional insurers (check your state)
 - Usually 5-10% more expensive than major carriers
@@ -294,11 +294,11 @@ Federal (in progress):
 
 Legal Rights You Have Now
 
-Right to Access: You can request all telematics data manufacturers have collected (via CCPA/VCDPA)
+Right to Access - You can request all telematics data manufacturers have collected (via CCPA/VCDPA)
 
-Right to Delete: In California, Virginia, you can request deletion (with some exceptions)
+Right to Delete - In California, Virginia, you can request deletion (with some exceptions)
 
-Right to Opt-Out: You can request no data sharing, but manufacturers can refuse in some cases
+Right to Opt-Out - You can request no data sharing, but manufacturers can refuse in some cases
 
 Filing a Complaint:
 - FTC (reportidentitytheft.ftc.gov): If data misuse occurred
@@ -309,7 +309,7 @@ How to Disable Telematics (Full Guide)
 
 For Older Vehicles (2015 and earlier)
 
-Good news: Most telematics is absent or minimal.
+Good news - Most telematics is absent or minimal.
 
 Check:
 - Does your vehicle have a cellular modem? (Check manual)
@@ -330,7 +330,7 @@ Telematics is integral. You can reduce but not eliminate it.
 Maximum privacy approach:
 
 ```
-Step 1: Vehicle Settings
+Step 1 - Vehicle Settings
  Disable Data Collection
    Turn off data sharing (each manufacturer)
    Turn off diagnostics sharing
@@ -345,13 +345,13 @@ Step 1: Vehicle Settings
     Disable cabin camera
     Disable microphone for voice commands
 
-Step 2: At Service Center
+Step 2 - At Service Center
  Request cellular modem deactivation
  Cost: $200-500
  Disables: Remote features, OTA updates, emergency assist
  Some features (airbag deployment) still collect crash data
 
-Step 3: Insurance
+Step 3 - Insurance
  DON'T install telematics app/device
  Accept standard premium (no discount)
  Keep 15-20% savings by not participating
@@ -384,7 +384,7 @@ Reality:
 - Tesla can access your vehicle's location, diagnostics, and behavior ANY TIME
 - They claim it's only used for service and improvements
 - Data has been subpoenaed by police in criminal investigations
-- Consider: Is a privacy-friendly EV available?
+- Consider - Is a privacy-friendly EV available?
 
 Alternatives to Tesla:
 - Chevy Bolt EV/EUV (GM, but same OnStar issues)
@@ -394,7 +394,7 @@ Alternatives to Tesla:
 
 What Data Brokers Buy From Automakers
 
-The real money: Automakers sell anonymized telematics datasets to data brokers:
+The real money - Automakers sell anonymized telematics datasets to data brokers:
 
 Who buys:
 - Google, Apple, Waze (for traffic prediction)
@@ -415,19 +415,19 @@ Cost to automakers:
 - GM: Estimated $100M+ annually from OnStar data
 - Toyota: Estimated $50M+ annually from diagnostic data
 
-Your share of this revenue: $0. You generate the data, they profit.
+Your share of this revenue - $0. You generate the data, they profit.
 
-Real Example: Privacy-First Driving Setup
+Real Example - Privacy-First Driving Setup
 
-Scenario: You want maximum privacy
+Scenario - You want maximum privacy
 
-Choice 1: Used Car (2010-2015)
+Choice 1 - Used Car (2010-2015)
 - No telematics, no cameras, no cellular
 - Cost: $8,000-15,000
 - Privacy: Excellent
 - Trade-off: No safety features, older tech
 
-Choice 2: Modern Car (2023+) with Privacy Hardening
+Choice 2 - Modern Car (2023+) with Privacy Hardening
 - Buy car (e.g., Kia EV6): $45,000
 - Disable telematics at dealer: $300
 - Don't install insurance app: $0
@@ -436,7 +436,7 @@ Choice 2: Modern Car (2023+) with Privacy Hardening
 - Cost: $45,300 total
 - Privacy: 85% (can't eliminate all)
 
-Choice 3: EV + VPN (Partial Solution)
+Choice 3 - EV + VPN (Partial Solution)
 - Use Faraday bag for vehicle keys (prevents remote tracking): $50
 - Use WiFi hotspot with VPN (encrypts navigation queries): $0-10/mo
 - Disable Bluetooth pairing: $0
@@ -444,7 +444,7 @@ Choice 3: EV + VPN (Partial Solution)
 - Cost: $50 + $120/year
 - Privacy: 60% (GPS still accessible to manufacturer)
 
-Best realistic approach: Choice 2. Accept that modern cars collect some data, but disable what you can.
+Best realistic approach - Choice 2. Accept that modern cars collect some data, but disable what you can.
 
 Related Articles
 

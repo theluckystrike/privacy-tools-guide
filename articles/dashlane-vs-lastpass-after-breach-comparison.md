@@ -17,7 +17,7 @@ tags: [privacy-tools-guide, comparison]
 
 {% raw %}
 
-Choose Dashlane over LastPass if post-breach security is your priority: Dashlane uses stronger key derivation (500,000+ PBKDF2-SHA512 iterations, migrating to Argon2id), employs authenticated encryption (AES-256-GCM), and its breach did not expose encrypted vault data. Choose LastPass only if its ecosystem lock-in outweighs the risk that encrypted vault backups were exfiltrated in the 2022 breach. For maximum security, consider migrating to Bitwarden, 1Password, or KeePassXC instead. This comparison details the breach timelines, encryption architectures, and current security posture of both services.
+Choose Dashlane over LastPass if post-breach security is your priority: Dashlane uses stronger key derivation (500,000+ PBKDF2-SHA512 iterations, migrating to Argon2id), employs authenticated encryption (AES-256-GCM), and its breach did not expose encrypted vault data. Choose LastPass only if its environment lock-in outweighs the risk that encrypted vault backups were exfiltrated in the 2022 breach. For maximum security, consider migrating to Bitwarden, 1Password, or KeePassXC instead. This comparison details the breach timelines, encryption architectures, and current security posture of both services.
 
 Breach Timeline Overview
 
@@ -25,9 +25,9 @@ LastPass Breach History
 
 LastPass experienced multiple security incidents, with the most significant occurring in 2022:
 
-August 2022: LastPass disclosed that an attacker's developer account was compromised, allowing access to the company's development environment. The attacker obtained source code and some proprietary technical information.
+August 2022 - LastPass disclosed that an attacker's developer account was compromised, allowing access to the company's development environment. The attacker obtained source code and some proprietary technical information.
 
-December 2022: A follow-up disclosure revealed the attacker had exploited the initial compromise to access backup copies of customer vault data. This included encrypted password vaults and unencrypted metadata like email addresses, usernames, and billing information.
+December 2022 - A follow-up disclosure revealed the attacker had exploited the initial compromise to access backup copies of customer vault data. This included encrypted password vaults and unencrypted metadata like email addresses, usernames, and billing information.
 
 The December breach was particularly concerning because:
 
@@ -39,7 +39,7 @@ Dashlane Breach History
 
 Dashlane experienced a security incident in early 2022:
 
-January 2022: Dashlane disclosed that an unauthorized party gained access to one of their third-party cloud storage systems in 2018-2019. While encrypted passwords were not compromised, user email addresses and hashed master passwords were exposed.
+January 2022 - Dashlane disclosed that an unauthorized party gained access to one of their third-party cloud storage systems in 2018-2019. While encrypted passwords were not compromised, user email addresses and hashed master passwords were exposed.
 
 The Dashlane incident was limited in scope compared to LastPass, but it raised questions about the duration of unauthorized access before detection.
 
@@ -200,7 +200,7 @@ Alternative Recommendations
 
 If moving away from both services, these options offer strong security:
 
-Bitwarden is open-source and self-hostable with a strong CLI. 1Password offers a strong security model with excellent developer features. KeePassXC is fully offline, open-source, and maximally transparent. Proton Pass comes from a security-focused team and integrates with the Proton ecosystem.
+Bitwarden is open-source and self-hostable with a strong CLI. 1Password offers a strong security model with excellent developer features. KeePassXC is fully offline, open-source, and maximally transparent. Proton Pass comes from a security-focused team and integrates with the Proton environment.
 
 The choice depends on your threat model, technical requirements, and preference for cloud versus local-only solutions.
 ---
@@ -212,7 +212,7 @@ Table of Contents
 
 - [Breaking Down LastPass's Weaknesses](#breaking-down-lastpasss-weaknesses)
 - [Dashlane's Defensive Design](#dashlanes-defensive-design)
-- [Technical Comparison: Encryption Details](#technical-comparison-encryption-details)
+- [Technical Comparison - Encryption Details](#technical-comparison-encryption-details)
 - [Master Password Strength Calculator](#master-password-strength-calculator)
 - [Safe Migration Path](#safe-migration-path)
 - [Long-Term Password Management Strategy](#long-term-password-management-strategy)
@@ -242,7 +242,7 @@ Breaking Down LastPass's Weaknesses
 Why the LastPass breach was particularly damaging:
 
 ```python
-LastPass vulnerability: Weak master password offline cracking
+LastPass vulnerability - Weak master password offline cracking
 
 Attacker has:
 1. Encrypted vault backup
@@ -274,9 +274,9 @@ With offline cracking:
 - Weak passwords crack in hours
 - Strong passwords (20+ chars) still safe
 
-Key insight: LastPass's PBKDF2 iteration count was INSUFFICIENT
-Modern standard: 600,000+ iterations
-Argon2id: Memory-hard, GPU-resistant
+Key insight - LastPass's PBKDF2 iteration count was INSUFFICIENT
+Modern standard - 600,000+ iterations
+Argon2id - Memory-hard, GPU-resistant
 ```
 
 Dashlane's Defensive Design
@@ -300,13 +300,13 @@ dashlane_iterations = 500000  # vs LastPass 100,100
 lastpass_iterations = 100100
 
 Time to crack one password guess (GPU):
-LastPass: 100,100 iterations = 0.1ms
-Dashlane: 500,000 iterations = 0.5ms
+LastPass - 100,100 iterations = 0.1ms
+Dashlane - 500,000 iterations = 0.5ms
 5x more expensive per attempt
 
 For 10 billion password guesses:
 LastPass: 1,000,000 seconds ≈ 12 days
-Dashlane: 5,000,000 seconds ≈ 57 days
+Dashlane - 5,000,000 seconds ≈ 57 days
 Major difference at scale
 
 4. Migration to Argon2id (announced)
@@ -315,7 +315,7 @@ GPU acceleration ineffective
 Even more resistant than PBKDF2
 ```
 
-Technical Comparison: Encryption Details
+Technical Comparison - Encryption Details
 
 What you should verify for any password manager:
 
@@ -433,36 +433,36 @@ safe-migration.sh - Zero-trust migration between password managers
 
 echo "=== Secure Password Manager Migration ==="
 
-Step 1: Export from source (if possible)
-LastPass: lpass export > lastpass_dump.csv
-Dashlane: Export via Settings → Security → Export
+Step 1 - Export from source (if possible)
+LastPass - lpass export > lastpass_dump.csv
+Dashlane - Export via Settings → Security → Export
 
-Step 2: Validate export format
+Step 2 - Validate export format
 file lastpass_dump.csv
 wc -l lastpass_dump.csv  # Should have your password count + 1 header
 
-Step 3: IMPORTANT - Delete from old service AFTER new is working
+Step 3 - IMPORTANT - Delete from old service AFTER new is working
 Don't export everything then delete immediately
 
-Step 4: Import to new service
+Step 4 - Import to new service
 Bitwarden CLI:
 bw import lastpass lastpass_dump.csv
 
-Step 5: Verify count matches
+Step 5 - Verify count matches
 bw list items | jq length  # Should match original password count
 
-Step 6: Test critical passwords work
+Step 6 - Test critical passwords work
 Try logging into banking, email, etc.
 
-Step 7: Only then disable old account
+Step 7 - Only then disable old account
 Disable LastPass/Dashlane
 Wait 30 days to ensure nothing breaks
 
-Step 8: Shred the export file securely
+Step 8 - Shred the export file securely
 shred -vfz -n 5 lastpass_dump.csv
 
-Step 9: Monitor for compromise
-Set up breach monitoring: haveibeenpwned.com
+Step 9 - Monitor for compromise
+Set up breach monitoring - haveibeenpwned.com
 Enable 2FA on all important accounts
 ```
 
@@ -471,19 +471,19 @@ Long-Term Password Management Strategy
 For 2026 and beyond:
 
 ```
-Phase 1: Current state
+Phase 1 - Current state
 - Use Dashlane or Bitwarden (avoid LastPass if possible)
 - Enable 2FA on password manager account
 - Use strong master password (20+ chars)
 - Keep recovery codes offline
 
-Phase 2: Transition (over 6 months)
+Phase 2 - Transition (over 6 months)
 - Gradually replace weak passwords
 - Enable hardware security keys where available
 - Move away from old services
 - Test recovery procedures
 
-Phase 3: Future (2027+)
+Phase 3 - Future (2027+)
 - Passkeys will replace passwords for many services
 - Password manager will manage passkey backups
 - Master password security becomes less critical

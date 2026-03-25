@@ -80,7 +80,7 @@ The `type` field (e.g., `httpd_t`, `sshd_t`) is the core enforcement unit. A pro
 
 ---
 
-Step 1: Identify Denials
+Step 1 - Identify Denials
 
 When SELinux blocks an action, it writes to the audit log:
 
@@ -102,11 +102,11 @@ type=AVC msg=audit(1711100400.001:1234): avc: denied { read } for
   tcontext=system_u:object_r:user_tmp_t:s0 tclass=sock_file permissive=0
 ```
 
-This tells you: nginx (httpd_t) was denied read access to a socket labeled user_tmp_t.
+This tells you - nginx (httpd_t) was denied read access to a socket labeled user_tmp_t.
 
 ---
 
-Step 2: Fix with Boolean or Context Change
+Step 2 - Fix with Boolean or Context Change
 
 Many common scenarios are already covered by booleans. toggle switches for pre-written policy branches:
 
@@ -142,7 +142,7 @@ sudo restorecon -Rv /var/www/myapp/data
 
 ---
 
-Step 3: Allow a Non-Standard Port
+Step 3 - Allow a Non-Standard Port
 
 If your application listens on a non-standard port (e.g., Nginx on 8888):
 
@@ -160,7 +160,7 @@ http_port_t   tcp   80, 443, 8008, 8080, 8443, 8888
 
 ---
 
-Step 4: Write a Custom Policy Module with audit2allow
+Step 4 - Write a Custom Policy Module with audit2allow
 
 When booleans and context changes don't cover your case, generate a custom policy module from audit logs:
 
@@ -208,7 +208,7 @@ sudo semodule -l | grep myapp
 
 ---
 
-Step 5: Write Policy from Scratch (Advanced)
+Step 5 - Write Policy from Scratch (Advanced)
 
 For applications that need a fully isolated domain, write a `.te` file manually:
 
@@ -243,7 +243,7 @@ sudo restorecon /usr/local/bin/myservice
 
 ---
 
-Step 6: Audit and Harden Existing Policy
+Step 6 - Audit and Harden Existing Policy
 
 ```bash
 Show all rules for a type
@@ -261,7 +261,7 @@ sudo journalctl -u setroubleshootd -f
 
 ---
 
-Step 7: Apply Labels in Dockerfile / Ansible
+Step 7 - Apply Labels in Dockerfile / Ansible
 
 For containerized workloads or automated provisioning:
 

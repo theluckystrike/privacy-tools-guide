@@ -27,7 +27,7 @@ Table of Contents
 - [Breach Notification and Encryption Status](#breach-notification-and-encryption-status)
 - [Key Management Audit and Compliance Logging](#key-management-audit-and-compliance-logging)
 - [Data Subject Rights Implementation](#data-subject-rights-implementation)
-- [Practical Example: GDPR-Compliant Storage Implementation](#practical-example-gdpr-compliant-storage-implementation)
+- [Practical Example - GDPR-Compliant Storage Implementation](#practical-example-gdpr-compliant-storage-implementation)
 - [Compliance Documentation Template](#compliance-documentation-template)
 - [Data Protection Impact Assessment (DPIA)](#data-protection-impact-assessment-dpia)
 - [Verifying GDPR Compliance](#verifying-gdpr-compliance)
@@ -109,13 +109,13 @@ Breach Notification and Encryption Status
 
 GDPR Article 34 requires breach notification to individuals unless encryption or similar measures make personal data unintelligible. Client-side encryption with keys held separately can reduce or eliminate breach notification requirements:
 
-Scenario 1: Encrypted Data + Compromised Keys
+Scenario 1 - Encrypted Data + Compromised Keys
 → Breach notification required (data is readable)
 
-Scenario 2: Encrypted Data + Keys Held Separately
+Scenario 2 - Encrypted Data + Keys Held Separately
 → Breach notification NOT required (data remains unintelligible)
 
-Scenario 3: Encrypted Data + Server Breach (Keys Never Exposed)
+Scenario 3 - Encrypted Data + Server Breach (Keys Never Exposed)
 → Breach notification NOT required (encryption prevents access)
 
 This distinction makes encryption architecture critical for compliance. If your encryption keys are compromised, you must notify affected individuals. If keys remain secure, notification is unnecessary.
@@ -202,7 +202,7 @@ Right to Object (Article 21):
 - Stop processing personal data
 - Encryption enables "freeze" without actual deletion (maintain key but block access)
 
-Practical Example: GDPR-Compliant Storage Implementation
+Practical Example - GDPR-Compliant Storage Implementation
 
 For developers building applications that must comply with GDPR:
 
@@ -271,7 +271,7 @@ class GDPRCompliantStorage:
         return plaintext
 
     def delete_user_data(self, user_id: str) -> bool:
-        """Right to Erasure: Delete all user's encrypted data."""
+        """Right to Erasure - Delete all user's encrypted data."""
         try:
             # Find all files for user
             files = self.cloud.list_files(user_id)
@@ -291,7 +291,7 @@ class GDPRCompliantStorage:
             return False
 
     def export_user_data(self, user_id: str) -> bytes:
-        """Right to Data Portability: Export all user's data in machine-readable format."""
+        """Right to Data Portability - Export all user's data in machine-readable format."""
         files = self.cloud.list_files(user_id)
         exported_data = {}
 

@@ -25,7 +25,7 @@ Table of Contents
 - [Available Workarounds for Power Users](#available-workarounds-for-power-users)
 - [Legal and Practical Considerations](#legal-and-practical-considerations)
 - [Password Reset and Recovery Key Management](#password-reset-and-recovery-key-management)
-- [Alternative: Proton for Business and Legacy Access](#alternative-proton-for-business-and-legacy-access)
+- [Alternative - Proton for Business and Legacy Access](#alternative-proton-for-business-and-legacy-access)
 - [Implementing Shamir's Secret Sharing for Account Access](#implementing-shamirs-secret-sharing-for-account-access)
 - [Jurisdictional Considerations for Digital Estate Planning](#jurisdictional-considerations-for-digital-estate-planning)
 - [Cloud Storage Integration and Workarounds](#cloud-storage-integration-and-workarounds)
@@ -100,7 +100,7 @@ def create_escrow_shares(secret, k, n):
 
     return shares
 
-Distribute shares to: attorney, family member, secure storage
+Distribute shares to - attorney, family member, secure storage
 Any 2 of 3 can reconstruct access credentials
 ```
 
@@ -143,7 +143,7 @@ For power users, Proton Mail offers an additional security layer: you can create
 
 This mechanism allows you to share the encrypted backup with an executor while keeping the backup password in a separate location (physical will, sealed envelope, safety deposit box).
 
-Alternative: Proton for Business and Legacy Access
+Alternative - Proton for Business and Legacy Access
 
 Proton Mail for Organizations provides different options than personal accounts. Organization administrators can technically manage shared mailboxes and delegate access in ways personal accounts cannot. If managing organizational email that needs inheritance, this represents a more viable path than personal Proton Mail accounts.
 
@@ -159,7 +159,7 @@ For technically sophisticated users managing high-value encrypted communications
 
 ```python
 Using the secrets library and polynomial-based threshold splitting
-Production use: install `pyshmir` or `shark` package
+Production use - install `pyshmir` or `shark` package
 
 def split_secret_shamir(secret_string, threshold, shares):
     """
@@ -178,7 +178,7 @@ def split_secret_shamir(secret_string, threshold, shares):
 
     pass
 
-To reconstruct: attorney + family member share with each other
+To reconstruct - attorney + family member share with each other
 Combined shares reveal the original password
 No single party has enough information to access account
 ```
@@ -191,7 +191,7 @@ The Uniform Fiduciary Access to Digital Assets Act (UFADAA), now adopted by most
 
 - Kentucky, Wyoming, Vermont: Adopted UFADAA with full support for accessing encrypted accounts if credentials are available
 - California: Extended privacy protections make digital asset access more restricted
-- European Union: GDPR Article 17 (right to erasure) complicates account inheritance. executors may lack authority to access personal data
+- European Union - GDPR Article 17 (right to erasure) complicates account inheritance. executors may lack authority to access personal data
 
 Before designing your succession plan, check your jurisdiction's specific rules. Some states require explicit written instructions from the account holder regarding data disposition.
 
@@ -328,7 +328,7 @@ lsblk
 
 Create partition
 sudo fdisk /dev/sdb
-Command: n (new partition), p (primary), 1 (partition 1), enter (default start), enter (default end), w (write)
+Command - n (new partition), p (primary), 1 (partition 1), enter (default start), enter (default end), w (write)
 
 Encrypt with LUKS
 sudo cryptsetup luksFormat /dev/sdb1
@@ -347,7 +347,7 @@ Create README
 sudo tee /mnt/share1/README.txt << 'EOF'
 This USB contains Shamir Share #1 for Proton Mail account inheritance.
 See estate planning documents for instructions on how to use this share.
-Passphrase: [provide securely to intended recipient]
+Passphrase - [provide securely to intended recipient]
 EOF
 
 Unmount and close
@@ -356,7 +356,7 @@ sudo cryptsetup luksClose share1
 
 Securely label the USB
 sudo eject /dev/sdb  # Eject USB
-Physical label: "Proton Mail Recovery Share 1 of 3"
+Physical label - "Proton Mail Recovery Share 1 of 3"
 ```
 
 Advanced Digital Estate Documentation
@@ -374,7 +374,7 @@ from cryptography.fernet import Fernet
 from pathlib import Path
 
 def create_estate_document():
-    """Generate comprehensive digital estate file."""
+    """Generate complete digital estate file."""
 
     estate_info = {
         "proton_mail": {

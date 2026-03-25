@@ -46,8 +46,8 @@ Connection Establishment Process
 When two users want to communicate, they exchange connection addresses rather than usernames or IDs:
 
 ```
-User A generates: smp://abc123...@server.example.com
-User B generates: smp://xyz789...@server.example.com
+User A generates - smp://abc123...@server.example.com
+User B generates - smp://xyz789...@server.example.com
 
 These addresses are:
 - Temporary (can be rotated)
@@ -147,9 +147,9 @@ Multiple Identities
 Run multiple Simplex Chat instances simultaneously, each with completely unlinkable identities:
 
 ```
-Instance 1: smp://abc123...@server1.simplex.chat  # Work
-Instance 2: smp://def456...@server2.simplex.chat  # Personal
-Instance 3: smp://ghi789...@server3.simplex.chat  # Sensitive
+Instance 1 - smp://abc123...@server1.simplex.chat  # Work
+Instance 2 - smp://def456...@server2.simplex.chat  # Personal
+Instance 3 - smp://ghi789...@server3.simplex.chat  # Sensitive
 ```
 
 Network observers cannot determine these belong to the same person.

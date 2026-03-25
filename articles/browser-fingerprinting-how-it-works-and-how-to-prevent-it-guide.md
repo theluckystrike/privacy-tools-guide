@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How Browser Fingerprinting Works
+Step 1 - How Browser Fingerprinting Works
 
 Your browser is a complex piece of software with hundreds of configurable properties. Most of these properties are exposed to JavaScript running on websites, usually without your knowledge or consent.
 
@@ -128,7 +128,7 @@ Browser Plugins:
 ```javascript
 // Enumerates all installed plugins
 Array.from(navigator.plugins).map(p => p.name);
-// Output: ["Google Chrome PDF Plugin", "Chrome PDF Viewer", "Native Client Plugin", ...]
+// Output - ["Google Chrome PDF Plugin", "Chrome PDF Viewer", "Native Client Plugin", ...]
 ```
 
 User Agent:
@@ -166,7 +166,7 @@ pc.onicecandidate = (ice) => {
 
 Your local IP, combined with other fingerprints, can identify you even through VPN.
 
-Fingerprinting in Practice: How This Becomes Your Profile
+Fingerprinting in Practice - How This Becomes Your Profile
 
 A website like Everify or MaxMind combines hundreds of signals:
 
@@ -190,7 +190,7 @@ If you visit site-a.com and site-b.com, trackers can correlate:
 
 Even without cookies, trackers identify you as the same person across different sites.
 
-Step 2: Measuring Your Fingerprint Uniqueness
+Step 2 - Measuring Your Fingerprint Uniqueness
 
 Online Fingerprinting Tests
 
@@ -216,7 +216,7 @@ https://fingerprint.com/
 
 Running these tools is eye-opening. Most users find they're unique among millions.
 
-Step 3: How to Prevent and Mitigate Fingerprinting
+Step 3 - How to Prevent and Mitigate Fingerprinting
 
 Browser-Level Defenses
 
@@ -235,7 +235,7 @@ What Tor does:
 
 Your fingerprint is identical to ~1 million other Tor users. You're not uniquely identified; you're one of millions.
 
-Trade-off: Some sites don't work well on Tor (sites that heavily rely on JavaScript, high-resolution graphics).
+Trade-off - Some sites don't work well on Tor (sites that heavily rely on JavaScript, high-resolution graphics).
 
 2. Firefox with Privacy Hardening
 
@@ -272,7 +272,7 @@ What Google does:
 - Partial canvas randomization (inconsistent)
 - Some WebGL blocking (but less than Firefox)
 
-Reality: Chrome is worse for privacy than Firefox or Tor. Google profits from tracking, so their privacy features are minimal.
+Reality - Chrome is worse for privacy than Firefox or Tor. Google profits from tracking, so their privacy features are minimal.
 
 Browser Extensions
 
@@ -283,21 +283,21 @@ Canvas Fingerprint Blocker:
 - Returns randomized data per domain
 - Prevents canvas fingerprinting
 
-Effectiveness: ~80%. Some sophisticated trackers detect the extension's randomization.
+Effectiveness - ~80%. Some sophisticated trackers detect the extension's randomization.
 
 NoScript/uBlock Origin:
 - Disable JavaScript entirely
 - Also disable canvas, WebGL, and font APIs
 - Most effective but breaks sites heavily
 
-Effectiveness: 100% (but breaks web)
+Effectiveness - 100% (but breaks web)
 
 Privacy Badger:
 - Blocks trackers
 - Doesn't directly prevent fingerprinting
 - Complements other defenses
 
-Effectiveness: ~30% (not fingerprint-specific)
+Effectiveness - ~30% (not fingerprint-specific)
 
 HTTPS Everywhere + Script Blocking:
 Combine HTTPS with JavaScript blocking to prevent fingerprinting. But this breaks most modern websites.
@@ -321,7 +321,7 @@ Use identical device to thousands of others:
 - iPhone users mostly identical (same GPU, same screen, same browser)
 - Windows users with baseline laptop more similar
 
-Reality: Still identifiable within similar device cohort. iPhone 15 users are ~40 million people, not a perfect anonymity set.
+Reality - Still identifiable within similar device cohort. iPhone 15 users are ~40 million people, not a perfect anonymity set.
 
 3. Randomized Settings
 Regularly change:
@@ -335,7 +335,7 @@ Limitations:
 - May break sites
 - Still not as effective as coordinated randomization (Tor)
 
-Advanced: Creating Resistance
+Advanced - Creating Resistance
 
 Custom Browser Compilation
 
@@ -390,7 +390,7 @@ async function testFingerprinting() {
 
 This helps you understand what your users' browsers reveal.
 
-Step 4: Practical Strategy: Balancing Privacy and Usability
+Step 4 - Practical Strategy: Balancing Privacy and Usability
 
 For most users:
 1. Use Firefox with `privacy.resistFingerprinting = true`
@@ -417,7 +417,7 @@ For maximum anonymity:
 
 This provides ~99% protection.
 
-Step 5: What Sites Are Actually Using Fingerprinting?
+Step 5 - What Sites Are Actually Using Fingerprinting?
 
 According to research studies:
 
@@ -428,21 +428,21 @@ According to research studies:
 - Paywalls: Some news sites use fingerprinting to bypass subscription paywalls
 - Financial institutions: Some use fingerprinting for account verification (bad UX when you change devices)
 
-Step 6: Limitations of Fingerprinting Defense
+Step 6 - Limitations of Fingerprinting Defense
 
 Even perfect fingerprinting defense (Tor Browser) has limitations:
 
-Behavioral tracking: How you navigate is identifiable. If you have a distinctive browsing pattern (always visit sites A, B, C in sequence), you're trackable.
+Behavioral tracking - How you navigate is identifiable. If you have a distinctive browsing pattern (always visit sites A, B, C in sequence), you're trackable.
 
-Login defeat: If you log into your email account, all anonymity is defeated.
+Login defeat - If you log into your email account, all anonymity is defeated.
 
-Side-channel leaks: Timing attacks, power analysis, other side-channel attacks could theoretically identify hardware.
+Side-channel leaks - Timing attacks, power analysis, other side-channel attacks could theoretically identify hardware.
 
-Future techniques: As defenses improve, trackers will develop new fingerprinting vectors.
+Future techniques - As defenses improve, trackers will develop new fingerprinting vectors.
 
-The best defense is behavioral: don't voluntarily identify yourself (login to identifying accounts), and assume you're somewhat identifiable if your browsing pattern is distinctive.
+The best defense is behavioral - don't voluntarily identify yourself (login to identifying accounts), and assume you're somewhat identifiable if your browsing pattern is distinctive.
 
-Step 7: Test Your Defenses
+Step 7 - Test Your Defenses
 
 After implementing defenses, test them:
 

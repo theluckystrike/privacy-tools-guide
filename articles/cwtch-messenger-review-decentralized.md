@@ -81,13 +81,13 @@ Desktop Installation
 Cwtch provides builds for Linux, macOS, and Windows. On Linux, you have multiple installation options:
 
 ```bash
-Option 1: Flatpak (recommended)
+Option 1 - Flatpak (recommended)
 flatpak install flathub app.cwtch.cwtch
 
-Option 2: Arch Linux
+Option 2 - Arch Linux
 sudo pacman -S cwtch
 
-Option 3: Build from source
+Option 3 - Build from source
 git clone https://github.com/cwtch/cwtch.git
 cd cwtch
 go build -o cwtch ./cmd/cwtch

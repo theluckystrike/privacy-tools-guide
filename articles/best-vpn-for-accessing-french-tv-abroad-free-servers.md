@@ -148,7 +148,7 @@ dig +short cdn France.tv
 nslookup players.brightcove.net
 
 Verify WebRTC leakage
-Visit: https://browserleaks.com/webrtc
+Visit - https://browserleaks.com/webrtc
 ```
 
 The key indicators of a properly configured French connection include:
@@ -174,7 +174,7 @@ Handling Advanced Detection
 
 Some French services implement deeper detection methods. If standard VPN configurations fail, consider these advanced approaches:
 
-IPv6 Leak Prevention: Many systems now have IPv6 enabled, which can bypass VPN tunnels. Disable IPv6 at the system level or tunnel it:
+IPv6 Leak Prevention - Many systems now have IPv6 enabled, which can bypass VPN tunnels. Disable IPv6 at the system level or tunnel it:
 
 ```bash
 Disable IPv6 on Linux
@@ -182,14 +182,14 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1
 ```
 
-TLS SNI Matching: Some CDNs inspect Server Name Indication. Configure your client to send the correct SNI:
+TLS SNI Matching - Some CDNs inspect Server Name Indication. Configure your client to send the correct SNI:
 
 ```bash
 OpenSSL s_client with French hostname
 echo | openssl s_client -connect stream France.tv:443 -servername stream France.tv
 ```
 
-Browser Extension Integration: Browser-based VPN extensions can supplement system-level tunneling for specific browser instances.
+Browser Extension Integration - Browser-based VPN extensions can supplement system-level tunneling for specific browser instances.
 
 Performance Optimization
 
@@ -216,9 +216,9 @@ French television services may still block your connection despite proper VPN co
 
 Error "Service non disponible dans votre région": Your DNS is still resolving to non-French servers. Flush your DNS cache: `sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder` on macOS.
 
-Buffering issues: Switch from UDP to TCP for OpenVPN, or enable compression. Lower your connection's MTU: `ip link set dev tun0 mtu 1400`.
+Buffering issues - Switch from UDP to TCP for OpenVPN, or enable compression. Lower your connection's MTU: `ip link set dev tun0 mtu 1400`.
 
-Periodic disconnections: Enable connection keepalive and consider a VPS with better network peering to French telecommunications infrastructure.
+Periodic disconnections - Enable connection keepalive and consider a VPS with better network peering to French telecommunications infrastructure.
 
 Frequently Asked Questions
 

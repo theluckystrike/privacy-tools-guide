@@ -24,7 +24,7 @@ The General Data Protection Regulation (GDPR) explicitly addresses both concepts
 
 The key difference in GDPR's eyes: pseudonymized data remains personal data. Anonymized data falls outside GDPR's scope entirely. This distinction has significant implications for your architecture decisions.
 
-Pseudonymization: Practical Implementation
+Pseudonymization - Practical Implementation
 
 Pseudonymization replaces identifiable information with artificial identifiers while maintaining a mapping back to the original data. This allows data utility while reducing direct attribution risk.
 
@@ -81,7 +81,7 @@ VALUES (
 
 The original data exists only in your secure key management system. The database contains only transformed values.
 
-Anonymization: Achieving Irreversibility
+Anonymization - Achieving Irreversibility
 
 Anonymization must make re-identification impossible, even with access to all available information. This requires irreversible transformation techniques that preserve statistical utility while eliminating attribution.
 
@@ -209,7 +209,7 @@ Regulatory Precedent
 
 The European Data Protection Board (EDPB) published guidance in Opinion 2014/905 clarifying that truly anonymized data is outside GDPR scope. However, they also warned that many techniques marketed as anonymization fail to achieve irreversibility in practice. The burden is on your organization to prove irreversibility, not on regulators to prove reversibility.
 
-Courts have reinforced this: in the Breyer v. Bundesrepublik Deutschland case, the German Federal Constitutional Court determined that dynamic IP addresses could still constitute personal data because they could be linked back to individuals through ISPs. This suggests that proximity to reversibility through auxiliary data is sufficient for GDPR to apply.
+Courts have reinforced this - in the Breyer v. Bundesrepublik Deutschland case, the German Federal Constitutional Court determined that dynamic IP addresses could still constitute personal data because they could be linked back to individuals through ISPs. This suggests that proximity to reversibility through auxiliary data is sufficient for GDPR to apply.
 
 Practical Architecture Patterns
 
@@ -285,31 +285,31 @@ Compliance Demonstration
 Document your technique choice for GDPR Article 30 records of processing:
 
 ```markdown
-Processing Activity: User Analytics
+Processing Activity - User Analytics
 
 Data Pseudonymization
 
-Technique: Hashed email addresses with separate key storage
+Technique - Hashed email addresses with separate key storage
 
-Reversibility: Keys stored in separate, access-controlled system with audit logging
+Reversibility - Keys stored in separate, access-controlled system with audit logging
 
 Risk Mitigation:
 - Keys encrypted with HSM-backed key management
 - Key access limited to authorized personnel with logging
 - Regular re-identification risk assessments
 
-Regulatory Basis: GDPR Article 4(11) - Pseudonymized personal data
+Regulatory Basis - GDPR Article 4(11) - Pseudonymized personal data
 ---
 
 Data Anonymization
 
-Technique: Age range generalization + geographic bucketing
+Technique - Age range generalization + geographic bucketing
 
-Irreversibility Assessment: Re-identification testing shows <0.01% risk of unique identification
+Irreversibility Assessment - Re-identification testing shows <0.01% risk of unique identification
 
-Documentation: EDPB Opinion 2014/905 - Data is outside GDPR scope
+Documentation - EDPB Opinion 2014/905 - Data is outside GDPR scope
 
-Validation: Annual third-party audit confirms irreversibility
+Validation - Annual third-party audit confirms irreversibility
 ```
 
 Frequently Asked Questions

@@ -209,19 +209,19 @@ Phone Number Masking and Virtual SIM
 #!/bin/bash
 Setting up burner number infrastructure for dating apps
 
-Option 1: Google Voice (if accessible in your region)
+Option 1 - Google Voice (if accessible in your region)
 Create separate Google account unlinked to primary identity
 Use account recovery options not tied to personal info
 
-Option 2: Virtual SIM services
+Option 2 - Virtual SIM services
 Services like Twilio, Vonage, or local alternatives
 Forward to encrypted messaging instead of default SMS
 
 Log which services have which numbers
 cat > phone_number_map.txt << EOF
-Feeld (Individual): +1234567890 (Google Voice)
-Feeld (Couple): +0987654321 (Virtual SIM)
-Signal: +1111111111 (Same as Individual)
+Feeld (Individual) - +1234567890 (Google Voice)
+Feeld (Couple) - +0987654321 (Virtual SIM)
+Signal - +1111111111 (Same as Individual)
 EOF
 
 chmod 600 phone_number_map.txt
@@ -303,7 +303,7 @@ Complete Account Deletion Procedure
 
 ```bash
 #!/bin/bash
-Comprehensive Feeld account cleanup
+complete Feeld account cleanup
 
 echo "Step 1: Manual chat deletion"
 echo "- Delete all conversations (not auto-deleted on account removal)"
@@ -354,10 +354,10 @@ Legal Considerations by Jurisdiction
 Relationship structures that are legal vary by location:
 
 ```
-United States: All relationship types legal if participants are consenting adults
+United States - All relationship types legal if participants are consenting adults
 UK: Polygamous marriage not legal, but relationships are
 EU: Varies by country; generally legal as long as consensual
-Russia/Middle East: Some relationship types illegal
+Russia/Middle East - Some relationship types illegal
 ```
 
 Understand your jurisdiction's laws before documenting relationships digitally.
@@ -373,7 +373,7 @@ Delete sent/received messages regularly
 Don't store sensitive content in app messages
 Use disappearing messages when platform supports them
 
-Better practice: Move conversations to Signal
+Better practice - Move conversations to Signal
 Share Feeld profile only with trusted individuals
 ```
 

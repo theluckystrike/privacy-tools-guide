@@ -21,7 +21,7 @@ Onion Browser offers the strongest iOS privacy by routing all traffic through To
 
 - If you prefer open-source: solutions with customizable privacy controls, Firefox offers the most flexibility.
 - Choose Onion Browser for: maximum anonymity, DuckDuckGo for everyday privacy, or Safari for native integration with Apple's privacy features.
-- Apple's App Tracking Transparency: framework, introduced in iOS 14.5, requires apps to obtain explicit permission before tracking users across other companies' apps and websites.
+- Apple's App Tracking Transparency - framework, introduced in iOS 14.5, requires apps to obtain explicit permission before tracking users across other companies' apps and websites.
 - The browser automatically upgrades: cross-site requests to prevent fingerprinting, a technique trackers use to create unique device profiles.
 - While features are solid: customization options are limited compared to open-source alternatives.
 - Privacy is personal: the best browser is one that protects your data while supporting your work effectively.
@@ -32,7 +32,7 @@ iOS enforces strict sandboxing that limits what browsers can access compared to 
 
 Apple's App Tracking Transparency framework, introduced in iOS 14.5, requires apps to obtain explicit permission before tracking users across other companies' apps and websites. This framework affects all browsers, but implementations vary significantly in how aggressively they prevent tracking beyond these requirements.
 
-Safari: Integrated Protection
+Safari - Integrated Protection
 
 Safari on iOS provides the deepest integration with Apple's privacy infrastructure. Intelligent Tracking Prevention uses on-device machine learning to identify and block tracking cookies. The browser automatically upgrades cross-site requests to prevent fingerprinting, a technique trackers use to create unique device profiles.
 
@@ -50,9 +50,9 @@ document.cookie = "testcookie=test; SameSite=None; Secure";
 console.log(document.cookie); // Empty if blocked
 ```
 
-Safari's limitation for privacy power users is its closed ecosystem. While features are solid, customization options are limited compared to open-source alternatives.
+Safari's limitation for privacy power users is its closed environment. While features are solid, customization options are limited compared to open-source alternatives.
 
-Firefox: Open-Source Flexibility
+Firefox - Open-Source Flexibility
 
 Mozilla's Firefox for iOS has evolved significantly, now using GeckoView rather than WebKit on iOS (subject to Apple's engine requirements). The browser implements Enhanced Tracking Protection by default, blocking known trackers across all tabs.
 
@@ -78,7 +78,7 @@ const thirdPartyBlocked = async (url) => {
 
 Firefox's sync infrastructure uses end-to-end encryption, meaning Mozilla cannot access your browsing data even if compelled to share. This architecture appeals to developers who want full control over their sync data.
 
-Brave: Maximum Blocking
+Brave - Maximum Blocking
 
 Brave Browser takes an aggressive approach to privacy, blocking trackers and ads by default. The browser's Shields system blocks thousands of trackers per day for typical users, significantly reducing the attack surface for tracking scripts.
 
@@ -100,7 +100,7 @@ window Shields && Shields.isEnabled();
 
 The trade-off with Brave's aggressive blocking is that some legitimate web features may not work correctly. Developers testing applications should verify functionality with blocking enabled, as this represents an increasing segment of privacy-conscious users.
 
-Onion Browser: Tor Network Access
+Onion Browser - Tor Network Access
 
 For maximum anonymity, Onion Browser provides direct access to the Tor network on iOS. While slower than standard browsing due to onion routing, it provides strong anonymity guarantees impossible to achieve with regular browsers.
 
@@ -112,7 +112,7 @@ Onion Browser features include:
 
 The technical limitation is speed. Tor network latency makes Onion Browser unsuitable for general web browsing, but it remains the gold standard for use cases requiring strong anonymity.
 
-Firefox Focus: Minimalist Approach
+Firefox Focus - Minimalist Approach
 
 Mozilla's Firefox Focus provides a privacy-first experience designed for casual browsing without persistent data. The browser automatically clears all data after each session, cookies, history, and cache vanish when you close the app.
 
@@ -130,7 +130,7 @@ The best browser depends on your threat model and workflow requirements:
 
 | Browser | Best For | Trade-off |
 |---------|----------|----------|
-| Safari | Apple ecosystem users | Limited customization |
+| Safari | Apple environment users | Limited customization |
 | Firefox | Open-source preference, sync control | Slightly larger footprint |
 | Brave | Maximum blocking, crypto support | Some site breakage |
 | Onion Browser | Strong anonymity requirements | Speed |
@@ -138,9 +138,9 @@ The best browser depends on your threat model and workflow requirements:
 
 For developers, testing your applications against privacy-focused browsers reveals how they perform when tracking is restricted. Many analytics and advertising SDKs fail silently when trackers are blocked, making this testing essential for understanding real user behavior.
 
-The iOS browser ecosystem continues evolving as privacy regulations tighten and user expectations shift. All major browsers now include some form of tracking prevention by default, meaning the baseline privacy protection has improved across the ecosystem.
+The iOS browser environment continues evolving as privacy regulations tighten and user expectations shift. All major browsers now include some form of tracking prevention by default, meaning the baseline privacy protection has improved across the environment.
 
-Consider your specific needs: if you rely on iCloud integration and want minimal friction, Safari provides excellent protection. If you prefer open-source solutions with customizable privacy controls, Firefox offers the most flexibility. For maximum blocking regardless of site functionality, Brave remains the choice.
+Consider your specific needs - if you rely on iCloud integration and want minimal friction, Safari provides excellent protection. If you prefer open-source solutions with customizable privacy controls, Firefox offers the most flexibility. For maximum blocking regardless of site functionality, Brave remains the choice.
 
 Test different options with your specific workflow. Privacy is personal, the best browser is one that protects your data while supporting your work effectively.
 
@@ -288,18 +288,18 @@ Browser Configuration
 
 Each privacy-focused browser offers granular settings. Access through Settings → Privacy/Security:
 
-Safari: Enable "Cover IP address" (requires iCloud+), disable ad measurement
-Firefox: Set tracking protection to Strict, enable HTTPS-Only mode
-Brave: Enable aggressive shields and fingerprinting protection
-Onion Browser: Disable JavaScript for maximum security
-Firefox Focus: Enable automatic data clearing on quit
+Safari - Enable "Cover IP address" (requires iCloud+), disable ad measurement
+Firefox - Set tracking protection to Strict, enable HTTPS-Only mode
+Brave - Enable aggressive shields and fingerprinting protection
+Onion Browser - Disable JavaScript for maximum security
+Firefox Focus - Enable automatic data clearing on quit
 
-Real-World Privacy Testing: Three Scenarios
+Real-World Privacy Testing - Three Scenarios
 
-Scenario 1: News Reading
-Goal: Read news without profiling
-Best choice: Safari with Private Relay
-Why: Private Relay masks IP from news site while maintaining performance
+Scenario 1 - News Reading
+Goal - Read news without profiling
+Best choice - Safari with Private Relay
+Why - Private Relay masks IP from news site while maintaining performance
 Configuration:
 ```
 - Enable Private Relay in iCloud+ settings
@@ -308,12 +308,12 @@ Configuration:
 - Incognito visit prevents history storage
 ```
 
-Privacy outcome: News site sees randomized IP, no tracking cookies, no fingerprint matching
+Privacy outcome - News site sees randomized IP, no tracking cookies, no fingerprint matching
 
-Scenario 2: Sensitive Account Access
-Goal: Banking, email, healthcare with maximum isolation
-Best choice: Firefox Focus
-Why: Automatic session clearing prevents local data leakage
+Scenario 2 - Sensitive Account Access
+Goal - Banking, email, healthcare with maximum isolation
+Best choice - Firefox Focus
+Why - Automatic session clearing prevents local data leakage
 Configuration:
 ```
 - Each session creates new fingerprint
@@ -322,12 +322,12 @@ Configuration:
 - Browsing history never stored
 ```
 
-Privacy outcome: Complete isolation between sessions, zero local traces
+Privacy outcome - Complete isolation between sessions, zero local traces
 
-Scenario 3: Avoiding Mass Surveillance
-Goal: Protect against ISP-level monitoring, government censorship
-Best choice: Onion Browser with bridges
-Why: Tor network makes traffic invisible to ISP and local network
+Scenario 3 - Avoiding Mass Surveillance
+Goal - Protect against ISP-level monitoring, government censorship
+Best choice - Onion Browser with bridges
+Why - Tor network makes traffic invisible to ISP and local network
 Configuration:
 ```
 Settings → Network:
@@ -336,7 +336,7 @@ Settings → Network:
 - Update bridges monthly from https://bridges.torproject.org
 ```
 
-Privacy outcome: ISP sees encrypted traffic to bridge node, cannot determine destination
+Privacy outcome - ISP sees encrypted traffic to bridge node, cannot determine destination
 
 iOS-Specific Privacy Considerations
 
@@ -361,7 +361,7 @@ App Tracking Transparency (ATT) limitation:
 
 Troubleshooting Privacy Features
 
-Websites may break with aggressive privacy settings. Solutions: whitelist domains in privacy settings, temporarily allow scripts for problem sites, or switch browsers for specific sites requiring weak privacy.
+Websites may break with aggressive privacy settings. Solutions - whitelist domains in privacy settings, temporarily allow scripts for problem sites, or switch browsers for specific sites requiring weak privacy.
 
 Updating to 2026 Standards
 

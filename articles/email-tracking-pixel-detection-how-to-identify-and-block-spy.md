@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: How Email Tracking Pixels Work
+Step 1 - How Email Tracking Pixels Work
 
 Email tracking pixels function through a simple but effective mechanism. When an email contains an image tag with an external source, the email client requests that image from a remote server. That request includes your IP address, email client information, and other metadata. The tracking server logs this request and associates it with your email address, building a profile of your reading habits.
 
@@ -40,7 +40,7 @@ A typical tracking pixel URL looks like this:
 
 The image itself is often a single transparent pixel, making it invisible to the naked eye. Major email marketing platforms and some newsletter services use these pixels for analytics, but the same technique can be weaponized for surveillance.
 
-Step 2: Detecting Tracking Pixels
+Step 2 - Detecting Tracking Pixels
 
 Manual Detection Methods
 
@@ -114,7 +114,7 @@ Email Proxy Solutions
 
 For power users who want protection without writing code, setting up an email proxy provides automatic tracking pixel blocking. Services like Mailbird or Proton Mail filter known trackers. You can also run your own proxy using tools like `mailu` or configure postfix with tracking filters.
 
-Step 3: Blocking Tracking Pixels
+Step 3 - Blocking Tracking Pixels
 
 Client-Side Blocking
 
@@ -224,7 +224,7 @@ Network-Level Blocking
 
 System administrators can configure DNS-based blocking for known tracking domains. Pi-hole, for example, can be extended to block email tracking domains at the network level, protecting all devices without individual configuration.
 
-Step 4: Implementation Recommendations
+Step 4 - Implementation Recommendations
 
 Start by configuring your email client to block external images by default. This single setting eliminates most tracking pixel concerns for average users. For developers, integrate tracking detection into any email processing systems you build. Power users should consider running their own email filtering pipeline to maintain complete control over what data leaves their inbox.
 

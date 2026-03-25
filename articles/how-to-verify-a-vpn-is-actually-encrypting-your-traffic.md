@@ -27,7 +27,7 @@ Table of Contents
 
 Why Verification Matters
 
-A VPN's job is simple: encrypt your traffic so your ISP, network administrator, or monitoring service cannot see what you're doing. The promise is confidentiality through encryption.
+A VPN's job is simple - encrypt your traffic so your ISP, network administrator, or monitoring service cannot see what you're doing. The promise is confidentiality through encryption.
 
 In practice, many VPNs leak your real IP address through other protocols (DNS, WebRTC, IPv6). Others claim to encrypt but actually don't, or have kill switches that don't actually kill. Worse, some are honeypots, services run by security agencies to collect information.
 
@@ -43,7 +43,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What Encryption Looks Like: Baseline Testing
+Step 1 - What Encryption Looks Like: Baseline Testing
 
 Before testing your VPN, establish what encrypted and unencrypted traffic looks like.
 
@@ -66,16 +66,16 @@ Visit `http://example.com` and observe what you see in Wireshark:
 
 ```
 Without VPN, viewing HTTP traffic:
-Frame 1: Your IP → example.com server IP
-TCP: Your source port (random) → destination port 80
-HTTP: GET / HTTP/1.1
+Frame 1 - Your IP → example.com server IP
+TCP - Your source port (random) → destination port 80
+HTTP - GET / HTTP/1.1
        Host: example.com
        User-Agent: Mozilla/5.0...
        (All readable in plaintext)
 
-Frame 2: example.com → Your IP
-TCP: Port 80 → Your source port
-HTTP: 200 OK
+Frame 2 - example.com → Your IP
+TCP - Port 80 → Your source port
+HTTP - 200 OK
       <html>...</html>
       (Response is readable in plaintext)
 
@@ -92,16 +92,16 @@ Frame 1: Your IP → VPN server IP
 [Protocol]: Your source port → destination port (VPN protocol port, e.g., 443)
 [Encrypted payload]: (garbled bytes, unreadable)
 
-Frame 2: VPN server IP → Your IP
+Frame 2 - VPN server IP → Your IP
 [Protocol]: VPN protocol port → Your source port
 [Encrypted payload]: (garbled bytes, unreadable)
 
 Cannot see destination, content, or what you're doing
 ```
 
-The key observation: your real IP is gone, replaced by VPN server IP. The destination website is unknown. The payload is gibberish.
+The key observation - your real IP is gone, replaced by VPN server IP. The destination website is unknown. The payload is gibberish.
 
-Step 2: Test 1: DNS Leak Detection (Most Common Failure)
+Step 2 - Test 1: DNS Leak Detection (Most Common Failure)
 
 DNS is the protocol that translates domain names into IP addresses. Many VPNs encrypt your traffic but leak DNS requests, your ISP can see what websites you visit by watching DNS lookups, even though they cannot see the content.
 
@@ -110,8 +110,8 @@ Why DNS Leaks Happen
 Your operating system has a default DNS resolver (usually your ISP's). Many VPN clients forget to reconfigure it. Result:
 
 ```
-Traffic encryption: Your IP → VPN IP
-DNS resolution: Your IP → ISP's DNS server (unencrypted)
+Traffic encryption - Your IP → VPN IP
+DNS resolution - Your IP → ISP's DNS server (unencrypted)
 
 The ISP sees DNS requests like:
 client.example.com → 1.2.3.4 (your real IP)
@@ -121,7 +121,7 @@ leaked-secrets.com → 1.2.3.4
 
 Detecting DNS Leaks
 
-Method 1: Online DNS Leak Test (Easiest)
+Method 1 - Online DNS Leak Test (Easiest)
 
 Visit https://dnsleaktest.com
 
@@ -138,7 +138,7 @@ Result should show:
 - All servers owned by VPN provider or trusted DNS providers
 - No servers belonging to your ISP
 
-Good: Query #1: 198.101.242.72 (ExpressVPN DNS)
+Good - Query #1: 198.101.242.72 (ExpressVPN DNS)
          Query #2: 198.101.243.72 (ExpressVPN DNS)
 
  Bad:  Query #1: 198.101.242.72 (ExpressVPN DNS)
@@ -146,7 +146,7 @@ Good: Query #1: 198.101.242.72 (ExpressVPN DNS)
         Query #3: 192.168.1.1 (Your router - LEAK!)
 ```
 
-Method 2: CLI DNS Resolution Inspection
+Method 2 - CLI DNS Resolution Inspection
 
 Use `dig` or `nslookup` to see which DNS servers respond to your queries:
 
@@ -164,17 +164,17 @@ scutil --dns | grep nameserver
 Should show VPN's DNS servers, not ISP's
 ```
 
-Method 3: Wireshark DNS Packet Inspection
+Method 3 - Wireshark DNS Packet Inspection
 
 For absolute verification, inspect packets with Wireshark:
 
 ```bash
 Capture packets
-Filter by DNS in Wireshark: dns
+Filter by DNS in Wireshark - dns
 
 Unencrypted DNS (bad):
 Frame X: Your IP → ISP DNS (8.8.8.8:53) [UNENCRYPTED]
-DNS Query: example.com
+DNS Query - example.com
 
 Encrypted DNS (good):
 Frame X: Your IP → VPN Server IP (OpenVPN port 443)
@@ -190,7 +190,7 @@ Common DNS Leak Scenarios
 | DNS fallback | Falls back to system DNS | App queries system DNS after VPN one fails | Configure VPN with multiple DNS servers |
 | Split tunnel mode | DNS not encrypted | VPN client doesn't encrypt certain traffic | Disable split tunneling |
 
-Step 3: Test 2: WebRTC Leak Detection (Sneaky but Preventable)
+Step 3 - Test 2: WebRTC Leak Detection (Sneaky but Preventable)
 
 WebRTC is a protocol for real-time communication (video calls, screen sharing). When WebRTC connects, it leaks your real IP address even when a VPN is active. This is a known vulnerability, not a misconfiguration.
 
@@ -210,7 +210,7 @@ What happens without proper VPN:
 
 Detecting WebRTC Leaks
 
-Method 1: Online WebRTC Leak Test (Easiest)
+Method 1 - Online WebRTC Leak Test (Easiest)
 
 Visit https://www.perfect-privacy.com/webrtc-leak-test/
 
@@ -227,7 +227,7 @@ Result should show:
  Bad: Your real IP appears in WebRTC leak test
 ```
 
-Method 2: Browser Console JavaScript Test
+Method 2 - Browser Console JavaScript Test
 
 Modern browsers allow you to inspect WebRTC IPs directly:
 
@@ -266,7 +266,7 @@ findIPAddresses();
 
 Run this, then check if your real IP appears in console. If it does, WebRTC is leaking.
 
-Method 3: Disable WebRTC in Browsers
+Method 3 - Disable WebRTC in Browsers
 
 Firefox allows disabling WebRTC:
 
@@ -293,14 +293,14 @@ Fixing WebRTC Leaks
 
 Most modern VPNs now prevent WebRTC leaks if configured correctly.
 
-Step 4: Test 3: Kill Switch Verification (Critical for Security)
+Step 4 - Test 3: Kill Switch Verification (Critical for Security)
 
 A kill switch is a VPN feature that blocks all internet traffic if the VPN connection drops. Without a kill switch, traffic reverts to your real IP unencrypted.
 
 Why Kill Switches Matter
 
 ```
-Scenario: VPN connection drops without kill switch
+Scenario - VPN connection drops without kill switch
 
 1. You're using VPN, IP masked
 2. VPN connection drops (network change, server restart)
@@ -321,7 +321,7 @@ With kill switch:
 
 Testing Kill Switch
 
-Method 1: Simulate VPN Disconnect
+Method 1 - Simulate VPN Disconnect
 
 This test shows what happens when VPN fails:
 
@@ -347,7 +347,7 @@ Remove the block:
 sudo route delete [VPN_IP]/32
 ```
 
-Method 2: Check Kill Switch Setting
+Method 2 - Check Kill Switch Setting
 
 Most VPN clients have kill switch settings. Verify they're enabled:
 
@@ -367,7 +367,7 @@ OpenVPN:
   down
 ```
 
-Method 3: Actual Connection Drop Test (Advanced)
+Method 3 - Actual Connection Drop Test (Advanced)
 
 This test requires two network devices:
 
@@ -393,26 +393,26 @@ Expected without kill switch:
 - Device B sees unencrypted DNS queries or HTTP requests
 ```
 
-Step 5: Test 4: IPv6 Leak Detection
+Step 5 - Test 4: IPv6 Leak Detection
 
 IPv6 is the new internet protocol. Many VPNs only encrypt IPv4 traffic, leaving IPv6 traffic unencrypted. A website using IPv6 can see your real IPv6 address even when you think the VPN is protecting you.
 
 Understanding IPv6 Leaks
 
 ```
-Scenario: Partial IPv6 support in VPN
+Scenario - Partial IPv6 support in VPN
 
-Device IPv4: 1.2.3.4 (masked by VPN)
-Device IPv6: 2001:db8::1 (unmasked, real)
+Device IPv4 - 1.2.3.4 (masked by VPN)
+Device IPv6 - 2001:db8::1 (unmasked, real)
 
 Website requests IPv6 address, gets your real IPv6, learns identity
 Website also makes IPv4 request, gets VPN's masked IP
-Website now knows: masked IPv4 = real IPv6, deanonymizes you
+Website now knows - masked IPv4 = real IPv6, deanonymizes you
 ```
 
 Testing for IPv6 Leaks
 
-Method 1: Online IPv6 Leak Test
+Method 1 - Online IPv6 Leak Test
 
 Visit https://ipv6leak.com
 
@@ -428,7 +428,7 @@ Result should show:
  Bad: Your real IPv6 address is visible
 ```
 
-Method 2: CLI IPv6 Check
+Method 2 - CLI IPv6 Check
 
 ```bash
 See your current IPv6 address:
@@ -448,7 +448,7 @@ After connecting VPN, run again
 Should NOT match
 ```
 
-Method 3: Disable IPv6 If VPN Doesn't Support It
+Method 3 - Disable IPv6 If VPN Doesn't Support It
 
 If your VPN doesn't support IPv6, disable it:
 
@@ -456,17 +456,17 @@ If your VPN doesn't support IPv6, disable it:
 macOS: Disable IPv6
 networksetup -setv6off Wi-Fi
 
-Linux: Disable IPv6
+Linux - Disable IPv6
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 
-Windows: Open Settings → Network → IPv6 → Disable
+Windows - Open Settings → Network → IPv6 → Disable
 
 Re-enable later:
 networksetup -setv6automatic Wi-Fi  # macOS
 echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6  # Linux
 ```
 
-Step 6: Test 5: Packet Inspection with Wireshark (Complete Verification)
+Step 6 - Test 5: Packet Inspection with Wireshark (Complete Verification)
 
 For complete verification, inspect the actual packets your VPN sends:
 
@@ -503,10 +503,10 @@ Interpreting Wireshark Results
 Good VPN packet flow:
 
 ```
-Frame 1: Client IP:random_port → VPN_IP:1194 [OpenVPN encrypted]
+Frame 1 - Client IP:random_port → VPN_IP:1194 [OpenVPN encrypted]
          Encrypted payload (cannot read destination or content)
 
-Frame 2: VPN_IP:1194 → Client IP:random_port [OpenVPN encrypted]
+Frame 2 - VPN_IP:1194 → Client IP:random_port [OpenVPN encrypted]
          Encrypted payload
 
 All traffic flows through VPN IP, nothing reveals your real IP or destination
@@ -515,18 +515,18 @@ All traffic flows through VPN IP, nothing reveals your real IP or destination
 Bad VPN packet flow:
 
 ```
-Frame 1: Client IP:random_port → VPN_IP:1194 [OpenVPN encrypted]
+Frame 1 - Client IP:random_port → VPN_IP:1194 [OpenVPN encrypted]
          (Good - traffic encrypted)
 
-Frame 2: Client IP:53 → ISP_DNS:53 [DNS unencrypted]
+Frame 2 - Client IP:53 → ISP_DNS:53 [DNS unencrypted]
          example.com A?
          (Bad - DNS leak! Your ISP can see what you're accessing)
 
-Frame 3: Client IP:random_port → example.com:443 [TLS encrypted]
+Frame 3 - Client IP:random_port → example.com:443 [TLS encrypted]
          (Bad - leaking real IP as source)
 ```
 
-Step 7: VPN Verification Checklist
+Step 7 - VPN Verification Checklist
 
 Run these tests to completely verify your VPN:
 
@@ -567,11 +567,11 @@ Connect to VPN:
     Capture packets, verify encryption
     (Should see only VPN IP outgoing, all encrypted)
 
-If all tests pass: VPN is properly encrypting your traffic
-If any tests fail: VPN has a leak, contact support or switch providers
+If all tests pass - VPN is properly encrypting your traffic
+If any tests fail - VPN has a leak, contact support or switch providers
 ```
 
-Step 8: Common VPN Failures and What They Indicate
+Step 8 - Common VPN Failures and What They Indicate
 
 | Test That Fails | What It Means | Severity |
 |-----------------|----------|----------|
@@ -604,7 +604,7 @@ Related Articles
 - [Verify That Your VPN Is Actually Working and Not Leaking](/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
 - [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)
 - [Use Tcpdump to Verify VPN Traffic Is Encrypted](/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
-- [AI Coding Assistant for Network Traffic Analysis: What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
+- [AI Coding Assistant for Network Traffic Analysis - What](https://bestremotetools.com/ai-coding-assistant-network-traffic-analysis-what-connection/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 
 Frequently Asked Questions

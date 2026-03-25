@@ -16,7 +16,7 @@ voice-checked: true
 
 {% raw %}
 
-VPNs typically add 10-50ms of additional latency depending on the VPN server's location relative to the game server. If your baseline ping is 30ms, a VPN might push it to 50-80ms, significantly impacting competitive gaming. VPN encryption/decryption adds roughly 2-5ms overhead. Solution: use a VPN server geographically closest to the game server, or skip the VPN for competitive play and use it only for privacy-sensitive browsing. Measure your actual ping impact by testing with `ping` and `mtr` before and after connecting to different VPN servers.
+VPNs typically add 10-50ms of additional latency depending on the VPN server's location relative to the game server. If your baseline ping is 30ms, a VPN might push it to 50-80ms, significantly impacting competitive gaming. VPN encryption/decryption adds roughly 2-5ms overhead. Solution - use a VPN server geographically closest to the game server, or skip the VPN for competitive play and use it only for privacy-sensitive browsing. Measure your actual ping impact by testing with `ping` and `mtr` before and after connecting to different VPN servers.
 
 Table of Contents
 
@@ -30,7 +30,7 @@ Table of Contents
 - [Practical Recommendations](#practical-recommendations)
 - [Troubleshooting VPN Gaming Issues](#troubleshooting-vpn-gaming-issues)
 - [Automated Latency Testing Framework](#automated-latency-testing-framework)
-- [WireGuard vs OpenVPN: Gaming Specific Benchmarks](#wireguard-vs-openvpn-gaming-specific-benchmarks)
+- [WireGuard vs OpenVPN - Gaming Specific Benchmarks](#wireguard-vs-openvpn-gaming-specific-benchmarks)
 - [Geolocation-Based VPN Selection](#geolocation-based-vpn-selection)
 - [Network Configuration for Minimal Gaming Latency](#network-configuration-for-minimal-gaming-latency)
 - [Real-World Gaming Results with Different VPN Setups](#real-world-gaming-results-with-different-vpn-setups)
@@ -60,7 +60,7 @@ Measure jitter with continuous ping
 ping -i 0.2 na.valorant.com > ping.log &
 ```
 
-Record your baseline metrics: average ping, packet loss percentage, and jitter (variation in latency). These numbers provide the reference point for evaluating VPN impact.
+Record your baseline metrics - average ping, packet loss percentage, and jitter (variation in latency). These numbers provide the reference point for evaluating VPN impact.
 
 Actual VPN Latency Measurements
 
@@ -80,13 +80,13 @@ Why VPNs Increase Latency
 
 The latency increase stems from several technical factors:
 
-Encryption overhead: All VPN protocols add processing time for encrypting and decrypting packets. Modern protocols like WireGuard minimize this overhead with efficient cryptographic primitives, adding only 1-3ms per hop compared to 5-10ms for OpenVPN.
+Encryption overhead - All VPN protocols add processing time for encrypting and decrypting packets. Modern protocols like WireGuard minimize this overhead with efficient cryptographic primitives, adding only 1-3ms per hop compared to 5-10ms for OpenVPN.
 
-Tunneling distance: Your traffic now flows through the VPN server before reaching the game server. If the VPN server is geographically between you and the game server, you add distance. If the VPN server is on a completely different path, you may reduce latency despite the extra hop, more on this below.
+Tunneling distance - Your traffic now flows through the VPN server before reaching the game server. If the VPN server is geographically between you and the game server, you add distance. If the VPN server is on a completely different path, you may reduce latency despite the extra hop, more on this below.
 
-Server congestion: VPN servers handle many simultaneous connections. During peak hours, queueing delays can add 10-50ms of latency. Commercial VPNs with overloaded servers perform worse than well-provisioned personal VPN servers.
+Server congestion - VPN servers handle many simultaneous connections. During peak hours, queueing delays can add 10-50ms of latency. Commercial VPNs with overloaded servers perform worse than well-provisioned personal VPN servers.
 
-Protocol overhead: The VPN protocol itself adds bytes to each packet. This matters less for latency than throughput, but can affect timing on very latency-sensitive games.
+Protocol overhead - The VPN protocol itself adds bytes to each packet. This matters less for latency than throughput, but can affect timing on very latency-sensitive games.
 
 When VPNs Actually Reduce Latency
 
@@ -312,7 +312,7 @@ tester.run_tests()
 tester.report()
 ```
 
-WireGuard vs OpenVPN: Gaming Specific Benchmarks
+WireGuard vs OpenVPN - Gaming Specific Benchmarks
 
 Detailed performance comparison for gaming:
 

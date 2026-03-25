@@ -55,19 +55,19 @@ What Lockdown Mode Blocks
 
 When you enable Lockdown Mode, your device will experience several functional changes. Here is what gets restricted:
 
-Message attachment restrictions: Incoming message attachments, including images and videos from unknown senders are blocked. This prevents malicious media files from automatically executing code on your device.
+Message attachment restrictions - Incoming message attachments, including images and videos from unknown senders are blocked. This prevents malicious media files from automatically executing code on your device.
 
-Link previews disabled: The feature preview functionality that loads content before you explicitly open it gets disabled, eliminating another attack vector where malicious code could execute in the background when you view a link.
+Link previews disabled - The feature preview functionality that loads content before you explicitly open it gets disabled, eliminating another attack vector where malicious code could execute in the background when you view a link.
 
-Safari restrictions: JavaScript just-in-time compilation gets disabled in Safari, significantly reducing the browser's capability to execute dynamic content. This also means many websites will not work properly, including streaming services and web applications. You will need to add specific websites to an allowed list for them to function.
+Safari restrictions - JavaScript just-in-time compilation gets disabled in Safari, significantly reducing the browser's capability to execute dynamic content. This also means many websites will not work properly, including streaming services and web applications. You will need to add specific websites to an allowed list for them to function.
 
-FaceTime and audio calls: Incoming FaceTime calls and audio calls from people not in your contacts get automatically blocked. Callers must first request permission through a new "Contact" system in Settings.
+FaceTime and audio calls - Incoming FaceTime calls and audio calls from people not in your contacts get automatically blocked. Callers must first request permission through a new "Contact" system in Settings.
 
 Shared albums and iCloud photo sharing: Album sharing through iCloud gets disabled entirely. This prevents attackers from using shared media features to inject malicious content.
 
-Device configuration profiles: The ability to install configuration profiles, which could be used for MDM or other management features, gets restricted. This prevents unauthorized device management.
+Device configuration profiles - The ability to install configuration profiles, which could be used for MDM or other management features, gets restricted. This prevents unauthorized device management.
 
-USB accessories: When your device is locked, USB connections to accessories are blocked unless you explicitly unlock the device and approve each connection.
+USB accessories - When your device is locked, USB connections to accessories are blocked unless you explicitly unlock the device and approve each connection.
 
 How to Enable Lockdown Mode
 
@@ -83,7 +83,7 @@ If you determine that Lockdown Mode aligns with your security needs, follow thes
 
 After enabling, you will notice a black border around your screen in the Lockdown Mode enabled state, and the status bar will display a distinct indicator showing that Lockdown Mode is active.
 
-Before Enabling: Preparation Checklist
+Before Enabling - Preparation Checklist
 
 Before committing to Lockdown Mode, prepare your device:
 
@@ -128,13 +128,13 @@ Never whitelist:
 - Any site you don't actively use
 - Sites with poor security histories
 
-For each exception, ask: "Does this website actually need full JavaScript, or am I just accustomed to the fancy version?" Many websites work perfectly fine with basic functionality only.
+For each exception, ask - "Does this website actually need full JavaScript, or am I just accustomed to the fancy version?" Many websites work perfectly fine with basic functionality only.
 
 Who Should Enable Lockdown Mode
 
 This feature is not intended for everyone. Consider enabling Lockdown Mode if you fall into one of these categories:
 
-Journalists and news gatherers: Those reporting on sensitive topics, especially in regions with press restrictions, face elevated digital threats. Documented evidence shows state-sponsored spyware targeting investigative journalists. Lockdown Mode provides defense against sophisticated spyware designed to monitor communications and location. Journalists working on corruption, human trafficking, or government abuse should strongly consider this protection.
+Journalists and news gatherers - Those reporting on sensitive topics, especially in regions with press restrictions, face elevated digital threats. Documented evidence shows state-sponsored spyware targeting investigative journalists. Lockdown Mode provides defense against sophisticated spyware designed to monitor communications and location. Journalists working on corruption, human trafficking, or government abuse should strongly consider this protection.
 
 Activists and human rights advocates: Organizations tracking human rights defenders have documented spyware used against activists worldwide. Amnesty International's Security Lab has analyzed Pegasus deployments targeting activists in multiple countries. If your work involves advocating for causes in high-risk regions, this mode adds meaningful protection.
 
@@ -142,7 +142,7 @@ Corporate executives and legal professionals: Business leaders and attorneys han
 
 Individuals facing targeted threats: If you have received credible threats from sophisticated actors, or if security professionals have indicated you may be targeted, Lockdown Mode provides meaningful protection. This includes individuals involved in litigation, whistleblowers, and those subject to harassment campaigns.
 
-Government officials: Those in government roles handling sensitive information often face advanced persistent threats from well-funded adversaries. Classified information handlers should implement maximum security measures.
+Government officials - Those in government roles handling sensitive information often face advanced persistent threats from well-funded adversaries. Classified information handlers should implement maximum security measures.
 
 Individuals in hostile jurisdictions: If you live in or frequently travel to countries with active surveillance of minorities, political opponents, or specific ethnic groups, Lockdown Mode provides defense against targeted spyware operations.
 

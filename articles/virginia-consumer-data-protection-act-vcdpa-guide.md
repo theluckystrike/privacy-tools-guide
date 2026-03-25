@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Who VCDPA Applies To
+Step 1 - Who VCDPA Applies To
 
 VCDPA applies to persons conducting business in Virginia or targeting Virginia residents, that either:
 
@@ -44,7 +44,7 @@ VCDPA applies to persons conducting business in Virginia or targeting Virginia r
 
 If your application falls outside these thresholds, VCDPA compliance may still be valuable for establishing privacy best practices. Many organizations choose to adopt VCDPA-style controls universally rather than building separate compliance pathways.
 
-Step 2: Key Definitions for Developers
+Step 2 - Key Definitions for Developers
 
 Understanding VCDPA requires familiarity with its terminology. These definitions directly impact how you architecture data handling systems:
 
@@ -55,7 +55,7 @@ Understanding VCDPA requires familiarity with its terminology. These definitions
 
 Notably, VCDPA excludes publicly available information, de-identified data, and employee data from its requirements, though these exemptions have specific technical conditions.
 
-Step 3: Consumer Rights Under VCDPA
+Step 3 - Consumer Rights Under VCDPA
 
 Virginia residents receive six distinct rights under VCDPA. Your application must support mechanisms for users to exercise these rights:
 
@@ -68,7 +68,7 @@ Virginia residents receive six distinct rights under VCDPA. Your application mus
 
 Implementing these rights requires building specific endpoints and data management functionality into your applications.
 
-Step 4: Implementing Consumer Rights in Code
+Step 4 - Implementing Consumer Rights in Code
 
 Building compliant systems requires programming consumer rights directly into your data layer. Here's a practical approach using a Python/Flask example:
 
@@ -116,7 +116,7 @@ def handle_deletion_request():
     return jsonify({'status': 'deletion_completed'}), 200
 ```
 
-Step 5: Data Minimization and Purpose Limitation
+Step 5 - Data Minimization and Purpose Limitation
 
 VCDPA requires data collection be limited to what is "reasonably necessary and proportionate" for disclosed purposes. This principle, data minimization, directly impacts how you design database schemas and API endpoints.
 
@@ -143,7 +143,7 @@ const minimalProfile = {
 };
 ```
 
-Step 6: Opt-Out Mechanism Implementation
+Step 6 - Opt-Out Mechanism Implementation
 
 The right to opt-out requires functional mechanisms for users to stop certain processing activities. For developers, this means maintaining processing flags that control data usage:
 

@@ -33,7 +33,7 @@ Table of Contents
 - [Screen Sharing Risks During Video Calls](#screen-sharing-risks-during-video-calls)
 - [Legal and Regulatory Implications](#legal-and-regulatory-implications)
 - [Testing Your Video Call Privacy](#testing-your-video-call-privacy)
-- [Comparison: Bumble vs Dedicated Encrypted Video Apps](#comparison-bumble-vs-dedicated-encrypted-video-apps)
+- [Comparison - Bumble vs Dedicated Encrypted Video Apps](#comparison-bumble-vs-dedicated-encrypted-video-apps)
 - [Post-Call Privacy Cleanup](#post-call-privacy-cleanup)
 - [Recommendations for Developers Building Dating Apps](#recommendations-for-developers-building-dating-apps)
 
@@ -263,8 +263,8 @@ Screen Sharing Risks During Video Calls
 If Bumble ever adds screen sharing to video calls, be aware:
 
 ```
-Current Bumble video call: Just video/audio
-Risk level: Moderate (metadata visible, media encrypted)
+Current Bumble video call - Just video/audio
+Risk level - Moderate (metadata visible, media encrypted)
 
 If screen sharing added:
 Risk level: High (screen content synchronized across servers)
@@ -318,7 +318,7 @@ Similar packet analysis to verify SRTP usage
 
 If you see plaintext video or audio in the packet capture, Bumble's encryption isn't working properly.
 
-Comparison: Bumble vs Dedicated Encrypted Video Apps
+Comparison - Bumble vs Dedicated Encrypted Video Apps
 
 For context on privacy trade-offs:
 
@@ -360,14 +360,14 @@ After using Bumble video calls, take these privacy steps:
 ```bash
 Clear cached video frames
 iOS: Settings → Bumble → Offload Data
-Android: Settings → Apps → Bumble → Clear Cache
+Android - Settings → Apps → Bumble → Clear Cache
 
 Remove call history from Bumble UI
-In-app: Message with person → Long-press → Delete
+In-app - Message with person → Long-press → Delete
 
 Device-level cleanup
 iOS: iPhone Storage → Bumble → Remove App Data
-Android: Settings → Apps → Bumble → Storage → Clear Cache
+Android - Settings → Apps → Bumble → Storage → Clear Cache
 
 Network logs
 If on VPN, restart connection after call

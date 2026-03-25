@@ -28,13 +28,13 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Phone Number Privacy Problem
+Step 1 - The Phone Number Privacy Problem
 
 Signal uses your phone number as your unique identifier for account registration and contact discovery. When someone has your phone number, they can find you on Signal regardless of whether you've saved their contact information. This design decision, while simplifying user experience, introduces several privacy concerns:
 
 Your phone number links directly to your carrier account, which carries identification information. Law enforcement can obtain carrier records to identify Signal users. Your phone number may appear in data breaches, potentially exposing your Signal identity. Cross-referencing phone numbers across platforms can build behavioral profiles.
 
-Step 2: Method 1: VoIP Numbers for Signal Registration
+Step 2 - Method 1: VoIP Numbers for Signal Registration
 
 VoIP (Voice over IP) numbers provide an intermediary layer between your Signal identity and your carrier-linked phone number. Several services offer numbers that work with Signal's verification system.
 
@@ -60,7 +60,7 @@ if available_numbers:
         phone_number_sid=available_numbers[0].sid,
         sms_url='http://your-webhook-url.com/sms'
     )
-    print(f"Purchased: {purchased.phone_number}")
+    print(f"Purchased - {purchased.phone_number}")
 ```
 
 After purchasing a Twilio number, use it for Signal registration. The verification code sent by Signal will arrive at your Twilio number, which you can then configure to forward to your email or another endpoint.
@@ -82,7 +82,7 @@ Signal verification SMS in all regions
 
 Signal's SMS verification may not work consistently with Google Voice because Google Voice doesn't always pass through automated verification codes reliably. Twilio or similar services typically provide better reliability.
 
-Step 3: Method 2: Dedicated SIM Card Approach
+Step 3 - Method 2: Dedicated SIM Card Approach
 
 For maximum privacy separation, use a dedicated SIM card registered independently from your primary identity:
 
@@ -102,7 +102,7 @@ This approach provides:
 - Complete device isolation
 - Ability to power off the device when not in use
 
-Step 4: Method 3: Signal CLI with Headless Registration
+Step 4 - Method 3: Signal CLI with Headless Registration
 
 For advanced users, signal-cli provides programmatic control over Signal without the standard mobile app interface:
 
@@ -135,7 +135,7 @@ Export group invote link
 signal-cli -u +1234567890 updateGroup -i <group-id>
 ```
 
-Step 5: Method 4: Docker-Based Signal Relay
+Step 5 - Method 4: Docker-Based Signal Relay
 
 For users who want to run Signal on a server and relay messages to their primary device:
 
@@ -162,7 +162,7 @@ docker exec signal-relay-1 signal-cli -u +1234567890 send +0987654321 -m "Messag
 
 This approach allows you to keep your Signal identity on a remote server while accessing messages through the Signal CLI, effectively decoupling your Signal usage from your primary device.
 
-Step 6: Privacy Settings Configuration
+Step 6 - Privacy Settings Configuration
 
 Regardless of which method you use, configure Signal's privacy settings for maximum protection:
 
@@ -195,7 +195,7 @@ Enable screen security to prevent screenshots:
 - Android: Settings > Privacy > Screen security
 - iOS: Settings > Privacy > Screen security
 
-Step 7: Network-Level Privacy
+Step 7 - Network-Level Privacy
 
 Add an extra layer of privacy by routing Signal traffic through a VPN or Tor:
 

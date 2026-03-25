@@ -33,7 +33,7 @@ SearXNG vs Whoogle
 
 SearXNG queries Bing, DuckDuckGo, Startpage, Wikipedia, and others simultaneously and merges results. Whoogle proxies Google, so results match Google exactly. without tracking.
 
-Option 1: SearXNG with Docker
+Option 1 - SearXNG with Docker
 
 ```yaml
 /opt/searxng/docker-compose.yml
@@ -152,7 +152,7 @@ outgoing:
   #   http:  socks5://127.0.0.1:9050  # Tor
   #   https: socks5://127.0.0.1:9050
 
-Privacy: do not log searches
+Privacy - do not log searches
 general:
   debug: false
   donation_url: false
@@ -193,7 +193,7 @@ engines:
     disabled: false
 ```
 
-Option 2: Whoogle (Google Results, No Tracking)
+Option 2 - Whoogle (Google Results, No Tracking)
 
 Whoogle is simpler. it proxies Google results through your server, stripping ads, AMP links, and tracking parameters.
 
@@ -287,7 +287,7 @@ Or add manually:
 // browser.urlbar.suggest.searches = false (disable search suggestions sent to provider)
 
 // Add as OpenSearch engine (SearXNG supports this automatically)
-// Visit: https://search.yourdomain.com/
+// Visit - https://search.yourdomain.com/
 // Click the + icon in the address bar
 ```
 
@@ -319,8 +319,8 @@ docker compose logs searxng --tail 50
 Monitor container health
 docker stats searxng
 
-SearXNG: review which engines are returning results
-Visit: https://search.yourdomain.com/stats
+SearXNG - review which engines are returning results
+Visit - https://search.yourdomain.com/stats
 (disable metrics in settings if public instance)
 ```
 

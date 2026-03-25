@@ -65,9 +65,9 @@ For optimal torrent performance, you need the ability to forward ports. This imp
 
 ```bash
 qBittorrent port configuration example
-In qBittorrent: Tools > Preferences > Connection
-Bind to IP: 10.0.0.2 (your VPN tunnel IP)
-Listening port: 6881 (or your forwarded port)
+In qBittorrent - Tools > Preferences > Connection
+Bind to IP - 10.0.0.2 (your VPN tunnel IP)
+Listening port - 6881 (or your forwarded port)
 ```
 
 P2P-Optimized Servers
@@ -200,7 +200,7 @@ Threat Model for German Torrent Users
 
 Understanding the threat actors helps clarify which protections matter most:
 
-Primary Threat: Copyright Monitoring Organizations
+Primary Threat - Copyright Monitoring Organizations
 
 German copyright enforcement operates through specialized companies that monitor BitTorrent swarms. These organizations collect IP addresses of peers downloading copyrighted material, then file Abmahnung (cease-and-desist) notices through German courts.
 
@@ -212,7 +212,7 @@ Organizational approach:
 
 The threat level depends on torrent content popularity. Obscure torrents receive minimal monitoring, while mainstream entertainment content gets extensive surveillance.
 
-Secondary Threat: ISP Surveillance
+Secondary Threat - ISP Surveillance
 
 German ISPs operate under different legal frameworks than US providers. They're required to:
 - Retain IP assignment logs for 6 months
@@ -221,7 +221,7 @@ German ISPs operate under different legal frameworks than US providers. They're 
 
 VPN adoption directly counteracts ISP surveillance by masking your real IP from ISP logs, the VPN provider's IP appears in logs, not yours.
 
-Tertiary Threat: Device Compromise
+Tertiary Threat - Device Compromise
 
 If your computer is compromised with malware:
 - Local traffic logs may reveal torrent activity

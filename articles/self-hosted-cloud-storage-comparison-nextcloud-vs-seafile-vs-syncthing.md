@@ -21,13 +21,13 @@ Self-hosted cloud storage gives you complete control over your data and eliminat
 Table of Contents
 
 - [Why Self-Host Cloud Storage?](#why-self-host-cloud-storage)
-- [Architecture Comparison: Centralized vs Peer-to-Peer](#architecture-comparison-centralized-vs-peer-to-peer)
-- [Nextcloud: Feature-Rich Centralized Storage](#nextcloud-feature-rich-centralized-storage)
-- [Seafile: Lightweight and Fast](#seafile-lightweight-and-fast)
-- [Syncthing: Decentralized and Simple](#syncthing-decentralized-and-simple)
+- [Architecture Comparison - Centralized vs Peer-to-Peer](#architecture-comparison-centralized-vs-peer-to-peer)
+- [Nextcloud - Feature-Rich Centralized Storage](#nextcloud-feature-rich-centralized-storage)
+- [Seafile - Lightweight and Fast](#seafile-lightweight-and-fast)
+- [Syncthing - Decentralized and Simple](#syncthing-decentralized-and-simple)
 - [Hardware Requirements Comparison](#hardware-requirements-comparison)
 - [Encryption and Security Comparison](#encryption-and-security-comparison)
-- [Real-World Scenario: Which to Choose?](#real-world-scenario-which-to-choose)
+- [Real-World Scenario - Which to Choose?](#real-world-scenario-which-to-choose)
 - [Backup Strategy for Self-Hosted Storage](#backup-strategy-for-self-hosted-storage)
 - [Related Reading](#related-reading)
 
@@ -42,9 +42,9 @@ Self-hosting gives you:
 - Unlimited storage: Limited only by hardware, not subscription tier
 - Custom features: Add functionality your use case needs
 
-The tradeoff: you manage updates, backups, uptime, and security. Not everyone should self-host. This guide assumes you're willing to spend 2-3 hours on initial setup and 1 hour monthly on maintenance.
+The tradeoff - you manage updates, backups, uptime, and security. Not everyone should self-host. This guide assumes you're willing to spend 2-3 hours on initial setup and 1 hour monthly on maintenance.
 
-Architecture Comparison: Centralized vs Peer-to-Peer
+Architecture Comparison - Centralized vs Peer-to-Peer
 
 Centralized Architecture (Nextcloud, Seafile)
 
@@ -95,7 +95,7 @@ Disadvantages:
 - No fine-grained permissions (sync is all-or-nothing)
 - No version control (file overwrites are permanent)
 
-Nextcloud: Feature-Rich Centralized Storage
+Nextcloud - Feature-Rich Centralized Storage
 
 Nextcloud is the most feature-complete option. It's not just storage, it's a full productivity suite. You get file sync, calendar, contacts, notes, office editing, and extensibility through apps.
 
@@ -110,7 +110,7 @@ What Nextcloud Does Well
 - Selective sync (don't download everything)
 - Desktop integration (right-click share)
 - Group management and permissions
-- Large ecosystem of extensions
+- Large environment of extensions
 
 Nextcloud Docker Setup
 
@@ -181,7 +181,7 @@ Encryption in Nextcloud
 
 Nextcloud has two encryption options:
 
-Option 1: Server-Side Encryption
+Option 1 - Server-Side Encryption
 - Encrypted on server, server holds encryption keys
 - Server can still decrypt (for search, sharing)
 - Default in most setups
@@ -191,7 +191,7 @@ Enable via Docker environment
 ENABLE_CRYPT=1
 ```
 
-Option 2: End-to-End Encryption (E2EE)
+Option 2 - End-to-End Encryption (E2EE)
 - Only client can decrypt
 - Server cannot access content
 - Limits features (no server-side search, no sharing with non-E2EE users)
@@ -248,7 +248,7 @@ When NOT to Use Nextcloud
 - You don't need web access
 - You want zero configuration
 
-Seafile: Lightweight and Fast
+Seafile - Lightweight and Fast
 
 Seafile is a lightweight alternative to Nextcloud. It focuses on file sync without the productivity suite. It's written in C for performance.
 
@@ -267,7 +267,7 @@ What Seafile Lacks
 - No calendar/contacts
 - No office editing
 - No native web editing
-- Smaller extension ecosystem
+- Smaller extension environment
 
 Seafile Docker Setup
 
@@ -379,7 +379,7 @@ When to Use Seafile
 - You don't need web editing
 - You prioritize performance
 
-Syncthing: Decentralized and Simple
+Syncthing - Decentralized and Simple
 
 Syncthing is fundamentally different, it's peer-to-peer, not client-server. Every device is equal. Changes sync directly between devices.
 
@@ -436,7 +436,7 @@ EOF
 Start service
 docker-compose up -d
 
-Access web UI: http://localhost:8384
+Access web UI - http://localhost:8384
 Configure devices and folders in web interface
 ```
 
@@ -445,21 +445,21 @@ Syncthing Configuration Example
 Once Docker starts, configure folders and devices:
 
 ```
-Step 1: Access Web UI
+Step 1 - Access Web UI
   http://localhost:8384
 
-Step 2: Create Folder
+Step 2 - Create Folder
   Settings → Folders → Add Folder
   Label: "Documents"
   Path: /var/syncthing/Sync/Documents
   Versioning: Simple (keep 5 old versions)
 
-Step 3: Add Device
+Step 3 - Add Device
   Actions → Show ID
   (Copy Device ID)
   Add on other devices with this ID
 
-Step 4: Share Folder
+Step 4 - Share Folder
   Folders → Documents → Sharing
   Select devices to share with
 ```
@@ -523,26 +523,26 @@ Real hardware recommendations:
 
 Budget option: Raspberry Pi 4 (4GB) + Seafile
 ```
-Cost: $60
-Setup: Install Seafile in Docker
-Supports: 20-30 concurrent users
-Maintenance: Check once per month
+Cost - $60
+Setup - Install Seafile in Docker
+Supports - 20-30 concurrent users
+Maintenance - Check once per month
 ```
 
-Balanced option: Used mini PC (Lenovo ThinkCenter) + Nextcloud
+Balanced option - Used mini PC (Lenovo ThinkCenter) + Nextcloud
 ```
-Cost: $150-200
-Setup: Install Docker, run docker-compose
-Supports: 50+ concurrent users
-Maintenance: Updates once per month
+Cost - $150-200
+Setup - Install Docker, run docker-compose
+Supports - 50+ concurrent users
+Maintenance - Updates once per month
 ```
 
-Resilient option: Multiple Raspberry Pi 4s with Syncthing
+Resilient option - Multiple Raspberry Pi 4s with Syncthing
 ```
-Cost: $120-180 (3 devices)
-Setup: Install Syncthing, configure peer connections
-Supports: Unlimited (no server)
-Maintenance: Minimal, devices sync automatically
+Cost - $120-180 (3 devices)
+Setup - Install Syncthing, configure peer connections
+Supports - Unlimited (no server)
+Maintenance - Minimal, devices sync automatically
 ```
 
 Encryption and Security Comparison
@@ -556,12 +556,12 @@ Encryption and Security Comparison
 | Audit trail | Yes | Yes | No audit |
 | Access control | Granular | Per-library | None (peer) |
 
-Real-World Scenario: Which to Choose?
+Real-World Scenario - Which to Choose?
 
-Scenario 1: Family Backup
-Goal: Backup family photos, documents, and calendars. No external access needed.
+Scenario 1 - Family Backup
+Goal - Backup family photos, documents, and calendars. No external access needed.
 
-Choice: Syncthing on home PC + Raspberry Pi 4 backup
+Choice - Syncthing on home PC + Raspberry Pi 4 backup
 ```
 - Laptop syncs to home PC via Syncthing
 - Home PC syncs to Raspberry Pi (backup)
@@ -569,13 +569,13 @@ Choice: Syncthing on home PC + Raspberry Pi 4 backup
 - If laptop breaks: restore from Pi
 - If home PC breaks: restore from Pi
 - Zero internet exposure, maximum privacy
-- Cost: $60 (Raspberry Pi only)
+- Cost - $60 (Raspberry Pi only)
 ```
 
-Scenario 2: Small Remote Team
-Goal: Sync documents, calendar, contacts across 5 people. Need to access remotely.
+Scenario 2 - Small Remote Team
+Goal - Sync documents, calendar, contacts across 5 people. Need to access remotely.
 
-Choice: Nextcloud on mini PC or NAS
+Choice - Nextcloud on mini PC or NAS
 ```
 - Each person installs Nextcloud client
 - Syncs automatically throughout day
@@ -585,10 +585,10 @@ Choice: Nextcloud on mini PC or NAS
 - Cost: $150-300 (hardware)
 ```
 
-Scenario 3: Performance-Critical File Sync
-Goal: Sync large media files frequently. Minimal overhead.
+Scenario 3 - Performance-Critical File Sync
+Goal - Sync large media files frequently. Minimal overhead.
 
-Choice: Seafile on mini PC
+Choice - Seafile on mini PC
 ```
 - Lightweight, fast sync
 - Minimal CPU usage
@@ -602,7 +602,7 @@ Backup Strategy for Self-Hosted Storage
 
 Self-hosting storage requires a backup strategy. Data is your responsibility.
 
-Strategy 1: External Drive Backup (Simple)
+Strategy 1 - External Drive Backup (Simple)
 ```
 Daily:
 1. Run backup script (rsync or duplicacy)
@@ -613,12 +613,12 @@ Script:
 #!/bin/bash
 rsync -av --delete /var/lib/docker/volumes/nextcloud_data/_data/ /mnt/external_backup/
 
-Cost: $80 (2TB external drive)
-Time: 5 minutes per backup
-Recovery: 1 hour to restore
+Cost - $80 (2TB external drive)
+Time - 5 minutes per backup
+Recovery - 1 hour to restore
 ```
 
-Strategy 2: Cloud Backup (Redundant)
+Strategy 2 - Cloud Backup (Redundant)
 ```
 Daily:
 1. Run duplicacy/restic
@@ -629,9 +629,9 @@ Script:
 #!/bin/bash
 duplicacy backup -stats
 
-Cost: $0.006/GB/month (Wasabi)
-Time: Automatic
-Recovery: Automatic restore
+Cost - $0.006/GB/month (Wasabi)
+Time - Automatic
+Recovery - Automatic restore
 ```
 
 Combined Backup (Recommended)

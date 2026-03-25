@@ -26,7 +26,7 @@ Table of Contents
 - [Verifying Encryption with Specific Tests](#verifying-encryption-with-specific-tests)
 - [Detecting Common VPN Leaks](#detecting-common-vpn-leaks)
 - [Troubleshooting VPN Encryption Issues](#troubleshooting-vpn-encryption-issues)
-- [Advanced: Decrypting VPN Traffic (For Debugging)](#advanced-decrypting-vpn-traffic-for-debugging)
+- [Advanced - Decrypting VPN Traffic (For Debugging)](#advanced-decrypting-vpn-traffic-for-debugging)
 - [Security Best Practices](#security-best-practices)
 
 Why Verify VPN Encryption?
@@ -56,7 +56,7 @@ Before analyzing VPN traffic, ensure you have:
 
 Capturing VPN Traffic
 
-Step 1: Identify Your VPN Interface
+Step 1 - Identify Your VPN Interface
 
 First, determine which network interface your VPN is using:
 
@@ -78,7 +78,7 @@ Common VPN interface names include:
 - `utun`. macOS VPN clients
 - `ppp0`. Older PPTP connections
 
-Step 2: Capture Packets on the VPN Interface
+Step 2 - Capture Packets on the VPN Interface
 
 Start capturing on the VPN interface:
 
@@ -103,7 +103,7 @@ Key tcpdump flags:
 - `-xx`. Print header and data in hex
 - `-X`. Print hex and ASCII
 
-Step 3: Analyze Packet Contents
+Step 3 - Analyze Packet Contents
 
 When VPN encryption is working properly, you should see:
 
@@ -129,7 +129,7 @@ Notice the readable "HTTP/1.1 200 OK" in the payload, this is unencrypted traffi
 
 Verifying Encryption with Specific Tests
 
-Test 1: Check for Plaintext HTTP Traffic
+Test 1 - Check for Plaintext HTTP Traffic
 
 Capture traffic and filter for port 80 (HTTP):
 
@@ -139,7 +139,7 @@ sudo tcpdump -i wg0 -nn port 80 -A
 
 If you see readable HTTP requests like `GET / HTTP/1.1` or `POST /login`, your VPN is leaking unencrypted traffic.
 
-Test 2: Verify Only VPN Port Traffic Exists
+Test 2 - Verify Only VPN Port Traffic Exists
 
 Confirm all traffic uses the VPN's protocol and port:
 
@@ -153,7 +153,7 @@ sudo tcpdump -i tun0 -nn not port 1194
 
 Any output here indicates traffic leaking outside the VPN tunnel.
 
-Test 3: Inspect TLS/SSL Handshake
+Test 3 - Inspect TLS/SSL Handshake
 
 For HTTPS traffic through the VPN, verify TLS encryption:
 
@@ -164,7 +164,7 @@ sudo tcpdump -i wg0 -nn -A | grep -E "TLSv1\.|TLSv1\.2|TLSv1\.3"
 
 You should see TLS records, but the content should be encrypted (not readable).
 
-Test 4: Compare LAN vs VPN Traffic
+Test 4 - Compare LAN vs VPN Traffic
 
 Compare traffic on your regular interface versus VPN:
 
@@ -218,7 +218,7 @@ STUN requests may leak outside the VPN tunnel.
 
 Troubleshooting VPN Encryption Issues
 
-Issue: No Traffic on VPN Interface
+Issue - No Traffic on VPN Interface
 
 ```bash
 Verify interface is up
@@ -231,7 +231,7 @@ Verify routing
 ip route
 ```
 
-Issue: High Packet Count but No Encryption
+Issue - High Packet Count but No Encryption
 
 If you see plaintext traffic, check your VPN configuration:
 
@@ -243,7 +243,7 @@ For OpenVPN - check configuration
 sudo openvpn --config /etc/openvpn/client.conf --verb 6
 ```
 
-Issue: Selective Traffic Not Encrypted
+Issue - Selective Traffic Not Encrypted
 
 Check your routing table:
 
@@ -255,7 +255,7 @@ Check for split tunneling
 ip route | grep -v default
 ```
 
-Advanced: Decrypting VPN Traffic (For Debugging)
+Advanced - Decrypting VPN Traffic (For Debugging)
 
 If you're debugging and have access to the session keys, you can decrypt traffic:
 

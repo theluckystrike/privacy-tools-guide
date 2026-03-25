@@ -44,7 +44,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Choose Your Key Server Software
+Step 1 - Choose Your Key Server Software
 
 Three primary options exist for self-hosted OpenPGP key servers:
 
@@ -56,7 +56,7 @@ Keys OpenPGP Key Server is the server behind the popular keys.openpgp.org servic
 
 For most organizations, Hockeypuck strikes the best balance between features and simplicity.
 
-Step 2: Deploy Hockeypuck
+Step 2 - Deploy Hockeypuck
 
 Hockeypuck requires PostgreSQL and a Go runtime. Install dependencies on Ubuntu:
 
@@ -107,7 +107,7 @@ The keyserver now runs on port 11371. Test it locally:
 curl http://localhost:11371/pks/lookup?op=index&search=yourname@yourcompany.com
 ```
 
-Step 3: Configure Client Access
+Step 3 - Configure Client Access
 
 Your team needs to configure their GnuPG installations to query your internal server. Edit each user's `~/.gnupg/gpg.conf` or create a `dirmngr` configuration file:
 
@@ -127,7 +127,7 @@ tls-ca-file /path/to/your-ca-cert.pem
 EOF
 ```
 
-Step 4: Populating Your Key Server
+Step 4 - Populating Your Key Server
 
 Upload keys to your new server using GnuPG:
 
@@ -147,7 +147,7 @@ You can also pull keys from the public network and mirror them internally. This 
 hockeypuck -sync yourname@yourcompany.com
 ```
 
-Step 5: Set Up Synchronization
+Step 5 - Set Up Synchronization
 
 If you run multiple key server nodes, configure SKS-style synchronization. Each node maintains a connection to peers and exchanges key updates. Add peers to your configuration:
 
@@ -161,7 +161,7 @@ peers = [
 
 Synchronization uses port 11370 by default. Ensure firewall rules permit this traffic between your nodes but block external access.
 
-Step 6: Automate Key Management
+Step 6 - Automate Key Management
 
 Organizations benefit from automated key expiration and rotation policies. Create a cron job that checks for expiring keys and sends notifications:
 
@@ -183,9 +183,9 @@ Security Considerations
 
 Protect your key server like any critical infrastructure. Implement these measures:
 
-Network isolation: Run your key server on an internal network segment. Only expose port 443 (if using TLS reverse proxy) to the VPN or intranet.
+Network isolation - Run your key server on an internal network segment. Only expose port 443 (if using TLS reverse proxy) to the VPN or intranet.
 
-Rate limiting: Configure Hockeypuck to limit queries per IP address, preventing abuse:
+Rate limiting - Configure Hockeypuck to limit queries per IP address, preventing abuse:
 
 ```toml
 [ratelimit]
@@ -193,7 +193,7 @@ requests_per_minute = 60
 burst = 100
 ```
 
-Audit logging: Enable detailed logging to track key lookups and uploads:
+Audit logging - Enable detailed logging to track key lookups and uploads:
 
 ```toml
 [logging]
@@ -201,7 +201,7 @@ level = "debug"
 file = "/var/log/hockeypuck.log"
 ```
 
-Backup strategy: Regularly export your PostgreSQL database. Test restoration procedures quarterly:
+Backup strategy - Regularly export your PostgreSQL database. Test restoration procedures quarterly:
 
 ```bash
 pg_dump -U hockeypuck hockeypuck > hockeypuck-backup-$(date +%Y%m%d).sql
@@ -209,17 +209,17 @@ pg_dump -U hockeypuck hockeypuck > hockeypuck-backup-$(date +%Y%m%d).sql
 
 Troubleshooting Common Issues
 
-Keys not appearing in searches: Verify your PostgreSQL database contains the keys. Check that your web server configuration serves the correct port. Review logs for indexing errors.
+Keys not appearing in searches - Verify your PostgreSQL database contains the keys. Check that your web server configuration serves the correct port. Review logs for indexing errors.
 
-Synchronization failures: Confirm network connectivity between peers. Verify both servers use compatible versions. Check that firewall rules allow port 11370 traffic.
+Synchronization failures - Confirm network connectivity between peers. Verify both servers use compatible versions. Check that firewall rules allow port 11370 traffic.
 
-Slow query performance: Index the database properly. For large keyrings, consider adding a Redis cache layer for frequently queried keys.
+Slow query performance - Index the database properly. For large keyrings, consider adding a Redis cache layer for frequently queried keys.
 
 Advanced Key Management Workflows
 
 Beyond basic key distribution, implement organizational policies:
 
-Automated Key Rotation: Enforce regular key rotation to limit damage from compromised keys:
+Automated Key Rotation - Enforce regular key rotation to limit damage from compromised keys:
 
 ```bash
 #!/bin/bash
@@ -255,7 +255,7 @@ To rotate:
 3. Sign your new key with old key to establish continuity
 4. Update team wiki with new key ID
 
-Timeline: Complete rotation at least 7 days before expiration.
+Timeline - Complete rotation at least 7 days before expiration.
 EOF
     fi
 done
@@ -263,7 +263,7 @@ done
 
 Schedule this script monthly via cron. Proactive rotation prevents operational incidents when a key expires and developers lose the ability to sign commits.
 
-Key Signing Ceremony: For high-security environments, implement key signing ceremonies where team members sign each other's keys in person:
+Key Signing Ceremony - For high-security environments, implement key signing ceremonies where team members sign each other's keys in person:
 
 ```bash
 #!/bin/bash
@@ -275,20 +275,20 @@ echo "Purpose: Establish organizational web of trust"
 echo "Participants must have valid ID and fingerprint verification"
 echo ""
 
-Step 1: Import keys
+Step 1 - Import keys
 echo "Step 1: Import all participating keys"
 for participant in alice@company.com bob@company.com charlie@company.com; do
   gpg --keyserver keys.internal.yourcompany.com --recv-keys $participant
 done
 
-Step 2: Verify fingerprints in person
+Step 2 - Verify fingerprints in person
 echo "Step 2: Verify fingerprints (each person reads out loud)"
 for participant in alice@company.com bob@company.com charlie@company.com; do
   gpg --fingerprint $participant
 done
 
-Step 3: Sign each key
-echo "Step 3: Sign each key if verification successful"
+Step 3 - Sign each key
+echo "Step 3 - Sign each key if verification successful"
 read -p "Verify all fingerprints? (y/n) " verified
 
 if [ "$verified" = "y" ]; then
@@ -365,21 +365,21 @@ jobs:
 
 This ensures every commit in production branches is cryptographically signed by an authorized developer. It prevents unauthorized code from being merged.
 
-Step 7: Disaster Recovery and Key Escrow
+Step 7 - Disaster Recovery and Key Escrow
 
 Organizations must plan for scenarios where key owners are unavailable:
 
-Key Escrow Procedure: Securely backup keys in case of emergencies:
+Key Escrow Procedure - Securely backup keys in case of emergencies:
 
 ```bash
 #!/bin/bash
 escrow_key.sh - Escrow procedure for organizational keys
 
-Step 1: Export private key (HIGHLY SENSITIVE)
+Step 1 - Export private key (HIGHLY SENSITIVE)
 gpg --armor --export-secret-key [KEY_ID] > /tmp/key_escrow.asc
 
-Step 2: Encrypt with 3-of-5 Shamir Secret Sharing
-Requires: ssss (Secret Sharing Scheme)
+Step 2 - Encrypt with 3-of-5 Shamir Secret Sharing
+Requires - ssss (Secret Sharing Scheme)
 brew install ssss (macOS) or apt-get install ssss (Ubuntu)
 
 ssss-split -t 3 -n 5 -w escrow < /tmp/key_escrow.asc
@@ -401,10 +401,10 @@ shred -vfz -n 3 /tmp/key_escrow.asc
 
 Using Shamir's Secret Sharing ensures no single person can recover a key unilaterally. You need 3 of the 5 shares, preventing any individual from accessing escrowed keys without accountability.
 
-Periodic Testing: Quarterly, practice key recovery to ensure procedures work:
+Periodic Testing - Quarterly, practice key recovery to ensure procedures work:
 
 ```bash
-Quarterly drill: Recover test key from escrow
+Quarterly drill - Recover test key from escrow
 Only proceed if authorized by management
 
 recovered_key=$(ssss-combine -w escrow < combined_shares.txt)

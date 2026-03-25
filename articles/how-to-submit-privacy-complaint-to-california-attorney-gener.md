@@ -38,7 +38,7 @@ Consumer Rights Violations to Report:
 
 Document every interaction with the business. Save emails, screenshots of web forms, and timestamps of requests. If you submitted a request programmatically, log your API calls and responses.
 
-Step 2: Submitting Your Complaint Online
+Step 2 - Submitting Your Complaint Online
 
 The CAG provides an online complaint portal at oag.ca.gov/contact/consumer-complaint-against-business-or-company. Navigate to this page and select the appropriate category related to your complaint type.
 
@@ -51,7 +51,7 @@ The complaint form requires:
 
 For developers submitting requests programmatically, the 45-day response window is critical. If a business ignores API-based requests or returns errors without proper justification, document this in your complaint. Reference the specific API endpoints, HTTP status codes, and response bodies.
 
-Step 3: Writing an Effective Complaint Description
+Step 3 - Writing an Effective Complaint Description
 
 Structure your complaint description for maximum impact. The CAG reviews thousands of complaints, clarity and specificity improve your chances of action.
 
@@ -79,7 +79,7 @@ COMPLAINT DESCRIPTION:
    - [List attached documents]
 ```
 
-Code Snippet: Logging Your Request
+Code Snippet - Logging Your Request
 
 If you submit requests programmatically, maintain structured logs:
 
@@ -117,13 +117,13 @@ class CCPARequestLogger:
 
 This logger captures essential data for potential complaints, including payload hashes that prove what you sent without storing sensitive request contents.
 
-Step 4: What Happens After Submission
+Step 4 - What Happens After Submission
 
 After submitting your complaint, expect the following process:
 
-Initial Review (2-4 weeks): The CAG acknowledges receipt and conducts a preliminary review to determine if the complaint falls within their enforcement scope.
+Initial Review (2-4 weeks) - The CAG acknowledges receipt and conducts a preliminary review to determine if the complaint falls within their enforcement scope.
 
-Investigation (Variable): If the CAG decides to investigate, they may contact you for additional information. Not all complaints result in investigation, prioritization depends on pattern complaints and resource availability.
+Investigation (Variable) - If the CAG decides to investigate, they may contact you for additional information. Not all complaints result in investigation, prioritization depends on pattern complaints and resource availability.
 
 Resolution Outcomes:
 - Business receives warning letter
@@ -133,7 +133,7 @@ Resolution Outcomes:
 
 You will receive updates on case status via email. However, the CAG does not disclose the outcome of enforcement actions to individual complainants in detail.
 
-Step 5: Alternative: California Privacy Rights Act (CPRA)
+Step 5 - Alternative: California Privacy Rights Act (CPRA)
 
 California residents gained additional rights under the CPRA, which amended and expanded the CCPA effective January 1, 2023. Key additions include:
 - Right to correct inaccurate personal information
@@ -142,7 +142,7 @@ California residents gained additional rights under the CPRA, which amended and 
 
 For CPRA-specific violations, you can also file complaints with the California Privacy Protection Agency at privacy.ca.gov.
 
-Step 6: Timeline and Enforcement Outcomes
+Step 6 - Timeline and Enforcement Outcomes
 
 Historical data shows CCPA complaints have specific patterns:
 
@@ -219,7 +219,7 @@ if not all(audit_results.values()):
     print("CCPA compliance gaps detected. Implement fixes immediately.")
 ```
 
-Step 7: Developer-Specific Considerations
+Step 7 - Developer-Specific Considerations
 
 If you're building applications that handle California consumer data, understand that users may file complaints against your organization. Implement CCPA compliance:
 

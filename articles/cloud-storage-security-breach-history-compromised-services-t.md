@@ -46,7 +46,7 @@ What happened:
 - S3 bucket permissions were overly permissive
 - Customer Social Security numbers, bank account numbers, and credit scores were exposed
 
-Developer takeaway: Always apply the principle of least privilege to bucket policies. Use IAM roles instead of access keys where possible.
+Developer takeaway - Always apply the principle of least privilege to bucket policies. Use IAM roles instead of access keys where possible.
 
 2021: Multiple SaaS Service Compromises
 
@@ -56,7 +56,7 @@ Several major SaaS providers experienced breaches through supply chain attacks a
 - Company B: OAuth implementation flaws enabled account takeover
 - Company C: Third-party vendor compromise led to data leakage
 
-Developer takeaway: Implement strong API authentication. Use OAuth 2.0 correctly with proper token validation and short-lived access tokens.
+Developer takeaway - Implement strong API authentication. Use OAuth 2.0 correctly with proper token validation and short-lived access tokens.
 
 2022: The Exposed Backup Problem
 
@@ -68,7 +68,7 @@ A pattern emerged in 2022 where organizations properly secured their primary clo
 
 One healthcare company exposed backup archives containing patient records for over three months before detection. The backups were created by a third-party compliance tool that defaulted to creating new buckets with public-read ACLs. a configuration the vendor had quietly changed without notifying customers.
 
-Developer takeaway: Audit every automated process that writes to cloud storage. Backup infrastructure frequently has weaker security controls than primary systems. Enable AWS Config rules or equivalent monitoring to alert on any new public bucket creation.
+Developer takeaway - Audit every automated process that writes to cloud storage. Backup infrastructure frequently has weaker security controls than primary systems. Enable AWS Config rules or equivalent monitoring to alert on any new public bucket creation.
 
 2023: The MegaCloud Incident
 

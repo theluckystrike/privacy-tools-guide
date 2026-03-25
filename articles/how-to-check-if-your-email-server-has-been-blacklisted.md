@@ -43,7 +43,7 @@ When your server's IP address appears on one or more of these blacklists, receiv
 
 How to Check If Your Server Is Blacklisted
 
-Step 1: Identify Your Mail Server's IP Address
+Step 1 - Identify Your Mail Server's IP Address
 
 Before checking any blacklist, you need to know your mail server's public IP address. You can find this by:
 
@@ -63,7 +63,7 @@ nslookup mail.yourdomain.com
 
 The returned IP address is what you need to check against blacklists.
 
-Step 2: Check Multiple Blacklist Databases
+Step 2 - Check Multiple Blacklist Databases
 
 There are several free online tools and services you can use to check if your IP is blacklisted:
 
@@ -79,7 +79,7 @@ Individual Blacklist Checks:
 - SORBS: Check at [sorbs.net](https://www.sorbs.net)
 - SpamCop: Visit [spamcop.net](https://www.spamcop.net)
 
-Step 3: Analyze the Results
+Step 3 - Analyze the Results
 
 When checking blacklists, pay attention to:
 
@@ -118,9 +118,9 @@ Most blacklists offer a delisting process:
 Example delisting request template:
 
 ```
-IP Address: [Your Server IP]
-Organization: [Your Company Name]
-Contact Email: [Your Email]
+IP Address - [Your Server IP]
+Organization - [Your Company Name]
+Contact Email - [Your Email]
 
 Dear Spamhaus/SORBS Team,
 
@@ -262,15 +262,15 @@ In some jurisdictions, blacklisting affects your legal status. GDPR requires org
 Document your blacklisting and recovery in your GDPR compliance records:
 
 ```markdown
-Incident Report: Email Server Blacklisting
+Incident Report - Email Server Blacklisting
 
-Incident Date: 2026-03-15
-Discovery Method: Google Postmaster Tools notification
-Root Cause: Compromised account sending spam
-Blacklists Affected: Spamhaus PBL, SORBS
+Incident Date - 2026-03-15
+Discovery Method - Google Postmaster Tools notification
+Root Cause - Compromised account sending spam
+Blacklists Affected - Spamhaus PBL, SORBS
 
-Data Subjects Affected: All customers
-Notification Status: Delayed notification due to communication inability
+Data Subjects Affected - All customers
+Notification Status - Delayed notification due to communication inability
 Resolution:
 - Secured compromised account
 - Rebuilt mail server reputation
@@ -286,12 +286,12 @@ For ISP-based blacklists like SORBS or Barracuda, provide detailed evidence of r
 ```markdown
 Delisting Request to Barracuda Central
 
-IP Address: 203.0.113.50
-Organization: ExampleCorp
+IP Address - 203.0.113.50
+Organization - ExampleCorp
 
 Incident Details
 - Date Listed: 2026-03-14
-- Root Cause: Compromised user account (account ID: user@example.com)
+- Root Cause - Compromised user account (account ID: user@example.com)
 - Scope: 847 spam messages sent before detection
 
 Remediation Actions

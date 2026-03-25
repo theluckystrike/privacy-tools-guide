@@ -21,9 +21,9 @@ Setting up a VPN for remote access to your home network while traveling solves a
 Table of Contents
 
 - [Why You Need Home Network VPN Access](#why-you-need-home-network-vpn-access)
-- [Option 1: WireGuard on a Home Server](#option-1-wireguard-on-a-home-server)
-- [Option 2: OpenVPN for Broader Compatibility](#option-2-openvpn-for-broader-compatibility)
-- [Option 3: Cloud Tunnel with Tailscale](#option-3-cloud-tunnel-with-tailscale)
+- [Option 1 - WireGuard on a Home Server](#option-1-wireguard-on-a-home-server)
+- [Option 2 - OpenVPN for Broader Compatibility](#option-2-openvpn-for-broader-compatibility)
+- [Option 3 - Cloud Tunnel with Tailscale](#option-3-cloud-tunnel-with-tailscale)
 - [Security Considerations](#security-considerations)
 - [Performance Optimization](#performance-optimization)
 - [Choosing Your Approach](#choosing-your-approach)
@@ -38,7 +38,7 @@ When traveling, you likely encounter situations where accessing your home networ
 
 A self-hosted VPN gives you complete ownership of your connectivity. You control the server, the encryption, and the access policies. No monthly fees once the infrastructure is in place, and you can scale bandwidth as needed.
 
-Option 1: WireGuard on a Home Server
+Option 1 - WireGuard on a Home Server
 
 WireGuard has become the go-to VPN protocol for self-hosted setups. It offers excellent performance, modern cryptography, and a straightforward configuration format. The main requirement is a device at home that stays powered on, typically a Raspberry Pi, an old laptop, or a dedicated mini PC.
 
@@ -100,7 +100,7 @@ The `AllowedIPs` setting is critical here. Including your home network subnet (1
 
 For dynamic DNS, set up a service like DuckDNS or Cloudflare to point a domain to your home IP address. You'll need to forward port 51820 from your router to the WireGuard server.
 
-Option 2: OpenVPN for Broader Compatibility
+Option 2 - OpenVPN for Broader Compatibility
 
 While WireGuard is more efficient, OpenVPN remains useful when you need broad client compatibility or are traversing restrictive networks that block UDP. OpenVPN works on any device, including routers with custom firmware.
 
@@ -144,7 +144,7 @@ verb 3
 
 OpenVPN generates client configuration files that include all necessary certificates. Distribute these securely to your traveling devices. The client file bundles the CA certificate, client certificate, and private key into a single `.ovpn` file that works with most VPN clients.
 
-Option 3: Cloud Tunnel with Tailscale
+Option 3 - Cloud Tunnel with Tailscale
 
 If your home network lacks reliable port forwarding (common with CGNAT or restrictive ISPs), a cloud tunnel approach using Tailscale provides an elegant solution. Tailscale builds on WireGuard but handles NAT traversal and relay automatically through its coordination servers.
 
@@ -212,11 +212,11 @@ Implementing Zero Trust Network Access
 Rather than trusting all VPN clients equally, implement per-application access controls:
 
 ```bash
-WireGuard: Restrict client to specific home network services
+WireGuard - Restrict client to specific home network services
 [Peer]
 PublicKey = <client-public-key>
 AllowedIPs = 10.0.0.2/32
-Restrict: Only allows access to 192.168.1.100 (NAS) and 192.168.1.1 (gateway)
+Restrict - Only allows access to 192.168.1.100 (NAS) and 192.168.1.1 (gateway)
 Other hosts remain inaccessible even over VPN
 AllowedIPs = 10.0.0.2/32, 192.168.1.100/32, 192.168.1.1/32
 ```
@@ -253,7 +253,7 @@ Handling Device Management and Revocation
 When clients lose access rights (laptop sold, smartphone destroyed), revoke their credentials immediately:
 
 ```bash
-WireGuard: Rotate server private key and regenerate all peer keys
+WireGuard - Rotate server private key and regenerate all peer keys
 wg genkey | tee server.key | wg pubkey > server.pub
 
 Regenerate client keys
@@ -301,17 +301,17 @@ Create separate VPN clients for each person
 Each gets isolated access based on their needs
 
 [Peer]
-Alice: can access home server but not smart home system
+Alice - can access home server but not smart home system
 PublicKey = <alice-pubkey>
 AllowedIPs = 10.0.0.10/32, 192.168.1.100/32  # NAS only
 
 [Peer]
-Bob: can access smart home but not personal servers
+Bob - can access smart home but not personal servers
 PublicKey = <bob-pubkey>
 AllowedIPs = 10.0.0.11/32, 192.168.1.50/32   # SmartHome hub only
 
 [Peer]
-Family admin: full access
+Family admin - full access
 PublicKey = <admin-pubkey>
 AllowedIPs = 10.0.0.12/32, 192.168.1.0/24    # Everything
 ```

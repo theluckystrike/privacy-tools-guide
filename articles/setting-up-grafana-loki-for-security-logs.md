@@ -32,7 +32,7 @@ Prerequisites
 - Promtail on each server you want to collect logs from
 - Docker Compose (simplest deployment method)
 
-Step 1: Deploy Loki and Grafana with Docker Compose
+Step 1 - Deploy Loki and Grafana with Docker Compose
 
 ```bash
 mkdir -p /opt/loki && cd /opt/loki
@@ -119,7 +119,7 @@ docker compose up -d
 docker compose logs -f
 ```
 
-Step 2: Install Promtail on Log Sources
+Step 2 - Install Promtail on Log Sources
 
 On each server whose logs you want to ship:
 
@@ -204,7 +204,7 @@ sudo systemctl enable --now promtail
 
 The `SupplementaryGroups=adm systemd-journal` gives Promtail permission to read system logs without running as root.
 
-Step 3: Configure Grafana Data Source
+Step 3 - Configure Grafana Data Source
 
 1. Open Grafana at `http://your-server:3000`
 2. Log in with admin / changeme (change immediately)
@@ -213,7 +213,7 @@ Step 3: Configure Grafana Data Source
 5. Set URL: `http://loki:3100` (or the actual IP if not using Docker networking)
 6. Click Save & Test
 
-Step 4: Writing Security Queries with LogQL
+Step 4 - Writing Security Queries with LogQL
 
 LogQL is Loki's query language. For security monitoring:
 
@@ -245,7 +245,7 @@ topk(10,
 )
 ```
 
-Step 5: Create Security Alerts
+Step 5 - Create Security Alerts
 
 In Grafana, navigate to Alerting > Alert Rules > New Rule.
 
@@ -262,7 +262,7 @@ sum by (ip) (
 
 0.016/s = ~5 events per 5-minute window. Configure the alert to fire when this threshold is exceeded and send to a notification channel (Slack, email, PagerDuty).
 
-Step 6: Securing Loki
+Step 6 - Securing Loki
 
 By default Loki has no authentication. Add basic auth via Nginx or Caddy reverse proxy:
 
@@ -285,7 +285,7 @@ clients:
       password: your-promtail-password
 ```
 
-Step 7: Log Retention and Storage Management
+Step 7 - Log Retention and Storage Management
 
 Loki's compactor handles retention automatically if configured. Check current storage usage:
 
@@ -330,17 +330,17 @@ chunk_store_config:
 
 ---
 
-Step 8: High-Value Security Dashboards
+Step 8 - High-Value Security Dashboards
 
 Import or build these dashboards in Grafana to make the security data actionable:
 
 SSH Brute Force Dashboard panels:
 
 ```logql
-Panel 1: Failed SSH attempts per minute (rate graph)
+Panel 1 - Failed SSH attempts per minute (rate graph)
 sum(rate({job="auth"} |= "Failed password" [1m])) by (host)
 
-Panel 2: Top attacking IPs (table)
+Panel 2 - Top attacking IPs (table)
 topk(20,
   sum by (src_ip) (
     count_over_time(
@@ -351,7 +351,7 @@ topk(20,
   )
 )
 
-Panel 3: Successful logins after failures (potential compromise indicator)
+Panel 3 - Successful logins after failures (potential compromise indicator)
 {job="auth"} |= "Accepted" | line_format "{{.message}}"
 ```
 

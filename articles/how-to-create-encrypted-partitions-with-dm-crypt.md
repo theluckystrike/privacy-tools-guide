@@ -29,7 +29,7 @@ If empty:
 sudo modprobe dm_crypt
 ```
 
-Step 1: Identify Your Target Disk
+Step 1 - Identify Your Target Disk
 
 ```bash
 List block devices
@@ -44,7 +44,7 @@ All data on this device will be destroyed
 
 For this guide, the target device is `/dev/sdb`. Replace with your actual device path.
 
-Step 2: Create a LUKS Container
+Step 2 - Create a LUKS Container
 
 ```bash
 Format the device with LUKS2 (default in modern cryptsetup)
@@ -67,7 +67,7 @@ Confirm by typing YES (all caps)
 
 AES-XTS with 512-bit keys means AES-256 for both the data key and the tweak key. `argon2id` as the PBKDF (Password-Based Key Derivation Function) makes brute-forcing your passphrase expensive.
 
-Step 3: Open the Encrypted Container
+Step 3 - Open the Encrypted Container
 
 ```bash
 Open the LUKS container and map it to /dev/mapper/mydata
@@ -77,7 +77,7 @@ You will be prompted for your passphrase
 The device is now available at /dev/mapper/mydata
 ```
 
-Step 4: Create a Filesystem on the Encrypted Device
+Step 4 - Create a Filesystem on the Encrypted Device
 
 ```bash
 Format with ext4
@@ -94,7 +94,7 @@ Verify
 df -h /mnt/encrypted
 ```
 
-Step 5: Use the Encrypted Partition
+Step 5 - Use the Encrypted Partition
 
 ```bash
 Create files as normal
@@ -104,7 +104,7 @@ Change ownership if you want non-root access
 sudo chown -R user:user /mnt/encrypted/
 ```
 
-Step 6: Unmount and Close
+Step 6 - Unmount and Close
 
 ```bash
 Unmount the filesystem
@@ -119,7 +119,7 @@ ls /dev/mapper/
 
 After closing, the data on `/dev/sdb` is completely inaccessible without the passphrase.
 
-Step 7: Add a Keyfile (Second Key Slot)
+Step 7 - Add a Keyfile (Second Key Slot)
 
 LUKS supports multiple key slots. A keyfile lets you unlock the partition without typing a passphrase. useful for automated unlocking:
 
@@ -139,7 +139,7 @@ Now you can open the device with the keyfile instead of the passphrase:
 sudo cryptsetup open --key-file /root/luks-keyfile /dev/sdb mydata
 ```
 
-Step 8: Automatic Mounting with /etc/crypttab and /etc/fstab
+Step 8 - Automatic Mounting with /etc/crypttab and /etc/fstab
 
 To mount automatically at boot (on a server where the keyfile is on the root disk):
 
@@ -163,7 +163,7 @@ sudo cryptsetup luksDump /dev/sdb | grep UUID
 mydata  UUID=a1b2c3d4-...  /root/luks-keyfile  luks
 ```
 
-Step 9: Inspect LUKS Metadata
+Step 9 - Inspect LUKS Metadata
 
 ```bash
 Show key slots and LUKS header info
@@ -177,7 +177,7 @@ Make sure you have another way in first
 sudo cryptsetup luksKillSlot /dev/sdb 0
 ```
 
-Step 10: Encrypt a Loop File (No Partition Needed)
+Step 10 - Encrypt a Loop File (No Partition Needed)
 
 You can encrypt a file rather than a whole partition. useful for creating portable encrypted containers:
 

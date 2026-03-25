@@ -25,12 +25,12 @@ Table of Contents
 - [Interpreting Results](#interpreting-results)
 - [Verifying Network Isolation](#verifying-network-isolation)
 - [Conclusion](#conclusion)
-- [Threat Model: Hardware Fingerprinting](#threat-model-hardware-fingerprinting)
-- [Advanced Benchmarking: Comparative Analysis](#advanced-benchmarking-comparative-analysis)
+- [Threat Model - Hardware Fingerprinting](#threat-model-hardware-fingerprinting)
+- [Advanced Benchmarking - Comparative Analysis](#advanced-benchmarking-comparative-analysis)
 - [Privacy-First Docker Benchmarking](#privacy-first-docker-benchmarking)
 - [CLI Benchmark Dashboard](#cli-benchmark-dashboard)
 - [Verifying Benchmark Isolation](#verifying-benchmark-isolation)
-- [Comparison Table: Local vs. Cloud Benchmarks](#comparison-table-local-vs-cloud-benchmarks)
+- [Comparison Table - Local vs. Cloud Benchmarks](#comparison-table-local-vs-cloud-benchmarks)
 
 The Problem with Mainstream CPU Benchmarks
 
@@ -38,7 +38,7 @@ Most consumer-grade benchmarking applications collect more than just CPU scores.
 
 For privacy-conscious developers and power users, this telemetry creates several concerns. Your hardware configuration becomes part of external databases. Network requests to benchmark servers expose your IP address alongside detailed system specs. Some tools even include advertising SDKs that share data with analytics networks.
 
-The solution: use open-source benchmarking tools designed from the ground up for local-only operation.
+The solution - use open-source benchmarking tools designed from the ground up for local-only operation.
 
 Privacy-Focused Alternatives
 
@@ -78,7 +78,7 @@ For multi-threaded testing:
 sysbench cpu --cpu-max-prime=20000 --threads=$(nproc) --time=10 run
 ```
 
-Phoronix Test Suite: Local Testing
+Phoronix Test Suite - Local Testing
 
 Phoronix Test Suite (pts) is an open-source benchmarking framework with extensive test profiles. While it has commercial components, the core suite operates entirely offline.
 
@@ -107,7 +107,7 @@ phoronix-test-suite benchmark pts/cpu --no-network
 
 The `--no-network` flag ensures zero outbound connections. Phoronix supports tests like compress-7zip, branch-prediction, and simulatest to stress different CPU components.
 
-OpenSSL Speed Test: Cryptographic Performance
+OpenSSL Speed Test - Cryptographic Performance
 
 For developers working with cryptography or TLS, OpenSSL's built-in speed test provides accurate CPU metrics relevant to real-world workloads.
 
@@ -189,7 +189,7 @@ sudo tcpdump -r benchmark-capture.pcap | grep -c "tcp"
 
 A truly local benchmark should show zero TCP connections during execution. This verification step provides confidence that your hardware data remains private.
 
-Threat Model: Hardware Fingerprinting
+Threat Model - Hardware Fingerprinting
 
 CPU benchmark data creates a persistent hardware fingerprint. Here's what gets exposed and how:
 
@@ -204,7 +204,7 @@ CPU benchmark data creates a persistent hardware fingerprint. Here's what gets e
 
 When combined with OS version, GPU model, and network fingerprints, hardware telemetry creates an identifying profile.
 
-Advanced Benchmarking: Comparative Analysis
+Advanced Benchmarking - Comparative Analysis
 
 For developers evaluating CPU upgrades, create comparative baselines without cloud dependencies:
 
@@ -347,7 +347,7 @@ if __name__ == '__main__':
     curses.wrapper(main)
 ```
 
-Run with: `python3 cpu-dashboard.py`
+Run with - `python3 cpu-dashboard.py`
 
 Verifying Benchmark Isolation
 
@@ -365,13 +365,13 @@ Stop capture
 kill $TCPDUMP_PID
 sleep 1
 
-Analyze: should show zero packets sent/received if isolated
+Analyze - should show zero packets sent/received if isolated
 tcpdump -r bench.pcap -v | grep -c "TCP\|UDP\|DNS" || echo "No network activity detected (good)"
 ```
 
 A properly local benchmark should show zero network connections. If you see DNS or TCP traffic, the benchmark tool is attempting to contact external servers.
 
-Comparison Table: Local vs. Cloud Benchmarks
+Comparison Table - Local vs. Cloud Benchmarks
 
 | Characteristic | Local Tools | UserBenchmark | Geekbench Cloud |
 |---|---|---|---|

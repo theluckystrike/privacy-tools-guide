@@ -24,7 +24,7 @@ Chrome stores passwords with your Google account encryption, but the management 
 
 The fundamental difference lies in who controls your keys. Chrome's "smart lock" feature syncs passwords to Google's servers, meaning Google can access your encrypted data. Self-hosted options like Bitwarden or Vaultwarden give you complete ownership.
 
-Step 1: Export Chrome Passwords
+Step 1 - Export Chrome Passwords
 
 Before importing elsewhere, you need to extract your passwords from Chrome. Several methods exist, ranging from built-in exports to direct database access.
 
@@ -49,7 +49,7 @@ sqlite3 /tmp/chrome_logins "SELECT origin_url, username_value, password_value FR
 
 The password values are encrypted with DPAPI on macOS/Windows. For plaintext extraction, use a tool like `chrome-decrypt` or the `hashcat` approach if you need to crack your own exported data.
 
-Recommended: Use a Python Script for Clean Export
+Recommended - Use a Python Script for Clean Export
 
 The `chrome-export` tool provides cleaner CSV output:
 
@@ -63,7 +63,7 @@ chrome-export --csv /tmp/chrome_passwords.csv
 
 This script handles the decryption automatically using your local Chrome keychain.
 
-Step 2: Choose Your Destination Manager
+Step 2 - Choose Your Destination Manager
 
 Select a password manager that fits your threat model and technical requirements:
 
@@ -85,7 +85,7 @@ Verify installation
 bw --version
 ```
 
-Step 3: Import to Your Dedicated Manager
+Step 3 - Import to Your Dedicated Manager
 
 Bitwarden Import Process
 
@@ -107,7 +107,7 @@ Bitwarden accepts CSV imports with specific formatting. Your Chrome export may n
 
 ```bash
 Reformat CSV for Bitwarden import
-Required columns: folder,type,login_uri,login_username,login_password,login_note
+Required columns - folder,type,login_uri,login_username,login_password,login_note
 
 Import the formatted CSV
 bw import bitwardencsv /path/to/your/formatted_passwords.csv
@@ -133,7 +133,7 @@ Manual Import with CLI (Most Control)
 For full control, create entries programmatically:
 
 ```bash
-Bitwarden: Create individual items
+Bitwarden - Create individual items
 bw get item "New Item" 2>/dev/null || \
 bw create item "{
   \"name\": \"Example Site\",
@@ -145,12 +145,12 @@ bw create item "{
 }"
 ```
 
-Step 4: Verify and Clean Up
+Step 4 - Verify and Clean Up
 
 After import, verify your data transferred correctly:
 
 ```bash
-Bitwarden: List all items
+Bitwarden - List all items
 bw list items | jq '.[] | .name'
 
 Check item count matches expectations
@@ -159,7 +159,7 @@ bw list items | jq 'length'
 
 Review entries for duplicates or errors. Chrome often creates duplicate entries for the same site with slight URL variations.
 
-Step 5: Disable Chrome Password Saving
+Step 5 - Disable Chrome Password Saving
 
 Prevent future passwords from accumulating in Chrome:
 
@@ -180,18 +180,18 @@ For enterprise environments, Chrome policies can enforce these settings:
 
 Deploy via MDM or group policy.
 
-Step 6: Set Up CLI Automation (Recommended)
+Step 6 - Set Up CLI Automation (Recommended)
 
 Now that you've migrated, use CLI access for development workflows:
 
 ```bash
-Bitwarden: Get password programmatically
+Bitwarden - Get password programmatically
 bw get password "github.com" --raw
 
-Bitwarden: Get username
+Bitwarden - Get username
 bw get username "github.com" --raw
 
-Bitwarden: Generate TOTP code
+Bitwarden - Generate TOTP code
 bw get totp "github.com" --raw
 ```
 

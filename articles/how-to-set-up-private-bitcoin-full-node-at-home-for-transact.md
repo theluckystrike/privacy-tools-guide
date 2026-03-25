@@ -43,7 +43,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Privacy Model: What a Node Does and Does Not Protect
+Step 1 - Privacy Model: What a Node Does and Does Not Protect
 
 Running a full node is not a complete privacy solution on its own. It prevents a block explorer or third-party node from learning your IP address. It does not:
 
@@ -64,9 +64,9 @@ Bitcoin Core, the reference implementation, stores the complete blockchain. As o
 
 A repurposed desktop computer or small-form-factor PC works well. Raspberry Pi 5 with external SSD can handle pruning modes, but a full archival node needs more hardware. Purpose-built node devices like Umbrel Home or Start9 Embassy simplify setup but cost more than DIY alternatives.
 
-Pruned vs. archival node: An archival node stores the full blockchain history and can serve historical blocks to other nodes. A pruned node validates everything but discards old blocks after verification, keeping only recent data. For personal use. verifying your own transactions. pruning works fine.
+Pruned vs. archival node - An archival node stores the full blockchain history and can serve historical blocks to other nodes. A pruned node validates everything but discards old blocks after verification, keeping only recent data. For personal use. verifying your own transactions. pruning works fine.
 
-Step 2: Install Bitcoin Core
+Step 2 - Install Bitcoin Core
 
 Download Bitcoin Core from the official repository:
 
@@ -87,7 +87,7 @@ gpg --verify SHA256SUMS.asc
 
 The verification step ensures you have not installed tampered software. This step is non-negotiable for financial software. a compromised binary could silently redirect funds.
 
-Step 3: Initial Configuration
+Step 3 - Initial Configuration
 
 Create a configuration file tailored for privacy and functionality:
 
@@ -104,7 +104,7 @@ rpcuser=bitcoinuser
 rpcpassword=generatestrongpassword
 rpcallowip=127.0.0.1
 
-Privacy: disable unnecessary network features
+Privacy - disable unnecessary network features
 upnp=0
 natpmp=0
 discover=0
@@ -122,7 +122,7 @@ EOF
 
 Change `rpcpassword` to a strong random value. The pruning setting keeps the node functional while limiting disk usage to around 550MB of retained block data.
 
-Step 4: Starting the Node
+Step 4 - Starting the Node
 
 Launch Bitcoin Core in the background:
 
@@ -176,7 +176,7 @@ sudo systemctl enable bitcoind
 sudo systemctl start bitcoind
 ```
 
-Step 5: Verify Transactions
+Step 5 - Verify Transactions
 
 Once synchronized, verify any Bitcoin transaction independently:
 
@@ -196,7 +196,7 @@ To check the number of confirmations:
 bitcoin-cli gettransaction "your-txid" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('confirmations','unconfirmed'))"
 ```
 
-Step 6: Broadcasting Transactions
+Step 6 - Broadcasting Transactions
 
 Broadcast transactions directly from your node without using external services:
 
@@ -213,7 +213,7 @@ bitcoin-cli sendrawtransaction "signed-hex"
 
 This flow keeps your transaction within your infrastructure until it reaches peers. Your node propagates it across the network just like any other participant. No third-party service sees your IP address or knows you created the transaction.
 
-Step 7: Connecting Your Wallet
+Step 7 - Connecting Your Wallet
 
 Link your preferred wallet to your node for enhanced privacy:
 
@@ -221,7 +221,7 @@ Electrum (desktop):
 
 ```bash
 In Electrum, go to Network > Spv Servers
-Enter: 127.0.0.1:50001:s
+Enter - 127.0.0.1:50001:s
 ```
 
 Bitcoin Core wallet (built-in):
@@ -236,7 +236,7 @@ bitcoin-cli getnewaddress "legacy" "legacy"
 
 The Core wallet provides node integration but lacks some convenience features of modern alternatives. Sparrow Wallet is a recommended alternative. it supports hardware wallets, coin control, and connects to a local node through RPC.
 
-Step 8: Routing Node Traffic Through Tor
+Step 8 - Routing Node Traffic Through Tor
 
 Running your node over Tor hides your home IP address from peers and prevents network-level surveillance of your Bitcoin activity:
 
@@ -267,7 +267,7 @@ HiddenServiceDir /var/lib/tor/bitcoin-rpc/
 HiddenServicePort 8332 127.0.0.1:8332
 ```
 
-Step 9: Secure the Network
+Step 9 - Secure the Network
 
 Restrict RPC access to local connections unless you need remote administration:
 
@@ -279,7 +279,7 @@ bitcoin-cli -testnet getblockchaininfo
 
 Testnet uses a separate blockchain with no real-value coins. Use it for testing wallet integrations, transaction construction, and broadcast workflows before moving to mainnet.
 
-Step 10: Perform Maintenance and Monitoring
+Step 10 - Perform Maintenance and Monitoring
 
 Regular health checks keep your node performing optimally:
 

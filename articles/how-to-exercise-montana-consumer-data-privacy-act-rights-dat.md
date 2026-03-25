@@ -43,7 +43,7 @@ How to Request Data Deletion
 
 Data deletion requests are among the most commonly exercised rights under privacy laws. Here's how to submit an effective deletion request:
 
-Step 1: Identify Companies Holding Your Data
+Step 1 - Identify Companies Holding Your Data
 
 Start by auditing which companies have your personal information. Check:
 
@@ -53,7 +53,7 @@ Start by auditing which companies have your personal information. Check:
 - E-commerce accounts
 - Social media profiles
 
-Step 2: Locate the Privacy Request Mechanism
+Step 2 - Locate the Privacy Request Mechanism
 
 Most companies provide a way to submit privacy requests. Look for:
 
@@ -62,12 +62,12 @@ Most companies provide a way to submit privacy requests. Look for:
 - Email addresses like privacy@company.com or datarequests@company.com
 - Online forms in account settings
 
-Step 3: Submit Your Deletion Request
+Step 3 - Submit Your Deletion Request
 
 When submitting a deletion request, be specific. Here's a template you can adapt:
 
 ```
-Subject: Montana Consumer Data Privacy Act - Deletion Request
+Subject - Montana Consumer Data Privacy Act - Deletion Request
 
 I am a Montana resident exercising my right to delete personal data under the Montana Consumer Data Privacy Act.
 
@@ -156,7 +156,7 @@ For sites without GPC support, look for:
 Opt-Out Template
 
 ```
-Subject: Opt-Out of Data Sales - Montana Consumer
+Subject - Opt-Out of Data Sales - Montana Consumer
 
 I am a Montana resident exercising my right to opt out of the sale
 or sharing of my personal data under MCDPA.
@@ -173,23 +173,23 @@ Handling Request Denials
 
 Companies must respond to privacy requests within 45 days. If a company denies your request:
 
-Step 1: Request Written Explanation
+Step 1 - Request Written Explanation
 
 Ask for a written explanation of why your request was denied. Companies must provide this under MCDPA.
 
-Step 2: Appeal Internally
+Step 2 - Appeal Internally
 
 Many companies have an internal appeals process. Look for:
 
 - "Appeal this decision" links in denial responses
 - Appeals process mentioned in privacy policies
 
-Step 3: File a Complaint
+Step 3 - File a Complaint
 
 If the company refuses to honor your rights after appealing, you can file a complaint with:
 
-- Montana Attorney General's Office: https://www.doj.mt.gov/contact/
-- Federal Trade Commission: https://www.ftc.gov/complaint
+- Montana Attorney General's Office - https://www.doj.mt.gov/contact/
+- Federal Trade Commission - https://www.ftc.gov/complaint
 
 The Montana Attorney General can impose penalties on companies that violate MCDPA.
 

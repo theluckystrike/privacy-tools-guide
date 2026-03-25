@@ -21,9 +21,9 @@ Dating apps have experienced multiple major data breaches exposing millions of u
 Table of Contents
 
 - [Timeline of Major Dating App Data Breaches](#timeline-of-major-dating-app-data-breaches)
-- [Technical Analysis: Common Vulnerability Patterns](#technical-analysis-common-vulnerability-patterns)
+- [Technical Analysis - Common Vulnerability Patterns](#technical-analysis-common-vulnerability-patterns)
 - [Checking If Your Data Was Exposed](#checking-if-your-data-was-exposed)
-- [Protecting Yourself: Actionable Strategies](#protecting-yourself-actionable-strategies)
+- [Protecting Yourself - Actionable Strategies](#protecting-yourself-actionable-strategies)
 - [What Data Dating Apps Typically Collect](#what-data-dating-apps-typically-collect)
 
 Timeline of Major Dating App Data Breaches
@@ -113,7 +113,7 @@ Feeld, an alternative dating platform, experienced an incident where user data w
 - Message metadata
 - Connected device information
 
-Technical Analysis: Common Vulnerability Patterns
+Technical Analysis - Common Vulnerability Patterns
 
 Understanding how these breaches occurred helps developers identify similar weaknesses in their own systems:
 
@@ -243,7 +243,7 @@ if result['exposed']:
     print(f"Warning: Found in {result['count']} data breaches")
 ```
 
-Protecting Yourself: Actionable Strategies
+Protecting Yourself - Actionable Strategies
 
 For Users
 
@@ -332,7 +332,7 @@ Related Articles
 
 - [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
 - [How To Detect If Dating App Is Selling Your Data To Third Pa](/how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/)
-- [Cloud Storage Security Breach History: Compromised.](/cloud-storage-security-breach-history-compromised-services-t/)
+- [Cloud Storage Security Breach History - Compromised.](/cloud-storage-security-breach-history-compromised-services-t/)
 - [Okcupid Data Sharing History What Third Parties Received Use](/okcupid-data-sharing-history-what-third-parties-received-use/)
 - [Data Breach Notification Requirements Timeline And Process F](/data-breach-notification-requirements-timeline-and-process-f/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)

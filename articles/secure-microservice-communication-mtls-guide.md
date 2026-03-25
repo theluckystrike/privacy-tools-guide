@@ -34,7 +34,7 @@ mTLS threat model:
 
 ---
 
-Part 1: Manual mTLS Setup (Foundation)
+Part 1 - Manual mTLS Setup (Foundation)
 
 Create a Private CA
 
@@ -98,7 +98,7 @@ SSL_ERROR_HANDSHAKE_FAILURE_ALERT
 
 ---
 
-Part 2: cert-manager on Kubernetes
+Part 2 - cert-manager on Kubernetes
 
 cert-manager automates certificate issuance, renewal, and distribution as Kubernetes Secrets.
 
@@ -216,7 +216,7 @@ spec:
 
 ---
 
-Part 3: Vault PKI Secrets Engine
+Part 3 - Vault PKI Secrets Engine
 
 For multi-cloud or non-Kubernetes environments, HashiCorp Vault's PKI engine issues short-lived certificates on demand.
 
@@ -267,14 +267,14 @@ print('Certificate issued, expires:', data['expiration'])
 
 ---
 
-Part 4: Verify mTLS in Production
+Part 4 - Verify mTLS in Production
 
 ```bash
 Check that a service rejects connections without client cert
 kubectl exec -it debug-pod -- \
   curl -v --cacert /certs/ca.crt \
   https://payment-service.default.svc.cluster.local:8443/health
-Should fail: "SSL peer certificate or SSH remote key was not OK"
+Should fail - "SSL peer certificate or SSH remote key was not OK"
 
 Verify with client cert
 kubectl exec -it debug-pod -- \
@@ -283,7 +283,7 @@ kubectl exec -it debug-pod -- \
   --cert /certs/tls.crt \
   --key /certs/tls.key \
   https://payment-service.default.svc.cluster.local:8443/health
-Should succeed: HTTP 200
+Should succeed - HTTP 200
 
 Check certificate TTL
 echo | openssl s_client -connect payment-service:8443 \
@@ -298,8 +298,8 @@ echo | openssl s_client -connect payment-service:8443 \
 Automating Certificate Rotation
 
 ```bash
-If using cert-manager: automatic (watches Secret, triggers renewal)
-If using Vault: use Vault Agent with auto-renew
+If using cert-manager - automatic (watches Secret, triggers renewal)
+If using Vault - use Vault Agent with auto-renew
 
 Vault Agent config for automatic renewal
 cat > /etc/vault-agent.hcl <<'EOF'

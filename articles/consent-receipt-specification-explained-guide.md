@@ -28,15 +28,15 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What the Consent Receipt Specification Provides
+Step 1 - What the Consent Receipt Specification Provides
 
 The specification defines a JSON-based format that captures consent events with enough detail to satisfy legal requirements while remaining processable by software. Each consent receipt represents a single consent action, a user agreeing to a specific purpose or data processing activity.
 
 Unlike vague audit logs, a consent receipt contains explicit information about what the user consented to, when they gave consent, how they provided it, and what the organization must do in response. This clarity matters for compliance audits, user rights requests, and demonstrating due diligence.
 
-The specification builds on the ISO/IEC 29100 framework and integrates with the OpenID Connect ecosystem. It addresses a common problem: organizations collect consent but lack a reliable way to prove what users actually agreed to.
+The specification builds on the ISO/IEC 29100 framework and integrates with the OpenID Connect environment. It addresses a common problem: organizations collect consent but lack a reliable way to prove what users actually agreed to.
 
-Step 2: Core Components of a Consent Receipt
+Step 2 - Core Components of a Consent Receipt
 
 Every consent receipt includes several required fields that identify the consent event, the user, and the organization requesting consent. Understanding these fields helps you design your data model correctly.
 
@@ -78,7 +78,7 @@ Each service or purpose requires its own consent record within the receipt. This
 
 This granular approach lets users consent to some activities while declining others, a requirement under GDPR's explicit consent framework.
 
-Step 3: JSON Structure Example
+Step 3 - JSON Structure Example
 
 Here's a complete consent receipt demonstrating the specification in practice:
 
@@ -117,7 +117,7 @@ Here's a complete consent receipt demonstrating the specification in practice:
 
 The salt and signature fields provide integrity verification. The salt ensures the subject identifier cannot be correlated across different receipts, while the signature allows verification that the issuer actually created the receipt.
 
-Step 4: Implementation Considerations for Developers
+Step 4 - Implementation Considerations for Developers
 
 When implementing consent receipt generation, several practical concerns arise that the specification leaves to implementers.
 
@@ -194,19 +194,19 @@ Modern consent management platforms (CMPs) often support the Consent Receipt Spe
 - Export functionality for data portability requirements
 - Mechanisms for consent withdrawal that create new receipts marking withdrawal
 
-Step 5: Practical Applications
+Step 5 - Practical Applications
 
 The consent receipt becomes valuable in several real-world scenarios:
 
 Data subject access requests (DSAR): When users request their data, the consent receipt demonstrates exactly what they agreed to, when, and under what policy. This simplifies responding to access requests.
 
-Compliance audits: Regulators increasingly request evidence of valid consent. A properly structured consent receipt provides that evidence in a standardized format.
+Compliance audits - Regulators increasingly request evidence of valid consent. A properly structured consent receipt provides that evidence in a standardized format.
 
-Cross-border data transfers: Different jurisdictions have different consent requirements. The jurisdiction field in the receipt clarifies which legal framework applies.
+Cross-border data transfers - Different jurisdictions have different consent requirements. The jurisdiction field in the receipt clarifies which legal framework applies.
 
-Service deprecation: When you remove a service, existing consent receipts document which users had consented to that service and when their consent was obtained.
+Service deprecation - When you remove a service, existing consent receipts document which users had consented to that service and when their consent was obtained.
 
-Step 6: Limitations to Understand
+Step 6 - Limitations to Understand
 
 The specification records consent but does not solve every consent management challenge. It does not define how to present consent requests, how to handle consent withdrawal, or how to manage consent across complex organizational structures. These remain implementation decisions.
 

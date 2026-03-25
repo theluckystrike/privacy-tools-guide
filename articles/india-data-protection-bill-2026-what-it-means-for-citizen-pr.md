@@ -23,10 +23,10 @@ Table of Contents
 - [Practical Implications for Power Users](#practical-implications-for-power-users)
 - [Timeline and Enforcement](#timeline-and-enforcement)
 - [What This Means for the Future](#what-this-means-for-the-future)
-- [DPDPA vs. GDPR: Key Differences](#dpdpa-vs-gdpr-key-differences)
-- [Exemptions Under DPDPA: What's Not Covered](#exemptions-under-dpdpa-whats-not-covered)
-- [Step-by-Step: Filing a Data Subject Access Request (DSAR)](#step-by-step-filing-a-data-subject-access-request-dsar)
-- [Non-Compliance Penalties: What Companies Face](#non-compliance-penalties-what-companies-face)
+- [DPDPA vs. GDPR - Key Differences](#dpdpa-vs-gdpr-key-differences)
+- [Exemptions Under DPDPA - What's Not Covered](#exemptions-under-dpdpa-whats-not-covered)
+- [Step-by-Step - Filing a Data Subject Access Request (DSAR)](#step-by-step-filing-a-data-subject-access-request-dsar)
+- [Non-Compliance Penalties - What Companies Face](#non-compliance-penalties-what-companies-face)
 - [Building a Data Inventory for Your Privacy Audit](#building-a-data-inventory-for-your-privacy-audit)
 - [Consent Management Under DPDPA](#consent-management-under-dpdpa)
 - [Government Agencies and Data Security Concerns](#government-agencies-and-data-security-concerns)
@@ -42,13 +42,13 @@ Key Rights for Indian Citizens
 
 The bill grants Indian residents several enforceable rights:
 
-Right to Access: Citizens can request copies of their personal data being processed by any organization. Organizations must respond within 72 hours of receiving such requests.
+Right to Access - Citizens can request copies of their personal data being processed by any organization. Organizations must respond within 72 hours of receiving such requests.
 
-Right to Correction and Erasure: Individuals can demand correction of inaccurate data and complete erasure of their personal information under certain circumstances. This is particularly relevant for users who want to remove their digital footprint from platforms they no longer use.
+Right to Correction and Erasure - Individuals can demand correction of inaccurate data and complete erasure of their personal information under certain circumstances. This is particularly relevant for users who want to remove their digital footprint from platforms they no longer use.
 
-Right to Data Portability: Citizens can request their data in a machine-readable format, enabling them to transfer information between service providers smoothly.
+Right to Data Portability - Citizens can request their data in a machine-readable format, enabling them to transfer information between service providers smoothly.
 
-Right to Grievance Redressal: The bill mandates that every data fiduciary appoint a grievance officer who must address complaints within 72 hours.
+Right to Grievance Redressal - The bill mandates that every data fiduciary appoint a grievance officer who must address complaints within 72 hours.
 
 What Developers Need to Implement
 
@@ -158,7 +158,7 @@ Organizations that embrace these requirements will likely gain user trust as pri
 
 The implementation will evolve through regulatory clarifications and court interpretations, but the fundamental principle remains clear: Indian citizens now have legal backing to demand accountability from organizations handling their personal data.
 
-DPDPA vs. GDPR: Key Differences
+DPDPA vs. GDPR - Key Differences
 
 Understanding how DPDPA differs from GDPR matters for multinational organizations:
 
@@ -172,9 +172,9 @@ Understanding how DPDPA differs from GDPR matters for multinational organization
 | DPA Necessity | Yes, mandatory for most companies | Only if processing "large scale" data | GDPR stricter requirement |
 | Damages | €20 million or 4% revenue | ₹250 crore or portion of revenue | GDPR penalties higher percentage-wise |
 
-Practical implication: If your company serves both EU and Indian users, you must comply with GDPR's stricter requirements to maintain consistency.
+Practical implication - If your company serves both EU and Indian users, you must comply with GDPR's stricter requirements to maintain consistency.
 
-Exemptions Under DPDPA: What's Not Covered
+Exemptions Under DPDPA - What's Not Covered
 
 Critical gaps exist in DPDPA protection:
 
@@ -191,7 +191,7 @@ Exempt data types:
 - National security information
 - Defense-related processing
 
-Real-world impact: Police databases, income tax department records, Census data. none subject to DPDPA user rights. A government agency can collect your data without consent or delete rights.
+Real-world impact - Police databases, income tax department records, Census data. none subject to DPDPA user rights. A government agency can collect your data without consent or delete rights.
 
 Company size exemption:
 - Companies under ₹20 crore turnover
@@ -199,13 +199,13 @@ Company size exemption:
 - Limited to specific countries only
 - Can still process health and financial data
 
-Practical for power users: Smaller Indian startups have lighter compliance burdens, but users have fewer deletion rights when companies are below the threshold.
+Practical for power users - Smaller Indian startups have lighter compliance burdens, but users have fewer deletion rights when companies are below the threshold.
 
-Step-by-Step: Filing a Data Subject Access Request (DSAR)
+Step-by-Step - Filing a Data Subject Access Request (DSAR)
 
 Exercising your rights requires following formal processes:
 
-Step 1: Identify the Data Fiduciary
+Step 1 - Identify the Data Fiduciary
 ```
 Check company's privacy policy for:
 - Data Protection Officer contact
@@ -219,9 +219,9 @@ website.in/privacy-policy
 website.in/contact-us
 ```
 
-Step 2: Craft Your DSAR Request
+Step 2 - Craft Your DSAR Request
 ```
-Subject: Data Subject Access Request - [Your Name]
+Subject - Data Subject Access Request - [Your Name]
 
 Dear Data Fiduciary,
 
@@ -236,33 +236,33 @@ Please provide:
 5. Source of data (if not collected directly)
 6. Details about automated decision-making (if any)
 
-Request ID: [DSAR-001-2026]
-Date: [YYYY-MM-DD]
-Expected Response: Within 72 hours per DPDPA
+Request ID - [DSAR-001-2026]
+Date - [YYYY-MM-DD]
+Expected Response - Within 72 hours per DPDPA
 
 Regards,
 [Your Name]
 [Your ID/Email]
 ```
 
-Step 3: Track Timeline
+Step 3 - Track Timeline
 ```
-Day 0: Submit DSAR
-Day 3 (72 hours): Company must acknowledge receipt
-Day 30: Company must respond with data/explanation
-Day 45: File complaint with Data Protection Authority if no response
-Day 90: DPAI should investigate your complaint
+Day 0 - Submit DSAR
+Day 3 (72 hours) - Company must acknowledge receipt
+Day 30 - Company must respond with data/explanation
+Day 45 - File complaint with Data Protection Authority if no response
+Day 90 - DPAI should investigate your complaint
 ```
 
-Step 4: Review Response
+Step 4 - Review Response
 - Check for completeness (did they provide everything?)
 - Verify accuracy (is the data correct?)
 - Look for unexpected data categories
 - Note sensitive information (health, location history)
 
-Step 5: File Correction or Erasure Request if Needed
+Step 5 - File Correction or Erasure Request if Needed
 ```
-Subject: Data Correction Request - [Your Name]
+Subject - Data Correction Request - [Your Name]
 
 If data is inaccurate, request correction:
 1. Specific data points that are wrong
@@ -275,7 +275,7 @@ For erasure requests, state:
 - Any rights you're exercising (withdrawal of consent, etc.)
 ```
 
-Non-Compliance Penalties: What Companies Face
+Non-Compliance Penalties - What Companies Face
 
 Minor violations carry penalties up to ₹50 crore ($6 million). Serious violations (breaches, systematic violations) face ₹250 crore ($30 million) or 4% of global turnover. Criminal liability includes imprisonment for deliberate violations. Companies have strong financial incentive to comply.
 
@@ -310,9 +310,9 @@ For each online service:
 5. Verify: Confirm withdrawal processed
 
 Flipkart.in → Settings → Notifications & Preferences
-Review: Marketing emails, product recommendations, SMS
-Withdraw: Uncheck "Send marketing communications"
-Verify: Receive confirmation "Preference updated"
+Review - Marketing emails, product recommendations, SMS
+Withdraw - Uncheck "Send marketing communications"
+Verify - Receive confirmation "Preference updated"
 ```
 
 Government Agencies and Data Security Concerns
@@ -365,7 +365,7 @@ Insurance data:
 - Claims data: Indefinite (fraud prevention justification)
 - Underwriting data: 5 years
 
-Practical implication: Even with deletion requests, these sectors retain data longer than DPDPA baseline due to sector-specific regulations.
+Practical implication - Even with deletion requests, these sectors retain data longer than DPDPA baseline due to sector-specific regulations.
 
 Cross-Border Data Transfer Rules
 

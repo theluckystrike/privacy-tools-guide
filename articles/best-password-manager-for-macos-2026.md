@@ -24,7 +24,7 @@ After testing 1Password, Bitwarden, Proton Pass, and Apple Keychain on my M2 Mac
 - The best password manager: for macOS developers in 2026 is 1Password for the most polished native experience with strong CLI tools, or Bitwarden if you want open-source transparency and self-hosting.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
 - Choose Proton Pass if: privacy-first architecture under Swiss jurisdiction is your priority, and stick with Apple Keychain only for basic website password storage without developer features.
-- The integration with Apple: Watch and Touch ID feels genuinely useful rather than gimmicky.
+- The integration with Apple - Watch and Touch ID feels genuinely useful rather than gimmicky.
 
 Why macOS Developers Need Dedicated Password Managers
 
@@ -109,7 +109,7 @@ Keychain access requires security command
 security find-internet-password -s github.com
 ```
 
-The output format requires parsing. You cannot easily export items in standardized formats. Sharing across devices requires iCloud Keychain, which locks you into the Apple ecosystem.
+The output format requires parsing. You cannot easily export items in standardized formats. Sharing across devices requires iCloud Keychain, which locks you into the Apple environment.
 
 For developers managing SSH keys, dedicated SSH agents remain necessary regardless of password manager choice.
 
@@ -117,7 +117,7 @@ Proton Pass
 
 Proton Pass offers end-to-end encryption with open-source transparency. The CLI is newer but functional for basic operations.
 
-The advantage lies in privacy-first architecture. Proton operates under Swiss jurisdiction with strong data protection laws. If you already use ProtonMail or Proton VPN, the integration provides an unified privacy ecosystem.
+The advantage lies in privacy-first architecture. Proton operates under Swiss jurisdiction with strong data protection laws. If you already use ProtonMail or Proton VPN, the integration provides an unified privacy environment.
 
 CLI installation and basic usage:
 
@@ -199,7 +199,7 @@ OLD_KEY=$(bw get item "API Key" --field "Current Key")
 
 Generate new key from provider
 NEW_KEY=$(curl -s https://api.provider.com/keys/generate \
-  -H "Authorization: Bearer $OLD_KEY" | jq -r '.key')
+  -H "Authorization - Bearer $OLD_KEY" | jq -r '.key')
 
 Update password manager
 bw get item "API Key" | jq --arg key "$NEW_KEY" '.fields[] |= select(.id=="current_key") | .value = $key' | bw create item
@@ -288,7 +288,7 @@ Password Generation Strategies
 Different accounts require different password generation approaches:
 
 ```bash
-Bitwarden: Generate strong passwords
+Bitwarden - Generate strong passwords
 bw generate --length 32 --includeSymbols
 
 For older systems with limited character support

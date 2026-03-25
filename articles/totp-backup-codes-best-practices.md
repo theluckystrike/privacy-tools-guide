@@ -66,7 +66,7 @@ def generate_backup_code(length=8):
 
 Generate 10 codes
 backup_codes = [generate_backup_code() for _ in range(10)]
-Format as pairs: XK7M-9NP3...
+Format as pairs - XK7M-9NP3...
 formatted = [backup_codes[i] + '-' + backup_codes[i+1]
              for i in range(0, len(backup_codes), 2)]
 ```
@@ -81,7 +81,7 @@ Physical Storage
 
 Writing codes on paper remains effective for many users. Store the paper in a secure location, a safe, a locked drawer, or a secure deposit box. For developers managing multiple accounts, consider a dedicated notebook with coded references (e.g., "G: Google, A: AWS").
 
-Paper has advantages: immune to digital compromise, no software vulnerabilities, no hardware failure. The downside is physical theft and natural disasters. Multiple copies in separate locations mitigate some risk.
+Paper has advantages - immune to digital compromise, no software vulnerabilities, no hardware failure. The downside is physical theft and natural disasters. Multiple copies in separate locations mitigate some risk.
 
 Encrypted Digital Storage
 
@@ -93,7 +93,7 @@ Always use the CLI or official apps, never plain text
 bw get item "google-account-backup" --vault <vault-id>
 ```
 
-The critical rule: never store backup codes in plain text files, notes apps without encryption, or email. These common mistakes create vulnerabilities that outweigh the convenience.
+The critical rule - never store backup codes in plain text files, notes apps without encryption, or email. These common mistakes create vulnerabilities that outweigh the convenience.
 
 Dedicated Hardware
 
@@ -249,7 +249,7 @@ Lost Authenticator Device
 Your phone is stolen or lost, containing your TOTP secrets:
 
 ```
-Scenario: Phone with TOTP app is stolen
+Scenario - Phone with TOTP app is stolen
 Impact:
 - Attacker has access to time-based codes
 - Can authenticate to any service using your TOTP
@@ -271,7 +271,7 @@ Authenticator App Corruption
 Authenticator apps occasionally corrupt their databases:
 
 ```
-Scenario: Authenticator app crashes, loses all secrets
+Scenario - Authenticator app crashes, loses all secrets
 Impact:
 - Cannot generate TOTP codes
 - Locked out of 2FA-protected accounts
@@ -290,7 +290,7 @@ Multiple Device Sync Failure
 Cross-device TOTP sync (synced across phone and tablet) can fail:
 
 ```
-Scenario: Synced authenticator goes out of sync between devices
+Scenario - Synced authenticator goes out of sync between devices
 Impact:
 - Codes on one device don't match the other
 - Inconsistent authentication across devices
@@ -306,7 +306,7 @@ Catastrophic Backup Failure
 If ALL your backup codes are lost or destroyed:
 
 ```
-Scenario: House fire, accident, or theft destroys all backup codes
+Scenario - House fire, accident, or theft destroys all backup codes
 Impact:
 - Locked out of all 2FA-protected accounts
 - No authenticator device
@@ -333,7 +333,7 @@ GitHub
 - No expiration date
 - Codes shown only once (must be saved immediately)
 
-Best practice: Save to password manager immediately after generation.
+Best practice - Save to password manager immediately after generation.
 
 AWS
 
@@ -342,7 +342,7 @@ AWS
 - Can be regenerated through IAM console
 - No expiration
 
-Best practice: Store in secure facility not connected to AWS account (avoid AWS IAM secrets manager for backup codes).
+Best practice - Store in secure facility not connected to AWS account (avoid AWS IAM secrets manager for backup codes).
 
 Google
 
@@ -352,7 +352,7 @@ Google
 - No expiration
 - Can be printed as backup printable format
 
-Best practice: Print immediately and store in safe. Google's printed format is one of the easiest to access during emergencies.
+Best practice - Print immediately and store in safe. Google's printed format is one of the easiest to access during emergencies.
 
 Microsoft/Outlook
 
@@ -362,7 +362,7 @@ Microsoft/Outlook
 - No expiration
 - Shows warning when codes are running low
 
-Best practice: Check remaining code count quarterly and regenerate when fewer than 3 remain.
+Best practice - Check remaining code count quarterly and regenerate when fewer than 3 remain.
 
 Bitwarden (Self-Hosted 2FA)
 
@@ -371,7 +371,7 @@ Bitwarden (Self-Hosted 2FA)
 - Can be regenerated through admin panel
 - Optional expiration (default: no expiration)
 
-Best practice: Generate 20 codes and keep half physical, half digital.
+Best practice - Generate 20 codes and keep half physical, half digital.
 
 Backup Code Documentation Template
 
@@ -380,20 +380,20 @@ Create a tracking system for your codes:
 ```
 SERVICE BACKUP CODE TRACKER
 
-Service: _____________
-Account: _____________
-Generated: ___________
-Status: [Active/Expired/Partially Used]
-Storage Location 1: ___________
-Storage Location 2: ___________
-Next Rotation: ___________
+Service - _____________
+Account - _____________
+Generated - ___________
+Status - [Active/Expired/Partially Used]
+Storage Location 1 - ___________
+Storage Location 2 - ___________
+Next Rotation - ___________
 
 Used Codes:
 - Code #1: [Used 2026-02-15]
 - Code #5: [Used 2026-03-10]
 
-Remaining Codes: _______
-Regeneration Plan: Annual (March 15)
+Remaining Codes - _______
+Regeneration Plan - Annual (March 15)
 ```
 
 Print this template and maintain it for each service requiring 2FA.
@@ -451,7 +451,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -463,7 +463,7 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 Related Articles
 
@@ -472,6 +472,6 @@ Related Articles
 - [How To Use Password Manager Totp Authenticator Replace](/how-to-use-password-manager-totp-authenticator-replace-googl/)
 - [Privacy Focused Cloud Backup Services Comparison 2026](/privacy-focused-cloud-backup-services-comparison-2026/)
 - [Android Privacy Best Practices 2026](/android-privacy-best-practices-2026/)
-- [AI CI/CD Pipeline Optimization: A Developer Guide](https://bestremotetools.com/ai-ci-cd-pipeline-optimization/)
+- [AI CI/CD Pipeline Optimization - A Developer Guide](https://bestremotetools.com/ai-ci-cd-pipeline-optimization/)
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

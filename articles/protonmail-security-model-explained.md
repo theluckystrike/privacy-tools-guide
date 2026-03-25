@@ -31,7 +31,7 @@ Practical Implications for Developers
 
 If you're building applications that integrate with ProtonMail or implementing similar encryption systems, consider these architectural takeaways:
 
-Key management is critical: E2EE security depends entirely on proper key handling, so never store private keys in plaintext. Client-side encryption is mandatory because server-side encryption provides only transit security and fails the zero-access guarantee. perform all cryptographic operations in the user's browser or application. Design systems to fail gracefully, handling missing keys, expired certificates, or decryption failures without exposing sensitive data. Finally, implement key revocation and rotation procedures to limit exposure if keys are compromised.
+Key management is critical - E2EE security depends entirely on proper key handling, so never store private keys in plaintext. Client-side encryption is mandatory because server-side encryption provides only transit security and fails the zero-access guarantee. perform all cryptographic operations in the user's browser or application. Design systems to fail gracefully, handling missing keys, expired certificates, or decryption failures without exposing sensitive data. Finally, implement key revocation and rotation procedures to limit exposure if keys are compromised.
 
 ProtonMail's security model demonstrates that building privacy into a consumer-friendly email service is achievable. While no system is impenetrable, the zero-access architecture provides meaningful protection against sophisticated adversaries, exactly what developers and power users need when communication confidentiality matters.
 
@@ -41,11 +41,11 @@ ProtonMail operates in a crowded privacy email market. Understanding how it comp
 
 ProtonMail ($119.88/year Unlimited): 500GB storage, unlimited addresses, custom domain support. Strong zero-access encryption. Owned by Proton AG (Swiss company).
 
-Tutanota ($96/year Pro): 10GB storage, open-source client, more aggressive zero-knowledge architecture. Based in Germany. Similar security model to ProtonMail.
+Tutanota ($96/year Pro) - 10GB storage, open-source client, more aggressive zero-knowledge architecture. Based in Germany. Similar security model to ProtonMail.
 
-Posteo ($1.25/month, €12/year): 40GB storage, German hosting, hardware-level encryption. Focuses on transparency reporting. No JavaScript required for webmail.
+Posteo ($1.25/month, €12/year) - 40GB storage, German hosting, hardware-level encryption. Focuses on transparency reporting. No JavaScript required for webmail.
 
-Hey ($99/year): Privacy-focused email from Basecamp. End-to-end encryption available through integration with third-party tools. Based in US (less favorable jurisdiction).
+Hey ($99/year) - Privacy-focused email from Basecamp. End-to-end encryption available through integration with third-party tools. Based in US (less favorable jurisdiction).
 
 Comparison of Encryption Standards:
 
@@ -126,17 +126,17 @@ ProtonMail Bridge connects your email client to ProtonMail's servers while maint
 ```bash
 Install ProtonMail Bridge
 macOS: brew install protonmail-bridge
-Linux: Download from protonmail.com
-Windows: Download installer
+Linux - Download from protonmail.com
+Windows - Download installer
 
 Start Bridge (runs as background service)
 protonmail-bridge
 
 In your email client (Thunderbird, Outlook, Apple Mail):
-IMAP Server: 127.0.0.1
-IMAP Port: 1143 (or 143 if unencrypted local)
-SMTP Server: 127.0.0.1
-SMTP Port: 1025
+IMAP Server - 127.0.0.1
+IMAP Port - 1143 (or 143 if unencrypted local)
+SMTP Server - 127.0.0.1
+SMTP Port - 1025
 
 Advantages:
 1. Your email client encrypts/decrypts locally (not in browser)

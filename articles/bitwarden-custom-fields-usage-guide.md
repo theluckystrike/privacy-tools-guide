@@ -41,7 +41,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Field Types and Their Applications
+Step 1 - Field Types and Their Applications
 
 Bitwarden supports three distinct field types, each serving different use cases:
 
@@ -58,9 +58,9 @@ Storing API Credentials
 For services requiring API keys, create a dedicated login item with custom fields:
 
 ```
-Service: GitHub
-Username: dev@example.com
-Password: [master password]
+Service - GitHub
+Username - dev@example.com
+Password - [master password]
 
 Custom Fields:
 - API Key (Hidden): ghp_xxxxxxxxxxxxxxxxxxxx
@@ -75,8 +75,8 @@ Database Connection Strings
 Database credentials often require multiple pieces of information. Custom fields handle this elegantly:
 
 ```
-Item: Production Database
-Password: [database password]
+Item - Production Database
+Password - [database password]
 
 Custom Fields:
 - Host (Text): db.prod.example.com
@@ -93,8 +93,8 @@ SSH Key Management
 Managing SSH keys becomes simpler with custom fields:
 
 ```
-Item: Production Server SSH
-Password: [SSH key passphrase]
+Item - Production Server SSH
+Password - [SSH key passphrase]
 
 Custom Fields:
 - Host (Text): production.example.com
@@ -106,7 +106,7 @@ Custom Fields:
 
 This approach keeps all SSH configuration details accessible alongside your credentials, eliminating the need to search through documentation or configuration files.
 
-Step 2: Automate with the Bitwarden CLI
+Step 2 - Automate with the Bitwarden CLI
 
 The Bitwarden command-line interface (CLI) provides programmatic access to custom fields, enabling automation scripts and integration with development workflows.
 
@@ -134,7 +134,7 @@ This command returns the API key value directly, making it useful for shell scri
 ```bash
 #!/bin/bash
 API_KEY=$(bw get item "GitHub API" | jq -r '.fields[] | select(.name == "API Key") | .value')
-curl -H "Authorization: token $API_KEY" https://api.github.com/user
+curl -H "Authorization - token $API_KEY" https://api.github.com/user
 ```
 
 The CLI also supports creating items with custom fields programmatically:
@@ -155,7 +155,7 @@ bw create item login '{
 
 Field type `0` represents text, while `1` represents hidden fields.
 
-Step 3: Organizing Large Vaults
+Step 3 - Organizing Large Vaults
 
 Custom fields shine when organizing vault entries for large projects or multiple environments. Create consistent field naming conventions across items:
 
@@ -182,8 +182,8 @@ Multi-Step Deployment Documentation
 Store complete deployment instructions in custom fields:
 
 ```
-Item: Production Deployment Instructions
-Password: [deploy user password]
+Item - Production Deployment Instructions
+Password - [deploy user password]
 
 Custom Fields:
 - Deployment Script URL (Text): https://deploy.example.com/scripts/prod-deploy.sh
@@ -213,8 +213,8 @@ Geographic/Temporal Field Organization
 Add custom fields for context-aware credential use:
 
 ```
-Item: Production Database - US Region
-Password: [db password]
+Item - Production Database - US Region
+Password - [db password]
 
 Custom Fields:
 - Region (Text): us-east-1
@@ -226,7 +226,7 @@ Custom Fields:
 
 This allows scripts to select credentials based on deployment context.
 
-Step 4: Integration with Infrastructure-as-Code
+Step 4 - Integration with Infrastructure-as-Code
 
 Connect Bitwarden credentials to Terraform or other IaC tools:
 
@@ -259,22 +259,22 @@ Threat Modeling Custom Fields
 
 Understand the security properties of different field types:
 
-Text Fields: Visible in plaintext. Use only for non-sensitive metadata like server hostnames or documentation URLs.
+Text Fields - Visible in plaintext. Use only for non-sensitive metadata like server hostnames or documentation URLs.
 
-Hidden Fields: Masked in UI but still searchable and exportable. Suitable for API keys that don't require extra protection layers.
+Hidden Fields - Masked in UI but still searchable and exportable. Suitable for API keys that don't require extra protection layers.
 
-Protected Fields: Completely hidden, non-searchable, not included in plaintext exports. Best for recovery codes, encryption keys, or emergency credentials.
+Protected Fields - Completely hidden, non-searchable, not included in plaintext exports. Best for recovery codes, encryption keys, or emergency credentials.
 
 ```bash
 Export shows protected fields as empty
 bw export --format json | jq '.items[].fields[] | select(.type == 2) | .value'
 
-Output: null (protected fields are not exported unencrypted)
+Output - null (protected fields are not exported unencrypted)
 ```
 
 Use Protected fields for anything you absolutely don't want leaving your Bitwarden vault, even in encrypted exports.
 
-Step 5: Field Naming Conventions at Scale
+Step 5 - Field Naming Conventions at Scale
 
 Establish consistent field naming to support large vaults:
 

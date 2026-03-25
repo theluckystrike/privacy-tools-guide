@@ -25,7 +25,7 @@ Tools Overview
 | Grype | Anchore's vulnerability DB | SBOM integration |
 | Docker Scout | Docker's advisory DB | Native Docker tooling |
 
-Trivy: The Fast Standard
+Trivy - The Fast Standard
 
 Install Trivy
 
@@ -72,7 +72,7 @@ trivy config Dockerfile
 trivy config .
 ```
 
-Grype: SBOM-First Scanning
+Grype - SBOM-First Scanning
 
 ```bash
 Install
@@ -174,7 +174,7 @@ trivy image --format json myapp:latest | \
        {vuln: .VulnerabilityID, cvss: .CVSS.nvd.V3Score}]'
 ```
 
-SBOM Generation: Software Bill of Materials
+SBOM Generation - Software Bill of Materials
 
 An SBOM documents every package in your image. This is required by many enterprises and government contracts.
 
@@ -191,7 +191,7 @@ syft myapp:latest -o spdx-json > myapp-sbom-spdx.json
 
 View the SBOM
 jq '.components | length' myapp-sbom.json
-Example output: 847 (847 packages in the image)
+Example output - 847 (847 packages in the image)
 ```
 
 An SBOM is essential for:
@@ -216,8 +216,8 @@ trivy image --skip-update my-private-registry.com/myapp:latest
 Combine with webhooks to automate:
 
 ```bash
-Setup: Your registry sends webhook to a scanning endpoint
-Scanning script: scan-webhook.sh
+Setup - Your registry sends webhook to a scanning endpoint
+Scanning script - scan-webhook.sh
 
 #!/bin/bash
 IMAGE_NAME=$1
@@ -254,17 +254,17 @@ Use the smallest base images to reduce the attack surface:
 | scratch (empty) | 0 MB | 0 | 0 |
 
 ```dockerfile
-Bad: Based on full Ubuntu
+Bad - Based on full Ubuntu
 FROM ubuntu:22.04
 RUN apt-get update && apt-get install -y curl wget git
 ... 450 MB final image
 
-Better: Slim variant
+Better - Slim variant
 FROM debian:bookworm-slim
 RUN apt-get update && apt-get install -y curl
 ... 150 MB final image
 
-Best: Multi-stage with alpine
+Best - Multi-stage with alpine
 FROM golang:1.21-alpine as builder
 WORKDIR /src
 COPY . .
@@ -274,7 +274,7 @@ FROM alpine:latest
 COPY --from=builder /src/myapp /usr/local/bin/
 ... 50 MB final image
 
-Optimal: Scratch for compiled languages
+Optimal - Scratch for compiled languages
 FROM scratch
 COPY --from=builder /src/myapp /myapp
 ... 15 MB final image (just the binary)
@@ -291,38 +291,38 @@ trivy config Dockerfile
 
 Example output:
 HIGH: Missing USER instruction (runs as root)
-MEDIUM: Using latest tag instead of pinned version
-LOW: No healthcheck defined
+MEDIUM - Using latest tag instead of pinned version
+LOW - No healthcheck defined
 ```
 
 Common misconfigurations to avoid:
 
 ```dockerfile
-BAD: Runs as root
+BAD - Runs as root
 FROM alpine:latest
 RUN apk add curl
 
-GOOD: Creates non-root user
+GOOD - Creates non-root user
 FROM alpine:latest
 RUN apk add curl && \
     addgroup -g 1001 -S appgroup && \
     adduser -u 1001 -S appuser -G appgroup
 USER appuser
 
-BAD: Uses latest tag
+BAD - Uses latest tag
 FROM ubuntu:latest
 
-GOOD: Uses pinned version with digest
+GOOD - Uses pinned version with digest
 FROM ubuntu:22.04@sha256:abcdef0123456789
 
-BAD: Single layer, large image
+BAD - Single layer, large image
 FROM ubuntu:22.04
 RUN apt-get update && apt-get install -y build-essential && \
     apt-get install -y nodejs && \
     apt-get install -y git && \
     apt-get clean
 
-GOOD: Multi-stage build
+GOOD - Multi-stage build
 FROM ubuntu:22.04 as builder
 RUN apt-get update && apt-get install -y build-essential
 
@@ -330,7 +330,7 @@ FROM alpine:latest
 COPY --from=builder /app /app
 ```
 
-Continuous Scanning: Registry Monitoring
+Continuous Scanning - Registry Monitoring
 
 For production registries, scan all images weekly:
 
@@ -370,7 +370,7 @@ Prevent unauthorized image tampering with signatures:
 
 ```bash
 Install Notary (Docker's signing tool)
-Download from: https://github.com/notaryproject/notary/releases
+Download from - https://github.com/notaryproject/notary/releases
 
 Create signing key (you'll be prompted for a passphrase)
 notary key generate --rootkey

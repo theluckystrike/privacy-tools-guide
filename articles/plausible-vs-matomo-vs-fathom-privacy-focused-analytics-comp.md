@@ -21,10 +21,10 @@ Table of Contents
 
 - [Data Retention and Deletion Policies](#data-retention-and-deletion-policies)
 - [Analytics Data Ownership Comparison](#analytics-data-ownership-comparison)
-- [Real Implementation: Migrating from Google Analytics](#real-implementation-migrating-from-google-analytics)
+- [Real Implementation - Migrating from Google Analytics](#real-implementation-migrating-from-google-analytics)
 - [Privacy Compliance Checklist](#privacy-compliance-checklist)
 - [Performance Impact Comparison](#performance-impact-comparison)
-- [Enterprise Deployment: Multi-Site Analytics Consolidation](#enterprise-deployment-multi-site-analytics-consolidation)
+- [Enterprise Deployment - Multi-Site Analytics Consolidation](#enterprise-deployment-multi-site-analytics-consolidation)
 
 Understanding data retention impacts compliance and user privacy:
 
@@ -71,9 +71,9 @@ Analytics Data Ownership Comparison
 
 For maximum data portability, Matomo's export capabilities exceed both competitors.
 
-Real Implementation: Migrating from Google Analytics
+Real Implementation - Migrating from Google Analytics
 
-Step 1: Set Up Analytics in Parallel
+Step 1 - Set Up Analytics in Parallel
 
 ```html
 <!-- Keep Google Analytics while testing alternative -->
@@ -90,7 +90,7 @@ Step 1: Set Up Analytics in Parallel
   src="https://plausible.io/js/script.js"></script>
 ```
 
-Step 2: Validate Data Consistency
+Step 2 - Validate Data Consistency
 
 ```javascript
 // Create dashboards in both systems
@@ -105,7 +105,7 @@ Step 2: Validate Data Consistency
 // - Different attribution models
 ```
 
-Step 3: Adjust Expectations
+Step 3 - Adjust Expectations
 
 Analytics without cookies and fingerprinting will show:
 - 10-30% lower traffic than Google Analytics (blocked/anonymized users)
@@ -113,7 +113,7 @@ Analytics without cookies and fingerprinting will show:
 - No individual user journeys
 - Aggregate trends instead of detailed funnels
 
-Step 4: Remove Google Analytics
+Step 4 - Remove Google Analytics
 
 ```html
 <!-- After 4-6 week validation period -->
@@ -156,7 +156,7 @@ Cumulative Traffic Impact:
 
 For mobile and low-bandwidth users, privacy analytics dramatically reduce page load times.
 
-Enterprise Deployment: Multi-Site Analytics Consolidation
+Enterprise Deployment - Multi-Site Analytics Consolidation
 
 For organizations managing multiple properties:
 

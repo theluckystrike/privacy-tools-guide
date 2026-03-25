@@ -22,7 +22,7 @@ Table of Contents
 - [Why Block Trackers at the Firewall Level](#why-block-trackers-at-the-firewall-level)
 - [Prerequisites](#prerequisites)
 - [Performance Considerations](#performance-considerations)
-- [Threat Model: Network-Level Tracking](#threat-model-network-level-tracking)
+- [Threat Model - Network-Level Tracking](#threat-model-network-level-tracking)
 - [Advanced Blocklist Management](#advanced-blocklist-management)
 - [Performance Tuning for Large Blocklists](#performance-tuning-for-large-blocklists)
 - [Troubleshooting](#troubleshooting)
@@ -43,7 +43,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Gathering Tracking Domain IP Addresses
+Step 1 - Gathering Tracking Domain IP Addresses
 
 The foundation of this setup involves obtaining a list of IP addresses associated with known tracking domains. Several maintained blocklists exist, with StevenBlack's hosts file being one of the most options. This aggregated list combines multiple sources including ad servers, trackers, and phishing domains.
 
@@ -59,7 +59,7 @@ This command downloads the hosts file, filters out comments and blank lines, ext
 
 For more targeted blocking, you might prefer lists that focus specifically on known tracker networks rather than  servers. The EasyList and EasyPrivacy projects maintain separate lists, and several community-curated repositories offer specialized blocklists optimized for different threat models.
 
-Step 2: Importing IP Addresses into OPNsense
+Step 2 - Importing IP Addresses into OPNsense
 
 OPNsense handles large IP lists efficiently through its alias functionality. Rather than creating individual firewall rules for each IP address, you create a single alias that references the entire list. The firewall then evaluates this alias as a single rule, maintaining performance even with thousands of entries.
 
@@ -67,12 +67,12 @@ Navigate to Firewall > Aliases in the OPNsense web interface. Click the plus but
 
 - Name: Enter a descriptive name like `BlockTrackers`
 - Type: Select `Host(s)` since you're blocking individual IP addresses
-- Content: Paste the IP addresses from your tracker-ips.txt file, one per line
+- Content - Paste the IP addresses from your tracker-ips.txt file, one per line
 - Description: Add a note indicating the source and purpose of this blocklist
 
 For very large lists exceeding several thousand entries, consider breaking them into multiple aliases by category, for example, separating advertising trackers from analytics trackers. This allows you to toggle categories independently if needed.
 
-Step 3: Create the Blocking Firewall Rule
+Step 3 - Create the Blocking Firewall Rule
 
 With the alias created, you now need to create a firewall rule that uses this alias to block traffic. Navigate to Firewall > Rules > [Interface], where `[Interface]` represents the interface where you want to enforce blocking. For most home users, this will be the LAN interface, which applies to all devices on your internal network.
 
@@ -88,7 +88,7 @@ Create a new rule with these parameters:
 
 Place this rule near the top of your LAN rules, though below any rules that explicitly allow legitimate traffic. Firewall rules are evaluated top-to-bottom, with the first matching rule taking precedence.
 
-Step 4: Verify the Configuration Works
+Step 4 - Verify the Configuration Works
 
 After applying your new rule, test that blocking actually occurs by attempting to access a known tracker domain from a device on your network. You can verify the blocking in several ways.
 
@@ -103,7 +103,7 @@ nslookup doubleclick.net
 
 Both domains should resolve to IP addresses. The difference is that connections to `doubleclick.net` (and similar trackers) will be blocked at the firewall level after the DNS lookup completes, while legitimate sites continue working normally.
 
-Step 5: Automate List Updates
+Step 5 - Automate List Updates
 
 Tracker IP addresses change over time as companies rotate their infrastructure. To maintain effective blocking, you should automate periodic updates of your blocklist. OPNsense includes a cron-like scheduler you can use for this purpose.
 
@@ -137,23 +137,23 @@ Second, ensure your OPNsense has adequate RAM. Aliases are loaded into memory, a
 
 Third, monitor your CPU usage after implementing the blocking rules. OPNsense provides real-time monitoring through the Interfaces > Diagnostics > Traffic Graph section.
 
-Step 6: Alternative Approaches
+Step 6 - Alternative Approaches
 
 While IP-level blocking provides network-wide protection, consider supplementing it with DNS-based blocking for defense-in-depth. OPNsense includes the Unbound DNS resolver, which can be configured to return null responses for known tracker domains. This handles some cases that IP blocking misses, such as trackers behind CDNs that share IPs with legitimate services.
 
 You might also want to implement logging exceptions for specific devices. Some smart home devices may require access to certain tracker domains to function properly. In such cases, create pass rules for specific source IPs that take precedence over your blocking rule.
 
-Threat Model: Network-Level Tracking
+Threat Model - Network-Level Tracking
 
 Understanding tracking threats helps justify network-level blocking:
 
-DNS-based Tracking: Devices leak location and interests through DNS queries even when traffic is encrypted. Typing "divorce lawyer near me" into a search engine reveals intentions before encryption occurs.
+DNS-based Tracking - Devices leak location and interests through DNS queries even when traffic is encrypted. Typing "divorce lawyer near me" into a search engine reveals intentions before encryption occurs.
 
-Metadata Tracking: Even encrypted connections reveal IP addresses being contacted, connection frequency, and data volumes, enough to infer activities.
+Metadata Tracking - Even encrypted connections reveal IP addresses being contacted, connection frequency, and data volumes, enough to infer activities.
 
-IoT Device Tracking: Smart home devices communicate with manufacturer servers for updates, telemetry, and cloud features. Users have limited control over these connections at the app level.
+IoT Device Tracking - Smart home devices communicate with manufacturer servers for updates, telemetry, and cloud features. Users have limited control over these connections at the app level.
 
-Cross-Device Tracking: Ad networks use tracker beacons across devices to build unified user profiles. Blocking at the network level prevents this across all devices.
+Cross-Device Tracking - Ad networks use tracker beacons across devices to build unified user profiles. Blocking at the network level prevents this across all devices.
 
 IP-level blocking interrupts the tracking chain before data leaves your network. Combined with DNS blocking, it provides protection.
 
@@ -197,7 +197,7 @@ echo "Combined blocklist: $(wc -l < /tmp/combined_blocklist.txt) unique IPs"
 
 Then import this combined list into OPNsense as before.
 
-Step 7: DNS-Level Blocking with Unbound
+Step 7 - DNS-Level Blocking with Unbound
 
 Configure OPNsense's Unbound resolver for additional DNS-level protection:
 
@@ -214,7 +214,7 @@ Performance Tuning for Large Blocklists
 
 When blocking thousands of IPs, performance optimization becomes important:
 
-Strategy 1: Split Blocklists by Risk Level
+Strategy 1 - Split Blocklists by Risk Level
 
 ```
 - Critical Threats: Malware, Phishing (~5,000 IPs) - always block
@@ -224,23 +224,23 @@ Strategy 1: Split Blocklists by Risk Level
 
 Create separate aliases and rules for each tier. This allows users to adjust protection levels based on their network performance.
 
-Strategy 2: Geo-IP Filtering
+Strategy 2 - Geo-IP Filtering
 
 If your network is in the EU, block IPs from specific regions known to host tracking infrastructure. Use MaxMind GeoIP databases with a script to filter blocklists by geography.
 
-Strategy 3: Rule Optimization
+Strategy 3 - Rule Optimization
 
 Instead of one massive rule, create multiple rules with smaller alias sets:
 
 ```
-Rule 1: Block tracker IPs 1-10,000
-Rule 2: Block tracker IPs 10,001-20,000
-Rule 3: Block tracker IPs 20,001-30,000
+Rule 1 - Block tracker IPs 1-10,000
+Rule 2 - Block tracker IPs 10,001-20,000
+Rule 3 - Block tracker IPs 20,001-30,000
 ```
 
 This distributes the computational load across multiple rules.
 
-Step 8: Test Blocklist Effectiveness
+Step 8 - Test Blocklist Effectiveness
 
 After implementing blocking rules, verify they're working correctly:
 
@@ -274,7 +274,7 @@ curl -I https://www.google.com
 
 Run these tests on client devices behind the OPNsense firewall.
 
-Step 9: Logging and Monitoring
+Step 9 - Logging and Monitoring
 
 Enable firewall rule logging to track blocking effectiveness:
 
@@ -312,7 +312,7 @@ ssh admin@opnsense.local "tail -n 50000 /var/log/filter.log" | \
 
 This provides visibility into which trackers your network is blocking.
 
-Step 10: Handling False Positives
+Step 10 - Handling False Positives
 
 Legitimate services sometimes hosted on IPs in blocklists cause false positives. Create whitelist exceptions:
 
@@ -323,7 +323,7 @@ Legitimate services sometimes hosted on IPs in blocklists cause false positives.
 
 The rule evaluation order matters: the first matching rule wins.
 
-Step 11: Blocklist Updates and Maintenance
+Step 11 - Blocklist Updates and Maintenance
 
 Network-wide protection requires keeping blocklists current:
 

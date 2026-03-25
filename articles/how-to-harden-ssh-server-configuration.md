@@ -17,7 +17,7 @@ tags: [privacy-tools-guide]
 
 A default OpenSSH installation accepts password authentication, root logins, and listens on port 22. the first three things attackers target. This guide hardens SSH systematically: key authentication, cipher hardening, access controls, and automated blocking of brute-force attempts.
 
-Step 1: Generate Ed25519 Keys (Client Side)
+Step 1 - Generate Ed25519 Keys (Client Side)
 
 ```bash
 Generate Ed25519 key pair (smaller and faster than RSA-4096)
@@ -32,7 +32,7 @@ View your public key for upload to servers
 cat ~/.ssh/id_ed25519.pub
 ```
 
-Step 2: Deploy the Public Key to the Server
+Step 2 - Deploy the Public Key to the Server
 
 ```bash
 Copy public key to server (preferred method)
@@ -48,7 +48,7 @@ Verify you can log in with key before disabling passwords
 ssh -i ~/.ssh/id_ed25519 user@server
 ```
 
-Step 3: Harden sshd_config
+Step 3 - Harden sshd_config
 
 Edit `/etc/ssh/sshd_config`:
 
@@ -124,7 +124,7 @@ Keep your current session open and test in a NEW terminal window
 ssh -p 2222 youruser@server
 ```
 
-Step 4: Regenerate Host Keys
+Step 4 - Regenerate Host Keys
 
 The default host keys generated at installation may use weak parameters. Regenerate:
 
@@ -147,7 +147,7 @@ ssh-keygen -R server_ip
 ssh-keygen -R server_hostname
 ```
 
-Step 5: Install and Configure fail2ban
+Step 5 - Install and Configure fail2ban
 
 fail2ban monitors auth.log and blocks IPs that exceed a threshold of failed logins:
 
@@ -184,7 +184,7 @@ Manually unban an IP (if you ban yourself)
 sudo fail2ban-client set sshd unbanip YOUR_IP
 ```
 
-Step 6: UFW Rules for SSH
+Step 6 - UFW Rules for SSH
 
 ```bash
 Allow SSH only from a specific IP (strongest option)
@@ -197,7 +197,7 @@ sudo ufw enable
 sudo ufw status
 ```
 
-Step 7: Two-Factor Authentication (Optional)
+Step 7 - Two-Factor Authentication (Optional)
 
 Add TOTP 2FA on top of key authentication for additional protection:
 

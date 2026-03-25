@@ -19,7 +19,7 @@ How to Secure PostgreSQL for Production
 
 A default PostgreSQL installation is not production-ready from a security perspective. The superuser is trusted locally without a password, network access may be open, and logging is minimal. This guide takes a fresh PostgreSQL 16 install and makes it fit for production.
 
-Step 1: Lock Down Network Access
+Step 1 - Lock Down Network Access
 
 ```bash
 postgresql.conf. restrict which interfaces PostgreSQL listens on
@@ -30,7 +30,7 @@ listen_addresses = 'localhost'   (good. only listen locally)
 If your app is on the same host, localhost is correct.
 If you need remote connections, list specific IPs:
 listen_addresses = '192.168.1.50, 10.0.0.50'
-Never: listen_addresses = '*'  (exposes to all interfaces)
+Never - listen_addresses = '*'  (exposes to all interfaces)
 ```
 
 ```bash
@@ -46,10 +46,10 @@ sudo nano /etc/postgresql/16/main/pg_hba.conf
 pg_hba.conf. secure configuration
 TYPE  DATABASE        USER            ADDRESS         METHOD
 
-Superuser: local socket only, not from network
+Superuser - local socket only, not from network
 local   all             postgres                        peer
 
-Application user: only from specific IP, require password, require SSL
+Application user - only from specific IP, require password, require SSL
 hostssl appdb           appuser         10.0.0.0/24     scram-sha-256
 
 Deny all other connections
@@ -62,7 +62,7 @@ Reload after editing
 sudo systemctl reload postgresql
 ```
 
-Step 2: Change the Default Superuser Password
+Step 2 - Change the Default Superuser Password
 
 ```bash
 sudo -u postgres psql
@@ -74,9 +74,9 @@ sudo -u postgres psql
 sudo -u postgres psql -c "\password postgres"
 ```
 
-Better: disable remote login for the postgres user entirely (the `peer` auth in pg_hba.conf above already does this for local socket connections from any user other than the `postgres` OS user).
+Better - disable remote login for the postgres user entirely (the `peer` auth in pg_hba.conf above already does this for local socket connections from any user other than the `postgres` OS user).
 
-Step 3: Enforce SSL/TLS
+Step 3 - Enforce SSL/TLS
 
 ```bash
 Enable SSL in postgresql.conf
@@ -103,7 +103,7 @@ sudo chown postgres:postgres /etc/ssl/private/postgresql.key
 sudo chmod 600 /etc/ssl/private/postgresql.key
 
 Force SSL for the application connection
-In pg_hba.conf: use "hostssl" instead of "host"
+In pg_hba.conf - use "hostssl" instead of "host"
 This rejects plaintext connections from the application
 
 sudo systemctl restart postgresql
@@ -112,10 +112,10 @@ sudo systemctl restart postgresql
 ```bash
 Verify SSL is working
 psql "host=localhost dbname=appdb user=appuser sslmode=require" -c "\conninfo"
-SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384)
+SSL connection (protocol - TLSv1.3, cipher: TLS_AES_256_GCM_SHA384)
 ```
 
-Step 4: Create Least-Privilege Roles
+Step 4 - Create Least-Privilege Roles
 
 ```sql
 -- Connect as superuser
@@ -162,7 +162,7 @@ REVOKE CREATE ON SCHEMA public FROM PUBLIC;
 \du   -- show users and roles
 ```
 
-Step 5: Enable Audit Logging
+Step 5 - Enable Audit Logging
 
 ```bash
 postgresql.conf. logging configuration
@@ -207,7 +207,7 @@ pgaudit.log_statement_once = off
 ALTER ROLE appuser SET pgaudit.log = 'write';
 ```
 
-Step 6: Restrict Row-Level Access
+Step 6 - Restrict Row-Level Access
 
 Row-Level Security (RLS) ensures users can only see their own data even if they access the table:
 
@@ -225,7 +225,7 @@ CREATE POLICY user_orders ON orders
 -- SELECT * FROM orders;  -- returns only orders for user 42
 ```
 
-Step 7: Encrypted Backups
+Step 7 - Encrypted Backups
 
 ```bash
 #!/bin/bash
@@ -256,7 +256,7 @@ Restore
 age -d -i ~/.age/identity.txt backup.sql.gz.age | gunzip | psql -U postgres appdb
 ```
 
-Step 8: Rotate Credentials
+Step 8 - Rotate Credentials
 
 ```bash
 Script to rotate the application user password and update the secret manager

@@ -233,7 +233,7 @@ def check_ip_reputation(client_ip):
     return "residential"
 ```
 
-Bypass strategy: Use residential proxy services or less-popular VPN providers that haven't been blocklisted. However, check your university's terms first, many explicitly forbid VPN use for access.
+Bypass strategy - Use residential proxy services or less-popular VPN providers that haven't been blocklisted. However, check your university's terms first, many explicitly forbid VPN use for access.
 
 DNS Leakage Detection
 
@@ -279,7 +279,7 @@ function detect_vpn_client() {
 }
 ```
 
-Workaround: Use IKEv2 or custom obfuscation that mimics regular HTTPS traffic. Obfsproxy and related tools disguise VPN traffic as regular web traffic.
+Workaround - Use IKEv2 or custom obfuscation that mimics regular HTTPS traffic. Obfsproxy and related tools disguise VPN traffic as regular web traffic.
 
 Advanced WireGuard Deployment for Students
 
@@ -381,12 +381,12 @@ IP Changing Detection
 Some university systems reject accounts used from rapidly changing IPs:
 
 ```
-Standard pattern: Same IP for weeks
-Suspicious pattern: IP changes every 10 minutes
-University defense: Flag accounts with excessive IP variation
+Standard pattern - Same IP for weeks
+Suspicious pattern - IP changes every 10 minutes
+University defense - Flag accounts with excessive IP variation
 ```
 
-Solution: Use a stable VPN endpoint. If your provider rotates IPs automatically, disable this or choose a static IP option.
+Solution - Use a stable VPN endpoint. If your provider rotates IPs automatically, disable this or choose a static IP option.
 
 Certificate Validation Failures
 
@@ -395,13 +395,13 @@ University proxies may intercept HTTPS:
 ```
 Certificate Error:
 Subject: library.university.edu
-Issuer: University Network Proxy CA (not recognized)
+Issuer - University Network Proxy CA (not recognized)
 ```
 
 Your browser warns about this. Most university IT will provide a custom CA certificate to install. Add it to your system:
 
 ```bash
-Linux: Add university CA certificate
+Linux - Add university CA certificate
 sudo cp university-ca.crt /usr/local/share/ca-certificates/
 sudo update-ca-certificates
 ```
@@ -411,11 +411,11 @@ Bandwidth Throttling Through VPN
 Universities may throttle VPN traffic:
 
 ```
-Test 1: Direct connection to university: 50 Mbps
-Test 2: Through VPN: 5 Mbps
+Test 1 - Direct connection to university: 50 Mbps
+Test 2 - Through VPN: 5 Mbps
 
-Problem: QoS rules throttle VPN traffic
-Solution: Use TCP instead of UDP (less obvious), or contact IT
+Problem - QoS rules throttle VPN traffic
+Solution - Use TCP instead of UDP (less obvious), or contact IT
 ```
 
 Compliance and Ethical Considerations
@@ -430,7 +430,7 @@ Before implementing VPN access, understand:
 Document that you're using VPN for legitimate academic purposes:
 
 ```
-Email to IT: "I'm studying abroad and need reliable access to
+Email to IT - "I'm studying abroad and need reliable access to
 university library databases. I use WireGuard VPN to access
 course materials while traveling in [country]. Is this permitted?"
 ```

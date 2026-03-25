@@ -170,8 +170,8 @@ Alternative Approaches
 
 Beyond traditional VPNs, several other tools can provide Snapchat access:
 
-- Shadowsocks: SOCKS5 proxy designed to bypass censorship. Lightweight but requires self-hosting or trusted server access.
-- Tor Browser: Provides anonymity but significantly slower. Not ideal for real-time communication like Snapchat.
+- Shadowsocks - SOCKS5 proxy designed to bypass censorship. Lightweight but requires self-hosting or trusted server access.
+- Tor Browser - Provides anonymity but significantly slower. Not ideal for real-time communication like Snapchat.
 - Trojan protocol: Obfuscated protocol that mimics HTTPS traffic, making detection extremely difficult.
 
 Each approach balances speed, security, and ease of use differently. For Snapchat specifically, where real-time messaging and image sharing are central, WireGuard or IKEv2 VPNs typically provide the best user experience while maintaining adequate security.

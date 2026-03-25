@@ -37,7 +37,7 @@ Watch for specific events only
 inotifywait -m -e modify,create,delete,moved_from,moved_to /etc/
 ```
 
-Common event types: `access`, `modify`, `attrib`, `create`, `delete`, `moved_from`, `moved_to`, `close_write`.
+Common event types - `access`, `modify`, `attrib`, `create`, `delete`, `moved_from`, `moved_to`, `close_write`.
 
 Formatted Output
 
@@ -56,7 +56,7 @@ inotifywait -m -r \
   /home/
 ```
 
-Script: Alert on Unauthorized Changes
+Script - Alert on Unauthorized Changes
 
 ```bash
 #!/bin/bash
@@ -93,7 +93,7 @@ while read -r timestamp filepath event; do
 done
 ```
 
-Script: Detect Webshell Drops
+Script - Detect Webshell Drops
 
 ```bash
 #!/bin/bash
@@ -461,7 +461,7 @@ while read dir event; do
 done
 ```
 
-Performance note: Watching 1 million files costs significant memory. Use `--exclude` aggressively to watch only what matters.
+Performance note - Watching 1 million files costs significant memory. Use `--exclude` aggressively to watch only what matters.
 
 Related Articles
 

@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Beyond System Settings: The Terminal Frontier
+Step 1 - Beyond System Settings: The Terminal Frontier
 
 The most effective privacy improvements on macOS Sequoia require Terminal access. Apple stores many privacy-relevant preferences in property list files that the System Settings UI never exposes. Before making changes, create a backup of your current configuration:
 
@@ -39,7 +39,7 @@ sudo tar -czf ~/tcc_backup.tar.gz ~/Library/Application\ Support/com.apple.TCC/
 
 Start by auditing what you currently have. Run `system_profiler SPInstallHistoryDataType` to see what software has been installed, and review `/var/log/system.log` for any recent privacy-relevant events. This baseline helps you verify that hardening commands take effect.
 
-Step 2: Disable macOS Telemetry at the System Level
+Step 2 - Disable macOS Telemetry at the System Level
 
 Apple collects diagnostic data even when Analytics sharing appears disabled. The following commands provide deeper telemetry reduction:
 
@@ -70,7 +70,7 @@ defaults write com.apple.gamed Disabled -bool true
 
 After applying these commands, restart your Mac. Many telemetry daemons cache their settings and only read preferences on boot.
 
-Step 3: Deep Explore TCC Permissions
+Step 3 - Deep Explore TCC Permissions
 
 The Transparency, Consent, and Control (TCC) database governs application access to sensitive resources. Sequoia stores TCC data in a SQLite database that requires elevated privileges to query:
 
@@ -114,7 +114,7 @@ Beyond the TCC database, review per-app permissions through System Settings → 
 - Contacts, Calendars, Reminders. marketing and social apps often request these unnecessarily
 - Location Services. review all entries and set non-navigation apps to "Never"
 
-Step 4: Network Privacy Hardening
+Step 4 - Network Privacy Hardening
 
 macOS Sequoia includes built-in firewall capabilities that deserve configuration beyond the default "allow all" state.
 
@@ -145,7 +145,7 @@ macOS Sequoia supports DNS over HTTPS (DoH) natively through Network Settings, b
 
 For a free alternative, configure your router to use a DoH-compatible DNS resolver like Cloudflare's 1.1.1.1 or Quad9's 9.9.9.9. This protects all devices on your network rather than requiring per-device configuration.
 
-Step 5: Spotlight and Search Privacy
+Step 5 - Spotlight and Search Privacy
 
 Sequoia's Spotlight indexing can expose sensitive file contents to system-wide search. Configure Spotlight to exclude sensitive directories:
 
@@ -171,7 +171,7 @@ killall Spotlight
 
 Spotlight sends queries to Apple servers when suggestions are enabled. Even with Spotlight suggestions disabled, the local indexer still stores metadata about every file it processes. For highly sensitive directories. project source code, client documents, SSH keys. exclusion from Spotlight indexing is the safest approach.
 
-Step 6: Hardening Safari for Privacy
+Step 6 - Hardening Safari for Privacy
 
 Developers and power users often use Safari alongside other browsers. Configure Safari's privacy settings through Terminal for options not exposed in Preferences:
 
@@ -191,7 +191,7 @@ defaults write com.apple.Safari AutoFillCreditCard -bool false
 
 For developer workflows, consider using Firefox with uBlock Origin for daily browsing and Safari exclusively for Apple services and testing. This separation reduces cross-site tracking surface area.
 
-Step 7: Terminal and Developer Privacy
+Step 7 - Terminal and Developer Privacy
 
 For developers working with sensitive code or infrastructure, additional Terminal hardening applies:
 
@@ -211,15 +211,15 @@ Check for sensitive environment variables
 env | grep -i -E '(token|secret|key|password)'
 ```
 
-SSH key management: Store SSH private keys in the macOS Keychain using `ssh-add --apple-use-keychain ~/.ssh/id_ed25519`. This avoids passphrase prompts while keeping keys out of memory between reboots. Never store SSH keys in unencrypted project directories or cloud synced folders like iCloud Drive or Dropbox.
+SSH key management - Store SSH private keys in the macOS Keychain using `ssh-add --apple-use-keychain ~/.ssh/id_ed25519`. This avoids passphrase prompts while keeping keys out of memory between reboots. Never store SSH keys in unencrypted project directories or cloud synced folders like iCloud Drive or Dropbox.
 
-Homebrew privacy: Homebrew sends anonymous analytics by default. Disable this permanently:
+Homebrew privacy - Homebrew sends anonymous analytics by default. Disable this permanently:
 
 ```bash
 brew analytics off
 ```
 
-Step 8: FileVault and Encrypted Storage
+Step 8 - FileVault and Encrypted Storage
 
 Enable FileVault for full-disk encryption. While this seems basic, many users skip this critical step:
 
@@ -241,7 +241,7 @@ hdiutil create -size 500m -fs APFS -encryption AES-256 \
 
 VeraCrypt (free, open-source) also works on macOS and creates cross-platform encrypted containers useful for sharing sensitive files between macOS and Linux systems.
 
-Advanced: System Integrity Protection Considerations
+Advanced - System Integrity Protection Considerations
 
 System Integrity Protection (SIP) prevents modification of system-protected files. However, for advanced privacy configuration, you may need to understand its boundaries:
 
@@ -252,7 +252,7 @@ csrutil status
 
 Note that disabling SIP reduces your security posture significantly. Only disable it temporarily for specific administrative tasks, and re-enable immediately after.
 
-Step 9: Quick Reference Checklist
+Step 9 - Quick Reference Checklist
 
 Review these settings periodically to maintain privacy hardening:
 

@@ -58,7 +58,7 @@ Usage logs are far more invasive, they track your actual internet activity:
 
 These logs defeat the purpose of using a VPN for privacy. Pure no-log VPNs should never store this data.
 
-No-Log Claims: What They Actually Mean
+No-Log Claims - What They Actually Mean
 
 A true no-log VPN theoretically keeps zero records of user activity. However, the term is often marketing:
 
@@ -154,19 +154,19 @@ Common Misconceptions
 
 "My VPN Says No-Logs, So I'm Completely Private"
 
-Reality: Claims vary widely. Always read the privacy policy in full.
+Reality - Claims vary widely. Always read the privacy policy in full.
 
 "Paid VPNs Don't Need to Log"
 
-Reality: Some paid VPNs still collect connection metadata for business intelligence.
+Reality - Some paid VPNs still collect connection metadata for business intelligence.
 
 "All European VPNs Are Private"
 
-Reality: EU data retention laws may require some logging. Swiss VPNs often best for privacy.
+Reality - EU data retention laws may require some logging. Swiss VPNs often best for privacy.
 
 "Logs Are Always Bad"
 
-Reality: Minimal connection logs for troubleshooting are acceptable. The key is what gets logged and who can access it.
+Reality - Minimal connection logs for troubleshooting are acceptable. The key is what gets logged and who can access it.
 
 Best Practices for Privacy
 
@@ -188,12 +188,12 @@ cat /etc/resolv.conf
 Test for DNS leaks. should resolve through VPN server's DNS
 dig +short whoami.akamai.net @ns1-1.akamaitech.net
 
-Linux with systemd-resolved: confirm active DNS
+Linux with systemd-resolved - confirm active DNS
 resolvectl status | grep "DNS Server"
 
-WireGuard: check AllowedIPs in config
-Full tunnel: AllowedIPs = 0.0.0.0/0, ::/0
-Split tunnel: AllowedIPs = 10.0.0.0/8
+WireGuard - check AllowedIPs in config
+Full tunnel - AllowedIPs = 0.0.0.0/0, ::/0
+Split tunnel - AllowedIPs = 10.0.0.0/8
 grep "AllowedIPs" /etc/wireguard/wg0.conf
 ```
 
@@ -237,7 +237,7 @@ Test for IPv6 leaks (common with no-log VPNs)
 curl -6 https://ifconfig.me  # Should fail if VPN has IPv6 support
 
 Test split tunnel leaks
-Split tunnel: selective traffic through VPN, some local
+Split tunnel - selective traffic through VPN, some local
 This allows attackers to infer behavior from non-VPN traffic
 
 Verify complete tunneling
@@ -278,7 +278,7 @@ Payment correlation attack:
 Mitigate this by paying with cryptocurrency:
 
 ```bash
-Better: Pay with Monero through CoinJoin
+Better - Pay with Monero through CoinJoin
 Reduces payment-to-usage correlation
 
 monero-wallet-cli
@@ -311,7 +311,7 @@ Trying to change everything at once. Pick one or two practices, implement them w
 
 Related Articles
 
-- [What VPN Logs Actually Mean: No-Log Policy Explained.](/what-vpn-logs-actually-mean-no-log-policy-explained-technically/)
+- [What VPN Logs Actually Mean - No-Log Policy Explained.](/what-vpn-logs-actually-mean-no-log-policy-explained-technically/)
 - [Best VPN for Using WhatsApp in China 2026. Actually Works](/best-vpn-for-using-whatsapp-in-china-2026-actually-works/)
 - [How To Test Vpn Kill Switch Actually Works Properly Guide](/how-to-test-vpn-kill-switch-actually-works-properly-guide/)
 - [How to Verify a VPN Is Actually Encrypting Your Traffic](/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)

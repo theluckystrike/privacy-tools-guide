@@ -29,7 +29,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Smart TV Data Collection
+Step 1 - Understand Smart TV Data Collection
 
 Modern smart TVs from major manufacturers collect various types of data:
 
@@ -37,11 +37,11 @@ Modern smart TVs from major manufacturers collect various types of data:
 - Device analytics: App usage patterns, crash reports, feature engagement
 - Biometric data: Voice commands, facial recognition (on supported models)
 - Network information: WiFi SSIDs, connection quality, device discovery
-- Cross-device tracking: Linking your TV behavior with other ecosystem devices
+- Cross-device tracking: Linking your TV behavior with other environment devices
 
 Manufacturers typically justify this collection under terms of service agreements that most users accept without reading. The real question is what happens to this data and whether you can control it.
 
-Step 2: Network Traffic Analysis
+Step 2 - Network Traffic Analysis
 
 The most effective method for detecting data transmission involves monitoring your network traffic. By analyzing outbound connections, you can identify which servers your TV communicates with and what data it sends.
 
@@ -106,10 +106,10 @@ def extract_domains(pcap_file):
                 continue
     return domains
 
-Usage: python3 extract_domains.py tv_traffic.pcap
+Usage - python3 extract_domains.py tv_traffic.pcap
 ```
 
-Step 3: Examining TV Privacy Settings
+Step 3 - Examining TV Privacy Settings
 
 While network analysis reveals transmission, checking your TV's built-in privacy settings helps identify what data collection is enabled.
 
@@ -147,7 +147,7 @@ Amazon Fire TV
 2. Disable Device Usage Data
 3. Turn off Interest-Based Ads
 
-Step 4: Automated Monitoring with Home Assistant
+Step 4 - Automated Monitoring with Home Assistant
 
 For continuous monitoring, integrate your TV into a Home Assistant setup:
 
@@ -205,8 +205,8 @@ DNS-Based Filtering
 Configure your router to use privacy-focused DNS servers that block known tracker domains:
 
 ```
-Primary DNS: 1.1.1.1 (Cloudflare)
-Secondary DNS: 9.9.9.9 (Quad9)
+Primary DNS - 1.1.1.1 (Cloudflare)
+Secondary DNS - 9.9.9.9 (Quad9)
 ```
 
 You can also use Pi-hole for local DNS-level blocking:
@@ -219,7 +219,7 @@ echo "quantserve.com" >> /etc/pihole/blacklist.txt
 pihole -g
 ```
 
-Step 5: Signs Your TV May Be Spying
+Step 5 - Signs Your TV May Be Spying
 
 Watch for these indicators:
 

@@ -20,7 +20,7 @@ Android Work Profiles provide a powerful mechanism for separating work and perso
 
 
 - For developers building enterprise: applications and power users requiring strict data boundaries, understanding this technology is essential for maintaining privacy while staying productive.
-- When you enable a Work Profile: Android creates a second user environment that shares the same physical device but maintains complete data isolation from your personal space.
+- When you enable a Work Profile - Android creates a second user environment that shares the same physical device but maintains complete data isolation from your personal space.
 - Neither profile can directly: access the other's files without explicit user action.
 - Use the personal profile: for such applications.
 - Audit installed work apps: regularly and remove unused applications to maintain battery performance.
@@ -47,7 +47,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Technical Implementation
+Step 1 - Technical Implementation
 
 For developers integrating Work Profile support into applications, the Device Policy Manager API provides the necessary interfaces. Your app needs to request admin privileges to function within a managed profile:
 
@@ -79,7 +79,7 @@ private fun enableProfile() {
 
 For users, setting up a Work Profile requires Android 5.0+ and varies slightly by device manufacturer. The general process involves navigating to Settings → Security & privacy → Work Profile (or "Work Profile" on Samsung devices) and following the activation prompts.
 
-Step 2: Privacy Boundaries and Data Separation
+Step 2 - Privacy Boundaries and Data Separation
 
 Understanding what is and isn't separated clarifies the real-world privacy implications of Work Profiles.
 
@@ -99,7 +99,7 @@ What remains shared:
 
 This shared network access creates an important consideration: while your work emails stay within the Work Profile, network traffic monitoring by your organization can still observe which networks your device connects to, even when using personal apps.
 
-Step 3: Control Cross-Profile Communication
+Step 3 - Control Cross-Profile Communication
 
 Android provides granular controls for managing what information crosses the profile boundary. These settings exist in Settings → Security & privacy → Work Profile → Work profile settings.
 
@@ -129,11 +129,11 @@ The key settings to review are:
 - Work contacts search Disable if you don't want personal apps searching work contacts
 - Default apps Some apps can function in both profiles; review these carefully
 
-Step 4: Work Profile for Personal Privacy
+Step 4 - Work Profile for Personal Privacy
 
 Even without an organizational MDM solution, individuals can use Work Profile for personal privacy use cases. This approach treats one profile as a "locked" or "restricted" environment.
 
-Scenario: Testing Unknown Apps
+Scenario - Testing Unknown Apps
 
 Create a Work Profile specifically for installing applications you're uncertain about. If an app exhibits malicious behavior, accessing contacts unexpectedly, transmitting data to unknown servers, the damage remains contained within the Work Profile. Simply delete the Work Profile to remove all associated data.
 
@@ -145,7 +145,7 @@ Remove a profile programmatically
 adb shell pm remove-user --profile-of <user_id> --remove-matching
 ```
 
-Scenario: Family Device Controls
+Scenario - Family Device Controls
 
 Parents can create Work Profiles for children, applying restrictions through standard Android parental controls or third-party device policy controllers available on F-Droid. This approach separates parental oversight from the child's personal space more cleanly than application-level restrictions.
 
@@ -260,33 +260,33 @@ but requires root and careful implementation
 
 Threat Models and Work Profile Suitability
 
-Threat Model 1: Malicious Apps in Personal Profile
+Threat Model 1 - Malicious Apps in Personal Profile
 
-Risk: Malicious apps installed in personal profile accessing work contacts or emails
+Risk - Malicious apps installed in personal profile accessing work contacts or emails
 
-Work Profile Protection: Strong (apps in personal profile cannot access work storage)
+Work Profile Protection - Strong (apps in personal profile cannot access work storage)
 
 Mitigation:
 - Install only trusted apps in personal profile
 - Use app permission auditing tools
 - Regular app reviews and removal of unused applications
 
-Threat Model 2: Corporate Monitoring
+Threat Model 2 - Corporate Monitoring
 
-Risk: Organization monitoring personal behavior through MDM policies
+Risk - Organization monitoring personal behavior through MDM policies
 
-Work Profile Protection: Moderate (profile isolation exists but admin policies apply)
+Work Profile Protection - Moderate (profile isolation exists but admin policies apply)
 
 Mitigation:
 - Use personal profile for all truly private communications
 - Enable "Never allow" for work contacts visibility in personal apps
 - Review MDM policy document before accepting
 
-Threat Model 3: Device Theft or Physical Access
+Threat Model 3 - Device Theft or Physical Access
 
-Risk: Attacker with physical access to device extracting work data
+Risk - Attacker with physical access to device extracting work data
 
-Work Profile Protection: Limited (both profiles vulnerable to forensic tools)
+Work Profile Protection - Limited (both profiles vulnerable to forensic tools)
 
 Mitigation:
 - Enable full-disk encryption (Android's default)
@@ -392,7 +392,7 @@ Related Articles
 - [Android Attestation Key Privacy What Hardware Backed Keys Re](/android-attestation-key-privacy-what-hardware-backed-keys-re/)
 - [Android Custom ROM Privacy Comparison 2026](/android-custom-rom-privacy-comparison-2026/)
 - [Android Find My Device Privacy Implications](/android-find-my-device-privacy-implications/)
-- [Android Notification Privacy: How to Hide Sensitive.](/android-notification-privacy-how-to-hide-sensitive-content-o/)
+- [Android Notification Privacy - How to Hide Sensitive.](/android-notification-privacy-how-to-hide-sensitive-content-o/)
 
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -147,7 +147,7 @@ async function createSubscriptionWithPrivacy(userId, planId, usePrivacyDescripto
   const paymentIntent = invoice.payment_intent;
 
   console.log(`Statement descriptor: ${paymentIntent.statement_descriptor}`);
-  console.log(`Suffix: ${paymentIntent.statement_descriptor_suffix}`);
+  console.log(`Suffix - ${paymentIntent.statement_descriptor_suffix}`);
 
   return subscription;
 }

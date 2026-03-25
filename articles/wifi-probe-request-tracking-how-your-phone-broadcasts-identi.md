@@ -27,12 +27,12 @@ Table of Contents
 - [Practical Defense Strategies](#practical-defense-strategies)
 - [Building Privacy Tools](#building-privacy-tools)
 - [Real-World Implications](#real-world-implications)
-- [Advanced Technical Analysis: Fingerprinting Techniques](#advanced-technical-analysis-fingerprinting-techniques)
+- [Advanced Technical Analysis - Fingerprinting Techniques](#advanced-technical-analysis-fingerprinting-techniques)
 - [Legal and Ethical Considerations for Researchers](#legal-and-ethical-considerations-for-researchers)
 - [Commercial Tracking Systems in Detail](#commercial-tracking-systems-in-detail)
-- [Practical Mitigation: Custom Device Configuration](#practical-mitigation-custom-device-configuration)
+- [Practical Mitigation - Custom Device Configuration](#practical-mitigation-custom-device-configuration)
 - [Building Your Own Probe Monitoring System](#building-your-own-probe-monitoring-system)
-- [Standards Evolution: 802.11be and Beyond](#standards-evolution-80211be-and-beyond)
+- [Standards Evolution - 802.11be and Beyond](#standards-evolution-80211be-and-beyond)
 
 How Probe Requests Work
 
@@ -82,13 +82,13 @@ What Your Phone Reveals
 
 The SSID list embedded in probe requests paints a detailed picture of device ownership. Consider these common patterns:
 
-Home Network Leakage: A probe request containing "MyHomeNetwork_5G" immediately reveals the user's home network name and location potential.
+Home Network Leakage - A probe request containing "MyHomeNetwork_5G" immediately reveals the user's home network name and location potential.
 
-Work Network Exposure: Corporate SSIDs like "AcmeCorp-Secure" or "Company_VPN" expose employer information.
+Work Network Exposure - Corporate SSIDs like "AcmeCorp-Secure" or "Company_VPN" expose employer information.
 
-Location History: Networks named after coffee shops, hotels, or airports correlate with device movement patterns.
+Location History - Networks named after coffee shops, hotels, or airports correlate with device movement patterns.
 
-Device Fingerprinting: Apple devices use randomized MAC addresses in probe requests, but the presence of specific SSID patterns, vendor OUIs, and request timing still enable fingerprinting. Android devices before Android 10 sent genuine MAC addresses, creating persistent tracking opportunities.
+Device Fingerprinting - Apple devices use randomized MAC addresses in probe requests, but the presence of specific SSID patterns, vendor OUIs, and request timing still enable fingerprinting. Android devices before Android 10 sent genuine MAC addresses, creating persistent tracking opportunities.
 
 A single probe request provides less information, but devices typically send multiple requests for different networks within seconds. Aggregating these reveals:
 
@@ -101,11 +101,11 @@ MAC Address Randomization
 
 Modern mobile operating systems implement MAC address randomization to mitigate tracking. When probing for unknown networks, devices generate random MAC addresses. However, this protection has limitations:
 
-Known Network Probing: When your phone searches for a saved network, it must use either the real MAC address or a consistent pseudonym to receive the correct probe response. This reveals your device's association history.
+Known Network Probing - When your phone searches for a saved network, it must use either the real MAC address or a consistent pseudonym to receive the correct probe response. This reveals your device's association history.
 
-Vendor Patterns: Despite randomization, the first three octets (OUI) identify the manufacturer, narrowing device identification.
+Vendor Patterns - Despite randomization, the first three octets (OUI) identify the manufacturer, narrowing device identification.
 
-Timing Attacks: Request intervals, power levels, and supported rate patterns create device fingerprints independent of MAC addresses.
+Timing Attacks - Request intervals, power levels, and supported rate patterns create device fingerprints independent of MAC addresses.
 
 Research from the University of Hamburg demonstrated that 90% of devices could still be tracked despite MAC randomization through these fingerprinting techniques.
 
@@ -113,15 +113,15 @@ Practical Defense Strategies
 
 For privacy-conscious users, several mitigation approaches exist:
 
-Disable Auto-Connect: Turn off "Connect Automatically" for known networks. Your phone will still probe, but less frequently.
+Disable Auto-Connect - Turn off "Connect Automatically" for known networks. Your phone will still probe, but less frequently.
 
-Use VPN for Captive Portals: When connecting to public WiFi, a VPN prevents network operators from seeing your traffic.
+Use VPN for Captive Portals - When connecting to public WiFi, a VPN prevents network operators from seeing your traffic.
 
-Airplane Mode: The most effective measure, completely disables all wireless radios.
+Airplane Mode - The most effective measure, completely disables all wireless radios.
 
-Forget Networks Strategically: Minimize stored networks to reduce probe request payloads.
+Forget Networks Strategically - Minimize stored networks to reduce probe request payloads.
 
-iOS Behavior: Apple randomizes MAC addresses for all networks by default since iOS 14, though some enterprise networks require real MAC addresses for authentication.
+iOS Behavior - Apple randomizes MAC addresses for all networks by default since iOS 14, though some enterprise networks require real MAC addresses for authentication.
 
 Building Privacy Tools
 
@@ -159,7 +159,7 @@ The next time you enable WiFi in a public space, recognize that your device is b
 
 The protocol continues evolving. 802.11ax introduces new privacy features, and operating systems improve randomization. Yet the fundamental broadcast nature of wireless communication ensures some information will always escape your device. Awareness remains the first line of privacy defense.
 
-Advanced Technical Analysis: Fingerprinting Techniques
+Advanced Technical Analysis - Fingerprinting Techniques
 
 Even with MAC randomization, devices leak identifying information. Understanding these techniques helps assess real-world tracking risk.
 
@@ -184,7 +184,7 @@ def capture_probes(pkt):
  avg_interval = sum(intervals) / len(intervals)
  interval_variance = stdev(intervals) if len(intervals) > 1 else 0
 
- print(f"Avg interval: {avg_interval:.2f}s, Variance: {interval_variance:.2f}")
+ print(f"Avg interval: {avg_interval:.2f}s, Variance - {interval_variance:.2f}")
  # Devices from same manufacturer tend to have similar patterns
  # This pattern alone doesn't identify individual devices but narrows fingerprint
 
@@ -222,9 +222,9 @@ Passive monitoring (listening to broadcasts) is generally legal in most jurisdic
 
 Active probing (sending traffic to discover devices) crosses into potentially illegal territory in some jurisdictions. Check local regulations before deploying active scanning tools.
 
-Data retention: Even if collection is legal, storing captured probe data containing MAC addresses raises privacy concerns. Delete raw capture files after analysis.
+Data retention - Even if collection is legal, storing captured probe data containing MAC addresses raises privacy concerns. Delete raw capture files after analysis.
 
-Responsible disclosure: If you discover a privacy leak in a device or protocol, follow responsible disclosure:
+Responsible disclosure - If you discover a privacy leak in a device or protocol, follow responsible disclosure:
 1. Document the vulnerability
 2. Contact the manufacturer's security team
 3. Allow 90 days for patch development
@@ -244,7 +244,7 @@ Companies like Cisco Meraki, Arista, and smaller players like Footpath Intellige
 
 Cities implementing smart city infrastructure use similar systems. Barcelona, Copenhagen, and Singapore have deployed WiFi sensors for traffic analysis. The data allegedly supports urban planning but creates persistent location tracking infrastructure.
 
-Practical Mitigation: Custom Device Configuration
+Practical Mitigation - Custom Device Configuration
 
 For users willing to configure their devices carefully, these advanced mitigations help:
 
@@ -302,7 +302,7 @@ except KeyboardInterrupt:
 
 This system allows researchers to understand probe request patterns in their local area, validate fingerprinting techniques, and study MAC randomization effectiveness.
 
-Standards Evolution: 802.11be and Beyond
+Standards Evolution - 802.11be and Beyond
 
 The WiFi standard continues evolving with privacy considerations:
 

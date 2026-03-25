@@ -80,7 +80,7 @@ Before enabling isolation across your browser, test with practical examples:
       // Test cookie isolation
       document.cookie = `test_cookie=${testValue}; path=/`;
       const hasCookie = document.cookie.includes('test_cookie=');
-      results.push(`${hasCookie ? '' : ''} Cookie: ${hasCookie ? 'Set' : 'Not set'}`);
+      results.push(`${hasCookie ? '' : ''} Cookie - ${hasCookie ? 'Set' : 'Not set'}`);
 
       // Test sessionStorage
       try {
@@ -151,23 +151,23 @@ if (navigator.cookieDeprecationLabel) {
 // Storage may not be isolated (older Chrome or disabled)
 ```
 
-Real-World Impact: Tracking Examples
+Real-World Impact - Tracking Examples
 
 Before Isolation
 
 ```
-User visits: news-site-a.com → tracker.js loads → sets cookie with ID=X
+User visits - news-site-a.com → tracker.js loads → sets cookie with ID=X
 
-Later, user visits: news-site-b.com → tracker.js loads → reads ID=X
+Later, user visits - news-site-b.com → tracker.js loads → reads ID=X
 → Tracker knows same user visited both sites → builds profile
 ```
 
 After Isolation
 
 ```
-User visits: news-site-a.com → tracker.js loads → sets cookie with ID=X (scoped to news-site-a)
+User visits - news-site-a.com → tracker.js loads → sets cookie with ID=X (scoped to news-site-a)
 
-Later, user visits: news-site-b.com → tracker.js loads → CANNOT read previous cookie
+Later, user visits - news-site-b.com → tracker.js loads → CANNOT read previous cookie
 → Cannot determine if same user visited both sites → no profile correlation
 ```
 

@@ -42,8 +42,8 @@ A typical vulnerable request might look like:
 
 ```http
 GET /api/v1/profile/12345 HTTP/1.1
-Host: api.datingapp.example
-Authorization: Bearer user_token_here
+Host - api.datingapp.example
+Authorization - Bearer user_token_here
 ```
 
 By incrementing the ID, attackers could enumerate thousands of user profiles without authentication:
@@ -61,7 +61,7 @@ def enumerate_profiles(base_url, token, start_id, end_id):
         )
         if response.status_code == 200:
             data = response.json()
-            print(f"Exposed: {data['username']} - {data.get('email')}")
+            print(f"Exposed - {data['username']} - {data.get('email')}")
 
 enumerate_profiles("https://api.datingapp.example", "valid_token", 1000, 2000)
 ```
@@ -77,10 +77,10 @@ Many dating apps have implemented flawed authentication mechanisms. Some issues 
 A secure implementation should use short-lived access tokens with refresh token rotation:
 
 ```python
-Vulnerable: Token valid for 30 days
+Vulnerable - Token valid for 30 days
 token = jwt.encode({"user_id": user_id, "exp": time.time() + 30*24*3600}, key)
 
-Secure: Short-lived access token with refresh mechanism
+Secure - Short-lived access token with refresh mechanism
 access_token = jwt.encode({
     "user_id": user_id,
     "type": "access",
@@ -124,13 +124,13 @@ Historical Cases of Dating App Data Exposure
 
 Security researchers have documented numerous high-profile vulnerabilities:
 
-2019 - Multiple Dating Apps: Researchers found that several major dating apps transmitted sensitive data over unencrypted HTTP connections, exposing profiles and messages to man-in-the-middle attacks.
+2019 - Multiple Dating Apps - Researchers found that several major dating apps transmitted sensitive data over unencrypted HTTP connections, exposing profiles and messages to man-in-the-middle attacks.
 
-2020 - Location Triangulation: A research team demonstrated how aggregated location data from dating apps could pinpoint user locations within meters, even when users had disabled location sharing.
+2020 - Location Triangulation - A research team demonstrated how aggregated location data from dating apps could pinpoint user locations within meters, even when users had disabled location sharing.
 
-2021 - Profile Scraping: Security researchers created automated tools that scraped millions of profiles from dating platforms by exploiting inadequate rate limiting on API endpoints.
+2021 - Profile Scraping - Security researchers created automated tools that scraped millions of profiles from dating platforms by exploiting inadequate rate limiting on API endpoints.
 
-2022 - Third-Party Data Sharing: Investigations revealed dating apps were sharing user data with advertising networks and analytics providers without proper consent mechanisms.
+2022 - Third-Party Data Sharing - Investigations revealed dating apps were sharing user data with advertising networks and analytics providers without proper consent mechanisms.
 
 Security Recommendations for Developers
 
@@ -461,7 +461,7 @@ Dating apps have suffered from:
 - 2021 - Hinge: Leaked matching algorithm exposed through API patterns
 - 2022 - Match Group portfolio: Third-party data broker integration without consent
 
-The pattern: convenience (fast matching, location features) combined with insufficient API security creates privacy disasters.
+The pattern - convenience (fast matching, location features) combined with insufficient API security creates privacy disasters.
 
 Responsible Disclosure
 

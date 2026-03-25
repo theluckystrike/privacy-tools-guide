@@ -21,8 +21,8 @@ Use raw WireGuard when you need full control over key management, want zero exte
 Table of Contents
 
 - [Architecture Difference](#architecture-difference)
-- [Raw WireGuard: Full Server Setup](#raw-wireguard-full-server-setup)
-- [Tailscale: Self-Hosted via Headscale](#tailscale-self-hosted-via-headscale)
+- [Raw WireGuard - Full Server Setup](#raw-wireguard-full-server-setup)
+- [Tailscale - Self-Hosted via Headscale](#tailscale-self-hosted-via-headscale)
 - [Performance Comparison](#performance-comparison)
 - [Use Case Decision Matrix](#use-case-decision-matrix)
 - [Key Management Comparison](#key-management-comparison)
@@ -36,7 +36,7 @@ Raw WireGuard is a kernel module and userspace tool. You manage keys, peer confi
 
 Tailscale runs a coordination server (their hosted one, or self-hosted Headscale) that distributes public keys and manages IP assignment from the 100.64.0.0/10 range. Nodes authenticate via SSO, get assigned a stable IP, and automatically negotiate direct connections using DERP relay servers as fallback when direct UDP is blocked.
 
-Raw WireGuard: Full Server Setup
+Raw WireGuard - Full Server Setup
 
 Install WireGuard and generate keys:
 
@@ -92,7 +92,7 @@ sudo systemctl enable --now wg-quick@wg0
 sudo wg show
 ```
 
-Tailscale: Self-Hosted via Headscale
+Tailscale - Self-Hosted via Headscale
 
 For full self-hosted control, use Headscale instead of Tailscale's coordination servers:
 
@@ -141,12 +141,12 @@ Performance Comparison
 Raw WireGuard runs in kernel space with no coordination layer. Measured on commodity hardware (2-core VPS, 1Gbps uplink):
 
 ```
-Test: iperf3 between two nodes, same datacenter
+Test - iperf3 between two nodes, same datacenter
 Raw WireGuard:   ~950 Mbps throughput, ~0.3ms added latency
 Tailscale:       ~820 Mbps throughput, ~1.2ms added latency (direct)
 Tailscale DERP:  ~400 Mbps throughput, ~15-40ms added latency (relay)
 
-Test: iperf3 across NAT (home network to VPS)
+Test - iperf3 across NAT (home network to VPS)
 Raw WireGuard:   Requires port forwarding or dynamic DNS
 Tailscale:       ~680 Mbps direct, ~280 Mbps via DERP fallback
 ```
@@ -170,11 +170,11 @@ Use Tailscale or Headscale when:
 Key Management Comparison
 
 ```bash
-WireGuard: Manual key rotation
+WireGuard - Manual key rotation
 wg genkey | tee /etc/wireguard/server-new.key | wg pubkey > /etc/wireguard/server-new.pub
 sudo wg set wg0 private-key /etc/wireguard/server-new.key
 
-Tailscale/Headscale: Revoke a node immediately
+Tailscale/Headscale - Revoke a node immediately
 headscale nodes list
 headscale nodes delete --identifier <node-id>
 Node loses connectivity within seconds
@@ -185,7 +185,7 @@ WireGuard preshared keys add a post-quantum security layer:
 ```ini
 [Peer]
 PublicKey = <peer-pub-key>
-PresharedKey = <output of: wg genpsk>
+PresharedKey = <output of - wg genpsk>
 AllowedIPs = 10.10.0.2/32
 ```
 

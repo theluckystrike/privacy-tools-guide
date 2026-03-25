@@ -30,16 +30,16 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Security vs Convenience Tradeoff
+Step 1 - Security vs Convenience Tradeoff
 
 Total privacy settings break iCloud sync, Apple features, and some app integrations.
-- But if you don't trust Apple: use 1Password instead (covered later).
+- But if you don't trust Apple - use 1Password instead (covered later).
 - Firefox (most private by default): 1.
 - Switch to Firefox or: Safari (already have it, 5 minutes) These five changes cover 80% of privacy vulnerabilities and take 20 minutes.
 - macOS users assume their: system is private by default.
 - Most of this is: clickable in System Settings.
 
-Step 2: System Settings Changes
+Step 2 - System Settings Changes
 
 1. Sign Out of iCloud
 
@@ -49,9 +49,9 @@ iCloud syncs your files, messages, and photos to Apple's servers. If you use iCl
 - Backup data
 - Calendar events
 
-If you don't need sync: Sign out.
+If you don't need sync - Sign out.
 
-If you need some services: Selectively disable services (Photos, Calendar, Mail) while keeping keychain if you use it.
+If you need some services - Selectively disable services (Photos, Calendar, Mail) while keeping keychain if you use it.
 
 Steps:
 1. Apple menu → System Settings
@@ -183,7 +183,7 @@ Steps:
 
 This prevents unsigned code from running at boot time.
 
-Step 3: Terminal Commands for Advanced Settings
+Step 3 - Terminal Commands for Advanced Settings
 
 These go deeper than System Settings. Open Terminal (Applications → Utilities → Terminal).
 
@@ -223,7 +223,7 @@ Bluetooth can be scanned and exploited. If you don't use wireless peripherals, d
 Check if it's on
 system_profiler SPBluetoothDataType
 
-Disable via System Settings: click Bluetooth in menu bar, turn off
+Disable via System Settings - click Bluetooth in menu bar, turn off
 (Cannot be disabled via terminal for security reasons)
 ```
 
@@ -263,7 +263,7 @@ Handoff lets you start work on iPhone and continue on Mac. Requires connectivity
 defaults write ~/Library/Preferences/com.apple.NSUserDefaults AppleAnnounceReceiptPreference -int 2
 ```
 
-Step 4: Browser Privacy
+Step 4 - Browser Privacy
 
 macOS settings are just part of it. Your browser leaks more data than the OS.
 
@@ -272,7 +272,7 @@ Safari (built-in, more private than Chrome):
 2. Toggle off: "Allow privacy-preserving ad measurement"
 3. Clear privacy data periodically: History → Clear History
 
-Chrome/Brave: Both are better than Safari for privacy but worse than Firefox.
+Chrome/Brave - Both are better than Safari for privacy but worse than Firefox.
 
 Firefox (most private by default):
 1. Settings → Privacy & Security
@@ -286,7 +286,7 @@ Install privacy extensions:
 - Privacy Badger (stops tracking)
 - Decentraleyes (blocks CDN tracking)
 
-Step 5: App-Level Privacy
+Step 5 - App-Level Privacy
 
 Even with OS settings locked down, apps request permissions.
 
@@ -309,7 +309,7 @@ See which apps have location access:
 defaults read ~/Library/Caches/com.apple.LaunchServices* | grep -E '(LSQuarantine|com.apple.metadata)'
 ```
 
-Step 6: VPN and DNS
+Step 6 - VPN and DNS
 
 Your Internet Service Provider sees all unencrypted traffic. A VPN encrypts your traffic but the VPN provider sees everything instead.
 
@@ -318,14 +318,14 @@ If you need a VPN:
 - ProtonVPN ($10/mo). Swiss-based, open-source
 - IVPN ($6/mo). Privacy-focused, no logs
 
-Without a VPN: At minimum, use DNS-over-HTTPS or DNS-over-TLS.
+Without a VPN - At minimum, use DNS-over-HTTPS or DNS-over-TLS.
 
 In Safari:
 1. Settings → Privacy
 2. DNS Providers: Select "Private"
 3. Choose: Quad9 or Cloudflare (not Google)
 
-Step 7: Security vs Convenience Tradeoff
+Step 7 - Security vs Convenience Tradeoff
 
 Total privacy settings break iCloud sync, Apple features, and some app integrations. You decide the balance.
 
@@ -356,7 +356,7 @@ Light Privacy (minimal changes):
 
 Most people benefit from "Privacy by Default." Maximum privacy requires daily habits (always-on VPN, clearing caches) that most users don't sustain.
 
-Step 8: Ongoing Maintenance
+Step 8 - Ongoing Maintenance
 
 Privacy isn't set-and-forget.
 
@@ -375,7 +375,7 @@ After OS Updates:
 - Go through this guide again
 - Check Privacy & Security settings
 
-Step 9: Quick Wins (Do These First)
+Step 9 - Quick Wins (Do These First)
 
 If privacy feels overwhelming, start here:
 
@@ -387,9 +387,9 @@ If privacy feels overwhelming, start here:
 
 These five changes cover 80% of privacy vulnerabilities and take 20 minutes.
 
-Step 10: The Honest Assessment
+Step 10 - The Honest Assessment
 
-macOS is less private than Linux. More private than Windows. If you use Apple's full ecosystem (iCloud, Apple TV, Apple Music), you've traded some privacy for convenience. That's a valid choice.
+macOS is less private than Linux. More private than Windows. If you use Apple's full environment (iCloud, Apple TV, Apple Music), you've traded some privacy for convenience. That's a valid choice.
 
 If you value privacy:
 - Use iCloud sparingly or not at all

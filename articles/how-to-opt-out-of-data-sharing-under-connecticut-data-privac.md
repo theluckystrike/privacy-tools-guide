@@ -21,7 +21,7 @@ The Connecticut Data Privacy Act (CTDPA), effective since July 1, 2023, grants C
 Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [For Developers: Implementing CTDPA Compliance](#for-developers-implementing-ctdpa-compliance)
+- [For Developers - Implementing CTDPA Compliance](#for-developers-implementing-ctdpa-compliance)
 - [Troubleshooting](#troubleshooting)
 - [Related Reading](#related-reading)
 
@@ -35,7 +35,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What CTDPA Covers
+Step 1 - What CTDPA Covers
 
 CTDPA applies to businesses that process personal data of Connecticut residents and meet one of these thresholds:
 
@@ -56,7 +56,7 @@ Connecticut residents can exercise these rights:
 5. Right to Data Portability - Receive data in a portable, machine-readable format
 6. Right to Appeal - Appeal denied requests
 
-Step 2: How to Opt Out of Data Sharing
+Step 2 - How to Opt Out of Data Sharing
 
 Direct Consumer Requests
 
@@ -86,10 +86,10 @@ from email.mime.text import MIMEText
 from datetime import datetime
 
 CTDPA_DELETION_TEMPLATE = """
-Subject: Connecticut Data Privacy Act - Data Deletion Request
-From: {email}
+Subject - Connecticut Data Privacy Act - Data Deletion Request
+From - {email}
 To: {privacy_email}
-Date: {date}
+Date - {date}
 
 Dear Privacy Team,
 
@@ -160,7 +160,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
 );
 ```
 
-For Developers: Implementing CTDPA Compliance
+For Developers - Implementing CTDPA Compliance
 
 If you build applications serving Connecticut users, you must respect opt-out signals and handle consumer requests.
 
@@ -268,7 +268,7 @@ def export_user_data(user_id, format='json'):
         return convert_to_csv(user_data)
 ```
 
-Step 3: Verify Your Opt-Out Status
+Step 3 - Verify Your Opt-Out Status
 
 After submitting requests, verify companies have honored them:
 
@@ -277,7 +277,7 @@ After submitting requests, verify companies have honored them:
 3. Monitor for data leakage - Set up Google Alerts for your name and email
 4. Test with different browsers - Verify GPC signals work across browsers
 
-Step 4: Common Pitfalls
+Step 4 - Common Pitfalls
 
 Several issues frequently trip up Connecticut residents exercising their rights:
 

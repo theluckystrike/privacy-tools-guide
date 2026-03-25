@@ -21,10 +21,10 @@ Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [What You Need](#what-you-need)
-- [Entropy Comparison: Passphrases vs Passwords](#entropy-comparison-passphrases-vs-passwords)
+- [Entropy Comparison - Passphrases vs Passwords](#entropy-comparison-passphrases-vs-passwords)
 - [When to Use Passphrases vs Random Passwords](#when-to-use-passphrases-vs-random-passwords)
-- [Threat Model: When Diceware Isn't Enough](#threat-model-when-diceware-isnt-enough)
-- [Advanced: Diceware with Passphrase Stretching](#advanced-diceware-with-passphrase-stretching)
+- [Threat Model - When Diceware Isn't Enough](#threat-model-when-diceware-isnt-enough)
+- [Advanced - Diceware with Passphrase Stretching](#advanced-diceware-with-passphrase-stretching)
 - [Troubleshooting](#troubleshooting)
 - [Related Reading](#related-reading)
 
@@ -38,7 +38,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: What Makes Diceware Secure
+Step 1 - What Makes Diceware Secure
 
 Diceware's strength comes from genuine randomness. physical dice rolls. combined with a known wordlist. Because the wordlist and the number of dice rolls are public, you can calculate exactly how hard the passphrase is to crack.
 
@@ -68,31 +68,31 @@ curl -O https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt
 
 The EFF wordlist was created specifically for Diceware and contains common, readable English words that are easier to memorize than the original list.
 
-Step 2: Generate a Passphrase Offline
+Step 2 - Generate a Passphrase Offline
 
 Roll all five dice simultaneously (or sequentially. the order matters). Write down the five numbers in the order they land, left to right, to get a five-digit number.
 
 Example rolls for a 6-word passphrase:
 
 ```
-Roll 1: 3 5 1 4 2 → 35142 → "laden"
-Roll 2: 1 6 5 3 2 → 16532 → "corral"
-Roll 3: 4 2 1 6 5 → 42165 → "mulch"
-Roll 4: 5 5 1 2 4 → 55124 → "scone"
-Roll 5: 3 1 4 5 6 → 31456 → "gusto"
-Roll 6: 6 2 3 1 1 → 62311 → "tweed"
+Roll 1 - 3 5 1 4 2 → 35142 → "laden"
+Roll 2 - 1 6 5 3 2 → 16532 → "corral"
+Roll 3 - 4 2 1 6 5 → 42165 → "mulch"
+Roll 4 - 5 5 1 2 4 → 55124 → "scone"
+Roll 5 - 3 1 4 5 6 → 31456 → "gusto"
+Roll 6 - 6 2 3 1 1 → 62311 → "tweed"
 ```
 
-Resulting passphrase: `laden corral mulch scone gusto tweed`
+Resulting passphrase - `laden corral mulch scone gusto tweed`
 
-To look up a word: open `eff_large_wordlist.txt` and find the line starting with your five-digit number.
+To look up a word - open `eff_large_wordlist.txt` and find the line starting with your five-digit number.
 
 ```bash
 grep "^35142" eff_large_wordlist.txt
 35142	laden
 ```
 
-Step 3: Generate Passphrases Digitally
+Step 3 - Generate Passphrases Digitally
 
 If physical dice aren't available, use a trusted tool that sources randomness from the OS's cryptographically secure RNG:
 
@@ -121,7 +121,7 @@ print(generate_passphrase(wordlist, num_words=6))
 
 ```bash
 python3 generate_passphrase.py
-Example output: violet margin dapper cactus lemon bronze
+Example output - violet margin dapper cactus lemon bronze
 ```
 
 Using `diceware` command-line tool
@@ -158,7 +158,7 @@ done | tr '\n' ' '
 echo
 ```
 
-Entropy Comparison: Passphrases vs Passwords
+Entropy Comparison - Passphrases vs Passwords
 
 Common password policies produce weak passwords with poor entropy:
 
@@ -186,7 +186,7 @@ Use randomly generated passwords for:
 - API keys and tokens (never typed by humans)
 - Any credential where a password manager handles entry
 
-Step 4: Memorizing a Diceware Passphrase
+Step 4 - Memorizing a Diceware Passphrase
 
 The key technique is spaced repetition combined with a memory device:
 
@@ -198,17 +198,17 @@ The key technique is spaced repetition combined with a memory device:
 
 `laden corral mulch scone gusto tweed`
 
-Mental image: A farmer laden with bags walks into a corral, steps in mulch, tries to eat a scone, but chokes from gusto, and is wearing tweed. Absurd images stick better than coherent ones.
+Mental image - A farmer laden with bags walks into a corral, steps in mulch, tries to eat a scone, but chokes from gusto, and is wearing tweed. Absurd images stick better than coherent ones.
 
-Step 5: When Physical Dice Are Compromised
+Step 5 - When Physical Dice Are Compromised
 
-A common question: if dice can be loaded, is this method secure?
+A common question - if dice can be loaded, is this method secure?
 
 Standard dice rolls have about ±0.2% bias per face. For Diceware, this means the least-likely word appears with probability ~0.998^5 ≈ 0.99 of normal and the most likely with probability ~1.002^5 ≈ 1.01 of normal. This bias is negligibly small. it reduces entropy by a fraction of a bit across all 6 words.
 
 For situations where you want certainty, use the Python `secrets` module implementation above. it uses the OS's CSPRNG which is audited and tested against bias.
 
-Threat Model: When Diceware Isn't Enough
+Threat Model - When Diceware Isn't Enough
 
 For certain threat models, even 8-word Diceware passphrases may be insufficient. Consider using longer passphrases for scenarios involving:
 
@@ -227,7 +227,7 @@ To estimate future security, calculate bits of entropy needed:
 
 The last row highlights a critical limitation: if cryptographically broken passphrase hashes are captured today and quantum computers emerge in 20 years, no amount of entropy protects you. Use additional protections like time-locked encryption for long-term secrets.
 
-Advanced: Diceware with Passphrase Stretching
+Advanced - Diceware with Passphrase Stretching
 
 Raw Diceware provides excellent entropy but no computational cost to attackers. Password stretching functions like PBKDF2 or Argon2 make brute-force attacks exponentially harder:
 
@@ -256,15 +256,15 @@ def stretch_passphrase(passphrase, iterations=200000):
 Example
 passphrase = "laden corral mulch scone gusto tweed"
 stretched, salt = stretch_passphrase(passphrase)
-print(f"Stretched: {stretched[:32]}...")
+print(f"Stretched - {stretched[:32]}...")
 print(f"Salt: {salt}")
 
-To recover: repeat with same salt and iteration count
+To recover - repeat with same salt and iteration count
 ```
 
 Use stretched passphrases in applications where you control the stretching function. For applications like LUKS disk encryption, use the application's built-in key stretching (which it does automatically).
 
-Step 6: Verify Randomness Quality
+Step 6 - Verify Randomness Quality
 
 Before committing a generated passphrase to long-term use, verify the randomness source:
 
@@ -285,7 +285,7 @@ Chi-square = 234.5 (closer to 256 is better)
 
 Entropy close to 8 bits per byte and chi-square values near 256 indicate high-quality randomness. Values significantly different may suggest problems with your random source.
 
-Step 7: Diceware for Multiple Languages
+Step 7 - Diceware for Multiple Languages
 
 The EFF wordlist exists in English, but multiple language implementations are available:
 

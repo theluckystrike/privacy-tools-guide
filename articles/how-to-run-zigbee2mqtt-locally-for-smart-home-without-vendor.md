@@ -38,7 +38,7 @@ Zigbee2MQTT bridges Zigbee devices directly to your local MQTT broker, bypassing
 
 Beyond privacy, the practical reliability improvement is significant. When your ISP has an outage, your lights still turn on and your motion sensors still trigger automations. The Zigbee mesh itself operates at 2.4GHz using the IEEE 802.15.4 standard, with each powered device acting as a router that extends coverage to battery-powered end devices like sensors and buttons.
 
-Step 1: Coordinator Hardware Selection
+Step 1 - Coordinator Hardware Selection
 
 The coordinator is the single most important hardware decision. It acts as the USB radio dongle that your Linux host uses to communicate with the Zigbee mesh.
 
@@ -67,7 +67,7 @@ Software:
 - MQTT broker (Mosquitto)
 - Basic terminal familiarity
 
-Step 2: Install the MQTT Broker
+Step 2 - Install the MQTT Broker
 
 Zigbee2MQTT publishes device states to a MQTT broker. Run Mosquitto in Docker:
 
@@ -102,7 +102,7 @@ listener 1883
 password_file /mosquitto/config/passwd
 ```
 
-Step 3: Install Zigbee2MQTT
+Step 3 - Install Zigbee2MQTT
 
 The recommended approach uses the official Zigbee2MQTT Docker image. Create a `docker-compose.yml`:
 
@@ -132,7 +132,7 @@ ls -la /dev/serial/by-id/
 
 Using the `by-id` path rather than `/dev/ttyUSB0` directly ensures the correct device is used even if other USB serial devices are connected, and survives reboots where device enumeration order may change.
 
-Step 4: Configure Zigbee2MQTT
+Step 4 - Configure Zigbee2MQTT
 
 Edit the `configuration.yaml` in your data directory:
 
@@ -152,11 +152,11 @@ advanced:
   channel: 15
 ```
 
-The `network_key: GENERATE` option creates a unique 16-byte key for your Zigbee network on first startup. Save this key. you will need it if you ever restore from backup. After first launch, the key is written into `configuration.yaml` as an array of 16 integers. Back it up immediately.
+The `network_key - GENERATE` option creates a unique 16-byte key for your Zigbee network on first startup. Save this key. you will need it if you ever restore from backup. After first launch, the key is written into `configuration.yaml` as an array of 16 integers. Back it up immediately.
 
 Channel selection matters for interference avoidance. Zigbee channels 15, 20, 25, and 26 avoid overlap with the most common WiFi channels (1, 6, 11). Channel 25 or 26 offer the best separation from WiFi in most home environments, at the cost of slightly reduced range on older devices.
 
-Step 5: Starting the Service
+Step 5 - Starting the Service
 
 Launch Zigbee2MQTT:
 
@@ -179,7 +179,7 @@ zigbee2mqtt:info  2026-03-16 10:00:00: Starting scheduler...
 zigbee2mqtt:info  2026-03-16 10:00:00: Zigbee2MQTT started!
 ```
 
-Step 6: Pairing Devices
+Step 6 - Pairing Devices
 
 Put your Zigbee devices in pairing mode. The process varies by device type:
 
@@ -207,7 +207,7 @@ After pairing, devices appear in the MQTT topic hierarchy under `zigbee2mqtt/[de
 
 The `linkquality` field (0-255) tells you signal strength. Values below 50 indicate marginal connectivity; below 20, the device will frequently drop offline. Add a powered router device (plug or bulb) between the coordinator and weak end devices to extend mesh coverage.
 
-Step 7: Integrate with Home Automation
+Step 7 - Integrate with Home Automation
 
 With Zigbee2MQTT running locally, connect to home automation platforms that support MQTT:
 
@@ -253,7 +253,7 @@ client.subscribe("zigbee2mqtt/#")
 client.loop_forever()
 ```
 
-Step 8: Secure Your Setup
+Step 8 - Secure Your Setup
 
 While running locally, implement basic security measures:
 
@@ -285,7 +285,7 @@ Ensure no other Zigbee hubs are active nearby. two coordinators on the same chan
 High CPU on Raspberry Pi:
 The Zigbee2MQTT process is lightweight, but Mosquitto logging at debug level can generate substantial disk I/O on SD cards. Set the MQTT log level to `info` and consider using an USB SSD instead of a SD card for the data directory.
 
-Step 9: Extending the Setup
+Step 9 - Extending the Setup
 
 Once running, explore these enhancements:
 

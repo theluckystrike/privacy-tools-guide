@@ -153,7 +153,7 @@ Keyboard App Feature Comparison
 | Clipboard Access | No | No | No | Yes (optional) |
 | Search Integration | No | No | No | Yes |
 
-The tradeoff: Third-party keyboards have fewer language options and emoji than Gboard, but the privacy gain is massive.
+The tradeoff - Third-party keyboards have fewer language options and emoji than Gboard, but the privacy gain is massive.
 
 Detecting Keyboard Spyware
 
@@ -163,7 +163,7 @@ If you're unsure whether your keyboard is sending data:
 On Android with ADB, enable packet capture
 adb shell tcpdump -i wlan0 -n 2>/dev/null | grep -v "192.168\|127.0" &
 
-Type in a messaging app: "This is a test message with private info"
+Type in a messaging app - "This is a test message with private info"
 Stop tcpdump with Ctrl+C
 
 Check if keyboard domain appears:
@@ -182,7 +182,7 @@ Using NetGuard (F-Droid firewall) is easier:
 5. If the keyboard works without network access, it's genuinely on-device
 6. If it stops working, it requires network access. uninstall immediately
 
-Language Models: Where Keyboard Intelligence Comes From
+Language Models - Where Keyboard Intelligence Comes From
 
 Modern keyboards use statistical language models to predict next words. These models can be:
 
@@ -200,7 +200,7 @@ On-device (HeliBoard, OpenBoard):
 
 The difference in accuracy is noticeable for autocorrect, but most casual typing is unaffected. Advanced prediction (emoji selection, domain names) works worse.
 
-Tradeoff: Slightly less intelligent autocorrect vs. no surveillance.
+Tradeoff - Slightly less intelligent autocorrect vs. no surveillance.
 
 Disabling Clipboard Access on Android 12+
 
@@ -220,7 +220,7 @@ adb shell dumpsys clipboard | grep "Clip"
 If your keyboard appears, it has access
 ```
 
-Autocorrect vs. Privacy: Finding Balance
+Autocorrect vs. Privacy - Finding Balance
 
 The keyboard you choose depends on your use case:
 

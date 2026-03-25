@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Choose a VPS
+Step 1 - Choose a VPS
 
 Any low-end VPS with a public IP works. Options under $5/month:
 
@@ -43,7 +43,7 @@ Pick a datacenter location that gives you the exit geography you want. An Amster
 
 Choose Ubuntu 22.04 or Debian 12 as the OS.
 
-Step 2: Server Setup
+Step 2 - Server Setup
 
 SSH into your new VPS and update it:
 
@@ -71,13 +71,13 @@ Generate Client Keys
 Generate a key pair for each client (do this now for all clients you plan to add):
 
 ```bash
-Client 1: laptop
+Client 1 - laptop
 wg genkey | tee /tmp/laptop-private.key | wg pubkey > /tmp/laptop-public.key
 
-Client 2: phone
+Client 2 - phone
 wg genkey | tee /tmp/phone-private.key | wg pubkey > /tmp/phone-public.key
 
-Client 3: tablet
+Client 3 - tablet
 wg genkey | tee /tmp/tablet-private.key | wg pubkey > /tmp/tablet-public.key
 ```
 
@@ -176,7 +176,7 @@ iptables directly
 sudo iptables -A INPUT -p udp --dport 51820 -j ACCEPT
 ```
 
-Step 3: Client Configuration
+Step 3 - Client Configuration
 
 Create a config for each client. Replace variables with your actual keys and server IP.
 
@@ -232,7 +232,7 @@ Create the config file at `~/wireguard-laptop.conf` with the same content as the
 sudo wg-quick up ~/wireguard-laptop.conf
 ```
 
-Or use the WireGuard GUI app: File > Import tunnel from file.
+Or use the WireGuard GUI app - File > Import tunnel from file.
 
 Windows Client
 
@@ -259,7 +259,7 @@ On mobile:
 3. Scan the QR code
 4. Toggle the tunnel on
 
-Step 4: Verify the VPN Is Working
+Step 4 - Verify the VPN Is Working
 
 From a connected client:
 
@@ -283,7 +283,7 @@ latest handshake: 2 minutes, 15 seconds ago
 transfer: 1.23 MiB received, 4.56 MiB sent
 ```
 
-Step 5: Add a New Client Without Downtime
+Step 5 - Add a New Client Without Downtime
 
 You can add peers without restarting WireGuard:
 
@@ -341,7 +341,7 @@ Related Articles
 - [How to Set Up WireGuard VPN on iPhone for Always-On Privacy](/how-to-set-up-wireguard-vpn-on-iphone-for-always-on-privacy-/)
 - [Wireguard Container Setup Docker Network Namespace Isolation](/wireguard-container-setup-docker-network-namespace-isolation/)
 - [How To Set Up Mobile Device Management Profile For Personal](/how-to-set-up-mobile-device-management-profile-for-personal-/)
-- [Privacy Setup for Celebrity: Protecting Personal Address.](/privacy-setup-for-celebrity-protecting-personal-address-and-/)
+- [Privacy Setup for Celebrity - Protecting Personal Address.](/privacy-setup-for-celebrity-protecting-personal-address-and-/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike. More at [zovo.one](https://zovo.one)

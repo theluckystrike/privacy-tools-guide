@@ -36,17 +36,17 @@ Linux desktops run on trust, you control the OS, applications, and permissions. 
 Table of Contents
 
 - [The Privacy Baseline](#the-privacy-baseline)
-- [Step 1: Disable Ubuntu Telemetry (Ubuntu Only)](#step-1-disable-ubuntu-telemetry-ubuntu-only)
-- [Step 2: Disable Fedora Telemetry (Fedora Only)](#step-2-disable-fedora-telemetry-fedora-only)
-- [Step 3: Harden the Firewall](#step-3-harden-the-firewall)
-- [Step 4: Enable Full Disk Encryption](#step-4-enable-full-disk-encryption)
-- [Step 5: Enable AppArmor (Ubuntu) or SELinux (Fedora)](#step-5-enable-apparmor-ubuntu-or-selinux-fedora)
-- [Step 6: Harden Firefox](#step-6-harden-firefox)
-- [Step 7: Disable Unnecessary Services](#step-7-disable-unnecessary-services)
-- [Step 8: Configure Automatic Security Updates](#step-8-configure-automatic-security-updates)
-- [Step 9: Enable SSH Hardening (If Needed)](#step-9-enable-ssh-hardening-if-needed)
-- [Step 10: Lock Down Permissions](#step-10-lock-down-permissions)
-- [Step 11: Enable Mandatory Security Monitoring](#step-11-enable-mandatory-security-monitoring)
+- [Step 1 - Disable Ubuntu Telemetry (Ubuntu Only)](#step-1-disable-ubuntu-telemetry-ubuntu-only)
+- [Step 2 - Disable Fedora Telemetry (Fedora Only)](#step-2-disable-fedora-telemetry-fedora-only)
+- [Step 3 - Harden the Firewall](#step-3-harden-the-firewall)
+- [Step 4 - Enable Full Disk Encryption](#step-4-enable-full-disk-encryption)
+- [Step 5 - Enable AppArmor (Ubuntu) or SELinux (Fedora)](#step-5-enable-apparmor-ubuntu-or-selinux-fedora)
+- [Step 6 - Harden Firefox](#step-6-harden-firefox)
+- [Step 7 - Disable Unnecessary Services](#step-7-disable-unnecessary-services)
+- [Step 8 - Configure Automatic Security Updates](#step-8-configure-automatic-security-updates)
+- [Step 9 - Enable SSH Hardening (If Needed)](#step-9-enable-ssh-hardening-if-needed)
+- [Step 10 - Lock Down Permissions](#step-10-lock-down-permissions)
+- [Step 11 - Enable Mandatory Security Monitoring](#step-11-enable-mandatory-security-monitoring)
 - [Post-Hardening Verification Checklist](#post-hardening-verification-checklist)
 - [Security Hardening Maintenance](#security-hardening-maintenance)
 - [Related Reading](#related-reading)
@@ -76,7 +76,7 @@ Common culprits:
 - Fedora: `abrt` (automatic bug reporting), `dnf-plugins-core` (telemetry in some versions)
 - All distros: Firefox default telemetry, update checkers, automatic error reports
 
-Step 1: Disable Ubuntu Telemetry (Ubuntu Only)
+Step 1 - Disable Ubuntu Telemetry (Ubuntu Only)
 
 Remove packages sending data to Ubuntu/Canonical:
 
@@ -93,9 +93,9 @@ sudo apt purge ubuntu-advantage-tools -y
 
 Prevent reinstallation
 echo "ubuntu-report" | sudo tee -a /etc/apt/preferences.d/no-telemetry
-echo "Package: ubuntu-report" | sudo tee /etc/apt/preferences.d/no-telemetry
-echo "Pin: release *" | sudo tee -a /etc/apt/preferences.d/no-telemetry
-echo "Pin-Priority: -1" | sudo tee -a /etc/apt/preferences.d/no-telemetry
+echo "Package - ubuntu-report" | sudo tee /etc/apt/preferences.d/no-telemetry
+echo "Pin - release *" | sudo tee -a /etc/apt/preferences.d/no-telemetry
+echo "Pin-Priority - -1" | sudo tee -a /etc/apt/preferences.d/no-telemetry
 
 Disable MOTD telemetry
 sudo chmod -x /etc/update-motd.d/*
@@ -106,7 +106,7 @@ sudo systemctl status ubuntu-report 2>&1 | grep -i inactive
 
 Ubuntu no longer sends package data or hardware surveys to Canonical.
 
-Step 2: Disable Fedora Telemetry (Fedora Only)
+Step 2 - Disable Fedora Telemetry (Fedora Only)
 
 ```bash
 Remove automatic bug reporting daemon
@@ -128,7 +128,7 @@ grep "countme" /etc/dnf/dnf.conf  # Should show countme=0
 
 Fedora stops sending package statistics and debug reports.
 
-Step 3: Harden the Firewall
+Step 3 - Harden the Firewall
 
 Linux desktops rarely need inbound ports. A strict firewall rejects unsolicited connections:
 
@@ -187,10 +187,10 @@ Verify the firewall works:
 From another machine, try to connect to random ports
 nmap -p 1-10000 your-desktop-ip
 
-Expected: All ports filtered or closed (good)
+Expected - All ports filtered or closed (good)
 ```
 
-Step 4: Enable Full Disk Encryption
+Step 4 - Enable Full Disk Encryption
 
 Unencrypted disks leak data even when powered off. Full disk encryption (LUKS) encrypts everything except the boot partition.
 
@@ -222,7 +222,7 @@ sudo dmsetup status
 
 Get encryption algorithm
 sudo cryptsetup status /dev/mapper/your-volume
-Should show: cipher=aes-xts-plain64, key size=512 bits (AES-256)
+Should show - cipher=aes-xts-plain64, key size=512 bits (AES-256)
 
 Verify encrypted home
 df -h | grep -i encrypt
@@ -241,12 +241,12 @@ sudo swapon /dev/mapper/swapvol
 
 Make permanent by updating /etc/crypttab and /etc/fstab
 sudo nano /etc/crypttab
-Add: swapvol /dev/sdX /dev/urandom swap
+Add - swapvol /dev/sdX /dev/urandom swap
 ```
 
 Disk is encrypted with AES-256. Removing the drive and powering it on elsewhere reveals no data.
 
-Step 5: Enable AppArmor (Ubuntu) or SELinux (Fedora)
+Step 5 - Enable AppArmor (Ubuntu) or SELinux (Fedora)
 
 Mandatory Access Control (MAC) limits what each application can access. Even if an application is compromised, it can't access the rest of your system.
 
@@ -289,7 +289,7 @@ sudo journalctl -u setroubleshoot --no-pager | tail -20
 
 Applications run in sandboxes. Firefox can't access your SSH keys, documents, or home directory outside its profile.
 
-Step 6: Harden Firefox
+Step 6 - Harden Firefox
 
 Firefox is your primary internet gateway. Default settings collect telemetry and expose fingerprinting vectors.
 
@@ -358,10 +358,10 @@ Verify fingerprint resistance:
 
 ```bash
 Visit https://coveryourtracks.eff.org/
-Ideal result: "Untrackable" (difficult to fingerprint)
+Ideal result - "Untrackable" (difficult to fingerprint)
 ```
 
-Step 7: Disable Unnecessary Services
+Step 7 - Disable Unnecessary Services
 
 Disable services not needed on a desktop:
 
@@ -387,7 +387,7 @@ Verify:
 sudo systemctl status bluetooth  # Should show "disabled"
 ```
 
-Step 8: Configure Automatic Security Updates
+Step 8 - Configure Automatic Security Updates
 
 Unpatched systems are vulnerable. Enable automatic security updates:
 
@@ -419,7 +419,7 @@ Verify
 sudo systemctl status dnf-automatic.timer
 ```
 
-Step 9: Enable SSH Hardening (If Needed)
+Step 9 - Enable SSH Hardening (If Needed)
 
 If you use SSH, harden it:
 
@@ -444,7 +444,7 @@ Verify configuration
 sudo sshd -t  # Should output nothing if valid
 ```
 
-Step 10: Lock Down Permissions
+Step 10 - Lock Down Permissions
 
 Restrict file permissions to prevent unauthorized access:
 
@@ -467,7 +467,7 @@ Remove world-readable permissions
 find ~ -type f -perm /077 -exec chmod go-rwx {} \;
 ```
 
-Step 11: Enable Mandatory Security Monitoring
+Step 11 - Enable Mandatory Security Monitoring
 
 Track security events in a central log:
 
@@ -489,7 +489,7 @@ sudo ausearch -k shadow_access  # Shows attempts to modify passwords
 
 Make rules permanent
 sudo nano /etc/audit/rules.d/hardening.rules
-Add: -w /etc/shadow -p wa -k shadow_access
+Add - -w /etc/shadow -p wa -k shadow_access
 ```
 
 Post-Hardening Verification Checklist

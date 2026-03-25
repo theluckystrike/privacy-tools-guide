@@ -20,7 +20,7 @@ Landlords can require income verification, credit checks, rental history, and ba
 
 Table of Contents
 
-- [The Fair Housing Act: Foundation of Tenant Privacy](#the-fair-housing-act-foundation-of-tenant-privacy)
+- [The Fair Housing Act - Foundation of Tenant Privacy](#the-fair-housing-act-foundation-of-tenant-privacy)
 - [Information Landlords Can Legally Require](#information-landlords-can-legally-require)
 - [Information Landlords Cannot Legally Request](#information-landlords-cannot-legally-request)
 - [State-Specific Protections](#state-specific-protections)
@@ -28,12 +28,12 @@ Table of Contents
 - [Handling Red Flags](#handling-red-flags)
 - [Building Your Rental Application Toolkit](#building-your-rental-application-toolkit)
 - [State-Specific Resource Guide (2026)](#state-specific-resource-guide-2026)
-- [Real Threat: Predatory Screening Companies](#real-threat-predatory-screening-companies)
+- [Real Threat - Predatory Screening Companies](#real-threat-predatory-screening-companies)
 - [Decoding Screening Reports](#decoding-screening-reports)
 - [Requesting and Challenging Reports](#requesting-and-challenging-reports)
 - [Documenting Discrimination](#documenting-discrimination)
 
-The Fair Housing Act: Foundation of Tenant Privacy
+The Fair Housing Act - Foundation of Tenant Privacy
 
 The Fair Housing Act prohibits discrimination based on protected classes including race, color, national origin, religion, sex, familial status, and disability. This federal law forms the backbone of what landlords cannot ask about, but it does not explicitly list every permissible or prohibited question.
 
@@ -182,7 +182,7 @@ Key protections by jurisdiction:
 California:
 - Ban the Box: Landlords cannot ask about criminal history until conditional offer made
 - SCRA: Cannot consider eviction records older than 5 years
-- Source of Income: Protected, cannot discriminate based on income source (subsidies, freelance, etc.)
+- Source of Income - Protected, cannot discriminate based on income source (subsidies, freelance, etc.)
 - Contact: California Department of Consumer Affairs
 
 New York:
@@ -204,7 +204,7 @@ Washington State:
 
 Many states lack strong protections. Use federal Fair Housing Act as baseline.
 
-Real Threat: Predatory Screening Companies
+Real Threat - Predatory Screening Companies
 
 Rental screening companies sometimes use problematic data sources:
 
@@ -229,19 +229,19 @@ mkdir -p ~/rental-applications/$(date +%Y-%m)
 
 Template for each application
 cat > ~/rental-applications/application-log.txt << 'EOF'
-Property: [Address]
-Date Applied: [Date]
-Company/Landlord: [Name]
-Contact: [Phone/Email]
-Documents Requested: [List]
-Documents Provided: [List]
-Application Status: [Status]
-Interview Date: [Date]
-Outcome: [Approved/Denied]
+Property - [Address]
+Date Applied - [Date]
+Company/Landlord - [Name]
+Contact - [Phone/Email]
+Documents Requested - [List]
+Documents Provided - [List]
+Application Status - [Status]
+Interview Date - [Date]
+Outcome - [Approved/Denied]
 Reason for Denial (if applicable): [Description]
-Screening Report Obtained: [Yes/No]
-Report Accuracy: [Verified/Errors Found]
-Follow-up Date: [Date]
+Screening Report Obtained - [Yes/No]
+Report Accuracy - [Verified/Errors Found]
+Follow-up Date - [Date]
 EOF
 ```
 

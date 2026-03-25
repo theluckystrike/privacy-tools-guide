@@ -25,11 +25,11 @@ When you load a page with a form, the browser:
 2. Matches these attributes against stored credentials, addresses, and payment data
 3. Fills matched fields. including fields that are `display:none`, `visibility:hidden`, or off-screen
 
-The critical detail: the browser fills fields before you submit the form, and it fills fields that match by attribute regardless of whether they're visible.
+The critical detail - the browser fills fields before you submit the form, and it fills fields that match by attribute regardless of whether they're visible.
 
 ---
 
-Attack 1: Hidden Field Harvesting
+Attack 1 - Hidden Field Harvesting
 
 A form contains visible fields for the user and hidden fields targeting high-value autofill categories:
 
@@ -59,7 +59,7 @@ Chrome's protection (user must click a field in the form before autofill fires f
 
 ---
 
-Attack 2: CSS Off-Screen Positioning
+Attack 2 - CSS Off-Screen Positioning
 
 Fields positioned far off-screen (negative `left` or `top`) are not hidden but are not visible. Some browsers treat these as visible:
 
@@ -71,7 +71,7 @@ Fields positioned far off-screen (negative `left` or `top`) are not hidden but a
 
 ---
 
-Attack 3: Timing Attack (JavaScript Harvest Before Submit)
+Attack 3 - Timing Attack (JavaScript Harvest Before Submit)
 
 Even on legitimate-looking forms, JavaScript can read autofilled values immediately after fill. without waiting for the user to click Submit:
 
@@ -92,7 +92,7 @@ This attack requires the attacker to control JavaScript on the page (XSS, malici
 
 ---
 
-Attack 4: Cross-Origin iFrame Autofill
+Attack 4 - Cross-Origin iFrame Autofill
 
 Some browsers allow autofill in iframes from different origins under certain conditions. A page loads a checkout iframe from a payment processor, but a malicious script in the parent page reads filled values via postMessage or shared DOM access (same-origin only, but misconfigured CSP can enable this).
 
@@ -107,7 +107,7 @@ Modern browsers block cross-origin DOM access, but the threat is real when CSP i
 
 ---
 
-Attack 5: Password Autofill on Login Forms
+Attack 5 - Password Autofill on Login Forms
 
 Browser password managers autofill login forms. Trackers exploit this for fingerprinting:
 
@@ -185,7 +185,7 @@ In Bitwarden extension settings:
 - Default URI match detection: Host (not domain-wide)
 - Auto-fill on copy: OFF
 
-In your browser: disable all native autofill (payments, addresses, passwords)
+In your browser - disable all native autofill (payments, addresses, passwords)
 Let Bitwarden handle passwords only. with the autofill popup, not silent fill
 ```
 

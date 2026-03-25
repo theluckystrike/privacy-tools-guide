@@ -16,14 +16,14 @@ voice-checked: true
 
 {% raw %}
 
-Choose ProtonMail if zero-knowledge encryption is non-negotiable and you need a complete privacy ecosystem (encrypted Drive, Calendar, Pass) under Swiss jurisdiction. Choose FastMail if you need native IMAP/SMTP without Bridge software, a full-featured JMAP API for building integrations, and superior search and filtering powered by server-side indexing. Below is the full technical breakdown of how these two services differ.
+Choose ProtonMail if zero-knowledge encryption is non-negotiable and you need a complete privacy environment (encrypted Drive, Calendar, Pass) under Swiss jurisdiction. Choose FastMail if you need native IMAP/SMTP without Bridge software, a full-featured JMAP API for building integrations, and superior search and filtering powered by server-side indexing. Below is the full technical breakdown of how these two services differ.
 
 Table of Contents
 
 - [Encryption Architecture](#encryption-architecture)
 - [What Zero-Knowledge Encryption Actually Means in Practice](#what-zero-knowledge-encryption-actually-means-in-practice)
 - [Email Protocol Access](#email-protocol-access)
-- [JMAP vs IMAP: Why It Matters for Developers](#jmap-vs-imap-why-it-matters-for-developers)
+- [JMAP vs IMAP - Why It Matters for Developers](#jmap-vs-imap-why-it-matters-for-developers)
 - [Security Headers and Deliverability](#security-headers-and-deliverability)
 - [Developer Experience](#developer-experience)
 - [Pricing Comparison (2026)](#pricing-comparison-2026)
@@ -100,7 +100,7 @@ password your_app_specific_password
 
 Bridge runs locally and creates a local IMAP/SMTP server that your email client connects to. This adds latency and requires the Bridge to be running.
 
-API Access: ProtonMail offers a REST API but it's primarily for their Proton Drive and Calendar services. Email API access is limited.
+API Access - ProtonMail offers a REST API but it's primarily for their Proton Drive and Calendar services. Email API access is limited.
 
 FastMail
 
@@ -108,9 +108,9 @@ FastMail provides native SMTP and IMAP access without additional software:
 
 ```bash
 FastMail IMAP configuration
-Host: imap.fastmail.com
-Port: 993 (IMAP with TLS)
-SMTP: smtp.fastmail.com:587 (STARTTLS)
+Host - imap.fastmail.com
+Port - 993 (IMAP with TLS)
+SMTP - smtp.fastmail.com:587 (STARTTLS)
 
 Example fetchmail configuration
 set postmaster "postmaster"
@@ -123,7 +123,7 @@ poll imap.fastmail.com protocol IMAP
     folder INBOX
 ```
 
-API Access: FastMail offers a proper CardDAV and CalDAV API for contacts and calendars, plus JMAP (JSON Meta Application Protocol) for email access. This is a significant advantage for developers building integrations:
+API Access - FastMail offers a proper CardDAV and CalDAV API for contacts and calendars, plus JMAP (JSON Meta Application Protocol) for email access. This is a significant advantage for developers building integrations:
 
 ```javascript
 // FastMail JMAP API example
@@ -146,7 +146,7 @@ const response = await fetch('https://api.fastmail.com/jmap/api/', {
 });
 ```
 
-JMAP vs IMAP: Why It Matters for Developers
+JMAP vs IMAP - Why It Matters for Developers
 
 JMAP (RFC 8620) is a modern replacement for IMAP that solves fundamental protocol inefficiencies. IMAP was designed for sequential, stateful connections. every sync operation requires multiple round trips, and clients must download message UIDs and then fetch individual messages. With JMAP, a single HTTP request can retrieve a list of changed messages, their content, and update mailbox state atomically.
 
@@ -162,7 +162,7 @@ Developer Experience
 
 ProtonMail
 
-ProtonMail's developer story centers on their broader ecosystem: Proton Drive for encrypted file sync, Proton Calendar for encrypted calendar sharing, and Proton Pass as a password manager.
+ProtonMail's developer story centers on their broader environment: Proton Drive for encrypted file sync, Proton Calendar for encrypted calendar sharing, and Proton Pass as a password manager.
 
 Their API documentation is limited for external developers. The focus is on their consumer products rather than developer customization.
 
@@ -198,7 +198,7 @@ FastMail is incorporated in Australia, a Five Eyes member. Australia's Assistanc
 
 What Each Service Does Better
 
-Choose ProtonMail if zero-knowledge encryption is your priority, if you need encrypted calendar and drive, or if Swiss jurisdiction and a complete privacy ecosystem matter to your threat model.
+Choose ProtonMail if zero-knowledge encryption is your priority, if you need encrypted calendar and drive, or if Swiss jurisdiction and a complete privacy environment matter to your threat model.
 
 Choose FastMail if you need native IMAP/SMTP without extra software, if API access matters for your projects, or if custom domains, aliases, and superior search and filtering are essential to your workflow.
 

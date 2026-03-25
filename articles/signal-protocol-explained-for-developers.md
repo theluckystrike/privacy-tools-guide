@@ -28,7 +28,7 @@ The Signal Protocol combines three distinct cryptographic algorithms to achieve 
 
 Each component addresses specific threat models and together create a messaging system resistant to both passive surveillance and active attacks.
 
-X3DH: Establishing Initial Keys
+X3DH - Establishing Initial Keys
 
 X3DH enables two parties, Alice and Bob, to derive shared secrets without transmitting them directly. Unlike simple Diffie-Hellman, X3DH supports asynchronous communication by using pre-generated identity keys and one-time keys.
 
@@ -69,7 +69,7 @@ class X3DH:
 
 This approach ensures that even if an attacker compromises one of Bob's long-term keys, they cannot decrypt past conversations. The use of one-time prekeys prevents replay attacks and supports offline message delivery.
 
-Double Ratchet: Continuous Forward Secrecy
+Double Ratchet - Continuous Forward Secrecy
 
 The Double Ratchet Algorithm provides forward secrecy (compromising current keys doesn't reveal past messages) and future secrecy (compromising current keys doesn't reveal future messages). It combines two ratcheting mechanisms:
 

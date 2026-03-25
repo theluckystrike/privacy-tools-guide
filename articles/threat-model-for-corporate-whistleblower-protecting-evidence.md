@@ -21,7 +21,7 @@ A corporate whistleblower faces a unique security challenge: preserving evidence
 Table of Contents
 
 - [Understanding the Threat Market](#understanding-the-threat-market)
-- [Evidence Integrity: Cryptographic Verification](#evidence-integrity-cryptographic-verification)
+- [Evidence Integrity - Cryptographic Verification](#evidence-integrity-cryptographic-verification)
 - [Secure Evidence Storage](#secure-evidence-storage)
 - [Identity Protection Architecture](#identity-protection-architecture)
 - [Secure Communication Channels](#secure-communication-channels)
@@ -41,7 +41,7 @@ Corporate whistleblowers typically face three distinct threat categories. Legal 
 
 Your threat model must address all three categories simultaneously. A weakness in any single area can compromise your entire operation.
 
-Evidence Integrity: Cryptographic Verification
+Evidence Integrity - Cryptographic Verification
 
 The foundation of evidence protection is cryptographic hashing. Before making any copies of documents, emails, or recordings, generate SHA-256 hashes to prove the evidence hasn't been tampered with.
 
@@ -169,13 +169,13 @@ Tools and Pricing for Whistleblower Operations
 
 Tails Operating System ($0, free download): Live OS based on Linux that routes all traffic through Tor and leaves no persistent storage. Ideal for whistleblower activities on untrusted hardware. Requires USB drive or DVD.
 
-Whonix ($0, free): Virtual machine that forces all traffic through Tor. Can be installed inside VirtualBox. Provides strong isolation from host system compromise. Requires 2GB RAM minimum.
+Whonix ($0, free) - Virtual machine that forces all traffic through Tor. Can be installed inside VirtualBox. Provides strong isolation from host system compromise. Requires 2GB RAM minimum.
 
 SecureDrop ($0, free open-source): Turnkey secure submission system for journalists. 100+ news organizations host SecureDrop instances. Available via .onion address for Tor access. Supports file uploads and anonymous source management.
 
-KeePass ($0, free, open-source): Offline password manager for managing credentials securely. Stores encrypted database locally. No syncing means zero cloud exposure. Suitable for storing recovery codes and contact info.
+KeePass ($0, free, open-source) - Offline password manager for managing credentials securely. Stores encrypted database locally. No syncing means zero cloud exposure. Suitable for storing recovery codes and contact info.
 
-Signal ($0, free): End-to-end encrypted messaging. Requires phone number verification (use burner phone). No servers can read messages due to Signal Protocol. Desktop and mobile versions available.
+Signal ($0, free) - End-to-end encrypted messaging. Requires phone number verification (use burner phone). No servers can read messages due to Signal Protocol. Desktop and mobile versions available.
 
 VeraCrypt ($0, free, open-source): Creates encrypted containers for sensitive evidence. AES-256 encryption. Works across Windows, macOS, Linux. Hidden volume feature allows plausible deniability.
 
@@ -183,14 +183,14 @@ gpg (GNU Privacy Guard, $0, free, open-source): Command-line encryption tool for
 
 ProtonMail ($119.88/year, or free plan with limitations): Encrypted email for external communications. Swiss-based with strong privacy protections. Integrates with Signal for additional encryption.
 
-Total baseline cost: $0 (all open-source tools) or $120/year (add ProtonMail for convenience).
+Total baseline cost - $0 (all open-source tools) or $120/year (add ProtonMail for convenience).
 
 Threat Model Analysis Template
 
 Structure your threat assessment systematically:
 
 ```
-THREAT ASSESSMENT: Corporate Whistleblower
+THREAT ASSESSMENT - Corporate Whistleblower
 
 1. ADVERSARY CAPABILITIES
    - Technical: Employer has IT department, network monitoring
@@ -248,7 +248,7 @@ Audio Recordings (meetings, conversations):
 ```bash
 Check local recording laws before capturing
 Some jurisdictions require consent from all parties
-One-party consent states: Record with only your own knowledge
+One-party consent states - Record with only your own knowledge
 
 Recording quality sufficient for evidence:
 - 16-bit, 48kHz minimum for court acceptance

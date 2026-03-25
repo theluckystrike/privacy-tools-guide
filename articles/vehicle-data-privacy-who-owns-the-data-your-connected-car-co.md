@@ -21,7 +21,7 @@ Modern vehicles generate massive amounts of data. Your connected car records whe
 Table of Contents
 
 - [How Connected Cars Collect Data](#how-connected-cars-collect-data)
-- [Who Owns Vehicle Data: The Legal Framework](#who-owns-vehicle-data-the-legal-framework)
+- [Who Owns Vehicle Data - The Legal Framework](#who-owns-vehicle-data-the-legal-framework)
 - [Technical Mechanisms for Data Access](#technical-mechanisms-for-data-access)
 - [Protecting Your Vehicle Data](#protecting-your-vehicle-data)
 - [What Developers Should Know](#what-developers-should-know)
@@ -69,7 +69,7 @@ Biometric and Cabin Data
 - Voice command recordings (if voice assistant enabled)
 - Connected phone contact lists and call logs
 
-Who Owns Vehicle Data: The Legal Framework
+Who Owns Vehicle Data - The Legal Framework
 
 Vehicle data ownership exists in a gray area that varies by jurisdiction and contract terms. The fundamental question, who owns the data your connected car collects, doesn't have a single clear answer because multiple parties claim partial ownership or usage rights.
 
@@ -184,15 +184,15 @@ What Developers Should Know
 
 If you're building applications that interact with vehicle data, several considerations apply:
 
-Data Minimization: Collect only the data your application actually needs. Additional data creates liability and privacy concerns.
+Data Minimization - Collect only the data your application actually needs. Additional data creates liability and privacy concerns.
 
-Clear Consent: When your application accesses vehicle data, users must understand what they're sharing and why.
+Clear Consent - When your application accesses vehicle data, users must understand what they're sharing and why.
 
-Security Requirements: Vehicle data can reveal sensitive location patterns. Protect this data with encryption both in transit and at rest.
+Security Requirements - Vehicle data can reveal sensitive location patterns. Protect this data with encryption both in transit and at rest.
 
-Terms of Service Compliance: Automakers actively block unauthorized API access. Building products that violate manufacturer terms can result in legal action or device disablement.
+Terms of Service Compliance - Automakers actively block unauthorized API access. Building products that violate manufacturer terms can result in legal action or device disablement.
 
-Data Retention Policies: Define how long you'll keep vehicle data and provide mechanisms for deletion when users request it.
+Data Retention Policies - Define how long you'll keep vehicle data and provide mechanisms for deletion when users request it.
 
 The Path Forward
 
@@ -335,9 +335,9 @@ Example (varies by manufacturer):
 
 ```
 Settings → Connected Services → Data Sharing
-Toggle OFF: "Share Diagnostic Data"
-Toggle OFF: "Enhanced Mapping Services" (disables location tracking)
-Toggle OFF: "Connected Features"
+Toggle OFF - "Share Diagnostic Data"
+Toggle OFF - "Enhanced Mapping Services" (disables location tracking)
+Toggle OFF - "Connected Features"
 ```
 
 Aftermarket Device Privacy Ratings
@@ -389,13 +389,13 @@ Send via certified mail to create legal proof of request.
 
 Vehicle Data Privacy by Jurisdiction
 
-GDPR (EU): Drivers have explicit rights to data deletion and portability. Manufacturers must justify data retention.
+GDPR (EU) - Drivers have explicit rights to data deletion and portability. Manufacturers must justify data retention.
 
-CCPA (California): Drivers can request data, delete non-essential data, and opt out of sales. Manufacturers must disclose data sharing.
+CCPA (California) - Drivers can request data, delete non-essential data, and opt out of sales. Manufacturers must disclose data sharing.
 
-China: Connected cars must store all data within China per regulations; manufacturers cannot transfer vehicle data internationally.
+China - Connected cars must store all data within China per regulations; manufacturers cannot transfer vehicle data internationally.
 
-Australia: Limited privacy protections. Australian Privacy Principle 1.2 requires APP entities to have clear privacy policies, but enforcement is weak.
+Australia - Limited privacy protections. Australian Privacy Principle 1.2 requires APP entities to have clear privacy policies, but enforcement is weak.
 
 Most countries lack specific vehicle privacy laws, leaving manufacturers with broad discretion.
 

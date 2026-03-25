@@ -16,7 +16,7 @@ voice-checked: true
 
 {% raw %}
 
-Implement privacy by design by applying these seven principles during development: be proactive with threat modeling, make privacy the default setting, embed protections into your architecture, maintain full functionality alongside privacy, enforce end-to-end security across the data lifecycle, build transparency into your system, and keep user interests paramount. This guide provides concrete code examples and architectural patterns for each principle so you can apply them directly in your projects.
+Implement privacy by design by applying these seven principles during development: be proactive with threat modeling, make privacy the default setting, embed protections into your architecture, maintain full functionality alongside privacy, enforce end-to-end security across the data lifecycle, build transparency into your system, and keep user interests essential. This guide provides concrete code examples and architectural patterns for each principle so you can apply them directly in your projects.
 
 Prerequisites
 
@@ -28,7 +28,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: The Seven Foundational Principles
+Step 1 - The Seven Foundational Principles
 
 1. Proactive, Not Reactive
 
@@ -191,7 +191,7 @@ privacy_manifest:
 
 7. Respect for User Privacy
 
-Keep user interests paramount. Design systems that default to high privacy standards and make it easy for users to maintain control.
+Keep user interests essential. Design systems that default to high privacy standards and make it easy for users to maintain control.
 
 ```javascript
 // Example: User-centric data control
@@ -239,7 +239,7 @@ class PrivacyControlPanel {
 }
 ```
 
-Step 2: Implementing Privacy by Design
+Step 2 - Implementing Privacy by Design
 
 Start by documenting what data your application collects and why. Create a data flow diagram showing how information moves through your system. For each data point, ask: do we need this? How long do we keep it? Who can access it?
 
@@ -262,7 +262,7 @@ Verify encryption at rest
 openssl s_client -connect your-database:5432 -showcerts
 ```
 
-Step 3: Build Privacy into Your CI/CD
+Step 3 - Build Privacy into Your CI/CD
 
 Automate privacy checks as part of your deployment pipeline:
 
@@ -301,7 +301,7 @@ Threat Modeling a New Feature Before Writing Code
 The proactive principle means running a brief privacy threat model before any feature that touches personal data ships. A structured five-minute review at design time prevents hours of remediation later:
 
 ```markdown
-Step 4: Privacy Threat Model. [Feature Name]
+Step 4 - Privacy Threat Model. [Feature Name]
 
 Data Collected
 - What personal data does this feature collect?
@@ -326,7 +326,7 @@ Controls
 
 Add this template to your pull request description for any feature that introduces new data collection. A reviewer who can fill in the blanks means the feature is ready to ship. Blanks that cannot be filled are blockers.
 
-Step 5: Documenting Data Flows in Code
+Step 5 - Documenting Data Flows in Code
 
 Privacy by design degrades quickly when the documentation lives in a wiki that no one reads. Keeping data flow annotations close to the code makes them visible during review:
 
@@ -357,7 +357,7 @@ class UserEventLog:
 
 These inline data classification comments become visible in code review and in IDE tooltips. They also give a single place to update when a field is added, removed, or reclassified. rather than chasing documentation spread across Notion pages.
 
-Step 6: Handling Right-to-Erasure Requests in Practice
+Step 6 - Handling Right-to-Erasure Requests in Practice
 
 Principle 7 (respect for user privacy) requires that deletion actually work. Many systems have soft-delete patterns (`is_deleted = true`) that leave personal data in place. Implement verifiable deletion:
 

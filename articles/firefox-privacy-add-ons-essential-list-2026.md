@@ -20,7 +20,7 @@ Install these seven Firefox privacy add-ons for a hardened browsing setup in 202
 
 Why Firefox for Privacy?
 
-Firefox offers several advantages over Chromium-based browsers. The browser runs on Gecko, Mozilla's rendering engine, which provides better isolation between web pages through its multi-process architecture. Firefox does not tie you to Google's ecosystem, and Mozilla's privacy policies are more transparent than most commercial browser vendors.
+Firefox offers several advantages over Chromium-based browsers. The browser runs on Gecko, Mozilla's rendering engine, which provides better isolation between web pages through its multi-process architecture. Firefox does not tie you to Google's environment, and Mozilla's privacy policies are more transparent than most commercial browser vendors.
 
 Firefox also supports about:config modifications, allowing advanced users to tweak browser behavior directly. Combined with well-designed privacy extensions, Firefox becomes a formidable tool for security-conscious browsing.
 
@@ -30,7 +30,7 @@ Essential Privacy Add-ons
 
 uBlock Origin remains the gold standard for ad and tracker blocking. Unlike premium alternatives, uBlock Origin is open-source and does not require payment or account creation.
 
-Installation: Search "uBlock Origin" in Firefox Add-ons and install the official version by Raymond Hill.
+Installation - Search "uBlock Origin" in Firefox Add-ons and install the official version by Raymond Hill.
 
 Configuration for developers:
 
@@ -66,7 +66,7 @@ ClearURLs automatically removes tracking parameters from URLs, preventing advert
 
 Example of cleaned URLs:
 ```
-Before: https://example.com/page?utm_source=twitter&fbclid=abc123
+Before - https://example.com/page?utm_source=twitter&fbclid=abc123
 After:  https://example.com/page
 ```
 
@@ -213,23 +213,23 @@ Extensions sometimes conflict. Test your stack:
 #!/bin/bash
 test-extension-interactions.sh
 
-Test 1: Load a tracking-heavy site with each extension independently
+Test 1 - Load a tracking-heavy site with each extension independently
 TEST_SITES=(
   "https://www.theguardian.com"
   "https://www.bbc.com"
   "https://www.nytimes.com"
 )
 
-Test 2: Check request blocking count
+Test 2 - Check request blocking count
 Open Firefox DevTools > Network tab > filter by status
 Count blocked requests (show as 0 bytes)
 
 Expected results:
 uBlock Origin alone: 60-80% requests blocked
-Privacy Badger alone: 40-50% requests blocked
-Both together: 80-90% requests blocked (not 160%)
+Privacy Badger alone - 40-50% requests blocked
+Both together - 80-90% requests blocked (not 160%)
 
-Test 3: Check for false positives
+Test 3 - Check for false positives
 Visit each site and verify functionality:
 - Images load
 - Videos play
@@ -343,7 +343,7 @@ Update Firefox monthly
 Firefox > Settings > About Firefox
 
 Watch for security advisories
-Subscribe to: https://www.mozilla.org/en-US/security/advisories/
+Subscribe to - https://www.mozilla.org/en-US/security/advisories/
 ```
 
 Extensions are a prime attack vector. Keep them updated and monitor for security issues.

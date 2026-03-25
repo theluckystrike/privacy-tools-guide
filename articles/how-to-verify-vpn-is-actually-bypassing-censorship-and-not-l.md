@@ -22,8 +22,8 @@ Table of Contents
 
 - [Why VPNs Sometimes Fail to Mask Your Location](#why-vpns-sometimes-fail-to-mask-your-location)
 - [Prerequisites](#prerequisites)
-- [Advanced: Manual Traffic Analysis](#advanced-manual-traffic-analysis)
-- [Advanced: Traffic Flow Verification with tcpdump](#advanced-traffic-flow-verification-with-tcpdump)
+- [Advanced - Manual Traffic Analysis](#advanced-manual-traffic-analysis)
+- [Advanced - Traffic Flow Verification with tcpdump](#advanced-traffic-flow-verification-with-tcpdump)
 - [Performance Impact Testing](#performance-impact-testing)
 - [Troubleshooting](#troubleshooting)
 
@@ -47,7 +47,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Basic Verification: Checking Your Public IP
+Step 1 - Basic Verification: Checking Your Public IP
 
 The first step is confirming your visible IP address differs from your actual one. Before connecting to your VPN, note your public IP:
 
@@ -58,7 +58,7 @@ curl -s ipinfo.io/ip
 
 After connecting to your VPN, run the same command. If the IP changes to match your VPN server's location, basic IP masking is working. However, this only confirms surface-level functionality, deeper leaks can still expose you.
 
-Step 2: Test for DNS Leaks
+Step 2 - Test for DNS Leaks
 
 DNS leaks represent a serious privacy risk because they reveal your ISP and can indicate your general geographic location. The concept works like this: even if your traffic routes through a VPN server, your device might still send DNS queries to your ISP's DNS servers, creating a detectable pattern.
 
@@ -87,7 +87,7 @@ scutil --dns | grep nameserver
 
 If these show your ISP's DNS servers while the VPN is connected, you have a DNS leak. Most quality VPN applications include built-in DNS leak protection, ensure it's enabled in your VPN settings.
 
-Step 3: Detecting WebRTC Leaks
+Step 3 - Detecting WebRTC Leaks
 
 WebRTC (Web Real-Time Communication) enables direct browser-to-browser communication but can inadvertently expose your real IP address. This happens because browsers may use STUN (Session Traversal Utilities for NAT) requests to establish peer-to-peer connections, and these requests can return your actual IP.
 
@@ -109,7 +109,7 @@ Chrome/Chromium:
 - Install an extension like WebRTC Leak Shield
 - Or use a more aggressive approach with flags: chrome://flags/#disable-webrtc
 
-Step 4: Test IPv6 Leaks
+Step 4 - Test IPv6 Leaks
 
 IPv6 adoption continues growing, and many VPNs only handle IPv4 traffic. This creates a potential leak where your IPv6 address (which directly identifies your connection) could be exposed.
 
@@ -125,7 +125,7 @@ curl -s https://ipv6.icanhazip.com
 
 If you see an IPv6 address when connected to a VPN that only supports IPv4, your real IPv6 address may be visible. Quality VPN services now support IPv6 or block it entirely to prevent leaks.
 
-Step 5: Verify Censorship Bypass
+Step 5 - Verify Censorship Bypass
 
 For users in countries with strict internet censorship, confirming actual censorship bypass requires testing against blocked services. This goes beyond IP masking, you need to verify you can actually access previously blocked content.
 
@@ -145,12 +145,12 @@ nslookup example-blocked-site.com
 
 If DNS queries return NXDOMAIN (non-existent domain) or IPs that point to block pages, your VPN isn't effectively bypassing censorship at the DNS level.
 
-Advanced: Manual Traffic Analysis
+Advanced - Manual Traffic Analysis
 
 For the most thorough verification, analyze your network traffic directly:
 
 ```bash
-Linux: Monitor all network connections while VPN is active
+Linux - Monitor all network connections while VPN is active
 sudo tcpdump -i any -n | grep -v "VPN_INTERFACE"
 
 Check routing table to ensure VPN is default route
@@ -162,7 +162,7 @@ traceroute 8.8.8.8
 
 The traceroute output should show the first hop as your VPN server, not your local network or ISP gateway.
 
-Step 6: Build a Verification Script
+Step 6 - Build a Verification Script
 
 You can automate these checks into a single script:
 
@@ -190,7 +190,7 @@ echo "=== Verification Complete ==="
 
 Run this script with your VPN connected and disconnected to establish a baseline.
 
-Step 7: What to Do If Leaks Are Detected
+Step 7 - What to Do If Leaks Are Detected
 
 If you discover leaks, several fixes are available:
 
@@ -200,7 +200,7 @@ If you discover leaks, several fixes are available:
 4. Use a different VPN protocol: Some protocols handle leaks better than others (WireGuard typically performs well)
 5. Consider custom DNS: Configure your system to use privacy-focused DNS servers (like Cloudflare 1.1.1.1 or Quad9) that support DNS-over-HTTPS
 
-Step 8: Leak Testing Script
+Step 8 - Leak Testing Script
 
 Automate all verification tests into a single script:
 
@@ -212,7 +212,7 @@ echo "=== VPN LEAK VERIFICATION SUITE ==="
 echo "Start time: $(date)"
 echo ""
 
-Test 1: IP Address Verification
+Test 1 - IP Address Verification
 echo "[TEST 1] IP Address Detection"
 REAL_IP=$(curl -s https://api.ipify.org)
 echo "Real IP: $REAL_IP"
@@ -226,31 +226,31 @@ else
     echo "[FAIL] IP addresses match - possible leak"
 fi
 
-Test 2: DNS Leak Detection
+Test 2 - DNS Leak Detection
 echo ""
 echo "[TEST 2] DNS Leak Detection"
 echo "Resolving google.com..."
 nslookup google.com | grep "^Server:"
 
-Test 3: WebRTC Leak Detection
+Test 3 - WebRTC Leak Detection
 echo ""
 echo "[TEST 3] WebRTC Leak Detection (requires browser)"
 echo "Visit https://browserleaks.com/webrtc in your VPN browser"
 echo "Check for IP addresses outside VPN range"
 
-Test 4: IPv6 Leak Detection
+Test 4 - IPv6 Leak Detection
 echo ""
 echo "[TEST 4] IPv6 Leak Detection"
 IPV6=$(curl -s https://ipv6.icanhazip.com 2>/dev/null || echo "No IPv6")
 echo "IPv6 Address: $IPV6"
 
-Test 5: Routing Path Verification
+Test 5 - Routing Path Verification
 echo ""
 echo "[TEST 5] Traceroute Analysis"
 echo "Tracing route to 8.8.8.8..."
 traceroute -m 5 8.8.8.8 | head -10
 
-Test 6: Port Leak Detection
+Test 6 - Port Leak Detection
 echo ""
 echo "[TEST 6] Port Scan for Leaks"
 netstat -tuln | grep ESTABLISHED | wc -l
@@ -260,7 +260,7 @@ echo ""
 echo "=== VERIFICATION COMPLETE ==="
 ```
 
-Step 9: Geographic Bypass Verification
+Step 9 - Geographic Bypass Verification
 
 For censorship bypass validation, test whether you can access services blocked in your region:
 
@@ -296,7 +296,7 @@ for site in "${BLOCKED_SITES[@]}"; do
 done
 ```
 
-Advanced: Traffic Flow Verification with tcpdump
+Advanced - Traffic Flow Verification with tcpdump
 
 For technical users, analyze actual packet flow to confirm encryption:
 
@@ -314,7 +314,7 @@ If you see recognizable text, encryption may have failed
 
 All encrypted VPN traffic should appear as random bytes when captured. If you see recognizable strings like HTTP headers or domain names, the traffic is not properly encrypted.
 
-Step 10: Censorship Detection: Identifying Block Methods
+Step 10 - Censorship Detection: Identifying Block Methods
 
 Different censorship methods require different verification approaches:
 
@@ -343,7 +343,7 @@ timeout 10 curl -v https://blocked-site.com
 openssl s_client -connect blocked-site.com:443 -servername blocked-site.com
 ```
 
-Step 11: VPN Provider Evaluation Checklist
+Step 11 - VPN Provider Evaluation Checklist
 
 When selecting a VPN for censorship bypass, verify:
 
@@ -376,7 +376,7 @@ Performance baseline establishment
 
 echo "=== VPN PERFORMANCE TEST ==="
 
-Baseline: Direct connection
+Baseline - Direct connection
 echo "Direct connection speed test:"
 time curl -O https://speed.cloudflare.com/__down?bytes=10485760 &>/dev/null
 rm -f __down*

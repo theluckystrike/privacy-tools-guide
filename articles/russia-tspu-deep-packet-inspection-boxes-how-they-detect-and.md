@@ -102,9 +102,9 @@ def calculate_entropy(data):
     return entropy
 
 High entropy (>7.5) suggests encryption
-Natural language English: ~4.5-5.0 entropy
-Compressed data: ~7.0-7.9 entropy
-Properly encrypted: 7.95-8.0 entropy
+Natural language English - ~4.5-5.0 entropy
+Compressed data - ~7.0-7.9 entropy
+Properly encrypted - 7.95-8.0 entropy
 ```
 
 How TSPU Boxes Block VPN Connections
@@ -118,8 +118,8 @@ When DPI detects VPN handshake attempts, it can inject forged TCP RST (reset) pa
 ```python
 Conceptual TCP RST injection
 DPI sees OpenVPN handshake → injects spoofed RST packets
-Client receives: "Server says: reset connection"
-Server receives: "Client says: reset connection"
+Client receives - "Server says: reset connection"
+Server receives - "Client says: reset connection"
 Both sides close sockets thinking the other initiated
 ```
 
@@ -139,7 +139,7 @@ The DPI box can read:
 - Extension: server_name (0x00)
 - Length: 0x00 0x0f (15 bytes)
 - Type: 0x00 (host_name)
-- Value: vpn-provider.example.com
+- Value - vpn-provider.example.com
 
 If the SNI matches a blocked domain → connection dropped
 ```
@@ -162,7 +162,7 @@ WireGuard packets wrapped in QUIC (HTTP/3) look like web traffic
 Packet structure:
 [QUIC header] [HTTP/3 frames] [WireGuard encrypted packet]
 #
-To DPI: appears as normal HTTPS traffic to quic.google.com
+To DPI - appears as normal HTTPS traffic to quic.google.com
 ```
 
 Dynamic IP Rotation
@@ -178,7 +178,7 @@ def get_available_server():
             return server
     return None  # All blocked, return to mesh/bridge
 
-Use domain fronting: connect to CDN, tunnel to VPN
+Use domain fronting - connect to CDN, tunnel to VPN
 SNI shows cloudflare.com, actual destination is VPN server
 ```
 
@@ -201,7 +201,7 @@ Power users can verify whether their traffic is being inspected:
 ```bash
 Test for TCP injection
 curl -v https://example.com
-Look for: "Connection reset by peer" or unusual delays
+Look for - "Connection reset by peer" or unusual delays
 
 Test DNS manipulation
 dig +short google.com
@@ -216,7 +216,7 @@ Implementing Censorship-Resistant Protocols
 
 Developers building applications that survive DPI scrutiny should implement several resistant protocols:
 
-NaiveProxy: Disguised HTTPS
+NaiveProxy - Disguised HTTPS
 
 NaiveProxy wraps traffic to look indistinguishable from HTTPS browsing:
 
@@ -228,7 +228,7 @@ Client configuration
 ./naive --listen=socks://127.0.0.1:1080 \
   --proxy=https://user:pass@server.example.com
 
-To DPI: Looks exactly like visiting a regular HTTPS website
+To DPI - Looks exactly like visiting a regular HTTPS website
 All handshakes follow browser patterns
 Server certificate appears legitimate
 No VPN-specific signatures visible
@@ -239,13 +239,13 @@ Shadowsocks with Obfuscation
 Shadowsocks can evade DPI through traffic obfuscation plugins:
 
 ```bash
-Server: shadowsocks with simple-obfs plugin
+Server - shadowsocks with simple-obfs plugin
 ss-server -s 0.0.0.0 -p 8388 -k password \
   -m chacha20-ietf-poly1305 \
   -plugin obfs-server \
   -plugin-opts "obfs=tls"
 
-Client: connects through obfuscation layer
+Client - connects through obfuscation layer
 ss-local -s server.example.com -p 8388 -k password \
   -m chacha20-ietf-poly1305 \
   -plugin obfs-local \
@@ -278,7 +278,7 @@ def morph_packet(data, target_size=None):
 
     return data
 
-Application layer: randomize inter-packet delays
+Application layer - randomize inter-packet delays
 def randomized_send(socket, data, min_delay=0.01, max_delay=0.1):
     """Send data with random delays to break timing patterns"""
     delay = random.uniform(min_delay, max_delay)

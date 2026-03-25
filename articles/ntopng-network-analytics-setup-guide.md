@@ -89,7 +89,7 @@ Find your interface name:
 
 ```bash
 ip link show
-Look for: eth0, enp3s0, wlan0, etc.
+Look for - eth0, enp3s0, wlan0, etc.
 ```
 
 Step 3. Install and Start Redis

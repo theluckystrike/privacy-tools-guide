@@ -22,9 +22,9 @@ Table of Contents
 
 - [Why Browser Compartmentalization Matters](#why-browser-compartmentalization-matters)
 - [Compartmentalization Strategies (Ranked by Effectiveness)](#compartmentalization-strategies-ranked-by-effectiveness)
-- [Strategy 1: Browser Profiles (Easiest)](#strategy-1-browser-profiles-easiest)
-- [Strategy 2: Firefox Multi-Account Containers (Powerful + Easy)](#strategy-2-firefox-multi-account-containers-powerful-easy)
-- [Strategy 3: Separate Browsers (Highest Isolation)](#strategy-3-separate-browsers-highest-isolation)
+- [Strategy 1 - Browser Profiles (Easiest)](#strategy-1-browser-profiles-easiest)
+- [Strategy 2 - Firefox Multi-Account Containers (Powerful + Easy)](#strategy-2-firefox-multi-account-containers-powerful-easy)
+- [Strategy 3 - Separate Browsers (Highest Isolation)](#strategy-3-separate-browsers-highest-isolation)
 - [Practical Compartmentalization Scenarios](#practical-compartmentalization-scenarios)
 - [Tracking Prevention (Beyond Compartmentalization)](#tracking-prevention-beyond-compartmentalization)
 - [Switching Between Compartments (Workflow)](#switching-between-compartments-workflow)
@@ -43,17 +43,17 @@ You visit Amazon
   → Amazon loads Google ads
   → Google recognizes you
   → Cross-site profile updates: "Gmail user, browses news, shopping interests: tech"
-After 50+ sites, Google has comprehensive profile of your behavior
+After 50+ sites, Google has complete profile of your behavior
 ```
 
 Compartmentalization Prevents This:
 ```
-Work Email: Gmail in separate container
+Work Email - Gmail in separate container
   → Google cookies isolated to gmail.com
-Personal Email: Another container
+Personal Email - Another container
   → Separate cookies, different identity
-News Reading: Private window (no cookies shared between sites)
-Shopping: Separate browser profile (Amazon doesn't see Gmail)
+News Reading - Private window (no cookies shared between sites)
+Shopping - Separate browser profile (Amazon doesn't see Gmail)
 
 Trackers see fragmented, useless profiles instead of unified you
 ```
@@ -71,7 +71,7 @@ Compartmentalization Strategies (Ranked by Effectiveness)
 
 ---
 
-Strategy 1: Browser Profiles (Easiest)
+Strategy 1 - Browser Profiles (Easiest)
 
 Browser profiles keep separate cookies, cache, history, passwords. Same browser, different identities.
 
@@ -80,8 +80,8 @@ Chrome Profile Setup
 Create Profile 1 (Work):
 ```
 Chrome Menu (top right) → Manage people → Add person
-Name: "Work"
-Icon: Choose color/icon
+Name - "Work"
+Icon - Choose color/icon
   → New Chrome window opens for Work profile
   → Separate cookies, login, extensions
 ```
@@ -89,8 +89,8 @@ Icon: Choose color/icon
 Create Profile 2 (Personal):
 ```
 Chrome Menu → Manage people → Add person
-Name: "Personal"
-Icon: Different color
+Name - "Personal"
+Icon - Different color
   → Another Chrome window for Personal profile
 ```
 
@@ -109,9 +109,9 @@ Window 2 (Personal Profile):
 - Separate tracking profile
 ```
 
-Key Advantage: Same browser, zero effort to switch. Click taskbar icon.
+Key Advantage - Same browser, zero effort to switch. Click taskbar icon.
 
-Limitation: Both profiles on same computer share IP address, hardware identifiers. Tracker can potentially correlate via fingerprinting. But cookies/logins are completely separate.
+Limitation - Both profiles on same computer share IP address, hardware identifiers. Tracker can potentially correlate via fingerprinting. But cookies/logins are completely separate.
 
 Firefox Profile Setup
 
@@ -131,11 +131,11 @@ firefox -P "Work"   # Opens Work profile
 firefox -P "Personal"  # Opens Personal profile in separate window
 ```
 
-Advantage over Chrome: Firefox profiles use separate directories, harder to fingerprint across profiles.
+Advantage over Chrome - Firefox profiles use separate directories, harder to fingerprint across profiles.
 
 ---
 
-Strategy 2: Firefox Multi-Account Containers (Powerful + Easy)
+Strategy 2 - Firefox Multi-Account Containers (Powerful + Easy)
 
 Containers isolate cookies at the site level. Login to same site with multiple identities.
 
@@ -211,19 +211,19 @@ Auto-switches tabs to correct container when you visit these sites
 Container Isolation Strength
 
 ```
-Cookies: Completely isolated per container
-Cache: Partially isolated (shared if not yet cleared)
-Session Storage: Per-container
-Local Storage: Per-container
-Tracking Pixels: Container-scoped (can't correlate cross-site)
-IP Address: Shared (all containers same IP)
+Cookies - Completely isolated per container
+Cache - Partially isolated (shared if not yet cleared)
+Session Storage - Per-container
+Local Storage - Per-container
+Tracking Pixels - Container-scoped (can't correlate cross-site)
+IP Address - Shared (all containers same IP)
 
 Cookies/auth isolated, but fingerprinting still possible via IP + hardware
 ```
 
 ---
 
-Strategy 3: Separate Browsers (Highest Isolation)
+Strategy 3 - Separate Browsers (Highest Isolation)
 
 For maximum privacy separation, use completely separate browser applications.
 
@@ -258,17 +258,17 @@ Practical Workflow:
 Morning:
 - Open Firefox (personal browsing)
 - Visit news, email, shopping
-Firefox profile: "Jane interested in tech, reads news, browses books"
+Firefox profile - "Jane interested in tech, reads news, browses books"
 
 Afternoon:
 - Open Chrome (work)
 - Login to company systems, GitHub, Slack
-Chrome profile: "Engineer, work focus, 9-5 activity pattern"
+Chrome profile - "Engineer, work focus, 9-5 activity pattern"
 
 Evening:
 - Open Safari (separate for banking)
 - Access bank account
-Safari profile: "Isolated banking session"
+Safari profile - "Isolated banking session"
 
 Trackers see 3 fragmented, incomplete profiles instead of unified person
 ```
@@ -277,24 +277,24 @@ Trackers see 3 fragmented, incomplete profiles instead of unified person
 
 Practical Compartmentalization Scenarios
 
-Scenario 1: Freelancer (Work + Personal Income + Shopping)
+Scenario 1 - Freelancer (Work + Personal Income + Shopping)
 
 ```
-Profile/Container 1: "Client Work"
+Profile/Container 1 - "Client Work"
 - Browser: Chrome
-- Gmail: freelance@clientcompany.com
+- Gmail - freelance@clientcompany.com
 - Project management: Asana, Monday.com, GitHub
 - No personal data
 - Isolated: Client shouldn't see personal activity
 
-Profile/Container 2: "Personal Business"
+Profile/Container 2 - "Personal Business"
 - Browser: Firefox
-- Email: myname@gmail.com
+- Email - myname@gmail.com
 - Invoice software: Wave
 - Bank account: Same as personal
 - Goal: Separate from clients
 
-Profile/Container 3: "Personal"
+Profile/Container 3 - "Personal"
 - Browser: Safari
 - Gmail personal
 - Shopping, social media
@@ -303,22 +303,22 @@ Profile/Container 3: "Personal"
 Clients can't track personal activity, multiple income sources aren't correlated
 ```
 
-Scenario 2: Privacy-Conscious Individual
+Scenario 2 - Privacy-Conscious Individual
 
 ```
-Container 1: "Authentication" (Banking, Email, Essential)
+Container 1 - "Authentication" (Banking, Email, Essential)
 - Firefox container "Banking"
 - Bank account ONLY
 - Gmail (password recovery only)
 - Uses strong password, 2FA
 
-Container 2: "Tracking-Allowed" (Social, Ads)
+Container 2 - "Tracking-Allowed" (Social, Ads)
 - Chrome profile "Social"
 - Facebook, Instagram, TikTok
 - Accept all cookies (isolated from banking)
 - Sacrifice privacy on social platforms
 
-Container 3: "Private Browsing"
+Container 3 - "Private Browsing"
 - Firefox private mode
 - No cookies, no tracking
 - Research, news, temporary sessions
@@ -327,18 +327,18 @@ Container 3: "Private Browsing"
 Sensitive data separated from tracking, tracking contained to social profiles
 ```
 
-Scenario 3: Researcher (Multiple Accounts + Identities)
+Scenario 3 - Researcher (Multiple Accounts + Identities)
 
 ```
 Identity 1 (Researcher):
 - Browser: Firefox
-- Email: researcher@university.edu
+- Email - researcher@university.edu
 - Academic accounts, papers
 - Work-focused
 
 Identity 2 (Student):
 - Browser: Chrome
-- Email: student@university.edu
+- Email - student@university.edu
 - Course materials, groups
 - Different from researcher
 
@@ -392,8 +392,8 @@ Additional Tools
 
 Install all at once:
 ```
-Firefox: Add-ons → Extensions → Search each, install
-Chrome: Web Store → Search each, install
+Firefox - Add-ons → Extensions → Search each, install
+Chrome - Web Store → Search each, install
 ```
 
 ---
@@ -419,9 +419,9 @@ Long-press container icon to see all containers
 
 Private/Incognito:
 ```
-Chrome: Cmd+Shift+N (macOS) or Ctrl+Shift+N (Windows)
-Firefox: Cmd+Shift+P (macOS) or Ctrl+Shift+P (Windows)
-Safari: Cmd+Shift+N (macOS)
+Chrome - Cmd+Shift+N (macOS) or Ctrl+Shift+N (Windows)
+Firefox - Cmd+Shift+P (macOS) or Ctrl+Shift+P (Windows)
+Safari - Cmd+Shift+N (macOS)
 ```
 
 Organized Desktop Setup

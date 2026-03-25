@@ -52,7 +52,7 @@ The legal environment is evolving: 14 states have explicit protections for repro
 
 Major App Platforms and Their Data Practices
 
-Flo: Data Sharing Admitted
+Flo - Data Sharing Admitted
 
 Flo (owned by Knowwomen) is the largest period tracking app with 20+ million users. In 2021, Flo admitted sharing user data with third parties, including Facebook, Google, Amazon, without explicit consent.
 
@@ -72,9 +72,9 @@ Legal actions:
 - In 2023, Flo agreed to $100M+ settlement (not yet finalized) and promised data minimization
 - Despite settlement, data sharing continues; unclear if minimization was enforced
 
-Assessment: Flo is among the worst offenders. Avoid unless you have strong technical controls (VPN, burner phone, minimal data entry).
+Assessment - Flo is among the worst offenders. Avoid unless you have strong technical controls (VPN, burner phone, minimal data entry).
 
-Clue: Encryption as PR Stunt?
+Clue - Encryption as PR Stunt?
 
 Clue is marketed as privacy-first. In 2022, Clue announced end-to-end encryption for user data. However, Clue still collects extensive usage data.
 
@@ -95,9 +95,9 @@ Remaining risks:
 - Company is backed by VC funds with exit incentives (pressure to monetize data)
 - Can still subpoena user records (encryption protects only against passive eavesdropping)
 
-Assessment: Clue has improved privacy posture but analytics collection remains concerning. Better than Flo but not ideal.
+Assessment - Clue has improved privacy posture but analytics collection remains concerning. Better than Flo but not ideal.
 
-Natural Cycles: Contraceptive Failure and Data Misuse
+Natural Cycles - Contraceptive Failure and Data Misuse
 
 Natural Cycles is marketed as an FDA-cleared contraceptive. In 2018, Swedish regulators found Natural Cycles' security was inadequate and contraceptive efficacy claims were overstated. Users became pregnant despite using the app correctly.
 
@@ -112,9 +112,9 @@ Legal issues:
 - Swedish court fined company for failing to verify contraceptive claims
 - Data breach resulted in regulatory fines
 
-Assessment: Natural Cycles combines inadequate security with health claims they cannot meet. Avoid entirely if seeking reliable birth control; consider only if using as tracking tool with backup contraception.
+Assessment - Natural Cycles combines inadequate security with health claims they cannot meet. Avoid entirely if seeking reliable birth control; consider only if using as tracking tool with backup contraception.
 
-Periodica: Privacy-Respecting Alternative
+Periodica - Privacy-Respecting Alternative
 
 Periodica (open-source, built by Privacy Guides) is designed as a privacy-respecting period tracker.
 
@@ -130,9 +130,9 @@ Limitations:
 - No cloud sync (data on one device only)
 - Small community (fewer users = less bug testing)
 
-Assessment: Excellent privacy choice if you want digital tracking without surveillance. Suitable for technical users; non-technical users may find setup challenging.
+Assessment - Excellent privacy choice if you want digital tracking without surveillance. Suitable for technical users; non-technical users may find setup challenging.
 
-Drip: Privacy-First Open-Source
+Drip - Privacy-First Open-Source
 
 Drip is another privacy-focused period tracker (open-source, Android app).
 
@@ -147,7 +147,7 @@ Limitations:
 - Requires understanding of privacy concepts to use securely
 - Limited prediction and health insight features
 
-Assessment: Best privacy choice for technical users willing to maintain infrastructure.
+Assessment - Best privacy choice for technical users willing to maintain infrastructure.
 
 Legal Risks Post-Dobbs
 
@@ -281,13 +281,13 @@ Support data broker regulation:
 
 Recommendations Summary
 
-Best privacy: Use open-source, offline-first tracker (Periodica, Drip) on device without internet connectivity.
+Best privacy - Use open-source, offline-first tracker (Periodica, Drip) on device without internet connectivity.
 
-Good privacy: Use Clue (improved encryption) on device with strong authentication, disable app permissions (location, contacts), no cloud sync.
+Good privacy - Use Clue (improved encryption) on device with strong authentication, disable app permissions (location, contacts), no cloud sync.
 
-Acceptable privacy: Use Gnome Calendar (desktop) for local tracking, nothing shared.
+Acceptable privacy - Use Gnome Calendar (desktop) for local tracking, nothing shared.
 
-Avoid completely: Flo (known data sharing and lack of consent), Natural Cycles (security failures and false claims).
+Avoid completely - Flo (known data sharing and lack of consent), Natural Cycles (security failures and false claims).
 
 If using any commercial app:
 1. Assume your data may be subpoenaed

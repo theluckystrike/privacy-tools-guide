@@ -47,7 +47,7 @@ Hidden services are commonly used for:
 
 When accessing these services, your threat model determines which browser configuration is appropriate.
 
-Tor Browser: The Standard Choice
+Tor Browser - The Standard Choice
 
 The Tor Browser is the most tested and recommended browser for accessing hidden services. It is built on Firefox ESR with hardened privacy settings and includes Tor's circuit system for all connections.
 
@@ -84,7 +84,7 @@ network.http.sendRefererHeader = 0;
 privacy.thirdparty.isolate = true
 ```
 
-Firefox with Tor Proxy: Advanced Configuration
+Firefox with Tor Proxy - Advanced Configuration
 
 For developers who need browser integration with their development workflow, configuring Firefox to use a Tor SOCKS proxy provides flexibility while maintaining security.
 
@@ -213,10 +213,10 @@ IsolateDestPort
 IsolateDestAddr
 
 Run separate Tor instances for different threat contexts
-Instance 1: General browsing
+Instance 1 - General browsing
 SOCKSPort 9050
 
-Instance 2: High-sensitivity work
+Instance 2 - High-sensitivity work
 SOCKSPort 9051
 ```
 

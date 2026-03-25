@@ -45,7 +45,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Self-Hosted Analytics Solutions
+Step 1 - Self-Hosted Analytics Solutions
 
 Several open-source and commercial alternatives provide analytics without the GDPR complications. The most popular options include Matomo, Plausible, Fathom, and Umami. Each offers different trade-offs between features, hosting requirements, and pricing.
 
@@ -133,7 +133,7 @@ deleteOldVisitorLogsOlderThan = 180
 do_not_track = 1
 ```
 
-Step 2: Configure Plausible for Privacy-First Tracking
+Step 2 - Configure Plausible for Privacy-First Tracking
 
 Plausible requires no cookie consent because it doesn't use cookies or collect personal data. The self-hosted version runs as a single Erlang application.
 
@@ -186,7 +186,7 @@ Configure your website in Plausible's admin interface, then add the lightweight 
 <script defer data-domain="yourdomain.com" src="https://analytics.yourdomain.com/js/script.js"></script>
 ```
 
-Step 3: Implementing Consent Management
+Step 3 - Implementing Consent Management
 
 Even with privacy-focused analytics, implementing a proper consent mechanism strengthens compliance. Create a simple consent banner that respects user choices:
 

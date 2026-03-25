@@ -30,7 +30,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Anonymization vs. Pseudonymization
+Step 1 - Understand Anonymization vs. Pseudonymization
 
 Before implementing any data handling strategy, distinguish between these two approaches. Anonymization permanently removes the ability to identify individuals. the data cannot be reversed. Pseudonymization replaces identifying information with artificial identifiers while retaining a mapping somewhere. Pseudonymized data may still qualify as personal data under GDPR, while truly anonymized data does not.
 
@@ -38,7 +38,7 @@ For privacy compliance, your goal is often complete anonymization. However, you 
 
 The legal distinction matters significantly in practice. Under GDPR Article 4(5), pseudonymized data is still personal data and subject to all GDPR obligations including data subject rights, breach notification timelines, and lawful basis requirements. Truly anonymized data falls outside GDPR's scope entirely. meaning you can retain it indefinitely, share it freely, and use it without a legal basis. Courts and data protection authorities have increasingly scrutinized anonymization claims, so your technique must withstand re-identification attempts using auxiliary datasets, not just look anonymized on the surface.
 
-Step 2: Core Techniques for Anonymizing Database Data
+Step 2 - Core Techniques for Anonymizing Database Data
 
 1. Direct Masking
 
@@ -96,7 +96,7 @@ ON CONFLICT (original_email) DO NOTHING;
 
 Store the tokenization mapping separately and securely if you need reversible anonymization. For GDPR compliance, the token table itself may need special handling.
 
-Step 3: Anonymizing Specific Data Types
+Step 3 - Anonymizing Specific Data Types
 
 Names and Personal Identifiers
 
@@ -158,7 +158,7 @@ END;
 ALTER TABLE users DROP COLUMN birthdate;
 ```
 
-Step 4: Production-Safe Implementation
+Step 4 - Production-Safe Implementation
 
 Always Test on a Copy First
 
@@ -220,7 +220,7 @@ def anonymize_in_batches(batch_size=10000):
     conn.close()
 ```
 
-Step 5: Automated Anonymization Pipelines
+Step 5 - Automated Anonymization Pipelines
 
 For teams that regularly extract production data to staging or analytics environments, manual anonymization is error-prone. Automate the process using a dedicated pipeline that runs on every export:
 

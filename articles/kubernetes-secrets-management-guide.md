@@ -32,7 +32,7 @@ sk_live_abc123
 
 Secrets are stored in etcd as base64. If you have etcd access (or a backup), you have the secrets.
 
-Step 1: Encrypt etcd at Rest
+Step 1 - Encrypt etcd at Rest
 
 Kubernetes can encrypt etcd data using a key you provide. This protects secrets if etcd backups or snapshots are accessed.
 
@@ -63,16 +63,16 @@ Verify encryption is working. existing secrets should be migrated
 kubectl get secrets --all-namespaces -o json | kubectl replace -f -
 This re-writes all existing secrets through the encryption provider
 
-Confirm: read directly from etcd (should see encrypted data)
+Confirm - read directly from etcd (should see encrypted data)
 ETCDCTL_API=3 etcdctl get /registry/secrets/default/my-secret \
   --cacert /etc/kubernetes/pki/etcd/ca.crt \
   --cert /etc/kubernetes/pki/etcd/healthcheck-client.crt \
   --key /etc/kubernetes/pki/etcd/healthcheck-client.key \
   | hexdump -C | head -4
-Should show: /registry/secrets/default/my-secret followed by encrypted binary
+Should show - /registry/secrets/default/my-secret followed by encrypted binary
 ```
 
-Step 2: Sealed Secrets for GitOps
+Step 2 - Sealed Secrets for GitOps
 
 Sealed Secrets allows you to commit encrypted secrets to Git. The SealedSecret is decrypted only inside the cluster by the controller.
 
@@ -131,7 +131,7 @@ for secret in $(find . -name "*.sealed.yaml"); do
 done
 ```
 
-Step 3: External Secrets Operator
+Step 3 - External Secrets Operator
 
 External Secrets Operator (ESO) pulls secrets from AWS Secrets Manager, HashiCorp Vault, GCP Secret Manager, etc., and creates Kubernetes Secrets automatically. Secrets are never stored in Git.
 
@@ -194,7 +194,7 @@ NAME               STORE                  REFRESH INTERVAL   STATUS
 my-app-secrets     aws-secretsmanager     1h                 SecretSynced
 ```
 
-Step 4: Vault Agent Sidecar
+Step 4 - Vault Agent Sidecar
 
 For the most granular control, Vault Agent runs as a sidecar and writes secrets to a shared memory volume.
 
@@ -239,7 +239,7 @@ spec:
             medium: Memory   # never written to disk
 ```
 
-Audit: What Can Access Your Secrets
+Audit - What Can Access Your Secrets
 
 ```bash
 List all subjects that can read secrets in production namespace
@@ -256,7 +256,7 @@ kubectl get clusterrolebindings -o json | jq -r '
   "\(.metadata.name): \(.subjects[]?.name)"'
 ```
 
-RBAC: Minimum Necessary Access
+RBAC - Minimum Necessary Access
 
 ```yaml
 Grant a service account read access to only its own secrets

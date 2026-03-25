@@ -49,7 +49,7 @@ Developers benefit from understanding the two-factor authentication (2FA) protoc
 
 Different keys support different protocols. Your use case determines which features matter most.
 
-YubiKey 5 Series: The Developer Standard
+YubiKey 5 Series - The Developer Standard
 
 Yubico's YubiKey 5 series dominates developer workflows for good reason. The YubiKey 5 NFC works across desktop (USB-An or USB-C via adapter) and mobile (NFC), while the YubiKey 5Ci offers Lightning connector support for iOS developers.
 
@@ -61,10 +61,10 @@ ykman info
 
 Example output:
 Device type: YubiKey 5 NFC
-Serial: 12345678
-Firmware version: 5.4.3
-Form factor: Keychain (USB-A)
-Capabilities: FIDO2, OATH, PIV, OpenPGP, YubiOTP
+Serial - 12345678
+Firmware version - 5.4.3
+Form factor - Keychain (USB-A)
+Capabilities - FIDO2, OATH, PIV, OpenPGP, YubiOTP
 ```
 
 The YubiKey registers as multiple credentials per service, protecting against tracking. GitHub, GitLab, and Bitbucket all support FIDO2, allowing passwordless authentication that resists phishing.
@@ -98,7 +98,7 @@ Programmatically generate keys, manage credentials
 
 This enables integration with CI/CD pipelines, secret management systems, and custom tooling.
 
-SoloKeys: Open-Source Alternative
+SoloKeys - Open-Source Alternative
 
 SoloKeys produces open-source FIDO2 keys with verifiable firmware. For developers who value supply-chain transparency, the ability to inspect and build firmware provides assurance that closed-source products cannot offer.
 
@@ -142,7 +142,7 @@ GitHub Configuration
 
 ```bash
 Register YubiKey with GitHub
-Navigate: Settings → Password and authentication → Two-factor methods
+Navigate - Settings → Password and authentication → Two-factor methods
 Select "Security key"
 ```
 
@@ -315,7 +315,7 @@ ykman oath list
 Generate TOTP code for account
 ykman oath code GitHub
 
-Export TOTP secrets (WARNING: breaks the security model!)
+Export TOTP secrets (WARNING - breaks the security model!)
 Only do this if you must maintain a software copy
 ykman oath export
 ```
@@ -326,9 +326,9 @@ Windows Hello vs Third-Party Keys
 
 Windows Hello (biometric or PIN-based authentication) is hardware-backed on modern Windows devices but works differently than external keys:
 
-Advantages: Built-in, no external device needed, integrated with Windows authentication.
+Advantages - Built-in, no external device needed, integrated with Windows authentication.
 
-Disadvantages: Device-specific (cannot move between machines), requires Windows, less portable for universal use.
+Disadvantages - Device-specific (cannot move between machines), requires Windows, less portable for universal use.
 
 Comparison for developers:
 - Windows Hello alone: Good for Windows machines, insufficient for cross-platform development
@@ -348,11 +348,11 @@ Audit Logging and Key Usage Tracking
 For organizations, track which users use which keys:
 
 ```bash
-GitHub API: list user's security keys
+GitHub API - list user's security keys
 curl -H "Authorization: token YOUR_TOKEN" \
   https://api.github.com/user/keys
 
-AWS: list MFA devices
+AWS - list MFA devices
 aws iam list-mfa-devices --user-name your-user
 
 Check key metadata
@@ -363,7 +363,7 @@ For development teams, periodically audit:
 
 ```bash
 #!/bin/bash
-Audit script: verify all developers have hardware 2FA
+Audit script - verify all developers have hardware 2FA
 
 REQUIRED_MFA=true
 AUDITORS="security-team@company.com"
@@ -376,7 +376,7 @@ for user in $(aws iam list-users --query 'Users[].UserName' --output text); do
 done
 ```
 
-Comparison Matrix: YubiKey vs SoloKeys vs Others
+Comparison Matrix - YubiKey vs SoloKeys vs Others
 
 ```
 Criteria          | YubiKey 5 | YubiKey 5Ci | SoloKeys | Titan Key
@@ -391,7 +391,7 @@ Device support    | Windows, Mac, iOS (adapter), Android | iOS, macOS | All | Al
 Cloud sync        | No        | No         | No      | Yes (Google)
 ```
 
-For developers: YubiKey 5 for maximum compatibility, SoloKeys if open-source firmware verification is essential, Google Titan if you're fully invested in Google ecosystem.
+For developers - YubiKey 5 for maximum compatibility, SoloKeys if open-source firmware verification is essential, Google Titan if you're fully invested in Google environment.
 
 Emergency Access and Account Recovery
 

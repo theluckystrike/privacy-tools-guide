@@ -24,15 +24,15 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Option 1: Jitsi Meet
+Step 1 - Option 1: Jitsi Meet
 
 Jitsi Meet is the most widely deployed self-hosted video conferencing platform.
 - Browser-based: no account required for participants, and supports E2EE for small meetings.
-- CPU and memory monitoring for Jitsi: The Jitsi Video Bridge (JVB) process is the most CPU-intensive component.
+- CPU and memory monitoring for Jitsi - The Jitsi Video Bridge (JVB) process is the most CPU-intensive component.
 - Choose Jitsi Meet when: You need quick meeting links you can share with external participants who have no accounts.
 - Choose Matrix + Element when: Your team needs persistent rooms, asynchronous chat alongside video, and the ability to federate with other Matrix servers.
 
-Step 2: Option 1: Jitsi Meet
+Step 2 - Option 1: Jitsi Meet
 
 Jitsi Meet is the most widely deployed self-hosted video conferencing platform. Browser-based, no account required for participants, and supports E2EE for small meetings.
 
@@ -127,7 +127,7 @@ Participants enable E2EE via the security icon (shield) in the bottom toolbar. A
 
 ---
 
-Step 3: Option 2: Matrix + Element
+Step 3 - Option 2: Matrix + Element
 
 Matrix is a federated, open protocol for real-time communication including video calls. Element is the primary client. Self-hosting Synapse (Matrix homeserver) gives you persistent rooms, team communication, and video via Jitsi integration or native WebRTC.
 
@@ -228,12 +228,12 @@ jitsi:
   preferred_jitsi_domain: meet.yourdomain.com
 ```
 
-In Element: Settings → Preferences → Jitsi → Use your own server
-Enter: `https://meet.yourdomain.com`
+In Element - Settings → Preferences → Jitsi → Use your own server
+Enter - `https://meet.yourdomain.com`
 
 ---
 
-Step 4: Option 3: Galene (Minimal, for Small Groups)
+Step 4 - Option 3: Galene (Minimal, for Small Groups)
 
 Galene is a small, dependency-free video conferencing server written in Go. No WebRTC SFU complexity. runs as a single binary with minimal configuration. Suitable for small team calls (up to ~20 participants).
 
@@ -260,15 +260,15 @@ EOF
 
 Start Galene
 ./galene -data data -groups groups
-Default: listens on port 8443
+Default - listens on port 8443
 
-Access: https://your.server.ip:8443/group/team
+Access - https://your.server.ip:8443/group/team
 Operator/presenter/viewer have different permissions
 ```
 
 ---
 
-Step 5: Firewall Rules for Video Calling
+Step 5 - Firewall Rules for Video Calling
 
 Video calling requires additional ports:
 
@@ -289,7 +289,7 @@ sudo ufw allow 49152:65535/udp  # WebRTC media (STUN/TURN)
 
 ---
 
-Step 6: TURN Server (Required Behind NAT)
+Step 6 - TURN Server (Required Behind NAT)
 
 Without a TURN server, participants behind strict NAT can't connect (corporate firewalls, some ISPs):
 
@@ -325,11 +325,11 @@ config.p2p.stunServers = [
 
 ---
 
-Step 7: Monitor Server Health and Call Quality
+Step 7 - Monitor Server Health and Call Quality
 
 After deploying a self-hosted video calling server, ongoing monitoring ensures call quality stays acceptable and the server doesn't silently degrade. Video traffic is resource-intensive, and a server that looked adequate at setup may struggle under concurrent meetings.
 
-CPU and memory monitoring for Jitsi: The Jitsi Video Bridge (JVB) process is the most CPU-intensive component. Set up a simple monitoring script that alerts you when resources are constrained:
+CPU and memory monitoring for Jitsi - The Jitsi Video Bridge (JVB) process is the most CPU-intensive component. Set up a simple monitoring script that alerts you when resources are constrained:
 
 ```bash
 #!/bin/bash
@@ -351,7 +351,7 @@ if [ "$(echo "$JVB_CPU > 80" | bc -l)" -eq 1 ]; then
 fi
 ```
 
-Call quality testing: Use `mtr` to check the path quality to your server from clients' locations before hosting important meetings:
+Call quality testing - Use `mtr` to check the path quality to your server from clients' locations before hosting important meetings:
 
 ```bash
 Test UDP packet loss to your Jitsi server (port 10000 is JVB media)
@@ -360,7 +360,7 @@ sudo mtr --udp --port 10000 meet.yourdomain.com --report --report-cycles 20
 
 More than 1-2% packet loss consistently will cause visible video artifacts. If you see packet loss, check whether your VPS provider has network issues, or whether a TURN relay is needed for specific clients.
 
-Log rotation: Jitsi produces significant log output. Without rotation, logs fill disk over weeks:
+Log rotation - Jitsi produces significant log output. Without rotation, logs fill disk over weeks:
 
 ```bash
 /etc/logrotate.d/jitsi
@@ -377,15 +377,15 @@ Log rotation: Jitsi produces significant log output. Without rotation, logs fill
 }
 ```
 
-Step 8: Choose Between Jitsi, Matrix, and Galene
+Step 8 - Choose Between Jitsi, Matrix, and Galene
 
 Each option in this guide serves different use cases. Choosing the wrong tool for your situation creates maintenance overhead without proportional privacy benefit.
 
-Choose Jitsi Meet when: You need quick meeting links you can share with external participants who have no accounts. Jitsi is the closest drop-in replacement for Zoom, send a URL, participants join from the browser, meetings end and leave no persistent state.
+Choose Jitsi Meet when - You need quick meeting links you can share with external participants who have no accounts. Jitsi is the closest drop-in replacement for Zoom, send a URL, participants join from the browser, meetings end and leave no persistent state.
 
-Choose Matrix + Element when: Your team needs persistent rooms, asynchronous chat alongside video, and the ability to federate with other Matrix servers. Matrix has significantly higher setup complexity than Jitsi, but the result is a complete communication platform rather than just a video solution. If your team currently uses Slack and Zoom together, Matrix + Element can replace both.
+Choose Matrix + Element when - Your team needs persistent rooms, asynchronous chat alongside video, and the ability to federate with other Matrix servers. Matrix has significantly higher setup complexity than Jitsi, but the result is a complete communication platform rather than just a video solution. If your team currently uses Slack and Zoom together, Matrix + Element can replace both.
 
-Choose Galene when: You need a minimal, low-overhead solution for small trusted groups (your immediate team, family, or close collaborators). Galene requires almost no maintenance after setup, the binary has no external dependencies and uses minimal server resources. It is not suitable for meetings with external participants unfamiliar with the URL format.
+Choose Galene when - You need a minimal, low-overhead solution for small trusted groups (your immediate team, family, or close collaborators). Galene requires almost no maintenance after setup, the binary has no external dependencies and uses minimal server resources. It is not suitable for meetings with external participants unfamiliar with the URL format.
 
 Resource requirements comparison:
 

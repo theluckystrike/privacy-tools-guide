@@ -16,11 +16,11 @@ voice-checked: true
 
 {% raw %}
 
-At U.S. borders, CBP/ICE can search your devices without a warrant, warrant, probable cause, or reasonable suspicion under the "border search exception", this applies to basic device searches. More intensive searches theoretically require suspicion but enforcement is inconsistent. They can view files, copy data, and retain information you have. Protections: encrypt sensitive files with tools CBP cannot easily access, consider leaving sensitive devices at home and using a travel phone, know your right to consult an attorney upon return, and keep travel logs documenting what devices you carried.
+At U.S. borders, CBP/ICE can search your devices without a warrant, warrant, probable cause, or reasonable suspicion under the "border search exception", this applies to basic device searches. More intensive searches theoretically require suspicion but enforcement is inconsistent. They can view files, copy data, and retain information you have. Protections - encrypt sensitive files with tools CBP cannot easily access, consider leaving sensitive devices at home and using a travel phone, know your right to consult an attorney upon return, and keep travel logs documenting what devices you carried.
 
 Table of Contents
 
-- [The Legal Framework: Border Search Exception](#the-legal-framework-border-search-exception)
+- [The Legal Framework - Border Search Exception](#the-legal-framework-border-search-exception)
 - [What Officers Can Legally Do](#what-officers-can-legally-do)
 - [Practical Scenarios for Developers](#practical-scenarios-for-developers)
 - [Defensive Strategies for Power Users](#defensive-strategies-for-power-users)
@@ -28,16 +28,16 @@ Table of Contents
 - [Recent Legal Developments](#recent-legal-developments)
 - [Device Seizure and Data Retention](#device-seizure-and-data-retention)
 - [Travel-Specific Threat Models](#travel-specific-threat-models)
-- [The Gray Area: Biometric vs. Passcode Compulsion](#the-gray-area-biometric-vs-passcode-compulsion)
+- [The Gray Area - Biometric vs. Passcode Compulsion](#the-gray-area-biometric-vs-passcode-compulsion)
 - [Encrypted Container Strategy](#encrypted-container-strategy)
 - [Post-Travel Forensic Inspection](#post-travel-forensic-inspection)
 - [Cooperation vs. Refusal Framework](#cooperation-vs-refusal-framework)
 
-The Legal Framework: Border Search Exception
+The Legal Framework - Border Search Exception
 
 The Fourth Amendment protects against unreasonable searches, but U.S. borders operate under a different legal standard known as the "border search exception." This exception grants Customs and Border Protection (CBP) and Immigration and Customs Enforcement (ICE) broad authority to search travelers and their belongings without a warrant, probable cause, or even reasonable suspicion in most cases.
 
-The legal basis stems from the government's paramount interest in regulating the flow of people and goods across national borders. Unlike searches within the U.S. interior, courts have consistently upheld that border searches require no individualized suspicion. This means CBP officers can examine your devices, copy data, and retain information they find, all without judicial oversight.
+The legal basis stems from the government's essential interest in regulating the flow of people and goods across national borders. Unlike searches within the U.S. interior, courts have consistently upheld that border searches require no individualized suspicion. This means CBP officers can examine your devices, copy data, and retain information they find, all without judicial oversight.
 
 However, the level of scrutiny applied varies based on the type of search conducted. Basic border searches of electronic devices require no suspicion whatsoever. More intensive searches, often called "extended" or "advanced" searches, theoretically require some level of suspicion, though the exact standard remains somewhat ambiguous and has been challenged in court.
 
@@ -57,14 +57,14 @@ Practical Scenarios for Developers
 
 For developers carrying multiple devices or working with sensitive codebases, several scenarios illustrate these rights in practice:
 
-Scenario 1: Conference Travel
+Scenario 1 - Conference Travel
 You attend a tech conference abroad and carry a laptop with proprietary code. At customs, an officer asks to inspect your laptop. You must provide your login credentials. While you can encrypt your drive (which is advisable), providing the password to decrypt it is typically required. Consider traveling with minimal sensitive data on the device itself.
 
-Scenario 2: Personal Device with Work Access
+Scenario 2 - Personal Device with Work Access
 Your personal phone contains email access to corporate systems. An officer examines your email app and discovers sensitive business information. CBP can copy this data, and your employer may face regulatory implications. Separating personal and work data on different devices or using dedicated work profiles reduces this risk.
 
-Scenario 3: Encryption and Privacy Tools
-You use encryption software like VeraCrypt or FileVault. Officers cannot force you to provide encryption keys for "basic" searches in some interpretations, but they can refuse entry, detain your device, or escalate to a "extended search" where the legal situation becomes murkier. The safest approach is encrypting everything with strong keys you can remember, officers can compel disclosure of passwords they consider "testimony," but the ecosystem continues evolving.
+Scenario 3 - Encryption and Privacy Tools
+You use encryption software like VeraCrypt or FileVault. Officers cannot force you to provide encryption keys for "basic" searches in some interpretations, but they can refuse entry, detain your device, or escalate to a "extended search" where the legal situation becomes murkier. The safest approach is encrypting everything with strong keys you can remember, officers can compel disclosure of passwords they consider "testimony," but the environment continues evolving.
 
 Defensive Strategies for Power Users
 
@@ -118,7 +118,7 @@ Device fingerprinting for intelligence purposes (beyond law enforcement) has rai
 
 Recent Legal Developments
 
-The legal ecosystem continues evolving. Recent court cases have incrementally clarified (while also complicating) the border search doctrine:
+The legal environment continues evolving. Recent court cases have incrementally clarified (while also complicating) the border search doctrine:
 
 The *Alasaad v. DHS* (2021) ruling found that CBP's internal policies requiring "reasonable suspicion" for extended device searches were legally binding, but the practical impact has been limited by the agency's ability to claim reasonable suspicion exists in broad circumstances.
 
@@ -150,19 +150,19 @@ Check BitLocker status
 manage-bde -status
 ```
 
-Document your pre-travel state: Create a timestamped inventory of your device's state, software versions, and file counts. If CBP claims to have found contraband material, you can later argue the data was planted post-seizure, though this argument is difficult without documentation.
+Document your pre-travel state - Create a timestamped inventory of your device's state, software versions, and file counts. If CBP claims to have found contraband material, you can later argue the data was planted post-seizure, though this argument is difficult without documentation.
 
 Travel-Specific Threat Models
 
 Different travelers face different risks at borders. Understanding your specific threat model helps determine appropriate precautions:
 
-Journalists: Face risks of source protection, source data exposure, and sometimes targeted surveillance. Carry minimal devices with only current stories; keep archives and contact lists offline. Consider using a burner phone for entry/exit and store the main device with someone outside the country.
+Journalists - Face risks of source protection, source data exposure, and sometimes targeted surveillance. Carry minimal devices with only current stories; keep archives and contact lists offline. Consider using a burner phone for entry/exit and store the main device with someone outside the country.
 
-Activists/Dissidents: May face civil asset forfeiture, device impoundment, and targeted forensic examination. Use mandatory device encryption, travel with minimal data, and maintain contacts in memory rather than on devices.
+Activists/Dissidents - May face civil asset forfeiture, device impoundment, and targeted forensic examination. Use mandatory device encryption, travel with minimal data, and maintain contacts in memory rather than on devices.
 
-Remote Workers/Developers: Primary risk is loss of access credentials and proprietary code exposure. Restrict devices to minimal credentials, use VPN connections rather than stored auth tokens, and separate work/personal data across devices.
+Remote Workers/Developers - Primary risk is loss of access credentials and proprietary code exposure. Restrict devices to minimal credentials, use VPN connections rather than stored auth tokens, and separate work/personal data across devices.
 
-Business Travelers: Risk corporate espionage, credential exposure, and data loss. Implement these practices:
+Business Travelers - Risk corporate espionage, credential exposure, and data loss. Implement these practices:
 
 ```bash
 Clean business laptop before travel
@@ -186,15 +186,15 @@ env | grep -i token
 Should return empty
 ```
 
-The Gray Area: Biometric vs. Passcode Compulsion
+The Gray Area - Biometric vs. Passcode Compulsion
 
 U.S. courts have created a distinction between compelling disclosure of biometric data (fingerprints, face recognition) versus passcodes or passwords.
 
-Compelling biometrics: CBP can likely compel you to unlock a device using your fingerprint or face. Courts have ruled this is not "testimony" but rather physical evidence, analogous to providing a fingerprint.
+Compelling biometrics - CBP can likely compel you to unlock a device using your fingerprint or face. Courts have ruled this is not "testimony" but rather physical evidence, analogous to providing a fingerprint.
 
-Compelling passwords: The legal status is murkier. Some courts have ruled that requiring you to state or type your password violates Fifth Amendment protections against self-incrimination. Others distinguish between knowing the password and being compelled to disclose it.
+Compelling passwords - The legal status is murkier. Some courts have ruled that requiring you to state or type your password violates Fifth Amendment protections against self-incrimination. Others distinguish between knowing the password and being compelled to disclose it.
 
-Practical implications: Set up devices with strong biometric locks but avoid purely passcode-based authentication if possible. If questioned about a passcode, you can claim Fifth Amendment protection, though this may trigger further investigation or device confiscation.
+Practical implications - Set up devices with strong biometric locks but avoid purely passcode-based authentication if possible. If questioned about a passcode, you can claim Fifth Amendment protection, though this may trigger further investigation or device confiscation.
 
 Encrypted Container Strategy
 

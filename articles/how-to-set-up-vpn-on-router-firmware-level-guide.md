@@ -37,7 +37,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Understand Router-Level VPN Architecture
+Step 1 - Understand Router-Level VPN Architecture
 
 When you configure VPN on the router firmware itself, the router becomes the VPN client. Every device connected to your network, whether wired or wireless, benefits from the encrypted tunnel without individual configuration. This centralized approach offers several advantages for technical users.
 
@@ -45,7 +45,7 @@ The router handles the cryptographic overhead, which means even devices with lim
 
 However, router-level VPN comes with tradeoffs. The router's CPU becomes the bottleneck, older or low-powered routers may experience significant throughput degradation. Furthermore, not all routers support VPN client functionality, requiring custom firmware installation or hardware upgrades.
 
-Step 2: Select Compatible Router Firmware
+Step 2 - Select Compatible Router Firmware
 
 Several third-party firmware options provide VPN client capabilities. The most popular choices include OpenWrt, DD-WRT, Tomato, and ASUSWRT-Merlin, each with distinct characteristics suited for different use cases.
 
@@ -67,7 +67,7 @@ ASUSWRT-Merlin is a customized version of ASUS firmware, providing the stability
 
 The native VPN client supports OpenVPN with multiple configuration profiles, WireGuard, and PPTP (though PPTP is insecure and should be avoided). The traffic router feature allows split-tunneling based on client IP ranges.
 
-Step 3: Configuration Example: OpenWrt with WireGuard
+Step 3 - Configuration Example: OpenWrt with WireGuard
 
 WireGuard provides the best performance on resource-constrained routers due to its minimal codebase and efficient cryptography. This example demonstrates configuring WireGuard on OpenWrt.
 
@@ -94,7 +94,7 @@ In the OpenWrt web interface, navigate to Network → Interfaces and add a new i
 
 Configure the firewall to allow traffic through the WireGuard interface by editing `/etc/config/firewall` or using the LuCI interface. Add a zone for the WireGuard interface allowing forwarding to the WAN zone.
 
-Step 4: Configuration Example: DD-WRT with OpenVPN
+Step 4 - Configuration Example: DD-WRT with OpenVPN
 
 DD-WRT includes OpenVPN support without additional packages. This example assumes you have OpenVPN server credentials from your provider.
 
@@ -125,25 +125,25 @@ Troubleshooting Common Issues
 
 Router-level VPN configurations frequently encounter several issues that require debugging.
 
-Connection drops: Check the router's system log for authentication failures or TLS errors. Verify the credentials and ensure system time is correct, certificate validation fails on systems with incorrect time. Consider adding `keepalive 10 60` to OpenVPN configurations for automatic reconnection.
+Connection drops - Check the router's system log for authentication failures or TLS errors. Verify the credentials and ensure system time is correct, certificate validation fails on systems with incorrect time. Consider adding `keepalive 10 60` to OpenVPN configurations for automatic reconnection.
 
-Slow speeds: Benchmark your connection speed with and without the VPN to establish a baseline. Many routers achieve only 20-50 Mbps with VPN encryption due to CPU limitations. Consider router hardware upgrades or switch to WireGuard for better performance on limited hardware.
+Slow speeds - Benchmark your connection speed with and without the VPN to establish a baseline. Many routers achieve only 20-50 Mbps with VPN encryption due to CPU limitations. Consider router hardware upgrades or switch to WireGuard for better performance on limited hardware.
 
-DNS leaks: Configure static DNS servers in the VPN client settings to prevent DNS queries bypassing the encrypted tunnel. Use privacy-focused DNS providers like 1.1.1.1 or 9.9.9.9. Verify DNS leak protection using tools like dnsleaktest.com.
+DNS leaks - Configure static DNS servers in the VPN client settings to prevent DNS queries bypassing the encrypted tunnel. Use privacy-focused DNS providers like 1.1.1.1 or 9.9.9.9. Verify DNS leak protection using tools like dnsleaktest.com.
 
-Split tunneling challenges: When routing only specific traffic through the VPN, ensure the "Allowed IPs" configuration matches your intended subnet exactly. Incorrect configurations cause traffic to leak through the default gateway.
+Split tunneling challenges - When routing only specific traffic through the VPN, ensure the "Allowed IPs" configuration matches your intended subnet exactly. Incorrect configurations cause traffic to leak through the default gateway.
 
 Advanced Configurations for Power Users
 
 Developers can use router-level VPN for more sophisticated setups beyond basic client configurations.
 
-Multiple VPN profiles: Configure the router to automatically switch between VPN servers based on latency or load. Startup scripts in `/etc/init.d/` can implement health checks and failover logic.
+Multiple VPN profiles - Configure the router to automatically switch between VPN servers based on latency or load. Startup scripts in `/etc/init.d/` can implement health checks and failover logic.
 
-VPN kill switch: Create firewall rules that block all traffic when the VPN tunnel drops unexpectedly. This prevents data leaks during connection interruptions. In OpenWrt, configure the firewall to default to REJECT or DROP on the WAN zone when the VPN interface is down.
+VPN kill switch - Create firewall rules that block all traffic when the VPN tunnel drops unexpectedly. This prevents data leaks during connection interruptions. In OpenWrt, configure the firewall to default to REJECT or DROP on the WAN zone when the VPN interface is down.
 
-Policy-based routing: Route specific devices or subnets through the VPN while allowing others to use the direct connection. This enables configurations where gaming consoles use low-latency direct connections while sensitive browsing uses the VPN tunnel.
+Policy-based routing - Route specific devices or subnets through the VPN while allowing others to use the direct connection. This enables configurations where gaming consoles use low-latency direct connections while sensitive browsing uses the VPN tunnel.
 
-WireGuard road warrior setup: Configure the router as a WireGuard server allowing remote client connections. This provides secure remote access to your home network without relying on third-party services.
+WireGuard road warrior setup - Configure the router as a WireGuard server allowing remote client connections. This provides secure remote access to your home network without relying on third-party services.
 
 Performance Considerations
 
@@ -259,7 +259,7 @@ systemctl enable wg-quick@wg0
 
 For remote access, copy the server's public key and configuration details to your mobile WireGuard client.
 
-Step 5: VPN Kill Switch Implementation
+Step 5 - VPN Kill Switch Implementation
 
 Prevent data leakage if your VPN connection drops unexpectedly:
 
@@ -305,7 +305,7 @@ EOF
 
 This prevents unencrypted traffic from leaving your network if the VPN drops.
 
-Step 6: DNS Configuration for VPN Privacy
+Step 6 - DNS Configuration for VPN Privacy
 
 Even with a VPN tunnel, DNS leaks can expose browsing history. Configure the router to handle DNS properly:
 
@@ -337,7 +337,7 @@ nslookup google.com
 Should resolve through your configured DNS server, not ISP
 ```
 
-Step 7: Monitor and Logging
+Step 7 - Monitor and Logging
 
 Enable router-level VPN monitoring to track connection status and data usage:
 
@@ -350,7 +350,7 @@ Log VPN status every 5 minutes
 while true; do
     timestamp=$(date '+%Y-%m-%d %H:%M:%S')
     status=$(wg show wg0 2>/dev/null | grep "transfer" || echo "DOWN")
-    echo "$timestamp | Status: $status" >> /var/log/vpn-monitor.log
+    echo "$timestamp | Status - $status" >> /var/log/vpn-monitor.log
     sleep 300
 done &
 EOF
@@ -378,7 +378,7 @@ for i in {1..6}; do
 done
 ```
 
-Step 8: Hardware Acceleration for Better Performance
+Step 8 - Hardware Acceleration for Better Performance
 
 Modern routers include hardware encryption acceleration. Enable it for WireGuard:
 

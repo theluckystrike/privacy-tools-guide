@@ -112,7 +112,7 @@ Verify DNS resolution
 dig +short myip.opendns.com @resolver1.opendns.com
 
 Test for WebRTC leaks
-Visit: https://browserleaks.com/webrtc
+Visit - https://browserleaks.com/webrtc
 ```
 
 Your IP should show Brazil, and your DNS queries should resolve to Brazilian servers.
@@ -126,7 +126,7 @@ Check if main domain resolves from Brazil
 nslookup globoplay.globo.com
 
 Test stream access (requires authentication)
-curl -I https://stream.globo.com -H "Accept: application/vnd.osmf.v1+json"
+curl -I https://stream.globo.com -H "Accept - application/vnd.osmf.v1+json"
 ```
 
 Troubleshooting Common Issues
@@ -262,7 +262,7 @@ Set DNS to Smart DNS provider's servers
 Traffic appears Brazilian for geo-checks
 Actual content delivery stays fast (uses local CDN)
 
-Downside: No encryption, ISP sees content access
+Downside - No encryption, ISP sees content access
 ```
 
 Cost typically $5-15/month, faster than VPN but lower privacy.
@@ -282,14 +282,14 @@ Detecting Blocking Before Account Issues
 Test before creating or using accounts:
 
 ```bash
-Method 1: Attempt accessing content without account
+Method 1 - Attempt accessing content without account
 curl -I https://globoplay.globo.com
 
-Method 2: Check if player loads
+Method 2 - Check if player loads
 Visit globoplay.globo.com, watch for player initialization
 
-Method 3: Test specific stream URL patterns
-Globoplay uses pattern: https://stream.globo.com/video/...
+Method 3 - Test specific stream URL patterns
+Globoplay uses pattern - https://stream.globo.com/video/...
 curl -I https://stream.globo.com/test.m3u8
 ```
 

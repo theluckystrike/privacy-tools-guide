@@ -35,7 +35,7 @@ Table of Contents
 - [Automating Key Rotation](#automating-key-rotation)
 - [Security Considerations](#security-considerations)
 - [Coordinating Key Rotation Across Multiple Peers](#coordinating-key-rotation-across-multiple-peers)
-- [Key Rotation vs. Peer Removal: Knowing When to Do Each](#key-rotation-vs-peer-removal-knowing-when-to-do-each)
+- [Key Rotation vs. Peer Removal - Knowing When to Do Each](#key-rotation-vs-peer-removal-knowing-when-to-do-each)
 - [Verifying Key Rotation](#verifying-key-rotation)
 - [Related Reading](#related-reading)
 
@@ -83,7 +83,7 @@ How to Manually Rotate WireGuard Keys
 
 Rotating WireGuard keys involves regenerating the key pair and updating the configuration on both the client and server.
 
-Step 1: Generate New Keys
+Step 1 - Generate New Keys
 
 On your client device, generate a new key pair:
 
@@ -102,7 +102,7 @@ chmod 600 privatekey
 
 Do not allow the private key to appear in shell history or logs. On systems with bash or zsh, prefixing a command with a space prevents it from being added to history in most configurations, but this is unreliable. Instead, write keys to files directly as shown above rather than echoing them to screen.
 
-Step 2: Update Client Configuration
+Step 2 - Update Client Configuration
 
 Edit your WireGuard client configuration file (typically in `/etc/wireguard/wg0.conf`):
 
@@ -121,7 +121,7 @@ PersistentKeepalive = 25
 
 Replace `<new-private-key>` with your newly generated private key.
 
-Step 3: Update Server Configuration
+Step 3 - Update Server Configuration
 
 On your WireGuard server, update the peer's public key:
 
@@ -236,7 +236,7 @@ Multi-peer WireGuard deployments, where a server hosts connections from many cli
 
 A practical approach for fleet-scale deployments is a two-phase key rotation:
 
-Phase 1: Introduce new key alongside old key
+Phase 1 - Introduce new key alongside old key
 
 On the server, temporarily add the new public key as a second peer entry with the same AllowedIPs. This allows both old and new keys to authenticate simultaneously:
 
@@ -245,7 +245,7 @@ Add new key with same AllowedIPs as old key
 sudo wg set wg0 peer <new-public-key> allowed-ips 10.0.0.2/32
 ```
 
-Phase 2: Update client and remove old key
+Phase 2 - Update client and remove old key
 
 Deploy the new private key to the client and confirm it connects successfully. Then remove the old public key from the server:
 
@@ -256,11 +256,11 @@ sudo wg set wg0 peer <old-public-key> remove
 
 This two-phase approach eliminates downtime entirely and is particularly important for automated deployments where the client and server updates cannot be perfectly synchronized.
 
-Key Rotation vs. Peer Removal: Knowing When to Do Each
+Key Rotation vs. Peer Removal - Knowing When to Do Each
 
 Key rotation refreshes credentials while preserving the peer relationship. Peer removal is the appropriate action when a device is lost, an employee departs, or a relationship ends. These are distinct operations with different security implications.
 
-For key rotation: generate new keys, distribute the new public key to all relevant peers, update configurations, and verify connectivity. The peer relationship continues uninterrupted.
+For key rotation - generate new keys, distribute the new public key to all relevant peers, update configurations, and verify connectivity. The peer relationship continues uninterrupted.
 
 For peer removal after device loss: remove the compromised public key from all server configurations immediately. Do not wait until the scheduled rotation window. Speed matters, an attacker with a stolen device can use the existing key until it is removed.
 
@@ -307,7 +307,7 @@ Free tiers work for basic tasks and evaluation, but paid plans typically offer h
 
 How do I evaluate which tool fits my workflow?
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Run a practical test - take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
 
 Do these tools work offline?
 
@@ -319,6 +319,6 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Should I switch tools if something better comes out?
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
+Switching costs are real - learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific problem you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 {% endraw %}

@@ -43,7 +43,7 @@ Before you begin, make sure you have the following ready:
 - A stable internet connection for downloading tools
 
 
-Step 1: Phone Selection
+Step 1 - Phone Selection
 
 Buy a used phone in cash from a private seller to avoid purchase records. Avoid brand-new phones whose serial numbers are registered to you. Target older models (2-3 years old) because they're cheaper used and less likely to have biometric authentication that law enforcement could force you to unlock.
 
@@ -55,13 +55,13 @@ Recommended specifications:
 - No biometric authentication enabled
 - 4G capability (required for messaging)
 
-Why Android: Android allows installation of custom ROM (operating system) for maximum control and privacy. iOS requires relying on Apple's default configurations and is harder to configure for forensic security.
+Why Android - Android allows installation of custom ROM (operating system) for maximum control and privacy. iOS requires relying on Apple's default configurations and is harder to configure for forensic security.
 
-Avoid: Brand new phones (purchase traceable to you), flagship models (distinctive to identify you with), phones with known security vulnerabilities.
+Avoid - Brand new phones (purchase traceable to you), flagship models (distinctive to identify you with), phones with known security vulnerabilities.
 
-Purchasing approach: Search local Facebook Marketplace, Craigslist, or OfferUp. Negotiate by text before meeting. Meet in a location with security cameras (retail stores, busy areas) to provide alibi if police question the purchase later. Pay cash. Do not provide your real name or contact info beyond the phone number you're using.
+Purchasing approach - Search local Facebook Marketplace, Craigslist, or OfferUp. Negotiate by text before meeting. Meet in a location with security cameras (retail stores, busy areas) to provide alibi if police question the purchase later. Pay cash. Do not provide your real name or contact info beyond the phone number you're using.
 
-Step 2: SIM Card Setup
+Step 2 - SIM Card Setup
 
 Use a prepaid SIM card purchased with cash. Bring only your burner phone and cash to the store, no ID, no wallet with identification.
 
@@ -80,7 +80,7 @@ Activation process:
 
 US carriers are increasingly requiring ID verification for activation. Some states require ID for any SIM purchase. Research your state's requirements beforehand. If ID is required, use the burner phone setup as one-time protection with assumption that you're identified but messages remain private.
 
-Step 3: Configure the Operating System Configuration
+Step 3 - Configure the Operating System Configuration
 
 Before installing any apps or connecting to networks, configure the phone for privacy.
 
@@ -121,7 +121,7 @@ Verify disabled packages
 adb shell pm list packages -d
 ```
 
-Step 4: Communication Apps
+Step 4 - Communication Apps
 
 Select messaging apps that use end-to-end encryption and don't require phone verification.
 
@@ -149,9 +149,9 @@ Jami (formerly GNU Ring)
 - Use: Backup communication
 - Installation: F-Droid
 
-Apps to avoid: WhatsApp (Facebook owned, metadata logged), Telegram (not fully end-to-end encrypted by default), Google Messages, Facebook Messenger.
+Apps to avoid - WhatsApp (Facebook owned, metadata logged), Telegram (not fully end-to-end encrypted by default), Google Messages, Facebook Messenger.
 
-Step 5: Evidence Collection Setup
+Step 5 - Evidence Collection Setup
 
 Protect photos and videos of police conduct with automatic encryption and secure backup.
 
@@ -166,7 +166,7 @@ Evidence Encryption:
 3. Configure automatic photo backup with client-side encryption
 4. Photos backup automatically and encrypted without your phone seeing plain content
 
-Alternative: Local Encryption:
+Alternative - Local Encryption:
 1. Install VeraCrypt (open source disk encryption)
 2. Create encrypted volume for evidence storage
 3. Mount only when backing up evidence
@@ -192,7 +192,7 @@ Securely delete the unencrypted originals
 shred -u DCIM/Camera/IMG_20260322.jpg
 ```
 
-Step 6: Operational Security During Protest
+Step 6 - Operational Security During Protest
 
 Phone Management:
 - Carry only the burner phone (leave primary phone at home)
@@ -221,7 +221,7 @@ Law Enforcement Interaction:
 - Police cannot legally force you to unlock via fingerprint/face (5th Amendment protects against self-incrimination by password; courts split on biometrics)
 - Even if phone is unlocked, encrypted apps (Signal, Briar) remain inaccessible without passwords
 
-Step 7: Digital Forensics Protection
+Step 7 - Digital Forensics Protection
 
 If law enforcement images your phone (forensic copy), maximize time between protest and forensic examination.
 
@@ -231,9 +231,9 @@ Forensic Delay Tactics:
 3. Change phone time to future date (confuses some forensic tools)
 4. Use encryption on entire phone filesystem (SlimRoms, Graphene OS on supported models)
 
-Better approach: Don't store sensitive evidence on the phone long-term. Back up evidence to encrypted cloud storage immediately after protest, then delete from phone.
+Better approach - Don't store sensitive evidence on the phone long-term. Back up evidence to encrypted cloud storage immediately after protest, then delete from phone.
 
-Step 8: Post-Protest Procedures
+Step 8 - Post-Protest Procedures
 
 After protest:
 1. Back up evidence photos/videos to encrypted Nextcloud
@@ -262,7 +262,7 @@ Then perform factory reset via ADB
 adb shell am broadcast -a android.intent.action.MASTER_CLEAR
 ```
 
-Step 9: Legal Context
+Step 9 - Legal Context
 
 Using a burner phone is legal. Burner phones have legitimate uses: protecting privacy, separating work/personal contexts, preventing identity theft. Simply possessing a burner phone is not illegal.
 
