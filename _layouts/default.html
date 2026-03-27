@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }} | {{ site.title }}</title>
+      <title>{% if page.url == "/" %}{{ site.title }} — {{ site.tagline }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}</title></title>
   <meta name="description" content="{{ page.description | default: site.description }}">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   {% seo %}
@@ -20,7 +20,7 @@
     "description": "{{ site.description | escape }}",
     "publisher": {
       "@type": "Organization",
-      "name": "Privacy Tools Guide",
+                  "name": "Secure Tools Guide",
       "url": "https://securetoolsguide.com"
     },
     "potentialAction": {
@@ -52,12 +52,12 @@
     "description": "{{ page.description | escape }}",
     "author": {
       "@type": "Organization",
-      "name": "Privacy Tools Guide",
+                  "name": "Secure Tools Guide",
       "url": "https://securetoolsguide.com/about/"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Privacy Tools Guide",
+                  "name": "Secure Tools Guide",
       "url": "https://securetoolsguide.com/",
       "logo": {
         "@type": "ImageObject",
@@ -80,7 +80,7 @@
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Privacy Tools Guide",
+                      "name": "Secure Tools Guide",
         "item": "https://securetoolsguide.com/"
       },
       {
@@ -141,7 +141,7 @@
 </head>
 <body>
   <nav>
-    <a href="/" style="font-weight:700; color:#1d1d1f; font-size:1rem;">Privacy Tools Guide</a>
+          <a href="/" style="font-weight:700; color:#1d1d1f; font-size:1rem;">Secure Tools Guide</a>a>
     <a href="/about/">About</a>
     <a href="/topics/vpn-guides/">VPNs</a>
     <a href="/topics/password-managers/">Passwords</a>
@@ -162,7 +162,7 @@
   </main>
   <footer>
     <p><a href="https://chrometipsguide.com">Chrome Tips</a> · <a href="https://bestchromeextensions.com">Extensions</a> · <a href="https://bestremotetools.com">AI Tools</a> · <a href="https://welikeremotestack.com">Remote Work</a> · <a href="https://claudecodeguides.com">Claude Code</a></p>
-    <p>&copy; 2026 Privacy Tools Guide · <a href="/about/">About</a></p>
+          <p>&copy; 2026 Secure Tools Guide · <a href="/about/">About</a>a></p></p>
   </footer>
   {% if page.date %}
   <script>
