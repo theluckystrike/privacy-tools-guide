@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "Dating App Photo Metadata Stripping How To Remove Exif Gps"
-description: "A developer and power user guide to stripping EXIF GPS metadata from photos before uploading to dating apps. Includes Python, CLI tools, and mobile"
+title: "How to Remove EXIF GPS Data from Dating App Photos (Step-by-Step)"
+description: "Your dating app photos may expose your exact location via EXIF metadata. Learn how to strip GPS coordinates, device info, and timestamps before uploading to Tinder, Bumble, or Hinge."
 date: 2026-03-16
 last_modified_at: 2026-03-16
-author: "Privacy Tools Guide"
+author: "Secure Tools Guide"
 permalink: /dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/
 categories: [guides, security]
 reviewed: true
