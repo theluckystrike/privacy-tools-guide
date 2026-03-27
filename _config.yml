@@ -1,24 +1,27 @@
-title: "Privacy Tools Guide"
-description: "In-depth guides and reviews of privacy tools, encrypted services, and security software for everyday users"
+title: "Secure Tools Guide"
+tagline: "Best VPNs, Password Managers & Privacy Reviews (2026)"
+description: "No-BS privacy tool reviews with real tests. VPN speed benchmarks, password manager audits, encrypted messaging comparisons, and step-by-step security setup guides for everyday users and developers."
 url: "https://securetoolsguide.com"
 baseurl: ""
 permalink: /:title/
 # theme: minima  # disabled — using custom _layouts/default.html
+
 twitter:
   username: _alphashark_
-  card: summary_large_image
+    card: summary_large_image
 
-author:
-  name: Michael Lip
-  url: https://github.com/theluckystrike
+    author:
+      name: Michael Lip
+        url: https://github.com/theluckystrike
 
-plugins:
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-feed
-defaults:
-  - scope:
-      path: "articles"
-    values:
-      layout: default
-      image: /assets/og-default.svg
+        plugins:
+          - jekyll-sitemap
+            - jekyll-seo-tag
+              - jekyll-feed
+
+              defaults:
+                - scope:
+                      path: "articles"
+                          values:
+                                layout: default
+                                      image: /assets/og-default.svg
