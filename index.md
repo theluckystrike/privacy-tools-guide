@@ -37,7 +37,7 @@ I review privacy tools so you do not have to trust marketing pages. VPN speed te
 
 ## Recently Updated
 
-{% assign sorted_pages = site.pages | where_exp: "p", "p.path contains 'articles/'" | sort: "date" | reverse %}
+{% assign sorted_pages = site.pages | where_exp: "p", "p.path contains 'articles/'" | where_exp: "p", "p.date" | sort: "date" | reverse %}
 {% for p in sorted_pages limit: 6 %}{% if p.title %}
 - [{{ p.title }}]({{ p.url }})
 {% endif %}{% endfor %}

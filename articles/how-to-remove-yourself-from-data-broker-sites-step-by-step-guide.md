@@ -12,6 +12,9 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
+---
+{% raw %}
+
 Address - 123 Oak Street, Portland, OR 97201
 Phone - (503) 555-1234
 Email - patrick@example.com
@@ -19,8 +22,6 @@ Age - 38
 Relatives - Maria Johnson (spouse), Emma Johnson (daughter)
 Vehicle - 2021 Tesla Model 3
 Employment - Software Engineer at TechCorp
----
-{% raw %}
 
 Dear Equifax,
 

@@ -11,13 +11,14 @@ reviewed: true
 score: 7
 intent-checked: true
 voice-checked: true
+---
+{% raw %}
+
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata: name: internal-ca
 spec: ca:
     secretName: internal-ca-key-pair
----
-{% raw %}
 
 
 Certificate Renewal Automation Without Downtime
