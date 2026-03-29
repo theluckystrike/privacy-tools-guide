@@ -13,6 +13,7 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
 
 apiVersion: apps/v1
 kind: Deployment

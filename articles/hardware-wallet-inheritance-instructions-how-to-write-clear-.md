@@ -13,6 +13,7 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
+{% raw %}
 
 Creating clear hardware wallet inheritance instructions requires translating your technical expertise into accessible language. The effort you invest now prevents impossible confusion later. Your heirs will thank you not for teaching them cryptocurrency, but for giving them a simple path forward when it matters most.
 

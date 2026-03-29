@@ -13,6 +13,7 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
 
 --------------------------------------------------------------------
 3d8f2a1b 2026-03-21 02:00:00 myhost /home/user

@@ -13,6 +13,7 @@ score: 7
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
 
 regulatory_status:
  # CITC (Communications and Information Technology Commission) regulations

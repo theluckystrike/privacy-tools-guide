@@ -12,6 +12,7 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
+{% raw %}
 
 DNS-Over-HTTPS Fallback with Unbound
 

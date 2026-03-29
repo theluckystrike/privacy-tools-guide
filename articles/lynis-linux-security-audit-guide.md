@@ -12,6 +12,7 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, security]
 ---
+{% raw %}
 
 Interpreting the Lynis Report for Remediation Priority
 

@@ -13,6 +13,7 @@ score: 7
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
 
 naver_webtoon:
  # Many titles free in Korea, paid elsewhere

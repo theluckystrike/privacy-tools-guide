@@ -14,6 +14,7 @@ voice-checked: true
 slug: how-to-use-age-encryption-for-file-sharing-2026
 published: true
 ---
+{% raw %}
 
 --END AGE ENCRYPTED FILE-----
 ```

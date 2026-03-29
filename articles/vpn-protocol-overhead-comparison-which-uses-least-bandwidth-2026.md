@@ -13,6 +13,7 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
 
 
 Real-World Bandwidth Impact Analysis

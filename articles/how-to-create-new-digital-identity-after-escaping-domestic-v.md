@@ -13,6 +13,7 @@ score: 9
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
 
 
 Step 7 - Social Media and Online Presence Isolation

@@ -13,6 +13,7 @@ score: 7
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
 
 | Tool | Privacy Feature | Open Source | Platform | Pricing |
 |---|---|---|---|---|

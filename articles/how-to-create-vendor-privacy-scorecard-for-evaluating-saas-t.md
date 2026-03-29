@@ -13,6 +13,7 @@ score: 7
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
 
 
 Building a vendor privacy scorecard takes initial effort but pays dividends across every SaaS purchase you make. You will make faster decisions, identify problems before they become issues, and build a consistent standard for evaluating tools. The privacy environment continues to evolve, and your scorecard should evolve with it. Periodically review and update your criteria as regulations change and new threats emerge.

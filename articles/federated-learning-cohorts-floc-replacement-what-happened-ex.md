@@ -13,6 +13,7 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
 
 Measuring Topics API Impact on Your Traffic
 

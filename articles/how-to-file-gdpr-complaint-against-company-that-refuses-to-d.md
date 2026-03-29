@@ -13,6 +13,7 @@ score: 8
 voice-checked: true
 intent-checked: true
 ---
+{% raw %}
 
 Exercise your GDPR rights systematically. Document everything, escalate formally, and use regulatory channels when companies ignore their obligations. The process takes time, but enforcement is improving across the EU in 2026.
 

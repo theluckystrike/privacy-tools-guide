@@ -13,6 +13,7 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, automation]
 ---
+{% raw %}
 
 
 apiVersion: external-secrets.io/v1beta1

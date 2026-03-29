@@ -13,6 +13,7 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
+{% raw %}
 
 First-party isolation represents a fundamental shift in how browsers handle web storage. By treating each site as a separate security context for client-side data, browsers can significantly reduce the ability of trackers to build user profiles. While not a complete privacy solution, it forms a critical layer in a defense-in-depth approach to web privacy.
 

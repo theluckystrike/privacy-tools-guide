@@ -13,6 +13,7 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, security]
 ---
+{% raw %}
 
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy

@@ -17,6 +17,7 @@ metadata: name: internal-ca
 spec: ca:
     secretName: internal-ca-key-pair
 ---
+{% raw %}
 
 
 Certificate Renewal Automation Without Downtime

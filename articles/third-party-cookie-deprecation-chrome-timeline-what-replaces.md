@@ -13,6 +13,7 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
 
 Browser-Specific Cookie Handling in 2026
 

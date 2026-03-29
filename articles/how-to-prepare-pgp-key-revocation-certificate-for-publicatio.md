@@ -13,6 +13,7 @@ voice-checked: true
 intent-checked: true
 tags: [privacy-tools-guide]
 ---
+{% raw %}
 
 A PGP key revocation certificate is not optional. It is a fundamental part of key management that protects you and your correspondents when things go wrong. Generate it, secure it, and know how to use it.
 

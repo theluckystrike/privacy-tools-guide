@@ -12,6 +12,7 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
+{% raw %}
 
 Step 9 - Backup and Restore Authentik
 

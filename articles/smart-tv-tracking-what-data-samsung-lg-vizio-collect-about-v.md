@@ -13,6 +13,7 @@ score: 9
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
 
 
 Smart TV Brand Comparison - Data Collection and Privacy (2026)

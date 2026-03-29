@@ -13,6 +13,7 @@ categories: [guides]
 intent-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
+{% raw %}
 
 Step 11 - Privacy Controls by Facebook Feature (2026 Edition)
 

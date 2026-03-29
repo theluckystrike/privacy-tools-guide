@@ -12,6 +12,7 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
+{% raw %}
 
 Built by theluckystrike. More at [zovo.one](https://zovo.one)
 

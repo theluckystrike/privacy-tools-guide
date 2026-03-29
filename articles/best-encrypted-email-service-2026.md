@@ -13,6 +13,7 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]
 ---
+{% raw %}
 
 
 I've used Proton Mail as my primary email for over a year and tested Tutanota and Skiff alongside it. Proton Mail wins for developers because of its Bridge (SMTP/IMAP access for any desktop client), full PGP support, and Swiss jurisdiction. Tutanota's custom encryption is solid but locks you into their apps. Here is how I evaluated each service for daily development work.

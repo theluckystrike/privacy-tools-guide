@@ -13,6 +13,7 @@ voice-checked: true
 intent-checked: true
 tags: [privacy-tools-guide, best-of, privacy]
 ---
+{% raw %}
 
 Quad9 9.9.9.9 (Best Free Option for Blocking)
 

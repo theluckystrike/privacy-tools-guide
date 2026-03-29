@@ -13,6 +13,7 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
 
 By treating bookmarks as persistent metadata rather than transient browser state, you maintain better operational security. These practices align with defense-in-depth principles, each layer adds friction against correlation attacks. Adapt these scripts to your threat model, and remember that bookmark hygiene is one component of a broader Tor Browser usage strategy.
 

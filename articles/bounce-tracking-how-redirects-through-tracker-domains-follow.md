@@ -13,6 +13,7 @@ voice-checked: true
 score: 7
 tags: [privacy-tools-guide]
 ---
+{% raw %}
 
 Frequently Asked Questions
 

@@ -13,6 +13,7 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
 
 -----------------------------------
 - Check certificate expiration: openssl s_client -connect example.com:443 -servername example.com 2>/dev/null | openssl x509 -noout -dates

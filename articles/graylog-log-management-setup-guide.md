@@ -20,6 +20,7 @@ Condition - count() >= 5 in last 1 minute
   -H "X-Requested-By: cli" \
   | python3 -m json.tool > graylog-content-pack.json
 ---
+{% raw %}
 
 
 Related Reading
