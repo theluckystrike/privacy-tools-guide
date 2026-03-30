@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Nebula Mesh VPN for Teams"
 description: "Deploy Nebula mesh VPN across your team with a lighthouse server, signed node certificates, and encrypted peer-to-peer tunnels"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-set-up-nebula-mesh-vpn-for-teams/
 categories: [guides, security]

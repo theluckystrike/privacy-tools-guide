@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Mullvad VPN on Linux"
 description: "Install and configure Mullvad VPN on Linux using the official app and WireGuard CLI, set up the kill switch, enable split tunneling, and verify no leaks"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /mullvad-vpn-linux-setup-guide/
 categories: [guides]

@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused Android ROM Comparison 2026"
 description: "Compare GrapheneOS, CalyxOS, DivestOS, and LineageOS for privacy features, security patches, app compatibility, and supported device lists"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-android-rom-comparison-2026/
 categories: [guides]

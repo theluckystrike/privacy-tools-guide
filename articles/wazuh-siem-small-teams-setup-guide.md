@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Wazuh SIEM for Small Teams"
 description: "Deploy Wazuh all-in-one SIEM on a single Linux server to collect logs, detect threats, run compliance checks, and alert your team without enterprise pri..."
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /wazuh-siem-small-teams-setup-guide/
 categories: [guides, security]

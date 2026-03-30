@@ -3,6 +3,7 @@ layout: default
 title: "Best Accessible Privacy Extension for Firefox That Does Not"
 description: "Find the best accessible privacy extension for Firefox that works with screen readers. Developer-focused guide with practical configurations and testing"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /best-accessible-privacy-extension-for-firefox-that-does-not-/
 categories: [guides]

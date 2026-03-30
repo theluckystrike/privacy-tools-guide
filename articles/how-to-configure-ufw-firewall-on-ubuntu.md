@@ -3,6 +3,7 @@ layout: default
 title: "How to Configure UFW Firewall on Ubuntu"
 description: "Set up UFW on Ubuntu with practical rules for SSH, web servers, rate limiting, and logging to harden your server perimeter"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-configure-ufw-firewall-on-ubuntu/
 categories: [guides, security]

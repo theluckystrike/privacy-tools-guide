@@ -3,6 +3,7 @@ layout: default
 title: "How to Configure SELinux Policies Step by Step"
 description: "Practical guide to writing, auditing, and enforcing custom SELinux policies on RHEL and Ubuntu using audit2allow, semanage, and policy modules"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /selinux-policy-configuration-guide/
 categories: [guides, security]

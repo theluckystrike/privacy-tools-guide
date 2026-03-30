@@ -3,6 +3,7 @@ layout: default
 title: "Secure Redis Deployment Without Exposure"
 description: "Harden Redis by binding to localhost, enabling authentication, using TLS, and configuring ACLs to prevent unauthorized access and data theft"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /secure-redis-deployment-without-exposure/
 categories: [guides, security]

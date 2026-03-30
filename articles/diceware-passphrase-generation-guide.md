@@ -3,6 +3,7 @@ layout: default
 title: "Diceware Passphrase Generation Guide"
 description: "How to generate cryptographically strong passphrases using Diceware and EFF wordlists, with entropy calculations, offline dice rolling, and digital tools"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /diceware-passphrase-generation-guide/
 categories: [guides, security]

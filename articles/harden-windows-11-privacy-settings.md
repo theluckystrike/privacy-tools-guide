@@ -3,6 +3,7 @@ layout: default
 title: "How to Harden Windows 10 and 11 Privacy Settings"
 description: "Disable Windows telemetry, advertising IDs, and data collection using Group Policy, registry tweaks, and PowerShell scripts on Windows 10 and 11"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /harden-windows-11-privacy-settings/
 categories: [guides]

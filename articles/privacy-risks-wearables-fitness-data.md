@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Risks of Fitness Trackers and Wearables"
 description: "What Fitbit, Garmin, Apple Watch, and Oura Ring collect, who gets access to your health data, and practical steps to reduce wearable privacy exposure"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-risks-wearables-fitness-data/
 categories: [guides]

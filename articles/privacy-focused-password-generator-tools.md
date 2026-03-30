@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused Password Generator Tools"
 description: "Compare offline and open-source password generators for creating strong credentials without trusting cloud services with your entropy"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-password-generator-tools/
 categories: [guides]

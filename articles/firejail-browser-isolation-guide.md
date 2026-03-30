@@ -3,6 +3,7 @@ layout: default
 title: "Browser Isolation with Firejail Guide"
 description: "Sandbox Firefox and Chromium with Firejail on Linux. Custom profiles, private network namespaces, and seccomp filters to contain breaches."
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /firejail-browser-isolation-guide/
 categories: [guides, security]

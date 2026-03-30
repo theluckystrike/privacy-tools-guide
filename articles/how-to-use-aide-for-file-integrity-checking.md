@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AIDE for File Integrity Checking"
 description: "Set up AIDE to create a cryptographic baseline of your filesystem, detect unauthorized changes, and alert on tampering in security-sensitive environments"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-use-aide-for-file-integrity-checking/
 categories: [guides, security]

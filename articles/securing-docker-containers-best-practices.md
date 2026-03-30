@@ -3,6 +3,7 @@ layout: default
 title: "Securing Docker Containers Best Practices"
 description: "Harden Docker deployments with non-root users, read-only filesystems, seccomp profiles, and network isolation to reduce attack surface"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /securing-docker-containers-best-practices/
 categories: [guides, security]

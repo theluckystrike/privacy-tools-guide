@@ -4,6 +4,7 @@ layout: default
 title: "Privacy Tools With High Contrast Mode For Users With Low"
 description: "A technical comparison of privacy tools with high contrast accessibility features for users with low vision. Includes browser extensions, password"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /privacy-tools-with-high-contrast-mode-for-users-with-low-vis/
 categories: [guides]

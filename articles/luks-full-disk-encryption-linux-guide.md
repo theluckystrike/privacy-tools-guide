@@ -3,6 +3,7 @@ layout: default
 title: "LUKS Full Disk Encryption on Linux"
 description: "How to set up LUKS2 full disk encryption on Linux from scratch, including partitioning, keyfile setup, crypttab configuration, and unlocking at boot"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /luks-full-disk-encryption-linux-guide/
 categories: [guides, security]

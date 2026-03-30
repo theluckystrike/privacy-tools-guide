@@ -3,6 +3,7 @@ layout: default
 title: "How to Verify Software Supply Chain Integrity"
 description: "Verify downloads with checksums and signatures, use cosign for container images, verify GitHub Actions with pinned SHAs, and check SBOM for your builds"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /verify-software-supply-chain-integrity/
 categories: [guides, security]

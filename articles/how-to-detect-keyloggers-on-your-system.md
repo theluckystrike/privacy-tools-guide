@@ -3,6 +3,7 @@ layout: default
 title: "How to Detect Keyloggers on Your System"
 description: "Find software and hardware keyloggers on Windows, Linux, and macOS using process inspection, network analysis, and USB device auditing"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-detect-keyloggers-on-your-system/
 categories: [guides, security]

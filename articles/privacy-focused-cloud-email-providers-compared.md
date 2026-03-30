@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused Cloud Email Providers Compared"
 description: "Compare Proton Mail, Tuta, and Fastmail on encryption model, jurisdiction, metadata handling, and threat model fit for 2026"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-cloud-email-providers-compared/
 categories: [guides]

@@ -3,6 +3,7 @@ layout: default
 title: "Setting Up Fail2ban for Server Protection"
 description: "Install and configure fail2ban to block SSH brute-force attacks, protect Nginx and Apache, set up email alerts, and write custom jails for any service"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /fail2ban-server-protection-setup-guide/
 categories: [guides, security]

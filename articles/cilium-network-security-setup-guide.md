@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Cilium for Network Security"
 description: "Deploy Cilium on Kubernetes for eBPF-based network policy enforcement, transparent encryption, and identity-aware firewall rules between services"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /cilium-network-security-setup-guide/
 categories: [guides, security]

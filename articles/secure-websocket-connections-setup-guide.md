@@ -3,6 +3,7 @@ layout: default
 title: "Secure WebSocket Connections Setup Guide"
 description: "Configure WSS with TLS termination, origin validation, authentication tokens, and rate limiting to protect WebSocket endpoints in production"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /secure-websocket-connections-setup-guide/
 categories: [guides, security]

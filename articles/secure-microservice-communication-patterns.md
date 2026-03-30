@@ -3,6 +3,7 @@ layout: default
 title: "Secure Microservice Communication Patterns"
 description: "Implement mTLS, SPIFFE/SPIRE identity, JWT service-to-service auth, and network policy to prevent lateral movement and unauthorized access between micro..."
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /secure-microservice-communication-patterns/
 categories: [guides, security]

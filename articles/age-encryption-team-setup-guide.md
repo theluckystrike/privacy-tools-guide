@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up age Encryption for Teams"
 description: "Set up age encryption across a team with shared recipients, key management, and automated pipelines for secure file distribution"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /age-encryption-team-setup-guide/
 categories: [guides, security]

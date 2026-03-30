@@ -3,6 +3,7 @@ layout: default
 title: "How to Harden SSH Server Configuration"
 description: "Secure SSH with key-only authentication, Ed25519 keys, port knocking, fail2ban, and system-level lockdown to eliminate brute-force exposure"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-harden-ssh-server-configuration/
 categories: [guides, security]

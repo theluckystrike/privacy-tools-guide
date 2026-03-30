@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up AppArmor Profiles on Ubuntu"
 description: "Create, test, and enforce AppArmor profiles to confine applications on Ubuntu, including custom profiles for web servers, databases, and containers"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /apparmor-profiles-ubuntu-setup-guide/
 categories: [guides, security]

@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused Period Tracker Alternatives"
 description: "The safest period and cycle tracking apps that store data locally, require no account, and won't hand your reproductive health data to law enforcement"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-period-tracker-alternatives/
 categories: [guides]

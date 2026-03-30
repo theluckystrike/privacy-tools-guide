@@ -3,6 +3,7 @@ layout: default
 title: "Secure Container Registry Setup Guide"
 description: "Set up a private container registry with Harbor or registry:2, configure TLS, image scanning, signed image enforcement, and access control policies"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /secure-container-registry-setup-guide/
 categories: [guides, security]

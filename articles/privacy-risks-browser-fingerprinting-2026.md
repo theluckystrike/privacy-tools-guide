@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Risks of Browser Fingerprinting in 2026"
 description: "How canvas, WebGL, font, audio, and sensor fingerprinting identify you across sites without cookies, plus effective countermeasures and browser comparisons"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-risks-browser-fingerprinting-2026/
 categories: [guides]

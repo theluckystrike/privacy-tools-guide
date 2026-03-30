@@ -3,6 +3,7 @@ layout: default
 title: "Suricata Home Network IDS Setup Guide"
 description: "How to set up Suricata as a network intrusion detection system on a Linux home server or router to monitor for malware, data exfiltration, and suspicious"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /suricata-home-network-ids-setup/
 categories: [guides, security]

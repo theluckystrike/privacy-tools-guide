@@ -4,6 +4,7 @@ layout: default
 title: "Android Google Account Privacy Settings: Complete Guide to"
 description: "A practical guide to securing your Android device by controlling Google account privacy settings and limiting data collection in 2026."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /android-google-account-privacy-settings-complete-guide-to-li/
 reviewed: true

@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused Antivirus Software: Performance Impact"
 description: "A technical comparison of privacy-focused antivirus solutions and their system resource usage for developers and power users."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /privacy-focused-antivirus-software-performance-impact-compar/
 reviewed: true

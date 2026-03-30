@@ -3,6 +3,7 @@ layout: default
 title: "How to Secure Your Smart TV Privacy"
 description: "Practical steps to disable ACR tracking, block smart TV telemetry at the network level, and reconfigure Samsung, LG, and Roku TVs for better privacy"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /secure-smart-tv-privacy-guide/
 categories: [guides]

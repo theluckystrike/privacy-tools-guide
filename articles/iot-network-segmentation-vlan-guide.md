@@ -3,6 +3,7 @@ layout: default
 title: "Network Segmentation for IoT Devices"
 description: "Set up VLANs and firewall rules to isolate smart home devices from your main network using OpenWrt, preventing compromised IoT from reaching your computers"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /iot-network-segmentation-vlan-guide/
 categories: [guides, security]

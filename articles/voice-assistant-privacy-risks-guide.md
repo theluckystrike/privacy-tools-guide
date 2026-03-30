@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Risks of Voice Assistants Guide"
 description: "What Amazon Alexa, Google Assistant, and Siri collect, how accidental activations work, and practical steps to reduce voice assistant surveillance"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /voice-assistant-privacy-risks-guide/
 categories: [guides]

@@ -3,6 +3,7 @@ layout: default
 title: "How to Create Encrypted Partitions with dm-crypt"
 description: "Encrypt Linux disk partitions with LUKS and dm-crypt using AES-256 encryption, keyfiles, and automatic unlocking with TPM or USB tokens"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-create-encrypted-partitions-with-dm-crypt/
 categories: [guides, security]

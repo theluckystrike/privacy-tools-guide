@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused Photo Storage Solutions"
 description: "Compare self-hosted and encrypted photo storage options including Immich, Photoprism, and Ente Photos as alternatives to Google Photos and iCloud"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-photo-storage-solutions-guide/
 categories: [guides]

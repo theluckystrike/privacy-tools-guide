@@ -3,6 +3,7 @@ layout: default
 title: "How to Encrypt a USB Drive with VeraCrypt"
 description: "Step-by-step guide to encrypting USB drives with VeraCrypt using hidden volumes, keyfiles, and cross-platform access on Linux, macOS, and Windows"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /encrypt-usb-drive-veracrypt-guide/
 categories: [guides, security]

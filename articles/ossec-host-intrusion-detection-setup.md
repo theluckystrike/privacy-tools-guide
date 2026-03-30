@@ -3,6 +3,7 @@ layout: default
 title: "How to Use OSSEC for Host Intrusion Detection"
 description: "Install OSSEC as a host-based IDS, configure rules for file integrity monitoring, log analysis, and rootcheck, and set up email alerts for security events"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /ossec-host-intrusion-detection-setup/
 categories: [guides, security]

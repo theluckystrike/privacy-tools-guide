@@ -3,6 +3,7 @@ layout: default
 title: "How to Detect Phishing Emails with Headers"
 description: "Read email headers to detect spoofed senders, verify SPF, DKIM, and DMARC results, and identify malicious routing in suspected phishing messages"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /detect-phishing-emails-headers-guide/
 categories: [guides, security]

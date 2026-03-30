@@ -3,6 +3,7 @@ layout: default
 title: "How to Use Zeek for Network Monitoring"
 description: "Deploy Zeek on Linux for deep network traffic analysis, custom detection scripts, protocol logging, and integration with your SIEM or security pipeline"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /zeek-network-monitoring-guide/
 categories: [guides, security]

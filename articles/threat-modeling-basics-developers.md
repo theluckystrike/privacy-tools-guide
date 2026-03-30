@@ -3,6 +3,7 @@ layout: default
 title: "Threat Modeling Basics for Developers"
 description: "Threat modeling is the practice of identifying what could go wrong with a system before it does. Unlike penetration testing (which finds bugs that alrea..."
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /threat-modeling-basics-developers/
 categories: [guides, security]

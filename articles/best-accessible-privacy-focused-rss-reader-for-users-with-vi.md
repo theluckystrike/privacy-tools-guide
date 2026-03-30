@@ -3,6 +3,7 @@ layout: default
 title: "Best Accessible Privacy-Focused RSS Reader for Users with"
 description: "A technical guide to RSS readers that combine screen reader compatibility, privacy-first architecture, and keyboard-driven workflows for blind and"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /best-accessible-privacy-focused-rss-reader-for-users-with-visual-impairments/
 reviewed: true

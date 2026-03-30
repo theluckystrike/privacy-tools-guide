@@ -3,6 +3,7 @@ layout: default
 title: "How to Use GDB for Security Debugging"
 description: "Use GDB to analyze program memory, find buffer overflows, inspect function calls, and understand exploitable conditions in compiled Linux binaries"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /gdb-security-debugging-guide/
 categories: [guides, security]

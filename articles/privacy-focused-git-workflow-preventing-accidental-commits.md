@@ -4,6 +4,7 @@ layout: default
 title: "Privacy-Focused Git Workflow: Preventing Accidental Commits"
 description: "Learn how to configure Git to prevent accidental commits of sensitive data. Includes pre-commit hooks, git-secrets, and best practices for keeping."
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /privacy-focused-git-workflow-preventing-accidental-commits/
 reviewed: true

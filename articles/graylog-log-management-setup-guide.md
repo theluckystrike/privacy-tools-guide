@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Graylog for Log Management"
 description: "Deploy Graylog for centralized log aggregation, configure inputs and streams, build dashboards, and set up alerts for security monitoring"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /graylog-log-management-setup-guide/
 categories: [guides, security]

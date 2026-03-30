@@ -3,6 +3,7 @@ layout: default
 title: "Best Privacy Browser Extensions Ranked by Performance"
 description: "A technical analysis of privacy browser extensions and their impact on page load performance. Rankings and benchmarks for developers and power users."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /best-privacy-browser-extensions-ranked-by-performance-impact/
 categories: [guides, security]

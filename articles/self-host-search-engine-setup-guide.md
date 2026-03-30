@@ -3,6 +3,7 @@ layout: default
 title: "How to Self-Host a Privacy Search Engine"
 description: "Deploy SearXNG or Whoogle as a self-hosted, privacy-respecting meta search engine that strips tracking, removes ads, and keeps your queries private"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /self-host-search-engine-setup-guide/
 categories: [guides]

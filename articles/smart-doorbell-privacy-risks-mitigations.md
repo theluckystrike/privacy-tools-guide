@@ -3,6 +3,7 @@ layout: default
 title: "Smart Doorbell Privacy Risks and Mitigations"
 description: "How smart doorbells leak video, audio, and location data to vendors and law enforcement, and what you can do to protect your household and visitors"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /smart-doorbell-privacy-risks-mitigations/
 categories: [guides]

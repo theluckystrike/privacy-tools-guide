@@ -3,6 +3,7 @@ layout: default
 title: "Secure Kubernetes Secrets Management Guide"
 description: "Manage Kubernetes secrets safely with encrypted etcd, Sealed Secrets, External Secrets Operator, and Vault integration to prevent secret sprawl and leaks"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /kubernetes-secrets-management-guide/
 categories: [guides, security]

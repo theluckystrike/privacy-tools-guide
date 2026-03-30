@@ -4,6 +4,7 @@ layout: default
 title: "Privacy Focused Browser That Works Well With Screen"
 description: "A technical guide for developers and power users choosing privacy-focused browsers compatible with screen magnification software in 2026, with"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /privacy-focused-browser-that-works-well-with-screen-magnific/
 categories: [guides, security]

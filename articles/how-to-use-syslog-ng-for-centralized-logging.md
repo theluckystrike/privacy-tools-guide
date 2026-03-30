@@ -3,6 +3,7 @@ layout: default
 title: "How to Use syslog-ng for Centralized Logging"
 description: "Set up syslog-ng to collect logs from multiple servers over TLS-encrypted connections with filtering, parsing, and structured output"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-use-syslog-ng-for-centralized-logging/
 categories: [guides, security]

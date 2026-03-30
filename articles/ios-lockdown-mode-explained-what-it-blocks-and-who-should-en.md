@@ -3,6 +3,7 @@ layout: default
 title: "iOS Lockdown Mode Explained"
 description: "Apple Lockdown Mode blocks message attachments, web APIs, and USB connections. Who needs it, what breaks, and how to enable it on iOS."
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /ios-lockdown-mode-explained-what-it-blocks-and-who-should-en/
 categories: [security, guides]

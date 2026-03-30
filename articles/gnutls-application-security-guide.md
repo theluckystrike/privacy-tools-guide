@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up GnuTLS for Application Security"
 description: "Integrate GnuTLS into C and Python applications to add TLS 1.3, certificate pinning, mutual TLS, and secure cipher configuration to your network code"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /gnutls-application-security-guide/
 categories: [guides, security]

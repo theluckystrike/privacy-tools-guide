@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up ntopng for Network Analytics"
 description: "Install and configure ntopng to monitor real-time network traffic, detect anomalies, and identify privacy-leaking hosts on your network"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /ntopng-network-analytics-setup-guide/
 categories: [guides, security]

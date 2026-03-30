@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused DNS over QUIC Setup"
 description: "Configure DNS over QUIC (DoQ) on Linux, Android, and routers for faster encrypted DNS with lower latency than DoT and stronger privacy than plain DNS"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /dns-over-quic-setup-guide/
 categories: [guides]

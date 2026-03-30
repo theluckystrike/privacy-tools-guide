@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused Weather App Alternatives"
 description: "Replace data-hungry weather apps with open-source and privacy-respecting alternatives that don't sell your location to brokers"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-weather-app-alternatives/
 categories: [guides]

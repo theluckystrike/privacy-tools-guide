@@ -2,6 +2,7 @@
 layout: default
 title: "Privacy Risks of Fitness Trackers and Health Data 2026"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 reviewed: true
 score: 9

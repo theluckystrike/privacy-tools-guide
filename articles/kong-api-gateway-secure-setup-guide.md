@@ -3,6 +3,7 @@ layout: default
 title: "Secure API Gateway Setup with Kong"
 description: "Deploy Kong API Gateway with rate limiting, JWT auth, IP restriction, and TLS termination to protect backend services from abuse and unauthorized access"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /kong-api-gateway-secure-setup-guide/
 categories: [guides, security]

@@ -3,6 +3,7 @@ layout: default
 title: "Secure API Key Management for Developers"
 description: "Manage API keys safely with environment injection, secret managers, rotation automation, and detection of accidentally committed credentials"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /secure-api-key-management-developers/
 categories: [guides, security]

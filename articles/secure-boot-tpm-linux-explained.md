@@ -3,6 +3,7 @@ layout: default
 title: "Secure Boot and TPM Explained for Linux"
 description: "How Secure Boot and TPM 2.0 work on Linux, what threats they address, how to enroll custom keys, and how to use TPM for disk unlock"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /secure-boot-tpm-linux-explained/
 categories: [guides, security]

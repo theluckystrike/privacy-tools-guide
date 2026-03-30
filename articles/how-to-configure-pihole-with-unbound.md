@@ -3,6 +3,7 @@ layout: default
 title: "How to Configure Pi-hole with Unbound DNS"
 description: "Set up Pi-hole with a local Unbound recursive resolver to block ads and trackers while eliminating reliance on upstream DNS providers"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-configure-pihole-with-unbound-dns/
 categories: [guides]

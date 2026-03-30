@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Caddy with Automatic HTTPS"
 description: "Deploy Caddy web server with automatic TLS certificate provisioning, reverse proxying, and security headers for self-hosted services"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-set-up-caddy-with-automatic-https/
 categories: [guides, security]

@@ -3,6 +3,7 @@ layout: default
 title: "How to Secure PostgreSQL for Production"
 description: "Harden a PostgreSQL server with network restrictions, role-based access, SSL enforcement, audit logging, and encrypted backups for production deployments"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /secure-postgresql-production-guide/
 categories: [guides, security]

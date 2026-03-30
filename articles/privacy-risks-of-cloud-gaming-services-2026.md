@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Risks of Cloud Gaming Services in 2026"
 description: "Analyze privacy risks of GeForce NOW, Xbox Cloud, PlayStation Plus Premium. What data these services collect: input logging, usage analytics, IP tracking."
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /privacy-risks-of-cloud-gaming-services-2026/
 categories: [guides]

@@ -3,6 +3,7 @@ layout: default
 title: "Setting Up Vault for Secrets Management"
 description: "Deploy HashiCorp Vault, configure secret engines, enable dynamic credentials, set up policies, and integrate Vault with Kubernetes and CI/CD pipelines"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /hashicorp-vault-secrets-management-setup/
 categories: [guides, security]

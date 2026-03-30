@@ -3,6 +3,7 @@ layout: default
 title: "Encrypted Messaging for Journalists Guide"
 description: "Signal, Briar, and SecureDrop configured for journalist-source communication. Metadata protection, device hygiene, and air-gap setup covered."
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /encrypted-messaging-for-journalists-guide/
 categories: [guides]

@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused Fitness Tracker Alternatives"
 description: "Replace Fitbit and Garmin Connect with open-source fitness tracking that stores health data on your own device or self-hosted server"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-fitness-tracker-alternatives/
 categories: [guides]

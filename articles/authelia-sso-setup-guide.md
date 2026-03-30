@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Authelia for SSO"
 description: "Deploy Authelia as a self-hosted SSO and two-factor authentication gateway for your internal services using Docker, Traefik, and LDAP or a flat user file"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /authelia-sso-setup-guide/
 categories: [guides, security]

@@ -3,6 +3,7 @@ layout: default
 title: "How to Use BorgBackup for Encrypted Backups"
 description: "Set up BorgBackup with AES-256 encryption, deduplication, and automated offsite backup to a remote SSH server or cloud storage"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-use-borgbackup-for-encrypted-backups/
 categories: [guides, security]

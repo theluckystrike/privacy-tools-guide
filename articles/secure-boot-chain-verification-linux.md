@@ -3,6 +3,7 @@ layout: default
 title: "Secure Boot Chain Verification on Linux"
 description: "Verify the integrity of your Linux boot chain from UEFI firmware through bootloader and kernel using Measured Boot, TPM PCRs, and attestation"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /secure-boot-chain-verification-linux/
 categories: [guides, security]

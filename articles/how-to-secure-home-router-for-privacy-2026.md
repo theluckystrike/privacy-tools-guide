@@ -3,6 +3,7 @@ layout: default
 title: "How to Secure Your Home Router for Privacy in 2026"
 description: "Harden home router security and privacy: firmware updates, custom DNS settings, guest networks, VPN at router level, and OpenWrt setup guide for maximum"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /how-to-secure-home-router-for-privacy-2026/
 categories: [guides]

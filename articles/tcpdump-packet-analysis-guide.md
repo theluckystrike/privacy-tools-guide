@@ -3,6 +3,7 @@ layout: default
 title: "How to Use tcpdump for Packet Analysis"
 description: "Master tcpdump for capturing and analyzing network traffic: filter syntax, output formats, capture strategies, and practical security investigation exam..."
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /tcpdump-packet-analysis-guide/
 categories: [guides, security]

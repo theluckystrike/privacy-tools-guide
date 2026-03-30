@@ -3,6 +3,7 @@ layout: default
 title: "Optimize CalyxOS Battery Life with Privacy Features Enabled"
 description: "Learn how to optimize CalyxOS battery life while maintaining strong privacy features. Practical techniques for developers and power users to extend"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /how-to-optimize-calyx-os-battery-life-with-privacy-features-/
 categories: [guides]

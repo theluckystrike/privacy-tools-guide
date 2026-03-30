@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Authentik for Identity Management"
 description: "Deploy Authentik as a self-hosted SSO and identity provider with OIDC, SAML, and LDAP for authenticating your self-hosted services"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-set-up-authentik-for-identity-management/
 categories: [guides, security]

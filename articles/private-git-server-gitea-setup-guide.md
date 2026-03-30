@@ -3,6 +3,7 @@ layout: default
 title: "Self-Hosted Private Git Server with Gitea"
 description: "Set up a private Gitea git server on a VPS or home server with HTTPS, SSH key auth, and access controls to keep your code off GitHub and GitLab's servers"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /private-git-server-gitea-setup-guide/
 categories: [guides, security]

@@ -3,6 +3,7 @@ layout: default
 title: "How to Configure iptables Rules from Scratch"
 description: "Build a complete iptables firewall from zero: understand chains, write stateful rules, block unwanted traffic, and persist your config across reboots"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /iptables-rules-from-scratch-guide/
 categories: [guides, security]

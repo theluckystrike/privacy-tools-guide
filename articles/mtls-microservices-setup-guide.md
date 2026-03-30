@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up mTLS for Microservices"
 description: "Configure mutual TLS authentication between microservices using a private CA, cert-manager, and Envoy or nginx to prevent unauthorized service-to-servic..."
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /mtls-microservices-setup-guide/
 categories: [guides, security]

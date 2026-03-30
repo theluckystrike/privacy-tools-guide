@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up OpenSCAP for Compliance Scanning"
 description: "Run CIS and STIG compliance scans on Linux with OpenSCAP, fix failed checks automatically with remediation scripts, and generate HTML audit reports"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /openscap-compliance-scanning-setup-guide/
 categories: [guides, security]

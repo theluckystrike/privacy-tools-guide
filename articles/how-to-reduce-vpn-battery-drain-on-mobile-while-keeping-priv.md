@@ -4,6 +4,7 @@ layout: default
 title: "How to Reduce VPN Battery Drain on Mobile While Keeping"
 description: "A technical guide for developers and power users to minimize VPN battery consumption without sacrificing privacy or security."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /how-to-reduce-vpn-battery-drain-on-mobile-while-keeping-priv/
 reviewed: true

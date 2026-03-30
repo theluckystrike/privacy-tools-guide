@@ -3,6 +3,7 @@ layout: default
 title: "How to Audit npm Packages for Security"
 description: "Run npm audit, use Socket and Snyk for deeper dependency analysis, detect malicious packages, and set up automated vulnerability scanning in CI"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /audit-npm-packages-security-guide/
 categories: [guides, security]

@@ -3,6 +3,7 @@ layout: default
 title: "How to Use Tripwire for File Integrity Monitoring"
 description: "Install Open Source Tripwire, build a baseline database, run integrity checks, interpret reports, and configure email alerts for unauthorized file changes"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /tripwire-file-integrity-monitoring-guide/
 categories: [guides, security]

@@ -3,6 +3,7 @@ layout: default
 title: "Secure MQTT Broker Setup for IoT"
 description: "Deploy a hardened Mosquitto MQTT broker with TLS, client certificate auth, and ACLs to keep your IoT network private and tamper-resistant"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /secure-mqtt-broker-setup-iot/
 categories: [guides, security]

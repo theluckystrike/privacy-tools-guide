@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused Web Browser Comparison 2026"
 description: "Head-to-head comparison of Firefox, Brave, LibreWolf, Mullvad Browser, and Tor Browser across fingerprinting, telemetry, defaults, and real-world privacy"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /privacy-browser-comparison-2026/
 categories: [guides]

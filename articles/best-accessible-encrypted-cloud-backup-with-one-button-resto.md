@@ -3,6 +3,7 @@ layout: default
 title: "Best Accessible Encrypted Cloud Backup With One Button"
 description: "Encrypted cloud backups with one-click restore tested for accessibility. Screen reader support, keyboard navigation, and encryption strength compared."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /best-accessible-encrypted-cloud-backup-with-one-button-resto/
 categories: [guides]

@@ -3,6 +3,7 @@ layout: default
 title: "Self-Hosted Private Video Calling Setup Guide"
 description: "Set up Jitsi Meet, Matrix Element, and Galene as self-hosted video calling alternatives to Zoom and Google Meet, with E2EE and no third-party data colle..."
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /private-video-calling-selfhosted-guide/
 categories: [guides]

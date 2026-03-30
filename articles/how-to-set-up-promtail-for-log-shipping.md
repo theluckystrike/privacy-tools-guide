@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Promtail for Log Shipping"
 description: "Configure Promtail to collect, label, and ship logs from systemd, files, and syslog to Grafana Loki with pipeline transformations"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-set-up-promtail-for-log-shipping/
 categories: [guides, security]

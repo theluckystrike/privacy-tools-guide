@@ -3,6 +3,7 @@ layout: default
 title: "How to Remove Metadata from PDF Files"
 description: "Strip author names, creation timestamps, GPS coordinates, and hidden document data from PDF files before sharing them"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-remove-metadata-from-pdf-files/
 categories: [guides]

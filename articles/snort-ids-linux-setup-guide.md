@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Snort IDS on Linux"
 description: "Step-by-step guide to installing and configuring Snort intrusion detection on Linux with custom rules, logging, and real-time alerts"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /snort-ids-linux-setup-guide/
 categories: [guides, security]

@@ -3,6 +3,7 @@ layout: default
 title: "Open Source Containerized Privacy Toolkit: All Essential"
 description: "Build a complete privacy-focused self-hosted toolkit using Docker containers. Essential tools for password management, file sync, VPN, and more."
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /open-source-containerized-privacy-toolkit-all-essential-self/
 categories: [guides]

@@ -3,6 +3,7 @@ layout: default
 title: "Secure File Sharing with OnionShare"
 description: "Use OnionShare to share files, host anonymous websites, and receive documents over Tor without exposing sender or recipient identities or IP addresses"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /onionshare-secure-file-sharing-guide/
 categories: [guides]

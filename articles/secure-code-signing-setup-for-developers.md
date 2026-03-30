@@ -3,6 +3,7 @@ layout: default
 title: "Secure Code Signing Setup for Developers"
 description: "Set up GPG commit signing, sigstore for containers, and reproducible build verification to prove code authenticity in your supply chain"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /secure-code-signing-setup-for-developers/
 categories: [guides, security]

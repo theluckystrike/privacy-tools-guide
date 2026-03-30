@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused DNS Filtering with AdGuard Home"
 description: "Install AdGuard Home on your server or Raspberry Pi, configure blocklists, DNS-over-HTTPS, and per-client rules for network-wide ad and tracker blocking"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /adguard-home-dns-filtering-setup/
 categories: [guides]

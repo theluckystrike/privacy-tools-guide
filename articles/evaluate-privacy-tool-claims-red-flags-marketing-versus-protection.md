@@ -4,6 +4,7 @@ layout: default
 title: "How to Evaluate Privacy Tool Claims"
 description: "Learn how to critically evaluate privacy tool marketing claims and identify red flags that indicate gap between promises and actual protection."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /evaluate-privacy-tool-claims-red-flags-marketing-versus-protection/
 categories: [guides]

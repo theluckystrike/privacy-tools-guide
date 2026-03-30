@@ -3,6 +3,7 @@ layout: default
 title: "How to Detect ARP Spoofing Attacks"
 description: "Detect and block ARP spoofing and man-in-the-middle attacks on Linux using arpwatch, XDP filtering, static ARP entries, and dynamic ARP inspection"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /detect-arp-spoofing-attacks-guide/
 categories: [guides, security]

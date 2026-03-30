@@ -3,6 +3,7 @@ layout: default
 title: "How to Use Lynis for Linux Security Auditing"
 description: "Run Lynis security audits on Linux servers, interpret hardening index scores, fix common findings, and automate recurring scans in CI or cron"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /lynis-linux-security-audit-guide/
 categories: [guides, security]

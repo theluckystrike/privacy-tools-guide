@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Risks of Smart Speakers Explained"
 description: "Understand how Amazon Echo and Google Home record audio, what data is retained, and how to minimize exposure or replace them entirely"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-risks-of-smart-speakers-explained/
 categories: [guides]

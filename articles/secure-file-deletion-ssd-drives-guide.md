@@ -3,6 +3,7 @@ layout: default
 title: "Secure File Deletion on SSD Drives"
 description: "Why standard deletion and even shred fail on SSDs, and how to actually erase sensitive data using ATA Secure Erase, encryption, and OS-level tools"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /secure-file-deletion-ssd-drives-guide/
 categories: [guides, security]

@@ -4,6 +4,7 @@ title: "Privacy Risks of Connected Cars & Telematics 2026: What"
 description: "What Tesla, GM, Toyota collect via telematics. How OnStar works, disabling tracking, insurance data sharing risks, and federal privacy regulations."
 author: "Privacy Tools Guide"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 reviewed: true
 score: 9
 voice-checked: true

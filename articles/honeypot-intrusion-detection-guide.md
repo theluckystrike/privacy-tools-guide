@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up a Honeypot for Intrusion Detection"
 description: "Deploy low-interaction honeypots with Cowrie SSH, OpenCanary, and HoneyDB to detect attackers on your network before they reach real systems"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /honeypot-intrusion-detection-guide/
 categories: [guides, security]

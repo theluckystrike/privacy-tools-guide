@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused VPN Protocol Comparison 2026"
 description: "Compare WireGuard, OpenVPN, Shadowsocks, and VLESS on privacy properties, traffic fingerprinting resistance, censorship evasion, and auditability"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-vpn-protocol-comparison/
 categories: [guides]

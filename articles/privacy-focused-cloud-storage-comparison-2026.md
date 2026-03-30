@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused Cloud Storage Comparison 2026"
 description: "Compare Proton Drive, Filen, Tresorit, Internxt, and self-hosted Nextcloud on zero-knowledge encryption, jurisdiction, audit status, and threat model fit"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-cloud-storage-comparison-2026/
 categories: [guides]

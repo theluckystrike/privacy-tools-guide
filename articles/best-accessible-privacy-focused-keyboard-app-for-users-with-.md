@@ -3,6 +3,7 @@ layout: default
 title: "Best Accessible Privacy-Focused Keyboard App for Users with"
 description: "Privacy-respecting keyboard apps tested for motor accessibility. Key size, dwell timing, switch access, and offline prediction compared."
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /best-accessible-privacy-focused-keyboard-app-for-users-with-/
 reviewed: true

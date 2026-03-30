@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused Calendar and Contacts Sync"
 description: "How to sync calendars and contacts without Google or Apple using Nextcloud, Radicale, and DAVx5 on Android and Linux desktop clients"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-calendar-contacts-sync-guide/
 categories: [guides]

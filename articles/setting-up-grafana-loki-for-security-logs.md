@@ -3,6 +3,7 @@ layout: default
 title: "Setting Up Grafana Loki for Security Logs"
 description: "Deploy Grafana Loki to aggregate, query, and alert on security logs from multiple servers using Promtail and LogQL threat detection"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /setting-up-grafana-loki-for-security-logs/
 categories: [guides, security]

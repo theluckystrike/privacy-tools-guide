@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up a VPN on Your Router"
 description: "Configure WireGuard or OpenVPN on your router with OpenWrt or DD-WRT to protect every device on your network without per-device clients"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /vpn-on-router-setup-guide/
 categories: [guides]

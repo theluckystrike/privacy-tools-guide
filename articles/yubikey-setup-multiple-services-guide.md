@@ -3,6 +3,7 @@ layout: default
 title: "YubiKey Setup for Multiple Services Guide"
 description: "How to configure a single YubiKey for SSH authentication, GPG signing, TOTP codes, passkeys, and password manager 2FA. step-by-step for YubiKey 5 series"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /yubikey-setup-multiple-services-guide/
 categories: [guides, security]

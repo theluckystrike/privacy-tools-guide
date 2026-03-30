@@ -3,6 +3,7 @@ layout: default
 title: "How to Use Whonix for Anonymous Browsing"
 description: "Set up Whonix Gateway and Workstation on VirtualBox or KVM, configure Tor routing for all traffic, and use Whonix safely for anonymous internet access"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /whonix-anonymous-browsing-setup-guide/
 categories: [guides]

@@ -3,6 +3,7 @@ layout: default
 title: "How to Audit Chrome Extensions for Privacy"
 description: "Step-by-step guide to reviewing Chrome extension permissions, network requests, and source code to identify extensions that spy on your browsing activity"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /audit-chrome-extensions-privacy-guide/
 categories: [guides]

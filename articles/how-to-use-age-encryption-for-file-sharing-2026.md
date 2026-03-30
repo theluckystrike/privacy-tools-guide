@@ -3,6 +3,7 @@ layout: default
 title: "How to Use Age Encryption for File Sharing 2026"
 description: "age (Actually Good Encryption) tool guide. CLI examples, integration with other tools, comparison to GPG, key management."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: Privacy Tools Guide
 permalink: /how-to-use-age-encryption-for-file-sharing-2026/
 categories: [guides]

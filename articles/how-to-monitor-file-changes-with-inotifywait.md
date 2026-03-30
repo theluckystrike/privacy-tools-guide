@@ -3,6 +3,7 @@ layout: default
 title: "How to Monitor File Changes with inotifywait"
 description: "Use inotifywait to watch directories for unauthorized changes, trigger alerts on suspicious file writes, and build automated security responses"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-monitor-file-changes-with-inotifywait/
 categories: [guides, security]

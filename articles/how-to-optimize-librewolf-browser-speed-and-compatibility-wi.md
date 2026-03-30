@@ -3,6 +3,7 @@ layout: default
 title: "How to Optimize LibreWolf Browser Speed and Compatibility"
 description: "Advanced configuration guide for maximizing LibreWolf performance while maintaining website compatibility. Includes about:config tweaks, content blocking"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /how-to-optimize-librewolf-browser-speed-and-compatibility-wi/
 categories: [guides]

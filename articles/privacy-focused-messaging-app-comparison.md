@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused Instant Messaging Comparison 2026"
 description: "Compare Signal, SimpleX, Briar, Element, and Session on metadata protection, forward secrecy, federation risk, and censorship resistance for high-threat..."
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-messaging-app-comparison/
 categories: [guides]

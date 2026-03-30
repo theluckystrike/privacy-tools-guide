@@ -4,6 +4,7 @@ title: "Privacy Risks of Fitness Apps and Health Data Sharing in"
 description: "What Strava, Peloton, Apple Health, and fitness apps share. HIPAA gaps, data broker risks, and actionable privacy steps."
 author: Privacy Tools Guide
 date: 2026-03-22
+last_modified_at: 2026-03-22
 reviewed: true
 score: 9
 voice-checked: true

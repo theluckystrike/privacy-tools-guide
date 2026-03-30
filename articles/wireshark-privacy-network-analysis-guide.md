@@ -3,6 +3,7 @@ layout: default
 title: "Wireshark Basics for Privacy Network Analysis"
 description: "How to use Wireshark to inspect network traffic from your own devices, identify unexpected connections, detect trackers, and verify encryption is working"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /wireshark-privacy-network-analysis-guide/
 categories: [guides, security]

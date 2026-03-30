@@ -3,6 +3,7 @@ layout: default
 title: "How to Monitor the Dark Web for Data Breaches"
 description: "Monitor breach dumps with Have I Been Pwned API, DeHashed, and self-hosted tools. Detect leaked emails, passwords, and personal data early."
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /dark-web-breach-monitoring-guide/
 categories: [guides, security]

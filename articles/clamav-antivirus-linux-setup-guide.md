@@ -3,6 +3,7 @@ layout: default
 title: "Setting Up ClamAV Antivirus on Linux"
 description: "Install and configure ClamAV on Linux with automated signature updates, on-access scanning via clamonacc, email scanning, and scheduled scan reports"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /clamav-antivirus-linux-setup-guide/
 categories: [guides, security]

@@ -3,6 +3,7 @@ layout: default
 title: "How to Audit Docker Images for Vulnerabilities"
 description: "Scan Docker images for CVEs using Trivy, Grype, and Docker Scout, then integrate scanning into CI/CD pipelines to block vulnerable deployments"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-audit-docker-images-for-vulnerabilities/
 categories: [guides, security]

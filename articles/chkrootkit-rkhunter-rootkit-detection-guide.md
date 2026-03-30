@@ -3,6 +3,7 @@ layout: default
 title: "How to Use chkrootkit and rkhunter"
 description: "Run chkrootkit and rkhunter to scan Linux systems for rootkits, backdoors, and suspicious files, interpret results, and eliminate false positives"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /chkrootkit-rkhunter-rootkit-detection-guide/
 categories: [guides, security]

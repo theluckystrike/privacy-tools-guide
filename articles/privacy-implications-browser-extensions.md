@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Implications of Browser Extensions"
 description: "What browser extensions can technically access, how extension stores get compromised, what malicious extensions actually collect, and how to assess the"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /privacy-implications-browser-extensions/
 categories: [guides]

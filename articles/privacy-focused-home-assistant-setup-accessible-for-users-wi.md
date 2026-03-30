@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused Home Assistant Setup Accessible for Users"
 description: "Set up Home Assistant with local-only control and accessibility features for users with mobility limitations. Voice control and switch access included."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /privacy-focused-home-assistant-setup-accessible-for-users-wi/
 categories: [guides]

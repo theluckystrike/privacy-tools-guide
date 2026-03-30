@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused DNS Resolver Comparison 2026"
 description: "Compare Mullvad DNS, Quad9, NextDNS, Cloudflare 1.1.1.1, and Control D on privacy policies, logging, jurisdiction, protocol support, and performance"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-dns-resolver-comparison-2026/
 categories: [guides]

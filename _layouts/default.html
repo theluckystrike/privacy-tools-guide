@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>{% if page.url == "/" %}{{ site.title }} — {{ site.tagline }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}</title></title>
+  <title>{% if page.url == "/" %}{{ site.title }} — {{ site.tagline }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   {% seo %}
@@ -48,24 +48,23 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "{{ page.title | escape }}",
-    "description": "{{ page.description | escape }}",
+    "headline": {{ page.title | jsonify }},
+    "description": {{ page.description | default: page.title | jsonify }},
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
     "author": {
-      "@type": "Organization",
-                  "name": "Secure Tools Guide",
-      "url": "https://securetoolsguide.com/about/"
+      "@type": "Person",
+      "name": {{ page.author | default: site.author.name | default: "theluckystrike" | jsonify }}
     },
     "publisher": {
       "@type": "Organization",
-                  "name": "Secure Tools Guide",
+      "name": {{ site.title | jsonify }},
       "url": "https://securetoolsguide.com/",
       "logo": {
         "@type": "ImageObject",
         "url": "https://securetoolsguide.com/assets/og-default.svg"
       }
     },
-    "datePublished": "{{ page.date | date_to_xmlschema }}",
-    "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "{{ page.url | absolute_url }}"
@@ -141,7 +140,7 @@
 </head>
 <body>
   <nav>
-          <a href="/" style="font-weight:700; color:#1d1d1f; font-size:1rem;">Secure Tools Guide</a>a>
+      <a href="/" style="font-weight:700; color:#1d1d1f; font-size:1rem;">Secure Tools Guide</a>
     <a href="/about/">About</a>
     <a href="/topics/vpn-guides/">VPNs</a>
     <a href="/topics/password-managers/">Passwords</a>
@@ -162,7 +161,7 @@
   </main>
   <footer>
     <p><a href="https://chrometipsguide.com">Chrome Tips</a> · <a href="https://bestchromeextensions.com">Extensions</a> · <a href="https://bestremotetools.com">AI Tools</a> · <a href="https://welikeremotestack.com">Remote Work</a> · <a href="https://claudecodeguides.com">Claude Code</a></p>
-          <p>&copy; 2026 Secure Tools Guide · <a href="/about/">About</a>a></p></p>
+      <p>&copy; 2026 Secure Tools Guide · <a href="/about/">About</a></p>
   </footer>
   {% if page.date %}
   <script>

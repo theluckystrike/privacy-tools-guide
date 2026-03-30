@@ -3,6 +3,7 @@ layout: default
 title: "Secure Elasticsearch Deployment Guide"
 description: "Harden Elasticsearch with TLS, X-Pack security, role-based access control, and network isolation to prevent data exposure in production"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /secure-elasticsearch-deployment-guide/
 categories: [guides, security]

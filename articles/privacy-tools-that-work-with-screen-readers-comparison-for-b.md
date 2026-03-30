@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Tools That Work with Screen Readers: Comparison for"
 description: "A practical comparison of privacy tools with full accessibility support for blind users. Covers password managers, browsers, messaging apps, and"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /privacy-tools-that-work-with-screen-readers-comparison-for-b/
 categories: [guides]

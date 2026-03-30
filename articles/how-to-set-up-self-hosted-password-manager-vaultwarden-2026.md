@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Self-Hosted Password Manager Vaultwarden 2026"
 description: "Set up Vaultwarden, a free open-source password manager compatible with Bitwarden clients. Covers Docker deployment, reverse proxy, backups, and HTTPS."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-self-hosted-password-manager-vaultwarden-2026/
 tags: [privacy-tools-guide]

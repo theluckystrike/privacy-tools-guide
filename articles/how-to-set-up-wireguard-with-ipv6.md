@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up WireGuard with IPv6"
 description: "Configure WireGuard VPN with dual-stack IPv4 and IPv6 tunnels, routing all client traffic through a VPS with full leak prevention"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-set-up-wireguard-with-ipv6/
 categories: [guides, security]

@@ -3,6 +3,7 @@ layout: default
 title: "How to Block Web Trackers Without Extensions"
 description: "Use DNS-level blocking, browser settings, and system-wide hosts files to stop web trackers without installing browser extensions or ad blockers"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /block-web-trackers-without-extensions/
 categories: [guides]

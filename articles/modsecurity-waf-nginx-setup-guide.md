@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up ModSecurity WAF with Nginx"
 description: "Install ModSecurity 3 with the OWASP Core Rule Set on Nginx to block SQLi, XSS, LFI, and RCE attacks with tuning steps to eliminate false positives"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /modsecurity-waf-nginx-setup-guide/
 categories: [guides, security]

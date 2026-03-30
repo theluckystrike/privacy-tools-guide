@@ -3,6 +3,7 @@ layout: default
 title: "Secure Environment Variable Management"
 description: "Stop leaking secrets in environment variables by using encrypted secret stores, runtime injection, and audit patterns for Docker, Kubernetes, and CI/CD"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /secure-environment-variable-management-guide/
 categories: [guides, security]

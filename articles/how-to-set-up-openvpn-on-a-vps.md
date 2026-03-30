@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up OpenVPN on a VPS"
 description: "Deploy a personal OpenVPN server on a VPS with certificate-based authentication, TLS hardening, and split tunneling configuration"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-set-up-openvpn-on-a-vps/
 categories: [guides, security]

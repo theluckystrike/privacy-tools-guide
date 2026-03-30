@@ -4,6 +4,7 @@ layout: default
 title: "Privacy Tools With Text to Speech Readout of Settings for"
 description: "Password managers, VPNs, and browsers with text-to-speech readout of settings. Accessibility features tested for blind and low-vision users."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /privacy-tools-with-text-to-speech-readout-of-settings-for-bl/
 reviewed: true

@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up CrowdSec for Server Security"
 description: "Install and configure CrowdSec on Linux to block brute-force, bad bots, and CVE scanners using collaborative threat intelligence and real-time bouncers"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /crowdsec-server-security-setup-guide/
 categories: [guides, security]

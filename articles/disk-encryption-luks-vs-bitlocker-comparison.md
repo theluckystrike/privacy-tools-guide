@@ -3,6 +3,7 @@ layout: default
 title: "Disk Encryption Comparison - LUKS vs BitLocker"
 description: "Compare LUKS and BitLocker for full disk encryption: security model, key management, TPM integration, recovery options, and performance benchmarks"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /disk-encryption-luks-vs-bitlocker-comparison/
 categories: [guides, security]

@@ -3,6 +3,7 @@ layout: default
 title: "Secure gRPC Communication Setup Guide"
 description: "Configure gRPC with mutual TLS, server reflection controls, authentication interceptors, and rate limiting to harden service-to-service communication"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /secure-grpc-communication-setup-guide/
 categories: [guides, security]

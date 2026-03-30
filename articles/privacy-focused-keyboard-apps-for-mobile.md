@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused Keyboard Apps for Mobile"
 description: "Replace Gboard and SwiftKey with keyboard apps that process typing locally, block network access, and never send keystrokes to the cloud"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-keyboard-apps-for-mobile/
 categories: [guides]

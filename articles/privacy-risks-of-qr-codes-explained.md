@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Risks of QR Codes Explained"
 description: "Understand how QR codes enable tracking, phishing, and identity exposure. and how to scan them safely without revealing your device or location"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-risks-of-qr-codes-explained/
 categories: [guides]

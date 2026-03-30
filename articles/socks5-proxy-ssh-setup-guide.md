@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up a SOCKS5 Proxy with SSH"
 description: "Create a SOCKS5 proxy over SSH for traffic routing, application-level proxying, and browser isolation without installing extra VPN software"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /socks5-proxy-ssh-setup-guide/
 categories: [guides]

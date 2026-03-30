@@ -3,6 +3,7 @@ layout: default
 title: "How to Use radare2 for Binary Analysis"
 description: "Learn radare2 commands for disassembly, function analysis, patching, scripting, and identifying security vulnerabilities in compiled binaries"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /radare2-binary-analysis-guide/
 categories: [guides, security]

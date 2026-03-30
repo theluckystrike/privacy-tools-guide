@@ -3,6 +3,7 @@ layout: default
 title: "OpenWrt VPN Router Setup with WireGuard"
 description: "How to configure OpenWrt as a WireGuard VPN router so that all devices on your home network route through the VPN without per-device configuration"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /openwrt-vpn-router-wireguard-setup/
 categories: [guides, security]

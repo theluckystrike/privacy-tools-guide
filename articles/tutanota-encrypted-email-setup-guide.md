@@ -3,6 +3,7 @@ layout: default
 title: "Setting Up Encrypted Email with Tutanota"
 description: "Set up Tutanota encrypted email: custom domains, desktop client configuration, and external tool integration for end-to-end encrypted messaging."
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /tutanota-encrypted-email-setup-guide/
 categories: [guides]

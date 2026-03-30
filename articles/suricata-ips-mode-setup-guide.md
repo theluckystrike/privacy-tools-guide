@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Suricata in IPS Mode"
 description: "Configure Suricata as an inline IPS using NFQUEUE on Linux to actively drop malicious traffic with ET Pro rules, custom signatures, and fail-open handling"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /suricata-ips-mode-setup-guide/
 categories: [guides, security]

@@ -3,6 +3,7 @@ layout: default
 title: "Secure JWT Implementation Best Practices"
 description: "Avoid the most dangerous JWT vulnerabilities including algorithm confusion, weak secrets, and missing validation with practical code examples in Python ..."
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /secure-jwt-implementation-best-practices/
 categories: [guides, security]

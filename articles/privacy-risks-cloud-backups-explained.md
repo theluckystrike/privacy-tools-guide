@@ -3,6 +3,7 @@ layout: default
 title: "Privacy Risks of Cloud Backups Explained"
 description: "What cloud backup providers can access: encryption models, metadata exposure, jurisdiction risks, and how to backup without trusting the host."
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-risks-cloud-backups-explained/
 categories: [guides]

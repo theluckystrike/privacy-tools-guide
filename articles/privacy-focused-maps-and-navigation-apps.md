@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused Maps and Navigation Apps"
 description: "Replace Google Maps with open-source navigation apps that store no location history, work offline, and don't profile your movements"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-maps-and-navigation-apps/
 categories: [guides]

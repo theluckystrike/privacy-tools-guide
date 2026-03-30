@@ -3,6 +3,7 @@ layout: default
 title: "Privacy-Focused Pregnancy and Health Apps"
 description: "Compare the safest pregnancy and maternal health apps that keep your data local, avoid selling to insurers, and don't require cloud accounts"
 date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-pregnancy-health-apps/
 categories: [guides]

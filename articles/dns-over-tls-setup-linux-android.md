@@ -3,6 +3,7 @@ layout: default
 title: "DNS over TLS Setup on Linux"
 description: "Configure DNS over TLS (DoT) on Linux with systemd-resolved and on Android's Private DNS feature to encrypt DNS queries and prevent ISP snooping"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /dns-over-tls-setup-linux-android/
 categories: [guides]
