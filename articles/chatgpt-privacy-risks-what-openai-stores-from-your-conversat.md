@@ -246,7 +246,7 @@ Alternative Language Models and Privacy
 
 Several alternatives to ChatGPT offer better privacy characteristics:
 
-Claude (via API) - Anthropic explicitly states they don't train on API inputs by default. This makes Claude a better choice for sensitive work. Pricing is competitive with OpenAI ($0.003 per 1K input tokens, $0.015 per 1K output tokens).
+Claude (via API) - Anthropic explicitly states they don't train on API inputs by default. This makes Claude a better choice for sensitive work. Pricing is competitive with OpenAI ($0.003 per 1K input tokens, $0.015 per 1K output tokens). Developers who want to use Claude directly from the terminal for coding tasks can get set up quickly with this <a href="https://claudecodeguides.com/claude-code-for-beginners-complete-getting-started-2026/">beginner's guide to Claude Code</a>, which covers API key configuration and privacy-relevant settings.
 
 Ollama - Runs language models locally using your machine's GPU. Models like Llama 2 7B or Mistral run entirely on your infrastructure with zero cloud storage. The tradeoff is that local models are typically smaller and less capable than GPT-4.
 

@@ -66,7 +66,7 @@ fetch('https://www.google-analytics.com/analytics.js')
   .catch(() => console.log('Tracker blocked'));
 ```
 
-Firefox also offers resistFingerprinting configuration in `about:config`. Setting `privacy.resistFingerprinting` to `true` normalizes many browser attributes that fingerprinting scripts exploit. However, this can affect some web applications, so you may need to create separate profiles for development and general browsing.
+Firefox also offers resistFingerprinting configuration in `about:config`. Setting `privacy.resistFingerprinting` to `true` normalizes many browser attributes that fingerprinting scripts exploit. However, this can affect some web applications, so you may need to create separate profiles for development and general browsing. If you notice your Chrome or Firefox profiles growing excessively large on disk from maintaining multiple development configurations, this <a href="https://claudecodeguides.com/chrome-profile-too-large/">guide to fixing oversized Chrome profiles</a> covers how to identify and clean up the files responsible.
 
 Configure Firefox for better privacy by modifying these settings:
 
