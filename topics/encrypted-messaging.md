@@ -14,8 +14,9 @@ End-to-end encrypted messaging protects your conversations from surveillance, da
 
 ---
 
-Articles in This Topic (87)
+Articles in This Topic (88)
 
+- [Telegram Privacy: The Settings That Matter, and Bots That Keep Messages Private](/telegram-privacy-settings-that-matter-and-bots-that-keep-messages-private/)
 - [Anonymous Conference Call Services That Do Not Log Participant Phone Numbers](/anonymous-conference-call-services-that-do-not-log-participa/)
 - [Best Alternative To Signal Messenger 2026](/best-alternative-to-signal-messenger-2026/)
 - [Best Encrypted Chat for iOS Privacy 2026: A Technical Guide](/best-encrypted-chat-for-ios-privacy-2026/)
