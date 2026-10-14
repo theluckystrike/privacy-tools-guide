@@ -2,7 +2,7 @@ name: Deploy Jekyll site to Pages
 
 on:
   schedule:
-    - cron: "45 */2 * * *"
+    - cron: "0 6 * * *"  # daily; cost guard 2026-10-14 (was 45 */2 * * *)
   workflow_dispatch:
 
 permissions:
